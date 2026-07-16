@@ -50,6 +50,8 @@ so a deletion can restart only the affected constituent-model path.
 
 ## Book Chapters Supported
 
+- `context-transactions-snapshots-mounts-and-taint` (Context Transactions,
+  Snapshots, Mounts, and Taint)
 - `data-engines-continual-learning-and-unlearning` (Data Engines, Continual
   Learning, and Unlearning)
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and

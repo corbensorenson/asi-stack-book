@@ -3,23 +3,22 @@ title: "RankFold, NeuralFold, and Artifact Compression"
 chapter_id: "rankfold-neuralfold-and-artifact-compression"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-02"
+draft_maturity: "v0.3 claim-proof program"
+last_updated: "2026-07-15"
 primary_sources:
   - "rankfold_neuralfold"
   - "rankfold_compressor"
   - "bbvca_v9"
   - "cgs"
   - "bugbrain"
+  - "ext_raptor_2024"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records exact passage-reviewed mappings for all five assigned artifact-compression sources; support remains at argument until a compressor, deterministic decoder, corpus benchmark, utility probe, or accepted evidence transition exists."
-  - "The compressed_artifact_record fixture validates schema/example consistency for task family, access pattern, admission state, declared use envelope, metadata costs, fallback trigger, exact-replay status, consumer policy, support-state effect, evidence refs, and non-claims only; `AsiStackProofs.ArtifactCompression` now includes a finite admission lifecycle route envelope over compressed-artifact use boundaries; no RankFold/NeuralFold codec, deterministic decoder, corpus benchmark, or utility probe has been run."
-  - "The RankFold artifact import records three existing local `.rfa` archive observations for the same 100,000,000-byte decoded artifact digest, with `rfa verify` reporting 1 OK, 0 failed for each archive and `rfa inspect` reporting `NEURAL0`; this is metadata/hash/import evidence only, not a fresh benchmark or codec-correctness proof."
-  - "The RankFold public-safe replay probe records a fresh local RAW0 pack/verify/list/unpack roundtrip over one generated synthetic text fixture plus a rejected single-byte archive mutation; this proves only that the local CLI replayed that tiny fixture exactly under a license-disabled NeuralFold boundary, not NeuralFold compression, compression advantage, codec correctness, downstream utility, fallback execution, or deployed compression behavior."
-  - "RankFold/NeuralFold and RankFold Compressor source-reported ratio, losslessness, latency, benchmark, code, and reproducibility claims are not promoted here; the local import is treated as a narrow public-safe artifact observation and the broader claims remain source-reported architecture/lineage context."
-  - "No support-state promotion, raw source publication, codec correctness result, or downstream utility result is implied by this drafting pass."
+  - "The exact current evidence is one 22-field schema fixture; one fresh 3,936-byte synthetic RAW0 pack/verify/list/unpack replay with exact digest preservation, no compression advantage, a license-disabled NeuralFold boundary, and one rejected byte mutation; three imported NEURAL0 archive metadata observations for one 100,000,000-byte decoded digest with verifier summaries but no fresh compression run; two no-change decisions; two retained finite countermodels; and an eight-declaration, eight-stage, 53-route artifact-to-consumption refinement whose independent consumer rejects 44/44 non-accepting mutations and digest-binds all bounded artifacts. Seventeen projections and flat route consequences are retired."
+  - "A competent full attempt still requires an enabled, independently inspectable compressor and deterministic decoder; a public-safe heterogeneous corpus; strong matched codecs and representation baselines; exact and lossy reconstruction contracts; task probes; executable fallback and recovery; complete cost accounting; and adversarial archive and drift tests."
+  - "The causal campaign must compare literal storage, standard general-purpose and domain codecs, quantization, sparsity, low-rank, retrieval, hierarchical summary, semantic preview, RankFold/NeuralFold candidate, and full-artifact fallback routes under matched conditions and isolate residual coding, probes, exactness, fallback, metadata, admission, and expiry."
+  - "Codec correctness, useful compression advantage, downstream utility, safe evidence use, generality, deployment, transfer, or SOTA remain blocked until independent implementations reproduce the result and heterogeneous transfer passes."
 ---
 
 ## Chapter status
@@ -29,14 +28,14 @@ open_evidence_gaps:
 | Chapter ID | `rankfold-neuralfold-and-artifact-compression` |
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-01 |
-| Primary source records | `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, `bugbrain` |
+| Manuscript maturity | v0.3 claim-proof program |
+| Last updated | 2026-07-15 |
+| Primary source records | `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, `bugbrain`, `ext_raptor_2024` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `rankfold_neuralfold`, `rankfold_compressor`; supporting: `bbvca_v9`, `cgs`, `bugbrain` |
-| Source loading state | source notes and passage-reviewed local raw-cache mappings exist for `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, and `bugbrain`; no raw private source text is published. |
-| Test state | `compressed_artifact_record.valid.json` passes repository-level protocol fixture validation for task family, access pattern, admission state, declared use envelope, metadata costs, fallback trigger, exact-replay status, consumer policy, support-state effect, evidence refs, and non-claims; `AsiStackProofs.ArtifactCompression` implements finite probe/fallback, residual/fallback metadata, and admission-lifecycle route predicates plus negative-case theorems blocking failed-probe/no-fallback use, promotion with missing residual or fallback metadata, and modeled admission gaps; `python3 scripts/validate_rankfold_public_safe_probe.py` validates a fresh RAW0 pack/verify/list/unpack replay over a generated public-safe synthetic text fixture, roundtrip-exact digest preservation, no compression advantage, license-disabled NeuralFold boundary, and a rejected single-byte archive mutation; `python3 scripts/validate_rankfold_artifact_import.py` validates the public-safe RankFold artifact import for a 100,000,000-byte decoded artifact digest, archive ratios up to 2.76634019 decoded/archive, `rfa verify` summaries of 1 OK, 0 failed, and `NEURAL0` inspect metadata; NeuralFold compression reproduction, behavioral probe-route fallback, corpus benchmark, and downstream-utility tests remain planned. |
+| Source loading state | exact passage-reviewed mappings exist for all six assigned sources; local lineage sources remain design context and RAPTOR remains a bounded external comparator, not local performance evidence. |
+| Test state | The exact fixture, RAW0 replay, NEURAL0 metadata import, and two no-change decisions remain valid. `AsiStackProofs.ArtifactCompressionRefinement` now supplies eight reachable stages, 53 routes, eight declarations, fallback and qualified-use witnesses, and an independent consumer rejecting 44/44 non-accepting mutations. Two legacy countermodels remain and seventeen projections or flat route consequences are retired. NeuralFold compression reproduction, behavioral fallback execution, corpus benchmarking, and downstream utility remain unrun. |
 
 ## Drafting guardrail
 
@@ -84,13 +83,15 @@ The artifact layer therefore needs admission states, not just ratios. A compress
 
 ## Core Claim
 
-[rankfold-neuralfold-and-artifact-compression.core, label: Design rationale, support: argument] RankFold/NeuralFold-style artifact compression belongs as a bounded implementation hypothesis with probe-route fallback and residual coding.
+[rankfold-neuralfold-and-artifact-compression.core, label: Design rationale, support: argument] A compressed artifact may enter a downstream route only through an artifact-, consumer-, use-, access-pattern-, decoder-, platform-, and time-specific admission lease that preserves the full source, separates representation, reconstruction, ratio, utility, latency, and evidentiary-authority claims, counts every byte and operation, exercises probes and fallback, and expires or quarantines on drift; RankFold/NeuralFold remains a bounded candidate implementation, and no compact form inherits the source artifact's authority.
+
+The distinct owner here is the **Compressed Artifact Admission Lease**: the record that decides whether a cheaper stored or transmitted representation may serve one named consumer use. Artifact Graph retains source custody and lineage; Context determines transaction adequacy; Routing selects the route; Verification judges reconstruction and probes; Resource Economics accounts for burden; Claim Ledgers control support; Security controls decoder risk; Rights controls transformation and retention; Readiness qualifies and expires; Runtime executes; and Human review retains consequential judgment. None of those owners is collapsed here.
 
 The claim remains at `argument` support. The source notes support architecture discussion of low-rank residual transforms, artifact-to-tensor conversion, WORM archive assumptions, manifests, codec parameters, reconstruction checks, and deterministic decode obligations. They do not support measured compression-performance claims in this repo.
 
 ### Claim-source mapping status
 
-Appendix C now carries passage-reviewed mappings for all five assigned sources. The mappings support low-rank/tensor artifact-compression architecture, manifests, deterministic decode obligations, residual and fallback accounting, reconstruction-contract discipline, and resource-constrained implementation pressure. They do not support measured RankFold/NeuralFold performance, codec correctness, lossless reconstruction, or downstream utility in this repository.
+Appendix C carries exact passage-reviewed mappings for all six assigned sources. Five local lineage sources support low-rank/tensor architecture, manifests, deterministic decode obligations, residual and fallback accounting, reconstruction contracts, and resource pressure. RAPTOR supplies a hierarchical-summary comparator. None supports measured RankFold/NeuralFold performance, codec correctness, lossless reconstruction, downstream utility, or local superiority.
 
 ### Concrete RankFold Artifact Import
 
@@ -154,6 +155,30 @@ fallback execution, and independent review exist.
 | `bbvca_v9` | Reconstruction contracts, exact repairs, bounded verification, fallback, interface costs, and proxy/final-rate separation for artifact compression discipline. | Does not provide local RankFold performance evidence, artifact utility evidence, or codec correctness. |
 | `cgs` | Compact seeds, generated structure, residual channels, verification contracts, governance interfaces, and hidden-complexity accounting. | Does not prove that any compressed artifact preserves downstream utility or cost advantage. |
 | `bugbrain` | Tiny/local cognition, storage paging, embedded workflow, and edge-efficiency concerns that make artifact size and runtime burden visible. | Speculative prototype-lineage source; no embedded runtime, paging behavior, artifact compressor, or hardware benchmark has been validated. |
+| `ext_raptor_2024` | Recursive abstraction and hierarchical retrieval as a compact-view comparator. | Metadata-first note only; no local tree, fidelity, reconstruction, provenance, utility, or RankFold comparison result. |
+
+### Compressed-artifact admission lifecycle
+
+| Stage | Required record | Rejecting condition and route |
+|---|---|---|
+| 1. Preserve | Source digest, custody, rights, retention, full fallback | Missing or unlawfully retained source blocks encoding or routes to rights review. |
+| 2. Scope | Consumer, task, access pattern, risk, exactness, loss, horizon | Undeclared use remains `not_admitted`. |
+| 3. Version | Encoder, decoder, arithmetic, serialization, platform, dependencies, parameters, seeds | Unversioned execution cannot claim replay or ratio. |
+| 4. Separate claims | Representation, reconstruction, ratio, utility, latency, authority, support | Evidence for one ledger cannot promote another. |
+| 5. Close bytes | Payload plus every header, index, manifest, parameter, environment, dictionary, seed, residual, repair, replica, and fallback | Hidden bytes invalidate the ratio receipt. |
+| 6. Encode | Transform only within the declared reconstruction contract | Out-of-contract transform is quarantined. |
+| 7. Retain residuals | Typed omissions, losses, uncertainty, and repairs | Missing or detached residual blocks admission. |
+| 8. Decode | Deterministic, exact-replay, corrupt, truncated, drift, and cross-platform checks as required | Failed or unknown decode routes to quarantine or full artifact. |
+| 9. Probe | Common, rare, adversarial, provenance-, citation-, and rights-sensitive task cases | Failed probe routes to fallback or refusal. |
+| 10. Estimate coverage | Probe distribution, blind spots, and out-of-envelope detector | Unrepresentative coverage blocks generalization. |
+| 11. Exercise fallback | Authorized, observable, timed full-artifact or refusal path | Merely named fallback is not operational evidence. |
+| 12. Close burden | Encode, storage, transfer, decode, verification, probe, fallback, recovery, human, governance, displaced work | Partial accounting cannot establish cost advantage. |
+| 13. Compare | Strong literal, standard-codec, quantized, sparse, low-rank, retrieval, summary, cache, and no-compression controls | Weak or unmatched baselines block comparative language. |
+| 14. Bind lineage | Source, job, code, environment, receipts, probes, residuals, fallback, descendants | Detached compact artifacts cannot enter evidence routes. |
+| 15. Gate authority | Preview, summary, embedding, citation, audit, legal, benchmark, and proof uses | Compact view cannot inherit source authority. |
+| 16. Expire | Source, decoder, dependency, platform, consumer, workload, rights, threat, policy, and time changes | Affected leases expire prospectively. |
+| 17. Quarantine and recover | Drift, disagreement, loss, provenance damage, unavailable fallback | Block use, preserve evidence, restore source path, and retest. |
+| 18. Adjudicate | Claim-specific promote, narrow, refute, deprecate, or no-change transition | Green validators alone have no support effect. |
 
 ## Mechanism
 
@@ -236,6 +261,23 @@ Minimum fields:
 
 Artifact graphs store compressed and full references. Routing selects the representation by task and probe. Evidence records ratio, latency, residual size, decoder determinism, utility, and fallback frequency. Resource economics decides whether encoding cost is justified by the access pattern.
 
+The twelve-owner handoff is explicit:
+
+| Owner | Retained responsibility |
+|---|---|
+| Artifact Graph | Source and compact digests, lineage, descendants, retention, replay. |
+| Compressed Artifact Record | Use envelope, codec identity, reconstruction contract, residuals, admission, non-claims. |
+| Context | Adequacy for the current transaction without source substitution. |
+| Routing | Compact, full, or refusal route by consumer, task, risk, and lease state. |
+| Verification | Decode, reconstruction, corruption, replay, probe, and evaluator receipts. |
+| Resource Economics | All bytes, operations, latency, energy, human, governance, and displaced work. |
+| Claim Ledgers | Separate representation, reconstruction, ratio, utility, latency, authority, deployment, and SOTA states. |
+| Security | Decoder supply chain, parser isolation, malicious archives, drift, quarantine. |
+| Rights and Provenance | Transformation permission, retention, deletion propagation, attribution, audit. |
+| Readiness | Qualification, expiry, rollback, and residual escrow. |
+| Runtime | Permissioned decode, probe, fallback, refusal, recovery, telemetry. |
+| Human review | Source/compact comparison, differences, residuals, probes, consequential judgment. |
+
 The artifact graph matters here because the compressed record should never stand alone. It should point back to the preserved full artifact, the codec manifest, the source/job that produced it, and any evaluation artifacts used to justify routing. That connection gives later readers and agents a way to distinguish source-reported compression lineage from locally reproduced compression behavior.
 
 The compression record also declares an access pattern:
@@ -252,13 +294,24 @@ Compression decisions should be allowed to differ across these patterns. A slow 
 
 ## Invariants
 
-- Fallback path is known.
-- Residual coding is measured.
-- Downstream utility is tested.
-- Compression ratios include metadata, parameters, seeds, manifests, and residuals.
-- Lossless claims require a reconstruction contract and decode check.
-- Admission state is task-relative and access-pattern-relative.
-- A compressed artifact cannot replace the full artifact as evidence unless the exact replay or declared-use gate passed.
+- The preserved full artifact remains retrievable and digest-bound for every admitted compact route unless an explicit lawful deletion policy says otherwise.
+- Admission is specific to artifact, consumer, task, access pattern, risk, decoder, platform, and time.
+- Representation success never implies reconstruction, compression advantage, utility, latency, authority, deployment, or SOTA.
+- Exactness names target bytes or semantics, arithmetic, serialization, tolerance, platform envelope, and verifier.
+- Ratios include metadata, code, parameters, environments, dictionaries, seeds, residuals, repairs, indexes, replicas, and fallback storage in scope.
+- Every omitted or lossy feature is inside the declared loss envelope or preserved as an owned residual.
+- Task probes include rare and adversarial cases and report sampled coverage and blind spots.
+- Failed, uncertain, expired, or out-of-envelope probes cannot route the compact artifact to that consumer.
+- Fallback is executable, permissioned, observable, timed, and included in denominators.
+- Decoder and dependency drift invalidate affected exact-replay qualifications until reproduction succeeds again.
+- Previews, summaries, and embeddings cannot substitute for source citations or legal evidence without a specific admitted use.
+- Every consumer can recover source reference, codec manifest, evaluation receipts, residuals, and non-claims.
+- Failed, corrupt, cancelled, refused, quarantined, fallback, and human-reviewed attempts remain in denominators.
+- Utility is evaluated on downstream outcomes, not inferred from reconstruction metrics or size alone.
+- Cost advantage uses the declared access frequency and horizon after all encode, decode, verification, fallback, recovery, and governance burden.
+- Rights, deletion, retention, and provenance obligations propagate to compact forms, residuals, caches, backups, and descendants.
+- Support-state changes require an accepted evidence transition for the exact claim and scope.
+- Every expiry, quarantine, fallback failure, or unresolved residual has an owner and reopening condition.
 
 Decode accountability is the hardest compression invariant: if the system cannot say what exact target is reconstructed, under which arithmetic and serialization assumptions, then it cannot claim exact compression.
 
@@ -266,13 +319,24 @@ Admission is always relative to use. A compressed artifact may be adequate for p
 
 ## Failure modes
 
-- Compression damaging rare critical cases.
-- Probe not representative.
-- Latency gains erased by fallback.
-- Encoder cost hidden behind write-once assumptions.
-- Floating-point or dependency drift breaking deterministic decode.
-- Archive-policy leakage, where cold-storage assumptions are reused for hot-path reasoning.
-- Evidence substitution, where a compressed preview is cited as if it were the preserved source artifact.
+- Rare critical clauses, code paths, diagrams, formatting, or provenance are damaged while common probes pass.
+- The probe distribution is unrepresentative, leaked, too small, or optimized by the encoder.
+- Metadata, residuals, code, environments, indexes, replicas, and fallbacks erase the reported ratio.
+- Encode, decode, verification, or fallback latency erases savings at the declared access pattern.
+- A WORM cold-archive assumption is reused for hot, mutable, or repeatedly queried artifacts.
+- Floating-point, hardware, dependency, compiler, or serialization drift breaks deterministic decode.
+- A compact preview or summary is cited as though it were the preserved source.
+- Lossy semantic utility is laundered into a lossless reconstruction claim.
+- A successful reconstruction metric is laundered into downstream task utility or safety.
+- A local ratio is laundered into system cost advantage, deployment readiness, generality, or SOTA.
+- Fallback is missing, unauthorized, corrupt, slower than declared, or recursively compressed under the same failure.
+- Residuals are omitted, unqueryable, detached from the source, or costed outside the denominator.
+- Archive parsing or decoder dependencies introduce malicious-code, supply-chain, or denial-of-service risk.
+- Rights, deletion, retention, attribution, or export obligations fail to propagate to compact copies and descendants.
+- Selective reporting removes corrupt, refused, quarantined, slow, fallback, or human-reviewed cases.
+- Shared encoder, decoder, probe, evaluator, and implementation bugs create false independent agreement.
+- Admission remains live after source, decoder, platform, workload, consumer, policy, rights, or threat drift.
+- Governance and verification tax exceeds any storage or transfer benefit while the compact route remains institutionally sticky.
 
 Probe failure should route to the full artifact. Rare-case damage should become a regression. Hidden encoder cost should move into resource accounting. Decoder drift should block exactness and preserve the full artifact until deterministic replay is restored.
 
@@ -283,6 +347,8 @@ The most dangerous failure is silent narrowing. A compressed representation may 
 A minimal artifact-compression lane is a compressed artifact record. The repository fixture validates that the record names task family, access pattern, admission state, method, reconstruction contract, declared use envelope, ratio claim state, codec parameters, metadata costs, residual coding, probe plan, fallback artifact, fallback trigger, decode determinism, exact-replay status, consumer policy, utility tests, support-state effect, evidence refs, and non-claims.
 
 The compressed-artifact fixture does not produce a compressor result. It gives the public book an executable contract for evaluating one later.
+
+The complete current MVI is narrower than the architectural contract: one 22-field schema fixture; one fresh 3,936-byte synthetic `RAW0` pack/verify/list/unpack replay with byte-exact digest preservation, a 4,434-byte archive, no compression advantage, a license-disabled NeuralFold boundary, and one rejected single-byte mutation; three imported `NEURAL0` archive metadata observations sharing one 100,000,000-byte decoded digest and reporting verifier success, but without a fresh encode; two no-change evidence transitions; two retained finite countermodels; and an eight-declaration, eight-stage, 53-route artifact-to-consumption refinement with 44/44 rejecting mutations. Seventeen direct projections and flat route consequences are retired. The MVI establishes record shape, one exact local raw-storage roundtrip, one corrupt-archive rejection, bounded metadata consistency, and modeled route behavior only.
 
 A first tiny synthetic replay now exists for the local `rfa` CLI, but it is not the adversarial artifact-compression harness required for stronger evidence. A fuller toy corpus with ordinary prose, tables, diagrams, citations, code blocks, and provenance metadata should follow. That future harness can ask whether a candidate compressor preserves the required target, reports residuals honestly, and falls back when the probe is outside the declared envelope. Until that harness exists, artifact compression remains a design rationale with executable record-shape checks, one RAW0 replay, and one static archive-import surface only.
 
@@ -298,6 +364,10 @@ Compressed candidates move through not-admitted, cold-archive, preview-only, tas
 
 This artifact-compression admission layer is still an architectural target. The admission claim should remain `argument` until compression receipts, task probes, residual metadata, fallback-route fixtures, baseline comparisons, and reproduced compression reports show that compact artifacts remain useful under the jobs they are asked to support.
 
+The competent full attempt is a preregistered causal campaign over a public-safe heterogeneous corpus containing prose, code, tables, diagrams, citations, binaries, tensors, rare cases, provenance, and rights metadata. It compares literal storage, optimized general-purpose and domain codecs, quantization, sparsity, low-rank methods, retrieval, hierarchical summaries, semantic previews, the enabled RankFold/NeuralFold candidate, and full-artifact fallback under matched artifacts, consumers, access frequencies, platforms, resources, rights, evaluators, and horizons. Exact and lossy contracts are evaluated separately. All bytes and operations, task outcomes, corruption, rare-case loss, citations, provenance, security, encode/decode latency, energy, fallback, recovery, human work, governance work, and displaced work remain in the joint frontier.
+
+Causal ablations remove or corrupt residual coding, task probes, exactness checks, preserved fallback, metadata closure, admission state, expiry, and quarantine one at a time. Independent encoder, decoder, probe, evaluator, cost-meter, security, and fallback implementations must reproduce the predicted signatures. Transfer then spans artifacts, modalities, models, languages, organizations, platforms, rights regimes, attacks, updates, and time. A simpler codec or literal route winning is a valid refutation or narrowing result, not a failed project outcome.
+
 ## Codex test plan
 
 | Test | Purpose | Status |
@@ -309,7 +379,7 @@ This artifact-compression admission layer is still an architectural target. The 
 | Probe-route fallback test | Check that a failed task probe routes to the full artifact. | planned; not run |
 | Downstream utility preservation test | Compare compressed and full artifacts on a bounded task suite. | planned; not run |
 | Access-pattern admission test | Check that cold archive, hot retrieval, exact replay, preview, benchmark, and audit consumers receive only compressed artifacts admitted for their use envelope. | planned; not run |
-| Artifact compression admission lifecycle route | Check that a modeled compressed-artifact admission review routes missing preserved full artifacts, missing manifests, use-envelope and access-pattern gaps, unadmitted states, decoder-determinism gaps, exact-replay readiness failures, failed probes, missing fallback artifacts, residual metadata gaps, utility-evidence gaps, support-promotion gaps, and missing non-claim boundaries to explicit finite outcomes. | implemented in `AsiStackProofs.ArtifactCompression`; no compression ratio, decoder correctness, downstream utility, behavioral fallback, benchmark, support-state-promotion, or codec-performance claim |
+| Artifact compression request-to-closure refinement | Bind full-source custody, exact identities, encoding and reconstruction obligations, probes, executable fallback, use admission, observed outcomes, residual closure, support, and effects. | implemented in `AsiStackProofs.ArtifactCompressionRefinement`: eight stages, 53 routes, 44/44 rejecting mutations, exact bounded artifacts, support/effect `none`; no codec, utility, deployment, transfer, or support claim |
 
 The implemented fixture row validates schema consistency only, and the implemented lifecycle row checks only a finite modeled route. The remaining rows require an actual compressor/decoder or a bounded toy surrogate, plus baseline artifacts and task probes; they are not reported results. When a behavioral test is implemented, future work should link to the command, fixture, environment notes, corpus, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -317,11 +387,13 @@ The implemented fixture row validates schema consistency only, and the implement
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:compression.artifacts.operational_invariant` | `AsiStackProofs.ArtifactCompression` | A compressed artifact used for a task must pass that task probe or route to fallback. | implemented |
-| `lean:compression.artifacts.failure_blocks_promotion` | `AsiStackProofs.ArtifactCompression` | A compression record cannot omit residual or fallback metadata. | implemented |
-| `lean:compression.artifacts.admission_lifecycle_route` | `AsiStackProofs.ArtifactCompression` | A modeled compressed-artifact admission review routes missing preserved full artifacts, missing manifests, use-envelope and access-pattern gaps, unadmitted states, decoder-determinism gaps, exact-replay readiness failures, failed probes, missing fallback artifacts, residual metadata gaps, utility-evidence gaps, support-promotion gaps, and missing non-claim boundaries to explicit outcomes. | implemented |
+| `lean:compression.artifacts.operational_invariant` | `AsiStackProofs.ArtifactCompressionRefinement` | A reachable artifact-to-consumption lifecycle requires full-source custody, exact identities, reconstruction checks, consumer probes, executable fallback, observed outcomes, and closure before a qualified use can complete. | implemented |
+| `lean:compression.artifacts.failure_blocks_promotion` | `AsiStackProofs.ArtifactCompressionRefinement` | Failed probes route to fallback, exact-replay gaps block use, raw ratios cannot promote support, and missing evidence transitions block consumption. | implemented |
+| `lean:compression.artifacts.admission_lifecycle_route` | `AsiStackProofs.ArtifactCompressionRefinement` | Eight stages and 53 independently consumed routes govern registration, encoding, verification, probing, fallback, admission, observed consumption, and closure without support or external-effect authority. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over artifact-use, metadata, and admission-review fields. The module now includes negative-case theorems showing that a compressed artifact use is invalid when the probe failed and no fallback is routed, that a promotion candidate is invalid when residual or fallback metadata is missing, and that modeled admission reviews route missing full-artifact preservation, manifest, use-envelope, access-pattern, admission-state, decode-determinism, exact-replay readiness, probe, fallback, residual, utility, evidence-transition, and non-claim-boundary gaps to explicit outcomes. They prove only those record-level gates; they do not prove a compression ratio, decoder correctness, task utility, behavioral fallback execution, codec performance, support-state promotion, or benchmark result.
+The family now contains two retained finite countermodels in `AsiStackProofs.ArtifactCompression` and eight lifecycle declarations in `AsiStackProofs.ArtifactCompressionRefinement`; seventeen projections and theorem-per-record routes were physically retired. The independent consumer reaches all 53 routes, rejects 44/44 non-accepting mutations, reruns the exact source validators, and binds the fixture, replay, import, and decisions by SHA-256.
+
+This finite model does not prove decoder or codec correctness, NeuralFold reproduction, compression advantage, semantic or rare-case preservation, probe validity, downstream utility, behavioral fallback or recovery, security, resource benefit, deployment, transfer, support promotion, or a benchmark/SOTA result. Decoder, probe, utility, rare-case, cost, fallback, and outcome fields are authored gates rather than measurements.
 
 ## Source crosswalk
 

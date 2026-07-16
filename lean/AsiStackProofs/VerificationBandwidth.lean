@@ -34,15 +34,6 @@ def InadequateContextBlocksVerifiedSupport
     review.contextInadequate = true ->
       review.verifiedSupportAssigned = false
 
-theorem high_risk_claim_with_inadequate_context_cannot_receive_verified_support
-    {review : ClaimSupportReview} :
-    InadequateContextBlocksVerifiedSupport review ->
-    review.highRiskClaim = true ->
-    review.contextInadequate = true ->
-    review.verifiedSupportAssigned = false := by
-  intro valid highRisk inadequate
-  exact valid highRisk inadequate
-
 inductive VerificationAdequacyRoute where
   | rejectClaim
   | requestContext
@@ -52,7 +43,7 @@ inductive VerificationAdequacyRoute where
   | blockVerifiedSupport
   | recordResidual
   | allowDraftSupport
-  | allowVerifiedSupport
+  | handoffToEvidenceGate
 deriving DecidableEq, Repr
 
 structure VerificationAdequacyReview where
@@ -92,7 +83,7 @@ def VerificationAdequacyRouteFor
   else if review.residualKnown = true then
     VerificationAdequacyRoute.recordResidual
   else if review.verifiedSupportRequested = true then
-    VerificationAdequacyRoute.allowVerifiedSupport
+    VerificationAdequacyRoute.handoffToEvidenceGate
   else if review.draftSupportRequested = true then
     VerificationAdequacyRoute.allowDraftSupport
   else
@@ -211,29 +202,6 @@ theorem known_verification_residual_records_residual
   simp [claimPresent, contextAdmitted, notHighRisk, pairwiseNotRequired,
     verifiedNotRequested, noNegativeEvidence, noContradiction, residualKnown]
 
-theorem complete_verified_review_allows_verified_support
-    {review : VerificationAdequacyReview} :
-    review.claimPresent = true ->
-    review.contextAdmitted = true ->
-    review.contextAdequateForClaim = true ->
-    review.highRiskClaim = true ->
-    review.pairwiseCheckRequired = true ->
-    review.pairwiseCheckComplete = true ->
-    review.verifiedSupportRequested = true ->
-    review.verificationArtifactsPresent = true ->
-    review.negativeEvidenceOpen = false ->
-    review.contradictionDetected = false ->
-    review.residualKnown = false ->
-    VerificationAdequacyRouteFor review =
-      VerificationAdequacyRoute.allowVerifiedSupport := by
-  intro claimPresent contextAdmitted contextAdequate highRisk
-    pairwiseRequired pairwiseComplete verifiedRequested artifactsPresent
-    noNegativeEvidence noContradiction noResidual
-  unfold VerificationAdequacyRouteFor
-  simp [claimPresent, contextAdmitted, contextAdequate, highRisk,
-    pairwiseRequired, pairwiseComplete, verifiedRequested, artifactsPresent,
-    noNegativeEvidence, noContradiction, noResidual]
-
 theorem complete_draft_review_allows_draft_support
     {review : VerificationAdequacyReview} :
     review.claimPresent = true ->
@@ -254,60 +222,5 @@ theorem complete_draft_review_allows_draft_support
   simp [claimPresent, contextAdmitted, notHighRisk, pairwiseNotRequired,
     verifiedNotRequested, noNegativeEvidence, noContradiction, noResidual,
     draftRequested]
-
-structure ContradictionProbeSummary where
-  validContradictionTracePresent : Bool
-  draftingOnlyTracePresent : Bool
-  negativeControlsRejected : Bool
-  supportStateEffectNone : Bool
-  nonClaimBoundary : Bool
-deriving DecidableEq, Repr
-
-def ContradictionProbeSummaryValid
-    (summary : ContradictionProbeSummary) : Prop :=
-  summary.validContradictionTracePresent = true ∧
-    summary.draftingOnlyTracePresent = true ∧
-    summary.negativeControlsRejected = true ∧
-    summary.supportStateEffectNone = true ∧
-    summary.nonClaimBoundary = true
-
-theorem verification_bandwidth_contradiction_probe_fixture_bridge
-    {summary : ContradictionProbeSummary} :
-    ContradictionProbeSummaryValid summary ->
-      summary.validContradictionTracePresent = true ∧
-        summary.draftingOnlyTracePresent = true ∧
-        summary.negativeControlsRejected = true ∧
-        summary.supportStateEffectNone = true ∧
-        summary.nonClaimBoundary = true := by
-  intro valid
-  exact valid
-
-structure CapacityModelSummary where
-  longContextCapacityGapRecorded : Bool
-  decompositionTracePresent : Bool
-  negativeControlsRejected : Bool
-  supportStateEffectNone : Bool
-  nonClaimBoundary : Bool
-deriving DecidableEq, Repr
-
-def CapacityModelSummaryValid
-    (summary : CapacityModelSummary) : Prop :=
-  summary.longContextCapacityGapRecorded = true ∧
-    summary.decompositionTracePresent = true ∧
-    summary.negativeControlsRejected = true ∧
-    summary.supportStateEffectNone = true ∧
-    summary.nonClaimBoundary = true
-
-theorem verification_bandwidth_capacity_model_fixture_bridge
-    {summary : CapacityModelSummary} :
-    CapacityModelSummaryValid summary ->
-      summary.longContextCapacityGapRecorded = true ∧
-        summary.decompositionTracePresent = true ∧
-        summary.negativeControlsRejected = true ∧
-        summary.supportStateEffectNone = true ∧
-        summary.nonClaimBoundary = true := by
-  intro valid
-  unfold CapacityModelSummaryValid at valid
-  exact valid
 
 end AsiStackProofs.VerificationBandwidth

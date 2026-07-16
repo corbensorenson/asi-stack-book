@@ -32,11 +32,11 @@ LEDGER_MD = ROOT / "docs" / "contribution_novelty_ledger.md"
 LEDGER_JSON = ROOT / "docs" / "contribution_novelty_ledger.json"
 VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 BOOK_STRUCTURE = ROOT / "book_structure.json"
-LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ArtifactGraph.lean"
+LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ArtifactRealityRefinement.lean"
 
 COMMAND = "python3 scripts/validate_epistemic_trusted_computing_base.py"
 CODEX_TEST_NAME = "Epistemic trusted computing base fixture"
-LEAN_THEOREM = "epistemic_tcb_fixture_bridge"
+LEAN_THEOREM = "trust_binding_rejects_self_verifier_laundering"
 EXPECTED_VALID = {
     "valid_minimal_epistemic_tcb_record",
     "valid_delegated_verifier_record_only",
@@ -225,7 +225,7 @@ def build_result(packet: dict[str, Any], errors: list[str]) -> dict[str, Any]:
         "case_results": rows,
         "trace_summary": summary,
         "lean_fixture_alignment": {
-            "module": "AsiStackProofs.ArtifactGraph",
+            "module": "AsiStackProofs.ArtifactRealityRefinement",
             "theorem_refs": [LEAN_THEOREM],
             "expected": summary,
         },
@@ -316,7 +316,7 @@ def validate_surfaces(errors: list[str]) -> None:
                 "Implemented epistemic-TCB fixture",
                 COMMAND,
                 rel(RESULT),
-                LEAN_THEOREM,
+                "AsiStackProofs.ArtifactRealityRefinement",
             ],
         ),
         rel(ROADMAP): (
@@ -356,8 +356,8 @@ def validate_surfaces(errors: list[str]) -> None:
         rel(LEAN_FILE): (
             LEAN_FILE,
             [
-                "EpistemicTcbFixtureSummary",
-                "epistemicTcbFixtureSummary",
+                "trustedCorePresent",
+                "rootOfTrustPresent",
                 LEAN_THEOREM,
             ],
         ),
@@ -419,17 +419,12 @@ def validate_lean_shape(errors: list[str]) -> None:
     if not re.search(rf"theorem\s+{re.escape(LEAN_THEOREM)}\b", text):
         errors.append(f"{rel(LEAN_FILE)} missing theorem {LEAN_THEOREM}.")
     for field in (
-        "minimalTrustBaseAccepted",
-        "delegatedVerifierRecordOnlyAccepted",
-        "outsideTcbBlockedRecordAccepted",
-        "missingRootOfTrustRejected",
-        "selfVerifierLaunderingRejected",
-        "unboundedTrustPropagationRejected",
-        "recursionStopRequired",
-        "outsideTcbResidualsRequired",
-        "supportPromotionFromTcbShapeRejected",
-        "supportStateEffectNone",
-        "nonClaimBoundary",
+        "trustedCorePresent",
+        "rootOfTrustPresent",
+        "independentVerifierPresent",
+        "recursionStopPresent",
+        "outsideTcbResidualPresent",
+        "supportAssignmentRequested",
     ):
         if field not in text:
             errors.append(f"{rel(LEAN_FILE)} missing epistemic-TCB field {field}.")

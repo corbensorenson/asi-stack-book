@@ -152,13 +152,27 @@ def main() -> None:
         )
 
     structure_by_id = {str(chapter.get("id", "")): chapter for chapter in chapters}
-    if structure_by_id.get("personal-compute-hives-and-federated-edge-intelligence", {}).get(
-        "lean_module"
-    ) != "AsiStackProofs.PersonalComputeHives":
+    hives_modules = {
+        value.strip()
+        for value in str(
+            structure_by_id.get("personal-compute-hives-and-federated-edge-intelligence", {}).get(
+                "lean_module", ""
+            )
+        ).split(";")
+        if value.strip()
+    }
+    if "AsiStackProofs.PersonalComputeHives" not in hives_modules:
         errors.append("Personal Compute Hives lean_module mapping is not wired.")
-    if structure_by_id.get("artifact-steward-agents-and-living-project-governance", {}).get(
-        "lean_module"
-    ) != "AsiStackProofs.ArtifactStewardAgents":
+    steward_modules = {
+        value.strip()
+        for value in str(
+            structure_by_id.get("artifact-steward-agents-and-living-project-governance", {}).get(
+                "lean_module", ""
+            )
+        ).split(";")
+        if value.strip()
+    }
+    if "AsiStackProofs.ArtifactStewardAgents" not in steward_modules:
         errors.append("Artifact Steward Agents lean_module mapping is not wired.")
 
     if errors:

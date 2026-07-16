@@ -15,15 +15,6 @@ def SimulationClaimFieldsComplete (record : SimulationClaimRecord) : Prop :=
 def SimulationClaimUseValid (record : SimulationClaimRecord) : Prop :=
   record.claimUsedAsEvidence = true -> SimulationClaimFieldsComplete record
 
-theorem simulation_claim_used_as_evidence_includes_scope_fidelity_and_bounds
-    {record : SimulationClaimRecord} :
-    SimulationClaimUseValid record ->
-    record.claimUsedAsEvidence = true ->
-    record.scopeDeclared = true ∧
-      record.fidelityDeclared = true ∧
-        record.resourceBoundsDeclared = true := by
-  intro valid used
-  exact valid used
 
 theorem evidence_use_without_scope_declaration_rejected
     {record : SimulationClaimRecord} :
@@ -48,13 +39,6 @@ def ResultWithinDeclaredFidelity (record : ExperimentResultRecord) : Prop :=
 def ExperimentResultPromotionValid (record : ExperimentResultRecord) : Prop :=
   record.promoted = true -> ResultWithinDeclaredFidelity record
 
-theorem promoted_experiment_result_cannot_exceed_declared_fidelity_support
-    {record : ExperimentResultRecord} :
-    ExperimentResultPromotionValid record ->
-    record.promoted = true ->
-    record.claimedResultLevel <= record.declaredFidelitySupportLevel := by
-  intro valid promoted
-  exact valid promoted
 
 theorem promoted_result_above_declared_fidelity_rejected
     {record : ExperimentResultRecord} :
@@ -162,23 +146,6 @@ def theseusSimulationFidelityReceiptSuiteImportFixture :
     cleanLiveTheseusReplayClaimed := false
   }
 
-theorem theseus_simulation_fidelity_receipt_suite_import_fixture_valid :
-    TheseusSimulationFidelityReceiptSuiteValid
-      theseusSimulationFidelityReceiptSuiteImportFixture := by
-  exact {
-    countInvariant := by decide,
-    publicSafety := by decide,
-    noCorePromotion := by decide,
-    noPhysicalFeasibilityClaim := by decide,
-    noBenchmarkTransferClaim := by decide,
-    noNativeKvParityClaim := by decide,
-    noDeploymentClaim := by decide,
-    noLiveSimulatorClaim := by decide,
-    noLearnedGenerationClaim := by decide,
-    noModelQualityClaim := by decide,
-    noEconomicOutcomeClaim := by decide,
-    noCleanLiveTheseusReplayClaim := by decide
-  }
 
 theorem theseus_simulation_fidelity_receipt_suite_import_core_promotion_rejected
     {summary : TheseusSimulationFidelityReceiptSuiteSummary} :
@@ -305,21 +272,6 @@ def theseusRldsMinariTraceExportImportFixture :
     cleanLiveTheseusReplayClaimed := false
   }
 
-theorem theseus_rlds_minari_trace_export_import_fixture_valid :
-    TheseusRldsMinariTraceExportImportValid
-      theseusRldsMinariTraceExportImportFixture := by
-  exact {
-    sourceBoundary := by decide,
-    exportBoundary := by decide,
-    publicSafety := by decide,
-    noCorePromotion := by decide,
-    noRldsDatasetCorrectnessClaim := by decide,
-    noMinariDatasetQualityClaim := by decide,
-    noSimulatorAdequacyClaim := by decide,
-    noReplaySuccessClaim := by decide,
-    noModelQualityClaim := by decide,
-    noCleanLiveTheseusReplayClaim := by decide
-  }
 
 theorem theseus_rlds_minari_trace_export_import_core_promotion_rejected
     {summary : TheseusRldsMinariTraceExportImportSummary} :

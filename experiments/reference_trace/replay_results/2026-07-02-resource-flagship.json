@@ -1,7 +1,7 @@
 {
   "actual_command_record": {
     "command": "python3 scripts/validate_resource_flagship_lane.py",
-    "elapsed_ms": 1770.693,
+    "elapsed_ms": 1923.625,
     "exit_code": 0,
     "output_excerpt": [
       "Resource flagship lane validation passed: 10 command replay(s), 26 tracked artifact digest(s), support-state effect none."
@@ -43,7 +43,7 @@
   "pass": true,
   "public_safe": true,
   "record_kind": "reference_trace_replay",
-  "recorded_at_utc": "2026-07-14T09:05:15Z",
+  "recorded_at_utc": "2026-07-16T00:32:56Z",
   "reference_trace_record": {
     "artifacts": [
       "command://validate-resource-flagship-lane",
@@ -149,28 +149,28 @@
       "sha256": "8a2127eb515ddc410e5e517582326d66225d85bbd70f44fd25138b7ace6a5d90"
     },
     {
-      "bytes": 8759,
+      "bytes": 8834,
       "lines": 181,
       "path": "docs/resource_flagship_lane_run.md",
-      "sha256": "8d20201f4bcb03215549577732893f76240ed5b7f4d0023e071b8d0ea6a4a51e"
+      "sha256": "5842ee2279d136593590f81502454efcb88f73b2e2351b4dab0a93a77dc78fbc"
     },
     {
-      "bytes": 22823,
+      "bytes": 22808,
       "lines": 500,
       "path": "experiments/resource_flagship_lane/results/2026-07-01-local.json",
-      "sha256": "33c29b5e7610ad037bf752dccb1e185a8261f51cba48557ad86dda5318f58995"
+      "sha256": "cad08ef977e10b19fcb95e1ea08e157d6c7481a3be037c679099e353825ab719"
     },
     {
-      "bytes": 19931,
-      "lines": 397,
+      "bytes": 19625,
+      "lines": 390,
       "path": "scripts/validate_resource_flagship_lane.py",
-      "sha256": "5e183878ed00f68a08a30f290b6c31e83f099b85ac2802c2a379747eee28611a"
+      "sha256": "66d555f1c6e83bd72eeb376d7b94d6196a88b07aebac6730b09e4f76852837fe"
     },
     {
-      "bytes": 21565,
+      "bytes": 21552,
       "lines": 440,
       "path": "scripts/run_resource_flagship_lane.py",
-      "sha256": "b80c548c6f4d4ad0e74351e27b55f06ae7bdd45eae80d352b60b6567216ca96f"
+      "sha256": "f4c1d8c039da81a249c6fb10c523e46d9d4287e93315a7e1442bab8580b5745f"
     },
     {
       "bytes": 10479,
@@ -215,10 +215,10 @@
       "sha256": "b477f1e0544119a39c76f4aca54c20f096f9e6fbdb5f755b3e0e9d4552de2806"
     },
     {
-      "bytes": 67675,
-      "lines": 543,
+      "bytes": 79602,
+      "lines": 711,
       "path": "chapters/integrated-reference-architecture.qmd",
-      "sha256": "8099e4185279d544f77dc87c5bee98ccf8fe521b28dd4096a0005cb59a886392"
+      "sha256": "bc6ab72bb85bd77f02bfd9afdc8de6a1d9459bb5bc23b14ca7700e4d3fe76e98"
     }
   ]
 }

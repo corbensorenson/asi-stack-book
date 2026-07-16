@@ -1,0 +1,577 @@
+{
+  "schema_version": "asi_stack.virtual_context_refinement.v1",
+  "result_id": "virtual-context-refinement-2026-07-15-local",
+  "source_sha256": {
+    "lean_model": "08606ec1e69ce708746d05c575e95e24f52156ce69c4739b0eb8a1319d302d6d",
+    "prior_resolver_result": "83a700881f1cb9cefd902baa4ad7c31371300446553fd29e545da5c963091f68",
+    "admission_fixture_inventory": "4dd6ca1ec34f343de9071cdefaac16ca5df79ee84dd138d715380b157fe91e41",
+    "admission_validator": "d977b41287a726a974c9725d73a2ed8dd7ba2cc8c773ba9ae18ea962e89757f7"
+  },
+  "resolver_scenario_count": 11,
+  "resolver_valid_count": 2,
+  "resolver_invalid_count": 9,
+  "resolver_receipts": [
+    {
+      "scenario_id": "valid_resolver_materialization_receipt",
+      "expected_valid": true,
+      "independently_matched": true,
+      "route": "materialize_context"
+    },
+    {
+      "scenario_id": "valid_mandatory_miss_typed_fault",
+      "expected_valid": true,
+      "independently_matched": true,
+      "route": "issue_typed_fault"
+    },
+    {
+      "scenario_id": "invalid_address_mismatch_materialization_denied",
+      "expected_valid": false,
+      "independently_matched": true,
+      "route": "issue_typed_fault"
+    },
+    {
+      "scenario_id": "invalid_version_mismatch_materialization_denied",
+      "expected_valid": false,
+      "independently_matched": true,
+      "route": "issue_typed_fault"
+    },
+    {
+      "scenario_id": "invalid_snapshot_mismatch_materialization_denied",
+      "expected_valid": false,
+      "independently_matched": true,
+      "route": "issue_typed_fault"
+    },
+    {
+      "scenario_id": "invalid_mount_policy_denied",
+      "expected_valid": false,
+      "independently_matched": true,
+      "route": "deny_mount_policy"
+    },
+    {
+      "scenario_id": "invalid_lease_expired_reuse_blocked",
+      "expected_valid": false,
+      "independently_matched": true,
+      "route": "deny_expired_lease"
+    },
+    {
+      "scenario_id": "invalid_certificate_source_binding_mismatch_denied",
+      "expected_valid": false,
+      "independently_matched": true,
+      "route": "reject_source_binding_mismatch"
+    },
+    {
+      "scenario_id": "invalid_certificate_authority_escalation_denied",
+      "expected_valid": false,
+      "independently_matched": true,
+      "route": "reject_authority_escalation"
+    },
+    {
+      "scenario_id": "invalid_certificate_truthfulness_overclaim_denied",
+      "expected_valid": false,
+      "independently_matched": true,
+      "route": "reject_truthfulness_overclaim"
+    },
+    {
+      "scenario_id": "invalid_summary_fidelity_omission_denied",
+      "expected_valid": false,
+      "independently_matched": true,
+      "route": "reject_undeclared_omission"
+    }
+  ],
+  "admission_fixture_count": 8,
+  "admission_valid_fixture_count": 3,
+  "admission_invalid_fixture_count": 5,
+  "admission_suite_passed": true,
+  "materialization_trace_event_count": 4,
+  "mandatory_miss_trace_event_count": 2,
+  "materialization_final_state": {
+    "stage": "materialized",
+    "request_id": 101,
+    "address": 201,
+    "version": 301,
+    "snapshot": 401,
+    "mount": 501,
+    "authority_ceiling": 3,
+    "approved_authority": 2,
+    "lease_expiry": 20,
+    "source_hash": 601,
+    "derived_hash": 701,
+    "mandatory": true,
+    "resolver_receipt": true,
+    "certificate_receipt": true,
+    "materialization_receipt": true,
+    "typed_fault_receipt": false,
+    "materialization_emitted": true,
+    "logical_time": 4
+  },
+  "mandatory_miss_final_state": {
+    "stage": "typed_fault",
+    "request_id": 101,
+    "address": 201,
+    "version": 301,
+    "snapshot": 401,
+    "mount": 501,
+    "authority_ceiling": 3,
+    "approved_authority": 2,
+    "lease_expiry": 20,
+    "source_hash": 0,
+    "derived_hash": 0,
+    "mandatory": true,
+    "resolver_receipt": false,
+    "certificate_receipt": false,
+    "materialization_receipt": false,
+    "typed_fault_receipt": true,
+    "materialization_emitted": false,
+    "logical_time": 2
+  },
+  "mutation_count": 55,
+  "mutation_rejection_count": 55,
+  "mutation_receipts": [
+    {
+      "mutation_id": "bind_request_id_missing",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "missing_request_identity"
+      ]
+    },
+    {
+      "mutation_id": "bind_address_missing",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "missing_request_identity"
+      ]
+    },
+    {
+      "mutation_id": "bind_version_missing",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "missing_request_identity"
+      ]
+    },
+    {
+      "mutation_id": "bind_snapshot_missing",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "missing_request_identity"
+      ]
+    },
+    {
+      "mutation_id": "bind_mount_missing",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "missing_request_identity"
+      ]
+    },
+    {
+      "mutation_id": "bind_authority_widened",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "authority_widened"
+      ]
+    },
+    {
+      "mutation_id": "bind_expired_lease",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "lease_expired_at_bind"
+      ]
+    },
+    {
+      "mutation_id": "hit_request_id_substitution",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "request_substitution"
+      ]
+    },
+    {
+      "mutation_id": "hit_address_substitution",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "request_substitution"
+      ]
+    },
+    {
+      "mutation_id": "hit_version_substitution",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "request_substitution"
+      ]
+    },
+    {
+      "mutation_id": "hit_snapshot_substitution",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "request_substitution"
+      ]
+    },
+    {
+      "mutation_id": "hit_mount_substitution",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "request_substitution"
+      ]
+    },
+    {
+      "mutation_id": "hit_mandatory_substitution",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "request_substitution"
+      ]
+    },
+    {
+      "mutation_id": "hit_not_found",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "resolver_miss_laundered"
+      ]
+    },
+    {
+      "mutation_id": "hit_mount_denied",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "mount_denied"
+      ]
+    },
+    {
+      "mutation_id": "hit_expired",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "lease_expired"
+      ]
+    },
+    {
+      "mutation_id": "hit_source_missing",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "source_missing"
+      ]
+    },
+    {
+      "mutation_id": "hit_receipt_missing",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "resolver_receipt_missing"
+      ]
+    },
+    {
+      "mutation_id": "hit_fault_conflict",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "fault_on_hit"
+      ]
+    },
+    {
+      "mutation_id": "hit_early_materialization",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "early_materialization"
+      ]
+    },
+    {
+      "mutation_id": "certify_request_id_substitution",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "request_substitution"
+      ]
+    },
+    {
+      "mutation_id": "certify_address_substitution",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "request_substitution"
+      ]
+    },
+    {
+      "mutation_id": "certify_version_substitution",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "request_substitution"
+      ]
+    },
+    {
+      "mutation_id": "certify_snapshot_substitution",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "request_substitution"
+      ]
+    },
+    {
+      "mutation_id": "certify_mount_substitution",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "request_substitution"
+      ]
+    },
+    {
+      "mutation_id": "certify_mandatory_substitution",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "request_substitution"
+      ]
+    },
+    {
+      "mutation_id": "certify_source",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "certificate_source_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "certify_certificate_source",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "certificate_source_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "certify_derived_missing",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "derived_hash_missing"
+      ]
+    },
+    {
+      "mutation_id": "certify_authority",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "certificate_authority_escalation"
+      ]
+    },
+    {
+      "mutation_id": "certify_receipt",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "certificate_receipt_missing"
+      ]
+    },
+    {
+      "mutation_id": "certify_omission",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "undeclared_omission"
+      ]
+    },
+    {
+      "mutation_id": "certify_overclaim",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "exact_completeness_overclaim"
+      ]
+    },
+    {
+      "mutation_id": "certify_taint",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "tainted_certificate"
+      ]
+    },
+    {
+      "mutation_id": "certify_early_materialization",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "early_materialization"
+      ]
+    },
+    {
+      "mutation_id": "materialize_request_id_substitution",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "request_substitution"
+      ]
+    },
+    {
+      "mutation_id": "materialize_address_substitution",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "request_substitution"
+      ]
+    },
+    {
+      "mutation_id": "materialize_version_substitution",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "request_substitution"
+      ]
+    },
+    {
+      "mutation_id": "materialize_snapshot_substitution",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "request_substitution"
+      ]
+    },
+    {
+      "mutation_id": "materialize_mount_substitution",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "request_substitution"
+      ]
+    },
+    {
+      "mutation_id": "materialize_mandatory_substitution",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "request_substitution"
+      ]
+    },
+    {
+      "mutation_id": "materialize_source",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "materialization_binding_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "materialize_derived",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "materialization_binding_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "materialize_authority",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "materialization_authority_escalation"
+      ]
+    },
+    {
+      "mutation_id": "materialize_taint",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "tainted_materialization"
+      ]
+    },
+    {
+      "mutation_id": "materialize_receipt",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "materialization_receipt_missing"
+      ]
+    },
+    {
+      "mutation_id": "materialize_not_emitted",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "materialization_not_emitted"
+      ]
+    },
+    {
+      "mutation_id": "materialize_fault_conflict",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "fault_materialization_conflict"
+      ]
+    },
+    {
+      "mutation_id": "materialize_time",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "time_not_monotonic"
+      ]
+    },
+    {
+      "mutation_id": "miss_request",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "request_substitution"
+      ]
+    },
+    {
+      "mutation_id": "miss_optional",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "optional_miss_laundered"
+      ]
+    },
+    {
+      "mutation_id": "miss_found",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "hit_routed_as_miss"
+      ]
+    },
+    {
+      "mutation_id": "miss_fault_receipt",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "typed_fault_receipt_missing"
+      ]
+    },
+    {
+      "mutation_id": "miss_emission",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "miss_materialized"
+      ]
+    },
+    {
+      "mutation_id": "miss_materialization_receipt",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "miss_materialized"
+      ]
+    }
+  ],
+  "support_state_effect": "none",
+  "non_claims": [
+    "The equality checks use trusted numeric identifiers and do not establish natural-language address truth, payload meaning, summary fidelity, or certificate truthfulness.",
+    "The admission fixture suite is consumed as a distinct prior harness; admission validity is not treated as resolver or materialization correctness.",
+    "This packet does not establish a deployed resolver, memory store, context compiler, transaction isolation, deletion enforcement, model-facing context quality, leak prevention, natural-workload usefulness, reproduction, transfer, safety, SOTA, AGI, ASI, or chapter-core support."
+  ]
+}

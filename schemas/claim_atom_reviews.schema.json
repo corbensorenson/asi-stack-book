@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASI Stack Claim Atom Semantic Review Overlay",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "review_files", "chapter_defaults", "atom_reviews", "prose_candidate_dispositions", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.claim_atom_reviews.v0"},
+    "review_files": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^evidence_quality/claim_reviews/[a-z0-9-]+\\.json$"}},
+    "chapter_defaults": {"type": "object", "additionalProperties": {"type": "object"}},
+    "atom_reviews": {"type": "object", "additionalProperties": {"type": "object"}},
+    "prose_candidate_dispositions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["state", "rationale"],
+        "properties": {
+          "state": {"enum": ["material_atom", "nonmaterial_explanation", "duplicate_of_atom", "editorial_or_question", "historical_or_source_report"]},
+          "rationale": {"type": "string", "minLength": 8},
+          "target_atom_id": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "non_claims": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}}
+  }
+}

@@ -52,7 +52,7 @@ TRACKED_ARTIFACTS = [
     "experiments/fast_generation_task_bundle/results/2026-07-02-local.json",
     "evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json",
     "evidence_transitions/v1_x_measured/fast_generation_task_bundle_no_change.json",
-    "lean/AsiStackProofs/FastGeneration.lean",
+    "lean/AsiStackProofs/FastGenerationRefinement.lean",
     "lean/AsiStackProofs/TheseusReference.lean",
     "scripts/validate_theseus_generation_mode_import.py",
     "scripts/validate_theseus_support_replay_probe.py",

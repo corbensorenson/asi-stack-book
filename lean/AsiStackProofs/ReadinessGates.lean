@@ -25,14 +25,6 @@ deriving DecidableEq, Repr
 def PromotionGateValid (review : GateReview) : Prop :=
   PromotedDecision review.decision -> review.allRequiredGatesPass = true
 
-theorem promoted_decision_requires_all_required_gates
-    {review : GateReview} :
-    PromotionGateValid review ->
-    PromotedDecision review.decision ->
-    review.allRequiredGatesPass = true := by
-  intro valid promoted
-  exact valid promoted
-
 theorem promoted_decision_with_failed_required_gates_rejected
     {review : GateReview} :
     PromotedDecision review.decision ->
@@ -277,13 +269,6 @@ def ReadinessLifecycleTransitionAllowed
               SupersessionReadinessReady transition ∧
                 RetirementReadinessReady transition
 
-theorem readiness_lifecycle_transition_must_be_forward_or_terminal
-    {transition : ReadinessLifecycleTransition} :
-    ReadinessLifecycleTransitionAllowed transition ->
-      ReadinessForwardStep transition := by
-  intro allowed
-  exact allowed.left
-
 theorem retired_readiness_state_cannot_transition
     {transition : ReadinessLifecycleTransition} :
     transition.fromState = ReadinessState.retired ->
@@ -292,42 +277,13 @@ theorem retired_readiness_state_cannot_transition
   have notRetired := allowed.right.left
   exact notRetired retiredFrom
 
-theorem allowed_readiness_transition_requires_core_records
-    {transition : ReadinessLifecycleTransition} :
-    ReadinessLifecycleTransitionAllowed transition ->
-      transition.gateEvidenceFresh = true ∧
-        transition.residualEscrowCarried = true ∧
-          transition.fallbackPathPresent = true ∧
-            transition.expiryRecorded = true := by
-  intro allowed
-  exact allowed.right.right.left
-
-theorem qualified_readiness_requires_regression_floor
-    {transition : ReadinessLifecycleTransition} :
-    ReadinessLifecycleTransitionAllowed transition ->
-      transition.toState = ReadinessState.qualified ->
-        transition.regressionFloorPreserved = true := by
-  intro allowed toQualified
-  exact allowed.right.right.right.left toQualified
-
-theorem default_readiness_requires_regression_authority_and_route
-    {transition : ReadinessLifecycleTransition} :
-    ReadinessLifecycleTransitionAllowed transition ->
-      transition.toState = ReadinessState.defaultReady ->
-        transition.regressionFloorPreserved = true ∧
-          transition.authorityScopePreserved = true ∧
-            transition.ordinaryRouteAllowed = true := by
-  intro allowed toDefault
-  exact allowed.right.right.right.right.left toDefault
-
 theorem default_readiness_without_regression_floor_rejected
     {transition : ReadinessLifecycleTransition} :
     transition.toState = ReadinessState.defaultReady ->
       transition.regressionFloorPreserved = false ->
         ¬ ReadinessLifecycleTransitionAllowed transition := by
   intro toDefault regressionMissing allowed
-  have defaultReady :=
-    default_readiness_requires_regression_authority_and_route allowed toDefault
+  have defaultReady := allowed.right.right.right.right.left toDefault
   rw [regressionMissing] at defaultReady
   cases defaultReady.left
 
@@ -337,21 +293,10 @@ theorem default_readiness_without_authority_scope_rejected
       transition.authorityScopePreserved = false ->
         ¬ ReadinessLifecycleTransitionAllowed transition := by
   intro toDefault authorityMissing allowed
-  have defaultReady :=
-    default_readiness_requires_regression_authority_and_route allowed toDefault
+  have defaultReady := allowed.right.right.right.right.left toDefault
   have authorityReady := defaultReady.right.left
   rw [authorityMissing] at authorityReady
   cases authorityReady
-
-theorem quarantine_transition_blocks_ordinary_and_requires_fallback
-    {transition : ReadinessLifecycleTransition} :
-    ReadinessLifecycleTransitionAllowed transition ->
-      transition.toState = ReadinessState.quarantined ->
-        transition.ordinaryRouteAllowed = false ∧
-          transition.diagnosticRouteAllowed = true ∧
-            transition.fallbackPathPresent = true := by
-  intro allowed toQuarantined
-  exact allowed.right.right.right.right.right.left toQuarantined
 
 theorem quarantined_lifecycle_transition_with_ordinary_route_rejected
     {transition : ReadinessLifecycleTransition} :
@@ -360,19 +305,9 @@ theorem quarantined_lifecycle_transition_with_ordinary_route_rejected
         ¬ ReadinessLifecycleTransitionAllowed transition := by
   intro toQuarantined ordinaryAllowed allowed
   have quarantineReady :=
-    quarantine_transition_blocks_ordinary_and_requires_fallback
-      allowed toQuarantined
+    allowed.right.right.right.right.right.left toQuarantined
   rw [ordinaryAllowed] at quarantineReady
   cases quarantineReady.left
-
-theorem supersession_requires_record_and_residual_escrow
-    {transition : ReadinessLifecycleTransition} :
-    ReadinessLifecycleTransitionAllowed transition ->
-      transition.toState = ReadinessState.superseded ->
-        transition.supersessionRecordPresent = true ∧
-          transition.residualEscrowCarried = true := by
-  intro allowed toSuperseded
-  exact allowed.right.right.right.right.right.right.left toSuperseded
 
 theorem supersession_without_record_rejected
     {transition : ReadinessLifecycleTransition} :
@@ -381,18 +316,9 @@ theorem supersession_without_record_rejected
         ¬ ReadinessLifecycleTransitionAllowed transition := by
   intro toSuperseded recordMissing allowed
   have supersessionReady :=
-    supersession_requires_record_and_residual_escrow allowed toSuperseded
+    allowed.right.right.right.right.right.right.left toSuperseded
   rw [recordMissing] at supersessionReady
   cases supersessionReady.left
-
-theorem retirement_requires_receipt_and_residual_escrow
-    {transition : ReadinessLifecycleTransition} :
-    ReadinessLifecycleTransitionAllowed transition ->
-      transition.toState = ReadinessState.retired ->
-        transition.retirementReceiptPresent = true ∧
-          transition.residualEscrowCarried = true := by
-  intro allowed toRetired
-  exact allowed.right.right.right.right.right.right.right toRetired
 
 theorem retirement_without_receipt_rejected
     {transition : ReadinessLifecycleTransition} :
@@ -401,7 +327,7 @@ theorem retirement_without_receipt_rejected
         ¬ ReadinessLifecycleTransitionAllowed transition := by
   intro toRetired receiptMissing allowed
   have retirementReady :=
-    retirement_requires_receipt_and_residual_escrow allowed toRetired
+    allowed.right.right.right.right.right.right.right toRetired
   rw [receiptMissing] at retirementReady
   cases retirementReady.left
 
@@ -428,20 +354,5 @@ def ReadinessLifecycleProbeSummaryValid
               summary.negativeControlsRejected = true ∧
                 summary.supportStateEffectNone = true ∧
                   summary.nonClaimBoundary = true
-
-theorem readiness_lifecycle_probe_fixture_bridge
-    {summary : ReadinessLifecycleProbeSummary} :
-    ReadinessLifecycleProbeSummaryValid summary ->
-      summary.candidateToShadowAccepted = true ∧
-        summary.shadowToCanaryAccepted = true ∧
-          summary.defaultReadyAccepted = true ∧
-            summary.quarantineWithFallbackAccepted = true ∧
-              summary.supersessionWithResidualAccepted = true ∧
-                summary.retirementWithReceiptAccepted = true ∧
-                  summary.negativeControlsRejected = true ∧
-                    summary.supportStateEffectNone = true ∧
-                      summary.nonClaimBoundary = true := by
-  intro valid
-  exact valid
 
 end AsiStackProofs.ReadinessGates

@@ -1,0 +1,18 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://the-asi-stack.org/schemas/fast_generation_refinement.schema.json",
+  "title":"Fast Generation Refinement Result",
+  "type":"object","additionalProperties":false,
+  "required":["schema_version","result_id","recorded_date","command","model","source_result_refinement","route_cases","lean_verification","support_state_effect","external_effect","residuals","non_claims"],
+  "properties":{
+    "schema_version":{"const":"asi_stack.fast_generation_refinement.result.v1"},
+    "result_id":{"const":"2026-07-15-fast-generation-refinement"},"recorded_date":{"const":"2026-07-15"},
+    "command":{"const":"python3 scripts/validate_fast_generation_refinement.py"},
+    "model":{"type":"object","required":["lean_module","stage_count","route_count","reached_route_count","route_case_count","rejected_mutation_count","fallback_route_reached","slow_baseline_route_reached","support_assignment_count","external_effect_count"],"properties":{"lean_module":{"const":"lean/AsiStackProofs/FastGenerationRefinement.lean"},"stage_count":{"const":8},"route_count":{"const":60},"reached_route_count":{"const":60},"route_case_count":{"const":60},"rejected_mutation_count":{"const":51},"fallback_route_reached":{"const":true},"slow_baseline_route_reached":{"const":true},"support_assignment_count":{"const":0},"external_effect_count":{"const":0}}},
+    "source_result_refinement":{"type":"object","required":["counts","sha256","validator_runs"]},
+    "route_cases":{"type":"array","minItems":60,"maxItems":60,"items":{"type":"object","required":["case_id","stage","expected_route","actual_route","accepted"]}},
+    "lean_verification":{"type":"object","required":["command","exit_code","output_sha256"]},
+    "support_state_effect":{"const":"none"},"external_effect":{"const":"none"},
+    "residuals":{"type":"array","minItems":4,"items":{"type":"string"}},"non_claims":{"type":"array","minItems":3,"items":{"type":"string"}}
+  }
+}

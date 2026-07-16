@@ -1,0 +1,861 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "artifact-graphs-audit-logs-and-replay",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+    "structured_atoms_reviewed": 81,
+    "prose_candidates_adjudicated": 77,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, all eighteen bounded source mappings, ten fixture/observation families, eight accepted no-promotion decisions, two historical service observations, all forty-three Lean declarations under ten public targets, every manifest atom, every prose candidate, test plan, crosswalk, summary, and handoff. The sweep made durable artifact identity, derivation, record-reality custody, replay grade, and impact closure the distinct owner; separated job lifecycle, context, effects, source admission, verification, evidence, support, learning, readiness, and release; required independent observation, canonical/projection separation, reverse closure, alternate derivations, replay locks, terminal receipts, receipt challenges, bounded trust, rights/deletion propagation, complete denominators, natural matched baselines, causal ablations, independent reproduction, and heterogeneous transfer; classified the proof scaffold as five predicate/projection/blocking consequences, thirty-one finite route/sequence/negative consequences, and seven authored-summary bridges; and preserved zero chapter-core support effect."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Natural and adversarial documents, code, proofs, datasets, model outputs, benchmark results, workflow receipts, signed attestations, release artifacts, and public surfaces whose identity, derivation, observation, replay, revocation, rights, and downstream use must remain reconstructable across repositories and time.",
+      "environment": "Eighteen reviewed assigned sources; two public schemas; 2/6 replay, 1/10 projection-revocation, 1/4 record-reality, 3/6 receipt-faithfulness, four-surface repository-audit, four-challenge, one-live-artifact, four-sampled-artifact, and 3/6 epistemic-TCB records; two historical service observations; eight no-promotion decisions; forty-three finite Lean declarations; and a future natural multi-repository campaign. No deployed graph, complete event collector, open-world observer, reverse-closure service, privacy/deletion runtime, natural causal result, or transfer result is represented.",
+      "model": "A versioned artifact-evidence relation over stable content identity, locations, producers, parent work, observed and asserted lineage, transformations, events, canonical state, projections, forward and reverse dependencies, quarantine and revocation, alternate derivations, replay grades and locks, asynchronous terminal receipts, receipt-reality challenges, epistemic trusted computing bases, rights and deletion duties, claim/test consumers, impact closure, cost, and residuals; current implementations are authored records, repository-local observations, service records, and finite consequences rather than a deployed plane.",
+      "authority": "Labor OS owns job lifecycle; Context owners own input views; Runtime Adapters own effects; source, data, weight, and supply-chain owners own admission; Verification owns mode-specific validity; Security, Privacy, Rights, Licensing, and accountable humans own access and obligations; Evidence States and Claim Ledgers own support; Procedural Memory owns learned reuse; Replacement, Readiness, and Publication own deployment and release. Artifact Graphs owns durable artifact identity, derivation, record-reality custody, replay grade, and impact closure only.",
+      "time": "Semantic review current through 2026-07-14; content, source, policy, authority, rights, environment, verifier, threat, consumer, expiry, quarantine, revocation, deletion, and service changes invalidate affected projections and reuse decisions while preserving allowed history.",
+      "artifact": "Chapter and manifest contract; eighteen bounded source mappings; schemas/artifact_graph_record.schema.json and schemas/artifact_projection_revocation_record.schema.json; ten validator/observation families and their retained results; eight accepted no-promotion records; GitHub Actions and public-site observations; forty-three declarations in lean/AsiStackProofs/ArtifactGraph.lean; future natural lineage labels, observer records, fault traces, ablations, reproduction locks, and transfer artifacts."
+    },
+    "current_disposition": "retain_argument_pending_natural_multi_repository_causal_reproduction_and_transfer_campaign",
+    "assumptions": [
+      "Artifact identity, parentage, transformations, effects, observations, copies, projections, and consumers can be observed closely enough to estimate false and missing lineage rather than merely record producer assertions.",
+      "Strong folders, version control, workflow histories, provenance ontologies, dataset metadata, signed attestations, and lineage catalogs can be matched on artifacts, models, tools, authority, rights, faults, resources, and horizon.",
+      "Independent-enough observers can label bytes, external effects, lineage, replay equivalence, reverse closure, alternate derivations, privacy and deletion obligations, downstream use, and delayed consequences.",
+      "Content identity, record reality, semantic correctness, evidence acceptance, support, learning, readiness, and release remain separable.",
+      "Sensitive evidence can be audited with purpose limitation, minimization, redaction, deletion, legal hold, and non-sensitive tombstones rather than permanent maximal logging.",
+      "Failed observations, unknown descendants, inaccessible copies, false blocks, human repairs, privacy work, storage, remediation, downtime, and residuals remain in denominators."
+    ],
+    "dependencies": [
+      "labor-os-and-typed-jobs",
+      "virtual-context-abi",
+      "context-transactions-snapshots-mounts-and-taint",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "model-weight-custody-and-hardware-roots-of-trust",
+      "spinoza-verification-and-proof-carrying-claims",
+      "verification-bandwidth-and-context-adequacy",
+      "claim-ledgers-and-belief-revision",
+      "evidence-states-and-claim-discipline",
+      "procedural-memory-and-cognitive-loop-closure",
+      "capability-replacement-and-rollback",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "resource-economics-and-token-budgets",
+      "living-book-methodology"
+    ],
+    "strongest_counterclaim": "Version control, content-addressed storage, workflow/event histories, provenance standards, data-lineage catalogs, signed supply-chain attestations, ordinary audit logs, and careful operators already provide the useful artifact substrate. The proposed graph adds metadata, observation, privacy exposure, storage, latency, and revocation cascades without guaranteeing causal truth; it may block useful work while the same producer-controlled infrastructure supplies artifacts, receipts, verifiers, and roots.",
+    "falsifier": "A material input, transformation, effect, copy, projection, consumer, rights duty, or descendant can disappear or be false while a record remains conformant; replay or attestation can pass against the wrong causal process; quarantine or deletion can leave reachable active descendants; or matched simpler systems dominate the full graph on useful reuse, reconstruction, containment, privacy, false blocking, latency, human work, storage, and total cost.",
+    "required_lanes": [
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze provenance, metadata, signed-attestation, workflow, version-control, lineage-catalog, recovery, and reasoning-faithfulness lineage without importing source-reported performance."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify observation, logging, disclosure, retention, deletion, legal hold, challenge, remediation, downstream invalidation, public correction, and accountable-human authority."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify graph identity, partial observation, event order, cycles, concurrency, reverse closure, alternate derivations, replay semantics, trust recursion, rights/deletion propagation, liveness, and countermodels beyond trusted Booleans and authored fixture summaries."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Run actual stores, event capture, observers, transformations, projections, replay, challenges, quarantine, reverse closure, rights/deletion, impact queries, remediation, and downstream consumer gates."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure lineage precision/recall, receipt-reality error, replay fidelity, closure completeness and latency, alternate-derivation validity, stale surfaces, privacy/deletion closure, useful reuse, false blocking, incident reconstruction, latency, human work, storage, remediation, and total cost jointly."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate content identity, independent observation, canonical/projection separation, reverse closure, replay locks, receipt challenges, trust-base boundaries, rights propagation, and complete denominators under matched natural work."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Reproduce from an independent implementation and transfer across repositories, artifact types, models, tools, workflow engines, storage backends, organizations, threat models, legal regimes, and delayed changes."
+      }
+    ],
+    "evidence_refs": {
+      "chapter": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+      "replay_validator": "scripts/validate_artifact_graph_replay.py",
+      "projection_validator": "scripts/validate_artifact_projection_revocation.py",
+      "record_reality_result": "experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json",
+      "receipt_audit_result": "experiments/receipt_repository_audit/results/2026-07-03-local.json",
+      "randomized_attestation_result": "experiments/artifact_randomized_attestation/results/2026-07-04-local.json",
+      "epistemic_tcb_result": "experiments/epistemic_tcb/results/2026-07-03-local.json",
+      "lean": "lean/AsiStackProofs/ArtifactGraph.lean"
+    },
+    "contrary_evidence": [
+      "Git, content-addressed stores, workflow engines, PROV-O, Croissant, in-toto, and lineage catalogs already cover substantial identity, history, metadata, and attestation functions.",
+      "The current families mostly use authored zero-model records; the repository observations are selected or deterministic local samples, and the CI/public-page observations are historical service facts.",
+      "The forty-three declarations are five predicate/projection/blocking consequences, thirty-one finite route/sequence/negative consequences, and seven authored-summary bridges; none refines a deployed graph or observer.",
+      "A digest can match the wrong intended object, a signed chain can faithfully record a compromised authorized actor, and a complete graph can remain consistently false when observation is captured.",
+      "Complete event retention can conflict with privacy, consent, confidentiality, deletion, legal hold, security, cost, and organizational feasibility.",
+      "Reverse closure can create broad false blocking and remediation cascades when lineage or alternate-derivation policy is imprecise.",
+      "No assigned external system or historical project has been reproduced as a matched baseline here."
+    ],
+    "known_confounds": [
+      "The governed route may receive more metadata, storage, observers, signatures, replay attempts, human review, remediation, or time than simpler comparators.",
+      "Selected repositories may favor deterministic, local, public-safe, content-addressed, reversible, or well-tested artifacts and omit hidden services, private data, hardware, physical effects, and organizational handoffs.",
+      "Producer, event collector, digest tool, object store, command runner, verifier, trust root, and outcome evaluator may share infrastructure or failure modes.",
+      "File existence, digest equality, command success, signed metadata, replay similarity, CI success, and a served page can be mistaken for causal truth or usefulness.",
+      "Unknown descendants, inaccessible copies, privacy work, deletion failures, human repairs, false blocks, stale public surfaces, storage, remediation, and delayed harm can disappear from denominators.",
+      "Aggressive quarantine or non-reuse can lower observed incident rates while increasing missed help and making the governed route look safer.",
+      "Short horizons can miss downstream training contamination, copied artifacts, stale procedures, public caches, delayed rights requests, compromise discovery, and organizational transfer."
+    ],
+    "acceptance_criteria": [
+      "Every material artifact identity, producer, parent, transformation, observation, event, projection, consumer, replay grade, trust root, right, deletion duty, cost, and residual has an exact valid case, rejecting mutation, observer, downstream consequence, and replay or declared non-replay path.",
+      "A preregistered natural campaign meets joint lineage, record-reality, replay, closure, rights/deletion, useful-reuse, false-blocking, incident-reconstruction, privacy, latency, human-work, storage, remediation, causal, reproduction, and transfer gates against strong matched comparators.",
+      "Each signature mechanism has a predicted causal effect that disappears under matched ablation and cannot be explained by extra resources, easier artifacts, shared observers, weak baselines, hidden human repair, selective retention, or denominator changes."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to exact artifact families, repositories, producers, observers, stores, tools, workflow engines, policies, rights regimes, threat models, faults, horizons, consumers, costs, and residuals.",
+      "Separate asserted provenance, observed lineage, byte identity, semantic identity, replay, receipt reality, correctness, evidence, support, learning, readiness, and release.",
+      "Unknown lineage, effects, copies, descendants, rights, deletion, replay equivalence, observer independence, delayed outcomes, reproduction, or transfer remains disputed, residual, narrowed, or blocked."
+    ],
+    "refutation_criteria": [
+      "Refute an invariant when a reachable ordinary or adversarial trace satisfies its premises and violates identity, event history, lineage, projection separation, closure, replay, receipt, trust, rights, deletion, consumer, or denominator preservation.",
+      "Refute a mechanism benefit when matched ablation preserves the joint outcome, worsens the frontier, or the effect is explained by resources, artifact selection, hidden repair, weak baselines, observer dependence, selective retention, or non-reuse.",
+      "Refute completeness, faithfulness, replayability, safer reuse, efficiency, privacy, reproducibility, or SOTA language when false or missing lineage persists, closure or deletion fails, costs dominate, a simpler comparator wins, or reproduction and transfer fail."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only when a more precise artifact, provenance, attestation, workflow, evidence, rights, or release owner supersedes the atom and every identity, derivation, event, consumer, right, descendant, decision, and residual migrates with preserved allowed lineage."
+    ],
+    "promotion_ceiling": "argument_until_natural_multi_repository_causal_reproduction_and_transfer_campaign_and_accepted_evidence_transition",
+    "reproduction": {
+      "command": null,
+      "environment_lock": null,
+      "artifact_digest": null,
+      "evaluator_identity": null
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "artifact-graphs-audit-logs-and-replay",
+      "next_unblocking_condition": "Execute the preregistered natural multi-repository campaign through actual stores, observers, workflows, projections, replay, reverse closure, rights/deletion, impact queries, downstream gates, causal ablations, independent reproduction, and heterogeneous transfer against strong matched comparators with complete costs and retained failures."
+    },
+    "non_claims": [
+      "A file, digest, signature, event log, provenance edge, replay, command pass, CI record, served page, receipt, or graph conformance does not establish causal truth, completeness, correctness, usefulness, safety, support, learning, or release.",
+      "The current schemas, fixture/observation families, no-promotion records, service observations, and forty-three declarations establish only their exact authored, repository-local, historical-service, and finite formal boundaries.",
+      "No job, permission, effect, evidence, support, learning, readiness, release, AGI, or ASI state changes through this semantic review."
+    ]
+  },
+  "non_claims": [
+    "Semantic review and atomization do not promote the Artifact Graphs core or any proof target.",
+    "Current schemas, fixtures, repository observations, service records, digests, commands, and Lean build establish only their exact bounded surfaces.",
+    "External standards and papers supply comparator lineage, not local conformance, deployment, causal benefit, or SOTA evidence."
+  ],
+  "atom_reviews": {
+    "artifact-graphs-audit-logs-and-replay.core": {
+      "current_disposition": "retain_distinct_artifact_identity_derivation_record_reality_replay_and_impact_closure_owner_at_argument",
+      "strongest_counterclaim": "Existing repositories, workflow histories, provenance catalogs, and signed attestations already provide this boundary.",
+      "falsifier": "No unique exercised consumer or failure remains after owner decomposition, or a matched natural campaign shows only cost and privacy burden without joint outcome improvement.",
+      "acceptance_criteria": [
+        "Demonstrate natural lineage, record reality, replay, reverse closure, rights/deletion, useful reuse, complete cost, causal contribution, reproduction, and transfer."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.problem.001": {
+      "current_disposition": "retain_durable_inspectable_work_history_problem",
+      "strongest_counterclaim": "Ordinary files and logs are adequate for competent operators.",
+      "falsifier": "Natural incidents are reconstructed, contained, corrected, and safely reused equally well without structured artifact continuity.",
+      "acceptance_criteria": [
+        "Compare reconstruction, containment, reuse, privacy, and cost against strong ordinary-repository baselines."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.insufficiency.001": {
+      "current_disposition": "retain_unbound_output_insufficiency",
+      "strongest_counterclaim": "Version control and workflow logs already bind enough inputs and effects.",
+      "falsifier": "A strong matched simple route loses no material lineage, replay, rights, claim/test, or downstream-impact information.",
+      "acceptance_criteria": [
+        "Measure false and missing edges plus downstream decision error under natural faults."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.minimum.001": {
+      "current_disposition": "retain_exact_finite_scaffold_and_natural_campaign_boundary",
+      "strongest_counterclaim": "The many current fixtures and observations already establish a working artifact graph.",
+      "falsifier": "The declared schemas, records, services, or theorems exercise complete deployed capture, independent truth, causal benefit, or transfer.",
+      "acceptance_criteria": [
+        "Keep exact counts, commands, limits, and the natural campaign as the only argument-exit route."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.beyond_sota.001": {
+      "current_disposition": "retain_conditional_joint_frontier_sota_target",
+      "strongest_counterclaim": "Mature provenance, lineage, and supply-chain systems already dominate the proposed composition.",
+      "falsifier": "The full graph is dominated on useful reuse, reconstruction, containment, privacy, false blocking, latency, human work, storage, remediation, or total cost.",
+      "acceptance_criteria": [
+        "Require matched strong baselines, predicted ablation signatures, clean reproduction, and heterogeneous transfer."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.mechanism.002": {
+      "current_disposition": "retain_content_identity_location_separation",
+      "strongest_counterclaim": "Paths and repository-native IDs are operationally sufficient.",
+      "falsifier": "Relocation or aliasing binds wrong bytes or changes identity.",
+      "acceptance_criteria": [
+        "Exercise moves, renames, copies, aliases, collisions, and policy-sensitive identities."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.mechanism.005": {
+      "current_disposition": "retain_independently_challengeable_observation",
+      "strongest_counterclaim": "Producer receipts and cryptographic digests are sufficient.",
+      "falsifier": "An independently observed byte, effect, command, or service state diverges while the record remains accepted.",
+      "acceptance_criteria": [
+        "Use separate observers, traps, mutations, and delayed downstream checks."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.mechanism.007": {
+      "current_disposition": "retain_canonical_projection_separation",
+      "strongest_counterclaim": "Caches and reports can be refreshed operationally without a formal boundary.",
+      "falsifier": "A stale projection changes a claim, readiness, release, or public decision after canonical state changed.",
+      "acceptance_criteria": [
+        "Inject canonical changes and measure stale-surface detection and closure."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.mechanism.009": {
+      "current_disposition": "retain_transitive_revocation_and_alternate_derivation_closure",
+      "strongest_counterclaim": "Manual remediation and ordinary invalidation are adequate.",
+      "falsifier": "A reachable dependent remains active or a false alternate path preserves it.",
+      "acceptance_criteria": [
+        "Exercise cycles, unknown edges, inaccessible copies, shared causes, and legitimate alternates."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.mechanism.010": {
+      "current_disposition": "retain_non_laundered_replay_grade_ladder",
+      "strongest_counterclaim": "Users can infer replay quality from logs.",
+      "falsifier": "Playback, similarity, or partial reconstruction is interpreted as stronger replay.",
+      "acceptance_criteria": [
+        "Blindly classify and re-execute natural artifacts under service and environment drift."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.mechanism.014": {
+      "current_disposition": "retain_receipt_faithfulness_challenge_boundary",
+      "strongest_counterclaim": "Detailed signed receipts are enough.",
+      "falsifier": "A shape-valid reality-false receipt passes independent traps and changes a downstream decision.",
+      "acceptance_criteria": [
+        "Use producer-independent observations, hidden traps, sampled challenges, and delayed outcomes."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.mechanism.015": {
+      "current_disposition": "retain_bounded_epistemic_tcb",
+      "strongest_counterclaim": "Verifier identity or signature supplies sufficient trust.",
+      "falsifier": "Trust propagates through circular, shared, compromised, or unbounded verifier dependencies.",
+      "acceptance_criteria": [
+        "Map roots, delegation, recursion stops, compromise, and outside-TCB residuals."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.mechanism.016": {
+      "current_disposition": "retain_rights_deletion_and_derivative_obligation_closure",
+      "strongest_counterclaim": "Audit needs justify durable maximal retention.",
+      "falsifier": "A derivative retains or discloses prohibited content after a valid rights or deletion event.",
+      "acceptance_criteria": [
+        "Exercise minimization, consent, redaction, deletion, legal hold, export, copies, and tombstones."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.mechanism.017": {
+      "current_disposition": "retain_bounded_impact_query_owner",
+      "strongest_counterclaim": "Search and repository knowledge are sufficient for impact analysis.",
+      "falsifier": "A material dependent or owner is missed while the query reports closure.",
+      "acceptance_criteria": [
+        "Compare query recall, false positives, latency, and remediation under hidden and delayed edges."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.invariant.003": {
+      "current_disposition": "retain_observed_asserted_inferred_unknown_lineage_separation",
+      "strongest_counterclaim": "All recorded provenance can be treated uniformly.",
+      "falsifier": "An asserted or inferred edge is consumed as independently observed fact.",
+      "acceptance_criteria": [
+        "Track origin and authority of every edge through downstream decisions."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.invariant.006": {
+      "current_disposition": "retain_reachable_descendant_invalidation",
+      "strongest_counterclaim": "Partial closure is acceptable when remediation is costly.",
+      "falsifier": "A reachable current-policy dependent remains active without a valid alternate derivation.",
+      "acceptance_criteria": [
+        "Enumerate closure under cycles, copies, unknowns, rights changes, and inaccessible systems."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.invariant.010": {
+      "current_disposition": "retain_attestation_authority_ceiling",
+      "strongest_counterclaim": "Agreement among repository tools supplies enough confidence.",
+      "falsifier": "Same-component agreement or receipt shape affects support beyond observed reality.",
+      "acceptance_criteria": [
+        "Use independent routes, dependency analysis, traps, and support-state mutations."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.invariant.013": {
+      "current_disposition": "retain_privacy_rights_obligation_propagation",
+      "strongest_counterclaim": "Lineage and rights can be managed separately.",
+      "falsifier": "A derivative loses consent, confidentiality, license, deletion, retention, or export obligations.",
+      "acceptance_criteria": [
+        "Trace obligations through transformations, copies, alternate derivations, and public surfaces."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.invariant.017": {
+      "current_disposition": "retain_complete_failure_privacy_and_cost_denominator",
+      "strongest_counterclaim": "Only successful reused artifacts matter.",
+      "falsifier": "Restoring omitted failures, privacy work, storage, remediation, or residuals changes no conclusion.",
+      "acceptance_criteria": [
+        "Reconcile every sampled artifact and descendant to a terminal outcome and total cost."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.failure_mode.003": {
+      "current_disposition": "retain_provenance_theater_risk",
+      "strongest_counterclaim": "Structured provenance is usually accurate enough.",
+      "falsifier": "Hidden inputs, transformations, actors, or effects never alter a material decision.",
+      "acceptance_criteria": [
+        "Seed false, missing, inferred, and adversarial edges against independent ground truth."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.failure_mode.004": {
+      "current_disposition": "retain_audit_log_theater_risk",
+      "strongest_counterclaim": "Append-only logging is a solved infrastructure problem.",
+      "falsifier": "Dropped, selective, mutable, producer-controlled, or inaccessible events never survive reconstruction.",
+      "acceptance_criteria": [
+        "Inject write loss, tampering, reordering, clock skew, partition, and access loss."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.failure_mode.006": {
+      "current_disposition": "retain_incomplete_reverse_closure_risk",
+      "strongest_counterclaim": "Manual review catches important downstream consequences.",
+      "falsifier": "No claim, procedure, model, release, copy, or public surface survives an upstream invalidation improperly.",
+      "acceptance_criteria": [
+        "Audit full descendant closure after natural and adversarial changes."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.failure_mode.011": {
+      "current_disposition": "retain_receipt_reality_divergence_risk",
+      "strongest_counterclaim": "Byte and command checks make reality-false receipts negligible.",
+      "falsifier": "No accepted receipt disagrees with independently observed effects or delayed outcomes.",
+      "acceptance_criteria": [
+        "Challenge heterogeneous receipts with hidden traps and external observations."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.failure_mode.015": {
+      "current_disposition": "retain_privacy_and_rights_laundering_risk",
+      "strongest_counterclaim": "Auditability outweighs retention and disclosure costs.",
+      "falsifier": "No person, dataset, organization, or derivative suffers unauthorized retention, exposure, or blocked deletion.",
+      "acceptance_criteria": [
+        "Measure minimization, leakage, rights usability, deletion closure, and downstream residue."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.failure_mode.017": {
+      "current_disposition": "retain_total_cost_survivorship_risk",
+      "strongest_counterclaim": "Graph overhead is negligible relative to failures prevented.",
+      "falsifier": "Full storage, replay, audit, privacy, human, remediation, downtime, and residual costs do not alter the frontier.",
+      "acceptance_criteria": [
+        "Measure complete resource and displaced-work costs over delayed incidents."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.formal.artifacts-graph-operational-invariant": {
+      "current_disposition": "retain_as_traceability_predicate_projection_not_runtime_provenance_proof",
+      "strongest_counterclaim": "The theorem proves produced artifacts carry complete operational lineage.",
+      "falsifier": "The premises encode the desired conclusion, omit reachable states, or remain disconnected from the executable producer, observer, and consumer.",
+      "acceptance_criteria": [
+        "Map every premise to independently generated runtime state, add countermodels and mutations, and prove a refinement or preserve the exact authored-summary ceiling."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.formal.artifacts-graph-failure-blocks-promotion": {
+      "current_disposition": "retain_as_finite_blocking_consequence_not_evidence_gate_enforcement",
+      "strongest_counterclaim": "The theorem proves incomplete artifacts cannot promote real claims.",
+      "falsifier": "The premises encode the desired conclusion, omit reachable states, or remain disconnected from the executable producer, observer, and consumer.",
+      "acceptance_criteria": [
+        "Map every premise to independently generated runtime state, add countermodels and mutations, and prove a refinement or preserve the exact authored-summary ceiling."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.formal.artifacts-graph-replay-packet-bridge": {
+      "current_disposition": "retain_as_finite_authored_route_model_not_replay_engine_refinement",
+      "strongest_counterclaim": "The bridge proves replay packets are complete and faithful.",
+      "falsifier": "The premises encode the desired conclusion, omit reachable states, or remain disconnected from the executable producer, observer, and consumer.",
+      "acceptance_criteria": [
+        "Map every premise to independently generated runtime state, add countermodels and mutations, and prove a refinement or preserve the exact authored-summary ceiling."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.formal.artifacts-graph-record-reality-sequence-bridge": {
+      "current_disposition": "retain_as_authored_fixture_summary_bridge_not_semantic_or_empirical_proof",
+      "strongest_counterclaim": "The bridge theorem independently proves the named fixture's real-world property.",
+      "falsifier": "The premises encode the desired conclusion, omit reachable states, or remain disconnected from the executable producer, observer, and consumer.",
+      "acceptance_criteria": [
+        "Map every premise to independently generated runtime state, add countermodels and mutations, and prove a refinement or preserve the exact authored-summary ceiling."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.formal.artifacts-graph-receipt-faithfulness-fixture-bridge": {
+      "current_disposition": "retain_as_authored_fixture_summary_bridge_not_semantic_or_empirical_proof",
+      "strongest_counterclaim": "The bridge theorem independently proves the named fixture's real-world property.",
+      "falsifier": "The premises encode the desired conclusion, omit reachable states, or remain disconnected from the executable producer, observer, and consumer.",
+      "acceptance_criteria": [
+        "Map every premise to independently generated runtime state, add countermodels and mutations, and prove a refinement or preserve the exact authored-summary ceiling."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.formal.artifacts-graph-receipt-repository-audit-fixture-bridge": {
+      "current_disposition": "retain_as_authored_fixture_summary_bridge_not_semantic_or_empirical_proof",
+      "strongest_counterclaim": "The bridge theorem independently proves the named fixture's real-world property.",
+      "falsifier": "The premises encode the desired conclusion, omit reachable states, or remain disconnected from the executable producer, observer, and consumer.",
+      "acceptance_criteria": [
+        "Map every premise to independently generated runtime state, add countermodels and mutations, and prove a refinement or preserve the exact authored-summary ceiling."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.formal.artifacts-graph-receipt-repository-challenge-fixture-bridge": {
+      "current_disposition": "retain_as_authored_fixture_summary_bridge_not_semantic_or_empirical_proof",
+      "strongest_counterclaim": "The bridge theorem independently proves the named fixture's real-world property.",
+      "falsifier": "The premises encode the desired conclusion, omit reachable states, or remain disconnected from the executable producer, observer, and consumer.",
+      "acceptance_criteria": [
+        "Map every premise to independently generated runtime state, add countermodels and mutations, and prove a refinement or preserve the exact authored-summary ceiling."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.formal.artifacts-graph-live-attestation-probe-bridge": {
+      "current_disposition": "retain_as_authored_fixture_summary_bridge_not_semantic_or_empirical_proof",
+      "strongest_counterclaim": "The bridge theorem independently proves the named fixture's real-world property.",
+      "falsifier": "The premises encode the desired conclusion, omit reachable states, or remain disconnected from the executable producer, observer, and consumer.",
+      "acceptance_criteria": [
+        "Map every premise to independently generated runtime state, add countermodels and mutations, and prove a refinement or preserve the exact authored-summary ceiling."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.formal.artifacts-graph-randomized-attestation-audit-bridge": {
+      "current_disposition": "retain_as_authored_fixture_summary_bridge_not_semantic_or_empirical_proof",
+      "strongest_counterclaim": "The bridge theorem independently proves the named fixture's real-world property.",
+      "falsifier": "The premises encode the desired conclusion, omit reachable states, or remain disconnected from the executable producer, observer, and consumer.",
+      "acceptance_criteria": [
+        "Map every premise to independently generated runtime state, add countermodels and mutations, and prove a refinement or preserve the exact authored-summary ceiling."
+      ]
+    },
+    "artifact-graphs-audit-logs-and-replay.formal.artifacts-graph-epistemic-tcb-fixture-bridge": {
+      "current_disposition": "retain_as_authored_fixture_summary_bridge_not_semantic_or_empirical_proof",
+      "strongest_counterclaim": "The bridge theorem independently proves the named fixture's real-world property.",
+      "falsifier": "The premises encode the desired conclusion, omit reachable states, or remain disconnected from the executable producer, observer, and consumer.",
+      "acceptance_criteria": [
+        "Map every premise to independently generated runtime state, add countermodels and mutations, and prove a refinement or preserve the exact authored-summary ceiling."
+      ]
+    }
+  },
+  "prose_candidate_dispositions": {
+    "artifact-graphs-audit-logs-and-replay.prose.31c0d6b77010": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.core"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.d270110190f2": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.core"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.f238937e270e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.core"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.b34d75cc486e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.insufficiency.001"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.552a972a458b": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.core"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.43cbf014d049": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.formal.artifacts-graph-failure-blocks-promotion"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.86c07dc182da": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.failure_mode.008"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.3037e172f888": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports a bounded fixture, repository observation, external comparator, or no-promotion result rather than adding an independent chapter claim."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.2982fc9ffbd2": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports a bounded fixture, repository observation, external comparator, or no-promotion result rather than adding an independent chapter claim."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.fcee26190628": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.core"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.4fb1e58c6d8d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.core"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.378632f610c5": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.mechanism.013"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.a66100dde16e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.001"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.31afb70b9f1a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.002"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.6cf5457f7f70": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.008"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.b39d42ca5fce": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.007"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.64b01157dcc6": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.007"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.554053d2e269": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.interface.002"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.fe19b4f48c85": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.interface.002"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.4250934cedba": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.mechanism.008"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.6fdb85e68a0c": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.007"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.365752013ecf": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.009"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.4a9365a99460": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.001"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.cd3e129d0afc": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, line-wrapped fragment, limitation, or handoff already governed by structured atoms and chapter defaults."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.b208fe3bc568": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.minimum.001"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.d18ca645b881": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.010"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.502157229090": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.formal.artifacts-graph-failure-blocks-promotion"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.4ef2e7f58a72": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.003"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.6aceac2ce89d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.003"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.b648238db187": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.failure_mode.014"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.ec269270a352": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.007"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.a0ef3d94a5da": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.003"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.3d254c33af9b": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.007"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.3a0f83b0f153": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports a bounded fixture, repository observation, external comparator, or no-promotion result rather than adding an independent chapter claim."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.93f737bd0892": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports a bounded fixture, repository observation, external comparator, or no-promotion result rather than adding an independent chapter claim."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.209c78ba856f": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports a bounded fixture, repository observation, external comparator, or no-promotion result rather than adding an independent chapter claim."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.491379ae54ca": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.mechanism.014"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.459a4c2bdc11": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, line-wrapped fragment, limitation, or handoff already governed by structured atoms and chapter defaults."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.99e595f6aa5a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.011"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.b186ce0b2f4a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.011"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.d6aee713c1f1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, line-wrapped fragment, limitation, or handoff already governed by structured atoms and chapter defaults."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.bd4e5551627e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, line-wrapped fragment, limitation, or handoff already governed by structured atoms and chapter defaults."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.80908a853a86": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, line-wrapped fragment, limitation, or handoff already governed by structured atoms and chapter defaults."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.b8664b738113": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports a bounded fixture, repository observation, external comparator, or no-promotion result rather than adding an independent chapter claim."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.ff7142fdbb50": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports a bounded fixture, repository observation, external comparator, or no-promotion result rather than adding an independent chapter claim."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.6650699133a0": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports a bounded fixture, repository observation, external comparator, or no-promotion result rather than adding an independent chapter claim."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.44a4585f664f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, line-wrapped fragment, limitation, or handoff already governed by structured atoms and chapter defaults."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.29ba40238fee": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.mechanism.014"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.cbc6bace7e82": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, line-wrapped fragment, limitation, or handoff already governed by structured atoms and chapter defaults."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.76f2aebf9294": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.minimum.001"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.c0746b7b528e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.minimum.001"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.8a7940b53f42": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.beyond_sota.001"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.f5a05cb0dad0": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.beyond_sota.001"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.072bf939959f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.beyond_sota.001"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.0196fc722225": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.beyond_sota.001"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.321f137d40d4": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.beyond_sota.001"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.7e633800a826": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.beyond_sota.001"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.d6a782deeddb": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.beyond_sota.001"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.73e3ab05af69": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.beyond_sota.001"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.fe6605b0d3da": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.beyond_sota.001"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.333de923dd9d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.beyond_sota.001"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.fc24b07f9a17": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.minimum.001"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.bca0461e5c5a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, line-wrapped fragment, limitation, or handoff already governed by structured atoms and chapter defaults."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.b15d7399ffc5": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.mechanism.003"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.4fddf022dd9f": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports a bounded fixture, repository observation, external comparator, or no-promotion result rather than adding an independent chapter claim."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.cda1fe91a992": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, line-wrapped fragment, limitation, or handoff already governed by structured atoms and chapter defaults."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.fe0fd53dabc0": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.mechanism.017"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.324cb2e5d84f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.beyond_sota.001"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.a3f1ec79bca4": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.beyond_sota.001"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.c384b55fda31": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.interface.002"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.38a839cb212d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.interface.004"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.41e3291e61f0": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.core"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.93535968dfbf": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, line-wrapped fragment, limitation, or handoff already governed by structured atoms and chapter defaults."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.01dd11f2cd86": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the formal promotion-blocking target for missing provenance.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.formal.artifacts-graph-failure-blocks-promotion"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.00b9dbeb60a8": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped fragment of the bounded live-attestation report; it adds no independent claim."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.7fd0de719eed": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped limitation fragment of the randomized-attestation report; it adds no independent claim."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.9c595106d10e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the chapter minimum that finite formal consequences do not establish semantic or empirical proof of the core claim.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.minimum.001"
+    }
+  },
+  "prose_review_lineage": [
+    {
+      "retired_candidate_id": "artifact-graphs-audit-logs-and-replay.prose.8ee54d4f09e1",
+      "retired_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:585",
+      "retired_sentence": "`AsiStackProofs.ArtifactGraph` adds bounded predicates requiring produced artifacts to carry parent-job and source/context references, blocking promoted support when required provenance is missing, ranking replay grades, routing artifact admission through parent, source, context transaction, semantic certificate, tool, claim, test, audit, replay, evidence-gate, stale-certificate, promotion, and non-claim checks, and modeling cross-record replay packets that mirror the Python harness shape.",
+      "preserved_disposition": {
+        "state": "historical_or_source_report",
+        "rationale": "Reports a bounded fixture, repository observation, external comparator, or no-promotion result rather than adding an independent chapter claim."
+      },
+      "retirement_reason": "The proof-surface paragraph was replaced by the stronger Artifact Reality refinement account; the old sentence is no longer current prose.",
+      "replacement_candidate_ids": ["artifact-graphs-audit-logs-and-replay.prose.9c595106d10e"],
+      "recorded_on": "2026-07-15"
+    },
+    {
+      "retired_candidate_id": "artifact-graphs-audit-logs-and-replay.prose.138b5051b74c",
+      "retired_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:585",
+      "retired_sentence": "Accepted no-promotion decision `evidence_transitions/v1_x_measured/artifact_receipt_repository_audit_challenge_no_change.json` records the repository audit/challenge as a blocking decision for receipt-reality overclaims only; it does not move support state, create an upward transition, prove open-world receipt faithfulness, or promote the Artifact Graphs chapter core claim.",
+      "preserved_disposition": {
+        "state": "historical_or_source_report",
+        "rationale": "Reports a bounded fixture, repository observation, external comparator, or no-promotion result rather than adding an independent chapter claim."
+      },
+      "retirement_reason": "The consolidated audit/challenge sentence was removed during proof-surface refinement; its decision artifact remains in repository history and no current prose sentence is its semantic replacement.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-07-15"
+    },
+    {
+      "retired_candidate_id": "artifact-graphs-audit-logs-and-replay.prose.0db03cf9560e",
+      "retired_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:587",
+      "retired_sentence": "The randomized artifact attestation audit expands the slice without overstating it: a fixed seed selects four public-safe repository evidence artifacts, then each artifact must agree across filesystem bytes, git object bytes, and command replay while trap and mutation controls remain rejected.",
+      "preserved_disposition": {
+        "state": "historical_or_source_report",
+        "rationale": "Reports a bounded fixture, repository observation, external comparator, or no-promotion result rather than adding an independent chapter claim."
+      },
+      "retirement_reason": "The randomized-attestation report was rewritten into a bounded multi-line paragraph whose current scanner-visible fragments require separate adjudication.",
+      "replacement_candidate_ids": ["artifact-graphs-audit-logs-and-replay.prose.00b9dbeb60a8", "artifact-graphs-audit-logs-and-replay.prose.7fd0de719eed"],
+      "recorded_on": "2026-07-15"
+    },
+    {
+      "retired_candidate_id": "artifact-graphs-audit-logs-and-replay.prose.71fc0e7a8e5d",
+      "retired_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:587",
+      "retired_sentence": "That fuller packet would let the book demonstrate the difference between a record that is merely stored, a record that is evidence-ready, and a record that only looks evidence-ready because the receipt shape was valid.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Rendered prose restates or specializes an owned structured atom.",
+        "target_atom_id": "artifact-graphs-audit-logs-and-replay.minimum.001"
+      },
+      "retirement_reason": "The future-packet sentence was removed when the argument-exit campaign was rewritten around prospective natural artifacts and joint gates.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-07-15"
+    },
+    {
+      "retired_candidate_id": "artifact-graphs-audit-logs-and-replay.prose.a1d2552482cc",
+      "retired_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:794",
+      "retired_sentence": "It proves only exact record, route, digest,",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Rendered prose restates or specializes an owned structured atom.",
+        "target_atom_id": "artifact-graphs-audit-logs-and-replay.minimum.001"
+      },
+      "retirement_reason": "The line-wrapped fragment disappeared when the proof section was rewritten as complete sentences with an explicit formal-proof ceiling.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-07-15"
+    }
+  ]
+}

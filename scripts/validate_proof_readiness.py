@@ -11,6 +11,8 @@ MANIFEST = ROOT / "proofs" / "proof_manifest.json"
 TRIAGE = ROOT / "proofs" / "proof_triage.json"
 ROOT_LEAN_MODULE = ROOT / "lean" / "AsiStackProofs.lean"
 PROOF_DEPTH_REPORT = ROOT / "docs" / "proof_depth_classification.md"
+BOOK_STRUCTURE = ROOT / "book_structure.json"
+RATIONALIZATION_REGISTRY = ROOT / "proofs" / "proof_rationalization_registry.json"
 
 ALLOWED_TRIAGE = {
     "formal-invariant",
@@ -55,8 +57,9 @@ def root_imports() -> set[str]:
 def main() -> None:
     manifest = read_json(MANIFEST)
     triage = read_json(TRIAGE)
-    if not isinstance(manifest, dict) or not isinstance(triage, dict):
-        raise SystemExit("proof manifest and proof triage must contain objects.")
+    structure = read_json(BOOK_STRUCTURE)
+    if not isinstance(manifest, dict) or not isinstance(triage, dict) or not isinstance(structure, dict):
+        raise SystemExit("proof manifest, proof triage, and book structure must contain objects.")
 
     records = manifest.get("records", [])
     triage_records = triage.get("records", [])
@@ -122,6 +125,30 @@ def main() -> None:
                 errors.append(f"{tag}: implemented proof targets must use recommended_route 'lean-candidate'")
 
     referenced_modules = {record.get("module") for record in records if isinstance(record, dict)}
+    # During rationalization, stable proof targets may move to a reachable
+    # refinement module while a chapter deliberately retains narrower
+    # contradiction, routing, or lineage lemmas in its declared legacy module.
+    # A chapter-level lean_module declaration keeps that retained module owned
+    # without forcing a fake target or deleting useful bounded lemmas.
+    declared_chapter_modules = {
+        chapter.get("lean_module")
+        for part in structure.get("parts", [])
+        if isinstance(part, dict)
+        for chapter in part.get("chapters", [])
+        if isinstance(chapter, dict) and chapter.get("lean_module")
+    }
+    referenced_modules.update(declared_chapter_modules)
+    if RATIONALIZATION_REGISTRY.exists():
+        rationalization = read_json(RATIONALIZATION_REGISTRY)
+        retained_lineage_modules = {
+            module_for_path(ROOT / row["module_path"])
+            for row in rationalization.get("baseline_theorems", [])
+            if isinstance(row, dict)
+            and row.get("current_present") is True
+            and isinstance(row.get("module_path"), str)
+            and (ROOT / row["module_path"]).exists()
+        }
+        referenced_modules.update(retained_lineage_modules)
     for record in records:
         if not isinstance(record, dict):
             continue

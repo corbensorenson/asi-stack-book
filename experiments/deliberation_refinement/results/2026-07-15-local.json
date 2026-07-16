@@ -1,0 +1,499 @@
+{
+  "schema_version": "asi_stack.deliberation_refinement.result.v1",
+  "result_id": "2026-07-15-deliberation-refinement",
+  "recorded_date": "2026-07-15",
+  "command": "python3 scripts/validate_deliberation_refinement.py",
+  "model": {
+    "lean_module": "lean/AsiStackProofs/DeliberationRefinement.lean",
+    "stage_count": 8,
+    "route_count": 59,
+    "reached_route_count": 59,
+    "route_case_count": 59,
+    "rejected_mutation_count": 51,
+    "residual_escrow_route_reached": true,
+    "planning_handoff_route_reached": true,
+    "support_assignment_count": 0,
+    "external_effect_count": 0
+  },
+  "source_result_refinement": {
+    "counts": {
+      "admission_case_count": 10,
+      "admission_review_count": 8,
+      "admission_escrow_count": 1,
+      "admission_harm_count": 15,
+      "seed_count": 3,
+      "routing_record_count": 900,
+      "deliberation_record_count": 540,
+      "interference_record_count": 180,
+      "fixed_extra_compute_harm_count": 15,
+      "fallback_activation_count": 0,
+      "disposition_count": 2,
+      "real_model_request_count": 60,
+      "real_model_call_count": 240,
+      "real_model_candidate_evaluation_count": 360,
+      "real_model_arm_count": 5,
+      "real_model_final_correct_count": 0,
+      "real_model_initial_correct_count": 0,
+      "real_model_candidate_operation_count": 1140,
+      "real_model_known_harm_regression_count": 15,
+      "real_model_deliberation_disposition": "no_change",
+      "real_model_support_state_effect": "no_core_promotion"
+    },
+    "sha256": {
+      "experiments/deliberation_admission/results/2026-07-13-local.json": "8733ac2a8f7af4ac306ebc9c892fe7f5db8746340b542e413c0d333c07dcc927",
+      "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json": "aeb55600763191c83938ec9bf87a3d6814e06f490442f0babb5deab487041ad6",
+      "experiments/post_v2_1_evidence_program/p2/results/test.json": "384ccb9d73fd860fd96b1cbba4f66a191055a6bb2db42ec09261fe475cc3b1e5",
+      "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json": "aaedd64c15afe0903b0b15b9569313fffa1dbb977ee0d8234b56252bef779d76"
+    },
+    "validator_runs": [
+      {
+        "command": "python3 scripts/validate_deliberation_admission.py",
+        "exit_code": 0,
+        "output_sha256": "319ccbd20ad9ae7918ab1eeb023ef2977283efb9ac54fe0a43132065e00302c4"
+      },
+      {
+        "command": "python3 scripts/validate_post_v2_routing_deliberation.py",
+        "exit_code": 0,
+        "output_sha256": "cc630dfd527a1671d6bf383480d2755215d761b0fca61fb63d0d27bc903fedf6"
+      },
+      {
+        "command": "python3 scripts/validate_post_v2_1_outcomes.py",
+        "exit_code": 0,
+        "output_sha256": "e462cb13f6e589ab61e5c887c473a1ccaa281212bfd2dce9506ea8832312fea6"
+      }
+    ]
+  },
+  "route_cases": [
+    {
+      "case_id": "wrong-stage",
+      "stage": "requested",
+      "expected_route": "reject_wrong_stage",
+      "actual_route": "reject_wrong_stage",
+      "accepted": false
+    },
+    {
+      "case_id": "request-substitution",
+      "stage": "requested",
+      "expected_route": "reject_request_substitution",
+      "actual_route": "reject_request_substitution",
+      "accepted": false
+    },
+    {
+      "case_id": "policy-substitution",
+      "stage": "requested",
+      "expected_route": "reject_policy_substitution",
+      "actual_route": "reject_policy_substitution",
+      "accepted": false
+    },
+    {
+      "case_id": "evaluator-substitution",
+      "stage": "requested",
+      "expected_route": "reject_evaluator_substitution",
+      "actual_route": "reject_evaluator_substitution",
+      "accepted": false
+    },
+    {
+      "case_id": "result-substitution",
+      "stage": "requested",
+      "expected_route": "reject_result_substitution",
+      "actual_route": "reject_result_substitution",
+      "accepted": false
+    },
+    {
+      "case_id": "event-replay",
+      "stage": "requested",
+      "expected_route": "reject_event_replay",
+      "actual_route": "reject_event_replay",
+      "accepted": false
+    },
+    {
+      "case_id": "authority-leak",
+      "stage": "requested",
+      "expected_route": "reject_authority_leak",
+      "actual_route": "reject_authority_leak",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-requestWellFormed",
+      "stage": "requested",
+      "expected_route": "reject_malformed_request",
+      "actual_route": "reject_malformed_request",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-consumer",
+      "stage": "requested",
+      "expected_route": "require_consumer",
+      "actual_route": "require_consumer",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-taskContract",
+      "stage": "requested",
+      "expected_route": "require_task_contract",
+      "actual_route": "require_task_contract",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-rights",
+      "stage": "requested",
+      "expected_route": "require_rights",
+      "actual_route": "require_rights",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-riskClass",
+      "stage": "requested",
+      "expected_route": "require_risk_class",
+      "actual_route": "require_risk_class",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-expiry",
+      "stage": "requested",
+      "expected_route": "require_expiry",
+      "actual_route": "require_expiry",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-accepted",
+      "stage": "requested",
+      "expected_route": "accept_scope",
+      "actual_route": "accept_scope",
+      "accepted": true
+    },
+    {
+      "case_id": "scoped-modePolicy",
+      "stage": "scoped",
+      "expected_route": "require_mode_policy",
+      "actual_route": "require_mode_policy",
+      "accepted": false
+    },
+    {
+      "case_id": "scoped-budget",
+      "stage": "scoped",
+      "expected_route": "require_budget",
+      "actual_route": "require_budget",
+      "accepted": false
+    },
+    {
+      "case_id": "scoped-candidateLimit",
+      "stage": "scoped",
+      "expected_route": "require_candidate_limit",
+      "actual_route": "require_candidate_limit",
+      "accepted": false
+    },
+    {
+      "case_id": "scoped-stopRule",
+      "stage": "scoped",
+      "expected_route": "require_stop_rule",
+      "actual_route": "require_stop_rule",
+      "accepted": false
+    },
+    {
+      "case_id": "scoped-firstCandidateCapture",
+      "stage": "scoped",
+      "expected_route": "require_first_candidate_capture",
+      "actual_route": "require_first_candidate_capture",
+      "accepted": false
+    },
+    {
+      "case_id": "scoped-candidateHistory",
+      "stage": "scoped",
+      "expected_route": "require_candidate_history",
+      "actual_route": "require_candidate_history",
+      "accepted": false
+    },
+    {
+      "case_id": "scoped-tracePrivacy",
+      "stage": "scoped",
+      "expected_route": "require_trace_privacy",
+      "actual_route": "require_trace_privacy",
+      "accepted": false
+    },
+    {
+      "case_id": "scoped-completeAttemptDenominator",
+      "stage": "scoped",
+      "expected_route": "require_complete_attempt_denominator",
+      "actual_route": "require_complete_attempt_denominator",
+      "accepted": false
+    },
+    {
+      "case_id": "scoped-accepted",
+      "stage": "scoped",
+      "expected_route": "accept_candidates",
+      "actual_route": "accept_candidates",
+      "accepted": true
+    },
+    {
+      "case_id": "evaluated-firstCorrectness",
+      "stage": "evaluated",
+      "expected_route": "require_first_correctness",
+      "actual_route": "require_first_correctness",
+      "accepted": false
+    },
+    {
+      "case_id": "evaluated-corruptionAccounting",
+      "stage": "evaluated",
+      "expected_route": "require_corruption_accounting",
+      "actual_route": "require_corruption_accounting",
+      "accepted": false
+    },
+    {
+      "case_id": "evaluated-repairAccounting",
+      "stage": "evaluated",
+      "expected_route": "require_repair_accounting",
+      "actual_route": "require_repair_accounting",
+      "accepted": false
+    },
+    {
+      "case_id": "evaluated-faithfulnessAxes",
+      "stage": "evaluated",
+      "expected_route": "require_faithfulness_axes",
+      "actual_route": "require_faithfulness_axes",
+      "accepted": false
+    },
+    {
+      "case_id": "evaluated-completeCostAccounting",
+      "stage": "evaluated",
+      "expected_route": "require_complete_cost_accounting",
+      "actual_route": "require_complete_cost_accounting",
+      "accepted": false
+    },
+    {
+      "case_id": "evaluated-failureRetention",
+      "stage": "evaluated",
+      "expected_route": "require_failure_retention",
+      "actual_route": "require_failure_retention",
+      "accepted": false
+    },
+    {
+      "case_id": "evaluated-matchedBaseline",
+      "stage": "evaluated",
+      "expected_route": "require_matched_baseline",
+      "actual_route": "require_matched_baseline",
+      "accepted": false
+    },
+    {
+      "case_id": "evaluated-usefulMetric",
+      "stage": "evaluated",
+      "expected_route": "require_useful_metric",
+      "actual_route": "require_useful_metric",
+      "accepted": false
+    },
+    {
+      "case_id": "evaluated-accepted",
+      "stage": "evaluated",
+      "expected_route": "accept_selection",
+      "actual_route": "accept_selection",
+      "accepted": true
+    },
+    {
+      "case_id": "execution-authority",
+      "stage": "handedOff",
+      "expected_route": "reject_execution_authority",
+      "actual_route": "reject_execution_authority",
+      "accepted": false
+    },
+    {
+      "case_id": "handedOff-consumerAcknowledgment",
+      "stage": "handedOff",
+      "expected_route": "require_consumer_acknowledgment",
+      "actual_route": "require_consumer_acknowledgment",
+      "accepted": false
+    },
+    {
+      "case_id": "handedOff-residualClosure",
+      "stage": "handedOff",
+      "expected_route": "require_residual_closure",
+      "actual_route": "require_residual_closure",
+      "accepted": false
+    },
+    {
+      "case_id": "handedOff-descendantReferences",
+      "stage": "handedOff",
+      "expected_route": "require_descendant_references",
+      "actual_route": "require_descendant_references",
+      "accepted": false
+    },
+    {
+      "case_id": "handedOff-resultDigestBound",
+      "stage": "handedOff",
+      "expected_route": "require_bound_result_digest",
+      "actual_route": "require_bound_result_digest",
+      "accepted": false
+    },
+    {
+      "case_id": "handedOff-cleanup",
+      "stage": "handedOff",
+      "expected_route": "require_cleanup",
+      "actual_route": "require_cleanup",
+      "accepted": false
+    },
+    {
+      "case_id": "handedOff-accepted",
+      "stage": "handedOff",
+      "expected_route": "accept_closure",
+      "actual_route": "accept_closure",
+      "accepted": true
+    },
+    {
+      "case_id": "evaluate-evaluationObligations",
+      "stage": "candidatesReady",
+      "expected_route": "require_evaluation_obligations",
+      "actual_route": "require_evaluation_obligations",
+      "accepted": false
+    },
+    {
+      "case_id": "evaluate-verifierIdentity",
+      "stage": "candidatesReady",
+      "expected_route": "require_verifier_identity",
+      "actual_route": "require_verifier_identity",
+      "accepted": false
+    },
+    {
+      "case_id": "evaluate-evidenceView",
+      "stage": "candidatesReady",
+      "expected_route": "require_evidence_view",
+      "actual_route": "require_evidence_view",
+      "accepted": false
+    },
+    {
+      "case_id": "evaluate-dependenceRecord",
+      "stage": "candidatesReady",
+      "expected_route": "require_dependence_record",
+      "actual_route": "require_dependence_record",
+      "accepted": false
+    },
+    {
+      "case_id": "evaluate-calibrationRecord",
+      "stage": "candidatesReady",
+      "expected_route": "require_calibration_record",
+      "actual_route": "require_calibration_record",
+      "accepted": false
+    },
+    {
+      "case_id": "evaluate-abstentionRule",
+      "stage": "candidatesReady",
+      "expected_route": "require_abstention_rule",
+      "actual_route": "require_abstention_rule",
+      "accepted": false
+    },
+    {
+      "case_id": "evaluate-falseDecisionBounds",
+      "stage": "candidatesReady",
+      "expected_route": "require_false_decision_bounds",
+      "actual_route": "require_false_decision_bounds",
+      "accepted": false
+    },
+    {
+      "case_id": "evaluate-high-risk",
+      "stage": "candidatesReady",
+      "expected_route": "require_independent_high_risk_review",
+      "actual_route": "require_independent_high_risk_review",
+      "accepted": false
+    },
+    {
+      "case_id": "evaluate-results",
+      "stage": "candidatesReady",
+      "expected_route": "require_candidate_results",
+      "actual_route": "require_candidate_results",
+      "accepted": false
+    },
+    {
+      "case_id": "evaluate-accepted",
+      "stage": "candidatesReady",
+      "expected_route": "accept_evaluation",
+      "actual_route": "accept_evaluation",
+      "accepted": true
+    },
+    {
+      "case_id": "selected-no-verified",
+      "stage": "selected",
+      "expected_route": "stop_and_escrow",
+      "actual_route": "stop_and_escrow",
+      "accepted": true
+    },
+    {
+      "case_id": "selected-raw-score",
+      "stage": "selected",
+      "expected_route": "block_raw_score_promotion",
+      "actual_route": "block_raw_score_promotion",
+      "accepted": false
+    },
+    {
+      "case_id": "selected-receipt",
+      "stage": "selected",
+      "expected_route": "require_selection_receipt",
+      "actual_route": "require_selection_receipt",
+      "accepted": false
+    },
+    {
+      "case_id": "selected-nonclaims",
+      "stage": "selected",
+      "expected_route": "require_selection_non_claims",
+      "actual_route": "require_selection_non_claims",
+      "accepted": false
+    },
+    {
+      "case_id": "selected-accepted",
+      "stage": "selected",
+      "expected_route": "accept_stop",
+      "actual_route": "accept_stop",
+      "accepted": true
+    },
+    {
+      "case_id": "stopped-budget",
+      "stage": "stopped",
+      "expected_route": "require_budget_residual",
+      "actual_route": "require_budget_residual",
+      "accepted": false
+    },
+    {
+      "case_id": "stopped-dispute",
+      "stage": "stopped",
+      "expected_route": "require_dispute_residual",
+      "actual_route": "require_dispute_residual",
+      "accepted": false
+    },
+    {
+      "case_id": "stopped-high-risk",
+      "stage": "stopped",
+      "expected_route": "require_high_risk_review",
+      "actual_route": "require_high_risk_review",
+      "accepted": false
+    },
+    {
+      "case_id": "stopped-receipt",
+      "stage": "stopped",
+      "expected_route": "require_stop_receipt",
+      "actual_route": "require_stop_receipt",
+      "accepted": false
+    },
+    {
+      "case_id": "stopped-accepted",
+      "stage": "stopped",
+      "expected_route": "accept_handoff",
+      "actual_route": "accept_handoff",
+      "accepted": true
+    }
+  ],
+  "lean_verification": {
+    "command": "lake env lean AsiStackProofs/DeliberationRefinement.lean",
+    "exit_code": 0,
+    "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "support_state_effect": "none",
+  "external_effect": "none",
+  "residuals": [
+    "Finite authored lifecycle only; no language-model candidate, natural workload, evaluator, or planning execution ran.",
+    "The post-v2 campaign is deterministic synthetic evidence with zero fallback activation and fifteen fixed-step harms.",
+    "Verifier independence, correctness, calibration, trace faithfulness, useful metrics, costs, and residual fields are authored gates or inherited bounded records.",
+    "Digest binding establishes artifact identity, not source truth, empirical adequacy, or transfer."
+  ],
+  "non_claims": [
+    "no reasoning quality, useful-throughput, verifier, faithfulness, safety, deployment, transfer, SOTA, AGI, or ASI claim",
+    "no execution authority or chapter-core support transition",
+    "no inference from route coverage, synthetic accuracy, or green validators to empirical adequacy"
+  ]
+}

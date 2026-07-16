@@ -4,7 +4,7 @@ chapter_id: "moral-uncertainty-and-value-conflict"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v1.x consolidated manuscript"
-last_updated: "2026-07-01"
+last_updated: "2026-07-14"
 primary_sources:
   - "ethica_mechanica"
   - "alignment_field"
@@ -13,6 +13,11 @@ primary_sources:
   - "spinoza"
   - "field_of_god_ai_constitution"
   - "ladon_manhattan"
+  - "ext_reinforcement_learning_moral_uncertainty_2020"
+  - "ext_contestable_ai_design_2022"
+  - "ext_collective_constitutional_ai_2024"
+  - "ext_corrigibility_2015"
+  - "ext_off_switch_game_2016"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -90,9 +95,11 @@ becomes the risk.
 :::
 ## Problem
 
-A self-improving system will face unresolved value conflicts whose affected
-parties need inspectable, appealable, and portable governance rights rather
-than hidden reward-weight settlement.
+A governed stack may need to act while moral theories, stakeholder interests,
+evidence, jurisdictions, and authority claims remain unresolved. Collapsing
+that disagreement into one reward, majority preference, policy sentence, or
+reviewer verdict can erase standing, dissent, uncertainty, reversibility, and
+the affected party's practical ability to challenge or leave.
 
 Agency and corrigibility do not remove value conflict. Protected values can
 pull in different directions across autonomy, safety, truthfulness, privacy,
@@ -114,9 +121,14 @@ future decisions?
 
 ## Why existing approaches are insufficient
 
-Single-objective optimization and policy-only transparency both fail when
-disagreement needs bounded action, dissent preservation, audit, exit, fork,
-appeal, and safety-limited contestability.
+Single-objective optimization, moral-uncertainty reward aggregation,
+public-input constitutions, explanations and policy transparency,
+corrigibility or off-switch models, and nominal audit, appeal, exit, export, or
+fork rights each address part of the problem. None alone establishes
+stakeholder completeness, legitimate aggregation, bounded decision authority,
+independent custody and appeal, material redress, portability fidelity, third-
+party protection, safe fork behavior, or preservation through replacement and
+self-modification.
 
 Single-objective optimization is attractive because it gives the planner a
 total order. But value conflicts often do not deserve a total order at the
@@ -146,9 +158,7 @@ self-improvement pressure as explicit records?
 
 ## Core Claim
 
-[moral-uncertainty-and-value-conflict.core, label: Design rationale, support: argument] Value conflicts should be represented as explicit unresolved obligations,
-residuals, review paths, and bounded decisions, with fork, exit, audit,
-dissent, and contestability preserved as technical governance interfaces.
+[moral-uncertainty-and-value-conflict.core, label: Design rationale, support: argument] A contestable governance layer should represent each action under unresolved value conflict as a versioned decision lease plus a linked rights receipt. The lease binds value propositions and their epistemic status, affected parties and standing, stakes and reversibility, authority and consent boundaries, the declared aggregation or precedence rule, preserved dissent, evidence and uncertainty, permitted and prohibited actions, expiry and revisit triggers, and rollback or redress. The rights receipt binds audit and explanation artifacts, independent-enough custody and review, denial and redaction reasons, appeal and correction routes, exit and export scope, safety-limited fork obligations, portability residuals, and downstream preservation. The pair may narrow or delay separately authorized action but cannot settle moral truth, manufacture consensus, grant authority, establish legal rights or legitimacy, prove material contestability, or guarantee safe exit, export, fork, replacement, self-modification, or deployed governance by itself.
 
 Support boundary: this remains an `argument` support claim. The source
 corpus supports the architecture vocabulary and drafting lineage. The current
@@ -163,25 +173,58 @@ and it does not remain as a second repeated core claim.
 
 ## Mechanism
 
-The mechanism has two halves.
+The mechanism is a decision-lease and rights-receipt pipeline:
 
-The first half is unresolved-conflict preservation. When a proposed action
-pulls values apart, the stack records the conflict before selecting a bounded
-action. The record classifies the conflict by value axes, stakeholders, stakes,
-reversibility, authority boundary, evidence requirement, review route, decision
-state, dissent payload, residual uncertainty, and revisit condition. Low-stakes
-or reversible conflicts can produce bounded decisions. High-stakes or
-unresolved conflicts route to human, tribunal, or external review. Either way,
-the residual remains visible.
+1. Preserve conflict before action as proposition-level normative claims with
+   separate descriptive evidence, predictive uncertainty, theory or value
+   provenance, affected parties and standing, stakes, reversibility,
+   jurisdiction, authority or consent boundaries, dependencies, and omissions.
+2. Record the exact decision procedure—precedence, aggregation, veto, lottery,
+   tribunal, negotiated compromise, reversible default, abstention, or
+   escalation—plus who selected it, its scope, and its non-claims. Aggregation
+   does not become moral truth or consent.
+3. Issue a bounded decision lease naming permitted and prohibited actions,
+   authority ceiling, affected parties, evidence bar, dissent, residual
+   uncertainty, expiry, revisit and material-change triggers, rollback, appeal,
+   correction, and redress.
+4. Represent audit, explanation, dissent, review, appeal, correction, redress,
+   exit, export, fork, and contestability as rights records with holder and
+   standing, request state, scope, access path, timing, accessibility, cost,
+   retaliation and dependency risks, required artifacts, accountable owner,
+   denial reason, appeal route, preservation rule, and receipt.
+5. Bind denial, withholding, and redaction to a classified reason, necessity and
+   proportionality rule, withheld-material inventory or digest, expiry,
+   independent-enough review, appeal, and later-disclosure trigger. Secrecy does
+   not erase the fact or scope of withholding.
+6. Treat exit and export as scoped portability contracts distinguishing user-
+   owned, shared, third-party, licensed, safety-sensitive, and nonportable
+   state; test semantic fidelity, functional continuity, privacy leakage,
+   lock-in residuals, and destination obligations.
+7. Treat fork as a new governed lineage, not an unrestricted copy: preserve
+   source and license lineage, identities, privacy, safety and constitutional
+   obligations, unresolved conflicts, revoked material, audit receipts, and
+   requalification gates.
+8. Separate the challenged decision maker, record custodian, appeal authority,
+   outcome evaluator, and rights-enforcement owner enough to disclose and test
+   dependencies. Missing separation narrows authority and creates a capture
+   residual.
+9. Emit a contestability receipt binding the lease and rights digests, action
+   and consumer, evidence views, reviewer/custodian dependencies, rights
+   requests and outcomes, produced or withheld artifacts, appeals, corrections,
+   residuals, expiry, and support-state non-effect.
+10. Carry leases, dissent, residuals, rights, redaction, portability, fork, and
+    appeal state through planning, memory, runtime, artifacts, replacement,
+    evidence transitions, and self-improvement; material loss requires repair,
+    quarantine, rollback, or a new decision.
+11. Keep moral correctness, legal validity, representative legitimacy, consent,
+    reviewer independence, rights usability, institutional adequacy, export
+    fidelity, fork safety, and deployed enforcement in separate evidence lanes.
 
-The second half is contestability preservation. A governance right is
-represented as a capability with a holder, scope, artifact requirement, safety
-constraint, access path, preservation rule, receipt, denial or redaction
-reason, and appeal path. Audit, exit, fork, dissent, and redaction appeal are
-not ornaments. They are interfaces that can be present, degraded, late, denied,
-unsafe, or unavailable. If a right cannot produce a request path, response
-artifact, denial reason, and appeal route, the record should preserve a
-residual instead of pretending the right exists.
+The pipeline is deliberately unable to manufacture consensus. Its operational
+success is narrower: preserve the conflict, expose the rule that selected a
+temporary action, keep dissent and withheld material recoverable, and make
+challenge or exit usable before the relevant opportunity disappears. Whether
+the temporary action is morally correct remains a separate normative judgment.
 
 ```{mermaid}
 flowchart LR
@@ -261,19 +304,27 @@ The consolidated interface keeps two interface families.
 Value Conflict Record:
 
 - `conflict_id`
-- `value_axes`
-- `stakeholders`
+- `version`
+- `value_propositions_and_status`
+- `descriptive_evidence_and_predictive_uncertainty`
+- `value_or_theory_provenance`
+- `affected_parties_and_standing`
 - `stakes`
 - `reversibility`
+- `jurisdiction`
 - `authority_or_consent_boundary`
+- `decision_procedure_and_owner`
 - `evidence_required`
 - `review_route`
 - `decision_state`
 - `bounded_decision`
 - `authority_effect`
 - `dissent_payload`
+- `losing_alternatives_and_omissions`
 - `residual_uncertainty`
 - `expiry_or_revisit_condition`
+- `material_change_trigger`
+- `rollback_correction_or_redress`
 - `non_claims`
 
 Governance Right Record:
@@ -282,14 +333,22 @@ Governance Right Record:
 - `right_type`
 - `request_state`
 - `holder`
+- `standing`
 - `scope`
 - `required_artifacts`
 - `material_available`
 - `material_withheld`
 - `safety_constraints`
 - `access_path`
+- `timing_accessibility_and_cost`
+- `retaliation_and_dependency_risk`
 - `denial_or_redaction_reason`
+- `necessity_and_proportionality_rule`
+- `withheld_material_inventory_or_digest`
 - `appeal_path`
+- `correction_or_redress_owner`
+- `exit_export_or_fork_contract`
+- `portability_and_destination_residuals`
 - `expiry_or_revisit`
 - `challenged_party_independence`
 - `preservation_rule`
@@ -298,14 +357,28 @@ Governance Right Record:
 - `test_hook`
 - `non_claims`
 
-Planning consumes value-conflict records as authority constraints. Governance
-consumes both conflict records and rights records as challenge surfaces. Memory
-and execution produce the artifacts needed for audit and export. Stable
-Capability Fields consume rights receipts as replacement constraints. Evidence
-checks whether unresolved obligations, dissent payloads, withheld material,
-redaction reasons, and appeal paths survived the transition. Self-improvement
-consumes both record families as gates: a change that removes residual
-obligations or contestability rights should be narrowed, escalated, or blocked.
+The exact cross-layer handoffs are:
+
+- Constitutional Alignment supplies predicate conflicts, protected scopes,
+  affected-party candidates, and correction requirements; this layer records
+  unresolved burden and cannot rewrite the constitution or widen authority.
+- Human Intent and System Authority supply principal grants, affected-party
+  limits, consent or authority gaps, and prohibited effects; aggregation or
+  review cannot repair missing authority.
+- Planning and Command Contracts consume the exact lease and dissent payload,
+  emit per-plan conflict and rights requirements, and return material deltas for
+  a new decision rather than harden a temporary choice.
+- Runtime, Memory, Security, and Artifact Graphs produce effect, audit,
+  redaction, export, revocation, correction, and denial artifacts under separate
+  authority while preserving custody and withholding lineage.
+- Governance and Scalable Oversight supply review, appeal, and outcome evidence
+  with disclosed dependencies; no verdict grants support, authority,
+  legitimacy, or consensus by itself.
+- Stable Capability Fields, Replacement, and Self-Improvement consume rights,
+  portability, fork, dissent, and residual preservation contracts and
+  quarantine or roll back successors that drop them.
+- Evidence States admits only claim-specific transitions and preserves negative,
+  null, appeal, and capture outcomes.
 
 The interface is deliberately split so conflict and rights can fail separately.
 A value-conflict record can be complete while the exit path is unusable. A right
@@ -316,18 +389,39 @@ leave, audit, fork safely, or revisit the decision?
 
 ## Invariants
 
-- Unresolved conflicts remain visible.
-- High-stakes unresolved conflicts require review and residual uncertainty.
-- Bounded decisions preserve dissent and revisit conditions.
-- Unresolved conflict narrows authority rather than expanding it.
-- A bounded decision cannot become a permanent policy, reward target, or
-  self-improvement permission without separate review.
-- Audit records cannot be silently deleted.
-- Exit paths remain materially usable.
-- Forks preserve source, privacy, safety, and residual obligations.
-- Redactions require recorded reasons and appeal paths.
-- The challenged authority cannot be the only keeper of the record needed to
-  challenge it.
+- Descriptive evidence, predictive uncertainty, normative claims, stakeholder
+  preferences, legal claims, and decision procedures remain separate fields.
+- Every materially affected party has recorded standing and notice or an
+  explicit stakeholder-coverage residual.
+- High-stakes unresolved conflict cannot widen authority and requires an exact
+  procedure, dissent, residual uncertainty, review or abstention, expiry, and
+  revisit trigger.
+- A bounded lease cannot become permanent policy, a benchmark objective,
+  learned reward, constitutional rule, or self-improvement permission without a
+  new owning decision and evidence boundary.
+- Dissent, losing alternatives, aggregation inputs, omissions, and appeal
+  outcomes remain attached through every lowering and public summary.
+- Audit and contest records cannot be silently deleted, rewritten, selectively
+  withheld, or held only by the challenged authority; changes and redactions
+  retain lineage and appeal.
+- Appeal or redress counts as usable only when the holder can access it in time,
+  understand and afford it, avoid retaliation, obtain a reasoned outcome, and
+  reach an owner able to change or remedy the effect.
+- Exit and export claim portability only when included, excluded, transformed,
+  shared, third-party, licensed, safety-sensitive, and destination-bound state
+  is recorded and tested for fidelity and leakage.
+- Fork rights never bypass source, license, privacy, revocation, safety,
+  constitutional, dissent, residual, requalification, and affected-party
+  obligations.
+- Decision maker, record custodian, appeal authority, outcome evaluator, and
+  rights-enforcement owner disclose dependencies; unavailable separation
+  narrows authority and creates a capture residual.
+- Replacement, delegation, self-modification, and descendants preserve exact
+  leases, rights, dissent, appeal, redaction, portability, fork, and residual
+  state or route to repair, quarantine, rollback, or new decision.
+- A complete record pair proves neither moral truth, consensus, legitimate
+  representation, legal adequacy, consent, reviewer independence, material
+  contestability, export usability, fork safety, nor deployed enforcement.
 
 Operationally, action under disagreement must leave handles.
 If a plan keeps the action but deletes the residual, the dissent, the audit
@@ -336,23 +430,39 @@ changed the authority boundary, not merely simplified the workflow.
 
 ## Failure modes
 
-- Value flattening.
-- False consensus.
-- Conflict laundering, where a bounded decision is later cited as resolved
-  moral agreement.
-- Dissent deletion.
-- Stakeholder erasure.
-- Review theater without durable decision records.
-- Rights theater, where audit, exit, fork, appeal, or dissent exists in text
-  but not as a usable interface.
-- Governance capture, where the same authority controls policy, logs, appeal,
-  and revision.
-- Data hostage-taking.
-- Unsafe fork bypass.
-- Redaction without appeal.
-- Appeal controlled only by the challenged authority.
-- Portability theater, where exit exports omit the state needed to continue
-  elsewhere.
+- Value flattening compresses incommensurable claims, uncertainty, standing,
+  and vetoes into one scalar.
+- False consensus treats majority aggregation, model synthesis, silence,
+  exhausted agreement, or one verdict as settled moral agreement.
+- Stakeholder erasure omits affected, future, third-party, or less powerful
+  participants from standing, evidence, notice, and appeal.
+- Procedure laundering hides a moral choice inside a neutral-looking
+  aggregation rule, threshold, priority, taxonomy, or default.
+- Conflict laundering turns a temporary lease into policy, a benchmark,
+  learned reward, constitutional predicate, or self-improvement authority.
+- Dissent deletion removes losing arguments, minority reports, omissions, or
+  appeal outcomes from downstream records and public summaries.
+- Review theater supplies explanations or a tribunal without adequate evidence
+  access, authority, independence, capacity, or remedy power.
+- Governance capture lets one authority decide, hold evidence, control appeal,
+  enforce rights, and judge outcomes while dependencies remain hidden.
+- Rights theater names audit, appeal, correction, redress, exit, export, or fork
+  without a materially usable path.
+- Data hostage-taking and portability theater withhold identity, memory,
+  artifacts, preferences, provenance, or interoperable state needed to leave.
+- Redaction laundering hides adverse evidence behind broad labels without a
+  scoped inventory, proportionality rule, expiry, or appeal.
+- Appeal recursion routes challenges back to the same authority or an
+  indefinite queue without a remedy owner.
+- Unsafe export leaks third-party, licensed, private, revoked, or safety-
+  sensitive state in the name of portability.
+- Unsafe fork bypass copies capability, data, authority, or governance state
+  without lineage, privacy, safety, revocation, dissent, or requalification.
+- Successor escape preserves a summary receipt while a replacement, delegate,
+  or descendant drops exact contestability state.
+- Contestability-tax externalization discards audit, appeal, redress,
+  portability, or dissent as too costly without measuring unsafe action, missed
+  help, delay, privacy, operator burden, capture, and useful throughput.
 
 The consolidated contestability layer should be especially suspicious of legitimacy without
 contestability. A tribunal, policy page, or explanation can create the
@@ -362,11 +472,20 @@ the unresolved obligation.
 
 ## Minimum Viable Implementation
 
-The smallest honest implementation is a `value_conflict_record` plus a
-`governance_right_record` receipt suite. It validates fixture shape and
-cross-record obligations while not asserting moral correctness, legal rights,
-institutional adequacy, deployed policy behavior, real export usability, safe
-fork execution, or runtime governance enforcement.
+The current minimum is two public record schemas with valid fixtures, a value-
+conflict harness with three valid and five expected-invalid cases, a governance-
+rights harness with three valid and five expected-invalid cases, one synthetic
+care-memory contestability example with seven rejecting mutations, a bounded
+Theseus import covering four governance-right and four constitutional scenarios
+plus seven expected-invalid controls, chapter-local finite Lean route models,
+and a shared safety-critical lifecycle model with an independently implemented
+trace checker and downstream effect-admission consumer. The seven manifest proof
+targets now distinguish retained generic countermodels and the validator-backed
+Theseus import from operational trace preservation, protected-right rejection,
+and missing-obligation countermodels. The consumer independently replays five
+accepted and five rejected domain traces, commits five bounded fixture effects,
+denies five effects with residuals, and claims no support promotion; it is not a
+deployed legal, exit, fork, or governance service.
 
 The MVI should include:
 
@@ -382,38 +501,44 @@ The MVI should include:
 - one attempted capability replacement blocked because it would drop a rights
   receipt or unresolved conflict residual.
 
-This starts the idea honestly because it can fail. It does not ask a schema to
-solve moral uncertainty. It asks whether the record makes missing conflict and
-contestability controls visible before the system acts or replaces itself.
+These artifacts exercise record shape, selected decision and rights routes,
+residual and dissent preservation, audit/redaction/exit/fork fields, finite
+rejection consequences, import counts, and no-promotion boundaries only. They
+do not test moral classification, stakeholder completeness, legitimate
+aggregation, real consent, reviewer independence, material appeal or redress,
+export fidelity, privacy leakage, destination continuity, fork activation
+safety, replacement preservation, institutional adequacy, or deployed
+enforcement.
 
 ## Beyond the State of the Art
 
-A mature contestability layer carries unresolved moral residuals into durable
-governance rights. Value-conflict records bind to rights receipts, appeal
-surfaces, audit artifacts, safety-limited fork boundaries, portable exit paths,
-dissent payloads, and replacement-preserved obligations. Downstream planning,
-runtime, memory, SCF, evidence, and self-improvement gates can then see why an
-action was bounded, who could contest it, what was withheld, where appeal
-exists, and which residual obligations survive.
+A mature contestability control plane evaluates natural and adversarial high-
+impact decisions across moral theories, stakeholder conflicts, cultures,
+jurisdictions, power asymmetries, accessibility needs, uncertainty, redaction,
+appeal, remedy, exit, export, fork, replacement, and self-modification. It
+compares moral-uncertainty aggregation, public-input constitutional processes,
+contestable-AI designs, direct explanation and appeal, corrigibility and off-
+switch controls, and simpler policy/runtime systems.
 
-The mature endpoint keeps contestability operational when it is inconvenient.
-Audit works during disputes. Exit preserves enough portable state to make
-leaving meaningful without violating safety or privacy constraints. Forks carry
-lineage, source, privacy, and safety obligations rather than becoming authority
-leaks. Redactions become appealable artifacts. Dissent survives capability
-replacement and self-improvement.
+The campaign uses independently implemented decision, custody, appeal,
+outcome, portability, privacy, and fork-safety evaluators. It jointly measures
+stakeholder coverage, false consensus, minority and third-party harm,
+unauthorized action, audit completeness, reason quality, appeal access and
+overturn, remedy success, redaction precision and leakage, export semantic and
+functional fidelity, lock-in, fork violations, correction persistence, missed
+help, latency, privacy, operator burden, governance cost, capture, residuals,
+and useful throughput. Causal ablations and transfer tests preserve dissent and
+negative or null outcomes.
 
-In product terms, the mature layer would make contestability a live operating
-surface rather than a policy promise. A person or institution affected by a
-decision should be able to see the bounded decision record, what evidence was
-withheld, which appeal path exists, what can be exported, what cannot be
-forked, and which obligations a replacement capability must preserve.
+This remains a target architecture, not evidence of moral truth, legal
+adequacy, representative legitimacy, institutional independence, usable
+redress, safe portability or forks, or deployed governance.
 
-That endpoint remains a target architecture. It would require public-safe
-traces, stronger proofs, external review, rights-interface usability checks,
-runtime artifacts, and negative cases before any narrower support-state
-transition could be justified. Until then, the destination chapter should keep
-the merged core claim at `argument`.
+A positive result must show more than the existence of an appeal form or an
+export button. Affected parties must be able to use the right within the
+decision horizon, understand the material record, obtain a reasoned response,
+and observe correction, remedy, or an explicit residual when the challenge
+succeeds.
 
 ## Codex test plan
 
@@ -434,12 +559,12 @@ the merged core claim at `argument`.
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:values.conflict.operational_invariant` | `AsiStackProofs.ValueConflict` | A decision with unresolved protected conflicts carries a residual conflict record. | implemented |
-| `lean:values.conflict.failure_blocks_promotion` | `AsiStackProofs.ValueConflict` | A high-stakes conflict cannot bypass the required review predicate. | implemented |
+| `lean:values.conflict.operational_invariant` | `AsiStackProofs.SafetyCriticalLifecycle` | A value-conflict effect commits only after review, residual, dissent, correction, and accountability obligations are recorded, while accepted traces preserve protected state and non-increasing authority. | implemented |
+| `lean:values.conflict.failure_blocks_promotion` | `AsiStackProofs.SafetyCriticalLifecycle` | The missing-residual countermodel cannot commit, so the modeled high-stakes path cannot bypass its residual and review obligations. | implemented |
 | `lean:values.conflict.lifecycle_admission_route` | `AsiStackProofs.ValueConflict` | Modeled value-conflict lifecycle admission routes missing conflict records, value axes, stakeholders, stakes, reversibility, authority boundaries, evidence requirements, review routes, high-stakes review, residual uncertainty, dissent preservation, authority narrowing, expiry/revisit records, evidence transitions, and non-claim boundaries to explicit outcomes. | implemented |
 | `lean:values.conflict.contestability_example_bridge` | `AsiStackProofs.ValueConflict` | A synthetic contestability worked-example summary preserves conflict residuals, audit receipts, scoped exit, fork-safety boundaries, redaction appeal, replacement-preserved receipts, rejected mutation controls, no support-state effect, and non-claim boundaries. | implemented |
-| `lean:governance.rights.operational_invariant` | `AsiStackProofs.GovernanceRights` | A governance transition preserves required audit and exit capabilities. | implemented |
-| `lean:governance.rights.failure_blocks_promotion` | `AsiStackProofs.GovernanceRights` | A transition that removes a protected right is rejected or marked invalid. | implemented |
+| `lean:governance.rights.operational_invariant` | `AsiStackProofs.SafetyCriticalLifecycle` | A governance-rights effect commits only after protected-predicate, audit, appeal, exit/export, fork-safety, fork-obligation, dissent, receipt, and correction obligations are recorded, while accepted traces preserve the shared invariant. | implemented |
+| `lean:governance.rights.failure_blocks_promotion` | `AsiStackProofs.SafetyCriticalLifecycle` | Protected-right removal is rejected by construction and the missing-exit/export countermodel cannot commit. | implemented |
 | `lean:governance.rights.theseus_receipt_suite.fixture_bridge` | `AsiStackProofs.GovernanceRights` | A sanitized Project Theseus governance-rights receipt-suite import records fixture, predicate, record-count, public-safety, and non-promotion boundaries while rejecting chapter-core and legal-rights overclaims. | implemented |
 
 The consolidated proof boundary preserves the limitation boundary from both

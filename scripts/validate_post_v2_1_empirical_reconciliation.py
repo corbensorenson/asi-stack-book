@@ -74,8 +74,11 @@ def validate(data: dict) -> list[str]:
         errors.append("core disposition summary drifted")
     chapter_rows = [chapter for part in manifest.get("parts", []) for chapter in part.get("chapters", [])]
     chapters = {chapter["id"]: chapter for chapter in chapter_rows}
-    if len(chapter_rows) != 54 or len(chapters) != 54:
-        errors.append("chapter count changed; no new chapter was warranted")
+    if len(chapter_rows) != 55 or len(chapters) != 55:
+        errors.append("live chapter count drifted from the authorized 55-chapter successor")
+    activation = data["active_status"].get("activation_baseline", {})
+    if activation.get("active_chapter_count") != 54 or activation.get("proof_target_count") != 298:
+        errors.append("historical post-v2.1 54-chapter/298-target baseline drifted")
     for chapter_id, heading in CHAPTER_HEADINGS.items():
         text = data["chapter_texts"].get(chapter_id, "")
         if text.count(heading) != 1 or "post-v2.1" not in text.lower():
@@ -83,13 +86,13 @@ def validate(data: dict) -> list[str]:
         if chapter_id not in data["appendix_c"] or chapter_id not in data["evidence_plan"]:
             errors.append(f"{chapter_id}: Appendix C or evidence-plan routing missing")
     vector_by_claim = {row["claim_id"]: row for row in vectors.get("vectors", [])}
-    if vectors.get("summary", {}).get("summary_support_states") != {"argument": 54}:
+    if vectors.get("summary", {}).get("summary_support_states") != {"argument": 55}:
         errors.append("evidence vectors launder core support")
     # The completed post-v2.1 result originally covered 27 adjacent claims;
     # the later QCSA and post-v2.3 quality-floor reconciliations legitimately
     # add adjacent local replay coverage without changing support,
     # independence, or transfer state.
-    if vectors.get("summary", {}).get("dimension_state_counts", {}).get("reproducibility") != {"adjacent_local_replay": 33, "not_demonstrated_for_claim": 21}:
+    if vectors.get("summary", {}).get("dimension_state_counts", {}).get("reproducibility") != {"adjacent_local_replay": 33, "not_demonstrated_for_claim": 22}:
         errors.append("evidence-vector replay summary drifted")
     if any(row.get("dimensions", {}).get("independence", {}).get("state") != "internal_only" or row.get("dimensions", {}).get("transfer_distance", {}).get("state") != "not_established" for row in vectors.get("vectors", [])):
         errors.append("an evidence vector overstates independence or transfer")
@@ -120,7 +123,10 @@ def validate(data: dict) -> list[str]:
             errors.append(f"{source_id}: generated Appendix H or C route missing")
     if "2026-07-11 - Post-v2.1 empirical execution and reconciliation" not in data["changelog"]:
         errors.append("changelog reconciliation entry missing")
-    if "no new lean theorem" not in data["reconciliation"].lower() or data["proof_manifest"].get("proof_target_count") != 298:
+    if (
+        "no new lean theorem" not in data["reconciliation"].lower()
+        or data["proof_manifest"].get("proof_target_count") != activation.get("proof_target_count")
+    ):
         errors.append("proof/no-new-theorem boundary drifted")
     if outcome.get("support_state_effect") != "none" or ledger.get("summary", {}).get("promote") != 0:
         errors.append("outcome or ledger invents promotion")
@@ -130,6 +136,7 @@ def validate(data: dict) -> list[str]:
 def main() -> None:
     data = {
         "ledger": load(LEDGER), "status": load(STATUS), "outcome": load(OUTCOME),
+        "active_status": load("roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json"),
         "manifest": load("book_structure.json"), "vectors": load("evidence_quality/core_claim_vectors.json"),
         "source_inventory": load("sources/source_inventory.json"), "proof_manifest": load("proofs/proof_manifest.json"),
         "transitions": {path.name: json.loads(path.read_text()) for path in sorted((ROOT / TRANSITION_DIR).glob("*.json"))},
@@ -169,7 +176,7 @@ def main() -> None:
         for error in errors:
             print(f" - {error}")
         raise SystemExit(1)
-    print("Post-v2.1 reconciliation passed: 6 bounded transitions, 14 core no-change decisions and chapter owners, 11 residual dispositions, 19 modern-source routes, 54 argument-state vectors, no new chapter or Lean target, and 12 rejecting mutations.")
+    print("Post-v2.1 reconciliation passed: 6 bounded transitions, 14 core no-change decisions and chapter owners, 11 residual dispositions, 19 modern-source routes, preserved 54-chapter/298-target historical lineage, 55 live argument-state vectors and 298 current targets after reviewed consolidation, no theorem invented by the historical cycle, and 12 rejecting mutations.")
 
 
 if __name__ == "__main__":

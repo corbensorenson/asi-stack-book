@@ -3,8 +3,8 @@ title: "Artifact Steward Agents and Living Project Governance"
 chapter_id: "artifact-steward-agents-and-living-project-governance"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
-draft_maturity: "chapter draft"
-last_updated: "2026-06-30"
+draft_maturity: "v0.3 manuscript draft"
+last_updated: "2026-07-15"
 primary_sources:
   - "viea"
   - "talos"
@@ -32,9 +32,9 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records exact passage-reviewed mappings for all assigned Artifact Steward Agents sources; support remains at argument until a steward bot, treasury executor, event-taint workflow, contributor-ledger service, governance runner, release gate, sunset protocol, or behavioral tests exist."
-  - "Record-shape schemas, valid fixtures, narrow finite Lean predicates, finite steward lifecycle, contribution-ledger, and federation-contract route envelopes, the benchmark anti-Goodhart harness's synthetic release evidence/approval handoff, and the deterministic public-safe Artifact steward lifecycle probe are implemented; no steward bot, treasury policy engine, event-taint workflow, governance system, contributor-ledger service, project federation harness, release runner, or sunset protocol has been executed from this repository."
-  - "External tooling and governance sources are reviewed as adjacent substrate/risk references only; they do not prove the ASI Stack steward design or any safety, legal, funding, governance, or capture-resistance property."
+  - "No natural multi-project campaign has compared a bounded steward against strong human-maintained, ordinary automation, workflow-platform, and no-steward baselines under frozen missions, authorities, workloads, budgets, release criteria, sunset criteria, and complete success and failure denominators."
+  - "No real event-taint, prompt-injection, protected-branch, credential, treasury, compute-rental, contributor, governance-capture, federation, release, rollback, appeal, fork or exit, maintainer-continuity, or sunset campaign jointly measures useful throughput, governance quality, false action and false blocking, recovery, cost, and authority leakage."
+  - "No independent maintainer, contributor, treasurer, security evaluator, governance institution, project, or transfer environment has reproduced the record-level results or shown that stewardship improves continuity without ownership, evidence, funding, release, or governance capture."
 ---
 
 ## Chapter status
@@ -44,7 +44,8 @@ open_evidence_gaps:
 | Chapter ID | `artifact-steward-agents-and-living-project-governance` |
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
-| Last updated | 2026-06-30 |
+| Manuscript maturity | v0.3 manuscript draft |
+| Last updated | 2026-07-15 |
 | Primary source records | `viea`, `talos`, `planforge`, `vcm_public`, `spinoza`, `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `tokenmana`, `coherence_exchange`, `project_theseus_whitepaper`, `theseus_operator_os`, `scf`, `field_of_god_ai_constitution`, plus external source notes for GitHub webhooks, self-hosted runners, OpenZeppelin Governor, Open Collective, GitHub Sponsors, Akash, Golem, agentic workflow injection, and DAO delegation concentration |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -87,7 +88,7 @@ This governance layer matters because the living book itself is an artifact that
 
 ## Core Claim
 
-[artifact-steward-agents-and-living-project-governance.core, label: Design rationale, support: argument] Every durable artifact should be able to carry a bounded steward agent that preserves mission, memory, roadmap, budget, contributors, compute, evidence, governance, and sunset policy across the artifact lifecycle while acting only through explicit work contracts, verification gates, treasury limits, contribution ledgers, and governance rules.
+[artifact-steward-agents-and-living-project-governance.core, label: Design rationale, support: argument] Artifact Steward Agents and Living Project Governance owns a project-, artifact-, mission-, owner-, authority-, roadmap-, work-contract-, event-, treasury-, compute-, contributor-, evidence-, governance-, release-, federation-, sunset-, consumer-, environment-, and time-specific **Artifact Steward Continuity Lease**: it may observe, propose, prepare, coordinate, execute, reverse, archive, or retire only through a versioned charter, taint-aware intake, scoped work contracts, separated contribution ledgers, bounded treasury and compute policy, verification and release gates, appeal and fork or exit paths, effect-complete rollback, and explicit sunset authority; it never acquires ownership, governance legitimacy, evidence authority, funding rights, release authority, legal standing, or permission from useful motion, a green workflow, a vote, a balance, a score, a fixture, a theorem, or its own prior action.
 
 The claim is a design claim. The current support state is `argument`. It does not say that every project should immediately deploy an autonomous agent with funds. It says that durable artifacts need a steward record and a bounded steward process, and that AI can help only if authority, money, compute, evidence, and governance remain explicit.
 
@@ -135,6 +136,36 @@ flowchart TD
 
 The steward's normal action is proposal, not unilateral execution. It may draft work, prepare evidence, request review, run allowed checks, and coordinate accepted contracts. It may not seize ownership, merge protected branches, spend beyond policy, rewrite governance, alter protected source records, change claim support states, or continue a dead project without explicit authority.
 
+### Eighteen-stage continuity lifecycle
+
+The continuity lease (1) freezes artifact, mission, owners, affected parties,
+non-goals, protected principles, license, jurisdiction, consumers, environments,
+success, and sunset criteria; (2) binds authority, roles, delegations,
+separation, approvals, appeals, fork and exit, emergency powers, and forbidden
+self-ratification; (3) ingests project events with identity, provenance,
+signature, trust, taint, injection, and review state; (4) versions project
+memory; (5) compiles goals into dependency-aware scoped work contracts; and (6)
+dispatches humans, agents, hives, runners, rented compute, reviewers, and
+maintainers without transferring authority.
+
+It then (7) budgets treasury, compute, storage, sponsorship, grants, bounties,
+operations, reserves, payments, and externalities; (8) executes allow-listed,
+least-privilege, time-bounded, logged, reversible actions; (9) verifies work
+against contract, evidence, security, privacy, regression, cost, residual, and
+acceptance gates; (10) separates authorship, review, evidence, compensation,
+reputation, governance, conflict, and correction ledgers; (11) builds exact
+release candidates; (12) routes governance proposals with notice, delay,
+quorum, conflict, guardian, appeal, audit, fork, and exit controls; and (13)
+federates only through independently rejectable contracts and evidence bundles.
+
+Finally, it (14) monitors mission fit, usefulness, continuity, false action and
+blocking, finance, resources, security, injection, capture, opacity, incidents,
+and residual age; (15) freezes, revokes, contains, rotates, rolls back, corrects,
+notifies, and reopens governance after incidents; (16) gates every project and
+autonomy mode; (17) stops ordinary work and resolves obligations through
+continuation, narrowing, transfer, fork, archive, deletion, or retirement when
+sunset triggers; and (18) expires the lease after any material change.
+
 ## Lifecycle
 
 The steward lifecycle has stages. Inception creates the charter: mission, non-goals, license, governance model, initial budget, compute policy, evidence policy, success criteria, and sunset criteria. Bootstrap creates the repository or artifact home, roadmap, issue templates, contribution rules, source matrix, release checklist, and first work contracts. Build decomposes milestones, assigns bounded work, runs allowed checks, requests review, and updates project memory. Release freezes candidates, runs gates, signs or records artifacts where relevant, writes release notes, publishes only through approved paths, and opens residuals. Maintenance triages bugs, monitors dependencies, recruits reviewers, updates docs, and preserves institutional memory. Governance proposes rule changes, records votes or maintainer approvals, audits capture risk, and preserves fork/exit/appeal paths. Decline or sunset reduces compute, stops nonessential spending, preserves critical artifacts, transfers maintainership if possible, and archives the project in a recoverable state.
@@ -168,6 +199,27 @@ The treasury should have the same explicitness. A budgeted steward can be useful
 The steward can be a treasurer's clerk, not the treasury's sovereign. The policy record is the actuator boundary.
 
 ## Interfaces
+
+Twelve ownership boundaries keep project continuity from becoming project
+sovereignty. Intent, constitutional, moral-uncertainty, and authority layers own
+mission legitimacy, rights, consent, appeal, and authority ceilings. Planning,
+compilation, and Labor OS own task semantics. VCM, context transactions,
+procedural memory, and artifact graphs own memory, taint, lineage, replay, and
+revocation. Runtime, Security, SCIF, Supply Chain, and Weight Custody own
+least-privilege execution, credentials, dependencies, artifacts, and protected
+assets. Evidence, claims, Spinoza, executable specifications, and Lean own
+evidence and proof semantics. Benchmarks, adversarial evaluation, assurance,
+thresholds, readiness, and residual escrow own evaluation and promotion.
+
+Policy Optimization, Data Engines, and Capability Replacement own learning,
+data, updates, and capability rollback. Resource Economics, treasury,
+sponsorship, fiscal hosting, and compute providers expose budgets and costs
+without minting authority. Contribution and governance systems own credit,
+compensation, representation, voting, delegation, conflict, quorum, appeal,
+fork, and exit. Hives, CI, nodes, and federated projects accept or reject scoped
+contracts. Incident, release, publication, archive, and sunset authorities own
+external and terminal mutations. The Living Book records only adjudicated,
+public-safe history and cannot turn maintenance activity into proof.
 
 VIEA supplies the artifact discipline. Important responses become durable artifacts, repeated work becomes tools, claims receive support states, failures become residuals, and delivered work feeds future improvement. An artifact steward is the project-level operator of that discipline.
 
@@ -240,6 +292,18 @@ The near-term build path should stay conservative:
 
 The steward must make human agency more visible, not less. A project that can be operated only through the steward has created an AI maintainer monopoly. The steward should preserve human-readable maps, release notes, work contracts, decision logs, and appeal paths so the project remains understandable without asking the steward for permission.
 
+The full invariant set adds exact action scope; durable and independently
+inspectable charters; no self-authorization from plans, outputs, prior actions,
+workflows, votes, balances, scores, fixtures, or theorems; identity- and
+provenance-bound event taint; least-authority dispatch; prospective resource
+caps; separate contribution ledgers; independent evidence, readiness, legal,
+governance, finance, and release owners; action-specific protected-asset
+authority; artifact-bound release evidence; complete governance and action
+history; human-operable maintenance; joint usefulness, burden, capture,
+security, recovery, latency, and cost monitoring; effect-complete rollback;
+sunset blocking; and the rule that record checks prove only their exact finite
+boundary.
+
 ## Failure modes
 
 Mission drift is the central failure. A steward may optimize open issues closed, PRs merged, stars gained, benchmarks increased, or funds spent while the artifact's purpose decays. Mission discipline comes from a durable charter, non-goals, periodic mission review, and evidence that connects activity to purpose.
@@ -256,7 +320,27 @@ AI maintainer monopoly is the usability failure. Humans stop understanding the p
 
 Zombie continuation is the death-protocol failure. The steward keeps generating activity after the project has no users, maintainers, funds, or coherent mission. The sunset protocol uses review, archive mode, transfer, fork, or replacement criteria.
 
+The complete failure inventory also covers activity Goodhart, authority
+laundering, credential and protected-asset capture, sybil treasury and compute
+drain, evidence and release laundering, planning and contract theater,
+federation trust laundering, human rubber-stamping, rollback theater, incident
+concealment, sunset evasion, captured or premature sunset, cost and burden
+externalization, and unsupported transfer. These failures remain distinct: a
+project can produce useful work while losing legitimacy, preserve governance
+while leaking credentials, restore a branch while external effects persist, or
+close issues while its mission decays.
+
 ## Minimum Viable Implementation
+
+The exact current minimum is seven schema-and-fixture record families;
+sixteen Lean declarations derived from seven hand-authored finite predicates
+or route functions; one deterministic public-safe lifecycle probe with two
+valid routes and six expected-invalid controls; and one adjacent synthetic
+release evidence-and-approval handoff. No steward bot, real event intake,
+treasury or compute executor, contributor service, governance runner,
+federation harness, protected-branch action, release runner, sunset protocol,
+natural project workload, independent reproduction, deployment, or
+chapter-core support effect exists.
 
 The first implementation can be a repository-local steward with no spending authority:
 
@@ -276,6 +360,22 @@ The repository also now contains `treasury_policy_record.schema.json` and `event
 The repository also contains the Artifact steward lifecycle probe in `docs/artifact_steward_lifecycle_probe.md` and `experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json`. The probe checks `valid_clean_release_review_proposal`, `valid_sunset_review_route`, and expected-invalid routes for `invalid_tainted_event_without_review`, `invalid_over_policy_treasury_spend`, `invalid_contribution_governance_laundering`, `invalid_unscoped_federation_contract`, `invalid_release_without_gate_evidence`, and `invalid_sunset_criteria_ordinary_work`. This is a no steward-bot, treasury-executor, event-taint-workflow, contributor-ledger, governance-runner, project-federation, release-runner, sunset-protocol, or support-state-promotion claim.
 
 ## Beyond the State of the Art
+
+### Argument-exit campaign
+
+Exiting argument support requires natural, heterogeneous, months-long project
+workloads with frozen mission and authority charters and matched strong human-
+maintained, ordinary-automation, workflow-platform, and no-steward baselines.
+The campaign must exercise real tainted events and injection, scoped dispatch,
+protected branches and credentials, treasury and rented compute, contributor
+and compensation ledgers, governance proposals and capture pressure,
+federation, release, incident containment, effect-complete rollback, appeal,
+fork or exit, maintainer handoff, and genuine sunset decisions. It must jointly
+measure useful throughput, quality, false action and blocking, maintainer
+burden, legitimacy, concentration, security, recovery, continuity, latency,
+and total cost. Independent maintainers, contributors, treasurers, security
+evaluators, governance institutions, projects, legal and funding regimes, and
+transfer environments must reproduce every terminal outcome.
 
 A durable-artifact stack ultimately needs a project-lifecycle operating system. The steward would not be a project owner, treasurer, maintainer monopoly, or autonomous manager with implied rights. It would be a bounded continuity service that keeps mission, memory, roadmap, work, funds, compute, contributors, evidence, releases, governance, and sunset criteria inspectable across many human and AI work cycles.
 
@@ -324,7 +424,17 @@ The completed stewardship surface would make projects more understandable and le
 | `lean:artifact_stewards.contribution_ledger.operational_invariant` | `AsiStackProofs.ArtifactStewardAgents` | A steward contribution ledger keeps authorship, review, evidence, compensation, reputation, governance effect, and conflicts separated; collapsed governance scoring is rejected and support-state changes require evidence-transition records. | implemented |
 | `lean:artifact_stewards.federation_contract.operational_invariant` | `AsiStackProofs.ArtifactStewardAgents` | A steward federation contract requires scoped work contracts, bounded worker authority, tool/data/budget gates, external-spend approval, and evidence-bundle requirements before dispatch. | implemented |
 
-These are not proofs of good governance. They are finite-record safety checks over declared work-contract, protected-action, release, sunset, lifecycle-route, contribution-ledger, and federation-contract fields, plus one deterministic public-safe lifecycle probe over fixture-composed scenarios. The lifecycle route model checks only that unreviewed tainted events quarantine, unreviewed sunset criteria open sunset review, autonomy escalation without charter approval routes to approval, and over-policy treasury spend routes to approval. The contribution route model checks only record-level separation of authorship, review, evidence, compensation, reputation, governance effect, conflict disclosure, collapsed-score rejection, and support-transition routing. The federation route model checks only scoped contract presence, worker-authority boundaries, tool/data/budget gates, approval routing for external spend, evidence-bundle requirements, and scoped dispatch. The Artifact steward lifecycle probe checks only two valid route examples and six expected-invalid controls against generated public-safe records. It does not prove institutional capture resistance, legal authority, treasury safety, workflow-injection resistance, event scanner quality, contribution-quality scoring, federation behavior, release safety, steward autonomy, or human project quality.
+**Formal audit.** All sixteen declarations are derived consequences or
+reductions of seven hand-authored finite predicates or route functions: four
+record-boundary implications, four lifecycle-route reductions, four
+contribution-ledger reductions, and four federation-route reductions. None is
+a direct projection of steward behavior or a real project outcome. This finite record does not prove mission correctness, source or event truth, injection resistance,
+worker quality, authority legitimacy, treasury safety, contribution fairness,
+capture resistance, reviewer independence, release quality, rollback closure,
+human maintainability, sunset quality, deployment, reproduction, or transfer.
+The deterministic lifecycle probe is a separate fixture evidence lane with two
+valid routes and six rejecting controls; it does not turn the route functions
+into empirical governance proof.
 
 ## Source crosswalk
 

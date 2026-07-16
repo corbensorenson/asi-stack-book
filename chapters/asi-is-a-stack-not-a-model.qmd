@@ -4,7 +4,7 @@ chapter_id: "asi-is-a-stack-not-a-model"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-10"
+last_updated: "2026-07-15"
 primary_sources:
   - "viea"
   - "beastbrain"
@@ -17,7 +17,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "The core claim has exact source-note mappings for all assigned sources in Appendix C, and five of six mappings now carry local raw-cache passage review; `moecot` remains connector-only/source-note mapped."
   - "Source-noted external architecture comparators now position the stack frame against MRKL modular neuro-symbolic systems, LLM-agent architecture surveys, cognitive-architecture common-model work, and layered robot-control architecture; none of those sources has been implemented or reproduced here."
-  - "The layer_boundary_record fixture and stack-boundary Lean proofs validate narrow record/proof surfaces only; the fixture now records lifecycle state, owner, chapter refs, traceability state, handoff protocol, contract refs, change policy, integration decision, promotion blockers, source refs, support-state effect, and non-claims, and `AsiStackProofs.StackBoundaries` now includes a finite trace-level unauthorized external-handoff rejection theorem plus a finite layer-contract admission lifecycle route for missing layer identity, lifecycle state, owner, responsibility, input/output artifacts, authority ceilings, handoff protocols, invariants, failure modes, evidence gates, external-action authority or handoff boundaries, source mappings, support-state boundaries, evidence transitions, and non-claim boundaries. `python3 scripts/validate_stack_layer_traceability.py` now checks the opener's layer-boundary fixture, source-to-layer traceability, and claim-support labels, but it does not prove deployed stack enforcement."
+  - "The reachable boundary model and independent consumer check eighteen generated layer-contract routes, six authority fixtures, three runtime paths, ten accepted events, one local temp-file effect, one independent observation, one exact rollback, two no-mutation denials, five revocation entries, and twelve rejected semantic mutations. Grant, owner, receipt, observation, revocation, and rollback declarations remain trusted inputs; this does not prove deployed authority, complete effect discovery, distributed behavior, security, reproduction, transfer, or the chapter core."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -29,13 +29,13 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-01 |
+| Last updated | 2026-07-15 |
 | Primary source records | `viea`, `beastbrain`, `aletheia`, `talos`, `moecot`, `scf` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `viea`, `beastbrain`, `aletheia`; supporting: `talos`, `moecot`, `scf`; external comparators: `ext_drexler_cais_2019`, `ext_mrkl_systems_2022`, `ext_llm_agents_survey_2023`, `ext_standard_model_mind_2017`, `ext_subsumption_architecture_1986`; connector/recovery: `moecot` |
 | Source loading state | source notes: `viea`, `beastbrain`, `aletheia`, `talos`, `moecot`, `scf`, `ext_drexler_cais_2019`, `ext_mrkl_systems_2022`, `ext_llm_agents_survey_2023`, `ext_standard_model_mind_2017`, `ext_subsumption_architecture_1986`; passage-reviewed local raw cache: `viea`, `beastbrain`, `aletheia`, `talos`, `scf`; primary-report passages reviewed: `ext_drexler_cais_2019`; connector-only/source-note mapped: `moecot` |
-| Test state | `layer_boundary_record.valid.json` passes protocol fixture validation for lifecycle state, owner, chapter refs, traceability state, handoff protocol, contract refs, change policy, integration decision, promotion blockers, source refs, support-state effect, and non-claims; stack-boundary Lean hooks build locally, including a finite trace theorem that rejects an external-action step when the layer lacks external authority and the handoff is unauthorized, plus a finite layer-contract admission lifecycle route; `python3 scripts/validate_stack_layer_traceability.py` checks the opener's layer-boundary fixture, six assigned source mappings, Appendix A source-to-layer visibility, Appendix C claim/support labels, and no-promotion markers. Contract-change triage remains planned. |
+| Test state | `layer_boundary_record.valid.json` passes protocol validation; `AsiStackProofs.StackBoundaries` builds a reachable request → grant → dispatch → effect → observation → rollback model and explicit rejection theorems; `python3 scripts/validate_stack_boundary_effect_consumer.py` independently matches 18/18 generated admission routes, classifies six authority fixtures, accepts three runtime paths totaling ten events, and rejects 12/12 semantic mutations with support-state effect `none`. `python3 scripts/validate_stack_layer_traceability.py` separately checks source-to-layer and claim-support metadata. Contract-change triage remains planned. |
 
 ## Drafting guardrail
 
@@ -208,6 +208,26 @@ This interface also makes chapter insertion and reordering safer. A new chapter 
 
 The book should therefore be edited like a stack, not like a table of contents. When a future paper arrives, the first question is not "does this deserve a chapter?" The first question is "which contract does this change?" If it changes no contract, it may become a source note, example, caveat, or appendix entry. If it changes a contract, the outline, chapter, schema, proof target, and crosswalk should move together.
 
+### Reachable authority-to-effect boundary
+
+The boundary is now tested as a path, not only as isolated record predicates.
+The finite model begins with a request, admits a grant only when the target owner
+approves an authority level no higher than the caller ceiling, requires a
+same-epoch dispatch receipt before any material effect, separates effect from
+independent observation, and represents revocation, denial, and exact rollback
+as different events. Lean proves the within-ceiling and live-grant consequences
+and rejects over-ceiling authorization, missing-dispatch effects, and
+post-revocation effects.
+
+An independently implemented consumer checks the same declared boundary against
+six tracked authority fixtures and existing local runtime-effect and revocation
+results. Its accepted nominal path contains one local temporary-file effect,
+one independent observation, and one exact rollback; two other paths deny before
+mutation. Twelve semantic mutations all fail. This is evidence for the bounded
+transition contract, not for authentic receipts, complete observation, a live
+authorization service, distributed execution, or whole-stack safety. The
+support-state effect is exactly `none`.
+
 ## Invariants
 
 - Layer boundaries remain explicit.
@@ -230,7 +250,7 @@ Anthology drift happens when the book becomes a catalog of interesting papers ra
 
 ## Minimum Viable Implementation
 
-A useful first build is a stack map, a layer boundary schema, one valid fixture, a generated source map, and Appendix C. That bundle is not evidence that the architecture runs; it gives the rest of the book a typed surface for saying which layer owns which lifecycle state, owner, chapter refs, traceability state, responsibility, artifact, handoff protocol, contract refs, authority ceiling, invariant, integration decision, promotion blockers, source refs, support-state effect, and non-claim.
+A useful first build is a stack map, a layer boundary schema, one valid fixture, a generated source map, Appendix C, and one reachable authority-to-effect slice. The current slice checks eighteen generated layer-contract routes plus request, authorization, dispatch, effect, observation, denial, revocation, and exact local rollback. That bundle is not evidence that the whole architecture runs; it gives the rest of the book a typed and executable surface for saying which layer owns which lifecycle state, owner, chapter refs, traceability state, responsibility, artifact, handoff protocol, contract refs, authority ceiling, invariant, integration decision, promotion blockers, source refs, support-state effect, and non-claim.
 
 A passing boundary record includes at least one blocked integration path: a reasoning layer trying to execute, an evidence layer trying to promote without artifacts, or a routing layer trying to widen authority. That makes the stack boundary test visible from the beginning.
 
@@ -242,7 +262,7 @@ The beyond-SOTA target is not a larger model, a more elaborate agent loop, or a 
 
 A mature ASI stack would absorb what those frames get right while refusing their missing contracts. Model weights become one replaceable component. Agentic planning becomes a bounded planning layer. Tools and expert modules become routed capabilities with authority ceilings and evidence gates. Cognitive-architecture and layered-control lineages become useful comparators, but the ASI Stack adds a stricter obligation: every layer must name its responsibility, interface artifact, invariant, failure mode, promotion rule, non-claims, and rollback path before it can be treated as part of the governed machine.
 
-In the mature reference architecture, alignment and governance constrain every downstream layer. Planning, memory, reasoning, execution, routing, compression, and evidence exchange typed artifacts rather than hidden state. Recursive improvement becomes a governed transition with records, gates, and rollback paths rather than an ambient property of intelligence. Source queues and evidence states keep future writing runs from turning the book back into an anthology or allowing polished synthesis to outpace support.
+In the mature reference architecture, alignment and governance constrain every downstream layer. Planning, memory, reasoning, execution, routing, compression, and evidence should exchange typed artifacts rather than hidden state. Recursive improvement becomes a governed transition with records, gates, and rollback paths rather than an ambient property of intelligence. Source queues and evidence states keep future writing runs from turning the book back into an anthology or allowing polished synthesis to outpace support.
 
 This stack doctrine is still an architectural claim. It stays at `argument` support until layer-boundary records, source-to-layer reviews, handoff-denial fixtures, traceability audits, and governed replacement examples show that stack separation survives real integration pressure.
 
@@ -251,7 +271,8 @@ This stack doctrine is still an architectural claim. It stays at `argument` supp
 | Test | Purpose | Status |
 |---|---|---|
 | Layer-boundary record validation | Check that the layer boundary fixture records lifecycle state, owner, chapter refs, traceability state, responsibility, input/output artifacts, authority ceiling, handoff protocol, contract refs, change policy, integration decision, invariants, failure modes, evidence gates, downstream interfaces, promotion blockers, source refs, support-state effect, and non-claims. | implemented by protocol validation; validated locally |
-| Layer-contract admission lifecycle route | Check that finite layer-contract admission requests missing layer identity, lifecycle state, owner, responsibility, input artifacts, output artifacts, authority ceilings, handoff protocols, invariants, failure modes, evidence gates, source mappings, support-state boundaries, evidence transitions, and non-claim boundaries before admitting the record, and blocks possible external action when neither external authority nor authorized handoff is recorded. | implemented in `AsiStackProofs.StackBoundaries`; deployed layer enforcement, source-to-layer traceability completeness, runtime authority behavior, whole-system safety, support-state promotion, and model capability are not proved |
+| Reachable stack-boundary authority/effect consumer | Check request, within-ceiling authorization, receipt-bound dispatch, material effect, independent observation, revocation, denial, and exact rollback against source-anchored local evidence and semantic mutations. | implemented by `AsiStackProofs.StackBoundaries` and `python3 scripts/validate_stack_boundary_effect_consumer.py`; 6 authority fixtures, 3 runtime paths, 10 accepted events, 1 effect, 1 observation, 1 exact rollback, 2 no-mutation denials, 5 revocation entries, and 12/12 rejected mutations; support-state effect `none` |
+| Layer-contract admission lifecycle route | Check all eighteen priority-ordered layer-contract admission outcomes through a generated independent route suite while preserving frozen lineage for the retired theorem-per-record normalizations. | 18/18 generated route cases match via `python3 scripts/validate_stack_boundary_effect_consumer.py`; no deployed layer enforcement, complete source-to-layer traceability, whole-system safety, or support-state promotion claim |
 | Layer-boundary audit | Check that layer-boundary fixture refs, contract refs, non-claims, and text markers stay connected to the opener. | implemented in `python3 scripts/validate_stack_layer_traceability.py`; repository metadata/fixture audit only |
 | Source-to-layer traceability review | Check that source notes map to layer responsibilities before support promotion. | implemented in `python3 scripts/validate_stack_layer_traceability.py`; source-note mapping audit only |
 | Claim-support label audit | Check that chapter claims have labels, support states, and gaps. | implemented in `python3 scripts/validate_stack_layer_traceability.py`; claim-label/support-state audit only |
@@ -261,11 +282,11 @@ This stack doctrine is still an architectural claim. It stays at `argument` supp
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:stack.layer_boundaries.operational_invariant` | `AsiStackProofs.StackBoundaries` | A layer without external-action authority can only produce an action through an authorized handoff. | implemented |
-| `lean:stack.layer_boundaries.failure_blocks_promotion` | `AsiStackProofs.StackBoundaries` | A handoff that exceeds the caller authority ceiling is rejected. | implemented |
-| `lean:stack.layer_contract.admission_lifecycle_route` | `AsiStackProofs.StackBoundaries` | Modeled layer-contract admission routes missing layer identity, lifecycle state, owner, responsibility, input artifacts, output artifacts, authority ceilings, handoff protocols, invariants, failure modes, evidence gates, external-action authority or handoff boundaries, source mappings, support-state boundaries, evidence-transition gaps, and non-claim-boundary gaps to explicit outcomes. | implemented |
+| `lean:stack.layer_boundaries.operational_invariant` | `AsiStackProofs.StackBoundaries` | Every accepted material effect in the finite boundary transition model requires a live same-epoch grant within the caller ceiling and a prior dispatch receipt; the source-anchored nominal path reaches independent observation and exact local rollback. | implemented |
+| `lean:stack.layer_boundaries.failure_blocks_promotion` | `AsiStackProofs.StackBoundaries` | The finite boundary model rejects over-ceiling authorization, effect without a dispatch receipt, and post-revocation effect. | implemented |
+| `lean:stack.layer_contract.admission_lifecycle_route` | `AsiStackProofs.StackBoundaries` | An independently implemented generated suite matches all eighteen priority-ordered layer-contract admission routes after the theorem-per-record normalizations are retired from the live proof surface. | implemented |
 
-These stack-boundary hooks are implemented in the local Lean workspace. The module includes a finite stack-trace theorem that blocks a valid trace from containing an external-action step when the layer lacks external authority and the handoff is unauthorized, plus a finite layer-contract admission route for missing identity, lifecycle, ownership, responsibility, artifact, authority, handoff, invariant, failure, evidence, source, support-state, evidence-transition, and non-claim-boundary records. These predicates support only the handoff, authority-ceiling, trace-step, and layer-contract admission boundaries named here; they do not prove whole-system safety, capability, source interpretation, source-to-layer traceability completeness, runtime authority behavior, support-state promotion, or deployed layer enforcement.
+These hooks retain three genuine reusable order/trace lemmas and add a reachable boundary transition model. Eighteen former theorem-per-record normalizations have been physically retired; their frozen identities remain in the proof rationalization registry, and the independent consumer preserves their finite route behavior with a generated 18/18 suite. The reachable model and consumer establish only the declared finite handoff, authority, dispatch, effect, observation, denial, revocation, and local rollback boundaries. Recorded custody fields remain trusted inputs, and the result does not prove authentic authority, complete effects, distributed execution, whole-system safety, capability, source interpretation, support-state promotion, reproduction, transfer, or deployed layer enforcement.
 
 ## Source crosswalk
 

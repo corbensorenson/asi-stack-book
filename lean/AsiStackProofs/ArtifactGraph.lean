@@ -21,16 +21,6 @@ def ProducedArtifactTraceable (record : ArtifactRecord) : Prop :=
       record.sourceRefsPresent = true ∧
         record.contextRefsPresent = true
 
-theorem produced_artifact_records_parent_job_and_context_refs
-    {record : ArtifactRecord} :
-    ProducedArtifactTraceable record ->
-    record.produced = true ->
-      record.parentJobPresent = true ∧
-        record.sourceRefsPresent = true ∧
-          record.contextRefsPresent = true := by
-  intro traceable produced
-  exact traceable produced
-
 theorem produced_artifact_missing_trace_refs_rejected
     {record : ArtifactRecord} :
     record.produced = true ->
@@ -1119,13 +1109,6 @@ def RecordRealitySequenceFixtureValid
     summary.chapterCoreSupportEffectNone = true ∧
     summary.evidenceTransitionCreated = false
 
-theorem artifact_record_reality_sequence_fixture_bridge :
-    RecordRealitySequenceFixtureValid
-      artifactRecordRealitySequenceSummary := by
-  unfold RecordRealitySequenceFixtureValid
-  unfold artifactRecordRealitySequenceSummary
-  simp
-
 structure ReceiptFaithfulnessFixtureSummary where
   crossCheckedReceiptRecordAccepted : Bool
   attestationLimitedRecordOnlyAccepted : Bool
@@ -1164,13 +1147,6 @@ def ReceiptFaithfulnessFixtureValid
     summary.supportPromotionFromReceiptShapeRejected = true ∧
     summary.supportStateEffectNone = true ∧
     summary.nonClaimBoundary = true
-
-theorem receipt_faithfulness_adversarial_fixture_bridge :
-    ReceiptFaithfulnessFixtureValid
-      receiptFaithfulnessFixtureSummary := by
-  unfold ReceiptFaithfulnessFixtureValid
-  unfold receiptFaithfulnessFixtureSummary
-  simp
 
 structure ReceiptRepositoryAuditSummary where
   auditedReceiptCount : Nat
@@ -1223,13 +1199,6 @@ def ReceiptRepositoryAuditValid
     summary.missingNonClaimsControlRejected = true ∧
     summary.supportPromotionControlRejected = true
 
-theorem receipt_repository_audit_fixture_bridge :
-    ReceiptRepositoryAuditValid
-      receiptRepositoryAuditSummary := by
-  unfold ReceiptRepositoryAuditValid
-  unfold receiptRepositoryAuditSummary
-  simp
-
 structure ReceiptRepositoryChallengeSummary where
   baseAuditPassed : Bool
   challengeCount : Nat
@@ -1277,13 +1246,6 @@ def ReceiptRepositoryChallengeValid
     summary.supportPromotionControlRejected = true ∧
     summary.supportStateEffectNone = true ∧
     summary.nonClaimBoundary = true
-
-theorem receipt_repository_challenge_fixture_bridge :
-    ReceiptRepositoryChallengeValid
-      receiptRepositoryChallengeSummary := by
-  unfold ReceiptRepositoryChallengeValid
-  unfold receiptRepositoryChallengeSummary
-  simp
 
 structure ArtifactLiveAttestationSummary where
   targetArtifactCount : Nat
@@ -1338,13 +1300,6 @@ def ArtifactLiveAttestationValid
     summary.chapterCoreSupportEffectNone = true ∧
     summary.noUpwardTransition = true ∧
     summary.nonClaimBoundary = true
-
-theorem artifact_live_attestation_probe_bridge :
-    ArtifactLiveAttestationValid
-      artifactLiveAttestationSummary := by
-  unfold ArtifactLiveAttestationValid
-  unfold artifactLiveAttestationSummary
-  simp
 
 structure ArtifactRandomizedAttestationSummary where
   candidateArtifactCount : Nat
@@ -1415,13 +1370,6 @@ def ArtifactRandomizedAttestationValid
     summary.noUpwardTransition = true ∧
     summary.nonClaimBoundary = true
 
-theorem artifact_randomized_attestation_audit_bridge :
-    ArtifactRandomizedAttestationValid
-      artifactRandomizedAttestationSummary := by
-  unfold ArtifactRandomizedAttestationValid
-  unfold artifactRandomizedAttestationSummary
-  simp
-
 structure EpistemicTcbFixtureSummary where
   minimalTrustBaseAccepted : Bool
   delegatedVerifierRecordOnlyAccepted : Bool
@@ -1463,12 +1411,5 @@ def EpistemicTcbFixtureValid
     summary.supportPromotionFromTcbShapeRejected = true ∧
     summary.supportStateEffectNone = true ∧
     summary.nonClaimBoundary = true
-
-theorem epistemic_tcb_fixture_bridge :
-    EpistemicTcbFixtureValid
-      epistemicTcbFixtureSummary := by
-  unfold EpistemicTcbFixtureValid
-  unfold epistemicTcbFixtureSummary
-  simp
 
 end AsiStackProofs.ArtifactGraph

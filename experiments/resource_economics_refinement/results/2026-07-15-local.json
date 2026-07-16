@@ -1,0 +1,608 @@
+{
+  "schema_version": "asi_stack.resource_economics_refinement.result.v1",
+  "result_id": "2026-07-15-resource-economics-refinement",
+  "recorded_date": "2026-07-15",
+  "command": "python3 scripts/validate_resource_economics_refinement.py",
+  "model": {
+    "lean_module": "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+    "stage_count": 9,
+    "route_count": 66,
+    "reached_route_count": 66,
+    "route_case_count": 66,
+    "rejected_mutation_count": 57,
+    "simulation_transfer_route_reached": true,
+    "closed_route_reached": true,
+    "support_assignment_count": 0,
+    "external_effect_count": 0
+  },
+  "source_result_refinement": {
+    "counts": {
+      "budget_valid_count": 6,
+      "budget_invalid_count": 7,
+      "costed_eligible_count": 2,
+      "costed_rejected_count": 2,
+      "workflow_valid_count": 1,
+      "workflow_invalid_count": 5,
+      "workflow_step_count": 3,
+      "capacity_valid_count": 3,
+      "capacity_invalid_count": 6,
+      "flagship_command_count": 10,
+      "flagship_artifact_count": 26,
+      "ci_run_count": 8,
+      "ci_failure_count": 3,
+      "governance_valid_count": 3,
+      "governance_invalid_count": 5,
+      "governed_selection_count": 2,
+      "low_risk_shortcut_count": 1,
+      "simulation_valid_count": 3,
+      "simulation_invalid_count": 6,
+      "theseus_sim_scenario_count": 5,
+      "theseus_sim_receipt_count": 6,
+      "theseus_sim_invalid_count": 7,
+      "theseus_export_ready_count": 1,
+      "theseus_export_format_count": 3,
+      "theseus_export_field_count": 7,
+      "theseus_export_invalid_count": 7,
+      "workload_probe_pass_count": 1,
+      "load_probe_pass_count": 1
+    },
+    "sha256": {
+      "experiments/resource_budget_ledgers/results/2026-07-01-local.md": "e3433d4353fdd34f16ae814f445395925d0f1f7bd2b6a33f3ec1ab913dec1831",
+      "experiments/costed_route_resource_slice/results/2026-06-29-local.json": "075febf47d0135491f418adccd4890d4a969e18fe0855fc12d820d31e70a53fd",
+      "experiments/resource_workflow_trace/results/2026-07-01-local.json": "664f842032710fc0285f6db316acf42f3de6e6ef0290799d2449f8ae14d2d9ba",
+      "experiments/capacity_smoothing/results/2026-07-01-local.md": "ee5def93a561228677ae6a68d0533b13bc71d1ada5ae9356f0ed823f16702ba0",
+      "experiments/resource_flagship_lane/results/2026-07-01-local.json": "cad08ef977e10b19fcb95e1ea08e157d6c7481a3be037c679099e353825ab719",
+      "experiments/resource_ci_cost_profile/results/2026-07-04-main.json": "e93a06a9fbf0d437756f97b4ed954969cee5aee7252d6459e8c4d630b45fa725",
+      "experiments/resource_governance_tax_tradeoff/results/2026-07-03-local.json": "58d596dfaea09d3660e3b0fcd3cedb7555e4bde6e17224aae6cf51417cd54f3d",
+      "experiments/simulation_transfer_boundaries/results/2026-06-30-local.md": "1d7f6057484ad5591eb0489e1e61534f092c739418a6af57ece66c69fe5f0a17",
+      "experiments/theseus_simulation_fidelity_receipt_suite_import/results/2026-07-05-local.json": "cd34789d873d7e9e1bf6e9d527f7dfc26b0348b760aa1ec4553b086480e59800",
+      "experiments/theseus_rlds_minari_trace_export_import/results/2026-07-05-local.json": "127421e922d9b163461dcbf074492ef6847095544483137a1c1f18cb5b5af8c3",
+      "experiments/resource_workload_quality_probe/results/2026-07-01-local.json": "0264d8ed9d6722d1d147e55b8c1fdccfcbf775337e4be5b525d8c98e220e7301",
+      "experiments/resource_load_stability_probe/results/2026-07-01-local.json": "9be44d16c07aceaa18e95277161a4d3e0dff33db0e176e124a171fa004b8773e"
+    },
+    "validator_runs": [
+      {
+        "command": "python3 scripts/validate_resource_budget_ledgers.py",
+        "exit_code": 0,
+        "output_sha256": "cd002db8139561698390f98a0fa9c187117e01aadef9bc427599c6aa6225f066"
+      },
+      {
+        "command": "python3 scripts/validate_costed_route_resource_slice.py",
+        "exit_code": 0,
+        "output_sha256": "8ba746139be157e9f1c52f7361893b4e826ee98c727a1f8dd8f2d525dff3ab87"
+      },
+      {
+        "command": "python3 scripts/validate_resource_workflow_trace.py",
+        "exit_code": 0,
+        "output_sha256": "328decae80aead8a803fc8155b85df0cd049812e364a621ac2da7b609c1f1977"
+      },
+      {
+        "command": "python3 scripts/validate_capacity_smoothing.py",
+        "exit_code": 0,
+        "output_sha256": "8a4a020455b908be3c9e7417604e0b038435ca918816aa5f7705bebe72ab4b98"
+      },
+      {
+        "command": "python3 scripts/validate_resource_flagship_lane.py",
+        "exit_code": 0,
+        "output_sha256": "a275c64be723e8b8626a62c7e19106958841138eaefa12311b5e9c06a8e5fa7f"
+      },
+      {
+        "command": "python3 scripts/validate_resource_ci_cost_profile.py",
+        "exit_code": 0,
+        "output_sha256": "07226cfbd9e2cf2ca4e2cd7b41f72110dea3848a88f53a67e9f36e2907b3d938"
+      },
+      {
+        "command": "python3 scripts/validate_resource_governance_tax_tradeoff.py",
+        "exit_code": 0,
+        "output_sha256": "b1b4a9c434d32666f896eed3d6fcec31d872cfd22f09170788988de18036ba26"
+      },
+      {
+        "command": "python3 scripts/validate_simulation_transfer_boundaries.py",
+        "exit_code": 0,
+        "output_sha256": "b07672e94a08982bac662b65fcfd87f32d2d27cba7ec427c9bc05e53c5afb73c"
+      },
+      {
+        "command": "python3 scripts/validate_theseus_simulation_fidelity_receipt_suite_import.py",
+        "exit_code": 0,
+        "output_sha256": "6b1b8083a3dce2c1f4153eebd50070770c5b09c9b6183ca834b34b2265e5478c"
+      },
+      {
+        "command": "python3 scripts/validate_theseus_rlds_minari_trace_export_import.py",
+        "exit_code": 0,
+        "output_sha256": "cff9239685b02c73e86766f59887a864867ce1b426835b08f415c5a971a6844b"
+      },
+      {
+        "command": "python3 scripts/validate_resource_workload_quality_probe.py",
+        "exit_code": 0,
+        "output_sha256": "30ece81459efe4898729e7bb93d11764a082e58a2977bc30284b64ff9f903d15"
+      },
+      {
+        "command": "python3 scripts/validate_resource_load_stability_probe.py",
+        "exit_code": 0,
+        "output_sha256": "47780e97c9a31b06a48917776a003e273ac1da58e716eabafd467226cce40dec"
+      }
+    ]
+  },
+  "route_cases": [
+    {
+      "case_id": "wrong-stage",
+      "stage": "requested",
+      "expected_route": "rejectWrongStage",
+      "actual_route": "rejectWrongStage",
+      "accepted": false
+    },
+    {
+      "case_id": "request-substitution",
+      "stage": "requested",
+      "expected_route": "rejectRequestSubstitution",
+      "actual_route": "rejectRequestSubstitution",
+      "accepted": false
+    },
+    {
+      "case_id": "policy-substitution",
+      "stage": "requested",
+      "expected_route": "rejectPolicySubstitution",
+      "actual_route": "rejectPolicySubstitution",
+      "accepted": false
+    },
+    {
+      "case_id": "resource-substitution",
+      "stage": "requested",
+      "expected_route": "rejectResourceSubstitution",
+      "actual_route": "rejectResourceSubstitution",
+      "accepted": false
+    },
+    {
+      "case_id": "evidence-substitution",
+      "stage": "requested",
+      "expected_route": "rejectEvidenceSubstitution",
+      "actual_route": "rejectEvidenceSubstitution",
+      "accepted": false
+    },
+    {
+      "case_id": "event-replay",
+      "stage": "requested",
+      "expected_route": "rejectEventReplay",
+      "actual_route": "rejectEventReplay",
+      "accepted": false
+    },
+    {
+      "case_id": "authority-leak",
+      "stage": "requested",
+      "expected_route": "rejectAuthorityLeak",
+      "actual_route": "rejectAuthorityLeak",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-consumer",
+      "stage": "requested",
+      "expected_route": "requestConsumer",
+      "actual_route": "requestConsumer",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-task",
+      "stage": "requested",
+      "expected_route": "requestTask",
+      "actual_route": "requestTask",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-risk",
+      "stage": "requested",
+      "expected_route": "requestRisk",
+      "actual_route": "requestRisk",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-rights",
+      "stage": "requested",
+      "expected_route": "requestRights",
+      "actual_route": "requestRights",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-horizon",
+      "stage": "requested",
+      "expected_route": "requestHorizon",
+      "actual_route": "requestHorizon",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-nonClaims",
+      "stage": "requested",
+      "expected_route": "requestNonClaims",
+      "actual_route": "requestNonClaims",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-accepted",
+      "stage": "requested",
+      "expected_route": "acceptBudgeting",
+      "actual_route": "acceptBudgeting",
+      "accepted": true
+    },
+    {
+      "case_id": "budgeted-resourceInventory",
+      "stage": "budgeted",
+      "expected_route": "requestResourceInventory",
+      "actual_route": "requestResourceInventory",
+      "accepted": false
+    },
+    {
+      "case_id": "budgeted-units",
+      "stage": "budgeted",
+      "expected_route": "requestUnits",
+      "actual_route": "requestUnits",
+      "accepted": false
+    },
+    {
+      "case_id": "budgeted-directCost",
+      "stage": "budgeted",
+      "expected_route": "requestDirectCost",
+      "actual_route": "requestDirectCost",
+      "accepted": false
+    },
+    {
+      "case_id": "budgeted-displacedCost",
+      "stage": "budgeted",
+      "expected_route": "requestDisplacedCost",
+      "actual_route": "requestDisplacedCost",
+      "accepted": false
+    },
+    {
+      "case_id": "budgeted-verificationCost",
+      "stage": "budgeted",
+      "expected_route": "requestVerificationCost",
+      "actual_route": "requestVerificationCost",
+      "accepted": false
+    },
+    {
+      "case_id": "budgeted-uncertainty",
+      "stage": "budgeted",
+      "expected_route": "requestUncertainty",
+      "actual_route": "requestUncertainty",
+      "accepted": false
+    },
+    {
+      "case_id": "budgeted-protectedFloors",
+      "stage": "budgeted",
+      "expected_route": "requestProtectedFloors",
+      "actual_route": "requestProtectedFloors",
+      "accepted": false
+    },
+    {
+      "case_id": "budgeted-accepted",
+      "stage": "budgeted",
+      "expected_route": "acceptReservation",
+      "actual_route": "acceptReservation",
+      "accepted": true
+    },
+    {
+      "case_id": "reserved-capacity",
+      "stage": "reserved",
+      "expected_route": "requestCapacity",
+      "actual_route": "requestCapacity",
+      "accepted": false
+    },
+    {
+      "case_id": "reserved-reviewerCapacity",
+      "stage": "reserved",
+      "expected_route": "requestReviewerCapacity",
+      "actual_route": "requestReviewerCapacity",
+      "accepted": false
+    },
+    {
+      "case_id": "reserved-verifierCapacity",
+      "stage": "reserved",
+      "expected_route": "requestVerifierCapacity",
+      "actual_route": "requestVerifierCapacity",
+      "accepted": false
+    },
+    {
+      "case_id": "reserved-protectedOverhead",
+      "stage": "reserved",
+      "expected_route": "requestProtectedOverhead",
+      "actual_route": "requestProtectedOverhead",
+      "accepted": false
+    },
+    {
+      "case_id": "reserved-debtExpiry",
+      "stage": "reserved",
+      "expected_route": "requestDebtExpiry",
+      "actual_route": "requestDebtExpiry",
+      "accepted": false
+    },
+    {
+      "case_id": "reserved-capacityOwner",
+      "stage": "reserved",
+      "expected_route": "requestCapacityOwner",
+      "actual_route": "requestCapacityOwner",
+      "accepted": false
+    },
+    {
+      "case_id": "reserved-accepted",
+      "stage": "reserved",
+      "expected_route": "acceptSchedule",
+      "actual_route": "acceptSchedule",
+      "accepted": true
+    },
+    {
+      "case_id": "scheduled-queuePolicy",
+      "stage": "scheduled",
+      "expected_route": "requestQueuePolicy",
+      "actual_route": "requestQueuePolicy",
+      "accepted": false
+    },
+    {
+      "case_id": "scheduled-highRiskPriority",
+      "stage": "scheduled",
+      "expected_route": "requestHighRiskPriority",
+      "actual_route": "requestHighRiskPriority",
+      "accepted": false
+    },
+    {
+      "case_id": "scheduled-tailPolicy",
+      "stage": "scheduled",
+      "expected_route": "requestTailPolicy",
+      "actual_route": "requestTailPolicy",
+      "accepted": false
+    },
+    {
+      "case_id": "scheduled-tenantIsolation",
+      "stage": "scheduled",
+      "expected_route": "requestTenantIsolation",
+      "actual_route": "requestTenantIsolation",
+      "accepted": false
+    },
+    {
+      "case_id": "scheduled-fallback",
+      "stage": "scheduled",
+      "expected_route": "requestFallback",
+      "actual_route": "requestFallback",
+      "accepted": false
+    },
+    {
+      "case_id": "scheduled-accepted",
+      "stage": "scheduled",
+      "expected_route": "acceptExecution",
+      "actual_route": "acceptExecution",
+      "accepted": true
+    },
+    {
+      "case_id": "executed-actualSpend",
+      "stage": "executed",
+      "expected_route": "requestActualSpend",
+      "actual_route": "requestActualSpend",
+      "accepted": false
+    },
+    {
+      "case_id": "executed-failureRetention",
+      "stage": "executed",
+      "expected_route": "requestFailureRetention",
+      "actual_route": "requestFailureRetention",
+      "accepted": false
+    },
+    {
+      "case_id": "executed-unsafeReleaseAccounting",
+      "stage": "executed",
+      "expected_route": "requestUnsafeReleaseAccounting",
+      "actual_route": "requestUnsafeReleaseAccounting",
+      "accepted": false
+    },
+    {
+      "case_id": "executed-usefulOutcome",
+      "stage": "executed",
+      "expected_route": "requestUsefulOutcome",
+      "actual_route": "requestUsefulOutcome",
+      "accepted": false
+    },
+    {
+      "case_id": "executed-resourceBill",
+      "stage": "executed",
+      "expected_route": "requestResourceBill",
+      "actual_route": "requestResourceBill",
+      "accepted": false
+    },
+    {
+      "case_id": "executed-raw-proxy",
+      "stage": "executed",
+      "expected_route": "blockRawProxyPromotion",
+      "actual_route": "blockRawProxyPromotion",
+      "accepted": false
+    },
+    {
+      "case_id": "executed-accepted",
+      "stage": "executed",
+      "expected_route": "acceptVerification",
+      "actual_route": "acceptVerification",
+      "accepted": true
+    },
+    {
+      "case_id": "verified-verifierOutcome",
+      "stage": "verified",
+      "expected_route": "requestVerifierOutcome",
+      "actual_route": "requestVerifierOutcome",
+      "accepted": false
+    },
+    {
+      "case_id": "verified-evaluatorBoundary",
+      "stage": "verified",
+      "expected_route": "requestEvaluatorBoundary",
+      "actual_route": "requestEvaluatorBoundary",
+      "accepted": false
+    },
+    {
+      "case_id": "verified-falseDecisionAccounting",
+      "stage": "verified",
+      "expected_route": "requestFalseDecisionAccounting",
+      "actual_route": "requestFalseDecisionAccounting",
+      "accepted": false
+    },
+    {
+      "case_id": "verified-residuals",
+      "stage": "verified",
+      "expected_route": "requestResiduals",
+      "actual_route": "requestResiduals",
+      "accepted": false
+    },
+    {
+      "case_id": "verified-recovery",
+      "stage": "verified",
+      "expected_route": "requestRecovery",
+      "actual_route": "requestRecovery",
+      "accepted": false
+    },
+    {
+      "case_id": "verified-accepted",
+      "stage": "verified",
+      "expected_route": "acceptTransfer",
+      "actual_route": "acceptTransfer",
+      "accepted": true
+    },
+    {
+      "case_id": "reconciled-variance",
+      "stage": "reconciled",
+      "expected_route": "requestVariance",
+      "actual_route": "requestVariance",
+      "accepted": false
+    },
+    {
+      "case_id": "reconciled-opportunityCost",
+      "stage": "reconciled",
+      "expected_route": "requestOpportunityCost",
+      "actual_route": "requestOpportunityCost",
+      "accepted": false
+    },
+    {
+      "case_id": "reconciled-incidents",
+      "stage": "reconciled",
+      "expected_route": "requestIncidents",
+      "actual_route": "requestIncidents",
+      "accepted": false
+    },
+    {
+      "case_id": "reconciled-descendants",
+      "stage": "reconciled",
+      "expected_route": "requestDescendants",
+      "actual_route": "requestDescendants",
+      "accepted": false
+    },
+    {
+      "case_id": "reconciled-evidenceTransition",
+      "stage": "reconciled",
+      "expected_route": "requestEvidenceTransition",
+      "actual_route": "requestEvidenceTransition",
+      "accepted": false
+    },
+    {
+      "case_id": "reconciled-accepted",
+      "stage": "reconciled",
+      "expected_route": "acceptClosure",
+      "actual_route": "acceptClosure",
+      "accepted": true
+    },
+    {
+      "case_id": "closed-acknowledgment",
+      "stage": "closed",
+      "expected_route": "requestAcknowledgment",
+      "actual_route": "requestAcknowledgment",
+      "accepted": false
+    },
+    {
+      "case_id": "closed-resultDigestBound",
+      "stage": "closed",
+      "expected_route": "requestResultDigest",
+      "actual_route": "requestResultDigest",
+      "accepted": false
+    },
+    {
+      "case_id": "closed-cleanup",
+      "stage": "closed",
+      "expected_route": "requestCleanup",
+      "actual_route": "requestCleanup",
+      "accepted": false
+    },
+    {
+      "case_id": "closed-accepted",
+      "stage": "closed",
+      "expected_route": "acceptClosed",
+      "actual_route": "acceptClosed",
+      "accepted": true
+    },
+    {
+      "case_id": "transferred-simulationScope",
+      "stage": "transferred",
+      "expected_route": "requestSimulationScope",
+      "actual_route": "requestSimulationScope",
+      "accepted": false
+    },
+    {
+      "case_id": "transferred-simulationFidelity",
+      "stage": "transferred",
+      "expected_route": "requestSimulationFidelity",
+      "actual_route": "requestSimulationFidelity",
+      "accepted": false
+    },
+    {
+      "case_id": "transferred-temporalSemantics",
+      "stage": "transferred",
+      "expected_route": "requestTemporalSemantics",
+      "actual_route": "requestTemporalSemantics",
+      "accepted": false
+    },
+    {
+      "case_id": "transferred-simulationResourceBill",
+      "stage": "transferred",
+      "expected_route": "requestSimulationResourceBill",
+      "actual_route": "requestSimulationResourceBill",
+      "accepted": false
+    },
+    {
+      "case_id": "transferred-simulationOmissions",
+      "stage": "transferred",
+      "expected_route": "requestSimulationOmissions",
+      "actual_route": "requestSimulationOmissions",
+      "accepted": false
+    },
+    {
+      "case_id": "transferred-transferDecision",
+      "stage": "transferred",
+      "expected_route": "requestTransferDecision",
+      "actual_route": "requestTransferDecision",
+      "accepted": false
+    },
+    {
+      "case_id": "transferred-overclaim",
+      "stage": "transferred",
+      "expected_route": "blockFidelityOverclaim",
+      "actual_route": "blockFidelityOverclaim",
+      "accepted": false
+    },
+    {
+      "case_id": "transferred-accepted",
+      "stage": "transferred",
+      "expected_route": "acceptReconciliation",
+      "actual_route": "acceptReconciliation",
+      "accepted": true
+    }
+  ],
+  "lean_verification": {
+    "command": "lake env lean AsiStackProofs/ResourceEconomicsRefinement.lean",
+    "exit_code": 0,
+    "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "support_state_effect": "none",
+  "external_effect": "none",
+  "residuals": [
+    "Finite authored allocation-and-claim-transport lifecycle only; no deployed scheduler, market, serving system, reviewer pool, or simulator ran.",
+    "Source suites combine synthetic fixtures, repository replays, local timing, historical CI records, and sanitized imports with different evidence meanings.",
+    "The costed-route 66.98% result and governance-pays scenarios are fixture-specific and do not establish economic optimality or general savings.",
+    "Simulation scope, fidelity, temporal semantics, omissions, resource bills, and support levels are authored gates or bounded records, not calibrated world-model measurements."
+  ],
+  "non_claims": [
+    "no economic optimality, useful-throughput, model quality, safety, deployed scheduling, simulation adequacy, physical feasibility, transfer, SOTA, AGI, ASI, or support claim",
+    "no inference from cost arithmetic, repository replay, CI timing, route coverage, or green validators to real-world resource benefit",
+    "no support assignment or external effect"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cognitive Kernel ABI trace result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "experiment_id",
+    "status",
+    "corpus_sha256",
+    "lean_model_sha256",
+    "case_count",
+    "accepted_case_count",
+    "rejected_case_count",
+    "accepted_event_count",
+    "committed_effect_count",
+    "proposal_effect_count",
+    "family_route",
+    "mutation_count",
+    "mutation_rejection_count",
+    "support_state_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "minLength": 1},
+    "experiment_id": {"type": "string", "minLength": 1},
+    "status": {"type": "string", "enum": ["passed", "failed"]},
+    "corpus_sha256": {"type": "string", "minLength": 64},
+    "lean_model_sha256": {"type": "string", "minLength": 64},
+    "case_count": {"type": "integer"},
+    "accepted_case_count": {"type": "integer"},
+    "rejected_case_count": {"type": "integer"},
+    "accepted_event_count": {"type": "integer"},
+    "committed_effect_count": {"type": "integer"},
+    "proposal_effect_count": {"type": "integer"},
+    "family_route": {"type": "array", "items": {"type": "string"}},
+    "mutation_count": {"type": "integer"},
+    "mutation_rejection_count": {"type": "integer"},
+    "support_state_effect": {"type": "string", "enum": ["none"]},
+    "non_claims": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}}
+  }
+}

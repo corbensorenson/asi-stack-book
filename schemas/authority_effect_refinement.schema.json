@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/authority_effect_refinement.schema.json",
+  "title": "Authority Effect Refinement Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "source_sha256", "authority_fixture_count", "authority_fixture_accepted_count", "authority_fixture_rejected_count", "reachable_trace_event_count", "executed_local_effect_count", "independently_observed_effect_count", "exact_rollback_count", "pre_effect_denial_count", "revocation_trace_entry_count", "governed_scenario_count", "governed_release_count", "governed_unsafe_release_count", "mutation_count", "mutation_rejection_count", "reference_trace_final_state", "authority_fixture_receipts", "mutation_receipts", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.authority_effect_refinement.v1"},
+    "result_id": {"const": "authority-effect-refinement-2026-07-15-local"},
+    "source_sha256": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lean_model", "runtime_effect", "revocation_trace", "governed_repository"],
+      "properties": {
+        "lean_model": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "runtime_effect": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "revocation_trace": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "governed_repository": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "authority_fixture_count": {"const": 6},
+    "authority_fixture_accepted_count": {"const": 3},
+    "authority_fixture_rejected_count": {"const": 3},
+    "reachable_trace_event_count": {"const": 6},
+    "executed_local_effect_count": {"const": 1},
+    "independently_observed_effect_count": {"const": 1},
+    "exact_rollback_count": {"const": 1},
+    "pre_effect_denial_count": {"const": 2},
+    "revocation_trace_entry_count": {"const": 5},
+    "governed_scenario_count": {"const": 9},
+    "governed_release_count": {"const": 3},
+    "governed_unsafe_release_count": {"const": 0},
+    "mutation_count": {"const": 38},
+    "mutation_rejection_count": {"const": 38},
+    "reference_trace_final_state": {"type": "object"},
+    "authority_fixture_receipts": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object"}},
+    "mutation_receipts": {"type": "array", "minItems": 38, "maxItems": 38, "items": {"type": "object"}},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}}
+  }
+}

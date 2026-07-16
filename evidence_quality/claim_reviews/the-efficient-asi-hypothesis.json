@@ -1,0 +1,494 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "the-efficient-asi-hypothesis",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/the-efficient-asi-hypothesis.qmd",
+    "structured_atoms_reviewed": 24,
+    "prose_candidates_adjudicated": 47,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, all manifest semantic fields, the four formal targets, every scanner candidate, and unscanned invariant prose. The sweep narrowed the core into a repeated-workload, fixed-predicate, total-contract-cost hypothesis; replaced the scale-only insufficiency with an operational allocation claim; made mechanisms and interfaces artifact-specific; and promoted full route-cost attribution plus authority/approval/verification/rollback preservation into two new manifest-owned invariants before declaring zero unowned material claims."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Repeated natural or controlled workloads containing at least two materially different authorized candidate routes and a prospectively fixed task-quality predicate.",
+      "environment": "Controlled ASI Stack reference slices and matched local or API-backed evaluations with complete route receipts; production deployment, open-world autonomy, and unmetered organizational effects remain outside current evidence.",
+      "model": "Governed route policies over strong and weaker models, tools, cached or compiled artifacts, compression/generation paths, and human fallback where the campaign declares them.",
+      "authority": "The task contract supplies a route-specific authority ceiling; neither model capability nor lower apparent cost creates permission, and Corben's authorship authority does not stand in for deployment authority.",
+      "time": "Semantic review current through 2026-07-14; model versions, prices, hardware, workloads, comparator policies, and evaluator versions must be frozen for each outcome-bearing campaign.",
+      "artifact": "chapters/the-efficient-asi-hypothesis.qmd, the manifest-owned Costed Route Record contract, route-search probe, formal targets, campaign records, raw public-safe traces, and accepted evidence-transition decisions"
+    },
+    "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+    "contrary_evidence": [
+      "Scaling and strong-model routing can remain the best quality-adjusted choice for difficult or high-risk tasks, so an always-maximal policy cannot be dismissed without matched measurement.",
+      "Sparse-MoE, cascade, learned-routing, prompt-compression, and speculative-generation literature already demonstrates important cost surfaces; the chapter cannot claim novelty for conditional computation or cost-quality routing.",
+      "The repository's two synthetic route traces and finite Lean predicates validate bounded accounting and routing properties only; they do not establish route-search completeness, measured efficiency, model quality, natural-work benefit, or transfer.",
+      "Governance, verification, repair, human review, regression maintenance, rollback, and residual custody can erase apparent token or latency savings when counted end to end."
+    ],
+    "known_confounds": [
+      "Task difficulty, model version, prompt/context construction, cache warmth, batching, parallelism, price changes, and hardware can change route cost independently of the policy.",
+      "Evaluator weakness can make a cheap route appear adequate; evaluator-model correlation can hide shared failures.",
+      "Route search may omit an eligible lower-cost candidate, while a large candidate set can add search and verification cost that reverses the claimed saving.",
+      "Maintenance, revalidation, human repair, regression, rollback, and delayed residual work can be shifted outside the measurement window.",
+      "Repeated-work reuse can be confused with task leakage, memorization, benchmark contamination, or workload-specific caching."
+    ],
+    "narrowing_criteria": [
+      "Narrow results to the exact workload, route family, model versions, cost classes, evaluator, authority class, and time horizon actually measured.",
+      "Separate accounting-contract correctness from route quality, measured efficiency, capability gain, compression utility, safety, and SOTA status.",
+      "If only one comparator is beaten, state that comparator-specific result rather than claiming an efficient route economy or joint-frontier improvement."
+    ],
+    "refutation_criteria": [
+      "Refute a causal or efficiency atom when its preregistered matched campaign shows no allowed joint-frontier gain, violates a fixed quality or authority gate, or total cost is not lower after all declared classes are charged.",
+      "Refute an invariant when a reachable admitted route violates it under the declared assumptions, including seeded hidden-cost, residual, fallback, or authority-bypass cases.",
+      "Refute any novelty or superiority reading when a dated strong comparator already supplies or outperforms the same contract at equal or lower total cost."
+    ],
+    "deprecation_criteria": [
+      "Deprecate an atom only when a more precise canonical owner supersedes it and every chapter, schema, proof, campaign, appendix, and reader consumer is migrated with lineage preserved."
+    ],
+    "promotion_ceiling": "argument_until_claim_specific_campaign_and_accepted_evidence_transition",
+    "reproduction": {
+      "command": null,
+      "environment_lock": null,
+      "artifact_digest": null,
+      "evaluator_identity": null
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "the-efficient-asi-hypothesis",
+      "next_unblocking_condition": "Freeze the natural workload, always-maximal and always-cheapest comparators, candidate-set policy, total-cost classes, quality gates, evaluator independence, causal ablations, and transfer conditions after P2/P3 executable semantics exist."
+    },
+    "non_claims": [
+      "Semantic review and manifest repair do not establish that routing, compression, reuse, or governance improves capability or efficiency.",
+      "The synthetic route-search probe and Lean targets do not establish natural-work performance, route-search completeness, cost-estimate accuracy, model quality, compression utility, safety, or SOTA status.",
+      "A lower token count, latency, dollar price, or parameter count alone is not a total-contract efficiency result."
+    ]
+  },
+  "atom_reviews": {
+    "the-efficient-asi-hypothesis.core": {
+      "proposition_type": "causal",
+      "assumptions": [
+        "The repeated workload and its train, tuning, calibration, and held-out partitions are prospectively frozen and contamination-checked.",
+        "Always-maximal, always-cheapest, and governed route-and-reuse policies receive the same task information, authority ceiling, time budget, and fixed quality predicate.",
+        "Total contract cost includes model/runtime, context construction, route search, verification, repair, human review, maintenance, revalidation, rollback, and residual work over the declared horizon.",
+        "The candidate set contains materially different authorized routes and the evaluator is sufficiently independent to detect quality loss and unsafe savings."
+      ],
+      "dependencies": [
+        "the-efficient-asi-hypothesis.mechanism.001",
+        "the-efficient-asi-hypothesis.mechanism.002",
+        "the-efficient-asi-hypothesis.invariant.001",
+        "the-efficient-asi-hypothesis.invariant.003",
+        "the-efficient-asi-hypothesis.invariant.004",
+        "the-efficient-asi-hypothesis.invariant.005",
+        "routing-heads-and-specialist-cores.core",
+        "resource-economics-and-token-budgets.core"
+      ],
+      "strongest_counterclaim": "A strong always-maximal policy provides equal or better useful-task success per fully charged cost once routing, verification, reuse maintenance, and governance overhead are counted, while the always-cheapest policy captures any easy savings without the proposed machinery.",
+      "falsifier": "In a preregistered matched repeated-workload campaign, the governed route-and-reuse policy fails to improve the allowed useful-success/total-cost frontier over both comparators within the frozen uncertainty rule, or gains are accompanied by a fixed quality, authority, residual, or fallback-gate violation.",
+      "required_lanes": [
+        {"lane": "source-synthesis", "necessity": "Freeze the strongest current routing, cascade, sparse-compute, compression, fast-generation, and benchmark comparators without claiming their novelty."},
+        {"lane": "normative", "necessity": "Declare why authority, residual custody, fallback, and human burden remain hard constraints or joint objectives rather than costs to optimize away."},
+        {"lane": "executable", "necessity": "Run all policies through the same Costed Route Record and real consumers so no cost or rejection is merely asserted."},
+        {"lane": "formal", "necessity": "Check bounded candidate, authority, residual, fallback, and admission invariants while preserving their finite-model limits."},
+        {"lane": "empirical", "necessity": "Measure useful-task success, every cost class, unsafe release, refusal, latency, and residual burden on natural work."},
+        {"lane": "causal", "necessity": "Ablate routing, reuse, residual accounting, and governance separately to identify which mechanism caused any change."},
+        {"lane": "transfer", "necessity": "Repeat on held-out workloads, model families, cost regimes, and route topologies before generalizing."}
+      ],
+      "acceptance_criteria": [
+        "The preregistered governed policy is not dominated by either comparator and meets the exact useful-success/total-cost gate after every declared cost class is charged.",
+        "All fixed quality, authority, unsafe-release, residual, and fallback gates pass, and the claimed direction survives the declared transfer set and sensitivity analysis."
+      ]
+    },
+    "the-efficient-asi-hypothesis.problem.001": {
+      "proposition_type": "normative",
+      "current_disposition": "research_problem_not_positive_result",
+      "assumptions": ["The book values useful capability under finite compute, verification, governance, and human-attention budgets rather than capability score without resource accounting."],
+      "dependencies": ["asi-is-a-stack-not-a-model.core"],
+      "strongest_counterclaim": "Scale-only allocation is an adequate default because maximal cognition monotonically improves outcomes and its overhead is immaterial at the intended scope.",
+      "falsifier": "Across the frozen intended workloads, an always-maximal route is feasible, weakly dominates all alternatives on the declared joint frontier, and repeated work offers no material reusable structure after maintenance cost.",
+      "required_lanes": [
+        {"lane": "normative", "necessity": "Make finite resource and governance budgets explicit as design objectives."},
+        {"lane": "source-synthesis", "necessity": "Test whether current scale and systems literature already supplies an adequate allocation theory."},
+        {"lane": "empirical", "necessity": "Establish whether the motivating allocation pressure exists on the intended workloads rather than assuming it."}
+      ],
+      "acceptance_criteria": ["A dated workload/cost analysis identifies at least one material region where neither always-maximal nor always-cheapest routing satisfies the declared joint objectives."],
+      "promotion_ceiling": "argument_as_problem_definition_no_capability_promotion"
+    },
+    "the-efficient-asi-hypothesis.insufficiency.001": {
+      "proposition_type": "composite",
+      "assumptions": [
+        "Scale-only means route selection uses model scale or a monotone scale proxy without separately supplied task predicates, authority, total-cost, residual, or fallback state.",
+        "The claim concerns allocation-policy sufficiency, not whether a large model can internally represent the missing information."
+      ],
+      "dependencies": [],
+      "strongest_counterclaim": "Model scale, confidence, and observed task difficulty jointly predict route adequacy so well that explicit predicate, authority, cost, residual, and fallback records add no decision value.",
+      "falsifier": "A prospectively specified scale-only policy, with no equivalent additional route-contract state, matches the governed policy's route decisions, quality, authority compliance, total cost, residual closure, and fallback behavior across the frozen comparison set.",
+      "required_lanes": [
+        {"lane": "source-synthesis", "necessity": "Review actual scale-aware routing and compound-system policies rather than a straw scale-only baseline."},
+        {"lane": "executable", "necessity": "Implement the strict scale-only and governed policies with auditable information access."},
+        {"lane": "empirical", "necessity": "Compare decision and outcome adequacy under matched workloads."},
+        {"lane": "causal", "necessity": "Add the omitted state classes one at a time to locate their marginal value."}
+      ],
+      "acceptance_criteria": ["The strict scale-only policy fails at least one prospectively material decision or outcome gate that the governed policy passes, with the responsible extra state identified rather than attributed generically to architecture."]
+    },
+    "the-efficient-asi-hypothesis.minimum.001": {
+      "proposition_type": "executable",
+      "assumptions": ["The minimum is an accounting and admission slice, not a measured-efficiency system, and every declared field has at least one consuming validator or decision."],
+      "dependencies": [
+        "the-efficient-asi-hypothesis.interface.001",
+        "the-efficient-asi-hypothesis.interface.002",
+        "the-efficient-asi-hypothesis.interface.003",
+        "the-efficient-asi-hypothesis.invariant.001",
+        "the-efficient-asi-hypothesis.invariant.003",
+        "the-efficient-asi-hypothesis.invariant.004"
+      ],
+      "strongest_counterclaim": "A schema and synthetic ledger are documentation theater because they can validate field presence without exercising selection, verification, fallback, or cost attribution.",
+      "falsifier": "A declared minimum field has no behavioral consumer, a missing or corrupted field can still produce efficiency admission, or the slice cannot distinguish adequate-minimum, overkill, brittle, hidden-cost, and unsafe-saving cases.",
+      "required_lanes": [
+        {"lane": "executable", "necessity": "Run valid and seeded-invalid route records through selection, verification, fallback, residual, and admission consumers."},
+        {"lane": "formal", "necessity": "Check the bounded record-routing obligations without treating field completeness as truth."}
+      ],
+      "acceptance_criteria": ["Every required field has an exercised consumer; each seeded omission or contradiction reaches its exact rejection; and valid records reach only the bounded accounting state they justify."],
+      "promotion_ceiling": "synthetic-test-backed_for_exact_accounting_workflow_only_after_transition"
+    },
+    "the-efficient-asi-hypothesis.beyond_sota.001": {
+      "proposition_type": "composite",
+      "claim_label": "Speculative",
+      "current_disposition": "research_target_not_current_result",
+      "assumptions": [
+        "A shared route record can compare heterogeneous route families without erasing family-specific costs or quality measures.",
+        "Strong current conditional-compute, cascade, routing, compression, and fast-generation baselines can be reproduced or bounded closely enough for exact comparison."
+      ],
+      "dependencies": ["the-efficient-asi-hypothesis.core", "integrated-reference-architecture.core"],
+      "strongest_counterclaim": "The proposed route economy only wraps established routing and systems techniques in governance metadata, adding overhead without a new joint-frontier result or transferable capability ratchet.",
+      "falsifier": "The exact mature system is dominated by the frozen comparator envelope, fails any hard quality/authority/residual/fallback gate, cannot compare cost surfaces without invalid aggregation, or loses the result on the declared transfer workloads.",
+      "required_lanes": [
+        {"lane": "source-synthesis", "necessity": "Define the dated SOTA envelope and prevent mechanism or benchmark novelty overclaim."},
+        {"lane": "executable", "necessity": "Implement the shared ledger and heterogeneous route adapters with real consumers."},
+        {"lane": "empirical", "necessity": "Measure the complete joint frontier and exact strong-baseline gaps."},
+        {"lane": "causal", "necessity": "Show that route-economy components, not tuning or evaluator leakage, cause the result."},
+        {"lane": "transfer", "necessity": "Require model, workload, cost-regime, and route-family transfer."},
+        {"lane": "normative", "necessity": "Expose non-aggregable authority, human-control, and residual constraints."}
+      ],
+      "acceptance_criteria": ["Every named route family has an exercised adapter and complete cost record, and the exact system meets the prospectively frozen dominance or Pareto gate against reproduced strong baselines across the declared transfer set."],
+      "promotion_ceiling": "speculative_target_until_exact_SOTA_adjudication"
+    },
+    "the-efficient-asi-hypothesis.mechanism.001": {
+      "proposition_type": "executable",
+      "assumptions": ["The candidate set, authorization check, cost estimate, quality predicate, and fallback rule are declared before selection."],
+      "dependencies": ["the-efficient-asi-hypothesis.interface.001", "the-efficient-asi-hypothesis.interface.002"],
+      "strongest_counterclaim": "Searching for the cheapest adequate route costs more than it saves or selects brittle routes because quality cannot be predicted before execution.",
+      "falsifier": "The selector admits a route while a listed lower-cost authorized route satisfies the same predicate, selects a route that fails the fixed predicate without correct fallback, or search/verification overhead eliminates the allowed total-cost gain.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Check finite candidate and authorization ordering properties."},
+        {"lane": "executable", "necessity": "Exercise selection, rejection, escalation, and fallback on real route adapters."},
+        {"lane": "empirical", "necessity": "Measure prediction error, search cost, quality failure, and total cost."},
+        {"lane": "causal", "necessity": "Compare selector ablations against fixed and oracle policies."}
+      ],
+      "acceptance_criteria": ["For every admitted trace, no listed lower-cost authorized route is known to satisfy the same predicate, failed selections invoke the recorded fallback, and selection overhead remains inside the frozen budget."]
+    },
+    "the-efficient-asi-hypothesis.mechanism.002": {
+      "proposition_type": "causal",
+      "assumptions": ["Repeated task structure is identified without held-out leakage, compiled artifacts are versioned, and revalidation/maintenance work is charged."],
+      "dependencies": ["procedural-memory-and-cognitive-loop-closure.core", "artifact-graphs-audit-logs-and-replay.core"],
+      "strongest_counterclaim": "Compiling repeated work creates stale artifacts, maintenance burden, and lock-in that cost more than recomputation and reduce quality under drift.",
+      "falsifier": "On the frozen repeated workload, reuse does not reduce total contract cost at matched quality after compilation, storage, maintenance, revalidation, invalidation, and fallback costs, or it increases stale-artifact failures beyond the gate.",
+      "required_lanes": [
+        {"lane": "executable", "necessity": "Build versioned reusable artifacts with provenance, invalidation, and fallback consumers."},
+        {"lane": "empirical", "necessity": "Measure amortized benefit and stale-artifact harm over the declared horizon."},
+        {"lane": "causal", "necessity": "Compare reuse against recomputation and stale/unversioned controls."},
+        {"lane": "transfer", "necessity": "Test whether artifacts survive workload and model drift rather than memorizing one task set."}
+      ],
+      "acceptance_criteria": ["Versioned reuse improves the frozen amortized quality/cost gate over recomputation while stale-use, invalidation, and maintenance metrics remain within limits on held-out repeats and transfer tasks."]
+    },
+    "the-efficient-asi-hypothesis.mechanism.003": {
+      "proposition_type": "executable",
+      "assumptions": ["Each loop stage emits an inspectable artifact and unresolved work can be carried without being relabeled as success."],
+      "dependencies": ["the-efficient-asi-hypothesis.interface.002", "the-efficient-asi-hypothesis.interface.003"],
+      "strongest_counterclaim": "The named loop is an arbitrary diagram that adds no decision information beyond ordinary router and evaluator logs.",
+      "falsifier": "One or more named stages has no distinct input, output, consumer, or failure consequence, or removing its record leaves all admission and residual decisions unchanged.",
+      "required_lanes": [
+        {"lane": "normative", "necessity": "Justify the chosen stage boundaries and distinguish them from source-specific branding."},
+        {"lane": "executable", "necessity": "Trace candidate generation, routing, search, generation, verification, reuse, and residual custody through consuming components."},
+        {"lane": "causal", "necessity": "Mutation or ablation must show which stage records affect outcomes."}
+      ],
+      "acceptance_criteria": ["Every retained stage has a unique contract and at least one consumer whose correct route or rejection changes under a prospectively seeded stage-record mutation."]
+    },
+    "the-efficient-asi-hypothesis.mechanism.004": {
+      "proposition_type": "executable",
+      "assumptions": ["Incomplete obligations and repair work can be identified at decision time or appended with lineage when discovered later."],
+      "dependencies": ["the-efficient-asi-hypothesis.invariant.002", "the-efficient-asi-hypothesis.invariant.004"],
+      "strongest_counterclaim": "Residual records duplicate ordinary error logs and cannot reliably quantify downstream repair burden.",
+      "falsifier": "A route is admitted while a known incomplete obligation or repair cost is absent from its lineage, or residual records fail to predict or reconcile the seeded repair work within the frozen tolerance.",
+      "required_lanes": [
+        {"lane": "executable", "necessity": "Seed known routing and compression obligations and trace their attachment, ownership, closure, and fallback."},
+        {"lane": "empirical", "necessity": "Compare recorded residual burden with realized downstream repair."},
+        {"lane": "causal", "necessity": "Ablate residual attachment to measure hidden-success and repair effects."}
+      ],
+      "acceptance_criteria": ["All seeded obligations remain route-linked through closure or explicit carry-forward, and recorded versus realized repair burden meets the preregistered reconciliation gate."]
+    },
+    "the-efficient-asi-hypothesis.interface.001": {
+      "proposition_type": "executable",
+      "assumptions": ["Planning can declare task quality and authority before knowing the selected route and cannot rewrite them silently after observing outcomes."],
+      "dependencies": ["planning-as-a-control-layer.core", "system-boundaries-and-authority.core"],
+      "strongest_counterclaim": "Quality and authority are too task- and route-dependent to fix before routing, so the interface causes false refusal or post-hoc exceptions.",
+      "falsifier": "Routing proceeds without a versioned task contract, predicate, ceiling, and request, or those fields can be changed after selection without invalidating the comparison and recording approval.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Specify version and immutability conditions for the finite request."},
+        {"lane": "executable", "necessity": "Test missing, stale, conflicting, and post-selection mutation cases in the planner-router handoff."}
+      ],
+      "acceptance_criteria": ["Every evaluated route binds to one immutable request version, and missing or unauthorized mutations fail closed with exact records."]
+    },
+    "the-efficient-asi-hypothesis.interface.002": {
+      "proposition_type": "executable",
+      "assumptions": ["Candidate identity, authorization, estimated cost, selection, rejection reason, and fallback state can be serialized without hiding searched alternatives."],
+      "dependencies": ["routing-heads-and-specialist-cores.core"],
+      "strongest_counterclaim": "Requiring rejected-route disclosure is prohibitively expensive or misleading because the feasible candidate space is open-ended.",
+      "falsifier": "The router cannot reproduce the declared candidate set and selection decision, omits a considered lower-cost route, or presents the set as exhaustive without a search-bound record.",
+      "required_lanes": [
+        {"lane": "executable", "necessity": "Replay selection from serialized candidate, rejection, authorization, and fallback records."},
+        {"lane": "formal", "necessity": "Check bounded selection properties only over the declared set."},
+        {"lane": "empirical", "necessity": "Measure logging/search overhead and omitted-candidate incidence."}
+      ],
+      "acceptance_criteria": ["Independent replay reproduces the selection over the declared set, every considered lower-cost route has a disposition, and the record states the search bound rather than implying completeness."]
+    },
+    "the-efficient-asi-hypothesis.interface.003": {
+      "proposition_type": "executable",
+      "assumptions": ["Evidence admission is separated from route execution and consumes fixed quality, total-cost, authority, residual, and fallback records."],
+      "dependencies": ["evidence-states-and-claim-discipline.core", "the-efficient-asi-hypothesis.invariant.001"],
+      "strongest_counterclaim": "A combined router/evaluator can decide efficiency adequately without a separate evidence artifact or transition decision.",
+      "falsifier": "An efficiency or support effect is emitted without every required joint-test input, despite a failed hard gate, or solely by the component whose route is being judged without the declared independence boundary.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Define finite admission outcomes and no-promotion cases."},
+        {"lane": "executable", "necessity": "Exercise the evidence consumer against missing, contradictory, failed, and passing route records."},
+        {"lane": "empirical", "necessity": "Calibrate evaluator error and false admission/refusal on seeded and natural cases."}
+      ],
+      "acceptance_criteria": ["Only complete records meeting every hard gate can reach bounded efficiency admission, evaluator identity is preserved, and support remains unchanged absent an accepted transition record."]
+    },
+    "the-efficient-asi-hypothesis.invariant.001": {
+      "proposition_type": "formal",
+      "assumptions": ["Quality and total contract cost are defined prospectively and remain comparable across policies."],
+      "dependencies": [],
+      "strongest_counterclaim": "Some route improvements are meaningful despite incomparable quality or partially observed costs, so requiring both blocks useful learning.",
+      "falsifier": "A route receives an efficiency classification without a fixed predicate or with any required cost class absent, incomparable, or moved outside the declared horizon.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Specify exact required fields and incomparable-cost outcomes."},
+        {"lane": "executable", "necessity": "Reject missing, changed, and partially observed predicates or cost ledgers."},
+        {"lane": "empirical", "necessity": "Audit whether declared cost capture matches observed resource and human work."}
+      ],
+      "acceptance_criteria": ["Every admitted claim binds one predicate and complete declared cost vector across policies; missing or incomparable dimensions prevent scalar efficiency promotion."]
+    },
+    "the-efficient-asi-hypothesis.invariant.002": {
+      "proposition_type": "composite",
+      "assumptions": ["Downstream utility tasks and repair/residual boundaries are declared before observing compression outcomes."],
+      "dependencies": ["rankfold-neuralfold-and-artifact-compression.core", "compact-generative-systems-and-residual-honesty.core"],
+      "strongest_counterclaim": "Compression ratio and reconstruction checks are sufficient; downstream utility, repair, and residual accounting are optional application concerns.",
+      "falsifier": "A compression route receives an efficiency classification without the declared downstream utility check, realized/estimated repair cost, or unresolved residual record, or a seeded utility loss remains undetected.",
+      "required_lanes": [
+        {"lane": "executable", "necessity": "Bind compressed artifacts to utility probes, repair records, residuals, and literal fallback."},
+        {"lane": "empirical", "necessity": "Measure utility preservation and repair burden on held-out tasks."},
+        {"lane": "causal", "necessity": "Use lossy, misleading-ratio, and hidden-repair controls."},
+        {"lane": "transfer", "necessity": "Test utility outside the compression tuning workload."}
+      ],
+      "acceptance_criteria": ["Compression admission passes the frozen utility gate, charges repair, retains residuals and fallback, and survives the declared transfer probes."]
+    },
+    "the-efficient-asi-hypothesis.invariant.003": {
+      "proposition_type": "executable",
+      "assumptions": ["A fallback may be unavailable, but that state, its owner, and consequence can be made explicit before admission."],
+      "dependencies": ["the-efficient-asi-hypothesis.interface.002"],
+      "strongest_counterclaim": "Some cheap routes are worth using without tested fallback, especially for low-impact or easily retried work.",
+      "falsifier": "An admitted cheap or compressed route has neither a successfully tested fallback nor an explicit unavailable state with bounded consequence and owner, or the recorded fallback fails when invoked.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Represent available, unavailable, stale, and failed fallback states."},
+        {"lane": "executable", "necessity": "Force primary-route failure and exercise the recorded fallback or bounded unavailable consequence."},
+        {"lane": "empirical", "necessity": "Measure fallback success, latency, quality, and cost rather than field presence."}
+      ],
+      "acceptance_criteria": ["Every admitted route carries one explicit fallback state; seeded primary failures produce the recorded bounded behavior, and claimed available fallbacks meet the frozen success gate."]
+    },
+    "the-efficient-asi-hypothesis.invariant.004": {
+      "proposition_type": "causal",
+      "assumptions": ["Cost classes can be causally attributed or allocated through a prospectively declared rule without double counting."],
+      "dependencies": ["resource-economics-and-token-budgets.core"],
+      "strongest_counterclaim": "End-to-end attribution is too expensive or ambiguous; visible inference and verification costs are adequate proxies for route efficiency.",
+      "falsifier": "A route receives an efficiency classification while any declared context, verification, repair, human, maintenance, rollback, or residual cost is omitted, shifted to another owner, double counted, or causally unrelated to the route under the frozen attribution rule.",
+      "required_lanes": [
+        {"lane": "normative", "necessity": "Declare allocation rules for shared infrastructure and human labor."},
+        {"lane": "executable", "necessity": "Carry cost lineage through route, artifact, review, maintenance, and rollback records."},
+        {"lane": "empirical", "necessity": "Reconcile ledger totals with observed compute, time, and human-work measurements."},
+        {"lane": "causal", "necessity": "Seed cost shifting and compare route removal or ablation to attributed totals."}
+      ],
+      "acceptance_criteria": ["All declared cost classes reconcile within the frozen tolerance, shared-cost rules are explicit, seeded cost shifting is detected, and no claimed saving depends on an excluded class."]
+    },
+    "the-efficient-asi-hypothesis.invariant.005": {
+      "proposition_type": "formal",
+      "assumptions": ["Applicable authority, approval, verification, and rollback gates are declared by the task contract and can be observed at admission."],
+      "dependencies": ["system-boundaries-and-authority.core", "runtime-adapters-tool-permissions-and-human-approval.core"],
+      "strongest_counterclaim": "For sufficiently low-cost or high-confidence routes, bypassing a slow approval, verification, or rollback gate can be a rational efficiency optimization.",
+      "falsifier": "A route receives an efficiency classification after bypassing any applicable gate without a prospectively authorized exception that preserves the same bounded consequence and is charged to the record.",
+      "required_lanes": [
+        {"lane": "normative", "necessity": "Declare which gates are hard constraints and how bounded exceptions are authorized."},
+        {"lane": "formal", "necessity": "Check finite no-bypass and explicit-exception semantics."},
+        {"lane": "executable", "necessity": "Seed authority, approval, verification, and rollback bypasses in actual admission consumers."}
+      ],
+      "acceptance_criteria": ["Every seeded unapproved bypass reaches unsafe-saving or denial, and only prospectively authorized bounded exceptions remain eligible for separate efficiency evaluation."]
+    },
+    "the-efficient-asi-hypothesis.failure_mode.001": {
+      "proposition": "Reporting low inference cost as intelligence or efficiency despite failed quality, hidden total cost, or absent residual accounting produces brittle success labels.",
+      "proposition_type": "causal",
+      "assumptions": ["Quality failure and hidden cost can be independently seeded or adjudicated."],
+      "dependencies": ["the-efficient-asi-hypothesis.invariant.001"],
+      "strongest_counterclaim": "Inference cost is a sufficient practical proxy because downstream quality checks and repair are stable across routes.",
+      "falsifier": "Under matched routes, using inference cost alone does not increase false efficiency admissions, brittle successes, or downstream repair relative to full accounting within the frozen uncertainty rule.",
+      "required_lanes": [
+        {"lane": "executable", "necessity": "Create matched cheap-pass, cheap-fail, and hidden-cost cases."},
+        {"lane": "causal", "necessity": "Ablate quality and total-cost fields while holding route outputs fixed."},
+        {"lane": "empirical", "necessity": "Measure false admission and realized repair on natural work."}
+      ],
+      "acceptance_criteria": ["Inference-cost-only admission shows the preregistered material increase in false efficiency labels or repair, and full accounting detects the seeded cases at the required rate."]
+    },
+    "the-efficient-asi-hypothesis.failure_mode.002": {
+      "proposition": "Compressing task context without a downstream utility check can remove critical constraints while preserving an apparently successful or cheaper route.",
+      "proposition_type": "causal",
+      "assumptions": ["Critical constraints and downstream utility can be scored independently of compression ratio."],
+      "dependencies": ["the-efficient-asi-hypothesis.invariant.002"],
+      "strongest_counterclaim": "Modern prompt or representation compression preserves all task-relevant context sufficiently, making explicit critical-constraint probes unnecessary.",
+      "falsifier": "Across preregistered critical-constraint tasks, compression without the proposed utility/residual checks does not increase constraint loss or false admission compared with the full contract, or the checks cannot detect seeded loss.",
+      "required_lanes": [
+        {"lane": "executable", "necessity": "Create compression, literal-context, and seeded critical-constraint-loss routes."},
+        {"lane": "causal", "necessity": "Ablate utility and residual checks under matched compressed outputs."},
+        {"lane": "empirical", "necessity": "Measure constraint retention, task success, repair, and false admission."},
+        {"lane": "transfer", "necessity": "Repeat across task and compression families."}
+      ],
+      "acceptance_criteria": ["The full contract detects the seeded critical losses and materially reduces false admission without exceeding the frozen cost/refusal trade-off on transfer tasks."]
+    },
+    "the-efficient-asi-hypothesis.failure_mode.003": {
+      "proposition": "A benchmark score can improve while hidden verification, repair, human-review, fallback, regression, or residual burden makes the route worse on the declared total-contract frontier.",
+      "proposition_type": "causal",
+      "assumptions": ["Benchmark score and every declared burden can be measured on the same route and horizon."],
+      "dependencies": ["benchmark-ratchets-and-anti-goodhart-evidence.core", "the-efficient-asi-hypothesis.invariant.004"],
+      "strongest_counterclaim": "Benchmark improvement is sufficiently correlated with useful efficiency that extra burden accounting rarely changes route rankings.",
+      "falsifier": "Across matched benchmark campaigns, adding all burden classes never reverses or materially changes a score-based route ranking within the preregistered range, or burden cannot be attributed reliably enough to support the claim.",
+      "required_lanes": [
+        {"lane": "executable", "necessity": "Join benchmark outputs to route, cost, repair, fallback, and residual records."},
+        {"lane": "empirical", "necessity": "Measure ranking changes and hidden burden on strong natural-work baselines."},
+        {"lane": "causal", "necessity": "Seed benchmark-only optimization and hidden-burden controls."},
+        {"lane": "transfer", "necessity": "Check ranking stability beyond the tuned benchmark."}
+      ],
+      "acceptance_criteria": ["The campaign records the exact rate and magnitude of score/total-frontier disagreement and supports only the observed workload-specific conclusion."]
+    },
+    "the-efficient-asi-hypothesis.formal.efficiency-minimum-viable-operational-invariant": {
+      "proposition_type": "formal",
+      "current_disposition": "implemented_formal_atom_pending_model_adequacy_and_transition",
+      "assumptions": ["The finite candidate list is the declared comparison set; authorization, cost order, and quality satisfaction are faithful inputs, not theorem conclusions."],
+      "dependencies": ["the-efficient-asi-hypothesis.mechanism.001"],
+      "strongest_counterclaim": "The theorem merely projects a predeclared candidate list and cannot establish search completeness, cost accuracy, or real quality.",
+      "falsifier": "A Lean countermodel admits a selected route while a listed lower-cost authorized candidate satisfies the predicate, a declared field is semantically unused, or a runtime refinement disagrees with the formal decision.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Kernel-check nonempty witnesses, lower-cost countercases, and bounded selection over the declared set."},
+        {"lane": "executable", "necessity": "Differentially test real selection traces and mutate authorization, cost, quality, and candidate membership."}
+      ],
+      "acceptance_criteria": ["Lean checks the exact finite property, reachable positive and negative witnesses exist, every material field mutation changes the expected decision, and runtime traces refine it over the declared set."],
+      "promotion_ceiling": "synthetic-test-backed_for_exact_declared_candidate_property_only_after_adequacy_review_and_transition",
+      "reproduction": {"command": "cd lean && lake build", "environment_lock": "lean/lake-manifest.json and lean/lean-toolchain", "artifact_digest": null, "evaluator_identity": "Lean 4 kernel in the pinned Lake environment"}
+    },
+    "the-efficient-asi-hypothesis.formal.efficiency-minimum-viable-failure-blocks-promotion": {
+      "proposition_type": "formal",
+      "current_disposition": "implemented_formal_atom_pending_model_adequacy_and_transition",
+      "assumptions": ["Open obligations and residual-record presence faithfully represent the modeled promotion event; burden magnitude and utility are outside the theorem."],
+      "dependencies": ["the-efficient-asi-hypothesis.mechanism.004"],
+      "strongest_counterclaim": "The theorem restates residual-record presence in its premises and does not show that residuals are complete, truthful, small enough, or behaviorally consumed.",
+      "falsifier": "A reachable modeled promotion has open obligations without a residual record, residual presence is unused by the decision, or a runtime consumer promotes the corresponding invalid record.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Check exact reachable promotion and blocking cases without claiming burden adequacy."},
+        {"lane": "executable", "necessity": "Mutation-test obligation and residual fields in every concrete promotion consumer."}
+      ],
+      "acceptance_criteria": ["Open-obligation/no-residual cases are reachable and rejected, closed or recorded cases reach only bounded outcomes, and all consuming gates agree under mutation."],
+      "promotion_ceiling": "synthetic-test-backed_for_exact_residual_presence_gate_only_after_adequacy_review_and_transition",
+      "reproduction": {"command": "cd lean && lake build", "environment_lock": "lean/lake-manifest.json and lean/lean-toolchain", "artifact_digest": null, "evaluator_identity": "Lean 4 kernel in the pinned Lake environment"}
+    },
+    "the-efficient-asi-hypothesis.formal.efficiency-claim-admission-lifecycle-route": {
+      "proposition_type": "formal",
+      "current_disposition": "implemented_formal_atom_pending_model_adequacy_and_transition",
+      "assumptions": ["The finite fields cover the declared admission taxonomy but do not establish value truth, search completeness, evaluator validity, or open-world exhaustiveness."],
+      "dependencies": ["the-efficient-asi-hypothesis.interface.003", "the-efficient-asi-hypothesis.invariant.001", "the-efficient-asi-hypothesis.invariant.005"],
+      "strongest_counterclaim": "The lifecycle theorem is a field-completeness router that creates proof volume without proving measured efficiency or semantic adequacy.",
+      "falsifier": "A required field can be removed or corrupted without reaching its exact rejection, a complete modeled record cannot reach bounded admission, or a concrete consumer disagrees with the formal route.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Check every exact missing-field and failed-gate route plus nonempty admission witnesses."},
+        {"lane": "executable", "necessity": "Mutation-test serialized fields and all admission consumers; reject any use as evidence that field values are true."}
+      ],
+      "acceptance_criteria": ["Every declared mutation reaches its exact outcome, valid finite records reach bounded admission, all consumers refine the route, and proof-audit review retains the target only if each branch has a real consumer."],
+      "promotion_ceiling": "synthetic-test-backed_for_finite_admission_routing_only_after_adequacy_review_and_transition",
+      "reproduction": {"command": "cd lean && lake build", "environment_lock": "lean/lake-manifest.json and lean/lean-toolchain", "artifact_digest": null, "evaluator_identity": "Lean 4 kernel in the pinned Lake environment"}
+    },
+    "the-efficient-asi-hypothesis.formal.efficiency-route-search-probe-fixture-bridge": {
+      "proposition_type": "formal",
+      "current_disposition": "implemented_fixture_bridge_pending_consumer_and_adequacy_audit",
+      "assumptions": ["The JSON summary accurately reflects the two synthetic traces, fourteen candidate rows, six invalid controls, and no-promotion boundary; the theorem does not inspect files or rerun the Python probe."],
+      "dependencies": ["the-efficient-asi-hypothesis.formal.efficiency-claim-admission-lifecycle-route"],
+      "strongest_counterclaim": "The bridge is a hard-coded count-and-flag restatement with no semantic value beyond the Python validator and should be retired as proof bloat unless a consumer needs it.",
+      "falsifier": "The bridge accepts mismatched counts, missing required invalid controls, a promotion effect, or a summary inconsistent with the replayed probe; alternatively, proof-consumer audit finds no independent use beyond restating the fixture.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Determine whether the bridge expresses a nontrivial cross-artifact invariant or should be retired with lineage."},
+        {"lane": "executable", "necessity": "Replay the probe, mutate all summary fields, and compare the serialized result to the Lean fixture input."}
+      ],
+      "acceptance_criteria": ["Every count, required control, and no-promotion mutation is rejected by replay and the Lean boundary, and P2 proof rationalization records a real consumer or retires the theorem without losing the stronger executable test."],
+      "promotion_ceiling": "no_support_promotion_fixture_bridge_pending_P2_rationalization",
+      "reproduction": {"command": "python3 scripts/validate_efficiency_route_search_probe.py && (cd lean && lake build)", "environment_lock": "Python dependency lock plus lean/lake-manifest.json and lean/lean-toolchain", "artifact_digest": null, "evaluator_identity": "Python validator and Lean 4 kernel in pinned repository environments"}
+    }
+  },
+  "prose_candidate_dispositions": {
+    "the-efficient-asi-hypothesis.prose.3ba3057a1e14": {"state": "nonmaterial_explanation", "rationale": "Explicit chapter guardrail listing non-claims; it limits interpretation but adds no positive material proposition."},
+    "the-efficient-asi-hypothesis.prose.9c450d902358": {"state": "editorial_or_question", "rationale": "Transition question from the stack boundary into the allocation problem."},
+    "the-efficient-asi-hypothesis.prose.36429a4df479": {"state": "editorial_or_question", "rationale": "Human-reading transition that motivates the chapter without an independently testable proposition."},
+    "the-efficient-asi-hypothesis.prose.e3669ddfaab9": {"state": "duplicate_of_atom", "rationale": "Plain-language restatement of the narrowed route, reuse, verification, and evidence core hypothesis.", "target_atom_id": "the-efficient-asi-hypothesis.core"},
+    "the-efficient-asi-hypothesis.prose.7ad4a86321ec": {"state": "nonmaterial_explanation", "rationale": "Negative clarification that the chapter is not an always-cheap policy."},
+    "the-efficient-asi-hypothesis.prose.365554639323": {"state": "duplicate_of_atom", "rationale": "Human-readable restatement of fixed quality, authority, total cost, and residual visibility.", "target_atom_id": "the-efficient-asi-hypothesis.core"},
+    "the-efficient-asi-hypothesis.prose.b70f0af3cdcf": {"state": "duplicate_of_atom", "rationale": "Reader-language version of total-cost attribution and admission only after review.", "target_atom_id": "the-efficient-asi-hypothesis.invariant.004"},
+    "the-efficient-asi-hypothesis.prose.57c972c1aa71": {"state": "nonmaterial_explanation", "rationale": "Scope guardrail rejecting small-model sufficiency and scale-unnecessary readings."},
+    "the-efficient-asi-hypothesis.prose.75c6d7123bf3": {"state": "duplicate_of_atom", "rationale": "Condensed quality, total-cost, and residual accounting requirement.", "target_atom_id": "the-efficient-asi-hypothesis.invariant.001"},
+    "the-efficient-asi-hypothesis.prose.b388edbd0663": {"state": "duplicate_of_atom", "rationale": "Explains the exact state missing from a strict scale-only allocation policy.", "target_atom_id": "the-efficient-asi-hypothesis.insufficiency.001"},
+    "the-efficient-asi-hypothesis.prose.f2e8c7b43d39": {"state": "historical_or_source_report", "rationale": "Source-note summary of sparse-MoE mechanisms and system constraints."},
+    "the-efficient-asi-hypothesis.prose.ca62d012b1c8": {"state": "historical_or_source_report", "rationale": "Source-note interpretation of BIG-bench as capability pressure rather than route-cost evidence."},
+    "the-efficient-asi-hypothesis.prose.f19bb8ad3a22": {"state": "nonmaterial_explanation", "rationale": "Introduces the comparator-limit paragraph and asserts no standalone result."},
+    "the-efficient-asi-hypothesis.prose.0285df21a92f": {"state": "historical_or_source_report", "rationale": "Comparator limitation for conditional computation; governed by cited external source notes."},
+    "the-efficient-asi-hypothesis.prose.3b51dd58dfab": {"state": "historical_or_source_report", "rationale": "Comparator limitation for cascades and learned routers, not a local measured result."},
+    "the-efficient-asi-hypothesis.prose.7577834a0da2": {"state": "historical_or_source_report", "rationale": "Comparator limitation for prompt compression and fast decoding, bounded by cited source notes."},
+    "the-efficient-asi-hypothesis.prose.d383971a4622": {"state": "historical_or_source_report", "rationale": "Comparator limitation for broad benchmarks, not an independent benchmark result."},
+    "the-efficient-asi-hypothesis.prose.d4ef2502cfba": {"state": "duplicate_of_atom", "rationale": "Literal rendered core-claim marker.", "target_atom_id": "the-efficient-asi-hypothesis.core"},
+    "the-efficient-asi-hypothesis.prose.4028c740aca4": {"state": "historical_or_source_report", "rationale": "Synthesis of assigned BeastBrain, MoECOT, and Aletheia source notes with no local result."},
+    "the-efficient-asi-hypothesis.prose.d8f2af0c1d25": {"state": "duplicate_of_atom", "rationale": "Expands selector disclosure, fallback, and residual requirements already owned by the route mechanism.", "target_atom_id": "the-efficient-asi-hypothesis.mechanism.001"},
+    "the-efficient-asi-hypothesis.prose.d93b60daf44c": {"state": "duplicate_of_atom", "rationale": "Restates verified repeated-work compilation into durable versioned routes and artifacts.", "target_atom_id": "the-efficient-asi-hypothesis.mechanism.002"},
+    "the-efficient-asi-hypothesis.prose.39e4c3971a24": {"state": "duplicate_of_atom", "rationale": "Restates compression utility, repair, and residual obligations.", "target_atom_id": "the-efficient-asi-hypothesis.invariant.002"},
+    "the-efficient-asi-hypothesis.prose.728efb10f855": {"state": "historical_or_source_report", "rationale": "RMI source-derived ratchet and residual-escrow summary; the local mechanism is separately owned."},
+    "the-efficient-asi-hypothesis.prose.8467d6d5b8b7": {"state": "historical_or_source_report", "rationale": "Simulation Scaling source-derived contract-relative feasibility summary."},
+    "the-efficient-asi-hypothesis.prose.eeb0ef229f26": {"state": "nonmaterial_explanation", "rationale": "Explains why useful, cheap, powerful, and efficient are distinct labels under the owned accounting atoms."},
+    "the-efficient-asi-hypothesis.prose.a45a2fb9fec4": {"state": "duplicate_of_atom", "rationale": "Introduces the cost classes now explicitly owned by the route-attribution invariant.", "target_atom_id": "the-efficient-asi-hypothesis.invariant.004"},
+    "the-efficient-asi-hypothesis.prose.834ccd11e0cb": {"state": "duplicate_of_atom", "rationale": "Concrete context-cost shifting example for the total route-cost invariant.", "target_atom_id": "the-efficient-asi-hypothesis.invariant.004"},
+    "the-efficient-asi-hypothesis.prose.5a84fce0cd1c": {"state": "duplicate_of_atom", "rationale": "Concrete repair-cost shifting example for the total route-cost invariant.", "target_atom_id": "the-efficient-asi-hypothesis.invariant.004"},
+    "the-efficient-asi-hypothesis.prose.bb9eec1cc050": {"state": "duplicate_of_atom", "rationale": "Concrete human-review cost shifting example for the total route-cost invariant.", "target_atom_id": "the-efficient-asi-hypothesis.invariant.004"},
+    "the-efficient-asi-hypothesis.prose.a5efe249ca69": {"state": "duplicate_of_atom", "rationale": "Operational disclosure requirement for bounded lower-cost comparison.", "target_atom_id": "the-efficient-asi-hypothesis.formal.efficiency-minimum-viable-operational-invariant"},
+    "the-efficient-asi-hypothesis.prose.9f452a2db8a6": {"state": "duplicate_of_atom", "rationale": "Support ceiling when the required bounded comparison cannot be reconstructed.", "target_atom_id": "the-efficient-asi-hypothesis.core"},
+    "the-efficient-asi-hypothesis.prose.fee8bd859b48": {"state": "duplicate_of_atom", "rationale": "Concise statement of benchmark improvement coexisting with hidden residual burden.", "target_atom_id": "the-efficient-asi-hypothesis.failure_mode.003"},
+    "the-efficient-asi-hypothesis.prose.688ee6f7260f": {"state": "duplicate_of_atom", "rationale": "Summary of the Costed Route Record's coupled quality, cost, residual, and fallback contract.", "target_atom_id": "the-efficient-asi-hypothesis.minimum.001"},
+    "the-efficient-asi-hypothesis.prose.3438c72ae1fd": {"state": "nonmaterial_explanation", "rationale": "Explicit non-claim limiting the minimum fixture to accounting representation."},
+    "the-efficient-asi-hypothesis.prose.960c0af4eb6e": {"state": "duplicate_of_atom", "rationale": "Enumerates the exact representational boundary of the minimum artifact.", "target_atom_id": "the-efficient-asi-hypothesis.minimum.001"},
+    "the-efficient-asi-hypothesis.prose.509e5bd5bcb8": {"state": "nonmaterial_explanation", "rationale": "Correct limitation that synthetic fixture success is not empirical efficiency."},
+    "the-efficient-asi-hypothesis.prose.54370e1a031c": {"state": "duplicate_of_atom", "rationale": "Speculative endpoint restatement of routed expensive cognition and reusable work.", "target_atom_id": "the-efficient-asi-hypothesis.beyond_sota.001"},
+    "the-efficient-asi-hypothesis.prose.599361a51202": {"state": "duplicate_of_atom", "rationale": "Endpoint benchmark-accounting target already owned by the beyond-SOTA atom.", "target_atom_id": "the-efficient-asi-hypothesis.beyond_sota.001"},
+    "the-efficient-asi-hypothesis.prose.633ff11538c8": {"state": "nonmaterial_explanation", "rationale": "Qualitative endpoint comparison without an additional exact claim beyond the beyond-SOTA target."},
+    "the-efficient-asi-hypothesis.prose.ef82a13cff4a": {"state": "duplicate_of_atom", "rationale": "Restates the core's fixed quality, authority, residual, and route-choice boundaries.", "target_atom_id": "the-efficient-asi-hypothesis.core"},
+    "the-efficient-asi-hypothesis.prose.4aa5783d9f7f": {"state": "nonmaterial_explanation", "rationale": "Current support boundary and campaign prerequisites, not an additional architecture claim."},
+    "the-efficient-asi-hypothesis.prose.129399e3df37": {"state": "duplicate_of_atom", "rationale": "Exact prose summary of the finite admission and probe formal targets.", "target_atom_id": "the-efficient-asi-hypothesis.formal.efficiency-claim-admission-lifecycle-route"},
+    "the-efficient-asi-hypothesis.prose.6cc45e3cec1f": {"state": "nonmaterial_explanation", "rationale": "Exact non-claim boundary for the existing Lean hooks."},
+    "the-efficient-asi-hypothesis.prose.30ce293b7494": {"state": "nonmaterial_explanation", "rationale": "Evidence boundary distinguishing design-language sources from required measured support."},
+    "the-efficient-asi-hypothesis.prose.ac04fc2564e8": {"state": "duplicate_of_atom", "rationale": "Reader-language definition of fixed quality, total cost, alternatives, residual, and fallback accounting.", "target_atom_id": "the-efficient-asi-hypothesis.invariant.001"},
+    "the-efficient-asi-hypothesis.prose.87adb383eebe": {"state": "duplicate_of_atom", "rationale": "Restates no efficiency admission through missing permission, adequacy, verification, or rollback.", "target_atom_id": "the-efficient-asi-hypothesis.invariant.005"},
+    "the-efficient-asi-hypothesis.prose.f83ff1f63f06": {"state": "editorial_or_question", "rationale": "Chapter handoff into the next authority owner; causal wording is resolved by that chapter's explicit authority claims."}
+  },
+  "non_claims": [
+    "Completing this semantic sweep does not establish any efficiency, capability, model-quality, safety, transfer, or SOTA result and changes no support state.",
+    "The narrowed core and two new manifest invariants are newly precise obligations, not positive evidence.",
+    "Duplicate and source-report dispositions preserve ownership and evidence boundaries; they do not prove the target atoms or cited external results."
+  ]
+}

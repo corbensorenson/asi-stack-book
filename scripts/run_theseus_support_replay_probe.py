@@ -37,7 +37,7 @@ TRACKED_ARTIFACTS = [
     "docs/theseus_support_replay_probe.md",
     "scripts/validate_theseus_report.py",
     "scripts/validate_theseus_generation_mode_import.py",
-    "lean/AsiStackProofs/FastGeneration.lean",
+    "lean/AsiStackProofs/FastGenerationRefinement.lean",
     "experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json",
     "experiments/theseus_import/results/2026-06-29-local.json",
     "experiments/theseus_generation_mode_import/fixtures/valid/generation_mode_gate_public_summary.valid.json",

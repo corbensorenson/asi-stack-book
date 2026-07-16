@@ -75,18 +75,12 @@ reconstruction does not match the target.
 
 ## Lean Fixture Bridge
 
-The command also checks that `AsiStackProofs.CompactGenerativeSystems` contains
-the corresponding finite fixture constructors and theorem names:
-`compact_gvr_fixture_selected_is_eligible`,
-`lossy_marked_exact_fixture_rejected`,
-`negative_rate_without_fallback_fixture_rejected`,
-`bounded_search_overrun_fixture_rejected`, and
-`compact_gvr_fixture_selected_beats_literal_baseline`.
-
-The Lean bridge proves only the finite fixture relation encoded in the module:
-the selected receipt is eligible, the three controls are ineligible, and the
-selected receipt's modeled byte count is below the literal baseline's modeled
-byte count.
+The command also checks the reachable verification and fallback boundary in
+`AsiStackProofs.CompactGenerationRefinement`: lossy exactness is blocked,
+reconstruction mismatch activates a preserved-source fallback only when it is
+executable, missing fallback blocks progress, and the fallback witness reaches
+closure without support or external-effect authority. Receipt values and byte
+comparisons remain owned by this Python validator rather than copied into Lean.
 
 ## Residuals
 

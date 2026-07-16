@@ -37,11 +37,11 @@ LEDGER_MD = ROOT / "docs" / "contribution_novelty_ledger.md"
 LEDGER_JSON = ROOT / "docs" / "contribution_novelty_ledger.json"
 VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 BOOK_STRUCTURE = ROOT / "book_structure.json"
-LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "CompactGenerativeSystems.lean"
+LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "CompactGenerationRefinement.lean"
 
 COMMAND = "python3 scripts/validate_residual_ledger_trace.py"
 CODEX_TEST_NAME = "Residual ledger trace"
-LEAN_THEOREM = "residual_ledger_trace_surface_bridge"
+LEAN_THEOREM = "result_digest_substitution_blocks_publication"
 EXPECTED_SOURCE_REFS = {
     "experiments/resource_flagship_lane/results/2026-07-01-local.json",
     "experiments/resource_workflow_trace/results/2026-07-01-local.json",
@@ -264,9 +264,9 @@ def build_result(errors: list[str]) -> dict[str, Any]:
         "trace_entries": trace_entries,
         "trace_summary": summary,
         "lean_fixture_alignment": {
-            "module": "AsiStackProofs.CompactGenerativeSystems",
+            "module": "AsiStackProofs.CompactGenerationRefinement",
             "theorem_refs": [LEAN_THEOREM],
-            "expected": summary,
+            "expected": {"resultSetDigestBound": True, "supportAssignmentAuthority": False},
         },
         "support_state_effect": "none",
         "chapter_core_support_effect": "none",
@@ -377,8 +377,8 @@ def validate_surfaces(errors: list[str]) -> None:
         rel(LEAN_FILE): (
             LEAN_FILE,
             [
-                "ResidualLedgerTraceSummary",
-                "residualLedgerTraceSummary",
+                "inductive Stage",
+                "resultSetDigest",
                 LEAN_THEOREM,
             ],
         ),
@@ -452,19 +452,7 @@ def validate_lean_shape(errors: list[str]) -> None:
     text = LEAN_FILE.read_text(encoding="utf-8")
     if not re.search(rf"theorem\s+{re.escape(LEAN_THEOREM)}\b", text):
         errors.append(f"{rel(LEAN_FILE)} missing theorem {LEAN_THEOREM}.")
-    for field in (
-        "resourceFlagshipArtifactRead",
-        "resourceSublaneDecisionsRecorded",
-        "resourceResidualizedDeferralsVisible",
-        "resourceDisplacedCostsResidualized",
-        "compactGvrResidualsVisible",
-        "compactGvrControlsVisible",
-        "readinessResidualEscrowVisible",
-        "readinessLostResidualControlRejected",
-        "supportStateEffectNone",
-        "nonClaimBoundary",
-        "deployedLedgerNotClaimed",
-    ):
+    for field in ("resultSetDigest", "resultDigestsBound", "supportAssignmentCount", "routeFor"):
         if field not in text:
             errors.append(f"{rel(LEAN_FILE)} missing residual ledger field {field}.")
 

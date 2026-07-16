@@ -1,0 +1,456 @@
+{
+  "schema_version": "asi_stack.cognitive_compilation_refinement.v1",
+  "result_id": "cognitive-compilation-refinement-2026-07-15-local",
+  "source_sha256": {
+    "lean_model": "c0bfb1fd84c65a8ed4055e4870cc70407919b6fc31a88c17e47db925927f7f5a",
+    "semantic_atom_schema": "5abb1e3f9bf7e363d45bed271cad6dbecae3b3ec7747505de13d70d296c3ed01",
+    "fixture_inventory": "759929ff6bfa4225a64a23aa673f234da1be90a38d463c6e9696422b7898171f",
+    "prior_result": "8f4273ded701c1567cf92e8074a5dc3c0f7621b6ba75ab83c4d99e5260037fac"
+  },
+  "fixture_count": 6,
+  "accepted_fixture_count": 2,
+  "rejected_fixture_count": 4,
+  "fixture_receipts": [
+    {
+      "fixture": "invalid_global_regeneration_repair.json",
+      "expected_acceptance": false,
+      "independently_accepted": false,
+      "reason": "repair_locality"
+    },
+    {
+      "fixture": "invalid_missing_lowering_receipt.json",
+      "expected_acceptance": false,
+      "independently_accepted": false,
+      "reason": "receipt_identity"
+    },
+    {
+      "fixture": "invalid_obligation_dropped.json",
+      "expected_acceptance": false,
+      "independently_accepted": false,
+      "reason": "obligation_preservation"
+    },
+    {
+      "fixture": "invalid_validator_pass_without_obligation_check.json",
+      "expected_acceptance": false,
+      "independently_accepted": false,
+      "reason": "target_audit"
+    },
+    {
+      "fixture": "valid_localized_repair_trace.json",
+      "expected_acceptance": true,
+      "independently_accepted": true,
+      "reason": "bounded_fixture_acceptance"
+    },
+    {
+      "fixture": "valid_target_compilation_audit.json",
+      "expected_acceptance": true,
+      "independently_accepted": true,
+      "reason": "bounded_fixture_acceptance"
+    }
+  ],
+  "reachable_trace_event_count": 7,
+  "reference_trace_final_state": {
+    "stage": "accepted",
+    "plan_id": 101,
+    "plan_version": 1,
+    "obligation_one": 501,
+    "obligation_two": 502,
+    "obligation_three": 503,
+    "constraint_hash": 601,
+    "target_hash": 701,
+    "authority_ceiling": 3,
+    "approved_authority": 3,
+    "ledger_version": 2,
+    "lowering_receipt": true,
+    "validation_receipt": true,
+    "repair_receipt": true,
+    "residual_count": 0,
+    "logical_time": 7
+  },
+  "mutation_count": 47,
+  "mutation_rejection_count": 47,
+  "mutation_receipts": [
+    {
+      "mutation_id": "bind_plan_id_missing",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "missing_source_identity"
+      ]
+    },
+    {
+      "mutation_id": "bind_obligation_one_missing",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "missing_source_identity"
+      ]
+    },
+    {
+      "mutation_id": "bind_obligation_two_missing",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "missing_source_identity"
+      ]
+    },
+    {
+      "mutation_id": "bind_obligation_three_missing",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "missing_source_identity"
+      ]
+    },
+    {
+      "mutation_id": "bind_constraint_hash_missing",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "missing_source_identity"
+      ]
+    },
+    {
+      "mutation_id": "bind_authority_widened",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "authority_widened"
+      ]
+    },
+    {
+      "mutation_id": "bind_time",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "time_not_monotonic"
+      ]
+    },
+    {
+      "mutation_id": "type_plan_id_substitution",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "type_obligation_one_substitution",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "type_obligation_two_substitution",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "type_obligation_three_substitution",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "type_constraint_hash_substitution",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "type_authority_changed",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "authority_changed"
+      ]
+    },
+    {
+      "mutation_id": "type_time",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "time_not_monotonic"
+      ]
+    },
+    {
+      "mutation_id": "lower_plan_id_substitution",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "lower_obligation_one_substitution",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "lower_obligation_two_substitution",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "lower_obligation_three_substitution",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "lower_constraint_hash_substitution",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "lower_target_missing",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "target_missing"
+      ]
+    },
+    {
+      "mutation_id": "lower_authority_changed",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "authority_changed"
+      ]
+    },
+    {
+      "mutation_id": "lower_obligation_loss",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "obligation_loss"
+      ]
+    },
+    {
+      "mutation_id": "lower_receipt_missing",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "lowering_receipt_missing"
+      ]
+    },
+    {
+      "mutation_id": "validate_plan_id_substitution",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "target_or_source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "validate_obligation_one_substitution",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "target_or_source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "validate_obligation_two_substitution",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "target_or_source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "validate_obligation_three_substitution",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "target_or_source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "validate_constraint_hash_substitution",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "target_or_source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "validate_target_hash_substitution",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "target_or_source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "validate_obligation_laundering",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "obligation_check_missing"
+      ]
+    },
+    {
+      "mutation_id": "validate_receipt_missing",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "validation_receipt_missing"
+      ]
+    },
+    {
+      "mutation_id": "detect_target_substitution",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "target_or_source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "detect_no_delta",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "no_material_repair_delta"
+      ]
+    },
+    {
+      "mutation_id": "detect_ledger_mismatch",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "ledger_version_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "repair_target_substitution",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "target_or_source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "repair_global",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "repair_not_localized"
+      ]
+    },
+    {
+      "mutation_id": "repair_before_after",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "repair_obligation_changed"
+      ]
+    },
+    {
+      "mutation_id": "repair_wrong_obligation",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "repair_obligation_changed"
+      ]
+    },
+    {
+      "mutation_id": "repair_ledger_input",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "ledger_input_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "repair_ledger_increment",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "ledger_not_incremented"
+      ]
+    },
+    {
+      "mutation_id": "repair_receipt",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "ledger_receipt_missing"
+      ]
+    },
+    {
+      "mutation_id": "repair_obligation_loss",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "repair_obligation_loss"
+      ]
+    },
+    {
+      "mutation_id": "accept_target_substitution",
+      "rejected": true,
+      "failed_event_index": 6,
+      "reasons": [
+        "target_or_source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "accept_obligation_loss",
+      "rejected": true,
+      "failed_event_index": 6,
+      "reasons": [
+        "obligation_loss"
+      ]
+    },
+    {
+      "mutation_id": "accept_residual",
+      "rejected": true,
+      "failed_event_index": 6,
+      "reasons": [
+        "open_residual"
+      ]
+    },
+    {
+      "mutation_id": "accept_authority",
+      "rejected": true,
+      "failed_event_index": 6,
+      "reasons": [
+        "authority_changed"
+      ]
+    },
+    {
+      "mutation_id": "accept_time",
+      "rejected": true,
+      "failed_event_index": 6,
+      "reasons": [
+        "time_not_monotonic"
+      ]
+    }
+  ],
+  "support_state_effect": "none",
+  "non_claims": [
+    "Abstract numeric identities establish equality only, not natural-language semantic equivalence or obligation completeness.",
+    "Fixture labels, authority, scope, validator, receipt, and ledger fields are trusted bounded inputs.",
+    "This packet does not establish a source parser, target backend, independent semantic evaluator, compiled behavior, measured repair locality, natural-workload usefulness, reproduction, transfer, safety, SOTA, AGI, ASI, or chapter-core support."
+  ]
+}

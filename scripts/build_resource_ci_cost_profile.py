@@ -29,10 +29,9 @@ NON_CLAIMS = [
 ]
 
 LEAN_THEOREMS = [
-    "resource_ci_cost_profile_fixture_valid",
-    "resource_ci_cost_profile_preserves_no_core_promotion",
-    "resource_ci_cost_profile_classifies_all_failures",
-    "resource_ci_cost_profile_records_recovery_boundary",
+    "missing_failure_retention_blocks_verification",
+    "raw_proxy_cannot_promote_executed_work",
+    "complete_resource_lifecycle_reaches_closed_without_support_or_effect_authority",
 ]
 
 
@@ -190,8 +189,8 @@ def build_lean_fixture_alignment(
     deploy_service_failure_count = failure_type_counts.get("github_pages_deploy_service_failure", 0)
     return {
         "proof_bridge_type": "finite CI failure-classification summary",
-        "lean_module": "AsiStackProofs.ResourceEconomics",
-        "lean_fixture": "resourceCICostProfileFixture",
+        "lean_module": "AsiStackProofs.ResourceEconomicsRefinement",
+        "lean_fixture": "completePacket",
         "lean_theorem_names": LEAN_THEOREMS,
         "run_count": metrics["run_count"],
         "completed_run_count": metrics["completed_run_count"],

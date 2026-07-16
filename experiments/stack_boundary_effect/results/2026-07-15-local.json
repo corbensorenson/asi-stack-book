@@ -1,0 +1,241 @@
+{
+  "schema_version": "asi_stack.stack_boundary_effect_consumer.v1",
+  "result_id": "stack-boundary-effect-2026-07-15-local",
+  "lean_model_sha256": "2990c888ce10ae23cf7b468a70a7c606564554db8afaeabaab8723d00481cffb",
+  "runtime_result_sha256": "8691dfdba88eb967a47fb65c76ac175307480057e2f89527e540f06d51047679",
+  "revocation_result_sha256": "453e0a250d3234ea01b9b8876c8f7f3abbac3894180055cacb84759c64b007c5",
+  "layer_contract_case_count": 18,
+  "layer_contract_route_match_count": 18,
+  "authority_fixture_count": 6,
+  "authority_fixture_accepted_count": 3,
+  "authority_fixture_rejected_count": 3,
+  "runtime_case_count": 3,
+  "runtime_case_accepted_count": 3,
+  "runtime_accepted_event_count": 10,
+  "executed_effect_count": 1,
+  "independently_observed_effect_count": 1,
+  "exact_rollback_count": 1,
+  "no_mutation_denial_count": 2,
+  "revocation_trace_entry_count": 5,
+  "mutation_count": 12,
+  "mutation_rejection_count": 12,
+  "layer_contract_receipts": [
+    {
+      "id": "no_request",
+      "expected_route": "no_layer_contract_requested",
+      "actual_route": "no_layer_contract_requested",
+      "matched": true
+    },
+    {
+      "id": "missing_identity",
+      "expected_route": "request_layer_identity",
+      "actual_route": "request_layer_identity",
+      "matched": true
+    },
+    {
+      "id": "missing_lifecycle",
+      "expected_route": "request_lifecycle_state",
+      "actual_route": "request_lifecycle_state",
+      "matched": true
+    },
+    {
+      "id": "missing_owner",
+      "expected_route": "request_owner",
+      "actual_route": "request_owner",
+      "matched": true
+    },
+    {
+      "id": "missing_responsibility",
+      "expected_route": "request_responsibility",
+      "actual_route": "request_responsibility",
+      "matched": true
+    },
+    {
+      "id": "missing_inputs",
+      "expected_route": "request_input_artifacts",
+      "actual_route": "request_input_artifacts",
+      "matched": true
+    },
+    {
+      "id": "missing_outputs",
+      "expected_route": "request_output_artifacts",
+      "actual_route": "request_output_artifacts",
+      "matched": true
+    },
+    {
+      "id": "missing_ceiling",
+      "expected_route": "request_authority_ceiling",
+      "actual_route": "request_authority_ceiling",
+      "matched": true
+    },
+    {
+      "id": "missing_handoff",
+      "expected_route": "request_handoff_protocol",
+      "actual_route": "request_handoff_protocol",
+      "matched": true
+    },
+    {
+      "id": "missing_invariant",
+      "expected_route": "request_invariant",
+      "actual_route": "request_invariant",
+      "matched": true
+    },
+    {
+      "id": "missing_failure",
+      "expected_route": "request_failure_mode",
+      "actual_route": "request_failure_mode",
+      "matched": true
+    },
+    {
+      "id": "missing_evidence",
+      "expected_route": "request_evidence_gate",
+      "actual_route": "request_evidence_gate",
+      "matched": true
+    },
+    {
+      "id": "unauthorized_external_action",
+      "expected_route": "block_external_action_boundary",
+      "actual_route": "block_external_action_boundary",
+      "matched": true
+    },
+    {
+      "id": "missing_source_mapping",
+      "expected_route": "request_source_mapping",
+      "actual_route": "request_source_mapping",
+      "matched": true
+    },
+    {
+      "id": "missing_support_boundary",
+      "expected_route": "request_support_boundary",
+      "actual_route": "request_support_boundary",
+      "matched": true
+    },
+    {
+      "id": "promotion_without_transition",
+      "expected_route": "request_evidence_transition",
+      "actual_route": "request_evidence_transition",
+      "matched": true
+    },
+    {
+      "id": "missing_nonclaim",
+      "expected_route": "preserve_nonclaim_boundary",
+      "actual_route": "preserve_nonclaim_boundary",
+      "matched": true
+    },
+    {
+      "id": "complete",
+      "expected_route": "admit_layer_contract",
+      "actual_route": "admit_layer_contract",
+      "matched": true
+    }
+  ],
+  "authority_receipts": [
+    {
+      "fixture": "invalid_allow_over_ceiling.json",
+      "expected": false,
+      "accepted": false,
+      "reasons": [
+        "authority_widening"
+      ],
+      "sha256": "4db50a1390455ca6e49563dc9d972e521b1e20f102047eda96810019cdc497cc"
+    },
+    {
+      "fixture": "invalid_missing_effect_receipt.json",
+      "expected": false,
+      "accepted": false,
+      "reasons": [
+        "missing_effect_receipt"
+      ],
+      "sha256": "b051e9cde598cb00aa44c1f3139b6a02f4814c47e5dd741356768a003f1a3180"
+    },
+    {
+      "fixture": "invalid_permission_class_collapse.json",
+      "expected": false,
+      "accepted": false,
+      "reasons": [
+        "permission_class_collapse"
+      ],
+      "sha256": "5ca504836347588a7b0e5ee83dfa46cb4f766614a4fda2317c3201e632332f54"
+    },
+    {
+      "fixture": "valid_allow_scoped_write.json",
+      "expected": true,
+      "accepted": true,
+      "reasons": [],
+      "sha256": "3a55925fec533b6afc04fc29dcaaedae5b7e7579a088fbdf5f2b7d041e74c5dd"
+    },
+    {
+      "fixture": "valid_deny_over_ceiling.json",
+      "expected": true,
+      "accepted": true,
+      "reasons": [],
+      "sha256": "1bc1d0198b8a528f3840a0c56b7cb8580b842d16ba8f67865223aaff0fa2a060"
+    },
+    {
+      "fixture": "valid_escalate_approval_required.json",
+      "expected": true,
+      "accepted": true,
+      "reasons": [],
+      "sha256": "60620c6cd0c69f5f1a5c1c10e7fa4f56462136f822d9758c8cf35802bdb571fd"
+    }
+  ],
+  "runtime_receipts": [
+    {
+      "id": "executed_effect_and_rollback",
+      "accepted": true,
+      "events": 6,
+      "final_state": {
+        "caller_ceiling": 3,
+        "active_grant": 3,
+        "authority_epoch": 11,
+        "revoked": false,
+        "pending_request": 3,
+        "dispatch_receipt": true,
+        "material_effects": 0,
+        "observed_effects": 0,
+        "rolled_back": true,
+        "logical_time": 6
+      }
+    },
+    {
+      "id": "missing_permission_denial",
+      "accepted": true,
+      "events": 2,
+      "final_state": {
+        "caller_ceiling": 3,
+        "active_grant": null,
+        "authority_epoch": 11,
+        "revoked": false,
+        "pending_request": null,
+        "dispatch_receipt": false,
+        "material_effects": 0,
+        "observed_effects": 0,
+        "rolled_back": false,
+        "logical_time": 2
+      }
+    },
+    {
+      "id": "expired_approval_denial",
+      "accepted": true,
+      "events": 2,
+      "final_state": {
+        "caller_ceiling": 3,
+        "active_grant": null,
+        "authority_epoch": 11,
+        "revoked": false,
+        "pending_request": null,
+        "dispatch_receipt": false,
+        "material_effects": 0,
+        "observed_effects": 0,
+        "rolled_back": false,
+        "logical_time": 2
+      }
+    }
+  ],
+  "support_state_effect": "none",
+  "non_claims": [
+    "The consumer binds one local temp-file effect and synthetic authority fixtures; it does not establish deployed enforcement.",
+    "Recorded grant, owner, receipt, observer, and revocation fields are trusted inputs and do not prove authenticity or complete observation.",
+    "Passing traces do not establish safety, security, natural-workload utility, reproduction, transfer, or chapter-core support."
+  ]
+}

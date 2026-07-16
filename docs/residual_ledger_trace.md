@@ -30,12 +30,11 @@ Validated surfaces:
 
 Lean bridge:
 
-- `residual_ledger_trace_surface_bridge` in
-  `lean/AsiStackProofs/CompactGenerativeSystems.lean` mirrors the finite trace
-  summary: Resource artifact read, sublane decisions recorded, residualized
-  deferrals visible, displaced costs residualized, Compact GVR residuals and
-  controls visible, readiness escrow visible, lost-residual control rejected,
-  no support-state effect, non-claim boundary, and no deployed-ledger claim.
+- `result_digest_substitution_blocks_publication` in
+  `lean/AsiStackProofs/CompactGenerationRefinement.lean` proves the modeled
+  publication boundary cannot consume a substituted result-set identity. The
+  Python validator remains authoritative for the four repository trace entries
+  and their source hashes; Lean does not copy its summary Booleans.
 
 Non-claims:
 

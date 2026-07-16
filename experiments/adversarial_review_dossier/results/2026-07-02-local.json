@@ -22,10 +22,12 @@
       "scoped_accept_dossier_present": true,
       "support_state_effect_none": true
     },
-    "module": "AsiStackProofs.ProofCarryingClaims",
+    "module": "AsiStackProofs.ProofCarryingClaimsRefinement",
     "proof_tag": "lean:spinoza.adversarial_review.dossier_probe_bridge",
     "theorem_refs": [
-      "adversarial_review_dossier_probe_bridge"
+      "mismatch_requires_tribunal_effect",
+      "high_risk_without_independent_dossier_is_rejected",
+      "full_verification_lifecycle_reaches_owner_writeback"
     ]
   },
   "negative_controls": {

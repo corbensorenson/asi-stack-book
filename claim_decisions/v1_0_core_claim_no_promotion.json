@@ -929,6 +929,36 @@
         "chapters/scalable-oversight-and-adversarial-ai-control.qmd",
         "appendices/C_claim_evidence_matrix.qmd#scalable-oversight-and-adversarial-ai-control.core"
       ]
+    },
+    {
+      "claim_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.core",
+      "chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "chapter_title": "Replaceable Cognitive Substrates: Beyond Transformer Monoculture",
+      "decision": "no_promotion",
+      "current_support_state": "argument",
+      "support_state_effect": "argument_only",
+      "decision_reason": "The chapter has a source-reviewed architecture taxonomy, a typed Cognitive Kernel ABI design, explicit falsifiers, 15 reviewed claim atoms, and a planned proof and experiment program, but no ABI implementation, heterogeneous-kernel conformance run, architecture tournament, OneCell model, frozen-core ratchet, architectural-RSI lifecycle, reproduction, or transfer has been accepted as evidence for the broad claim.",
+      "required_evidence": [
+        "three genuinely heterogeneous kernels behind one independently checked ABI with malicious-kernel rejection and exact assistance/cost receipts",
+        "formal and executable refinement for proposal-effect separation, authority non-escalation, checkpoint compatibility, revocation, fallback, and mixed-kernel lineage",
+        "matched equal-active-parameter and equal-total-lifecycle-cost tournament plus frozen-core ratchet, reproduction, and transfer"
+      ],
+      "blockers": [
+        "no common ABI, conformance checker, substrate swap, or mixed-kernel trace",
+        "no matched natural workload, hardware-aware lifecycle-cost packet, independent evaluator, reproduction, or transfer",
+        "OneCell and every named architecture remain candidates with no local superiority evidence"
+      ],
+      "non_claims": [
+        "does not prove that Transformers are obsolete or that any alternative is generally superior",
+        "does not prove OneCell, KAN, Mamba, recurrent, memory-augmented, continuous-time, or hybrid architecture quality",
+        "does not prove governed architectural self-improvement, safety, AGI, or ASI"
+      ],
+      "refs": [
+        "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
+        "docs/replaceable_cognitive_substrates_intake_and_research_plan.md",
+        "evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json",
+        "appendices/C_claim_evidence_matrix.qmd#replaceable-cognitive-substrates-beyond-transformer-monoculture.core"
+      ]
     }
   ]
 }

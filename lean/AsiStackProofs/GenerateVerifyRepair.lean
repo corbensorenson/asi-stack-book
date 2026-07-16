@@ -13,14 +13,6 @@ def ReconstructsTarget (record : ReconstructionRecord) : Prop :=
 def ExactReconstructionClaimValid (record : ReconstructionRecord) : Prop :=
   record.exactClaim = true -> ReconstructsTarget record
 
-theorem exact_reconstruction_claim_requires_generator_plus_repair
-    {record : ReconstructionRecord} :
-    ExactReconstructionClaimValid record ->
-    record.exactClaim = true ->
-    record.generatorOutput + record.repairResidual = record.target := by
-  intro valid exactClaim
-  exact valid exactClaim
-
 theorem exact_reconstruction_claim_with_mismatched_repair_rejected
     {record : ReconstructionRecord} :
     record.exactClaim = true ->
@@ -37,14 +29,6 @@ deriving DecidableEq, Repr
 
 def FailedVerificationBlocksPromotion (review : VerificationReview) : Prop :=
   review.verificationPassed = false -> review.exactnessPromoted = false
-
-theorem failed_verification_blocks_exactness_promotion
-    {review : VerificationReview} :
-    FailedVerificationBlocksPromotion review ->
-    review.verificationPassed = false ->
-    review.exactnessPromoted = false := by
-  intro valid failed
-  exact valid failed
 
 theorem failed_verification_with_exactness_promotion_rejected
     {review : VerificationReview} :

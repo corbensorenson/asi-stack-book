@@ -30,12 +30,11 @@ Validated surfaces:
 
 Lean bridge:
 
-- `residual_ledger_storage_replay_bridge` in
-  `lean/AsiStackProofs/CompactGenerativeSystems.lean` mirrors the bounded
-  replay summary: append-only digest chain computed, sequence continuity
-  checked, owner handoff preserved, discharge review required, workload context
-  preserved, invalid controls rejected, support-state effect `none`, non-claim
-  boundary preserved, live storage unclaimed, and deployed ledger unclaimed.
+- `broken_residual_chain_blocks_closure` in
+  `lean/AsiStackProofs/CompactGenerationRefinement.lean` proves the modeled
+  lifecycle cannot close across a broken residual chain. The Python replay
+  remains authoritative for its four entries, five invalid controls, and final
+  digest; Lean does not copy the replay summary.
 
 No-promotion decision:
 

@@ -37,14 +37,6 @@ def ResolutionValid (record : ResolutionRecord) : Prop :=
   record.state = ResolutionState.resolved ->
     SnapshotContains record.reference record.bindings
 
-theorem resolved_context_reference_has_valid_snapshot_binding
-    {record : ResolutionRecord} :
-    ResolutionValid record ->
-    record.state = ResolutionState.resolved ->
-    SnapshotContains record.reference record.bindings := by
-  intro valid resolved
-  exact valid resolved
-
 inductive FaultState where
   | none
   | typedFault
@@ -64,16 +56,6 @@ def MandatoryMissHandled (lookup : LookupRecord) : Prop :=
     lookup.resolved = false ->
     lookup.faultState = FaultState.typedFault ∧
       lookup.materializationEmitted = false
-
-theorem mandatory_context_miss_produces_typed_fault_not_best_effort
-    {lookup : LookupRecord} :
-    MandatoryMissHandled lookup ->
-    lookup.mandatory = true ->
-    lookup.resolved = false ->
-    lookup.faultState = FaultState.typedFault ∧
-      lookup.materializationEmitted = false := by
-  intro handled mandatory miss
-  exact handled mandatory miss
 
 inductive ContextAdmissionRoute where
   | rejectRequest

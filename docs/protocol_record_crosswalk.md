@@ -21,13 +21,13 @@ It does **not** treat any protocol record as verified merely because one lane pa
 |---|---|---:|---:|---|---|---:|---:|---:|---|---|
 | `authority_transition_record` | `schemas/authority_transition_record.schema.json` | 19 | 3/3 | `scripts/validate_authority_transitions.py` | lean/AsiStackProofs/Authority.lean (AuthorityTransition, AuthorityDecisionRecord, ExecutionRequest, GovernanceGrant) | 10 | 5 | 4 | registry ok | ok |
 | `runtime_adapter_invocation` | `schemas/runtime_adapter_invocation.schema.json` | 29 | 2/7 | `scripts/validate_runtime_adapter_permissions.py` | lean/AsiStackProofs/RuntimeAdapters.lean (ParentJob, AdapterInvocation) | 6 | 20 | 3 | registry ok | ok |
-| `self_improvement_transition` | `schemas/self_improvement_transition.schema.json` | 15 | 3/10 | `scripts/validate_self_improvement_boundaries.py` | lean/AsiStackProofs/SelfImprovement.lean (ImprovementTransitionReview, SelfEvaluationReview) | 3 | 12 | 0 | registry ok | ok |
+| `self_improvement_transition` | `schemas/self_improvement_transition.schema.json` | 15 | 3/10 | `scripts/validate_self_improvement_boundaries.py` | lean/AsiStackProofs/SafetyCriticalLifecycle.lean (State, Evidence) | 3 | 12 | 0 | registry ok | ok |
 | `replacement_transaction` | `schemas/replacement_transaction.schema.json` | 23 | 5/9 | `scripts/validate_capability_replacement.py` | lean/AsiStackProofs/Replacement.lean (ReplacementCommit) | 4 | 19 | 0 | registry ok | ok |
 | `readiness_gate_record` | `schemas/readiness_gate_record.schema.json` | 28 | 4/5 | `scripts/validate_readiness_residual_gates.py` | lean/AsiStackProofs/ReadinessGates.lean (GateReview, RouteSelection, ReadinessTransitionReview, QuarantineRoutingReview, StaleGateReuseReview) | 9 | 19 | 0 | registry ok | ok |
 | `belief_revision_record` | `schemas/belief_revision_record.schema.json` | 17 | 5/7 | `scripts/validate_claim_ledger_revision.py` | lean/AsiStackProofs/ClaimLedger.lean (BeliefRevisionRecord, ClaimUpdate, PromotionReview) | 9 | 8 | 0 | registry ok | ok |
 | `proof_carrying_claim` | `schemas/proof_carrying_claim.schema.json` | 25 | 3/5 | `scripts/validate_proof_carrying_claims.py` | lean/AsiStackProofs/ProofCarryingClaims.lean (ProofCarryingClaimRecord, FormalTierClaimReview, FailedVerifierPromotionReview) | 11 | 14 | 0 | registry ok | ok |
 | `tribunal_review_record` | `schemas/tribunal_review_record.schema.json` | 22 | 3/5 | `scripts/validate_tribunal_review.py` | lean/AsiStackProofs/Tribunal.lean (TribunalVerdictReview, HighRiskArtifactAcceptanceReview) | 7 | 15 | 0 | registry ok | ok |
-| `value_conflict_record` | `schemas/value_conflict_record.schema.json` | 13 | 3/5 | `scripts/validate_value_conflicts.py` | lean/AsiStackProofs/ValueConflict.lean (ConflictDecisionReview, HighStakesConflictReview) | 5 | 8 | 0 | registry ok | ok |
+| `value_conflict_record` | `schemas/value_conflict_record.schema.json` | 13 | 3/5 | `scripts/validate_value_conflicts.py` | lean/AsiStackProofs/SafetyCriticalLifecycle.lean (State, Evidence) | 5 | 8 | 0 | registry ok | ok |
 | `resource_budget_record` | `schemas/resource_budget_record.schema.json` | 16 | 6/7 | `scripts/validate_resource_budget_ledgers.py` | lean/AsiStackProofs/ResourceEconomics.lean (BudgetGateReview, VerificationBudgetReview) | 5 | 11 | 0 | registry ok | ok |
 
 ## Field Reconciliation
@@ -84,14 +84,14 @@ It does **not** treat any protocol record as verified merely because one lane pa
 | `runtime_adapter_invocation` | `verification_refs` | Harness | Trace references for fixture review. |
 | `self_improvement_transition` | `boundary_delta_review` | Harness | Harness checks authority, security, resource, evaluator, evidence, and rollback delta discipline before a transition can advance. |
 | `self_improvement_transition` | `cheaper_interventions_tried` | Harness | Harness checks cheaper intervention discipline. |
-| `self_improvement_transition` | `evaluator_independence` | Lean | SelfEvaluationReview.evaluatedOnlyByReplacedComponent |
+| `self_improvement_transition` | `evaluator_independence` | Lean | Evidence.independentEvaluator |
 | `self_improvement_transition` | `field_id` | Harness | Stable-capability-field reference. |
 | `self_improvement_transition` | `gate_freshness` | Harness | Harness rejects stale gate promotion without rerun, downgrade, or dated residual disclosure. |
 | `self_improvement_transition` | `governance_approval` | Harness | Approval record checked by Python fixtures. |
 | `self_improvement_transition` | `monitor_window` | Harness | Fixture lifecycle window. |
-| `self_improvement_transition` | `outcome_state` | Lean | ImprovementTransitionReview.transitionAccepted; ImprovementTransitionReview.protectedInvariantsPreserved; SelfEvaluationReview.proposalPromoted |
+| `self_improvement_transition` | `outcome_state` | Lean | State.phase; Evidence.rollbackPath; Evidence.monitorWindow |
 | `self_improvement_transition` | `proposal` | Harness | Fixture payload. |
-| `self_improvement_transition` | `protected_invariants` | Lean | ImprovementTransitionReview.protectedInvariantsDeclared |
+| `self_improvement_transition` | `protected_invariants` | Lean | Evidence.protectedPredicate |
 | `self_improvement_transition` | `replacement_transaction` | Harness | Cross-protocol reference checked by Python fixtures. |
 | `self_improvement_transition` | `rollback_path` | Harness | Rollback path checked by Python fixtures. |
 | `self_improvement_transition` | `transition_id` | Harness | Trace identity. |
@@ -214,16 +214,16 @@ It does **not** treat any protocol record as verified merely because one lane pa
 | `tribunal_review_record` | `verdict` | Lean | TribunalVerdictReview.verdictIssued |
 | `value_conflict_record` | `authority_effect` | Harness | Harness-level authority effect. |
 | `value_conflict_record` | `conflict_id` | Harness | Trace identity. |
-| `value_conflict_record` | `decision` | Lean | HighStakesConflictReview.decisionAccepted |
-| `value_conflict_record` | `decision_state` | Lean | ConflictDecisionReview.decisionMade |
+| `value_conflict_record` | `decision` | Lean | State.phase |
+| `value_conflict_record` | `decision_state` | Lean | State.phase |
 | `value_conflict_record` | `dissent_payload` | Harness | Harness-level dissent payload. |
 | `value_conflict_record` | `evidence_required` | Harness | Harness-level evidence requirement. |
 | `value_conflict_record` | `expiry_or_revisit_condition` | Harness | Harness-level revisit rule. |
-| `value_conflict_record` | `residual_uncertainty` | Lean | ConflictDecisionReview.residualConflictRecordPresent |
+| `value_conflict_record` | `residual_uncertainty` | Lean | Evidence.residualRecord |
 | `value_conflict_record` | `reversibility` | Harness | Harness-level reversibility label. |
-| `value_conflict_record` | `review_route` | Lean | HighStakesConflictReview.requiredReviewPresent |
+| `value_conflict_record` | `review_route` | Lean | Evidence.preEffectReview |
 | `value_conflict_record` | `stakeholders` | Harness | Harness-level affected parties. |
-| `value_conflict_record` | `stakes` | Lean | HighStakesConflictReview.highStakesConflict |
+| `value_conflict_record` | `stakes` | Lean | State.highImpact |
 | `value_conflict_record` | `value_axes` | Harness | Harness-level value axes. |
 | `resource_budget_record` | `budget_decision` | Lean | VerificationBudgetReview.decision |
 | `resource_budget_record` | `budget_id` | Harness | Trace identity. |

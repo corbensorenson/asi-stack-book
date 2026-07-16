@@ -3,8 +3,8 @@ title: "Routing Heads and Specialist Cores"
 chapter_id: "routing-heads-and-specialist-cores"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-03"
+draft_maturity: "v0.3 claim-proof program"
+last_updated: "2026-07-15"
 primary_sources:
   - "octopus_router"
   - "rmi"
@@ -20,13 +20,15 @@ primary_sources:
   - "project_theseus_whitepaper"
   - "theseus_operator_os"
   - "theseus_architecture_gate"
+  - "ext_hipporag_2024"
+  - "ext_dont_hallucinate_abstain_2024"
+  - "qcsa_whitepaper"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "The former `moecot-runtime-and-multi-core-orchestration` chapter was folded into this chapter on 2026-06-30 as a named runtime crosswalk; the fold changes chapter organization, not support state."
-  - "Appendix C now records exact passage-reviewed mappings for all assigned routing and folded MoECOT runtime-crosswalk sources; support remains at argument until routing benchmarks, learned-router harnesses, runtime routes, authority-enforcement tests, MoECOT replay records, or orchestration artifacts exist."
-  - "Protocol schema/fixture validation, narrow Lean routing/readiness predicates with negative cases, a finite routing-decision lifecycle route envelope, MoECOT runtime source-boundary predicates with negative cases, the readiness/residual gate harness's synthetic authority-bounded/fallback route checks, and the synthetic routing decision lease harness are implemented; the routing lease harness now rejects route-authority grants outside the selected specialist registry envelope, and `evidence_transitions/v1_x_measured/routing_decision_lease_no_change.json` records an accepted no-promotion decision; no specialist-routing benchmark, learned-router harness, runtime route, MoECOT replay, orchestration benchmark, route-quality measurement, or deployed authority-enforcement test has been run for this chapter."
-  - "No support-state promotion is implied by this drafting pass."
+  - "The post-v2.1 learned router selected 59/60 correct routes and exercised fallback, abstention, and clarification, but all 360 substantive candidates were wrong; its 20 correct outcomes came entirely from non-answer actions on one synthetic six-action workload, one 4B model, one seed, and an internal deterministic evaluator."
+  - "The schemas, fixtures, finite theorem consequences, separable matched workload, and ambiguous narrow result do not establish useful specialist answers, independent evaluation, authority enforcement, interference control, natural multi-model routing, production recovery, MoECOT runtime behavior, or transfer."
+  - "Run a preregistered natural and adversarial campaign with heterogeneous current specialists, strong matched policies, joint outcome and governance gates, causal interventions, independent implementations, complete denominators, delayed outcomes, and transfer before promotion."
 ---
 
 ## Chapter status
@@ -36,18 +38,30 @@ open_evidence_gaps:
 | Chapter ID | `routing-heads-and-specialist-cores` |
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-01 |
-| Primary source records | `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`, `benchmaxxing`, `viea`, `scf`, `talos`, `moecot_md`, `moecot`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate` |
+| Manuscript maturity | v0.3 claim-proof program |
+| Last updated | 2026-07-15 |
+| Primary source records | All 17 assigned routing, runtime, associative-retrieval, abstention, and semantic-addressing records |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `octopus_router`, `rmi`, `benchmaxxing`; supporting: `beastbrain`, `cognitive_loop_closure`, `rgs`, `viea`, `scf`, `talos`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`; variant: `moecot_md`; connector/recovery: `moecot` |
 | Source loading state | passage-reviewed local raw cache: `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`, `benchmaxxing`, `viea`, `scf`, `talos`; passage-reviewed local public-project source: `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`; authenticated connector text reviewed for `moecot` and the `moecot_md` variant; raw source text is not published. |
-| Test state | Specialist registry, routing decision, and MoECOT orchestration fixture validation implemented; finite routing/readiness predicates, selected-route negative cases, and a finite routing-decision lifecycle route envelope are implemented in `AsiStackProofs.Routing`; finite MoECOT runtime-promotion and unavailable-source predicates plus missing-evidence/source-boundary negative cases are implemented in `AsiStackProofs.MoECOTRuntime`; `python3 scripts/validate_readiness_residual_gates.py` validates synthetic authority-bounded, fallback, and readiness-mapping behavior; `python3 scripts/validate_routing_decision_lease.py` validates synthetic least-capable selection, overprivileged rejection, selected-route authority-envelope containment, readiness fallback, expired-lease residualization, rejected-candidate evidence, residual ownership, and MoECOT source-boundary non-claims; `evidence_transitions/v1_x_measured/routing_decision_lease_no_change.json` records the accepted no-promotion boundary. Routing accuracy, learned-router quality, runtime-route execution, MoECOT replay, orchestration benchmark, route-quality measurement, and deployed authority-enforcement tests remain planned. |
+| Test state | Three routing/runtime schemas; 3/7 route-lease and 4/5 readiness fixtures; a 300-example matched three-seed program; one 60-request ambiguous single-model workload; two conservative dispositions; and 21 live family declarations. The new refinement contributes seventeen lifecycle theorems, retains four load-bearing legacy theorems, and physically retires sixteen projection/fixture declarations. Its independent consumer covers seven stages, all 42 routes, and 47/47 rejecting mutations while keeping route and answer outcomes distinct. The only current narrow empirical result remains route discrimination plus exercised non-answer behavior, not useful specialist answers. |
 
 ## Drafting guardrail
 
-This chapter is architecture argument grounded in available source notes and passage-reviewed mappings. Octopus Router Architecture and RMI supply the routing vocabulary; Benchmaxxing, SCF, Talos, Project Theseus, and MoECOT supply runtime-evidence pressure. The folded MoECOT material is treated as an implementation-reference crosswalk, not as reproduced runtime evidence. The repo now proves finite Lean predicates and negative cases over route records and MoECOT source-boundary records and runs a synthetic route-lease harness over specialist registries, routing decisions, and MoECOT source-state packets, including a fixture that rejects a granted authority subset wider than the selected specialist's registry envelope. No local specialist-routing benchmark, learned-router harness, authority-enforcement harness, MoECOT replay, orchestration benchmark, route-quality measurement, or runtime reproduction has been run for this chapter.
+This chapter is architecture argument grounded in available source notes and passage-reviewed mappings. Octopus Router Architecture and RMI supply the routing vocabulary; Benchmaxxing, SCF, Talos, Project Theseus, and MoECOT supply runtime-evidence pressure. The folded MoECOT material is treated as an implementation-reference crosswalk, not as reproduced runtime evidence. The repository proves finite predicates and routes, runs synthetic lease/readiness fixtures, and records bounded matched and ambiguous routing workloads. No deployed authority enforcement, trained-specialist utility, independent evaluation, MoECOT replay, orchestration benchmark, natural multi-model routing, or production transfer has run.
+
+The evidence surface is now more precise than that older boundary. Twenty-one
+live family declarations comprise seventeen reachable-lifecycle theorems and
+four retained load-bearing legacy theorems; sixteen projection or fixture
+declarations were physically retired. The independent consumer exercises seven
+stages, all forty-two routes, and forty-seven rejecting mutations. The post-v2.1 workload supplies
+a bounded local learned-route result: 59/60 route labels were correct and
+fallback, abstention, and clarification activated. Yet all 360 substantive
+candidate answers were wrong, so all 20 correct end outcomes were non-answer
+actions. One 4B model, one seed, a synthetic six-action set, and an internal
+deterministic evaluator cannot establish useful specialist routing, calibration,
+independence, authority enforcement, production safety, or transfer.
 
 Opening Part III, this chapter receives the verified procedures and specialist candidates that Part II made possible. The new problem is selection under constraint: which bounded capability may act, under which authority, with which readiness state, and with which fallback if the route fails.
 
@@ -119,6 +133,44 @@ The boundary therefore has two records. A Specialist Registry Record describes w
 The decision record should be read as a task-local authority lease, not a standing appointment. The registry declares the specialist's maximum envelope; the route grants only the subset needed for this task, under this readiness state, with this fallback. That distinction keeps specialist selection from silently becoming authority transfer.
 
 Routing's local delta is capability leasing. The shared governed-cognition pattern already has records, gates, receipts, and rollback paths; routing adds the rule that capability is not assigned by semantic fit alone. A route must preserve the selected specialist, rejected candidates, authority subset, readiness state, cost-quality predicate, fallback, residual owner, expiry, and non-claim boundary so a successful route cannot launder permanent authority into the specialist.
+
+The operational lifecycle has eighteen stages:
+
+1. Freeze task, consumer, acceptance predicate, capability, authority, rights,
+   risk, budget, deadline, and fallback obligations.
+2. Snapshot the versioned candidate registry with capability, exclusions,
+   memory, tools, authority, readiness, evidence, cost, load, and lifecycle.
+3. Compile semantic task identity separately from physical model, expert, tool,
+   node, human, or composite routes.
+4. Eliminate candidates failing capability, authority, rights, readiness,
+   freshness, privacy, locality, resource, dependency, or conflict gates.
+5. Build admissible route features without leaking held-out outcomes.
+6. Estimate candidate-specific useful success, failure, refusal, uncertainty,
+   latency, cost, safety, and residual distributions.
+7. Calibrate selective prediction against coverage, abstention, clarification,
+   fallback, escalation, and useful outcomes.
+8. Choose among single, sequential, parallel, debate, verification, human,
+   reflex, fallback, abstention, clarification, and no-route policies.
+9. Prefer the least capable and least authoritative route satisfying the joint
+   predicate, with explicit justification for deviations.
+10. Issue a task-local lease binding granted subset, context, tools, budget,
+    deadline, evidence duty, fallback, expiry, and residual owner.
+11. Execute through the existing Runtime, Human, or Inter-Stack owner and retain
+    dispatch, refusal, intervention, effect, and cost receipts.
+12. Evaluate route correctness separately from answer usefulness, artifact
+    correctness, safety, and evidence adequacy.
+13. Activate clarification, fallback, abstention, escalation, cancellation,
+    retry, or residual routes when a gate fails.
+14. Update routing memory with chosen and rejected candidates, counterfactuals,
+    outcomes, interventions, costs, uncertainty, and delayed residuals.
+15. Monitor load, contention, tail latency, correlated failures, collusion,
+    evaluator drift, concentration, fairness, and specialist interference.
+16. Promote, canary, quarantine, split, merge, replace, or retire specialists
+    and policies through readiness gates with rollback.
+17. Emit a replayable decision/runtime packet with versions, features, scores,
+    candidates, checks, route or refusal, lease, receipts, costs, and residuals.
+18. Compare strong route policies on preregistered natural and adversarial work
+    with independent reproduction and transfer.
 
 ```{mermaid}
 flowchart LR
@@ -201,6 +253,21 @@ latency, throughput, or efficiency evidence. The core claim remains at
 
 Each route emits a paired record set around the routing decision.
 
+Twelve ownership interfaces surround those records:
+
+1. Intent, Contracts, and Planning own task meaning and acceptance predicates.
+2. Stable Capability Fields owns specialist identity and substitution bounds.
+3. Procedural Memory owns procedure qualification; Routing only selects it.
+4. Virtual Context ABI owns admissible context and memory provenance.
+5. Security, Privacy, Rights, and Legal owners define eligibility constraints.
+6. Runtime, Humans, and Inter-Stack owners execute; a route is not an effect lease.
+7. Verification, Spinoza, Artifact Graphs, and Evidence own result support.
+8. Resource Economics owns capacity, budget, protected overhead, and value policy.
+9. Readiness, Replacement, and Residual Escrow owns promotion and rollback.
+10. Labor OS and Human Collaboration owns worker roles, intervention, and appeal.
+11. Personal Hives and MoECOT crosswalks own topology and runtime implementations.
+12. Benchmark Ratchets and Claim Ledgers own floors, anti-Goodhart controls, and belief revision.
+
 Specialist Registry Record fields:
 
 - `specialist_id`
@@ -280,18 +347,32 @@ Planning requests capabilities, not personalities. Governance bounds authority. 
 
 A route receipt is the routing interface artifact. It records selected specialist, rejected candidates, granted authority subset, denied authority, context lease, tool lease, readiness state, verifier requirement, budget, fallback, expiry, and residual owner.
 
-The public schemas now make that receipt explicit. Specialist registry records carry owner, registry epoch, authority envelope, memory/tool lease policies, route limitations, and non-claims. Routing decision records carry rejected candidates, non-selection evidence, route receipt, granted and denied authority, context/tool leases, verifier requirement, budget, expiry, residual owner, and non-claims. MoECOT orchestration records add runtime-packet state, route authority ledgers, denied routes, failed gates, missing replay refs, source-reported fields, locally reproduced fields, externally corroborated fields, blocked fields, and non-claims. These fields do not prove route quality or runtime behavior; they preserve the information future route-quality, replay, and runtime-evidence tests need.
+The public schemas now make that receipt explicit. Specialist registry records carry owner, registry epoch, authority envelope, memory/tool lease policies, route limitations, and non-claims. Routing decision records carry rejected candidates, non-selection evidence, route receipt, granted and denied authority, context/tool leases, verifier requirement, budget, expiry, residual owner, and non-claims. MoECOT orchestration records add runtime-packet state, route authority ledgers, denied routes, failed gates, missing replay refs, source-reported fields, locally reproduced fields, externally corroborated fields, blocked fields, and non-claims. These fields establish neither route quality nor runtime behavior; they preserve the information future route-quality, replay, and runtime-evidence tests need.
 
 ## Invariants
 
-- Specialist authority is local.
-- Routing decisions are logged.
-- Fallback paths remain available.
-- Readiness failures route to fallback, escalation, quarantine, or residual, not silent execution.
-- Router confidence cannot override an authority ceiling.
-- Implementation evidence is separated from design argument.
-- Runtime promotion follows readiness gates.
-- Control-plane gates fail closed when evidence, authority, or replay is missing.
+1. Every decision binds exact task, consumer, registry, policy, feature,
+   evaluator, model, tool, environment, and time versions.
+2. Semantic, capability, implementation, node, worker, and route identities stay distinct.
+3. Every eligible and rejected route remains in the candidate denominator.
+4. Granted authority is the intersection of task, principal, specialist,
+   policy, rights, privacy, locality, readiness, and budget ceilings.
+5. Eligibility gates precede scoring and fail closed on required unknown state.
+6. Route relevance, route correctness, answer quality, artifact truth, effect
+   safety, evidence adequacy, support, and release remain separate.
+7. Non-answer actions are scored against coverage and useful outcomes.
+8. The least capable and least authoritative adequate route wins or deviation is justified.
+9. Consequential routes carry fresh leases, fallback, cancellation, evidence duty, and custody.
+10. Rejections, counterfactuals, interventions, costs, and delayed outcomes stay recorded.
+11. Training and threshold selection cannot inspect held-out labels or evaluator outputs.
+12. Comparative policies receive matched resources, authority, help, retries, and time.
+13. Multi-route policies account for correlation, collusion, aggregation, and added cost.
+14. Load and failure cannot silently change authority or evaluation standards.
+15. Registry, policy, model, tool, memory, evaluator, benchmark, or rights changes expire affected leases.
+16. Quarantine, replacement, rollback, and retirement block new ordinary routes.
+17. Replay reconstructs frozen admissible inputs and records nondeterminism.
+18. Evidence language stays inside the exercised workload, policy, specialist,
+   evaluator, model, environment, organization, threat, cost, and time envelope.
 
 The important invariant is that selection and authorization are different predicates. A specialist can be the best semantic match and still be disallowed because its authority scope, readiness state, or evidence state is inadequate for the task.
 
@@ -303,14 +384,24 @@ Traceability across layers is the runtime invariant. A runtime route must be tra
 
 ## Failure modes
 
-- Wrong specialist selection.
-- Router overconfidence.
-- Specialist authority leak.
-- Specialist proliferation without lifecycle review.
-- Composition hallucination after multiple arms respond.
-- Treating implementation branding as architecture proof.
-- Losing cross-layer traceability.
-- Replay theater that preserves successful paths while omitting failed gates, denied routes, human interventions, missing sources, and residual cases.
+1. Semantic-fit laundering selects relevance without authority, readiness, utility, privacy, or budget.
+2. Oracle laundering uses privileged or label-leaking routes as attainable baselines.
+3. Route-label leakage exposes held-out actions or outcomes during training or tuning.
+4. Router overconfidence suppresses clarification, fallback, abstention, or escalation.
+5. Abstention laundering counts non-answer activation as utility while answers remain wrong.
+6. Fallback theater defines a route that never activates or repeats the failure.
+7. Authority laundering widens tools, context, budget, duration, or delegation.
+8. Readiness laundering treats branding, schemas, benchmarks, or stale evidence as deployment.
+9. Candidate-denominator erasure hides rejected, unavailable, costly, human, or no-route options.
+10. Cost-quality laundering hides retries, verification, labor, delay, failure, or residuals.
+11. Specialist sprawl costs more to govern than routing saves.
+12. Load blindness sends work to saturated specialists without recalibration.
+13. Correlated-expert or collusion failure repeats shared error through debate or voting.
+14. Evaluator capture shares models, prompts, code, data, or incentives across routing and judgment.
+15. Routing-memory poisoning amplifies early mistakes, popularity, or adversarial records.
+16. Lifecycle drift keeps compromised, replaced, quarantined, or retired specialists eligible.
+17. Replay theater omits nondeterminism, denials, interventions, costs, and residuals.
+18. State-of-the-art theater generalizes from synthetic route accuracy or non-answer coverage.
 
 Wrong selection should become a residual and a benchmark candidate. Overconfidence should become a route-quality defect. Authority leak should become a governance incident. Specialist bloat should trigger split, merge, retirement, or quarantine review. Composition hallucination should be routed through verification or tribunal review rather than hidden behind a fluent final answer.
 
@@ -320,15 +411,48 @@ Runtime branding is the crosswalk failure. A concrete implementation name makes 
 
 ## Minimum Viable Implementation
 
-The first routing artifact should not be a learned router. It is a registry schema, a routing decision schema, and valid fixtures that make route decisions inspectable.
+The minimum viable routing surface is now larger than a schema and smaller than
+a production router. It contains three public record schemas, three valid and
+seven invalid routing-lease fixtures, four valid and five invalid
+readiness/residual fixtures, two bounded routing programs, two accepted
+no-promotion or narrow transition records, and twenty Lean declarations. This
+surface makes route decisions inspectable and exercises several refusal paths;
+it does not establish useful specialist answering or safe deployment.
 
 The `specialist_registry_record` schema describes a bounded specialist core. The `routing_decision_record` schema records the task, candidates, rejected candidates, selected route, route shape, route receipt, authority subset, denied authority, readiness check, leases, verifier requirement, budget, expiry, fallback, residual owner, residuals, and ledger references. Passing these fixtures confirms structural validity only; routing accuracy still requires measured route outcomes.
 
-`AsiStackProofs.Routing` adds a bounded selection predicate requiring a selected route to satisfy authority and readiness, plus a bounded readiness-failure predicate requiring fallback or residual rather than promotion. It also proves that a selected route missing authority or readiness cannot satisfy the modeled selected-route admissibility predicate, and it now includes a finite routing-decision lifecycle route envelope for missing capability requests, missing specialist registries, authority mismatches, readiness failures, fallback/residual handling, stale leases, missing cost-quality records, overprivileged selections, missing rejected-candidate evidence, missing non-claim boundaries, and complete route selection. Actual router implementation, specialist selection, and routing-quality measurement remain outside these finite receipt predicates.
+`AsiStackProofs.Routing` and `AsiStackProofs.MoECOTRuntime` contain twenty
+declarations: three are direct predicate/projection checks and seventeen are
+derived finite route or negative consequences. They model selected-route
+authority and readiness, failed-readiness fallback or residualization, route
+lifecycle outcomes, and runtime-source promotion boundaries. They establish
+facts about the encoded finite records; learned-router selection quality,
+specialist correctness, production lease enforcement, and correct MoECOT
+execution or replay remain outside those facts.
 
 The synthetic routing decision lease harness makes the first route-receipt discipline executable. It checks three valid and seven expected-invalid packets for least-capable adequate selection, rejected overprivileged specialists, selected-route authority-envelope containment, missing-readiness fallback, expired context leases, residual ownership, selected-specialist registration, rejected-candidate evidence, and MoECOT source-boundary non-claims. The accepted no-promotion record `evidence_transitions/v1_x_measured/routing_decision_lease_no_change.json` keeps this as synthetic fixture evidence and blocks learned-router, route-quality, deployed authority-enforcement, specialist-quality, MoECOT replay, orchestration benchmark, and chapter-core promotion claims.
 
+The architecture-neutral refinement at `AsiStackProofs.RoutingRefinement`
+extends those record checks into a reachable request-to-closure lifecycle. It
+binds task, registry, complete candidate denominator, selected specialist,
+authority, readiness, context and tool leases, evaluator, policy, and consumer;
+then separates dispatch, route outcome, answer outcome, unsafe outcome, cost,
+revocation closure, and acknowledgment. A transformer, Mamba-family state-space
+model, KAN, recurrent core, graph system, memory-augmented system, or future
+substrate can occupy the specialist slot only through this same contract. That
+abstraction is not evidence that the substrates are interchangeable or equally
+capable: the route can be correct while the answer is wrong.
+
 The folded MoECOT slice adds an orchestration fixture, finite source-boundary predicates, finite negative-case theorems, and source-only packet checks inside the route-lease harness. The new Lean negative cases reject runtime-core promotion records missing readiness, regression, or replay evidence and unavailable-text-only runtime claims that try to promote above `argument`. The smallest honest runtime-crosswalk fixture records one accepted command, one denied route, one missing replay reference, one residual handoff, one failed gate, and one promotion blocker. These checks cover record shape, route-lease discipline, and evidence partitioning only; they are not runtime replay, orchestration benchmarks, specialist-quality results, route-quality measurements, or deployment claims.
+
+The 300-example post-v2 program supplies a matched three-seed comparison, but
+oracle, learned, rule, and fallback policies all tied on the separable held-out
+split. The 60-request post-v2.1 successor makes routing policies differ: the
+learned router selects 59/60 routes and exercises fallback, abstention, and
+clarification. Yet all 360 substantive candidates are wrong. Together these
+programs establish a reproducible local failure boundary—route discrimination
+can improve while answer utility stays at zero—not a successful specialist
+system.
 
 ## Beyond the State of the Art
 
@@ -344,16 +468,44 @@ This specialist-routing surface is still a target architecture. Routing support 
 
 At maturity, the same routing surface can admit MoECOT-style runtime packets without trusting runtime branding. A compact orchestrator receives typed commands, asks the route head for bounded specialist lanes, applies control-plane gates, records authority decisions, runs or denies work, emits task and replay ledgers, and hands off artifacts with residuals and promotion blockers attached. Successful runs become replay and benchmark candidates; failed gates become readiness blockers; denied routes improve authority policy; missing replay refs block promotion; residual handoffs become work items rather than implementation lore.
 
+The next SOTA challenge is a preregistered, naturally heterogeneous campaign,
+not another clean synthetic classifier. It should compare an oracle ceiling,
+learned and rule routers, a single strong generalist, random and cost-aware
+baselines, confidence cascades, selective policies, human escalation, and the
+full governed route. Candidate models and specialists must receive matched
+tools, context, authority, help, retries, and wall-clock budgets. The joint
+scorecard must report substantive task utility, selective risk and coverage,
+unsafe release, route and answer calibration, latency, monetary and compute
+cost, human work, verification cost, interference, load, rollback success,
+and unresolved residuals.
+
+The causal design must separately ablate learned selection, specialist
+training, readiness gates, task-local authority, fallback, abstention,
+clarification, independent evaluation, routing memory, and load-aware
+placement. A routing benefit is credible only if it survives natural holdouts,
+adversarial ambiguity, multiple strong current models, multiple seeds,
+independently implemented evaluation, and at least one transfer setting.
+Expected causal signatures are explicit: removing learned selection should
+hurt route choice without automatically changing candidate quality; removing
+specialization should hurt substantive utility on bounded domains; removing
+authority gates should increase unsafe or overprivileged execution; and
+removing selective actions should increase forced wrong answers. If those
+signatures do not appear, the corresponding mechanism remains an argument or
+is narrowed or refuted.
+
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
 | Specialist registry and routing decision fixture validation | Check that the specialist registry and routing decision fixtures match their public schemas and declare capabilities, authority, memory, tools, readiness, predicates, candidates, selected route, checks, fallback, residuals, and ledgers. | implemented by protocol validation; validated locally |
 | Specialist routing accuracy test | Check that capability requests select specialists with matching declared capabilities under synthetic tasks. | planned; not run |
+| Post-v2 matched routing program | Compare oracle, learned, rule, generalist, fallback, and abstention policies on a frozen 300-example program over three seeds. | completed; oracle, learned, rule, and fallback tied at 162/180 on a separable split; accepted `no_change` |
+| Post-v2.1 ambiguous routing program | Force learned, rule, generalist, fallback, abstention, and clarification behavior to differ on 60 held-out requests. | completed; learned route choice was 59/60, but all 360 substantive candidates were wrong; accepted `narrow` boundary only |
 | Routing decision lease harness | Check synthetic route leases for least-capable adequate selection, overprivileged rejection, selected-route authority-envelope containment, missing-readiness fallback, expired-lease residualization, rejected-candidate evidence, residual ownership, and MoECOT source-boundary non-claims. | implemented by `python3 scripts/validate_routing_decision_lease.py`; accepted no-promotion decision at `evidence_transitions/v1_x_measured/routing_decision_lease_no_change.json`; no learned-router, route-quality, MoECOT replay, or deployed authority-enforcement claim |
 | Authority/readiness route predicate | Check that a selected route satisfies authority and readiness. | implemented in `AsiStackProofs.Routing`; checked by Lean build |
 | Failed-readiness fallback predicate | Check that failed readiness routes to fallback or residual rather than promotion. | implemented in `AsiStackProofs.Routing`; checked by Lean build |
 | Routing decision lifecycle route | Check that modeled routing decisions route missing capability requests, missing specialist registries, authority mismatches, readiness failures, fallback/residual handling, stale leases, missing cost-quality records, overprivileged selections, missing rejected-candidate evidence, missing non-claim boundaries, and complete selections to explicit finite outcomes. | implemented in `AsiStackProofs.Routing`; no learned-router, route-quality, runtime enforcement, specialist-quality, MoECOT replay, or benchmark claim |
+| Routing and replaceable-substrate lifecycle refinement | Check exact request/registry/lease custody, complete candidate denominators, label-leak rejection, ambiguity-triggered selective action, task-local dispatch, distinct route and answer outcomes, revocation closure, and absence of support/effect authority. | implemented in `AsiStackProofs.RoutingRefinement` and `python3 scripts/validate_routing_refinement.py`; three exact suites, seven stages, 42 routes, 47/47 mutations; no natural utility, strong-model transfer, deployed runtime/replay, substrate-superiority, RSI, or support claim |
 | Authority-bounded routing test | Check that a selected route cannot exceed the gate authority scope or use a blocked route during canary/default promotion. | implemented by readiness/residual gate harness for synthetic route/gate/replacement records; deployed router enforcement not run |
 | Fallback route test | Check that failed readiness or quarantine preserves a fallback route and residual record. | implemented by readiness/residual gate harness for synthetic canary/default and quarantine scenarios; live fallback execution not run |
 | MoECOT orchestration fixture validation | Check that the orchestration fixture matches the public schema and declares run, command, orchestrator, route head, specialist cores, gates, ledgers, readiness refs, replay refs, handoff refs, blockers, residuals, and source-claim state. | implemented by protocol validation; validated locally |
@@ -361,19 +513,40 @@ At maturity, the same routing surface can admit MoECOT-style runtime packets wit
 | Runtime crosswalk completeness test | Check that a runtime record links command, route, cores, gates, ledgers, replay, handoff, and residuals. | planned; not run |
 | Readiness/replay mapping review | Check that promotion decisions reference readiness and replay artifacts, not source branding alone. | partially implemented by readiness/residual gate harness for readiness mapping; MoECOT replay mapping not run |
 
-Fixture-shape validation, twenty bounded Lean theorem declarations across routing and MoECOT runtime record predicates, the readiness/residual harness's synthetic route authority/fallback/readiness-mapping checks, and the synthetic routing decision lease harness are implemented. The route-lease harness now includes one expected-invalid authority-widening grant that keeps task-local authority inside the selected specialist registry envelope, and the accepted no-promotion record keeps that artifact from being mistaken for route-quality or deployed-router evidence. Routing accuracy and MoECOT runtime claims still require real routing tasks, candidate specialists, readiness states, learned-router or policy-router code, imported runtime packets, concrete replay refs, benchmark records, and logged route outcomes.
+Fixture-shape validation, 21 live family declarations across Routing, MoECOT,
+and the reachable refinement, the readiness/residual harness, the routing
+decision lease harness, the independent refinement consumer, and both bounded
+routing programs are implemented. Seventeen new lifecycle theorems and four
+retained legacy theorems remain live; sixteen weaker declarations are retired.
+The independent surface covers seven stages, 42 routes, and 47/47 rejecting
+mutations. The post-v2.1 program
+uses one synthetic six-action workload, one seed, one 4-bit 4B model
+(`mlx-community/Qwen3-4B-4bit`), and an internal deterministic evaluator. It
+therefore cannot discharge the remaining requirement for natural tasks,
+useful specialist answers, multiple strong models and seeds, independent
+evaluation, trained-specialist interference, production authority
+enforcement, runtime replay, or transfer.
 
 ### Formalization hooks
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:routing.specialists.operational_invariant` | `AsiStackProofs.Routing` | A router may select only specialists whose authority and readiness satisfy the task requirement. | implemented |
-| `lean:routing.specialists.failure_blocks_promotion` | `AsiStackProofs.Routing` | A failed readiness predicate routes to fallback or residual, not promotion. | implemented |
-| `lean:routing.specialists.decision_lifecycle_route` | `AsiStackProofs.Routing` | A modeled routing decision routes missing requests, registry gaps, authority mismatches, readiness failures, stale leases, missing cost-quality records, overprivileged selections, missing rejected-candidate evidence, residual ownership gaps, and missing non-claim boundaries to explicit outcomes. | implemented |
-| `lean:moecot.runtime.operational_invariant` | `AsiStackProofs.MoECOTRuntime` | A runtime core promotion requires readiness, regression, and replay evidence references. | implemented |
-| `lean:moecot.runtime.failure_blocks_promotion` | `AsiStackProofs.MoECOTRuntime` | A runtime claim sourced only from unavailable text cannot be promoted above argument state. | implemented |
+| `lean:routing.specialists.operational_invariant` | `AsiStackProofs.RoutingRefinement` | A reachable routing lifecycle preserves exact task, request, registry, candidate-set, selected-specialist, authority, readiness, lease, evaluator, policy, and consumer custody through consumer-acknowledged closure while keeping route and answer outcomes distinct and assigning no support or external effects. | implemented |
+| `lean:routing.specialists.failure_blocks_promotion` | `AsiStackProofs.RoutingRefinement` | Missing authority, readiness, fresh leases, selective handling, fallback or residual ownership, dispatch isolation, observed route/answer/unsafe/cost outcomes, lifecycle currentness, revocation closure, or acknowledgment blocks progress. | implemented |
+| `lean:routing.specialists.decision_lifecycle_route` | `AsiStackProofs.RoutingRefinement` | The independent consumer preserves all 42 routing outcomes, including label-leak rejection, complete candidate denominators, least-capable-adequate selection, ambiguity-triggered selective action, fallback/residual routes, and separate dispatch, observation, and closure. | implemented |
+| `lean:moecot.runtime.operational_invariant` | `AsiStackProofs.RoutingRefinement` | A runtime-backed route cannot qualify until inspected source state, concrete runtime evidence, replay evidence, task-local dispatch authority, and isolation bind to the same lease. | implemented |
+| `lean:moecot.runtime.failure_blocks_promotion` | `AsiStackProofs.RoutingRefinement` | Unavailable or source-only runtime material, missing replay evidence, or unobserved route and answer outcomes cannot be laundered into runtime, routing-quality, support, or deployment claims. | implemented |
 
-These proof hooks are implemented as finite-record predicates plus negative-case and route-lifecycle theorems over route and runtime-source records. They check only modeled record gates: selected routes require authority and readiness, failed readiness routes to fallback or residual, route-lifecycle decisions preserve request, registry, authority, readiness, lease, cost-quality, rejected-candidate, residual-owner, and non-claim boundaries, runtime-core promotion requires readiness/regression/replay evidence refs, and unavailable-text-only runtime claims cannot promote above `argument`. The companion synthetic route-lease harness checks record-level selection and refusal discipline. Together they do not prove routing accuracy, specialist quality, learned-router behavior, runtime enforcement, MoECOT runtime behavior, replay correctness, benchmark results, specialist-core quality, deployment readiness, or source-reported performance.
+These proof hooks now resolve to a reachable finite lifecycle plus independent
+route-consumer evidence. Of the 21 live family declarations, seventeen belong
+to the refinement and four retained legacy theorems remain load-bearing;
+sixteen weaker projections or fixture admissions were retired. The proofs still
+derive finite route or negative consequences from them. This classification
+prevents theorem count from standing in for breadth or empirical validity. The
+companion route-lease harness checks record-level selection and refusal
+discipline. These surfaces do not prove routing accuracy, useful specialist answers,
+learned-router generalization, runtime enforcement, MoECOT behavior, replay
+correctness, deployment readiness, or source-reported performance.
 
 ## Source crosswalk
 
@@ -436,13 +609,31 @@ routing disposition is `narrow`: route discrimination and selective non-answer
 coverage are established locally, while specialist answer utility,
 interference, calibration, and transfer are not.
 
+This result came from one synthetic six-action workload, one seed, the
+`mlx-community/Qwen3-4B-4bit` model, and an internal deterministic criterion
+evaluator. The test run took 2,156.55 wall-clock seconds. The accepted
+transition is
+`evidence_transitions/post_v2_1/ambiguous_routing_narrow.json`; it blocks core
+promotion until substantive answer utility, independent evaluator validity,
+multiple models and seeds, natural workloads, and production safety, latency,
+cost, and transfer have been measured.
+
 | Source | Title | Use and boundary |
 |---|---|---|
 | `ext_dont_hallucinate_abstain_2024` | Don’t Hallucinate, Abstain | Comparator for selective prediction and abstention; it motivates measuring coverage with utility rather than treating abstention activation as sufficient. |
 
 ## Summary
 
-Routing makes modular intelligence governable only when it is recorded as a bounded decision. The head selects; the specialist acts within a local envelope; evidence updates readiness; residuals become future pressure. The folded MoECOT material adds the runtime packet shape that a concrete orchestrator would need to emit. The present evidence stops before route quality and runtime behavior: the sources, fixtures, Lean predicates, readiness/residual harness, and route-lease harness define the decision surface, while local router runs, specialist-selection benchmarks, MoECOT replay packets, residual-routing traces, and safety evaluations remain future work.
+Routing makes modular intelligence governable only when it is recorded as a bounded decision. The head selects; the specialist acts within a local envelope; evidence updates readiness; residuals become future pressure. The folded MoECOT material adds the runtime packet shape that a concrete orchestrator would need to emit. The sources, fixtures, finite Lean predicates, readiness/residual harness, and route-lease harness define and exercise parts of that decision surface; they do not establish production runtime behavior.
+
+The bounded empirical record goes one step further but exposes a harder
+failure. A learned router distinguished 59/60 routes in the ambiguous local
+workload and used selective non-answer actions, while every substantive
+candidate answer was wrong. The project therefore has local evidence for route
+discrimination and non-answer coverage, not for useful specialist intelligence.
+The next proof burden is joint: improve substantive task utility under matched
+resources while preserving calibration, least authority, fallback, latency,
+cost, replay, and residual honesty on natural and adversarial holdouts.
 
 The router therefore becomes a control surface for capability, authority, memory, cost, fallback, and lifecycle rather than a clever dispatcher. The readiness gate is what the router must respect: a capability can be semantically appropriate and still not ready for ordinary use.
 
@@ -452,4 +643,4 @@ A route should explain why this specialist, under this authority, now. If that a
 
 ## Handoff
 
-Routing records why a specialist was selected, but selection is not qualification. Readiness Gates, Residual Escrow, and Quarantine defines the lifecycle boundary that the router must obey. It explains when a specialist can move from candidate to diagnostic, canary, ordinary, quarantined, or retired use, and why residuals must survive promotion rather than disappearing behind successful routes.
+Routing records why a specialist was selected, but selection is not qualification. Replaceable Cognitive Substrates: Beyond Transformer Monoculture asks what the router may point at when the learned engine is no longer assumed to be a Transformer. It defines the substrate-neutral proposal, state, evidence, cost, fallback, and lifecycle boundary that lets different computational affordances compete without inheriting effect authority.

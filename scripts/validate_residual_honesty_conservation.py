@@ -28,11 +28,11 @@ CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 LEDGER_MD = ROOT / "docs" / "contribution_novelty_ledger.md"
 LEDGER_JSON = ROOT / "docs" / "contribution_novelty_ledger.json"
 VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
-LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "CompactGenerativeSystems.lean"
+LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "CompactGenerationRefinement.lean"
 
 COMMAND = "python3 scripts/validate_residual_honesty_conservation.py"
 CODEX_TEST_NAME = "Residual honesty conservation fixture"
-LEAN_THEOREM = "residual_honesty_conservation_fixture_bridge"
+LEAN_THEOREM = "unresolved_obligation_without_owner_blocks_residualization"
 EXPECTED_VALID = {
     "valid_accepted_visible_residual",
     "valid_deferred_owned_residual",
@@ -219,17 +219,13 @@ def build_result(packet: dict[str, Any], errors: list[str]) -> dict[str, Any]:
             in {row["case_id"] for row in rejected_controls},
         },
         "lean_fixture_alignment": {
-            "module": "AsiStackProofs.CompactGenerativeSystems",
+            "module": "AsiStackProofs.CompactGenerationRefinement",
             "theorem_refs": [LEAN_THEOREM],
             "expected": {
-                "acceptedResidualRecorded": True,
-                "deferredResidualOwned": True,
-                "dischargedResidualHasReceipt": True,
-                "hiddenResidualRejected": True,
-                "erasedResidualRejected": True,
-                "unownedMovedResidualRejected": True,
-                "supportStateEffectNone": True,
-                "nonClaimBoundary": True,
+                "unresolvedObligations": True,
+                "residualRecordPresent": True,
+                "residualOwnerRequired": True,
+                "resultDigestIdentityPreserved": True,
             },
         },
         "support_state_effect": "none",
@@ -272,16 +268,7 @@ def validate_lean(errors: list[str]) -> None:
     text = LEAN_FILE.read_text(encoding="utf-8", errors="ignore")
     if not re.search(rf"\btheorem\s+{re.escape(LEAN_THEOREM)}\b", text):
         errors.append(f"{rel(LEAN_FILE)} missing theorem {LEAN_THEOREM}.")
-    for field in (
-        "acceptedResidualRecorded",
-        "deferredResidualOwned",
-        "dischargedResidualHasReceipt",
-        "hiddenResidualRejected",
-        "erasedResidualRejected",
-        "unownedMovedResidualRejected",
-        "supportStateEffectNone",
-        "nonClaimBoundary",
-    ):
+    for field in ("unresolvedObligations", "residualRecordPresent", "residualOwner", "resultSetDigest"):
         if field not in text:
             errors.append(f"{rel(LEAN_FILE)} missing residual-conservation field {field}.")
 

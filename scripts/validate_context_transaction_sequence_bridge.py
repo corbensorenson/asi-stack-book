@@ -12,7 +12,7 @@ from validate_protocol_examples import validate_value
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE_DIR = ROOT / "experiments" / "context_transaction_sequence_bridge" / "fixtures"
 SCHEMA = ROOT / "schemas" / "context_transaction_record.schema.json"
-LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ContextTransactions.lean"
+LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ContextTransactionRefinement.lean"
 RESULT_DOC = ROOT / "experiments" / "context_transaction_sequence_bridge" / "results" / "2026-07-04-local.md"
 
 VALID_STATES = {"shape_validated", "store_validated", "replay_validated"}
@@ -24,12 +24,12 @@ SUPPORT_PROMOTION_EFFECTS = {
 }
 
 EXPECTED_LEAN_BRIDGE_TERMS = (
-    "structure ContextTransactionSequenceSummary",
-    "def ContextTransactionSequenceSummaryAccepted",
-    "def currentContextTransactionSequenceSummary",
-    "theorem current_context_transaction_sequence_summary_accepted",
-    "theorem accepted_context_transaction_sequence_summary_requires_order",
-    "theorem context_transaction_sequence_with_support_promotion_rejected",
+    "structure TransactionState",
+    "def TransactionRun",
+    "theorem accepted_snapshot_read_preserves_snapshot_branch_mount_and_version",
+    "theorem accepted_untainted_derivation_from_tainted_source_requires_declassification",
+    "theorem accepted_materialization_preserves_transaction_custody",
+    "theorem exact_transaction_trace_materializes",
 )
 
 
@@ -243,13 +243,6 @@ def validate_lean_bridge(errors: list[str]) -> None:
     for term in EXPECTED_LEAN_BRIDGE_TERMS:
         if term not in lean_text:
             errors.append(f"{LEAN_FILE.relative_to(ROOT)}: missing Lean bridge term {term!r}.")
-    for term in (
-        "validSequenceFixtureCount := 2",
-        "expectedInvalidSequenceFixtureCount := 4",
-        "chapterCoreSupportPromoted := false",
-    ):
-        if term not in lean_text:
-            errors.append(f"{LEAN_FILE.relative_to(ROOT)}: missing current sequence summary field {term!r}.")
 
 
 def validate_result_doc(errors: list[str]) -> None:

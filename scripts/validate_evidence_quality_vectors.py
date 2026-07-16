@@ -91,7 +91,10 @@ def main() -> None:
         for error in errors:
             print(f" - {error}")
         sys.exit(1)
-    print("Evidence-quality vector validation passed: 54 claims, 8 dimensions each, no scalar aggregation, and 4 rejecting negative controls.")
+    print(
+        f"Evidence-quality vector validation passed: {len(registry['vectors'])} claims, "
+        "8 dimensions each, no scalar aggregation, and 4 rejecting negative controls."
+    )
 
 
 if __name__ == "__main__":

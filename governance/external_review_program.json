@@ -8,7 +8,7 @@
       "packet": "docs/reviews/formal_methods_review_packet.md",
       "solicitation_state": "no_prepublication_outreach_packets_preserved_for_optional_postpublication_use",
       "public_request_ref": "https://github.com/corbensorenson/asi-stack-book/issues/1",
-      "scope_refs": ["lean/AsiStackProofs/GovernedRepositoryTrace.lean", "docs/governed_trace_invariants.md", "docs/proof_adequacy_review.md", "proofs/proof_manifest.json"],
+      "scope_refs": ["lean/AsiStackProofs/IntegratedReferenceTrace.lean", "docs/integrated_reference_trace_consumer.md", "docs/proof_adequacy_review.md", "proofs/proof_manifest.json"],
       "required_output_fields": ["reviewer capacity", "reviewed artifacts", "finding severity", "counterexample or adequacy argument", "recommended disposition", "attribution boundary"],
       "acceptance_route": "Create an external_review_intake_record accepted_review only after capacity and attribution checks; route findings to proof tasks, claim narrowing, blockers, or explicit rejection. Review input alone cannot promote support.",
       "support_state_effect": "none",

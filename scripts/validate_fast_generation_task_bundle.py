@@ -16,7 +16,7 @@ CHAPTER = ROOT / "chapters" / "fast-generation-architectures.qmd"
 READER = ROOT / "editions" / "reader_manuscript" / "v1_0" / "chapters" / "fast-generation-architectures.qmd"
 OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
-LEAN = ROOT / "lean" / "AsiStackProofs" / "FastGeneration.lean"
+LEAN = ROOT / "lean" / "AsiStackProofs" / "FastGenerationRefinement.lean"
 
 EXPECTED_NON_CLAIMS = [
     "Does not prove model generation speed.",
@@ -43,10 +43,10 @@ EXPECTED_READER_SURFACE_PHRASES = [
 ]
 
 EXPECTED_LEAN_THEOREMS = [
-    "fast_generation_task_bundle_candidate_preserves_quality",
-    "fast_generation_task_bundle_candidate_improves_cost_accounting",
-    "fast_generation_task_bundle_latency_only_proxy_rejected",
-    "fast_generation_task_bundle_blocks_support_promotion",
+    "missing_task_success_blocks_accounting",
+    "raw_speed_proxy_without_accepted_output_is_blocked",
+    "support_promotion_without_transition_blocks_decision",
+    "verified_fast_lifecycle_reaches_closed_without_support_or_effect_authority",
 ]
 
 

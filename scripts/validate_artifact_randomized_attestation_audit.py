@@ -32,7 +32,7 @@ TRANSITION = ROOT / "evidence_transitions" / "v1_x_measured" / "artifact_randomi
 BOOK_STRUCTURE = ROOT / "book_structure.json"
 VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 TEST_LEDGER_SCRIPT = ROOT / "scripts" / "validate_test_harness_status_ledger.py"
-LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ArtifactGraph.lean"
+LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ArtifactRealityRefinement.lean"
 
 COMMAND = "python3 scripts/validate_artifact_randomized_attestation_audit.py"
 RESULT_ID = "artifact-randomized-attestation-audit-2026-07-04"
@@ -41,7 +41,7 @@ SELECTION_ALGORITHM = "sha256(seed + ':' + artifact_path), ascending, first four
 SELECTED_COUNT = 4
 CODEX_TEST_NAME = "Artifact randomized attestation audit"
 PROOF_TAG = "lean:artifacts.graph.randomized_attestation_audit_bridge"
-LEAN_THEOREM = "artifact_randomized_attestation_audit_bridge"
+LEAN_THEOREM = "full_artifact_reality_lifecycle_reaches_admission"
 
 CANDIDATE_ARTIFACTS = [
     {
@@ -49,24 +49,24 @@ CANDIDATE_ARTIFACTS = [
         "validator": "python3 scripts/validate_artifact_graph_record_reality_sequence.py",
     },
     {
-        "artifact": "experiments/receipt_faithfulness/results/2026-07-03-local.json",
-        "validator": "python3 scripts/validate_receipt_faithfulness.py",
+        "artifact": "experiments/authority_revocation_trace/results/2026-07-03-local.json",
+        "validator": "python3 scripts/validate_authority_revocation_trace.py",
     },
     {
-        "artifact": "experiments/receipt_repository_audit/results/2026-07-03-local.json",
-        "validator": "python3 scripts/validate_receipt_repository_audit.py",
+        "artifact": "experiments/residual_honesty_conservation/results/2026-07-03-local.json",
+        "validator": "python3 scripts/validate_residual_honesty_conservation.py",
     },
     {
-        "artifact": "experiments/receipt_repository_audit/results/2026-07-04-challenge.json",
-        "validator": "python3 scripts/validate_receipt_repository_challenge.py",
+        "artifact": "experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json",
+        "validator": "python3 scripts/validate_artifact_steward_lifecycle_probe.py",
     },
     {
-        "artifact": "experiments/artifact_live_attestation/results/2026-07-04-local.json",
-        "validator": "python3 scripts/validate_artifact_live_attestation_probe.py",
+        "artifact": "experiments/readiness_lifecycle_probe/results/2026-07-02-local.json",
+        "validator": "python3 scripts/validate_readiness_lifecycle_probe.py",
     },
     {
-        "artifact": "experiments/epistemic_tcb/results/2026-07-03-local.json",
-        "validator": "python3 scripts/validate_epistemic_trusted_computing_base.py",
+        "artifact": "experiments/capability_replacement_trace/results/2026-07-02-local.json",
+        "validator": "python3 scripts/validate_capability_replacement_trace_probe.py",
     },
 ]
 
@@ -494,7 +494,7 @@ def build_expected(errors: list[str]) -> dict[str, Any]:
         "mutation_controls": controls,
         "trace_summary": summary,
         "lean_fixture_alignment": {
-            "module": "AsiStackProofs.ArtifactGraph",
+            "module": "AsiStackProofs.ArtifactRealityRefinement",
             "theorem_refs": [LEAN_THEOREM],
             "expected": summary,
         },
@@ -631,7 +631,7 @@ def validate_surfaces(errors: list[str]) -> None:
                 '"script": "validate_artifact_randomized_attestation_audit.py"',
             ],
         ),
-        rel(LEAN_FILE): (LEAN_FILE, ["ArtifactRandomizedAttestationSummary", LEAN_THEOREM]),
+        rel(LEAN_FILE): (LEAN_FILE, ["observedArtifactPresent", "trapChallengePassed", "attestationLimitsPresent", LEAN_THEOREM]),
     }
     for owner, (path, fragments) in surfaces.items():
         require_fragments(owner, path, fragments, errors)

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Routing Refinement Result",
+  "type": "object",
+  "required": ["schema_version", "result_id", "source_sha256", "input_suites", "reachable_stage_count", "route_case_count", "route_coverage", "mutation_count", "mutation_rejection_count", "mutation_receipts", "command_receipts", "witness", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.routing_refinement.v1"},
+    "result_id": {"const": "routing-refinement-2026-07-15-local"},
+    "source_sha256": {"type": "object"},
+    "input_suites": {"type": "array", "minItems": 3, "maxItems": 3},
+    "reachable_stage_count": {"const": 7},
+    "route_case_count": {"const": 42},
+    "route_coverage": {"type": "array", "minItems": 42, "maxItems": 42},
+    "mutation_count": {"const": 47},
+    "mutation_rejection_count": {"const": 47},
+    "mutation_receipts": {"type": "array", "minItems": 47, "maxItems": 47},
+    "command_receipts": {"type": "array", "minItems": 3, "maxItems": 3},
+    "witness": {"type": "object"},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 5}
+  },
+  "additionalProperties": false
+}

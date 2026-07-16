@@ -1,0 +1,381 @@
+{
+  "schema_version": "asi_stack.concurrent_effect_ledger_result.v1",
+  "result_id": "concurrent-effect-ledger-2026-07-15-local",
+  "corpus_sha256": "2bba9bf816cf1339711f14910ca57425c4eec2fe9e9d9c715cbf243a359abc95",
+  "source_result_sha256": "69ff8df303e623fb8958d8ec875226daf1a3e2f6a19af9d97c777a80dd258c19",
+  "lean_model_sha256": "632a75e332fe841ed30f3ae6c5764974e8157c5c52e58b5f66f098b00b4b351e",
+  "case_count": 16,
+  "accepted_case_count": 4,
+  "rejected_case_count": 12,
+  "accepted_event_count": 17,
+  "unique_effect_attempt_count": 5,
+  "acknowledged_effect_count": 3,
+  "compensated_effect_count": 1,
+  "residualized_effect_count": 1,
+  "revocation_count": 1,
+  "mutation_count": 12,
+  "mutation_rejection_count": 12,
+  "receipts": [
+    {
+      "id": "two_effect_ack_and_residual",
+      "expected": true,
+      "accepted": true,
+      "rejection_index": null,
+      "reasons": [],
+      "final_state": {
+        "authority_epoch": 7,
+        "revoked_at": null,
+        "attempted": [
+          1,
+          2
+        ],
+        "observed": [
+          2,
+          1
+        ],
+        "acknowledged": [
+          1
+        ],
+        "compensated": [],
+        "residualized": [
+          2
+        ],
+        "logical_time": 3
+      }
+    },
+    {
+      "id": "compensation_closure",
+      "expected": true,
+      "accepted": true,
+      "rejection_index": null,
+      "reasons": [],
+      "final_state": {
+        "authority_epoch": 7,
+        "revoked_at": null,
+        "attempted": [
+          3
+        ],
+        "observed": [
+          3
+        ],
+        "acknowledged": [],
+        "compensated": [
+          3
+        ],
+        "residualized": [],
+        "logical_time": 3
+      }
+    },
+    {
+      "id": "exact_retry_no_duplicate_effect",
+      "expected": true,
+      "accepted": true,
+      "rejection_index": null,
+      "reasons": [],
+      "final_state": {
+        "authority_epoch": 7,
+        "revoked_at": null,
+        "attempted": [
+          4
+        ],
+        "observed": [
+          4
+        ],
+        "acknowledged": [
+          4
+        ],
+        "compensated": [],
+        "residualized": [],
+        "logical_time": 4
+      }
+    },
+    {
+      "id": "close_then_revoke",
+      "expected": true,
+      "accepted": true,
+      "rejection_index": null,
+      "reasons": [],
+      "final_state": {
+        "authority_epoch": 8,
+        "revoked_at": 4,
+        "attempted": [
+          5
+        ],
+        "observed": [
+          5
+        ],
+        "acknowledged": [
+          5
+        ],
+        "compensated": [],
+        "residualized": [],
+        "logical_time": 4
+      }
+    },
+    {
+      "id": "revocation_tie_attempt",
+      "expected": false,
+      "accepted": false,
+      "rejection_index": 1,
+      "reasons": [
+        "stale_authority_epoch",
+        "attempt_at_or_after_revocation"
+      ],
+      "final_state": {
+        "authority_epoch": 8,
+        "revoked_at": 5,
+        "attempted": [],
+        "observed": [],
+        "acknowledged": [],
+        "compensated": [],
+        "residualized": [],
+        "logical_time": 5
+      }
+    },
+    {
+      "id": "stale_epoch_after_revoke",
+      "expected": false,
+      "accepted": false,
+      "rejection_index": 1,
+      "reasons": [
+        "stale_authority_epoch",
+        "attempt_at_or_after_revocation"
+      ],
+      "final_state": {
+        "authority_epoch": 8,
+        "revoked_at": 4,
+        "attempted": [],
+        "observed": [],
+        "acknowledged": [],
+        "compensated": [],
+        "residualized": [],
+        "logical_time": 4
+      }
+    },
+    {
+      "id": "observe_unknown_effect",
+      "expected": false,
+      "accepted": false,
+      "rejection_index": 0,
+      "reasons": [
+        "observation_without_attempt"
+      ],
+      "final_state": {
+        "authority_epoch": 7,
+        "revoked_at": null,
+        "attempted": [],
+        "observed": [],
+        "acknowledged": [],
+        "compensated": [],
+        "residualized": [],
+        "logical_time": 0
+      }
+    },
+    {
+      "id": "duplicate_observation",
+      "expected": false,
+      "accepted": false,
+      "rejection_index": 2,
+      "reasons": [
+        "duplicate_observation"
+      ],
+      "final_state": {
+        "authority_epoch": 7,
+        "revoked_at": null,
+        "attempted": [
+          8
+        ],
+        "observed": [
+          8
+        ],
+        "acknowledged": [],
+        "compensated": [],
+        "residualized": [],
+        "logical_time": 2
+      }
+    },
+    {
+      "id": "acknowledge_unobserved",
+      "expected": false,
+      "accepted": false,
+      "rejection_index": 1,
+      "reasons": [
+        "terminal_without_observation"
+      ],
+      "final_state": {
+        "authority_epoch": 7,
+        "revoked_at": null,
+        "attempted": [
+          9
+        ],
+        "observed": [],
+        "acknowledged": [],
+        "compensated": [],
+        "residualized": [],
+        "logical_time": 1
+      }
+    },
+    {
+      "id": "acknowledge_without_receipt",
+      "expected": false,
+      "accepted": false,
+      "rejection_index": 2,
+      "reasons": [
+        "terminal_without_receipt"
+      ],
+      "final_state": {
+        "authority_epoch": 7,
+        "revoked_at": null,
+        "attempted": [
+          9
+        ],
+        "observed": [
+          9
+        ],
+        "acknowledged": [],
+        "compensated": [],
+        "residualized": [],
+        "logical_time": 2
+      }
+    },
+    {
+      "id": "compensate_without_receipt",
+      "expected": false,
+      "accepted": false,
+      "rejection_index": 2,
+      "reasons": [
+        "terminal_without_receipt"
+      ],
+      "final_state": {
+        "authority_epoch": 7,
+        "revoked_at": null,
+        "attempted": [
+          10
+        ],
+        "observed": [
+          10
+        ],
+        "acknowledged": [],
+        "compensated": [],
+        "residualized": [],
+        "logical_time": 2
+      }
+    },
+    {
+      "id": "residualize_without_receipt",
+      "expected": false,
+      "accepted": false,
+      "rejection_index": 2,
+      "reasons": [
+        "terminal_without_receipt"
+      ],
+      "final_state": {
+        "authority_epoch": 7,
+        "revoked_at": null,
+        "attempted": [
+          11
+        ],
+        "observed": [
+          11
+        ],
+        "acknowledged": [],
+        "compensated": [],
+        "residualized": [],
+        "logical_time": 2
+      }
+    },
+    {
+      "id": "double_terminal_disposition",
+      "expected": false,
+      "accepted": false,
+      "rejection_index": 3,
+      "reasons": [
+        "duplicate_terminal_disposition"
+      ],
+      "final_state": {
+        "authority_epoch": 7,
+        "revoked_at": null,
+        "attempted": [
+          12
+        ],
+        "observed": [
+          12
+        ],
+        "acknowledged": [
+          12
+        ],
+        "compensated": [],
+        "residualized": [],
+        "logical_time": 3
+      }
+    },
+    {
+      "id": "logical_time_regression",
+      "expected": false,
+      "accepted": false,
+      "rejection_index": 1,
+      "reasons": [
+        "logical_time_regression"
+      ],
+      "final_state": {
+        "authority_epoch": 7,
+        "revoked_at": null,
+        "attempted": [
+          13
+        ],
+        "observed": [],
+        "acknowledged": [],
+        "compensated": [],
+        "residualized": [],
+        "logical_time": 2
+      }
+    },
+    {
+      "id": "zero_effect_identity",
+      "expected": false,
+      "accepted": false,
+      "rejection_index": 0,
+      "reasons": [
+        "zero_effect_identity"
+      ],
+      "final_state": {
+        "authority_epoch": 7,
+        "revoked_at": null,
+        "attempted": [],
+        "observed": [],
+        "acknowledged": [],
+        "compensated": [],
+        "residualized": [],
+        "logical_time": 0
+      }
+    },
+    {
+      "id": "retry_after_revocation",
+      "expected": false,
+      "accepted": false,
+      "rejection_index": 2,
+      "reasons": [
+        "stale_authority_epoch",
+        "attempt_at_or_after_revocation"
+      ],
+      "final_state": {
+        "authority_epoch": 8,
+        "revoked_at": 2,
+        "attempted": [
+          14
+        ],
+        "observed": [],
+        "acknowledged": [],
+        "compensated": [],
+        "residualized": [],
+        "logical_time": 2
+      }
+    }
+  ],
+  "support_state_effect": "none",
+  "non_claims": [
+    "Finite logical-time interleavings do not establish distributed-clock or network-partition behavior.",
+    "Effect identity is treated as an idempotency key; real adapter enforcement and complete effect discovery are not established.",
+    "Source anchoring and mutation rejection do not establish deployment, safety, reproduction, transfer, or chapter-core support."
+  ]
+}

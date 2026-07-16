@@ -9,11 +9,11 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 54 |
+| Manifest chapter core claims | 55 |
 | Accepted core-transition dispositions | 22 |
-| Accepted no-promotion dispositions | 32 |
+| Accepted no-promotion dispositions | 33 |
 | Promoted core claims | 0 |
-| Core claims remaining at `argument` | 54 |
+| Core claims remaining at `argument` | 55 |
 
 ## Dispositions
 
@@ -49,6 +49,7 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 | `inter-stack-protocols-identity-and-economic-exchange.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Measure false dispatch, false denial, stale acceptance, dispute recovery, latency, disclosure, operator effort, and residual obligations; no peer trust, task truth, effect safety, payment, settlement, privacy, authorization, or deployment claim. |
 | `procedural-memory-and-cognitive-loop-closure.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Memory update fixture preserves failed attempts and rollback path. |
 | `routing-heads-and-specialist-cores.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Learned, rule, specialist, generalist, fallback, and abstention routes separate under ambiguous held-out work with matched cost, calibration, interference, residual, and authority records. |
+| `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | A bounded heterogeneous-kernel substitution and mixed-kernel route reproduce and transfer without authority widening, exact-state loss, hidden assistance, unsafe release, or dominated lifecycle cost; otherwise narrow or refute the relevant atoms. |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/readiness_residual_no_change.json` | Promotion blocked on expired evidence or uncustodied residuals. |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Lease fixture proves bounded compute delegation and revocation. |
 | `compact-generative-systems-and-residual-honesty.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Fixture records what is compressed, represented, lost, checked, repaired, residualized, superseded, quarantined, or rejected before any compactness or semantic-representation claim promotes. |

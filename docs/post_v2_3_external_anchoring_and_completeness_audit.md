@@ -48,18 +48,18 @@ Decision: `keep_54_chapter_spine`. Existing owners already provide the distinct 
 | ID | Finding | Owner | Disposition | Current refs |
 |---|---|---|---|---:|
 | `T2-01` | Output content provenance | `artifact-graphs-audit-logs-and-replay` | `defer` | 0 |
-| `T2-02` | Interpretability as runtime control | `evidence-states-and-claim-discipline` | `narrow` | 5 |
+| `T2-02` | Interpretability as runtime control | `evidence-states-and-claim-discipline` | `narrow` | 8 |
 | `T2-03` | Memory consolidation lifecycle | `procedural-memory-and-cognitive-loop-closure` | `already_covered` | 12 |
 | `T2-04` | Calibration selective prediction and abstention | `claim-ledgers-and-belief-revision` | `already_covered` | 12 |
 | `T2-05` | Metacognition and capability self-knowledge | `readiness-gates-residual-escrow-and-quarantine` | `defer` | 0 |
-| `T2-06` | Collusion between components against oversight | `scalable-oversight-and-adversarial-ai-control` | `already_covered` | 2 |
+| `T2-06` | Collusion between components against oversight | `scalable-oversight-and-adversarial-ai-control` | `already_covered` | 7 |
 | `T2-07` | Oversight latency and fleet-scale monitoring | `scalable-oversight-and-adversarial-ai-control` | `defer` | 0 |
 | `T2-08` | Control tax as governance-tax comparator | `resource-economics-and-token-budgets` | `already_covered` | 3 |
-| `T2-09` | Automated AI R&D acceleration thresholds | `capability-thresholds-and-deployment-commitments` | `already_covered` | 7 |
+| `T2-09` | Automated AI R&D acceleration thresholds | `capability-thresholds-and-deployment-commitments` | `already_covered` | 8 |
 | `T2-10` | STPA-style systematic hazard analysis | `safety-cases-and-structured-assurance` | `watch` | 2 |
 | `T2-11` | Autonomous insider | `security-kernel-and-digital-scifs` | `defer` | 0 |
 | `T2-12` | Hardware attestation trust-root class | `model-weight-custody-and-hardware-roots-of-trust` | `already_covered` | 12 |
-| `T2-13` | Open-weight release decision record | `model-weight-custody-and-hardware-roots-of-trust` | `already_covered` | 6 |
+| `T2-13` | Open-weight release decision record | `model-weight-custody-and-hardware-roots-of-trust` | `already_covered` | 4 |
 | `T2-14` | Public governance graphs for market collusion | `inter-stack-protocols-identity-and-economic-exchange` | `defer` | 0 |
 | `T2-15` | Guaranteed-safe AI positioning | `executable-specifications-and-lean-proof-envelope` | `defer` | 0 |
 | `T2-16` | Machine unlearning and parametric deletion closure | `data-engines-continual-learning-and-unlearning` | `already_covered` | 12 |
@@ -69,21 +69,21 @@ Decision: `keep_54_chapter_spine`. Existing owners already provide the distinct 
 | `T2-20` | CAIS prior-art mandate | `asi-is-a-stack-not-a-model` | `already_covered` | 12 |
 | `T2-21` | Behavior-specification practice crosswalk | `constitutional-alignment-substrate` | `defer` | 0 |
 | `T2-22` | Formal-mathematics agents | `circle-calculus-and-proof-carrying-ai-contracts` | `defer` | 0 |
-| `T2-23` | ARC-style program synthesis and test-time training | `cognitive-compilation-and-semantic-ir` | `already_covered` | 3 |
+| `T2-23` | ARC-style program synthesis and test-time training | `cognitive-compilation-and-semantic-ir` | `already_covered` | 2 |
 | `T2-24` | Compute governance and distributed-training tension | `personal-compute-hives-and-federated-edge-intelligence` | `defer` | 0 |
 | `T2-25` | Introspection-training evidence | `readiness-gates-residual-escrow-and-quarantine` | `defer` | 0 |
-| `T2-26` | Goal continuity under inherited trajectory pressure | `human-intent-as-a-formal-input` | `already_covered` | 7 |
+| `T2-26` | Goal continuity under inherited trajectory pressure | `human-intent-as-a-formal-input` | `already_covered` | 8 |
 | `T2-27` | Causal and counterfactual reasoning | `planning-as-a-control-layer` | `narrow` | 12 |
 | `T2-28` | Distribution shift OOD detection and runtime uncertainty | `readiness-gates-residual-escrow-and-quarantine` | `already_covered` | 12 |
-| `T2-29` | Temporal-logic monitoring and physical safety envelopes | `runtime-adapters-tool-permissions-and-human-approval` | `narrow` | 1 |
+| `T2-29` | Temporal-logic monitoring and physical safety envelopes | `runtime-adapters-tool-permissions-and-human-approval` | `narrow` | 0 |
 | `T2-30` | Human-AI delegation calibration | `scalable-oversight-and-adversarial-ai-control` | `defer` | 0 |
-| `T2-31` | Evaluator-access levels and environment custody | `adversarial-evaluation-sandbagging-and-training-time-deception` | `already_covered` | 6 |
+| `T2-31` | Evaluator-access levels and environment custody | `adversarial-evaluation-sandbagging-and-training-time-deception` | `already_covered` | 10 |
 | `T2-32` | Domain-specific dangerous-capability profiles | `capability-thresholds-and-deployment-commitments` | `already_covered` | 7 |
 | `T2-33` | Post-deployment monitoring and incident disclosure | `safety-cases-and-structured-assurance` | `defer` | 1 |
-| `T2-34` | AIBOM lineage and signed build attestations | `ai-supply-chain-integrity-and-lifecycle-provenance` | `already_covered` | 4 |
+| `T2-34` | AIBOM lineage and signed build attestations | `ai-supply-chain-integrity-and-lifecycle-provenance` | `already_covered` | 2 |
 | `T2-35` | Purpose limitation privacy budgets and internal-channel leakage | `data-engines-continual-learning-and-unlearning` | `defer` | 0 |
-| `T2-36` | Unlearning privacy paradox | `data-engines-continual-learning-and-unlearning` | `narrow` | 4 |
-| `T2-37` | Provider concentration substitutability and impact tolerances | `resource-economics-and-token-budgets` | `defer` | 0 |
+| `T2-36` | Unlearning privacy paradox | `data-engines-continual-learning-and-unlearning` | `narrow` | 9 |
+| `T2-37` | Provider concentration substitutability and impact tolerances | `resource-economics-and-token-budgets` | `defer` | 1 |
 
 Only `defer`, `watch`, and `narrow` rows remain in the event-driven queue. `Already_covered` rows are not copied into a new roadmap, and deferred rows are not silently cited from search-result-depth material.
 

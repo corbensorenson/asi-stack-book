@@ -15,17 +15,6 @@ def CommandContractComplete (fields : CommandContractFields) : Prop :=
         fields.verificationPresent = true ∧
           fields.failureBehaviorPresent = true
 
-theorem valid_command_contract_contains_required_interface_fields
-    {fields : CommandContractFields} :
-    CommandContractComplete fields ->
-    fields.objectivePresent = true ∧
-      fields.constraintsPresent = true ∧
-        fields.outputContractPresent = true ∧
-          fields.verificationPresent = true ∧
-            fields.failureBehaviorPresent = true := by
-  intro complete
-  exact complete
-
 theorem missing_required_field_blocks_complete_command_contract
     {fields : CommandContractFields} :
     (fields.objectivePresent = false ∨
@@ -69,15 +58,6 @@ def ExplicitConstraintPrecedence (review : ConstraintOverrideReview) : Prop :=
   review.explicitConstraintPresent = true ->
     review.hiddenOrConflictingInstructionPresent = true ->
       review.hiddenOverrideAccepted = false
-
-theorem hidden_or_conflicting_instruction_cannot_override_explicit_constraint
-    {review : ConstraintOverrideReview} :
-    ExplicitConstraintPrecedence review ->
-    review.explicitConstraintPresent = true ->
-    review.hiddenOrConflictingInstructionPresent = true ->
-    review.hiddenOverrideAccepted = false := by
-  intro valid explicitPresent hiddenPresent
-  exact valid explicitPresent hiddenPresent
 
 theorem accepted_hidden_override_violates_explicit_constraint_precedence
     {review : ConstraintOverrideReview} :

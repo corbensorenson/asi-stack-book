@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/cognitive_compilation_refinement.schema.json",
+  "title": "Cognitive Compilation Refinement Result",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version","result_id","source_sha256","fixture_count","accepted_fixture_count","rejected_fixture_count","fixture_receipts","reachable_trace_event_count","reference_trace_final_state","mutation_count","mutation_rejection_count","mutation_receipts","support_state_effect","non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.cognitive_compilation_refinement.v1"},
+    "result_id": {"const": "cognitive-compilation-refinement-2026-07-15-local"},
+    "source_sha256": {"type":"object","additionalProperties":false,"required":["lean_model","semantic_atom_schema","fixture_inventory","prior_result"],"properties":{"lean_model":{"type":"string","pattern":"^[0-9a-f]{64}$"},"semantic_atom_schema":{"type":"string","pattern":"^[0-9a-f]{64}$"},"fixture_inventory":{"type":"string","pattern":"^[0-9a-f]{64}$"},"prior_result":{"type":"string","pattern":"^[0-9a-f]{64}$"}}},
+    "fixture_count": {"const": 6}, "accepted_fixture_count": {"const": 2}, "rejected_fixture_count": {"const": 4},
+    "fixture_receipts": {"type":"array","minItems":6,"maxItems":6,"items":{"type":"object","additionalProperties":false,"required":["fixture","expected_acceptance","independently_accepted","reason"],"properties":{"fixture":{"type":"string","minLength":1},"expected_acceptance":{"type":"boolean"},"independently_accepted":{"type":"boolean"},"reason":{"type":"string","minLength":1}}}},
+    "reachable_trace_event_count": {"const": 7}, "reference_trace_final_state": {"type":"object"},
+    "mutation_count": {"const": 47}, "mutation_rejection_count": {"const": 47},
+    "mutation_receipts": {
+      "type": "array", "minItems": 47, "maxItems": 47,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["mutation_id", "rejected", "failed_event_index", "reasons"],
+        "properties": {
+          "mutation_id": {"type": "string", "minLength": 1},
+          "rejected": {"const": true},
+          "failed_event_index": {"type": "integer", "minimum": 0, "maximum": 6},
+          "reasons": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+        }
+      }
+    },
+    "support_state_effect": {"const":"none"}, "non_claims": {"type":"array","minItems":3,"items":{"type":"string","minLength":1}}
+  }
+}

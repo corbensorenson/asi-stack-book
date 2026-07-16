@@ -1,0 +1,458 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "compact-generative-systems-and-residual-honesty",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/compact-generative-systems-and-residual-honesty.qmd",
+    "structured_atoms_reviewed": 80,
+    "prose_candidates_adjudicated": 53,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, all seventeen exact source mappings, three public schemas, the Compact GVR, Circle seed-rule, residual-conservation, residual-trace, residual-storage, QCSA, and post-v2.3 pressure results, all nine proof targets and thirty-two declarations across three Lean modules, every manifest atom, every prose candidate, the test plan, source crosswalk, summary, and handoff. The sweep made consumer-specific compact-representation admission and residual custody the distinct owner; expanded the contract to eighteen lifecycle mechanisms, twelve interfaces, eighteen invariants, and eighteen failure modes; classified the formal surface as six direct predicate or projection checks, twenty-three derived finite route, negative, or fixture consequences, and three authored-summary bridges; specified strong matched baselines, joint utility and total-burden metrics, causal ablations, independent reproduction, and heterogeneous transfer; and preserved zero chapter-core support effect."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Natural and adversarial exact, lossy, generated, repaired, retrieved, summarized, and semantic representations proposed for versioned downstream consumers across text, code, structured data, model artifacts, mutable project state, and other declared modalities.",
+      "environment": "Seventeen exact source mappings; three public schemas; one 78-byte versus 368-byte toy GVR result with three rejected controls; 3/5 residual-conservation records; two four-entry residual traces with five storage controls; one 71-byte Circle structural saving; one bounded subordinate upward transition; two no-change decisions; one 0/24 residual-pressure failure; and thirty-two finite declarations. No useful deployed compact representation is represented.",
+      "model": "A consumer-specific representation-admission and residual-custody relation over exact source lineage, package boundaries, search, generator/decoder, metadata, semantic leases, verifier dependencies, exact or scoped-loss contracts, repair, fallback, final serialization, downstream utility, resource and human cost, residual states, descendants, migration, reproduction, and transfer.",
+      "authority": "This chapter owns compact-representation admission and residual custody only. Source/Artifact, Intent/Consumer, Context/Memory/Retrieval, Routing/Readiness/SCF, Evidence/Verification/Claims/Benchmarks, Procedural/Compilation/Learning, Resource, Security/Privacy/Rights/Legal/Constitutional, Runtime/Tools, Artifact Graph, Human/Tribunal, and Release/Deployment/Inter-Stack owners retain their boundaries.",
+      "time": "Semantic review current through 2026-07-14; source, corpus, consumer, use, contract, codec, generator, decoder, verifier, evaluator, model, tool, hardware, authority, rights, hierarchy, workload, incident, or time changes expire affected claims and leases.",
+      "artifact": "Chapter and manifest contract; seventeen mappings; three schemas; compact GVR, Circle, residual, QCSA, and pressure results; transitions; thirty-two declarations across three Lean modules; and the future live reference slice and causal transfer campaign."
+    },
+    "current_disposition": "retain_argument_with_toy_exactness_residual_and_negative_pressure_boundaries_pending_real_total_burden_campaign",
+    "assumptions": [
+      "Sources, corpora, consumers, contracts, package components, search attempts, decoders, verifiers, repairs, fallbacks, semantic leases, downstream outcomes, resources, human work, rights, descendants, and residuals can be versioned and observed without collapsing their owners.",
+      "Final serialized package boundaries can include all required models, prompts, indexes, metadata, decoder state, verification, repair, fallback, and dependencies.",
+      "Strong literal, standard codec, model-compression, retrieval, summary-tree, learned-generator, semantic-graph, human-maintained, conservative-fallback, and governed arms can receive matched data, authority, resources, evaluators, retries, and time.",
+      "Independent-enough evaluators can measure exact or scoped fidelity, useful downstream success, selective coverage, source and rights preservation, recovery, and delayed residuals.",
+      "Failed searches, longer artifacts, rejected candidates, fallback, unavailable consumers, human repair, missing dependencies, costs, and residuals remain in denominators.",
+      "Natural corpora, adversarial changes, causal interventions, independent implementations, and transfer settings can be frozen before outcome-bearing execution."
+    ],
+    "dependencies": [
+      "artifact-graphs-audit-logs-and-replay",
+      "intent-to-execution-contracts",
+      "virtual-context-abi",
+      "context-transactions-snapshots-mounts-and-taint",
+      "routing-heads-and-specialist-cores",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "stable-capability-fields",
+      "verification-bandwidth-and-context-adequacy",
+      "claim-ledgers-and-belief-revision",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "procedural-memory-and-cognitive-loop-closure",
+      "cognitive-compilation-and-semantic-ir",
+      "resource-economics-and-token-budgets",
+      "security-kernel-and-digital-scifs",
+      "privacy-rights-and-legal-constraints",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "human-collaboration-and-dispute-resolution",
+      "capability-thresholds-and-deployment-commitments"
+    ],
+    "strongest_counterclaim": "Standard codecs, quantization, distillation, retrieval, summary trees, ordinary data structures, and literal fallback already deliver useful compression more simply; the proposed control plane adds metadata, verification, human review, and governance cost without improving the joint utility-and-total-burden frontier.",
+    "falsifier": "Under matched natural corpora and downstream consumers, the governed representation market fails to improve the preregistered joint frontier over strong simpler controls; its predicted causal signatures do not appear; or it hides package components, verifier error, repair, fallback, source or rights loss, utility damage, human work, recovery failure, or residual burden.",
+    "required_lanes": [
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze the strongest codec, model-compression, retrieval, hierarchical-summary, program-synthesis, semantic-representation, MDL, information-bottleneck, and residual-accounting comparators without importing reported gains."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify acceptable loss, permitted consumers, source and rights preservation, residual ownership, human burden, refusal, fallback, migration, discharge, reopening, and retirement."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify package closure, exact and scoped-loss semantics, verifier dependency, residual state, semantic lease, migration, descendant invalidation, liveness, and countermodels beyond trusted Booleans."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Run real candidate search, final serialization, decode, verification, repair, fallback, downstream consumers, source/hierarchy change, residual storage/reopening/discharge, recovery, and rejecting controls."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure fidelity, useful success, coverage, final rate, latency, search, decode, verification, repair, metadata, compute, memory, bandwidth, energy, money, human/governance work, fallback, rights, recovery, and residual burden jointly."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate bounded search, independent verification, repair, fallback, semantic provenance, consumer policy, final serialization, residual ownership, and descendant invalidation under matched resources."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Reproduce independently and transfer across corpora, modalities, codecs, models, tasks, consumers, organizations, hardware, rights regimes, threats, updates, and time."
+      }
+    ],
+    "evidence_refs": {
+      "chapter": "chapters/compact-generative-systems-and-residual-honesty.qmd",
+      "compact_gvr": "experiments/compact_gvr_slice/results/2026-07-01-local.json",
+      "circle_seed_rule": "experiments/circle_seed_rule_receipt_slice/results/2026-07-05-local.json",
+      "residual_conservation": "experiments/residual_honesty_conservation/results/2026-07-03-local.json",
+      "residual_trace": "experiments/residual_ledger_trace/results/2026-07-03-local.json",
+      "residual_storage": "experiments/residual_ledger_storage_replay/results/2026-07-04-local.json",
+      "pressure_result": "experiments/post_v2_3_evidence_campaigns/results/residual_honesty.json",
+      "transitions": "evidence_transitions/",
+      "lean_compact": "lean/AsiStackProofs/CompactGenerativeSystems.lean",
+      "lean_gvr": "lean/AsiStackProofs/GenerateVerifyRepair.lean",
+      "lean_semantic": "lean/AsiStackProofs/SemanticRepresentation.lean",
+      "manifest": "book_structure.json"
+    },
+    "contrary_evidence": [
+      "Standard codecs, model compression, retrieval, summary trees, and ordinary data structures already solve important compression subsets.",
+      "The 78-versus-368 result is one authored exact-string toy; only that narrow subordinate claim moved, not the chapter core.",
+      "The Circle receipt records one finite structural saving of 71 bytes and explicitly blocks useful compression, codec, downstream utility, and optimal-search claims.",
+      "The conservation and ledger artifacts are authored finite records and local traces, not live residual observability, deployed storage, or recovery evidence.",
+      "The post-v2.3 model produced zero parseable final decisions, correct routes, or reopen triggers in 24 calls despite residual identifiers appearing in capped reasoning.",
+      "Thirty-two declarations include three authored-summary bridges and finite fixture consequences; they do not establish real package closure, verifier adequacy, utility, or total-burden improvement.",
+      "QCSA tied the best task-decision baseline, used 1.913386 times its operations, and failed its advantage and resource gates on the exact corpus.",
+      "No current result independently reproduces or transfers useful, general, semantic, efficient, or superior compression."
+    ],
+    "known_confounds": [
+      "Toy and synthetic artifacts omit natural entropy, mutable dependencies, corrupted data, heterogeneous decoders, ambiguous semantics, delayed utility, rights conflicts, and organizational incentives.",
+      "The governed arm may receive more metadata, engineering, verification, repair, retries, fallback, hardware, or human review than simpler baselines.",
+      "Generator, decoder, verifier, evaluator, semantic resolver, and reviewer may share code, models, data, infrastructure, organization, or assumptions.",
+      "Selective coverage and fallback can preserve quality while hiding refusal, latency, full-artifact use, and opportunity cost.",
+      "Short horizons can miss semantic drift, source revocation, hierarchy migration, cache descendants, human interpretation burden, and delayed residual reopening.",
+      "Failed search, larger packages, unavailable consumers, human repair, missing dependencies, and costs can disappear from denominators."
+    ],
+    "acceptance_criteria": [
+      "Every lifecycle stage from source/consumer freeze through reproduction and transfer has an exact producer, consumer, valid case, rejecting mutation, consequence, recovery path, and residual owner.",
+      "A real reference slice closes the final package boundary, independently decodes and verifies, executes repair/fallback, runs downstream consumers, handles source/hierarchy change, and preserves live residual lifecycle evidence.",
+      "A preregistered natural and adversarial campaign meets joint fidelity, useful-success, coverage, final-rate, total-resource, human-work, rights, fallback, recovery, residual, causal, independent-reproduction, and transfer gates against strong matched controls.",
+      "Each signature mechanism produces its predicted failure or benefit under matched ablation without explanation by extra resources, cherry-picked corpora, shared evaluators, hidden repair, fallback, or denominator changes."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to exact source, corpus, consumer, use, contract, allowed loss, package boundary, codec/generator/decoder/verifier/evaluator, hardware, rights, workload, horizon, metric, cost, and residual.",
+      "Separate record validity, exact reconstruction, semantic adequacy, verifier correctness, downstream utility, final rate, total burden, residual observability, deployment, and public release.",
+      "Unknown package closure, verifier independence, fallback execution, downstream utility, rights preservation, recovery, residual accessibility, reproduction, or transfer remains residual or blocked."
+    ],
+    "refutation_criteria": [
+      "Refute an invariant when a reachable trace satisfies its premises and violates package closure, exact/scoped-loss semantics, verifier separation, executable fallback, consumer policy, residual custody, migration, denominator preservation, or scope.",
+      "Refute a mechanism benefit when matched ablation preserves or improves the joint frontier, or the apparent benefit is explained by extra resources, cherry-picked corpora, shared evaluation, hidden repair, fallback, or omitted package components.",
+      "Refute useful, general, semantic, efficient, governable, transferable, or state-of-the-art language when a simpler control wins, downstream utility collapses, a material burden remains hidden, or independent reproduction and transfer fail."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only when a more precise representation owner supersedes the atom and every source, package, consumer lease, cache, descendant, repair, fallback, residual, recovery duty, and evidence transition migrates with preserved lineage."
+    ],
+    "promotion_ceiling": "argument_until_real_consumer_utility_total_burden_campaign_with_causality_independent_reproduction_and_transfer",
+    "reproduction": {
+      "command": "python3 scripts/validate_compact_gvr_slice.py && python3 scripts/validate_circle_seed_rule_receipt_slice.py && python3 scripts/validate_residual_honesty_conservation.py && python3 scripts/validate_residual_ledger_trace.py && python3 scripts/validate_residual_ledger_storage_replay.py && cd lean && lake build AsiStackProofs.CompactGenerativeSystems AsiStackProofs.GenerateVerifyRepair AsiStackProofs.SemanticRepresentation",
+      "environment_lock": "Repository finite fixtures, local traces, Circle receipt import, and negative pressure result current through 2026-07-14; natural codec and downstream campaign not yet frozen.",
+      "artifact_digest": null,
+      "evaluator_identity": "Current validators are local deterministic implementations; independent codec, decoder, verifier, semantic, downstream, resource, rights, and residual evaluators are required for promotion."
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "compact-generative-systems-and-residual-honesty",
+      "next_unblocking_condition": "Build the real codec and semantic reference slice, preregister heterogeneous corpora and consumers plus strong matched baselines, close final package and total-cost accounting, run causal ablations, independently reproduce codec/verifier/evaluator/consumer behavior, and transfer across modalities, organizations, hardware, rights regimes, threats, updates, and time."
+    },
+    "non_claims": [
+      "A source mapping, schema, exact toy, ratio, seed size, model size, semantic graph, verifier pass, theorem, authored bridge, digest chain, residual record, or green build does not establish useful compression, semantic adequacy, deployed residual honesty, total-burden improvement, transfer, or SOTA status.",
+      "The 78-versus-368 and 71-byte results are bounded structural fixtures; the 0/24 pressure result is a negative boundary; none promotes the chapter core.",
+      "No support, deployment, release, AGI, or ASI state changes through this semantic review."
+    ]
+  },
+  "atom_reviews": {
+    "compact-generative-systems-and-residual-honesty.core": {
+      "current_disposition": "retain_distinct_compact_representation_admission_and_residual_custody_owner_at_argument",
+      "strongest_counterclaim": "Standard codecs, retrieval, ordinary data structures, and literal fallback provide adequate useful compression at lower total governance cost.",
+      "falsifier": "Matched natural consumers show no unique joint-frontier benefit, predicted ablation signatures fail, or package, verifier, utility, source, rights, fallback, recovery, denominator, or residual discipline is lost.",
+      "promotion_ceiling": "argument_until_real_useful_total_burden_campaign_with_causality_independent_reproduction_and_transfer"
+    }
+  },
+  "prose_candidate_dispositions": {
+    "compact-generative-systems-and-residual-honesty.prose.dba2040dbc35": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.2ae80234ee7e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.d45c1883433e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.21a07e4f8cb6": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.minimum.001"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.382ec00b04c1": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.23f73aa1ac19": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.minimum.001"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.b05c6fe87d14": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.c1414df3adda": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.5e0850a83268": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.f5b138ff38a3": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.beyond_sota.001"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.2fc54085c096": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.beyond_sota.001"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.48b381046fe1": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.239241f088fc": {
+      "state": "historical_or_source_report",
+      "rationale": "Adjudicated as a bounded current-state, source, fixture, result, or non-claim report; it does not create an independent promoted atom."
+    },
+    "compact-generative-systems-and-residual-honesty.prose.78a76b021da5": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.beyond_sota.001"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.fe6b2aae1ec5": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.6ce64f9eb1dd": {
+      "state": "historical_or_source_report",
+      "rationale": "Adjudicated as a bounded current-state, source, fixture, result, or non-claim report; it does not create an independent promoted atom."
+    },
+    "compact-generative-systems-and-residual-honesty.prose.b5d18419ea29": {
+      "state": "historical_or_source_report",
+      "rationale": "Adjudicated as a bounded current-state, source, fixture, result, or non-claim report; it does not create an independent promoted atom."
+    },
+    "compact-generative-systems-and-residual-honesty.prose.32b100fb60b9": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.7ec03d517b80": {
+      "state": "historical_or_source_report",
+      "rationale": "Adjudicated as a bounded current-state, source, fixture, result, or non-claim report; it does not create an independent promoted atom."
+    },
+    "compact-generative-systems-and-residual-honesty.prose.dc3194a889e5": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.adb6d8ba97cb": {
+      "state": "historical_or_source_report",
+      "rationale": "Adjudicated as a bounded current-state, source, fixture, result, or non-claim report; it does not create an independent promoted atom."
+    },
+    "compact-generative-systems-and-residual-honesty.prose.b570ae94ea59": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.5bc9d91f3b14": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.8a24d6449c37": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.645ec30d71e6": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.a0abe8a0723e": {
+      "state": "historical_or_source_report",
+      "rationale": "Adjudicated as a bounded current-state, source, fixture, result, or non-claim report; it does not create an independent promoted atom."
+    },
+    "compact-generative-systems-and-residual-honesty.prose.9a9be73a73d1": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.beyond_sota.001"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.832235e2a97a": {
+      "state": "historical_or_source_report",
+      "rationale": "Adjudicated as a bounded current-state, source, fixture, result, or non-claim report; it does not create an independent promoted atom."
+    },
+    "compact-generative-systems-and-residual-honesty.prose.6b5f01a1763d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.f8b24a21cc24": {
+      "state": "historical_or_source_report",
+      "rationale": "Adjudicated as a bounded current-state, source, fixture, result, or non-claim report; it does not create an independent promoted atom."
+    },
+    "compact-generative-systems-and-residual-honesty.prose.3db02db364c0": {
+      "state": "historical_or_source_report",
+      "rationale": "Adjudicated as a bounded current-state, source, fixture, result, or non-claim report; it does not create an independent promoted atom."
+    },
+    "compact-generative-systems-and-residual-honesty.prose.afeb14fd7639": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.db0ee7dd6f3b": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.8e28db754681": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.3143d78077a5": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.beyond_sota.001"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.cc8b38070680": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.4bb7800c03ef": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.aa78e8a84fa3": {
+      "state": "historical_or_source_report",
+      "rationale": "Adjudicated as a bounded current-state, source, fixture, result, or non-claim report; it does not create an independent promoted atom."
+    },
+    "compact-generative-systems-and-residual-honesty.prose.c1b19619e791": {
+      "state": "historical_or_source_report",
+      "rationale": "Adjudicated as a bounded current-state, source, fixture, result, or non-claim report; it does not create an independent promoted atom."
+    },
+    "compact-generative-systems-and-residual-honesty.prose.39b634f310c3": {
+      "state": "historical_or_source_report",
+      "rationale": "Adjudicated as a bounded current-state, source, fixture, result, or non-claim report; it does not create an independent promoted atom."
+    },
+    "compact-generative-systems-and-residual-honesty.prose.6ae678bd5ceb": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.minimum.001"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.97f59c017fdb": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.fd5488a469a6": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.beyond_sota.001"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.e6653a87ad58": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.beyond_sota.001"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.fb53d1b345ea": {
+      "state": "historical_or_source_report",
+      "rationale": "Adjudicated as a bounded current-state, source, fixture, result, or non-claim report; it does not create an independent promoted atom."
+    },
+    "compact-generative-systems-and-residual-honesty.prose.d1433655f8a4": {
+      "state": "historical_or_source_report",
+      "rationale": "Adjudicated as a bounded current-state, source, fixture, result, or non-claim report; it does not create an independent promoted atom."
+    },
+    "compact-generative-systems-and-residual-honesty.prose.cfb4d4e6ff26": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.5d4aaaf8bf10": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.f83c3fbc309b": {
+      "state": "historical_or_source_report",
+      "rationale": "Adjudicated as a bounded current-state, source, fixture, result, or non-claim report; it does not create an independent promoted atom."
+    },
+    "compact-generative-systems-and-residual-honesty.prose.f6de86a56456": {
+      "state": "duplicate_of_atom",
+      "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+      "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+    },
+    "compact-generative-systems-and-residual-honesty.prose.57571510eb61": {
+      "state": "historical_or_source_report",
+      "rationale": "Adjudicated as a bounded current-state, source, fixture, result, or non-claim report; it does not create an independent promoted atom."
+    }
+  ,
+    "compact-generative-systems-and-residual-honesty.prose.8bef85836f2c": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded current proof-surface report over authored records; it does not promote the chapter core."
+    },
+    "compact-generative-systems-and-residual-honesty.prose.ca80df10b619": {
+      "state": "historical_or_source_report",
+      "rationale": "Explicit formal-envelope non-claim boundary; it does not create an independent promoted atom."
+    }
+  },
+  "prose_review_lineage": [
+    {
+      "retired_candidate_id": "compact-generative-systems-and-residual-honesty.prose.bbb6a1e74d3d",
+      "retired_source": "chapters/compact-generative-systems-and-residual-honesty.qmd:508",
+      "retired_sentence": "It does not establish model adequacy, real codec correctness, verifier independence, corpus compression, semantic grounding, downstream utility, executable fallback, live residual observability, total-burden improvement, reproduction, or transfer.",
+      "preserved_disposition": {
+        "state": "historical_or_source_report",
+        "rationale": "Adjudicated as a bounded current-state, source, fixture, result, or non-claim report; it does not create an independent promoted atom."
+      },
+      "retirement_reason": "The chapter proof surface was rewritten during the active refinement; this sentence is no longer current prose. Listed replacements preserve the nearest current semantic role, not textual identity.",
+      "replacement_candidate_ids": [
+        "compact-generative-systems-and-residual-honesty.prose.ca80df10b619"
+      ],
+      "recorded_on": "2026-07-15"
+    },
+    {
+      "retired_candidate_id": "compact-generative-systems-and-residual-honesty.prose.f595cf934319",
+      "retired_source": "chapters/compact-generative-systems-and-residual-honesty.qmd:53",
+      "retired_sentence": "The repo now proves finite Lean predicates, a finite admission route, a compact GVR fixture bridge, a residual honesty conservation fixture bridge, a residual ledger trace surface bridge, and a residual ledger storage/replay bridge over compact-generative records, compression receipts, semantic-node records, synthetic residual records, already committed local residual-surface artifacts, and one bounded append-only residual event log.",
+      "preserved_disposition": {
+        "state": "historical_or_source_report",
+        "rationale": "Adjudicated as a bounded current-state, source, fixture, result, or non-claim report; it does not create an independent promoted atom."
+      },
+      "retirement_reason": "The chapter proof surface was rewritten during the active refinement; this sentence is no longer current prose. Listed replacements preserve the nearest current semantic role, not textual identity.",
+      "replacement_candidate_ids": [
+        "compact-generative-systems-and-residual-honesty.prose.8bef85836f2c"
+      ],
+      "recorded_on": "2026-07-15"
+    },
+    {
+      "retired_candidate_id": "compact-generative-systems-and-residual-honesty.prose.ffa39a0c00a4",
+      "retired_source": "chapters/compact-generative-systems-and-residual-honesty.qmd:531",
+      "retired_sentence": "owner handoff, required discharge review, preserved workload context, rejected",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
+        "target_atom_id": "compact-generative-systems-and-residual-honesty.core"
+      },
+      "retirement_reason": "The chapter proof surface was rewritten during the active refinement; this sentence is no longer current prose and no current scanner candidate is its semantic replacement.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-07-15"
+    }
+  ],
+  "non_claims": [
+    "The semantic sweep, atom count, source mapping, schema, toy exactness, finite theorem, authored bridge, validator, and green build are governance and navigation evidence, not proof of useful compression.",
+    "The subordinate synthetic transition and structural savings do not promote the chapter core; the 0/24 pressure result remains negative evidence.",
+    "No chapter-core support, deployment status, release state, AGI claim, or ASI claim changes through this packet."
+  ]
+}

@@ -3,20 +3,32 @@ title: "Security Kernel and Digital SCIFs"
 chapter_id: "security-kernel-and-digital-scifs"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-01"
+draft_maturity: "v0.3 semantically reviewed proof-contract draft"
+last_updated: "2026-07-14"
 primary_sources:
   - "ladon_manhattan"
   - "context_engineer"
   - "talos"
   - "alignment_field"
   - "coherence_exchange"
+  - "ext_owasp_llm_top_10_2025"
+  - "ext_nist_zero_trust_architecture_2020"
+  - "ext_saltzer_schroeder_protection_1975"
+  - "ext_agentdojo_2024"
+  - "ext_camel_prompt_injection_2025"
+  - "ext_owasp_agentic_top_10_2026"
+  - "moecot_manifest_project"
+  - "beastbrain_project"
+  - "bugbrain_project"
+  - "corbens_trainer_project"
+  - "corbens_best_model_possible_project"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Four local raw-cache claim-source mappings now carry reviewed passage references, but coherence_exchange remains connector-only/source-note mapped and support remains at argument until tests, threat-model artifacts, runtime evidence, or accepted evidence transitions justify promotion."
-  - "The authority_use_receipt fixture validates schema/example consistency, the SecurityKernel Lean module mechanizes narrow authorization/clearance predicates and a finite authority-use route envelope, the synthetic security kernel harness now checks handle mediation, approval artifacts, approval-expiry refusal, bounded action scope, overbroad-SCIF-context rejection, SCIF lifecycle completeness, sanitization, residual leak-risk notes, revocation paths, and prompt-injection non-disclosure boundaries, and the Resource Budget Ledger harness now rejects a critical dispatch whose apparent savings come from removing SCIF isolation, approval, audit logging, and sanitization; kernel security, sandbox isolation, side-channel safety, prompt-injection containment, secret-handle safety, deployed approval-expiry enforcement, least-privilege context behavior, runtime policy behavior, runtime budget enforcement, and source interpretation remain open."
-  - "Source-noted external comparators now exist for OWASP LLM/GenAI risks, NIST Zero Trust Architecture, and Saltzer-Schroeder protection principles; they replace the prior external-baseline exception for positioning only and do not imply support-state promotion."
+  - "All sixteen assigned source notes now have reviewed claim-source mappings, but five author-lineage sources are not independent corroboration and the six external comparators have not been reproduced or audited locally."
+  - "Current evidence is exactly 3 valid and 8 expected-invalid synthetic Authority Use Receipts, 2 valid and 6 expected-invalid SCIF commit-probe routes, one security-overhead-laundering negative fixture inside the 6-valid/7-invalid Resource Budget corpus, and 22 finite Lean theorem declarations under four targets; none establishes a non-bypassable monitor, real secret custody, isolation, declassification quality, effect-complete revocation, side-channel safety, privacy, or production security."
+  - "The post-v2.1 governed-work campaign recorded 0/36 primary unsafe releases versus 24/36 baseline, but only 2/36 useful releases and 32/36 exact attack-control rollback, with the same project supplying policy, observer, and promotion validation; this is a bounded fail-closed negative result, not a Digital SCIF or prompt-injection result."
+  - "Promotion or refutation requires a preregistered real-model, natural-task, adversarial, multi-asset campaign against strong conventional and current agent-security comparators with independently implemented monitors, red teams, declassification evaluators, causal ablations, replication, and transfer."
 ---
 
 ## Chapter status
@@ -26,23 +38,23 @@ open_evidence_gaps:
 | Chapter ID | `security-kernel-and-digital-scifs` |
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-01 |
-| Primary source records | `ladon_manhattan`, `context_engineer`, `talos`, `alignment_field`, `coherence_exchange` |
+| Manuscript maturity | v0.3 semantically reviewed proof-contract draft |
+| Last updated | 2026-07-14 |
+| Primary source records | 16 mapped sources: five author-lineage sources, six external comparators, and five pinned local-project notes |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `ladon_manhattan`, `context_engineer`; supporting: `talos`, `alignment_field`, `coherence_exchange`; external comparators: `ext_owasp_llm_top_10_2025`, `ext_nist_zero_trust_architecture_2020`, `ext_saltzer_schroeder_protection_1975` |
-| Source loading state | source notes: `ladon_manhattan`, `context_engineer`, `talos`, `alignment_field`, `coherence_exchange`; raw cache: `ladon_manhattan`, `context_engineer`, `talos`, `alignment_field`; connector/recovery: `coherence_exchange` |
-| Source mapping review | Four local raw-cache mappings are passage-reviewed; `coherence_exchange` remains connector-only/source-note mapped. |
-| Test state | `authority_use_receipt.valid.json` passes protocol fixture validation and `AsiStackProofs.SecurityKernel` builds locally with authorization, clearance, and finite authority-use route theorems; `python3 scripts/validate_security_kernel.py` passes 3 valid and 8 expected-invalid synthetic authority-use receipt fixtures for handle substitution, lease/revocation discipline, expired-approval refusal, SCIF lifecycle, overbroad context rejection, sanitized residuals, and prompt-injection non-disclosure boundaries; `python3 scripts/validate_security_scif_commit_probe.py` passes the SCIF sanitized commit replay probe with `valid_sanitized_commit_replay`, `valid_prompt_injection_blocked_commit`, and six expected-invalid controls for secret, handle, missing-zeroize, overbroad-context, unapproved-destination, and missing-residual commit paths; `python3 scripts/validate_resource_budget_ledgers.py` passes 6 valid and 7 expected-invalid synthetic Resource Budget Record fixtures, including rejection of security-overhead budget laundering and serving-memory throughput-to-quality overclaim, without proving deployed kernel security, sandbox isolation, side-channel safety, runtime containment, approval-service behavior, least-privilege context behavior, privacy, security, runtime budget enforcement, serving throughput, single-request quality, or security economics. |
+| Source queue | primary: `ladon_manhattan`, `context_engineer`; supporting: `talos`, `alignment_field`, `coherence_exchange`; variants/comparators: OWASP LLM, NIST Zero Trust, Saltzer-Schroeder, AgentDojo, CaMeL, OWASP Agentic; implementation counterexamples: MoECOT Manifest, BeastBrain, BugBrain, Corben's Trainer, Corben's Best Model Possible |
+| Source loading state | all sixteen assigned source notes reviewed; four author raw caches passage-reviewed; five pinned private projects represented only by public-safe notes; external comparators not locally reproduced |
+| Source mapping review | 16 assigned sources / 16 reviewed mappings; mapping completeness does not establish efficacy or independence. |
+| Test state | Current exact boundary: 3 valid/8 expected-invalid synthetic authority receipts; 2 valid/6 expected-invalid SCIF commit routes; 6 valid/7 expected-invalid budget records including one security-cost control; 22 finite Lean declarations under four targets; and a bounded 36-transaction governed-work result with 0 primary unsafe releases, 2 useful releases, and 32 exact attack-control rollbacks. No production-security inference. |
 
 ## Drafting guardrail
 
-This chapter narrows security claims to handle-mediated authority and compartment discipline. It does not claim kernel-level security, side-channel safety, or leak prevention without a local fixture or threat-model-specific test.
+The security kernel specifies a threat-model-bound authority-use transaction. It does not treat a handle, receipt, allowlist, container, Digital SCIF name, audit log, sanitizer, theorem, red-team pass, or zero observed leaks as a security guarantee.
 
 It follows replacement because capability churn is not safe if new implementations can carry secrets, privileged context, or authority across boundaries that the old implementation was never allowed to cross.
 
-This chapter is the stack's least-exposure rule. Capability can grow, routes can change, and tools can become more useful, but privileged material should not become ordinary context just because the system is good at using it. Secrets, sensitive context, and authority handles need their own boundary language.
+The security kernel is the stack's least-authority and information-flow boundary. Capability can grow, routes can change, and tools can become more useful, but privileged material and effect authority must remain purpose-bound, completely mediated at declared surfaces, independently observable, revocable where possible, and explicit about channels or consequences that cannot be contained or reversed.
 
 ::: {.asi-human-only}
 ## Human Reading Path
@@ -56,37 +68,35 @@ Security is the stack's refusal to let convenience blur protected authority. The
 
 ## Problem
 
-High-agency systems need security boundaries for secrets, context, permissions, and tool calls.
+Tool-using and high-agency AI systems can transform untrusted content into requests over secrets, private facts, identities, memory, model artifacts, tools, networks, files, money, code, and physical or institutional effects. The boundary crosses more than a prompt: model, planner, tool, policy service, operator, vendor, dependency, runtime, device, log store, backup, and descendant may each occupy a different trust zone.
 
-The agency paradox is straightforward: useful AI systems need to act through credentials, tools, files, networks, and privileged context, but the model context is the wrong place to put secrets or broad authority. If a model can see a credential, a prompt injection can ask for it. If a low-tier worker receives a whole memory dump, it can leak, misuse, or overfit to irrelevant privileged information.
+The security problem is therefore two coupled flows. Information can enter, move through, or leave the system; authority can authorize an effect on a target. Keeping credential bytes out of a prompt narrows one disclosure path, but an opaque handle may still be replayed, redirected, or used by a confused deputy. A container may reduce process access while sharing browser state, network, accelerators, operators, logs, or cloud control planes. A sanitizer may remove literal tokens while preserving inferable or actionable protected facts.
 
-Security therefore becomes a kernel boundary. The AI may request use of an authority, but the authority is mediated by handles, policy checks, context compilation, Digital SCIFs, and auditable substitution points. The model should know what it is allowed to do, not necessarily the secret bytes that make the action possible.
+The proposed kernel boundary must begin with a versioned threat model: protected assets, principals, trust zones, adversary capabilities, security objectives, assumptions, accepted residuals, and channels explicitly left out of scope. The model may propose a privileged use; it cannot alone define, approve, execute, sanitize, evaluate, and audit that use. Every privilege must remain bound to an exact principal, purpose, operation, target, data scope, destination, budget, time window, nonce, policy, and revocation authority.
 
-The security goal is not to make the model morally trustworthy with secrets. It is to make the secret path structurally narrower than the reasoning path. The model can propose, justify, and receive sanitized results; the kernel decides what is substituted, where, for how long, and under which audit record. That division lets the stack use power without turning all power into model context.
+“Digital SCIF” is a design name, not a security property. Each instance needs a declared isolation grade over process, VM, container, browser, filesystem, network, memory, accelerator, device, operator, and vendor surfaces. Untested or shared surfaces remain named residuals. The aim is not to make the model morally trustworthy; it is to minimize exposure, mediate effects, preserve evidence, and make unknown or irreversible consequences impossible to hide behind a reassuring label.
 
 ## Why existing approaches are insufficient
 
-Putting secrets or privileged context into model-visible text invites leakage, prompt injection, and authority confusion.
+Prompt rules, model-visible secrets, one-time approvals, opaque handles, allowlists, sandboxes, output filters, and audit logs each cover a different slice. None alone supplies least authority, complete mediation, trustworthy declassification, non-bypassable isolation, effect-complete revocation, side-channel control, or recovery.
 
-The `ladon_manhattan` source gives the credential pattern: use blind handles, keep secrets in a vault or enclave, and inject them only at the authorized execution boundary. The `context_engineer` source gives the context pattern: treat context as a supply chain, compile mission briefs, enforce clearance, run sensitive work in an ephemeral compartment, then commit only sanitized outputs.
+The author-lineage sources propose useful ingredients: `ladon_manhattan` supplies blind handles and late substitution; `context_engineer` supplies context compilation and ephemeral compartment lifecycles; `talos` supplies typed execution, audit, and replay; `alignment_field` supplies normative pressure around agency, consent, dignity, and confinement; and `coherence_exchange` supplies contestability and audit framing. They are related design lineage, not five independent demonstrations.
 
-Neither pattern is a complete security proof. Software compartments can leak through logs, traces, screenshots, side channels, summaries, or overly broad handle permissions. The book's claim is narrower: credential bytes and privileged context should not be casually placed in model-visible text when a handle-mediated boundary can do the job.
+The strongest external comparison is broader. Saltzer and Schroeder supply least privilege, complete mediation, and fail-safe defaults. NIST Zero Trust supplies resource-centric decision and enforcement points with continuing evaluation. OWASP's LLM and agentic taxonomies supply prompt injection, sensitive disclosure, excessive agency, identity, memory, supply-chain, inter-agent, and cascading-risk vocabulary. AgentDojo supplies a realistic tool-over-untrusted-data benchmark family. CaMeL supplies a current control/data separation and capability-enforcement comparator. These sources sharpen the challenge; they do not show that the proposed transaction is new, complete, or effective.
 
-The same caution applies to context. A mission brief should be enough for the task, not a convenience dump of everything nearby. If a context packet contains privileged facts that the task does not need, the failure has already happened before the model acts.
+The mined projects provide especially useful counterevidence. BeastBrain's permission metadata did not demonstrate secret retrieval enforcement or hard SCIF isolation. BugBrain exposed incomplete authority binding, silently lossy audit paths, and weak root assumptions despite rich security types. Corben's Best Model Possible declared capability envelopes without comprehensive operating-system enforcement. MoECOT Manifest and Corben's Trainer show how abundant contracts, evidence rows, and fail-closed checks can coexist with weak external capability, stale promotion, or incomplete revocation. The security program must therefore prove effects and independence, not count interfaces.
 
-Security therefore belongs before the self-improvement boundary. A system that can modify itself must not be allowed to improve by making privileged context cheaper to move, easier to summarize, or less visible in logs. Reduced friction is not automatically reduced risk.
-
-External positioning: `ext_owasp_llm_top_10_2025`, `ext_nist_zero_trust_architecture_2020`, and `ext_saltzer_schroeder_protection_1975` are now the source-noted security comparators. OWASP grounds prompt injection, sensitive-information disclosure, and excessive agency as recognized GenAI application risks. NIST Zero Trust grounds resource-centric access mediation rather than ambient trust. Saltzer and Schroeder ground least privilege, complete mediation, and fail-safe defaults as classic protection principles. The ASI Stack security kernel uses those baselines to sharpen its handle, SCIF, and receipt vocabulary; it still does not claim OWASP conformance, NIST zero-trust implementation, kernel security, sandbox isolation, side-channel safety, or tested prompt-injection containment.
+Security also belongs before self-improvement: an update must not count as improvement because it moved protected data more cheaply, erased monitoring, widened a handle, weakened isolation, made declassification easier, or hid recovery cost. Reduced friction is not automatically reduced risk; fail-closed safety that destroys usefulness and availability is not automatically a successful security system either.
 
 ## Core Claim
 
-[security-kernel-and-digital-scifs.core, label: Design rationale, support: argument] Sensitive context and privileged actions should be mediated by kernel-like security mechanisms and compartmentalized Digital SCIFs.
+[security-kernel-and-digital-scifs.core, label: Design rationale, support: argument] Every privileged information flow or effect should execute as a threat-model-bound authority-use transaction through a non-bypassable reference monitor: bind the exact principal, purpose, operation, target, data and taint scope, budget, time, nonce, evaluator and policy identities; admit only minimized context and capabilities into a declared isolation grade; mediate every effect and egress; treat sanitization as explicit declassification; close leases, caches, logs, descendants, and residuals through revocation or incident recovery; and never infer security from the record, handle, compartment, or finite test alone.
 
-The claim remains at `argument` support. Ladon/Manhattan supplies the blind-handle pattern, Context Engineer supplies Digital SCIF and context-supply-chain vocabulary, Talos supplies execution/audit context, and Alignment Field supplies only normative pressure around power, agency, and consent. Four local raw-cache mappings now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. The source-reported security and benchmark claims remain unpromoted.
+This is a composite research claim at `argument`, not a demonstrated security result. It can fail because the inventory is incomplete, the monitor is bypassable or compromised, declassification is unreliable, observers are correlated, a side channel is unmodeled, revocation cannot reach descendants, irreversible harm cannot be recovered, or the governance burden destroys useful throughput. Each mechanism must earn its place through a matched causal ablation and the full transaction must beat strong conventional baselines on a joint usefulness-security-privacy-availability-cost-recovery frontier.
 
 ### Claim-source mapping status
 
-Appendix C now maps this core security-kernel claim to every assigned source note. Four mappings carry reviewed local raw-cache passage references. The mappings support handle-mediated authority, context-supply-chain, compartment, normative boundary, and audit vocabulary, not a claim that kernel security, leak prevention, side-channel resistance, or prompt-injection containment has been demonstrated.
+Appendix C maps all sixteen assigned source notes. The mappings establish design lineage, comparator ownership, and negative implementation lessons. They do not establish novelty, independence, conformance, implementation, containment, or support movement.
 
 | Source | What it supports | Limit |
 |---|---|---|
@@ -95,118 +105,207 @@ Appendix C now maps this core security-kernel claim to every assigned source not
 | `talos` | Source allow-listing, blind secret handles, Digital SCIFs, typed jobs, evidence records, audit logs, replay, and approval-gated runtime adapters. Passage-reviewed. | Security and benchmark claims require separate artifacts before support-state promotion. |
 | `alignment_field` | Normative boundary pressure around agency, dignity, consent, confinement, power, and cautious treatment of high-agency systems. Passage-reviewed. | Normative lineage only; not technical security evidence or an empirical leakage result. |
 | `coherence_exchange` | Verification supply-chain, audit, contestability, and governance-interface framing for sensitive claims and authority use. | Speculative synthesis; not an implemented security, economics, or institutional-governance mechanism. |
+| `ext_owasp_llm_top_10_2025` | Public GenAI risk vocabulary for prompt injection, sensitive disclosure, and excessive agency. | No OWASP assessment, mapping, or conformance result. |
+| `ext_nist_zero_trust_architecture_2020` | Resource-centric decision/enforcement points, least privilege, session scope, and continuing evaluation. | No zero-trust implementation, audit, or certification. |
+| `ext_saltzer_schroeder_protection_1975` | Classic least privilege, complete mediation, fail-safe defaults, separation, economy, and open-design principles. | No formalization or implementation proof. |
+| `ext_agentdojo_2024` | Adversarial benchmark comparator for tool use over untrusted data. | Not run locally; benchmark coverage is not universal security. |
+| `ext_camel_prompt_injection_2025` | Control/data separation and capability-policy enforcement comparator. | No local implementation or source-reported efficacy import. |
+| `ext_owasp_agentic_top_10_2026` | Modern agentic threat taxonomy across goals, tools, identity, memory, supply chain, agents, and cascading effects. | Taxonomy coverage is not threat-model completeness or control effectiveness. |
+| `moecot_manifest_project` | Context, delegation, revocation, evidence, effect-log, and contract/capability-gap lessons. | Private implementation note; no reproduced security behavior. |
+| `beastbrain_project` | Blind-handle/SCIF lineage and negative evidence separating metadata from enforcement and compartments from isolation. | No secret isolation or side-channel result. |
+| `bugbrain_project` | Privileged-intent, trace, replay, transport, and signed-context mechanisms plus concrete authority/audit/root counterexamples. | No bridge, Pi, hardware-root, or end-to-end security result. |
+| `corbens_trainer_project` | Fail-closed evidence and quarantine mechanisms plus stale-promotion, checkpoint, and audit-chain counterexamples. | No production security or transitive revocation result. |
+| `corbens_best_model_possible_project` | Tool-capability and verifier surfaces plus counterevidence on OS enforcement, playback, and evaluator independence. | No safe tool execution, live replay, containment, or current build result. |
 
 ## Mechanism
 
-The security kernel keeps privileged material out of ordinary model context by splitting request, authorization, substitution, execution, sanitization, and audit. The model may reason about the purpose and constraints of a sensitive action, but the secret or privileged context is injected only inside the approved execution boundary. A Digital SCIF is the temporary compartment where that boundary is strongest.
+The unit of security is an authority-use transaction, not a prompt or handle. Before exposure, a Threat Model Record freezes assets, actors, trust zones, adversary capabilities, objectives, assumptions, channels, residuals, and owners. An Authority Lease then binds the complete request tuple. A Context Admission Record compiles the smallest task-relative view. A reference monitor decides and mediates each privileged use. A Declassification and Commit Record governs what can leave. Revocation or incident closure accounts for surviving copies and effects.
 
 ```{mermaid}
 sequenceDiagram
   participant U as User / governance
-  participant P as Planner
-  participant K as Security kernel
+  participant P as Model / planner
+  participant K as Reference monitor
   participant S as Secret vault
   participant C as Digital SCIF
-  participant R as Redaction filter
-  participant L as Audit ledger
-  U->>K: authorize policy and scope
-  P->>K: request handle use, destination, purpose
-  K->>K: check clearance, destination, purpose
-  K-->>P: decision and handle status, not secret bytes
-  K->>C: spawn isolated context
-  S->>C: inject secret only inside boundary
-  C->>R: send raw result for sanitization
-  R->>K: return sanitized result and residual leak risk
-  K->>L: record handle use, policy, result, residuals
+  participant D as Declassifier
+  participant A as Auditor / incident owner
+  U->>K: freeze threat model, policy, lease, stop rules
+  P->>K: propose principal-purpose-operation-target tuple
+  K->>K: verify identity, scope, nonce, budget, time, telemetry
+  alt denied or unknown
+    K-->>P: named denial / abstention / residual
+  else admitted
+    K->>C: create declared isolation grade and minimized context
+    S->>C: late substitute protected material
+    C->>K: request every privileged effect and egress
+    K->>K: mediate, observe, and record actual effects
+    C->>D: submit tainted candidate output
+    D->>K: declassify, retain label, or refuse with utility/residual
+    K->>A: commit/abort, zeroize, revoke, recover, close residuals
+    K-->>P: permitted result, not unrestricted transcript
+  end
 ```
 
-**How to read the digital SCIF sequence:** The sequence keeps secret bytes out of ordinary model context. The planner requests handle use, the kernel checks scope, the vault injects secrets only inside the isolated SCIF, and the redaction/audit path returns sanitized evidence plus residual risk.
+**How to read the sequence:** The model is a proposer, not an authority. The monitor mediates every declared privileged effect; the SCIF supplies only its declared isolation grade; the declassifier makes a separate label-removal decision; and closure extends to revocation, recovery, and residual ownership. Any unmediated channel narrows or defeats the claim.
 
-The mechanism is least exposure. Handles replace secret bytes in model-visible context. Privileged substitution happens only inside an approved execution boundary. High-risk work runs inside compartmentalized context containers whose lifecycle, sanitized output, residual leak risk, and audit trail remain visible after the task ends.
+The mechanism has fifteen owned parts:
 
-Handles are not magic. A handle must carry scope: permitted destination, action type, time window, spending or rate limit, user approval state, logging rule, and revocation path. A SCIF must carry lifecycle: spawn, inject, execute, sanitize, zeroize, commit, and audit.
+1. Freeze a versioned threat model before evaluating controls.
+2. Bind a complete authority tuple: principal, delegator, purpose, operation, target, data scope, destination, budget, time, nonce, policy, approval, use count, and revocation authority.
+3. Keep raw protected material outside ordinary model context where mediated use suffices; treat the handle itself as protected and replayable unless constrained.
+4. Compile purpose-limited, minimized, taint- and provenance-aware context with explicit omissions and adequacy residuals.
+5. Completely mediate each declared privileged use and fail closed when identity, policy, telemetry, or observer state is missing.
+6. Declare and verify an isolation grade rather than asserting that “SCIF” means isolation.
+7. Separate trusted policy/control from untrusted data and model proposals.
+8. Propagate information-flow labels; remove a label only through an authorized declassification event.
+9. Mediate all declared egress, including logs, telemetry, clipboard, screenshots, errors, tools, caches, backups, timing, and resource channels.
+10. Execute and receipt the full lifecycle: request, deny/approve, admit, spawn, inject, execute, sanitize, declassify, commit/abort, zeroize, expire/revoke, audit, recover, and close.
+11. Propagate revocation and recovery through sessions, caches, delegated authority, descendants, external effects, rotations, notifications, compensation, and irreversibilities.
+12. Protect audit evidence as sensitive material while preserving contestable lineage.
+13. Separate proposer, policy author, approver, executor, sanitizer, evaluator, auditor, incident owner, and revocation authority enough to expose capture.
+14. Measure usefulness, unsafe disclosure/effects, false denial, missed help, availability, latency, compute, labor, recovery, privacy, and governance cost together.
+15. Preserve attacks, bypasses, false denials, detector gaps, recovery failures, and null results as versioned regression and residual memory.
 
-The useful security object is a lease, not a label. A handle should move through explicit states such as `requested`, `denied`, `scoped`, `active`, `substituted`, `sanitized`, `zeroized`, `expired`, `revoked`, and `leak_residual_recorded`. Those states keep the boundary visible when a later planner, route, budget allocator, or self-improvement proposal tries to reuse the authority. A handle that is merely present in context is not authority; a scoped lease plus receipt is.
+The useful object is a lease plus an enforced route, not a label. A handle that appears in context is neither inert nor automatically authorized: it can be stolen, correlated, replayed, or used as an oracle. A lease should move through explicit states such as `requested`, `denied`, `scoped`, `active`, `used`, `declassified`, `committed`, `aborted`, `expired`, `revoked`, `recovered`, `compensated`, and `residual_open`. The enforced consequence of each state matters more than its name.
 
-The passage review sharpens the claim boundary: keeping secret bytes out of model-visible context can reduce direct disclosure by prompt injection, but it does not prove isolation, side-channel safety, log hygiene, UI safety, or containment of every derived summary. Alignment-field material belongs here only as a warning about power, consent, agency, and confinement; it is not a security proof.
+Keeping secret bytes out of model-visible context can remove a direct literal-disclosure path. It does not imply that the model cannot infer the secret, recover a protected fact from derivatives, abuse the authority represented by the handle, induce a tool to disclose it, or leak through another channel. This exposure constraint is bounded by a named threat model; it is not “model ignorance.”
 
-The boundary should also distinguish request visibility from substitution visibility. The model may see that a payment handle, deployment token, private source, or personal record is available under policy; it should not see the underlying material unless the task requires model-visible reasoning over that material and a SCIF admits it. Even then, the commit path should be sanitized by default.
+Sanitization and declassification are separate. Sanitization transforms an output; declassification authorizes a change in information-flow label for a particular destination and purpose. A fluent summary can carry semantic secrets even when no literal token survives. Evaluation must therefore measure disclosure and task utility, preserve uncertain cases, and record who or what was trusted to make the decision.
 
-The important design habit is to treat every privilege as leased. A handle, clearance, memory shard, or tool permission should have a purpose, destination, time window, revocation path, and receipt. If a later plan cannot explain why the lease still applies, the authority should expire rather than persist as ambient capability.
+Complete mediation is always relative to an inventory. The monitor must name the paths it actually intercepts and the paths it cannot observe. “Non-bypassable” is a promotion target requiring implementation evidence, adversarial testing, and transfer—not a property conferred by architecture prose. Compromised monitors, vendors, operators, supply chains, or hardware roots remain distinct threat cases rather than hidden assumptions.
 
 ## Interfaces
 
-The public interface is an Authority Use Receipt, not a prompt convention. It records the purpose, handle, clearance, destination, approved action, SCIF lifecycle, sanitized output, residual leak risk, and revocation path without placing the underlying secret in the transcript.
+The current public Authority Use Receipt is only an early interface slice. Its eleven required fields—`handle_id`, `principal`, `purpose`, `destination`, `allowed_action`, `clearance`, `approval_record`, `scif_lifecycle`, `sanitized_output`, `residual_leak_risk`, and `revocation_path`—do not yet encode a complete threat model, exact policy/evaluator identity, data and taint scope, nonce and use count, isolation grade, actual effects, telemetry completeness, declassification authority, descendants, external effects, or incident closure. Schema validity must not be confused with an enforced security transaction.
 
-- VCM supplies least-privilege context.
-- Execution checks tool permissions.
-- Governance audits sensitive transitions.
+The full contract needs six linked records:
 
-For high-risk work, the receipt should be paired with a SCIF Commit Record. That record should name the admitted context shards, memory masks, allowed tools, denied material, substitution event, sanitization decision, zeroization result, material committed back to ordinary memory, residual leak-risk class, and expiry or revocation event. The commit record is the handoff to resource economics: secure execution costs tokens, latency, review, logs, and storage, and those costs must be budgeted rather than optimized away.
+- **Threat Model Record:** assets, actors, trust zones, adversary capabilities, objectives, assumptions, in-scope and out-of-scope channels, accepted residuals, owners, and version.
+- **Authority Lease:** principal, delegator, purpose, operation, target, data scope, destination, budget, time, nonce, use count, policy and approval identities, enforcement point, expiry, and revocation authority.
+- **Context Admission Record:** admitted and denied shards, provenance, clearance, taint, tools, egress, retention, omissions, adequacy residuals, and declared isolation grade.
+- **Effect Mediation Receipt:** attempted use, decision, substitution, actual effect, destination, observer, telemetry coverage, denial or failure route, and effect lineage.
+- **Declassification and SCIF Commit Record:** input/output labels, transformation, evaluator and authority, disclosure assessment, utility loss, retained derivatives, zeroization grade, commit/abort decision, destination, and residuals.
+- **Revocation and Incident Closure Record:** handles, sessions, caches, logs, backups, descendants, external effects, rotations, notifications, recovery, compensation, irreversibilities, and residual owners.
 
-Minimum fields:
-
-- `handle_id`
-- `principal`
-- `purpose`
-- `destination`
-- `allowed_action`
-- `clearance`
-- `approval_record`
-- `scif_lifecycle`
-- `sanitized_output`
-- `residual_leak_risk`
-- `revocation_path`
-
-The planner can request a capability, but the security kernel decides whether the request is authorized. The executor can complete the action, but only inside the approved boundary. The claim ledger can later see that the action happened without needing the raw secret.
-
-That receipt becomes the bridge to resource economics and self-improvement. Budgets should account for secure execution overhead instead of cutting it away. Self-improvement transitions should not be able to broaden handle scope, weaken SCIF lifecycle rules, or change audit policy without governance review.
+VCM and context transactions own material selection and taint-aware admission. Runtime adapters and the Labor OS own effect-bearing calls. Resource economics owns the security, privacy, availability, monitoring, recovery, and human costs. Supply-chain and hardware-root chapters own dependencies, attestation, custody, and trust anchors. Evidence States and assurance owners alone adjudicate claim support. No receipt silently grants deployment or support authority.
 
 ## Invariants
 
-- Secrets are not directly model-visible.
-- SCIF context is purpose-limited.
-- Privilege substitution is auditable.
-- Handle leases expire or revoke instead of becoming ambient authority.
-- Sanitized commits record retained material and residual leak risk.
+- Privileged access is default-deny, has no ambient authority, and remains bound to the complete frozen authority tuple.
+- Every declared privileged use and egress crosses a named enforcement point; missing identity, policy, telemetry, or observer state fails closed.
+- Raw secrets and protected data remain outside ordinary model context and ordinary logs where mediated use can complete the task, without implying non-inference or non-leakage.
+- A handle is protected, grants nothing beyond its exact live lease, and cannot be replayed, laundered, widened, delegated, or redirected implicitly.
+- Context is purpose-limited, minimized, taint-aware, provenance-bound, clearance-checked, and explicit about omissions and adequacy residuals.
+- Taint is monotone through transformations and descendants unless a separately authorized declassification changes the label.
+- Sanitization, declassification, authorization, and utility evaluation are distinct decisions with exact artifacts and owners.
+- Every SCIF declares a versioned isolation grade; untested process, browser, memory, hardware, operator, vendor, side, and covert channels remain residuals.
+- Logs, telemetry, caches, backups, screenshots, clipboard data, transcripts, errors, and audit records obey the same information-flow and retention rules as primary outputs.
+- Expiry and revocation propagate to handles, sessions, caches, delegated authority, descendants, and pending effects, while surviving effects remain visible.
+- Commit or abort requires lifecycle closure, zeroization evidence at the declared grade, declassification disposition, effect inventory, and residual ownership; a deletion receipt does not imply physical erasure.
+- The subject cannot solely author policy, approve authority, sanitize output, evaluate containment, edit audit evidence, or close its own incident.
+- Auditability remains bounded by privacy, rights, purpose, retention, and contestability; the log cannot silently become a surveillance or disclosure channel.
+- Security cost, false denial, availability loss, and useful-throughput loss remain visible and cannot be optimized or reported away.
+- Finite schemas, fixtures, proofs, red-team cases, and zero observed leaks establish only their frozen scope, not complete mediation, containment, security, or transfer.
 
-Model ignorance is the security kernel's strongest invariant: if the model never receives the secret bytes, it cannot be directly instructed to reveal those bytes. This does not solve every leak channel. It narrows one important class of failure and forces the remaining risks into explicit boundary, logging, and side-channel analysis.
-
-Purpose binding keeps handles narrow. A handle authorized for one destination, action, time window, or job cannot be reused as ambient authority by a later plan, summary, tool, or self-improvement proposal. Reuse requires a new receipt or an explicit lease that says reuse is allowed.
+These are target invariants. The current repository implements only finite predicates and synthetic routes for a subset. A reachable admitted trace that violates one refutes that invariant for its frozen scope; a missing producer, consumer, owner, or consequence leaves it unimplemented rather than “conceptually satisfied.”
 
 ## Failure modes
 
-- Prompt injection extracting secrets.
-- Privilege leakage through summaries.
-- SCIF bypass.
-- Ambient-handle drift, where a scoped authority survives into later plans, summaries, tools, or self-improvement proposals.
-- Security-cost laundering, where a cheaper route looks efficient only because it drops isolation, logging, approval, or sanitization.
+- Prompt, artifact, memory, tool-output, multimodal, or inter-agent injection turns untrusted data into control.
+- A confused deputy, compromised tool, or model launders a valid handle across principal, purpose, target, destination, or effect.
+- Ambient authority, replay, stale approval, incomplete expiry, or failed revocation permits use outside the lease.
+- Overbroad context admission leaks protected or irrelevant facts before execution.
+- Sanitization or summary laundering preserves reconstructable, inferable, linkable, or actionable protected semantics.
+- Network, filesystem, cache, timing, power, memory, accelerator, browser, clipboard, screenshot, error, log, telemetry, or transcript channels bypass modeled egress.
+- Destination, operation, parameter, identity, or target substitution occurs after approval.
+- SCIF theater assigns an isolation label while shared state, plugins, operators, vendors, or hardware remain bypass paths.
+- Zeroization theater records deletion while copies remain in memory, caches, snapshots, backups, logs, descendants, or external systems.
+- The vault, monitor, policy compiler, dependency, model host, secret-entry UI, supply chain, or hardware root is compromised.
+- Policy, approval, sanitization, evaluation, audit, or incident closure is captured by correlated subjects or institutions.
+- Cross-tenant, cross-session, cross-agent, or descendant state bleeds authority or protected information.
+- Audit evidence becomes a secret oracle, privacy violation, tampering target, or unbounded retention surface.
+- Fail-closed security becomes denial of service, approval fatigue, inaccessible recovery, or useful-throughput collapse.
+- Security-cost laundering reports improvement only because protection or recovery obligations disappeared.
+- Disclosure, external action, physical effect, learned influence, user reliance, or descendant creation survives rollback without adequate compensation.
+- Technical authorization launders consent, purpose, license, privacy, dignity, or other rights.
 
-The common trap is treating handles as safe while granting them unbounded use. A second trap is committing too much of the SCIF transcript back into ordinary memory. A third is assuming software isolation defeats hardware, browser, clipboard, screenshot, logging, and timing channels. Each trap should be visible in the threat model and residual risk field.
-
-Sanitized-output laundering is a security-kernel failure, not a writing nicety. A summary can carry enough derived information to reconstruct or misuse sensitive context even when the raw secret never appears. The sanitized commit should therefore record what was removed, what was retained, and which residual leak risks remain.
+Each failure class needs a distinct attack or mutation where its mechanism differs. A generic “prompt injection” control cannot stand in for identity abuse, memory poisoning, supply-chain compromise, confused-deputy behavior, audit leakage, side channels, or revocation failure. Unknown attacks need an unmapped state rather than forced classification as contained.
 
 ## Minimum Viable Implementation
 
-The security kernel can begin with a fake-secret fixture: an agent sees only `handle://demo-secret`, a policy engine approves one destination/action pair, a simulated executor substitutes the secret outside model-visible logs, and the audit trace proves that the model transcript contains the handle but not the secret value. The fixture would not prove real security; it would prove the interface shape.
+The current minimum is already implemented, but its meaning is narrower than the former prose implied.
 
-A leak-path fixture set should put the kernel under negative pressure: one allowed handle substitution, one denied destination, one overbroad SCIF context request, one sanitized summary with residual leak risk, and one attempted handle reuse after expiration. The set would exercise the boundary while leaving production containment unclaimed.
+| Evidence surface | Exact current result | What it does not establish |
+|---|---:|---|
+| Authority Use Receipt corpus | 3 valid; 8 expected-invalid | Real vault, handle safety, non-bypassable policy, approval service, or deployed revocation |
+| SCIF sanitized commit probe | 2 valid routes; 6 expected-invalid controls | Process/VM/browser isolation, trustworthy declassification, side-channel safety, privacy, or prompt-injection robustness |
+| Resource Budget Record corpus | 6 valid; 7 expected-invalid, including one security-overhead-laundering control | Runtime enforcement, calibrated security economics, availability, or useful-throughput preservation |
+| `AsiStackProofs.SecurityKernel` | 22 theorem declarations under four manifest targets | Runtime refinement, open-world information flow, cryptography, isolation, or security |
+| Post-v2.1 governed-work campaign | 0/36 governed primary unsafe releases versus 24/36 baseline; 2/36 useful releases; 32/36 exact attack-control rollback | Digital SCIF, injection containment, independent assurance, effect-complete recovery, acceptable utility, or production transfer |
 
-The minimum passes only if denial and expiration are ordinary outcomes, not exceptional error paths.
+The authority corpus exercises handle substitution, approval artifacts, expiry refusal, bounded action scope, overbroad context rejection, lifecycle fields, sanitization, residual notes, revocation paths, and synthetic injection non-disclosure. The commit probe uses generated public-safe material and blocks literal secret output, live-handle output, missing zeroization, overbroad context, unapproved destination, and missing residual notes. These are useful negative controls over self-authored records and a local toy path. They do not show that a real monitor sees every effect or that a semantic secret cannot escape.
 
-The current formal slice adds a finite route record for the same boundary. Given a structured authority-use review, the Lean model routes missing handles, revocation requests, inactive leases, missing approvals, unauthorized boundaries, missing substitution permission, insufficient clearance, detected prompt injection, missing required SCIFs, unsanitized output, residual leak risk, and clean authorized use to distinct decisions. This is useful because the denial paths are no longer prose-only, but it remains a route envelope over explicit records rather than evidence of a deployed sandbox, real vault, side-channel defense, or prompt-injection containment system.
+The six exact commit controls are `invalid_unsanitized_secret_commit_blocked`, `invalid_handle_leak_commit_blocked`, `invalid_missing_zeroize_commit_blocked`, `invalid_overbroad_context_commit_blocked`, `invalid_unapproved_destination_commit_blocked`, and `invalid_missing_residual_commit_blocked`. Their names describe expected fixture dispositions, not deployed containment.
 
-The SCIF sanitized commit replay probe adds a local toy runtime slice over generated public-safe secret material. `valid_sanitized_commit_replay` writes only a sanitized summary, `valid_prompt_injection_blocked_commit` writes a sanitized refusal after an injection attempt, and six expected-invalid controls block commits that would expose a synthetic secret, expose a live handle, omit zeroization, admit overbroad context, use an unapproved destination, or drop residual notes: `invalid_unsanitized_secret_commit_blocked`, `invalid_handle_leak_commit_blocked`, `invalid_missing_zeroize_commit_blocked`, `invalid_overbroad_context_commit_blocked`, `invalid_unapproved_destination_commit_blocked`, and `invalid_missing_residual_commit_blocked`. The public result records hashes and classes, not secret or handle bytes. It is a no deployed-kernel, sandbox-isolation, side-channel-safety, prompt-injection-containment, secret-handle-safety, approval-service, least-privilege-context, privacy, security, or support-state-promotion claim.
+The finite Lean route distinguishes missing handles, revocation, inactive leases, missing approval, unauthorized boundary, forbidden substitution, insufficient clearance, detected injection, missing SCIF, unsanitized output, residual risk, and clean use; the commit route distinguishes eight synthetic outcomes. These declarations prove consequences of explicit record fields inside the model. They neither derive those fields from a runtime nor establish that the model is semantically adequate.
+
+The post-v2.1 campaign is a valuable negative result. Fail-closed governance eliminated the registered primary unsafe-release class on 36 held-out repository-task transactions, but useful release collapsed to 2/36, four attack-control rollbacks were inexact, and the policy, observer, and promotion validator came from the same project. The correct lesson is that bounded refusal can suppress a registered effect while failing usefulness, recovery, and independence gates. It is not evidence for SCIF isolation or prompt-injection defense.
+
+The minimum therefore passes only as exact synthetic record, route, mutation, and bounded outcome evidence. Chapter-core support remains unchanged.
 
 ## Beyond the State of the Art
 
-The security kernel's end state is a least-exposure operating layer for high-agency AI. The model can reason about a task, request authority, and receive sanitized results, but secrets, protected memory, credentials, private sources, and privileged actions live behind leases, handles, clearance checks, compartment lifecycles, and audit receipts.
+The mature endpoint is a threat-model-bound security kernel whose authority,
+context, isolation, mediation, egress, revocation, recovery, availability, and
+usefulness claims survive strong comparators and adversarial transfer.
 
-In that end state, sensitive work has a visible lifecycle: request, denial or scoped approval, context admission, substitution, execution, sanitization, zeroization, commit, residual leak-risk classification, expiry, and revocation. The product surface does not ask users or researchers to trust that the model was careful. It shows which authority was used, which material was withheld, which output was sanitized, which logs are available, and which residual risks remain.
+The research target is not “more security layers.” It is a falsifiable comparison showing whether the full authority-use transaction improves the joint frontier over strong existing practice.
 
-Beyond current practice, the kernel would make security costs part of system accounting. A cheaper route that drops isolation, logging, approval, sanitization, or side-channel review would not count as an efficiency improvement; it would be a boundary delta requiring governance review. Prompt injection, summary leakage, stale handle reuse, SCIF bypass, and overbroad context admission would become testable failure paths rather than after-the-fact incident narratives.
+The comparison must begin with the same useful work and the same material
+authority in every arm. A design cannot appear safer merely because it receives
+easier tasks, sees less private context, denies more requests, or may replace an
+external effect with a harmless simulation. Candidate bytes, tool surfaces,
+human assistance, time, and recovery opportunity must be matched or their
+differences charged explicitly.
 
-The security chapter's current evidence boundary is narrower than that product surface. Its support state remains `argument` because the current checks are synthetic record fixtures and finite-record proofs. The next promotion path needs threat-model records, deployed or replayed kernel traces, real handle-substitution evidence, approval-service expiry behavior, least-privilege context admission behavior, prompt-injection containment runs, side-channel/logging analysis, and runtime budget-enforcement evidence before the kernel can be described as validated rather than specified.
+Security is also an open-world inventory problem. The protocol can make a
+declared boundary testable, but it cannot prove that every channel, dependency,
+operator action, copied secret, derived fact, remote side effect, or descendant
+has been found. The campaign therefore needs discovery controls that add new
+channels after freezing, measure whether the monitor notices them, and narrow
+claims whenever closure is unknown.
+
+Finally, containment must be evaluated with usefulness, privacy, availability,
+and recovery rather than against attack success alone. A system that leaks
+nothing because it completes nothing is not a secure useful system. A system
+that records every event while turning its audit log into a durable privacy
+hazard is not a governance success. Joint disposition prevents either failure
+from being laundered into a headline win.
+
+### Frozen comparators
+
+Use matched implementations and budgets for: prompt-only policy; a conventional secret manager plus ACL and ordinary application checks; a sandboxed tool agent; a zero-trust decision/enforcement design; control/data separation with capability enforcement in the CaMeL family; AgentDojo-style defenses and evaluation; and the full threat-model/lease/admission/monitor/declassification/revocation transaction. Keep the strongest result from each baseline rather than a deliberately weak strawman.
+
+### Workloads and adversaries
+
+Use natural tool-bearing tasks with real current models and deliberately adversarial variants. Cover multiple assets and authorities: credential use, private documents, identity/session state, durable memory, model and policy artifacts, filesystem and network effects, financial or deployment actions, code execution, multimodal inputs, cross-agent messages, and at least one external effect that cannot be perfectly rolled back. Freeze injection, confused-deputy, replay, destination substitution, memory poisoning, supply-chain, audit, cross-session, sanitizer, side/covert-channel, revocation, denial-of-service, and rights-laundering families. Preserve unknown attacks as unmapped.
+
+### Independent-enough observation
+
+Use independently implemented red teams, policy/effect monitors, leakage and semantic-declassification evaluators, auditors, and incident/recovery checks. Report model-family, data, organization, infrastructure, and incentive dependencies rather than calling nominally separate agents independent. The system under test must not edit its policy, evaluator, attack set, evidence, or threshold after seeing outcomes.
+
+### Joint metrics
+
+Measure literal and semantic disclosure, unauthorized effects, indirect-injection and confused-deputy success, side/covert-channel escape, sanitizer precision/recall and retained task utility, false denial, missed help, containment and escape, expiry/revocation latency, audit completeness and privacy, availability, useful throughput, latency, compute, operator burden, approval fatigue, incident recovery, compensation coverage, irreversible residuals, and total governance cost. No single “attack success rate” or zero-leak count can dominate the disposition.
+
+### Causality, replication, and transfer
+
+Ablate threat-model freezing, full tuple binding, late substitution, context minimization, complete mediation, isolation grade, control/data separation, taint, egress mediation, declassification, revocation closure, audit protection, role separation, joint accounting, and regression memory one at a time under matched tasks. Require predicted mechanism-specific changes rather than mere score movement. Replicate with a separate implementation and transfer across models, tools, runtimes, local/cloud/browser settings, operators, multimodal and multi-agent cases, threat families, and time.
+
+### Disposition rule
+
+Novelty, containment, superiority, or security language survives only if the full condition meets preregistered useful-output, unsafe-disclosure/effect, privacy, availability, recovery, cost, causal-ablation, independent-replication, and transfer gates against every frozen strong comparator. A failed mechanism is narrowed or refuted. A baseline win is retained. A null result remains null. No number of green schemas, theorem declarations, or blocked toy attacks can substitute for that campaign.
 
 ## Codex test plan
 
@@ -219,8 +318,8 @@ The security chapter's current evidence boundary is narrower than that product s
 | Sanitized-output residual test | Check that summaries and commits record retained sensitive derivatives and residual leak-risk class. | implemented by synthetic security-kernel harness; no leak-prevention or summary-safety claim |
 | SCIF sanitized commit replay probe | Check that a generated public-safe synthetic secret can be substituted into a temporary local SCIF-like workspace, sanitized before commit, zeroized, and blocked for leak, handle, missing-zeroize, overbroad-context, unapproved-destination, or missing-residual paths. | implemented by `python3 scripts/validate_security_scif_commit_probe.py`; `valid_sanitized_commit_replay`, `valid_prompt_injection_blocked_commit`, and six expected-invalid controls; no deployed-kernel, sandbox-isolation, side-channel-safety, prompt-injection-containment, secret-handle-safety, approval-service, least-privilege-context, privacy, security, or support-state-promotion claim |
 | Security-overhead budget preservation test | Check that a budget or self-improvement proposal cannot claim a cheaper route by silently removing isolation, logging, approval, or sanitization obligations. | implemented at synthetic Resource Budget Record level via `python3 scripts/validate_resource_budget_ledgers.py`; no runtime budget enforcement, deployed security-kernel behavior, or security-economics claim |
-| Prompt-injection containment scenario | Check that injected instructions cannot disclose a secret value absent an authorized boundary. | implemented at synthetic receipt level for contained and leaking fixture cases; no runtime prompt-injection containment claim |
-| Security kernel route proof | Check that the finite authority-use route function sends missing handles, inactive leases, missing approvals, unauthorized boundaries, insufficient clearance, prompt injection, missing SCIFs, unsanitized output, residual risk, and revocation away from ordinary allowed use. | implemented by Lean build; finite-record route coverage only |
+| Synthetic prompt-injection record-route controls | Check that explicit fixture fields route a synthetic injection case away from a literal-secret commit. | implemented only over self-authored receipt and commit-probe fields; no model attack, semantic non-disclosure, runtime containment, or transfer claim |
+| Security kernel route proof | Check that the finite authority-use route function sends missing handles, inactive leases, missing approvals, unauthorized boundaries, insufficient clearance, prompt injection, missing SCIFs, unsanitized output, residual risk, and revocation away from ordinary allowed use. | implemented by Lean build with 22 theorem declarations under four manifest targets; finite-record consequences only |
 
 ### Formalization hooks
 
@@ -231,34 +330,20 @@ The security chapter's current evidence boundary is narrower than that product s
 | `lean:security.scif.route_envelope` | `AsiStackProofs.SecurityKernel` | A structured authority-use review routes missing handles, inactive leases, missing approvals, unauthorized boundaries, missing substitution permission, insufficient clearance, prompt injection, missing SCIFs, unsanitized output, residual leak risk, revocation requests, and clean authorized use into explicit security-kernel outcomes. | implemented |
 | `lean:security.scif.commit_probe_bridge` | `AsiStackProofs.SecurityKernel` | A structured SCIF commit review routes secret output, handle output, missing lifecycle zeroization, overbroad context, inactive approval, missing residual boundaries, prompt-injection sanitized refusal, and clean sanitized commits into explicit outcomes matching the SCIF sanitized commit replay probe. | implemented |
 
-These proof targets are implemented only over finite Lean records for authorization, clearance, secret-handle substitution, protected-SCIF admission, authority-use routing, and SCIF commit routing. The current executable support does not prove a deployed security kernel, side-channel resistance, approval-expiry enforcement, least-privilege context behavior, prompt-injection containment, runtime budget enforcement, privacy, security, or security economics; those claims still require threat models, deployed or replayed runtime traces, and stronger harnesses.
+The module contains exactly 22 theorem declarations grouped under these four manifest targets. They are implemented only over finite Lean records for authorization, clearance, secret-handle substitution, protected-SCIF admission, authority-use routing, and SCIF commit routing. These targets do not prove that those fields bind a runtime, that the records are semantically adequate, or that a deployed monitor enforces side-channel resistance, approval expiry, least-privilege context, prompt-injection containment, declassification quality, runtime budgets, privacy, security, or security economics.
 
 ## Source crosswalk
 
-| Source ID | Title | Layer | Planned use | Readiness |
-|---|---|---|---|---|
-| `ladon_manhattan` | Ladon & The Manhattan Protocol | security_governance | Kernel-level security architecture for high-agency AI. | source note available; local raw cache passage-reviewed |
-| `context_engineer` | Context Engineer / Manhattan Protocol | memory_context_lineage | Context as supply chain; compartmentalized information logistics. | source note available; local raw cache passage-reviewed |
-| `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw cache passage-reviewed |
-| `alignment_field` | Field of God / Alignment Field family | alignment_constitution | Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. | source note available; local raw cache passage-reviewed |
-| `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. | source note available; connector or recovery required |
-| `ext_agentdojo_2024`, `ext_camel_prompt_injection_2025`, `ext_owasp_agentic_top_10_2026` | AgentDojo, CaMeL, and OWASP Agentic Top 10 | agent_security | Current comparators for tool-over-untrusted-data evaluation, capability-secure control flow, and modern agentic-risk coverage. | source notes available; no complete attack coverage, local defense, or deployed security claim |
+| Source group | Sources | Owned use | Boundary |
+|---|---|---|---|
+| Author design lineage | `ladon_manhattan`, `context_engineer`, `talos` | Blind handles, late substitution, context compilation, compartment lifecycle, typed execution, audit, and replay. | Related author lineage; no independent implementation or security result. |
+| Normative/governance lineage | `alignment_field`, `coherence_exchange` | Agency, consent, dignity, confinement, contestability, and audit pressure. | Normative/speculative context, not technical evidence. |
+| Foundational security comparators | `ext_nist_zero_trust_architecture_2020`, `ext_saltzer_schroeder_protection_1975` | Resource mediation, decision/enforcement points, least privilege, complete mediation, fail-safe defaults. | No conformance, formalization, or implementation audit. |
+| GenAI/agent risk comparators | `ext_owasp_llm_top_10_2025`, `ext_owasp_agentic_top_10_2026` | Prompt injection, disclosure, excessive agency, identity, memory, supply-chain, inter-agent, and cascading-risk taxonomy. | Taxonomy is neither completeness nor control efficacy. |
+| Adversarial system comparators | `ext_agentdojo_2024`, `ext_camel_prompt_injection_2025` | Tool-over-untrusted-data evaluation and control/data plus capability-enforcement comparison. | No local run or imported source-reported efficacy. |
+| Pinned implementation counterexamples | `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project` | Authority, context, audit, revocation, isolation, enforcement, evaluator, and contract-versus-effect lessons. | Public-safe private-project notes; no reproduced production security or support promotion. |
 
-The crosswalk names the security/context sources. It does not claim that Ladon, Digital SCIFs, or side-channel defenses have been implemented or audited here.
-
-### Manifest source assignment reconciliation
-
-These rows keep Security Kernel and Digital SCIFs's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
-
-| Source | Intake role | Boundary |
-|---|---|---|
-| `moecot_manifest_project` | Metadata-first comparator: MoECOT Manifest compiler-era project. Pinned local-project compiler/control-plane reference for semantic IR, manifest compilation, registry truth, context and memory governance, target portability, provenance, multi-agent training, bounded self-improvement, and the negative gap between internal contracts and external holdout capability; public-safe source note only, with no reproduced capability or safety result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
-| `beastbrain_project` | Metadata-first comparator: BeastBrain historical AI system project. Hashed local-project primary lineage for DKL, Portia, semantic coordinates, bounded knowledge snapshots, PlanForge, SSD-first memory, and organism-style cognition, plus negative implementation evidence on simulations, router effects, security handles, tribunal stubs, ontology drift, compile history, and readiness overclaim; public-safe source note only, with no reproduced capability or safety result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
-| `bugbrain_project` | Metadata-first comparator: BugBrain bare-metal neuro-symbolic intelligence project. Pinned local-project bare-metal implementation reference for explicit core ownership, compact typed graphs, signed tiered context, privileged-action lifecycle, protocol security, artifact replay, and readiness, plus negative evidence on capacity/residency arithmetic, theory-labelled proxies, fixed random cognitive modules, root-of-trust assumptions, skipped checks, and narrative/report divergence; public-safe source note only, with no reproduced hardware capability or safety result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
-| `corbens_trainer_project` | Metadata-first comparator: Corben's Trainer epistemic training and evaluation control plane. Pinned local-project implementation reference for typed experiment manifests, trainer/backend separation, artifact lineage, learning-truth gates, benchmark authenticity, quarantine, claim derivation, and revocable promotion boundaries, plus negative implementation evidence on seed identity, content pinning, decontamination, transitive revocation, checkpoint acknowledgement, and report divergence; public-safe source note only, with no reproduced model capability or safety result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
-| `corbens_best_model_possible_project` | Metadata-first comparator: Corben's Best Model Possible recurrent-model and mechanism laboratory. Pinned local-project implementation and negative-case reference for shared-weight recurrence, fixed-feature adapter learning, specialist checkpoint banks, architecture-search discipline, semantic compilation, memory, routing, governance, verification, tools, speech, and metric provenance; public-safe source note only, with no reproduced trained-foundation-model, general-generation, external-capability, or safety result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
-
-<!-- manifest-source-reconciliation:end -->
+Every assigned source has a manifest-owned reviewed mapping. The grouping prevents related author projects, risk taxonomies, and interface-rich local systems from being miscounted as independent security confirmations.
 ## Post-v2.1 security/usefulness boundary
 
 On 36 held-out repository-task transactions, the governed route reduced
@@ -277,9 +362,9 @@ production security claim follows.
 
 ## Summary
 
-The security kernel is the least-exposure boundary for secrets and privileged context. The core design is conservative and practical: do not put secrets and privileged context where the model can freely transform them. Put them behind handles, clearance checks, ephemeral compartments, and audit receipts. The current synthetic harnesses now exercise the receipt shape for handle substitution, expired approvals, overbroad context, sanitized residuals, prompt-injection non-disclosure, and security-overhead budget-laundering rejection. The next maturity step is a stricter threat model for logs, summaries, side channels, approval expiry, and runtime budget enforcement, followed by replayed or deployed runtime traces.
+The security kernel is a threat-model-bound authority and information-flow boundary. Its central claim is stronger and more falsifiable than “keep secrets behind handles”: freeze the actors and channels, bind exact authority, minimize and label context, mediate every declared effect and egress, declare the SCIF's actual isolation grade, separate sanitization from declassification, propagate revocation and recovery through descendants, and preserve privacy, availability, usefulness, cost, and residuals on the same ledger.
 
-The same principle returns later as budget discipline and self-improvement discipline. Protected power has a cost, and a system may not declare itself improved by making that cost invisible. The boundary-delta rule treats any change to those security costs or authority leases as a governance event, not an implementation detail. Later routes across planners, memories, tools, specialists, hives, and steward agents will all create pressure to copy, summarize, cache, or optimize privileged material. The secure answer is not to trust the route more; it is to keep secrets handle-bound, auditable, revocable, and absent from ordinary model context unless a specific lease permits exposure.
+The current repository proves only finite record and route consequences plus one bounded fail-closed negative result. It does not prove isolation, complete mediation, prompt-injection containment, semantic non-disclosure, effect-complete revocation, side-channel safety, privacy, or production security. The next legitimate step is the frozen multi-comparator real-model campaign described above; until it succeeds, the security claim remains an argument and every handle, SCIF, theorem, or blocked attack retains its exact narrow scope.
 
 ## Handoff
 

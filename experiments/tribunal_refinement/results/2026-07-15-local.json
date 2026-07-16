@@ -1,0 +1,462 @@
+{
+  "schema_version": "asi_stack.tribunal_refinement.v1",
+  "result_id": "tribunal-refinement-2026-07-15-local",
+  "source_sha256": {
+    "lean_model": "be90f0c33ef3137c2c2f2e91f88dedbf39f67e3894e3b8d3a6f786216fee5b7b",
+    "tribunal_review_schema": "d593b5c5c237111e9dbd05a7f6387c1c4cf4113606059fe028eff3e06894cc99",
+    "method_independence_record": "5293b206cd0149b578047fc4a0520a472f6190905a7e177a40a78bcddaaad74d"
+  },
+  "input_suites": [
+    {
+      "suite_id": "tribunal_review",
+      "valid_count": 3,
+      "expected_invalid_count": 5,
+      "suite_passed": true,
+      "validator_sha256": "26b1ef4dea44662d344be418463015b9014db2236f3e5768b740e78444c53bbf"
+    },
+    {
+      "suite_id": "tribunal_method_independence",
+      "valid_count": 1,
+      "expected_invalid_count": 11,
+      "suite_passed": true,
+      "validator_sha256": "4613593414e18a451594a2763656ce79d5215cbcd4194e40deffde142027ac33"
+    }
+  ],
+  "reachable_stage_count": 7,
+  "route_case_count": 28,
+  "route_coverage": [
+    {
+      "case_id": "wrong_stage",
+      "expected_route": "reject_wrong_stage",
+      "observed_route": "reject_wrong_stage"
+    },
+    {
+      "case_id": "case_substitution",
+      "expected_route": "reject_case_substitution",
+      "observed_route": "reject_case_substitution"
+    },
+    {
+      "case_id": "evidence_substitution",
+      "expected_route": "reject_evidence_substitution",
+      "observed_route": "reject_evidence_substitution"
+    },
+    {
+      "case_id": "event_replay",
+      "expected_route": "reject_event_replay",
+      "observed_route": "reject_event_replay"
+    },
+    {
+      "case_id": "authority_leak",
+      "expected_route": "reject_authority_leak",
+      "observed_route": "reject_authority_leak"
+    },
+    {
+      "case_id": "review_missing",
+      "expected_route": "request_review",
+      "observed_route": "request_review"
+    },
+    {
+      "case_id": "dossier_missing",
+      "expected_route": "request_dossier_and_evidence",
+      "observed_route": "request_dossier_and_evidence"
+    },
+    {
+      "case_id": "probe_missing",
+      "expected_route": "request_adversarial_probe",
+      "observed_route": "request_adversarial_probe"
+    },
+    {
+      "case_id": "panel_too_small",
+      "expected_route": "request_independent_panel",
+      "observed_route": "request_independent_panel"
+    },
+    {
+      "case_id": "independence_graph_bad",
+      "expected_route": "request_independence_graph",
+      "observed_route": "request_independence_graph"
+    },
+    {
+      "case_id": "falsification_missing",
+      "expected_route": "request_falsification",
+      "observed_route": "request_falsification"
+    },
+    {
+      "case_id": "abstention_erased",
+      "expected_route": "preserve_abstention",
+      "observed_route": "preserve_abstention"
+    },
+    {
+      "case_id": "veto_erased",
+      "expected_route": "preserve_veto",
+      "observed_route": "preserve_veto"
+    },
+    {
+      "case_id": "changed_evidence_reuse",
+      "expected_route": "reject_changed_evidence_reuse",
+      "observed_route": "reject_changed_evidence_reuse"
+    },
+    {
+      "case_id": "default_approval",
+      "expected_route": "reject_default_approval",
+      "observed_route": "reject_default_approval"
+    },
+    {
+      "case_id": "dissent_erased",
+      "expected_route": "preserve_dissent",
+      "observed_route": "preserve_dissent"
+    },
+    {
+      "case_id": "actions_missing",
+      "expected_route": "request_actions_and_constraints",
+      "observed_route": "request_actions_and_constraints"
+    },
+    {
+      "case_id": "residual_missing",
+      "expected_route": "request_residual",
+      "observed_route": "request_residual"
+    },
+    {
+      "case_id": "appeal_missing",
+      "expected_route": "request_appeal_path",
+      "observed_route": "request_appeal_path"
+    },
+    {
+      "case_id": "owner_handoff_missing",
+      "expected_route": "handoff_to_evidence_owner",
+      "observed_route": "handoff_to_evidence_owner"
+    },
+    {
+      "case_id": "consumer_ack_missing",
+      "expected_route": "request_consumer_acknowledgment",
+      "observed_route": "request_consumer_acknowledgment"
+    },
+    {
+      "case_id": "appeal_resolution_missing",
+      "expected_route": "request_appeal_resolution",
+      "observed_route": "request_appeal_resolution"
+    },
+    {
+      "case_id": "review_requested",
+      "expected_route": "accept_review_request",
+      "observed_route": "accept_review_request"
+    },
+    {
+      "case_id": "dossier_bound",
+      "expected_route": "accept_dossier_binding",
+      "observed_route": "accept_dossier_binding"
+    },
+    {
+      "case_id": "panel_run",
+      "expected_route": "accept_panel_run",
+      "observed_route": "accept_panel_run"
+    },
+    {
+      "case_id": "verdict_issued",
+      "expected_route": "accept_verdict",
+      "observed_route": "accept_verdict"
+    },
+    {
+      "case_id": "verdict_acknowledged",
+      "expected_route": "accept_acknowledgment",
+      "observed_route": "accept_acknowledgment"
+    },
+    {
+      "case_id": "appeal_resolved",
+      "expected_route": "accept_appeal_resolution",
+      "observed_route": "accept_appeal_resolution"
+    }
+  ],
+  "mutation_count": 45,
+  "mutation_rejection_count": 45,
+  "mutation_receipts": [
+    {
+      "mutation_id": "request_case_id",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_case_substitution"
+    },
+    {
+      "mutation_id": "request_case_version",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_case_substitution"
+    },
+    {
+      "mutation_id": "request_target_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_case_substitution"
+    },
+    {
+      "mutation_id": "request_policy_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_case_substitution"
+    },
+    {
+      "mutation_id": "request_consumer_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_case_substitution"
+    },
+    {
+      "mutation_id": "request_verdict_version",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_case_substitution"
+    },
+    {
+      "mutation_id": "request_review_missing",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "request_review"
+    },
+    {
+      "mutation_id": "request_support_leak",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_authority_leak"
+    },
+    {
+      "mutation_id": "request_external_effect",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_authority_leak"
+    },
+    {
+      "mutation_id": "bind_evidence_version",
+      "rejected": true,
+      "terminal_stage": "requested",
+      "failure_route": "reject_evidence_substitution"
+    },
+    {
+      "mutation_id": "bind_evidence_digest",
+      "rejected": true,
+      "terminal_stage": "requested",
+      "failure_route": "reject_evidence_substitution"
+    },
+    {
+      "mutation_id": "bind_dossier_digest",
+      "rejected": true,
+      "terminal_stage": "requested",
+      "failure_route": "reject_evidence_substitution"
+    },
+    {
+      "mutation_id": "bind_panel_digest",
+      "rejected": true,
+      "terminal_stage": "requested",
+      "failure_route": "reject_evidence_substitution"
+    },
+    {
+      "mutation_id": "bind_dossier_missing",
+      "rejected": true,
+      "terminal_stage": "requested",
+      "failure_route": "request_dossier_and_evidence"
+    },
+    {
+      "mutation_id": "bind_evidence_refs_missing",
+      "rejected": true,
+      "terminal_stage": "requested",
+      "failure_route": "request_dossier_and_evidence"
+    },
+    {
+      "mutation_id": "panel_probe_missing",
+      "rejected": true,
+      "terminal_stage": "dossier_bound",
+      "failure_route": "request_adversarial_probe"
+    },
+    {
+      "mutation_id": "panel_reviewer_count",
+      "rejected": true,
+      "terminal_stage": "dossier_bound",
+      "failure_route": "request_independent_panel"
+    },
+    {
+      "mutation_id": "panel_shared_group",
+      "rejected": true,
+      "terminal_stage": "dossier_bound",
+      "failure_route": "request_independence_graph"
+    },
+    {
+      "mutation_id": "panel_independence_cycle",
+      "rejected": true,
+      "terminal_stage": "dossier_bound",
+      "failure_route": "request_independence_graph"
+    },
+    {
+      "mutation_id": "panel_shared_evidence_risk",
+      "rejected": true,
+      "terminal_stage": "dossier_bound",
+      "failure_route": "request_independence_graph"
+    },
+    {
+      "mutation_id": "panel_falsification_missing",
+      "rejected": true,
+      "terminal_stage": "dossier_bound",
+      "failure_route": "request_falsification"
+    },
+    {
+      "mutation_id": "panel_abstention_erased",
+      "rejected": true,
+      "terminal_stage": "dossier_bound",
+      "failure_route": "preserve_abstention"
+    },
+    {
+      "mutation_id": "panel_veto_erased",
+      "rejected": true,
+      "terminal_stage": "dossier_bound",
+      "failure_route": "preserve_veto"
+    },
+    {
+      "mutation_id": "panel_event_replay",
+      "rejected": true,
+      "terminal_stage": "dossier_bound",
+      "failure_route": "reject_event_replay"
+    },
+    {
+      "mutation_id": "verdict_changed_evidence",
+      "rejected": true,
+      "terminal_stage": "panel_run",
+      "failure_route": "reject_changed_evidence_reuse"
+    },
+    {
+      "mutation_id": "verdict_reuse_guard_missing",
+      "rejected": true,
+      "terminal_stage": "panel_run",
+      "failure_route": "reject_changed_evidence_reuse"
+    },
+    {
+      "mutation_id": "verdict_default_approval",
+      "rejected": true,
+      "terminal_stage": "panel_run",
+      "failure_route": "reject_default_approval"
+    },
+    {
+      "mutation_id": "verdict_dissent_erased",
+      "rejected": true,
+      "terminal_stage": "panel_run",
+      "failure_route": "preserve_dissent"
+    },
+    {
+      "mutation_id": "verdict_actions_missing",
+      "rejected": true,
+      "terminal_stage": "panel_run",
+      "failure_route": "request_actions_and_constraints"
+    },
+    {
+      "mutation_id": "verdict_constraints_missing",
+      "rejected": true,
+      "terminal_stage": "panel_run",
+      "failure_route": "request_actions_and_constraints"
+    },
+    {
+      "mutation_id": "verdict_explicit_action_required",
+      "rejected": true,
+      "terminal_stage": "panel_run",
+      "failure_route": "request_actions_and_constraints"
+    },
+    {
+      "mutation_id": "verdict_residual_missing",
+      "rejected": true,
+      "terminal_stage": "panel_run",
+      "failure_route": "request_residual"
+    },
+    {
+      "mutation_id": "verdict_appeal_missing",
+      "rejected": true,
+      "terminal_stage": "panel_run",
+      "failure_route": "request_appeal_path"
+    },
+    {
+      "mutation_id": "verdict_owner_handoff_missing",
+      "rejected": true,
+      "terminal_stage": "panel_run",
+      "failure_route": "handoff_to_evidence_owner"
+    },
+    {
+      "mutation_id": "verdict_none",
+      "rejected": true,
+      "terminal_stage": "panel_run",
+      "failure_route": "reject_default_approval"
+    },
+    {
+      "mutation_id": "verdict_support_leak",
+      "rejected": true,
+      "terminal_stage": "panel_run",
+      "failure_route": "reject_authority_leak"
+    },
+    {
+      "mutation_id": "verdict_external_effect",
+      "rejected": true,
+      "terminal_stage": "panel_run",
+      "failure_route": "reject_authority_leak"
+    },
+    {
+      "mutation_id": "ack_verdict_substitution",
+      "rejected": true,
+      "terminal_stage": "verdict_issued",
+      "failure_route": "reject_case_substitution"
+    },
+    {
+      "mutation_id": "ack_consumer_missing",
+      "rejected": true,
+      "terminal_stage": "verdict_issued",
+      "failure_route": "request_consumer_acknowledgment"
+    },
+    {
+      "mutation_id": "ack_evidence_substitution",
+      "rejected": true,
+      "terminal_stage": "verdict_issued",
+      "failure_route": "reject_evidence_substitution"
+    },
+    {
+      "mutation_id": "appeal_verdict_substitution",
+      "rejected": true,
+      "terminal_stage": "acknowledged",
+      "failure_route": "reject_case_substitution"
+    },
+    {
+      "mutation_id": "appeal_record_missing",
+      "rejected": true,
+      "terminal_stage": "acknowledged",
+      "failure_route": "request_appeal_resolution"
+    },
+    {
+      "mutation_id": "appeal_event_replay",
+      "rejected": true,
+      "terminal_stage": "acknowledged",
+      "failure_route": "reject_event_replay"
+    },
+    {
+      "mutation_id": "appeal_support_leak",
+      "rejected": true,
+      "terminal_stage": "acknowledged",
+      "failure_route": "reject_authority_leak"
+    },
+    {
+      "mutation_id": "appeal_external_effect",
+      "rejected": true,
+      "terminal_stage": "acknowledged",
+      "failure_route": "reject_authority_leak"
+    }
+  ],
+  "final_state": {
+    "stage": "appeal_resolved",
+    "receipt_count": 6,
+    "panel_accepted": true,
+    "verdict": "revise",
+    "support_assignment_count": 0,
+    "external_effect_count": 0
+  },
+  "support_state_effect": "none",
+  "non_claims": [
+    "No reviewer competence, independence in fact, or error decorrelation is established.",
+    "No dossier completeness, evidence truth, falsification quality, or probe efficacy is established.",
+    "No verdict correctness, consensus quality, institutional legitimacy, or fair process is established.",
+    "No action adequacy, constraint efficacy, appeal quality, or consumer behavior is established.",
+    "No claim truth, evidence adequacy, support assignment, external effect, or release authority is established.",
+    "No natural workload, model judge, debate system, live tribunal, or affected-party outcome is measured.",
+    "No usefulness, causal advantage, safety, cost advantage, deployment, reproduction, or transfer is established.",
+    "No chapter-core support state changes; the support-state effect is none."
+  ]
+}

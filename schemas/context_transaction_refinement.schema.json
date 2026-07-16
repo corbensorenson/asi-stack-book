@@ -1,0 +1,192 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/context_transaction_refinement.schema.json",
+  "title": "Context Transaction Refinement Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "result_id",
+    "source_sha256",
+    "store_suite",
+    "sequence_suite",
+    "reachable_trace_event_count",
+    "reference_trace_final_state",
+    "mutation_count",
+    "mutation_rejection_count",
+    "mutation_receipts",
+    "support_state_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "asi_stack.context_transaction_refinement.v1"
+    },
+    "result_id": {
+      "const": "context-transaction-refinement-2026-07-15-local"
+    },
+    "source_sha256": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lean_model",
+        "transaction_schema",
+        "store_validator",
+        "sequence_validator"
+      ],
+      "properties": {
+        "lean_model": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "transaction_schema": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "store_validator": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "sequence_validator": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "store_suite": {
+      "$ref": "#/$defs/store"
+    },
+    "sequence_suite": {
+      "$ref": "#/$defs/sequence"
+    },
+    "reachable_trace_event_count": {
+      "const": 6
+    },
+    "reference_trace_final_state": {
+      "type": "object"
+    },
+    "mutation_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "mutation_rejection_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "mutation_receipts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "mutation_id",
+          "rejected",
+          "failed_event_index",
+          "reasons"
+        ],
+        "properties": {
+          "mutation_id": {
+            "type": "string"
+          },
+          "rejected": {
+            "const": true
+          },
+          "failed_event_index": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 5
+          },
+          "reasons": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "support_state_effect": {
+      "const": "none"
+    },
+    "non_claims": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "base": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixture_count",
+        "valid_count",
+        "invalid_count",
+        "suite_passed",
+        "inventory_sha256"
+      ],
+      "properties": {
+        "fixture_count": {
+          "type": "integer"
+        },
+        "valid_count": {
+          "type": "integer"
+        },
+        "invalid_count": {
+          "type": "integer"
+        },
+        "suite_passed": {
+          "const": true
+        },
+        "inventory_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "store": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/base"
+        },
+        {
+          "properties": {
+            "fixture_count": {
+              "const": 9
+            },
+            "valid_count": {
+              "const": 3
+            },
+            "invalid_count": {
+              "const": 6
+            }
+          }
+        }
+      ]
+    },
+    "sequence": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/base"
+        },
+        {
+          "properties": {
+            "fixture_count": {
+              "const": 6
+            },
+            "valid_count": {
+              "const": 2
+            },
+            "invalid_count": {
+              "const": 4
+            }
+          }
+        }
+      ]
+    }
+  }
+}

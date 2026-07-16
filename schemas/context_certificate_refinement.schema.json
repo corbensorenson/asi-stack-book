@@ -1,0 +1,16 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://corbensorenson.github.io/asi-stack-book/schemas/context_certificate_refinement.schema.json",
+  "title":"Context Certificate Refinement Result",
+  "type":"object","additionalProperties":false,
+  "required":["schema_version","result_id","source_sha256","protocol_fixture_schema_valid","scenario_certificate_count","schema_valid_scenario_certificate_count","shape_complete_scenario_certificate_count","active_certificate_count","stale_certificate_count","scenario_certificate_receipts","admission_valid_fixture_count","admission_invalid_fixture_count","admission_suite_passed","reachable_trace_event_count","reference_trace_final_state","mutation_count","mutation_rejection_count","mutation_receipts","support_state_effect","non_claims"],
+  "properties":{
+    "schema_version":{"const":"asi_stack.context_certificate_refinement.v1"},"result_id":{"const":"context-certificate-refinement-2026-07-15-local"},
+    "source_sha256":{"type":"object","additionalProperties":false,"required":["lean_model","certificate_schema","protocol_fixture","scenario_inventory","admission_validator"],"properties":{"lean_model":{"type":"string","pattern":"^[0-9a-f]{64}$"},"certificate_schema":{"type":"string","pattern":"^[0-9a-f]{64}$"},"protocol_fixture":{"type":"string","pattern":"^[0-9a-f]{64}$"},"scenario_inventory":{"type":"string","pattern":"^[0-9a-f]{64}$"},"admission_validator":{"type":"string","pattern":"^[0-9a-f]{64}$"}}},
+    "protocol_fixture_schema_valid":{"const":true},"scenario_certificate_count":{"const":12},"schema_valid_scenario_certificate_count":{"const":12},"shape_complete_scenario_certificate_count":{"const":12},"active_certificate_count":{"const":11},"stale_certificate_count":{"const":1},
+    "scenario_certificate_receipts":{"type":"array","minItems":12,"maxItems":12,"items":{"type":"object","additionalProperties":false,"required":["fixture","schema_valid","shape_complete","revocation_state","verification_state"],"properties":{"fixture":{"type":"string","minLength":1},"schema_valid":{"const":true},"shape_complete":{"const":true},"revocation_state":{"type":"string","minLength":1},"verification_state":{"type":"string","minLength":1}}}},
+    "admission_valid_fixture_count":{"const":3},"admission_invalid_fixture_count":{"const":5},"admission_suite_passed":{"const":true},"reachable_trace_event_count":{"const":5},"reference_trace_final_state":{"type":"object"},
+    "mutation_count":{"const":64},"mutation_rejection_count":{"const":64},"mutation_receipts":{"type":"array","minItems":64,"maxItems":64,"items":{"type":"object","additionalProperties":false,"required":["mutation_id","rejected","failed_event_index","reasons"],"properties":{"mutation_id":{"type":"string","minLength":1},"rejected":{"const":true},"failed_event_index":{"type":"integer","minimum":0,"maximum":4},"reasons":{"type":"array","minItems":1,"items":{"type":"string","minLength":1}}}}},
+    "support_state_effect":{"const":"none"},"non_claims":{"type":"array","minItems":3,"items":{"type":"string","minLength":1}}
+  }
+}

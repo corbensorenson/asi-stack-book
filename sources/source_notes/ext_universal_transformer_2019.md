@@ -34,6 +34,7 @@ Universal Transformers are a comparator for shared-weight depth recurrence, para
 - `governed-deliberation-and-test-time-scaling`
 - `mathematical-and-search-substrates`
 - `coil-attention-cyclic-memory-and-recurrence-contracts`
+- `replaceable-cognitive-substrates-beyond-transformer-monoculture`
 
 ## Claims To Add Or Update
 

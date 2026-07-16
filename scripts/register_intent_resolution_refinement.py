@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+import json
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1];REG=ROOT/"validation/registry.json";SCRIPT="validate_intent_resolution_refinement.py"
+ART=["scripts/validate_intent_resolution_refinement.py","schemas/intent_resolution_refinement.schema.json","experiments/intent_resolution_refinement/results/2026-07-15-local.json","docs/intent_resolution_refinement.md","evidence_quality/model_adequacy_dossiers/intent-resolution-refinement.md","lean/AsiStackProofs/IntentResolutionRefinement.lean","experiments/intent_intake_probe/results/2026-07-02-local.json","experiments/intent_recontract_probe/results/2026-07-02-local.json","experiments/plan_execution_contracts/fixtures"]
+def main():
+ v=json.loads(REG.read_text());v["units"]=[x for x in v["units"] if x.get("script")!=SCRIPT];n=len(v["units"])+1
+ v["units"].append({"id":f"validate_intent_resolution_refinement:{n}","order":n,"script":SCRIPT,"args":[],"execution_tier":"deep","validation_class":"proof_or_evidence_gate","input_contract":"The reachable Lean intent model, bounded intake/re-contract results, complete plan fixture inventory, schema, receipt, and adequacy dossier.","input_artifacts":ART,"output_contract":"Reject lineage, time, payload, prohibition, override, authority, constraint/stop, ambiguity, material-delta, re-contract-version, receipt, source-drift, and support-promotion failures.","output_assertions":["four valid and six invalid intake cases","six intake signals","two valid and seven invalid re-contract cases","thirteen plan fixtures","five reachable events","thirty rejected mutations","no support-state effect"],"claim_scope":"One finite structured request-to-contract model and fixed local synthetic records only.","negative_controls":"validator_owned_model_and_source_mutations","negative_control_cases":["payload or lineage removal","hidden override or prohibition","authority widening","constraint/stop substitution","silent material delta","missing re-contract receipt or version increase"],"prohibited_inference":"Does not establish natural-language intent understanding, semantic completeness, authentic authority extraction, prompt-injection containment, deployed dispatch/effects, user satisfaction, natural workloads, reproduction, transfer, safety, SOTA, AGI, ASI, or chapter-core support.","contract_precision":"inherited","semantic_review_state":"checked_structured_intent_resolution_refinement_not_natural_language_external_or_deployed"})
+ req=list(v["required_artifacts"])
+ for a in ART:
+  if a not in req:req.append(a)
+ v["required_artifacts"]=req;v["summary"]={"required_artifact_count":len(req),"unit_count":len(v["units"])};REG.write_text(json.dumps(v,indent=2)+"\n");print(f"Registered {SCRIPT}: {len(v['units'])} units, {len(req)} artifacts.")
+if __name__=="__main__":main()

@@ -117,7 +117,7 @@ def main() -> None:
         "docs/theseus_generation_mode_import_slice.md",
         "docs/theseus_support_replay_probe.md",
         "experiments/theseus_support_replay_probe/results/2026-07-01-local.json",
-        "lean/AsiStackProofs/FastGeneration.lean",
+        "lean/AsiStackProofs/FastGenerationRefinement.lean",
         "docs/circle_public_replay_consumer_gate.md",
         "docs/costed_route_resource_slice.md",
         "docs/resource_workflow_trace.md",

@@ -3,8 +3,8 @@ title: "Safety Cases and Structured Assurance"
 chapter_id: "safety-cases-and-structured-assurance"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
-draft_maturity: "v0.2 chapter draft"
-last_updated: "2026-07-13"
+draft_maturity: "v0.3 manuscript draft"
+last_updated: "2026-07-15"
 primary_sources:
   - "ext_gsn_community_standard_2011"
   - "ext_evaluations_safety_cases_scheming_2024"
@@ -13,9 +13,9 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "No ASI Stack safety case, hazard analysis, threat model, countercase search, independent review, acceptance decision, readiness decision, release decision, or deployment result has been run."
-  - "No local result establishes a case's completeness, evidence adequacy, threat-model correctness, countercase quality, control effectiveness, safety, readiness, authority, or ASI."
-  - "The finite Lean routes and synthetic case-compilation fixture establish only record consequences; they do not establish whether a case, evidence edge, reviewer, hazard model, countercase search, control, or release decision is correct."
+  - "Freeze and run natural multi-hazard bounded cases with exact governed dependencies, active countercase and outside-envelope search, seeded omissions and stale edges, complete failures, and no outcome-aware case edits."
+  - "Exercise semantic and evidence-adequacy review, real safeguards, reviewer dependency and conflict controls, override, invalidation, redaction, fallback, rollback, retirement, and joint false-clear/false-block, latency, burden, cost, and residual measures."
+  - "Run causal component ablations, independent institutional reproduction, and heterogeneous transfer before considering any case-quality, hazard-coverage, control-effectiveness, safety, readiness, support, or SOTA promotion."
 ---
 
 ## Chapter status
@@ -25,7 +25,7 @@ open_evidence_gaps:
 | Chapter ID | `safety-cases-and-structured-assurance` |
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
-| Last updated | 2026-07-13 |
+| Last updated | 2026-07-15 |
 | Primary source records | `ext_gsn_community_standard_2011`, `ext_evaluations_safety_cases_scheming_2024`, `ext_aisi_safety_cases_2024`, `benchmaxxing` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -142,9 +142,23 @@ underlying scientific uncertainty remains.
 
 ## Core Claim
 
-[safety-cases-and-structured-assurance.core, label: Design rationale, support: argument] A governed stack compiles a safety case as a versioned, reviewable graph of scoped claims, argument strategies, evidence references, assumptions, defeaters, hazards, deployment context, acceptance criteria, authority, and residual ownership; a rendered or structurally complete graph can expose dependencies and block an affected release when required hazards, countercase review, acceptance criteria, or residuals are unresolved, but cannot itself establish safety, correct threat modeling, evidence adequacy, control effectiveness, readiness, or authority to deploy.
+[safety-cases-and-structured-assurance.core, label: Design rationale, support: argument] Safety Cases and Structured Assurance owns a deployment-context-, hazard-, claim-, strategy-, evidence-, assumption-, defeater-, safeguard-, threshold-, readiness-, authority-, release-path-, residual-, version-, and time-specific Assurance Argument Compilation Packet: it compiles exact governed references and bounded support or challenge relations, preserves alternatives, dissent, staleness, countercases, conflicts, overrides, costs, lineage, and downstream invalidation, and routes only a scoped case status to existing decision owners; a connected, rendered, notation-conformant, reviewed, accepted, or synthetically complete case alone establishes neither hazard completeness, evidence adequacy, argument validity, reviewer independence, control effectiveness, risk, safety, readiness, release authority, deployment, support, transfer, nor SOTA.
 
 ## Mechanism
+
+### Eighteen-stage assurance lifecycle
+
+The full lifecycle freezes the case boundary; compiles typed nodes; gives every
+edge an explicit bounded meaning; binds exact evidence identity and scope;
+records assumptions and justifications; maps hazards and the outside envelope;
+preserves defeaters, countercases, dissent, and unknowns; graphs reviewer
+dependencies and conflicts; binds acceptance criteria and residual custody;
+checks source-ledger freshness; separates structural, semantic, empirical,
+control, acceptance, readiness, and release states; keeps compile, challenge,
+review, accept, decide, override, release, revoke, and retire distinct; versions
+and invalidates descendants; preserves incompatible argument families; governs
+node-level disclosure; emits routing rather than authority; and measures case
+quality, disagreement, delay, burden, cost, residual age, and retirement.
 
 The first object is a case boundary, written before an argument is assembled.
 It names the system and version, deployment context, top claim, threat and
@@ -270,6 +284,13 @@ and authority layers retain ownership of their own truth conditions.
   authority. The case can require evidence about them but cannot implement or
   authorize them.
 
+The complete twelve-owner boundary also preserves Data/Supply-Chain, Formal
+Proof, Human Intent/Constitutional/Moral/Governance, Resource Economics,
+Incident/Replacement/Rollback/Release, and Living-Book authority. The case owns
+only compilation of scoped support and challenge relations. It cannot validate
+an input, promote evidence, verify a control, accept a residual, close an
+incident, authorize recovery, word a public claim, or deploy anything.
+
 The interfaces prevent two opposite errors. One is treating the case as a
 decorative summary that cannot change any workflow. The other is treating it as
 a super-layer that replaces the detailed evidence and authority systems beneath
@@ -296,6 +317,14 @@ conditions for a conclusion remain visible long enough for an independent
 reviewer to challenge them, and they make a missing condition operationally
 meaningful rather than merely embarrassing.
 
+The full invariant set additionally requires typed nodes and edges, authoritative
+source pointers, explicit outside-envelope and search-power limits, retained
+assumptions and dissent, challenge lineage after resolution, dependency-based
+review independence, noncollapsed hazard families, state and authority
+separation, immutable receipts, successor invalidation, accountable redaction,
+complete case denominators, visible maintenance economics, and the rule that
+finite routing artifacts establish no real argument or safety conclusion.
+
 ## Failure modes
 
 - **Argument theater:** a polished graph has unsupported edges, stale evidence,
@@ -310,6 +339,11 @@ meaningful rather than merely embarrassing.
   as release permission.
 - **Maintenance rot:** a graph remains connected to superseded policies,
   evaluations, safeguards, or residuals.
+
+The complete failure register also covers hazard and countercase theater,
+reviewer-independence theater, assumption and control laundering, confidence
+collapse, acceptance and override laundering, in-place version laundering,
+disclosure failure, unknown-hazard neglect, and case-factory Goodhart pressure.
 
 The response to these failures is not a more elaborate diagram. Unsupported
 edges require evidence review; hidden countercases require active challenge;
@@ -401,6 +435,18 @@ invalidates the affected case edge.
 
 ## Minimum Viable Implementation
 
+### Exact current minimum
+
+The repository currently has two public schemas and eight digest-bound
+synthetic case records: one reaches Readiness Review and seven exercise draft,
+case-repair, evidence-repair, countercase-review, independent-review,
+accountable-review, or authority-laundering rejection. Five validator mutations
+test the bridge. Eight Lean declarations reduce the same hand-authored finite
+decision tree. No real case, hazard analysis, threat model, evidence-adequacy
+review, countercase search, safeguard verification, independent institution,
+acceptance, readiness, release, deployment, incident, reproduction, or transfer
+ran. The core-claim support effect is exactly zero.
+
 The smallest honest artifact is a versioned assurance-case record. It contains
 one scoped top claim, deployment and hazard context, argument and evidence
 references, context and assumptions, known defeaters, countercase-review state,
@@ -419,6 +465,25 @@ attempted affected release, retaining a visible result for every route.
 This repository implements that public-safe slice as eight synthetic cases with
 a fixture digest, schema-checked results, eight matching Lean theorems, and five
 rejecting validator mutations.
+
+### Argument-exit campaign
+
+To move beyond argument, preregister natural multi-hazard cases whose governed
+dependencies, outside-envelope declarations, acceptance criteria, and failure
+routes are frozen before compilation. Seed omissions, stale edges, scope
+mismatches, contradictions, control gaps, conflicts, and countercases while
+retaining every failure and edit. Exercise semantic and evidence-adequacy
+review, real safeguards, reviewer dependency and conflict controls, multiple
+argument families, overrides, invalidation, redaction, fallback, rollback, and
+retirement. Measure structural and semantic fault detection, countercase yield,
+reviewer disagreement, false clear and false block, resolution latency, burden,
+maintenance and opportunity cost, and residual age together. Ablate compiler,
+challenge, review, freshness, and routing mechanisms under matched opportunity,
+then require independent institutional reproduction and heterogeneous transfer
+across systems, domains, hazards, access modes, safeguards, evidence regimes,
+organizations, jurisdictions, and time. Positive, negative, null,
+inconclusive, narrowed, refuted, withdrawn, overridden, retired, and
+blocked-after-full-attempt outcomes remain terminal evidence.
 
 ### Prospective measurement contract
 
@@ -497,6 +562,17 @@ is valid, that evidence is adequate, that a threat model is complete, that a
 reviewer is independent, that a control works, that a system is safe, or that a
 release may proceed. They establish only deterministic consequences of the
 modeled Boolean record and preserve a separate readiness-review boundary.
+
+### Formal adequacy audit
+
+All eight declarations are derived finite reductions of one hand-authored
+`SafetyCaseRouteFor` decision tree. They are useful route-precedence and
+authority-separation regressions, but they do not formalize argument semantics,
+hazard completeness, causal risk, evidence adequacy, reviewer independence,
+control behavior, uncertainty, institutional incentives, runtime enforcement,
+or deployment effects. The module contains no direct empirical projection and
+no refinement link to a real assurance tool or decision process. Its authority
+ends at deterministic Boolean record routing.
 
 ## Source crosswalk
 

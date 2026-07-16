@@ -133,18 +133,18 @@
         "stable-capability-fields",
         "readiness-gates-residual-escrow-and-quarantine"
       ],
-      "lean_module": "lean/AsiStackProofs/SelfImprovement.lean",
+      "lean_module": "lean/AsiStackProofs/SafetyCriticalLifecycle.lean",
       "lean_structures": [
-        "ImprovementTransitionReview",
-        "SelfEvaluationReview"
+        "State",
+        "Evidence"
       ],
       "lean_mapped_fields": {
-        "protected_invariants": "ImprovementTransitionReview.protectedInvariantsDeclared",
-        "evaluator_independence": "SelfEvaluationReview.evaluatedOnlyByReplacedComponent",
+        "protected_invariants": "Evidence.protectedPredicate",
+        "evaluator_independence": "Evidence.independentEvaluator",
         "outcome_state": [
-          "ImprovementTransitionReview.transitionAccepted",
-          "ImprovementTransitionReview.protectedInvariantsPreserved",
-          "SelfEvaluationReview.proposalPromoted"
+          "State.phase",
+          "Evidence.rollbackPath",
+          "Evidence.monitorWindow"
         ]
       },
       "harness_only_fields": {
@@ -162,7 +162,7 @@
         "rollback_path": "Rollback path checked by Python fixtures."
       },
       "abstracted_fields": {},
-      "abstraction_note": "Lean currently projects narrow invariant and sole-self-evaluator predicates. It does not prove recursive self-improvement safety, canary quality, monitor quality, rollback execution, or evaluator independence in a deployed system."
+      "abstraction_note": "The shared Lean lifecycle represents protected predicates, evaluator records, rollback/monitor evidence, and lifecycle phase behind a finite transition gate. It does not prove full schema refinement, recursive self-improvement safety, canary quality, monitor quality, rollback execution, or evaluator independence in a deployed system."
     },
     {
       "id": "replacement_transaction",
@@ -470,17 +470,17 @@
         "spinoza-verification-and-proof-carrying-claims",
         "constitutional-alignment-substrate"
       ],
-      "lean_module": "lean/AsiStackProofs/ValueConflict.lean",
+      "lean_module": "lean/AsiStackProofs/SafetyCriticalLifecycle.lean",
       "lean_structures": [
-        "ConflictDecisionReview",
-        "HighStakesConflictReview"
+        "State",
+        "Evidence"
       ],
       "lean_mapped_fields": {
-        "stakes": "HighStakesConflictReview.highStakesConflict",
-        "review_route": "HighStakesConflictReview.requiredReviewPresent",
-        "decision_state": "ConflictDecisionReview.decisionMade",
-        "decision": "HighStakesConflictReview.decisionAccepted",
-        "residual_uncertainty": "ConflictDecisionReview.residualConflictRecordPresent"
+        "stakes": "State.highImpact",
+        "review_route": "Evidence.preEffectReview",
+        "decision_state": "State.phase",
+        "decision": "State.phase",
+        "residual_uncertainty": "Evidence.residualRecord"
       },
       "harness_only_fields": {
         "conflict_id": "Trace identity.",
@@ -493,7 +493,7 @@
         "expiry_or_revisit_condition": "Harness-level revisit rule."
       },
       "abstracted_fields": {},
-      "abstraction_note": "Lean checks finite conflict-routing predicates. It does not prove moral correctness, value classification quality, human-review quality, runtime policy behavior, or source interpretation."
+      "abstraction_note": "The shared Lean lifecycle represents high impact, pre-effect review, residual custody, and decision phase behind a finite value-conflict gate. It does not prove full schema refinement, moral correctness, value classification quality, human-review quality, runtime policy behavior, or source interpretation."
     },
     {
       "id": "resource_budget_record",

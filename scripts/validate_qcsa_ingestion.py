@@ -57,7 +57,13 @@ def snapshot() -> dict:
         for part in structure.get("parts", [])
         for chapter in part.get("chapters", [])
     }
-    return {"structure": structure, "inventory": inventory, "note": note, "chapters": chapters}
+    return {
+        "structure": structure,
+        "inventory": inventory,
+        "note": note,
+        "chapters": chapters,
+        "active_status": load_json("roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json"),
+    }
 
 
 def validate(data: dict) -> list[str]:
@@ -66,8 +72,11 @@ def validate(data: dict) -> list[str]:
     inventory = data.get("inventory", [])
     chapters = data.get("chapters", {})
     records = [chapter for part in structure.get("parts", []) for chapter in part.get("chapters", [])]
-    if len(records) != 54:
-        errors.append("QCSA ingestion must preserve the 54-chapter architecture")
+    if len(records) != 55:
+        errors.append("live architecture must retain the authorized 55 chapters")
+    activation = data.get("active_status", {}).get("activation_baseline", {})
+    if activation.get("active_chapter_count") != 54:
+        errors.append("historical QCSA-era 54-chapter activation baseline drifted")
     if any(chapter.get("id") in {"qcsa", "question-compiled-semantic-addressing"} for chapter in records):
         errors.append("QCSA ingestion unexpectedly created a standalone chapter")
     if any(chapter.get("evidence_level") != "argument" for chapter in records):
@@ -160,7 +169,7 @@ def main() -> None:
         for error in errors:
             print(f" - {error}")
         sys.exit(1)
-    print("QCSA ingestion passed: 1 digest-bound author source, 9 passage-reviewed existing-chapter routes, 54 argument-state chapters, no new chapter, and 6 rejecting mutations.")
+    print("QCSA ingestion passed: 1 digest-bound author source, 9 passage-reviewed existing-chapter routes, preserved 54-chapter historical decision plus 55 live argument-state chapters, no QCSA standalone chapter, and 6 rejecting mutations.")
 
 
 if __name__ == "__main__":

@@ -17,32 +17,14 @@
   "support_state_effect": "no_chapter_core_claim_promotion",
   "ci_verification_command": "python3 scripts/validate_theseus_generation_mode_import.py",
   "lean_fixture_alignment": {
-    "lean_module": "lean/AsiStackProofs/FastGeneration.lean",
-    "fixture_def": "theseusGenerationModeImportFixture",
-    "checked_summary_fields": [
-      "acceptedSpeedLiftWarningCount",
-      "boundaryGateCount",
-      "boundaryGatesPassed",
-      "comparisonCount",
-      "hardGapCount",
-      "modeCount",
-      "modesWithMissingReportRefs",
-      "privatePayloadCopied",
-      "promotableComparisonCount",
-      "rawSpeedPromotionRequested",
-      "supportPromotionRequested",
-      "usefulSolutionPerSecondMilli",
-      "zeroTaskPassWarningCount"
-    ],
+    "lean_module": "lean/AsiStackProofs/FastGenerationRefinement.lean",
     "checked_theorem_names": [
-      "theseus_generation_mode_import_fixture_matches_public_summary",
-      "theseus_generation_mode_import_has_no_promotable_comparisons",
-      "theseus_generation_mode_import_boundary_gates_all_pass",
-      "theseus_generation_mode_import_missing_report_refs_zero",
-      "theseus_generation_mode_import_speed_lift_not_useful_solution_evidence",
-      "theseus_generation_mode_import_boundary_gate_failure_blocks_public_summary",
-      "theseus_generation_mode_import_missing_report_refs_blocks_public_summary"
-    ]
+      "raw_speed_proxy_without_accepted_output_is_blocked",
+      "support_promotion_without_transition_blocks_decision",
+      "verified_fast_lifecycle_reaches_closed_without_support_or_effect_authority",
+      "fallback_lifecycle_reaches_closed_with_fallback_accounted"
+    ],
+    "boundary": "digest-bound external validator owns report counts; Lean owns reachable mode, fallback, and promotion policy only"
   },
   "non_claims": [
     "does not promote any chapter core claim above argument",

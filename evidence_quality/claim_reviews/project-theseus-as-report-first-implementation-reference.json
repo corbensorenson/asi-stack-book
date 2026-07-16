@@ -1,0 +1,360 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "project-theseus-as-report-first-implementation-reference",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/project-theseus-as-report-first-implementation-reference.qmd",
+    "structured_atoms_reviewed": 83,
+    "prose_candidates_adjudicated": 53,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, all ten exact source mappings, twelve proof targets, fifty-four Lean declarations, bounded report imports and transitions, every manifest atom, and every prose candidate. Made the Implementation-Reference Evidence Packet the distinct owner; expanded 18/12/18/18; preserved narrow non-core transitions and zero chapter-core effect; and froze the clean-room natural-workload reproduction and transfer campaign."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Exact Project Theseus source projects, pinned revisions, report families, commands, environments, artifacts, lineage, evidence states, replays, permissions, reviewers, consumers, dependencies, and times.",
+      "environment": "Ten mappings; twelve proof targets; fifty-four finite Lean declarations; one crosswalk fixture; static gate and generation imports; narrow report-bundle, task, support, retention, module, registry, pointer, board, trace, parity, and currentness imports. No clean live whole-project replay, current runtime proof, model-quality or capability result, independent reproduction, or transfer.",
+      "model": "Implementation-Reference Evidence Packet over exact artifact identity, evidence state, replay, public safety, reporting comparators, adjudication, correction, monitoring, and expiry.",
+      "authority": "Owns implementation-reference packet truth only; Project Theseus runtime, source artifacts, human intent, work ownership, evidence transition, capability, deployment, release, rights, and publication authorities remain separate.",
+      "time": "Reviewed through 2026-07-15; material source, revision, report, generator, command, environment, dependency, permission, reviewer, consumer, threat, or time changes expire affected packets.",
+      "artifact": "Chapter, manifest, ten mappings, report fixtures and imports, validators, twelve targets, fifty-four declarations, semantic review, and future campaign."
+    },
+    "current_disposition": "retain_argument_with_bounded_imports_and_no_chapter_core_effect_pending_clean_room_natural_workload_campaign",
+    "assumptions": [
+      "Source revisions, reports, commands, environments, dependencies, permissions, artifacts, and reviewer decisions can be identified and retained.",
+      "Public-safe packets can expose enough lineage for independent replay without disclosing private payloads.",
+      "Natural workloads and matched baselines can use actual models, routing, tools, compute, and operator paths.",
+      "Independent implementers, operators, artifact reviewers, evaluators, institutions, infrastructures, and transfer sites can reproduce outcomes."
+    ],
+    "dependencies": [
+      "evidence-states-and-claim-discipline",
+      "artifact-graphs-audit-logs-and-replay",
+      "intent-to-execution-contracts",
+      "labor-os-and-typed-jobs",
+      "security-kernel",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "capability-replacement-and-rollback",
+      "artifact-steward-agents-and-living-project-governance"
+    ],
+    "strongest_counterclaim": "Report packets are documentation overhead that can preserve polished but stale or false records without uniquely improving reproducibility, capability evaluation, safety, governance, or usefulness.",
+    "falsifier": "Clean-room natural-workload campaigns show that packets do not improve artifact truth, replay, overclaim rejection, correction, or recovery, impose unacceptable burden, leak private material, or cannot reproduce and transfer.",
+    "required_lanes": [
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze pinned Project Theseus sources and external reporting comparators without importing results."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify publication permission, public/private boundaries, reviewer authority, corrections, and terminal decisions."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify finite record and overclaim boundaries without claiming empirical system behavior."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Run clean-room commands, natural workloads, models, routes, tools, failures, rollback, and correction."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure useful throughput, quality, false promotion and blocking, currentness, leakage, failures, latency, burden, recovery, residuals, and cost."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate digests, environment locks, states, public-safety boundaries, gates, negative retention, and correction propagation."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Reproduce across implementers, models, tasks, institutions, infrastructures, legal regimes, environments, and time."
+      }
+    ],
+    "evidence_refs": {
+      "chapter": "chapters/project-theseus-as-report-first-implementation-reference.qmd",
+      "lean": "lean/AsiStackProofs/TheseusReference.lean",
+      "manifest": "book_structure.json",
+      "report_bundle": "docs/theseus_report_bundle_audit.md",
+      "currentness": "docs/theseus_pretraining_readiness_currentness_import.md"
+    },
+    "contrary_evidence": [
+      "Most packet evidence is sanitized, static, historical, metadata-only, or repository-local.",
+      "The support replay reruns ASI-side validators rather than Project Theseus as a whole.",
+      "The work-board import is explicitly stale and pointer records do not prove referenced artifact truth.",
+      "Several narrow non-core imports are prototype-backed, but none establishes chapter-core support.",
+      "All fifty-four declarations reduce finite hand-authored records or imported fixture summaries."
+    ],
+    "known_confounds": [
+      "Private artifacts, hidden dependencies, dirty checkouts, unavailable services, or unrecorded environment state can defeat replay.",
+      "Shared authors, reviewers, tools, models, data, generators, and organizations can create false independence.",
+      "Sanitization can remove details required to reproduce or falsify the source result.",
+      "Outcome-aware packet design, selection, stopping, baselines, attacks, and missing failures can bias conclusions."
+    ],
+    "acceptance_criteria": [
+      "Bind exact project, revision, report, command, environment, dependency, artifact digest, state, permission, reviewer, decision, residual, consumer, time, and non-claim.",
+      "Run clean-room natural workloads with matched baselines and retain all failures, missing artifacts, costs, and public-safety boundaries.",
+      "Demonstrate correction, downgrade, revocation, expiry, and rollback propagation across every packet consumer.",
+      "Promotion survives causal ablation, independent artifact review, reproduction, and heterogeneous transfer."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to exact source revision, packet, command, environment, artifact, model, task, evaluator, institution, permission, and time.",
+      "Separate source note, static import, replay readiness, failed replay, local reproduction, independent reproduction, transfer, deployment, and SOTA states.",
+      "Unknown currentness, artifact truth, privacy, causality, evaluation, cost, reproduction, or transfer remains blocked."
+    ],
+    "refutation_criteria": [
+      "Refute packet facts with digest mismatch, wrong revision, stale state, missing command or dependency, unauthorized payload, failed replay, or contradictory canonical artifact.",
+      "Refute benefit when matched baselines reproduce and govern equally well or packet burden, leakage, selection, weak attacks, or hidden failures explain results.",
+      "Refute current runtime, capability, safety, deployment, transfer, AGI, ASI, or SOTA from reports, fixtures, validators, or finite proofs alone."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only after every packet, artifact, report state, permission, correction, residual, decision, consumer, and result migrates with lineage."
+    ],
+    "promotion_ceiling": "argument_until_clean_room_natural_workload_campaign_with_independent_artifact_review_reproduction_and_transfer",
+    "reproduction": {
+      "command": "python3 scripts/validate_theseus_report.py && python3 scripts/validate_theseus_generation_mode_import.py && python3 scripts/validate_theseus_report_bundle_audit.py && python3 scripts/validate_theseus_concrete_evidence_surface.py && python3 scripts/validate_theseus_pretraining_readiness_currentness_import.py && cd lean && lake build AsiStackProofs.TheseusReference",
+      "environment_lock": "Repository-local public-safe fixtures and bounded imports current through 2026-07-15; clean live whole-project campaign not run.",
+      "artifact_digest": null,
+      "evaluator_identity": "Repository-local; independent implementers, operators, artifact reviewers, evaluators, institutions, infrastructures, and transfer sites required."
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "project-theseus-as-report-first-implementation-reference",
+      "next_unblocking_condition": "Publish a permissioned pinned public-safe bundle and run clean-room natural workloads with actual models, routes, tools, current state, matched baselines, failures, cost, correction, independent review, reproduction, and transfer."
+    },
+    "non_claims": [
+      "No report, GREEN gate, complete registry, pointer, board snapshot, parity manifest, validator, fixture, or theorem establishes current runtime truth, model quality, capability, safety, deployment, transfer, AGI, ASI, or SOTA.",
+      "No clean live whole-project replay, current work-board or runtime proof, independent reproduction, or transfer exists.",
+      "Narrow non-core prototype-backed imports do not promote the chapter core."
+    ]
+  },
+  "atom_reviews": {
+    "project-theseus-as-report-first-implementation-reference.core": {
+      "current_disposition": "retain_distinct_implementation_reference_evidence_packet_owner_at_argument",
+      "strongest_counterclaim": "Report packets can be polished stale documentation without unique operational or evidential value.",
+      "falsifier": "Clean-room matched campaigns show no benefit, unacceptable burden or leakage, failed correction, or no reproduction and transfer.",
+      "promotion_ceiling": "argument_until_clean_room_independently_reviewed_natural_workload_campaign"
+    }
+  },
+  "prose_candidate_dispositions": {
+    "project-theseus-as-report-first-implementation-reference.prose.6c5a0a1b6908": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.f2540981477a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.9393fc536695": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.a1c41d82239c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.2753b6aa55a9": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.09dfd201dc44": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.36cf8ec4e425": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.7c59f5270b33": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.379495dd2a3e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.650e4661d1a9": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.fad8370c5cbc": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.da2dcdef22a7": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.ba4a4ada2eaa": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.ebae490729f5": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.9384f3a937a1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.66d7f37ed3f0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.ed17d520b5de": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.164d7ab8d75a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.335fdde74821": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.c801b0722373": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.a7c1725b58e6": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.6b729f969e67": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.a2c1ef339553": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.5d413543ff18": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.4a5db3ad1b87": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.bf91a7b5f9ad": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.e5de41d0f3f7": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.86d257302f95": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.7eef1da6cb5d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.7d827cf05d39": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.7d357dc3e270": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.9c8868d68008": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.25f8b784bd2a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.676f91906f97": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as the mature campaign endpoint already atomized by the beyond-SOTA obligation.",
+      "target_atom_id": "project-theseus-as-report-first-implementation-reference.beyond_sota.001"
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.62bdfac8b04f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as the clean-room replay obligation already atomized by the beyond-SOTA campaign.",
+      "target_atom_id": "project-theseus-as-report-first-implementation-reference.beyond_sota.001"
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.db367da48bf6": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.bb6dabc74d77": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.2ee51d64f4d0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.b4fa8725416a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.5cfb5cd51ace": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.64ba6a0f0bb1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.0072866fc4d1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.c3cd2622e2d7": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.73252f45d3b2": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.2058397a7ae3": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.51cf7ad064dd": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.e98481cc2cd9": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, exact imported-report observation, lifecycle restatement, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.481b9ff679b2": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as the explicit formal-proof non-claim; the finite proof boundary is already atomized and no empirical projection is asserted."
+    }
+  ,
+    "project-theseus-as-report-first-implementation-reference.prose.3a61f13183b5": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped reader explanation already governed by structured chapter atoms; it adds no independent material claim."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.3f54ed4c4613": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped reader explanation already governed by structured chapter atoms; it adds no independent material claim."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.a5ed75d5a92c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped reader explanation already governed by structured chapter atoms; it adds no independent material claim."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.a86a3d15dca0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped reader explanation already governed by structured chapter atoms; it adds no independent material claim."
+    },
+    "project-theseus-as-report-first-implementation-reference.prose.b2e1f4b394bb": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped reader explanation already governed by structured chapter atoms; it adds no independent material claim."
+    }
+  },
+  "non_claims": [
+    "The chapter core remains argument and its support-state effect is none.",
+    "Narrow accepted non-core imports retain their exact prototype-backed dispositions without promoting the core.",
+    "Formal declarations enforce finite record boundaries and do not prove empirical Project Theseus behavior.",
+    "The argument-exit campaign is future work, not a result."
+  ]
+}

@@ -118,13 +118,6 @@ def AuthorityDecisionValid (record : AuthorityDecisionRecord) : Prop :=
           record.denialReasonPresent = true ∧
           record.reviewRoutePresent = true
 
-theorem valid_authority_decision_has_audit_and_nonclaims
-    {record : AuthorityDecisionRecord} :
-    AuthorityDecisionValid record ->
-    record.auditRefsPresent = true ∧ record.nonClaimsPresent = true := by
-  intro valid
-  exact valid.1
-
 theorem valid_allow_decision_has_effect_receipt
     {record : AuthorityDecisionRecord} :
     AuthorityDecisionValid record ->

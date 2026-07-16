@@ -3,8 +3,8 @@ title: "Resource Economics and Token Budgets"
 chapter_id: "resource-economics-and-token-budgets"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-03"
+draft_maturity: "v0.3 claim-proof program"
+last_updated: "2026-07-14"
 primary_sources:
   - "tokenmana"
   - "planforge"
@@ -18,15 +18,17 @@ primary_sources:
   - "alignment_field"
   - "ext_pagedattention_vllm_2023"
   - "ext_reluplex_2017"
+  - "ext_mem0_2025"
+  - "ext_recurrent_transformer_2026"
+  - "ext_dynamic_compute_recurrent_transformers_2026"
+  - "ext_claw_swe_bench_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records exact passage-reviewed mappings for the folded resource-economics and simulation-fidelity source union; support remains at argument until TokenMana simulations, PlanForge scheduler benchmarks, welfare/load studies, serving-memory audits, physical-computation audits, cost-quality experiments, or accepted evidence transitions exist."
-  - "The resource_budget_record and simulation_contract_record fixtures validate schema/example consistency only; deterministic generation-mode, resource-budget ledger, capacity-smoothing, resource-workflow-trace, resource-live-probe, resource-workload-quality-probe, resource-load-stability-probe, resource-ci-cost-profile, and simulation-transfer harnesses check record-accounting discipline, toy traces, selected-route accounting, protected high-risk ordering, displaced-cost residuals, capacity-budget-overrun rejection, physical-feasibility overclaim rejection, KV-cache/serving-memory accounting separation, throughput-to-quality overclaim rejection, local command replay, a scoped five-sample median local workload-quality route choice with a rejected no-op negative control, a finite local synthetic burst-workload route choice with a rejected review-erasure negative control, publication-pipeline metadata, and claim-transport boundaries only; the costed-route result carries field-level Python/Lean fixture alignment, and the workflow and load-stability results now carry trace-property or finite-workload Python/Lean fixture alignment over bounded dispatch events, rollup totals, high-risk-first order, guard flags, over-budget or overload rejection, residualized deferrals, review-erasure rejection, and no-promotion boundaries; `AsiStackProofs.ResourceEconomics` and `AsiStackProofs.SimulationFidelity` add finite negative cases for disabled required gates, high-risk insufficient-budget dispatch, aggregate-throughput quality overclaim, missing simulation scope, and fidelity overclaim only; no TokenMana load simulation, PlanForge scheduler benchmark, welfare study, KV-cache memory audit, serving-throughput measurement, single-request quality result, simulation benchmark, physical-computation audit, deployed scheduler, stable speedup result, real load-stability result, external workload-quality review, or live cost-quality experiment has been run."
-  - "Coherence Exchange, Project Theseus Whitepaper, and CoilRA/MultiCoil RoPE mappings are passage-reviewed against public source notes only because raw connector/local-project text is not copied into this repo; they support framing and accounting discipline, not implemented mechanisms or empirical claims."
-  - "CGS, RankFold/NeuralFold, and Alignment Field are preserved from the retired simulation-fidelity chapter as hidden-burden and normative-boundary context only; they do not create simulator, physics, consciousness, model-quality, or compression-performance evidence."
-  - "PagedAttention/vLLM and Reluplex are reviewed as external comparators only; reported serving results, cache-sharing behavior, ReLU property-verification results, code artifacts, latency results, quality behavior, and safety implications remain source-reported and unreproduced."
-  - "No support-state promotion, raw source publication, economic result, scheduler result, serving result, welfare result, simulator result, physical-feasibility result, benchmark-transfer result, or quality result is implied by this drafting pass."
+  - "The exact current flagship replays ten local commands over twenty-six artifacts, preserves three accepted narrow transitions and five no-promotion decisions with zero chapter-core effect, and covers finite selector, workflow, budget, capacity, timing, synthetic-load, CI, governance-tax, simulation-transfer, and sanitized Theseus-import records."
+  - "The strongest numeric observations remain scope-bound: 66.98 percent synthetic modeled selector cost reduction; 84.421 percent five-sample local validator-timing reduction for a narrower task; five-to-zero modeled overload reduction by residualizing seven deferred-task ticks; and eight CI runs with five successes, three classified service failures, and a 131-second recovery boundary."
+  - "A competent full attempt still requires natural multi-tenant work with real models, tools, verifiers, reviewers, serving, prices, rights, delayed outcomes, strong matched policies, complete costs and denominators, causal ablations, independent implementations, and heterogeneous transfer."
+  - "Useful, safe, fair, stable, efficient, economically optimal, deployable, transferable, or SOTA resource claims and physical-feasibility or simulator-adequacy claims remain blocked until that campaign passes."
 ---
 
 ## Chapter status
@@ -36,13 +38,13 @@ open_evidence_gaps:
 | Chapter ID | `resource-economics-and-token-budgets` |
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-03 |
-| Primary source records | `tokenmana`, `planforge`, `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope`, `cgs`, `rankfold_neuralfold`, `alignment_field`, `ext_pagedattention_vllm_2023`, `ext_reluplex_2017` |
+| Manuscript maturity | v0.3 claim-proof program |
+| Last updated | 2026-07-14 |
+| Primary source records | all 16 manifest-assigned resource, simulation, serving, memory, recurrent-compute, verification, and harness comparators |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `tokenmana`, `planforge`; supporting: `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope`, `cgs`, `rankfold_neuralfold`, `alignment_field`; variants/external literature: `ext_pagedattention_vllm_2023`, `ext_reluplex_2017` |
-| Source loading state | source notes and passage-reviewed local raw-cache mappings exist for `tokenmana`, `planforge`, `simulation_scaling`, `viea`, `cgs`, `rankfold_neuralfold`, and `alignment_field`; `coherence_exchange`, `project_theseus_whitepaper`, and `coilra_multicoil_rope` are passage-reviewed against public source notes only; `ext_pagedattention_vllm_2023` and `ext_reluplex_2017` are passage-reviewed against public arXiv metadata and local external-literature notes only. |
+| Source queue | primary: `tokenmana`, `planforge`; supporting: the local resource/simulation lineage; external comparators: PagedAttention, Reluplex, Mem0, Recurrent Transformer, Dynamic Compute, and Claw-SWE-Bench |
+| Source loading state | exact passage-reviewed mappings exist for all 16 assigned sources; local and external results remain source-scoped unless a named repository artifact independently supports them. |
 | Test state | `resource_budget_record.valid.json` and `simulation_contract_record.valid.json` pass repository-level protocol fixture validation; `python3 scripts/validate_generation_mode_baselines.py` checks paired generation-mode/resource-budget fixture alignment; `python3 scripts/validate_costed_route_resource_slice.py` checks the four-route costed selector against JSON costs, eligibility fields, negative controls, a finite Lean selector-state trace theorem, and the tracked result's field-level Python/Lean alignment record; `python3 scripts/validate_resource_budget_ledgers.py` checks 6 valid and 7 expected-invalid deterministic budget-ledger dispatch, escalation, protected-overhead, security-overhead erasure rejection, displaced-cost residualization, review-capacity hoarding, KV-cache/serving-memory accounting separation, throughput-to-quality overclaim rejection, evidence-ref, and no-promotion scenarios; `python3 scripts/validate_capacity_smoothing.py` checks 3 valid and 6 expected-invalid toy capacity traces for bounded regeneration arithmetic, priority deferral, reviewer-capacity arithmetic, protected-review overhead, displaced-review-cost residualization, overload rejection, Lean bridge coverage, and no-promotion boundaries; `python3 scripts/validate_resource_workflow_trace.py` checks 1 valid and 5 expected-invalid deterministic workflow fixtures for selected-route cost recomputation, scheduler ordering, protected high-risk review, displaced-cost residuals, capacity-budget-overrun rejection, physical-feasibility overclaim rejection, no-promotion boundaries, and the tracked result's trace-property Python/Lean alignment record over finite dispatch events, rollup totals, high-risk-first order, guard flags, over-budget rejection, and no-promotion boundaries; `python3 scripts/validate_resource_live_probe.py` replays 5 local Resource Economics validators and checks command-output digests plus tracked artifact hashes without creating a support-state transition; `python3 scripts/validate_resource_workload_quality_probe.py` checks 3 local route candidates across 5 measured samples each for a scoped workflow-trace review task, selects `validate_resource_workflow_trace.py` over the broader Resource live-probe baseline by median elapsed time, rejects a cheaper no-op success-text route, records residuals, and preserves no-promotion boundaries; `python3 scripts/validate_resource_load_stability_probe.py` checks a 10-task local synthetic burst-review workload across admit-arrivals, protected capacity-smoothing, and review-erasure routes, verifies 100.0 percent selected-vs-baseline finite overload reduction, 7 residualized selected deferrals, 3 review-erasure negative-control violations, Lean fixture alignment, and no-promotion boundaries; `python3 scripts/validate_resource_ci_cost_profile.py` checks 8 recorded GitHub Pages runs, 8 completed runs, 5 successful completed runs, 3 classified deploy-service failures, a 131-second recovery boundary, finite Lean fixture alignment, duration metrics, and no-transition boundaries as publication-pipeline metadata only; `python3 scripts/validate_simulation_transfer_boundaries.py` checks 3 valid and 6 expected-invalid simulation-transfer fixtures for fidelity declaration, resource bills, bottlenecks, omissions, approximation liberties, instrumentation effects, transfer decisions, residual/downgrade behavior, and support-state non-promotion; `python3 scripts/validate_resource_flagship_lane.py` now also checks an aggregate Python/Lean flagship invariant over 10 command replays, 26 tracked artifacts, 3 accepted narrow transitions, 5 no-promotion decisions, preserved negative controls, residuals, non-claims, and the no-core-promotion/no-new-transition boundary; `AsiStackProofs.ResourceEconomics` and `AsiStackProofs.SimulationFidelity` implement finite record-level predicates plus negative cases for disabled required gates, high-risk insufficient-budget dispatch, finite selector-state trace selection, finite workflow event rollup/order/guard preservation, finite capacity-smoothing reviewer trace guards, aggregate serving-throughput quality overclaim rejection, aggregate flagship replay accounting, CI failure-classification accounting, missing simulation scope, and fidelity overclaim; deployed scheduler, real load-stability, verification-tax optimization, KV-cache behavior, serving throughput, single-request quality, physical-feasibility, runtime security-budget enforcement, reviewer-capacity optimization, displaced-cost measurement, stable speedup, external workload-quality review, and live cost-quality tests remain planned. |
 
 One narrow non-core import has moved: the Theseus simulation-fidelity receipt suite import, `resource-economics.simulation_fidelity_receipt_suite_import`, is `prototype-backed` through `python3 scripts/validate_theseus_simulation_fidelity_receipt_suite_import.py`. It records a public-safe digest-and-count summary of 5/5 passed fixture scenarios, six simulation contract records, six fidelity records, six world-adapter receipts, six evidence-transition records, six failure-boundary records, one blocked transfer, one downgraded claim, one scenario-only record, and seven expected-invalid controls. It does not prove simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment, live simulator behavior, model quality, economic outcome, learned generation, clean live Project Theseus replay, or any chapter-core support-state promotion.
@@ -89,15 +91,41 @@ Budget records should therefore include the cost of not acting, too. Deferral, r
 
 ## Core Claim
 
-[resource-economics-and-token-budgets.core, label: Design rationale, support: argument] Resource governance accounts for token budgets, verification tax, load stability, and risk-adjusted inference value.
+[resource-economics-and-token-budgets.core, label: Design rationale, support: argument] Resource Economics owns a consumer-, task-, risk-, workload-, organization-, resource-, and time-specific allocation lease that admits, prices, schedules, defers, shrinks, escalates, or rejects work only after protected safety and rights floors, complete direct and displaced costs, uncertainty, useful outcome value, verification capacity, load and tail stability, simulation-transfer limits, recovery, and residual ownership are explicit; throughput, low token count, synthetic success, or a cheap route alone confers no quality, safety, economic-optimality, support, or deployment authority.
+
+Resource Economics distinctly owns the **Resource Allocation Lease** and the resource side of the **Simulation Claim-Transport Contract**. Intent and Planning own task value and dependencies; Routing owns eligible routes; Runtime and Serving own execution receipts; Verification owns check adequacy; Security, Rights, and Authority own protected floors; Labor owns reviewer conditions; Evidence and Claims own support; Artifact Graph owns lineage; Readiness and Incident Response own qualification and recovery; and Release owns public use. Resource Economics may allocate or deny capacity, but it cannot waive those owners or convert cheapness into truth.
 
 The claim remains at `argument` support. The source notes justify design discussion of regenerative capacity, tier-aware planning, load variance, cognitive friction, cost-quality tradeoffs, and verification scarcity. They do not establish measured infrastructure or human-outcome claims in this repository.
+
+### Proof rationalization receipt
+
+The formal surface now separates policy conformance from economic or simulation
+evidence. `AsiStackProofs.ResourceEconomicsRefinement` models nine reachable
+stages and 66 routes from scoped request through budgeting, protected capacity,
+scheduling, observed execution, verification, simulation-claim transport,
+reconciliation, and closure. An independently implemented consumer reaches all
+routes and rejects 57/57 non-accepting mutations, including identity
+substitution, replay, authority leakage, missing protected floors, missing
+reviewer or verifier capacity, raw-proxy promotion, incomplete failure
+accounting, incomplete simulation contracts, fidelity overclaim, and incomplete
+closure.
+
+The consumer also reruns and digest-binds twelve bounded source families. Their
+evidence meanings remain separate: authored fixtures test record discipline;
+repository replays test local reproducibility; local timing describes only its
+recorded machine and task; historical CI records describe past publication
+runs; and sanitized Theseus imports describe import boundaries. In particular,
+the 66.98 percent cost difference is arithmetic inside one four-route synthetic
+fixture, not a general efficiency result. Thirty-five copied summaries or
+assumption-restating declarations were retired with frozen lineage; twenty-three
+countermodels and bounded computations remain. Support-state and external-effect
+authority remain exactly `none`, so the core claim remains at `argument`.
 
 Folded simulation-fidelity subclaim: simulation and synthetic-environment results are resource-governed claim-transport records whose support cannot exceed declared scope, fidelity, temporal semantics, resource bill, assumptions, omitted variables, instrumentation effects, residual risks, and transfer decision.
 
 ### Claim-source mapping status
 
-Appendix C now carries passage-reviewed mappings for the resource-economics and folded simulation-fidelity source union. The mappings support budget records, regenerative capacity, planner scheduling, physical/fidelity feasibility boundaries, value/accounting metaphors, execution-spine resource discipline, report-first implementation pressure, parameter accounting, hidden-burden warnings, normative simulation boundaries, serving-layer memory/throughput accounting, and scoped formal-verification comparison. They do not support measured economic outcomes, welfare effects, scheduler quality, serving performance, simulator adequacy, physical feasibility, open-world transfer, cache behavior, consciousness claims, or model-output quality in this repository.
+Appendix C carries exact passage-reviewed mappings for all sixteen assigned sources. The mappings support budget records, regenerative capacity, scheduling, physical/fidelity boundaries, execution-spine discipline, hidden-burden warnings, serving and recurrent-compute comparisons, variable-depth allocation, persistent-memory costs, scoped verification, and harness-bound cost reporting. They do not support measured economic outcomes, welfare effects, scheduler quality, serving performance, simulator adequacy, physical feasibility, open-world transfer, cache behavior, model quality, or local superiority.
 
 | Source | What it supports | Limit |
 |---|---|---|
@@ -113,6 +141,10 @@ Appendix C now carries passage-reviewed mappings for the resource-economics and 
 | `alignment_field` | Normative/speculative boundaries around agency, dignity, confinement, consciousness heuristics, and metaphysical assumptions in simulation scenarios. | Philosophical/normative source, not physics or simulation evidence; consciousness and metaphysical claims remain speculative. |
 | `ext_pagedattention_vllm_2023` | KV-cache memory management, batching, cache sharing, fragmentation, aggregate throughput, and serving latency as a resource-economics lane separate from verified-output quality. | Reviewed against public arXiv abstract/metadata only; no vLLM/PagedAttention deployment, cache audit, serving benchmark, local throughput measurement, latency result, or quality result has been reproduced. |
 | `ext_reluplex_2017` | Scoped property verification as an external example of a result whose claim boundary is useful precisely because the model class and property are explicit. | External paper only; no Reluplex run, ACAS Xu reproduction, ASI Stack model verification, broad system-safety proof, or simulation-transfer result has been reproduced. |
+| `ext_mem0_2025` | Persistent-memory extraction, consolidation, retrieval, graph linkage, latency, and token-cost pressure as a resource comparator. | Metadata-first note only; no LOCOMO, memory operation, cost-quality, privacy, retention, deletion, or production result is reproduced. |
+| `ext_recurrent_transformer_2026` | Recurrent KV memory, effective depth/width, cache pressure, and autoregressive compute accounting. | Metadata-first note only; no checkpoint, cache trace, hardware, quality, useful-throughput, or production result is reproduced. |
+| `ext_dynamic_compute_recurrent_transformers_2026` | Token-level variable-depth compute, online halting, complexity-aware allocation, and a negative generalization boundary. | Metadata-first note only; no model, calibration, hardware, useful outcome, economic, or transfer result is reproduced. |
+| `ext_claw_swe_bench_2026` | Harness-, workspace-, evaluator-, runtime-, and cost-bound coding-agent comparison discipline. | Primary-preprint comparator only; no task, score, harness, cost, contamination, safety, or local reproduction result is imported. |
 
 ## Draft Key Figure: Route Selection Budget Tradeoff
 
@@ -121,6 +153,12 @@ Appendix C now carries passage-reviewed mappings for the resource-economics and 
 :::
 
 **How to read the route-selection figure:** Treat this draft reader aid as a summary of the bounded public costed-route slice, not a deployed scheduler. Read it from left to right: the task request enters eligibility gates, where verification, adequacy, budget dispatch, fallback, residual custody, and non-claims must all remain visible. The cheapest route is rejected because verification fails. The hidden-residual route is rejected because residual ownership and reviewer handoff are lost even though it looks cheaper than the selected route. The adequate overkill baseline stays eligible but costs more. The selected route is the lowest-cost eligible route in this synthetic fixture, with the already recorded 66.98 percent synthetic cost reduction against the adequate overkill baseline. The figure does not promote the Resource Economics core claim, prove deployed routing, measure model quality, establish scheduler behavior, or create a new evidence transition.
+
+### Resource-allocation lifecycle
+
+The lease moves through eighteen auditable stages: (1) freeze consumer, task, value, risk, workload, organization, authority, rights, horizon, success, and non-claims; (2) inventory compute, memory, storage, network, energy, tools, verifiers, reviewers, approval, security, rollback, and recovery capacity with units and owners; (3) declare protected floors; (4) estimate direct, uncertain, error, verification, fallback, repair, incident, opportunity, reviewer, governance, and displaced costs; (5) separate attempted through recovered work states; (6) choose dispatch, defer, shrink, escalate, fallback, refuse, or residual; (7) bound any regenerative credits, debt, and expiry; (8) reserve scarce verification and review capacity; (9) measure queues, caches, warmup, compilation, preemption, retries, tails, OOM, saturation, and tenant interference; (10) separate aggregate serving metrics from verified useful outcomes; (11) attach a Simulation Contract Record to every synthetic result used as evidence; (12) freeze its fidelity and transfer boundary; (13) compare strong matched allocation controls; (14) measure usefulness, unsafe release, false refusal, missed help, fairness, latency, resources, human and governance cost, recovery, and residuals jointly; (15) run causal ablations; (16) expire qualifications on material drift; (17) reconcile estimates to actuals and preserve failures; and (18) adjudicate each claim through an explicit transition and independent reproduction.
+
+Every stage has a rejecting route. Missing scope or units requests repair; an erased protected floor blocks dispatch; insufficient high-risk verification escalates or narrows; unbounded credits are rejected; review capture reschedules work; partial denominators invalidate comparative claims; missing simulation scope blocks transfer; unmatched baselines block superiority; drift expires the lease; and unexplained variance becomes an owned residual rather than disappearing.
 
 ## Mechanism
 
@@ -196,6 +234,8 @@ This fold preserves the old simulation-fidelity chapter's restoration condition.
 
 Resource choices move through the Resource Budget Record and, when synthetic or simulated evidence is used, the Simulation Contract Record.
 
+The twelve-owner boundary is explicit: Intent and Planning provide value, scope, deadlines, dependencies, and acceptable reduction; the Resource Budget Record owns units, capacity, floors, estimates, decision, actuals, variance, and residuals; Routing provides eligible routes and consumes the allocation decision; Runtime and Serving report queue-to-recovery receipts; Verification owns checks and verifier capacity; Security, Rights, and Authority own non-waivable floors; Labor and Human review own reviewer capacity and conditions; the Simulation Contract Record owns fidelity and transfer; Evidence and Claim Ledgers keep proxy, useful, safety, fairness, economic, deployment, and SOTA states separate; Artifact Graph binds all receipts and descendants; Readiness and Incident Response own qualification, expiry, rollback, and reopening; and Release consumes only claims whose exact use and ceiling remain valid.
+
 Minimum fields:
 
 - `budget_id`
@@ -248,17 +288,24 @@ That means budgets can constrain self-improvement in both directions. They can b
 
 ## Invariants
 
-- Budgets do not override protected safety gates.
-- High-risk tasks pay verification cost.
-- Cost savings are recorded with quality results.
-- Capacity mechanisms are bounded and cannot create infinite spend rights.
-- Low-value tasks cannot hoard scarce review capacity while high-risk work waits.
-- Serving-throughput gains remain separate from verified-output and task-success claims.
-- Protected overhead is budgeted explicitly and cannot be silently deleted.
-- Displaced costs remain residuals until measured or accepted by a scoped evidence transition.
-- Simulation fidelity is declared before a synthetic result supports a claim.
-- Simulation results do not transfer beyond their supported claim boundary by default.
-- Approximation liberties, omitted variables, and instrumentation effects remain visible after results are summarized.
+- Budgets never override protected safety, verification, security, rights, approval, replay, rollback, audit, or human-review floors.
+- High-risk work receives required verification and review or routes to reduction, escalation, deferral, fallback, or refusal.
+- Every quantity has a unit, meter or estimation method, time window, owner, uncertainty, and reconciliation path.
+- Savings travel with useful outcome, safety, fairness, latency, tail, failure, fallback, recovery, and residual results.
+- Aggregate throughput, cache efficiency, or memory reduction never implies verified usefulness, safety, or economic value.
+- Protected overhead is explicit and cannot be deleted, relabeled, or shifted outside the denominator.
+- Displaced and opportunity costs remain residuals until measured or accepted by a scoped transition.
+- Failed, deferred, refused, cancelled, preempted, timed-out, OOM, fallback, repaired, and reviewed work remains in denominators.
+- Capacity issuance and regeneration are bounded and create no infinite spend authority.
+- Low-risk volume cannot consume protected verifier or reviewer capacity reserved for blocked high-risk work.
+- Comparisons match information, workload, models, tools, hardware, cache, load, resources, evaluators, rights, and time.
+- Simulation scope, fidelity, temporal semantics, resources, bottlenecks, omissions, instrumentation, and transfer are prospective.
+- Synthetic results do not transfer beyond their declared support boundary by default.
+- Approximation liberties, parent assumptions, omitted variables, and instrumentation survive every summary and handoff.
+- Economic optimality is not inferred from a finite selector, modeled table, local replay, or one workload.
+- Qualifications expire on material workload, price, hardware, model, policy, rights, threat, organization, or time change.
+- Support changes require an accepted transition for the exact claim and scope.
+- Every shortfall, variance, overload, protected-capacity conflict, failed transfer, and undisclosed cost has an owner and reopening condition.
 
 The central invariant is risk-adjusted adequacy: a route is not cheap if it leaves the system unable to verify a high-impact outcome.
 
@@ -266,17 +313,24 @@ Protected overhead keeps budgeting from deleting governance. Safety gates, evide
 
 ## Failure modes
 
-- Cost-cutting verification away.
-- Load-synchronized degradation.
-- Resource hoarding by low-value tasks.
-- Token optimization that increases human repair burden.
-- Economic metaphors treated as implemented mechanisms.
-- Aggregate serving throughput mistaken for lower single-request risk or better answer quality.
-- Protected-overhead deletion, where isolation, audit, approval, replay, rollback, or review are removed and the route is still called efficient.
-- Review-capacity capture, where low-risk throughput consumes the scarce human or verifier budget needed for high-risk work.
-- Simulation laundering, where a clean synthetic result is described as if omitted variables, resource bottlenecks, approximation liberties, and transfer limits were irrelevant.
-- Sandbox-to-world transfer, where a benchmark or safety rehearsal is treated as deployment evidence without a declared transfer decision.
-- Parent-physics drift, where physical assumptions change without updating the simulation contract.
+- Verification, security, rights, approval, replay, rollback, audit, or review is cut to make a route appear cheaper.
+- Synchronized arrivals, retries, cache misses, or failures produce load collapse and correlated quality degradation.
+- Low-value or strategically inflated work hoards compute, verifier, reviewer, tool, or approval capacity.
+- Aggregate throughput or cache savings are mistaken for lower request risk, better quality, or economic value.
+- Protected overhead is deleted, relabeled, hidden in another budget, or excluded from comparison.
+- Cheaper inference displaces cost into debugging, repair, incidents, privacy exposure, evidence loss, or rollback difficulty.
+- A proxy value model rewards visible throughput while missing usefulness, safety, fairness, or opportunity cost.
+- Failed, refused, deferred, cancelled, timed-out, OOM, fallback, or reviewed work disappears from denominators.
+- Risk labels, value estimates, or deadlines are gamed to capture priority.
+- Static budgets ignore queueing, tails, interference, prices, saturation, or recovery debt.
+- Regenerative credits create inflation, circular issuance, hidden debt, or unbounded authority.
+- Review reservation protects the wrong work, creates starvation, or ignores fatigue and disagreement.
+- Simulation laundering turns clean synthetic results into real-world claims while omitting fidelity or bottlenecks.
+- Sandbox-to-world transfer occurs without fidelity, resource, instrumentation, and rights contracts.
+- Parent physics, workload, price, policy, or organizational assumptions drift without expiry.
+- Shared scheduler, meter, evaluator, simulator, and organization create false independent agreement.
+- A local selector or replay is described as economic optimality, welfare improvement, production stability, or SOTA.
+- Governance cost exceeds benefit, but institutional lock-in preserves the policy and hides the refutation.
 
 Cost-cut verification should block or escalate. Load synchronization should trigger capacity smoothing or scheduling changes. Resource hoarding should be visible in the ledger. Human repair burden should count as cost. Speculative market language should remain optional until executable records and tests exist.
 
@@ -287,6 +341,8 @@ Efficiency laundering returns at the budget layer. A route may look cheaper beca
 The first resource-economics artifact is a resource budget record. The repository fixture records value, risk, capacity, cost, verification tax, quality predicate, safety gates, decision, escalation, residuals, and evidence references.
 
 The folded simulation-fidelity artifact is a simulation contract record. The repository fixture records contract version, claim class, scope, fidelity state, temporal semantics, assumptions, demand, resource bill, bottlenecks, omitted variables, approximation liberties, instrumentation effects, supported and observed-result boundaries, transfer decision, support-state effect, failure behavior, residual risks, evidence references, and non-claims.
+
+The exact current flagship is a ten-command local replay over twenty-six tracked artifacts. It preserves three accepted narrow transitions, five no-promotion decisions, and no chapter-core effect. Its bounded components include a four-route modeled selector reporting 66.98 percent synthetic cost reduction against its chosen adequate baseline; a three-step 119.7-unit workflow fixture; six valid and seven invalid budget records; three valid and six invalid capacity traces; five command replays with fifteen digests; a three-route, five-sample local validator-timing probe reporting 84.421 percent median reduction while rejecting a cheaper no-op; a ten-task synthetic burst where smoothing reduces modeled overrun from five to zero by residualizing seven deferred-task ticks and rejects three review-erasure violations; eight CI runs with five successes, three classified deploy-service failures, and a 131-second recovery boundary; and three valid plus six invalid simulation-transfer fixtures. These are finite repository, timing, and accounting results—not deployed scheduling, real verification-tax measurement, economic optimality, production stability, human productivity, model quality, welfare, physical feasibility, or open-world transfer.
 
 The generation-mode baseline harness now checks that deterministic generation-mode scenarios keep resource-budget records aligned on task identity, risk class, verification tax, protected overhead, safety gates, residuals, evidence references, and no-promotion boundaries. The resource-budget ledger harness adds deterministic records for low-risk dispatch, high-risk escalation, protected-overhead dispatch, displaced-cost residualization, review-capacity hoarding, and security-overhead erasure rejection. The capacity-smoothing toy harness checks bounded regeneration arithmetic, priority deferral, reviewer-capacity arithmetic, protected-review overhead, displaced-review-cost residualization, and low-risk review hoarding in small traces. The simulation-transfer boundary harness checks synthetic contract wrappers for declared fidelity, resource bills, bottlenecks, omitted variables, approximation liberties, instrumentation effects, transfer decisions, residual or downgrade behavior, and support-state non-promotion. That is useful accounting and claim-transport coverage, not a scheduler, simulator, or economics result.
 
@@ -321,6 +377,8 @@ Cheap routes that preserve evidence become defaults, underfunded high-risk tasks
 Simulation becomes part of the same budget operating system. Synthetic worlds, unit simulators, benchmark environments, safety rehearsals, and scenario models can be used aggressively, but their outputs travel only through a contract that names scope, fidelity, resources, omissions, instrumentation, and transfer. Failed transfers reduce claim scope, missing bottlenecks become residuals, instrumentation costs force downgrades, and approximate worlds stay useful for narrow tests instead of becoming borrowed reality.
 
 This cognition-budget and claim-transport system is still proposed architecture. Resource economics should remain `argument` until budget ledgers, verification-budget checks, load/friction tests, value-of-computation comparisons, scarce-resource scheduler traces, rejected-saving records, simulation-fidelity declarations, physical-constraint reviews, transfer checks, and negative simulation results show that resource discipline improves the stack without hiding risk.
+
+The competent full attempt freezes a natural multi-tenant workload with real models, tools, verifiers, reviewers, serving infrastructure, prices, rights, and delayed outcomes. It compares optimized risk-blind, fixed-budget, greedy-throughput, value-of-computation, queueing-aware, serving-native, human-first, conservative, and full-governed policies under matched information and resources. It measures useful accepted throughput, unsafe release, false refusal, missed help, fairness, queue and tail latency, compute, memory, network, energy, tool and reviewer use, governance work, displaced work, incidents, recovery, and residuals together. Causal ablations remove protected floors, verification pricing, displaced-cost accounting, review reservation, load smoothing, fallback, simulation contracts, and expiry. Independent schedulers, meters, evaluators, simulators, and organizations must reproduce predicted signatures, followed by transfer across workloads, models, hardware, prices, organizations, rights regimes, attacks, updates, and time. A simpler policy winning is an informative refutation or narrowing result.
 
 ## Codex test plan
 
@@ -375,6 +433,8 @@ The implemented rows validate fixture/schema consistency, deterministic record-a
 | `lean:resource.simulation_fidelity.theseus_rlds_minari_trace_export.fixture_bridge` | `AsiStackProofs.SimulationFidelity` | A sanitized Project Theseus RLDS/Minari trace-export import records export readiness, format and field counts, license-metadata and replay-smoke requirements, public-safety boundaries, and no-promotion boundaries while rejecting chapter-core, dataset-quality, and replay-success overclaims. | implemented |
 
 These Lean hooks are implemented as finite-record predicates and negative-case theorems over required gates, risk class, verification-budget sufficiency, budget decision fields, costed-route fixture eligibility, capacity-smoothing reviewer traces, finite load-smoothing workload summaries, serving-memory separation, aggregate flagship replay accounting, simulation claim fields, and declared support levels. They prove only record-level gates: required safety and verification gates cannot be disabled, a disabled required safety gate rejects the preservation predicate, high-risk work with insufficient verification budget must route away from ordinary dispatch, a high-risk insufficient-budget dispatch rejects the validity predicate, the four-route costed selector bridge rejects the failed-verification and hidden-residual controls while proving the bounded transform route is lowest-cost among modeled eligible routes, and the finite selector-state replay ends with the selected route after seeing two eligible routes and two cheaper rejected controls. The finite workflow trace summary bridge records the public trace step count, selected-route count, total cost tenths, expected-invalid controls, high-risk-first ordering, displaced-cost residualization, physical-feasibility-overclaim rejection, latency-only rejection, capacity-budget-overrun rejection, and no-promotion boundary. The finite capacity-smoothing reviewer bridge records bounded capacity, reviewer capacity, protected review overhead, displaced-review residualization, low-risk review exclusion during blocked protected review, no-support-promotion boundaries, and negative cases for review hoarding, erased protected overhead, and missing displaced-cost residuals. The finite load-smoothing bridge records the public 10-task synthetic workload, three modeled routes, baseline total overrun, selected zero-overrun behavior, residualized selected deferrals, rejected review-erasure violations, and no-support-promotion boundary. The finite serving-memory guard requires KV-cache budget, batching scope, and single-request verified-output separation for aggregate throughput claims, and rejects throughput-to-quality overclaims. The aggregate flagship bridge checks that the one-command replay still carries 10 command replays, 26 tracked artifacts, 3 accepted narrow transitions, 5 no-promotion decisions, preserved negative controls, residuals, non-claims, and no-core-promotion/no-new-transition guards. Simulation claims used as evidence include scope/fidelity/resource fields, simulation evidence without declared scope is invalid, promoted experiment results cannot exceed declared fidelity support, and fidelity overclaim rejects promotion validity. The Project Theseus simulation-fidelity and RLDS/Minari import bridges preserve sanitized report counts, public-safety boundaries, source-digest continuity, license-metadata and replay-smoke requirements, and expected-invalid overclaim controls while keeping simulator adequacy and dataset-quality conclusions outside the checked fixture. The costed-route, workflow, load-stability, aggregate flagship, and Theseus import validators now require the tracked result records to expose their Python/Lean fixture-equivalence fields: route constructors, per-route costs and eligibility booleans, selector-trace expectations, workflow summary fields, finite workload summary fields, aggregate replay counts, export format and field counts, checked theorem names, expected-invalid control names, and no-promotion boundaries. Together with the deterministic generation-mode/resource-budget alignment harness, the resource-budget ledger harness, the capacity-smoothing toy harness, local synthetic load-stability probe, protocol fixture validation, and public-safe Theseus imports, they are useful but too narrow for the chapter boundary. They do not prove real load stability, economic optimality, welfare effects, scheduler quality, KV-cache behavior, serving throughput, single-request quality, TokenMana performance, reviewer-capacity optimization, protected-overhead adequacy, displaced-cost measurement, physical feasibility, simulator adequacy, RLDS dataset correctness, Minari dataset quality, external physics assumptions, clean live Theseus replay, or open-world transfer.
+
+Across the two folded modules, fifty-eight theorem declarations are present: forty-five in `ResourceEconomics` and thirteen in `SimulationFidelity`. Their current value is finite gate, negative-case, fixture, and public-record alignment. The semantic audit must retain only declarations with a named claim consumer, classify direct predicate/projection consequences separately from derived negatives and authored fixture-summary bridges, and replace any assumption-restating or unconsumed count proof with stronger transition, trace, conservation, liveness, countermodel, or runtime-refinement semantics. None of the current declarations proves scheduler optimality, real load stability, welfare, serving quality, simulator adequacy, physical feasibility, or transfer.
 
 ## Source crosswalk
 

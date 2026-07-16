@@ -13,16 +13,22 @@ rollbacks, one failed rollback quarantined, and two discovered residuals. The
 derived trace uses one vocabulary for authority monotonicity,
 revocation-before-effect with tie precedence, evidence-transition integrity,
 residual conservation, and causal order; four mutations are rejected and one
-open residual remains visible. All 54 core claims have explicit accepted
-transition or no-promotion dispositions, and this run creates no transition.
+open residual remains visible. The closure snapshot covered 54 core claims;
+the live book now covers all 55 core claims with explicit accepted transition
+or no-promotion dispositions, and this run creates no transition.
 
 Status: **proven locally at the bounded fixture scope**. It is not a deployed,
 model-generated, general safety, or cost-effectiveness result.
 
 ## Workstream E — Formal depth
 
-The proof manifest contains 298 implemented targets across all 54 chapters and
-63 Lean modules. Every target has an adequacy class and next action; public
+The closure snapshot contains 298 implemented targets across 54 chapters. The
+live manifest contains 298 implemented targets across 55 chapters after
+reviewed consolidation retired redundant summary targets while preserving the
+post-activation architecture work. The frozen P2 registry preserves the
+original 298-target lineage and the replacement records that connect retired
+declarations to stronger current modules. Every live target has an adequacy
+class and next action; public
 proof language is checked against chapter limitation prose. The governed trace
 module uses the same executed event vocabulary as Workstream D, explicitly
 models finite logical time and revocation-wins ties, rejects four invariant
@@ -36,7 +42,7 @@ deployment claims.
 
 ## Workstream F — Sources, prior art, and terminology
 
-All 54 chapters have source-noted external positioning before their source
+The 54-chapter closure snapshot and all 55 live chapters have source-noted external positioning before their source
 crosswalk, and every assigned source has a note. The five defended tracks are
 positioned against 20 source-noted comparators. Appendix G/H ownership keeps
 local/author material separate from 205+ external literature records. The

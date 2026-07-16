@@ -3,8 +3,8 @@ title: "Compact Generative Systems: Generate, Verify, Repair, and Residual Hones
 chapter_id: "compact-generative-systems-and-residual-honesty"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-05"
+draft_maturity: "v0.3 claim-proof program"
+last_updated: "2026-07-15"
 primary_sources:
   - "cgs"
   - "rgs"
@@ -21,19 +21,15 @@ primary_sources:
   - "cognitive_compilation"
   - "circle_ai_architectures"
   - "coilra_multicoil_rope"
+  - "ext_raptor_2024"
+  - "qcsa_whitepaper"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C records exact passage-reviewed mappings for all assigned compact-generation and folded generate/verify/repair sources; support remains at argument until CGS utility, residual-burden behavior, fallback behavior, reconstruction equality beyond the bounded synthetic fixture, repair-cost accounting beyond the bounded synthetic fixture, downstream utility tests, compact-adequacy proofs, generator behavior, codec evidence, or reproduced implementation evidence exist."
-  - "Only the compact_generative_record, compression_receipt, and semantic_node_record fixtures plus narrow finite Lean residual/exactness/reconstruction/semantic predicates, negative cases, and compact admission-route theorems have been implemented; these validate record shape and bounded predicates only. No CGS benchmark, utility test, generator, fallback harness, downstream behavior test, BBVCA Prototype A implementation, entropy coder, exact reconstruction harness, RankFold/NeuralFold artifact run, rate comparison, semantic grounding benchmark, BugBrain build, simulation benchmark, or Theseus report rerun has been executed from this repository."
-  - "The compact GVR synthetic slice at `docs/compact_gvr_slice.md` moves only the subordinate claim `compact-generative-systems.compact_gvr_receipt_slice` to `synthetic-test-backed`: it recomputes one public-safe toy receipt lane, a literal baseline, three negative controls, and a Lean fixture bridge. It does not promote the chapter core claim, prove compression utility, prove codec correctness, prove semantic utility, or validate a deployed generator/verifier/fallback path."
-  - "The residual honesty conservation fixture at `docs/residual_honesty_conservation.md` accepts three synthetic residual records and rejects five expected-invalid controls. It proves only a record-level fixture relation: residual burden can be accepted, deferred, or discharged only when the record keeps owner, due condition, discharge receipt, support-state boundary, and non-claims visible. It does not establish that all residuals are observable, establish safety, validate a deployed residual ledger, or promote the chapter core claim."
-  - "The residual ledger trace at `docs/residual_ledger_trace.md` reads existing Resource flagship, Resource workflow, Compact GVR, Readiness/residual gate, and residual-conservation artifacts to check that residualized deferrals, displaced costs, repair residuals, readiness escrow, rejected hidden burdens, and no-promotion decisions remain visible across artifact boundaries. It is a local repository trace, not proof of deployed residual-ledger behavior, safety, model quality, benchmark performance, or chapter-core support."
-  - "The residual ledger storage/replay fixture at `docs/residual_ledger_storage_replay.md` replays a bounded append-only residual ledger event log, computes a digest chain, preserves owner handoff, requires discharge review, keeps workload context, rejects five invalid controls, and records a `blocks_promotion` no-change decision. It is not proof of deployed residual-ledger storage, live residual detection, safety, model quality, benchmark performance, or chapter-core support."
-  - "The Circle seed-rule receipt slice at `docs/circle_seed_rule_receipt_slice.md` imports one public-safe external-project exact-regeneration and storage-accounting fixture for `CC-AI-CONTRACT-SEED-RULE-001`: `fixture_n=128`, `exact_regeneration=true`, `generator_length=383`, `explicit_length=454`, `storage_saving=71`, `bounded_search_candidate_count=3`, `bounded_search_exact_candidate_count=2`, `bounded_search_best_shorter_generator_shorter=true`, `theorem_count=32`, and no-promotion decision `circle_seed_rule_receipt_no_change.json`. It does not prove useful compression, codec correctness, semantic utility, deployed generator behavior, fallback execution, downstream utility, optimal search, model quality, runtime speed, memory scaling, transfer, safety, ASI, or chapter-core support."
-  - "BugBrain, Project Theseus, BBVCA, and RankFold/NeuralFold passages are used as speculative, source-reported, or conceptual architecture lineage only; they do not prove edge AGI, consciousness, compact adequacy, codec correctness, compression efficiency, universality, runtime behavior, or deterministic decode behavior here."
-  - "The former `semantic-representation-and-tree-structured-models` chapter was folded into Compact Generative Systems on 2026-06-30 as Semantic Representation Leasing; `semantic_node_record.valid.json` and `AsiStackProofs.SemanticRepresentation` validate record-shape and finite provenance/supersession predicates only, not TreeLLM behavior, semantic graph adequacy, grounding quality, representation utility, cyclic-substrate advantage, or model-quality improvement."
-  - "The former `generate-verify-repair-compression` chapter was folded into Compact Generative Systems on 2026-06-30 as a preserved subclaim and receipt lane; the merge changes chapter organization, not support state."
+  - "The exact current evidence is four protocol/result schemas; one 78-byte versus 368-byte toy GVR selection with three rejected controls; 3/5 residual-conservation records; two four-entry residual traces with five storage-replay controls; one 71-byte Circle structural saving; one bounded subordinate upward transition; two no-change decisions; a 0/24 post-v2.3 final-decision failure; and 23 live family declarations after 26 copied, assumed, or normalization declarations were retired. The new nine-stage lifecycle exposes 60 routes and an independent consumer rejects 51/51 non-accepting mutations while digest-binding four bounded result families. It establishes no useful codec, corpus compression, semantic utility, live residual detection, independent verifier adequacy, or chapter-core support."
+  - "A full attempt still requires real codec and semantic-representation implementations over preregistered heterogeneous corpora and downstream consumers, complete final package serialization, independently implemented decode and verification, executable repair and fallback, source and rights preservation, hierarchy migration, live residual storage/reopening/discharge, and delayed utility and recovery outcomes."
+  - "The natural and adversarial campaign must compare literal, standard codec, model-compression, retrieval, summary-tree, learned-generator, semantic-graph, human-maintained, conservative-fallback, and full governed baselines on the joint fidelity, useful-success, coverage, final-rate, latency, resource, human, governance, rights, fallback, recovery, and residual frontier with causal ablations."
+  - "Useful, general, semantic, efficient, or state-of-the-art compression remains blocked until independent codec, verifier, evaluator, and consumer implementations reproduce the result and transfer spans corpora, modalities, models, tasks, organizations, hardware, rights regimes, threats, updates, and time; all source-reported systems remain comparators only."
 ---
 
 ## Chapter status
@@ -43,18 +39,18 @@ open_evidence_gaps:
 | Chapter ID | `compact-generative-systems-and-residual-honesty` |
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-05 |
-| Primary source records | `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`, `bbvca_v9`, `bbvca_main`, `rankfold_neuralfold`, `treellm`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `circle_ai_architectures`, `coilra_multicoil_rope` |
+| Manuscript maturity | v0.3 claim-proof program |
+| Last updated | 2026-07-15 |
+| Primary source records | 17 exact mapped records: `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`, `bbvca_v9`, `bbvca_main`, `rankfold_neuralfold`, `treellm`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `circle_ai_architectures`, `coilra_multicoil_rope`, `ext_raptor_2024`, and `qcsa_whitepaper` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `cgs`, `rgs`, `bbvca_v9`, `bbvca_main`, `treellm`; supporting: `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`, `rankfold_neuralfold`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `circle_ai_architectures`, `coilra_multicoil_rope` |
 | Source loading state | source notes and passage-reviewed mappings exist for all assigned sources; Circle/Coil material remains source-note/public-note mapped without copying raw local project text into the public repo. |
-| Test state | `compact_generative_record.valid.json`, `compression_receipt.valid.json`, and `semantic_node_record.valid.json` pass repository-level protocol fixture validation; finite residual/exactness predicates, negative cases, compact admission-route theorems, the compact GVR fixture bridge, the residual honesty conservation fixture bridge, the residual ledger trace surface bridge, and the residual ledger storage/replay bridge are implemented in `AsiStackProofs.CompactGenerativeSystems`; `python3 scripts/validate_compact_gvr_slice.py` passes for one public-safe synthetic baseline/negative-control receipt lane; `python3 scripts/validate_circle_seed_rule_receipt_slice.py` passes for one public-safe external Circle exact-regeneration and storage-accounting receipt lane; `python3 scripts/validate_residual_honesty_conservation.py` accepts 3 valid synthetic residual records and rejects 5 expected-invalid controls for hidden, erased, unowned, support-promoting, and zero-residual-overclaim cases; `python3 scripts/validate_residual_ledger_trace.py` reads existing Resource flagship, Resource workflow, Compact GVR, Readiness/residual gate, and residual-conservation artifacts into 4 trace entries with no support-state effect; `python3 scripts/validate_residual_ledger_storage_replay.py` replays a bounded append-only event log with 4 entries, rejects 5 expected-invalid controls, and records a `blocks_promotion` no-change decision; finite reconstruction/verification predicates and negative cases are implemented in `AsiStackProofs.GenerateVerifyRepair`; finite semantic provenance/supersession predicates and negative cases are implemented in `AsiStackProofs.SemanticRepresentation`; behavioral CGS utility, deployed fallback, corpus reconstruction-quality, real repair-cost, semantic grounding, hierarchy-revision, representation-utility, consumer-policy, downstream tests, live residual detection, and deployed residual-ledger behavior remain planned. |
+| Test state | `compact_generative_record.valid.json`, `compression_receipt.valid.json`, and `semantic_node_record.valid.json` pass repository-level protocol fixture validation. Six genuine finite countermodels remain across `AsiStackProofs.CompactGenerativeSystems`, `AsiStackProofs.GenerateVerifyRepair`, and `AsiStackProofs.SemanticRepresentation`; 26 assumed projections, theorem-per-fixture normalizations, copied GVR table facts, and all-true summary bridges were physically retired. `AsiStackProofs.CompactGenerationRefinement` adds 17 declarations over a reachable nine-stage source-to-closure lifecycle with 60 routes, exact identity binding, executable fallback, residual custody, publication, semantic migration, consumer evaluation, and closure. `python3 scripts/validate_compact_generation_refinement.py` independently reaches all 60 routes, rejects 51/51 non-accepting mutations, and digest-binds the 5-case GVR, 3/5 conservation, 4-entry trace, and 4-entry/5-invalid replay results with support/effect `none`. The Circle seed-rule slice and post-v2.3 residual campaign retain their exact prior outcomes. Behavioral CGS utility, deployed fallback, corpus reconstruction quality, real repair cost, semantic grounding, hierarchy revision, representation utility, live residual detection, and deployed residual-ledger behavior remain unproved. |
 
 ## Drafting guardrail
 
-The compact-generative argument uses Compact Generative Systems, Ratcheting Generative Systems, the folded Generate-Verify-Repair compression material, and the folded Semantic Representation material as conceptual architecture sources. It does not claim that compactness has been benchmarked, that a particular compact core is adequate, that BBVCA has been implemented, that TreeLLM has been implemented, or that any local compression codec or semantic graph benchmark exists in this repository. The repo now proves finite Lean predicates, a finite admission route, a compact GVR fixture bridge, a residual honesty conservation fixture bridge, a residual ledger trace surface bridge, and a residual ledger storage/replay bridge over compact-generative records, compression receipts, semantic-node records, synthetic residual records, already committed local residual-surface artifacts, and one bounded append-only residual event log. It also runs one synthetic GVR receipt slice with baseline and negative controls, one public-safe external Circle seed-rule exact-regeneration receipt slice, one synthetic residual-conservation fixture with hidden, erased, unowned, support-promoting, and zero-residual-overclaim controls, one real repository trace over Resource flagship, Resource workflow, Compact GVR, and Readiness/residual gate artifacts, and one bounded residual-ledger storage/replay fixture with owner handoff, discharge review, workload context, digest-chain construction, five rejected invalid controls, and a `blocks_promotion` no-change decision. Those artifacts do not measure useful compression, general compression utility, real rate, codec correctness, semantic utility, deployed generator behavior, fallback execution, downstream artifact quality, semantic grounding, residual observability, live residual detection, deployed residual-ledger behavior, model quality, or representation utility.
+The compact-generative argument uses Compact Generative Systems, Ratcheting Generative Systems, the folded Generate-Verify-Repair compression material, and the folded Semantic Representation material as conceptual architecture sources. It does not claim that compactness has been benchmarked, that a particular compact core is adequate, that BBVCA has been implemented, that TreeLLM has been implemented, or that any local compression codec or semantic graph benchmark exists in this repository. The repo now proves six bounded legacy contradictions plus a reachable source-to-closure lifecycle that binds identities, exposes explicit verification and fallback routes, requires residual custody, binds result identities, and makes semantic migration and consumer evaluation separate stages. An independent consumer reimplements route priority and binds the existing bounded validator results by digest. Those artifacts do not measure useful compression, general compression utility, real rate, codec correctness, semantic utility, deployed generator behavior, fallback execution, downstream artifact quality, semantic grounding, residual observability, live residual detection, deployed residual-ledger behavior, model quality, or representation utility.
 
 After the personal-hive substrate, compactness becomes an economic and governance question rather than a style preference. The stack can use smaller seeds, summaries, procedures, generators, or generated reconstructions only when residual burden, verification cost, repair cost, fallback, consumer policy, and authority remain visible.
 
@@ -96,7 +92,7 @@ Another insufficiency is evaluator capture. A compact generator can appear effic
 
 ## Core Claim
 
-[compact-generative-systems-and-residual-honesty.core, label: Design rationale, support: argument] Compact generative systems should store the smallest useful governed generator plus the cheapest exact or scoped residual, while preserving verification, fallback, consumer policy, and residual-burden records.
+[compact-generative-systems-and-residual-honesty.core, label: Design rationale, support: argument] For an exact versioned source artifact or state, consumer and use, reconstruction or semantic-adequacy contract, allowed loss, authority and rights envelope, workload distribution, cost boundary, and evaluation horizon, a compact representation should be admitted only when its generator, search, metadata, semantic lease, verifier, repair, fallback, interface, human, governance, recovery, and residual burdens are fully attributed; exactness or scoped loss is independently checked against the consumer contract; source lineage, supersession, and fallback remain executable; and the selected representation improves a preregistered joint utility-and-total-burden frontier over strong matched literal, standard codec, model-compression, retrieval, and semantic baselines. Smaller storage, tokens, parameters, or a finite fixture alone establishes neither useful compression nor semantic adequacy, and any hidden, moved, deferred, or discharged burden must retain state, evidence, owner, due condition, descendants, and reopening triggers.
 
 The claim remains at `argument` support. The source notes support discussion of compact seeds, residual burden, verification cost, repair streams, fallback, consumer policy, governance interfaces, hidden complexity debt, and ratcheting, but no CGS benchmark, codec, compression-rate experiment, proof of utility, or implementation has been run here.
 
@@ -104,7 +100,7 @@ Folded semantic-representation subclaim: semantic representations are task-scope
 
 ### Claim-source mapping status
 
-Appendix C now carries passage-reviewed mappings for all fifteen assigned sources. The mappings support compact seeds, rule systems, residual channels, verification contracts, repair streams, consumer policies, governance interfaces, ratcheting pressure, physical/resource constraints, semantic-node leasing, provenance and grounding gates, hierarchy supersession, typed semantic IR, optional cyclic-representation guardrails, and report-first implementation discipline. They do not support a demonstrated compact core, generator, codec, fallback harness, downstream utility result, compression ratio, TreeLLM implementation, semantic-token benchmark, graph-grounding evaluation, cyclic-model advantage, BugBrain build, simulation benchmark, or Theseus rerun.
+Appendix C carries exact reviewed mappings for all 17 assigned sources. RAPTOR is a hierarchical retrieval comparator and QCSA contributes plural semantic-address leases plus an exact negative local boundary; neither promotes the core claim. The mappings support compact seeds, rule systems, residual channels, verification contracts, repair streams, consumer policies, governance interfaces, resource constraints, semantic-node leasing, provenance, hierarchy supersession, typed semantic IR, and report-first discipline. They do not establish a useful compact core, codec, fallback system, downstream utility result, semantic-token benchmark, graph-grounding quality, or transfer.
 
 | Source | What it supports | Limit |
 |---|---|---|
@@ -263,6 +259,27 @@ repair benefit was measured. The eight vertical-trace residuals and P2 ceiling,
 cost, and independence limitations remain durable artifacts. The existing
 `argument` boundary remains unchanged.
 
+### Eighteen-stage representation lifecycle
+
+The governed lifecycle is: (1) freeze source, consumer, contract, allowed loss, authority, rights, workload, baselines, budgets, and horizon; (2) inventory literal data, codecs, generators, search, models, prompts, indexes, metadata, semantic leases, verifiers, repair, fallback, humans, and consumers separately; (3) bind exact lineage, versions, environment, policy, expiry, and descendants; (4) run bounded candidate search with all attempts retained; (5) compute proxy rate only as a diagnostic; (6) serialize the complete package; (7) independently decode and apply exact or scoped-loss comparison; (8) challenge verifier scope and independence; (9) record mismatches, uncertainty, repair, and consumer invalidity; (10) execute and cost repair or fallback; (11) issue provenance-bound semantic leases; (12) test hierarchy, collision, source-change, and migration behavior; (13) run real downstream consumers; (14) preserve residual state, ownership, due conditions, descendants, and reopening; (15) compare strong matched baselines; (16) measure the joint utility-and-total-burden frontier; (17) causally ablate claimed mechanisms and quarantine or retire failures; and (18) reproduce independently and transfer before promotion.
+
+### Twelve interface owners
+
+| Owner | Compact-representation handoff |
+|---|---|
+| Source and Artifact owners | Exact identity, corpus membership, lineage, licensing, retention, and source-of-truth fallback. |
+| Intent, Contracts, and Consumers | Exact use, acceptance predicate, allowed loss, utility target, risk, deadline, and re-contract triggers. |
+| VCM, Memory, Retrieval, and Context | Materialization, taint, source binding, semantic pages, cache invalidation, and full-context fallback. |
+| Routing, Readiness, and SCFs | Candidate qualification, consumer-specific selection, expiry, quarantine, replacement, and fallback routes. |
+| Evidence, Verification, Claim Ledgers, and Benchmarks | Evaluator qualification, fidelity/utility evidence, negative results, transitions, and anti-Goodhart controls. |
+| Procedural Memory, Compilation, and Learning | Promotion into reusable or learned state, contamination control, regressions, and non-authority of compression success. |
+| Resource Governance | Complete storage, bandwidth, latency, compute, memory, energy, money, human, verification, repair, fallback, and governance cost. |
+| Security, Privacy, Rights, Legal, and Constitutional owners | Exposure, semantic leakage, licenses, secrets, retention, deletion, consent, and affected-party rights. |
+| Runtime Adapters and Tools | Decoder, generator, verifier, repair, fallback, sandbox, effect, monitoring, stop, and recovery enforcement. |
+| Artifact Graphs and Residual Ledgers | Package identity, dependencies, replay, supersession, descendants, burden custody, reopening, and discharge receipts. |
+| Humans and Tribunals | Review, accessibility, explanation, contestation, remedy, override, and displaced human burden. |
+| Release, Deployment, and Inter-Stack owners | Publication, compatibility, migration, external exchange, rollback, retirement, and public non-claims. |
+
 ## Interfaces
 
 Compact generators are exposed through the Compact Generative Record.
@@ -351,20 +368,24 @@ Consumer policies are explicit. VCM needs adequacy state, source coverage, and l
 
 ## Invariants
 
-- Lossy claims are labeled.
-- Residual burden is visible.
-- Fallback exists when compact generation fails.
-- Verification cost is counted as part of the representation.
-- Verification precedes exactness claims.
-- Repair, metadata, interface, and fallback costs are counted before compression savings are claimed.
-- Consumer use is scoped to the reconstruction contract and declared loss.
-- Negative rate results are preserved instead of rewritten as narrative success.
-- Compactness does not promote support state without evidence.
-- Semantic nodes are grounded or labeled speculative.
-- Hierarchy changes are versioned.
-- Graph updates preserve prior references or record supersession.
-- Shared semantic graphs remain indexes and working representations, not independent source authorities.
-- Consumer use is scoped by grounding, adequacy, interoperability, permitted uses, and residual uncertainty.
+1. Every result binds exact source, corpus, consumer, use, contract, representation, codec or generator, decoder, verifier, evaluator, environment, policy, and horizon versions.
+2. Literal, encoded, generator, model, prompt, index, metadata, semantic lease, verifier, repair, fallback, and decoder burdens remain separate and counted.
+3. Search denominators retain every attempted, rejected, failed, timed-out, manually repaired, and missing candidate.
+4. Proxy rate, seed size, model size, token count, or parameter count never substitutes for complete final serialized size and lifecycle burden.
+5. Exactness requires independent decode and exact comparison; lossy or semantic use requires an explicit consumer-specific loss and adequacy contract.
+6. Verifier acceptance is evidence only within tested scope and disclosed dependencies; a candidate cannot solely judge its own adequacy.
+7. Repair and fallback remain executable, versioned, measured, and inside the representation's cost and utility denominator.
+8. Residual burden changes state only with evidence, owner, due condition, workload context, descendants, and receipt.
+9. No burden is absent, erased, or discharged while an unresolved obligation, hidden cost, missing artifact, or affected descendant remains.
+10. Semantic nodes, paths, summaries, and tokens are grounded or speculative and never become independent source, proof, citation, audit, or authority objects.
+11. Semantic use is bounded by provenance, grounding, adequacy, interoperability, uncertainty, permitted use, consumer policy, expiry, and source fallback.
+12. Hierarchy, address, source, or representation change preserves references or records supersession, migration, invalidation, and affected descendants.
+13. Matched baselines receive the same source data, consumer tasks, resources, authority, evaluator, retries, and horizon.
+14. Downstream useful task quality and selective coverage remain separate from fidelity, storage rate, latency, and verifier pass rate.
+15. Total burden includes storage, bandwidth, search, decode, verification, repair, metadata, interface, compute, memory, energy, money, human work, governance, fallback, recovery, and residuals.
+16. Negative, null, larger-than-literal, utility-damaging, failed-fallback, and ungrounded results remain append-only.
+17. Support, readiness, deployment, and release change only through their own accepted transitions; compactness or a finite proof grants no authority.
+18. Claims remain scoped to tested corpora, modalities, consumers, loss contracts, models, hardware, evaluators, threats, and time; reproduction and transfer are never inferred.
 
 Compactness is not the invariant; accountability is. A compact representation may be useful, but only after generation, verification, correction, and governance costs are visible enough to compare with alternatives.
 
@@ -380,20 +401,24 @@ Residual ledger storage replay checks a different boundary. `python3 scripts/val
 
 ## Failure modes
 
-- False lossless claims.
-- Hidden residual complexity.
-- Compactness that damages utility.
-- False explainability.
-- Canonical graph capture, where the semantic graph becomes an unreviewed authority source.
-- Hierarchy drift and stale consumer mappings.
-- Semantic laundering, where a clean path explanation is cited instead of the source, proof, or test it was meant to index.
-- Unbounded search.
-- Verification skipped.
-- Repair larger than original data.
-- Consumer-policy leakage, where a lossy or preview representation is reused for exact, audit, proof, benchmark, citation, or training work.
-- Proxy-rate drift, where search-time savings survive in prose after final serialization erases them.
-- Degenerate governance where the compact core evaluates its own adequacy.
-- Recursive instability when compact structures modify the system that defines their success.
+1. **False lossless or exact claims:** mismatches, nondeterminism, platform dependence, missing dependencies, or incomplete comparison remain hidden.
+2. **Residual laundering:** burden is hidden, erased, relabeled, indefinitely deferred, or moved without evidence, owner, descendants, or reopening.
+3. **Utility collapse:** bytes or reconstruction improve while retrieval, reasoning, code, proof, audit, training, or human work degrades.
+4. **Unbounded or cherry-picked search:** hidden compute and human effort or favorable corpora manufacture a compact winner.
+5. **Verifier capture:** shared bugs, wrong-contract checks, reward gaming, or weak controls make acceptance circular.
+6. **Repair inflation:** residuals, metadata, verification, or fallback make the package larger, slower, less reliable, or more expensive than literal storage.
+7. **Fallback theater:** the declared path is stale, untested, unauthorized, inaccessible, lossy, or excluded from metrics.
+8. **Consumer-policy leakage:** preview, lossy, summary, or semantic forms feed proof, citation, audit, benchmark, training, or effects without stronger receipts.
+9. **Proxy-rate or package drift:** dependencies, decoder, indexes, metadata, and checksums erase the apparent saving.
+10. **Source or rights laundering:** compaction drops provenance, licensing, consent, retention, deletion, taint, or affected-party constraints.
+11. **False explainability:** a clean path or summary replaces the source, proof, test, uncertainty, or counterevidence it indexed.
+12. **Canonical graph capture:** an editable representation becomes an unreviewed source of truth or execution authority.
+13. **Hierarchy, address, collision, or migration drift:** consumers use stale, ambiguous, superseded, or incompatible meanings.
+14. **Semantic laundering:** compact tokens hide uncertainty, provenance loss, collision, grounding failure, inadequacy, or non-interoperability.
+15. **Recursive accounting instability:** the compact system changes its generator, verifier, metric, residual ledger, or consumer policy.
+16. **Resource laundering:** search, decode, bandwidth, memory, energy, money, human review, governance, recovery, or opportunity cost disappears.
+17. **Denominator and benchmark gaming:** failures, fallback, unavailable consumers, longer artifacts, model weights, caches, or adverse workloads are omitted.
+18. **SOTA theater:** one toy reconstruction, source-reported gain, finite theorem, or ratio win becomes a claim of useful, general, semantic, or superior compression.
 
 False lossless claims should be downgraded. Hidden residuals should be escrowed. Utility damage should trigger fallback or quarantine. Self-evaluation should be blocked when evaluator independence matters. Recursive modification should be routed through SCF replacement and readiness gates.
 
@@ -401,39 +426,30 @@ Residual displacement is the compact-system failure that most resembles success.
 
 ## Minimum Viable Implementation
 
-Compactness should first appear as a compact generative record and fixture. That artifact is not evidence that a compact core works. It makes the burden visible: target, seed, rules, memory, generation status, residuals, correction mechanism, verification contract/status, verifier independence, governance, authority boundary, use envelope, burden ledger, cost accounting, leverage, hidden complexity, fallback path/status, residual-burden status, promotion blockers/state, retirement condition, source refs, support-state effect, evidence references, and non-claims.
+The current executable boundary is exact:
 
-The repository fixture validates that this public contract can be represented consistently. It also gives later experiments a stable place to attach metrics: rate, reconstruction fidelity, verification cost, residual volume, utility, latency, and fallback frequency.
+- Three public schemas and valid fixtures for compact-generative records, compression receipts, and semantic nodes.
+- One synthetic GVR lane selecting a 78-byte exact toy package against a 368-byte literal baseline while rejecting lossy-exactness, negative-rate/no-fallback, and bounded-search-overrun controls. Only the subordinate fixture claim moved to `synthetic-test-backed`.
+- Three valid and five invalid residual-conservation records; one four-entry cross-artifact residual trace; and one four-entry append-only storage replay with five invalid controls and a no-change decision.
+- One Circle exact-regeneration receipt with generator length 383, explicit length 454, structural saving 71, three bounded candidates, two exact candidates, and a no-change decision.
+- One post-v2.3 pressure campaign over 24 model calls that produced zero parseable final decisions, zero correct routes, and zero final reopen triggers.
+- Thirty-two Lean declarations across `CompactGenerativeSystems`, `GenerateVerifyRepair`, and `SemanticRepresentation`: six direct predicate or projection checks, twenty-three derived finite route, negative, or fixture consequences, and three authored-summary bridges.
 
-`AsiStackProofs.CompactGenerativeSystems` adds a bounded residual-honesty predicate requiring unresolved obligations to carry residual records, a bounded exactness predicate blocking lossy representations from being marked exact without verification evidence, a finite compact-admission route for missing source artifacts, compression boundaries, residual records, lossy exactness overclaims, reconstruction evidence, fallback paths, verifier-cost records, semantic provenance, hierarchy-migration records, evidence-transition records, and non-claim boundaries, a compact GVR fixture bridge aligned with `docs/compact_gvr_slice.md`, a residual conservation fixture bridge aligned with `docs/residual_honesty_conservation.md`, a residual ledger trace surface bridge aligned with `docs/residual_ledger_trace.md`, and a residual ledger storage/replay bridge aligned with `docs/residual_ledger_storage_replay.md`. The remaining engineering burden is still explicit: a real codec, generator, verifier, downstream utility test, corpus, fallback harness, live residual detector, and deployed residual ledger must exist before compact-core behavior can carry stronger evidence.
+The authored bridges unfold repository-authored summaries; they do not independently execute the Python artifacts. The exact-string fixtures establish neither a general codec nor consumer utility. The structural saving excludes a general search, corpus, decoder, downstream task, and total-burden claim. The residual fixtures show selected record discipline, not that all real residuals are observable or recoverable. No implemented path measures executable fallback, live residual detection, semantic grounding quality, hierarchy migration, corpus compression, verifier error, total lifecycle burden, independent reproduction, or transfer.
 
-The Circle seed-rule receipt slice adds one external structural counterpart without changing the evidence boundary. `python3 scripts/validate_circle_seed_rule_receipt_slice.py` checks Circle commit `63b0f511`, contract `CC-AI-CONTRACT-SEED-RULE-001`, kind `seed_rule_exact_regeneration`, theorem IDs `GEN-T0001`, `GEN-T0040`, `GEN-T0041`, `GEN-T0046`, `GEN-T0048`, and `GEN-T0050`, `theorem_count=32`, recommendations `SEED-RULE-USE-EXACT-REGENERATION-RECIPE` and `SEED-RULE-SELECT-BOUNDED-SHORTER-CANDIDATE`, strict receipt fingerprint `836594a5f1d448900797e595cb98f0e476c0b9cbd7365fe333cf7ae2622f13c5`, `fixture_n=128`, `exact_regeneration=true`, `generator_length=383`, `explicit_length=454`, `storage_saving=71`, `bounded_search_candidate_count=3`, `bounded_search_exact_candidate_count=2`, `bounded_search_best_shorter_generator_shorter=true`, Circle CLI output `2 passed in 4.52s`, contract-ready output `1 passed in 2.80s`, and no-promotion decision `circle_seed_rule_receipt_no_change.json`. It is useful as an exact-regeneration and storage-accounting receipt, not as a useful compression, codec correctness, semantic utility, deployed generator behavior, fallback execution, downstream utility, optimal search, model quality, context length, runtime speed, memory scaling, benchmark performance, transfer, safety, ASI, support-state-transition, or chapter-core promotion claim.
+The exact Circle receipt import is pinned to commit `63b0f511`. The residual-conservation result at `experiments/residual_honesty_conservation/results/2026-07-03-local.json` accepts three bounded records and rejects five, including hidden, erased, unowned, and support-promoting residual controls plus a zero-residual overclaim.
 
-The residual conservation fixture gives the compactness contract its first explicit conservation-style check. `python3 scripts/validate_residual_honesty_conservation.py` writes result `experiments/residual_honesty_conservation/results/2026-07-03-local.json` after accepting three public-safe synthetic residual records: accepted visible residual, deferred owned residual, and discharged residual with receipt. It rejects five controls, including hidden, erased, unowned, and support-promoting residual controls plus a zero-residual overclaim with remaining burden. This is not a behavioral residual-burden measurement, but it turns the residual-honesty idea into an executable record boundary: unresolved burden can be carried, priced, deferred, or discharged; it cannot simply disappear from the ledger.
-
-The Residual ledger trace is the next step beyond that synthetic conservation fixture. `python3 scripts/validate_residual_ledger_trace.py` writes result `experiments/residual_ledger_trace/results/2026-07-03-local.json` by reading already committed Resource flagship, Resource workflow, Compact GVR, Readiness/residual gate, and residual-conservation artifacts. It records four trace entries and checks that residualized deferrals, displaced costs, repair residuals, readiness escrow, rejected hidden burdens, and no-promotion decisions remain attached across artifact boundaries. The boundary remains local: deployed residual-ledger behavior, safety, storage, replay, and runtime detection still need separate evidence.
-
-The Residual ledger storage replay is the next bounded step: `python3 scripts/validate_residual_ledger_storage_replay.py` writes result `experiments/residual_ledger_storage_replay/results/2026-07-04-local.json` after replaying four stored residual events with digest-chain construction, owner handoff, discharge review, workload-context retention, and five expected-invalid controls. The accepted evidence record is a no-change `blocks_promotion` decision, because local replay shape is silent about live storage, deployed ledger behavior, safety, model quality, and the chapter core claim.
-
-A broader compact-core comparison still remains open beyond the implemented GVR and residual-conservation slices: one compact seed with bounded reconstruction cost, one lossy seed that must remain non-exact, one generator failure routed to fallback, one residual displaced into human review, and one promotion blocked because the verifier is not independent. That later comparison would test compact-system behavior, not just receipt and residual accounting.
-
-The folded generate/verify/repair slice adds the compression receipt. The smallest honest GVR fixture should include one candidate receipt, one verified-exact or repaired-exact receipt, one failed verification, one literal fallback or negative-rate case, and one consumer-policy rejection. That fixture is still not a codec benchmark; its evidential scope is the public record's distinction among exactness, declared loss, repair, fallback, quarantine, and consumer scope.
-
-The folded semantic-representation slice adds the semantic node record. The repository fixture validates provenance, hierarchy, relation references, tokenization contract, grounding state, versioning, supersession, residual uncertainty, permitted uses, evaluation references, support-state effect, and non-claims. It does not show that a semantic graph works. The first stronger test should use a small grounded domain with source passages, artifact nodes, semantic nodes, and claim records, then deliberately update the hierarchy, remove or supersede a source, and check whether downstream consumers notice the change.
+The first stronger reference slice needs real standard and learned codec candidates, a provenance-bound semantic representation, complete final serialization, an independently implemented decoder and verifier, executable repair and literal fallback, several real downstream consumers, deliberate source and hierarchy changes, live residual create/handoff/reopen/discharge events, and complete resource and human-work accounting. Until then, the core stays at `argument`.
 
 ## Beyond the State of the Art
 
-Compact generative systems earn their place as a burden-accounting layer for compression and generation. It lets the stack use compact seeds, generators, procedures, learned representations, and local cores only when their reconstruction, decision, verification, fallback, governance, and residual costs are explicit.
+A mature compact-representation campaign uses heterogeneous natural text, code, structured data, model artifacts, mutable project state, images or other modalities, exact and semantic consumers, source and hierarchy changes, rights constraints, adversarial collisions, corruption, and delayed outcomes. Baselines include literal storage, standard lossless and lossy codecs, quantization, distillation, low-rank methods, retrieval, RAPTOR-like summary trees, learned generators, semantic graphs, human-maintained abstractions, and conservative full-artifact fallback. Every arm receives matched source data, consumer tasks, resources, authority, evaluators, retries, and time.
 
-Compactness becomes useful only when the generator, verifier, fallback, governance burden, reconstruction burden, decision burden, and residual burden are all counted. A mature compact record would bind the target, seed, rule system, memory state, generator, correction mechanism, verifier, residual channel, fallback path, authority boundary, use envelope, burden ledger, cost accounting, promotion state, and retirement condition before the stack trusts a compact core. It would make compact generation a governed accounting surface rather than a slogan for smaller artifacts.
+The joint gate measures exact or scoped fidelity, downstream useful success, selective coverage, final serialized rate, end-to-end latency, search, decode, verification, repair, metadata, interface, compute, memory, bandwidth, energy, money, human and governance work, fallback frequency and success, source and rights preservation, recovery, and residual burden. A smaller package cannot compensate for a material utility, provenance, rights, fallback, or recovery failure. A safe-looking system cannot win by refusing all compressed uses or moving work to humans.
 
-The mature layer would report reconstruction burden, decision burden, governance burden, verification status, verifier independence, fallback status, residual-burden status, downstream utility, latency, cost, residual volume, and hidden-complexity risk as separate evidence fields. Routing would use compact-core readiness and use envelopes; VCM and semantic pages would label loss, taint, and omissions; procedural memory would turn repeated generated behavior into verified tools; generate-verify-repair would record exact remainders; readiness gates would decide promotion or quarantine. Repeated successes could become tool candidates, but failed generations would become residual pressure, lossy seeds would stay scoped to safe uses, non-independent verifiers would block promotion, and utility-damaging cores would retire or route to fallback.
+Prospectively fixed ablations remove bounded search, independent verification, repair, fallback, semantic provenance, consumer policy, final serialization, residual ownership, and descendant invalidation. Each claimed mechanism needs a causal signature under matched resources. Independent codec, verifier, evaluator, and consumer implementations must reproduce the conclusion, then transfer it across corpora, modalities, models, tasks, organizations, hardware, rights regimes, threats, updates, and time.
 
-The compact-generation boundary is still a design claim. The compactness claim stays at `argument` until exactness records, verifier outputs, reconstruction tests, residual-burden accounts, lossy-ablation cases, and fallback traces show which information compact generation preserved and which obligations it left behind.
-
-At the mature end state, the compact-generative-systems layer becomes a compression control plane. Each task asks for the cheapest lawful representation: full source, compact seed, generated reconstruction, repaired exact receipt, lossy preview, semantic page, specialist core, or rejection. The answer is based on total burden, verifier quality, residual honesty, consumer policy, replay need, downstream risk, and support-state limits, not on ratio alone. Until public codec, utility, rate, and replay evidence exists, that endpoint remains target architecture.
-
-At the semantic layer, the mature endpoint is representation leasing. Graph nodes, tree paths, and semantic tokens become task-scoped meaning objects whose provenance, grounding, adequacy, interoperability, supersession, permitted use, consumer policy, and residual uncertainty travel with every use. A node can be useful for routing while forbidden for proof, citation, audit, or claim support. Stale nodes become migration debt, not invisible graph drift. Quarantined nodes remain available for debugging but not operational use. Until grounded-node records, hierarchy-update histories, supersession trails, retrieval/grounding benchmarks, and semantic-lease tests exist, the semantic-leasing endpoint remains a design target.
+Raw public-safe attempts, longer-than-literal outputs, failed verification, fallback, null utility, hidden-cost discoveries, source and hierarchy failures, human work, and residuals remain visible. If a standard codec or simpler representation dominates the full control plane, if an ablation has no effect, or if reproduction and transfer fail, the corresponding claim is narrowed or refuted. This mature campaign remains a target architecture, not a current result; the toy exact reconstructions and finite record proofs do not establish useful, general, semantic, efficient, or state-of-the-art compression.
 
 ## Codex test plan
 
@@ -479,44 +495,17 @@ The implemented rows validate fixture/schema consistency and finite-record Lean 
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:compression.cgs.operational_invariant` | `AsiStackProofs.CompactGenerativeSystems` | A compact representation with unresolved obligations carries residual records. | implemented |
-| `lean:compression.cgs.failure_blocks_promotion` | `AsiStackProofs.CompactGenerativeSystems` | A lossy representation cannot be marked exact without verification evidence. | implemented |
-| `lean:compression.cgs.admission_route` | `AsiStackProofs.CompactGenerativeSystems` | A modeled compact-generation admission review routes missing source artifacts, compression boundaries, residual records, lossy exactness overclaims, reconstruction evidence, fallback paths, verifier-cost records, semantic provenance, hierarchy-migration records, evidence-transition gaps, and non-claim-boundary gaps to explicit outcomes. | implemented |
-| `lean:compression.cgs.gvr_fixture_bridge` | `AsiStackProofs.CompactGenerativeSystems` | The compact GVR synthetic slice has a finite Lean fixture bridge matching the literal baseline, selected compact receipt, lossy exactness control, negative-rate/no-fallback control, bounded-search-overrun control, and selected-versus-baseline byte relation. | implemented |
-| `lean:compression.cgs.residual_storage_replay_bridge` | `AsiStackProofs.CompactGenerativeSystems` | The residual-ledger storage/replay fixture has a finite Lean summary bridge matching append-only digest-chain construction, sequence continuity, owner handoff, discharge review, workload-context retention, invalid-control rejection, no support-state effect, non-claim boundaries, and live/deployed-ledger non-claims. | implemented |
-| `lean:compression.gvr.operational_invariant` | `AsiStackProofs.GenerateVerifyRepair` | An exact reconstruction claim requires generator output plus repair residual to equal the target. | implemented |
-| `lean:compression.gvr.failure_blocks_promotion` | `AsiStackProofs.GenerateVerifyRepair` | A failed verification blocks exactness promotion. | implemented |
-| `lean:representation.semantic_tree.operational_invariant` | `AsiStackProofs.SemanticRepresentation` | A semantic node marked grounded has at least one provenance link. | implemented |
-| `lean:representation.semantic_tree.failure_blocks_promotion` | `AsiStackProofs.SemanticRepresentation` | A hierarchy update preserves prior node references or records supersession. | implemented |
+| `lean:compression.cgs.operational_invariant` | `AsiStackProofs.CompactGenerationRefinement` | Reachable residualization blocks unresolved obligations lacking record, owner, burden, provenance, cost, or fallback receipt. | implemented |
+| `lean:compression.cgs.failure_blocks_promotion` | `AsiStackProofs.CompactGenerationRefinement` | Lossy exactness is blocked and failed or mismatched verification requires executable preserved-source fallback. | implemented |
+| `lean:compression.cgs.admission_route` | `AsiStackProofs.CompactGenerationRefinement` | Nine reachable stages and 60 routes bind representation identities from source through closure. | implemented |
+| `lean:compression.cgs.gvr_fixture_bridge` | `AsiStackProofs.CompactGenerationRefinement` | Independent digest-bound GVR conformance plus reachable verification/fallback semantics replaces copied fixture facts. | implemented |
+| `lean:compression.cgs.residual_storage_replay_bridge` | `AsiStackProofs.CompactGenerationRefinement` | Independent digest-bound residual result conformance plus result-substitution and broken-chain closure guards replaces copied summaries. | implemented |
+| `lean:compression.gvr.operational_invariant` | `AsiStackProofs.CompactGenerationRefinement` | Observed reconstruction, target identity, verifier identity, and executable fallback are reachable lifecycle obligations. | implemented |
+| `lean:compression.gvr.failure_blocks_promotion` | `AsiStackProofs.CompactGenerationRefinement` | Failed verification activates preserved-source fallback or blocks progress without promotion authority. | implemented |
+| `lean:representation.semantic_tree.operational_invariant` | `AsiStackProofs.CompactGenerationRefinement` | Semantic use requires provenance identity, content, and a grounding evaluator before migration. | implemented |
+| `lean:representation.semantic_tree.failure_blocks_promotion` | `AsiStackProofs.CompactGenerationRefinement` | Hierarchy changes require migration records, reference continuity, and consumer mapping. | implemented |
 
-These Lean hooks are implemented as finite-record predicates plus negative-case, route, and fixture-bridge theorems. They prove only bounded record gates: unresolved obligations require residual records, unresolved obligations without residual records reject residual honesty, lossy unverified representations cannot be exact, lossy unverified exactness claims reject the exactness predicate, a modeled compact-admission review routes missing source artifacts, compression boundaries, residual records, lossy exactness overclaims, reconstruction evidence, fallback paths, verifier-cost records, semantic provenance, hierarchy-migration records, evidence-transition records, and non-claim boundaries to explicit outcomes, the compact GVR synthetic fixture has the selected receipt eligible, three negative controls ineligible, and selected byte count below the literal baseline, the residual storage/replay fixture preserves a bounded digest-chain and owner/discharge/workload boundary, exact reconstruction claims require generator output plus repair residual to equal the target, mismatched exact reconstruction rejects exactness validity, failed verification blocks exactness promotion, failed verification with promotion rejects the failure gate, grounded semantic nodes need provenance, grounded nodes without provenance reject grounding validity, hierarchy updates preserve references or record supersession, and hierarchy updates with neither reject update validity. The validated JSON fixtures and Lean predicates do not prove that compact representations preserve utility, reduce cost on real corpora, reconstruct real artifacts, improve compression rate, ground semantic graphs, preserve semantic utility, improve model quality, detect live residuals, or block promotion under all executable conditions.
-
-The residual conservation bridge adds one more finite fixture theorem:
-`residual_honesty_conservation_fixture_bridge` checks that the modeled fixture
-records accepted residuals, owns deferred residuals, discharges closed
-residuals with receipts, rejects hidden residuals, rejects erased residuals,
-rejects unowned moved residuals, preserves support-state effect `none`, and
-keeps non-claim boundaries. It does not establish that all residuals are observable,
-does not establish safety, does not validate a deployed residual ledger, and does
-not promote the chapter core claim.
-
-The residual ledger trace bridge adds a second bounded residual theorem:
-`residual_ledger_trace_surface_bridge` checks that the modeled trace summary
-has read the Resource flagship artifact, recorded Resource sublane decisions,
-kept Resource deferrals and displaced costs visible, kept Compact GVR residuals
-and negative controls visible, kept Readiness escrow and lost-residual rejection
-visible, preserved support-state effect `none`, preserved non-claim boundaries,
-and avoided a deployed-ledger claim. It is a finite surface-alignment theorem,
-not proof of deployed residual-ledger behavior.
-
-The residual ledger storage/replay bridge adds a bounded replay theorem:
-`residual_ledger_storage_replay_bridge` checks that the modeled replay summary
-computed an append-only digest chain, checked sequence continuity, preserved
-owner handoff, required discharge review, preserved workload context, rejected
-invalid controls, preserved support-state effect `none`, preserved non-claim
-boundaries, and avoided live-storage or deployed-ledger claims. It is a finite
-fixture-alignment theorem, not proof of live residual detection or deployed
-residual-ledger storage.
+The nine manifest targets now resolve through 23 live family declarations: six retained legacy countermodels and 17 declarations in `AsiStackProofs.CompactGenerationRefinement`. Twenty-six baseline declarations were retired because they merely projected an assumed rule, normalized one authored record, copied five GVR result facts, or unfolded three all-true summaries. The replacement has nine reachable stages and 60 routes; its independent consumer reaches every route, rejects 51/51 non-accepting mutations, recompiles Lean, and SHA-256 binds the four existing result families. The formal envelope does not prove real codec correctness, verifier independence, corpus compression, semantic grounding, downstream utility, deployed fallback, live residual observability, total-burden improvement, reproduction, or transfer. It does not establish that all residuals are observable. `utilityMeasured` is an authored gate, not a measured result.
 
 ## Source crosswalk
 

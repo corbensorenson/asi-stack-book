@@ -32,11 +32,11 @@ ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 LEDGER = ROOT / "docs" / "contribution_novelty_ledger.md"
 VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
-LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "VerificationBandwidth.lean"
+LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "VerificationBandwidthRefinement.lean"
 
 COMMAND = "python3 scripts/validate_verification_bandwidth_capacity_model.py"
 CODEX_TEST_NAME = "Verification bandwidth capacity model"
-LEAN_THEOREM = "verification_bandwidth_capacity_model_fixture_bridge"
+LEAN_THEOREM = "reference_route_hands_off_only_to_evidence_gate"
 
 REQUIRED_NON_CLAIMS = [
     "does not prove a model verification bandwidth law",
@@ -322,7 +322,7 @@ def build_expected_result(valid_count: int, invalid_count: int) -> dict[str, Any
             "support_state_promotion_rejected": True,
         },
         "lean_fixture_alignment": {
-            "module": "AsiStackProofs.VerificationBandwidth",
+            "module": "AsiStackProofs.VerificationBandwidthRefinement",
             "theorem_refs": [LEAN_THEOREM],
             "expected": {
                 "long_context_capacity_gap_recorded": True,
@@ -368,11 +368,11 @@ def validate_lean(errors: list[str]) -> None:
     if not re.search(rf"\btheorem\s+{re.escape(LEAN_THEOREM)}\b", text):
         errors.append(f"{rel(LEAN_FILE)} missing theorem {LEAN_THEOREM}.")
     for field in (
-        "longContextCapacityGapRecorded",
-        "decompositionTracePresent",
-        "negativeControlsRejected",
-        "supportStateEffectNone",
-        "nonClaimBoundary",
+        "DispositionCount",
+        "OpenDispositionCount",
+        "obligationCount",
+        "unattempted",
+        "residualsRecorded",
     ):
         if field not in text:
             errors.append(f"{rel(LEAN_FILE)} missing capacity-model field {field}.")

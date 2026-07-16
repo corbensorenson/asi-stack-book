@@ -3,20 +3,24 @@ title: "Governed Deliberation and Test-Time Scaling"
 chapter_id: "governed-deliberation-and-test-time-scaling"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
-draft_maturity: "v0.2 depth-leveled chapter"
-last_updated: "2026-07-13"
+draft_maturity: "v0.3 claim-proof program"
+last_updated: "2026-07-15"
 primary_sources:
   - "verification_bandwidth"
   - "ext_tree_of_thoughts_2023"
   - "ext_test_time_compute_scaling_2024"
   - "ext_deepseek_r1_2025"
   - "ext_s_grpo_2025"
+  - "ext_universal_transformer_2019"
+  - "ext_dynamic_compute_recurrent_transformers_2026"
+  - "ext_faithfulness_information_flow_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "The frozen local real-model comparison produced 0/60 correct in every arm; it did not supply useful candidates or an estimable initially-correct corruption rate."
-  - "No independently implemented evaluator, ambiguous natural workload, beneficial test-time-compute result, verifier correctness, efficient inference, safety, trace faithfulness, or model-quality result exists."
-  - "The cited systems are source-setting comparators with their own models, tasks, prompts, evaluators, and budgets; they are not reproduced implementation evidence."
+  - "The exact current evidence is ten synthetic admission cases with eleven mutations and fifteen preserved harms; one 300-example frozen setup; one deterministic three-seed result where adaptive stopping reached 179/180 in 236 operations, fixed search 154/180 in 540 and corrupted fifteen initially correct answers, direct generation reached 130/180, and fallback never activated; one later actual-model five-arm result with 0/60 correct in every arm and no initially correct cases; two no-change decisions; two retained general countermodels; and an eleven-declaration, eight-stage, 59-route request-to-closure refinement whose independent consumer rejects 51/51 non-accepting mutations and digest-binds all three evidence families. Eight flat route consequences are retired."
+  - "A full attempt still requires a deliberately ambiguous natural held-out workload with meaningful direct, revision, search, fallback, abstention, and human-review opportunities; actual current-model candidates; initially correct and incorrect strata; independent outcome and trace-faithfulness evaluators; delayed high-risk outcomes; and complete resource, human, governance, and residual accounting."
+  - "The causal campaign must compare direct, bounded revision, fixed, adaptive, verifier-disabled, overcompute, self-consistency, process-reward, early-exit, human, abstention, and governed arms under matched information, models, tools, resources, evaluators, retries, and time while preserving all fifteen harms."
+  - "Useful test-time scaling, faithful reasoning, verifier adequacy, safety, efficiency, generality, or state-of-the-art claims remain blocked until independent model-runner, verifier, evaluator, faithfulness, cost, and handoff implementations reproduce results and transfer spans heterogeneous models, prompts, tasks, domains, languages, tools, organizations, rights regimes, attacks, updates, and time."
 ---
 
 ## Chapter status
@@ -26,12 +30,13 @@ open_evidence_gaps:
 | Chapter ID | `governed-deliberation-and-test-time-scaling` |
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
-| Last updated | 2026-07-10 |
-| Primary source records | `verification_bandwidth`, `ext_tree_of_thoughts_2023`, `ext_test_time_compute_scaling_2024`, `ext_deepseek_r1_2025`, `ext_s_grpo_2025` |
+| Manuscript maturity | v0.3 claim-proof program |
+| Last updated | 2026-07-15 |
+| Primary source records | `verification_bandwidth`, `ext_tree_of_thoughts_2023`, `ext_test_time_compute_scaling_2024`, `ext_deepseek_r1_2025`, `ext_s_grpo_2025`, `ext_universal_transformer_2019`, `ext_dynamic_compute_recurrent_transformers_2026`, `ext_faithfulness_information_flow_2026` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | Primary test-time search, compute-allocation, reasoning-RL, and early-exit comparators are source-noted. No source system has been reproduced. |
-| Test state | Post-v2 and post-v2.1 comparisons preserve a bounded synthetic benefit, fifteen known harms, and a real-model 0/60 null; the ten-route formal bridge is implemented. No beneficial real-model or independent-evaluator result exists. |
+| Source loading state | All eight assigned sources have exact bounded mappings: the local Verification Bandwidth raw cache is passage-reviewed; Tree of Thoughts, test-time compute, R1, S-GRPO, and faithfulness records are passage-reviewed public comparators; Universal Transformer and Dynamic Compute are metadata-first source-note comparators. No source system has been reproduced. |
+| Test state | Post-v2 and post-v2.1 comparisons preserve a bounded synthetic benefit, fifteen known harms, and an actual-model 0/60 null. The replacement proof family has eight reachable stages, 59 routes, eleven refinement declarations, two retained countermodels, eight retired flat consequences, and an independent consumer rejecting 51/51 non-accepting mutations. No beneficial actual-model or independent-evaluator result exists. |
 
 ## Drafting guardrail
 
@@ -124,7 +129,13 @@ candidates, but its own score cannot settle their truth or authority.
 
 ## Core Claim
 
-[governed-deliberation-and-test-time-scaling.core, label: Design rationale, support: argument] A governed stack treats test-time deliberation as a bounded, risk-tiered inference campaign: it records the request, search or revision mode, think budget, verifier scope and independence, stop condition, candidate and cost history, unresolved constraints, residual owner, and downstream handoff; additional inference may produce a candidate for planning but cannot by itself establish correctness, safety, capability, or authority to execute.
+[governed-deliberation-and-test-time-scaling.core, label: Design rationale, support: argument] Governed deliberation is a consumer-, task-, risk-, model-, evaluator-, resource-, and time-specific inference lease: before outcomes, it chooses among direct generation, bounded revision, candidate search, or abstention; binds exact budgets, candidate/history custody, verifier scope and dependence, stop and escalation rules, initially-correct corruption and initially-incorrect repair metrics, downstream consumer, expiry, and residual owner; and admits only a bounded candidate to planning when matched natural and adversarial evidence shows useful gain after all branches, failures, verification, latency, compute, human, and governance costs. A trace, self-score, process reward, benchmark gain, or extra compute never establishes correctness, safety, capability, execution authority, or support movement by itself.
+
+The claim remains at `argument`. The governed-deliberation layer owns the request-specific lease for extra inference, candidate/history custody, stopping, and bounded planning handoff. It does not own fast-route admission, context adequacy, route qualification, verifier truth, resource authority, planning correctness, execution, claim support, readiness, or release.
+
+### Claim-source mapping status
+
+All eight assigned sources now have exact bounded mappings. Verification Bandwidth provides passage-reviewed local conceptual lineage; Tree of Thoughts, test-time compute scaling, DeepSeek-R1, S-GRPO, and Faithfulness as Information Flow provide passage-reviewed external comparators; Universal Transformer and Dynamic Compute provide metadata-first recurrence and halting comparators. None supplies a reproduced local reasoning, verifier, stopping, trace-faithfulness, safety, efficiency, or transfer result.
 
 ## Mechanism
 
@@ -143,6 +154,27 @@ candidates, but its own score cannot settle their truth or authority.
 - Hand a bounded candidate to Planning only after its stated evidence and
   authority constraints are visible. Planning, Runtime Adapters, and Readiness
   Gates retain their own refusal and approval powers.
+
+The complete governed lifecycle has eighteen stages:
+
+1. freeze consumer, use, workload, risks, models, prompts, evaluators, horizon, metrics, and support ceiling;
+2. register direct, revision, fixed, adaptive, verifier-disabled, overcompute, abstention, and human modes by immutable policy;
+3. bind time, token, branch, candidate, verifier, tool, compute, memory, money, human, governance, and protected-review budgets;
+4. separate generation, trace, candidate, selection, verification, planning, and execution authority;
+5. retain stable candidate identities, order, seeds, parentage, tools, context, model state, and every failure or abstention;
+6. separate initially-correct corruption, initially-incorrect repair, unchanged cases, and non-estimable cells;
+7. declare verifier obligations, view, scope, dependence, calibration, disagreement, abstention, and decision errors;
+8. test trace sufficiency, completeness, and necessity separately from candidate quality;
+9. select a mode prospectively without hidden labels, oracle routing, or post-outcome tuning;
+10. stop on verified success, diminished expected value, exhaustion, unresolved high-risk constraints, incapacity, disagreement, or abstention;
+11. route high-risk unverified work to review and exhausted work to residual escrow;
+12. measure useful correctness, unsafe handoff, selective risk, calibration, abstention, latency, cost, operator burden, and residuals;
+13. charge every branch, revision, verifier, tool, retry, escalation, human review, displaced task, and opportunity cost;
+14. compare all arms under matched information, resources, evaluators, retries, and time;
+15. preserve all fifteen known extra-compute harms while adding deliberately ambiguous cases;
+16. intervene on selection, budget, history, verifier independence, stopping, faithfulness, residuals, and authority separation;
+17. issue only consumer-scoped evidence recommendations through the independent claim and readiness owners; and
+18. monitor calibration, corruption, drift, evaluator capture, cost, incidents, descendants, expiry, rollback, and residual reopening.
 
 ```{mermaid}
 flowchart LR
@@ -214,17 +246,20 @@ answer"; one aggregate accuracy number loses that causal fact.
 
 ## Interfaces
 
-- **Fast Generation Architectures** owns low-latency generation modes; this
-  chapter owns extra test-time inference, search, revisions, selection, and
-  stopping discipline.
-- **Verification Bandwidth and Context Adequacy** owns whether the relevant
-  constraints fit the verifier's effective workspace.
-- **Resource Economics and Token Budgets** owns resource accounting,
-  displaced work, and protected review capacity.
-- **Planning as a Control Layer** receives a bounded candidate or abstention
-  record, never a hidden reasoning trace as implicit permission.
-- **Evidence States, Artifact Graphs, and Runtime Adapters** own claim effects,
-  durable receipts, and execution authority after deliberation ends.
+| Boundary owner | Deliberation handoff |
+|---|---|
+| Intent and Planning | Objective, consumer, permitted use, risk, constraints, and alternatives in; no deliberation or execution authority. |
+| Fast Generation | Direct and low-latency candidates; Deliberation owns whether and how extra inference is leased. |
+| Virtual Context | Exact visible packet, omissions, sources, trace privacy, expiry, and invalidation. |
+| Routing and Readiness | Qualified models, verifiers, tools, humans, capacity, and abstention; no outcome selection. |
+| Verification Bandwidth | Obligation-to-capacity feasibility plus unresolved constraints. |
+| Proof-Carrying Claims and evaluators | Bounded verdict, dependence, calibration, disagreement, ignorance, faithfulness, and cost; no action authority. |
+| Resource Economics | Reserved and realized time, tokens, branches, candidates, tools, compute, memory, money, review, governance, displacement, and opportunity cost. |
+| Runtime Adapters | Enforcement of mode, permissions, budgets, stopping, trace boundaries, and effect non-authority. |
+| Artifact Graphs | Candidate parentage, traces, failures, abstentions, evaluator receipts, costs, stops, handoffs, and residual lineage. |
+| Planning | A bounded candidate or abstention receipt only; it independently decides whether to decompose further. |
+| Claims, Evidence, Benchmarks, and Readiness | Comparison, transition, qualification, expiry, downgrade, and no-change decisions. |
+| Humans, affected parties, and incidents | Escalation, appeal, disclosure, stop, rollback, residual, and requalification controls. |
 
 The division is intentionally practical. A latency-sensitive service can choose
 Fast Generation without pretending it has reasoned deeply. A deliberation lane
@@ -233,18 +268,35 @@ refuse an overlarge checking task, Resource Economics can charge the work, and
 Planning can accept only the bounded candidate plus its limits. Each handoff
 keeps extra inference visible as work that still needs governance.
 
+The contract is also asymmetric. Deliberation may request context, verifier
+capacity, protected review, or a planning handoff, but every provider returns a
+scoped record with independent refusal and expiry conditions. No provider
+inherits the deliberation score, and deliberation cannot overwrite a provider's
+evidence or authority decision. Candidate identities, budget receipts, verifier
+dependencies, stop reasons, residual owners, and planning acknowledgements stay
+linked so a correction can invalidate the exact consumer path without treating
+every neighboring subsystem as disproved.
+
 ## Invariants
 
-- Extra tokens, branches, revisions, a reasoning trace, or a self-score are
-  not proof of correctness, safety, capability, or authority.
-- Every deliberation request declares a risk tier, mode, budget, verifier
-  scope, stop condition, and residual owner before a result reaches planning.
-- A high-risk execution request without an independent verifier routes to
-  review, not direct execution.
-- An exhausted budget records a residual or abstention; it does not silently
-  widen the budget or convert the best candidate into an accepted answer.
-- Candidate selection and verifier evidence remain distinguishable from the
-  downstream authority, readiness, and action decision.
+1. Every claim binds an exact consumer, use, workload, risk, model/prompt, mode, evaluator, resource envelope, metric, and time window.
+2. Modes, budgets, verifier rules, stopping, workload, statistics, and support ceiling are frozen before results.
+3. Direct, first, intermediate, rejected, selected, final, abstained, malformed, timed-out, and cancelled candidates retain identities and denominators.
+4. Initially-correct corruption and initially-incorrect repair remain separate; absent initially correct cases make corruption reduction non-estimable.
+5. Extra tokens, branches, traces, self-scores, process rewards, and benchmarks are neither correctness nor authority by themselves.
+6. Generator, selector, verifier, evaluator, planner, and executor remain distinct; dependence is declared and tested.
+7. Verifier obligations, view, capacity, scope, calibration, disagreement, abstention, and error risk remain visible.
+8. Trace plausibility, candidate quality, causal faithfulness, monitorability, and authority remain separate.
+9. Every candidate, verifier, tool, retry, escalation, human, latency, resource, governance, displaced-work, and opportunity cost is charged.
+10. High-risk work without independent-enough verification routes to review or abstention.
+11. Exhaustion, diminished value, incapacity, unresolved constraints, or disagreement stops and preserves a residual without budget widening.
+12. Matched arms receive identical information, resources, evaluators, tools, retries, and time except for the intervention.
+13. All fifteen known extra-compute harms remain regression cases.
+14. Unsafe handoff, false decisions, missed help, calibration, coverage, latency, cost, human burden, and residuals are joint gates.
+15. A planning handoff carries candidate and evidence, never hidden trace content or implicit permission.
+16. Transfer across model, prompt, task, domain, language, tool, evaluator, organization, risk, or time requires a test.
+17. Qualification expires after material change and downgrades on contrary evidence.
+18. No fixture, theorem, synthetic task, oracle, deterministic verifier, real-model trace, or validator alone promotes the core.
 
 Together these rules preserve a useful middle state between instant answer and
 approved action. The system can retain promising drafts, say which constraint
@@ -254,18 +306,24 @@ permission merely by spending more inference before the handoff.
 
 ## Failure modes
 
-- **Verifier capture:** a generator's self-score or a correlated evaluator is
-  mistaken for independent support.
-- **Overthinking pressure:** a policy rewards token count, branch count, or
-  trace length while useful verification stalls.
-- **Premature stopping:** an early-exit rule removes necessary checking and
-  hides the unresolved constraint it left behind.
-- **Budget laundering:** an exhausted or overrun search quietly receives more
-  resources or reports only the winning candidate.
-- **Trace authority:** a persuasive chain of thought is treated as an approved
-  plan, evidence artifact, or execution permission.
-- **Latency exploitation:** many parallel deliberations outrun the available
-  reviewer or verifier capacity.
+1. Self-score or correlated-verifier laundering converts shared failure into purported independence.
+2. Overthinking increases tokens, branches, candidates, or elapsed time while useful verification stalls or regresses.
+3. Revision, search, majority pressure, or verifier error corrupts initially correct answers and hides the damage in final accuracy.
+4. Early exit omits checks while late exit spends after expected value collapses.
+5. Budget laundering widens time, tokens, branches, tools, retries, or review after outcomes.
+6. Winner-only reporting drops rejected, malformed, timed-out, cancelled, abstained, disputed, or expensive attempts.
+7. A persuasive trace becomes implied truth, planning evidence, monitorability, or execution authority.
+8. Plausibility substitutes for faithfulness even when information bypasses the trace or the trace is causally unnecessary.
+9. A weak, miscalibrated, overloaded, gameable, or mismatched verifier selects polished errors or rejects useful answers.
+10. Adaptive selection peeks at labels, tunes post hoc, or uses a deployment-inaccessible oracle.
+11. Parallel deliberation outruns verifier, reviewer, memory, tool, or downstream capacity and exports tail cost.
+12. Abstention is omitted or punished, pressuring a polished unsafe candidate.
+13. A non-ambiguous workload makes routing, stopping, fallback, corruption, or abstention unidentifiable.
+14. Process reward or benchmark gain fails on natural, rights-sensitive, or adversarial tasks.
+15. High-risk or irreversible work bypasses review because extra compute is mistaken for safety.
+16. Unresolved constraints, disagreement, and residuals vanish at planning handoff.
+17. Apparent benefit comes from extra information, tools, retries, evaluator access, compute, human work, or a weaker baseline.
+18. Stale qualification survives model, prompt, evaluator, policy, workload, threat, authority, rights, or environment change.
 
 These failures need different responses. A weak verifier calls for an
 independent check or a narrower claim; a stalled search calls for a stop record;
@@ -418,14 +476,16 @@ an optional appendix statistic.
 
 ## Minimum Viable Implementation
 
-The smallest honest implementation is now a versioned deliberation record. It
-contains a request and risk tier; a selected search, sampling, or revision mode;
-time, token, branch, and cost budget; verifier identity, version, scope, and
-independence status; candidate and rejection references; a stop reason;
-unresolved constraints; residual owner; and a downstream handoff state. A
-finite fixture can route a high-risk execution request without independent
-verification to review and route an exhausted budget to residual escrow with
-explicit non-claims.
+The current minimum is exact and narrow: ten digest-bound synthetic admission
+records with eleven rejecting mutations and fifteen preserved harm labels; two
+retained general countermodels; an eleven-declaration, eight-stage, 59-route
+request-to-closure refinement; an independent consumer rejecting 51/51
+non-accepting mutations; a frozen 300-example balanced four-family setup with
+five controls; one three-seed deterministic comparison recomputing 900 routing,
+540 deliberation, and 180 interference records; two accepted no-change
+dispositions; and one later 60-request, five-arm actual-model null with 240
+model calls, 360 candidate evaluations, 1,140 candidate operations, and no
+initially correct cases. Eight flat baseline consequences are retired.
 
 That fixture does not need a language model. Hand-authored candidates and a toy
 verifier are enough to test whether the record refuses authority laundering.
@@ -433,7 +493,7 @@ They are not enough to establish reasoning quality, calibrated difficulty,
 search efficiency, verifier accuracy, trace faithfulness, model quality, or
 safe agent behavior.
 
-The next campaign is fixed prospectively around direct, bounded revision,
+The full campaign must be fixed prospectively around direct, bounded revision,
 fixed-search, adaptive-search, and verifier-disabled arms. It uses actual model
 candidates on an ambiguous held-out workload where some first candidates are
 correct and some are incorrect; preserves the fifteen known extra-compute harms
@@ -473,35 +533,69 @@ and limits the cost of contested deliberation. Its promise is legibility under
 pressure, not unlimited thought, universal correctness, or a substitute for
 independent human and domain-specific review.
 
+The argument-exit campaign deliberately selects natural and adversarial tasks
+where direct answers, revision, search, fallback, abstention, and human review
+should differ. It uses actual current-model candidates, initially correct and
+incorrect strata, delayed high-risk outcomes, all fifteen known harms, and
+independent outcome and trace-faithfulness evaluators. Direct, fixed, adaptive,
+verifier-disabled, overcompute, self-consistency, process-reward, early-exit,
+human, abstention, and governed arms receive matched information, models,
+tools, resources, retries, evaluators, and time.
+
+Joint gates cover useful correctness, corruption, repair, unsafe handoff,
+false acceptance and refusal, missed help, coverage, calibration, abstention,
+faithfulness sufficiency/completeness/necessity, latency, branches, tokens,
+tools, compute, memory, money, human and governance work, displaced work,
+recovery, and residual custody. Causal ablations remove selection, budgets,
+history retention, verifier independence, stopping, faithfulness checks,
+authority separation, abstention, or residual ownership. Independent runner,
+verifier, evaluator, faithfulness, cost, and handoff implementations must
+reproduce and transfer results across models, prompts, tasks, domains,
+languages, tools, organizations, rights regimes, attacks, updates, and time.
+This is not a current result about useful test-time scaling, faithful reasoning,
+safety, generality, or state-of-the-art performance.
+
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| High-risk independent-verifier admission fixture | Block an execution handoff when a high-risk deliberation record lacks an independent verifier. | implemented in the ten-case digest-bound bridge; no model, verifier, or execution run |
-| Budget-exhaustion residual fixture | Route an exhausted declared budget to residual escrow rather than silent continuation. | implemented in Lean and JSON; no workload or cost measurement |
+| Governed Deliberation request-to-closure refinement | Bind request, scope, candidate custody, evaluator boundary, corruption/repair/faithfulness accounting, selection, stop, residual, bounded planning handoff, closure, support, and effects. | implemented: eight stages, all 59 routes, 51/51 rejecting mutations, residual escrow, bounded planning handoff, support/effect `none` |
+| Exact result-family refinement | Revalidate and digest-bind the admission, synthetic comparison, and later actual-model outcome artifacts without copying their conclusions into Lean. | implemented: ten admission cases; 900 routing, 540 deliberation, and 180 interference records; actual-model five-arm 0/60 null and `no_change`; no benefit or support inference |
 | Deliberation workload comparison | Compare direct, revision, and search modes with task quality, verifier cost, branches, latency, residuals, and negative controls. | planned; requires a public-safe workload and independent replay |
 | Trace-to-action consistency probe | Check that an action plan does not receive authority from an unverified trace. | planned; requires a public-safe planning/action fixture |
 
 ## Formalization hooks
 
-| Tag | Status | Scope |
-|---|---|---|
-| `lean:deliberation.complete_high_risk.reaches_planning` | implemented | A complete finite record reaches planning, not execution. |
-| `lean:deliberation.missing_budget.requires_review` | implemented | Missing budget declaration routes to review. |
-| `lean:deliberation.missing_search_mode.requires_review` | implemented | Missing search-mode declaration routes to review. |
-| `lean:deliberation.missing_verifier_scope.requires_review` | implemented | Missing verifier scope routes to review. |
-| `lean:deliberation.missing_candidate_history.requires_review` | implemented | Missing candidate history routes to review. |
-| `lean:deliberation.missing_stop_condition.requires_review` | implemented | Missing stop condition routes to review. |
-| `lean:deliberation.missing_residual_owner.requires_review` | implemented | Missing residual ownership routes to review. |
-| `lean:deliberation.trace_authority_laundering.requires_review` | implemented | A trace cannot act as execution authority. |
-| `lean:deliberation.budget_exhausted.escrows_residual` | implemented | Exhaustion stops and escrows the residual. |
-| `lean:deliberation.high_risk.missing_independent_verifier_blocks_execution` | implemented | Missing independent verification blocks a high-risk handoff. |
+| Tag | Lean module | Status | Scope |
+|---|---|---|---|
+| `lean:deliberation.complete_high_risk.reaches_planning` | `AsiStackProofs.DeliberationRefinement` | implemented | A complete seven-receipt lifecycle reaches a bounded planning handoff and closure without execution, support, or external-effect authority. |
+| `lean:deliberation.missing_budget.requires_review` | `AsiStackProofs.DeliberationRefinement` | implemented | Candidate generation requires a prospectively bound budget and budget identity. |
+| `lean:deliberation.missing_search_mode.requires_review` | `AsiStackProofs.DeliberationRefinement` | implemented | Candidate generation requires a registered deliberation mode policy. |
+| `lean:deliberation.missing_verifier_scope.requires_review` | `AsiStackProofs.DeliberationRefinement` | implemented | Evaluation requires explicit obligations, verifier identity, evidence view, dependence, calibration, abstention, and false-decision boundaries. |
+| `lean:deliberation.missing_candidate_history.requires_review` | `AsiStackProofs.DeliberationRefinement` | implemented | Candidate generation requires first-candidate capture, complete history, trace privacy, and the complete attempt denominator. |
+| `lean:deliberation.missing_stop_condition.requires_review` | `AsiStackProofs.DeliberationRefinement` | implemented | Candidate generation and handoff require prospectively bound stop rules and a stop receipt. |
+| `lean:deliberation.missing_residual_owner.requires_review` | `AsiStackProofs.DeliberationRefinement` | implemented | No verified candidate, exhausted budget, or unresolved dispute routes through residual escrow and closure. |
+| `lean:deliberation.trace_authority_laundering.requires_review` | `AsiStackProofs.DeliberationRefinement` | implemented | Raw scores, traces, and a planning handoff cannot grant support or execution authority. |
+| `lean:deliberation.budget_exhausted.escrows_residual` | `AsiStackProofs.DeliberationRefinement` | implemented | Budget or dispute exhaustion requires an owned residual before bounded planning handoff. |
+| `lean:deliberation.high_risk.missing_independent_verifier_blocks_execution` | `AsiStackProofs.DeliberationRefinement` | implemented | High-risk evaluation without an independent-enough review record is blocked before selection or planning handoff. |
 
-The owned module and ten-case bridge establish finite routing only. They do not
-prove evaluator independence or correctness, reasoning quality, trace
-faithfulness, test-time efficiency, safety, model quality, or ASI. The bridge
-preserves the fifteen known extra-compute harms as regression knowledge; it
-does not re-estimate them.
+The family now contains two retained general countermodels in
+`AsiStackProofs.Deliberation` and eleven request-to-closure declarations in
+`AsiStackProofs.DeliberationRefinement`; eight flat route consequences were
+physically retired. The independent consumer reaches all 59 routes, rejects
+51/51 non-accepting mutations, reruns the exact source validators, and binds
+the admission, synthetic comparison, actual-model result, and adjudicated
+outcome artifacts by SHA-256. The actual-model attempt remains exactly 0/60 in
+every arm with no initially correct cases, so corruption reduction is
+non-estimable and the disposition remains `no_change`/`no_core_promotion`.
+
+Compilation and route coverage establish only the authored finite lifecycle.
+Verifier independence, evaluator correctness, corruption, repair,
+faithfulness, costs, useful metrics, and residual fields are modeled gates,
+not measurements. Neither the trace nor the planning handoff grants execution,
+support, or external-effect authority. This finite model does not prove useful
+language-model reasoning, natural-workload utility, safety, deployment,
+reproduction, transfer, or a state-of-the-art result.
 
 ## Trace faithfulness is a separate gate
 

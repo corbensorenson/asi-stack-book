@@ -20,7 +20,7 @@ from run_governed_trace_invariants import (
 
 
 SCHEMA = ROOT / "schemas" / "governed_trace_invariants_result.schema.json"
-LEAN = ROOT / "lean" / "AsiStackProofs" / "GovernedRepositoryTrace.lean"
+LEAN = ROOT / "lean" / "AsiStackProofs" / "IntegratedReferenceTrace.lean"
 LEAN_ROOT = ROOT / "lean" / "AsiStackProofs.lean"
 DOC = ROOT / "docs" / "governed_trace_invariants.md"
 CHAPTER = ROOT / "chapters" / "integrated-reference-architecture.qmd"
@@ -28,15 +28,13 @@ OUTLINE = ROOT / "docs" / "book_outline.md"
 MANIFEST = ROOT / "book_structure.json"
 PROOF_TAG = "lean:reference_architecture.governed_trace.four_invariants"
 THEOREMS = {
-    "governed_fixture_authority_monotone",
-    "governed_fixture_revocation_before_effect",
-    "governed_fixture_evidence_integrity",
-    "governed_fixture_residual_conserved",
-    "governed_repository_trace_four_invariants",
-    "authority_widening_negative_rejected",
-    "effect_at_revocation_time_negative_rejected",
-    "unrecorded_promotion_negative_rejected",
-    "erased_open_residual_negative_rejected",
+    "accepted_step_authority_nonincreasing",
+    "accepted_step_joins_parent_and_state",
+    "accepted_trace_authority_nonincreasing",
+    "run_append",
+    "complete_cross_layer_trace_is_accepted",
+    "effect_at_revocation_tie_is_rejected",
+    "residual_erasure_is_rejected",
 }
 
 
@@ -112,8 +110,8 @@ def main() -> None:
     if tracked.get("support_state_effect") != "none" or tracked.get("non_claims") != NON_CLAIMS:
         errors.append("trace result must preserve exact no-promotion and non-claim boundaries")
 
-    require_fragments(LEAN, THEOREMS | {"finalOpen : Nat", "logicalTime : Nat", "revocationTime : Nat"}, errors)
-    require_fragments(LEAN_ROOT, {"import AsiStackProofs.GovernedRepositoryTrace"}, errors)
+    require_fragments(LEAN, THEOREMS | {"openResiduals : Nat", "logicalTime : Nat", "revokedAt : Option Nat"}, errors)
+    require_fragments(LEAN_ROOT, {"import AsiStackProofs.IntegratedReferenceTrace"}, errors)
     require_fragments(
         DOC,
         {

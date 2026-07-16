@@ -17,14 +17,6 @@ def SelectedRouteAdmissible (route : SpecialistRoute) : Prop :=
   route.outcome = RouteOutcome.selected ->
     route.authoritySatisfied = true ∧ route.readinessSatisfied = true
 
-theorem selected_specialist_satisfies_authority_and_readiness
-    {route : SpecialistRoute} :
-    SelectedRouteAdmissible route ->
-    route.outcome = RouteOutcome.selected ->
-      route.authoritySatisfied = true ∧ route.readinessSatisfied = true := by
-  intro admissible selected
-  exact admissible selected
-
 theorem selected_route_without_authority_or_readiness_rejected
     {route : SpecialistRoute} :
     route.outcome = RouteOutcome.selected ->
@@ -139,97 +131,5 @@ def completeRoutingDecisionReview : RoutingDecisionReview where
   selectedSpecialistIsLeastCapableAdequate := true
   rejectedCandidateEvidencePresent := true
   nonClaimBoundaryPresent := true
-
-theorem no_route_request_stays_no_route :
-    RoutingDecisionRouteFor
-        { completeRoutingDecisionReview with
-          routeRequested := false } =
-      RoutingDecisionRoute.noRouteRequested := by
-  simp [RoutingDecisionRouteFor]
-
-theorem missing_capability_request_rejects_route :
-    RoutingDecisionRouteFor
-        { completeRoutingDecisionReview with
-          capabilityRequestPresent := false } =
-      RoutingDecisionRoute.rejectMissingCapabilityRequest := by
-  simp [RoutingDecisionRouteFor, completeRoutingDecisionReview]
-
-theorem missing_specialist_registry_requests_registry :
-    RoutingDecisionRouteFor
-        { completeRoutingDecisionReview with
-          specialistRegistered := false } =
-      RoutingDecisionRoute.requestSpecialistRegistry := by
-  simp [RoutingDecisionRouteFor, completeRoutingDecisionReview]
-
-theorem authority_mismatch_blocks_route_selection :
-    RoutingDecisionRouteFor
-        { completeRoutingDecisionReview with
-          authoritySatisfied := false } =
-      RoutingDecisionRoute.blockAuthorityMismatch := by
-  simp [RoutingDecisionRouteFor, completeRoutingDecisionReview]
-
-theorem readiness_failure_with_fallback_routes_to_fallback :
-    RoutingDecisionRouteFor
-        { completeRoutingDecisionReview with
-          readinessSatisfied := false } =
-      RoutingDecisionRoute.routeToFallback := by
-  simp [RoutingDecisionRouteFor, completeRoutingDecisionReview]
-
-theorem readiness_failure_without_fallback_or_residual_owner_requests_owner :
-    RoutingDecisionRouteFor
-        { completeRoutingDecisionReview with
-          readinessSatisfied := false
-          fallbackAvailable := false
-          residualOwnerPresent := false } =
-      RoutingDecisionRoute.requestResidualOwner := by
-  simp [RoutingDecisionRouteFor, completeRoutingDecisionReview]
-
-theorem readiness_failure_without_fallback_residualizes_when_owner_present :
-    RoutingDecisionRouteFor
-        { completeRoutingDecisionReview with
-          readinessSatisfied := false
-          fallbackAvailable := false } =
-      RoutingDecisionRoute.residualizeNoFallback := by
-  simp [RoutingDecisionRouteFor, completeRoutingDecisionReview]
-
-theorem missing_fresh_lease_requests_lease :
-    RoutingDecisionRouteFor
-        { completeRoutingDecisionReview with
-          freshLeasePresent := false } =
-      RoutingDecisionRoute.requestFreshLease := by
-  simp [RoutingDecisionRouteFor, completeRoutingDecisionReview]
-
-theorem missing_cost_quality_record_requests_record :
-    RoutingDecisionRouteFor
-        { completeRoutingDecisionReview with
-          costQualityRecordPresent := false } =
-      RoutingDecisionRoute.requestCostQualityRecord := by
-  simp [RoutingDecisionRouteFor, completeRoutingDecisionReview]
-
-theorem overprivileged_selection_requests_least_capable_justification :
-    RoutingDecisionRouteFor
-        { completeRoutingDecisionReview with
-          selectedSpecialistIsLeastCapableAdequate := false } =
-      RoutingDecisionRoute.requestLeastCapableAdequateJustification := by
-  simp [RoutingDecisionRouteFor, completeRoutingDecisionReview]
-
-theorem missing_rejected_candidate_evidence_requests_evidence :
-    RoutingDecisionRouteFor
-        { completeRoutingDecisionReview with
-          rejectedCandidateEvidencePresent := false } =
-      RoutingDecisionRoute.requestRejectedCandidateEvidence := by
-  simp [RoutingDecisionRouteFor, completeRoutingDecisionReview]
-
-theorem route_without_nonclaim_boundary_preserves_boundary :
-    RoutingDecisionRouteFor
-        { completeRoutingDecisionReview with
-          nonClaimBoundaryPresent := false } =
-      RoutingDecisionRoute.preserveNonClaimBoundary := by
-  simp [RoutingDecisionRouteFor, completeRoutingDecisionReview]
-
-theorem complete_routing_decision_selects_specialist :
-    RoutingDecisionRouteFor completeRoutingDecisionReview =
-      RoutingDecisionRoute.selectSpecialist := by
-  simp [RoutingDecisionRouteFor, completeRoutingDecisionReview]
 
 end AsiStackProofs.Routing

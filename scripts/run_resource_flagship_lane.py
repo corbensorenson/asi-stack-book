@@ -356,13 +356,13 @@ def negative_controls_preserved(component_summary: dict[str, Any]) -> bool:
 def build_aggregate_lean_alignment(component_summary: dict[str, Any]) -> dict[str, Any]:
     core = component_summary.get("chapter_core_decision", {})
     return {
-        "proof_bridge_type": "aggregate Python/Lean flagship invariant",
-        "lean_module": "AsiStackProofs.ResourceEconomics",
-        "lean_fixture": "resourceFlagshipLaneAggregateFixture",
+        "proof_bridge_type": "aggregate Python/refinement lifecycle boundary",
+        "lean_module": "AsiStackProofs.ResourceEconomicsRefinement",
+        "lean_fixture": "completePacket",
         "lean_theorem_names": [
-            "resource_flagship_lane_aggregate_fixture_valid",
-            "resource_flagship_lane_aggregate_preserves_no_core_promotion",
-            "resource_flagship_lane_aggregate_carries_transition_accounting",
+            "missing_failure_retention_blocks_verification",
+            "raw_proxy_cannot_promote_executed_work",
+            "complete_resource_lifecycle_reaches_closed_without_support_or_effect_authority",
         ],
         "command_replay_count": len(COMMANDS),
         "tracked_artifact_count": len(TRACKED_ARTIFACTS),

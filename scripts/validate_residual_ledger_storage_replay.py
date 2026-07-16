@@ -32,7 +32,7 @@ NON_CORE_LEDGER = ROOT / "docs" / "non_core_evidence_ledger.md"
 V1_PROGRESS = ROOT / "docs" / "v1_progress_ledger.md"
 VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 BOOK_STRUCTURE = ROOT / "book_structure.json"
-LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "CompactGenerativeSystems.lean"
+LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "CompactGenerationRefinement.lean"
 TRANSITION = (
     ROOT
     / "evidence_transitions"
@@ -42,7 +42,7 @@ TRANSITION = (
 
 COMMAND = "python3 scripts/validate_residual_ledger_storage_replay.py"
 CODEX_TEST_NAME = "Residual ledger storage replay"
-LEAN_THEOREM = "residual_ledger_storage_replay_bridge"
+LEAN_THEOREM = "broken_residual_chain_blocks_closure"
 REQUIRED_NON_CLAIMS = [
     "does not prove deployed residual-ledger storage",
     "does not prove live residual detection",
@@ -239,9 +239,9 @@ def build_result(errors: list[str]) -> dict[str, Any]:
         "replay_summary": summary,
         "final_chain_digest": final_digest,
         "lean_fixture_alignment": {
-            "module": "AsiStackProofs.CompactGenerativeSystems",
+            "module": "AsiStackProofs.CompactGenerationRefinement",
             "theorem_refs": [LEAN_THEOREM],
-            "expected": summary,
+            "expected": {"chainIntegrity": True, "residualClosedOrEscrowed": True, "supportAssignmentAuthority": False},
         },
         "support_state_effect": "none",
         "chapter_core_support_effect": "none",
@@ -366,8 +366,8 @@ def validate_surfaces(errors: list[str]) -> None:
         rel(LEAN_FILE): (
             LEAN_FILE,
             [
-                "ResidualLedgerStorageReplaySummary",
-                "residualLedgerStorageReplaySummary",
+                "inductive Stage",
+                "chainIntegrity",
                 LEAN_THEOREM,
             ],
         ),
@@ -449,18 +449,7 @@ def validate_lean_shape(errors: list[str]) -> None:
     text = LEAN_FILE.read_text(encoding="utf-8")
     if not re.search(rf"theorem\s+{re.escape(LEAN_THEOREM)}\b", text):
         errors.append(f"{rel(LEAN_FILE)} missing theorem {LEAN_THEOREM}.")
-    for field in (
-        "appendOnlyDigestChainComputed",
-        "sequenceContinuityChecked",
-        "ownerHandoffPreserved",
-        "dischargeReviewRequired",
-        "workloadContextPreserved",
-        "invalidControlsRejected",
-        "supportStateEffectNone",
-        "nonClaimBoundary",
-        "liveStorageNotClaimed",
-        "deployedLedgerNotClaimed",
-    ):
+    for field in ("chainIntegrity", "residualClosedOrEscrowed", "residualLedgerDigest", "supportAssignmentCount"):
         if field not in text:
             errors.append(f"{rel(LEAN_FILE)} missing residual storage/replay field {field}.")
 

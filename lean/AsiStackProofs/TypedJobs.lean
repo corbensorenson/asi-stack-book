@@ -45,14 +45,6 @@ deriving DecidableEq, Repr
 def TransitionRecordValid (record : TransitionRecord) : Prop :=
   record.recordedAsValid = true -> ValidTransition record.transition
 
-theorem recorded_valid_job_transition_uses_declared_lifecycle_relation
-    {record : TransitionRecord} :
-    TransitionRecordValid record ->
-    record.recordedAsValid = true ->
-    ValidTransition record.transition := by
-  intro valid markedValid
-  exact valid markedValid
-
 structure ApprovalRecord where
   approvalRequired : Bool
   approvalRecorded : Bool
@@ -344,17 +336,6 @@ def TypedJobDeliveryProbeSummaryValid
     summary.supportStateEffectNone = true ∧
     summary.nonClaimBoundary = true
 
-theorem typed_job_delivery_probe_fixture_bridge
-    {summary : TypedJobDeliveryProbeSummary} :
-    TypedJobDeliveryProbeSummaryValid summary ->
-      summary.verifiedDeliveryTracePresent = true ∧
-        summary.deliveredNotEvidenceReadyTracePresent = true ∧
-        summary.negativeControlsRejected = true ∧
-        summary.supportStateEffectNone = true ∧
-        summary.nonClaimBoundary = true := by
-  intro valid
-  exact valid
-
 inductive DurableLifecycleOutcome where
   | acceptEvidenceReadyRetry
   | acceptBlockedLeaseExpiry
@@ -615,17 +596,5 @@ def TypedJobDurableLifecycleProbeSummaryValid
     summary.completionAndReplayBoundaries = true ∧
     summary.supportStateEffectNone = true ∧
     summary.nonClaimBoundary = true
-
-theorem typed_job_durable_lifecycle_probe_fixture_bridge
-    {summary : TypedJobDurableLifecycleProbeSummary} :
-    TypedJobDurableLifecycleProbeSummaryValid summary ->
-      summary.retryResumeTracePresent = true ∧
-        summary.expiredLeaseBlockTracePresent = true ∧
-        summary.negativeControlsRejected = true ∧
-        summary.completionAndReplayBoundaries = true ∧
-        summary.supportStateEffectNone = true ∧
-        summary.nonClaimBoundary = true := by
-  intro valid
-  exact valid
 
 end AsiStackProofs.TypedJobs

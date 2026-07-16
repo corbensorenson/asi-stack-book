@@ -4,7 +4,7 @@
   "roadmap": "docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md#p2--selective-external-anchoring-and-completeness-residuals",
   "status": "completed",
   "active_chapter_count": 54,
-  "source_count": 284,
+  "source_count": 302,
   "ten_chapter_audit": [
     {
       "chapter_id": "scalable-oversight-and-adversarial-ai-control",
@@ -55,11 +55,17 @@
         "ext_nist_confidential_computing_2026",
         "ext_nvidia_confidential_model_lifecycle_2026",
         "ext_provable_model_weight_release_2025",
+        "ext_ietf_rats_architecture_2023",
+        "ext_nist_key_management_2020",
+        "ext_nist_media_sanitization_2025",
         "ext_in_toto_2019"
       ],
       "prose_used_external_source_ids": [
+        "ext_ietf_rats_architecture_2023",
         "ext_in_toto_2019",
         "ext_nist_confidential_computing_2026",
+        "ext_nist_key_management_2020",
+        "ext_nist_media_sanitization_2025",
         "ext_nvidia_confidential_model_lifecycle_2026",
         "ext_provable_model_weight_release_2025",
         "ext_rand_model_weight_security_2024"
@@ -481,11 +487,14 @@
       "disposition": "narrow",
       "rationale": "Interpretability remains evidence with bounded steering implications; the 2026 steering candidates were not passage-reviewed deeply enough to become runtime-control claims.",
       "current_text_refs": [
-        "chapters/compact-generative-systems-and-residual-honesty.qmd:93",
+        "chapters/compact-generative-systems-and-residual-honesty.qmd:89",
         "chapters/evidence-states-and-claim-discipline.qmd:20",
         "chapters/evidence-states-and-claim-discipline.qmd:85",
         "chapters/evidence-states-and-claim-discipline.qmd:162",
-        "chapters/evidence-states-and-claim-discipline.qmd:266"
+        "chapters/evidence-states-and-claim-discipline.qmd:213",
+        "chapters/evidence-states-and-claim-discipline.qmd:275",
+        "chapters/evidence-states-and-claim-discipline.qmd:314",
+        "chapters/open-research-agenda-and-bibliography-plan.qmd:288"
       ],
       "active_queue": true,
       "support_state_effect": "none"
@@ -498,17 +507,17 @@
       "rationale": "Consolidation, replay, proceduralization, and forgetting budgets already have owners and source-noted boundaries.",
       "current_text_refs": [
         "chapters/asi-is-a-stack-not-a-model.qmd:97",
-        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:316",
-        "chapters/intent-to-execution-contracts.qmd:23",
-        "chapters/intent-to-execution-contracts.qmd:27",
-        "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd:220",
-        "chapters/procedural-memory-and-cognitive-loop-closure.qmd:307",
-        "chapters/resource-economics-and-token-budgets.qmd:84",
-        "chapters/routing-heads-and-specialist-cores.qmd:100",
-        "chapters/spinoza-verification-and-proof-carrying-claims.qmd:24",
-        "chapters/spinoza-verification-and-proof-carrying-claims.qmd:27",
-        "chapters/virtual-context-abi.qmd:23",
-        "chapters/virtual-context-abi.qmd:25"
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:103",
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:154",
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:602",
+        "chapters/intent-to-execution-contracts.qmd:24",
+        "chapters/intent-to-execution-contracts.qmd:29",
+        "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd:263",
+        "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd:316",
+        "chapters/procedural-memory-and-cognitive-loop-closure.qmd:465",
+        "chapters/resource-economics-and-token-budgets.qmd:86",
+        "chapters/resource-economics-and-token-budgets.qmd:120",
+        "chapters/routing-heads-and-specialist-cores.qmd:112"
       ],
       "active_queue": false,
       "support_state_effect": "none"
@@ -520,18 +529,18 @@
       "disposition": "already_covered",
       "rationale": "Calibration, abstention, uncertainty, and reject routes are already explicit across Claim Ledgers, Readiness, Routing, and Verification Bandwidth.",
       "current_text_refs": [
-        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:273",
-        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:99",
-        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:199",
-        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:213",
-        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:231",
-        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:263",
-        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:265",
-        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:287",
-        "chapters/data-engines-continual-learning-and-unlearning.qmd:205",
-        "chapters/data-engines-continual-learning-and-unlearning.qmd:473",
-        "chapters/data-engines-continual-learning-and-unlearning.qmd:637",
-        "chapters/evidence-states-and-claim-discipline.qmd:153"
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:327",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:26",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:87",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:98",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:167",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:173",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:178",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:247",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:274",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:303",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:352",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:359"
       ],
       "active_queue": false,
       "support_state_effect": "none"
@@ -553,8 +562,13 @@
       "disposition": "already_covered",
       "rationale": "Shared dependencies, coordinated failure, role separation, and randomized or independent observation routes are already owned.",
       "current_text_refs": [
-        "chapters/scalable-oversight-and-adversarial-ai-control.qmd:383",
-        "chapters/spinoza-verification-and-proof-carrying-claims.qmd:364"
+        "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd:318",
+        "chapters/routing-heads-and-specialist-cores.qmd:164",
+        "chapters/routing-heads-and-specialist-cores.qmd:367",
+        "chapters/routing-heads-and-specialist-cores.qmd:397",
+        "chapters/scalable-oversight-and-adversarial-ai-control.qmd:442",
+        "chapters/spinoza-verification-and-proof-carrying-claims.qmd:256",
+        "chapters/spinoza-verification-and-proof-carrying-claims.qmd:449"
       ],
       "active_queue": false,
       "support_state_effect": "none"
@@ -576,9 +590,9 @@
       "disposition": "already_covered",
       "rationale": "The local governance-tax lane and its zero-denominator boundary are explicit; a new citation is unnecessary until a matched natural-work outcome exists.",
       "current_text_refs": [
-        "chapters/resource-economics-and-token-budgets.qmd:300",
-        "chapters/resource-economics-and-token-budgets.qmd:445",
-        "chapters/scalable-oversight-and-adversarial-ai-control.qmd:411"
+        "chapters/resource-economics-and-token-budgets.qmd:332",
+        "chapters/resource-economics-and-token-budgets.qmd:481",
+        "chapters/scalable-oversight-and-adversarial-ai-control.qmd:470"
       ],
       "active_queue": false,
       "support_state_effect": "none"
@@ -593,10 +607,11 @@
         "chapters/asi-is-a-stack-not-a-model.qmd:80",
         "chapters/asi-is-a-stack-not-a-model.qmd:86",
         "chapters/asi-is-a-stack-not-a-model.qmd:280",
-        "chapters/integrated-reference-architecture.qmd:95",
-        "chapters/integrated-reference-architecture.qmd:491",
-        "chapters/recursive-self-improvement-boundaries.qmd:78",
-        "chapters/recursive-self-improvement-boundaries.qmd:301"
+        "chapters/integrated-reference-architecture.qmd:99",
+        "chapters/integrated-reference-architecture.qmd:618",
+        "chapters/recursive-self-improvement-boundaries.qmd:111",
+        "chapters/recursive-self-improvement-boundaries.qmd:172",
+        "chapters/recursive-self-improvement-boundaries.qmd:417"
       ],
       "active_queue": false,
       "support_state_effect": "none"
@@ -608,8 +623,8 @@
       "disposition": "watch",
       "rationale": "STPA is named as an open hazard-analysis route, but the candidate source was not accepted at passage depth in this pass.",
       "current_text_refs": [
-        "chapters/safety-cases-and-structured-assurance.qmd:16",
-        "chapters/safety-cases-and-structured-assurance.qmd:508"
+        "chapters/safety-cases-and-structured-assurance.qmd:445",
+        "chapters/safety-cases-and-structured-assurance.qmd:584"
       ],
       "active_queue": true,
       "support_state_effect": "none"
@@ -631,18 +646,18 @@
       "disposition": "already_covered",
       "rationale": "TEE quotes, roots, verifier chains, stale evidence, and custody boundaries are central to the current chapter.",
       "current_text_refs": [
-        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:231",
-        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:244",
-        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:115",
-        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:136",
-        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:242",
-        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:299",
-        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:533",
-        "chapters/artifact-graphs-audit-logs-and-replay.qmd:78",
-        "chapters/artifact-graphs-audit-logs-and-replay.qmd:294",
-        "chapters/artifact-graphs-audit-logs-and-replay.qmd:486",
-        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:94",
-        "chapters/capability-replacement-and-rollback.qmd:309"
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:131",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:263",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:288",
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:126",
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:147",
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:169",
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:199",
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:295",
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:317",
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:406",
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:500",
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:706"
       ],
       "active_queue": false,
       "support_state_effect": "none"
@@ -654,12 +669,10 @@
       "disposition": "already_covered",
       "rationale": "Irreversible public release, disclosure scope, key release, revocation limits, and publication authority are already explicit.",
       "current_text_refs": [
-        "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:18",
-        "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:89",
-        "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:186",
-        "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:296",
-        "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:416",
-        "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:538"
+        "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:103",
+        "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:253",
+        "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:602",
+        "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:739"
       ],
       "active_queue": false,
       "support_state_effect": "none"
@@ -691,18 +704,18 @@
       "disposition": "already_covered",
       "rationale": "Full-state update, checkpoint authority, behavioral/influence/privacy/storage partitioning, and multiple primary unlearning comparators are present.",
       "current_text_refs": [
-        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:333",
-        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:24",
-        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:42",
-        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:46",
-        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:66",
-        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:74",
-        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:86",
-        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:114",
-        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:117",
-        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:125",
-        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:136",
-        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:145"
+        "chapters/artifact-graphs-audit-logs-and-replay.qmd:32",
+        "chapters/artifact-graphs-audit-logs-and-replay.qmd:60",
+        "chapters/artifact-graphs-audit-logs-and-replay.qmd:579",
+        "chapters/artifact-graphs-audit-logs-and-replay.qmd:603",
+        "chapters/artifact-graphs-audit-logs-and-replay.qmd:628",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:468",
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:28",
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:47",
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:134",
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:157",
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:174",
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:177"
       ],
       "active_queue": false,
       "support_state_effect": "none"
@@ -714,18 +727,18 @@
       "disposition": "already_covered",
       "rationale": "Prompt-injection limits, architectural separation, AgentDojo, CAMEL, OWASP, and fail-closed external authority are already treated.",
       "current_text_refs": [
-        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:113",
-        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:561",
-        "chapters/human-intent-as-a-formal-input.qmd:19",
-        "chapters/human-intent-as-a-formal-input.qmd:37",
-        "chapters/human-intent-as-a-formal-input.qmd:229",
-        "chapters/human-intent-as-a-formal-input.qmd:251",
-        "chapters/human-intent-as-a-formal-input.qmd:252",
-        "chapters/human-intent-as-a-formal-input.qmd:256",
-        "chapters/human-intent-as-a-formal-input.qmd:268",
-        "chapters/intent-to-execution-contracts.qmd:24",
-        "chapters/intent-to-execution-contracts.qmd:419",
-        "chapters/intent-to-execution-contracts.qmd:480"
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:118",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:682",
+        "chapters/artifact-steward-agents-and-living-project-governance.qmd:36",
+        "chapters/human-intent-as-a-formal-input.qmd:22",
+        "chapters/human-intent-as-a-formal-input.qmd:40",
+        "chapters/human-intent-as-a-formal-input.qmd:323",
+        "chapters/human-intent-as-a-formal-input.qmd:332",
+        "chapters/human-intent-as-a-formal-input.qmd:372",
+        "chapters/human-intent-as-a-formal-input.qmd:373",
+        "chapters/human-intent-as-a-formal-input.qmd:377",
+        "chapters/human-intent-as-a-formal-input.qmd:389",
+        "chapters/intent-to-execution-contracts.qmd:15"
       ],
       "active_queue": false,
       "support_state_effect": "none"
@@ -767,12 +780,12 @@
         "chapters/asi-is-a-stack-not-a-model.qmd:86",
         "chapters/asi-is-a-stack-not-a-model.qmd:280",
         "chapters/asi-is-a-stack-not-a-model.qmd:286",
-        "chapters/asi-is-a-stack-not-a-model.qmd:307",
-        "chapters/constitutional-alignment-substrate.qmd:162",
-        "chapters/constitutional-alignment-substrate.qmd:163",
-        "chapters/constitutional-alignment-substrate.qmd:437",
-        "chapters/integrated-reference-architecture.qmd:95",
-        "chapters/integrated-reference-architecture.qmd:491"
+        "chapters/asi-is-a-stack-not-a-model.qmd:316",
+        "chapters/constitutional-alignment-substrate.qmd:16",
+        "chapters/constitutional-alignment-substrate.qmd:171",
+        "chapters/constitutional-alignment-substrate.qmd:172",
+        "chapters/constitutional-alignment-substrate.qmd:541",
+        "chapters/integrated-reference-architecture.qmd:34"
       ],
       "active_queue": false,
       "support_state_effect": "none"
@@ -804,9 +817,8 @@
       "disposition": "already_covered",
       "rationale": "Program synthesis, semantic IR, verifier-guided search, and test-time adaptation already have explicit owners.",
       "current_text_refs": [
-        "chapters/cognitive-compilation-and-semantic-ir.qmd:21",
-        "chapters/cognitive-compilation-and-semantic-ir.qmd:376",
-        "chapters/cognitive-compilation-and-semantic-ir.qmd:381"
+        "chapters/cognitive-compilation-and-semantic-ir.qmd:96",
+        "chapters/cognitive-compilation-and-semantic-ir.qmd:629"
       ],
       "active_queue": false,
       "support_state_effect": "none"
@@ -838,13 +850,14 @@
       "disposition": "already_covered",
       "rationale": "Objective fingerprints, periodic recontracting, drift, and inherited trajectory pressure are already explicit.",
       "current_text_refs": [
-        "chapters/human-intent-as-a-formal-input.qmd:37",
-        "chapters/human-intent-as-a-formal-input.qmd:150",
-        "chapters/human-intent-as-a-formal-input.qmd:189",
-        "chapters/human-intent-as-a-formal-input.qmd:229",
-        "chapters/human-intent-as-a-formal-input.qmd:256",
-        "chapters/intent-to-execution-contracts.qmd:203",
-        "chapters/intent-to-execution-contracts.qmd:208"
+        "chapters/human-intent-as-a-formal-input.qmd:40",
+        "chapters/human-intent-as-a-formal-input.qmd:176",
+        "chapters/human-intent-as-a-formal-input.qmd:236",
+        "chapters/human-intent-as-a-formal-input.qmd:332",
+        "chapters/human-intent-as-a-formal-input.qmd:377",
+        "chapters/intent-to-execution-contracts.qmd:208",
+        "chapters/intent-to-execution-contracts.qmd:212",
+        "chapters/intent-to-execution-contracts.qmd:217"
       ],
       "active_queue": false,
       "support_state_effect": "none"
@@ -856,18 +869,18 @@
       "disposition": "narrow",
       "rationale": "V-JEPA 2 adds predictive-state and MPC ownership while the text explicitly refuses to infer causal/interventional understanding; a causal-model source remains open.",
       "current_text_refs": [
-        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:112",
-        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:267",
-        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:325",
-        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:531",
-        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:588",
-        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:592",
-        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:598",
-        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:611",
-        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:612",
-        "chapters/artifact-graphs-audit-logs-and-replay.qmd:97",
-        "chapters/artifact-graphs-audit-logs-and-replay.qmd:289",
-        "chapters/artifact-graphs-audit-logs-and-replay.qmd:518"
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:24",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:117",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:295",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:321",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:379",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:574",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:617",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:643",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:655",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:659",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:665",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:690"
       ],
       "active_queue": true,
       "support_state_effect": "none"
@@ -879,18 +892,18 @@
       "disposition": "already_covered",
       "rationale": "OOD, distribution shift, calibration, abstention, fallback, and quarantine are distributed across their current owners.",
       "current_text_refs": [
-        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:70",
-        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:118",
-        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:204",
-        "chapters/artifact-graphs-audit-logs-and-replay.qmd:55",
-        "chapters/artifact-steward-agents-and-living-project-governance.qmd:36",
-        "chapters/artifact-steward-agents-and-living-project-governance.qmd:52",
-        "chapters/artifact-steward-agents-and-living-project-governance.qmd:176",
-        "chapters/artifact-steward-agents-and-living-project-governance.qmd:310",
-        "chapters/artifact-steward-agents-and-living-project-governance.qmd:327",
-        "chapters/artifact-steward-agents-and-living-project-governance.qmd:338",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:75",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:123",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:226",
+        "chapters/artifact-graphs-audit-logs-and-replay.qmd:80",
+        "chapters/artifact-steward-agents-and-living-project-governance.qmd:53",
+        "chapters/artifact-steward-agents-and-living-project-governance.qmd:228",
+        "chapters/artifact-steward-agents-and-living-project-governance.qmd:323",
+        "chapters/artifact-steward-agents-and-living-project-governance.qmd:410",
+        "chapters/artifact-steward-agents-and-living-project-governance.qmd:449",
         "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:2",
-        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:3"
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:3",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:25"
       ],
       "active_queue": false,
       "support_state_effect": "none"
@@ -901,9 +914,7 @@
       "owner_chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
       "disposition": "narrow",
       "rationale": "Bounded runtime monitoring is source-noted, but physical closed-loop safety envelopes remain outside the digital-adapter evidence scope.",
-      "current_text_refs": [
-        "chapters/capability-replacement-and-rollback.qmd:57"
-      ],
+      "current_text_refs": [],
       "active_queue": true,
       "support_state_effect": "none"
     },
@@ -924,12 +935,16 @@
       "disposition": "already_covered",
       "rationale": "Access, monitor visibility, evaluator provenance, model information, budgets, and false-negative residuals are explicit.",
       "current_text_refs": [
+        "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:295",
+        "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd:347",
         "chapters/evidence-states-and-claim-discipline.qmd:162",
-        "chapters/executable-specifications-and-lean-proof-envelope.qmd:81",
-        "chapters/governed-deliberation-and-test-time-scaling.qmd:580",
-        "chapters/integrated-reference-architecture.qmd:95",
-        "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:82",
-        "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:84"
+        "chapters/executable-specifications-and-lean-proof-envelope.qmd:79",
+        "chapters/governed-deliberation-and-test-time-scaling.qmd:316",
+        "chapters/governed-deliberation-and-test-time-scaling.qmd:595",
+        "chapters/integrated-reference-architecture.qmd:99",
+        "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:85",
+        "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:428",
+        "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:105"
       ],
       "active_queue": false,
       "support_state_effect": "none"
@@ -941,13 +956,13 @@
       "disposition": "already_covered",
       "rationale": "Thresholds are domain- and threat-specific and explicitly prohibit cross-domain generalization.",
       "current_text_refs": [
-        "chapters/capability-thresholds-and-deployment-commitments.qmd:15",
-        "chapters/capability-thresholds-and-deployment-commitments.qmd:204",
-        "chapters/capability-thresholds-and-deployment-commitments.qmd:230",
-        "chapters/capability-thresholds-and-deployment-commitments.qmd:419",
-        "chapters/capability-thresholds-and-deployment-commitments.qmd:477",
-        "chapters/capability-thresholds-and-deployment-commitments.qmd:540",
-        "chapters/recursive-self-improvement-boundaries.qmd:78"
+        "chapters/capability-thresholds-and-deployment-commitments.qmd:235",
+        "chapters/capability-thresholds-and-deployment-commitments.qmd:261",
+        "chapters/capability-thresholds-and-deployment-commitments.qmd:483",
+        "chapters/capability-thresholds-and-deployment-commitments.qmd:541",
+        "chapters/capability-thresholds-and-deployment-commitments.qmd:552",
+        "chapters/capability-thresholds-and-deployment-commitments.qmd:652",
+        "chapters/recursive-self-improvement-boundaries.qmd:111"
       ],
       "active_queue": false,
       "support_state_effect": "none"
@@ -971,10 +986,8 @@
       "disposition": "already_covered",
       "rationale": "Component inventory, model/data/build/training lineage, signing, attestations, derivatives, advisories, rebuild, and revocation are current core mechanisms.",
       "current_text_refs": [
-        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:276",
-        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:453",
-        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:516",
-        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:531"
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:689",
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:704"
       ],
       "active_queue": false,
       "support_state_effect": "none"
@@ -996,10 +1009,15 @@
       "disposition": "narrow",
       "rationale": "MUSE and the benchmark critiques keep privacy separate from behavior; the specific before/after leakage source remains unreviewed.",
       "current_text_refs": [
-        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:333",
-        "chapters/data-engines-continual-learning-and-unlearning.qmd:137",
-        "chapters/data-engines-continual-learning-and-unlearning.qmd:558",
-        "chapters/policy-optimization-and-learning-from-feedback.qmd:373"
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:468",
+        "chapters/data-engines-continual-learning-and-unlearning.qmd:138",
+        "chapters/data-engines-continual-learning-and-unlearning.qmd:151",
+        "chapters/data-engines-continual-learning-and-unlearning.qmd:612",
+        "chapters/data-engines-continual-learning-and-unlearning.qmd:655",
+        "chapters/moral-uncertainty-and-value-conflict.qmd:201",
+        "chapters/moral-uncertainty-and-value-conflict.qmd:502",
+        "chapters/policy-optimization-and-learning-from-feedback.qmd:478",
+        "chapters/recursive-self-improvement-boundaries.qmd:325"
       ],
       "active_queue": true,
       "support_state_effect": "none"
@@ -1010,7 +1028,9 @@
       "owner_chapter_id": "resource-economics-and-token-budgets",
       "disposition": "defer",
       "rationale": "Exit and fallback exist as general controls, but provider-concentration and resilience claims need a current primary-source owner packet.",
-      "current_text_refs": [],
+      "current_text_refs": [
+        "chapters/stable-capability-fields.qmd:215"
+      ],
       "active_queue": true,
       "support_state_effect": "none"
     }

@@ -34,7 +34,7 @@ This ledger replaces the former long `Non-infrastructure measured slice` cell in
 - `docs/costed_route_resource_slice.md` records selected route `route://bounded-transform-plus-verifier`, baseline `route://frontier-manual-review`, 66.98 percent synthetic cost reduction, and rejected negative controls route://cheap-unverified-transform, route://hidden-residual-auto-merge.
 - `docs/resource_workflow_trace.md` records a 3-step deterministic workflow trace with 119.7 cost units and 5 expected-invalid controls.
 - `docs/resource_live_probe.md` records 5 local validator replays and 15 tracked artifact digests with support-state effect `none`.
-- `docs/resource_workload_quality_probe.md` records 3 local route candidates, 5 samples per route for the selected route, selected route `route://selected-scoped-workflow-trace-validator`, and 84.421 percent observed selected-vs-baseline elapsed reduction for the scoped local task.
+- `docs/resource_workload_quality_probe.md` records 3 local route candidates, 5 samples per route for the selected route, selected route `route://selected-scoped-workflow-trace-validator`, and 88.987 percent observed selected-vs-baseline elapsed reduction for the scoped local task.
 - `docs/resource_load_stability_probe.md` records a 10-task synthetic burst-review workload, selected route `route://selected-protected-capacity-smoothing`, 100.0 percent finite instability reduction, and 7 residualized deferred task-ticks.
 - `docs/resource_ci_cost_profile.md` records 8 GitHub Pages runs, 8 completed runs, 5 successful completed runs, 3 classified deploy-service failures, median completed duration 197 seconds, and 3 repair-event records as publication-pipeline metadata only.
 

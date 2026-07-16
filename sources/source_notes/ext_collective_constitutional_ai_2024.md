@@ -37,6 +37,7 @@ This source grounds the book's constitutional and governance chapters against a 
 ## Book Chapters Supported
 
 - `constitutional-alignment-substrate` (Constitutional Alignment: Agency, Dignity, and Corrigibility)
+- `moral-uncertainty-and-value-conflict` (Moral Uncertainty, Value Conflict, and Contestable Governance)
 - `governance-rights-fork-exit-and-audit` (Governance Rights, Fork, Exit, and Audit)
 
 ## Claims To Add Or Update

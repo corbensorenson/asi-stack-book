@@ -49,20 +49,13 @@
   "input_ref": "experiments/residual_ledger_storage_replay/input/residual_ledger_records.json",
   "lean_fixture_alignment": {
     "expected": {
-      "appendOnlyDigestChainComputed": true,
-      "deployedLedgerNotClaimed": true,
-      "dischargeReviewRequired": true,
-      "invalidControlsRejected": true,
-      "liveStorageNotClaimed": true,
-      "nonClaimBoundary": true,
-      "ownerHandoffPreserved": true,
-      "sequenceContinuityChecked": true,
-      "supportStateEffectNone": true,
-      "workloadContextPreserved": true
+      "chainIntegrity": true,
+      "residualClosedOrEscrowed": true,
+      "supportAssignmentAuthority": false
     },
-    "module": "AsiStackProofs.CompactGenerativeSystems",
+    "module": "AsiStackProofs.CompactGenerationRefinement",
     "theorem_refs": [
-      "residual_ledger_storage_replay_bridge"
+      "broken_residual_chain_blocks_closure"
     ]
   },
   "non_claims": [

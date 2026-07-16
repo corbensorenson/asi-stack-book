@@ -1,0 +1,298 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "policy-optimization-and-learning-from-feedback",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/policy-optimization-and-learning-from-feedback.qmd",
+    "structured_atoms_reviewed": 75,
+    "prose_candidates_adjudicated": 38,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, all twenty-nine exact source mappings, policy schema and valid fixture, persisted six-sample/five-policy synthetic lease probe, adjacent benchmark harness boundary, all four proof targets, all nineteen PolicyOptimization declarations, every manifest atom, every prose candidate, test plan, source crosswalk, summary, and handoff. The sweep made the target-policy-, baseline-, objective-, feedback-, evaluator-, dataset-, optimizer-, checkpoint-, rollout-, authority-, resource-, monitor-, rollback-, consumer-, environment-, and time-specific Governed Policy Update Lease the distinct owner; expanded it to eighteen mechanisms, twelve interfaces, eighteen invariants, and eighteen failure modes; preserved zero chapter-core effect; and froze the natural matched-baseline, reward-validity, causal, full-state-rollback, reproduction, and transfer campaign."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Named consumers, legitimate objectives, target policies, baselines, feedback, evaluators, datasets, optimizers, checkpoints, rollouts, authorities, resources, monitors, rollback state, environments, and times.",
+      "environment": "Twenty-nine exact mappings; one schema and valid fixture; one persisted deterministic result over six synthetic samples, two holdouts, five policies, three invalid candidates, one experimental canary, and fixture rollback; four targets; nineteen finite declarations. No optimizer, model, live router, natural workload, reward model, real canary, deployed rollback, reproduction, or transfer is represented.",
+      "model": "A scoped Governed Policy Update Lease over target behavior, admissible feedback and proxy boundaries, matched baselines, update method and budget, drift and authority ceilings, evaluation, attacks, complete lineage, causal checks, lifecycle, full-state rollback, monitoring, expiry, and joint outcomes.",
+      "authority": "This chapter owns the bounded update lease only. Benchmark, observation, evidence/review, target-layer, data/supply chain, artifact, runtime/security, capability/readiness, threshold/assurance, resource, formal, incident/release, and publication owners retain their boundaries.",
+      "time": "Semantic review current through 2026-07-15; objective, feedback, evaluator, data, model, scaffold, tool, authority, threat, environment, consumer, policy, or time changes expire affected leases.",
+      "artifact": "Chapter and manifest; twenty-nine mappings; schema and fixture; persisted synthetic probe; validator; four targets; nineteen declarations; semantic review; and future natural causal-transfer campaign."
+    },
+    "current_disposition": "retain_argument_with_synthetic_policy_lease_probe_no_core_effect_pending_natural_independent_causal_update_campaign",
+    "assumptions": [
+      "Legitimate target behavior, feedback provenance, proxy boundaries, authority, outcomes, failures, costs, residuals, and full causal state can be observed and versioned.",
+      "Update methods, baselines, budgets, holdouts, attacks, stopping, checkpoint selection, and rollback criteria can be frozen prospectively.",
+      "Strong baselines can receive matched model, data, tools, context, compute, tuning, retries, evaluators, and engineering.",
+      "Target outcomes can be measured separately from rewards, preferences, losses, style, length, latency, and evaluator judgments.",
+      "Independent trainers, evaluators, data custody, institutions, and heterogeneous environments can reproduce and transfer results."
+    ],
+    "dependencies": [
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "adversarial-evaluation-sandbagging-and-training-time-deception",
+      "evidence-states-and-claim-discipline",
+      "data-engines-continual-learning-and-unlearning",
+      "capability-replacement-and-rollback",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "resource-economics-and-token-budgets"
+    ],
+    "strongest_counterclaim": "Governed update leases add paperwork around fundamentally unreliable rewards and evaluator feedback without improving target outcomes, safety, recovery, or transfer beyond ordinary training and release practice.",
+    "falsifier": "Prospectively frozen natural campaigns show no unique target, governance, or recovery benefit; unacceptable cost, delay, forgetting, or false blocking; reward/evaluator capture, hidden selection, or authority drift; ineffective full-state rollback; or no independent reproduction and transfer.",
+    "required_lanes": [
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze internal architecture and external RL/preference/RLVR/limitation comparators without importing results."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify legitimate objectives, affected parties, feedback rights, authority, acceptable regressions, exceptions, and residual acceptance."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify finite lease, route, authority, and rollback obligations without claiming learning dynamics or empirical improvement."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Run real trainers, policies, evaluators, rollouts, monitors, canaries, attacks, full-state rollback, and recovery."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure target outcomes, reward validity, calibration, tails, forgetting, safety, privacy, rights, resources, natural behavior, and residuals."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate feedback, optimizer, data, reward, evaluator, selection, and policy components under matched opportunity."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Reproduce independently and transfer across tasks, policies, models, scaffolds, tools, authority, evaluators, organizations, environments, and time."
+      }
+    ],
+    "evidence_refs": {
+      "chapter": "chapters/policy-optimization-and-learning-from-feedback.qmd",
+      "schema": "schemas/policy_optimization_record.schema.json",
+      "fixture": "tests/fixtures/protocol_records/policy_optimization_record.valid.json",
+      "result": "experiments/policy_update_lease/results/2026-07-02-local.json",
+      "validator": "scripts/validate_policy_update_lease_probe.py",
+      "lean": "lean/AsiStackProofs/PolicyOptimization.lean",
+      "manifest": "book_structure.json"
+    },
+    "contrary_evidence": [
+      "The six samples, five policies, and rollback are deterministic synthetic fixtures, not training or deployment events.",
+      "All nineteen declarations are finite record implications, route reductions, fixture normalizations, or a finite observation gate; none models learning or causal improvement.",
+      "Twenty-nine mappings include source-reported methods and results that were not locally reproduced.",
+      "The selected synthetic canary remains experimental and no live router, reward model, optimizer, natural monitor, or deployed rollback exists.",
+      "The adjacent anti-Goodhart harness belongs to Benchmark Ratchets and cannot establish policy learning."
+    ],
+    "known_confounds": [
+      "Data, target definition, model capacity, prompts, tools, evaluator, reward shaping, compute, seeds, checkpoint selection, and engineering can dominate an update.",
+      "Shared trainers, rewards, evaluators, data, tools, organizations, or analysis can create false independence.",
+      "Repeated rollouts, checkpoint search, discarded failures, reward tuning, and outcome-aware stopping create hidden selection.",
+      "Aggregate reward can hide forgetting, tails, subgroup harms, authority drift, privacy, rights, unsafe exploration, and costs.",
+      "Update and governance burden can displace evaluation, recovery, useful releases, and user value."
+    ],
+    "acceptance_criteria": [
+      "Every update binds target, baseline, objective, feedback/proxy boundary, method, budget, constraints, data, complete lineage, evaluation, attacks, causal checks, authority, full-state rollback, monitoring, residuals, expiry, and decision.",
+      "Natural workloads run with matched strong baselines, frozen hidden tests and stopping, complete denominators, target evaluations, reward/evaluator attacks, tails, forgetting, and natural post-update monitoring.",
+      "Effect-complete rollback restores model, optimizer, scheduler, RNG, caches, routes, credentials, descendants, effects, monitors, and reliance with measured recovery.",
+      "Any promoted claim survives causal ablation, independent trainer/evaluator/institution reproduction, and heterogeneous transfer without reward, authority, selection, or cost laundering."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to exact target, objective, feedback, evaluator, dataset, method, model, checkpoint, rollout, authority, resource, consumer, environment, and time.",
+      "Separate schema, fixture, trained, selected, canary, qualified, default, rolled-back, monitored, readiness, released, deployed, reproduced, transferred, and SOTA states.",
+      "Unknown reward validity, target causality, contamination, selection, forgetting, authority effect, rollback closure, cost, rights, transfer, or residual remains blocked."
+    ],
+    "refutation_criteria": [
+      "Refute an update when target, feedback, evaluator, data, selection, authority, state, rollback, or lineage is materially invalid.",
+      "Refute a method benefit when matched ablation preserves or improves outcomes, or data, selection, extra resources, evaluator bias, hidden failures, forgetting, or cost explains the gain.",
+      "Refute improvement, alignment, safety, readiness, deployment, support, transfer, or SOTA language when only source reports, fixtures, checkpoints, rewards, or finite routes exist."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only when a more precise update owner supersedes the atom and every policy, feedback, candidate, rollout, checkpoint, decision, rollback, effect, residual, correction, and historical result migrates with lineage."
+    ],
+    "promotion_ceiling": "argument_until_natural_causal_policy_update_campaign_with_effect_complete_rollback_independent_reproduction_and_transfer",
+    "reproduction": {
+      "command": "python3 scripts/validate_policy_update_lease_probe.py && python3 scripts/validate_protocol_examples.py && cd lean && lake build AsiStackProofs.PolicyOptimization",
+      "environment_lock": "Local schema, fixture, deterministic result, validator, and finite module current through 2026-07-15; natural independent update campaign not frozen or run.",
+      "artifact_digest": null,
+      "evaluator_identity": "Current fixtures, validator, and formalization are repository-local; independent trainers, evaluators, data custody, institutions, monitors, and transfer environments are required."
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "policy-optimization-and-learning-from-feedback",
+      "next_unblocking_condition": "Freeze and run natural multi-layer policy workloads with matched strong baselines, complete rollout and selection lineage, target and reward validity tests, causal ablation, forgetting and natural monitoring, effect-complete rollback, joint utility/safety/rights/cost measures, independent reproduction, and transfer."
+    },
+    "non_claims": [
+      "No reward, preference, score, loss, checkpoint, synthetic canary, fixture, source mapping, formal route, or rollback dry run establishes reward validity, causal policy improvement, retained capability, alignment, safety, readiness, deployment, support, transfer, or SOTA.",
+      "No optimizer, model, live router, natural workload, preference dataset, reward model, real canary, deployed rollback, independent reproduction, or transfer is represented.",
+      "The argument-exit campaign is a required attempt specification, not a completed learning result."
+    ]
+  },
+  "atom_reviews": {
+    "policy-optimization-and-learning-from-feedback.core": {
+      "current_disposition": "retain_distinct_governed_policy_update_lease_owner_at_argument",
+      "strongest_counterclaim": "Governed update leases are overhead around unreliable rewards without unique target, safety, or recovery value.",
+      "falsifier": "Natural matched campaigns show no unique benefit, unacceptable cost or forgetting, reward or authority capture, ineffective rollback, or no independent reproduction and transfer.",
+      "promotion_ceiling": "argument_until_natural_independently_reproduced_causal_update_campaign_with_effect_complete_rollback"
+    }
+  },
+  "prose_candidate_dispositions": {
+    "policy-optimization-and-learning-from-feedback.prose.7dcd0a75aaef": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.35704e38ea1d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.ac26f9c86991": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.5bd32da98c7c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.e4e9e2a5c7d5": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.37dff58cea21": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.161a25214958": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.49effda5aab6": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.ab14ffbdf84d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.42777e9c8b2b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.5ba83730842e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.d2fb2f75fa3a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.e9fe9e5e573e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.c30ed64f60ab": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.bb23960b1063": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.527ba1dfdf20": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.7ca8d8d2f6c1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.06a3a8140167": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.3ef01e704b35": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.020d65d43693": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.4e283d992af7": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.974173375c40": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.c99bea034b8e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.7ca6b9f5046c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.a03409688abc": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.4ed3119afde0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.9da811c22645": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.79f6e0f62688": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.1ef7c33963d4": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.49a283e55433": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.cdfd73c11dee": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.541c2328fcec": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.710f7fa9e412": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.aff9dc861c04": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.4a1fedfb372a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.c131c11353d5": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.8958c7f00ed1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.346b1c43b827": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    }
+  },
+  "non_claims": [
+    "No reward, preference, score, loss, checkpoint, synthetic canary, fixture, source mapping, formal route, or rollback dry run establishes reward validity, causal policy improvement, retained capability, alignment, safety, readiness, deployment, support, transfer, or SOTA.",
+    "No optimizer, model, live router, natural workload, preference dataset, reward model, real canary, deployed rollback, independent reproduction, or transfer is represented.",
+    "The argument-exit campaign is a required attempt specification, not a completed learning result."
+  ]
+}

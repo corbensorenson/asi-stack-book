@@ -1,0 +1,66 @@
+{
+  "schema_version": "asi_stack.wip_checkpoint_inventory.v0",
+  "roadmap_id": "asi-stack-post-v2-3-claim-proof-sota-challenge-2026-07-14",
+  "recorded_date": "2026-07-15",
+  "base_commit": "5eddb15d56b0c813666ed2b2ea41e7c87f1cf297",
+  "changed_path_count": 724,
+  "independent_work_package_count": 5,
+  "changed_path_soft_limit": 250,
+  "independent_work_package_limit": 3,
+  "threshold_exceeded": true,
+  "scope_expansion_blocked": true,
+  "checkpoint_disposition": "checkpoint_authorized_local_commit_only",
+  "commit_authorized": true,
+  "authorization_basis": "The persistent user-authored goal requires completion of committed-object and deployed-attestation gates; a coherent local checkpoint is the normal in-scope implementation step needed to make those gates testable.",
+  "authorization_scope": "One local coherent checkpoint commit and its local attestation-closure follow-up only; no push, tag, deploy, external publication, or release authorization is inferred.",
+  "packages": [
+    {
+      "package_id": "claim-proof-constitution-and-atom-registry",
+      "surface_groups": ["docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md", "evidence_quality/claim_*", "evidence_quality/prose_*", "schemas/claim_*", "scripts/build_claim_*"],
+      "authorship_mix": "authored_and_generated",
+      "dependency_order": 1,
+      "validation_state": "active_validated_surfaces_with_remaining_campaign_work",
+      "rollback_boundary": "claim registries, review overlays, schemas, dossiers, and roadmap authority must move together"
+    },
+    {
+      "package_id": "p2-proof-rationalization-and-semantic-refinement",
+      "surface_groups": ["lean/", "proofs/", "evidence_quality/model_adequacy_dossiers/", "docs/*_refinement.md", "experiments/*_refinement/", "scripts/*_refinement.py"],
+      "authorship_mix": "authored_models_consumers_results_and_generated_registries",
+      "dependency_order": 2,
+      "validation_state": "current_family_validation_complete; randomized committed-object attestation blocked until the intentional residual artifact rewrite is checkpointed",
+      "rollback_boundary": "each family requires atomic model, consumer, result, dossier, target, lineage, registry, chapter, roadmap, and changelog reconciliation"
+    },
+    {
+      "package_id": "replaceable-cognitive-substrates-chapter-and-source-program",
+      "surface_groups": ["chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd", "docs/replaceable_cognitive_substrates_intake_and_research_plan.md", "sources/source_notes/ext_*", "lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean", "experiments/cognitive_kernel_abi/"],
+      "authorship_mix": "authored_chapter_sources_model_and_results",
+      "dependency_order": 3,
+      "validation_state": "bounded_abi_slice_complete_empirical_campaigns_pending",
+      "rollback_boundary": "chapter, manifest placement, source assignments, claim addendum, ABI model, and generated projections move together"
+    },
+    {
+      "package_id": "inherited-evidence-reader-and-public-truth-renewal",
+      "surface_groups": ["experiments/*", "evidence_transitions/", "claim_decisions/", "editions/", "release_records/", "docs/public*", "docs/v1_*"],
+      "authorship_mix": "historical_results_refreshed_receipts_and_generated_public_surfaces",
+      "dependency_order": 4,
+      "validation_state": "preserved_from_prior_cycles_with_current_digest_refreshes",
+      "rollback_boundary": "result, transition, decision, reader, release, and public truth records must remain mutually consistent"
+    },
+    {
+      "package_id": "manifest-generated-projections-and-validation-authority",
+      "surface_groups": ["book_structure.json", "_quarto.yml", "docs/book_outline.md", "appendices/", "validation/", "schemas/", "scripts/validate_*", "README.md", "index.qmd"],
+      "authorship_mix": "manifest_authority_generated_projections_and_validators",
+      "dependency_order": 5,
+      "validation_state": "PR tier passes; Lean builds 93 jobs; isolated Quarto renders 68 pages; 294 of 296 deep units pass individually; randomized dirty-HEAD attestation and its dependent Artifact Reality refinement remain blocked",
+      "rollback_boundary": "manifest, projections, registries, validators, public pointers, and rendered artifacts must be reconciled together"
+    }
+  ],
+  "next_checkpoint_requirement": "Create one coherent local checkpoint commit, regenerate the randomized attestation result against that new HEAD, rerun its dependent Artifact Reality refinement and the complete deep tier, then record a clean checkpoint-closure state. Push, tag, deploy, and publication remain separately unauthorized.",
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "Changed-path and package counts are engineering-risk indicators, not semantic or empirical proof.",
+    "This inventory does not authorize staging, committing, pushing, tagging, deploying, or publishing.",
+    "Scope expansion blocked does not block finishing and validating the currently active stabilization packages."
+  ]
+}

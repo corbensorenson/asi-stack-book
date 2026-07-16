@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the three-contribution focus contract and 54-chapter assignment map."""
+"""Build the three-contribution focus contract and live-chapter assignment map."""
 
 from __future__ import annotations
 
@@ -57,7 +57,8 @@ GROUPS = {
         "virtual-context-abi", "labor-os-and-typed-jobs",
         "runtime-adapters-tool-permissions-and-human-approval",
         "inter-stack-protocols-identity-and-economic-exchange",
-        "routing-heads-and-specialist-cores", "readiness-gates-residual-escrow-and-quarantine",
+        "routing-heads-and-specialist-cores", "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+        "readiness-gates-residual-escrow-and-quarantine",
         "personal-compute-hives-and-federated-edge-intelligence",
         "artifact-steward-agents-and-living-project-governance",
         "integrated-reference-architecture"

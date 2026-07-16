@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.1",
+  "experiment_id": "cognitive-kernel-abi-2026-07-15",
+  "status": "passed",
+  "corpus_sha256": "32f541e8ef5c06ed8efeaeadde3f0e3b7690ccdf2388d973b04f56946b2aec9e",
+  "lean_model_sha256": "7dd6f520129c90b6c5f1554bb223c0c64535fb7d43147486149b9eb296c87371",
+  "case_count": 16,
+  "accepted_case_count": 1,
+  "rejected_case_count": 15,
+  "accepted_event_count": 9,
+  "committed_effect_count": 2,
+  "proposal_effect_count": 0,
+  "family_route": [
+    "transformer",
+    "selective_state_space",
+    "kan",
+    "selective_state_space"
+  ],
+  "mutation_count": 12,
+  "mutation_rejection_count": 12,
+  "support_state_effect": "none",
+  "non_claims": [
+    "This finite corpus does not benchmark Transformer, Mamba, KAN, recurrent, or program-synthesis quality.",
+    "It does not establish checkpoint translation for real model, optimizer, scheduler, RNG, cache, backup, or descendant state.",
+    "It does not establish evaluator independence, rollback efficacy, deployment safety, transfer, architectural RSI, AGI, or ASI."
+  ]
+}

@@ -19,6 +19,8 @@ CAMPAIGN = "experiments/post_v2_3_evidence_campaigns/results/adjudication.json"
 CANDIDATES = "docs/post_v2_3_evidence_candidate_ledger.json"
 SUCCESSOR = "docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md"
 SUCCESSOR_STATUS = "roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json"
+ACTIVE_SUCCESSOR = "docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md"
+ACTIVE_SUCCESSOR_STATUS = "roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json"
 ACTIVE_MARKER = "Status: active canonical successor roadmap; unfinished work only"
 
 
@@ -44,6 +46,7 @@ def snapshot() -> dict:
         "campaign": read_json(CAMPAIGN),
         "candidates": read_json(CANDIDATES),
         "successor_status": read_json(SUCCESSOR_STATUS),
+        "active_successor_status": read_json(ACTIVE_SUCCESSOR_STATUS),
         "vectors": read_json("evidence_quality/core_claim_vectors.json"),
         "public_surfaces": {
             path: read_text(path)
@@ -66,8 +69,8 @@ def errors(data: dict) -> list[str]:
         out.append("P0-P5 are not exactly completed")
     if [row.get("id") for row in status.get("milestones", [])] != [f"M{i}" for i in range(10)] or any(row.get("state") != "completed" for row in status.get("milestones", [])):
         out.append("M0-M9 are not exactly completed")
-    if data["active_roadmaps"] != []:
-        out.append("terminal roadmap history must expose no active successor")
+    if data["active_roadmaps"] != [ACTIVE_SUCCESSOR]:
+        out.append("terminal roadmap history must expose the exact active claim-proof/SOTA successor")
     if "Status: completed 2026-07-13" not in data["roadmap"]:
         out.append("roadmap prose is not terminal")
 
@@ -93,7 +96,7 @@ def errors(data: dict) -> list[str]:
         out.append("campaign no-change dispositions drifted")
 
     vectors = data["vectors"].get("vectors", [])
-    if len(vectors) != 54 or any(row.get("summary_support_state") != "argument" for row in vectors):
+    if len(vectors) != 55 or any(row.get("summary_support_state") != "argument" for row in vectors):
         out.append("chapter-core argument boundary drifted")
 
     closure = data["no_release"]
@@ -111,12 +114,19 @@ def errors(data: dict) -> list[str]:
     successor = data["successor_status"]
     if successor.get("status") != "completed" or successor.get("roadmap_path") != SUCCESSOR:
         out.append("declared successor machine state is absent or not terminal")
+    active_successor = data["active_successor_status"]
+    if active_successor.get("status") != "active" or active_successor.get("roadmap_path") != ACTIVE_SUCCESSOR:
+        out.append("claim-proof/SOTA active successor machine state is absent")
+    if active_successor.get("activation_baseline", {}).get("active_chapter_count") != 54:
+        out.append("claim-proof/SOTA successor lost the frozen 54-chapter closure baseline")
+    if active_successor.get("structural_expansion_contract", {}).get("live_chapter_count") != 55:
+        out.append("claim-proof/SOTA successor lost the authorized 55th live chapter")
 
     for phrase in ["P0–P5", "M0–M9", NO_RELEASE, SUCCESSOR, SUCCESSOR_STATUS, "Successor activated: 2026-07-13", "All 54 chapter-core claims remain at `argument`"]:
         if phrase not in data["declaration"]:
             out.append(f"completion declaration missing: {phrase}")
     for path, text in data["public_surfaces"].items():
-        for phrase in [ROADMAP, STATUS, SUCCESSOR, SUCCESSOR_STATUS, "v2.3.0"]:
+        for phrase in [ROADMAP, STATUS, SUCCESSOR, SUCCESSOR_STATUS, ACTIVE_SUCCESSOR, ACTIVE_SUCCESSOR_STATUS, "v2.3.0"]:
             if phrase not in text:
                 out.append(f"{path} missing terminal public truth: {phrase}")
     return out
@@ -127,7 +137,7 @@ def main() -> None:
     failures = errors(data)
     mutations = []
     reopened = copy.deepcopy(data); reopened["status"]["status"] = "active"; mutations.append(("reopened roadmap", reopened))
-    hidden_active = copy.deepcopy(data); hidden_active["active_roadmaps"] = [SUCCESSOR, "docs/fake_roadmap.md"]; mutations.append(("hidden successor", hidden_active))
+    hidden_active = copy.deepcopy(data); hidden_active["active_roadmaps"] = [ACTIVE_SUCCESSOR, "docs/fake_roadmap.md"]; mutations.append(("hidden successor", hidden_active))
     release_laundering = copy.deepcopy(data); release_laundering["no_release"]["publication_effect"]["public_deployment_performed"] = True; mutations.append(("release laundering", release_laundering))
     reasoning_laundering = copy.deepcopy(data); reasoning_laundering["campaign"]["protocol_integrity"]["parseable_structured_outputs"] = 36; mutations.append(("reasoning laundering", reasoning_laundering))
     support = copy.deepcopy(data); support["vectors"]["vectors"][0]["summary_support_state"] = "prototype-backed"; mutations.append(("support promotion", support))
@@ -137,7 +147,7 @@ def main() -> None:
             failures.append(f"negative mutation accepted: {label}")
     if failures:
         raise SystemExit("Post-v2.3 cycle closure failed:\n - " + "\n - ".join(failures))
-    print("Post-v2.3 cycle closure passed: P0-P5 and M0-M9 remain complete with no active successor, exact local 54-chapter reader, 21 candidate and 2 campaign dispositions, v2.3.0 still latest public, 54 argument cores, and 6 rejecting mutations.")
+    print("Post-v2.3 cycle closure passed: P0-P5 and M0-M9 remain complete with the exact claim-proof/SOTA successor active, exact local 54-chapter reader and frozen baseline, 21 candidate and 2 campaign dispositions, v2.3.0 still latest public, 55 live argument cores, and 6 rejecting mutations.")
 
 
 if __name__ == "__main__":

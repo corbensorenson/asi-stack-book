@@ -1,0 +1,749 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "stable-capability-fields",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/stable-capability-fields.qmd",
+    "structured_atoms_reviewed": 54,
+    "prose_candidates_adjudicated": 29,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, all eight assigned source notes and mapping limits, the public SCF schema and 3-valid/6-invalid corpus, readiness/residual boundary, 2-valid/6-invalid lifecycle probe, all 25 Lean theorem declarations grouped under four manifest targets, every manifest atom, every prose scanner candidate, diagrams, status language, test plan, source crosswalk, summary, and handoff. The sweep replaced a generic capability slot with a versioned consumer-relative substitution contract; separated observable and failure semantics from interface compatibility, authority from raw candidate power, provenance from adequacy, local qualification from universal substitutability, rollback metadata from effect-complete recovery, and finite record proofs from empirical field preservation; promoted evaluator dependencies, lease decay, field-owned regression and incident memory, downstream reliance, state and composition duties, adversarial failure taxonomy, and a matched causal-transfer campaign into manifest ownership; and preserved zero support-state effect."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Prospectively declared capability-field versions and replacement candidates spanning models, weights, prompts, policies, tools, adapters, data or retrieval snapshots, evaluators, dependencies, hardware, runtimes, state schemas, routes, consumers, and update types.",
+      "environment": "The ASI Stack public schema, deterministic fixtures, finite Lean predicates, and future frozen natural/adversarial workloads with exact artifacts, dependencies, environments, threat models, consumers, uses, evaluators, authority topology, state, side effects, regressions, incidents, monitors, and cost rules; production deployment is outside current evidence.",
+      "model": "A versioned consumer-relative substitution-contract and lifecycle state machine whose current implementation validates record shape, selected route consequences, transition constraints, fixture counts, and no-promotion boundaries; future preservation claims require real candidate behavior and independent observers.",
+      "authority": "Field governance owns semantic identity and versioning; System Authority bounds grants; consumers declare use requirements; separate-enough evaluators and promotion owners judge evidence; execution owns effects; incident and rollback owners govern recovery; Evidence States alone owns support movement.",
+      "time": "Semantic review current through 2026-07-14; field, candidate, dependencies, environment, evaluator, benchmark epoch, threat model, consumer, use, lease, incidents, regressions, state, reliance, monitors, authority, effects, and costs must be frozen and requalified after material change.",
+      "artifact": "Chapter, manifest, eight source notes and mappings, SCF schema, nine record fixtures, readiness/residual harness, lifecycle trace probe, 25 Lean theorem declarations under four proof targets, field history, qualification and replacement receipts, effect inventory, and downstream public projections."
+    },
+    "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+    "assumptions": [
+      "A field's consumer-visible behavior, failures, abstentions, side effects, resource/privacy/security effects, authority, state, and evidence duties can be specified precisely enough to test without claiming complete semantic identity.",
+      "Qualification scope and decay, evaluator dependencies, downstream reliance, migration, composition, and recovery effects can be observed prospectively by implementations independent enough for the declared claim.",
+      "Strong conventional release-engineering comparators can be frozen and evaluated on the same usefulness, safety, latency, resource, labor, governance, recovery, and residual frontier."
+    ],
+    "strongest_counterclaim": "Existing typed interfaces, versioning, provenance, capability security, regression suites, canaries, and rollback practice already provide the useful replacement boundary; SCFs add an untestable semantic label and governance burden without preserving more real behavior or authority.",
+    "falsifier": "Any admitted field route violates a frozen observable, failure, authority, qualification, evaluator, lifecycle, history, state, composition, reliance, or recovery obligation; or a strong simpler comparator dominates the SCF condition on the preregistered joint frontier and transfer set.",
+    "required_lanes": [
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze SCF project lineage and current capability-security, versioning, provenance, ML release, behavioral-refinement, canary, rollback, and model-registry comparators without novelty laundering."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify field ownership, material-change classification, consumer standing, authority ceilings, evaluator separation, acceptable residuals, deprecation, retirement, and recovery cost."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify finite identity, refinement, lease, authority, lifecycle, regression, reliance, migration, composition, terminal-state, receipt, and recovery obligations while exposing model limits."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Exercise every field with valid and rejecting records, exact artifact locks, downstream consumers, effect inventories, drift and capture controls, migration, monitoring, and rehearsed recovery."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure preservation, failures, unauthorized effects, evaluator calibration and capture, migration and composition, recovery, useful throughput, missed help, latency, resources, labor, governance cost, and residuals."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate identity, authority, lease, evaluator separation, regression memory, composition requalification, migration accounting, and effect-complete recovery under matched candidates."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Repeat across models, vendors, tools, data, hardware, runtimes, domains, consumers, threat models, authority topologies, statefulness, side effects, and update types with independent implementations."
+      }
+    ],
+    "contrary_evidence": [
+      "Typed APIs, model registries, SemVer, provenance systems, capability security, regression suites, staged rollout, feature flags, and rollback systems are mature prior-art families covering substantial parts of the proposal.",
+      "No finite schema can completely define natural-language capability meaning, and consumer-relative contracts can fragment identity or hide omitted stakeholders and behaviors.",
+      "Independent evaluators can share data, incentives, models, benchmarks, organizational control, and blind spots; declared separation can be theater.",
+      "A candidate can pass frozen regressions while failing rare, adaptive, compositional, stateful, or open-world cases, and stronger suites can intensify benchmark overfitting.",
+      "Effect-complete rollback may be impossible after external actions, disclosure, learned updates, descendant creation, irreversible state migration, or reliance by other systems.",
+      "The current evidence is internally authored schemas, deterministic fixtures, and finite proofs; it includes no real candidate pair, provenance workflow, migration, composition, deployed route, or executed rollback."
+    ],
+    "known_confounds": [
+      "Model capability, prompt and tool quality, data contamination, dependency changes, hardware, load, randomness, and task mix can mimic field-preservation effects.",
+      "Contract authors can choose observable partitions and thresholds that favor the candidate or omit rare and affected-consumer failures.",
+      "Candidate and evaluator may share training data, model family, organization, benchmark, prompts, or hidden assumptions despite nominal separation.",
+      "Canary exposure, fallback frequency, refusal, and task exclusion can improve observed safety while reducing coverage and useful throughput.",
+      "Migration fidelity, privacy, and rollback success depend on state visibility, external systems, time, and irreversibility beyond the active implementation artifact.",
+      "Governance labor, incident response, evaluator maintenance, and residual custody can be omitted from cost or attributed to another layer.",
+      "A component may preserve its isolated contract while changed timing, dependencies, routes, or neighboring fields cause composition failure."
+    ],
+    "acceptance_criteria": [
+      "Every declared field obligation has an exact producer, consumer, evaluator, artifact lock, valid case, rejecting mutation, residual owner, and exercised consequence; seeded drift, capture, stale lease, regression loss, authority widening, migration, composition, leakage, and recovery failures reach exact non-default outcomes.",
+      "A preregistered real-candidate campaign meets joint preservation, safety, usefulness, cost, recovery, causal-ablation, replication, and transfer gates against strong conventional comparators with independent implementations and evaluators."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to the exact field version, candidates, artifacts, dependencies, environment, threat model, consumers, uses, evaluator, epoch, authority, state, regressions, incidents, monitors, and costs.",
+      "Separate schema validity, interface compatibility, provenance, behavioral refinement, qualification, route permission, evaluator independence, migration fidelity, composition safety, rollback readiness, rollback execution, support movement, and deployed outcomes.",
+      "Unknown or failed identity, authority, evidence, lease, evaluator, state, composition, reliance, or recovery obligations remain shadow, canary, quarantine, deprecated, rejected, or residual."
+    ],
+    "refutation_criteria": [
+      "Refute an invariant when a reachable admitted trace violates it or a required field lacks an exercised producer, consumer, or consequence.",
+      "Refute a mechanism benefit when its matched ablation preserves every frozen outcome and cost gate or the full mechanism worsens the joint frontier.",
+      "Refute superiority or transfer when a strong simpler comparator dominates or the effect fails across the declared model, workload, consumer, environment, threat, and update set."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only when a more precise capability-identity, versioning, provenance, authority, replacement, migration, composition, recovery, evidence, or runtime owner supersedes the atom and every consumer migrates with lineage."
+    ],
+    "promotion_ceiling": "argument_until_claim_specific_real_candidate_campaign_and_accepted_evidence_transition",
+    "reproduction": {
+      "command": null,
+      "environment_lock": null,
+      "artifact_digest": null,
+      "evaluator_identity": null
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "stable-capability-fields",
+      "next_unblocking_condition": "Freeze a real two-implementation field and strong registry/versioning/provenance/canary/rollback comparators; exact artifacts and environments; partitioned natural/adversarial workloads; independent contract, authority, evaluator, migration, composition, and recovery observers; joint metrics; effect inventory; causal ablations; replication; and transfer after P2/P3 semantics exist."
+    },
+    "non_claims": [
+      "Semantic review, source mapping, schema validity, a passing fixture, a finite trace, or a Lean theorem does not establish semantic equivalence, safe composition, evaluator independence, provenance, production enforcement, successful rollback, or superiority.",
+      "The current 3/6 record corpus, 2/6 lifecycle probe, selected readiness/residual checks, and 25 theorem declarations establish only their exact synthetic record, count, route, and finite-predicate consequences.",
+      "No support state, route authority, deployment permission, release status, AGI, or ASI claim changes without its separate owner and accepted evidence transition."
+    ]
+  },
+  "atom_reviews": {
+    "stable-capability-fields.core": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "Ordinary typed registries, versioning, provenance, tests, canaries, and rollback practice can supply every useful substitution control with less governance overhead; the proposed field record neither defines semantic identity objectively nor prevents a captured organization from blessing drift.",
+      "falsifier": "A reachable admitted route violates any bound observable, authority, qualification, history, migration, lifecycle, or recovery obligation; or a strong simpler comparator dominates the frozen joint frontier across all declared transfer settings.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.problem.001": {
+      "proposition_type": "source-synthesis",
+      "current_disposition": "research_problem_not_positive_result",
+      "strongest_counterclaim": "Existing software and ML release practice already makes consequential implementation changes observable enough for every relevant consumer, so a separate consumer-relative field contract repairs no material gap.",
+      "falsifier": "A dated, representative audit finds no material hidden semantic, authority, evidence, reliance, migration, or rollback drift under current replacement practice.",
+      "acceptance_criteria": [
+        "A dated comparator audit preserves the strongest existing approach, demonstrates the exact unresolved boundary, and avoids implying that the proposed remedy works."
+      ]
+    },
+    "stable-capability-fields.insufficiency.001": {
+      "proposition_type": "source-synthesis",
+      "current_disposition": "comparator_gap_pending_dated_audit",
+      "strongest_counterclaim": "A well-engineered combination of API compatibility, provenance, benchmark regression, capability security, canaries, and rollback runbooks supplies every named property without the proposed SCF abstraction.",
+      "falsifier": "A frozen strong comparator implements and exercises every named identity, behavioral, authority, evaluator, lease, regression, reliance, migration, composition, and effect-recovery boundary at equal or lower joint cost.",
+      "acceptance_criteria": [
+        "A dated comparator audit preserves the strongest existing approach, demonstrates the exact unresolved boundary, and avoids implying that the proposed remedy works."
+      ]
+    },
+    "stable-capability-fields.minimum.001": {
+      "proposition_type": "executable",
+      "current_disposition": "retain_exact_executable_boundary_without_support_promotion",
+      "strongest_counterclaim": "The current minimum is self-authored schema and finite-state theater that demonstrates no real equivalence, evaluator independence, migration, composition, authority enforcement, or recovery.",
+      "falsifier": "Any stated count, command, fixture classification, theorem grouping, or non-claim fails clean reproduction, or prose infers real behavior from finite records.",
+      "acceptance_criteria": [
+        "Reproduce 3 valid and 6 expected-invalid SCF records, 2 valid and 6 expected-invalid lifecycle traces, the selected readiness/residual routes, 25 Lean theorem declarations, four proof-target groups, and every non-claim from a clean environment."
+      ],
+      "promotion_ceiling": "synthetic_test_backed_for_exact_record_and_transition_semantics_only_after_accepted_transition"
+    },
+    "stable-capability-fields.beyond_sota.001": {
+      "proposition_type": "composite",
+      "current_disposition": "research_target_not_current_result",
+      "strongest_counterclaim": "The full SCF condition adds evaluator and governance cost but is dominated by simpler release engineering on useful throughput, failures, recovery, and residual risk.",
+      "falsifier": "The full condition misses its preregistered preservation, safety, usefulness, cost, causal-ablation, replication, or transfer gate, or a simpler comparator dominates it.",
+      "acceptance_criteria": [
+        "A preregistered multi-field campaign with real candidates, strong comparators, independent implementations and evaluators, causal ablations, joint metrics, replication, and transfer meets every frozen promotion gate without hiding negative/null results."
+      ],
+      "claim_label": "Speculative"
+    },
+    "stable-capability-fields.mechanism.001": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, unimplementable, or fails to causally improve the declared substitution boundary: Define field identity independently of any implementation, model family, vendor, prompt, tool, benchmark, deployment, or route name; a material semantic change creates a governed field version or a new field rather than silently reusing the old identity.",
+      "falsifier": "A matched ablation preserves every frozen outcome and cost gate, or an exercised trace shows the mechanism cannot enforce the stated boundary.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.mechanism.002": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, unimplementable, or fails to causally improve the declared substitution boundary: Specify the observable contract over accepted and rejected inputs, output and side-effect postconditions, errors, abstentions, timeouts, nondeterminism envelope, latency and resource budgets, privacy and security effects, authority use, and required evidence and audit emissions.",
+      "falsifier": "A matched ablation preserves every frozen outcome and cost gate, or an exercised trace shows the mechanism cannot enforce the stated boundary.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.mechanism.003": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, unimplementable, or fails to causally improve the declared substitution boundary: Bind each qualification claim to exact code, weights, prompts, policies, tools, data or retrieval snapshots, dependencies, build and provenance records, hardware and runtime environment, evaluator version, benchmark epoch, threat model, consumer, use, and authority scope.",
+      "falsifier": "A matched ablation preserves every frozen outcome and cost gate, or an exercised trace shows the mechanism cannot enforce the stated boundary.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.mechanism.004": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, unimplementable, or fails to causally improve the declared substitution boundary: Express candidate admission as consumer-relative behavioral refinement: preserve every required field obligation and historical regression while allowing explicitly declared improvements; interface shape, average score, provenance, or implementation similarity alone is insufficient.",
+      "falsifier": "A matched ablation preserves every frozen outcome and cost gate, or an exercised trace shows the mechanism cannot enforce the stated boundary.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.mechanism.005": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, unimplementable, or fails to causally improve the declared substitution boundary: Separate the route proposer, candidate owner, evaluator, promotion authority, incident owner, and rollback authority enough to expose dependencies; self-evaluation or unavoidable capture narrows the route and leaves a residual.",
+      "falsifier": "A matched ablation preserves every frozen outcome and cost gate, or an exercised trace shows the mechanism cannot enforce the stated boundary.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.mechanism.006": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, unimplementable, or fails to causally improve the declared substitution boundary: Issue scoped qualification leases with evidence floor, evaluator identity, allowed consumers and routes, expiry, review interval, change classification, incident and drift triggers, and explicit downgrade or revocation consequences.",
+      "falsifier": "A matched ablation preserves every frozen outcome and cost gate, or an exercised trace shows the mechanism cannot enforce the stated boundary.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.mechanism.007": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, unimplementable, or fails to causally improve the declared substitution boundary: Use an explicit lifecycle over proposed, shadow, canary, qualified, default, quarantined, deprecated, and retired states; promotion, demotion, and terminal transitions consume receipts instead of occurring by mutable registry flag alone.",
+      "falsifier": "A matched ablation preserves every frozen outcome and cost gate, or an exercised trace shows the mechanism cannot enforce the stated boundary.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.mechanism.008": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, unimplementable, or fails to causally improve the declared substitution boundary: Record downstream reliance, composition assumptions, state schemas, migration and reverse-migration paths, data custody, caches, side effects, descendants, and external commitments so replacement and rollback account for more than the active binary.",
+      "falsifier": "A matched ablation preserves every frozen outcome and cost gate, or an exercised trace shows the mechanism cannot enforce the stated boundary.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.mechanism.009": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, unimplementable, or fails to causally improve the declared substitution boundary: Keep field-owned regression and incident memory append-only enough to survive candidate replacement; new candidates inherit negative controls, safety and rights obligations, unresolved residuals, and known composition failures.",
+      "falsifier": "A matched ablation preserves every frozen outcome and cost gate, or an exercised trace shows the mechanism cannot enforce the stated boundary.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.mechanism.010": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, unimplementable, or fails to causally improve the declared substitution boundary: Validate route identity, authority, lease freshness, provenance, evaluator policy, regression floor, composition certificate, migration solvency, monitor readiness, rollback authority, and open incidents before stronger use; failure routes to a named non-default state.",
+      "falsifier": "A matched ablation preserves every frozen outcome and cost gate, or an exercised trace shows the mechanism cannot enforce the stated boundary.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.mechanism.011": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, unimplementable, or fails to causally improve the declared substitution boundary: Emit a replacement receipt binding old and new field and implementation identities, evidence views, decisions, authority delta, affected consumers, state movement, monitors, residuals, rollback trigger and owner, terminal outcome, and support-state non-effect.",
+      "falsifier": "A matched ablation preserves every frozen outcome and cost gate, or an exercised trace shows the mechanism cannot enforce the stated boundary.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.interface.001": {
+      "proposition_type": "executable",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named producer and consumer can interoperate safely without this field, or the interface admits a route that violates the proposition: Planning requests a field version, consumer and use profile, evidence floor, risk and resource envelope, and acceptable failure or abstention behavior rather than a bare capability label.",
+      "falsifier": "A valid reachable trace crosses the interface with wrong identity, scope, authority, evidence, lifecycle, state, residual, or recovery semantics and its consumer accepts it.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.interface.002": {
+      "proposition_type": "executable",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named producer and consumer can interoperate safely without this field, or the interface admits a route that violates the proposition: Routing resolves only implementations whose lease, lifecycle state, consumer policy, environment, dependency graph, authority ceiling, and blockers permit the requested use.",
+      "falsifier": "A valid reachable trace crosses the interface with wrong identity, scope, authority, evidence, lifecycle, state, residual, or recovery semantics and its consumer accepts it.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.interface.003": {
+      "proposition_type": "executable",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named producer and consumer can interoperate safely without this field, or the interface admits a route that violates the proposition: Execution enforces the selected route's authority and effect envelope and emits outcome, error, abstention, resource, side-effect, and audit records against the field contract.",
+      "falsifier": "A valid reachable trace crosses the interface with wrong identity, scope, authority, evidence, lifecycle, state, residual, or recovery semantics and its consumer accepts it.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.interface.004": {
+      "proposition_type": "executable",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named producer and consumer can interoperate safely without this field, or the interface admits a route that violates the proposition: Evidence binds qualification, regression, provenance, evaluator, incident, drift, monitor, and rollback results to exact artifacts, environments, consumers, uses, and epochs without converting a local pass into universal support.",
+      "falsifier": "A valid reachable trace crosses the interface with wrong identity, scope, authority, evidence, lifecycle, state, residual, or recovery semantics and its consumer accepts it.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.interface.005": {
+      "proposition_type": "executable",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named producer and consumer can interoperate safely without this field, or the interface admits a route that violates the proposition: Memory and state management declare schema, cache, lineage, migration, reverse-migration, privacy, retention, revocation, and descendant obligations for each candidate transition.",
+      "falsifier": "A valid reachable trace crosses the interface with wrong identity, scope, authority, evidence, lifecycle, state, residual, or recovery semantics and its consumer accepts it.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.interface.006": {
+      "proposition_type": "executable",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named producer and consumer can interoperate safely without this field, or the interface admits a route that violates the proposition: Governance owns semantic versioning, authority changes, evaluator-policy changes, exceptions, disputes, deprecation, retirement, and any decision to accept an explicitly bounded residual.",
+      "falsifier": "A valid reachable trace crosses the interface with wrong identity, scope, authority, evidence, lifecycle, state, residual, or recovery semantics and its consumer accepts it.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.interface.007": {
+      "proposition_type": "executable",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named producer and consumer can interoperate safely without this field, or the interface admits a route that violates the proposition: Replacement, readiness, procedural-memory, benchmark, policy-update, and self-improvement layers consume the same field identity and receipts; loss or reinterpretation of the contract blocks their promotion.",
+      "falsifier": "A valid reachable trace crosses the interface with wrong identity, scope, authority, evidence, lifecycle, state, residual, or recovery semantics and its consumer accepts it.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.invariant.001": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The obligation is either infeasible, not actually invariant under a legitimate replacement, or satisfiable on paper while its protected effect fails: Field identity is distinct from implementation, route, registry entry, version label, benchmark, evaluator, and vendor identity.",
+      "falsifier": "A reachable state satisfies the declared assumptions and violates this exact obligation, or the obligation cannot be observed without circular self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.invariant.002": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The obligation is either infeasible, not actually invariant under a legitimate replacement, or satisfiable on paper while its protected effect fails: A material change to observable obligations, failure semantics, authority effects, protected data behavior, or consumer reliance is classified and governed as a field-version or field-identity change.",
+      "falsifier": "A reachable state satisfies the declared assumptions and violates this exact obligation, or the obligation cannot be observed without circular self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.invariant.003": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The obligation is either infeasible, not actually invariant under a legitimate replacement, or satisfiable on paper while its protected effect fails: Replacement cannot expand authority, permissions, side effects, eligible consumers, evidence claims, or support state by inheritance or default.",
+      "falsifier": "A reachable state satisfies the declared assumptions and violates this exact obligation, or the obligation cannot be observed without circular self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.invariant.004": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The obligation is either infeasible, not actually invariant under a legitimate replacement, or satisfiable on paper while its protected effect fails: Qualification is bound to exact artifacts, dependencies, environment, evaluator, benchmark epoch, threat model, consumer, use, and time-bounded lease.",
+      "falsifier": "A reachable state satisfies the declared assumptions and violates this exact obligation, or the obligation cannot be observed without circular self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.invariant.005": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The obligation is either infeasible, not actually invariant under a legitimate replacement, or satisfiable on paper while its protected effect fails: A candidate cannot be the sole author or judge of the evidence, evaluator policy, promotion rule, incident closure, or rollback success used to qualify it; disclosed dependency narrows the claim and route.",
+      "falsifier": "A reachable state satisfies the declared assumptions and violates this exact obligation, or the obligation cannot be observed without circular self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.invariant.006": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The obligation is either infeasible, not actually invariant under a legitimate replacement, or satisfiable on paper while its protected effect fails: Every stronger lifecycle transition has explicit prerequisites, an accountable decision owner, a durable receipt, and a defined failure destination.",
+      "falsifier": "A reachable state satisfies the declared assumptions and violates this exact obligation, or the obligation cannot be observed without circular self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.invariant.007": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The obligation is either infeasible, not actually invariant under a legitimate replacement, or satisfiable on paper while its protected effect fails: Field-owned regressions, incidents, dissent, rights, security, privacy, audit, residual, and affected-consumer obligations survive implementation replacement and field migration.",
+      "falsifier": "A reachable state satisfies the declared assumptions and violates this exact obligation, or the obligation cannot be observed without circular self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.invariant.008": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The obligation is either infeasible, not actually invariant under a legitimate replacement, or satisfiable on paper while its protected effect fails: Interface compatibility, provenance, benchmark superiority, or local equivalence never substitutes for the full declared behavioral and authority refinement predicate.",
+      "falsifier": "A reachable state satisfies the declared assumptions and violates this exact obligation, or the obligation cannot be observed without circular self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.invariant.009": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The obligation is either infeasible, not actually invariant under a legitimate replacement, or satisfiable on paper while its protected effect fails: Composition is requalified when dependencies, neighboring fields, routes, state schemas, hardware, data, policies, or authority topology change materially.",
+      "falsifier": "A reachable state satisfies the declared assumptions and violates this exact obligation, or the obligation cannot be observed without circular self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.invariant.010": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The obligation is either infeasible, not actually invariant under a legitimate replacement, or satisfiable on paper while its protected effect fails: Rollback readiness covers implementation, route, state, cache, data, policy, credentials, side effects, descendants, monitors, and external commitments; an artifact pointer alone is insufficient.",
+      "falsifier": "A reachable state satisfies the declared assumptions and violates this exact obligation, or the obligation cannot be observed without circular self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.invariant.011": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The obligation is either infeasible, not actually invariant under a legitimate replacement, or satisfiable on paper while its protected effect fails: Expiry, drift, incident, evaluator change, provenance failure, regression loss, or authority delta revokes or downgrades affected qualifications until a new owning decision is recorded.",
+      "falsifier": "A reachable state satisfies the declared assumptions and violates this exact obligation, or the obligation cannot be observed without circular self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.invariant.012": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The obligation is either infeasible, not actually invariant under a legitimate replacement, or satisfiable on paper while its protected effect fails: A valid schema, finite proof, synthetic trace, or completed receipt proves only its named record or predicate boundary and never semantic equivalence, safe composition, production enforcement, successful recovery, or field-level support by itself.",
+      "falsifier": "A reachable state satisfies the declared assumptions and violates this exact obligation, or the obligation cannot be observed without circular self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting cases, independent-enough observation, downstream consumer assertions, explicit residuals, and no inference beyond the frozen field, candidate, consumer, use, environment, threat model, evaluator, epoch, and authority scope."
+      ]
+    },
+    "stable-capability-fields.failure_mode.001": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The condition is not a distinct material failure, has no causal link to unsafe substitution, or is already caught more cheaply by ordinary release controls: For Stable Capability Fields, a material failure mode is: Identity laundering keeps the field name or compatible-looking version while observable behavior, failures, protected effects, or trust terms change.",
+      "falsifier": "The seeded condition produces no preregistered material degradation or unsafe admission across natural and adversarial cases, or a simpler control detects and contains it with equal or better joint cost.",
+      "acceptance_criteria": [
+        "Seed the failure prospectively; an independent observer detects its exact causal consequence and the declared control routes it to the named non-default state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "stable-capability-fields.failure_mode.002": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The condition is not a distinct material failure, has no causal link to unsafe substitution, or is already caught more cheaply by ordinary release controls: For Stable Capability Fields, a material failure mode is: Interface theater treats matching signatures, schemas, or happy-path outputs as semantic substitutability.",
+      "falsifier": "The seeded condition produces no preregistered material degradation or unsafe admission across natural and adversarial cases, or a simpler control detects and contains it with equal or better joint cost.",
+      "acceptance_criteria": [
+        "Seed the failure prospectively; an independent observer detects its exact causal consequence and the declared control routes it to the named non-default state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "stable-capability-fields.failure_mode.003": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The condition is not a distinct material failure, has no causal link to unsafe substitution, or is already caught more cheaply by ordinary release controls: For Stable Capability Fields, a material failure mode is: Qualification overreach generalizes one workload, consumer, evaluator, threat model, environment, or epoch to unrelated uses.",
+      "falsifier": "The seeded condition produces no preregistered material degradation or unsafe admission across natural and adversarial cases, or a simpler control detects and contains it with equal or better joint cost.",
+      "acceptance_criteria": [
+        "Seed the failure prospectively; an independent observer detects its exact causal consequence and the declared control routes it to the named non-default state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "stable-capability-fields.failure_mode.004": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The condition is not a distinct material failure, has no causal link to unsafe substitution, or is already caught more cheaply by ordinary release controls: For Stable Capability Fields, a material failure mode is: Benchmark overfitting preserves the measured suite while degrading unmeasured obligations, rare failures, abstention quality, or downstream composition.",
+      "falsifier": "The seeded condition produces no preregistered material degradation or unsafe admission across natural and adversarial cases, or a simpler control detects and contains it with equal or better joint cost.",
+      "acceptance_criteria": [
+        "Seed the failure prospectively; an independent observer detects its exact causal consequence and the declared control routes it to the named non-default state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "stable-capability-fields.failure_mode.005": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The condition is not a distinct material failure, has no causal link to unsafe substitution, or is already caught more cheaply by ordinary release controls: For Stable Capability Fields, a material failure mode is: Evaluator capture lets the candidate, vendor, route owner, or promotion authority choose or influence the judge that qualifies it.",
+      "falsifier": "The seeded condition produces no preregistered material degradation or unsafe admission across natural and adversarial cases, or a simpler control detects and contains it with equal or better joint cost.",
+      "acceptance_criteria": [
+        "Seed the failure prospectively; an independent observer detects its exact causal consequence and the declared control routes it to the named non-default state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "stable-capability-fields.failure_mode.006": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The condition is not a distinct material failure, has no causal link to unsafe substitution, or is already caught more cheaply by ordinary release controls: For Stable Capability Fields, a material failure mode is: Provenance substitution treats an intact build lineage as evidence of behavioral adequacy, alignment, security, or replacement safety.",
+      "falsifier": "The seeded condition produces no preregistered material degradation or unsafe admission across natural and adversarial cases, or a simpler control detects and contains it with equal or better joint cost.",
+      "acceptance_criteria": [
+        "Seed the failure prospectively; an independent observer detects its exact causal consequence and the declared control routes it to the named non-default state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "stable-capability-fields.failure_mode.007": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The condition is not a distinct material failure, has no causal link to unsafe substitution, or is already caught more cheaply by ordinary release controls: For Stable Capability Fields, a material failure mode is: Authority smuggling gives a stronger candidate broader tools, data, permissions, side effects, consumers, or delegation rights through an unchanged route.",
+      "falsifier": "The seeded condition produces no preregistered material degradation or unsafe admission across natural and adversarial cases, or a simpler control detects and contains it with equal or better joint cost.",
+      "acceptance_criteria": [
+        "Seed the failure prospectively; an independent observer detects its exact causal consequence and the declared control routes it to the named non-default state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "stable-capability-fields.failure_mode.008": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The condition is not a distinct material failure, has no causal link to unsafe substitution, or is already caught more cheaply by ordinary release controls: For Stable Capability Fields, a material failure mode is: Lease inertia leaves expired, revoked, drifted, incident-affected, or environment-mismatched qualification active by default.",
+      "falsifier": "The seeded condition produces no preregistered material degradation or unsafe admission across natural and adversarial cases, or a simpler control detects and contains it with equal or better joint cost.",
+      "acceptance_criteria": [
+        "Seed the failure prospectively; an independent observer detects its exact causal consequence and the declared control routes it to the named non-default state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "stable-capability-fields.failure_mode.009": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The condition is not a distinct material failure, has no causal link to unsafe substitution, or is already caught more cheaply by ordinary release controls: For Stable Capability Fields, a material failure mode is: Regression amnesia stores tests and incidents with the outgoing implementation so successors do not inherit them.",
+      "falsifier": "The seeded condition produces no preregistered material degradation or unsafe admission across natural and adversarial cases, or a simpler control detects and contains it with equal or better joint cost.",
+      "acceptance_criteria": [
+        "Seed the failure prospectively; an independent observer detects its exact causal consequence and the declared control routes it to the named non-default state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "stable-capability-fields.failure_mode.010": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The condition is not a distinct material failure, has no causal link to unsafe substitution, or is already caught more cheaply by ordinary release controls: For Stable Capability Fields, a material failure mode is: State migration insolvency preserves visible outputs while losing, corrupting, exposing, or making irreversible hidden state, caches, lineage, revocations, or descendant obligations.",
+      "falsifier": "The seeded condition produces no preregistered material degradation or unsafe admission across natural and adversarial cases, or a simpler control detects and contains it with equal or better joint cost.",
+      "acceptance_criteria": [
+        "Seed the failure prospectively; an independent observer detects its exact causal consequence and the declared control routes it to the named non-default state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "stable-capability-fields.failure_mode.011": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The condition is not a distinct material failure, has no causal link to unsafe substitution, or is already caught more cheaply by ordinary release controls: For Stable Capability Fields, a material failure mode is: Composition failure qualifies a component alone while its new dependencies, timing, context, policy, or neighboring fields break system-level obligations.",
+      "falsifier": "The seeded condition produces no preregistered material degradation or unsafe admission across natural and adversarial cases, or a simpler control detects and contains it with equal or better joint cost.",
+      "acceptance_criteria": [
+        "Seed the failure prospectively; an independent observer detects its exact causal consequence and the declared control routes it to the named non-default state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "stable-capability-fields.failure_mode.012": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The condition is not a distinct material failure, has no causal link to unsafe substitution, or is already caught more cheaply by ordinary release controls: For Stable Capability Fields, a material failure mode is: Shadow or canary leakage permits nominally limited candidates to create durable side effects, train descendants, alter caches, or influence default decisions before qualification.",
+      "falsifier": "The seeded condition produces no preregistered material degradation or unsafe admission across natural and adversarial cases, or a simpler control detects and contains it with equal or better joint cost.",
+      "acceptance_criteria": [
+        "Seed the failure prospectively; an independent observer detects its exact causal consequence and the declared control routes it to the named non-default state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "stable-capability-fields.failure_mode.013": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The condition is not a distinct material failure, has no causal link to unsafe substitution, or is already caught more cheaply by ordinary release controls: For Stable Capability Fields, a material failure mode is: Rollback theater preserves an old artifact but cannot reverse state, data, credentials, external actions, learned updates, downstream reliance, or successor effects.",
+      "falsifier": "The seeded condition produces no preregistered material degradation or unsafe admission across natural and adversarial cases, or a simpler control detects and contains it with equal or better joint cost.",
+      "acceptance_criteria": [
+        "Seed the failure prospectively; an independent observer detects its exact causal consequence and the declared control routes it to the named non-default state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "stable-capability-fields.failure_mode.014": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The condition is not a distinct material failure, has no causal link to unsafe substitution, or is already caught more cheaply by ordinary release controls: For Stable Capability Fields, a material failure mode is: Terminal-state escape restarts a retired or quarantined implementation, or retires a field without notice, evidence custody, migration, and retirement receipts.",
+      "falsifier": "The seeded condition produces no preregistered material degradation or unsafe admission across natural and adversarial cases, or a simpler control detects and contains it with equal or better joint cost.",
+      "acceptance_criteria": [
+        "Seed the failure prospectively; an independent observer detects its exact causal consequence and the declared control routes it to the named non-default state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "stable-capability-fields.failure_mode.015": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The condition is not a distinct material failure, has no causal link to unsafe substitution, or is already caught more cheaply by ordinary release controls: For Stable Capability Fields, a material failure mode is: Replacement-cost externalization calls an upgrade successful while hiding missed help, latency, resource use, governance burden, evaluator labor, migration loss, incidents, and residual risk.",
+      "falsifier": "The seeded condition produces no preregistered material degradation or unsafe admission across natural and adversarial cases, or a simpler control detects and contains it with equal or better joint cost.",
+      "acceptance_criteria": [
+        "Seed the failure prospectively; an independent observer detects its exact causal consequence and the declared control routes it to the named non-default state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "stable-capability-fields.formal.scf-field-identity-operational-invariant": {
+      "proposition_type": "formal",
+      "current_disposition": "implemented_finite_obligation_not_empirical_support",
+      "strongest_counterclaim": "The encoded finite predicate is internally valid but too weak or incorrectly modeled to justify the prose proposition: An implementation can replace another only if it satisfies the field qualification predicate.",
+      "falsifier": "A checked countermodel satisfies the encoded assumptions and negates the target, the theorem does not build, or the prose target exceeds the finite model.",
+      "acceptance_criteria": [
+        "The Lean module builds from the locked environment; theorem assumptions and finite scope match the target; explicit counterexamples and non-claims prevent deployed, empirical, or support-state inference."
+      ],
+      "promotion_ceiling": "formal_proof_backed_for_exact_finite_predicate_only_after_accepted_transition"
+    },
+    "stable-capability-fields.formal.scf-field-identity-failure-blocks-promotion": {
+      "proposition_type": "formal",
+      "current_disposition": "implemented_finite_obligation_not_empirical_support",
+      "strongest_counterclaim": "The encoded finite predicate is internally valid but too weak or incorrectly modeled to justify the prose proposition: A replacement that expands authority without a governance grant is rejected.",
+      "falsifier": "A checked countermodel satisfies the encoded assumptions and negates the target, the theorem does not build, or the prose target exceeds the finite model.",
+      "acceptance_criteria": [
+        "The Lean module builds from the locked environment; theorem assumptions and finite scope match the target; explicit counterexamples and non-claims prevent deployed, empirical, or support-state inference."
+      ],
+      "promotion_ceiling": "formal_proof_backed_for_exact_finite_predicate_only_after_accepted_transition"
+    },
+    "stable-capability-fields.formal.scf-lifecycle-route-envelope": {
+      "proposition_type": "formal",
+      "current_disposition": "implemented_finite_obligation_not_empirical_support",
+      "strongest_counterclaim": "The encoded finite predicate is internally valid but too weak or incorrectly modeled to justify the prose proposition: A structured SCF lifecycle review and finite lifecycle-state transition relation route identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, open incidents, missing rollback, missing regression preservation, missing deprecation notice, and missing retirement receipt away from default or terminal promotion.",
+      "falsifier": "A checked countermodel satisfies the encoded assumptions and negates the target, the theorem does not build, or the prose target exceeds the finite model.",
+      "acceptance_criteria": [
+        "The Lean module builds from the locked environment; theorem assumptions and finite scope match the target; explicit counterexamples and non-claims prevent deployed, empirical, or support-state inference."
+      ],
+      "promotion_ceiling": "formal_proof_backed_for_exact_finite_predicate_only_after_accepted_transition"
+    },
+    "stable-capability-fields.formal.scf-lifecycle-trace-fixture-bridge": {
+      "proposition_type": "formal",
+      "current_disposition": "implemented_finite_obligation_not_empirical_support",
+      "strongest_counterclaim": "The encoded finite predicate is internally valid but too weak or incorrectly modeled to justify the prose proposition: The synthetic SCF lifecycle trace summary records two valid traces, six expected-invalid controls, forward lifecycle coverage, incident quarantine coverage, unsafe-transition rejection, and no deployed-route-validation, rollback-execution, or support-state-promotion claim.",
+      "falsifier": "A checked countermodel satisfies the encoded assumptions and negates the target, the theorem does not build, or the prose target exceeds the finite model.",
+      "acceptance_criteria": [
+        "The Lean module builds from the locked environment; theorem assumptions and finite scope match the target; explicit counterexamples and non-claims prevent deployed, empirical, or support-state inference."
+      ],
+      "promotion_ceiling": "formal_proof_backed_for_exact_finite_predicate_only_after_accepted_transition"
+    }
+  },
+  "prose_candidate_dispositions": {
+    "stable-capability-fields.prose.3b6dd3841391": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Exact chapter-status evidence boundary."
+    },
+    "stable-capability-fields.prose.1dc6f1caf0a2": {
+      "state": "duplicate_of_atom",
+      "rationale": "Governance-continuity motivation for the core substitution contract.",
+      "target_atom_id": "stable-capability-fields.core"
+    },
+    "stable-capability-fields.prose.dccef6b5ad42": {
+      "state": "duplicate_of_atom",
+      "rationale": "Reader-language restatement of the owned replacement-identity problem.",
+      "target_atom_id": "stable-capability-fields.problem.001"
+    },
+    "stable-capability-fields.prose.843dc14fe7d5": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Cross-chapter reading-path description, not a new SCF claim."
+    },
+    "stable-capability-fields.prose.7787a307c451": {
+      "state": "duplicate_of_atom",
+      "rationale": "Reader-language restatement of the technical continuity problem.",
+      "target_atom_id": "stable-capability-fields.problem.001"
+    },
+    "stable-capability-fields.prose.0824182e779c": {
+      "state": "duplicate_of_atom",
+      "rationale": "Human-language restatement of the core non-drift objective.",
+      "target_atom_id": "stable-capability-fields.core"
+    },
+    "stable-capability-fields.prose.f0f2b554ff0e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Consumer-relative scope is owned by the core contract and qualification mechanisms.",
+      "target_atom_id": "stable-capability-fields.core"
+    },
+    "stable-capability-fields.prose.75a0a1bda1b8": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explicitly bounded description of what a contract record can expose, without efficacy inference."
+    },
+    "stable-capability-fields.prose.d73042d9cfd6": {
+      "state": "duplicate_of_atom",
+      "rationale": "Question-form elaboration of the behavioral-refinement admission mechanism.",
+      "target_atom_id": "stable-capability-fields.mechanism.004"
+    },
+    "stable-capability-fields.prose.32a142bf850f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Inline labeled duplicate of the manifest-owned core atom.",
+      "target_atom_id": "stable-capability-fields.core"
+    },
+    "stable-capability-fields.prose.dedde71e13e4": {
+      "state": "duplicate_of_atom",
+      "rationale": "Core non-claim and finite-evidence ceiling.",
+      "target_atom_id": "stable-capability-fields.invariant.012"
+    },
+    "stable-capability-fields.prose.70dc29fd1924": {
+      "state": "duplicate_of_atom",
+      "rationale": "Boundary-not-prevention explanation of identity separation.",
+      "target_atom_id": "stable-capability-fields.mechanism.001"
+    },
+    "stable-capability-fields.prose.a4070d9e7cf7": {
+      "state": "duplicate_of_atom",
+      "rationale": "Observable-contract field elaboration.",
+      "target_atom_id": "stable-capability-fields.mechanism.002"
+    },
+    "stable-capability-fields.prose.966e1f5f8d54": {
+      "state": "duplicate_of_atom",
+      "rationale": "Behavioral-refinement definition owned by candidate-admission mechanism.",
+      "target_atom_id": "stable-capability-fields.mechanism.004"
+    },
+    "stable-capability-fields.prose.3af9edf56d50": {
+      "state": "duplicate_of_atom",
+      "rationale": "Separation-of-duties obligation owned by evaluator mechanism.",
+      "target_atom_id": "stable-capability-fields.mechanism.005"
+    },
+    "stable-capability-fields.prose.a5c5ad3ad19f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Consequence of field-owned regression and incident memory.",
+      "target_atom_id": "stable-capability-fields.mechanism.009"
+    },
+    "stable-capability-fields.prose.6be349d0a2f0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Schema-boundary caveat, not an additional positive claim."
+    },
+    "stable-capability-fields.prose.77fb22d14587": {
+      "state": "duplicate_of_atom",
+      "rationale": "Finite-evidence ceiling owned by the twelfth invariant.",
+      "target_atom_id": "stable-capability-fields.invariant.012"
+    },
+    "stable-capability-fields.prose.5b8b20bc591a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Prose formatting of benchmark-overfitting failure mode.",
+      "target_atom_id": "stable-capability-fields.failure_mode.004"
+    },
+    "stable-capability-fields.prose.1d16a12f36d2": {
+      "state": "duplicate_of_atom",
+      "rationale": "Prose formatting of rollback-theater failure mode.",
+      "target_atom_id": "stable-capability-fields.failure_mode.013"
+    },
+    "stable-capability-fields.prose.860618b77d6f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Transition sentence introducing distinct controls and measurements."
+    },
+    "stable-capability-fields.prose.8c69fadb8f93": {
+      "state": "duplicate_of_atom",
+      "rationale": "Schema limitation and outcome-evidence boundary owned by the twelfth invariant.",
+      "target_atom_id": "stable-capability-fields.invariant.012"
+    },
+    "stable-capability-fields.prose.0e81fb62deae": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Exact validator-result scope statement."
+    },
+    "stable-capability-fields.prose.5dd3fb2e5b3d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Transfer dimensions owned by the beyond-SOTA campaign.",
+      "target_atom_id": "stable-capability-fields.beyond_sota.001"
+    },
+    "stable-capability-fields.prose.edef48fb2857": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explicit beyond-SOTA non-claim."
+    },
+    "stable-capability-fields.prose.1e5fc812a832": {
+      "state": "historical_or_source_report",
+      "rationale": "Report of the current finite Lean module's derived consequences, already owned by formal targets."
+    },
+    "stable-capability-fields.prose.a05786be14f4": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explicit formal-model non-claim."
+    },
+    "stable-capability-fields.prose.6d2f13d7f3bf": {
+      "state": "editorial_or_question",
+      "rationale": "Handoff sentence assigning the next chapter's transaction role."
+    }
+  ,
+    "stable-capability-fields.prose.f38c9a029906": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the manifest-owned capability-replacement problem.",
+      "target_atom_id": "stable-capability-fields.problem.001"
+    }
+  },
+  "non_claims": [
+    "Completing this semantic sweep changes decomposition and ownership metadata only; it does not establish proposition truth or promote support.",
+    "Every current executable result remains bounded to exact public fixtures, validators, finite Lean predicates, and stated non-claims.",
+    "No real candidate equivalence, evaluator independence, deployed authority enforcement, migration, composition, rollback, or beyond-SOTA result is claimed."
+  ]
+}

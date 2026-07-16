@@ -115,23 +115,14 @@
   ],
   "acceptance_predicate": "The selected compact receipt must reconstruct the target exactly, remain below the literal baseline byte count, keep repair residual and fallback records visible, stay within the search bound, preserve exact-replay consumer policy, and reject lossy exactness, negative-rate/no-fallback, and bounded-search-overrun controls.",
   "lean_fixture_alignment": {
-    "lean_module": "lean/AsiStackProofs/CompactGenerativeSystems.lean",
-    "selected_constructor": "repeatGeneratorPlusRepair",
-    "baseline_constructor": "literalBaseline",
-    "receipt_constructors": {
-      "receipt://literal-baseline": "literalBaseline",
-      "receipt://repeat-generator-plus-repair": "repeatGeneratorPlusRepair",
-      "receipt://lossy-summary-marked-exact": "lossySummaryMarkedExact",
-      "receipt://negative-rate-no-fallback": "negativeRateNoFallback",
-      "receipt://bounded-search-overrun": "boundedSearchOverrun"
-    },
+    "lean_module": "lean/AsiStackProofs/CompactGenerationRefinement.lean",
     "checked_theorem_names": [
-      "compact_gvr_fixture_selected_is_eligible",
-      "lossy_marked_exact_fixture_rejected",
-      "negative_rate_without_fallback_fixture_rejected",
-      "bounded_search_overrun_fixture_rejected",
-      "compact_gvr_fixture_selected_beats_literal_baseline"
-    ]
+      "lossy_exactness_is_blocked_before_verification",
+      "reconstruction_mismatch_activates_preserved_source_fallback",
+      "reconstruction_mismatch_without_executable_fallback_is_blocked",
+      "fallback_lifecycle_reaches_closed_without_support_or_effect_authority"
+    ],
+    "boundary": "reachable verification/fallback lifecycle; receipt values remain validator-owned"
   },
   "verification_result": "pass",
   "support_state_effect": "eligible_for_bounded_evidence_review",

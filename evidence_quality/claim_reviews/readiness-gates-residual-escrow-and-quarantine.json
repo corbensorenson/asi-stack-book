@@ -1,0 +1,526 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
+    "structured_atoms_reviewed": 74,
+    "prose_candidates_adjudicated": 74,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, all seventeen source mappings, four public record schemas, three readiness/check/lifecycle harness families, the exact Project Theseus YELLOW currentness import, post-v2.1 and post-v2.3 calibration boundaries, three public proof targets, all twenty Lean declarations, every manifest atom, every prose candidate, test plan, crosswalk, summary, and handoff. The sweep made expiring consumer- and use-specific routability qualification the distinct owner; expanded the lifecycle to eighteen mechanisms, twelve interfaces, eighteen invariants, and eighteen failure modes; classified the formal surface as eight direct predicate/projection checks, eleven derived finite route or negative consequences, and one authored-summary bridge; specified matched natural baselines, joint usefulness and governance metrics, causal ablations, independent reproduction, and heterogeneous transfer; and preserved zero core support effect."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Natural and adversarial lifecycle decisions for versioned AI models, specialists, tools, procedures, memory packets, runtime lanes, humans, and replacement implementations considered for shadow, canary, qualified, ordinary, diagnostic, quarantined, superseded, retired, rerun, or rejected use.",
+      "environment": "Seventeen reviewed source mappings; four public schemas; four valid and five invalid readiness/residual scenarios; one quarantined six-project check record and nine invalid mutations; six valid lifecycle transitions and twelve invalid controls; one exact Project Theseus YELLOW currentness import and eight negative controls; bounded post-v2.1 and post-v2.3 calibration failures; two accepted no-promotion readiness transitions; and twenty finite Lean declarations. No deployed readiness engine is represented.",
+      "model": "A consumer- and use-specific expiring routability relation over exact target identity, frozen policy and checks, independently owned evidence, freshness and evaluator adequacy, separate floor/frontier/veto dimensions, residual custody, readiness vectors, state decisions, qualification leases, canary monitoring, quarantine, transitive lineage, rollback/compensation obligations, terminal closure, replay, and transfer.",
+      "authority": "Stable Capability Fields owns identity and substitution; Routing owns selection; Benchmark and Evidence owners produce evaluation and support; Runtime, Humans, and Inter-Stack own effects; Security, Privacy, Rights, Legal, and Constitutional owners supply ceilings; Replacement owns rollback and compensation; Learning owners preserve mutable-state lineage; Resources owns costs; Tribunal owns disputes and appeals; Release owns deployment and publication. Readiness owns only current consumer- and use-specific routability state and its expiring lease.",
+      "time": "Semantic review current through 2026-07-14; target, dependency, policy, check, evaluator, benchmark, evidence, model, tool, authority, rights, environment, workload, load, incident, or time changes expire affected qualifications and transfer claims.",
+      "artifact": "Chapter and manifest contract; seventeen source mappings; four schemas; readiness/residual, check-lifecycle, and state-lifecycle harnesses; exact Theseus currentness import; post-v2.1 and post-v2.3 bounded results; no-promotion transitions; twenty declarations in lean/AsiStackProofs/ReadinessGates.lean; and the future natural multi-model causal and transfer campaign."
+    },
+    "current_disposition": "retain_argument_with_finite_rejection_and_exact_yellow_currentness_boundaries_pending_natural_readiness_efficacy_campaign",
+    "assumptions": [
+      "Targets, consumers, uses, workloads, policies, checks, evidence, evaluators, authority and rights ceilings, routes, outcomes, costs, residuals, descendants, artifacts, effects, and lifecycle state can be versioned and observed without collapsing distinct owners.",
+      "Requiredness, applicability, attempt, result, waiver, evidence, observation time, expiry, and invalidators can remain separate for every gate check.",
+      "Score-only, benchmark-only, checklist, confidence, human, conservative-denial, ordinary MLOps, and governed policies can receive matched evidence, authority, resources, evaluators, retries, and time.",
+      "Independent-enough evaluators can label useful success, unsafe release, false promotion and quarantine, regression, calibration, rights and authority violations, recovery, lineage propagation, cost, and delayed residuals.",
+      "Denials, failed canaries, unavailable routes, abstention, fallback, human repair, retries, delayed effects, residuals, and non-events stay in denominators.",
+      "Natural lifecycle events, multiple strong current models, independent implementations, causal interventions, and transfer settings can be frozen before outcome-bearing execution."
+    ],
+    "dependencies": [
+      "stable-capability-fields",
+      "routing-heads-and-specialist-cores",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "claim-ledgers-and-belief-revision",
+      "evidence-states-and-claim-discipline",
+      "artifact-graphs-audit-logs-and-replay",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "inter-stack-protocols-identity-and-economic-exchange",
+      "security-kernel-and-digital-scifs",
+      "privacy-rights-and-legal-constraints",
+      "constitutional-alignment-substrate",
+      "capability-replacement-and-rollback",
+      "procedural-memory-and-cognitive-loop-closure",
+      "data-engines-continual-learning-and-unlearning",
+      "resource-economics-and-token-budgets",
+      "human-collaboration-and-dispute-resolution",
+      "personal-compute-hives-and-federated-edge-intelligence",
+      "capability-thresholds-and-deployment-commitments"
+    ],
+    "strongest_counterclaim": "Ordinary MLOps release stages, benchmark suites, risk reviews, monitoring, rollback, and human approval already provide adequate readiness decisions; the proposed unified lease and residual lifecycle adds metadata, false denial, latency, maintenance burden, and correlated governance failure without improving useful safe operation.",
+    "falsifier": "Under matched natural lifecycle events, the governed readiness relation fails to improve the joint frontier over strong ordinary MLOps, checklist, confidence, conservative-denial, and human controls; its predicted ablation signatures do not appear; or it silently accepts missing checks, stale evidence, hidden regressions, uncustodied residuals, lineage escape, unexecutable recovery, or terminal-state leakage.",
+    "required_lanes": [
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze the strongest MLOps, assurance, evaluation, selective prediction, runtime monitoring, incident, rollback, and frontier-governance comparators without importing reported efficacy."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify acceptable risk, waiver, refusal, quarantine, appeal, affected-party rights, residual custody, retirement, and release boundaries."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify per-check state, freshness, hard vetoes, expiring qualification, transitive invalidation, quarantine, lineage, terminal closure, liveness, and countermodels beyond trusted record Booleans."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Run real current targets, gates, canaries, monitors, residual storage, route enforcement, incidents, invalidation, rollback, compensation, terminal closure, replay, and rejecting controls."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure useful throughput, unsafe release, false promotion and quarantine, regression, calibration, rights and authority violations, recovery, residual survival, latency, compute, money, human work, and total lifecycle cost jointly."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate check completeness, freshness, independent evaluation, floor preservation, residual escrow, selective actions, quarantine, transitive invalidation, load awareness, rollback readiness, and terminal closure under matched resources."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Reproduce independently and transfer across models, specialists, tasks, tools, organizations, rights regimes, threats, capacity states, lifecycle events, and time."
+      }
+    ],
+    "evidence_refs": {
+      "chapter": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
+      "readiness_validator": "scripts/validate_readiness_residual_gates.py",
+      "check_lifecycle_validator": "scripts/validate_readiness_check_lifecycle.py",
+      "lifecycle_validator": "scripts/validate_readiness_lifecycle_probe.py",
+      "lifecycle_result": "experiments/readiness_lifecycle_probe/results/2026-07-02-local.json",
+      "lifecycle_transition": "evidence_transitions/v1_x_measured/readiness_lifecycle_probe_no_change.json",
+      "residual_transition": "evidence_transitions/v1_0_pilot/readiness_residual_no_change.json",
+      "theseus_currentness": "experiments/theseus_pretraining_readiness_currentness_import/results/2026-07-14-local.json",
+      "post_v2_1_result": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+      "post_v2_3_transition": "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
+      "lean": "lean/AsiStackProofs/ReadinessGates.lean",
+      "manifest": "book_structure.json"
+    },
+    "contrary_evidence": [
+      "Ordinary deployment pipelines, MLOps stage gates, benchmark suites, monitoring, rollback, incident response, assurance cases, and human review already implement important readiness functions.",
+      "The three local harness families are authored and synthetic; no deployed lifecycle engine, live residual ledger, production quarantine route, or terminal-state controller ran.",
+      "The exact Project Theseus replay was YELLOW with five partial and one frozen phase; its architecture-ready predicate was limited to the gate's declared pre-training focus.",
+      "The post-v2.1 governed program released only 2/36 useful candidates and missed its rollback threshold despite eliminating registered unsafe releases.",
+      "The ambiguous router selected 59/60 routes but all 360 substantive candidates were wrong; non-answer activation is not useful specialist readiness.",
+      "The post-v2.3 pressure campaign emitted zero admissible final decision, route, or reopen trigger out of 24 calls.",
+      "Twenty Lean declarations comprise eight direct predicate/projection checks, eleven derived finite consequences, and one authored-summary bridge; they do not establish evaluator adequacy or real-world efficacy.",
+      "A conservative gate can appear safe by suppressing useful work while shifting cost, delay, and responsibility to humans.",
+      "No current result independently reproduces or transfers a readiness benefit across models, tools, organizations, lifecycle events, and time."
+    ],
+    "known_confounds": [
+      "Synthetic transition records may omit natural ambiguity, stale dependencies, delayed effects, private data, rights conflicts, organizational pressure, and irreversible actions.",
+      "The governed policy may receive more metadata, evidence, review, rollback support, retries, or time than baselines.",
+      "The target, developer, gate, evaluator, monitor, and reviewer may share models, prompts, code, data, infrastructure, organization, or incentives.",
+      "Denial-heavy policies can reduce unsafe release while useful throughput, opportunity cost, human burden, and residual accumulation worsen.",
+      "Short horizons can miss recurrence, stale qualification, descendant escape, artifact reuse, delayed harm, compensation failure, and terminal-state leakage.",
+      "Failures, waivers, abstentions, unavailable routes, human repair, costs, and residuals can disappear from denominators.",
+      "A static currentness snapshot or green internal predicate can be mistaken for deployment readiness after the observed commit."
+    ],
+    "acceptance_criteria": [
+      "Every stage from target/use binding through checks, evidence, floors, residuals, state decision, lease, canary, monitoring, quarantine, lineage, recovery, terminal closure, replay, and residual handoff has an exact producer, consumer, valid case, rejecting mutation, and consequence.",
+      "A preregistered natural campaign meets joint useful-throughput, unsafe-release, false-promotion/quarantine, regression, calibration, rights, authority, recovery, residual, latency, total-cost, human-work, causal, independent-reproduction, and transfer gates against strong matched controls.",
+      "Each signature mechanism produces its predicted failure or benefit under matched ablation without explanation by easier tasks, extra resources, evaluator sharing, hidden repair, denial, or denominator changes."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to exact target, consumer, use, workload, policy, check catalog, evidence, evaluator, model, tool, authority, rights regime, environment, load, incident, horizon, metric, cost, and residual.",
+      "Separate capability identity, implementation, readiness, route permission, task utility, effect safety, evidence support, deployment approval, and public release.",
+      "Report selective coverage and substantive utility separately; unknown evaluator validity, residual storage, enforcement, recovery, terminal closure, independence, or transfer remains residual or blocked."
+    ],
+    "refutation_criteria": [
+      "Refute an invariant when a reachable ordinary or adversarial trace satisfies its premises and violates check-state separation, hard vetoes, freshness, residual custody, quarantine, transitive invalidation, recovery inventory, terminal closure, denominator preservation, or scope.",
+      "Refute a mechanism benefit when matched ablation preserves the joint outcome, improves the frontier, or the effect is explained by extra resources, easier work, evaluator sharing, hidden repair, denial, or denominator changes.",
+      "Refute useful, safe, efficient, governable, transferable, or state-of-the-art readiness language when a simpler control wins, useful throughput collapses, significant failure remains hidden, or independent reproduction and transfer fail."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only when a more precise routability and lifecycle owner supersedes the atom and every live qualification, route, lease, residual, descendant, artifact, effect, recovery duty, and terminal receipt migrates with preserved lineage."
+    ],
+    "promotion_ceiling": "argument_until_natural_readiness_efficacy_campaign_with_causality_independent_reproduction_and_transfer",
+    "reproduction": {
+      "command": "python3 scripts/validate_readiness_residual_gates.py && python3 scripts/validate_readiness_check_lifecycle.py && python3 scripts/validate_readiness_lifecycle_probe.py && python3 scripts/validate_theseus_pretraining_readiness_currentness_import.py && python3 scripts/validate_post_v2_1_outcomes.py && cd lean && lake build AsiStackProofs.ReadinessGates",
+      "environment_lock": "Repository artifacts and exact Project Theseus d2343540 currentness receipt current through 2026-07-14; natural multi-model campaign not yet frozen.",
+      "artifact_digest": null,
+      "evaluator_identity": "Current harness evaluators are local deterministic implementations; independent gate and evaluator implementations are required for promotion."
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "readiness-gates-residual-escrow-and-quarantine",
+      "next_unblocking_condition": "Preregister and execute the natural heterogeneous readiness campaign with real targets and lifecycle events, strong matched MLOps and conservative baselines, complete joint denominators, live residual storage, production-like quarantine and transitive invalidation, effect-complete rollback and compensation, terminal closure, independent evaluation and implementation, runtime replay, and heterogeneous transfer."
+    },
+    "non_claims": [
+      "A score, source report, schema, valid fixture, theorem, route match, abstention, fallback, model agreement, currentness import, architecture-ready predicate, green command, or zero unsafe release does not establish useful readiness, deployed enforcement, recovery, transfer, or SOTA status.",
+      "The exact Project Theseus observation was YELLOW and is bounded to one commit and one pre-training architecture gate; the calibration campaigns preserve low or zero useful-output boundaries.",
+      "No support, deployment, release, AGI, or ASI state changes through this semantic review."
+    ]
+  },
+  "atom_reviews": {
+    "readiness-gates-residual-escrow-and-quarantine.core": {
+      "current_disposition": "retain_distinct_consumer_use_specific_routability_owner_at_argument",
+      "strongest_counterclaim": "Ordinary MLOps, monitoring, rollback, and human approval cover the lifecycle at lower cost and false-denial risk.",
+      "falsifier": "Matched natural events show no unique joint-frontier benefit, predicted causal signatures fail, or the gate loses check state, floors, residuals, lineage, recovery, or terminal closure.",
+      "acceptance_criteria": [
+        "Demonstrate natural useful readiness, false-promotion and quarantine control, recovery, complete cost, causality, independent reproduction, and heterogeneous transfer against strong matched baselines."
+      ]
+    },
+    "readiness-gates-residual-escrow-and-quarantine.minimum.001": {
+      "current_disposition": "retain_as_finite_rejection_and_exact_currentness_boundary_only",
+      "strongest_counterclaim": "The schemas, fixtures, finite declarations, YELLOW import, and negative campaigns test records rather than readiness efficacy.",
+      "falsifier": "A validator accepts a rejecting mutation, exact counts or YELLOW boundaries drift, negative results disappear, or prose upgrades currentness and denial into useful readiness.",
+      "acceptance_criteria": [
+        "Keep exact harness counts, twenty-declaration classification, YELLOW currentness boundary, calibration failures, transition ceilings, and non-claims reproducible."
+      ]
+    },
+    "readiness-gates-residual-escrow-and-quarantine.beyond_sota.001": {
+      "current_disposition": "retain_as_falsifiable_argument_exit_program",
+      "strongest_counterclaim": "The campaign is too broad and governance-heavy to isolate a readiness contribution; ordinary MLOps or conservative denial will dominate.",
+      "falsifier": "The campaign lacks natural events, matched strong baselines, joint metrics, predicted ablation signatures, independent evaluation and implementation, complete denominators, or transfer.",
+      "acceptance_criteria": [
+        "Preregister targets, events, policies, evidence, authority, baselines, metrics, gates, ablations, evaluator independence, reproduction, and transfer before execution."
+      ]
+    }
+  },
+  "prose_candidate_dispositions": {
+    "readiness-gates-residual-escrow-and-quarantine.prose.85c122169068": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, currentness, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.5977b10f654b": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, currentness, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.dccf8b036e4c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.dc188bb0c54d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.268ec03374ad": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.5f6d589fbd53": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.f13a2eecb2f0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.7fa66341ce5a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.9bc6c1d2a76c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.b4bab15349ef": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.420e19e3eda6": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.2a475262c094": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.f13652e33530": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "readiness-gates-residual-escrow-and-quarantine.mechanism.009",
+      "rationale": "The sentence restates the cited structured readiness atom and adds no independent support or promotion."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.215ad39a0b23": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "readiness-gates-residual-escrow-and-quarantine.core",
+      "rationale": "The sentence restates the cited structured readiness atom and adds no independent support or promotion."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.a20991830749": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "readiness-gates-residual-escrow-and-quarantine.invariant.012",
+      "rationale": "The sentence restates the cited structured readiness atom and adds no independent support or promotion."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.5e00d8b4ad03": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.ed04b44f408c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.c2085c437f51": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.00660f0968ae": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.e64742e03128": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.d1850f93c626": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.6113eb8a8ddb": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.75740c2aa8f7": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.66509af5c964": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.4b9e149dde60": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "readiness-gates-residual-escrow-and-quarantine.invariant.003",
+      "rationale": "The sentence restates the cited structured readiness atom and adds no independent support or promotion."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.7768cc78f8c5": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "readiness-gates-residual-escrow-and-quarantine.invariant.013",
+      "rationale": "The sentence restates the cited structured readiness atom and adds no independent support or promotion."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.293bbac26e01": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "readiness-gates-residual-escrow-and-quarantine.mechanism.012",
+      "rationale": "The sentence restates the cited structured readiness atom and adds no independent support or promotion."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.c5bbeb62e7aa": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, currentness, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.8754a5fa7659": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.d44207c429b8": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.9718c82914fc": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "readiness-gates-residual-escrow-and-quarantine.invariant.012",
+      "rationale": "The sentence restates the cited structured readiness atom and adds no independent support or promotion."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.de338f413dfa": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "readiness-gates-residual-escrow-and-quarantine.interface.002",
+      "rationale": "The sentence restates the cited structured readiness atom and adds no independent support or promotion."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.c49cfce0b2e2": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.cdb443c01a4f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.e3ac2a315168": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.941b12a07efa": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "readiness-gates-residual-escrow-and-quarantine.invariant.003",
+      "rationale": "The sentence restates the cited structured readiness atom and adds no independent support or promotion."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.f3e86d545cc6": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "readiness-gates-residual-escrow-and-quarantine.invariant.004",
+      "rationale": "The sentence restates the cited structured readiness atom and adds no independent support or promotion."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.a31da4adfbd2": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "readiness-gates-residual-escrow-and-quarantine.invariant.004",
+      "rationale": "The sentence restates the cited structured readiness atom and adds no independent support or promotion."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.91ff115675ea": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "readiness-gates-residual-escrow-and-quarantine.invariant.006",
+      "rationale": "The sentence restates the cited structured readiness atom and adds no independent support or promotion."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.b2329b12cd1e": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "readiness-gates-residual-escrow-and-quarantine.invariant.013",
+      "rationale": "The sentence restates the cited structured readiness atom and adds no independent support or promotion."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.771d9af9343b": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "readiness-gates-residual-escrow-and-quarantine.invariant.015",
+      "rationale": "The sentence restates the cited structured readiness atom and adds no independent support or promotion."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.314af3743969": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "readiness-gates-residual-escrow-and-quarantine.invariant.016",
+      "rationale": "The sentence restates the cited structured readiness atom and adds no independent support or promotion."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.e7d4b3fa1c51": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.fc725535df62": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "readiness-gates-residual-escrow-and-quarantine.invariant.008",
+      "rationale": "The sentence restates the cited structured readiness atom and adds no independent support or promotion."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.8c4042319ebc": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.aef25c3f03a6": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.4f1347c0a4ed": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.7e2248af4848": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.097504d2e36e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.79f9108ed2a7": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.bcd64eda0c37": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, currentness, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.9c3ccc238d06": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.e98577aba6bd": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.b89d29fb8822": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.0f8a6eb8c0f6": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "readiness-gates-residual-escrow-and-quarantine.beyond_sota.001",
+      "rationale": "The sentence restates the cited structured readiness atom and adds no independent support or promotion."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.0f977dea6aaa": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.2c392e8a2082": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.ad514cd8289d": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "readiness-gates-residual-escrow-and-quarantine.beyond_sota.001",
+      "rationale": "The sentence restates the cited structured readiness atom and adds no independent support or promotion."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.a5e6bff5baa9": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "readiness-gates-residual-escrow-and-quarantine.beyond_sota.001",
+      "rationale": "The sentence restates the cited structured readiness atom and adds no independent support or promotion."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.176aac24f5e4": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.0f784c5c8ad8": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.2c6e41c379bb": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.51a67e1d7bb1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.855b67d86e3c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.b729dbeca648": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.3fa2b72fe3e6": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, currentness, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.a7a4bbf5f282": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, currentness, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.1e9a1986dc26": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, currentness, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.153797836c88": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, currentness, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.62783737bb23": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, currentness, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.6aedb59c2b5f": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, currentness, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.6ad07e4c86d3": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.93524d4e4584": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    },
+    "readiness-gates-residual-escrow-and-quarantine.prose.72b7317d945b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured readiness atoms and chapter defaults."
+    }
+  },
+  "prose_review_lineage": [
+  {
+    "retired_candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.e38e15fb6717",
+    "retired_source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:393",
+    "retired_sentence": "The bridge proves its trusted summary fields imply the",
+    "preserved_disposition": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, currentness, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "retirement_reason": "The chapter proof surface was rewritten during the active refinement; this sentence is no longer current prose and no current scanner candidate is its semantic replacement.",
+    "replacement_candidate_ids": [],
+    "recorded_on": "2026-07-15"
+  },
+  {
+    "retired_candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.f87706661fd9",
+    "retired_source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:404",
+    "retired_sentence": "quality, live enforcement, residual storage, rollback, recovery, or transfer.",
+    "preserved_disposition": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, currentness, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "retirement_reason": "The sentence was rewritten to remove formulaic prose while preserving its bounded meaning; the old sentence hash is no longer current prose.",
+    "replacement_candidate_ids": [],
+    "recorded_on": "2026-07-15"
+  }
+],
+  "non_claims": [
+    "This review adjudicates materiality, ownership, scope, and proof burden without promoting support.",
+    "No deployed readiness engine, live residual ledger, production quarantine enforcement, effect-complete rollback, independent evaluator, natural multi-model campaign, terminal-state controller, runtime replay, or transfer study was run by this sweep."
+  ]
+}

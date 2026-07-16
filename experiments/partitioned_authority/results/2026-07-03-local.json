@@ -52,9 +52,9 @@
       "staleGrantDispatchRejected": true,
       "supportStateEffectNone": true
     },
-    "module": "AsiStackProofs.PersonalComputeHives",
+    "module": "AsiStackProofs.HiveLifecycleRefinement",
     "theorem_refs": [
-      "partitioned_authority_fixture_bridge"
+      "partitioned_stale_grant_quarantines_before_mutation"
     ]
   },
   "non_claims": [

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://the-asi-stack.org/schemas/compact_generation_refinement.schema.json",
+  "title": "Compact Generation Refinement Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "recorded_date", "command", "model", "source_result_refinement", "route_cases", "verification", "support_state_effect", "external_effect", "residuals", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.compact_generation_refinement.result.v1"},
+    "result_id": {"const": "2026-07-15-compact-generation-refinement"},
+    "recorded_date": {"const": "2026-07-15"},
+    "command": {"const": "python3 scripts/validate_compact_generation_refinement.py"},
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lean_module", "stage_count", "stages", "route_count", "independently_reached_route_count", "rejected_mutation_count", "route_case_count", "fallback_route_reached", "support_assignment_count", "external_effect_count"],
+      "properties": {
+        "lean_module": {"const": "lean/AsiStackProofs/CompactGenerationRefinement.lean"},
+        "stage_count": {"const": 9},
+        "stages": {"type": "array", "minItems": 9, "maxItems": 9, "uniqueItems": true, "items": {"type": "string"}},
+        "route_count": {"const": 60},
+        "independently_reached_route_count": {"const": 60},
+        "rejected_mutation_count": {"const": 51},
+        "route_case_count": {"const": 60},
+        "fallback_route_reached": {"const": true},
+        "support_assignment_count": {"const": 0},
+        "external_effect_count": {"const": 0}
+      }
+    },
+    "source_result_refinement": {
+      "type": "object",
+      "required": ["counts", "sha256"],
+      "properties": {
+        "counts": {"type": "object"},
+        "sha256": {"type": "object", "minProperties": 4, "maxProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+      }
+    },
+    "route_cases": {"type": "array", "minItems": 60, "maxItems": 60, "items": {"type": "object", "required": ["case_id", "stage", "expected_route", "actual_route", "accepted"]}},
+    "verification": {"type": "object", "required": ["lean", "result"]},
+    "support_state_effect": {"const": "none"},
+    "external_effect": {"const": "none"},
+    "residuals": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "non_claims": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+  }
+}

@@ -22,13 +22,11 @@
       "selected_total_overrun": 0,
       "task_count": 10
     },
-    "module": "AsiStackProofs.ResourceEconomics",
+    "module": "AsiStackProofs.ResourceEconomicsRefinement",
     "theorem_refs": [
-      "resource_load_smoothing_workload_fixture_valid",
-      "resource_load_smoothing_workload_reduces_overrun",
-      "resource_load_smoothing_workload_rejects_review_erasure",
-      "resource_load_smoothing_workload_residualizes_deferrals",
-      "resource_load_smoothing_workload_has_no_support_promotion"
+      "missing_protected_floor_blocks_reservation",
+      "missing_reviewer_capacity_blocks_schedule",
+      "complete_resource_lifecycle_reaches_closed_without_support_or_effect_authority"
     ]
   },
   "local_only": true,
@@ -44,7 +42,7 @@
   "pass": true,
   "probe_id": "resource-load-stability-probe-2026-07-01-local",
   "record_kind": "resource_load_stability_probe",
-  "recorded_at_utc": "2026-07-04T02:53:54Z",
+  "recorded_at_utc": "2026-07-15T23:40:15Z",
   "residuals": [
     "The workload is a deterministic local synthetic burst of repository-review tasks, not a production queue trace.",
     "The selected route reduces overload in the finite workload by deferring lower-risk work, but those deferrals are residual costs rather than free savings.",
@@ -484,16 +482,16 @@
   "synthetic_only": true,
   "tracked_artifacts": [
     {
-      "bytes": 18615,
-      "lines": 466,
+      "bytes": 18485,
+      "lines": 464,
       "path": "scripts/run_resource_load_stability_probe.py",
-      "sha256": "4ac73bfc0a61342b51a02ba53b88b5eecf178b5d8910ed3d26a8558ec61c1f90"
+      "sha256": "09f38d895b7956c3a4672ff9a5ae671727496666c170b95e8ccd82e7ffdc76db"
     },
     {
-      "bytes": 31878,
-      "lines": 839,
+      "bytes": 24144,
+      "lines": 707,
       "path": "lean/AsiStackProofs/ResourceEconomics.lean",
-      "sha256": "f5d768de3853d3479e2042aeb1d210a7e6f69776ec14975c03824e0f930bab86"
+      "sha256": "fa1b617c7e2788f9d9d669ebe56ac79dc95f27e760cc19c75891301ebbb57601"
     }
   ],
   "workload": [

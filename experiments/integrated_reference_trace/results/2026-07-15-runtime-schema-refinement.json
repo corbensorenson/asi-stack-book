@@ -1,0 +1,127 @@
+{
+  "schema_version": "asi_stack.integrated_runtime_schema_refinement_result.v1",
+  "result_id": "integrated-runtime-schema-refinement-2026-07-15-local",
+  "source_result_ref": "experiments/governed_repository_change_slice/results/2026-07-10-local.json",
+  "source_result_sha256": "21b8e61485f6f36dbe09da1ef34bce0339d078407bf0474ddbefd14cc90564a5",
+  "source_schema_ref": "schemas/governed_repository_change_result.schema.json",
+  "source_schema_sha256": "d0f5a1615322d4fc2e10b427f4cbdcee303052d2c898fbe9df66006f1aa0a877",
+  "lean_model_ref": "lean/AsiStackProofs/IntegratedReferenceTrace.lean",
+  "lean_model_sha256": "632a75e332fe841ed30f3ae6c5764974e8157c5c52e58b5f66f098b00b4b351e",
+  "scenario_count": 9,
+  "round_trip_count": 9,
+  "trace_class_counts": {
+    "approved_completion": 3,
+    "pre_effect_refusal": 3,
+    "exact_rollback": 2,
+    "failed_rollback_quarantine": 1
+  },
+  "mutation_count": 20,
+  "mutation_rejection_count": 20,
+  "records": [
+    {
+      "scenario_id": "nominal_valid_change",
+      "trace_class": "approved_completion",
+      "projection_sha256": "cad7ec01c37ec3ead82b832f51eca226ed80e4b89b7bf848d9151e12282396ee",
+      "effect_committed": true,
+      "effect_acknowledged": true,
+      "rollback_exact": false,
+      "rollback_failed": false,
+      "open_residuals": 0,
+      "terminal_receipt": true
+    },
+    {
+      "scenario_id": "retrieved_context_prompt_injection",
+      "trace_class": "approved_completion",
+      "projection_sha256": "7e91886fa23d71f92c1c3362c398a23effc821203f2b0ba4b688e9973c71dd0a",
+      "effect_committed": true,
+      "effect_acknowledged": true,
+      "rollback_exact": false,
+      "rollback_failed": false,
+      "open_residuals": 0,
+      "terminal_receipt": true
+    },
+    {
+      "scenario_id": "stale_authorization",
+      "trace_class": "pre_effect_refusal",
+      "projection_sha256": "adc7a9c8f7cc1d70ae450c5f2fde613bac73a5a66ff0fe41a6c330423620785e",
+      "effect_committed": false,
+      "effect_acknowledged": false,
+      "rollback_exact": false,
+      "rollback_failed": false,
+      "open_residuals": 0,
+      "terminal_receipt": false
+    },
+    {
+      "scenario_id": "revocation_during_execution",
+      "trace_class": "pre_effect_refusal",
+      "projection_sha256": "0dabebc3c35e4a5fafe6d783435b74c5ed35c329009bc2510ab103e3827512ad",
+      "effect_committed": false,
+      "effect_acknowledged": false,
+      "rollback_exact": false,
+      "rollback_failed": false,
+      "open_residuals": 0,
+      "terminal_receipt": false
+    },
+    {
+      "scenario_id": "forged_mismatched_receipt",
+      "trace_class": "exact_rollback",
+      "projection_sha256": "354db12ca9d45d42d8ee13089e4b5ec0edbe01ae2852d7bee5764e5a4defc3ea",
+      "effect_committed": true,
+      "effect_acknowledged": true,
+      "rollback_exact": true,
+      "rollback_failed": false,
+      "open_residuals": 0,
+      "terminal_receipt": true
+    },
+    {
+      "scenario_id": "correlated_proposer_verifier",
+      "trace_class": "pre_effect_refusal",
+      "projection_sha256": "2b12583704c5e55dd44943a320dd5750dd4fbb812f8d121d8d9d622b58bdb8cf",
+      "effect_committed": false,
+      "effect_acknowledged": false,
+      "rollback_exact": false,
+      "rollback_failed": false,
+      "open_residuals": 0,
+      "terminal_receipt": false
+    },
+    {
+      "scenario_id": "hidden_residual_cost",
+      "trace_class": "exact_rollback",
+      "projection_sha256": "8afd2589c5e7769d3e5f955221ab0c72c6d9cd7bf942ae7d4593eae4b84cb200",
+      "effect_committed": true,
+      "effect_acknowledged": true,
+      "rollback_exact": true,
+      "rollback_failed": false,
+      "open_residuals": 0,
+      "terminal_receipt": true
+    },
+    {
+      "scenario_id": "failed_rollback",
+      "trace_class": "failed_rollback_quarantine",
+      "projection_sha256": "8b096acb8c7a083e3f2ce62cd7a872d45f30edb3b140bfa011d3c11d47e0b3cc",
+      "effect_committed": true,
+      "effect_acknowledged": true,
+      "rollback_exact": false,
+      "rollback_failed": true,
+      "open_residuals": 1,
+      "terminal_receipt": true
+    },
+    {
+      "scenario_id": "cheaper_route_violates_safety_constraint",
+      "trace_class": "approved_completion",
+      "projection_sha256": "930ca7d23d800966b88d38ead2bdbe508dba0e29e24d8bda1be9df06bad9a3bd",
+      "effect_committed": true,
+      "effect_acknowledged": true,
+      "rollback_exact": false,
+      "rollback_failed": false,
+      "open_residuals": 0,
+      "terminal_receipt": true
+    }
+  ],
+  "support_state_effect": "none",
+  "non_claims": [
+    "This is checked executable refinement for the exact projected fields of one local governed-result schema, not a proof that the runtime implements the Lean model.",
+    "Deterministic encoding and lossless projection round-trip do not establish semantic payload truth, complete effect discovery, concurrency, distribution, or deployed enforcement.",
+    "The nine source scenarios are synthetic local repository-change cases and do not establish natural-workload performance, safety, reproduction, transfer, or chapter-core support."
+  ]
+}

@@ -3,8 +3,8 @@ title: "Capability Thresholds and Deployment Commitments"
 chapter_id: "capability-thresholds-and-deployment-commitments"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
-draft_maturity: "v0.2 depth-leveled chapter"
-last_updated: "2026-07-13"
+draft_maturity: "v0.3 manuscript draft"
+last_updated: "2026-07-15"
 primary_sources:
   - "ext_metr_time_horizons_2025"
   - "ext_anthropic_rsp_2026"
@@ -12,9 +12,9 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "No ASI Stack capability assessment, time-horizon task suite, human baseline, dangerous-capability profile, threshold crossing, safeguard verification, exception review, release decision, or deployment result has been run."
-  - "No local result establishes threshold validity, metric comparability, capability level, time horizon, general autonomy, safeguard efficacy, residual-risk reduction, readiness, safety, or authority to deploy."
-  - "The eight Lean routes and digest-bound fixture establish only structured-record consequences; they do not establish that the threshold, assessment, safeguard, exception, reviewer, readiness decision, or institution is correct."
+  - "All six assigned sources have exact passage-reviewed mappings, but no comparator policy, assessment, task, threshold, safeguard, or deployment result is imported as local evidence."
+  - "The exact local evidence is eight valid synthetic commitment records, five rejecting mutations, eight finite route declarations, and no support effect. No model, capability assessment, real safeguard, exception, independent verification, readiness service, release, deployment, reproduction, or transfer ran."
+  - "Argument exit requires natural and adversarial domain assessments, prospective policy freezing, complete assessment and decision denominators, real safeguard implementation and independent exercise, exception and portfolio governance, false-clear/false-block and latency/cost measurement, rollback/recovery, institutional reproduction, transfer, and exact release-path transitions."
 ---
 
 ## Chapter status
@@ -24,7 +24,7 @@ open_evidence_gaps:
 | Chapter ID | `capability-thresholds-and-deployment-commitments` |
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
-| Last updated | 2026-07-10 |
+| Last updated | 2026-07-15 |
 | Primary source records | `ext_metr_time_horizons_2025`, `ext_anthropic_rsp_2026`, `ext_openai_preparedness_framework_2025` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -132,7 +132,7 @@ promise makes the measurement or safeguard true.
 
 ## Core Claim
 
-[capability-thresholds-and-deployment-commitments.core, label: Design rationale, support: argument] A governed stack treats capability thresholds as versioned commitments rather than headline scores: it records the capability domain, threat model, task and evaluation envelope, elicitation and access conditions, threshold definition and uncertainty, baseline and coverage date, required safeguards and verification criteria, deadline, exception authority, residual owner, and release decision; a crossing or non-crossing can alter only the explicitly governed deployment path and cannot by itself establish general capability, safeguard sufficiency, safety, readiness, or authority to deploy.
+[capability-thresholds-and-deployment-commitments.core, label: Design rationale, support: argument] Capability Thresholds and Deployment Commitments owns a domain-, threat-, assessment-, policy-version-, safeguard-package-, release-path-, authority-, exception-, residual-, and time-specific Capability-to-Deployment Commitment: before outcomes are visible, it binds a scoped crossing, non-crossing, incomparable, or stale assessment to predeclared safeguards, verification criteria, deadlines, access and monitoring constraints, re-evaluation, exceptions, residual custody, rollback, disclosure, and release-path consequences; a score, time-horizon estimate, threshold label, crossing, non-crossing, safeguard record, exception, or green readiness handoff alone confers no general capability, safeguard efficacy, safety, readiness, deployment, support, transfer, or SOTA authority.
 
 ## Mechanism
 
@@ -184,6 +184,37 @@ prove a safeguard effective. Missing verified safeguards block the affected
 path in the finite model; a separately governed readiness and authority review
 still decides whether any later action is allowed.
 
+### Eighteen-stage commitment lifecycle
+
+The lifecycle registers the domain, threat, affected assets and populations,
+prohibited generalizations, release path, owner, authority, rights,
+environment, and expiry. It freezes a versioned assessment envelope and
+defines the threshold units, uncertainty, sensitivity, critical failures, and
+crossing, non-crossing, incomparable, stale, disputed, contaminated, and
+out-of-scope consequences. Before results are visible, the policy binds each
+state to safeguards, verification, deadlines, monitoring, access constraints,
+disclosure, rollback, re-evaluation, residual custody, and affected paths.
+
+Assessment, threshold decision, safeguard declaration, completion,
+independent verification, residual review, exception, readiness, authority,
+and release remain separate records. Immutable versioning preserves who
+changed what, why, when, and whether evaluation had begun. Freshness and
+comparability checks cover model, scaffold, tools, access, elicitation, tasks,
+data, scorer, baseline, threat, safeguards, policy, and time. Invalid or
+uncertain assessments route to re-evaluation or constraint rather than a
+convenient non-crossing.
+
+Crossings instantiate and independently exercise the exact safeguard package;
+non-crossings preserve uncertainty, limits, monitoring, and reassessment.
+Exceptions remain prospective, least-authority, conflict-aware, expiring,
+compensated, monitored, reversible, and non-precedential. Portfolio aggregation
+preserves domain incomparability, cumulative interactions, shared dependencies,
+and global-stop conditions. The system measures false clearance, false block,
+stale acceptance, exception misuse, false safeguard assurance, latency,
+burden, cost, residual age, and route outcomes before issuing a least-authority
+readiness handoff. Drift monitoring, independent institutional reproduction,
+transfer, and expiry or revocation close the lifecycle.
+
 ### Worked trace: the crossed cyber threshold with a stale exception
 
 A model is evaluated on a predeclared cyber task family under fixed tool access,
@@ -232,6 +263,16 @@ portfolio instead names the particular profile, evaluation, safeguards, and
 route it governs, while allowing different owners to contest whether its
 measurement and response are adequate.
 
+The twelve owner interfaces add Task/Domain/Threat owners for definitions and
+critical failures; Evaluation Frameworks/Data Governance for task, data,
+scorer, sandbox, transcript, provenance, rights, and hidden custody; Safeguard
+owners and independent verifiers for implementation, bypass, degradation, and
+recovery; Exception/Institutional Governance for authority, conflicts, dissent,
+expiry, and cumulative review; Resource Economics for assessment, delay,
+overblocking, monitoring, rollback, disclosure, and opportunity cost; and
+Incident/Release/Public-Truth/Living-Book governance for post-release triggers,
+correction, wording, lineage, expiry, and successor work.
+
 ## Invariants
 
 - A threshold is bound to a named capability domain, threat model, evaluation
@@ -251,6 +292,17 @@ These rules preserve a useful middle ground between paralysis and automation.
 They allow an organization to change a bounded path when a well-described
 assessment changes, while forcing it to carry uncertainty forward when the
 assessment or required controls do not support a stronger conclusion.
+
+The full invariant set also requires prospective versioning; separation of all
+assessment, safeguard, exception, readiness, authority, and release records;
+typed outcome states; separation of safeguard existence, completion,
+verification, efficacy, durability, recovery, and coverage; uncertainty and
+reassessment on non-crossing; domain incomparability and cumulative portfolio
+effects; change-triggered expiry; visible failures and disagreements;
+least-authority reversible exceptions; feasible fallback and response latency;
+accountable but threat-aware disclosure; independent-error separation; and an
+owner for every domain, threat, uncertainty, safeguard gap, exception, shared
+dependency, failed transfer, and residual.
 
 ## Failure modes
 
@@ -274,6 +326,18 @@ verification; exception laundering calls for accountable expiry and residual
 ownership; cross-domain collapse calls for separate commitments. No remedy
 turns the process into proof of safety. It makes the reasons for further review
 legible and difficult to silently discard.
+
+The matched failure set also includes non-crossing-as-clearance; coercing stale,
+incomparable, under-elicited, contaminated, disputed, or out-of-scope results
+into a binary state; dashboard collapse; safeguard checklist laundering;
+expired or cumulative exception reuse; outcome-aware policy drift; portfolio
+aggregation that hides correlated risk or global-stop conditions; institutional
+pressure narrowing evaluation or suppressing dissent; verifier dependence;
+unmeasured false clears, false blocks, latency, burden, and residual age;
+disclosure that hides accountability or spends calibration budget; unsupported
+cross-model/domain/time transfer; green readiness or incident absence presented
+as safety; infeasible rollback or blocked-path alternatives; and sunk-cost
+resistance to re-evaluation, revocation, refutation, or retirement.
 
 ## Non-obvious consequences
 
@@ -480,6 +544,16 @@ slice would add matched synthetic records for a clear crossing, stale coverage,
 incomparable elicitation, expired exception, missing safeguard verification,
 and an attempted release, each with a visible residual and no capability claim.
 
+The exact current minimum is one digest-bound synthetic result containing eight
+valid modeled commitment records and five rejecting mutations, plus eight local
+CapabilityThresholds declarations that route crossed and non-crossed records,
+missing evaluation scope, baseline, uncertainty, residual custody, safeguard
+records, and safeguard verification. It runs no model, capability task,
+time-horizon suite, dangerous-capability profile, human baseline, real
+safeguard, bypass test, exception review, independent verifier, readiness
+service, release process, deployment, incident response, reproduction,
+transfer, chapter-core transition, or SOTA comparison.
+
 ## Beyond the State of the Art
 
 The mature endpoint is a capability-commitment control plane, not a universal
@@ -505,6 +579,32 @@ an invisible all-clear, preserving challengeable decision history across policy
 versions. This is a target architecture, not a claim that this
 repository has measured capability, set an adequate threshold, verified
 safeguards, or achieved safe deployment.
+
+### Argument-exit campaign
+
+The full attempt freezes domain-specific natural and adversarial assessments,
+human and system baselines, model/scaffold/tool/access/elicitation envelopes,
+uncertainty and sensitivity, critical failures, thresholds, policy versions,
+safeguard packages, verification criteria, exception rules, residual custody,
+deadlines, monitoring, disclosure, rollback, and release consequences before
+outcomes. It preserves invalid and disputed runs and exercises crossing,
+non-crossing, stale, incomparable, contaminated, safeguard-unavailable,
+bypass, degradation, expired-exception, cumulative-portfolio, rollback, and
+recovery cases.
+
+Real safeguards must be implemented and independently tested. The campaign
+measures false clearance, false block, stale acceptance, verifier disagreement,
+exception misuse, safeguard false assurance, reassessment and decision latency,
+operator burden, complete cost, residual age, incidents, fallback, and recovery.
+Independent evaluators, verifiers, institutions, and implementations reproduce
+decisive decisions before transfer across models, scaffolds, access levels,
+domains, organizations, policies, threats, and time.
+
+The result may qualify a narrow commitment, preserve a null or contested state,
+revoke an exception, refute a threshold or safeguard, retire a policy, or record
+`blocked_after_full_attempt`. Until these gates and an exact release-path
+transition pass, the core claim remains `argument`; synthetic routing and
+green readiness handoffs are non-terminal.
 
 ## Codex test plan
 
@@ -532,6 +632,18 @@ These eight finite routes and the digest-bound fixture do not prove an assessmen
 threshold's adequacy, safeguard efficacy, reviewer independence, readiness,
 safety, or authority. It only preserves the bounded record rule that missing
 required verification cannot coexist with release on the affected path.
+
+The formal audit classifies all eight declarations as derived finite reductions
+of one hand-authored `ThresholdCommitmentRouteFor` decision tree. They cover a
+crossing without safeguard verification, missing envelope, complete crossing,
+complete non-crossing, missing baseline, missing uncertainty, missing residual
+owner, and missing safeguard record. They do not prove threshold validity,
+measurement comparability, completeness of the decision tree, temporal or
+concurrent policy semantics, safeguard efficacy, exception governance,
+institutional compliance, readiness, safety, deployment, reproduction, or
+transfer. Useful future proof work must model versioned temporal commitments,
+non-bypass, portfolio interaction, revocation, rollback/recovery liveness, and
+implementation refinement; assessment and safeguard efficacy remain empirical.
 
 ## Source crosswalk
 

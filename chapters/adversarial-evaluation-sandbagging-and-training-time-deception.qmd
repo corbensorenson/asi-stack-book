@@ -3,20 +3,25 @@ title: "Adversarial Evaluation, Sandbagging, and Training-Time Deception"
 chapter_id: "adversarial-evaluation-sandbagging-and-training-time-deception"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
-draft_maturity: "v0.2 depth-leveled chapter"
-last_updated: "2026-07-13"
+draft_maturity: "v0.3 manuscript draft"
+last_updated: "2026-07-15"
 primary_sources:
   - "benchmaxxing"
   - "rmi"
   - "ext_alignment_faking_2024"
   - "ext_ai_sandbagging_2024"
   - "ext_emergent_misalignment_reward_hacking_2025"
+  - "ext_inspect_ai_2024"
+  - "ext_agentdojo_2024"
+  - "ext_owasp_agentic_top_10_2026"
+  - "ext_faithfulness_information_flow_2026"
+  - "ext_monitorbench_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "No ASI Stack model has been evaluated for sandbagging, alignment faking, reward hacking, monitor interference, or training-time deception."
-  - "No detector, evaluator ensemble, mitigation, or deployment gate has been tested against a deceptive model."
-  - "The cited experiments are source-setting comparators, not local behavior, capability, safety, or support-state results."
+  - "Freeze and run the natural/adversarial cross-context campaign with strong elicitation, complete denominators, calibrated observable outcomes, constructed controls kept separate, and no outcome-aware changes."
+  - "Implement dependency-separated evaluators, real monitor and reward processes, mitigation descendants, bypass/fallback/recovery tests, and joint useful-throughput, false-clear, false-quarantine, latency, burden, cost, and residual measures."
+  - "Run causal ablations, independent institutional reproduction, and heterogeneous transfer before considering any empirical observation-integrity, sandbagging-resistance, monitor-validity, mitigation-efficacy, safety, or SOTA promotion."
 ---
 
 ## Chapter status
@@ -26,12 +31,12 @@ open_evidence_gaps:
 | Chapter ID | `adversarial-evaluation-sandbagging-and-training-time-deception` |
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
-| Last updated | 2026-07-10 |
-| Primary source records | `benchmaxxing`, `rmi`, `ext_alignment_faking_2024`, `ext_ai_sandbagging_2024`, `ext_emergent_misalignment_reward_hacking_2025` |
+| Last updated | 2026-07-15 |
+| Primary source records | Ten exact passage-reviewed assignments; no source result imported |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | Three reviewed primary source notes establish separate sandbagging, alignment-faking, and reward-hacking-generalization comparators. No source experiment was reproduced. |
-| Test state | A finite evaluation-integrity record and negative controls are planned. No deceptive model, detector, mitigation, or evaluator ensemble has been run. |
+| Source loading state | All ten assigned sources have exact passage-reviewed mappings at their recorded boundaries. No source experiment was reproduced. |
+| Test state | Two schemas and eight digest-bound synthetic records route one review handoff and seven negative cases through eight finite declarations; no model, detector, mitigation, monitor, reward process, evaluator ensemble, or cross-context workload ran. |
 
 ## Drafting guardrail
 
@@ -119,9 +124,26 @@ distribution shift, evaluator error, leakage, or unresolved combination.
 
 ## Core Claim
 
-[adversarial-evaluation-sandbagging-and-training-time-deception.core, label: Design rationale, support: argument] A governed stack treats evaluation and training observations as context-bound evidence: it records elicitation, monitor, reward, and selection conditions; probes cross-context discrepancies and interference; and blocks capability, safety, or promotion conclusions when the observation cannot support them.
+[adversarial-evaluation-sandbagging-and-training-time-deception.core, label: Design rationale, support: argument] Adversarial Evaluation, Sandbagging, and Training-Time Deception owns a consumer-, decision-, model-, task-, elicitation-, authority-, monitor-, reward-, selection-, evaluator-, hypothesis-, outcome-, lineage-, and time-specific Evaluation Observation Integrity Packet: before outcomes are inspected, it freezes the permitted inference and comparison design, binds every observable and dependency, separates task outcome from behavioral interpretation, preserves discrepancies, alternatives, failures, costs, mitigation descendants, expiry, and downstream invalidation, and routes only a bounded observation-integrity status to existing evidence and decision owners; no score, trace, discrepancy, detector, mitigation, adversarial pass, quarantine, or complete finite packet alone establishes capability, intent, deception, sandbagging prevalence or resistance, reward fidelity, monitor validity, alignment, safety, readiness, deployment, support, transfer, or SOTA.
 
 ## Mechanism
+
+### Eighteen-stage observation lifecycle
+
+The complete lifecycle freezes the consumer, decision, permitted inference,
+hypotheses, alternatives, consequence, power, independence floor, disclosure,
+and stop authority; binds model, task, scaffold, prompt, tool, authority,
+sampling, seed, resource, environment, dependency, and run identities; records
+what the model could observe or infer; separates outcomes from indicators,
+traces, interpretations, hypotheses, and routes; justifies baselines and
+controls; preregisters perturbations and interactions; graphs evaluator
+dependencies; calibrates indicators; retains the complete denominator; triages
+non-strategic alternatives before strategic interpretation; freezes replication;
+creates descendant mitigation records; keeps attack hypotheses distinct;
+compiles the bounded integrity packet; propagates invalidation; governs
+disclosure and redaction; measures useful throughput, errors, delay, burden,
+cost, and residual age together; and expires, narrows, refutes, revokes, or
+retires observations when their applicability changes.
 
 - Bind each evaluation or update to an elicitation record: task, model/version,
   prompt or interface, tool authority, monitor visibility, selection context,
@@ -209,6 +231,17 @@ finding; it would not erase the original selection context from history.
 - SCF and Evidence States retain the authority to promote, quarantine, or
   narrow a claim after an evaluation-integrity finding.
 
+The complete twelve-owner boundary keeps Benchmark Instrument validity,
+Capability Commitments, Policy Optimization, Scalable Oversight and Control,
+Evidence States and Claim Ledgers, Artifact Graphs, Runtime and Security,
+Data and Supply Chain, Formal Proof, Readiness/Safety Case/Residual/Incident/
+Release, Resource Economics, and Living-Book Governance distinct. The
+observation-integrity layer owns only the inference boundary of a
+context-conditioned observation. It may
+block or bound an input to those owners; it cannot validate their artifacts,
+move support, set a threshold, train a policy, enforce a tool boundary, accept
+a safety case, authorize release, or rewrite public truth.
+
 These interfaces prevent a single owner from laundering its own observations.
 Benchmark Ratchets can say what was tested, Artifact Graphs can preserve what
 happened, and Policy Optimization can propose a change, but none can silently
@@ -233,6 +266,18 @@ to evaluation. They require the more practical discipline of retaining the
 contextual facts that make an observation interpretable. A claim may remain
 useful at a narrower scope while unanswered questions stay visible.
 
+The full invariant set additionally requires named consumers and outcomes;
+typed separation of outcome, indicator, judgment, interpretation, hypothesis,
+and route; one-sided elicitation bounds; dependency-based evaluator
+independence; disclosure of candidate/trainer/reward/monitor/evaluator overlap;
+complete denominators; power-bounded null results; constructed-positive
+controls that never estimate prevalence; descendant rather than overwritten
+mitigations; reward/task-fidelity separation; nonprivileged visible reasoning;
+prospective replication and transfer; authorized disclosure; review rather than
+promotion from a complete packet; downstream invalidation on material change;
+and the rule that finite fixtures and route theorems establish only record
+routing.
+
 ## Failure modes
 
 - Sandbagging that causes a capability threshold to be missed or delayed.
@@ -242,6 +287,16 @@ useful at a narrower scope while unanswered questions stay visible.
   that a system has no hidden behavior.
 - Mitigation laundering: a source-setting intervention is reported as a general
   safety guarantee.
+
+The complete failure register also covers intent laundering; constructed-
+detector laundering; weak-elicitation upper bounds; privileged-elicitation
+deployment claims; shared-dependency evaluator plurality; outcome-aware probes,
+exclusions, replication, and stopping; aggregate erasure of tails and false
+routes; leakage, injection, scorer, tool, log, and environment compromise;
+trace-causality overclaim; model-organism prevalence overclaim; mitigation
+lineage destruction; hidden multiple comparisons and resource advantage;
+taxonomy-as-coverage; evaluation burden without useful-throughput accounting;
+and reuse after scope or time expiry.
 
 Each failure mode has a different repair path. Sandbagging calls for
 cross-context elicitation and careful capability language. Reward hacking calls
@@ -482,6 +537,18 @@ observations across every evaluation consumer.
 
 ## Minimum Viable Implementation
 
+### Exact current minimum
+
+The repository currently has two public schemas and eight digest-bound
+synthetic evaluation-integrity records: one reaches Promotion Review and seven
+exercise context repair, independent evaluation, discrepancy quarantine, or
+intent-laundering rejection. Five validator mutations test the bridge. Eight
+owned Lean declarations reduce the same hand-authored finite decision tree.
+No model, benign or deceptive cross-context workload, detector, monitor,
+evaluator ensemble, reward process, mitigation, attack, threshold decision,
+readiness handoff, release, incident, independent reproduction, or transfer
+ran. The core-claim support effect is exactly zero.
+
 A viable first slice is an evaluation-integrity record that requires a model
 and task identity, elicitation context, selection consequence, reward and
 monitor provenance, held-out or cross-context probe references, discrepancy
@@ -496,6 +563,26 @@ interference finding appears, the normal update path is suspended until the
 finding has an owner, a countercase plan, and a stated non-claim. The first
 implementation is a governance primitive, not a sandboxed model organism or a
 substitute for independent evaluation.
+
+### Argument-exit campaign
+
+To move beyond argument, freeze natural and adversarial workloads spanning
+benign context sensitivity, constructed positive controls, capability hiding,
+reward shortcutting, monitor interference, selection adaptation, evaluation
+compromise, and trace/action inconsistency. Give strong elicitation, ordinary
+and adversarial controls, blinded holdouts, dependency-separated evaluators,
+calibrated executable outcomes, every failure and retry, and every arm matched
+model/tool/context/compute/tuning/engineering opportunity. Run causal
+perturbations and component ablations; create versioned mitigation descendants;
+exercise bypass, fallback, recovery, invalidation, disclosure, and expiry; and
+measure useful throughput, unsafe promotion, false quarantine, detection and
+investigation latency, compute, human burden, release delay, opportunity cost,
+and residual age together. Any promoted result must then survive independent
+institutional reproduction and heterogeneous transfer across tasks, models,
+scaffolds, tools, authority, monitors, rewards, evaluators, organizations,
+attacks, policies, and time. Positive, negative, null, inconclusive, narrowed,
+refuted, revoked, retired, and blocked-after-full-attempt outcomes all remain
+publishable terminal evidence.
 
 ## Beyond the State of the Art
 
@@ -548,6 +635,18 @@ borrows `AsiStackProofs.PolicyOptimization`. The eight routes and digest-bound
 fixture establish record routing only. They do not prove or detect deception, establish
 sandbagging resistance, prove evaluator validity, infer capability or intent,
 or establish alignment, safety, readiness, model quality, or ASI.
+
+### Formal adequacy audit
+
+All eight declarations are derived finite reductions of one hand-authored
+`EvaluationIntegrityRouteFor` decision tree. They are useful regression checks
+for route precedence and the non-laundering boundary, but they do not model an
+agent, latent objective, learning dynamics, evaluator error, causal
+faithfulness, capability access, adversarial search, mitigation efficacy,
+institutional independence, runtime enforcement, or transfer. The module has
+no direct empirical projection and supplies no deception detector or proof that
+the record fields correspond to reality. Its authority ends at the synthetic
+record-routing semantics.
 
 ## Monitorability and trace-action stress tests
 

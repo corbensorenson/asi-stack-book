@@ -31,6 +31,8 @@ SUCCESSOR_TEXT_FORMAT_PROFILE_PATH = "editions/reader_manuscript/v2_0/text_forma
 SUCCESSOR_DOCX_REFERENCE_PATH = "editions/reader_manuscript/v2_0/profiles/reader-v2-reference.docx"
 SUCCESSOR_FORMAT_MATRIX_PATH = "editions/reader_manuscript/v2_0/format_review_matrix.json"
 SUCCESSOR_EPUB_DISPOSITION_PATH = "editions/reader_manuscript/v2_0/epub_disposition.json"
+NEXT_SUCCESSOR_ROADMAP_PATH = "docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md"
+NEXT_SUCCESSOR_STATUS_PATH = "roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json"
 ACTIVE_MARKER = "Status: active canonical successor roadmap; unfinished work only"
 TARGET_IDS = [
     "scalable-oversight-and-adversarial-ai-control",
@@ -102,6 +104,7 @@ def snapshot() -> dict:
         "successor_text_format_profile": load_json(ROOT / SUCCESSOR_TEXT_FORMAT_PROFILE_PATH),
         "successor_format_matrix": load_json(ROOT / SUCCESSOR_FORMAT_MATRIX_PATH),
         "successor_epub_disposition": load_json(ROOT / SUCCESSOR_EPUB_DISPOSITION_PATH),
+        "next_successor_status": load_json(ROOT / NEXT_SUCCESSOR_STATUS_PATH),
         "active_roadmaps": active_roadmaps(),
         "hygiene_errors": hygiene_errors(),
     }
@@ -113,6 +116,10 @@ def semantic_errors(data: dict) -> list[str]:
     roadmap = data["roadmap"]
     rows = chapter_rows(data["structure"])
     ids = [row.get("id") for row in rows]
+    activation_ids = [
+        row.get("chapter_id")
+        for row in load_json(ROOT / PROVISIONAL_READER_PATH).get("chapter_records", [])
+    ]
     by_id = {row.get("id"): row for row in rows}
     sources_obj = data["sources"]
     source_rows = sources_obj if isinstance(sources_obj, list) else sources_obj.get("sources", [])
@@ -121,17 +128,22 @@ def semantic_errors(data: dict) -> list[str]:
 
     if status.get("status") != "completed":
         errors.append("post-v2.3 roadmap must be completed after every terminal gate closes")
-    if data["active_roadmaps"] != []:
-        errors.append("terminal roadmap history must expose no active successor")
+    if data["active_roadmaps"] != [NEXT_SUCCESSOR_ROADMAP_PATH]:
+        errors.append("terminal roadmap history must expose the exact active claim-proof/SOTA successor")
     if "Status: completed 2026-07-13" not in data["predecessor"]:
         errors.append("predecessor roadmap lost completed status")
-    if len(rows) != 54 or len(source_rows) < 280:
-        errors.append("activation chapter count drifted or historical public-safe source floor was violated")
-    digest = hashlib.sha256("\n".join(ids).encode()).hexdigest()
+    if len(rows) != 55 or len(source_rows) < 280:
+        errors.append("live chapter count drifted or historical public-safe source floor was violated")
+    digest = hashlib.sha256("\n".join(activation_ids).encode()).hexdigest()
     if status["activation_baseline"].get("activation_chapter_ids_sha256") != digest:
-        errors.append("breadth freeze was violated or active chapter identity/order drifted")
-    if not isinstance(vectors, list) or len(vectors) != 54 or any(row.get("summary_support_state") != "argument" for row in vectors):
+        errors.append("historical 54-chapter activation identity/order drifted")
+    if not isinstance(vectors, list) or len(vectors) != 55 or any(row.get("summary_support_state") != "argument" for row in vectors):
         errors.append("roadmap activation changed a chapter-core support state")
+    next_status = data["next_successor_status"]
+    if next_status.get("activation_baseline", {}).get("active_chapter_count") != 54:
+        errors.append("claim-proof successor lost the frozen 54-chapter activation baseline")
+    if next_status.get("structural_expansion_contract", {}).get("live_chapter_count") != 55:
+        errors.append("claim-proof successor lost the authorized 55th chapter")
 
     cohort = status.get("chapter_cohort", [])
     if [row.get("id") for row in cohort] != TARGET_IDS:
@@ -167,13 +179,26 @@ def semantic_errors(data: dict) -> list[str]:
                 errors.append(f"{chapter_id}: semantic packet complete without a complete quality-ledger row")
         if record.get("formal_packet_state") == "completed":
             formal_done.append(chapter_id)
-            if chapter.get("lean_module") != record.get("required_lean_module"):
+            current_modules = [
+                value.strip()
+                for value in str(chapter.get("lean_module", "")).split(";")
+                if value.strip()
+            ]
+            if record.get("required_lean_module") not in current_modules:
                 errors.append(f"{chapter_id}: formal packet complete without its required owned module")
-            module_file = ROOT / "lean" / (record["required_lean_module"].replace(".", "/") + ".lean")
-            if not module_file.is_file():
+            module_files = [
+                ROOT / "lean" / (module.replace(".", "/") + ".lean")
+                for module in current_modules
+            ]
+            required_file = ROOT / "lean" / (record["required_lean_module"].replace(".", "/") + ".lean")
+            if not required_file.is_file():
                 errors.append(f"{chapter_id}: required owned Lean module file is absent")
             else:
-                theorem_count = len(re.findall(r"^theorem\s+", module_file.read_text(encoding="utf-8"), re.M))
+                theorem_count = sum(
+                    len(re.findall(r"^theorem\s+", module_file.read_text(encoding="utf-8"), re.M))
+                    for module_file in module_files
+                    if module_file.is_file()
+                )
                 if theorem_count < 5:
                     errors.append(f"{chapter_id}: formal packet complete with fewer than five theorem declarations")
     p1 = next(row for row in status["priorities"] if row["id"] == "P1")
@@ -200,7 +225,7 @@ def semantic_errors(data: dict) -> list[str]:
         else:
             successor = load_json(ROOT / PROVISIONAL_READER_PATH)
             records = successor.get("chapter_records", [])
-            if reader_state in {"reconciled", "released"} and [row.get("chapter_id") for row in records] != ids:
+            if reader_state in {"reconciled", "released"} and [row.get("chapter_id") for row in records] != activation_ids:
                 errors.append("reader successor claims reconciliation without exact 54-chapter identity/order")
     p3 = next(row for row in status["priorities"] if row["id"] == "P3")
     if p3["state"] == "completed" and reader_state not in {"released", "blocked"}:
@@ -348,7 +373,7 @@ def semantic_errors(data: dict) -> list[str]:
         "docs/public_status_contract.md": data["public_contract"],
     }.items():
         normalized = " ".join(text.split())
-        for phrase in [ROADMAP_PATH, STATUS_PATH, SUCCESSOR_ROADMAP_PATH, SUCCESSOR_STATUS_PATH, "v2.3.0", "all 54 chapter-core claims remain at `argument`"]:
+        for phrase in [ROADMAP_PATH, STATUS_PATH, SUCCESSOR_ROADMAP_PATH, SUCCESSOR_STATUS_PATH, NEXT_SUCCESSOR_ROADMAP_PATH, NEXT_SUCCESSOR_STATUS_PATH, "v2.3.0", "all 54 chapter-core claims remain at `argument`"]:
             if phrase not in text and phrase not in normalized:
                 errors.append(f"{name} missing active roadmap truth: {phrase}")
     for phrase in [ROADMAP_PATH, "Successor activated: 2026-07-13"]:
@@ -362,7 +387,7 @@ def mutation_controls(base: dict) -> list[str]:
     mutations: list[tuple[str, dict]] = []
 
     duplicate = copy.deepcopy(base)
-    duplicate["active_roadmaps"] = [SUCCESSOR_ROADMAP_PATH, "docs/fake_roadmap.md"]
+    duplicate["active_roadmaps"] = [NEXT_SUCCESSOR_ROADMAP_PATH, "docs/fake_roadmap.md"]
     mutations.append(("duplicate active roadmap", duplicate))
 
     missing_chapter = copy.deepcopy(base)
@@ -411,7 +436,7 @@ def mutation_controls(base: dict) -> list[str]:
 
 
 def main() -> None:
-    required = [ROADMAP_PATH, STATUS_PATH, SCHEMA_PATH, PREDECESSOR_PATH, HISTORICAL_READER_PATH, QUALITY_PACKETS_PATH, COMPLETION_PATH, NO_RELEASE_PATH, SUCCESSOR_ROADMAP_PATH, SUCCESSOR_STATUS_PATH, SUCCESSOR_SCHEMA_PATH, SUCCESSOR_P0_RECEIPT_PATH, SUCCESSOR_TEXT_FORMAT_PROFILE_PATH, SUCCESSOR_DOCX_REFERENCE_PATH]
+    required = [ROADMAP_PATH, STATUS_PATH, SCHEMA_PATH, PREDECESSOR_PATH, HISTORICAL_READER_PATH, PROVISIONAL_READER_PATH, QUALITY_PACKETS_PATH, COMPLETION_PATH, NO_RELEASE_PATH, SUCCESSOR_ROADMAP_PATH, SUCCESSOR_STATUS_PATH, SUCCESSOR_SCHEMA_PATH, SUCCESSOR_P0_RECEIPT_PATH, SUCCESSOR_TEXT_FORMAT_PROFILE_PATH, SUCCESSOR_DOCX_REFERENCE_PATH, NEXT_SUCCESSOR_STATUS_PATH]
     missing = [path for path in required if not (ROOT / path).is_file()]
     if missing:
         raise SystemExit("missing post-v2.3 roadmap artifacts: " + ", ".join(missing))
@@ -422,9 +447,9 @@ def main() -> None:
     if errors:
         raise SystemExit("Post-v2.3 quality-floor roadmap validation failed:\n - " + "\n - ".join(errors))
     print(
-        "Post-v2.3 quality-floor roadmap passed: completed authority with one declared clean-handoff successor, frozen 54-chapter spine, "
+        "Post-v2.3 quality-floor roadmap passed: completed authority with one declared clean-handoff successor, frozen 54-chapter activation spine plus 55 live chapters, "
         f"10 exact depth targets, 44-record historical reader preserved, 54-record successor {data['status']['reader_successor']['state']}, "
-        "10 declared redirects, 54 argument-state core claims, and 10 rejecting mutations."
+        "10 declared redirects, 55 live argument-state core claims, and 10 rejecting mutations."
     )
 
 

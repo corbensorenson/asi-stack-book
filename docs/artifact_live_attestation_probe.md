@@ -16,15 +16,15 @@ The generated result is:
 
 ## Target
 
-The selected target artifact is the current receipt-repository challenge result:
+The selected target artifact is the clean tracked record-reality sequence result:
 
-`experiments/receipt_repository_audit/results/2026-07-04-challenge.json`
+`experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json`
 
 This target is public-safe, already part of the Artifact Graph receipt-reality
-lane, and validates through:
+lane, clean relative to its tracked Git object, and validates through:
 
 ```bash
-python3 scripts/validate_receipt_repository_challenge.py
+python3 scripts/validate_artifact_graph_record_reality_sequence.py
 ```
 
 ## What Is Checked

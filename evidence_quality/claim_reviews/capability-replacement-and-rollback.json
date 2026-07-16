@@ -1,0 +1,889 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "capability-replacement-and-rollback",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/capability-replacement-and-rollback.qmd",
+    "structured_atoms_reviewed": 59,
+    "prose_candidates_adjudicated": 46,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, all twelve assigned source notes and mapping limits, the public replacement schema and 5-valid/9-invalid corpus, selected readiness/residual checks, the six-step 2-valid/3-invalid transaction trace and four identity-sequence controls, the 2-valid/6-invalid intent bridge, all 37 Lean theorem declarations grouped under six manifest targets, the post-v2.1 15-by-24-surface update result and six checkpoint disagreements, the 32/36 rollback and 2/36 useful-release negative result, the later 12/12 nine-surface harness restoration with twelve omitted-surface controls and zero model candidates, every manifest atom, every prose scanner candidate, diagrams, test plan, source crosswalk, summary, and handoff. The sweep replaced generic evidence-gated swapping with a prospective state-and-effect transaction; separated field identity from change class, checkpoint authority from hindsight selection, artifact restoration from state/service/behavior/privacy/rights/external recovery, canary exposure from commit, monitor silence from success, rollback from compensation, local digest equality from production transfer, and safety gates from useful improvement; promoted full inventory and effect ownership, isolated exposure, evaluator/monitor dependencies, outcome delay, partial commit, descendant closure, irreversibility, negative/null outcome retention, joint useful-safety-cost-recovery evaluation, and strong comparator/ablation/transfer requirements into manifest ownership; and preserved zero chapter-core support effect."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Prospectively declared replacement transactions over versioned Stable Capability Fields, including model/weight, prompt/policy, code/tool, data/retrieval, evaluator, dependency, hardware/runtime, authority, state-schema, route, governance, and public-interface changes with stateful, side-effecting, descendant, and external-system effects.",
+      "environment": "Current public schemas, deterministic fixtures, finite Lean records, bounded local update and governance campaigns, and future frozen natural/adversarial real-candidate workloads with exact artifacts, dependencies, environments, consumers, authorities, evaluators, monitors, inventories, recovery objectives, delays, costs, and comparators; production deployment is outside current evidence.",
+      "model": "A prospective phase-gated replacement state machine whose current implementation validates finite records/routes and inventory-specific local restoration; useful, semantic, external-effect, and production claims require actual candidate, route, monitor, migration, downstream, recovery, compensation, and outcome behavior with independent implementations.",
+      "authority": "Stable Capability Fields owns identity; Intent/Command/Governance/System Authority own grants and stops; artifact/state/custody owners freeze pre-state and inventory; separate-enough evaluators, promoters, monitors, incident and recovery owners judge transitions; runtime executes effects; Evidence States alone moves support.",
+      "time": "Semantic review current through 2026-07-14; transaction rules, checkpoint authority, field/candidate identities, dependencies, environment, consumers, evaluation, canary, monitor delay/censoring, authority, inventory, effects, recovery objective, owners, and costs must be frozen before exposure and versioned after material change.",
+      "artifact": "Chapter, manifest, twelve source notes and mappings, replacement schema, fourteen transaction fixtures, readiness/residual records, deterministic trace and identity controls, intent bridge, 37 Lean theorem declarations under six targets, post-v2.1 outcome bundle and no-change transitions, governance-tax harness receipts, terminal replacement receipts, effect inventories, and public projections."
+    },
+    "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+    "assumptions": [
+      "A field's prior/candidate identities, change class, state/effect surfaces, authority, consumers, monitor, recovery objective, and irreversible residuals can be declared prospectively without implying inventory completeness.",
+      "Independent-enough implementations can observe candidate behavior, evaluator and monitor dependencies, delayed effects, migration, descendants, rollback, compensation, usefulness, unsafe release, and cost beyond record completeness or candidate self-report.",
+      "Strong progressive-delivery, MLOps, feature-flag, provenance, benchmark, filesystem/snapshot, and ordinary-governance comparators can be frozen on the same joint frontier."
+    ],
+    "strongest_counterclaim": "Conventional staged delivery, MLOps, provenance, regression suites, snapshots, and incident response already provide all practical change control; the proposed transaction cannot inventory open-world effects or ensure independence and therefore mainly adds governance tax.",
+    "falsifier": "Any admitted transaction violates a frozen identity, rule, checkpoint, authority, evidence, isolation, monitor, inventory, recovery, residual, or terminal obligation; or a simpler comparator dominates on the preregistered useful-output, unsafe-release, recovery, privacy/rights, latency, cost, labor, and transfer frontier.",
+    "required_lanes": [
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze project lineage and strongest corrigibility, progressive-delivery, feature-flag, MLOps, revision-history, transactional-storage, provenance, benchmark, and recovery comparators without novelty or efficacy laundering."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify change ownership, checkpoint authority, approval, acceptable exposure, irreversible effects, compensation, residual acceptance, recovery objectives, deprecation, retirement, and governance cost."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify finite identity, prospective rule, authority, lifecycle, isolation, monitor, inventory, commit, recovery, compensation, descendant, residual, receipt, and non-promotion consequences while exposing abstraction limits."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Exercise real route changes, state/effect inventories, delayed monitoring, migration, downstream consumers, descendants, irreversible controls, rollback, compensation, and terminal closure with exact rejecting mutations."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure useful improvement, unsafe release, regressions, monitor calibration, migration, recovery coverage/time, external compensation, privacy/rights, missed help, latency, compute, downtime, labor, governance cost, and residuals."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate prospective checkpoint authority, inventory closure, evaluator separation, canary isolation, monitor-delay accounting, regression memory, rehearsal, effect comparison, and residual ownership under matched transactions."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Repeat across models, prompts, tools, policies, data, evaluators, hardware, runtimes, state stores, organizations, consumers, threats, side effects, descendants, and update classes with independent replication."
+      }
+    ],
+    "contrary_evidence": [
+      "Feature flags, progressive-delivery controllers, Kubernetes revisions, MLOps pipelines, provenance systems, regression suites, transactional storage, backups, snapshots, and incident response are mature prior-art families covering substantial portions of replacement.",
+      "No finite predeclared inventory can guarantee open-world effect completeness; unobserved remote copies, people, institutions, descendants, side channels, and semantic harms can survive.",
+      "Evaluator and monitor separation can remain correlated through model family, data, organization, incentives, metrics, and shared infrastructure.",
+      "Rollback may be impossible after disclosure, external action, physical effect, schema destruction, learned update, descendant creation, rights violation, or user reliance; compensation may be partial or unavailable.",
+      "The 15/15 local rollback result restored a declared digest inventory but produced no eligible utility gain; the 32/36 rollback and 2/36 useful-release result failed both registered thresholds.",
+      "The later natural-work governance-tax campaign produced no task candidates because model calls failed, so its exact local restoration validates only disposable harness accounting."
+    ],
+    "known_confounds": [
+      "Inventory definitions and recovery objectives can be chosen to exclude difficult surfaces and inflate exactness.",
+      "Checkpoint, threshold, baseline, canary population, monitor duration, delay, censoring, and stop rules can be tuned after outcomes or repeatedly retried.",
+      "Task difficulty, model quality, prompt/tool failures, infrastructure errors, and refusals can suppress both unsafe release and useful throughput independently of governance.",
+      "Candidate, evaluator, monitor, promoter, incident owner, and recovery owner can share models, data, organizations, infrastructure, incentives, and blind spots.",
+      "Digest equality can coexist with semantic, behavioral, privacy, rights, external, or descendant divergence; behavioral equality can coexist with hidden storage or authority differences.",
+      "Canaries can contaminate shared state, caches, data, downstream artifacts, users, and evaluators before their nominal commit point.",
+      "Operator/evaluator labor, monitoring delay, downtime, migration loss, compensation, and residual custody can be excluded from cost or assigned to another layer."
+    ],
+    "acceptance_criteria": [
+      "Every declared field, change, rule, state/effect surface, evaluator, monitor, authority, exposure, commit, recovery, compensation, descendant, residual, and terminal field has an exact producer, consumer, owner, valid case, rejecting mutation, and observed consequence; seeded hindsight, omission, capture, contamination, blindness, partial commit, authority, irreversibility, cascade, retry, terminal, and cost failures reach exact non-default outcomes.",
+      "A preregistered real-candidate campaign meets joint useful-improvement, unsafe-release, preservation, monitor, recovery, privacy/rights, cost, causal-ablation, independent-replication, and transfer gates against strong conventional comparators."
+    ],
+    "narrowing_criteria": [
+      "Narrow each result to exact field/version, prior/candidate, change class, artifacts, dependencies, environment, consumers, authority, evaluator, monitor, inventory, checkpoint, objective, effects, descendants, delay, costs, and epoch.",
+      "Separate record validity, route validity, candidate quality, qualification, authority, canary exposure, commit, monitor pass, artifact/state/service/behavior/privacy/rights recovery, compensation, support movement, and production outcome.",
+      "Unknown or failed identity, rule, authority, evidence, monitor, inventory, recovery, effect, descendant, ownership, or closure fields remain rejected, shadow, canary, quarantine, rolled-back, compensated, or residual."
+    ],
+    "refutation_criteria": [
+      "Refute an invariant when a reachable admitted transaction violates it or a required field lacks an exercised producer, consumer, owner, or consequence.",
+      "Refute a mechanism benefit when its matched ablation preserves every frozen useful-safety-recovery-cost gate or the full mechanism worsens the joint frontier.",
+      "Refute complete-recovery, superiority, or transfer language when an unregistered surviving effect appears, a simpler comparator dominates, or the effect fails the declared transfer and replication set."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only when a more precise field, authority, rollout, provenance, state, monitor, migration, incident, recovery, evidence, or self-improvement owner supersedes the atom and every consumer migrates with lineage."
+    ],
+    "promotion_ceiling": "argument_until_claim_specific_real_candidate_replacement_and_recovery_campaign_and_accepted_evidence_transition",
+    "reproduction": {
+      "command": null,
+      "environment_lock": null,
+      "artifact_digest": null,
+      "evaluator_identity": null
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "capability-replacement-and-rollback",
+      "next_unblocking_condition": "Freeze one real stateful side-effecting field, strong progressive-delivery/MLOps/registry/provenance/snapshot baselines, exact prior/candidate artifacts and dependencies, prospective checkpoint authority, independently implemented evaluator and delayed monitor, state/effect inventory, downstream consumer and descendant, irreversible control, recovery and compensation objectives, joint metrics, ablations, replication, and transfer after P2/P3 semantics exist."
+    },
+    "non_claims": [
+      "Semantic review, source mapping, schema validity, a passing trace, finite theorem, local digest equality, or non-core transition does not establish useful replacement, complete semantic/external-effect recovery, monitor/evaluator validity, production transfer, or safe self-improvement.",
+      "The current 5/9 corpus, trace/intent controls, 37 declarations, 15/15 inventory replay, 32/36 rollback, 2/36 useful release, and 12/12 harness restoration establish only their exact finite and bounded outcome scopes, including negative results.",
+      "No route authority, deployment permission, chapter-core support, release status, AGI, or ASI claim changes without its separate owner and accepted evidence transition."
+    ]
+  },
+  "atom_reviews": {
+    "capability-replacement-and-rollback.core": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "Conventional staged rollout, MLOps, provenance, regression tests, snapshots, and incident response already supply the useful change-control boundary; the proposed transaction adds record burden but cannot define complete effects, prove observer validity, or reverse irreversible harm.",
+      "falsifier": "A reachable admitted transaction violates any frozen identity, authority, evidence, isolation, monitor, state/effect, recovery, residual, or terminal obligation; or a strong simpler comparator dominates the full transaction on the preregistered useful-safety-cost-recovery frontier.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.problem.001": {
+      "proposition_type": "source-synthesis",
+      "current_disposition": "research_problem_not_positive_result",
+      "strongest_counterclaim": "Representative AI replacement practice already identifies and recovers every material model, state, authority, consumer, descendant, and external-effect surface with acceptable usefulness and cost.",
+      "falsifier": "A dated representative audit finds no material hidden checkpoint, state, authority, evaluator, monitor, descendant, external-effect, recovery, or usefulness gap under current replacement practice.",
+      "acceptance_criteria": [
+        "A dated comparator audit preserves the strongest current systems, demonstrates the exact unresolved change/recovery boundary, and avoids implying that the proposed transaction solves it."
+      ]
+    },
+    "capability-replacement-and-rollback.insufficiency.001": {
+      "proposition_type": "source-synthesis",
+      "current_disposition": "comparator_gap_pending_dated_audit",
+      "strongest_counterclaim": "A frozen combination of progressive delivery, feature flags, MLOps, provenance, regression suites, filesystem/snapshot recovery, and ordinary governance supplies every named property at equal or lower cost.",
+      "falsifier": "A strong frozen comparator implements and exercises every named property at equal or lower joint error, latency, labor, governance, and recovery cost.",
+      "acceptance_criteria": [
+        "A dated comparator audit preserves the strongest current systems, demonstrates the exact unresolved change/recovery boundary, and avoids implying that the proposed transaction solves it."
+      ]
+    },
+    "capability-replacement-and-rollback.minimum.001": {
+      "proposition_type": "executable",
+      "current_disposition": "retain_mixed_finite_and_bounded_negative_evidence_without_core_promotion",
+      "strongest_counterclaim": "The minimum is mostly self-authored schema and finite-route evidence; the local digest successes are trivial inventory replay, while failed usefulness and rollback gates show no useful replacement capability.",
+      "falsifier": "Any stated fixture, trace, theorem, inventory, rollback, checkpoint-disagreement, usefulness, or negative-control count fails clean recomputation, or prose generalizes beyond its exact campaign.",
+      "acceptance_criteria": [
+        "Cleanly reproduce the 5/9 transaction corpus, selected readiness/residual checks, 6-step 2-valid/3-invalid trace plus four sequence controls, 2/6 intent bridge, 37 theorem declarations under six targets, 15/15 by 24-surface restoration with six checkpoint disagreements and no eligible utility gain, 32/36 rollback with 2/36 useful release, and 12/12 nine-surface harness restoration with twelve omissions and zero task candidates."
+      ],
+      "promotion_ceiling": "prototype_backed_for_exact_inventory_specific_local_restoration_and_synthetic_record_semantics_only_after_accepted_transition"
+    },
+    "capability-replacement-and-rollback.beyond_sota.001": {
+      "proposition_type": "composite",
+      "current_disposition": "research_target_not_current_result",
+      "strongest_counterclaim": "The full transaction is dominated by simpler release engineering because prospective inventories are incomplete, independent observers remain correlated, and governance costs suppress useful updates without improving real recovery.",
+      "falsifier": "The full transaction misses its preregistered preservation, usefulness, unsafe-release, recovery, privacy/rights, cost, causal-ablation, replication, or transfer gate, or a simpler baseline dominates.",
+      "acceptance_criteria": [
+        "A preregistered multi-field real-candidate campaign with strong conventional comparators, independent implementations and observers, delayed outcomes, irreversible controls, causal ablations, joint metrics, replication, and transfer meets every frozen gate without hiding failed or null transactions."
+      ],
+      "claim_label": "Speculative"
+    },
+    "capability-replacement-and-rollback.mechanism.001": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, infeasible, gameable, or causally irrelevant to useful and effect-complete replacement: Freeze a transaction identity with field version, prior and candidate identities, consumers, use, change owner, promotion authority, evaluator, monitor owner, incident owner, recovery owner, start time, expiry, and support-state non-effect before candidate evidence is observed.",
+      "falsifier": "Matched ablation preserves all frozen outcomes and costs, or an exercised trace bypasses the mechanism while remaining admitted.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.mechanism.002": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, infeasible, gameable, or causally irrelevant to useful and effect-complete replacement: Classify the change separately across contract, model or weights, prompt or policy, code or tool, data or retrieval, evaluator, dependency, hardware/runtime, authority, state schema, route, governance, and public interface; material field changes return to field governance rather than masquerading as implementation replacement.",
+      "falsifier": "Matched ablation preserves all frozen outcomes and costs, or an exercised trace bypasses the mechanism while remaining admitted.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.mechanism.003": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, infeasible, gameable, or causally irrelevant to useful and effect-complete replacement: Choose checkpoint authority prospectively and capture a content-bound pre-state over every declared model, optimizer, scheduler, RNG, cache, checkpoint, backup, credential, policy, state, data, route, monitor, receipt, descendant, and external-commitment surface; best-after-seeing-results selection is a protocol violation.",
+      "falsifier": "Matched ablation preserves all frozen outcomes and costs, or an exercised trace bypasses the mechanism while remaining admitted.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.mechanism.004": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, infeasible, gameable, or causally irrelevant to useful and effect-complete replacement: Build an effect inventory distinguishing reversible, replayable, compensatable, forked, disclosure-like, safety-sensitive, externally owned, and irreversible effects, with an owner and recovery objective for every non-reversible entry.",
+      "falsifier": "Matched ablation preserves all frozen outcomes and costs, or an exercised trace bypasses the mechanism while remaining admitted.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.mechanism.005": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, infeasible, gameable, or causally irrelevant to useful and effect-complete replacement: Stage the candidate in an isolated shadow or fork with bounded read, write, network, tool, data, credential, learning, cache, descendant, and external-effect permissions; canary exposure cannot silently train or mutate the default lineage.",
+      "falsifier": "Matched ablation preserves all frozen outcomes and costs, or an exercised trace bypasses the mechanism while remaining admitted.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.mechanism.006": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, infeasible, gameable, or causally irrelevant to useful and effect-complete replacement: Evaluate qualification, historical regressions, critical-failure vetoes, rare and adversarial cases, authority and rights preservation, state compatibility, composition, contamination, usefulness, cost, and transfer against preregistered baselines and thresholds; negative and null results remain attached.",
+      "falsifier": "Matched ablation preserves all frozen outcomes and costs, or an exercised trace bypasses the mechanism while remaining admitted.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.mechanism.007": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, infeasible, gameable, or causally irrelevant to useful and effect-complete replacement: Separate candidate proposal, evidence production, evaluation, promotion, monitoring, incident adjudication, and recovery enough to expose shared models, data, incentives, organizations, and control paths; unavailable separation narrows authority and leaves a capture residual.",
+      "falsifier": "Matched ablation preserves all frozen outcomes and costs, or an exercised trace bypasses the mechanism while remaining admitted.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.mechanism.008": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, infeasible, gameable, or causally irrelevant to useful and effect-complete replacement: Use explicit proposed, precheck, shadow, canary, default-candidate, committed, monitoring, rolled-back, compensated, quarantined, superseded, deprecated, retired, failed, and residual states with legal transitions, receipts, owners, and failure destinations.",
+      "falsifier": "Matched ablation preserves all frozen outcomes and costs, or an exercised trace bypasses the mechanism while remaining admitted.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.mechanism.009": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, infeasible, gameable, or causally irrelevant to useful and effect-complete replacement: Preregister canary population and duration, traffic and authority scope, observability, metrics, thresholds, delay and censoring model, stop conditions, rollback triggers, fallback behavior, human approval, and escalation before exposure begins.",
+      "falsifier": "Matched ablation preserves all frozen outcomes and costs, or an exercised trace bypasses the mechanism while remaining admitted.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.mechanism.010": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, infeasible, gameable, or causally irrelevant to useful and effect-complete replacement: Treat commit as a bounded point of no silent return: atomically update governed route and receipt state where possible, preserve the prior route until closure, prevent partial defaulting, and record every subsystem that cannot participate in the same atomic boundary.",
+      "falsifier": "Matched ablation preserves all frozen outcomes and costs, or an exercised trace bypasses the mechanism while remaining admitted.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.mechanism.011": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, infeasible, gameable, or causally irrelevant to useful and effect-complete replacement: Execute rollback against the complete declared inventory and compare post-recovery state and effects with the prospective objective; where reversal is impossible, execute or assign compensation, quarantine, fork, disclosure response, revocation, downstream invalidation, or retained residual rather than claim rollback.",
+      "falsifier": "Matched ablation preserves all frozen outcomes and costs, or an exercised trace bypasses the mechanism while remaining admitted.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.mechanism.012": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This mechanism is unnecessary, infeasible, gameable, or causally irrelevant to useful and effect-complete replacement: Close the transaction only after the monitor window and recovery obligations settle, binding before/after digests, observations, incidents, affected consumers and descendants, rollback or compensation outcomes, unresolved effects, evidence transitions, changelog/public projections, and a terminal disposition.",
+      "falsifier": "Matched ablation preserves all frozen outcomes and costs, or an exercised trace bypasses the mechanism while remaining admitted.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.interface.001": {
+      "proposition_type": "executable",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The declared handoff cannot supply or enforce its fields, or its consumer safely accepts a trace violating the proposition: Stable Capability Fields supplies the exact versioned substitution contract, affected consumers, authority ceiling, qualification lease, field-owned regressions and incidents, and material-change classifier; replacement cannot rewrite them.",
+      "falsifier": "A valid reachable trace crosses the handoff with wrong identity, authority, scope, evidence, state, effect, recovery, or residual semantics and its named consumer accepts it.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.interface.002": {
+      "proposition_type": "executable",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The declared handoff cannot supply or enforce its fields, or its consumer safely accepts a trace violating the proposition: Intent, command contracts, governance, and System Authority supply the principal, objective, forbidden means, approval, exception, stop, expiry, and rollback grants; a candidate or transaction receipt grants none of these by itself.",
+      "falsifier": "A valid reachable trace crosses the handoff with wrong identity, authority, scope, evidence, state, effect, recovery, or residual semantics and its named consumer accepts it.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.interface.003": {
+      "proposition_type": "executable",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The declared handoff cannot supply or enforce its fields, or its consumer safely accepts a trace violating the proposition: Artifact, supply-chain, custody, memory, state, and context layers supply content identities, dependency and provenance graphs, pre-state snapshots, checkpoint authority, migration and reverse-migration paths, cache and data lineage, descendant closure, and external-effect inventories.",
+      "falsifier": "A valid reachable trace crosses the handoff with wrong identity, authority, scope, evidence, state, effect, recovery, or residual semantics and its named consumer accepts it.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.interface.004": {
+      "proposition_type": "executable",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The declared handoff cannot supply or enforce its fields, or its consumer safely accepts a trace violating the proposition: Benchmarks, adversarial evaluation, scalable oversight, rights, security, and evidence layers supply independent-enough outcome, regression, authority, privacy, contestability, monitor, and transfer observations with explicit support boundaries.",
+      "falsifier": "A valid reachable trace crosses the handoff with wrong identity, authority, scope, evidence, state, effect, recovery, or residual semantics and its named consumer accepts it.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.interface.005": {
+      "proposition_type": "executable",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The declared handoff cannot supply or enforce its fields, or its consumer safely accepts a trace violating the proposition: Routing and runtime enforce shadow/canary/default/quarantine selection, exposure and effect ceilings, atomic route updates where available, monitor hooks, stop conditions, rollback triggers, and receipts without inferring qualification from availability.",
+      "falsifier": "A valid reachable trace crosses the handoff with wrong identity, authority, scope, evidence, state, effect, recovery, or residual semantics and its named consumer accepts it.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.interface.006": {
+      "proposition_type": "executable",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The declared handoff cannot supply or enforce its fields, or its consumer safely accepts a trace violating the proposition: Readiness, residual escrow, incident response, and recovery consume gate results, blockers, rollback rehearsals, effect inventories, residual owners, recovery objectives, and terminal closure state.",
+      "falsifier": "A valid reachable trace crosses the handoff with wrong identity, authority, scope, evidence, state, effect, recovery, or residual semantics and its named consumer accepts it.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.interface.007": {
+      "proposition_type": "executable",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The declared handoff cannot supply or enforce its fields, or its consumer safely accepts a trace violating the proposition: Changelog, public projections, replacement descendants, policy updates, and self-improvement consume the exact terminal receipt and must preserve failed, null, rolled-back, compensated, and residual outcomes without promoting the field or candidate by narrative.",
+      "falsifier": "A valid reachable trace crosses the handoff with wrong identity, authority, scope, evidence, state, effect, recovery, or residual semantics and its named consumer accepts it.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.invariant.001": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This obligation is infeasible for legitimate updates, satisfiable only on paper, or violated by an admitted trace despite its declared assumptions: The transaction, field version, prior artifact, candidate artifact, dependency graph, environment, consumers, use, and change class are content-bound before evaluation and remain distinct throughout the lifecycle.",
+      "falsifier": "A reachable transaction satisfies the declared assumptions and violates this exact obligation, or compliance cannot be observed without circular candidate self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.invariant.002": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This obligation is infeasible for legitimate updates, satisfiable only on paper, or violated by an admitted trace despite its declared assumptions: Checkpoint authority, evaluation set, gates, monitor policy, canary scope, commit rule, recovery objective, and promotion threshold are fixed prospectively or any change is versioned and rerun without reusing prior evidence.",
+      "falsifier": "A reachable transaction satisfies the declared assumptions and violates this exact obligation, or compliance cannot be observed without circular candidate self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.invariant.003": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This obligation is infeasible for legitimate updates, satisfiable only on paper, or violated by an admitted trace despite its declared assumptions: Replacement never widens authority, permissions, consumers, side effects, learning, delegation, public claims, support state, or correction resistance by inheritance or default.",
+      "falsifier": "A reachable transaction satisfies the declared assumptions and violates this exact obligation, or compliance cannot be observed without circular candidate self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.invariant.004": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This obligation is infeasible for legitimate updates, satisfiable only on paper, or violated by an admitted trace despite its declared assumptions: The prior route and every state needed for the declared recovery objective remain available, readable, protected, and rehearsed until terminal closure or an explicit irreversible residual is accepted by its owner.",
+      "falsifier": "A reachable transaction satisfies the declared assumptions and violates this exact obligation, or compliance cannot be observed without circular candidate self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.invariant.005": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This obligation is infeasible for legitimate updates, satisfiable only on paper, or violated by an admitted trace despite its declared assumptions: Every state, cache, backup, credential, policy, receipt, data, descendant, external commitment, and effect surface is included in the inventory or explicitly excluded with reason, owner, and residual; unregistered surfaces cannot be called recovered.",
+      "falsifier": "A reachable transaction satisfies the declared assumptions and violates this exact obligation, or compliance cannot be observed without circular candidate self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.invariant.006": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This obligation is infeasible for legitimate updates, satisfiable only on paper, or violated by an admitted trace despite its declared assumptions: Field-owned regressions, incidents, rights, privacy, security, audit, provenance, evaluator, residual, and recovery obligations follow the candidate and cannot be deleted by a better frontier score.",
+      "falsifier": "A reachable transaction satisfies the declared assumptions and violates this exact obligation, or compliance cannot be observed without circular candidate self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.invariant.007": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This obligation is infeasible for legitimate updates, satisfiable only on paper, or violated by an admitted trace despite its declared assumptions: The candidate is not the sole proposer, evaluator, promoter, monitor, incident judge, or rollback authority for its own transaction; disclosed dependency narrows scope and claim strength.",
+      "falsifier": "A reachable transaction satisfies the declared assumptions and violates this exact obligation, or compliance cannot be observed without circular candidate self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.invariant.008": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This obligation is infeasible for legitimate updates, satisfiable only on paper, or violated by an admitted trace despite its declared assumptions: Shadow and canary states cannot create undeclared durable side effects, train or update descendants, mutate default state or caches, or become default through traffic drift.",
+      "falsifier": "A reachable transaction satisfies the declared assumptions and violates this exact obligation, or compliance cannot be observed without circular candidate self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.invariant.009": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This obligation is infeasible for legitimate updates, satisfiable only on paper, or violated by an admitted trace despite its declared assumptions: A monitor pass is valid only for its prospective metrics, population, duration, delay, censoring, threshold, baseline, and evaluator; silence, missing telemetry, or insufficient exposure is not success.",
+      "falsifier": "A reachable transaction satisfies the declared assumptions and violates this exact obligation, or compliance cannot be observed without circular candidate self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.invariant.010": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This obligation is infeasible for legitimate updates, satisfiable only on paper, or violated by an admitted trace despite its declared assumptions: Commit is denied on failed or missing critical regressions, identity mismatch, stale evidence, authority delta, unowned irreversible effects, failed recovery rehearsal, open incident, unresolved blocker, or missing approval.",
+      "falsifier": "A reachable transaction satisfies the declared assumptions and violates this exact obligation, or compliance cannot be observed without circular candidate self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.invariant.011": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This obligation is infeasible for legitimate updates, satisfiable only on paper, or violated by an admitted trace despite its declared assumptions: Rollback success is asserted only against the declared recovery objective and effect inventory; artifact restoration, digest equality, service restart, behavioral recovery, privacy repair, and external compensation remain separate outcomes.",
+      "falsifier": "A reachable transaction satisfies the declared assumptions and violates this exact obligation, or compliance cannot be observed without circular candidate self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.invariant.012": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This obligation is infeasible for legitimate updates, satisfiable only on paper, or violated by an admitted trace despite its declared assumptions: Partial rollback, compensation, fork, quarantine, revocation, disclosure response, and residual closure remain visible terminal or intermediate states rather than being relabeled success.",
+      "falsifier": "A reachable transaction satisfies the declared assumptions and violates this exact obligation, or compliance cannot be observed without circular candidate self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.invariant.013": {
+      "proposition_type": "formal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "This obligation is infeasible for legitimate updates, satisfiable only on paper, or violated by an admitted trace despite its declared assumptions: A schema pass, finite proof, synthetic trace, local exact digest replay, or accepted non-core transition cannot by itself establish useful improvement, complete recovery, production transfer, safe self-improvement, or chapter-core support.",
+      "falsifier": "A reachable transaction satisfies the declared assumptions and violates this exact obligation, or compliance cannot be observed without circular candidate self-attestation.",
+      "acceptance_criteria": [
+        "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
+      ]
+    },
+    "capability-replacement-and-rollback.failure_mode.001": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named condition is not distinct or material, lacks a causal link to failed replacement, or is detected more reliably and cheaply by ordinary release controls: For Capability Replacement and Rollback, a material failure mode is: Identity substitution restores or promotes an artifact that does not satisfy the frozen field, version, dependency, environment, consumer, or prior-route identity.",
+      "falsifier": "Prospectively seed the condition; no preregistered material failure, unsafe admission, recovery loss, or cost change appears across natural/adversarial cases, or a simpler control contains it equally well.",
+      "acceptance_criteria": [
+        "Seed the condition before exposure; an independent observer detects its exact consequence and the declared control reaches the named non-default or residual state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "capability-replacement-and-rollback.failure_mode.002": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named condition is not distinct or material, lacks a causal link to failed replacement, or is detected more reliably and cheaply by ordinary release controls: For Capability Replacement and Rollback, a material failure mode is: Checkpoint hindsight selects the best state, threshold, baseline, or rollback target after observing outcomes and presents it as prospective authority.",
+      "falsifier": "Prospectively seed the condition; no preregistered material failure, unsafe admission, recovery loss, or cost change appears across natural/adversarial cases, or a simpler control contains it equally well.",
+      "acceptance_criteria": [
+        "Seed the condition before exposure; an independent observer detects its exact consequence and the declared control reaches the named non-default or residual state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "capability-replacement-and-rollback.failure_mode.003": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named condition is not distinct or material, lacks a causal link to failed replacement, or is detected more reliably and cheaply by ordinary release controls: For Capability Replacement and Rollback, a material failure mode is: Regression deletion or frontier bias hides lost rights, permissions, logging, privacy, cost, abstention, context, rare-case, approval, or transfer behavior behind a stronger headline score.",
+      "falsifier": "Prospectively seed the condition; no preregistered material failure, unsafe admission, recovery loss, or cost change appears across natural/adversarial cases, or a simpler control contains it equally well.",
+      "acceptance_criteria": [
+        "Seed the condition before exposure; an independent observer detects its exact consequence and the declared control reaches the named non-default or residual state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "capability-replacement-and-rollback.failure_mode.004": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named condition is not distinct or material, lacks a causal link to failed replacement, or is detected more reliably and cheaply by ordinary release controls: For Capability Replacement and Rollback, a material failure mode is: Evaluator capture lets the candidate, vendor, update process, or promoter author or influence the benchmark, gate, monitor, incident closure, or recovery verdict.",
+      "falsifier": "Prospectively seed the condition; no preregistered material failure, unsafe admission, recovery loss, or cost change appears across natural/adversarial cases, or a simpler control contains it equally well.",
+      "acceptance_criteria": [
+        "Seed the condition before exposure; an independent observer detects its exact consequence and the declared control reaches the named non-default or residual state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "capability-replacement-and-rollback.failure_mode.005": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named condition is not distinct or material, lacks a causal link to failed replacement, or is detected more reliably and cheaply by ordinary release controls: For Capability Replacement and Rollback, a material failure mode is: Inventory omission declares recovery while optimizer, scheduler, RNG, caches, backups, credentials, policies, receipts, descendants, remote stores, or external commitments remain changed.",
+      "falsifier": "Prospectively seed the condition; no preregistered material failure, unsafe admission, recovery loss, or cost change appears across natural/adversarial cases, or a simpler control contains it equally well.",
+      "acceptance_criteria": [
+        "Seed the condition before exposure; an independent observer detects its exact consequence and the declared control reaches the named non-default or residual state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "capability-replacement-and-rollback.failure_mode.006": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named condition is not distinct or material, lacks a causal link to failed replacement, or is detected more reliably and cheaply by ordinary release controls: For Capability Replacement and Rollback, a material failure mode is: State migration insolvency makes the prior route unreadable, lossy, privacy-violating, semantically incompatible, or dependent on a forward-only schema.",
+      "falsifier": "Prospectively seed the condition; no preregistered material failure, unsafe admission, recovery loss, or cost change appears across natural/adversarial cases, or a simpler control contains it equally well.",
+      "acceptance_criteria": [
+        "Seed the condition before exposure; an independent observer detects its exact consequence and the declared control reaches the named non-default or residual state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "capability-replacement-and-rollback.failure_mode.007": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named condition is not distinct or material, lacks a causal link to failed replacement, or is detected more reliably and cheaply by ordinary release controls: For Capability Replacement and Rollback, a material failure mode is: Canary contamination lets limited exposure mutate shared state, train descendants, poison caches, leak data, create commitments, or influence the default evaluator before admission.",
+      "falsifier": "Prospectively seed the condition; no preregistered material failure, unsafe admission, recovery loss, or cost change appears across natural/adversarial cases, or a simpler control contains it equally well.",
+      "acceptance_criteria": [
+        "Seed the condition before exposure; an independent observer detects its exact consequence and the declared control reaches the named non-default or residual state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "capability-replacement-and-rollback.failure_mode.008": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named condition is not distinct or material, lacks a causal link to failed replacement, or is detected more reliably and cheaply by ordinary release controls: For Capability Replacement and Rollback, a material failure mode is: Monitor blindness uses weak proxies, delayed or censored outcomes, insufficient exposure, missing telemetry, distribution mismatch, or candidate-manipulable metrics to certify success.",
+      "falsifier": "Prospectively seed the condition; no preregistered material failure, unsafe admission, recovery loss, or cost change appears across natural/adversarial cases, or a simpler control contains it equally well.",
+      "acceptance_criteria": [
+        "Seed the condition before exposure; an independent observer detects its exact consequence and the declared control reaches the named non-default or residual state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "capability-replacement-and-rollback.failure_mode.009": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named condition is not distinct or material, lacks a causal link to failed replacement, or is detected more reliably and cheaply by ordinary release controls: For Capability Replacement and Rollback, a material failure mode is: Partial commit leaves routes, state, policies, credentials, monitors, ledgers, consumers, or replicas split across prior and candidate versions without an owned consistency state.",
+      "falsifier": "Prospectively seed the condition; no preregistered material failure, unsafe admission, recovery loss, or cost change appears across natural/adversarial cases, or a simpler control contains it equally well.",
+      "acceptance_criteria": [
+        "Seed the condition before exposure; an independent observer detects its exact consequence and the declared control reaches the named non-default or residual state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "capability-replacement-and-rollback.failure_mode.010": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named condition is not distinct or material, lacks a causal link to failed replacement, or is detected more reliably and cheaply by ordinary release controls: For Capability Replacement and Rollback, a material failure mode is: Authority smuggling gives the candidate broader tools, data, consumers, effects, learning, delegation, or correction resistance through an apparently unchanged transaction.",
+      "falsifier": "Prospectively seed the condition; no preregistered material failure, unsafe admission, recovery loss, or cost change appears across natural/adversarial cases, or a simpler control contains it equally well.",
+      "acceptance_criteria": [
+        "Seed the condition before exposure; an independent observer detects its exact consequence and the declared control reaches the named non-default or residual state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "capability-replacement-and-rollback.failure_mode.011": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named condition is not distinct or material, lacks a causal link to failed replacement, or is detected more reliably and cheaply by ordinary release controls: For Capability Replacement and Rollback, a material failure mode is: Rollback theater stores a prior artifact or command but lacks reverse migration, complete inventory, trigger authority, rehearsal, effect comparison, owner, or recovery objective.",
+      "falsifier": "Prospectively seed the condition; no preregistered material failure, unsafe admission, recovery loss, or cost change appears across natural/adversarial cases, or a simpler control contains it equally well.",
+      "acceptance_criteria": [
+        "Seed the condition before exposure; an independent observer detects its exact consequence and the declared control reaches the named non-default or residual state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "capability-replacement-and-rollback.failure_mode.012": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named condition is not distinct or material, lacks a causal link to failed replacement, or is detected more reliably and cheaply by ordinary release controls: For Capability Replacement and Rollback, a material failure mode is: Irreversibility laundering reports compensation, restart, byte equality, or local digest restoration as reversal of disclosure, external action, learned updates, descendant propagation, rights violation, or semantic harm.",
+      "falsifier": "Prospectively seed the condition; no preregistered material failure, unsafe admission, recovery loss, or cost change appears across natural/adversarial cases, or a simpler control contains it equally well.",
+      "acceptance_criteria": [
+        "Seed the condition before exposure; an independent observer detects its exact consequence and the declared control reaches the named non-default or residual state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "capability-replacement-and-rollback.failure_mode.013": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named condition is not distinct or material, lacks a causal link to failed replacement, or is detected more reliably and cheaply by ordinary release controls: For Capability Replacement and Rollback, a material failure mode is: Rollback cascade restores one component while its downstream artifacts, indexes, caches, models, users, external systems, or successor transactions remain contaminated or incompatible.",
+      "falsifier": "Prospectively seed the condition; no preregistered material failure, unsafe admission, recovery loss, or cost change appears across natural/adversarial cases, or a simpler control contains it equally well.",
+      "acceptance_criteria": [
+        "Seed the condition before exposure; an independent observer detects its exact consequence and the declared control reaches the named non-default or residual state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "capability-replacement-and-rollback.failure_mode.014": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named condition is not distinct or material, lacks a causal link to failed replacement, or is detected more reliably and cheaply by ordinary release controls: For Capability Replacement and Rollback, a material failure mode is: Oscillation and retry laundering repeatedly promote and roll back a marginal candidate until one window passes, while accumulating side effects, multiple-testing error, operator burden, or hidden residuals.",
+      "falsifier": "Prospectively seed the condition; no preregistered material failure, unsafe admission, recovery loss, or cost change appears across natural/adversarial cases, or a simpler control contains it equally well.",
+      "acceptance_criteria": [
+        "Seed the condition before exposure; an independent observer detects its exact consequence and the declared control reaches the named non-default or residual state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "capability-replacement-and-rollback.failure_mode.015": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named condition is not distinct or material, lacks a causal link to failed replacement, or is detected more reliably and cheaply by ordinary release controls: For Capability Replacement and Rollback, a material failure mode is: Terminal-state escape restarts rolled-back, quarantined, superseded, deprecated, or retired candidates or deletes the receipts needed to explain their disposition.",
+      "falsifier": "Prospectively seed the condition; no preregistered material failure, unsafe admission, recovery loss, or cost change appears across natural/adversarial cases, or a simpler control contains it equally well.",
+      "acceptance_criteria": [
+        "Seed the condition before exposure; an independent observer detects its exact consequence and the declared control reaches the named non-default or residual state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "capability-replacement-and-rollback.failure_mode.016": {
+      "proposition_type": "causal",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "The named condition is not distinct or material, lacks a causal link to failed replacement, or is detected more reliably and cheaply by ordinary release controls: For Capability Replacement and Rollback, a material failure mode is: Replacement-cost externalization hides missed help, refusal, latency, compute, evaluator labor, monitor delay, migration loss, incident response, compensation, downtime, governance burden, and residual custody when calling an update successful.",
+      "falsifier": "Prospectively seed the condition; no preregistered material failure, unsafe admission, recovery loss, or cost change appears across natural/adversarial cases, or a simpler control contains it equally well.",
+      "acceptance_criteria": [
+        "Seed the condition before exposure; an independent observer detects its exact consequence and the declared control reaches the named non-default or residual state without unacceptable usefulness or governance cost."
+      ]
+    },
+    "capability-replacement-and-rollback.formal.replacement-transaction-operational-invariant": {
+      "proposition_type": "formal",
+      "current_disposition": "implemented_finite_obligation_not_empirical_support",
+      "strongest_counterclaim": "The theorem is correct only for a weak self-authored record and does not justify the operational reading: A replacement commit requires qualification evidence and rollback metadata.",
+      "falsifier": "The module fails to build, a checked countermodel negates the target under encoded assumptions, or the prose target exceeds the finite record.",
+      "acceptance_criteria": [
+        "Build the locked Lean module; match theorem assumptions to the finite target and executable counts; retain explicit non-claims against truth of fields, deployed enforcement, useful improvement, semantic/external recovery, and support promotion."
+      ],
+      "promotion_ceiling": "formal_proof_backed_for_exact_finite_predicate_only_after_accepted_transition"
+    },
+    "capability-replacement-and-rollback.formal.replacement-transaction-failure-blocks-promotion": {
+      "proposition_type": "formal",
+      "current_disposition": "implemented_finite_obligation_not_empirical_support",
+      "strongest_counterclaim": "The theorem is correct only for a weak self-authored record and does not justify the operational reading: A failed regression blocks promotion of the replacement.",
+      "falsifier": "The module fails to build, a checked countermodel negates the target under encoded assumptions, or the prose target exceeds the finite record.",
+      "acceptance_criteria": [
+        "Build the locked Lean module; match theorem assumptions to the finite target and executable counts; retain explicit non-claims against truth of fields, deployed enforcement, useful improvement, semantic/external recovery, and support promotion."
+      ],
+      "promotion_ceiling": "formal_proof_backed_for_exact_finite_predicate_only_after_accepted_transition"
+    },
+    "capability-replacement-and-rollback.formal.replacement-transaction-route-envelope": {
+      "proposition_type": "formal",
+      "current_disposition": "implemented_finite_obligation_not_empirical_support",
+      "strongest_counterclaim": "The theorem is correct only for a weak self-authored record and does not justify the operational reading: Structured replacement transaction and lifecycle reviews route missing artifacts, identity mismatch, authority expansion, evaluator capture, stale evidence, failed regression floors, missing canary scope, failed canaries, missing monitor windows, monitor incidents, missing rollback handles, missing rollback receipts, failed rollback dry runs, irreversible-effect ownership gaps, residual-owner gaps, deprecation/retirement gaps, and missing non-claim boundaries away from default promotion.",
+      "falsifier": "The module fails to build, a checked countermodel negates the target under encoded assumptions, or the prose target exceeds the finite record.",
+      "acceptance_criteria": [
+        "Build the locked Lean module; match theorem assumptions to the finite target and executable counts; retain explicit non-claims against truth of fields, deployed enforcement, useful improvement, semantic/external recovery, and support promotion."
+      ],
+      "promotion_ceiling": "formal_proof_backed_for_exact_finite_predicate_only_after_accepted_transition"
+    },
+    "capability-replacement-and-rollback.formal.replacement-transaction-trace-probe-bridge": {
+      "proposition_type": "formal",
+      "current_disposition": "implemented_finite_obligation_not_empirical_support",
+      "strongest_counterclaim": "The theorem is correct only for a weak self-authored record and does not justify the operational reading: The deterministic replacement trace probe records six trace steps, two valid synthetic transactions, three rejected negative controls, a canary kept non-default, a monitor-triggered rollback, rollback dry run, residuals, no support-state effect, and non-claim boundary.",
+      "falsifier": "The module fails to build, a checked countermodel negates the target under encoded assumptions, or the prose target exceeds the finite record.",
+      "acceptance_criteria": [
+        "Build the locked Lean module; match theorem assumptions to the finite target and executable counts; retain explicit non-claims against truth of fields, deployed enforcement, useful improvement, semantic/external recovery, and support promotion."
+      ],
+      "promotion_ceiling": "formal_proof_backed_for_exact_finite_predicate_only_after_accepted_transition"
+    },
+    "capability-replacement-and-rollback.formal.replacement-identity-sequence-invariant-bridge": {
+      "proposition_type": "formal",
+      "current_disposition": "implemented_finite_obligation_not_empirical_support",
+      "strongest_counterclaim": "The theorem is correct only for a weak self-authored record and does not justify the operational reading: The deterministic replacement identity-sequence bridge records preserved field identity across canary and rollback, monitor-failure blocking of default promotion, prior implementation restoration, authority-envelope preservation, residual-owner preservation, four rejected sequence controls, no support-state effect, and non-claim boundary.",
+      "falsifier": "The module fails to build, a checked countermodel negates the target under encoded assumptions, or the prose target exceeds the finite record.",
+      "acceptance_criteria": [
+        "Build the locked Lean module; match theorem assumptions to the finite target and executable counts; retain explicit non-claims against truth of fields, deployed enforcement, useful improvement, semantic/external recovery, and support promotion."
+      ],
+      "promotion_ceiling": "formal_proof_backed_for_exact_finite_predicate_only_after_accepted_transition"
+    },
+    "capability-replacement-and-rollback.formal.replacement-intent-governed-bridge": {
+      "proposition_type": "formal",
+      "current_disposition": "implemented_finite_obligation_not_empirical_support",
+      "strongest_counterclaim": "The theorem is correct only for a weak self-authored record and does not justify the operational reading: The deterministic intent-governed replacement bridge records two valid bridge traces, six rejected expected-invalid controls, intent and command refs, authority-widening rejection, stop-condition-erasure rejection, default-without-approval blocking, rollback-owner requirement, no support-state effect, and non-claim boundary.",
+      "falsifier": "The module fails to build, a checked countermodel negates the target under encoded assumptions, or the prose target exceeds the finite record.",
+      "acceptance_criteria": [
+        "Build the locked Lean module; match theorem assumptions to the finite target and executable counts; retain explicit non-claims against truth of fields, deployed enforcement, useful improvement, semantic/external recovery, and support promotion."
+      ],
+      "promotion_ceiling": "formal_proof_backed_for_exact_finite_predicate_only_after_accepted_transition"
+    }
+  },
+  "prose_candidate_dispositions": {
+    "capability-replacement-and-rollback.prose.3d67ca0b5c49": {
+      "state": "duplicate_of_atom",
+      "rationale": "Core evidence/recovery separation and inventory-boundary restatement.",
+      "target_atom_id": "capability-replacement-and-rollback.core"
+    },
+    "capability-replacement-and-rollback.prose.40f2b95ebc4b": {
+      "state": "duplicate_of_atom",
+      "rationale": "Reader-language SCF handoff owned by interface one.",
+      "target_atom_id": "capability-replacement-and-rollback.interface.001"
+    },
+    "capability-replacement-and-rollback.prose.d7fae7a46dc4": {
+      "state": "duplicate_of_atom",
+      "rationale": "Reader-language distinction between field contract and replacement admission.",
+      "target_atom_id": "capability-replacement-and-rollback.core"
+    },
+    "capability-replacement-and-rollback.prose.9b446d9d47a0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Human-reading description of stronger evidence without claiming sufficiency."
+    },
+    "capability-replacement-and-rollback.prose.55b1edb3ae0a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Irreversible-effect consequence owned by visible partial recovery states.",
+      "target_atom_id": "capability-replacement-and-rollback.invariant.012"
+    },
+    "capability-replacement-and-rollback.prose.aa21a5c76ffa": {
+      "state": "duplicate_of_atom",
+      "rationale": "Chapter problem restated in reader prose.",
+      "target_atom_id": "capability-replacement-and-rollback.problem.001"
+    },
+    "capability-replacement-and-rollback.prose.f73b02648e65": {
+      "state": "duplicate_of_atom",
+      "rationale": "Temporal transaction ownership is contained in the core contract.",
+      "target_atom_id": "capability-replacement-and-rollback.core"
+    },
+    "capability-replacement-and-rollback.prose.fe9646e0f1b4": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Illustrative list of model-adjacent update surfaces."
+    },
+    "capability-replacement-and-rollback.prose.0ee14119efd5": {
+      "state": "duplicate_of_atom",
+      "rationale": "Comparator limitation owned by insufficiency atom.",
+      "target_atom_id": "capability-replacement-and-rollback.insufficiency.001"
+    },
+    "capability-replacement-and-rollback.prose.aaf4f68f178e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Lifecycle-state requirement owned by mechanism eight.",
+      "target_atom_id": "capability-replacement-and-rollback.mechanism.008"
+    },
+    "capability-replacement-and-rollback.prose.0320f1d42cca": {
+      "state": "duplicate_of_atom",
+      "rationale": "Prior-route and effect recovery prerequisites owned by invariants four and eleven.",
+      "target_atom_id": "capability-replacement-and-rollback.invariant.011"
+    },
+    "capability-replacement-and-rollback.prose.8fa6e89c29a5": {
+      "state": "duplicate_of_atom",
+      "rationale": "Partial-recovery visibility and no-overclaim boundary.",
+      "target_atom_id": "capability-replacement-and-rollback.invariant.012"
+    },
+    "capability-replacement-and-rollback.prose.cde06ae16e97": {
+      "state": "duplicate_of_atom",
+      "rationale": "Recovery execution and ownership owned by mechanism eleven.",
+      "target_atom_id": "capability-replacement-and-rollback.mechanism.011"
+    },
+    "capability-replacement-and-rollback.prose.963b2c770e45": {
+      "state": "duplicate_of_atom",
+      "rationale": "Inline labeled duplicate of manifest-owned core atom.",
+      "target_atom_id": "capability-replacement-and-rollback.core"
+    },
+    "capability-replacement-and-rollback.prose.6bdada207e69": {
+      "state": "duplicate_of_atom",
+      "rationale": "Core evidence ceiling owned by invariant thirteen.",
+      "target_atom_id": "capability-replacement-and-rollback.invariant.013"
+    },
+    "capability-replacement-and-rollback.prose.5a521b05808f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Visible failure, partial rollback, compensation, and null outcome states.",
+      "target_atom_id": "capability-replacement-and-rollback.invariant.012"
+    },
+    "capability-replacement-and-rollback.prose.cc27245b6052": {
+      "state": "duplicate_of_atom",
+      "rationale": "Prospective rules, inventory closure, and recovery-honesty obligations.",
+      "target_atom_id": "capability-replacement-and-rollback.invariant.002"
+    },
+    "capability-replacement-and-rollback.prose.cfe7b00d8a5e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Evaluation dimensions owned by mechanism six.",
+      "target_atom_id": "capability-replacement-and-rollback.mechanism.006"
+    },
+    "capability-replacement-and-rollback.prose.1f11bba43383": {
+      "state": "duplicate_of_atom",
+      "rationale": "Dependency disclosure consequence owned by mechanism seven.",
+      "target_atom_id": "capability-replacement-and-rollback.mechanism.007"
+    },
+    "capability-replacement-and-rollback.prose.adb00d795e10": {
+      "state": "duplicate_of_atom",
+      "rationale": "Canary-isolation obligation owned by invariant eight.",
+      "target_atom_id": "capability-replacement-and-rollback.invariant.008"
+    },
+    "capability-replacement-and-rollback.prose.563541c52178": {
+      "state": "duplicate_of_atom",
+      "rationale": "Evidence-provider handoff owned by interface four.",
+      "target_atom_id": "capability-replacement-and-rollback.interface.004"
+    },
+    "capability-replacement-and-rollback.prose.a70860d31d44": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explicit gap between current schema and target contract fields."
+    },
+    "capability-replacement-and-rollback.prose.95eafe271225": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Implementation-boundary caveat."
+    },
+    "capability-replacement-and-rollback.prose.633ff2919a80": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Current fixture non-claim and promotion boundary."
+    },
+    "capability-replacement-and-rollback.prose.69c7ff19b059": {
+      "state": "duplicate_of_atom",
+      "rationale": "Prospective-rule invariant duplicate.",
+      "target_atom_id": "capability-replacement-and-rollback.invariant.002"
+    },
+    "capability-replacement-and-rollback.prose.a86d814f9034": {
+      "state": "duplicate_of_atom",
+      "rationale": "Canary-isolation invariant duplicate.",
+      "target_atom_id": "capability-replacement-and-rollback.invariant.008"
+    },
+    "capability-replacement-and-rollback.prose.374e3355fe58": {
+      "state": "duplicate_of_atom",
+      "rationale": "Finite/local evidence ceiling duplicate.",
+      "target_atom_id": "capability-replacement-and-rollback.invariant.013"
+    },
+    "capability-replacement-and-rollback.prose.6cdf9d26de94": {
+      "state": "duplicate_of_atom",
+      "rationale": "Formatted prose duplicate of regression/frontier-bias failure.",
+      "target_atom_id": "capability-replacement-and-rollback.failure_mode.003"
+    },
+    "capability-replacement-and-rollback.prose.5271994bca0e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Validator limitation and need for outcome-bearing observation."
+    },
+    "capability-replacement-and-rollback.prose.a3d60150086b": {
+      "state": "editorial_or_question",
+      "rationale": "Transition sentence introducing the four current evidence layers."
+    },
+    "capability-replacement-and-rollback.prose.289a65bc76f5": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Exact schema-validator result scope."
+    },
+    "capability-replacement-and-rollback.prose.f150774bf700": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Exact combined evidence non-claim."
+    },
+    "capability-replacement-and-rollback.prose.86b7ba801e7e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Next real-candidate program is owned by the beyond-SOTA target.",
+      "target_atom_id": "capability-replacement-and-rollback.beyond_sota.001"
+    },
+    "capability-replacement-and-rollback.prose.8d73181d6654": {
+      "state": "duplicate_of_atom",
+      "rationale": "Joint metric obligation owned by the beyond-SOTA target.",
+      "target_atom_id": "capability-replacement-and-rollback.beyond_sota.001"
+    },
+    "capability-replacement-and-rollback.prose.e952fb8e2c91": {
+      "state": "duplicate_of_atom",
+      "rationale": "Transfer dimensions owned by beyond-SOTA target.",
+      "target_atom_id": "capability-replacement-and-rollback.beyond_sota.001"
+    },
+    "capability-replacement-and-rollback.prose.7a354b7f6d85": {
+      "state": "duplicate_of_atom",
+      "rationale": "Replication obligation owned by beyond-SOTA target.",
+      "target_atom_id": "capability-replacement-and-rollback.beyond_sota.001"
+    },
+    "capability-replacement-and-rollback.prose.e28799982ec9": {
+      "state": "historical_or_source_report",
+      "rationale": "Current finite Lean consequence report already owned by six formal targets."
+    },
+    "capability-replacement-and-rollback.prose.cbf38f6270df": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explicit Lean non-claim."
+    },
+    "capability-replacement-and-rollback.prose.6aa0885b4bf6": {
+      "state": "historical_or_source_report",
+      "rationale": "Current intent-bridge behavior report owned by formal intent target."
+    },
+    "capability-replacement-and-rollback.prose.d50b5d838d82": {
+      "state": "historical_or_source_report",
+      "rationale": "Current expected-invalid approval control report owned by formal intent target."
+    },
+    "capability-replacement-and-rollback.prose.6a6c7487abe0": {
+      "state": "duplicate_of_atom",
+      "rationale": "Summary restatement of preserved obligations and recovery boundary.",
+      "target_atom_id": "capability-replacement-and-rollback.core"
+    },
+    "capability-replacement-and-rollback.prose.6f33f02b1e8a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Authority-shape preservation owned by invariant three.",
+      "target_atom_id": "capability-replacement-and-rollback.invariant.003"
+    },
+    "capability-replacement-and-rollback.prose.a45c16963460": {
+      "state": "editorial_or_question",
+      "rationale": "Reader-facing maxim, not an additional material claim."
+    },
+    "capability-replacement-and-rollback.prose.310dddaaeda0": {
+      "state": "duplicate_of_atom",
+      "rationale": "Commit-denial conditions owned by invariant ten.",
+      "target_atom_id": "capability-replacement-and-rollback.invariant.010"
+    },
+    "capability-replacement-and-rollback.prose.b52ec0b7f7f3": {
+      "state": "editorial_or_question",
+      "rationale": "Handoff to the following security-kernel chapter."
+    },
+    "capability-replacement-and-rollback.prose.5e880f6930d6": {
+      "state": "duplicate_of_atom",
+      "rationale": "Reader explanation that transaction invariants apply across the full lifecycle.",
+      "target_atom_id": "capability-replacement-and-rollback.core"
+    }
+  },
+  "prose_review_lineage": [
+    {
+      "retired_candidate_id": "capability-replacement-and-rollback.prose.07b26a7532b3",
+      "retired_source": "chapters/capability-replacement-and-rollback.qmd:255",
+      "retired_sentence": "They do not prove that the encoded fields are true, complete, independently observed, or enforced.",
+      "preserved_disposition": {
+        "state": "nonmaterial_explanation",
+        "rationale": "Exact finite-proof non-claim."
+      },
+      "retirement_reason": "The sentence was rewritten to remove formulaic prose while preserving its bounded meaning; the old sentence hash is no longer current prose.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-07-15"
+    }
+  ],
+  "non_claims": [
+    "Completing this semantic sweep changes decomposition and ownership metadata only; it does not establish proposition truth or promote chapter-core support.",
+    "Current positive rollback equality remains inventory-specific, and the failed usefulness/rollback gates remain first-class negative evidence.",
+    "No complete recovery, independent monitor/evaluator, production replacement, useful governed throughput, safe self-improvement, or beyond-SOTA result is claimed."
+  ]
+}

@@ -19,12 +19,16 @@ ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
 VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
-LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "TypedJobs.lean"
+LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "TypedJobRefinement.lean"
 
 COMMAND = "python3 scripts/validate_typed_job_delivery_probe.py"
 PROOF_TAG = "lean:jobs.lifecycle.delivery_probe_fixture_bridge"
 CODEX_TEST_NAME = "Typed job delivery and evidence-readiness probe"
-REQUIRED_THEOREMS = ["typed_job_delivery_probe_fixture_bridge"]
+REQUIRED_THEOREMS = [
+    "execution_requires_artifact_refs",
+    "adjudication_requires_verification",
+    "full_typed_job_lifecycle_reaches_closed_state",
+]
 REQUIRED_NON_CLAIMS = [
     "does not execute a deployed scheduler",
     "does not prove permission enforcement",
@@ -340,7 +344,7 @@ def build_expected_result(valid_count: int, invalid_count: int) -> dict[str, Any
             "support_state_no_promotion": True,
         },
         "lean_fixture_alignment": {
-            "module": "AsiStackProofs.TypedJobs",
+            "module": "AsiStackProofs.TypedJobRefinement",
             "proof_tag": PROOF_TAG,
             "theorem_refs": REQUIRED_THEOREMS,
             "expected": {
@@ -401,11 +405,12 @@ def validate_lean(errors: list[str]) -> None:
         if not re.search(rf"\btheorem\s+{re.escape(theorem)}\b", text):
             errors.append(f"{rel(LEAN_FILE)} missing theorem {theorem}.")
     for field in (
-        "verifiedDeliveryTracePresent",
-        "deliveredNotEvidenceReadyTracePresent",
-        "negativeControlsRejected",
-        "supportStateEffectNone",
-        "nonClaimBoundary",
+        "outputDelivered",
+        "artifactRefsPresent",
+        "auditTrailPresent",
+        "verificationPassed",
+        "supportAssignmentRequested",
+        "externalEffectRequested",
     ):
         if field not in text:
             errors.append(f"{rel(LEAN_FILE)} missing fixture field {field}.")

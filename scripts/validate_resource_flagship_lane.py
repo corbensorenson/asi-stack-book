@@ -25,7 +25,7 @@ from run_resource_flagship_lane import (
 
 
 DOC = ROOT / "docs" / "resource_flagship_lane_run.md"
-LEAN_FIXTURE = ROOT / "lean" / "AsiStackProofs" / "ResourceEconomics.lean"
+LEAN_FIXTURE = ROOT / "lean" / "AsiStackProofs" / "ResourceEconomicsRefinement.lean"
 SHA_RE = re.compile(r"^[0-9a-f]{64}$")
 REQUIRED_NON_CLAIM_TERMS = (
     "does not promote the Resource Economics chapter core claim",
@@ -34,9 +34,9 @@ REQUIRED_NON_CLAIM_TERMS = (
     "not external review",
 )
 REQUIRED_AGGREGATE_THEOREMS = (
-    "resource_flagship_lane_aggregate_fixture_valid",
-    "resource_flagship_lane_aggregate_preserves_no_core_promotion",
-    "resource_flagship_lane_aggregate_carries_transition_accounting",
+    "missing_failure_retention_blocks_verification",
+    "raw_proxy_cannot_promote_executed_work",
+    "complete_resource_lifecycle_reaches_closed_without_support_or_effect_authority",
 )
 
 
@@ -255,9 +255,9 @@ def validate_aggregate_lean_alignment(value: dict[str, Any], errors: list[str]) 
         return
     core = summary.get("chapter_core_decision", {})
     expected = {
-        "proof_bridge_type": "aggregate Python/Lean flagship invariant",
-        "lean_module": "AsiStackProofs.ResourceEconomics",
-        "lean_fixture": "resourceFlagshipLaneAggregateFixture",
+        "proof_bridge_type": "aggregate Python/refinement lifecycle boundary",
+        "lean_module": "AsiStackProofs.ResourceEconomicsRefinement",
+        "lean_fixture": "completePacket",
         "lean_theorem_names": list(REQUIRED_AGGREGATE_THEOREMS),
         "command_replay_count": len(COMMANDS),
         "tracked_artifact_count": len(TRACKED_ARTIFACTS),
@@ -292,19 +292,12 @@ def validate_aggregate_lean_alignment(value: dict[str, Any], errors: list[str]) 
         if not re.search(rf"^theorem\s+{re.escape(theorem)}\b", lean_text, flags=re.MULTILINE):
             errors.append(f"{rel(LEAN_FIXTURE)} missing theorem {theorem}.")
     for fragment in (
-        "structure FlagshipLaneAggregateSummary",
-        "def resourceFlagshipLaneAggregateFixture",
-        "commandReplayCount := 10",
-        "trackedArtifactCount := 26",
-        "acceptedTransitionCount := 3",
-        "sublaneNoPromotionDecisionCount := 5",
-        "chapterCoreNoChange := true",
-        "evidenceTransitionCreated := false",
-        "supportStateEffectNone := true",
-        "chapterCoreSupportEffectNone := true",
-        "negativeControlsPreserved := true",
-        "residualsRecorded := true",
-        "nonClaimBoundary := true",
+        "structure Packet where",
+        "def completePacket",
+        "failureRetention : Bool := true",
+        "rawProxyPromotion : Bool := false",
+        "supportPromotionRequested : Bool := false",
+        "externalEffectRequested : Bool := false",
     ):
         if fragment not in lean_text:
             errors.append(f"{rel(LEAN_FIXTURE)} missing aggregate fixture fragment {fragment!r}.")
@@ -356,11 +349,11 @@ def validate_doc(errors: list[str]) -> None:
         "Sublane No-Promotion Decisions",
         "resource-economics.local_workload_quality_route_selection",
         "resource-economics.synthetic_load_stability_route_selection",
-        "aggregate Python/Lean flagship invariant",
-        "resourceFlagshipLaneAggregateFixture",
+        "aggregate Python/refinement lifecycle boundary",
+        "AsiStackProofs.ResourceEconomicsRefinement",
         "CI Classifier Lean Alignment",
         "finite CI failure-classification summary",
-        "resourceCICostProfileFixture",
+        "completePacket",
         "Support-state effect: `none`",
         "This run does not promote the Resource Economics chapter core claim",
     ]

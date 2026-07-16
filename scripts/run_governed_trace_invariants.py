@@ -218,14 +218,16 @@ def build_result(source: dict[str, Any]) -> dict[str, Any]:
         "invariant_results": invariant_results,
         "negative_controls": negative_controls,
         "lean_fixture_alignment": {
-            "module": "AsiStackProofs.GovernedRepositoryTrace",
+            "module": "AsiStackProofs.IntegratedReferenceTrace",
             "proof_tag": "lean:reference_architecture.governed_trace.four_invariants",
             "theorems": [
-                "governed_fixture_authority_monotone",
-                "governed_fixture_revocation_before_effect",
-                "governed_fixture_evidence_integrity",
-                "governed_fixture_residual_conserved",
-                "governed_repository_trace_four_invariants",
+                "accepted_step_authority_nonincreasing",
+                "accepted_step_joins_parent_and_state",
+                "accepted_trace_authority_nonincreasing",
+                "run_append",
+                "complete_cross_layer_trace_is_accepted",
+                "effect_at_revocation_tie_is_rejected",
+                "residual_erasure_is_rejected",
             ],
             "counts": {
                 "authority_handoffs": 3,

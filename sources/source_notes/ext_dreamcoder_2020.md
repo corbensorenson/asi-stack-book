@@ -42,6 +42,7 @@ DreamCoder belongs in the cognitive-compilation, procedural-memory, compression,
 - `compact-generative-systems-and-residual-honesty` (Compact Generative Systems and Residual Honesty)
 - `rankfold-neuralfold-and-artifact-compression` (RankFold, NeuralFold, and Artifact Compression)
 - `mathematical-and-search-substrates` (Mathematical and Search Substrates)
+- `replaceable-cognitive-substrates-beyond-transformer-monoculture` (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
 
 ## Claims To Add Or Update
 

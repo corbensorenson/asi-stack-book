@@ -1,0 +1,441 @@
+{
+  "schema_version": "asi_stack.typed_job_refinement.v1",
+  "result_id": "typed-job-refinement-2026-07-15-local",
+  "source_sha256": {
+    "lean_model": "1fe14c6f544bc9320f554ae2ec93dc70de74418dd775caf36d608db2847c3d40",
+    "delivery_result": "738e4bff59f14b4922862e6cc43547365a81b7c55decf31cc5513e37eddaefeb",
+    "durable_result": "cc4a4798d07c6d3838b1b99554ea3f7be89af827f6638e8d038f0912f64f4c52"
+  },
+  "input_suites": [
+    {
+      "suite_id": "typed_job_delivery",
+      "valid_count": 2,
+      "expected_invalid_count": 7,
+      "suite_passed": true,
+      "validator_sha256": "4767e1aef820f2caa0e9ba96ad89d486015c0a2da8958a7432d900a49966fd21"
+    },
+    {
+      "suite_id": "typed_job_durable_lifecycle",
+      "valid_count": 2,
+      "expected_invalid_count": 9,
+      "suite_passed": true,
+      "validator_sha256": "b311835ab14e46d562a01fd3e8d8140130a7fdee9afc73c36bfc84ccfc042ec4"
+    }
+  ],
+  "reachable_stage_count": 7,
+  "route_case_count": 28,
+  "route_coverage": [
+    {
+      "case_id": "wrong_stage",
+      "expected_route": "reject_wrong_stage",
+      "observed_route": "reject_wrong_stage"
+    },
+    {
+      "case_id": "job_substitution",
+      "expected_route": "reject_job_substitution",
+      "observed_route": "reject_job_substitution"
+    },
+    {
+      "case_id": "contract_substitution",
+      "expected_route": "reject_contract_substitution",
+      "observed_route": "reject_contract_substitution"
+    },
+    {
+      "case_id": "event_replay",
+      "expected_route": "reject_event_replay",
+      "observed_route": "reject_event_replay"
+    },
+    {
+      "case_id": "authority_leak",
+      "expected_route": "reject_authority_leak",
+      "observed_route": "reject_authority_leak"
+    },
+    {
+      "case_id": "contract_unlocked",
+      "expected_route": "request_locked_contract",
+      "observed_route": "request_locked_contract"
+    },
+    {
+      "case_id": "approval_missing",
+      "expected_route": "request_approval",
+      "observed_route": "request_approval"
+    },
+    {
+      "case_id": "permissions_missing",
+      "expected_route": "request_permissions",
+      "observed_route": "request_permissions"
+    },
+    {
+      "case_id": "lease_missing",
+      "expected_route": "request_active_lease",
+      "observed_route": "request_active_lease"
+    },
+    {
+      "case_id": "scheduler_missing",
+      "expected_route": "request_scheduler_slot",
+      "observed_route": "request_scheduler_slot"
+    },
+    {
+      "case_id": "dispatch_missing",
+      "expected_route": "request_dispatch",
+      "observed_route": "request_dispatch"
+    },
+    {
+      "case_id": "idempotency_missing",
+      "expected_route": "request_idempotency_key",
+      "observed_route": "request_idempotency_key"
+    },
+    {
+      "case_id": "retry_authority_widened",
+      "expected_route": "reject_retry_authority_widening",
+      "observed_route": "reject_retry_authority_widening"
+    },
+    {
+      "case_id": "cancellation_unacknowledged",
+      "expected_route": "request_cancellation_acknowledgment",
+      "observed_route": "request_cancellation_acknowledgment"
+    },
+    {
+      "case_id": "post_cancellation_output",
+      "expected_route": "reject_post_cancellation_execution",
+      "observed_route": "reject_post_cancellation_execution"
+    },
+    {
+      "case_id": "output_missing",
+      "expected_route": "request_output_artifacts",
+      "observed_route": "request_output_artifacts"
+    },
+    {
+      "case_id": "audit_missing",
+      "expected_route": "request_audit_trail",
+      "observed_route": "request_audit_trail"
+    },
+    {
+      "case_id": "verification_missing",
+      "expected_route": "request_verification",
+      "observed_route": "request_verification"
+    },
+    {
+      "case_id": "receipt_missing",
+      "expected_route": "request_completion_receipt",
+      "observed_route": "request_completion_receipt"
+    },
+    {
+      "case_id": "replay_missing",
+      "expected_route": "request_replay_reference",
+      "observed_route": "request_replay_reference"
+    },
+    {
+      "case_id": "residual_owner_missing",
+      "expected_route": "request_residual_owner",
+      "observed_route": "request_residual_owner"
+    },
+    {
+      "case_id": "consumer_ack_missing",
+      "expected_route": "request_consumer_acknowledgment",
+      "observed_route": "request_consumer_acknowledgment"
+    },
+    {
+      "case_id": "lock_accepted",
+      "expected_route": "accept_lock",
+      "observed_route": "accept_lock"
+    },
+    {
+      "case_id": "authorization_accepted",
+      "expected_route": "accept_authorization",
+      "observed_route": "accept_authorization"
+    },
+    {
+      "case_id": "dispatch_accepted",
+      "expected_route": "accept_dispatch",
+      "observed_route": "accept_dispatch"
+    },
+    {
+      "case_id": "execution_accepted",
+      "expected_route": "accept_execution",
+      "observed_route": "accept_execution"
+    },
+    {
+      "case_id": "adjudication_accepted",
+      "expected_route": "accept_adjudication",
+      "observed_route": "accept_adjudication"
+    },
+    {
+      "case_id": "closure_accepted",
+      "expected_route": "accept_closure",
+      "observed_route": "accept_closure"
+    }
+  ],
+  "mutation_count": 42,
+  "mutation_rejection_count": 42,
+  "mutation_receipts": [
+    {
+      "mutation_id": "lock_job_id",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_job_substitution"
+    },
+    {
+      "mutation_id": "lock_job_version",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_job_substitution"
+    },
+    {
+      "mutation_id": "lock_contract_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_contract_substitution"
+    },
+    {
+      "mutation_id": "lock_plan_node_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_contract_substitution"
+    },
+    {
+      "mutation_id": "lock_authority_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_contract_substitution"
+    },
+    {
+      "mutation_id": "lock_permission_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_contract_substitution"
+    },
+    {
+      "mutation_id": "lock_lease_epoch",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_contract_substitution"
+    },
+    {
+      "mutation_id": "lock_scheduler_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_contract_substitution"
+    },
+    {
+      "mutation_id": "lock_consumer_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_job_substitution"
+    },
+    {
+      "mutation_id": "lock_parent_missing",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "request_locked_contract"
+    },
+    {
+      "mutation_id": "lock_plan_missing",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "request_locked_contract"
+    },
+    {
+      "mutation_id": "lock_unlocked",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "request_locked_contract"
+    },
+    {
+      "mutation_id": "lock_support_leak",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_authority_leak"
+    },
+    {
+      "mutation_id": "lock_external_effect",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_authority_leak"
+    },
+    {
+      "mutation_id": "authorize_approval_missing",
+      "rejected": true,
+      "terminal_stage": "locked",
+      "failure_route": "request_approval"
+    },
+    {
+      "mutation_id": "authorize_permissions_missing",
+      "rejected": true,
+      "terminal_stage": "locked",
+      "failure_route": "request_permissions"
+    },
+    {
+      "mutation_id": "authorize_lease_missing",
+      "rejected": true,
+      "terminal_stage": "locked",
+      "failure_route": "request_active_lease"
+    },
+    {
+      "mutation_id": "authorize_replay",
+      "rejected": true,
+      "terminal_stage": "locked",
+      "failure_route": "reject_event_replay"
+    },
+    {
+      "mutation_id": "dispatch_lease_missing",
+      "rejected": true,
+      "terminal_stage": "authorized",
+      "failure_route": "request_active_lease"
+    },
+    {
+      "mutation_id": "dispatch_slot_missing",
+      "rejected": true,
+      "terminal_stage": "authorized",
+      "failure_route": "request_scheduler_slot"
+    },
+    {
+      "mutation_id": "dispatch_request_missing",
+      "rejected": true,
+      "terminal_stage": "authorized",
+      "failure_route": "request_dispatch"
+    },
+    {
+      "mutation_id": "dispatch_contract_substitution",
+      "rejected": true,
+      "terminal_stage": "authorized",
+      "failure_route": "reject_contract_substitution"
+    },
+    {
+      "mutation_id": "dispatch_authority_substitution",
+      "rejected": true,
+      "terminal_stage": "authorized",
+      "failure_route": "reject_contract_substitution"
+    },
+    {
+      "mutation_id": "execute_cancel_unacknowledged",
+      "rejected": true,
+      "terminal_stage": "dispatched",
+      "failure_route": "request_cancellation_acknowledgment"
+    },
+    {
+      "mutation_id": "execute_post_cancel",
+      "rejected": true,
+      "terminal_stage": "dispatched",
+      "failure_route": "reject_post_cancellation_execution"
+    },
+    {
+      "mutation_id": "execute_idempotency_missing",
+      "rejected": true,
+      "terminal_stage": "dispatched",
+      "failure_route": "request_idempotency_key"
+    },
+    {
+      "mutation_id": "execute_authority_widening",
+      "rejected": true,
+      "terminal_stage": "dispatched",
+      "failure_route": "reject_retry_authority_widening"
+    },
+    {
+      "mutation_id": "execute_output_missing",
+      "rejected": true,
+      "terminal_stage": "dispatched",
+      "failure_route": "request_output_artifacts"
+    },
+    {
+      "mutation_id": "execute_artifact_missing",
+      "rejected": true,
+      "terminal_stage": "dispatched",
+      "failure_route": "request_output_artifacts"
+    },
+    {
+      "mutation_id": "execute_audit_missing",
+      "rejected": true,
+      "terminal_stage": "dispatched",
+      "failure_route": "request_audit_trail"
+    },
+    {
+      "mutation_id": "execute_replay",
+      "rejected": true,
+      "terminal_stage": "dispatched",
+      "failure_route": "reject_event_replay"
+    },
+    {
+      "mutation_id": "execute_support_leak",
+      "rejected": true,
+      "terminal_stage": "dispatched",
+      "failure_route": "reject_authority_leak"
+    },
+    {
+      "mutation_id": "execute_external_effect",
+      "rejected": true,
+      "terminal_stage": "dispatched",
+      "failure_route": "reject_authority_leak"
+    },
+    {
+      "mutation_id": "adjudicate_verification_missing",
+      "rejected": true,
+      "terminal_stage": "executed",
+      "failure_route": "request_verification"
+    },
+    {
+      "mutation_id": "adjudicate_receipt_missing",
+      "rejected": true,
+      "terminal_stage": "executed",
+      "failure_route": "request_completion_receipt"
+    },
+    {
+      "mutation_id": "adjudicate_replay_missing",
+      "rejected": true,
+      "terminal_stage": "executed",
+      "failure_route": "request_replay_reference"
+    },
+    {
+      "mutation_id": "adjudicate_residual_owner_missing",
+      "rejected": true,
+      "terminal_stage": "executed",
+      "failure_route": "request_residual_owner"
+    },
+    {
+      "mutation_id": "adjudicate_job_substitution",
+      "rejected": true,
+      "terminal_stage": "executed",
+      "failure_route": "reject_job_substitution"
+    },
+    {
+      "mutation_id": "close_consumer_missing",
+      "rejected": true,
+      "terminal_stage": "adjudicated",
+      "failure_route": "request_consumer_acknowledgment"
+    },
+    {
+      "mutation_id": "close_replay",
+      "rejected": true,
+      "terminal_stage": "adjudicated",
+      "failure_route": "reject_event_replay"
+    },
+    {
+      "mutation_id": "close_support_leak",
+      "rejected": true,
+      "terminal_stage": "adjudicated",
+      "failure_route": "reject_authority_leak"
+    },
+    {
+      "mutation_id": "close_external_effect",
+      "rejected": true,
+      "terminal_stage": "adjudicated",
+      "failure_route": "reject_authority_leak"
+    }
+  ],
+  "final_state": {
+    "stage": "closed",
+    "receipt_count": 6,
+    "execution_observation_count": 1,
+    "support_assignment_count": 0,
+    "external_effect_count": 0
+  },
+  "support_state_effect": "none",
+  "non_claims": [
+    "No scheduler quality, worker or model capability, task success, output truth, or verification soundness is established.",
+    "No idempotence in fact, approval-service correctness, permission enforcement, lease service, cancellation efficacy, or retry recovery is established.",
+    "No artifact truth, audit completeness, completion-receipt correctness, replay correctness, or consumer behavior is established.",
+    "No external effect is executed and no support, evidence, readiness, or release state is assigned.",
+    "No natural workload, useful-throughput advantage, cost advantage, causality, safety, deployment, reproduction, or transfer is established.",
+    "No chapter-core support state changes; the support-state effect is none."
+  ]
+}

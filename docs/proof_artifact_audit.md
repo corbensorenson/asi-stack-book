@@ -14,7 +14,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Manifest status counts | {"implemented": 298} |
 | Triage class counts | {"formal-invariant": 298} |
 | Lean modules referenced | 65 |
-| Chapters with proof targets | 54 |
+| Chapters with proof targets | 55 |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -22,80 +22,80 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 - Every manifest tag must have a matching proof-triage record with the same chapter, module, target, and status.
 - Every implemented target must reference an existing Lean module imported by `lean/AsiStackProofs.lean`.
-- Each referenced Lean module must contain at least as many theorem declarations as implemented targets assigned to that module.
+- Each referenced Lean module must contain at least as many theorem declarations as implemented targets assigned to that module, unless every consolidated target has a semantically reviewed rationalization record that points to the stronger current module.
 - Every implemented target tag must appear in its chapter file.
 - Every chapter formalization-hook section with implemented targets must include explicit limitation or non-claim language.
 - Appendix E must expose the current proof target count, proof-readiness coverage boundary, and proof artifact traceability audit.
 
 ## Module Coverage
 
-| Lean module path | Targets | Theorems | Defs | Structures |
-|---|---:|---:|---:|---:|
-| `lean/AsiStackProofs/AdversarialEvaluation.lean` | 8 | 8 | 1 | 1 |
-| `lean/AsiStackProofs/Alignment.lean` | 3 | 23 | 10 | 5 |
-| `lean/AsiStackProofs/ArtifactCompression.lean` | 3 | 19 | 6 | 3 |
-| `lean/AsiStackProofs/ArtifactGraph.lean` | 10 | 43 | 23 | 12 |
-| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | 7 | 16 | 7 | 7 |
-| `lean/AsiStackProofs/Authority.lean` | 4 | 29 | 10 | 6 |
-| `lean/AsiStackProofs/BenchmarkRatchets.lean` | 3 | 8 | 5 | 4 |
-| `lean/AsiStackProofs/BibliographyPlan.lean` | 2 | 4 | 2 | 2 |
-| `lean/AsiStackProofs/CapabilityThresholds.lean` | 8 | 8 | 1 | 1 |
-| `lean/AsiStackProofs/ClaimLedger.lean` | 4 | 20 | 7 | 5 |
-| `lean/AsiStackProofs/CognitiveCompilation.lean` | 3 | 14 | 3 | 3 |
-| `lean/AsiStackProofs/CoilAttentionMemory.lean` | 2 | 6 | 4 | 4 |
-| `lean/AsiStackProofs/CommandContracts.lean` | 3 | 7 | 4 | 3 |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | 5 | 24 | 12 | 6 |
-| `lean/AsiStackProofs/ContextCertificates.lean` | 3 | 18 | 6 | 4 |
-| `lean/AsiStackProofs/ContextTransactions.lean` | 4 | 23 | 11 | 8 |
-| `lean/AsiStackProofs/Corrigibility.lean` | 2 | 18 | 9 | 5 |
-| `lean/AsiStackProofs/CyclicMixers.lean` | 2 | 7 | 5 | 5 |
-| `lean/AsiStackProofs/DataEngines.lean` | 15 | 15 | 4 | 3 |
-| `lean/AsiStackProofs/Deliberation.lean` | 10 | 10 | 1 | 1 |
-| `lean/AsiStackProofs/Efficiency.lean` | 4 | 26 | 9 | 4 |
-| `lean/AsiStackProofs/EvidenceStates.lean` | 7 | 31 | 17 | 7 |
-| `lean/AsiStackProofs/FailureModes.lean` | 4 | 23 | 6 | 4 |
-| `lean/AsiStackProofs/FastGeneration.lean` | 5 | 38 | 21 | 8 |
-| `lean/AsiStackProofs/GenerateVerifyRepair.lean` | 2 | 4 | 3 | 2 |
-| `lean/AsiStackProofs/GovernanceRights.lean` | 3 | 21 | 14 | 6 |
-| `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | 1 | 9 | 17 | 4 |
-| `lean/AsiStackProofs/IntentContracts.lean` | 4 | 25 | 8 | 5 |
-| `lean/AsiStackProofs/IntentToExecution.lean` | 4 | 12 | 4 | 4 |
-| `lean/AsiStackProofs/InterStackProtocols.lean` | 9 | 9 | 1 | 1 |
-| `lean/AsiStackProofs/LivingBook.lean` | 4 | 21 | 11 | 6 |
-| `lean/AsiStackProofs/MoECOTRuntime.lean` | 2 | 4 | 2 | 2 |
-| `lean/AsiStackProofs/ModelWeightCustody.lean` | 8 | 9 | 2 | 2 |
-| `lean/AsiStackProofs/OpenEndedImprovement.lean` | 7 | 7 | 1 | 1 |
-| `lean/AsiStackProofs/PersonalComputeHives.lean` | 6 | 26 | 8 | 7 |
-| `lean/AsiStackProofs/PlanForge.lean` | 2 | 4 | 4 | 3 |
-| `lean/AsiStackProofs/Planning.lean` | 5 | 29 | 11 | 8 |
-| `lean/AsiStackProofs/PolicyOptimization.lean` | 4 | 19 | 10 | 8 |
-| `lean/AsiStackProofs/ProceduralMemory.lean` | 2 | 19 | 7 | 3 |
-| `lean/AsiStackProofs/ProofCarryingClaims.lean` | 3 | 8 | 6 | 4 |
-| `lean/AsiStackProofs/ProofCarryingContracts.lean` | 3 | 10 | 7 | 6 |
-| `lean/AsiStackProofs/ProofEnvelope.lean` | 2 | 7 | 5 | 2 |
-| `lean/AsiStackProofs/PrototypeRoadmap.lean` | 3 | 11 | 5 | 4 |
-| `lean/AsiStackProofs/ReadinessGates.lean` | 3 | 20 | 16 | 7 |
-| `lean/AsiStackProofs/ReferenceArchitecture.lean` | 2 | 7 | 3 | 3 |
-| `lean/AsiStackProofs/Replacement.lean` | 6 | 37 | 10 | 6 |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | 9 | 45 | 31 | 13 |
-| `lean/AsiStackProofs/Routing.lean` | 3 | 16 | 4 | 2 |
-| `lean/AsiStackProofs/RuntimeAdapters.lean` | 6 | 49 | 13 | 9 |
-| `lean/AsiStackProofs/SafetyCases.lean` | 8 | 8 | 1 | 1 |
-| `lean/AsiStackProofs/ScalableOversight.lean` | 7 | 8 | 2 | 2 |
-| `lean/AsiStackProofs/SearchSubstrates.lean` | 3 | 11 | 8 | 5 |
-| `lean/AsiStackProofs/SecurityKernel.lean` | 4 | 22 | 5 | 6 |
-| `lean/AsiStackProofs/SelfImprovement.lean` | 3 | 22 | 8 | 6 |
-| `lean/AsiStackProofs/SemanticRepresentation.lean` | 2 | 4 | 3 | 2 |
-| `lean/AsiStackProofs/SimulationFidelity.lean` | 4 | 13 | 6 | 6 |
-| `lean/AsiStackProofs/StableCapabilityFields.lean` | 4 | 25 | 16 | 5 |
-| `lean/AsiStackProofs/StackBoundaries.lean` | 3 | 21 | 6 | 5 |
-| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | 6 | 7 | 1 | 1 |
-| `lean/AsiStackProofs/TheseusReference.lean` | 12 | 54 | 54 | 15 |
-| `lean/AsiStackProofs/Tribunal.lean` | 2 | 13 | 6 | 6 |
-| `lean/AsiStackProofs/TypedJobs.lean` | 5 | 27 | 7 | 7 |
-| `lean/AsiStackProofs/ValueConflict.lean` | 4 | 23 | 11 | 6 |
-| `lean/AsiStackProofs/VerificationBandwidth.lean` | 4 | 14 | 4 | 5 |
-| `lean/AsiStackProofs/VirtualContextABI.lean` | 3 | 13 | 5 | 5 |
+| Lean module path | Targets | Theorems | Rationalized targets | Defs | Structures |
+|---|---:|---:|---:|---:|---:|
+| `lean/AsiStackProofs/AdversarialEvaluation.lean` | 8 | 8 | 0 | 1 | 1 |
+| `lean/AsiStackProofs/Alignment.lean` | 1 | 21 | 0 | 8 | 3 |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | 3 | 8 | 0 | 5 | 2 |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | 10 | 15 | 0 | 32 | 3 |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | 7 | 16 | 0 | 7 | 7 |
+| `lean/AsiStackProofs/Authority.lean` | 2 | 28 | 0 | 10 | 6 |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | 2 | 12 | 0 | 12 | 3 |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | 3 | 8 | 0 | 5 | 4 |
+| `lean/AsiStackProofs/BibliographyPlan.lean` | 2 | 4 | 0 | 2 | 2 |
+| `lean/AsiStackProofs/CapabilityThresholds.lean` | 8 | 8 | 0 | 1 | 1 |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | 4 | 12 | 0 | 12 | 2 |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | 3 | 12 | 0 | 18 | 2 |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | 2 | 6 | 0 | 4 | 4 |
+| `lean/AsiStackProofs/CommandSemanticRefinement.lean` | 3 | 12 | 0 | 25 | 3 |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | 9 | 17 | 0 | 11 | 3 |
+| `lean/AsiStackProofs/ContextCertificateRefinement.lean` | 3 | 17 | 0 | 17 | 2 |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | 4 | 20 | 0 | 18 | 2 |
+| `lean/AsiStackProofs/Corrigibility.lean` | 1 | 4 | 0 | 6 | 2 |
+| `lean/AsiStackProofs/CyclicMixers.lean` | 2 | 7 | 0 | 5 | 5 |
+| `lean/AsiStackProofs/DataEngines.lean` | 15 | 15 | 0 | 4 | 3 |
+| `lean/AsiStackProofs/DeliberationRefinement.lean` | 10 | 11 | 0 | 12 | 3 |
+| `lean/AsiStackProofs/Efficiency.lean` | 4 | 26 | 0 | 9 | 4 |
+| `lean/AsiStackProofs/EvidenceStates.lean` | 7 | 31 | 0 | 17 | 7 |
+| `lean/AsiStackProofs/FailureModes.lean` | 4 | 23 | 0 | 6 | 4 |
+| `lean/AsiStackProofs/FastGenerationRefinement.lean` | 5 | 17 | 0 | 12 | 3 |
+| `lean/AsiStackProofs/GovernanceRights.lean` | 1 | 7 | 0 | 11 | 3 |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | 6 | 17 | 0 | 10 | 3 |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | 3 | 23 | 0 | 33 | 4 |
+| `lean/AsiStackProofs/IntentContracts.lean` | 1 | 20 | 0 | 2 | 2 |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | 2 | 12 | 0 | 8 | 2 |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | 3 | 12 | 0 | 10 | 2 |
+| `lean/AsiStackProofs/IntentToExecution.lean` | 2 | 10 | 0 | 2 | 2 |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | 9 | 9 | 0 | 1 | 1 |
+| `lean/AsiStackProofs/LivingBook.lean` | 4 | 21 | 0 | 11 | 6 |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | 8 | 9 | 0 | 2 | 2 |
+| `lean/AsiStackProofs/OpenEndedImprovement.lean` | 7 | 7 | 0 | 1 | 1 |
+| `lean/AsiStackProofs/PlanForge.lean` | 2 | 4 | 0 | 4 | 3 |
+| `lean/AsiStackProofs/Planning.lean` | 5 | 29 | 0 | 11 | 8 |
+| `lean/AsiStackProofs/PolicyOptimization.lean` | 4 | 19 | 0 | 10 | 8 |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | 2 | 14 | 0 | 21 | 3 |
+| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | 3 | 11 | 0 | 31 | 3 |
+| `lean/AsiStackProofs/ProofCarryingContracts.lean` | 3 | 10 | 0 | 7 | 6 |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | 2 | 7 | 0 | 5 | 2 |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | 3 | 11 | 0 | 5 | 4 |
+| `lean/AsiStackProofs/ReadinessRefinement.lean` | 3 | 17 | 0 | 10 | 3 |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | 1 | 16 | 0 | 15 | 2 |
+| `lean/AsiStackProofs/Replacement.lean` | 6 | 37 | 0 | 10 | 6 |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | 11 | 8 | 11 | 4 | 2 |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | 5 | 17 | 0 | 21 | 3 |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | 6 | 49 | 0 | 13 | 9 |
+| `lean/AsiStackProofs/SafetyCases.lean` | 8 | 8 | 0 | 1 | 1 |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | 10 | 21 | 0 | 20 | 2 |
+| `lean/AsiStackProofs/ScalableOversight.lean` | 7 | 8 | 0 | 2 | 2 |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | 3 | 11 | 0 | 8 | 5 |
+| `lean/AsiStackProofs/SecurityKernel.lean` | 4 | 22 | 0 | 5 | 6 |
+| `lean/AsiStackProofs/SelfImprovement.lean` | 1 | 20 | 0 | 6 | 4 |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | 4 | 25 | 0 | 16 | 5 |
+| `lean/AsiStackProofs/StackBoundaries.lean` | 3 | 9 | 0 | 13 | 7 |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | 6 | 7 | 0 | 1 | 1 |
+| `lean/AsiStackProofs/TheseusReference.lean` | 12 | 54 | 0 | 54 | 15 |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | 2 | 12 | 0 | 30 | 3 |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | 5 | 14 | 0 | 31 | 3 |
+| `lean/AsiStackProofs/ValueConflict.lean` | 2 | 21 | 0 | 9 | 4 |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | 4 | 8 | 0 | 10 | 2 |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | 3 | 17 | 0 | 16 | 2 |
 
 ## Chapter Coverage
 
@@ -115,7 +115,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 2 | 2 | 0 | 0 |
 | `coilra-multicoil-rope-and-cyclic-mixers` | 2 | 2 | 0 | 0 |
 | `compact-generative-systems-and-residual-honesty` | 9 | 9 | 0 | 0 |
-| `constitutional-alignment-substrate` | 5 | 5 | 0 | 0 |
+| `constitutional-alignment-substrate` | 6 | 6 | 0 | 0 |
 | `context-transactions-snapshots-mounts-and-taint` | 4 | 4 | 0 | 0 |
 | `data-engines-continual-learning-and-unlearning` | 15 | 15 | 0 | 0 |
 | `evidence-states-and-claim-discipline` | 7 | 7 | 0 | 0 |
@@ -143,7 +143,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `rankfold-neuralfold-and-artifact-compression` | 3 | 3 | 0 | 0 |
 | `readiness-gates-residual-escrow-and-quarantine` | 3 | 3 | 0 | 0 |
 | `recursive-self-improvement-boundaries` | 3 | 3 | 0 | 0 |
-| `resource-economics-and-token-budgets` | 13 | 13 | 0 | 0 |
+| `replaceable-cognitive-substrates-beyond-transformer-monoculture` | 1 | 1 | 0 | 0 |
+| `resource-economics-and-token-budgets` | 11 | 11 | 0 | 0 |
 | `routing-heads-and-specialist-cores` | 5 | 5 | 0 | 0 |
 | `runtime-adapters-tool-permissions-and-human-approval` | 6 | 6 | 0 | 0 |
 | `safety-cases-and-structured-assurance` | 8 | 8 | 0 | 0 |
@@ -167,8 +168,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:efficiency.minimum_viable.failure_blocks_promotion` | `the-efficient-asi-hypothesis` | `AsiStackProofs.Efficiency` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:efficiency.claim_admission_lifecycle_route` | `the-efficient-asi-hypothesis` | `AsiStackProofs.Efficiency` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:efficiency.route_search.probe_fixture_bridge` | `the-efficient-asi-hypothesis` | `AsiStackProofs.Efficiency` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:authority.ceiling.operational_invariant` | `system-boundaries-and-authority` | `AsiStackProofs.Authority` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:authority.ceiling.failure_blocks_promotion` | `system-boundaries-and-authority` | `AsiStackProofs.Authority` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:authority.ceiling.operational_invariant` | `system-boundaries-and-authority` | `AsiStackProofs.AuthorityEffectRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:authority.ceiling.failure_blocks_promotion` | `system-boundaries-and-authority` | `AsiStackProofs.AuthorityEffectRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:authority.lifecycle.admission_route` | `system-boundaries-and-authority` | `AsiStackProofs.Authority` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:authority.revocation.trace_surface_bridge` | `system-boundaries-and-authority` | `AsiStackProofs.Authority` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:failure.invariant_violation.operational_invariant` | `failure-modes-of-ungoverned-intelligence` | `AsiStackProofs.FailureModes` | triage ok; module ok; chapter tag ok; limitation ok |
@@ -189,21 +190,22 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:scalable_oversight.use.missing_outcome_audit_requires_audit` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversight` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:scalable_oversight.use.unjustified_abstention_requires_evidence` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversight` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:scalable_oversight.use.authority_laundering_rejected` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversight` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:intent.contract.operational_invariant` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentContracts` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:intent.contract.failure_blocks_promotion` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentContracts` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:intent.contract.operational_invariant` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentResolutionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:intent.contract.failure_blocks_promotion` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentResolutionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent.resolution.route_envelope` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentContracts` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:intent.intake.probe_fixture_bridge` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentContracts` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:alignment.constitution.operational_invariant` | `constitutional-alignment-substrate` | `AsiStackProofs.Alignment` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:alignment.constitution.failure_blocks_promotion` | `constitutional-alignment-substrate` | `AsiStackProofs.Alignment` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:intent.intake.probe_fixture_bridge` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentResolutionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:alignment.constitution.operational_invariant` | `constitutional-alignment-substrate` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:alignment.constitution.failure_blocks_promotion` | `constitutional-alignment-substrate` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:alignment.constitution.lifecycle_admission_route` | `constitutional-alignment-substrate` | `AsiStackProofs.Alignment` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:corrigibility.agency.operational_invariant` | `constitutional-alignment-substrate` | `AsiStackProofs.Corrigibility` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:corrigibility.agency.failure_blocks_promotion` | `constitutional-alignment-substrate` | `AsiStackProofs.Corrigibility` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:values.conflict.operational_invariant` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.ValueConflict` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:values.conflict.failure_blocks_promotion` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.ValueConflict` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:corrigibility.agency.operational_invariant` | `constitutional-alignment-substrate` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:corrigibility.agency.failure_blocks_promotion` | `constitutional-alignment-substrate` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:corrigibility.agency.generic_countermodel_routes` | `constitutional-alignment-substrate` | `AsiStackProofs.Corrigibility` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:values.conflict.operational_invariant` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:values.conflict.failure_blocks_promotion` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:values.conflict.lifecycle_admission_route` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.ValueConflict` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:values.conflict.contestability_example_bridge` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.ValueConflict` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:governance.rights.operational_invariant` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.GovernanceRights` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:governance.rights.failure_blocks_promotion` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.GovernanceRights` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:governance.rights.operational_invariant` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:governance.rights.failure_blocks_promotion` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:governance.rights.theseus_receipt_suite.fixture_bridge` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.GovernanceRights` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:scf.field_identity.operational_invariant` | `stable-capability-fields` | `AsiStackProofs.StableCapabilityFields` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:scf.field_identity.failure_blocks_promotion` | `stable-capability-fields` | `AsiStackProofs.StableCapabilityFields` | triage ok; module ok; chapter tag ok; limitation ok |
@@ -233,8 +235,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:ai_supply_chain.missing_component_inventory.requires_review` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `AsiStackProofs.SupplyChainIntegrity` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:ai_supply_chain.missing_revocation_path.requires_repair` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `AsiStackProofs.SupplyChainIntegrity` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:ai_supply_chain.missing_residual_owner.requires_review` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `AsiStackProofs.SupplyChainIntegrity` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:self_improvement.boundary.operational_invariant` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SelfImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:self_improvement.boundary.failure_blocks_promotion` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SelfImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:self_improvement.boundary.operational_invariant` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:self_improvement.boundary.failure_blocks_promotion` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:self_improvement.boundary.transition_route_envelope` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SelfImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:open_ended_improvement.campaign.complete_candidate_to_governor_review` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:open_ended_improvement.campaign.missing_independent_qualification` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
@@ -243,13 +245,13 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:open_ended_improvement.campaign.erased_failure_history` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:open_ended_improvement.campaign.missing_residual_owner` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:open_ended_improvement.campaign.authority_laundering` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:intent_execution.contracts.operational_invariant` | `intent-to-execution-contracts` | `AsiStackProofs.IntentToExecution` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:intent_execution.contracts.failure_blocks_promotion` | `intent-to-execution-contracts` | `AsiStackProofs.IntentToExecution` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:intent_execution.contracts.operational_invariant` | `intent-to-execution-contracts` | `AsiStackProofs.IntentExecutionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:intent_execution.contracts.failure_blocks_promotion` | `intent-to-execution-contracts` | `AsiStackProofs.IntentExecutionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent_execution.contracts.dispatch_route_envelope` | `intent-to-execution-contracts` | `AsiStackProofs.IntentToExecution` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent_execution.handoff_trace.probe_fixture_bridge` | `intent-to-execution-contracts` | `AsiStackProofs.IntentToExecution` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:command.semantic_interface.operational_invariant` | `intent-to-execution-contracts` | `AsiStackProofs.CommandContracts` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:command.semantic_interface.failure_blocks_promotion` | `intent-to-execution-contracts` | `AsiStackProofs.CommandContracts` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:command.semantic_interface.field_confidence_route` | `intent-to-execution-contracts` | `AsiStackProofs.CommandContracts` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:command.semantic_interface.operational_invariant` | `intent-to-execution-contracts` | `AsiStackProofs.CommandSemanticRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:command.semantic_interface.failure_blocks_promotion` | `intent-to-execution-contracts` | `AsiStackProofs.CommandSemanticRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:command.semantic_interface.field_confidence_route` | `intent-to-execution-contracts` | `AsiStackProofs.CommandSemanticRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:planning.control_layer.operational_invariant` | `planning-as-a-control-layer` | `AsiStackProofs.Planning` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:planning.control_layer.failure_blocks_promotion` | `planning-as-a-control-layer` | `AsiStackProofs.Planning` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:planning.control_layer.plan_graph_admission_route` | `planning-as-a-control-layer` | `AsiStackProofs.Planning` | triage ok; module ok; chapter tag ok; limitation ok |
@@ -257,47 +259,47 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:planning.runtime_replan.delta_audit_bridge` | `planning-as-a-control-layer` | `AsiStackProofs.Planning` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:planforge.dag.operational_invariant` | `planning-as-a-control-layer` | `AsiStackProofs.PlanForge` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:planforge.dag.failure_blocks_promotion` | `planning-as-a-control-layer` | `AsiStackProofs.PlanForge` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:cognitive_compilation.ir.operational_invariant` | `cognitive-compilation-and-semantic-ir` | `AsiStackProofs.CognitiveCompilation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:cognitive_compilation.ir.failure_blocks_promotion` | `cognitive-compilation-and-semantic-ir` | `AsiStackProofs.CognitiveCompilation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:cognitive_compilation.ir.semantic_lowering_route_envelope` | `cognitive-compilation-and-semantic-ir` | `AsiStackProofs.CognitiveCompilation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:vcm.abi.operational_invariant` | `virtual-context-abi` | `AsiStackProofs.VirtualContextABI` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:vcm.abi.failure_blocks_promotion` | `virtual-context-abi` | `AsiStackProofs.VirtualContextABI` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:vcm.abi.context_admission_route_envelope` | `virtual-context-abi` | `AsiStackProofs.VirtualContextABI` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:vcm.certificates.operational_invariant` | `virtual-context-abi` | `AsiStackProofs.ContextCertificates` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:vcm.certificates.failure_blocks_promotion` | `virtual-context-abi` | `AsiStackProofs.ContextCertificates` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:vcm.certificates.lifecycle_admission_route` | `virtual-context-abi` | `AsiStackProofs.ContextCertificates` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:vcm.transactions.operational_invariant` | `context-transactions-snapshots-mounts-and-taint` | `AsiStackProofs.ContextTransactions` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:vcm.transactions.failure_blocks_promotion` | `context-transactions-snapshots-mounts-and-taint` | `AsiStackProofs.ContextTransactions` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:vcm.transactions.memory_store_fixture_bridge` | `context-transactions-snapshots-mounts-and-taint` | `AsiStackProofs.ContextTransactions` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:vcm.transactions.sequence_fixture_bridge` | `context-transactions-snapshots-mounts-and-taint` | `AsiStackProofs.ContextTransactions` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:verification_bandwidth.adequacy.operational_invariant` | `verification-bandwidth-and-context-adequacy` | `AsiStackProofs.VerificationBandwidth` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:verification_bandwidth.adequacy.failure_blocks_promotion` | `verification-bandwidth-and-context-adequacy` | `AsiStackProofs.VerificationBandwidth` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:verification_bandwidth.adequacy.route_envelope` | `verification-bandwidth-and-context-adequacy` | `AsiStackProofs.VerificationBandwidth` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:verification_bandwidth.contradiction_probe_fixture_bridge` | `verification-bandwidth-and-context-adequacy` | `AsiStackProofs.VerificationBandwidth` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:claims.ledger.operational_invariant` | `claim-ledgers-and-belief-revision` | `AsiStackProofs.ClaimLedger` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:claims.ledger.failure_blocks_promotion` | `claim-ledgers-and-belief-revision` | `AsiStackProofs.ClaimLedger` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:claims.ledger.revision_lifecycle_route` | `claim-ledgers-and-belief-revision` | `AsiStackProofs.ClaimLedger` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:claims.ledger.semantic_assumption_fixture_bridge` | `claim-ledgers-and-belief-revision` | `AsiStackProofs.ClaimLedger` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:spinoza.proof_carrying.operational_invariant` | `spinoza-verification-and-proof-carrying-claims` | `AsiStackProofs.ProofCarryingClaims` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:spinoza.proof_carrying.failure_blocks_promotion` | `spinoza-verification-and-proof-carrying-claims` | `AsiStackProofs.ProofCarryingClaims` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:tribunal.review.operational_invariant` | `spinoza-verification-and-proof-carrying-claims` | `AsiStackProofs.Tribunal` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:tribunal.review.failure_blocks_promotion` | `spinoza-verification-and-proof-carrying-claims` | `AsiStackProofs.Tribunal` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:spinoza.adversarial_review.dossier_probe_bridge` | `spinoza-verification-and-proof-carrying-claims` | `AsiStackProofs.ProofCarryingClaims` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:jobs.lifecycle.operational_invariant` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobs` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:jobs.lifecycle.failure_blocks_promotion` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobs` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:jobs.lifecycle.execution_route_envelope` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobs` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:jobs.lifecycle.delivery_probe_fixture_bridge` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobs` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:jobs.lifecycle.durable_lifecycle_probe_bridge` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobs` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:artifacts.graph.operational_invariant` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactGraph` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:artifacts.graph.failure_blocks_promotion` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactGraph` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:artifacts.graph.replay_packet_bridge` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactGraph` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:artifacts.graph.record_reality_sequence_bridge` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactGraph` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:artifacts.graph.receipt_faithfulness_fixture_bridge` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactGraph` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:artifacts.graph.receipt_repository_audit_fixture_bridge` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactGraph` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:artifacts.graph.receipt_repository_challenge_fixture_bridge` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactGraph` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:artifacts.graph.live_attestation_probe_bridge` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactGraph` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:artifacts.graph.randomized_attestation_audit_bridge` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactGraph` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:artifacts.graph.epistemic_tcb_fixture_bridge` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactGraph` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:cognitive_compilation.ir.operational_invariant` | `cognitive-compilation-and-semantic-ir` | `AsiStackProofs.CognitiveCompilationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:cognitive_compilation.ir.failure_blocks_promotion` | `cognitive-compilation-and-semantic-ir` | `AsiStackProofs.CognitiveCompilationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:cognitive_compilation.ir.semantic_lowering_route_envelope` | `cognitive-compilation-and-semantic-ir` | `AsiStackProofs.CognitiveCompilationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:vcm.abi.operational_invariant` | `virtual-context-abi` | `AsiStackProofs.VirtualContextRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:vcm.abi.failure_blocks_promotion` | `virtual-context-abi` | `AsiStackProofs.VirtualContextRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:vcm.abi.context_admission_route_envelope` | `virtual-context-abi` | `AsiStackProofs.VirtualContextRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:vcm.certificates.operational_invariant` | `virtual-context-abi` | `AsiStackProofs.ContextCertificateRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:vcm.certificates.failure_blocks_promotion` | `virtual-context-abi` | `AsiStackProofs.ContextCertificateRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:vcm.certificates.lifecycle_admission_route` | `virtual-context-abi` | `AsiStackProofs.ContextCertificateRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:vcm.transactions.operational_invariant` | `context-transactions-snapshots-mounts-and-taint` | `AsiStackProofs.ContextTransactionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:vcm.transactions.failure_blocks_promotion` | `context-transactions-snapshots-mounts-and-taint` | `AsiStackProofs.ContextTransactionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:vcm.transactions.memory_store_fixture_bridge` | `context-transactions-snapshots-mounts-and-taint` | `AsiStackProofs.ContextTransactionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:vcm.transactions.sequence_fixture_bridge` | `context-transactions-snapshots-mounts-and-taint` | `AsiStackProofs.ContextTransactionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:verification_bandwidth.adequacy.operational_invariant` | `verification-bandwidth-and-context-adequacy` | `AsiStackProofs.VerificationBandwidthRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:verification_bandwidth.adequacy.failure_blocks_promotion` | `verification-bandwidth-and-context-adequacy` | `AsiStackProofs.VerificationBandwidthRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:verification_bandwidth.adequacy.route_envelope` | `verification-bandwidth-and-context-adequacy` | `AsiStackProofs.VerificationBandwidthRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:verification_bandwidth.contradiction_probe_fixture_bridge` | `verification-bandwidth-and-context-adequacy` | `AsiStackProofs.VerificationBandwidthRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:claims.ledger.operational_invariant` | `claim-ledgers-and-belief-revision` | `AsiStackProofs.ClaimLedgerRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:claims.ledger.failure_blocks_promotion` | `claim-ledgers-and-belief-revision` | `AsiStackProofs.ClaimLedgerRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:claims.ledger.revision_lifecycle_route` | `claim-ledgers-and-belief-revision` | `AsiStackProofs.ClaimLedgerRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:claims.ledger.semantic_assumption_fixture_bridge` | `claim-ledgers-and-belief-revision` | `AsiStackProofs.ClaimLedgerRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:spinoza.proof_carrying.operational_invariant` | `spinoza-verification-and-proof-carrying-claims` | `AsiStackProofs.ProofCarryingClaimsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:spinoza.proof_carrying.failure_blocks_promotion` | `spinoza-verification-and-proof-carrying-claims` | `AsiStackProofs.ProofCarryingClaimsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:tribunal.review.operational_invariant` | `spinoza-verification-and-proof-carrying-claims` | `AsiStackProofs.TribunalRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:tribunal.review.failure_blocks_promotion` | `spinoza-verification-and-proof-carrying-claims` | `AsiStackProofs.TribunalRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:spinoza.adversarial_review.dossier_probe_bridge` | `spinoza-verification-and-proof-carrying-claims` | `AsiStackProofs.ProofCarryingClaimsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:jobs.lifecycle.operational_invariant` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:jobs.lifecycle.failure_blocks_promotion` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:jobs.lifecycle.execution_route_envelope` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:jobs.lifecycle.delivery_probe_fixture_bridge` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:jobs.lifecycle.durable_lifecycle_probe_bridge` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:artifacts.graph.operational_invariant` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactRealityRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:artifacts.graph.failure_blocks_promotion` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactRealityRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:artifacts.graph.replay_packet_bridge` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactRealityRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:artifacts.graph.record_reality_sequence_bridge` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactRealityRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:artifacts.graph.receipt_faithfulness_fixture_bridge` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactRealityRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:artifacts.graph.receipt_repository_audit_fixture_bridge` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactRealityRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:artifacts.graph.receipt_repository_challenge_fixture_bridge` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactRealityRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:artifacts.graph.live_attestation_probe_bridge` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactRealityRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:artifacts.graph.randomized_attestation_audit_bridge` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactRealityRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:artifacts.graph.epistemic_tcb_fixture_bridge` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactRealityRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:runtime.adapters.operational_invariant` | `runtime-adapters-tool-permissions-and-human-approval` | `AsiStackProofs.RuntimeAdapters` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:runtime.adapters.failure_blocks_promotion` | `runtime-adapters-tool-permissions-and-human-approval` | `AsiStackProofs.RuntimeAdapters` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:runtime.adapters.effect_replay_fixture_bridge` | `runtime-adapters-tool-permissions-and-human-approval` | `AsiStackProofs.RuntimeAdapters` | triage ok; module ok; chapter tag ok; limitation ok |
@@ -313,62 +315,61 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:inter_stack.revoked_credential.denies_dispatch` | `inter-stack-protocols-identity-and-economic-exchange` | `AsiStackProofs.InterStackProtocols` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:inter_stack.disputed_receipt.requires_review` | `inter-stack-protocols-identity-and-economic-exchange` | `AsiStackProofs.InterStackProtocols` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:inter_stack.missing_residual_owner.requires_review` | `inter-stack-protocols-identity-and-economic-exchange` | `AsiStackProofs.InterStackProtocols` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:procedural.loop_closure.operational_invariant` | `procedural-memory-and-cognitive-loop-closure` | `AsiStackProofs.ProceduralMemory` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:procedural.loop_closure.failure_blocks_promotion` | `procedural-memory-and-cognitive-loop-closure` | `AsiStackProofs.ProceduralMemory` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:routing.specialists.operational_invariant` | `routing-heads-and-specialist-cores` | `AsiStackProofs.Routing` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:routing.specialists.failure_blocks_promotion` | `routing-heads-and-specialist-cores` | `AsiStackProofs.Routing` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:routing.specialists.decision_lifecycle_route` | `routing-heads-and-specialist-cores` | `AsiStackProofs.Routing` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:moecot.runtime.operational_invariant` | `routing-heads-and-specialist-cores` | `AsiStackProofs.MoECOTRuntime` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:moecot.runtime.failure_blocks_promotion` | `routing-heads-and-specialist-cores` | `AsiStackProofs.MoECOTRuntime` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:readiness.gates.operational_invariant` | `readiness-gates-residual-escrow-and-quarantine` | `AsiStackProofs.ReadinessGates` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:readiness.gates.failure_blocks_promotion` | `readiness-gates-residual-escrow-and-quarantine` | `AsiStackProofs.ReadinessGates` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:readiness.gates.lifecycle_probe_bridge` | `readiness-gates-residual-escrow-and-quarantine` | `AsiStackProofs.ReadinessGates` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:personal_hives.scheduling.operational_invariant` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.PersonalComputeHives` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:personal_hives.policy_first.failure_blocks_promotion` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.PersonalComputeHives` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:personal_hives.approval_gate.failure_blocks_promotion` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.PersonalComputeHives` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:personal_hives.federation_lease.operational_invariant` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.PersonalComputeHives` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:personal_hives.work_admission.lifecycle_route` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.PersonalComputeHives` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:personal_hives.partitioned_authority.fixture_bridge` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.PersonalComputeHives` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:compression.cgs.operational_invariant` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerativeSystems` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:compression.cgs.failure_blocks_promotion` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerativeSystems` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:compression.cgs.admission_route` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerativeSystems` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:compression.cgs.gvr_fixture_bridge` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerativeSystems` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:compression.cgs.residual_storage_replay_bridge` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerativeSystems` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:compression.gvr.operational_invariant` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.GenerateVerifyRepair` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:compression.gvr.failure_blocks_promotion` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.GenerateVerifyRepair` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:representation.semantic_tree.operational_invariant` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.SemanticRepresentation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:representation.semantic_tree.failure_blocks_promotion` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.SemanticRepresentation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:fast_generation.mode_selection.operational_invariant` | `fast-generation-architectures` | `AsiStackProofs.FastGeneration` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:fast_generation.verified_speed.failure_blocks_promotion` | `fast-generation-architectures` | `AsiStackProofs.FastGeneration` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:fast_generation.mode_admission_lifecycle_route` | `fast-generation-architectures` | `AsiStackProofs.FastGeneration` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:fast_generation.theseus_import_fixture_bridge` | `fast-generation-architectures` | `AsiStackProofs.FastGeneration` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:fast_generation.task_bundle_fixture_bridge` | `fast-generation-architectures` | `AsiStackProofs.FastGeneration` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:deliberation.high_risk.missing_independent_verifier_blocks_execution` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.Deliberation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:deliberation.budget_exhausted.escrows_residual` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.Deliberation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:deliberation.complete_high_risk.reaches_planning` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.Deliberation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:deliberation.missing_budget.requires_review` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.Deliberation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:deliberation.missing_search_mode.requires_review` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.Deliberation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:deliberation.missing_verifier_scope.requires_review` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.Deliberation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:deliberation.missing_candidate_history.requires_review` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.Deliberation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:deliberation.missing_stop_condition.requires_review` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.Deliberation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:deliberation.missing_residual_owner.requires_review` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.Deliberation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:deliberation.trace_authority_laundering.requires_review` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.Deliberation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:compression.artifacts.operational_invariant` | `rankfold-neuralfold-and-artifact-compression` | `AsiStackProofs.ArtifactCompression` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:compression.artifacts.failure_blocks_promotion` | `rankfold-neuralfold-and-artifact-compression` | `AsiStackProofs.ArtifactCompression` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:compression.artifacts.admission_lifecycle_route` | `rankfold-neuralfold-and-artifact-compression` | `AsiStackProofs.ArtifactCompression` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:resources.budgets.operational_invariant` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomics` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:resources.budgets.failure_blocks_promotion` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomics` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:resources.costed_route.fixture_bridge` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomics` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:resources.workflow_trace.trace_property_bridge` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomics` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:resources.capacity_smoothing.reviewer_trace_bridge` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomics` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:resources.serving_memory.separation_guard` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomics` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:resources.flagship.aggregate_invariant` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomics` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:resources.ci_failure_classification.fixture_bridge` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomics` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:resource.governance_tax.tradeoff_bridge` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomics` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:simulation.fidelity.operational_invariant` | `resource-economics-and-token-budgets` | `AsiStackProofs.SimulationFidelity` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:simulation.fidelity.failure_blocks_promotion` | `resource-economics-and-token-budgets` | `AsiStackProofs.SimulationFidelity` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:resource.simulation_fidelity.theseus_receipt_suite.fixture_bridge` | `resource-economics-and-token-budgets` | `AsiStackProofs.SimulationFidelity` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:resource.simulation_fidelity.theseus_rlds_minari_trace_export.fixture_bridge` | `resource-economics-and-token-budgets` | `AsiStackProofs.SimulationFidelity` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:procedural.loop_closure.operational_invariant` | `procedural-memory-and-cognitive-loop-closure` | `AsiStackProofs.ProceduralMemoryRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:procedural.loop_closure.failure_blocks_promotion` | `procedural-memory-and-cognitive-loop-closure` | `AsiStackProofs.ProceduralMemoryRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:routing.specialists.operational_invariant` | `routing-heads-and-specialist-cores` | `AsiStackProofs.RoutingRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:routing.specialists.failure_blocks_promotion` | `routing-heads-and-specialist-cores` | `AsiStackProofs.RoutingRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:routing.specialists.decision_lifecycle_route` | `routing-heads-and-specialist-cores` | `AsiStackProofs.RoutingRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:moecot.runtime.operational_invariant` | `routing-heads-and-specialist-cores` | `AsiStackProofs.RoutingRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:moecot.runtime.failure_blocks_promotion` | `routing-heads-and-specialist-cores` | `AsiStackProofs.RoutingRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:cognitive_kernel.abi_trace_invariants` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `AsiStackProofs.ReplaceableCognitiveSubstrates` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:readiness.gates.operational_invariant` | `readiness-gates-residual-escrow-and-quarantine` | `AsiStackProofs.ReadinessRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:readiness.gates.failure_blocks_promotion` | `readiness-gates-residual-escrow-and-quarantine` | `AsiStackProofs.ReadinessRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:readiness.gates.lifecycle_probe_bridge` | `readiness-gates-residual-escrow-and-quarantine` | `AsiStackProofs.ReadinessRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:personal_hives.scheduling.operational_invariant` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.HiveLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:personal_hives.policy_first.failure_blocks_promotion` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.HiveLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:personal_hives.approval_gate.failure_blocks_promotion` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.HiveLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:personal_hives.federation_lease.operational_invariant` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.HiveLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:personal_hives.work_admission.lifecycle_route` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.HiveLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:personal_hives.partitioned_authority.fixture_bridge` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.HiveLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:compression.cgs.operational_invariant` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:compression.cgs.failure_blocks_promotion` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:compression.cgs.admission_route` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:compression.cgs.gvr_fixture_bridge` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:compression.cgs.residual_storage_replay_bridge` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:compression.gvr.operational_invariant` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:compression.gvr.failure_blocks_promotion` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:representation.semantic_tree.operational_invariant` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:representation.semantic_tree.failure_blocks_promotion` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:fast_generation.mode_selection.operational_invariant` | `fast-generation-architectures` | `AsiStackProofs.FastGenerationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:fast_generation.verified_speed.failure_blocks_promotion` | `fast-generation-architectures` | `AsiStackProofs.FastGenerationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:fast_generation.mode_admission_lifecycle_route` | `fast-generation-architectures` | `AsiStackProofs.FastGenerationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:fast_generation.theseus_import_fixture_bridge` | `fast-generation-architectures` | `AsiStackProofs.FastGenerationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:fast_generation.task_bundle_fixture_bridge` | `fast-generation-architectures` | `AsiStackProofs.FastGenerationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:deliberation.high_risk.missing_independent_verifier_blocks_execution` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.DeliberationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:deliberation.budget_exhausted.escrows_residual` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.DeliberationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:deliberation.complete_high_risk.reaches_planning` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.DeliberationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:deliberation.missing_budget.requires_review` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.DeliberationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:deliberation.missing_search_mode.requires_review` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.DeliberationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:deliberation.missing_verifier_scope.requires_review` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.DeliberationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:deliberation.missing_candidate_history.requires_review` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.DeliberationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:deliberation.missing_stop_condition.requires_review` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.DeliberationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:deliberation.missing_residual_owner.requires_review` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.DeliberationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:deliberation.trace_authority_laundering.requires_review` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.DeliberationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:compression.artifacts.operational_invariant` | `rankfold-neuralfold-and-artifact-compression` | `AsiStackProofs.ArtifactCompressionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:compression.artifacts.failure_blocks_promotion` | `rankfold-neuralfold-and-artifact-compression` | `AsiStackProofs.ArtifactCompressionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:compression.artifacts.admission_lifecycle_route` | `rankfold-neuralfold-and-artifact-compression` | `AsiStackProofs.ArtifactCompressionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:resources.budgets.operational_invariant` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomicsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:resources.budgets.failure_blocks_promotion` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomicsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:resources.costed_route.fixture_bridge` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomicsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:resources.workflow_trace.trace_property_bridge` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomicsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:resources.capacity_smoothing.reviewer_trace_bridge` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomicsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:resources.serving_memory.separation_guard` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomicsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:resource.governance_tax.tradeoff_bridge` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomicsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:simulation.fidelity.operational_invariant` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomicsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:simulation.fidelity.failure_blocks_promotion` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomicsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:resource.simulation_fidelity.theseus_receipt_suite.fixture_bridge` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomicsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:resource.simulation_fidelity.theseus_rlds_minari_trace_export.fixture_bridge` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomicsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:substrates.search.operational_invariant` | `mathematical-and-search-substrates` | `AsiStackProofs.SearchSubstrates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:substrates.search.failure_blocks_promotion` | `mathematical-and-search-substrates` | `AsiStackProofs.SearchSubstrates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:substrates.search.adoption_trace_bridge` | `mathematical-and-search-substrates` | `AsiStackProofs.SearchSubstrates` | triage ok; module ok; chapter tag ok; limitation ok |
@@ -434,9 +435,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:artifact_stewards.lifecycle_route.failure_blocks_promotion` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.contribution_ledger.operational_invariant` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.federation_contract.operational_invariant` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:reference_architecture.trace.operational_invariant` | `integrated-reference-architecture` | `AsiStackProofs.ReferenceArchitecture` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:reference_architecture.trace.failure_blocks_promotion` | `integrated-reference-architecture` | `AsiStackProofs.ReferenceArchitecture` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:reference_architecture.governed_trace.four_invariants` | `integrated-reference-architecture` | `AsiStackProofs.GovernedRepositoryTrace` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:reference_architecture.trace.operational_invariant` | `integrated-reference-architecture` | `AsiStackProofs.IntegratedReferenceTrace` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:reference_architecture.trace.failure_blocks_promotion` | `integrated-reference-architecture` | `AsiStackProofs.IntegratedReferenceTrace` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:reference_architecture.governed_trace.four_invariants` | `integrated-reference-architecture` | `AsiStackProofs.IntegratedReferenceTrace` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:theseus.reference.report_contract.operational_invariant` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:theseus.reference.gate_before_promotion.failure_blocks_promotion` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:theseus.reference.report_bundle_audit.fixture_bridge` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |

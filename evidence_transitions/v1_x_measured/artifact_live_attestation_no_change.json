@@ -9,15 +9,15 @@
   ],
   "claim_record_refs": [
     "experiments/artifact_live_attestation/results/2026-07-04-local.json",
-    "experiments/receipt_repository_audit/results/2026-07-04-challenge.json",
+    "experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json",
     "scripts/validate_artifact_live_attestation_probe.py",
-    "lean/AsiStackProofs/ArtifactGraph.lean"
+    "lean/AsiStackProofs/ArtifactRealityRefinement.lean"
   ],
   "old_support_state": "argument",
   "new_support_state": "argument",
   "transition_effect": "no_change",
   "transition_validity_state": "review_accepted",
-  "scope_boundary": "Bounded local live repository attestation over one selected produced artifact only. The probe compares filesystem bytes, git object bytes, and command replay for the current receipt-repository challenge result, rejects seven mutation controls, and records attestation limits. It is not a deployed attestation service, not open-world receipt faithfulness, not external review, not verifier-correctness evidence, and not an upward support-state transition.",
+  "scope_boundary": "Bounded local live repository attestation over one selected produced artifact only. The probe compares filesystem bytes, git object bytes, and command replay for the clean tracked record-reality sequence result, rejects seven mutation controls, and records attestation limits. It is not a deployed attestation service, not open-world receipt faithfulness, not external review, not verifier-correctness evidence, and not an upward support-state transition.",
   "evidence_roles": [
     "bounded_live_repository_attestation",
     "filesystem_digest_check",
@@ -40,7 +40,7 @@
   "artifact_refs": [
     "docs/artifact_live_attestation_probe.md",
     "experiments/artifact_live_attestation/results/2026-07-04-local.json",
-    "experiments/receipt_repository_audit/results/2026-07-04-challenge.json",
+    "experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json",
     "scripts/validate_artifact_live_attestation_probe.py"
   ],
   "evidence_packet_refs": [

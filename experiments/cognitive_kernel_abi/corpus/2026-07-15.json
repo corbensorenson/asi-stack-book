@@ -1,0 +1,94 @@
+{
+  "schema_version": "0.1",
+  "corpus_id": "cognitive-kernel-abi-2026-07-15",
+  "initial_state": {
+    "active_kernel": 1,
+    "active_family": "transformer",
+    "authority_ceiling": 2,
+    "checkpoint_schema": 7,
+    "checkpoint_digest": 7001,
+    "pending_kernel": null,
+    "committed_effects": 0,
+    "revoked_kernel": null
+  },
+  "base_event": {
+    "kind": "propose",
+    "actor_kernel": 1,
+    "target_kernel": 2,
+    "target_family": "selective_state_space",
+    "fallback_kernel": 1,
+    "fallback_family": "transformer",
+    "requested_authority": 1,
+    "checkpoint_schema": 7,
+    "checkpoint_digest": 7001,
+    "proposal_only": true,
+    "effect_observed": false,
+    "migration_compatible": true,
+    "fallback_ready": true,
+    "evaluator_independent": true,
+    "assistance_declared": true,
+    "lifecycle_cost_declared": true,
+    "evidence_transition_present": false,
+    "residual_owner_present": true,
+    "effect_receipt_present": false,
+    "rollback_ready": true
+  },
+  "cases": [
+    {
+      "id": "mixed-transformer-ssm-kan-revoke-fallback",
+      "expected": "accepted",
+      "patches": [
+        {},
+        {"kind": "migrate"},
+        {"actor_kernel": 2},
+        {"kind": "commit", "actor_kernel": 2, "target_kernel": 2, "proposal_only": false, "effect_observed": true, "evidence_transition_present": true, "effect_receipt_present": true},
+        {"actor_kernel": 2, "target_kernel": 3, "target_family": "kan", "fallback_kernel": 2, "fallback_family": "selective_state_space"},
+        {"kind": "migrate", "actor_kernel": 2, "target_kernel": 3, "target_family": "kan", "fallback_kernel": 2, "fallback_family": "selective_state_space"},
+        {"kind": "revoke", "actor_kernel": 3, "target_kernel": 2, "target_family": "selective_state_space", "fallback_kernel": 2, "fallback_family": "selective_state_space"},
+        {"actor_kernel": 2, "target_kernel": 2, "target_family": "selective_state_space"},
+        {"kind": "commit", "actor_kernel": 2, "target_kernel": 2, "target_family": "selective_state_space", "proposal_only": false, "effect_observed": true, "evidence_transition_present": true, "effect_receipt_present": true}
+      ],
+      "expected_final": {
+        "active_kernel": 2,
+        "active_family": "selective_state_space",
+        "authority_ceiling": 2,
+        "checkpoint_schema": 7,
+        "checkpoint_digest": 7001,
+        "pending_kernel": null,
+        "committed_effects": 2,
+        "revoked_kernel": 3
+      }
+    },
+    {"id": "proposal-observed-effect", "expected": "rejected", "patches": [{"effect_observed": true}]},
+    {"id": "authority-widening", "expected": "rejected", "patches": [{"requested_authority": 3}]},
+    {"id": "checkpoint-digest-mismatch", "expected": "rejected", "patches": [{"checkpoint_digest": 9999}]},
+    {"id": "fallback-omitted", "expected": "rejected", "patches": [{"fallback_ready": false}]},
+    {"id": "evaluator-self-approval", "expected": "rejected", "patches": [{"evaluator_independent": false}]},
+    {"id": "assistance-omitted", "expected": "rejected", "patches": [{"assistance_declared": false}]},
+    {"id": "lifecycle-cost-omitted", "expected": "rejected", "patches": [{"lifecycle_cost_declared": false}]},
+    {"id": "residual-owner-omitted", "expected": "rejected", "patches": [{"residual_owner_present": false}]},
+    {"id": "rollback-omitted", "expected": "rejected", "patches": [{"rollback_ready": false}]},
+    {"id": "incompatible-migration", "expected": "rejected", "patches": [{}, {"kind": "migrate", "migration_compatible": false}]},
+    {"id": "commit-without-pending-proposal", "expected": "rejected", "patches": [{"kind": "commit", "target_kernel": 1, "proposal_only": false, "effect_observed": true, "evidence_transition_present": true, "effect_receipt_present": true}]},
+    {"id": "commit-without-effect-receipt", "expected": "rejected", "patches": [{"target_kernel": 1, "target_family": "transformer"}, {"kind": "commit", "target_kernel": 1, "target_family": "transformer", "proposal_only": false, "effect_observed": true, "evidence_transition_present": true}]},
+    {"id": "commit-without-evidence-transition", "expected": "rejected", "patches": [{"target_kernel": 1, "target_family": "transformer"}, {"kind": "commit", "target_kernel": 1, "target_family": "transformer", "proposal_only": false, "effect_observed": true, "effect_receipt_present": true}]},
+    {"id": "revoke-to-self", "expected": "rejected", "patches": [{"kind": "revoke", "target_kernel": 1, "fallback_kernel": 1}]},
+    {
+      "id": "revoked-kernel-readmission",
+      "expected": "rejected",
+      "patches": [
+        {},
+        {"kind": "migrate"},
+        {"actor_kernel": 2, "target_kernel": 3, "target_family": "kan", "fallback_kernel": 2, "fallback_family": "selective_state_space"},
+        {"kind": "migrate", "actor_kernel": 2, "target_kernel": 3, "target_family": "kan", "fallback_kernel": 2, "fallback_family": "selective_state_space"},
+        {"kind": "revoke", "actor_kernel": 3, "target_kernel": 2, "target_family": "selective_state_space", "fallback_kernel": 2, "fallback_family": "selective_state_space"},
+        {"actor_kernel": 2, "target_kernel": 3, "target_family": "kan", "fallback_kernel": 2, "fallback_family": "selective_state_space"}
+      ]
+    }
+  ],
+  "non_claims": [
+    "This finite corpus does not benchmark Transformer, Mamba, KAN, recurrent, or program-synthesis quality.",
+    "It does not establish checkpoint translation for real model, optimizer, scheduler, RNG, cache, backup, or descendant state.",
+    "It does not establish evaluator independence, rollback efficacy, deployment safety, transfer, architectural RSI, AGI, or ASI."
+  ]
+}

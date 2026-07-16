@@ -3,8 +3,8 @@ title: "Personal Compute Hives and Federated Edge Intelligence"
 chapter_id: "personal-compute-hives-and-federated-edge-intelligence"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
-draft_maturity: "chapter draft"
-last_updated: "2026-06-30"
+draft_maturity: "v0.3 claim-proof program"
+last_updated: "2026-07-15"
 primary_sources:
   - "field_of_god_ai_constitution"
   - "scf"
@@ -32,9 +32,10 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records exact passage-reviewed mappings for all assigned Personal Compute Hives sources; support remains at argument because the new hive admission harness is synthetic record validation only and no live device registry, policy-first scheduler, portal approval service, federation protocol, family-governance policy engine, rented-node sandbox, or deployed behavioral tests exist."
-  - "Record-shape schemas, valid fixtures, narrow finite Lean predicates, the synthetic hive admission harness, and the partitioned-authority fixture have been implemented; no personal hive scheduler, network overlay, device registry, approval portal, rented-node sandbox, federation run, partition test, energy measurement, dropout recovery run, privacy guarantee, or security result has been executed from this repository."
-  - "External tooling sources are reviewed as adjacent substrate references only; they do not prove the ASI Stack hive design or any safety property."
+  - "The current evidence is seven public record schemas, exact 2/8 hive-admission and 3/6 partitioned-authority suites, 38 live family declarations, seven reachable lifecycle stages, 47 routes, and 53/53 rejected mutations; it establishes record and route discipline only, not useful scheduler, registry, portal, authority-service, network, sandbox, federation, recovery, privacy, security, availability, efficiency, or safety behavior."
+  - "A full attempt still requires a live governed reference slice across at least two owned node classes and one isolated external-node class, with real typed jobs, policy-before-optimization, task-local context and execution leases, approval, sandbox enforcement, partition and revocation handling, artifact/effect/resource receipts, dropout recovery, cleanup, descendant invalidation, and residual custody."
+  - "A preregistered natural and adversarial campaign must compare strong matched baselines on the joint useful, unsafe, denial, authority, rights, privacy, locality, availability, consistency, latency, bandwidth, compute, battery, thermal, energy, money, human-work, recovery, security, and residual frontier with causal ablations."
+  - "Any efficacy, security, privacy, availability, efficiency, or state-of-the-art claim remains blocked until an independently implemented evaluator reproduces the campaign and transfer tests; adjacent substrate sources and the CAP theorem remain comparators, not implementation evidence."
 ---
 
 ## Chapter status
@@ -44,12 +45,12 @@ open_evidence_gaps:
 | Chapter ID | `personal-compute-hives-and-federated-edge-intelligence` |
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
-| Last updated | 2026-07-01 |
+| Last updated | 2026-07-15 |
 | Primary source records | `field_of_god_ai_constitution`, `scf`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `rmi`, `tokenmana`, `project_theseus_whitepaper`, `theseus_operator_os`, `ladon_manhattan`, plus external source notes for Tailscale, Kubernetes, K3s, Nomad, Ray Core, BOINC, Syncthing, IPFS, Akash, Golem, GitHub self-hosted runners, and CAP-style partition trade-offs via `ext_cap_theorem_gilbert_lynch_2002` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | All assigned sources have public source notes. Internal/local raw passages and tracked local-project passages have now been passage-reviewed for the chapter; official external tooling pages were reviewed as adjacent substrate references. The core claim remains a design synthesis. The browser note is local-only planning context. |
-| Test state | Record-shape fixtures for `DeviceResourceCard`, `HiveJobContract`, `HiveSchedulingDecision`, `PortalCard`, `HiveApprovalReceipt`, `HiveJobBid`, and `HiveFederationLease` validate locally; `AsiStackProofs.PersonalComputeHives` builds finite predicates plus negative-case theorems rejecting high-risk execution without a bound approval receipt, external access with a missing lease boundary, and partitioned stale-authority dispatch without no-mutation evidence. `python3 scripts/validate_hive_admission.py` passes on 2 valid and 8 expected-invalid synthetic hive admission fixtures. `python3 scripts/validate_partitioned_authority_fixture.py` writes `experiments/partitioned_authority/results/2026-07-03-local.json` and checks 3 valid finite partitioned-authority records plus 6 expected-invalid controls for stale grants, revocation-delay quarantine, fresh authority receipt requirements, grant/effect race residual ownership, no-mutation evidence, CAP-style authority consistency boundaries, and support-state non-promotion. No hive scheduler, live registry, portal approval service, network overlay, federation run, deployed partition tolerance, distributed consensus, runtime adapter enforcement, revocation propagation, rented-node sandbox, cross-router connectivity test, portal-continuity test, energy measurement, dropout recovery run, privacy guarantee, or security result has been run. |
+| Source loading state | All 23 assigned sources have exact reviewed mappings. Internal and tracked-project passages support bounded architectural components; official tooling sources and the CAP paper supply adjacent substrate and failure-pressure comparators only. None is implementation or safety evidence for this hive. |
+| Test state | Seven public record schemas validate. The exact 2/8 Hive-admission and 3/6 partitioned-authority suites remain passing. The new refinement covers seven stages, all 47 routes, and 53/53 rejecting mutations. Seventeen refinement declarations and 21 retained legacy consequences remain live; five projections/fixture declarations are retired. No live scheduler, registry, portal, authority service, network overlay, federation, partition run, runtime enforcement, rented-node sandbox, energy measurement, dropout recovery, security, privacy, availability, useful-work, or transfer result has been run. |
 
 ## Drafting guardrail
 
@@ -87,15 +88,15 @@ The ASI Stack requires a different abstraction. The scheduler must understand th
 
 ## Core Claim
 
-[personal-compute-hives-and-federated-edge-intelligence.core, label: Design rationale, support: argument] A Personal Compute Hive should turn trusted devices, portals, stores, workers, and temporary rented or project nodes into a federated, policy-bounded compute organism whose scheduler routes work by capability, locality, trust, cost, energy, and authority.
+[personal-compute-hives-and-federated-edge-intelligence.core, label: Design rationale, support: argument] For an exact versioned principal, household or project, job, use, data and tool class, effect envelope, acceptance test, risk budget, deadline, and evaluation horizon, a Personal Compute Hive should admit and place work only through policy-before-optimization: independently attested participants and roles, intersected authority and rights, task-local context and execution leases, least-authority adequate node selection, scoped approval, monitored sandboxed execution, complete artifact/effect/resource receipts, partition-aware denial or quarantine, and effect-complete rollback or residual custody; reachability, ownership, cheap capacity, a passing record schema, or stale authority alone cannot license execution, and federation, dropout, revocation, replacement, requeue, and retirement must preserve affected descendants and residual owners.
 
 The claim is architectural, not empirical. The current support state is `argument`. It says that governed personal AI needs this layer in order to preserve authority and locality while using distributed hardware. It does not say that the scheduler is already implemented, that the network is secure, that old devices are always worth using, or that rented nodes can safely touch private data.
 
 ### Claim-source mapping status
 
-The core claim has not been promoted above `argument`. Appendix C now carries passage-reviewed mappings for all twenty-two assigned sources: eleven internal or tracked local architecture sources and eleven official external tooling references. The internal mappings support pieces of the design: VCM for governed context and taint, Talos for typed jobs and audit, Octopus/RMI for routed specialists and lifecycle state, TokenMana for resource budgets, Project Theseus and Hive Operator OS for trusted-machine node registries and operator surfaces, SCF for capability boundaries, Field of God governance for consent and least sufficient power, PlanForge for scheduling, and Ladon/Manhattan for handle-based secret use.
+The core claim has not been promoted above `argument`. Appendix C carries exact reviewed mappings for all 23 assigned sources: eleven internal or tracked local architecture sources and twelve external comparator sources, including Gilbert and Lynch for the bounded partition-pressure warning. The internal mappings support pieces of the design: VCM for governed context and taint, Talos for typed jobs and audit, Octopus/RMI for routed specialists and lifecycle state, TokenMana for resource budgets, Project Theseus and Hive Operator OS for trusted-machine node registries and operator surfaces, SCF for capability boundaries, Field of God governance for consent and least sufficient power, PlanForge for scheduling, and Ladon/Manhattan for handle-based secret use.
 
-External mappings ground adjacent substrate vocabulary such as private overlay networking, cluster orchestration, distributed tasks, volunteer compute, file synchronization, content-addressed retrieval, rented compute, and self-hosted runners. The repository includes record-shape schemas, valid fixtures, and narrow Lean predicates for the first hive records, but no live hive scheduler, device registry, approval portal, family-governance engine, network overlay, rented-node sandbox, federation run, behavioral test, security review, or reproduced experiment exists in this repository.
+External mappings ground adjacent substrate vocabulary such as private overlay networking, cluster orchestration, distributed tasks, volunteer compute, file synchronization, content-addressed retrieval, rented compute, self-hosted runners, and consistency/availability pressure under partition. The repository includes record-shape schemas, synthetic fixtures, and finite Lean consequences, but no live hive scheduler, registry, approval portal, authority service, family-governance engine, network overlay, rented-node sandbox, federation, security evaluation, privacy evaluation, useful-work campaign, independent reproduction, or transfer result.
 
 ## Mechanism
 
@@ -133,6 +134,48 @@ Partitioned authority is the governance problem that appears when a hive spans d
 For hives, the practical rule is CAP-style authority consistency: high-impact effects should prefer denial, quarantine, or a fresh authority receipt over available-but-stale dispatch. `python3 scripts/validate_partitioned_authority_fixture.py` records this as the partitioned authority fixture at `experiments/partitioned_authority/results/2026-07-03-local.json`; it rejects stale-grant dispatch, mutation after an unseen revocation, grant/effect race records without residual ownership, missing no-mutation evidence, support-state promotion from fixture shape, and missing non-claim boundaries. This does not prove deployed partition tolerance or revocation propagation.
 
 This mechanism turns household and project machines into a policy-first compute fabric. A phone is primarily a portal and approval surface. A laptop is an interactive worker with limited background availability. A desktop GPU may be a heavy worker. A NAS may be long-term memory, artifact storage, and retrieval infrastructure. Old machines may run background summarization, indexing, or test jobs with low authority. Rented nodes may run public, scrubbed, or synthetic jobs. Project machines may accept work only through explicit contracts. Family devices may expose only age-appropriate portals and guardian-approved transitions.
+
+### Eighteen-stage governed job lifecycle
+
+The operational claim is meaningful only if the whole job lifecycle has an owner and a rejecting path. The reference lifecycle is:
+
+1. Freeze the exact principal, household or project, job, use, acceptance predicate, risk budget, cost and energy budget, deadline, and evaluation horizon.
+2. Inventory principals, portals, workers, stores, authority services, tools, datasets, effects, external providers, and evaluators as separate participants.
+3. Attest identity, owner or guardian, role, location, capability, software and policy version, security posture, readiness, and currentness.
+4. Classify the job's data, tool, physical-effect, network, rights, privacy, locality, verification, and retention obligations.
+5. Compile a typed job contract and task-local context lease with inputs, effects, outputs, evidence, expiry, revocation, fallback, rollback, and residual ownership.
+6. Prefilter nodes by identity, role, data class, tool authority, rights, locality, security, readiness, budgets, and verifier requirements.
+7. Build comparable capability, load, latency, bandwidth, battery, thermal, energy, monetary-cost, privacy-exposure, reliability, and dropout features for eligible nodes only.
+8. Solicit signed, expiring bids after filtering and retain both eligible and rejected-candidate evidence.
+9. Select the least-authority adequate lawful node, or record abstention, escalation, local-only fallback, or a justified deviation.
+10. Obtain task-bound human, guardian, multi-party, spending, physical-effect, or federation approval where required.
+11. Issue a task-local execution or federation lease with exact node, data, tools, effects, network, sandbox, verifier, expiry, revocation, and no-delegation bounds.
+12. Transfer only permitted data or opaque handles, never ambient memory, credentials, network visibility, or standing authority.
+13. Execute through a governed runtime adapter and monitor action, artifact, effect, resource, and anomaly events.
+14. On partition, stale authority, dropout, revocation, or policy drift, deny or quarantine high-impact mutation, require a fresh receipt, and preserve no-mutation evidence.
+15. Collect content-addressed artifact, effect, approval, cost, energy, latency, audit, verifier, recovery, and residual receipts with complete denominators.
+16. Roll back, requeue, compensate, or quarantine affected work and invalidate descendants when execution, authority, evaluation, node state, or evidence fails.
+17. Update scoped reliability, readiness, and reputation from adjudicated evidence without creating standing authority or deleting failures and residuals.
+18. Replay natural and adversarial campaigns against matched baselines and transfer settings before promoting any efficacy, safety, privacy, availability, efficiency, or federation claim.
+
+### Twelve interface owners
+
+The hive owns consumer-specific placement. It does not absorb the rest of the stack:
+
+| Owner | Hive handoff |
+|---|---|
+| Intent, Contracts, and Planning | Exact purpose, acceptance predicates, decomposition, dependencies, risk, budgets, deadlines, and re-contract triggers. |
+| VCM and Context Engineering | Task-local context, taint, provenance, locality, materialization, expiry, revocation, and non-authority. |
+| Routing, SCF, and Readiness | Candidate qualification, consumer-specific readiness, least-authority route choice, fallback, quarantine, and invalidation. |
+| Security, Privacy, Rights, Legal, and Constitutional layers | Identity, consent, guardian and affected-party rights, data/tool/network membranes, secrets, retention, and jurisdiction. |
+| Runtime Adapters, Tools, and Physical Effects | Lease enforcement, isolation, actions, monitoring, stop paths, and effect receipts. |
+| Humans, Labor OS, Family Governance, and Tribunals | Approval, escalation, contestability, accessibility, remedy, override, and operator workload. |
+| Resource Governance | Capacity, battery, thermal load, energy, bandwidth, money, attention, burst, scarcity, and complete cost attribution. |
+| Artifact Graphs, Evidence, and Claim Accounting | Artifact identity, lineage, evaluator output, negative results, evidence transitions, descendant invalidation, and residual custody. |
+| Procedural Memory, Data Governance, and Learning | Reuse, scoped reputation updates, contamination controls, retention, deletion, unlearning, and learned-state non-authority. |
+| Inter-Stack and Hive Federation | Cross-hive identity, lease negotiation, sandbox manifests, payment or credit, dispute, revocation, partition reconciliation, and exit. |
+| Project stewards and external providers | Project admission, publication and licensing boundaries, infrastructure custody, incident response, and handback. |
+| Release and Deployment | Versioned rollout, canary scope, monitoring, rollback readiness, public non-claims, decommissioning, and retirement. |
 
 ## Owned substrate and device roles
 
@@ -234,70 +277,88 @@ This is where VCM becomes physical. VCM decides what context is needed and which
 
 ## Invariants
 
-- Reachability is not authority.
-- Policy filtering precedes optimization.
-- A device is not a worker for a job unless its resource card permits the job's data, tool, network, and approval scope.
-- External work receives sandboxed job slots, not private network access.
-- Family and child-facing portals preserve dignity, consent boundaries, and parent or guardian review for sensitive transitions.
-- Secrets remain handles and approvals, not strings in model context.
-- Rented nodes can receive public, synthetic, encrypted, or scrubbed jobs only when the job contract permits that exposure.
-- Every temporary federation link has an expiration, revocation path, and audit record.
-- Partitioned stale authority routes to denial, quarantine, or fresh authority receipt before high-impact effects dispatch.
-- A grant/effect race is not closed until residual ownership, audit refs, and no-mutation evidence are recorded.
+1. Every admission and result is bound to exact versions of principal, household or project, job, use, policy, data, tool, node, runtime, evaluator, acceptance predicate, and horizon.
+2. Network reachability, physical possession, ownership, prior trust, or cheap capacity never implies identity, authorization, data access, or execution authority.
+3. Principal, portal, worker, store, authority service, evaluator, and external provider remain separately identified roles with no implicit privilege inheritance.
+4. Policy and readiness filtering always precede bidding, scoring, optimization, speculative execution, or data transfer.
+5. Effective authority is the intersection of principal, job, data, tool, node, runtime, rights, approval, budget, locality, and temporal ceilings; composition cannot increase it.
+6. Data remains within its permitted locality and disclosure class, and cross-node movement is explicit, minimal, purpose-bound, and receipted.
+7. Secrets and standing credentials remain opaque handles mediated by a trusted boundary rather than strings in prompts, logs, bids, artifacts, or model context.
+8. Human, guardian, multi-party, spending, and physical-effect approvals are informed, task-bound, revocable, expiring, and separable from mere portal interaction.
+9. External or rented work receives only an isolated task slot with explicit sandbox, network, data, effect, verifier, cleanup, expiry, and revocation boundaries.
+10. Under partition or stale authority, high-impact mutation fails closed or quarantines until a fresh receipt exists; safe stale-tolerant work is separately classified and no-mutation evidence is retained.
+11. Baseline and candidate routes receive matched information, resources, retries, authority, evaluators, time, and stopping rules unless a deviation is disclosed and analyzed.
+12. Every metric includes attempted, admitted, executed, completed, failed, abstained, escalated, dropped, rolled back, and missing cases so routing or availability cannot improve by denominator deletion.
+13. Latency, compute, bandwidth, battery, thermal load, energy, money, human approval, verification, recovery, and governance work are attributed per job and lifecycle.
+14. Dropout, cancellation, lease expiry, node loss, and partial output preserve recoverable state, requeue or compensation status, cleanup duties, and a named residual owner.
+15. Revocation, rollback, replacement, and retirement propagate through affected jobs, artifacts, caches, descendants, routes, approvals, credentials, and external effects.
+16. Family and child-facing operation preserves dignity, data minimization, age-appropriate explanation, affected-party rights, appeal, and minimal logging; safety does not license ambient surveillance.
+17. Replay records capture nondeterminism, environment, node state, policy, authority, data, resource conditions, evaluator version, missing artifacts, and irreproducible boundaries.
+18. Record-shape validation, finite theorem consequences, synthetic fixtures, imported metadata, and adjacent tool capability are never described as deployed scheduler, security, privacy, availability, efficiency, federation, or safety proof.
 
 The phrase "personal hive" should not be allowed to smuggle in surveillance. A family hive is not a parental monitoring system by default. It is a policy system whose goal is to give the right person or guardian the right approval point for the right transition while minimizing unnecessary observation.
 
 ## Failure modes
 
-The obvious failure is a botnet: a hive control layer starts executing arbitrary work across reachable machines, or malware learns to impersonate a hive scheduler. The architectural response is narrow leases, signed device cards, job contracts, tool allowlists, revocation, and no private-network access for external workers.
+1. **Botnet or malware conversion:** enrolled nodes execute untrusted or self-propagating work outside the task lease.
+2. **Surveillance conversion:** family, safety, productivity, or reliability telemetry becomes ambient monitoring or coercive control.
+3. **Data exfiltration:** private, family, project, licensed, or secret material reaches a rented, public, compromised, or overbroad node.
+4. **Wrong-node placement:** a capable route violates locality, tool, physical-risk, battery, thermal, quiet-hour, accessibility, rights, or approval constraints.
+5. **Identity or guardian confusion:** child, guest, agent, project, owner, operator, device, or service identities are conflated and authority crosses principals.
+6. **Memory swamp:** artifacts, logs, models, caches, replicas, and personal data accumulate without provenance, retention, deletion, revocation, or residual custody.
+7. **Optimizer-before-policy:** cost, latency, availability, reputation, or accelerator preference silently determines eligibility.
+8. **Stale-grant dispatch:** cached approval or authority continues through revocation, policy change, partition, clock skew, or lease expiry.
+9. **Partition availability laundering:** unsafe mutation counts as availability, denial lacks no-mutation proof, or reconciliation silently accepts conflicting effects.
+10. **Sandbox theater:** declared isolation omits network discovery, credentials, persistence, side channels, cleanup, nested delegation, or physical effects.
+11. **Secret materialization:** handles are resolved into prompts, logs, artifacts, caches, bids, or external-provider memory.
+12. **Approval fatigue or rubber stamping:** prompts are too frequent, vague, inaccessible, bundled, coercive, stale, or detached from actual effects.
+13. **Energy or cost laundering:** battery wear, thermal load, bandwidth, electricity, cloud spend, operator time, verification, and recovery disappear from efficiency claims.
+14. **Dropout loss:** node departure, sleep, network failure, cancellation, or lease expiry loses work, duplicates effects, strands data, or leaves no residual owner.
+15. **Federation authority creep:** temporary project or external access becomes standing network visibility, data access, tool authority, reputation, or onward delegation.
+16. **Evaluator, reputation, or bidding corruption:** collusion, self-report, sybil identity, shared failure, gaming, poisoning, or selective logging causes unsafe placement or promotion.
+17. **Offline or inaccessible residuals:** disputed effects, cleanup duties, revocations, costs, and missing artifacts vanish when a node or provider leaves.
+18. **SOTA theater:** synthetic records, finite proofs, imported reports, or a favorable single metric are promoted as useful, secure, private, available, efficient, or superior hive behavior.
 
-The social failure is surveillance. A system designed to help family members can become a memory and telemetry dragnet. The governance response is data minimization, topic-specific approvals, guardian checks for sensitive transitions, visibility into what is being recorded, and deletion or export paths.
-
-The privacy failure is data leakage to rented or public project nodes. A scheduler under cost pressure may send private context to cheap compute. Privacy control starts with policy-first scheduling, data-class rejection before bids, secret handles, scrubbed/synthetic job variants, and audit replay.
-
-The operational failure is wrong-device scheduling. A job may drain batteries, overheat machines, stall the network, interrupt work, or run a high-risk action on a device without the right human present. The scheduling contract uses operator-presence modes, energy budgets, thermal and battery constraints, quiet hours, and approval receipts.
-
-The identity failure is authority confusion. A child, guest, agent, project, or borrowed node can be mistaken for the owner or guardian. The identity boundary uses principal-specific identity, role-specific leases, and denial by default when identity or guardianship is ambiguous.
-
-The memory failure is a swamp. Logs, embeddings, screenshots, transcripts, models, tool outputs, and personal data accumulate without ownership or deletion. The hive memory contract uses VCM-style source binding, taint, retention classes, revocation, and evidence/reference separation.
-
-The distributed-governance failure is a grant/effect race. A portal revokes access, but a worker in another partition still sees an old grant; a project hive thinks a lease expired, but the rented node has not observed the update; a scheduler heals after a partition and cannot distinguish fresh permission from stale cached permission. The conservative route is to treat stale authority as a residual, not as dispatch authority: quarantine pending sync, request a fresh authority receipt, or require no-mutation denial evidence before closing the record.
+These are not merely a threat list. Each one needs a detector or adjudicator, a rejecting or quarantine route, a recovery or compensation path, complete denominators, and a named residual owner in the mature campaign.
 
 ## Minimum Viable Implementation
 
-The first implementation should be deliberately small:
+The current executable boundary is exact and small:
 
-- A local dashboard that lists devices and their signed resource cards.
-- Portal cards for phone, browser, laptop, and family surfaces.
-- A job queue that accepts only typed job contracts.
-- A policy-first scheduler that rejects nodes before scoring them.
-- Job bids recorded after filtering, not before.
-- A phone approval path for jobs that cross data, authority, physical-risk, or spending thresholds.
-- Federation lease records present but disabled by default.
-- A local artifact log with scheduling decisions, approvals, outputs, residuals, and revocation events.
-- No public federation, no autonomous spending, no private-data rented-node execution, and no background operation across family devices without explicit enrollment.
+- Seven public record schemas with valid fixtures: `DeviceResourceCard`, `PortalCard`, `HiveJobContract`, `HiveJobBid`, `HiveSchedulingDecision`, `HiveApprovalReceipt`, and `HiveFederationLease`.
+- One deterministic hive-admission harness with two accepted records and eight expected-invalid controls for policy-first scheduling, data locality, approval, guardian routing, sandboxed external work, audit refs, energy budgets, dropout residuals, and support-state non-promotion.
+- One deterministic partitioned-authority fixture with three accepted records and six expected-invalid controls for stale grants, delayed revocation, fresh authority receipts, grant/effect race custody, no-mutation evidence, CAP-style boundaries, and support-state non-promotion.
+- One accepted no-change evidence transition that keeps the partitioned-authority claim and chapter core at `argument`.
+- Thirty-eight live family declarations: seventeen reachable-lifecycle declarations plus twenty-one retained legacy route or negative consequences; five weaker projections or fixture-summary declarations are retired.
 
-This minimum viable hive can run as a local experiment without pretending to be a complete personal cloud. Its value is that it makes the missing control records visible.
+The bridge unfolds a repository-authored summary and proves finite consequences from it. It is useful executable record discipline, but it is not an independent replay of the Python fixture and not proof of scheduler behavior, partition tolerance, revocation propagation, or availability. The other declarations prove consequences of the modeled predicates; they do not establish that the predicates faithfully model a deployed system.
 
-This repository now contains the record-level first step for that experiment: `device_resource_card.schema.json`, `portal_card.schema.json`, `hive_job_contract.schema.json`, `hive_job_bid.schema.json`, `hive_scheduling_decision.schema.json`, `hive_approval_receipt.schema.json`, and `hive_federation_lease.schema.json`, each with a matching valid fixture. These fixtures establish only that the public record shapes can be validated by the local protocol validator.
+No live scheduler, registry, portal, authority service, network overlay, sandbox, federation, partition experiment, energy meter, device-dropout recovery, effect-complete rollback, privacy evaluation, security evaluation, natural workload, independent evaluator, reproduction, or transfer test ran. Therefore the current evidence supports no claim that a hive is useful, safe, private, available, efficient, robust, or superior.
 
-It also contains the bounded partitioned-authority fixture. That fixture is the minimum viable implementation of governance under partition: a finite record check that stale grants, revocation-delay cases, and grant/effect races cannot quietly become dispatch authority unless fresh receipt, residual ownership, audit refs, no-mutation evidence, support-state non-promotion, and non-claim boundaries are present.
+The next governed reference slice should stay deliberately bounded: at least two owned node classes and one isolated external-node class; a typed public or synthetic job corpus; signed resource and portal cards; policy-before-optimization; task-local context and execution leases; manual approval; actual sandbox enforcement; partition and revocation injection; complete artifact, effect, cost, energy, and residual receipts; dropout recovery and cleanup; descendant invalidation; and no public federation, autonomous spending, private-data external execution, or background family-device operation.
 
 ## Beyond the State of the Art
 
-Personal compute hives become valuable as an owned compute fabric for personal, family, project, and rented capacity. It lets the ASI Stack place work near the right data and device without turning reachability into authority, convenience into surveillance, or cheap compute into a privacy leak.
+The mature claim must be tested as a joint frontier, not advertised from an architecture diagram. The preregistered workload should include natural household document work, accessibility support, local retrieval and inference, workshop or physical-tool preparation, project builds and tests, storage and backup, public-data batch work, isolated rented compute, intermittent connectivity, and emergency or deadline pressure. Adversarial cohorts should stress identity and guardian confusion, bid and reputation gaming, stale grants, delayed revocation, network partition, exfiltration, malicious artifacts, sandbox escape, nested delegation, device dropout, duplicate effects, battery and thermal abuse, cost overruns, evaluator capture, surveillance pressure, and provider exit.
 
-Owned and rented devices form a policy-bounded compute fabric only when scheduling respects capability, locality, trust, cost, energy, data class, physical risk, and authority. Persons, devices, portals, workers, stores, datasets, tools, jobs, and external hives need signed identity and policy cards. Jobs are classified by data sensitivity, tool authority, physical-world risk, federation scope, cost, energy, and verification requirement before scheduling; eligible devices bid only after policy filtering; the scheduler chooses the best lawful node rather than the fastest reachable node.
+Matched baselines should include:
 
-Phones, laptops, tablets, dashboards, and headsets act as portals. Desktops, NAS boxes, old machines, workshop computers, and rented nodes act as bounded workers or stores. Device roles, family-sensitive portals, public project jobs, and hive memory classes stay separate so owned substrate does not collapse into surveillance or botnet behavior. Portal cards, approval receipts, job bids, federation leases, sandbox manifests, artifact manifests, evidence bundles, payment or credit records, reputation records, and revocations form the Hive-to-Hive protocol surface.
+- one manually selected device;
+- a cloud-only service;
+- manual placement across the same nodes;
+- a local-only policy;
+- cost-only and latency-only schedulers;
+- Kubernetes-, Nomad-, or Ray-like orchestration configured over the same substrate;
+- a conservative-denial policy;
+- and the complete governed hive.
 
-VCM declares what context is needed and what data may move. Talos and PlanForge lower tasks into typed jobs with resource, authority, and verification requirements. Octopus/RMI routing and TokenMana-style resource records score eligible devices and rented nodes. Field-of-God and SCF governance define family, child, privacy, physical-tool, and federation membranes. Project hives and artifact stewards interact through explicit job contracts, sandbox manifests, evidence bundles, and revocation paths.
+All arms receive the same jobs, information, hardware access, model and tool versions, authority ceilings, retries, evaluators, time, and stopping rules unless a preregistered difference is the intervention. Joint gates measure useful task success, unsafe execution, false denial and missed help, authority and rights violations, privacy exposure, data-locality breaches, availability and consistency by job class, latency, bandwidth, compute, battery, thermal load, energy, money, human approval and recovery work, security incidents, rollback and compensation, residual survival, and total lifecycle burden. No single accuracy, availability, cost, or latency win can dominate a material safety or rights failure.
 
-Reachability is not authority, policy filtering precedes optimization, external work receives sandboxed job slots rather than private network access, family and child-facing portals preserve dignity and review boundaries, secrets remain handles and approvals, and every temporary federation link has an expiration, revocation path, and audit record. Botnet-like execution, family-surveillance drift, private-data leakage to rented or public compute, battery or thermal abuse, authority confusion, and ungoverned artifact swamps should trigger device quarantine, approval reset, data revocation, escalation, or residual records instead of becoming normal capacity management.
+Causal ablations remove, one at a time, role separation, task-local context leases, policy-first filtering, least-authority choice, scoped approval, sandbox enforcement, fresh-authority receipts, partition quarantine, complete receipts, effect-complete recovery, reputation non-authority, and lifecycle invalidation. Each mechanism needs a preregistered causal signature: removing it should worsen the failure surface it is claimed to control without merely making the system refuse all work. The full stack must produce useful work rather than safety by abstention alone.
 
-The mature hive also needs partition-aware authority service behavior. Authority state, revocations, approvals, leases, and effect receipts would have freshness windows, partition indicators, denial-first high-impact defaults, reconciliation receipts, and human-visible residuals. The logical conclusion is not "always available action"; it is a hive that can keep working on safe, stale-tolerant tasks while refusing to let stale authority mutate protected state.
+An independently implemented evaluator and a second orchestration implementation must reproduce the conclusions. Transfer varies device classes, networks, models, tools, data classes, households and projects, external providers, jurisdictions, threat models, failures, updates, and time. Raw public-safe attempts, nulls, negative results, missing artifacts, human work, costs, and residuals remain visible. If the full hive is dominated, a causal signature fails, or transfer does not survive, the relevant claim is narrowed or refuted rather than protected by rhetoric.
 
-This personal compute hive is still a proposed architecture. Hive support remains at `argument` until node inventories, policy-first scheduler traces, privacy and offline-mode tests, energy/budget records, contribution ledgers, and portal-continuity checks show that owned edge compute can join the stack without becoming an unmanaged compute swarm.
+That campaign is the mature beyond-state-of-the-art target, not a current result. The present seven schemas, 2/8 admission fixture, 3/6 partition fixture, no-change transition, and finite proof envelope do not constitute that result.
 
 ## Codex test plan
 
@@ -326,14 +387,14 @@ This personal compute hive is still a proposed architecture. Hive support remain
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:personal_hives.scheduling.operational_invariant` | `AsiStackProofs.PersonalComputeHives` | A hive scheduler admits a job only when identity, data, tool, federation, and approval policy checks pass before optimization. | implemented |
-| `lean:personal_hives.policy_first.failure_blocks_promotion` | `AsiStackProofs.PersonalComputeHives` | A faster node cannot be selected when its policy membrane forbids the job's data, authority, or network scope. | implemented |
-| `lean:personal_hives.approval_gate.failure_blocks_promotion` | `AsiStackProofs.PersonalComputeHives` | A high-risk hive job that requires approval cannot execute unless a bound approval receipt is present. | implemented |
-| `lean:personal_hives.federation_lease.operational_invariant` | `AsiStackProofs.PersonalComputeHives` | External hive access requires an active lease with scope, sandbox, evidence, expiration, and revocation records. | implemented |
-| `lean:personal_hives.work_admission.lifecycle_route` | `AsiStackProofs.PersonalComputeHives` | A structured hive-work admission review routes malformed jobs, missing identity/data/tool policy, registry gaps, scheduler-policy gaps, high-risk jobs without portal approval, external access without leases or sandbox records, missing cost or energy budgets, missing dropout plans, missing audit receipt plans, missing residual owners, and support-promotion attempts without evidence transitions into explicit outcomes. | implemented |
-| `lean:personal_hives.partitioned_authority.fixture_bridge` | `AsiStackProofs.PersonalComputeHives` | A partitioned-authority fixture quarantines partitioned stale-grant revocation cases, requests fresh authority receipts after healing, rejects stale-grant dispatch and mutation without no-mutation evidence, preserves residual ownership, and blocks support-state promotion while making no deployed partition-tolerance claim. | implemented |
+| `lean:personal_hives.scheduling.operational_invariant` | `AsiStackProofs.HiveLifecycleRefinement` | A reachable Hive lifecycle preserves exact job, principal, contract, registry, candidate-set, selected-node, policy, authority, lease, evaluator, consumer, and residual custody through acknowledged closure while separating dispatch, useful-outcome, recovery, support, and effect accounting. | implemented |
+| `lean:personal_hives.policy_first.failure_blocks_promotion` | `AsiStackProofs.HiveLifecycleRefinement` | Incomplete policy, denominator, least-authority, locality, budget, energy, or dropout records block selection before optimization. | implemented |
+| `lean:personal_hives.approval_gate.failure_blocks_promotion` | `AsiStackProofs.HiveLifecycleRefinement` | A high-risk Hive job cannot execute without a bound approval receipt tied to the exact job and lease. | implemented |
+| `lean:personal_hives.federation_lease.operational_invariant` | `AsiStackProofs.HiveLifecycleRefinement` | External access requires federation, sandbox, scope, evidence, expiration, and revocation custody bound to the selected node. | implemented |
+| `lean:personal_hives.work_admission.lifecycle_route` | `AsiStackProofs.HiveLifecycleRefinement` | The independent consumer preserves all 47 policy, selection, lease, partition, execution, reconciliation, recovery, revocation, and closure outcomes. | implemented |
+| `lean:personal_hives.partitioned_authority.fixture_bridge` | `AsiStackProofs.HiveLifecycleRefinement` | Partitioned stale authority quarantines before mutation only with denial and no-mutation evidence; otherwise evidence is requested without inferring deployed partition tolerance or support. | implemented |
 
-These targets are implemented as finite record predicates. The current Lean envelope now includes negative-case theorems for missing bound approval on high-risk execution, missing lease-boundary fields on external hive access, lifecycle-route theorems for modeled hive-work admission gaps, and a partitioned-authority fixture bridge for stale-grant quarantine and fresh-receipt routing. It still does not prove a distributed scheduler, network boundary, rented-node sandbox, family-governance policy, privacy guarantee, approval-service behavior, partition tolerance, energy-aware scheduling, dropout recovery, audit replay, revocation propagation, or live federation behavior.
+The family now contains 38 live declarations: seventeen reachable-lifecycle declarations and 21 retained legacy consequences; five weak projections or fixture-summary declarations are retired. The independent consumer covers all 47 routes and rejects 53/53 mutations. These surfaces do not prove model adequacy or a distributed scheduler, network boundary, rented-node sandbox, family-governance policy, privacy guarantee, approval service, partition tolerance, energy-aware scheduling, dropout recovery, audit replay, revocation propagation, effect-complete rollback, useful work, transfer, or live federation behavior.
 
 ## Source crosswalk
 
@@ -369,9 +430,9 @@ Initial source records and conservative source notes now exist for the most impo
 
 ## Summary
 
-Personal Compute Hives make the ASI Stack materially personal. They give the architecture an owned substrate without pretending that every reachable machine is safe to use. The design center is simple: compile work into contracts, represent devices as bounded resources, reject unlawful nodes before optimizing, and record why execution happened where it happened. A complete implementation would let a person, family, or project use local and rented compute while keeping identity, privacy, authority, evidence, and revocation visible.
+Personal Compute Hives propose an owned placement substrate without pretending every reachable machine is safe to use. Their distinct responsibility is consumer-specific job admission and placement across separately owned portals, workers, stores, authority services, and external providers. The operational center is exact: freeze the job and authority boundary, attest roles, compile task-local leases, reject unlawful nodes before optimization, choose the least-authority adequate route, enforce the lease, and preserve complete artifact, effect, resource, recovery, and residual receipts.
 
-That shifts the focus from where work can run to how work and artifacts can become smaller. A hive can create pressure for compact generation, but compression is useful only when residual burden, verification cost, and fallback remain visible. The mature promise is not a cloudless cloud or a sentimental return to local machines. It is an authority-aware execution fabric where personal devices, homelab nodes, rented GPUs, and remote services can be admitted or refused by policy. The user should be able to ask why a job ran on a device, what data crossed the boundary, what proof or test was required, and how the node can be revoked. Without that ledger, federated compute becomes another hidden infrastructure dependency.
+The present evidence is deliberately narrower: seven schemas, 2 valid and 8 invalid admission fixtures, 3 valid and 6 invalid partition records, one no-change transition, and 26 finite Lean declarations. It proves neither useful hive behavior nor security, privacy, availability, efficiency, federation safety, or state-of-the-art performance. Those claims require the natural/adversarial, matched-baseline, causal, independent-reproduction, and transfer campaign defined above. That honesty matters because a hive can create pressure for compact generation, but compression is useful only when residual burden, verification cost, fallback, and displaced human work remain visible.
 
 ## Handoff
 

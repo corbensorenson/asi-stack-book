@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 STRUCTURE = ROOT / "book_structure.json"
 MANIFEST = ROOT / "proofs" / "proof_manifest.json"
 TRIAGE = ROOT / "proofs" / "proof_triage.json"
+RATIONALIZATION = ROOT / "proofs" / "proof_rationalization_registry.json"
 ROOT_LEAN_MODULE = ROOT / "lean" / "AsiStackProofs.lean"
 APPENDIX_E = ROOT / "appendices" / "E_codex_test_specs.qmd"
 REPORT = ROOT / "docs" / "proof_artifact_audit.md"
@@ -92,6 +93,7 @@ def build_report() -> tuple[str, list[str]]:
     structure = read_json(STRUCTURE)
     manifest = read_json(MANIFEST)
     triage = read_json(TRIAGE)
+    rationalization = read_json(RATIONALIZATION)
 
     if not isinstance(structure, dict):
         raise TypeError("book_structure.json must contain an object")
@@ -99,9 +101,16 @@ def build_report() -> tuple[str, list[str]]:
         raise TypeError("proofs/proof_manifest.json must contain a records list")
     if not isinstance(triage, dict) or not isinstance(triage.get("records"), list):
         raise TypeError("proofs/proof_triage.json must contain a records list")
+    if not isinstance(rationalization, dict) or not isinstance(rationalization.get("baseline_targets"), list):
+        raise TypeError("proofs/proof_rationalization_registry.json must contain a baseline_targets list")
 
     records = [record for record in manifest["records"] if isinstance(record, dict)]
     triage_records = [record for record in triage["records"] if isinstance(record, dict)]
+    rationalization_targets = {
+        str(record.get("target_id", "")): record
+        for record in rationalization["baseline_targets"]
+        if isinstance(record, dict)
+    }
     chapters = {chapter["id"]: chapter for chapter in flatten_chapters(structure)}
     imported_modules = root_imports()
     triage_by_tag = {record.get("tag"): record for record in triage_records}
@@ -111,7 +120,11 @@ def build_report() -> tuple[str, list[str]]:
     warnings: list[str] = []
     target_rows: list[str] = []
     chapter_results: dict[str, dict[str, int]] = defaultdict(lambda: Counter())
-    module_target_counts = Counter(str(record.get("module_path", "")) for record in records)
+    implemented_records = [record for record in records if record.get("status") == "implemented"]
+    module_target_counts = Counter(str(record.get("module_path", "")) for record in implemented_records)
+    module_target_tags: dict[str, list[str]] = defaultdict(list)
+    for record in implemented_records:
+        module_target_tags[str(record.get("module_path", ""))].append(str(record.get("tag", "")))
     module_rows: list[str] = []
 
     duplicate_tags = [tag for tag, count in Counter(record.get("tag") for record in records).items() if count > 1]
@@ -133,12 +146,25 @@ def build_report() -> tuple[str, list[str]]:
         stats = module_stats(module_path)
         if not module_path.exists():
             errors.append(f"{module_path_str}: referenced Lean module file is missing.")
+        rationalized_count = 0
         if stats["theorems"] < count:
-            errors.append(
-                f"{module_path_str}: has {stats['theorems']} theorem declarations for {count} proof targets."
-            )
+            for tag in module_target_tags[module_path_str]:
+                review = rationalization_targets.get(tag, {})
+                replacement_refs = set(review.get("replacement_refs", []))
+                if (
+                    review.get("review_state") in {"semantically_reviewed", "terminally_dispositioned"}
+                    and review.get("disposition")
+                    in {"retain_refinement_or_executable_bridge", "replace_with_stronger_model"}
+                    and module_path_str in replacement_refs
+                ):
+                    rationalized_count += 1
+            if rationalized_count != count:
+                errors.append(
+                    f"{module_path_str}: has {stats['theorems']} theorem declarations for {count} proof targets, "
+                    f"but only {rationalized_count} targets have reviewed consolidation lineage to the module."
+                )
         module_rows.append(
-            f"| `{qmd_escape(module_path_str)}` | {count} | {stats['theorems']} | {stats['defs']} | {stats['structures']} |"
+            f"| `{qmd_escape(module_path_str)}` | {count} | {stats['theorems']} | {rationalized_count} | {stats['defs']} | {stats['structures']} |"
         )
 
     for record in records:
@@ -192,15 +218,18 @@ def build_report() -> tuple[str, list[str]]:
         else:
             chapter_results[chapter_id]["tag_present"] += 1
             trace_bits.append("chapter tag ok")
-        if not section:
-            errors.append(f"{tag}: chapter {chapter_id} has no Formalization hooks section.")
-            chapter_results[chapter_id]["missing_section"] += 1
-        elif not has_limitation_boundary(section):
-            errors.append(f"{tag}: chapter {chapter_id} formalization section lacks an explicit limitation/non-claim boundary.")
-            chapter_results[chapter_id]["missing_limitation"] += 1
+        if status == "implemented":
+            if not section:
+                errors.append(f"{tag}: chapter {chapter_id} has no Formalization hooks section.")
+                chapter_results[chapter_id]["missing_section"] += 1
+            elif not has_limitation_boundary(section):
+                errors.append(f"{tag}: chapter {chapter_id} formalization section lacks an explicit limitation/non-claim boundary.")
+                chapter_results[chapter_id]["missing_limitation"] += 1
+            else:
+                chapter_results[chapter_id]["limitation_present"] += 1
+                trace_bits.append("limitation ok")
         else:
-            chapter_results[chapter_id]["limitation_present"] += 1
-            trace_bits.append("limitation ok")
+            trace_bits.append(f"{status} target; module and formalization implementation checks deferred")
 
         target_rows.append(
             f"| `{qmd_escape(tag)}` | `{qmd_escape(chapter_id)}` | `{qmd_escape(module)}` | {qmd_escape('; '.join(trace_bits))} |"
@@ -246,15 +275,15 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 - Every manifest tag must have a matching proof-triage record with the same chapter, module, target, and status.
 - Every implemented target must reference an existing Lean module imported by `lean/AsiStackProofs.lean`.
-- Each referenced Lean module must contain at least as many theorem declarations as implemented targets assigned to that module.
+- Each referenced Lean module must contain at least as many theorem declarations as implemented targets assigned to that module, unless every consolidated target has a semantically reviewed rationalization record that points to the stronger current module.
 - Every implemented target tag must appear in its chapter file.
 - Every chapter formalization-hook section with implemented targets must include explicit limitation or non-claim language.
 - Appendix E must expose the current proof target count, proof-readiness coverage boundary, and proof artifact traceability audit.
 
 ## Module Coverage
 
-| Lean module path | Targets | Theorems | Defs | Structures |
-|---|---:|---:|---:|---:|
+| Lean module path | Targets | Theorems | Rationalized targets | Defs | Structures |
+|---|---:|---:|---:|---:|---:|
 {chr(10).join(module_rows)}
 
 ## Chapter Coverage

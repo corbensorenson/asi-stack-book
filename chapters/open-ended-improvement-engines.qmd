@@ -4,10 +4,11 @@ chapter_id: "open-ended-improvement-engines"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 depth-leveled chapter"
-last_updated: "2026-07-13"
+last_updated: "2026-07-14"
 primary_sources:
   - "rmi"
   - "cognitive_loop_closure"
+  - "benchmaxxing"
   - "ext_poet_2019"
   - "ext_funsearch_2024"
   - "ext_voyager_2023"
@@ -16,9 +17,11 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "No ASI Stack improvement campaign, task generator, candidate archive, evaluator, or admission workflow has been executed."
-  - "No local result establishes autonomous discovery, safe open-ended learning, evaluator correctness, or recursive self-improvement."
-  - "The cited systems are source-setting comparators in their own environments and task scopes, not reproduced implementation evidence."
+  - "All eight assigned source notes are reviewed and mapped at their exact conceptual or source-setting boundary; no POET, FunSearch, Voyager, ADAS, Darwin Godel Machine, RMI, Cognitive Loop Closure, or Benchmaxxing system or result is reproduced."
+  - "The current seven Boolean records, ten rejecting mutations, and seven Lean route theorems test finite campaign-handoff fields only; no task or candidate generator, adaptive evaluator, evolving archive, qualification implementation, stop effect, hazardous artifact, or campaign portfolio ran."
+  - "The post-v2 and post-v2.1 campaigns mutate real local model state but use fixed registered arms, fixed tasks, finite epochs, and exact stopping; they establish no generated distribution, useful novelty, open-endedness, or autonomous expansion."
+  - "No matched no-search, fixed-task, conventional-search, human-authored, POET, FunSearch, Voyager, ADAS, or Darwin Godel baseline has been run on a natural workload; useful novelty, selection error, transfer, hazard, opportunity cost, independent replication, recursive depth, and portfolio effects remain unmeasured."
+  - "No support-state promotion is implied by this semantic review."
 ---
 
 ## Chapter status
@@ -28,12 +31,12 @@ open_evidence_gaps:
 | Chapter ID | `open-ended-improvement-engines` |
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
-| Last updated | 2026-07-13 |
-| Primary source records | `rmi`, `cognitive_loop_closure`, `ext_poet_2019`, `ext_funsearch_2024`, `ext_voyager_2023`, `ext_adas_2024`, `ext_darwin_godel_machine_2025` |
+| Last updated | 2026-07-14 |
+| Assigned source records | `rmi`, `cognitive_loop_closure`, `benchmaxxing`, `ext_poet_2019`, `ext_funsearch_2024`, `ext_voyager_2023`, `ext_adas_2024`, `ext_darwin_godel_machine_2025` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | POET, FunSearch, Voyager, ADAS, and Darwin Gödel Machine are passage-reviewed external comparators; local sources supply architecture vocabulary. No source system has been reproduced. |
-| Test state | An improvement-campaign admission fixture and generator-evaluator separation probe are planned. No campaign engine or candidate archive has run. |
+| Source loading state | All eight assigned source notes are reviewed and mapped. POET, FunSearch, Voyager, ADAS, and Darwin Gödel Machine remain source-setting comparators; RMI, Cognitive Loop Closure, and Benchmaxxing remain conceptual architecture sources. No source system has been reproduced. |
+| Test state | `python3 scripts/validate_open_ended_improvement_campaign.py` recomputes seven finite Boolean routes, checks seven Lean theorem names and the fixture digest, and rejects ten mutations. Post-v2 and post-v2.1 supply fixed stopped update campaigns. No generated task distribution, candidate search, evolving archive, independent evaluator behavior, stop effect, natural workload, or open-ended result exists. |
 
 ## Drafting guardrail
 
@@ -74,13 +77,15 @@ earns release.
 
 ## Problem
 
-An improvement system can generate tasks, candidates, curricula, tools, or
-designs faster than an organization can determine what they optimize, whether
-their evaluator is independent, or whether a retained artifact should affect a
-live capability. The danger is not only a dramatic self-modifying model. It is
-also a mundane search loop that slowly changes the task distribution, the
-selection criteria, the archive, or the deployment path until a score is doing
-more argumentative work than it can support.
+An adaptive search process can generate and select its own tasks, candidates,
+evaluators, curricula, archives, and follow-on campaigns faster than any score
+can reveal whether it found useful novelty, changed the denominator, hid
+failures and costs, produced hazardous artifacts, or acquired de facto
+authority through momentum. The danger is not only a dramatic self-modifying
+model. It is also a mundane search loop that slowly changes the representation,
+task distribution, selection criteria, archive, resource allocation, or reuse
+path until activity and a best-so-far score are doing more argumentative work
+than they can support.
 
 Open-ended search intensifies this problem because its input distribution is
 partly generated by the search itself. A task generator can select challenges
@@ -124,11 +129,19 @@ from finite authority and accountable stopping.
 
 Recursive-self-improvement controls are necessary but not sufficient. They
 govern a proposed change through evidence, evaluator separation, protected
-invariants, authority, monitoring, and rollback. They do not by themselves
-describe how an open-ended engine generates the proposal, chooses its next
-challenge, stores failed attempts, allocates budget, or separates a discovery
-score from the admission decision. Leaving that machinery implicit lets the
-generator shape the evidence handed to its own governor.
+invariants, authority, monitoring, and rollback. They do not own how an
+adaptive campaign defines its representation, generates the next challenge,
+selects parents, repairs candidates against repeated feedback, changes
+evaluators, allocates shared resources, retains hazardous or failed artifacts,
+or decides when search should stop. Leaving that machinery implicit lets the
+campaign curate the denominator and evidence handed to its own governor.
+
+A source-reported gain, novel environment, compiling program, skill-library
+entry, archive frontier, transfer score, self-verification trace, sandbox,
+complete record, or finite route theorem can all be real while still failing
+to establish useful open-ended improvement. Each is scoped by an objective,
+representation, model, generator, evaluator, exposure history, search budget,
+selection denominator, environment, and archive policy.
 
 External work makes the split concrete. POET couples environment generation
 and agent optimization in a specified reinforcement-learning setting, with
@@ -167,37 +180,52 @@ interchangeable.
 
 ## Core Claim
 
-[open-ended-improvement-engines.core, label: Design rationale, support: argument] A governed stack treats open-ended improvement as a separate, bounded generation campaign: it records objective and task-generator constraints, candidate provenance, evaluator scope and independence, resources, failures, residuals, archive status, and admission decisions; it allows no generated artifact to widen authority, alter protected policy, or enter a live capability field without independent qualification and the existing improvement governor.
+[open-ended-improvement-engines.core, label: Design rationale, support: argument] For a prospectively frozen consumer, purpose, legitimate objective, representation, campaign controller, task and candidate policy, evaluator and exposure policy, archive and hazard policy, resource and opportunity budget, stop authority, and evaluation horizon, open-ended improvement should operate as a bounded adaptive generation campaign in which every task, candidate, evaluation, failure, cost, reuse relation, and terminal outcome retains exact lineage; novelty, diversity, score, archive growth, transfer, self-verification, or search activity never grants authority or establishes useful improvement by itself; only separately qualified candidates may be handed to the existing self-improvement governor, and any change to the campaign's own objective, controller, evaluator authority, bounds, or admission interface is a separately authorized improvement proposal.
+
+The claim remains at `argument`. The local fixture has seven Boolean records,
+ten rejecting mutations, and seven branch theorems. The update campaigns are
+real but deliberately fixed and stopped. No local task generator, candidate
+generator, adaptive evaluator, evolving archive, effect-tested stop authority,
+hazardous payload, natural workload, independent replication, or transfer
+campaign has run.
 
 ## Mechanism
 
-- Start every campaign with a declared objective, allowed generator actions,
-  task or environment policy, evaluator contract, resource budget, archive
-  policy, residual register, and stop conditions.
-- Separate candidate generation, task generation, evaluation, archive
-  retention, and governance admission. A generator can propose; it cannot turn
-  its own score into a promotion decision.
-- Preserve accepted, rejected, quarantined, and superseded candidates with
-  evaluator/version provenance, failure reasons, costs, authority envelope,
-  and replay references.
-- Route a promising candidate through independent qualification, readiness,
-  rollback, monitoring, and authority checks before any canary or field
-  replacement.
+Before outcomes exist, freeze the consumer, purpose, legitimate objective,
+allowed claim, representation, campaign controller, task and candidate
+policies, evaluator and exposure policy, archive and hazard policy, resource
+and opportunity budget, stop authority, evaluation horizon, and support
+ceiling. These fields determine what the campaign is; changing them creates a
+new version and may require a separately authorized self-improvement proposal.
+
+Every generated task carries generator, policy, model, data, seed, parent,
+mutation, eligibility, novelty, difficulty, rejection, safety, and resource
+lineage. Every candidate carries parent and descendant identity, exact diff,
+dependencies, claimed mechanism, executable effects, authority envelope,
+hazards, intended consumers, and non-goals. Every evaluation carries evaluator
+identity and dependencies, calibration, exposure and feedback history,
+holdout status, cost, disagreement, outcome, and expiry.
+
+Objective authorship, task generation, candidate generation, evaluation,
+selection, archive custody, independent qualification, residual ownership,
+admission review, and publication remain separate roles. Generator-side
+self-verification can be useful filtering. It cannot become independent
+qualification merely because its result is written into a complete record.
 
 ```{mermaid}
 flowchart LR
-  O["Campaign objective and bounds"] --> G["Task and candidate generators"]
-  O --> S["Budget and stop authority"]
-  S --> G
-  G --> E["Scoped evaluator"]
-  E --> A["Candidate archive"]
-  A --> R["Residual and failure register"]
-  A --> Q{"Independent qualification complete?"}
-  Q -->|"no or unknown"| B["Quarantine / review / stop"]
-  Q -->|"bounded pass"| H["RSI, readiness, authority, rollback gates"]
-  H --> L["Canary or field-admission decision"]
-  B --> R
-  L --> R
+  O["Frozen purpose, representation, controller, bounds"] --> T["Task / environment generator"]
+  O --> S["Observed budgets + effect-tested stop"]
+  T --> G["Candidate generator + exact lineage"]
+  G --> E["Scoped evaluator + exposure ledger"]
+  E --> A["Append-only archive + hazard custody"]
+  A --> P["Portfolio, coverage, cost, residual ledger"]
+  A --> Q{"Fresh separate qualification?"}
+  Q -->|"no, disagreement, or hazard"| B["Research / quarantine / stop"]
+  Q -->|"scoped pass"| H["RSI, readiness, security, replacement gates"]
+  H --> L["Governor decision; no campaign authority"]
+  B --> P
+  L --> P
 ```
 
 **What the campaign flow shows:** a campaign has a direction but not a promotion
@@ -206,27 +234,28 @@ The archive and residual register keep that evidence inspectable. Only an
 independent qualification followed by the established governance gates can
 make the candidate eligible for a canary or a live capability decision.
 
-The first mechanism is campaign definition. The campaign declares what counts
-as an allowed task, candidate, resource expenditure, and stopping condition.
-That lets reviewers distinguish a useful research search from a process whose
-objective drifted into novelty, throughput, or proxy score accumulation. A
-campaign record must also say what it cannot generate or do: it is not a blank
-check to create tools with more authority, change protected policies, or spend
-unbounded compute.
+The archive uses append-only typed dispositions: duplicate, malformed,
+ineligible, unsafe, failed, null, stepping-stone, qualified, quarantined,
+superseded, retired, or deleted-with-receipt. A stepping stone becomes valuable
+through a dated downstream relation to an actual consumer; later reuse does not
+rewrite the original outcome. Executable, sensitive, dual-use, privacy-bearing,
+proprietary, or dangerous payloads can have stricter access, encryption,
+destruction, and distribution policies than their durable public-safe receipts.
 
-The second mechanism is evaluator separation. A campaign evaluator may be
-fast, narrow, or synthetic; that can be appropriate for early filtering. Its
-scope must remain explicit. A candidate that passes it has passed that
-evaluator, under that version and task distribution. It has not thereby passed
-an independent safety review, a deployment qualification, or a test of a wider
-capability claim. The separation is especially important when a generator can
-adapt to repeated evaluation feedback.
+Campaign reporting keeps family-level attempts, parent-selection probability,
+search coverage, under-sampled regions, repair rounds, evaluator changes,
+timeouts, discarded children, model calls, compute, latency, storage, human
+labor, opportunity cost, hazard, and cross-campaign contention. Best-only
+reporting is not an honest denominator. Novelty and diversity are relative to a
+declared representation and remain separate from semantic usefulness, safety,
+legitimacy, transfer, and consumer value.
 
-The third mechanism is archive honesty. The archive is not a trophy shelf. It
-retains why candidates were admitted, rejected, quarantined, or superseded;
-what they cost; what their evaluator saw; and what residuals remain. A future
-campaign can learn from failures without relabeling them as successes or
-forgetting the conditions that made a prior result misleading.
+The empirical comparison must include matched no-search, fixed-task-search,
+conventional-search, human-authored, and strongest relevant source-system
+baselines under equal tasks, models, tools, data, compute, latency, and human
+budgets. Task-generator, candidate-generator, evaluator, archive, controller,
+retention, resource, and qualification ablations must follow matched adaptive
+histories. A final frontier score alone cannot isolate which mechanism helped.
 
 ### Worked campaign trace: the faster agent that loses its stop boundary
 
@@ -263,17 +292,32 @@ the operational stack remains unaffected.
 
 ## Interfaces
 
-- **Data Engines** own the provenance and admissibility of examples, traces,
-  and training inputs used by a campaign.
-- **Benchmark Ratchets** own benchmark integrity and regression floors; this
-  chapter owns generator pressure, campaign stop conditions, and candidate
-  archive discipline.
-- **Procedural Memory** owns routable procedures after qualification; this
-  chapter owns their generation and pre-admission history.
-- **Policy Optimization** owns an approved update lease; this layer supplies
-  bounded candidate evidence and cannot authorize the update itself.
+- **Data Engines** own provenance, rights, deletion, contamination, and cohort
+  boundaries for campaign inputs and generated traces.
+- **Benchmark Ratchets**, **Safety Cases**, and **Evidence States** own
+  benchmark integrity, hidden and shifted evaluation, regression floors,
+  defeaters, evidence adequacy, and support-state consequences.
+- **Procedural Memory** owns qualified routable procedures; improvement campaigns own
+  their generation, exposure, archive history, hazards, and pre-admission
+  disposition.
+- **Policy Optimization** owns an approved update lease and causal update
+  state; campaign evidence cannot authorize or mislabel an update.
 - **Recursive Self-Improvement Boundaries**, **Stable Capability Fields**, and
-  **Readiness Gates** own promotion, authority, rollback, and monitoring.
+  **Readiness Gates** own promotion legitimacy, qualification, authority,
+  rollback, monitoring, and lifecycle admission.
+- **Security**, **SCIF**, **model-weight custody**, and **supply-chain** owners
+  govern sandbox effects, secrets, code execution, payload access, lineage,
+  revocation, disclosure, and incident recovery.
+- **Artifact Graphs and Replay** own content-addressed task, candidate,
+  evaluator, attempt, failure, archive, reuse, deletion, and reproduction
+  receipts.
+- **Resource Economics** owns compute, calls, latency, storage, evaluator,
+  human-review, opportunity, recovery, and governance budgets across the
+  campaign portfolio.
+- **Runtime Adapters and Approval Contracts** own observable pause, stop,
+  quarantine, rollback, tool-use, and human or institutional approval effects.
+- **Release records** own public disclosure, dual-use redaction, payload
+  distribution, reuse permission, and claims outside research scope.
 
 These boundaries prevent a discovery loop from becoming an unreviewed control
 plane. A task generator can create pressure, a search engine can create
@@ -284,17 +328,35 @@ spent, the failed alternatives, and the residual risks that remain.
 
 ## Invariants
 
-- A generated task, candidate, score, novelty metric, or self-verification
-  trace is not an admission or promotion decision.
-- Every campaign declares evaluator scope, resource budget, task-generator
-  constraints, stop conditions, and residual custody before generated
-  artifacts are considered for reuse.
-- A candidate cannot widen authority, alter protected policy, or replace a
-  live capability field without independent qualification and the existing
-  improvement governor.
-- Rejected, quarantined, and superseded candidates retain enough provenance to
-  explain selection bias, resource cost, and failure rather than disappearing
-  from the archive.
+- No generated task, candidate, novelty or diversity metric, evaluator score,
+  transfer result, self-verification trace, archive frontier, or complete
+  campaign record is an admission decision or proof of useful improvement.
+- Campaign objective, representation, controller, generator policies,
+  evaluator/exposure policy, archive/hazard policy, budgets, stop authority,
+  horizon, and support ceiling are prospective, versioned state.
+- Every task, candidate, repair, evaluation, timeout, failure, null, cost,
+  reuse event, and terminal outcome keeps exact lineage and disposition or an
+  explicit deletion receipt.
+- Generated-distribution, eligibility, novelty, difficulty, selection,
+  validation, and archive denominators cannot be rewritten after outcomes.
+- Evaluator exposure, feedback, shared dependencies, disagreement, and blind
+  spots are candidate and campaign state; same-family verification is not
+  independent qualification.
+- Failures, nulls, unsafe candidates, timeouts, over-budget arms, rejected
+  transfers, and discarded children remain visible to later selection and
+  reporting.
+- Resource and hazard budgets use observed consumption and cannot reset through
+  retries, children, forks, or successor campaign identities.
+- A stop owner must observe the trigger, act inside the required window, and
+  produce a verified effect; naming an owner is insufficient.
+- Controller, objective, evaluator-authority, bound, recursive-depth, and
+  admission-interface changes are separate improvement proposals.
+- No candidate or descendant gains field authority, protected-policy change,
+  tool permission, update, deployment, or publication without separate
+  qualification and the existing governor.
+- Every campaign ends, pauses, or hands off with one honest state, total
+  resource and governance cost, retained residuals and hazards, and accountable
+  owners.
 
 These invariants do not require a search engine to be useless until it is
 perfect. They require the system to make an honest distinction between a
@@ -350,24 +412,25 @@ which should be measured separately from candidate performance.
 
 ## Failure modes
 
-- **Objective drift:** task or environment generation makes proxy novelty look
-  like valuable improvement.
-- **Evaluator capture:** self-verification or repeated selection pressure turns
-  a campaign score into a capability or safety conclusion.
-- **Archive survivorship:** failed, costly, unsafe, or overprivileged
-  candidates disappear, making the retained set look more reliable than it is.
-- **Unauthorized admission:** a generated artifact enters a procedure library,
-  policy update, or capability field without authority, regression, rollback,
-  or monitor checks.
-- **Unbounded campaign:** search consumes budget or produces dual-use outputs
-  without stop authority, sandboxing, or residual ownership.
+Objective and measurement failures include objective, representation, and
+task-generator drift; adaptive evaluator overfitting; contamination; same-
+family self-verification laundering; novelty/diversity theater; false transfer;
+and null-result laundering. Each can make search activity or a proxy frontier
+look like useful discovery without producing consumer value.
 
-Each failure has a different repair. Objective drift calls for a task-policy
-and evaluator review. Evaluator capture calls for an independent check or a
-narrower claim. Archive survivorship calls for retained rejection and residual
-records. Unauthorized admission calls for a hard gate. Unbounded campaign calls
-for budget, scope, and stop enforcement. Conflating them as generic "alignment"
-risks solving none of them.
+Archive and accounting failures include best-only survivorship, discarded-
+child and timeout erasure, stepping-stone backfill, generator or archive
+collapse, hidden repair feedback, unreported model or human calls, budget reset
+through forks, and exclusion of opportunity, evaluator, safety, maintenance,
+and governance cost.
+
+Authority and safety failures include unauthorized admission, campaign-
+controller self-modification, ceremonial stop owners, recursive campaign
+explosion, cross-campaign contamination, dual-use or privacy-bearing payload
+escape, stale permission, and over-quarantine. Over-retention expands attack
+surface and descendant impact; over-deletion destroys reproducibility and
+negative knowledge. These require different owners and cannot be collapsed
+into a generic alignment residual.
 
 ## Strongest objections and surviving residuals
 
@@ -471,79 +534,67 @@ accelerator time, archive review, and human escalation spent on one family were
 unavailable to others. A campaign cannot claim broad exploration merely because
 its aggregate budget was large.
 
-The smallest honest implementation is a versioned improvement-campaign record.
-It names an objective; generator and task-policy limits; candidate identifier;
-evaluator and evaluator version; independent-review state; resource bill;
-failure or residual record; archive disposition; and a requested admission
-route. A deterministic fixture can block admission when independent evaluation,
-stop authority, or a residual owner is missing. It should record the candidate
-without pretending that the record demonstrates a useful discovery.
+The smallest honest engine is a preregistered, stopped, multi-round adaptive
+campaign on a public-safe natural program or tool workload. It compares a
+no-search incumbent, fixed-task search, conventional search, human-authored
+candidates, and generated-task search under matched tasks, models, tools, data,
+compute, latency, and human budgets. A separately implemented qualifier sees
+fresh cases and reports its dependencies and error.
 
-The first slice can use hand-authored candidates and toy task variants. That is
-enough to test the boundary between "candidate generated" and "candidate
-qualified." It is not enough to claim that the system learns a curriculum,
-discovers a new algorithm, solves a scientific problem, or runs an open-ended
-improvement process. Those claims require appropriate task-specific evidence,
-baselines, negative controls, and independent review.
+The packet retains every duplicate, malformed, ineligible, failed, null,
+hazardous, stepping-stone, qualified, timed-out, and over-budget outcome with
+exact exposure and resource history. It effect-tests one budget stop, one
+owner-triggered stop, and one quarantined dual-use or authority-seeking
+candidate. Its best candidate may reach governor review but receives no live
+authority. A negative result is terminal for the preregistered claim; a follow-
+up uses a new campaign identity and prospective budget.
 
-The executable packet should freeze a campaign record with objective and task
-policy digests, generator and evaluator identities, dependency disclosure,
-candidate lineage, validation exposure count, resource bill, stop authority,
-archive disposition, independent qualification, residual owner, requested
-consumer, and no-authority-grant boundary. Deterministic cases should admit one
-fully bounded candidate record and separately route missing independent
-qualification, missing stop authority, missing residual custody, evaluator
-self-certification, budget exhaustion, erased failure history, and attempted
-authority laundering.
-
-The first empirical campaign remains prospectively separate. It should compare
-a fixed-task search, a bounded generated-task campaign, and a no-search
-incumbent on public-safe program transformations. It must preregister task
-families, fresh qualification cases, cost and latency budgets, archive policy,
-dual-use exclusions, stop behavior, and a criterion for useful novelty that is
-not merely syntactic difference. Results should report admitted discoveries,
-false promotions, useful failures, evaluator disagreements, total resource and
-governance cost, and whether gains transfer to an unexposed task family. No
-result may authorize self-modification or deployment.
-
-A negative result is terminal for the preregistered claim, not an invitation to
-search post hoc for a friendlier task slice. Follow-up hypotheses may be
-recorded only as new campaigns with new identities and prospective budgets.
-That rule keeps the archive useful without turning it into an unlimited supply
-of undisclosed comparisons.
+The current artifact is narrower. Seven Boolean records, seven route theorems,
+and ten mutations check a digest-bound handoff shape. The post-v2 campaigns
+mutate real local model state but use fixed tasks and registered arms. Together
+they establish neither an adaptive generator-evaluator-archive engine nor useful
+open-ended novelty.
 
 ## Beyond the State of the Art
 
-The intended campaign portfolio runs several constrained discovery campaigns across
-simulations, program spaces, data curation, and tool design. Each campaign has
-an explicit objective, challenge provenance, evaluator suite, resource budget,
-archive, red-team route, dual-use review, and stop authority. It preserves
-counterexamples, failed candidates, evaluator changes, costs, and transfer
-limits so later reviewers can reconstruct why a discovery was considered and
-why it was or was not allowed to influence the operational stack.
+The mature target is a portfolio of constrained adaptive discovery campaigns
+across programs, tools, data, curricula, simulations, evaluators, and scientific
+hypotheses whose objectives remain socially and operationally reviewable. It
+preserves generated-distribution and candidate lineage, selection denominators,
+evaluator exposure and dependencies, negative and null search history, semantic
+novelty, consumer usefulness, dual-use and privacy custody, total resource and
+opportunity cost, cross-campaign contamination, stop effects, and typed reuse.
 
-The mature system can use generated environments, evolutionary search,
-automatic curricula, and program-search loops as research instruments. It
-does not make them sovereign. Generated artifacts pass into procedural memory,
-model updates, or capability fields only through independent qualification and
-governed replacement. The campaign can be paused, sandboxed, forked, or
-retired without destroying the evidence required to understand its effects.
+Strong current source systems and conventional search must be reproduced under
+matched budgets. Mechanism ablations, adversarial controls, independent
+replication, recursive-depth stress, and transfer decide exact claims. The
+campaign can stop without narrating activity as progress, and candidates enter
+procedural memory, updates, or capability fields only through separate
+qualification and governed replacement.
 
-This is a target architecture, not a claim that this repository has autonomous
-scientific discovery, safe recursive self-improvement, a reliable self-model,
-or open-ended general intelligence. A complete campaign record still does not
-prove that its evaluator is correct or that undiscovered failure modes are
-absent. Campaign identity persists across revisions and review cycles. It also
-cannot ensure the campaign's goal remains socially legitimate.
+This remains a research target. Neither a complete campaign record nor a
+frontier score proves evaluator correctness, objective legitimacy, undiscovered
+failure absence, autonomous scientific discovery, safe self-improvement,
+general improvement, AGI, or ASI.
+
+The decisive test is whether adaptive generation produces independently useful
+and transferable novelty after every failed, malformed, hazardous, duplicated,
+timed-out, and discarded attempt remains in the denominator. More search,
+activity, archive growth, or evaluator score is not progress when a matched
+fixed-task or conventional-search baseline achieves the same outcome with less
+risk and total cost.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Improvement-campaign admission fixture | Block a requested admission with missing independent evaluation, stop authority, or residual ownership. | implemented over seven finite records; no campaign engine or generated candidate ran |
-| Generator-evaluator separation probe | Check that a generator score cannot act as its own admission decision and that evaluator dependencies remain visible. | implemented as record routing and qualification-laundering mutations; no evaluator behavior measured |
-| Candidate archive and stop-boundary review | Preserve failure history and archive disposition while enforcing budget and stop ownership. | implemented as archive, budget, and stop routes; no evolving archive or search workload ran |
-| Authority-laundering negative control | Prevent a qualified candidate record from becoming its own admission authority. | implemented in Lean and the digest-bound fixture bridge |
+| Improvement-campaign admission fixture | Recompute seven declared handoff routes and ten mutations. | implemented; finite Boolean records only |
+| Generator/evaluator dependency and exposure test | Measure adaptive overfitting, contamination, self-verification, shared dependencies, disagreement, and fresh qualification error. | planned; current identity/dependency Booleans measure no behavior |
+| Natural adaptive campaign comparison | Compare no-search, fixed-task, conventional-search, human-authored, and generated-task arms under matched budgets. | planned; no natural campaign engine or candidate ran |
+| Archive denominator and hazard-custody test | Preserve every attempt, disposition, exposure, cost, selection probability, payload tier, deletion receipt, and typed reuse relation. | planned; current failure-history Boolean has no evolving archive |
+| Stop-effect and budget-reset test | Verify owner observation, action latency, pause/quarantine effect, and cumulative budget across retries, children, forks, and successor campaigns. | planned; current Boolean route observes no stop or resource effect |
+| Authority-laundering and controller-change test | Prevent candidate admission and route controller/objective/evaluator/bound changes as separate improvement proposals. | finite no-authority route implemented; real controller change not run |
+| Portfolio, causal-ablation, replication, and transfer test | Measure cross-campaign contamination, shared capacity, mechanism effects, independent reproduction, recursive depth, and unexposed transfer. | planned |
 
 ## Formalization hooks
 
@@ -605,21 +656,23 @@ chapter-core decision remains `no_change`.
 
 ## Summary
 
-Open-ended improvement needs a control plane of its own. It is not enough to
-govern the final change if the process that generated the change has hidden its
-task policy, evaluator limits, rejected alternatives, resource cost, or stop
-conditions. A campaign record makes that process reviewable without pretending
-that every search is dangerous or that every discovery is a capability advance.
+Open-ended improvement needs a control plane upstream of admission. The
+campaign owns generated distributions, candidates, evaluator exposure,
+selection denominators, archive and hazard custody, portfolio resources, and
+effect-tested stopping. It does not own live authority. Generation is
+permission to propose, not permission to act.
 
-The central discipline is simple: generation is permission to propose, not
-permission to act. By preserving provenance, evaluator scope, failures,
-residuals, and admission boundaries, the stack can explore more aggressively
-without asking a discovery engine to govern itself.
+The current record routes and stopped update campaigns establish only narrow
+bookkeeping boundaries. They do not show that adaptive search produces useful
+novelty, preserves an honest denominator, resists evaluator gaming, stops in
+practice, handles dangerous artifacts, beats strong search baselines, or
+transfers. The next honest step is the preregistered natural adaptive campaign
+with matched comparators, fresh qualification, full attempt retention, joint
+cost and hazard accounting, stop effects, causal ablations, replication, and
+transfer.
 
-It also leaves human reviewers room to challenge the objective, evaluation,
-and scope before a promising result crosses into operations.
-
-That distinction prevents research curiosity from becoming authority by momentum alone.
+Progress therefore means verified useful novelty under stopping and hazard
+constraints, not merely more generated activity.
 
 ## Handoff
 

@@ -1,0 +1,427 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+    "structured_atoms_reviewed": 73,
+    "prose_candidates_adjudicated": 69,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, all seven exact source mappings, the schema record, three-valid/six-invalid synthetic trace, all five external Circle structural receipt slices and their no-promotion boundaries, both proof targets, all six CoilAttentionMemory theorem declarations, every manifest atom, every prose candidate, test plan, source crosswalk, summary, and handoff. The sweep made the memory-object-, state-version-, request-, consumer-, workload-, structural-axis-, budget-, and time-specific State-Carry and Recurrence Admission Lease the distinct owner; expanded it to eighteen mechanisms, twelve interfaces, eighteen invariants, and eighteen failure modes; preserved zero chapter-core effect; and froze the natural-workload, matched-baseline, joint-burden, causal, independent-reproduction, and transfer campaign."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Named reads, KV reuses, sparse edges, fanout schedules, state carries, and recurrent steps for declared requests, tenants, consumers, workloads, models, tokenizers, layouts, budgets, rights, and horizons.",
+      "environment": "Seven exact mappings; one schema fixture; three valid and six invalid synthetic traces; five public-safe Circle structural receipt slices; two proof targets; six finite declarations. No deployed cache, sparse-attention system, recurrence controller, useful-memory campaign, independent reproduction, or transfer result is represented.",
+      "model": "A memory-object-, state-version-, request-, consumer-, workload-, structural-axis-, budget-, environment-, and time-specific admission lease over authority, provenance, address/winding, freshness, coverage, fanout, recurrence, progress, work, fallback, invalidation, expiry, and residuals.",
+      "authority": "This chapter owns structural admission of a named state carry or recurrent step only. Context/VCM, Proof Transport, Runtime/Serving, Routing, Deliberation, Resources, Verification, Security/Privacy/Rights, Artifacts, Readiness/Incident, Claims/Evidence, and Release retain their boundaries.",
+      "time": "Semantic review current through 2026-07-14; source, state, request, model, tokenizer, layout, policy, authority, rights, threat, consumer, workload, or time changes expire affected leases.",
+      "artifact": "Chapter and manifest; seven mappings; schema and synthetic traces; five Circle receipts; two targets; six declarations; semantic review; and future natural causal-transfer campaign."
+    },
+    "current_disposition": "retain_argument_with_structural_fixture_and_receipt_evidence_no_core_effect_pending_natural_memory_recurrence_campaign",
+    "assumptions": [
+      "State, source, authority, request, model, tokenizer, layout, epochs, address, winding, freshness, coverage, work, progress, fallback, rights, expiry, and residuals can be observed and versioned.",
+      "Strong full-attention, no-cache/recompute, FIFO/LRU, retrieval, recurrent, compressed-memory, state-space, fixed-depth, and direct baselines can run under matched information and resources.",
+      "Independent memory, recurrence, cache, scheduler, and evaluator implementations can measure structure, useful outcomes, resources, safety, rights, fallback, recovery, and residuals.",
+      "Stale, aliased, uncovered, duplicate, timed-out, OOM, fallback, recomputed, repaired, and refused cases remain in denominators.",
+      "Causal ablations, independent reproduction, and heterogeneous transfer can be frozen prospectively."
+    ],
+    "dependencies": [
+      "virtual-context-abi",
+      "context-transactions-snapshots-mounts-and-taint",
+      "mathematical-and-search-substrates",
+      "circle-calculus-and-proof-carrying-ai-contracts",
+      "governed-deliberation-and-test-time-scaling",
+      "resource-economics-and-token-budgets",
+      "verification-bandwidth-and-context-adequacy",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "artifact-graphs-audit-logs-and-replay",
+      "claim-ledgers-and-belief-revision"
+    ],
+    "strongest_counterclaim": "Ordinary full attention, recomputation, standard caches, retrieval, recurrent models, and simple stopping already dominate; structural leases add overhead without improving useful memory, reasoning, safety, or recovery.",
+    "falsifier": "Matched natural workloads show no unique joint benefit or reveal stale/alias/leakage, coverage, progress, fallback, cost, rights, reproduction, or transfer failures; or weak baselines, synthetic convenience, hidden maintenance, shared evaluators, or imported external results explain the apparent gain.",
+    "required_lanes": [
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze current memory, cache, recurrence, long-context, retrieval, and adaptive-compute comparators without importing reported results."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify non-widening authority, request isolation, deletion, rights, stopping, fallback, expiry, and residual ownership."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify state transitions, noninterference, invalidation, progress, liveness, budget conservation, fallback reachability, and runtime refinement beyond finite projections."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Run real cache, sparse, retrieval, recurrence, failure, fallback, invalidation, recovery, and attack behavior."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure structural events, useful retrieval/reasoning, calibration, tails, all resources, safety, rights, repair, recovery, and residuals jointly."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate winding, provenance, freshness, repair, recurrent state, progress, stopping, and fallback under matched budgets."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Reproduce independently and transfer across tasks, lengths, models, hardware, organizations, attacks, rights regimes, and time."
+      }
+    ],
+    "evidence_refs": {
+      "chapter": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+      "synthetic": "experiments/cyclic_memory_contracts/",
+      "memory_receipt": "docs/circle_cyclic_memory_receipt_slice.md",
+      "kv_receipt": "docs/circle_kv_cache_receipt_slice.md",
+      "sparse_receipt": "docs/circle_sparse_attention_receipt_slice.md",
+      "fanout_receipt": "docs/circle_strided_fanout_receipt_slice.md",
+      "recurrence_receipt": "docs/circle_recurrence_receipt_slice.md",
+      "lean": "lean/AsiStackProofs/CoilAttentionMemory.lean",
+      "manifest": "book_structure.json"
+    },
+    "contrary_evidence": [
+      "The synthetic harness and all Circle slices establish structural record boundaries only, not deployed or learned behavior.",
+      "The sparse Circle fixture explicitly records incomplete coverage and substantial repair, not sparse-attention success.",
+      "Scheduled recurrence work savings are finite modeled quantities, not measured latency, memory, energy, or useful-compute gains.",
+      "Six declarations are two direct projections and four negative cases; none proves cache semantics, noninterference, progress, liveness, useful memory, or transfer.",
+      "No chapter-core transition, natural workload campaign, independent reproduction, or heterogeneous transfer exists."
+    ],
+    "known_confounds": [
+      "Model, tokenizer, sequence length, task mix, cache layout, batching, hardware, kernel, retrieval index, and tuning can dominate outcomes.",
+      "Synthetic traces and fixed external receipts omit evolving request concurrency, poisoning, failures, drift, and deployment state.",
+      "Shared controller, cache implementation, evaluator, trace generator, or data can create false agreement.",
+      "Averages can hide rare cross-request leakage, aliasing, stale tails, coverage gaps, and overthinking.",
+      "Short horizons can miss invalidation lag, deletion failures, lock-in, maintenance, rebound compute, and recovery debt."
+    ],
+    "acceptance_criteria": [
+      "Every lifecycle stage has a producer, consumer, valid case, rejecting mutation, consequence, recovery route, and residual owner.",
+      "A real reference slice executes natural memory and recurrence work with request isolation, authority, full baselines, failures, fallback, invalidation, recovery, and complete metrics.",
+      "The campaign clears joint useful-outcome, structural, safety, rights, tail, resource, recovery, causal, reproduction, and transfer gates.",
+      "Each mechanism produces its predicted signature under matched ablation without weak baselines, hidden work, censored failures, shared evaluation, or extra resources."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to exact object, state, request, tenant, consumer, workload, model, tokenizer, layout, baseline, budget, evaluator, rights, environment, and horizon.",
+      "Separate structural validity, freshness, coverage, modeled work, cache behavior, retrieval, reasoning, resources, safety, deployment, transfer, and SOTA.",
+      "Unknown isolation, maintenance cost, delayed invalidation, fallback, recovery, reproduction, transfer, or rights remains residual or blocked."
+    ],
+    "refutation_criteria": [
+      "Refute an invariant when reachable traces permit authority widening, cross-request reuse, hidden winding, stale admission, unreported gaps, duplicate inflation, self-extension, or broken fallback.",
+      "Refute a mechanism benefit when matched ablation preserves or improves the joint frontier or weak baselines, extra resources, hidden maintenance, synthetic traces, or shared evaluation explain it.",
+      "Refute retrieval, reasoning, context, efficiency, safety, deployment, transfer, or SOTA language when only structural evidence exists."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only when a more precise state-carry owner supersedes the atom and every state, lease, receipt, cache, descendant, transition, incident, residual, and consumer migrates with lineage."
+    ],
+    "promotion_ceiling": "argument_until_natural_memory_recurrence_causal_campaign_with_independent_reproduction_and_transfer",
+    "reproduction": {
+      "command": "python3 scripts/validate_cyclic_memory_contracts.py && python3 scripts/validate_circle_cyclic_memory_receipt_slice.py && python3 scripts/validate_circle_kv_cache_receipt_slice.py && python3 scripts/validate_circle_sparse_attention_receipt_slice.py && python3 scripts/validate_circle_strided_fanout_receipt_slice.py && python3 scripts/validate_circle_recurrence_receipt_slice.py && cd lean && lake build AsiStackProofs.CoilAttentionMemory",
+      "environment_lock": "Local synthetic fixtures, imported public-safe Circle structural summaries, and finite module current through 2026-07-14; natural campaign not frozen or run.",
+      "artifact_digest": null,
+      "evaluator_identity": "Current validators and imported summaries are local/authored or from one Circle checkout; independent cache, recurrence, scheduler, evaluator, attack, and transfer implementations are required."
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "coil-attention-cyclic-memory-and-recurrence-contracts",
+      "next_unblocking_condition": "Freeze and run natural memory and recurrence workloads with strong matched controls, request isolation, complete costs, causal ablations, fallback/recovery, independent implementations/evaluators, and heterogeneous transfer."
+    },
+    "non_claims": [
+      "A source, theorem, schema, synthetic trace, external receipt, modeled work count, validator, or green build does not establish useful memory, retrieval, reasoning, context length, efficiency, safety, deployment, transfer, or SOTA.",
+      "No Circle or external recurrent-model result is imported as a local learned-memory result.",
+      "No support, release, AGI, or ASI state changes through this review."
+    ]
+  },
+  "atom_reviews": {
+    "coil-attention-cyclic-memory-and-recurrence-contracts.core": {
+      "current_disposition": "retain_distinct_state_carry_and_recurrence_admission_lease_owner_at_argument",
+      "strongest_counterclaim": "Ordinary memory and recurrence methods dominate without the structural lease.",
+      "falsifier": "Natural matched campaigns show no unique benefit or fail isolation, progress, cost, rights, recovery, reproduction, or transfer gates.",
+      "promotion_ceiling": "argument_until_natural_independently_reproduced_causal_transfer_campaign"
+    }
+  },
+  "prose_candidate_dispositions": {
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.eb604ea29b95": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.278b9af7ad49": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.989b3ed40ce4": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.5b74aa8921a0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.0bac7570915e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.9aea48f4cd3d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.4a0a94f3b5c2": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.072565e3b8e3": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.7f92b2cc76e1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.b32e94e325a6": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.f21607966767": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.e88370eb6ebe": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.7de38f823d49": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.6440188d6b7a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.1177ff4251bd": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.2adc047eac28": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.348989f2388d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.62d19a17a058": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.e4ac2f8039ca": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.c15271073756": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.8b6a1ca3cd4d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.2d4f81da3ad3": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.7405213c4c7a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.142c3d1b66fd": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.090a23d22076": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.b30813640b56": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.17204d9a675c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.628e05abbd9e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.4f423e554f7b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.1632fcef05e9": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.d091345e53a3": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.fd8827d60f85": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.db3b2137c877": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.94c80eb5845f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.531e5da0905f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.d76539794118": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.5f1db448524f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.e8dbe9c70db9": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.eca62f5c3f13": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.f61f4a915535": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.cf3ed1eae634": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.0a17700ae952": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.11040ecaf205": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.09c0a38bab7a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.78ad0d6dd953": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.584c2223cd43": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.ce0151e8b3a4": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.934371c74d49": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.c63eda1a004e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.4a749d1f9932": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.e26dcd203e54": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.6f7eb7ffbe40": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.32ef964901e0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.aff0769852d8": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.79ff1e9fab98": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.a75fb6bf70e7": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.48af8c808d4b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.9aac69dc3ee4": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.50aa4d4bdfc8": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.6ea642dce695": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.cad1c1c75b4c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.a88ead9b1d61": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.825c40a1040c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.5cf54ff08454": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.03b62c3ef1cb": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.3cfb7eb6c397": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.413cf7adcb9b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.e67a0fca4363": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    },
+    "coil-attention-cyclic-memory-and-recurrence-contracts.prose.fc29e7b68940": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom."
+    }
+  },
+  "non_claims": [
+    "Completing this sweep does not establish useful memory, retrieval, reasoning, context length, efficiency, safety, deployment, transfer, or SOTA.",
+    "The current fixtures, receipts, and declarations remain structural-only evidence.",
+    "No chapter-core support, release, AGI, or ASI state changes through this review."
+  ]
+}

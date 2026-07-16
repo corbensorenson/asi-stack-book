@@ -1,0 +1,572 @@
+{
+  "schema_version": "asi_stack.artifact_reality_refinement.v1",
+  "result_id": "artifact-reality-refinement-2026-07-15-local",
+  "source_sha256": {
+    "lean_model": "e9ab2a86fe18687157e4356fdafbc6bf7429946cac474f4423800137b3053190"
+  },
+  "input_suites": [
+    {
+      "suite_id": "artifact_graph_replay",
+      "valid_count": 2,
+      "expected_invalid_count": 6,
+      "suite_passed": true,
+      "validator_sha256": "6d62e7594ab232f502a23f0288da0a04baf0f7aac809bfbb263d47fae64ff3a1"
+    },
+    {
+      "suite_id": "record_reality_sequence",
+      "valid_count": 1,
+      "expected_invalid_count": 4,
+      "suite_passed": true,
+      "validator_sha256": "f40518c8f54efe80f7008a25331c5c17fbf231500020d749c97d39bb47f0e87c"
+    },
+    {
+      "suite_id": "receipt_faithfulness",
+      "valid_count": 3,
+      "expected_invalid_count": 6,
+      "suite_passed": true,
+      "validator_sha256": "6ca3052e07feec5ba05ffe3b6c36298935f401f55440f1de502a2adb1ffd0ab9"
+    },
+    {
+      "suite_id": "receipt_repository_audit",
+      "valid_count": 4,
+      "expected_invalid_count": 5,
+      "suite_passed": true,
+      "validator_sha256": "6bfee222611963c1ff453d31f20958c4f1590def124e86f72924ac44116dd7db"
+    },
+    {
+      "suite_id": "receipt_repository_challenge",
+      "valid_count": 4,
+      "expected_invalid_count": 5,
+      "suite_passed": true,
+      "validator_sha256": "7e11b29c5e4fb9f15b130594a7698c10ec33c46e34be8f92cd05e3121d7ec19e"
+    },
+    {
+      "suite_id": "artifact_live_attestation",
+      "valid_count": 1,
+      "expected_invalid_count": 7,
+      "suite_passed": true,
+      "validator_sha256": "f49cbf96e9e5948b14d790727eddae6c7f405d46bef7c56700283cf3039045e5"
+    },
+    {
+      "suite_id": "artifact_randomized_attestation",
+      "valid_count": 4,
+      "expected_invalid_count": 8,
+      "suite_passed": true,
+      "validator_sha256": "0c6207c72d9f8138dc7dae24983c6cc371d498279fe3177396b03cf09be4a23a"
+    },
+    {
+      "suite_id": "epistemic_tcb",
+      "valid_count": 3,
+      "expected_invalid_count": 6,
+      "suite_passed": true,
+      "validator_sha256": "1c7fb94c76dbc9ab82ca62a796e1e5352c71a8487efb01a0ad307bbfeb7127f9"
+    }
+  ],
+  "reachable_stage_count": 7,
+  "route_case_count": 33,
+  "route_coverage": [
+    {
+      "case_id": "wrong_stage",
+      "expected_route": "reject_wrong_stage",
+      "observed_route": "reject_wrong_stage"
+    },
+    {
+      "case_id": "artifact_substitution",
+      "expected_route": "reject_artifact_substitution",
+      "observed_route": "reject_artifact_substitution"
+    },
+    {
+      "case_id": "lineage_substitution",
+      "expected_route": "reject_lineage_substitution",
+      "observed_route": "reject_lineage_substitution"
+    },
+    {
+      "case_id": "event_replay",
+      "expected_route": "reject_event_replay",
+      "observed_route": "reject_event_replay"
+    },
+    {
+      "case_id": "authority_leak",
+      "expected_route": "reject_authority_leak",
+      "observed_route": "reject_authority_leak"
+    },
+    {
+      "case_id": "artifact_missing",
+      "expected_route": "request_artifact_record",
+      "observed_route": "request_artifact_record"
+    },
+    {
+      "case_id": "parent_missing",
+      "expected_route": "request_parent_job",
+      "observed_route": "request_parent_job"
+    },
+    {
+      "case_id": "source_missing",
+      "expected_route": "request_source_and_context",
+      "observed_route": "request_source_and_context"
+    },
+    {
+      "case_id": "transaction_missing",
+      "expected_route": "request_transaction_and_certificate",
+      "observed_route": "request_transaction_and_certificate"
+    },
+    {
+      "case_id": "tool_missing",
+      "expected_route": "request_tool_claim_and_test_links",
+      "observed_route": "request_tool_claim_and_test_links"
+    },
+    {
+      "case_id": "audit_missing",
+      "expected_route": "request_audit_trail",
+      "observed_route": "request_audit_trail"
+    },
+    {
+      "case_id": "metadata_missing",
+      "expected_route": "request_replay_metadata",
+      "observed_route": "request_replay_metadata"
+    },
+    {
+      "case_id": "grade_insufficient",
+      "expected_route": "request_replay_grade",
+      "observed_route": "request_replay_grade"
+    },
+    {
+      "case_id": "limits_missing",
+      "expected_route": "request_replay_limits",
+      "observed_route": "request_replay_limits"
+    },
+    {
+      "case_id": "certificate_stale",
+      "expected_route": "request_active_certificate",
+      "observed_route": "request_active_certificate"
+    },
+    {
+      "case_id": "replay_unvalidated",
+      "expected_route": "request_replay_validation",
+      "observed_route": "request_replay_validation"
+    },
+    {
+      "case_id": "observation_missing",
+      "expected_route": "request_observed_artifact",
+      "observed_route": "request_observed_artifact"
+    },
+    {
+      "case_id": "cross_check_missing",
+      "expected_route": "request_independent_cross_check",
+      "observed_route": "request_independent_cross_check"
+    },
+    {
+      "case_id": "trap_failed",
+      "expected_route": "request_trap_challenge",
+      "observed_route": "request_trap_challenge"
+    },
+    {
+      "case_id": "attestation_unbounded",
+      "expected_route": "request_attestation_limits",
+      "observed_route": "request_attestation_limits"
+    },
+    {
+      "case_id": "core_missing",
+      "expected_route": "request_trusted_core",
+      "observed_route": "request_trusted_core"
+    },
+    {
+      "case_id": "root_missing",
+      "expected_route": "request_root_of_trust",
+      "observed_route": "request_root_of_trust"
+    },
+    {
+      "case_id": "verifier_not_independent",
+      "expected_route": "request_independent_verifier",
+      "observed_route": "request_independent_verifier"
+    },
+    {
+      "case_id": "recursion_stop_missing",
+      "expected_route": "request_recursion_stop",
+      "observed_route": "request_recursion_stop"
+    },
+    {
+      "case_id": "outside_residual_missing",
+      "expected_route": "request_outside_tcb_residual",
+      "observed_route": "request_outside_tcb_residual"
+    },
+    {
+      "case_id": "revocation_incomplete",
+      "expected_route": "request_revocation_closure",
+      "observed_route": "request_revocation_closure"
+    },
+    {
+      "case_id": "consumer_unacknowledged",
+      "expected_route": "request_consumer_acknowledgment",
+      "observed_route": "request_consumer_acknowledgment"
+    },
+    {
+      "case_id": "registration_accepted",
+      "expected_route": "accept_registration",
+      "observed_route": "accept_registration"
+    },
+    {
+      "case_id": "provenance_accepted",
+      "expected_route": "accept_provenance_binding",
+      "observed_route": "accept_provenance_binding"
+    },
+    {
+      "case_id": "replay_accepted",
+      "expected_route": "accept_replay_validation",
+      "observed_route": "accept_replay_validation"
+    },
+    {
+      "case_id": "reality_accepted",
+      "expected_route": "accept_reality_cross_check",
+      "observed_route": "accept_reality_cross_check"
+    },
+    {
+      "case_id": "trust_accepted",
+      "expected_route": "accept_trust_binding",
+      "observed_route": "accept_trust_binding"
+    },
+    {
+      "case_id": "admission_accepted",
+      "expected_route": "accept_admission",
+      "observed_route": "accept_admission"
+    }
+  ],
+  "mutation_count": 53,
+  "mutation_rejection_count": 53,
+  "mutation_receipts": [
+    {
+      "mutation_id": "register_artifact_id",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_artifact_substitution"
+    },
+    {
+      "mutation_id": "register_artifact_version",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_artifact_substitution"
+    },
+    {
+      "mutation_id": "register_content_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_artifact_substitution"
+    },
+    {
+      "mutation_id": "register_parent_job_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_lineage_substitution"
+    },
+    {
+      "mutation_id": "register_source_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_lineage_substitution"
+    },
+    {
+      "mutation_id": "register_context_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_lineage_substitution"
+    },
+    {
+      "mutation_id": "register_transaction_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_lineage_substitution"
+    },
+    {
+      "mutation_id": "register_certificate_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_lineage_substitution"
+    },
+    {
+      "mutation_id": "register_tool_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_lineage_substitution"
+    },
+    {
+      "mutation_id": "register_claim_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_lineage_substitution"
+    },
+    {
+      "mutation_id": "register_test_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_lineage_substitution"
+    },
+    {
+      "mutation_id": "register_policy_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_artifact_substitution"
+    },
+    {
+      "mutation_id": "register_consumer_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_artifact_substitution"
+    },
+    {
+      "mutation_id": "register_artifact_missing",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "request_artifact_record"
+    },
+    {
+      "mutation_id": "register_not_produced",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "request_artifact_record"
+    },
+    {
+      "mutation_id": "register_parent_missing",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "request_parent_job"
+    },
+    {
+      "mutation_id": "register_support_leak",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_authority_leak"
+    },
+    {
+      "mutation_id": "register_external_effect",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_authority_leak"
+    },
+    {
+      "mutation_id": "bind_source_missing",
+      "rejected": true,
+      "terminal_stage": "registered",
+      "failure_route": "request_source_and_context"
+    },
+    {
+      "mutation_id": "bind_context_missing",
+      "rejected": true,
+      "terminal_stage": "registered",
+      "failure_route": "request_source_and_context"
+    },
+    {
+      "mutation_id": "bind_transaction_missing",
+      "rejected": true,
+      "terminal_stage": "registered",
+      "failure_route": "request_transaction_and_certificate"
+    },
+    {
+      "mutation_id": "bind_certificate_missing",
+      "rejected": true,
+      "terminal_stage": "registered",
+      "failure_route": "request_transaction_and_certificate"
+    },
+    {
+      "mutation_id": "bind_tool_missing",
+      "rejected": true,
+      "terminal_stage": "registered",
+      "failure_route": "request_tool_claim_and_test_links"
+    },
+    {
+      "mutation_id": "bind_claim_missing",
+      "rejected": true,
+      "terminal_stage": "registered",
+      "failure_route": "request_tool_claim_and_test_links"
+    },
+    {
+      "mutation_id": "bind_test_missing",
+      "rejected": true,
+      "terminal_stage": "registered",
+      "failure_route": "request_tool_claim_and_test_links"
+    },
+    {
+      "mutation_id": "bind_audit_missing",
+      "rejected": true,
+      "terminal_stage": "registered",
+      "failure_route": "request_audit_trail"
+    },
+    {
+      "mutation_id": "bind_event_replay",
+      "rejected": true,
+      "terminal_stage": "registered",
+      "failure_route": "reject_event_replay"
+    },
+    {
+      "mutation_id": "replay_metadata_missing",
+      "rejected": true,
+      "terminal_stage": "provenance_bound",
+      "failure_route": "request_replay_metadata"
+    },
+    {
+      "mutation_id": "replay_grade_insufficient",
+      "rejected": true,
+      "terminal_stage": "provenance_bound",
+      "failure_route": "request_replay_grade"
+    },
+    {
+      "mutation_id": "replay_limits_missing",
+      "rejected": true,
+      "terminal_stage": "provenance_bound",
+      "failure_route": "request_replay_limits"
+    },
+    {
+      "mutation_id": "replay_certificate_stale",
+      "rejected": true,
+      "terminal_stage": "provenance_bound",
+      "failure_route": "request_active_certificate"
+    },
+    {
+      "mutation_id": "replay_unvalidated",
+      "rejected": true,
+      "terminal_stage": "provenance_bound",
+      "failure_route": "request_replay_validation"
+    },
+    {
+      "mutation_id": "replay_content_substitution",
+      "rejected": true,
+      "terminal_stage": "provenance_bound",
+      "failure_route": "reject_artifact_substitution"
+    },
+    {
+      "mutation_id": "replay_support_leak",
+      "rejected": true,
+      "terminal_stage": "provenance_bound",
+      "failure_route": "reject_authority_leak"
+    },
+    {
+      "mutation_id": "replay_external_effect",
+      "rejected": true,
+      "terminal_stage": "provenance_bound",
+      "failure_route": "reject_authority_leak"
+    },
+    {
+      "mutation_id": "reality_observation_missing",
+      "rejected": true,
+      "terminal_stage": "replay_validated",
+      "failure_route": "request_observed_artifact"
+    },
+    {
+      "mutation_id": "reality_cross_check_missing",
+      "rejected": true,
+      "terminal_stage": "replay_validated",
+      "failure_route": "request_independent_cross_check"
+    },
+    {
+      "mutation_id": "reality_trap_failed",
+      "rejected": true,
+      "terminal_stage": "replay_validated",
+      "failure_route": "request_trap_challenge"
+    },
+    {
+      "mutation_id": "reality_limits_missing",
+      "rejected": true,
+      "terminal_stage": "replay_validated",
+      "failure_route": "request_attestation_limits"
+    },
+    {
+      "mutation_id": "reality_event_replay",
+      "rejected": true,
+      "terminal_stage": "replay_validated",
+      "failure_route": "reject_event_replay"
+    },
+    {
+      "mutation_id": "reality_support_leak",
+      "rejected": true,
+      "terminal_stage": "replay_validated",
+      "failure_route": "reject_authority_leak"
+    },
+    {
+      "mutation_id": "reality_external_effect",
+      "rejected": true,
+      "terminal_stage": "replay_validated",
+      "failure_route": "reject_authority_leak"
+    },
+    {
+      "mutation_id": "trust_core_missing",
+      "rejected": true,
+      "terminal_stage": "reality_cross_checked",
+      "failure_route": "request_trusted_core"
+    },
+    {
+      "mutation_id": "trust_root_missing",
+      "rejected": true,
+      "terminal_stage": "reality_cross_checked",
+      "failure_route": "request_root_of_trust"
+    },
+    {
+      "mutation_id": "trust_self_verifier",
+      "rejected": true,
+      "terminal_stage": "reality_cross_checked",
+      "failure_route": "request_independent_verifier"
+    },
+    {
+      "mutation_id": "trust_recursion_stop_missing",
+      "rejected": true,
+      "terminal_stage": "reality_cross_checked",
+      "failure_route": "request_recursion_stop"
+    },
+    {
+      "mutation_id": "trust_outside_residual_missing",
+      "rejected": true,
+      "terminal_stage": "reality_cross_checked",
+      "failure_route": "request_outside_tcb_residual"
+    },
+    {
+      "mutation_id": "trust_lineage_substitution",
+      "rejected": true,
+      "terminal_stage": "reality_cross_checked",
+      "failure_route": "reject_lineage_substitution"
+    },
+    {
+      "mutation_id": "admit_revocation_incomplete",
+      "rejected": true,
+      "terminal_stage": "trust_bound",
+      "failure_route": "request_revocation_closure"
+    },
+    {
+      "mutation_id": "admit_consumer_missing",
+      "rejected": true,
+      "terminal_stage": "trust_bound",
+      "failure_route": "request_consumer_acknowledgment"
+    },
+    {
+      "mutation_id": "admit_event_replay",
+      "rejected": true,
+      "terminal_stage": "trust_bound",
+      "failure_route": "reject_event_replay"
+    },
+    {
+      "mutation_id": "admit_support_leak",
+      "rejected": true,
+      "terminal_stage": "trust_bound",
+      "failure_route": "reject_authority_leak"
+    },
+    {
+      "mutation_id": "admit_external_effect",
+      "rejected": true,
+      "terminal_stage": "trust_bound",
+      "failure_route": "reject_authority_leak"
+    }
+  ],
+  "final_state": {
+    "stage": "admitted",
+    "receipt_count": 6,
+    "reality_observation_count": 1,
+    "support_assignment_count": 0,
+    "external_effect_count": 0
+  },
+  "support_state_effect": "none",
+  "non_claims": [
+    "No open-world provenance completeness, causal provenance, artifact truth, content correctness, or source truth is established.",
+    "No replay determinism, semantic equivalence, replay-engine correctness, receipt faithfulness in general, or verifier correctness is established.",
+    "No external independence, root-of-trust security, compromise absence, repository completeness, or revocation propagation is established.",
+    "No support, evidence, readiness, release, or external-effect authority is assigned by the artifact lifecycle.",
+    "No natural workload, usefulness, causal advantage, safety, deployment, reproduction, transfer, SOTA, AGI, or ASI is established.",
+    "No chapter-core support state changes; the support-state effect is none."
+  ]
+}

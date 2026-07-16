@@ -1,0 +1,627 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "system-boundaries-and-authority",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/system-boundaries-and-authority.qmd",
+    "structured_atoms_reviewed": 35,
+    "prose_candidates_adjudicated": 43,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the full chapter, manifest fields, diagrams and tables, all four formal targets, all 43 scanner candidates, and every unscanned invariant and failure-mode bullet. The 2026-07-15 reconciliation also reviewed the reachable grant-to-effect model, its six-event witness, six authority fixtures, executed local effect and rollback, two pre-effect denials, five revocation entries, nine governed scenarios, and 38 rejecting mutations; physically retired one projection-only theorem; and preserved zero chapter-core support effect."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Attempted external effects, privileged information transitions, approval decisions, delegated operations, replays, and cross-domain handoffs in governed AI-system workflows.",
+      "environment": "Controlled ASI Stack reference slices, six synthetic authority fixtures, one sandboxed local effect with exact rollback, two pre-effect denials, five replayable revocation entries, nine bounded governed repository scenarios, and 38 semantic mutations; production identity providers, operating-system isolation, concurrent/distributed revocation, hardware roots, and open-world deployments are outside current evidence.",
+      "model": "A substrate-neutral logical authority system with a reachable sequential grant-to-effect refinement binding abstract grant, principal, operation, target, ceiling, epoch, expiry, remaining-use, approval, dispatch, observation, revocation, and rollback state; identities and receipts remain trusted finite inputs rather than authenticated enforcement facts.",
+      "authority": "A prospectively named issuer and revocation authority controls each grant; author, model, process, tool, or session capability does not create runtime permission, and trust in issuer identity or enforcement is an explicit assumption.",
+      "time": "Semantic review current through 2026-07-15; policies, grant versions, clocks, revocation epochs, adapter versions, and threat models must be frozen for outcome-bearing campaigns.",
+      "artifact": "chapters/system-boundaries-and-authority.qmd, authority-transition and authority-tuple records, permission and revocation harnesses, `AsiStackProofs.AuthorityEffectRefinement`, the independent authority-effect consumer result/receipt/dossier, raw public-safe traces, campaign records, and evidence-transition decisions"
+    },
+    "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+    "contrary_evidence": [
+      "Least privilege, complete mediation, capability systems, and confused-deputy analysis substantially predate this architecture, so the chapter cannot claim novelty for typed or authority-bearing permissions.",
+      "A consistent authority tuple can be self-reported by a compromised executor while effects occur outside the declared domain; record consistency is not enforcement.",
+      "Ambient user or process authority can be simpler and more usable for low-impact work, while complete mediation can impose latency, false refusal, and operational burden.",
+      "The repository currently has schemas, synthetic fixtures, finite Lean predicates, and cross-artifact replay traces but no deployed authorization service, live revocation propagation, independently attacked tool wrapper, trusted clock, or hardware-root evidence."
+    ],
+    "known_confounds": [
+      "An incomplete effect inventory can make unauthorized side effects invisible to the authority checker.",
+      "The same component may issue, execute, receipt, and evaluate a grant, creating circular evidence and false independence.",
+      "Clock skew, cache delay, network partitions, replay windows, eventual consistency, and TOCTOU races can make expiry and revocation appear correct in offline traces while failing live.",
+      "A signed or schema-valid receipt can be truthful about fields yet false about the actual executor, target, effect, or hardware state.",
+      "False refusal, approval fatigue, emergency overrides, operator workarounds, and governance latency can move authority failures outside the recorded path.",
+      "Task mix, effect severity, adapter implementation, policy complexity, and principal identity quality can confound comparisons with ambient or coarser controls."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to the exact permission classes, effects, adapters, identity provider, domains, clock/revocation semantics, and adversarial cases actually exercised.",
+      "Separate record completeness, finite formal routing, sandbox behavior, deployed enforcement, security robustness, hardware-root evidence, and whole-system safety.",
+      "Where target-owner authenticity or complete effect mediation is assumed rather than tested, state the result as conditional on those trust roots."
+    ],
+    "refutation_criteria": [
+      "Refute an authority invariant when a reachable effect or admission violates it under the declared assumptions or when the relevant tuple field has no behavioral consumer.",
+      "Refute a causal failure claim when matched ablation does not increase unauthorized effects or authority ambiguity within the frozen uncertainty rule.",
+      "Refute any superiority reading when a strong capability-security or policy-enforcement comparator supplies equal or stronger authorization behavior with lower joint cost."
+    ],
+    "deprecation_criteria": [
+      "Deprecate an atom only when a more precise canonical authority owner supersedes it and all schemas, proofs, fixtures, chapters, appendices, runtime consumers, and reader references migrate with lineage."
+    ],
+    "promotion_ceiling": "argument_until_claim_specific_campaign_and_accepted_evidence_transition",
+    "reproduction": {
+      "command": null,
+      "environment_lock": null,
+      "artifact_digest": null,
+      "evaluator_identity": null
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "system-boundaries-and-authority",
+      "next_unblocking_condition": "Freeze the authority reference slice, ambient/coarse/capability-based comparators, effect inventory, identity and clock roots, live revocation protocol, adversarial confused-deputy and replay workload, and useful-throughput/unsafe-effect gates after P2/P3 semantics exist."
+    },
+    "non_claims": [
+      "Semantic review and typed records do not establish deployed enforcement, security, correct issuer identity, trusted time, complete mediation, hardware roots, safety, AGI, or ASI.",
+      "A denial receipt proves only the declared record path unless an independent observer binds it to actual no-effect behavior.",
+      "Finite Lean predicates and synthetic mutations do not establish open-world authorization robustness or support-state promotion."
+    ]
+  },
+  "atom_reviews": {
+    "system-boundaries-and-authority.core": {
+      "proposition_type": "normative",
+      "assumptions": [
+        "Every governed external effect or privileged information transition can be assigned a prospective operation, target, permission class, and execution domain.",
+        "Grant issuers, revocation authorities, principal identity, time or epoch, and tuple integrity are supplied by named trust roots rather than inferred from the executor.",
+        "Every effect path has a consumer that checks the tuple before mutation and an observer that can distinguish effect from denial afterward."
+      ],
+      "dependencies": [
+        "system-boundaries-and-authority.mechanism.004",
+        "system-boundaries-and-authority.mechanism.007",
+        "system-boundaries-and-authority.invariant.001",
+        "system-boundaries-and-authority.invariant.007",
+        "system-boundaries-and-authority.invariant.008",
+        "runtime-adapters-tool-permissions-and-human-approval.core"
+      ],
+      "strongest_counterclaim": "Existing capability-based security, ordinary RBAC/ABAC, sandboxing, or a trusted ambient session can govern the intended effects with less complexity, while the unified tuple creates false assurance and operational overhead.",
+      "falsifier": "A reachable governed effect occurs without a valid prospectively bound tuple, a tuple-valid effect violates its permission class, scope, ceiling, lifecycle, delegation, or receipt obligation, or a strong matched comparator achieves equal authorization and audit behavior with lower joint cost.",
+      "required_lanes": [
+        {"lane": "source-synthesis", "necessity": "Position the tuple against least privilege, complete mediation, capability systems, confused-deputy controls, and current agent-security mechanisms without novelty laundering."},
+        {"lane": "normative", "necessity": "Justify which effects require explicit authority and which trust roots and hard constraints the architecture chooses."},
+        {"lane": "formal", "necessity": "Check finite ceiling, permission, lifecycle, delegation, and no-ambient-authority obligations."},
+        {"lane": "executable", "necessity": "Bind real adapter effects and denials to tuple consumers and independent no-mutation/effect observations."},
+        {"lane": "empirical", "necessity": "Measure unauthorized effect, false refusal, approval burden, latency, recovery, and useful throughput."},
+        {"lane": "causal", "necessity": "Ablate tuple fields, mediation, independent approval, revocation, and receipts under matched attacks."},
+        {"lane": "transfer", "necessity": "Repeat across tools, permission classes, domains, models, and identity/revocation implementations."}
+      ],
+      "acceptance_criteria": [
+        "Every declared effect path consumes the exact tuple before mutation and produces independently observed effect or no-effect evidence afterward.",
+        "The reference slice meets preregistered unsafe-effect, false-refusal, latency, approval-burden, and useful-throughput gates against strong matched controls across the declared transfer set."
+      ]
+    },
+    "system-boundaries-and-authority.problem.001": {
+      "proposition_type": "normative",
+      "current_disposition": "research_problem_not_positive_result",
+      "assumptions": ["Authorization behavior must be challengeable at cross-layer effects rather than inferred from system intent or component competence."],
+      "dependencies": ["asi-is-a-stack-not-a-model.interface.001"],
+      "strongest_counterclaim": "Existing operating-system, cloud, organizational, and tool permissions already identify the relevant principals and effects, so a stack-specific vocabulary is redundant.",
+      "falsifier": "The intended cross-layer effect set can be tested and replayed with unambiguous principal, operation, target, lifecycle, delegation, and receipt ownership using existing controls alone, with no missing ASI Stack-specific identity.",
+      "required_lanes": [
+        {"lane": "normative", "necessity": "Define the authorization questions the book commits to answering."},
+        {"lane": "source-synthesis", "necessity": "Determine whether existing security vocabularies already cover them."},
+        {"lane": "executable", "necessity": "Attempt to express representative cross-layer traces using both existing and proposed records."}
+      ],
+      "acceptance_criteria": ["A dated gap analysis identifies at least one material cross-layer effect whose authorization question is ambiguous under the selected existing controls and becomes prospectively testable under the proposed identities."],
+      "promotion_ceiling": "argument_as_problem_definition_no_safety_promotion"
+    },
+    "system-boundaries-and-authority.insufficiency.001": {
+      "proposition_type": "source-synthesis",
+      "assumptions": ["Role labels, prompts, and ambient identity are evaluated as implemented, without silently importing a separate permission broker or equivalent typed policy."],
+      "dependencies": ["system-boundaries-and-authority.mechanism.007"],
+      "strongest_counterclaim": "A sufficiently reliable model policy plus coarse process permissions can preserve permission classes and lifecycle rules without explicit per-effect tuples.",
+      "falsifier": "A matched role/prompt/ambient-identity control distinguishes and enforces all six permission classes, delegation, expiry, revocation, independent approval, and cross-domain consent at the same effect coverage and equal or lower joint cost without an equivalent authority record.",
+      "required_lanes": [
+        {"lane": "source-synthesis", "necessity": "Review strong prompt-isolation, information-flow, tool-wrapper, capability, RBAC, and ABAC comparators."},
+        {"lane": "executable", "necessity": "Implement strict ambient and typed controls over the same adapters and effects."},
+        {"lane": "causal", "necessity": "Remove explicit class and lifecycle state while holding model and operating-system permissions fixed."},
+        {"lane": "empirical", "necessity": "Measure class collapse, stale authorization, unsafe effects, refusal, and overhead."}
+      ],
+      "acceptance_criteria": ["The strict ambient control fails a prospectively material class or lifecycle gate that the typed control passes, with no claim beyond the tested effect set."]
+    },
+    "system-boundaries-and-authority.minimum.001": {
+      "proposition_type": "executable",
+      "assumptions": ["The minimum demonstrates record and decision semantics only, and every field has an exercised consumer or is removed."],
+      "dependencies": ["system-boundaries-and-authority.mechanism.004", "system-boundaries-and-authority.interface.002", "system-boundaries-and-authority.interface.003"],
+      "strongest_counterclaim": "The large tuple and fixtures are schema theater that validate self-consistent metadata without binding to actual effects or domain ownership.",
+      "falsifier": "A required tuple or lifecycle field can be omitted, forked, or corrupted without changing its expected decision; a cross-domain or revoked case is allowed; or no observer binds receipts to effect/no-effect behavior.",
+      "required_lanes": [
+        {"lane": "executable", "necessity": "Run valid and invalid transitions through tuple, permission, domain, revocation, receipt, and protocol/hardware consumers."},
+        {"lane": "formal", "necessity": "Check finite route behavior while preserving self-report and trust-root limits."}
+      ],
+      "acceptance_criteria": ["Every required field has a behavioral consumer, all seeded identity/lifecycle/class mutations reach exact failures, valid traces reach bounded decisions, and independent observations distinguish effect from denial."],
+      "promotion_ceiling": "synthetic-test-backed_for_exact_authority_record_workflow_only_after_transition"
+    },
+    "system-boundaries-and-authority.beyond_sota.001": {
+      "proposition_type": "composite",
+      "claim_label": "Speculative",
+      "current_disposition": "research_target_not_current_result",
+      "assumptions": ["The authority type system can mediate heterogeneous principals and effect paths without losing usability or relying on one ambient root."],
+      "dependencies": ["system-boundaries-and-authority.core", "integrated-reference-architecture.core"],
+      "strongest_counterclaim": "The mature target repackages established capability security and policy enforcement, while universal per-route typing is infeasible, bypassable, or too costly for real AI workflows.",
+      "falsifier": "The mature system leaves a declared effect path unmediated, fails adversarial lifecycle or confused-deputy gates, is dominated by a strong capability-security comparator, or does not transfer across permission classes, domains, and implementations.",
+      "required_lanes": [
+        {"lane": "source-synthesis", "necessity": "Freeze the exact prior-art and current strong comparator envelope."},
+        {"lane": "normative", "necessity": "Declare non-aggregable human-control and hard-authority constraints."},
+        {"lane": "executable", "necessity": "Implement end-to-end mediation, revocation, receipts, recovery, and challenge across all named principals and routes."},
+        {"lane": "empirical", "necessity": "Measure attack resistance, useful throughput, refusal, latency, operator burden, and recovery."},
+        {"lane": "causal", "necessity": "Ablate each claimed type-system component under matched attacks."},
+        {"lane": "transfer", "necessity": "Require cross-tool, cross-domain, cross-model, and cross-policy transfer."}
+      ],
+      "acceptance_criteria": ["Every declared effect path is mediated and independently observed, exact adversarial and usability gates pass, and the system meets the frozen non-dominance or Pareto criterion against reproduced strong comparators on the transfer set."],
+      "promotion_ceiling": "speculative_target_until_exact_SOTA_adjudication"
+    },
+    "system-boundaries-and-authority.mechanism.001": {
+      "proposition_type": "normative",
+      "assumptions": ["Each term has a noncircular operational definition and stable identifier."],
+      "dependencies": [],
+      "strongest_counterclaim": "The vocabulary duplicates standard principals, permissions, capabilities, policies, and delegation terminology without adding testable distinctions.",
+      "falsifier": "Two materially different authority states map to the same declared term and decision, or a term has no unique consumer or failure consequence beyond existing security vocabulary.",
+      "required_lanes": [
+        {"lane": "source-synthesis", "necessity": "Crosswalk terms to established security and governance definitions."},
+        {"lane": "normative", "necessity": "Justify retained differences and ownership."},
+        {"lane": "executable", "necessity": "Exercise each retained term in valid and invalid decisions."}
+      ],
+      "acceptance_criteria": ["Every retained term has one canonical definition, serialization, consumer, and distinct failure consequence; redundant terms are merged with lineage."]
+    },
+    "system-boundaries-and-authority.mechanism.002": {
+      "proposition_type": "formal",
+      "assumptions": ["Information access and external effect authority are separately observable for the tested operation."],
+      "dependencies": ["system-boundaries-and-authority.mechanism.007"],
+      "strongest_counterclaim": "Access to sensitive information necessarily implies some authorized use, so strict separation creates unusable or artificial states.",
+      "falsifier": "A read or transform grant authorizes disclose, write, execute, or approve without an explicit transition, or a matched separation design cannot preserve useful read/transform work within the frozen refusal budget.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Specify non-implication between permission classes."},
+        {"lane": "executable", "necessity": "Attempt class-promotion attacks through real adapters and data flows."},
+        {"lane": "causal", "necessity": "Compare separated and collapsed classes at matched information access."},
+        {"lane": "empirical", "necessity": "Measure unsafe promotion and useful-task refusal."}
+      ],
+      "acceptance_criteria": ["All unauthorized class promotions fail before effect, while authorized read and transform work remains within the preregistered useful-throughput and false-refusal gates."]
+    },
+    "system-boundaries-and-authority.mechanism.003": {
+      "proposition_type": "executable",
+      "assumptions": ["Required authority and authorized defaults are declared before the request."],
+      "dependencies": ["system-boundaries-and-authority.interface.003"],
+      "strongest_counterclaim": "Failing closed on missing authority produces excessive false refusal; a model or ambient session can safely infer permission for routine cases.",
+      "falsifier": "A missing required authority record yields an effect rather than denial/escalation, or fail-closed behavior exceeds the frozen false-refusal/latency budget without reducing unsafe effects.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Define missing, defaulted, denied, and escalated states."},
+        {"lane": "executable", "necessity": "Inject absent, malformed, stale, conflicting, and authorized-default records."},
+        {"lane": "empirical", "necessity": "Measure unsafe inference, false refusal, latency, and escalation burden."},
+        {"lane": "causal", "necessity": "Compare fail-closed, ambient-inference, and bounded-default policies."}
+      ],
+      "acceptance_criteria": ["All missing required authority fails closed or uses a prospectively authorized bounded default, and the policy meets the exact unsafe-effect and useful-throughput gates."]
+    },
+    "system-boundaries-and-authority.mechanism.004": {
+      "proposition_type": "executable",
+      "assumptions": ["Tuple fields refer to one effect attempt and can be joined across planning, routing, execution, receipt, replay, and revocation."],
+      "dependencies": ["system-boundaries-and-authority.core"],
+      "strongest_counterclaim": "A single tuple is over-normalized; subsystem-local identifiers with a correlation map are more reliable and scalable.",
+      "falsifier": "Two fields fork across subsystems without detection, a historical tuple authorizes a new epoch, a tuple field has no consumer, or tuple joining adds more inconsistency than a strong correlation-map comparator.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Specify identity continuity, scope narrowing, and epoch constraints."},
+        {"lane": "executable", "necessity": "Replay cross-system traces and mutate each identity field."},
+        {"lane": "empirical", "necessity": "Measure join failure, overhead, and stale-replay detection against a strong alternative."}
+      ],
+      "acceptance_criteria": ["Independent replay joins every stage to one tuple, all seeded forks and stale epochs are rejected, and join/latency overhead remains within the frozen budget."]
+    },
+    "system-boundaries-and-authority.mechanism.005": {
+      "proposition_type": "normative",
+      "assumptions": ["Domain and role owners can be authenticated independently of the requesting executor."],
+      "dependencies": ["system-boundaries-and-authority.invariant.005"],
+      "strongest_counterclaim": "Separate domain, budget, trace, and revocation owners create organizational overhead without improving enforcement over one trusted service owner.",
+      "falsifier": "Cross-domain effects proceed without authenticated target-owner approval, ownership conflicts are unresolved, or separation adds no detection/resistance benefit in matched laundering attacks while exceeding the cost gate.",
+      "required_lanes": [
+        {"lane": "normative", "necessity": "Define accountability and permitted co-location of owner roles."},
+        {"lane": "executable", "necessity": "Exercise source/target approval, denial, ownership conflict, and revocation."},
+        {"lane": "causal", "necessity": "Compare separated and co-located ownership under matched attacks."},
+        {"lane": "empirical", "necessity": "Measure laundering detection, delay, and operator burden."}
+      ],
+      "acceptance_criteria": ["Every cross-domain effect has authenticated target-owner approval, conflicts fail closed, and the chosen ownership topology meets the frozen security/usability gate."]
+    },
+    "system-boundaries-and-authority.mechanism.006": {
+      "proposition_type": "source-synthesis",
+      "assumptions": ["Protocol and hardware evidence lanes have prospectively defined artifacts and claim ceilings."],
+      "dependencies": ["model-weight-custody-and-hardware-roots-of-trust.core"],
+      "strongest_counterclaim": "Strong protocol authentication plus device-derived keys is sufficient practical evidence for a hardware-root claim in the intended system.",
+      "falsifier": "The chapter cannot distinguish protocol authentication from secure boot, protected key custody, measured execution, tamper resistance, or attestation, or a protocol-only artifact promotes a hardware-root support effect.",
+      "required_lanes": [
+        {"lane": "source-synthesis", "necessity": "Use current hardware-root definitions and threat models rather than local terminology."},
+        {"lane": "executable", "necessity": "Reject protocol-only records that assert hardware-root evidence."},
+        {"lane": "formal", "necessity": "Encode the no-implication boundary without claiming hardware truth."}
+      ],
+      "acceptance_criteria": ["Every protocol artifact remains in its lane, hardware-root claims require their own accepted evidence, and all laundering mutations are rejected."],
+      "promotion_ceiling": "argument_for_evidence_lane_boundary_no_hardware_root_promotion"
+    },
+    "system-boundaries-and-authority.mechanism.007": {
+      "proposition_type": "formal",
+      "assumptions": ["Read, transform, disclose, write, execute, and approve cover the current effect surface; extensions require versioned taxonomy changes."],
+      "dependencies": [],
+      "strongest_counterclaim": "The six classes overlap, omit important capabilities, and create false precision compared with operation-specific policies.",
+      "falsifier": "A material operation maps ambiguously to incompatible classes, a class promotion occurs without an explicit transition, or an operation-specific comparator enforces the same boundaries with lower complexity.",
+      "required_lanes": [
+        {"lane": "source-synthesis", "necessity": "Compare the taxonomy with established access-control rights and information-flow operations."},
+        {"lane": "normative", "necessity": "Justify class boundaries and extension policy."},
+        {"lane": "formal", "necessity": "Check class non-implication and explicit promotion."},
+        {"lane": "executable", "necessity": "Mutation-test every pairwise prohibited promotion on representative adapters."}
+      ],
+      "acceptance_criteria": ["Every tested operation has one prospective class or explicit compound policy, all prohibited promotions fail, and taxonomy residuals are recorded rather than forced into an incorrect class."]
+    },
+    "system-boundaries-and-authority.interface.001": {
+      "proposition_type": "executable",
+      "assumptions": ["Issuer and revocation authority identities are authenticated and not controlled solely by the executor receiving the grant."],
+      "dependencies": ["system-boundaries-and-authority.mechanism.001"],
+      "strongest_counterclaim": "Versioned grant issuance can still be forged or stale and adds little beyond a policy decision API.",
+      "falsifier": "A ceiling or grant lacks issuer, version, scope, expiry, or revocation owner; an executor self-issues an unauthorized grant; or consumers accept an unknown/stale version.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Specify finite issuance, version, and lifecycle validity."},
+        {"lane": "executable", "necessity": "Test forged, self-issued, stale, conflicting, expired, and revoked grants."}
+      ],
+      "acceptance_criteria": ["Only authenticated, current, scoped grants from the declared issuer reach consumers, and every invalid issuance class has an exact denial record."]
+    },
+    "system-boundaries-and-authority.interface.002": {
+      "proposition_type": "executable",
+      "assumptions": ["All declared effectful adapters are behind a mediation point that can check before mutation and observe afterward."],
+      "dependencies": ["runtime-adapters-tool-permissions-and-human-approval.core"],
+      "strongest_counterclaim": "Adapters can emit compliant receipts while bypass paths or TOCTOU changes allow unmediated effects.",
+      "falsifier": "An effect occurs before or without tuple admission, request/effect identity changes after check, or the emitted receipt disagrees with independent effect/no-effect observation.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Specify precondition, atomicity, and receipt linkage at the modeled boundary."},
+        {"lane": "executable", "necessity": "Attack mediation bypass, TOCTOU, receipt forgery, crash, and rollback paths."},
+        {"lane": "empirical", "necessity": "Measure enforcement latency, bypass detection, and receipt accuracy."}
+      ],
+      "acceptance_criteria": ["Every declared adapter effect is prechecked, atomically bound or compensably reconciled to the admitted tuple, and independently matched to one truthful effect or denial receipt."]
+    },
+    "system-boundaries-and-authority.interface.003": {
+      "proposition_type": "executable",
+      "assumptions": ["The evidence consumer is sufficiently independent to compare receipts with policy state and observed effects."],
+      "dependencies": ["evidence-states-and-claim-discipline.core"],
+      "strongest_counterclaim": "Recording authority failures adds audit volume but does not improve detection or recovery because receipts share the executor's trust base.",
+      "falsifier": "A seeded missing, inconsistent, expired, revoked, over-ceiling, or cross-domain violation is absent from evidence, misclassified, or cannot be traced to effect/no-effect and residual ownership.",
+      "required_lanes": [
+        {"lane": "executable", "necessity": "Join issuer, consumer, receipt, independent observation, incident, and residual records."},
+        {"lane": "empirical", "necessity": "Measure failure-detection recall, false alarm, delay, and recovery cost."},
+        {"lane": "causal", "necessity": "Ablate independent evidence checks and receipt joins."}
+      ],
+      "acceptance_criteria": ["The evidence path detects every seeded material failure at the frozen rate, preserves exact lineage and owner, and does not promote support without an accepted transition."]
+    },
+    "system-boundaries-and-authority.invariant.001": {
+      "proposition_type": "formal",
+      "assumptions": ["Authority states have a declared partial order and every widening edge requires an authenticated governance grant."],
+      "dependencies": [],
+      "strongest_counterclaim": "Authority dimensions are not totally comparable, and legitimate dynamic widening cannot always wait for explicit governance.",
+      "falsifier": "A reachable transition widens any declared authority dimension without an authenticated explicit grant or authorized emergency rule, or the order cannot represent a material permission change.",
+      "required_lanes": [
+        {"lane": "normative", "necessity": "Define authority dimensions and emergency exception policy."},
+        {"lane": "formal", "necessity": "Check monotonicity and explicit widening edges."},
+        {"lane": "executable", "necessity": "Mutation-test every widening dimension and consumer."}
+      ],
+      "acceptance_criteria": ["All ungranted widening mutations fail, authorized widening is explicit and versioned, and incomparable dimensions route to review rather than silent admission."]
+    },
+    "system-boundaries-and-authority.invariant.002": {
+      "proposition_type": "formal",
+      "assumptions": ["Read and write operations are distinguishable at the mediated target."],
+      "dependencies": ["system-boundaries-and-authority.mechanism.007"],
+      "strongest_counterclaim": "Read operations can have side effects and write permissions can be implicit in mutable interfaces, so the binary distinction is inadequate.",
+      "falsifier": "A read grant permits target mutation or disclosure without explicit compound authority, or side-effecting reads are classified as pure read and admitted.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Specify read, write, disclose, and compound operation boundaries."},
+        {"lane": "executable", "necessity": "Probe side-effecting reads and read-to-write/disclose promotion."}
+      ],
+      "acceptance_criteria": ["Pure read produces no unauthorized mutation/disclosure, side-effecting reads require compound authority, and all class-confusion controls are rejected."]
+    },
+    "system-boundaries-and-authority.invariant.003": {
+      "proposition_type": "formal",
+      "assumptions": ["Every effectful tool call is mediated and the required grant can be resolved before invocation."],
+      "dependencies": ["system-boundaries-and-authority.interface.002"],
+      "strongest_counterclaim": "Sandbox defaults or low-impact allowlists can safely authorize tool execution without a per-call explicit grant.",
+      "falsifier": "A tool effect occurs with no explicit active grant or prospectively authorized bounded default, or the grant is checked only after mutation.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Define explicit grant and bounded-default semantics."},
+        {"lane": "executable", "necessity": "Attack missing, wrong-tool, wrong-target, expired, revoked, and post-effect grants."},
+        {"lane": "empirical", "necessity": "Measure unsafe calls and false refusals against allowlist comparators."}
+      ],
+      "acceptance_criteria": ["Every effectful call is preceded by an applicable active grant or declared bounded default, all invalid cases fail before mutation, and usability remains within the gate."]
+    },
+    "system-boundaries-and-authority.invariant.004": {
+      "proposition_type": "formal",
+      "assumptions": ["Delegation and effect records share stable grant, budget, trace, replay, and epoch identities."],
+      "dependencies": ["system-boundaries-and-authority.mechanism.004"],
+      "strongest_counterclaim": "Delegation legitimately changes accounting or trace identities, so strict preservation is brittle and unnecessary if correlation remains possible.",
+      "falsifier": "Delegation widens scope, forks or drops any required identity without an explicit migration record, or replay cannot reconstruct the complete chain and epoch.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Check scope subset and identity continuity relations."},
+        {"lane": "executable", "necessity": "Seed scope widening, identifier substitution, chain truncation, and stale replay."},
+        {"lane": "empirical", "necessity": "Measure join completeness and overhead on multi-hop traces."}
+      ],
+      "acceptance_criteria": ["Every delegation narrows or preserves scope, maintains or explicitly migrates all required identities, and replays to one complete grant/epoch chain."]
+    },
+    "system-boundaries-and-authority.invariant.005": {
+      "proposition_type": "formal",
+      "assumptions": ["Target-domain identity and owner approval can be authenticated separately from source-domain possession."],
+      "dependencies": ["system-boundaries-and-authority.mechanism.005"],
+      "strongest_counterclaim": "Federated trust or preauthorized domain relationships can make per-handoff target-owner approval unnecessary.",
+      "falsifier": "A cross-domain effect occurs without target-owner approval or a prospectively scoped federation rule, or source-domain ambient capability substitutes for target consent.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Specify direct and federated approval semantics."},
+        {"lane": "executable", "necessity": "Attack missing, forged, stale, wrong-target, and overbroad federation approvals."}
+      ],
+      "acceptance_criteria": ["Every cross-domain effect binds authenticated target consent or a valid scoped federation rule, and all ambient inheritance controls fail."]
+    },
+    "system-boundaries-and-authority.invariant.006": {
+      "proposition_type": "formal",
+      "assumptions": ["Hardware-root claims have separately defined evidence requirements."],
+      "dependencies": ["system-boundaries-and-authority.mechanism.006"],
+      "strongest_counterclaim": "Authenticated protocol and device-derived key records are close enough to hardware-root evidence for the intended claim scope.",
+      "falsifier": "A protocol-only record causes hardware-root admission or the evidence model cannot distinguish protocol authenticity from secure boot, protected keys, measured execution, tamper resistance, and attestation.",
+      "required_lanes": [
+        {"lane": "source-synthesis", "necessity": "Anchor the evidence distinction in primary hardware-root specifications."},
+        {"lane": "formal", "necessity": "Check no-implication in the finite evidence model."},
+        {"lane": "executable", "necessity": "Reject laundering controls across all claim consumers."}
+      ],
+      "acceptance_criteria": ["No protocol artifact alone reaches a hardware-root state, and every hardware-root claim names its independent artifact and verifier."],
+      "promotion_ceiling": "argument_for_lane_separation_no_hardware_root_claim"
+    },
+    "system-boundaries-and-authority.invariant.007": {
+      "proposition_type": "formal",
+      "assumptions": ["High-impact approval classes and executor identities are prospectively declared; any emergency self-approval rule is separately scoped and reviewed."],
+      "dependencies": ["system-boundaries-and-authority.mechanism.007"],
+      "strongest_counterclaim": "Independent approval is too slow and unnecessary for low-risk or high-confidence effects; executor self-approval can be bounded safely.",
+      "falsifier": "An executor issues or controls the approval that authorizes its own covered effect without an explicit bounded exception, or nominal independence shares an undeclared controlling identity.",
+      "required_lanes": [
+        {"lane": "normative", "necessity": "Define which effects require independence and acceptable emergency exceptions."},
+        {"lane": "formal", "necessity": "Specify issuer/executor separation and shared-control conflicts."},
+        {"lane": "executable", "necessity": "Attack self-approval, collusion identity, stale approval, and exception scope."},
+        {"lane": "empirical", "necessity": "Measure unsafe approval, delay, fatigue, and false refusal."}
+      ],
+      "acceptance_criteria": ["Every covered effect has independently controlled approval or a prospectively bounded exception, all self-approval controls fail, and approval burden meets the usability gate."]
+    },
+    "system-boundaries-and-authority.invariant.008": {
+      "proposition_type": "executable",
+      "assumptions": ["Every downstream authority consumer can query a current lifecycle view or receive invalidation before effect."],
+      "dependencies": ["system-boundaries-and-authority.interface.003"],
+      "strongest_counterclaim": "Strong consistency for lifecycle visibility is infeasible; local caching with eventual reconciliation is sufficient.",
+      "falsifier": "A downstream consumer acts on an expired, revoked, over-depth, or denied grant without detecting its state before effect or invoking a prospectively bounded stale-state policy.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Specify consistency, stale-state, depth, denial, and bounded partition semantics."},
+        {"lane": "executable", "necessity": "Inject expiry, revocation, delegation, denial, delay, partition, and cache-staleness events."},
+        {"lane": "empirical", "necessity": "Measure propagation delay, stale use, false refusal, and recovery."},
+        {"lane": "transfer", "necessity": "Repeat across downstream consumers and storage/notification implementations."}
+      ],
+      "acceptance_criteria": ["Every declared consumer observes lifecycle changes before covered effects or follows the exact bounded partition policy, with stale-use and false-refusal rates inside frozen limits."]
+    },
+    "system-boundaries-and-authority.failure_mode.001": {
+      "proposition": "Repeated unrecorded widening, permissive defaults, or exception accumulation can make active authority exceed the reviewed ceiling.",
+      "proposition_type": "causal",
+      "assumptions": ["Active authority and reviewed ceilings can be independently reconstructed over time."],
+      "dependencies": ["system-boundaries-and-authority.invariant.001"],
+      "strongest_counterclaim": "Operational authority changes are adequately controlled by ordinary configuration and review without explicit transition lineage.",
+      "falsifier": "Removing transition lineage and ceiling checks does not increase unreviewed widening or unsafe effects under matched change sequences, or the proposed audit cannot detect seeded creep.",
+      "required_lanes": [
+        {"lane": "executable", "necessity": "Run multi-step grant, exception, replacement, and policy-change sequences."},
+        {"lane": "causal", "necessity": "Ablate transition lineage and ceiling enforcement."},
+        {"lane": "empirical", "necessity": "Measure creep detection, unsafe effects, and operational burden."}
+      ],
+      "acceptance_criteria": ["The governed path detects all seeded material widening and materially reduces unreviewed active authority without exceeding the frozen burden gate."]
+    },
+    "system-boundaries-and-authority.failure_mode.002": {
+      "proposition": "A higher-authority tool can launder ambient power for a lower-authority requester when the operation is not bound to the requester's ceiling and grant.",
+      "proposition_type": "causal",
+      "assumptions": ["Requester authority, tool ambient authority, target effect, and mediation path are independently observable."],
+      "dependencies": ["system-boundaries-and-authority.invariant.003"],
+      "strongest_counterclaim": "Tool wrappers and model policies already prevent confused-deputy behavior without per-request authority binding.",
+      "falsifier": "Under matched adversarial requests, removing requester-bound authority does not increase unauthorized tool effects, or the bound design fails to prevent the seeded laundering cases.",
+      "required_lanes": [
+        {"lane": "source-synthesis", "necessity": "Use the original confused-deputy and current agent-tool security comparator definitions."},
+        {"lane": "executable", "necessity": "Attack live or sandboxed tools with lower-authority requesters and ambient-power deputies."},
+        {"lane": "causal", "necessity": "Ablate requester binding at matched tool capability."},
+        {"lane": "empirical", "necessity": "Measure unauthorized effects, refusal, and latency."}
+      ],
+      "acceptance_criteria": ["All preregistered laundering attacks fail before effect under requester binding, and the matched ambient control exhibits the claimed failure difference within the uncertainty rule."]
+    },
+    "system-boundaries-and-authority.failure_mode.003": {
+      "proposition": "Treating memory or source access as disclosure, execution, or approval authority can convert available context into unauthorized effects.",
+      "proposition_type": "causal",
+      "assumptions": ["Information access and each downstream effect class are separately observable."],
+      "dependencies": ["system-boundaries-and-authority.mechanism.002"],
+      "strongest_counterclaim": "Trusted memory contents and user-provided sources can safely carry executable authority in the intended workflow.",
+      "falsifier": "Collapsing memory access into action authority does not increase unauthorized disclosure/execution/approval under matched adversarial content, or class separation cannot block seeded cases.",
+      "required_lanes": [
+        {"lane": "executable", "necessity": "Inject instructions and secrets into accessible memory under absent action grants."},
+        {"lane": "causal", "necessity": "Compare separated and collapsed permission policies."},
+        {"lane": "empirical", "necessity": "Measure unauthorized effects and useful retrieval loss."}
+      ],
+      "acceptance_criteria": ["Accessible content never supplies undeclared action authority, seeded instruction/secret attacks fail, and legitimate retrieval remains within the useful-throughput gate."]
+    },
+    "system-boundaries-and-authority.failure_mode.004": {
+      "proposition": "Forking grant, budget, trace, replay, or revocation identity can let subsystems accept locally valid records that no longer describe one authorized effect.",
+      "proposition_type": "causal",
+      "assumptions": ["The canonical effect identity and each subsystem key can be independently observed."],
+      "dependencies": ["system-boundaries-and-authority.mechanism.004"],
+      "strongest_counterclaim": "Correlation maps and local identifiers adequately join effect records; one tuple is unnecessary.",
+      "falsifier": "Seeded identity forks cause no unauthorized, unbudgeted, unauditable, or stale effect under the strong correlation-map control, or the unified tuple fails to detect them.",
+      "required_lanes": [
+        {"lane": "executable", "necessity": "Fork each identity across multi-system traces."},
+        {"lane": "causal", "necessity": "Compare unified identity with strong correlation mapping."},
+        {"lane": "empirical", "necessity": "Measure detection, join error, cost, and replay accuracy."}
+      ],
+      "acceptance_criteria": ["The chosen identity scheme detects every seeded material fork and prevents the corresponding effect while meeting the join and overhead gates."]
+    },
+    "system-boundaries-and-authority.failure_mode.005": {
+      "proposition": "A source-domain grant or historical receipt can be laundered into target-domain or current-epoch authority when target approval and revocation epoch are not rebound.",
+      "proposition_type": "causal",
+      "assumptions": ["Domain and epoch boundaries are prospectively declared and target approval can be authenticated."],
+      "dependencies": ["system-boundaries-and-authority.invariant.005", "system-boundaries-and-authority.invariant.008"],
+      "strongest_counterclaim": "Federated trust and replay protection already prevent these cases without per-handoff target approval and epoch rebinding.",
+      "falsifier": "Removing target approval or epoch rebinding does not increase cross-domain/stale effects under matched attacks, or the proposed design admits a seeded laundering/replay case.",
+      "required_lanes": [
+        {"lane": "executable", "necessity": "Attack domain crossing and replay with valid source grants and stale receipts."},
+        {"lane": "causal", "necessity": "Ablate target consent and epoch binding separately."},
+        {"lane": "empirical", "necessity": "Measure attack success, refusal, and propagation cost."}
+      ],
+      "acceptance_criteria": ["All preregistered domain-laundering and stale-epoch attacks fail before effect, and legitimate federated handoffs meet the usability gate."]
+    },
+    "system-boundaries-and-authority.failure_mode.006": {
+      "proposition": "Presenting protocol authentication, encryption, signatures, replay windows, or device-derived keys as hardware-root evidence overstates the trust boundary.",
+      "proposition_type": "causal",
+      "assumptions": ["Claim reviewers can distinguish the artifacts and support ceilings of protocol and hardware lanes."],
+      "dependencies": ["system-boundaries-and-authority.invariant.006"],
+      "strongest_counterclaim": "The practical security claim does not require a strict protocol/hardware distinction at the intended scope.",
+      "falsifier": "Removing the lane distinction does not increase independently adjudicated hardware-root overclaims, or the proposed classifier cannot detect seeded laundering.",
+      "required_lanes": [
+        {"lane": "source-synthesis", "necessity": "Define hardware-root evidence from primary specifications."},
+        {"lane": "executable", "necessity": "Seed protocol-only artifacts with hardware-root claim attempts."},
+        {"lane": "causal", "necessity": "Compare typed and collapsed evidence lanes."}
+      ],
+      "acceptance_criteria": ["All seeded protocol-to-hardware promotions are rejected and independently adjudicated overclaim falls by the frozen amount without erasing valid protocol claims."]
+    },
+    "system-boundaries-and-authority.failure_mode.007": {
+      "proposition": "Delayed or missing lifecycle propagation can leave expired or revoked grants usable in downstream or delegated contexts.",
+      "proposition_type": "causal",
+      "assumptions": ["Expiry/revocation events and downstream uses have an independently observed order or bounded clock uncertainty."],
+      "dependencies": ["system-boundaries-and-authority.invariant.008"],
+      "strongest_counterclaim": "Short-lived caches and eventual consistency make stale-grant effects negligible compared with the availability cost of strong propagation.",
+      "falsifier": "Under realistic delay, partition, and cache scenarios, lifecycle propagation policy does not change stale-effect rate within the uncertainty rule, or the proposed policy exceeds availability limits without reducing material harm.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Specify bounded clock, partition, and stale-state semantics."},
+        {"lane": "executable", "necessity": "Run expiry/revocation races across delegated consumers."},
+        {"lane": "causal", "necessity": "Vary propagation and cache policies."},
+        {"lane": "empirical", "necessity": "Measure stale effects, availability, latency, and recovery."},
+        {"lane": "transfer", "necessity": "Repeat across storage and notification implementations."}
+      ],
+      "acceptance_criteria": ["The selected policy meets exact stale-effect and availability gates across the declared delay/partition transfer matrix."]
+    },
+    "system-boundaries-and-authority.failure_mode.008": {
+      "proposition": "A replacement implementation can inherit authority handles qualified only for its predecessor, bypassing requalification and changing the effective authority subject.",
+      "proposition_type": "causal",
+      "assumptions": ["Implementation identity and handle qualification are versioned and observable across replacement."],
+      "dependencies": ["capability-replacement-and-rollback.core", "system-boundaries-and-authority.invariant.001"],
+      "strongest_counterclaim": "Stable capability-field identity should preserve handles across replacement because the field contract, not implementation identity, owns authority.",
+      "falsifier": "A replacement with changed implementation identity safely reuses predecessor handles across all declared risk classes without requalification, or the requalification policy cannot detect seeded incompatible replacements.",
+      "required_lanes": [
+        {"lane": "normative", "necessity": "Define which authority belongs to the stable field and which to a qualified implementation."},
+        {"lane": "executable", "necessity": "Run compatible, incompatible, revoked, rollback, and stale-handle replacement sequences."},
+        {"lane": "causal", "necessity": "Compare automatic inheritance with identity-bound requalification."},
+        {"lane": "empirical", "necessity": "Measure unsafe inheritance, downtime, and review cost."}
+      ],
+      "acceptance_criteria": ["All implementation-bound handles require successful requalification, field-bound handles preserve only declared scope, seeded incompatible inheritance fails, and replacement burden meets the gate."]
+    },
+    "system-boundaries-and-authority.formal.authority-ceiling-operational-invariant": {
+      "proposition_type": "formal",
+      "current_disposition": "implemented_bounded_reachable_refinement_no_support_transition",
+      "assumptions": ["The finite sequential model's numeric grant/principal/operation/target identities, receipt fields, epoch, expiry, source records, and observations faithfully represent the bounded event; authenticity, concurrency, complete mediation, and deployed enforcement are external assumptions."],
+      "dependencies": ["system-boundaries-and-authority.invariant.001"],
+      "strongest_counterclaim": "The theorem restates ceiling preservation in its record validity assumptions and provides no nontrivial guarantee about real effects or multidimensional authority.",
+      "falsifier": "A Lean countermodel satisfies the intended premises while authority widens without grant, a ceiling/grant field is semantically unused, or a runtime refinement disagrees on a reachable transition.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Check nonempty positive and widening countercases over the exact authority order."},
+        {"lane": "executable", "necessity": "Differentially test runtime transitions and mutate ceiling, grant, issuer, and authority dimensions."}
+      ],
+      "acceptance_criteria": ["The kernel checks nontrivial reachable witnesses, every material field mutation reaches the expected result, multidimensional residuals are explicit, and all concrete consumers refine the modeled decision."],
+      "promotion_ceiling": "synthetic-test-backed_for_exact_finite_ceiling_property_only_after_adequacy_review_and_transition",
+      "reproduction": {"command": "cd lean && lake build", "environment_lock": "lean/lake-manifest.json and lean/lean-toolchain", "artifact_digest": null, "evaluator_identity": "Lean 4 kernel in the pinned Lake environment"}
+    },
+    "system-boundaries-and-authority.formal.authority-ceiling-failure-blocks-promotion": {
+      "proposition_type": "formal",
+      "current_disposition": "implemented_bounded_reachable_countermodels_no_support_transition",
+      "assumptions": ["The finite sequential model's grant binding, approval, dispatch, receipt, epoch, expiry, use-count, revocation, and observation fields faithfully represent the bounded event; detection, authenticity, concurrency, and mediation are external assumptions."],
+      "dependencies": ["system-boundaries-and-authority.invariant.003"],
+      "strongest_counterclaim": "The theorem is a direct projection from a missing-grant premise to denial and proves no independent enforcement property.",
+      "falsifier": "A reachable modeled execution with missing grant is authorized, grant presence is unused, or a concrete consumer effects the corresponding invalid record.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Check reachable missing/present/invalid grant cases and dependency use."},
+        {"lane": "executable", "necessity": "Mutation-test grant state before independently observed effects."}
+      ],
+      "acceptance_criteria": ["Missing and invalid grants are reachable and denied, valid grants reach only bounded authorization, and every effect consumer agrees under mutation."],
+      "promotion_ceiling": "synthetic-test-backed_for_exact_missing_grant_gate_only_after_adequacy_review_and_transition",
+      "reproduction": {"command": "cd lean && lake build", "environment_lock": "lean/lake-manifest.json and lean/lean-toolchain", "artifact_digest": null, "evaluator_identity": "Lean 4 kernel in the pinned Lake environment"}
+    },
+    "system-boundaries-and-authority.formal.authority-lifecycle-admission-route": {
+      "proposition_type": "formal",
+      "current_disposition": "implemented_formal_atom_pending_model_adequacy_and_transition",
+      "assumptions": ["The finite fields cover the declared lifecycle taxonomy but do not establish identity truth, clock truth, receipt faithfulness, complete mediation, or open-world exhaustiveness."],
+      "dependencies": ["system-boundaries-and-authority.interface.001", "system-boundaries-and-authority.interface.002", "system-boundaries-and-authority.invariant.008"],
+      "strongest_counterclaim": "The route theorem is field-completeness projection bloat that checks metadata presence without authorization semantics or real consumers.",
+      "falsifier": "A required field or failed state can be removed/corrupted without reaching its exact route, a complete finite record cannot reach bounded admission, or a concrete consumer disagrees with the formal outcome.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Check each exact lifecycle branch, precedence, nonempty admission, and unreachable-state assumptions."},
+        {"lane": "executable", "necessity": "Mutation-test every serialized field and consuming admission gate without claiming value truth."}
+      ],
+      "acceptance_criteria": ["Every declared mutation reaches its exact outcome, valid records reach bounded admission, all branches have real consumers or are retired, and runtime decisions refine the finite route."],
+      "promotion_ceiling": "synthetic-test-backed_for_finite_lifecycle_routing_only_after_adequacy_review_and_transition",
+      "reproduction": {"command": "cd lean && lake build", "environment_lock": "lean/lake-manifest.json and lean/lean-toolchain", "artifact_digest": null, "evaluator_identity": "Lean 4 kernel in the pinned Lake environment"}
+    },
+    "system-boundaries-and-authority.formal.authority-revocation-trace-surface-bridge": {
+      "proposition_type": "formal",
+      "current_disposition": "implemented_fixture_bridge_pending_consumer_and_adequacy_audit",
+      "assumptions": ["The finite summary accurately reflects separately replayed authority, adapter, SCIF, and reference-trace artifacts; Lean does not inspect files, clocks, effects, or deployed services."],
+      "dependencies": ["system-boundaries-and-authority.formal.authority-lifecycle-admission-route"],
+      "strongest_counterclaim": "The bridge is a hard-coded conjunction of recorded booleans with no semantic value beyond the executable validators and should be retired as proof bloat.",
+      "falsifier": "The bridge accepts a missing blocked-authority or no-promotion field, disagrees with a replayed artifact, or has no independent consumer requiring the cross-artifact invariant.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Determine whether the bridge expresses a nontrivial cross-artifact invariant or should be retired with lineage."},
+        {"lane": "executable", "necessity": "Replay each source artifact, mutate each summary field, and bind the serialized result to the Lean fixture input."}
+      ],
+      "acceptance_criteria": ["Every required field mutation is rejected by replay and Lean, artifact digests bind the summary, and P2 records a real consumer or retires the bridge without losing stronger executable checks."],
+      "promotion_ceiling": "no_support_promotion_fixture_bridge_pending_P2_rationalization",
+      "reproduction": {"command": "python3 scripts/validate_authority_revocation_trace.py && (cd lean && lake build)", "environment_lock": "Python dependency lock plus lean/lake-manifest.json and lean/lean-toolchain", "artifact_digest": null, "evaluator_identity": "Python authority-trace validator and Lean 4 kernel in pinned repository environments"}
+    }
+  },
+  "prose_candidate_dispositions": {
+    "system-boundaries-and-authority.prose.e5312824e9d2": {"state": "duplicate_of_atom", "rationale": "Plain-language causal motivation for the no-ambient-authority core boundary.", "target_atom_id": "system-boundaries-and-authority.core"},
+    "system-boundaries-and-authority.prose.7606bbf70913": {"state": "duplicate_of_atom", "rationale": "Examples of competence and context failing to create external-effect authority.", "target_atom_id": "system-boundaries-and-authority.core"},
+    "system-boundaries-and-authority.prose.60270d308475": {"state": "duplicate_of_atom", "rationale": "Reader-language restatement of downstream denial and revocation visibility.", "target_atom_id": "system-boundaries-and-authority.invariant.008"},
+    "system-boundaries-and-authority.prose.016d905f539a": {"state": "duplicate_of_atom", "rationale": "Applies the no-ambient-authority core to efficient route selection.", "target_atom_id": "system-boundaries-and-authority.core"},
+    "system-boundaries-and-authority.prose.16a16f2329b5": {"state": "duplicate_of_atom", "rationale": "SCF-specific example of predecessor-handle inheritance across replacement.", "target_atom_id": "system-boundaries-and-authority.failure_mode.008"},
+    "system-boundaries-and-authority.prose.4b6032fc8cf8": {"state": "duplicate_of_atom", "rationale": "Restates that capability, context, route quality, source access, and enthusiasm do not confer authority.", "target_atom_id": "system-boundaries-and-authority.core"},
+    "system-boundaries-and-authority.prose.99ebd8aba17d": {"state": "duplicate_of_atom", "rationale": "Plain-language requirement that missing authority becomes denial or escalation.", "target_atom_id": "system-boundaries-and-authority.mechanism.003"},
+    "system-boundaries-and-authority.prose.c8daffb0b8f8": {"state": "duplicate_of_atom", "rationale": "Illustrates fail-closed authority despite coherent plans and capable models.", "target_atom_id": "system-boundaries-and-authority.mechanism.003"},
+    "system-boundaries-and-authority.prose.44c4d71bb0d2": {"state": "nonmaterial_explanation", "rationale": "Reader-path emphasis on the boundary already owned by the core."},
+    "system-boundaries-and-authority.prose.131e4d882e3a": {"state": "nonmaterial_explanation", "rationale": "Correct evidence boundary that external comparators do not prove local enforcement."},
+    "system-boundaries-and-authority.prose.6c2b60353c7e": {"state": "duplicate_of_atom", "rationale": "Restates fail-closed missing-authority behavior.", "target_atom_id": "system-boundaries-and-authority.mechanism.003"},
+    "system-boundaries-and-authority.prose.d710faf0dbd9": {"state": "editorial_or_question", "rationale": "Transition into the replacement and self-improvement failure examples."},
+    "system-boundaries-and-authority.prose.8516d634f0b4": {"state": "duplicate_of_atom", "rationale": "Literal rendered core-claim marker.", "target_atom_id": "system-boundaries-and-authority.core"},
+    "system-boundaries-and-authority.prose.82a7691cd069": {"state": "nonmaterial_explanation", "rationale": "Source-mapping and current support-state limitation, not a new authority claim."},
+    "system-boundaries-and-authority.prose.0b18a9060ce5": {"state": "duplicate_of_atom", "rationale": "Figure walkthrough of pre-effect tuple validation.", "target_atom_id": "system-boundaries-and-authority.interface.002"},
+    "system-boundaries-and-authority.prose.6d1972bf9e8d": {"state": "historical_or_source_report", "rationale": "VIEA source-synthesis introduction to authority ownership."},
+    "system-boundaries-and-authority.prose.762407bddbdd": {"state": "duplicate_of_atom", "rationale": "Names the minimum authority-transition artifact.", "target_atom_id": "system-boundaries-and-authority.minimum.001"},
+    "system-boundaries-and-authority.prose.14bedae2c02b": {"state": "duplicate_of_atom", "rationale": "Restates scope narrowing under delegation.", "target_atom_id": "system-boundaries-and-authority.invariant.004"},
+    "system-boundaries-and-authority.prose.c7f252318d7b": {"state": "duplicate_of_atom", "rationale": "Replay/trace/grant/revocation identity continuity instance.", "target_atom_id": "system-boundaries-and-authority.invariant.004"},
+    "system-boundaries-and-authority.prose.69328909f147": {"state": "duplicate_of_atom", "rationale": "Restates target-domain approval and no ambient inheritance.", "target_atom_id": "system-boundaries-and-authority.invariant.005"},
+    "system-boundaries-and-authority.prose.24772504fcf1": {"state": "duplicate_of_atom", "rationale": "Diagram explanation of unified identity continuity.", "target_atom_id": "system-boundaries-and-authority.mechanism.004"},
+    "system-boundaries-and-authority.prose.a78a0649b7b0": {"state": "duplicate_of_atom", "rationale": "Cross-domain refusal and revoked-epoch replay instance.", "target_atom_id": "system-boundaries-and-authority.failure_mode.005"},
+    "system-boundaries-and-authority.prose.bdb67ae51912": {"state": "nonmaterial_explanation", "rationale": "Explicit list of hardware-root properties not proved by protocol controls."},
+    "system-boundaries-and-authority.prose.906f9a0efcb2": {"state": "nonmaterial_explanation", "rationale": "States the central enforcement objection without adding a positive proposition."},
+    "system-boundaries-and-authority.prose.f38d37e55b46": {"state": "nonmaterial_explanation", "rationale": "Exact limitation of the tuple fixture and list of residual trust roots."},
+    "system-boundaries-and-authority.prose.6200e52755ee": {"state": "duplicate_of_atom", "rationale": "Enumerates authority-transition fields already owned by the minimum artifact.", "target_atom_id": "system-boundaries-and-authority.minimum.001"},
+    "system-boundaries-and-authority.prose.fbd276fc31f4": {"state": "nonmaterial_explanation", "rationale": "Correct non-claim that field presence is not enforcement."},
+    "system-boundaries-and-authority.prose.4c5d1727d132": {"state": "duplicate_of_atom", "rationale": "Introduces the manifest-owned permission-class taxonomy.", "target_atom_id": "system-boundaries-and-authority.mechanism.007"},
+    "system-boundaries-and-authority.prose.42e89bddbd4b": {"state": "duplicate_of_atom", "rationale": "Table introduction for the six manifest-owned permission classes.", "target_atom_id": "system-boundaries-and-authority.mechanism.007"},
+    "system-boundaries-and-authority.prose.62c0dfa72803": {"state": "duplicate_of_atom", "rationale": "Expanded target-domain approval invariant with ambient-process noninheritance.", "target_atom_id": "system-boundaries-and-authority.invariant.005"},
+    "system-boundaries-and-authority.prose.d713513d7c05": {"state": "duplicate_of_atom", "rationale": "Literal prose form of downstream lifecycle visibility.", "target_atom_id": "system-boundaries-and-authority.invariant.008"},
+    "system-boundaries-and-authority.prose.b2efe14507b9": {"state": "historical_or_source_report", "rationale": "Object-capability lineage and confused-deputy discipline, with an explicit non-implementation boundary."},
+    "system-boundaries-and-authority.prose.11d63a17f334": {"state": "duplicate_of_atom", "rationale": "Subset of the unified authority tuple fields.", "target_atom_id": "system-boundaries-and-authority.mechanism.004"},
+    "system-boundaries-and-authority.prose.deb87a626efd": {"state": "duplicate_of_atom", "rationale": "Finite field list and scope statement for the minimum artifact.", "target_atom_id": "system-boundaries-and-authority.minimum.001"},
+    "system-boundaries-and-authority.prose.519bdaeb6193": {"state": "duplicate_of_atom", "rationale": "Concrete missing-grant and over-ceiling denial behavior.", "target_atom_id": "system-boundaries-and-authority.formal.authority-ceiling-failure-blocks-promotion"},
+    "system-boundaries-and-authority.prose.93e21574db6d": {"state": "duplicate_of_atom", "rationale": "Denial reason preservation for downstream consumers.", "target_atom_id": "system-boundaries-and-authority.invariant.008"},
+    "system-boundaries-and-authority.prose.40881bdc54f5": {"state": "duplicate_of_atom", "rationale": "Summary of the first three manifest invariants.", "target_atom_id": "system-boundaries-and-authority.invariant.001"},
+    "system-boundaries-and-authority.prose.a12af2a1c230": {"state": "duplicate_of_atom", "rationale": "Endpoint disposition summary for owned authority failure modes.", "target_atom_id": "system-boundaries-and-authority.failure_mode.001"},
+    "system-boundaries-and-authority.prose.d87c0fd797b8": {"state": "duplicate_of_atom", "rationale": "Mature-deployment form of downstream denial visibility.", "target_atom_id": "system-boundaries-and-authority.invariant.008"},
+    "system-boundaries-and-authority.prose.ffa4f64f3d0a": {"state": "nonmaterial_explanation", "rationale": "Current support ceiling and exact evidence required before stronger authority claims."},
+    "system-boundaries-and-authority.prose.c4b67b700dac": {"state": "editorial_or_question", "rationale": "Handoff sentence into the failure-radar chapter rather than a new authority claim."},
+    "system-boundaries-and-authority.prose.61042c4b4db6": {"state": "duplicate_of_atom", "rationale": "Reports the bounded reachable-model and executed-consumer result already owned by the strengthened Authority operational-invariant target.", "target_atom_id": "system-boundaries-and-authority.formal.authority-ceiling-operational-invariant"},
+    "system-boundaries-and-authority.prose.2dce22d5f6ff": {"state": "nonmaterial_explanation", "rationale": "Explicit non-claim boundary for the finite Authority proof packet; it adds no positive proposition."}
+  },
+  "non_claims": [
+    "Completing this semantic sweep does not establish enforcement, security, safety, live revocation, trusted identity or time, complete mediation, hardware roots, or support promotion.",
+    "The five newly manifest-owned obligations and narrowed core are claim repairs, not positive evidence.",
+    "Duplicate and source-report dispositions preserve canonical ownership and evidence boundaries; they do not prove the target atoms or source claims."
+  ]
+}

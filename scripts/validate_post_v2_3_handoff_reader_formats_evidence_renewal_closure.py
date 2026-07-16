@@ -17,6 +17,8 @@ STATUS_SCHEMA = "schemas/post_v2_3_handoff_reader_formats_and_evidence_renewal_s
 DECLARATION = "docs/post_v2_3_handoff_reader_formats_evidence_renewal_completion_declaration.md"
 TERMINAL_RECORD = "release_records/2026-07-14-post-v2-3-handoff-reader-formats-evidence-renewal-no-public-release.json"
 ACTIVE_MARKER = "Status: active canonical successor roadmap; unfinished work only"
+ACTIVE_SUCCESSOR = "docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md"
+ACTIVE_SUCCESSOR_STATUS = "roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json"
 PUBLIC_SURFACES = ["README.md", "index.qmd", "docs/publication_readiness.md", "docs/public_status_contract.md"]
 
 
@@ -32,6 +34,7 @@ def snapshot() -> dict:
     return {
         "status": load(STATUS),
         "status_schema": load(STATUS_SCHEMA),
+        "active_successor_status": load(ACTIVE_SUCCESSOR_STATUS),
         "roadmap": text(ROADMAP),
         "declaration": text(DECLARATION),
         "terminal": load(TERMINAL_RECORD),
@@ -68,10 +71,15 @@ def errors(data: dict) -> list[str]:
     completion = status.get("completion", {})
     if completion.get("terminal_record") != TERMINAL_RECORD or completion.get("completion_declaration") != DECLARATION or completion.get("active_successor") is not None:
         out.append("terminal bindings or null successor authority drifted")
-    if data["active_roadmaps"]:
-        out.append("a roadmap still carries the active canonical marker")
+    if data["active_roadmaps"] != [ACTIVE_SUCCESSOR]:
+        out.append("terminal history must coexist with the exact claim-proof/SOTA active successor")
     if "Status: completed 2026-07-14; no active successor" not in data["roadmap"]:
         out.append("roadmap prose is not terminal")
+    active_successor = data["active_successor_status"]
+    if active_successor.get("status") != "active" or active_successor.get("roadmap_path") != ACTIVE_SUCCESSOR:
+        out.append("claim-proof/SOTA successor machine authority is absent or inactive")
+    if active_successor.get("predecessor", {}).get("path") != ROADMAP:
+        out.append("claim-proof/SOTA successor does not bind this completed predecessor")
 
     terminal = data["terminal"]
     if terminal.get("decision") != "exact_local_reader_multiformat_disposition_no_public_release" or terminal.get("validation_status") != "pass":
@@ -113,11 +121,14 @@ def errors(data: dict) -> list[str]:
         if " ".join(phrase.split()).casefold() not in declaration_normalized:
             out.append(f"completion declaration missing: {phrase}")
     for path, body in data["public"].items():
-        for phrase in [ROADMAP, STATUS, TERMINAL_RECORD, "v2.3.0", "No successor roadmap is active"]:
-            if phrase.casefold() not in body.casefold():
+        body_normalized = " ".join(body.split())
+        for phrase in [ROADMAP, STATUS, TERMINAL_RECORD, ACTIVE_SUCCESSOR, ACTIVE_SUCCESSOR_STATUS, "v2.3.0", "active canonical successor roadmap"]:
+            if phrase.casefold() not in body_normalized.casefold():
                 out.append(f"{path} missing terminal public truth: {phrase}")
-        if "is the active canonical successor roadmap" in body or "Active canonical successor roadmap:" in body:
-            out.append(f"{path} retains an obsolete active-roadmap claim")
+        if "No successor roadmap is active" in body:
+            out.append(f"{path} retains obsolete no-successor language")
+        if "active canonical successor roadmap: fake" in body.casefold():
+            out.append(f"{path} contains a contradictory active-roadmap pointer")
     return out
 
 
@@ -126,7 +137,7 @@ def main() -> None:
     failures = errors(base)
     mutations: list[tuple[str, dict]] = []
     reopened = copy.deepcopy(base); reopened["status"]["status"] = "active"; mutations.append(("reopened roadmap", reopened))
-    hidden = copy.deepcopy(base); hidden["active_roadmaps"] = ["docs/fake_roadmap.md"]; mutations.append(("hidden successor", hidden))
+    hidden = copy.deepcopy(base); hidden["active_roadmaps"] = [ACTIVE_SUCCESSOR, "docs/fake_roadmap.md"]; mutations.append(("hidden successor", hidden))
     release = copy.deepcopy(base); release["terminal"]["publication_effect"]["source_tag_created"] = True; mutations.append(("release laundering", release))
     epub = copy.deepcopy(base); epub["epub"]["decision"] = "approved"; mutations.append(("EPUB laundering", epub))
     support = copy.deepcopy(base); support["vectors"]["vectors"][0]["summary_support_state"] = "prototype-backed"; mutations.append(("support promotion", support))
@@ -138,7 +149,7 @@ def main() -> None:
             failures.append(f"negative mutation accepted: {label}")
     if failures:
         raise SystemExit("Post-v2.3 handoff/reader/evidence closure failed:\n - " + "\n - ".join(failures))
-    print("Post-v2.3 handoff/reader/evidence closure passed: P0-P4, M0-M8, HTML+DOCX local approval, EPUB/PDF blockers, 54 argument cores, v2.3.0 unchanged, no active successor, and 8 rejecting mutations.")
+    print("Post-v2.3 handoff/reader/evidence closure passed: P0-P4, M0-M8, HTML+DOCX local approval, EPUB/PDF blockers, 54 argument cores, v2.3.0 unchanged, exact claim-proof/SOTA successor active, and 8 rejecting mutations.")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,355 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "evidence-states-and-claim-discipline",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/evidence-states-and-claim-discipline.qmd",
+    "structured_atoms_reviewed": 46,
+    "prose_candidates_adjudicated": 55,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, source boundaries, diagrams, tables, all seven formal targets, every scanner candidate, and unscanned evidence-cell and embedded-agency prose. The sweep narrowed the core to a versioned atom-level transition contract; replaced three slogan interfaces with exact producer, authority, and projection handoffs; protected scope, non-aggregating evidence dimensions, and finite-record limits; promoted benchmark, proof, interpretability, evidence-smoothing, provenance, and independence laundering into manifest ownership; and preserved zero support-state effect."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Material chapter-core and subordinate claims, source mappings, proof and test interpretations, evidence packets, transition proposals, accepted or rejected dispositions, and public claim projections in the ASI Stack living-book workflow.",
+      "environment": "The versioned repository, controlled local and API-backed evidence campaigns, deterministic fixtures, finite Lean models, public-safe source notes and traces, and derived reader/release surfaces; external peer review, production deployment, and complete open-world observation remain outside current evidence.",
+      "model": "A stable-identity claim graph with versioned proposition text and scope, separate claim-label/support/lifecycle/disposition axes, non-aggregating evidence cells, accepted transition records, and derived public projections; ledger validity is not claim truth.",
+      "authority": "Claim owners may propose text, scope, label, dependency, and evidence changes; a prospectively named transition authority accepts or rejects support and terminal dispositions; public projections consume canonical state and neither authorship, a model, a validator, nor release tooling may promote independently.",
+      "time": "Semantic review current through 2026-07-14; claim, source, artifact, evaluator, ontology, policy, model, dependency, and public-projection versions must be frozen for outcome-bearing transitions and affected claims revalidated after material change.",
+      "artifact": "chapters/evidence-states-and-claim-discipline.qmd, book_structure.json, Appendix C, claim records, evidence cells and packets, evidence transitions, negative evidence, transition-authority decisions, proof and executable traces, changelog entries, public projections, campaign records, and accepted terminal records"
+    },
+    "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+    "assumptions": [
+      "Material claim atoms and their consumer surfaces can be identified prospectively without assuming the discovery process is complete.",
+      "Evidence roles, scope, artifact identity, causal lineage, independence, negative evidence, and transition authority can be recorded separately enough to challenge laundering.",
+      "Canonical state and every public projection can be joined by stable claim and version identities."
+    ],
+    "strongest_counterclaim": "Mature scientific reporting, version control, citations, reproducibility packages, model cards, datasheets, assurance cases, and ordinary editorial review already provide adequate claim discipline; the proposed atom-level ledger adds costly bureaucracy and false precision without improving truth or decisions.",
+    "falsifier": "A reachable admitted trace violates the proposition, a declared field has no behavioral consumer, or a strong matched reporting and review workflow achieves equal claim accuracy, traceability, negative-result retention, and correction behavior at lower joint cost.",
+    "required_lanes": [
+      {"lane":"source-synthesis","necessity":"Freeze mature reporting, provenance, reproducibility, assurance, formal-methods, interpretability, and evidence-governance comparators without novelty laundering."},
+      {"lane":"normative","necessity":"Justify materiality, authority, privacy, retention, asymmetric downgrade, hard-gate, and public-disclosure choices."},
+      {"lane":"formal","necessity":"Specify finite identity, state-transition, no-laundering, lineage, scope, projection, and terminal-disposition properties."},
+      {"lane":"executable","necessity":"Exercise real producers, transition consumers, rejecting mutations, canonical state, and public projections."},
+      {"lane":"empirical","necessity":"Measure adjudication error, false promotion and downgrade, stale escape, correction time, burden, usefulness, and reader traceability."},
+      {"lane":"causal","necessity":"Ablate identity, evidence fields, independence, negative retention, transition authority, and projection enforcement under matched cases."},
+      {"lane":"transfer","necessity":"Repeat across claim types, sources, proof and test roles, models, evaluators, chapters, releases, and independent implementations."}
+    ],
+    "contrary_evidence": [
+      "Model cards, datasheets, reproducibility programs, provenance standards, assurance cases, systematic review, and proof-carrying systems already supply established reporting and evidence-control patterns; the chapter cannot claim novelty for structured documentation or scoped artifacts.",
+      "A complete, internally consistent ledger can preserve false claims, shared blind spots, strategic reporting, or fabricated source material; record validity and traceability do not establish semantic truth.",
+      "Atomization and extensive metadata can consume verification bandwidth, obscure the load-bearing question, deter reporting, and produce compliance theater or false rigor.",
+      "Asymmetric downgrades can be abused through low-quality contradictions, denial-of-service evidence, or strategic uncertainty unless contradiction quality and appeal are governed.",
+      "Scalar support states are lossy summaries whose meaning can drift across claim types, while non-aggregating vectors can remain too complex for readers or consistent adjudication.",
+      "The current repository's claim records, local validators, finite proofs, and transition audits are largely authored and evaluated within one project and do not establish independent semantic adjudication quality."
+    ],
+    "known_confounds": [
+      "The same author or model can define the claim, select evidence, implement the validator, adjudicate the transition, and write the public explanation, creating circular apparent agreement.",
+      "Incomplete claim discovery can make ledger coverage appear complete while material prose, diagrams, tables, code behavior, release wording, or downstream inferences remain unowned.",
+      "Schema-valid artifacts can be false, stale, selectively exported, incorrectly joined, or produced by dependent evaluators.",
+      "Source interpretation, benchmark validity, construct validity, evaluator quality, contamination, task mix, model version, and artifact access can change independently of the recorded support state.",
+      "Publication incentives, survivorship bias, privacy and legal deletion, retention limits, and selective negative-result recording can alter visible evidence without changing underlying truth.",
+      "Reader comprehension can be confounded by terminology, density, claim decomposition granularity, and placement even when every record is technically traceable."
+    ],
+    "acceptance_criteria": [
+      "Every declared field has an exercised consumer, every seeded laundering and stale-projection mutation reaches its exact rejection or residual route, and accepted transitions preserve exact claim, scope, evidence, authority, negative, and public-projection lineage.",
+      "A prospectively frozen matched campaign meets joint false-promotion, false-downgrade, adjudication, correction-time, stale-escape, useful-throughput, burden, and reader-traceability gates against strong comparators across the declared transfer set."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to the exact claim types, evidence roles, transition classes, authority topology, source and artifact versions, evaluators, projections, and reader population exercised.",
+      "Separate record/schema validity, formal routing, artifact existence, provenance assertion, causal faithfulness, independent reproduction, semantic truth, reader understanding, and whole-system safety.",
+      "Where claim discovery, source interpretation, evaluator independence, or outside-model effects remain incomplete, record the result as bounded workflow evidence rather than general epistemic reliability."
+    ],
+    "refutation_criteria": [
+      "Refute an invariant when a reachable admitted trace violates it under declared assumptions or a required field has no behavioral consumer.",
+      "Refute a causal benefit when matched ablation does not improve the frozen adjudication or correction outcome within its uncertainty and cost rule.",
+      "Refute superiority or novelty readings when a strong current reporting, assurance, provenance, or evidence-governance comparator matches or dominates the exact behavior and cost envelope."
+    ],
+    "deprecation_criteria": [
+      "Deprecate an atom only when a more precise canonical claim-discipline owner supersedes it and all records, schemas, proofs, fixtures, chapters, appendices, validators, public projections, releases, and reader consumers migrate with lineage."
+    ],
+    "promotion_ceiling": "argument_until_claim_specific_campaign_and_accepted_evidence_transition",
+    "reproduction": {"command":null,"environment_lock":null,"artifact_digest":null,"evaluator_identity":null},
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "evidence-states-and-claim-discipline",
+      "next_unblocking_condition": "Freeze a natural heterogeneous claim corpus, atom-discovery audit, strong reporting and assurance comparators, independent transition implementation, source-interpretation protocol, proof/test/interpretability/provenance challenge set, authority and appeal topology, reader-traceability study, cost model, and cross-release transfer campaign after P2/P3 semantics exist."
+    },
+    "non_claims": [
+      "Semantic review, claim coverage, record validity, green validators, proof checks, source mappings, or public traceability do not establish proposition truth or epistemic reliability.",
+      "A support-state label or accepted transition remains fallible and bounded by its exact evidence, evaluator, authority, scope, and outside-model residuals.",
+      "No support state changes without a separate accepted evidence-transition record."
+    ]
+  },
+  "atom_reviews": {
+    "evidence-states-and-claim-discipline.core": {
+      "proposition_type":"normative",
+      "dependencies":["evidence-states-and-claim-discipline.interface.003","evidence-states-and-claim-discipline.invariant.003","evidence-states-and-claim-discipline.invariant.006","evidence-states-and-claim-discipline.invariant.007","claim-ledgers-and-belief-revision.core"],
+      "strongest_counterclaim":"Claim identity, version control, citations, peer review, and ordinary prose qualifiers already preserve adequate evidence discipline; a universal atom-level graph and transition authority are too costly and cannot make fallible judgment objective.",
+      "falsifier":"A material claim or projection strengthens without an accepted exact transition, an accepted transition lacks a declared hard gate or evidence role, or a strong matched workflow achieves equal adjudication and correction outcomes at lower joint cost.",
+      "acceptance_criteria":["All material claims in the frozen corpus retain stable identity and exact state/projection lineage, all hard-gate mutations reject, and the governed workflow meets preregistered adjudication, correction, traceability, usefulness, and cost gates across the transfer set."]
+    },
+    "evidence-states-and-claim-discipline.problem.001": {
+      "proposition_type":"normative","current_disposition":"research_problem_not_positive_result",
+      "dependencies":["living-book-methodology.core"],
+      "strongest_counterclaim":"Version control and conventional scientific prose already preserve what assertions and evidence changed, making a separate claim lifecycle redundant.",
+      "falsifier":"Representative book revisions can be reconstructed and challenged with unambiguous claim text, scope, support, authority, and reason using existing artifacts alone, with no material ambiguity repaired by the proposed lifecycle.",
+      "required_lanes":[{"lane":"source-synthesis","necessity":"Compare mature scientific, editorial, assurance, and provenance lifecycles."},{"lane":"normative","necessity":"Define why and where claim-level lifecycle control is required."},{"lane":"executable","necessity":"Attempt reconstruction with existing and proposed workflows on the same revisions."}],
+      "acceptance_criteria":["A dated gap analysis identifies a material revision whose accepted strength or disposition is ambiguous under selected existing controls and becomes challengeable under the proposed lifecycle."],
+      "promotion_ceiling":"argument_as_problem_definition_no_truth_promotion"
+    },
+    "evidence-states-and-claim-discipline.insufficiency.001": {
+      "proposition_type":"source-synthesis",
+      "dependencies":["evidence-states-and-claim-discipline.failure_mode.002","evidence-states-and-claim-discipline.failure_mode.007","evidence-states-and-claim-discipline.failure_mode.008"],
+      "strongest_counterclaim":"Competent readers and reviewers can infer exact scope and evidence role from citations, methods, validator output, theorem statements, benchmark tables, and prose context without separate atom bindings.",
+      "falsifier":"Strong current reporting packages recover the exact atom, role, scope, independence, causal link, negatives, and accepted transition for every frozen case at equal or lower burden without an equivalent claim ledger.",
+      "required_lanes":[{"lane":"source-synthesis","necessity":"Audit actual strong reporting packages rather than isolated citations or scores."},{"lane":"executable","necessity":"Run identical interpretation cases through strong existing and proposed records."},{"lane":"empirical","necessity":"Measure ambiguity, adjudication agreement, false inference, time, and burden."}],
+      "acceptance_criteria":["The strongest existing control fails a prospectively material interpretation gate that the proposed exact binding passes within the cost rule."]
+    },
+    "evidence-states-and-claim-discipline.minimum.001": {
+      "proposition_type":"executable",
+      "dependencies":["evidence-states-and-claim-discipline.interface.001","evidence-states-and-claim-discipline.interface.002","evidence-states-and-claim-discipline.interface.003","evidence-states-and-claim-discipline.interface.004"],
+      "strongest_counterclaim":"The minimum is schema and fixture theater: it validates records authored to their own rules without independently interpreting evidence or controlling public claims.",
+      "falsifier":"Any declared field lacks an exercised consumer; a missing binding, deleted negative, aggregated hard gate, strengthened scope, spliced lineage, false independence, stale projection, or laundered support effect reaches acceptance; or no real projection consumes canonical state.",
+      "required_lanes":[{"lane":"executable","necessity":"Exercise every producer, transition, canonical-state, and projection path with positive and exact rejecting mutations."},{"lane":"formal","necessity":"Check bounded identity, routing, no-strengthening, negative-retention, and projection invariants."}],
+      "acceptance_criteria":["Every required field changes an exact decision, all seeded mutations reject, valid cases reach only bounded dispositions, and the public projection is generated from canonical state without support movement."],
+      "promotion_ceiling":"synthetic_test_backed_for_exact_claim_record_workflow_only_after_transition"
+    },
+    "evidence-states-and-claim-discipline.beyond_sota.001": {
+      "proposition_type":"composite","claim_label":"Speculative","current_disposition":"research_target_not_current_result",
+      "dependencies":["evidence-states-and-claim-discipline.core","integrated-reference-architecture.core"],
+      "strongest_counterclaim":"The mature target is an unscalable internal bureaucracy that cannot solve semantic judgment, independent verification, unknown claims, strategic evidence, or embedded blind spots and is dominated by established research-governance systems.",
+      "falsifier":"The exact system misses a hard-gate laundering case, cannot revalidate affected claims, is dominated by a frozen strong comparator, fails independent implementation or release transfer, or violates false-promotion, false-downgrade, usefulness, burden, or traceability gates.",
+      "acceptance_criteria":["The independently implemented system meets every frozen hard gate and the preregistered dominance or Pareto rule against strong comparators across claim, evidence, release, and reader transfer sets."],
+      "promotion_ceiling":"speculative_target_until_exact_SOTA_adjudication"
+    },
+    "evidence-states-and-claim-discipline.mechanism.001": {
+      "proposition_type":"executable","dependencies":["evidence-states-and-claim-discipline.interface.004"],
+      "strongest_counterclaim":"Appendix C can remain a manually curated explanatory table without a canonical claim-record backend.",
+      "falsifier":"A public row diverges from accepted canonical state or transition lineage without detection, or canonical generation adds no correction value over careful manual maintenance within the cost gate.",
+      "acceptance_criteria":["Every canonical mutation reaches the expected public projection, every unauthorized public strengthening rejects, and projection lineage is replayable."]
+    },
+    "evidence-states-and-claim-discipline.mechanism.002": {
+      "proposition_type":"formal","dependencies":["evidence-states-and-claim-discipline.core"],
+      "strongest_counterclaim":"The four axes are redundant and confuse readers; one calibrated confidence or status field is sufficient.",
+      "falsifier":"Two materially different assertion-kind, backing, lifecycle, or outcome states collapse to one decision, or a scalar control matches every decision and reader interpretation at lower cost.",
+      "acceptance_criteria":["Every axis has a distinct exercised decision consequence, all illegal cross-axis substitutions reject, and redundant fields are removed."]
+    },
+    "evidence-states-and-claim-discipline.mechanism.003": {
+      "proposition_type":"executable","dependencies":["evidence-states-and-claim-discipline.failure_mode.002"],
+      "strongest_counterclaim":"A reputable citation or source note plus competent review is enough for source-derived status without passage-level atom mapping.",
+      "falsifier":"A source-derived transition is accepted without exact reviewed passages, role, boundary, contradictions, and non-claims, or passage mapping adds no interpretation accuracy over a strong source-note control.",
+      "acceptance_criteria":["All seeded citation-laundering cases reject and accepted source-derived cases preserve exact passage, role, interpretation, contradiction, and scope lineage."]
+    },
+    "evidence-states-and-claim-discipline.mechanism.004": {
+      "proposition_type":"executable","dependencies":["evidence-states-and-claim-discipline.failure_mode.007"],
+      "strongest_counterclaim":"A result artifact and standard methods section are sufficient for test-backed status; the proposed bundle duplicates experiment tracking.",
+      "falsifier":"Test-backed movement accepts a missing command, environment, artifact, result, evaluator identity/independence, negative, limitation, or reproduction boundary, or the bundle adds no adjudication value over strong experiment tracking.",
+      "acceptance_criteria":["Every missing or contradicted bundle element reaches its exact blocker and accepted test-backed cases replay within the declared environment and claim scope."]
+    },
+    "evidence-states-and-claim-discipline.mechanism.005": {
+      "proposition_type":"normative","dependencies":["evidence-states-and-claim-discipline.invariant.007"],
+      "strongest_counterclaim":"A calibrated scalar confidence or evidence grade is easier to compare and can encode the same dimensions statistically.",
+      "falsifier":"A scalar policy preserves every hard gate and transition decision across the frozen cases with equal calibration and lower burden, or a listed dimension never changes a decision.",
+      "acceptance_criteria":["Each retained dimension has a distinct challenge case and no dimension can hide another's failed hard gate in any accepted transition."]
+    },
+    "evidence-states-and-claim-discipline.mechanism.006": {
+      "proposition_type":"causal","dependencies":["evidence-states-and-claim-discipline.invariant.004"],
+      "strongest_counterclaim":"Same-lineage end-to-end causality is unnecessary for useful component or correlational capability claims when scope is explicit.",
+      "falsifier":"An end-to-end causal capability claim is accepted with a missing or cross-lineage data/objective/code/update/output/evaluation/binding link, or full lineage does not reduce false attribution under matched splicing attacks.",
+      "acceptance_criteria":["All seeded cross-lineage and missing-link cases reject for end-to-end claims while explicitly narrower component and correlational claims remain representable."]
+    },
+    "evidence-states-and-claim-discipline.mechanism.007": {
+      "proposition_type":"executable","dependencies":["evidence-states-and-claim-discipline.invariant.005"],
+      "strongest_counterclaim":"Training configuration and checkpoint existence adequately imply which state changed and caused the response.",
+      "falsifier":"A generated, frozen, pretrained, optimizer-only, merely trainable, or substituted path is reported as actually updated and response-causal without exact receipts.",
+      "acceptance_criteria":["Every state and substitution mutation reaches an exact disposition and only checkpoint-to-response paths with observed updates and causal bindings support the corresponding claim."]
+    },
+    "evidence-states-and-claim-discipline.mechanism.008": {
+      "proposition_type":"formal","dependencies":["evidence-states-and-claim-discipline.failure_mode.006"],
+      "strongest_counterclaim":"A binary present/absent field plus defaults is simpler and sufficient for missing evidence.",
+      "falsifier":"Unknown, not attempted, not required, and waived cases produce materially different obligations but collapse to one accepted decision, or an absent field defaults to a positive evidence state.",
+      "acceptance_criteria":["Each missingness state has distinct authority and blocker semantics and no absence can serialize as passed, independent, observed, or real."]
+    },
+    "evidence-states-and-claim-discipline.mechanism.009": {
+      "proposition_type":"formal","dependencies":["evidence-states-and-claim-discipline.failure_mode.004"],
+      "strongest_counterclaim":"First-party implementation and interface tests are reasonable evidence of component capability for the intended scope.",
+      "falsifier":"Ownership, local execution, or interface presence produces task-relevant capability admission without an observed effect and exact claim binding.",
+      "acceptance_criteria":["All ownership/capability substitutions reject and ownership remains queryable without altering capability disposition."]
+    },
+    "evidence-states-and-claim-discipline.mechanism.010": {
+      "proposition_type":"source-synthesis","dependencies":["evidence-states-and-claim-discipline.failure_mode.011"],
+      "strongest_counterclaim":"Authenticated or standards-conformant provenance is adequate practical evidence of derivation and integrity for ordinary research artifacts.",
+      "falsifier":"A provenance assertion alone changes truth, completeness, integrity, authority, or effect disposition, or the separation supplies no decision value against a strong provenance control.",
+      "acceptance_criteria":["Every provenance relation remains an assertion until its claim-specific truth and authority lanes pass; all seeded provenance-laundering cases reject."]
+    },
+    "evidence-states-and-claim-discipline.interface.001": {
+      "proposition_type":"executable","dependencies":["evidence-states-and-claim-discipline.invariant.006"],
+      "strongest_counterclaim":"Editorial revision can improve or clarify claims without versioning every wording and scope change.",
+      "falsifier":"A drafting change strengthens text, scope, label, or dependencies and alters apparent support without a transition or justified support reset.",
+      "acceptance_criteria":["All seeded strengthening changes create exact transition/reset obligations while nonsemantic edits remain within the false-positive budget."]
+    },
+    "evidence-states-and-claim-discipline.interface.002": {
+      "proposition_type":"executable","dependencies":["evidence-states-and-claim-discipline.mechanism.003","evidence-states-and-claim-discipline.mechanism.004"],
+      "strongest_counterclaim":"Evidence producers can emit native artifacts and let reviewers infer roles and limits without a common packet.",
+      "falsifier":"A packet reaches transition review with missing role, provenance, independence, negative, limitation, or claim binding, or the common packet loses material native evidence.",
+      "acceptance_criteria":["Every producer adapter preserves native artifacts and emits all decision-relevant fields; missing or lossy packets reject exactly."]
+    },
+    "evidence-states-and-claim-discipline.interface.003": {
+      "proposition_type":"normative","dependencies":["system-boundaries-and-authority.core"],
+      "strongest_counterclaim":"Automated rules or claim owners can safely accept routine transitions without a distinct named authority.",
+      "falsifier":"A material disposition occurs without authenticated authority and complete decision lineage, or distinct authority is dominated by a bounded automatic comparator on accuracy, time, and burden.",
+      "acceptance_criteria":["Every disposition has exact authority, decision, blockers, residuals, supersession, and changelog lineage within frozen adjudication and burden gates."]
+    },
+    "evidence-states-and-claim-discipline.interface.004": {
+      "proposition_type":"executable","dependencies":["evidence-states-and-claim-discipline.mechanism.001"],
+      "strongest_counterclaim":"Reader and release surfaces need editorial freedom to summarize evidence without strict canonical-state consumption.",
+      "falsifier":"Any projection strengthens, omits a material negative, or retains stale state after canonical change without an explicit bounded derivative decision.",
+      "acceptance_criteria":["All projections replay from canonical versions, seeded independent strengthening and staleness reject, and authorized summaries preserve exact non-claim boundaries."]
+    },
+    "evidence-states-and-claim-discipline.invariant.001": {
+      "proposition_type":"formal","dependencies":["evidence-states-and-claim-discipline.mechanism.003"],
+      "strongest_counterclaim":"A missing local artifact can be acceptable when a reputable source or standard identifier is independently resolvable.",
+      "falsifier":"A support reference or test result with no resolvable artifact and exact claim binding reaches an accepted positive disposition.",
+      "acceptance_criteria":["Every missing, mismatched, inaccessible, or unbound reference is rejected or explicitly residualized before support movement."]
+    },
+    "evidence-states-and-claim-discipline.invariant.002": {
+      "proposition_type":"formal","dependencies":["evidence-states-and-claim-discipline.interface.002"],
+      "strongest_counterclaim":"Harmless command normalization, artifact substitution, or summarized review can be accepted when outcomes are equivalent.",
+      "falsifier":"A fabricated, substituted, or stronger-role result reaches acceptance without explicit equivalence evidence and authority.",
+      "acceptance_criteria":["All seeded fabrication, substitution, and role-inflation mutations reject; authorized equivalence preserves both original and replacement lineage."]
+    },
+    "evidence-states-and-claim-discipline.invariant.003": {
+      "proposition_type":"formal","dependencies":["failure-modes-of-ungoverned-intelligence.interface.003"],
+      "strongest_counterclaim":"Retention of every negative is costly, duplicative, privacy-sensitive, and can obscure current best evidence.",
+      "falsifier":"A protected negative, null, inconclusive, failed, blocked, or contradictory result is deleted, relabeled, or scope-stripped without authorized retention/redaction lineage and residual handling.",
+      "acceptance_criteria":["Every protected result remains reconstructable or carries an authorized deletion/redaction receipt, exact scope, and residual."]
+    },
+    "evidence-states-and-claim-discipline.invariant.004": {
+      "proposition_type":"formal","dependencies":["evidence-states-and-claim-discipline.mechanism.006"],
+      "strongest_counterclaim":"Cross-run triangulation can legitimately support capability when lineage is statistically controlled.",
+      "falsifier":"Incompatible data, objective, code, update, output, or evaluation links are narrated as one same-run causal chain without an explicitly narrower cross-run synthesis claim.",
+      "acceptance_criteria":["All seeded splices reject for same-lineage claims and valid cross-run synthesis remains separately typed and bounded."]
+    },
+    "evidence-states-and-claim-discipline.invariant.005": {
+      "proposition_type":"formal","dependencies":["evidence-states-and-claim-discipline.mechanism.009"],
+      "strongest_counterclaim":"Ownership, integrated interfaces, and trainability are useful capability proxies when direct measurement is expensive.",
+      "falsifier":"Any proxy alone produces an observed-effect disposition or support movement without task-relevant behavior and claim binding.",
+      "acceptance_criteria":["All proxy-only cases remain non-capability evidence and only observed effects under declared evaluation can change the exact capability atom."]
+    },
+    "evidence-states-and-claim-discipline.invariant.006": {
+      "proposition_type":"formal","dependencies":["evidence-states-and-claim-discipline.interface.001"],
+      "strongest_counterclaim":"Clarifying wording can strengthen a claim's practical meaning without changing its formal support state.",
+      "falsifier":"A wording or scope mutation makes a stronger proposition reader-visible without an accepted transition or explicit justified support reset.",
+      "acceptance_criteria":["All seeded semantic strengthening creates exact review obligations and no public projection exposes stronger meaning first."]
+    },
+    "evidence-states-and-claim-discipline.invariant.007": {
+      "proposition_type":"formal","dependencies":["evidence-states-and-claim-discipline.mechanism.005"],
+      "strongest_counterclaim":"Calibrated aggregation can trade evidence dimensions rationally while preserving veto thresholds.",
+      "falsifier":"A failed hard gate or missing dimension is automatically offset by another dimension in an accepted transition, or a transparent scalar-veto comparator preserves every decision at lower cost.",
+      "acceptance_criteria":["All hard-gate compensation attacks reject and any aggregation remains descriptive, reversible, and subordinate to explicit non-compensable constraints."]
+    },
+    "evidence-states-and-claim-discipline.invariant.008": {
+      "proposition_type":"formal","dependencies":["evidence-states-and-claim-discipline.mechanism.010"],
+      "strongest_counterclaim":"Sufficiently complete records, proofs, provenance, and verification can justify practical whole-system confidence within a declared threat model.",
+      "falsifier":"Finite completeness alone produces embedded-world, whole-agent, descendant, open-world, or outside-observer correctness without dedicated evidence and residuals.",
+      "acceptance_criteria":["Every finite result preserves its model, observer, trust roots, recursion stop, ontology version, and outside-model residual, and all whole-world inference mutations reject."]
+    },
+    "evidence-states-and-claim-discipline.failure_mode.001": {"proposition_type":"causal","dependencies":["evidence-states-and-claim-discipline.core"],"strongest_counterclaim":"Apparent inflation is legitimate confidence updating or clearer communication.","falsifier":"No reachable support strengthening lacks accepted claim-specific evidence, or the governed controls do not reduce false promotion under matched cases.","acceptance_criteria":["Seeded and held-out inflation cases are detected within frozen recall, false-alarm, and burden gates; natural prevalence remains unclaimed."]},
+    "evidence-states-and-claim-discipline.failure_mode.002": {"proposition_type":"causal","dependencies":["evidence-states-and-claim-discipline.mechanism.003"],"strongest_counterclaim":"Nearby citations are an efficient scholarly shorthand whose scope competent readers understand.","falsifier":"Exact mapping does not reduce incorrect source-support inferences against strong citation practice under matched cases.","acceptance_criteria":["Held-out citation-role and scope attacks meet frozen adjudication gates without claiming source truth."]},
+    "evidence-states-and-claim-discipline.failure_mode.003": {"proposition_type":"causal","dependencies":["evidence-states-and-claim-discipline.invariant.003"],"strongest_counterclaim":"Removing obsolete failures improves signal and is legitimate maintenance.","falsifier":"A failed claim disappears without lineage and the workflow neither detects nor changes interpretation, or retention adds no correction value within privacy/cost gates.","acceptance_criteria":["Seeded silent removal is detected while authorized supersession and deletion preserve exact residual lineage."]},
+    "evidence-states-and-claim-discipline.failure_mode.004": {"proposition_type":"causal","dependencies":["evidence-states-and-claim-discipline.mechanism.009"],"strongest_counterclaim":"Local ownership and integration are reasonable priors for capability.","falsifier":"Ownership never changes capability inference absent observed effects, or separation controls add no value under matched proxy cases.","acceptance_criteria":["Held-out ownership-proxy attacks reject within frozen capability-adjudication gates."]},
+    "evidence-states-and-claim-discipline.failure_mode.005": {"proposition_type":"causal","dependencies":["evidence-states-and-claim-discipline.mechanism.006"],"strongest_counterclaim":"Cross-run synthesis can be causally informative even without one end-to-end execution.","falsifier":"Spliced chains are always explicitly typed as synthesis or full-lineage controls do not reduce false causal attribution.","acceptance_criteria":["Held-out splice attacks are distinguished from valid synthesis within frozen gates."]},
+    "evidence-states-and-claim-discipline.failure_mode.006": {"proposition_type":"causal","dependencies":["evidence-states-and-claim-discipline.mechanism.008"],"strongest_counterclaim":"Defaults for missing evidence are operationally necessary and rarely change outcomes.","falsifier":"Missing-state distinctions add no decision value or a bounded default policy matches safety and usefulness at lower cost.","acceptance_criteria":["All positive missingness defaults reject and authorized waivers remain explicit, scoped, expiring, and non-supporting."]},
+    "evidence-states-and-claim-discipline.failure_mode.007": {"proposition_type":"causal","dependencies":["evidence-states-and-claim-discipline.mechanism.004"],"strongest_counterclaim":"Standard benchmark reporting and expert readers adequately constrain generalization.","falsifier":"Frozen scope controls do not reduce benchmark overgeneralization across held-out workload, evaluator, contamination, uncertainty, and transfer attacks.","acceptance_criteria":["Held-out benchmark-laundering cases meet exact adjudication gates and valid bounded benchmark claims remain admissible."]},
+    "evidence-states-and-claim-discipline.failure_mode.008": {"proposition_type":"causal","dependencies":["executable-specifications-and-lean-proof-envelope.core"],"strongest_counterclaim":"Theorem statements and module context already make formal scope obvious.","falsifier":"Proof consumers never over-read the finite theorem or refinement/consumer fields add no detection value under matched rationalization attacks.","acceptance_criteria":["Held-out assumption, model, refinement, and consumer laundering attacks reject without weakening exact formal claims."]},
+    "evidence-states-and-claim-discipline.failure_mode.009": {"proposition_type":"causal","dependencies":["evidence-states-and-claim-discipline.interface.002"],"strongest_counterclaim":"Mechanistic evidence legitimately increases behavioral or safety confidence even when direct tests are incomplete.","falsifier":"Scoped model/layer/method controls do not reduce unsupported behavioral, capability, safety, or deployment inference under matched artifacts.","acceptance_criteria":["Held-out interpretability-laundering cases reject while exact mechanistic claims remain admissible."]},
+    "evidence-states-and-claim-discipline.failure_mode.010": {"proposition_type":"causal","dependencies":["evidence-states-and-claim-discipline.invariant.006"],"strongest_counterclaim":"Removing caveats improves readability without changing competent interpretation.","falsifier":"Caveat/residual removal does not strengthen reader interpretation or versioned scope controls do not reduce the effect under matched prose.","acceptance_criteria":["Held-out smoothing edits are detected and reader-strength judgments remain within frozen agreement and burden gates."]},
+    "evidence-states-and-claim-discipline.failure_mode.011": {"proposition_type":"causal","dependencies":["evidence-states-and-claim-discipline.mechanism.010"],"strongest_counterclaim":"Authenticated standards-conformant provenance is adequate practical evidence of integrity and effect.","falsifier":"Separating provenance assertion from truth, authority, and effect does not reduce false inference under matched graphs.","acceptance_criteria":["Held-out provenance-laundering cases reject while exact asserted lineage remains available."]},
+    "evidence-states-and-claim-discipline.failure_mode.012": {"proposition_type":"causal","dependencies":["evidence-states-and-claim-discipline.interface.002"],"strongest_counterclaim":"Shared models or data can still yield sufficiently independent review when prompts, roles, or seeds differ.","falsifier":"Recorded shared-failure surfaces do not improve calibration of independence or detect correlated review failure under matched cases.","acceptance_criteria":["Held-out self/shared-review attacks receive exact dependence labels and meet frozen false-independence gates."]},
+    "evidence-states-and-claim-discipline.formal.evidence-support-state-operational-invariant": {
+      "proposition_type":"formal","dependencies":["evidence-states-and-claim-discipline.core"],"strongest_counterclaim":"The theorem restates the transition constructor and proves no semantic adequacy or artifact truth.","falsifier":"Lean admits a modeled transition without its required artifact, or the runtime refinement accepts a missing artifact as present.","required_lanes":[{"lane":"formal","necessity":"Check the exact finite artifact requirement."},{"lane":"executable","necessity":"Mutation-test the runtime-to-model refinement and consumer."}],"acceptance_criteria":["`cd lean && lake build` checks the theorem and all seeded missing-artifact refinements reject; scope remains finite transition semantics."],"promotion_ceiling":"formally_checked_for_exact_finite_model_only_no_truth_promotion"
+    },
+    "evidence-states-and-claim-discipline.formal.evidence-support-state-failure-blocks-promotion": {
+      "proposition_type":"formal","dependencies":["evidence-states-and-claim-discipline.invariant.001"],"strongest_counterclaim":"The theorem defines absent evidence as a blocker and says nothing about whether present evidence is adequate.","falsifier":"Lean admits promotion with modeled required evidence absent, or the bridge maps absent runtime evidence to present.","required_lanes":[{"lane":"formal","necessity":"Check the exact finite no-promotion result."},{"lane":"executable","necessity":"Mutation-test evidence presence and bridge meaning."}],"acceptance_criteria":["The theorem and bridge reject every seeded absent-evidence promotion while making no adequacy claim for present evidence."],"promotion_ceiling":"formally_checked_for_exact_finite_model_only_no_adequacy_promotion"
+    },
+    "evidence-states-and-claim-discipline.formal.evidence-support-state-transition-lifecycle-route": {
+      "proposition_type":"formal","dependencies":["evidence-states-and-claim-discipline.interface.003"],"strongest_counterclaim":"The finite route is field completeness by construction and does not establish semantic correctness or review quality.","falsifier":"A modeled no-change, missing-record, scope, effect, review, evidence, terminal/downgrade, changelog, or non-claim gap reaches the wrong allowed outcome.","required_lanes":[{"lane":"formal","necessity":"Check exhaustive finite routing."},{"lane":"executable","necessity":"Mutate every modeled field through real serializers and consumers."}],"acceptance_criteria":["The exact Lean route checks and every seeded field mutation reaches its declared outcome; evidence truth and reviewer quality remain outside scope."],"promotion_ceiling":"formally_checked_for_exact_finite_route_only_no_truth_promotion"
+    },
+    "evidence-states-and-claim-discipline.formal.evidence-bundle-completeness-probe-bridge": {
+      "proposition_type":"executable","current_disposition":"retain_as_p2_bridge_pending_real_consumer_replacement","dependencies":["evidence-states-and-claim-discipline.minimum.001"],"strongest_counterclaim":"The synthetic bundle probe is circular and cannot establish evidence completeness or changelog truth.","falsifier":"The validator accepts missing bundle identity, artifacts, result, command, limitation, negative boundary, changelog consistency, or no-support-effect constraint.","required_lanes":[{"lane":"executable","necessity":"Run exact positive and rejecting synthetic bundle mutations."},{"lane":"formal","necessity":"Preserve finite bridge alignment."}],"acceptance_criteria":["`python3 scripts/validate_evidence_bundle_completeness_probe.py && (cd lean && lake build)` passes exact rejecting controls; the bridge is retired or narrowed when a real producer/consumer replaces it."],"promotion_ceiling":"synthetic_bridge_contract_only_no_evidence_truth_promotion"
+    },
+    "evidence-states-and-claim-discipline.formal.evidence-claim-ledger-completeness-audit-bridge": {
+      "proposition_type":"executable","current_disposition":"retain_as_p2_bridge_pending_real_consumer_replacement","dependencies":["evidence-states-and-claim-discipline.mechanism.001"],"strongest_counterclaim":"Ledger row coverage is administrative completeness and cannot establish claim discovery, truth, or promotion readiness.","falsifier":"The audit accepts missing, duplicate, unknown, mislabeled, support-mismatched, gapless, or promotion-path-missing rows, or a stale manifest snapshot.","required_lanes":[{"lane":"executable","necessity":"Run the real projection audit and rejecting mutations."},{"lane":"formal","necessity":"Preserve finite bridge alignment."}],"acceptance_criteria":["The exact audit rejects every seeded row/snapshot mutation and remains explicitly bounded to known manifest claims and Appendix C projection."],"promotion_ceiling":"ledger_completeness_only_no_claim_truth_promotion"
+    },
+    "evidence-states-and-claim-discipline.formal.evidence-accepted-transition-review-audit-bridge": {
+      "proposition_type":"executable","current_disposition":"retain_as_p2_bridge_pending_independent_transition_consumer","dependencies":["evidence-states-and-claim-discipline.interface.003"],"strongest_counterclaim":"Auditing project-authored accepted transitions only proves internal record consistency, not evidence adequacy or reviewer independence.","falsifier":"The audit accepts core promotion, missing review artifacts, unresolved blockers, effect mismatch, no-promotion drift, or fabricated independence.","required_lanes":[{"lane":"executable","necessity":"Audit real accepted/no-promotion records and exact mutations."},{"lane":"formal","necessity":"Preserve finite bridge constraints."}],"acceptance_criteria":["Every seeded transition-review mutation rejects and all conclusions remain bounded to record consistency until an independently implemented consumer exists."],"promotion_ceiling":"accepted_record_audit_only_no_evidence_adequacy_promotion"
+    },
+    "evidence-states-and-claim-discipline.formal.evidence-claim-state-transition-bridge": {
+      "proposition_type":"executable","current_disposition":"retain_as_p2_bridge_pending_real_negative_evidence_consumer","dependencies":["evidence-states-and-claim-discipline.invariant.003"],"strongest_counterclaim":"Synthetic narrowing, downgrade, and refutation fixtures do not establish that real negative evidence is sufficient or interpreted correctly.","falsifier":"The bridge accepts missing negative evidence, downgrade trigger, terminal effect, non-claim boundary, or live-claim movement/support promotion.","required_lanes":[{"lane":"executable","necessity":"Run exact negative-evidence lifecycle mutations."},{"lane":"formal","necessity":"Preserve finite bridge alignment."}],"acceptance_criteria":["All exact negative controls reject and the bridge remains no-live-movement until a real accepted negative-evidence transition consumes it."],"promotion_ceiling":"synthetic_negative_lifecycle_contract_only_no_live_claim_effect"
+    }
+  },
+  "prose_candidate_dispositions": {
+    "evidence-states-and-claim-discipline.prose.49ab1722a1de":{"state":"duplicate_of_atom","rationale":"Plain-language list of evidence-quality dimensions owned by the non-aggregating evidence-cell mechanism.","target_atom_id":"evidence-states-and-claim-discipline.mechanism.005"},
+    "evidence-states-and-claim-discipline.prose.58b7f24b6fb1":{"state":"nonmaterial_explanation","rationale":"Illustrates why separate evidence dimensions do not compensate automatically."},
+    "evidence-states-and-claim-discipline.prose.ee880b690c25":{"state":"duplicate_of_atom","rationale":"Reader-language statement of the no-strengthening and separated-axis core.","target_atom_id":"evidence-states-and-claim-discipline.invariant.006"},
+    "evidence-states-and-claim-discipline.prose.e0772da682f5":{"state":"duplicate_of_atom","rationale":"Concrete evidence-smoothing case owned by the no-strengthening invariant.","target_atom_id":"evidence-states-and-claim-discipline.invariant.006"},
+    "evidence-states-and-claim-discipline.prose.fe1a08622d16":{"state":"duplicate_of_atom","rationale":"Reader-language application of keeping wording within the accepted support state.","target_atom_id":"evidence-states-and-claim-discipline.core"},
+    "evidence-states-and-claim-discipline.prose.5d9dc25546b5":{"state":"duplicate_of_atom","rationale":"Restates that support movement and reader-visible state move through the transition ledger.","target_atom_id":"evidence-states-and-claim-discipline.interface.003"},
+    "evidence-states-and-claim-discipline.prose.ebf1a3ae2b96":{"state":"duplicate_of_atom","rationale":"Editorial restatement of the no-strengthening invariant.","target_atom_id":"evidence-states-and-claim-discipline.invariant.006"},
+    "evidence-states-and-claim-discipline.prose.c2b9a5b9c25e":{"state":"duplicate_of_atom","rationale":"Plain-language form of stable assertion kind and current-backing fields.","target_atom_id":"evidence-states-and-claim-discipline.core"},
+    "evidence-states-and-claim-discipline.prose.e3e41c1b8219":{"state":"nonmaterial_explanation","rationale":"Explains non-implication among source, proof, fixture, and measurement evidence roles."},
+    "evidence-states-and-claim-discipline.prose.d5173fc17e07":{"state":"duplicate_of_atom","rationale":"Citation-role boundary owned by the source-derived movement mechanism.","target_atom_id":"evidence-states-and-claim-discipline.mechanism.003"},
+    "evidence-states-and-claim-discipline.prose.afecc407d149":{"state":"historical_or_source_report","rationale":"Bounded report of Spinoza's claim graph and downgrade discipline."},
+    "evidence-states-and-claim-discipline.prose.50b00c27974f":{"state":"historical_or_source_report","rationale":"Bounded comparator summary of model cards and datasheets."},
+    "evidence-states-and-claim-discipline.prose.08ea07e31af9":{"state":"historical_or_source_report","rationale":"Bounded comparator summary of the ML reproducibility program."},
+    "evidence-states-and-claim-discipline.prose.edffb3a0c9c6":{"state":"historical_or_source_report","rationale":"Bounded comparator summary of proof-carrying code lineage."},
+    "evidence-states-and-claim-discipline.prose.257b64b0ede8":{"state":"duplicate_of_atom","rationale":"Concrete source-derived transition requirement.","target_atom_id":"evidence-states-and-claim-discipline.mechanism.003"},
+    "evidence-states-and-claim-discipline.prose.b30d033c9d56":{"state":"duplicate_of_atom","rationale":"Concrete synthetic-test-backed bundle requirement.","target_atom_id":"evidence-states-and-claim-discipline.mechanism.004"},
+    "evidence-states-and-claim-discipline.prose.f86136725d2e":{"state":"duplicate_of_atom","rationale":"Plain-language negative-result retention rule.","target_atom_id":"evidence-states-and-claim-discipline.invariant.003"},
+    "evidence-states-and-claim-discipline.prose.8627f2b42b53":{"state":"duplicate_of_atom","rationale":"Literal rendered core-claim marker.","target_atom_id":"evidence-states-and-claim-discipline.core"},
+    "evidence-states-and-claim-discipline.prose.4a1dbc62f7cb":{"state":"duplicate_of_atom","rationale":"Restates the accepted claim-specific transition gate.","target_atom_id":"evidence-states-and-claim-discipline.core"},
+    "evidence-states-and-claim-discipline.prose.6b597c490644":{"state":"duplicate_of_atom","rationale":"Figure walkthrough of transition authority and required lineage.","target_atom_id":"evidence-states-and-claim-discipline.interface.003"},
+    "evidence-states-and-claim-discipline.prose.3007b34b577d":{"state":"duplicate_of_atom","rationale":"Restates the test-backed evidence bundle requirements.","target_atom_id":"evidence-states-and-claim-discipline.mechanism.004"},
+    "evidence-states-and-claim-discipline.prose.cf9c8fc73fcf":{"state":"nonmaterial_explanation","rationale":"Describes existing claim-record readiness fields without adding a new claim."},
+    "evidence-states-and-claim-discipline.prose.23b40d820f6a":{"state":"nonmaterial_explanation","rationale":"Correct limitation that schema shape cannot accept a semantic transition."},
+    "evidence-states-and-claim-discipline.prose.1a23c01f1edb":{"state":"nonmaterial_explanation","rationale":"Exact limitation of the reviewer-degradation fixture and human approval record."},
+    "evidence-states-and-claim-discipline.prose.99ff19e63f55":{"state":"nonmaterial_explanation","rationale":"Scanner fragment introducing the QCSA worked example, not a complete proposition."},
+    "evidence-states-and-claim-discipline.prose.e289184856e6":{"state":"duplicate_of_atom","rationale":"Interpretability evidence-packet scope and non-claim requirements.","target_atom_id":"evidence-states-and-claim-discipline.failure_mode.009"},
+    "evidence-states-and-claim-discipline.prose.df8a19405cb0":{"state":"nonmaterial_explanation","rationale":"Motivation for preserving failed and missing evidence."},
+    "evidence-states-and-claim-discipline.prose.b21b1721e431":{"state":"duplicate_of_atom","rationale":"Normative shorthand for the asymmetric promotion burden in the core.","target_atom_id":"evidence-states-and-claim-discipline.core"},
+    "evidence-states-and-claim-discipline.prose.3006a5f7bf1c":{"state":"duplicate_of_atom","rationale":"Plain-language asymmetric downgrade rule owned by the core.","target_atom_id":"evidence-states-and-claim-discipline.core"},
+    "evidence-states-and-claim-discipline.prose.b0c69e3ed6f6":{"state":"historical_or_source_report","rationale":"Bounded local-lineage report from Corben's Trainer."},
+    "evidence-states-and-claim-discipline.prose.830dbea57f4f":{"state":"duplicate_of_atom","rationale":"Concrete response-causality instance of state/effect separation.","target_atom_id":"evidence-states-and-claim-discipline.mechanism.007"},
+    "evidence-states-and-claim-discipline.prose.683c55ce13aa":{"state":"duplicate_of_atom","rationale":"Literal honest-missingness prohibition.","target_atom_id":"evidence-states-and-claim-discipline.mechanism.008"},
+    "evidence-states-and-claim-discipline.prose.43156b4c3303":{"state":"nonmaterial_explanation","rationale":"Scanner fragment from the provenance-versus-truth explanation."},
+    "evidence-states-and-claim-discipline.prose.309a16fa1732":{"state":"nonmaterial_explanation","rationale":"Design explanation for retaining only decision-relevant evidence-cell fields."},
+    "evidence-states-and-claim-discipline.prose.6612f855d008":{"state":"nonmaterial_explanation","rationale":"Field-minimization heuristic for avoiding record proliferation."},
+    "evidence-states-and-claim-discipline.prose.e902b193dfc6":{"state":"duplicate_of_atom","rationale":"Expanded prose list of distinct evidence roles.","target_atom_id":"evidence-states-and-claim-discipline.mechanism.002"},
+    "evidence-states-and-claim-discipline.prose.095cb5811945":{"state":"duplicate_of_atom","rationale":"Plain-language statement of asymmetric support movement.","target_atom_id":"evidence-states-and-claim-discipline.core"},
+    "evidence-states-and-claim-discipline.prose.1c5f45ab80b1":{"state":"duplicate_of_atom","rationale":"Source-note non-promotion instance of the source-derived gate.","target_atom_id":"evidence-states-and-claim-discipline.mechanism.003"},
+    "evidence-states-and-claim-discipline.prose.eddc8640815d":{"state":"duplicate_of_atom","rationale":"Literal scope-strengthening prohibition.","target_atom_id":"evidence-states-and-claim-discipline.invariant.006"},
+    "evidence-states-and-claim-discipline.prose.b12816e68cc3":{"state":"nonmaterial_explanation","rationale":"Scanner fragment illustrating non-compensation across evidence dimensions."},
+    "evidence-states-and-claim-discipline.prose.39075c55b40b":{"state":"nonmaterial_explanation","rationale":"Scanner fragment illustrating non-compensation across evidence dimensions."},
+    "evidence-states-and-claim-discipline.prose.8f5159b83cdd":{"state":"nonmaterial_explanation","rationale":"Scanner fragment completing the wrong-construct hard-gate example."},
+    "evidence-states-and-claim-discipline.prose.c8a458e886e8":{"state":"duplicate_of_atom","rationale":"Plain-language definition of proof laundering.","target_atom_id":"evidence-states-and-claim-discipline.failure_mode.008"},
+    "evidence-states-and-claim-discipline.prose.eb8b80c5eab2":{"state":"duplicate_of_atom","rationale":"Plain-language definition of evidence smoothing.","target_atom_id":"evidence-states-and-claim-discipline.failure_mode.010"},
+    "evidence-states-and-claim-discipline.prose.e6fa0a769c6c":{"state":"nonmaterial_explanation","rationale":"Exact non-claim for the six-project synthetic evidence cell."},
+    "evidence-states-and-claim-discipline.prose.70e1c782fc12":{"state":"duplicate_of_atom","rationale":"Detailed prose summary of the finite transition lifecycle and negative-evidence bridge.","target_atom_id":"evidence-states-and-claim-discipline.formal.evidence-support-state-transition-lifecycle-route"},
+    "evidence-states-and-claim-discipline.prose.3c8efc6dacd1":{"state":"nonmaterial_explanation","rationale":"Scanner fragment from the source-derived and test-backed maturity boundary."},
+    "evidence-states-and-claim-discipline.prose.234110a9a419":{"state":"nonmaterial_explanation","rationale":"Scanner fragment from the negative-result retention requirement."},
+    "evidence-states-and-claim-discipline.prose.76f34d7b3524":{"state":"nonmaterial_explanation","rationale":"Current argument support ceiling and exact future promotion burden."},
+    "evidence-states-and-claim-discipline.prose.62f5c7e756b0":{"state":"duplicate_of_atom","rationale":"Summary of the finite formal and synthetic bridge surfaces.","target_atom_id":"evidence-states-and-claim-discipline.formal.evidence-support-state-transition-lifecycle-route"},
+    "evidence-states-and-claim-discipline.prose.aba4b9d1e039":{"state":"duplicate_of_atom","rationale":"Crosswalk restatement of exact transition requirements.","target_atom_id":"evidence-states-and-claim-discipline.core"},
+    "evidence-states-and-claim-discipline.prose.7bdc1c33cafc":{"state":"duplicate_of_atom","rationale":"Summary restatement of the source-derived movement boundary.","target_atom_id":"evidence-states-and-claim-discipline.mechanism.003"},
+    "evidence-states-and-claim-discipline.prose.f08d026b254b":{"state":"editorial_or_question","rationale":"Reader-facing diagnostic question rather than a separate material proposition."},
+    "evidence-states-and-claim-discipline.prose.6f64534c4c88":{"state":"nonmaterial_explanation","rationale":"Scanner fragment from the embedded-agency limitation."},
+    "evidence-states-and-claim-discipline.prose.a0ce88d29254":{"state":"nonmaterial_explanation","rationale":"Scanner fragment from the finite-ledger non-claim boundary."}
+  },
+  "non_claims": [
+    "Completing this semantic sweep does not establish claim truth, transition accuracy, evidence adequacy, independent review, reader comprehension, or support-state movement.",
+    "The eleven promoted manifest obligations are requirements to test; their presence does not establish that the repository prevents evidence laundering.",
+    "Synthetic transitions, finite Lean predicates, and internally authored audits cannot prove open-world epistemic reliability or whole-system correctness."
+  ]
+}

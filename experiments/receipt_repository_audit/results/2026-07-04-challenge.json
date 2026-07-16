@@ -28,8 +28,8 @@
       "accepted": true,
       "challenge_id": "challenge:reference_trace_replay:tracked_artifact:1",
       "challenge_kind": "tracked_digest",
-      "expected_sha256": "8d20201f4bcb03215549577732893f76240ed5b7f4d0023e071b8d0ea6a4a51e",
-      "observed_sha256": "8d20201f4bcb03215549577732893f76240ed5b7f4d0023e071b8d0ea6a4a51e",
+      "expected_sha256": "5842ee2279d136593590f81502454efcb88f73b2e2351b4dab0a93a77dc78fbc",
+      "observed_sha256": "5842ee2279d136593590f81502454efcb88f73b2e2351b4dab0a93a77dc78fbc",
       "receipt_id": "reference_trace_replay",
       "selected_index": 1,
       "selected_ref": "docs/resource_flagship_lane_run.md",
@@ -68,9 +68,9 @@
       "tracked_digest_challenge_count": 3,
       "tracked_digest_mismatch_control_rejected": true
     },
-    "module": "AsiStackProofs.ArtifactGraph",
+    "module": "AsiStackProofs.ArtifactRealityRefinement",
     "theorem_refs": [
-      "receipt_repository_challenge_fixture_bridge"
+      "attestation_must_preserve_limits"
     ]
   },
   "mutation_controls": [

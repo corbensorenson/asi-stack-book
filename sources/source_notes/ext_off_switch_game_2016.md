@@ -37,6 +37,7 @@ This source belongs in the book as an external shutdown-incentive reference. It 
 ## Book Chapters Supported
 
 - `constitutional-alignment-substrate` (Constitutional Alignment: Agency, Dignity, and Corrigibility)
+- `moral-uncertainty-and-value-conflict` (Moral Uncertainty, Value Conflict, and Contestable Governance)
 - `recursive-self-improvement-boundaries` (Recursive Self-Improvement Boundaries)
 - `runtime-adapters-tool-permissions-and-human-approval` (Runtime Adapters, Tool Permissions, and Human Approval)
 - `governance-rights-fork-exit-and-audit` (Governance Rights, Fork, Exit, and Audit)

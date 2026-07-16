@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Governed Deliberation request-to-closure refinement result",
+  "type": "object",
+  "required": ["schema_version", "result_id", "recorded_date", "command", "model", "source_result_refinement", "route_cases", "lean_verification", "support_state_effect", "external_effect", "residuals", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.deliberation_refinement.result.v1"},
+    "result_id": {"const": "2026-07-15-deliberation-refinement"},
+    "recorded_date": {"const": "2026-07-15"},
+    "command": {"const": "python3 scripts/validate_deliberation_refinement.py"},
+    "model": {
+      "type": "object",
+      "required": ["lean_module", "stage_count", "route_count", "reached_route_count", "route_case_count", "rejected_mutation_count", "residual_escrow_route_reached", "planning_handoff_route_reached", "support_assignment_count", "external_effect_count"],
+      "properties": {
+        "lean_module": {"const": "lean/AsiStackProofs/DeliberationRefinement.lean"},
+        "stage_count": {"const": 8}, "route_count": {"const": 59},
+        "reached_route_count": {"const": 59}, "route_case_count": {"const": 59},
+        "rejected_mutation_count": {"const": 51},
+        "residual_escrow_route_reached": {"const": true}, "planning_handoff_route_reached": {"const": true},
+        "support_assignment_count": {"const": 0}, "external_effect_count": {"const": 0}
+      }, "additionalProperties": false
+    },
+    "source_result_refinement": {"type": "object"},
+    "route_cases": {"type": "array", "minItems": 59, "maxItems": 59},
+    "lean_verification": {"type": "object"},
+    "support_state_effect": {"const": "none"}, "external_effect": {"const": "none"},
+    "residuals": {"type": "array", "minItems": 4}, "non_claims": {"type": "array", "minItems": 3}
+  }, "additionalProperties": false
+}

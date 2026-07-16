@@ -3,21 +3,24 @@ title: "Stable Capability Fields"
 chapter_id: "stable-capability-fields"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-02"
+draft_maturity: "v0.3 proof-program manuscript"
+last_updated: "2026-07-14"
 primary_sources:
   - "scf"
   - "viea"
   - "talos"
   - "ladon_manhattan"
   - "moecot"
+  - "ext_capability_based_computer_systems_1984"
+  - "ext_semver_2_0_0"
+  - "ext_slsa_v1_0"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "External positioning now source-notes capability-based computer systems, Semantic Versioning, and SLSA as authority-boundary, versioned-interface, and provenance comparators; support remains at argument because no capability-system enforcement, SemVer compatibility checker, SLSA workflow, route validator, evaluator-integrity mechanism, or rollback execution has been reproduced in this repository."
-  - "Four of five claim-source mappings now have reviewed passage references; `moecot` remains connector-only/source-note mapped until a durable local export or line-addressable connector capture is available."
-  - "The stable_capability_field fixture validates schema/example consistency for field version, owner, qualification status, qualification lease status, evaluator independence, route scope, route permission effect, consumer policy, readiness gate refs, field history refs, default-route blockers, source refs, support-state effect, rollback obligations, and non-claims only; the readiness/residual gate harness validates synthetic route-validity and rollback-readiness boundaries; the SCF lifecycle trace probe now validates a finite forward lifecycle, incident quarantine branch, and six expected-invalid transition controls; and Lean now checks finite SCF replacement, lifecycle-review, lifecycle-state transition, and lifecycle-trace summary predicates, but deployed route validation and rollback execution remain unimplemented."
-  - "The implemented StableCapabilityFields Lean predicates cover finite replacement, lifecycle-review, lifecycle-transition, and trace-summary records only; they do not prove deployed route validation, evaluator integrity, rollback execution, real regression preservation, terminal-state governance, or lifecycle enforcement."
+  - "Capability-system authority, Semantic Versioning, and SLSA now have manifest-owned source mappings as authority, interface-versioning, and provenance comparators. Support remains at argument because no capability-system enforcement, compatibility checker, SLSA workflow, real candidate-refinement evaluator, or deployed route validator has been implemented here."
+  - "All eight assigned sources have reviewed mappings; `moecot` is reviewed only through its durable source note until a public-safe, line-addressable implementation export is available."
+  - "The public SCF harness validates three valid and six expected-invalid synthetic records; the readiness/residual harness checks selected synthetic route and rollback prerequisites; and the lifecycle probe validates two finite traces plus six rejecting transition controls. None compares real implementations, executes migration or rollback, verifies provenance, or observes downstream effects."
+  - "The implemented `StableCapabilityFields` Lean module contains 25 theorem declarations over finite replacement, lifecycle-review, lifecycle-transition, and trace-summary records grouped under four manifest targets. It does not prove full behavioral refinement, safe composition, evaluator independence, production enforcement, effect-complete rollback, or field-level support."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -28,22 +31,22 @@ open_evidence_gaps:
 | Chapter ID | `stable-capability-fields` |
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-02 |
-| Primary source records | `scf`, `viea`, `talos`, `ladon_manhattan`, `moecot` |
+| Manuscript maturity | v0.3 proof-program manuscript |
+| Last updated | 2026-07-14 |
+| Primary source records | `scf`, `viea`, `talos`, `ladon_manhattan`, `moecot`, `ext_capability_based_computer_systems_1984`, `ext_semver_2_0_0`, `ext_slsa_v1_0` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `scf`; supporting: `viea`, `talos`, `ladon_manhattan`; connector/recovery: `moecot`; external variants: `ext_capability_based_computer_systems_1984`, `ext_semver_2_0_0`, `ext_slsa_v1_0` |
-| Source loading state | source notes: `scf`, `viea`, `talos`, `ladon_manhattan`, `moecot`; passage-reviewed local raw cache: `scf`, `viea`, `talos`, `ladon_manhattan`; connector-only/source-note mapped: `moecot` |
-| Test state | `stable_capability_field.valid.json` passes protocol fixture validation; `AsiStackProofs.StableCapabilityFields` builds locally with replacement, lifecycle-review route, lifecycle-state transition predicates, and lifecycle-trace summary bridge; `python3 scripts/validate_readiness_residual_gates.py` validates synthetic route-validity and rollback-readiness boundaries; `python3 scripts/validate_scf_lifecycle_trace.py` validates 2 finite lifecycle traces and 6 expected-invalid controls for identity drift, default-without-regression, default authority expansion, retired restart, deprecation without notice, and retirement without receipt. Deployed route validation, evaluator-integrity enforcement, real regression preservation, lifecycle enforcement, terminal-state governance, and rollback execution remain planned. |
+| Source loading state | all eight source notes reviewed and manifest-mapped; local raw passages reviewed for `scf`, `viea`, `talos`, and `ladon_manhattan`; `moecot` mapped from its durable source note; three external specifications/texts mapped through reviewed source notes |
+| Test state | public SCF harness: 3 valid / 6 expected-invalid synthetic records; readiness/residual harness: selected route and rollback prerequisites; lifecycle probe: 2 valid traces / 6 expected-invalid controls; Lean: 25 theorem declarations under 4 manifest targets. No real candidate comparison, full behavioral-refinement evaluator, provenance verification, state migration, effect-complete rollback, or deployed enforcement has run. |
 
 ## Drafting guardrail
 
-Stable Capability Fields are governed substitution boundaries. No SCF safety property is claimed implemented here beyond the schema fixture, synthetic readiness/residual harness checks, and explicitly built finite Lean proofs.
+Stable Capability Fields are proposed governed substitution boundaries. The current repository establishes only schema discipline, synthetic record and transition rejection, and finite formal consequences. It does not establish that two real implementations mean the same thing, compose safely, preserve authority, or can be rolled back after consequential use.
 
 It follows governance rights because rights cannot survive implementation churn unless the capability boundary has a stable identity, stable authority ceiling, and explicit replacement policy.
 
-This is the stack's first memory system for capability identity. Before the book can talk about replacing components, compiling repeated work into tools, or ratcheting benchmarks, it needs a way to say what must stay the same while implementations change. An SCF is that continuity record.
+This is the stack's first explicit memory system for capability identity. Before the book can talk about replacing components, compiling repeated work into tools, or ratcheting benchmarks, it needs a testable statement of what must stay the same while implementations change. An SCF is the proposed continuity contract and evidence record for that statement.
 
 ::: {.asi-human-only}
 ## Human Reading Path
@@ -61,37 +64,35 @@ That continuity turns replacement into a reversible qualification problem: revie
 
 ## Problem
 
-Capability fields provide stable semantic boundaries so implementations can improve without changing what a capability means.
+Governed intelligence must replace models, prompts, tools, adapters, policies, data, evaluators, and runtime dependencies without letting a persistent capability name conceal a changed contract. A nominal upgrade can alter accepted inputs, failure or abstention behavior, side effects, authority, privacy, latency, resource use, affected consumers, state semantics, or recovery duties even when its API and benchmark score look compatible.
 
-Rights become technical only when capability identity remains stable. Stable capability fields let the system improve components without moving the target under those rights. A capability must have a stable meaning before it can be routed to, qualified, replaced, rolled back, or governed. Otherwise every implementation change is also a semantic change, and no one can tell whether the system improved or merely redefined success.
+The identity question is therefore consumer-relative: *which observable obligations must this implementation preserve for this consumer and use, in this environment and threat model, during this evidence epoch?* A route qualified for low-stakes drafting is not thereby qualified for autonomous publication; a retriever qualified against one corpus is not thereby qualified after its index, policy, hardware, or dependency graph changes. Without this scope, “same capability” is a label, not a falsifiable substitution claim.
 
-SCF supplies the core distinction: a field is the durable semantic boundary; an implementation is a replaceable realization of that boundary. The field carries identity, interface, authority ceiling, evaluator policy, qualification context, route validity, state-migration obligations, evidence, lifecycle state, and recovery paths. That separation is what lets recursive improvement be bounded instead of ambient.
+SCF supplies the proposed distinction: the field is a versioned semantic and authority contract; an implementation is one defeasible realization. The field owns the observable interface, qualification and evaluator policy, evidence history, historical regressions and incidents, lifecycle state, downstream reliance, state-migration obligations, and effect-complete recovery requirements. Candidates compete to satisfy that fixed contract; they do not inherit the power to redefine it.
 
-Capability names should not be allowed to drift faster than evidence. If "planner," "retriever," "verifier," or "runtime adapter" means a different authority surface after every upgrade, the rest of the stack cannot reason about safety, regressions, or replacement. The field fixes the question before candidates compete to answer it, and that fixed question is what lets governance rights survive technical churn.
+This distinction matters for governance rights as well as engineering. If a successor changes audit output, export fidelity, denial behavior, privacy effects, or appeal hooks while keeping the same route name, technical churn has moved the terms of trust. The field cannot guarantee that those terms survive, but it can make their loss a recorded test failure instead of an invisible cost of upgrading.
 
 ## Why existing approaches are insufficient
 
-Plugin replacement and model swapping do not define identity, authority, qualification evidence, or rollback semantics.
+Plugin APIs and model registries identify things that can be invoked, but do not establish equivalence. Semantic Versioning can signal public-interface changes without detecting changed failure behavior or authority. Capability-security references discipline authority-bearing access without defining semantic capability identity. SLSA-style provenance can establish where an artifact came from without showing that it satisfies its field. Benchmark leaderboards compare selected outcomes without owning historical incidents, evaluator independence, downstream reliance, or recovery. Canaries and rollback runbooks may limit exposure while leaving durable state and side effects untouched.
 
-Replacing a model, tool, prompt, adapter, or specialist can look like an ordinary upgrade while changing the actual capability. A faster implementation may drop edge cases. A stronger model may gain broader authority through a route that was only meant for a narrow field. A new evaluator may be easier to satisfy. A migration may preserve outputs while corrupting hidden state. None of these failures is visible if the system treats "use the new one" as the whole upgrade protocol.
-
-SCF makes the upgrade question testable: does this candidate satisfy the same field contract, under this qualification context, without expanding authority, losing regressions, capturing the evaluator, or destroying rollback?
+The missing predicate is stronger than “new passes its tests”: does this exact candidate, dependency graph, environment, evaluator, consumer, use, and epoch refine every required observable and authority obligation of the field, preserve its regressions and incident memory, remain inside the granted ceiling, migrate state without prohibited loss, compose with its neighbors, and retain a recovery path for the effects it can create? A negative or unknown answer routes the candidate away from default use.
 
 Without that test, a system can suffer capability amnesia. It remembers that a component was replaced, but not what the old component was obligated to preserve, which regressions mattered, which authority ceiling applied, or which evaluator was trusted at the time. SCFs keep those obligations attached to the field rather than scattered across release notes.
 
 The most dangerous upgrade failures can look successful locally. The new implementation may pass its own demo while forgetting the field's historical incidents, weakening an audit hook, changing the meaning of a route, or treating an expired qualification as fresh. A stable field makes those losses visible as boundary violations instead of hidden costs of progress.
 
-External positioning: Stable Capability Fields now has source-noted comparators through `ext_capability_based_computer_systems_1984`, `ext_semver_2_0_0`, and `ext_slsa_v1_0`. Capability-based computer systems ground the authority-bearing capability and protection-boundary baseline. Semantic Versioning grounds public API versioning and breaking-change signaling as a narrow interface-stability baseline. SLSA grounds artifact integrity and provenance as a promotion-evidence comparator. These sources clarify the outside lineage, but they do not reproduce capability enforcement, API compatibility checking, SLSA provenance, route validation, evaluator integrity, or rollback execution here.
+External positioning is now manifest-owned rather than decorative. `ext_capability_based_computer_systems_1984` supplies the authority-bearing capability and protection-boundary comparator; `ext_semver_2_0_0` supplies a narrow public-interface and breaking-change comparator; and `ext_slsa_v1_0` supplies artifact-integrity and provenance discipline. SCF proposes a broader conjunction, but no novelty or superiority follows from combining these concerns. No capability enforcement, compatibility checker, SLSA workflow, real refinement evaluator, or rollback execution has been reproduced here.
 
 ## Core Claim
 
-[stable-capability-fields.core, label: Design rationale, support: argument] A stable capability field is a governed boundary with identity, interface, authority ceiling, qualification evidence, and rollback policy.
+[stable-capability-fields.core, label: Design rationale, support: argument] A Stable Capability Field should be a versioned, consumer-relative substitution contract binding observable semantics, authority, exact implementation and environment identity, qualification and evaluator lineage, lifecycle and incident state, preserved regressions, state movement, and effect-complete rollback duties. A candidate inherits a route only inside its evidenced scope; the record alone proves none of semantic equivalence, safe composition, evaluator independence, production safety, or successful rollback.
 
 The claim remains at `argument` support. SCF supplies reviewed passage support for field identity, qualification, route validation, authority ceilings, lifecycle, state migration, and rollback vocabulary. VIEA supplies reviewed artifact, support-state, residual, regression, routing, and permission-envelope context. Talos supplies reviewed job, evidence, proof-bundle, replay, and uncertainty context. Ladon/Manhattan supplies reviewed handle, permission-check, controlled-injection, and compartment context. `moecot` remains connector-only/source-note mapped. Source-reported executable fragments, runtime behavior, or benchmark claims are not treated as locally verified.
 
 ### Claim-source mapping status
 
-Appendix C maps this core SCF claim to every assigned source note. Four mappings now carry reviewed passage references; `moecot` remains connector-only/source-note mapped. The mappings support the governed-boundary vocabulary for fields, interfaces, authority ceilings, qualification, evidence, routing, and rollback, not a claim that deployed route validation or evaluator integrity has been proven.
+Appendix C maps this core SCF claim to all eight assigned sources. Local raw passages support four project-source mappings; the durable `moecot` source note supports implementation-reference context; and three reviewed external notes establish capability-security, interface-versioning, and provenance comparators. Together they support vocabulary and design lineage, not equivalence, novelty, route enforcement, evaluator integrity, or rollback success.
 
 | Source | What it supports | Limit |
 |---|---|---|
@@ -100,44 +101,57 @@ Appendix C maps this core SCF claim to every assigned source note. Four mappings
 | `talos` | Typed cognitive jobs, deterministic/auditable execution, evidence-bound artifacts, verification states, proof bundles, replay, mediated external access, and residual uncertainty around capability invocation. | Design source only; execution-security, approval behavior, promotion behavior, and benchmark behavior are not reproduced in this repo. |
 | `ladon_manhattan` | Authority-handle pressure for capabilities touching secrets or privileged actions: constrained handles, permission checks, policy boundaries, compartments, and controlled injection points. | Security architecture/specification only; no kernel implementation, side-channel validation, audit-log implementation, or security audit is claimed. |
 | `moecot` | Compact orchestration, specialist lanes, fail-closed ledgers, readiness gates, replay, and promotion blockers around routed capabilities. | Connector-readable implementation-reference context only; source-reported runtime and benchmark claims are not reproduced or inspected here. |
+| `ext_capability_based_computer_systems_1984` | Authority-bearing capabilities, protection domains, delegation, and confinement as established authority-boundary comparators. | Does not establish SCF semantic identity, route enforcement, evaluator independence, revocation behavior, or rollback. |
+| `ext_semver_2_0_0` | Public-interface versioning and breaking-change signaling as a narrow field-version comparator. | Compatible-looking versions do not establish behavioral refinement, authority preservation, or safe replacement; no checker is implemented here. |
+| `ext_slsa_v1_0` | Artifact identity, provenance, and build-assurance metadata as qualification inputs. | Provenance does not establish capability adequacy, runtime behavior, evaluator integrity, authority preservation, or rollback; no SLSA workflow is implemented here. |
 
 ## Mechanism
 
-An SCF is not just a registry row. It is the contract that lets a system ask three questions separately: what capability is being requested, which implementation may currently satisfy it, and under what evidence and authority may that implementation be routed to. That separation prevents a stronger candidate from quietly inheriting a weaker candidate's trust envelope.
+An SCF is not a registry row. It separates three decisions that a mutable component registry usually collapses: what observable and authority contract the consumer requests, which exact implementation is a candidate, and which evidence-bound route may currently use it. The separation does not prevent trust-envelope inheritance by itself; it creates a boundary at which that inheritance can be tested and rejected.
 
 ```{mermaid}
 flowchart LR
-  A["Field contract: identity + interface"] --> B["Candidate implementation artifact"]
-  A --> C["Authority ceiling + evaluator policy"]
-  B --> D["Scoped qualification context"]
-  C --> E["Narrow route validator"]
+  A["Versioned field contract: observables + authority"] --> B["Exact candidate + dependencies + environment"]
+  A --> C["Consumer, use, epoch + evaluator policy"]
+  B --> D["Refinement, provenance, migration + composition evidence"]
+  C --> E["Narrow admission validator"]
   D --> E
   P["Route proposer (untrusted)"] --> E
-  E --> F{"Same field, valid route?"}
-  F -- "yes" --> G["Lifecycle: shadow / canary / qualified / default"]
-  F -- "no" --> H["Reject / quarantine / residual"]
-  G --> I["Evidence + regression ledger"]
+  E --> F{"All scoped obligations evidenced?"}
+  F -- "yes" --> G["Lease + lifecycle receipt"]
+  F -- "no / unknown" --> H["Shadow / quarantine / residual / reject"]
+  G --> I["Field-owned regressions, incidents + reliance"]
   H --> I
-  I --> J["Rollback and recovery path"]
+  I --> J["Monitor + effect-complete recovery duties"]
 ```
 
-**How to read the capability field path:** The SCF path separates the field contract from candidate implementations. A route proposer may nominate a candidate, but the validator checks field identity, authority, qualification context, lifecycle state, evidence, and rollback before any implementation becomes default.
+**How to read the capability field path:** the route proposer may nominate any candidate. Admission is narrower: it binds a field version to an exact candidate, consumer, use, environment, threat model, evaluator, and evidence epoch, then checks the declared obligations. “Yes” means eligible only inside that lease; it does not mean globally equivalent or safe.
 
-The field record separates identity from implementation. Qualification claims bind to exact artifacts and scoped contexts rather than to a generic model or tool name. Lifecycle states such as shadow, canary, qualified, default, deprecated, and retired make promotion reversible and inspectable. Route validity and evaluator integrity are therefore prerequisites for default use, not optional paperwork after the fact.
+The semantic contract includes more than an input/output schema. It names admissible and rejected inputs, output postconditions, permitted side effects, errors, abstentions, timeout behavior, nondeterminism envelope, latency and resource budgets, privacy and security effects, authority use, and required evidence and audit emissions. A material change to one of these is not hidden behind an implementation update: it produces a field-version decision or a new field.
 
-Qualification is scoped, not global. A candidate can be qualified for one domain, risk tier, authority ceiling, hardware context, benchmark epoch, or user population without being qualified everywhere. Its evidence should be append-only enough that later readers can reconstruct what was known when it was promoted.
+Qualification is consumer-relative and scoped, not global. It binds exact code, weights, prompts, policies, tools, data or retrieval snapshots, dependencies, build and provenance records, hardware and runtime, evaluator, benchmark epoch, threat model, consumer, use, and authority. Its central empirical predicate is behavioral refinement: the candidate may improve declared dimensions, but it preserves every required field obligation and historical regression within the lease. Interface shape, implementation similarity, provenance, or an average benchmark score is insufficient.
 
-Qualification should also age. A candidate qualified under one benchmark epoch, source corpus, hardware profile, permission tier, or threat model should not remain default forever by inertia. The field record should make review intervals, expiration conditions, incident triggers, requalification duties, and lease status visible so stability does not become stagnation. The qualification lease is the machine-readable version of that rule: it says which epoch qualified the implementation, whether that lease is active, stale, revoked, or fixture-only, when the route must be reviewed, and what events force requalification before default use continues.
+A qualification lease says exactly where and for how long that predicate was evidenced. Expiry, drift, provenance failure, incident, evaluator change, dependency change, regression loss, environment change, or authority delta downgrades or revokes the affected route until a new owning decision. Proposed, shadow, canary, qualified, default, quarantined, deprecated, and retired states have receipt-bearing prerequisites and failure destinations; a mutable lifecycle flag is not a transition proof.
 
-The route proposer may be broad and heuristic; the route validator must be narrow and explicit. It checks field identity, claims, leases, profiles, grants, state paths, composition certificates, and authority ceilings before the candidate can become the default route. That split keeps creative discovery from becoming self-authorization: broad search may nominate a route, but a narrow validator decides whether the route still belongs to the field.
+Separation of duties is part of the evidence boundary. The route proposer, candidate owner, evaluator, promotion authority, incident owner, and rollback authority disclose dependencies. A candidate cannot be the sole author and judge of the policy, evidence, incident closure, or recovery result that qualifies it. Where genuine independence is unavailable, the route is narrowed and evaluator capture remains an explicit residual rather than being wished away.
+
+The field owns history and downstream reliance. Regressions, incidents, dissent, security and privacy duties, rights, audit obligations, residuals, state schemas, caches, descendants, and composition assumptions follow the field into every candidate evaluation. This prevents the outgoing implementation from taking the only copy of the reasons it once failed.
+
+Recovery must be effect-complete. The record identifies the prior implementation and route, but also reverse migration, data and cache restoration, credential and policy state, learned updates, descendants, external actions and commitments, affected consumers, monitors, compensating actions, residual irreversibility, trigger authority, and accountable owner. A stored artifact pointer is rollback metadata; it is not rollback evidence.
+
+Every decision emits a replacement receipt binding old and new identities, evidence views, authority delta, consumers, state movement, monitors, residuals, recovery trigger and owner, terminal outcome, and support-state non-effect. This is the durable handoff to Capability Replacement and Rollback's transaction protocol.
 
 ## Interfaces
 
-The field record has different faces for different layers. Planning sees a semantic capability boundary. Execution sees an authorized route. Evidence sees qualification claims and regressions. Governance sees authority ceilings, evaluator policy, lifecycle state, incidents, and recovery paths.
+The field record exposes one identity through several deliberately narrower views:
 
-- Planning requests field capabilities.
-- Execution invokes authorized routes.
-- Evidence records qualification and regression results.
+- Planning requests a field version, consumer and use profile, evidence floor, risk and resource envelope, and acceptable failure or abstention behavior rather than a bare name.
+- Routing resolves only candidates whose lease, lifecycle state, environment, dependency graph, authority ceiling, consumer policy, and blockers permit the requested use.
+- Execution enforces the selected authority and effect envelope and emits outcome, error, abstention, resource, side-effect, and audit records against the contract.
+- Evidence binds qualification, regression, provenance, evaluator, incident, drift, monitor, and rollback results to exact artifacts and scope without universalizing a local pass.
+- Memory and state management declare schema, cache, lineage, migration, reverse-migration, privacy, retention, revocation, and descendant duties.
+- Governance owns semantic versioning, authority or evaluator-policy changes, exceptions, disputes, deprecation, retirement, and explicit acceptance of residuals.
+- Replacement, readiness, procedural memory, benchmarks, policy updates, and self-improvement consume the same field identity and receipts; loss or reinterpretation blocks promotion.
 
 Minimum fields:
 
@@ -174,49 +188,78 @@ Minimum fields:
 - `support_state_effect`
 - `non_claims`
 
-Planning requests a field by semantic boundary and capability profile. Execution invokes only authorized routes. Evidence records qualification, regressions, incidents, appeals, and lifecycle transitions. Governance decides whether a field can broaden authority or change evaluator policy.
+These fields are necessary record surfaces, not a complete equivalence specification. A production contract also needs machine-checkable representations of input partitions, postconditions, side effects, failure and abstention semantics, nondeterminism and resource envelopes, exact dependencies and environment, affected consumers, provenance attestations, composition assumptions, reverse migration, and effect inventory. Adding names to the schema is not the same as implementing their evaluators.
 
-The same field record becomes an anchor for procedural memory and benchmark ratchets. A generated tool should know which field it is trying to satisfy. A benchmark result should know which field boundary it evaluates. A replacement transaction should know which field authority ceiling it may not silently widen. A readiness gate should know whether the field's qualification lease is still fresh or has become stale evidence. A router should read default-route blockers before treating a canary or residual route as qualified for ordinary use.
+The same identity anchors procedural memory and benchmark ratchets. Generated tools name the field they try to satisfy; benchmark evidence names its field, consumer, use, epoch, and evaluator; readiness gates inspect lease and blockers; replacement transactions preserve the authority ceiling and reliance graph. No downstream layer may infer qualification from the field name alone.
 
 ## Invariants
 
-- Replacement cannot expand authority by default.
-- Evaluator integrity is protected.
-- Qualification context is explicit and time-bound.
-- Rollback remains available after failed mutation.
-- Qualification leases expire or downgrade when their review triggers fire.
+- Field identity remains distinct from implementation, route, registry entry, version label, benchmark, evaluator, and vendor identity.
+- Material observable, failure, authority, protected-data, or reliance changes receive a governed field-version or field-identity decision.
+- Replacement does not inherit expanded authority, effects, consumers, evidence claims, or support state.
+- Qualification binds exact artifacts, dependencies, environment, evaluator, epoch, threat model, consumer, use, and lease.
+- The candidate is not the sole author or judge of its evaluator, promotion, incident closure, or rollback result; disclosed dependency narrows scope.
+- Stronger lifecycle transitions have explicit prerequisites, an accountable owner, a receipt, and a failure destination.
+- Field-owned regressions, incidents, dissent, rights, security, privacy, audit, residual, and consumer duties survive replacement and migration.
+- Interface compatibility, provenance, benchmark superiority, and local equivalence do not substitute for the declared refinement predicate.
+- Material dependency, neighbor, route, state, hardware, data, policy, or authority-topology changes trigger composition requalification.
+- Rollback readiness covers route, state, cache, data, policy, credentials, side effects, descendants, monitors, and external commitments.
+- Expiry, drift, incident, evaluator change, provenance failure, regression loss, or authority delta downgrades affected qualification pending a new decision.
+- A valid schema, finite proof, synthetic trace, or receipt establishes only its named record or predicate boundary.
 
-Identity binding is the field's strongest invariant: replacing an implementation must not change the field's semantic boundary unless governance explicitly creates a new field or version. Authority is also bound to the field, not inherited from the raw power of the candidate implementation.
-
-Evidence locality keeps qualification from traveling by name alone. Qualification evidence belongs to a field, an implementation artifact, and a context together. Moving one of those three pieces without rechecking the others should downgrade the route to shadow, canary, or residual rather than preserving default status by name.
+These are obligations, not observed properties of a deployed system. Identity binding is meaningful only where the contract is specific enough to falsify. Evaluator separation is meaningful only where dependencies and incentives are measured. Rollback availability is meaningful only where the full effect inventory has been rehearsed or recovered.
 
 ## Failure modes
 
-- Field identity drift.
-- Evaluator capture.
-- Authority expansion during replacement.
+- **Identity laundering:** the name or compatible-looking version survives while behavior, failures, protected effects, or trust terms change.
+- **Interface theater:** matching signatures, schemas, or happy-path outputs is treated as semantic substitutability.
+- **Qualification overreach:** one consumer, workload, evaluator, threat model, environment, or epoch is generalized to other uses.
+- **Benchmark overfitting:** measured cases improve while rare failures, abstention quality, unmeasured obligations, or composition degrade.
+- **Evaluator capture:** the candidate, vendor, route owner, or promoter controls the judge that qualifies it.
+- **Provenance substitution:** intact lineage is treated as evidence of adequacy, alignment, security, or replacement safety.
+- **Authority smuggling:** a stronger candidate gains broader tools, data, permissions, effects, consumers, or delegation through an unchanged route.
+- **Lease inertia:** expired, revoked, drifted, incident-affected, or environment-mismatched evidence remains active.
+- **Regression amnesia:** tests and incidents leave with the outgoing implementation.
+- **State-migration insolvency:** visible outputs survive while hidden state, caches, lineage, revocations, privacy, or descendant duties are lost or made irreversible.
+- **Composition failure:** an isolated pass hides failures caused by new dependencies, timing, context, policy, or neighboring fields.
+- **Shadow/canary leakage:** a nominally limited candidate creates durable effects, trains descendants, mutates caches, or influences default decisions.
+- **Rollback theater:** the old artifact exists but state, data, credentials, external actions, learned updates, reliance, or successor effects cannot be restored or compensated.
+- **Terminal-state escape:** retired or quarantined candidates restart, or retirement occurs without notice, custody, migration, and receipts.
+- **Replacement-cost externalization:** “success” hides missed help, delay, compute, evaluator labor, migration loss, incidents, governance cost, or residual risk.
 
-Field identity drift happens when the name stays stable while the behavior changes. Evaluator capture happens when the candidate influences the policy or measurement that qualifies it. Authority expansion happens when a more capable implementation inherits a route that was safe only for a weaker one. Each should block default promotion until a replacement transaction records the residual and review path.
-
-The quiet failure is orphaned regression memory. A field may accumulate tests and incidents over time, but an upgrade can leave them behind if the suite is stored with an implementation instead of the field. The SCF should keep regression floors at the field boundary so future candidates inherit the obligation to preserve them.
+These failures require distinct controls and measurements. A schema can reject a missing field, but it cannot detect benchmark overfit, evaluator capture, composition failure, or recovery theater without adversarial and outcome-bearing evidence.
 
 ## Minimum Viable Implementation
 
-The first SCF implementation surface is the existing `stable_capability_field` schema expanded with field version, owner, lifecycle, qualification context/status, qualification lease/status, evaluator policy, evaluator independence, route validity/scope, route permission effect, consumer policy, evidence references, readiness gate refs, field history refs, incidents, review triggers, state migration, regression suite, rollback plan, rollback obligations, default-route blockers, source refs, support-state effect, and non-claims. Schema validation confirms record shape only; candidate qualification still depends on evidence, lease freshness, evaluator independence, and preserved regressions.
+The current minimum is exact and deliberately narrow:
 
-A field history fixture should make identity, lifecycle, and evidence aging concrete: one field, two candidate implementations, one preserved regression, one failed canary, one expired qualification lease, one incident-triggered review, and one rollback path. The first narrow version now exists as the SCF lifecycle trace probe: it replays a forward lifecycle from shadow through retired, an incident quarantine branch, and expected-invalid controls for identity drift, missing regression floor, authority expansion, retired restart, missing deprecation notice, and missing retirement receipt. That fixture does not claim a deployed route validator, evaluator-quality measurement, real regression preservation, production lifecycle enforcement, or rollback execution.
+- one public `stable_capability_field` schema;
+- three valid and six expected-invalid synthetic SCF records;
+- one readiness/residual harness checking selected synthetic route and rollback prerequisites;
+- one deterministic lifecycle probe with two valid traces and six expected-invalid transition controls; and
+- 25 theorem declarations in `AsiStackProofs.StableCapabilityFields`, grouped under four manifest proof targets.
 
-The current formal slice models only finite records: replacement candidates, lifecycle reviews, and lifecycle-state transitions. It checks that identity mismatch rejects replacement, missing evidence or stale qualification leases require requalification, evaluator capture and authority expansion without a grant route to governance review, incidents route to rollback, and a complete default request can route to default use. It now also checks a bounded state-machine relation over shadow, canary, qualified, default, deprecated, retired, and quarantined transitions: allowed transitions must preserve field identity, cannot originate from retired state, canary/qualified/default promotion require appropriate evidence and readiness, default promotion requires regression-floor preservation, authority ceiling, rollback readiness, and incident closure, and deprecated/retired transitions require explicit notice or receipt records. That is useful lifecycle discipline, but it does not implement the route validator, measure evaluator independence, preserve real regressions, run rollback, govern terminal states, or enforce lifecycle transitions in a deployed system.
+The records exercise field version, ownership, semantic boundary, interface, authority ceiling, candidate list, lifecycle state, scoped qualification and lease fields, evaluator-separation declarations, route and consumer scope, evidence and readiness references, incidents and triggers, state-migration text, regression suite, rollback obligations, blockers, source references, support-state non-effect, and non-claims. The harness rejects ambient authority, expired default use, missing non-claims, missing qualification predicates, missing rollback duties, and self-evaluation in its fixed fixture set. Passing establishes schema and validator behavior on those records only.
+
+The lifecycle probe covers forward shadow-to-retirement and an incident-quarantine branch. Its rejecting controls cover identity drift, default without a regression floor, default authority expansion, retired restart, deprecation without notice, and retirement without receipt. The Lean slice derives finite consequences for replacement, lifecycle review and transition records, and the probe summary. It does not implement the richer behavioral-refinement predicate proposed by the field contract.
+
+The next honest executable slice is a preregistered two-implementation field with partitioned input and failure cases, exact artifact and environment locks, an independently implemented evaluator, historical regressions, an authority-sensitive route, state and cache migration, one downstream composition, deliberate drift and evaluator-capture controls, and a rehearsed rollback whose effect inventory is checked before and after. Until that slice exists, no real equivalence, evaluator independence, provenance verification, migration fidelity, composition safety, effect-complete recovery, route enforcement, or field-level support is established.
 
 ## Beyond the State of the Art
 
-Stable capability fields give the stack a capability-identity and replacement market. It lets implementations improve, migrate, split, merge, retire, or roll back while the consuming system continues to know which capability is qualified, under what authority, with which evidence and residuals.
+The mature endpoint is a field system that preserves identity, observable and
+failure contracts, authority, evidence, state, composition, migration, and
+effect-complete recovery across real implementation changes.
 
-A stable capability field preserves identity, interface, authority ceiling, qualification evidence, regression memory, and rollback policy while implementations change. Field identity stays separate from implementation, qualification claims bind to exact artifacts, lifecycle transitions such as shadow, canary, qualified, default, deprecated, and retired remain explicit, and promotion requires route validity plus evaluator integrity.
+The research target is not a larger registry. It is a falsifiable campaign testing whether an explicit substitution contract preserves more of the field's trust obligations than conventional replacement at acceptable joint cost.
 
-Planning requests field capabilities, execution invokes authorized routes, and evidence records qualification and regression results. Replacement cannot expand authority by default, evaluator integrity is protected, qualification context is explicit and time-bound, and rollback remains available after a failed mutation. Identity drift, evaluator capture, and authority expansion during replacement should block qualification, force requalification, trigger route rollback, or leave residual records before the field remains default.
+The campaign preregisters several natural and adversarial fields with ambiguous boundaries, multiple real implementations and versions, heterogeneous consumers, stateful and side-effecting work, historical incidents, dependency and environment changes, authority-sensitive routes, and deliberately stale or captured evidence. Comparators include bare registries and model swaps, interface or SemVer checks, provenance-only admission, benchmark-only promotion, and conventional canary and rollback practice. The full-SCF condition uses independently implemented contract, evaluator, authority, provenance, migration, composition, and recovery observers.
 
-This capability-identity market is still a proposed control layer. SCF support should remain `argument` until lifecycle-transition fixtures, qualification records, evaluator-integrity checks, rollback-route tests, authority non-expansion predicates, and regression histories show that implementations can change without changing the field's trust contract.
+Measurements span semantic and failure-contract preservation, rare and adversarial regressions, unauthorized effects, evaluator disagreement and capture, qualification calibration and decay, provenance failures, migration fidelity and privacy loss, composition failures, rollback effect coverage and recovery time, incident recurrence, useful throughput, missed help, latency, compute, operator and evaluator labor, governance cost, and residual burden. Negative and null results remain visible. A candidate that is safer only because it refuses everything, or faster only because it discards governance, does not dominate the joint frontier.
+
+Causal ablations remove identity binding, authority checks, leases, evaluator separation, field-owned regression memory, composition requalification, migration accounting, or effect-complete rollback. Transfer varies models, vendors, tools, hardware, domains, consumers, threat models, and update types. The field claim advances only if the full contract is not dominated on the preregistered frontier and its field-preservation results survive independent replication. Otherwise the failing mechanism is narrowed or refuted.
+
+This program is beyond the current evidence. It does not establish that SCFs are novel, outperform conventional replacement, preserve real capability identity, or make recursive improvement safe.
 
 ## Codex test plan
 
@@ -240,7 +283,7 @@ This capability-identity market is still a proposed control layer. SCF support s
 | `lean:scf.lifecycle.route_envelope` | `AsiStackProofs.StableCapabilityFields` | A structured SCF lifecycle review and finite lifecycle-state transition relation route identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, open incidents, missing rollback, missing regression preservation, missing deprecation notice, and missing retirement receipt away from default or terminal promotion. | implemented |
 | `lean:scf.lifecycle.trace_fixture_bridge` | `AsiStackProofs.StableCapabilityFields` | The synthetic SCF lifecycle trace summary records two valid traces, six expected-invalid controls, forward lifecycle coverage, incident quarantine coverage, unsafe-transition rejection, and no deployed-route-validation, rollback-execution, or support-state-promotion claim. | implemented |
 
-These proof targets are implemented only over finite Lean replacement, lifecycle-review, lifecycle-transition, and trace-summary records in `AsiStackProofs.StableCapabilityFields`. They prove that an allowed replacement record carries the field qualification predicate, that a replacement requesting authority above the field ceiling is rejected when no governance grant is present, that selected lifecycle reviews route identity, evidence, lease, evaluator, authority, incident, rollback, and regression failures away from default use, that selected lifecycle-state transitions cannot reach default or terminal states without the finite readiness records named above, and that the synthetic trace probe preserves its count and no-promotion boundary. They do not prove deployed route validity, evaluator-integrity measurement, real regression preservation, rollback execution, terminal-state governance, or lifecycle enforcement.
+The module contains 25 theorem declarations grouped under these four manifest targets. They are implemented only over finite replacement, lifecycle-review, lifecycle-transition, and trace-summary records. They derive that an allowed replacement record carries the modeled qualification predicate, that unauthorized modeled authority expansion is rejected, that selected finite failures route away from default use, that selected transitions require their modeled readiness records, and that the synthetic probe preserves its counts and non-promotion boundary. They do not prove the richer behavioral-refinement contract, deployed route validity, evaluator independence, provenance, real regression preservation, migration or composition safety, effect-complete rollback, terminal governance, or lifecycle enforcement.
 
 ## Source crosswalk
 
@@ -259,11 +302,11 @@ The SCF source set supports field identity and lifecycle vocabulary while preser
 
 ## Summary
 
-Stable Capability Fields are upgrade sockets for governed intelligence. They let a capability improve by changing implementations while preserving semantic identity, authority ceilings, evaluator policy, evidence, route validity, and rollback.
+Stable Capability Fields are proposed upgrade sockets for governed intelligence. They turn the phrase “same capability” into a versioned, scoped, consumer-relative contract whose observable behavior, authority, evidence, history, state, and recovery obligations can be tested when implementations change.
 
-Stable fields make self-improvement possible without making every upgrade a constitutional event. Field updates become explicit replacement transactions. The field says what must remain true; the replacement layer says how a candidate proves it remained true before promotion.
+Stable fields do not make self-improvement safe. They make one prerequisite inspectable: what the candidate was obligated to preserve and which evidence, owner, lease, lifecycle decision, downstream reliance, and recovery duties governed its route. Capability Replacement and Rollback turns that contract into a replacement transaction.
 
-Later learning and routing layers depend on this discipline. Procedural memory needs SCFs so new tools inherit a field boundary rather than becoming free-floating automation. Benchmark ratchets need SCFs so evidence improves a named capability instead of a vague sense of progress. Policy optimization needs SCFs so reward pressure updates behavior only inside a field whose authority and rollback remain visible. Without stable fields, self-improvement collapses into replacement by anecdote: a new component looks better, a few examples pass, and the system silently forgets what identity, permission, evaluator independence, and fallback were supposed to remain true.
+Later learning and routing layers consume this discipline. Procedural memory binds generated tools to a field version; benchmark ratchets bind evidence to exact consumers and epochs; policy optimization preserves authority and recovery boundaries; replacement carries field-owned regressions and incidents forward. Without an equivalent contract, improvement remains vulnerable to replacement by anecdote: a candidate looks better on selected examples while the system forgets the exact identity, failure behavior, permission, evaluator, downstream reliance, and recovery obligations that were supposed to survive.
 
 ## Handoff
 

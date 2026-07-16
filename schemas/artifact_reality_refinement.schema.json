@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/artifact_reality_refinement.schema.json",
+  "title": "ASI Stack artifact record-reality refinement result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "source_sha256", "input_suites", "reachable_stage_count", "route_case_count", "route_coverage", "mutation_count", "mutation_rejection_count", "mutation_receipts", "final_state", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.artifact_reality_refinement.v1"},
+    "result_id": {"const": "artifact-reality-refinement-2026-07-15-local"},
+    "source_sha256": {"type": "object", "additionalProperties": false, "required": ["lean_model"], "properties": {"lean_model": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "input_suites": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"type": "object", "additionalProperties": false, "required": ["suite_id", "valid_count", "expected_invalid_count", "suite_passed", "validator_sha256"], "properties": {"suite_id": {"type": "string", "minLength": 1}, "valid_count": {"type": "integer", "minimum": 1}, "expected_invalid_count": {"type": "integer", "minimum": 4}, "suite_passed": {"const": true}, "validator_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}},
+    "reachable_stage_count": {"const": 7},
+    "route_case_count": {"const": 33},
+    "route_coverage": {"type": "array", "minItems": 33, "maxItems": 33, "items": {"type": "object", "additionalProperties": false, "required": ["case_id", "expected_route", "observed_route"], "properties": {"case_id": {"type": "string", "minLength": 1}, "expected_route": {"type": "string", "minLength": 1}, "observed_route": {"type": "string", "minLength": 1}}}},
+    "mutation_count": {"const": 53},
+    "mutation_rejection_count": {"const": 53},
+    "mutation_receipts": {"type": "array", "minItems": 53, "maxItems": 53, "items": {"type": "object", "additionalProperties": false, "required": ["mutation_id", "rejected", "terminal_stage", "failure_route"], "properties": {"mutation_id": {"type": "string", "minLength": 1}, "rejected": {"const": true}, "terminal_stage": {"type": "string", "minLength": 1}, "failure_route": {"type": "string", "minLength": 1}}}},
+    "final_state": {"type": "object", "additionalProperties": false, "required": ["stage", "receipt_count", "reality_observation_count", "support_assignment_count", "external_effect_count"], "properties": {"stage": {"const": "admitted"}, "receipt_count": {"const": 6}, "reality_observation_count": {"const": 1}, "support_assignment_count": {"const": 0}, "external_effect_count": {"const": 0}}},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 6, "items": {"type": "string", "minLength": 20}}
+  }
+}

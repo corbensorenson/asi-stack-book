@@ -3,8 +3,8 @@ title: "The Virtual Context ABI: Typed Pages, Cells, and Certificates"
 chapter_id: "virtual-context-abi"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-10"
+draft_maturity: "v0.3 proof-program manuscript"
+last_updated: "2026-07-14"
 primary_sources:
   - "vcm_public"
   - "context_engineer"
@@ -17,12 +17,26 @@ primary_sources:
   - "moecot_manifest_project"
   - "beastbrain_project"
   - "bugbrain_project"
+  - "qcsa_whitepaper"
+  - "ext_graphrag_2024"
+  - "ext_hipporag_2024"
+  - "ext_raptor_2024"
+  - "ext_mem0_2025"
+  - "ext_rag_2020"
+  - "ext_lost_in_middle_2023"
+  - "ext_longbench_2023"
+  - "ext_ruler_2024"
+  - "ext_memgpt_2023"
+  - "ext_alce_2023"
+  - "ext_self_rag_2023"
+  - "ext_longllmlingua_2023"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Executed consolidation of `virtual-context-abi` and `semantic-pages-context-cells-and-certificates`; the old semantic-pages slug is preserved by a static redirect and the source chapter is archived for lineage."
-  - "Source notes, schemas, fixtures, a synthetic context admission/adequacy harness, the VCM resolver/certificate probe, and finite Lean predicates support static context record discipline only; they do not prove resolver correctness, context compiler quality, semantic summary fidelity, certificate truthfulness, deletion closure, transaction isolation, verification bandwidth, model-facing context performance, or deployed memory-store behavior."
-  - "All chapter-core support remains at `argument`; no support-state promotion is implied by this consolidation."
+  - "All twenty-four assigned sources are reviewed at their available boundary: five local raw-cache notes, two connector/source-note variants, four pinned-project notes, QCSA, and twelve external comparators. Mapping completeness does not establish source-to-packet fidelity, context adequacy, model use, or novelty."
+  - "Current evidence is exact but narrow: three valid/five rejecting admission fixtures, two valid/nine rejecting resolver routes, one bounded certificate/eleven rejecting mutations, thirty-one theorem declarations under six targets, and mixed bounded QCSA results. None runs a deployed resolver or natural model-facing context campaign."
+  - "A full attempt still requires natural source sets, actual emitted packets, independently implemented source-to-packet and use evaluators, strong matched context baselines, staleness/poisoning/omission/authority/cache attacks, complete costs, causal ablations, clean reproduction, and cross-model/cross-backend transfer."
+  - "Chapter-core support remains at `argument`; the bounded QCSA mechanism dispositions do not promote the ABI core."
 ---
 
 ## Chapter status
@@ -32,14 +46,14 @@ open_evidence_gaps:
 | Chapter ID | `virtual-context-abi` |
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-10 |
-| Primary source records | `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `vcm_editable`, `moecot`, `spinoza`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project` |
+| Manuscript maturity | v0.3 proof-program manuscript |
+| Last updated | 2026-07-15 |
+| Primary source records | 24 assigned records: VCM and adjacent author sources, four pinned projects, QCSA, and twelve external comparators |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `vcm_public`; supporting: `context_engineer`, `verification_bandwidth`, `viea`, `spinoza`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`; connector/recovery: `vcm_editable`, `moecot` |
-| Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `spinoza`; connector/source-note only: `vcm_editable`, `moecot` |
-| Test state | `context_abi_record.valid.json`, `semantic_page_certificate.valid.json`, and related context packet/adequacy/transaction fixtures pass protocol validation; `python3 scripts/validate_context_admission_adequacy.py` passes synthetic admission/adequacy, certificate-use, stale-certificate, deletion-closure, and mode-confusion checks; `python3 scripts/validate_vcm_resolver_certificate_probe.py` validates the VCM resolver/certificate probe over `valid_resolver_materialization_receipt`, `valid_mandatory_miss_typed_fault`, and nine expected-invalid controls; `AsiStackProofs.VirtualContextABI` and `AsiStackProofs.ContextCertificates` implement finite record predicates including a context-admission route envelope. Deployed resolver, context compiler, open-domain summary-fidelity, certificate-truthfulness, deletion-closure, transaction-isolation, model-facing memory, VCM-Bench, and leak-prevention tests remain unproven. |
+| Source queue | primary: `vcm_public`; supporting: eight author/project notes plus QCSA; connector/recovery: `vcm_editable`, `moecot`; external comparators: graph retrieval, hierarchical abstraction, persistent memory, RAG, long-context use, citations, adaptive retrieval, OS-style tiering, and prompt compression |
+| Source loading state | all 24 sources have exact bounded Appendix C mappings; local raw passages, source notes, and pinned-project notes are distinguished from metadata-first external comparator intake and local reproduction |
+| Test state | Exact bounded scaffold: 3 valid/5 rejecting admission-adequacy fixtures; 2 valid/9 rejecting resolver/certificate routes; 1 bounded four-project certificate/11 rejecting mutations; reachable 4-event materialization and 2-event mandatory-fault traces with 55/55 rejected mutations; reachable 5-event certificate admission with 12 real certificate projections and 64/64 rejected mutations; 61 live Lean declarations under 6 targets; and QCSA's mixed synthetic identity/address/certificate results. No deployed resolver, natural source-to-packet fidelity test, model-use observation, useful context advantage, transaction isolation, deletion enforcement, VCM-Bench run, or production transfer. |
 
 The executed merge combines two current record families:
 
@@ -95,69 +109,75 @@ an identity, a certificate, a lease, an authority boundary, and a fault path.
 
 ## Problem
 
-Long-horizon agents need a stable context interface whose addresses, versions,
-materializations, typed pages, context cells, certificates, authority labels,
-loss contracts, adequacy states, and faults remain inspectable across
-planning, reasoning, execution, and audit.
+Between durable memory and a model's finite working context lies a static
+translation boundary. A consumer requests a purpose, obligation, object or
+address, snapshot, representation, authority, use, adequacy target, budget,
+and freshness horizon. The system must disclose what it actually selected,
+transformed, omitted, certified, leased, denied, and left unresolved.
 
-Without that interface, memory becomes prose. A retrieved passage, old
-conversation, compressed summary, redacted brief, policy excerpt, source
-quote, and derived inference can all appear as plain tokens. The model can use
-them, but the stack cannot later explain which object was supplied, which
-version it came from, what was omitted, which authority ceiling applied, which
-uses were permitted, whether the packet was adequate for the target claim, or
-which fault should have blocked use.
+Without that contract, memory becomes anonymous prompt text. A retrieved
+passage, old conversation, graph neighborhood, compressed summary, redacted
+brief, policy excerpt, source quotation, and derived inference can all look
+like equivalent tokens. The stack then cannot reconstruct which durable object
+was consulted, which version was visible, which candidates were rejected, what
+was lost, what the model actually received, which authority or right applied,
+or which fault should have blocked use.
 
-The Virtual Context ABI owns the static shape of that interface. It says what
-a context request can ask for, what a materialized packet must report, and how
-typed pages, cells, and certificates travel into planning, execution, evidence,
-and reader-facing artifacts.
-
-The local delta is governed addressability. The common pattern requires records, lifecycle state, authority, evidence, receipts, residuals, and non-claims; the context ABI adds the rule that memory is not usable context until address, version, mount, representation certificate, permitted use, authority ceiling, adequacy state, lease, and typed fault behavior survive materialization. The ABI boundary owns the difference between "relevant text was retrieved" and "a context object may be consumed."
+The Virtual Context ABI owns this static request-to-materialization relation.
+It does not own the durable store, dynamic commits, claim adjudication, or
+runtime effects. It owns the consumer-relative packet and the falsifiable
+certificate and receipt that connect a frozen request to actual emitted
+content. That is the difference between "relevant text was retrieved" and "a
+specific context object conformed to a bounded use contract."
 
 ## Why existing approaches are insufficient
 
-Long context windows, retrieval systems, and summaries can move text close to a
-model without defining stable addressability, representation authority, source
-bindings, omission records, permitted uses, adequacy boundaries, or typed
-failure behavior.
+Long windows, RAG, graph retrieval, hierarchical summaries, prompt compression,
+persistent conversational memory, citation systems, adaptive retrieval, and
+OS-style memory tiers can improve access or performance in bounded settings.
+None alone supplies a consumer-relative conformance contract for the actual
+packet placed before a model or worker.
 
-A retrieval result can be relevant and still be stale. A summary can be useful
-and still omit the clause that matters. A redaction can be safe for a worker
-and inadequate for a claim. A source can be allowed for orientation but not for
-support-state promotion. A context packet can be syntactically well formed and
-still be inadequate for the target question. If the interface does not expose
-those distinctions, the system may treat all loaded text as if it had the same
-authority and evidence weight.
+Relevance is not identity. Presence is not use. A source link is not support.
+A signed certificate can describe the wrong source-to-packet relation. A
+bounded graph can conceal its frontier. A fresh and permitted packet can still
+be inadequate, poisoned, lossy, unaffordable, or ignored by the model. LongBench,
+RULER, and Lost in the Middle sharpen use and capacity limits; RAG, GraphRAG,
+HippoRAG, RAPTOR, Mem0, MemGPT, ALCE, Self-RAG, and LongLLMLingua sharpen
+retrieval, abstraction, persistence, citation, adaptation, and compression
+comparisons. Their source-reported results are not local ABI evidence.
 
-External comparators help position the ABI boundary but do not prove it.
-Retrieval-augmented generation, long-context benchmarks, memory-augmented LLM
-systems, citation-oriented generation, self-reflective retrieval, and prompt
-compression literature all illuminate adjacent parts of the problem. The ASI
-Stack destination chapter is not claiming those systems have been reproduced
-here. It uses them as comparators while asking a systems question: what ABI
-prevents context from becoming anonymous prompt mass?
+The distinct systems question is whether an independently inspectable static
+contract can connect a frozen request, durable source state, candidate set,
+actual emitted packet, permitted use, and typed failure without laundering any
+of those steps into adequacy or support.
 
 ## Core Claim
 
-[virtual-context-abi.core, label: Design rationale, support: argument] Virtual
-Context Memory should expose a Virtual Context ABI that materializes typed pages
-and context cells with stable addresses, versions, certificates, authority
-ceilings, loss/use contracts, adequacy states, residuals, and typed faults.
+[virtual-context-abi.core, label: Design rationale, support: argument] The
+Virtual Context ABI should own the static, versioned, consumer- and
+purpose-relative request-to-materialization contract between durable memory and
+model-visible context. It resolves stable object, semantic-address, version,
+mount, and snapshot references into finite typed representation candidates,
+then issues a certificate and receipt binding exact source and field lineage,
+transformations, omissions and loss, provenance and taint, authority and
+rights, permitted and prohibited uses, freshness, lease, revocation, selection
+and omitted frontier, requested and observed adequacy state, costs, faults, and
+residuals.
 
-The claim remains at `argument` support. The source corpus supports the
-architecture vocabulary and drafting lineage. The checked fixtures and Lean
-modules show that the repository can express record-shape checks, synthetic
-negative cases, and small finite invariants. They do not show that a VCM
-resolver is correct, that summary certificates are truthful in open domains,
-that models use context reliably, or that a deployed memory system enforces
-the ABI.
+Admission means only that the actual packet conforms to the frozen request and
+policy. It does not establish truth, verification adequacy, model use,
+usefulness, safety, or support. The ABI may deny, ask, abstain, refresh,
+broaden, narrow, or return a typed fault. It does not update durable memory,
+own transactions, infer execution authority, adjudicate claims, execute
+effects, or move support or release state.
 
-The folded source claim from
-`semantic-pages-context-cells-and-certificates` is a preserved subclaim:
-context should be represented as typed semantic pages or cells with
-evidence-carrying representation certificates that preserve source bindings,
-omissions, authority ceilings, loss contracts, and permitted uses.
+The claim remains at `argument`. The source corpus supplies architecture and
+comparator vocabulary. The current schemas, 3/5 admission fixtures, 2/9
+resolver routes, 1/11 bounded certificate suite, 31 finite theorem declarations,
+and mixed bounded QCSA results make selected failures addressable. They do not
+run a deployed resolver, validate natural source-to-packet fidelity, observe
+model use, establish useful advantage, or transfer across stores and models.
 
 ### Strongest objection
 
@@ -210,6 +230,34 @@ that was actually emitted. A consumer can reject either side independently.
 The store may be current while the handle is expired, or the handle may be
 well-formed while the selected representation is inadequate, over-authorized,
 or missing a declared frontier.
+
+Before selection, the ABI retains the eligible candidate set: source objects,
+graph neighborhoods, exact excerpts, summaries, redactions, translations,
+abstractions, contradictions, and typed cells. Selection seeks the least
+sufficient packet under node, depth, edge, token, latency, privacy, authority,
+rights, and verification budgets. Rejected candidates, selection scores,
+limits, and the reachable but unmaterialized frontier remain visible.
+
+Stable representation and field identities preserve source-to-packet lineage
+through paraphrase, reordering, merge, split, cache movement, readdressing, and
+atlas migration. Each transformation records what was normalized, inferred,
+redacted, aggregated, omitted, approximated, left unknown, or found
+conflicting. A certificate is therefore a falsifiable declaration about an
+actual source-to-packet relation, not a self-authenticating label.
+
+The materialization receipt binds the request to actual emitted bytes or
+content, order, placement, truncation, cache state, retrieval route, costs,
+faults, and residuals. Instrumentation then keeps available, selected,
+delivered, attended-to, cited, relied-on, contradicted, and outcome-relevant
+context separate. A packet in the window is not evidence that the consumer used
+it correctly.
+
+Every request, candidate, retrieval, transformation, certificate, admission
+decision, cache event, retry, human intervention, fault, cost, discard,
+downstream-use observation, and residual stays in the denominator. Material
+changes to source, snapshot, address atlas, policy, authority, rights,
+evaluator, environment, consumer, or target use expire affected receipts and
+require revalidation or an explicit residual.
 
 ### Certified bounded graph snapshots
 
@@ -319,35 +367,41 @@ or production evidence; the core claim remains at `argument`.
 
 ## Interfaces
 
-Planning requests context by task, address, authority, representation need,
-and adequacy target. Planning should receive enough structure to know whether
-context is a constraint, claim, decision, source excerpt, summary, or residual.
+The public interface is a static request, candidate set, certificate, packet,
+receipt, fault, and residual relation. It is not a memory database or a
+permission token.
 
-VCM materializes packets and cells. It owns the static address, version,
-certificate, source-ref, authority, loss, use, lease, residual, and fault
-fields.
-
-Spinoza and claim ledgers consume claim and evidence cells. They can cite a
-certificate, but the certificate itself does not settle the claim. The claim
-ledger still owns support state, contradiction, revision, and promotion
-decisions.
-
-Execution consumes only permitted representations. A redacted execution packet
-can guide a worker without exposing every source or granting authority beyond
-its certificate.
-
-Artifact graphs store certificate references when context-derived
-representations become durable work products. That lets a later audit recover
-which context object influenced an artifact.
-
-Context transactions supply dynamic semantics. Snapshot consistency, branch
-isolation, mount permissions, taint propagation, deletion closure, and
-declassification stay with
-`context-transactions-snapshots-mounts-and-taint`.
-
-Verification bandwidth evaluates adequacy. A packet can be validly admitted
-and still inadequate for a high-risk claim. That distinction stays with
-`verification-bandwidth-and-context-adequacy`.
+- **Intent, Cognitive Compilation, and Planning** own accepted purpose,
+  obligation, consumer, and context demand. The ABI may satisfy or fault the
+  request but cannot reinterpret or reprioritize it.
+- **Durable memory and knowledge-lattice owners** supply stable objects,
+  versions, provenance, lifecycle, and read snapshots. Materialization cannot
+  mutate, merge, delete, supersede, forget, or train on durable state.
+- **Context Transactions** owns commits, branches, mounts, taint propagation,
+  invalidation, deletion closure, and dynamic isolation. The ABI consumes exact
+  transaction and snapshot state without claiming those behaviors.
+- **QCSA and resolver components** may propose identities and plural semantic
+  addresses. Address confidence and graph position cannot grant truth, use, or
+  execution authority.
+- **Verification Bandwidth and Scalable Oversight** own adequacy and independent
+  evaluation. ABI admission records only static request and policy conformance.
+- **Claim Ledgers and Spinoza** own evidence, contradiction, belief, and support
+  transitions. Source links, citations, certificates, and packet use cannot
+  promote a claim.
+- **Labor OS and Runtime Adapters** consume permitted packets and separately
+  decide jobs, tools, approval, and effects. Context relevance is never
+  capability authority.
+- **Security, Privacy, Rights, Licensing, and Publication** owners decide
+  disclosure, processing, retention, declassification, permitted use, and
+  external release.
+- **Artifact Graphs** preserve request, candidate, source, certificate, packet,
+  cache, model-use, outcome, cost, fault, and residual lineage without
+  certifying correctness.
+- **Resource Economics** owns observed token, compute, storage, retrieval,
+  compression, verifier, human, latency, recovery, privacy, and opportunity
+  cost.
+- **Evidence States and Readiness Gates** own support, quarantine, promotion,
+  and release. Green resolution or admission has no direct support effect.
 
 Minimum ABI and certificate fields include:
 
@@ -358,24 +412,55 @@ Minimum ABI and certificate fields include:
 
 ## Invariants
 
-- Addresses and versions are stable.
-- Source bindings survive representation changes.
-- Authority labels survive summarization.
-- Loss and permitted-use contracts are explicit.
-- Derived cells point back to source bindings.
-- Derived cells point to the transaction or artifact record that created the
-  representation when that record exists.
-- Context admission and context adequacy remain distinct.
-- Mandatory context misses produce typed faults rather than best-effort
-  packets.
-- Summaries cannot increase the authority ceiling of their source cells.
-- Revoked or stale certificates cannot be treated as current support.
-- A handle binds one snapshot identity and digest, current generation, policy
-  version, revocation epoch, expiry, provenance, and revalidation evidence.
-- A bounded graph selection stays inside its declared depth and node budgets
-  and discloses every unselected snapshot node in its omitted frontier.
-- Materialized context remains distinct from durable memory and cannot acquire
-  durable-write authority through materialization.
+- Every materialization binds one frozen consumer, purpose, obligation, object
+  or expression, address policy, source and snapshot scope, representation
+  need, authority and rights ceiling, use contract, adequacy target, budget,
+  horizon, and support ceiling.
+- Durable identity remains distinct from name, position, embedding, semantic
+  address, graph position, storage location, representation, packet, retrieval
+  route, physical route, and support state.
+- Source and field lineage survives every representation change; each field is
+  preserved, transformed, split, merged, omitted, rejected, or residualized
+  with reason and consumer consequence.
+- Every bounded selection stays within declared limits and discloses the exact
+  selected denominator, rejected candidates, omissions, and reachable but
+  unmaterialized frontier.
+- Summaries, redactions, translations, abstractions, and derived inferences
+  cannot widen authority, rights, purpose, use, evidence, effects, support, or
+  release beyond their sources.
+- Loss, uncertainty, conflict, approximation, provenance, taint, permitted and
+  prohibited uses, expiry, revocation, and residual risk remain explicit and
+  consumer-relative.
+- A certificate is a falsifiable declaration about an actual source-to-packet
+  relation; presence, signature, digest, address confidence, or graph position
+  is not truth or adequacy.
+- Resolver conformance, freshness, representation fidelity, admission,
+  adequacy, model use, usefulness, safety, and support remain distinct states.
+- Mandatory misses and material ambiguity produce blocking typed faults;
+  optional absence, low confidence, or infeasibility remains a request,
+  fallback, abstention, denial, retry, or residual.
+- A handle binds exact snapshot identity and digest, generation, policy,
+  revocation epoch, provenance, issue and expiry time, revalidation receipt,
+  and permitted use.
+- Revoked, expired, stale, policy-mismatched, migrated, tainted, or materially
+  changed sources and packets cannot inherit current admission, adequacy, or
+  support.
+- Materialized context is a finite derived consumer object and gains no write,
+  merge, deletion, supersession, training, or execution authority.
+- Actual emitted content, order, placement, truncation, cache state, and
+  consumer-visible packet remain inspectable; requested or selected context
+  cannot substitute for observed delivery.
+- Available, selected, delivered, attended-to, cited, relied-on, contradicted,
+  outcome-relevant, and support-bearing context remain different states.
+- Every candidate, retrieval, transformation, validation, retry, cache event,
+  intervention, failure, cost, discard, use observation, and residual remains
+  in the denominator.
+- Lower tokens, faster retrieval, higher recall, more citations, longer
+  context, cleaner summaries, zero release, or fewer faults do not establish
+  fidelity, adequacy, usefulness, safety, or total-cost superiority alone.
+- Finite schemas, synthetic fixtures, bounded graph records, reversible local
+  traces, and finite theorems establish only their exact scopes and cannot
+  universalize context quality or transfer.
 
 Together, these invariants keep memory from turning into an untyped prompt
 append. A context packet may be useful, but usefulness is not enough. The stack
@@ -387,122 +472,135 @@ or reader artifact consumed it.
 
 ## Failure modes
 
-Flat transcript memory treats all prior text as one undifferentiated source of
-truth.
+These failures fall into four connected families: identity loss, semantic loss,
+authority drift, and misleading evaluation. A packet may look coherent while
+failing in more than one family at once—for example, a stale summary can carry
+the wrong source version, omit a decisive qualifier, retain an expired grant,
+and still receive a favorable retrieval score. The list below names those
+families at the point where a consumer encounters them.
 
-Stale context lets an old version or revoked cell keep influencing work after
-its validity changed.
-
-Summary overconfidence lets a lossy representation appear stronger than the
-source material it compressed.
-
-Provenance loss severs a derived cell from the source bindings and omissions
-that explain what it can support.
-
-Authority escalation through compression lets a summary, redaction, or
-paraphrase carry more permission than its source.
-
-Unsafe fit happens when a packet is admitted because it is relevant but the
-authority, clearance, loss, or adequacy record should have blocked use.
-
-Adequacy laundering happens when a context packet adequate for orientation or
-drafting is reused as if it were adequate for claim support.
-
-Handle laundering happens when a fresh-looking address reuses an old
-generation, expired lease, revoked epoch, mismatched policy, or unvalidated
-slice.
-
-Graph-completeness laundering happens when a bounded selection hides its
-omitted frontier and is narrated as the whole durable memory graph.
-
-Memory/context conflation happens when a derived packet is treated as the
-durable source of truth or is allowed to write back without a separate
-transaction authority.
+- Anonymous-context laundering collapses sources, versions, roles, and
+  permissions into flat prompt text.
+- Identity or address laundering treats a name, embedding, nearest node,
+  semantic path, graph position, or physical route as the durable object.
+- Stale-handle laundering reuses an old generation, expired lease, revoked
+  epoch, migrated address, mismatched policy, or unvalidated slice.
+- Summary or compression overconfidence hides qualifiers, negation,
+  quantities, time, authority, citations, contradictions, minority evidence,
+  or reconstruction burden.
+- Provenance and field-lineage loss severs a packet from the source objects,
+  transformations, omissions, and consumer consequences that bound its use.
+- Authority, rights, privacy, purpose, or license escalation through
+  summarization, redaction, translation, caching, federation, or similarity
+  widens use beyond the source grant.
+- Certificate theater treats complete fields, a signature, digest,
+  self-validation, or round trip as proof that the declaration is truthful.
+- Graph-completeness laundering hides rejected candidates, selection limits,
+  unreachable material, or the omitted frontier and narrates a bounded slice
+  as the store.
+- Admission laundering treats relevant, well-formed, fresh, or permitted
+  context as adequate evidence for the target claim or decision.
+- Presence laundering treats context in the window as selected, attended to,
+  used correctly, or outcome-relevant.
+- Retrieval and citation laundering treats recall, a source link, or citation
+  count as entailment, contradiction handling, or claim support.
+- Poisoning, conflicting sources, malicious instructions, future-answer
+  leakage, and taint enter packets without quarantine or consumer policy.
+- Mandatory misses, ambiguity, or infeasibility are silently replaced with
+  nearest matches or hallucinated clean packets.
+- Cache and invalidation laundering serves content after source, snapshot,
+  atlas, policy, authority, evaluator, or environment change.
+- Durable-memory/context conflation lets a lossy packet overwrite, merge,
+  delete, train on, or become the durable source without separate authority.
+- Failure and selection survivorship removes rejected candidates, retries,
+  stale reads, compression losses, cache misses, human repair, faults, or
+  residuals from denominators.
+- Efficiency theater reports fewer tokens, lower latency, higher retrieval, or
+  longer context while omitting verification, human, privacy, recovery,
+  missed-help, and opportunity cost.
+- Portability theater infers cross-model, language, modality, memory store,
+  organization, jurisdiction, threat, or temporal validity from one synthetic
+  resolver and internally authored corpus.
 
 ## Minimum Viable Implementation
 
-The minimum viable implementation is not a full memory system. It is a public
-record surface that can represent the static ABI and reject a few dishonest
-collapses.
+The current minimum is a static record-and-route scaffold:
 
-The implementation preserves:
+- public context ABI, packet, adequacy, transaction-reference, semantic-page
+  certificate, and bounded graph-snapshot schemas;
+- three valid and five rejecting admission/adequacy fixtures;
+- two valid and nine rejecting resolver/certificate routes;
+- one bounded four-project certificate and eleven rejecting mutations;
+- reachable four-event materialization and two-event mandatory-fault witnesses
+  with fifty-five independently rejected mutations;
+- sixty-one live Lean theorem declarations grouped under six targets; and
+- QCSA's exact bounded synthetic identity, plural-address, certificate,
+  migration, and typed-fault results.
 
-- `schemas/context_abi_record.schema.json`;
-- `schemas/semantic_page_certificate.schema.json`;
-- `schemas/context_packet.schema.json`;
-- `schemas/context_adequacy_record.schema.json`;
-- `schemas/context_transaction_record.schema.json`;
-- `schemas/bounded_graph_snapshot_certificate.schema.json`;
-- `tests/fixtures/protocol_records/bounded_graph_snapshot_certificate.valid.json`;
-- eleven mutations under
-  `experiments/bounded_graph_snapshot_certificate/fixtures/` covering digest,
-  generation, expiry, revocation, policy, provenance, bounds, omissions,
-  revalidation, memory/context separation, and support-promotion failures;
-- `experiments/context_admission_adequacy/fixtures/valid_local_check_public_context.json`;
-- `experiments/context_admission_adequacy/fixtures/valid_admitted_but_inadequate.json`;
-- `experiments/context_admission_adequacy/fixtures/valid_conflict_escalation.json`;
-- `experiments/context_admission_adequacy/fixtures/invalid_admission_as_verification.json`;
-- `experiments/context_admission_adequacy/fixtures/invalid_conflict_promoted.json`;
-- `experiments/context_admission_adequacy/fixtures/invalid_stale_certificate_use.json`;
-- `python3 scripts/validate_context_admission_adequacy.py`.
+The fixture families reject admission-as-verification, conflict promotion,
+stale use, mode confusion, open deletion, address/version/snapshot/mount
+mismatch, expired reuse, source-binding mismatch, authority escalation,
+truthfulness overclaim, hidden summary omission, digest or generation drift,
+missing provenance, unbounded selection, undisclosed frontier, missing
+revalidation, memory/context conflation, and fixture-level support promotion.
 
-That MVI is useful because it tests the representation boundary. It does not
-prove that a real resolver can find the right context, that summaries are
-semantically faithful, that a model will use the packet correctly, or that a
-memory store enforces transactions.
+These records do not run a deployed resolver, inspect natural source-to-packet
+fidelity, measure model use, execute memory transactions, enforce deletion, or
+establish useful advantage. The ABI lineage now physically retires two
+assumption projections and replaces them with reachable request-binding,
+resolver, certificate, materialization, and typed-fault semantics. Numeric
+identities, permission, lease, hashes, declarations, taint flags, and receipts
+remain trusted abstract inputs; the model establishes neither open-domain
+meaning nor deployed runtime correspondence.
 
-The next practical slice now exists as the VCM resolver/certificate probe in
-`docs/vcm_resolver_certificate_probe.md` and
-`experiments/vcm_resolver_certificate_probe/results/2026-07-02-local.json`.
-It checks `valid_resolver_materialization_receipt`,
-`valid_mandatory_miss_typed_fault`, and expected-invalid controls for
-`invalid_address_mismatch_materialization_denied`,
-`invalid_version_mismatch_materialization_denied`,
-`invalid_snapshot_mismatch_materialization_denied`,
-`invalid_mount_policy_denied`, `invalid_lease_expired_reuse_blocked`,
-`invalid_certificate_source_binding_mismatch_denied`,
-`invalid_certificate_authority_escalation_denied`,
-`invalid_certificate_truthfulness_overclaim_denied`, and
-`invalid_summary_fidelity_omission_denied`. This is a no deployed-resolver,
-memory-store, context-compiler, open-domain-summary-fidelity,
-certificate-truthfulness, transaction-isolation, deletion-enforcement,
-model-facing-context-quality, VCM-Bench, leak-prevention, or
-support-state-promotion claim.
+The next honest minimum must materialize natural held-out source sets into
+actual model-visible packets through full-context, RAG, graph, hierarchical
+summary, prompt-compression, persistent-memory, human-curated, governed ABI,
+and no-context routes under matched resources. Independently implemented
+evaluators must label source obligations, actual packet content, model use,
+task outcomes, faults, costs, and delayed residuals; inject staleness,
+poisoning, omission, authority, cache, and frontier attacks; rerun from locked
+artifacts; and transfer to a second model and memory backend.
 
 ## Beyond the State of the Art
 
-A mature Context ABI would make context behave like governed infrastructure
-rather than prompt decoration. Planners, compilers, workers, verifiers, claim
-ledgers, auditors, reader editions, and later AI agents would request and
-receive context through stable identities, explicit versions, permissioned
-representations, and typed refusal paths instead of anonymous retrieved text.
+A mature Virtual Context ABI is an independently testable context syscall
+layer. Natural consumers request purpose-bound objects and representations;
+multiple stores and retrieval systems return finite candidates; the ABI emits
+actual model-visible packets with falsifiable source-to-packet certificates,
+complete selection and cost ledgers, least-sufficient authority and rights,
+typed faults, expiry, and revalidation; and independent observers distinguish
+availability, delivery, model use, outcome contribution, adequacy, and support.
 
-In that mature system, a model never receives anonymous "relevant context." It
-receives a materialization receipt and typed cells. The receipt says what was
-requested, which address and version resolved, what representation was built,
-which authority labels survived, what was omitted, which uses are permitted,
-when the lease expires, which certificate applies, whether the packet is only
-admitted or also adequate for the target claim, and which fault or residual
-remains.
+Prospectively sampled natural workloads compare full context, direct and graph
+RAG, hierarchical summaries, prompt compression, persistent memory, adaptive
+retrieval, citation systems, OS-style tiering, human curation, governed ABI,
+and no-context routes under matched models, sources, tools, authority, budgets,
+repair opportunities, and horizons. Evaluators jointly measure source and
+field precision/recall, omission and contradiction retention, authority and
+rights compliance, stale and poisoned context, actual model use, useful
+outcomes, unsafe outputs, abstention, missed help, latency, tokens, compute,
+storage, privacy burden, verifier and human work, recovery, and total cost.
 
-The endpoint is a governed context fabric: exact source excerpts, summaries,
-redactions, planning briefs, claim cells, contradiction pairs, reader
-paraphrases, and execution packets can all be materialized from shared sources
-without pretending they have the same authority or evidential role. The
-architecture should make context safer by making its boundaries explicit. It
-does not become validated until resolver behavior, certificate truthfulness,
-transaction semantics, verification adequacy, and model-facing outcomes are
-tested separately.
+Adversaries exploit aliases, stale snapshots, poisoned graphs, malicious
+instructions, source conflicts, hidden frontiers, compression loss, evaluator
+capture, forged certificates, cache invalidation, and unauthorized use. Causal
+ablations remove stable identity, plural addresses, field lineage, omission
+ledgers, actual-packet inspection, typed faults, evaluator separation,
+denominator accounting, and revalidation one at a time. Independent
+reproduction and transfer span models, languages, modalities, stores,
+retrievers, organizations, jurisdictions, threats, horizons, and time.
 
-At full maturity, this layer would feel less like prompt construction and more
-like an operating-system interface for context. A planner could request the
-least sufficient packet for a task; a verifier could reject a packet whose
-certificate is stale, lossy, or underpowered for the claim; a worker could
-receive a redacted instruction without inheriting broader authority; and an
-auditor could replay which context object reached which artifact. The ambitious
-end state is not infinite memory. It is governed materialization: every use of
-memory has an address, representation, certificate, lease, authority boundary,
-adequacy handoff, and typed refusal path.
+Promotion requires nonzero useful opportunity, strong matched baselines,
+independent actual-packet and use evaluation, predicted causal signatures,
+complete denominators and total costs, clean reproduction, cross-model and
+cross-backend transfer, and accepted claim-specific transitions. Otherwise the
+exact claim remains argument, narrows, stays null or negative, becomes
+refuted, or is blocked after a competent full attempt.
+
+No current result meets this context-ABI endpoint; support remains `argument`
+until natural packet use, actual-consumer evaluation, causal ablations, clean
+reproduction, and cross-backend transfer pass.
 
 ## Codex test plan
 
@@ -510,39 +608,44 @@ adequacy handoff, and typed refusal path.
 |---|---|---|
 | Context ABI fixture validation | Check that the context ABI fixture declares lifecycle, request, address, version, mount, snapshot, resolver policy, representation, authority, admission, adequacy, fault, materialization, support boundary, source refs, support-state effect, audit refs, and non-claims. | implemented by protocol validation; validated locally |
 | Semantic page certificate fixture validation | Check that the semantic page certificate fixture declares source bindings, derivation, transaction refs, artifact refs, representation kind, loss contract, omissions, authority, permitted uses, validity, verification state, revocation state, residual risks, and non-claims. | implemented by protocol validation; validated locally |
-| Address/version stability predicate | Check that a resolved finite context-reference record has a matching address, version, and snapshot binding. | implemented in `AsiStackProofs.VirtualContextABI`; builds locally |
-| Mandatory-miss fault predicate | Check that mandatory misses produce typed faults instead of best-effort packets. | implemented in `AsiStackProofs.VirtualContextABI`; builds locally |
+| Reachable resolver/materialization refinement | Check that one exact bound request can reach certified materialization only with address/version/snapshot/mount, authority, lease, source/derived, and receipt custody. | implemented in `AsiStackProofs.VirtualContextRefinement`; four-event witness builds locally |
+| Reachable mandatory-miss fault refinement | Check that one represented mandatory miss reaches typed-fault state with a fault receipt and without a materialization receipt or emission. | implemented in `AsiStackProofs.VirtualContextRefinement`; two-event witness builds locally |
 | Context admission route proof | Check that a finite context-admission review routes malformed requests, missing addresses, authority escapes, absent mandatory context, absent optional context, missing certificates, stale certificates, taint, failed adequacy, residuals, and complete materialization reviews to explicit outcomes. | implemented by Lean build; finite context-admission route coverage only |
-| Derived-cell certificate predicate | Check that valid derived cells carry source bindings, a loss contract, and permitted uses. | implemented in `AsiStackProofs.ContextCertificates`; builds locally |
-| Authority preservation predicate | Check that summaries respecting their sources cannot increase the authority ceiling of source cells. | implemented in `AsiStackProofs.ContextCertificates`; builds locally |
+| Reachable certificate provenance refinement | Check that source binding, derivation, loss/omission/use contracts, verification, lifecycle epoch, deletion closure, authority, and exact consumer scope survive to admission. | implemented in `AsiStackProofs.ContextCertificateRefinement`; five-event witness builds locally |
+| Derived authority and promotion boundary | Check that represented derivation does not widen source authority and that support-promotion requests require a distinct evidence-transition receipt. | implemented in `AsiStackProofs.ContextCertificateRefinement`; bounded abstract identities and receipts only |
 | Certificate lifecycle admission route proof | Check that a finite certificate-lifecycle review routes malformed certificates, missing source bindings, missing loss or use contracts, authority escapes, omitted-material gaps, scope violations, stale certificates, revocation, taint, deletion-closure gaps, missing verifier refs, consumer-policy violations, support-promotion attempts without evidence transitions, and complete reviews to explicit outcomes. | implemented by Lean build; finite certificate-lifecycle route coverage only |
 | Synthetic context admission/adequacy harness | Check that admission, adequacy, stale certificates, deletion closure, and mode-confusion cases cannot become evidence-ready context. | implemented in `python3 scripts/validate_context_admission_adequacy.py`; no deployed resolver or summary-fidelity claim |
 | Resolver conformance test | Check that resolver-style fixture records reject invalid addresses, versions, mounts, snapshots, and expired leases before materialization. | implemented by `python3 scripts/validate_vcm_resolver_certificate_probe.py`; synthetic fixture-pair check only, no deployed resolver |
 | Certificate truthfulness test | Check that certificate declarations match paired source and derived cells for source binding, omissions, authority ceiling, and representation claim. | implemented by `python3 scripts/validate_vcm_resolver_certificate_probe.py`; synthetic fixture-pair check only, no open-domain certificate truthfulness |
-| VCM resolver/certificate probe | Check `valid_resolver_materialization_receipt`, `valid_mandatory_miss_typed_fault`, and nine expected-invalid controls across address, version, snapshot, mount policy, lease expiry, certificate source binding, authority escalation, truthfulness overclaim, and summary omission boundaries. | implemented by `python3 scripts/validate_vcm_resolver_certificate_probe.py`; no deployed-resolver, memory-store, context-compiler, open-domain-summary-fidelity, certificate-truthfulness, transaction-isolation, deletion-enforcement, model-facing-context-quality, VCM-Bench, leak-prevention, or support-state-promotion claim |
+| VCM resolver/certificate probe | Check `valid_resolver_materialization_receipt`, `valid_mandatory_miss_typed_fault`, `invalid_address_mismatch_materialization_denied`, `invalid_version_mismatch_materialization_denied`, `invalid_snapshot_mismatch_materialization_denied`, `invalid_mount_policy_denied`, `invalid_lease_expired_reuse_blocked`, `invalid_certificate_source_binding_mismatch_denied`, `invalid_certificate_authority_escalation_denied`, `invalid_certificate_truthfulness_overclaim_denied`, and `invalid_summary_fidelity_omission_denied`. | implemented by `python3 scripts/validate_vcm_resolver_certificate_probe.py`; no deployed-resolver, memory-store, context-compiler, open-domain-summary-fidelity, certificate-truthfulness, transaction-isolation, deletion-enforcement, model-facing-context-quality, VCM-Bench, leak-prevention, or support-state-promotion claim |
+| Reachable Virtual Context independent consumer | Reimplement the finite transition relation, recheck all 11 prior resolver scenarios, keep the 3/5 admission suite distinct, execute both witnesses, and mutate binding, authority, lease, certificate, omission, overclaim, taint, receipt, fault/materialization, and time fields. | implemented by `python3 scripts/validate_virtual_context_refinement.py`; 55/55 mutations rejected, support-state effect `none` |
+| Reachable certificate independent consumer | Validate the canonical certificate and all 12 certificate records across 8 admission scenarios, keep certificate shape separate from whole-scenario validity, execute the 5-event witness, and mutate provenance, authority, contracts, epoch, verification, deletion, use, support, taint, revocation, and time. | implemented by `python3 scripts/validate_context_certificate_refinement.py`; 64/64 mutations rejected, support-state effect `none` |
 | Historical-project bounded graph-snapshot certificate | Check snapshot/digest identity, finite graph selection, exact omitted frontier, handle provenance/generation/policy/expiry/revocation, required revalidation, durable-memory/context separation, and no fixture promotion. | implemented by `python3 scripts/validate_bounded_graph_snapshot_certificate.py` with one bounded four-project record and eleven expected-invalid mutations; no deployed resolver, store, graph-completeness, or support claim |
 
 ### Formalization hooks
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:vcm.abi.operational_invariant` | `AsiStackProofs.VirtualContextABI` | A context reference resolves only when the requested address and version are valid for the snapshot. | implemented |
-| `lean:vcm.abi.failure_blocks_promotion` | `AsiStackProofs.VirtualContextABI` | A mandatory context miss produces a typed fault rather than a best-effort packet. | implemented |
-| `lean:vcm.abi.context_admission_route_envelope` | `AsiStackProofs.VirtualContextABI` | A structured context-admission review routes malformed requests, missing addresses, authority escapes, absent mandatory context, absent optional context, missing certificates, stale certificates, taint, failed adequacy, residuals, and complete materialization reviews into explicit outcomes. | implemented |
-| `lean:vcm.certificates.operational_invariant` | `AsiStackProofs.ContextCertificates` | A derived context cell carries source bindings and a declared loss/use contract. | implemented |
-| `lean:vcm.certificates.failure_blocks_promotion` | `AsiStackProofs.ContextCertificates` | A summary cannot increase the authority ceiling of its source cells. | implemented |
-| `lean:vcm.certificates.lifecycle_admission_route` | `AsiStackProofs.ContextCertificates` | A structured certificate-lifecycle review routes malformed certificates, missing source bindings, missing loss or use contracts, authority escapes, omitted-material gaps, scope violations, stale certificates, revocation, taint, deletion-closure gaps, missing verifier refs, consumer-policy violations, support-promotion attempts without evidence transitions, and complete reviews into explicit outcomes. | implemented |
+| `lean:vcm.abi.operational_invariant` | `AsiStackProofs.VirtualContextRefinement` | Every accepted materialization in the finite reachable model preserves the exact represented request, address, version, snapshot, mount, source, derived representation, approved authority, and receipt custody. | implemented |
+| `lean:vcm.abi.failure_blocks_promotion` | `AsiStackProofs.VirtualContextRefinement` | A represented mandatory miss reaches typed-fault state only with a fault receipt and without materialization; binding, lease, authority, certificate, omission, overclaim, taint, and receipt faults are rejected. | implemented |
+| `lean:vcm.abi.context_admission_route_envelope` | `AsiStackProofs.VirtualContextRefinement` | The original finite admission routes are consumed alongside separate four-event materialization and two-event mandatory-fault refinements plus an independent 11-scenario/55-mutation consumer. | implemented |
+| `lean:vcm.certificates.operational_invariant` | `AsiStackProofs.ContextCertificateRefinement` | Every accepted consumer admission in the finite reachable certificate model preserves the exact represented source, derived representation, loss contract, omission ledger, permitted use, lifecycle epoch, authority, and receipt custody. | implemented |
+| `lean:vcm.certificates.failure_blocks_promotion` | `AsiStackProofs.ContextCertificateRefinement` | Derived authority cannot exceed represented source authority, and a support-promotion request cannot be admitted without a distinct evidence-transition receipt. | implemented |
+| `lean:vcm.certificates.lifecycle_admission_route` | `AsiStackProofs.ContextCertificateRefinement` | The original fifteen lifecycle routes are consumed alongside a five-event reachable refinement and independent 12-certificate/8-scenario/64-mutation consumer. | implemented |
 
-These proof hooks are implemented only over finite Lean records. They check
-resolved-reference matching, mandatory-miss faulting, derived-cell field
-presence, source-authority non-escalation, and context-admission route coverage
-plus certificate-lifecycle route coverage for modeled invalid or complete
-review states. The VCM resolver/certificate probe adds a deterministic
-synthetic route check over generated source and derived cells. These artifacts
-do not prove open-domain source selection, semantic fidelity, certificate
-truthfulness, deployed resolver behavior, transaction isolation, deletion
-enforcement, model-facing context behavior, VCM-Bench performance, or leak
-prevention.
+The six public targets now group sixty-one live theorem declarations: eleven
+retained ABI routes, seventeen resolver/materialization refinement
+declarations, sixteen retained certificate route/contradiction declarations,
+and seventeen certificate provenance/lifecycle refinement declarations. Four
+frozen assumption projections—two ABI and two certificate declarations—are
+physically absent and preserved only in the rationalization lineage. The VCM
+resolver/certificate probe and two independent refinement consumers add
+deterministic synthetic and real-schema projection checks over generated
+identifiers and records. These targets do not prove
+open-domain source selection, semantic fidelity, certificate truthfulness,
+graph completeness, deployed resolver behavior, transaction isolation,
+deletion enforcement, model-facing context use, useful outcomes, VCM-Bench
+performance, leak prevention, or runtime refinement.
 
 Adjacent proof hooks remain with protected standalone chapters:
 `lean:vcm.transactions.operational_invariant`,
@@ -560,6 +663,10 @@ and attention-use limits; MemGPT (`ext_memgpt_2023`) positions memory as a
 managed system; ALCE (`ext_alce_2023`) positions citation support;
 Self-RAG (`ext_self_rag_2023`) positions retrieval/reflection decisions; and
 LongLLMLingua (`ext_longllmlingua_2023`) positions prompt-compression loss.
+GraphRAG (`ext_graphrag_2024`), HippoRAG (`ext_hipporag_2024`), RAPTOR
+(`ext_raptor_2024`), and Mem0 (`ext_mem0_2025`) position graph/community
+retrieval, associative navigation, hierarchical abstraction, and persistent
+conversational memory.
 The narrower contribution is the static ABI and certificate
 boundary that keeps those context objects from becoming anonymous prompt mass.
 
@@ -574,10 +681,11 @@ boundary that keeps those context objects from becoming anonymous prompt mass.
 | `spinoza` | Supplies claim/evidence cell pressure, proof/citation/procedure-carrying claim graphs, support tiers, contradiction revision, and tier non-upgrade rules. | source note available; local raw cache passage-reviewed |
 | `vcm_editable` | Connector-readable refinement for stable addresses, mounts, snapshots, task-relative representation graphs, certificates, protected compilation, and planner-guided semantic paging. | source note available; connector/source-note mapped |
 | `moecot` | Runtime-reference context for governed orchestration, fail-closed ledgers, replay, handoffs, readiness gates, promotion blockers, and residual tracking. | source note available; connector/source-note mapped |
-| `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_mem0_2025` | External comparators for graph/community sensemaking, associative graph retrieval, hierarchical abstraction, and persistent conversational memory; use to sharpen typed representation, provenance, loss, update, poisoning, and adequacy boundaries. | source notes available; no local memory, benchmark, or production-readiness result |
+| `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_mem0_2025`, `ext_rag_2020`, `ext_lost_in_middle_2023`, `ext_longbench_2023`, `ext_ruler_2024`, `ext_memgpt_2023`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_longllmlingua_2023` | External comparators for retrieval, graph/community sensemaking, associative navigation, hierarchical abstraction, persistent memory, long-context use, citations, adaptive retrieval, OS-style tiering, and compression; use to sharpen typed representation, actual use, provenance, loss, update, poisoning, cost, and adequacy boundaries. | bounded primary-record notes available; no local model, memory, benchmark, citation, compression, or production result |
 | `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project` | One historical-project lineage for durable-memory/context separation, frozen and TTL-bounded slices, bounded graph snapshots, generation-leased handles, provenance, expiry, revocation, restore revalidation, and invalid-slice controls. | public-safe pinned notes reviewed; one hand-authored bounded certificate and mutations only, with no historical runtime replay or independent replication |
 
-The mappings support static context ABI and certificate vocabulary. They do not
+All twenty-four assigned sources now have first-class Appendix C mappings. The
+mappings support static context ABI and certificate vocabulary. They do not
 support claims of resolver correctness, summary fidelity, certificate
 truthfulness, contradiction-rate improvement, context compiler performance,
 memory-store behavior, or model-facing context quality.
@@ -593,12 +701,11 @@ These rows keep The Virtual Context ABI: Typed Pages, Cells, and Certificates's 
 <!-- manifest-source-reconciliation:end -->
 ## Summary
 
-The Virtual Context ABI is the static interface between durable memory and
-model-visible context. It gives context a stable identity before the stack uses
-it. A context packet should say where it came from, which version it
-represents, what type of cell it is, what was omitted, which authority
-survived, which uses are permitted, whether the packet is admitted or adequate,
-and which fault or residual remains.
+The Virtual Context ABI is the static, consumer-relative contract between
+durable memory and model-visible context. It connects a frozen request and
+durable snapshot to the actual emitted packet, complete candidate and omission
+ledger, falsifiable representation certificate, authority and rights boundary,
+lease, cost, typed fault, and residual.
 
 Typed pages and representation certificates are not an optional second idea.
 They are what make the ABI meaningful. Without them, stable addresses can
@@ -606,10 +713,12 @@ still deliver anonymous prompt material. With them, the stack can distinguish
 exact evidence from lossy summaries, redacted execution context, claim cells,
 planning briefs, and reader paraphrases.
 
-The boundary remains narrow: the static context interface is separate from
-transactional memory behavior, deletion closure, taint propagation,
-verification bandwidth, and claim-ledger belief revision. Those remain separate
-chapters with their own proof and evidence lanes.
+Admission establishes only request and policy conformance. It is not truth,
+adequacy, model use, usefulness, safety, or support. Durable updates,
+transactions, deletion closure, taint propagation, verification bandwidth,
+claim revision, effects, and release remain separate owners. The current
+synthetic records and finite proofs preserve that boundary but do not establish
+a natural, useful, or transferable context system.
 
 ## Handoff
 

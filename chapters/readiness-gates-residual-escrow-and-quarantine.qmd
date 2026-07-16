@@ -3,8 +3,8 @@ title: "Readiness Gates, Residual Escrow, and Quarantine"
 chapter_id: "readiness-gates-residual-escrow-and-quarantine"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-10"
+draft_maturity: "v0.3 claim-proof program"
+last_updated: "2026-07-15"
 primary_sources:
   - "rmi"
   - "benchmaxxing"
@@ -21,12 +21,15 @@ primary_sources:
   - "bugbrain_project"
   - "corbens_trainer_project"
   - "corbens_best_model_possible_project"
+  - "ext_darwin_godel_machine_2025"
+  - "ext_dont_hallucinate_abstain_2024"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records exact passage-reviewed mappings for eight assigned sources; `moecot` remains connector/source-note mapped only until runtime/source artifacts, readiness records, ledgers, replay logs, benchmark records, or external corroboration are imported and inspected."
-  - "Protocol schema/fixture validation, narrow Lean gate/quarantine predicates, the readiness/residual gate harness, the six-transition lifecycle probe, and the historical-project readiness-check lifecycle harness are implemented. The new harness records applicability, requiredness, attempt, result, waiver, evidence, expiry, stale dependencies, monotone containment, and quarantine ownership, then rejects nine skipped-as-green, stale, waiver, missing-evidence, non-monotone, orphaned-quarantine, route, and support-promotion mutations. No deployed readiness engine, residual-ledger storage, benchmark harness, live quarantine routing, or historical-project replay has been run."
-  - "No support-state promotion is implied by this drafting pass."
+  - "Current positive evidence is finite record discipline plus one exact Project Theseus YELLOW currentness observation. Post-v2.1 released only 2/36 useful candidates and missed its rollback threshold; the ambiguous router produced zero correct substantive candidates out of 360; and the post-v2.3 pressure campaign emitted zero admissible final decisions out of 24."
+  - "Seventeen reachable-lifecycle declarations, eleven retained legacy countermodels, three exact bounded suites, forty routes, and 45/45 rejected mutations do not establish evaluator adequacy, gate calibration, useful throughput, live residual custody, production quarantine enforcement, effect-complete rollback, terminal closure, or transfer."
+  - "Run a preregistered natural lifecycle campaign across multiple strong current models, specialists, tools, human lanes, updates, incidents, rights changes, load states, and delayed outcomes with strong matched baselines and complete usefulness, safety, recovery, cost, human-work, and residual denominators."
+  - "Require prospective causal interventions, independent gate and evaluator implementations, live residual storage, transitive quarantine, effect-complete rollback and compensation, terminal-state enforcement, runtime replay where claimed, and heterogeneous transfer before any readiness-efficacy or SOTA promotion."
 ---
 
 ## Chapter status
@@ -36,18 +39,18 @@ open_evidence_gaps:
 | Chapter ID | `readiness-gates-residual-escrow-and-quarantine` |
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-10 |
-| Primary source records | `rmi`, `benchmaxxing`, `scf`, `octopus_router`, `cognitive_loop_closure`, `moecot`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project` |
+| Manuscript maturity | v0.3 claim-proof program |
+| Last updated | 2026-07-15 |
+| Primary source records | 17 assigned sources: architecture, historical-project, self-improvement, and selective-prediction comparators |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `rmi`, `benchmaxxing`, `scf`; supporting: `octopus_router`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project`; connector/recovery: `moecot` |
-| Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `rmi`, `benchmaxxing`, `scf`, `octopus_router`, `cognitive_loop_closure`; passage-reviewed local public-project sources: `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`; public-safe pinned-project notes: `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project`; connector/source-note only: `moecot` |
+| Source queue | primary: `rmi`, `benchmaxxing`, `scf`; supporting: 13 architecture, historical-project, and external comparators; connector/recovery: `moecot` |
+| Source loading state | all 17 assigned sources have exact reviewed mappings; `moecot` remains source-note/connector context and Darwin Gödel Machine and Don’t Hallucinate, Abstain remain external comparators, not local results |
 | Test state | Existing readiness fixture, Lean, residual-gate, and six-transition lifecycle probes remain. `python3 scripts/validate_readiness_check_lifecycle.py` additionally accepts one quarantined six-project lineage record and rejects nine mutations covering skipped-as-green, ready-with-failed checks, non-monotone containment, orphaned quarantine, waiver substitution, unknown applicability, pass without evidence, ordinary routing under quarantine, and fixture-based support promotion. It is record discipline only, not deployed quarantine or readiness evidence. |
 
 ## Drafting guardrail
 
-The readiness-gate layer uses passage-reviewed local raw-cache text for RMI, Benchmaxxing, SCF, Octopus Router, and Cognitive Loop Closure, plus passage-reviewed local public-project text for the three Theseus sources. MoECOT remains connector/source-note mapped only. The Theseus architecture gate reports a historical gate snapshot, but this repository has not rerun Theseus commands or verified current reports, so no current-readiness claim is promoted. The repo now proves finite Lean predicates over readiness records and lifecycle transition records, but it has not implemented a lifecycle engine or rerun any readiness gate.
+The readiness-gate layer has 17 exact reviewed source mappings. MoECOT remains connector/source-note context. A bounded Project Theseus currentness import did rerun one pre-training architecture gate at exact commit `d2343540a17ea3e12760983f653529621fa445f1`; the result was YELLOW, with 12 wired, 2 implemented, 5 partial, and 1 frozen phase. That exact observation is implementation-reference currentness only, not model quality, deployment readiness, safety, transfer, or support promotion. The repository also proves finite predicates over authored readiness records; it has not implemented a deployed lifecycle engine.
 
 After routing, readiness determines whether a semantically plausible route is allowed to become ordinary execution. The route can be correct as a match and still fail as a governed choice because evidence is stale, regressions are unresolved, scope is too broad, or residuals need quarantine.
 
@@ -87,13 +90,13 @@ The missing primitive is a transition record. A lifecycle move should say what c
 
 ## Core Claim
 
-[readiness-gates-residual-escrow-and-quarantine.core, label: Design rationale, support: argument] Readiness gates and residual escrow should govern when modules are promoted, quarantined, split, merged, retired, or retrained.
+[readiness-gates-residual-escrow-and-quarantine.core, label: Design rationale, support: argument] For an exact versioned target, consumer, use, workload family, authority and rights envelope, and evaluation horizon, readiness should issue an expiring routability lease only from independently owned gate evidence, complete per-check state, preserved regression floors, inherited residual custody, allowed and blocked routes, monitoring, rollback and fallback obligations, and review triggers; failed, stale, waived, quarantined, superseded, retired, or lineage-invalidated targets cannot enter ordinary use, and split, merge, retrain, replace, rollback, and retirement transitions must preserve affected descendants, artifacts, effects, and residual owners.
 
 The claim remains at `argument` support. The assigned sources support the design vocabulary of benchmark lifecycle, residual escrow, lifecycle state, readiness gates, and route validity, but no particular module is claimed to currently pass those gates.
 
 ### Claim-source mapping status
 
-Appendix C now maps this readiness-gate claim to all fifteen assigned source notes: nine established readiness sources plus six public-safe historical-project notes. Those mappings support promotion gates, check lifecycle, residual escrow, quarantine, regression-floor preservation, transitive invalidation, and stale-gate discipline, not current readiness of any specific module. The older `moecot` record remains connector/source-note mapped only; the pinned `moecot_manifest_project` note is local-project architecture context, not runtime reproduction.
+Appendix C now maps this readiness-gate claim to all seventeen assigned sources: nine architecture and implementation-reference sources, six public-safe historical-project notes, and two external comparators. Those mappings support promotion gates, check lifecycle, residual escrow, quarantine, regression-floor preservation, transitive invalidation, archive selection, and selective-prediction calibration, not current readiness of any specific module. The older `moecot` record remains connector/source-note mapped only; the pinned `moecot_manifest_project` note is local-project architecture context, not runtime reproduction.
 
 | Source | What it supports | Review state | Limit |
 |---|---|---|---|
@@ -112,6 +115,8 @@ Appendix C now maps this readiness-gate claim to all fifteen assigned source not
 | `bugbrain_project` | Exact skipped-as-green case and the applicability/requiredness/attempt/result/waiver/evidence lifecycle recommendation. | public-safe pinned-project note | Historical reports and current code differ; hardware, bridge, training, and deployment behavior was not reproduced. |
 | `corbens_trainer_project` | Transitive quarantine and promotion-lease invalidation where a promoted label survived later quarantine of every contributing run. | public-safe pinned-project note | Training, external benchmarks, and end-to-end capability were not reproduced. |
 | `corbens_best_model_possible_project` | Quarantine, rollback, fallback, and material-postcondition boundaries; named transitions and interfaces may lack durable effect. | public-safe pinned-project note | Does not establish target readiness, autonomous routing, durable transitions, or promotion quality. |
+| `ext_darwin_godel_machine_2025` | Archive-based self-modifying candidates, compile/edit eligibility, benchmark selection, branching lineage, sandbox limits, and rollback-oriented auditability. | passage-reviewed external comparator | Reported benchmark gains and archive benefits do not establish readiness, monotonic safety, local reproduction, or promotion authority. |
+| `ext_dont_hallucinate_abstain_2024` | Selective-prediction coverage, calibration, multi-model probing, shared blind spots, and over-refusal risk. | passage-reviewed external comparator | The reported models and collaboration schemes were not reproduced; abstention is not automatic utility or readiness. |
 
 ## Draft Key Figure: Readiness, Residual, Quarantine Map
 
@@ -132,6 +137,39 @@ The readiness gate changes routability, not identity. A specialist can remain th
 A Readiness Gate Record attaches that state to every module, specialist, tool, field implementation, or runtime lane that can be routed to or promoted. It does not say the target is globally safe or permanently qualified. It says what field identity is involved, what workload family and freshness window apply, what evidence was checked, what residuals survived or were inherited, what routes are allowed or blocked, what state transition is requested, when the gate expires, and what should happen if the gate fails.
 
 A readiness record keeps frontier pressure and floor preservation separate. Frontier evidence says what the target newly handles. Floor evidence says what it must not forget. Residual escrow names the tail that is still outside both.
+
+The complete operational lifecycle has eighteen stages:
+
+1. Bind the exact target, field, owner, consumer, use, workload, risk, authority,
+   rights, environment, horizon, and fallback duty.
+2. Freeze the readiness policy and per-check catalog before outcome inspection.
+3. Collect source, proof, benchmark, canary, runtime, incident, human-review,
+   and reproduction evidence through their existing owners.
+4. Validate provenance, freshness, independence, evaluator adequacy,
+   contamination, coverage, uncertainty, and missingness.
+5. Keep regression floors, frontier gains, vetoes, calibration, load, cost, and
+   delayed outcomes as separate gate dimensions.
+6. Import every open and inherited residual with owner, scope, descendants,
+   artifacts, effects, closure evidence, and next review.
+7. Estimate a consumer- and use-specific readiness vector, not one score.
+8. Apply prospectively fixed decision and abstention rules to choose a state.
+9. Issue an expiring qualification and routability lease.
+10. Exercise shadow and canary use through existing execution owners.
+11. Retain denials, interventions, effects, counterfactuals, costs, and delayed
+    outcomes through the monitoring window.
+12. Quarantine failed, stale, compromised, ambiguous, or invalidated targets.
+13. Promote, demote, narrow, widen, rerun, or reject through a new versioned
+    decision with explicit evidence and residual deltas.
+14. Propagate qualification and quarantine through dependencies, descendants,
+    routes, caches, artifacts, memories, procedures, and effects.
+15. Map predecessor evidence and residuals across split, merge, retrain,
+    replacement, or wrapper changes.
+16. Invoke rollback, compensation, route withdrawal, artifact recall, or
+    descendant invalidation through their existing owners.
+17. Retire or supersede with terminal receipts, successor or fallback
+    ownership, artifact/effect disposition, and residual custody.
+18. Replay the complete decision and compare policies in matched natural and
+    adversarial campaigns with causal ablation, reproduction, and transfer.
 
 ```{mermaid}
 flowchart LR
@@ -187,6 +225,30 @@ Residual escrow is not an unstructured backlog or a reputation marker. It is the
 
 Readiness decisions pass through the Readiness Gate Record.
 
+The ownership boundary has twelve consumers and producers:
+
+1. Stable Capability Fields owns capability identity and substitution.
+2. Routing consumes route permissions but cannot promote or widen them.
+3. Benchmark Ratchets and evaluators produce floor, frontier, calibration, and
+   transfer evidence but do not authorize use.
+4. Claim Ledgers, Evidence Engineering, and Artifact Graphs own support and
+   lineage; readiness does not promote a book claim.
+5. Runtime Adapters, Humans, and Inter-Stack protocols own dispatch and effects.
+6. Security, Privacy, Rights, Legal, and Constitutional owners supply ceilings
+   and vetoes.
+7. Capability Replacement and Rollback owns restoration, compensation,
+   invalidation, and successor transactions.
+8. Procedural Memory, Data Engines, and Learning owners preserve mutable-state
+   lineage whose changes expire qualification.
+9. Resource Economics owns capacity, latency, money, compute, human burden, and
+   total-cost policy.
+10. Human Collaboration and Tribunal owners supply qualified review, appeal,
+    dispute, override, and residual-custody decisions.
+11. Personal Compute Hives and runtime crosswalks supply node and implementation
+    currentness, not readiness by reachability or branding.
+12. Release and Publication consume readiness and support as separate inputs and
+    retain independent deployment and public-release authority.
+
 Minimum fields:
 
 - `gate_id`
@@ -226,16 +288,45 @@ The lifecycle states should be explicit enough for routers and auditors to consu
 
 ## Invariants
 
-- Promotion requires gate evidence.
-- Every required applicable check is attempted, passes, carries evidence identity, and remains unexpired before it can contribute to readiness.
-- Not-applicable, unknown, skipped, unattempted, waived, failed, errored, and expired states remain distinct.
-- Residuals are not deleted on promotion.
-- Quarantine blocks ordinary routing.
-- Containment cannot weaken or add routes while an invalidating dependency remains.
-- Active quarantine retains reasons, owner, affected descendants, and a recovery or retirement disposition.
-- A saturated benchmark cannot be the sole basis for higher readiness.
-- A stale gate must be rerun after architecture, frontier, authority, or lifecycle changes.
-- Inherited residuals survive rename, wrapper, split, merge, retirement, and retraining unless an explicit retirement record closes them.
+1. Every decision binds exact target, field, owner, consumer, use, workload,
+   policy, gate, evaluator, evidence, model, tool, environment, authority,
+   rights, cost, and time versions.
+2. Capability identity, implementation identity, readiness, route permission,
+   claim support, deployment approval, and public release remain separate.
+3. Every required check records applicability, attempt, result, evidence,
+   evaluator, time, expiry, and invalidators; unknown, skipped, waived,
+   unattempted, or expired is never pass.
+4. A waiver records who accepted which risk for which scope and time; it cannot
+   substitute for evidence required by a stronger state.
+5. Veto, authority, rights, privacy, security, rollback, and residual-custody
+   failures cannot be averaged away.
+6. Frontier gain cannot erase floors, failed cases, negative controls,
+   calibration error, unsafe releases, or delayed harm.
+7. Readiness is consumer-, use-, workload-, authority-, environment-, and
+   time-specific, never global or permanent.
+8. Every stronger state adds fresh evidence or narrows scope; it never gains
+   routes by losing records, renaming the target, or changing denominators.
+9. Every residual retains owner, severity, affected scope, descendants,
+   artifacts, effects, closure condition, and next review.
+10. Quarantine blocks ordinary routing and permits only explicit diagnostic
+    routes with least authority, containment, fallback, monitoring, expiry, and
+    appeal.
+11. Material target, dependency, policy, evaluator, benchmark, authority,
+    rights, environment, workload, or time changes expire qualification.
+12. Split, merge, wrapper, retrain, replacement, rollback, and retirement
+    preserve predecessor evidence and residual lineage.
+13. Upstream quarantine, revocation, compromise, or invalidation propagates to
+    affected descendants until a new gate establishes recovery.
+14. Shadow, canary, diagnostic, and ordinary routes retain denials,
+    interventions, failures, effects, costs, human work, and delayed outcomes.
+15. Rollback or compensation readiness requires prospective authority, complete
+    state/effect inventory, tested handles, and explicit non-restorable residuals.
+16. Retired and superseded targets cannot regain ordinary routes without new
+    identity-bound qualification and residual migration.
+17. Replay reconstructs frozen inputs, checks, state, lease, evidence and
+    residual deltas, and nondeterminism without promising identical outcomes.
+18. Readiness language stays inside the exercised target, consumer, use,
+    workload, evaluator, authority, environment, threat, cost, and time envelope.
 
 The strongest operational invariant is negative: a failed readiness predicate must not be converted into a success by renaming the target, changing the benchmark scope, or hiding residuals in prose.
 
@@ -243,15 +334,39 @@ Transition monotonicity over evidence keeps readiness from being laundered. A ta
 
 ## Failure modes
 
-- Premature promotion.
-- Residual hiding.
-- Untracked regression after merge.
-- Stale gate reuse after architecture change.
-- Over-quarantine that prevents useful diagnosis.
-- Skipped-as-green reporting.
-- Waiver-as-pass substitution.
-- Stale promotion that survives upstream quarantine or revocation.
-- Orphaned quarantine without an owner, descendant closure, or disposition.
+1. Score laundering collapses readiness into one benchmark, aggregate, schema,
+   proof, route score, model vote, or source report.
+2. Skipped-as-green converts missing, unknown, not-applicable, unattempted, or
+   infrastructure-blocked checks into success.
+3. Waiver laundering treats accepted risk as evidence that a property passed.
+4. Stale qualification survives a material target, dependency, policy,
+   evaluator, benchmark, authority, rights, environment, workload, or time change.
+5. Residual erasure drops failed cases, inherited debt, delayed effects, or
+   closure owners during promotion.
+6. Floor laundering reports frontier gain while regressions, vetoes,
+   calibration error, unsafe releases, or cost deterioration are hidden.
+7. Selective-readiness laundering counts abstention, fallback, clarification,
+   or refusal as utility while substantive capability remains absent.
+8. Evaluator capture lets the target or a shared failure surface certify itself.
+9. Authority or rights laundering grants use beyond principal, affected-party,
+   privacy, locality, budget, or approval ceilings.
+10. Quarantine theater leaves aliases, descendants, caches, procedures, tools,
+    or wrappers ordinarily routable.
+11. Over-quarantine hides useful bounded work and its false-positive,
+    human-burden, latency, and opportunity costs.
+12. Lineage laundering renames, wraps, splits, merges, retrains, or replaces a
+    target without inherited evidence and residuals.
+13. Recovery theater claims rollback or compensation without complete model,
+    optimizer, scheduler, RNG, cache, artifact, effect, backup, and descendant state.
+14. Terminal-state leakage returns retired or superseded targets, credentials,
+    artifacts, memories, routes, or descendants to ordinary use.
+15. Load blindness preserves qualification after the operating regime changes.
+16. Denominator erasure drops denials, failed canaries, unavailable routes,
+    human repair, retries, delayed harms, residuals, and non-events.
+17. Replay theater omits nondeterminism, interventions, effects, invalidators,
+    cost, lineage, or residual custody.
+18. State-of-the-art theater generalizes from finite fixtures, a currentness
+    import, synthetic calibration, or zero unsafe releases with negligible utility.
 
 Premature promotion should create a rollback or quarantine transaction. Residual hiding should create a belief-revision or tribunal-review issue. Regression after merge should preserve the old floor as a regression benchmark. Stale gate reuse should block promotion until the relevant checks are rerun. Over-quarantine should be reviewed because excessive blockage can hide the difference between unsafe execution and safe diagnostic use.
 
@@ -259,15 +374,48 @@ Gate laundering is the readiness failure that defeats quarantine. A target fails
 
 ## Minimum Viable Implementation
 
-Readiness can start with a schema and fixture. It does not need a full benchmark harness to be valuable; it needs to make readiness, residuals, quarantine, decision, and review triggers explicit.
+The minimum implemented surface contains four public schemas, four valid and
+five invalid readiness/residual scenarios, one quarantined six-project
+check-lifecycle record and nine invalid mutations, six valid lifecycle
+transitions and twelve invalid controls, one exact Project Theseus YELLOW
+currentness import with eight negative controls, bounded calibration failures,
+two accepted no-promotion readiness/residual transition records, and 28 live
+family declarations. Seventeen belong to the reachable refinement, eleven
+legacy countermodels remain load-bearing, and nine projection/summary
+declarations are physically retired. It exercises record and refusal discipline; it is not a
+deployed readiness system.
 
 The `readiness_gate_record` schema validates the shape of that record, including field identity, workload family, freshness window, evidence state, floor evidence, frontier evidence, inherited residuals, allowed and blocked routes, diagnostic permissions, fallback path, expiry, closure conditions, and non-claims. Passing validation leaves module readiness unproved; it gives the book a public, executable contract for what a readiness decision must name before stronger tests exist.
 
 The historical-project packet adds `schemas/readiness_check_lifecycle_record.schema.json` and `python3 scripts/validate_readiness_check_lifecycle.py`. One quarantined six-project lineage record makes a skipped required artifact-manifest check, a failed benchmark floor, a not-applicable hardware-root check, an invalidated promotion dependency, tighter routes, quarantine ownership, descendant closure, and rerun disposition explicit. Nine mutations reject skipped-as-green, ready-with-failed checks, non-monotone containment, orphaned quarantine, waiver substitution, unknown applicability labeled pass, pass without evidence, ordinary routing during quarantine, and fixture-based support promotion.
 
-`AsiStackProofs.ReadinessGates` adds a bounded promotion predicate requiring promoted decisions to have all required gates passed, a bounded quarantine predicate blocking ordinary route selection for quarantined targets, and a finite lifecycle-transition relation over candidate, shadow, canary, qualified, default-ready, quarantined, retired, and superseded states. That relation requires fresh evidence, residual escrow, fallback paths, expiry records, regression floors, authority scope, route permissions, supersession records, and retirement receipts where applicable. The `readiness_lifecycle_probe` result replays the relation against six valid synthetic state moves and twelve expected-invalid controls for non-forward jumps, missing evidence, missing escrow, unsafe default routing, quarantine leakage, missing terminal records, retired-state reuse, missing non-claims, and support-promotion overclaim. The executable boundary is still the decision record; benchmark evaluation, residual escrow storage, lifecycle execution, terminal-state governance, and routing enforcement remain separate implementation surfaces.
+The retained Readiness lifecycle probe at
+`experiments/readiness_lifecycle_probe/results/2026-07-02-local.json` still
+records six valid synthetic readiness lifecycle transitions and twelve
+expected-invalid controls. Its theorem alignment now points to the reachable
+refinement rather than the retired fixture-summary bridge.
+
+`AsiStackProofs.ReadinessRefinement` adds seventeen reachable-lifecycle
+declarations and an independent consumer over seven stages, forty routes, and
+45/45 rejecting mutations. Eleven legacy countermodels remain bounded; nine
+definition-unpacking or fixture-summary declarations are retired. The model
+separates ordinary release, quarantine, terminal closure, support assignment,
+and external effects while preserving capability and evidence custody.
+Evaluator quality, live enforcement, residual storage, rollback, recovery, and
+transfer remain outside the model.
 
 A lifecycle trace should exercise gate semantics while leaving module quality unclaimed: draft to shadow, shadow to canary, canary rejected by inherited residual escrow, quarantined for ordinary routing but allowed for diagnostic replay, and later superseded after regression-floor preservation.
+
+The exact Project Theseus currentness import is another bounded record, not a
+promotion. At commit `d2343540a17ea3e12760983f653529621fa445f1`, a clean,
+no-write replay returned YELLOW over twenty phases: twelve wired, two
+implemented, five partial, and one frozen. Its own pre-training architecture
+predicate passed within the gate's declared training/public-calibration focus.
+Phase 9 remained externally frozen, five training/behavior phases remained
+partial, and the live book differed from the imported pin. The import closes
+only the stale-currentness question for that exact observation; it does not
+establish model quality, deployment readiness, distributed operation, safety,
+transfer, support, or release.
 
 ## Beyond the State of the Art
 
@@ -280,6 +428,28 @@ Gate evidence, floor evidence, frontier evidence, regression results, inherited 
 Unresolved failures become residual escrow, recurring residuals become benchmark candidates, passed canaries become scoped qualification, stale qualifications expire, and unsafe or misleading modules remain available for diagnostic replay without staying in ordinary routing. Premature promotion, residual hiding, untracked regression after merge, stale-gate reuse, over-quarantine, and gate laundering become blocked transitions, rollback transactions, quarantine routes, tribunal issues, or explicit residual records.
 
 This readiness lifecycle is still a design target. Readiness remains at `argument` until promotion, demotion, quarantine, escrow, stale-gate replay, and reroute traces show that unready capability is contained and that residual burden follows the route instead of disappearing from the ledger.
+
+The argument-exit campaign must use natural and adversarial lifecycle events,
+not only authored transition packets. It should compare score-only,
+benchmark-only, static-checklist, confidence-only, human-only,
+conservative-denial, ordinary MLOps, and full governed policies under matched
+evidence, authority, resources, evaluator access, retries, and time. Targets
+should include multiple strong current models, specialists, tools, procedures,
+human lanes, local and remote runtimes, updates, incidents, load shifts, rights
+changes, and delayed effects.
+
+The scorecard is joint: useful throughput, unsafe release, false promotion,
+false quarantine, regression, calibration and coverage, authority and rights
+violations, rollback and compensation, residual survival, lineage propagation,
+latency, compute and money, human work, recovery, and total lifecycle cost.
+Prospectively fixed interventions must remove check completeness, freshness,
+independent evaluation, floor preservation, residual escrow, selective actions,
+quarantine, transitive invalidation, load awareness, rollback readiness, and
+terminal closure one at a time. A mechanism remains an argument if its predicted
+failure signature does not appear. Any claimed benefit must survive independent
+implementation and evaluation plus transfer across models, tasks, tools,
+organizations, rights regimes, threats, capacity states, lifecycle events, and
+time.
 
 ## Codex test plan
 
@@ -297,18 +467,32 @@ This readiness lifecycle is still a design target. Readiness remains at `argumen
 | Residual escrow integrity test | Check that residuals remain attached after canary or promotion decisions. | implemented by readiness/residual gate harness for route residual obligations and inherited residual custody; residual-ledger storage not run |
 | Quarantine routing harness test | Check that quarantined targets are unavailable for ordinary routing but remain visible for diagnosis. | implemented by readiness/residual gate harness for blocked selected routes and preserved fallback routes; live quarantine routing not run |
 | Historical-project readiness check lifecycle | Check applicability, requiredness, attempt, result, waiver, evidence identity, expiry, invalidating dependencies, monotone containment, quarantine ownership, descendant closure, and route blocking against nine mutations. | implemented by `python3 scripts/validate_readiness_check_lifecycle.py`; one quarantined six-project fixture only, no deployed readiness or support-state promotion |
+| Readiness candidate-to-terminal refinement | Check exact capability/evidence custody through shadow, canary, qualification, default, transitive quarantine, revocation-aware terminal closure, and separate release/quarantine/effect accounting. | implemented in `AsiStackProofs.ReadinessRefinement` and `python3 scripts/validate_readiness_refinement.py`; three exact suites, seven stages, 40 routes, 45/45 mutations; no evaluator adequacy, calibration, natural usefulness, effect-complete rollback, deployed quarantine/revocation, transfer, or support claim |
 
-Fixture-shape validation, bounded Lean predicates, finite lifecycle-transition theorems, and the readiness/residual synthetic harness are implemented. Remaining tests require a deployed lifecycle transition checker, residual ledger, benchmark harness, terminal-state governance surface, and routing harness that respects quarantine state.
+Fixture-shape validation, finite predicates, three rejecting harness families,
+the exact YELLOW currentness import, and bounded calibration results are
+implemented. Remaining tests require a deployed lifecycle checker, live
+residual ledger, natural benchmark and canary campaign, independent evaluator,
+transitive quarantine enforcement, effect-complete rollback and compensation,
+terminal-state governance, runtime replay, and heterogeneous transfer.
 
 ### Formalization hooks
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:readiness.gates.operational_invariant` | `AsiStackProofs.ReadinessGates` | A module can enter promoted or stronger readiness states only after required gates and finite lifecycle records for fresh evidence, residual escrow, fallback, expiry, regression floor, authority scope, and route permission are present. | implemented |
-| `lean:readiness.gates.failure_blocks_promotion` | `AsiStackProofs.ReadinessGates` | A quarantined, superseded, retired, stale, or incomplete readiness transition cannot be used for ordinary promotion without the required fallback, residual, rerun, supersession, or retirement records. | implemented |
-| `lean:readiness.gates.lifecycle_probe_bridge` | `AsiStackProofs.ReadinessGates` | The deterministic synthetic readiness lifecycle probe summary records candidate-to-shadow, shadow-to-canary, default-ready, quarantine-with-fallback, supersession-with-residual, and retirement-with-receipt paths plus rejected negative controls, support-state non-promotion, and non-claim boundaries. | implemented |
+| `lean:readiness.gates.operational_invariant` | `AsiStackProofs.ReadinessRefinement` | A reachable readiness lifecycle preserves exact capability, implementation, model-state, workload, baseline, evaluator, policy, authority, consumer, fallback, and residual custody from candidate through acknowledged terminal closure while separating ordinary release, quarantine, support, and external effects. | implemented |
+| `lean:readiness.gates.failure_blocks_promotion` | `AsiStackProofs.ReadinessRefinement` | Missing workload, baseline, evaluator, non-claims, fresh shadow evidence, regression floor, residual escrow, fallback, rollback, monitoring, canary outcome accounting, independent evaluation, transfer, delayed outcomes, transitive quarantine, route blocking, or terminal revocation custody blocks lifecycle progress. | implemented |
+| `lean:readiness.gates.lifecycle_probe_bridge` | `AsiStackProofs.ReadinessRefinement` | The independent consumer preserves three exact readiness suites, all forty lifecycle routes, the six-receipt terminal witness, and forty-five rejecting identity, gate, replay, and authority-leak mutations without assigning support or external effects. | implemented |
 
-These proof hooks are implemented as finite-record predicates over gate decisions, route selections, transition records, quarantine routing reviews, stale-gate reuse reviews, lifecycle-transition records, and one fixture-summary bridge. The derived negative cases include `promoted_decision_with_failed_required_gates_rejected`, `accepted_stronger_transition_missing_required_record_rejected`, `quarantined_target_ordinary_or_unbacked_diagnostic_route_rejected`, `stale_gate_reuse_without_rerun_or_residual_rejected`, `default_readiness_without_regression_floor_rejected`, `default_readiness_without_authority_scope_rejected`, `quarantined_lifecycle_transition_with_ordinary_route_rejected`, `supersession_without_record_rejected`, `retirement_without_receipt_rejected`, and `retired_readiness_state_cannot_transition`. The bridge theorem is `readiness_lifecycle_probe_fixture_bridge`. They prove only record-level gates and fixture-summary alignment: promoted decisions cannot survive failed required gates; accepted stronger transitions require fresh evidence, residual escrow, fallback, and expiry records; quarantined targets cannot be ordinary-routed or diagnostic-routed without fallback; stale gate reuse requires rerun and residual records; default lifecycle readiness requires regression and authority records; supersession and retirement require explicit records; retired states cannot emit new allowed transitions; and the synthetic probe summary preserves no-promotion/non-claim boundaries. They do not prove benchmark quality, residual-ledger storage, lifecycle transition execution, live routing enforcement, terminal-state governance, MoECOT replay, or current readiness of any module.
+These proof hooks now resolve to a reachable seven-stage lifecycle plus an
+independent consumer. Seventeen refinement declarations and eleven retained
+legacy countermodels remain live; nine definition-unpacking or fixture-summary
+declarations are retired. This
+classification prevents theorem count or the bridge from standing in for
+semantic breadth, executable correspondence, or empirical validity. They do
+not prove benchmark quality, evaluator adequacy, residual storage, transition
+execution, live routing enforcement, rollback, terminal governance, MoECOT
+replay, current module readiness, or transfer.
 
 ## Source crosswalk
 
@@ -331,7 +515,16 @@ These proof hooks are implemented as finite-record predicates over gate decision
 | `corbens_best_model_possible_project` | Corben's Best Model Possible recurrent-model and mechanism laboratory | historical_project_negative_case | Material postconditions, quarantine, rollback, and interface-without-effect. | public-safe pinned-project note; no readiness claim |
 | `ext_darwin_godel_machine_2025` | Darwin Godel Machine | empirical_recursive_agent_improvement | External comparator for archive-based self-modifying candidates, benchmark selection, sandboxing, and human oversight. | source note available; benchmark gains are not readiness, monotonic safety, or promotion authority |
 
-The readiness sources support gate state, per-check lifecycle, residual escrow, regression preservation, transitive invalidation, and quarantine. Fifteen mappings now have a source-to-claim trace, and the Project Theseus architecture-gate lane has one static digest-verified report import. The new six-project fixture adds negative-case record discipline only. The book still has not run a live readiness gate, inspected a current Theseus dashboard, imported MoECOT runtime artifacts, or proved that any current project or book module passes readiness gates.
+The readiness sources support gate state, per-check lifecycle, residual escrow,
+regression preservation, transitive invalidation, quarantine, archive selection,
+and selective-prediction calibration. All seventeen assignments have an exact
+reviewed mapping. The Project Theseus lane now has both an older static
+digest-verified report fixture and one exact YELLOW currentness replay at commit
+`d2343540`; neither establishes deployment readiness or model quality. The
+six-project fixture adds negative-case record discipline only. The book still
+has not run a deployed readiness engine, live residual ledger, production
+quarantine route, effect-complete rollback, current MoECOT runtime replay, or
+natural multi-model readiness campaign.
 
 ### Manifest source assignment reconciliation
 
@@ -371,11 +564,25 @@ prospectively specified replication produces admissible final decisions.
 
 Readiness is the stack's refusal to confuse availability with qualification. Gates decide when a module can move from experiment to route, residual escrow keeps unsolved cases alive, and quarantine turns failure into governed learning rather than hidden state.
 
+The strongest current evidence is bounded and mostly negative. Three synthetic
+harness families reject malformed promotion, check-lifecycle, and state-transition
+records; 28 live family declarations plus the independent forty-route consumer establish only their finite encoded
+consequences; one exact Project Theseus replay observed a YELLOW pre-training
+architecture gate with partial and frozen phases; post-v2.1 released 2/36 useful
+candidates while missing its rollback threshold and produced zero correct
+substantive candidates in the ambiguous routing workload; and post-v2.3
+produced zero admissible final readiness decisions under residual pressure.
+These results sharpen what readiness must reject. They do not show that the
+proposed lifecycle improves useful safe operation.
+
 Readiness turns modular intelligence into a lifecycle discipline: promote only with evidence, preserve the floor, expose the tail, and keep unsafe or stale routes out of ordinary execution. A concrete runtime reference must then record enough detail for this routing and readiness discipline to become operational evidence.
 
 That runtime reference must publish the same evidence shape the gate expects: route decisions, specialist states, replay links, benchmark or regression records, residuals, and promotion blockers.
 
-A readiness decision should still be understandable after the module changes names. If evidence, residuals, scope, expiry, and quarantine permissions do not survive that change, the lifecycle layer is not yet governing promotion.
+A readiness decision should still be understandable after the module changes
+names. If evidence, residuals, scope, expiry, descendants, artifacts, effects,
+and quarantine permissions do not survive that change, the lifecycle layer is
+not yet governing routability.
 
 ## Handoff
 

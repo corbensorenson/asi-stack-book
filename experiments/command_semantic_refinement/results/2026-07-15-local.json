@@ -1,0 +1,474 @@
+{
+  "schema_version": "asi_stack.command_semantic_refinement.v1",
+  "result_id": "command-semantic-refinement-2026-07-15-local",
+  "source_sha256": {
+    "lean_model": "b0887c3b5d5d1faa9ee501e300c7a082586d4a9de89b331d8a429e05e8891241",
+    "command_schema": "1114480fe828b060ce6644c60e52a1189bddbfbbcfddd2ea46e85376c820ace5",
+    "plan_fixture_inventory": "7a6a27ee1475bfdf341f82345f305a1738d4388147a6ad61e017608602e81911",
+    "handoff_result": "63243c434ebaad85333f39370a89b2dc5b1878244e2ea61d1412b0eb556a5c6c",
+    "vertical_execution_result": "f6c4cd141c0e7f21cfa8b948ff40a00f43f17c5189b21a123ce74ac857a24d8f"
+  },
+  "plan_fixture_count": 13,
+  "command_schema_valid_fixture_count": 13,
+  "command_interface_violation_count": 5,
+  "correctly_blocked_at_command_interface_count": 2,
+  "command_interface_admissible_count": 6,
+  "fixture_receipts": [
+    {
+      "fixture": "invalid_ambiguity_dispatched.json",
+      "command_schema_valid": true,
+      "classification": "command_interface_violation",
+      "reason": "unresolved_ambiguity_dispatched",
+      "whole_fixture_acceptance_inferred": false
+    },
+    {
+      "fixture": "invalid_approval_bypass.json",
+      "command_schema_valid": true,
+      "classification": "command_interface_admissible",
+      "reason": "downstream_owned_or_valid",
+      "whole_fixture_acceptance_inferred": false
+    },
+    {
+      "fixture": "invalid_authority_widened_from_intent.json",
+      "command_schema_valid": true,
+      "classification": "command_interface_violation",
+      "reason": "authority_widened_from_intent",
+      "whole_fixture_acceptance_inferred": false
+    },
+    {
+      "fixture": "invalid_contract_mismatch.json",
+      "command_schema_valid": true,
+      "classification": "command_interface_admissible",
+      "reason": "downstream_owned_or_valid",
+      "whole_fixture_acceptance_inferred": false
+    },
+    {
+      "fixture": "invalid_cycle_in_dag.json",
+      "command_schema_valid": true,
+      "classification": "command_interface_admissible",
+      "reason": "downstream_owned_or_valid",
+      "whole_fixture_acceptance_inferred": false
+    },
+    {
+      "fixture": "invalid_dispatch_without_receipt.json",
+      "command_schema_valid": true,
+      "classification": "command_interface_admissible",
+      "reason": "downstream_owned_or_valid",
+      "whole_fixture_acceptance_inferred": false
+    },
+    {
+      "fixture": "invalid_hidden_override_applied.json",
+      "command_schema_valid": true,
+      "classification": "command_interface_violation",
+      "reason": "hidden_override_applied",
+      "whole_fixture_acceptance_inferred": false
+    },
+    {
+      "fixture": "invalid_inferred_authority_dispatched.json",
+      "command_schema_valid": true,
+      "classification": "command_interface_violation",
+      "reason": "inferred_authority_dispatched",
+      "whole_fixture_acceptance_inferred": false
+    },
+    {
+      "fixture": "invalid_inferred_field_confidence_dispatched.json",
+      "command_schema_valid": true,
+      "classification": "command_interface_violation",
+      "reason": "inferred_required_field_dispatched",
+      "whole_fixture_acceptance_inferred": false
+    },
+    {
+      "fixture": "invalid_requirement_lost.json",
+      "command_schema_valid": true,
+      "classification": "command_interface_admissible",
+      "reason": "downstream_owned_or_valid",
+      "whole_fixture_acceptance_inferred": false
+    },
+    {
+      "fixture": "valid_authority_inferred_blocked.json",
+      "command_schema_valid": true,
+      "classification": "correctly_blocked_at_command_interface",
+      "reason": "inferred_authority_blocked",
+      "whole_fixture_acceptance_inferred": false
+    },
+    {
+      "fixture": "valid_blocked_authority_plan.json",
+      "command_schema_valid": true,
+      "classification": "correctly_blocked_at_command_interface",
+      "reason": "authority_boundary_blocked",
+      "whole_fixture_acceptance_inferred": false
+    },
+    {
+      "fixture": "valid_dispatchable_linear_plan.json",
+      "command_schema_valid": true,
+      "classification": "command_interface_admissible",
+      "reason": "downstream_owned_or_valid",
+      "whole_fixture_acceptance_inferred": false
+    }
+  ],
+  "handoff_trace_count": 9,
+  "handoff_invalid_control_count": 7,
+  "vertical_scenario_count": 9,
+  "vertical_accepted_event_count": 89,
+  "reachable_trace_event_count": 5,
+  "reference_trace_final_state": {
+    "stage": "dispatch_ready",
+    "root_intent": 101,
+    "command_version": 1,
+    "objective": {
+      "value_hash": 501,
+      "provenance": "human_intent",
+      "confidence": "confirmed"
+    },
+    "constraints": {
+      "value_hash": 502,
+      "provenance": "policy",
+      "confidence": "policy_imposed"
+    },
+    "output_contract": {
+      "value_hash": 503,
+      "provenance": "human_intent",
+      "confidence": "confirmed"
+    },
+    "verification": {
+      "value_hash": 504,
+      "provenance": "policy",
+      "confidence": "policy_imposed"
+    },
+    "failure_behavior": {
+      "value_hash": 505,
+      "provenance": "policy",
+      "confidence": "policy_imposed"
+    },
+    "authority": {
+      "value_hash": 506,
+      "provenance": "human_intent",
+      "confidence": "confirmed"
+    },
+    "authority_ceiling": 3,
+    "approved_authority": 3,
+    "hidden_override_seen": false,
+    "planning_validation_receipt": true,
+    "dispatch_receipt": true,
+    "blocked": false,
+    "logical_time": 5
+  },
+  "mutation_count": 38,
+  "mutation_rejection_count": 38,
+  "mutation_receipts": [
+    {
+      "mutation_id": "bind_objective_hash_zero",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "required_slot_not_dispatch_eligible"
+      ]
+    },
+    {
+      "mutation_id": "bind_constraints_hash_zero",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "required_slot_not_dispatch_eligible"
+      ]
+    },
+    {
+      "mutation_id": "bind_output_contract_hash_zero",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "required_slot_not_dispatch_eligible"
+      ]
+    },
+    {
+      "mutation_id": "bind_verification_hash_zero",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "required_slot_not_dispatch_eligible"
+      ]
+    },
+    {
+      "mutation_id": "bind_failure_behavior_hash_zero",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "required_slot_not_dispatch_eligible"
+      ]
+    },
+    {
+      "mutation_id": "bind_objective_confidence_inferred",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "required_slot_not_dispatch_eligible"
+      ]
+    },
+    {
+      "mutation_id": "bind_constraints_confidence_inferred",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "required_slot_not_dispatch_eligible"
+      ]
+    },
+    {
+      "mutation_id": "bind_output_contract_confidence_inferred",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "required_slot_not_dispatch_eligible"
+      ]
+    },
+    {
+      "mutation_id": "bind_verification_confidence_inferred",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "required_slot_not_dispatch_eligible"
+      ]
+    },
+    {
+      "mutation_id": "bind_failure_behavior_confidence_inferred",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "required_slot_not_dispatch_eligible"
+      ]
+    },
+    {
+      "mutation_id": "bind_constraint_hidden_provenance",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "required_slot_not_dispatch_eligible"
+      ]
+    },
+    {
+      "mutation_id": "bind_authority_hash_zero",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "authority_slot_missing"
+      ]
+    },
+    {
+      "mutation_id": "bind_root_mismatch",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "root_intent_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "precedence_hidden_override",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "hidden_override_applied"
+      ]
+    },
+    {
+      "mutation_id": "precedence_source_hash_mismatch",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "constraint_source_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "precedence_constraint_substitution",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "slot_substitution"
+      ]
+    },
+    {
+      "mutation_id": "precedence_time_regression",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "non_monotonic_time"
+      ]
+    },
+    {
+      "mutation_id": "authority_confidence_inferred",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "slot_substitution",
+        "authority_not_ready"
+      ]
+    },
+    {
+      "mutation_id": "authority_confidence_source_derived",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "slot_substitution",
+        "authority_not_ready"
+      ]
+    },
+    {
+      "mutation_id": "authority_hidden_provenance",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "slot_substitution",
+        "authority_not_ready"
+      ]
+    },
+    {
+      "mutation_id": "authority_widening",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "authority_widening"
+      ]
+    },
+    {
+      "mutation_id": "authority_approval_missing",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "approval_receipt_missing"
+      ]
+    },
+    {
+      "mutation_id": "authority_slot_substitution",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "slot_substitution"
+      ]
+    },
+    {
+      "mutation_id": "authority_time_regression",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "non_monotonic_time"
+      ]
+    },
+    {
+      "mutation_id": "planning_objective_substitution",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "slot_substitution"
+      ]
+    },
+    {
+      "mutation_id": "planning_constraints_substitution",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "slot_substitution"
+      ]
+    },
+    {
+      "mutation_id": "planning_output_contract_substitution",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "slot_substitution"
+      ]
+    },
+    {
+      "mutation_id": "planning_verification_substitution",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "slot_substitution"
+      ]
+    },
+    {
+      "mutation_id": "planning_failure_behavior_substitution",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "slot_substitution"
+      ]
+    },
+    {
+      "mutation_id": "planning_authority_substitution",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "slot_substitution"
+      ]
+    },
+    {
+      "mutation_id": "planning_authority_mismatch",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "approved_authority_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "planning_hidden_override",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "hidden_override_applied"
+      ]
+    },
+    {
+      "mutation_id": "planning_open_blocker",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "open_blockers"
+      ]
+    },
+    {
+      "mutation_id": "planning_receipt_missing",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "planning_validation_receipt_missing"
+      ]
+    },
+    {
+      "mutation_id": "dispatch_approval_missing",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "approval_receipt_missing"
+      ]
+    },
+    {
+      "mutation_id": "dispatch_receipt_missing",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "dispatch_receipt_missing"
+      ]
+    },
+    {
+      "mutation_id": "dispatch_open_blocker",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "open_blockers"
+      ]
+    },
+    {
+      "mutation_id": "dispatch_authority_mismatch",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "approved_authority_mismatch"
+      ]
+    }
+  ],
+  "support_state_effect": "none",
+  "non_claims": [
+    "Hash equality is a finite identity check, not proof of natural-language semantic equivalence or completeness.",
+    "Provenance, confidence, authority, approval, validation, and dispatch labels are trusted inputs; this packet does not establish their authentic extraction.",
+    "Command-interface admissibility does not imply that the whole fixture is valid: approval, graph, receipt, contract-lineage, and requirement-preservation failures remain owned downstream.",
+    "The packet does not establish deployed parsing or dispatch, prompt-injection resistance, natural-workload usefulness, reproduction, transfer, safety, SOTA, AGI, ASI, or chapter-core support."
+  ]
+}

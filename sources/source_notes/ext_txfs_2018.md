@@ -34,6 +34,7 @@ restoration omits processes, services, and external effects.
 
 ## Book Chapters Supported
 
+- `context-transactions-snapshots-mounts-and-taint`
 - `capability-replacement-and-rollback`
 - `artifact-graphs-audit-logs-and-replay`
 - `runtime-adapters-tool-permissions-and-human-approval`

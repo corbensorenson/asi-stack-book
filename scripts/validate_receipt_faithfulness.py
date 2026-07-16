@@ -32,11 +32,11 @@ LEDGER_MD = ROOT / "docs" / "contribution_novelty_ledger.md"
 LEDGER_JSON = ROOT / "docs" / "contribution_novelty_ledger.json"
 VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 BOOK_STRUCTURE = ROOT / "book_structure.json"
-LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ArtifactGraph.lean"
+LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ArtifactRealityRefinement.lean"
 
 COMMAND = "python3 scripts/validate_receipt_faithfulness.py"
 CODEX_TEST_NAME = "Receipt faithfulness adversarial fixture"
-LEAN_THEOREM = "receipt_faithfulness_adversarial_fixture_bridge"
+LEAN_THEOREM = "reality_review_requires_independent_cross_check"
 EXPECTED_VALID = {
     "valid_cross_checked_receipt_record",
     "valid_attestation_limited_record_only",
@@ -257,7 +257,7 @@ def build_result(packet: dict[str, Any], errors: list[str]) -> dict[str, Any]:
         "case_results": rows,
         "trace_summary": summary,
         "lean_fixture_alignment": {
-            "module": "AsiStackProofs.ArtifactGraph",
+            "module": "AsiStackProofs.ArtifactRealityRefinement",
             "theorem_refs": [LEAN_THEOREM],
             "expected": summary,
         },
@@ -353,7 +353,7 @@ def validate_surfaces(errors: list[str]) -> None:
                 "Implemented receipt-faithfulness adversarial fixture",
                 COMMAND,
                 rel(RESULT),
-                LEAN_THEOREM,
+                "AsiStackProofs.ArtifactRealityRefinement",
             ],
         ),
         rel(ROADMAP): (
@@ -394,8 +394,8 @@ def validate_surfaces(errors: list[str]) -> None:
         rel(LEAN_FILE): (
             LEAN_FILE,
             [
-                "ReceiptFaithfulnessFixtureSummary",
-                "receiptFaithfulnessFixtureSummary",
+                "observedArtifactPresent",
+                "independentCrossCheckMatched",
                 LEAN_THEOREM,
             ],
         ),
@@ -458,16 +458,12 @@ def validate_lean_shape(errors: list[str]) -> None:
     if not re.search(rf"theorem\s+{re.escape(LEAN_THEOREM)}\b", text):
         errors.append(f"{rel(LEAN_FILE)} missing theorem {LEAN_THEOREM}.")
     for field in (
-        "crossCheckedReceiptRecordAccepted",
-        "attestationLimitedRecordOnlyAccepted",
-        "trapDetectedBlockedReceiptAccepted",
-        "shapeValidRealityFalseRejected",
-        "trapReceiptNegativeControlRejected",
-        "independentCrossCheckRequired",
-        "attestationLimitsRecorded",
-        "supportPromotionFromReceiptShapeRejected",
-        "supportStateEffectNone",
-        "nonClaimBoundary",
+        "observedArtifactPresent",
+        "independentCrossCheckMatched",
+        "trapChallengePassed",
+        "attestationLimitsPresent",
+        "supportAssignmentRequested",
+        "externalEffectRequested",
     ):
         if field not in text:
             errors.append(f"{rel(LEAN_FILE)} missing receipt-faithfulness field {field}.")

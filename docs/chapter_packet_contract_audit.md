@@ -22,20 +22,21 @@ This generated audit checks every active chapter against the architecture-refere
 | `ai-supply-chain-integrity-and-lifecycle-provenance` | pass | bounded in insufficiency section | complete packet surface |
 | `recursive-self-improvement-boundaries` | pass | explicit heading | complete packet surface |
 | `open-ended-improvement-engines` | pass | bounded in insufficiency section | complete packet surface |
-| `intent-to-execution-contracts` | pass | bounded in insufficiency section | complete packet surface |
-| `planning-as-a-control-layer` | pass | bounded in insufficiency section | complete packet surface |
+| `intent-to-execution-contracts` | pass | explicit heading | complete packet surface |
+| `planning-as-a-control-layer` | pass | explicit heading | complete packet surface |
 | `cognitive-compilation-and-semantic-ir` | pass | explicit heading | complete packet surface |
 | `virtual-context-abi` | pass | explicit heading | complete packet surface |
 | `context-transactions-snapshots-mounts-and-taint` | pass | explicit heading | complete packet surface |
 | `verification-bandwidth-and-context-adequacy` | pass | bounded in insufficiency section | complete packet surface |
 | `claim-ledgers-and-belief-revision` | pass | explicit heading | complete packet surface |
 | `spinoza-verification-and-proof-carrying-claims` | pass | explicit heading | complete packet surface |
-| `labor-os-and-typed-jobs` | pass | bounded in insufficiency section | complete packet surface |
+| `labor-os-and-typed-jobs` | pass | explicit heading | complete packet surface |
 | `artifact-graphs-audit-logs-and-replay` | pass | explicit heading | complete packet surface |
 | `runtime-adapters-tool-permissions-and-human-approval` | pass | bounded in insufficiency section | complete packet surface |
 | `inter-stack-protocols-identity-and-economic-exchange` | pass | bounded in insufficiency section | complete packet surface |
 | `procedural-memory-and-cognitive-loop-closure` | pass | explicit heading | complete packet surface |
 | `routing-heads-and-specialist-cores` | pass | bounded in insufficiency section | complete packet surface |
+| `replaceable-cognitive-substrates-beyond-transformer-monoculture` | pass | bounded in insufficiency section | complete packet surface |
 | `readiness-gates-residual-escrow-and-quarantine` | pass | bounded in insufficiency section | complete packet surface |
 | `personal-compute-hives-and-federated-edge-intelligence` | pass | bounded in insufficiency section | complete packet surface |
 | `compact-generative-systems-and-residual-honesty` | pass | bounded in insufficiency section | complete packet surface |
@@ -61,6 +62,6 @@ This generated audit checks every active chapter against the architecture-refere
 | `living-book-methodology` | pass | bounded in insufficiency section | complete packet surface |
 | `open-research-agenda-and-bibliography-plan` | pass | bounded in insufficiency section | complete packet surface |
 
-Summary: 54 of 54 active chapters pass; 0 remain open.
+Summary: 55 of 55 active chapters pass; 0 remain open.
 
 Non-claims: this is a structural and bounded semantic audit, not proof of prose quality, source interpretation, empirical validity, formal adequacy, deployment, safety, or independent review.

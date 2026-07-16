@@ -1,0 +1,451 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "asi-is-a-stack-not-a-model",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/asi-is-a-stack-not-a-model.qmd",
+    "structured_atoms_reviewed": 21,
+    "prose_candidates_adjudicated": 36,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, all manifest semantic fields, all formal targets, and every sentence surfaced by the conservative prose scanner. Three prose-only invariants remain owned material atoms; the reachable-boundary additions map to the existing formal atoms or to explicit evidence-limit prose and do not create a support transition."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Architectures for advanced AI systems that combine multiple cognitive or control responsibilities and may produce consequential external effects.",
+      "environment": "The ASI Stack reference architecture, its repository artifacts, and controlled executable slices; production and open-world deployments are outside the currently evidenced scope.",
+      "model": "Substrate-neutral logical architecture in which one model, multiple models, deterministic services, tools, and people may implement roles without one physical module per layer.",
+      "authority": "Corben Sorenson owns the book's design decision; runtime, institutional, and deployment authority must be supplied by the implementing system and is not created by this chapter.",
+      "time": "Architecture and comparator review current through 2026-07-14; empirical comparators must be re-frozen before outcome-bearing work.",
+      "artifact": "chapters/asi-is-a-stack-not-a-model.qmd and its manifest, Layer Boundary Record, proof targets, fixtures, and traceability consumers"
+    },
+    "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+    "contrary_evidence": [
+      "CAIS, MRKL-style systems, LLM-agent decompositions, cognitive architectures, and layered control show that composition and logical roles are established prior-art families rather than proof of this stack's novelty or efficacy.",
+      "Embedded-agency analysis shows that explicit interfaces do not place the stack outside the world, eliminate self-reference, or make its world model complete.",
+      "The repository has finite records, fixtures, and formal predicates but no deployed end-to-end advanced-AI system demonstrating that the full decomposition survives open-world integration pressure."
+    ],
+    "known_confounds": [
+      "Logical responsibility separation can be mistaken for a requirement to deploy one model or process per layer.",
+      "A well-documented monolithic implementation may satisfy logical boundaries even when its physical architecture is not modular.",
+      "Governance overhead, evaluator quality, task mix, model capability, and implementation maturity can confound any measured advantage attributed to layer separation."
+    ],
+    "narrowing_criteria": [
+      "Narrow the claim when only repository traceability, finite handoff denial, or one implementation slice is established rather than the full architecture or efficiency consequence.",
+      "Separate logical responsibility boundaries from physical modularity and separate governance adequacy from capability or performance."
+    ],
+    "refutation_criteria": [
+      "Refute the exact atom when a reachable counterexample satisfies its assumptions and violates its obligation, or when a competent matched campaign fails its preregistered gate.",
+      "Refute any necessity or superiority reading if an undifferentiated comparator supplies the same authority, evidence, rollback, and traceability properties at equal or lower joint cost."
+    ],
+    "deprecation_criteria": [
+      "Deprecate an atom only when it is duplicated by a more precise canonical owner or superseded by a revised contract and every chapter, proof, test, and reader consumer is migrated."
+    ],
+    "promotion_ceiling": "argument_until_claim_specific_campaign_and_accepted_evidence_transition",
+    "reproduction": {
+      "command": null,
+      "environment_lock": null,
+      "artifact_digest": null,
+      "evaluator_identity": null
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "asi-is-a-stack-not-a-model",
+      "next_unblocking_condition": "Freeze the integrated architecture and matched-comparator campaigns after P2/P3 semantics and executable slices exist."
+    },
+    "non_claims": [
+      "Semantic review does not establish proposition truth or promote support.",
+      "Logical layers do not require one model, process, service, or physical module per layer.",
+      "Finite records and Lean predicates do not establish deployed enforcement, architecture efficiency, open-world safety, AGI, or ASI."
+    ]
+  },
+  "atom_reviews": {
+    "asi-is-a-stack-not-a-model.core": {
+      "proposition_type": "composite",
+      "assumptions": [
+        "The target system has separable responsibilities whose authority and evidence duties can be represented without requiring physical modularity.",
+        "Governance, rollback, and epistemic traceability are design objectives in addition to task capability.",
+        "The word efficient refers to a joint frontier including quality, safety, latency, cost, governance burden, and residuals rather than token cost alone."
+      ],
+      "dependencies": [
+        "asi-is-a-stack-not-a-model.mechanism.001",
+        "asi-is-a-stack-not-a-model.interface.001",
+        "asi-is-a-stack-not-a-model.interface.002",
+        "asi-is-a-stack-not-a-model.interface.003",
+        "asi-is-a-stack-not-a-model.invariant.001",
+        "asi-is-a-stack-not-a-model.invariant.002",
+        "asi-is-a-stack-not-a-model.invariant.003",
+        "the-efficient-asi-hypothesis.core"
+      ],
+      "strongest_counterclaim": "One undifferentiated model or agent service can internally implement every required authority, evidence, memory, rollback, and routing duty, making an explicit governed-stack specification unnecessary or strictly more costly.",
+      "falsifier": "A matched, independently observed comparator with no explicit logical layer contracts preserves the same authority ceilings, evidence transitions, rollback closure, residual accounting, and useful-task quality while the stack adds no joint-frontier benefit, or the proposed responsibilities cannot be separated without contradiction.",
+      "required_lanes": [
+        {"lane": "source-synthesis", "necessity": "Establish the strongest service, agent, cognitive-architecture, layered-control, and embedded-agency comparators and prevent a false novelty claim."},
+        {"lane": "normative", "necessity": "Make the choice to value bounded authority, traceability, reversibility, and residual custody explicit rather than deriving it from performance data."},
+        {"lane": "formal", "necessity": "Check the finite authority, handoff, evidence, and noninterference obligations that make the logical separation meaningful."},
+        {"lane": "executable", "necessity": "Show that the named contracts compose in real governed work, learning, and assurance traces rather than only in a diagram."},
+        {"lane": "empirical", "necessity": "Test the efficient qualifier on a joint quality, safety, latency, cost, governance, and residual frontier."},
+        {"lane": "transfer", "necessity": "Test whether the logical decomposition survives different models, workloads, and implementation topologies."}
+      ],
+      "acceptance_criteria": [
+        "The reference architecture assigns every load-bearing responsibility one canonical authority/evidence owner and composes at least the governed-work, learning, and assurance slices without ambiguous ownership.",
+        "A preregistered matched comparison shows the explicit stack is not dominated on the declared joint frontier and its claimed governance properties remain observable under transfer."
+      ]
+    },
+    "asi-is-a-stack-not-a-model.problem.001": {
+      "proposition_type": "normative",
+      "current_disposition": "nonmaterial_editorial_requirement",
+      "assumptions": ["The book intends to present one coherent architecture rather than independent essays."],
+      "dependencies": [],
+      "strongest_counterclaim": "A plural anthology with explicit cross-references would serve the intended readers as well as one architecture frame.",
+      "falsifier": "Reader and architecture audits show that independent chapter frames preserve all required ownership, handoff, and evidence relationships without one shared vocabulary or contract spine.",
+      "required_lanes": [
+        {"lane": "normative", "necessity": "This is an editorial coherence requirement chosen by the author, not an empirical architecture result."}
+      ],
+      "acceptance_criteria": ["Every chapter can be placed in one manifest-ordered contract spine with explicit handoffs and no contradictory ownership."],
+      "promotion_ceiling": "argument_editorial_requirement_no_support_promotion",
+      "terminal_disposition": "nonmaterial_context"
+    },
+    "asi-is-a-stack-not-a-model.insufficiency.001": {
+      "proposition_type": "source-synthesis",
+      "assumptions": ["A larger model, prompt wrapper, or agent loop is evaluated by its explicit public contract rather than capabilities that an observer imagines it might contain."],
+      "dependencies": [],
+      "strongest_counterclaim": "Modern compound agents already define authority, memory, evidence, tool permission, and safe replacement sufficiently, so the alleged gap is obsolete.",
+      "falsifier": "A current primary-source comparator explicitly specifies and enforces every named boundary—authority, memory discipline, evidence state, permission, replacement, and rollback—without importing an equivalent governed-stack contract.",
+      "required_lanes": [
+        {"lane": "source-synthesis", "necessity": "The insufficiency claim is comparative and must be tested against current primary descriptions rather than remembered agent stereotypes."},
+        {"lane": "transfer", "necessity": "Where the claim concerns enforced rather than declared behavior, reproduce the comparator's relevant boundary or record an exact blocker."}
+      ],
+      "acceptance_criteria": ["A dated comparator matrix shows each selected model/agent frame omits at least one named boundary at the claimed scope, with no universal claim beyond the reviewed set."]
+    },
+    "asi-is-a-stack-not-a-model.minimum.001": {
+      "proposition_type": "executable",
+      "assumptions": ["The purpose of the minimum is addressability and honest claim ownership, not demonstrated advanced-AI behavior."],
+      "dependencies": ["asi-is-a-stack-not-a-model.mechanism.001", "asi-is-a-stack-not-a-model.invariant.001", "asi-is-a-stack-not-a-model.invariant.002"],
+      "strongest_counterclaim": "A stack map, boundary table, source crosswalk, and claim ledger are documentation only and cannot exercise a meaningful architecture boundary.",
+      "falsifier": "A new or changed layer cannot be added through the minimum bundle without ambiguous ownership, missing artifacts, silent support movement, or manual changes outside the declared contract.",
+      "required_lanes": [
+        {"lane": "executable", "necessity": "Run valid and invalid layer-addition/change cases through the manifest, boundary schema, source crosswalk, and claim ledger."}
+      ],
+      "acceptance_criteria": ["The minimum bundle accepts one complete layer record and rejects missing owner, authority, artifact, invariant, evidence, or non-claim fields without changing support state."],
+      "promotion_ceiling": "synthetic-test-backed_for_exact_repository_workflow_only_after_transition"
+    },
+    "asi-is-a-stack-not-a-model.beyond_sota.001": {
+      "proposition_type": "composite",
+      "current_disposition": "research_target_not_current_result",
+      "claim_label": "Speculative",
+      "assumptions": ["Current comparators can be reproduced or bounded closely enough for joint-frontier comparison.", "The mature contracts can be implemented without governance cost overwhelming useful throughput."],
+      "dependencies": ["asi-is-a-stack-not-a-model.core", "integrated-reference-architecture.core"],
+      "strongest_counterclaim": "The mature stack is a repackaging of compound-agent and assurance practices that adds documentation and control overhead without new capability, safety, or governance value.",
+      "falsifier": "The exact mature implementation is dominated by a strong matched comparator, fails any required authority/evidence/rollback gate, or does not transfer beyond the tuned implementation.",
+      "required_lanes": [
+        {"lane": "source-synthesis", "necessity": "Fix the exact current comparator and prevent architecture-brand novelty laundering."},
+        {"lane": "executable", "necessity": "Implement the mature cross-layer contracts and integrated trace kernel."},
+        {"lane": "empirical", "necessity": "Measure the complete joint frontier rather than architecture elegance."},
+        {"lane": "transfer", "necessity": "Require survival across models, workloads, and implementation topologies."},
+        {"lane": "normative", "necessity": "Expose the value choices behind authority and governance trade-offs."}
+      ],
+      "acceptance_criteria": ["Every named mature contract exists, has an exercised consumer, survives adversarial controls, and achieves the preregistered exact-dominance or Pareto gate against the dated comparator envelope."],
+      "promotion_ceiling": "speculative_target_until_exact_SOTA_gate"
+    },
+    "asi-is-a-stack-not-a-model.mechanism.001": {
+      "proposition": "Each governed layer should be specified by a responsibility, interface, artifact, invariant, authority boundary, and failure mode.",
+      "proposition_type": "composite",
+      "assumptions": ["These fields are sufficient for first-order ownership and can be extended without erasing stable identity."],
+      "dependencies": [],
+      "strongest_counterclaim": "Some useful responsibilities cannot be localized to one layer or stable interface, so the required fields create false precision.",
+      "falsifier": "A material responsibility repeatedly requires contradictory owners or cannot be represented without hiding shared authority, state, or failure propagation.",
+      "required_lanes": [
+        {"lane": "normative", "necessity": "Justify the selected mandatory contract fields and contest omissions."},
+        {"lane": "executable", "necessity": "Exercise complete and incomplete Layer Boundary Records through real consumers."},
+        {"lane": "formal", "necessity": "Check finite ownership, authority, and handoff consistency where representable."}
+      ],
+      "acceptance_criteria": ["Every active layer has exactly one canonical responsibility owner and consumers reject records missing any required field or carrying contradictory authority." ]
+    },
+    "asi-is-a-stack-not-a-model.mechanism.002": {
+      "proposition": "A raw language model should be treated as a semantic generation and compression component rather than as the authority-bearing whole system.",
+      "proposition_type": "normative",
+      "assumptions": ["Model outputs are fallible semantic artifacts and external effects require authority not implied by generation ability."],
+      "dependencies": ["asi-is-a-stack-not-a-model.invariant.003"],
+      "strongest_counterclaim": "A sufficiently capable model can safely internalize governance and should be treated as the whole system to avoid interface loss and overhead.",
+      "falsifier": "A model-only comparator supplies independently inspectable authority, evidence, rollback, and residual decisions with no separable control boundary, or separating the model makes required behavior strictly less governable.",
+      "required_lanes": [
+        {"lane": "normative", "necessity": "Separate capability from permission as a design commitment."},
+        {"lane": "executable", "necessity": "Demonstrate model outputs crossing explicit evidence and action gates."},
+        {"lane": "empirical", "necessity": "Measure whether the boundary improves unsafe-release/useful-throughput trade-offs without hiding model capability effects."}
+      ],
+      "acceptance_criteria": ["Integrated traces show model outputs remain proposals until independent evidence and authority consumers admit them, with matched outcome accounting." ]
+    },
+    "asi-is-a-stack-not-a-model.mechanism.003": {
+      "proposition_type": "normative",
+      "current_disposition": "nonmaterial_editorial_requirement",
+      "assumptions": ["The artifact is a single book whose reader promise depends on coherent ownership and handoffs."],
+      "dependencies": [],
+      "strongest_counterclaim": "A curated anthology can preserve coherence through introductions and cross-references without a single reference architecture.",
+      "falsifier": "The chapter and reader audits preserve all ownership, interface, and evidence relations after the reference-architecture frame is removed.",
+      "required_lanes": [{"lane": "normative", "necessity": "This is the author's editorial architecture rule."}],
+      "acceptance_criteria": ["Every chapter has a unique architectural job and manifest-ordered handoff rather than project-by-project ownership."],
+      "promotion_ceiling": "argument_editorial_requirement_no_support_promotion",
+      "terminal_disposition": "nonmaterial_context"
+    },
+    "asi-is-a-stack-not-a-model.mechanism.004": {
+      "proposition": "Source queues and evidence states should reduce context omission and unsupported claim strengthening during future writing runs.",
+      "proposition_type": "causal",
+      "assumptions": ["Writing runs consume the queues and validators rather than bypassing them, and omission/overpromotion can be independently scored."],
+      "dependencies": ["evidence-states-and-claim-discipline.core", "living-book-methodology.core"],
+      "strongest_counterclaim": "Queues and evidence labels add maintenance cost but do not reduce omission, contradiction, or support inflation compared with ordinary editing.",
+      "falsifier": "In matched blinded writing tasks, the governed workflow does not improve source coverage or overclaim error within the preregistered uncertainty range, or increases total cost beyond the allowed joint-frontier trade-off.",
+      "required_lanes": [
+        {"lane": "executable", "necessity": "Verify that writing runs actually consume queues and evidence-state gates."},
+        {"lane": "causal", "necessity": "Ablate queues and evidence states in matched tasks to estimate their contribution."},
+        {"lane": "transfer", "necessity": "Repeat across chapter types and writing agents before claiming general workflow value."}
+      ],
+      "acceptance_criteria": ["A preregistered matched ablation improves source coverage or reduces unsupported strengthening without unacceptable time, cost, or useful-prose loss." ]
+    },
+    "asi-is-a-stack-not-a-model.interface.001": {
+      "proposition": "Alignment and governance constraints should be explicit inputs to every downstream layer that can affect claims, capability, or external action.",
+      "proposition_type": "formal",
+      "assumptions": ["Applicable constraints can be represented and propagated, and downstream consumers can fail closed when required constraints are absent."],
+      "dependencies": [],
+      "strongest_counterclaim": "Some downstream behavior is too emergent or latency-sensitive for explicit governance inputs, so universal propagation is impossible or harmful.",
+      "falsifier": "A permitted reachable downstream transition changes a governed claim, capability, or external effect without consuming the applicable constraint and without an explicitly authorized exception.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Specify constraint propagation and exception semantics over finite traces."},
+        {"lane": "executable", "necessity": "Differentially test runtime consumers against missing, stale, revoked, and conflicting constraints."}
+      ],
+      "acceptance_criteria": ["All applicable governed transitions carry a current constraint reference or an explicit authorized exception, and mutation controls fail closed." ]
+    },
+    "asi-is-a-stack-not-a-model.interface.002": {
+      "proposition_type": "executable",
+      "assumptions": ["Cross-layer information has schemas or contracts that can preserve identity, provenance, authority, and residuals."],
+      "dependencies": ["asi-is-a-stack-not-a-model.mechanism.001"],
+      "strongest_counterclaim": "Hidden shared state or natural-language context is necessary for capable integration and typed artifacts lose meaning at boundaries.",
+      "falsifier": "A required cross-layer dependency cannot be encoded without losing task-critical semantics, or consumers routinely bypass typed artifacts to achieve valid outcomes.",
+      "required_lanes": [
+        {"lane": "executable", "necessity": "Run typed handoffs across the integrated work, learning, and assurance slices with malformed and omitted-field controls."},
+        {"lane": "transfer", "necessity": "Check that artifact meaning survives different implementations and model families."}
+      ],
+      "acceptance_criteria": ["Every cross-layer dependency in the reference slices is carried by a versioned artifact whose producer and consumer agree under positive, negative, and replay tests." ]
+    },
+    "asi-is-a-stack-not-a-model.interface.003": {
+      "proposition": "Recursive improvement should enter as a governed, recorded, reversible transition rather than as ambient self-modification authority.",
+      "proposition_type": "formal",
+      "assumptions": ["Improvement-relevant state and descendant effects can be enumerated sufficiently to gate promotion and expose residuals."],
+      "dependencies": ["recursive-self-improvement-boundaries.core", "capability-replacement-and-rollback.core"],
+      "strongest_counterclaim": "Useful recursive improvement requires authority that cannot be fully enumerated or routed through explicit transitions without making it ineffective.",
+      "falsifier": "A promoted improvement changes governed state or descendants outside the recorded transition and rollback authority, or the explicit route cannot support any useful improvements in an informative regime.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Model admission, promotion, revocation, descendant invalidation, and rollback obligations."},
+        {"lane": "executable", "necessity": "Exercise full-state update and rollback traces including failure injection."},
+        {"lane": "causal", "necessity": "Measure whether governance changes useful improvement and unsafe promotion outcomes."}
+      ],
+      "acceptance_criteria": ["Every promoted improvement has a complete authority/evidence transition and effect ledger, and rollback or residual disposition covers all observed state classes." ]
+    },
+    "asi-is-a-stack-not-a-model.invariant.001": {
+      "proposition": "Every active layer boundary should remain explicitly addressable through a stable owner, responsibility, artifact, authority ceiling, invariant set, and handoff.",
+      "proposition_type": "formal",
+      "assumptions": ["Active layers and handoffs are enumerable at the reference-architecture boundary."],
+      "dependencies": ["asi-is-a-stack-not-a-model.mechanism.001"],
+      "strongest_counterclaim": "Some cross-cutting responsibilities are inherently ambient and cannot have stable addressable boundaries.",
+      "falsifier": "An active layer or cross-layer transition lacks a unique addressable boundary while still being admitted as complete.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Check finite completeness and ownership consistency."},
+        {"lane": "executable", "necessity": "Reject missing and contradictory boundaries in real consumers."}
+      ],
+      "acceptance_criteria": ["The manifest and runtime/reference records cover every active layer and handoff exactly once at its canonical ownership boundary." ]
+    },
+    "asi-is-a-stack-not-a-model.invariant.002": {
+      "proposition": "Every material claim should retain a stable identity and explicit support state on every public and machine-readable surface that presents it.",
+      "proposition_type": "formal",
+      "assumptions": ["Material claims and publication surfaces can be enumerated and linked to the claim ledger."],
+      "dependencies": ["evidence-states-and-claim-discipline.core", "claim-ledgers-and-belief-revision.core"],
+      "strongest_counterclaim": "Some explanatory prose is too fluid for stable claim identity and support labels without making the book unreadable.",
+      "falsifier": "A material claim appears on a governed surface without a resolvable identity/support state, or two surfaces assign incompatible states without an explicit version transition.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Specify identity and state consistency across finite surfaces."},
+        {"lane": "executable", "necessity": "Scan chapters, appendices, derivatives, and release records for orphaned or contradictory claims."}
+      ],
+      "acceptance_criteria": ["All adjudicated material claims resolve to one ledger identity and compatible current support state across canonical surfaces." ]
+    },
+    "asi-is-a-stack-not-a-model.invariant.003": {
+      "proposition": "Reasoning or generation capability alone must never grant execution authority.",
+      "proposition_type": "formal",
+      "assumptions": ["Execution effects and grants are represented separately from model outputs and capabilities."],
+      "dependencies": [],
+      "strongest_counterclaim": "Some low-risk actions should inherit authority directly from sufficiently reliable model confidence to avoid control overhead.",
+      "falsifier": "A reachable effect occurs solely because a model generated or scored an action, with no applicable grant, bounded policy exception, or authorized handoff.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Prove the finite separation between capability output and effect grant."},
+        {"lane": "executable", "necessity": "Inject confident unauthorized proposals and verify that adapters fail closed."}
+      ],
+      "acceptance_criteria": ["Every observed external effect resolves to a current grant or explicit bounded exception independent of model confidence." ]
+    },
+    "asi-is-a-stack-not-a-model.failure_mode.001": {
+      "proposition": "Unowned additions can cause anthology drift: content accumulates without a canonical responsibility, artifact, invariant, evidence path, or handoff.",
+      "proposition_type": "causal",
+      "assumptions": ["Ownership and handoff coherence can be scored before and after additions."],
+      "dependencies": ["asi-is-a-stack-not-a-model.mechanism.003"],
+      "strongest_counterclaim": "Editorial review alone prevents anthology drift without manifest ownership rules.",
+      "falsifier": "Across matched additions, removing ownership and handoff requirements does not increase orphan claims, duplicated concepts, contradictory boundaries, or reader discontinuity.",
+      "required_lanes": [
+        {"lane": "executable", "necessity": "Detect orphan and duplicate ownership after controlled additions."},
+        {"lane": "causal", "necessity": "Ablate manifest ownership rules in matched update tasks."}
+      ],
+      "acceptance_criteria": ["Ownership-rule ablation causes a preregistered material increase in orphan, duplicate, contradiction, or continuity failures." ]
+    },
+    "asi-is-a-stack-not-a-model.failure_mode.002": {
+      "proposition": "Collapsing planning, memory, reasoning, evidence, execution, and governance into ambient model identity can cause monolith drift that hides authority and evidence ownership.",
+      "proposition_type": "causal",
+      "assumptions": ["Hidden or ambiguous ownership can be observed through handoff, denial, rollback, and evidence queries."],
+      "dependencies": ["asi-is-a-stack-not-a-model.core"],
+      "strongest_counterclaim": "A monolithic model can expose equivalent ownership through introspection or one unified policy without logical layer contracts.",
+      "falsifier": "A matched monolithic comparator answers all ownership, authority, evidence, rollback, and residual queries with equal accuracy and no explicit logical boundary representation.",
+      "required_lanes": [
+        {"lane": "executable", "necessity": "Probe ownership and denial behavior in stack and monolithic implementations."},
+        {"lane": "causal", "necessity": "Ablate explicit boundaries while holding model, task, and information access fixed."}
+      ],
+      "acceptance_criteria": ["Boundary ablation materially increases ambiguous authority, unverifiable evidence, or incomplete rollback at matched useful throughput." ]
+    },
+    "asi-is-a-stack-not-a-model.failure_mode.003": {
+      "proposition": "Treating source notes, local tests, formal predicates, or polished prose as broader evidence than their lane permits causes evidence inflation.",
+      "proposition_type": "causal",
+      "assumptions": ["Claim scope and artifact authority can be independently adjudicated."],
+      "dependencies": ["evidence-states-and-claim-discipline.core"],
+      "strongest_counterclaim": "Ordinary expert editing is enough to prevent evidence overstatement without typed lanes and transition records.",
+      "falsifier": "Removing typed evidence lanes and transition gates does not increase independently adjudicated overclaim errors across matched writing and release tasks.",
+      "required_lanes": [
+        {"lane": "executable", "necessity": "Detect scope/authority mismatches between claims and artifacts."},
+        {"lane": "causal", "necessity": "Compare matched workflows with and without typed evidence gates."}
+      ],
+      "acceptance_criteria": ["Gate ablation produces a preregistered material increase in claims whose scope or support exceeds their artifacts." ]
+    },
+    "asi-is-a-stack-not-a-model.formal.stack-layer-boundaries-operational-invariant": {
+      "proposition_type": "formal",
+      "current_disposition": "implemented_formal_atom_pending_model_adequacy_and_transition",
+      "assumptions": ["The finite trace enumerates every modeled external-action step, layer authority bit, and authorized handoff relation."],
+      "dependencies": ["asi-is-a-stack-not-a-model.invariant.003"],
+      "strongest_counterclaim": "The theorem is vacuous, omits a reachable effect path, or merely restates authorization in its premises.",
+      "falsifier": "A Lean countermodel or runtime refinement trace satisfies the modeled premises while an unauthorized external-action step occurs, or mutation shows an authority/handoff field is semantically unused.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Kernel-check the exact finite trace property and countermodels."},
+        {"lane": "executable", "necessity": "Refine runtime event traces to the formal states and mutation-test every authority field and consumer."}
+      ],
+      "acceptance_criteria": ["Lean checks the theorem, nonempty witnesses and unauthorized countercases are reachable, every authority/handoff mutation is rejected, and runtime refinement covers all declared effect paths."],
+      "promotion_ceiling": "synthetic-test-backed_for_exact_finite_trace_only_after_adequacy_review_and_transition",
+      "reproduction": {"command": "cd lean && lake build", "environment_lock": "lean/lake-manifest.json and lean/lean-toolchain", "artifact_digest": null, "evaluator_identity": "Lean 4 kernel in the pinned Lake environment"}
+    },
+    "asi-is-a-stack-not-a-model.formal.stack-layer-boundaries-failure-blocks-promotion": {
+      "proposition_type": "formal",
+      "current_disposition": "implemented_formal_atom_pending_model_adequacy_and_transition",
+      "assumptions": ["Caller ceiling, target requirement, grant state, and handoff decision faithfully represent the admission event."],
+      "dependencies": ["asi-is-a-stack-not-a-model.interface.001"],
+      "strongest_counterclaim": "The rejection theorem follows only because excess authority is encoded as rejection in an assumption or constructor and has no independent consumer consequence.",
+      "falsifier": "A reachable admitted handoff exceeds the caller ceiling, or deleting/mutating the ceiling comparison leaves the theorem and runtime consumer unchanged.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Check the exact ceiling relation and reachable rejection cases."},
+        {"lane": "executable", "necessity": "Differentially test runtime admission against the formal decision with ceiling, grant, and target mutations."}
+      ],
+      "acceptance_criteria": ["The theorem rejects reachable excess-ceiling cases, accepts bounded granted cases, and every concrete admission consumer agrees across generated traces."],
+      "promotion_ceiling": "synthetic-test-backed_for_exact_handoff_admission_only_after_adequacy_review_and_transition",
+      "reproduction": {"command": "cd lean && lake build", "environment_lock": "lean/lake-manifest.json and lean/lean-toolchain", "artifact_digest": null, "evaluator_identity": "Lean 4 kernel in the pinned Lake environment"}
+    },
+    "asi-is-a-stack-not-a-model.formal.stack-layer-contract-admission-lifecycle-route": {
+      "proposition_type": "formal",
+      "current_disposition": "implemented_formal_atom_pending_model_adequacy_and_transition",
+      "assumptions": ["The finite record fields cover the declared admission contract but do not claim completeness for unmodeled open-world effects."],
+      "dependencies": ["asi-is-a-stack-not-a-model.mechanism.001", "asi-is-a-stack-not-a-model.invariant.001", "asi-is-a-stack-not-a-model.invariant.002"],
+      "strongest_counterclaim": "The route theorem is a field-completeness projection that provides traceability but no semantic guarantee that values are true, enforced, or sufficient.",
+      "falsifier": "A required field can be removed or corrupted without changing the route, or an admitted record fails a declared concrete consumer despite all modeled completeness predicates.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Check deterministic routing for each exact missing-field class and nonempty valid records."},
+        {"lane": "executable", "necessity": "Mutation-test serialized fields and all consuming validators/admission gates; do not treat schema completeness as safety."}
+      ],
+      "acceptance_criteria": ["Every required-field mutation routes to its exact rejection, complete records reach bounded admission, and runtime consumers refine the same decisions without overclaiming value truth or deployed enforcement."],
+      "promotion_ceiling": "synthetic-test-backed_for_finite_record_routing_only_after_adequacy_review_and_transition",
+      "reproduction": {"command": "cd lean && lake build", "environment_lock": "lean/lake-manifest.json and lean/lean-toolchain", "artifact_digest": null, "evaluator_identity": "Lean 4 kernel in the pinned Lake environment"}
+    },
+    "asi-is-a-stack-not-a-model.prose.e0bd06898776": {
+      "proposition": "Every high-impact component should expose behavior, authority, evidence, and rollback-relevant state to an observer that is not the component itself.",
+      "proposition_type": "composite",
+      "assumptions": ["High impact is prospectively defined and an observer can be isolated sufficiently to detect omissions without claiming full independence."],
+      "dependencies": ["asi-is-a-stack-not-a-model.invariant.001"],
+      "strongest_counterclaim": "Some capable components are inherently opaque and can be governed adequately through input/output tests alone.",
+      "falsifier": "A high-impact component with no external observability meets every declared authority, evidence, rollback, and failure-detection gate, or the proposed observer cannot detect seeded omissions above chance.",
+      "required_lanes": [
+        {"lane": "normative", "necessity": "Define which impacts justify inspection and the privacy/security limits on observers."},
+        {"lane": "executable", "necessity": "Seed hidden authority, evidence, and rollback defects and test external detection."},
+        {"lane": "empirical", "necessity": "Measure detection error, latency, cost, and false refusal against black-box alternatives."}
+      ],
+      "acceptance_criteria": ["The external observer detects preregistered material defect classes at the required error rate without unacceptable useful-throughput or privacy cost." ]
+    },
+    "asi-is-a-stack-not-a-model.prose.2cb1eb1cb869": {
+      "proposition_type": "normative",
+      "assumptions": ["Logical responsibility and authority can be specified independently of deployment topology."],
+      "dependencies": [],
+      "strongest_counterclaim": "Calling a layer logical makes the architecture unfalsifiable because any implementation can be redescribed post hoc as layered.",
+      "falsifier": "The architecture cannot give prospective observable criteria for assigning a responsibility/authority boundary before inspecting outcomes, or two incompatible assignments are equally valid with different governance consequences.",
+      "required_lanes": [
+        {"lane": "normative", "necessity": "Define the abstraction boundary and prevent physical-module or post-hoc relabeling errors."},
+        {"lane": "executable", "necessity": "Apply the same prospective layer criteria to monolithic, modular, and hybrid implementations."}
+      ],
+      "acceptance_criteria": ["Independent implementations receive stable layer assignments from responsibility, artifact, authority, and consumer criteria without requiring one physical module per layer." ]
+    },
+    "asi-is-a-stack-not-a-model.prose.55051a33d86d": {
+      "proposition": "A handoff whose consumer cannot identify its required input artifact or authority ceiling should fail closed with an explicit missing-contract record.",
+      "proposition_type": "executable",
+      "assumptions": ["The consumer declares which artifact and authority fields are required for the attempted operation."],
+      "dependencies": ["asi-is-a-stack-not-a-model.interface.002", "asi-is-a-stack-not-a-model.invariant.003"],
+      "strongest_counterclaim": "Safe defaults or model judgment can often infer missing artifacts and authority without blocking useful work.",
+      "falsifier": "A governed consumer proceeds with the effect despite absent required artifact identity or authority ceiling, or fail-closed behavior causes unacceptable false refusal in the preregistered valid-missing-metadata class.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Specify missing-contract and explicitly authorized default semantics."},
+        {"lane": "executable", "necessity": "Inject missing, stale, conflicting, and valid-default cases into real consumers."},
+        {"lane": "empirical", "necessity": "Measure false refusal and unsafe inference rates where defaults are proposed."}
+      ],
+      "acceptance_criteria": ["All required-field omissions fail closed or use a prospectively authorized bounded default, with unsafe inference and false-refusal rates inside frozen limits." ]
+    }
+  },
+  "prose_candidate_dispositions": {
+    "asi-is-a-stack-not-a-model.prose.1f0290b219b5": {"state": "nonmaterial_explanation", "rationale": "Reader-path summary of already owned chapter and downstream claims; it adds no independently testable proposition."},
+    "asi-is-a-stack-not-a-model.prose.74a75341eac4": {"state": "duplicate_of_atom", "rationale": "Restates the governed-stack core and layer-contract mechanism.", "target_atom_id": "asi-is-a-stack-not-a-model.core"},
+    "asi-is-a-stack-not-a-model.prose.e0bd06898776": {"state": "material_atom", "rationale": "Adds a distinct external-observability requirement for high-impact components.", "target_atom_id": "asi-is-a-stack-not-a-model.prose.e0bd06898776"},
+    "asi-is-a-stack-not-a-model.prose.0e1cd7f7c546": {"state": "duplicate_of_atom", "rationale": "Restates the mandatory Layer Boundary Record fields.", "target_atom_id": "asi-is-a-stack-not-a-model.mechanism.001"},
+    "asi-is-a-stack-not-a-model.prose.19fa85de1ffc": {"state": "duplicate_of_atom", "rationale": "Restates the manifest problem proposition.", "target_atom_id": "asi-is-a-stack-not-a-model.problem.001"},
+    "asi-is-a-stack-not-a-model.prose.839c2c136f89": {"state": "duplicate_of_atom", "rationale": "Restates the core contrast with model-, loop-, and benchmark-only descriptions.", "target_atom_id": "asi-is-a-stack-not-a-model.core"},
+    "asi-is-a-stack-not-a-model.prose.de4130a3c23c": {"state": "duplicate_of_atom", "rationale": "Restates the operational admission criteria for a layer contract.", "target_atom_id": "asi-is-a-stack-not-a-model.mechanism.001"},
+    "asi-is-a-stack-not-a-model.prose.9233fb8b203a": {"state": "duplicate_of_atom", "rationale": "Applies the book-as-reference-architecture editorial rule to novelty ownership.", "target_atom_id": "asi-is-a-stack-not-a-model.mechanism.003"},
+    "asi-is-a-stack-not-a-model.prose.3258c1d971d9": {"state": "duplicate_of_atom", "rationale": "Owned more precisely by the Virtual Context ABI insufficiency claim about retrieval without authority, bindings, adequacy, and typed failure.", "target_atom_id": "virtual-context-abi.insufficiency.001"},
+    "asi-is-a-stack-not-a-model.prose.21db0e0db80d": {"state": "duplicate_of_atom", "rationale": "Owned by the benchmark-ratchet insufficiency and anti-Goodhart failure program.", "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.insufficiency.001"},
+    "asi-is-a-stack-not-a-model.prose.c47a09fc55aa": {"state": "duplicate_of_atom", "rationale": "Concrete example of the model/agent insufficiency proposition.", "target_atom_id": "asi-is-a-stack-not-a-model.insufficiency.001"},
+    "asi-is-a-stack-not-a-model.prose.073c75d0dc10": {"state": "duplicate_of_atom", "rationale": "Restates the governed-stack core separation of model capability from constitutional, memory, deployment, approval, and evidence authority.", "target_atom_id": "asi-is-a-stack-not-a-model.core"},
+    "asi-is-a-stack-not-a-model.prose.2cb1eb1cb869": {"state": "material_atom", "rationale": "Defines the substrate-neutral meaning of layer and blocks a physical-module misreading.", "target_atom_id": "asi-is-a-stack-not-a-model.prose.2cb1eb1cb869"},
+    "asi-is-a-stack-not-a-model.prose.91d0b0ed754d": {"state": "historical_or_source_report", "rationale": "Comparator summary whose truth is governed by the cited source notes, not a local architecture result."},
+    "asi-is-a-stack-not-a-model.prose.4f86f4293582": {"state": "duplicate_of_atom", "rationale": "Literal rendered core-claim marker.", "target_atom_id": "asi-is-a-stack-not-a-model.core"},
+    "asi-is-a-stack-not-a-model.prose.ced251f76d58": {"state": "duplicate_of_atom", "rationale": "Restates the governed recursive-improvement interface.", "target_atom_id": "asi-is-a-stack-not-a-model.interface.003"},
+    "asi-is-a-stack-not-a-model.prose.7cdc971f6060": {"state": "duplicate_of_atom", "rationale": "Expanded description of the Layer Boundary Record and minimum implementation.", "target_atom_id": "asi-is-a-stack-not-a-model.mechanism.001"},
+    "asi-is-a-stack-not-a-model.prose.4ac94161694f": {"state": "duplicate_of_atom", "rationale": "Restates separation between model output, evidence admission, and execution authority.", "target_atom_id": "asi-is-a-stack-not-a-model.invariant.003"},
+    "asi-is-a-stack-not-a-model.prose.3230238081c0": {"state": "duplicate_of_atom", "rationale": "Owned by the living-book synchronization and validation mechanism.", "target_atom_id": "living-book-methodology.mechanism.005"},
+    "asi-is-a-stack-not-a-model.prose.f2585203b08b": {"state": "duplicate_of_atom", "rationale": "Restates stable layer boundary addressability under implementation change.", "target_atom_id": "asi-is-a-stack-not-a-model.invariant.001"},
+    "asi-is-a-stack-not-a-model.prose.55051a33d86d": {"state": "material_atom", "rationale": "Adds a concrete fail-closed handoff behavior for missing input or authority contracts.", "target_atom_id": "asi-is-a-stack-not-a-model.prose.55051a33d86d"},
+    "asi-is-a-stack-not-a-model.prose.42f477c812af": {"state": "duplicate_of_atom", "rationale": "Applies the book-as-reference-architecture ownership rule to chapter insertion.", "target_atom_id": "asi-is-a-stack-not-a-model.mechanism.003"},
+    "asi-is-a-stack-not-a-model.prose.8a22bd4fd15f": {"state": "nonmaterial_explanation", "rationale": "Editorial metaphor summarizing the reference-architecture rule rather than adding a separate proposition."},
+    "asi-is-a-stack-not-a-model.prose.b95183464fc6": {"state": "duplicate_of_atom", "rationale": "Owned by the living-book synchronized-update mechanism.", "target_atom_id": "living-book-methodology.mechanism.005"},
+    "asi-is-a-stack-not-a-model.prose.bd8fb9e6de51": {"state": "duplicate_of_atom", "rationale": "Concrete instance of the model-only insufficiency claim.", "target_atom_id": "asi-is-a-stack-not-a-model.insufficiency.001"},
+    "asi-is-a-stack-not-a-model.prose.30bd19f7ccad": {"state": "duplicate_of_atom", "rationale": "Concrete modular-system instance of the same governance-contract insufficiency claim.", "target_atom_id": "asi-is-a-stack-not-a-model.insufficiency.001"},
+    "asi-is-a-stack-not-a-model.prose.1819a04274c3": {"state": "duplicate_of_atom", "rationale": "Restates the mandatory layer-contract mechanism with comparator context.", "target_atom_id": "asi-is-a-stack-not-a-model.mechanism.001"},
+    "asi-is-a-stack-not-a-model.prose.226f59300f5e": {"state": "duplicate_of_atom", "rationale": "Elaborates the typed-artifact interface by contrasting hidden state.", "target_atom_id": "asi-is-a-stack-not-a-model.interface.002"},
+    "asi-is-a-stack-not-a-model.prose.369689b7d708": {"state": "nonmaterial_explanation", "rationale": "Current support-state and promotion-burden boundary for the core atom, not an additional architecture claim."},
+    "asi-is-a-stack-not-a-model.prose.0dbff04c3469": {"state": "editorial_or_question", "rationale": "Transition sentence into measurement and the next chapter; no independently testable content."},
+    "asi-is-a-stack-not-a-model.prose.f4b2bd909f75": {"state": "duplicate_of_atom", "rationale": "Owned by the next chapter's efficient-ASI core claim.", "target_atom_id": "the-efficient-asi-hypothesis.core"},
+    "asi-is-a-stack-not-a-model.prose.c3de3fc236d9": {"state": "editorial_or_question", "rationale": "Handoff sentence naming the next chapter's question rather than asserting its answer."},
+    "asi-is-a-stack-not-a-model.prose.b81edb0329f0": {"state": "historical_or_source_report", "rationale": "Fragment of the embedded-agency limitation paragraph; the full proposition is governed by the cited source and existing non-claim boundary."},
+    "asi-is-a-stack-not-a-model.prose.941a90f851e0": {"state": "duplicate_of_atom", "rationale": "Restates the within-ceiling grant and dispatch-custody obligation already owned by the operational formal target.", "target_atom_id": "asi-is-a-stack-not-a-model.formal.stack-layer-boundaries-operational-invariant"},
+    "asi-is-a-stack-not-a-model.prose.37b2091619d4": {"state": "duplicate_of_atom", "rationale": "Reports the bounded Lean consequences already owned by the two layer-boundary formal atoms.", "target_atom_id": "asi-is-a-stack-not-a-model.formal.stack-layer-boundaries-operational-invariant"},
+    "asi-is-a-stack-not-a-model.prose.912aba349a3c": {"state": "historical_or_source_report", "rationale": "Exact non-claim boundary for the new finite consumer; it constrains interpretation and creates no positive support claim."}
+  },
+  "non_claims": [
+    "Completing this semantic sweep does not prove any atom or change any support state.",
+    "The three prose-only material atoms are newly owned obligations, not newly supported results.",
+    "Cross-chapter duplicate dispositions route ownership and do not establish the target atoms."
+  ]
+}

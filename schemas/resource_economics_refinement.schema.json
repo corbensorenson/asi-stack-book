@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Resource Economics allocation-to-closure refinement result",
+  "type":"object",
+  "required":["schema_version","result_id","recorded_date","command","model","source_result_refinement","route_cases","lean_verification","support_state_effect","external_effect","residuals","non_claims"],
+  "properties":{
+    "schema_version":{"const":"asi_stack.resource_economics_refinement.result.v1"},"result_id":{"const":"2026-07-15-resource-economics-refinement"},"recorded_date":{"const":"2026-07-15"},"command":{"const":"python3 scripts/validate_resource_economics_refinement.py"},
+    "model":{"type":"object","required":["lean_module","stage_count","route_count","reached_route_count","route_case_count","rejected_mutation_count","simulation_transfer_route_reached","closed_route_reached","support_assignment_count","external_effect_count"],"properties":{"lean_module":{"const":"lean/AsiStackProofs/ResourceEconomicsRefinement.lean"},"stage_count":{"const":9},"route_count":{"const":66},"reached_route_count":{"const":66},"route_case_count":{"const":66},"rejected_mutation_count":{"const":57},"simulation_transfer_route_reached":{"const":true},"closed_route_reached":{"const":true},"support_assignment_count":{"const":0},"external_effect_count":{"const":0}},"additionalProperties":false},
+    "source_result_refinement":{"type":"object"},"route_cases":{"type":"array","minItems":66,"maxItems":66},"lean_verification":{"type":"object"},"support_state_effect":{"const":"none"},"external_effect":{"const":"none"},"residuals":{"type":"array","minItems":4},"non_claims":{"type":"array","minItems":3}
+  },"additionalProperties":false
+}

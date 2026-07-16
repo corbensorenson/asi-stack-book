@@ -265,6 +265,9 @@ def main() -> None:
         summary_metric(ROOT / "docs" / "non_core_evidence_ledger.md", "Accepted no-promotion side-lane decisions")
     )
     proof_targets = str(proof_manifest.get("proof_target_count", ""))
+    proof_status_counts = proof_manifest.get("status_counts", {})
+    implemented_proof_targets = int(proof_status_counts.get("implemented", 0))
+    planned_proof_targets = int(proof_status_counts.get("planned", 0))
     proof_adequacy_counts = parse_proof_adequacy_counts()
     proof_adequacy_summary = proof_adequacy_phrase(proof_adequacy_counts)
     curated_records = reader_manifest.get("chapter_records", [])
@@ -511,7 +514,7 @@ def main() -> None:
         "`docs/theseus_generation_mode_import_slice.md`",
         "`schemas/theseus_generation_mode_import.schema.json`",
         "`experiments/theseus_generation_mode_import/results/2026-07-01-local.json`",
-        "`lean/AsiStackProofs/FastGeneration.lean`",
+        "`lean/AsiStackProofs/FastGenerationRefinement.lean`",
         "`python3 scripts/validate_theseus_generation_mode_import.py`",
         "`docs/theseus_support_replay_probe.md`",
         "`experiments/theseus_support_replay_probe/results/2026-07-01-local.json`",
@@ -524,7 +527,7 @@ def main() -> None:
         "`experiments/phase5_harness_registry.json`",
         "`docs/phase5_harness_registry.md`",
         "`python3 scripts/validate_phase5_harness_registry.py`",
-        f"| Proof envelope | {proof_targets} proof targets remain implemented as bounded finite-record Lean predicates; the generated proof envelope ledger records traceability, adequacy classes, proof-depth metrics, and non-claim boundaries. Current adequacy: {proof_adequacy_summary}. No proof-envelope artifact promotes any chapter core claim above `argument`. |",
+        f"| Proof envelope | {proof_targets} proof targets are registered: {implemented_proof_targets} implemented as bounded finite-record Lean predicates and {planned_proof_targets} planned without a claimed theorem. The generated proof envelope ledger records traceability, adequacy classes, proof-depth metrics, and non-claim boundaries. Current adequacy: {proof_adequacy_summary}. No proof-envelope artifact promotes any chapter core claim above `argument`. |",
         "`proofs/proof_manifest.json`",
         "`docs/proof_envelope_status_ledger.md`",
         "`docs/proof_artifact_audit.md`",

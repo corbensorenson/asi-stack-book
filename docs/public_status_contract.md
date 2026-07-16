@@ -60,8 +60,12 @@ terminal machine state in
 `roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json`,
 and exact no-public-release authority in
 `release_records/2026-07-14-post-v2-3-handoff-reader-formats-evidence-renewal-no-public-release.json`.
-No successor roadmap is active, and all 54 chapter-core claims remain at
-`argument`. Later
+`docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md` is the active canonical successor roadmap, with machine authority in
+`roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json`. It
+changes no evidence state or release; all 54 chapter-core claims remain at
+`argument` in the frozen activation receipt. The live manifest now has 55/55
+chapter-core claims at `argument` after the authorized cognitive-substrate
+insertion. Later
 root or `/latest/` commits remain mutable and are not part of the immutable
 v2.3.0 tag unless they exactly match that tagged release.
 

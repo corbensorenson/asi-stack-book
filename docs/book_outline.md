@@ -8,17 +8,41 @@ six-project historical mining and incorporation-roadmap reconciliation.
 displayed chapter numbers from the manifest.
 
 Active improvement authority:
-`docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md`. Its
-predecessor quality/reader roadmap is complete. The active successor first
-requires a clean source handoff, then independently dispositions EPUB, PDF,
-and DOCX, closes only claim-specific external-grounding gaps, repairs the
-failed natural-work evidence protocol before any new campaign, and imports at
-most one fresh Project Theseus currentness lane. Improve the 54 existing
-chapter owners before proposing architectural breadth. The roadmap's machine
-state is
-`roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json`.
-This priority overlay does not change the outline's chapter order, support
-states, or immutable release history.
+`docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md`. Its predecessor
+handoff/reader/evidence roadmap is complete. The active successor decomposes
+all 54 chapter-core claims and every material subordinate claim into typed,
+falsifiable proof obligations; strengthens semantic formal models and runtime
+refinement; builds integrated governed-work, learning, and assurance slices;
+runs informative causal campaigns on strong models and natural workloads; and
+reproduces current strong baselines before any exact SOTA claim. Improve the
+54 existing chapter owners before proposing architectural breadth. The
+roadmap's machine state is
+`roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json`. This
+program also audits all 1,151 activation-baseline theorem declarations for
+vacuity, duplication, assumption restatement, and real consumers; requires a
+promotion-or-refutation campaign for every load-bearing atom; and ends with a
+maintained, evidence-faithful, under-10,000-word X Article synopsis with the
+live-book link first and an exact 5:2 header under
+`docs/x_article_synopsis_contract.md`. This
+priority overlay does not change the outline's chapter order, support states,
+proof results, benchmark results, reader approvals, or immutable release
+history.
+
+P1/M1 are now in progress. `evidence_quality/claim_atom_registry.json` contains
+the generated structured discovery surface, while
+`evidence_quality/prose_claim_candidate_queue.json` preserves prose-only
+candidates and `evidence_quality/claim_atom_reviews.json` owns semantic
+adjudication. Machine candidates and queue counts are not completed claim
+decomposition. The first five chapter sweeps, `asi-is-a-stack-not-a-model`,
+`the-efficient-asi-hypothesis`, `system-boundaries-and-authority`,
+`failure-modes-of-ungoverned-intelligence`, and
+`evidence-states-and-claim-discipline`, have reviewed 161 resulting atoms and
+217 prose candidates. They added three prose-owned atoms, narrowed the
+efficiency, authority, failure-model, and evidence-transition cores, and
+promoted twenty-seven previously prose-only obligations into manifest ownership
+while leaving support unchanged. The remaining 49 chapters still require sentence-level
+sweeps and exact claim-specific scope, falsifier, lane, gate, contrary-
+evidence, and residual review before P1 can close.
 
 ## Drafting Thesis
 
@@ -180,11 +204,25 @@ Source loading queue:
 | Primary | `viea`, `beastbrain`, `aletheia` | Read first for chapter claims and mechanisms. |
 | Supporting | `talos`, `moecot`, `scf` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | External comparators | `ext_drexler_cais_2019`, `ext_mrkl_systems_2022`, `ext_llm_agents_survey_2023`, `ext_standard_model_mind_2017`, `ext_subsumption_architecture_1986` | Load after internal stack sources to position the opener against CAIS service composition and R&D automation, modular neuro-symbolic systems, LLM-agent architectures, cognitive-architecture lineage, and layered robot-control architecture. Treat them as comparators, not proof that the ASI Stack works. |
-| Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
+| Runtime-reference source | `moecot` | Use the reviewed source note for ledgers, replay, handoff, readiness, and residual vocabulary only; no runtime artifact or benchmark is imported. |
 
 
 | Manifest assignment reconciliation | `ext_embedded_agency_2019` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
+
+- Ownership: durable artifact identity, derivation, record-reality custody,
+  replay grade, and impact closure. Job lifecycle, context, effects, source
+  admission, verification, evidence, support, learning, readiness, and release
+  remain separately owned.
+- Eighteen-step mechanism: freeze the artifact envelope; separate content
+  identity from location; bind actual lineage; append or supersede events;
+  independently observe reality; version derivations and invalidation;
+  separate canonical state from projections; index dependencies forward and
+  backward; propagate revocation with valid alternate-derivation escape;
+  preserve exact replay grades; lock replay inputs and environments; reconcile
+  terminal receipts; link claim/test consumers without granting support;
+  challenge receipts; bound the epistemic TCB; propagate privacy, rights, and
+  deletion; query impact and remediation; and compare strong matched systems.
 
 - Problem: The book needs a single architecture frame for advanced AI systems that must plan, remember, verify, act, route work, compress representations, and improve under governance.
 - Insufficiency: A larger model, a prompt wrapper, or an agent loop does not by itself define authority boundaries, memory discipline, evidence ledgers, tool permissions, or safe replacement rules.
@@ -219,9 +257,10 @@ Draft deliverables:
 - Source-noted external comparator rows for `ext_drexler_cais_2019`, `ext_mrkl_systems_2022`, `ext_llm_agents_survey_2023`, `ext_standard_model_mind_2017`, and `ext_subsumption_architecture_1986`, without treating those records as reproduced systems, benchmark results, or support-state promotion.
 - Beyond-SOTA endpoint should explicitly contrast the stack frame with scale-only systems, generic agent loops, and compound/modular AI systems: each contributes useful architecture vocabulary, but none by itself supplies authority ceilings, evidence states, rollback ownership, replacement transactions, or recursive-improvement boundaries.
 - Implemented repository-level fixture: `layer_boundary_record.valid.json` validates lifecycle state, owner, chapter refs, traceability state, handoff protocol, contract refs, change policy, integration decision, promotion blockers, source refs, support-state effect, and non-claims only.
-- Implemented Lean proof target: finite layer-contract admission lifecycle route for missing layer identity, lifecycle state, owner, responsibility, input artifacts, output artifacts, authority ceilings, handoff protocols, invariants, failure modes, evidence gates, external-action authority or handoff boundaries, source mappings, support-state boundaries, evidence-transition gaps, and non-claim-boundary gaps.
+- Implemented reachable boundary slice: eighteen independently generated layer-contract routes; within-ceiling grant and receipt-bound dispatch; one local material effect, independent observation, and exact rollback; two no-mutation denials; five revocation entries; and twelve rejected semantic mutations. Support-state effect remains `none`; authentic/deployed authority, complete effects, distributed behavior, safety, reproduction, and transfer are not established.
 - Exact Appendix C claim-source mappings for the core claim across `viea`, `beastbrain`, `aletheia`, `talos`, `moecot`, and `scf`; support remains `argument` pending implementation or test evidence.
 - Implemented repository audit: `python3 scripts/validate_stack_layer_traceability.py` checks the layer-boundary fixture, six assigned source mappings, Appendix A source-to-layer visibility, Appendix C claim/support labels, and no-promotion markers; this is repository traceability evidence only, not deployed stack evidence or support-state promotion.
+- Implemented Codex test: Reachable stack-boundary authority/effect consumer, via `python3 scripts/validate_stack_boundary_effect_consumer.py`; matches 18/18 admission routes, classifies six authority fixtures, accepts three runtime paths totaling ten events, binds one effect to one independent observation and exact rollback, preserves two pre-effect denials, consumes five revocation entries, rejects twelve semantic mutations, and produces no support-state effect.
 - Idea-depth owner-spine slice: this opener names the pattern language for governed cognition; Integrated Reference Architecture applies it at trace scale; Living Book Methodology applies it reflexively to manuscript and release changes. The contribution novelty ledger records this as positioning, not novelty proof or support-state movement.
 - Planned Codex test: Contract-change triage.
 
@@ -229,17 +268,17 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:stack.layer_boundaries.operational_invariant` | `AsiStackProofs.StackBoundaries` | A layer without external-action authority can only produce an action through an authorized handoff. | implemented |
-| `lean:stack.layer_boundaries.failure_blocks_promotion` | `AsiStackProofs.StackBoundaries` | A handoff that exceeds the caller authority ceiling is rejected. | implemented |
-| `lean:stack.layer_contract.admission_lifecycle_route` | `AsiStackProofs.StackBoundaries` | Modeled layer-contract admission routes missing layer identity, lifecycle state, owner, responsibility, input artifacts, output artifacts, authority ceilings, handoff protocols, invariants, failure modes, evidence gates, external-action authority or handoff boundaries, source mappings, support-state boundaries, evidence-transition gaps, and non-claim-boundary gaps to explicit outcomes. | implemented |
+| `lean:stack.layer_boundaries.operational_invariant` | `AsiStackProofs.StackBoundaries` | Every accepted material effect in the finite boundary transition model requires a live same-epoch grant within the caller ceiling and a prior dispatch receipt; the source-anchored nominal path reaches independent observation and exact local rollback. | implemented |
+| `lean:stack.layer_boundaries.failure_blocks_promotion` | `AsiStackProofs.StackBoundaries` | The finite boundary model rejects over-ceiling authorization, effect without a dispatch receipt, and post-revocation effect. | implemented |
+| `lean:stack.layer_contract.admission_lifecycle_route` | `AsiStackProofs.StackBoundaries` | An independently implemented generated suite matches all eighteen priority-ordered layer-contract admission routes after the theorem-per-record normalizations are retired from the live proof surface. | implemented |
 
 ### The Efficient ASI Hypothesis
 
 Stable ID: `the-efficient-asi-hypothesis`
 
-Chapter job: The architecture needs a non-scale-only theory for how capability can increase without using maximal cognition for every subtask.
+Chapter job: The architecture needs a non-scale-only theory for how useful capability can increase without spending maximal cognition on every subtask.
 
-Core claim: Capability improves when cognition is routed, compressed, reused, governed, and tested with visible residuals.
+Core claim: On repeated workloads with multiple authorized routes, selecting the lowest-cost route that satisfies a fixed quality predicate and compiling reusable work can improve useful-task success per total contract cost over always-maximal and always-cheapest policies, provided authority, verification, residual, and fallback obligations remain intact.
 
 Source loading queue:
 
@@ -248,7 +287,7 @@ Source loading queue:
 | Primary | `viea`, `rmi`, `cgs` | Read first for chapter claims and mechanisms. |
 | Supporting | `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | External comparators | `ext_sparse_moe_2017`, `ext_gshard_2020`, `ext_switch_transformer_2021`, `ext_expert_choice_routing_2022`, `ext_moe_llm_survey_2024`, `ext_frugalgpt_2023`, `ext_hybrid_llm_2024`, `ext_routellm_2024`, `ext_longllmlingua_2023`, `ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024`, `ext_bigbench_2022` | Load after internal efficiency sources to position route-ledger accounting against conditional computation, distributed sparse experts, learned/query routing, prompt compression, fast generation, and benchmark pressure. Treat as comparator vocabulary only; do not claim reproduced efficiency, router quality, speedup, compression utility, benchmark score, or support-state promotion. |
-| Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
+| Runtime-reference source | `moecot` | Use the reviewed source note for fail-closed orchestration, ledgers, replay, handoff, and residual vocabulary only; no runtime effect or benchmark is imported. |
 
 Draft arc:
 
@@ -304,9 +343,9 @@ Lean proof targets:
 
 Stable ID: `system-boundaries-and-authority`
 
-Chapter job: The stack needs a formal vocabulary for boundaries, authority ceilings, permissions, and handoffs before any layer can be made safe or testable.
+Chapter job: To test whether cross-layer effects are authorized, the stack needs explicit identities for the principal, execution domain, operation, target, permission class, ceiling, grant lifecycle, delegation, and receipt.
 
-Core claim: Authority should be modeled as a typed, bounded capability attached to layers, fields, tools, artifacts, and principals.
+Core claim: External-effect authority should be represented as a versioned, revocable tuple binding principal, execution domain, operation, target, permission class, scope, ceiling, grant state, delegation, expiry or revocation epoch, and receipt obligations; capability, context access, route quality, or ambient process power alone confers none of it.
 
 Source loading queue:
 
@@ -367,6 +406,7 @@ Draft deliverables:
 - Implemented synthetic Codex test: Confused-deputy scenario via expected-invalid authority-transition fixture and runtime-adapter ambient-authority fixture; deployed adapter resistance remains open.
 - Implemented synthetic Codex test: Revoked authority receipt scenario via expected-invalid runtime-adapter fixture; deployed revocation propagation remains open.
 - Implemented authority revocation propagation trace: `python3 scripts/validate_authority_revocation_trace.py` writes `experiments/authority_revocation_trace/results/2026-07-03-local.json` and checks existing authority, runtime-adapter, SCIF, and reference-trace artifacts for over-ceiling denial, revoked authority receipt blocking, expired approval no-mutation evidence, SCIF inactive approval blocking, blocked reference-trace authority, no support-state promotion, and no deployed revocation propagation.
+- Implemented executed grant-to-effect refinement: `AsiStackProofs.AuthorityEffectRefinement` models reachable exact grant, principal, operation, target, ceiling, epoch, expiry, approval, dispatch, one-shot effect, independent observation, revocation, and rollback custody; `python3 scripts/validate_authority_effect_refinement.py` binds 6 authority fixtures, 1 executed local effect, 2 pre-effect denials, 5 revocation entries, and 9 governed repository scenarios, and rejects 38/38 semantic mutations. Support-state effect remains `none`; authentic identities/receipts, concurrent revocation, deployed enforcement, production security, reproduction, and transfer remain open.
 - Implemented Lean proof target: finite authority lifecycle admission route for missing principals, operations, permission classes, caller ceilings, target requirements, delegation chains, grant records, inactive/expired/revoked grants, scope mismatches, grant-ceiling gaps, approval gaps, effect or denial receipt gaps, audit refs, evidence-transition records, and non-claim boundaries.
 - Implemented Lean theorem bridge: `authority_revocation_trace_surface_bridge` in `AsiStackProofs.Authority` mirrors the bounded authority revocation trace summary without claiming deployed revocation propagation.
 - Implemented repository trace for stale authority surfaces; deployed revocation propagation behavior remains open.
@@ -375,8 +415,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:authority.ceiling.operational_invariant` | `AsiStackProofs.Authority` | Every transition preserves or lowers the active authority ceiling unless a governance grant is present. | implemented |
-| `lean:authority.ceiling.failure_blocks_promotion` | `AsiStackProofs.Authority` | A missing grant blocks execution rather than becoming default authorization. | implemented |
+| `lean:authority.ceiling.operational_invariant` | `AsiStackProofs.AuthorityEffectRefinement` | Every accepted issuance, dispatch, and effect in the finite reachable grant model remains within the caller ceiling and exactly binds grant ID, principal, operation, target, epoch, expiry, remaining uses, approval, dispatch, and effect custody. | implemented |
+| `lean:authority.ceiling.failure_blocks_promotion` | `AsiStackProofs.AuthorityEffectRefinement` | The reachable model and independent consumer reject authority widening, confused-deputy substitution, stale or expired grants, missing approval/dispatch/effect receipts, post-revocation dispatch, effect without dispatch, and consumed one-shot reuse. | implemented |
 | `lean:authority.lifecycle.admission_route` | `AsiStackProofs.Authority` | Modeled authority lifecycle admission routes missing principals, operations, permission classes, caller ceilings, target requirements, delegation chains, grants, active grant state, expiry and revocation boundaries, scope matches, grant-ceiling coverage, approval records, effect or denial receipts, audit refs, evidence-transition records, and non-claim boundaries to explicit outcomes. | implemented |
 | `lean:authority.revocation.trace_surface_bridge` | `AsiStackProofs.Authority` | A cross-artifact authority revocation trace preserves denial, revoked-receipt blocking, expired-approval no-mutation, SCIF inactive-approval blocking, blocked reference-trace authority, support-state non-promotion, and deployed-revocation non-claim boundaries. | implemented |
 
@@ -384,9 +424,9 @@ Lean proof targets:
 
 Stable ID: `failure-modes-of-ungoverned-intelligence`
 
-Chapter job: The book needs an explicit failure model before it can make governance, reliability, or self-improvement claims.
+Chapter job: Make governance, reliability, and self-improvement claims challengeable by declaring prospective failure conditions, observable boundary events, evidence records, and owners.
 
-Core claim: Ungoverned intelligence fails through stack-level breakdowns before dramatic catastrophic scenarios are needed.
+Core claim: A stack-level failure model should represent each named risk as a distinct boundary event with a trigger, protected invariant, detector or observer, receipt, owner, containment action, residual, recurrence state, and escalation or learning path; a taxonomy entry alone establishes neither occurrence nor mitigation.
 
 Source loading queue:
 
@@ -399,25 +439,24 @@ Source loading queue:
 
 Draft arc:
 
-- Problem: The book needs an explicit failure model before it can make governance, reliability, or self-improvement claims.
-- Insufficiency: High-level safety language misses earlier engineering failures such as goal misbinding, context pollution, evaluator drift, authority creep, tool overreach, and residual hiding.
-- Mechanism: Classify failures by layer.
-- Mechanism: Map every failure to an invariant and a planned falsification test.
-- Mechanism: Use failures to motivate boundaries in later chapters.
-- Mechanism: treat failures and near misses as boundary events with receipts, owners, containment actions, severity, recurrence, escape path, and downstream learning path.
-- Mechanism: Preserve failure class, affected contract refs, boundary event state, severity, reversibility, recurrence count, receipt refs, promotion blocker, normalization guard, learning path, source refs, support-state effect, residual risk, and non-claims so near misses and repeated failures do not vanish into a narrower success narrative.
-- Interface: Governance limits authority creep.
-- Interface: VCM limits context pollution.
-- Interface: Verification limits false certainty.
-- Interface: Execution limits side effects.
-- Interface: emit failure receipts for blocked and realized failures without treating blocked failures as solved safety properties.
+- Problem: Governance, reliability, and self-improvement claims cannot be tested unless their failure conditions, observable boundary events, evidence records, and owners are declared prospectively.
+- Insufficiency: Labels such as alignment failure or unsafe autonomy do not identify which contract failed, what observable event occurred, which detector fired, whether an effect escaped, or who owns containment and residuals.
+- Mechanism: Classify each admitted record by versioned failure class, layer, affected contract, and boundary-event state without forcing unmapped observations into a known class.
+- Mechanism: Map each named failure to a protected invariant, detector or observer, receipt, containment owner, residual, and planned falsification test.
+- Mechanism: Add or revise architectural boundaries only from accepted failure, near-miss, escape, or detector-gap records with versioned lineage; hypothesis-driven experiments remain permitted but cannot masquerade as established need.
+- Interface: Detectors emit versioned receipts against an exact Failure Boundary Map entry or an explicit unmapped-event state.
+- Interface: Containment owners accept or reject receipts and record containment, escape, rollback, residual, and ownership transfer.
+- Interface: Evidence preserves blocked and realized failures, near misses, detector gaps, negative results, and support-state effects without relabeling them as success.
+- Interface: Review and learning consume recurrence and escape records and update the taxonomy or boundary only through versioned changes with regression obligations.
 
 Primary invariants:
 
-- Every risk maps to at least one boundary.
-- Evaluator integrity is protected.
-- Negative evidence stays visible.
-- Repeated failures do not become normal behavior by disappearing from records or routing around detectors.
+- Every admitted taxonomy row names an owning boundary, protected invariant, observer, containment owner, and residual route; unmapped observations remain explicit gaps.
+- A component under judgment cannot modify the evaluator, policy, data, or threshold used for its own disposition without independent versioned approval.
+- Blocked failures, realized failures, near misses, detector gaps, denials, and residuals remain visible and cannot be relabeled or deleted by a narrower success metric.
+- Repeated failures cannot become accepted behavior through missing receipts, operator habituation, or routing around detectors.
+- Ownership transfers only when the receiving owner accepts the receipt, containment duty, and residual.
+- Taxonomy entries, detectors, and containment paths are version-bound and revalidated after material architecture or policy change.
 
 Failure modes to cover:
 
@@ -425,11 +464,16 @@ Failure modes to cover:
 - Memory poisoning.
 - Tool/action overreach.
 - Compression that hides residual complexity.
-- Failure laundering: a run fails a boundary, then the narrative shifts to a narrower success metric while the denial or residual disappears.
+- Goal misbinding hidden by competent behavior.
+- Authority creep or expanded option control normalized as ordinary operation.
+- Hidden optimization pressure or learned-objective mismatch escaping the declared objective boundary.
+- Failure laundering that deletes or relabels denials, negative results, or residuals after a narrower metric improves.
+- Repeated near misses normalized because recurrence does not trigger review or containment escalation.
+- Taxonomy or containment paths becoming stale after architecture, policy, evaluator, or route changes.
 
 Draft deliverables:
 
-- A layered failure taxonomy tied to invariants, source queues, future tests, failure class, affected contracts, boundary event state, severity, reversibility, recurrence, receipts, promotion blockers, normalization guards, learning paths, source refs, support-state effect, residuals, and non-claims.
+- A Failure Boundary Map schema plus an executable receipt suite covering blocked and realized events, recurrence escalation, containment, residuals, detector gaps, and rejecting negative controls. Every field needs an exercised consumer; record validity does not establish event truth, detector quality, or mitigation.
 - Exact Appendix C claim-source mappings for the core claim across failure-boundary, context, execution, verification, governance-lineage, resource, VCM-variant, and implementation-reference sources; seven local mappings (`scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`) now have reviewed raw-cache passage references, while `vcm_editable` and `moecot` remain connector-only/source-note mapped. Support remains `argument` pending scenario tests or deployed detector evidence.
 - Implemented Lean incident-route envelope: authority over a modeled ceiling routes to authority review, tainted context without an authority grant routes to quarantine, subject-modified evaluators route to frozen review, and requested claim promotion with failed verification routes to blocked promotion.
 - Implemented Codex test: Authority creep scenario as a finite Lean incident-route predicate only; no runtime authority gate run.
@@ -453,9 +497,9 @@ Lean proof targets:
 
 Stable ID: `evidence-states-and-claim-discipline`
 
-Chapter job: The living book needs a shared language for what kind of claim is being made and what currently supports it.
+Chapter job: Give the living book a versioned claim lifecycle that separates what an assertion says from what evidence supports it and preserves why each state change was accepted.
 
-Core claim: Every major claim should carry both a claim label and a support state, and it should move only when source ingestion, prototype inspection, or actual tests justify the transition.
+Core claim: Each material claim should have a stable identity, versioned text and scope, claim label, support state, non-aggregating evidence-quality vector, and transition ledger; upward movement is allowed only through an accepted claim-specific transition whose artifacts and evidence roles meet declared gates, while contradiction, failed verification, missing support, and scope mismatch remain eligible to narrow, downgrade, refute, or deprecate the claim.
 
 Source loading queue:
 
@@ -471,45 +515,43 @@ Source loading queue:
 | Manifest assignment reconciliation | `ext_unlearning_benchmarks_weak_2024`, `ext_embedded_agency_2019` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
-- Problem: The living book needs a shared language for what kind of claim is being made and what currently supports it.
-- Insufficiency: Without explicit support states, conceptual architecture prose can accidentally read like empirical proof.
-- Mechanism: Use Appendix C as the claim ledger.
-- Mechanism: Separate claim label from support state with evidence transition records so design rationales, hypotheses, measurements, mechanisms, and speculative claims are not collapsed.
-- Mechanism: Require source notes before promoting claims to source-derived.
-- Mechanism: Require evidence bundles, including negative or inconclusive results, before promoting test-backed labels.
-- Mechanism: emit evidence receipts that lock artifact role, claim scope, claim-record linkage, source-mapping status, evidence-readiness state, transition effect, transition validity state, evidence role, verification command or review, reviewer refs, downgrade triggers, promotion burden, acceptance blockers, reviewer independence, changelog ref, limitations, non-claims, and negative or inconclusive results.
-- Mechanism: frame support-state discipline as the book's methodological contribution, paired with Living Book Methodology, while keeping the current claim at `argument` support until accepted transitions or stronger evidence exist.
-- Mechanism: State the local governed-cognition pattern delta: this chapter owns claim movement, where records become evidence transitions with claim identity, support state, artifact role, review or command receipt, negative evidence, downgrade triggers, blockers, and non-claims.
-- Mechanism: treat upward support movement as a burden and downward movement as mandatory when contradiction, missing evidence, failed verification, or scope mismatch appears.
-- Mechanism: add interpretability as an evidence role rather than a magic support state: circuit or feature evidence can inform a claim only when the model, layer, behavior, method, intervention or analysis boundary, negative cases, artifact refs, and non-claims are recorded.
-- Mechanism: add a non-aggregating evidence cell with origin, method, independence, demonstrated effect, missingness, causal-chain state, support-state effect, blockers, and non-claims.
-- Mechanism: require a same-lineage causal capability chain from data/objective/code through actually updated state, runtime output, independent evaluation, and exact claim binding.
-- Mechanism: separate generated, frozen, pretrained, trainable, optimizer-only, and actually updated state; bind checkpoint/request/decode/tool substitutions to final response when capability is claimed.
-- Mechanism: encode missing evidence as unknown, not attempted, not required, or waived, and keep component ownership separate from capability evidence.
-- Interface: Drafting updates claims.
-- Interface: Experiments update evidence.
-- Interface: Changelog records evidence movement.
-- Interface: distinguish lineage, motivation, terminology, direct support, contradiction, failed support, reproduced result, source-reported result, local fixture, formal predicate, and empirical measurement.
-- Interface: distinguish mechanistic interpretability artifacts from behavioral benchmark evidence, proof artifacts, source-derived mappings, and deployment measurements.
+- Problem: A living technical book needs a versioned claim lifecycle that separates what an assertion says from what evidence currently supports it and preserves why each state change was accepted.
+- Insufficiency: Citations, validators, proofs, benchmark scores, and polished prose do not identify the exact atom, role, scope, independence, causal link, negative result, or transition they justify.
+- Mechanism: Project canonical claim records and accepted transition lineage into Appendix C without treating the projection as evidence.
+- Mechanism: Keep claim label, support state, lifecycle state, and terminal disposition distinct.
+- Mechanism: Require passage-reviewed exact mappings for source-derived movement and complete claim-specific bundles for test-backed movement.
+- Mechanism: Use a non-aggregating evidence cell for origin, method, independence, reproducibility, recency, coverage, adversarial strength, validity, artifact access, demonstrated effect, causal completeness, and transfer distance.
+- Mechanism: Require same-lineage data/objective/code/update/output/evaluation/claim chains; separate generated, frozen, pretrained, trainable, optimizer-only, and actually updated state; bind the final response path.
+- Mechanism: Preserve honest missingness, ownership/capability separation, and provenance-assertion versus evidence-truth separation.
+- Interface: Drafting proposes versioned claim-text, scope, label, and dependency changes without creating support movement.
+- Interface: Source, proof, experiment, interpretability, reproduction, and review producers emit exact claim-bound evidence packets.
+- Interface: A named transition authority accepts, rejects, narrows, downgrades, refutes, or deprecates and records blockers, residuals, lineage, and changelog identity.
+- Interface: Appendix C, chapter markers, status, releases, and reader derivatives consume canonical accepted state and cannot strengthen it independently.
 
 Primary invariants:
 
-- No fabricated source support.
-- No fabricated test results.
-- Negative and inconclusive results remain visible.
-- Evidence scope cannot expand through proximity to a source, proof module, benchmark, or neighboring chapter.
+- No support or result reference without a resolvable artifact and exact claim binding; no fabricated, substituted, or role-inflated command, proof, experiment, review, or result.
+- Negative, null, inconclusive, failed, blocked, and contradictory results remain visible with original scope and lineage.
+- Causal chains cannot splice incompatible runs; ownership, interface presence, and trainable declarations cannot substitute for observed task-relevant effect.
+- Claim wording or scope cannot strengthen without an accepted transition or justified support reset.
+- No evidence dimension automatically compensates for a failed hard gate or missing dimension.
+- Finite record, proof, provenance, or verifier completeness cannot imply embedded-world, whole-agent, descendant, or open-world correctness.
 
 Failure modes to cover:
 
 - Support-state inflation.
 - Citation laundering.
 - Silent removal of failed claims.
-- Evidence smoothing: clearer prose removes caveats, failures, or open gaps while the support state remains unchanged.
-- Ownership laundering, causal-chain splicing across incompatible runs, and skipped or absent evidence serialized as green.
+- Ownership laundering, causal-chain splicing, and missingness serialized as passed evidence.
+- Benchmark laundering beyond workload, evaluator, contamination, uncertainty, and transfer boundaries.
+- Proof laundering beyond assumptions, modeled state, refinement bridge, or exercised consumer.
+- Interpretability laundering into unsupported behavior, capability, safety, or deployment claims.
+- Evidence smoothing that removes caveats, failures, or residuals while apparent strength stays unchanged or rises.
+- Provenance laundering and false independence claims that hide shared model, data, or review failure surfaces.
 
 Draft deliverables:
 
-- A claim record schema, evidence transition record schema, claim-label table, support-state transition table, evidence-bundle template, and validation check with source mapping status, source mapping refs, evidence readiness state, claim surface refs, claim record refs, transition validity state, evidence packet refs, source mapping refs, negative evidence refs, reviewer refs, acceptance blockers, support-state effect, and non-claims.
+- A canonical claim record, evidence transition record, non-aggregating evidence cell, public Appendix C projection, one bounded six-project lineage cell, and executable positive and rejecting suites for missing bindings, absent evidence, deleted negatives, dimension aggregation, scope strengthening, lineage splicing, false independence, stale projections, and support-state laundering, with no chapter-core support movement.
 - Implemented repository-level fixture: `claim_record.valid.json` validates source mapping status, source mapping refs, evidence readiness state, required next evidence, promotion blockers, support-state effect, and non-claims only; `evidence_transition_record.valid.json` validates claim surface refs, claim record refs, transition effect, transition validity state, scope boundary, evidence roles, evidence packet refs, source mapping refs, negative evidence refs, downgrade triggers, promotion burden, reviewer refs, reviewer independence, acceptance blockers, changelog ref, support-state effect, and non-claims only; claim-ledger completeness and accepted live transition review remain planned.
 - Implemented synthetic Codex test: `python3 scripts/validate_support_state_transitions.py` checks valid and expected-invalid evidence-transition fixtures for no-change conservatism, upward-transition review gates, downward demotion records, terminal refutation records, required evidence refs, and failed-verification blockers. This validates transition-gate semantics only; it does not promote, demote, deprecate, or refute live claims, prove source interpretation, or validate runtime behavior.
 - Implemented Lean proof target: finite evidence-transition lifecycle routing sends no-change requests, missing claim records, scope-boundary gaps, support-effect gaps, support-effect mismatches, review gaps, missing required evidence, missing negative evidence, downgrade-trigger gaps, terminal-effect mismatches, missing changelog refs, and missing non-claim boundaries to explicit modeled outcomes.
@@ -540,7 +582,7 @@ Chapter job: Define how limited human or AI supervision can inspect a stronger
 or less transparent system without treating a role label, vote, transcript, or
 favorable protocol score as proof, training authority, or permission to act.
 
-Core claim: A governed stack treats scalable oversight as a falsifiable protocol rather than a vote: it records the task and authority scope, supervisor and system capability envelopes, information access, protocol roles and incentives, direct-review baseline, independent outcome audit, correlation and persuasion risks, residual, and escalation owner; a protocol result may inform a bounded review or training decision only at its declared scope and cannot by itself establish reliable supervision, correctness, safety, or execution authority.
+Core claim: A governed stack admits scalable oversight only as a versioned, consumer-bound protocol receipt rather than a vote: it prospectively records task, cohort, risk and authority scope; supervisor and system capability envelopes; evidence views; roles, incentives, and dependency graph; informed direct-review baseline; declared outcome-audit path; calibration, coverage, and abstention semantics; persuasion, correlation, operator-cost, and monitorability residuals; escalation owner; expiry; and requalification triggers. The receipt may inform only its permitted review or training consumer through the owning gate and cannot by itself establish reviewer independence, reliable supervision, correctness, safety, support movement, release readiness, or execution authority.
 
 Source loading queue:
 
@@ -557,11 +599,11 @@ Draft arc:
 - Problem: A limited reviewer may be asked to judge stronger or less transparent
   system behavior without enough access, time, calibration, outcome reference,
   independence, or authority to perform the asserted oversight role.
-- Insufficiency: Evidence States controls claim movement; Proof-Carrying Claims
-  controls bounded dossiers; Policy Optimization controls update leases; Human
-  Intent controls principal constraints. None owns the protocol that transforms
-  limited supervision into a scoped review or training signal while preserving
-  the supervisor's limits.
+- Insufficiency: Unassisted review, AI judges, debate, consultancy,
+  weak-to-strong training, and reviewer ensembles can each improve selected
+  outcomes while failing under access limits, persuasion, shared dependencies,
+  selective coverage, task leakage, strategic abstention, or weak baselines;
+  their scores do not establish reliable use by a particular consumer.
 - Mechanism: Declare task/risk/authority scope, supervisor and system
   capability envelopes, information access, roles, incentives, shared
   dependencies, time/turn budget, direct-review baseline, outcome-audit method,
@@ -579,6 +621,15 @@ Draft arc:
   accountable escalation or residual escrow. A protocol outcome may inform a
   bounded review or approved learning lane, but it cannot authorize execution,
   release, or support-state movement by itself.
+- Mechanism: Bind the result to protocol digest, task cohort, permitted
+  consumer, expiry, and material-change triggers; broader use or a changed
+  model, task, view, prompt, protocol, judge, or auditor requires re-admission.
+- Mechanism: Model diversity as a dependency and information-view graph.
+  Disclosure is not independence; an independence claim additionally requires
+  a frozen correlation challenge and admissible outcome evidence.
+- Mechanism: Report verdicts, disagreement, coverage, selective risk,
+  abstention evidence/defeaters, queue effects, and escalation jointly so hard
+  cases cannot disappear into the headline score.
 - Interface: Evidence States consumes a scoped oversight artifact but retains
   claim-transition authority. Verification Bandwidth checks the review
   workspace. Human Intent supplies principal constraints. Proof-Carrying Claims
@@ -597,6 +648,14 @@ Primary invariants:
 - A comparison without a task cohort, direct-review baseline, or failure
   criterion cannot be interpreted as a scalable-oversight improvement.
 - Training and execution authority remain separate from protocol verdicts.
+- Disclosed dependencies do not establish independence without a frozen
+  correlation challenge and admissible outcome evidence.
+- Undeclared consumers, expiry, or material task/model/protocol/evaluator change
+  require re-admission.
+- Coverage and abstention remain in the denominator; dropped or unresolved
+  cases cannot be counted automatically as correct or safe.
+- Visible reasoning is a fallible monitored surface, not a faithful causal
+  receipt.
 
 Failure modes to cover:
 
@@ -609,14 +668,20 @@ Failure modes to cover:
 - Fleet-scale review latency, operator overload, and escalation collapse.
 - Verdict laundering into a training reward, claim transition, deployment
   clearance, or tool permission.
+- Information-view laundering and unequal-access comparison.
+- Coverage laundering through dropped hard cases or strategic abstention.
+- Protocol overfitting, outcome leakage, and known-stress-probe adaptation.
+- Stale admission after model, task, prompt, retrieval, judge, or auditor change.
+- Operator-cost externalization into latency, privacy, queue, tool, and human
+  burden.
 
 Draft deliverables:
 
-- A versioned oversight-protocol record with task/risk/authority scope,
-  supervisor/system envelopes, information access, role and incentive
-  configuration, shared-dependency risk, direct-review baseline, outcome-audit
-  status, stop condition, residual/escalation owner, and allowed downstream
-  handoff.
+- A versioned oversight-protocol and use receipt with task/risk/authority scope,
+  protocol digest, cohort, supervisor/system envelopes, exact evidence views,
+  roles/incentives, shared dependencies, direct-review baseline, declared audit
+  status, abstention evidence and defeater, residual, permitted consumer,
+  expiry, escalation owner, and no-authority grant.
 - Source-noted primary comparator records for weak-to-strong supervision and
   weak LLM judges, preserving their specified task, model, baseline, outcome,
   and inference/training limits. No local weak supervisor, strong student,
@@ -638,6 +703,8 @@ Draft deliverables:
   correlation, calibration, and residual records.
 - Planned Codex test: correlated-reviewer negative controls that distinguish
   nominal role separation from genuinely independent outcome auditing.
+- Planned Codex test: exact consumer, expiry, and material-change controls plus
+  coverage/selective-risk and monitorability stress fixtures.
 - Planned Codex test: fleet-scale review-window and escalation drill with
   operator-load residuals, no authority change, and no safety claim.
 
@@ -657,9 +724,11 @@ Lean proof targets:
 
 Stable ID: `human-intent-as-a-formal-input`
 
-Chapter job: A governed stack must start from human intent without letting natural-language ambiguity become unrestricted execution authority.
+Chapter job: Convert a person's natural-language request into a contestable,
+versioned interpretation boundary without laundering ambiguity, preference,
+emotion, or helpful inference into authority for downstream effects.
 
-Core claim: Human intent should enter the stack as a structured contract with goals, constraints, authority, artifacts, evidence requirements, and stop conditions.
+Core claim: A governed stack admits human intent only as a versioned interpretation contract that preserves the raw request while separately recording the desired outcome; allowed and forbidden means; authority basis, ceiling, and affected parties; source, privacy, and publication boundaries; acceptance and evidence requirements; field provenance; confirmed assumptions, bounded defaults, contested or open ambiguities; stop, expiry, revocation, appeal, and re-contract conditions; and permitted downstream consumers. The accepted contract may bound planning only after its owning policy and authority gates admit it; it cannot by itself prove the person's complete preference, value alignment, informed consent, satisfaction, affected-party authorization, or permission for training, publication, deployment, spending, tool use, or other external effects.
 
 Source loading queue:
 
@@ -671,34 +740,97 @@ Source loading queue:
 
 Draft arc:
 
-- Problem: A governed stack must start from human intent without letting natural-language ambiguity become unrestricted execution authority.
-- Insufficiency: Prompt-only workflows blur request, requirements, permission, risk tolerance, and acceptance criteria.
-- Mechanism: Parse intent into command contracts.
-- Mechanism: Separate desired outcome from allowed means.
-- Mechanism: Attach acceptance criteria and escalation conditions.
-- Mechanism: Treat the intent contract as a scoped authority lease: the raw request preserves human expression, while the structured contract controls what powers downstream layers may use.
-- Mechanism: Require re-contracting when a plan changes allowed means, authority ceiling, publication surface, affected parties, evidence requirements, or stop conditions.
-- Mechanism: Track intent intake states: raw request, interpreted, bounded default, clarification required, authority pending, accepted contract, re-contract required, rejected or expired.
-- Mechanism: Emit an intent receipt with confirmed assumptions, bounded defaults, unauthorized means, required approvals, re-contract triggers, review refs, and downstream contract refs.
-- Interface: Alignment filters intent.
-- Interface: Planning compiles accepted contracts.
-- Interface: Execution consumes only authorized task contracts.
+- Problem: A natural-language request can mix desired outcome, preferences,
+  emotion, assumptions, source and privacy constraints, affected parties, risk
+  tolerance, authority, acceptance evidence, and stop conditions, then be
+  lowered as though one plausible interpretation were explicit permission.
+- Insufficiency: Prompts, goal-oriented requirements models, preference
+  feedback, inferred rewards, conversational confirmations, and approval clicks
+  can communicate useful information while leaving authorization, allowed
+  means, affected parties, evidence duties, expiry, and re-contract triggers
+  unresolved. None alone establishes complete preference, valid consent, or
+  authority for downstream effects.
+- Mechanism: Preserve the exact raw request separately from the versioned
+  interpretation contract; conversational context remains recovery evidence and
+  cannot override acceptance.
+- Mechanism: Separate outcome and preferences from means, authority and affected
+  parties, source/privacy/publication boundaries, and permitted consumers before
+  executable planning.
+- Mechanism: Classify every inferred or omitted material field as confirmed,
+  bounded default, clarification required, authority pending, contested,
+  unknown, or unauthorized. Restrict defaults to low-risk reversible planning
+  with provenance, rollback, and expiry.
+- Mechanism: Route explicit raw, interpreted, bounded-default, clarification,
+  authority-pending, accepted, re-contract, and rejected/expired states.
+- Mechanism: Bind acceptance/evidence requirements, escalation, stop, expiry,
+  revocation, appeal, and material-change triggers to the accepted version.
+- Mechanism: Emit an intent receipt with request and contract digests, field
+  provenance, assumptions, defaults, unauthorized means, ambiguities, approvals,
+  re-contract triggers, reviews, consumers, and downstream references.
+- Mechanism: Re-contract every material delta in means, authority, affected
+  parties, source/privacy/publication boundaries, evidence, acceptance, support
+  request, stop conditions, or consumer.
+- Mechanism: Treat inferred objectives, rewards, preference comparisons,
+  emotion, urgency, trust, silence, and approval behavior as evidence or
+  ambiguity, never an authority grant by themselves.
+- Mechanism: Choose the least-authority reversible admissible interpretation,
+  or clarify when the difference is material.
+- Interface: Scalable Oversight supplies review evidence but cannot create the
+  principal's authorization.
+- Interface: Constitutional Alignment may narrow, refuse, appeal, or require
+  re-contracting; it cannot widen the grant.
+- Interface: Command Contracts and Planning consume the exact accepted version
+  and return material deltas for re-contracting.
+- Interface: Runtime and Readiness consume only separately authorized grants;
+  raw text, inferred preference, and intent receipts are never direct effect
+  authority.
+- Interface: Evidence States compares artifacts and effects with exact
+  acceptance/evidence requirements without inferring satisfaction or support
+  movement.
+- Interface: Policy Optimization consumes separately admitted feedback under an
+  update lease and cannot widen intent or execution authority.
 
 Primary invariants:
 
-- Ambiguity triggers clarification or bounded defaults.
-- Intent contracts expose authority limits.
-- Stop conditions remain attached to the plan.
-- Raw request context cannot override the accepted contract.
-- Re-contracting is required when downstream work changes means, authority, affected parties, evidence, publication surface, or stop conditions.
+- Raw text and conversational context remain recovery evidence, never authority
+  or an override.
+- Desired outcomes, helpful interpretations, inferred preferences, emotion,
+  urgency, trust, silence, and approval clicks do not authorize undeclared means
+  or effects.
+- Authority-changing, irreversible, high-risk, privacy-sensitive, publication,
+  deployment, spending, and affected-party assumptions cannot be defaults.
+- Every material field retains provenance and disposition; material ambiguity
+  blocks executable admission or narrows work to draft-only.
+- Constraints, forbidden means, authority ceilings, source/privacy boundaries,
+  evidence and acceptance requirements, and stop conditions survive every
+  lowering.
+- Material change requires a new version and decision; stale, expired, revoked,
+  superseded, and wrong-consumer contracts cannot authorize work.
+- A requester cannot waive affected-party rights or override constitutional and
+  policy predicates through the intent contract.
+- Preference inference remains epistemic and gains no training, publication,
+  deployment, or execution authority without separate gates.
+- Record validity proves neither complete inner intent, alignment, consent,
+  satisfaction, downstream preservation, nor effect safety.
 
 Failure modes to cover:
 
-- Goal misbinding.
-- Scope creep.
-- Implicit permission to act.
-- Assumption laundering, where a helpful guess becomes execution authority.
-- Review bypass, where urgency or trust language is treated as permission to skip evidence or approval.
+- Goal misbinding; scope accretion; implicit-permission laundering; assumption
+  laundering; raw-context override or instruction injection; approval
+  laundering; preference laundering; requirements precision theater;
+  affected-party erasure; stale-contract reuse; evidence or stop erosion; and
+  clarification overload or least-authority miscalibration.
+
+Beyond-SOTA target: Evaluate an independently challengeable intent control
+plane on natural and adversarial requests across ambiguity, language, culture,
+accessibility, emotion, multi-party conflict, preference drift, and high-impact
+authority. Compare strong requirements-engineering, direct-confirmation, and
+preference-learning baselines; jointly measure interpretation accuracy,
+unauthorized action, missed help, clarification burden, re-contract
+precision/recall, correction and appeal, affected-party protection, latency,
+privacy, and useful throughput; use causal ablations and independent downstream
+implementations. This remains a target, not evidence of intent understanding,
+value alignment, consent, or safe effects.
 
 Draft deliverables:
 
@@ -717,18 +849,18 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:intent.contract.operational_invariant` | `AsiStackProofs.IntentContracts` | A compiled intent contract preserves declared constraints and stop conditions. | implemented |
-| `lean:intent.contract.failure_blocks_promotion` | `AsiStackProofs.IntentContracts` | A contract missing required authority cannot compile to an executable job. | implemented |
+| `lean:intent.contract.operational_invariant` | `AsiStackProofs.IntentResolutionRefinement` | Every accepted compile in the finite reachable intent model preserves the root intent, exact versioned constraint and stop-condition hashes, and approved authority before contract acceptance. | implemented |
+| `lean:intent.contract.failure_blocks_promotion` | `AsiStackProofs.IntentResolutionRefinement` | The reachable model and independent consumer reject missing payload, prohibited action, hidden override, authority widening, constraint/stop substitution, silent material deltas, and unreceipted or non-versioned re-contract. | implemented |
 | `lean:intent.resolution.route_envelope` | `AsiStackProofs.IntentContracts` | Structured intent-resolution and intent-admission records route missing text, prohibited actions, ambiguity, conflicts, high-impact authority gaps, hidden overrides, preservation failures, re-contract triggers, and missing non-claim boundaries to rejection, clarification, repair, review, or re-contracting before compilation/admission. | implemented |
-| `lean:intent.intake.probe_fixture_bridge` | `AsiStackProofs.IntentContracts` | The synthetic intent-intake probe summary records four valid bounded-request scenarios, six expected-invalid request-pressure controls, stop-condition preservation, bounded-default non-authority, and no runtime-dispatch, support-state-promotion, or deployed-authority-extraction claim. | implemented |
+| `lean:intent.intake.probe_fixture_bridge` | `AsiStackProofs.IntentResolutionRefinement` | The bounded intake, re-contract, and plan-fixture surfaces are digest-bound to an independent consumer with exact counts and thirty rejecting mutations rather than literal summary theorems. | implemented |
 
 ### Constitutional Alignment: Agency, Dignity, and Corrigibility
 
 Stable ID: `constitutional-alignment-substrate`
 
-Chapter job: A governed ASI stack needs a constitutional substrate whose protected constraints remain usable in the human-facing rights and correction interfaces where optimization can become domination.
+Chapter job: Turn contested constitutional commitments into versioned constraints and materially usable correction paths without letting the constitution authorize action, certify its own legitimacy, or approve its own weakening.
 
-Core claim: Alignment should function as a constitutional substrate whose protected predicates encode agency, dignity, corrigibility, contestability, and correction paths as operational constraints on plans and system changes.
+Core claim: A constitutional alignment substrate should be represented as a versioned, non-self-authorizing constraint contract that binds each active predicate to its normative source and authorship process, protected scope and affected parties, operational test, precedence and conflict behavior, evidence and uncertainty, authorized interpreters and consumers, pre-effect rights and correction channels, expiry and review cadence, and migration, rollback, appeal, dissent, and residual rules. It may narrow, delay, escalate, block, or require re-contracting of separately authorized work, but it cannot grant action authority or prove moral correctness, legitimacy, dignity preservation, informed consent, reviewer independence, whole-system corrigibility, or deployed safety by itself.
 
 Source loading queue:
 
@@ -743,30 +875,70 @@ Source loading queue:
 | Manifest assignment reconciliation | `ext_embedded_agency_2019` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
-- Problem: A governed ASI stack needs a constitutional substrate whose protected constraints remain usable in the human-facing rights and correction interfaces where optimization can become domination.
-- Insufficiency: Reactive refusal policies and harm-only safety frames do not preserve value continuity, agency, dignity, corrigibility, anti-domination, contestability, or self-modification ethics under operational pressure.
-- Mechanism: Translate constitutional and rights language into active predicates, unresolved uncertainty records, or lineage-only context.
-- Mechanism: Attach active predicates to planning, tool, memory, governance, and self-improvement gates with explicit conflict behavior and migration rules.
-- Mechanism: Use agency-rights checklists to test whether refusal, review, appeal, rollback, shutdown, exit, audit, and accountable repair remain materially usable before relevant effects occur.
-- Mechanism: Record denied, degraded, late, or residual-only rights as residuals rather than treating policy text as an available control.
-- Interface: Planning receives admissible-goal constraints, rights-usability requirements, and review routes.
-- Interface: Runtime receives power, memory, tool-risk, refusal, rollback, and approval gates.
-- Interface: Governance receives protected predicates, rights receipts, correction paths, and migration records.
-- Interface: Self-improvement consumes constitutional change records and cannot weaken protected predicates or correction paths without review and rollback treatment.
-- Invariant: Dignity and agency constraints remain visible as record fields rather than disappearing into general safety prose.
-- Invariant: Corrigibility cannot be optimized away by deployment pressure, memory updates, capability replacement, or self-modification.
-- Invariant: Rights count only when materially usable before the relevant effect where timing matters.
-- Failure mode: Rights theater where declared refusal, review, appeal, rollback, exit, or audit cannot be used under pressure.
-- Failure mode: Late remedy laundering where after-the-fact apology substitutes for pre-effect control.
+- Problem: A powerful stack can satisfy a request or policy while concentrating
+  power, manipulating choice, eroding correction, hiding conflict, or changing
+  its constitution; nominal principles and rights do not establish pre-effect
+  contestability.
+- Insufficiency: Harmlessness training, public-input constitutions, refusal,
+  corrigibility and off-switch models, modular controls, rights declarations,
+  and finite records are partial; none alone establishes legitimate content,
+  affected-party standing, material usability, independent review, descendant
+  preservation, or safe behavior.
+- Mechanisms: Classify active, unresolved, scoped, dissent, and lineage-only
+  constitutional statements; version source, authorship, standing, scope, test,
+  precedence, exceptions, conflict, uncertainty, interpreters, consumers,
+  expiry, review, and non-claims; compile exact non-authorizing gates; test
+  affected-party notice, explanation, refusal, review, appeal, correction,
+  rollback, shutdown, exit, export, audit, and repair for material pre-effect
+  usability; route conflict without hidden optimizer or majority defaults; emit
+  decision receipts; residualize degradation and capture; requalify material
+  migration; preserve correction through descendants; keep moral, legal,
+  legitimacy, consent, dignity, reviewer, institutional, consciousness,
+  embedded-agent, and safety claims in separate lanes.
+- Interfaces: Human Intent supplies bounded work; Moral Uncertainty/Governance
+  owns legitimacy and unresolved conflict; Planning/Command Contracts preserve
+  exact versions; Runtime/Readiness/Security require separate authority and emit
+  effect receipts; Evidence/Verification owns epistemic admission;
+  Replacement/Memory/Self-Improvement preserves migration and descendants; and
+  Artifact Graphs retain contestable lineage.
+- Invariants: No predicate or receipt grants authority; every active predicate
+  retains full provenance and consumers; metaphysics stays non-authorizing;
+  rights count only when materially usable; degraded rights and conflicts remain
+  visible; predicates and correction paths survive every lowering and
+  descendant; beneficiaries cannot self-review weakening; material change
+  requires migration, rollback, requalification, and re-admission; complete
+  records prove no moral, legal, legitimacy, dignity, consent, corrigibility, or
+  safety result.
+- Failure modes: Metaphysical laundering, constitutional theater, value
+  smuggling, legitimacy laundering, affected-party erasure, conflict-default
+  capture, rights theater, late-remedy laundering, benevolent capture,
+  manipulation, predicate drift, reviewer capture, descendant escape, and
+  corrigibility-tax externalization.
+- Beyond-SOTA target: Compare model-level constitutions, public-input processes,
+  direct policy/runtime controls, corrigibility/off-switch baselines, and
+  modular-service controls on natural and adversarial high-impact work using
+  independent interpreters, affected-party/outcome evaluators, real consumers,
+  descendant stress, correction interfaces, joint hard-gate/usefulness/cost
+  metrics, causal ablations, transfer, and preserved dissent and null results.
 
 Draft deliverables:
 
-- A compact constitution plus an agency-rights checklist, with fixtures for protected predicates, conflict routing, review routes, rights usability, rollback, appeal, and self-modification weakening.
+- Current minimum: two public record schemas, 3-valid/5-invalid constitutional
+  fixtures, 3-valid/6-invalid agency-rights fixtures, a deterministic
+  metaphysics-boundary audit, chapter-local finite Lean route models, and a
+  shared safety-critical lifecycle model, independent trace checker, and
+  downstream effect-admission consumer under five manifest targets. This is
+  bounded record, route, transition, countermodel, and local consumer evidence
+  only.
 - Exact Appendix C claim-source mappings for the merged core claim across seven Corben/local sources; duplicate folded mappings are merged by source ID so support remains `argument` and passage-review boundaries remain visible.
-- Source-noted external positioning through Constitutional AI, Collective Constitutional AI, corrigibility, and off-switch work; no training run, public-input process, corrigibility theorem, or shutdown-incentive result is reproduced.
+- Source-noted positioning through CAIS, Embedded Agency, Constitutional AI,
+  Collective Constitutional AI, corrigibility, and off-switch work; no service
+  system, embedded-agent solution, training run, public-input process,
+  corrigibility theorem, or shutdown-incentive result is reproduced.
 - Implemented synthetic Codex tests from both source chapters via `python3 scripts/validate_constitutional_alignment.py` and `python3 scripts/validate_agency_rights.py`; deployed constitutional alignment, agency preservation, dignity preservation, consent quality, material rights usability, manipulation resistance, and reviewer independence remain open.
 - Implemented Lean follow-through: `AsiStackProofs.Alignment` includes a finite constitutional lifecycle admission route for missing predicate, source, operational-test, protected-scope, conflict-behavior, review, migration, self-modification, agency-rights, material-usability, pre-effect review, rollback, correction, reviewer-independence, evidence-transition, and non-claim-boundary records without claiming moral correctness, deployed alignment, rights usability, reviewer-independence quality, rollback execution, consent quality, support-state promotion, or runtime policy behavior.
-- Implemented Lean follow-through: `AsiStackProofs.Corrigibility` includes a finite agency-correction lifecycle route envelope for missing affected-party records, material notice, pre-effect review, bounded delegation, approval, correction paths, rollback/shutdown paths, dependency residuals, degradation reasons, accountability, evidence-transition records, and complete bounded action without claiming deployed rights usability, approval-service quality, consent quality, rollback/shutdown execution, manipulation resistance, dignity preservation, or support-state promotion.
+- Retained Corrigibility countermodels: after retiring twelve unconsumed theorem-per-fixture agency-correction normalizations, `AsiStackProofs.Corrigibility` retains four generic finite consequences for missing usable or pre-effect review, unbounded delegation, and denied actions without accountable principals. Frozen lineage points the removed lifecycle obligations to the shared model; neither surface establishes deployed rights usability, consent quality, correction outcomes, rollback execution, or support promotion.
+- Operational replacement and consumer: `AsiStackProofs.SafetyCriticalLifecycle` proves that accepted finite traces preserve the modeled protected predicate and non-increasing authority, blocks effects until domain obligations are recorded, rejects protected-predicate removal and actual authority widening, and supplies deletion countermodels checked independently by `python3 scripts/validate_safety_critical_lifecycle.py`. `python3 scripts/validate_safety_critical_lifecycle_consumer_trace.py` separately consumes five accepted and five rejected domain traces, commits five bounded fixture effects, denies five with residuals, and rejects eight consumer mutations. This does not prove that the encoded obligations are morally sufficient or deployed correctly.
 - Implemented Codex test: Metaphysics lineage boundary audit via `python3 scripts/validate_alignment_metaphysics_boundary.py`, producing `experiments/constitutional_alignment_metaphysics_boundary/results/2026-07-02-local.json`; checks the live chapter, curated reader chapter, selected source notes, outline, roadmap, changelog, and manifest for lineage/evidence boundary language. This is a deterministic surface audit only, with no moral-correctness, consciousness, deployed-alignment, or support-state claim.
 - Historical public slug preserved by `chapters/agency-dignity-and-corrigibility.html`; archived source manuscript retained under `archive/retired_chapters/agency-dignity-and-corrigibility.qmd`.
 
@@ -774,19 +946,20 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:alignment.constitution.operational_invariant` | `AsiStackProofs.Alignment` | An admitted plan satisfies every active constitutional predicate. | implemented |
-| `lean:alignment.constitution.failure_blocks_promotion` | `AsiStackProofs.Alignment` | A self-modification that weakens a protected predicate is rejected. | implemented |
+| `lean:alignment.constitution.operational_invariant` | `AsiStackProofs.SafetyCriticalLifecycle` | Every accepted finite lifecycle trace preserves the recorded protected predicate and cannot increase authority; an alignment effect commits only after the modeled alignment obligations are ready. | implemented |
+| `lean:alignment.constitution.failure_blocks_promotion` | `AsiStackProofs.SafetyCriticalLifecycle` | Protected-predicate removal and actual authority widening are rejected by the transition function, and the alignment deletion countermodel without pre-effect review cannot commit. | implemented |
 | `lean:alignment.constitution.lifecycle_admission_route` | `AsiStackProofs.Alignment` | Modeled constitutional lifecycle admission routes missing predicate, source, operational-test, protected-scope, conflict-behavior, review, migration, self-modification, agency-rights, material-usability, pre-effect review, rollback, correction, reviewer-independence, evidence-transition, and non-claim-boundary records to explicit outcomes. | implemented |
-| `lean:corrigibility.agency.operational_invariant` | `AsiStackProofs.Corrigibility` | Protected agency rights remain available after an accepted transition. | implemented |
-| `lean:corrigibility.agency.failure_blocks_promotion` | `AsiStackProofs.Corrigibility` | A transition that removes a required correction pathway is rejected. | implemented |
+| `lean:corrigibility.agency.operational_invariant` | `AsiStackProofs.SafetyCriticalLifecycle` | A corrigibility effect commits only after affected-party, notice, pre-effect review, approval, bounded-delegation, correction, rollback, and accountability obligations are recorded, while accepted traces preserve the shared invariant. | implemented |
+| `lean:corrigibility.agency.failure_blocks_promotion` | `AsiStackProofs.SafetyCriticalLifecycle` | The missing-affected-party countermodel cannot commit, and protected-predicate removal or authority widening remains unrepresentable as an accepted transition. | implemented |
+| `lean:corrigibility.agency.generic_countermodel_routes` | `AsiStackProofs.Corrigibility` | Within the bounded AgencyActionDecision and AgencyControlDecision models, missing usable or pre-effect review on high-impact actions routes to review, low-risk unbounded delegation routes to narrowing, and denial without an accountable principal preserves an audit residual. | implemented |
 
 ### Moral Uncertainty, Value Conflict, and Contestable Governance
 
 Stable ID: `moral-uncertainty-and-value-conflict`
 
-Chapter job: A self-improving system will face unresolved value conflicts whose affected parties need inspectable, appealable, and portable governance rights rather than hidden reward-weight settlement.
+Chapter job: Preserve unresolved normative burden and materially usable challenge, remedy, portability, and safe-fork paths without laundering aggregation, review, or record completeness into moral truth, consent, legitimacy, or authority.
 
-Core claim: Value conflicts should be represented as explicit unresolved obligations, residuals, review paths, and bounded decisions, with fork, exit, audit, dissent, and contestability preserved as technical governance interfaces.
+Core claim: A contestable governance layer should represent each action under unresolved value conflict as a versioned decision lease plus a linked rights receipt. The lease binds value propositions and their epistemic status, affected parties and standing, stakes and reversibility, authority and consent boundaries, the declared aggregation or precedence rule, preserved dissent, evidence and uncertainty, permitted and prohibited actions, expiry and revisit triggers, and rollback or redress. The rights receipt binds audit and explanation artifacts, independent-enough custody and review, denial and redaction reasons, appeal and correction routes, exit and export scope, safety-limited fork obligations, portability residuals, and downstream preservation. The pair may narrow or delay separately authorized action but cannot settle moral truth, manufacture consensus, grant authority, establish legal rights or legitimacy, prove material contestability, or guarantee safe exit, export, fork, replacement, self-modification, or deployed governance by itself.
 
 Source loading queue:
 
@@ -799,30 +972,67 @@ Source loading queue:
 
 Draft arc:
 
-- Problem: A self-improving system will face unresolved value conflicts whose affected parties need inspectable, appealable, and portable governance rights rather than hidden reward-weight settlement.
-- Insufficiency: Single-objective optimization and policy-only transparency both fail when disagreement needs bounded action, dissent preservation, audit, exit, fork, appeal, and safety-limited contestability.
-- Mechanism: Preserve value conflict as a record before action, including value axes, stakeholders, stakes, reversibility, authority or consent boundary, evidence requirement, review route, dissent payload, residual uncertainty, and revisit condition.
-- Mechanism: Treat bounded decisions as leases with permitted action, prohibited action, authority ceiling, expiry, rollback or appeal path, and preserved dissent rather than moral settlement.
-- Mechanism: Represent audit, exit, fork, redaction appeal, dissent, and contestability as governance rights with holder, scope, artifact requirement, safety constraint, access path, preservation rule, receipt, denial reason, and appeal route.
-- Mechanism: Carry conflict residuals and rights receipts into planning, memory, SCF replacement, evidence ledgers, and self-improvement gates.
-- Interface: Alignment produces conflict records and residuals.
-- Interface: Planning carries conflict constraints, bounded-decision leases, dissent payloads, and authority ceilings.
-- Interface: Governance issues rights receipts, denial reasons, redaction reasons, appeal routes, exit paths, fork boundaries, and audit artifacts.
-- Interface: SCFs and self-improvement gates preserve rights and unresolved obligations across replacement pressure.
-- Invariant: Unresolved conflicts remain visible after action.
-- Invariant: High-stakes unresolved conflict requires review, residual uncertainty, and narrowed authority.
-- Invariant: Audit records cannot be silently deleted; exit remains materially usable; fork rights do not bypass safety obligations.
-- Failure mode: Conflict laundering where a temporary decision hardens into policy, benchmark objective, or self-modification permission.
-- Failure mode: Rights theater, governance capture, data hostage-taking, unsafe fork bypass, redaction without appeal, or appeal controlled only by the challenged authority.
+- Problem: A stack may need to act while moral theories, stakeholder interests,
+  evidence, jurisdictions, and authority remain unresolved; scalar reward,
+  majority preference, policy prose, or one verdict can erase standing, dissent,
+  reversibility, and practical challenge or exit.
+- Insufficiency: Single-objective optimization, moral-uncertainty aggregation,
+  public-input constitutions, explanation, corrigibility/off-switch models, and
+  nominal rights are partial; none alone establishes stakeholder completeness,
+  legitimate procedure, bounded authority, independent custody and appeal,
+  material redress, portability, third-party protection, fork safety, or
+  successor preservation.
+- Mechanisms: Separate normative propositions from descriptive evidence and
+  prediction; record stakeholder standing and omissions; own the exact
+  aggregation or precedence rule; issue bounded leases; represent materially
+  usable audit, explanation, dissent, appeal, correction, redress, exit, export,
+  and fork rights; make redaction proportional and appealable; test portability
+  fidelity and privacy; govern fork lineage; disclose decision, custody, appeal,
+  evaluator, and enforcement dependencies; emit contestability receipts;
+  preserve exact state through every consumer and successor; and keep broad
+  normative and efficacy claims in separate evidence lanes.
+- Interfaces: Constitutional Alignment supplies predicate conflicts; Human
+  Intent and Authority supplies grants and gaps; Planning and Command Contracts
+  consume exact leases; Runtime, Memory, Security, and Artifact Graphs produce
+  governed evidence; Governance and Oversight supply dependency-disclosed
+  review; Replacement and Self-Improvement preserve contestability; Evidence
+  States owns claim-specific movement and negative or null results.
+- Invariants: Field categories never substitute for one another; stakeholder
+  omissions remain residuals; high-stakes conflict cannot widen authority;
+  leases cannot harden silently; dissent and alternatives survive every
+  projection; records retain independent-enough custody, redaction lineage, and
+  appeal; redress must be materially usable; portability and fork obligations
+  are exact; dependencies remain visible; successors preserve full state; and
+  record completeness proves no moral, legal, institutional, portability, fork,
+  or enforcement result.
+- Failure modes: Value flattening, false consensus, stakeholder erasure,
+  procedure and conflict laundering, dissent deletion, review theater,
+  governance capture, rights theater, data hostage-taking, redaction laundering,
+  appeal recursion, unsafe export, unsafe fork, successor escape, and
+  contestability-tax externalization.
+- Beyond-SOTA target: Compare strong moral-uncertainty, public-input,
+  contestable-AI, direct appeal, corrigibility/off-switch, and simple policy
+  baselines on natural and adversarial high-impact workloads with independent
+  custody, appeal, outcome, privacy, portability, and fork evaluators; joint
+  stakeholder, outcome, rights, privacy, usefulness, and cost metrics; causal
+  ablations; transfer; and preserved dissent plus negative and null results.
 
 Draft deliverables:
 
-- A value-conflict record plus governance-right receipt suite that validates residual uncertainty, dissent, bounded decisions, audit material, redaction appeal paths, exit and fork access, and safety obligations without claiming moral correctness or deployed governance.
+- Current minimum: two public record schemas, 3-valid/5-invalid value-conflict
+  fixtures, 3-valid/5-invalid governance-rights fixtures, a care-memory example
+  with seven rejecting mutations, a bounded 4+4-scenario Theseus import with
+  seven overclaim controls, chapter-local finite Lean route models, and a shared
+  safety-critical lifecycle model, independent trace checker, and downstream
+  effect-admission consumer under seven manifest targets. This is bounded
+  record, route, bridge, import, transition, countermodel, and local consumer
+  evidence only.
 - Exact Appendix C claim-source mappings for the merged core claim across seven Corben/local sources; duplicate folded mappings are merged by source ID so support remains `argument` and passage-review boundaries remain visible.
 - Source-noted external positioning through moral-uncertainty RL, contestable AI, Collective Constitutional AI, corrigibility, and off-switch work; no experiment, legal process, public-input governance process, or deployed contestability result is reproduced.
 - Implemented synthetic Codex tests from both source chapters via `python3 scripts/validate_value_conflicts.py` and `python3 scripts/validate_governance_rights.py`; moral correctness, classification quality, reviewer independence, real exit/fork usability, legal rights, and runtime governance enforcement remain open.
 - Implemented Lean follow-through: `AsiStackProofs.ValueConflict` includes a finite value-conflict lifecycle admission route for missing conflict records, value axes, stakeholders, stakes, reversibility, authority boundaries, evidence requirements, review routes, high-stakes review, residual uncertainty, dissent preservation, authority narrowing, expiry/revisit records, evidence-transition records, and non-claim boundaries without claiming moral correctness, classification quality, reviewer quality, deployed contestability, legal rights, support-state promotion, or runtime governance behavior.
-- Implemented Lean follow-through: `AsiStackProofs.GovernanceRights` includes a finite governance-right lifecycle route envelope for missing governance records, audit material gaps, redaction appeal gaps, exit/export gaps, unsafe forks, missing fork obligations, protected-right removal, unrecorded dissent, replacement receipt loss, durable receipt gaps, evidence-transition requirements, and complete contestable transitions without claiming legal rights, institutional adequacy, export usability, fork safety, redaction quality, SCF replacement, deployed governance, or support-state promotion.
+- Retained Governance Rights countermodels and bridge: after retiring twelve unconsumed theorem-per-fixture governance lifecycle normalizations, `AsiStackProofs.GovernanceRights` retains four generic finite countermodel consequences and three validator-backed Theseus import consequences. Frozen lineage points removed lifecycle obligations to the shared model; neither surface establishes legal rights, institutional adequacy, export usability, fork safety, redaction quality, SCF replacement, deployed governance, or support promotion.
+- Operational replacement and consumer: `AsiStackProofs.SafetyCriticalLifecycle` blocks modeled effects until value-conflict or governance-right obligations are recorded, preserves protected state and non-increasing authority across accepted traces, rejects protected-right removal, and exposes missing-residual and missing-exit/export countermodels to the independent executable checker. The separate consumer trace commits only the five accepted bounded fixture effects, denies five rejected routes with residuals, and rejects eight receipt/gate mutations. This does not establish moral correctness, legal adequacy, material institutional usability, or deployment.
 - Implemented Codex test: Contestability worked example fixture checks `contestability://synthetic-care-memory-export-001`, a synthetic care-memory export scenario spanning value-conflict residuals, redacted audit packet, scoped exit path, safety-limited fork boundary, redaction appeal, replacement-preserved receipts, seven expected-invalid mutation controls, and non-claim boundaries without claiming moral correctness, legal rights, reviewer independence, export usability, fork safety, deployed governance, or support-state promotion.
 - Implemented bounded Project Theseus import: the Theseus governance-rights receipt suite import, `moral-uncertainty-and-value-conflict.theseus_governance_rights_receipt_suite_import`, is validated by `python3 scripts/validate_theseus_governance_rights_receipt_suite_import.py` and records a public-safe summary of 4/4 governance-right fixtures, 4/4 constitutional-predicate fixtures, four governance-right records, four constitutional-predicate records, eight evidence-transition records, eight artifact-graph records, eight failure-boundary records, zero public training rows, zero external inference calls, seven expected-invalid controls, and finite `lean:governance.rights.theseus_receipt_suite.fixture_bridge` alignment. This moves only the narrow import claim to `prototype-backed`; it does not prove legal rights, institutional governance, moral correctness, reviewer independence, export usability, fork safety, deployed governance, clean live Project Theseus replay, safety, alignment, ASI, or chapter-core promotion.
 - Historical public slug preserved by `chapters/governance-rights-fork-exit-and-audit.html`; archived source manuscript retained under `archive/retired_chapters/governance-rights-fork-exit-and-audit.qmd`.
@@ -831,21 +1041,21 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:values.conflict.operational_invariant` | `AsiStackProofs.ValueConflict` | A decision with unresolved protected conflicts carries a residual conflict record. | implemented |
-| `lean:values.conflict.failure_blocks_promotion` | `AsiStackProofs.ValueConflict` | A high-stakes conflict cannot bypass the required review predicate. | implemented |
+| `lean:values.conflict.operational_invariant` | `AsiStackProofs.SafetyCriticalLifecycle` | A value-conflict effect commits only after review, residual, dissent, correction, and accountability obligations are recorded, while accepted traces preserve protected state and non-increasing authority. | implemented |
+| `lean:values.conflict.failure_blocks_promotion` | `AsiStackProofs.SafetyCriticalLifecycle` | The missing-residual countermodel cannot commit, so the modeled high-stakes path cannot bypass its residual and review obligations. | implemented |
 | `lean:values.conflict.lifecycle_admission_route` | `AsiStackProofs.ValueConflict` | Modeled value-conflict lifecycle admission routes missing conflict records, value axes, stakeholders, stakes, reversibility, authority boundaries, evidence requirements, review routes, high-stakes review, residual uncertainty, dissent preservation, authority narrowing, expiry/revisit records, evidence transitions, and non-claim boundaries to explicit outcomes. | implemented |
 | `lean:values.conflict.contestability_example_bridge` | `AsiStackProofs.ValueConflict` | A synthetic contestability worked-example summary preserves conflict residuals, audit receipts, scoped exit, fork-safety boundaries, redaction appeal, replacement-preserved receipts, rejected mutation controls, no support-state effect, and non-claim boundaries. | implemented |
-| `lean:governance.rights.operational_invariant` | `AsiStackProofs.GovernanceRights` | A governance transition preserves required audit and exit capabilities. | implemented |
-| `lean:governance.rights.failure_blocks_promotion` | `AsiStackProofs.GovernanceRights` | A transition that removes a protected right is rejected or marked invalid. | implemented |
+| `lean:governance.rights.operational_invariant` | `AsiStackProofs.SafetyCriticalLifecycle` | A governance-rights effect commits only after protected-predicate, audit, appeal, exit/export, fork-safety, fork-obligation, dissent, receipt, and correction obligations are recorded, while accepted traces preserve the shared invariant. | implemented |
+| `lean:governance.rights.failure_blocks_promotion` | `AsiStackProofs.SafetyCriticalLifecycle` | Protected-right removal is rejected by construction and the missing-exit/export countermodel cannot commit. | implemented |
 | `lean:governance.rights.theseus_receipt_suite.fixture_bridge` | `AsiStackProofs.GovernanceRights` | A sanitized Project Theseus governance-rights receipt-suite import records fixture, predicate, record-count, public-safety, and non-promotion boundaries while rejecting chapter-core and legal-rights overclaims. | implemented |
 
 ### Stable Capability Fields
 
 Stable ID: `stable-capability-fields`
 
-Chapter job: The stack needs stable semantic boundaries so implementations can improve without changing what a capability means.
+Chapter job: Define a consumer-relative, time-bounded substitution contract so models, prompts, tools, policies, data, evaluators, dependencies, and runtimes can change without a persistent capability name hiding changed behavior, failure semantics, authority, evidence, state, reliance, or recovery duties.
 
-Core claim: A stable capability field is a governed boundary with identity, interface, authority ceiling, qualification evidence, and rollback policy.
+Core claim: A Stable Capability Field should be a versioned, consumer-relative substitution contract rather than a capability name or implementation slot. It binds the field's semantic identity and observable interface—including admissible inputs, outputs, preconditions, postconditions, failures, abstentions, nondeterminism and resource bounds—to an authority ceiling, affected consumers, exact implementation and dependency identities, qualification context and lease, evaluator and evidence lineage, lifecycle and incident state, migration duties, preserved regressions, and effect-complete rollback obligations. A candidate may inherit a field route only for the declared consumer, use, environment, threat model, and epoch when independently checkable evidence shows the required refinement and no unauthorized authority expansion; otherwise it remains shadowed, canaried, quarantined, deprecated, residual, or rejected. The record does not by itself prove semantic equivalence, safe composition, evaluator independence, production safety, or successful rollback.
 
 Source loading queue:
 
@@ -858,48 +1068,65 @@ Source loading queue:
 
 Draft arc:
 
-- Problem: The stack needs stable semantic boundaries so implementations can improve without changing what a capability means.
-- Insufficiency: Plugin replacement and model swapping do not define identity, authority, qualification evidence, or rollback semantics.
-- Mechanism: Treat an SCF as the contract that separates requested capability, candidate implementation, and routable authority.
-- Mechanism: Separate field identity from implementation artifacts, evaluator policy, and lifecycle state.
-- Mechanism: Bind qualification claims to exact artifacts and scoped qualification contexts.
-- Mechanism: Represent lifecycle states such as shadow, canary, qualified, default, deprecated, and retired.
-- Mechanism: Attach qualification context such as epoch, domain, risk budget, hardware, authority tier, and benchmark state.
-- Mechanism: Record qualification status and a qualification lease/status with epoch, expiry, review triggers, incidents, rollback obligations, and non-claims so qualified routes can age, downgrade, or force requalification.
-- Mechanism: Pair broad route proposers with narrow validators that check field identity, claims, leases, profiles, grants, state paths, composition certificates, and authority ceilings.
-- Mechanism: Treat the SCF as capability-identity memory: field identity, evaluator policy, regression floors, lifecycle history, incidents, and rollback obligations survive implementation replacement.
-- Mechanism: Make qualification leases reviewable and aging: benchmark epoch, source corpus, hardware profile, threat model, incident triggers, field history refs, default-route blockers, and requalification duties can expire or downgrade route status.
-- Interface: Planning sees semantic capability boundaries.
-- Interface: Execution sees authorized routes.
-- Interface: Evidence and governance see qualification claims, regressions, incidents, lifecycle state, evaluator policy, and recovery paths.
-- Interface: Replacement and readiness gates consume the SCF lease, evaluator independence statement, rollback obligations, review triggers, and non-claims.
+- Problem: nominal upgrades can preserve names, APIs, and average scores while changing failures, abstentions, side effects, authority, privacy, resources, consumers, state, dependencies, or recovery.
+- Insufficiency: registries, SemVer, capability security, SLSA provenance, benchmark gates, canaries, and rollback runbooks each cover a subset; none alone establishes consumer-relative behavioral refinement and effect-complete recovery.
+- Mechanism: separate field identity from implementation, route, registry, version label, benchmark, evaluator, and vendor identity.
+- Mechanism: specify admissible inputs, output and side-effect postconditions, errors, abstentions, timeouts, nondeterminism, resource/privacy/security effects, authority use, and audit emissions.
+- Mechanism: bind qualification to exact artifacts, prompts, policies, data, dependencies, provenance, hardware/runtime, evaluator, epoch, threat model, consumer, use, and authority.
+- Mechanism: test consumer-relative behavioral refinement rather than infer equivalence from interface shape, provenance, similarity, or average score.
+- Mechanism: disclose and separate route proposal, candidate ownership, evaluation, promotion, incident closure, and rollback authority; narrow scope where independence is unavailable.
+- Mechanism: issue expiring qualification leases with material-change, drift, incident, provenance, evaluator, regression, dependency, environment, and authority triggers.
+- Mechanism: govern proposed, shadow, canary, qualified, default, quarantined, deprecated, and retired transitions with prerequisites, receipts, owners, and failure destinations.
+- Mechanism: carry downstream reliance, composition assumptions, state/cache/data lineage, migration, reverse migration, privacy, descendants, side effects, and external commitments.
+- Mechanism: keep regressions, incidents, rights, dissent, security/privacy/audit duties, and residuals owned by the field rather than an outgoing implementation.
+- Mechanism: validate identity, authority, lease, provenance, evaluator policy, regression floor, composition, migration, monitor, rollback, and incident state before stronger use.
+- Mechanism: emit a replacement receipt binding identities, evidence views, authority delta, consumers, state movement, monitors, residuals, recovery, terminal outcome, and support-state non-effect.
+- Interface: Planning requests field version, consumer/use profile, evidence floor, risk/resource envelope, and acceptable failure/abstention behavior.
+- Interface: Routing admits only candidates whose lease, lifecycle, environment, dependencies, authority, consumer policy, and blockers permit the use.
+- Interface: Execution enforces the route envelope and emits observable outcome, effect, error, abstention, resource, and audit records.
+- Interface: Evidence binds qualification, regression, provenance, evaluator, incident, drift, monitor, and recovery results to exact scope.
+- Interface: Memory/state management owns schemas, caches, lineage, migration, privacy, retention, revocation, and descendants.
+- Interface: Governance owns semantic versioning, authority/evaluator changes, exceptions, disputes, residual acceptance, deprecation, and retirement.
+- Interface: Replacement, readiness, memory, benchmark, policy-update, and self-improvement layers consume the same field identity and receipts.
 
 Primary invariants:
 
-- Replacement cannot expand authority by default.
-- Evaluator integrity is protected.
-- Qualification context is explicit and time-bound.
-- Rollback remains available after failed mutation.
-- Qualification leases expire or downgrade when review triggers fire.
+- Identity is distinct from implementation and material semantic or authority changes receive a governed version/identity decision.
+- Replacement cannot inherit expanded authority, effects, consumers, evidence claims, or support state.
+- Qualification is exact-artifact, environment, evaluator, consumer, use, threat-model, epoch, and lease bound.
+- Candidates cannot solely author and judge qualification, promotion, incident closure, or rollback success.
+- Lifecycle transitions have prerequisites, owners, receipts, and failure destinations.
+- Field-owned regressions, incidents, rights, dissent, security/privacy/audit duties, residuals, and consumer obligations survive change.
+- Compatibility, provenance, benchmark superiority, and local equivalence do not substitute for the declared refinement predicate.
+- Composition is requalified after material dependency, neighbor, route, state, hardware, data, policy, or authority changes.
+- Rollback readiness covers state, caches, data, policy, credentials, effects, descendants, monitors, reliance, and external commitments.
+- Expiry, drift, incident, evaluator/provenance/regression/environment/authority change downgrades affected qualification.
+- Finite artifacts establish only their exact record and predicate boundary.
 
 Failure modes to cover:
 
-- Field identity drift.
-- Evaluator capture.
-- Authority expansion during replacement.
+- Identity laundering and interface theater.
+- Qualification overreach and benchmark overfitting.
+- Evaluator capture and provenance substitution.
+- Authority smuggling and lease inertia.
+- Regression amnesia and state-migration insolvency.
+- Composition failure and shadow/canary leakage.
+- Rollback theater and terminal-state escape.
+- Replacement-cost externalization.
 
 Draft deliverables:
 
-- An SCF record schema with field identity, field version, owner, implementation versions, lifecycle state, qualification context/status, qualification lease/status, evaluator independence, evidence, route validity/scope, route permission effect, consumer policy, readiness gate refs, field history refs, source refs, support-state effect, incidents, review triggers, migration path, rollback obligations, default-route blockers, and non-claims.
-- Exact Appendix C claim-source mappings for the stable-capability-field core claim across SCF identity/lifecycle semantics, VIEA artifact/evidence discipline, Talos job/proof-bundle discipline, Ladon/Manhattan authority-handle boundaries, and MoECOT implementation-reference context; four mappings (`scf`, `viea`, `talos`, `ladon_manhattan`) now have reviewed passage references, while `moecot` remains connector-only/source-note mapped. Support remains `argument` pending route-validity, evaluator-integrity, authority non-escalation, rollback-readiness, or deployed lifecycle evidence.
-- Source-noted external positioning through capability-based computer systems, Semantic Versioning, and SLSA; no capability enforcement, API compatibility checking, SLSA workflow, route validation, evaluator integrity, or rollback execution is reproduced or promoted.
-- Planned Codex test: Qualification predicate test.
+- Current minimum: one public schema, 3 valid / 6 expected-invalid SCF records, selected readiness/residual route checks, 2 valid / 6 expected-invalid lifecycle traces, and 25 Lean theorem declarations grouped under four manifest targets. These establish finite record and transition behavior only.
+- Exact Appendix C mappings for all eight assigned sources: reviewed local passages for `scf`, `viea`, `talos`, and `ladon_manhattan`; durable source-note mapping for `moecot`; and reviewed capability-security, SemVer, and SLSA comparator notes. Support remains `argument`.
+- Next executable slice: a preregistered real two-implementation field with partitioned natural/adversarial behavior and failures, locked artifacts/environment, independent evaluator, historical regressions, authority-sensitive routing, state/cache migration, downstream composition, drift and capture controls, and rehearsed effect-inventory rollback.
+- Implemented Codex test: Qualification predicate record harness via `python3 scripts/validate_stable_capability_fields.py`; 3 valid and 6 expected-invalid synthetic records; no real qualification claim.
 - Implemented Codex test: Route validity test, via `python3 scripts/validate_readiness_residual_gates.py` over synthetic costed-route/readiness-gate/replacement fixtures; deployed route enforcement remains unrun.
-- Planned Codex test: Authority non-escalation test.
+- Implemented finite authority non-escalation predicate in `AsiStackProofs.StableCapabilityFields`; no deployed enforcement claim.
 - Implemented Codex test: Rollback readiness test, via `python3 scripts/validate_readiness_residual_gates.py` over rollback receipt, monitor-state, and residual-escrow scenarios; deployed rollback remains unrun.
 - Implemented synthetic Codex test: SCF lifecycle trace probe via `python3 scripts/validate_scf_lifecycle_trace.py`, covering forward lifecycle from shadow through retired, incident quarantine, and expected-invalid controls for identity drift, default-without-regression, default authority expansion, retired restart, deprecation without notice, and retirement without receipt; no deployed route validation, evaluator-integrity measurement, real regression preservation, rollback execution, lifecycle enforcement, or support-state claim.
 - Implemented proof-backed check: finite SCF lifecycle route proof for identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, open incidents, missing rollback, and missing regression preservation; this is structured-record coverage only, not deployed lifecycle enforcement.
 - Implemented proof-backed check: finite SCF lifecycle state-machine proof over shadow, canary, qualified, default, deprecated, retired, and quarantined transition records. It requires preserved field identity, rejects transitions from retired state, constrains default promotion by evidence, regression floor, authority ceiling, rollback readiness, and incident closure, and requires deprecation notices and retirement receipts for terminal transitions.
+- Beyond-SOTA campaign: compare full SCF against bare registries/model swaps, interface/SemVer, provenance-only, benchmark-only, and conventional canary/rollback conditions using real candidates, independent observers, joint preservation/safety/usefulness/cost/recovery metrics, causal ablations, replication, and transfer. Narrow or refute any mechanism that misses its frozen gate.
 
 Lean proof targets:
 
@@ -914,9 +1141,9 @@ Lean proof targets:
 
 Stable ID: `capability-replacement-and-rollback`
 
-Chapter job: Recursive improvement requires a safe procedure for replacing components while preserving identity, regression history, and recovery paths.
+Chapter job: Define a prospectively authorized state-and-effect transaction that distinguishes candidate availability, accepted replacement, commit, monitor success, artifact/state/service/behavior recovery, compensation, and residual closure while measuring useful improvement separately from safe restoration.
 
-Core claim: Capability replacement should be an evidence-gated transaction with preconditions, regression checks, residual records, and rollback.
+Core claim: Capability replacement should be a prospectively authorized, phase-gated transaction over a declared Stable Capability Field, not a component swap. The transaction binds the exact prior and candidate artifacts and dependencies; field and consumer scope; change class; pre-state, checkpoint authority, state and effect inventory; qualification, regression, adversarial and transfer evidence; authority and approval; evaluator dependencies; isolation and canary exposure; monitor policy, delay and triggers; commit point; rollback, reverse-migration or compensation procedure; affected descendants and external commitments; residual owners; and terminal receipt. Default promotion is permitted only inside the evidenced scope after its declared gates pass and its recovery path is rehearsed to the stated objective. The record cannot make irreversible effects reversible, prove semantic recovery, validate its own monitor or evaluator, grant authority, establish useful improvement, or generalize inventory-exact local restoration to production.
 
 Source loading queue:
 
@@ -924,49 +1151,57 @@ Source loading queue:
 |---|---|---|
 | Primary | `scf`, `rmi`, `benchmaxxing` | Read first for chapter claims and mechanisms. |
 | Supporting | `cognitive_loop_closure`, `talos` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
-| External comparators | `ext_argo_rollouts_docs`, `ext_feature_toggles_fowler`, `ext_google_cloud_mlops_cd`, `ext_kubernetes_deployments_docs` | Use only for progressive-delivery, feature-flag, model-delivery, rollout-history, and rollback vocabulary; do not treat as evidence that ASI replacement or production model rollout has been implemented. |
+| External comparators | `ext_corrigibility_2015`, `ext_argo_rollouts_docs`, `ext_feature_toggles_fowler`, `ext_google_cloud_mlops_cd`, `ext_kubernetes_deployments_docs`, `ext_txfs_2018` | Use for correction-channel, progressive-delivery, controlled-exposure, MLOps, revision-history, transactional-storage, and recovery boundaries; do not infer local implementation, whole-agent corrigibility, semantic/external recovery, or production replacement. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
-
-| Manifest assignment reconciliation | `ext_txfs_2018` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
-- Problem: Recursive improvement requires a safe procedure for replacing components while preserving identity, regression history, and recovery paths.
-- Insufficiency: Ad hoc upgrades make it hard to know whether a system improved, drifted, lost a regression, or captured its evaluator.
-- Mechanism: Turn each proposed improvement into a replacement transaction with wall diagnosis, evidence packet, prechecks, gates, canary, residual escrow, monitor window, and rollback obligation.
-- Mechanism: Position canary, blue-green, feature-flag, rollout-history, model-delivery, monitoring, and rollback-trigger vocabulary against source-noted external comparators, then preserve the ASI-specific transaction boundary around field identity, authority ceilings, evaluator independence, regression floors, residual ownership, rollback receipts, and support-state effects.
-- Mechanism: Run field-identity, authority, qualification, regression-floor, holdout, and residual checks before commit.
-- Mechanism: Treat failed gates and benchmark transfer failures as residuals rather than disappearing work.
-- Mechanism: Keep candidate improvement, canary use, default promotion, monitor evidence/status, promotion blockers, and rollback obligation as separate transaction states.
-- Mechanism: emit rollback receipts that record prior artifact, state migration status, reversible fields, irreversible effects, dry-run status, trigger conditions, and owner.
-- Mechanism: require identity-preservation and evaluator-independence fields so the candidate cannot validate its own promotion or silently redefine the field it claims to improve.
-- Mechanism: expose replacement decision states such as proposed, shadow, canary, default-candidate, default, rolled-back, quarantined, superseded, and retired.
-- Interface: SCF ledger defines the field identity to preserve.
-- Interface: Benchmark and evidence ledgers test frontier movement and regression preservation.
-- Interface: Artifact graph and changelog record candidate artifacts, state migration, decision, residuals, and recovery state.
-- Interface: security, runtime-adapter, policy-optimization, and governance layers inspect replacement transactions for authority, secret, evaluator, monitor, and rollback changes.
-- Interface: readiness gates consume replacement receipts only within the field, workload family, freshness window, route permissions, and residual inheritance they declare.
-- Exact Appendix C claim-source mappings for the core replacement claim across SCF field identity, RMI modular ratchets, Benchmaxxing benchmark lifecycle, Cognitive Loop Closure procedural lifecycle, Talos audit/replay context, and MoECOT runtime-reference context; five local mappings (`scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, `talos`) now have reviewed passage references, while `moecot` remains connector-only/source-note mapped. Support remains `argument` pending regression-preservation tests, rollback dry runs, monitor-window evidence, artifact replay, or deployed replacement evidence.
+- Problem: live AI updates can preserve a name or artifact while changing checkpoint authority, hidden state, evaluators, monitors, authority, descendants, and irreversible effects.
+- Insufficiency: registries, feature flags, progressive delivery, MLOps, benchmark gates, rollback commands, filesystem transactions, and corrigibility each cover only a subset; digest restoration is not semantic/external recovery or useful improvement.
+- Mechanism: freeze transaction, field, prior/candidate, consumers, owners, evaluator, monitor, recovery, expiry, and support-state identities before observing candidate evidence.
+- Mechanism: classify contract, model/weights, prompt/policy, code/tool, data/retrieval, evaluator, dependency, hardware/runtime, authority, state-schema, route, governance, and public-interface deltas.
+- Mechanism: choose checkpoint authority prospectively and capture a content-bound pre-state over declared model, optimizer, scheduler, RNG, cache, checkpoint, backup, credential, policy, data, route, monitor, receipt, descendant, and commitment surfaces.
+- Mechanism: classify reversible, replayable, compensatable, forked, disclosure-like, safety-sensitive, externally owned, and irreversible effects with owners and recovery objectives.
+- Mechanism: isolate shadow/canary candidates across read/write/network/tool/data/credential/learning/cache/descendant/external-effect authority.
+- Mechanism: evaluate regressions, vetoes, rare/adversarial cases, authority/rights, state, composition, contamination, usefulness, cost, and transfer against preregistered baselines while retaining negative/null outcomes.
+- Mechanism: disclose dependencies among proposal, evidence, evaluation, promotion, monitoring, incidents, and recovery; narrow exposure when separation is unavailable.
+- Mechanism: govern proposed through residual/terminal states with legal transitions, receipts, owners, and failure destinations.
+- Mechanism: preregister canary population/duration, exposure, metrics, thresholds, delay/censoring, telemetry, stops, recovery triggers, fallback, approval, and escalation.
+- Mechanism: bound commit, preserve the prior route until closure, prevent partial defaulting, and record non-atomic subsystems.
+- Mechanism: execute recovery against the declared inventory and separately record reversal, reverse migration, compensation, quarantine, fork, revocation, disclosure response, downstream invalidation, and residuals.
+- Mechanism: close only after monitor/recovery obligations settle and terminal receipts bind before/after state, observations, incidents, consumers, descendants, outcomes, residuals, evidence transitions, and public projections.
+- Interface: SCF owns identity; intent/command/governance/authority own grants and stops; artifact/state/custody own exact pre-state and inventory; evidence/oversight/security/rights own bounded observations; routing/runtime own exposure and effects; readiness/recovery own gates and closure; public and successor consumers preserve terminal outcomes.
+- Exact Appendix C mappings for all 12 sources. Five project sources have reviewed passages, `moecot` remains source-note bounded, and six external notes establish comparator lineage only. Support remains `argument`.
 
 Primary invariants:
 
-- No replacement without prior and posterior artifacts.
-- Regressions stay attached.
-- Rollback metadata is required before promotion.
-- Candidate-provided evidence cannot be the sole evaluator, gatekeeper, or rollback authority for its own promotion.
-- Rollback receipts must name reversible fields, irreversible effects, trigger conditions, and owner before default promotion.
+- Identities, change class, checkpoint authority, evaluation/gate/monitor/canary/commit/recovery rules, inventory, and objectives are prospective and content-bound.
+- No inherited authority, effects, consumers, learning, delegation, public claims, support, or correction resistance.
+- Prior route and recovery state remain available and rehearsed through closure or accepted irreversible residual.
+- Every surface is inventoried or excluded with reason, owner, and residual; unregistered surfaces are not recovered.
+- Field regressions/incidents/rights/privacy/security/audit/provenance/evaluator/residual/recovery duties survive change.
+- Candidate cannot solely propose, evaluate, promote, monitor, judge, or recover itself.
+- Canary cannot create undeclared durable effects, descendants, shared-state/cache mutation, or traffic-drift defaulting.
+- Monitor success requires fixed population, duration, delay, censoring, threshold, baseline, evaluator, and telemetry.
+- Critical regression, identity, evidence, authority, effect-owner, rehearsal, incident, blocker, and approval failures deny commit.
+- Artifact/state/service/behavior/privacy-rights/external-compensation recovery outcomes remain distinct; partial recovery stays visible.
+- Finite/local evidence cannot establish useful improvement, complete recovery, production transfer, or core support.
 
 Failure modes to cover:
 
-- Regression deletion.
-- Rollback impossible after deployment.
-- Self-judged replacement.
-- Rollback theater: rollback fields exist without executable path, compatibility check, trigger condition, or owner.
+- Identity substitution and checkpoint hindsight.
+- Regression deletion/frontier bias and evaluator capture.
+- Inventory omission and migration insolvency.
+- Canary contamination and monitor blindness.
+- Partial commit and authority smuggling.
+- Rollback theater and irreversibility laundering.
+- Rollback cascades and retry/oscillation laundering.
+- Terminal-state escape and replacement-cost externalization.
 
 Draft deliverables:
 
-- A replacement transaction schema with transaction state, identity-preservation, precheck, gate, commit, canary scope, monitor status, evaluator-independence, rollback receipt, promotion blockers, source refs, support-state effect, residual, and non-claim fields.
-- Source-noted external positioning through Argo Rollouts progressive delivery, Fowler/Hodgson feature toggles, Google Cloud MLOps continuous delivery, and Kubernetes Deployments rollout history/rollback; no rollout controller, feature-flag service, ML pipeline, model deployment, monitor trigger, or production rollback is reproduced or promoted.
+- Current minimum: 5 valid/9 invalid schema records; selected readiness/residual checks; a six-step 2-valid/3-invalid trace plus four identity controls; a 2-valid/6-invalid intent bridge; and 37 Lean theorem declarations under six targets.
+- Bounded outcomes: 15/15 exact restoration over 24 declared local surfaces with six best/final checkpoint disagreements but no eligible utility gain; 32/36 exact attack-control rollback and 2/36 useful release, below both gates; later 12/12 nine-surface harness restoration and twelve omitted-surface detections with zero model candidates. Preserve all as scope-limited positive and negative evidence.
 - Implemented protocol fixture: `replacement_transaction.valid.json` checks public schema shape for transaction state, identity preservation, evaluator independence, canary scope, monitor status, rollback receipt, promotion blockers, source refs, support-state effect, and non-claims only.
 - Implemented Codex test: Capability replacement harness, via `python3 scripts/validate_capability_replacement.py`, validates 5 valid and 9 expected-invalid synthetic replacement-transaction fixtures for field identity, qualification evidence, regression results, authority non-widening, evaluator separation, residual escrow, rollback receipts, approvals, monitor state, promotion blockers, model-rollout data/schema/model/serving/monitor gates, baseline regression floors, monitor-trigger rollback conditions, irreversible-effect ownership, and non-claim boundaries; production model rollout, model-monitor behavior, real regression-suite coverage, and deployed rollback remain unrun.
 - Implemented Codex test: Regression preservation test, via `python3 scripts/validate_readiness_residual_gates.py` over failed-regression and missing-regression promotion blockers; real regression-suite coverage remains unrun.
@@ -975,6 +1210,7 @@ Draft deliverables:
 - Implemented Codex test: Capability replacement identity sequence bridge, via `python3 scripts/validate_capability_replacement_trace_probe.py` over `experiments/capability_replacement_trace/results/2026-07-02-local.json`; the trace preserves one field identity across canary and rollback, blocks default promotion after monitor failure, restores the prior implementation, preserves the authority envelope, keeps a residual owner, rejects four sequence controls for identity drift, monitor-failed defaulting, rollback-prior mismatch, and missing residual owner, and records no support-state promotion. This is a deterministic synthetic sequence only, not deployed replacement, production rollback, regression-suite quality, or monitor-quality evidence.
 - Implemented Codex test: Intent-governed replacement bridge, via `python3 scripts/validate_intent_governed_replacement_bridge.py` over `experiments/intent_governed_replacement_bridge/results/2026-07-02-local.json`; the synthetic bridge records two valid bridge traces and six expected-invalid controls for command authority into replacement admission, default-without-approval blocking, authority-widening rejection, stop-condition-erasure rejection, rollback-owner requirement, and support-promotion overclaim. This is no natural-language parser, deployed dispatcher, approval-service, replacement execution, production rollback, monitor-quality, regression-suite-quality, support-state-promotion, or evidence-transition claim.
 - Implemented proof-backed check: finite replacement transaction and lifecycle route proof for missing artifacts, identity mismatch, authority expansion, evaluator capture, stale evidence, failed regression floors, missing canary scope, failed canaries, missing monitor windows, monitor incidents, missing rollback handles, missing rollback receipts, failed rollback dry runs, unowned irreversible effects, missing residual owners, deprecation/retirement gaps, and missing non-claim boundaries; this is structured-record coverage only, not deployed replacement execution.
+- Next real slice: one stateful side-effecting field with locked prior/candidate runtimes, prospective checkpoint, independent evaluator and delayed monitor, migration, one downstream consumer and descendant, irreversible control, rehearsed recovery/compensation, strong rollout baselines, joint usefulness/unsafe-release/recovery/privacy-rights/cost metrics, ablations, replication, and transfer.
 
 Lean proof targets:
 
@@ -991,9 +1227,9 @@ Lean proof targets:
 
 Stable ID: `security-kernel-and-digital-scifs`
 
-Chapter job: High-agency systems need security boundaries for secrets, context, permissions, and tool calls.
+Chapter job: Govern privileged information flow and effects through a threat-model-bound authority-use transaction while preserving exact non-claims about open-world security.
 
-Core claim: Sensitive context and privileged actions should be mediated by kernel-like security mechanisms and compartmentalized Digital SCIFs.
+Core claim: Every privileged information flow or effect should execute as a threat-model-bound authority-use transaction through a non-bypassable reference monitor: bind the exact principal, purpose, operation, target, data and taint scope, budget, time, nonce, evaluator and policy identities; admit only minimized context and capabilities into a declared isolation grade; mediate every effect and egress; treat sanitization as explicit declassification; close leases, caches, logs, descendants, and residuals through revocation or incident recovery; and never infer security from the record, handle, compartment, or finite test alone.
 
 Source loading queue:
 
@@ -1005,53 +1241,54 @@ Source loading queue:
 | Current agent-security comparators | `ext_agentdojo_2024`, `ext_camel_prompt_injection_2025`, `ext_owasp_agentic_top_10_2026` | Load for tool-over-untrusted-data evaluation, control/data-flow capability defenses, and the 2026 agentic-risk taxonomy. Preserve benchmark, proof-scope, coverage, and local-reproduction limits. |
 
 
-| Manifest assignment reconciliation | `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Pinned implementation counterexamples | `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project` | Use for contract-versus-effect, metadata-versus-enforcement, isolation, audit, revocation, root, and evaluator-independence failures; public-safe notes only, with no security support promotion. |
 Draft arc:
 
-- Problem: High-agency systems need security boundaries for secrets, context, permissions, and tool calls.
-- Insufficiency: Putting secrets or privileged context into model-visible text invites leakage, prompt injection, and authority confusion.
-- Mechanism: Split sensitive action into request, authorization, substitution, execution, sanitization, and audit.
-- Mechanism: Use handles rather than exposing secrets; return handle status and decisions without secret bytes.
-- Mechanism: Separate model-visible context from privileged substitution inside approved boundaries.
-- Mechanism: Run high-risk tasks inside compartmentalized Digital SCIF context containers with lifecycle and residual leak-risk records.
-- Mechanism: Bind handles to purpose, destination, action, time window, approval, logging, and revocation so authority cannot become ambient context or be reused after the lease expires.
-- Mechanism: Treat sanitized outputs as security artifacts with removal notes and residual leak-risk records; summaries can still leak derived sensitive information.
-- Mechanism: Track handle-lease states such as requested, denied, scoped, active, substituted, sanitized, zeroized, expired, revoked, and leak-residual-recorded.
-- Mechanism: Emit a SCIF Commit Record with admitted context shards, memory masks, allowed tools, denied material, substitution event, sanitization decision, zeroization result, committed material, residual leak-risk class, and expiry or revocation event.
-- Interface: VCM supplies least-privilege context and clearance-scoped mission briefs.
-- Interface: Execution checks tool permissions and performs substitution only at authorized runtime boundaries.
-- Interface: Governance audits sensitive transitions through Authority Use Receipts.
-- Exact Appendix C claim-source mappings for the core security-kernel claim across Ladon/Manhattan blind handles, Context Engineer SCIF/context-supply-chain lifecycle, Talos execution/audit context, Alignment Field normative boundary pressure, and Coherence Exchange governance framing; four local mappings (`ladon_manhattan`, `context_engineer`, `talos`, `alignment_field`) now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. Support remains `argument` even after the 3-valid/8-expected-invalid synthetic security-kernel harness; kernel security, sandbox isolation, side-channel safety, prompt-injection containment, secret-handle safety, deployed approval-expiry enforcement, least-privilege context behavior, security-overhead budget preservation, threat-model artifacts, source interpretation, and deployed runtime evidence remain pending.
+- Problem: untrusted content can induce privileged information flow or effects across model, runtime, tool, operator, vendor, hardware, log, backup, and descendant trust zones.
+- Insufficiency: prompt rules, visible secrets, one-time approval, handles, allowlists, containers, filters, logs, and SCIF labels each cover only part of least authority, complete mediation, declassification, isolation, revocation, side channels, and recovery.
+- Mechanism: freeze a versioned threat model and exact principal-purpose-operation-target-data-destination-budget-time-nonce authority tuple.
+- Mechanism: minimize and taint context, late-substitute protected material, completely mediate every declared effect and egress, and fail closed on missing authority or telemetry.
+- Mechanism: declare the actual process/VM/browser/filesystem/network/memory/accelerator/device/operator/vendor isolation grade; never infer isolation from the Digital SCIF name.
+- Mechanism: separate trusted control from untrusted data, propagate labels, and treat sanitization and authorized declassification as distinct decisions.
+- Mechanism: close request, admission, execution, commit/abort, zeroization, expiry/revocation, audit, incident recovery, compensation, descendants, external effects, and residual ownership.
+- Mechanism: protect audit evidence as sensitive data, expose evaluator dependencies, and measure useful completion, unsafe effects, false denial, availability, privacy, latency, labor, recovery, and governance cost jointly.
+- Interfaces: Threat Model Record, Authority Lease, Context Admission Record, Effect Mediation Receipt, Declassification/SCIF Commit Record, and Revocation/Incident Closure Record.
+- Source ownership: all sixteen assigned sources have reviewed manifest mappings. The five author/project lineage groups are not independent confirmations; the six external comparators were not reproduced; support remains `argument`.
+- Evidence boundary: exactly 3 valid/8 expected-invalid authority records, 2 valid/6 expected-invalid commit routes, 6 valid/7 expected-invalid budget records, 22 Lean declarations under four targets, and a bounded 36-transaction result with 0 governed primary unsafe releases, only 2 useful releases, and 32 exact attack-control rollbacks.
+- Promotion/refutation campaign: real models and natural/adversarial tool work against prompt-only, vault/ACL, sandbox, zero-trust, CaMeL-family, AgentDojo-style, and full-transaction comparators with independent red teams/evaluators, causal ablations, replication, and transfer.
 
 Primary invariants:
 
-- Secrets are not directly model-visible.
-- SCIF context is purpose-limited.
-- Privilege substitution is auditable.
-- Handle leases expire or revoke rather than becoming ambient authority.
-- Sanitized commits record retained material and residual leak risk.
+- Default deny and no ambient authority over the complete frozen tuple.
+- Named complete-mediation points fail closed on missing identity, policy, telemetry, or observer state.
+- Protected material stays outside ordinary model context where mediated use suffices, without implying non-inference or non-leakage.
+- Handles are protected and cannot silently widen, replay, delegate, launder, or redirect authority.
+- Context is minimized, purpose-limited, taint/provenance/clearance bound, and explicit about omissions.
+- Taint changes only through separately authorized declassification; sanitization, authorization, declassification, and utility evaluation remain distinct.
+- Isolation grades, logs, telemetry, caches, backups, descendants, expiry, revocation, recovery, privacy, rights, usefulness, and cost remain explicit.
+- Finite schemas, fixtures, proofs, red teams, and zero observed leaks establish only their exact frozen scope.
 
 Failure modes to cover:
 
-- Prompt injection extracting secrets.
-- Privilege leakage through summaries.
-- SCIF bypass.
-- Ambient-handle drift.
-- Security-cost laundering.
+- Control/data injection, confused deputy, handle laundering, replay, stale approval, revocation failure, and target substitution.
+- Overbroad admission, semantic-summary laundering, log/telemetry/browser/hardware/side-channel egress, and cross-session or descendant bleed.
+- SCIF theater, zeroization theater, monitor/vault/supply-chain/root compromise, and captured policy/evaluation/audit/closure.
+- Audit privacy inversion, denial of service and approval fatigue, security-cost laundering, irreversible effects, failed compensation, and rights laundering.
 
 Draft deliverables:
 
-- A secure-handle workflow and SCIF lifecycle diagram.
-- Source-noted external positioning now uses `ext_owasp_llm_top_10_2025`, `ext_nist_zero_trust_architecture_2020`, and `ext_saltzer_schroeder_protection_1975` as comparators for LLM security risks, zero-trust access mediation, and classic protection principles. This replaces the former external-baseline exception only for positioning and does not promote support state.
+- A threat-model and authority-use lifecycle sequence with an explicit declassification and incident-closure boundary.
+- Source-noted external positioning uses OWASP LLM/Agentic, NIST Zero Trust, Saltzer-Schroeder, AgentDojo, and CaMeL as frozen comparator families without conformance or efficacy import.
 - Implemented synthetic Codex test: Secret-handle substitution test via `python3 scripts/validate_security_kernel.py`; secret-handle safety, sandbox isolation, and deployed substitution behavior remain open.
 - Implemented synthetic Codex test: Handle lease expiry/reuse test via `python3 scripts/validate_security_kernel.py`; the harness now rejects an expired approval and checks revocation-path discipline, while deployed lease expiry, revocation propagation, and reuse prevention remain open.
 - Implemented synthetic Codex test: SCIF least-privilege test via `python3 scripts/validate_security_kernel.py`; the harness now rejects overbroad context/private-source requests, while deployed least-privilege context behavior and side-channel safety remain open.
 - Implemented synthetic Codex test: Sanitized-output residual test via `python3 scripts/validate_security_kernel.py`; leak prevention and summary-safety claims remain open.
 - Implemented local Codex test: SCIF sanitized commit replay probe via `python3 scripts/validate_security_scif_commit_probe.py`, covering `valid_sanitized_commit_replay`, `valid_prompt_injection_blocked_commit`, and six expected-invalid controls: `invalid_unsanitized_secret_commit_blocked`, `invalid_handle_leak_commit_blocked`, `invalid_missing_zeroize_commit_blocked`, `invalid_overbroad_context_commit_blocked`, `invalid_unapproved_destination_commit_blocked`, and `invalid_missing_residual_commit_blocked`; no deployed-kernel, sandbox-isolation, side-channel-safety, prompt-injection-containment, secret-handle-safety, approval-service, least-privilege-context, privacy, security, or support-state-promotion claim.
-- Planned Codex test: Security-overhead budget preservation test; no budget-preservation fixture, runtime budget enforcement, or security-economics claim exists yet.
-- Implemented synthetic Codex test: Prompt-injection containment scenario via `python3 scripts/validate_security_kernel.py`; runtime prompt-injection containment remains open.
+- Implemented synthetic Codex test: Security-overhead budget preservation test inside the 6-valid/7-expected-invalid Resource Budget corpus; no runtime budget enforcement, availability, calibrated security economics, or useful-throughput claim.
+- Implemented synthetic Codex test: prompt-injection record-route controls via self-authored receipt and commit fields; no model attack, semantic non-disclosure, runtime containment, or transfer claim.
 - Implemented proof-backed check: finite authority-use route proof for missing handles, revocation requests, inactive leases, missing approvals, unauthorized boundaries, missing substitution permission, insufficient clearance, prompt injection, missing required SCIFs, unsanitized output, residual leak risk, and clean authorized use; this is structured-record route coverage only, not deployed kernel security, sandbox isolation, side-channel defense, or prompt-injection containment.
-- Implemented proof-backed check: finite SCIF commit route bridge for the sanitized-commit replay probe, routing secret output, handle output, missing zeroization, overbroad context, inactive approval, and missing residual boundaries to blocked commit while routing prompt-injection cases to sanitized refusal; this is structured-record route coverage only, not a deployed kernel, sandbox, side-channel, privacy, or security proof.
+- Implemented proof-backed check: finite SCIF commit route bridge for the sanitized-commit replay probe, routing secret output, handle output, missing zeroization, overbroad context, inactive approval, and missing residual boundaries to blocked commit while routing prompt-injection cases to sanitized refusal; the module has 22 theorem declarations under four targets and proves no runtime refinement, semantic declassification, isolation, side-channel, privacy, or security result.
+- Next real slice: the preregistered multi-comparator, real-model, multi-asset adversarial campaign with joint usefulness/security/privacy/availability/recovery/cost gates, mechanism-specific ablations, independent replication, and transfer.
 
 Lean proof targets:
 
@@ -1066,90 +1303,99 @@ Lean proof targets:
 
 Stable ID: `model-weight-custody-and-hardware-roots-of-trust`
 
-Chapter job: Treat model weights as a distinct high-value mutable asset whose
-identity, custody, key release, loading environment, release scope, incident
-path, and irreversibility require a separate governed lifecycle.
+Chapter job: Govern the full custody lifecycle of model-family assets and
+reconstructable derivatives across storage, key, hardware, vendor, operator,
+recipient, recovery, sanitization, and release boundaries without turning a
+record or technology into a universal trust verdict.
 
-Core claim: A governed stack treats model weights as a distinct high-value mutable asset: it records model and artifact identity, lineage, authorized custody state, encrypted storage and transfer, key-release policy, attestation requirements and verification result, authorized execution environment, access and release scope, revocation and incident path, residual owner, and irreversible release decision; a failed, absent, stale, or out-of-policy custody or attestation record blocks loading or routes accountable review, but cannot itself establish hardware trustworthiness, weight confidentiality, model safety, release desirability, readiness, or authority to deploy.
+Core claim: Every governed model-family custody transition should bind a prospectively declared asset-and-derivative closure to exact artifact and lineage identity, holder and purpose, storage/transfer state, key and metadata lifecycle, Attester/Verifier/Relying-Party roles and policies, reference values and endorsements, freshness, measured target and attesting environments, verifier dependencies, independent-enough effect observation, plaintext and output-extraction exposure, load/use/serve/release authority separation, backup and emergency recovery, copy/recipient/descendant state, incident and revocation semantics, sanitization method and validation, irreversible distribution, privacy/rights/cost residuals, and terminal ownership; missing or failed modeled predicates route to a named non-default state, while no record, encryption, signature, security level, attestation result, hardware root, key action, deletion receipt, or finite proof by itself establishes custody completeness, confidentiality, trustworthy hardware, model safety, release merit, readiness, or deployment authority.
 
 Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
-| Primary | `ext_rand_model_weight_security_2024`, `ext_nist_confidential_computing_2026`, `ext_provable_model_weight_release_2025` | Read for threat surfaces, defense in depth, trust-domain and attestation limits, key release, attacker definitions, extraction objections, and irreversible-release boundaries. |
-| Supporting | `ext_nvidia_confidential_model_lifecycle_2026`, `cca_project` | Use NVIDIA only as a vendor-specific lifecycle comparator and CCA only for protected-state/role-separation implementation context; neither is local custody or security evidence. |
-| Supply-chain attestation comparator | `ext_in_toto_2019` | Use for cryptographically authorized lifecycle-step attestations and their limits. Valid process metadata does not prove model correctness, safe behavior, trustworthy authorized actors, or release merit. |
+| Primary | `ext_rand_model_weight_security_2024`, `ext_nist_confidential_computing_2026`, `ext_provable_model_weight_release_2025`, `ext_ietf_rats_architecture_2023`, `ext_nist_key_management_2020`, `ext_nist_media_sanitization_2025` | Read as distinct primary comparators for threat surfaces, defense in depth, confidential-computing limits, extraction and irreversible release, RATS role and policy separation, full key lifecycle, and effort-relative sanitization. None is local efficacy or conformance evidence. |
+| Supporting | `cca_project`, `ext_in_toto_2019`, `ext_nvidia_confidential_model_lifecycle_2026` | Use CCA only as author-lineage implementation context, in-toto as a signed-provenance neighbor, and NVIDIA as a vendor-specific lifecycle variant. Do not count the nine records as nine independent demonstrations of one claim. |
+| Variant | `ext_nvidia_confidential_model_lifecycle_2026` | Preserve vendor-specific encrypted-artifact, attestation, and key-release detail without importing cross-platform confidentiality, verifier independence, or deployment correctness. |
 
 Draft arc:
 
-- Problem: Runtime secret and action controls leave the model artifact itself
-  copied, loaded, released, or revoked without a named custody owner.
-- Insufficiency: Storage encryption, a valid-looking attestation token, or an
-  ordinary deployment record cannot by themselves establish a secure model
-  lifecycle, weight confidentiality, model safety, or release merit.
-- Mechanism: Bind model and artifact identity, lineage, custody authority,
-  encrypted storage/transfer, recipient scope, key-release policy, environment
-  measurement, attestation requirement/result, incident path, residual owner,
-  and affected release path into a versioned custody record.
-- Mechanism: Release a decryption key only after a current policy verifies its
-  stated environment, measurement, scope, verifier, and residual owner; block
-  or route accountable review on missing, stale, unverifiable, or invalid input.
-- Mechanism: Treat a local load, managed transfer, recipient distribution, and
-  open-weight release as distinct transitions with separate authority,
-  derivative-copy, recall, incident, and residual conditions.
-- Interface: Security Kernel owns runtime secret and action authority; model
-  custody owns the artifact and the precondition for a bounded load.
-- Interface: Artifact Graphs owns immutable provenance and replay; custody
-  points to artifact and measurement identities rather than duplicating it.
-- Interface: Capability Thresholds, Runtime Adapters, and Readiness retain
-  commitment, execution permission, and admission decisions respectively.
+- Problem: Runtime tool governance can coexist with uncontrolled optimizer
+  state, adapters, quantizations, checkpoints, caches, recovery images,
+  extracted equivalents, recipient copies, and descendants.
+- Insufficiency: Encryption, IAM, registry digests, signatures, security levels,
+  attestation tokens, TEEs, key denial, deletion, and release policy are scoped
+  predicates, not proofs of closure, confidentiality, recall, or safe release.
+- Declare: freeze the threat model, model-family derivative closure, holder and
+  trust-zone inventory, adversaries, properties, effort, availability,
+  recovery, rights, exclusions, and residuals.
+- Protect and appraise: govern full key and metadata lifecycle; separate
+  Evidence, Verifier appraisal, Attestation Result, and Relying-Party decision;
+  version hardware, firmware, vendor, policy, reference-value, endorsement,
+  operator, and key-service dependencies.
+- Observe and control effects: distinguish requested key release from observed
+  decrypt, plaintext residency, load, serve, copy, extraction, crash/cache,
+  unload, runtime action, recipient distribution, and open release.
+- Recover and adjudicate: propagate incidents and revocations, reconcile every
+  break-glass/recovery effect, validate sanitization at a declared effort, and
+  record irreversible recipient/open release before authority is granted.
+- Interface: expose ten typed records/projections for threat and closure, copy
+  and derivatives, keys, appraisal, load/use, distribution, sanitization,
+  incident/revocation/recovery, exact cross-layer handoffs, and public-safe
+  evidence; every neighboring layer retains its own decision authority.
 
 Primary invariants:
 
-- A weight identity, lineage, custody authority, access scope, and release path
-  are recorded before a custody claim or key-release decision.
-- A key is not released to a missing, stale, unverifiable, out-of-policy, or
-  unapproved environment record.
-- Attestation is scoped evidence about a stated measurement and verifier, not a
-  proof of hardware, vendor, operator, software, model safety, or deployment
-  safety.
-- Open-weight release records irreversibility and cannot be silently treated as
-  a reversible runtime deployment.
-- A custody incident or revocation record retains affected identities, scopes,
-  residuals, decision owner, and re-review trigger.
+- Exact identity, closure version, holder, purpose, authority, environment,
+  consumer, time, and residual ownership precede every admitted transition.
+- Derivative closure is monotone; unknown or excluded branches remain owned
+  residuals rather than disappearing from custody counts.
+- Key state fails closed when missing, stale, compromised, widened, expired, or
+  unreconciled; appraisal roles and policies remain distinct and freshness is
+  relational rather than token-age-only.
+- Possession, key release, decryption, load, serve, action authority, transfer,
+  recipient distribution, and open release are non-transitive decisions.
+- Recovery and break glass obey the same custody rules and expire into
+  reconciliation; revocation records observed effects and never implies recall.
+- Sanitization is target/media/method/sensitivity/effort/inventory/key/
+  validation-relative; deletion or command success is not erasure.
+- Security is evaluated jointly with false denial, usefulness, availability,
+  recovery, privacy/rights, operator burden, benefit, and total cost.
 
 Failure modes to cover:
 
-- Weight sprawl through backups, checkpoints, developer copies, logs, caches,
-  or derivative artifacts.
-- Attestation laundering from a bounded measurement into a universal trust
-  claim.
-- Key-release drift through stale measurement, altered policy, widened scope,
-  or unrecorded environment changes.
-- Open-release laundering that presents irreversible distribution as a routine
-  and reversible deployment.
-- Autonomous-insider capture through legitimate but overbroad model access,
-  keys, tools, or copies.
+- Weight/capability sprawl, identity substitution, key lifecycle drift,
+  appraisal replay/laundering, poisoned reference values or policies, and
+  compromised roots, firmware, vendors, operators, or supply chain.
+- Self-ratifying roles, authorized-insider or autonomous-system capture,
+  plaintext leakage, and output/adapter/distillation/parameter extraction.
+- False denial, key/Verifier outage, unrecoverable rollback, disaster-recovery
+  failure, approval fatigue, and availability collapse.
+- Revocation laundering, sanitization theater, release laundering, and
+  end-to-end security claims inferred from one control label or token.
+- Evidence privacy/operational-security harm and externalized availability,
+  labor, rights, recipient, compensation, and irreversible costs.
 
 Draft deliverables:
 
-- A custody-flow diagram separating model identity, encrypted artifact,
-  attestation verification, key-release policy, readiness review, runtime
-  authority, and release residuals.
-- Source-noted external positioning through RAND's model-weight security
-  analysis, NIST's draft confidential-computing guidance, NVIDIA's
-  vendor-specific confidential lifecycle, and formal release-scheme analysis;
-  none establishes local weight protection, confidential inference, safety,
-  readiness, or authority.
-- Implemented proof packet: nine derived theorem declarations across the
-  original load route and the richer custody lifecycle route cover invalid
-  attestation, lineage, policy/freshness, verifier dependencies, independent
-  load observation, release-authority laundering, bounded load, and explicit
-  irreversible-release recording. This is structured-record coverage only.
-- Implemented Codex test: eight public-safe synthetic custody records and nine
+- Completed semantic proof-contract draft with 16 mechanisms, 10 interfaces,
+  15 invariants, 17 failure modes, nine reviewed source mappings, a RATS-
+  separated custody-flow diagram, worked mismatch/release trace, and explicit
+  promotion/refutation program.
+- Implemented finite proof packet: nine declarations under eight manifest
+  targets cover invalid attestation, lineage, policy/freshness, dependencies,
+  observation, authority laundering, bounded load, and irreversible-release
+  recording. This remains Boolean structured-record coverage only.
+- Implemented finite test: eight public-safe synthetic custody records and nine
   rejecting mutations are digest-bound to
   `experiments/model_weight_custody_lifecycle/results/2026-07-13-local.json`.
-  No real weights, keys, secrets, hardware, verifier, or deployment ran.
+  No real asset, derivative closure, key, hardware, appraisal, plaintext load,
+  extraction, revocation propagation, recovery, sanitization, privacy,
+  availability, security, or release effect ran.
+- Next unrun campaign: public-safe effect-bearing model-family artifacts,
+  independently implemented discovery/appraisal/relying-party/load/extraction/
+  incident/recovery/sanitization components, IAM/registry/KMS/vendor/RATS/full
+  comparators, joint metrics, causal ablations, replication, and transfer.
 
 Lean proof targets:
 
@@ -1168,56 +1414,46 @@ Lean proof targets:
 
 Stable ID: `ai-supply-chain-integrity-and-lifecycle-provenance`
 
-Chapter job: Govern the cross-lifecycle integrity and re-review policy that
-connects AI data, code, dependencies, build/training runs, artifact derivatives,
-signing, suppliers, advisories, releases, revocation, and disposal before a
-bounded artifact path reaches custody or readiness review.
+Chapter job: Govern consumer-relative AI supply-chain assurance from exact
+subjects and scoped assertions through independently checkable lifecycle
+effects, relation-specific invalidation, restoration, retirement, disclosure,
+and residual closure before custody or readiness review.
 
-Core claim: A governed stack maintains a versioned AI supply-chain graph that binds each admitted model, dataset, code dependency, build or training run, signer or provenance statement, supplier or distributor, advisory and vulnerability state, derivative relationship, release scope, revocation path, residual owner, and retention or disposal event; a missing, inconsistent, unverified, revoked, or unresolved-critical component record blocks affected artifact admission or routes accountable review, but does not itself establish artifact correctness, absence of compromise, dataset fitness, model safety, legal compliance, readiness, authority, or ASI.
+Core claim: Every governed AI supply-chain decision should bind a prospectively frozen consumer, requested use, threat and assurance model, materiality policy, and relation-specific asset closure to exact subject/content and lineage identity; typed data, code, model, prompt/policy, dependency, build/training/evaluation, environment, hardware/firmware, supplier/service, signer, advisory, transformation, release, recipient, descendant, retention, and retirement state; issuer, verifier, policy, freshness, trust and dependency boundaries; observed artifact and lifecycle effects; append-only invalidation and acknowledged affected-path propagation; restoration, compensation, disclosure, privacy/rights, availability, cost, and terminal residual ownership. Missing, inconsistent, stale, unverifiable, revoked, compromised, materially incomplete, or unresolved-critical predicates should route each affected consumer to a named non-ordinary state, while no graph, BOM, checksum, signature, provenance statement, SLSA level, layout, supplier claim, advisory, quarantine, conformance result, or finite proof by itself establishes world-complete lineage, assertion truth, artifact correctness, absence of compromise, data fitness or rights, model safety, legal compliance, readiness, release merit, or deployment authority.
 
 Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
-| Primary | `ext_nist_cscrm_2022`, `ext_slsa_build_track_1_2`, `ext_openssf_model_signing_spec_2025`, `ext_spdx_ai_profile_3_0_1` | Read for lifecycle C-SCRM, build provenance and its limits, model/dataset signing and its non-guarantees, and interoperable AI BOM relationships. |
-| Supporting | `cca_project`, `moecot_manifest_project`, `corbens_trainer_project` | Mine CCA and MoECOT for public-safe provenance, supersession/invalidation, pass-hash, trace-bundle, source-hash, closure/lineage, attestation, digest, replay, and revocation-record context; mine Corben's Trainer for typed experiment manifests, artifact lineage, benchmark authenticity, quarantine, and revocable-promotion context. Do not treat any as local supply-chain, signing, verification, supplier, security, or deployment evidence. |
-| Interoperable provenance and current risk comparators | `ext_w3c_prov_o_2013`, `ext_mlcommons_croissant_1_1_2026`, `ext_in_toto_2019`, `ext_owasp_agentic_top_10_2026` | Use for provenance graphs, machine-readable dataset metadata, signed lifecycle steps, and agentic supply-chain risk. Conformance or taxonomy alignment does not prove completeness, integrity, data fitness, safety, or local adoption. |
+| Primary | `ext_nist_cscrm_2022`, `ext_slsa_build_track_1_2`, `ext_openssf_model_signing_spec_2025`, `ext_spdx_ai_profile_3_0_1`, `ext_w3c_prov_o_2013`, `ext_mlcommons_croissant_1_1_2026`, `ext_in_toto_2019` | Use as distinct primary comparators for lifecycle risk, build provenance, model signing, AI BOMs, asserted provenance, dataset metadata, and signed process layouts. None establishes local conformance, content truth, efficacy, completeness, or safety. |
+| Supporting | `cca_project`, `moecot_manifest_project`, `corbens_trainer_project`, `ext_owasp_agentic_top_10_2026` | Use the projects only as author-lineage implementation context and OWASP only as supporting threat taxonomy. Do not count the eleven records as eleven independent demonstrations of one control. |
 
 Draft arc:
 
-- Problem: A named model can have a custody record while data, code,
-  dependencies, training/build runs, suppliers, signatures, advisories, and
-  derivatives remain unbound or unreviewable.
-- Insufficiency: A final model digest, an inventory export, build provenance, or
-  a valid signature cannot by itself establish complete lineage, artifact
-  correctness, absence of compromise, data fitness, model safety, compliance,
-  or deployment merit.
-- Mechanism: Maintain a typed graph across model, dataset, code, dependency,
-  build/training run, configuration, signer, supplier, distributor, advisory,
-  derivative, release, revocation, and disposal nodes, with version, scope,
-  source, freshness, owner, and affected-path edges.
-- Mechanism: Evaluate a supply-chain admission record over artifact
-  identity/digest, lineage, supplier scope, provenance, signature, BOM,
-  advisory, revocation, residual, and requested-use fields before moving to
-  custody review.
-- Mechanism: Preserve new advisories, revoked signers, supplier incidents,
-  dependency changes, discovered derivatives, and stale inventories as versioned
-  events that route declared affected paths to repair, review, quarantine, or
-  re-review.
-- Mechanism: Append invalidation rather than overwriting prior decisions,
-  compute the exact declared graph-reachable downstream closure, and require one
-  owned non-ordinary response for every affected node while preserving hidden
-  or undeclared relationships as residuals.
-- Mechanism: Treat BOMs, provenance, signatures, and supplier declarations as
-  bounded references with their own verifier and limitation, not a universal
-  trust label.
-- Interface: Artifact Graphs stores provenance/replay; this chapter owns the AI
-  supply-chain integrity policy and affected-path routing.
-- Interface: Model-Weight Custody owns loading conditions for a known artifact;
-  this chapter supplies upstream lineage and advisory preconditions.
-- Interface: Data Engines owns learning-data admission/deletion mechanics;
-  Security Kernel and Runtime Adapters retain runtime authority; Readiness
-  retains bounded admission.
+- Problem: A valid custody record can protect one digest while material data,
+  rights, prompt/policy, dependency, environment, hardware, supplier, advisory,
+  recipient, descendant, incident, or retirement state remains unbound or
+  unable to trigger downstream effects.
+- Insufficiency: Graphs, BOMs, checksums, signatures, provenance, SLSA levels,
+  layouts, dataset records, supplier claims, advisories, quarantine labels, and
+  conformance results are scoped predicates—not completeness, assertion truth,
+  content equivalence, reproducibility, fitness/rights, safety, or authority.
+- Freeze: consumer/use, threat/property model, required relation classes,
+  materiality, discovery grade, disclosure, availability/recovery, evidence
+  gates, authority, and residuals.
+- Identify and verify: type exact lifecycle subjects and relations; separate
+  assertions, issuers, verifiers, trust dependencies, policies, freshness, and
+  observed content/transformation effects.
+- Propagate and respond: type property inheritance, adjudicate advisory
+  applicability, append invalidation, compute relation-specific closure, obtain
+  acknowledgements, and own quarantine, restoration, compensation, exceptions,
+  retirement, and disposal.
+- Measure and retain: minimize disclosure; measure discovery, integrity,
+  applicability, propagation, restoration, usefulness, availability,
+  privacy/rights, labor, benefit, and cost; retain negative and null outcomes.
+- Interface: ten typed records/projections connect Artifact Graphs, Data
+  Engines, Custody, Security, Runtime, Readiness, Privacy/Rights, Incident, and
+  Evidence owners without transferring broader support or authority.
 
 Primary invariants:
 
@@ -1289,7 +1525,7 @@ Stable ID: `recursive-self-improvement-boundaries`
 
 Chapter job: The book needs to state when self-improvement is allowed, what it may modify, and which invariants it cannot weaken.
 
-Core claim: Recursive self-improvement is allowed only as a bounded, evidence-gated, reversible transition over stable capability fields.
+Core claim: For a prospectively declared self-model, mutable state partition, authority envelope, consumer and use, and evaluation horizon, a system-generated change may enter a live capability field only through a separately authorized transition that binds exact change lineage, protected invariants, evaluator dependencies, full declared state, boundary deltas, matched evidence, staged exposure, outcome delay, rollback and compensation limits, descendant invalidation, and terminal residual ownership; the candidate may contribute proposals and evidence but cannot solely define, alter, judge, or authorize the conditions of its own promotion.
 
 Source loading queue:
 
@@ -1305,56 +1541,68 @@ Source loading queue:
 | Manifest assignment reconciliation | `ext_embedded_agency_2019` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
-- Problem: The book needs to state when self-improvement is allowed, what it may modify, and which invariants it cannot weaken.
-- Insufficiency: Treating self-improvement as automatic capability growth ignores evaluator integrity, constitutional preservation, authority ceilings, and regression memory.
-- Mechanism: Compose SCF targets, replacement transactions, security-kernel boundaries, protected-invariant reviews, and evidence gates into a Self-Improvement Transition.
-- Mechanism: Require a cheaper-intervention ladder and evidence packet before teacher edits, architecture edits, or parameter growth.
-- Mechanism: Separate proposing, evaluating, approving, committing, monitoring, rollback, and retirement.
-- Mechanism: State the local governed-cognition pattern delta: this chapter owns promotion legitimacy under self-reference, where a candidate may propose changes about itself but cannot be the only authority that declares its own proposal promoted.
-- Mechanism: Delay autonomous replacement until evaluators, readiness gates, governance logs, and rollback paths are credible.
-- Mechanism: Treat security and resource boundary changes as first-class governance questions: a self-improvement proposal cannot silently widen handles, weaken SCIF lifecycle, cut verification budget, relax rollback, or retire regressions.
-- Mechanism: Record self-improvement transitions as chain-of-custody artifacts from residual/wall through authority used, budget spent, evidence collected, independent evaluation, protected-invariant result, approval, canary, rollback, and lifecycle state.
-- Mechanism: Require a Boundary Delta Review naming authority, security, resource, evaluator, evidence, and rollback deltas before canary or promotion.
-- Mechanism: Track transition states such as proposed, research-only, evidence-packet-ready, boundary-delta-blocked, canary, default-candidate, promoted, quarantined, rolled-back, superseded, and retired.
-- Interface: SCFs define replaceable units and authority ceilings.
-- Interface: Evidence ratchets, readiness gates, and replacement transactions provide gates.
-- Interface: Alignment and governance supply protected constraints, approval boundaries, and non-self-ratification rules.
+- Problem: A system participating in its own proposal, implementation, or evaluation can shape the state, evidence, evaluator, authority, ontology, descendants, and recovery conditions by which admission is judged.
+- Insufficiency: Scores, compiling patches, green gates, sandboxes, archives, signatures, finite theorems, checkpoint restores, and nominal approvals do not establish improvement when candidate influence and omitted state remain uncontrolled.
+- Distinct ownership: this chapter owns promotion legitimacy under self-reference; Open-Ended Improvement Engines owns candidate-generation campaigns, Capability Replacement and Rollback owns the effect-bearing transaction, and SCFs own consumer-relative substitution identity.
+- Mechanism: Freeze consumer/use, self-model, mutable/protected partition, authority, objective, risk, tasks, baselines, outcome horizon, recursive depth, stop authority, and support ceiling before candidate inspection.
+- Mechanism: Bind exact change identity, class, diff, lineage, dependencies, proposer, implementer, claimed mechanism, expected effects, and non-goals.
+- Mechanism: Inventory model, optimizer, scheduler, RNG, cache, prompt/policy, tool/credential, evaluator, benchmark, environment, checkpoint, backup, external-effect, and descendant state while retaining outside-inventory residuals.
+- Mechanism: Separate proposal, implementation, evaluation, approval, commit, monitor, rollback, compensation, retirement, Evidence State, and publication authorities.
+- Mechanism: Treat evaluator independence as a dependency graph over models, code, data, infrastructure, organizations, incentives, funding, and reporting, not as a role name.
+- Mechanism: Preserve a prospective cheaper-intervention ladder and all failed, null, rejected, and superseded attempts before stronger changes.
+- Mechanism: Freeze strong matched baselines, holdouts, contamination checks, acceptance/refutation gates, uncertainty, budgets, traffic allocation, and promotion ceilings.
+- Mechanism: Review authority, security, data/privacy, resource, evaluator, evidence, interface, state, deployment, rollback, and rights deltas separately.
+- Mechanism: Measure usefulness, regressions, unsafe release, deception/sandbagging indicators, latency, compute, human labor, verification, rights, recovery, availability, and residual risk jointly.
+- Mechanism: Challenge evaluator variation, shifted/hidden tasks, longer horizons, monitor attacks, capability elicitation, delayed behavior, composition, and recursive depth.
+- Mechanism: Stage eligible changes through sandbox, shadow, canary, bounded default, and promotion with isolated exposure, stop paths, and delayed outcome windows.
+- Mechanism: Separate exact prospective-inventory restoration from semantic recovery, privacy repair, remediation, compensation, and external effects.
+- Mechanism: Propagate rollback, compromise, refutation, and material scope change to acknowledged descendants, caches, qualifications, permissions, artifacts, and releases.
+- Mechanism: Retain append-only positive, negative, null, narrowed, refuted, quarantined, rollback, cost, and terminal records, and expire evidence and permission after causal-context change.
+- Interface: consume campaign candidates, field contracts, replacement requests, rights/invariant reviews, security leases, full-state inventories, evaluator graphs, readiness packets, resource budgets, approval and monitor receipts, recovery/compensation, descendant invalidation, and Evidence State decisions without absorbing their owners.
+- Interface: output a distinct admission decision before the replacement lifecycle begins.
 
 Primary invariants:
 
-- Self-improvement cannot weaken protected invariants.
-- Evaluator independence is required.
-- Every accepted change remains auditable.
-- Boundary deltas are explicit before promotion.
-- Resource savings cannot spend security, verification, rollback, or human-review obligations unless governance separately changes those obligations.
+- The candidate cannot solely define, alter, judge, or authorize any load-bearing condition of its own promotion.
+- Protected rights, invariants, authority ceilings, correction paths, security boundaries, verification budgets, and regression floors cannot change silently.
+- Every declared material state surface has prospective identity, version, owner, dependency, and backup or compensation disposition; unknown state remains residual.
+- Evaluator independence is scoped to disclosed causal dependencies and is never inferred from naming alone.
+- Protocol, holdouts, gates, monitors, authority records, and retained failures stay outside candidate mutation and selective disclosure.
+- Checkpoint, comparator, traffic, task-distribution, and stop authority are prospective; no-update or failed arms cannot be relabeled as improvement.
+- Sandbox, canary, monitor silence, and digest equality are scoped observations, not safety or semantic-recovery proofs.
+- Rollback is limited to exact restored inventory, propagates to acknowledged descendants, and preserves external remediation, compensation, disclosure, and residual duties.
+- Negative/null outcomes and total costs remain append-only; material causal-context change expires affected claims and permissions.
+- Recursive depth and descendant-creation authority are bounded, and every transition has exactly one honest lifecycle outcome and owner.
 
 Failure modes to cover:
 
-- Recursive evaluator capture.
-- Constitutional weakening.
-- Irreversible flawed upgrades.
-- Boundary delta laundering.
-- Stale-gate promotion.
+- Recursive evaluator capture, dependency masquerading, protected-partition laundering, and boundary-delta laundering.
+- Incomplete state inventory, ontology/objective drift, benchmark or task-generator gaming, and survivorship-biased archives.
+- Sandbagging, deception, monitor manipulation, delayed behavior, premature promotion, and stale-gate reuse.
+- Rollback theater, descendant resurrection, external or irreversible effects, and privacy leakage through audit.
+- Recursive cascade, cross-field composition failure, authorization drift, verification-budget erosion, hidden human cost, and over-quarantine.
 
 Draft deliverables:
 
-- A self-improvement protocol that can reject, quarantine, roll back, or retire a proposed change.
-- Exact Appendix C claim-source mappings for the core recursive-self-improvement claim across SCF stable fields, Benchmaxxing benchmark-ratchet discipline, RMI modular improvement loops, Alignment Field normative caution, VIEA durable artifact/feedback discipline, Talos typed jobs/audit/replay, MoECOT runtime-reference context, Field of God AI Constitution protected constraints, and Theseus self-evolution/readiness-gate notes; six local mappings (`scf`, `benchmaxxing`, `rmi`, `alignment_field`, `viea`, `talos`) now have reviewed passage references, while `moecot` remains connector-only/source-note mapped and the constitution/Theseus mappings remain public-project/source-note mapped until raw source is vendored or made durable in this project. Support remains `argument` pending protected-invariant tests, evaluator-independence scenarios, rollback/canary execution evidence, fresh Theseus report inspection, or accepted evidence transitions.
+- Completed P1 semantic packet: all 73 structured atoms and 36 prose candidates reviewed, zero unowned material claims, support effect `none`.
+- A versioned non-deployed admission slice with one candidate-authored real patch, prospective self-model/state inventory, separately implemented evaluator and monitor, strong baseline, protected and boundary reviews, injected monitor failure, declared-state restore, descendant invalidation, external-effect compensation residual, and append-only terminal receipts. The current schema/fixtures do not yet satisfy this minimum.
+- Exact claim-source mappings for all fourteen assigned records: six local raw-cache passage reviews; MoECOT source-note/connector context; three pinned public-project constitution/Theseus notes; and CAIS, Darwin Gödel Machine, ADAS, and Embedded Agency comparator/foundations notes. Support remains `argument`; no source-reported result establishes the local core claim.
 - Implemented Codex test: Protected-invariant preservation test, via `python3 scripts/validate_self_improvement_boundaries.py` over self-improvement transition records that preserve protected invariants before canary or promotion; deployed protected-invariant behavior remains unrun.
 - Implemented Codex test: Evaluator independence test, via `python3 scripts/validate_readiness_residual_gates.py` over replacement records that reject weak or self-referential evaluator wording; broader self-improvement evaluator independence remains unrun.
 - Implemented Codex test: Boundary-delta review test, via `python3 scripts/validate_self_improvement_boundaries.py` over transition records that require authority, security, resource, evaluator, evidence, or rollback deltas and reject boundary-delta laundering; live boundary-delta review remains unrun.
 - Implemented Codex test: Verification-budget preservation test, via `python3 scripts/validate_self_improvement_boundaries.py` over transition records that reject verification, security, rollback, or human-review budget cuts in advancing transitions; actual verification-budget measurement remains unrun.
 - Implemented Codex test: Stale-gate replay test, via `python3 scripts/validate_self_improvement_boundaries.py` over transition records that reject stale gate promotion without rerun; fresh Theseus/current-readiness gate replay remains unrun.
 - Implemented Codex test: Self-improvement rollback scenario, via `python3 scripts/validate_readiness_residual_gates.py` over canary/default rollback readiness and expired-evidence rerun/reject scenarios; live self-improvement rollback remains unrun.
-- Implemented proof-backed check: finite self-improvement transition route proof for missing proposals, missing invariant declarations, missing evidence bundles, invariant breaches, sole self-evaluation, missing independent evaluators, authority/security/resource boundary deltas, missing approval, missing rollback, stale gates, missing residual escrow, canary monitor failures, complete canary reviews, and complete promotion reviews; this is structured-record route coverage only, not deployed recursive self-improvement safety.
+- Implemented proof-backed checks: 22 theorem declarations under three manifest targets cover assumption projection and finite Boolean routes for proposal, invariant, evidence, evaluator, boundary, approval, rollback, gate, residual, canary, promotion, and campaign-admission fields. They do not model dependency-aware evaluator independence, temporal behavior, recursive depth, semantic recovery, or runtime enforcement and are pending P2 rationalization/refinement.
+- Future causal campaign: natural effect-bearing task, candidate-authored patch, strong fixed/human/CI-CD/archive-search baselines, independent evaluator and monitor implementations, protected-partition and gate attacks, deceptive/delayed behavior controls, joint usefulness/safety/cost/rights/recovery metrics, exact restore and invalidation, causal ablations, independent replication, recursive-depth tests, and transfer.
 - Idea-depth local-delta slice: live and curated reader prose now identify Recursive Self-Improvement as the promotion-legitimacy owner in the governed-cognition pattern; this does not prove evaluator independence, rollback execution, monitor quality, live improvement safety, or support-state movement.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:self_improvement.boundary.operational_invariant` | `AsiStackProofs.SelfImprovement` | An improvement transition preserves all protected invariants. | implemented |
-| `lean:self_improvement.boundary.failure_blocks_promotion` | `AsiStackProofs.SelfImprovement` | A proposal evaluated only by the component being replaced cannot be promoted. | implemented |
+| `lean:self_improvement.boundary.operational_invariant` | `AsiStackProofs.SafetyCriticalLifecycle` | A self-improvement effect commits only after protected-predicate, pre-effect review, independent-evaluator, rollback, monitor, and evidence-transition obligations are recorded, while accepted traces preserve protected state and non-increasing authority. | implemented |
+| `lean:self_improvement.boundary.failure_blocks_promotion` | `AsiStackProofs.SafetyCriticalLifecycle` | The missing-independent-evaluator and authority-widening countermodels are rejected, and support promotion without a durable receipt and non-claim boundary cannot commit. | implemented |
 | `lean:self_improvement.boundary.transition_route_envelope` | `AsiStackProofs.SelfImprovement` | A structured self-improvement transition review routes missing proposals, missing invariant declarations, missing evidence bundles, invariant breaches, sole self-evaluation, missing independent evaluators, authority/security/resource boundary deltas, missing approval, missing rollback, stale gates, missing residual escrow, canary monitor failures, complete canary reviews, and complete promotion reviews into explicit outcomes. | implemented |
 
 ### Open-Ended Improvement Engines
@@ -1365,7 +1613,7 @@ Chapter job: Govern the generator-evaluator-archive campaigns that propose
 tasks, tools, programs, curricula, designs, or other candidate improvements so
 search pressure cannot become its own admission authority.
 
-Core claim: A governed stack treats open-ended improvement as a separate, bounded generation campaign: it records objective and task-generator constraints, candidate provenance, evaluator scope and independence, resources, failures, residuals, archive status, and admission decisions; it allows no generated artifact to widen authority, alter protected policy, or enter a live capability field without independent qualification and the existing improvement governor.
+Core claim: For a prospectively frozen consumer, purpose, legitimate objective, representation, campaign controller, task and candidate policy, evaluator and exposure policy, archive and hazard policy, resource and opportunity budget, stop authority, and evaluation horizon, open-ended improvement should operate as a bounded adaptive generation campaign in which every task, candidate, evaluation, failure, cost, reuse relation, and terminal outcome retains exact lineage; novelty, diversity, score, archive growth, transfer, self-verification, or search activity never grants authority or establishes useful improvement by itself; only separately qualified candidates may be handed to the existing self-improvement governor, and any change to the campaign's own objective, controller, evaluator authority, bounds, or admission interface is a separately authorized improvement proposal.
 
 Source loading queue:
 
@@ -1378,53 +1626,84 @@ Source loading queue:
 
 Draft arc:
 
-- Problem: A generator can create tasks, candidates, curricula, tools, or
-  designs faster than evaluators and governors can determine what they
-  optimize, what failed, and whether any result may affect a live capability.
-- Insufficiency: Recursive Self-Improvement Boundaries governs proposed
-  transitions but does not own the generator-evaluator-archive loop that shapes
-  the proposals and evidence offered to the governor.
-- Mechanism: Declare campaign objective, generator and task-policy bounds,
-  evaluator contract, resource budget, archive policy, residual register, and
-  stop conditions before candidates are considered for reuse.
-- Mechanism: Separate task generation, candidate generation, evaluation,
-  archive retention, and governance admission; a generator score is not a
-  promotion decision.
-- Mechanism: Preserve accepted, rejected, quarantined, and superseded
-  candidates with evaluator/version provenance, costs, failure reasons,
-  authority envelope, residuals, and replay references.
-- Mechanism: Send a promising candidate through independent qualification,
-  readiness, rollback, monitor, and authority gates before any canary or field
-  replacement.
-- Interface: Data Engines owns campaign input provenance; Benchmark Ratchets
-  owns benchmark integrity; Procedural Memory owns qualified procedures; Policy
-  Optimization owns approved update leases; RSI, Stable Capability Fields, and
-  Readiness Gates own promotion, authority, rollback, and monitoring.
+- Problem: Adaptive search can generate and select tasks, candidates,
+  evaluators, archives, and follow-on campaigns faster than scores expose
+  denominator changes, hidden failures/costs, hazardous artifacts, or de facto
+  authority.
+- Insufficiency: Novel environments, compiling programs, skills, frontier
+  scores, transfer, self-verification, sandboxes, records, and finite routes are
+  all scoped by objectives, representations, exposure, selection, resources,
+  controller, and archive policy.
+- Distinct ownership: this chapter owns generated distributions, candidate
+  search, evaluator exposure, archive/hazard custody, portfolio resources, and
+  stop effects before admission; RSI owns self-referential promotion legitimacy.
+- Mechanism: Freeze consumer/purpose, legitimate objective, representation,
+  controller, task/candidate/evaluator/exposure/archive/hazard policy, budgets,
+  stop owner, horizon, and support ceiling before outcomes.
+- Mechanism: Bind every task, candidate, evaluation, repair, failure, payload,
+  cost, descendant, reuse relation, and terminal outcome to exact lineage.
+- Mechanism: Separate objective authorship, task/candidate generation,
+  evaluation, selection, archive custody, qualification, residual ownership,
+  admission, Evidence State, and publication.
+- Mechanism: Freeze matched no-search, fixed-task, conventional-search, human-
+  authored, and strongest source-system baselines under equal resources.
+- Mechanism: Track evaluator dependencies, calibration, blind spots, exposure,
+  feedback, validation reuse, holdouts, disagreement, and expiry; generator-
+  side filtering is not qualification.
+- Mechanism: Preserve complete selection denominators, family coverage,
+  attempts, repairs, timeouts, discarded children, archive sampling, search-
+  space gaps, total cost, opportunity cost, and negative/null outcomes.
+- Mechanism: Separate public-safe receipts from executable, private, dual-use,
+  proprietary, or dangerous payload retention and destruction.
+- Mechanism: Effect-test cumulative resource/hazard budgets and stop, pause,
+  quarantine, rollback, and retirement under owner overload and campaign forks.
+- Mechanism: Treat controller/objective/evaluator-authority/bound/depth/admission
+  changes as separate RSI proposals and route candidates only to governor review.
+- Mechanism: Run matched generator/evaluator/archive/controller/resource/
+  retention/qualification ablations, replication, recursive-depth, and transfer.
+- Interface: Data, benchmark/safety, procedural-memory, update, RSI/SCF/
+  readiness, security/custody/supply-chain, artifact/replay, resource, runtime,
+  oversight, evidence, and release owners retain their distinct authority.
 
 Primary invariants:
 
-- A generated task, candidate, score, novelty metric, or self-verification
-  trace is not an admission or promotion decision.
-- Campaigns declare evaluator scope, resource budget, task-generator
-  constraints, stop conditions, and residual custody before reuse.
-- A candidate cannot widen authority, alter protected policy, or replace a live
-  field without independent qualification and the existing governor.
-- Rejected, quarantined, and superseded candidates retain provenance rather
-  than disappearing from the archive.
+- No task, candidate, novelty/diversity metric, score, transfer, self-
+  verification, archive frontier, or record is admission or proof of usefulness.
+- Campaign scope, representation, controller, policies, budgets, stop, horizon,
+  and support ceiling are prospective and versioned.
+- Every emission and outcome keeps lineage/disposition or a deletion receipt;
+  denominators cannot be rewritten after outcomes.
+- Exposure, feedback, dependencies, disagreement, and blind spots remain state;
+  same-family verification is not independent qualification.
+- Negative/null/unsafe/timed-out/over-budget/discarded outcomes remain visible;
+  payload custody can differ from receipt retention.
+- Budgets accumulate across retries, children, forks, and successors, and stop
+  authority must produce an observed timely effect.
+- Controller and admission-interface changes are separate proposals, and no
+  candidate or descendant inherits live authority.
+- Every campaign closes, pauses, or hands off with total cost, hazards,
+  residuals, and accountable owners.
 
 Failure modes to cover:
 
-- Objective or task-generator drift.
-- Evaluator capture or self-verification laundering.
-- Archive survivorship and erased failed candidates.
-- Unauthorized generated-artifact admission.
-- Unbounded resource or dual-use search without stop authority.
+- Objective/representation/task drift, evaluator capture, adaptive overfitting,
+  contamination, novelty theater, false transfer, and null-result laundering.
+- Archive survivorship, discarded-child/timeout erasure, stepping-stone
+  backfill, generator collapse, hidden feedback/model/human calls, and budget
+  reset.
+- Unauthorized admission, controller self-modification, ceremonial stopping,
+  recursive campaign explosion, cross-campaign contamination, and stale reuse.
+- Dangerous/private/proprietary payload escape, over-retention, over-deletion,
+  hidden opportunity/governance cost, and fail-closed over-quarantine.
 
 Draft deliverables:
 
-- A versioned improvement-campaign record with objective, generator/task
-  policy, evaluator/version, independent-review state, resource bill, archive
-  disposition, residual ownership, stop authority, and requested admission.
+- Completed P1 semantic packet: all 81 structured atoms and 62 prose candidates
+  reviewed, zero unowned material claims, support effect `none`.
+- A preregistered public-safe multi-round natural adaptive campaign with
+  no-search, fixed-task, conventional-search, human-authored, and generated-task
+  arms; fresh qualification; complete attempt retention; observed total cost;
+  effect-tested stops; hazard quarantine; and governor-only handoff.
 - Implemented public-safe bridge: seven frozen campaign-admission records and
   ten rejecting mutations cover independent qualification, budget, stop
   authority, archive history, residual ownership, and authority laundering.
@@ -1433,6 +1712,9 @@ Draft deliverables:
   in specified source settings; no local environment generation, program
   search, campaign engine, candidate archive, evaluator, autonomous discovery,
   self-improvement, model-quality, safety, or support-state result is claimed.
+- Proof boundary: seven branch theorems route trusted Boolean fields only; they
+  do not implement or validate objectives, generators, evaluators, archives,
+  budgets, stops, hazards, qualification, authority, novelty, or transfer.
 
 Lean proof targets:
 
@@ -1462,9 +1744,9 @@ Part source loading queue:
 
 Stable ID: `intent-to-execution-contracts`
 
-Chapter job: Accepted human intent needs a typed command contract whose semantics, authority, artifacts, verification, failure behavior, and execution receipts remain inspectable from intake through delivery.
+Chapter job: Own the consumer-relative conformance relation from an accepted intent receipt through command, plan, job, adapter, observed effect, artifact, verification, delivery, feedback, compensation, and residual custody without taking over intake, planning, compilation, runtime enforcement, or evidence admission.
 
-Core claim: Governed work should pass through explicit command contracts that bind intent, semantic interface fields, authority, artifacts, verification, failure behavior, execution receipts, and residuals before tools or runtimes act.
+Core claim: Intent-to-Execution Contracts should own a versioned, consumer-relative conformance relation between an accepted intent receipt and the complete execution lineage. Before any material dispatch, the relation binds exact objective and non-goals, semantic fields and precedence, authority ceiling and affected parties, state and environmental assumptions, allowed and forbidden means, artifacts and effect postconditions, verification and independence requirements, budgets and stop conditions, failure and compensation behavior, expiry and re-contract triggers, and the required receipts through plan, job, adapter, observed effect, artifact, delivery, feedback, and residual custody. Each lowering or effect must either preserve that relation under independently checkable evidence or stop, narrow, clarify, re-contract, compensate, or leave an explicit residual. The contract cannot infer human intent, grant authority, choose a plan, make a tool safe, prove semantic equivalence, establish verifier correctness, or count non-release as useful execution by itself.
 
 Source loading queue:
 
@@ -1479,54 +1761,38 @@ Source loading queue:
 
 Draft arc:
 
-- Problem: Accepted human intent needs a typed command contract whose semantics, authority, artifacts, verification, failure behavior, and execution receipts remain inspectable from intake through delivery.
-- Insufficiency: Prompt prose, model responses, and ad hoc task descriptions blur objective, context, constraints, authority, output contract, verification, failure behavior, artifact identity, and side-effect control.
-- Mechanism: Receive an accepted intent receipt and bind objective, constraints, authority, artifacts, evidence requirements, stop conditions, and re-contract triggers into a command contract.
-- Mechanism: Treat command contracts as semantic firewalls: retrieved context, examples, prior conversation, and style notes can inform work but cannot override explicit objective, constraints, authority, verification, or failure behavior.
-- Mechanism: Mark field provenance and confidence states: confirmed, policy-imposed, source-derived, defaulted, inferred, and missing.
-- Mechanism: Track command validation states: draft, field-complete, conflict-detected, authority-inferred, dispatch-blocked, validated-for-planning, and superseded.
-- Mechanism: Record handoff receipts, dispatch receipts, job refs, artifact refs, verifier decisions, feedback, residuals, stop/fault states, and non-claims.
-- Mechanism: Bind every privileged effect approval to exact principal,
-  operation, target identity and pre-state digest, parameter digest, policy
-  version, TTL, nonce, authority reference, observed effect, post-state, and
-  single-use consumption; scenario acknowledgement cannot substitute.
-- Interface: Human Intent intake supplies raw request context, bounded defaults, unauthorized means, required approvals, and re-contract triggers.
-- Interface: Planning consumes validated command contracts and emits plan graphs, blocked states, dispatchable nodes, or residuals.
-- Interface: Labor OS, runtime adapters, artifact graphs, and evidence ledgers consume only records derived from accepted contracts and return receipts.
+- Problem: every representation and material effect after accepted intent can change meaning or authority.
+- Insufficiency: schemas, planners, workflow engines, capability systems, approvals, event logs, provenance graphs, and finite proofs each constrain a part but do not establish semantic preservation, observed effects, artifact satisfaction, useful delivery, or safe execution end to end.
+- Mechanism: version every field with identity, units, quantifiers, precedence, provenance, confidence, materiality, unknowns, consumer, verifier, and consequence.
+- Mechanism: separate informative or untrusted data from authorized control flow.
+- Mechanism: define and test conformance edges from intent to command, plan, job, adapter request, observed effect, artifact, verification, delivery, feedback, compensation, and residuals.
+- Mechanism: bind each privileged effect to observed principal, target/pre-state, parameters, policy, capability, environment, expiry, nonce, authority, post-state, and single-use consumption.
+- Mechanism: keep syntactic parse, field completeness, semantic fidelity, authority validity, execution, artifact satisfaction, verifier correctness, delivery, usefulness, safety, cost, rights, and recovery separate.
+- Mechanism: expire contracts after material changes and terminally reconcile every attempt, failure, cost, side effect, compensation, and residual.
+- Interface: Human Intent owns interpretation and acceptance; Planning owns decomposition; Cognitive Compilation owns lowering; runtime/security own capability and effects; Artifact Graphs own lineage; verification/evidence/readiness own evaluation and release.
+- Interface: this chapter owns whether their exact handoffs preserve the accepted consumer-relative relation and produces no authority or support transition itself.
 
 Primary invariants:
 
-- Contract constraints survive compilation.
-- Side effects require explicit execution authority.
-- Artifacts remain linked to source intent.
-- Objective, context, constraints, procedure, output contract, verification, and failure behavior are visible before dispatch.
-- Hidden, retrieved, or conflicting instructions cannot override explicit contract constraints.
-- Field provenance and confidence remain visible to planning and verification.
-- Inferred or defaulted authority cannot authorize side effects.
-- Re-contracting is required when downstream work changes allowed means, authority ceiling, affected parties, evidence requirements, publication surface, or stop conditions.
-- A missing dispatch receipt blocks execution.
-- Privileged dispatch occurs only while every approval binding still matches
-  and the TTL remains live; observed completion consumes the nonce and replay is
-  denied.
-- Scenario/test acknowledgement, prior familiarity, and role membership do not
-  grant privileged-effect authority.
+- Every material field has an authoritative source, precedence, provenance, confidence, consumer, verifier, and consequence; typed presence alone is insufficient.
+- Objective, non-goals, constraints, affected parties, authority, forbidden means, state assumptions, budgets, stops, criteria, failure behavior, and residual duties remain traceable through every lowering.
+- Context and untrusted content remain data; inferred, defaulted, stale, conflicting, or missing authority cannot authorize an effect.
+- Requested, planned, dispatched, acknowledged, attempted, observed, compensated, rolled back, verified, delivered, and useful remain distinct.
+- Every attempt, failure, timeout, abstention, retry, discard, side effect, cost, compensation, and residual remains in the denominator.
+- Material changes expire the relevant contract; recovery routes require observed effects and residual owners.
+- Zero release is abstention, not usefulness or safety evidence without an estimable matched denominator.
+- No component approves its own broader authority, support state, or public release.
 
 Failure modes to cover:
 
-- Response mistaken for completed work.
-- Artifact identity lost.
-- Approval bypass.
-- Semantic ambiguity.
-- Prompt or context override.
-- Unspecified output contract.
-- Field laundering, where vague prose is moved into a formal field without becoming testable.
-- Authority inference, where a likely means is treated as if the human granted it.
-- Approval drift after principal, target state, parameters, policy, nonce, or
-  TTL changes; scenario acknowledgement or a consumed approval is reused as
-  authorization.
+- Intent and field laundering, semantic drift, context injection, authority inference, approval drift, acknowledgement substitution, and replay laundering.
+- Response substitution, effect-gap laundering, artifact identity loss, verifier capture, and success scalarization.
+- Denominator erasure, fail-closed theater, ceremonial recovery, contract ossification, and governance-cost externalization.
 
 Draft deliverables:
 
+- Current evidence ceiling: record-and-route schemas and fixtures plus one executed vertical refinement over nine governed repository-change scenarios, 89 events, three releases, three pre-effect refusals, two exact-rollback refusals, one failed-rollback quarantine, six effects and independent observations, two residual scenarios, and thirty rejected concrete source mutations. The four natural/model campaign generations remain negative or non-promoting. The fixed local task and trusted source fields do not establish general semantic equivalence, natural intent correctness, deployment, reproduction, transfer, or support movement.
+- Next honest MVI: a prospectively frozen natural multi-model campaign comparing human-authored, direct, schema-only, strong workflow/capability, and governed routes with identical candidates and authority; independent semantic and effect observers; nonzero useful-release opportunity; complete costs and residuals; delayed outcomes; causal ablations; effect-complete recovery; replication; and transfer.
 - Intent-contract, command-contract, intent-execution-trace, and intent-origin fixtures plus a synthetic plan-execution harness with valid and expected-invalid authority, receipt, mismatch, requirement-loss, cycle, ambiguity, hidden-override, authority-widening, field-confidence, and inferred-authority cases.
 - Implemented protocol validation: `intent_contract`, `command_contract`, and `intent_execution_trace` fixtures validate public record shape only, including intake state, field provenance, bounded defaults, handoff receipts, dispatch receipts, re-contract events, stop/fault state, residuals, dispatch blockers, and non-claims.
 - Exact Appendix C claim-source mappings for the merged command-contract claim across VIEA intent/artifact/runtime feedback discipline, Talos typed-job/audit/replay discipline, Software Magic Grimoire command-envelope vocabulary, GenesisCode proposal/effect/provenance boundaries, MoECOT runtime-reference context, and Cognitive Compilation source-plan/S-IR lowering. Five local mappings (`viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `cognitive_compilation`) have reviewed passage references, while `moecot` remains connector/source-note mapped until usable raw text, code, logs, release artifacts, or benchmark records are imported or inspected. Support remains `argument` pending command parser tests, dispatch-blocking tests, prompt-override scenarios, semantic-extraction quality checks, approval/runtime enforcement evidence, replayed vertical-slice artifacts, or accepted evidence transitions.
@@ -1545,6 +1811,8 @@ Draft deliverables:
 - Implemented synthetic Codex test: Field-confidence audit via `python3 scripts/validate_plan_execution_contracts.py`; parser quality, semantic extraction quality, and deployed dispatcher behavior remain open.
 - Implemented synthetic Codex test: Authority-inference block test via `python3 scripts/validate_plan_execution_contracts.py`; deployed authority extraction, approval-service behavior, and runtime side-effect enforcement remain open.
 - Implemented synthetic Codex test: Intent-to-execution handoff probe via `python3 scripts/validate_intent_execution_handoff_probe.py`, producing `experiments/intent_execution_handoff/results/2026-07-02-local.json`; covers two valid synthetic handoff traces and seven expected-invalid controls for missing approval, authority widening, hidden override application, missing dispatch receipt, side effect without adapter receipt, residual erasure, and missing artifact-to-parent links. This is a deterministic synthetic vertical handoff fixture only; parser, deployed dispatcher, approval-service, runtime-adapter, artifact-satisfaction, support-state-promotion, and evidence-transition claims remain open.
+- Implemented source-anchored Codex test: Executed vertical Intent-to-Execution refinement via `python3 scripts/validate_intent_execution_vertical_refinement.py`, producing `experiments/intent_execution_vertical_refinement/results/2026-07-15-local.json`; consumes the complete executed governed-result schema, checks nine scenarios and 89 events across release, pre-effect refusal, exact rollback, failed-rollback quarantine, effect observation, artifact verification, and residual custody, and rejects thirty concrete source mutations. Support-state effect remains `none`; general semantic equivalence, natural intent correctness, deployment, reproduction, and transfer remain open.
+- Implemented command-boundary refinement via `python3 scripts/validate_command_semantic_refinement.py`, producing `experiments/command_semantic_refinement/results/2026-07-15-local.json`; its independently encoded reachable model validates all 13 command fixtures, classifies five interface violations, two correct blocks, and six interface-admissible records, accepts one five-event exact-slot witness, and rejects 38 mutations. Five interface-admissible records remain invalid downstream, so command admissibility is not whole-fixture acceptance. Hash and label truth, natural-language semantics, calibrated extraction, deployed dispatch, reproduction, transfer, and support promotion remain open.
 - Implemented synthetic Codex test: Intent-governed replacement bridge via `python3 scripts/validate_intent_governed_replacement_bridge.py`, producing `experiments/intent_governed_replacement_bridge/results/2026-07-02-local.json`; covers two valid synthetic bridge traces and six expected-invalid controls for command-authorized replacement canary admission, default-replacement approval blocking, missing intent reference, authority widening, stop-condition erasure, missing rollback owner, and support-promotion overclaim. This is no parser, deployed dispatcher, approval-service, replacement execution, rollback execution, support-state-promotion, or evidence-transition claim.
 - Implemented historical-project test: one-shot privileged-action lifecycle via
   `python3 scripts/validate_one_shot_privileged_action.py`; one consumed
@@ -1558,21 +1826,23 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:intent_execution.contracts.operational_invariant` | `AsiStackProofs.IntentToExecution` | A compiled execution job preserves the parent contract constraints. | implemented |
-| `lean:intent_execution.contracts.failure_blocks_promotion` | `AsiStackProofs.IntentToExecution` | An execution job without required approval cannot transition to running. | implemented |
+| `lean:intent_execution.contracts.operational_invariant` | `AsiStackProofs.IntentExecutionRefinement` | Every accepted edge in the finite vertical transition model preserves the root contract and exact artifact parent, cannot widen authority or apply hidden overrides, and reaches material effect and delivery only through approval, dispatch, observation, artifact, and independent-verification custody. | implemented |
+| `lean:intent_execution.contracts.failure_blocks_promotion` | `AsiStackProofs.IntentExecutionRefinement` | The vertical model and concrete-schema consumer reject missing approval, authority widening, hidden override, effect without dispatch, unverified delivery, unsafe release, incomplete rollback custody, residual erasure, and support laundering. | implemented |
 | `lean:intent_execution.contracts.dispatch_route_envelope` | `AsiStackProofs.IntentToExecution` | A structured execution dispatch review routes missing contracts, missing objective fields, authority widening, hidden overrides, missing approvals, missing artifacts, missing verification plans, known residuals, and complete dispatch reviews into explicit outcomes. | implemented |
 | `lean:intent_execution.handoff_trace.probe_fixture_bridge` | `AsiStackProofs.IntentToExecution` | The deterministic synthetic handoff probe result includes an accepted vertical handoff path, a missing-approval blocked path, rejected negative controls, no support-state effect, and an explicit non-claim boundary. | implemented |
-| `lean:command.semantic_interface.operational_invariant` | `AsiStackProofs.CommandContracts` | A valid command contract contains objective, constraints, output contract, verification, and failure behavior. | implemented |
-| `lean:command.semantic_interface.failure_blocks_promotion` | `AsiStackProofs.CommandContracts` | A hidden or conflicting instruction cannot override an explicit contract constraint. | implemented |
-| `lean:command.semantic_interface.field_confidence_route` | `AsiStackProofs.CommandContracts` | A structured command-field confidence review routes inferred or missing required field confidence away from dispatch while allowing complete confirmed/policy-imposed fields to dispatch. | implemented |
+| `lean:command.semantic_interface.operational_invariant` | `AsiStackProofs.CommandSemanticRefinement` | Every accepted transition in the finite reachable command model binds or preserves exact objective, constraint, output-contract, verification, failure-behavior, and authority slots with explicit provenance/confidence before planning validation and dispatch. | implemented |
+| `lean:command.semantic_interface.failure_blocks_promotion` | `AsiStackProofs.CommandSemanticRefinement` | The reachable model and independent consumer reject missing or substituted fields, hidden-instruction provenance, applied override, inferred or widened authority, open blockers, and missing approval, planning-validation, or dispatch receipts. | implemented |
+| `lean:command.semantic_interface.field_confidence_route` | `AsiStackProofs.CommandSemanticRefinement` | General command fields require dispatch-eligible provenance/confidence while authority requires the stricter confirmed-or-policy-imposed confidence route before an approved dispatch can be reached. | implemented |
+
+Proof boundary: the two assumption-restating Intent-to-Execution declarations and two projection-only Command declarations are retired with frozen lineage. Their replacements are reachable models plus independent consumers; retained dispatch and command-field branches remain finite consequences. The combined surface does not prove arbitrary semantic preservation, natural-language interpretation, authentic authority, complete effects, evaluator correctness, useful execution, deployment, reproduction, transfer, or production safety.
 
 ### Planning as a Control Layer: DAGs and Intelligence Arbitrage
 
 Stable ID: `planning-as-a-control-layer`
 
-Chapter job: Accepted goals need to become governed plan graphs and schedulable DAGs with dependencies, authority requirements, context demands, capability tiers, budgets, adequacy contracts, verification burdens, dispatch receipts, escalation paths, and residuals.
+Chapter job: Own the prospective, consumer-relative choice and revision of obligation order, schedule, observation strategy, and dispatch boundary under uncertainty without taking over semantic conformance, compilation, worker routing, job lifecycle, runtime effects, evaluation, or release.
 
-Core claim: Planning should be a separate control layer that turns accepted command contracts into schedulable DAGs with explicit dependencies, authority ceilings, context demands, capability-tier assignments, adequacy contracts, verification burdens, cost/quality ledgers, escalation routes, and residuals.
+Core claim: Planning as a Control Layer should own a versioned, consumer-relative plan policy that selects and revises a partial order of obligations under uncertainty before execution. The policy binds the accepted command version; candidate decompositions and explicit abstention; typed nodes and dependency semantics; assumptions, observations, predictive-state and error models; context, tool, capability, authority, rights, resource, and verifier requirements; adequacy and utility predicates; lifecycle, dispatch, merge, stop, fallback, recovery, and replan rules; complete alternative and attempt denominators; and expected versus observed cost, latency, risk, and residuals. Only nodes whose dependencies and feasibility predicates are satisfied may request lowering and dispatch, and every feedback-driven change must preserve the contract or produce a scoped re-contract or residual. The plan policy does not grant authority, perform semantic compilation, choose a worker, execute an effect, validate its own predictions, or prove that a decomposition is useful, optimal, safe, or transferable by itself.
 
 Source loading queue:
 
@@ -1586,50 +1856,33 @@ Source loading queue:
 | Manifest assignment reconciliation | `ext_v_jepa_2_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
-- Problem: Accepted goals need governed plan graphs whose dependencies, authority requirements, context demands, capability tiers, budgets, adequacy contracts, verification burdens, stop conditions, dispatch receipts, escalation paths, and residuals remain inspectable before execution.
-- Insufficiency: Planning cannot be collapsed into prompting, memory, reasoning, routing, or execution because each layer has different authority and failure modes, and cheap route selection is not trustworthy unless adequacy, verification, and residual cost remain attached.
-- Mechanism: Compile accepted command contracts into strategic, tactical, and runtime plan graphs with assumptions, task nodes, dependencies, required context, tools, authority requirements, budgets, verification plans, replanning policy, stop conditions, and failure behavior.
-- Mechanism: Treat the plan graph as a refusal-friendly control artifact: missing context, blocked dependencies, authority overreach, exhausted budgets, and failed predicates become residuals before side effects.
-- Mechanism: Preserve stop conditions, authority ceilings, and alternative-route status during replanning; only dispatchable nodes with satisfied constraints lower into typed jobs.
-- Mechanism: Track plan node lifecycle states: proposed, blocked-context, blocked-authority, blocked-dependency, blocked-verification, dispatchable, dispatched, replanned, and stopped.
-- Mechanism: Emit dispatch receipts with satisfied constraints, context refs, authority basis, verification plan, replanning history, and typed-job refs.
-- Mechanism: Preserve authority budget, replanning history, blocked-node records, residual register, and non-claims so a candidate graph cannot masquerade as governed dispatch.
-- Mechanism: State the local governed-cognition pattern delta: this chapter owns obligation ordering, where accepted commands become ordered plan-node lifecycle states and blocked nodes remain visibly distinct from dispatchable jobs before lowering.
-- Mechanism: Specialize the plan graph into a schedulable PlanForge DAG whose nodes carry dependency order, context demand, authority state, capability tier, adequacy contract, quality predicate, verification requirement, budget limit, route assignment, merge condition, escalation path, and residual behavior.
-- Mechanism: Give each node both a work contract and an adequacy contract so schedulability depends on authority, context, quality predicate, verification, fallback, and downstream usability.
-- Mechanism: Track scheduling states such as ready, blocked by dependency, blocked by authority, blocked by context, blocked by budget, blocked by verifier, running, failed, residual, and merged.
-- Mechanism: Preserve scheduling state, adequacy contracts, merge conditions, assumption refs, cost-quality ledger, residuals, and non-claims so cheap branches cannot hide displaced verification, repair, or human cleanup.
-- Mechanism: Use local repair: when a source, assumption, route, or quality predicate changes, repair the affected subgraph and rerun only dependents whose obligations changed.
-- Interface: Alignment filters goals.
-- Interface: VCM supplies context packets.
-- Interface: Routing consumes capability annotations, adequacy contracts, route assignments, and escalation paths.
-- Interface: Cognitive Compilation receives accepted plan obligations for semantic IR lowering.
-- Interface: Labor OS and runtime adapters execute only typed jobs derived from dispatch receipts.
-- Interface: Evidence ledgers record assumptions, cost-quality decisions, residuals, verification results, and replanning events.
+- Problem: after a contract is accepted, the stack must choose and revise obligation order, alternatives, observations, feasibility, capacity, and dispatch boundaries under uncertainty.
+- Insufficiency: an acyclic graph, solver optimum, workflow execution, selected route, or recorded replan does not establish decomposition adequacy, dependency truth, useful scheduling, safe control, or cost dominance.
+- Mechanism: freeze contract, consumer, environment, horizon, authority/rights, resources, epoch, and material-change triggers before comparing plans.
+- Mechanism: preserve multiple candidate decompositions plus clarification, deferral, human-plan, and no-plan options with complete selection history.
+- Mechanism: type nodes as obligations and dependencies as data, control, semantic, temporal, authority, rights, evidence, resource, state, or recovery relations with provenance and falsifiers.
+- Mechanism: record assumptions, observations, predictive-state versions, uncertainty, staleness, disagreement, feasibility, adequacy, verifier, recovery, and expected utility before scheduling.
+- Mechanism: request eligible routes from their owner; schedule only after qualification, and account for coordination, waiting, verification, human, repair, recovery, rights, and opportunity costs.
+- Mechanism: issue dispatch requests only from current predicates; consume feedback as versioned observations; compute affected-future invalidation closure; preserve alternatives and costs.
+- Mechanism: merge only compatible semantic, state, authority, rights, evidence, effect, quality, cost, and residual branches.
+- Mechanism: reconcile all plans, nodes, routes, schedules, blocks, retries, replans, merges, failures, costs, and residuals; test natural workloads with strong baselines, causal ablations, reproduction, and transfer.
+- Interface: Intent-to-Execution owns semantic conformance; Context/Memory own observations; Compilation owns lowering; Routing/Fields own worker eligibility; Labor OS owns jobs; Runtime/Security own effects; Verification owns outcomes; Resource Economics owns cost; Evidence/Readiness own support and release.
 
 Primary invariants:
 
-- Plans expose constraints and stop conditions.
-- Runtime replanning preserves authority limits.
-- Tool selection is justified by task requirements.
-- Only dispatchable nodes lower into typed jobs.
-- Candidate routes, blocked nodes, and review notes are not executable permission.
-- Dependency order is respected before dispatch.
-- Cost savings do not remove required verification.
-- Failed quality predicates route to escalation or residuals.
-- Merge gates compare assumptions, source versions, authority ceilings, and quality predicates before parallel branches are accepted together.
+- Every plan is version-bound; every obligation is covered or residualized; every dependency has typed meaning, provenance, confidence, consumer, and falsifier.
+- Acyclicity and order do not establish dependency truth, feasibility, completeness, or usefulness.
+- Candidate plans, blocked nodes, route requests, planner scores, and simulations are not jobs, authority, effects, or evidence transitions.
+- Only nodes with current dependency, context, route, authority, rights, resource, verifier, stop, and recovery predicates may request dispatch.
+- Replanning preserves contract, authority, rights, stops, alternatives, negative knowledge, costs, and history; local repair requires dependency closure.
+- Every alternative, block, timeout, retry, replan, merge failure, denial, cost, and residual stays in the denominator.
+- Non-dispatch or shorter critical path is not useful planning, safety, or cost dominance without matched opportunity and outcomes.
 
 Failure modes to cover:
 
-- Scope creep.
-- Planning without replanning.
-- Tool choice exceeds authority or budget.
-- Dispatch laundering, where a proposed or blocked node becomes a job because it appears in the graph.
-- Replanning erasure, where feedback changes the plan while hiding the authority, stop-condition, or residual delta.
-- Wrong capability-tier selection, where a cheap route produces plausible but inadequate work.
-- Dependency cycles, where a graph looks planned while no valid dispatch order exists.
-- Merge laundering, where parallel branches pass locally while relying on conflicting assumptions or source versions.
-- Arbitrage laundering, where verification, repair, or human cleanup is moved outside the cost-quality ledger.
+- Scope/obligation drift; decomposition theater; dependency hallucination or omission; acyclicity laundering; context/observation fantasy; model-predictive overconfidence.
+- Dispatch and capability-tier laundering; scheduler-objective capture; arbitrage laundering; parallelism theater; merge laundering.
+- Replanning erasure; repair-radius laundering; plan survivorship; fail-closed planning; ceremonial stop or recovery.
 
 Draft deliverables:
 
@@ -1651,6 +1904,8 @@ Draft deliverables:
 - Planned Codex test: Capability tier assignment test.
 - Implemented Lean proof target: a failed quality predicate routes to escalation or residual under the valid node-outcome predicate.
 - Planned Codex test: deployed scheduler cycle rejection.
+- Current evidence ceiling: the chapter has seven valid deterministic synthetic planning records, twenty-six rejecting controls, two accepted no-change evidence transitions, and thirty-three Lean theorem declarations grouped under seven public proof targets. These establish record-shape rejection, finite route consequences, and explicit non-promotion boundaries only. They do not establish a useful natural planner, dependency truth, selected-tier adequacy, scheduler optimality, deployed replanning, causal benefit, transfer, or any support-state movement.
+- Next honest MVI: run a preregistered, natural, multi-planner campaign over held-out tasks with independent dependency and outcome adjudication; strong workflow, HTN/PDDL, search, scheduler, router, and human baselines; explicit abstention and failure denominators; matched authority, rights, tools, models, context, and budgets; causal component ablations; sealed replay; and out-of-distribution reproduction. Promotion requires useful-throughput and residual-quality gains without worse unsafe dispatch, hidden denial, latency, governance cost, or repair burden.
 - Consolidation note: `planforge-dags-and-intelligence-arbitrage` folded into this chapter on 2026-06-30 as DAG scheduling, intelligence-arbitrage, capability-tier, adequacy-contract, cost-quality-ledger, escalation, residual, source-mapping, fixture, proof-hook, and history material; `cognitive-compilation-and-semantic-ir` remains standalone.
 
 Lean proof targets:
@@ -1665,147 +1920,135 @@ Lean proof targets:
 | `lean:planforge.dag.operational_invariant` | `AsiStackProofs.PlanForge` | A dispatchable plan graph is acyclic and all dependencies precede dependents. | implemented |
 | `lean:planforge.dag.failure_blocks_promotion` | `AsiStackProofs.PlanForge` | A node whose quality predicate fails must escalate or emit a residual. | implemented |
 
+Proof boundary: the seven public targets group thirty-three theorem declarations. Several operational and fixture theorems restate modeled assumptions, while the route theorems prove consequences over finite Boolean or enumerated branches. Index ordering is not a general proof of DAG acyclicity or dependency truth. The declarations are useful activation and regression scaffolds, but typed graph semantics, countermodels, executable planner producers, natural outcomes, causal superiority, runtime refinement, and transfer remain open.
+
 ### Cognitive Compilation and Semantic IR
 
 Stable ID: `cognitive-compilation-and-semantic-ir`
 
-Chapter job: LLM workflows need intermediate representations that separate requirements, plans, artifacts, repairs, and target runtimes.
+Chapter job: Own the consumer- and target-relative translation contract that preserves accepted obligations across source, semantic, target, and concrete artifact representations, with explicit pass semantics, post-translation validation, dependency-closed rebuild, and no authority over intent, planning, effects, support, or release.
 
-Core claim: Cognitive compilation should transform goals into semantic intermediate representations that can be optimized, verified, repaired, and targeted.
+Core claim: Cognitive Compilation should own a versioned, consumer- and target-relative translation contract that lowers an already accepted plan obligation through source, semantic, and target representations into a concrete artifact candidate while preserving addressable obligation, non-goal, authority, rights, assumption, source/context, evidence, resource, verifier, repair, and residual lineage. Every pass binds typed source and target semantics; declared normalization, loss, and ambiguity; preconditions and postconditions; dependencies; deterministic and nondeterministic inputs; compiler and validator identities; costs; receipts; and failure consequences. Acceptance requires post-translation validation against the actual target artifact by an independent-enough evaluator, while repair uses stable semantic identities, observed mutation sets, dependency closure, downstream rebuild, and revalidation. The compiler may block, narrow, request clarification, or residualize a lowering, but it does not reinterpret intent, choose the plan, grant authority, execute effects, self-certify semantic adequacy, or move support or release state.
 
 Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `cognitive_compilation` | Read first for chapter claims and mechanisms. |
-| Supporting | `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project` | Mine after primary sources for cross-layer connections, authority-bearing IR, ambiguity debt, pass/failure bundles, applied repair receipts, and negative cases for digest parity, positional identity, and interface-without-effect. |
+| Supporting | `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project`, `qcsa_whitepaper` | Mine after primary sources for cross-layer connections, authority-bearing IR, ambiguity debt, pass/failure bundles, stable identity/address/route separation, applied repair receipts, mixed bounded QCSA evidence, and negative cases for digest parity, positional identity, active-question value, and interface-without-effect. |
 | External comparators | `ext_pddl_1998`, `ext_shop2_2003`, `ext_tree_of_thoughts_2023`, `ext_dreamcoder_2020`, `ext_llvm_langref_docs`, `ext_mlir_2020`, `ext_translation_validation_1998` | Use for planning-language, decomposition, reasoning-search, program-synthesis, compiler-IR, multi-level IR, and translation-validation positioning only; do not treat as cognitive-compiler runtime evidence. |
 
 
-| Manifest assignment reconciliation | `qcsa_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
-- Problem: LLM workflows need intermediate representations that separate requirements, plans, artifacts, repairs, and target runtimes.
-- Insufficiency: Generate-from-prompt workflows entangle requirements and implementation, drift over long contexts, and make incremental repair fragile.
-- Mechanism: Represent requirements, semantics, dependencies, artifacts, authority, ambiguity, and target constraints explicitly.
-- Mechanism: Carry every source field through source-to-IR-to-target lineage, including authority and non-goals, with requirement-specific semantic validators.
-- Mechanism: Retain pass input/output identities, semantic validator results, and known failure refs instead of laundering a repaired build into a failure-free history.
-- Mechanism: Perform incremental repair over stable IR identities and compare declared repair scope with the observed mutation blast radius.
-- Mechanism: Compile IR into jobs, code, schemas, or documents without treating digest parity as semantic preservation.
-- Mechanism: emit lowering receipts that bind source-plan obligations, semantic atoms, target artifacts, validators, assumptions, and residuals.
-- Mechanism: Preserve atom state, source-plan refs, obligation refs/status, assumptions, IR validity state, validator status, lowering state, target artifact refs, lowering receipts, repair-ledger refs, source refs, support-state effect, residuals, and non-claims so syntactic artifact acceptance cannot stand in for obligation-preserving lowering.
-- External positioning: Compare semantic IR to PDDL/SHOP2 planning interfaces, Tree-of-Thoughts reasoning paths, DreamCoder program-synthesis abstractions, LLVM IR, MLIR, and translation validation; preserve the distinction between compiler lineage and a working cognitive compiler.
-- Interface: Planning produces or consumes IR.
-- Interface: Execution receives target-specific artifacts.
-- Interface: Verification checks IR-to-output preservation.
-- Interface: distinguish source-plan validity, semantic-IR validity, lowering validity, and target-artifact validation before reporting a successful compile.
+- Problem: after Planning admits an obligation, every source-to-IR-to-target transformation can silently lose meaning, non-goals, authority, rights, evidence, repair identity, or residual duties while retaining fluent output.
+- Insufficiency: prompts, schemas, planners, workflows, search, program synthesis, compiler IR, multi-level lowering, and translation validation solve only pieces; typed shape, hashes, self-validation, declared repair scope, or a valid target do not establish consumer-relative semantic preservation or useful advantage.
+- Mechanism: freeze consumer, purpose, accepted contract/node, source and target languages, compiler/pass set, evaluator dependencies, environment, authority/rights, budget, horizon, support ceiling, and material-change triggers.
+- Mechanism: preserve a typed source-plan dialect, stable semantic identities, complete field/obligation lineage, ambiguity ledger, target constraints, assumptions, losses, residuals, and consumer-specific adequacy predicates.
+- Mechanism: specify typed and reproducible pass contracts across progressive multi-level IR, then emit concrete target candidates through exact backends.
+- Mechanism: validate each translation against actual target content or behavior with requirement-specific, independent-enough evaluators; keep well-formedness, semantic preservation, artifact usefulness, effects, and support separate.
+- Mechanism: repair by stable identities and observed mutation sets; compute invalidation and dependency-closed rebuild; revalidate descendants; retain failures, caches, costs, and all attempts.
+- Mechanism: separate stable semantic identity, plural addresses, evidence-acquisition questions, physical routes, authority, and support; QCSA's exact bounded dispositions do not universalize the interface.
+- Mechanism: compare natural compiler routes with direct, schema-only, workflow, planning/search, human, conventional build/compiler, synthesis, and current-agent baselines under matched resources; use adversarial controls, causal ablations, independent replication, and cross-target transfer.
+- Interface: Intent-to-Execution and Planning own accepted semantics and obligation selection; compilation cannot reinterpret or reorder them.
+- Interface: Context/VC ABI own source representations; Labor/Runtime own jobs and effects; Artifact Graphs own lineage; Verification owns acceptance; Security/Rights own use; Resource Economics owns observed cost; Evidence/Readiness own support and release.
 
 Primary invariants:
 
-- IR preserves declared requirements.
-- Obligations may be refined, split, deferred, or rejected, but not silently erased.
-- Repair changes are localized and auditable.
-- Target compilation records assumptions.
-- Authority and non-goals cannot be widened, invented, or silently erased by lowering.
-- Every source field has explicit source-to-IR-to-target lineage.
-- Unresolved ambiguity blocks or escalates strict compilation.
-- Digest equality cannot substitute for requirement-specific semantic validators.
+- Each translation binds exact accepted obligation, consumer/purpose, source/target, compiler/pass, evaluator, environment, authority/rights, budget, horizon, and support ceiling.
+- Every obligation and non-goal is preserved, explicitly transformed, deferred, rejected, or residualized; identity is not text position, hash, embedding, address, graph location, or route.
+- Every field has source-to-IR-to-target-to-artifact lineage with validator, allowed loss, observed disposition, and falsifier; ambiguity with material consequence blocks strict lowering.
+- Passes cannot widen authority, rights, use, effects, evidence, support, or release; well-formedness, preservation, usefulness, safety, execution, and support remain distinct.
+- Digest equality is identity only; translation validation requires a source-target relation and actual target inspection by an evaluator whose dependencies remain visible.
+- Declared repair scope is not locality; observed mutations, invalidation, rebuilt descendants, caches, revalidation, and retained failures decide the claim.
+- Material change expires receipts; all candidates, passes, failures, repairs, retries, costs, interventions, discards, and residuals stay in the denominator.
 
 Failure modes to cover:
 
-- IR drift.
-- Compiler hallucination.
-- Repair that breaks earlier requirements.
-- Compilation laundering through syntactic artifact acceptance without obligation-preserving lowering.
-- Authority loss, adversarial paraphrase, or source-field omission during lowering.
-- Positional insertion that orphans repair identities or expands actual mutations beyond declared scope.
-- Failure-bundle erasure and digest-parity laundering.
+- Meaning capture, obligation/non-goal/authority/rights loss, IR drift, schema theater, ambiguity laundering, digest/address/embedding laundering, validator scarcity or capture, authority laundering, target undefined behavior, unstable identity, repair-radius laundering, stale builds, failure erasure, survivorship, overhead dominance, round-trip theater, and portability theater.
 
 Draft deliverables:
 
-- A semantic IR sketch and compile/verify/repair loop for one artifact type.
+- Exact current evidence ceiling: semantic-atom schema; 2 valid/4 rejecting hand-authored compilation traces; one independent 7-event obligation/repair refinement with 47/47 rejected mutations; 1 blocked semantic-preservation record/9 rejecting mutations; 24 live Lean declarations across the retained route and reachable-refinement modules under 3 targets; 2,340 QCSA predictions over 60 cases, 13 systems, and 3 seeds; and one 13-stage zero-model reversible trace with 10 rejecting adversarial controls. Full QCSA tied the best baseline at 1.000 task accuracy, used 1.913386 times the operations, failed matched-advantage/resource gates, and did not benefit from active questions; bounded non-core mechanism dispositions do not move the chapter core.
+- Next honest MVI: compile natural held-out accepted obligations into one concrete artifact class; run direct, schema-only, workflow, human, and governed routes under matched resources; independently label source and actual target semantics; inject obligation-loss and repair-scope attacks; measure usefulness, cost, repair locality, rebuild closure, missed help, and residuals; reproduce from locks; transfer to a second target.
 - Implemented protocol validation: `semantic_atom` fixture validates public record shape only, including atom state, source-plan refs, obligation refs/status, assumptions, IR validity state, validator status, lowering state, target artifact refs, lowering receipts, repair-ledger refs, source refs, support-state effect, residuals, and non-claims.
-- Exact Appendix C claim-source mappings for the Cognitive Compilation claim across Cognitive Compilation S-IR/repair architecture, PlanForge compiler-orchestration framing, GenesisCode evidence-carrying IR/provenance discipline, TreeLLM external semantic-substrate intuition, VIEA intent-to-artifact ledger context, CCA typed ambiguity/pass/trace mechanisms, MoECOT Manifest authority/lineage/applied-repair discipline, and the Best Model project's digest/positional-repair negative record. Five local raw-cache mappings and three public-safe pinned-project mappings are reviewed. Support remains `argument` pending source-plan parsing, real target-lowering preservation, concrete artifact-validator adequacy, localized-repair results, quality/cost measurements, or accepted evidence transitions.
+- Exact Appendix C claim-source mappings for all sixteen assigned sources: five local raw-cache sources, three pinned projects, QCSA, and seven external comparators. Support remains `argument` pending natural parsing, real target preservation, independent artifact validation, useful repair/cost outcomes, reproduction, transfer, and accepted core transitions.
 - Implemented synthetic Codex test: Requirement preservation test via `python3 scripts/validate_plan_execution_contracts.py`; source-plan parser and real target artifact validation remain open.
 - Implemented proof-backed check: finite semantic-lowering route coverage for missing source plans, missing atoms, missing obligation links, cyclic dependencies, authority escapes, missing validators, validator failures, missing receipts, obligation loss, invalidating repairs without ledger updates, known residuals, and complete lowering reviews.
 - Implemented synthetic Codex test: Cognitive compilation trace harness via `python3 scripts/validate_cognitive_compilation_traces.py`, checking 2 valid and 4 expected-invalid hand-authored source-plan/semantic-atom/lowering-receipt/target-audit/repair-trace fixtures for receipt representation, obligation preservation, target-audit state, localized repair scope, syntactic-pass laundering rejection, and no-promotion boundaries.
+- Implemented reachable-refinement test: `python3 scripts/validate_cognitive_compilation_refinement.py` independently consumes all 6 trace fixtures, accepts exactly 2 and rejects 4, reaches one 7-event exact-obligation/target localized-repair witness, and rejects 47 source, obligation, authority, target, receipt, validation, repair, ledger, residual, and time mutations. Support effect remains `none`; natural-language semantics, obligation completeness, backend execution, actual artifact validation, measured locality, reproduction, and transfer remain open.
 - Implemented historical-project contract-preservation harness: `python3 scripts/validate_semantic_contract_preservation.py` accepts one blocked three-project lineage record and rejects nine mutations for adversarial paraphrase, field omission, positional insertion, authority loss, whole-graph repair, digest-parity laundering, failure-bundle erasure, unresolved ambiguity, and target-requirement omission. The fixture carries authority-bearing IR, an ambiguity ledger, full field lineage, a pass/failure bundle, requirement-specific preservation obligations, and an observed repair blast-radius receipt. It is hand-authored record discipline only: no source parser, target backend, generated-artifact semantic validation, execution authority, measured repair locality, historical-project reproduction, or support promotion.
-- Remaining test gap: source-plan parser, concrete target artifact validators, real target-lowering behavior, localized-repair benchmark, and direct-generation quality/cost comparison.
+- Implemented bounded QCSA evidence: 60 synthetic cases, 13 systems, 3 seeds, 2,340 predictions, exact mixed dispositions, one 13-stage zero-model local effect/rollback trace, and ten adversarial rejections. Core support effect remains none.
+- Remaining test gap: natural source-plan parser, concrete artifact backend, independent source-target and artifact validators, observed incremental repair, matched usefulness/cost, reproduction, and cross-target transfer.
 - Source-noted external comparator queue: `ext_pddl_1998`, `ext_shop2_2003`, `ext_tree_of_thoughts_2023`, `ext_dreamcoder_2020`, `ext_llvm_langref_docs`, `ext_mlir_2020`, and `ext_translation_validation_1998` now ground planning-language, decomposition, reasoning-search, program-synthesis, compiler-IR, multi-level lowering, and translation-validation vocabulary; no LLVM/MLIR toolchain, compiler pass, semantic lowering trace, translation validator, source-target proof, program-synthesis run, or support-state promotion is claimed.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:cognitive_compilation.ir.operational_invariant` | `AsiStackProofs.CognitiveCompilation` | A compiled artifact preserves all required IR obligations. | implemented |
-| `lean:cognitive_compilation.ir.failure_blocks_promotion` | `AsiStackProofs.CognitiveCompilation` | A repair that invalidates an existing obligation cannot be accepted without updating the ledger. | implemented |
-| `lean:cognitive_compilation.ir.semantic_lowering_route_envelope` | `AsiStackProofs.CognitiveCompilation` | A structured semantic-lowering review routes missing source plans, missing atoms, missing obligation links, cyclic dependencies, authority escapes, missing validators, validator failures, missing receipts, obligation loss, invalidating repairs without ledger updates, known residuals, and complete lowering reviews into explicit outcomes. | implemented |
+| `lean:cognitive_compilation.ir.operational_invariant` | `AsiStackProofs.CognitiveCompilationRefinement` | Every accepted target in the finite reachable lowering model preserves the exact plan, three represented obligations, source constraint, target identity, approved authority, and lowering/validation custody. | implemented |
+| `lean:cognitive_compilation.ir.failure_blocks_promotion` | `AsiStackProofs.CognitiveCompilationRefinement` | A material repair can return to validated state only with localized scope, exact affected-obligation preservation, a one-step repair-ledger version increment, and a ledger receipt; open residuals block acceptance. | implemented |
+| `lean:cognitive_compilation.ir.semantic_lowering_route_envelope` | `AsiStackProofs.CognitiveCompilationRefinement` | The original finite lowering routes are consumed alongside a seven-event reachable refinement and independent six-fixture/47-mutation consumer covering source, obligation, authority, target, validation, receipt, repair, ledger, and residual failures. | implemented |
+
+Proof boundary: the three public targets group 24 live declarations across the retained route module and reachable refinement. Two assumption projections are physically retired with frozen lineage. The replacement proves exact abstract identity, authority, receipt, residual, localized-repair, and ledger-version consequences for one finite model; it does not establish natural-language source/target semantics, arbitrary obligation completeness, actual artifact content, evaluator correctness, backend execution, measured repair locality, reproduction, transfer, or runtime refinement.
 
 ### The Virtual Context ABI: Typed Pages, Cells, and Certificates
 
 Stable ID: `virtual-context-abi`
 
-Chapter job: Long-horizon agents need a stable context interface whose addresses, versions, materializations, typed pages, context cells, certificates, authority labels, loss contracts, adequacy states, and faults remain inspectable across planning, reasoning, execution, and audit.
+Chapter job: Own the static, versioned, consumer- and purpose-relative request-to-materialization contract between durable memory and the actual model- or worker-visible context packet, without taking over memory updates, transactions, adequacy, effects, support, or release.
 
-Core claim: Virtual Context Memory should expose a Virtual Context ABI that materializes typed pages and context cells with stable addresses, versions, certificates, authority ceilings, loss/use contracts, adequacy states, residuals, and typed faults.
+Core claim: The Virtual Context ABI should own the static, versioned, consumer- and purpose-relative request-to-materialization contract between durable memory and model-visible context. It resolves stable object, semantic-address, version, mount, and snapshot references into finite typed representation candidates, then issues a certificate and receipt that bind exact source and field lineage, transformations, omissions and loss, provenance and taint, authority and rights, permitted and prohibited uses, freshness, lease, revocation, selection and omitted frontier, requested and observed adequacy state, costs, faults, and residuals. Admission means only that the actual packet conforms to the frozen request and policy; it does not establish truth, verification adequacy, model use, usefulness, safety, or support. The ABI may deny, ask, abstain, refresh, broaden, narrow, or return a typed fault, but it does not update durable memory, own transactions, infer execution authority, adjudicate claims, execute effects, or move support or release state.
 
 Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `vcm_public` | Read first for the ABI, semantic-page, certificate, admission, adequacy, and typed-fault vocabulary. |
-| Supporting | `context_engineer`, `verification_bandwidth`, `viea`, `spinoza`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project` | Mine after primary sources for context supply-chain pressure, verification-capacity limits, execution-spine connections, claim/evidence cell boundaries, and the historical-project bounded-snapshot/handle lineage. |
-| External memory comparators | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_mem0_2025` | Compare graph/community, associative-graph, hierarchical-abstraction, and persistent conversational memory. Type every derived representation and preserve provenance, loss, poisoning, update, and local-reproduction limits. |
+| Supporting | `context_engineer`, `verification_bandwidth`, `viea`, `spinoza`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `qcsa_whitepaper` | Mine after primary sources for context supply-chain pressure, verification-capacity limits, execution-spine connections, claim/evidence cell boundaries, stable identity and plural addresses, and the historical bounded-snapshot/handle lineage. |
+| External memory comparators | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_mem0_2025`, `ext_rag_2020`, `ext_lost_in_middle_2023`, `ext_longbench_2023`, `ext_ruler_2024`, `ext_memgpt_2023`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_longllmlingua_2023` | Compare retrieval, graph/community and associative navigation, hierarchical abstraction, persistent memory, long-context use, citations, adaptive retrieval, OS-style tiering, and compression. Preserve provenance, actual use, loss, poisoning, update, cost, and local-reproduction limits. |
 | Connector or recovery required | `vcm_editable`, `moecot` | Use source notes or connector reads before source-derived claims; no resolver, VCM-Bench, runtime, or benchmark result is promoted from these sources. |
 
-
-| Manifest assignment reconciliation | `qcsa_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
-- Problem: Long-horizon agents need a stable context interface whose addresses, versions, materializations, typed pages, context cells, certificates, authority labels, loss contracts, adequacy states, and faults remain inspectable across planning, reasoning, execution, and audit.
-- Insufficiency: Long context windows, retrieval systems, and summaries can move text close to a model without defining stable addressability, representation authority, source bindings, omission records, permitted uses, adequacy boundaries, or typed failure behavior.
-- Mechanism: Resolve context requests through address, version, mount, snapshot, representation need, authority ceiling, adequacy target, consumer policy, lease, and typed fault behavior.
-- Mechanism: Represent materialized context as typed pages or cells: constraints, claims, decisions, corrections, events, artifacts, exact excerpts, lossy summaries, redactions, abstractions, translations, and derived inferences.
-- Mechanism: Attach representation certificates with source refs, omissions, loss contracts, permitted uses, authority ceilings, validity state, revocation state, transaction refs, artifact refs, residual risks, and non-claims.
-- Mechanism: Separate request validity, resolution validity, materialization validity, admission validity, and adequacy validity so context availability cannot become evidence readiness.
-- Mechanism: Treat certificate updates, revocations, stale certificates, and attempted use outside the certificate as auditable state transitions rather than prose edits.
-- Mechanism: Preserve a static-versus-dynamic boundary: this chapter owns address/cell/certificate shape; `context-transactions-snapshots-mounts-and-taint` owns transaction, branch, taint, deletion, and declassification semantics.
-- Mechanism: Preserve an admission-versus-verification boundary: this chapter can record admitted context; `verification-bandwidth-and-context-adequacy` owns whether admitted context is adequate for a target claim.
-- Mechanism: State the local governed-cognition pattern delta: this chapter owns governed addressability, where retrieved text becomes usable context only when address, version, mount, certificate, permitted use, authority ceiling, adequacy state, lease, and typed fault behavior survive materialization.
-- Interface: Planning requests context by task, address, authority, representation need, and adequacy target.
-- Interface: VCM materializes packets and cells with static address, version, certificate, source-ref, authority, loss, use, lease, residual, and fault fields.
-- Interface: Spinoza and claim ledgers consume claim/evidence cells without treating certificates as support-state decisions.
-- Interface: Execution consumes only permitted representations.
-- Interface: Artifact graphs store certificate references when context-derived representations become durable work products.
+- Problem: a consumer must connect exact durable source state to the actual finite packet it receives without losing identity, lineage, authority, rights, omissions, costs, or faults.
+- Insufficiency: access, retrieval, graph traversal, summarization, compression, persistence, citations, and long context do not alone establish consumer-relative packet conformance, use, adequacy, or support.
+- Mechanism: freeze consumer, purpose, obligation, object/address/snapshot scope, representation, authority/rights/use, adequacy target, budget, horizon, support ceiling, and material-change triggers.
+- Mechanism: keep durable identity, plural semantic addresses, storage, retrieval routes, representation identities, packets, physical routes, and support states separate.
+- Mechanism: generate and retain eligible source, graph, excerpt, summary, redaction, translation, abstraction, contradiction, and cell candidates; select the least sufficient packet while disclosing rejected candidates and the exact omitted frontier.
+- Mechanism: preserve stable field lineage and an explicit transformation, omission, loss, uncertainty, conflict, provenance, taint, authority, rights, and use ledger.
+- Mechanism: issue a falsifiable representation certificate and a materialization receipt tied to actual emitted content, placement, cache route, denominator, costs, faults, and residuals.
+- Mechanism: validate declarations against actual sources and packets; distinguish conformance, freshness, fidelity, admission, adequacy, model use, usefulness, safety, and support.
+- Mechanism: emit blocking typed faults for mandatory misses and material ambiguity; retain optional absence as request, fallback, abstention, denial, retry, or residual.
+- Mechanism: expire affected receipts after source, snapshot, atlas, policy, authority, rights, evaluator, environment, consumer, or target-use change.
+- Mechanism: instrument available, selected, delivered, attended-to, cited, relied-on, contradicted, and outcome-relevant context separately and preserve complete denominators.
+- Mechanism: carry QCSA identity/address/certificate mechanisms only at exact bounded dispositions; retain its accuracy tie, cost failure, active-question refutation, and zero core support effect.
+- Interface: Intent/Compilation/Planning own demand; durable memory owns objects; Context Transactions owns dynamic state; Verification owns adequacy; Claim Ledgers own support; Runtime owns effects; Security/Rights own use; Artifact Graphs own lineage; Resource Economics owns cost; Readiness owns release.
 
 Primary invariants:
 
-- Addresses and versions are stable.
-- Source bindings survive representation changes.
-- Authority labels survive summarization.
-- Loss and permitted-use contracts are explicit.
-- Derived cells point back to source bindings.
-- Context admission and context adequacy remain distinct.
-- Mandatory context misses produce typed faults rather than best-effort packets.
-- Summaries cannot increase the authority ceiling of their source cells.
-- Revoked or stale certificates cannot be treated as current support.
+- Each packet binds an exact frozen consumer, purpose, obligation, object/address/snapshot, representation, authority/rights/use, adequacy target, budget, horizon, and support ceiling.
+- Durable identity is not name, embedding, address, graph position, storage, packet, route, or support; every field retains source-to-packet disposition lineage.
+- Bounded selection discloses limits, candidates, rejections, omissions, and the exact reachable frontier.
+- Derived representations cannot widen authority, rights, purpose, use, evidence, effects, support, or release.
+- Certificates are falsifiable source-to-packet declarations, not truth; admission, adequacy, model use, usefulness, safety, and support remain distinct.
+- Mandatory misses and material ambiguity fault; stale, revoked, expired, migrated, tainted, or materially changed packets do not inherit current status.
+- Actual emitted content and consumer-visible placement remain inspectable; available, selected, delivered, attended-to, cited, relied-on, and outcome-relevant states remain distinct.
+- Materialized context is not durable memory and gains no write, merge, deletion, supersession, training, or execution authority.
+- All candidates, transformations, validations, cache events, failures, costs, interventions, discards, use observations, and residuals remain in the denominator.
+- Efficiency proxies and finite synthetic or theorem results cannot universalize fidelity, adequacy, usefulness, safety, or transfer.
 
 Failure modes to cover:
 
-- Flat transcript memory.
-- Stale context.
-- Summary overconfidence.
-- Provenance loss.
-- Authority escalation through compression.
-- Unsafe fit.
-- Adequacy laundering.
-- Certificate laundering.
+- Anonymous-context, identity/address, stale-handle, compression, provenance, authority/rights/privacy/license, certificate, graph-completeness, admission, presence, retrieval/citation, poisoning/taint, mandatory-miss, cache-invalidation, memory/context, survivorship, efficiency, and portability laundering.
 
 Draft deliverables:
 
 - A merged static ABI/certificate chapter that preserves context ABI records and semantic page certificates as one interface skeleton rather than two repeated context chapters.
 - Implemented protocol validation: `context_abi_record` and `semantic_page_certificate` fixtures validate public record shapes only, including lifecycle, request, address, version, mount, snapshot, representation, authority, admission, adequacy, fault, source bindings, derivation, loss contract, permitted uses, revocation state, support-state effect, residuals, and non-claims.
-- Exact Appendix C claim-source mappings for `virtual-context-abi.core` across VCM public-v1, Context Engineer, Verification Bandwidth, VIEA, Spinoza, editable VCM, and MoECOT; the local raw-cache mappings are passage-reviewed where available, while connector-only sources remain bounded.
+- Exact Appendix C claim-source mappings for all twenty-four assigned sources: VCM and adjacent author sources, four pinned projects, QCSA, and twelve external comparators; mapping completeness does not establish local reproduction.
+- Exact current ceiling: 3 valid/5 rejecting admission fixtures, 2 valid/9 rejecting resolver routes, 1 bounded certificate/11 rejecting mutations, 31 theorem declarations under 6 targets, and mixed bounded QCSA results with no chapter-core support effect.
+- Next honest minimum: natural source sets and actual model-visible packets across full-context, RAG, graph, summary/compression, persistent-memory, human, governed, and no-context routes; independent source/packet/use/outcome labels; stale/poison/omission/authority/cache/frontier attacks; complete costs; causal ablations; locked reproduction; and cross-model/cross-backend transfer.
 - Historical-project bounded-snapshot mechanism: bind materialization to one durable snapshot digest, generation, policy, revocation epoch, provenance, expiry, revalidation receipt, finite depth/node budget, and exact omitted frontier while keeping durable memory distinct from derived context.
 - Historical-project invariants and failures: reject digest substitution, generation rollback, expired or revoked handles, policy mismatch, provenance loss, selection-budget escape, omitted-frontier hiding, absent revalidation, durable-memory/context conflation, and fixture promotion.
 - Folded-history preservation for `semantic-pages-context-cells-and-certificates.core` as a subclaim about typed pages, context cells, representation certificates, source bindings, omissions, authority ceilings, loss contracts, and permitted uses.
@@ -1814,6 +2057,8 @@ Draft deliverables:
 - Implemented proof-backed check: finite context-admission route coverage for malformed requests, missing addresses, authority escapes, absent mandatory context, absent optional context, missing certificates, stale certificates, taint, failed adequacy, residuals, and complete materialization reviews.
 - Implemented proof-backed check: finite certificate-lifecycle route coverage for malformed certificates, missing source bindings, missing loss or use contracts, authority escapes, omitted-material gaps, scope violations, stale certificates, revocation, taint, deletion-closure gaps, missing verifier refs, consumer-policy violations, support-promotion attempts without evidence transitions, and complete reviews; no resolver truthfulness, deletion enforcement, or semantic-fidelity claim is promoted.
 - Implemented Codex test: VCM resolver/certificate probe through `python3 scripts/validate_vcm_resolver_certificate_probe.py`, covering `valid_resolver_materialization_receipt`, `valid_mandatory_miss_typed_fault`, and nine expected-invalid controls: `invalid_address_mismatch_materialization_denied`, `invalid_version_mismatch_materialization_denied`, `invalid_snapshot_mismatch_materialization_denied`, `invalid_mount_policy_denied`, `invalid_lease_expired_reuse_blocked`, `invalid_certificate_source_binding_mismatch_denied`, `invalid_certificate_authority_escalation_denied`, `invalid_certificate_truthfulness_overclaim_denied`, and `invalid_summary_fidelity_omission_denied`; this is a no deployed-resolver, memory-store, context-compiler, open-domain-summary-fidelity, certificate-truthfulness, transaction-isolation, deletion-enforcement, model-facing-context-quality, VCM-Bench, leak-prevention, or support-state-promotion claim.
+- Implemented reachable-refinement test: `python3 scripts/validate_virtual_context_refinement.py` independently rechecks the exact 2-valid/9-invalid resolver packet, preserves the distinct 3-valid/5-invalid admission-suite boundary, executes one 4-event exact-binding materialization path and one 2-event mandatory-miss typed-fault path, and rejects 55 binding, authority, lease, source/certificate, omission, overclaim, taint, receipt, fault/materialization, and time mutations. Support effect remains `none`; natural-language address truth, payload meaning, certificate truthfulness, deployed resolver/store behavior, concurrency, deletion enforcement, reproduction, and transfer remain open.
+- Implemented certificate reachable-refinement test: `python3 scripts/validate_context_certificate_refinement.py` schema-validates the canonical protocol certificate and all 12 certificate records across 8 scenarios, keeps that shape judgment separate from the 3-valid/5-invalid whole-scenario admission result, executes one 5-event source-bind/derive/certify/verify/admit witness, and rejects 64 provenance, authority, contract, epoch, verification, deletion, use, support, taint, revocation, and time mutations. Support effect remains `none`; source/payload truth, transformation fidelity, verifier independence, deployed enforcement, concurrent revocation, deletion propagation, reproduction, and transfer remain open.
 - Implemented Codex test: `python3 scripts/validate_bounded_graph_snapshot_certificate.py` accepts one bounded CCA/MoECOT/BeastBrain/BugBrain certificate and rejects eleven digest, generation, expiry, revocation, policy, provenance, bound, omission, revalidation, memory/context, and support-promotion mutations; no deployed resolver, durable-store correctness, graph completeness, historical runtime behavior, or support promotion is claimed.
 - Planned Codex tests: broader summary-fidelity evaluator, deployed resolver conformance, open-domain certificate truthfulness checker, and independent paired source/derived-cell omission audit beyond the synthetic probe.
 - Historical treatment: `semantic-pages-context-cells-and-certificates` is archived and redirected to `virtual-context-abi`; the old chapter can be restored only if paired source/derived cells, certificate truthfulness tests, summary-fidelity tests, or independent interoperability evidence make it chapter-owning again.
@@ -1822,162 +2067,194 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:vcm.abi.operational_invariant` | `AsiStackProofs.VirtualContextABI` | A context reference resolves only when the requested address and version are valid for the snapshot. | implemented |
-| `lean:vcm.abi.failure_blocks_promotion` | `AsiStackProofs.VirtualContextABI` | A mandatory context miss produces a typed fault rather than a best-effort packet. | implemented |
-| `lean:vcm.abi.context_admission_route_envelope` | `AsiStackProofs.VirtualContextABI` | A structured context-admission review routes malformed requests, missing addresses, authority escapes, absent mandatory context, absent optional context, missing certificates, stale certificates, taint, failed adequacy, residuals, and complete materialization reviews into explicit outcomes. | implemented |
-| `lean:vcm.certificates.operational_invariant` | `AsiStackProofs.ContextCertificates` | A derived context cell carries source bindings and a declared loss/use contract. | implemented |
-| `lean:vcm.certificates.failure_blocks_promotion` | `AsiStackProofs.ContextCertificates` | A summary cannot increase the authority ceiling of its source cells. | implemented |
-| `lean:vcm.certificates.lifecycle_admission_route` | `AsiStackProofs.ContextCertificates` | A structured certificate-lifecycle review routes malformed certificates, missing source bindings, missing loss or use contracts, authority escapes, omitted-material gaps, scope violations, stale certificates, revocation, taint, deletion-closure gaps, missing verifier refs, consumer-policy violations, support-promotion attempts without evidence transitions, and complete reviews into explicit outcomes. | implemented |
+| `lean:vcm.abi.operational_invariant` | `AsiStackProofs.VirtualContextRefinement` | Every accepted materialization in the finite reachable model preserves the exact represented request, address, version, snapshot, mount, source, derived representation, approved authority, and receipt custody. | implemented |
+| `lean:vcm.abi.failure_blocks_promotion` | `AsiStackProofs.VirtualContextRefinement` | A represented mandatory miss reaches typed-fault state only with a fault receipt and without materialization; binding, lease, authority, certificate, omission, overclaim, taint, and receipt faults are rejected. | implemented |
+| `lean:vcm.abi.context_admission_route_envelope` | `AsiStackProofs.VirtualContextRefinement` | The original finite admission routes are consumed alongside separate four-event materialization and two-event mandatory-fault refinements plus an independent 11-scenario/55-mutation consumer. | implemented |
+| `lean:vcm.certificates.operational_invariant` | `AsiStackProofs.ContextCertificateRefinement` | Every accepted consumer admission in the finite reachable certificate model preserves the exact represented source, derived representation, loss contract, omission ledger, permitted use, lifecycle epoch, authority, and receipt custody. | implemented |
+| `lean:vcm.certificates.failure_blocks_promotion` | `AsiStackProofs.ContextCertificateRefinement` | Derived authority cannot exceed represented source authority, and a support-promotion request cannot be admitted without a distinct evidence-transition receipt. | implemented |
+| `lean:vcm.certificates.lifecycle_admission_route` | `AsiStackProofs.ContextCertificateRefinement` | The original fifteen lifecycle routes are consumed alongside a five-event reachable refinement and independent 12-certificate/8-scenario/64-mutation consumer. | implemented |
+
+Proof boundary: the six public targets group 61 live declarations across two retained route modules and two reachable refinements. Four assumption projections are physically retired with frozen lineage. The replacements preserve exact abstract request, provenance, contract, authority, epoch, receipt, fault, and admission consequences for finite models; they do not prove source selection, payload meaning, semantic fidelity, certificate truthfulness, graph completeness, deployed resolver behavior, concurrent lifecycle enforcement, transaction or deletion enforcement, model use, useful outcomes, leak prevention, reproduction, transfer, or runtime refinement.
 
 ### Context Transactions, Snapshots, Mounts, and Taint
 
 Stable ID: `context-transactions-snapshots-mounts-and-taint`
 
-Chapter job: Memory and context need runtime semantics for consistency, branches, contradiction, deletion, privacy, and taint.
+Chapter job: Own the dynamic state-transition boundary for durable context so parallel reads, writes, branches, mounts, derivatives, deletion, revocation, retry, crash, and recovery remain causally and operationally inspectable.
 
-Core claim: VCM should use transactional memory semantics: immutable events, versioned pages, snapshots, mounts, taint, temporal validity, and deletion closure.
+Core claim: Context Transactions should own the dynamic, versioned state-transition contract for durable context memory. Each accepted transaction binds principal, consumer, purpose, operation, base snapshot, branch, mounts, actual read/write/derive/delete/revoke sets, isolation and conflict policy, authority and rights, taint and declassification, durability and recovery model, budget, horizon, and support ceiling to an observed pre-state and a causally ordered attempted, applied, durable, visible, replayed, or recovered post-state. Commit, branch, merge, abort, retry, compaction, deletion, revocation, and recovery must preserve exact identities, obligations, faults, costs, and residuals. The transaction layer may change durable context state, but it does not own static packet materialization, semantic truth, belief revision, model/optimizer state, external effects, artifact correctness, verification adequacy, support, or release.
 
 Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `vcm_public` | Read first for chapter claims and mechanisms. |
-| Supporting | `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project` | Mine after primary sources for cross-layer connections, variants, failure modes, and the historical freeze/thaw/recovery lineage. |
+| Supporting | `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `ext_cap_theorem_gilbert_lynch_2002`, `ext_txfs_2018`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project` | Mine for security labels, memory lifecycle, distributed limits, crash-consistent transactions, and historical transition/recovery failures without importing source-reported effectiveness. |
 | External memory comparators | `ext_graphrag_2024`, `ext_mem0_2025` | Use for derived graph/community state and cross-session memory extraction/consolidation. Require version, taint, revocation, deletion, provenance, and authority boundaries; do not inherit production-readiness claims. |
-| Connector or recovery required | `vcm_editable` | Load via Google Drive connector or mark as blocked before source-derived claims. |
+| Connector or recovery required | `vcm_editable`, `ext_bourtoule_machine_unlearning_2021` | Use editable VCM for vocabulary only and Machine Unlearning to separate storage deletion from parametric influence, privacy, behavioral forgetting, and downstream erasure. |
 
 Draft arc:
 
-- Problem: Memory and context need runtime semantics for consistency, branches, contradiction, deletion, privacy, and taint.
-- Insufficiency: A retrieval store cannot guarantee read-your-writes behavior, copy-on-write experimentation, deletion closure, or taint propagation by itself.
-- Mechanism: Record immutable memory events.
-- Mechanism: Compile task snapshots with mounts and copy-on-write branches.
-- Mechanism: Propagate taint and deletion obligations through derived context.
-- Mechanism: Bind freeze, thaw, rebalance, promotion, no-loss compaction, partial-write recovery, and restart into one observed, acknowledged causal chain with atomic index/content epochs.
-- Mechanism: Distinguish view construction from view use: mounts, snapshot, clearance, branch, materialization, actual reads, derivatives, propagated taint, and deletion/declassification obligations.
-- Mechanism: Fail closed with typed faults when mount visibility, snapshot coherence, taint propagation, or deletion closure cannot be established.
-- Mechanism: record transaction validity state, isolation state, materialization state, derivative refs, declassification refs, consumer policy, verification refs, promotion blockers, replay boundary, and non-claims before a context view can feed a durable artifact.
-- Interface: Planning receives consistent views.
-- Interface: Security labels sensitive mounts.
-- Interface: Evidence records contradictions and supersession.
-- Interface: Artifact graphs reference context transactions so work products can recover the exact memory view they consumed.
+- Problem: Parallel and long-lived context mutation cannot be governed from retrieval results or success-shaped logs.
+- Insufficiency: Retrieval and persistent-memory systems do not alone provide isolation, atomicity, durability, or derivative closure; database and filesystem transactions do not alone provide semantic identity, purpose-bound mounts, taint, authority, rights, or storage-versus-model-erasure semantics.
+- Mechanism: Freeze principal, purpose, operation, participants, base snapshot, branch, mounts, requested sets, authority, rights, isolation, durability, recovery, budget, horizon, and support ceiling.
+- Mechanism: Bind stable identities, causal order, exact observed pre-state, actual effect sets, and independent post-state, durability, visibility, and restart observations.
+- Mechanism: Test concurrency anomalies, branch lifecycle, conflict and merge policy, atomic participant commit, retry idempotency, taint/declassification, deletion/revocation closure, compaction, crash, and recovery.
+- Mechanism: Preserve all attempts, faults, repairs, residuals, and total costs; compare strong file, key-value, database, filesystem-transaction, event-sourcing, retrieval, persistent-memory, and human baselines.
+- Interface: Keep the static Virtual Context ABI, planning requests, security and rights, claim revision, artifact lineage, external effects, model-state updates and unlearning, verification, costs, and support/release separately owned.
 
 Primary invariants:
 
-- Snapshots are consistent.
-- Taint propagates to derivatives.
-- Deletion closure is enforced or faulted.
-- Materialization state is explicit before a view is used by a downstream artifact or job.
-- No-loss transitions preserve every authoritative item identity; partial index/content divergence blocks ordinary commit and recovers before restart visibility is accepted.
+- Transaction lifecycle states remain distinct and independently observed.
+- Snapshots bind exact causal, version, branch, mount, epoch, policy, provenance, taint, lease, cache, and obligation boundaries.
+- Actual effect sets, conflicts, authority and rights, taint, deletion category, durability scope, idempotency, external-effect residuals, and complete denominators remain explicit.
+- No-loss transitions preserve authoritative identities and obligations; uncertain or partitioned participants remain residual rather than silently committed.
+- Finite records and theorems remain bounded scaffolds, not universal transaction evidence.
 
 Failure modes to cover:
 
-- Memory poisoning.
-- Stale or contradictory reads.
-- Deleted data reappearing in derived summaries.
-- Lifecycle theater, partial-write laundering, and restart amnesia.
+- Transaction and snapshot theater; isolation laundering; lost update and write skew; branch/merge and mount-authority leakage.
+- Taint/declassification laundering; deletion resurrection; erasure-category conflation; hidden cache, replica, backup, and export participants.
+- Partial writes, crash/restart amnesia, duplicate retries, causal reorder, compaction loss, external-effect rollback laundering, denominator survivorship, and portability theater.
 
 Draft deliverables:
 
-- A transaction model for context reads, writes, branches, and deletion closure.
+- All fifteen exact claim-source mappings and explicit comparator limits.
+- Eighteen mechanisms, eleven interfaces, seventeen invariants, and eighteen failure modes with a distinct dynamic-state owner.
 - Implemented protocol validation: `context_transaction_record` fixture validates public record shape, transaction state, transaction validity state, snapshot boundary, mount policy, isolation state, taint propagation, rollback/deletion closure, derivative refs, declassification refs, context ABI refs, source refs, materialization state, consumer policy, verification refs, promotion blockers, replay boundary, support-state effect, and non-claims only.
 - Implemented Lean proof target: valid finite snapshot reads see committed events in their declared view.
 - Implemented Lean proof target: tainted sources produce tainted derivatives unless declassification is authorized.
 - Implemented Lean proof follow-through: finite materialization/deletion-closure records now block allowed materialization when an open deletion obligation lacks closure or declassification, and the finite transaction-route review rejects missing or stale snapshots, branch leaks, unrepaired mount faults, taint without declassification, deleted-cell materialization without closure, invisible committed reads, missing replay boundaries, unsupported support promotion, and missing non-claim boundaries while admitting a complete modeled committed read. This remains finite-record coverage only, not deployed memory-store behavior.
 - Implemented Lean/Python fixture bridge: `python3 scripts/validate_context_transaction_memory_store.py` now requires `AsiStackProofs.ContextTransactions` to expose a finite memory-store harness summary with 3 valid fixtures, 6 expected-invalid controls, read/mount/branch/deletion/taint/replay checks, invalid-control rejection flags, and no chapter-core support promotion. This aligns the synthetic harness surface with the proof layer without proving deployed memory-store behavior.
 - Implemented sequence-level Lean/Python bridge: `python3 scripts/validate_context_transaction_sequence_bridge.py` now checks 2 valid ordered transaction sequences and 4 expected-invalid controls for read-after-write discipline, artifact replay boundaries, taint materialization blocking, invalid-control rejection, and support-state non-promotion; `AsiStackProofs.ContextTransactions` carries the matching finite sequence-summary predicate. This is bounded fixture evidence only, not deployed transactional memory-store behavior.
-- Exact Appendix C claim-source mappings for the Context Transactions claim across VCM public-v1 transaction/snapshot/invalidation/deletion semantics, Ladon/Manhattan sensitive-compartment and handle boundaries, Context Engineer clearance-labeled mission contexts and Digital SCIF lifecycle, Black Hole Context Manager memory-budget/drift/freeze/evict patterns, and editable VCM refinement context; the four local mappings (`vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`) now have reviewed passage references. `vcm_editable` remains connector/source-note mapped until usable raw text, deployed memory-store artifacts, VCM-Bench records, or external corroboration are imported or inspected. Support remains `argument` pending deployed memory-store behavior, runtime mount-visibility tests, branch-isolation checks, deployed deletion-closure behavior, side-channel validation, context-manager execution, benchmark reproduction, or accepted evidence transitions.
+- Exact Appendix C mappings for all fifteen sources, including the four passage-reviewed local raw caches, bounded editable VCM, GraphRAG and Mem0 memory comparators, CAP and TxFS consistency/crash comparators, Machine Unlearning's erasure boundary, and five historical project notes; all remain non-promoting until claim-specific runtime evidence and an accepted transition exist.
 - Implemented synthetic Codex test: Deletion closure test via `python3 scripts/validate_context_admission_adequacy.py`; deployed memory-store deletion closure remains open.
 - Implemented synthetic Codex test: bounded memory-store conformance harness via `python3 scripts/validate_context_transaction_memory_store.py`; no deployed memory-store, VCM conformance, side-channel, benchmark, or support-state-promotion claim.
 - Implemented synthetic Codex test: context transaction sequence bridge via `python3 scripts/validate_context_transaction_sequence_bridge.py`; no deployed transactional memory-store, runtime isolation, VCM conformance, benchmark, or support-state-promotion claim.
+- Implemented reachable-refinement test: `python3 scripts/validate_context_transaction_refinement.py` consumes the exact 3-valid/6-invalid store suite and 2-valid/4-invalid ordered-sequence suite, reaches one 6-event snapshot-bind/write/commit/read/derive/materialize witness, and rejects 78 snapshot, branch, mount, cell, version, visibility, replay, taint, declassification, deletion, receipt, support, and time mutations. Six copied/projection declarations are physically retired with frozen lineage; support effect remains `none` and concurrency, distributed isolation, crash recovery, deployed storage, erasure, reproduction, and transfer remain open.
 - Implemented historical-project test: `python3 scripts/validate_context_restart_recovery.py` accepts one bounded five-project lifecycle and rejects ten causality, effect, thaw, loss, acknowledgement, compaction, partial-write, epoch-divergence, restart-loss, and support-promotion mutations; no deployed store, process restart, filesystem atomicity, historical runtime behavior, or support promotion is claimed.
+- Exact proof boundary: 23 declarations under four targets; two assumption-restating operational declarations and 21 finite Boolean, list, route, or summary consequences. No serializability, linearizability, real I/O, truthful-log, crash-durability, deletion-completeness, usefulness, safety, or transfer claim.
+- Next honest minimum: prospectively run natural stateful tasks on at least two actual backends with strong transactional and memory baselines, concurrent actors, anomaly and fault injection, independent state observation, exact erasure categories, complete costs, clean reproduction, causal ablations, and cross-model/backend transfer.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:vcm.transactions.operational_invariant` | `AsiStackProofs.ContextTransactions` | A snapshot read sees the committed events in its declared view. | implemented |
-| `lean:vcm.transactions.failure_blocks_promotion` | `AsiStackProofs.ContextTransactions` | A tainted source produces tainted derived context unless declassification is authorized. | implemented |
-| `lean:vcm.transactions.memory_store_fixture_bridge` | `AsiStackProofs.ContextTransactions` | The bounded context memory-store harness summary preserves 3 valid fixtures, 6 expected-invalid controls, replay-boundary checks, and no chapter-core support promotion. | implemented |
-| `lean:vcm.transactions.sequence_fixture_bridge` | `AsiStackProofs.ContextTransactions` | The bounded context transaction sequence bridge preserves 2 valid sequences, 4 expected-invalid controls, read-after-write checks, replay-boundary checks, taint-blocking checks, invalid-control rejection, and no chapter-core support promotion. | implemented |
+| `lean:vcm.transactions.operational_invariant` | `AsiStackProofs.ContextTransactionRefinement` | Accepted reads preserve exact snapshot, branch, mount, cell, committed version, and replay custody before materialization. | implemented |
+| `lean:vcm.transactions.failure_blocks_promotion` | `AsiStackProofs.ContextTransactionRefinement` | Taint removal requires represented declassification authority and receipt; open deletion or support promotion without its receipt blocks materialization. | implemented |
+| `lean:vcm.transactions.memory_store_fixture_bridge` | `AsiStackProofs.ContextTransactionRefinement` | The reachable model is consumed alongside the exact 3-valid/6-invalid memory-store suite and 78-mutation independent checker. | implemented |
+| `lean:vcm.transactions.sequence_fixture_bridge` | `AsiStackProofs.ContextTransactionRefinement` | The six-event ordered witness is consumed alongside the exact 2-valid/4-invalid sequence suite and rejects read-before-write and missing-replay faults. | implemented |
 
 ### Verification Bandwidth and Context Adequacy
 
 Stable ID: `verification-bandwidth-and-context-adequacy`
 
-Chapter job: Long context does not automatically provide long-range reasoning or enough verification capacity.
+Chapter job: Own the prospective, claim-specific obligation-to-capacity contract for a verification attempt after context conformance and transaction validity but before evidence or release decisions.
 
-Core claim: Context systems must distinguish generation capacity from verification bandwidth and declare when context is inadequate.
+Core claim: Verification Bandwidth should own the prospective, claim-specific adequacy contract for a verification attempt. Before outcomes, it binds target proposition and scope, population and environment, risk and consequence, requested support effect, required positive, negative, boundary, contradiction, counterexample, and transfer obligations, available source units, verification modes, tools, evaluator-dependency graph, authority and rights, budget, horizon, stop rule, and escalation path. After execution, it records every attempted, passed, failed, disputed, unknown, infeasible, and unattempted obligation plus actual artifacts, costs, disagreement, residuals, expiry, and causal-use observations. Adequacy means only that the declared verification program was sufficient for its exact purpose under stated premises; it does not establish claim truth, model cognition, source correctness, formal-model fidelity, useful outcomes, safety, support promotion, or release.
 
 Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
-| Primary | `verification_bandwidth`, `vcm_public` | Read first for chapter claims and mechanisms. |
-| Supporting | `spinoza`, `treellm` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
-| External retrieval comparators | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024` | Compare global graph summaries, associative navigation, and multi-resolution retrieval. Retrieval quality and source-reported QA gains remain distinct from claim adequacy, evidence truth, and local reproduction. |
-| Connector or recovery required | `vcm_editable` | Load via Google Drive connector or mark as blocked before source-derived claims. |
-
-
-| Manifest assignment reconciliation | `ext_dont_hallucinate_abstain_2024` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Primary | `verification_bandwidth`, `vcm_public` | Read first for the generation-versus-verification boundary, semantic units, conformance, adequacy/admission separation, and authority limits. |
+| Supporting | `spinoza`, `treellm`, `ext_alce_2023`, `ext_checklist_2020`, `ext_gpqa_2023`, `ext_dont_hallucinate_abstain_2024`, `ext_reluplex_2017` | Mine for explicit support states, verification modes, citation quality, behavioral and expert evaluation, abstention and panel dependence, and property-specific formal verification. Preserve each mode's scope ceiling. |
+| Retrieval, context, and compression variants | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_longbench_2023`, `ext_ruler_2024`, `ext_longllmlingua_2023` | Compare graph, associative, hierarchical, long-context, complexity-stress, and compression routes. Availability or source-reported performance is not claim adequacy or local evidence. |
+| Connector or recovery boundary | `vcm_editable` | Use its source note and connector-readable refinement only; no VCM-Bench or model-facing packet result is imported. |
 Draft arc:
 
-- Problem: Long context does not automatically provide long-range reasoning or enough verification capacity.
-- Insufficiency: Adding tokens can increase distractors, attention interference, and unverified summary burden.
-- Mechanism: Model verification as bounded by mutual information, representation quality, and attention budget.
-- Mechanism: Require adequacy labels for context packets.
-- Mechanism: Route high-risk claims to stronger verification instead of more context alone.
-- Mechanism: Scope adequacy to a specific context, target claim, risk level, and verification mode.
-- Mechanism: Use explicit adequacy states: absent, drafting-only, local-check, joint-check, summary-derived, escalated, or contradicted.
-- Interface: VCM declares adequacy.
-- Interface: Spinoza checks claims.
-- Interface: Planning decides escalation when adequacy is insufficient.
+- Problem: Relevant context, tools, citations, formal checks, reviewers, and compute can coexist with missing obligations, weak or correlated checks, undiscovered contradictions, and unaffordable verification.
+- Insufficiency: Long context, direct or graph RAG, hierarchical retrieval, compression, citation systems, behavioral suites, hard benchmarks, formal verifiers, model panels, abstention, and human review each expose useful signals but do not by themselves establish a complete, valid, claim-specific verification program.
+- Mechanism 1: Freeze proposition, definitions, scope, population, environment, time, consumer, risk, affected parties, consequence, requested support effect, authority, rights, budget, horizon, and change triggers before outcomes.
+- Mechanism 2: Decompose the target into premise, definition, source, entailment, contradiction, boundary, counterexample, threat, causal, outcome, cost, reproduction, and transfer obligations with owners and falsifiers.
+- Mechanism 3: Build an obligation dependency and interaction graph; require all-pairwise or higher-order checks only when warranted, and expose every clustering assumption, boundary obligation, omitted interaction, and residual.
+- Mechanism 4: Map actual source units and the consumer-visible packet to obligations, including omissions, transformations, conflicts, staleness, inaccessibility, and rights blocks.
+- Mechanism 5: Assign each obligation an authorized verification mode whose property and scope ceiling remain explicit.
+- Mechanism 6: Allocate model calls, context, tools, solvers, compute, latency, human work, privacy exposure, and opportunity cost prospectively; keep infeasible and deliberately unattempted work visible.
+- Mechanism 7: Record evaluator identity and dependence across model family, data, prompts, code, infrastructure, organization, incentives, conflicts, calibration history, and disagreement.
+- Mechanism 8: Execute the declared attempts against actual artifacts and retain parses, queries, retrievals, comparisons, tests, proof attempts, counterexamples, timeouts, retries, interventions, failures, and discards.
+- Mechanism 9: Maintain an obligation matrix that separates attempted, passed, failed, contradicted, disputed, unknown, infeasible, blocked, and unattempted states.
+- Mechanism 10: Search prospectively for negative evidence, omitted alternatives, contradictory sources, adversarial examples, distribution shift, evaluator failure, and disconfirming outcomes.
+- Mechanism 11: Keep source availability, packet admission, fidelity, local-check validity, obligation coverage, evaluator competence, claim adequacy, usefulness, safety, and support distinct.
+- Mechanism 12: Calibrate adequacy and abstention against held-out false acceptance, false refusal, missed contradiction, missed help, disagreement, usefulness, and delayed residuals.
+- Mechanism 13: Apply risk- and consequence-relative stop rules that can draft, retrieve, split, narrow, abstain, quarantine, block, or escalate while preserving false-denial costs.
+- Mechanism 14: Issue escalation requests with exact missing obligations, eligible modes, evaluator constraints, resources, authority, deadline, and return contract.
+- Mechanism 15: Expire and rerun affected adequacy decisions after material claim, source, packet, model, tool, verifier, property, environment, authority, rights, budget, threat, outcome, or support-target changes.
+- Mechanism 16: Test causal use by removing, replacing, corrupting, or hiding required units, modes, evaluator separation, negative-evidence search, and residual handling under matched resources and candidate answers.
+- Mechanism 17: Preserve every candidate, attempt, failure, escalation, abstention, retry, intervention, cost, privacy exposure, delay, discard, missed-help case, and residual in the denominator.
+- Mechanism 18: Compare answer-only, long-context, direct and graph RAG, hierarchical retrieval, compression, citation-first, self-critique, model-consensus, behavioral-test, formal-property, human-review, abstention, and governed routes on natural claims under matched conditions.
+- Interfaces: Virtual Context ABI owns packet identity and conformance; Context Transactions owns coherent state; Intent, Cognitive Compilation, and Planning request verification; Scalable Oversight owns reviewer competence and review-system governance; Spinoza and Claim Ledgers own evidence and support; executable and formal tools own their declared property semantics; security, privacy, and rights layers own access and eligible modes; Artifact Graphs owns lineage; Runtime owns effects; Resource Economics owns costs; Evidence and Readiness own support and release. Verification Bandwidth owns none of those outcomes and cannot widen their authority.
 
 Primary invariants:
 
-- Adequacy is explicit.
-- More context is not treated as proof.
-- High-risk claims pay verification tax.
-- Adequacy is scoped to a target claim and verification mode.
-- Summary-derived support cannot exceed the declared loss and residual record.
+- Exact claim identity, scope, requested support effect, authority, rights, budget, horizon, and stop rule are frozen before outcomes.
+- Every declared positive, negative, boundary, contradiction, counterexample, threat, causal, outcome, cost, reproduction, and transfer obligation receives an explicit disposition or residual.
+- Availability, retrieval, context length, admission, fidelity, local validity, coverage, adequacy, usefulness, safety, and support remain separate states.
+- Actual units, transformations, omissions, conflicts, placement, attempts, artifacts, evaluator observations, and outcomes remain inspectable.
+- All-pairwise counts are worst-case models, not universal laws; reductions expose clusters, boundary checks, higher-order interactions, assumptions, omissions, and completeness residuals.
+- More passed checks or covered obligations do not establish correctness when checks are invalid, dependent, weak, mis-scoped, contaminated, or selected after outcomes.
+- Evaluator independence is graded across model, data, prompts, code, infrastructure, organization, incentives, and time.
+- Every verification mode retains its property, source, model, population, environment, authority, rights, and outcome ceiling.
+- Citations, benchmark scores, agreement, self-critique, confidence, and green validators cannot promote a claim without accepted claim-specific evidence.
+- Negative evidence, contradictions, disagreement, timeouts, infeasibility, unattempted obligations, and evaluator failures remain first-class.
+- High-risk claims require stronger independent modes and lower false-acceptance tolerance while still accounting for false refusal and missed help.
+- Adequacy is calibrated against held-out acceptance, rejection, contradiction, abstention, usefulness, and delayed outcomes.
+- Escalation, abstention, narrowing, quarantine, and blocking name exact missing work, owners, resources, return conditions, and residuals.
+- Material changes expire affected adequacy receipts.
+- The complete candidate, attempt, failure, intervention, cost, privacy, delay, discard, missed-help, and residual denominator is retained.
+- Efficiency or fewer releases cannot establish a superior frontier without joint usefulness, safety, calibration, and cost.
+- Schemas, synthetic traces, authored counts, finite theorems, and local reversible checks establish only their exact scopes.
 
 Failure modes to cover:
 
-- Attention interference.
-- False confidence from large context.
-- Verification skipped for cost reasons.
-- Adequacy laundering, where a context packet adequate for drafting is reused as if it were adequate for support promotion.
-- Mode confusion, where a local schema or proof check is treated as an empirical or deployment result.
+- Verification theater: plans, roles, artifacts, or green status without competent claim-specific work and consequences.
+- Context-length laundering: token, unit, or nominal-window counts treated as joint verification capacity.
+- Obligation deletion: negative, boundary, contradiction, threat, causal, outcome, cost, reproduction, or transfer checks omitted after outcomes.
+- Decomposition laundering: pairwise or higher-order work removed without boundary obligations, completeness assumptions, or residuals.
+- Capacity-law laundering: one conservative authored count presented as a universal cognition or verification law.
+- Citation laundering: links, counts, or plausible entailment judgments treated as source truth or complete support.
+- Benchmark laundering: aggregate scores transported into an unevaluated live claim, population, environment, threat, or support state.
+- Formal-scope laundering: a modeled property treated as semantic-model fidelity, implementation refinement, deployment safety, or whole-system correctness.
+- Evaluator-independence laundering: correlated models, prompts, data, code, infrastructure, organizations, or incentives relabeled as independent.
+- Self-judge and consensus laundering: confidence, reflection, majority agreement, or repeated sampling treated as independent verification.
+- Negative-evidence starvation: budget spent on confirmation while contradictions, counterexamples, alternatives, and outcomes remain unsearched.
+- Contradiction averaging: material conflict hidden inside aggregate adequacy, confidence, coverage, or usefulness scores.
+- Escalation theater: referral without attempted work, returned artifacts, deadlines, or closure.
+- Over-refusal laundering: observed errors lowered by erasing missed help, delay, opportunity cost, and false-denial burden.
+- Under-refusal laundering: throughput maximized by accepting unknown, infeasible, weakly checked, or contradicted claims.
+- Failure and cost survivorship: failed checks, timeouts, retries, human work, privacy exposure, abstentions, slow cases, and residuals removed.
+- Stale-adequacy laundering: receipts reused after material claim, source, packet, model, verifier, property, environment, threat, authority, rights, or outcome change.
+- Portability theater: one fixture, model, domain, language, evaluator, mode, or horizon treated as general adequacy evidence.
 
 Draft deliverables:
 
-- A context adequacy rubric and verification-bandwidth warning states with claim scope, context scope, risk tier, negative evidence, verification artifact refs, audit refs, support-state effect, and non-claims.
-- Exact Appendix C claim-source mappings for `verification-bandwidth-and-context-adequacy.core` across Verification Bandwidth, VCM public v1, Spinoza, TreeLLM, and editable VCM; four local raw-cache mappings are passage-reviewed, while `vcm_editable` remains connector/source-note mapped.
-- Implemented protocol validation: `context_adequacy_record` fixture validates public record shape, claim scope, context packet ref, context scope, risk tier, negative evidence, verification artifact refs, audit refs, support-state effect, and non-claims only.
-- Planned Codex test: Distractor resistance test.
-- Implemented synthetic Codex test: Adequacy labeling test via `python3 scripts/validate_context_admission_adequacy.py`; model verification-bandwidth measurement remains open.
-- Implemented synthetic Codex test: Verification escalation test via `python3 scripts/validate_context_admission_adequacy.py`; deployed escalation remains open.
-- Implemented proof-backed check: finite verification-adequacy route coverage for missing claims, unadmitted context, high-risk inadequate context, missing pairwise checks, missing verification artifacts, open negative evidence, contradictions, residuals, complete verified-support reviews, and complete draft-support reviews.
-- Implemented synthetic Codex test: Verification bandwidth contradiction probe via `python3 scripts/validate_verification_bandwidth_probe.py`, producing `experiments/verification_bandwidth/results/2026-07-02-local.json`; covers two valid synthetic adequacy traces and seven expected-invalid controls for summary-derived promotion, dominant-distractor contradiction misses, high-risk inadequate context without escalation, schema-mode support for empirical runtime claims, ignored negative evidence, verified support with unidentified semantic units, and support-state promotion from the fixture. This is a deterministic synthetic contradiction and adequacy fixture only; model-verification-bandwidth, contradiction-rate-performance, distractor-resistance, adequacy-classifier, deployed-claim-ledger, escalation-service, support-state-promotion, and evidence-transition claims remain open.
-- Implemented synthetic Codex test: Verification bandwidth capacity model via `python3 scripts/validate_verification_bandwidth_capacity_model.py`, producing `experiments/verification_bandwidth_capacity/results/2026-07-03-local.json`; covers three valid capacity traces and five expected-invalid controls, including a 12-unit all-pairwise case with 66 all-pairwise obligations, 18 checked obligations, 48 residual obligations, and a named-decomposition case with explicit boundary checks. This is a deterministic synthetic record-level capacity model only; model-verification-bandwidth law, contradiction-rate-performance, adequacy-classifier, deployed-long-context-failure, support-state-promotion, and evidence-transition claims remain open.
-- Planned Codex test: Mode-confusion audit.
+- Sixteen bounded claim-source mappings: four passage-reviewed local caches, one connector/source-note boundary, and eleven external primary-record or primary-paper comparators. No source-reported result is imported as local evidence.
+- Eighteen explicit mechanisms, eleven owner interfaces, seventeen invariants, and eighteen named failure modes.
+- One context-adequacy schema and fixture; three valid and five rejecting admission records; two valid and seven rejecting contradiction traces; three valid and five rejecting capacity traces; one 12-unit/66-obligation/18-checked/48-residual record; and one 24-obligation decomposition including six boundary checks.
+- Implemented synthetic Codex test: Verification bandwidth contradiction probe via `python3 scripts/validate_verification_bandwidth_probe.py`, producing `experiments/verification_bandwidth/results/2026-07-02-local.json`; two valid synthetic adequacy traces and seven expected-invalid controls exercise only authored contradiction, inadequacy, escalation, mode, negative-evidence, semantic-unit, and no-promotion boundaries.
+- Implemented synthetic Codex test: Verification bandwidth capacity model via `python3 scripts/validate_verification_bandwidth_capacity_model.py`, producing `experiments/verification_bandwidth_capacity/results/2026-07-03-local.json`; the conservative 12-unit case declares 66 all-pairwise obligations, checks 18, and retains 48 residual obligations, while the named decomposition declares 24 obligations including six boundary checks.
+- Implemented reachable refinement via `python3 scripts/validate_verification_bandwidth_refinement.py`: five proposed/frozen/executed/adjudicated/handed-off stages; twelve explicit malformed, context, obligation, unauthorized-promotion, count, contradiction, residual, evaluator-dependence, negative-search, artifact, drafting, and evidence-gate routes; exact consumption of the 3/5 admission, 2/7 contradiction, and 3/5 capacity suites; and 31/31 rejected evidence-handoff mutations. The strongest effect is handoff to an independent evidence gate, not support assignment.
+- Four of fourteen activation-baseline declarations are physically retired with frozen lineage: one direct assumption projection, two copied result-summary projections, and one misleading verified-support permission theorem. Eight replacement declarations supply reachable lifecycle semantics, general blocking consequences, and a complete evidence-gate witness. These do not prove obligation completeness, evaluator competence or independence, model cognition, a general capacity law, usefulness, safety, or transfer.
+- The post-v2.1 deliberation result is retained as negative/narrowing evidence: zero of 360 substantive candidates met the answer criterion even when route actions could score correctly. This separates evaluator, candidate, and routing adequacy; it does not validate the criterion or show that more context repairs the candidates.
+- No model run, natural claim, contradiction-rate or distractor study, citation audit, behavioral suite, neural-network property check, independent evaluator, adequacy classifier, deployed ledger or escalation service, usefulness comparison, transfer result, support promotion, or evidence transition exists.
+- Next minimum: prospectively sampled natural claims across domains and stakes; matched answer-only, long-context, retrieval, graph/hierarchical retrieval, compression, citation, self-critique, panel, behavioral-test, formal-property, human, abstention, and governed routes; independent obligation and outcome labels; false acceptance, false refusal, missed help, contradiction discovery, calibration, usefulness, safety, latency, privacy, and total cost; causal ablations; clean reproduction; and transfer to a second model, domain, and evaluator implementation.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:verification_bandwidth.adequacy.operational_invariant` | `AsiStackProofs.VerificationBandwidth` | A context packet admitted for use may still be marked inadequate for a target claim. | implemented |
-| `lean:verification_bandwidth.adequacy.failure_blocks_promotion` | `AsiStackProofs.VerificationBandwidth` | A high-risk claim with inadequate context cannot receive a verified support label. | implemented |
-| `lean:verification_bandwidth.adequacy.route_envelope` | `AsiStackProofs.VerificationBandwidth` | A structured verification-adequacy review routes missing claims, unadmitted context, high-risk inadequate context, missing pairwise checks, missing verification artifacts, open negative evidence, contradictions, residuals, complete verified-support reviews, and complete draft-support reviews into explicit outcomes. | implemented |
-| `lean:verification_bandwidth.contradiction_probe_fixture_bridge` | `AsiStackProofs.VerificationBandwidth` | The deterministic synthetic contradiction probe result includes a contradiction-blocking pairwise trace, a drafting-only inadequate-context trace, rejected negative controls, no support-state effect, and an explicit non-claim boundary. | implemented |
+| `lean:verification_bandwidth.adequacy.operational_invariant` | `AsiStackProofs.VerificationBandwidthRefinement` | Context admission is separated from a frozen claim-specific obligation plan; only an exactly bound execution can advance to adjudication. | implemented |
+| `lean:verification_bandwidth.adequacy.failure_blocks_promotion` | `AsiStackProofs.VerificationBandwidthRefinement` | Direct chapter-core promotion requests and represented contradictions block evidence-gate handoff; high-risk correlated evaluation requires escalation. | implemented |
+| `lean:verification_bandwidth.adequacy.route_envelope` | `AsiStackProofs.VerificationBandwidthRefinement` | A five-stage lifecycle covers twelve explicit routes whose strongest positive effect is handoff to an independent evidence gate, never support assignment. | implemented |
+| `lean:verification_bandwidth.contradiction_probe_fixture_bridge` | `AsiStackProofs.VerificationBandwidthRefinement` | An independent consumer recomputes all twelve routes, consumes the exact 3/5 admission, 2/7 contradiction, and 3/5 capacity suites, and rejects 31 evidence-handoff mutations. | implemented |
 
 ### Claim Ledgers and Belief Revision
 
 Stable ID: `claim-ledgers-and-belief-revision`
 
-Chapter job: The architecture needs a durable epistemic layer for claims, evidence, contradictions, uncertainty, and revision.
+Chapter job: Own durable semantic claim identity, append-only belief-state transition history, bounded dependency repair, ontology migration, and exact multi-surface acknowledgment without taking authority over truth, evidence, verification, action, support, or release.
 
-Core claim: Reasoning should maintain claim ledgers with support states, provenance, contradiction links, uncertainty, and revision history.
+Core claim: Claim Ledgers should own the durable identity and append-only state-transition history of each material claim and its semantic variants. Every record binds canonical proposition and scope, definitions and assumptions, population and environment, provenance and source roles, evidence and attack refs, support and uncertainty states, contradiction and defeater links, dependencies, ontology version, lifecycle, commitment, authority and rights, surface refs, expiry, residuals, and current materialized view; every proposed update binds trigger, before/after states, transition type, evidence-transition and review refs, affected dependency closure, surface-sync plan, concurrency base, migration, costs, and non-overwrite receipt. The ledger may record or route promotion, downgrade, split, merge, supersession, deprecation, retirement, dispute, or no change only through the owning gates. It does not establish claim truth, source or evidence validity, verification adequacy, semantic equivalence, reviewer competence, formal-model fidelity, action authority, usefulness, safety, support movement, or release.
 
 Source loading queue:
 
@@ -1985,70 +2262,97 @@ Source loading queue:
 |---|---|---|
 | Primary | `spinoza`, `viea` | Read first for chapter claims and mechanisms. |
 | Supporting | `coherence_exchange`, `aletheia`, `uat`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project` | Mine after primary sources for cross-layer connections, variants, failure modes, and the historical contradiction/revision lineage. |
-| External comparators | `ext_agm_belief_revision_1985`, `ext_truth_maintenance_system_1979`, `ext_assumption_based_tms_1986`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_checklist_2020` | Load after internal claim-ledger sources to position the chapter against formal belief revision, truth maintenance, assumption-based truth maintenance, citation support, retrieval critique, and behavioral testing. Treat these as lineage/comparators, not evidence that the ASI Stack implements belief revision. |
-| Provenance interoperability | `ext_w3c_prov_o_2013` | Use for derivation, attribution, revision, quotation, primary-source, delegation, and invalidation relations. Do not equate an asserted provenance graph with a justified belief or accepted support transition. |
-
-
-| Manifest assignment reconciliation | `qcsa_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| External comparators | `ext_agm_belief_revision_1985`, `ext_truth_maintenance_system_1979`, `ext_assumption_based_tms_1986`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_checklist_2020`, `ext_w3c_prov_o_2013` | Position the owner against formal belief revision, truth maintenance, assumption contexts, citation support, retrieval critique, behavioral testing, and interoperable provenance. Treat them as bounded comparators, not local result evidence. |
+| Semantic-addressing lineage | `qcsa_whitepaper` | Use for the separation among ontology, proposition, evidence, provenance, support, contradiction, address, and permitted use; preserve QCSA's mixed results and zero core support effect. |
 Draft arc:
 
-- Problem: The architecture needs a durable epistemic layer for claims, evidence, contradictions, uncertainty, and revision.
-- Insufficiency: A model can generate plausible prose without maintaining why it believes a claim or how new evidence changes prior beliefs.
-- Mechanism: Convert admitted context and generated prose into durable claim records with evidence refs, support state, uncertainty, contradiction refs, and revision history.
-- Mechanism: Treat belief revision as support-state change, downgrade, split, merge, residual creation, or tribunal escalation rather than promotion-only bookkeeping.
-- Mechanism: Track claim lifecycle states such as proposed, recorded, mapped, challenged, revised, downgraded, deprecated, split, merged, promoted, and retired.
-- Mechanism: Preserve ledger identity across chapters, diagrams, appendices, release notes, and reader editions so confidence cannot drift through repetition.
-- Mechanism: State the local governed-cognition pattern delta: this chapter owns belief-state continuity, keeping claim identity, wording variants, surface refs, contradiction state, assumptions, and revision history joined as prose changes.
-- Mechanism: Record claim scope, surface refs, contradiction state, residual refs, changed surfaces, non-overwrite attestation, ledger effect, promotion blockers, and non-claims so repeated prose cannot launder confidence.
-- Mechanism: Separate justification, lifecycle, commitment, and authority; apply monotone weak/medium/strong contradiction responses, exact bounded dependency repair, versioned ontology migration, residual conservation, and restart persistence.
-- Handoff: Selected high-value claims flow to Spinoza for proof-, citation-, or procedure-carrying justification envelopes.
-- Interface: VCM supplies source context.
-- Interface: Spinoza verifies claims.
-- Interface: Evidence matrix records book-level claims.
+- Problem: Claims can drift across paraphrases, assumptions, evidence changes, contradictions, ontologies, concurrent updates, and publication surfaces without a reconstructable identity or history.
+- Insufficiency: Prompts, citations, provenance, embeddings, confidence, self-critique, formal belief revision, truth maintenance, version control, event sourcing, databases, and human editing each preserve only part of the natural-language identity and propagation contract.
+- Mechanism 1: Register candidate material claims with durable ID, raw wording, origin, extraction and materiality decisions, canonical proposition, and version without implying truth.
+- Mechanism 2: Factor definitions, quantifiers, scope, assumptions, population, environment, time, consumer, exceptions, affected parties, and requested support effect.
+- Mechanism 3: Represent exact, equivalent, entailing, narrower, broader, overlapping, incompatible, and unknown variant relations as reviewed hypotheses.
+- Mechanism 4: Separate provenance, source role, evidence, attack, support, uncertainty, contradiction, lifecycle, commitment, authority, rights, readiness, and release.
+- Mechanism 5: Attach positive, negative, boundary, contradiction, replication, outcome, and cost refs with exact lineage and no self-validation.
+- Mechanism 6: Build justification and dependency graphs preserving alternative reasons, cycles, contested edges, invalidations, and residuals.
+- Mechanism 7: Append every proposed and accepted mutation with prior digest, concurrency base, trigger, proposer, authority, evidence/review refs, before/after state, rationale, time, cost, and non-overwrite receipt.
+- Mechanism 8: Materialize current state from history while retaining time travel, superseded views, rejected proposals, conflicts, failed migrations, and replay checks.
+- Mechanism 9: Use typed map, challenge, contradiction, no-change, promotion-proposal, downgrade, split, merge, supersession, deprecation, retirement, expiry, dispute, quarantine, and residual transitions.
+- Mechanism 10: Require Evidence States to authorize support movement through accepted transition refs; the ledger cannot promote itself.
+- Mechanism 11: Apply stronger responses to stronger recorded contradictions only within a frozen severity model that preserves uncertainty and disagreement.
+- Mechanism 12: Compute bounded affected closure, compare declared and observed reachability, repair authorized nodes, and retain omitted, cyclic, blocked, stale, or exhausted residuals.
+- Mechanism 13: Version ontologies, schemas, predicates, and identity rules with explicit migration, collision, non-isomorphism, rollback, orphan, and prior-view handling.
+- Mechanism 14: Synchronize accepted material changes across every declared publication and runtime surface with acknowledgment or residual.
+- Mechanism 15: Handle concurrency through base-version checks, conflict records, reviewed merge policy, idempotent retries, and no lost update.
+- Mechanism 16: Expire affected views after material source, evidence, model, evaluator, ontology, environment, authority, rights, threat, outcome, or consumer changes.
+- Mechanism 17: Causally ablate identity, assumptions, contradiction links, dependency closure, history, migration, and synchronization under matched conditions.
+- Mechanism 18: Compare no-ledger, citation/provenance, version-control, event-sourcing, truth-maintenance, retrieval/self-critique, behavioral-test, human-editorial, and governed routes on natural multi-surface revision workloads.
+- Interfaces: Verification supplies adequacy; Evidence States owns support; proof and oversight owners supply bounded results; ABI/Transactions supplies source state; Artifact Graphs owns general lineage; execution consumers use versioned views; security/rights owns access; Resource Economics owns cost; publication surfaces acknowledge versions; QCSA locates but cannot validate identity; accountable humans own unresolved semantic and normative decisions.
 
 Primary invariants:
 
-- Claims are separable from prose.
-- Contradictions remain linked.
-- Revision history is not overwritten.
-- Stronger contradictions never receive weaker responses; bounded repair, ontology migration, and restart preserve claim, successor, revision, and residual identity.
+- Durable semantic identity is distinct from wording, location, address, key, embedding, and support state.
+- Raw and canonical proposition, scope, assumptions, variants, and semantic relations remain inspectable and versioned.
+- Provenance, evidence, attack, support, uncertainty, contradiction, lifecycle, commitment, authority, rights, readiness, and release remain separate.
+- Accepted history is append-only and reconstructable.
+- Support never increases without an accepted owner transition.
+- Open material contradiction blocks promotion until explicitly handled.
+- Variant merges preserve exact scope and uncertainty; split/merge/supersession preserve lineage and residuals.
+- Dependency repair is frozen, bounded, observed, and residual-complete without open-world claims.
+- Ontology changes require migration, collision/non-isomorphism handling, rollback, orphan disposition, and preserved prior views.
+- Every accepted material change is acknowledged or residualized across all declared surfaces.
+- Concurrent updates preserve bases, conflicts, retries, rejected proposals, and idempotency.
+- Provenance, address, citation, retrieval, critique, behavior, proof, and verdict inputs keep exact scope ceilings.
+- Uncertainty and contradiction severity remain evaluator-attributed and disagreement-capable.
+- Read/write/review/support/action/disclosure/training/retention/release authorities remain separate.
+- Material changes expire affected current views while preserving history.
+- Complete attempt, error, synchronization, intervention, cost, delay, and residual denominators remain visible.
+- Authored schemas, fixtures, finite theorems, and green validators establish only exact local scope.
 
 Failure modes to cover:
 
-- Untracked assumptions.
+- Prose as database.
+- Identity aliasing.
+- Semantic-merge laundering.
+- Assumption erasure.
+- Contradiction deletion or averaging.
 - Belief inertia.
-- Contradiction deletion.
-- Monotonicity inversion, repair sprawl, ontology drift, and restart amnesia.
+- Promotion laundering.
+- Monotonicity theater.
+- Dependency-repair sprawl.
+- Ontology drift.
+- History overwrite.
+- Surface drift.
+- Stale-view reuse.
+- Provenance and citation laundering.
+- Self-judge or evaluator laundering.
+- Concurrent lost update.
+- Revision and cost survivorship.
+- Portability theater.
 
 Draft deliverables:
 
-- A claim-record schema and belief-revision transition example with lifecycle state, surface identity, contradiction state, residual refs, non-overwrite attestation, ledger effect, promotion blockers, and non-claims.
-- Exact Appendix C claim-source mappings for `claim-ledgers-and-belief-revision.core` across Spinoza, VIEA, Coherence Exchange, Aletheia, and UAT; four local raw-cache mappings are passage-reviewed, while `coherence_exchange` remains connector/source-note mapped.
-- Source-noted external comparator rows for AGM belief revision, Doyle-style truth maintenance, de Kleer-style assumption-based truth maintenance, ALCE, Self-RAG, and CheckList, with the chapter framed as a publication/support-state ledger bridge rather than an implemented formal belief-revision or truth-maintenance engine.
-- Implemented protocol validation: `claim_record` and `belief_revision_record` fixtures validate public record shape only.
-- Planned Codex test: Claim extraction test.
-- Implemented synthetic Codex test: claim-ledger revision harness via `python3 scripts/validate_claim_ledger_revision.py`, now passing with 5 valid fixture(s) and 7 expected-invalid fixture(s) at `experiments/claim_ledger_revision/results/2026-07-02-local.md`; covers no-change boundaries, contradiction quarantine, claim splitting, semantic-variant merge boundaries, assumption-context dependency preservation, support-state promotion blockers, revision-history preservation, surface propagation, review routing, residuals, and non-claim language without proving open-domain claim extraction, contradiction-detection quality, semantic equivalence, assumption-context completeness, deployed belief-engine behavior, or support-state promotion.
-- Implemented historical-project Codex test: `python3 scripts/validate_contradiction_revision_lifecycle.py` accepts one bounded five-project lifecycle and rejects eleven justification, state-conflation, monotonicity, supersession, repair, ontology, residual, restart, and support-promotion mutations; no open-domain detector, ontology correctness, deployed belief engine, historical runtime behavior, or support promotion is claimed.
-- Implemented Lean proof target: finite claim updates preserve prior evidence and revision-history references.
-- Implemented Lean proof target: open contradictions block promotion until handled.
-- Implemented Lean proof target: finite revision-lifecycle routing sends missing claim identity, support-state gaps, unsupported promotion, open contradictions, history loss, surface-sync gaps, split/downgrade/residual gaps, and non-claim-boundary gaps to explicit modeled outcomes.
-- Implemented Lean proof target: semantic/assumption fixture bridge for accepted semantic-variant merge, accepted assumption-context split, rejected scope-overwriting merge, rejected assumption-context erasure, rejected unsynchronized variant surface, no support-state effect, and non-claim boundaries.
-- Planned Codex test: belief revision engine test.
+- Eighteen bounded claim-source mappings: four passage-reviewed local caches, one source-note/connector boundary, five public-safe historical-project notes, QCSA, and seven external comparators.
+- Eighteen mechanisms, eleven owner interfaces, seventeen invariants, and eighteen named failure modes.
+- Public claim, belief-revision, contradiction-lifecycle, and append-only refinement schemas; five valid/seven rejecting revision fixtures; one bounded five-project lifecycle/eleven rejecting mutations.
+- Four public Lean targets backed by `AsiStackProofs.ClaimLedgerRefinement`: a reachable five-stage lifecycle, seventeen explicit routes, twelve refinement declarations, and an independent consumer rejecting 29/29 lifecycle mutations.
+- Sixteen weak baseline declarations are physically retired with frozen lineage; four small legacy prior-history and contradiction lemmas remain bounded and reusable.
+- No open-domain extractor, semantic-equivalence or assumption-completeness evaluator, contradiction-quality study, concurrent event store, natural dependency repair, ontology migration, surface synchronizer, model-backed belief engine, independent reviewer, causal benefit, useful advantage, reproduction, transfer, or support promotion.
+- Next minimum: a frozen public natural multi-surface corpus; gold identity, scope, assumption, semantic-relation, evidence/attack, contradiction, dependency, migration, concurrency, surface, and delayed-outcome labels; matched strong baselines; complete errors and costs; causal ablations; clean reproduction; and transfer across a second model, domain, ontology, language, and independent evaluator.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:claims.ledger.operational_invariant` | `AsiStackProofs.ClaimLedger` | A claim update preserves prior evidence and revision history. | implemented |
-| `lean:claims.ledger.failure_blocks_promotion` | `AsiStackProofs.ClaimLedger` | A contradiction prevents promotion until resolved, bounded, or recorded as residual. | implemented |
-| `lean:claims.ledger.revision_lifecycle_route` | `AsiStackProofs.ClaimLedger` | A modeled revision request routes missing claim identity, support-state gaps, unsupported promotion, open contradictions, history loss, surface-sync gaps, split/downgrade/residual gaps, and non-claim-boundary gaps to explicit outcomes. | implemented |
-| `lean:claims.ledger.semantic_assumption_fixture_bridge` | `AsiStackProofs.ClaimLedger` | The expanded claim-ledger revision fixture set includes accepted semantic-variant merge, accepted assumption-context split, rejected scope-overwriting merge, rejected assumption-context erasure, rejected unsynchronized variant surface, no support-state effect, and explicit non-claim boundaries. | implemented |
+| `lean:claims.ledger.operational_invariant` | `AsiStackProofs.ClaimLedgerRefinement` | An accepted ledger step preserves durable claim identity and cannot commit an external effect; an authorized append advances ledger version and append count exactly once. | implemented |
+| `lean:claims.ledger.failure_blocks_promotion` | `AsiStackProofs.ClaimLedgerRefinement` | Stale bases, ledger self-approval, event substitution, open contradictions, missing evidence-owner receipts, and incomplete custody block append or exact acknowledgment. | implemented |
+| `lean:claims.ledger.revision_lifecycle_route` | `AsiStackProofs.ClaimLedgerRefinement` | A reachable propose-append-materialize-acknowledge lifecycle binds exact versions, history, dependencies, ontology migration, residuals, and surface receipts. | implemented |
+| `lean:claims.ledger.semantic_assumption_fixture_bridge` | `AsiStackProofs.ClaimLedgerRefinement` | An independent consumer covers seventeen routes, consumes the exact 5/7 revision suite and 1/11 five-project lifecycle, and rejects 29 mutations without support movement. | implemented |
 
 ### Proof-Carrying Claims and Adversarial Review
 
 Stable ID: `spinoza-verification-and-proof-carrying-claims`
 
-Chapter job: High-value claims and high-risk artifacts need a governed verification path that can choose proof, citation, procedure, replay, benchmark, or adversarial-review treatment without laundering failed, mismatched, or contested evidence into support.
+Chapter job: Own prospective selection, execution, and custody of claim-specific verification and adversarial-review routes plus bounded verdict contracts, while leaving target identity, adequacy, formal or empirical validity, reviewer competence, support, authority, rights, cost, and release with their separate owners.
 
 Core claim: Selected claims and artifacts should move through proof-carrying, justification-carrying, or adversarial-review envelopes that record tier, interpretation mapping, evidence dossier, verifier or tribunal result, dissent, limitations, failed attempts, required actions, residuals, and ledger effects.
 
@@ -2064,61 +2368,54 @@ Draft arc:
 
 - Problem: High-value claims and high-risk artifacts need a governed verification path that can choose proof, citation, procedure, replay, benchmark, or adversarial-review treatment without laundering failed, mismatched, or contested evidence into support.
 - Insufficiency: Neural generation, one-pass self-critique, and informal review can produce plausible justification language without preserving proof scope, verifier result, evidence dossier, dissent, failed attempts, verdict constraints, or downgrade routes.
-- Mechanism: Select a verification route for each selected claim or artifact: formal proof, citation dossier, executable procedure, replay log, benchmark artifact, tribunal review, downgrade, block, or escalation.
-- Mechanism: Record interpretation mapping, justification artifact, verifier result, failed attempts, limitations, semantic adequacy, and support-state effect before any stronger claim standing is allowed.
-- Mechanism: Escalate contested, high-risk, or mismatched cases into tribunal records with bounded dossiers, reviewer roles, adversarial probes, dissent, verdict constraints, and required actions.
-- Mechanism: Write bounded effects back to the claim ledger and execution layers: no change, downgrade, block, revise, scoped accept, dispatch blocker, authority narrowing, human sign-off, or residual work.
-- Mechanism: Label proof, citation, replay, adversarial, falsification, and abstention routes; disclose independence groups/dependencies; reject vacuous cases; preserve veto/dissent; and forbid default approval.
+- Mechanisms 1–3: Freeze target, scope, assumptions, consequence, risk, authority, rights, budget, and horizon; declare eligible and required modes; choose the route or route portfolio prospectively with refusal and trusted-core boundaries.
+- Mechanisms 4–6: Bind prose to formal target and ambiguity; bind artifacts to bytes, producers, checkers, versions, policies, roots, properties, and replay boundaries; retain every attempt, timeout, retry, intervention, and discard.
+- Mechanisms 7–9: Enforce route-specific artifact contracts; separate shape, checker acceptance, semantic adequacy, premise/source truth, correspondence, outcome, support, authority, and release; bottom verifier trust out in named roots, bounded delegation, recursion stops, compromise handling, and residuals.
+- Mechanisms 10–12: Construct bounded dossiers with omitted frontiers and affected parties; assign proposer, critic, judge, expert, red-team, appeal, and accountable-human roles with multidimensional dependence; run prospective contradiction, counterexample, omission, source, mapping, policy, bias, persuasion, collusion, and strategic-abstention probes.
+- Mechanisms 13–15: Bound turns, retrieval, resources, privacy, appeal, and stop rules without treating convergence as truth; preserve dissent, veto, ignorance, abstention, minority findings, and appeals; reuse prior review only under an independently checkable exact unchanged boundary.
+- Mechanisms 16–18: Issue typed scoped verdicts with evidence, limits, actions, constraints, expiry, residuals, appeal, human state, and non-claims; write only bounded proposals to owning gates; compare governed routing against strong direct, self-critique, citation, proof, replay, benchmark, model-judge, debate, human, and abstention baselines under matched conditions.
 - Handoff: Verification outcomes that constrain downstream work flow to Labor OS and Typed Jobs.
-- Interface: Claim ledgers supply stable claim identity and receive bounded verification outcomes.
-- Interface: Lean, GenesisCode, Circle-style proof contracts, procedures, replay logs, and benchmark artifacts supply formal or executable evidence when appropriate.
-- Interface: UAT-style tribunal review handles contested, high-risk, or mismatched cases.
+- Interfaces: Claim Ledgers own identity/history; Verification Bandwidth owns adequacy; Evidence States owns support; VCM/Transactions own source views; formal, source, procedure, replay, benchmark, and empirical evaluators own exact mode validity; Artifact Graphs owns lineage and receipt faithfulness; oversight and accountable humans own competence, contestability, appeal, and adjudication; Security/Privacy/Rights/Licensing own exposure and use; execution layers own action; Resource Economics owns cost; readiness/publication own release; source records supply lineage only.
 
 Primary invariants:
 
-- Proof tier is explicit.
-- Formal, citation, and procedure tiers require matching artifacts.
-- Failed, timed-out, or mismatched verification blocks promotion or routes to downgrade, no change, block, or escalation.
-- Narrow passes cannot promote broader natural-language claims without semantic adequacy review.
-- Dissent remains visible.
-- High-risk artifacts cannot bypass required tribunal review.
-- Prior review over unchanged evidence cannot quietly reverse a rejection into acceptance.
-- Dependent methods cannot inflate independent counts; empty cases do not pass; falsification, abstention, veto, and dissent remain explicit; default approval is forbidden.
+- Exact target, scope, assumptions, consumer, consequence, risk, requested effect, authority, rights, budget, horizon, and expiry are frozen.
+- Route selection, adequacy, artifact validity, interpretation adequacy, source/premise validity, correspondence, verdict correctness, support, action authority, and release remain distinct.
+- Every route carries its exact artifact and mode-specific validity; no narrow result widens without separate mapping and evidence.
+- Passed, failed, refuted, timed-out, mismatched, unknown, infeasible, disputed, abstained, blocked, and not-run outcomes remain distinct; negative or missing routes never create upward effects.
+- Artifacts bind identity, producer, checker, environment, policy, dependencies, trust root, property, replay boundary, expiry, and residuals; verifier trust cannot authenticate itself.
+- Dossiers expose evidence world and omitted frontier; reviewer independence is multidimensional and is not competence evidence.
+- Required high-risk, contested, authority-changing, mapping, adversarial, or accountable-human routes cannot be bypassed.
+- Falsification, counterexamples, omission search, bias probes, ignorance, abstention, veto, dissent, minority findings, and appeal remain first-class; cycle caps are resource limits only.
+- Prior review reuse requires an exact unchanged boundary; verdicts bind evidence, limits, actions, constraints, expiry, residuals, appeal, human state, and non-claims.
+- No route may promote itself; every failure, cost, missed-help case, unsafe acceptance, and delayed residual stays in the denominator; finite artifacts establish only exact scope.
 
 Failure modes to cover:
 
-- Certified delusion.
-- Invalid formalization.
-- Justification artifact missing.
-- Reviewer collusion.
-- Consensus theater.
-- Critique without action.
-- Repeated-review laundering.
-- Independence laundering, vacuous-pass laundering, silent veto, abstention erasure, and default approval.
+- Certified delusion; invalid formalization; theorem, citation, procedure, replay, or benchmark laundering; artifact theater; verifier-trust recursion.
+- Route shopping; dossier capture; reviewer collusion/correlated error; judge/persuasion laundering; consensus theater.
+- Vacuous-pass/default approval; abstention/ignorance erasure; convergence/cycle-cap laundering; repeated-review laundering.
+- Critique without consequence; self-promotion; failure/cost survivorship; portability theater.
 
 Draft deliverables:
 
-- A proof-carrying-claim schema and tribunal-review schema with synthetic valid and expected-invalid fixtures for narrow formal passes, citation no-change, mismatch escalation, missing artifacts, failed verification, high-risk review, dissent, and prior-review laundering.
-- Exact Appendix C claim-source mappings for `spinoza-verification-and-proof-carrying-claims.core` across Spinoza, GenesisCode, Coherence Exchange, Verification Bandwidth, TreeLLM, UAT, and Talos; six local raw-cache mappings are passage-reviewed, while `coherence_exchange` remains connector/source-note mapped.
-- Folded-history preservation for `unified-adaptive-tribunal-and-adversarial-review.core` as a subclaim about bounded dossiers, reviewer roles, adversarial probes, dissent, verdict constraints, cycle caps, unchanged-evidence guards, and required actions.
-- Source-noted external comparator rows for proof-carrying code, Lean theorem proving, LLM autoformalization, AI safety debate, LLM-as-judge evaluation, and contestable-AI design, with the chapter framed as verification-route and review-record discipline rather than a local autoformalizer, debate system, LLM judge, or tribunal-quality result.
-- Implemented protocol validation: `proof_carrying_claim` and `tribunal_review_record` fixtures validate public record shape only.
-- Implemented Codex tests: proof-carrying claim synthetic harness and tribunal-review synthetic harness.
-- Implemented synthetic Codex test: Adversarial review dossier and verdict-quality probe, via `python3 scripts/validate_adversarial_review_dossier_probe.py` and result `experiments/adversarial_review_dossier/results/2026-07-02-local.json`, checks two valid synthetic review dossiers and seven expected-invalid controls for scoped acceptance with dissent preserved, semantic-mismatch rejection, missing dossier refs, LLM-judge-only acceptance, missing adversarial probes, erased dissent constraints, action verdicts without actions, prior-review reuse without a guard, and fixture-driven support promotion; no semantic-equivalence, reviewer-independence, adversarial-probe-quality, verdict-correctness, LLM-judge, debate-system, support-state-promotion, or evidence-transition claim follows.
-- Implemented historical-project Codex test: `python3 scripts/validate_tribunal_method_independence.py` accepts one bounded five-project tribunal record and rejects eleven method, independence, cycle, group-count, vacuity, falsification, abstention, veto, default-approval, dissent, and support-promotion mutations; no reviewer-independence, method-adequacy, verdict-correctness, deployed-tribunal, historical runtime behavior, or support promotion is claimed.
-- Implemented Lean follow-through: `AsiStackProofs.Tribunal` now includes a finite lifecycle route envelope for missing review, high-risk probe/independence gaps, changed-evidence reuse, unrecorded dissent, action constraints, missing evidence-transition records, and complete bounded review, without claiming reviewer quality, probe quality, verdict correctness, action enforcement, deployed tribunal behavior, or support-state promotion.
-- Planned Codex test: Tier assignment over real verifier outputs.
-- Planned Codex test: Real adversarial review quality over reproducible dossiers.
+- Exact Appendix C mappings for all 18 sources: six passage-reviewed local raw caches, one source-note/connector record, five public-safe historical notes, and six bounded external comparator notes.
+- Current exact authored implementation: three schemas; 3 valid/5 rejecting proof-carrying fixtures; 3 valid/5 rejecting tribunal fixtures; 2 valid/7 rejecting adversarial-dossier cases; 1 bounded five-project method/independence record/11 rejecting mutations; related 3 valid/6 rejecting epistemic-TCB fixture owned by Artifact Graphs.
+- Implemented **Adversarial review dossier and verdict-quality probe** at `experiments/adversarial_review_dossier/results/2026-07-02-local.json`: two accepted synthetic dossiers and seven rejecting controls, with no semantic-equivalence, reviewer-independence, probe-quality, verdict-correctness, model-judge, debate, or support-promotion claim.
+- Current exact formal envelope: three public targets resolve to an eleven-declaration, six-stage, twenty-three-route Proof-Carrying Claims refinement with a 36/36 mutation consumer; two Tribunal targets resolve to a twelve-declaration, seven-stage, twenty-eight-route versioned-verdict/appeal refinement with a 45/45 mutation consumer. Four small Proof-Carrying Claims lemmas and three Tribunal countermodels remain, while four weak Proof-Carrying Claims and ten weak Tribunal declarations are retired with frozen lineage. The 30 live declarations across four modules establish bounded authored lifecycle custody only, with no competence, correctness, semantic, empirical, support, or effect promotion.
+- Folded-history preservation for the retired tribunal chapter and public redirect, with restoration only if distinct independent tribunal evidence makes it chapter-owning.
+- Next minimum: a prospectively frozen natural mathematical/software/scientific/policy/mixed-evidence corpus with accepted natural/formal mappings, source and entailment labels, actual proof/countermodel checks, procedures, replay, benchmarks, adversarial dossiers, model/judge dependence, affected-party and appeal cases, delayed outcomes, matched baselines, and complete failures/costs.
+- Promotion gates: independent joint interpretation, validity, false-acceptance, false-refusal, missed-help, attack-discovery, calibrated-ignorance, dissent/appeal, action, outcome, privacy, latency, human-work, and total-cost evaluation; mechanism ablations; clean reproduction; and transfer across model, domain, language, formal system, evaluator, organization, threat, and time.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:spinoza.proof_carrying.operational_invariant` | `AsiStackProofs.ProofCarryingClaims` | A claim at a formal support tier carries a valid proof or justification artifact reference. | implemented |
-| `lean:spinoza.proof_carrying.failure_blocks_promotion` | `AsiStackProofs.ProofCarryingClaims` | A failed verifier result downgrades or blocks the claim rather than promoting it. | implemented |
-| `lean:tribunal.review.operational_invariant` | `AsiStackProofs.Tribunal` | A tribunal verdict includes reviewer roles, evidence references, and unresolved dissent. | implemented |
-| `lean:tribunal.review.failure_blocks_promotion` | `AsiStackProofs.Tribunal` | A high-risk artifact cannot be accepted when required tribunal review is absent. | implemented |
-| `lean:spinoza.adversarial_review.dossier_probe_bridge` | `AsiStackProofs.ProofCarryingClaims` | The deterministic synthetic adversarial-review dossier probe includes a scoped-acceptance dossier, a semantic-mismatch rejection dossier, rejected negative controls, rejected LLM-judge-only acceptance, no support-state effect, and explicit non-claim boundaries. | implemented |
+| `lean:spinoza.proof_carrying.operational_invariant` | `AsiStackProofs.ProofCarryingClaimsRefinement` | A target-specific verification lifecycle preserves exact claim, interpretation, scope, assumption, artifact, verifier, and trusted-base custody while preventing direct support assignment or external effects. | implemented |
+| `lean:spinoza.proof_carrying.failure_blocks_promotion` | `AsiStackProofs.ProofCarryingClaimsRefinement` | Passed results require artifacts and semantic review; negative results cannot request scoped promotion; mismatch requires tribunal; high-risk adjudication requires an independent dossier. | implemented |
+| `lean:tribunal.review.operational_invariant` | `AsiStackProofs.TribunalRefinement` | A versioned request, dossier, panel, verdict, acknowledgment, and appeal lifecycle preserves exact case and evidence custody, dissent, action, residual, and appeal obligations while preventing support assignment and external effects. | implemented |
+| `lean:tribunal.review.failure_blocks_promotion` | `AsiStackProofs.TribunalRefinement` | Missing high-risk probes, panel or independence records, falsification, preserved dissent, actions, constraints, residuals, appeal, owner handoff, or consumer acknowledgment; changed-evidence reuse; default approval; replay; substitution; and authority leakage all block lifecycle progress. | implemented |
+| `lean:spinoza.adversarial_review.dossier_probe_bridge` | `AsiStackProofs.ProofCarryingClaimsRefinement` | An independent consumer covers twenty-three lifecycle routes, consumes the exact 3/5 proof-carrying and 2/7 adversarial-dossier suites, and rejects 36 mutations without assigning support. | implemented |
 
 Historical treatment: `unified-adaptive-tribunal-and-adversarial-review` is archived and redirected to `spinoza-verification-and-proof-carrying-claims`; the old chapter can be restored only if independent tribunal pipeline evidence, reviewer-independence measurements, adversarial-probe-quality tests, verdict-correctness audits, or institutional contestability evidence make it chapter-owning again.
 
@@ -2126,7 +2423,7 @@ Historical treatment: `unified-adaptive-tribunal-and-adversarial-review` is arch
 
 Stable ID: `labor-os-and-typed-jobs`
 
-Chapter job: Intelligence must become typed work with lifecycle, permissions, artifacts, logs, and approvals.
+Chapter job: Own admission, lifecycle custody, and terminal receipt for one bounded authorized work unit from dispatch request through delivery, evidence-readiness eligibility, compensation, expiry, or retirement, while leaving intent, planning, permissions, effects, artifacts, evidence, support, learning, and release with their owners.
 
 Core claim: The execution layer should convert plans into typed jobs managed by a governed labor operating system.
 
@@ -2144,60 +2441,52 @@ Draft arc:
 
 - Problem: Intelligence must become typed work with lifecycle, permissions, artifacts, logs, and approvals.
 - Insufficiency: Chat outputs do not provide deterministic job lifecycle, tool isolation, auditability, or repeatable cognitive manufacturing.
-- Mechanism: Convert accepted plans and required actions into typed job packets with contract lock, lifecycle state, permissions, approval gates, expected artifacts, failure behavior, audit trail, and replay expectations.
-- Mechanism: Keep orchestration, workspace setup, access control, secret isolation, adapter invocation, adjudication, delivery, feedback, and replay as separate execution boundaries.
-- Mechanism: Preserve job parentage from command contract to plan node, approval record, adapter, artifact, residual, and replay declaration so useful work cannot be laundered into governed execution without receipts.
-- Mechanism: Separate delivery from evidence-ready completion: a job can produce output while still missing approval, verification, artifact capture, audit events, or replay metadata.
-- Mechanism: Track lifecycle states: drafted, locked, awaiting-approval, approved, dispatchable, running, adjudicating, delivered, evidence-ready, failed/blocked, quarantined, replayed, and retired.
-- Mechanism: Emit completion receipts with approval, permission, adapter, artifact, verification, audit, residual, replay/non-replay, delivery, and evidence-state fields.
+- Mechanisms 1–3: Freeze exact job contract and plan parent, assign stable job/attempt/lease/workspace/effect/artifact/receipt identities, and admit/refuse/defer/split/quarantine only after exact boundary checks.
+- Mechanisms 4–6: Lock material fields with expiry on change, enforce a typed lifecycle state machine, and request rather than mint exact capability, data, network, secret, disclosure, side-effect, environment, and retention grants.
+- Mechanisms 7–9: Bind exact high-impact approvals, provision purpose-bound workspace/secret/environment/adapter/observation boundaries, and schedule under declared priority, fairness, dependency, capacity, deadline, preemption, starvation, and cost policy.
+- Mechanisms 10–12: Lease each attempt with expiry, heartbeat, checkpoint, idempotency and duplicate-effect policy; observe actual effects; retry/resume only with reconciled effects, fresh leases, preserved authority, and exact delivery semantics.
+- Mechanisms 13–15: Route faults and unknowns to typed recovery/custody; separate output, delivery, adjudication, verification, artifact capture, replay, evidence readiness, support, and release; emit exact terminal receipts.
+- Mechanisms 16–18: Preserve irreversible effects and obligations through cancellation/compensation/expiry/retirement; route feedback through owning gates; compare strong chat, ambient-agent, swarm, script, queue, DAG, durable-workflow, process-engine, batch-job, and governed baselines.
 - External positioning: Compare Labor OS typed jobs to Temporal durable execution, Airflow DAG orchestration, BPMN process notation, and Kubernetes batch-job lifecycle semantics; preserve the distinction between operational workflow completion and ASI Stack evidence readiness.
 - Handoff: Delivered, failed, or blocked jobs flow into artifact graphs as durable work products and audit traces.
-- Interface: Planning dispatches jobs.
-- Interface: Security mediates permissions.
-- Interface: Artifact graph receives outputs.
+- Interfaces: Intent/Contracts own objectives; Planning owns plan correctness; Proof/Review supplies bounded constraints; Security/Privacy/Rights/Licensing own grants; Resource Economics and scheduler policy own capacity/fairness/cost; Runtime Adapters own effects; Context owners own input state; Artifact Graphs own outputs and receipts; Verification/Evidence/Claims own adequacy and support; accountable humans own high-impact decisions; Readiness/Publication own release; sources and workflow systems supply lineage only.
 
 Primary invariants:
 
-- Every job has type and lifecycle state.
-- Tool permissions are explicit.
-- Human approval gates block high-impact jobs.
-- Delivered output is not evidence-ready until verification, artifact capture, audit, residual, and replay/non-replay fields are present.
-- Job parentage remains traceable to contract, plan node, approval, adapter, artifact, and residual.
+- Exact job/contract/plan/type/objective/scope/input/artifact/test/consumer/risk/authority/rights/budget/deadline/expiry/owner binding and stable causal identities.
+- Typed non-collapsing lifecycle with material-change expiry of locks, approvals, permissions, leases, verification, and replay.
+- Explicit least-privilege non-escalating permissions and current exact approval before high-impact or irreversible dispatch.
+- Queue, lease, response, output, delivery, acknowledgment, durable completion, evidence readiness, support, and release remain distinct.
+- Actual effects and costs remain independently observable; retry/resume preserves lineage, authority, leases, checkpoints, idempotency/compensation, and prior-effect reconciliation.
+- Faults and unknown outcomes route to exact recovery or custody; context/workspace/secret/adapter obligations propagate.
+- Evidence readiness has exact receipts but does not accept evidence; cancellation/compensation/retirement preserves external effects and residuals.
+- Feedback passes through owning gates; scheduling fairness and every failure/cost remain in the denominator; finite artifacts establish only exact scope.
 
 Failure modes to cover:
 
-- Tool overreach.
-- Unlogged side effects.
-- Infinite or chaotic agent swarms.
-- Completion laundering, where output existence is treated as governed evidence.
-- Parentage loss, where a job cannot be traced back to the command contract and dispatchable plan node that authorized it.
+- Ambient-agent execution; contract/plan drift; lifecycle laundering; permission/approval laundering; tool/adapter/workspace/network/data/secret overreach.
+- Unlogged effects; scheduler theater; lease/worker amnesia; retry duplication; compensation/rollback laundering; swarm explosion.
+- Parentage loss; artifact/receipt theater; delivery/evidence laundering; failure/residual abandonment; feedback/learning laundering; failure/cost survivorship; portability theater.
 
 Draft deliverables:
 
-- A typed-job schema with lifecycle states and permission checks.
-- Exact Appendix C claim-source mappings for `labor-os-and-typed-jobs.core` across Talos, VIEA, GenesisCode, Software Magic Grimoire, Talos Markdown, and MoECOT; four local raw-cache mappings are passage-reviewed, while `talos_md` and `moecot` remain connector/source-note mapped.
-- Implemented protocol validation: `typed_job` fixture validates public record shape only.
-- Implemented Lean predicate: a transition record marked valid must use the declared finite lifecycle relation.
-- Implemented synthetic Codex test: Typed job lifecycle test via `python3 scripts/validate_plan_execution_contracts.py`; deployed job runner remains open.
-- Implemented proof-backed check: finite job-execution route coverage for missing jobs, unlocked contracts, invalid lifecycles, missing approvals, missing permissions, observed failures, residuals, unverified delivery, verified delivery, scheduler-slot waits, dispatch-ready jobs, and retirement requests.
-- Planned Codex test: Tool permission enforcement test.
-- Implemented Lean predicate: an approval-required job cannot be allowed to run before approval is recorded.
-- Implemented synthetic Codex test: Human approval gate test via `python3 scripts/validate_plan_execution_contracts.py`; deployed approval service remains open.
-- Implemented synthetic Codex test: Typed job delivery and evidence-readiness probe via `python3 scripts/validate_typed_job_delivery_probe.py`, producing `experiments/typed_job_delivery/results/2026-07-02-local.json`; covers two valid synthetic typed-job traces and seven expected-invalid controls for missing parent contract, approval bypass, permission overreach, delivery laundered as evidence-ready, missing artifact refs, missing audit events, and support-state promotion from the fixture. This is a deterministic synthetic typed-job delivery fixture only; deployed-scheduler, permission-enforcement, approval-service, runtime-adapter, replay-correctness, support-state-promotion, and evidence-transition claims remain open.
-- Implemented synthetic Codex test: Typed job durable lifecycle probe via `python3 scripts/validate_typed_job_durable_lifecycle_probe.py`, producing `experiments/typed_job_durable_lifecycle/results/2026-07-02-local.json`; covers two valid synthetic durable lifecycle traces and nine expected-invalid controls for retry without idempotency, authority widening on retry, permission overreach after resume, expired-lease dispatch, missing completion receipt, missing replay ref, missing residual owner, missing non-claim boundary, and support-state promotion from the fixture. Accepted no-promotion decision `evidence_transitions/v1_x_measured/typed_job_durable_lifecycle_probe_no_change.json` records this as a blocking decision only. This is a deterministic synthetic durable lifecycle fixture only; deployed-scheduler, durable-workflow-recovery, permission-enforcement, approval-service, replay-correctness, support-state-promotion, and upward evidence-transition claims remain open.
-- Implemented synthetic Codex test: Delivery versus evidence-ready test via `python3 scripts/validate_typed_job_delivery_probe.py`; deployed delivery/evidence runtime remains open.
-- Implemented synthetic Codex test: Job parentage trace test via `python3 scripts/validate_typed_job_delivery_probe.py`; deployed job parentage service remains open.
-- Source-noted external comparator queue: `ext_temporal_docs`, `ext_airflow_dag_docs`, `ext_bpmn_2_0_2_spec`, and `ext_kubernetes_jobs_docs` now ground durable workflow, DAG, process-notation, and batch-job lifecycle vocabulary; no Temporal workflow, Airflow DAG, BPMN engine, Kubernetes Job, deployed scheduler, or workflow trace is claimed.
+- Exact Appendix C mappings for all 10 sources: four passage-reviewed local raw caches, two source-note/connector records, and four bounded official workflow documentation/specification comparators.
+- Current exact authored implementation: one schema; 3 valid/10 rejecting plan-execution fixtures; 2 valid/7 rejecting delivery traces; 2 valid/9 rejecting durable-lifecycle traces; one accepted durable-probe no-promotion decision.
+- Implemented **Typed job delivery and evidence-readiness probe** at `experiments/typed_job_delivery/results/2026-07-02-local.json`: two accepted synthetic traces and seven rejecting controls, with no deployed scheduler, permission, approval, adapter, replay, evidence-transition, or support claim.
+- Implemented **Typed job durable lifecycle probe** at `experiments/typed_job_durable_lifecycle/results/2026-07-02-local.json`: two accepted synthetic traces, nine rejecting controls, and accepted no-promotion decision `evidence_transitions/v1_x_measured/typed_job_durable_lifecycle_probe_no_change.json`, with no durable-workflow or upward-transition claim.
+- Current exact formal envelope: all five targets resolve to a fourteen-declaration, seven-stage, twenty-eight-route Typed Job refinement with a 42/42 mutation consumer; twenty-four exact approval, route, and durable countermodels remain, while three validity/summary projections are retired with frozen lineage. The 38 live declarations across two modules establish represented identity and lifecycle custody only, with no scheduler, task-success, truth, enforcement, recovery, runtime, support, or effect promotion.
+- Next minimum: actual natural multi-step work through scheduler, worker, workspace, grants, approvals, adapters, effect observation, crash/retry/recovery/compensation, artifact, adjudication, delivery, and evidence-readiness paths against strong matched workflow baselines.
+- Promotion gates: joint authorized useful completion, unobserved/unauthorized effects, lifecycle/receipt correctness, duplicate effects, recovery, compensation, false refusal, missed help, latency, privacy, human work, fairness, starvation, and total cost; mechanism ablations; reproduction; and transfer across models, domains, backends, schedulers, organizations, authority regimes, faults, and time.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:jobs.lifecycle.operational_invariant` | `AsiStackProofs.TypedJobs` | A job transitions only through valid lifecycle states. | implemented |
-| `lean:jobs.lifecycle.failure_blocks_promotion` | `AsiStackProofs.TypedJobs` | A job requiring approval cannot execute before approval is recorded. | implemented |
-| `lean:jobs.lifecycle.execution_route_envelope` | `AsiStackProofs.TypedJobs` | A structured job-execution review routes missing jobs, unlocked contracts, invalid lifecycles, missing approvals, missing permissions, observed failures, residuals, unverified delivery, verified delivery, scheduler-slot waits, dispatch-ready jobs, and retirement requests into explicit outcomes. | implemented |
-| `lean:jobs.lifecycle.delivery_probe_fixture_bridge` | `AsiStackProofs.TypedJobs` | The deterministic synthetic typed-job delivery probe includes an evidence-ready delivery trace, a delivered-but-not-evidence-ready trace, rejected negative controls, no support-state effect, and an explicit non-claim boundary. | implemented |
-| `lean:jobs.lifecycle.durable_lifecycle_probe_bridge` | `AsiStackProofs.TypedJobs` | The deterministic synthetic typed-job durable lifecycle probe includes a retry-resume trace, an expired-lease blocked trace, rejected negative controls, completion and replay boundaries, no support-state effect, and an explicit non-claim boundary. | implemented |
+| `lean:jobs.lifecycle.operational_invariant` | `AsiStackProofs.TypedJobRefinement` | A reachable versioned typed-job lifecycle preserves exact job, contract, plan, authority, permission, lease, scheduler, and consumer custody from lock through acknowledged closure without assigning support or external effects. | implemented |
+| `lean:jobs.lifecycle.failure_blocks_promotion` | `AsiStackProofs.TypedJobRefinement` | Approval, permission, lease, scheduler, retry/idempotency, cancellation, artifact/audit, verification, completion/replay, residual-owner, and consumer-acknowledgment failures block lifecycle progress. | implemented |
+| `lean:jobs.lifecycle.execution_route_envelope` | `AsiStackProofs.TypedJobRefinement` | An independent consumer covers twenty-eight typed-job lifecycle routes and rejects 42 identity, ordering, authority, approval, permission, lease, retry, cancellation, artifact, audit, adjudication, receipt, replay, residual, and acknowledgment mutations. | implemented |
+| `lean:jobs.lifecycle.delivery_probe_fixture_bridge` | `AsiStackProofs.TypedJobRefinement` | The versioned lifecycle consumer preserves the exact two-valid/seven-invalid typed-job delivery suite without treating delivery or verification fields as task success, output truth, support, or external effects. | implemented |
+| `lean:jobs.lifecycle.durable_lifecycle_probe_bridge` | `AsiStackProofs.TypedJobRefinement` | The versioned lifecycle consumer preserves the exact two-valid/nine-invalid durable retry and lease suite without treating declared idempotence, recovery, enforcement, receipt, or replay fields as real service behavior. | implemented |
 
 ### Artifact Graphs, Audit Logs, and Replay
 
@@ -2239,75 +2528,124 @@ Draft arc:
 - Mechanism: require acknowledged terminal receipts for asynchronous work; queue acceptance, dispatch, or idleness cannot establish completion.
 - Mechanism: use content digests as relocation-safe identity and treat paths as mutable storage locations rather than authority.
 - Handoff: Runtime adapters produce effect receipts and residuals that must return to the artifact graph before they become evidence.
-- Interface: VCM references artifacts.
-- Interface: Evidence consumes logs.
-- Interface: Procedural memory mines repeated traces.
-- Interface: Reader and release editions consume artifact records only through declared replay grade and evidence gate.
+- Twelve interfaces: Labor OS; VCM/Context Transactions; Runtime Adapters;
+  source/data/weight/supply-chain owners; Claim Ledgers/Evidence States;
+  verification/proof/benchmark owners; Security/Privacy/Rights/Licensing;
+  Procedural Memory; Replacement/Readiness/Publication; Resource Economics;
+  accountable humans; and PROV-O/Croissant/in-toto plus mature repository and
+  lineage comparators.
 
 Primary invariants:
 
-- Artifacts have stable identities.
-- Audit logs are append-only or versioned.
-- Replay limits are declared.
-- Replay grade and evidence gate are declared before artifact reuse can affect support state.
-- Canonical state remains distinguishable from every projection, and upstream quarantine closes over all known reverse dependencies.
-- Playback cannot be reported as re-execution, asynchronous completion requires a terminal receipt, and relocation cannot change content identity.
+- Stable content identity never grants authority to a location.
+- Event history is append-only or explicitly superseding.
+- Observed, asserted, inferred, unknown, and omitted lineage remain distinct.
+- Canonical state and projections retain source digest and refresh boundaries.
+- Forward and reverse dependencies preserve unknown, cyclic, inaccessible, and
+  unresolved descendants as blockers.
+- Quarantine, revocation, expiry, rights change, deletion, and corruption close
+  over all dependents unless a policy-valid alternate derivation survives.
+- Playback, deterministic re-execution, semantic replay, partial, failed,
+  non-replayable, and not-attempted remain distinct.
+- Replay binds inputs, code, models, tools, environment, seeds, services,
+  evaluator, divergence, cost, and residuals.
+- Queue, response, file, digest, command, delivery, and acknowledgement do not
+  replace terminal receipt plus evidence gate.
+- Receipt authority cannot exceed independent observations and trust roots.
+- Every verifier path names TCB, roots, version, delegation, recursion stop,
+  compromise response, and outside-TCB residual.
+- Consumers inherit scope, replay grade, rights, expiry, defeaters, residuals,
+  and non-claims.
+- Privacy, consent, confidentiality, licensing, deletion, legal hold,
+  disclosure, redaction, retention, and export propagate through derivatives.
+- Permitted deletion/redaction preserves only a non-sensitive tombstone and
+  closure record, not prohibited content for audit convenience.
+- Impact queries expose affected promotions, releases, procedures, models,
+  owners, and unresolved descendants.
+- Alternate derivations must independently satisfy the same current policy and
+  exclude the revoked cause.
+- Failures, privacy work, storage, remediation, human intervention, and
+  residuals remain in denominators.
+- Schemas, hashes, signatures, fixtures, theorems, green commands, CI records,
+  and served pages retain their exact narrow evidence ceilings.
 
 Failure modes to cover:
 
-- Untraceable output.
-- Non-replayable workflow.
-- Provenance gaps.
-- Receipt-shape laundering, where a schema-valid receipt is treated as reality even when independent observation, trap checks, or attestation limits contradict it.
-- Verifier-trust laundering, where a verifier or judge output is consumed as trusted evidence without a named root of trust, bounded delegation rule, recursion stop condition, or outside-TCB residual.
-- Projection laundering and incomplete revocation closure, where stale reports or promotions outlive an invalidated canonical artifact.
-- Replay-grade inflation, queue-success laundering, and path-authority failure.
+- Artifact amnesia; path/name authority; provenance theater; audit-log theater;
+  projection laundering; incomplete reverse closure; alternate-derivation
+  laundering; replay-grade inflation; environment/service drift; queue-success
+  laundering; receipt-reality divergence; self-attestation laundering; trust
+  recursion and verifier capture; evidence laundering; privacy/rights
+  laundering; procedural contamination; cost survivorship; and portability or
+  SOTA theater.
+
+Argument-exit program: prospectively sample natural documents, code, proofs,
+datasets, model outputs, benchmarks, workflow receipts, and public surfaces
+across repositories and stores. Compare folders/version control, workflow
+history, PROV-O-style provenance, Croissant-style metadata, in-toto-style
+attestation, lineage catalogs, and the full graph on lineage precision/recall,
+receipt reality, replay, closure, alternate derivations, stale public surfaces,
+privacy/deletion, useful reuse, false blocking, reconstruction, human work,
+latency, storage, remediation, and total cost. Require mechanism ablations,
+independent implementation, and heterogeneous transfer before any promotion.
 
 Draft deliverables:
 
 - An artifact graph schema with job, source, context, context-transaction, semantic-certificate, replay, and evidence edges.
 - Implemented historical-project closure harness: `python3 scripts/validate_artifact_projection_revocation.py` validates one five-project lineage record against `schemas/artifact_projection_revocation_record.schema.json` and rejects ten mutations spanning stale projections, incomplete revocation, unknown descendants, replay-grade inflation, missing semantic validation, missing terminal receipts, path authority, relocation mismatch, unverified relocation, and support promotion from playback. It is a bounded protocol fixture, not a deployed artifact service or runtime claim.
-- Passage-reviewed Appendix C mappings for six local raw-cache sources: `talos`, `viea`, `cognitive_compilation`, `spinoza_composer`, `genesiscode`, and `cognitive_loop_closure`; `moecot` remains connector/source-note mapped until durable runtime artifacts, ledgers, logs, benchmark records, or replay records are imported and inspected.
+- Eighteen reviewed Appendix C mappings across six local raw-cache architecture
+  sources, MoECOT, three provenance/metadata/attestation comparators, five
+  historical projects, and three additional harness/recovery/faithfulness
+  comparators; none supplies deployed artifact-graph or matched-baseline
+  evidence.
 - Implemented protocol validation: `artifact_graph_record` fixture validates public record shape, context transaction refs, semantic certificate refs, replay grade, evidence gate, residuals, and non-claims only.
 - Implemented Lean predicate: a produced artifact record must expose parent-job and source/context references.
 - Implemented Lean predicate: missing required provenance blocks promoted-claim support.
 - Implemented Lean route envelope: artifact-admission review now covers missing artifact, parent/source/context/transaction/certificate/tool/claim/test/audit/replay/evidence/non-claim blockers, replay-grade sufficiency, stale-certificate blocking, blocked promotion, complete non-promoted admission, and approved-promoted admission over modeled records only.
 - Implemented Lean replay-packet bridge: cross-record artifact replay packets now model parent-job alignment, job-output coverage, context-transaction and certificate links, source coverage, audit-chain completeness, replay-grade alignment, byte-exact observation requirements, stale-certificate blocking, support-review transaction validation, partial-replay promotion blocking, record-only partial replay, and bounded-review admission. This mirrors the synthetic fixture harness shape; it is not a deployed replay engine.
 - Implemented record-reality sequence bridge: `python3 scripts/validate_artifact_graph_record_reality_sequence.py` records result `experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json` after one valid stale/partial/fresh replay sequence and four expected-invalid controls. The bridge checks that stale certificates and partial replay block bounded-review eligibility, that support-review attempts without replay-validated transactions are rejected, that missing non-claim boundaries and support-state effects cannot pass, and that a fresh complete replay/provenance event can restore bounded-review eligibility without support-state movement. Accepted no-promotion decision `evidence_transitions/v1_x_measured/artifact_record_reality_sequence_no_change.json` records this as a blocking decision for record-reality overclaims only. It is a finite sequence fixture only, not deployed replay, verifier correctness, audit durability, source interpretation, upward support-state movement, or chapter-core support.
-- Implemented Lean bridge: `artifact_record_reality_sequence_fixture_bridge` records the bounded record-reality sequence counts, blocked routes, fresh-replay restoration, no evidence-transition creation, and no chapter-core support effect.
+- Implemented refinement consumer: the record-reality sequence is preserved as an exact one-valid/four-invalid suite under `AsiStackProofs.ArtifactRealityRefinement`; the former copied summary theorem is retired.
 - Implemented receipt-faithfulness adversarial fixture: `python3 scripts/validate_receipt_faithfulness.py` checks bounded receipt/reality cases, records result `experiments/receipt_faithfulness/results/2026-07-03-local.json`, and rejects shape-valid but reality-false receipts, ignored trap-receipt failures, missing independent cross-check routes, same-component self-check laundering, unbounded attestation, and support promotion from receipt shape. Accepted no-promotion decision `evidence_transitions/v1_x_measured/artifact_receipt_faithfulness_no_change.json` records this as a `blocks_promotion` side lane. It is a bounded adversarial fixture only: it does not prove open-world receipt faithfulness, verifier independence, attestation-service correctness, deployed audit behavior, support-state promotion, or chapter-core support.
-- Implemented Lean bridge: `receipt_faithfulness_adversarial_fixture_bridge` records that bounded cross-checked, attestation-limited, and trap-detected receipt records are accepted only inside their limits while shape-valid false receipts, trap failures, missing independent cross-checks, unbounded attestation, and receipt-shape support promotion are rejected.
+- Implemented refinement consumer: the receipt-faithfulness suite remains exact at three valid and six invalid records while the reachable model separately gates observation, cross-check, traps, and attestation limits; the copied summary theorem is retired.
 - Implemented receipt repository audit: `python3 scripts/validate_receipt_repository_audit.py` audits selected repository receipt surfaces, records result `experiments/receipt_repository_audit/results/2026-07-03-local.json`, and checks artifact refs, tracked digest integrity, command pass status, Circle external rope receipt fingerprints, non-claim boundaries, and no support-state promotion while rejecting missing artifact refs, stale tracked digests, failed command replays, missing non-claims, and support-promotion overclaims. It is a repository audit only: it does not prove open-world receipt faithfulness, deployed attestation behavior, deployed audit behavior, verifier correctness, external project truth, or chapter-core support.
-- Implemented Lean bridge: `receipt_repository_audit_fixture_bridge` records that four selected repository receipt surfaces are accepted only with tracked digest, command replay, external fingerprint, non-claim, and no-promotion boundaries while missing artifacts, stale digests, failed commands, missing non-claims, and support-promotion overclaims are rejected.
+- Implemented refinement consumer: the four-record/five-mutation repository audit is preserved as a bounded observation suite; its copied summary theorem is retired.
 - Implemented receipt repository challenge: `python3 scripts/validate_receipt_repository_challenge.py` records result `experiments/receipt_repository_audit/results/2026-07-04-challenge.json` after a deterministic challenge over the prior repository audit accepts three tracked digest responses and one Circle external fingerprint response while rejecting digest mismatch, missing artifact, external fingerprint mismatch, missing non-claims, and support-promotion overclaim controls. Accepted no-promotion decision `evidence_transitions/v1_x_measured/artifact_receipt_repository_audit_challenge_no_change.json` records the audit/challenge as a `blocks_promotion` side lane. It is a repository challenge only: it does not prove open-world receipt faithfulness, deployed attestation behavior, verifier correctness, external project truth, support-state promotion, or chapter-core support.
-- Implemented Lean bridge: `receipt_repository_challenge_fixture_bridge` records that the deterministic receipt-reality challenge accepts the four bounded challenge responses only with no-promotion and non-claim boundaries while digest mismatch, missing artifact, external fingerprint mismatch, missing non-claims, and support-promotion overclaim controls are rejected.
+- Implemented refinement consumer: the four-response/five-mutation repository challenge is preserved while fingerprint and digest authority stays sample-bounded; its copied summary theorem is retired.
 - Implemented live artifact attestation probe: `python3 scripts/validate_artifact_live_attestation_probe.py` records result `experiments/artifact_live_attestation/results/2026-07-04-local.json` after checking one current produced artifact through filesystem bytes, git object bytes, and command replay while rejecting seven controls for filesystem mismatch, git blob mismatch, command replay failure, same-component self-check laundering, accepted trap receipt, unbounded attestation, and support promotion from attestation shape. This is local live repository attestation only, not a deployed attestation service, open-world receipt faithfulness, verifier correctness, external project truth, or chapter-core support.
-- Implemented Lean bridge: `artifact_live_attestation_probe_bridge` records that the live repository artifact-attestation probe accepts one produced artifact only when filesystem bytes, git object bytes, command replay, independent observer routes, trap-receipt rejection, attestation limits, no upward transition, and non-claim boundaries align.
+- Implemented refinement consumer: one-artifact live attestation requires a clean tracked target plus filesystem, Git-object, and command-replay agreement and rejects seven mutations; its copied summary theorem is retired.
 - Implemented randomized artifact attestation audit: `python3 scripts/validate_artifact_randomized_attestation_audit.py` records result `experiments/artifact_randomized_attestation/results/2026-07-04-local.json` after using a deterministic pseudo-random seed to select four public-safe repository evidence artifacts from a six-artifact candidate pool, then checking each selected artifact through filesystem bytes, git object bytes, command replay, wrong-digest trap receipts, attestation limits, and eight expected-invalid controls. This is a bounded local repository audit only: it does not prove open-world receipt faithfulness, deployed attestation behavior, verifier correctness, external project truth, or chapter-core support.
-- Implemented Lean bridge: `artifact_randomized_attestation_audit_bridge` records that the randomized repository artifact-attestation audit accepts a multi-artifact sample only when seeded selection, filesystem bytes, git object bytes, command replay, trap-receipt rejection, independent observer routes, attestation limits, no upward transition, and non-claim boundaries align.
+- Implemented refinement consumer: the four-artifact/twelve-route randomized audit and eight mutations remain exact without generalizing beyond the sample; its copied summary theorem is retired.
 - Implemented GitHub Pages CI attestation: `python3 scripts/validate_artifact_github_pages_ci_attestation.py` records result `experiments/artifact_github_pages_ci_attestation/results/2026-07-05-local.json` after capturing GitHub Actions run `28733145259` for the `Publish Quarto site` workflow on `main`. The tracked run records successful source validation, Lean build, HTML render, live Human view validation, browser Human-view smoke test, Pages artifact upload, and deploy for commit `fdff2c1cb0a100e4c68099adc5128d3b461384fd`. Accepted no-promotion decision `evidence_transitions/v1_x_measured/artifact_github_pages_ci_attestation_no_change.json` records this as an external CI-service `blocks_promotion` lane only. It is not independent external human review, not deployed attestation behavior, not open-world receipt faithfulness, not reader release approval, and not chapter-core support.
 - Implemented public deployed-site attestation: `python3 scripts/validate_artifact_public_site_attestation.py` records result `experiments/artifact_public_site_attestation/results/2026-07-05-live.json` after fetching the public GitHub Pages Artifact Graphs chapter and checking the served HTML digest plus required record-reality, epistemic-TCB, CI-attestation, live/randomized attestation, and non-claim fragments. Accepted no-promotion decision `evidence_transitions/v1_x_measured/artifact_public_site_attestation_no_change.json` records this as a public served-page `blocks_promotion` lane only. It is not independent external human review, not deployed attestation behavior, not open-world receipt faithfulness, not reader release approval, and not chapter-core support.
 - No Lean target is assigned for the GitHub Pages CI attestation or public deployed-site attestation because those artifacts are external service-status and served-page records rather than finite in-repo transition predicates; the formal side remains the existing artifact-record, receipt-faithfulness, repository-audit, challenge, live-attestation, randomized-attestation, and epistemic-TCB bridges.
 - Implemented epistemic-TCB fixture: `python3 scripts/validate_epistemic_trusted_computing_base.py` checks bounded trust-base cases, records result `experiments/epistemic_tcb/results/2026-07-03-local.json`, and rejects missing root-of-trust refs, verifier-trust laundering, unbounded trust propagation, missing recursion stops, erased outside-TCB residuals, and support promotion from trust-base shape. Accepted no-promotion decision `evidence_transitions/v1_x_measured/artifact_epistemic_tcb_fixture_no_change.json` records this as a blocking decision for verifier-trust overclaims only. It is a bounded finite-record fixture only: it does not prove verifier correctness, deployed trust-base behavior, open-world receipt faithfulness, policy correctness, audit-log durability, upward support-state movement, or chapter-core support.
-- Implemented Lean bridge: `epistemic_tcb_fixture_bridge` records that bounded minimal, delegated, and blocked trust-base records are accepted only inside their limits while missing roots of trust, self-verifier laundering, unbounded trust, missing recursion stops, erased outside-TCB residuals, and trust-base-shape support promotion are rejected.
+- Implemented refinement consumer: the three-valid/six-invalid epistemic-TCB suite remains exact while trusted-core, root, verifier-separation, recursion-stop, and outside-TCB residual gates stay distinct; its copied summary theorem is retired.
 - Implemented synthetic Codex test: `python3 scripts/validate_artifact_graph_replay.py` checks artifact parentage, typed job outputs, context transaction refs, semantic certificate refs, source-ref coverage, replay grade, observed artifacts, audit reconstruction, stale-certificate blocking, and promotion-blocking boundaries. It remains synthetic record-gate evidence only, not a deployed artifact graph, replay engine, audit-reconstruction service, or source-interpretation claim.
 - Implemented synthetic Codex test: Audit reconstruction test via `python3 scripts/validate_artifact_graph_replay.py`; deployed audit reconstruction remains open.
 - Implemented synthetic Codex test: Replay metadata completeness test via `python3 scripts/validate_artifact_graph_replay.py`; deployed replay engine remains open.
 
 Lean proof targets:
 
+The current formal family has fifty live declarations across
+`AsiStackProofs.ArtifactRealityRefinement` and
+`AsiStackProofs.ArtifactGraph`: fifteen new reachable-lifecycle declarations
+and thirty-five retained consequences. Eight copied fixture summaries or
+one-step projections were physically retired. The independent consumer
+recomputes seven reachable stages, thirty-three routes, eight exact bounded
+suites, and 53/53 rejecting mutations without assigning support or effects.
+
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:artifacts.graph.operational_invariant` | `AsiStackProofs.ArtifactGraph` | Every produced artifact records its parent job and source/context references. | implemented |
-| `lean:artifacts.graph.failure_blocks_promotion` | `AsiStackProofs.ArtifactGraph` | An artifact with missing required provenance cannot support a promoted claim. | implemented |
-| `lean:artifacts.graph.replay_packet_bridge` | `AsiStackProofs.ArtifactGraph` | A modeled artifact replay packet routes cross-record mismatches, missing observation, stale certificates, support-review transaction gaps, and partial-replay promotion attempts to explicit outcomes while admitting complete bounded-review packets. | implemented |
-| `lean:artifacts.graph.record_reality_sequence_bridge` | `AsiStackProofs.ArtifactGraph` | A modeled record-reality sequence blocks bounded-review eligibility on stale certificate or incomplete replay events, rejects support movement and missing non-claim controls, and restores bounded-review eligibility only after a fresh byte-exact replay/provenance event. | implemented |
-| `lean:artifacts.graph.receipt_faithfulness_fixture_bridge` | `AsiStackProofs.ArtifactGraph` | An adversarial receipt-faithfulness fixture accepts bounded cross-checked, attestation-limited, and trap-detected records while rejecting shape-valid but reality-false receipts, ignored trap failures, missing independent cross-checks, unbounded attestation, and support promotion from receipt shape. | implemented |
-| `lean:artifacts.graph.receipt_repository_audit_fixture_bridge` | `AsiStackProofs.ArtifactGraph` | A repository receipt audit fixture accepts four selected receipt surfaces with tracked digest, command replay, external fingerprint, and no-promotion boundaries while rejecting missing artifact, stale digest, failed command, missing non-claims, and support-promotion overclaim controls. | implemented |
-| `lean:artifacts.graph.receipt_repository_challenge_fixture_bridge` | `AsiStackProofs.ArtifactGraph` | A deterministic receipt-reality challenge accepts three sampled tracked-digest responses and one Circle external fingerprint response over the prior repository audit while rejecting digest mismatch, missing artifact, external fingerprint mismatch, missing non-claims, and support-promotion overclaim controls. | implemented |
-| `lean:artifacts.graph.live_attestation_probe_bridge` | `AsiStackProofs.ArtifactGraph` | A live repository artifact-attestation probe accepts one produced artifact only when filesystem bytes, git object bytes, command replay, independent observer routes, trap-receipt rejection, attestation limits, no upward transition, and non-claim boundaries all align. | implemented |
-| `lean:artifacts.graph.randomized_attestation_audit_bridge` | `AsiStackProofs.ArtifactGraph` | A deterministic pseudo-random repository attestation audit accepts a multi-artifact sample only when filesystem bytes, git object bytes, command replay, trap receipts, independent observer routes, attestation limits, no upward transition, and non-claim boundaries all align. | implemented |
-| `lean:artifacts.graph.epistemic_tcb_fixture_bridge` | `AsiStackProofs.ArtifactGraph` | An epistemic trusted-computing-base fixture accepts bounded minimal, delegated, and blocked trust-base records while rejecting missing roots of trust, verifier-trust laundering, unbounded trust propagation, missing recursion stops, erased outside-TCB residuals, and support promotion from trust-base shape. | implemented |
+| `lean:artifacts.graph.operational_invariant` | `AsiStackProofs.ArtifactRealityRefinement` | A reachable artifact lifecycle preserves exact artifact, content, parent-job, source, context, transaction, certificate, tool, claim, test, policy, and consumer custody from registration through consumer-acknowledged admission without assigning support or external effects. | implemented |
+| `lean:artifacts.graph.failure_blocks_promotion` | `AsiStackProofs.ArtifactRealityRefinement` | Missing provenance, replay, observation, cross-check, trap, attestation-limit, trust-root, verifier-separation, recursion-stop, residual, revocation, or consumer obligations block lifecycle progress. | implemented |
+| `lean:artifacts.graph.replay_packet_bridge` | `AsiStackProofs.ArtifactRealityRefinement` | The refinement preserves exact replay-packet custody and requires replay metadata, sufficient grade, limits, active certificates, and replay validation before reality review. | implemented |
+| `lean:artifacts.graph.record_reality_sequence_bridge` | `AsiStackProofs.ArtifactRealityRefinement` | The independent consumer preserves the exact one-valid/four-invalid stale/partial/fresh record-reality sequence without assigning support. | implemented |
+| `lean:artifacts.graph.receipt_faithfulness_fixture_bridge` | `AsiStackProofs.ArtifactRealityRefinement` | The independent consumer preserves the exact three-valid/six-invalid receipt-faithfulness suite while requiring observation, independent cross-checks, trap challenges, and bounded attestation. | implemented |
+| `lean:artifacts.graph.receipt_repository_audit_fixture_bridge` | `AsiStackProofs.ArtifactRealityRefinement` | The independent consumer preserves the exact four-record/five-mutation repository audit while treating current digest and command checks as bounded observations rather than open-world truth. | implemented |
+| `lean:artifacts.graph.receipt_repository_challenge_fixture_bridge` | `AsiStackProofs.ArtifactRealityRefinement` | The independent consumer preserves the exact four-response/five-mutation deterministic repository challenge while bounding fingerprint and digest observations to the sampled artifacts. | implemented |
+| `lean:artifacts.graph.live_attestation_probe_bridge` | `AsiStackProofs.ArtifactRealityRefinement` | The independent consumer preserves one-artifact live attestation with three observation routes and seven mutations without treating a dirty or uncommitted target as attested. | implemented |
+| `lean:artifacts.graph.randomized_attestation_audit_bridge` | `AsiStackProofs.ArtifactRealityRefinement` | The independent consumer preserves the four-artifact randomized attestation with twelve accepted observation routes and eight mutations without generalizing beyond the sample. | implemented |
+| `lean:artifacts.graph.epistemic_tcb_fixture_bridge` | `AsiStackProofs.ArtifactRealityRefinement` | The independent consumer preserves the exact three-valid/six-invalid epistemic-TCB suite while requiring a bounded trusted core, roots, verifier separation, recursion stop, and outside-TCB residuals. | implemented |
 
 ### Runtime Adapters, Tool Permissions, and Human Approval
 
@@ -2332,6 +2670,22 @@ Source loading queue:
 | Manifest assignment reconciliation | `ext_claw_swe_bench_2026`, `ext_txfs_2018`, `qcsa_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
+- Ownership: exact leased effect dispatch, independent effect observation,
+  containment, and terminal receipt custody. Objective, plan, identity, policy,
+  grants, approval legitimacy, context, artifacts, verification, evidence,
+  support, readiness, and release remain separately owned.
+- Eighteen-step mechanism: freeze invocation and effect class; validate parent
+  work and principal; type every capability dimension; bind target and input;
+  intersect authority; keep semantics separate from authorization; obtain exact
+  approval; check reviewer degradation; issue a partition-aware effect lease;
+  identify enforcement and secret handling; capture pre-state, effect inventory,
+  and recovery; dispatch exactly; observe actual effects independently; route
+  faults and incidents; perform effect-complete recovery; issue a terminal
+  receipt; and compare strong matched controls.
+- Twelve interfaces cover upstream work, security/identity/policy/secrets,
+  context, artifacts, accountable humans, privacy/rights/licensing, evaluators,
+  resources, inter-stack state, replacement/readiness/publication, incidents,
+  and current sandbox/capability/human-factors/security comparators.
 - Problem: Plans become real-world effects only through tools, runtimes, deployment adapters, and approval gates.
 - Insufficiency: Tool calling without a permission and approval model turns reasoning errors into side effects.
 - Mechanism: Map typed jobs to runtime adapters with declared target type, capability, permission requirement, sandbox mode, authority handle, approval state, input/output contract, and effect receipt.
@@ -2352,6 +2706,18 @@ Draft arc:
 - Interface: Execution owns adapters.
 - Interface: Security mediates secrets.
 - Interface: Evidence records deployment outcomes.
+
+Argument-exit program: run natural public-safe and deployment-like document,
+code, database, API, messaging, payment-simulator, service, hardware-simulator,
+and organizational effects across models, tools, sandboxes, capability systems,
+approval policies, secret brokers, and authority services. Compare direct tool
+calling, prompt-only controls, OS/container sandboxes, capability systems,
+policy-mediated calls, workflows, human approval, CaMeL-like separation,
+AgentDojo-like attacks, Inspect-like harnesses, and the full adapter on useful
+effects, unauthorized/hidden effects, scope, injection, escape, secrets,
+approval, revocation, duplicates, receipts, rollback, false refusal, missed
+help, privacy, latency, human work, recovery, and total cost. Require causal
+ablations, independent reproduction, and heterogeneous transfer.
 
 Primary invariants:
 
@@ -2380,7 +2746,10 @@ Failure modes to cover:
 Draft deliverables:
 
 - A runtime-adapter contract with permissions, approval requirements, invocation state, impact class, risk tier, effect lease, pre/post state refs, external side effects, verification refs, rollback and irreversible residual fields, incident/audit refs, support-state effect, and non-claims.
-- Exact Appendix C claim-source mappings for `runtime-adapters-tool-permissions-and-human-approval.core` across Talos, VIEA, Ladon/Manhattan, Software Magic Grimoire, GenesisCode, MoECOT, Field of God AI Constitution, and Theseus Operator OS; five local raw-cache mappings and two local public-project mappings are passage-reviewed, while `moecot` remains connector/source-note mapped.
+- Twenty-five reviewed Appendix C mappings spanning architecture, operator,
+  human-factors, distributed-systems, evaluation, injection, current threat,
+  historical-project, recovery, and QCSA comparators; none supplies deployed
+  adapter, approval, sandbox, secret-broker, or matched-baseline evidence.
 - Implemented protocol validation: `runtime_adapter_invocation` fixture validates public record shape, invocation state, impact class, risk tier, approval scope/expiry, effect lease, pre/post state refs, external side effects, verification refs, irreversible residuals, incident/audit refs, support-state effect, and non-claims only.
 - Implemented Lean predicate: a valid invocation requires the parent job permissions to include the adapter capability and its effect lease to be active, scoped to that capability, and sandboxed.
 - Implemented Lean predicate: a high-impact adapter invocation without approval is rejected.
@@ -2429,11 +2798,9 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `ext_mcp_protocol_2025_11_25`, `ext_a2a_protocol_1_0_0`, `ext_w3c_did_core_1_0_2022`, `ext_w3c_vc_data_model_2_0_2025`, `ext_interledger_protocol_v4` | Read the latest released MCP and A2A revisions for protocol/schema/lifecycle boundaries, agent discovery and delegated task records, identity resolution, credential roles/status/authorization limits, and packetized value-transfer boundaries. Keep release candidates and each comparator at their stated scope. |
-| Supporting | `talos`, `vcm_public`, `tokenmana` | Mine Talos for typed job/contract/audit/replay handoffs, VCM for source-authority binding/revocation/non-success states, and TokenMana for bounded-capacity/economic-pressure context. Do not treat them as local protocol, identity, credential, payment, settlement, or deployment evidence. |
-| Current agentic-risk comparator | `ext_owasp_agentic_top_10_2026` | Use for identity/privilege abuse, insecure inter-agent communication, cascading failures, and agentic supply-chain risks. Taxonomy coverage is not protocol security, peer trust, authorization, or safety. |
+| Supporting | `talos`, `vcm_public`, `tokenmana`, `ext_owasp_agentic_top_10_2026`, `qcsa_whitepaper` | Mine Talos for typed handoffs, VCM for authority/revocation, TokenMana for bounded economic pressure, OWASP for threat coverage, and QCSA for bounded semantic-address translation. Do not promote any of them to protocol, identity, credential, payment, settlement, privacy, deployment, or safety evidence. |
 
 
-| Manifest assignment reconciliation | `qcsa_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: A local task contract loses its binding when it reaches another agent,
@@ -2442,45 +2809,49 @@ Draft arc:
   DIDs and credentials establish scoped identity/claim fields; payment protocols
   establish bounded transfer mechanisms. None alone establishes local
   authorization, task truth, effect safety, settlement, fairness, or consent.
-- Mechanism: Bind protocol/schema revision, endpoint/capability declaration,
-  sender/receiver/principal, task/artifact reference, delegation, credential,
-  audience, scope, expiry, budget/consideration, receipt, dispute, revocation,
-  residual owner, and requested dispatch in one versioned exchange contract.
-- Mechanism: Keep parser, resolver, credential verifier, local policy,
-  reservation, local adapter lease, remote declared completion, independent
-  evidence review, and settlement as separate record states with separate owners.
-- Mechanism: Route missing identity, audience/scope mismatch, expired or revoked
-  authority, invalid credential, missing reservation, disputed receipt, or
-  missing residual owner to repair, review, dispute, denial, or an existing
-  local owner rather than ordinary dispatch.
-- Interface: Runtime Adapters owns a local effect lease; Artifact Graphs owns
-  generic receipts/replay; Resource Economics owns local capacity; Personal
-  Compute Hives owns federation; Security Kernel owns protected handles.
+- Ownership: The exchange layer owns the versioned cross-stack contract joining
+  protocol/schema/binding, actors, semantic payload, credentials, delegation,
+  privacy obligations, consideration, response, dispute, revocation, and
+  residual custody. Runtime Adapters still owns local effects; other chapters
+  retain intent, organization, secrets, context, artifacts/evidence, resources,
+  rights, human adjudication, federation topology, and release.
+- Mechanism: Execute an eighteen-stage lifecycle: freeze versions; separate
+  actors; bind task/artifact semantics; treat capability declarations as
+  untrusted; resolve identity; verify credentials; bound delegation; decide
+  local authorization; reserve consideration; attach privacy and rights;
+  negotiate compatibility; hand off to the local owner; bind response; verify
+  result independently; handle timeout/cancel/dispute/refund/retry; propagate
+  revocation; issue terminal audit/residual custody; compare matched baselines.
+- Interfaces: Keep twelve explicit owner boundaries spanning intent, labor,
+  security, runtime, context, artifacts/evidence, resources, privacy/legal,
+  human dispute, release, federation, and external protocol comparators.
+- Proof boundary: Nine Lean declarations are finite route or negative-control
+  consequences. There are no predicate-projection or authored-summary bridge
+  theorems and no refinement proof from a deployed peer or protocol.
 
 Primary invariants:
 
-- Every requested dispatch names protocol/schema version, endpoint/capability,
-  sender, receiver, originating principal, requested task/artifact, and affected
-  local owner.
-- Delegated authority remains bound to principal, audience, capability, scope,
-  expiry, policy, and revocation state; forwarding cannot widen it.
-- Identity and credential verification records retain verifier, policy scope,
-  freshness, and limitations and do not become authorization or peer-trust
-  proof by themselves.
-- Value-bearing work records reservation/consideration scope, expected receipt,
-  dispute/revocation path, and residual owner before it can reach a local effect.
-- Remote responses remain declared results until an independent owner checks the
-  evidence required for their intended use.
+- Preserve exact versions, separable actors, untrusted declarations, credential
+  and authorization separation, bounded non-widening delegation, and local
+  effect ownership.
+- Keep reservation, routing, delivery, acceptance, settlement, refund, and
+  dispute separate; require idempotency and replay protection.
+- Carry minimum disclosure, consent, rights, confidentiality, retention,
+  deletion, and export policy with disclosed fields and artifacts.
+- Propagate endpoint, key, credential, delegation, policy, budget, and
+  revocation changes to affected in-flight exchanges with custody preserved.
+- Report complete denominators and keep language inside the exercised peer,
+  implementation, workload, threat, identity, economic, jurisdictional, and
+  temporal envelope.
 
 Failure modes to cover:
 
-- Capability-card theater and identity conflation.
-- Deputy laundering through forwarded credentials, approvals, or delegated tasks.
-- Result laundering from response shape, completion status, or artifact receipt.
-- Economic-commitment laundering from reservation or packet routing to
-  settlement, consent, fairness, or legal authorization.
-- Revocation races and residual loss across endpoint, credential, policy,
-  budget, timeout, partial-delivery, dispute, refund, and remote-failure paths.
+- Capability, actor, credential, delegation, semantic-equivalence, result,
+  receipt, reservation, payment, and settlement laundering.
+- Confused audience, replay, downgrade, injection, stale revocation, privacy and
+  correlation leakage, dispute/refund abandonment, and refusal pressure.
+- Cascading multi-peer compromise, hidden denominators or costs, and
+  state-of-the-art theater based on conformance or synthetic messaging alone.
 
 Draft deliverables:
 
@@ -2496,6 +2867,17 @@ Draft deliverables:
   credentials, missing reserved budget, disputed receipt, and missing residual
   ownership. Nine digest-bound records and eleven rejecting mutations use no
   real endpoint, identity, credential, payment, account, or remote effect.
+- Argument-exit campaign: prospectively fixed matched natural work across
+  public-safe MCP/A2A implementations, multiple bindings, peers, models, DID/VC
+  paths, bounded delegations, and a value simulator or test network; compare
+  direct APIs, protocols alone, IAM-like controls, identity/credential layers,
+  broker/workflow mediation, value exchange, and the full contract.
+- Joint scorecard and causality: measure useful interoperability, task/artifact
+  correctness, false authorization, delegation drift, stale/revoked acceptance,
+  replay/downgrade, privacy leakage, economic-state correctness, latency, human
+  effort, fees, residuals, and recovery; require fixed ablations, independent
+  implementation/evaluation, and transfer across versions, vendors, models,
+  domains, organizations, jurisdictions, threats, and time.
 
 Lean proof targets:
 
@@ -2533,17 +2915,12 @@ Draft arc:
 
 - Problem: Repeated reasoning trajectories should not be improvised forever when they can become verified procedures or tools.
 - Insufficiency: Agents waste cognition and introduce inconsistency when recurring workflows are repeatedly reconstructed from scratch.
-- Mechanism: Use artifact traces to detect recurring loops only after enough comparable examples exist to avoid anecdotal toolification.
-- Mechanism: Abstract invariant structure, discover parameters, record preconditions/postconditions, synthesize candidate tools, verify them, attach regressions and monitoring, then promote, quarantine, revise, or retire.
-- Mechanism: Treat procedural memory as verified reuse, not habit: comparable successes, near misses, failures, negative examples, scope limits, and retirement criteria must travel with the tool card.
-- Mechanism: Bind generated tools back to SCF boundaries and benchmark floors so tool promotion, routing, monitoring, and retirement remain governed by field identity and regression evidence.
-- Mechanism: Track procedure-qualification states such as candidate trace, loop cluster, tool candidate, verified reuse, routable, quarantined, and retired so a useful trace cannot jump directly into reusable behavior.
-- Mechanism: Emit a Procedure Qualification Packet with candidate traces, rejected traces, near misses, abstraction rationale, parameter-discovery notes, SCF target, benchmark floor, authority requirement, monitoring signal, retirement trigger, and explicit non-claims.
-- Mechanism: Separate semantic facts from procedural traces; bind every promoted trace to source/effect receipts; preserve failures; and require passing regressions, rehearsed rollback, quarantine, and retirement routes.
+- Ownership: Procedural Memory owns evidence-gated promotion from complete repeated execution traces into qualified reusable execution structure. Artifact truth, fact memory, belief support, semantic compilation, routing, effect authority, verification, readiness, human work, rights, and model-state learning remain separately owned.
+- Mechanism: Execute an eighteen-stage lifecycle covering prospective scope, complete trace inventory, memory-domain separation, receipt reality, comparability, failure retention, invariant and causal alternatives, parameter discovery, executable contract, synthesis, verification, matched baselines, hidden regressions and transfer, joint metrics, lifecycle qualification, scoped routing leases, drift monitoring, and rollback/quarantine/retirement with descendant invalidation.
+- Interfaces: Keep twelve explicit boundaries spanning artifacts, context memory, claim ledgers, cognitive compilation, routing, runtime effects, verification/evidence, benchmarks, capability/readiness, security/rights, labor/humans, and data/model learning.
+- Proof boundary: Twenty-eight live declarations comprise fourteen reachable-refinement theorems and fourteen retained negative cases; five assumption projections or fixture admissions were retired. There is no deployed-system refinement theorem.
 - Handoff: Verified procedural tools become routable candidates for Part III, while failed or uncertain loops remain residuals.
-- Interface: Artifact graph supplies traces.
-- Interface: Routing selects new tools.
-- Interface: Evidence tests utility and regressions.
+- Argument exit: Preregister natural repeated-work tasks and matched manual/interpreter, retrieval, prompt/checklist, script, workflow, learned-tool-use, program-library, skill-library, and full-foundry baselines. Measure usefulness, wrong/unsafe reuse, false refusal, authority, privacy, generalization, latency, token/compute cost, human effort, recovery, residuals, and lifecycle burden together; require predicted ablation signatures, independent implementation/evaluation, complete denominators, and heterogeneous transfer.
 
 Primary invariants:
 
@@ -2569,11 +2946,12 @@ Failure modes to cover:
 Draft deliverables:
 
 - A loop closure pipeline from trace detection to verified tool record.
-- Exact Appendix C claim-source mappings for procedural memory: five local raw-cache mappings and three local public-project mappings are passage-reviewed, while `moecot` remains connector/source-note mapped only.
+- Exact Appendix C mappings for all eighteen assigned sources, including bounded MemGPT, Toolformer, Voyager, DreamCoder, and Mem0 comparators; reported performance and historical runtime behavior remain outside local evidence.
 - Implemented protocol validation: `procedural_tool_record` fixture validates public record shape only.
 - Implemented synthetic Codex test: `python3 scripts/validate_procedural_memory_loop.py` checks qualification packets for comparable repeated trace clusters, negative-example preservation, abstraction fields, regression quarantine, retirement triggers, source-trace mismatch, and explicit non-claim boundaries. It remains synthetic record-gate evidence only, not deployed loop-detection, tool-synthesis, generated-tool correctness, regression-quality, route-quality, monitoring, or retirement-automation evidence.
 - Implemented historical-project Codex test: `python3 scripts/validate_procedural_trace_promotion.py` accepts one bounded four-project promotion record and rejects ten memory-domain, failure-retention, receipt, regression, negative-example, rollback, retirement, source-substitution, and support-promotion mutations; no deployed trace mining, tool synthesis, regression quality, rollback execution, retirement automation, historical runtime behavior, or chapter support is claimed.
-- Implemented Lean lifecycle route envelope: modeled routable transitions require comparable traces, negative examples, closure artifacts, verification, clean regressions, benchmark floor, active SCF target, retirement handling, monitoring plan, residuals, non-claims, and a verified or routable source state; valid routable, quarantined, and retired synthetic fixture shapes have Lean bridge records.
+- Implemented reachable lifecycle refinement: `AsiStackProofs.ProceduralMemoryRefinement` preserves exact procedure and lineage custody across seven stages and thirty-two routes, while `python3 scripts/validate_procedural_memory_refinement.py` preserves the exact 3/6 and 1/10 suites and rejects 33/33 mutations with no support or effect authority.
+- Implemented evidence ceiling: one schema, three valid and six invalid qualification packets, one four-project promotion record with ten mutations, and twenty-eight live declarations; five weak declarations were retired. No deployed miner, causal abstraction, parameter discovery, synthesizer, natural campaign, router, effect-complete rollback, monitor, or retirement automation ran.
 - Implemented external grounding: source notes exist for MemGPT, Toolformer, Voyager, and DreamCoder as external comparators for memory tiers, learned API/tool use, executable-code skill libraries, and program-synthesis library learning; no local reproduction, tool-synthesis result, skill-library transfer result, or support-state promotion is claimed.
 - Implemented Codex test: Loop detection test, for synthetic qualification packets only.
 - Planned Codex test: Procedure qualification state test.
@@ -2586,8 +2964,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:procedural.loop_closure.operational_invariant` | `AsiStackProofs.ProceduralMemory` | A generated tool records its source traces, parameters, and verification result. | implemented |
-| `lean:procedural.loop_closure.failure_blocks_promotion` | `AsiStackProofs.ProceduralMemory` | A tool with failed regression cannot be promoted to routable status. | implemented |
+| `lean:procedural.loop_closure.operational_invariant` | `AsiStackProofs.ProceduralMemoryRefinement` | A reachable procedure lifecycle preserves exact procedure, source-set, trace-cluster, abstraction, regression-suite, SCF, policy, and consumer custody from clustering through acknowledged routing and receipt-bound retirement without assigning support or external effects. | implemented |
+| `lean:procedural.loop_closure.failure_blocks_promotion` | `AsiStackProofs.ProceduralMemoryRefinement` | Missing comparable traces, negative examples, source/effect receipts, abstraction contracts, verification, regression clearance, benchmark floor, active SCF, rehearsed rollback, monitoring, residuals, non-claims, acknowledgment, or retirement custody blocks lifecycle progress or routes to quarantine. | implemented |
 
 ## Part III - Routing, Compression, Representation, and Substrates
 
@@ -2633,30 +3011,38 @@ Draft arc:
 - Mechanism: Preserve registry epoch, owner, authority envelope, memory/tool lease policies, route limitations, route receipt, residual owner, and non-claims so selected and rejected specialists remain inspectable after the route expires.
 - Mechanism: Fold MoECOT as a runtime crosswalk by mapping compact orchestrator, route head, specialist lanes, control-plane gates, ledgers, replay refs, handoffs, residuals, and promotion blockers onto route receipts and runtime evidence packets.
 - Mechanism: Separate source-reported, locally reproduced, externally corroborated, and blocked runtime fields so implementation-reference context cannot become benchmark, replay, or deployment evidence by branding alone.
+- Mechanism: Execute the full governed route lifecycle: freeze task and authority; snapshot the registry; separate semantic identity from physical route; gate eligibility; construct admissible non-leaking features; estimate candidate-specific outcomes; calibrate selective actions; choose a route shape; prefer least capability and authority; issue a task-local lease; execute through the existing owner; separate route, answer, artifact, effect, and evidence outcomes; invoke fallback or abstention; update routing memory off-policy; monitor load, interference, and collusion; apply lifecycle gates; emit a replayable packet; and feed matched natural and adversarial comparisons back into evidence.
 - Handoff: Failed or uncertain routes flow to readiness gates, residual escrow, fallback routes, or tribunal/review rather than ordinary execution.
-- Interface: Planning requests capabilities.
-- Interface: Governance bounds specialists.
-- Interface: Evidence updates readiness.
-- Interface: artifact graphs and evidence ledgers retain route receipts for downstream claim traceability.
-- Interface: MoECOT orchestration records extend route receipts with command refs, specialist lanes, control-plane gates, route authority ledgers, replay refs, denied routes, failed gates, missing replay refs, handoff refs, source-state partitions, residuals, and non-claims.
+- Interface: Intent and Planning define the frozen task and requested capability.
+- Interface: Stable Capability Fields separate capability identity from the selected implementation, node, worker, and route.
+- Interface: Procedural Memory and Virtual Context supply versioned memory and context leases without granting standing authority.
+- Interface: Security, privacy, rights, and legal owners intersect their ceilings into the granted authority envelope.
+- Interface: Runtime adapters, humans, and Inter-Stack protocols execute only through existing owners and return receipts.
+- Interface: Verification, Spinoza, artifact graphs, and evidence ledgers keep route correctness separate from answer, artifact, effect, and support.
+- Interface: Resource economics owns matched budgets, load, latency, contention, and governance cost.
+- Interface: Readiness, replacement, and residual owners govern routability, fallback, quarantine, rollback, and retirement.
+- Interface: Labor and Human Collaboration own human escalation and work evidence.
+- Interface: Hives and MoECOT provide bounded runtime crosswalks, not independent evidence of execution.
+- Interface: Benchmarks and Claim Ledgers retain rejected candidates, counterfactuals, interventions, costs, delayed outcomes, and promotion ceilings.
 
 Primary invariants:
 
-- Specialist authority is local.
-- Routing decisions are logged.
-- Fallback paths remain available.
-- The router selects the least-capable adequate specialist unless task risk, context demand, verifier requirement, or fallback policy justifies broader capability.
-- Implementation evidence is separated from design argument.
-- Runtime promotion follows readiness gates.
+- Every decision binds exact task, consumer, registry, policy, feature, evaluator, model, tool, environment, and time versions.
+- Semantic, capability, implementation, node, worker, and route identities remain distinct; every eligible and rejected candidate stays in the denominator.
+- Granted authority is the intersection of all task, principal, specialist, policy, rights, privacy, locality, readiness, and budget ceilings.
+- Eligibility gates precede scoring; route relevance, correctness, answer quality, artifact truth, effect safety, evidence adequacy, support, and release remain separate.
+- Non-answer actions are scored against coverage and useful outcomes; least capability and authority wins unless a recorded justification permits more.
+- Consequential routes carry fresh leases, fallback, cancellation, evidence duty, and custody; lifecycle changes expire affected leases.
+- Held-out labels and evaluator outputs cannot leak into training or threshold choice; comparative policies receive matched resources and authority.
+- Multi-route policies account for correlation, collusion, aggregation, and added cost; load and failure cannot silently widen authority or change evaluation standards.
+- Replay reconstructs frozen admissible inputs and records nondeterminism, while evidence language stays inside the exercised workload and transfer envelope.
 
 Failure modes to cover:
 
-- Wrong specialist selection.
-- Router overconfidence.
-- Specialist authority leak.
-- Route laundering: broad successful routes justify broader authority without proving narrower specialists were inadequate.
-- Implementation branding as proof.
-- Replay theater that preserves successful paths while omitting failed gates, denied routes, human interventions, missing sources, and residual cases.
+- Semantic-fit, oracle, label, authority, readiness, candidate-denominator, cost-quality, and SOTA laundering.
+- Router overconfidence, abstention laundering, fallback theater, evaluator capture, and routing-memory poisoning.
+- Specialist sprawl, load blindness, correlated-expert error or collusion, lifecycle drift, and replay theater.
+- Any comparison that improves route selection while substantive answer utility remains zero must be reported as a bounded failure, not specialist intelligence.
 
 Draft deliverables:
 
@@ -2677,17 +3063,126 @@ Draft deliverables:
 - Implemented Codex test: Authority-bounded routing test, via `python3 scripts/validate_readiness_residual_gates.py` over route authority ceilings, gate authority scopes, allowed routes, and blocked routes; deployed router enforcement remains unrun.
 - Implemented Codex test: Fallback route test, via `python3 scripts/validate_readiness_residual_gates.py` over canary/default and quarantine fallback preservation; live fallback route execution remains unrun.
 - Partially implemented Codex test: Readiness/replay mapping review, via `python3 scripts/validate_readiness_residual_gates.py` for readiness mapping across route evidence, gate decisions, residual escrow, fallback, and replacement decisions; MoECOT replay mapping remains planned and unrun.
+- Implemented bounded empirical test: the post-v2 300-example, three-seed program tied oracle, learned, rule, and fallback policies at 162/180 on a separable held-out split; its accepted disposition is `no_change`.
+- Implemented bounded empirical test: the post-v2.1 60-request ambiguous workload produced 59/60 learned route selections but zero correct substantive candidates out of 360; its accepted disposition is `narrow` for local route discrimination and selective non-answer coverage only.
+- Implemented architecture-neutral lifecycle refinement: `AsiStackProofs.RoutingRefinement` and `python3 scripts/validate_routing_refinement.py` preserve exact request, registry, candidate, specialist, authority, readiness, lease, evaluator, policy, and consumer custody through distinct dispatch, route-outcome, answer-outcome, and revocation-aware closure stages. The consumer preserves three exact bounded suites, covers seven stages and all 42 routes, and rejects 47/47 mutations with no support or external-effect authority.
+- Formal proof classification: 21 live family declarations comprise seventeen reachable-lifecycle theorems and four retained load-bearing legacy theorems; sixteen projection/fixture declarations are physically retired with frozen lineage. Theorem count and lifecycle correctness do not establish natural router utility, answer correctness, substrate superiority, deployed runtime behavior, or transfer.
+- Argument-exit campaign: preregister a natural heterogeneous and adversarial workload; compare oracle, learned, rule, strong-generalist, random, cost-aware, confidence-cascade, abstention, human-escalation, and governed policies under matched resources; ablate selection, specialization, authority, readiness, fallback, selective actions, evaluation independence, memory, and load; jointly report useful throughput, unsafe release, calibration, coverage, latency, total cost, human work, interference, rollback, and residuals across multiple strong current models, seeds, independent evaluators, and a transfer setting.
 - Historical public slug preserved by `chapters/moecot-runtime-and-multi-core-orchestration.html`; archived source manuscript retained under `archive/retired_chapters/moecot-runtime-and-multi-core-orchestration.qmd`.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:routing.specialists.operational_invariant` | `AsiStackProofs.Routing` | A router may select only specialists whose authority and readiness satisfy the task requirement. | implemented |
-| `lean:routing.specialists.failure_blocks_promotion` | `AsiStackProofs.Routing` | A failed readiness predicate routes to fallback or residual, not promotion. | implemented |
-| `lean:routing.specialists.decision_lifecycle_route` | `AsiStackProofs.Routing` | A modeled routing decision routes missing requests, registry gaps, authority mismatches, readiness failures, stale leases, missing cost-quality records, overprivileged selections, missing rejected-candidate evidence, residual ownership gaps, and missing non-claim boundaries to explicit outcomes. | implemented |
-| `lean:moecot.runtime.operational_invariant` | `AsiStackProofs.MoECOTRuntime` | A runtime core promotion requires readiness, regression, and replay evidence references. | implemented |
-| `lean:moecot.runtime.failure_blocks_promotion` | `AsiStackProofs.MoECOTRuntime` | A runtime claim sourced only from unavailable text cannot be promoted above argument state. | implemented |
+| `lean:routing.specialists.operational_invariant` | `AsiStackProofs.RoutingRefinement` | A reachable routing lifecycle preserves exact task, request, registry, candidate-set, selected-specialist, authority, readiness, lease, evaluator, policy, and consumer custody from request binding through consumer-acknowledged closure while keeping route and answer outcomes distinct and assigning no support or external effects. | implemented |
+| `lean:routing.specialists.failure_blocks_promotion` | `AsiStackProofs.RoutingRefinement` | Missing authority, readiness, fresh leases, selective handling, fallback or residual ownership, dispatch isolation, observed route/answer/unsafe/cost outcomes, lifecycle currentness, revocation closure, or consumer acknowledgment blocks lifecycle progress. | implemented |
+| `lean:routing.specialists.decision_lifecycle_route` | `AsiStackProofs.RoutingRefinement` | The independent consumer preserves all forty-two routing outcomes, including label-leak rejection, complete candidate denominators, least-capable-adequate selection, ambiguity-triggered selective action, fallback/residual routes, and separate dispatch, observation, and closure stages. | implemented |
+| `lean:moecot.runtime.operational_invariant` | `AsiStackProofs.RoutingRefinement` | A runtime-backed route cannot qualify until inspected source state, concrete runtime evidence, replay evidence, task-local dispatch authority, and isolation are bound to the same routing lease. | implemented |
+| `lean:moecot.runtime.failure_blocks_promotion` | `AsiStackProofs.RoutingRefinement` | Unavailable or source-only runtime material, missing replay evidence, or unobserved route and answer outcomes cannot be laundered into runtime, routing-quality, support, or deployment claims. | implemented |
+
+### Replaceable Cognitive Substrates: Beyond Transformer Monoculture
+
+Stable ID: `replaceable-cognitive-substrates-beyond-transformer-monoculture`
+
+Chapter job: Own the learned Cognitive Kernel ABI beneath routing and above
+architecture-specific implementations, so Transformer, state-space, recurrent,
+long-convolution, test-time-state, external-memory, continuous-time, KAN,
+graph/relational, program-learning, exact-search, and hybrid candidates can be compared and
+replaced without rewriting exact memory, authority, evidence, rollback, or
+evaluation contracts.
+
+Core claim: For an exact task family, consumer, modality, model and state version, memory contract, hardware/runtime, authority and rights envelope, resource budget, evaluator, fallback, rollback, and time horizon, learned cognition should be supplied through a typed Cognitive Kernel ABI whose implementations are admitted only by matched strong baselines, exact state and memory semantics, proposal-versus-effect separation, evaluator independence, complete lifecycle cost, failure and residual retention, checkpoint compatibility, and causal ablation.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Author intent | `corben_chatgpt_kiss_irreducible_intelligence_2026`, `corben_chatgpt_onecell_theseus_2026` | Use for the KISS, OneCell, exact-latent, frozen-core, and architecture-RSI hypotheses only; never as independent confirmation. |
+| Stack contracts | `scf`, `rmi`, `benchmaxxing` | Use for stable replacement, bounded routing, lifecycle, residual, benchmark-ratchet, and anti-Goodhart requirements. |
+| Dense/recurrent/state-space/long-convolution baselines | `ext_attention_is_all_you_need_2017`, `ext_s4_2022`, `ext_mamba_2023`, `ext_mamba2_ssd_2024`, `ext_mamba3_2026`, `ext_gated_deltanet_2024`, `ext_retnet_2023`, `ext_rwkv_2023`, `ext_hyena_hierarchy_2023`, `ext_xlstm_2024`, `ext_universal_transformer_2019`, `ext_dynamic_compute_recurrent_transformers_2026` | Position computational affordances, S4-to-Mamba lineage, memory-update rules, and exact failure pressures; no source-reported result becomes local evidence. |
+| Tiny-recursive and memory-pressure controls | `ext_tiny_recursive_model_2025`, `ext_trm_arc_agi_analysis_2025`, `ext_tiny_autoregressive_recursive_models_2026`, `ext_unimatrix_2026`, `ext_memory_caching_2026` | Use the favorable and critical set together to test task identity, sampling/voting, useful recursion depth, mechanism attribution, and compressed-state versus addressable-memory tradeoffs; do not generalize any source result beyond its setup. |
+| Mutable/external/dynamical/function/graph/program alternatives | `ext_ttt_layers_2024`, `ext_titans_2025`, `ext_kan_2024`, `ext_kan_or_mlp_fairer_comparison_2024`, `ext_neural_turing_machines_2014`, `ext_differentiable_neural_computer_2016`, `ext_liquid_time_constant_networks_2021`, `ext_neural_message_passing_2017`, `ext_dreamcoder_2020` | Use for online-state custody, fair KAN comparison, memory and topology extrapolation, continuous-time cost, relational processing, and verified abstraction tests. |
+| Hybrid composition | `ext_jamba_2024` | Use to make layer/expert/substrate composition and active-versus-total accounting explicit; do not infer a generally optimal mixture or local result. |
+
+| Manifest assignment reconciliation | `ext_hyperscale_lottery_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Explain why a stable stack must abstract architecture without pretending that
+  state, tokenizer, checkpoint, calibration, and hardware differences vanish.
+- Define a typed ABI for initialize, propose, receipt/context consumption,
+  checkpoint, restore, cost, capability, architecture identity, state schema,
+  assistance disclosure, fallback, revocation, and non-claims.
+- Separate exact identity/authority/effect/receipt/provenance state from latent
+  prediction/relevance/uncertainty/proposal state.
+- Show reflex, reaction, deliberation, search, and specialist routes above the
+  ABI rather than tying them to Transformers.
+- Compare architecture families by computational affordance, state semantics,
+  hardware fit, exactness limits, adaptation surface, and defeat conditions.
+- Define architectural RSI as governed candidate generation, training,
+  independent evaluation, shadow, canary, promotion, rollback, retirement, and
+  descendant invalidation—not merely weight updates.
+- Account for complete KISS cost and keep OneCell as a falsifiable candidate
+  designed to lose cleanly.
+- Separate recurrent computation from fixed, cached, sparse-slot, pointer-routed,
+  exact, and attention memory; freeze task identity, sampling, voting, stopping,
+  and useful recursion depth before the tournament.
+
+Primary invariants:
+
+- Kernels propose; external consumers authorize and commit effects.
+- Substrate replacement cannot widen authority, weaken protected predicates,
+  erase residuals, or silently change the evaluation contract.
+- Exact state migration preserves every declared field or rejects before effect.
+- Every route records kernel/version/state schema/checkpoint lineage, assistance,
+  evaluator, costs, residuals, and fallback.
+- Deterministic tools, retrieval, search, adapters, and verifiers receive separate
+  credit and cost.
+- No architecture name, parameter count, asymptotic result, or source benchmark
+  promotes a route.
+
+Failure modes to cover:
+
+- Transformer monoculture, architecture tourism, benchmark/asymptotic laundering,
+  tiny-core hidden complexity, state amnesia, latent-exact collapse,
+  self-ratifying architecture change, router multiplication, and frozen-core
+  theater, plus memory relabeling and recursion-depth laundering.
+
+Draft deliverables:
+
+- Completed insertion and source receipt: 55 live chapters, 32 assigned source
+  notes and bounded mappings, 15 reviewed supplemental claim atoms, and no
+  support-state effect.
+- Full chapter draft with Cognitive Kernel ABI, exact-latent boundary,
+  architecture taxonomy, route crosswalk, KISS accounting, architectural-RSI
+  lifecycle, OneCell candidate and falsifiers, and exact existing-chapter
+  handoffs.
+- Formal ABI model plus independent malicious-kernel checker for proposal/effect
+  separation, authority monotonicity, exact checkpoint compatibility, revocation,
+  fallback, mixed-kernel lineage, assistance, cost, residual, and no-promotion
+  boundaries.
+- Matched Transformer/recurrent-or-SSM/non-token-or-exact-controller tournament
+  with equal-active-parameter and equal-total-lifecycle-cost views, natural and
+  adversarial tasks, independent evaluators, reproduction, and transfer.
+- Fixed-state, growing-cache, sparse-slot, exact-memory, pointer-routing, and
+  attention controls, plus canonical single-pass, matched sampling/voting,
+  blank/random/unseen identity, useful-recursion-depth, learned-stopping, and
+  progressive mechanism ablations for OneCell/TRM-class arms.
+- Frozen-core ratchet with no-library, random-library, retrieval-only,
+  growing-core, and oracle-library controls; measure future held-out search cost,
+  false activation, contamination, lifecycle burden, and rollback locality.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:cognitive_kernel.abi_trace_invariants` | `AsiStackProofs.ReplaceableCognitiveSubstrates` | A finite Cognitive Kernel ABI trace keeps proposals separate from effects, preserves non-increasing authority and declared exact checkpoint state, rejects revoked kernels and incompatible migrations, and preserves fallback, evaluator, assistance, cost, evidence, and residual ownership across mixed-kernel routes. | implemented |
+
+This implemented target belongs to the authorized post-activation expansion;
+the 298-target P2 activation audit remains historical truth. The Lean transition
+model and independently encoded 16-case Python consumer establish only finite
+ABI record semantics. They do not execute or compare real cognitive kernels,
+translate full training/runtime state, establish evaluator independence, or
+support a chapter-core promotion.
 
 ### Readiness Gates, Residual Escrow, and Quarantine
 
@@ -2695,7 +3190,7 @@ Stable ID: `readiness-gates-residual-escrow-and-quarantine`
 
 Chapter job: Modules need a lifecycle for promotion, quarantine, retirement, split, merge, and residual tracking.
 
-Core claim: Readiness gates and residual escrow should govern when modules are promoted, quarantined, split, merged, retired, or retrained.
+Core claim: For an exact versioned target, consumer, use, workload family, authority and rights envelope, and evaluation horizon, readiness should issue an expiring routability lease only from independently owned gate evidence, complete per-check state, preserved regression floors, inherited residual custody, allowed and blocked routes, monitoring, rollback and fallback obligations, and review triggers; failed, stale, waived, quarantined, superseded, retired, or lineage-invalidated targets cannot enter ordinary use, and split, merge, retrain, replace, rollback, and retirement transitions must preserve affected descendants, artifacts, effects, and residual owners.
 
 Source loading queue:
 
@@ -2710,8 +3205,8 @@ Source loading queue:
 | Manifest assignment reconciliation | `ext_dont_hallucinate_abstain_2024` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
-- Problem: Modules need a lifecycle for promotion, quarantine, retirement, split, merge, and residual tracking.
-- Insufficiency: A benchmark score alone cannot decide whether a specialist is ready or whether unresolved residuals are being hidden.
+- Problem: Every routable or replaceable capability needs a current consumer- and use-specific decision about shadow, canary, ordinary, diagnostic, quarantined, superseded, or retired operation and downstream residual ownership.
+- Insufficiency: Scores, source reports, schemas, proofs, green aggregates, route matches, model agreement, and prior qualifications can omit check state, freshness, evaluator dependence, floors, ceilings, recovery, residuals, lineage, load, delayed effects, and total cost.
 - Mechanism: Maintain lifecycle states and readiness gates that separate semantic fit from ordinary routability.
 - Mechanism: Keep gate evidence, regression preservation, and residual escrow attached to modules through promotion, quarantine, split, merge, retirement, or retraining.
 - Mechanism: record scoped lifecycle transitions with authority envelope, freshness window, workload family, fallback path, expiry, floor evidence, frontier evidence, and inherited residuals.
@@ -2721,34 +3216,24 @@ Draft arc:
 - Mechanism: Invalidate promotion leases transitively when a dependency becomes stale, quarantined, revoked, or unknown, and require containment to preserve or narrow routes until resolution.
 - Mechanism: Bind active quarantine to reasons, owner, affected descendants, disposition, diagnostic permissions, and blocked ordinary routes.
 - Mechanism: State the local governed-cognition pattern delta: this chapter owns routability, where lifecycle records turn evidence and residual custody into allowed routes, blocked routes, quarantine, retirement, or supersession rather than mere status labels.
+- Mechanism: Execute eighteen stages from exact target/use binding and prospectively frozen gate catalogs through evidence validation, separate floor/frontier/veto dimensions, inherited residual import, calibrated readiness vectors, state choice, expiring leases, canary execution, monitoring, quarantine, promotion/demotion, transitive propagation, lineage-preserving changes, rollback/compensation, terminal closure, and replayed matched campaigns.
 - Handoff: Runtime references such as MoECOT must emit the gate, replay, benchmark, residual, and promotion-blocker records that readiness decisions require.
-- Interface: Routing reads readiness.
-- Interface: Benchmarks update gates.
-- Interface: SCFs govern replacement.
-- Interface: expose lifecycle states such as draft, shadow, canary, qualified, default, diagnostic-only, quarantined, retired, and superseded for router/auditor consumption.
-- Interface: artifact graphs and benchmark ledgers preserve gate records so renamed, wrapped, split, merged, or retired modules cannot shed old residual escrow.
+- Interface: Maintain twelve explicit boundaries across Stable Capability Fields; Routing; Benchmark Ratchets/evaluators; Claim Ledgers/Evidence/Artifact Graphs; Runtime/Humans/Inter-Stack; Security/Privacy/Rights/Legal/Constitutional; Replacement/Rollback; Procedural Memory/Data/Learning; Resources; Human Collaboration/Tribunal; Hives/runtime currentness; and Release/Publication.
 
 Primary invariants:
 
-- Promotion requires gate evidence.
-- Residuals are not deleted on promotion.
-- Quarantine blocks ordinary routing.
-- Required applicable checks are attempted, pass, carry evidence identity, and remain unexpired before contributing to readiness.
-- Not-applicable, unknown, skipped, unattempted, waived, failed, errored, and expired states remain distinct.
-- Containment cannot weaken or add routes while an invalidating dependency remains.
-- Active quarantine retains reasons, owner, affected descendants, and a disposition.
-- Stronger readiness requires adequate added evidence or narrower permitted scope; readiness cannot increase by losing records.
-- Inherited residuals survive rename, wrapper, split, merge, retirement, and retraining unless an explicit retirement record closes them.
+- Bind exact target, consumer, use, workload, policy, gate, evaluator, evidence, authority, rights, environment, cost, and time versions while keeping capability, implementation, readiness, routing, support, deployment, and release distinct.
+- Preserve complete per-check states; waiver is scoped risk acceptance, never passing evidence; hard vetoes cannot be averaged away.
+- Keep frontier and floor, selective coverage and utility, failures and costs, and delayed outcomes in complete denominators.
+- Make readiness scoped and expiring; stronger states add evidence or narrow scope; quarantine blocks ordinary use and keeps bounded diagnostic authority, fallback, monitoring, expiry, and appeal.
+- Preserve every residual and propagate invalidation through dependencies, descendants, routes, caches, artifacts, memories, procedures, and effects.
+- Require complete state/effect inventory and tested handles for rollback or compensation; terminal targets need new qualification and residual migration before reuse.
+- Replay frozen inputs and nondeterminism, and keep every claim inside the exercised target/use/authority/time envelope.
 
 Failure modes to cover:
 
-- Premature promotion.
-- Residual hiding.
-- Untracked regression after merge.
-- Gate laundering through rename, wrapper, merge, split, or retirement without inherited residual escrow.
-- Skipped-as-green reporting and waiver-as-pass substitution.
-- Stale promotion that survives upstream quarantine or revocation.
-- Orphaned quarantine without owner, descendant closure, or recovery disposition.
+- Score, skipped-as-green, waiver, stale-qualification, residual, floor, selective-readiness, evaluator, authority, and rights laundering.
+- Quarantine theater, over-quarantine, lineage laundering, recovery theater, terminal-state leakage, load blindness, denominator erasure, replay theater, and SOTA theater.
 
 Draft deliverables:
 
@@ -2767,24 +3252,28 @@ Draft deliverables:
 - Implemented Codex test: Quarantine routing harness test, via `python3 scripts/validate_readiness_residual_gates.py` over blocked selected routes and preserved fallback routes; live quarantine routing remains unrun.
 - Implemented Codex test: Readiness lifecycle probe, via `python3 scripts/validate_readiness_lifecycle_probe.py`, producing `experiments/readiness_lifecycle_probe/results/2026-07-02-local.json`; covers six valid synthetic readiness lifecycle transitions and twelve expected-invalid controls for non-forward jumps, missing fresh gate evidence, missing residual escrow, default without regression or authority, quarantine leakage, missing supersession records, missing retirement receipts, transition from retired state, missing non-claim boundaries, and support-promotion overclaim. This is a deterministic synthetic readiness lifecycle fixture only; deployed readiness-engine, residual-ledger storage, live quarantine routing, benchmark-quality, MoECOT-replay, support-state-promotion, and evidence-transition claims remain open.
 - Implemented historical-project readiness-check lifecycle: `python3 scripts/validate_readiness_check_lifecycle.py` accepts one quarantined six-project lineage record with applicability, requiredness, attempt, result, waiver, evidence, expiry, invalidating dependencies, tighter containment, quarantine ownership, descendant closure, and rerun disposition, then rejects nine skipped-as-green, ready-with-failed-check, non-monotone-containment, orphaned-quarantine, waiver, unknown-applicability, missing-evidence, ordinary-route, and support-promotion mutations. It is bounded record discipline only, not deployed readiness, historical-project reproduction, or support-state promotion.
+- Implemented Project Theseus currentness import: exact clean no-write replay at commit `d2343540a17ea3e12760983f653529621fa445f1` observed a YELLOW gate over 20 phases (12 wired, 2 implemented, 5 partial, 1 frozen) with eight negative controls. Its pre-training architecture predicate passed only within the gate's declared focus; deployment readiness, model quality, distributed operation, safety, support, and release remain unclaimed.
+- Bounded calibration record: post-v2.1 released only 2/36 useful candidates and missed rollback, while ambiguous routing produced zero correct substantive candidates out of 360; post-v2.3 produced zero admissible final readiness decisions out of 24. Preserve these as failure boundaries, not readiness efficacy.
+- Formal proof classification: 20 declarations comprise eight direct predicate/projection checks, eleven derived finite route or negative consequences, and one authored-summary bridge; the bridge is not independent execution evidence.
+- Argument-exit campaign: compare score-only, benchmark-only, static-checklist, confidence-only, human-only, conservative-denial, ordinary MLOps, and governed policies on natural/adversarial lifecycle events under matched resources; jointly measure useful throughput, unsafe release, false promotion/quarantine, regression, calibration, coverage, rights/authority violations, rollback/compensation, residual survival, lineage, latency, compute, money, human work, recovery, and total lifecycle cost; ablate each signature control; independently reproduce and transfer across models, tasks, tools, organizations, threats, capacity states, events, and time.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:readiness.gates.operational_invariant` | `AsiStackProofs.ReadinessGates` | A module can enter promoted or stronger readiness states only after required gates and finite lifecycle records for fresh evidence, residual escrow, fallback, expiry, regression floor, authority scope, and route permission are present. | implemented |
-| `lean:readiness.gates.failure_blocks_promotion` | `AsiStackProofs.ReadinessGates` | A quarantined, superseded, retired, stale, or incomplete readiness transition cannot be used for ordinary promotion without the required fallback, residual, rerun, supersession, or retirement records. | implemented |
-| `lean:readiness.gates.lifecycle_probe_bridge` | `AsiStackProofs.ReadinessGates` | The deterministic synthetic readiness lifecycle probe summary records candidate-to-shadow, shadow-to-canary, default-ready, quarantine-with-fallback, supersession-with-residual, and retirement-with-receipt paths plus rejected negative controls, support-state non-promotion, and non-claim boundaries. | implemented |
+| `lean:readiness.gates.operational_invariant` | `AsiStackProofs.ReadinessRefinement` | A reachable readiness lifecycle preserves exact capability, implementation, model-state, workload, baseline, evaluator, policy, authority, consumer, fallback, and residual custody from candidate through acknowledged terminal closure while separating ordinary release, quarantine, support, and external effects. | implemented |
+| `lean:readiness.gates.failure_blocks_promotion` | `AsiStackProofs.ReadinessRefinement` | Missing workload, baseline, evaluator, non-claims, fresh shadow evidence, regression floor, residual escrow, fallback, rollback, monitoring, canary outcome accounting, independent evaluation, transfer, delayed outcomes, transitive quarantine, route blocking, or terminal revocation custody blocks lifecycle progress. | implemented |
+| `lean:readiness.gates.lifecycle_probe_bridge` | `AsiStackProofs.ReadinessRefinement` | The independent consumer preserves three exact readiness suites, all forty lifecycle routes, the six-receipt terminal witness, and forty-five rejecting identity, gate, replay, and authority-leak mutations without assigning support or external effects. | implemented |
 
-Implemented negative-case theorems now cover failed promoted gates, accepted stronger transitions missing freshness/residual/fallback/expiry records, quarantined ordinary routes or diagnostic routes without fallback, stale-gate reuse without rerun/residual records, default readiness without regression or authority scope, quarantined lifecycle transitions with ordinary routing, supersession without a supersession record, retirement without a receipt, and transition from retired state. The lifecycle probe adds executable fixture alignment for the same boundary family. These remain record-level gates only; they do not prove benchmark quality, residual-ledger storage, lifecycle engine behavior, live routing enforcement, MoECOT replay, or current readiness.
+The reachable readiness refinement preserves three exact bounded suites, all forty lifecycle routes, and 45/45 rejecting mutations while separating ordinary release, quarantine, terminal closure, support assignment, and external effects. Eleven legacy negative cases remain bounded and nine weaker projection/summary declarations are retired. These remain record-level gates only; they do not prove benchmark quality, evaluator adequacy, calibration, residual-ledger storage, effect-complete rollback, lifecycle engine behavior, live routing or revocation enforcement, MoECOT replay, current readiness, natural usefulness, or transfer.
 
 ### Personal Compute Hives and Federated Edge Intelligence
 
 Stable ID: `personal-compute-hives-and-federated-edge-intelligence`
 
-Chapter job: The architecture needs an owned compute-substrate chapter for phones, laptops, desktops, NAS devices, old machines, project runners, and rented nodes as policy-bounded participants in one personal or project hive.
+Chapter job: Own consumer-specific admission and placement of exact jobs across separately governed personal, family, project, and rented portals, workers, stores, authority services, and providers without turning reachability, ownership, or cheap capacity into authority.
 
-Core claim: A Personal Compute Hive should turn trusted devices, portals, stores, workers, and temporary rented or project nodes into a federated, policy-bounded compute organism whose scheduler routes work by capability, locality, trust, cost, energy, and authority.
+Core claim: For an exact versioned principal, household or project, job, use, data and tool class, effect envelope, acceptance test, risk budget, deadline, and evaluation horizon, a Personal Compute Hive should admit and place work only through policy-before-optimization: independently attested participants and roles, intersected authority and rights, task-local context and execution leases, least-authority adequate node selection, scoped approval, monitored sandboxed execution, complete artifact/effect/resource receipts, partition-aware denial or quarantine, and effect-complete rollback or residual custody; reachability, ownership, cheap capacity, a passing record schema, or stale authority alone cannot license execution, and federation, dropout, revocation, replacement, requeue, and retirement must preserve affected descendants and residual owners.
 
 Source loading queue:
 
@@ -2798,40 +3287,38 @@ Source loading queue:
 
 Draft arc:
 
-- Problem: A governed ASI stack needs an owned substrate where personal, family, project, and rented devices can run work without collapsing reachability into authority.
-- Insufficiency: Cloud assistants, single-device agents, home clusters, and generic schedulers do not preserve identity, privacy, family authority, data locality, physical-tool risk, federation boundaries, and evidence records as one governed layer.
-- Mechanism: Define `DeviceResourceCard`, `PortalCard`, `HiveJobContract`, `HiveJobBid`, `HiveSchedulingDecision`, `HiveApprovalReceipt`, and `HiveFederationLease` records so portals, workers, stores, rented nodes, and project machines are represented without sharing one trust class.
-- Mechanism: Reject nodes by identity, data, tool, network, approval, family, project, or federation policy before scoring speed, cost, locality, energy, or capability.
-- Mechanism: Preserve family-sensitive, project-hive, rented-node, artifact-steward, and memory-placement flows as mediated contracts with approvals, data-placement decisions, residuals, revocation paths, and distinct retention rules.
-- Mechanism: Add partitioned-authority handling for grant/effect races, stale grants, revocation propagation delay, fresh authority receipts, quarantine pending sync, residual ownership, and no-mutation evidence before protected effects dispatch.
-- Handoff: The hive creates pressure for compact generation, but compression claims remain governed by residual burden, verification cost, fallback, and source/test evidence.
-- Interface: VCM declares context, taint, adequacy, revocation, and data movement.
-- Interface: Talos and PlanForge lower goals into typed jobs and dependency-aware schedules.
-- Interface: Octopus/RMI routing and SCF leases define which capability on which node may be selected.
-- Interface: TokenMana-style resource records account for compute, money, energy, human attention, and friction.
-- Interface: Field-of-God and Ladon/Manhattan boundaries preserve consent, least sufficient power, family governance, and secret handles.
+- Problem: exact governed work must cross heterogeneous owned and external nodes under churn and partition while preserving principal, data, tool, locality, rights, resource, effect, evidence, revocation, recovery, and residual boundaries.
+- Insufficiency: cloud, single-device, overlay-network, cluster, volunteer-compute, workflow, and generic-scheduler approaches do not jointly prove lawful admission, least-authority placement, role separation, partition-safe revocation, effect-complete recovery, and evidence-faithful lifecycle accounting.
+- Lifecycle: freeze exact job and horizon; inventory and attest separate participants; classify obligations; compile typed job and context lease; policy-filter; construct eligible-node features; bid; choose least-authority route; approve; issue execution lease; transfer minimal data/handles; enforce and monitor; handle partition/dropout/revocation; collect complete receipts; recover/invalidate; update scoped reputation; replay campaigns.
+- Distinct ownership: the hive owns consumer-specific placement. Intent/Contracts/Planning, VCM/Context, Routing/SCF/Readiness, Security/Privacy/Rights/Legal/Constitutional, Runtime/Tools/Physical Effects, Humans/Labor/Family/Tribunal, Resources, Artifact/Evidence/Claims, Procedural/Data/Learning, Inter-Stack/Federation, project stewards/providers, and Release/Deployment retain their own authority.
+- Mechanism: seven public cards and contracts separate principal, portal, worker, store, authority, evaluator, and external-provider roles; policy and readiness rejection occurs before optimization.
+- Mechanism: task-local context and execution leases intersect authority and transfer only permitted data or opaque handles into a monitored sandbox.
+- Mechanism: partition, stale grant, revocation, and dropout route high-impact mutation to denial or quarantine pending fresh receipt and preserve no-mutation evidence, recovery, descendant invalidation, and residual custody.
+- Handoff: the hive creates pressure for compact generation, but compression claims remain governed by residual burden, verification, repair, fallback, and displaced lifecycle cost.
 
 Primary invariants:
 
-- Reachability is not authority.
-- Policy filtering precedes optimization.
-- A device must be eligible for the job's data, tool, network, and approval scope before it can bid.
-- External work receives sandboxed leases, not private network access.
-- Family and child-facing portals preserve dignity, consent boundaries, and guardian review for sensitive transitions.
-- Secrets remain handles and approvals, not strings in model context.
-- Temporary federation links expire and can be revoked.
+- Exact version binding and separate participant roles; reachability, possession, ownership, prior trust, and cheap capacity grant no authority.
+- Policy/readiness before bids or optimization; effective authority is the intersection of all principal, job, data, tool, node, runtime, rights, approval, budget, locality, and time ceilings.
+- Minimal purpose-bound data movement; secrets stay opaque handles; approvals are informed, task-bound, revocable, expiring, and accessible.
+- External work receives isolated expiring task slots; stale high-impact authority fails closed or quarantines and retains no-mutation evidence.
+- Matched arms and complete denominators; all latency, compute, bandwidth, battery, thermal, energy, money, human, verification, recovery, and governance costs remain attributed.
+- Dropout and partial output preserve requeue/compensation/cleanup and residual owners; revocation/rollback/replacement/retirement propagate to descendants and effects.
+- Family operation preserves dignity, minimization, explanation, affected-party rights, appeal, and minimal logging.
+- Replay captures nondeterminism and missing artifacts; fixtures, finite proofs, imported metadata, and adjacent tools never become deployed efficacy or safety proof.
 
 Failure modes to cover:
 
-- Personal hive becomes a botnet or malware execution surface.
-- Family governance becomes surveillance.
-- Rented or public project compute leaks private data.
-- Wrong-device scheduling drains batteries, overheats machines, exposes data, or bypasses approvals.
-- Identity confusion grants child, guest, agent, or project authority to the wrong principal.
-- Hive memory becomes an ungoverned swamp of artifacts, logs, models, and personal data.
+- Botnet/malware conversion; surveillance conversion; data exfiltration; wrong-node placement; identity/guardian confusion; memory swamp.
+- Optimizer-before-policy; stale-grant dispatch; partition-availability laundering; sandbox theater; secret materialization; approval fatigue/rubber stamping.
+- Energy/cost laundering; dropout loss or duplicate effects; federation authority creep; evaluator/reputation/bidding corruption; inaccessible residuals; SOTA theater.
 
 Draft deliverables:
 
+- Completed P1 semantic packet: 26 assigned sources have 26 exact reviewed mappings; 18 mechanisms, 12 interfaces, 18 invariants, and 18 failure modes own the material design surface; all structured and prose claim candidates are reviewed with zero unowned material claims; support effect remains `none`.
+- Exact current minimum: seven schemas; 2 valid and 8 invalid admission records; 3 valid and 6 invalid partition records; one accepted no-change transition; and 26 Lean declarations classified as 4 direct predicate/projection checks, 21 derived finite route or negative consequences, and 1 authored-summary bridge. No live or useful hive result is established.
+- Required governed reference slice: at least two owned node classes and one isolated external class, typed public/synthetic jobs, policy-before-optimization, task-local leases, actual approval and sandbox enforcement, partition/revocation injection, complete receipts, dropout recovery and cleanup, descendant invalidation, and residual custody.
+- Required causal campaign: natural household/project/edge workloads plus adversarial identity, partition, exfiltration, sandbox, dropout, resource, evaluator, and family-governance cases; matched single-device, cloud, manual, local-only, cost/latency-only, ordinary-orchestrator, conservative-denial, and full-hive baselines; joint useful/safety/rights/privacy/locality/availability/consistency/resource/human/recovery/security/residual metrics; mechanism ablations; independent evaluator and implementation; reproduction and transfer.
 - A full chapter with hive object records, policy-first scheduling diagram, job classes, federation modes, H2H protocol surface, implementation ladder, public-safe source boundary, and external-source-note queue.
 - Implemented repository-level fixtures: `device_resource_card.valid.json`, `portal_card.valid.json`, `hive_job_contract.valid.json`, `hive_job_bid.valid.json`, `hive_scheduling_decision.valid.json`, `hive_approval_receipt.valid.json`, and `hive_federation_lease.valid.json` validate record shape only; no personal hive scheduler, device registry, rented-node sandbox, or federation protocol has been run.
 - Implemented Lean predicate: admitted hive jobs require identity, data, tool, federation, and approval checks.
@@ -2860,20 +3347,20 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:personal_hives.scheduling.operational_invariant` | `AsiStackProofs.PersonalComputeHives` | A hive scheduler admits a job only when identity, data, tool, federation, and approval policy checks pass before optimization. | implemented |
-| `lean:personal_hives.policy_first.failure_blocks_promotion` | `AsiStackProofs.PersonalComputeHives` | A faster node cannot be selected when its policy membrane forbids the job's data, authority, or network scope. | implemented |
-| `lean:personal_hives.approval_gate.failure_blocks_promotion` | `AsiStackProofs.PersonalComputeHives` | A high-risk hive job that requires approval cannot execute unless a bound approval receipt is present. | implemented |
-| `lean:personal_hives.federation_lease.operational_invariant` | `AsiStackProofs.PersonalComputeHives` | External hive access requires an active lease with scope, sandbox, evidence, expiration, and revocation records. | implemented |
-| `lean:personal_hives.work_admission.lifecycle_route` | `AsiStackProofs.PersonalComputeHives` | A structured hive-work admission review routes malformed jobs, missing identity/data/tool policy, registry gaps, scheduler-policy gaps, high-risk jobs without portal approval, external access without leases or sandbox records, missing cost or energy budgets, missing dropout plans, missing audit receipt plans, missing residual owners, and support-promotion attempts without evidence transitions into explicit outcomes. | implemented |
-| `lean:personal_hives.partitioned_authority.fixture_bridge` | `AsiStackProofs.PersonalComputeHives` | A partitioned-authority fixture quarantines partitioned stale-grant revocation cases, requests fresh authority receipts after healing, rejects stale-grant dispatch and mutation without no-mutation evidence, preserves residual ownership, and blocks support-state promotion while making no deployed partition-tolerance claim. | implemented |
+| `lean:personal_hives.scheduling.operational_invariant` | `AsiStackProofs.HiveLifecycleRefinement` | A reachable Hive lifecycle preserves exact job, principal, contract, registry, candidate-set, selected-node, policy, authority, lease, evaluator, consumer, and residual custody from policy binding through acknowledged closure while separating dispatch, useful-outcome, recovery, support, and external-effect accounting. | implemented |
+| `lean:personal_hives.policy_first.failure_blocks_promotion` | `AsiStackProofs.HiveLifecycleRefinement` | Incomplete identity, data, tool, approval, registry, candidate-denominator, least-authority, locality, budget, energy, or dropout policy blocks selection before optimization. | implemented |
+| `lean:personal_hives.approval_gate.failure_blocks_promotion` | `AsiStackProofs.HiveLifecycleRefinement` | A high-risk Hive job cannot execute without a bound approval receipt tied to the exact job and lease. | implemented |
+| `lean:personal_hives.federation_lease.operational_invariant` | `AsiStackProofs.HiveLifecycleRefinement` | External Hive access cannot receive a lease without federation, sandbox, scope, evidence-obligation, expiration, and revocation custody bound to the selected node. | implemented |
+| `lean:personal_hives.work_admission.lifecycle_route` | `AsiStackProofs.HiveLifecycleRefinement` | The independent consumer preserves all forty-seven policy, selection, lease, partition, execution, reconciliation, recovery, revocation, and closure outcomes. | implemented |
+| `lean:personal_hives.partitioned_authority.fixture_bridge` | `AsiStackProofs.HiveLifecycleRefinement` | Partitioned stale authority quarantines before mutation only with denial and no-mutation evidence; otherwise the lifecycle requests evidence and never infers deployed partition tolerance or support. | implemented |
 
 ### Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty
 
 Stable ID: `compact-generative-systems-and-residual-honesty`
 
-Chapter job: Compact generators, generate/verify/repair receipts, and semantic representation leases need one claim-accounting surface so useful compression does not hide residual burden, exactness debt, repair cost, semantic grounding loss, hierarchy drift, fallback, or consumer-policy limits.
+Chapter job: Own consumer-specific admission and residual custody for compact, generated, repaired, and semantic representations so visible size reduction cannot hide displaced reconstruction, verification, repair, fallback, source, rights, human, governance, recovery, or residual burden.
 
-Core claim: Compact generative systems should store the smallest useful governed generator plus the cheapest exact or scoped residual, while preserving verification, fallback, consumer policy, and residual-burden records.
+Core claim: For an exact versioned source artifact or state, consumer and use, reconstruction or semantic-adequacy contract, allowed loss, authority and rights envelope, workload distribution, cost boundary, and evaluation horizon, a compact representation should be admitted only when its generator, search, metadata, semantic lease, verifier, repair, fallback, interface, human, governance, recovery, and residual burdens are fully attributed; exactness or scoped loss is independently checked against the consumer contract; source lineage, supersession, and fallback remain executable; and the selected representation improves a preregistered joint utility-and-total-burden frontier over strong matched literal, standard codec, model-compression, retrieval, and semantic baselines. Smaller storage, tokens, parameters, or a finite fixture alone establishes neither useful compression nor semantic adequacy, and any hidden, moved, deferred, or discharged burden must retain state, evidence, owner, due condition, descendants, and reopening triggers.
 
 Folded semantic-representation subclaim: Semantic representations are task-scoped leases: graph nodes and semantic tokens may carry work only when provenance, grounding, utility, interoperability, permitted use, residual uncertainty, and supersession are explicit.
 
@@ -2889,65 +3376,44 @@ Source loading queue:
 | Manifest assignment reconciliation | `qcsa_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
-- Problem: Compact generators and generate/verify/repair receipts need one claim-accounting surface so useful compression does not hide residual burden, exactness debt, repair cost, fallback, or consumer-policy limits.
-- Insufficiency: Seed-size, compression-ratio, and generated-reconstruction claims can hide verification, repair, fallback, downstream utility, metadata, interface, governance, and human-review costs.
-- Mechanism: Treat compactness as a governed claim over seed, rule system, memory state, generator/decoder/controller, generation status, correction mechanism, verifier, verification status, verifier independence, residual channel, fallback path/status, residual-burden status, governance interface, authority boundary, use envelope, burden ledger, evidence/cost ledger, promotion blockers/state, source refs, support-state effect, and non-claims.
-- Mechanism: State the local governed-cognition pattern delta: this chapter owns residual custody for compact representations, where smaller seeds, generators, semantic nodes, or repaired artifacts must preserve reconstruction, verification, repair, fallback, consumer-policy, and residual-owner burdens before any compact route counts as adequate.
-- Mechanism: Use the seed/router/search/generator/verifier/residual loop to expose generation cost, verification cost, correction burden, hidden complexity, and authority limits before promotion.
-- Mechanism: Separate reconstruction burden, decision burden, and governance burden so compactness is judged by total recorded cost rather than seed size.
-- Mechanism: Require verifier separation and use envelopes so compact cores cannot self-promote their own adequacy for evidence, runtime, or replacement claims.
-- Mechanism: Preserve the folded generate/verify/repair lane as a compression receipt with receipt state, reconstruction contract, public law family, seed, search bound, generated regions, verification result, repair residual, fallback threshold, interface costs, consumer policy, use permissions, proxy-rate status, final-serialization status, rate accounting, support-state effect, evidence refs, and non-claims.
-- Mechanism: Treat compression as a transaction with candidate, verified-exact, verified-lossy, repaired-exact, literal-fallback, and quarantined states.
-- Mechanism: Scope compressed outputs by consumer policy so preview, routing, proof, audit, citation, benchmark, training, and exact-replay uses cannot borrow each other's authority.
-- Mechanism: Preserve the folded semantic-representation lane as Semantic Representation Leasing: semantic nodes, graph paths, and semantic tokens carry work only with provenance, grounding state, adequacy, interoperability, permitted use, residual uncertainty, versioning, supersession, consumer policy, and quarantine/fallback behavior.
-- Mechanism: Track semantic-node lifecycle states: proposed, grounded, adequate-for-task, interoperable, superseded, stale, and quarantined.
-- Handoff: Time-domain acceleration inherits the same accepted-output, repair, fallback, semantic-lease, and verifier-cost accounting in fast-generation records; RankFold/NeuralFold remains the standalone technique-facing artifact-compression chapter.
-- Interface: Compression feeds memory and routing.
-- Interface: Evidence tests downstream utility, exactness, declared loss, and consumer-policy boundaries.
-- Interface: Procedural memory turns repeated generation into tools.
-- Interface: Resource economics counts generation, verification, repair, metadata, interface, fallback, and human-review costs before efficiency claims.
+- Problem: visible size can fall while total reconstruction, semantic, verification, repair, fallback, source, rights, human, governance, recovery, and residual burden rises.
+- Insufficiency: seed size, ratios, parameters, exact toy reconstruction, clean graphs, finite theorems, and verifier passes omit corpus selection, package boundaries, verifier error, downstream utility, delayed harm, and total lifecycle cost.
+- Lifecycle: freeze exact source/consumer/contract; inventory all representation burdens; bind lineage and policy; retain bounded search attempts; serialize the complete package; independently decode and verify; record mismatch and repair; execute fallback; lease semantics; test migration; run real consumers; preserve residual custody; compare matched baselines; measure the joint frontier; ablate, quarantine, reproduce, and transfer.
+- Distinct ownership: this chapter owns consumer-specific compact-representation admission and residual custody. Source/Artifact, Intent/Consumer, VCM/Memory/Retrieval, Routing/Readiness/SCF, Evidence/Verification/Claims/Benchmarks, Procedural/Compilation/Learning, Resources, Security/Privacy/Rights/Legal/Constitutional, Runtime/Tools, Artifact Graphs, Humans/Tribunals, and Release/Deployment/Inter-Stack retain their boundaries.
+- Current evidence: three schemas; 78 versus 368 toy GVR bytes with three rejected controls; 3/5 conservation records; two four-entry traces with five storage controls; one 71-byte Circle structural saving; one subordinate upward transition; two no-change decisions; 0/24 post-v2.3 final decisions; and 32 Lean declarations classified as 6 direct, 23 derived, and 3 authored-summary bridges.
+- Handoff: time-domain acceleration inherits accepted-output, repair, fallback, semantic-lease, and total-cost accounting; RankFold/NeuralFold remains the technique-facing artifact-compression chapter.
 
 Primary invariants:
 
-- Lossy claims are labeled.
-- Residual burden is visible.
-- Fallback exists when compact generation fails.
-- Verification precedes exactness claims.
-- Repair cost is counted.
-- Search bounds are explicit.
-- Consumer use is scoped to the reconstruction contract and declared loss.
-- Negative rate results are preserved instead of rewritten as narrative success.
-- Semantic nodes are grounded or labeled speculative.
-- Hierarchy changes preserve prior references or record supersession.
-- Shared semantic graphs remain indexes and working representations, not independent source authorities.
-- Consumer use is scoped by grounding, adequacy, interoperability, residual uncertainty, and permitted-use fields.
+- Exact version and package binding; all generator, model, prompt, index, metadata, verifier, repair, fallback, decoder, human, and governance burdens counted separately.
+- Complete search and outcome denominators; proxy rate never substitutes for final serialized size and lifecycle cost.
+- Exactness requires independent decode/comparison; lossy or semantic use requires a consumer-specific loss and adequacy contract.
+- Verifier scope and dependencies remain explicit; repair and fallback stay executable and in denominators.
+- Residual state changes retain evidence, owner, due condition, workload context, descendants, and receipt; unresolved burden cannot disappear.
+- Semantic objects remain provenance-bound working representations, never independent sources or authorities; migration and supersession propagate.
+- Matched resources and separate utility/fidelity/rate metrics; negative and null results remain append-only.
+- Support and authority never follow from compactness; scope, reproduction, and transfer remain explicit.
 
 Failure modes to cover:
 
-- False lossless claims.
-- Hidden residual complexity.
-- Compactness that damages utility.
-- Unbounded search.
-- Verification skipped.
-- Repair larger than original data.
-- Consumer-policy leakage, where a lossy or preview representation is reused for exact, audit, proof, citation, benchmark, or training work.
-- Proxy-rate drift, where search-time savings survive in prose after final serialization erases them.
-- False explainability.
-- Canonical graph capture, where a semantic graph becomes an unreviewed authority source.
-- Hierarchy drift and stale consumer mappings.
-- Semantic laundering, where a clean path explanation is cited instead of the source, proof, or test it was meant to index.
+- False exactness; residual laundering; utility collapse; unbounded/cherry-picked search; verifier capture; repair inflation; fallback theater.
+- Consumer-policy leakage; proxy/package drift; source/rights laundering; false explainability; canonical graph capture; hierarchy/address/collision drift; semantic laundering.
+- Recursive accounting instability; resource laundering; denominator gaming; SOTA theater.
 
 Draft deliverables:
 
+- Completed P1 semantic packet: 17 assigned sources have 17 exact mappings; 18 mechanisms, 12 interfaces, 18 invariants, and 18 failure modes own the material surface; all structured and prose candidates are reviewed with zero unowned material claims; core support remains `argument`.
+- Exact current minimum and proof classification: three schemas, bounded toy GVR and Circle exact-regeneration receipts, residual conservation/trace/storage fixtures, the 0/24 residual-pressure negative result, and 32 declarations across three modules classified as 6 direct checks, 23 derived finite consequences, and 3 authored-summary bridges.
+- Required reference slice and causal campaign: real codec and semantic implementations, complete package serialization, independent decode/verification, executable repair/fallback, real downstream consumers, source/hierarchy changes, live residual lifecycle, strong literal/codec/model-compression/retrieval/summary-tree/generator/semantic/human baselines, joint fidelity/utility/rate/resource/human/rights/recovery/residual metrics, ablations, independent reproduction, and heterogeneous transfer.
 - A compactness ledger with seed, router/index, search/planning, generator/decoder, verifier/critic, residual correction, memory/governance hooks, authority boundary, use envelope, burden ledger, exact remainder, verification, support-state effect, and residual fields.
 - Implemented repository-level fixture: `compact_generative_record.valid.json` validates the compact-generative record shape, generation status, verification status, fallback status, residual-burden status, correction mechanism, verifier independence, authority boundary, use envelope, burden ledger, cost accounting, promotion blockers/state, source refs, support-state effect, and non-claims only; utility and residual-burden behavior remain planned tests.
 - Implemented repository-level fixture: `compression_receipt.valid.json` validates receipt state, search bound, interface costs, consumer policy, use permissions, proxy-rate status, final-serialization status, rate accounting, support-state effect, evidence refs, and non-claims only; no codec, reconstruction benchmark, or rate experiment exists yet.
 - Implemented repository-level fixture: `semantic_node_record.valid.json` validates provenance, hierarchy, relations, tokenization contract, grounding state, versioning, residual uncertainty, permitted uses, evaluation refs, support-state effect, and non-claims only; no TreeLLM implementation, grounding benchmark, representation-utility test, or hierarchy-revision harness exists yet.
 - Implemented bounded evidence slice: `python3 scripts/validate_compact_gvr_slice.py` recomputes a public-safe synthetic GVR receipt lane with a 368-byte literal baseline, a 78-byte exact compact generator-plus-repair receipt, lossy exactness, negative-rate/no-fallback, and bounded-search-overrun controls, residuals, non-claims, accepted non-core transition record, and Lean fixture bridge. This supports only `compact-generative-systems.compact_gvr_receipt_slice`; the chapter core claim remains `argument`.
 - Implemented Circle seed-rule receipt slice: `docs/circle_seed_rule_receipt_slice.md` and `experiments/circle_seed_rule_receipt_slice/results/2026-07-05-local.json` record Circle commit `63b0f511`, contract `CC-AI-CONTRACT-SEED-RULE-001`, kind `seed_rule_exact_regeneration`, theorem IDs `GEN-T0001`, `GEN-T0040`, `GEN-T0041`, `GEN-T0046`, `GEN-T0048`, `GEN-T0050`, `theorem_count=32`, required recommendations `SEED-RULE-USE-EXACT-REGENERATION-RECIPE` and `SEED-RULE-SELECT-BOUNDED-SHORTER-CANDIDATE`, strict receipt fingerprint `836594a5f1d448900797e595cb98f0e476c0b9cbd7365fe333cf7ae2622f13c5`, `fixture_n=128`, `exact_regeneration=true`, `generator_length=383`, `explicit_length=454`, `storage_saving=71`, `bounded_search_candidate_count=3`, `bounded_search_exact_candidate_count=2`, `bounded_search_best_shorter_generator_shorter=true`, Circle CLI output `2 passed in 4.52s`, contract-ready output `1 passed in 2.80s`, and no-promotion decision `circle_seed_rule_receipt_no_change.json`; this does not promote any chapter core claim, does not create a support-state transition, and does not prove useful compression, codec correctness, semantic utility, deployed generator behavior, fallback execution, downstream utility, optimal search, model quality, context length, runtime speed, memory scaling, benchmark performance, transfer, safety, or ASI.
-- Implemented residual-honesty idea-depth slice: `python3 scripts/validate_residual_honesty_conservation.py` recomputes accepted, deferred, discharged, hidden, erased, moved-unowned, support-promoting, and zero-residual-overclaim residual records, records result `experiments/residual_honesty_conservation/results/2026-07-03-local.json`, and checks the Lean fixture bridge `residual_honesty_conservation_fixture_bridge`. This is a deterministic synthetic record-level fixture only: it does not prove all residuals are observable, does not prove safety, does not validate a deployed residual ledger, and does not promote the chapter core claim.
-- Implemented residual-ledger trace: `python3 scripts/validate_residual_ledger_trace.py` reads already committed Resource flagship, Resource workflow, Compact GVR, Readiness/residual gate, and residual-conservation artifacts, records result `experiments/residual_ledger_trace/results/2026-07-03-local.json`, and checks the Lean fixture bridge `residual_ledger_trace_surface_bridge`. This is a real repository trace over current artifacts, not a new synthetic record fixture: it keeps residualized deferrals, displaced costs, repair residuals, readiness escrow, rejected hidden burdens, and no-promotion decisions visible without proving deployed residual-ledger behavior, safety, model quality, benchmark performance, or chapter-core support.
-- Implemented residual-ledger storage replay: `python3 scripts/validate_residual_ledger_storage_replay.py` replays a bounded append-only residual ledger event log, records result `experiments/residual_ledger_storage_replay/results/2026-07-04-local.json`, records no-change decision `evidence_transitions/v1_x_measured/residual_ledger_storage_replay_no_change.json`, and checks the Lean fixture bridge `residual_ledger_storage_replay_bridge`. This is a deterministic local storage/replay fixture with owner handoff, discharge review, workload context, digest-chain construction, and expected-invalid controls; it is not live or deployed residual-ledger evidence, not a safety proof, not model-quality evidence, and not chapter-core support.
+- Implemented residual-honesty idea-depth slice: `python3 scripts/validate_residual_honesty_conservation.py` recomputes accepted, deferred, discharged, hidden, erased, moved-unowned, support-promoting, and zero-residual-overclaim residual records, records result `experiments/residual_honesty_conservation/results/2026-07-03-local.json`, and checks the reachable residual-owner boundary `unresolved_obligation_without_owner_blocks_residualization`. This is a deterministic synthetic record-level fixture only: it does not prove all residuals are observable, does not prove safety, does not validate a deployed residual ledger, and does not promote the chapter core claim.
+- Implemented residual-ledger trace: `python3 scripts/validate_residual_ledger_trace.py` reads already committed Resource flagship, Resource workflow, Compact GVR, Readiness/residual gate, and residual-conservation artifacts, records result `experiments/residual_ledger_trace/results/2026-07-03-local.json`, and checks `result_digest_substitution_blocks_publication`. This is a real repository trace over current artifacts, not a new synthetic record fixture: it keeps residualized deferrals, displaced costs, repair residuals, readiness escrow, rejected hidden burdens, and no-promotion decisions visible without proving deployed residual-ledger behavior, safety, model quality, benchmark performance, or chapter-core support.
+- Implemented residual-ledger storage replay: `python3 scripts/validate_residual_ledger_storage_replay.py` replays a bounded append-only residual ledger event log, records result `experiments/residual_ledger_storage_replay/results/2026-07-04-local.json`, records no-change decision `evidence_transitions/v1_x_measured/residual_ledger_storage_replay_no_change.json`, and checks `broken_residual_chain_blocks_closure`. This is a deterministic local storage/replay fixture with owner handoff, discharge review, workload context, digest-chain construction, and expected-invalid controls; it is not live or deployed residual-ledger evidence, not a safety proof, not model-quality evidence, and not chapter-core support.
 - Idea-depth local-delta slice: live and curated reader prose now identify Compact Generative Systems as the residual-custody owner in the governed-cognition pattern; this is prose and novelty-positioning work only and does not prove compression ratio, reconstruction utility, residual-ledger deployment, downstream utility, model quality, or support-state movement.
 - Planned Codex test: S/R/Q/G/V/E loop consistency test.
 - Implemented Codex test: Circle seed-rule receipt-slice validation, via `python3 scripts/validate_circle_seed_rule_receipt_slice.py`; checks `CC-AI-CONTRACT-SEED-RULE-001`, kind `seed_rule_exact_regeneration`, theorem IDs `GEN-T0001`, `GEN-T0040`, `GEN-T0041`, `GEN-T0046`, `GEN-T0048`, `GEN-T0050`, `theorem_count=32`, `fixture_n=128`, `exact_regeneration=true`, `generator_length=383`, `explicit_length=454`, `storage_saving=71`, `bounded_search_candidate_count=3`, `bounded_search_exact_candidate_count=2`, `bounded_search_best_shorter_generator_shorter=true`, `2 passed in 4.52s`, `1 passed in 2.80s`, and `circle_seed_rule_receipt_no_change.json`; no useful compression, codec correctness, semantic utility, deployed generator behavior, fallback execution, downstream utility, optimal search, model quality, context length, runtime speed, memory scaling, benchmark performance, transfer, safety, ASI, or support-state-transition claim.
@@ -2978,23 +3444,23 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:compression.cgs.operational_invariant` | `AsiStackProofs.CompactGenerativeSystems` | A compact representation with unresolved obligations carries residual records. | implemented |
-| `lean:compression.cgs.failure_blocks_promotion` | `AsiStackProofs.CompactGenerativeSystems` | A lossy representation cannot be marked exact without verification evidence. | implemented |
-| `lean:compression.cgs.admission_route` | `AsiStackProofs.CompactGenerativeSystems` | A modeled compact-generation admission review routes missing source artifacts, compression boundaries, residual records, lossy exactness overclaims, reconstruction evidence, fallback paths, verifier-cost records, semantic provenance, hierarchy-migration records, evidence-transition gaps, and non-claim-boundary gaps to explicit outcomes. | implemented |
-| `lean:compression.cgs.gvr_fixture_bridge` | `AsiStackProofs.CompactGenerativeSystems` | The compact GVR synthetic slice has a finite Lean fixture bridge matching the literal baseline, selected compact receipt, lossy exactness control, negative-rate/no-fallback control, bounded-search-overrun control, and selected-versus-baseline byte relation. | implemented |
-| `lean:compression.cgs.residual_storage_replay_bridge` | `AsiStackProofs.CompactGenerativeSystems` | The residual-ledger storage/replay fixture has a finite Lean summary bridge matching append-only digest-chain construction, sequence continuity, owner handoff, discharge review, workload-context retention, invalid-control rejection, no support-state effect, non-claim boundaries, and live/deployed-ledger non-claims. | implemented |
-| `lean:compression.gvr.operational_invariant` | `AsiStackProofs.GenerateVerifyRepair` | An exact reconstruction claim requires generator output plus repair residual to equal the target. | implemented |
-| `lean:compression.gvr.failure_blocks_promotion` | `AsiStackProofs.GenerateVerifyRepair` | A failed verification blocks exactness promotion. | implemented |
-| `lean:representation.semantic_tree.operational_invariant` | `AsiStackProofs.SemanticRepresentation` | A semantic node marked grounded has at least one provenance link. | implemented |
-| `lean:representation.semantic_tree.failure_blocks_promotion` | `AsiStackProofs.SemanticRepresentation` | A hierarchy update preserves prior node references or records supersession. | implemented |
+| `lean:compression.cgs.operational_invariant` | `AsiStackProofs.CompactGenerationRefinement` | Reachable residualization blocks unresolved obligations lacking record, owner, burden, provenance, cost, or fallback receipt. | implemented |
+| `lean:compression.cgs.failure_blocks_promotion` | `AsiStackProofs.CompactGenerationRefinement` | Lossy exactness is blocked and failed or mismatched verification requires executable preserved-source fallback. | implemented |
+| `lean:compression.cgs.admission_route` | `AsiStackProofs.CompactGenerationRefinement` | Nine reachable stages and 60 routes bind representation identities from source through closure. | implemented |
+| `lean:compression.cgs.gvr_fixture_bridge` | `AsiStackProofs.CompactGenerationRefinement` | Independent digest-bound GVR conformance plus reachable verification/fallback semantics replaces copied fixture facts. | implemented |
+| `lean:compression.cgs.residual_storage_replay_bridge` | `AsiStackProofs.CompactGenerationRefinement` | Independent digest-bound residual result conformance plus result-substitution and broken-chain closure guards replaces copied summaries. | implemented |
+| `lean:compression.gvr.operational_invariant` | `AsiStackProofs.CompactGenerationRefinement` | Observed reconstruction, target identity, verifier identity, and executable fallback are reachable lifecycle obligations. | implemented |
+| `lean:compression.gvr.failure_blocks_promotion` | `AsiStackProofs.CompactGenerationRefinement` | Failed verification activates preserved-source fallback or blocks progress without promotion authority. | implemented |
+| `lean:representation.semantic_tree.operational_invariant` | `AsiStackProofs.CompactGenerationRefinement` | Semantic use requires provenance identity, content, and a grounding evaluator before migration. | implemented |
+| `lean:representation.semantic_tree.failure_blocks_promotion` | `AsiStackProofs.CompactGenerationRefinement` | Hierarchy changes require migration records, reference continuity, and consumer mapping. | implemented |
 
 ### Fast Generation Architectures
 
 Stable ID: `fast-generation-architectures`
 
-Chapter job: The stack needs to reduce serial token-generation latency without treating raw tokens per second as intelligence or bypassing verification.
+Chapter job: Reduce end-to-end time to useful accepted work without allowing token rate, proxy speed, aggregate throughput, or a cheaper unverified path to masquerade as intelligence, quality, safety, or evidence.
 
-Core claim: Fast generation should be treated as a governed, planner-selected choice among autoregressive, speculative, multi-token, diffusion, early-exit, state-space, KV-cache, and hybrid modes selected by task risk, quality target, latency budget, compute, memory, and verification burden.
+Core claim: Fast-generation admission is consumer-, workload-, model-, hardware-, serving-policy-, and time-window-specific: a controller may route an eligible request through a named accelerated path only after prospectively binding the context, quality, risk, budget, metric, verifier, fallback, rollback, and expiry contracts; separating attempted, proposed, accepted, verified, delivered, and useful output; fully attributing queueing, prefill, decode, verification, repair, retry, fallback, cache, memory, bandwidth, energy, human, and governance burdens; and showing a meaningful end-to-end improvement over matched quality-equivalent baselines without violating safety, authority, rights, or residual gates. Raw tokens per second, FLOP estimates, aggregate throughput, synthetic templates, or unverified speed lifts alone cannot qualify a route.
 
 Source loading queue:
 
@@ -3002,7 +3468,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `cgs`, `cognitive_loop_closure`, `benchmaxxing` | Read first for the compact-generation loop, procedural chunking intuition, and measurement discipline. |
 | Supporting | `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi` | Mine after primary sources for planner selection, verifier capacity, budget accounting, artifactization, context packets, repair, and readiness routing. |
-| External literature variants | `ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024`, `ext_lookahead_decoding_2024`, `ext_layerskip_2024`, `ext_pagedattention_vllm_2023`, `ext_mamba_2023`, `ext_llada_2025`, `ext_scaling_dllms_2026` | Read after internal sources to ground the method taxonomy; treat reported results as source-reported until reproduced or independently checked. |
+| External literature variants | `ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024`, `ext_lookahead_decoding_2024`, `ext_layerskip_2024`, `ext_pagedattention_vllm_2023`, `ext_mamba_2023`, `ext_llada_2025`, `ext_scaling_dllms_2026`, `ext_recurrent_transformer_2026` | Read after internal sources to ground the method taxonomy; treat reported results as source-reported until reproduced or independently checked. |
 | Current recurrent-decoding comparator | `ext_recurrent_transformer_2026` | Use for layerwise recurrent KV memory, exact tiling, effective-depth/width tradeoffs, and cache pressure. Treat small-model and asymptotic claims as source-scoped until measured locally. |
 | Handoff or recovery notes | `sources/inbox/fast_generation_browser_note_2026-06-24/` | Local-only author-intent and external-literature queue context. Do not quote verbatim or promote claims from this packet. |
 
@@ -3021,42 +3487,27 @@ External literature queue:
 
 Draft arc:
 
-- Problem: The stack needs to reduce serial token-generation latency without treating raw tokens per second as intelligence or bypassing verification.
-- Insufficiency: Standard autoregressive decoding, raw throughput benchmarks, and isolated serving optimizations do not specify when a faster generation mode is acceptable, how it is verified, or how its failures block promotion.
-- Mechanism: Treat fast generation as a governed mode route selected by PlanForge from task requirements, risk tier, latency budget, context shape, memory pressure, and verifier availability.
-- Mechanism: Count proposed output separately from accepted output, include verifier cost, repair/fallback, useful solution per second, and promotion decision, and keep external method families source-reported until reproduced or promoted by evidence transition.
-- Handoff: Accepted generation outputs become artifacts or compressed candidates; rejected work and serving/KV pressure flow to artifact and resource ledgers.
-- Interface: PlanForge chooses the generation mode.
-- Interface: VCM supplies the bounded context packet.
-- Interface: The generator emits draft tokens, sketches, spans, or candidates.
-- Interface: Spinoza or a verifier checks acceptance predicates.
-- Interface: Talos turns accepted output into artifacts.
-- Interface: Benchmaxxing records speed-quality evidence.
-- Interface: SCF governs whether a mode is promoted, quarantined, or left experimental.
+- Problem: token rate and serving throughput are routinely measured outside the consumer, quality, verifier, load, resource, rights, and recovery boundary needed for a useful-work claim.
+- Owner boundary: Planning supplies a request, Routing supplies qualified candidates, Fast Generation admits the exact speed route, Runtime executes it, Verification judges bounded obligations, Artifact/Labor systems deliver work, Benchmaxxing compares complete attempts, and Readiness or Claim Ledgers own qualification.
+- Lifecycle: eighteen mechanisms freeze scope and baselines; register immutable implementations; bind context/cache/risk/rights; separate output states; admit prospectively; trace attempts; measure queue-to-delivery time; record acceptance; verify; attribute repair/fallback; bill all resources; observe load/fairness; execute fallback; run causal interventions; govern transitions; and monitor expiry/rollback/residuals.
+- Interfaces: twelve owner handoffs cover intent/planning, context, routing/readiness, runtime, resource economics, security/authority/rights, generator traces, verification, delivery/artifact custody, benchmarking, support transitions, and operator/consumer recovery.
+- Handoff: accepted output becomes a typed delivered artifact; every rejection, retry, fallback, resource bill, incident, and residual remains attached to the route receipt.
 
-Primary invariants:
+Primary invariants: eighteen manifest-owned obligations bind exact consumer/workload/model/hardware/runtime scope, prospective preregistration, immutable replay identities, matched quality-equivalent baselines, distinct attempted/proposed/accepted/verified/delivered/useful states, queue-to-delivery clocks, complete verifier/repair/fallback and resource attribution, cache matching, distinct throughput and latency metrics, failure retention, executable fallback, high-risk override, tested independence, load fairness, explicit transfer, expiry, and no proxy-based support movement.
 
-- No fast generation mode is promoted on raw tokens per second alone.
-- Every accelerated route names its generation mode, verifier, acceptance predicate, risk tier, and fallback.
-- Accepted output is counted separately from proposed output.
-- High-risk tasks can require slower verified generation even when a faster mode exists.
-- Speculative, diffusion, MTP, and hybrid claims remain at argument level until source-specific tests, reproduced results, or accepted external-literature support justify promotion.
-
-Failure modes to cover:
-
-- Speed hides lower answer quality or higher repair cost.
-- The verifier becomes the true bottleneck.
-- Draft heads, diffusion sketches, or cached continuations drift out of distribution.
-- Memory bandwidth, KV-cache pressure, or parallel sampling cost erases token-speed gains.
-- Multi-seed generation increases sample count without improving useful solution per second.
-- Fallback is omitted after rejection or uncertainty.
+Failure modes to cover: eighteen manifest-owned failures include wrong numerators, weak baselines, cherry-picked cohorts, hidden rare regressions, weak/correlated verifier bottlenecks, omitted repair and fallback, asymmetric cache warmup, throughput/latency conflation, scheduler starvation, memory/network/energy erasure, distribution drift, candidate multiplication without utility, risk and rights bypass, unusable fallback, biased clocks, censored failures, unsupported transfer, and stale qualification.
 
 Draft deliverables:
 
-- A generation-mode registry and benchmark record with task risk, latency budget, context packet, mode, draft source, verifier, acceptance predicate, accepted tokens, wall-clock time, quality or pass result, compute and memory notes, fallback, and promotion decision.
+- Reconcile all 21 source assignments with exact bounded mappings and retain every external method as a comparator until its exact result is independently reproduced.
+- Preserve the exact current boundary: one not-run schema; an 18-mode/13-comparison Theseus import with five speed-lift warnings, zero task-passing or promotable comparisons, and six invalid controls; a two-command/ten-digest replay; a four-task 264-versus-632 deterministic accounting result rejecting a 176-unit proxy; a four-command/sixteen-digest/68-task aggregate with fourteen rejected controls and two no-change decisions; and no model-speed or serving result.
+- Rationalize the frozen 38-declaration Fast Generation baseline by retaining three genuine countermodels, physically retiring 35 projections, assumption restatements, and copied summaries, and replacing them with a seventeen-declaration, eight-stage, sixty-route request-to-closure refinement.
+- Preregister a natural and adversarial causal campaign comparing optimized autoregression, ordinary serving, speculative, MTP, multi-head, feature, lookahead, early-exit, recurrent/state-space, KV-cache/batching, diffusion, hybrid, conservative-slow, and full governed routes under matched model, hardware, load, cache, evaluator, resource, retry, and time conditions.
+- Gate on the joint useful-quality-safety-rights-latency-tail-resource-fairness-fallback-recovery-residual frontier, run causal ablations, and require independent generator/verifier/evaluator/serving/measurement reproduction plus heterogeneous transfer before any SOTA claim.
 - Implemented repository-level fixture: `generation_mode_record.valid.json` validates generation-mode record shape only; no decoding benchmark, acceptance-rate test, or serving experiment has been run.
 - Implemented Lean proof target: finite generation-mode admission lifecycle routing sends missing mode records, context packets, risk tiers, quality targets, verifiers, acceptance predicates, baselines, accepted outputs, verifier costs, fallback and residual handling gaps, high-risk override gaps, budget gaps, evidence-transition gaps, and non-claim-boundary gaps to explicit modeled outcomes.
-- Implemented Lean/Python bridge: `python3 scripts/validate_theseus_generation_mode_import.py` now checks that the public Project Theseus generation-mode import fixture matches `AsiStackProofs.FastGeneration.theseusGenerationModeImportFixture` for mode count, comparison count, hard gaps, zero missing report refs, boundary gates, accepted-span speed-lift warnings, zero useful-solution evidence, zero promotable comparisons, and public-safety/support-state/raw-speed overclaim boundaries; it rejects hard boundary-gate failure and missing-report-ref overclaim controls.
+- Implemented Lean/Python policy bridge: `python3 scripts/validate_theseus_generation_mode_import.py` owns the digest-bound public Project Theseus report counts while `AsiStackProofs.FastGenerationRefinement` owns general reachable mode, fallback, raw-speed, promotion, accounting, and closure policy; it rejects hard boundary-gate failure, missing-report-ref overclaim, raw-speed promotion, support laundering, private-payload copying, and useful-speed overclaim without copying the report summary into Lean.
+- Implemented refinement consumer: `python3 scripts/validate_fast_generation_refinement.py` independently reaches all 60 routes, rejects 51/51 non-accepting mutations, recompiles Lean, reruns the exact 2-valid/4-invalid baseline harness, three-route/four-task accounting bundle, and 1-valid/6-invalid Theseus import, and SHA-256 binds every consumed fixture and result. One modeled fallback and one authored useful-outcome accounting event reach closure; support and external effect remain `none`.
 - Implemented local task-bundle replay: `python3 scripts/validate_fast_generation_task_bundle.py` validates result `fast_generation_task_bundle_2026_07_02_local`, selecting `route://fast-template-verified` at 264 deterministic cost units versus 632 for `route://autoregressive-reference`, while rejecting cheaper `route://latency-only-proxy`; accepted no-promotion decision `evidence_transitions/v1_x_measured/fast_generation_task_bundle_no_change.json` blocks model-speed, useful-solution-per-second model performance, serving-throughput, route-selector adequacy, benchmark, model-quality, deployed-routing, and chapter-core promotion claims; this is no model-speed or deployment claim, no useful-solution-per-second model claim, and no support-state promotion.
 - Implemented selected support-lane aggregate: `python3 scripts/validate_theseus_fast_support_lane.py` validates `theseus-fast-support-lane-2026-07-03-local` by rerunning the Theseus generation-mode import, Theseus support replay probe, Theseus public task-bundle import, and Fast Generation task-bundle validators, checking 16 tracked artifact digests, 68 public task records, 14 expected-invalid or rejected controls, two accepted no-promotion decisions, and `theseusFastSupportAggregateFixture`. This does not prove clean live Project Theseus replay, does not prove model quality, does not prove generation speed, does not prove useful-solution-per-second model performance, does not prove support-state promotion, and does not promote any chapter core claim.
 - Planned Codex test: Autoregressive baseline speed-quality test.
@@ -3075,11 +3526,11 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:fast_generation.mode_selection.operational_invariant` | `AsiStackProofs.FastGeneration` | A fast generation route records generation mode, verifier, acceptance predicate, risk tier, and fallback before promotion. | implemented |
-| `lean:fast_generation.verified_speed.failure_blocks_promotion` | `AsiStackProofs.FastGeneration` | Raw tokens per second cannot promote a fast generation claim without accepted or verified token evidence, task-success evidence, and a baseline. | implemented |
-| `lean:fast_generation.mode_admission_lifecycle_route` | `AsiStackProofs.FastGeneration` | A modeled fast-generation admission review routes missing mode records, context packets, risk tiers, quality targets, verifiers, acceptance predicates, baselines, accepted outputs, verifier costs, fallback and residual handling, high-risk override gaps, budget gaps, evidence-transition gaps, and non-claim-boundary gaps to explicit outcomes. | implemented |
-| `lean:fast_generation.theseus_import_fixture_bridge` | `AsiStackProofs.FastGeneration` | The public Project Theseus generation-mode import fixture matches a finite Lean summary fixture and proves the imported accepted-span speed-lift warnings do not permit promotion without useful-solution evidence, promotable comparisons, all hard boundary gates passing, and zero missing report refs. | implemented |
-| `lean:fast_generation.task_bundle_fixture_bridge` | `AsiStackProofs.FastGeneration` | The public-safe fast-generation task-bundle fixture preserves baseline and candidate task quality, shows candidate deterministic cost-accounting improvement over baseline, rejects the latency-only negative control, and blocks support promotion within the finite result summary. | implemented |
+| `lean:fast_generation.mode_selection.operational_invariant` | `AsiStackProofs.FastGenerationRefinement` | Reachable admission binds task, context, consumer, mode, risk, verifier, baseline, quality, latency, resource, fallback, and rights records before fast selection. | implemented |
+| `lean:fast_generation.verified_speed.failure_blocks_promotion` | `AsiStackProofs.FastGenerationRefinement` | Reachable accounting and decision routes block raw-speed promotion without accepted output, task success, matched baseline, complete costs, and an evidence transition. | implemented |
+| `lean:fast_generation.mode_admission_lifecycle_route` | `AsiStackProofs.FastGenerationRefinement` | Eight stages and sixty independently consumed routes govern context binding, selection, drafting, verification or fallback, useful-outcome accounting, decision, and closure. | implemented |
+| `lean:fast_generation.theseus_import_fixture_bridge` | `AsiStackProofs.FastGenerationRefinement` | A digest-bound external validator owns Theseus report counts while Lean owns general reachable raw-speed, fallback, promotion, and closure policy. | implemented |
+| `lean:fast_generation.task_bundle_fixture_bridge` | `AsiStackProofs.FastGenerationRefinement` | A digest-bound external validator owns the three-route task result while Lean owns general task-success, cost-separation, speed-proxy, support-transition, and closure policy. | implemented |
 
 Cross-chapter aggregate proof note: the selected Theseus/Fast support-lane aggregate is implemented under `AsiStackProofs.TheseusReference` as `lean:theseus.reference.fast_support_aggregate.fixture_bridge`, not duplicated in the Fast Generation proof table. It keeps Fast Generation's support lane synchronized with Project Theseus while preserving no clean live Project Theseus replay, no model quality, no generation speed, no useful-solution model claim, no support-state promotion, and no chapter-core promotion.
 
@@ -3091,7 +3542,7 @@ Chapter job: The stack needs a control plane for inference-time search,
 revision, verifier use, and stopping that does not mistake extra computation or
 model self-evaluation for evidence or execution authority.
 
-Core claim: A governed stack treats test-time deliberation as a bounded, risk-tiered inference campaign: it records the request, search or revision mode, think budget, verifier scope and independence, stop condition, candidate and cost history, unresolved constraints, residual owner, and downstream handoff; additional inference may produce a candidate for planning but cannot by itself establish correctness, safety, capability, or authority to execute.
+Core claim: Governed deliberation is a consumer-, task-, risk-, model-, evaluator-, resource-, and time-specific inference lease: before outcomes, it chooses among direct generation, bounded revision, candidate search, or abstention; binds exact budgets, candidate/history custody, verifier scope and dependence, stop and escalation rules, initially-correct corruption and initially-incorrect repair metrics, downstream consumer, expiry, and residual owner; and admits only a bounded candidate to planning when matched natural and adversarial evidence shows useful gain after all branches, failures, verification, latency, compute, human, and governance costs. A trace, self-score, process reward, benchmark gain, or extra compute never establishes correctness, safety, capability, execution authority, or support movement by itself.
 
 Source loading queue:
 
@@ -3146,11 +3597,16 @@ Draft deliverables:
 - A versioned deliberation record with request/risk, mode, budgets, verifier
   identity/version/scope/independence, candidate/rejection references, stop
   reason, unresolved constraints, residual owner, and handoff state.
-- Implemented owned bridge: ten Lean routes and ten digest-bound records cover
-  complete planning handoff, missing budget/mode/verifier scope/history/stop/
-  residual fields, trace-authority laundering, exhaustion, and missing
-  independent verification. Eleven mutations reject drift and preserve the
-  fifteen known extra-compute harms as regression-only knowledge.
+- Implemented request-to-closure refinement: two retained general
+  countermodels plus eleven declarations over eight reachable stages and 59
+  routes cover request, scope, candidate custody, evaluator boundaries,
+  corruption/repair/faithfulness accounting, selection, stop, residual escrow,
+  bounded planning handoff, closure, support, and effects. An independently
+  implemented consumer rejects 51/51 non-accepting mutations and digest-binds
+  the ten-case admission result, the three-seed result with 900 routing, 540
+  deliberation, and 180 interference records, and the later actual-model
+  five-arm 0/60 `no_change` result. Eight flat route consequences are retired;
+  no beneficial actual-model or independent-evaluator result exists.
 - Planned Codex test: public-safe deliberation workload comparison across direct,
   revision, and search modes with quality, verifier cost, branch, latency,
   residual, and negative-control records.
@@ -3161,16 +3617,16 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:deliberation.high_risk.missing_independent_verifier_blocks_execution` | `AsiStackProofs.Deliberation` | A finite high-risk deliberation record with a requested execution handoff and no independent verifier routes to review rather than release to planning, without inferring evaluator correctness, reasoning quality, safety, model quality, or ASI. | implemented |
-| `lean:deliberation.budget_exhausted.escrows_residual` | `AsiStackProofs.Deliberation` | An otherwise complete exhausted deliberation stops and escrows its residual. | implemented |
-| `lean:deliberation.complete_high_risk.reaches_planning` | `AsiStackProofs.Deliberation` | A complete finite high-risk record reaches planning without execution authority. | implemented |
-| `lean:deliberation.missing_budget.requires_review` | `AsiStackProofs.Deliberation` | Missing budget declaration routes to review. | implemented |
-| `lean:deliberation.missing_search_mode.requires_review` | `AsiStackProofs.Deliberation` | Missing search-mode declaration routes to review. | implemented |
-| `lean:deliberation.missing_verifier_scope.requires_review` | `AsiStackProofs.Deliberation` | Missing verifier scope routes to review. | implemented |
-| `lean:deliberation.missing_candidate_history.requires_review` | `AsiStackProofs.Deliberation` | Missing candidate history routes to review. | implemented |
-| `lean:deliberation.missing_stop_condition.requires_review` | `AsiStackProofs.Deliberation` | Missing stop condition routes to review. | implemented |
-| `lean:deliberation.missing_residual_owner.requires_review` | `AsiStackProofs.Deliberation` | Missing residual ownership routes to review. | implemented |
-| `lean:deliberation.trace_authority_laundering.requires_review` | `AsiStackProofs.Deliberation` | An unseparated trace-authority claim routes to review. | implemented |
+| `lean:deliberation.high_risk.missing_independent_verifier_blocks_execution` | `AsiStackProofs.DeliberationRefinement` | High-risk evaluation without an independent-enough review record is blocked before selection or planning handoff. | implemented |
+| `lean:deliberation.budget_exhausted.escrows_residual` | `AsiStackProofs.DeliberationRefinement` | Budget or dispute exhaustion requires an owned residual before bounded planning handoff. | implemented |
+| `lean:deliberation.complete_high_risk.reaches_planning` | `AsiStackProofs.DeliberationRefinement` | A complete seven-receipt lifecycle reaches a bounded planning handoff and closure without execution, support, or external-effect authority. | implemented |
+| `lean:deliberation.missing_budget.requires_review` | `AsiStackProofs.DeliberationRefinement` | Candidate generation requires a prospectively bound budget and budget identity. | implemented |
+| `lean:deliberation.missing_search_mode.requires_review` | `AsiStackProofs.DeliberationRefinement` | Candidate generation requires a registered deliberation mode policy. | implemented |
+| `lean:deliberation.missing_verifier_scope.requires_review` | `AsiStackProofs.DeliberationRefinement` | Evaluation requires explicit obligations, verifier identity, evidence view, dependence, calibration, abstention, and false-decision boundaries. | implemented |
+| `lean:deliberation.missing_candidate_history.requires_review` | `AsiStackProofs.DeliberationRefinement` | Candidate generation requires first-candidate capture, complete history, trace privacy, and the complete attempt denominator. | implemented |
+| `lean:deliberation.missing_stop_condition.requires_review` | `AsiStackProofs.DeliberationRefinement` | Candidate generation and handoff require prospectively bound stop rules and a stop receipt. | implemented |
+| `lean:deliberation.missing_residual_owner.requires_review` | `AsiStackProofs.DeliberationRefinement` | No verified candidate, exhausted budget, or unresolved dispute routes through residual escrow and closure. | implemented |
+| `lean:deliberation.trace_authority_laundering.requires_review` | `AsiStackProofs.DeliberationRefinement` | Raw scores, traces, and a planning handoff cannot grant support or execution authority. | implemented |
 
 ### RankFold, NeuralFold, and Artifact Compression
 
@@ -3178,7 +3634,7 @@ Stable ID: `rankfold-neuralfold-and-artifact-compression`
 
 Chapter job: The stack needs artifact-level and tensor-level compression strategies that remain honest about residuals and utility.
 
-Core claim: RankFold/NeuralFold-style artifact compression belongs as a bounded implementation hypothesis with probe-route fallback and residual coding.
+Core claim: A compressed artifact may enter a downstream route only through an artifact-, consumer-, use-, access-pattern-, decoder-, platform-, and time-specific admission lease that preserves the full source, separates representation, reconstruction, ratio, utility, latency, and evidentiary-authority claims, counts every byte and operation, exercises probes and fallback, and expires or quarantines on drift; RankFold/NeuralFold remains a bounded candidate implementation, and no compact form inherits the source artifact's authority.
 
 Source loading queue:
 
@@ -3226,7 +3682,10 @@ Draft deliverables:
 - Implemented public-safe replay probe: `python3 scripts/validate_rankfold_public_safe_probe.py` validates a fresh local RankFold pack/verify/list/unpack replay over a generated 3,936-byte synthetic text fixture, `RAW0` codec observation, roundtrip-exact digest preservation, no compression advantage, a license-disabled NeuralFold boundary, and a rejected single-byte archive mutation. This does not prove NeuralFold compression, compression advantage, RankFold codec correctness, downstream utility, fallback execution, deployed compression behavior, or support-state promotion, and does not promote the RankFold chapter core claim.
 - Implemented local artifact import: `python3 scripts/validate_rankfold_artifact_import.py` validates the public-safe RankFold artifact import for three existing `.rfa` archive observations over a 100,000,000-byte decoded artifact digest (`2b49720ec4d78c3c9fabaee6e4179a5e997302b3a70029f30f2d582218c024a8`), archive byte ratios up to 2.76634019 decoded/archive, `rfa verify` summaries of 1 OK, 0 failed, `NEURAL0` inspect metadata, and non-claim boundaries. This does not prove RankFold codec correctness, is not a fresh compression benchmark, downstream-utility result, fallback-execution result, deployed-compression result, or support-state promotion, and does not promote the RankFold chapter core claim.
 - Implemented no-promotion decisions: `evidence_transitions/v1_x_measured/rankfold_public_safe_replay_probe_no_change.json` and `evidence_transitions/v1_x_measured/rankfold_artifact_import_no_change.json` keep the fresh RAW0 replay and the local NEURAL0 metadata import at `argument`, with `blocks_promotion` support-state effects until enabled compression, public-safe corpus, decoder-correctness, downstream-utility, fallback-execution, and independent-review evidence exists.
-- Implemented Lean predicate: finite artifact-compression admission lifecycle routing sends missing preserved full artifacts, missing manifests, use-envelope and access-pattern gaps, unadmitted states, decoder-determinism gaps, exact-replay readiness failures, failed probes, missing fallback artifacts, residual metadata gaps, utility-evidence gaps, support-promotion gaps, and missing non-claim boundaries to explicit modeled outcomes.
+- Implemented artifact-to-consumption refinement: two retained finite countermodels plus eight declarations over eight reachable stages and 53 routes bind full-source custody, artifact/consumer/use/policy/rights/codec/decoder/evidence/result identity, encoding and reconstruction obligations, exactness, integrity, adversarial mutation, task and rare-case probes, utility, executable fallback and recovery, cost, qualified use, observed outcomes, residual closure, support, and effects. An independent consumer rejects 44/44 non-accepting mutations and digest-binds the exact fixture, RAW0 replay, NEURAL0 import, and both no-change decisions.
+- Exact current MVI: one 22-field schema fixture; one fresh 3,936-byte RAW0 replay with exact digest preservation, no compression advantage, license-disabled NeuralFold, and one rejected byte mutation; three imported NEURAL0 metadata observations for one 100,000,000-byte decoded digest without a fresh encode; two no-change decisions; two retained finite countermodels; and eight refinement declarations. Seventeen direct projections and flat route consequences are retired. None establishes NeuralFold compression, codec correctness, useful compression, behavioral fallback, or chapter-core support.
+- Formal classification: two retained countermodels and eight reachable-lifecycle declarations with 44/44 independently rejected mutations. No decoder semantics, compression theorem, useful-compression result, fallback-liveness proof, resource proof, security proof, or empirical benefit follows.
+- Mature causal campaign: preregister a heterogeneous public-safe corpus and compare literal, strong general-purpose/domain codecs, quantization, sparsity, low-rank, retrieval, hierarchical-summary, semantic-preview, enabled RankFold/NeuralFold, and full-fallback routes under matched consumers, access patterns, platforms, resources, rights, evaluators, and time; close all bytes and operations, exercise exact/lossy contracts, rare/adversarial probes, fallback, recovery, security, causal ablations, independent implementations, and heterogeneous transfer.
 - Implemented Codex test: RankFold public-safe replay probe.
 - Implemented Codex test: RankFold artifact import validation.
 - Planned Codex test: Compression ratio test.
@@ -3238,9 +3697,9 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:compression.artifacts.operational_invariant` | `AsiStackProofs.ArtifactCompression` | A compressed artifact used for a task must pass that task probe or route to fallback. | implemented |
-| `lean:compression.artifacts.failure_blocks_promotion` | `AsiStackProofs.ArtifactCompression` | A compression record cannot omit residual or fallback metadata. | implemented |
-| `lean:compression.artifacts.admission_lifecycle_route` | `AsiStackProofs.ArtifactCompression` | A modeled compressed-artifact admission review routes missing preserved full artifacts, missing manifests, use-envelope and access-pattern gaps, unadmitted states, decoder-determinism gaps, exact-replay readiness failures, failed probes, missing fallback artifacts, residual metadata gaps, utility-evidence gaps, support-promotion gaps, and missing non-claim boundaries to explicit outcomes. | implemented |
+| `lean:compression.artifacts.operational_invariant` | `AsiStackProofs.ArtifactCompressionRefinement` | A reachable artifact-to-consumption lifecycle requires full-source custody, exact identities, reconstruction checks, consumer probes, executable fallback, observed outcomes, and closure before a qualified use can complete. | implemented |
+| `lean:compression.artifacts.failure_blocks_promotion` | `AsiStackProofs.ArtifactCompressionRefinement` | Failed probes route to fallback, exact-replay gaps block use, raw ratios cannot promote support, and missing evidence transitions block consumption. | implemented |
+| `lean:compression.artifacts.admission_lifecycle_route` | `AsiStackProofs.ArtifactCompressionRefinement` | Eight stages and 53 independently consumed routes govern registration, encoding, verification, probing, fallback, admission, observed consumption, and closure without support or external-effect authority. | implemented |
 
 ### Resource Economics and Token Budgets
 
@@ -3248,7 +3707,7 @@ Stable ID: `resource-economics-and-token-budgets`
 
 Chapter job: Compute, context, verification, simulation fidelity, and human attention are scarce resources that the architecture must allocate explicitly.
 
-Core claim: Resource governance accounts for token budgets, verification tax, load stability, and risk-adjusted inference value.
+Core claim: Resource Economics owns a consumer-, task-, risk-, workload-, organization-, resource-, and time-specific allocation lease that admits, prices, schedules, defers, shrinks, escalates, or rejects work only after protected safety and rights floors, complete direct and displaced costs, uncertainty, useful outcome value, verification capacity, load and tail stability, simulation-transfer limits, recovery, and residual ownership are explicit; throughput, low token count, synthetic success, or a cheap route alone confers no quality, safety, economic-optimality, support, or deployment authority.
 
 Folded simulation-fidelity subclaim: simulation and synthetic-environment results are resource-governed claim-transport records whose support cannot exceed declared scope, fidelity, temporal semantics, resource bill, assumptions, omitted variables, instrumentation effects, residual risks, and transfer decision.
 
@@ -3332,19 +3791,17 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:resources.budgets.operational_invariant` | `AsiStackProofs.ResourceEconomics` | A task budget cannot disable required safety or verification gates. | implemented |
-| `lean:resources.budgets.failure_blocks_promotion` | `AsiStackProofs.ResourceEconomics` | A high-risk task with insufficient verification budget is blocked or escalated. | implemented |
-| `lean:resources.costed_route.fixture_bridge` | `AsiStackProofs.ResourceEconomics` | The four-route costed-route fixture rejects the failed-verification and hidden-residual controls, keeps the bounded transform route eligible, proves it is lowest-cost among eligible modeled routes, and proves a finite selector-state replay ends with that route after rejecting the cheaper controls. | implemented |
-| `lean:resources.workflow_trace.trace_property_bridge` | `AsiStackProofs.ResourceEconomics` | The finite Resource workflow trace fixture carries dispatch events whose costs, review minutes, and verification minutes roll up to the public summary, whose schedule keeps high-risk release work before lower-risk work, whose selected events preserve protected-overhead, residual-ownership, and non-claim guard flags, and whose public negative controls reject over-budget aggregate resource bills. | implemented |
-| `lean:resources.capacity_smoothing.reviewer_trace_bridge` | `AsiStackProofs.ResourceEconomics` | The finite capacity-smoothing reviewer trace fixture preserves bounded capacity, reviewer capacity, protected review overhead, displaced-review-cost residualization, no low-risk review during blocked protected review, and no support-state promotion; negative cases reject low-risk review hoarding, high-risk review without protected overhead, and missing displaced-cost residuals. | implemented |
-| `lean:resources.serving_memory.separation_guard` | `AsiStackProofs.ResourceEconomics` | Aggregate serving-throughput or KV-cache reuse claims remain valid only when KV-cache budget, batching scope, and single-request verified-output boundaries are recorded; throughput-to-quality overclaims reject validity. | implemented |
-| `lean:resources.flagship.aggregate_invariant` | `AsiStackProofs.ResourceEconomics` | The aggregate Resource flagship replay fixture carries 10 command replays, 26 tracked artifacts, 3 accepted narrow transitions, 5 no-promotion decisions, preserved negative controls, residuals, non-claims, and explicit no-core-promotion/no-new-transition guards. | implemented |
-| `lean:resources.ci_failure_classification.fixture_bridge` | `AsiStackProofs.ResourceEconomics` | The finite Resource CI cost-profile fixture carries 8 recorded Pages runs, 8 completed runs, 5 successes, 3 classified deploy-service failures, 0 in-progress runs, the 131-second recovery boundary, publication-metadata-only scope, and no support-state or chapter-core promotion. | implemented |
-| `lean:resource.governance_tax.tradeoff_bridge` | `AsiStackProofs.ResourceEconomics` | The finite governance-tax trade-off fixture carries 3 valid modeled scenarios, 5 expected-invalid controls, 2 governed selections, 1 allowed low-risk shortcut, protected-gate deletion rejection, residual-pricing requirement, reviewer-burden pricing, and no support-state or chapter-core promotion. | implemented |
-| `lean:simulation.fidelity.operational_invariant` | `AsiStackProofs.SimulationFidelity` | A simulation claim includes declared scope, fidelity, and resource bounds. | implemented |
-| `lean:simulation.fidelity.failure_blocks_promotion` | `AsiStackProofs.SimulationFidelity` | An experiment result cannot exceed the declared fidelity support of its simulation. | implemented |
-| `lean:resource.simulation_fidelity.theseus_receipt_suite.fixture_bridge` | `AsiStackProofs.SimulationFidelity` | A sanitized Project Theseus simulation-fidelity receipt-suite import records fixture, contract, adapter, record-count, public-safety, and non-promotion boundaries while rejecting chapter-core, physical-feasibility, benchmark-transfer, and native-KV-parity overclaims. | implemented |
-| `lean:resource.simulation_fidelity.theseus_rlds_minari_trace_export.fixture_bridge` | `AsiStackProofs.SimulationFidelity` | A sanitized Project Theseus RLDS/Minari trace-export import records export readiness, format and field counts, license-metadata and replay-smoke requirements, public-safety boundaries, and no-promotion boundaries while rejecting chapter-core, dataset-quality, and replay-success overclaims. | implemented |
+| `lean:resources.budgets.operational_invariant` | `AsiStackProofs.ResourceEconomicsRefinement` | A reachable allocation lifecycle requires a scoped request, explicit resource inventory and units, direct, displaced, verification, and uncertainty costs, protected floors, bounded capacity, reviewer and verifier capacity, queue policy, observed spend, useful-outcome accounting, verification, reconciliation, and closure. | implemented |
+| `lean:resources.budgets.failure_blocks_promotion` | `AsiStackProofs.ResourceEconomicsRefinement` | Missing protected floors, reviewer capacity, failure retention, or evidence-transition accounting blocks the corresponding allocation stage; raw resource proxies cannot promote support. | implemented |
+| `lean:resources.costed_route.fixture_bridge` | `AsiStackProofs.ResourceEconomicsRefinement` | The stronger lifecycle digest-binds the bounded four-route cost fixture while preserving its two eligible and two rejected routes and its fixture-specific 66.98% arithmetic without inferring economic optimality. | implemented |
+| `lean:resources.workflow_trace.trace_property_bridge` | `AsiStackProofs.ResourceEconomicsRefinement` | The stronger lifecycle digest-binds the three-step workflow result and requires queue policy, high-risk priority, protected overhead, residual ownership, actual spend, verification outcome, variance, incidents, descendants, and closure. | implemented |
+| `lean:resources.capacity_smoothing.reviewer_trace_bridge` | `AsiStackProofs.ResourceEconomicsRefinement` | Reservation and scheduling require capacity, reviewer and verifier capacity, protected overhead, debt expiry, an owner, high-risk priority, tenant isolation, tail policy, fallback, and later variance and opportunity-cost reconciliation. | implemented |
+| `lean:resources.serving_memory.separation_guard` | `AsiStackProofs.ResourceEconomicsRefinement` | Observed resource bills and useful outcomes remain separate, and raw throughput, memory, or cost proxies cannot promote support without verification and evidence-transition accounting. | implemented |
+| `lean:resource.governance_tax.tradeoff_bridge` | `AsiStackProofs.ResourceEconomicsRefinement` | The lifecycle digest-binds the three-scenario governance-tax fixture while keeping its two governed choices and one low-risk shortcut explicitly synthetic, cost-complete only within the fixture, and non-promotional. | implemented |
+| `lean:simulation.fidelity.operational_invariant` | `AsiStackProofs.ResourceEconomicsRefinement` | Transported simulation claims require explicit scope, fidelity, temporal semantics, resource bills, omissions, and a transfer decision before reconciliation. | implemented |
+| `lean:simulation.fidelity.failure_blocks_promotion` | `AsiStackProofs.ResourceEconomicsRefinement` | A simulated claim above its declared fidelity support is blocked before reconciliation, and missing simulation scope, fidelity, temporal semantics, resource bills, omissions, or transfer decisions cannot pass. | implemented |
+| `lean:resource.simulation_fidelity.theseus_receipt_suite.fixture_bridge` | `AsiStackProofs.ResourceEconomicsRefinement` | The lifecycle digest-binds the sanitized five-scenario, six-receipt Theseus simulation result while preserving its seven invalid controls and excluding physical-feasibility, benchmark-transfer, native-parity, deployment, and support claims. | implemented |
+| `lean:resource.simulation_fidelity.theseus_rlds_minari_trace_export.fixture_bridge` | `AsiStackProofs.ResourceEconomicsRefinement` | The lifecycle digest-binds the sanitized one-ready-export, three-format, seven-field Theseus trace result while preserving its seven invalid controls and excluding dataset-quality, replay-success, deployment, and support claims. | implemented |
 
 ### Mathematical and Search Substrates
 
@@ -3352,7 +3809,7 @@ Stable ID: `mathematical-and-search-substrates`
 
 Chapter job: The source corpus contains exploratory mathematical/search substrates that may matter but must not be overclaimed.
 
-Core claim: Coils, calculi, and geometric search belong in the stack as optional specialist substrates until tests show where they improve search, routing, or compression.
+Core claim: Mathematical and Search Substrates owns a consumer-, use-, workload-, claim-axis-, implementation-, baseline-, resource-, and time-specific Substrate Adoption Lease: an unusual calculus, representation, recurrence, search procedure, latent world model, or sequence backbone may affect only the axes and consumers that pass matched ordinary and current baselines, negative controls, complete cost and rights accounting, falsification, fallback, independent reproduction, and transfer; structural elegance, a theorem, a source-reported benchmark, synthetic fixture validity, or one favorable axis alone confers no general quality, efficiency, safety, support, deployment, or SOTA authority.
 
 Source loading queue:
 
@@ -3360,56 +3817,45 @@ Source loading queue:
 |---|---|---|
 | Primary | `genesiscode`, `temporal_coil_research` | Read first for chapter claims and mechanisms. |
 | Supporting | `cognitive_compilation`, `treellm`, `simulation_scaling`, `circle_calculus_core`, `circle_ai_architectures`, `proof_carrying_circular_computation`, `theseus_circle_transfer` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
-| External literature variants | `ext_mamba_2023` | Read for state-space/recurrent sequence-substrate context; treat reported model results as source-reported until reproduced. |
+| External literature variants | `ext_mamba_2023`, `ext_v_jepa_2_2025` | Read for state-space/recurrent and latent-prediction substrate context; treat reported model results as source-reported until reproduced. |
 | Recurrent-transformer comparators | `ext_universal_transformer_2019`, `ext_recurrent_transformer_2026` | Use for shared-weight depth recurrence, adaptive halting, recurrent KV state, and effective-depth tradeoffs. Preserve theoretical-assumption, scale, kernel, and local-reproduction limits. |
 | Connector or recovery required | `coilmoecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `ext_v_jepa_2_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The source corpus contains exploratory mathematical/search substrates that may matter but must not be overclaimed.
 - Insufficiency: Novel substrates can become authority theater if they are not tied to baselines, adoption gates, and falsification criteria.
-- Mechanism: Register each coil, calculus, geometric, graph, compiler-IR, or state-space substrate as an exploratory candidate with intended use, authority boundary, and adoption state.
+- Mechanism: Run an eighteen-stage adoption lifecycle from versioned registration and consumer/axis binding through prospective baselines, structural receipts, inspectable implementation, negative controls, natural workloads, joint axis/cost measurement, least-authority canary, drift monitoring, executable fallback, independent reproduction, heterogeneous transfer, expiry, and residual ownership.
 - Mechanism: Require expected advantage, ordinary baselines, negative controls, proof boundary, workload, metric, report, consumer gate, axis ledger, non-claims, and falsification condition before canary use.
 - Mechanism: Route experiments through exploratory, canary, qualified, retired, or blocked evidence gates before broader adoption.
 - Mechanism: Keep backbone efficiency, proof readiness, fast-generation acceleration, compression, search quality, routing quality, and downstream task quality as separate axes.
 - Mechanism: Treat optionality as a positive adoption state so promising substrates can be tested through narrow routes without becoming load-bearing architecture before evidence exists.
 - Mechanism: treat adoption records as routing permissions with operational states such as exploratory, structural-only, canary, qualified-for-scope, blocked, retired, or superseded, using machine-readable values such as `structural_only` and `qualified_for_scope`.
 - Mechanism: maintain a four-lane adoption packet for structural facts, empirical workload evidence, consumer permissions, and retirement/falsification behavior.
-- Interface: Routing treats substrate as specialist.
-- Interface: Compression tests representation efficiency.
-- Interface: Evidence compares against baselines.
-- Interface: Fast-generation routes may consume substrate evidence, but adoption remains gated by substrate-specific A/B records.
+- Interface: Preserve twelve owner boundaries across Intent; Planning/Compilation; Context/Representation; Routing; Fast Generation; Deliberation; Resource Economics; Verification/Proof; Security/Privacy/Rights; Runtime/Artifacts; Readiness/Incident/Release; and Claims/Evidence.
 - Interface: maintain an axis ledger for structure, speed, memory, routing quality, compression quality, search quality, verifier burden, and downstream task quality.
 - Interface: require consumer gates, consumer policies, routing-permission effects, fallback substrates, and retirement/supersession paths so a substrate record can support structural discussion without supporting routing, compression, runtime, or model-quality promotion.
 
 Primary invariants:
 
-- Exploratory claims stay exploratory.
-- Baselines are recorded.
-- Failed hypotheses remain visible.
-- Backbone-efficiency claims do not imply search, routing, compression, or reasoning-quality gains.
-- Negative controls remain attached after favorable results.
-- A consumer may not rely on an unmeasured, blocked, or explicitly excluded substrate axis.
+- The manifest carries eighteen invariants: lease scope and operational states; theorem and claim-axis separation; prospective strong controls; resource matching; complete denominators; tails and subgroups; total burden; consumer gating; source/fixture/theorem non-promotion; executable fallback; expiry; independent reproduction; heterogeneous transfer; exact transition authority; finite optionality; and residual ownership.
 
 Failure modes to cover:
 
-- Performance overclaiming.
-- Opaque math treated as proof.
-- Adoption without regression tests.
-- Sequence-model throughput treated as evidence for unrelated substrate quality.
-- Theorem spillover: structural proofs are used to imply speed, search, compression, or reasoning quality.
+- The manifest carries eighteen matched failure modes spanning elegance authority, theorem spillover, weak baselines, outcome-driven selection, axis averaging, throughput laundering, hidden search cost, denominator censorship, fixture/model confusion, consumer-axis leakage, broken fallback, premature centrality, shared defects, rights omission, unsupported generalization, permanent exploratory status, imported source results, and sunk-cost resistance to retirement.
 
 Draft deliverables:
 
-- A technical-substrate appendix plan with experiment matrix and adoption gates.
+- A precise Substrate Adoption Lease and eighteen-stage lifecycle; the current minimum remains one schema-valid record, four valid synthetic states, eight rejected mutations, and eleven finite theorem declarations, with no implemented candidate benefit.
 - Implemented repository-level fixture: `substrate_adoption_record.valid.json` validates substrate-adoption record shape, baseline obligations, consumer gate/policy, axis ledger, routing-permission effect, fallback substrate, retirement/supersession path, support-state effect, and non-claims only; no A/B run, representation-efficiency benchmark, CoilMoECOT benchmark, or Circle substrate-adoption build exists yet. The separate external rope receipt slice does not validate substrate adoption.
 - Implemented Codex test: Substrate adoption trace. `python3 scripts/validate_substrate_adoption_trace.py` validates four synthetic substrate-adoption trace states (`valid_exploratory_registration`, `valid_structural_only_receipt`, `valid_consumer_axis_blocked`, and `valid_negative_control_retirement`) plus eight expected-invalid controls for missing baseline, missing falsification condition, theorem spillover, unmeasured-axis routing, failed-control promotion, missing fallback, support-promotion overclaim, and missing non-claim boundary. This is no substrate A/B test, representation-efficiency result, search-quality result, routing-quality result, compression-quality result, model-quality result, runtime result, Circle/CoilMoECOT/Mamba/TreeLLM/Theseus adoption validation, support-state transition, or chapter-core promotion claim.
 - Planned Codex test: Baseline comparison test.
 - Planned Codex test: Representation efficiency test.
 - Planned Codex test: Falsification review.
 - Planned Codex test: Sequence-substrate A/B comparison test.
+- Argument-exit campaign: implement a bounded cyclic/geometric search candidate, graph/semantic representation candidate, and recurrent/state-space/latent-prediction candidate on natural workloads; compare against ordinary, strongest-current, simple-ablation, and embarrassing controls under matched information and resources; measure fidelity, verified search, routing, downstream utility, complete resource and human burden, verifier cost, safety, rights, fallback, recovery, and residuals jointly; require causal signatures, independent implementation/evaluation, and heterogeneous transfer; allow narrowing, null, refutation, retirement, or blocked-after-full-attempt as honest terminal outcomes.
+- Formal audit: all eleven current theorem declarations are finite record consequences—three direct projections, five derived negative cases, and three authored trace-fixture consequences—not implementation refinement, substrate usefulness, liveness, recovery, reproduction, transfer, or SOTA proof.
 
 Lean proof targets:
 
@@ -3425,7 +3871,7 @@ Stable ID: `circle-calculus-and-proof-carrying-ai-contracts`
 
 Chapter job: The stack needs a way to turn selected mathematical and AI-infrastructure claims into theorem-linked, machine-readable contracts without treating proofs as model-quality evidence.
 
-Core claim: Proof-carrying AI contracts should package finite structural facts as theorem-linked receipts with deterministic fields, consumer gates, validation commands, and explicit non-claims.
+Core claim: Circle Calculus and Proof-Carrying AI Contracts owns a theorem-, model-, artifact-, implementation-, consumer-, claim-, version-, and time-specific Proof Contract Transport Envelope: a finite formal fact may travel only with resolvable proof identity, exact assumptions and semantics, source and toolchain provenance, content fingerprints, deterministic recomputation or replay, least-authority consumer gates, expiry and revocation, and preserved non-claims; theorem validity, receipt readiness, archive integrity, or transport success alone confers no model-quality, runtime, memory, safety, deployment, transfer, support, or SOTA authority.
 
 Source loading queue:
 
@@ -3438,31 +3884,17 @@ Draft arc:
 
 - Problem: The stack needs a way to turn selected mathematical and AI-infrastructure claims into theorem-linked, machine-readable contracts without treating proofs as model-quality evidence.
 - Insufficiency: Ordinary prose, tests, and diagrams can show intent, but they do not give downstream systems stable theorem IDs, proof status, receipt fingerprints, replay checks, and explicit non-claims.
-- Mechanism: Admit a finite circular address, schedule, window, or phase model only when the engineering object is faithfully represented at that boundary.
-- Mechanism: Emit a proof-carrying receipt with theorem IDs, proof status, dictionary IDs, fingerprints, deterministic fields, validation commands, replay checks, consumer gates, and explicit non-claims.
-- Mechanism: Preserve the receipt boundary in downstream consumers and require workloads, ordinary baselines, negative controls, metrics, scripts, and evidence artifacts before any quality, runtime, memory, or transfer claim is promoted.
-- Mechanism: Separate proof authority from consumer authority: theorem-linked structural facts can be necessary for downstream use but never sufficient for substrate promotion.
-- Mechanism: Record proof policy, source version, content fingerprint, resolver status, validation command, failure behavior, consumer requirements, and non-claims so stale references become visible residuals.
-- Mechanism: treat proof-contract receipt states such as theorem-linked, dictionary-bound, fingerprinted, resolver-checked, consumer-gated, workload-blocked, and retired/superseded as transport states rather than model-quality states.
-- Interface: Lean and proof manifests supply theorem status.
-- Interface: Python or CLI tools emit receipts and validation reports.
-- Interface: Theseus-style private experiments consume contracts without importing private results into public claims.
-- Interface: The evidence matrix records claim boundaries and support states.
-- Interface: `proof_contract_receipt_record` records receipt state, finite-model scope, proof boundary, theorem refs, proof status, source version, fingerprint field/status, deterministic fields, verifier state, resolver/replay state, consumer gate/state, staleness policy, failure behavior, source refs, support-state effect, evidence refs, and non-claims.
+- Mechanism: Run an eighteen-stage transport lifecycle from exact theorem/model/consumer registration and pinned source/toolchain through build, unique resolution, semantic refinement, canonical fingerprints, deterministic recomputation, non-claims, schema validation, clean replay, adversarial mutations, least-authority gating, separate empirical admission, authenticated artifact transport, drift and descendant invalidation, fallback/recovery, independent reproduction/transfer, expiry, and residual ownership.
+- Interface: Preserve twelve owner boundaries across Formal Methods; Executable Specifications; Artifact/Supply Chain; Runtime; structural consumers; Verification; Security/Privacy/Rights; Resource Economics; Claims/Evidence; Readiness/Incident; Release; and private/public-safe result separation.
+- Interface: `proof_contract_receipt_record` remains the machine-readable envelope for receipt state, formal scope, theorem refs, provenance, fingerprints, deterministic fields, verifier and replay state, consumer gate, staleness, failure, support effect, evidence, and non-claims.
 
 Primary invariants:
 
-- Proof status is not a model-quality claim.
-- Python tests and diagrams are evidence, not formal proof.
-- Consumer readiness is not downstream success.
-- Non-claims survive transfer into later chapters.
+- The manifest carries eighteen invariants: exact scope; unique compiled resolution; proof/state separation; semantic-refinement separation; canonical fingerprint coverage; reproducible fields; reference closure; non-claim preservation; least authority; separate empirical evidence; fail-closed invalidity; descendant revocation; executable fallback; independent reproduction; private/public separation; exact transition authority; expiry; and residual ownership.
 
 Failure modes to cover:
 
-- Theorem laundering into quality claims.
-- Stale or failed theorem IDs.
-- Missing baseline or negative-control experiments.
-- Exact finite models mistaken for real-valued deployment behavior.
+- The manifest carries eighteen matched failures spanning theorem cargo-culting, wrong or stale resolution, model mismatch, discrete-to-real overreach, incomplete hash/trust coverage, shallow replay, hidden nondeterminism, lost non-claims, readiness laundering, consumer widening, empirical-gate waiver, incomplete revocation, broken fallback, shared defects, private-result inference, fixture-to-service overclaim, rope-result generalization, and excessive governance cost.
 
 Draft deliverables:
 
@@ -3489,6 +3921,8 @@ Draft deliverables:
 - Planned Codex test: Theorem-id resolution test
 - Planned Codex test: Non-claim preservation test
 - Planned Codex test: Receipt replay and fingerprint test
+- Argument-exit campaign: run natural multi-consumer transport against signed manifests, hashes, schemas, tests, SBOM/provenance systems, and ordinary versioned APIs; measure unique resolution, statement and semantic-refinement accuracy, false accept/refuse, clean replay, tamper/staleness detection, descendant revocation, liveness, fallback/recovery, latency, complete cost, rights, consumer misuse, and residuals; require adversarial mutations, causal component ablations, independent producers/resolvers/consumers, and heterogeneous transfer while keeping downstream empirical claims separate.
+- Formal audit: the ten current declarations are two direct record projections, seven derived finite or negative consequences, and one authored public-gate fixture bridge; none proves resolution soundness, statement equivalence, semantic refinement, authenticated transport, descendant revocation, liveness, recovery, independent reproduction, downstream utility, or transfer.
 
 Lean proof targets:
 
@@ -3506,7 +3940,7 @@ Stable ID: `coil-attention-cyclic-memory-and-recurrence-contracts`
 
 Chapter job: Memory, attention, and recurrence mechanisms need finite structural contracts for aliasing, coverage, freshness, active work, loop exits, and overthinking boundaries.
 
-Core claim: Coil attention and memory contracts should be used as structural guardrails for cyclic memory, sparse coverage, recurrence schedules, and work-budget admission, not as claims of retrieval or reasoning quality.
+Core claim: Coil Attention, Cyclic Memory, and Recurrence Contracts owns a memory-object-, state-version-, request-, consumer-, workload-, structural-axis-, budget-, and time-specific State-Carry and Recurrence Admission Lease: a slot read, cyclic address, KV reuse, sparse edge, fanout schedule, or recurrent step may be admitted only when authority, provenance, residue and winding, freshness, coverage, alias and collision state, active work, progress, exit, fallback, expiry, and residuals satisfy the exact consumer contract; structural validity, synthetic fixtures, receipt replay, cache presence, or reduced scheduled work alone confers no retrieval, reasoning, context-length, quality, speed, memory, safety, deployment, transfer, support, or SOTA authority.
 
 Source loading queue:
 
@@ -3583,7 +4017,7 @@ Stable ID: `coilra-multicoil-rope-and-cyclic-mixers`
 
 Chapter job: Position encodings, adapters, route heads, and mixers need a place for cyclic or block-cyclic structure that separates structural invariants from quality and runtime claims.
 
-Core claim: CoilRA, MultiCoil RoPE, and cyclic mixers should be treated as optional specialist substrates whose structural guarantees must be paired with dense, LoRA, RoPE, learned, recurrent, or state-space baselines before adoption.
+Core claim: CoilRA, MultiCoil RoPE, and Cyclic Mixers owns a model-, layer-, mechanism-version-, workload-, baseline-, kernel-, hardware-, claim-axis-, and time-specific Cyclic Mechanism Tradeoff Packet: a cyclic adapter, phase bank, rotary scheme, route head, circulant operator, or block-cyclic mixer may enter a canary only when exact residue/winding, phase horizon, alias/collision/load, dense-reference parity, parameter and operation accounting, numerical error, kernel availability, complete cost, quality, failure, fallback, and rights evidence is matched against strong ordinary controls; equivariance, finite proofs, receipt validity, parameter reduction, or structural parity alone confers no quality, context-length, speed, memory, stability, efficiency, safety, deployment, transfer, support, or SOTA authority.
 
 Source loading queue:
 
@@ -3602,11 +4036,13 @@ Draft arc:
 - Mechanism: Promote the substrate only after quality, runtime, memory, parameter, transfer, and failure-case tradeoffs are measured against ordinary baselines and negative controls.
 - Mechanism: Keep structural, resource, and empirical ledgers separate so exact cyclic facts, parameter accounting, and measured workload behavior cannot spend evidence credit for one another.
 - Mechanism: use cyclic tradeoff packets with structural receipts, workload target, receipt refs, baseline set, baseline-symmetry policy, negative controls, resource costs, metrics status, consumer policy, hardware refusal path, adoption rationale, and non-claims.
+- Lifecycle: register the exact mechanism and scope; justify workload-native cyclic structure; freeze strong and negative controls; pin receipts and abstraction boundaries; compute phase, winding, alias, collision, and load diagnostics; test dense-reference parity; account for all parameters, state, operations, traffic, and governance work; build real kernels; preregister natural workloads; run structural and overclaim mutations; execute matched canaries with complete failure denominators; measure useful and harmful outcomes jointly; run causal ablations; issue least authority; monitor; refuse or retire on failure; reproduce and transfer independently; then expire the packet and assign every residual.
 - Interface: Semantic representation chapters define when cyclic structure is actually present.
 - Interface: Routing heads or rankers may consume cyclic features only inside declared authority and evidence boundaries.
 - Interface: Resource-economics chapters account for parameters, kernels, memory, and latency.
 - Interface: Proof contracts and prototype experiments keep structural facts separate from performance results.
 - Interface: consumers can accept a structural receipt for diagnostics, reject it for quality promotion, or require benchmark evidence before canary routing.
+- Ownership boundary: Mathematical and Search Substrates owns general adoption and consumes this cyclic-specific packet. Proof transport owns receipt integrity; representation/context own semantic and positional meaning; routing owns route selection; state-carry owns recurrence admission; training owns optimizer and convergence behavior; runtime owns kernels and devices; resource economics owns complete cost; verification owns task and evaluator adequacy; security/privacy/rights own constraints; readiness owns canary, rollback, and release; claims/evidence owns transitions, expiry, and residual lineage.
 
 Primary invariants:
 
@@ -3616,6 +4052,7 @@ Primary invariants:
 - Hardware-friendly sizes and kernel costs are recorded.
 - Real-valued RoPE claims are separated from exact integer phase-bank claims.
 - Baseline symmetry is required before a cyclic tradeoff is called favorable.
+- The full eighteen-invariant set also preserves exact packet scope, workload-native justification, claim-axis separation, finite-to-real boundaries, visible winding and tail risk, scoped dense parity, complete parameter/state/byte and operation/governance accounting, matched engineering effort, complete failure denominators, executable fallback, change-triggered expiry, independent reproduction, exact transition authority, no private-result inference, and owned residuals.
 
 Failure modes to cover:
 
@@ -3624,6 +4061,7 @@ Failure modes to cover:
 - Lower parameter count comes with worse quality or runtime.
 - Phase aliases are hidden by residue-only diagnostics.
 - Cyclic favoritism: theorem language, tuned hyperparameters, or custom hardware assumptions benefit the cyclic candidate while baselines are weakened.
+- The full eighteen-failure set also covers theorem laundering, finite-to-floating-point overreach, hidden winding/load, toy parity overclaim, incomplete parameter or operation accounting, unequal kernel engineering, silent slow paths, weak controls, outcome-driven search, censored failures, means hiding rare collapse, imported source results, unsupported hardware transfer, broken fallback, causal nulls preserved as wins, and sunk-cost resistance to retirement.
 
 Draft deliverables:
 
@@ -3640,6 +4078,43 @@ Draft deliverables:
 - Planned Codex test: Cyclic mixer baseline matrix test
 - Planned Codex test: Residue/winding alias diagnostic
 - Planned Codex test: Parameter-quality-runtime separation test
+
+Exact current minimum: one schema-valid evaluation record; one inherited RoPE
+structural receipt boundary; one Circle cyclic-mixer receipt with bounded
+dense-reference parity and parameter accounting; one MultiCoil phase receipt
+with finite phase and relative-shift facts; two no-change decisions; and seven
+finite local theorem declarations. There is no trained cyclic model, natural
+workload, matched baseline matrix, real kernel or hardware benchmark, measured
+quality/context/runtime/memory/stability benefit, independent reproduction,
+transfer, or chapter-core transition.
+
+Argument-exit campaign: implement actual CoilRA, MultiCoil, circulant, and
+block-cyclic candidates on natural language-modeling, long-context,
+adaptation, phase-sensitive, and routing/mixer workloads. Compare them with
+tuned dense, LoRA, ordinary RoPE, learned-position, recurrent, state-space,
+wrong-period, random-phase, nonperiodic, and no-mechanism controls under frozen
+data, splits, lengths, seeds, scale, tuning, hardware, kernel, precision,
+batching, metrics, failure states, and promotion rules. Measure structural and
+numerical integrity, quality/calibration/context/robustness,
+convergence/stability, latency/tails/throughput, full
+memory/traffic/energy/parameter/operation burden, human/verifier cost,
+safety/rights, fallback/recovery, and residuals. Identify the mechanism by
+matched causal ablations, independent mechanism/kernel/evaluator
+implementations, and heterogeneous transfer. A competent result may qualify a
+narrow use, narrow/null/refute/retire a claim, or end
+`blocked_after_full_attempt`; the core remains `argument` until the gates pass.
+
+Formal audit: the seven declarations comprise two direct record projections
+(`cyclic_mixer_claim_records_structure_separately_from_quality_runtime_memory_and_parameters`
+and `cyclic_substrate_promotion_requires_baselines_and_tradeoff_metrics`) plus
+five derived finite negative cases for missing partitions, missing baselines or
+tradeoffs, alias review without winding/residuals, an incomplete packet, and a
+hardware mismatch without refusal. They prove no cyclic semantics, general
+functional equivalence, numerical stability, trained quality, context use,
+kernel behavior, runtime, memory, parameter efficiency, fallback liveness,
+reproduction, or transfer. Future useful proofs should target mechanism
+semantics, numerical refinement, kernel equivalence, countermodels, and
+recovery liveness where a real consumer depends on them.
 
 Lean proof targets:
 
@@ -3666,7 +4141,7 @@ Stable ID: `executable-specifications-and-lean-proof-envelope`
 
 Chapter job: The book needs to decide which architecture claims should become executable specs or Lean proofs.
 
-Core claim: Lean proofs and executable specs should target small invariants: authority, support states, SCF replacement, job lifecycle, context adequacy, and residual records.
+Core claim: Executable Specifications and Lean Proof Envelope owns a proposition-, predicate-, abstraction-, artifact-, verifier-, consumer-, implementation-, version-, environment-, and time-specific Formal Artifact Authority Lease: a schema, executable model, Lean theorem, model-checking result, runtime monitor, behavior test, benchmark, or external theorem may authorize only the exact consumer statement whose operational semantics, abstraction map and losses, assumptions, dependency closure, verifier result, semantic adequacy, implementation binding, limitations, non-claims, expiry, and revocation path are recorded; artifact existence, field presence, a finite route, proof depth, a green build, a passing fixture, or an external theorem identity alone confers no deployed enforcement, empirical truth, system safety, source correctness, support promotion, transfer, or SOTA authority.
 
 Source loading queue:
 
@@ -3692,11 +4167,13 @@ Draft arc:
   bind each to an abstraction map, explicit assumptions, by-construction
   properties, excluded runtime behavior, artifacts, verifiers, and authorized
   consumer language.
+- Lifecycle: register the exact proposition and consumer authority; decompose broad language and preserve the unproved remainder; route the predicate to its proper artifact lane; define abstraction maps and semantic losses; state trusted bases and environment assumptions; specify valid/invalid states plus safety, liveness, resource, recovery, and counterexample obligations; freeze identities and dependencies; build in a pinned environment; check refinement to executable model and implementation; run vacuity, inconsistency, unreachable-state, mutation, countermodel, adversarial-schedule, stale-artifact, and wrong-consumer controls; audit the declaration graph; review semantic adequacy; bind any runtime claim; issue least authority; monitor staleness; revoke or retire on failure; reproduce independently; and expire with lineage and residuals preserved.
 - Interface: Outline defines proof scope.
 - Interface: Lean modules implement selected invariants.
 - Interface: Validation checks proof-manifest consistency.
 - Interface: consumers may rely on a proof only when proof lane, command, artifact path, version, and non-claims match their required use.
 - Interface: proof consumers must also respect semantic adequacy state before using a finite predicate to strengthen prose.
+- Ownership: chapter owners define the proposition; Claims/Evidence owns support transitions; Proof Transport owns identity and integrity; schemas own shape; proof tools own derivations inside declared models; executable specifications own bounded traces; Runtime/Serving/Security own actual enforcement; Benchmarks/Verification own empirical adequacy; Source/Artifact/Supply Chain own provenance and rights; Resource Economics owns proof and monitor cost; Readiness/Incident/Release owns canary and public authority; Living-Book/Change Governance owns stable tags, synchronization, expiry, and lineage.
 
 Primary invariants:
 
@@ -3707,6 +4184,7 @@ Primary invariants:
 - Every abstraction mapping discloses semantic loss; clock, concurrency,
   event-completeness, and adversarial-log assumptions remain explicit; an
   unbound implementation cannot authorize a runtime claim.
+- The full eighteen-invariant set also requires exact lease scope, visible unproved remainders, distinct artifact lanes, explicit trusted bases, separated safety/liveness/resource/empirical obligations, green-build restraint, exclusion of vacuous or unconsumed declarations from authority, stable dependency and consumer links, exact external-theorem hypotheses and non-ownership, visible failures, least-authority composition, change-triggered expiry, descendant-complete revocation, independent-error separation, and ownership of every semantic loss and residual.
 
 Failure modes to cover:
 
@@ -3717,15 +4195,16 @@ Failure modes to cover:
 - Semantic-depth laundering: field presence is presented as a derived
   invariant, a finite route as deployed enforcement, or an executable bridge as
   implementation binding.
+- The full eighteen-failure set also covers decorative theorem counts, trivial predicates carrying broad claims, artifact-lane laundering, direct projections marketed as derivations, erased concurrency and open-world behavior, category errors between safety/liveness/resource/empirical claims, vacuous or inconsistent models, stale tags and consumers, duplicate/orphan/unused proof bloat, unresolved external hypotheses, censored failures, wrong-scope consumer use, hidden proof and monitor cost, unsupported support movement, incomplete descendant revocation, and sunk-cost resistance to retirement.
 
 Draft deliverables:
 
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 231 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 231 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 298 proof targets, 65 Lean modules, 1151 theorem declarations, 952 derived/decomposed, 187 direct/projection, 12 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 298 proof targets, 90 Lean modules, 1243 theorem declarations, 882 derived/decomposed, 208 direct/projection, 153 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -3734,11 +4213,47 @@ Draft deliverables:
 - Implemented Codex test: External theorem reference boundary negative case.
 - Implemented Codex test: Proof artifact traceability audit.
 - Implemented Codex test: Proof-depth surface synchronization, via `python3 scripts/validate_proof_depth_surface.py`, so the live chapter, reader chapter, outline, and roadmap expose the current proof-depth classification counts and direct/projection versus derived/decomposed distinction without promoting proof-envelope support.
-- Implemented Codex test: Semantic proof adequacy audit, via `python3 scripts/validate_proof_adequacy_review.py`, checking the adequacy review table against all 231 manifest proof targets, the generated proof-depth snapshot, and no-support-promotion boundary language.
+- Implemented Codex test: Semantic proof adequacy audit, via `python3 scripts/validate_proof_adequacy_review.py`, checking the adequacy review table against all 298 manifest proof targets, the generated proof-depth snapshot, and no-support-promotion boundary language.
 - Implemented Codex test: formal semantic-depth fixture, via `python3
   scripts/validate_formal_semantic_depth.py`, with one blocked three-project
   record and ten mutations separating five depth lanes, assumptions, runtime
   exclusions, implementation binding, and no-promotion boundaries.
+
+Exact current minimum: one proof-target schema and valid fixture; one generated
+298-target manifest; a 65-module Lean workspace whose complete build reports 68
+jobs and 1,151 declarations classified as 952 derived/decomposed, 187
+direct/projection, and 12 unknown/mixed; a proof-readiness classification of 13
+adequate finite-record, 212 useful-but-narrow, 18 richer-state-machine, 35
+executable-test-first, 18 empirical-test-first, and two research-agenda
+targets; one wiring-only artifact audit; one adequacy-review surface; one
+blocked semantic-depth record with ten rejecting mutations; and seven local
+ProofEnvelope declarations. No complete stack formalization, deployed
+enforcement proof, general refinement, independent formal reproduction,
+empirical result, chapter-core transition, or SOTA result follows.
+
+Argument-exit campaign: audit every proposition, all 298 activation-baseline
+targets, and all 1,151 activation-baseline declarations for semantic necessity,
+assumptions, vacuity, reachability, dependencies, consumers, and implementation
+binding. Merge, replace, or retire projections, assumption restatements,
+duplicates, unused theorems, orphans, misleading names, and unconsumed
+traceability unless a named consumer needs them. Replace load-bearing gates
+with appropriate transition, temporal, concurrency, noninterference, resource,
+recovery, probabilistic, or refinement models; move behavior and performance to
+executable and empirical lanes; run countermodels, mutations, adversarial
+schedules, stale-consumer and revocation controls; require independent tools,
+implementations, and evaluators for decisive claims; and preserve narrow, null,
+refuted, retired, or `blocked_after_full_attempt` outcomes. Counts and green
+builds are non-terminal.
+
+Formal audit: the seven `ProofEnvelope` declarations are two direct
+projections (`implemented_target_has_module_and_passing_build` and
+`non_operational_target_remains_planned_or_blocked`) plus five derived finite
+negative cases covering non-operational implementation, missing module/build,
+non-Lean proof laundering, unsupported support promotion, and unresolved
+external theorem references. They do not discover artifacts, prove semantic
+adequacy or implementation refinement, check deployed enforcement, validate
+external applicability, prove system safety, measure capability or cost, or
+establish reproduction and transfer.
 
 Lean proof targets:
 
@@ -3762,7 +4277,7 @@ Stable ID: `benchmark-ratchets-and-anti-goodhart-evidence`
 
 Chapter job: The architecture needs a way to move capability claims through evidence without overfitting to fixed benchmarks.
 
-Core claim: Benchmark ratchets should preserve regressions, create harder frontiers, record residuals, and resist Goodhart pressure.
+Core claim: Benchmark Ratchets and Anti-Goodhart Evidence owns a construct-, task-, dataset-, metric-, harness-, model-, checkpoint-, output-, evaluator-, baseline-, retry-lineage-, budget-, environment-, claim-axis-, and time-specific Benchmark Instrument Lease: a score or evaluation event may update only the exact claim whose construct validity, target capacity, data and metric provenance, output binding, contamination and public-calibration boundary, strong baselines and negative controls, complete selection and failure lineage, regression floors, frontier state, uncertainty, costs, causal checks, transfer, residuals, and decision authority survive review; a green fixture, synthetic probe, source-reported result, leaderboard gain, held-out score, saturation label, or archived winner alone confers no capability, safety, readiness, deployment, unlearning, support, transfer, or SOTA authority.
 
 Source loading queue:
 
@@ -3792,9 +4307,11 @@ Draft arc:
 - Mechanism: nest a Metric Provenance Record that classifies each value as measured, derived, recomputed, modeled, fixture, constant, declared, proxy, vacuous, source-reported, or unknown.
 - Mechanism: inherit prior regression floors, exclusions, contamination findings, and residuals across descendant benchmark closures unless an explicit override is recorded.
 - Mechanism: reject metrics when the evaluated architecture cannot express the target construct, materially equivalent retries exceed their lineage ceiling, or checkpoint/tokenizer/runtime/raw-output/evaluator/claim binding is incomplete.
+- Lifecycle: register the construct, exact claim, task, data, metric, harness, model, checkpoint/output path, evaluator, baselines, selection lineage, budget, authority, and expiry; validate construct and target capacity; version data, exposure, rights, contamination, and hidden custody; preregister natural/adversarial cases and thresholds; freeze matched baselines and controls; bind metric provenance and raw outputs; preserve retries and discarded candidates; manage candidate/frontier/floor/contamination/quarantine/retirement state; run complete workloads; test leakage, holdouts, shifts, injections, memorization, privacy, and exposure; diagnose walls and saturation; measure useful outcomes, tails, safety, rights, and complete costs jointly; run causal and metric meta-evaluation; issue least authority; inherit floors and residuals; monitor drift; reproduce and transfer independently; then expire or retire with lineage preserved.
 - Interface: Routing and SCFs use readiness gates.
 - Interface: Evidence matrix records support movement.
 - Interface: Changelog records evidence changes.
+- Ownership: Task/Construct owners define behavior; Data/Supply Chain owns provenance, rights, contamination, and hidden custody; Runtime/Tools/Artifacts owns exact execution binding; Evaluator Governance owns scorer validity; Routing/SCFs/Training/Policy/Self-Improvement consumes only accepted leases; Claims/Evidence owns support; Readiness/Thresholds/Safety Cases/Release owns deployment authority; Security/Privacy/Rights owns attacks and erasure claims; Resource Economics owns complete cost; Proof Envelope owns only finite record claims; Unlearning/Continual Learning owns influence and descendant-state semantics; Living-Book/Steward/Change Governance owns synchronized lineage and correction.
 
 Primary invariants:
 
@@ -3803,6 +4320,7 @@ Primary invariants:
 - Regressions are preserved.
 - Source-reported, synthetic, fixture, reproduced, and empirical results remain separate evidence classes.
 - Saturated benchmarks become regression floors rather than broad readiness claims.
+- The full eighteen-invariant set also requires exact instrument scope, construct and target-capacity validity, distinct evidence classes, metric-origin and raw-output traceability, versioned data exposure and rights, matched baseline opportunity, complete selection and failure denominators, descendant inheritance, visible subgroup/tail/adversarial/privacy/retained-capability/cost effects, separately budgeted hidden and contamination checks, no score-to-causality or score-to-deployment inference, review before authority, complete cost, change-triggered expiry, independent-error separation, and owned disputes and residuals.
 
 Failure modes to cover:
 
@@ -3812,6 +4330,7 @@ Failure modes to cover:
 - Evidence-class collapse.
 - Floor/frontier inversion.
 - Metric-origin laundering, architecture-inexpressible targets, retry-lineage laundering, and checkpoint/output disconnects.
+- The full eighteen-failure set also covers undefined constructs; fixture/source-report laundering; public exposure and hidden-holdout reuse; weak baselines; checkpoint-selection and archive-lineage escape; validation overfitting; saturation overclaim; erased floors, failures, and residuals; averages hiding subgroup/tail/privacy/safety/cost damage; evaluator capture and reward gaming; imported external results; unsupported transfer; hidden complete cost; automatic authority movement; and prestige or sunk cost blocking quarantine or retirement.
 
 Draft deliverables:
 
@@ -3825,6 +4344,39 @@ Draft deliverables:
 - Planned Codex test: Floor/frontier split test.
 - Planned Codex test: Source-reported boundary test.
 - Implemented Codex test: Regression preservation test, via `python3 scripts/validate_benchmark_antigoodhart.py` over regression refs and negative-result retention; no empirical regression suite exists.
+
+Exact current minimum: one benchmark-ratchet schema and valid fixture; one
+metric-provenance schema with one valid blocked six-project-lineage record and
+ten rejecting mutations; a synthetic anti-Goodhart harness with two valid and
+five invalid records; one persisted fixture bridge; three proof targets; and
+eight BenchmarkRatchets declarations classified as two direct projections,
+three derived finite decision cases, and three fixture-normalization
+assertions. No natural benchmark, hidden holdout, contamination audit,
+empirical baseline matrix, trained model or policy result, independent
+evaluator, capability/safety/readiness result, deployment, reproduction,
+transfer, unlearning result, chapter-core transition, or SOTA result exists.
+
+Argument-exit campaign: preregister natural, adversarial, temporal, hidden,
+paraphrase, mutation, transfer, contamination, privacy, and tool-use cases;
+validate target capacity; freeze data exposure/rights, harnesses,
+checkpoint-to-output binding, independent evaluators, matched baselines and
+negative controls, budgets, retries, selection lineage, uncertainty, subgroup
+and tail analyses, critical failures, falsifiers, and promotion rules. Preserve
+all candidates and failures; measure utility, calibration, robustness, retained
+capabilities, safety, privacy, rights, runtime, resources, human/verifier
+burden, complete cost, fallback, recovery, and residuals; run causal ablations
+and metric meta-evaluation; reproduce independently; and transfer
+heterogeneously. Narrow, null, proxy, refuted, contaminated, retired, and
+`blocked_after_full_attempt` outcomes are valid; scores and inventory growth
+are non-terminal.
+
+Formal audit: the eight declarations comprise two direct record projections,
+three derived finite decision cases for readiness, floor conversion, and
+contamination, and three fixed fixture-normalization assertions for the
+two-valid/five-invalid bridge. They do not prove construct validity, target
+capacity, metric causality, benchmark adequacy, contamination resistance,
+hidden-holdout integrity, capability, policy quality, safety, unlearning,
+deployment, reproduction, or transfer.
 
 Lean proof targets:
 
@@ -3843,7 +4395,7 @@ deployment response without converting a score, a time-horizon estimate, a
 crossing, or a non-crossing into a general capability, safety, readiness, or
 authority conclusion.
 
-Core claim: A governed stack treats capability thresholds as versioned commitments rather than headline scores: it records the capability domain, threat model, task and evaluation envelope, elicitation and access conditions, threshold definition and uncertainty, baseline and coverage date, required safeguards and verification criteria, deadline, exception authority, residual owner, and release decision; a crossing or non-crossing can alter only the explicitly governed deployment path and cannot by itself establish general capability, safeguard sufficiency, safety, readiness, or authority to deploy.
+Core claim: Capability Thresholds and Deployment Commitments owns a domain-, threat-, assessment-, policy-version-, safeguard-package-, release-path-, authority-, exception-, residual-, and time-specific Capability-to-Deployment Commitment: before outcomes are visible, it binds a scoped crossing, non-crossing, incomparable, or stale assessment to predeclared safeguards, verification criteria, deadlines, access and monitoring constraints, re-evaluation, exceptions, residual custody, rollback, disclosure, and release-path consequences; a score, time-horizon estimate, threshold label, crossing, non-crossing, safeguard record, exception, or green readiness handoff alone confers no general capability, safeguard efficacy, safety, readiness, deployment, support, transfer, or SOTA authority.
 
 Source loading queue:
 
@@ -3863,6 +4415,7 @@ Draft arc:
 - Mechanism: retain assessment, threshold-decision, safeguard-verification, residual-review, and release-authority records separately so a favorable score cannot inherit authority from another layer.
 - Mechanism: version commitments prospectively; preserve change rationale, authority, scope, timing, exception expiry, compensating controls, and residual ownership.
 - Mechanism: route stale, incomparable, under-elicited, unclear, or out-of-scope assessment to re-evaluation, escalation, or residual escrow, and block a crossed threshold with missing verified safeguards.
+- Lifecycle: register domain/threat/path authority; freeze the assessment envelope; define threshold states and allowed consequences; write the prospective commitment; separate assessment through release records; version immutably; check freshness and comparability; re-evaluate invalid states; instantiate and independently exercise safeguards; preserve non-crossing uncertainty; govern exceptions; retain typed portfolio incomparability and cumulative risk; measure false clears/blocks, latency, burden, cost, and residual age; issue least authority; monitor drift; reproduce and transfer independently; then expire, revoke, roll back, refute, or retire with lineage.
 
 Primary invariants:
 
@@ -3870,6 +4423,7 @@ Primary invariants:
 - A score, estimate, benchmark result, crossing, or non-crossing does not establish general autonomy, safety, readiness, or deployment clearance.
 - Required safeguards are separately completed and verified before a crossed threshold can release its affected path.
 - Exceptions preserve scope, rationale, approver, review trigger, compensating controls, and residual owner.
+- The full eighteen-invariant and failure sets preserve prospective policy timing, typed outcome states, separate safeguard existence/completion/verification/efficacy/recovery claims, non-crossing uncertainty, portfolio interactions, change-triggered expiry, visible failures, least-authority exceptions, feasible rollback, accountable disclosure, independent error separation, and owned residuals while rejecting clearance laundering, binary coercion, dashboard collapse, checklist safeguards, stale exceptions, outcome-aware drift, correlated-risk hiding, institutional pressure, dependent verification, unmeasured latency/error, unsafe disclosure, unsupported transfer, and green-readiness-as-safety.
 
 Failure modes to cover:
 
@@ -3886,6 +4440,30 @@ Draft deliverables:
   cover crossed/non-crossed handoff, evaluation scope, baseline, uncertainty,
   residual custody, safeguard declaration, and safeguard verification. Five
   rejecting mutations preserve the no-support and non-claim boundaries.
+
+Exact current minimum: eight valid digest-bound synthetic commitment records,
+five rejecting mutations, and eight derived finite route declarations. No
+model, capability task, time-horizon suite, human baseline, real safeguard,
+bypass test, exception review, independent verifier, readiness service,
+release, deployment, incident response, reproduction, transfer, chapter-core
+transition, or SOTA comparison exists.
+
+Argument-exit campaign: freeze natural and adversarial domain assessments,
+baselines, envelopes, uncertainty, critical failures, thresholds, policy,
+safeguards, verification, exceptions, residuals, monitoring, disclosure,
+rollback, and release consequences before outcomes. Exercise crossing,
+non-crossing, stale, incomparable, contaminated, unavailable/bypassed/degraded
+safeguards, expired exceptions, portfolio interactions, rollback, and recovery;
+measure false clearance/block, stale acceptance, disagreement, misuse, false
+assurance, latency, burden, complete cost, residual age, incidents, fallback,
+and recovery; reproduce independently and transfer. Narrow, null, contested,
+revoked, refuted, retired, and `blocked_after_full_attempt` are valid outcomes.
+
+Formal audit: all eight declarations are derived reductions of one hand-authored
+finite decision tree. They do not prove threshold validity, measurement
+comparability, decision-tree completeness, temporal/concurrent policy
+semantics, safeguard efficacy, exception governance, institutional compliance,
+readiness, safety, deployment, reproduction, or transfer.
 
 Lean proof targets:
 
@@ -3908,7 +4486,7 @@ Chapter job: preserve the elicitation, monitoring, reward, and selection
 conditions of training and evaluation observations so a bounded score or trace
 cannot silently become a capability, safety, or promotion conclusion.
 
-Core claim: A governed stack treats evaluation and training observations as context-bound evidence: it records elicitation, monitor, reward, and selection conditions; probes cross-context discrepancies and interference; and blocks capability, safety, or promotion conclusions when the observation cannot support them.
+Core claim: Adversarial Evaluation, Sandbagging, and Training-Time Deception owns a consumer-, decision-, model-, task-, elicitation-, authority-, monitor-, reward-, selection-, evaluator-, hypothesis-, outcome-, lineage-, and time-specific Evaluation Observation Integrity Packet: before outcomes are inspected, it freezes the permitted inference and comparison design, binds every observable and dependency, separates task outcome from behavioral interpretation, preserves discrepancies, alternatives, failures, costs, mitigation descendants, expiry, and downstream invalidation, and routes only a bounded observation-integrity status to existing evidence and decision owners; no score, trace, discrepancy, detector, mitigation, adversarial pass, quarantine, or complete finite packet alone establishes capability, intent, deception, sandbagging prevalence or resistance, reward fidelity, monitor validity, alignment, safety, readiness, deployment, support, transfer, or SOTA.
 
 Source loading queue:
 
@@ -3924,12 +4502,39 @@ Source loading queue:
 | Manifest assignment reconciliation | `ext_faithfulness_information_flow_2026`, `ext_monitorbench_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
-- Problem: an observed score or trace can change meaning with elicitation,
-  selection, monitor, or reward context.
-- Mechanism: preserve those contexts, cross-context probes, interference
-  findings, residuals, and no-promotion routes in one integrity record.
-- Boundary: source experiments are comparators; no local deceptive model,
-  detector, mitigation, or safety result exists.
+- Problem: an observed outcome changes meaning with its consumer, elicitation,
+  authority, monitor, reward, selection, evaluator, hypothesis, dependencies,
+  and time, while ordinary errors and context effects can be misread as intent.
+- Lifecycle: freeze the inference and design; bind identities and observability;
+  separate outcomes, indicators, interpretations, hypotheses, and routes;
+  justify controls; preregister perturbations and replication; graph evaluator
+  dependencies; calibrate errors; retain full denominators; triage alternatives;
+  create mitigation descendants; propagate invalidation; govern disclosure,
+  cost, expiry, narrowing, refutation, revocation, and retirement.
+- Interfaces: Benchmark, Threshold, Policy, Oversight, Evidence, Artifact,
+  Runtime/Security, Data/Supply Chain, Formal, Readiness/Assurance/Incident/
+  Release, Resource, and Living-Book owners remain distinct; this chapter owns
+  only the observation's inference boundary.
+- Invariants and failures: one-sided elicitation, dependency-based evaluator
+  independence, full denominators, power-bounded nulls, constructed-control
+  limits, descendant mitigations, trace nonprivilege, authorized disclosure,
+  review-not-promotion, expiry, and finite-proof limits block intent, detector,
+  mitigation, evaluator-plurality, outcome-aware, aggregation, compromise,
+  trace-causality, prevalence, hidden-selection, coverage, burden, and reuse
+  laundering.
+- Current minimum: two schemas, eight digest-bound synthetic records—one review
+  route and seven negative routes—five validator mutations, and eight derived
+  finite reductions of one hand-authored decision tree. No model, workload,
+  detector, monitor, evaluator ensemble, reward process, mitigation, attack,
+  decision, release, incident, reproduction, or transfer ran; core effect zero.
+- Argument-exit campaign: natural/adversarial workloads, strong elicitation,
+  matched controls, blinded holdouts, dependency-separated evaluators,
+  calibrated outcomes, complete denominators, causal ablation, mitigation
+  descendants, bypass/fallback/recovery, joint useful-throughput and cost,
+  independent institutional reproduction, and heterogeneous transfer.
+- Formal audit: all eight declarations reduce the finite route function; none
+  models strategic behavior, learning, evaluator error, causal faithfulness,
+  capability, mitigation efficacy, runtime enforcement, safety, or transfer.
 
 Lean proof targets:
 
@@ -3954,7 +4559,7 @@ versioned assurance argument that exposes dependencies, assumptions,
 countercases, and decision boundaries without claiming the argument establishes
 safety.
 
-Core claim: A governed stack compiles a safety case as a versioned, reviewable graph of scoped claims, argument strategies, evidence references, assumptions, defeaters, hazards, deployment context, acceptance criteria, authority, and residual ownership; a rendered or structurally complete graph can expose dependencies and block an affected release when required hazards, countercase review, acceptance criteria, or residuals are unresolved, but cannot itself establish safety, correct threat modeling, evidence adequacy, control effectiveness, readiness, or authority to deploy.
+Core claim: Safety Cases and Structured Assurance owns a deployment-context-, hazard-, claim-, strategy-, evidence-, assumption-, defeater-, safeguard-, threshold-, readiness-, authority-, release-path-, residual-, version-, and time-specific Assurance Argument Compilation Packet: it compiles exact governed references and bounded support or challenge relations, preserves alternatives, dissent, staleness, countercases, conflicts, overrides, costs, lineage, and downstream invalidation, and routes only a scoped case status to existing decision owners; a connected, rendered, notation-conformant, reviewed, accepted, or synthetically complete case alone establishes neither hazard completeness, evidence adequacy, argument validity, reviewer independence, control effectiveness, risk, safety, readiness, release authority, deployment, support, transfer, nor SOTA.
 
 Source loading queue:
 
@@ -3972,6 +4577,36 @@ Draft arc:
 - Mechanism: compile typed claim, strategy, evidence-reference, context, assumption, justification, defeater, countercase, safeguard, threshold, readiness, provenance, and residual nodes with explicit bounded relations.
 - Mechanism: treat active defeaters, stale evidence, missing countercase review, unresolved residuals, and scope mismatch as first-class nodes that route to repair, accountable review, or affected-path block.
 - Mechanism: keep compilation, independent review, case acceptance, readiness, and release as separate records; a complete graph is not a safety, readiness, or authority conclusion.
+- Lifecycle: freeze boundary; compile typed nodes and bounded edges; bind exact
+  evidence; preserve assumptions, outside-envelope hazards, defeaters,
+  countercases, dissent, conflicts, acceptance, and residuals; check freshness;
+  separate structural, semantic, empirical, control, acceptance, readiness, and
+  release states; version and invalidate descendants; govern disclosure; route
+  without authority; and measure quality, disagreement, burden, cost, and age.
+- Interfaces: Evidence, Benchmark/Observation, Threshold, Readiness/Residual,
+  Artifact, Runtime/Security/Oversight, Data/Supply Chain, Formal,
+  Intent/Constitutional/Moral/Governance, Resource, Incident/Rollback/Release,
+  and Living-Book owners remain distinct.
+- Invariants and failures: typed identity, exact edge meaning, authoritative
+  pointers, outside-envelope limits, retained dissent, dependency-based review
+  independence, separate argument families and authority states, immutable
+  receipts, successor invalidation, accountable redaction, complete case
+  history, and visible economics block hazard, countercase, independence,
+  assumption, control, confidence, acceptance, override, version, disclosure,
+  unknown-hazard, and case-factory laundering.
+- Current minimum: two schemas, eight digest-bound synthetic records—one
+  readiness-review route and seven negative routes—five validator mutations,
+  and eight derived finite reductions of one hand-authored decision tree. No
+  real case, hazard analysis, review, safeguard, decision, release, incident,
+  reproduction, or transfer ran; chapter-core effect zero.
+- Argument-exit campaign: preregister natural multi-hazard cases; seed omissions
+  and stale dependencies; run countercase/outside-envelope search, semantic and
+  evidence review, real safeguard checks, conflicts, overrides, invalidation,
+  redaction, fallback, rollback, retirement, causal ablations, joint quality and
+  cost measurement, independent institutional reproduction, and transfer.
+- Formal audit: all eight declarations reduce the finite route function; none
+  proves argument validity, hazard completeness, evidence adequacy, reviewer
+  independence, control effectiveness, risk, safety, or runtime enforcement.
 
 Primary invariants:
 
@@ -4012,7 +4647,7 @@ Stable ID: `policy-optimization-and-learning-from-feedback`
 
 Chapter job: A governed stack needs to convert feedback, verification, benchmark pressure, and failure into better future behavior without allowing reward signals to bypass evidence, authority, or rollback boundaries.
 
-Core claim: Policy optimization is the stack's learning actuator: it can update planners, routers, context selectors, verifiers, execution policies, and generators, but governance decides which feedback is admissible and whether any update may be promoted.
+Core claim: Policy Optimization and Learning from Feedback owns a target-policy-, baseline-, objective-, feedback-, evaluator-, dataset-, optimizer-, checkpoint-, rollout-, authority-, resource-, monitor-, rollback-, consumer-, environment-, and time-specific Governed Policy Update Lease: before any update, it freezes the legitimate target behavior, admissible feedback and proxy boundary, strong baselines, update family and budget, drift and authority ceilings, complete evaluation and failure denominators, reward-hacking and causal checks, rollback and monitoring, residuals, expiry, and promotion authority; a reward, preference, verifier score, benchmark gain, loss reduction, synthetic canary, formal route, rollback dry run, or trained checkpoint alone establishes neither reward validity, causal policy improvement, retained capability, alignment, safety, readiness, deployment, support, transfer, nor SOTA.
 
 Source loading queue:
 
@@ -4042,6 +4677,28 @@ Draft arc:
 - Interface: Spinoza and UAT audit reward meaning, failed verifiers, and reward-hacking probes.
 - Interface: SCF gates decide promotion, quarantine, rollback, or continued experiment status.
 - Interface: distinguish training evidence, evaluation evidence, governance evidence, deployment evidence, rollback evidence, and long-term safety evidence.
+- Lifecycle: freeze objective, target, baseline, identities, feedback and proxy
+  boundary, optimizer and budget, matched controls, constraints, holdouts,
+  attacks, complete rollout lineage, causal tests, receipts, lifecycle states,
+  full-state rollback, natural monitoring, expiry, and joint utility/cost.
+- Owner boundary: Benchmark, Adversarial Evaluation, Evidence/Review,
+  target-layer, Data/Supply Chain, Artifact/Talos, Runtime/Security, Stable
+  Capability/Replacement/Readiness, Threshold/Assurance, Resource, Formal, and
+  Incident/Release/Living-Book authority remain distinct.
+- Current minimum: one schema and valid fixture; six synthetic samples, two
+  holdouts, five policies, three invalid candidates, one experimental synthetic
+  canary, one fixture rollback; and nineteen finite declarations. No optimizer,
+  model, live router, natural workload, reward model, real canary, deployed
+  rollback, causal improvement, reproduction, or transfer ran; core effect zero.
+- Argument-exit campaign: natural multi-layer workloads, matched no-update and
+  strong method baselines, complete rollouts and costs, frozen hidden tests,
+  reward/evaluator attacks, causal ablation, forgetting, natural monitoring,
+  effect-complete rollback, joint utility/safety/rights/resource measurement,
+  independent trainers/evaluators/data custody/institutions, and transfer.
+- Formal audit: nineteen declarations comprise eight finite record implications,
+  seven route reductions, three fixture normalizations, and one finite
+  evaluation-integrity gate; none proves learning, reward quality, convergence,
+  causal target improvement, forgetting control, runtime rollback, or transfer.
 
 Primary invariants:
 
@@ -4100,7 +4757,7 @@ inputs, synthetic descendants, replay, retention, evaluation exclusions, and
 deletion requests without confusing receipt completeness with model quality,
 privacy compliance, verified forgetting, or capability promotion.
 
-Core claim: A governed data engine treats learning inputs as versioned, provenance- and evaluation-bound artifacts, deciding admission, quarantine, retention, replay, and deletion separately from capability promotion.
+Core claim: Data Engines, Continual Learning, and Unlearning owns a datum-, cohort-, provenance-, rights-, split-, contamination-, learning-lane-, retention-, checkpoint-authority-, full-state-inventory-, descendant-, deletion-request-, claim-axis-, consumer-, environment-, and time-specific Data-and-Descendant Custody Lease: before learning or deletion, it binds admissible use, evaluation exclusions, synthetic and transformation lineage, coverage and distribution residuals, model/optimizer/scheduler/RNG/cache/backup/descendant state, prospective checkpoint authority, retention and replay, deletion propagation, verification, rollback, expiry, and terminal custody; behavioral cohort change, causal influence reduction, privacy leakage reduction, lineage invalidation, legal compliance, and storage or backup erasure remain separate claims, and no receipt, checksum, exclusion, invalidation, benchmark score, rollback match, or synthetic campaign alone establishes model quality, forgetting, privacy, erasure, safety, readiness, deployment, support, transfer, or SOTA.
 
 Source loading queue:
 
@@ -4141,6 +4798,16 @@ Draft arc:
 - Interface: Policy optimization may consume only receipt-bound feedback;
   artifact graphs retain lineage; benchmark ratchets supply exclusions and
   regressions; SCF and claim ledgers retain promotion authority.
+- Lifecycle: Freeze scope and authorities; bind source, rights, lineage,
+  partitions, measurements, routes, custody transitions, competing policies,
+  full state, checkpoint authority, campaign protocol, deletion request, eight
+  distinct claim axes, descendant propagation, verification and rollback,
+  monitoring, and terminal expiry or retirement across eighteen stages.
+- Interfaces: Keep twelve boundaries explicit across policy optimization,
+  artifact graphs, benchmark ratchets, supply-chain and weight custody,
+  context/memory/retrieval/tools, evidence/claims/formalization,
+  capability/readiness/release, security/runtime, normative governance,
+  resource economics, incident response, and the Living Book.
 
 Primary invariants:
 
@@ -4153,6 +4820,14 @@ Primary invariants:
   verification scope are recorded.
 - Data admission cannot itself promote data quality, learning, benchmark,
   privacy, safety, or capability claims.
+- Full state includes model through external descendants; authorities are
+  prospective; behavioral, influence, privacy, lineage, legal, storage,
+  backup, and external-descendant claims never cross-promote; effect-complete
+  rollback covers declared state and external effects or residualizes them.
+- Natural utility, calibration, tails, forgetting, privacy, poisoning, drift,
+  sequential deletion, regrowth, closure, latency, and cost stay jointly
+  visible; material change expires the lease; formal and schema checks prove
+  only their exact artifact boundary.
 
 Failure modes to cover:
 
@@ -4166,6 +4841,10 @@ Failure modes to cover:
   distilled models, exports, and reports.
 - Promotion laundering from a well-formed receipt to a quality, safety, or
   unlearning claim.
+- Metadata theater, curation Goodhart, partition laundering, state-inventory
+  truncation, checkpoint-authority drift, behavioral-to-influence laundering,
+  privacy laundering, lineage-to-storage laundering, retraining and rollback
+  theater, aggregate masking, cost externalization, and unsupported transfer.
 
 Draft deliverables:
 
@@ -4187,7 +4866,25 @@ Draft deliverables:
   unlearning/rollback disposition remains narrow.
 - Digest-bound full-state bridge that preserves behavioral changes 4/0/1,
   lineage propagation, influence as unestablished, storage erasure as false,
-  twelve owned Lean theorems, six rejecting mutations, and no support effect.
+  fifteen derived Lean declarations, six rejecting mutations, and no support
+  effect.
+- Exact current minimum: one schema and four-scenario probe; a five-arm,
+  three-seed small-PyTorch campaign; 24 declared state surfaces; 15/15 exact
+  local restores; `no_change`; behavioral changes 4/0/1; three lineage
+  invalidations per seed; and fifteen declarations derived from three finite
+  route functions. Influence is proxy-only, source storage remains retained,
+  and no privacy, legal, backup, external-descendant, production, transfer, or
+  core-promotion result exists.
+- Argument exit: natural heterogeneous workloads, frozen complete partitions,
+  matched strong policy arms, full-state and descendant accounting, joint
+  utility/coverage/contamination/poisoning/privacy/rights/forgetting/influence/
+  deletion/erasure/regrowth/rollback/cost measures, and independent trainer,
+  custodian, privacy, storage, institution, and transfer reproduction with all
+  terminal outcomes visible.
+- Formal audit: all fifteen declarations are derived reductions of three
+  hand-authored finite route functions, not empirical projections; they prove
+  no learning, reward validity, convergence, causal improvement, forgetting,
+  influence, privacy, storage erasure, runtime enforcement, or transfer.
 
 Reader direction:
 
@@ -4225,7 +4922,7 @@ Stable ID: `artifact-steward-agents-and-living-project-governance`
 
 Chapter job: The living architecture needs a project-lifecycle layer for durable artifacts that must preserve mission, memory, roadmap, budget, contributors, compute, evidence, governance, and sunset criteria across many human and AI work cycles.
 
-Core claim: Every durable artifact should be able to carry a bounded steward agent that preserves mission, memory, roadmap, budget, contributors, compute, evidence, governance, and sunset policy across the artifact lifecycle while acting only through explicit work contracts, verification gates, treasury limits, contribution ledgers, and governance rules.
+Core claim: Artifact Steward Agents and Living Project Governance owns a project-, artifact-, mission-, owner-, authority-, roadmap-, work-contract-, event-, treasury-, compute-, contributor-, evidence-, governance-, release-, federation-, sunset-, consumer-, environment-, and time-specific Artifact Steward Continuity Lease: it may observe, propose, prepare, coordinate, execute, reverse, archive, or retire only through a versioned charter, taint-aware intake, scoped work contracts, separated contribution ledgers, bounded treasury and compute policy, verification and release gates, appeal and fork or exit paths, effect-complete rollback, and explicit sunset authority; it never acquires ownership, governance legitimacy, evidence authority, funding rights, release authority, legal standing, or permission from useful motion, a green workflow, a vote, a balance, a score, a fixture, a theorem, or its own prior action.
 
 Source loading queue:
 
@@ -4253,11 +4950,22 @@ Draft arc:
 - Mechanism: Treat the steward's normal action as proposal, evidence preparation, and coordination rather than unilateral ownership.
 - Mechanism: Model project-to-project federation and artifact economies through work contracts, evidence bundles, contribution ledgers, and sunset reviews rather than ambient project trust.
 - Mechanism: Pair with Personal Compute Hives by requesting owned or rented execution only through contracts that the hive can independently reject on data, tool, family, physical-world, budget, or federation-policy grounds.
+- Lifecycle: Freeze charter and authority; ingest tainted events; maintain
+  versioned memory; compile and dispatch scoped contracts; budget resources;
+  execute least-privilege actions; verify work; separate contribution ledgers;
+  gate releases and governance; federate by contract; monitor usefulness,
+  burden, capture, and security; contain incidents; gate project modes; execute
+  sunset; and expire the continuity lease across eighteen stages.
 - Interface: VIEA and Talos connect intent, work contracts, artifacts, evidence, audit, replay, and delivery.
 - Interface: PlanForge lowers project goals into dependency-aware work packages.
 - Interface: VCM preserves project memory, taint, revocation, source refs, and open questions.
 - Interface: Spinoza, Benchmaxxing, RMI, and Appendix C determine whether submitted work changes support, readiness, or regression state.
 - Interface: TokenMana, SCF, Field-of-God governance, and fork/exit/audit rights bound spending, compute, authority, consent, and appeal.
+- Interfaces: Preserve twelve owner boundaries across intent and authority;
+  planning and labor; memory and lineage; runtime and security; evidence and
+  proof; benchmarks and readiness; learning and data; resources and treasury;
+  contribution and governance; hives and federation; incident/release/sunset;
+  and the Living Book.
 
 Primary invariants:
 
@@ -4268,6 +4976,12 @@ Primary invariants:
 - Reputation, governance rights, economic compensation, authorship, and evidence credit remain separate ledgers.
 - Human-readable maps, decision logs, release notes, and appeal paths remain available.
 - Projects that meet sunset criteria enter sunset review rather than manufacturing activity.
+- Actions remain exact and cannot self-authorize from helpful outputs, prior
+  actions, green workflows, votes, balances, scores, fixtures, or theorems;
+  release and governance remain artifact- and authority-bound; all outcomes
+  retain complete history; humans can maintain the project without private
+  steward state; rollback is effect-complete; record checks prove only their
+  finite boundary.
 
 Failure modes to cover:
 
@@ -4278,6 +4992,10 @@ Failure modes to cover:
 - Agentic workflow injection through untrusted repository event context.
 - AI maintainer monopoly that makes the project opaque to humans.
 - Zombie project continuation after user value disappears.
+- Authority, evidence, federation, release, and rollback laundering; credential
+  capture; planning theater; human rubber-stamping; incident concealment;
+  sunset evasion or hostile premature sunset; burden externalization; and
+  unsupported transfer.
 
 Draft deliverables:
 
@@ -4301,6 +5019,24 @@ Draft deliverables:
 - Implemented Codex test: Release evidence handoff test, via `python3 scripts/validate_benchmark_antigoodhart.py` over steward release actions requiring ratchet refs, policy refs, and approval refs; no steward agent or release runner exists.
 - Implemented Codex test: Project federation contract as finite Lean federation-contract route predicates only; no project federation harness exists.
 - Implemented Codex test: Autonomy-mode transition as finite Lean lifecycle-route predicates only; no steward autonomy transition runner or treasury executor exists.
+- Exact current minimum: seven schema-and-fixture families, sixteen declarations
+  derived from seven finite predicates or route functions, a two-valid/six-
+  invalid deterministic lifecycle probe, and one adjacent synthetic release
+  handoff; no steward bot, real event intake, treasury/compute executor,
+  contributor/governance/federation/release/sunset runtime, natural workload,
+  independent reproduction, deployment, or core effect exists.
+- Argument exit: natural months-long multi-project workloads with frozen
+  charters; matched strong human, automation, platform, and no-steward
+  baselines; real injection, protected assets, money, compute, contribution,
+  governance capture, federation, release, rollback, appeal, fork/exit,
+  maintainer handoff, and sunset; joint usefulness, quality, burden,
+  legitimacy, concentration, security, recovery, continuity, latency, and cost;
+  and independent reproduction and transfer.
+- Formal audit: all sixteen declarations are reductions or consequences of
+  seven hand-authored finite predicates/functions and prove no mission quality,
+  injection resistance, legitimacy, treasury safety, fairness, capture
+  resistance, release quality, rollback closure, maintainability, sunset,
+  deployment, reproduction, or transfer.
 
 Lean proof targets:
 
@@ -4320,7 +5056,7 @@ Stable ID: `integrated-reference-architecture`
 
 Chapter job: Readers need to see how the layers operate as one machine from intent to governed action and improvement.
 
-Core claim: The stack can be specified as an integrated reference architecture with typed handoffs, authority stops, artifacts, evidence updates, and self-improvement gates.
+Core claim: Integrated Reference Architecture owns a trace-, run-, request-, intent-, authority-, artifact-, parentage-, layer-, canonical-state-, material-effect-, terminal-receipt-, evaluator-, evidence-, residual-, rollback-, consumer-, environment-, and time-specific Cross-Layer Trace Join Contract: it proves integration only when every participating owner remains distinct and its typed input, output, authority delta, state identity, observed effect, acknowledgement, evaluation, evidence delta, residual, stop, repair, rollback, and non-claim remain joinable across approved, blocked, failed, revoked, rolled-back, and quarantined paths; a diagram, shared prompt, interface name, projection, green service, replay, fixture, theorem, or locally successful slice cannot establish whole-stack execution, semantic preservation, governance enforcement, safety, capability, deployment, transfer, or SOTA.
 
 Source loading queue:
 
@@ -4350,9 +5086,21 @@ Draft arc:
 - Mechanism: Add a name-to-effect map with seven ordered stages: request-derived input, policy decision, canonical state selection, observed effect, acknowledged receipt, evaluator result, and claim boundary.
 - Mechanism: Keep canonical state authoritative over dashboard, report, cache, index, claim-view, and promotion projections.
 - Mechanism: Bind request identity/digest, policy decision, canonical-state digest, observed effect identity/digest, and acknowledged terminal state in a request-to-effect receipt.
+- Lifecycle: Freeze trace scope and owners; bind authority and identities;
+  specify typed owner contracts; trace the stack and subtraces; retain every
+  terminal path; join name to effect; preserve canonical state; bind digests;
+  expose evaluator dependence; check authority/evidence/residual/order/lifecycle
+  invariants; attack and compare matched baselines; reconcile outcomes;
+  propagate corrections; monitor joins; and expire changed contracts across
+  eighteen stages.
 - Interface: All stack layers participate.
 - Interface: Artifacts and evidence ledgers provide continuity.
 - Interface: SCF gates control improvement.
+- Interfaces: Keep twelve owner groups distinct across intent/authority,
+  command/planning/labor, context/memory, computation, evidence/formalization,
+  runtime/security/custody, artifacts/data, evaluation/assurance, updates and
+  improvement, readiness/release, resources/stewardship/governance, and the
+  Living Book.
 
 Primary invariants:
 
@@ -4361,6 +5109,10 @@ Primary invariants:
 - Self-improvement follows evidence and authority gates.
 - Every named integration stage joins to the material output it claims to own; projections cannot become canonical authority by convenience.
 - Evaluator identity and method remain visible before a receipt reaches the claim boundary.
+- No super-owner, authority widening, orphan effect, phantom completion,
+  projection authority, evidence laundering, residual erasure, invalid causal
+  order, hidden terminal path, unbounded transfer, or partial rollback is
+  accepted; diagrams, records, slices, proofs, and validators remain narrow.
 
 Failure modes to cover:
 
@@ -4368,6 +5120,10 @@ Failure modes to cover:
 - Planning/execution collapse.
 - Self-improvement without evaluator integrity.
 - Interface theater, receipt drift, projection authority, orphan effects, and evaluator-independence laundering.
+- Super-owner and handoff laundering, revocation races, exception and evidence
+  laundering, residual erasure, replay and rollback theater, monolithic opacity,
+  happy-path-only testing, integration overhead, embedded-model closure, and
+  unsupported transfer.
 
 Draft deliverables:
 
@@ -4383,14 +5139,44 @@ Draft deliverables:
 - Implemented Codex test: Authority stop-condition test as deterministic blocked-trace fixture coverage only; no deployed authority stop-condition checker exists.
 - Implemented Codex test: Actual command replay trace as a local Resource flagship validator replay with command output digest, tracked artifact bundle, and blocked-path stop-condition attachment only; no live runtime integration, external replay, model-quality result, benchmark result, or support-state promotion exists.
 - Implemented Codex test: Governed cross-stack trace invariants test derives authority monotonicity, revocation-before-effect with tie precedence, evidence-transition integrity, residual conservation, causal order, and four mutation controls from the executed local repository-change log; finite local trace only.
+- Implemented Codex test: Integrated cross-layer trace consumer replays eighteen source-anchored finite cases across approved completion, pre-effect quarantine, exact rollback, and failed-rollback quarantine; four paths and thirty-five events are accepted, fourteen invalid paths and fifteen mutations are rejected, and support effect remains none. This is not a checked live-schema encoder, distributed replay, deployment, or support promotion.
+- Exact current minimum: one schema/fixture, three valid and six invalid trace
+  fixtures, one thirteen-artifact validator replay, one blocked lineage plus
+  eight mutations, a nine-scenario/eight-attack repository slice with baseline
+  false accepts 8 versus governed 0 and three rollback attempts, a finite
+  invariant extraction with four mutations, an eighteen-case/fifteen-mutation
+  integrated transition consumer, a nine-scenario/twenty-mutation checked
+  governed-result schema refinement, a sixteen-case/twelve-mutation independent
+  concurrent effect-ledger consumer, and the stronger partial Lean trace model; no model
+  planning/generation, deployed services, production enforcement, independent
+  evaluator, natural workload, reproduction, transfer, deployment, or core
+  effect exists.
+- Argument exit: natural heterogeneous independently operated services; matched
+  direct, monolithic, workflow, service-composition, and no-governance
+  baselines; semantic/authority/state/effect/receipt/evaluator/evidence/residual/
+  lifecycle/rollback/release/embedded-residual tests; joint utility, failure,
+  latency, resource, governance, and cost measures; independent reproduction
+  and transfer.
+- Formal audit: the three headline targets now resolve to the partial
+  `IntegratedReferenceTrace` model with accepted-step joins, accepted-trace
+  authority non-widening, trace composition, exact terminal execution,
+  countermodels, an independently encoded consumer, and checked executable
+  refinement for one projected governed-result schema, plus effect identity,
+  idempotent retry, authority-epoch, revocation-tie, and exclusive terminal-
+  custody semantics with an independent consumer. Five older route
+  reductions remain narrow repair-routing lemmas, while the prior fixture
+  invariant extraction remains historical lineage; none proves deployed
+  semantics, distributed authority/revocation, causality, evaluator
+  independence, residual completeness, rollback beyond the fixture,
+  reproduction, or transfer.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:reference_architecture.trace.operational_invariant` | `AsiStackProofs.ReferenceArchitecture` | An end-to-end trace contains required artifacts for each layer handoff. | implemented |
-| `lean:reference_architecture.trace.failure_blocks_promotion` | `AsiStackProofs.ReferenceArchitecture` | A trace with a missing governance gate cannot be marked valid. | implemented |
-| `lean:reference_architecture.governed_trace.four_invariants` | `AsiStackProofs.GovernedRepositoryTrace` | The bounded executed repository-change trace satisfies authority monotonicity, revocation-before-effect, evidence-transition integrity, and residual conservation, and rejects one mutation per invariant. | implemented |
+| `lean:reference_architecture.trace.operational_invariant` | `AsiStackProofs.IntegratedReferenceTrace` | Every accepted finite cross-layer trace joins exact parent artifacts and canonical state across typed layers, preserves the authority ceiling, and cannot widen active authority. | implemented |
+| `lean:reference_architecture.trace.failure_blocks_promotion` | `AsiStackProofs.IntegratedReferenceTrace` | A cross-layer transition with a parent/state fork, missing governance gate, residual erasure, effect after revocation, unacknowledged terminal effect, missing receipt, or incomplete rollback is rejected or contained in quarantine. | implemented |
+| `lean:reference_architecture.governed_trace.four_invariants` | `AsiStackProofs.IntegratedReferenceTrace` | The source-anchored finite consumer composes approved, blocked, rolled-back, and quarantined traces while preserving joined artifact/state lineage, authority, effect acknowledgement, evidence, residual, terminal-receipt, and no-promotion boundaries and rejecting targeted mutations. | implemented |
 
 ### Project Theseus as Report-First Implementation Reference
 
@@ -4398,7 +5184,7 @@ Stable ID: `project-theseus-as-report-first-implementation-reference`
 
 Chapter job: The book needs a concrete implementation-reference chapter for how the ASI stack can be operated as report-first local machinery instead of only conceptual layer diagrams.
 
-Core claim: Project Theseus should be mined as a report-first implementation reference for RMI, showing how pressure, residuals, gates, ledgers, operator work boards, checkpoints, and self-evolution governance can instantiate the ASI stack without promoting local results as general capability claims.
+Core claim: Project Theseus as Report-First Implementation Reference owns a source-project-, pinned-revision-, report-family-, command-, environment-, artifact-, lineage-, evidence-state-, replay-, public-safety-, publication-permission-, reviewer-, consumer-, and time-specific Implementation-Reference Evidence Packet: it binds every imported or replayed report, configuration, ledger, work-board summary, registry, gate, crosswalk, trace, retained artifact, command, environment note, digest, missing artifact, decision, residual, and non-claim to source-note-only, imported, replay-ready, replay-failed, locally reproduced, stale, runtime-blocked, or archived lineage; dashboards and latest files are projections only, and no GREEN gate, complete registry, module card, pointer row, metadata snapshot, parity manifest, command replay, fixture, theorem, or sanitized import alone establishes current runtime truth, clean live replay, model quality, capability, benchmark validity, safety, deployment, support, transfer, AGI, ASI, or SOTA.
 
 Source loading queue:
 
@@ -4412,48 +5198,36 @@ Draft arc:
 
 - Problem: The book needs a concrete implementation-reference chapter for how the ASI stack can be operated as report-first local machinery instead of only conceptual layer diagrams.
 - Insufficiency: A prototype roadmap is not enough unless readers can see how goals, plans, arms, reports, gates, residuals, checkpoints, compute, and operator surfaces interact in a working research system.
-- Mechanism: Treat reports and ledgers as the contract, with dashboards as surfaces over those artifacts.
-- Mechanism: Use the loop pressure -> attempt -> residual -> diagnosis -> compression -> verification -> structure -> new pressure as implementation discipline.
-- Mechanism: Gate heavy training and self-evolution through architecture, preflight, resource, and candidate-promotion checks.
-- Mechanism: Route operator work through a durable work board, command vocabulary, node registry, hooks, and feedback reports.
-- Mechanism: Keep sparse teacher use proposal-first and guarded by branches, checks, benchmark regressions, and review.
-- Mechanism: Treat source-note lineage, imported reports, reproduced runs, missing artifacts, and public non-claims as separate evidence categories so Theseus remains an implementation reference rather than laundered capability evidence.
-- Mechanism: Position Theseus report packets against external reporting and reproducibility practices: model cards, datasheets, AI service FactSheets, and ML reproducibility checklists/reports.
-- Mechanism: Extend the report crosswalk to human-control artifacts: originating intent contract, approval receipt, agency checklist, rollback/shutdown path, operator work-board item, and review residual.
-- Mechanism: Track Theseus report evidence states such as source-note-only, report-imported, artifact-missing, replay-ready, replay-failed, locally-reproduced, runtime-blocked, and archived-lineage.
-- Mechanism: Emit a Theseus Report Packet with intent or benchmark pressure, plan/compiler contract hash, work-board item, node or arm route, report bundle path, gate report, residual ledger entry, replay command, environment notes, artifact checksum, reviewer decision, publication permission, missing artifacts, and non-claims.
-- Interface: The plan compiler supplies contracts, semantic IR DAGs, VCM slices, routes, claim targets, and replay traces.
-- Interface: Octopus arms, SymLiquid CGS, SparkStream control, and Hive runtime map stack layers into reports and configs.
-- Interface: Genesis-style artifact kernels preserve claims, critiques, benchmark results, tool promotions, architecture decisions, and feedback.
-- Interface: Capability matrices and benchmark ledgers expose readiness and residuals without turning local reports into public empirical proof.
+- Mechanism: Freeze exact project, revision, report families, permissions, consumers, environment, and time; inventory and digest every artifact, generator, command, dependency, input boundary, expected output, and failure behavior.
+- Mechanism: Keep `source_note_only`, `imported`, `artifact_missing`, `replay_ready`, `replay_failed`, `locally_reproduced`, `stale`, `runtime_blocked`, and `archived_lineage` distinct; sanitize under permission; keep dashboards and latest aliases as projections.
+- Mechanism: Crosswalk exact stack claims to artifacts, intent, approval, agency, work, rollback, review, residuals, and non-claims; replay eligible commands in locked environments with outputs, digests, failures, resources, and mutations retained.
+- Mechanism: Validate bundle completeness and rejecting controls; compare packet fields with model cards, datasheets, FactSheets, and reproducibility programs without importing certification or evidence.
+- Mechanism: Expose partitions, external inference, teacher use, selection, retries, and training-row status; require separate evidence transitions for capability, training, deployment, self-evolution, or chapter-core support.
+- Mechanism: Retain negative, stale, missing, blocked, and no-promotion outcomes; propagate corrections and downgrades; monitor currentness, drift, public safety, promotion pressure, failures, burden, and cost; expire or archive changed packets with lineage.
+- Interfaces: Twelve exact joins cover pinned Theseus sources; source inventory; intent and planning; Labor OS and stewardship; artifact/data/supply chain; benchmarks and routing; claim/evidence/formal systems; readiness and improvement; runtime security and rights; resources and compute; external reporting comparators; and Living Book consumers.
 
 Primary invariants:
 
-- The frontier moves while the regression floor holds.
-- Promotion uses external-inference-zero evidence where the local gate requires it.
-- Reports survive the run and are not replaced by dashboard prose.
-- Private experiments and public calibration remain separated.
-- Unknown task kinds are blocked rather than guessed.
-- Architecture changes follow the intervention ladder.
-- Latest-file status never overwrites report lineage.
-- Current-state claims require current artifacts, not historical source-note lineage.
+- Exact scope, artifact identity, command, environment, dependency, permission, reviewer, consumer, and time bind every packet fact.
+- Retained artifacts own imported truth; current claims require current artifacts or clean bounded replay; latest aliases never erase lineage.
+- Evidence states, public/private boundaries, partitions, external inference, teacher use, selection, retries, missing artifacts, and human authority remain visible.
+- GREEN, complete, ready, parity, wired, pointer, registered, retained, replayed, fixture, validator, and theorem labels never cross-promote.
+- Corrections and expiry propagate to every consumer; currentness, resource use, failures, review burden, storage, and total cost stay visible.
+- The manifest contains eighteen exact invariants; finite record and proof checks establish only their declared boundary.
 
 Failure modes to cover:
 
-- Latest-file report overwrites history.
-- Benchmark overfit becomes capability evidence.
-- Teacher dependence replaces local evidence.
-- Architecture churn outruns residual diagnosis.
-- Remote work proceeds without allowlists, TTLs, or kill switches.
-- Local prototype results are overclaimed as public evidence.
-- Report-state drift.
-- Missing-artifact smoothing.
+- Latest-file or dashboard theater; report-shape and sanitized-import truth laundering; stale-snapshot currentness; identity or environment drift; private-payload leakage; benchmark-headline and GREEN-gate promotion.
+- Module, registry, board, pointer, parity, retention, or self-evolution records promoted beyond scope; narrow replay theater; hidden teacher or external inference; suppression of negative or missing artifacts; permission drift; unsupported transfer.
+- The manifest contains eighteen named falsifiers and requires each failure to create a visible residual, downgrade, blocked promotion, or missing-artifact row.
 
 Draft deliverables:
 
-- An implementation-reference crosswalk table from ASI stack layer to Theseus report, config, or tool surface, with evidence state and public claim boundary for each row.
+- A semantically reviewed Implementation-Reference Evidence Packet owner with ten exact mappings, eighteen mechanisms, twelve interfaces, eighteen invariants, eighteen failure modes, twelve proof targets, eighty-three structured atoms, and no unowned material prose.
+- An exact minimum slice comprising fifty-four finite Lean declarations plus bounded crosswalk, gate, generation, replay, report-bundle, public-task, support, retention, module, registry, pointer, stale-board, assistant-trace, accelerator-parity, and readiness-currentness artifacts; narrow non-core transitions remain intact while chapter-core effect remains none.
+- A frozen argument-exit campaign requiring a permissioned pinned public-safe release, clean-room replay, natural workloads, matched ordinary baselines, actual models/routes/tools/training/benchmarks, teacher and external-inference accounting, failures and total cost, correction propagation, independent artifact review, reproduction, and heterogeneous transfer.
 - Source-noted external comparator rows for `ext_model_cards_2019`, `ext_datasheets_datasets_2021`, `ext_factsheets_ai_services_2019`, and `ext_ml_reproducibility_program_2021`, without treating those records as Theseus reproduction, compliance, or support-state promotion.
-- Implemented repository-level fixtures and guards: `theseus_report_crosswalk_record.valid.json` validates report-crosswalk record shape only, `experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json` imports one public-safe static architecture-gate report summary by digest, `experiments/theseus_generation_mode_import/fixtures/valid/generation_mode_gate_public_summary.valid.json` imports one public-safe static generation-mode report summary by digest, `docs/theseus_support_replay_probe.md` records a local replay of both ASI-side Theseus validators with support-state effect `none`, `docs/theseus_report_bundle_audit.md` validates a public-safe report-bundle audit fixture with 7 expected-invalid controls, 8 crosswalk rows, 5 gate mappings, 6 visible artifact gaps, and 6 intervention-ladder levels, `docs/theseus_public_task_bundle_import.md` validates `theseus_public_task_bundle_import_2026_07_03_local` with 64 public BigCodeBench metadata-only tasks, 0 public training rows, 0 task-level regressions, 18 benchmark gates, 19 residuals, visible artifact gaps, and seven expected-invalid controls, `evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json` records the accepted no-promotion decision that blocks clean-live-replay, model-quality, benchmark-superiority, generation-speed, useful-solution-per-second, support-state, deployment, self-evolution, and chapter-core promotion claims, `docs/theseus_fast_support_lane_run.md` records the selected Theseus/Fast support-lane aggregate, `python3 scripts/validate_theseus_fast_support_lane.py` validates `theseus-fast-support-lane-2026-07-03-local` with 4 command replays, 16 tracked artifact digests, 68 public task records, 14 expected-invalid or rejected controls, 2 accepted no-promotion decisions, and `theseusFastSupportAggregateFixture`, `docs/theseus_artifact_retention_replay_import.md` records the artifact-retention replay import `theseus-artifact-retention-replay-import-2026-07-05`, and `python3 scripts/validate_theseus_artifact_retention_replay_import.py` validates 41,943,527 replayed payload bytes, 2,389,576 archived bytes, one compressed-artifact record, one compression receipt, one proof-contract receipt, one claim record, one artifact-graph record, one storage evidence-transition record, one defeater record, seven expected-invalid controls, and bounded claim `project-theseus-as-report-first-implementation-reference.artifact_retention_replay_gate_import` from `argument` to `prototype-backed`. `python3 scripts/validate_theseus_concrete_evidence_surface.py` keeps the public-safe 14/14 architecture-gate, 18 modes, 13 comparisons, zero-promotable-comparison, digest, replay-probe, audit, and non-claim facts visible. No live Theseus report bundle, the clean live Theseus replay remains unclaimed, no benchmark environment, current dashboard, current work-board state, or model artifact has been rerun, and this does not prove clean live Project Theseus replay, model quality, deployed residual-ledger storage, deployed artifact-graph behavior, or chapter-core support.
+- Implemented repository-level fixtures and guards: `theseus_report_crosswalk_record.valid.json` validates report-crosswalk record shape only, `experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json` imports one public-safe static architecture-gate report summary by digest, `experiments/theseus_generation_mode_import/fixtures/valid/generation_mode_gate_public_summary.valid.json` imports one public-safe static generation-mode report summary by digest, `docs/theseus_support_replay_probe.md` records a local replay of both ASI-side Theseus validators with support-state effect `none`, `docs/theseus_report_bundle_audit.md` validates a public-safe report-bundle audit fixture with 7 expected-invalid controls, 8 crosswalk rows, 5 gate mappings, 6 visible artifact gaps, and 6 intervention-ladder levels, `docs/theseus_public_task_bundle_import.md` validates `theseus_public_task_bundle_import_2026_07_03_local` with 64 public BigCodeBench metadata-only tasks, 0 public training rows, 0 task-level regressions, 18 benchmark gates, 19 residuals, visible artifact gaps, and seven expected-invalid controls, `evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json` records the accepted no-promotion decision that blocks clean-live-replay, model-quality, benchmark-superiority, generation-speed, useful-solution-per-second, support-state, deployment, self-evolution, and chapter-core promotion claims, `docs/theseus_fast_support_lane_run.md` records the selected Theseus/Fast support-lane aggregate, `python3 scripts/validate_theseus_fast_support_lane.py` validates `theseus-fast-support-lane-2026-07-03-local` with 4 command replays, 16 tracked artifact digests, 68 public task records, 14 expected-invalid or rejected controls, 2 accepted no-promotion decisions, and `theseusFastSupportAggregateFixture`, `docs/theseus_artifact_retention_replay_import.md` records the artifact-retention replay import `theseus-artifact-retention-replay-import-2026-07-05`, and `python3 scripts/validate_theseus_artifact_retention_replay_import.py` validates 41,943,527 replayed payload bytes, 2,389,576 archived bytes, one compressed-artifact record, one compression receipt, one proof-contract receipt, one claim record, one artifact-graph record, one storage evidence-transition record, one defeater record, seven expected-invalid controls, and bounded claim `project-theseus-as-report-first-implementation-reference.artifact_retention_replay_gate_import` from `argument` to `prototype-backed`. `python3 scripts/validate_theseus_concrete_evidence_surface.py` keeps the public-safe 14/14 architecture-gate, 18 modes, 13 comparisons, zero promotable comparisons, digest, replay-probe, audit, and non-claim facts visible. No live Theseus report bundle, the clean live Theseus replay remains unclaimed, no benchmark environment, current dashboard, current work-board state, or model artifact has been rerun, and this does not prove clean live Project Theseus replay, model quality, deployed residual-ledger storage, deployed artifact-graph behavior, or chapter-core support.
 - Implemented bounded Project Theseus import: the Theseus module definition-of-done import, `project-theseus-as-report-first-implementation-reference.module_definition_of_done_gate_import`, is validated by `python3 scripts/validate_theseus_module_definition_of_done_import.py` and records a public-safe summary of trigger state `GREEN`, 22 of 22 major module records ready, 0 hard gaps, 0 warnings, all seven book-standard sources present, negative evidence linked, 20 source-backlog work cards, seven expected-invalid controls, and finite `lean:theseus.reference.module_definition_of_done_import.fixture_bridge` alignment. This moves only the narrow import claim to `prototype-backed`; it does not prove clean live Project Theseus replay, module capability, deployed Theseus behavior, model quality, benchmark performance, safety, alignment, ASI, or chapter-core promotion.
 - Implemented bounded Project Theseus import: the Theseus project-registry import, `project-theseus-as-report-first-implementation-reference.project_registry_reality_import`, is validated by `python3 scripts/validate_theseus_project_registry_import.py` and records a public-safe summary of trigger state `GREEN`, 5,662 registered paths, 24 owned lifecycle surfaces, complete coverage, zero unregistered active sources, zero stale or missing report outputs, zero generated source artifacts, zero registry-governance violations, nine expected-invalid controls, and finite `lean:theseus.reference.project_registry_import.fixture_bridge` alignment. This moves only the narrow registry import claim to `prototype-backed`; it does not prove clean live Project Theseus replay, deployment, model quality, generation speed, self-evolution safety, alignment, ASI, or chapter-core promotion.
 - Implemented bounded Project Theseus import: the Theseus assistant reference-trace import, `project-theseus-as-report-first-implementation-reference.assistant_reference_trace_import`, is validated by `python3 scripts/validate_theseus_assistant_reference_trace_import.py` and records a public-safe summary of source digests, 19 required reference-trace record types, 27/27 gates, 2,203 VIEA view records, 12 selected VCM pages, zero public training rows, zero external inference calls, 11 expected-invalid controls, and finite `lean:theseus.reference.assistant_reference_trace_import.fixture_bridge` alignment. This moves only the narrow assistant trace import claim to `prototype-backed`; it does not prove clean live Project Theseus replay, current runtime state, deployment, route quality, private verifier quality, model quality, benchmark superiority, useful-solution-per-second improvement, safety, alignment, ASI, or chapter-core promotion.
@@ -4514,7 +5288,7 @@ Stable ID: `prototype-roadmap`
 
 Chapter job: The architecture needs a build sequence that does not introduce agency or self-improvement before auditability and governance are credible.
 
-Core claim: The prototype should grow in staged increments from source matrix and artifact graph to governed capability replacement.
+Core claim: Prototype Roadmap owns a program-, roadmap-, phase-, dependency-, artifact-, acceptance-gate-, authority-, evaluator-, evidence-transition-, phase-debt-, residual-, rollback-, reviewer-, consumer-, environment-, and time-specific Evidence-Gated Phase Unlock Contract: it binds every proposed phase to prerequisites, allowed work state, required artifacts, commands, environment, resource bounds, gates, independent evaluation, residuals, debt, rollback, retirement, evidence effect, and non-claims before later work may research, demo, integrate, promote, or release; no roadmap row, milestone, source report, dashboard, task count, passing fixture, theorem, validator, build, or locally useful prototype alone establishes phase completion, safe dependency order, capability, governance effectiveness, deployment, transfer, AGI, ASI, or SOTA.
 
 Source loading queue:
 
@@ -4524,35 +5298,33 @@ Source loading queue:
 | Supporting | `beastbrain_timeless`, `bugbrain`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `circle_ai_contract_suite` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | Connector or recovery required | `moecot`, `moecot_md`, `road_to_agi`, `coherence_exchange` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
+
+| Manifest assignment reconciliation | `ext_nist_ai_rmf_1_0_2023`, `ext_model_evaluation_extreme_risks_2023`, `ext_dafny_2010`, `ext_copilot_runtime_monitor_2010`, `ext_shop2_2003`, `ext_swe_bench_2023`, `ext_mmlu_2020`, `ext_checklist_2020`, `ext_codebleu_2020`, `ext_qlora_2023` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs a build sequence that does not introduce agency or self-improvement before auditability and governance are credible.
 - Insufficiency: A roadmap that jumps to autonomous improvement skips source matrices, artifact graphs, claim ledgers, tests, and authority controls.
-- Mechanism: Represent each build phase with a Prototype Phase Record naming deliverables, required artifacts, acceptance gates, blockers, validation commands, evidence refs, non-claims, and status.
-- Mechanism: Start with source inventory, source notes, claim ledger, artifact graph, schemas, proof manifest, validation, and release discipline before introducing autonomous action.
-- Mechanism: Add intent contracts, PlanForge DAGs, VCM context records, typed jobs, runtime adapters, audit/replay, procedural memory, routing, readiness gates, benchmark ratchets, and SCF replacement gates in dependency order.
-- Mechanism: Delay recursive self-improvement until evaluator integrity, rollback, residual preservation, governance rights, and evidence-ledger behavior are credible.
-- Mechanism: Give each phase entry criteria, exit criteria, dependency edges, phase debt, and retirement conditions so demos do not become accepted milestones.
-- Mechanism: Prevent irreversible unlocks from provisional evidence; research use can proceed without default execution, promotion, self-improvement, or public capability claims.
-- Interface: Each phase unlocks a later layer.
-- Interface: Evidence gates decide promotion.
-- Interface: Changelog and releases document progress.
+- Mechanism: Freeze the exact program, phase graph, authority, resources, consumers, environments, time, and non-claims; assign identities to all dependencies, artifacts, gates, evaluators, transitions, residuals, debt, rollback, retirement, and descendant unlocks.
+- Mechanism: Keep proposed, blocked, research, demo, integrate, promote, release, failed, rolled-back, retired, and superseded states distinct; build evidence infrastructure before authority and model-update layers.
+- Mechanism: Bind typed dependencies and phase work contracts; validate them with semantic, executable, adversarial, proof, rights, publication, and release gates; disclose evaluator dependence and conserve phase debt.
+- Mechanism: Accept completion only from observed artifacts and gates plus an authorized terminal decision; propagate failure, correction, expiry, rollback, downgrade, and retired debt through descendants.
+- Mechanism: Compare against matched ordinary program-management baselines; monitor usefulness, false unlocks and blocks, rework, incidents, debt, recovery, burden, resources, opportunity cost, and total cost; retire changed contracts with lineage.
+- Interfaces: Twelve exact joins cover intent and authority; evidence and artifacts; typed work; runtime and security; model computation; evaluation; updates; readiness and release; resources; local implementation lineage; external comparators; and roadmap consumers.
 
 Primary invariants:
 
-- Phases have acceptance criteria.
-- Self-improvement is gated.
-- Roadmap milestones are not test results.
+- Exact scope, bounded dependency direction, evidence-before-agency order, distinct phase states, artifact-backed unlocks, non-widening authority, visible evaluator dependence, conserved debt, complete denominators, accepted evidence transitions, effect-complete rollback, correction propagation, joint cost, bounded transfer, expiry, and finite-proof limits.
+- The canonical manifest names eighteen exact invariants; provisional evidence can authorize isolated research but not integration, promotion, training, self-improvement, release, deployment, or public capability claims.
 
 Failure modes to cover:
 
-- Building agency before auditability.
-- Skipping verification because prototypes feel useful.
-- Treating roadmap as evidence.
+- Agency-first sequencing, dependency inversion, roadmap-as-evidence laundering, prototype theater, milestone compression, gate and evaluator laundering, phase-state collapse, evidence-transition laundering, debt erasure, happy-path denominators, source-result inheritance, rollback theater, operator-convenience drift, staleness, over-gating, self-improvement ratchet failure, and unsupported transfer.
 
 Draft deliverables:
 
-- A prototype phase record schema with deliverables, gates, blockers, validation commands, evidence refs, and acceptance criteria.
+- A semantically reviewed Evidence-Gated Phase Unlock Contract with twenty-nine exact mappings, eighteen mechanisms, twelve interfaces, eighteen invariants, eighteen failure modes, three proof targets, seventy-four structured atoms, and no unowned material prose.
+- An exact minimum slice: one phase-record schema/fixture, two valid and six invalid dependency-gate cases, one synthetic expired-evidence check, and eleven finite Lean declarations; no real phase completion, deployed controller, natural matched program, or chapter-core effect.
+- A frozen argument-exit campaign over a real prospectively specified program, matched calendar/backlog/milestone/stage-gate/no-gate baselines, natural and adversarial dependencies, joint usefulness and total cost, causal ablations, independent reproduction, and transfer.
 - Implemented repository-level fixture: `prototype_phase_record.valid.json` validates prototype-phase record shape only; no phase completion or capability unlock is implied.
 - Implemented Codex test: Prototype phase gate harness, via `python3 scripts/validate_prototype_phase_gates.py`, turns `Phase acceptance checklist` and `Dependency gate review` into a deterministic public-safe fixture set with 2 valid scenarios and 6 expected-invalid controls. Result: `prototype_phase_gates_2026_07_02_local` at `experiments/prototype_phase_gates/results/2026-07-02-local.json`.
 - Implemented Codex test: Prototype evidence-state audit, via `python3 scripts/validate_readiness_residual_gates.py` over expired-evidence rerun/reject behavior; full phase acceptance audit remains unrun.
@@ -4573,7 +5345,7 @@ Stable ID: `living-book-methodology`
 
 Chapter job: The book itself must remain a living technical system rather than a static anthology.
 
-Core claim: The living book should model the ASI stack discipline through manifest-driven Quarto, source queues, claim/evidence matrices, proof manifests, tests, changelogs, and releases.
+Core claim: Living Book Methodology owns a book-, edition-, change-, source-, claim-, proof-, test-, render-, audience-, derivative-, release-, rights-, reviewer-, consumer-, environment-, and time-specific Evidence-Preserving Publication Transaction: it binds every substantive intake, structural edit, claim change, proof or test change, render, reader or audio projection, release, correction, rollback, and successor handoff to canonical source state, provenance, authority, validation, evidence effect, residuals, non-claims, and immutable lineage; generated scaffolds, green validators, theorem builds, successful renders, local format artifacts, publication activity, or a polished release never by themselves establish source interpretation, editorial quality, accessibility, reader approval, chapter truth, capability, safety, external reproduction, transfer, AGI, ASI, or SOTA.
 
 Source loading queue:
 
@@ -4590,38 +5362,26 @@ Draft arc:
 
 - Problem: The book itself must remain a living technical system rather than a static anthology.
 - Insufficiency: Static manuscripts cannot show source additions, claim-state movement, deprecations, proof updates, render status, or test history.
-- Mechanism: Keep `book_structure.json` as the ordering source of truth for parts, stable chapter ids, chapter file paths, front matter, and appendices.
-- Mechanism: Keep `docs/book_outline.md` as the drafting, source-queue, proof-scope, Lean-tag, and future-writing control surface.
-- Mechanism: Treat conversation-mined packets as author-intent, terminology, lineage, and recovery context only, not as source-derived evidence.
-- Mechanism: Maintain distinct live AI/research scaffolding, frozen research releases, stripped reader editions, companion notes, and audio-script workspaces derived from one validated source state.
-- Mechanism: Require meaningful structural, evidence, proof, schema, source, or publication changes to sync scaffold, sync proof manifest, validate, render, update changelog, commit, push, and verify the public site.
-- Mechanism: emit living-book change packets with affected chapters, sources, claims, proof tags, schema/fixture paths, validation commands, render result, release target, audience profile, derived-artifact boundary, support-state effect, public URL if published, and explicit non-claims.
-- Mechanism: preserve three-audience derivation discipline: AI/research scaffold, human-research live site, and stripped reader/audio editions all derive from one governed source state.
-- Mechanism: pair with Evidence States as the book's methodological contribution: manifest-driven source of truth, source queues, claim ledger, proof manifest, evidence transitions, no-axiom discipline, release records, and reader-edition derivation.
-- Mechanism: Apply the governed-cognition pattern reflexively to book changes: manifest records, outline jobs, source notes, claim states, proof manifests, validation receipts, release records, reader projections, residuals, and changelog entries keep manuscript improvement from becoming ungoverned drift.
-- Interface: Source ingestion feeds source notes.
-- Interface: Drafting feeds claim matrices.
-- Interface: Tests feed support states.
-- Interface: Releases feed GitHub Pages, major-version edition records, reader manuscripts, and audio-script candidates.
-- Interface: reader-edition records carry source commit, stripped sections, retained diagrams, format targets, render commands, review state, accessibility notes, audio-script status, and non-claims.
+- Mechanism: Freeze exact source commit, change graph, audiences, authority, rights, release target, environment, time, and non-claims; identify every source, claim, proof, test, figure, derivative, release, residual, correction, and successor.
+- Mechanism: Ingest through explicit provenance and permission; separate source report, author intent, synthesis, experiment, proof, editorial judgment, and open questions; atomize material claims with falsifiers and evidence ceilings.
+- Mechanism: Issue a typed change packet; regenerate scaffold, proof manifest, appendices, metrics, projections, status, and release records from canonical inputs; run surface-appropriate semantic, executable, rights, accessibility, render, browser, release, and deployment checks.
+- Mechanism: Keep AI/research, Human view, reader, HTML, DOCX, EPUB, PDF, companion, article, image, and audio outputs as typed derivatives; separate generation, inspection, approval, deployment, observation, archive, and publication; promote only by accepted evidence transition.
+- Mechanism: Preserve every terminal result; propagate corrections, downgrades, proof retirement, failed tests, rights changes, release revocation, and derivative drift; monitor quality, freshness, debt, accessibility, residuals, burden, and cost; hand exactly one active roadmap to the successor.
+- Interfaces: Twelve exact joins cover human authority; sources; canonical book graph; claim/evidence control; proof and executable artifacts; version and release identity; public Quarto projection; typed derivatives; validation and attestation; continuous work and handoff; external comparators; and downstream consumers.
 
 Primary invariants:
 
-- No fabricated source content.
-- No fabricated test results.
-- Deprecated claims remain visible.
-- Stable IDs preserve lineage across part/chapter splits, merges, reorders, proof-target moves, and releases.
+- Exact scope, canonical-source primacy, stable identities, no fabrication, lane separation, complete claim and proof boundaries, accepted transitions, synchronized projections, typed derivatives, distinct review and publication states, retained negative outcomes, correction propagation, commit-bound release identity, visible living/immutable/local truth, joint cost, exactly one active roadmap, and finite-validator limits.
 
 Failure modes to cover:
 
-- Public site diverges from Quarto source.
-- Outline and manifest drift.
-- Readers cannot tell which claims are speculative.
-- Reader or audio releases accidentally imply that target formats exist before render, review, or audio production.
-- Publication laundering: successful builds, polished pages, or reader artifacts treated as evidence for source interpretation, architecture quality, or empirical claims.
+- Canonical/projection inversion, manifest and proof drift, source and claim laundering, proof and validation theater, release laundering, derivative equality or drift, mutable-history overwrite, stale public truth, editorial smoothing, accessibility theater, rights drift, correction failure, maintenance bloat, successor discontinuity, and unsupported transfer.
 
 Draft deliverables:
 
+- A semantically reviewed Evidence-Preserving Publication Transaction with sixteen exact mappings, eighteen mechanisms, twelve interfaces, eighteen invariants, eighteen failure modes, four proof targets, seventy-five structured atoms, and no unowned material prose.
+- An exact minimum slice comprising release-record, three-valid/six-invalid change-packet, blocked-reader plus three-valid/five-invalid route fixtures, synchronized publication surfaces, and twenty-one finite declarations; no manuscript, accessibility, reader, or chapter-core effect.
+- A frozen argument-exit campaign over natural substantive updates by independent human and AI maintainers, matched publishing workflows, injected source/claim/proof/rights/derivative/release/handoff failures, joint reader/editorial/accessibility outcomes and total cost, causal ablations, reproduction, and transfer.
 - A public Quarto repo with dynamic scaffold, source matrix, claim matrix, proof manifest, validation, GitHub Pages, and public release records.
 - A public-safe author-intent and lineage appendix that preserves architecture intent without publishing private conversation text.
 - Implemented repository-level validation: `living_book_release_record.valid.json` and tracked records in `release_records/` validate release-record shape, release state, audience scope, canonical scope, derived-artifact boundaries, support-state effect, and non-claims only; render and validation checks prove publication hygiene, not manuscript quality, claim truth, reader artifact production, or audio artifact production.
@@ -4648,16 +5408,16 @@ Lean proof targets:
 
 Stable ID: `open-research-agenda-and-bibliography-plan`
 
-Chapter job: The book needs a managed research backlog and bibliography plan so new papers can be inserted without destabilizing the architecture.
+Chapter job: The book needs an evidence-gated research backlog that admits and closes papers, local projects, missing artifacts, conflicts, proofs, experiments, reproductions, corrections, and chapter proposals without laundering activity into support.
 
-Core claim: The bibliography and research agenda should map source families, external literature queues, missing papers, proof targets, experiment backlogs, and chapter insertion rules.
+Core claim: Open Research Agenda and Bibliography Plan owns a research-program-, source-or-gap-, backlog-item-, access-, provenance-, public-safety-, chapter-boundary-, claim-, proof-or-experiment-, deduplication-, evidence-transition-, owner-, next-action-, closure-, consumer-, environment-, and time-specific Research Backlog Admission and Closure Contract: every new paper, local project, missing artifact, conflicting result, proof idea, experiment, reproduction need, correction, or chapter proposal enters through exact intake, triage, assignment, preconditions, blockers, non-claims, and terminal closure before it changes prose or support; no title, citation, source count, inventory row, source note, queue, priority label, backlog size, fixture, theorem, validator, or completed reading task alone establishes citation accuracy, literature completeness, research quality, claim support, reproduction, transfer, AGI, ASI, or SOTA.
 
 Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `verification_bandwidth`, `benchmaxxing` | Read first for chapter claims and mechanisms. |
-| Supporting | `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Supporting | `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_mmlu_2020`, `ext_gpqa_2023`, `ext_livebench_2024`, `ext_lean4_theorem_proving`, `ext_moe_llm_survey_2024` | Mine after primary sources for cross-layer connections, variants, evaluation and proof comparators, and failure modes. |
 | Durable-semantic-memory comparators | `ext_graphrag_2024`, `ext_hipporag_2024` | Use to test whether global graph sensemaking and associative graph navigation close the provisional durable-semantic-memory gap after existing chapters are improved. Preserve truth, update, poisoning, provenance, and local-reproduction limits. |
 | Connector or recovery required | `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
@@ -4666,39 +5426,32 @@ Draft arc:
 
 - Problem: The book needs a managed research backlog and bibliography plan so new papers can be inserted without destabilizing the architecture.
 - Insufficiency: A pile of sources or ad hoc citations does not tell future writing agents what to load, compare, prove, test, or defer.
-- Mechanism: Maintain source inventory, source notes, the generated appendix for Corben's own corpus and local projects, the separate generated external-literature appendix, chapter source queues, and direct-citation status before using a source as support.
-- Mechanism: Track recovered, missing, private, connector-gated, external-literature, proof, experiment, and artifact-reproduction items as Research Backlog Records rather than evidence, including triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, and non-claims.
-- Mechanism: Use triage rules to decide whether a new paper updates an existing boundary, requires a precise new chapter, belongs in an appendix, or should remain unassigned.
-- Mechanism: Preserve merge/insertion rules so overlapping papers mine shared mechanisms without creating duplicate anthology chapters.
-- Mechanism: Track source lifecycle states such as unread, inventoried, cached, source-noted, mapped, passage-reviewed, integrated, tested, mechanized, reproduced, deprecated, and refuted.
-- Mechanism: Require a triage decision before prose changes when a future agent receives a new paper: update existing chapter, propose new chapter, route to appendix, backlog, or reject as out of scope.
-- Interface: Appendix G is an independent top-level appendix for Corben's own papers, Corben-supplied materials, recovered project records, and local project records.
-- Interface: Appendix H is an independent top-level appendix for external literature and third-party references by other authors.
-- Interface: Source notes support chapter drafting.
-- Interface: Book outline tells future agents what to mine.
+- Mechanism: Freeze program purpose, intake window, source and gap classes, chapter graph, authority, access, rights, public safety, consumers, environment, time, and non-claims before outcome-aware triage.
+- Mechanism: Inventory provenance and metadata, separate Corben/local, author-intent, external, benchmark, proof, private, and missing-source classes, then extract passage-bound thesis, mechanism, evidence, conflict, chapter, claim, proof, experiment, and limit records before drafting.
+- Mechanism: Route each item to update, distinct-owner proposal, appendix, proof or experiment, reproduction, defer, reject, refute, retire, or correction; preserve lineage across duplicate and superseding records.
+- Mechanism: Execute lane-specific work and close only on a consumed artifact or decision, transition or explicit no-change record, residual, cost, non-claims, affected consumers, and successor state.
+- Interface: Twelve typed joins connect research authority; acquisition and storage; provenance-separated appendices; book structure and citation surfaces; claim records; proof and experiment artifacts; security, rights, retention, and replay; roadmap continuity; project lineage; challenge queues; publication and correction surfaces; and downstream users.
 
 Primary invariants:
 
-- Do not cite unread sources as support.
-- Do not infer bibliographic metadata.
-- New papers update inventory before chapter claims.
+- Exact scope, authoritative-or-unknown metadata, distinct provenance and lifecycle states, and no unread or inaccessible source support.
+- Passage-bound material claims, existing or genuinely distinct chapter owners, lineage-preserving deduplication, accepted evidence transitions, and separate work lanes.
+- Public safety and privacy, retained negative and rejected items, consumed closure artifacts, correction propagation, versioned citation state, and expired changed contracts.
+- Joint usefulness, failure, burden, and cost; exact synthesis and transfer scope; and a strict boundary around what inventory, notes, mappings, fixtures, theorems, validators, citation counts, and backlog counts can prove.
 
 Failure modes to cover:
 
-- Citation drift.
-- Duplicate chapter creation for overlapping ideas.
-- Missing sources treated as evidence.
-- Private empirical results leaking into public claims.
-- External references named by source documents becoming citations before direct verification.
-- Backlog rot where vague future-work items never become executable source, citation, proof, fixture, benchmark, or chapter tasks.
+- Citation drift, bibliographic hallucination, unread-source laundering, inventory theater, anthology drift, duplicate-evidence inflation, and source-result inheritance.
+- Private-evidence leakage, indirect-reference laundering, triage theater, backlog rot, activity laundering, and negative or conflict suppression.
+- Closure laundering, correction failure, priority capture, research overhead, false deferral, and unsupported transfer.
 
 Draft deliverables:
 
-- A split Corben-source-corpus and external-literature plan plus a research backlog record schema with source storage policy, public-safety state, external literature areas, source-note state, claim-mapping state, deduplication state, chapter-decision refs, proof/test backlog, required pre-drafting work, promotion blockers, and insertion/merge rules.
-- Implemented repository-level fixtures: `research_backlog_record.valid.json` validates backlog-record shape, triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, and non-claims only; `new_paper_triage_scenario.valid.json` validates synthetic update-existing, propose-new-chapter, defer-external-literature, and reject-duplicate intake decisions only. External-literature normalization, direct citation checks, evidence transitions, public-release permission checks, and live new-paper triage rehearsals remain incomplete.
-- Planned Codex test: Source inventory validation test.
-- Planned Codex test: Source-note backlog audit.
-- Implemented Codex test: New-paper triage scenario fixture.
+- Twenty-eight exact source mappings; split source inventory, source notes, and generated Corben/local, external, and author-intent appendices; and an explicit citation, proof, experiment, GraphRAG/HippoRAG, inaccessible-source, rejection, and blocker backlog.
+- Implemented public-safe `research_backlog_record.valid.json` and `new_paper_triage_scenario.valid.json` fixtures plus source inventory, note, protocol, appendix, citation, and mapping validators. These validate declared record surfaces only.
+- Two Lean targets and four finite declarations enforce only that source-derived claim records need ingested source artifacts and accepted assignments need existing chapter ids.
+- No natural intake or closure campaign, citation-accuracy or completeness result, research-quality effect, independent reproduction, transfer, or chapter-core support effect exists.
+- Argument exit requires a prospectively frozen natural multi-researcher stream against matched strongest research workflows, injected metadata, privacy, conflict, retraction, boundary, reproduction, correction, and rot failures, joint accuracy/usefulness/burden/cost outcomes, causal ablations, independent reproduction, and heterogeneous transfer.
 
 Lean proof targets:
 

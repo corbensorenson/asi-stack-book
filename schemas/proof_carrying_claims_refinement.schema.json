@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/proof_carrying_claims_refinement.schema.json",
+  "title": "Proof-Carrying Claims refinement result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "result_id", "source_sha256", "input_suites",
+    "reachable_stage_count", "route_case_count", "route_coverage",
+    "mutation_count", "mutation_rejection_count", "mutation_receipts",
+    "final_state", "support_state_effect", "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.proof_carrying_claims_refinement.v1"},
+    "result_id": {"type": "string", "minLength": 1},
+    "source_sha256": {
+      "type": "object",
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+      "required": ["lean_model", "proof_claim_schema", "adversarial_dossier_result"]
+    },
+    "input_suites": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["suite_id", "valid_count", "expected_invalid_count", "suite_passed", "validator_sha256"],
+        "properties": {
+          "suite_id": {"enum": ["proof_carrying_claims", "adversarial_review_dossier"]},
+          "valid_count": {"type": "integer", "minimum": 0},
+          "expected_invalid_count": {"type": "integer", "minimum": 0},
+          "suite_passed": {"const": true},
+          "validator_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "reachable_stage_count": {"const": 6},
+    "route_case_count": {"const": 23},
+    "route_coverage": {
+      "type": "array", "minItems": 23, "maxItems": 23,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["case_id", "expected_route", "observed_route"],
+        "properties": {
+          "case_id": {"type": "string", "minLength": 1},
+          "expected_route": {"type": "string", "minLength": 1},
+          "observed_route": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "mutation_count": {"type": "integer", "minimum": 30},
+    "mutation_rejection_count": {"type": "integer", "minimum": 30},
+    "mutation_receipts": {
+      "type": "array", "minItems": 30,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["mutation_id", "rejected", "terminal_stage", "failure_route"],
+        "properties": {
+          "mutation_id": {"type": "string", "minLength": 1},
+          "rejected": {"const": true},
+          "terminal_stage": {"enum": ["idle", "frozen", "artifact_bound", "executed", "adjudicated"]},
+          "failure_route": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "final_state": {
+      "type": "object", "additionalProperties": false,
+      "required": ["stage", "receipt_count", "verifier_result", "claim_effect", "support_assignment_count", "external_effect_count"],
+      "properties": {
+        "stage": {"const": "written_back"},
+        "receipt_count": {"const": 5},
+        "verifier_result": {"const": "passed"},
+        "claim_effect": {"const": "scoped_proposal"},
+        "support_assignment_count": {"const": 0},
+        "external_effect_count": {"const": 0}
+      }
+    },
+    "support_state_effect": {"const": "none"},
+    "non_claims": {
+      "type": "array", "minItems": 8, "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  }
+}

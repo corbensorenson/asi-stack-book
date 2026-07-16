@@ -3,8 +3,8 @@ title: "Policy Optimization and Learning from Feedback"
 chapter_id: "policy-optimization-and-learning-from-feedback"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-02"
+draft_maturity: "v0.3 manuscript draft"
+last_updated: "2026-07-15"
 primary_sources:
   - "benchmaxxing"
   - "rmi"
@@ -33,13 +33,14 @@ primary_sources:
   - "ext_s_grpo_2025"
   - "ext_longrlvr_2026"
   - "ext_rlhf_limitations_2023"
+  - "ext_muse_unlearning_2025"
+  - "ext_faithfulness_information_flow_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "The 2026-06-24 browser-GPT note is author-intent and literature-queue context only; it is not treated as source-derived evidence."
-  - "Appendix C now records passage-reviewed mappings for all twenty-seven assigned sources, including source-note-only review for MoECOT and external arXiv method-family records; support remains argument until accepted evidence transitions, local experiments, or stronger literature review justify promotion."
-  - "No PPO, DPO, GRPO, RLVR, router-policy, context-policy, execution-policy, verifier-policy, or reasoning-budget training run has been implemented or reproduced in this repository."
-  - "The policy_optimization_record fixture validates schema/example consistency; AsiStackProofs.PolicyOptimization implements finite record predicates plus bounded negative cases for missing holdout/contamination checks, reward-proxy promotion without target evaluation, authority-expanding policy updates without approval or rollback, policy-promotion routes with inadmissible feedback, missing target evaluation, missing reward-hacking probes, governance or authority gaps, missing rollback, or regression/residual gaps, and a deterministic policy-update lease fixture bridge; the benchmark anti-Goodhart harness validates synthetic feedback admissibility, reward-boundary, reward-hacking-probe, evidence-packet, governance-gate, blocked-ratchet, and promotion-gate behavior; and the Policy update lease probe validates six synthetic router-policy samples, five candidate policies, expected-invalid controls, and a dry-run rollback record. None of these artifacts proves reward quality, optimizer convergence, benchmark improvement, policy safety, reward-hacking resistance, route quality, or policy-update runtime behavior."
+  - "Freeze and run natural target-policy workloads with strong matched no-update, deterministic, online-RL, offline-preference, verifier-RL, and simpler baselines, complete rollout and selection denominators, hidden holdouts, and no outcome-aware changes."
+  - "Measure target-property causality, reward and evaluator validity, contamination, tails, forgetting, authority, safety, privacy, rights, resources, reward hacking, natural post-update behavior, and effect-complete rollback across full model and system state."
+  - "Run independent trainer, evaluator, data-custody, institutional reproduction, and heterogeneous transfer before considering any policy-improvement, reward-quality, rollback, capability, safety, support, or SOTA promotion."
 ---
 
 ## Chapter status
@@ -49,9 +50,9 @@ open_evidence_gaps:
 | Chapter ID | `policy-optimization-and-learning-from-feedback` |
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-02 |
-| Primary source records | `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`, `moecot`, plus 15 external method-family records listed below. |
+| Manuscript maturity | v0.3 manuscript draft |
+| Last updated | 2026-07-15 |
+| Primary source records | Twenty-nine exact passage-reviewed assignments; no source result imported |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `benchmaxxing`, `rmi`; supporting: `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`; external variants: TRPO, PPO, ReMax, DPO, IPO/preference theory, ORPO, KTO, SimPO, REINFORCE-style RLHF, DeepSeek-R1, DAPO, GSPO, S-GRPO, LongRLVR, RLHF limitations; connector/recovery: `moecot`; handoff: `sources/inbox/policy_optimization_browser_note_2026-06-24/` |
@@ -110,7 +111,7 @@ conflation; they do not prove reward adequacy or policy improvement.
 
 ## Core Claim
 
-[policy-optimization-and-learning-from-feedback.core, label: Design rationale, support: argument] Policy optimization is the stack's learning actuator: it can update planners, routers, context selectors, verifiers, execution policies, and generators, but governance decides which feedback is admissible and whether any update may be promoted.
+[policy-optimization-and-learning-from-feedback.core, label: Design rationale, support: argument] Policy Optimization and Learning from Feedback owns a target-policy-, baseline-, objective-, feedback-, evaluator-, dataset-, optimizer-, checkpoint-, rollout-, authority-, resource-, monitor-, rollback-, consumer-, environment-, and time-specific Governed Policy Update Lease: before any update, it freezes the legitimate target behavior, admissible feedback and proxy boundary, strong baselines, update family and budget, drift and authority ceilings, complete evaluation and failure denominators, reward-hacking and causal checks, rollback and monitoring, residuals, expiry, and promotion authority; a reward, preference, verifier score, benchmark gain, loss reduction, synthetic canary, formal route, rollback dry run, or trained checkpoint alone establishes neither reward validity, causal policy improvement, retained capability, alignment, safety, readiness, deployment, support, transfer, nor SOTA.
 
 The claim remains at `argument` support. The assigned ASI Stack sources support benchmark pressure, residual escrow, proof/verification discipline, context adequacy, execution ledgers, routing, resource budgets, and stable capability gates. The external RL literature records source-note method families and failure cautions, but no external-literature-backed support state is claimed yet.
 
@@ -127,6 +128,21 @@ Appendix C now records twenty-seven passage-reviewed mappings for policy optimiz
 | External reasoning/RLVR/limitations sources | DeepSeek-R1, DAPO, GSPO, S-GRPO, LongRLVR, and RLHF-limitations context for reasoning RL, sequence-level updates, early exit, verifiable context rewards, and reward-process risks. | No reasoning-RL reproduction, context-grounding reward experiment, model-quality result, early-exit result, mitigation result, or deployed safeguard. |
 
 ## Mechanism
+
+### Eighteen-stage update lifecycle
+
+The complete lifecycle freezes the legitimate target and consumer; binds exact
+policy, model, data, tool, runtime, and authority identities; classifies
+feedback provenance and its proxy boundary; selects an update family only after
+target/feedback fit; freezes optimizer, budget, seeds, stopping, and checkpoint
+selection; gives strong baselines matched opportunity; declares drift and
+authority constraints; freezes holdouts, contamination, adversarial, tail, and
+transfer evaluation; attacks the reward and evaluator; retains every rollout,
+failure, retry, checkpoint, and cost; runs causal ablations; emits a policy-
+delta receipt; governs lifecycle states; rehearses effect-complete rollback;
+monitors natural outcomes; expires material changes; and adjudicates target
+quality, safety, rights, authority, resources, residuals, reproduction, and
+transfer jointly.
 
 Policy optimization enters the stack as a governed update ledger. Before any behavior is changed, the stack records the update state, which policy is being updated, the proposed policy delta, which feedback artifact is admissible, the reward boundary, what drift bound applies, how reward hacking will be probed, which holdouts and regressions constrain the update, what authority effect is allowed, which residuals remain, and which governance gate can promote or reject the update.
 
@@ -231,6 +247,14 @@ Policy optimization connects to nearly every layer:
 
 Training evidence, evaluation evidence, governance evidence, and deployment evidence have to remain separate. A successful training run is not a promotion decision; a promotion decision is not a long-term safety result; a rollback handle is not proof that rollback works until it is exercised or dry-run.
 
+The complete twelve-owner boundary keeps Benchmark, Adversarial Evaluation,
+Evidence/Spinoza/UAT, target-layer owners, Data/Supply Chain, Artifact/Talos,
+Runtime/Security, Stable Capability/Replacement/Readiness,
+Threshold/Assurance, Resource, Formal, and Incident/Release/Living-Book
+authority distinct. The policy-update layer owns the bounded update lease, not the truth of
+feedback, target semantics, runtime enforcement, support movement, readiness,
+release, or public claims.
+
 ## Invariants
 
 - Reward is not evidence unless the verifier and evaluation boundary are recorded.
@@ -242,6 +266,15 @@ Training evidence, evaluation evidence, governance evidence, and deployment evid
 The most important invariant is authority conservation. A policy update may improve route choice, context selection, or reasoning length, but it cannot create permission to act outside the authority envelope that governed the original policy.
 
 Proxy humility keeps optimization from outrunning evidence. Optimizing a proxy cannot promote the target claim unless target-specific evaluation, residuals, and failure probes are recorded.
+
+The full invariant set additionally requires legitimate-objective and consumer
+scope, provenance and rights, independent promotion authority, optimizer-family
+humility, complete selection and cost denominators, matched strong baselines,
+prospectively frozen holdouts and stopping, target/proxy separation, retained
+quality floors, independent feedback validation, lifecycle-state separation,
+full-state rollback, natural post-update monitoring, lease expiry, independent
+reproduction and transfer, and the rule that finite artifacts prove no causal
+policy improvement.
 
 ## Failure modes
 
@@ -255,7 +288,27 @@ Reward, verifier, regression, and authority failures block promotion or force ro
 
 Reward laundering is the policy-optimization failure. The policy improves the reward, then the writeup describes it as improving the underlying task while reward hacks, preference bias, verifier blind spots, or regression losses remain unexamined.
 
+The complete failure register also covers evaluator feedback loops, offline-
+preference selection and rights failures, unsafe online exploration, checkpoint
+and seed cherry-picking, baseline starvation, outcome-aware tests, authority
+and training-completion laundering, full-state rollback theater, forgetting and
+mode collapse hidden by aggregates, mitigation substitution, update-churn cost,
+and unsupported transfer.
+
 ## Minimum Viable Implementation
+
+### Exact current minimum
+
+The repository currently has one public policy-optimization schema and valid
+protocol fixture plus one persisted deterministic lease-probe result over six
+synthetic routing samples, two holdouts, five candidate policies, three
+expected-invalid candidates, one selected canary kept experimental, and one
+fixture-only rollback dry run. Nineteen Lean declarations are record
+projections, finite implications, route reductions, or fixed-fixture
+assertions. The adjacent anti-Goodhart harness belongs to Benchmark Ratchets.
+No optimizer, model, live router, natural workload, preference dataset, reward
+model, real canary, deployed rollback, causal improvement, independent
+reproduction, or transfer ran. The core-claim support effect is exactly zero.
 
 Policy learning should begin as `policy_optimization_record.schema.json` with one valid fixture, one deterministic policy-update lease probe, and a finite Lean module.
 
@@ -264,6 +317,27 @@ The fixture records update state, target layer, policy ref, policy delta summary
 The Policy update lease probe at `experiments/policy_update_lease/results/2026-07-02-local.json` is the first bounded rehearsal of the lease idea. It uses six synthetic router-policy samples, five candidate policies, one selected source-grounded canary kept experimental, and three expected-invalid controls: a reward-only fast route, an authority-expanding route, and a missing-rollback route. The validator checks holdout coverage, contamination check presence, reward-hacking probes, unchanged authority, rollback plan, residuals, and non-claims, then injects a synthetic monitor event and records that the dry-run rollback restores the baseline policy. This is a deterministic fixture only: it is no PPO, DPO, GRPO, RLVR, router-policy, context-policy, execution-policy, verifier-policy, or reasoning-budget training run, and it is not a deployed canary, live rollback, route-quality result, reward-quality result, policy-improvement result, or support-state transition.
 
 A policy-delta trace should carry the first governed-learning rehearsal: one offline preference update kept experimental, one reward-hacking probe that blocks promotion, one router-policy canary with authority unchanged, one latency reward rejected for suppressing verification, and one rollback dry run.
+
+### Argument-exit campaign
+
+To move beyond argument, preregister natural planner, context, router, verifier,
+execution, generation, and governance workloads. Give no-update, deterministic,
+simple controller, online-RL, offline-preference, verifier-RL, and alternative-
+method baselines matched model/data/tool/context/compute/tuning/retry/evaluator/
+engineering opportunity. Retain all rollouts, seeds, checkpoints, failures,
+repairs, exclusions, unsafe artifacts, and costs. Freeze hidden holdouts,
+contamination, target evaluations, reward-hacking probes, tails, subgroups,
+authority and rights floors, stopping, and checkpoint selection before outcomes.
+Run feedback substitutions, reward perturbations, component ablations, causal
+tests, forgetting studies, natural post-update monitoring, and effect-complete
+rollback over model, optimizer, scheduler, RNG, caches, routes, credentials,
+descendants, effects, monitors, and reliance. Measure useful throughput, target
+quality, calibration, safety, privacy, rights, authority, latency, compute,
+energy, human burden, opportunity cost, and residuals jointly; then require
+independent trainers, evaluators, data custody, institutions, and heterogeneous
+transfer. Positive, negative, null, inconclusive, narrowed, refuted,
+rolled-back, deprecated, retired, and blocked-after-full-attempt outcomes remain
+terminal evidence.
 
 ## Beyond the State of the Art
 
@@ -316,6 +390,18 @@ Only fixture-shape validation and finite record predicates are implemented. The 
 | `lean:policy_optimization.lease_probe_fixture_bridge` | `AsiStackProofs.PolicyOptimization` | The deterministic policy-update lease probe records six synthetic routing samples, five candidate policies, selected canary kept experimental, expected-invalid controls, rollback dry run, no support-state effect, and non-claim boundary. | implemented |
 
 These Lean hooks are implemented as finite-record predicates over policy-update reviews, reward/governance promotion reviews, promotion-evidence reviews, reward-proxy reviews, authority-expansion reviews, policy-promotion route reviews, and the synthetic lease-probe summary. They prove only record-level gates: an admitted policy update exposes reward, evaluation, governance, and rollback fields; an update with unverified reward or missing governance gate cannot be promoted; promotion evidence cannot omit holdouts or contamination checks; a reward proxy cannot stand alone for target evaluation; authority-expanding updates require governance approval and rollback records; route-level promotion checks cannot pass through inadmissible feedback, missing target evaluation, missing reward-hacking probes, governance or authority gaps, missing rollback, or regression/residual gaps without rejection, review, rollback, or residual routing; and the lease-probe fixture summary contains the expected sample counts, rejection flags, rollback-dry-run flag, no-support-effect flag, and non-claim boundary. They do not prove reward quality, RL convergence, benchmark improvement, policy safety, route quality, context-selection quality, reward-hacking resistance, hidden-holdout adequacy, contamination-detection quality, approval quality, rollback execution, live rollback behavior, or runtime policy-update behavior.
+
+### Formal adequacy audit
+
+All nineteen declarations are finite. Eight are projections or implication
+checks over hand-authored records, seven reduce the hand-authored promotion
+route, three normalize a fixed synthetic lease summary, and one reduces a
+finite evaluation-integrity gate. None models gradient estimation, optimizer
+convergence, learning dynamics, reward correctness, evaluator error, causal
+target improvement, catastrophic forgetting, full-state recovery, runtime
+enforcement, institutional independence, or transfer. No declaration is a
+direct empirical projection. Their authority ends at record and route
+semantics.
 
 ## Source-noted external literature
 

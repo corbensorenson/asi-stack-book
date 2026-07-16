@@ -1,0 +1,370 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "artifact-steward-agents-and-living-project-governance",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+    "structured_atoms_reviewed": 78,
+    "prose_candidates_adjudicated": 55,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, all twenty-three exact source mappings, seven schema-and-fixture families, deterministic two-valid/six-invalid lifecycle probe, adjacent synthetic release handoff, all seven proof targets, all sixteen ArtifactStewardAgents declarations, every manifest atom, every prose candidate, test plan, source crosswalk, summary, and handoff. The sweep made the Artifact Steward Continuity Lease the distinct owner; expanded it to eighteen mechanisms, twelve interfaces, eighteen invariants, and eighteen failure modes; preserved zero chapter-core effect; classified the formal surface as reductions or consequences of seven hand-authored finite predicates/functions; and froze the natural multi-project, injection, protected-asset, treasury, compute, governance-capture, federation, release, rollback, handoff, sunset, reproduction, and transfer campaign."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Named projects, artifacts, missions, owners, affected parties, authorities, roadmap items, work contracts, events, workers, treasuries, compute, contributors, evidence, governance systems, releases, federations, sunset decisions, consumers, environments, and times.",
+      "environment": "Twenty-three exact mappings; seven schema-and-fixture families; a deterministic lifecycle probe with two valid and six invalid routes; one adjacent synthetic release handoff; seven proof targets; sixteen finite declarations. No steward bot, real event intake, treasury or compute executor, contributor or governance service, federation, protected-branch action, release runner, sunset protocol, natural workload, reproduction, or transfer exists.",
+      "model": "A scoped Artifact Steward Continuity Lease over charter, authority, tainted intake, memory, planning, contracts, dispatch, resources, execution, verification, contribution ledgers, release, governance, federation, monitoring, incident rollback, lifecycle modes, sunset, and expiry.",
+      "authority": "This chapter owns project continuity only. Intent and rights, task semantics, memory, runtime and security, evidence and proof, evaluation and readiness, learning and data, treasury, contribution and governance, federation, incident, release, publication, archive, and sunset owners retain their boundaries.",
+      "time": "Semantic review current through 2026-07-15; mission, ownership, authority, law, funding, infrastructure, threat, governance, evidence, consumers, environment, or time changes expire affected leases.",
+      "artifact": "Chapter and manifest; twenty-three mappings; seven record families; lifecycle probe and validator; adjacent release handoff; seven targets; sixteen declarations; semantic review; and future natural independent multi-project campaign."
+    },
+    "current_disposition": "retain_argument_with_finite_steward_records_and_probe_no_core_effect_pending_natural_independent_multi_project_campaign",
+    "assumptions": [
+      "Mission, ownership, authority, events, work, resources, contributions, evidence, governance, releases, incidents, and sunset criteria can be observed and versioned.",
+      "Charters, contracts, budgets, approvals, release gates, rollback, and sunset criteria can be frozen prospectively.",
+      "Strong human-maintained, ordinary automation, workflow-platform, and no-steward baselines can receive matched opportunity.",
+      "Useful throughput, false action and blocking, burden, legitimacy, concentration, security, recovery, continuity, latency, and total cost can be measured without collapsing authority.",
+      "Independent maintainers, contributors, treasurers, security evaluators, governance institutions, projects, legal and funding regimes, and transfer environments can reproduce outcomes."
+    ],
+    "dependencies": [
+      "human-intent-as-a-formal-input",
+      "system-boundaries-and-authority",
+      "planning-as-a-control-layer",
+      "labor-os-and-typed-jobs",
+      "virtual-context-abi",
+      "artifact-graphs-audit-logs-and-replay",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "security-kernel-and-digital-scifs",
+      "evidence-states-and-claim-discipline",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "resource-economics-and-token-budgets",
+      "personal-compute-hives-and-federated-edge-intelligence"
+    ],
+    "strongest_counterclaim": "A steward continuity layer adds process, cost, and a new concentration point without improving project usefulness, maintainability, legitimacy, security, recovery, or sunset quality beyond ordinary human maintenance and automation.",
+    "falsifier": "Prospectively frozen natural multi-project campaigns show no unique continuity or governance benefit, unacceptable burden or false blocking, authority or treasury capture, injection or credential compromise, ineffective rollback or sunset, human dependency, or no independent reproduction and transfer.",
+    "required_lanes": [
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze project, automation, governance, funding, compute, injection, and delegation comparators without importing their results."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify mission, ownership, affected-party rights, authority, compensation, representation, appeal, fork, exit, emergency, and sunset decisions."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify finite contract, protected-action, release, sunset, contribution, and federation routes without claiming governance quality."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Run real event intake, workers, credentials, treasury, compute, contributor, governance, federation, release, rollback, and sunset paths."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure useful throughput, quality, false action and blocking, burden, legitimacy, concentration, security, recovery, continuity, latency, and full cost."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate charter, taint, contracts, gates, ledgers, treasury, governance, rollback, and sunset controls under matched opportunity."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Reproduce across projects, missions, communities, repositories, funding models, legal regimes, institutions, threats, and time."
+      }
+    ],
+    "evidence_refs": {
+      "chapter": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+      "probe_result": "experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json",
+      "probe_validator": "scripts/validate_artifact_steward_lifecycle_probe.py",
+      "release_handoff_validator": "scripts/validate_benchmark_antigoodhart.py",
+      "lean": "lean/AsiStackProofs/ArtifactStewardAgents.lean",
+      "manifest": "book_structure.json"
+    },
+    "contrary_evidence": [
+      "The lifecycle probe contains only two valid and six expected-invalid public-safe fixture routes.",
+      "No steward bot, real event intake, treasury or compute executor, governance system, contributor service, federation harness, release runner, or sunset protocol has run.",
+      "All sixteen declarations are derived from seven hand-authored finite predicates or route functions and do not model project behavior or institutional outcomes.",
+      "The adjacent release handoff belongs to the benchmark harness and cannot establish steward quality.",
+      "Twenty-three mappings include source-reported or adjacent substrate and risk context that was not locally reproduced."
+    ],
+    "known_confounds": [
+      "Project quality, maintainer skill, community size, funding, repository maturity, task mix, tooling, security posture, legal regime, and time can dominate outcomes.",
+      "Shared maintainers, contributors, funders, evaluators, governance, infrastructure, or analysis can create false independence.",
+      "Outcome-aware charter, metric, budget, approval, release, or sunset changes and discarded failures create selection bias.",
+      "Useful work can coexist with illegitimate authority, capture, insecurity, opacity, externalized burden, or failed rollback.",
+      "Steward process can displace direct maintenance, reviewer attention, user value, and community autonomy."
+    ],
+    "acceptance_criteria": [
+      "Every lease binds exact artifact, mission, owner, authority, taint, memory, roadmap, contract, worker, resource, contribution, evidence, governance, release, federation, rollback, sunset, residual, consumer, environment, and time.",
+      "Natural multi-project workloads run with frozen charters, matched strong baselines, complete denominators, real injection and protected assets, resources, governance, release, rollback, handoff, and sunset.",
+      "Effect-complete rollback restores repository, credentials, funds, compute, services, notifications, ledgers, releases, governance, and reliance or residualizes them.",
+      "Any promoted claim survives causal ablation, independent role and institutional reproduction, and heterogeneous transfer without activity, authority, evidence, funding, governance, or cost laundering."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to exact project, mission, owners, authority, workload, events, workers, resources, governance, release, sunset, institution, environment, and time.",
+      "Separate proposed, approved, executed, verified, accepted, released, rolled back, appealed, transferred, archived, sunset, reproduced, transferred, and SOTA states.",
+      "Unknown mission legitimacy, authority, taint, security, contribution fairness, governance capture, resource safety, rollback, human continuity, sunset, cost, reproduction, or transfer remains blocked."
+    ],
+    "refutation_criteria": [
+      "Refute a steward result when charter, authority, event provenance, contract, credentials, resources, evidence, governance, release, rollback, or sunset state is materially invalid.",
+      "Refute a stewardship benefit when matched baselines preserve or improve outcomes or when extra labor, funding, selection, hidden failures, capture, opacity, or omitted costs explain the gain.",
+      "Refute safe autonomy, legitimacy, treasury safety, capture resistance, project quality, readiness, deployment, support, transfer, or SOTA language when only source reports, records, finite routes, or synthetic fixtures exist."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only when a more precise continuity owner supersedes the atom and every charter, contract, action, resource, contribution, decision, release, rollback, dispute, sunset, correction, and historical record migrates with lineage."
+    ],
+    "promotion_ceiling": "argument_until_natural_multi_project_causal_campaign_with_effect_complete_rollback_independent_reproduction_and_transfer",
+    "reproduction": {
+      "command": "python3 scripts/validate_artifact_steward_lifecycle_probe.py && python3 scripts/validate_benchmark_antigoodhart.py && python3 scripts/validate_protocol_examples.py && cd lean && lake build AsiStackProofs.ArtifactStewardAgents",
+      "environment_lock": "Local schemas, fixtures, deterministic probe, adjacent synthetic release handoff, validators, and finite module current through 2026-07-15; natural independent multi-project campaign not frozen or run.",
+      "artifact_digest": null,
+      "evaluator_identity": "Current fixtures, validators, and formalization are repository-local; independent maintainers, contributors, treasurers, security evaluators, governance institutions, projects, and transfer environments are required."
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "artifact-steward-agents-and-living-project-governance",
+      "next_unblocking_condition": "Freeze and run natural multi-project workloads with matched strong baselines, real event and injection intake, protected assets, treasury and compute, contribution and governance, federation, release, effect-complete rollback, maintainer handoff, sunset, joint outcomes and costs, independent reproduction, and transfer."
+    },
+    "non_claims": [
+      "No charter, work contract, issue, workflow, vote, balance, contribution score, fixture, theorem, source mapping, release checklist, or synthetic probe establishes ownership, authority, legitimacy, treasury safety, capture resistance, project quality, readiness, deployment, support, transfer, or SOTA.",
+      "No steward bot, real event intake, treasury or compute executor, contributor or governance system, federation, protected-branch action, release runner, sunset protocol, natural workload, independent reproduction, or transfer exists.",
+      "The argument-exit campaign is a required attempt specification, not a completed project-governance result."
+    ]
+  },
+  "atom_reviews": {
+    "artifact-steward-agents-and-living-project-governance.core": {
+      "current_disposition": "retain_distinct_artifact_steward_continuity_lease_owner_at_argument",
+      "strongest_counterclaim": "Steward continuity is overhead and concentration risk without unique project value.",
+      "falsifier": "Natural matched projects show no benefit, unacceptable burden, authority or treasury capture, insecurity, failed rollback or sunset, human dependency, or no reproduction and transfer.",
+      "promotion_ceiling": "argument_until_natural_independently_reproduced_multi_project_causal_campaign"
+    }
+  },
+  "prose_candidate_dispositions": {
+    "artifact-steward-agents-and-living-project-governance.prose.436d024ab2ac": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.0a7ca0491ec7": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.475a14886e2e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.a6770f01239c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.08a9ffcc3fda": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.62b0bcde5d7c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.bf1dc71db70f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.54842b370522": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.755313296bca": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.8c98abc11944": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.c933201ce280": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.4ee3c25ecde6": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.5bd39a280082": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.77767b3786ae": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.062d4bcc6320": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.4d2b8475309f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.f10439a1b899": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.0111e457089f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.1942c426ee1f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.b482b8e00cee": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.ad70652e5133": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.623a269775ce": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.924bfd6dd671": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.6903f8717f41": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.f2a02d609b8b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.207b5eaca8dc": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.ffdbf8b808bd": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.8cafc912e3f1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.ead38b3a670b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.67b1e4fef879": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.e94679429a78": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.ca1d4f50b4fa": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.be074d4686f2": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.f6504f257556": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.484a2e20a4e3": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.4638397e16ab": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.fd6cc60c43c2": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.62bd7e6ab39d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.f2dd86724ba5": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.d252dba561bf": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.65b768d83acd": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.2938cd9bc0da": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.6a88c8fe3b49": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.c7ba1646e19a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.43f311184d7b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.6342a478d10a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.6ca1ae7a35ab": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.d7ce6f724f13": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.83095fd4a943": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.0d5bc348818b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.f03ea0a7b5a2": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.2c603b5ec9fe": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.14487f0a4edb": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.8983f89c858f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.3e8d4946da3f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped non-claim fragment from the finite-record evidence boundary; it creates no independent proposition or promoted atom."
+    }
+  },
+  "non_claims": [
+    "No record, workflow, vote, balance, score, fixture, theorem, source mapping, or synthetic probe establishes ownership, legitimacy, treasury safety, capture resistance, project quality, deployment, support, transfer, or SOTA.",
+    "No real steward, treasury, governance, release, or sunset runtime or independent reproduction exists.",
+    "The argument-exit campaign is future work, not current evidence."
+  ]
+}

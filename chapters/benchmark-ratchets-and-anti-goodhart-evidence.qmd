@@ -3,8 +3,8 @@ title: "Benchmark Ratchets and Anti-Goodhart Evidence"
 chapter_id: "benchmark-ratchets-and-anti-goodhart-evidence"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-10"
+draft_maturity: "v0.3 manuscript draft"
+last_updated: "2026-07-15"
 primary_sources:
   - "benchmaxxing"
   - "rmi"
@@ -21,10 +21,9 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records passage-reviewed mappings for all twelve assigned sources, including source-note-only review for connector/recovery sources; support remains argument until run records, benchmark artifacts, contamination audits, regression-preservation tests, hidden-transfer tests, local Theseus report verification, or accepted evidence transitions justify promotion."
-  - "The benchmark_ratchet_record fixture validates schema/example consistency, AsiStackProofs.BenchmarkRatchets implements finite record and ratchet-decision predicates, the benchmark anti-Goodhart harness validates synthetic saturation, holdout/contamination/mutation-or-transfer, regression-ref, negative-result, and promotion-blocking semantics, and the benchmark fixture bridge validates 2 valid fixtures and 5 expected-invalid controls against a Lean finite fixture mirror; no empirical benchmark run, hidden holdout, mutation test, transfer check, contamination audit, policy-training run, steward release, source-reported benchmark replay, or current Theseus report verification has been run."
-  - "Connector/recovery mappings for Coherence Exchange, MoECOT, and Road To AGI were reviewed against source notes only because raw connector text is not published here; they remain planning/status context rather than benchmark evidence."
-  - "No support-state promotion, benchmark success, runtime readiness, model quality, deployment readiness, or raw source publication is implied."
+  - "All twenty-nine assigned sources have exact passage-reviewed mappings, but source-reported memory, dataset, evaluation-framework, agent-security, self-improvement, architecture-search, dynamic-compute, coding, and unlearning results remain comparator context only."
+  - "The current implementation is two schemas, one blocked provenance record plus ten rejecting mutations, two valid and five invalid synthetic anti-Goodhart fixtures, one persisted fixture bridge, three proof targets, and eight finite declarations. It includes no natural benchmark run, hidden holdout, contamination audit, empirical baseline matrix, trained model or policy result, independent evaluator, or support transition."
+  - "Argument exit requires preregistered natural and adversarial workloads, construct and target-capacity validation, strong matched controls, complete selection and failure lineage, raw output binding, contamination/public-calibration controls, causal and meta-evaluation, independent reproduction, heterogeneous transfer, complete cost and rights accounting, fallback, and a claim-specific transition."
 ---
 
 ## Chapter status
@@ -34,8 +33,8 @@ open_evidence_gaps:
 | Chapter ID | `benchmark-ratchets-and-anti-goodhart-evidence` |
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-02 |
+| Manuscript maturity | v0.3 manuscript draft |
+| Last updated | 2026-07-15 |
 | Primary source records | `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `moecot`, `road_to_agi`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -85,13 +84,13 @@ This also protects the reader. A living book can accumulate validation badges, g
 
 ## Core Claim
 
-[benchmark-ratchets-and-anti-goodhart-evidence.core, label: Design rationale, support: argument] Benchmark ratchets should preserve regressions, create harder frontiers, record residuals, and resist Goodhart pressure.
+[benchmark-ratchets-and-anti-goodhart-evidence.core, label: Design rationale, support: argument] Benchmark Ratchets and Anti-Goodhart Evidence owns a construct-, task-, dataset-, metric-, harness-, model-, checkpoint-, output-, evaluator-, baseline-, retry-lineage-, budget-, environment-, claim-axis-, and time-specific Benchmark Instrument Lease: a score or evaluation event may update only the exact claim whose construct validity, target capacity, data and metric provenance, output binding, contamination and public-calibration boundary, strong baselines and negative controls, complete selection and failure lineage, regression floors, frontier state, uncertainty, costs, causal checks, transfer, residuals, and decision authority survive review; a green fixture, synthetic probe, source-reported result, leaderboard gain, held-out score, saturation label, or archived winner alone confers no capability, safety, readiness, deployment, unlearning, support, transfer, or SOTA authority.
 
 The claim remains at `argument` support. The assigned sources support design discussion of benchmark lifecycle, anti-Goodhart controls, residual escrow, regression floors, readiness gates, and the mined distinction between metrics that were measured, derived, modeled, fixed, proxied, or never causally connected to a returned output. They do not prove benchmark gains in this repository.
 
 ### Claim-source mapping status
 
-Appendix C now records eighteen passage-reviewed mappings for the benchmark-ratchet claim, including the six historical projects as one related local implementation lineage. Those mappings make the source map traceable enough for drafting and support review, but they do not move the claim above `argument` support. They also do not convert source-reported benchmark commands, local-project status notes, schemas, fixtures, or finite Lean predicates into benchmark evidence.
+Appendix C now records exact passage-reviewed mappings for all twenty-nine assigned sources, including the six historical projects as one related local implementation lineage. Those mappings make the source map traceable enough for drafting and support review, but they do not move the claim above `argument` support. They also do not convert source-reported benchmark commands, local-project status notes, schemas, fixtures, or finite Lean predicates into benchmark evidence.
 
 | Source ID | Reviewed support | Boundary |
 |---|---|---|
@@ -141,6 +140,55 @@ A benchmark ratchet record tracks benchmark state, baseline, command, environmen
 In practice, this means benchmark work should leave behind enough material for a future reader or agent to reconstruct the decision. If a model clears a threshold but fails a neighboring task family, the residual belongs beside the result. If a benchmark is useful only as a smoke test, the record should say so. If a source reports a command that this repository has not rerun, the record should preserve that boundary instead of laundering it into local evidence. Benchmark evidence discipline depends on this mundane bookkeeping.
 
 The ratchet should also name the capability field it pressures. Without an SCF boundary, benchmark success can attach to a vague product, model, or agent identity and then survive migrations it was never meant to cover. With an SCF boundary, the benchmark can preserve a regression floor for the specific capability that earned it.
+
+The benchmark-ratchet layer owns the evaluation instrument, not the underlying construct,
+model, claim transition, or release decision. Task owners define what behavior
+matters; Data and Supply Chain own the dataset; Runtime owns the executed
+artifact; Evaluator Governance owns the scorer; Claims/Evidence owns support;
+and Readiness/Release owns deployment authority. The Benchmark Instrument
+Lease is the bounded record that lets those owners consume a result without
+turning the benchmark into a truth machine.
+
+### Eighteen-stage benchmark-instrument lifecycle
+
+The lifecycle registers the construct, movable claim, task population, data,
+metric, harness, model, checkpoint, output path, evaluator, baselines, budget,
+authority, environment, and expiry. It validates that the architecture and
+observation channel can express the target; versions data, splits, provenance,
+rights, public exposure, contamination, and hidden custody; preregisters
+natural and adversarial cases, thresholds, uncertainty, tails, retries,
+falsifiers, narrowing, and retirement; and freezes strong matched baselines and
+negative controls.
+
+Every metric then receives an origin class and a causal binding to raw
+observations, returned outputs, evaluator outputs, and the exact claim.
+Equivalent retries, prompt and hyperparameter search, checkpoint selection,
+archive ancestry, repairs, discarded candidates, and validation feedback share
+one selection lineage. Instruments move through candidate, calibration,
+frontier, regression-floor, contamination-review, quarantine, blocked,
+retired, and historical states. Natural runs preserve raw inputs and outputs,
+traces, seeds, resources, evaluator records, failures, divergence, timeouts,
+OOMs, exclusions, fallbacks, repairs, and costs.
+
+Decontamination, canary strings, public-calibration budgets, hidden and temporal
+holdouts, mutation, paraphrase, distribution shift, tool injection,
+memorization, privacy, and answer-exposure checks precede interpretation.
+Wall and saturation diagnosis separates learning from leakage, proxy drift,
+shortcut behavior, evaluator ceiling, target inexpressibility, and presentation
+gaming. Utility, calibration, tails, safety, rights, retained capabilities,
+robustness, latency, resources, human burden, costs, and residuals are measured
+together. Causal ablations and metric meta-evaluation test whether the named
+mechanism and metric behave as claimed.
+
+Success opens a least-authority review; it never promotes automatically. Every
+prior floor, exclusion, contamination finding, negative or inconclusive result,
+critical failure, and residual survives into descendants. Monitoring watches
+exposure, drift, evaluator capture, saturation, proxy gaming, floor regressions,
+retry pressure, displaced cost, and consumer misuse. Independent harnesses,
+evaluators, data custody, implementations, and organizations must reproduce a
+decisive result before heterogeneous transfer. Material change or failure
+expires, quarantines, narrows, downgrades, refutes, supersedes, or retires the
+instrument while preserving evidence and lineage.
 
 ### Metric provenance and closure inheritance
 
@@ -202,6 +250,19 @@ Routing and SCFs consume readiness. Appendix C records support movement only whe
 
 Procedural memory consumes benchmark ratchets as retirement pressure. If a generated tool fails a preserved floor, it should be revised, quarantined, or retired. If a benchmark saturates, it may still guard the tool as a regression even when it no longer justifies a stronger claim.
 
+Twelve owner interfaces keep that connection honest. Task/Construct owners
+define the behavior; Data/Supply Chain owns provenance, rights, contamination,
+retention, deletion, and hidden custody; Runtime/Tools/Artifacts owns the exact
+model-to-output trace; Evaluator Governance owns scorer validity and
+independence; Routing/SCFs/Training/Policy/Self-Improvement consume only an
+accepted lease; Claims/Evidence owns support movement; Readiness/Thresholds/
+Safety Cases/Release owns safeguards and deployment; Security/Privacy/Rights
+owns attacks, leakage, affected-party constraints, and erasure claims; Resource
+Economics owns complete cost; Proof Envelope owns only finite ratchet-record
+claims; Unlearning/Continual Learning owns influence, privacy, storage, retained
+utility, and descendant-state semantics; and Living-Book/Steward/Change
+Governance owns synchronized surfaces, retirement, and correction.
+
 ## Invariants
 
 - No test success is claimed without execution.
@@ -222,6 +283,17 @@ Ratchets must preserve old baselines and failed attempts so benchmark progress c
 
 Evaluator updates also need versioned admission rules before old scores and new scores are compared.
 
+The full invariant set also requires exact instrument scope; construct and
+target-capacity validity; traceable metric origin and checkpoint-to-output
+binding; versioned data exposure, rights, contamination, and hidden custody;
+matched baseline opportunity; complete selection and failure denominators;
+saturation-to-floor conversion; descendant inheritance; visible subgroup,
+tail, adversarial, privacy, retained-capability, and cost effects; separately
+budgeted holdout and contamination checks; no score-to-causality or score-to-
+deployment inference; review before authority; complete cost; change-triggered
+expiry; independent error separation; and owners for every metric dispute,
+proxy gap, failed transfer, retirement, and residual.
+
 ## Failure modes
 
 - Benchmark overfitting.
@@ -239,6 +311,17 @@ Evaluator updates also need versioned admission rules before old scores and new 
 Each failure blocks promotion or downgrades support state until the evidence boundary is repaired.
 
 A subtler failure is benchmark nostalgia. A once-useful benchmark may remain in the book because it was historically important, even after it stops applying pressure. The ratchet should preserve it as a regression floor or historical note while making clear that it no longer defines the frontier.
+
+The matched failure set includes undefined constructs; architecture-
+inexpressible targets; fixture or source-report laundering; obscured metric
+origin; checkpoint/output disconnect; public exposure and hidden-holdout reuse;
+weak or asymmetric baselines; retry and selection-lineage laundering;
+validation or archive overfitting; saturation overclaim; deletion of floors,
+failures, and residuals; averages hiding subgroups, tails, privacy, safety,
+retained-capability, or cost damage; evaluator capture and reward gaming;
+imported external results; unsupported transfer; hidden complete cost;
+automatic routing/training/readiness/release/support movement; and prestige or
+sunk cost blocking quarantine, narrowing, refutation, or retirement.
 
 ## Minimum Viable Implementation
 
@@ -258,6 +341,19 @@ The bridge records 2 valid fixtures and 5 expected-invalid controls. The valid s
 
 The bridge makes the anti-Goodhart record discipline operational at the record boundary: a synthetic success path and five nearby failure paths are checked together instead of narrated separately. It is not a benchmark run, hidden-holdout validation, contamination detector, policy-training result, steward-agent execution, release-safety review, Theseus replay, model-quality result, or support-state transition.
 
+The exact current minimum is one benchmark-ratchet schema and valid record
+fixture; one metric-provenance schema with one valid blocked six-project-
+lineage record and ten rejecting mutations; one synthetic anti-Goodhart harness
+with two valid records and five expected-invalid controls; one persisted
+fixture-bridge result aligned to that same set; three proof targets; and eight
+local BenchmarkRatchets declarations classified as two direct record
+projections, three derived finite decision cases, and three fixture-
+normalization assertions. There is no natural benchmark workload, hidden
+holdout, contamination audit, public-calibration budget, strong empirical
+baseline matrix, model or policy training run, independent evaluator,
+capability gain, safety result, readiness transition, deployment, reproduction,
+transfer, unlearning result, chapter-core transition, or SOTA result.
+
 ## Beyond the State of the Art
 
 The benchmark endpoint is an operating system for evaluation, not a leaderboard appendix. Every evaluation would become a governed evidence packet with enough history to tell whether the system learned a capability, learned a test, leaked a public calibration surface, or merely improved a proxy.
@@ -274,6 +370,32 @@ A benchmark ratchet surface needs:
 - Failure closure that preserves regressions, quarantines contaminated results, blocks claim inflation, and turns benchmark saturation into a floor rather than a story about general intelligence.
 
 The completed evaluation surface would not call a capability "better" because a single score improved. It would be better only within the recorded evidence boundary, with regressions preserved and residuals visible. The benchmark operating system remains a target architecture until ratchet records, contamination reviews, transfer checks, regression-preservation tests, and accepted evidence transitions show that benchmark movement changed the permitted claim boundary.
+
+### Argument-exit campaign
+
+The full attempt preregisters natural task distributions and adversarial,
+temporal, hidden, paraphrase, mutation, transfer, contamination, privacy, and
+tool-use cases for every load-bearing construct. It validates target capacity;
+freezes versioned data, exposure, rights, harnesses, model/checkpoint/output
+binding, evaluator identities, strong ordinary baselines, random/no-skill and
+wrong-target controls, budgets, retries, selection lineage, thresholds,
+uncertainty, subgroup and tail analyses, critical failures, falsifiers, and
+promotion rules before decisive scoring.
+
+Runs preserve all candidates and failures while measuring useful performance,
+calibration, robustness, retained capabilities, safety, privacy, rights,
+latency, throughput, memory, energy, human and verifier burden, complete cost,
+fallback, recovery, and residuals. Causal ablations identify the claimed
+mechanism; metric meta-evaluation checks response to benign and harmful
+changes; independent harnesses, evaluators, data custody, implementations, and
+organizations reproduce the result; and transfer covers tasks, models,
+scaffolds, languages, domains, hardware, attacks, rights regimes, and time.
+
+The terminal result may qualify a narrow claim, preserve a null, expose a
+proxy, refute a mechanism, quarantine contamination, retire an instrument, or
+record `blocked_after_full_attempt`. Until the required lanes pass and an exact
+transition is accepted, the core remains `argument`; score increases, green
+fixtures, and growing benchmark inventories are non-terminal.
 
 ## Codex test plan
 
@@ -298,6 +420,19 @@ The completed evaluation surface would not call a capability "better" because a 
 | `lean:benchmarks.ratchet.fixture_bridge` | `AsiStackProofs.BenchmarkRatchets` | The benchmark anti-Goodhart fixture bridge mirrors 2 valid fixtures, 5 expected-invalid controls, and no-support-promotion boundaries. | implemented |
 
 These Lean hooks are implemented as finite-record predicates over capability-promotion reviews, saturated-benchmark promotion reviews, ratchet-decision reviews, and the synthetic fixture-bridge summary. They prove only record-level gates: capability promotion requires benchmark evidence plus preserved regression records, a saturated benchmark alone cannot promote higher readiness, accepted readiness promotion records require transfer or mutation checks plus preserved negative and regression records, saturated benchmarks moved to regression-floor status require preserved regression records, contaminated reviews cannot promote readiness, and the tracked fixture bridge preserves its expected positive/negative synthetic controls without support promotion. They do not prove benchmark success, transfer, contamination resistance, regression-suite quality, anti-Goodhart effectiveness, policy quality, steward release safety, or empirical capability gains.
+
+The formal audit counts eight declarations. Two are direct record projections:
+`capability_promotion_requires_benchmark_evidence_and_preserved_regressions`
+and `saturated_benchmark_alone_cannot_promote_higher_readiness`. Three are
+derived finite decision cases for accepted readiness promotion, saturated-floor
+conversion, and contaminated-review rejection. Three normalize the fixed
+two-valid/five-invalid synthetic bridge and its no-promotion fields. None proves
+construct validity, target capacity, metric causality, benchmark adequacy,
+contamination resistance, hidden-holdout integrity, model capability, policy
+quality, safety, unlearning, deployment, reproduction, or transfer. Useful
+future formal work must constrain real lifecycle and inheritance semantics,
+selection-lineage conservation, information exposure, revocation, and
+implementation refinement; empirical obligations stay empirical.
 
 ## Source crosswalk
 

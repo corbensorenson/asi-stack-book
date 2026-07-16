@@ -1,0 +1,336 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "safety-cases-and-structured-assurance",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/safety-cases-and-structured-assurance.qmd",
+    "structured_atoms_reviewed": 79,
+    "prose_candidates_adjudicated": 47,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, all four exact source mappings, both assurance schemas, eight digest-bound synthetic records, five rejecting mutations, all eight proof targets, all eight SafetyCases declarations, every manifest atom, every prose candidate, test plan, source crosswalk, summary, and handoff. The sweep made the deployment-context-, hazard-, claim-, strategy-, evidence-, assumption-, defeater-, safeguard-, threshold-, readiness-, authority-, release-path-, residual-, version-, and time-specific Assurance Argument Compilation Packet the distinct owner; expanded it to eighteen mechanisms, twelve interfaces, eighteen invariants, and eighteen failure modes; preserved zero chapter-core effect; and froze the natural multi-hazard, seeded-fault, countercase, semantic/evidence, causal, institutional-reproduction, and transfer campaign."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Named systems, versions, deployment contexts, populations, hazards, claims, strategies, evidence, assumptions, defeaters, safeguards, thresholds, readiness states, authorities, release paths, residuals, reviewers, organizations, and times.",
+      "environment": "Four exact mappings; two schemas; eight digest-bound synthetic records—one readiness-review and seven negative routes; five mutations; eight targets; eight finite derived declarations. No real case, hazard analysis, threat model, evidence review, countercase search, safeguard verification, independent institution, decision, release, incident, reproduction, or transfer is represented.",
+      "model": "A scoped Assurance Argument Compilation Packet over typed nodes and bounded edges, authoritative dependencies, assumptions, hazards, countercases, review, acceptance, residuals, versioning, invalidation, disclosure, routing, maintenance, and retirement.",
+      "authority": "This chapter owns assurance-argument compilation only. Evidence, benchmark/observation, threshold, readiness/residual, artifact, runtime/security/oversight, data/supply chain, formal, normative/governance, resource, incident/rollback/release, and publication owners retain their boundaries.",
+      "time": "Semantic review current through 2026-07-15; system, context, population, hazard, evidence, safeguard, threshold, policy, reviewer, criterion, authority, release path, residual, or time changes invalidate affected case descendants.",
+      "artifact": "Chapter and manifest; four mappings; two schemas; eight synthetic records; five mutations; validator; eight proof targets; eight declarations; semantic review; and future natural causal-transfer campaign."
+    },
+    "current_disposition": "retain_argument_with_synthetic_assurance_routing_fixture_no_core_effect_pending_natural_independent_multi_hazard_campaign",
+    "assumptions": [
+      "Exact governed source records, scopes, identities, states, leases, owners, and invalidation can be observed and versioned.",
+      "Case boundaries, seeded faults, countercase search, review criteria, acceptance, exclusions, and stopping can be frozen prospectively.",
+      "Reviewers can access positive, negative, null, dissenting, rights-bounded, and failure evidence needed for bounded review.",
+      "Strong case and simpler-control comparators can receive matched evidence, tooling, reviewer time, engineering, and governance opportunity.",
+      "Independent institutions and heterogeneous contexts can reproduce and transfer case-quality results without shared material dependencies."
+    ],
+    "dependencies": [
+      "evidence-states-and-claim-discipline",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "adversarial-evaluation-sandbagging-and-training-time-deception",
+      "capability-thresholds-and-deployment-commitments",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "artifact-graphs-audit-logs-and-replay",
+      "scalable-oversight-and-adversarial-ai-control",
+      "resource-economics-and-token-budgets"
+    ],
+    "strongest_counterclaim": "Assurance cases are gameable paperwork whose graphs and review rituals add maintenance cost and false confidence without improving hazard discovery, decision quality, control efficacy, or recovery.",
+    "falsifier": "Prospectively frozen natural campaigns show no unique fault-detection, countercase, synchronization, decision, or governance value; unacceptable false blocks, delay, burden, or cost; capture by omissions, reviewer dependencies, confidence collapse, or overrides; or no independent reproduction and transfer.",
+    "required_lanes": [
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze GSN, evaluations-based safety-case, AISI countercase, and benchmark-lifecycle comparators without importing conclusions."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify hazards, affected parties, acceptance, authority, review independence, disclosure, residual acceptance, and false-clear/false-block tradeoffs."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify typed graph, finite routing, version, invalidation, and authority separation without claiming argument truth or safety."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Compile natural governed dependencies and exercise seeded faults, challenges, review, override, invalidation, redaction, rollback, and retirement."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure semantic fault detection, countercase yield, disagreement, false clear/block, latency, burden, cost, residual age, incidents, and decision outcomes."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate compiler, freshness, challenge, reviewer, and routing mechanisms under matched evidence and opportunity."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Reproduce independently and transfer across systems, domains, hazards, access, safeguards, evidence regimes, organizations, jurisdictions, and time."
+      }
+    ],
+    "evidence_refs": {
+      "chapter": "chapters/safety-cases-and-structured-assurance.qmd",
+      "fixture_schema": "schemas/safety_case_assurance_fixture.schema.json",
+      "result_schema": "schemas/safety_case_assurance_result.schema.json",
+      "fixture": "experiments/safety_case_assurance/fixtures/cases.json",
+      "result": "experiments/safety_case_assurance/results/2026-07-13-local.json",
+      "validator": "scripts/validate_safety_case_assurance.py",
+      "lean": "lean/AsiStackProofs/SafetyCases.lean",
+      "manifest": "book_structure.json"
+    },
+    "contrary_evidence": [
+      "All eight records and five mutations are synthetic rather than real assurance cases or decisions.",
+      "All eight declarations reduce one hand-authored decision tree and cannot establish argument semantics, hazard completeness, evidence adequacy, review independence, or safety.",
+      "Four source mappings contain methodology and conceptual comparators that were not locally reproduced.",
+      "No real safeguard, case acceptance, threshold/readiness/release transition, incident, independent institution, reproduction, or transfer exists.",
+      "A polished and complete graph can remain substantively wrong, strategically incomplete, institutionally captured, or operationally irrelevant."
+    ],
+    "known_confounds": [
+      "Case boundary, hazard articulation, evidence access, reviewer incentives, tooling, time, and organizational authority can dominate case outcomes.",
+      "Shared management, data, criteria, models, tools, or source ledgers can create false reviewer and reproduction independence.",
+      "Seeded faults may overestimate natural omission and countercase detection while articulated hazards crowd out unknown threats.",
+      "Graph complexity, closure metrics, confidence scores, scope edits, and overrides can Goodhart favorable case status.",
+      "Maintenance and review burden can displace testing, mitigation, incident readiness, rollback, and user benefit."
+    ],
+    "acceptance_criteria": [
+      "Every case binds exact context, hazards, claims, typed nodes and edges, authoritative dependencies, assumptions, countercases, review, criteria, residuals, authority, release path, version, disclosure, expiry, and costs.",
+      "Natural multi-hazard cases retain outside-envelope threats, seeded and discovered faults, failures, dissent, dependency conflicts, overrides, invalidation, redaction, recovery, and retirement.",
+      "Semantic and evidence-adequacy measures report fault detection, countercase yield, false clear/block, disagreement, latency, burden, cost, residual age, and later decision or incident outcomes.",
+      "Any promoted claim survives causal ablation, independent institutional reproduction, and heterogeneous transfer without graph, confidence, acceptance, or authority laundering."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to exact system, deployment, population, hazard, claim, strategy, evidence, reviewer, safeguard, criterion, authority, release path, organization, and time.",
+      "Separate structural, semantic, empirical, control, review, acceptance, readiness, release, deployed, incident, reproduced, transferred, and SOTA states.",
+      "Unknown hazard coverage, evidence adequacy, reviewer dependence, control efficacy, false-route error, maintenance cost, transfer, rights, or residual remains blocked."
+    ],
+    "refutation_criteria": [
+      "Refute a case when identities, scopes, edge semantics, dependencies, hazards, assumptions, countercases, reviewers, criteria, residuals, versioning, or invalidation are materially invalid.",
+      "Refute a mechanism when matched ablation preserves or improves outcomes, or omissions, capture, shared dependencies, extra resources, burden, delay, or hidden residuals explain the benefit.",
+      "Refute safety, readiness, release, deployment, support, transfer, or SOTA language when only source methods, graph structure, fixtures, reviews, or finite routes exist."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only when a more precise assurance owner supersedes the atom and every node, edge, dependency, challenge, review, decision, override, residual, correction, and historical case migrates with lineage."
+    ],
+    "promotion_ceiling": "argument_until_natural_multi_hazard_causal_campaign_with_independent_institutional_reproduction_and_transfer",
+    "reproduction": {
+      "command": "python3 scripts/validate_safety_case_assurance.py && python3 scripts/validate_protocol_examples.py && cd lean && lake build AsiStackProofs.SafetyCases",
+      "environment_lock": "Local schemas, synthetic fixtures, validator, and finite module current through 2026-07-15; natural independent assurance campaign not frozen or run.",
+      "artifact_digest": null,
+      "evaluator_identity": "Current fixtures, validator, and formalization are repository-local; independent case authors, reviewers, institutions, implementations, hazards, and transfer environments are required."
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "safety-cases-and-structured-assurance",
+      "next_unblocking_condition": "Freeze and run natural multi-hazard cases with exact dependencies, active countercase/outside-envelope search, seeded and natural faults, semantic and evidence review, real controls, reviewer conflict tests, causal ablation, joint error and cost accounting, independent institutional reproduction, and heterogeneous transfer."
+    },
+    "non_claims": [
+      "No graph, case status, review, acceptance, fixture, source mapping, or finite theorem establishes hazard completeness, argument validity, evidence adequacy, reviewer independence, control effectiveness, risk, safety, readiness, release authority, deployment, support, transfer, or SOTA.",
+      "No real case, hazard analysis, threat model, countercase search, safeguard verification, independent institution, acceptance, readiness, release, deployment, incident, reproduction, or transfer is represented.",
+      "The argument-exit campaign is a required attempt specification, not a completed assurance result."
+    ]
+  },
+  "atom_reviews": {
+    "safety-cases-and-structured-assurance.core": {
+      "current_disposition": "retain_distinct_assurance_argument_compilation_packet_owner_at_argument",
+      "strongest_counterclaim": "Assurance cases are gameable paperwork without unique natural decision or safety value.",
+      "falsifier": "Natural matched campaigns show no unique benefit, unacceptable false routes or cost, omission or capture, or no independent reproduction and transfer.",
+      "promotion_ceiling": "argument_until_natural_independently_reproduced_causal_multi_hazard_campaign"
+    }
+  },
+  "prose_candidate_dispositions": {
+    "safety-cases-and-structured-assurance.prose.a62b245cecc1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.8302f6f519bf": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.82e787029889": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.58f32dcd8a7d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.9c05c15df3ca": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.83930d1b2e30": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.53000773524d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.611b6071705b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.f5dbb5d9ecd6": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.e7c2c422a887": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.2bcad18489e0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.6da9cc797f76": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.a243ff358876": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.9f126df3165b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.868242eae0d4": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.d5b6f8f3f3db": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.817ae7611dd8": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.fe45b22e572d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.054f9722aa63": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.ef55c3ac2a4b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.c997b88762ac": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.a34ba9be4e2a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.47b0eca8d5fb": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.f18229f384f0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.b8169287a300": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.be7ed7b91fc6": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.8c8cce41626b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.8a52446278b3": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.f7e58c29f3c5": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.5af20dc24376": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.27a0bd82ac7f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.4484610655d6": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.7d0a115bb83d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.2687f4d1c954": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.2fffcddbcc26": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.984e0eec751f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.960992b9b71a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.aaa0a1cdc7f0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.2038e7990c05": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.0ca3d2d96258": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.034bbfea4e51": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.9a1bff554479": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.19974a592ee1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.f8662629ac9e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.a76d205c8038": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.0c040728acde": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.8069feab2e7d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    }
+  },
+  "non_claims": [
+    "No graph, case status, review, acceptance, fixture, source mapping, or finite theorem establishes hazard completeness, argument validity, evidence adequacy, reviewer independence, control effectiveness, risk, safety, readiness, release authority, deployment, support, transfer, or SOTA.",
+    "No real case, hazard analysis, threat model, countercase search, safeguard verification, independent institution, acceptance, readiness, release, deployment, incident, reproduction, or transfer is represented.",
+    "The argument-exit campaign is a required attempt specification, not a completed assurance result."
+  ]
+}

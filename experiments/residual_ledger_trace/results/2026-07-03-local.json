@@ -4,21 +4,12 @@
   "evidence_transition_created": false,
   "lean_fixture_alignment": {
     "expected": {
-      "compactGvrControlsVisible": true,
-      "compactGvrResidualsVisible": true,
-      "deployedLedgerNotClaimed": true,
-      "nonClaimBoundary": true,
-      "readinessLostResidualControlRejected": true,
-      "readinessResidualEscrowVisible": true,
-      "resourceDisplacedCostsResidualized": true,
-      "resourceFlagshipArtifactRead": true,
-      "resourceResidualizedDeferralsVisible": true,
-      "resourceSublaneDecisionsRecorded": true,
-      "supportStateEffectNone": true
+      "resultSetDigestBound": true,
+      "supportAssignmentAuthority": false
     },
-    "module": "AsiStackProofs.CompactGenerativeSystems",
+    "module": "AsiStackProofs.CompactGenerationRefinement",
     "theorem_refs": [
-      "residual_ledger_trace_surface_bridge"
+      "result_digest_substitution_blocks_publication"
     ]
   },
   "manifest_ref": "experiments/residual_ledger_trace/input/artifact_manifest.json",
@@ -38,11 +29,11 @@
   "result_kind": "cross_artifact_residual_ledger_trace",
   "schema_version": "asi_stack.residual_ledger_trace.result.v0",
   "source_artifact_hashes": {
-    "experiments/compact_gvr_slice/results/2026-07-01-local.json": "bdd23b1ffabd3c83a474cc5b2f3d216ad6f3d5485c3821426fbcce8b543a8bc2",
+    "experiments/compact_gvr_slice/results/2026-07-01-local.json": "4879f993ef530266af303a5bc2f842816c534d88c4000b3b49c207872febad82",
     "experiments/readiness_residual_gates/results/2026-06-28-local.md": "8459e11baa5cf62bd1d9c67563d83f2393bc45fa5d2d657e82759ec4f7915cbf",
-    "experiments/residual_honesty_conservation/results/2026-07-03-local.json": "49459d10c7a3988bab47b278c9512db8d60d1094c9266da5cc2d1c131d132745",
-    "experiments/resource_flagship_lane/results/2026-07-01-local.json": "33c29b5e7610ad037bf752dccb1e185a8261f51cba48557ad86dda5318f58995",
-    "experiments/resource_workflow_trace/results/2026-07-01-local.json": "2e1a75f81f10c044287269fd9757110186da31b8b9877f0891d8f407aab17355"
+    "experiments/residual_honesty_conservation/results/2026-07-03-local.json": "b28eb50fbd3b8f1dd6677041f4294f4ddc0b338af69b4248349a1d637fb42f3c",
+    "experiments/resource_flagship_lane/results/2026-07-01-local.json": "cad08ef977e10b19fcb95e1ea08e157d6c7481a3be037c679099e353825ab719",
+    "experiments/resource_workflow_trace/results/2026-07-01-local.json": "664f842032710fc0285f6db316acf42f3de6e6ef0290799d2449f8ae14d2d9ba"
   },
   "support_state_effect": "none",
   "trace_entries": [

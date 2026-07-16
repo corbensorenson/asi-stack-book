@@ -76,12 +76,15 @@ was discoverable or that a deployed ledger is durable.
 `experiments/governed_repository_change_slice/results/2026-07-10-local.json`.
 `scripts/validate_governed_trace_invariants.py` re-derives it, checks the source
 digest, evaluates the four invariants and four mutation controls, and checks the
-Lean/source/manifest linkage. `AsiStackProofs.GovernedRepositoryTrace` proves
-the concrete bounded fixtures and combines them in
-`governed_repository_trace_four_invariants`.
+Lean/source/manifest linkage. The historical result remains the exact four-
+invariant extraction, while its live proof target now resolves to the stronger
+`AsiStackProofs.IntegratedReferenceTrace` transition model and independent
+consumer. That model proves general accepted-step joins, authority preservation,
+accepted-trace non-widening, and trace composition and retains exact rejecting
+counterexamples instead of theorem-per-fixture normalization.
 
-The support-state effect is `none`. This finite logical-time model over one
-executed local fixture workload uses bounded scope sets and residual counts; it
+The support-state effect is `none`. This historical finite logical-time result
+over one executed local fixture workload uses bounded scope sets and residual counts; it
 does not prove a distributed clock, scheduler, authorization service, rollback
 service, general evidence pipeline, residual completeness, safety, security,
 or any chapter-core support-state promotion.

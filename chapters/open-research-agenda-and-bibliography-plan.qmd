@@ -3,8 +3,8 @@ title: "Open Research Agenda and Bibliography Plan"
 chapter_id: "open-research-agenda-and-bibliography-plan"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-03"
+draft_maturity: "v0.3 semantically audited manuscript"
+last_updated: "2026-07-15"
 primary_sources:
   - "verification_bandwidth"
   - "benchmaxxing"
@@ -27,10 +27,17 @@ primary_sources:
   - "circle_calculus_core"
   - "circle_ai_contract_suite"
   - "theseus_circle_transfer"
+  - "ext_graphrag_2024"
+  - "ext_hipporag_2024"
+  - "ext_mmlu_2020"
+  - "ext_gpqa_2023"
+  - "ext_livebench_2024"
+  - "ext_lean4_theorem_proving"
+  - "ext_moe_llm_survey_2024"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records passage-reviewed mappings for all twenty-one assigned sources, including source-note-only connector/recovery sources and pinned local Project Theseus/Circle/constitution references; support remains argument until external literature normalization, direct citation checks, new-paper triage rehearsals, artifact reproduction, or accepted evidence transitions justify promotion."
+  - "Appendix C records passage-reviewed mappings for all twenty-eight assigned sources, including source-note-only connector/recovery records, pinned local Project Theseus/Circle/constitution references, durable-memory comparators, and five external benchmark, proof-assistant, and MoE queue sources; support remains argument until natural intake, citation, closure, reproduction, and transfer campaigns justify a separate transition."
   - "The research_backlog_record and new_paper_triage_scenario fixtures and AsiStackProofs.BibliographyPlan finite-record predicates with negative cases validate backlog-record shape, triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary-decision rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, non-claims, source-note gates, chapter-assignment gates, and synthetic update/propose/defer/reject decisions only; they do not prove citation accuracy, external-literature completeness, claim-to-source mapping quality, public-release permission, or real new-paper triage quality."
   - "Connector/recovery and variant sources remain bounded: MoECOT, CoilMoECOT, Road To AGI, and VCM Editable do not promote runtime, benchmark, model-facing, or citation-normalized third-party claims."
   - "No chapter-core support-state promotion, external-literature normalization result, direct citation check, benchmark reproduction, runtime artifact, model-quality result, broad Circle command coverage, current Theseus report verification, policy-engine result, or raw source publication is implied by this drafting pass; the separate Circle rope receipt slice remains bounded to its own evidence transition."
@@ -43,9 +50,9 @@ open_evidence_gaps:
 | Chapter ID | `open-research-agenda-and-bibliography-plan` |
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-30 |
-| Primary source records | `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer` |
+| Manuscript maturity | v0.3 semantically audited manuscript |
+| Last updated | 2026-07-15 |
+| Primary source records | `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_mmlu_2020`, `ext_gpqa_2023`, `ext_livebench_2024`, `ext_lean4_theorem_proving`, `ext_moe_llm_survey_2024` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `verification_bandwidth`, `benchmaxxing`; supporting: `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer`; connector/recovery: `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable` |
@@ -91,13 +98,13 @@ The book therefore needs more than bibliography management. It needs state manag
 
 ## Core Claim
 
-[open-research-agenda-and-bibliography-plan.core, label: Design rationale, support: argument] The bibliography and research agenda should map source families, external literature queues, missing papers, proof targets, experiment backlogs, and chapter insertion rules.
+[open-research-agenda-and-bibliography-plan.core, label: Design rationale, support: argument] Open Research Agenda and Bibliography Plan owns a research-program-, source-or-gap-, backlog-item-, access-, provenance-, public-safety-, chapter-boundary-, claim-, proof-or-experiment-, deduplication-, evidence-transition-, owner-, next-action-, closure-, consumer-, environment-, and time-specific **Research Backlog Admission and Closure Contract**. Every new paper, local project, missing artifact, conflicting result, proof idea, experiment, reproduction need, correction, or chapter proposal enters through exact intake, triage, assignment, preconditions, blockers, non-claims, and terminal closure before it changes prose or support. No title, citation, source count, inventory row, source note, queue, priority label, backlog size, fixture, theorem, validator, or completed reading task alone establishes citation accuracy, literature completeness, research quality, claim support, reproduction, transfer, AGI, ASI, or SOTA.
 
 The claim remains at `argument` support. The repository now has source inventory, source notes, chapter listings, exact core-claim source-note mappings, and passage-reviewed mapping refs for the assigned sources, but external literature normalization, direct citation checks, artifact reproduction, and new-paper triage rehearsals remain incomplete.
 
 ### Claim-source mapping status
 
-Appendix C now records twenty-one passage-reviewed mappings for this claim. The review turns the agenda into a context-loading map for future writing, proof, and experiment work; it does not turn any backlog item into completed evidence.
+Appendix C now records twenty-eight passage-reviewed mappings for this claim. Seven mappings close prior prose-only gaps for GraphRAG, HippoRAG, MMLU, GPQA, LiveBench, Lean 4, and the MoE survey. The review turns the agenda into a context-loading map for future writing, proof, and experiment work; it does not turn any queue or backlog item into completed evidence.
 
 | Source group | Reviewed support | Boundary |
 |---|---|---|
@@ -109,15 +116,36 @@ Appendix C now records twenty-one passage-reviewed mappings for this claim. The 
 
 ## Mechanism
 
-The research agenda is a queue with admission rules. Verification Bandwidth supplies context-adequacy and contradiction-rate test ideas. Benchmaxxing supplies benchmark lifecycle and anti-Goodhart backlog structure. SCF, VCM, PlanForge, Talos, Spinoza, RMI, CGS, GenesisCode, Simulation Scaling, Circle, Theseus, MoECOT, and the constitutional sources each name future artifacts that could strengthen the book only after source notes, direct citation checks, proof/test routes, and non-claim boundaries are recorded.
+The owned object is a **Research Backlog Admission and Closure Contract**, not a source list. Its lifecycle is:
 
-The Research Backlog Record keeps those future moves from becoming loose intentions. It should say whether the item is discovered, inventoried, source-noted, mapped, integrated, deferred, blocked, rejected, or retired; where the source text is allowed to live; whether the public surface is safe, redacted, permission-gated, private, or blocked; what chapter action policy applies; which chapter-decision refs justify that policy; whether the item is unique, overlapping, duplicate, superseded, or blocked; why the boundary decision was made; what must happen before drafting; what evidence-transition preconditions would have to be met; which source refs were inspected; what still blocks promotion; and what support-state effect is allowed.
+| Phase | Required operations |
+|---|---|
+| 1. Freeze and identify | Freeze program purpose, intake window, source and gap classes, chapter graph, authority, access, rights, public safety, consumers, environment, time, and non-claims; identify every source, version, passage, citation, project, gap, claim, decision, proof, experiment, reproduction, owner, action, and closure. |
+| 2. Inventory and classify | Record provenance, metadata source, acquisition, access, storage, checksum or version, permission, public safety, and canonical note; keep unread, cached, noted, mapped, reviewed, integrated, tested, mechanized, reproduced, inaccessible, private, rejected, duplicate, superseded, deprecated, refuted, and retired states distinct. |
+| 3. Separate and extract | Separate Corben/local, conversation-intent, external, benchmark, proof, private, and missing-source classes; extract thesis, mechanisms, evidence, failures, chapters, claims, contrary evidence, citation data, and limits before drafting or support use. |
+| 4. Triage and bind | Route to update, propose a distinct owner, appendix, proof or experiment work, defer, reject, or retire; apply the distinct-interface and merge/split tests; bind assignments to passages, atoms, rationale, alternatives, non-claims, dependencies, and reviewer authority. |
+| 5. Execute and verify | Create lane-specific proof, executable, empirical, causal, reproduction, transfer, and normative work; record pre-drafting and transition conditions; deduplicate with lineage; verify citation metadata, passage support, corrections, retractions, rights, and availability; rehearse natural conflict and failure cases. |
+| 6. Close and maintain | Close only on consumed action, artifact, review, citation or chapter decision, transition or no-change record, residual, cost, and non-claims; propagate corrections and failed reproduction; monitor coverage, errors, duplicates, age, closures, burden, opportunity cost, and total cost; expire changed contracts. |
 
-A good backlog item is more specific than "research this." It names the source or gap, the affected chapter boundary, the evidence state it could change, the proof or test route that would make the change meaningful, and the non-claims that remain even after the work is done. That structure prevents two common mistakes. The first is duplicate expansion, where every new paper becomes a new chapter even though it belongs inside an existing boundary. The second is evidence smearing, where a useful source influences prose in five places but no one can say which claim it actually supports.
+Admission is deliberately stricter than collection. A source or idea enters
+with an identity, access state, rights boundary, intended consumer, and declared
+reading depth. Classification says whether it is merely inventoried, actually
+read, passage-reviewed, mapped, integrated, tested, reproduced, contradicted, or
+retired. Extraction records both the strongest useful contribution and the
+conditions it cannot establish. Only then may triage update an existing owner,
+propose a distinct boundary, create proof or experiment work, defer the item, or
+reject it with preserved lineage.
 
-The useful lifecycle is conservative: discover, inventory, access, note, assign, map, draft, verify, integrate, release. A source can stop at any stage. A missing PDF can remain a backlog item. A useful but unread reference can remain external literature. A source-note-only connector item can inform planning while remaining outside public evidence. A test idea can wait until a fixture or harness exists. The system is allowed to remember unfinished work without pretending it is done.
+Closure is likewise a consumer event rather than a checked box. A mapping is
+not closed until its claim owner acknowledges it; an experiment is not closed
+until artifacts, failures, denominators, and interpretation are adjudicated; a
+citation is not closed while identity or correction state is unknown. Every
+terminal state retains cost, residuals, affected consumers, and reopening
+conditions. This keeps an inaccessible source, failed reproduction, duplicate
+record, or negative result useful without allowing backlog volume or closure
+rate to masquerade as research quality.
 
-New AI papers should enter through this same gate. If a paper gives better vocabulary for an existing layer, it should update that layer's source queue and source note. If it introduces a genuinely new interface, invariant, artifact type, or failure mode that no chapter owns, it can justify a new chapter. If it is interesting but not yet read, it belongs in the external literature queue, not in the claim/evidence matrix. The rule keeps the book dynamic without making it shapeless.
+Any item can stop honestly at inaccessible, private, deferred, duplicate, rejected, failed, refuted, or retired. Keeping that state is more valuable than converting the item into a confident paragraph. New vocabulary normally updates an existing owner; only a genuinely distinct interface, invariant, artifact, authority, or failure boundary can justify a chapter proposal.
 
 ```{mermaid}
 flowchart LR
@@ -141,91 +169,37 @@ A source backlog record tracks source id, access state, source storage policy, p
 
 ## Interfaces
 
-Research intake moves through the Research Backlog Record.
+The contract joins twelve interfaces: human research and closure authority; inventory, caches, notes, connectors, projects, permissions, and acquisition; separate Corben/local, external, and author-intent appendices; manifest, outline, chapters, queues, citations, bibliography, and changelog; claim reviews, Appendix C, transitions, contrary evidence, residuals, and non-claims; proof, Lean, schemas, tests, benchmarks, studies, and reproduction artifacts; artifact, supply-chain, data, security, rights, retention, deletion, and replay controls; roadmap, living-book, stewardship, work-contract, status, terminal, and successor continuity; internal and local project lineage; external challenge queues; release, citation, reader, archive, site, and correction surfaces; and researchers, readers, AI agents, reviewers, citers, implementers, evaluators, downstream repositories, institutions, and future editions.
 
-Minimum fields:
-
-- `backlog_id`
-- `triage_state`
-- `source_or_gap`
-- `access_state`
-- `source_storage_policy`
-- `public_safety_state`
-- `assigned_chapters`
-- `chapter_action_policy`
-- `chapter_decision_refs`
-- `deduplication_state`
-- `merge_or_split_policy`
-- `boundary_decision_rationale`
-- `source_note_state`
-- `claim_mapping_state`
-- `passage_review_state`
-- `external_literature_need`
-- `proof_or_test_backlog`
-- `evidence_transition_precondition`
-- `required_before_drafting`
-- `insertion_decision`
-- `source_refs`
-- `support_state_effect`
-- `promotion_blockers`
-- `residuals`
-- `next_action`
-- `non_claims`
-
-Appendix G is the appendix for Corben's own papers, Corben-supplied materials, recovered project records, and local project records. Appendix H is a separate appendix for external sources by other authors and organizations. Both appendices surface that ownership split before the source tables so a reader does not have to infer what is Corben/local and what is outside literature. Source notes support drafting. `docs/book_outline.md` tells future agents what to mine. `book_structure.json` prevents chapter-order drift. Appendix C records support-state boundaries.
-
-Those interfaces are deliberately redundant. The outline tells a writing agent what context to load. The manifest tells Quarto and validation scripts where each file belongs. Source notes tell a reviewer what was actually mined. Appendix C tells readers which claim-state boundary is currently justified. Appendix G keeps Corben's corpus and local projects visible, and Appendix H keeps outside literature distinct. A living book needs this redundancy because any one surface can become stale; the validation loop and changelog make drift visible before it becomes authority.
-
-The closing rule is simple: no future source changes the book in free-form prose first. Corben-authored, Corben-supplied, recovered, and local-project material routes through Appendix G and its source notes; outside literature routes through Appendix H and its source notes; project artifacts route through replay, digest, or blocker records; and any claim-strength change routes through Appendix C and an evidence-transition decision. If a new paper only supplies vocabulary, it updates the existing owner chapter. If it supplies a new interface, invariant, artifact type, or failure mode, it can propose a new boundary. If it cannot be read, published, replayed, or cited safely, the correct output is a blocker rather than a smoother paragraph.
-
-When a future agent receives a new paper, the interface should produce a triage decision before prose changes: update existing chapter, propose new chapter, route to appendix, keep in backlog, or reject as out of scope. The decision should name the boundary it affects and the evidence it could change. That makes dynamic chapters possible without forcing manual renumbering or turning the outline into a catchall.
+Each join preserves its own identifier, authority, version, acknowledgement, error, and expiry rather than treating a nearby repository path as successful delivery. A consumer that cannot resolve or accept the record remains an open backlog edge with an owner and next action.
 
 ## Invariants
 
-- Do not cite unread sources as support.
-- Do not infer bibliographic metadata.
-- New papers update inventory before chapter claims.
-- Missing sources are backlog items, not evidence.
-- New chapters are added only when they own a distinct boundary.
+The eighteen invariants require exact scope; no unread or inaccessible source support; authoritative or unknown metadata; distinct provenance classes; distinct lifecycle states; passage-bound material claims; existing or distinct owner assignments; lineage-preserving deduplication; accepted evidence transitions only; separate work lanes; public-safety and privacy; retained negative and rejected items; consumed closure artifacts and decisions; correction propagation; versioned citation state; joint usefulness, failure, burden, and cost; exact synthesis and transfer scope; and a strict boundary around what inventory, note, mapping, fixture, theorem, validator, citation, and backlog counts can prove.
 
-A source may inspire design language before it supports a claim only if the text says so and the evidence state remains unchanged. Inspiration, author intent, source-derived support, implementation evidence, and reproduced results are different states. The agenda exists to keep them from merging.
-
-The agenda must also keep closure visible. A research item should eventually become an ingested source, a rejected source, a deferred backlog record, a new proof/test task, or an explicit out-of-scope decision. Permanent vague curiosity is not a useful state for a living book. The bibliography plan should help future writing runs decide what to read, what to map, what to cite, and what not to use yet.
+An expired, corrected, retracted, superseded, or consumer-rejected item cannot remain silently active. Closure conserves unresolved obligations, affected consumers, and residual ownership, while later reopening preserves the original decision and lineage instead of rewriting research history.
 
 ## Failure modes
 
-- Citation drift.
-- Duplicate chapter creation for overlapping ideas.
-- Missing sources treated as evidence.
-- Private empirical results leaking into public claims.
-- External references named by source documents becoming citations before direct verification.
+The named falsifiers are citation drift; bibliographic hallucination; unread-source laundering; inventory theater; anthology drift; duplicate-evidence inflation; source-result inheritance; private-evidence leakage; indirect-reference laundering; triage theater; backlog rot; activity laundering; negative and conflict suppression; closure laundering; correction failure; priority capture; research overhead and false deferral; and unsupported transfer. Each failure leaves a blocked citation, rejected assignment, duplicate link, correction, retraction, residual, no-change decision, failed reproduction, retired item, or reopened consumer. Bibliographic presence is never evidentiary force.
 
-Backlog rot is the research-agenda failure. If every uncertain item becomes permanent "future work," the research agenda stops guiding action. Backlog records should keep next actions small enough to execute: fetch source, write note, verify citation, add fixture, run benchmark, formalize finite predicate, update chapter, or close as out of scope.
-
-The highest-risk failure is evidence laundering through bibliography. A source appears in a queue, then a source matrix, then a chapter source list, and eventually reads like support even though no one reviewed the relevant passages. The agenda should keep queued, unread, source-note-available, passage-reviewed, and evidence-transitioned states distinct. Bibliographic presence is not evidentiary force.
+The contract also fails when its own burden hides more useful research, when privileged access or outcome-aware selection makes comparisons unfair, or when a clean record masks false metadata, weak reading, invalid proof, defective experiments, or unacknowledged downstream use. A high closure rate can therefore be evidence of premature rejection or closure laundering rather than program quality.
 
 ## Minimum Viable Implementation
 
-The research agenda starts as a split Corben-source-corpus and external-literature plan plus a research backlog record. The repository fixture makes future source ingestion and chapter insertion reviewable, including triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, and non-claims, but it does not normalize external literature, perform direct citation checks, run a new-paper scenario, or promote mapped claims to stronger support states.
+The implemented minimum contains twenty-eight exact source mappings; a source inventory and source-note corpus split across Corben/local, external, and author-intent appendices; one research-backlog record schema and public-safe fixture; and one new-paper triage scenario covering update-existing, propose-new-owner, defer-unread-external, and reject-duplicate decisions. Source inventory, note, protocol, appendix, citation, and mapping validators enforce the bounded record surface.
 
-A live rehearsal against a user-provided AI paper or artifact is the next meaningful exercise. The synthetic fixture set now covers update-existing, propose-new-chapter, defer-external-literature, and reject-duplicate decisions, but it deliberately avoids claiming that any particular future source has been evaluated.
+Two proof targets are implemented by four Lean declarations over hand-authored finite source-ingestion and chapter-assignment records. They establish only that a source-derived claim record needs an ingested artifact and an accepted assignment needs an existing chapter. The active backlog also retains citation normalization, artifact reproduction, proof and experiment work, GraphRAG/HippoRAG overlap, inaccessible sources, and rejected or blocked items.
+
+No external-literature completeness, citation-accuracy study, natural intake campaign, real backlog-closure study, research-quality result, independent reproduction, transfer, or chapter-core support effect exists.
 
 ## Beyond the State of the Art
 
-The bibliography endpoint is a source and research graph for the entire ASI Stack. The bibliography would not be an afterthought at the end of the book, and it would not blur Corben's papers, Corben-supplied materials, recovered project records, or local project sources with outside literature. It would be the routing table that tells future agents which ideas have sources, which sources have been read, which chapters they affect, which proof or experiment backlogs they create, which material is external, and which claims still cannot move.
+The mature argument-exit campaign must prospectively freeze a long-running natural research stream of new papers, local projects, inaccessible and private sources, conflicting findings, corrections and retractions, benchmark and proof artifacts, reproduction attempts, negative results, duplicate claims, and chapter proposals handled by multiple independent human and AI researchers. It must compare the contract with matched reference-manager, systematic-review, evidence-map, issue-tracker, wiki, ordinary bibliography, ad hoc agent-research, and strongest conventional research-program workflows under equal sources, access, tools, time, and review opportunity.
 
-A mature source graph would give every paper, project, local note, external reference, conversation-mined packet, recovery item, and missing source a public-safety policy, ingestion state, source note, chapter assignments, deduplication status, evidence-transition preconditions, proof/test backlog, citation status, and non-claims. New material would update the research graph before it changes manuscript prose.
+The campaign must inject metadata errors, title-only sources, duplicate variants, hidden conflicts, private leakage pressure, stale citations, retractions, boundary ambiguity, chapter novelty pressure, failed reproduction, correction propagation, and backlog rot. It must jointly measure citation precision and recall, source coverage and calibration, decision and claim accuracy, duplicate detection, error and conflict discovery, time-to-usable-evidence, closure quality, false admission and deferral, correction latency, reproduction yield, chapter churn, reviewer burden, compute, storage, opportunity cost, residuals, and total cost. Causal ablations must identify useful and harmful fields or gates.
 
-A bibliography and research-agenda surface needs:
-
-- A normalized source inventory tied to source notes, Appendix G, Appendix H, chapter source queues, claim/evidence mappings, proof targets, experiment backlog, and release records.
-- Intake scenarios for update-existing, propose-new-chapter, defer-external-literature, merge/split, reject-duplicate, supersede-variant, recover-missing-source, and block-private-source cases.
-- Citation verification that distinguishes direct reading, source-note review, metadata-only external context, private/local context, connector-only access, and unread references.
-- Research backlog records with next actions small enough to execute: fetch, cache, read, write note, verify citation, add fixture, formalize predicate, run benchmark, update chapter, or close.
-- Chapter-boundary governance so papers are mined for architecture interfaces and failure modes rather than converted one-to-one into chapters.
-- Failure closure for citation drift, duplicate chapter creation, bibliographic hallucination, private result leakage, external-reference laundering, and backlog rot.
-
-When the bibliography becomes active infrastructure, it would tell the book what it is allowed to know and what work must happen next. The source graph remains a target architecture until source-intake runs, citation checks, evidence-transition reviews, and backlog closures show that the research plan can update the book without turning unread material into support.
+Independent researchers, reviewers, repositories, institutions, disciplines, legal regimes, languages, and time periods must reproduce and transfer positive, negative, null, narrowed, blocked, and refuted results. Until then the contract remains a target architecture, not proof of literature completeness, citation accuracy, research quality, superior prioritization, claim truth, reproduction, transfer, or SOTA research management.
 
 ## Codex test plan
 
@@ -297,6 +271,11 @@ These rows keep Open Research Agenda and Bibliography Plan's manifest assignment
 | `circle_calculus_core` | Passage-reviewed comparator: Circle Calculus. Supports bibliography/proof-boundary agenda items for theorem ids, Lean proof status, theorem manifests, Python reference models, Rust utilities, Quarto proof surfaces, and finite cyclic contract receipts. | A separate external Circle rope receipt slice is recorded in docs/circle_external_receipt_slice.md, but no broad Circle theorem replay, sidecar regeneration, ASI Stack consumer gate, model-quality result, transfer result, or deployment result is implied. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `circle_ai_contract_suite` | Passage-reviewed comparator: Circle Calculus AI Contract Suite. Supports research agenda items for proof-carrying AI contract fields, receipt validation, theorem-linked recommendations, consumer gates, fingerprints, minimum evidence fields, and explicit non-claims. | No Circle contract pack, CLI command, Lean build, receipt replay, fingerprint check, downstream consumer, acceptance-policy check, or model-quality evidence was run here. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `theseus_circle_transfer` | Passage-reviewed comparator: Theseus Circle Calculus Transfer Lane. Supports backlog and insertion rules for transfer-lane artifacts that separate structural smoke checks from quality, runtime, memory, transfer, and model-improvement claims. | No transfer consumer, structural smoke workload, proxy benchmark, private workload report, ordinary baseline, negative control, runtime measurement, memory measurement, transfer result, or model-improvement claim has been executed here. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_mmlu_2020` | Passage-reviewed comparator: Measuring Massive Multitask Language Understanding. Provides an external benchmark-queue comparator for broad multitask knowledge evaluation, subject coverage, aggregate reporting, and limits on general-capability interpretation. | No MMLU model, run, score, contamination audit, baseline, reproduction, claim transition, or bibliography closure is established here. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_gpqa_2023` | Passage-reviewed comparator: GPQA: A Graduate-Level Google-Proof Q&A Benchmark. Provides an external benchmark-queue comparator for expert-level, contamination-resistant science questions, human/model baselines, and evaluator difficulty. | No GPQA questions, model, run, score, contamination check, expert review, reproduction, support transition, or agenda closure is established here. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_livebench_2024` | Passage-reviewed comparator: LiveBench: A Challenging, Contamination-Limited LLM Benchmark. Provides an external comparator for living benchmark refresh, objective scoring, contamination pressure, versioned evaluation, and historical result lineage. | No LiveBench data, model, run, score, refresh process, contamination test, reproduction, or research-backlog closure is performed here. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_lean4_theorem_proving` | Passage-reviewed comparator: Theorem Proving in Lean 4. Provides an external comparator for the proof-assistant backlog: theorem statements, definitions, tactics, kernel checking, reusable libraries, and the boundary between formalization and empirical truth. | Does not prove any ASI Stack theorem, validate the chosen models, close proof adequacy, establish runtime refinement, or complete a research item. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_moe_llm_survey_2024` | Passage-reviewed comparator: A Survey on Mixture of Experts in Large Language Models. Provides an external routing-literature comparator for sparse mixture-of-experts architectures, routers, expert specialization, load balancing, training and inference tradeoffs, and open problems. | No surveyed MoE system, router, model, benchmark, efficiency result, specialization result, reproduction, or local routing claim is established here. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

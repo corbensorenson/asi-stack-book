@@ -1,0 +1,227 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
+    "structured_atoms_reviewed": 69,
+    "prose_candidates_adjudicated": 60,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, all eleven assigned source notes and mapping limits, the one-record three-project affected-path fixture, all ten rejecting mutations, all seven SupplyChainIntegrity theorem declarations under six manifest targets, every manifest atom, all prose scanner candidates, the lifecycle diagram, test plan, source crosswalk, summary, and handoff. The sweep replaced metadata-centric graph completeness with a prospectively frozen consumer-relative assurance transaction; separated asserted provenance, verification, actual content and transformation effects, replay, reproducibility, semantic equivalence, data fitness/rights, advisory applicability, downstream authority, quarantine, restoration, retirement, and world erasure; added exact supplier/service dependency, relation-specific inheritance, acknowledged propagation, disclosure minimization, privacy/rights, availability, compensation, cost, and regression-memory semantics; installed strong matched baselines, effect-bearing natural work, joint metrics, causal ablations, independent replication, transfer, and explicit promotion/refutation gates; and preserved zero chapter-core support effect."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "AI artifact families and their data/rights, code, prompt/policy, dependency, container, hardware/firmware, build/training/evaluation, model/configuration, supplier/service, signer/verifier, advisory, transformation, release, recipient/descendant, incident, retention, and retirement relationships for a declared consumer and use.",
+      "environment": "Eleven reviewed source notes, one hand-authored three-project affected-path record, ten deterministic mutations, seven finite Lean declarations under six targets, and a future preregistered public-safe effect-bearing campaign across local, cloud, cross-organization, and recipient environments; production supply-chain control is outside current evidence.",
+      "model": "A versioned consumer-relative assurance transaction over exact subjects, typed assertions and verification, relation-specific closure, applicability, append-only invalidation, acknowledged effects, restoration, retirement, disclosure, joint cost, and terminal residuals; current implementation covers only a finite declared graph and Boolean routes.",
+      "authority": "Human/governance owners freeze consumer/use, threat/property model, materiality, disclosure, availability/recovery, evidence gates, exception and residual policy; separate-enough artifact, data/rights, supplier, issuer, verifier, advisory, propagation, response, restoration, retirement, privacy, cost, and Evidence State owners govern their exact surfaces.",
+      "time": "Semantic review current through 2026-07-14; consumer/use, threat/property model, asset and relation closure, discovery grade, identities, assertions, issuers/verifiers, policies, dependencies, freshness, applicability, outcome window, response/restoration conditions, metrics, comparators, and residuals must be frozen prospectively and versioned after material change.",
+      "artifact": "Chapter and manifest contract; eleven reviewed source mappings; one quarantined three-project affected-path record; ten rejecting mutations; seven Lean declarations under six targets; future discovery, content-verification, assertion, supplier, applicability, propagation, effect, restoration, retirement, privacy/rights, cost, ablation, replication, and transfer artifacts."
+    },
+    "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+    "assumptions": [
+      "A useful but explicitly incomplete consumer-relative asset/relation closure, discovery grade, materiality policy, and residual set can be frozen without implying world completeness.",
+      "Independent-enough implementations can observe artifact/content identity, assertion verification, transformation execution, advisory applicability, affected consumers, quarantine/restoration, availability, privacy/rights, and cost beyond producer self-report or record completeness.",
+      "Strong inventory, signing, build-chain, C-SCRM/scanning, and generic-provenance baselines can be implemented under matched artifacts, lifecycle tasks, incidents, and budgets."
+    ],
+    "dependencies": [
+      "system-boundaries-and-authority",
+      "artifact-graphs-audit-logs-and-replay",
+      "model-weight-custody-and-hardware-roots-of-trust",
+      "data-engines-continual-learning-and-unlearning",
+      "security-kernel-and-digital-scifs",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "evidence-states-and-claim-discipline"
+    ],
+    "strongest_counterclaim": "Mature C-SCRM, SBOM/AIBOM, signed provenance, SLSA/in-toto, model-signing, vulnerability management, artifact registries, supplier due diligence, incident response, and generic provenance graphs already cover the useful boundary; open-world completeness and recall are impossible, producer assertions remain untrustworthy, relation policies are error-prone, and the proposed transaction adds correlated false quarantine, disclosure, labor, availability, and cost.",
+    "falsifier": "A reachable ordinary-use trace violates any frozen consumer, closure, identity, assertion, verification, transformation, data/rights, supplier, inheritance, applicability, propagation, response, restoration, retirement, disclosure, privacy, availability, cost, or residual rule; a required field has no exercised producer, consumer, owner, or effect; or a strong simpler baseline dominates the preregistered joint frontier.",
+    "required_lanes": [
+      {"lane": "source-synthesis", "necessity": "Freeze the strongest C-SCRM, BOM, dataset-metadata, signed-provenance, build-chain, model-signing, vulnerability, supplier, incident, and project-lineage comparators without novelty, completeness, or conformance laundering."},
+      {"lane": "normative", "necessity": "Justify consumers, required properties, materiality, supplier/recipient obligations, data rights, disclosure, denial, exceptions, restoration, compensation, retirement, and residual acceptance."},
+      {"lane": "formal", "necessity": "Specify finite subject binding, assertion separation, relation inheritance, applicability, closure, invalidation, response, restoration, terminal state, and non-promotion consequences while exposing open-world limits."},
+      {"lane": "executable", "necessity": "Exercise actual discovery, content verification, signing/provenance, supplier conflict, build/training effects, advisory applicability, affected-path propagation, acknowledgement, quarantine, restoration, retirement, disclosure, and rejecting mutations."},
+      {"lane": "empirical", "necessity": "Measure discovery/detection, assertion acceptance, advisory and affected-path precision/recall, false quarantine, propagation/restoration, service availability, useful throughput, disclosure/privacy/rights, labor, benefit, compensation, and total cost jointly."},
+      {"lane": "causal", "necessity": "Ablate closure, subject binding, assertion/verification separation, effect observation, relation semantics, applicability, append-only acknowledgement, restoration closure, disclosure minimization, and joint accounting under matched work."},
+      {"lane": "transfer", "necessity": "Repeat across artifacts, models, datasets, transformations, organizations, suppliers, build/training stacks, environments, policies, adversaries, incidents, release/retirement modes, and time with independent implementations."}
+    ],
+    "evidence_refs": {
+      "chapter": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
+      "schema": "schemas/supply_chain_affected_path_record.schema.json",
+      "harness": "scripts/validate_supply_chain_affected_paths.py",
+      "result": "experiments/supply_chain_affected_paths/results/2026-07-13-local.json",
+      "lean_module": "lean/AsiStackProofs/SupplyChainIntegrity.lean"
+    },
+    "contrary_evidence": [
+      "NIST C-SCRM, SPDX/Croissant, SLSA/in-toto, OpenSSF Model Signing, PROV-O, vulnerability tooling, registries, and supplier practices already cover substantial proposed mechanisms.",
+      "No finite graph or discovery method can guarantee all hidden, maliciously omitted, cross-organization, offline, recipient, physical, or future dependencies and descendants.",
+      "Valid signatures and authorized steps can faithfully authenticate harmful artifacts, compromised actors, poisoned data, or materially incomplete layouts.",
+      "Advisory applicability and relation-specific inheritance can produce false positives, false negatives, alert storms, under-propagation, or availability collapse.",
+      "Cross-organization transparency can conflict with privacy, rights, trade secrets, operational security, contractual duties, and supplier incentives.",
+      "The current evidence is one self-authored declared graph, ten mutations, and seven finite theorems with no real artifact, supplier, pipeline, advisory, response, restoration, retirement, or security outcome."
+    ],
+    "known_confounds": [
+      "Consumer scope, relation classes, discovery coverage, materiality, applicability, severity, outcome windows, and residuals can be narrowed after failures are observed.",
+      "Nominally separate producers, issuers, verifiers, suppliers, advisory sources, and consumers can share organizations, infrastructure, keys, code, data, operators, metrics, and incentives.",
+      "Fail-closed tooling or broken artifacts can reduce ordinary use and apparent exposure while destroying useful service and recovery.",
+      "Seeded public-safe graphs can omit proprietary services, hardware/firmware, human suppliers, contractual boundaries, cloud replicas, recipients, and physical channels.",
+      "Detection and closure scores can be inflated by known seeds, weak adversaries, easy identifiers, or incomplete denominators.",
+      "Security, availability, privacy/rights, disclosure, labor, supplier burden, restoration, compensation, and irreversible costs can be excluded or shifted."
+    ],
+    "acceptance_criteria": [
+      "Every frozen consumer, property, asset/relation, identity, assertion, issuer, verifier, dependency, transformation, data/right, supplier, advisory, applicability, affected member, response, acknowledgement, restoration, retirement, disclosure, cost, and residual field has an exact producer, consumer, owner, valid case, rejecting mutation, and observed consequence.",
+      "A preregistered effect-bearing campaign meets every joint discovery, integrity, applicability, response, restoration, usefulness, availability, privacy/rights, cost, causal-ablation, independent-replication, and transfer gate against all frozen strong baselines."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to exact consumer/use, threat/property model, asset/relation closure, discovery grade, materiality, artifact, representation, issuer/verifier, policy, dependency, transformation, supplier, advisory, applicability, environment, epoch, outcome window, costs, and residuals.",
+      "Separate schema validity, asserted provenance, signature validity, authorized-step verification, observed content/transformation, replay, reproducibility, semantic equivalence, data fitness/rights, supplier truth, applicability, propagation, acknowledgement, quarantine, restoration, retirement, support movement, and production outcome.",
+      "Unknown or failed identity, discovery, assertion, verification, inheritance, applicability, effect, restoration, privacy/rights, availability, cost, or closure remains blocked, repaired, reviewed, quarantined, narrowed, residual, or refuted."
+    ],
+    "refutation_criteria": [
+      "Refute an invariant when a reachable ordinary trace violates it or a required field lacks an exercised producer, consumer, owner, or consequence.",
+      "Refute a mechanism benefit when its matched ablation preserves every frozen joint outcome or the full transaction worsens the joint frontier.",
+      "Refute completeness, integrity, superiority, revocation/restoration, or transfer language when a declared material path is missed, a simpler baseline dominates, or independent replication/transfer fails."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only when a more precise artifact-graph, data/rights, custody, supplier, build/provenance, advisory, incident, readiness, privacy, or evidence owner supersedes the atom and all consumers migrate with lineage."
+    ],
+    "promotion_ceiling": "argument_until_claim_specific_effect_bearing_multi_comparator_campaign_and_accepted_evidence_transition",
+    "reproduction": {"command": null, "environment_lock": null, "artifact_digest": null, "evaluator_identity": null},
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "next_unblocking_condition": "Freeze and run the public-safe effect-bearing campaign with inventory/signature/build-chain/C-SCRM/generic-graph baselines, independent discovery/content/assertion/supplier/applicability/propagation/restoration/privacy/cost implementations, exact joint gates, causal ablations, replication, and transfer."
+    },
+    "non_claims": [
+      "Semantic review, source mapping, a BOM, graph, checksum, signature, provenance statement, SLSA level, layout, supplier claim, advisory, quarantine, schema, finite theorem, or zero observed compromise does not establish completeness, assertion truth, artifact integrity, data fitness/rights, supplier trust, effective control, safety, compliance, or transfer.",
+      "The current one affected-path record, ten mutations, and seven theorem declarations under six targets establish only their exact finite record, closure, and route semantics.",
+      "No support state, custody permission, readiness, release authority, conformance, novelty, AGI, or ASI claim changes without its separate owner and accepted evidence transition."
+    ]
+  },
+  "atom_reviews": {
+    "ai-supply-chain-integrity-and-lifecycle-provenance.core": {
+      "proposition_type": "composite",
+      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "strongest_counterclaim": "Existing C-SCRM, BOM, registry, signing, SLSA/in-toto, vulnerability, supplier, incident, and provenance systems already provide the useful boundary; the proposed transaction remains incomplete, correlated, costly, disclosure-prone, and availability-reducing.",
+      "falsifier": "Any ordinary-use trace violates a frozen consumer, closure, identity, assertion, verification, inheritance, applicability, propagation, restoration, retirement, privacy/rights, availability, cost, or residual obligation, or any strong simpler comparator dominates the joint frontier.",
+      "acceptance_criteria": ["Meet every frozen effect-bearing discovery, integrity, response, restoration, usefulness, availability, privacy/rights, cost, causal-ablation, independent-replication, and transfer gate against all strong comparators."]
+    },
+    "ai-supply-chain-integrity-and-lifecycle-provenance.problem.001": {
+      "proposition_type": "source-synthesis",
+      "current_disposition": "research_problem_not_positive_result",
+      "strongest_counterclaim": "Representative deployed AI platforms already bind every material lifecycle relation and produce effect-complete downstream response for each declared consumer.",
+      "falsifier": "A dated representative audit finds no material identity, assertion, supplier, transformation, data/right, applicability, propagation, restoration, disclosure, availability, or residual gap.",
+      "acceptance_criteria": ["Complete a dated comparator audit that preserves the strongest current systems and states only the exact remaining problem boundary."]
+    },
+    "ai-supply-chain-integrity-and-lifecycle-provenance.insufficiency.001": {
+      "proposition_type": "source-synthesis",
+      "current_disposition": "comparator_gap_pending_dated_audit",
+      "strongest_counterclaim": "A properly composed C-SCRM, BOM, registry, SLSA/in-toto, model-signing, vulnerability, supplier, incident, and provenance system supplies every named property at lower cost.",
+      "falsifier": "A frozen conventional composition exercises every named property at equal or lower joint security error, utility, disclosure, availability, restoration, rights impact, and cost.",
+      "acceptance_criteria": ["Reproduce or audit strong current comparators before claiming a distinct missing boundary or advantage."]
+    },
+    "ai-supply-chain-integrity-and-lifecycle-provenance.minimum.001": {
+      "proposition_type": "executable",
+      "current_disposition": "retain_finite_declared_graph_evidence_without_core_promotion",
+      "strongest_counterclaim": "The minimum is self-authored schema, graph, route, and theorem theater with no real artifact, supplier, pipeline, advisory, quarantine, restoration, or security effect.",
+      "falsifier": "The one record, exact declared closure, ten mutation rejections, seven theorem declarations, result identity, or non-claim boundaries fail clean recomputation or prose generalizes beyond them.",
+      "acceptance_criteria": ["Cleanly reproduce one quarantined three-project record, ten expected-invalid mutations, seven theorem declarations under six targets, and no support movement."],
+      "promotion_ceiling": "synthetic_test_backed_for_exact_record_closure_and_route_semantics_only_after_accepted_transition"
+    },
+    "ai-supply-chain-integrity-and-lifecycle-provenance.beyond_sota.001": {
+      "proposition_type": "composite",
+      "claim_label": "Speculative",
+      "current_disposition": "research_target_not_current_result",
+      "strongest_counterclaim": "The full transaction is dominated by simpler mature controls because open-world closure is impossible and its relation, governance, disclosure, and quarantine overhead worsens availability and cost without improving real integrity or response.",
+      "falsifier": "The full condition misses any frozen joint gate, a mechanism lacks its predicted causal signature, independent replication or transfer fails, or a strong simpler baseline dominates.",
+      "acceptance_criteria": ["Complete the preregistered multi-comparator effect-bearing causal, independently replicated, transfer campaign and meet every frozen joint gate."]
+    },
+    "ai-supply-chain-integrity-and-lifecycle-provenance.formal.ai-supply-chain-unresolved-critical-advisory-quarantines-artifact": {
+      "current_disposition": "retain_narrow_finite_theorem_pending_applicability_and_effect_refinement",
+      "strongest_counterclaim": "The theorem maps a trusted unresolved-critical Boolean to quarantine and neither validates applicability nor observes quarantine effects.",
+      "falsifier": "The model admits custody under its stated critical condition or cannot refine to an applicability and effect-bearing route without changing meaning.",
+      "acceptance_criteria": ["Bind exact advisory subject/version/applicability and observed quarantine acknowledgement to executable traces with rejecting controls."]
+    },
+    "ai-supply-chain-integrity-and-lifecycle-provenance.formal.ai-supply-chain-complete-requested-artifact-reaches-custody-review": {
+      "current_disposition": "retain_finite_route_envelope_pending_content_and_runtime_refinement",
+      "strongest_counterclaim": "The theorem maps trusted completeness fields to custody review and neither discovers the graph nor verifies actual artifact content, suppliers, transformations, or effects.",
+      "falsifier": "A modeled incomplete record reaches custody review or the route cannot represent an effect-bearing consumer path without semantic distortion.",
+      "acceptance_criteria": ["Add discovery, assertion uncertainty, actual content/transformation, supplier conflict, downstream effect, and executable refinement before mechanized-integrity language."]
+    }
+  },
+  "prose_candidate_dispositions": {
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.c5fb4f922182": {"state": "duplicate_of_atom", "rationale": "Human-path example of signature non-transitivity.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.004"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.dda8a4e56b1d": {"state": "duplicate_of_atom", "rationale": "Restates consumer-relative completeness requirements.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.002"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.867eccb70aa4": {"state": "duplicate_of_atom", "rationale": "Restates assertion versus observed execution.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.005"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.de8edbb16f98": {"state": "duplicate_of_atom", "rationale": "Restates record intent versus observed downstream effects.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.mechanism.011"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.cf5748d101a4": {"state": "historical_or_source_report", "rationale": "Reports the bounded non-guarantee from the SLSA comparator."},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.1ae85826932f": {"state": "editorial_or_question", "rationale": "Line-break fragment of the chapter-delta explanation."},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.8063d7a33743": {"state": "duplicate_of_atom", "rationale": "Exact continuation of the manifest core proposition.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.core"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.aa7030095a0f": {"state": "editorial_or_question", "rationale": "Line fragment of the closure-record field inventory."},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.44a19b676d82": {"state": "duplicate_of_atom", "rationale": "Restates the prohibition on graph-size completeness claims.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.002"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.1b109379f118": {"state": "duplicate_of_atom", "rationale": "Example of named non-ordinary routing.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.core"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.d3fbec3e1558": {"state": "duplicate_of_atom", "rationale": "Continuation of required evidence and critical-event routing.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.core"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.ec5f16e4a3dd": {"state": "duplicate_of_atom", "rationale": "Restates response/restoration ownership fields.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.interface.007"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.f1e1721bb239": {"state": "duplicate_of_atom", "rationale": "Restates restoration as a new observed lineage event.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.011"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.9e791273c434": {"state": "nonmaterial_explanation", "rationale": "Diagram caption explaining already atomized lifecycle separation."},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.dcb158b90cf2": {"state": "historical_or_source_report", "rationale": "Bounded local-project design input about exact subject/policy scope."},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.0cf1e40feef8": {"state": "historical_or_source_report", "rationale": "Bounded Trainer lineage observation about transitive quarantine."},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.c99c5b358a53": {"state": "duplicate_of_atom", "rationale": "Illustrates relation-specific affected-path reconsideration.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.mechanism.009"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.3a55dd80c811": {"state": "duplicate_of_atom", "rationale": "Restates declared-graph conditionality.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.002"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.49dab0b985d3": {"state": "duplicate_of_atom", "rationale": "Restates open-world discovery limits.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.002"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.fb6ae6b50ba3": {"state": "nonmaterial_explanation", "rationale": "Editorial explanation of the layer's position between storage and custody."},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.81d90dbb856f": {"state": "editorial_or_question", "rationale": "Line fragment of the Advisory Applicability interface fields."},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.0a65d54dc385": {"state": "editorial_or_question", "rationale": "Line fragment of the first invariant."},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.ab88873ac9aa": {"state": "duplicate_of_atom", "rationale": "Rendered continuation of predicate non-transitivity.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.004"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.444b58e8b342": {"state": "duplicate_of_atom", "rationale": "Rendered continuation of acknowledged terminal response.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.010"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.61f9f0ad5d75": {"state": "duplicate_of_atom", "rationale": "Rendered continuation of the finite-evidence ceiling.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.015"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.39db19f98a7c": {"state": "duplicate_of_atom", "rationale": "Restates that a complete-looking graph is not world evidence.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.002"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.133621a02c13": {"state": "nonmaterial_explanation", "rationale": "Lead-in explaining observation-boundary degradation."},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.dd449c7d18fe": {"state": "duplicate_of_atom", "rationale": "Example of consumer-relative relation adequacy.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.002"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.fb903372144a": {"state": "duplicate_of_atom", "rationale": "Restates consumer and relation binding.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.interface.001"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.9b265764c894": {"state": "duplicate_of_atom", "rationale": "Restates append-only invalidation history.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.010"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.f1cd8b077073": {"state": "duplicate_of_atom", "rationale": "Restates relation-specific property inheritance.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.008"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.38e42ce213df": {"state": "duplicate_of_atom", "rationale": "Restates joint availability and restoration cost.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.014"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.47aa98518512": {"state": "duplicate_of_atom", "rationale": "Restates the world-completeness non-claim.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.002"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.13c03b7eaed9": {"state": "duplicate_of_atom", "rationale": "Restates explicit exclusion and declared-closure discipline.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.mechanism.003"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.8f256fbef84c": {"state": "duplicate_of_atom", "rationale": "Restates residual hidden-copy and malicious-omission uncertainty.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.002"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.3a14ccf1d8ed": {"state": "duplicate_of_atom", "rationale": "Restates owned exceptions and residuals during suppression.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.011"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.962d523c26a0": {"state": "nonmaterial_explanation", "rationale": "Objection response lead-in about declared process integrity."},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.c9fd5030cbbe": {"state": "duplicate_of_atom", "rationale": "Restates the predicate and authority non-inference boundary.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.004"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.81536d28ed8c": {"state": "duplicate_of_atom", "rationale": "Restates prospective restoration conditions.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.011"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.98381b5c8fd7": {"state": "duplicate_of_atom", "rationale": "Restates joint security and recovery evaluation.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.mechanism.015"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.51ad484f8e01": {"state": "duplicate_of_atom", "rationale": "Restates affected-path and restoration metrics.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.mechanism.015"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.d12ef149b833": {"state": "duplicate_of_atom", "rationale": "Restates retirement without history deletion.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.012"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.011dc6bd6275": {"state": "duplicate_of_atom", "rationale": "Restates service removal versus world erasure.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.012"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.c3daa8e032bf": {"state": "duplicate_of_atom", "rationale": "Restates the one-declared-graph evidence boundary.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.minimum.001"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.6251c1911ed5": {"state": "duplicate_of_atom", "rationale": "States the effect-bearing next boundary.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.beyond_sota.001"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.97d9daf67708": {"state": "duplicate_of_atom", "rationale": "Restates public-safe campaign workload requirements.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.beyond_sota.001"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.cb29752ec830": {"state": "duplicate_of_atom", "rationale": "Restates independent implementation requirements.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.beyond_sota.001"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.b86624103c85": {"state": "duplicate_of_atom", "rationale": "Restates the no-self-certification dependency boundary.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.beyond_sota.001"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.858963a8aa44": {"state": "duplicate_of_atom", "rationale": "Restates the speculative comparative proposition.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.beyond_sota.001"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.74ee510c95c5": {"state": "duplicate_of_atom", "rationale": "Restates campaign preregistration.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.beyond_sota.001"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.01d3e2d3dd46": {"state": "duplicate_of_atom", "rationale": "Restates separate campaign implementation ownership.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.beyond_sota.001"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.84db23654b11": {"state": "duplicate_of_atom", "rationale": "Restates replication and transfer scope.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.beyond_sota.001"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.c138b4801982": {"state": "duplicate_of_atom", "rationale": "Restates exact promotion/refutation wording gates.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.beyond_sota.001"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.d4dbc763e187": {"state": "duplicate_of_atom", "rationale": "Restates the seven-theorem non-claim boundary.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.minimum.001"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.29a2dbcfac89": {"state": "duplicate_of_atom", "rationale": "Continuation of exact finite route semantics.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.minimum.001"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.e5e1cf74e7ac": {"state": "duplicate_of_atom", "rationale": "Summary restatement of consumer-relative assertion/effect separation.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.core"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.a63e4361f8b8": {"state": "duplicate_of_atom", "rationale": "Restates acknowledged non-ordinary propagation.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.010"},
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.f0a2c7043eb9": {"state": "duplicate_of_atom", "rationale": "Handoff restatement of governed transition and affected-path review.", "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.interface.009"}
+  ,
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.89f56e4b7798": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped mature-endpoint or current-result boundary already governed by structured chapter atoms; it adds no independent material claim."
+    },
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.cd57b66db8da": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped mature-endpoint or current-result boundary already governed by structured chapter atoms; it adds no independent material claim."
+    }
+  },
+  "non_claims": [
+    "This semantic sweep does not promote the chapter, prove novelty or conformance, or authorize custody, readiness, deployment, distribution, supplier trust, or compliance.",
+    "No graph, BOM, checksum, signature, provenance statement, level, layout, dataset record, supplier claim, advisory, schema, theorem, quarantine, or clean route is counted beyond its exact frozen scope.",
+    "Negative, null, missed-edge, false-assertion, false-quarantine, propagation, restoration, availability, disclosure, privacy/rights, labor, supplier, compensation, and irreversible outcomes remain visible and cannot be relabeled as successful integrity."
+  ]
+}

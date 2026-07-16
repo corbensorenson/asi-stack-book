@@ -1,0 +1,560 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "resource-economics-and-token-budgets",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/resource-economics-and-token-budgets.qmd",
+    "structured_atoms_reviewed": 82,
+    "prose_candidates_adjudicated": 89,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, all sixteen exact source mappings, both protocol records, the ten-command flagship and component artifacts, three accepted narrow transitions, five no-promotion decisions, all eleven proof targets, all forty-five ResourceEconomics and thirteen SimulationFidelity theorem declarations, every manifest atom, every prose candidate, the test plan, source crosswalk, summary, and handoff. The sweep made the consumer-, task-, risk-, workload-, organization-, resource-, and time-specific Resource Allocation Lease plus bounded simulation claim transport the distinct owner; expanded the contract to eighteen lifecycle mechanisms, twelve interfaces, eighteen invariants, and eighteen failure modes; preserved complete-cost, protected-floor, denominator, simulation-transfer, causal, reproduction, and transfer requirements; and preserved zero chapter-core support effect."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Natural and adversarial multi-tenant AI work, model and tool calls, verifier and reviewer queues, serving workloads, simulation and benchmark claims, and delayed downstream outcomes for declared consumers and risk classes.",
+      "environment": "Sixteen exact mappings; two protocol records; ten-command/twenty-six-artifact flagship replay; three accepted narrow transitions; five no-promotion decisions; bounded selector, workflow, budget, capacity, timing, load, CI, governance-tax, simulation-transfer, and Theseus-import artifacts; forty-five ResourceEconomics and thirteen SimulationFidelity theorem declarations. No deployed scheduler, production queue, real verifier market, or open-world simulator is represented.",
+      "model": "A consumer-, task-, risk-, workload-, organization-, resource-, rights-, and time-specific allocation lease over typed capacity, protected floors, estimates, complete work states and denominators, scheduling routes, actuals, simulation transfer, expiry, recovery, and residuals.",
+      "authority": "This chapter owns allocation leases and resource-bounded simulation claim transport only. Intent, Planning, Routing, Runtime, Serving, Verification, Security, Rights, Authority, Labor, Human, Evidence, Claims, Artifacts, Readiness, Incident, and Release retain their boundaries.",
+      "time": "Semantic review current through 2026-07-14; workload, price, hardware, model, tool, verifier, reviewer, policy, rights, threat, organization, incident, or time changes expire affected qualifications.",
+      "artifact": "Chapter and manifest contract; sixteen mappings; protocol fixtures; flagship and components; transitions; eleven targets; fifty-eight theorem declarations; and the future natural causal-transfer campaign."
+    },
+    "current_disposition": "retain_argument_with_narrow_synthetic_and_local_transitions_no_core_effect_pending_natural_multitenant_causal_campaign",
+    "assumptions": [
+      "Consumers, tasks, risk, capacity, units, meters, queues, protected floors, costs, work states, actual outcomes, simulation boundaries, and residuals can be versioned and observed without collapsing their owners.",
+      "Strong risk-blind, fixed-budget, greedy-throughput, value-of-computation, queueing-aware, serving-native, human-first, conservative, and governed baselines can run under matched information and resources.",
+      "Independent-enough schedulers, meters, evaluators, simulators, verifiers, and outcome assessors can measure useful outcomes, safety, fairness, latency, resources, human work, governance cost, recovery, and residuals.",
+      "Failed, deferred, refused, cancelled, preempted, timed-out, OOM, fallback, repaired, disputed, and human-reviewed work remains in complete denominators.",
+      "Causal interventions, delayed outcomes, independent implementations, and heterogeneous transfer settings can be frozen prospectively."
+    ],
+    "dependencies": [
+      "planning-as-a-control-layer",
+      "routing-heads-and-specialist-cores",
+      "fast-generation-architectures",
+      "governed-deliberation-and-test-time-scaling",
+      "rankfold-neuralfold-and-artifact-compression",
+      "verification-bandwidth-and-context-adequacy",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "security-kernel-and-digital-scifs",
+      "labor-os-and-typed-jobs",
+      "artifact-graphs-audit-logs-and-replay",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "claim-ledgers-and-belief-revision"
+    ],
+    "strongest_counterclaim": "Optimized serving, ordinary quotas, queueing policies, simple risk tiers, and existing cost controls already dominate; the proposed protected-floor and claim-transport system adds governance and measurement cost without improving useful outcomes or stability.",
+    "falsifier": "Under matched natural multi-tenant work, the governed policy fails the preregistered joint useful-throughput, unsafe-release, refusal, fairness, tail, resource, human, governance, recovery, and residual frontier; causal signatures fail; or proxy value, weak baselines, hidden displaced cost, censored work, shared evaluators, or transfer gaps explain the result.",
+    "required_lanes": [
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze strongest current scheduling, serving, adaptive-compute, memory, simulation, and cost-quality comparators without importing reported gains."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify protected floors, risk priority, fairness, refusal, human capacity, rights, opportunity cost, and residual allocation."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify conservation, queue and transition semantics, protected-floor safety, liveness, starvation, expiry, countermodels, and runtime refinement beyond finite summaries."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Run real models, tools, verifiers, reviewers, serving, meters, scheduling, failure, fallback, recovery, and simulation-transfer controls."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure useful throughput, unsafe release, refusal, fairness, queues, tails, all resources, human and governance work, displaced cost, recovery, and residuals jointly."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate protected floors, verification pricing, displaced-cost accounting, review reservation, smoothing, fallback, simulation contracts, and expiry."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Reproduce independently and transfer across workloads, models, hardware, prices, organizations, rights regimes, attacks, updates, and time."
+      }
+    ],
+    "evidence_refs": {
+      "chapter": "chapters/resource-economics-and-token-budgets.qmd",
+      "flagship": "experiments/resource_flagship_lane/results/2026-07-01-local.json",
+      "workload_probe": "experiments/resource_workload_quality_probe/results/2026-07-01-local.json",
+      "load_probe": "experiments/resource_load_stability_probe/results/2026-07-01-local.json",
+      "transitions": "evidence_transitions/",
+      "lean_resource": "lean/AsiStackProofs/ResourceEconomics.lean",
+      "lean_simulation": "lean/AsiStackProofs/SimulationFidelity.lean",
+      "manifest": "book_structure.json"
+    },
+    "contrary_evidence": [
+      "The flagship replays repository validators and finite fixtures rather than allocating real model, serving, verifier, or human work.",
+      "The 66.98 percent selector gain is synthetic and relative to a chosen modeled baseline, not a market, production, or economic-optimality result.",
+      "The 84.421 percent local timing reduction selects a narrower validator and remains vulnerable to cache, machine load, and scope differences.",
+      "The synthetic burst eliminates modeled overload by deferring seven task-ticks; those deferrals are residual cost, not free stability.",
+      "Three accepted transitions are narrow non-core results; five no-promotion decisions and the flagship preserve zero chapter-core effect.",
+      "Fifty-eight theorem declarations are finite gates, negatives, and fixture/public-record consequences; they do not establish real optimality, welfare, stability, serving quality, simulator adequacy, or transfer."
+    ],
+    "known_confounds": [
+      "Workload mix, arrival process, deadlines, model and tool quality, cache, batching, warmup, hardware occupancy, price, and tenant interference can dominate results.",
+      "Candidate policies may receive different information, meters, verifier capacity, reviewer time, retry rights, or engineering.",
+      "Schedulers, meters, evaluators, simulators, and organizations may share code, data, infrastructure, or incentives.",
+      "Proxy value and selective admission can hide refused, delayed, displaced, and downstream work.",
+      "Short horizons can miss incidents, reviewer fatigue, opportunity cost, price drift, rebound demand, and recovery debt.",
+      "Synthetic fidelity and benchmark convenience can dominate apparent transfer."
+    ],
+    "acceptance_criteria": [
+      "Every lifecycle stage has an exact producer, consumer, valid case, rejecting mutation, consequence, recovery route, and residual owner.",
+      "A real reference slice executes natural multi-tenant work with protected floors, complete states and costs, independent outcome evaluation, failure, fallback, recovery, and simulation-transfer boundaries.",
+      "The preregistered campaign clears joint usefulness, safety, refusal, fairness, tail, resource, human, governance, recovery, causal, reproduction, and transfer gates against strong matched controls.",
+      "Each claimed mechanism produces its predicted signature under matched ablation without proxy leakage, weak baselines, hidden costs, censored work, shared evaluation, or extra resources."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to exact consumer, task, risk, workload, organization, policy, model, tool, verifier, reviewer, hardware, price, metric, resource, rights, and horizon.",
+      "Separate schema validity, finite selection, local replay, timing, synthetic load, serving metrics, useful outcomes, safety, economics, deployment, transfer, and SOTA.",
+      "Unknown displaced cost, opportunity cost, denominator, evaluator independence, delayed outcome, reproduction, or transfer remains residual or blocked."
+    ],
+    "refutation_criteria": [
+      "Refute an invariant when a reachable trace violates protected floors, units, state separation, denominator closure, conservation, priority, fairness, transfer, expiry, or residual ownership.",
+      "Refute a mechanism benefit when matched ablation preserves or improves the joint frontier or proxy value, hidden cost, extra resources, weak baselines, or censored work explains it.",
+      "Refute useful, safe, stable, efficient, fair, optimal, deployable, transferable, or SOTA language when a simpler control wins or reproduction and transfer fail."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only when a more precise allocation owner supersedes the atom and every budget, route, schedule, meter, simulation contract, receipt, transition, incident, residual, and descendant migrates with lineage."
+    ],
+    "promotion_ceiling": "argument_until_natural_multitenant_causal_campaign_with_independent_reproduction_and_transfer",
+    "reproduction": {
+      "command": "python3 scripts/validate_resource_flagship_lane.py && python3 scripts/validate_resource_governance_tax_tradeoff.py && cd lean && lake build AsiStackProofs.ResourceEconomics AsiStackProofs.SimulationFidelity",
+      "environment_lock": "Local deterministic fixtures, repository timing probes, imported public-safe summaries, and finite modules current through 2026-07-14; natural production-like campaign not frozen.",
+      "artifact_digest": null,
+      "evaluator_identity": "Current validators and evaluators are local implementations; independent scheduler, meter, verifier, outcome, human-cost, simulation, and transfer implementations are required."
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "resource-economics-and-token-budgets",
+      "next_unblocking_condition": "Freeze and run the natural multi-tenant real-model and serving campaign with strong matched policies, protected floors, complete costs and work states, delayed outcomes, causal ablations, independent reproduction, and heterogeneous transfer."
+    },
+    "non_claims": [
+      "A source, budget, fixture, local timing, synthetic selector, load trace, CI record, simulation contract, transition, replay, theorem, or green build does not establish deployed scheduling, economic optimality, welfare, production stability, model quality, simulator adequacy, transfer, or SOTA.",
+      "The accepted transitions are narrow and do not promote the chapter core.",
+      "No support, deployment, release, AGI, or ASI state changes through this semantic review."
+    ]
+  },
+  "atom_reviews": {
+    "resource-economics-and-token-budgets.core": {
+      "current_disposition": "retain_distinct_resource_allocation_lease_and_simulation_claim_transport_owner_at_argument",
+      "strongest_counterclaim": "Ordinary serving and queueing controls dominate without the proposed governance tax.",
+      "falsifier": "Matched natural campaigns show no unique joint-frontier benefit or violate protected-floor, accounting, causal, reproduction, or transfer gates.",
+      "promotion_ceiling": "argument_until_natural_independently_reproduced_multitenant_causal_campaign"
+    }
+  },
+  "prose_candidate_dispositions": {
+    "resource-economics-and-token-budgets.prose.630029062324": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.ff765f2b53e1": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.45debad12cea": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.94ad1bf08d15": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.e857a6e50f82": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.15815356a24a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.001"
+    },
+    "resource-economics-and-token-budgets.prose.810834cb2c77": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.012"
+    },
+    "resource-economics-and-token-budgets.prose.f2ca044112ee": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.001"
+    },
+    "resource-economics-and-token-budgets.prose.f263f2d1da03": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.0a64fe69fba5": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.8a78c2ea4865": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.012"
+    },
+    "resource-economics-and-token-budgets.prose.af6f31f54847": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.346dd0caf6bb": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.002"
+    },
+    "resource-economics-and-token-budgets.prose.722aad7b0b4a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.05f1e633b705": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.012"
+    },
+    "resource-economics-and-token-budgets.prose.765e5d0ed950": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.f49352684544": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.2b1845bd193c": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.abad05d1a114": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.b454122b7aab": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.f2ac787952ee": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.012"
+    },
+    "resource-economics-and-token-budgets.prose.a57eab97c696": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.865fa7b41ffe": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.001"
+    },
+    "resource-economics-and-token-budgets.prose.a119adadcb00": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.9dd4319efb3e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.001"
+    },
+    "resource-economics-and-token-budgets.prose.6b6f00d410b4": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.2c5b1a2bd7eb": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.342c3a253cfe": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.c6755b37a7d9": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.001"
+    },
+    "resource-economics-and-token-budgets.prose.4062b4ee1729": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.002"
+    },
+    "resource-economics-and-token-budgets.prose.44eef5842b74": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.673dbbfd4516": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.e93a7bb77c81": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.d3b25db9c773": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.102f56b91e22": {
+      "state": "editorial_or_question",
+      "rationale": "Future-work or documentation instruction, not an independent present claim."
+    },
+    "resource-economics-and-token-budgets.prose.14c8f2a3fa9e": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.5378accc4d29": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.012"
+    },
+    "resource-economics-and-token-budgets.prose.837089a17cd5": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.012"
+    },
+    "resource-economics-and-token-budgets.prose.491173ed6b34": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.012"
+    },
+    "resource-economics-and-token-budgets.prose.26597e8fa397": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.001"
+    },
+    "resource-economics-and-token-budgets.prose.595a930fba81": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.001"
+    },
+    "resource-economics-and-token-budgets.prose.082456ccb72f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.002"
+    },
+    "resource-economics-and-token-budgets.prose.e0f3469ed0bd": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.001"
+    },
+    "resource-economics-and-token-budgets.prose.65f3efc363d2": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.012"
+    },
+    "resource-economics-and-token-budgets.prose.ac7d69aceec5": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.09a678d1c94b": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.1d45b43da9cf": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.012"
+    },
+    "resource-economics-and-token-budgets.prose.b8140443d8b7": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.ffc94c7d8cf3": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.012"
+    },
+    "resource-economics-and-token-budgets.prose.e8bc53d97424": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.368b7a54b64d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.3ee0ebf35532": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.010"
+    },
+    "resource-economics-and-token-budgets.prose.47af695cd307": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.007"
+    },
+    "resource-economics-and-token-budgets.prose.a15a56850bc9": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.21337d1d04bf": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.319e1e3c29ca": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.aa7d5b6621c5": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.c683ceec497d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.012"
+    },
+    "resource-economics-and-token-budgets.prose.75f392debb95": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.3b0fd1dde579": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.bb261f38b3e8": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.3efb0228e9c9": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.aacb7a6d9baf": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.4bd41581e21e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.015"
+    },
+    "resource-economics-and-token-budgets.prose.22f8fbbec0f7": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.001"
+    },
+    "resource-economics-and-token-budgets.prose.66b2eb4a62b9": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.005"
+    },
+    "resource-economics-and-token-budgets.prose.445248c6799f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.005"
+    },
+    "resource-economics-and-token-budgets.prose.57abc4280e78": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.012"
+    },
+    "resource-economics-and-token-budgets.prose.d195b8e2e933": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.012"
+    },
+    "resource-economics-and-token-budgets.prose.f6bf1df7cfb7": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.6db4bdcf545b": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.005"
+    },
+    "resource-economics-and-token-budgets.prose.afb68e68caa0": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.012"
+    },
+    "resource-economics-and-token-budgets.prose.81fb25d8c911": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.7a15c3fd9365": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.9f3f69a1f190": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.704d72bf7b8b": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.7668a70e2fe6": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.aeee4fb06e86": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.005"
+    },
+    "resource-economics-and-token-budgets.prose.cbd594eb3cee": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.1326f5ef8e24": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.88518878d784": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.bf2cbb67da23": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.2fbe36c935e2": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.28ddb24d2eca": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.b9f531d3983f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.2245ef90354b": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.005"
+    },
+    "resource-economics-and-token-budgets.prose.0abcfb64c08d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.012"
+    },
+    "resource-economics-and-token-budgets.prose.ab8162931b44": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
+    },
+    "resource-economics-and-token-budgets.prose.ee610cc56d17": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explanatory prose already owned by the cited structured Resource Economics atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.invariant.001"
+    }
+  },
+  "non_claims": [
+    "Completing this sweep does not establish deployed scheduling, economic optimality, welfare, production stability, model quality, simulator adequacy, transfer, or SOTA.",
+    "No chapter-core support, release, AGI, or ASI state changes through this review."
+  ]
+}

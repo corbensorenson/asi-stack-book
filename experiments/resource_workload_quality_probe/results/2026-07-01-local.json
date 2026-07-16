@@ -23,11 +23,11 @@
     "This workload-quality probe does not prove stable speedup, deployed scheduler behavior, TokenMana behavior, PlanForge behavior, model quality, economic outcomes, physical feasibility, simulator adequacy, or workload-quality improvement outside this local repository task.",
     "The selected route is scoped to Resource workflow trace review only and does not replace the full book gate, release gate, production scheduler logs, human-repair measurement, or external review."
   ],
-  "observed_selected_vs_baseline_elapsed_reduction_percent": 84.421,
+  "observed_selected_vs_baseline_elapsed_reduction_percent": 88.987,
   "pass": true,
   "probe_id": "resource-workload-quality-probe-2026-07-01-local",
   "record_kind": "resource_workload_quality_probe",
-  "recorded_at_utc": "2026-07-05T23:56:17Z",
+  "recorded_at_utc": "2026-07-15T23:41:02Z",
   "residuals": [
     "The selected scoped validator does not check unrelated Resource Economics artifacts that the baseline live probe checks.",
     "The elapsed-time comparison is a local five-sample median measurement and remains vulnerable to machine load, cache state, and process scheduling noise.",
@@ -36,9 +36,9 @@
   "routes": [
     {
       "command": "python3 scripts/validate_resource_live_probe.py",
-      "elapsed_ms": 205.083,
-      "elapsed_ms_max": 253.583,
-      "elapsed_ms_min": 178.566,
+      "elapsed_ms": 274.36,
+      "elapsed_ms_max": 313.826,
+      "elapsed_ms_min": 242.7,
       "eligible": true,
       "exit_code": 0,
       "exit_codes": [
@@ -66,11 +66,11 @@
       "route_id": "route://baseline-full-resource-lane-replay",
       "sample_count": 5,
       "sample_elapsed_ms": [
-        253.583,
-        178.566,
-        205.083,
-        194.491,
-        209.003
+        242.7,
+        261.525,
+        313.826,
+        274.36,
+        310.393
       ],
       "sample_quality_passes": [
         true,
@@ -82,9 +82,9 @@
     },
     {
       "command": "python3 scripts/validate_resource_workflow_trace.py",
-      "elapsed_ms": 31.949,
-      "elapsed_ms_max": 69.136,
-      "elapsed_ms_min": 28.389,
+      "elapsed_ms": 30.215,
+      "elapsed_ms_max": 30.347,
+      "elapsed_ms_min": 29.075,
       "eligible": true,
       "exit_code": 0,
       "exit_codes": [
@@ -112,11 +112,11 @@
       "route_id": "route://selected-scoped-workflow-trace-validator",
       "sample_count": 5,
       "sample_elapsed_ms": [
-        31.949,
-        69.136,
-        43.171,
-        29.781,
-        28.389
+        29.863,
+        30.347,
+        30.299,
+        29.075,
+        30.215
       ],
       "sample_quality_passes": [
         true,
@@ -128,9 +128,9 @@
     },
     {
       "command": "/bin/echo skipped resource workflow trace validator",
-      "elapsed_ms": 2.608,
-      "elapsed_ms_max": 5.058,
-      "elapsed_ms_min": 1.959,
+      "elapsed_ms": 2.201,
+      "elapsed_ms_max": 3.253,
+      "elapsed_ms_min": 1.927,
       "eligible": false,
       "exit_code": 0,
       "exit_codes": [
@@ -158,11 +158,11 @@
       "route_id": "route://negative-no-op-success-text",
       "sample_count": 5,
       "sample_elapsed_ms": [
-        2.507,
-        4.857,
-        5.058,
-        2.608,
-        1.959
+        3.253,
+        1.927,
+        2.201,
+        2.193,
+        2.696
       ],
       "sample_quality_passes": [
         false,
@@ -192,10 +192,10 @@
       "sha256": "4c55a8ab45b2d6a42bb88ee074c0e2948cc7afdf915faebb0ae6932683229c08"
     },
     {
-      "bytes": 23073,
-      "lines": 526,
+      "bytes": 22609,
+      "lines": 519,
       "path": "scripts/validate_resource_workflow_trace.py",
-      "sha256": "389d4d6e9593520f23b95d95810d19e01d5d225795984d12a8394d6007c0e14b"
+      "sha256": "8fb7bed5820125554c251d0deb518ff5710fef773b852dbeb48a75f0e7c6b6ce"
     },
     {
       "bytes": 7797,
@@ -204,22 +204,22 @@
       "sha256": "01627c7c27032af715e6d3e1af143241a65cee627b84da68ce7be7b9d02bc6d7"
     },
     {
-      "bytes": 2603,
-      "lines": 62,
+      "bytes": 2125,
+      "lines": 55,
       "path": "experiments/resource_workflow_trace/results/2026-07-01-local.json",
-      "sha256": "2e1a75f81f10c044287269fd9757110186da31b8b9877f0891d8f407aab17355"
+      "sha256": "664f842032710fc0285f6db316acf42f3de6e6ef0290799d2449f8ae14d2d9ba"
     },
     {
-      "bytes": 7900,
+      "bytes": 7899,
       "lines": 185,
       "path": "experiments/resource_live_probe/results/2026-07-01-local.json",
-      "sha256": "14cb60d1aaa1a8fef2ba001618cf64724ff205c6ec45d6ceba2b28ce401c9c9d"
+      "sha256": "f30de1cc15c8fcd4bbc6377faa52e7cd29339a2bc58988cf054c5045ac92b4a6"
     },
     {
-      "bytes": 31878,
-      "lines": 839,
+      "bytes": 24144,
+      "lines": 707,
       "path": "lean/AsiStackProofs/ResourceEconomics.lean",
-      "sha256": "f5d768de3853d3479e2042aeb1d210a7e6f69776ec14975c03824e0f930bab86"
+      "sha256": "fa1b617c7e2788f9d9d669ebe56ac79dc95f27e760cc19c75891301ebbb57601"
     }
   ]
 }

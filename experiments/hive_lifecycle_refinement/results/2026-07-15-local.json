@@ -1,0 +1,456 @@
+{
+  "schema_version": "asi_stack.hive_lifecycle_refinement.v1",
+  "result_id": "hive-lifecycle-refinement-2026-07-15-local",
+  "source_sha256": {
+    "lean_model": "387ffc1aff8e409b4fab1d77ba104d30b496ded1f9ab48280ed4291d3a24f813"
+  },
+  "input_suites": [
+    {
+      "suite_id": "hive_admission",
+      "valid_count": 2,
+      "expected_invalid_count": 8
+    },
+    {
+      "suite_id": "partitioned_authority",
+      "valid_count": 3,
+      "expected_invalid_count": 6
+    }
+  ],
+  "reachable_stage_count": 7,
+  "route_case_count": 47,
+  "route_coverage": [
+    {
+      "case_id": "requested_accepted",
+      "expected_route": "accept_policy"
+    },
+    {
+      "case_id": "policyBound_accepted",
+      "expected_route": "accept_selection"
+    },
+    {
+      "case_id": "nodeSelected_accepted",
+      "expected_route": "accept_lease"
+    },
+    {
+      "case_id": "leased_accepted",
+      "expected_route": "accept_execution"
+    },
+    {
+      "case_id": "executed_accepted",
+      "expected_route": "accept_reconciliation"
+    },
+    {
+      "case_id": "reconciled_accepted",
+      "expected_route": "accept_closure"
+    },
+    {
+      "case_id": "requested_jobWellFormed",
+      "expected_route": "reject_malformed_job"
+    },
+    {
+      "case_id": "requested_identityPolicy",
+      "expected_route": "require_identity_policy"
+    },
+    {
+      "case_id": "requested_dataPolicy",
+      "expected_route": "require_data_policy"
+    },
+    {
+      "case_id": "requested_toolPolicy",
+      "expected_route": "require_tool_policy"
+    },
+    {
+      "case_id": "requested_approvalPolicy",
+      "expected_route": "require_approval_policy"
+    },
+    {
+      "case_id": "policyBound_deviceRegistry",
+      "expected_route": "require_device_registry"
+    },
+    {
+      "case_id": "policyBound_schedulerPolicy",
+      "expected_route": "require_scheduler_policy"
+    },
+    {
+      "case_id": "policyBound_candidateDenominator",
+      "expected_route": "require_candidate_denominator"
+    },
+    {
+      "case_id": "policyBound_leastAuthority",
+      "expected_route": "require_least_authority"
+    },
+    {
+      "case_id": "policyBound_dataLocality",
+      "expected_route": "require_data_locality"
+    },
+    {
+      "case_id": "policyBound_costBudget",
+      "expected_route": "require_cost_budget"
+    },
+    {
+      "case_id": "policyBound_energyBudget",
+      "expected_route": "require_energy_budget"
+    },
+    {
+      "case_id": "policyBound_dropoutPlan",
+      "expected_route": "require_dropout_plan"
+    },
+    {
+      "case_id": "nodeSelected_external_no_lease",
+      "expected_route": "require_federation_lease"
+    },
+    {
+      "case_id": "nodeSelected_sandbox",
+      "expected_route": "require_sandbox"
+    },
+    {
+      "case_id": "nodeSelected_leaseScope",
+      "expected_route": "require_lease_scope"
+    },
+    {
+      "case_id": "nodeSelected_evidenceObligations",
+      "expected_route": "require_evidence_obligations"
+    },
+    {
+      "case_id": "nodeSelected_expiration",
+      "expected_route": "require_expiration"
+    },
+    {
+      "case_id": "nodeSelected_revocationPath",
+      "expected_route": "require_revocation_path"
+    },
+    {
+      "case_id": "leased_high_risk_no_approval",
+      "expected_route": "require_bound_approval"
+    },
+    {
+      "case_id": "leased_freshGrant",
+      "expected_route": "require_fresh_grant"
+    },
+    {
+      "case_id": "leased_partition_quarantine",
+      "expected_route": "quarantine_partition"
+    },
+    {
+      "case_id": "leased_partition_no_mutation",
+      "expected_route": "require_no_mutation_evidence"
+    },
+    {
+      "case_id": "leased_executionGrant",
+      "expected_route": "require_execution_grant"
+    },
+    {
+      "case_id": "leased_monitor",
+      "expected_route": "require_monitor"
+    },
+    {
+      "case_id": "executed_artifactReceipt",
+      "expected_route": "require_artifact_receipt"
+    },
+    {
+      "case_id": "executed_effectReceipt",
+      "expected_route": "require_effect_receipt"
+    },
+    {
+      "case_id": "executed_resourceReceipt",
+      "expected_route": "require_resource_receipt"
+    },
+    {
+      "case_id": "executed_auditReceipt",
+      "expected_route": "require_audit_receipt"
+    },
+    {
+      "case_id": "executed_usefulOutcome",
+      "expected_route": "require_useful_outcome"
+    },
+    {
+      "case_id": "executed_residualOwner",
+      "expected_route": "require_residual_owner"
+    },
+    {
+      "case_id": "reconciled_dropoutRecovery",
+      "expected_route": "require_dropout_recovery"
+    },
+    {
+      "case_id": "reconciled_revocationClosure",
+      "expected_route": "require_revocation_closure"
+    },
+    {
+      "case_id": "reconciled_descendantClosure",
+      "expected_route": "require_descendant_closure"
+    },
+    {
+      "case_id": "reconciled_consumerAcknowledgment",
+      "expected_route": "require_consumer_acknowledgment"
+    },
+    {
+      "case_id": "reconciled_nonClaims",
+      "expected_route": "require_non_claims"
+    },
+    {
+      "case_id": "wrong_stage",
+      "expected_route": "reject_wrong_stage"
+    },
+    {
+      "case_id": "job_substitution",
+      "expected_route": "reject_job_substitution"
+    },
+    {
+      "case_id": "node_substitution",
+      "expected_route": "reject_node_substitution"
+    },
+    {
+      "case_id": "event_replay",
+      "expected_route": "reject_event_replay"
+    },
+    {
+      "case_id": "authority_leak",
+      "expected_route": "reject_authority_leak"
+    }
+  ],
+  "mutation_count": 53,
+  "mutation_rejection_count": 53,
+  "mutation_receipts": [
+    {
+      "mutation_id": "binding_authorityDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_candidateSetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_contractDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_evaluatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_jobId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_jobVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_leaseDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_nodeRegistryDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_principalDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_residualDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_selectedNodeDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_requested_jobWellFormed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_requested_identityPolicy",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_requested_dataPolicy",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_requested_toolPolicy",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_requested_approvalPolicy",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_policyBound_deviceRegistry",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_policyBound_schedulerPolicy",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_policyBound_candidateDenominator",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_policyBound_leastAuthority",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_policyBound_dataLocality",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_policyBound_costBudget",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_policyBound_energyBudget",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_policyBound_dropoutPlan",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_nodeSelected_external_no_lease",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_nodeSelected_sandbox",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_nodeSelected_leaseScope",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_nodeSelected_evidenceObligations",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_nodeSelected_expiration",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_nodeSelected_revocationPath",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_leased_high_risk_no_approval",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_leased_freshGrant",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_leased_partition_quarantine",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_leased_partition_no_mutation",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_leased_executionGrant",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_leased_monitor",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_executed_artifactReceipt",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_executed_effectReceipt",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_executed_resourceReceipt",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_executed_auditReceipt",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_executed_usefulOutcome",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_executed_residualOwner",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_reconciled_dropoutRecovery",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_reconciled_revocationClosure",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_reconciled_descendantClosure",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_reconciled_consumerAcknowledgment",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_reconciled_nonClaims",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong_kind",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect",
+      "rejected": true
+    }
+  ],
+  "command_receipts": [
+    {
+      "command": "python3 scripts/validate_hive_admission.py",
+      "exit_code": 0,
+      "output_sha256": "340dc81422ec395cecf183aa840c7add13bfed2366845a1b010d7dde8ad7c5d7"
+    },
+    {
+      "command": "python3 scripts/validate_partitioned_authority_fixture.py",
+      "exit_code": 0,
+      "output_sha256": "5aa3020bf15cd6f52925cf7e8a5e368f612719585230be6a25ced7be42ee7e7a"
+    }
+  ],
+  "witness": {
+    "terminal_stage": "closed",
+    "receipt_count": 6,
+    "dispatch_count": 1,
+    "useful_outcome_count": 1,
+    "recovery_count": 1,
+    "support_assignment_count": 0,
+    "external_effect_count": 0
+  },
+  "support_state_effect": "none",
+  "non_claims": [
+    "no deployed scheduler or federation",
+    "no real device, portal, authority-service, or sandbox enforcement",
+    "no partition tolerance, availability, security, or privacy result",
+    "no measured energy, dropout recovery, useful-work, or transfer result",
+    "no support promotion"
+  ]
+}

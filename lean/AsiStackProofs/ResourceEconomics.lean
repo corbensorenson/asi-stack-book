@@ -11,14 +11,6 @@ def RequiredGatesPreserved (review : BudgetGateReview) : Prop :=
   (review.requiredSafetyGate = true -> review.safetyGateDisabled = false) ∧
     (review.requiredVerificationGate = true -> review.verificationGateDisabled = false)
 
-theorem task_budget_cannot_disable_required_safety_or_verification_gates
-    {review : BudgetGateReview} :
-    RequiredGatesPreserved review ->
-    review.requiredSafetyGate = true ->
-    review.requiredVerificationGate = true ->
-    review.safetyGateDisabled = false ∧ review.verificationGateDisabled = false := by
-  intro preserved safetyRequired verificationRequired
-  exact ⟨preserved.1 safetyRequired, preserved.2 verificationRequired⟩
 
 theorem required_safety_gate_disabled_rejects_budget_gate_preservation
     {review : BudgetGateReview} :
@@ -70,14 +62,6 @@ def HighRiskVerificationBudgetValid (review : VerificationBudgetReview) : Prop :
     review.verificationBudgetSufficient = false ->
       BlockedOrEscalated review.decision
 
-theorem high_risk_task_with_insufficient_verification_budget_is_not_dispatched
-    {review : VerificationBudgetReview} :
-    HighRiskVerificationBudgetValid review ->
-    HighRisk review.riskClass ->
-    review.verificationBudgetSufficient = false ->
-    BlockedOrEscalated review.decision := by
-  intro valid highRisk insufficient
-  exact valid highRisk insufficient
 
 theorem high_risk_insufficient_budget_dispatch_rejected
     {review : VerificationBudgetReview} :
@@ -107,15 +91,6 @@ def ServingMemoryAccountingValid (record : ServingMemoryAccounting) : Prop :=
     record.modelQualityClaimedFromThroughput = false ∧
     record.supportStateEffectNone = true
 
-theorem aggregate_serving_throughput_requires_single_request_boundary
-    {record : ServingMemoryAccounting} :
-    ServingMemoryAccountingValid record ->
-    record.aggregateThroughputClaimed = true ->
-      record.kvCacheBudgetRecorded = true ∧
-        record.batchingScopeRecorded = true ∧
-        record.singleRequestVerifiedOutputSeparated = true := by
-  intro valid claimed
-  exact valid.1 claimed
 
 theorem serving_memory_throughput_quality_overclaim_rejected
     {record : ServingMemoryAccounting} :
@@ -340,33 +315,12 @@ def resourceWorkflowTraceFixture : WorkflowTraceSummary :=
     supportStateEffectNone := true,
     nonClaimBoundary := true }
 
-theorem resource_workflow_trace_fixture_valid :
-    WorkflowTraceValid resourceWorkflowTraceFixture := by
-  simp [WorkflowTraceValid, resourceWorkflowTraceFixture]
 
-theorem resource_workflow_trace_fixture_preserves_high_risk_ordering :
-    resourceWorkflowTraceFixture.highRiskFirst = true := by
-  rfl
 
-theorem resource_workflow_trace_fixture_residualizes_displaced_costs :
-    resourceWorkflowTraceFixture.displacedCostsResidualized = true := by
-  rfl
 
-theorem resource_workflow_trace_fixture_rejects_physical_feasibility_overclaim :
-    resourceWorkflowTraceFixture.physicalFeasibilityOverclaimRejected = true := by
-  rfl
 
-theorem resource_workflow_trace_fixture_rejects_latency_only_selection :
-    resourceWorkflowTraceFixture.latencyOnlySelectionRejected = true := by
-  rfl
 
-theorem resource_workflow_trace_fixture_rejects_capacity_budget_overrun :
-    resourceWorkflowTraceFixture.capacityBudgetOverrunRejected = true := by
-  rfl
 
-theorem resource_workflow_trace_fixture_has_no_support_promotion :
-    resourceWorkflowTraceFixture.supportStateEffectNone = true := by
-  rfl
 
 inductive WorkflowStep where
   | highRiskReleaseGate
@@ -501,25 +455,10 @@ def capacitySmoothingReviewerTraceFixture : CapacitySmoothingReviewTrace :=
     supportStateEffectNone := true,
     nonClaimBoundary := true }
 
-theorem capacity_smoothing_reviewer_trace_fixture_valid :
-    CapacitySmoothingReviewTraceValid capacitySmoothingReviewerTraceFixture := by
-  simp [CapacitySmoothingReviewTraceValid, capacitySmoothingReviewerTraceFixture]
 
-theorem capacity_smoothing_reviewer_trace_preserves_review_capacity :
-    capacitySmoothingReviewerTraceFixture.finalReviewCapacity = 3 := by
-  rfl
 
-theorem capacity_smoothing_reviewer_trace_preserves_protected_review_overhead :
-    capacitySmoothingReviewerTraceFixture.protectedReviewPaid = true := by
-  rfl
 
-theorem capacity_smoothing_reviewer_trace_residualizes_displaced_review_costs :
-    capacitySmoothingReviewerTraceFixture.displacedReviewCostResidualized = true := by
-  rfl
 
-theorem capacity_smoothing_reviewer_trace_has_no_support_promotion :
-    capacitySmoothingReviewerTraceFixture.supportStateEffectNone = true := by
-  rfl
 
 structure ReviewerCapacityDecision where
   blockedProtectedReview : Bool
@@ -604,27 +543,10 @@ def resourceLoadSmoothingWorkloadFixture : LoadSmoothingWorkloadSummary :=
     supportStateEffectNone := true,
     nonClaimBoundary := true }
 
-theorem resource_load_smoothing_workload_fixture_valid :
-    LoadSmoothingWorkloadValid resourceLoadSmoothingWorkloadFixture := by
-  simp [LoadSmoothingWorkloadValid, resourceLoadSmoothingWorkloadFixture]
 
-theorem resource_load_smoothing_workload_reduces_overrun :
-    resourceLoadSmoothingWorkloadFixture.selectedTotalOverrun <
-      resourceLoadSmoothingWorkloadFixture.baselineTotalOverrun := by
-  simp [resourceLoadSmoothingWorkloadFixture]
 
-theorem resource_load_smoothing_workload_rejects_review_erasure :
-    0 < resourceLoadSmoothingWorkloadFixture.negativeProtectedReviewViolations := by
-  simp [resourceLoadSmoothingWorkloadFixture]
 
-theorem resource_load_smoothing_workload_residualizes_deferrals :
-    resourceLoadSmoothingWorkloadFixture.selectedDeferredTaskTicks =
-      resourceLoadSmoothingWorkloadFixture.selectedResidualizedDeferredTaskTicks := by
-  rfl
 
-theorem resource_load_smoothing_workload_has_no_support_promotion :
-    resourceLoadSmoothingWorkloadFixture.supportStateEffectNone = true := by
-  rfl
 
 structure FlagshipLaneAggregateSummary where
   commandReplayCount : Nat
@@ -666,23 +588,8 @@ def resourceFlagshipLaneAggregateFixture : FlagshipLaneAggregateSummary :=
     residualsRecorded := true,
     nonClaimBoundary := true }
 
-theorem resource_flagship_lane_aggregate_fixture_valid :
-    FlagshipLaneAggregateValid resourceFlagshipLaneAggregateFixture := by
-  simp [FlagshipLaneAggregateValid, resourceFlagshipLaneAggregateFixture]
 
-theorem resource_flagship_lane_aggregate_preserves_no_core_promotion :
-    resourceFlagshipLaneAggregateFixture.chapterCoreNoChange = true ∧
-      resourceFlagshipLaneAggregateFixture.evidenceTransitionCreated = false ∧
-      resourceFlagshipLaneAggregateFixture.supportStateEffectNone = true ∧
-      resourceFlagshipLaneAggregateFixture.chapterCoreSupportEffectNone = true := by
-  simp [resourceFlagshipLaneAggregateFixture]
 
-theorem resource_flagship_lane_aggregate_carries_transition_accounting :
-    resourceFlagshipLaneAggregateFixture.commandReplayCount = 10 ∧
-      resourceFlagshipLaneAggregateFixture.trackedArtifactCount = 26 ∧
-      resourceFlagshipLaneAggregateFixture.acceptedTransitionCount = 3 ∧
-      resourceFlagshipLaneAggregateFixture.sublaneNoPromotionDecisionCount = 5 := by
-  simp [resourceFlagshipLaneAggregateFixture]
 
 structure ResourceCICostProfileSummary where
   runCount : Nat
@@ -743,31 +650,9 @@ def resourceCICostProfileFixture : ResourceCICostProfileSummary :=
     nonEvidenceBoundary := true,
     nonClaimBoundary := true }
 
-theorem resource_ci_cost_profile_fixture_valid :
-    ResourceCICostProfileValid resourceCICostProfileFixture := by
-  simp [ResourceCICostProfileValid, resourceCICostProfileFixture]
 
-theorem resource_ci_cost_profile_preserves_no_core_promotion :
-    resourceCICostProfileFixture.supportStateEffectNone = true ∧
-      resourceCICostProfileFixture.chapterCoreSupportEffectNone = true ∧
-      resourceCICostProfileFixture.evidenceTransitionCreated = false ∧
-      resourceCICostProfileFixture.nonClaimBoundary = true := by
-  simp [resourceCICostProfileFixture]
 
-theorem resource_ci_cost_profile_classifies_all_failures :
-    resourceCICostProfileFixture.deployServiceFailureCount =
-        resourceCICostProfileFixture.failureCount ∧
-      resourceCICostProfileFixture.classifiedFailureCount =
-        resourceCICostProfileFixture.failureCount ∧
-      resourceCICostProfileFixture.classifiedFailures = true ∧
-      resourceCICostProfileFixture.deployServiceFailuresMatchFailures = true := by
-  simp [resourceCICostProfileFixture]
 
-theorem resource_ci_cost_profile_records_recovery_boundary :
-    resourceCICostProfileFixture.recoveryRunSeconds = 131 ∧
-      resourceCICostProfileFixture.publicationMetadataOnly = true ∧
-      resourceCICostProfileFixture.nonEvidenceBoundary = true := by
-  simp [resourceCICostProfileFixture]
 
 structure GovernanceTaxTradeoffSummary where
   validScenarioCount : Nat
@@ -815,25 +700,8 @@ def resourceGovernanceTaxTradeoffFixture : GovernanceTaxTradeoffSummary :=
     chapterCoreSupportEffectNone := true,
     nonClaimBoundary := true }
 
-theorem resource_governance_tax_tradeoff_fixture_valid :
-    GovernanceTaxTradeoffValid resourceGovernanceTaxTradeoffFixture := by
-  simp [GovernanceTaxTradeoffValid, resourceGovernanceTaxTradeoffFixture]
 
-theorem resource_governance_tax_tradeoff_shows_governance_can_pay :
-    resourceGovernanceTaxTradeoffFixture.governedSelectedCount = 2 ∧
-      resourceGovernanceTaxTradeoffFixture.highRiskGovernancePays = true ∧
-      resourceGovernanceTaxTradeoffFixture.hiddenResidualFlipsSelection = true := by
-  simp [resourceGovernanceTaxTradeoffFixture]
 
-theorem resource_governance_tax_tradeoff_allows_low_risk_shortcut :
-    resourceGovernanceTaxTradeoffFixture.ungovernedAllowedCount = 1 ∧
-      resourceGovernanceTaxTradeoffFixture.lowRiskShortcutAllowed = true := by
-  simp [resourceGovernanceTaxTradeoffFixture]
 
-theorem resource_governance_tax_tradeoff_preserves_no_promotion_boundary :
-    resourceGovernanceTaxTradeoffFixture.supportStateEffectNone = true ∧
-      resourceGovernanceTaxTradeoffFixture.chapterCoreSupportEffectNone = true ∧
-      resourceGovernanceTaxTradeoffFixture.nonClaimBoundary = true := by
-  simp [resourceGovernanceTaxTradeoffFixture]
 
 end AsiStackProofs.ResourceEconomics

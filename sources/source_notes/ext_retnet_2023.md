@@ -39,6 +39,7 @@ RetNet is an external comparator for the attention-recurrence boundary. It belon
 
 - `coil-attention-cyclic-memory-and-recurrence-contracts` (Coil Attention, Cyclic Memory, and Recurrence Contracts)
 - `coilra-multicoil-rope-and-cyclic-mixers` (CoilRA, MultiCoil RoPE, and Cyclic Mixers)
+- `replaceable-cognitive-substrates-beyond-transformer-monoculture` (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
 
 ## Claims To Add Or Update
 

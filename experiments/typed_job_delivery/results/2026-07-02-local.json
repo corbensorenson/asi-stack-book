@@ -11,10 +11,12 @@
       "support_state_effect_none": true,
       "verified_delivery_trace_present": true
     },
-    "module": "AsiStackProofs.TypedJobs",
+    "module": "AsiStackProofs.TypedJobRefinement",
     "proof_tag": "lean:jobs.lifecycle.delivery_probe_fixture_bridge",
     "theorem_refs": [
-      "typed_job_delivery_probe_fixture_bridge"
+      "execution_requires_artifact_refs",
+      "adjudication_requires_verification",
+      "full_typed_job_lifecycle_reaches_closed_state"
     ]
   },
   "negative_controls": {

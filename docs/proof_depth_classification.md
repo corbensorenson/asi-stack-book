@@ -13,16 +13,16 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 298 |
-| Lean modules scanned | 65 |
-| Theorem declarations classified | 1151 |
-| Direct/projection-style theorem declarations | 187 |
-| Derived/decomposed theorem declarations | 952 |
-| Unknown or mixed theorem declarations | 12 |
-| Safety-critical theorem declarations | 107 |
-| Safety-critical direct/projection declarations | 11 |
-| Safety-critical chapter classifications present | 5/5 |
+| Lean modules scanned | 90 |
+| Theorem declarations classified | 1243 |
+| Direct/projection-style theorem declarations | 208 |
+| Derived/decomposed theorem declarations | 882 |
+| Unknown or mixed theorem declarations | 153 |
+| Safety-critical theorem declarations | 73 |
+| Safety-critical direct/projection declarations | 1 |
+| Safety-critical chapter classifications present | 1/1 |
 | Validation errors | 0 |
-| Warnings | 5 |
+| Warnings | 1 |
 
 ## Safety-Critical Modules
 
@@ -30,11 +30,11 @@ The v1.0 roadmap prioritizes these modules because projection-style hooks in ali
 
 | Lean module | Chapters | Proof targets | Theorems | Direct/projection | Derived/decomposed | Unknown/mixed | Suggested treatment |
 |---|---|---:|---:|---:|---:|---:|---|
-| `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 3 | 23 | 2 | 21 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
-| `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
-| `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 3 | 21 | 2 | 19 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
-| `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 3 | 22 | 2 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
-| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 4 | 23 | 3 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 1 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 1 | 4 | 0 | 4 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 1 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 1 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 21 | 1 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 
 ## Safety-Critical Chapter Classification
 
@@ -42,81 +42,106 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 
 | Lean module | Chapter file | Direct/projection declarations | Classification required | Classification present |
 |---|---|---:|---|---|
-| `lean/AsiStackProofs/Alignment.lean` | `chapters/constitutional-alignment-substrate.qmd` | 2 | yes | yes |
-| `lean/AsiStackProofs/Corrigibility.lean` | `chapters/constitutional-alignment-substrate.qmd` | 2 | yes | yes |
-| `lean/AsiStackProofs/GovernanceRights.lean` | `chapters/moral-uncertainty-and-value-conflict.qmd` | 2 | yes | yes |
-| `lean/AsiStackProofs/SelfImprovement.lean` | `chapters/recursive-self-improvement-boundaries.qmd` | 2 | yes | yes |
-| `lean/AsiStackProofs/ValueConflict.lean` | `chapters/moral-uncertainty-and-value-conflict.qmd` | 3 | yes | yes |
+| `lean/AsiStackProofs/Alignment.lean` | `chapters/constitutional-alignment-substrate.qmd` | 0 | no | yes |
+| `lean/AsiStackProofs/Corrigibility.lean` | `chapters/constitutional-alignment-substrate.qmd` | 0 | no | yes |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `chapters/moral-uncertainty-and-value-conflict.qmd` | 0 | no | yes |
+| `lean/AsiStackProofs/SelfImprovement.lean` | `chapters/recursive-self-improvement-boundaries.qmd` | 0 | no | yes |
+| `lean/AsiStackProofs/ValueConflict.lean` | `chapters/moral-uncertainty-and-value-conflict.qmd` | 1 | yes | yes |
 
 ## Module Classification
 
 | Lean module | Chapters | Proof targets | Theorems | Direct/projection | Derived/decomposed | Unknown/mixed | Suggested treatment |
 |---|---|---:|---:|---:|---:|---:|---|
 | `lean/AsiStackProofs/AdversarialEvaluation.lean` | adversarial-evaluation-sandbagging-and-training-time-deception | 8 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 3 | 23 | 2 | 21 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
-| `lean/AsiStackProofs/ArtifactCompression.lean` | rankfold-neuralfold-and-artifact-compression | 3 | 19 | 2 | 17 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ArtifactGraph.lean` | artifact-graphs-audit-logs-and-replay | 10 | 43 | 2 | 41 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 1 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/ArtifactCompression.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | rankfold-neuralfold-and-artifact-compression | 3 | 8 | 0 | 0 | 8 | manual review |
+| `lean/AsiStackProofs/ArtifactGraph.lean` | unmapped | 0 | 35 | 1 | 34 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | artifact-graphs-audit-logs-and-replay | 10 | 15 | 11 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | artifact-steward-agents-and-living-project-governance | 7 | 16 | 4 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/Authority.lean` | system-boundaries-and-authority | 4 | 29 | 1 | 28 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/Authority.lean` | system-boundaries-and-authority | 2 | 28 | 0 | 28 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | system-boundaries-and-authority | 2 | 12 | 0 | 4 | 8 | manual review |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 3 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | open-research-agenda-and-bibliography-plan | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CapabilityThresholds.lean` | capability-thresholds-and-deployment-commitments | 8 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/ClaimLedger.lean` | claim-ledgers-and-belief-revision | 4 | 20 | 5 | 15 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/CognitiveCompilation.lean` | cognitive-compilation-and-semantic-ir | 3 | 14 | 2 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ClaimLedger.lean` | unmapped | 0 | 4 | 3 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | claim-ledgers-and-belief-revision | 4 | 12 | 0 | 5 | 7 | manual review |
+| `lean/AsiStackProofs/CognitiveCompilation.lean` | unmapped | 0 | 12 | 0 | 12 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | cognitive-compilation-and-semantic-ir | 3 | 12 | 0 | 3 | 9 | manual review |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | coil-attention-cyclic-memory-and-recurrence-contracts | 2 | 6 | 2 | 4 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/CommandContracts.lean` | intent-to-execution-contracts | 3 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | compact-generative-systems-and-residual-honesty | 5 | 24 | 6 | 17 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ContextCertificates.lean` | virtual-context-abi | 3 | 18 | 2 | 16 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ContextTransactions.lean` | context-transactions-snapshots-mounts-and-taint | 4 | 23 | 2 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/CommandContracts.lean` | unmapped | 0 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/CommandSemanticRefinement.lean` | intent-to-execution-contracts | 3 | 12 | 0 | 3 | 9 | manual review |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | compact-generative-systems-and-residual-honesty | 9 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/ContextCertificateRefinement.lean` | virtual-context-abi | 3 | 17 | 0 | 3 | 14 | manual review |
+| `lean/AsiStackProofs/ContextCertificates.lean` | unmapped | 0 | 16 | 0 | 16 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | context-transactions-snapshots-mounts-and-taint | 4 | 20 | 0 | 4 | 16 | manual review |
+| `lean/AsiStackProofs/ContextTransactions.lean` | unmapped | 0 | 17 | 0 | 17 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 1 | 4 | 0 | 4 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/DataEngines.lean` | data-engines-continual-learning-and-unlearning | 15 | 15 | 0 | 15 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/Deliberation.lean` | governed-deliberation-and-test-time-scaling | 10 | 10 | 0 | 10 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/Deliberation.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/DeliberationRefinement.lean` | governed-deliberation-and-test-time-scaling | 10 | 11 | 6 | 3 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 4 | 26 | 2 | 24 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 7 | 31 | 9 | 22 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 4 | 23 | 2 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/FastGeneration.lean` | fast-generation-architectures | 5 | 38 | 7 | 31 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/GenerateVerifyRepair.lean` | compact-generative-systems-and-residual-honesty | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 3 | 21 | 2 | 19 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
-| `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | integrated-reference-architecture | 1 | 9 | 1 | 0 | 8 | traceability hook unless adequacy review narrows claim |
-| `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 4 | 25 | 2 | 23 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 4 | 12 | 3 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/FastGeneration.lean` | unmapped | 0 | 3 | 0 | 3 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/FastGenerationRefinement.lean` | fast-generation-architectures | 5 | 17 | 12 | 3 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/GenerateVerifyRepair.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 1 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | personal-compute-hives-and-federated-edge-intelligence | 6 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | integrated-reference-architecture | 3 | 23 | 0 | 13 | 10 | manual review |
+| `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 1 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | intent-to-execution-contracts | 2 | 12 | 0 | 6 | 6 | manual review |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | human-intent-as-a-formal-input | 3 | 12 | 0 | 4 | 8 | manual review |
+| `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 2 | 10 | 1 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | inter-stack-protocols-identity-and-economic-exchange | 9 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 4 | 21 | 3 | 18 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/MoECOTRuntime.lean` | routing-heads-and-specialist-cores | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | open-ended-improvement-engines | 7 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/PersonalComputeHives.lean` | personal-compute-hives-and-federated-edge-intelligence | 6 | 26 | 4 | 22 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/PersonalComputeHives.lean` | unmapped | 0 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/PlanForge.lean` | planning-as-a-control-layer | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Planning.lean` | planning-as-a-control-layer | 5 | 29 | 8 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | policy-optimization-and-learning-from-feedback | 4 | 19 | 7 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ProceduralMemory.lean` | procedural-memory-and-cognitive-loop-closure | 2 | 19 | 2 | 17 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ProofCarryingClaims.lean` | spinoza-verification-and-proof-carrying-claims | 3 | 8 | 6 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ProceduralMemory.lean` | unmapped | 0 | 14 | 0 | 14 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | procedural-memory-and-cognitive-loop-closure | 2 | 14 | 10 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ProofCarryingClaims.lean` | unmapped | 0 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | spinoza-verification-and-proof-carrying-claims | 3 | 11 | 7 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | circle-calculus-and-proof-carrying-ai-contracts | 3 | 10 | 3 | 7 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | executable-specifications-and-lean-proof-envelope | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | prototype-roadmap | 3 | 11 | 2 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ReadinessGates.lean` | readiness-gates-residual-escrow-and-quarantine | 3 | 20 | 9 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ReferenceArchitecture.lean` | integrated-reference-architecture | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ReadinessGates.lean` | unmapped | 0 | 11 | 0 | 11 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/ReadinessRefinement.lean` | readiness-gates-residual-escrow-and-quarantine | 3 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ReferenceArchitecture.lean` | unmapped | 0 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | replaceable-cognitive-substrates-beyond-transformer-monoculture | 1 | 16 | 0 | 11 | 5 | manual review |
 | `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 6 | 37 | 8 | 29 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | resource-economics-and-token-budgets | 9 | 45 | 15 | 27 | 3 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/Routing.lean` | routing-heads-and-specialist-cores | 3 | 16 | 1 | 15 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ResourceEconomics.lean` | unmapped | 0 | 14 | 0 | 11 | 3 | manual review |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | resource-economics-and-token-budgets | 11 | 8 | 0 | 0 | 8 | manual review |
+| `lean/AsiStackProofs/Routing.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | routing-heads-and-specialist-cores | 5 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 6 | 49 | 5 | 44 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SafetyCases.lean` | safety-cases-and-structured-assurance | 8 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | constitutional-alignment-substrate, moral-uncertainty-and-value-conflict, recursive-self-improvement-boundaries | 10 | 21 | 1 | 9 | 11 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ScalableOversight.lean` | scalable-oversight-and-adversarial-ai-control | 7 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 3 | 11 | 3 | 8 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SecurityKernel.lean` | security-kernel-and-digital-scifs | 4 | 22 | 1 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 3 | 22 | 2 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
-| `lean/AsiStackProofs/SemanticRepresentation.lean` | compact-generative-systems-and-residual-honesty | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/SimulationFidelity.lean` | resource-economics-and-token-budgets | 4 | 13 | 4 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 1 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/SemanticRepresentation.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/SimulationFidelity.lean` | unmapped | 0 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 4 | 25 | 8 | 17 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 3 | 21 | 1 | 20 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 3 | 9 | 1 | 4 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | ai-supply-chain-integrity-and-lifecycle-provenance | 6 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 12 | 54 | 2 | 52 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/Tribunal.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 13 | 2 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/TypedJobs.lean` | labor-os-and-typed-jobs | 5 | 27 | 3 | 24 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 4 | 23 | 3 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
-| `lean/AsiStackProofs/VerificationBandwidth.lean` | verification-bandwidth-and-context-adequacy | 4 | 14 | 3 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/VirtualContextABI.lean` | virtual-context-abi | 3 | 13 | 2 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/Tribunal.lean` | unmapped | 0 | 3 | 0 | 3 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 12 | 8 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | labor-os-and-typed-jobs | 5 | 14 | 10 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/TypedJobs.lean` | unmapped | 0 | 24 | 0 | 24 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 21 | 1 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/VerificationBandwidth.lean` | unmapped | 0 | 10 | 1 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | verification-bandwidth-and-context-adequacy | 4 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/VirtualContextABI.lean` | unmapped | 0 | 11 | 0 | 11 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | virtual-context-abi | 3 | 17 | 0 | 3 | 14 | manual review |
 
 ## Theorem Classification
 
@@ -131,7 +156,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/AdversarialEvaluation.lean` | `observation_cannot_launder_intent_inference` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/AdversarialEvaluation.lean` | `unresolved_discrepancy_routes_to_quarantine` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `accepted_transition_cannot_drop_protected_predicate` | derived_or_decomposed | yes | uses contradiction, rw, simp, unfold |
-| `lean/AsiStackProofs/Alignment.lean` | `admitted_plan_satisfies_every_active_constitutional_predicate` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/Alignment.lean` | `complete_constitutional_lifecycle_admits_constraint` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `constitutional_record_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `detected_conflict_without_route_preserves_residual` | derived_or_decomposed | yes | uses rw, simp, unfold |
@@ -151,36 +175,22 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Alignment.lean` | `missing_self_modification_rule_requests_rule` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `protected_migration_without_rollback_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `protected_predicate_weakening_without_reviewer_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
-| `lean/AsiStackProofs/Alignment.lean` | `self_modification_that_weakens_protected_predicate_is_rejected` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/Alignment.lean` | `support_promotion_without_alignment_transition_requests_transition` | derived_or_decomposed | yes | uses simp, unfold |
-| `lean/AsiStackProofs/ArtifactCompression.lean` | `complete_compression_admission_allows_compressed_artifact` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ArtifactCompression.lean` | `compressed_artifact_use_requires_probe_or_fallback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/ArtifactCompression.lean` | `compressed_use_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ArtifactCompression.lean` | `exact_replay_without_readiness_blocks_use` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ArtifactCompression.lean` | `failed_required_probe_with_fallback_routes_to_fallback` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ArtifactCompression.lean` | `failed_required_probe_without_fallback_requests_artifact` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | `invalid_compressed_artifact_use_without_probe_or_fallback_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
-| `lean/AsiStackProofs/ArtifactCompression.lean` | `missing_access_pattern_requests_access_pattern` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ArtifactCompression.lean` | `missing_compression_manifest_requests_manifest` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ArtifactCompression.lean` | `missing_decoder_determinism_requests_record` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ArtifactCompression.lean` | `missing_full_artifact_requests_preservation` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ArtifactCompression.lean` | `missing_residual_metadata_requests_residual_record` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ArtifactCompression.lean` | `missing_use_envelope_requests_envelope` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ArtifactCompression.lean` | `missing_utility_evidence_requests_evidence` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ArtifactCompression.lean` | `no_compressed_use_request_stays_idle` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ArtifactCompression.lean` | `promoted_compression_record_cannot_omit_residual_or_fallback_metadata` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | `promotion_candidate_missing_residual_or_fallback_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
-| `lean/AsiStackProofs/ArtifactCompression.lean` | `promotion_request_without_transition_requests_transition` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ArtifactCompression.lean` | `unadmitted_state_blocks_compressed_use` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ArtifactGraph.lean` | `artifact_live_attestation_probe_bridge` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/ArtifactGraph.lean` | `artifact_randomized_attestation_audit_bridge` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/ArtifactGraph.lean` | `artifact_record_reality_sequence_fixture_bridge` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `complete_packet_has_no_support_or_effect_authority` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `exact_replay_without_readiness_blocks_use` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `exact_use_lifecycle_routes_to_closed` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `failed_probe_lifecycle_has_executable_fallback_without_support` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `failed_probe_with_fallback_routes_to_fallback` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `failed_probe_without_fallback_requests_artifact` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `missing_evidence_transition_blocks_consumption` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `raw_ratio_cannot_promote_admitted_artifact` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `byte_exact_replay_missing_observed_artifact_requires_observation` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `complete_artifact_graph_route_admits_artifact` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `complete_byte_exact_replay_packet_admits_bounded_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `complete_promoted_artifact_route_admits_artifact` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `complete_support_review_packet_admits_bounded_review` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/ArtifactGraph.lean` | `epistemic_tcb_fixture_bridge` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `fresh_byte_exact_sequence_event_restores_bounded_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `incomplete_or_blocked_provenance_blocks_promoted_claim_support` | derived_or_decomposed | no | uses cases, rw, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `incomplete_replay_sequence_event_blocks_bounded_review` | derived_or_decomposed | no | uses simp, unfold |
@@ -200,14 +210,10 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `partial_replay_promotion_request_blocks_packet_promotion` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `partial_replay_record_only_blocks_promotion_without_rejecting_record` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `produced_artifact_missing_trace_refs_rejected` | derived_or_decomposed | no | uses cases, have, rw |
-| `lean/AsiStackProofs/ArtifactGraph.lean` | `produced_artifact_records_parent_job_and_context_refs` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `produced_artifact_without_context_refs_requires_context_refs` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `produced_artifact_without_parent_requires_parent_job` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `produced_artifact_without_source_refs_requires_source_refs` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `promotion_without_permission_blocks_artifact_promotion` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/ArtifactGraph.lean` | `receipt_faithfulness_adversarial_fixture_bridge` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/ArtifactGraph.lean` | `receipt_repository_audit_fixture_bridge` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/ArtifactGraph.lean` | `receipt_repository_challenge_fixture_bridge` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `replay_grade_below_requirement_blocks_sufficiency` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `replay_packet_missing_audit_chain_requires_audit_chain` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `replay_packet_parent_job_mismatch_requires_parent_match` | derived_or_decomposed | no | uses simp, unfold |
@@ -215,6 +221,21 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `stale_certificate_in_replay_packet_requires_active_certificate` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `stale_certificate_sequence_event_blocks_bounded_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `support_review_without_replay_validated_transaction_requires_validation` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `accepted_step_adds_exactly_one_receipt` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `admission_requires_revocation_closure` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `apply_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `apply_event_preserves_artifact_and_lineage_identity` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `attestation_must_preserve_limits` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `full_artifact_reality_lifecycle_reaches_admission` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `incomplete_replay_blocks_reality_review` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `produced_artifact_requires_parent_job` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `provenance_requires_audit_trail` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `provenance_requires_transaction_and_certificate_links` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `reality_review_requires_independent_cross_check` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `reality_review_requires_observed_artifact` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `stale_certificate_blocks_replay_validation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `trust_binding_rejects_self_verifier_laundering` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `trust_binding_requires_recursion_stop` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `autonomy_escalation_without_charter_approval_routes_to_approval` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `collapsed_contribution_score_cannot_drive_governance_effect` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `complete_scoped_federation_dispatches` | derived_or_decomposed | no | uses simp |
@@ -256,10 +277,21 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Authority.lean` | `valid_allow_decision_has_effect_receipt` | derived_or_decomposed | no | uses rcases, rw, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `valid_allow_decision_preserves_caller_ceiling` | derived_or_decomposed | no | uses rcases, rw, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `valid_allow_decision_target_within_active_ceiling` | derived_or_decomposed | no | uses rcases, rw, unfold |
-| `lean/AsiStackProofs/Authority.lean` | `valid_authority_decision_has_audit_and_nonclaims` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/Authority.lean` | `valid_deny_decision_has_no_effect_receipt` | derived_or_decomposed | no | uses rcases, rw, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `valid_escalation_routes_to_review` | derived_or_decomposed | no | uses rcases, rw, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `valid_transition_without_grant_preserves_ceiling` | derived_or_decomposed | no | uses cases, contradiction, rcases, rw |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `accepted_dispatch_is_exactly_bound_and_fresh` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `accepted_effect_requires_exact_live_grant_approval_and_dispatch` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `accepted_issue_respects_caller_ceiling_and_epoch` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `accepted_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `authority_widening_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `confused_deputy_principal_substitution_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `consumed_one_shot_grant_cannot_effect_again` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `effect_without_dispatch_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `exact_bound_authority_trace_reaches_observed_exact_rollback` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `expired_grant_dispatch_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `revoked_grant_dispatch_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `stale_epoch_dispatch_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `accepted_readiness_promotion_requires_transfer_negative_and_regression_records` | derived_or_decomposed | no | uses rw, unfold |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `accepted_saturated_floor_requires_regression_records` | derived_or_decomposed | no | uses rw, unfold |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `benchmark_antigoodhart_fixture_bridge_has_expected_controls` | derived_or_decomposed | no | uses simp |
@@ -282,26 +314,21 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CapabilityThresholds.lean` | `missing_uncertainty_requires_reevaluation` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ClaimLedger.lean` | `accepted_belief_revision_promotion_requires_evidence_handled_contradiction_and_increase` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ClaimLedger.lean` | `claim_update_preserves_prior_evidence_and_revision_history` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/ClaimLedger.lean` | `complete_claim_ledger_revision_accepts` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ClaimLedger.lean` | `downgrade_without_reason_requests_downgrade_reason` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ClaimLedger.lean` | `incomplete_surface_sync_requests_synchronization` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ClaimLedger.lean` | `missing_support_state_record_requests_support_state_record` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ClaimLedger.lean` | `open_contradiction_blocks_belief_revision_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ClaimLedger.lean` | `open_contradiction_blocks_claim_promotion` | derived_or_decomposed | no | uses rw, unfold |
-| `lean/AsiStackProofs/ClaimLedger.lean` | `open_contradiction_promotion_is_blocked` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ClaimLedger.lean` | `open_contradiction_without_promotion_requests_handling` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ClaimLedger.lean` | `promotion_without_evidence_refs_requests_evidence_transition` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ClaimLedger.lean` | `promotion_without_evidence_transition_requests_evidence_transition` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ClaimLedger.lean` | `required_residual_without_refs_requests_residual_record` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ClaimLedger.lean` | `revision_request_missing_claim_identity_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ClaimLedger.lean` | `revision_without_history_refs_preserves_history` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ClaimLedger.lean` | `revision_without_non_claim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ClaimLedger.lean` | `revision_without_non_overwrite_attestation_preserves_attestation` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ClaimLedger.lean` | `semantic_assumption_fixture_bridge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/ClaimLedger.lean` | `split_without_child_history_preserves_split_history` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ClaimLedger.lean` | `valid_belief_revision_record_preserves_identity_history_and_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `accepted_append_is_exactly_one_new_version` | derived_or_decomposed | no | uses cases, contradiction, simp, split, unfold |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `accepted_step_cannot_commit_external_effect` | derived_or_decomposed | no | uses cases, contradiction, split, unfold |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `accepted_step_preserves_claim_identity` | derived_or_decomposed | no | uses cases, contradiction, split, unfold |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `acknowledgment_before_materialization_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `apply_event_preserves_claim_identity` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `apply_event_preserves_external_effects` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `full_revision_lifecycle_reaches_exact_acknowledgment` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `ledger_self_approval_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `ontology_change_without_migration_receipt_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `stale_base_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `upward_revision_with_open_contradiction_is_blocked` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `upward_revision_without_owner_receipt_is_handed_off` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | `authority_escape_blocks_semantic_lowering` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/CognitiveCompilation.lean` | `compiled_artifact_preserves_all_required_ir_obligations` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | `complete_lowering_review_accepts` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | `cyclic_dependencies_route_to_repair` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | `invalidating_repair_without_ledger_requires_update` | derived_or_decomposed | no | uses simp, unfold |
@@ -312,8 +339,19 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | `missing_source_plan_rejects_semantic_lowering` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | `missing_validators_require_validator` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | `obligation_loss_blocks_semantic_lowering` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/CognitiveCompilation.lean` | `repair_invalidating_existing_obligation_requires_ledger_update` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | `validator_failure_routes_to_repair` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `accepted_repair_requires_local_exact_ledger_update` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `accepted_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `accepted_target_preserves_exact_source_and_target` | derived_or_decomposed | no | uses rcases, simp |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `dropped_obligation_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `global_repair_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `localized_repair_trace_reaches_accepted_target` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `missing_lowering_receipt_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `repair_without_ledger_increment_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `residual_target_acceptance_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `target_substitution_at_accept_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `validator_pass_without_preservation_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `widened_authority_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | `cyclic_memory_claim_records_residue_and_winding_or_visible_alias_residual` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | `recurrence_without_budget_exit_or_fallback_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | `reused_cyclic_slot_without_winding_or_residual_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
@@ -322,40 +360,61 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | `structure_only_retrieval_quality_promotion_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/CommandContracts.lean` | `accepted_hidden_override_violates_explicit_constraint_precedence` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/CommandContracts.lean` | `complete_field_confidence_allows_dispatch` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/CommandContracts.lean` | `hidden_or_conflicting_instruction_cannot_override_explicit_constraint` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CommandContracts.lean` | `inferred_authority_confidence_requires_authority_confidence` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/CommandContracts.lean` | `missing_output_confidence_requires_output_confidence` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/CommandContracts.lean` | `missing_required_field_blocks_complete_command_contract` | derived_or_decomposed | no | uses cases, rw, unfold |
-| `lean/AsiStackProofs/CommandContracts.lean` | `valid_command_contract_contains_required_interface_fields` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `bounded_search_overrun_fixture_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `compact_gvr_fixture_selected_beats_literal_baseline` | unknown_or_mixed | no | no recognized depth pattern |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `compact_gvr_fixture_selected_is_eligible` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `complete_compact_admission_allows_representation` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `grounded_semantic_node_without_provenance_requests_provenance` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `hierarchy_change_without_migration_requests_migration` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `lossy_exact_claim_without_verification_blocks_admission` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `lossy_marked_exact_fixture_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `lossy_representation_without_verification_cannot_be_marked_exact` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CommandSemanticRefinement.lean` | `accepted_dispatch_requires_validated_authority_and_receipts` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/CommandSemanticRefinement.lean` | `accepted_planning_validation_preserves_all_slots_and_authority` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/CommandSemanticRefinement.lean` | `accepted_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/CommandSemanticRefinement.lean` | `applied_hidden_override_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CommandSemanticRefinement.lean` | `authority_widening_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CommandSemanticRefinement.lean` | `constraint_substitution_before_planning_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CommandSemanticRefinement.lean` | `dispatch_without_receipt_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CommandSemanticRefinement.lean` | `dispatch_without_validation_receipt_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CommandSemanticRefinement.lean` | `exact_command_trace_reaches_receipted_dispatch` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CommandSemanticRefinement.lean` | `hidden_instruction_provenance_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CommandSemanticRefinement.lean` | `inferred_authority_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CommandSemanticRefinement.lean` | `missing_required_output_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `accepted_step_adds_one_receipt` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `apply_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `apply_event_preserves_bound_representation_and_result_identity` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `broken_residual_chain_blocks_closure` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `fallback_lifecycle_reaches_closed_without_support_or_effect_authority` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `hierarchy_change_without_reference_continuity_blocks_migration` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `incompatible_consumer_policy_blocks_consumption` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `lossy_exactness_is_blocked_before_verification` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `missing_generated_artifact_blocks_generation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `missing_rights_blocks_source_binding` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `reconstruction_mismatch_activates_preserved_source_fallback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `reconstruction_mismatch_without_executable_fallback_is_blocked` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `result_digest_substitution_blocks_publication` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `semantic_node_without_provenance_identity_blocks_migration` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `source_substitution_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `support_promotion_without_transition_blocks_publication` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `unresolved_obligation_without_owner_blocks_residualization` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `lossy_unverified_representation_marked_exact_rejected` | derived_or_decomposed | no | uses cases, have, rw |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `missing_compression_boundary_requests_boundary` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `missing_fallback_path_requests_fallback` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `missing_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `missing_reconstruction_evidence_requests_evidence` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `missing_residual_record_requests_residual` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `missing_source_artifact_requests_source` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `missing_verifier_cost_requests_cost_record` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `negative_rate_without_fallback_fixture_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `residual_honesty_conservation_fixture_bridge` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `residual_ledger_storage_replay_bridge` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `residual_ledger_trace_surface_bridge` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `support_promotion_without_transition_requests_transition` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `unresolved_obligations_require_residual_records` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `unresolved_obligations_without_residual_records_rejected` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/ContextCertificateRefinement.lean` | `accepted_admission_preserves_provenance_contracts_and_authority` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/ContextCertificateRefinement.lean` | `accepted_derivation_preserves_source_and_authority` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/ContextCertificateRefinement.lean` | `accepted_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/ContextCertificateRefinement.lean` | `authority_escalation_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextCertificateRefinement.lean` | `exact_certificate_trace_admits` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextCertificateRefinement.lean` | `missing_deletion_closure_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextCertificateRefinement.lean` | `missing_loss_contract_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextCertificateRefinement.lean` | `missing_omission_ledger_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextCertificateRefinement.lean` | `missing_permitted_use_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextCertificateRefinement.lean` | `missing_source_binding_receipt_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextCertificateRefinement.lean` | `missing_verification_receipt_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextCertificateRefinement.lean` | `revoked_verification_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextCertificateRefinement.lean` | `source_substitution_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextCertificateRefinement.lean` | `stale_certificate_epoch_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextCertificateRefinement.lean` | `support_promotion_without_transition_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextCertificateRefinement.lean` | `tainted_verification_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextCertificateRefinement.lean` | `unpermitted_consumer_use_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `authority_escape_requires_certificate_authority_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `authority_preservation_rejects_escalating_summary` | derived_or_decomposed | no | uses have, unfold |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `complete_certificate_lifecycle_review_admits` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `deletion_closure_request_requires_declared_evidence` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/ContextCertificates.lean` | `derived_context_cell_carries_bindings_and_loss_use_contracts` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `malformed_certificate_rejects` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `missing_loss_contract_requires_loss_contract` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `missing_permitted_uses_require_use_contract` | derived_or_decomposed | no | uses simp, unfold |
@@ -364,18 +423,33 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ContextCertificates.lean` | `out_of_scope_certificate_requires_scope_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `revoked_certificate_blocks_admission` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `stale_certificate_requires_freshness_review` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/ContextCertificates.lean` | `summary_authority_cannot_exceed_source_ceiling` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `support_promotion_requires_evidence_transition` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `tainted_certificate_quarantines` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `undeclared_omissions_require_omission_record` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `unpermitted_consumer_use_requires_policy_review` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/ContextTransactions.lean` | `accepted_context_transaction_sequence_summary_requires_order` | derived_or_decomposed | no | uses rcases |
-| `lean/AsiStackProofs/ContextTransactions.lean` | `accepted_memory_store_harness_summary_requires_invalid_controls` | derived_or_decomposed | no | uses rcases |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `accepted_materialization_preserves_transaction_custody` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `accepted_snapshot_read_preserves_snapshot_branch_mount_and_version` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `accepted_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `accepted_untainted_derivation_from_tainted_source_requires_declassification` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `branch_substitution_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `commit_version_skip_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `exact_transaction_trace_materializes` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `false_declassification_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `invisible_read_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `missing_materialization_receipt_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `missing_replay_receipt_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `missing_snapshot_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `mount_substitution_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `open_deletion_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `stale_read_version_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `stale_snapshot_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `support_promotion_without_transition_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `taint_laundering_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `unauthorized_mount_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `uncommitted_write_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `committed_read_without_visible_read_set_rejected` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `complete_context_transaction_admits_committed_read` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `context_transaction_sequence_with_support_promotion_rejected` | derived_or_decomposed | no | uses cases, rcases, rw |
-| `lean/AsiStackProofs/ContextTransactions.lean` | `current_context_transaction_sequence_summary_accepted` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/ContextTransactions.lean` | `current_memory_store_harness_summary_accepted` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `deleted_cell_without_closure_blocks_materialization_route` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `memory_store_harness_summary_with_support_promotion_rejected` | derived_or_decomposed | no | uses cases, rcases, rw |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `missing_non_claim_boundary_requests_non_claim_boundary` | derived_or_decomposed | no | uses simp, unfold |
@@ -384,32 +458,16 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ContextTransactions.lean` | `mount_fault_without_repair_rejects_context_transaction` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `open_deletion_without_closure_or_declassification_blocks_materialization` | derived_or_decomposed | no | uses cases, rcases, rw, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `ready_open_deletion_without_closure_routes_to_deletion_block` | derived_or_decomposed | no | uses rw, simp, unfold |
-| `lean/AsiStackProofs/ContextTransactions.lean` | `snapshot_read_sees_committed_event_in_declared_view` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `source_branch_mismatch_rejects_context_transaction` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `stale_snapshot_rejects_context_transaction` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `support_promotion_without_transition_requests_evidence_transition` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/ContextTransactions.lean` | `tainted_source_taints_derivative_without_declassification` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `tainted_transaction_without_declassification_routes_to_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `target_branch_mismatch_rejects_context_transaction` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `untainted_derivative_from_tainted_source_requires_declassification` | derived_or_decomposed | no | uses cases, have, rw |
-| `lean/AsiStackProofs/Corrigibility.lean` | `agency_action_without_affected_party_rejected` | derived_or_decomposed | yes | uses simp |
-| `lean/AsiStackProofs/Corrigibility.lean` | `agency_correction_high_impact_without_pre_effect_review_blocks` | derived_or_decomposed | yes | uses simp |
-| `lean/AsiStackProofs/Corrigibility.lean` | `complete_agency_correction_lifecycle_allows_bounded_action` | derived_or_decomposed | yes | uses simp |
-| `lean/AsiStackProofs/Corrigibility.lean` | `degraded_right_without_reason_requires_degradation_record` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/Corrigibility.lean` | `denied_action_without_accountable_principal_preserves_audit` | derived_or_decomposed | yes | uses rw, simp, unfold |
-| `lean/AsiStackProofs/Corrigibility.lean` | `dependency_risk_without_residual_preserved` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/Corrigibility.lean` | `high_impact_action_without_pre_effect_review_blocks` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Corrigibility.lean` | `high_impact_action_without_usable_review_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
-| `lean/AsiStackProofs/Corrigibility.lean` | `high_impact_without_approval_requests_approval` | derived_or_decomposed | yes | uses simp |
-| `lean/AsiStackProofs/Corrigibility.lean` | `high_impact_without_rollback_or_shutdown_requests_control_path` | derived_or_decomposed | yes | uses simp |
-| `lean/AsiStackProofs/Corrigibility.lean` | `lost_correction_path_blocks_agency_action` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/Corrigibility.lean` | `low_risk_unbounded_delegation_routes_to_narrowing` | derived_or_decomposed | yes | uses rw, simp, unfold |
-| `lean/AsiStackProofs/Corrigibility.lean` | `missing_accountable_principal_preserves_accountability` | derived_or_decomposed | yes | uses simp |
-| `lean/AsiStackProofs/Corrigibility.lean` | `missing_material_notice_requests_material_notice` | derived_or_decomposed | yes | uses simp |
-| `lean/AsiStackProofs/Corrigibility.lean` | `protected_agency_rights_remain_available_after_accepted_transition` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/Corrigibility.lean` | `support_change_without_evidence_transition_requests_agency_evidence` | derived_or_decomposed | yes | uses simp |
-| `lean/AsiStackProofs/Corrigibility.lean` | `transition_that_removes_required_correction_pathway_is_rejected` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/Corrigibility.lean` | `unbounded_delegation_requests_bounded_delegation` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_adoption_without_complete_tradeoff_packet_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_alias_diagnostic_without_winding_or_visible_residual_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_mixer_claim_missing_claim_partition_rejected` | derived_or_decomposed | no | uses cases, contradiction, rw, unfold |
@@ -432,16 +490,19 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/DataEngines.lean` | `missing_scheduler_state_requires_inventory_repair` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/DataEngines.lean` | `missing_split_exclusion_or_contamination_check_quarantines_data` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/DataEngines.lean` | `rollback_mismatch_requires_repair` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Deliberation.lean` | `complete_high_risk_record_reaches_planning` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/Deliberation.lean` | `exhausted_deliberation_budget_escrows_residual` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/Deliberation.lean` | `missing_budget_record_requires_review` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/Deliberation.lean` | `missing_candidate_history_requires_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Deliberation.lean` | `missing_independent_verifier_blocks_high_risk_execution` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/Deliberation.lean` | `missing_residual_owner_requires_review` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/Deliberation.lean` | `missing_search_mode_requires_review` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/Deliberation.lean` | `missing_stop_condition_requires_review` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/Deliberation.lean` | `missing_verifier_scope_requires_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Deliberation.lean` | `trace_cannot_launder_execution_authority` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/DeliberationRefinement.lean` | `accepted_step_adds_one_receipt` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/DeliberationRefinement.lean` | `apply_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/DeliberationRefinement.lean` | `apply_event_preserves_request_policy_evaluator_and_result_identity` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/DeliberationRefinement.lean` | `budget_exhaustion_without_residual_blocks_handoff` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DeliberationRefinement.lean` | `execution_authority_cannot_cross_planning_handoff` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DeliberationRefinement.lean` | `high_risk_without_independent_review_blocks_evaluation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DeliberationRefinement.lean` | `missing_budget_blocks_candidate_generation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DeliberationRefinement.lean` | `missing_first_correctness_blocks_selection` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DeliberationRefinement.lean` | `no_verified_candidate_reaches_closed_with_residual_escrow` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/DeliberationRefinement.lean` | `raw_score_cannot_promote_selected_candidate` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DeliberationRefinement.lean` | `verified_deliberation_lifecycle_reaches_closed_without_support_or_effect_authority` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/Efficiency.lean` | `authority_bypass_blocks_efficiency_claim` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Efficiency.lean` | `complete_efficiency_claim_admission_allows_claim_record` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Efficiency.lean` | `efficiency_claim_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp |
@@ -522,94 +583,86 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/FailureModes.lean` | `tainted_context_without_authority_grant_quarantines` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `unbounded_authority_detected_as_governance_failure` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/FailureModes.lean` | `unverified_claim_promotion_blocks` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/FastGeneration.lean` | `complete_generation_mode_admission_allows_fast_mode` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `failed_acceptance_routes_fallback_records_residual_and_blocks_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/FastGeneration.lean` | `failed_acceptance_with_fallback_and_residual_routes_to_fallback` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `failed_acceptance_without_fallback_or_residual_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
-| `lean/AsiStackProofs/FastGeneration.lean` | `failed_acceptance_without_fallback_requests_fallback` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `failed_acceptance_without_residual_requests_residual` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `fast_generation_task_bundle_blocks_support_promotion` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `fast_generation_task_bundle_candidate_improves_cost_accounting` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `fast_generation_task_bundle_candidate_preserves_quality` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `fast_generation_task_bundle_latency_only_proxy_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `fast_generation_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `high_risk_fast_mode_records_verifier_override_and_fallback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/FastGeneration.lean` | `high_risk_fast_mode_without_verifier_or_override_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
-| `lean/AsiStackProofs/FastGeneration.lean` | `high_risk_without_override_requests_override` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `high_risk_without_slow_fallback_routes_to_slow_verified` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `missing_acceptance_predicate_requests_predicate` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `missing_accepted_output_requests_accepted_output` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `missing_baseline_requests_baseline` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `missing_context_packet_requests_context` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `missing_generation_mode_requests_mode_record` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `missing_latency_budget_requests_budget_record` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `missing_quality_target_requests_quality_target` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `missing_risk_tier_requests_risk_tier` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `missing_verifier_cost_requests_verifier_cost` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `missing_verifier_requests_verifier_record` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `no_fast_generation_request_stays_idle` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `promoted_acceleration_records_accepted_output_and_costs` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/FastGeneration.lean` | `promoted_fast_generation_route_records_required_fields` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/FastGeneration.lean` | `promotion_candidate_missing_accepted_output_or_verifier_cost_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
-| `lean/AsiStackProofs/FastGeneration.lean` | `promotion_request_without_evidence_transition_requests_transition` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `raw_tokens_per_second_cannot_promote_without_verified_evidence` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/FastGeneration.lean` | `theseus_generation_mode_import_boundary_gate_failure_blocks_public_summary` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `theseus_generation_mode_import_boundary_gates_all_pass` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `theseus_generation_mode_import_fixture_matches_public_summary` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `theseus_generation_mode_import_has_no_promotable_comparisons` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/FastGeneration.lean` | `theseus_generation_mode_import_missing_report_refs_blocks_public_summary` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/FastGeneration.lean` | `theseus_generation_mode_import_missing_report_refs_zero` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/FastGeneration.lean` | `theseus_generation_mode_import_speed_lift_not_useful_solution_evidence` | derived_or_decomposed | no | uses constructor, simp |
-| `lean/AsiStackProofs/GenerateVerifyRepair.lean` | `exact_reconstruction_claim_requires_generator_plus_repair` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/FastGeneration.lean` | `failed_acceptance_without_fallback_or_residual_rejected` | derived_or_decomposed | no | uses contradiction, rcases, rw |
+| `lean/AsiStackProofs/FastGeneration.lean` | `high_risk_fast_mode_without_verifier_or_override_rejected` | derived_or_decomposed | no | uses contradiction, rcases, rw |
+| `lean/AsiStackProofs/FastGeneration.lean` | `promotion_candidate_missing_accepted_output_or_verifier_cost_rejected` | derived_or_decomposed | no | uses contradiction, have, rcases, rw |
+| `lean/AsiStackProofs/FastGenerationRefinement.lean` | `accepted_step_adds_one_receipt` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/FastGenerationRefinement.lean` | `apply_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/FastGenerationRefinement.lean` | `apply_event_preserves_task_mode_evaluator_and_result_identity` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/FastGenerationRefinement.lean` | `context_substitution_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/FastGenerationRefinement.lean` | `failed_verification_activates_executable_fallback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/FastGenerationRefinement.lean` | `failed_verification_without_fallback_is_blocked` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/FastGenerationRefinement.lean` | `fallback_lifecycle_reaches_closed_with_fallback_accounted` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/FastGenerationRefinement.lean` | `fallback_without_cost_blocks_accounting` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/FastGenerationRefinement.lean` | `high_risk_without_override_blocks_fast_selection` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/FastGenerationRefinement.lean` | `missing_consumer_acknowledgment_blocks_closure` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/FastGenerationRefinement.lean` | `missing_draft_artifact_blocks_generation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/FastGenerationRefinement.lean` | `missing_task_set_blocks_context_binding` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/FastGenerationRefinement.lean` | `missing_task_success_blocks_accounting` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/FastGenerationRefinement.lean` | `no_fast_request_selects_slow_baseline` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/FastGenerationRefinement.lean` | `raw_speed_proxy_without_accepted_output_is_blocked` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/FastGenerationRefinement.lean` | `support_promotion_without_transition_blocks_decision` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/FastGenerationRefinement.lean` | `verified_fast_lifecycle_reaches_closed_without_support_or_effect_authority` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | `exact_reconstruction_claim_with_mismatched_repair_rejected` | derived_or_decomposed | no | uses have |
-| `lean/AsiStackProofs/GenerateVerifyRepair.lean` | `failed_verification_blocks_exactness_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | `failed_verification_with_exactness_promotion_rejected` | derived_or_decomposed | no | uses cases, have, rw |
-| `lean/AsiStackProofs/GovernanceRights.lean` | `audit_request_without_material_requests_audit_material` | derived_or_decomposed | yes | uses simp |
-| `lean/AsiStackProofs/GovernanceRights.lean` | `complete_governance_right_lifecycle_allows_transition` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `constrained_fork_without_audit_path_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `constrained_fork_without_safety_obligations_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
-| `lean/AsiStackProofs/GovernanceRights.lean` | `dissent_without_record_preserves_dissent` | derived_or_decomposed | yes | uses simp |
-| `lean/AsiStackProofs/GovernanceRights.lean` | `exit_without_portable_state_requests_exit_export` | derived_or_decomposed | yes | uses simp |
-| `lean/AsiStackProofs/GovernanceRights.lean` | `fork_without_obligation_preservation_preserves_fork_obligations` | derived_or_decomposed | yes | uses simp |
-| `lean/AsiStackProofs/GovernanceRights.lean` | `fork_without_safety_review_blocks_unsafe_fork` | derived_or_decomposed | yes | uses simp |
-| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_transition_preserves_required_audit_and_exit_capabilities` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/GovernanceRights.lean` | `missing_durable_receipt_preserves_receipt` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `missing_exit_capability_preserves_exit_residual` | derived_or_decomposed | yes | uses rw, simp, unfold |
-| `lean/AsiStackProofs/GovernanceRights.lean` | `missing_governance_record_rejected` | derived_or_decomposed | yes | uses simp |
-| `lean/AsiStackProofs/GovernanceRights.lean` | `protected_right_removal_blocks_lifecycle` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `redaction_without_appeal_path_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
-| `lean/AsiStackProofs/GovernanceRights.lean` | `redaction_without_appeal_requests_redaction_appeal` | derived_or_decomposed | yes | uses simp |
-| `lean/AsiStackProofs/GovernanceRights.lean` | `replacement_without_rights_receipts_preserves_obligations` | derived_or_decomposed | yes | uses simp |
-| `lean/AsiStackProofs/GovernanceRights.lean` | `support_change_without_evidence_transition_requests_governance_evidence` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `theseus_governance_rights_receipt_suite_import_core_promotion_rejected` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `theseus_governance_rights_receipt_suite_import_fixture_valid` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `theseus_governance_rights_receipt_suite_import_legal_rights_overclaim_rejected` | derived_or_decomposed | yes | uses simp |
-| `lean/AsiStackProofs/GovernanceRights.lean` | `transition_removing_protected_right_is_rejected_or_invalid` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | `authority_widening_negative_rejected` | unknown_or_mixed | no | no recognized depth pattern |
-| `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | `effect_at_revocation_time_negative_rejected` | unknown_or_mixed | no | no recognized depth pattern |
-| `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | `erased_open_residual_negative_rejected` | unknown_or_mixed | no | no recognized depth pattern |
-| `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | `governed_fixture_authority_monotone` | unknown_or_mixed | no | no recognized depth pattern |
-| `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | `governed_fixture_evidence_integrity` | unknown_or_mixed | no | no recognized depth pattern |
-| `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | `governed_fixture_residual_conserved` | unknown_or_mixed | no | no recognized depth pattern |
-| `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | `governed_fixture_revocation_before_effect` | unknown_or_mixed | no | no recognized depth pattern |
-| `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | `governed_repository_trace_four_invariants` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | `unrecorded_promotion_negative_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `accepted_step_adds_one_receipt` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `apply_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `apply_event_preserves_job_node_lease_identity` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `external_access_without_lease_blocks_issue` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `full_hive_lifecycle_reaches_closed_state` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `high_risk_without_bound_approval_blocks_execution` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `incomplete_candidate_denominator_blocks_selection` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `malformed_job_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `missing_data_policy_blocks_binding` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `missing_dropout_recovery_blocks_closure` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `missing_effect_receipt_blocks_reconciliation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `missing_revocation_closure_blocks_closure` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `missing_sandbox_blocks_lease` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `missing_useful_outcome_blocks_reconciliation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `overprivileged_node_blocks_selection` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `partition_without_no_mutation_evidence_blocks` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `partitioned_stale_grant_quarantines_before_mutation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_acknowledgement_closes_effect` | derived_or_decomposed | no | uses cases, simp, split, unfold |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_attempt_records_idempotency_key` | derived_or_decomposed | no | uses by_cases, cases, simp, split, unfold |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_concurrent_attempt_precedes_revocation` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_observation_has_attempt` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_step_authority_nonincreasing` | derived_or_decomposed | no | uses cases, have, simp, split, unfold |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_step_joins_parent_and_state` | derived_or_decomposed | no | uses cases, have, simp, split, unfold |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_step_preserves_ceiling` | derived_or_decomposed | no | uses cases, simp, split, unfold |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_trace_authority_nonincreasing` | derived_or_decomposed | no | uses contradiction, induction, simp, split, unfold |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `authority_widening_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `common_valid_authority_bound` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `common_valid_parent_join` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `common_valid_state_join` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `complete_cross_layer_trace_is_accepted` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `effect_at_revocation_tie_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `exact_attempt_retry_is_idempotent` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `missing_gate_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `one_effect_acknowledged_and_other_residualized` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `parent_fork_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `residual_erasure_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `run_append` | derived_or_decomposed | no | uses induction, simp, split |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `same_time_revocation_blocks_attempt` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `terminal_with_unacknowledged_effect_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `two_effect_interleaving_is_closed` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentContracts.lean` | `ambiguous_intent_routes_to_clarification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `authority_widening_requests_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `compiled_constraint_gap_blocks_admission` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/IntentContracts.lean` | `compiled_intent_contract_preserves_declared_constraints_and_stop_conditions` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/IntentContracts.lean` | `compiled_stop_condition_gap_blocks_admission` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `complete_intent_admission_admits_contract` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `constraint_precedence_gap_blocks_admission` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/IntentContracts.lean` | `contract_missing_required_authority_cannot_compile_to_executable_job` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/IntentContracts.lean` | `downstream_means_change_requires_recontract` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `downstream_stop_condition_change_requires_recontract` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `high_impact_without_authority_routes_to_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `intent_admission_hidden_override_rejects` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `intent_admission_missing_raw_intent_rejects` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/IntentContracts.lean` | `intent_intake_probe_fixture_valid` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/IntentContracts.lean` | `intent_intake_probe_preserves_no_promotion_boundary` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/IntentContracts.lean` | `intent_intake_probe_rejects_request_pressure` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `irreversible_high_impact_routes_to_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `missing_authority_declaration_requests_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `missing_declared_constraints_requests_clarification` | derived_or_decomposed | no | uses simp, unfold |
@@ -619,10 +672,32 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntentContracts.lean` | `non_goal_conflict_routes_to_clarification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `prohibited_action_rejects_as_non_executable` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `unresolved_ambiguity_requests_clarification` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `accepted_delivery_requires_verified_observed_effect` | derived_or_decomposed | no | uses rcases, simp |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `accepted_dispatch_requires_approval_and_receipt` | derived_or_decomposed | no | uses rcases, simp |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `accepted_effect_requires_prior_dispatch` | derived_or_decomposed | no | uses rcases, simp |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `accepted_step_cannot_widen_authority` | derived_or_decomposed | no | uses rcases |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `accepted_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `accepted_step_preserves_root_and_parent` | derived_or_decomposed | no | uses rcases |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `authority_widening_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `delivery_without_verification_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `effect_without_dispatch_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `full_vertical_trace_reaches_exact_delivery` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `hidden_override_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `missing_approval_authorization_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `accepted_compile_preserves_constraints_stops_and_authority` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `accepted_material_delta_requires_recontract_state` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `accepted_recontract_increments_version_and_respects_ceiling` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `accepted_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `authority_widening_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `compiled_constraint_substitution_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `exact_intent_trace_reaches_accepted_contract` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `hidden_override_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `material_delta_cannot_silently_continue` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `missing_intent_payload_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `prohibited_action_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `recontract_without_receipt_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `authority_widening_blocks_execution_dispatch` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/IntentToExecution.lean` | `compiled_execution_job_preserves_parent_contract_constraints` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `complete_dispatch_review_is_ready` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/IntentToExecution.lean` | `execution_job_without_required_approval_cannot_transition_to_running` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `hidden_override_blocks_execution_dispatch` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `intent_execution_handoff_probe_fixture_bridge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `known_residual_records_execution_residual` | derived_or_decomposed | no | uses simp, unfold |
@@ -661,9 +736,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/LivingBook.lean` | `structural_update_marked_valid_without_sync_artifacts_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `structural_update_without_regenerated_scaffold_and_proof_manifest_is_invalid` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/LivingBook.lean` | `support_promotion_without_evidence_transition_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
-| `lean/AsiStackProofs/MoECOTRuntime.lean` | `runtime_claim_from_unavailable_text_only_cannot_promote_above_argument` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | `runtime_core_promotion_missing_evidence_rejected` | derived_or_decomposed | no | uses cases, have, rw |
-| `lean/AsiStackProofs/MoECOTRuntime.lean` | `runtime_core_promotion_requires_readiness_regression_and_replay_evidence` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | `unavailable_text_only_with_promotion_above_argument_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | `acknowledged_distribution_records_irreversibility` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | `complete_observed_load_is_bounded` | derived_or_decomposed | no | uses simp, unfold |
@@ -681,16 +754,12 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | `missing_independent_qualification_requires_separation` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | `missing_residual_owner_blocks_admission` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | `missing_stop_authority_blocks_admission` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/PersonalComputeHives.lean` | `admitted_hive_job_has_identity_data_tool_federation_and_approval_checks` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `complete_hive_work_admission_review_admits` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `external_hive_access_missing_lease_boundary_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
-| `lean/AsiStackProofs/PersonalComputeHives.lean` | `external_hive_access_requires_lease_scope_sandbox_evidence_expiration_and_revocation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `external_hive_access_without_lease_requires_federation_lease` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `external_hive_access_without_sandbox_requires_sandbox_record` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/PersonalComputeHives.lean` | `faster_forbidden_node_cannot_be_selected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `healed_partition_with_stale_grant_requires_fresh_receipt` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `high_risk_hive_job_missing_bound_approval_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
-| `lean/AsiStackProofs/PersonalComputeHives.lean` | `high_risk_hive_job_without_bound_approval_cannot_execute` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `high_risk_hive_job_without_portal_approval_requires_approval` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `hive_support_promotion_requires_evidence_transition` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `malformed_hive_job_rejected` | derived_or_decomposed | no | uses simp, unfold |
@@ -704,7 +773,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `missing_hive_residual_owner_requires_residual_owner` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `missing_hive_scheduler_policy_requires_scheduler_policy` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `missing_hive_tool_policy_requires_tool_policy` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/PersonalComputeHives.lean` | `partitioned_authority_fixture_bridge` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `partitioned_stale_authority_with_no_mutation_quarantines` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `partitioned_stale_authority_without_no_mutation_requests_evidence` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PlanForge.lean` | `dependency_precedence_blocks_self_dependency` | derived_or_decomposed | no | uses rw, unfold |
@@ -761,7 +829,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `unverified_reward_or_missing_governance_gate_blocks_policy_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | `failed_regression_with_routable_promotion_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | `generated_tool_missing_closure_artifact_rejected` | derived_or_decomposed | no | uses cases, have, rw |
-| `lean/AsiStackProofs/ProceduralMemory.lean` | `generated_tool_records_source_traces_parameters_and_verification_result` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | `routable_failed_regression_routes_quarantine` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | `routable_failed_verification_runs_verification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | `routable_missing_active_scf_requires_scf` | derived_or_decomposed | no | uses simp, unfold |
@@ -773,19 +840,36 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProceduralMemory.lean` | `routable_missing_non_claims_preserves_non_claims` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | `routable_missing_residuals_preserves_residuals` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | `routable_retirement_trigger_routes_retirement` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/ProceduralMemory.lean` | `tool_with_failed_regression_cannot_be_promoted_to_routable_status` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | `unverified_source_state_cannot_become_routable` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/ProceduralMemory.lean` | `valid_failed_regression_quarantined_fixture_admitted` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ProceduralMemory.lean` | `valid_retired_stale_precondition_fixture_admitted` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ProceduralMemory.lean` | `valid_routable_with_negative_examples_fixture_admitted` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ProofCarryingClaims.lean` | `adversarial_review_dossier_probe_bridge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/ProofCarryingClaims.lean` | `failed_verifier_result_downgrades_or_blocks_claim_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/ProofCarryingClaims.lean` | `formal_support_tier_requires_valid_justification_artifact` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `abstraction_requires_parameters` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `abstraction_requires_preconditions` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `accepted_step_adds_exactly_one_receipt` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `apply_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `apply_event_preserves_procedure_and_lineage_identity` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `clustering_requires_effect_receipts` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `clustering_requires_negative_examples` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `failed_regression_routes_quarantine` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `failed_verification_blocks_qualification` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `full_procedure_lifecycle_reaches_retirement` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `qualification_requires_active_scf` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `qualification_requires_rehearsed_rollback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `retirement_requires_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `routing_requires_monitoring` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | `negative_verifier_result_requires_non_promotional_effect` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | `negative_verifier_result_with_scoped_update_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | `passed_verifier_result_requires_verifier_artifact_reference` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | `passed_verifier_without_artifact_reference_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
-| `lean/AsiStackProofs/ProofCarryingClaims.lean` | `valid_proof_carrying_claim_record_preserves_mapping_scope_limits_and_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `accepted_step_adds_exactly_one_receipt` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `apply_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `apply_event_preserves_target_identity` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `full_verification_lifecycle_reaches_owner_writeback` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `high_risk_without_independent_dossier_is_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `mismatch_requires_tribunal_effect` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `negative_execution_without_attempt_history_is_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `negative_result_scoped_proposal_is_blocked` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `passed_execution_without_artifact_refs_is_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `support_assignment_request_is_authority_leak` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `unverified_pass_is_blocked_before_adjudication` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `circle_public_consumer_gate_acceptance_blocks_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `circle_public_consumer_gate_fixture_accepted` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `circle_public_consumer_gate_missing_mutation_control_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
@@ -815,32 +899,54 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `self_improvement_without_independent_evaluator_rejected` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `support_promotion_without_evidence_transition_rejected` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `accepted_stronger_transition_missing_required_record_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
-| `lean/AsiStackProofs/ReadinessGates.lean` | `allowed_readiness_transition_requires_core_records` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/ReadinessGates.lean` | `default_readiness_requires_regression_authority_and_route` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `default_readiness_without_authority_scope_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `default_readiness_without_regression_floor_rejected` | derived_or_decomposed | no | uses cases, have, rw |
-| `lean/AsiStackProofs/ReadinessGates.lean` | `promoted_decision_requires_all_required_gates` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `promoted_decision_with_failed_required_gates_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
-| `lean/AsiStackProofs/ReadinessGates.lean` | `qualified_readiness_requires_regression_floor` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/ReadinessGates.lean` | `quarantine_transition_blocks_ordinary_and_requires_fallback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `quarantined_lifecycle_transition_with_ordinary_route_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `quarantined_module_cannot_be_selected_for_ordinary_route` | derived_or_decomposed | no | uses unfold |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `quarantined_target_ordinary_or_unbacked_diagnostic_route_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
-| `lean/AsiStackProofs/ReadinessGates.lean` | `readiness_lifecycle_probe_fixture_bridge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/ReadinessGates.lean` | `readiness_lifecycle_transition_must_be_forward_or_terminal` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `retired_readiness_state_cannot_transition` | derived_or_decomposed | no | uses have |
-| `lean/AsiStackProofs/ReadinessGates.lean` | `retirement_requires_receipt_and_residual_escrow` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `retirement_without_receipt_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `stale_gate_reuse_without_rerun_or_residual_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
-| `lean/AsiStackProofs/ReadinessGates.lean` | `supersession_requires_record_and_residual_escrow` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `supersession_without_record_rejected` | derived_or_decomposed | no | uses cases, have, rw |
-| `lean/AsiStackProofs/ReferenceArchitecture.lean` | `end_to_end_trace_contains_required_artifacts_for_layer_handoff` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReadinessRefinement.lean` | `accepted_step_adds_exactly_one_receipt` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ReadinessRefinement.lean` | `apply_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/ReadinessRefinement.lean` | `apply_event_preserves_capability_and_evidence_identity` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/ReadinessRefinement.lean` | `full_readiness_lifecycle_reaches_terminal_state` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ReadinessRefinement.lean` | `incomplete_baseline_blocks_shadow` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReadinessRefinement.lean` | `incomplete_quarantine_propagation_blocks_transition` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReadinessRefinement.lean` | `incomplete_revocation_blocks_termination` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReadinessRefinement.lean` | `missing_fallback_blocks_canary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReadinessRefinement.lean` | `missing_independent_evaluation_blocks_default` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReadinessRefinement.lean` | `missing_residual_escrow_blocks_canary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReadinessRefinement.lean` | `missing_terminal_receipt_blocks_termination` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReadinessRefinement.lean` | `missing_transfer_blocks_default` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReadinessRefinement.lean` | `missing_useful_throughput_blocks_qualification` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReadinessRefinement.lean` | `ordinary_route_must_be_blocked_in_quarantine` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReadinessRefinement.lean` | `regression_blocks_canary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReadinessRefinement.lean` | `stale_gate_blocks_canary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReadinessRefinement.lean` | `threshold_breach_quarantines_qualification` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_missing_authority_deltas_routes_to_authority_repair` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_missing_parent_artifacts_routes_to_parentage_repair` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_missing_required_governance_gate_blocks_trace` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_missing_residual_deltas_routes_to_residual_preservation` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_missing_validation_command_requires_validation` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_with_missing_governance_gate_cannot_be_marked_valid` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `accepted_proposal_does_not_commit_effect` | derived_or_decomposed | no | uses cases, rw, simp, split, unfold |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `accepted_step_preserves_authority` | derived_or_decomposed | no | uses cases, simp, split, unfold |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `accepted_step_preserves_checkpoint_digest` | derived_or_decomposed | no | uses cases, simp, split, unfold |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `accepted_step_preserves_checkpoint_schema` | derived_or_decomposed | no | uses cases, simp, split, unfold |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `apply_event_preserves_authority` | derived_or_decomposed | no | uses cases, unfold |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `apply_event_preserves_checkpoint_digest` | derived_or_decomposed | no | uses cases, unfold |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `apply_event_preserves_checkpoint_schema` | derived_or_decomposed | no | uses cases, unfold |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `authority_widening_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `incompatible_fixture_migration_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `incompatible_migration_is_rejected` | derived_or_decomposed | no | uses have, simp, unfold |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `mixed_kernel_trace_is_accepted` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `omitted_cost_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `proposal_with_observed_effect_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `revoked_kernel_cannot_propose` | derived_or_decomposed | no | uses have, simp, unfold |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `run_preserves_authority` | derived_or_decomposed | no | uses calc, contradiction, induction, simp, split |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `run_preserves_exact_checkpoint` | derived_or_decomposed | no | uses contradiction, have, induction, simp, split |
 | `lean/AsiStackProofs/Replacement.lean` | `authority_expansion_without_approval_routes_to_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `captured_evaluator_routes_replacement_to_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `complete_replacement_lifecycle_commits_default` | derived_or_decomposed | no | uses simp, unfold |
@@ -878,67 +984,47 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Replacement.lean` | `replacement_trace_probe_fixture_valid` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `replacement_trace_probe_preserves_no_promotion_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/Replacement.lean` | `replacement_trace_probe_rejects_authority_widening` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `aggregate_serving_throughput_requires_single_request_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `blocked_protected_review_rejects_low_risk_review_dispatch` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `blocked_protected_review_requires_displaced_cost_residual` | derived_or_decomposed | no | uses cases, have, rw |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `capacity_smoothing_reviewer_trace_fixture_valid` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `capacity_smoothing_reviewer_trace_has_no_support_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `capacity_smoothing_reviewer_trace_preserves_protected_review_overhead` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `capacity_smoothing_reviewer_trace_preserves_review_capacity` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `capacity_smoothing_reviewer_trace_residualizes_displaced_review_costs` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `cheap_unverified_transform_rejected_by_fixture` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `costed_route_fixture_selected_is_eligible` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `costed_route_fixture_trace_selects_lowest_eligible_route` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `hidden_residual_auto_merge_rejected_by_fixture` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `high_risk_insufficient_budget_dispatch_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `high_risk_review_without_protected_overhead_rejected` | derived_or_decomposed | no | uses cases, have, rw |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `high_risk_task_with_insufficient_verification_budget_is_not_dispatched` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `required_safety_gate_disabled_rejects_budget_gate_preservation` | derived_or_decomposed | no | uses cases, have, rw |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_ci_cost_profile_classifies_all_failures` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_ci_cost_profile_fixture_valid` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_ci_cost_profile_preserves_no_core_promotion` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_ci_cost_profile_records_recovery_boundary` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_flagship_lane_aggregate_carries_transition_accounting` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_flagship_lane_aggregate_fixture_valid` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_flagship_lane_aggregate_preserves_no_core_promotion` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_governance_tax_tradeoff_allows_low_risk_shortcut` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_governance_tax_tradeoff_fixture_valid` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_governance_tax_tradeoff_preserves_no_promotion_boundary` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_governance_tax_tradeoff_shows_governance_can_pay` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_load_smoothing_workload_fixture_valid` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_load_smoothing_workload_has_no_support_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_load_smoothing_workload_reduces_overrun` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_load_smoothing_workload_rejects_review_erasure` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_load_smoothing_workload_residualizes_deferrals` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_workflow_trace_fixture_events_keep_high_risk_first` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_workflow_trace_fixture_events_preserve_guard_flags` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_workflow_trace_fixture_events_roll_up_to_summary` | unknown_or_mixed | no | no recognized depth pattern |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_workflow_trace_fixture_has_no_support_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_workflow_trace_fixture_preserves_high_risk_ordering` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_workflow_trace_fixture_rejects_capacity_budget_overrun` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_workflow_trace_fixture_rejects_latency_only_selection` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_workflow_trace_fixture_rejects_physical_feasibility_overclaim` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_workflow_trace_fixture_residualizes_displaced_costs` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_workflow_trace_fixture_valid` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `selected_route_is_lowest_cost_eligible_in_fixture` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `serving_memory_throughput_quality_overclaim_rejected` | derived_or_decomposed | no | uses cases, have, rw |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | `task_budget_cannot_disable_required_safety_or_verification_gates` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/Routing.lean` | `authority_mismatch_blocks_route_selection` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Routing.lean` | `complete_routing_decision_selects_specialist` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `complete_resource_lifecycle_reaches_closed_without_support_or_effect_authority` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `complete_simulation_transport_reaches_reconciliation_without_promotion` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `missing_failure_retention_blocks_verification` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `missing_protected_floor_blocks_reservation` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `missing_reviewer_capacity_blocks_schedule` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `raw_proxy_cannot_promote_executed_work` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `simulated_claim_above_fidelity_blocks_transfer` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `simulated_claim_without_fidelity_blocks_transfer` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/Routing.lean` | `failed_readiness_routes_to_fallback_or_residual_not_promotion` | derived_or_decomposed | no | uses cases, constructor, have, rw |
-| `lean/AsiStackProofs/Routing.lean` | `missing_capability_request_rejects_route` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Routing.lean` | `missing_cost_quality_record_requests_record` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Routing.lean` | `missing_fresh_lease_requests_lease` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Routing.lean` | `missing_rejected_candidate_evidence_requests_evidence` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Routing.lean` | `missing_specialist_registry_requests_registry` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Routing.lean` | `no_route_request_stays_no_route` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Routing.lean` | `overprivileged_selection_requests_least_capable_justification` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Routing.lean` | `readiness_failure_with_fallback_routes_to_fallback` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Routing.lean` | `readiness_failure_without_fallback_or_residual_owner_requests_owner` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Routing.lean` | `readiness_failure_without_fallback_residualizes_when_owner_present` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Routing.lean` | `route_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Routing.lean` | `selected_route_without_authority_or_readiness_rejected` | derived_or_decomposed | no | uses cases, have, rw |
-| `lean/AsiStackProofs/Routing.lean` | `selected_specialist_satisfies_authority_and_readiness` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `accepted_step_adds_exactly_one_receipt` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `ambiguous_task_requires_selective_action` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `apply_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `apply_event_preserves_task_registry_and_lease_identity` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `closure_requires_revocation_propagation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `dispatch_requires_separate_grant` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `failed_readiness_with_fallback_routes_to_fallback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `failed_readiness_without_fallback_requires_residual_owner` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `full_routing_lifecycle_reaches_closed_state` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `held_out_label_leak_blocks_registry_freeze` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `missing_authority_blocks_lease` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `missing_replay_evidence_blocks_lease` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `outcome_keeps_route_and_answer_quality_separate` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `overprivileged_selection_requires_least_capable_justification` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `registry_freeze_requires_complete_candidate_denominator` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `stale_context_lease_blocks_qualification` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `unavailable_runtime_evidence_blocks_lease` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `adapter_adversarial_confused_deputy_parent_mismatch_rejected` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `adapter_adversarial_expired_approval_rejected` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `adapter_adversarial_high_impact_dispatch_accepted` | derived_or_decomposed | no | uses simp, unfold |
@@ -996,6 +1082,27 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SafetyCases.lean` | `missing_independent_review_requires_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SafetyCases.lean` | `stale_evidence_dependency_requires_repair` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SafetyCases.lean` | `unresolved_defeater_requires_accountable_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `alignment_complete_trace_commits` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `alignment_missing_review_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `authority_widening_is_rejected` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `corrigibility_complete_trace_commits` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `corrigibility_missing_affected_party_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `governance_rights_complete_trace_commits` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `governance_rights_missing_exit_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `protected_predicate_removal_is_unrepresentable` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `run_append` | derived_or_decomposed | no | uses induction, left, simp, split |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `run_preserves_invariant` | derived_or_decomposed | no | uses contradiction, induction, simp, split |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `self_improvement_complete_trace_commits` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `self_improvement_without_independent_evaluator_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `step_never_increases_authority` | derived_or_decomposed | no | uses cases, rw, simp, subst |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `step_preserves_authority_ceiling` | derived_or_decomposed | no | uses cases, simp, subst |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `step_preserves_invariant` | derived_or_decomposed | no | uses constructor, rw |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `step_preserves_protected_predicate` | derived_or_decomposed | no | uses cases, simp, subst |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `successful_effect_commit_was_ready` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `successful_support_promotion_was_ready` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `support_promotion_without_receipt_and_nonclaim_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `value_conflict_complete_trace_commits` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `value_conflict_missing_residual_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ScalableOversight.lean` | `complete_bounded_use_is_admitted` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ScalableOversight.lean` | `downstream_use_cannot_launder_authority` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ScalableOversight.lean` | `high_risk_use_without_outcome_audit_requires_audit` | derived_or_decomposed | no | uses simp, unfold |
@@ -1043,7 +1150,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SelfImprovement.lean` | `canary_without_open_monitor_window_rolls_back` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `complete_canary_review_allows_canary` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `complete_promotion_review_promotes` | derived_or_decomposed | yes | uses simp, unfold |
-| `lean/AsiStackProofs/SelfImprovement.lean` | `improvement_transition_preserves_all_protected_invariants` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `missing_evidence_bundle_requires_evidence` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `missing_governance_approval_routes_to_review` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `missing_independent_evaluation_blocks_campaign_admission` | derived_or_decomposed | yes | uses simp, unfold |
@@ -1052,28 +1158,21 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SelfImprovement.lean` | `missing_protected_invariant_declaration_requires_evidence` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `missing_residual_escrow_requires_evidence` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `missing_rollback_path_requires_evidence` | derived_or_decomposed | yes | uses simp, unfold |
-| `lean/AsiStackProofs/SelfImprovement.lean` | `proposal_evaluated_only_by_replaced_component_cannot_be_promoted` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `protected_lifecycle_change_without_independent_evaluator_blocks_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `resource_boundary_delta_routes_to_review` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `security_boundary_delta_routes_to_review` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `sole_self_evaluation_routes_to_review` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `stale_gate_requires_evidence_rerun` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `unpreserved_protected_invariant_routes_to_review` | derived_or_decomposed | yes | uses simp, unfold |
-| `lean/AsiStackProofs/SemanticRepresentation.lean` | `grounded_semantic_node_has_provenance_link` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | `grounded_semantic_node_without_provenance_rejected` | derived_or_decomposed | no | uses cases, have, rw |
-| `lean/AsiStackProofs/SemanticRepresentation.lean` | `hierarchy_update_preserves_references_or_records_supersession` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | `hierarchy_update_without_references_or_supersession_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | `evidence_use_without_scope_declaration_rejected` | derived_or_decomposed | no | uses cases, have, rw, unfold |
-| `lean/AsiStackProofs/SimulationFidelity.lean` | `promoted_experiment_result_cannot_exceed_declared_fidelity_support` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | `promoted_result_above_declared_fidelity_rejected` | derived_or_decomposed | no | uses have |
-| `lean/AsiStackProofs/SimulationFidelity.lean` | `simulation_claim_used_as_evidence_includes_scope_fidelity_and_bounds` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | `theseus_rlds_minari_trace_export_import_core_promotion_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | `theseus_rlds_minari_trace_export_import_dataset_quality_overclaim_rejected` | derived_or_decomposed | no | uses cases, have, rw |
-| `lean/AsiStackProofs/SimulationFidelity.lean` | `theseus_rlds_minari_trace_export_import_fixture_valid` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | `theseus_rlds_minari_trace_export_import_replay_success_overclaim_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | `theseus_simulation_fidelity_receipt_suite_import_benchmark_transfer_overclaim_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | `theseus_simulation_fidelity_receipt_suite_import_core_promotion_rejected` | derived_or_decomposed | no | uses cases, have, rw |
-| `lean/AsiStackProofs/SimulationFidelity.lean` | `theseus_simulation_fidelity_receipt_suite_import_fixture_valid` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | `theseus_simulation_fidelity_receipt_suite_import_native_kv_parity_overclaim_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | `theseus_simulation_fidelity_receipt_suite_import_physical_feasibility_overclaim_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `allowed_transition_must_be_forward_or_quarantine` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
@@ -1101,26 +1200,14 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `scf_lifecycle_trace_probe_preserves_no_promotion_boundary` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `scf_lifecycle_trace_probe_rejects_unsafe_transitions` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `stale_qualification_lease_requires_requalification` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/StackBoundaries.lean` | `complete_layer_contract_admission_allows_contract` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `accepted_authorization_respects_caller_ceiling` | derived_or_decomposed | no | uses omega, simp, split, unfold |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `accepted_effect_requires_live_grant_and_dispatch` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `effect_without_dispatch_receipt_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `handoff_exceeding_caller_ceiling_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/StackBoundaries.lean` | `layer_contract_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `layer_without_external_authority_requires_authorized_handoff` | derived_or_decomposed | no | uses cases, contradiction, rw |
-| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_authority_ceiling_requests_ceiling` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_evidence_gate_requests_evidence_gate` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_failure_mode_requests_failure_mode` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_handoff_protocol_requests_protocol` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_input_artifacts_requests_input_artifacts` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_invariant_requests_invariant` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_layer_identity_requests_identity` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_lifecycle_state_requests_lifecycle` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_output_artifacts_requests_output_artifacts` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_owner_requests_owner` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_responsibility_requests_responsibility` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_source_mapping_requests_mapping` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_support_state_effect_requests_boundary` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/StackBoundaries.lean` | `no_layer_contract_request_stays_idle` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/StackBoundaries.lean` | `possible_external_action_without_authority_or_handoff_blocks_contract` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/StackBoundaries.lean` | `promotion_request_without_stack_evidence_transition_requests_transition` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `over_ceiling_authorization_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `reachable_effect_trace_rolls_back_exactly` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `revoked_grant_effect_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `valid_stack_trace_rejects_unauthorized_external_handoff` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `complete_requested_artifact_reaches_custody_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `missing_component_inventory_requires_review` | derived_or_decomposed | no | uses simp, unfold |
@@ -1185,17 +1272,33 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/TheseusReference.lean` | `theseus_work_board_import_stale_snapshot_blocks_currentness` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Tribunal.lean` | `accepted_prior_review_reuse_without_unchanged_evidence_guard_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/Tribunal.lean` | `action_verdict_without_actions_or_constraints_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
-| `lean/AsiStackProofs/Tribunal.lean` | `action_verdict_without_constraints_routes_to_action_constraints` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Tribunal.lean` | `changed_evidence_blocks_prior_review_reuse` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Tribunal.lean` | `complete_bounded_tribunal_review_accepts` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Tribunal.lean` | `high_risk_accepted_verdict_without_probes_or_independence_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
-| `lean/AsiStackProofs/Tribunal.lean` | `high_risk_artifact_without_required_tribunal_review_cannot_be_accepted` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/Tribunal.lean` | `high_risk_without_independent_reviewer_routes_to_independent_review` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Tribunal.lean` | `high_risk_without_probe_routes_to_adversarial_probe` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Tribunal.lean` | `support_change_without_evidence_transition_routes_to_evidence_review` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Tribunal.lean` | `tribunal_route_missing_review_rejects` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Tribunal.lean` | `tribunal_verdict_includes_roles_evidence_and_unresolved_dissent` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/Tribunal.lean` | `unrecorded_dissent_routes_to_dissent_preservation` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | `accepted_step_adds_exactly_one_receipt` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | `action_verdict_requires_actions_and_constraints` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | `apply_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | `apply_event_preserves_case_and_evidence_identity` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | `changed_evidence_blocks_prior_verdict_reuse` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | `default_approval_is_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | `full_tribunal_lifecycle_reaches_appeal_resolution` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | `high_risk_without_probe_requests_adversarial_review` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | `requested_appeal_requires_resolution_record` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | `shared_independence_group_requests_graph_repair` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | `support_change_requires_evidence_owner_handoff` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | `unpreserved_dissent_blocks_verdict` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `accepted_step_adds_exactly_one_receipt` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `acknowledged_cancellation_rejects_post_cancel_output` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `adjudication_requires_verification` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `apply_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `apply_event_preserves_job_and_contract_identity` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `approval_required_job_cannot_authorize_without_record` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `cancellation_requires_acknowledgment` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `closure_requires_consumer_acknowledgment` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `evidence_ready_adjudication_requires_replay_reference` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `execution_requires_artifact_refs` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `expired_lease_cannot_dispatch` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `full_typed_job_lifecycle_reaches_closed_state` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `retry_cannot_widen_authority` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `retry_requires_idempotency_key` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/TypedJobs.lean` | `complete_retirement_review_retires_job` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/TypedJobs.lean` | `delivered_unverified_output_routes_to_adjudication` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/TypedJobs.lean` | `delivered_verified_output_is_evidence_ready` | derived_or_decomposed | no | uses simp, unfold |
@@ -1219,16 +1322,11 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/TypedJobs.lean` | `missing_job_rejects_job_execution` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/TypedJobs.lean` | `missing_permissions_block_job_dispatch` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/TypedJobs.lean` | `observed_failure_records_job_failure` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/TypedJobs.lean` | `recorded_valid_job_transition_uses_declared_lifecycle_relation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/TypedJobs.lean` | `typed_job_delivery_probe_fixture_bridge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/TypedJobs.lean` | `typed_job_durable_lifecycle_probe_fixture_bridge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/TypedJobs.lean` | `unlocked_contract_requests_job_contract` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `bounded_decision_without_dissent_preserves_residual` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `bounded_decision_without_dissent_routes_to_preservation` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `complete_value_conflict_lifecycle_admits_bounded_decision` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `contestability_worked_example_bridge` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/ValueConflict.lean` | `decision_with_unresolved_protected_conflict_carries_residual_record` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/ValueConflict.lean` | `high_stakes_conflict_cannot_bypass_required_review` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ValueConflict.lean` | `high_stakes_unresolved_conflict_without_residual_blocks` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `high_stakes_without_residual_blocks` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `high_stakes_without_review_blocks` | derived_or_decomposed | yes | uses simp, unfold |
@@ -1248,9 +1346,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ValueConflict.lean` | `value_conflict_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `admitted_context_packet_may_still_be_marked_inadequate` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `complete_draft_review_allows_draft_support` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/VerificationBandwidth.lean` | `complete_verified_review_allows_verified_support` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `detected_contradiction_blocks_verified_support_route` | derived_or_decomposed | no | uses contradiction, simp, unfold |
-| `lean/AsiStackProofs/VerificationBandwidth.lean` | `high_risk_claim_with_inadequate_context_cannot_receive_verified_support` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `high_risk_inadequate_context_blocks_verified_route` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `known_verification_residual_records_residual` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `missing_claim_rejects_verification_adequacy_review` | derived_or_decomposed | no | uses simp, unfold |
@@ -1258,21 +1354,42 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `missing_verification_artifacts_require_artifacts` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `open_negative_evidence_escalates_risk` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `unadmitted_context_requests_context` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/VerificationBandwidth.lean` | `verification_bandwidth_capacity_model_fixture_bridge` | derived_or_decomposed | no | uses unfold |
-| `lean/AsiStackProofs/VerificationBandwidth.lean` | `verification_bandwidth_contradiction_probe_fixture_bridge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `admitted_context_does_not_establish_verification_adequacy` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `complete_high_risk_review_requires_independent_evaluator` | derived_or_decomposed | no | uses rcases, simp, unfold |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `contradiction_blocks_evidence_handoff` | derived_or_decomposed | no | uses contradiction, rcases, simp, unfold |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `reference_execution_valid` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `reference_plan_valid` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `reference_route_hands_off_only_to_evidence_gate` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `reference_verification_lifecycle_reachable` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `unauthorized_promotion_request_is_blocked` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | `authority_escape_requires_context_authority_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | `complete_context_review_materializes` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | `failed_adequacy_requires_adequacy_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | `known_context_residual_records_residual` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | `malformed_context_request_rejects` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | `mandatory_absent_context_issues_typed_fault` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/VirtualContextABI.lean` | `mandatory_context_miss_produces_typed_fault_not_best_effort` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | `missing_address_requests_context` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | `missing_certificate_requires_certificate` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | `optional_absent_context_requests_context` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/VirtualContextABI.lean` | `resolved_context_reference_has_valid_snapshot_binding` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | `stale_certificate_requires_refresh` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | `tainted_context_quarantines` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `accepted_mandatory_miss_emits_fault_without_materialization` | derived_or_decomposed | no | uses rcases, simp |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `accepted_materialization_preserves_binding_and_authority` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `accepted_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `address_substitution_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `certificate_authority_escalation_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `certificate_binding_substitution_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `exact_completeness_overclaim_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `exact_resolver_trace_materializes` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `expired_lease_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `mandatory_miss_trace_faults_without_packet` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `mandatory_miss_without_fault_receipt_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `materialization_without_certificate_receipt_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `mount_substitution_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `snapshot_substitution_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `tainted_materialization_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `undeclared_omission_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `version_substitution_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 
 ## Validation Errors
 
@@ -1280,8 +1397,4 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 
 ## Warnings
 
-- lean/AsiStackProofs/Alignment.lean has 2 direct/projection-style theorem(s) and must remain explicitly scoped.
-- lean/AsiStackProofs/Corrigibility.lean has 2 direct/projection-style theorem(s) and must remain explicitly scoped.
-- lean/AsiStackProofs/GovernanceRights.lean has 2 direct/projection-style theorem(s) and must remain explicitly scoped.
-- lean/AsiStackProofs/SelfImprovement.lean has 2 direct/projection-style theorem(s) and must remain explicitly scoped.
-- lean/AsiStackProofs/ValueConflict.lean has 3 direct/projection-style theorem(s) and must remain explicitly scoped.
+- lean/AsiStackProofs/ValueConflict.lean has 1 direct/projection-style theorem(s) and must remain explicitly scoped.

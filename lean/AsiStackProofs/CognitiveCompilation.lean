@@ -10,14 +10,6 @@ def RequiredIRObligationsPreserved
   review.requiredObligationsDeclared = true ->
     review.requiredObligationsPreserved = true
 
-theorem compiled_artifact_preserves_all_required_ir_obligations
-    {review : CompiledArtifactReview} :
-    RequiredIRObligationsPreserved review ->
-    review.requiredObligationsDeclared = true ->
-    review.requiredObligationsPreserved = true := by
-  intro valid declared
-  exact valid declared
-
 structure RepairAcceptanceReview where
   invalidatesExistingObligation : Bool
   ledgerUpdated : Bool
@@ -29,15 +21,6 @@ def InvalidatingRepairRequiresLedgerUpdate
   review.invalidatesExistingObligation = true ->
     review.repairAccepted = true ->
       review.ledgerUpdated = true
-
-theorem repair_invalidating_existing_obligation_requires_ledger_update
-    {review : RepairAcceptanceReview} :
-    InvalidatingRepairRequiresLedgerUpdate review ->
-    review.invalidatesExistingObligation = true ->
-    review.repairAccepted = true ->
-    review.ledgerUpdated = true := by
-  intro valid invalidates accepted
-  exact valid invalidates accepted
 
 inductive SemanticLoweringRoute where
   | rejectSourcePlan

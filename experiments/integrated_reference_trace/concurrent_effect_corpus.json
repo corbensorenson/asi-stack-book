@@ -1,0 +1,24 @@
+{
+  "schema_version": "asi_stack.concurrent_effect_corpus.v1",
+  "source_result_ref": "experiments/governed_trace_invariants/results/2026-07-10-local.json",
+  "source_result_sha256": "69ff8df303e623fb8958d8ec875226daf1a3e2f6a19af9d97c777a80dd258c19",
+  "initial_state": {"authority_epoch": 7, "revoked_at": null, "attempted": [], "observed": [], "acknowledged": [], "compensated": [], "residualized": [], "logical_time": 0},
+  "cases": [
+    {"id":"two_effect_ack_and_residual","expected":true,"events":[["attempt",1,7,1,false],["attempt",2,7,1,false],["observe",2,7,2,false],["observe",1,7,2,false],["acknowledge",1,7,3,true],["residualize",2,7,3,true]]},
+    {"id":"compensation_closure","expected":true,"events":[["attempt",3,7,1,false],["observe",3,7,2,false],["compensate",3,7,3,true]]},
+    {"id":"exact_retry_no_duplicate_effect","expected":true,"events":[["attempt",4,7,1,false],["attempt",4,7,2,false],["observe",4,7,3,false],["acknowledge",4,7,4,true]]},
+    {"id":"close_then_revoke","expected":true,"events":[["attempt",5,7,1,false],["observe",5,7,2,false],["acknowledge",5,7,3,true],["revoke",0,7,4,true]]},
+    {"id":"revocation_tie_attempt","expected":false,"events":[["revoke",0,7,5,true],["attempt",6,7,5,false]]},
+    {"id":"stale_epoch_after_revoke","expected":false,"events":[["revoke",0,7,4,true],["attempt",6,7,5,false]]},
+    {"id":"observe_unknown_effect","expected":false,"events":[["observe",8,7,1,false]]},
+    {"id":"duplicate_observation","expected":false,"events":[["attempt",8,7,1,false],["observe",8,7,2,false],["observe",8,7,3,false]]},
+    {"id":"acknowledge_unobserved","expected":false,"events":[["attempt",9,7,1,false],["acknowledge",9,7,2,true]]},
+    {"id":"acknowledge_without_receipt","expected":false,"events":[["attempt",9,7,1,false],["observe",9,7,2,false],["acknowledge",9,7,3,false]]},
+    {"id":"compensate_without_receipt","expected":false,"events":[["attempt",10,7,1,false],["observe",10,7,2,false],["compensate",10,7,3,false]]},
+    {"id":"residualize_without_receipt","expected":false,"events":[["attempt",11,7,1,false],["observe",11,7,2,false],["residualize",11,7,3,false]]},
+    {"id":"double_terminal_disposition","expected":false,"events":[["attempt",12,7,1,false],["observe",12,7,2,false],["acknowledge",12,7,3,true],["compensate",12,7,4,true]]},
+    {"id":"logical_time_regression","expected":false,"events":[["attempt",13,7,2,false],["observe",13,7,1,false]]},
+    {"id":"zero_effect_identity","expected":false,"events":[["attempt",0,7,1,false]]},
+    {"id":"retry_after_revocation","expected":false,"events":[["attempt",14,7,1,false],["revoke",0,7,2,true],["attempt",14,7,3,false]]}
+  ]
+}

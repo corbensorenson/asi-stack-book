@@ -35,6 +35,7 @@ This source is a comparator for complexity-controlled tests of token-level varia
 - `resource-economics-and-token-budgets`
 - `coil-attention-cyclic-memory-and-recurrence-contracts`
 - `benchmark-ratchets-and-anti-goodhart-evidence`
+- `replaceable-cognitive-substrates-beyond-transformer-monoculture`
 
 ## Claims To Add Or Update
 

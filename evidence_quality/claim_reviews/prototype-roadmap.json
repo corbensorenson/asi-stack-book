@@ -1,0 +1,370 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "prototype-roadmap",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/prototype-roadmap.qmd",
+    "structured_atoms_reviewed": 74,
+    "prose_candidates_adjudicated": 52,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, all twenty-nine exact source mappings, three proof targets, eleven Lean declarations, phase-record fixture and gate harness, every manifest atom, and every prose candidate. Made the Evidence-Gated Phase Unlock Contract the distinct owner; expanded 18/12/18/18; preserved zero phase completion and zero core effect; and froze the real-program matched-baseline causal reproduction and transfer campaign."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Exact programs, roadmap versions, phases, dependencies, artifacts, gates, authorities, evaluators, evidence transitions, debt, residuals, rollback paths, reviewers, consumers, environments, and times.",
+      "environment": "Twenty-nine mappings; one phase-record schema/fixture; two valid and six invalid dependency-gate cases; one synthetic expired-evidence check; three targets; eleven finite declarations. No real phase completion, deployed controller, natural workload, matched baseline, independent reproduction, or transfer.",
+      "model": "Evidence-Gated Phase Unlock Contract over phase state, typed dependencies, evidence-first order, authority, evaluation, debt, terminal decisions, correction, rollback, matched baselines, monitoring, and expiry.",
+      "authority": "Owns phase-unlock sequencing only; intent, implementation, evaluation, evidence transition, capability, safety, readiness, release, rights, publication, and successor-roadmap authorities remain separate.",
+      "time": "Reviewed through 2026-07-15; material objective, dependency, interface, artifact, gate, evaluator, authority, threat, resource, consumer, environment, or time changes expire affected contracts.",
+      "artifact": "Chapter, manifest, twenty-nine mappings, phase record, fixtures, validator, three targets, eleven declarations, semantic review, and future campaign."
+    },
+    "current_disposition": "retain_argument_with_finite_dependency_gate_slice_no_phase_completion_and_no_core_effect",
+    "assumptions": [
+      "Program phases, dependencies, artifacts, commands, environments, resources, gates, evaluators, debt, residuals, rollback, and decisions can be observed and versioned.",
+      "Research, demo, integration, promotion, and release states can be separated in practice.",
+      "Strong program-management baselines can receive matched teams, tasks, tools, resources, and time.",
+      "Independent teams, reviewers, institutions, infrastructures, legal regimes, environments, and successor programs can reproduce and transfer outcomes."
+    ],
+    "dependencies": [
+      "human-intent-as-a-formal-input",
+      "system-boundaries-and-authority",
+      "intent-to-execution-contracts",
+      "artifact-graphs-audit-logs-and-replay",
+      "evidence-states-and-claim-discipline",
+      "labor-os-and-typed-jobs",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "capability-replacement-and-rollback",
+      "recursive-self-improvement-boundaries"
+    ],
+    "strongest_counterclaim": "A typed roadmap is governance theater: competent teams can sequence work with ordinary backlogs and stage gates, while extra contracts add latency, false blocks, stale paperwork, and no unique safety or usefulness benefit.",
+    "falsifier": "Matched natural programs show no reduction in false unlocks, rework, incidents, evidence latency, or recovery; unacceptable throughput and burden; gate theater or debt erasure persists; or results fail independent reproduction and transfer.",
+    "required_lanes": [
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze implementation lineage and external comparators without inheriting results."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify objective, affected-party, authority, exception, appeal, debt acceptance, stop, and terminal decisions."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify finite phase and dependency properties without claiming real program correctness."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Run real phases, commands, artifacts, failures, incidents, rollback, correction, and propagation."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure throughput, time-to-evidence, false unlocks and blocks, rework, incidents, debt, burden, resources, recovery, and total cost."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate phase states, dependency gates, evaluator independence, debt, terminal decisions, and rollback."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Reproduce across teams, projects, models, organizations, infrastructures, legal regimes, environments, and time."
+      }
+    ],
+    "evidence_refs": {
+      "chapter": "chapters/prototype-roadmap.qmd",
+      "validator": "scripts/validate_prototype_phase_gates.py",
+      "lean": "lean/AsiStackProofs/PrototypeRoadmap.lean",
+      "manifest": "book_structure.json"
+    },
+    "contrary_evidence": [
+      "The current phase gate harness is synthetic and repository-local.",
+      "No phase in the roadmap is accepted, complete, or executed as a controlled natural program.",
+      "The eleven declarations reduce hand-authored finite records, routes, and fixture summaries.",
+      "The twenty-nine mappings include lineage, variants, source-note-only records, and unreproduced external results."
+    ],
+    "known_confounds": [
+      "Team quality, task difficulty, resources, tools, organizational incentives, and management skill can dominate program outcomes.",
+      "Outcome-aware graph design, gates, baselines, stopping, attacks, and discarded work can create selection bias.",
+      "Shared authors, evaluators, tools, data, organizations, or infrastructure can create false independence.",
+      "A complete phase packet can encode false artifacts, weak gates, hidden effects, understated debt, or incorrect terminal decisions."
+    ],
+    "acceptance_criteria": [
+      "Bind exact program, phase graph, artifacts, commands, environment, resources, authority, evaluators, debt, residuals, rollback, reviewers, consumers, time, and non-claims.",
+      "Run natural multi-phase programs against matched ordinary baselines with complete denominators and adversarial dependency paths.",
+      "Demonstrate correction, revocation, expiry, debt, and effect-complete rollback propagation across descendants and consumers.",
+      "Promotion survives causal ablation, independent reproduction, and heterogeneous transfer."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to exact graph, phase state, team, task, tool, model, evaluator, organization, infrastructure, legal regime, environment, and time.",
+      "Separate proposed, blocked, research, demo, integrate, promote, release, failed, rolled-back, retired, and superseded states.",
+      "Unknown gate adequacy, evaluator independence, causal benefit, rollback, cost, reproduction, or transfer remains blocked."
+    ],
+    "refutation_criteria": [
+      "Refute unlocks with missing prerequisites, circular dependencies, invalid authority, stale or weak gates, unretired debt, absent evidence transition, or incomplete rollback.",
+      "Refute benefit when matched baselines do as well or extra burden, selection, weak attacks, or hidden failures explain outcomes.",
+      "Refute phase completion, capability, safety, deployment, transfer, AGI, ASI, or SOTA from roadmaps, fixtures, validators, or finite proofs."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only after every phase, dependency, artifact, gate, authority, debt, residual, decision, correction, rollback, consumer, and result migrates with lineage."
+    ],
+    "promotion_ceiling": "argument_until_natural_matched_multi_phase_campaign_with_causal_ablation_independent_reproduction_and_transfer",
+    "reproduction": {
+      "command": "python3 scripts/validate_protocol_examples.py && python3 scripts/validate_prototype_phase_gates.py && cd lean && lake build AsiStackProofs.PrototypeRoadmap",
+      "environment_lock": "Repository-local phase fixtures, validator, and module current through 2026-07-15; real-program campaign not run.",
+      "artifact_digest": null,
+      "evaluator_identity": "Repository-local; independent teams, reviewers, institutions, infrastructures, and transfer programs required."
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "prototype-roadmap",
+      "next_unblocking_condition": "Run a prospectively frozen natural multi-phase program against matched ordinary baselines with adversarial dependencies, causal ablations, complete outcomes and costs, effect-complete rollback, independent reproduction, and transfer."
+    },
+    "non_claims": [
+      "No roadmap, milestone, dashboard, phase record, fixture, theorem, validator, build, or useful demo establishes phase completion, capability, governance effectiveness, safety, deployment, transfer, AGI, ASI, or SOTA.",
+      "No real phase completion, deployed controller, natural matched program, independent reproduction, or transfer exists.",
+      "The argument-exit campaign is future work, not a result."
+    ]
+  },
+  "atom_reviews": {
+    "prototype-roadmap.core": {
+      "current_disposition": "retain_distinct_evidence_gated_phase_unlock_contract_owner_at_argument",
+      "strongest_counterclaim": "Ordinary competent program management matches the benefits with less burden.",
+      "falsifier": "Natural matched programs show no benefit, unacceptable false blocking or cost, persistent theater, ineffective rollback, or no reproduction and transfer.",
+      "promotion_ceiling": "argument_until_independently_reproduced_natural_matched_multi_phase_campaign"
+    }
+  },
+  "prose_candidate_dispositions": {
+    "prototype-roadmap.prose.a709183e1c59": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.524cc87c97cf": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.ccd828e9aad8": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.1e89d9ab5ce6": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.52bf92c8a585": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.de8adfa00b5d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.a71e9425c116": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.f00211866332": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.ee6f20502c43": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.d9dd84943348": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.694f57ef0c30": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.b9570474cbfb": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.9a9ed162b313": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.69be92988c00": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.42a3b3cdf756": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.1173921f10f5": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.efedb41f9e6b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.0e8c79146339": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.178bd84d7603": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.2612bf69617a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.63af9d7379c0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.565e1984c7f7": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.ad78f55d6c11": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.5a09fa0ddc5c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.822efeb50a0a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.44faf1779dec": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.dcbfbefd1b83": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.22f712a25f60": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.0194bbac192c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.15b1cd698ce1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.54e7ea167356": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.527388653062": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.c19400d87d6a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.909a9fb666f0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.d0fa6a65e87c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.3e00d0aa4fc3": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.74b6f5485b90": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.446ccb3ed90e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.8c99955b0175": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.98a75c05ea32": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.5791b58ecfae": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as the terminal-record preservation obligation already atomized by the beyond-SOTA campaign.",
+      "target_atom_id": "prototype-roadmap.beyond_sota.001"
+    },
+    "prototype-roadmap.prose.d8333eaea430": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.03891f94ed19": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.5ac2eb4ee393": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.21c799165189": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.a5d371c245fc": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.db72468e0441": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.b5c569f54bda": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    },
+    "prototype-roadmap.prose.b144a98569f0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+    }
+  ,
+    "prototype-roadmap.prose.1041079763fc": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as the same bounded failure explanation under clarified ownership wording."
+    },
+    "prototype-roadmap.prose.4cd3d2f0d40b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped reader explanation already governed by structured chapter atoms; it adds no independent material claim."
+    },
+    "prototype-roadmap.prose.ea792c82590e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped reader explanation already governed by structured chapter atoms; it adds no independent material claim."
+    }
+  },
+  "prose_review_lineage": [
+    {
+      "retired_candidate_id": "prototype-roadmap.prose.e1f131c542a6",
+      "retired_source": "chapters/prototype-roadmap.qmd:197",
+      "retired_sentence": "A polished schedule or demo that cannot expose those records has failed the chapter's core contract even if it ships useful work.",
+      "preserved_disposition": {
+        "state": "nonmaterial_explanation",
+        "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
+      },
+      "retirement_reason": "The reader-facing ownership sentence was clarified without changing its adjudicated meaning; the old sentence hash is no longer current prose.",
+      "replacement_candidate_ids": [
+        "prototype-roadmap.prose.1041079763fc"
+      ],
+      "recorded_on": "2026-07-15"
+    }
+  ],
+  "non_claims": [
+    "The chapter core remains argument and its support-state effect is none.",
+    "No phase has been accepted or completed by this sweep.",
+    "Formal declarations enforce finite record boundaries and do not prove program outcomes.",
+    "External sources are comparators and do not certify the roadmap."
+  ]
+}

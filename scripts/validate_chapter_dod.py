@@ -151,7 +151,7 @@ SECTION_REQUIRED_PATTERNS = {
         (
             "not current result",
             re.compile(
-                r"\b(target architecture|not a current|remains a target|support should stay|support state|until|not a current-result claim)\b",
+                r"\b(target architecture|not a current|remains a target|research target|falsifiable research program|not evidence|no such campaign(?: has)? passed|no current|current evidence|current repository proves only|remains (?:at|an) argument|support should stay|support state|until|not a current-result claim)\b",
                 re.IGNORECASE,
             ),
         ),

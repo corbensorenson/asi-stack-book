@@ -12,7 +12,7 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TARGET_ARTIFACT = ROOT / "experiments" / "receipt_repository_audit" / "results" / "2026-07-04-challenge.json"
+TARGET_ARTIFACT = ROOT / "experiments" / "artifact_graph_record_reality_sequence" / "results" / "2026-07-04-local.json"
 RESULT = ROOT / "experiments" / "artifact_live_attestation" / "results" / "2026-07-04-local.json"
 DOC = ROOT / "docs" / "artifact_live_attestation_probe.md"
 ARTIFACT_CHAPTER = ROOT / "chapters" / "artifact-graphs-audit-logs-and-replay.qmd"
@@ -32,13 +32,13 @@ LEDGER_JSON = ROOT / "docs" / "contribution_novelty_ledger.json"
 TRANSITION = ROOT / "evidence_transitions" / "v1_x_measured" / "artifact_live_attestation_no_change.json"
 VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 BOOK_STRUCTURE = ROOT / "book_structure.json"
-LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ArtifactGraph.lean"
+LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ArtifactRealityRefinement.lean"
 
 COMMAND = "python3 scripts/validate_artifact_live_attestation_probe.py"
-TARGET_COMMAND = "python3 scripts/validate_receipt_repository_challenge.py"
+TARGET_COMMAND = "python3 scripts/validate_artifact_graph_record_reality_sequence.py"
 RESULT_ID = "artifact-live-attestation-probe-2026-07-04"
 CODEX_TEST_NAME = "Artifact live attestation probe"
-LEAN_THEOREM = "artifact_live_attestation_probe_bridge"
+LEAN_THEOREM = "reality_review_requires_observed_artifact"
 
 
 def rel(path: Path) -> str:
@@ -413,7 +413,7 @@ def build_expected(errors: list[str]) -> dict[str, Any]:
         "mutation_controls": controls,
         "trace_summary": summary,
         "lean_fixture_alignment": {
-            "module": "AsiStackProofs.ArtifactGraph",
+            "module": "AsiStackProofs.ArtifactRealityRefinement",
             "theorem_refs": [LEAN_THEOREM],
             "expected": summary,
         },
@@ -509,7 +509,7 @@ def validate_surfaces(errors: list[str]) -> None:
                 "Implemented live artifact attestation probe",
                 COMMAND,
                 rel(RESULT),
-                LEAN_THEOREM,
+                "AsiStackProofs.ArtifactRealityRefinement",
             ],
         ),
         rel(ROADMAP): (
@@ -548,8 +548,8 @@ def validate_surfaces(errors: list[str]) -> None:
         rel(LEAN_FILE): (
             LEAN_FILE,
             [
-                "ArtifactLiveAttestationSummary",
-                "artifactLiveAttestationSummary",
+                "observedArtifactPresent",
+                "independentCrossCheckMatched",
                 LEAN_THEOREM,
             ],
         ),
@@ -613,13 +613,11 @@ def validate_book_structure(errors: list[str]) -> None:
 def validate_lean_shape(errors: list[str]) -> None:
     text = LEAN_FILE.read_text(encoding="utf-8")
     for fragment in (
-        "ArtifactLiveAttestationSummary",
-        "artifactLiveAttestationSummary",
-        "ArtifactLiveAttestationValid",
         LEAN_THEOREM,
-        "filesystemDigestMatchesTarget",
-        "gitBlobDigestMatchesTarget",
-        "sameComponentSelfCheckRejected",
+        "contentDigest",
+        "observedArtifactPresent",
+        "independentCrossCheckMatched",
+        "trapChallengePassed",
     ):
         if fragment not in text:
             errors.append(f"{rel(LEAN_FILE)} missing {fragment}.")

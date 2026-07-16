@@ -16,14 +16,6 @@ deriving DecidableEq, Repr
 def GroundedNodeHasProvenance (record : SemanticNodeRecord) : Prop :=
   record.groundingState = GroundingState.grounded -> record.provenanceLinkCount > 0
 
-theorem grounded_semantic_node_has_provenance_link
-    {record : SemanticNodeRecord} :
-    GroundedNodeHasProvenance record ->
-    record.groundingState = GroundingState.grounded ->
-    record.provenanceLinkCount > 0 := by
-  intro valid grounded
-  exact valid grounded
-
 theorem grounded_semantic_node_without_provenance_rejected
     {record : SemanticNodeRecord} :
     record.groundingState = GroundingState.grounded ->
@@ -45,14 +37,6 @@ def HierarchyUpdateAccounted (record : HierarchyUpdateRecord) : Prop :=
 
 def HierarchyUpdateValid (record : HierarchyUpdateRecord) : Prop :=
   record.updateApplied = true -> HierarchyUpdateAccounted record
-
-theorem hierarchy_update_preserves_references_or_records_supersession
-    {record : HierarchyUpdateRecord} :
-    HierarchyUpdateValid record ->
-    record.updateApplied = true ->
-    record.priorReferencesPreserved = true ∨ record.supersessionRecorded = true := by
-  intro valid applied
-  exact valid applied
 
 theorem hierarchy_update_without_references_or_supersession_rejected
     {record : HierarchyUpdateRecord} :

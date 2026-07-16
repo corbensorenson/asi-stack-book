@@ -1,0 +1,1744 @@
+#!/usr/bin/env python3
+"""Validate the active claim-proof and SOTA-challenge successor authority."""
+
+from __future__ import annotations
+
+import copy
+import json
+import re
+import subprocess
+from pathlib import Path
+
+import jsonschema
+
+
+ROOT = Path(__file__).resolve().parents[1]
+ROADMAP = "docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md"
+STATUS = "roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json"
+SCHEMA = "schemas/post_v2_3_claim_proof_and_sota_challenge_status.schema.json"
+X_ARTICLE_CONTRACT = "docs/x_article_synopsis_contract.md"
+SAFETY_CONSUMER_RESULT = "experiments/safety_critical_lifecycle/results/2026-07-15-consumer-local.json"
+SAFETY_CONSUMER_TRACE = "docs/safety_critical_lifecycle_consumer_trace.md"
+SAFETY_MODEL_DOSSIER = "evidence_quality/model_adequacy_dossiers/safety-critical-lifecycle.md"
+ABI_RESULT = "experiments/cognitive_kernel_abi/results/2026-07-15-local.json"
+ABI_TRACE = "docs/cognitive_kernel_abi_trace.md"
+ABI_MODEL_DOSSIER = "evidence_quality/model_adequacy_dossiers/cognitive-kernel-abi.md"
+INTEGRATED_TRACE_RESULT = "experiments/integrated_reference_trace/results/2026-07-15-local.json"
+INTEGRATED_TRACE_RECEIPT = "docs/integrated_reference_trace_consumer.md"
+INTEGRATED_TRACE_DOSSIER = "evidence_quality/model_adequacy_dossiers/integrated-reference-trace.md"
+INTEGRATED_REFINEMENT_RESULT = "experiments/integrated_reference_trace/results/2026-07-15-runtime-schema-refinement.json"
+INTEGRATED_REFINEMENT_SCHEMA = "schemas/integrated_runtime_schema_refinement.schema.json"
+CONCURRENT_EFFECT_RESULT = "experiments/integrated_reference_trace/results/2026-07-15-concurrent-effect-ledger.json"
+CONCURRENT_EFFECT_RECEIPT = "docs/concurrent_effect_ledger_consumer.md"
+STACK_BOUNDARY_RESULT = "experiments/stack_boundary_effect/results/2026-07-15-local.json"
+STACK_BOUNDARY_RECEIPT = "docs/stack_boundary_effect_consumer.md"
+STACK_BOUNDARY_DOSSIER = "evidence_quality/model_adequacy_dossiers/stack-boundary-effect.md"
+INTENT_EXECUTION_RESULT = "experiments/intent_execution_vertical_refinement/results/2026-07-15-local.json"
+INTENT_EXECUTION_RECEIPT = "docs/intent_execution_vertical_refinement.md"
+INTENT_EXECUTION_DOSSIER = "evidence_quality/model_adequacy_dossiers/intent-execution-vertical-refinement.md"
+AUTHORITY_EFFECT_RESULT = "experiments/authority_effect_refinement/results/2026-07-15-local.json"
+AUTHORITY_EFFECT_RECEIPT = "docs/authority_effect_refinement.md"
+AUTHORITY_EFFECT_DOSSIER = "evidence_quality/model_adequacy_dossiers/authority-effect-refinement.md"
+INTENT_RESOLUTION_RESULT = "experiments/intent_resolution_refinement/results/2026-07-15-local.json"
+INTENT_RESOLUTION_RECEIPT = "docs/intent_resolution_refinement.md"
+INTENT_RESOLUTION_DOSSIER = "evidence_quality/model_adequacy_dossiers/intent-resolution-refinement.md"
+COMMAND_SEMANTIC_RESULT = "experiments/command_semantic_refinement/results/2026-07-15-local.json"
+COMMAND_SEMANTIC_RECEIPT = "docs/command_semantic_refinement.md"
+COMMAND_SEMANTIC_DOSSIER = "evidence_quality/model_adequacy_dossiers/command-semantic-refinement.md"
+COGNITIVE_COMPILATION_RESULT = "experiments/cognitive_compilation_refinement/results/2026-07-15-local.json"
+COGNITIVE_COMPILATION_RECEIPT = "docs/cognitive_compilation_refinement.md"
+COGNITIVE_COMPILATION_DOSSIER = "evidence_quality/model_adequacy_dossiers/cognitive-compilation-refinement.md"
+VIRTUAL_CONTEXT_RESULT = "experiments/virtual_context_refinement/results/2026-07-15-local.json"
+VIRTUAL_CONTEXT_RECEIPT = "docs/virtual_context_refinement.md"
+VIRTUAL_CONTEXT_DOSSIER = "evidence_quality/model_adequacy_dossiers/virtual-context-refinement.md"
+CONTEXT_CERTIFICATE_RESULT = "experiments/context_certificate_refinement/results/2026-07-15-local.json"
+CONTEXT_CERTIFICATE_RECEIPT = "docs/context_certificate_refinement.md"
+CONTEXT_CERTIFICATE_DOSSIER = "evidence_quality/model_adequacy_dossiers/context-certificate-refinement.md"
+CONTEXT_TRANSACTION_RESULT = "experiments/context_transaction_refinement/results/2026-07-15-local.json"
+CONTEXT_TRANSACTION_RECEIPT = "docs/context_transaction_refinement.md"
+CONTEXT_TRANSACTION_DOSSIER = "evidence_quality/model_adequacy_dossiers/context-transaction-refinement.md"
+VERIFICATION_BANDWIDTH_RESULT = "experiments/verification_bandwidth_refinement/results/2026-07-15-local.json"
+VERIFICATION_BANDWIDTH_RECEIPT = "docs/verification_bandwidth_refinement.md"
+VERIFICATION_BANDWIDTH_DOSSIER = "evidence_quality/model_adequacy_dossiers/verification-bandwidth-refinement.md"
+CLAIM_LEDGER_RESULT = "experiments/claim_ledger_refinement/results/2026-07-15-local.json"
+CLAIM_LEDGER_RECEIPT = "docs/claim_ledger_refinement.md"
+CLAIM_LEDGER_DOSSIER = "evidence_quality/model_adequacy_dossiers/claim-ledger-refinement.md"
+PROOF_CARRYING_CLAIMS_RESULT = "experiments/proof_carrying_claims_refinement/results/2026-07-15-local.json"
+PROOF_CARRYING_CLAIMS_RECEIPT = "docs/proof_carrying_claims_refinement.md"
+PROOF_CARRYING_CLAIMS_DOSSIER = "evidence_quality/model_adequacy_dossiers/proof-carrying-claims-refinement.md"
+TRIBUNAL_RESULT = "experiments/tribunal_refinement/results/2026-07-15-local.json"
+TRIBUNAL_RECEIPT = "docs/tribunal_refinement.md"
+TRIBUNAL_DOSSIER = "evidence_quality/model_adequacy_dossiers/tribunal-refinement.md"
+TYPED_JOB_RESULT = "experiments/typed_job_refinement/results/2026-07-15-local.json"
+TYPED_JOB_RECEIPT = "docs/typed_job_refinement.md"
+TYPED_JOB_DOSSIER = "evidence_quality/model_adequacy_dossiers/typed-job-refinement.md"
+ARTIFACT_REALITY_RESULT = "experiments/artifact_reality_refinement/results/2026-07-15-local.json"
+ARTIFACT_REALITY_RECEIPT = "docs/artifact_reality_refinement.md"
+ARTIFACT_REALITY_DOSSIER = "evidence_quality/model_adequacy_dossiers/artifact-reality-refinement.md"
+PROCEDURAL_MEMORY_RESULT = "experiments/procedural_memory_refinement/results/2026-07-15-local.json"
+PROCEDURAL_MEMORY_RECEIPT = "docs/procedural_memory_refinement.md"
+PROCEDURAL_MEMORY_DOSSIER = "evidence_quality/model_adequacy_dossiers/procedural-memory-refinement.md"
+ROUTING_RESULT = "experiments/routing_refinement/results/2026-07-15-local.json"
+ROUTING_RECEIPT = "docs/routing_refinement.md"
+ROUTING_DOSSIER = "evidence_quality/model_adequacy_dossiers/routing-refinement.md"
+READINESS_RESULT = "experiments/readiness_refinement/results/2026-07-15-local.json"
+READINESS_RECEIPT = "docs/readiness_refinement.md"
+READINESS_DOSSIER = "evidence_quality/model_adequacy_dossiers/readiness-refinement.md"
+HIVE_RESULT = "experiments/hive_lifecycle_refinement/results/2026-07-15-local.json"
+HIVE_RECEIPT = "docs/hive_lifecycle_refinement.md"
+HIVE_DOSSIER = "evidence_quality/model_adequacy_dossiers/hive-lifecycle-refinement.md"
+COMPACT_GENERATION_RESULT = "experiments/compact_generation_refinement/results/2026-07-15-local.json"
+COMPACT_GENERATION_RECEIPT = "docs/compact_generation_refinement.md"
+COMPACT_GENERATION_DOSSIER = "evidence_quality/model_adequacy_dossiers/compact-generation-refinement.md"
+FAST_GENERATION_RESULT = "experiments/fast_generation_refinement/results/2026-07-15-local.json"
+FAST_GENERATION_RECEIPT = "docs/fast_generation_refinement.md"
+FAST_GENERATION_DOSSIER = "evidence_quality/model_adequacy_dossiers/fast-generation-refinement.md"
+DELIBERATION_RESULT = "experiments/deliberation_refinement/results/2026-07-15-local.json"
+DELIBERATION_RECEIPT = "docs/deliberation_refinement.md"
+DELIBERATION_DOSSIER = "evidence_quality/model_adequacy_dossiers/deliberation-refinement.md"
+ARTIFACT_COMPRESSION_RESULT = "experiments/artifact_compression_refinement/results/2026-07-15-local.json"
+ARTIFACT_COMPRESSION_RECEIPT = "docs/artifact_compression_refinement.md"
+ARTIFACT_COMPRESSION_DOSSIER = "evidence_quality/model_adequacy_dossiers/artifact-compression-refinement.md"
+RESOURCE_ECONOMICS_RESULT = "experiments/resource_economics_refinement/results/2026-07-15-local.json"
+RESOURCE_ECONOMICS_RECEIPT = "docs/resource_economics_refinement.md"
+RESOURCE_ECONOMICS_DOSSIER = "evidence_quality/model_adequacy_dossiers/resource-economics-refinement.md"
+PREDECESSOR = "docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md"
+PREDECESSOR_STATUS = "roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json"
+ACTIVE_MARKER = "Status: active canonical successor roadmap; unfinished work only"
+PUBLIC_SURFACES = ["README.md", "index.qmd", "docs/publication_readiness.md", "docs/public_status_contract.md"]
+REQUIRED_SECTIONS = [
+    "## Goal to point at",
+    "## Why this successor is necessary",
+    "## Claude critique adjudication",
+    "## Proof constitution",
+    "## Operating principles",
+    "## Execution board",
+    "## P0 — Proof authority and continuity",
+    "## P1 — Complete claim decomposition",
+    "## P2 — Existing-proof rationalization, formal semantics, and refinement",
+    "## P3 — Executable integrated reference architecture",
+    "## P4 — Signature causal campaigns",
+    "## P5 — Full claim-family evidence program",
+    "## P6 — External reproduction and SOTA challenge",
+    "## P7 — Book-wide evidence integration",
+    "## P8 — Reader release and terminal evidence freeze",
+    "## P9 — Maintained X Article synopsis and 5:2 header",
+    "## Milestones",
+    "## Definition of done",
+    "## Canonical execution prompt",
+    "## Non-claims at activation",
+]
+REQUIRED_BOUNDARIES = [
+    "The target is not to label every sentence “proved.”",
+    "Semantic adequacy before theorem count",
+    "A third unchanged rerun of a diagnosed failed protocol is forbidden.",
+    "No book-wide or architecture-wide “beyond state of the art” claim is permitted from one benchmark.",
+    "External-human prepublication review or outreach is not required or claimed.",
+    "one and only one active successor roadmap exists before this roadmap's status changes to completed",
+    "Validation, theorem, source, citation, format, commit, and release counts are not semantic or empirical proof.",
+    "Argument is a launch state, not a refuge.",
+    "audit all 1,151 activation-baseline theorem declarations and all 298 proof targets",
+    "9,999 words or fewer",
+    "2000×800 pixel",
+    "Creating repository artifacts does not authorize an external post.",
+]
+
+
+def load(path: str) -> object:
+    return json.loads((ROOT / path).read_text(encoding="utf-8"))
+
+
+def text(path: str) -> str:
+    return (ROOT / path).read_text(encoding="utf-8", errors="ignore")
+
+
+def chapters(structure: dict) -> list[dict]:
+    return [chapter for part in structure.get("parts", []) for chapter in part.get("chapters", [])]
+
+
+def active_roadmaps() -> list[str]:
+    return [
+        path.relative_to(ROOT).as_posix()
+        for path in sorted((ROOT / "docs").glob("*roadmap*.md"))
+        if ACTIVE_MARKER in path.read_text(encoding="utf-8", errors="ignore")[:1600]
+    ]
+
+
+def table_metric(body: str, label: str) -> int | None:
+    match = re.search(rf"\|\s*{re.escape(label)}\s*\|\s*([0-9,]+)\s*\|", body)
+    return int(match.group(1).replace(",", "")) if match else None
+
+
+def snapshot() -> dict:
+    return {
+        "status": load(STATUS),
+        "schema": load(SCHEMA),
+        "roadmap": text(ROADMAP),
+        "x_article_contract": text(X_ARTICLE_CONTRACT),
+        "predecessor": text(PREDECESSOR),
+        "predecessor_status": load(PREDECESSOR_STATUS),
+        "structure": load("book_structure.json"),
+        "sources": load("sources/source_inventory.json"),
+        "structural_expansion_atoms": load("evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json"),
+        "claim_atom_registry": load("evidence_quality/claim_atom_registry.json"),
+        "wip_checkpoint_inventory": load("roadmap_records/post_v2_3_wip_checkpoint_inventory.json"),
+        "vectors": load("evidence_quality/core_claim_vectors.json"),
+        "proof_depth": text("docs/proof_depth_classification.md"),
+        "proof_adequacy": text("docs/proof_adequacy_review.md"),
+        "safety_consumer_result": load(SAFETY_CONSUMER_RESULT),
+        "safety_consumer_trace": text(SAFETY_CONSUMER_TRACE),
+        "safety_model_dossier": text(SAFETY_MODEL_DOSSIER),
+        "abi_result": load(ABI_RESULT),
+        "abi_trace": text(ABI_TRACE),
+        "abi_model_dossier": text(ABI_MODEL_DOSSIER),
+        "integrated_trace_result": load(INTEGRATED_TRACE_RESULT),
+        "integrated_trace_receipt": text(INTEGRATED_TRACE_RECEIPT),
+        "integrated_trace_dossier": text(INTEGRATED_TRACE_DOSSIER),
+        "integrated_refinement_result": load(INTEGRATED_REFINEMENT_RESULT),
+        "concurrent_effect_result": load(CONCURRENT_EFFECT_RESULT),
+        "concurrent_effect_receipt": text(CONCURRENT_EFFECT_RECEIPT),
+        "stack_boundary_result": load(STACK_BOUNDARY_RESULT),
+        "stack_boundary_receipt": text(STACK_BOUNDARY_RECEIPT),
+        "stack_boundary_dossier": text(STACK_BOUNDARY_DOSSIER),
+        "intent_execution_result": load(INTENT_EXECUTION_RESULT),
+        "intent_execution_receipt": text(INTENT_EXECUTION_RECEIPT),
+        "intent_execution_dossier": text(INTENT_EXECUTION_DOSSIER),
+        "authority_effect_result": load(AUTHORITY_EFFECT_RESULT),
+        "authority_effect_receipt": text(AUTHORITY_EFFECT_RECEIPT),
+        "authority_effect_dossier": text(AUTHORITY_EFFECT_DOSSIER),
+        "intent_resolution_result": load(INTENT_RESOLUTION_RESULT),
+        "intent_resolution_receipt": text(INTENT_RESOLUTION_RECEIPT),
+        "intent_resolution_dossier": text(INTENT_RESOLUTION_DOSSIER),
+        "command_semantic_result": load(COMMAND_SEMANTIC_RESULT),
+        "command_semantic_receipt": text(COMMAND_SEMANTIC_RECEIPT),
+        "command_semantic_dossier": text(COMMAND_SEMANTIC_DOSSIER),
+        "cognitive_compilation_result": load(COGNITIVE_COMPILATION_RESULT),
+        "cognitive_compilation_receipt": text(COGNITIVE_COMPILATION_RECEIPT),
+        "cognitive_compilation_dossier": text(COGNITIVE_COMPILATION_DOSSIER),
+        "virtual_context_result": load(VIRTUAL_CONTEXT_RESULT),
+        "virtual_context_receipt": text(VIRTUAL_CONTEXT_RECEIPT),
+        "virtual_context_dossier": text(VIRTUAL_CONTEXT_DOSSIER),
+        "context_certificate_result": load(CONTEXT_CERTIFICATE_RESULT),
+        "context_certificate_receipt": text(CONTEXT_CERTIFICATE_RECEIPT),
+        "context_certificate_dossier": text(CONTEXT_CERTIFICATE_DOSSIER),
+        "context_transaction_result": load(CONTEXT_TRANSACTION_RESULT),
+        "context_transaction_receipt": text(CONTEXT_TRANSACTION_RECEIPT),
+        "context_transaction_dossier": text(CONTEXT_TRANSACTION_DOSSIER),
+        "verification_bandwidth_result": load(VERIFICATION_BANDWIDTH_RESULT),
+        "verification_bandwidth_receipt": text(VERIFICATION_BANDWIDTH_RECEIPT),
+        "verification_bandwidth_dossier": text(VERIFICATION_BANDWIDTH_DOSSIER),
+        "claim_ledger_result": load(CLAIM_LEDGER_RESULT),
+        "claim_ledger_receipt": text(CLAIM_LEDGER_RECEIPT),
+        "claim_ledger_dossier": text(CLAIM_LEDGER_DOSSIER),
+        "proof_carrying_claims_result": load(PROOF_CARRYING_CLAIMS_RESULT),
+        "proof_carrying_claims_receipt": text(PROOF_CARRYING_CLAIMS_RECEIPT),
+        "proof_carrying_claims_dossier": text(PROOF_CARRYING_CLAIMS_DOSSIER),
+        "tribunal_result": load(TRIBUNAL_RESULT),
+        "tribunal_receipt": text(TRIBUNAL_RECEIPT),
+        "tribunal_dossier": text(TRIBUNAL_DOSSIER),
+        "typed_job_result": load(TYPED_JOB_RESULT),
+        "typed_job_receipt": text(TYPED_JOB_RECEIPT),
+        "typed_job_dossier": text(TYPED_JOB_DOSSIER),
+        "artifact_reality_result": load(ARTIFACT_REALITY_RESULT),
+        "artifact_reality_receipt": text(ARTIFACT_REALITY_RECEIPT),
+        "artifact_reality_dossier": text(ARTIFACT_REALITY_DOSSIER),
+        "procedural_memory_result": load(PROCEDURAL_MEMORY_RESULT),
+        "procedural_memory_receipt": text(PROCEDURAL_MEMORY_RECEIPT),
+        "procedural_memory_dossier": text(PROCEDURAL_MEMORY_DOSSIER),
+        "routing_result": load(ROUTING_RESULT),
+        "routing_receipt": text(ROUTING_RECEIPT),
+        "routing_dossier": text(ROUTING_DOSSIER),
+        "readiness_result": load(READINESS_RESULT),
+        "readiness_receipt": text(READINESS_RECEIPT),
+        "readiness_dossier": text(READINESS_DOSSIER),
+        "hive_result": load(HIVE_RESULT),
+        "hive_receipt": text(HIVE_RECEIPT),
+        "hive_dossier": text(HIVE_DOSSIER),
+        "compact_generation_result": load(COMPACT_GENERATION_RESULT),
+        "compact_generation_receipt": text(COMPACT_GENERATION_RECEIPT),
+        "compact_generation_dossier": text(COMPACT_GENERATION_DOSSIER),
+        "fast_generation_result": load(FAST_GENERATION_RESULT),
+        "fast_generation_receipt": text(FAST_GENERATION_RECEIPT),
+        "fast_generation_dossier": text(FAST_GENERATION_DOSSIER),
+        "deliberation_result": load(DELIBERATION_RESULT),
+        "deliberation_receipt": text(DELIBERATION_RECEIPT),
+        "deliberation_dossier": text(DELIBERATION_DOSSIER),
+        "artifact_compression_result": load(ARTIFACT_COMPRESSION_RESULT),
+        "artifact_compression_receipt": text(ARTIFACT_COMPRESSION_RECEIPT),
+        "artifact_compression_dossier": text(ARTIFACT_COMPRESSION_DOSSIER),
+        "resource_economics_result": load(RESOURCE_ECONOMICS_RESULT),
+        "resource_economics_receipt": text(RESOURCE_ECONOMICS_RECEIPT),
+        "resource_economics_dossier": text(RESOURCE_ECONOMICS_DOSSIER),
+        "registry": load("validation/registry.json"),
+        "flagship": load("experiments/post_v2_3_evidence_protocol_renewal/flagship/results/adjudication.json"),
+        "reader_html": load("editions/reader_manuscript/v2_0/reader_release_record.json"),
+        "reader_docx": load("editions/reader_manuscript/v2_0/docx_disposition.json"),
+        "reader_epub": load("editions/reader_manuscript/v2_0/epub_disposition.json"),
+        "reader_pdf": load("editions/reader_manuscript/v2_0/pdf_disposition.json"),
+        "workflow": text("docs/living_update_workflow.md"),
+        "master": text("prompts/MASTER_CODEX_PROMPT.md"),
+        "outline": text("docs/book_outline.md"),
+        "changelog": text("appendices/F_changelog.qmd"),
+        "public": {path: text(path) for path in PUBLIC_SURFACES},
+        "active_roadmaps": active_roadmaps(),
+    }
+
+
+def errors(data: dict) -> list[str]:
+    out: list[str] = []
+    status = data["status"]
+    try:
+        jsonschema.Draft202012Validator(data["schema"]).validate(status)
+    except jsonschema.ValidationError as exc:
+        out.append(f"status schema: {exc.message}")
+
+    if status.get("status") != "active":
+        out.append("roadmap must remain active until terminal closure and successor activation")
+    if data["active_roadmaps"] != [ROADMAP]:
+        out.append("there must be exactly one active canonical roadmap and it must be this successor")
+    if status.get("predecessor", {}).get("path") != PREDECESSOR or data["predecessor_status"].get("status") != "completed":
+        out.append("completed predecessor authority is absent or drifted")
+    if "Status: completed 2026-07-14; no active successor" not in data["predecessor"]:
+        out.append("predecessor historical completion text drifted")
+
+    structure_rows = chapters(data["structure"])
+    chapter_ids = [row.get("id") for row in structure_rows]
+    source_rows = data["sources"] if isinstance(data["sources"], list) else data["sources"].get("sources", [])
+    program = status.get("chapter_claim_program", [])
+    program_ids = [row.get("chapter_id") for row in program]
+    if len(chapter_ids) != 55 or program_ids != chapter_ids:
+        out.append("the live machine proof program must cover all 55 manifest chapters once and in order")
+    if len(set(program_ids)) != 55:
+        out.append("chapter proof-program ownership is missing or duplicated")
+    for row in program:
+        if row.get("claim_id") != f"{row.get('chapter_id')}.core":
+            out.append(f"{row.get('chapter_id')}: core claim identity drifted")
+    family_ids = [row.get("id") for row in status.get("claim_families", [])]
+    if family_ids != [f"CF-{index:02d}" for index in range(1, 9)]:
+        out.append("claim-family order must be CF-01 through CF-08")
+    if set(row.get("family_id") for row in program) != set(family_ids):
+        out.append("every claim family must own at least one chapter and no unknown family may appear")
+
+    remediation = status.get("latest_review_remediation_contract", {})
+    expected_remediation = {
+        "state": "installed",
+        "review_kind": "claude_claim_proof_cycle_review",
+        "wip_changed_path_soft_limit": 250,
+        "wip_independent_work_package_limit": 3,
+        "scope_expansion_blocked_above_limit": True,
+        "checkpoint_inventory_required": True,
+        "checkpoint_inventory_path": "roadmap_records/post_v2_3_wip_checkpoint_inventory.json",
+        "checkpoint_inventory_state": "active_scope_expansion_blocked",
+        "commit_requires_explicit_authorization": True,
+        "no_commit_authority_disposition": "checkpoint_blocked_no_commit_authority",
+        "first_campaign_minimum_terminal_atom_count": 3,
+        "first_campaign_promotion_required": False,
+        "broad_p5_expansion_blocked_until_batch_terminal": True,
+        "p6_claim_atoms_frozen_before_run": True,
+        "p6_dated_comparator_ledger_required_before_run": True,
+        "p6_reproduction_range_frozen_before_comparison": True,
+        "p6_onecell_defeat_prediction_required_before_run": True,
+        "support_state_effect": "none",
+        "release_effect": "none",
+    }
+    for key, value in expected_remediation.items():
+        if remediation.get(key) != value:
+            out.append(f"latest-review remediation drifted: {key}")
+    expected_first_atoms = [
+        "circle-calculus-and-proof-carrying-ai-contracts.mechanism.003",
+        "system-boundaries-and-authority.invariant.001",
+        "capability-replacement-and-rollback.invariant.011",
+    ]
+    if remediation.get("first_campaign_atom_ids") != expected_first_atoms:
+        out.append("latest-review first campaign batch drifted")
+    registered_atom_ids = {row.get("atom_id") for row in data["claim_atom_registry"].get("atoms", [])}
+    if not set(expected_first_atoms).issubset(registered_atom_ids):
+        out.append("latest-review first campaign batch contains an unregistered atom")
+    wip = data["wip_checkpoint_inventory"]
+    current_changed_paths = len(subprocess.run(
+        ["git", "status", "--porcelain=v1", "-uall"],
+        cwd=ROOT,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=True,
+    ).stdout.splitlines())
+    if wip.get("changed_path_count") != current_changed_paths:
+        out.append(f"WIP checkpoint inventory stale: {wip.get('changed_path_count')} != {current_changed_paths}")
+    if wip.get("base_commit") != "5eddb15d56b0c813666ed2b2ea41e7c87f1cf297":
+        out.append("WIP checkpoint base commit drifted")
+    if wip.get("independent_work_package_count") != len(wip.get("packages", [])) or len(wip.get("packages", [])) != 5:
+        out.append("WIP checkpoint package inventory drifted")
+    if current_changed_paths <= 250 or wip.get("threshold_exceeded") is not True or wip.get("scope_expansion_blocked") is not True:
+        out.append("oversized WIP did not block scope expansion")
+    if wip.get("commit_authorized") is True:
+        if wip.get("checkpoint_disposition") != "checkpoint_authorized_local_commit_only":
+            out.append("authorized WIP checkpoint has the wrong disposition")
+        if "user-authored goal" not in str(wip.get("authorization_basis", "")):
+            out.append("authorized WIP checkpoint lacks an explicit user-authority basis")
+        scope = str(wip.get("authorization_scope", "")).lower()
+        for forbidden in ("no push", "no push, tag, deploy", "no push, tag, deploy, external publication"):
+            if forbidden in scope:
+                break
+        else:
+            out.append("authorized WIP checkpoint lacks a bounded no-push/no-publication scope")
+    elif wip.get("checkpoint_disposition") != "checkpoint_blocked_no_commit_authority":
+        out.append("unauthorized WIP checkpoint has the wrong blocked disposition")
+    if wip.get("support_state_effect") != "none" or wip.get("release_effect") != "none":
+        out.append("WIP checkpoint invented support or release effect")
+
+    vectors = data["vectors"].get("vectors", [])
+    summary = data["vectors"].get("summary", {})
+    registry_units = data["registry"].get("units", [])
+    exact_contracts = sum(row.get("contract_precision") == "exact_high_impact" for row in registry_units)
+    baseline = status.get("activation_baseline", {})
+    expected = {
+        "head_commit": "5eddb15d56b0c813666ed2b2ea41e7c87f1cf297",
+        "latest_public_living_book_release": "v2.3.0",
+        "active_chapter_count": 54,
+        "public_safe_source_count": 287,
+        "core_claim_count": 54,
+        "core_argument_count": 54,
+        "promoted_core_claim_count": 0,
+        "refuted_core_claim_count": 0,
+        "proof_target_count": 298,
+        "lean_module_count": 65,
+        "theorem_declaration_count": 1151,
+        "direct_or_projection_theorem_count": 187,
+        "derived_or_decomposed_theorem_count": 952,
+        "unknown_or_mixed_theorem_count": 12,
+        "adequate_finite_record_target_count": 13,
+        "useful_but_too_narrow_target_count": 212,
+        "richer_state_machine_needed_target_count": 18,
+        "executable_tests_first_target_count": 35,
+        "empirical_tests_first_target_count": 18,
+        "research_agenda_target_count": 2,
+        "external_positioned_chapter_count": 54,
+        "externally_reproduced_core_claim_count": 0,
+        "internal_only_evidence_vector_count": 54,
+        "claim_scope_unmeasured_vector_count": 54,
+        "transfer_not_established_vector_count": 54,
+        "validation_unit_count": 313,
+        "validation_required_artifact_count": 1352,
+        "exact_high_impact_contract_count": 88,
+    }
+    for key, value in expected.items():
+        if baseline.get(key) != value:
+            out.append(f"activation baseline drifted: {key} expected {value!r}, got {baseline.get(key)!r}")
+    current_units = {row.get("script") for row in registry_units}
+    if "validate_post_v2_3_claim_proof_and_sota_challenge_roadmap.py" not in current_units:
+        out.append("active roadmap validator is absent from the authoritative validation registry")
+    if exact_contracts != 88:
+        out.append("activation must not silently alter the 88 exact high-impact contract baseline")
+    if len(vectors) != 55 or any(row.get("summary_support_state") != "argument" for row in vectors):
+        out.append("live successor must preserve 55 argument-level chapter-core claims while the 54-claim activation baseline stays frozen")
+
+    outcomes = data["flagship"].get("outcomes", {})
+    task_quality = outcomes.get("task_quality", {})
+    governed = outcomes.get("governed", {})
+    baseline_arm = outcomes.get("baseline", {})
+    if (
+        baseline.get("governance_tax_independently_correct_candidate_count"),
+        baseline.get("governance_tax_candidate_count"),
+        baseline.get("governance_tax_baseline_useful_release_count"),
+        baseline.get("governance_tax_governed_useful_release_count"),
+    ) != (
+        task_quality.get("independently_correct"),
+        baseline_arm.get("runs"),
+        baseline_arm.get("useful_releases"),
+        governed.get("useful_releases"),
+    ):
+        out.append("governance-tax activation facts drifted")
+    if data["reader_html"].get("decision") != "approved_exact_local_html_archive" or data["reader_docx"].get("decision") != "approved_exact_local_artifact":
+        out.append("approved exact local HTML/DOCX reader history drifted")
+    if data["reader_epub"].get("decision") != "blocked" or data["reader_pdf"].get("decision") != "blocked":
+        out.append("EPUB/PDF application blockers were erased or laundered")
+
+    priority_ids = [row.get("id") for row in status.get("priorities", [])]
+    milestone_ids = [row.get("id") for row in status.get("milestones", [])]
+    if priority_ids != [f"P{index}" for index in range(10)]:
+        out.append("priority order must be P0 through P9")
+    if milestone_ids != [f"M{index}" for index in range(14)]:
+        out.append("milestone order must be M0 through M13")
+    priority_states = [row.get("state") for row in status.get("priorities", [])]
+    milestone_states = [row.get("state") for row in status.get("milestones", [])]
+    in_progress_priorities = [index for index, state in enumerate(priority_states) if state == "in_progress"]
+    if len(in_progress_priorities) != 1:
+        out.append("exactly one priority must be in progress while the roadmap is active")
+    else:
+        current_index = in_progress_priorities[0]
+        expected_states = ["completed"] * current_index + ["in_progress"] + ["pending"] * (9 - current_index)
+        if priority_states != expected_states or status.get("current_priority") != f"P{current_index}":
+            out.append("priority states and current_priority must form one monotone P0-P9 frontier")
+    if milestone_states.count("in_progress") != 1:
+        out.append("exactly one milestone must be in progress while the roadmap is active")
+    if milestone_states and milestone_states[0] != "completed":
+        out.append("M0 successor activation must remain completed")
+    p1 = status.get("p1_claim_atom_program", {})
+    expansion = status.get("structural_expansion_contract", {})
+    expansion_atoms = data["structural_expansion_atoms"]
+    expansion_chapter = next(
+        (row for row in structure_rows if row.get("id") == "replaceable-cognitive-substrates-beyond-transformer-monoculture"),
+        {},
+    )
+    abi_expected = {
+        "abi_proof_state": "implemented_bounded_finite_model",
+        "abi_lean_model_path": "lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean",
+        "abi_model_adequacy_dossier_path": ABI_MODEL_DOSSIER,
+        "abi_consumer_trace_path": ABI_TRACE,
+        "abi_corpus_path": "experiments/cognitive_kernel_abi/corpus/2026-07-15.json",
+        "abi_result_path": ABI_RESULT,
+        "abi_case_count": 16,
+        "abi_accepted_case_count": 1,
+        "abi_rejected_case_count": 15,
+        "abi_accepted_event_count": 9,
+        "abi_committed_effect_count": 2,
+        "abi_proposal_effect_count": 0,
+        "abi_mutation_rejection_count": 12,
+        "abi_support_state_effect": "none",
+    }
+    abi_result_expected = {
+        "case_count": 16,
+        "accepted_case_count": 1,
+        "rejected_case_count": 15,
+        "accepted_event_count": 9,
+        "committed_effect_count": 2,
+        "proposal_effect_count": 0,
+        "mutation_rejection_count": 12,
+        "support_state_effect": "none",
+    }
+    abi_target = next(
+        (row for row in expansion_chapter.get("proof_targets", []) if row.get("tag") == "lean:cognitive_kernel.abi_trace_invariants"),
+        {},
+    )
+    expansion_complete = (
+        expansion.get("state") == "inserted_source_reviewed_and_atomized"
+        and expansion.get("live_chapter_count") == len(chapter_ids) == 55
+        and expansion.get("assigned_source_count") == 33
+        and expansion.get("atom_count") == len(expansion_atoms.get("atoms", [])) == 15
+        and expansion.get("pending_semantic_review_count") == 0
+        and expansion_atoms.get("summary", {}).get("pending_semantic_review_count") == 0
+        and expansion.get("support_state_effect") == "none"
+        and expansion_atoms.get("support_state_effect") == "none"
+        and all(expansion.get(key) == value for key, value in abi_expected.items())
+        and all(data["abi_result"].get(key) == value for key, value in abi_result_expected.items())
+        and abi_target.get("status") == "implemented"
+        and (ROOT / expansion.get("intake_path", "missing")).exists()
+        and (ROOT / expansion.get("claim_dossier_path", "missing")).exists()
+    )
+    if not expansion_complete:
+        out.append("the accepted 55th chapter must remain inserted, source-reviewed, atomized, bounded-ABI validated, and non-promoted")
+    for phrase in ["Adequacy adjudication", "Executable refinement boundary", "does not establish"]:
+        if phrase.casefold() not in data["abi_model_dossier"].casefold():
+            out.append(f"Cognitive Kernel ABI dossier missing adequacy boundary: {phrase}")
+    for phrase in ["nine-event", "fifteen", "twelve", "support-state effect is exactly `none`"]:
+        if phrase.casefold() not in data["abi_trace"].casefold():
+            out.append(f"Cognitive Kernel ABI trace receipt missing exact boundary: {phrase}")
+    p1_complete = (
+        p1.get("state") == "completed"
+        and p1.get("structured_machine_candidate_count") == 0
+        and p1.get("pending_prose_candidate_count") == 0
+        and p1.get("semantic_chapter_sweep_completed_count") == 54
+        and expansion_complete
+    )
+    if (priority_states[1] == "completed" or milestone_states[1] == "completed") and not p1_complete:
+        out.append("P1/M1 completion requires zero machine and prose candidates and all chapter sweeps")
+    if p1_complete and (priority_states[1] != "completed" or milestone_states[1] != "completed"):
+        out.append("completed claim decomposition must be reflected by completed P1 and M1")
+    if status.get("current_priority") == "P2":
+        if milestone_states[3] != "in_progress" or status.get("proof_rationalization_contract", {}).get("state") != "in_progress":
+            out.append("active P2 must activate M3 and the proof-rationalization contract")
+    if status.get("external_human_prepublication_required") is not False:
+        out.append("roadmap silently requires external-human prepublication review")
+    if status.get("closure_requires_active_successor") is not True:
+        out.append("same-transaction successor continuity is not machine-required")
+    if status.get("support_state_effect") != "none" or status.get("release_effect") != "none":
+        out.append("roadmap activation invented a support or release effect")
+
+    proof_contract = status.get("proof_rationalization_contract", {})
+    if proof_contract.get("baseline_theorem_declaration_count") != baseline.get("theorem_declaration_count"):
+        out.append("proof-rationalization theorem baseline does not match activation truth")
+    if proof_contract.get("baseline_proof_target_count") != baseline.get("proof_target_count"):
+        out.append("proof-rationalization target baseline does not match activation truth")
+    if proof_contract.get("chapter_dossier_count_required") != 54:
+        out.append("proof rationalization must preserve all 54 activation-era dossiers; the authorized expansion has a separate live dossier")
+    if proof_contract.get("argument_exit_campaign_required") is not True:
+        out.append("argument-exit promotion-or-refutation campaigns are not required")
+    if proof_contract.get("orphan_retained_theorem_allowed") is not False:
+        out.append("orphan retained theorems were silently permitted")
+    if proof_contract.get("projection_or_assumption_restatement_counts_as_semantic_proof") is not False:
+        out.append("projection or assumption restatement was laundered as semantic proof")
+    expected_safety_contract = {
+        "shared_safety_model_adequacy_dossier_path": SAFETY_MODEL_DOSSIER,
+        "shared_safety_consumer_trace_path": SAFETY_CONSUMER_TRACE,
+        "shared_safety_consumer_result_path": SAFETY_CONSUMER_RESULT,
+        "shared_safety_consumer_state": "validated_local_fixture_consumer_not_deployed",
+        "shared_safety_consumer_receipt_count": 10,
+        "shared_safety_committed_effect_count": 5,
+        "shared_safety_denied_effect_count": 5,
+        "shared_safety_support_state_effect": "none",
+    }
+    for key, value in expected_safety_contract.items():
+        if proof_contract.get(key) != value:
+            out.append(f"shared safety consumer contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    safety_summary = data["safety_consumer_result"].get("summary", {})
+    expected_safety_summary = {
+        "receipt_count": 10,
+        "committed_effect_count": 5,
+        "denied_effect_count": 5,
+        "residual_count": 5,
+        "support_promotion_count": 0,
+    }
+    if safety_summary != expected_safety_summary:
+        out.append(f"shared safety consumer summary drifted: expected {expected_safety_summary!r}, got {safety_summary!r}")
+    if data["safety_consumer_result"].get("support_state_effect") != "none":
+        out.append("shared safety consumer invented a support-state effect")
+    for phrase in ["local finite consumer", "not a deployed", "no chapter-core support transition"]:
+        if phrase.casefold() not in " ".join(data["safety_consumer_result"].get("non_claims", [])).casefold():
+            out.append(f"shared safety consumer result missing non-claim: {phrase}")
+    for phrase in ["Adequacy adjudication", "Executable refinement boundary", "does not establish"]:
+        if phrase.casefold() not in data["safety_model_dossier"].casefold():
+            out.append(f"shared safety model dossier missing adequacy boundary: {phrase}")
+    for phrase in ["10", "5", "support-state effect", "none"]:
+        if phrase.casefold() not in data["safety_consumer_trace"].casefold():
+            out.append(f"shared safety consumer trace missing receipt fact: {phrase}")
+
+    expected_integrated_contract = {
+        "integrated_trace_model_path": "lean/AsiStackProofs/IntegratedReferenceTrace.lean",
+        "integrated_trace_model_adequacy_dossier_path": INTEGRATED_TRACE_DOSSIER,
+        "integrated_trace_consumer_path": INTEGRATED_TRACE_RECEIPT,
+        "integrated_trace_consumer_result_path": INTEGRATED_TRACE_RESULT,
+        "integrated_trace_consumer_state": "validated_source_anchored_finite_consumer_not_deployed",
+        "integrated_trace_case_count": 18,
+        "integrated_trace_accepted_case_count": 4,
+        "integrated_trace_rejected_case_count": 14,
+        "integrated_trace_accepted_event_count": 35,
+        "integrated_trace_mutation_rejection_count": 15,
+        "integrated_trace_support_state_effect": "none",
+        "integrated_runtime_refinement_result_path": INTEGRATED_REFINEMENT_RESULT,
+        "integrated_runtime_refinement_schema_path": INTEGRATED_REFINEMENT_SCHEMA,
+        "integrated_runtime_refinement_state": "validated_one_projected_governed_result_schema_not_lean_verified_or_deployed",
+        "integrated_runtime_refinement_scenario_count": 9,
+        "integrated_runtime_refinement_round_trip_count": 9,
+        "integrated_runtime_refinement_mutation_rejection_count": 20,
+        "integrated_runtime_refinement_support_state_effect": "none",
+        "concurrent_effect_consumer_path": CONCURRENT_EFFECT_RECEIPT,
+        "concurrent_effect_result_path": CONCURRENT_EFFECT_RESULT,
+        "concurrent_effect_state": "validated_finite_linearizable_consumer_not_distributed_or_deployed",
+        "concurrent_effect_case_count": 16,
+        "concurrent_effect_accepted_case_count": 4,
+        "concurrent_effect_rejected_case_count": 12,
+        "concurrent_effect_mutation_rejection_count": 12,
+        "concurrent_effect_support_state_effect": "none",
+    }
+    for key, value in expected_integrated_contract.items():
+        if proof_contract.get(key) != value:
+            out.append(f"integrated trace contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    integrated_summary = data["integrated_trace_result"]
+    expected_integrated_summary = {
+        "case_count": 18,
+        "accepted_case_count": 4,
+        "rejected_case_count": 14,
+        "accepted_event_count": 35,
+        "effect_attempt_count": 3,
+        "final_net_effect_count": 2,
+        "final_acknowledged_effect_count": 1,
+        "final_open_residual_count": 3,
+        "terminal_receipt_count": 4,
+        "rolled_back_case_count": 1,
+        "quarantined_case_count": 2,
+        "support_transition_count": 0,
+        "mutation_rejection_count": 15,
+        "source_scenario_count": 6,
+    }
+    for key, value in expected_integrated_summary.items():
+        if integrated_summary.get(key) != value:
+            out.append(f"integrated trace summary drifted: {key} expected {value!r}, got {integrated_summary.get(key)!r}")
+    if data["integrated_trace_result"].get("support_state_effect") != "none":
+        out.append("integrated trace consumer invented a support-state effect")
+    for phrase in ["Adequacy adjudication", "Executable refinement boundary", "does not establish"]:
+        if phrase.casefold() not in data["integrated_trace_dossier"].casefold():
+            out.append(f"integrated trace dossier missing adequacy boundary: {phrase}")
+    for phrase in ["eighteen", "four accepted", "fourteen rejected", "fifteen", "support-state effect is exactly `none`"]:
+        if phrase.casefold() not in data["integrated_trace_receipt"].casefold():
+            out.append(f"integrated trace receipt missing exact boundary: {phrase}")
+    refinement = data["integrated_refinement_result"]
+    expected_refinement = {
+        "scenario_count": 9,
+        "round_trip_count": 9,
+        "mutation_count": 20,
+        "mutation_rejection_count": 20,
+        "support_state_effect": "none",
+    }
+    for key, value in expected_refinement.items():
+        if refinement.get(key) != value:
+            out.append(f"integrated runtime refinement drifted: {key} expected {value!r}, got {refinement.get(key)!r}")
+    if refinement.get("trace_class_counts") != {
+        "approved_completion": 3,
+        "pre_effect_refusal": 3,
+        "exact_rollback": 2,
+        "failed_rollback_quarantine": 1,
+    }:
+        out.append("integrated runtime refinement trace-class counts drifted")
+    concurrent = data["concurrent_effect_result"]
+    for key, value in {
+        "case_count": 16,
+        "accepted_case_count": 4,
+        "rejected_case_count": 12,
+        "accepted_event_count": 17,
+        "unique_effect_attempt_count": 5,
+        "acknowledged_effect_count": 3,
+        "compensated_effect_count": 1,
+        "residualized_effect_count": 1,
+        "mutation_rejection_count": 12,
+        "support_state_effect": "none",
+    }.items():
+        if concurrent.get(key) != value:
+            out.append(f"concurrent effect consumer drifted: {key} expected {value!r}, got {concurrent.get(key)!r}")
+    for phrase in ["sixteen", "four accepted", "twelve rejected", "idempotency", "support-state effect is exactly `none`"]:
+        if phrase.casefold() not in data["concurrent_effect_receipt"].casefold():
+            out.append(f"concurrent effect receipt missing exact boundary: {phrase}")
+
+    expected_stack_contract = {
+        "stack_boundary_model_path": "lean/AsiStackProofs/StackBoundaries.lean",
+        "stack_boundary_dossier_path": STACK_BOUNDARY_DOSSIER,
+        "stack_boundary_consumer_path": STACK_BOUNDARY_RECEIPT,
+        "stack_boundary_result_path": STACK_BOUNDARY_RESULT,
+        "stack_boundary_state": "validated_source_anchored_finite_consumer_not_deployed",
+        "stack_boundary_layer_contract_case_count": 18,
+        "stack_boundary_authority_fixture_count": 6,
+        "stack_boundary_accepted_fixture_count": 3,
+        "stack_boundary_rejected_fixture_count": 3,
+        "stack_boundary_runtime_path_count": 3,
+        "stack_boundary_accepted_event_count": 10,
+        "stack_boundary_material_effect_count": 1,
+        "stack_boundary_observed_effect_count": 1,
+        "stack_boundary_exact_rollback_count": 1,
+        "stack_boundary_no_mutation_denial_count": 2,
+        "stack_boundary_revocation_entry_count": 5,
+        "stack_boundary_mutation_rejection_count": 12,
+        "stack_boundary_support_state_effect": "none",
+    }
+    for key, value in expected_stack_contract.items():
+        if proof_contract.get(key) != value:
+            out.append(f"stack-boundary contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    stack_boundary = data["stack_boundary_result"]
+    for key, value in {
+        "layer_contract_case_count": 18,
+        "layer_contract_route_match_count": 18,
+        "authority_fixture_count": 6,
+        "authority_fixture_accepted_count": 3,
+        "authority_fixture_rejected_count": 3,
+        "runtime_case_count": 3,
+        "runtime_accepted_event_count": 10,
+        "executed_effect_count": 1,
+        "independently_observed_effect_count": 1,
+        "exact_rollback_count": 1,
+        "no_mutation_denial_count": 2,
+        "revocation_trace_entry_count": 5,
+        "mutation_rejection_count": 12,
+        "support_state_effect": "none",
+    }.items():
+        if stack_boundary.get(key) != value:
+            out.append(f"stack-boundary result drifted: {key} expected {value!r}, got {stack_boundary.get(key)!r}")
+    for phrase in ["eighteen generated", "one material local temp-file effect", "twelve targeted", "support-state effect is `none`"]:
+        if phrase.casefold() not in data["stack_boundary_receipt"].casefold():
+            out.append(f"stack-boundary receipt missing exact boundary: {phrase}")
+    for phrase in ["Adequacy adjudication", "Trusted computing base", "does not establish", "support-state effect is exactly `none`"]:
+        if phrase.casefold() not in data["stack_boundary_dossier"].casefold():
+            out.append(f"stack-boundary dossier missing adequacy boundary: {phrase}")
+
+    expected_intent_contract = {
+        "intent_execution_model_path": "lean/AsiStackProofs/IntentExecutionRefinement.lean",
+        "intent_execution_dossier_path": INTENT_EXECUTION_DOSSIER,
+        "intent_execution_consumer_path": INTENT_EXECUTION_RECEIPT,
+        "intent_execution_result_path": INTENT_EXECUTION_RESULT,
+        "intent_execution_state": "validated_single_executed_schema_vertical_refinement_not_general_or_deployed",
+        "intent_execution_scenario_count": 9,
+        "intent_execution_event_count": 89,
+        "intent_execution_release_count": 3,
+        "intent_execution_pre_effect_refusal_count": 3,
+        "intent_execution_exact_rollback_refusal_count": 2,
+        "intent_execution_failed_rollback_quarantine_count": 1,
+        "intent_execution_material_effect_count": 6,
+        "intent_execution_observed_effect_count": 6,
+        "intent_execution_residual_scenario_count": 2,
+        "intent_execution_mutation_rejection_count": 30,
+        "intent_execution_support_state_effect": "none",
+    }
+    for key, value in expected_intent_contract.items():
+        if proof_contract.get(key) != value:
+            out.append(f"intent-execution contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    intent_result = data["intent_execution_result"]
+    for key, value in {
+        "scenario_count": 9, "release_count": 3, "pre_effect_refusal_count": 3,
+        "exact_rollback_refusal_count": 2, "failed_rollback_quarantine_count": 1,
+        "accepted_event_count": 89, "material_effect_count": 6,
+        "independently_observed_effect_count": 6, "exact_rollback_count": 2,
+        "open_residual_scenario_count": 2, "mutation_rejection_count": 30,
+        "support_state_effect": "none",
+    }.items():
+        if intent_result.get(key) != value:
+            out.append(f"intent-execution result drifted: {key} expected {value!r}, got {intent_result.get(key)!r}")
+    for phrase in ["all nine", "all 89", "thirty", "support-state effect is exactly `none`"]:
+        if phrase.casefold() not in data["intent_execution_receipt"].casefold():
+            out.append(f"intent-execution receipt missing exact boundary: {phrase}")
+    for phrase in ["Adequacy adjudication", "Trusted computing base", "does not establish", "support-state effect is exactly `none`"]:
+        if phrase.casefold() not in data["intent_execution_dossier"].casefold():
+            out.append(f"intent-execution dossier missing adequacy boundary: {phrase}")
+
+    expected_authority_contract = {
+        "authority_effect_model_path": "lean/AsiStackProofs/AuthorityEffectRefinement.lean",
+        "authority_effect_dossier_path": AUTHORITY_EFFECT_DOSSIER,
+        "authority_effect_consumer_path": AUTHORITY_EFFECT_RECEIPT,
+        "authority_effect_result_path": AUTHORITY_EFFECT_RESULT,
+        "authority_effect_state": "validated_finite_grant_effect_refinement_not_authentic_concurrent_or_deployed",
+        "authority_effect_fixture_count": 6,
+        "authority_effect_reachable_event_count": 6,
+        "authority_effect_executed_effect_count": 1,
+        "authority_effect_observed_effect_count": 1,
+        "authority_effect_exact_rollback_count": 1,
+        "authority_effect_pre_effect_denial_count": 2,
+        "authority_effect_revocation_entry_count": 5,
+        "authority_effect_governed_scenario_count": 9,
+        "authority_effect_governed_release_count": 3,
+        "authority_effect_governed_unsafe_release_count": 0,
+        "authority_effect_mutation_rejection_count": 38,
+        "authority_effect_support_state_effect": "none",
+    }
+    for key, value in expected_authority_contract.items():
+        if proof_contract.get(key) != value:
+            out.append(f"authority-effect contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    authority_result = data["authority_effect_result"]
+    for key, value in {
+        "authority_fixture_count": 6, "reachable_trace_event_count": 6,
+        "executed_local_effect_count": 1, "independently_observed_effect_count": 1,
+        "exact_rollback_count": 1, "pre_effect_denial_count": 2,
+        "revocation_trace_entry_count": 5, "governed_scenario_count": 9,
+        "governed_release_count": 3, "governed_unsafe_release_count": 0,
+        "mutation_rejection_count": 38, "support_state_effect": "none",
+    }.items():
+        if authority_result.get(key) != value:
+            out.append(f"authority-effect result drifted: {key} expected {value!r}, got {authority_result.get(key)!r}")
+    for phrase in ["six authority-decision fixtures", "nine governed repository-change scenarios", "38 single-fault", "Support-state effect: `none`"]:
+        if phrase.casefold() not in data["authority_effect_receipt"].casefold():
+            out.append(f"authority-effect receipt missing exact boundary: {phrase}")
+    for phrase in ["State, transitions, and reachable consequences", "Assumptions and exclusions", "does not establish completeness", "Support-state effect is exactly `none`"]:
+        if phrase.casefold() not in data["authority_effect_dossier"].casefold():
+            out.append(f"authority-effect dossier missing adequacy boundary: {phrase}")
+
+    expected_intent_resolution_contract = {
+        "intent_resolution_model_path": "lean/AsiStackProofs/IntentResolutionRefinement.lean",
+        "intent_resolution_dossier_path": INTENT_RESOLUTION_DOSSIER,
+        "intent_resolution_consumer_path": INTENT_RESOLUTION_RECEIPT,
+        "intent_resolution_result_path": INTENT_RESOLUTION_RESULT,
+        "intent_resolution_state": "validated_structured_request_contract_refinement_not_natural_language_or_deployed",
+        "intent_resolution_intake_valid_count": 4,
+        "intent_resolution_intake_invalid_count": 6,
+        "intent_resolution_signal_count": 6,
+        "intent_resolution_recontract_valid_count": 2,
+        "intent_resolution_recontract_invalid_count": 7,
+        "intent_resolution_plan_fixture_count": 13,
+        "intent_resolution_reachable_event_count": 5,
+        "intent_resolution_accepted_contract_version": 2,
+        "intent_resolution_mutation_rejection_count": 30,
+        "intent_resolution_support_state_effect": "none",
+    }
+    for key, value in expected_intent_resolution_contract.items():
+        if proof_contract.get(key) != value:
+            out.append(f"intent-resolution contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    intent_resolution = data["intent_resolution_result"]
+    for key, value in {
+        "intake_valid_scenario_count": 4, "intake_invalid_control_count": 6,
+        "intake_signal_count": 6, "recontract_valid_scenario_count": 2,
+        "recontract_invalid_control_count": 7, "plan_fixture_count": 13,
+        "reachable_trace_event_count": 5, "accepted_contract_version": 2,
+        "mutation_rejection_count": 30, "support_state_effect": "none",
+    }.items():
+        if intent_resolution.get(key) != value:
+            out.append(f"intent-resolution result drifted: {key} expected {value!r}, got {intent_resolution.get(key)!r}")
+    for phrase in ["4 valid and 6 invalid intake cases", "2 valid and 7 invalid re-contract cases", "30 of 30", "Support-state effect: `none`"]:
+        if phrase.casefold() not in data["intent_resolution_receipt"].casefold():
+            out.append(f"intent-resolution receipt missing exact boundary: {phrase}")
+    for phrase in ["Reachable model", "Assumptions and exclusions", "Hashes are abstract equality tokens", "Support-state effect is exactly `none`"]:
+        if phrase.casefold() not in data["intent_resolution_dossier"].casefold():
+            out.append(f"intent-resolution dossier missing adequacy boundary: {phrase}")
+
+    expected_command_semantic_contract = {
+        "command_semantic_model_path": "lean/AsiStackProofs/CommandSemanticRefinement.lean",
+        "command_semantic_dossier_path": COMMAND_SEMANTIC_DOSSIER,
+        "command_semantic_consumer_path": COMMAND_SEMANTIC_RECEIPT,
+        "command_semantic_result_path": COMMAND_SEMANTIC_RESULT,
+        "command_semantic_state": "validated_structured_command_boundary_not_natural_language_or_deployed",
+        "command_semantic_plan_fixture_count": 13,
+        "command_semantic_schema_valid_fixture_count": 13,
+        "command_semantic_interface_violation_count": 5,
+        "command_semantic_correct_block_count": 2,
+        "command_semantic_interface_admissible_count": 6,
+        "command_semantic_reachable_event_count": 5,
+        "command_semantic_mutation_rejection_count": 38,
+        "command_semantic_support_state_effect": "none",
+    }
+    for key, value in expected_command_semantic_contract.items():
+        if proof_contract.get(key) != value:
+            out.append(f"command-semantic contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    command_semantic = data["command_semantic_result"]
+    for key, value in {
+        "plan_fixture_count": 13, "command_schema_valid_fixture_count": 13,
+        "command_interface_violation_count": 5,
+        "correctly_blocked_at_command_interface_count": 2,
+        "command_interface_admissible_count": 6, "reachable_trace_event_count": 5,
+        "mutation_rejection_count": 38, "support_state_effect": "none",
+    }.items():
+        if command_semantic.get(key) != value:
+            out.append(f"command-semantic result drifted: {key} expected {value!r}, got {command_semantic.get(key)!r}")
+    for phrase in ["all 13 command records", "five command-interface violations", "38 of 38 mutations", "Support-state effect: `none`"]:
+        if phrase.casefold() not in data["command_semantic_receipt"].casefold():
+            out.append(f"command-semantic receipt missing exact boundary: {phrase}")
+    for phrase in ["Reachable model", "Assumptions, exclusions, and adequacy verdict", "Admissibility is deliberately consumer-relative", "Support-state effect: exactly `none`"]:
+        if phrase.casefold() not in data["command_semantic_dossier"].casefold():
+            out.append(f"command-semantic dossier missing adequacy boundary: {phrase}")
+
+    expected_cognitive_compilation_contract = {
+        "cognitive_compilation_model_path": "lean/AsiStackProofs/CognitiveCompilationRefinement.lean",
+        "cognitive_compilation_dossier_path": COGNITIVE_COMPILATION_DOSSIER,
+        "cognitive_compilation_consumer_path": COGNITIVE_COMPILATION_RECEIPT,
+        "cognitive_compilation_result_path": COGNITIVE_COMPILATION_RESULT,
+        "cognitive_compilation_state": "validated_structured_obligation_refinement_not_natural_language_or_backend",
+        "cognitive_compilation_fixture_count": 6,
+        "cognitive_compilation_accepted_fixture_count": 2,
+        "cognitive_compilation_rejected_fixture_count": 4,
+        "cognitive_compilation_reachable_event_count": 7,
+        "cognitive_compilation_mutation_rejection_count": 47,
+        "cognitive_compilation_support_state_effect": "none",
+    }
+    for key, value in expected_cognitive_compilation_contract.items():
+        if proof_contract.get(key) != value:
+            out.append(f"cognitive-compilation contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    cognitive_compilation = data["cognitive_compilation_result"]
+    for key, value in {"fixture_count": 6, "accepted_fixture_count": 2,
+                       "rejected_fixture_count": 4, "reachable_trace_event_count": 7,
+                       "mutation_rejection_count": 47, "support_state_effect": "none"}.items():
+        if cognitive_compilation.get(key) != value:
+            out.append(f"cognitive-compilation result drifted: {key} expected {value!r}, got {cognitive_compilation.get(key)!r}")
+    for phrase in ["accepts exactly the two intended fixtures", "rejects the four expected-invalid fixtures", "47 of 47 mutations", "Support-state effect: `none`"]:
+        if phrase.casefold() not in data["cognitive_compilation_receipt"].casefold():
+            out.append(f"cognitive-compilation receipt missing exact boundary: {phrase}")
+    for phrase in ["Reachable model", "Assumptions, exclusions, and adequacy verdict", "Schema validity alone", "Support-state effect: exactly `none`"]:
+        if phrase.casefold() not in data["cognitive_compilation_dossier"].casefold():
+            out.append(f"cognitive-compilation dossier missing adequacy boundary: {phrase}")
+
+    expected_virtual_context_contract = {
+        "virtual_context_model_path": "lean/AsiStackProofs/VirtualContextRefinement.lean",
+        "virtual_context_dossier_path": VIRTUAL_CONTEXT_DOSSIER,
+        "virtual_context_consumer_path": VIRTUAL_CONTEXT_RECEIPT,
+        "virtual_context_result_path": VIRTUAL_CONTEXT_RESULT,
+        "virtual_context_state": "validated_structured_binding_materialization_fault_refinement_not_real_payload_or_deployed",
+        "virtual_context_resolver_scenario_count": 11,
+        "virtual_context_resolver_valid_count": 2,
+        "virtual_context_resolver_invalid_count": 9,
+        "virtual_context_admission_fixture_count": 8,
+        "virtual_context_admission_valid_count": 3,
+        "virtual_context_admission_invalid_count": 5,
+        "virtual_context_materialization_event_count": 4,
+        "virtual_context_mandatory_miss_event_count": 2,
+        "virtual_context_mutation_rejection_count": 55,
+        "virtual_context_support_state_effect": "none",
+    }
+    for key, value in expected_virtual_context_contract.items():
+        if proof_contract.get(key) != value:
+            out.append(f"virtual-context contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    virtual_context = data["virtual_context_result"]
+    for key, value in {"resolver_scenario_count": 11, "resolver_valid_count": 2,
+                       "resolver_invalid_count": 9, "admission_fixture_count": 8,
+                       "admission_valid_fixture_count": 3, "admission_invalid_fixture_count": 5,
+                       "materialization_trace_event_count": 4, "mandatory_miss_trace_event_count": 2,
+                       "mutation_rejection_count": 55, "support_state_effect": "none"}.items():
+        if virtual_context.get(key) != value:
+            out.append(f"virtual-context result drifted: {key} expected {value!r}, got {virtual_context.get(key)!r}")
+    for phrase in ["two valid and nine expected-invalid", "three-valid/five-invalid", "55 of 55 mutations", "Support-state effect: `none`"]:
+        if phrase.casefold() not in data["virtual_context_receipt"].casefold():
+            out.append(f"virtual-context receipt missing exact boundary: {phrase}")
+    for phrase in ["Reachable model", "Assumptions, exclusions, and adequacy verdict", "admission validity is never treated as resolver correctness", "Support-state effect: exactly `none`"]:
+        if phrase.casefold() not in data["virtual_context_dossier"].casefold():
+            out.append(f"virtual-context dossier missing adequacy boundary: {phrase}")
+
+    expected_context_certificate_contract = {
+        "context_certificate_model_path": "lean/AsiStackProofs/ContextCertificateRefinement.lean",
+        "context_certificate_dossier_path": CONTEXT_CERTIFICATE_DOSSIER,
+        "context_certificate_consumer_path": CONTEXT_CERTIFICATE_RECEIPT,
+        "context_certificate_result_path": CONTEXT_CERTIFICATE_RESULT,
+        "context_certificate_state": "validated_structured_provenance_lifecycle_refinement_not_content_truth_or_deployed",
+        "context_certificate_scenario_certificate_count": 12,
+        "context_certificate_active_count": 11,
+        "context_certificate_stale_count": 1,
+        "context_certificate_admission_fixture_count": 8,
+        "context_certificate_admission_valid_count": 3,
+        "context_certificate_admission_invalid_count": 5,
+        "context_certificate_reachable_event_count": 5,
+        "context_certificate_mutation_rejection_count": 64,
+        "context_certificate_support_state_effect": "none",
+    }
+    for key, value in expected_context_certificate_contract.items():
+        if proof_contract.get(key) != value:
+            out.append(f"context-certificate contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    context_certificate = data["context_certificate_result"]
+    for key, value in {"scenario_certificate_count":12,"active_certificate_count":11,
+                       "stale_certificate_count":1,"admission_valid_fixture_count":3,
+                       "admission_invalid_fixture_count":5,"reachable_trace_event_count":5,
+                       "mutation_rejection_count":64,"support_state_effect":"none"}.items():
+        if context_certificate.get(key) != value:
+            out.append(f"context-certificate result drifted: {key} expected {value!r}, got {context_certificate.get(key)!r}")
+    for phrase in ["all 12 certificate records", "three-valid/five-invalid", "64 of 64 mutations", "Support-state effect: `none`"]:
+        if phrase.casefold() not in data["context_certificate_receipt"].casefold():
+            out.append(f"context-certificate receipt missing exact boundary: {phrase}")
+    for phrase in ["Reachable model", "Assumptions, exclusions, and adequacy verdict", "do not classify the whole scenarios", "Support-state effect: exactly `none`"]:
+        if phrase.casefold() not in data["context_certificate_dossier"].casefold():
+            out.append(f"context-certificate dossier missing adequacy boundary: {phrase}")
+
+    expected_context_transaction_contract = {
+        "context_transaction_model_path":"lean/AsiStackProofs/ContextTransactionRefinement.lean",
+        "context_transaction_dossier_path":CONTEXT_TRANSACTION_DOSSIER,
+        "context_transaction_consumer_path":CONTEXT_TRANSACTION_RECEIPT,
+        "context_transaction_result_path":CONTEXT_TRANSACTION_RESULT,
+        "context_transaction_state":"validated_finite_sequential_snapshot_transaction_refinement_not_concurrent_or_deployed",
+        "context_transaction_store_fixture_count":9,"context_transaction_store_valid_count":3,
+        "context_transaction_store_invalid_count":6,"context_transaction_sequence_fixture_count":6,
+        "context_transaction_sequence_valid_count":2,"context_transaction_sequence_invalid_count":4,
+        "context_transaction_reachable_event_count":6,"context_transaction_mutation_rejection_count":78,
+        "context_transaction_support_state_effect":"none"}
+    for key,value in expected_context_transaction_contract.items():
+        if proof_contract.get(key)!=value: out.append(f"context-transaction contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    transaction=data["context_transaction_result"]
+    if transaction.get("store_suite",{}).get("valid_count")!=3 or transaction.get("store_suite",{}).get("invalid_count")!=6: out.append("context-transaction store suite drifted")
+    if transaction.get("sequence_suite",{}).get("valid_count")!=2 or transaction.get("sequence_suite",{}).get("invalid_count")!=4: out.append("context-transaction sequence suite drifted")
+    for key,value in {"reachable_trace_event_count":6,"mutation_rejection_count":78,"support_state_effect":"none"}.items():
+        if transaction.get(key)!=value: out.append(f"context-transaction result drifted: {key}")
+    for phrase in ["three-valid/six-invalid", "two-valid/four-invalid", "78 of 78 mutations", "Support-state effect: `none`"]:
+        if phrase.casefold() not in data["context_transaction_receipt"].casefold(): out.append(f"context-transaction receipt missing exact boundary: {phrase}")
+    for phrase in ["Reachable model", "Assumptions, exclusions, and adequacy verdict", "single-cell, sequential, and deterministic", "Support-state effect: exactly `none`"]:
+        if phrase.casefold() not in data["context_transaction_dossier"].casefold(): out.append(f"context-transaction dossier missing adequacy boundary: {phrase}")
+
+    expected_verification_bandwidth_contract = {
+        "verification_bandwidth_model_path":"lean/AsiStackProofs/VerificationBandwidthRefinement.lean",
+        "verification_bandwidth_dossier_path":VERIFICATION_BANDWIDTH_DOSSIER,
+        "verification_bandwidth_consumer_path":VERIFICATION_BANDWIDTH_RECEIPT,
+        "verification_bandwidth_result_path":VERIFICATION_BANDWIDTH_RESULT,
+        "verification_bandwidth_state":"validated_finite_authored_evidence_gate_lifecycle_not_model_measured_or_deployed",
+        "verification_bandwidth_admission_valid_count":3,"verification_bandwidth_admission_invalid_count":5,
+        "verification_bandwidth_contradiction_valid_count":2,"verification_bandwidth_contradiction_invalid_count":7,
+        "verification_bandwidth_capacity_valid_count":3,"verification_bandwidth_capacity_invalid_count":5,
+        "verification_bandwidth_reachable_stage_count":5,"verification_bandwidth_route_case_count":12,
+        "verification_bandwidth_mutation_rejection_count":31,
+        "verification_bandwidth_strongest_effect":"handoff_to_independent_evidence_gate",
+        "verification_bandwidth_support_state_effect":"none"}
+    for key,value in expected_verification_bandwidth_contract.items():
+        if proof_contract.get(key)!=value: out.append(f"verification-bandwidth contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    verification_bandwidth=data["verification_bandwidth_result"]
+    for key,value in {"reachable_stage_count":5,"route_case_count":12,"mutation_rejection_count":31,
+                      "strongest_effect":"handoff_to_independent_evidence_gate","support_state_effect":"none"}.items():
+        if verification_bandwidth.get(key)!=value: out.append(f"verification-bandwidth result drifted: {key}")
+    suites={row.get("suite_id"):(row.get("valid_count"),row.get("expected_invalid_count")) for row in verification_bandwidth.get("input_suites",[])}
+    if suites!={"context_admission_adequacy":(3,5),"verification_bandwidth_probe":(2,7),"verification_bandwidth_capacity":(3,5)}: out.append("verification-bandwidth consumed-suite counts drifted")
+    for phrase in ["3-valid/5-invalid admission", "2-valid/7-invalid contradiction", "3-valid/5-invalid capacity", "31 of 31", "Support-state effect: `none`"]:
+        if phrase.casefold() not in data["verification_bandwidth_receipt"].casefold(): out.append(f"verification-bandwidth receipt missing exact boundary: {phrase}")
+    for phrase in ["Reachable model", "Assumptions, exclusions, and adequacy verdict", "never owns evidence promotion", "Support-state effect: exactly `none`"]:
+        if phrase.casefold() not in data["verification_bandwidth_dossier"].casefold(): out.append(f"verification-bandwidth dossier missing adequacy boundary: {phrase}")
+
+    expected_claim_ledger_contract = {
+        "current_missing_or_changed_theorem_count":296,
+        "current_missing_or_changed_target_count":123,
+        "current_live_theorem_declaration_count":1243,
+        "current_live_proof_target_count":298,
+        "claim_ledger_model_path":"lean/AsiStackProofs/ClaimLedgerRefinement.lean",
+        "claim_ledger_dossier_path":CLAIM_LEDGER_DOSSIER,
+        "claim_ledger_consumer_path":CLAIM_LEDGER_RECEIPT,
+        "claim_ledger_result_path":CLAIM_LEDGER_RESULT,
+        "claim_ledger_state":"validated_finite_authored_append_only_revision_lifecycle_not_semantic_concurrent_or_deployed",
+        "claim_ledger_revision_valid_count":5,"claim_ledger_revision_invalid_count":7,
+        "claim_ledger_historical_valid_count":1,"claim_ledger_historical_invalid_count":11,
+        "claim_ledger_reachable_stage_count":5,"claim_ledger_route_case_count":17,
+        "claim_ledger_mutation_rejection_count":29,
+        "claim_ledger_retired_baseline_declaration_count":16,
+        "claim_ledger_retained_legacy_theorem_count":4,
+        "claim_ledger_support_state_effect":"none"}
+    for key,value in expected_claim_ledger_contract.items():
+        if proof_contract.get(key)!=value: out.append(f"claim-ledger contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    claim_ledger=data["claim_ledger_result"]
+    for key,value in {"reachable_stage_count":5,"route_case_count":17,"mutation_count":29,
+                      "mutation_rejection_count":29,"support_state_effect":"none"}.items():
+        if claim_ledger.get(key)!=value: out.append(f"claim-ledger result drifted: {key}")
+    claim_suites={row.get("suite_id"):(row.get("valid_count"),row.get("expected_invalid_count")) for row in claim_ledger.get("input_suites",[])}
+    if claim_suites!={"claim_ledger_revision":(5,7),"contradiction_revision_lifecycle":(1,11)}: out.append("claim-ledger consumed-suite counts drifted")
+    for phrase in ["all seventeen routes", "five-valid/seven-invalid", "one-valid/eleven-invalid", "all 29 lifecycle mutations", "Support-state effect: `none`"]:
+        if phrase.casefold() not in data["claim_ledger_receipt"].casefold(): out.append(f"claim-ledger receipt missing exact boundary: {phrase}")
+    for phrase in ["Reachable model", "Assumptions, exclusions, and adequacy verdict", "single-claim append-only event lifecycle", "Support-state effect: exactly `none`"]:
+        if phrase.casefold() not in data["claim_ledger_dossier"].casefold(): out.append(f"claim-ledger dossier missing adequacy boundary: {phrase}")
+    ledger_chapter=next((row for row in structure_rows if row.get("id")=="claim-ledgers-and-belief-revision"),{})
+    ledger_target_modules={row.get("module") for row in ledger_chapter.get("proof_targets",[])}
+    if ledger_target_modules!={"AsiStackProofs.ClaimLedgerRefinement"}: out.append("claim-ledger public targets do not all resolve to the refinement module")
+
+    expected_proof_carrying_claims_contract = {
+        "proof_carrying_claims_model_path":"lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean",
+        "proof_carrying_claims_dossier_path":PROOF_CARRYING_CLAIMS_DOSSIER,
+        "proof_carrying_claims_consumer_path":PROOF_CARRYING_CLAIMS_RECEIPT,
+        "proof_carrying_claims_result_path":PROOF_CARRYING_CLAIMS_RESULT,
+        "proof_carrying_claims_state":"validated_finite_authored_target_to_writeback_lifecycle_not_semantic_sound_natural_or_deployed",
+        "proof_carrying_claims_fixture_valid_count":3,"proof_carrying_claims_fixture_invalid_count":5,
+        "proof_carrying_claims_dossier_valid_count":2,"proof_carrying_claims_dossier_invalid_count":7,
+        "proof_carrying_claims_reachable_stage_count":6,"proof_carrying_claims_route_case_count":23,
+        "proof_carrying_claims_mutation_rejection_count":36,
+        "proof_carrying_claims_retired_baseline_declaration_count":4,
+        "proof_carrying_claims_retained_legacy_theorem_count":4,
+        "proof_carrying_claims_support_state_effect":"none"}
+    for key,value in expected_proof_carrying_claims_contract.items():
+        if proof_contract.get(key)!=value: out.append(f"proof-carrying-claims contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    proof_carrying_claims=data["proof_carrying_claims_result"]
+    for key,value in {"reachable_stage_count":6,"route_case_count":23,"mutation_count":36,
+                      "mutation_rejection_count":36,"support_state_effect":"none"}.items():
+        if proof_carrying_claims.get(key)!=value: out.append(f"proof-carrying-claims result drifted: {key}")
+    proof_carrying_suites={row.get("suite_id"):(row.get("valid_count"),row.get("expected_invalid_count")) for row in proof_carrying_claims.get("input_suites",[])}
+    if proof_carrying_suites!={"proof_carrying_claims":(3,5),"adversarial_review_dossier":(2,7)}: out.append("proof-carrying-claims consumed-suite counts drifted")
+    for phrase in ["all twenty-three routes", "three-valid/five-invalid", "two-valid/seven-invalid", "all 36 mutations", "Support-state effect: `none`"]:
+        if phrase.casefold() not in data["proof_carrying_claims_receipt"].casefold(): out.append(f"proof-carrying-claims receipt missing exact boundary: {phrase}")
+    for phrase in ["Reachable model", "Assumptions, exclusions, and adequacy verdict", "one target-specific verification event", "Support-state effect: exactly `none`"]:
+        if phrase.casefold() not in data["proof_carrying_claims_dossier"].casefold(): out.append(f"proof-carrying-claims dossier missing adequacy boundary: {phrase}")
+    proof_chapter=next((row for row in structure_rows if row.get("id")=="spinoza-verification-and-proof-carrying-claims"),{})
+    proof_modules={row.get("tag"):row.get("module") for row in proof_chapter.get("proof_targets",[])}
+    for tag in ("lean:spinoza.proof_carrying.operational_invariant","lean:spinoza.proof_carrying.failure_blocks_promotion","lean:spinoza.adversarial_review.dossier_probe_bridge"):
+        if proof_modules.get(tag)!="AsiStackProofs.ProofCarryingClaimsRefinement": out.append(f"proof-carrying-claims target does not resolve to refinement: {tag}")
+
+    expected_tribunal_contract = {
+        "tribunal_model_path":"lean/AsiStackProofs/TribunalRefinement.lean",
+        "tribunal_dossier_path":TRIBUNAL_DOSSIER,
+        "tribunal_consumer_path":TRIBUNAL_RECEIPT,
+        "tribunal_result_path":TRIBUNAL_RESULT,
+        "tribunal_state":"validated_finite_authored_versioned_verdict_appeal_lifecycle_not_competence_correctness_or_deployed",
+        "tribunal_review_valid_count":3,"tribunal_review_invalid_count":5,
+        "tribunal_method_valid_count":1,"tribunal_method_invalid_count":11,
+        "tribunal_reachable_stage_count":7,"tribunal_route_case_count":28,
+        "tribunal_mutation_rejection_count":45,
+        "tribunal_retired_baseline_declaration_count":10,
+        "tribunal_retained_legacy_theorem_count":3,
+        "tribunal_support_state_effect":"none"}
+    for key,value in expected_tribunal_contract.items():
+        if proof_contract.get(key)!=value: out.append(f"Tribunal contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    tribunal=data["tribunal_result"]
+    for key,value in {"reachable_stage_count":7,"route_case_count":28,"mutation_count":45,
+                      "mutation_rejection_count":45,"support_state_effect":"none"}.items():
+        if tribunal.get(key)!=value: out.append(f"Tribunal result drifted: {key}")
+    tribunal_suites={row.get("suite_id"):(row.get("valid_count"),row.get("expected_invalid_count")) for row in tribunal.get("input_suites",[])}
+    if tribunal_suites!={"tribunal_review":(3,5),"tribunal_method_independence":(1,11)}: out.append("Tribunal consumed-suite counts drifted")
+    for phrase in ["twenty-eight routes", "three-valid/five-invalid", "one-valid/eleven-invalid", "all 45 mutations", "Support-state effect: `none`"]:
+        if phrase.casefold() not in data["tribunal_receipt"].casefold(): out.append(f"Tribunal receipt missing exact boundary: {phrase}")
+    for phrase in ["Reachable model", "Assumptions, exclusions, and adequacy verdict", "independence in fact", "Support-state effect: exactly `none`"]:
+        if phrase.casefold() not in data["tribunal_dossier"].casefold(): out.append(f"Tribunal dossier missing adequacy boundary: {phrase}")
+    for tag in ("lean:tribunal.review.operational_invariant","lean:tribunal.review.failure_blocks_promotion"):
+        if proof_modules.get(tag)!="AsiStackProofs.TribunalRefinement": out.append(f"Tribunal target does not resolve to refinement: {tag}")
+
+    expected_typed_job_contract = {
+        "typed_job_model_path":"lean/AsiStackProofs/TypedJobRefinement.lean",
+        "typed_job_dossier_path":TYPED_JOB_DOSSIER,
+        "typed_job_consumer_path":TYPED_JOB_RECEIPT,
+        "typed_job_result_path":TYPED_JOB_RESULT,
+        "typed_job_state":"validated_finite_authored_versioned_execution_closure_lifecycle_not_task_success_enforcement_or_deployed",
+        "typed_job_delivery_valid_count":2,"typed_job_delivery_invalid_count":7,
+        "typed_job_durable_valid_count":2,"typed_job_durable_invalid_count":9,
+        "typed_job_reachable_stage_count":7,"typed_job_route_case_count":28,
+        "typed_job_mutation_rejection_count":42,
+        "typed_job_retired_baseline_declaration_count":3,
+        "typed_job_retained_legacy_theorem_count":24,
+        "typed_job_support_state_effect":"none"}
+    for key,value in expected_typed_job_contract.items():
+        if proof_contract.get(key)!=value: out.append(f"typed-job contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    typed_job=data["typed_job_result"]
+    for key,value in {"reachable_stage_count":7,"route_case_count":28,"mutation_count":42,
+                      "mutation_rejection_count":42,"support_state_effect":"none"}.items():
+        if typed_job.get(key)!=value: out.append(f"typed-job result drifted: {key}")
+    typed_job_suites={row.get("suite_id"):(row.get("valid_count"),row.get("expected_invalid_count")) for row in typed_job.get("input_suites",[])}
+    if typed_job_suites!={"typed_job_delivery":(2,7),"typed_job_durable_lifecycle":(2,9)}: out.append("typed-job consumed-suite counts drifted")
+    for phrase in ["twenty-eight routes", "two-valid/seven-invalid", "two-valid/nine-invalid", "all 42 mutations", "Support-state effect: `none`"]:
+        if phrase.casefold() not in data["typed_job_receipt"].casefold(): out.append(f"typed-job receipt missing exact boundary: {phrase}")
+    for phrase in ["Reachable model", "Assumptions, exclusions, and adequacy verdict", "task success", "Support-state effect: exactly `none`"]:
+        if phrase.casefold() not in data["typed_job_dossier"].casefold(): out.append(f"typed-job dossier missing adequacy boundary: {phrase}")
+    typed_job_chapter=next((row for row in structure_rows if row.get("id")=="labor-os-and-typed-jobs"),{})
+    typed_job_modules={row.get("module") for row in typed_job_chapter.get("proof_targets",[])}
+    if typed_job_modules!={"AsiStackProofs.TypedJobRefinement"}: out.append("typed-job public targets do not all resolve to the refinement module")
+
+    expected_artifact_reality_contract = {
+        "artifact_reality_model_path":"lean/AsiStackProofs/ArtifactRealityRefinement.lean",
+        "artifact_reality_dossier_path":ARTIFACT_REALITY_DOSSIER,
+        "artifact_reality_consumer_path":ARTIFACT_REALITY_RECEIPT,
+        "artifact_reality_result_path":ARTIFACT_REALITY_RESULT,
+        "artifact_reality_state":"validated_finite_authored_record_reality_trust_lifecycle_not_open_world_truth_replay_or_deployed",
+        "artifact_reality_artifact_replay_valid_count":2,"artifact_reality_artifact_replay_invalid_count":6,
+        "artifact_reality_record_sequence_valid_count":1,"artifact_reality_record_sequence_invalid_count":4,
+        "artifact_reality_receipt_valid_count":3,"artifact_reality_receipt_invalid_count":6,
+        "artifact_reality_repository_audit_valid_count":4,"artifact_reality_repository_audit_invalid_count":5,
+        "artifact_reality_repository_challenge_valid_count":4,"artifact_reality_repository_challenge_invalid_count":5,
+        "artifact_reality_live_attestation_valid_count":1,"artifact_reality_live_attestation_invalid_count":7,
+        "artifact_reality_randomized_attestation_valid_count":4,"artifact_reality_randomized_attestation_invalid_count":8,
+        "artifact_reality_tcb_valid_count":3,"artifact_reality_tcb_invalid_count":6,
+        "artifact_reality_reachable_stage_count":7,"artifact_reality_route_case_count":33,
+        "artifact_reality_mutation_rejection_count":53,
+        "artifact_reality_retired_baseline_declaration_count":8,
+        "artifact_reality_retained_legacy_theorem_count":35,
+        "artifact_reality_support_state_effect":"none"}
+    for key,value in expected_artifact_reality_contract.items():
+        if proof_contract.get(key)!=value: out.append(f"artifact-reality contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    artifact_reality=data["artifact_reality_result"]
+    for key,value in {"reachable_stage_count":7,"route_case_count":33,"mutation_count":53,
+                      "mutation_rejection_count":53,"support_state_effect":"none"}.items():
+        if artifact_reality.get(key)!=value: out.append(f"artifact-reality result drifted: {key}")
+    artifact_suites={row.get("suite_id"):(row.get("valid_count"),row.get("expected_invalid_count")) for row in artifact_reality.get("input_suites",[])}
+    if artifact_suites!={"artifact_graph_replay":(2,6),"record_reality_sequence":(1,4),"receipt_faithfulness":(3,6),
+                         "receipt_repository_audit":(4,5),"receipt_repository_challenge":(4,5),
+                         "artifact_live_attestation":(1,7),"artifact_randomized_attestation":(4,8),"epistemic_tcb":(3,6)}:
+        out.append("artifact-reality consumed-suite counts drifted")
+    for phrase in ["thirty-three routes", "eight exact bounded suites", "all 53 mutations", "Support-state effect: `none`"]:
+        if phrase.casefold() not in data["artifact_reality_receipt"].casefold(): out.append(f"artifact-reality receipt missing exact boundary: {phrase}")
+    for phrase in ["Reachable model", "Assumptions, exclusions, and adequacy verdict", "inadequate for open-world provenance", "Support-state effect: exactly `none`"]:
+        if phrase.casefold() not in data["artifact_reality_dossier"].casefold(): out.append(f"artifact-reality dossier missing adequacy boundary: {phrase}")
+    artifact_chapter=next((row for row in structure_rows if row.get("id")=="artifact-graphs-audit-logs-and-replay"),{})
+    artifact_modules={row.get("module") for row in artifact_chapter.get("proof_targets",[])}
+    if artifact_modules!={"AsiStackProofs.ArtifactRealityRefinement"}: out.append("artifact-reality public targets do not all resolve to the refinement module")
+
+    expected_procedural_memory_contract={
+        "procedural_memory_model_path":"lean/AsiStackProofs/ProceduralMemoryRefinement.lean",
+        "procedural_memory_dossier_path":PROCEDURAL_MEMORY_DOSSIER,
+        "procedural_memory_consumer_path":PROCEDURAL_MEMORY_RECEIPT,
+        "procedural_memory_result_path":PROCEDURAL_MEMORY_RESULT,
+        "procedural_memory_state":"validated_finite_authored_promotion_retirement_lifecycle_not_natural_useful_or_deployed",
+        "procedural_memory_loop_valid_count":3,"procedural_memory_loop_invalid_count":6,
+        "procedural_memory_promotion_valid_count":1,"procedural_memory_promotion_invalid_count":10,
+        "procedural_memory_reachable_stage_count":7,"procedural_memory_route_case_count":32,
+        "procedural_memory_mutation_rejection_count":33,
+        "procedural_memory_retired_baseline_declaration_count":5,
+        "procedural_memory_retained_legacy_theorem_count":14,
+        "procedural_memory_support_state_effect":"none"}
+    for key,value in expected_procedural_memory_contract.items():
+        if proof_contract.get(key)!=value: out.append(f"procedural-memory contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    procedural=data["procedural_memory_result"]
+    for key,value in {"reachable_stage_count":7,"route_case_count":32,"mutation_count":33,"mutation_rejection_count":33,"support_state_effect":"none"}.items():
+        if procedural.get(key)!=value: out.append(f"procedural-memory result drifted: {key}")
+    procedural_suites={row.get("suite_id"):(row.get("valid_count"),row.get("expected_invalid_count")) for row in procedural.get("input_suites",[])}
+    if procedural_suites!={"procedural_memory_loop":(3,6),"procedural_trace_promotion":(1,10)}: out.append("procedural-memory consumed-suite counts drifted")
+    for phrase in ["thirty-two routes", "all 33 mutations", "Support-state effect: `none`"]:
+        if phrase.casefold() not in data["procedural_memory_receipt"].casefold(): out.append(f"procedural-memory receipt missing exact boundary: {phrase}")
+    for phrase in ["Reachable model", "Assumptions, exclusions, and adequacy verdict", "inadequate for natural trace discovery", "Support-state effect: exactly `none`"]:
+        if phrase.casefold() not in data["procedural_memory_dossier"].casefold(): out.append(f"procedural-memory dossier missing adequacy boundary: {phrase}")
+    procedural_chapter=next((row for row in structure_rows if row.get("id")=="procedural-memory-and-cognitive-loop-closure"),{})
+    procedural_modules={row.get("module") for row in procedural_chapter.get("proof_targets",[])}
+    if procedural_modules!={"AsiStackProofs.ProceduralMemoryRefinement"}: out.append("procedural-memory public targets do not all resolve to refinement")
+
+    expected_routing_contract={
+        "routing_model_path":"lean/AsiStackProofs/RoutingRefinement.lean",
+        "routing_dossier_path":ROUTING_DOSSIER,
+        "routing_consumer_path":ROUTING_RECEIPT,
+        "routing_result_path":ROUTING_RESULT,
+        "routing_state":"validated_finite_authored_request_lease_dispatch_outcome_lifecycle_not_useful_natural_or_deployed",
+        "routing_lease_valid_count":3,"routing_lease_invalid_count":7,
+        "routing_readiness_valid_count":4,"routing_readiness_invalid_count":5,
+        "routing_reachable_stage_count":7,"routing_route_case_count":42,
+        "routing_mutation_rejection_count":47,
+        "routing_retired_baseline_declaration_count":16,
+        "routing_retained_legacy_theorem_count":4,
+        "routing_dispatch_count":1,"routing_route_outcome_count":1,"routing_answer_outcome_count":1,
+        "routing_support_state_effect":"none"}
+    for key,value in expected_routing_contract.items():
+        if proof_contract.get(key)!=value: out.append(f"routing contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    routing=data["routing_result"]
+    for key,value in {"reachable_stage_count":7,"route_case_count":42,"mutation_count":47,"mutation_rejection_count":47,"support_state_effect":"none"}.items():
+        if routing.get(key)!=value: out.append(f"routing result drifted: {key}")
+    routing_suites={row.get("suite_id"):row for row in routing.get("input_suites",[])}
+    lease=routing_suites.get("routing_decision_lease",{})
+    readiness=routing_suites.get("readiness_residual_gates",{})
+    post_v2=routing_suites.get("post_v2_routing_deliberation",{})
+    if (lease.get("valid_count"),lease.get("expected_invalid_count"))!=(3,7): out.append("routing lease consumed-suite counts drifted")
+    if (readiness.get("valid_count"),readiness.get("expected_invalid_count"))!=(4,5): out.append("routing readiness consumed-suite counts drifted")
+    expected_post_v2={"seed_count":3,"routing_record_count":900,"deliberation_record_count":540,
+                      "learned_router_correct":162,"generalist_correct":130,"fallback_activation_count":0,
+                      "adaptive_correct":179,"adaptive_candidate_operations":236,"fixed_correct":154,
+                      "fixed_candidate_operations":540,"fixed_extra_compute_harm":15,
+                      "no_change_disposition_count":2,"support_state_effect":"none"}
+    for key,value in expected_post_v2.items():
+        if post_v2.get(key)!=value: out.append(f"routing post-v2 exact result drifted: {key}")
+    witness=routing.get("witness",{})
+    for key,value in {"terminal_stage":"closed","receipt_count":6,"dispatch_count":1,"route_outcome_count":1,
+                      "answer_outcome_count":1,"support_assignment_count":0,"external_effect_count":0}.items():
+        if witness.get(key)!=value: out.append(f"routing witness drifted: {key}")
+    for phrase in ["forty-two routes", "forty-seven registered mutations", "Route quality and answer quality", "no chapter-core support change"]:
+        if phrase.casefold() not in data["routing_receipt"].casefold(): out.append(f"routing receipt missing exact boundary: {phrase}")
+    for phrase in ["seven reachable stages", "forty-seven identity", "Inadequate for natural-task usefulness", "Do not infer"]:
+        if phrase.casefold() not in data["routing_dossier"].casefold(): out.append(f"routing dossier missing adequacy boundary: {phrase}")
+    routing_chapter=next((row for row in structure_rows if row.get("id")=="routing-heads-and-specialist-cores"),{})
+    routing_modules={row.get("module") for row in routing_chapter.get("proof_targets",[])}
+    if routing_modules!={"AsiStackProofs.RoutingRefinement"}: out.append("Routing/MoECOT public targets do not all resolve to refinement")
+
+    expected_readiness_contract={
+        "readiness_model_path":"lean/AsiStackProofs/ReadinessRefinement.lean","readiness_dossier_path":READINESS_DOSSIER,
+        "readiness_consumer_path":READINESS_RECEIPT,"readiness_result_path":READINESS_RESULT,
+        "readiness_state":"validated_finite_authored_candidate_terminal_lifecycle_not_natural_calibrated_or_deployed",
+        "readiness_residual_valid_count":4,"readiness_residual_invalid_count":5,
+        "readiness_lifecycle_valid_count":6,"readiness_lifecycle_invalid_count":12,
+        "readiness_check_valid_count":1,"readiness_check_invalid_count":9,
+        "readiness_reachable_stage_count":7,"readiness_route_case_count":40,
+        "readiness_mutation_rejection_count":45,"readiness_retired_baseline_declaration_count":9,
+        "readiness_retained_legacy_theorem_count":11,"readiness_ordinary_release_count":1,
+        "readiness_quarantine_count":1,"readiness_terminal_count":1,"readiness_support_state_effect":"none"}
+    for key,value in expected_readiness_contract.items():
+        if proof_contract.get(key)!=value: out.append(f"readiness contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    readiness=data["readiness_result"]
+    for key,value in {"reachable_stage_count":7,"route_case_count":40,"mutation_count":45,"mutation_rejection_count":45,"support_state_effect":"none"}.items():
+        if readiness.get(key)!=value: out.append(f"readiness result drifted: {key}")
+    readiness_suites={row.get("suite_id"):(row.get("valid_count"),row.get("expected_invalid_count")) for row in readiness.get("input_suites",[])}
+    if readiness_suites!={"readiness_residual_gates":(4,5),"readiness_lifecycle_probe":(6,12),"readiness_check_lifecycle":(1,9)}: out.append("readiness consumed-suite counts drifted")
+    for phrase in ["all forty routes", "all 45 registered mutations", "one ordinary release", "Support-state effect is exactly `none`"]:
+        if phrase.casefold() not in data["readiness_receipt"].casefold(): out.append(f"readiness receipt missing exact boundary: {phrase}")
+    for phrase in ["Seven reachable stages", "45/45", "Inadequate for evaluator adequacy", "Support-state effect: exactly `none`"]:
+        if phrase.casefold() not in data["readiness_dossier"].casefold(): out.append(f"readiness dossier missing adequacy boundary: {phrase}")
+    readiness_chapter=next((row for row in structure_rows if row.get("id")=="readiness-gates-residual-escrow-and-quarantine"),{})
+    if {row.get("module") for row in readiness_chapter.get("proof_targets",[])}!={"AsiStackProofs.ReadinessRefinement"}: out.append("Readiness public targets do not all resolve to refinement")
+
+    expected_hive={"hive_model_path":"lean/AsiStackProofs/HiveLifecycleRefinement.lean","hive_dossier_path":HIVE_DOSSIER,"hive_consumer_path":HIVE_RECEIPT,"hive_result_path":HIVE_RESULT,"hive_state":"validated_finite_authored_policy_closure_lifecycle_not_distributed_useful_or_deployed","hive_admission_valid_count":2,"hive_admission_invalid_count":8,"hive_partition_valid_count":3,"hive_partition_invalid_count":6,"hive_reachable_stage_count":7,"hive_route_case_count":47,"hive_mutation_rejection_count":53,"hive_retired_baseline_declaration_count":5,"hive_retained_legacy_theorem_count":21,"hive_dispatch_count":1,"hive_useful_outcome_count":1,"hive_recovery_count":1,"hive_support_state_effect":"none"}
+    for key,value in expected_hive.items():
+        if proof_contract.get(key)!=value: out.append(f"hive contract drifted: {key}")
+    hive=data["hive_result"]
+    for key,value in {"reachable_stage_count":7,"route_case_count":47,"mutation_count":53,"mutation_rejection_count":53,"support_state_effect":"none"}.items():
+        if hive.get(key)!=value: out.append(f"hive result drifted: {key}")
+    if {r.get("suite_id"):(r.get("valid_count"),r.get("expected_invalid_count")) for r in hive.get("input_suites",[])}!={"hive_admission":(2,8),"partitioned_authority":(3,6)}:out.append("hive consumed-suite counts drifted")
+    hive_chapter=next((row for row in structure_rows if row.get("id")=="personal-compute-hives-and-federated-edge-intelligence"),{})
+    if {row.get("module") for row in hive_chapter.get("proof_targets",[])}!={"AsiStackProofs.HiveLifecycleRefinement"}:out.append("Hive public targets do not resolve to refinement")
+
+    expected_compact_generation={
+        "compact_generation_model_path":"lean/AsiStackProofs/CompactGenerationRefinement.lean",
+        "compact_generation_dossier_path":COMPACT_GENERATION_DOSSIER,
+        "compact_generation_consumer_path":COMPACT_GENERATION_RECEIPT,
+        "compact_generation_result_path":COMPACT_GENERATION_RESULT,
+        "compact_generation_state":"validated_finite_authored_source_closure_lifecycle_not_codec_useful_semantic_or_deployed",
+        "compact_generation_gvr_case_count":5,"compact_generation_gvr_invalid_count":3,
+        "compact_generation_residual_valid_count":3,"compact_generation_residual_invalid_count":5,
+        "compact_generation_trace_entry_count":4,"compact_generation_storage_entry_count":4,
+        "compact_generation_storage_invalid_count":5,"compact_generation_reachable_stage_count":9,
+        "compact_generation_route_case_count":60,"compact_generation_mutation_rejection_count":51,
+        "compact_generation_retired_baseline_declaration_count":26,
+        "compact_generation_retained_legacy_theorem_count":6,"compact_generation_fallback_count":1,
+        "compact_generation_support_state_effect":"none"}
+    for key,value in expected_compact_generation.items():
+        if proof_contract.get(key)!=value: out.append(f"compact-generation contract drifted: {key}")
+    compact=data["compact_generation_result"]
+    compact_model=compact.get("model",{})
+    for key,value in {"stage_count":9,"route_count":60,"independently_reached_route_count":60,"route_case_count":60,"rejected_mutation_count":51,"fallback_route_reached":True,"support_assignment_count":0,"external_effect_count":0}.items():
+        if compact_model.get(key)!=value: out.append(f"compact-generation result drifted: model.{key}")
+    expected_source_counts={"gvr_case_count":5,"gvr_negative_control_count":3,"gvr_baseline_bytes":368,"gvr_selected_bytes":78,"residual_valid_count":3,"residual_invalid_count":5,"trace_entry_count":4,"storage_entry_count":4,"storage_invalid_count":5}
+    if compact.get("source_result_refinement",{}).get("counts")!=expected_source_counts:out.append("compact-generation consumed result counts drifted")
+    if compact.get("support_state_effect")!="none" or compact.get("external_effect")!="none":out.append("compact-generation support/effect boundary drifted")
+    compact_chapter=next((row for row in structure_rows if row.get("id")=="compact-generative-systems-and-residual-honesty"),{})
+    if {row.get("module") for row in compact_chapter.get("proof_targets",[])}!={"AsiStackProofs.CompactGenerationRefinement"}:out.append("Compact Generation public targets do not resolve to refinement")
+    for phrase in ["nine-stage", "60 routes", "51/51", "no support-state or external effect"]:
+        if phrase.casefold() not in data["compact_generation_receipt"].casefold():out.append(f"compact-generation receipt missing exact boundary: {phrase}")
+    for phrase in ["Modeled boundary", "60 Lean route constructors", "Authored Boolean fields are not measurements", "No support transition"]:
+        if phrase.casefold() not in data["compact_generation_dossier"].casefold():out.append(f"compact-generation dossier missing adequacy boundary: {phrase}")
+
+    expected_fast_generation={
+        "fast_generation_model_path":"lean/AsiStackProofs/FastGenerationRefinement.lean",
+        "fast_generation_dossier_path":FAST_GENERATION_DOSSIER,
+        "fast_generation_consumer_path":FAST_GENERATION_RECEIPT,
+        "fast_generation_result_path":FAST_GENERATION_RESULT,
+        "fast_generation_state":"validated_finite_authored_context_closure_lifecycle_not_model_speed_useful_or_deployed",
+        "fast_generation_baseline_valid_count":2,"fast_generation_baseline_invalid_count":4,
+        "fast_generation_task_route_count":3,"fast_generation_task_count":4,
+        "fast_generation_theseus_valid_count":1,"fast_generation_theseus_invalid_count":6,
+        "fast_generation_reachable_stage_count":8,"fast_generation_route_case_count":60,
+        "fast_generation_mutation_rejection_count":51,
+        "fast_generation_retired_baseline_declaration_count":35,
+        "fast_generation_retained_legacy_theorem_count":3,"fast_generation_fallback_count":1,
+        "fast_generation_useful_outcome_count":1,"fast_generation_support_state_effect":"none"}
+    for key,value in expected_fast_generation.items():
+        if proof_contract.get(key)!=value: out.append(f"fast-generation contract drifted: {key}")
+    fast=data["fast_generation_result"]
+    fast_model=fast.get("model",{})
+    for key,value in {"stage_count":8,"route_count":60,"reached_route_count":60,"route_case_count":60,"rejected_mutation_count":51,"fallback_route_reached":True,"slow_baseline_route_reached":True,"support_assignment_count":0,"external_effect_count":0}.items():
+        if fast_model.get(key)!=value: out.append(f"fast-generation result drifted: model.{key}")
+    expected_fast_counts={"baseline_valid_count":2,"baseline_invalid_count":4,"task_route_count":3,"task_count":4,"baseline_tasks_passed":4,"candidate_tasks_passed":4,"proxy_tasks_passed":0,"baseline_cost_units":632,"candidate_cost_units":264,"proxy_cost_units":176,"theseus_valid_count":1,"theseus_invalid_count":6,"theseus_promotable_count":0}
+    if fast.get("source_result_refinement",{}).get("counts")!=expected_fast_counts:out.append("fast-generation consumed result counts drifted")
+    if fast.get("support_state_effect")!="none" or fast.get("external_effect")!="none":out.append("fast-generation support/effect boundary drifted")
+    fast_chapter=next((row for row in structure_rows if row.get("id")=="fast-generation-architectures"),{})
+    if {row.get("module") for row in fast_chapter.get("proof_targets",[])}!={"AsiStackProofs.FastGenerationRefinement"}:out.append("Fast Generation public targets do not resolve to refinement")
+    for phrase in ["eight reachable stages", "60 routes", "51/51", "Support-state and external-effect authority remain exactly `none`"]:
+        if phrase.casefold() not in data["fast_generation_receipt"].casefold():out.append(f"fast-generation receipt missing exact boundary: {phrase}")
+    for phrase in ["Reachable model", "Authored `taskSuccess`, `usefulDenominator`, and fallback fields are not measurements", "No support transition"]:
+        if phrase.casefold() not in data["fast_generation_dossier"].casefold():out.append(f"fast-generation dossier missing adequacy boundary: {phrase}")
+
+    expected_deliberation={
+        "deliberation_model_path":"lean/AsiStackProofs/DeliberationRefinement.lean",
+        "deliberation_dossier_path":DELIBERATION_DOSSIER,
+        "deliberation_consumer_path":DELIBERATION_RECEIPT,
+        "deliberation_result_path":DELIBERATION_RESULT,
+        "deliberation_state":"validated_finite_authored_request_closure_lifecycle_not_real_model_useful_faithful_or_deployed",
+        "deliberation_admission_case_count":10,"deliberation_admission_mutation_count":11,
+        "deliberation_preserved_harm_count":15,"deliberation_synthetic_seed_count":3,
+        "deliberation_synthetic_routing_record_count":900,"deliberation_synthetic_deliberation_record_count":540,
+        "deliberation_synthetic_interference_record_count":180,"deliberation_synthetic_fallback_activation_count":0,
+        "deliberation_real_model_test_count":60,"deliberation_real_model_correct_count":0,
+        "deliberation_real_model_disposition":"no_change","deliberation_reachable_stage_count":8,
+        "deliberation_route_case_count":59,"deliberation_mutation_rejection_count":51,
+        "deliberation_retired_baseline_declaration_count":8,"deliberation_retained_legacy_theorem_count":2,
+        "deliberation_residual_escrow_count":1,"deliberation_planning_handoff_count":1,
+        "deliberation_support_state_effect":"none"}
+    for key,value in expected_deliberation.items():
+        if proof_contract.get(key)!=value:out.append(f"deliberation contract drifted: {key}")
+    deliberation=data["deliberation_result"]
+    deliberation_model=deliberation.get("model",{})
+    for key,value in {"stage_count":8,"route_count":59,"reached_route_count":59,"route_case_count":59,"rejected_mutation_count":51,"residual_escrow_route_reached":True,"planning_handoff_route_reached":True,"support_assignment_count":0,"external_effect_count":0}.items():
+        if deliberation_model.get(key)!=value:out.append(f"deliberation result drifted: model.{key}")
+    expected_deliberation_counts={"admission_case_count":10,"admission_review_count":8,"admission_escrow_count":1,"admission_harm_count":15,"seed_count":3,"routing_record_count":900,"deliberation_record_count":540,"interference_record_count":180,"fixed_extra_compute_harm_count":15,"fallback_activation_count":0,"disposition_count":2,"real_model_request_count":60,"real_model_call_count":240,"real_model_candidate_evaluation_count":360,"real_model_arm_count":5,"real_model_final_correct_count":0,"real_model_initial_correct_count":0,"real_model_candidate_operation_count":1140,"real_model_known_harm_regression_count":15,"real_model_deliberation_disposition":"no_change","real_model_support_state_effect":"no_core_promotion"}
+    if deliberation.get("source_result_refinement",{}).get("counts")!=expected_deliberation_counts:out.append("deliberation consumed result counts drifted")
+    if deliberation.get("support_state_effect")!="none" or deliberation.get("external_effect")!="none":out.append("deliberation support/effect boundary drifted")
+    deliberation_chapter=next((row for row in structure_rows if row.get("id")=="governed-deliberation-and-test-time-scaling"),{})
+    if {row.get("module") for row in deliberation_chapter.get("proof_targets",[])}!={"AsiStackProofs.DeliberationRefinement"}:out.append("Governed Deliberation public targets do not resolve to refinement")
+    for phrase in ["eight reachable stages", "59 routes", "51/51", "actual-model five-arm 0/60", "Support-state and external-effect authority remain exactly `none`"]:
+        if phrase.casefold() not in data["deliberation_receipt"].casefold():out.append(f"deliberation receipt missing exact boundary: {phrase}")
+    for phrase in ["Reachable model", "failed actual-model attempt", "corruption was non-estimable", "No support transition"]:
+        if phrase.casefold() not in data["deliberation_dossier"].casefold():out.append(f"deliberation dossier missing adequacy boundary: {phrase}")
+
+    expected_artifact_compression={"artifact_compression_model_path":"lean/AsiStackProofs/ArtifactCompressionRefinement.lean","artifact_compression_dossier_path":ARTIFACT_COMPRESSION_DOSSIER,"artifact_compression_consumer_path":ARTIFACT_COMPRESSION_RECEIPT,"artifact_compression_result_path":ARTIFACT_COMPRESSION_RESULT,"artifact_compression_state":"validated_finite_authored_artifact_consumption_lifecycle_not_codec_useful_or_deployed","artifact_compression_fixture_field_count":22,"artifact_compression_probe_input_bytes":3936,"artifact_compression_probe_archive_bytes":4434,"artifact_compression_probe_corrupt_rejection_count":1,"artifact_compression_import_observation_count":3,"artifact_compression_no_change_decision_count":2,"artifact_compression_reachable_stage_count":8,"artifact_compression_route_case_count":53,"artifact_compression_mutation_rejection_count":44,"artifact_compression_retired_baseline_declaration_count":17,"artifact_compression_retained_legacy_theorem_count":2,"artifact_compression_fallback_count":1,"artifact_compression_support_state_effect":"none"}
+    for key,value in expected_artifact_compression.items():
+        if proof_contract.get(key)!=value:out.append(f"artifact-compression contract drifted: {key}")
+    artifact_compression=data["artifact_compression_result"];artifact_compression_model=artifact_compression.get("model",{})
+    for key,value in {"stage_count":8,"route_count":53,"reached_route_count":53,"route_case_count":53,"rejected_mutation_count":44,"fallback_route_reached":True,"exact_use_route_reached":True,"support_assignment_count":0,"external_effect_count":0}.items():
+        if artifact_compression_model.get(key)!=value:out.append(f"artifact-compression result drifted: model.{key}")
+    expected_artifact_compression_counts={"fixture_field_count":22,"fixture_non_claim_count":3,"probe_input_bytes":3936,"probe_archive_bytes":4434,"probe_command_count":5,"probe_corrupt_rejection_count":1,"probe_roundtrip_exact_count":1,"probe_compression_advantage_count":0,"import_observation_count":3,"import_decoded_bytes":100000000,"import_best_ratio":2.76634019,"no_change_decision_count":2}
+    if artifact_compression.get("source_result_refinement",{}).get("counts")!=expected_artifact_compression_counts:out.append("artifact-compression consumed result counts drifted")
+    if artifact_compression.get("support_state_effect")!="none" or artifact_compression.get("external_effect")!="none":out.append("artifact-compression support/effect boundary drifted")
+    artifact_compression_chapter=next((row for row in structure_rows if row.get("id")=="rankfold-neuralfold-and-artifact-compression"),{})
+    if {row.get("module") for row in artifact_compression_chapter.get("proof_targets",[])}!={"AsiStackProofs.ArtifactCompressionRefinement"}:out.append("Artifact Compression public targets do not resolve to refinement")
+    for phrase in ["eight reachable stages", "53 routes", "44/44", "22-field", "Support-state and external-effect authority remain exactly `none`"]:
+        if phrase.casefold() not in data["artifact_compression_receipt"].casefold():out.append(f"artifact-compression receipt missing exact boundary: {phrase}")
+    for phrase in ["Reachable model", "RAW0 replay was larger", "Authored decoder, probe, utility", "No support transition"]:
+        if phrase.casefold() not in data["artifact_compression_dossier"].casefold():out.append(f"artifact-compression dossier missing adequacy boundary: {phrase}")
+
+    expected_resource_economics = {
+        "resource_economics_model_path": "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "resource_economics_dossier_path": RESOURCE_ECONOMICS_DOSSIER,
+        "resource_economics_consumer_path": RESOURCE_ECONOMICS_RECEIPT,
+        "resource_economics_result_path": RESOURCE_ECONOMICS_RESULT,
+        "resource_economics_state": "validated_finite_authored_allocation_and_simulation_transport_lifecycle_not_economic_or_deployed",
+        "resource_economics_source_family_count": 12,
+        "resource_economics_budget_valid_count": 6,
+        "resource_economics_budget_invalid_count": 7,
+        "resource_economics_workflow_step_count": 3,
+        "resource_economics_flagship_command_count": 10,
+        "resource_economics_flagship_artifact_count": 26,
+        "resource_economics_ci_run_count": 8,
+        "resource_economics_ci_failure_count": 3,
+        "resource_economics_governance_valid_count": 3,
+        "resource_economics_governance_invalid_count": 5,
+        "resource_economics_simulation_valid_count": 3,
+        "resource_economics_simulation_invalid_count": 6,
+        "resource_economics_theseus_sim_invalid_count": 7,
+        "resource_economics_theseus_export_invalid_count": 7,
+        "resource_economics_reachable_stage_count": 9,
+        "resource_economics_route_case_count": 66,
+        "resource_economics_mutation_rejection_count": 57,
+        "resource_economics_retired_baseline_declaration_count": 35,
+        "resource_economics_retained_legacy_theorem_count": 23,
+        "resource_economics_support_state_effect": "none",
+    }
+    for key, value in expected_resource_economics.items():
+        if proof_contract.get(key) != value:
+            out.append(f"resource-economics contract drifted: {key}")
+    resource_economics = data["resource_economics_result"]
+    resource_model = resource_economics.get("model", {})
+    for key, value in {"stage_count": 9, "route_count": 66, "reached_route_count": 66, "route_case_count": 66, "rejected_mutation_count": 57, "simulation_transfer_route_reached": True, "closed_route_reached": True, "support_assignment_count": 0, "external_effect_count": 0}.items():
+        if resource_model.get(key) != value:
+            out.append(f"resource-economics result drifted: model.{key}")
+    expected_resource_counts = {"budget_valid_count":6,"budget_invalid_count":7,"costed_eligible_count":2,"costed_rejected_count":2,"workflow_valid_count":1,"workflow_invalid_count":5,"workflow_step_count":3,"capacity_valid_count":3,"capacity_invalid_count":6,"flagship_command_count":10,"flagship_artifact_count":26,"ci_run_count":8,"ci_failure_count":3,"governance_valid_count":3,"governance_invalid_count":5,"governed_selection_count":2,"low_risk_shortcut_count":1,"simulation_valid_count":3,"simulation_invalid_count":6,"theseus_sim_scenario_count":5,"theseus_sim_receipt_count":6,"theseus_sim_invalid_count":7,"theseus_export_ready_count":1,"theseus_export_format_count":3,"theseus_export_field_count":7,"theseus_export_invalid_count":7,"workload_probe_pass_count":1,"load_probe_pass_count":1}
+    if resource_economics.get("source_result_refinement", {}).get("counts") != expected_resource_counts:
+        out.append("resource-economics consumed result counts drifted")
+    if resource_economics.get("support_state_effect") != "none" or resource_economics.get("external_effect") != "none":
+        out.append("resource-economics support/effect boundary drifted")
+    resource_chapter = next((row for row in structure_rows if row.get("id") == "resource-economics-and-token-budgets"), {})
+    if {row.get("module") for row in resource_chapter.get("proof_targets", [])} != {"AsiStackProofs.ResourceEconomicsRefinement"}:
+        out.append("Resource Economics public targets do not resolve to refinement")
+    for phrase in ["nine reachable stages", "66 routes", "57/57", "twelve exact bounded", "Support-state and external-effect authority remain exactly `none`"]:
+        if phrase.casefold() not in data["resource_economics_receipt"].casefold():
+            out.append(f"resource-economics receipt missing exact boundary: {phrase}")
+    for phrase in ["Reachable model", "twelve bounded result families", "Authored cost, capacity, verifier", "No support transition"]:
+        if phrase.casefold() not in data["resource_economics_dossier"].casefold():
+            out.append(f"resource-economics dossier missing adequacy boundary: {phrase}")
+
+    article = status.get("x_article_contract", {})
+    expected_article = {
+        "contract_path": X_ARTICLE_CONTRACT,
+        "canonical_live_book_url": "https://corbensorenson.github.io/asi-stack-book/",
+        "maximum_visible_word_count": 9999,
+        "header_width_pixels": 2000,
+        "header_height_pixels": 800,
+        "header_aspect_ratio": "5:2",
+        "external_publication_authorized": False,
+        "ready_not_published_is_terminal": True,
+    }
+    for key, value in expected_article.items():
+        if article.get(key) != value:
+            out.append(f"X Article contract drifted: {key} expected {value!r}, got {article.get(key)!r}")
+    x_contract_normalized = " ".join(data["x_article_contract"].split())
+    for phrase in [
+        "first visible body line",
+        "9,999 words",
+        "2000×800 pixels",
+        "exact aspect ratio: 5:2",
+        "ready_not_published",
+        "explicit authorization",
+        "https://help.x.com/en/using-x/articles",
+    ]:
+        if phrase.casefold() not in x_contract_normalized.casefold():
+            out.append(f"X Article contract missing governing requirement: {phrase}")
+
+    roadmap = data["roadmap"]
+    roadmap_normalized = " ".join(roadmap.split())
+    for section in REQUIRED_SECTIONS:
+        if roadmap.count(section) != 1:
+            out.append(f"roadmap must contain exactly one section: {section}")
+    for phrase in REQUIRED_BOUNDARIES:
+        if phrase not in roadmap_normalized and phrase not in " ".join(status.get("non_claims", [])):
+            out.append(f"roadmap/status missing governing boundary: {phrase}")
+    for family_id in family_ids:
+        if roadmap.count(family_id) < 1:
+            out.append(f"roadmap does not define {family_id}")
+
+    for path, body in data["public"].items():
+        body_normalized = " ".join(body.split())
+        for phrase in [ROADMAP, STATUS, PREDECESSOR, PREDECESSOR_STATUS, "v2.3.0", "all 54 chapter-core claims remain at `argument`", "active canonical successor roadmap"]:
+            if phrase.casefold() not in body_normalized.casefold():
+                out.append(f"{path} missing active roadmap truth: {phrase}")
+        if "No successor roadmap is active" in body:
+            out.append(f"{path} retains obsolete no-successor language")
+    for name, body in [("living workflow", data["workflow"]), ("master prompt", data["master"])]:
+        for phrase in ["same transaction", "active successor"]:
+            if phrase.casefold() not in body.casefold():
+                out.append(f"{name} missing roadmap continuity rule: {phrase}")
+        for phrase in [X_ARTICLE_CONTRACT, "9,999", "explicit authorization"]:
+            if phrase.casefold() not in body.casefold():
+                out.append(f"{name} missing maintained X Article rule: {phrase}")
+    for phrase in [ROADMAP, STATUS, X_ARTICLE_CONTRACT, "proof", "54", "1,151", "promotion-or-refutation"]:
+        if phrase not in data["outline"]:
+            out.append(f"book outline missing active proof-roadmap authority: {phrase}")
+    if ROADMAP not in data["changelog"] or STATUS not in data["changelog"] or X_ARTICLE_CONTRACT not in data["changelog"]:
+        out.append("changelog missing roadmap activation record")
+    return out
+
+
+def main() -> None:
+    base = snapshot()
+    failures = errors(base)
+    mutations: list[tuple[str, dict]] = []
+
+    duplicate = copy.deepcopy(base)
+    duplicate["active_roadmaps"] = [ROADMAP, "docs/fake_roadmap.md"]
+    mutations.append(("duplicate active roadmap", duplicate))
+
+    missing_claim = copy.deepcopy(base)
+    missing_claim["status"]["chapter_claim_program"] = missing_claim["status"]["chapter_claim_program"][:-1]
+    mutations.append(("missing chapter claim", missing_claim))
+
+    stale_proof = copy.deepcopy(base)
+    stale_proof["status"]["activation_baseline"]["theorem_declaration_count"] += 1
+    mutations.append(("stale theorem baseline", stale_proof))
+
+    support = copy.deepcopy(base)
+    support["vectors"]["vectors"][0]["summary_support_state"] = "prototype-backed"
+    mutations.append(("support promotion", support))
+
+    broken_frontier = copy.deepcopy(base)
+    broken_frontier["status"]["priorities"][3]["state"] = "in_progress"
+    mutations.append(("multiple active priorities", broken_frontier))
+
+    human_gate = copy.deepcopy(base)
+    human_gate["status"]["external_human_prepublication_required"] = True
+    mutations.append(("external-human gate", human_gate))
+
+    no_continuity = copy.deepcopy(base)
+    no_continuity["status"]["closure_requires_active_successor"] = False
+    mutations.append(("successor continuity removal", no_continuity))
+
+    stale_public = copy.deepcopy(base)
+    stale_public["public"]["README.md"] = stale_public["public"]["README.md"].replace(ROADMAP, PREDECESSOR)
+    mutations.append(("stale public pointer", stale_public))
+
+    reader_laundering = copy.deepcopy(base)
+    reader_laundering["reader_epub"]["decision"] = "approved_exact_local_artifact"
+    mutations.append(("reader blocker laundering", reader_laundering))
+
+    release = copy.deepcopy(base)
+    release["status"]["release_effect"] = "public_release"
+    mutations.append(("activation release laundering", release))
+
+    orphan_proof = copy.deepcopy(base)
+    orphan_proof["status"]["proof_rationalization_contract"]["orphan_retained_theorem_allowed"] = True
+    mutations.append(("orphan proof allowance", orphan_proof))
+
+    projection_proof = copy.deepcopy(base)
+    projection_proof["status"]["proof_rationalization_contract"]["projection_or_assumption_restatement_counts_as_semantic_proof"] = True
+    mutations.append(("projection proof laundering", projection_proof))
+
+    safety_support = copy.deepcopy(base)
+    safety_support["safety_consumer_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("shared safety consumer support laundering", safety_support))
+
+    abi_support = copy.deepcopy(base)
+    abi_support["abi_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("Cognitive Kernel ABI support laundering", abi_support))
+
+    integrated_support = copy.deepcopy(base)
+    integrated_support["integrated_trace_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("integrated trace support laundering", integrated_support))
+
+    refinement_support = copy.deepcopy(base)
+    refinement_support["integrated_refinement_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("integrated runtime refinement support laundering", refinement_support))
+
+    concurrent_support = copy.deepcopy(base)
+    concurrent_support["concurrent_effect_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("concurrent effect support laundering", concurrent_support))
+
+    stack_boundary_support = copy.deepcopy(base)
+    stack_boundary_support["stack_boundary_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("stack-boundary support laundering", stack_boundary_support))
+
+    intent_execution_support = copy.deepcopy(base)
+    intent_execution_support["intent_execution_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("intent-execution support laundering", intent_execution_support))
+
+    authority_effect_support = copy.deepcopy(base)
+    authority_effect_support["authority_effect_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("authority-effect support laundering", authority_effect_support))
+
+    intent_resolution_support = copy.deepcopy(base)
+    intent_resolution_support["intent_resolution_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("intent-resolution support laundering", intent_resolution_support))
+
+    command_semantic_support = copy.deepcopy(base)
+    command_semantic_support["command_semantic_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("command-semantic support laundering", command_semantic_support))
+
+    cognitive_compilation_support = copy.deepcopy(base)
+    cognitive_compilation_support["cognitive_compilation_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("cognitive-compilation support laundering", cognitive_compilation_support))
+
+    virtual_context_support = copy.deepcopy(base)
+    virtual_context_support["virtual_context_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("virtual-context support laundering", virtual_context_support))
+
+    context_certificate_support = copy.deepcopy(base)
+    context_certificate_support["context_certificate_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("context-certificate support laundering", context_certificate_support))
+
+    context_transaction_support = copy.deepcopy(base)
+    context_transaction_support["context_transaction_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("context-transaction support laundering", context_transaction_support))
+
+    verification_bandwidth_support = copy.deepcopy(base)
+    verification_bandwidth_support["verification_bandwidth_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("verification-bandwidth support laundering", verification_bandwidth_support))
+
+    claim_ledger_support = copy.deepcopy(base)
+    claim_ledger_support["claim_ledger_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("claim-ledger support laundering", claim_ledger_support))
+
+    proof_carrying_claims_support = copy.deepcopy(base)
+    proof_carrying_claims_support["proof_carrying_claims_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("proof-carrying-claims support laundering", proof_carrying_claims_support))
+
+    tribunal_support = copy.deepcopy(base)
+    tribunal_support["tribunal_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("Tribunal support laundering", tribunal_support))
+
+    typed_job_support = copy.deepcopy(base)
+    typed_job_support["typed_job_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("typed-job support laundering", typed_job_support))
+
+    artifact_reality_support = copy.deepcopy(base)
+    artifact_reality_support["artifact_reality_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("artifact-reality support laundering", artifact_reality_support))
+
+    procedural_memory_support = copy.deepcopy(base)
+    procedural_memory_support["procedural_memory_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("procedural-memory support laundering", procedural_memory_support))
+
+    routing_support = copy.deepcopy(base)
+    routing_support["routing_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("routing support laundering", routing_support))
+
+    readiness_support = copy.deepcopy(base)
+    readiness_support["readiness_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("readiness support laundering", readiness_support))
+
+    hive_support = copy.deepcopy(base)
+    hive_support["hive_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("Hive support laundering", hive_support))
+
+    compact_generation_support = copy.deepcopy(base)
+    compact_generation_support["compact_generation_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("Compact Generation support laundering", compact_generation_support))
+
+    fast_generation_support = copy.deepcopy(base)
+    fast_generation_support["fast_generation_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("Fast Generation support laundering", fast_generation_support))
+
+    deliberation_support = copy.deepcopy(base)
+    deliberation_support["deliberation_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("Governed Deliberation support laundering", deliberation_support))
+
+    artifact_compression_support = copy.deepcopy(base)
+    artifact_compression_support["artifact_compression_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("Artifact Compression support laundering", artifact_compression_support))
+
+    resource_economics_support = copy.deepcopy(base)
+    resource_economics_support["resource_economics_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("Resource Economics support laundering", resource_economics_support))
+
+    wip_scope = copy.deepcopy(base)
+    wip_scope["status"]["latest_review_remediation_contract"]["scope_expansion_blocked_above_limit"] = False
+    mutations.append(("Oversized WIP scope-expansion laundering", wip_scope))
+
+    campaign_batch = copy.deepcopy(base)
+    campaign_batch["status"]["latest_review_remediation_contract"]["first_campaign_minimum_terminal_atom_count"] = 0
+    mutations.append(("First campaign batch erasure", campaign_batch))
+
+    sota_entry = copy.deepcopy(base)
+    sota_entry["status"]["latest_review_remediation_contract"]["p6_dated_comparator_ledger_required_before_run"] = False
+    mutations.append(("SOTA prerequisite erasure", sota_entry))
+
+    article_length = copy.deepcopy(base)
+    article_length["status"]["x_article_contract"]["maximum_visible_word_count"] = 10000
+    mutations.append(("X Article word-limit drift", article_length))
+
+    article_ratio = copy.deepcopy(base)
+    article_ratio["status"]["x_article_contract"]["header_aspect_ratio"] = "16:9"
+    mutations.append(("X Article header-ratio drift", article_ratio))
+
+    article_publish = copy.deepcopy(base)
+    article_publish["status"]["x_article_contract"]["external_publication_authorized"] = True
+    mutations.append(("X Article publication invention", article_publish))
+
+    missing_contract = copy.deepcopy(base)
+    missing_contract["x_article_contract"] = missing_contract["x_article_contract"].replace("9,999 words", "ten thousand words")
+    mutations.append(("X Article contract weakening", missing_contract))
+
+    for label, candidate in mutations:
+        if not errors(candidate):
+            failures.append(f"negative mutation accepted: {label}")
+    if failures:
+        raise SystemExit("Claim-proof/SOTA roadmap validation failed:\n - " + "\n - ".join(failures))
+    print(
+        f"Claim-proof/SOTA roadmap passed: sole active successor at {base['status']['current_priority']}, monotone priority frontier, "
+        "55 live chapter-core programs across CF-01..CF-08 with a frozen 54-chapter activation baseline, exact proof/evidence/reader baseline, "
+        "proof rationalization and argument-exit contracts, maintained X Article and exact 5:2 header contract, "
+        "no support or release effect, no external-human gate, same-transaction successor continuity, "
+        "validated shared-safety, Cognitive Kernel ABI, integrated reference trace, concrete-schema refinement, concurrent effect, reachable stack-boundary, Intent-to-Execution vertical, Authority grant-to-effect, Human Intent resolution, Command semantic-interface, Cognitive Compilation obligation-refinement, Virtual Context binding/materialization/fault, Context Certificate provenance/lifecycle, Context Transaction snapshot/store, Verification Bandwidth evidence-gate, Claim Ledger append-only, Proof-Carrying Claims target-to-writeback, Tribunal versioned-verdict/appeal, Typed Job versioned execution/closure, Artifact record-reality/trust, Procedural Memory promotion/retirement, Routing/MoECOT request-to-closure, Readiness candidate-to-terminal, Hive policy-to-closure, Compact Generation source-to-closure, Fast Generation request-to-closure, Governed Deliberation request-to-closure, Artifact Compression artifact-to-consumption, and Resource Economics allocation-and-simulation-transport receipts, bounded WIP and first-campaign/SOTA entry gates, and 48 rejecting mutations."
+    )
+
+
+if __name__ == "__main__":
+    main()

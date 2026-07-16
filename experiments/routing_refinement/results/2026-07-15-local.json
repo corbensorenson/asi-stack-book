@@ -1,0 +1,434 @@
+{
+  "schema_version": "asi_stack.routing_refinement.v1",
+  "result_id": "routing-refinement-2026-07-15-local",
+  "source_sha256": {
+    "lean_model": "4023532b6f7635cb4e880f5f3df58866ffe0159eb1aed5c9ab35b53628096dad",
+    "post_v2_result": "aeb55600763191c83938ec9bf87a3d6814e06f490442f0babb5deab487041ad6"
+  },
+  "input_suites": [
+    {
+      "suite_id": "routing_decision_lease",
+      "valid_count": 3,
+      "expected_invalid_count": 7
+    },
+    {
+      "suite_id": "readiness_residual_gates",
+      "valid_count": 4,
+      "expected_invalid_count": 5
+    },
+    {
+      "suite_id": "post_v2_routing_deliberation",
+      "seed_count": 3,
+      "routing_record_count": 900,
+      "deliberation_record_count": 540,
+      "learned_router_correct": 162,
+      "generalist_correct": 130,
+      "fallback_activation_count": 0,
+      "adaptive_correct": 179,
+      "adaptive_candidate_operations": 236,
+      "fixed_correct": 154,
+      "fixed_candidate_operations": 540,
+      "fixed_extra_compute_harm": 15,
+      "no_change_disposition_count": 2,
+      "support_state_effect": "none"
+    }
+  ],
+  "reachable_stage_count": 7,
+  "route_case_count": 42,
+  "route_coverage": [
+    {
+      "case_id": "idle_accepted",
+      "expected_route": "accept_request"
+    },
+    {
+      "case_id": "requestBound_accepted",
+      "expected_route": "accept_registry"
+    },
+    {
+      "case_id": "registryFrozen_accepted",
+      "expected_route": "accept_lease"
+    },
+    {
+      "case_id": "leaseQualified_accepted",
+      "expected_route": "accept_dispatch"
+    },
+    {
+      "case_id": "dispatched_accepted",
+      "expected_route": "accept_observation"
+    },
+    {
+      "case_id": "outcomeObserved_accepted",
+      "expected_route": "accept_closure"
+    },
+    {
+      "case_id": "idle_taskPresent",
+      "expected_route": "request_task"
+    },
+    {
+      "case_id": "idle_capabilityRequestPresent",
+      "expected_route": "request_capability"
+    },
+    {
+      "case_id": "requestBound_registryPresent",
+      "expected_route": "request_registry"
+    },
+    {
+      "case_id": "requestBound_candidateDenominatorComplete",
+      "expected_route": "request_candidate_denominator"
+    },
+    {
+      "case_id": "requestBound_heldOutLabelLeakAbsent",
+      "expected_route": "reject_label_leak"
+    },
+    {
+      "case_id": "requestBound_selectedSpecialistRegistered",
+      "expected_route": "request_registered_selection"
+    },
+    {
+      "case_id": "registryFrozen_authoritySatisfied",
+      "expected_route": "block_authority"
+    },
+    {
+      "case_id": "registryFrozen_readiness_fallback",
+      "expected_route": "route_fallback"
+    },
+    {
+      "case_id": "registryFrozen_readiness_residual",
+      "expected_route": "request_residual_owner"
+    },
+    {
+      "case_id": "registryFrozen_readiness_block",
+      "expected_route": "block_readiness"
+    },
+    {
+      "case_id": "registryFrozen_contextLeaseFresh",
+      "expected_route": "request_fresh_context_lease"
+    },
+    {
+      "case_id": "registryFrozen_toolLeaseFresh",
+      "expected_route": "request_fresh_tool_lease"
+    },
+    {
+      "case_id": "registryFrozen_costQualityRecordPresent",
+      "expected_route": "request_cost_quality"
+    },
+    {
+      "case_id": "registryFrozen_leastCapableAdequate",
+      "expected_route": "request_least_capable_adequate"
+    },
+    {
+      "case_id": "registryFrozen_rejectedCandidateEvidencePresent",
+      "expected_route": "request_rejected_candidate_evidence"
+    },
+    {
+      "case_id": "registryFrozen_selectivePolicyPresent",
+      "expected_route": "request_selective_policy"
+    },
+    {
+      "case_id": "registryFrozen_ambiguity_selective",
+      "expected_route": "request_selective_action"
+    },
+    {
+      "case_id": "registryFrozen_sourceInspected",
+      "expected_route": "request_source_inspection"
+    },
+    {
+      "case_id": "registryFrozen_runtimeEvidenceRefsPresent",
+      "expected_route": "request_runtime_evidence"
+    },
+    {
+      "case_id": "registryFrozen_replayEvidenceRefsPresent",
+      "expected_route": "request_replay_evidence"
+    },
+    {
+      "case_id": "leaseQualified_dispatchGrantPresent",
+      "expected_route": "request_dispatch_grant"
+    },
+    {
+      "case_id": "leaseQualified_isolationBoundaryPresent",
+      "expected_route": "request_isolation"
+    },
+    {
+      "case_id": "dispatched_outcomeObserved",
+      "expected_route": "request_outcome_observation"
+    },
+    {
+      "case_id": "dispatched_routeQualityRecorded",
+      "expected_route": "request_route_quality"
+    },
+    {
+      "case_id": "dispatched_answerQualityRecorded",
+      "expected_route": "request_answer_quality"
+    },
+    {
+      "case_id": "dispatched_unsafeOutcomeRecorded",
+      "expected_route": "request_unsafe_outcome"
+    },
+    {
+      "case_id": "dispatched_costRecordPresent",
+      "expected_route": "request_cost_record"
+    },
+    {
+      "case_id": "outcomeObserved_lifecycleCurrent",
+      "expected_route": "request_lifecycle_current"
+    },
+    {
+      "case_id": "outcomeObserved_revocationClosureComplete",
+      "expected_route": "request_revocation_closure"
+    },
+    {
+      "case_id": "outcomeObserved_consumerAcknowledgmentPresent",
+      "expected_route": "request_consumer_acknowledgment"
+    },
+    {
+      "case_id": "outcomeObserved_nonClaimsPresent",
+      "expected_route": "request_non_claims"
+    },
+    {
+      "case_id": "wrong_stage",
+      "expected_route": "reject_wrong_stage"
+    },
+    {
+      "case_id": "task_substitution",
+      "expected_route": "reject_task_substitution"
+    },
+    {
+      "case_id": "registry_substitution",
+      "expected_route": "reject_registry_substitution"
+    },
+    {
+      "case_id": "event_replay",
+      "expected_route": "reject_event_replay"
+    },
+    {
+      "case_id": "authority_leak",
+      "expected_route": "reject_authority_leak"
+    }
+  ],
+  "mutation_count": 47,
+  "mutation_rejection_count": 47,
+  "mutation_receipts": [
+    {
+      "mutation_id": "binding_authorityDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_candidateSetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_capabilityDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_contextLeaseDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_evaluatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_readinessDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_registryDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_requestDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_selectedSpecialistDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_taskId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_taskVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_toolLeaseDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_idle_taskPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_idle_capabilityRequestPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_requestBound_registryPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_requestBound_candidateDenominatorComplete",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_requestBound_heldOutLabelLeakAbsent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_requestBound_selectedSpecialistRegistered",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_registryFrozen_authoritySatisfied",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_registryFrozen_readiness_residual",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_registryFrozen_contextLeaseFresh",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_registryFrozen_toolLeaseFresh",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_registryFrozen_costQualityRecordPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_registryFrozen_leastCapableAdequate",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_registryFrozen_rejectedCandidateEvidencePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_registryFrozen_selectivePolicyPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_registryFrozen_ambiguity_selective",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_registryFrozen_sourceInspected",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_registryFrozen_runtimeEvidenceRefsPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_registryFrozen_replayEvidenceRefsPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_leaseQualified_dispatchGrantPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_leaseQualified_isolationBoundaryPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_dispatched_outcomeObserved",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_dispatched_routeQualityRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_dispatched_answerQualityRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_dispatched_unsafeOutcomeRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_dispatched_costRecordPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_outcomeObserved_lifecycleCurrent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_outcomeObserved_revocationClosureComplete",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_outcomeObserved_consumerAcknowledgmentPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_outcomeObserved_nonClaimsPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong_kind",
+      "rejected": true
+    },
+    {
+      "mutation_id": "event_replay",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support_leak",
+      "rejected": true
+    },
+    {
+      "mutation_id": "external_effect_leak",
+      "rejected": true
+    }
+  ],
+  "command_receipts": [
+    {
+      "command": "python3 scripts/validate_routing_decision_lease.py",
+      "exit_code": 0,
+      "output_sha256": "b62adce6e14bc74a44555035e6e8936410fc78cb8bce79cf8ad1d8d0ce4421d9"
+    },
+    {
+      "command": "python3 scripts/validate_readiness_residual_gates.py",
+      "exit_code": 0,
+      "output_sha256": "e4676c6bc155cc88ebe62b3ce77cb91f38f1113a23073fbd435e93a02d1b55b1"
+    },
+    {
+      "command": "python3 scripts/validate_post_v2_routing_deliberation.py",
+      "exit_code": 0,
+      "output_sha256": "cc630dfd527a1671d6bf383480d2755215d761b0fca61fb63d0d27bc903fedf6"
+    }
+  ],
+  "witness": {
+    "terminal_stage": "closed",
+    "receipt_count": 6,
+    "dispatch_count": 1,
+    "route_outcome_count": 1,
+    "answer_outcome_count": 1,
+    "support_assignment_count": 0,
+    "external_effect_count": 0
+  },
+  "support_state_effect": "none",
+  "non_claims": [
+    "no natural useful-routing result",
+    "no strong-model or open-world transfer",
+    "no deployed authority, runtime correctness, or replay correctness",
+    "no claim that route correctness establishes answer correctness",
+    "no support promotion"
+  ]
+}

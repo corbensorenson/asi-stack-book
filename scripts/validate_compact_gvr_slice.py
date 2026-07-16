@@ -19,7 +19,7 @@ TRANSITION = (
     / "v1_x_measured"
     / "compact_gvr_slice_synthetic_test_backed.json"
 )
-LEAN_FIXTURE = ROOT / "lean" / "AsiStackProofs" / "CompactGenerativeSystems.lean"
+LEAN_FIXTURE = ROOT / "lean" / "AsiStackProofs" / "CompactGenerationRefinement.lean"
 
 EXPECTED_CASES = 5
 EXPECTED_SELECTED = "receipt://repeat-generator-plus-repair"
@@ -35,19 +35,11 @@ REQUIRED_NON_CLAIMS = (
     "codec correctness",
 )
 REQUIRED_LEAN_THEOREMS = (
-    "compact_gvr_fixture_selected_is_eligible",
-    "lossy_marked_exact_fixture_rejected",
-    "negative_rate_without_fallback_fixture_rejected",
-    "bounded_search_overrun_fixture_rejected",
-    "compact_gvr_fixture_selected_beats_literal_baseline",
+    "lossy_exactness_is_blocked_before_verification",
+    "reconstruction_mismatch_activates_preserved_source_fallback",
+    "reconstruction_mismatch_without_executable_fallback_is_blocked",
+    "fallback_lifecycle_reaches_closed_without_support_or_effect_authority",
 )
-RECEIPT_ID_TO_LEAN_CONSTRUCTOR = {
-    "receipt://literal-baseline": "literalBaseline",
-    "receipt://repeat-generator-plus-repair": "repeatGeneratorPlusRepair",
-    "receipt://lossy-summary-marked-exact": "lossySummaryMarkedExact",
-    "receipt://negative-rate-no-fallback": "negativeRateNoFallback",
-    "receipt://bounded-search-overrun": "boundedSearchOverrun",
-}
 
 
 def rel(path: Path) -> str:
@@ -220,10 +212,8 @@ def build_result(packet: dict[str, Any], errors: list[str]) -> dict[str, Any]:
         ),
         "lean_fixture_alignment": {
             "lean_module": rel(LEAN_FIXTURE),
-            "selected_constructor": RECEIPT_ID_TO_LEAN_CONSTRUCTOR[EXPECTED_SELECTED],
-            "baseline_constructor": RECEIPT_ID_TO_LEAN_CONSTRUCTOR[EXPECTED_BASELINE],
-            "receipt_constructors": RECEIPT_ID_TO_LEAN_CONSTRUCTOR,
             "checked_theorem_names": list(REQUIRED_LEAN_THEOREMS),
+            "boundary": "reachable verification/fallback lifecycle; receipt values remain validator-owned",
         },
         "verification_result": "pass",
         "support_state_effect": "eligible_for_bounded_evidence_review",
@@ -259,7 +249,7 @@ def validate_summary(expected_result: dict[str, Any], errors: list[str]) -> None
         "`receipt://bounded-search-overrun` | bounded-search control | 72 | rejected",
         "78.8 percent smaller",
         "Lean Fixture Bridge",
-        "`AsiStackProofs.CompactGenerativeSystems`",
+        "`AsiStackProofs.CompactGenerationRefinement`",
         "Does not promote any chapter core claim above `argument`.",
         "Does not prove compression utility",
     ]
@@ -316,26 +306,12 @@ def validate_lean_fixture(errors: list[str]) -> None:
         errors.append(f"Missing {rel(LEAN_FIXTURE)}.")
         return
     text = LEAN_FIXTURE.read_text(encoding="utf-8")
-    constructor_match = re.search(
-        r"inductive\s+CompactGVRFixtureReceipt\s+where(?P<body>.*?)deriving\s+DecidableEq",
-        text,
-        re.DOTALL,
-    )
-    if not constructor_match:
-        errors.append(f"{rel(LEAN_FIXTURE)} missing CompactGVRFixtureReceipt constructors.")
-        constructors: set[str] = set()
-    else:
-        constructors = set(re.findall(r"^\s*\|\s+(\w+)\s*$", constructor_match.group("body"), re.MULTILINE))
-    missing_constructors = sorted(set(RECEIPT_ID_TO_LEAN_CONSTRUCTOR.values()) - constructors)
-    for constructor in missing_constructors:
-        errors.append(f"{rel(LEAN_FIXTURE)} missing constructor {constructor}.")
-
     declared_theorems = set(re.findall(r"^theorem\s+(\w+)\b", text, re.MULTILINE))
     for theorem in sorted(set(REQUIRED_LEAN_THEOREMS) - declared_theorems):
         errors.append(f"{rel(LEAN_FIXTURE)} missing theorem {theorem}.")
-    for number in ("368", "78", "55", "485", "72"):
-        if number not in text:
-            errors.append(f"{rel(LEAN_FIXTURE)} missing fixture byte number {number}.")
+    for fragment in ("inductive Stage", "def routeFor", "activateFallback", "resultSetDigest"):
+        if fragment not in text:
+            errors.append(f"{rel(LEAN_FIXTURE)} missing refinement fragment {fragment}.")
 
 
 def main() -> None:

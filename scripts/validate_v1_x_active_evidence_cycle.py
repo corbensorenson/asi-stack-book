@@ -50,7 +50,7 @@ STATIC_REQUIRED_FRAGMENTS = (
     "docs/fast_generation_task_bundle.md",
     "evidence_transitions/v1_x_measured/fast_generation_task_bundle_no_change.json",
     "evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json",
-    "lean/AsiStackProofs/FastGeneration.lean",
+    "lean/AsiStackProofs/FastGenerationRefinement.lean",
 )
 
 
@@ -157,7 +157,7 @@ def main() -> None:
         "scripts/validate_theseus_report.py",
         "docs/theseus_generation_mode_import_slice.md",
         "experiments/theseus_generation_mode_import/results/2026-07-01-local.json",
-        "lean/AsiStackProofs/FastGeneration.lean",
+        "lean/AsiStackProofs/FastGenerationRefinement.lean",
         "scripts/validate_theseus_generation_mode_import.py",
         "docs/theseus_support_replay_probe.md",
         "experiments/theseus_support_replay_probe/results/2026-07-01-local.json",

@@ -18,9 +18,9 @@ The command reads
 recomputes the tracked result at
 `experiments/residual_honesty_conservation/results/2026-07-03-local.json`,
 checks this public summary, checks the contribution novelty ledger, and checks
-the finite Lean fixture bridge
-`residual_honesty_conservation_fixture_bridge` in
-`AsiStackProofs.CompactGenerativeSystems`.
+the reachable residual-custody boundary
+`unresolved_obligation_without_owner_blocks_residualization` in
+`AsiStackProofs.CompactGenerationRefinement`.
 
 ## Fixture Shape
 

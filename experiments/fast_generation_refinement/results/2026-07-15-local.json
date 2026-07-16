@@ -1,0 +1,502 @@
+{
+  "schema_version": "asi_stack.fast_generation_refinement.result.v1",
+  "result_id": "2026-07-15-fast-generation-refinement",
+  "recorded_date": "2026-07-15",
+  "command": "python3 scripts/validate_fast_generation_refinement.py",
+  "model": {
+    "lean_module": "lean/AsiStackProofs/FastGenerationRefinement.lean",
+    "stage_count": 8,
+    "route_count": 60,
+    "reached_route_count": 60,
+    "route_case_count": 60,
+    "rejected_mutation_count": 51,
+    "fallback_route_reached": true,
+    "slow_baseline_route_reached": true,
+    "support_assignment_count": 0,
+    "external_effect_count": 0
+  },
+  "source_result_refinement": {
+    "counts": {
+      "baseline_valid_count": 2,
+      "baseline_invalid_count": 4,
+      "task_route_count": 3,
+      "task_count": 4,
+      "baseline_tasks_passed": 4,
+      "candidate_tasks_passed": 4,
+      "proxy_tasks_passed": 0,
+      "baseline_cost_units": 632,
+      "candidate_cost_units": 264,
+      "proxy_cost_units": 176,
+      "theseus_valid_count": 1,
+      "theseus_invalid_count": 6,
+      "theseus_promotable_count": 0
+    },
+    "sha256": {
+      "experiments/generation_mode_baselines/fixtures/invalid_failed_quality_promoted.json": "e870af4f73ad5ad4e5c7089809c5065008d6be40f79d715e5027d94d2bcaa0bc",
+      "experiments/generation_mode_baselines/fixtures/invalid_latency_only_proxy.json": "61936560a16b240a0c50a566f53a1c341d8c7ed83c8b75bbfd68e05f9906901b",
+      "experiments/generation_mode_baselines/fixtures/invalid_missing_baseline.json": "63ff4b41b677940a8d21878634a26b5ebfe7fecad1f0913dfbdc8f695234e1b7",
+      "experiments/generation_mode_baselines/fixtures/invalid_missing_fallback_medium_risk.json": "b16f7815ab657c197f889275824732c8d766130cd436e3f1d17de07fec1719f6",
+      "experiments/generation_mode_baselines/fixtures/valid_autoregressive_reference.json": "db0394611fbc17d9b0a85082bbb7f21df90cb1fd50e1f39fb45038fa1d8f1978",
+      "experiments/generation_mode_baselines/fixtures/valid_speculative_kept_experimental.json": "9eae3d1eb9327bf19f8e9a87dc4421d3aec45d71c752185d9ae2177471c22ebb",
+      "experiments/fast_generation_task_bundle/results/2026-07-02-local.json": "1065c501df6d32922ab8955b0d98304f56d75c4e9bf8e7f5b63d4d497b846908",
+      "experiments/theseus_generation_mode_import/results/2026-07-01-local.json": "fed3452e068bf751b36e9d6f4a63af204bc3a58b2ca3eb98ef663a33cd468f59"
+    },
+    "validator_runs": [
+      {
+        "command": "python3 scripts/validate_generation_mode_baselines.py",
+        "exit_code": 0,
+        "output_sha256": "4c46f47b1f2c4f2dcdd280ffcd43ded7f565acef7243be3d1c2e18b83b806639"
+      },
+      {
+        "command": "python3 scripts/validate_fast_generation_task_bundle.py",
+        "exit_code": 0,
+        "output_sha256": "572373c0524708df279590de02deea8500cd777fe20be4fc6e96baa5b3ed3db3"
+      },
+      {
+        "command": "python3 scripts/validate_theseus_generation_mode_import.py",
+        "exit_code": 0,
+        "output_sha256": "50d1c01397082194f45b916165c582570653073b56a7de934cf9222e80d7486c"
+      }
+    ]
+  },
+  "route_cases": [
+    {
+      "case_id": "wrong-stage",
+      "stage": "requested",
+      "expected_route": "reject_wrong_stage",
+      "actual_route": "reject_wrong_stage",
+      "accepted": false
+    },
+    {
+      "case_id": "task-substitution",
+      "stage": "requested",
+      "expected_route": "reject_task_substitution",
+      "actual_route": "reject_task_substitution",
+      "accepted": false
+    },
+    {
+      "case_id": "mode-substitution",
+      "stage": "requested",
+      "expected_route": "reject_mode_substitution",
+      "actual_route": "reject_mode_substitution",
+      "accepted": false
+    },
+    {
+      "case_id": "evaluator-substitution",
+      "stage": "requested",
+      "expected_route": "reject_evaluator_substitution",
+      "actual_route": "reject_evaluator_substitution",
+      "accepted": false
+    },
+    {
+      "case_id": "result-substitution",
+      "stage": "requested",
+      "expected_route": "reject_result_substitution",
+      "actual_route": "reject_result_substitution",
+      "accepted": false
+    },
+    {
+      "case_id": "replay",
+      "stage": "requested",
+      "expected_route": "reject_event_replay",
+      "actual_route": "reject_event_replay",
+      "accepted": false
+    },
+    {
+      "case_id": "authority-leak",
+      "stage": "requested",
+      "expected_route": "reject_authority_leak",
+      "actual_route": "reject_authority_leak",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-requestWellFormed",
+      "stage": "requested",
+      "expected_route": "reject_malformed_request",
+      "actual_route": "reject_malformed_request",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-contextPacket",
+      "stage": "requested",
+      "expected_route": "require_context_packet",
+      "actual_route": "require_context_packet",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-taskSet",
+      "stage": "requested",
+      "expected_route": "require_task_set",
+      "actual_route": "require_task_set",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-consumer",
+      "stage": "requested",
+      "expected_route": "require_consumer",
+      "actual_route": "require_consumer",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-deadline",
+      "stage": "requested",
+      "expected_route": "require_deadline",
+      "actual_route": "require_deadline",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-rights",
+      "stage": "requested",
+      "expected_route": "require_rights",
+      "actual_route": "require_rights",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-accepted",
+      "stage": "requested",
+      "expected_route": "accept_context",
+      "actual_route": "accept_context",
+      "accepted": true
+    },
+    {
+      "case_id": "modeSelected-generator",
+      "stage": "modeSelected",
+      "expected_route": "require_generator",
+      "actual_route": "require_generator",
+      "accepted": false
+    },
+    {
+      "case_id": "modeSelected-draftArtifact",
+      "stage": "modeSelected",
+      "expected_route": "require_draft_artifact",
+      "actual_route": "require_draft_artifact",
+      "accepted": false
+    },
+    {
+      "case_id": "modeSelected-proposedOutput",
+      "stage": "modeSelected",
+      "expected_route": "require_proposed_output",
+      "actual_route": "require_proposed_output",
+      "accepted": false
+    },
+    {
+      "case_id": "modeSelected-generationCost",
+      "stage": "modeSelected",
+      "expected_route": "require_generation_cost",
+      "actual_route": "require_generation_cost",
+      "accepted": false
+    },
+    {
+      "case_id": "modeSelected-searchBound",
+      "stage": "modeSelected",
+      "expected_route": "require_search_bound",
+      "actual_route": "require_search_bound",
+      "accepted": false
+    },
+    {
+      "case_id": "modeSelected-accepted",
+      "stage": "modeSelected",
+      "expected_route": "accept_generation",
+      "actual_route": "accept_generation",
+      "accepted": true
+    },
+    {
+      "case_id": "decided-consumerAcknowledgment",
+      "stage": "decided",
+      "expected_route": "require_consumer_acknowledgment",
+      "actual_route": "require_consumer_acknowledgment",
+      "accepted": false
+    },
+    {
+      "case_id": "decided-residualClosure",
+      "stage": "decided",
+      "expected_route": "require_residual_closure",
+      "actual_route": "require_residual_closure",
+      "accepted": false
+    },
+    {
+      "case_id": "decided-descendantReferences",
+      "stage": "decided",
+      "expected_route": "require_descendant_references",
+      "actual_route": "require_descendant_references",
+      "accepted": false
+    },
+    {
+      "case_id": "decided-resultDigestBound",
+      "stage": "decided",
+      "expected_route": "require_bound_result_digest",
+      "actual_route": "require_bound_result_digest",
+      "accepted": false
+    },
+    {
+      "case_id": "decided-cleanup",
+      "stage": "decided",
+      "expected_route": "require_cleanup",
+      "actual_route": "require_cleanup",
+      "accepted": false
+    },
+    {
+      "case_id": "decided-accepted",
+      "stage": "decided",
+      "expected_route": "accept_closure",
+      "actual_route": "accept_closure",
+      "accepted": true
+    },
+    {
+      "case_id": "slow-baseline",
+      "stage": "contextBound",
+      "expected_route": "select_slow_baseline",
+      "actual_route": "select_slow_baseline",
+      "accepted": true
+    },
+    {
+      "case_id": "context-generationMode",
+      "stage": "contextBound",
+      "expected_route": "require_generation_mode",
+      "actual_route": "require_generation_mode",
+      "accepted": false
+    },
+    {
+      "case_id": "context-riskTier",
+      "stage": "contextBound",
+      "expected_route": "require_risk_tier",
+      "actual_route": "require_risk_tier",
+      "accepted": false
+    },
+    {
+      "case_id": "context-qualityTarget",
+      "stage": "contextBound",
+      "expected_route": "require_quality_target",
+      "actual_route": "require_quality_target",
+      "accepted": false
+    },
+    {
+      "case_id": "context-verifierIdentity",
+      "stage": "contextBound",
+      "expected_route": "require_verifier_identity",
+      "actual_route": "require_verifier_identity",
+      "accepted": false
+    },
+    {
+      "case_id": "context-independentEvaluator",
+      "stage": "contextBound",
+      "expected_route": "require_independent_evaluator",
+      "actual_route": "require_independent_evaluator",
+      "accepted": false
+    },
+    {
+      "case_id": "context-acceptancePredicate",
+      "stage": "contextBound",
+      "expected_route": "require_acceptance_predicate",
+      "actual_route": "require_acceptance_predicate",
+      "accepted": false
+    },
+    {
+      "case_id": "context-matchedBaseline",
+      "stage": "contextBound",
+      "expected_route": "require_matched_baseline",
+      "actual_route": "require_matched_baseline",
+      "accepted": false
+    },
+    {
+      "case_id": "context-latencyBudget",
+      "stage": "contextBound",
+      "expected_route": "require_latency_budget",
+      "actual_route": "require_latency_budget",
+      "accepted": false
+    },
+    {
+      "case_id": "context-computeMemoryBudget",
+      "stage": "contextBound",
+      "expected_route": "require_compute_memory_budget",
+      "actual_route": "require_compute_memory_budget",
+      "accepted": false
+    },
+    {
+      "case_id": "high-risk-riskOverride",
+      "stage": "contextBound",
+      "expected_route": "require_risk_override",
+      "actual_route": "require_risk_override",
+      "accepted": false
+    },
+    {
+      "case_id": "high-risk-slowFallback",
+      "stage": "contextBound",
+      "expected_route": "require_slow_fallback",
+      "actual_route": "require_slow_fallback",
+      "accepted": false
+    },
+    {
+      "case_id": "high-risk-highRiskReview",
+      "stage": "contextBound",
+      "expected_route": "require_high_risk_review",
+      "actual_route": "require_high_risk_review",
+      "accepted": false
+    },
+    {
+      "case_id": "fast-selection",
+      "stage": "contextBound",
+      "expected_route": "accept_fast_selection",
+      "actual_route": "accept_fast_selection",
+      "accepted": true
+    },
+    {
+      "case_id": "observed",
+      "stage": "draftGenerated",
+      "expected_route": "require_observed_verification",
+      "actual_route": "require_observed_verification",
+      "accepted": false
+    },
+    {
+      "case_id": "fallback",
+      "stage": "draftGenerated",
+      "expected_route": "require_executable_fallback",
+      "actual_route": "require_executable_fallback",
+      "accepted": false
+    },
+    {
+      "case_id": "fallback-residual",
+      "stage": "draftGenerated",
+      "expected_route": "require_fallback_residual",
+      "actual_route": "require_fallback_residual",
+      "accepted": false
+    },
+    {
+      "case_id": "activate-fallback",
+      "stage": "draftGenerated",
+      "expected_route": "activate_fallback",
+      "actual_route": "activate_fallback",
+      "accepted": true
+    },
+    {
+      "case_id": "accepted-output",
+      "stage": "draftGenerated",
+      "expected_route": "require_accepted_output",
+      "actual_route": "require_accepted_output",
+      "accepted": false
+    },
+    {
+      "case_id": "quality-pass",
+      "stage": "draftGenerated",
+      "expected_route": "require_quality_pass",
+      "actual_route": "require_quality_pass",
+      "accepted": false
+    },
+    {
+      "case_id": "verification-accepted",
+      "stage": "draftGenerated",
+      "expected_route": "accept_verification",
+      "actual_route": "accept_verification",
+      "accepted": true
+    },
+    {
+      "case_id": "verifier-cost",
+      "stage": "verified",
+      "expected_route": "require_verifier_cost",
+      "actual_route": "require_verifier_cost",
+      "accepted": false
+    },
+    {
+      "case_id": "fallback-cost",
+      "stage": "verified",
+      "expected_route": "require_fallback_cost",
+      "actual_route": "require_fallback_cost",
+      "accepted": false
+    },
+    {
+      "case_id": "account-taskSuccess",
+      "stage": "verified",
+      "expected_route": "require_task_success",
+      "actual_route": "require_task_success",
+      "accepted": false
+    },
+    {
+      "case_id": "account-baselineResult",
+      "stage": "verified",
+      "expected_route": "require_baseline_result",
+      "actual_route": "require_baseline_result",
+      "accepted": false
+    },
+    {
+      "case_id": "account-usefulDenominator",
+      "stage": "verified",
+      "expected_route": "require_useful_denominator",
+      "actual_route": "require_useful_denominator",
+      "accepted": false
+    },
+    {
+      "case_id": "account-costMetricSeparation",
+      "stage": "verified",
+      "expected_route": "require_cost_metric_separation",
+      "actual_route": "require_cost_metric_separation",
+      "accepted": false
+    },
+    {
+      "case_id": "account-outputDigest",
+      "stage": "verified",
+      "expected_route": "require_output_digest",
+      "actual_route": "require_output_digest",
+      "accepted": false
+    },
+    {
+      "case_id": "accounting-accepted",
+      "stage": "verified",
+      "expected_route": "accept_accounting",
+      "actual_route": "accept_accounting",
+      "accepted": true
+    },
+    {
+      "case_id": "raw-speed-proxy",
+      "stage": "accounted",
+      "expected_route": "block_raw_speed_proxy",
+      "actual_route": "block_raw_speed_proxy",
+      "accepted": false
+    },
+    {
+      "case_id": "evidence-transition",
+      "stage": "accounted",
+      "expected_route": "require_evidence_transition",
+      "actual_route": "require_evidence_transition",
+      "accepted": false
+    },
+    {
+      "case_id": "decision-receipt",
+      "stage": "accounted",
+      "expected_route": "require_decision_receipt",
+      "actual_route": "require_decision_receipt",
+      "accepted": false
+    },
+    {
+      "case_id": "decision-nonclaims",
+      "stage": "accounted",
+      "expected_route": "require_decision_non_claims",
+      "actual_route": "require_decision_non_claims",
+      "accepted": false
+    },
+    {
+      "case_id": "decision-accepted",
+      "stage": "accounted",
+      "expected_route": "accept_decision",
+      "actual_route": "accept_decision",
+      "accepted": true
+    }
+  ],
+  "lean_verification": {
+    "command": "lake env lean AsiStackProofs/FastGenerationRefinement.lean",
+    "exit_code": 0,
+    "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "support_state_effect": "none",
+  "external_effect": "none",
+  "residuals": [
+    "Finite authored policy lifecycle only; no model generation or wall-clock speed result.",
+    "The baseline, task-bundle, and Theseus suites remain bounded local/static evidence.",
+    "Fallback and useful-outcome fields are modeled transitions or authored inputs, not deployed effects or natural-workload utility.",
+    "Digest binding establishes artifact identity, not source truth, evaluator adequacy, or result generality."
+  ],
+  "non_claims": [
+    "no model-speed, useful-throughput, quality, safety, deployment, transfer, SOTA, AGI, or ASI claim",
+    "no chapter-core support transition",
+    "no inference from route coverage or green validators to empirical adequacy"
+  ]
+}

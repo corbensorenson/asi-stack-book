@@ -1,0 +1,383 @@
+{
+  "schema_version": "asi_stack.proof_carrying_claims_refinement.v1",
+  "result_id": "proof-carrying-claims-refinement-2026-07-15-local",
+  "source_sha256": {
+    "lean_model": "950c96096b0b671a248cc69d8e603c6da368eb5d608d5fb6ae1e3ae0c794adbb",
+    "proof_claim_schema": "b1e0f9fa1316e05b188c09010647156cf625c7f63a36179d28dd792d7e2b7d71",
+    "adversarial_dossier_result": "1d4eda5fd089ea17750010e169c52d01da09173d38913fb48339a25c0027798a"
+  },
+  "input_suites": [
+    {
+      "suite_id": "proof_carrying_claims",
+      "valid_count": 3,
+      "expected_invalid_count": 5,
+      "suite_passed": true,
+      "validator_sha256": "91e96857428e92b2f30c8165f0f4925260a873d0af5b535596e26c1c1c819b3f"
+    },
+    {
+      "suite_id": "adversarial_review_dossier",
+      "valid_count": 2,
+      "expected_invalid_count": 7,
+      "suite_passed": true,
+      "validator_sha256": "f64d69251b05c833067f9796b729f30653a1e1ecf6e20a94ca266010cb9b10c4"
+    }
+  ],
+  "reachable_stage_count": 6,
+  "route_case_count": 23,
+  "route_coverage": [
+    {
+      "case_id": "wrong_stage",
+      "expected_route": "reject_wrong_stage",
+      "observed_route": "reject_wrong_stage"
+    },
+    {
+      "case_id": "target_substitution",
+      "expected_route": "reject_target_substitution",
+      "observed_route": "reject_target_substitution"
+    },
+    {
+      "case_id": "event_substitution",
+      "expected_route": "reject_event_substitution",
+      "observed_route": "reject_event_substitution"
+    },
+    {
+      "case_id": "authority_leak",
+      "expected_route": "reject_authority_leak",
+      "observed_route": "reject_authority_leak"
+    },
+    {
+      "case_id": "interpretation_missing",
+      "expected_route": "request_interpretation_mapping",
+      "observed_route": "request_interpretation_mapping"
+    },
+    {
+      "case_id": "scope_missing",
+      "expected_route": "request_scope_and_assumptions",
+      "observed_route": "request_scope_and_assumptions"
+    },
+    {
+      "case_id": "artifact_missing",
+      "expected_route": "request_artifact",
+      "observed_route": "request_artifact"
+    },
+    {
+      "case_id": "trusted_base_missing",
+      "expected_route": "request_trusted_base",
+      "observed_route": "request_trusted_base"
+    },
+    {
+      "case_id": "verifier_not_executed",
+      "expected_route": "request_verifier_execution",
+      "observed_route": "request_verifier_execution"
+    },
+    {
+      "case_id": "pass_refs_missing",
+      "expected_route": "request_verifier_artifact_refs",
+      "observed_route": "request_verifier_artifact_refs"
+    },
+    {
+      "case_id": "attempt_history_missing",
+      "expected_route": "request_attempt_history",
+      "observed_route": "request_attempt_history"
+    },
+    {
+      "case_id": "unverified_pass",
+      "expected_route": "block_unverified_pass",
+      "observed_route": "block_unverified_pass"
+    },
+    {
+      "case_id": "negative_promotion",
+      "expected_route": "block_negative_promotion",
+      "observed_route": "block_negative_promotion"
+    },
+    {
+      "case_id": "mismatch_no_tribunal",
+      "expected_route": "route_mismatch_to_tribunal",
+      "observed_route": "route_mismatch_to_tribunal"
+    },
+    {
+      "case_id": "independent_dossier_missing",
+      "expected_route": "request_independent_dossier",
+      "observed_route": "request_independent_dossier"
+    },
+    {
+      "case_id": "dissent_erased",
+      "expected_route": "request_dissent_preservation",
+      "observed_route": "request_dissent_preservation"
+    },
+    {
+      "case_id": "limits_missing",
+      "expected_route": "request_limits_and_residual",
+      "observed_route": "request_limits_and_residual"
+    },
+    {
+      "case_id": "owner_handoff_missing",
+      "expected_route": "request_owner_handoff",
+      "observed_route": "request_owner_handoff"
+    },
+    {
+      "case_id": "target_frozen",
+      "expected_route": "accept_target_freeze",
+      "observed_route": "accept_target_freeze"
+    },
+    {
+      "case_id": "artifact_bound",
+      "expected_route": "accept_artifact_binding",
+      "observed_route": "accept_artifact_binding"
+    },
+    {
+      "case_id": "verifier_executed",
+      "expected_route": "accept_verifier_execution",
+      "observed_route": "accept_verifier_execution"
+    },
+    {
+      "case_id": "adjudicated",
+      "expected_route": "accept_adjudication",
+      "observed_route": "accept_adjudication"
+    },
+    {
+      "case_id": "written_back",
+      "expected_route": "accept_write_back",
+      "observed_route": "accept_write_back"
+    }
+  ],
+  "mutation_count": 36,
+  "mutation_rejection_count": 36,
+  "mutation_receipts": [
+    {
+      "mutation_id": "freeze_claim_id",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_target_substitution"
+    },
+    {
+      "mutation_id": "freeze_claim_version",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_target_substitution"
+    },
+    {
+      "mutation_id": "freeze_target_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_target_substitution"
+    },
+    {
+      "mutation_id": "freeze_interpretation_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_target_substitution"
+    },
+    {
+      "mutation_id": "freeze_scope_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_target_substitution"
+    },
+    {
+      "mutation_id": "freeze_assumptions_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_target_substitution"
+    },
+    {
+      "mutation_id": "freeze_interpretation_missing",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "request_interpretation_mapping"
+    },
+    {
+      "mutation_id": "freeze_scope_missing",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "request_scope_and_assumptions"
+    },
+    {
+      "mutation_id": "freeze_assumptions_missing",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "request_scope_and_assumptions"
+    },
+    {
+      "mutation_id": "freeze_support_authority_leak",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_authority_leak"
+    },
+    {
+      "mutation_id": "freeze_external_effect_leak",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_authority_leak"
+    },
+    {
+      "mutation_id": "bind_artifact_missing",
+      "rejected": true,
+      "terminal_stage": "frozen",
+      "failure_route": "request_artifact"
+    },
+    {
+      "mutation_id": "bind_trusted_base_missing",
+      "rejected": true,
+      "terminal_stage": "frozen",
+      "failure_route": "request_trusted_base"
+    },
+    {
+      "mutation_id": "bind_artifact_substitution",
+      "rejected": true,
+      "terminal_stage": "frozen",
+      "failure_route": "reject_event_substitution"
+    },
+    {
+      "mutation_id": "bind_verifier_substitution",
+      "rejected": true,
+      "terminal_stage": "frozen",
+      "failure_route": "reject_event_substitution"
+    },
+    {
+      "mutation_id": "bind_verifier_version_substitution",
+      "rejected": true,
+      "terminal_stage": "frozen",
+      "failure_route": "reject_event_substitution"
+    },
+    {
+      "mutation_id": "bind_trusted_base_substitution",
+      "rejected": true,
+      "terminal_stage": "frozen",
+      "failure_route": "reject_event_substitution"
+    },
+    {
+      "mutation_id": "execute_not_run",
+      "rejected": true,
+      "terminal_stage": "artifact_bound",
+      "failure_route": "request_verifier_execution"
+    },
+    {
+      "mutation_id": "execute_result_not_run",
+      "rejected": true,
+      "terminal_stage": "artifact_bound",
+      "failure_route": "request_verifier_execution"
+    },
+    {
+      "mutation_id": "execute_pass_refs_missing",
+      "rejected": true,
+      "terminal_stage": "artifact_bound",
+      "failure_route": "request_verifier_artifact_refs"
+    },
+    {
+      "mutation_id": "execute_event_replay",
+      "rejected": true,
+      "terminal_stage": "artifact_bound",
+      "failure_route": "reject_event_substitution"
+    },
+    {
+      "mutation_id": "adjudicate_result_substitution",
+      "rejected": true,
+      "terminal_stage": "executed",
+      "failure_route": "reject_event_substitution"
+    },
+    {
+      "mutation_id": "adjudicate_artifact_unverified",
+      "rejected": true,
+      "terminal_stage": "executed",
+      "failure_route": "block_unverified_pass"
+    },
+    {
+      "mutation_id": "adjudicate_mapping_unreviewed",
+      "rejected": true,
+      "terminal_stage": "executed",
+      "failure_route": "block_unverified_pass"
+    },
+    {
+      "mutation_id": "adjudicate_independent_review_missing",
+      "rejected": true,
+      "terminal_stage": "executed",
+      "failure_route": "request_independent_dossier"
+    },
+    {
+      "mutation_id": "adjudicate_dossier_missing",
+      "rejected": true,
+      "terminal_stage": "executed",
+      "failure_route": "request_independent_dossier"
+    },
+    {
+      "mutation_id": "adjudicate_dissent_erased",
+      "rejected": true,
+      "terminal_stage": "executed",
+      "failure_route": "request_dissent_preservation"
+    },
+    {
+      "mutation_id": "adjudicate_limits_missing",
+      "rejected": true,
+      "terminal_stage": "executed",
+      "failure_route": "request_limits_and_residual"
+    },
+    {
+      "mutation_id": "adjudicate_residual_missing",
+      "rejected": true,
+      "terminal_stage": "executed",
+      "failure_route": "request_limits_and_residual"
+    },
+    {
+      "mutation_id": "writeback_result_substitution",
+      "rejected": true,
+      "terminal_stage": "adjudicated",
+      "failure_route": "reject_event_substitution"
+    },
+    {
+      "mutation_id": "writeback_effect_substitution",
+      "rejected": true,
+      "terminal_stage": "adjudicated",
+      "failure_route": "reject_event_substitution"
+    },
+    {
+      "mutation_id": "writeback_owner_missing",
+      "rejected": true,
+      "terminal_stage": "adjudicated",
+      "failure_route": "request_owner_handoff"
+    },
+    {
+      "mutation_id": "writeback_support_authority_leak",
+      "rejected": true,
+      "terminal_stage": "adjudicated",
+      "failure_route": "reject_authority_leak"
+    },
+    {
+      "mutation_id": "writeback_external_effect_leak",
+      "rejected": true,
+      "terminal_stage": "adjudicated",
+      "failure_route": "reject_authority_leak"
+    },
+    {
+      "mutation_id": "negative_result_scoped_proposal",
+      "rejected": true,
+      "terminal_stage": "executed",
+      "failure_route": "block_negative_promotion"
+    },
+    {
+      "mutation_id": "mismatch_without_tribunal",
+      "rejected": true,
+      "terminal_stage": "executed",
+      "failure_route": "route_mismatch_to_tribunal"
+    }
+  ],
+  "final_state": {
+    "stage": "written_back",
+    "receipt_count": 5,
+    "verifier_result": "passed",
+    "claim_effect": "scoped_proposal",
+    "support_assignment_count": 0,
+    "external_effect_count": 0
+  },
+  "support_state_effect": "none",
+  "non_claims": [
+    "No natural-language target identification or semantic-equivalence result is established.",
+    "No proof, citation, procedure, replay, benchmark, or verifier is shown sound beyond its authored record.",
+    "No trusted-base correctness, reviewer competence, independence, or verdict-quality result is established.",
+    "No claim truth, evidence adequacy, support assignment, action authority, or release authority is established.",
+    "No natural workload, model-backed review, debate, tribunal, or contestability outcome is measured.",
+    "No usefulness, causal advantage, safety, or total-cost advantage is established.",
+    "No concurrent persistence, deployment, reproduction, or transfer is established.",
+    "No chapter-core support state changes; the support-state effect is none."
+  ]
+}

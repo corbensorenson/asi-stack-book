@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASI Stack Prose Claim Candidate Queue",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "scanner", "summary", "candidates", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.prose_claim_candidate_queue.v0"},
+    "scanner": {"type": "string", "minLength": 1},
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chapter_count", "candidate_count", "review_state_counts"],
+      "properties": {
+        "chapter_count": {"const": 54},
+        "candidate_count": {"type": "integer", "minimum": 0},
+        "review_state_counts": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}}
+      }
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["candidate_id", "chapter_id", "source", "sentence", "cues", "review_state", "disposition_rationale", "target_atom_id", "allowed_dispositions"],
+        "properties": {
+          "candidate_id": {"type": "string", "pattern": "^[a-z0-9-]+\\.prose\\.[0-9a-f]{12}$"},
+          "chapter_id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "source": {"type": "string", "minLength": 1},
+          "sentence": {"type": "string", "minLength": 6},
+          "cues": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+          "review_state": {"enum": ["pending_materiality_adjudication", "material_atom", "nonmaterial_explanation", "duplicate_of_atom", "editorial_or_question", "historical_or_source_report"]},
+          "disposition_rationale": {"type": ["string", "null"]},
+          "target_atom_id": {"type": ["string", "null"]},
+          "allowed_dispositions": {"type": "array", "minItems": 5, "uniqueItems": true, "items": {"type": "string"}}
+        }
+      }
+    },
+    "non_claims": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}}
+  }
+}

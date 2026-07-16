@@ -1,0 +1,374 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "executable-specifications-and-lean-proof-envelope",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+    "structured_atoms_reviewed": 73,
+    "prose_candidates_adjudicated": 56,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, all twelve exact source mappings, proof-target schema and fixture, 298-target manifest and triage, 65-module/68-job Lean surface, 1,151-declaration proof-depth classification, 298-target readiness and adequacy classifications, wiring audit, blocked semantic-depth fixture and ten mutations, both proof targets, all seven ProofEnvelope declarations, every manifest atom, every prose candidate, test plan, source crosswalk, summary, and handoff. The sweep made the proposition-, predicate-, abstraction-, artifact-, verifier-, consumer-, implementation-, version-, environment-, and time-specific Formal Artifact Authority Lease the distinct owner; expanded it to eighteen mechanisms, twelve interfaces, eighteen invariants, and eighteen failure modes; preserved zero chapter-core effect; and froze the declaration-level proof-rationalization, richer-semantics, executable/empirical handoff, implementation-binding, independent-reproduction, and transfer campaign."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Named prose propositions, proof targets, theorem declarations, schemas, executable models, formal artifacts, verifiers, consumers, implementations, environments, and releases seeking formal or executable authority.",
+      "environment": "Twelve exact mappings; one proof-target schema/fixture; 298 targets; 65 modules and 68 build jobs; 1,151 declarations classified by proof depth; readiness, traceability, and adequacy review surfaces; one blocked semantic-depth fixture plus ten mutations; two proof targets; seven local declarations. No complete stack semantics, deployed enforcement, general refinement, independent reproduction, or empirical result is represented.",
+      "model": "A proposition-, predicate-, abstraction-, artifact-, verifier-, consumer-, implementation-, version-, environment-, and time-specific lease over semantic adequacy, dependencies, verifier results, implementation binding, limitations, non-claims, expiry, revocation, and residuals.",
+      "authority": "This chapter owns formal-artifact adequacy and authorized interpretation only. Chapter owners, Claims/Evidence, Proof Transport, Schemas, Proof Tools, Runtime/Serving/Security, Benchmarks/Verification, Source/Artifact/Supply Chain, Resources, Readiness/Incident/Release, and Living-Book/Change Governance retain their boundaries.",
+      "time": "Semantic review current through 2026-07-15; proposition, source, theorem, target, dependency, toolchain, specification, implementation, environment, policy, threat, rights, consumer, evidence, or time changes expire affected leases.",
+      "artifact": "Chapter and manifest; twelve mappings; proof schema and fixture; 298-target manifest/triage; 65-module/68-job build; 1,151-declaration depth report; readiness, traceability, and adequacy audits; semantic-depth harness; two targets; seven declarations; and future full rationalization/refinement campaign."
+    },
+    "current_disposition": "retain_argument_with_registry_build_traceability_and_bounded_negative_cases_no_core_effect_pending_full_proof_rationalization_and_binding_campaign",
+    "assumptions": [
+      "Propositions, consumers, formal symbols, trusted bases, assumptions, dependencies, toolchains, implementations, environments, versions, and expiry can be observed and versioned.",
+      "Semantic adequacy can be reviewed against exact prose obligations, strongest counterclaims, reachable behavior, excluded cases, and consumer use without treating the review as proof.",
+      "Independent formalizations, checkers, executable models, implementations, evaluators, monitors, and adversarial schedules can expose shared errors and implementation gaps.",
+      "Failed builds, timeouts, solver unknowns, countermodels, mutations, flakiness, disputes, retired declarations, and unproved remainders remain visible.",
+      "Every activation-baseline target and declaration can receive a terminal disposition with lineage preserved."
+    ],
+    "dependencies": [
+      "claim-ledgers-and-belief-revision",
+      "circle-calculus-and-proof-carrying-ai-contracts",
+      "artifact-graphs-audit-logs-and-replay",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "resource-economics-and-token-budgets",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "living-book-methodology"
+    ],
+    "strongest_counterclaim": "The proof corpus is mostly finite record discipline and traceability overhead; ordinary tests, reviews, and runtime controls provide more useful assurance, while theorem counts and green builds add confidence without semantic or deployed constraint.",
+    "falsifier": "Declaration-level audit finds no consumer-bearing semantic value, or matched implementation and adversarial tests reveal vacuity, unreachable models, assumption restatement, missing behavior, broken refinement, stale consumers, excessive cost, revocation failure, or no independent reproduction/transfer; or executable and empirical lanes dominate without formal-artifact benefit.",
+    "required_lanes": [
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze proof, specification, runtime-assurance, external-theorem, and formal-method comparators without importing reported results."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify consumer authority, least privilege, public wording, rights, revocation, retirement, and residual ownership."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Audit and build semantic, temporal, concurrency, noninterference, resource, recovery, probabilistic, countermodel, and refinement obligations where the prose requires them."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Run reference models, refinement checkers, mutations, adversarial schedules, runtime monitors, failures, revocation, fallback, and recovery."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure implementation conformance, runtime effects, monitor performance, proof/governance cost, false positives/negatives, safety, recovery, and residuals."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Compare formal-artifact consumers against tests/reviews alone and ablate assumptions, model details, monitors, and consumer gates under matched effort."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Reproduce with independent formalizations, tools, implementations, and evaluators across environments, consumers, attacks, organizations, and time."
+      }
+    ],
+    "evidence_refs": {
+      "chapter": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+      "schema": "schemas/proof_target_record.schema.json",
+      "manifest": "proofs/proof_manifest.json",
+      "triage": "proofs/proof_triage.json",
+      "traceability": "docs/proof_artifact_audit.md",
+      "depth": "docs/proof_depth_classification.md",
+      "adequacy": "docs/proof_adequacy_review.md",
+      "semantic_depth": "experiments/formal_semantic_depth/",
+      "lean": "lean/AsiStackProofs/ProofEnvelope.lean",
+      "book_manifest": "book_structure.json"
+    },
+    "contrary_evidence": [
+      "All current ProofEnvelope declarations are finite record gates; two are direct projections and five are bounded negative cases.",
+      "The proof artifact audit establishes wiring only, not semantic necessity, source correctness, implementation binding, or deployed enforcement.",
+      "The semantic-depth fixture is blocked and synthetic; ten rejecting mutations demonstrate boundary checks, not arbitrary adequacy.",
+      "The adequacy report classifies only 13 of 298 targets as adequate finite records; most targets require narrower interpretation or richer formal, executable, empirical, or research lanes.",
+      "No chapter-core transition, complete declaration rationalization, independent formal reproduction, general refinement proof, runtime enforcement result, or transfer exists."
+    ],
+    "known_confounds": [
+      "Hand-authored predicates, abstraction maps, assumptions, examples, consumers, and adequacy labels can encode the desired conclusion.",
+      "A consistent but incomplete model can hide concurrency, missing events, failures, adversaries, resources, rights, and open-world behavior.",
+      "Shared proof authors, kernels, tactics, formalizations, toolchains, implementations, traces, or evaluators can create false independence.",
+      "Theorem counts and syntactic depth can reward decomposition and proof style rather than semantic coverage or utility.",
+      "Formal and runtime-monitor cost can displace testing, modeling, operations, safety work, and recovery capacity."
+    ],
+    "acceptance_criteria": [
+      "Every proposition and declaration has an owner, consumer, exact semantics, assumptions, dependencies, valid/invalid cases, artifact and verifier record, authority, expiry, revocation route, and residual owner.",
+      "All 298 targets and 1,151 baseline declarations receive terminal rationalization dispositions with lineage and zero unowned load-bearing obligations.",
+      "Load-bearing claims use adequate semantics, executable/refinement bridges, implementation binding, runtime observations, failures, and recovery rather than projection-only traceability.",
+      "Decisive claims survive countermodels, mutations, adversarial schedules, matched alternatives, independent formalizations/tools/implementations/evaluators, complete cost, and heterogeneous transfer."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to exact proposition, predicate, abstraction, assumptions, artifact, verifier, dependencies, consumer, implementation, environment, version, authority, and time.",
+      "Separate artifact existence, field presence, projection, finite route, derived invariant, executable bridge, implementation binding, observed effect, support, deployment, transfer, and SOTA.",
+      "Unknown semantic adequacy, implementation binding, cost, revocation, reproduction, transfer, rights, or open-world behavior remains residual or blocked."
+    ],
+    "refutation_criteria": [
+      "Refute an artifact lease when vacuity, inconsistency, unreachability, hidden assumptions, semantic loss, failed verifier, broken dependency, wrong consumer, stale implementation, or revocation failure invalidates authority.",
+      "Refute formal-method benefit when matched tests/reviews/runtime controls equal or improve assurance and useful outcomes at lower complete cost, or the formal artifact does not constrain a real consumer.",
+      "Refute deployed enforcement, empirical truth, system safety, source correctness, support, transfer, or SOTA language when only finite formal or fixture evidence exists."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only when a more precise formal-artifact owner supersedes the atom and every target, theorem, dependency, consumer, receipt, generated surface, implementation binding, release, residual, and revocation route migrates with lineage."
+    ],
+    "promotion_ceiling": "argument_until_complete_declaration_rationalization_semantic_models_implementation_binding_independent_reproduction_and_transfer",
+    "reproduction": {
+      "command": "python3 scripts/sync_proof_manifest.py --check && python3 scripts/validate_protocol_examples.py && python3 scripts/validate_proof_readiness.py && python3 scripts/validate_proof_artifact_audit.py && python3 scripts/validate_proof_depth_surface.py && python3 scripts/validate_proof_adequacy_review.py && python3 scripts/validate_formal_semantic_depth.py && cd lean && lake build AsiStackProofs.ProofEnvelope",
+      "environment_lock": "Local generated manifests, audits, fixtures, validators, and finite Lean module current through 2026-07-15; full declaration rationalization, runtime binding, independent formalization, and transfer not complete.",
+      "artifact_digest": null,
+      "evaluator_identity": "Current generators, reviews, validators, and formalization are repository-local; independent formalizers, tools, implementations, runtime monitors, evaluators, attacks, and transfer environments are required."
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "executable-specifications-and-lean-proof-envelope",
+      "next_unblocking_condition": "Complete the declaration-level audit and execute required richer formal, executable, implementation-binding, empirical, causal, independent-reproduction, revocation, cost, and transfer lanes for every load-bearing claim."
+    },
+    "non_claims": [
+      "Counts, traceability, classifications, green builds, finite projections, and rejecting mutations do not prove semantic adequacy or the stack.",
+      "No deployed enforcement, complete implementation refinement, system safety, capability, performance, support promotion, independent reproduction, transfer, or SOTA result is represented.",
+      "External and historical-project sources provide design and contradiction context only, not imported local proof or runtime evidence."
+    ]
+  },
+  "atom_reviews": {
+    "executable-specifications-and-lean-proof-envelope.core": {
+      "current_disposition": "retain_distinct_formal_artifact_authority_lease_owner_at_argument",
+      "strongest_counterclaim": "Formal record gates and theorem counts add overhead without constraining real consumers or improving assurance.",
+      "falsifier": "Full declaration and implementation audit reveals vacuity, no unique benefit, broken binding, excessive cost, revocation failure, or no independent reproduction/transfer.",
+      "promotion_ceiling": "argument_until_complete_rationalization_binding_independent_reproduction_and_transfer"
+    }
+  },
+  "prose_candidate_dispositions": {
+    "executable-specifications-and-lean-proof-envelope.prose.dbd7fc68836e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.05bab00e4f47": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.2a0dda694e94": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.75de45cf650e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.2121679cf1f7": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.3fdaa735322b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.baa3839423f1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.9608adb9eef9": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.08521f9827bb": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.e073433cb477": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.96272d0f33a5": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.ed23ad5e41e8": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.e2b3dd8600af": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.b266af79f328": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.de1cae424a7c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.5243fd8349da": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.9b97dcf615db": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.6503d319d11a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.e882ab17a272": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.65927466d54f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.e0d73b84b543": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.b239eba3f333": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.29563cf17885": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.95fb6972f341": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.8664fc67dc37": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.b0326d185d62": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.ac0477e40444": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.49a00270c8b5": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.6b952ec33a2d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.b1164c9cc1da": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.1d0477b5e9fc": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.d1f37d928839": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.a5a49ae7736b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.019731585677": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.b876d5f73a0c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.cd98bc845926": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.88ef3d5cbbaf": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.ca1662c93f10": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.689519bcb042": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.89f8ee904e1a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.6d0189e29f28": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.d026fee560cf": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.1e7f72c499d1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.5eb7295504da": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.87d30b300b27": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.e93fbf10782a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.5a02bd745e12": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.2517e88dff5d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.94a7a08bb0b0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.dba28ac28907": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.cf75a864bc37": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.a3d1eaebcae6": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.bc0c97546f06": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.f970abbac7ce": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.30a62b688dae": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.de544a2f0408": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, artifact or source report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    }
+  },
+  "non_claims": [
+    "Completing this semantic review does not prove the stack, promote support, or establish deployed enforcement, refinement, safety, capability, performance, transfer, or SOTA.",
+    "The 298-target and 1,151-declaration counts are inventory and classification facts, not semantic proof.",
+    "The future rationalization campaign is a required full-attempt specification, not a completed outcome."
+  ]
+}

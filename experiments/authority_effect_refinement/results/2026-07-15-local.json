@@ -1,0 +1,418 @@
+{
+  "schema_version": "asi_stack.authority_effect_refinement.v1",
+  "result_id": "authority-effect-refinement-2026-07-15-local",
+  "source_sha256": {
+    "lean_model": "4423f689fdb850e2acfe489416290ffdbe740740958050a3a968d8d546bd0835",
+    "runtime_effect": "8691dfdba88eb967a47fb65c76ac175307480057e2f89527e540f06d51047679",
+    "revocation_trace": "453e0a250d3234ea01b9b8876c8f7f3abbac3894180055cacb84759c64b007c5",
+    "governed_repository": "21b8e61485f6f36dbe09da1ef34bce0339d078407bf0474ddbefd14cc90564a5"
+  },
+  "authority_fixture_count": 6,
+  "authority_fixture_accepted_count": 3,
+  "authority_fixture_rejected_count": 3,
+  "reachable_trace_event_count": 6,
+  "executed_local_effect_count": 1,
+  "independently_observed_effect_count": 1,
+  "exact_rollback_count": 1,
+  "pre_effect_denial_count": 2,
+  "revocation_trace_entry_count": 5,
+  "governed_scenario_count": 9,
+  "governed_release_count": 3,
+  "governed_unsafe_release_count": 0,
+  "mutation_count": 38,
+  "mutation_rejection_count": 38,
+  "reference_trace_final_state": {
+    "caller_ceiling": 3,
+    "epoch": 11,
+    "time": 6,
+    "grant": {
+      "grant_id": 71,
+      "principal": 101,
+      "operation": 201,
+      "target": 301,
+      "authority": 3,
+      "epoch": 11,
+      "expires": 20,
+      "uses": 0
+    },
+    "approved": null,
+    "dispatched": null,
+    "revoked": [],
+    "effects": 0,
+    "observed": 0,
+    "rolled_back": true
+  },
+  "authority_fixture_receipts": [
+    {
+      "fixture": "invalid_allow_over_ceiling.json",
+      "expected_accept": false,
+      "accepted": false,
+      "reasons": [
+        "authority_widening"
+      ],
+      "sha256": "4db50a1390455ca6e49563dc9d972e521b1e20f102047eda96810019cdc497cc"
+    },
+    {
+      "fixture": "invalid_missing_effect_receipt.json",
+      "expected_accept": false,
+      "accepted": false,
+      "reasons": [
+        "missing_effect_receipt"
+      ],
+      "sha256": "b051e9cde598cb00aa44c1f3139b6a02f4814c47e5dd741356768a003f1a3180"
+    },
+    {
+      "fixture": "invalid_permission_class_collapse.json",
+      "expected_accept": false,
+      "accepted": false,
+      "reasons": [
+        "permission_class_collapse"
+      ],
+      "sha256": "5ca504836347588a7b0e5ee83dfa46cb4f766614a4fda2317c3201e632332f54"
+    },
+    {
+      "fixture": "valid_allow_scoped_write.json",
+      "expected_accept": true,
+      "accepted": true,
+      "reasons": [],
+      "sha256": "3a55925fec533b6afc04fc29dcaaedae5b7e7579a088fbdf5f2b7d041e74c5dd"
+    },
+    {
+      "fixture": "valid_deny_over_ceiling.json",
+      "expected_accept": true,
+      "accepted": true,
+      "reasons": [],
+      "sha256": "1bc1d0198b8a528f3840a0c56b7cb8580b842d16ba8f67865223aaff0fa2a060"
+    },
+    {
+      "fixture": "valid_escalate_approval_required.json",
+      "expected_accept": true,
+      "accepted": true,
+      "reasons": [],
+      "sha256": "60620c6cd0c69f5f1a5c1c10e7fa4f56462136f822d9758c8cf35802bdb571fd"
+    }
+  ],
+  "mutation_receipts": [
+    {
+      "mutation_id": "issue_grant_id",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "invalid_grant_identity"
+      ]
+    },
+    {
+      "mutation_id": "issue_authority",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "authority_amplification_or_stale_epoch"
+      ]
+    },
+    {
+      "mutation_id": "issue_epoch",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "authority_amplification_or_stale_epoch"
+      ]
+    },
+    {
+      "mutation_id": "issue_expires",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "expired_or_consumed_grant"
+      ]
+    },
+    {
+      "mutation_id": "issue_uses",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "expired_or_consumed_grant"
+      ]
+    },
+    {
+      "mutation_id": "issue_owner",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "missing_target_owner_approval"
+      ]
+    },
+    {
+      "mutation_id": "issue_approval",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "missing_target_owner_approval"
+      ]
+    },
+    {
+      "mutation_id": "issue_time",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "non_monotone_time"
+      ]
+    },
+    {
+      "mutation_id": "approve_principal",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "approval_binding_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "approve_operation",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "approval_binding_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "approve_target",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "approval_binding_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "approve_authority",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "approval_binding_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "approve_epoch",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "approval_binding_mismatch",
+        "stale_expired_or_consumed_approval"
+      ]
+    },
+    {
+      "mutation_id": "approve_expires",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "approval_binding_mismatch",
+        "stale_expired_or_consumed_approval"
+      ]
+    },
+    {
+      "mutation_id": "approve_uses",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "approval_binding_mismatch",
+        "stale_expired_or_consumed_approval"
+      ]
+    },
+    {
+      "mutation_id": "approve_owner",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "missing_approval_receipt"
+      ]
+    },
+    {
+      "mutation_id": "approve_approval",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "missing_approval_receipt"
+      ]
+    },
+    {
+      "mutation_id": "dispatch_principal",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "dispatch_binding_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "dispatch_operation",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "dispatch_binding_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "dispatch_target",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "dispatch_binding_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "dispatch_authority",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "dispatch_binding_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "dispatch_epoch",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "dispatch_binding_mismatch",
+        "stale_expired_revoked_or_consumed_dispatch"
+      ]
+    },
+    {
+      "mutation_id": "dispatch_expires",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "dispatch_binding_mismatch",
+        "stale_expired_revoked_or_consumed_dispatch"
+      ]
+    },
+    {
+      "mutation_id": "dispatch_uses",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "dispatch_binding_mismatch",
+        "stale_expired_revoked_or_consumed_dispatch"
+      ]
+    },
+    {
+      "mutation_id": "dispatch_dispatch_receipt",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "missing_dispatch_receipt"
+      ]
+    },
+    {
+      "mutation_id": "effect_principal",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "effect_binding_or_handoff_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "effect_operation",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "effect_binding_or_handoff_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "effect_target",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "effect_binding_or_handoff_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "effect_epoch",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "effect_binding_or_handoff_mismatch",
+        "stale_expired_revoked_or_consumed_effect"
+      ]
+    },
+    {
+      "mutation_id": "effect_expires",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "effect_binding_or_handoff_mismatch",
+        "stale_expired_revoked_or_consumed_effect"
+      ]
+    },
+    {
+      "mutation_id": "effect_uses",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "effect_binding_or_handoff_mismatch",
+        "stale_expired_revoked_or_consumed_effect"
+      ]
+    },
+    {
+      "mutation_id": "effect_effect_receipt",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "missing_effect_receipt"
+      ]
+    },
+    {
+      "mutation_id": "observe_nonindependent",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "invalid_or_nonindependent_observation"
+      ]
+    },
+    {
+      "mutation_id": "observe_missing_receipt",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "invalid_or_nonindependent_observation"
+      ]
+    },
+    {
+      "mutation_id": "rollback_inexact",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "inexact_or_unobserved_rollback"
+      ]
+    },
+    {
+      "mutation_id": "rollback_missing_receipt",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "inexact_or_unobserved_rollback"
+      ]
+    },
+    {
+      "mutation_id": "dispatch_after_revocation",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "dispatch_binding_mismatch",
+        "stale_expired_revoked_or_consumed_dispatch"
+      ]
+    },
+    {
+      "mutation_id": "second_effect_after_one_shot_consumption",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "effect_binding_or_handoff_mismatch",
+        "stale_expired_revoked_or_consumed_effect"
+      ]
+    }
+  ],
+  "support_state_effect": "none",
+  "non_claims": [
+    "The reachable model uses abstract numeric identities and trusted receipts; it does not prove identity, approval, receipt, observer, or revocation authenticity.",
+    "The executed effect is a generated local temporary-file mutation, and the governed repository workload is bounded; neither establishes deployed authorization middleware or production security.",
+    "The packet does not establish natural-language authority extraction, complete effect observation, concurrent revocation safety, reproduction, transfer, safety, or chapter-core support."
+  ]
+}

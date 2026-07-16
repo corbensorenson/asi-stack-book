@@ -26,13 +26,13 @@ ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
 VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
-LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "VerificationBandwidth.lean"
+LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "VerificationBandwidthRefinement.lean"
 
 COMMAND = "python3 scripts/validate_verification_bandwidth_probe.py"
 PROOF_TAG = "lean:verification_bandwidth.contradiction_probe_fixture_bridge"
 CODEX_TEST_NAME = "Verification bandwidth contradiction probe"
 REQUIRED_THEOREMS = [
-    "verification_bandwidth_contradiction_probe_fixture_bridge",
+    "contradiction_blocks_evidence_handoff",
 ]
 REQUIRED_NON_CLAIMS = [
     "does not measure model verification bandwidth",
@@ -344,7 +344,7 @@ def build_expected_result(valid_count: int, invalid_count: int) -> dict[str, Any
             "support_state_no_promotion": True,
         },
         "lean_fixture_alignment": {
-            "module": "AsiStackProofs.VerificationBandwidth",
+            "module": "AsiStackProofs.VerificationBandwidthRefinement",
             "proof_tag": PROOF_TAG,
             "theorem_refs": REQUIRED_THEOREMS,
             "expected": {
@@ -411,11 +411,11 @@ def validate_lean(errors: list[str]) -> None:
         if not re.search(rf"\btheorem\s+{re.escape(theorem)}\b", text):
             errors.append(f"{rel(LEAN_FILE)} missing theorem {theorem}.")
     for field in (
-        "validContradictionTracePresent",
-        "draftingOnlyTracePresent",
-        "negativeControlsRejected",
-        "supportStateEffectNone",
-        "nonClaimBoundary",
+        "contradicted",
+        "negativeSearchAttempted",
+        "independentEvaluator",
+        "verificationArtifactsPresent",
+        "requestedEffect",
     ):
         if field not in text:
             errors.append(f"{rel(LEAN_FILE)} missing fixture field {field}.")

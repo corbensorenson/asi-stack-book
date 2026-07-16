@@ -21,7 +21,7 @@ claim. It is not itself proof evidence or a support transition.
 
 ## Required artifacts
 
-1. `lean/AsiStackProofs/GovernedRepositoryTrace.lean`
+1. `lean/AsiStackProofs/IntegratedReferenceTrace.lean`
 2. `docs/governed_trace_invariants.md`
 3. `experiments/governed_trace_invariants/results/2026-07-10-local.json`
 4. `experiments/governed_repository_change_slice/results/2026-07-10-local.json`
@@ -42,8 +42,9 @@ claim. It is not itself proof evidence or a support transition.
    evidence transition, or residual deletion? Show the smallest countermodel.
 5. Which properties are safety invariants, liveness properties, refinement
    relations, audit checks, or only schema predicates?
-6. Does the Python-log/Lean-fixture linkage establish correspondence or only
-   matching constants? Identify any semantic gap.
+6. Does the source-anchored Python consumer/Lean-transition linkage establish
+   checked refinement or only digest-bound agreement between finite models?
+   Identify any semantic gap.
 7. Which one theorem or model change would most increase adequacy without
    implying deployed enforcement?
 8. Which public proof headline should be narrowed, demoted, or rewritten?

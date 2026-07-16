@@ -3,8 +3,11 @@
 Recorded: 2026-07-11
 
 The three roadmap programs are complete at their registered finite local scope.
-The book keeps its 54-chapter architecture. Fourteen existing chapter owners
-absorb the results; no new chapter passes the roadmap's distinct-ownership gate.
+That historical cycle kept its 54-chapter architecture: fourteen existing
+chapter owners absorbed the results and no new chapter passed that cycle's
+distinct-ownership gate. The live successor now contains 55 chapters after a
+later cognitive-substrate intake passed the test independently. That authorized
+addition does not change these empirical results or their no-promotion effect.
 
 | Component | Empirical disposition | Core effect | Principal boundary |
 |---|---|---|---|
@@ -22,9 +25,10 @@ absorb the results; no new chapter passes the roadmap's distinct-ownership gate.
 - Six accepted non-core transition records under `evidence_transitions/post_v2_1/`
   keep empirical component dispositions separate and block promotion.
 - Fourteen existing chapters state the exact result, limitation, and transfer
-  burden. No chapter was added or split.
+  burden. No chapter was added or split by this historical cycle.
 - Appendix C routes the latest result and burden to each affected core claim;
-  all 54 support states remain `argument`.
+  all 55 live support states remain `argument`; the cycle's 54-claim activation
+  baseline remains frozen in the successor status record.
 - Evidence vectors advance only adjacent local replay/control metadata where a
   new transition exists; independence remains internal-only, coverage remains
   claim-scope-unmeasured, validity remains not independently assessed, and
@@ -49,7 +53,9 @@ reproduction or a support-state transition.
 `scripts/validate_post_v2_1_outcomes.py` is the new empirical proof/evidence
 gate. It replays all retained outcomes and state artifacts; no new Lean theorem
 is warranted because the result changes measured local boundaries rather than
-the finite logical predicates. Product projections inherit the same canonical
+the finite logical predicates. Later P2 work added shared-model targets under a
+separate authority; that does not retroactively attribute a theorem to this
+cycle. Product projections inherit the same canonical
 chapters and no-promotion records; no new edition or optional format is added.
 
 The results meet the roadmap's content-release rule because all three programs

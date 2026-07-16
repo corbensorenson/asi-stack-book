@@ -26,23 +26,24 @@ ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
 VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
-LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ReadinessGates.lean"
+LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ReadinessRefinement.lean"
 
 COMMAND = "python3 scripts/validate_readiness_lifecycle_probe.py"
 PROOF_TAG = "lean:readiness.gates.lifecycle_probe_bridge"
 CODEX_TEST_NAME = "Readiness lifecycle probe"
 REQUIRED_THEOREMS = [
-    "readiness_lifecycle_transition_must_be_forward_or_terminal",
-    "allowed_readiness_transition_requires_core_records",
-    "default_readiness_requires_regression_authority_and_route",
-    "default_readiness_without_regression_floor_rejected",
-    "default_readiness_without_authority_scope_rejected",
-    "quarantine_transition_blocks_ordinary_and_requires_fallback",
-    "quarantined_lifecycle_transition_with_ordinary_route_rejected",
-    "supersession_without_record_rejected",
-    "retirement_without_receipt_rejected",
-    "retired_readiness_state_cannot_transition",
-    "readiness_lifecycle_probe_fixture_bridge",
+    "apply_event_preserves_capability_and_evidence_identity",
+    "apply_event_cannot_assign_support_or_external_effect",
+    "stale_gate_blocks_canary",
+    "regression_blocks_canary",
+    "missing_residual_escrow_blocks_canary",
+    "missing_fallback_blocks_canary",
+    "threshold_breach_quarantines_qualification",
+    "missing_independent_evaluation_blocks_default",
+    "incomplete_quarantine_propagation_blocks_transition",
+    "ordinary_route_must_be_blocked_in_quarantine",
+    "missing_terminal_receipt_blocks_termination",
+    "full_readiness_lifecycle_reaches_terminal_state",
 ]
 REQUIRED_NON_CLAIMS = [
     "does not execute a deployed readiness engine",
@@ -356,7 +357,7 @@ def build_expected_result(valid_count: int, invalid_count: int) -> dict[str, Any
             "support_state_no_promotion": True,
         },
         "lean_fixture_alignment": {
-            "module": "AsiStackProofs.ReadinessGates",
+            "module": "AsiStackProofs.ReadinessRefinement",
             "proof_tag": PROOF_TAG,
             "theorem_refs": REQUIRED_THEOREMS,
             "expected": {
@@ -420,15 +421,15 @@ def validate_lean(errors: list[str]) -> None:
         if not re.search(rf"\btheorem\s+{re.escape(theorem)}\b", text):
             errors.append(f"{rel(LEAN_FILE)} missing theorem {theorem}.")
     for field in (
-        "candidateToShadowAccepted",
-        "shadowToCanaryAccepted",
-        "defaultReadyAccepted",
-        "quarantineWithFallbackAccepted",
-        "supersessionWithResidualAccepted",
-        "retirementWithReceiptAccepted",
-        "negativeControlsRejected",
-        "supportStateEffectNone",
-        "nonClaimBoundary",
+        "workloadPresent",
+        "gateEvidenceFresh",
+        "residualEscrowPresent",
+        "usefulThroughputRecorded",
+        "independentEvaluationPresent",
+        "transitivePropagationComplete",
+        "terminalReceiptPresent",
+        "supportAssignmentRequested",
+        "externalEffectRequested",
     ):
         if field not in text:
             errors.append(f"{rel(LEAN_FILE)} missing fixture field {field}.")

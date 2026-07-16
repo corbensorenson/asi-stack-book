@@ -3,8 +3,8 @@ title: "Executable Specifications and Lean Proof Envelope"
 chapter_id: "executable-specifications-and-lean-proof-envelope"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-10"
+draft_maturity: "v0.3 manuscript draft"
+last_updated: "2026-07-15"
 primary_sources:
   - "genesiscode"
   - "spinoza"
@@ -21,11 +21,9 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records exact passage-reviewed mappings for all nine assigned sources, and `docs/proof_adequacy_review.md` now records a validator-checked semantic adequacy classification, but support remains argument until additional artifact audits, source-passage transitions, validated executable-spec behavior, or accepted evidence transitions justify promotion."
-  - "The proof_target_record fixture validates schema/example consistency for target kind, artifact lane, verifier state, consumer requirements, semantic adequacy state, limitations, and non-claims; the Lean workspace currently implements all 225 manifest proof targets as narrow finite-record predicates; the proof-depth classifier reports 1079 theorem declarations, 880 derived/decomposed theorems, 187 direct/projection theorems, 12 unknown/mixed theorems, and 5/5 safety-critical chapter classifications present; and the proof artifact traceability audit checks wiring only, not broad system behavior, source-interpretation correctness, external theorem validation, local proof discovery, deployed enforcement, production security, semantic adequacy, or benchmark performance."
-  - "Internal Google Docs sources support architectural/spec design for obligations, claim tiering, capability fields, typed jobs, artifact graphs, support states, residuals, and evidence hierarchy; they do not provide local implementations, security audits, benchmarks, deployments, or runtime traces beyond validated artifacts in this repo."
-  - "External Circle project references support theorem-status, receipt, schema, sidecar, finite-cyclic, RoPE, and benchmark-boundary discipline; Circle commands, generated packs, receipt replay, fingerprint checks, sidecar regeneration, and external Circle Lean builds were not rerun or imported as local evidence."
-  - "No support-state promotion, raw source publication, model-quality result, deployment proof, performance result, or semantic adequacy proof is implied."
+  - "All twelve assigned sources have exact passage-reviewed mappings, but they support formalization and claim-boundary design only; no source-reported system, proof corpus, deployment, runtime, security, capability, or performance result is imported as ASI Stack evidence."
+  - "The current surface contains 298 targets and 1,151 declarations, but activation-baseline rationalization is incomplete: projections, assumption restatements, vacuity, reachability, duplicates, orphans, consumer use, richer models, executable and empirical handoffs, implementation binding, independent reproduction, and transfer still require terminal dispositions."
+  - "The local ProofEnvelope module has seven finite declarations—two direct projections and five derived negative cases—and the semantic-depth harness has one blocked record plus ten rejecting mutations. Neither proves full semantic adequacy, deployed enforcement, system safety, implementation refinement, empirical truth, support promotion, transfer, or SOTA."
 ---
 
 ## Chapter status
@@ -35,8 +33,8 @@ open_evidence_gaps:
 | Chapter ID | `executable-specifications-and-lean-proof-envelope` |
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-10 |
+| Manuscript maturity | v0.3 manuscript draft |
+| Last updated | 2026-07-15 |
 | Primary source records | `genesiscode`, `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -86,15 +84,15 @@ Semantic proof drift is the proof-envelope risk. A finite predicate can be corre
 
 ## Core Claim
 
-[executable-specifications-and-lean-proof-envelope.core, label: Design rationale, support: argument] Lean proofs and executable specs should target small invariants: authority, support states, SCF replacement, job lifecycle, context adequacy, and residual records.
+[executable-specifications-and-lean-proof-envelope.core, label: Design rationale, support: argument] Executable Specifications and Lean Proof Envelope owns a proposition-, predicate-, abstraction-, artifact-, verifier-, consumer-, implementation-, version-, environment-, and time-specific Formal Artifact Authority Lease: a schema, executable model, Lean theorem, model-checking result, runtime monitor, behavior test, benchmark, or external theorem may authorize only the exact consumer statement whose operational semantics, abstraction map and losses, assumptions, dependency closure, verifier result, semantic adequacy, implementation binding, limitations, non-claims, expiry, and revocation path are recorded; artifact existence, field presence, a finite route, proof depth, a green build, a passing fixture, or an external theorem identity alone confers no deployed enforcement, empirical truth, system safety, source correctness, support promotion, transfer, or SOTA authority.
 
-The claim remains at `argument` support. This repository currently has a Lean workspace and all 225 manifest proof targets are marked implemented as narrow finite-record Lean predicates. Current proof-depth snapshot: 298 proof targets, 65 Lean modules, 1151 theorem declarations, 952 derived/decomposed, 187 direct/projection, 12 unknown/mixed, and 5/5 safety-critical chapter classifications present. That coverage does not prove broad chapter claims, source interpretation, deployed enforcement, model quality, semantic adequacy, or benchmark performance.
+The claim remains at `argument` support. This repository currently has a Lean workspace and all 300 live manifest proof targets are marked implemented as narrow formal obligations, while the activation audit preserves its historical 298-target baseline. Current proof-depth snapshot: 298 proof targets, 90 Lean modules, 1243 theorem declarations, 882 derived/decomposed, 208 direct/projection, 153 unknown/mixed, and 1/1 safety-critical chapter classifications present. That coverage does not prove broad chapter claims, source interpretation, deployed enforcement, model quality, semantic adequacy, or benchmark performance.
 
 The proof-depth classifier is intentionally blunt. `derived/decomposed` means a theorem body uses structural proof steps such as unfolding, case analysis, rewriting, branching, contradiction handling, or comparable decomposition. `direct/projection` means the proof mostly projects an already-assumed field, implication, or equality. Direct/projection theorems can still be valuable traceability hooks, but the rendered chapter must preserve projection-only traceability language when safety-critical modules contain them. The classifier is not a proof of semantic adequacy; it is a guard against letting green builds sound broader than the predicates they actually check.
 
 ### Claim-source mapping status
 
-Appendix C now records passage-reviewed mappings for all nine assigned sources. The mappings justify proof-envelope priorities as design rationale only: small operational predicates, typed records, evidence artifacts, support-state boundaries, route/authority/lifecycle checks, and explicit non-claims. They do not promote the claim beyond `argument` support.
+Appendix C records exact passage-reviewed mappings for all twelve assigned sources. The mappings justify proof-envelope priorities as design rationale only: small operational predicates, typed records, evidence artifacts, support-state boundaries, route/authority/lifecycle checks, and explicit non-claims. They do not promote the claim beyond `argument` support.
 
 | Source | What it supports | Limit |
 |---|---|---|
@@ -138,6 +136,48 @@ A layered formalization path protects proof claims from inflation. First the pro
 Every passed artifact should produce a proof/spec receipt. The receipt says what command ran, what artifact was checked, what predicate or schema it covers, what consumer may rely on it, and what claims it explicitly does not support.
 
 The artifact lane is a first-class field because different lanes fail differently. A Lean lane can fail because the module does not build. A schema lane can pass while the represented event never happened. A process-validator lane can check wiring without checking semantics. A behavior-test lane can exercise a path without proving a theorem. A benchmark lane can measure performance while saying nothing about proof. The proof envelope is useful only if those lane differences survive into the fixture and into the prose that consumes it.
+
+This chapter has a narrower owner than the book's general evidence system.
+Claims and Evidence owns support transitions, and Proof Contract Transport owns
+the identity and integrity of transported theorems and receipts. Executable
+Specifications and Lean Proof Envelope owns whether a particular formal or
+executable artifact is semantically adequate for a particular consumer
+statement. Its unit of authority is the Formal Artifact Authority Lease, not a
+global claim that formal methods make the stack correct.
+
+### Eighteen-stage formal-artifact lifecycle
+
+The lifecycle registers the exact proposition, quantifiers, scope, owner,
+consumer language, authority sought, versions, environment, and expiry; then
+decomposes the broad claim and preserves its unproved remainder. It routes the
+predicate to the correct artifact lane, defines the abstraction map and losses,
+states the trusted base and environmental assumptions, and specifies valid and
+invalid states plus safety, liveness, resource, recovery, and counterexample
+obligations. Stable theorem and target identities, dependencies, consumers,
+artifacts, commands, and expected authority are frozen before implementation.
+
+The artifact is then built in a pinned environment with source, toolchain,
+command, output, digest, warnings, timeouts, failures, and nondeterminism
+preserved. Where the claim crosses layers, an independently implemented checker
+or observational relation tests refinement from specification to executable
+model to implementation. Vacuity, inconsistency, unreachable-state,
+assumption-restatement, missing-field, mutation, countermodel,
+adversarial-schedule, stale-artifact, and wrong-consumer controls run before a
+semantic adequacy review compares the result with the prose obligation,
+strongest counterclaim, reachable behavior, intended consumer, and excluded
+cases.
+
+A runtime claim additionally binds a named implementation, build, deployment,
+monitor or trace source, observation boundary, and independent effect. Only
+then may the system issue a least-authority receipt. Monitoring covers changes
+to the proposition, source, theorem, dependency, toolchain, specification,
+implementation, environment, policy, threat, rights, consumer, and evidence.
+Failure triggers refusal, residualization, quarantine, revocation, migration,
+rollback, supersession, refutation, or retirement. Decisive results require
+independent formalizations, tools, implementations, and evaluators before
+transfer; material change expires the lease while lineage, countermodels,
+negative results, semantic losses, unproved remainders, and residual owners
+remain visible.
 
 ### Semantic depth and implementation binding
 
@@ -206,6 +246,18 @@ Consumer requirements belong beside the proof artifact. A chapter, protocol, or 
 
 The semantic adequacy review is not a second proof. It is a record of whether the finite predicate actually matches the boundary it is being asked to support. Until that review exists, the safest support-state effect is narrow: the artifact passed its verifier, but the prose may not borrow more meaning than the predicate states.
 
+Twelve ownership interfaces keep the lease from becoming a universal proof
+claim. Chapter owners define the proposition and unproved remainder;
+Claims/Evidence owns support transitions; Proof Transport owns identity and
+integrity; schemas own record shape; proof assistants and model checkers own
+derivations inside declared models; executable specifications own bounded
+traces and refinement candidates; Runtime/Serving/Security own actual
+enforcement; Benchmarks/Verification own empirical adequacy; Source/Artifact/
+Supply Chain own provenance, rights, and toolchains; Resource Economics owns
+formal and governance cost; Readiness/Incident/Release owns canary, public
+wording, quarantine, and correction; and Living-Book/Change Governance owns
+stable tags, synchronized surfaces, lineage, expiry, and successor work.
+
 ## Invariants
 
 - No theorem is claimed proven without `lake build`.
@@ -223,6 +275,19 @@ The semantic adequacy review is not a second proof. It is a record of whether th
 - An unbound implementation cannot authorize a runtime claim.
 
 The proof boundary also preserves artifact class. A schema pass, Python fixture, successful Quarto render, Lean theorem, benchmark result, and human review note are different kinds of evidence. They may support one another, but they cannot substitute for one another without an explicit transition record. That separation keeps formal work from becoming a confidence aesthetic and keeps ordinary tests from being described as proofs.
+
+The full invariant set requires exact lease scope; visible unproved remainders;
+separate artifact lanes; complete abstraction maps and losses; explicit trusted
+bases and environmental assumptions; separation of safety, liveness, progress,
+recovery, resource, and empirical obligations; green-build restraint; distinct
+field-presence, projection, route, derived, bridge, binding, and observed-effect
+depths; exclusion of vacuous, inconsistent, unreachable, duplicated, orphaned,
+unused, and unconsumed declarations from authority; stable dependency and
+consumer links; exact external-theorem hypotheses and non-ownership; named
+implementation binding for runtime language; visible failures and disputes;
+least-authority composition; change-triggered expiry; descendant-complete
+revocation; independent-error separation; and ownership for every semantic
+loss, unproved remainder, disputed judgment, failed transfer, and retirement.
 
 ## Failure modes
 
@@ -244,11 +309,24 @@ Proof laundering starts when a valid local predicate, external theorem id, gener
 
 Orphaned formality is the opposite failure. A proof target exists, but the prose no longer explains what it means, the outline no longer routes to it, or the source claim it was supposed to bound has changed. In that case the theorem may still compile while no longer governing the manuscript. Proof artifacts should stay linked to claims, limitation prose, generated manifests, and audit records.
 
+The matched failure set includes decorative theorem counts; trivial predicates
+carrying broad claims; schema, test, benchmark, or citation laundering; direct
+projections marketed as semantic derivations; finite routes marketed as
+deployment enforcement; executable fixtures marketed as implementation
+binding; abstraction maps that erase identity, concurrency, missing events,
+nondeterminism, failures, adversaries, resources, rights, or open-world
+behavior; safety/liveness/resource/empirical category errors; vacuous or
+inconsistent models; stale tags and consumers; duplicate, orphan, unused, or
+unconsumed proof bloat; unresolved external theorem hypotheses; censored
+failures and countermodels; wrong-scope consumer use; hidden proof and monitor
+cost; support movement without a transition; incomplete descendant revocation;
+and sunk-cost resistance to merging, replacement, refutation, or retirement.
+
 ## Minimum Viable Implementation
 
 The proof envelope begins with the existing generated proof manifest plus a proof target record. The repository fixture validates chapter, Lean tag, target kind, artifact lane, formal target, artifact refs, verifier command/result, support-state effect, consumer requirements, semantic adequacy state, limitations, and non-claims. The target itself remains unproved until the referenced artifact and semantic adequacy checks support it.
 
-The current local verification gate includes `cd lean && lake build`; a passing build confirms the Lean modules in this repository, not every prose claim that references them. The proof-envelope module adds narrow record-level invariants for implemented status, non-operational routing, proof-lane authority, support-promotion boundaries, and external-theorem reference boundaries. Appendix E now publishes the generated coverage summary from `proofs/proof_triage.json`: 225 proof targets are covered by triage and all 225 are implemented as formal-invariant Lean candidates. The proof artifact traceability audit checks that those targets are wired through manifest records, triage records, Lean modules, root imports, chapter hooks, limitation prose, and Appendix E coverage. The proof-depth classifier records whether theorem bodies are direct/projection, derived/decomposed, or unknown/mixed so proof etiquette is visible in the manuscript. Semantic proof adequacy review is recorded separately from traceability and does not promote broad system claims.
+The current local verification gate includes `cd lean && lake build`; a passing build confirms the Lean modules in this repository, not every prose claim that references them. The proof-envelope module adds narrow record-level invariants for implemented status, non-operational routing, proof-lane authority, support-promotion boundaries, and external-theorem reference boundaries. Appendix E publishes the generated coverage summary from `proofs/proof_triage.json`: 298 proof targets are covered by triage. The proof artifact traceability audit checks only that targets are wired through manifest records, triage records, Lean modules, root imports, chapter hooks, limitation prose, and Appendix E coverage. The proof-depth classifier records whether theorem bodies are direct/projection, derived/decomposed, or unknown/mixed so proof etiquette is visible in the manuscript. Semantic proof adequacy review is recorded separately from traceability and does not promote broad system claims.
 
 A proof/spec receipt suite should make the envelope operational: one Lean predicate receipt, one schema-validation receipt, one process-validator receipt, one behavior-test receipt, one benchmark receipt, one external theorem reference rejected as local proof, and one semantic adequacy residual that prevents prose promotion.
 
@@ -260,6 +338,21 @@ field-presence/runtime laundering, finite-route/deployment laundering, a
 derived result whose route dependency failed, an artifactless executable
 bridge, missing runtime exclusions, a runtime claim from an unbound
 implementation, and fixture-based support promotion.
+
+The exact current minimum is one proof-target schema and valid fixture; one
+generated 298-target proof manifest; a 65-module Lean workspace whose complete
+build reports 68 jobs and 1,151 theorem declarations classified as 952
+derived/decomposed, 187 direct/projection, and 12 unknown/mixed; one
+proof-readiness classification of 13 adequate finite-record, 212
+useful-but-narrow, 18 richer-state-machine, 35 executable-test-first, 18
+empirical-test-first, and two research-agenda targets; one wiring-only proof
+artifact audit; one semantic-adequacy review surface; one blocked
+formal-semantic-depth record with ten rejecting mutations; and seven local
+ProofEnvelope declarations classified as two direct projections and five
+derived negative cases. It provides no complete semantic formalization of the
+stack, deployed enforcement proof, general implementation refinement,
+independent formal reproduction, empirical result, chapter-core transition, or
+SOTA result.
 
 ## Beyond the State of the Art
 
@@ -277,6 +370,35 @@ A proof-envelope surface needs:
 - Failure closure that routes proof laundering, formalization theater, external-theorem borrowing, stale tags, and claim-from-prose errors into downgrade, quarantine, or adequacy residuals.
 
 With that envelope in place, the stack could depend on mechanized record-level claims without pretending that record-level proofs are deployed enforcement, empirical model quality, benchmark success, or source-truth validation. The proof envelope remains a target architecture until semantic adequacy reviews, artifact audits, runtime consumers, and accepted evidence transitions show where each formal predicate can and cannot carry prose.
+
+### Argument-exit and proof-rationalization campaign
+
+The full attempt audits all 298 activation-baseline proof targets and all 1,151
+activation-baseline theorem declarations. Every declaration receives a stable
+identity, proposition, assumptions, dependency and consumer graph,
+semantic-depth class, vacuity and reachability result, artifact and verifier
+record, current use, strongest counterclaim, required lane, terminal
+disposition, and preserved lineage. Direct projections, assumption
+restatements, duplicated lemmas, unused theorems, orphan targets, misleading
+names, and unconsumed traceability declarations are merged, replaced, or
+retired unless a named consumer genuinely needs them.
+
+Load-bearing predicates must use the right model: richer transition systems,
+temporal or concurrency semantics, noninterference, resource conservation,
+recovery and liveness, probabilistic reasoning, or refinement where the prose
+requires them. Behavior, capability, quality, and cost obligations move to
+executable and empirical lanes instead of being forced into Lean. The campaign
+tests vacuity, inconsistency, unreachable states, countermodels, mutations,
+adversarial schedules, stale dependencies, wrong consumers, and revocation;
+then binds real implementations and monitors where runtime authority is sought.
+
+Decisive claims require independent formalizations or tools when useful,
+independent implementation and evaluation, complete proof and governance cost,
+and transfer across environments, consumers, attacks, and time. Results may be
+narrow, null, refuted, retired, or `blocked_after_full_attempt`. Until every
+load-bearing atom and declaration receives its required full attempt and
+terminal disposition, the chapter core remains `argument`; theorem counts and
+green builds are explicitly non-terminal.
 
 ## Codex test plan
 
@@ -305,6 +427,22 @@ With that envelope in place, the stack could depend on mechanized record-level c
 | `lean:proofs.envelope.failure_blocks_promotion` | `AsiStackProofs.ProofEnvelope` | A proof target for a non-operational claim remains planned or blocked, not implemented. | implemented |
 
 These Lean hooks are implemented as local finite-record predicates for proof-target status discipline, proof-lane authority, promotion boundaries, and external-reference boundaries. They do not inspect the repository filesystem directly, discover missing proof opportunities, validate external theorem IDs, judge semantic adequacy, or promote any broad book claim beyond its recorded support state.
+
+The formal audit counts seven declarations in `ProofEnvelope.lean`. Two are
+direct projections:
+`implemented_target_has_module_and_passing_build` and
+`non_operational_target_remains_planned_or_blocked`. Five are derived finite
+negative cases: non-operational targets cannot be implemented; implemented
+targets missing a module or build are rejected; non-Lean artifacts cannot claim
+Lean proof; support promotion without a transition and semantic boundaries is
+rejected; and external theorem references missing identifiers or non-claims are
+rejected. None discovers repository artifacts, proves semantic adequacy,
+establishes implementation refinement, checks runtime enforcement, validates
+external theorem applicability, proves system safety, measures capability or
+cost, or establishes reproduction and transfer. The declaration-level roadmap
+must retain only consumer-bearing projections and replace load-bearing record
+gates with richer semantics, countermodels, refinement, liveness, or executable
+and empirical evidence as their actual obligations require.
 
 ## Source crosswalk
 

@@ -1,0 +1,891 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "human-intent-as-a-formal-input",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/human-intent-as-a-formal-input.qmd",
+    "structured_atoms_reviewed": 45,
+    "prose_candidates_adjudicated": 50,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, eight source notes and their inventory/Appendix H boundaries, all 25 Lean declarations grouped under four manifest proof targets, the 4-valid/6-invalid intake corpus, the 2-valid/7-invalid re-contract corpus, the 3-valid/10-invalid plan-execution corpus, every prose scanner candidate, diagrams, objections, test plan, and downstream handoffs. The sweep replaced prompt-as-intent shorthand with a versioned interpretation contract; promoted raw-request separation, field disposition, bounded-default limits, affected-party authority, consumer binding, material-change re-contracting, preference non-authority, correction and appeal, and clarification-cost obligations into manifest ownership; separated formal record routing from natural-language understanding, consent, preference recovery, satisfaction, runtime authority, and effect safety; and preserved zero support-state effect."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Prospectively declared natural-language requests and their bounded interpretation, clarification, acceptance, re-contract, rejection, planning, evidence, preference-feedback, and downstream-consumer records, including ambiguous, emotional, urgent, multilingual, accessibility-sensitive, multi-party, privacy-sensitive, publication, spending, deployment, and affected-party cases.",
+      "environment": "Controlled ASI Stack schemas, fixtures, finite Lean routes, and future public-safe natural or adversarial workloads with frozen request provenance, language, interface, model, prompt, retrieval, tools, policy, authority, affected parties, consumer, evaluator, and cost rules; real legal consent, clinical capacity, organizational authority, classified data, and open-world enforcement remain outside current evidence.",
+      "model": "A versioned interpretation-contract and receipt state machine whose current implementation validates declared record shape and finite routes; future interpretation claims require actual language models, independent authority/effect adjudication, direct-confirmation and requirements-engineering baselines, user correction, and downstream preservation tests.",
+      "authority": "The requester may propose outcomes and constraints only within authority they actually hold; affected-party rights and external policy remain separately owned; Constitutional Alignment may narrow or refuse; Command Contracts and Planning consume an exact accepted version; Runtime and Readiness require separate grants; Evidence States owns support transitions; Policy Optimization requires a separate update lease.",
+      "time": "Semantic review current through 2026-07-14; request, contract, authority, affected-party, policy, consumer, source/privacy/publication, acceptance, model, prompt, evaluator, and expiry boundaries must be frozen for outcome-bearing campaigns and re-contracted after material change.",
+      "artifact": "Chapter, manifest, eight source notes, intent schema and fixtures, intake/re-contract/plan-execution records, Lean module, validator output, contract and receipt digests, campaign artifacts, evidence transitions, and public projections."
+    },
+    "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+    "assumptions": [
+      "Material outcome, means, authority, affected-party, source, privacy, publication, evidence, stop, expiry, consumer, and correction fields can be represented without treating the representation as complete inner intent.",
+      "Low-risk reversible planning defaults can be prospectively distinguished from authority-changing, irreversible, privacy-sensitive, publication, deployment, spending, and affected-party assumptions.",
+      "Independent adjudication can define bounded interpretation, unauthorized-action, missed-help, clarification-burden, correction, appeal, preservation, latency, privacy, and useful-throughput outcomes without using contract completeness as ground truth."
+    ],
+    "strongest_counterclaim": "Ordinary dialogue, confirmations, goal-oriented requirements engineering, preference learning, policy checks, and runtime permissions already handle intent adequately; a formal interpretation contract adds friction, false precision, and stale paperwork while still failing to recover true preferences, consent, or authority.",
+    "falsifier": "A reachable admitted trace widens means or authority, loses a material field, accepts a prohibited default, bypasses re-contracting, or uses raw text or inferred preference as effect authority; or a frozen simpler workflow matches or dominates the proposed contract on interpretation, unauthorized action, missed help, correction, burden, latency, privacy, and useful throughput across the declared transfer set.",
+    "required_lanes": [
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze requirements-engineering, cooperative-inference, preference-feedback, prompt-structure, planning, constitutional, and authority comparators without claiming any source establishes the proposed control plane."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify authority ceilings, affected-party boundaries, default limits, privacy/publication constraints, correction, appeal, expiry, refusal, and acceptable clarification burden."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify finite preservation, no-authority, re-contract, consumer, expiry, rejection, and route invariants while exposing assumption-restating limits."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Exercise every schema field and downstream consumer with valid traces and exact rejecting mutations, including raw-context override, stale reuse, preference laundering, and constraint erosion."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure interpretation accuracy, unauthorized action, missed help, clarification burden, re-contract precision/recall, correction and appeal success, affected-party protection, latency, privacy, and useful throughput on held-out natural requests."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate raw-request separation, field provenance, bounded defaults, authority checks, affected-party checks, consumer binding, re-contract triggers, correction, and least-authority routing under matched requests."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Repeat across languages, cultures, accessibility needs, emotional and urgent language, ambiguity, multi-party conflicts, preference drift, risk tiers, model families, planners, runtimes, and independently implemented evaluators."
+      }
+    ],
+    "contrary_evidence": [
+      "Natural-language dialogue and direct confirmation can resolve many ambiguities cheaply, while rigid schemas can increase abandonment, workarounds, and false refusal.",
+      "Goal-oriented requirements engineering represents stakeholder goals and conflicts but does not itself authenticate authority, consent, or downstream permission; the current comparator note is not a reproduced method.",
+      "Cooperative inverse reinforcement learning and preference feedback formalize uncertainty or learn comparisons, but inferred rewards remain task- and model-dependent and are not authority grants.",
+      "A complete contract can encode a mistaken interpretation, manipulated confirmation, false stakeholder set, stale authority record, or coerced approval.",
+      "Least-authority defaults can miss helpful actions, create clarification fatigue, and burden users least able to express formal constraints.",
+      "Current evidence is internally authored schema validation, deterministic synthetic fixtures, and finite routing; it contains no natural-language evaluation, user or consent study, independent authority adjudication, or deployed effect test."
+    ],
+    "known_confounds": [
+      "Annotator disagreement, cultural and linguistic variation, accessibility needs, emotion, urgency, power asymmetry, and interface framing can change apparent intent independently of contract quality.",
+      "The same model, prompt, author, policy, or evaluator may generate and judge the interpretation, creating correlated confirmation and design leakage.",
+      "Request selection, synthetic phrasing, reused probes, prompt tuning, hidden instructions, retrieval, and contamination can inflate interpretation or injection-resistance results.",
+      "Authority, consent, affected-party identity, legal capacity, organizational role, and resource ownership may be unobservable or change after acceptance.",
+      "Clarification can improve safety metrics by dropping difficult cases while reducing coverage and useful throughput; denominators must remain visible.",
+      "Downstream consumers can preserve digests while semantically eroding constraints or acting under a different lease.",
+      "Preference drift, revocation, expiry, policy, or consumer changes can invalidate an accepted contract even when its bytes remain unchanged."
+    ],
+    "acceptance_criteria": [
+      "Every material field has provenance and an exercised consumer; every seeded authority, affected-party, default, ambiguity, preservation, consumer, expiry, revocation, raw-context, preference, support, and material-change violation reaches its exact non-effect route.",
+      "A frozen natural and adversarial campaign meets joint interpretation, unauthorized-action, missed-help, clarification-burden, re-contract, correction, appeal, affected-party, latency, privacy, useful-throughput, uncertainty, and residual gates against strong comparators with an independent evaluator."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to exact request cohorts, languages, cultures, accessibility settings, risk tiers, authorities, affected parties, models, prompts, interfaces, policies, consumers, expiry windows, evaluators, and cost rules.",
+      "Separate schema validity, finite routing, language interpretation, preference prediction, authority authentication, informed consent, affected-party authorization, downstream preservation, runtime enforcement, satisfaction, support movement, and effect safety.",
+      "Unresolved authority, consent, affected parties, or material ambiguity retains draft, clarification, authority-pending, rejected, or residual status."
+    ],
+    "refutation_criteria": [
+      "Refute an invariant when a reachable admitted trace violates it or a required field has no exercised consumer.",
+      "Refute an interpretation benefit when matched ablation fails its frozen effect, uncertainty, coverage, correction, and cost rule or disappears under independent evaluation.",
+      "Refute superiority or generality when a strong simpler comparator dominates the joint frontier or the effect fails transfer."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only when a more precise canonical owner supersedes the atom and all manifest, chapter, schema, proof, fixture, campaign, transition, appendix, public, and consumer references migrate with lineage."
+    ],
+    "promotion_ceiling": "argument_until_claim_specific_campaign_and_accepted_evidence_transition",
+    "reproduction": {
+      "command": null,
+      "environment_lock": null,
+      "artifact_digest": null,
+      "evaluator_identity": null
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "human-intent-as-a-formal-input",
+      "next_unblocking_condition": "Freeze a natural and adversarial request corpus, multilingual and affected-party cohorts, actual model interpreters, strong direct-confirmation/requirements/preference baselines, independent authority and effect adjudication, downstream planners and runtimes, exact joint metrics, correction/appeal routes, and transfer campaigns after P2/P3 semantics exist."
+    },
+    "non_claims": [
+      "Semantic review, contract completeness, citation, a green validator, or a theorem does not establish correct interpretation, true preference, informed consent, valid authority, satisfaction, downstream preservation, or safe effects.",
+      "The current 25 declarations and 35 synthetic fixture outcomes establish only bounded record and route consequences; they execute no language understanding or real-world authorization.",
+      "No support state, training authorization, publication permission, release readiness, action authority, AGI, or ASI claim changes without its separate gate and accepted transition."
+    ]
+  },
+  "atom_reviews": {
+    "human-intent-as-a-formal-input.core": {
+      "proposition_type": "composite",
+      "dependencies": [
+        "human-intent-as-a-formal-input.mechanism.003",
+        "human-intent-as-a-formal-input.mechanism.006",
+        "human-intent-as-a-formal-input.mechanism.007",
+        "human-intent-as-a-formal-input.invariant.007",
+        "system-boundaries-and-authority.core"
+      ],
+      "strongest_counterclaim": "A formal contract relocates tacit ambiguity into a cumbersome document and still cannot capture consent or authority.",
+      "falsifier": "Any required field lacks a consumer, an accepted trace widens authority or loses a constraint, or a simpler workflow dominates the joint outcome-cost envelope.",
+      "acceptance_criteria": [
+        "All hard boundaries reject and the full plane meets frozen interpretation, authority, correction, cost, and transfer gates."
+      ]
+    },
+    "human-intent-as-a-formal-input.problem.001": {
+      "proposition_type": "source-synthesis",
+      "current_disposition": "research_problem_not_positive_result",
+      "dependencies": [
+        "system-boundaries-and-authority.core"
+      ],
+      "strongest_counterclaim": "Competent dialogue already distinguishes requests from permissions through clarification and runtime access control.",
+      "falsifier": "Strong existing workflows lower representative requests with no material authority or preservation gap repaired here.",
+      "acceptance_criteria": [
+        "A dated comparator audit identifies an unresolved request-to-authority failure without implying this remedy works."
+      ]
+    },
+    "human-intent-as-a-formal-input.insufficiency.001": {
+      "proposition_type": "source-synthesis",
+      "dependencies": [
+        "ext_goal_oriented_requirements_engineering_2001",
+        "ext_cooperative_inverse_rl_2016",
+        "ext_deep_rl_human_preferences_2017"
+      ],
+      "strongest_counterclaim": "Combined requirements, preference inference, confirmation, and permissions supply every named field at lower burden.",
+      "falsifier": "A strong comparator authenticates all named fields with equal or lower error and burden.",
+      "acceptance_criteria": [
+        "Synthesis preserves comparator scope and the exact unresolved boundary."
+      ]
+    },
+    "human-intent-as-a-formal-input.minimum.001": {
+      "proposition_type": "executable",
+      "dependencies": [
+        "human-intent-as-a-formal-input.formal.intent-contract-operational-invariant",
+        "human-intent-as-a-formal-input.formal.intent-contract-failure-blocks-promotion",
+        "human-intent-as-a-formal-input.formal.intent-resolution-route-envelope",
+        "human-intent-as-a-formal-input.formal.intent-intake-probe-fixture-bridge"
+      ],
+      "strongest_counterclaim": "The minimum is schema theater and validates no language, consent, authority, or effects.",
+      "falsifier": "A field or mutation lacks a consumer, counts fail recomputation, or prose exceeds finite routing.",
+      "acceptance_criteria": [
+        "25 declarations, four targets, 4/6 intake, 2/7 re-contract, and 3/10 plan outcomes reproduce with behavioral non-claims."
+      ],
+      "promotion_ceiling": "synthetic_test_backed_for_exact_record_and_route_semantics_only_after_transition"
+    },
+    "human-intent-as-a-formal-input.beyond_sota.001": {
+      "proposition_type": "composite",
+      "claim_label": "Speculative",
+      "current_disposition": "research_target_not_current_result",
+      "dependencies": [
+        "human-intent-as-a-formal-input.core",
+        "integrated-reference-architecture.core"
+      ],
+      "strongest_counterclaim": "Simpler dialogue plus confirmation and permissions dominates once burden, latency, privacy, and missed help count.",
+      "falsifier": "The plane misses a hard gate, is dominated on the frozen frontier, or fails independent implementation or transfer.",
+      "acceptance_criteria": [
+        "Independent implementations meet every hard gate and the frozen Pareto rule across natural, adversarial, multilingual, multi-party, and downstream transfer sets."
+      ],
+      "promotion_ceiling": "speculative_target_until_exact_SOTA_adjudication"
+    },
+    "human-intent-as-a-formal-input.mechanism.001": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This mechanism is ceremony, lacks a unique consumer, or costs more useful help than it protects. Challenged proposition: Preserve the exact raw request and create a separately versioned interpretation contract; raw conversational context remains recovery evidence and cannot override the accepted contract.",
+      "falsifier": "It can be removed without changing frozen safety, correction, preservation, or cost outcomes, or an admitted trace bypasses it.",
+      "acceptance_criteria": [
+        "It has an exact consumer, rejects seeded violations, and matched ablation meets frozen benefit and burden gates."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.mechanism.002": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This mechanism is ceremony, lacks a unique consumer, or costs more useful help than it protects. Challenged proposition: Separate desired outcome and preferences from allowed means, forbidden means, authority basis and ceiling, affected parties, source/privacy/publication boundaries, and permitted downstream consumers before executable planning.",
+      "falsifier": "It can be removed without changing frozen safety, correction, preservation, or cost outcomes, or an admitted trace bypasses it.",
+      "acceptance_criteria": [
+        "It has an exact consumer, rejects seeded violations, and matched ablation meets frozen benefit and burden gates."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.mechanism.003": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This mechanism is ceremony, lacks a unique consumer, or costs more useful help than it protects. Challenged proposition: Classify every inferred or omitted material field as confirmed, bounded default, clarification required, authority pending, contested, unknown, or unauthorized; bounded defaults are limited to low-risk reversible planning, carry provenance and rollback, and expire.",
+      "falsifier": "It can be removed without changing frozen safety, correction, preservation, or cost outcomes, or an admitted trace bypasses it.",
+      "acceptance_criteria": [
+        "It has an exact consumer, rejects seeded violations, and matched ablation meets frozen benefit and burden gates."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.mechanism.004": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This mechanism is ceremony, lacks a unique consumer, or costs more useful help than it protects. Challenged proposition: Route intake through explicit raw, interpreted, bounded-default, clarification-required, authority-pending, accepted, re-contract-required, and rejected/expired states with exact allowed downstream movements.",
+      "falsifier": "It can be removed without changing frozen safety, correction, preservation, or cost outcomes, or an admitted trace bypasses it.",
+      "acceptance_criteria": [
+        "It has an exact consumer, rejects seeded violations, and matched ablation meets frozen benefit and burden gates."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.mechanism.005": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This mechanism is ceremony, lacks a unique consumer, or costs more useful help than it protects. Challenged proposition: Attach prospectively testable acceptance criteria, evidence requirements, escalation conditions, stop conditions, expiry, revocation, appeal, and material-change triggers to the accepted version.",
+      "falsifier": "It can be removed without changing frozen safety, correction, preservation, or cost outcomes, or an admitted trace bypasses it.",
+      "acceptance_criteria": [
+        "It has an exact consumer, rejects seeded violations, and matched ablation meets frozen benefit and burden gates."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.mechanism.006": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This mechanism is ceremony, lacks a unique consumer, or costs more useful help than it protects. Challenged proposition: Emit an intent receipt that binds request and contract digests, field provenance, confirmed assumptions, bounded defaults, unauthorized means, unresolved ambiguities, required approvals, re-contract triggers, review references, permitted consumers, and downstream contract references.",
+      "falsifier": "It can be removed without changing frozen safety, correction, preservation, or cost outcomes, or an admitted trace bypasses it.",
+      "acceptance_criteria": [
+        "It has an exact consumer, rejects seeded violations, and matched ablation meets frozen benefit and burden gates."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.mechanism.007": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This mechanism is ceremony, lacks a unique consumer, or costs more useful help than it protects. Challenged proposition: Require re-contracting when downstream work changes means, authority, affected parties, source/privacy/publication boundaries, evidence bar, acceptance criteria, support-state request, stop conditions, or permitted consumers; a material delta cannot inherit the prior acceptance.",
+      "falsifier": "It can be removed without changing frozen safety, correction, preservation, or cost outcomes, or an admitted trace bypasses it.",
+      "acceptance_criteria": [
+        "It has an exact consumer, rejects seeded violations, and matched ablation meets frozen benefit and burden gates."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.mechanism.008": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This mechanism is ceremony, lacks a unique consumer, or costs more useful help than it protects. Challenged proposition: Treat inferred objectives, learned rewards, preference comparisons, emotion, urgency, trust, silence, and approval behavior as interpretation evidence or ambiguity, never as an authority grant by themselves.",
+      "falsifier": "It can be removed without changing frozen safety, correction, preservation, or cost outcomes, or an admitted trace bypasses it.",
+      "acceptance_criteria": [
+        "It has an exact consumer, rejects seeded violations, and matched ablation meets frozen benefit and burden gates."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.mechanism.009": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This mechanism is ceremony, lacks a unique consumer, or costs more useful help than it protects. Challenged proposition: When multiple interpretations remain admissible, select the least-authority reversible interpretation that meets the declared outcome and evidence requirements, or return for clarification when the difference is material.",
+      "falsifier": "It can be removed without changing frozen safety, correction, preservation, or cost outcomes, or an admitted trace bypasses it.",
+      "acceptance_criteria": [
+        "It has an exact consumer, rejects seeded violations, and matched ablation meets frozen benefit and burden gates."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.interface.001": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This handoff duplicates API permissions and cannot prevent semantic widening. Challenged proposition: Scalable Oversight may supply clarification, disagreement, or review evidence but cannot convert a reviewer or model inference into the principal's authorization.",
+      "falsifier": "A consumer accepts a wrong version, widens authority, treats evidence as permission, or loses a material field.",
+      "acceptance_criteria": [
+        "Independent producer and consumer preserve version, authority separation, fields, and rejecting mutations."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.interface.002": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This handoff duplicates API permissions and cannot prevent semantic widening. Challenged proposition: Constitutional Alignment consumes the accepted intent contract and may narrow, refuse, or require appeal/re-contract under rights and policy predicates; it may not widen the principal's grant.",
+      "falsifier": "A consumer accepts a wrong version, widens authority, treats evidence as permission, or loses a material field.",
+      "acceptance_criteria": [
+        "Independent producer and consumer preserve version, authority separation, fields, and rejecting mutations."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.interface.003": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This handoff duplicates API permissions and cannot prevent semantic widening. Challenged proposition: Command Contracts and Planning consume the exact accepted contract version as a bounded source and must return a delta/re-contract request rather than silently changing means, authority, affected parties, evidence, publication, or stop conditions.",
+      "falsifier": "A consumer accepts a wrong version, widens authority, treats evidence as permission, or loses a material field.",
+      "acceptance_criteria": [
+        "Independent producer and consumer preserve version, authority separation, fields, and rejecting mutations."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.interface.004": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This handoff duplicates API permissions and cannot prevent semantic widening. Challenged proposition: Runtime Adapters and Readiness consume only separately authorized command/job grants derived from the accepted contract; raw text, inferred preference, or an intent receipt is never direct tool, release, spending, or deployment authority.",
+      "falsifier": "A consumer accepts a wrong version, widens authority, treats evidence as permission, or loses a material field.",
+      "acceptance_criteria": [
+        "Independent producer and consumer preserve version, authority separation, fields, and rejecting mutations."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.interface.005": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This handoff duplicates API permissions and cannot prevent semantic widening. Challenged proposition: Evidence States compares delivered artifacts and effects with the contract's exact acceptance and evidence requirements while preserving unresolved ambiguity and cannot infer user satisfaction or support movement from contract validity.",
+      "falsifier": "A consumer accepts a wrong version, widens authority, treats evidence as permission, or loses a material field.",
+      "acceptance_criteria": [
+        "Independent producer and consumer preserve version, authority separation, fields, and rejecting mutations."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.interface.006": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This handoff duplicates API permissions and cannot prevent semantic widening. Challenged proposition: Policy Optimization may consume separately admitted preference or feedback records under an update lease, but learned rewards and preference predictions cannot widen the intent contract or execution authority.",
+      "falsifier": "A consumer accepts a wrong version, widens authority, treats evidence as permission, or loses a material field.",
+      "acceptance_criteria": [
+        "Independent producer and consumer preserve version, authority separation, fields, and rejecting mutations."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.invariant.001": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This invariant restates policy, blocks harmless help, or cannot control semantic side channels. Challenged proposition: Raw request text and surrounding conversational context are preserved for recovery but never override the accepted contract or create authority by themselves.",
+      "falsifier": "A reachable admitted trace violates it or it has no executable monitor and consumer.",
+      "acceptance_criteria": [
+        "Finite and natural traces satisfy it, seeded counterexamples reject, and behavior remains separately evaluated."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.invariant.002": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This invariant restates policy, blocks harmless help, or cannot control semantic side channels. Challenged proposition: A desired outcome, helpful interpretation, inferred preference, emotional signal, urgency, trust, silence, or approval click is not permission for undeclared means or effects.",
+      "falsifier": "A reachable admitted trace violates it or it has no executable monitor and consumer.",
+      "acceptance_criteria": [
+        "Finite and natural traces satisfy it, seeded counterexamples reject, and behavior remains separately evaluated."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.invariant.003": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This invariant restates policy, blocks harmless help, or cannot control semantic side channels. Challenged proposition: Authority-changing, irreversible, high-risk, privacy-sensitive, publication, deployment, spending, or affected-party assumptions cannot be admitted as bounded defaults.",
+      "falsifier": "A reachable admitted trace violates it or it has no executable monitor and consumer.",
+      "acceptance_criteria": [
+        "Finite and natural traces satisfy it, seeded counterexamples reject, and behavior remains separately evaluated."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.invariant.004": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This invariant restates policy, blocks harmless help, or cannot control semantic side channels. Challenged proposition: Every material contract field retains provenance and disposition, and ambiguity that can change outcome, means, authority, affected parties, evidence, publication, or stop conditions blocks executable admission or narrows it to draft-only work.",
+      "falsifier": "A reachable admitted trace violates it or it has no executable monitor and consumer.",
+      "acceptance_criteria": [
+        "Finite and natural traces satisfy it, seeded counterexamples reject, and behavior remains separately evaluated."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.invariant.005": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This invariant restates policy, blocks harmless help, or cannot control semantic side channels. Challenged proposition: Constraints, forbidden means, authority ceiling, source/privacy boundaries, acceptance/evidence requirements, and stop conditions remain attached through every lowering; loss or precedence reversal routes to repair or re-contract.",
+      "falsifier": "A reachable admitted trace violates it or it has no executable monitor and consumer.",
+      "acceptance_criteria": [
+        "Finite and natural traces satisfy it, seeded counterexamples reject, and behavior remains separately evaluated."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.invariant.006": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This invariant restates policy, blocks harmless help, or cannot control semantic side channels. Challenged proposition: A material downstream change requires a new version and re-contract decision; stale, expired, revoked, superseded, or wrong-consumer contracts cannot authorize work.",
+      "falsifier": "A reachable admitted trace violates it or it has no executable monitor and consumer.",
+      "acceptance_criteria": [
+        "Finite and natural traces satisfy it, seeded counterexamples reject, and behavior remains separately evaluated."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.invariant.007": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This invariant restates policy, blocks harmless help, or cannot control semantic side channels. Challenged proposition: The requester's contract cannot by itself waive rights, consent, or authority belonging to affected parties or override constitutional and policy predicates.",
+      "falsifier": "A reachable admitted trace violates it or it has no executable monitor and consumer.",
+      "acceptance_criteria": [
+        "Finite and natural traces satisfy it, seeded counterexamples reject, and behavior remains separately evaluated."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.invariant.008": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This invariant restates policy, blocks harmless help, or cannot control semantic side channels. Challenged proposition: Preference inference and feedback learning remain epistemic inputs under uncertainty and never become execution, training, publication, or deployment authority without their separate owning gates.",
+      "falsifier": "A reachable admitted trace violates it or it has no executable monitor and consumer.",
+      "acceptance_criteria": [
+        "Finite and natural traces satisfy it, seeded counterexamples reject, and behavior remains separately evaluated."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.invariant.009": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This invariant restates policy, blocks harmless help, or cannot control semantic side channels. Challenged proposition: A valid contract record proves neither complete inner intent, value alignment, informed consent, user satisfaction, downstream preservation, nor safe effects.",
+      "falsifier": "A reachable admitted trace violates it or it has no executable monitor and consumer.",
+      "acceptance_criteria": [
+        "Finite and natural traces satisfy it, seeded counterexamples reject, and behavior remains separately evaluated."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.failure_mode.001": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by false refusals and burden. Challenged proposition: For Human Intent as a Formal Input, a material failure mode is: Goal misbinding optimizes a plausible interpretation that the principal did not accept.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.failure_mode.002": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by false refusals and burden. Challenged proposition: For Human Intent as a Formal Input, a material failure mode is: Scope accretion adds individually plausible means until the work or effect surface exceeds the original grant.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.failure_mode.003": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by false refusals and burden. Challenged proposition: For Human Intent as a Formal Input, a material failure mode is: Implicit-permission laundering treats a desired outcome as approval for any convenient tool, source, expenditure, publication, deployment, or side effect.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.failure_mode.004": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by false refusals and burden. Challenged proposition: For Human Intent as a Formal Input, a material failure mode is: Assumption laundering converts an unconfirmed guess into a plan constraint, job, and external effect without an explicit disposition or re-contract decision.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.failure_mode.005": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by false refusals and burden. Challenged proposition: For Human Intent as a Formal Input, a material failure mode is: Raw-context override or instruction injection causes conversational text, retrieved content, or a later hidden directive to supersede the accepted contract.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.failure_mode.006": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by false refusals and burden. Challenged proposition: For Human Intent as a Formal Input, a material failure mode is: Approval laundering treats urgency, trust, silence, automation bias, habituation, or a fatigued click as durable informed authorization.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.failure_mode.007": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by false refusals and burden. Challenged proposition: For Human Intent as a Formal Input, a material failure mode is: Preference laundering turns a learned reward, predicted preference, style signal, or local comparison into an authority or consent claim.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.failure_mode.008": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by false refusals and burden. Challenged proposition: For Human Intent as a Formal Input, a material failure mode is: Requirements precision theater produces a complete-looking contract whose stakeholder conflicts, affected parties, authority basis, or evidence duties remain false or absent.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.failure_mode.009": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by false refusals and burden. Challenged proposition: For Human Intent as a Formal Input, a material failure mode is: Affected-party erasure lets the requester bind people, data, rights, or resources they do not control.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.failure_mode.010": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by false refusals and burden. Challenged proposition: For Human Intent as a Formal Input, a material failure mode is: Stale-contract reuse continues work after expiry, revocation, supersession, material context change, or consumer mismatch.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.failure_mode.011": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by false refusals and burden. Challenged proposition: For Human Intent as a Formal Input, a material failure mode is: Evidence or stop erosion preserves the desired outcome while weakening acceptance criteria, source boundaries, verification, rollback, or termination duties during lowering.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.failure_mode.012": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by false refusals and burden. Challenged proposition: For Human Intent as a Formal Input, a material failure mode is: Clarification overload or least-authority miscalibration blocks benign reversible help so aggressively that users route around governance or the system loses useful throughput.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.formal.intent-contract-operational-invariant": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This theorem restates Boolean premises and proves no semantic understanding, authentic authority, preservation, or enforcement. Challenged proposition: A compiled intent contract preserves declared constraints and stop conditions.",
+      "falsifier": "Lean accepts premises while the encoded conclusion fails, or prose exceeds the finite consequence.",
+      "acceptance_criteria": [
+        "The declaration builds, fixtures reproduce where applicable, and public claims stay within encoded semantics."
+      ],
+      "promotion_ceiling": "finite_formal_route_only_no_behavioral_promotion",
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.formal.intent-contract-failure-blocks-promotion": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This theorem restates Boolean premises and proves no semantic understanding, authentic authority, preservation, or enforcement. Challenged proposition: A contract missing required authority cannot compile to an executable job.",
+      "falsifier": "Lean accepts premises while the encoded conclusion fails, or prose exceeds the finite consequence.",
+      "acceptance_criteria": [
+        "The declaration builds, fixtures reproduce where applicable, and public claims stay within encoded semantics."
+      ],
+      "promotion_ceiling": "finite_formal_route_only_no_behavioral_promotion",
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.formal.intent-resolution-route-envelope": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This theorem restates Boolean premises and proves no semantic understanding, authentic authority, preservation, or enforcement. Challenged proposition: Structured intent-resolution and intent-admission records route missing text, prohibited actions, ambiguity, conflicts, high-impact authority gaps, hidden overrides, preservation failures, re-contract triggers, and missing non-claim boundaries to rejection, clarification, repair, review, or re-contracting before compilation/admission.",
+      "falsifier": "Lean accepts premises while the encoded conclusion fails, or prose exceeds the finite consequence.",
+      "acceptance_criteria": [
+        "The declaration builds, fixtures reproduce where applicable, and public claims stay within encoded semantics."
+      ],
+      "promotion_ceiling": "finite_formal_route_only_no_behavioral_promotion",
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    },
+    "human-intent-as-a-formal-input.formal.intent-intake-probe-fixture-bridge": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This theorem restates Boolean premises and proves no semantic understanding, authentic authority, preservation, or enforcement. Challenged proposition: The synthetic intent-intake probe summary records four valid bounded-request scenarios, six expected-invalid request-pressure controls, stop-condition preservation, bounded-default non-authority, and no runtime-dispatch, support-state-promotion, or deployed-authority-extraction claim.",
+      "falsifier": "Lean accepts premises while the encoded conclusion fails, or prose exceeds the finite consequence.",
+      "acceptance_criteria": [
+        "The declaration builds, fixtures reproduce where applicable, and public claims stay within encoded semantics."
+      ],
+      "promotion_ceiling": "finite_formal_route_only_no_behavioral_promotion",
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ]
+    }
+  },
+  "prose_candidate_dispositions": {
+    "human-intent-as-a-formal-input.prose.5df8e0649696": {
+      "state": "duplicate_of_atom",
+      "rationale": "Request-versus-authority restatement.",
+      "target_atom_id": "human-intent-as-a-formal-input.core"
+    },
+    "human-intent-as-a-formal-input.prose.e0201947d91b": {
+      "state": "duplicate_of_atom",
+      "rationale": "Interpretation-versus-authorization motivation.",
+      "target_atom_id": "human-intent-as-a-formal-input.problem.001"
+    },
+    "human-intent-as-a-formal-input.prose.ce7d961b7c58": {
+      "state": "duplicate_of_atom",
+      "rationale": "Narrowing consequence.",
+      "target_atom_id": "human-intent-as-a-formal-input.core"
+    },
+    "human-intent-as-a-formal-input.prose.5371359f1dc3": {
+      "state": "duplicate_of_atom",
+      "rationale": "Agency-narrowing restatement.",
+      "target_atom_id": "human-intent-as-a-formal-input.core"
+    },
+    "human-intent-as-a-formal-input.prose.585cdef271d6": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Aspirational first-handoff tradeoff; no prevention result is asserted."
+    },
+    "human-intent-as-a-formal-input.prose.ea7d39514982": {
+      "state": "duplicate_of_atom",
+      "rationale": "Reader-language contract purpose.",
+      "target_atom_id": "human-intent-as-a-formal-input.core"
+    },
+    "human-intent-as-a-formal-input.prose.a22968d430e5": {
+      "state": "duplicate_of_atom",
+      "rationale": "Narrowing requirement.",
+      "target_atom_id": "human-intent-as-a-formal-input.core"
+    },
+    "human-intent-as-a-formal-input.prose.d90043296fb9": {
+      "state": "duplicate_of_atom",
+      "rationale": "Language is not effect authority.",
+      "target_atom_id": "human-intent-as-a-formal-input.invariant.002"
+    },
+    "human-intent-as-a-formal-input.prose.090299bff7a1": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded Software Magic Grimoire source report."
+    },
+    "human-intent-as-a-formal-input.prose.3da0fc91d211": {
+      "state": "duplicate_of_atom",
+      "rationale": "Draft-or-clarify route.",
+      "target_atom_id": "human-intent-as-a-formal-input.mechanism.009"
+    },
+    "human-intent-as-a-formal-input.prose.7f29139e26ad": {
+      "state": "duplicate_of_atom",
+      "rationale": "Human texture is evidence, not authority.",
+      "target_atom_id": "human-intent-as-a-formal-input.mechanism.008"
+    },
+    "human-intent-as-a-formal-input.prose.7ca998e12f1d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Approval-laundering example.",
+      "target_atom_id": "human-intent-as-a-formal-input.failure_mode.006"
+    },
+    "human-intent-as-a-formal-input.prose.063589f476cd": {
+      "state": "duplicate_of_atom",
+      "rationale": "Hard-wrapped insufficiency fragment.",
+      "target_atom_id": "human-intent-as-a-formal-input.insufficiency.001"
+    },
+    "human-intent-as-a-formal-input.prose.5fbab746e538": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explicit intake-state consequence.",
+      "target_atom_id": "human-intent-as-a-formal-input.mechanism.004"
+    },
+    "human-intent-as-a-formal-input.prose.c960d6c1b6db": {
+      "state": "duplicate_of_atom",
+      "rationale": "Default-versus-authority boundary.",
+      "target_atom_id": "human-intent-as-a-formal-input.invariant.003"
+    },
+    "human-intent-as-a-formal-input.prose.73f9ae0da434": {
+      "state": "duplicate_of_atom",
+      "rationale": "Field-disposition requirement.",
+      "target_atom_id": "human-intent-as-a-formal-input.mechanism.003"
+    },
+    "human-intent-as-a-formal-input.prose.72e780c5fa52": {
+      "state": "duplicate_of_atom",
+      "rationale": "Formal-input ownership conclusion.",
+      "target_atom_id": "human-intent-as-a-formal-input.core"
+    },
+    "human-intent-as-a-formal-input.prose.e398a91137c0": {
+      "state": "duplicate_of_atom",
+      "rationale": "Separated-field rationale.",
+      "target_atom_id": "human-intent-as-a-formal-input.mechanism.002"
+    },
+    "human-intent-as-a-formal-input.prose.4fe5f848e0ea": {
+      "state": "duplicate_of_atom",
+      "rationale": "Challengeable receipt consequence.",
+      "target_atom_id": "human-intent-as-a-formal-input.mechanism.006"
+    },
+    "human-intent-as-a-formal-input.prose.7499992ed04c": {
+      "state": "duplicate_of_atom",
+      "rationale": "Literal core sentence.",
+      "target_atom_id": "human-intent-as-a-formal-input.core"
+    },
+    "human-intent-as-a-formal-input.prose.d55e974d5423": {
+      "state": "historical_or_source_report",
+      "rationale": "Source-context limitation and non-claim."
+    },
+    "human-intent-as-a-formal-input.prose.f1ea7b37cfe3": {
+      "state": "duplicate_of_atom",
+      "rationale": "Corrigibility rationale.",
+      "target_atom_id": "human-intent-as-a-formal-input.mechanism.007"
+    },
+    "human-intent-as-a-formal-input.prose.0b8f14783471": {
+      "state": "duplicate_of_atom",
+      "rationale": "Visible ambiguity requirement.",
+      "target_atom_id": "human-intent-as-a-formal-input.mechanism.009"
+    },
+    "human-intent-as-a-formal-input.prose.4225e393d22d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Field-disposition fragment.",
+      "target_atom_id": "human-intent-as-a-formal-input.mechanism.003"
+    },
+    "human-intent-as-a-formal-input.prose.25858717c3de": {
+      "state": "duplicate_of_atom",
+      "rationale": "Prohibited-default fragment.",
+      "target_atom_id": "human-intent-as-a-formal-input.invariant.003"
+    },
+    "human-intent-as-a-formal-input.prose.6935e3d073e3": {
+      "state": "editorial_or_question",
+      "rationale": "State-list lead-in."
+    },
+    "human-intent-as-a-formal-input.prose.97cb53e5cdc1": {
+      "state": "duplicate_of_atom",
+      "rationale": "Reviewer evidence is not authority.",
+      "target_atom_id": "human-intent-as-a-formal-input.interface.001"
+    },
+    "human-intent-as-a-formal-input.prose.84bca10090a2": {
+      "state": "duplicate_of_atom",
+      "rationale": "Constitutional handoff fragment.",
+      "target_atom_id": "human-intent-as-a-formal-input.interface.002"
+    },
+    "human-intent-as-a-formal-input.prose.144a337a24b6": {
+      "state": "duplicate_of_atom",
+      "rationale": "Satisfaction/support non-claim.",
+      "target_atom_id": "human-intent-as-a-formal-input.interface.005"
+    },
+    "human-intent-as-a-formal-input.prose.d0e1c7b465d3": {
+      "state": "duplicate_of_atom",
+      "rationale": "Preference non-authority fragment.",
+      "target_atom_id": "human-intent-as-a-formal-input.interface.006"
+    },
+    "human-intent-as-a-formal-input.prose.ecd75b5376a3": {
+      "state": "duplicate_of_atom",
+      "rationale": "Prohibited-default fragment.",
+      "target_atom_id": "human-intent-as-a-formal-input.invariant.003"
+    },
+    "human-intent-as-a-formal-input.prose.ed39edb09d28": {
+      "state": "duplicate_of_atom",
+      "rationale": "Material-change requirement.",
+      "target_atom_id": "human-intent-as-a-formal-input.invariant.006"
+    },
+    "human-intent-as-a-formal-input.prose.faf80d39ff46": {
+      "state": "duplicate_of_atom",
+      "rationale": "Stale/wrong-consumer consequence.",
+      "target_atom_id": "human-intent-as-a-formal-input.invariant.006"
+    },
+    "human-intent-as-a-formal-input.prose.4717a7d6aec4": {
+      "state": "duplicate_of_atom",
+      "rationale": "Affected-party boundary.",
+      "target_atom_id": "human-intent-as-a-formal-input.invariant.007"
+    },
+    "human-intent-as-a-formal-input.prose.bab03075557a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Record-validity non-claim.",
+      "target_atom_id": "human-intent-as-a-formal-input.invariant.009"
+    },
+    "human-intent-as-a-formal-input.prose.ebbeb60a0a0e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Planner-delta re-contract rule.",
+      "target_atom_id": "human-intent-as-a-formal-input.mechanism.007"
+    },
+    "human-intent-as-a-formal-input.prose.a027bd1c3cb9": {
+      "state": "duplicate_of_atom",
+      "rationale": "Least-authority rule.",
+      "target_atom_id": "human-intent-as-a-formal-input.mechanism.009"
+    },
+    "human-intent-as-a-formal-input.prose.f789cc246331": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Worked-example expected residual; no outcome claim."
+    },
+    "human-intent-as-a-formal-input.prose.cb1140813274": {
+      "state": "duplicate_of_atom",
+      "rationale": "Material-ambiguity visibility.",
+      "target_atom_id": "human-intent-as-a-formal-input.invariant.004"
+    },
+    "human-intent-as-a-formal-input.prose.36bfc95d97b9": {
+      "state": "duplicate_of_atom",
+      "rationale": "Minimum limitation fragment.",
+      "target_atom_id": "human-intent-as-a-formal-input.minimum.001"
+    },
+    "human-intent-as-a-formal-input.prose.022eafbd3d50": {
+      "state": "duplicate_of_atom",
+      "rationale": "Planned fixture outputs.",
+      "target_atom_id": "human-intent-as-a-formal-input.minimum.001"
+    },
+    "human-intent-as-a-formal-input.prose.6f6f306ccba4": {
+      "state": "duplicate_of_atom",
+      "rationale": "Planned corpus dimensions.",
+      "target_atom_id": "human-intent-as-a-formal-input.beyond_sota.001"
+    },
+    "human-intent-as-a-formal-input.prose.5db2e893c4f1": {
+      "state": "duplicate_of_atom",
+      "rationale": "Synthetic intake-probe boundary.",
+      "target_atom_id": "human-intent-as-a-formal-input.minimum.001"
+    },
+    "human-intent-as-a-formal-input.prose.755e8b072507": {
+      "state": "duplicate_of_atom",
+      "rationale": "Comparator/metric fragment.",
+      "target_atom_id": "human-intent-as-a-formal-input.beyond_sota.001"
+    },
+    "human-intent-as-a-formal-input.prose.2db9dde64d09": {
+      "state": "duplicate_of_atom",
+      "rationale": "Downstream authority traceability.",
+      "target_atom_id": "human-intent-as-a-formal-input.interface.004"
+    },
+    "human-intent-as-a-formal-input.prose.7dbd65fd209e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Constitutional transition.",
+      "target_atom_id": "human-intent-as-a-formal-input.interface.002"
+    },
+    "human-intent-as-a-formal-input.prose.7482aace2909": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the mature campaign's joint usefulness requirement.",
+      "target_atom_id": "human-intent-as-a-formal-input.beyond_sota.001"
+    },
+    "human-intent-as-a-formal-input.prose.6de3b709c95a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates that fail-closed clarification alone is not adequate intent handling.",
+      "target_atom_id": "human-intent-as-a-formal-input.beyond_sota.001"
+    },
+    "human-intent-as-a-formal-input.prose.3f1e8003a197": {
+      "state": "duplicate_of_atom",
+      "rationale": "Reports the bounded reachable model and consumer result already owned by the strengthened intent contract operational target.",
+      "target_atom_id": "human-intent-as-a-formal-input.formal.intent-contract-operational-invariant"
+    },
+    "human-intent-as-a-formal-input.prose.a7eb681810e1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explicit non-claim boundary for the finite intent-resolution proof packet."
+    }
+  },
+  "non_claims": [
+    "This sweep establishes claim ownership and test obligations only; it does not establish that the stack understands human intent.",
+    "The added obligations are requirements to challenge, not evidence of consent, preference recovery, authority, preservation, useful throughput, safety, or SOTA performance.",
+    "Source review, finite Lean routes, deterministic fixtures, and internal adjudication create no support-state movement or external authority."
+  ]
+}

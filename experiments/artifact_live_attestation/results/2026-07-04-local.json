@@ -27,9 +27,9 @@
       "target_artifact_count": 1,
       "trap_receipt_rejected": true
     },
-    "module": "AsiStackProofs.ArtifactGraph",
+    "module": "AsiStackProofs.ArtifactRealityRefinement",
     "theorem_refs": [
-      "artifact_live_attestation_probe_bridge"
+      "reality_review_requires_observed_artifact"
     ]
   },
   "mutation_controls": [
@@ -100,28 +100,28 @@
   "observation_routes": [
     {
       "accepted": true,
-      "observed_ref": "experiments/receipt_repository_audit/results/2026-07-04-challenge.json",
-      "observed_sha256": "ac73ef679304056bc27b08b17f1c2c16c8dba7f4813aa6dec1523e564f397b50",
+      "observed_ref": "experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json",
+      "observed_sha256": "f3c2132360050831ba42e075199b2577b640efc8d9d18e8a369bbb6e94111e47",
       "observer_role": "filesystem_reader",
       "route_id": "filesystem_bytes"
     },
     {
       "accepted": true,
-      "git_blob_sha1": "ee0cfb616bbd0b860465c347e7827141326fc17e",
-      "observed_ref": "HEAD:experiments/receipt_repository_audit/results/2026-07-04-challenge.json",
-      "observed_sha256": "ac73ef679304056bc27b08b17f1c2c16c8dba7f4813aa6dec1523e564f397b50",
+      "git_blob_sha1": "20319d0ce292c574b461d7a22331cf44a72a02aa",
+      "observed_ref": "HEAD:experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json",
+      "observed_sha256": "f3c2132360050831ba42e075199b2577b640efc8d9d18e8a369bbb6e94111e47",
       "observer_role": "git_object_database",
       "route_id": "git_object_bytes"
     },
     {
       "accepted": true,
-      "command": "python3 scripts/validate_receipt_repository_challenge.py",
+      "command": "python3 scripts/validate_artifact_graph_record_reality_sequence.py",
       "exit_code": 0,
       "observer_role": "command_replay_validator",
       "output_excerpt": [
-        "Receipt repository challenge validation passed: 4 challenge response(s), 3 tracked digest challenge(s), 1 external fingerprint challenge(s), 5 mutation control(s), no support-state effect."
+        "Artifact graph record-reality sequence validation passed: 1 valid sequence(s), 4 expected-invalid control(s), 4 rejected."
       ],
-      "output_sha256": "361da51b803c814108399e59b27bb3e96b7ef2d5417906f4a5a24641dd9bf0d4",
+      "output_sha256": "7ae5707eaa2002a8c89222c3005996f6e8e77016f87dba3dc402b52f785ac69e",
       "route_id": "command_replay"
     }
   ],
@@ -141,9 +141,9 @@
   "same_component_self_check_allowed": false,
   "schema_version": "asi_stack.artifact_live_attestation.result.v0",
   "support_state_effect": "none",
-  "target_artifact": "experiments/receipt_repository_audit/results/2026-07-04-challenge.json",
-  "target_artifact_result_id": "receipt-repository-challenge-2026-07-04",
-  "target_artifact_sha256": "ac73ef679304056bc27b08b17f1c2c16c8dba7f4813aa6dec1523e564f397b50",
+  "target_artifact": "experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json",
+  "target_artifact_result_id": "artifact_graph_record_reality_sequence_2026_07_04_local",
+  "target_artifact_sha256": "f3c2132360050831ba42e075199b2577b640efc8d9d18e8a369bbb6e94111e47",
   "target_clean_in_worktree": true,
   "trace_summary": {
     "accepted_observation_route_count": 3,
@@ -163,7 +163,7 @@
   },
   "trap_receipt": {
     "expected_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
-    "observed_sha256": "ac73ef679304056bc27b08b17f1c2c16c8dba7f4813aa6dec1523e564f397b50",
+    "observed_sha256": "f3c2132360050831ba42e075199b2577b640efc8d9d18e8a369bbb6e94111e47",
     "receipt_shape_valid": true,
     "rejected": true,
     "rejection_reasons": [

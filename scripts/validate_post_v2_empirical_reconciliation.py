@@ -18,6 +18,7 @@ APPENDIX = ROOT / "appendices/C_claim_evidence_matrix.qmd"
 PLAN = ROOT / "docs/per_chapter_evidence_plan.md"
 NON_CORE = ROOT / "docs/non_core_evidence_ledger.md"
 STRUCTURE = ROOT / "book_structure.json"
+ACTIVE_STATUS = ROOT / "roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json"
 EXPECTED = {
     "intent-to-execution-contracts.core": "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
     "artifact-graphs-audit-logs-and-replay.core": "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
@@ -40,8 +41,8 @@ def semantic_errors(ledger: dict, vectors: dict, residual_text: str, chapter_cou
         errors.append("all post-v2 decisions must retain argument with no support-state effect")
     if ledger.get("summary") != {"no_change": 9, "promote": 0, "narrow": 0, "demote": 0, "refute": 0, "support_state_changes": 0}:
         errors.append("post-v2 disposition summary drifted")
-    if chapter_count != 54:
-        errors.append("post-v2 cycle must preserve the 54-chapter architecture")
+    if chapter_count != 55:
+        errors.append("live post-v2 reconciliation must cover the authorized 55-chapter architecture")
     vector_by_claim = {row.get("claim_id"): row for row in vectors.get("vectors", [])}
     for claim_id, transition_ref in EXPECTED.items():
         vector = vector_by_claim.get(claim_id, {})
@@ -62,7 +63,7 @@ def semantic_errors(ledger: dict, vectors: dict, residual_text: str, chapter_cou
 
 
 def main() -> None:
-    required = (LEDGER, SCHEMA, VECTORS, V1_DISPOSITIONS, RESIDUALS, RECONCILIATION, ROADMAP, APPENDIX, PLAN, NON_CORE, STRUCTURE)
+    required = (LEDGER, SCHEMA, VECTORS, V1_DISPOSITIONS, RESIDUALS, RECONCILIATION, ROADMAP, APPENDIX, PLAN, NON_CORE, STRUCTURE, ACTIVE_STATUS)
     missing = [path.relative_to(ROOT).as_posix() for path in required if not path.is_file()]
     if missing:
         raise SystemExit("missing post-v2 reconciliation artifacts: " + ", ".join(missing))
@@ -71,6 +72,9 @@ def main() -> None:
     residual_text = RESIDUALS.read_text(encoding="utf-8")
     errors = validate_against_schema(ledger, load_json(SCHEMA), LEDGER.relative_to(ROOT).as_posix())
     errors.extend(semantic_errors(ledger, vectors, residual_text, chapter_count))
+    activation = load_json(ACTIVE_STATUS).get("activation_baseline", {})
+    if activation.get("active_chapter_count") != 54:
+        errors.append("historical post-v2 54-chapter activation baseline drifted")
     v1_by_claim = {row["claim_id"]: row for row in load_json(V1_DISPOSITIONS)["dispositions"]}
     for claim_id, transition_ref in EXPECTED.items():
         chapter = claim_id.removesuffix(".core")
@@ -92,7 +96,7 @@ def main() -> None:
         if phrase not in roadmap:
             errors.append(f"roadmap missing reconciled status: {phrase}")
     reconciliation = RECONCILIATION.read_text(encoding="utf-8")
-    for phrase in ("keeps its 54-chapter architecture", "adds executable empirical validators, not a new Lean theorem", "External-human review", "optional and are not completion debt"):
+    for phrase in ("historical post-v2 cycle kept its 54-chapter architecture", "live successor now contains 55 chapters", "adds executable empirical validators, not a new Lean theorem", "External-human review", "optional and are not completion debt"):
         if phrase not in reconciliation:
             errors.append(f"reconciliation report missing boundary: {phrase}")
     non_core = NON_CORE.read_text(encoding="utf-8")
@@ -106,18 +110,18 @@ def main() -> None:
         if "does not promote" not in boundary:
             errors.append(f"{transition_ref}: core-promotion non-claim missing")
     mutations = []
-    promoted = copy.deepcopy(ledger); promoted["decisions"][0]["decision"] = "promote"; mutations.append((promoted, vectors, residual_text, 54))
-    missing_decision = copy.deepcopy(ledger); missing_decision["decisions"] = missing_decision["decisions"][:-1]; mutations.append((missing_decision, vectors, residual_text, 54))
-    transfer = copy.deepcopy(vectors); next(row for row in transfer["vectors"] if row["claim_id"] in EXPECTED)["dimensions"]["transfer_distance"]["state"] = "established"; mutations.append((ledger, transfer, residual_text, 54))
+    promoted = copy.deepcopy(ledger); promoted["decisions"][0]["decision"] = "promote"; mutations.append((promoted, vectors, residual_text, 55))
+    missing_decision = copy.deepcopy(ledger); missing_decision["decisions"] = missing_decision["decisions"][:-1]; mutations.append((missing_decision, vectors, residual_text, 55))
+    transfer = copy.deepcopy(vectors); next(row for row in transfer["vectors"] if row["claim_id"] in EXPECTED)["dimensions"]["transfer_distance"]["state"] = "established"; mutations.append((ledger, transfer, residual_text, 55))
     erased = residual_text.replace("Fallback and abstention activated zero times", "Fallback was adequate")
-    mutations.append((ledger, vectors, erased, 54))
-    mutations.append((ledger, vectors, residual_text, 55))
+    mutations.append((ledger, vectors, erased, 55))
+    mutations.append((ledger, vectors, residual_text, 56))
     for args in mutations:
         if not semantic_errors(*args):
             errors.append("a post-v2 reconciliation negative control was accepted")
     if errors:
         raise SystemExit("Post-v2 empirical reconciliation failed:\n - " + "\n - ".join(errors))
-    print("Post-v2 empirical reconciliation passed: 3 historical accepted non-core no-change transitions, 9 historical core no-change decisions, preserved chapter/vector/evidence-plan routing, 14 current Appendix C summaries, 14 retained residual lanes, 3 honest conditional deferrals, 54 chapters, zero support-state changes, no new Lean claim, and 5 rejecting controls.")
+    print("Post-v2 empirical reconciliation passed: 3 historical accepted non-core no-change transitions, 9 historical core no-change decisions, preserved 54-chapter activation lineage plus 55 live chapters, chapter/vector/evidence-plan routing, 14 current Appendix C summaries, 14 retained residual lanes, 3 honest conditional deferrals, zero support-state changes, no new Lean claim, and 5 rejecting controls.")
 
 
 if __name__ == "__main__":

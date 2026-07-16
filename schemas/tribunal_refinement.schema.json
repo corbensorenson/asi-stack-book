@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/tribunal_refinement.schema.json",
+  "title": "Tribunal lifecycle refinement result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "source_sha256", "input_suites", "reachable_stage_count", "route_case_count", "route_coverage", "mutation_count", "mutation_rejection_count", "mutation_receipts", "final_state", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.tribunal_refinement.v1"},
+    "result_id": {"type": "string", "minLength": 1},
+    "source_sha256": {
+      "type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+      "required": ["lean_model", "tribunal_review_schema", "method_independence_record"]
+    },
+    "input_suites": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["suite_id", "valid_count", "expected_invalid_count", "suite_passed", "validator_sha256"],
+        "properties": {
+          "suite_id": {"enum": ["tribunal_review", "tribunal_method_independence"]},
+          "valid_count": {"type": "integer", "minimum": 0},
+          "expected_invalid_count": {"type": "integer", "minimum": 0},
+          "suite_passed": {"const": true},
+          "validator_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "reachable_stage_count": {"const": 7},
+    "route_case_count": {"const": 28},
+    "route_coverage": {
+      "type": "array", "minItems": 28, "maxItems": 28,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["case_id", "expected_route", "observed_route"],
+        "properties": {
+          "case_id": {"type": "string", "minLength": 1},
+          "expected_route": {"type": "string", "minLength": 1},
+          "observed_route": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "mutation_count": {"type": "integer", "minimum": 40},
+    "mutation_rejection_count": {"type": "integer", "minimum": 40},
+    "mutation_receipts": {
+      "type": "array", "minItems": 40,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["mutation_id", "rejected", "terminal_stage", "failure_route"],
+        "properties": {
+          "mutation_id": {"type": "string", "minLength": 1},
+          "rejected": {"const": true},
+          "terminal_stage": {"enum": ["idle", "requested", "dossier_bound", "panel_run", "verdict_issued", "acknowledged"]},
+          "failure_route": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "final_state": {
+      "type": "object", "additionalProperties": false,
+      "required": ["stage", "receipt_count", "panel_accepted", "verdict", "support_assignment_count", "external_effect_count"],
+      "properties": {
+        "stage": {"const": "appeal_resolved"},
+        "receipt_count": {"const": 6},
+        "panel_accepted": {"const": true},
+        "verdict": {"const": "revise"},
+        "support_assignment_count": {"const": 0},
+        "external_effect_count": {"const": 0}
+      }
+    },
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 8, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+  }
+}

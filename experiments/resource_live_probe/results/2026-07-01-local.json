@@ -30,11 +30,11 @@
   "pass": true,
   "probe_id": "resource-live-probe-2026-07-01-local",
   "record_kind": "resource_live_probe",
-  "recorded_at_utc": "2026-07-05T23:56:15Z",
+  "recorded_at_utc": "2026-07-15T23:41:00Z",
   "replay_commands": [
     {
       "command": "python3 scripts/validate_costed_route_resource_slice.py",
-      "elapsed_ms": 39.459,
+      "elapsed_ms": 82.266,
       "evidence_surface": "non-core synthetic-test-backed costed-route/resource-budget slice",
       "exit_code": 0,
       "id": "costed_route_resource_slice",
@@ -45,7 +45,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_workflow_trace.py",
-      "elapsed_ms": 77.853,
+      "elapsed_ms": 72.144,
       "evidence_surface": "deterministic multi-step Resource Economics workflow trace",
       "exit_code": 0,
       "id": "resource_workflow_trace",
@@ -56,7 +56,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_budget_ledgers.py",
-      "elapsed_ms": 42.351,
+      "elapsed_ms": 36.778,
       "evidence_surface": "Resource Budget Record fixture decisions",
       "exit_code": 0,
       "id": "resource_budget_ledgers",
@@ -67,7 +67,7 @@
     },
     {
       "command": "python3 scripts/validate_capacity_smoothing.py",
-      "elapsed_ms": 30.377,
+      "elapsed_ms": 46.65,
       "evidence_surface": "bounded-capacity toy trace fixtures",
       "exit_code": 0,
       "id": "capacity_smoothing",
@@ -78,7 +78,7 @@
     },
     {
       "command": "python3 scripts/validate_simulation_transfer_boundaries.py",
-      "elapsed_ms": 31.197,
+      "elapsed_ms": 47.299,
       "evidence_surface": "simulation-transfer boundary fixtures folded into Resource Economics",
       "exit_code": 0,
       "id": "simulation_transfer_boundaries",
@@ -116,10 +116,10 @@
       "sha256": "ab620eb00064725d47f15b23a6ed5191266196be180a416772f82869cc6448e6"
     },
     {
-      "bytes": 23073,
-      "lines": 526,
+      "bytes": 22609,
+      "lines": 519,
       "path": "scripts/validate_resource_workflow_trace.py",
-      "sha256": "389d4d6e9593520f23b95d95810d19e01d5d225795984d12a8394d6007c0e14b"
+      "sha256": "8fb7bed5820125554c251d0deb518ff5710fef773b852dbeb48a75f0e7c6b6ce"
     },
     {
       "bytes": 12706,
@@ -128,10 +128,10 @@
       "sha256": "bda3c14ef9e9dcee694baa5d3d571c7a64ae24dbac90b596a2cfda1ef2fbbcc8"
     },
     {
-      "bytes": 12280,
-      "lines": 266,
+      "bytes": 11938,
+      "lines": 261,
       "path": "scripts/validate_capacity_smoothing.py",
-      "sha256": "9f287e8ba81ccc8631f8b00391799eaf457647f533ee7dda8afea99a027a31ac"
+      "sha256": "f629402cf6cb3f16f9845345952ce8b37dd928d56cf3742174ba6447620b6901"
     },
     {
       "bytes": 10272,
@@ -140,16 +140,16 @@
       "sha256": "b1cd3adf0e682edacb6a8ad8b09d93ccd9d81e0ddef7db0446279c57a7610538"
     },
     {
-      "bytes": 31878,
-      "lines": 839,
+      "bytes": 24144,
+      "lines": 707,
       "path": "lean/AsiStackProofs/ResourceEconomics.lean",
-      "sha256": "f5d768de3853d3479e2042aeb1d210a7e6f69776ec14975c03824e0f930bab86"
+      "sha256": "fa1b617c7e2788f9d9d669ebe56ac79dc95f27e760cc19c75891301ebbb57601"
     },
     {
-      "bytes": 13715,
-      "lines": 358,
+      "bytes": 11808,
+      "lines": 310,
       "path": "lean/AsiStackProofs/SimulationFidelity.lean",
-      "sha256": "7a66136e717937c44872fae66d3066693f87340108115626bfec77a7e5e6afcf"
+      "sha256": "e93e3d950ed7482fdfcb2a0c64fdae7eaca2bb3dbc43ca446799d88c487a30ea"
     },
     {
       "bytes": 5763,
@@ -158,10 +158,10 @@
       "sha256": "075febf47d0135491f418adccd4890d4a969e18fe0855fc12d820d31e70a53fd"
     },
     {
-      "bytes": 2603,
-      "lines": 62,
+      "bytes": 2125,
+      "lines": 55,
       "path": "experiments/resource_workflow_trace/results/2026-07-01-local.json",
-      "sha256": "2e1a75f81f10c044287269fd9757110186da31b8b9877f0891d8f407aab17355"
+      "sha256": "664f842032710fc0285f6db316acf42f3de6e6ef0290799d2449f8ae14d2d9ba"
     },
     {
       "bytes": 1293,

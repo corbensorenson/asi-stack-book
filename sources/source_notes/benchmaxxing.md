@@ -42,6 +42,7 @@ Benchmaxxing frames AI development as a performance ratchet: evaluate against a 
 - `procedural-memory-and-cognitive-loop-closure` (Procedural Memory and Cognitive Loop Closure)
 - `readiness-gates-residual-escrow-and-quarantine` (Readiness Gates, Residual Escrow, and Quarantine)
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores; includes folded MoECOT Runtime Crosswalk)
+- `replaceable-cognitive-substrates-beyond-transformer-monoculture` (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
 - `capability-thresholds-and-deployment-commitments` (Capability Thresholds and Deployment Commitments)
 - `safety-cases-and-structured-assurance` (Safety Cases and Structured Assurance)

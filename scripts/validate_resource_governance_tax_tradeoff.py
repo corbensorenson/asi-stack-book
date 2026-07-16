@@ -25,16 +25,15 @@ ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
 VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
-LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ResourceEconomics.lean"
+LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ResourceEconomicsRefinement.lean"
 
 COMMAND = "python3 scripts/validate_resource_governance_tax_tradeoff.py"
 CODEX_TEST_NAME = "Resource governance-tax trade-off model"
 PROOF_TAG = "lean:resource.governance_tax.tradeoff_bridge"
 LEAN_THEOREMS = [
-    "resource_governance_tax_tradeoff_fixture_valid",
-    "resource_governance_tax_tradeoff_shows_governance_can_pay",
-    "resource_governance_tax_tradeoff_allows_low_risk_shortcut",
-    "resource_governance_tax_tradeoff_preserves_no_promotion_boundary",
+    "missing_protected_floor_blocks_reservation",
+    "raw_proxy_cannot_promote_executed_work",
+    "complete_resource_lifecycle_reaches_closed_without_support_or_effect_authority",
 ]
 
 REQUIRED_NON_CLAIMS = [
@@ -537,8 +536,8 @@ def validate_surfaces(errors: list[str]) -> None:
     require_text(
         LEAN_FILE,
         [
-            "GovernanceTaxTradeoffSummary",
-            "resourceGovernanceTaxTradeoffFixture",
+            "structure Packet where",
+            "def completePacket",
             *LEAN_THEOREMS,
         ],
         errors,

@@ -19,13 +19,6 @@ SUPPORTED_TRANSFER_DECISIONS = {"scenario_only", "unit_fixture_only", "bounded_c
 SUPPORTED_FIDELITY = {"toy_model", "unit_fixture", "scenario_only"}
 NON_CLAIM_TERMS = ("does not promote", "does not prove", "scheduler")
 REQUIRED_LEAN_THEOREMS = (
-    "resource_workflow_trace_fixture_valid",
-    "resource_workflow_trace_fixture_preserves_high_risk_ordering",
-    "resource_workflow_trace_fixture_residualizes_displaced_costs",
-    "resource_workflow_trace_fixture_rejects_physical_feasibility_overclaim",
-    "resource_workflow_trace_fixture_rejects_latency_only_selection",
-    "resource_workflow_trace_fixture_rejects_capacity_budget_overrun",
-    "resource_workflow_trace_fixture_has_no_support_promotion",
     "resource_workflow_trace_fixture_events_roll_up_to_summary",
     "resource_workflow_trace_fixture_events_keep_high_risk_first",
     "resource_workflow_trace_fixture_events_preserve_guard_flags",

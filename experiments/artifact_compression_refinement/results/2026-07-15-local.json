@@ -1,0 +1,449 @@
+{
+  "schema_version": "asi_stack.artifact_compression_refinement.result.v1",
+  "result_id": "2026-07-15-artifact-compression-refinement",
+  "recorded_date": "2026-07-15",
+  "command": "python3 scripts/validate_artifact_compression_refinement.py",
+  "model": {
+    "lean_module": "lean/AsiStackProofs/ArtifactCompressionRefinement.lean",
+    "stage_count": 8,
+    "route_count": 53,
+    "reached_route_count": 53,
+    "route_case_count": 53,
+    "rejected_mutation_count": 44,
+    "fallback_route_reached": true,
+    "exact_use_route_reached": true,
+    "support_assignment_count": 0,
+    "external_effect_count": 0
+  },
+  "source_result_refinement": {
+    "counts": {
+      "fixture_field_count": 22,
+      "fixture_non_claim_count": 3,
+      "probe_input_bytes": 3936,
+      "probe_archive_bytes": 4434,
+      "probe_command_count": 5,
+      "probe_corrupt_rejection_count": 1,
+      "probe_roundtrip_exact_count": 1,
+      "probe_compression_advantage_count": 0,
+      "import_observation_count": 3,
+      "import_decoded_bytes": 100000000,
+      "import_best_ratio": 2.76634019,
+      "no_change_decision_count": 2
+    },
+    "sha256": {
+      "tests/fixtures/protocol_records/compressed_artifact_record.valid.json": "ea9b80cfbf1eb4f920666018b2122116cf1d4d0fe58b147aa04d6a6032105b41",
+      "experiments/rankfold_public_safe_probe/results/2026-07-02-local.json": "2bc5eecebd9d0ec03d962abd65337a783bf09a515b9373087c3b4af287ceede7",
+      "experiments/rankfold_artifact_import/results/2026-07-02-local.json": "a0c29ca93bafeddbc8d1a9d5cb14295badd7ab1fa4aa5db18c244bef5d262538",
+      "evidence_transitions/v1_x_measured/rankfold_public_safe_replay_probe_no_change.json": "70c5678b53e60b192b9490c61d4b63fdfce54bcaffabedef7b9ccca9edbf16a8",
+      "evidence_transitions/v1_x_measured/rankfold_artifact_import_no_change.json": "a4349cf4830ca8372d875a3a6ed32b33b9ce11229d10d9337557cee0ec30ed3d"
+    },
+    "validator_runs": [
+      {
+        "command": "python3 scripts/validate_protocol_examples.py",
+        "exit_code": 0,
+        "output_sha256": "d8921424bdfe73a68dd055b70643fa82dfe4f9d1cd63ff809228676f4314e45e"
+      },
+      {
+        "command": "python3 scripts/validate_rankfold_public_safe_probe.py",
+        "exit_code": 0,
+        "output_sha256": "3540ebca0080b75a1f283d8b0c88b60706cf561028995a1b2323a7d249aaaa76"
+      },
+      {
+        "command": "python3 scripts/validate_rankfold_artifact_import.py",
+        "exit_code": 0,
+        "output_sha256": "1ed6d0481e6431f280d18ce0bbca29ececb3c104e1c59afa96c534b911273a9b"
+      }
+    ]
+  },
+  "route_cases": [
+    {
+      "case_id": "wrong-stage",
+      "stage": "registered",
+      "expected_route": "rejectWrongStage",
+      "actual_route": "rejectWrongStage",
+      "accepted": false
+    },
+    {
+      "case_id": "identity-substitution",
+      "stage": "registered",
+      "expected_route": "rejectIdentitySubstitution",
+      "actual_route": "rejectIdentitySubstitution",
+      "accepted": false
+    },
+    {
+      "case_id": "policy-substitution",
+      "stage": "registered",
+      "expected_route": "rejectPolicySubstitution",
+      "actual_route": "rejectPolicySubstitution",
+      "accepted": false
+    },
+    {
+      "case_id": "decoder-substitution",
+      "stage": "registered",
+      "expected_route": "rejectDecoderSubstitution",
+      "actual_route": "rejectDecoderSubstitution",
+      "accepted": false
+    },
+    {
+      "case_id": "evidence-substitution",
+      "stage": "registered",
+      "expected_route": "rejectEvidenceSubstitution",
+      "actual_route": "rejectEvidenceSubstitution",
+      "accepted": false
+    },
+    {
+      "case_id": "event-replay",
+      "stage": "registered",
+      "expected_route": "rejectEventReplay",
+      "actual_route": "rejectEventReplay",
+      "accepted": false
+    },
+    {
+      "case_id": "authority-leak",
+      "stage": "registered",
+      "expected_route": "rejectAuthorityLeak",
+      "actual_route": "rejectAuthorityLeak",
+      "accepted": false
+    },
+    {
+      "case_id": "registered-fullArtifact",
+      "stage": "registered",
+      "expected_route": "requestFullArtifact",
+      "actual_route": "requestFullArtifact",
+      "accepted": false
+    },
+    {
+      "case_id": "registered-manifest",
+      "stage": "registered",
+      "expected_route": "requestManifest",
+      "actual_route": "requestManifest",
+      "accepted": false
+    },
+    {
+      "case_id": "registered-useEnvelope",
+      "stage": "registered",
+      "expected_route": "requestUseEnvelope",
+      "actual_route": "requestUseEnvelope",
+      "accepted": false
+    },
+    {
+      "case_id": "registered-accessPattern",
+      "stage": "registered",
+      "expected_route": "requestAccessPattern",
+      "actual_route": "requestAccessPattern",
+      "accepted": false
+    },
+    {
+      "case_id": "registered-consumer",
+      "stage": "registered",
+      "expected_route": "requestConsumer",
+      "actual_route": "requestConsumer",
+      "accepted": false
+    },
+    {
+      "case_id": "registered-rights",
+      "stage": "registered",
+      "expected_route": "requestRights",
+      "actual_route": "requestRights",
+      "accepted": false
+    },
+    {
+      "case_id": "registered-accepted",
+      "stage": "registered",
+      "expected_route": "acceptEncoding",
+      "actual_route": "acceptEncoding",
+      "accepted": true
+    },
+    {
+      "case_id": "encoded-codecIdentity",
+      "stage": "encoded",
+      "expected_route": "requestCodecIdentity",
+      "actual_route": "requestCodecIdentity",
+      "accepted": false
+    },
+    {
+      "case_id": "encoded-decoderIdentity",
+      "stage": "encoded",
+      "expected_route": "requestDecoderIdentity",
+      "actual_route": "requestDecoderIdentity",
+      "accepted": false
+    },
+    {
+      "case_id": "encoded-platform",
+      "stage": "encoded",
+      "expected_route": "requestPlatform",
+      "actual_route": "requestPlatform",
+      "accepted": false
+    },
+    {
+      "case_id": "encoded-byteAccounting",
+      "stage": "encoded",
+      "expected_route": "requestByteAccounting",
+      "actual_route": "requestByteAccounting",
+      "accepted": false
+    },
+    {
+      "case_id": "encoded-residual",
+      "stage": "encoded",
+      "expected_route": "requestResidual",
+      "actual_route": "requestResidual",
+      "accepted": false
+    },
+    {
+      "case_id": "encoded-artifactDigestRecord",
+      "stage": "encoded",
+      "expected_route": "requestArtifactDigest",
+      "actual_route": "requestArtifactDigest",
+      "accepted": false
+    },
+    {
+      "case_id": "encoded-accepted",
+      "stage": "encoded",
+      "expected_route": "acceptVerification",
+      "actual_route": "acceptVerification",
+      "accepted": true
+    },
+    {
+      "case_id": "verified-decoderDeterminism",
+      "stage": "verified",
+      "expected_route": "requestDecoderDeterminism",
+      "actual_route": "requestDecoderDeterminism",
+      "accepted": false
+    },
+    {
+      "case_id": "verified-integrity",
+      "stage": "verified",
+      "expected_route": "requestIntegrity",
+      "actual_route": "requestIntegrity",
+      "accepted": false
+    },
+    {
+      "case_id": "verified-adversarialMutation",
+      "stage": "verified",
+      "expected_route": "requestAdversarialMutation",
+      "actual_route": "requestAdversarialMutation",
+      "accepted": false
+    },
+    {
+      "case_id": "verified-verificationReceipt",
+      "stage": "verified",
+      "expected_route": "requestVerificationReceipt",
+      "actual_route": "requestVerificationReceipt",
+      "accepted": false
+    },
+    {
+      "case_id": "verified-exact-replay",
+      "stage": "verified",
+      "expected_route": "blockExactReplay",
+      "actual_route": "blockExactReplay",
+      "accepted": false
+    },
+    {
+      "case_id": "verified-accepted",
+      "stage": "verified",
+      "expected_route": "acceptProbe",
+      "actual_route": "acceptProbe",
+      "accepted": true
+    },
+    {
+      "case_id": "fallbackReady-fallbackTrigger",
+      "stage": "fallbackReady",
+      "expected_route": "requestFallbackTrigger",
+      "actual_route": "requestFallbackTrigger",
+      "accepted": false
+    },
+    {
+      "case_id": "fallbackReady-fallbackExecuted",
+      "stage": "fallbackReady",
+      "expected_route": "requestFallbackExecution",
+      "actual_route": "requestFallbackExecution",
+      "accepted": false
+    },
+    {
+      "case_id": "fallbackReady-recoveryReceipt",
+      "stage": "fallbackReady",
+      "expected_route": "requestRecoveryReceipt",
+      "actual_route": "requestRecoveryReceipt",
+      "accepted": false
+    },
+    {
+      "case_id": "fallbackReady-costAccounting",
+      "stage": "fallbackReady",
+      "expected_route": "requestCostAccounting",
+      "actual_route": "requestCostAccounting",
+      "accepted": false
+    },
+    {
+      "case_id": "fallbackReady-accepted",
+      "stage": "fallbackReady",
+      "expected_route": "acceptAdmission",
+      "actual_route": "acceptAdmission",
+      "accepted": true
+    },
+    {
+      "case_id": "consumed-consumerAck",
+      "stage": "consumed",
+      "expected_route": "requestConsumerAck",
+      "actual_route": "requestConsumerAck",
+      "accepted": false
+    },
+    {
+      "case_id": "consumed-observedOutcome",
+      "stage": "consumed",
+      "expected_route": "requestObservedOutcome",
+      "actual_route": "requestObservedOutcome",
+      "accepted": false
+    },
+    {
+      "case_id": "consumed-fallbackOutcome",
+      "stage": "consumed",
+      "expected_route": "requestFallbackOutcome",
+      "actual_route": "requestFallbackOutcome",
+      "accepted": false
+    },
+    {
+      "case_id": "consumed-residualClosure",
+      "stage": "consumed",
+      "expected_route": "requestResidualClosure",
+      "actual_route": "requestResidualClosure",
+      "accepted": false
+    },
+    {
+      "case_id": "consumed-accepted",
+      "stage": "consumed",
+      "expected_route": "acceptClosure",
+      "actual_route": "acceptClosure",
+      "accepted": true
+    },
+    {
+      "case_id": "closed-descendants",
+      "stage": "closed",
+      "expected_route": "requestDescendants",
+      "actual_route": "requestDescendants",
+      "accepted": false
+    },
+    {
+      "case_id": "closed-resultDigestBound",
+      "stage": "closed",
+      "expected_route": "requestResultDigest",
+      "actual_route": "requestResultDigest",
+      "accepted": false
+    },
+    {
+      "case_id": "closed-cleanup",
+      "stage": "closed",
+      "expected_route": "requestCleanup",
+      "actual_route": "requestCleanup",
+      "accepted": false
+    },
+    {
+      "case_id": "closed-accepted",
+      "stage": "closed",
+      "expected_route": "acceptClosed",
+      "actual_route": "acceptClosed",
+      "accepted": true
+    },
+    {
+      "case_id": "probed-missing-probe",
+      "stage": "probed",
+      "expected_route": "requestTaskProbe",
+      "actual_route": "requestTaskProbe",
+      "accepted": false
+    },
+    {
+      "case_id": "probed-fallback",
+      "stage": "probed",
+      "expected_route": "routeToFallback",
+      "actual_route": "routeToFallback",
+      "accepted": true
+    },
+    {
+      "case_id": "probed-no-fallback",
+      "stage": "probed",
+      "expected_route": "requestFallbackArtifact",
+      "actual_route": "requestFallbackArtifact",
+      "accepted": false
+    },
+    {
+      "case_id": "probed-utilityEvidence",
+      "stage": "probed",
+      "expected_route": "requestUtilityEvidence",
+      "actual_route": "requestUtilityEvidence",
+      "accepted": false
+    },
+    {
+      "case_id": "probed-rareCaseCoverage",
+      "stage": "probed",
+      "expected_route": "requestRareCaseCoverage",
+      "actual_route": "requestRareCaseCoverage",
+      "accepted": false
+    },
+    {
+      "case_id": "probed-securityAndRights",
+      "stage": "probed",
+      "expected_route": "requestSecurityAndRights",
+      "actual_route": "requestSecurityAndRights",
+      "accepted": false
+    },
+    {
+      "case_id": "probed-accepted",
+      "stage": "probed",
+      "expected_route": "acceptFallbackPrep",
+      "actual_route": "acceptFallbackPrep",
+      "accepted": true
+    },
+    {
+      "case_id": "admitted-unqualified",
+      "stage": "admitted",
+      "expected_route": "blockUnqualifiedUse",
+      "actual_route": "blockUnqualifiedUse",
+      "accepted": false
+    },
+    {
+      "case_id": "admitted-ratio",
+      "stage": "admitted",
+      "expected_route": "blockRawRatioPromotion",
+      "actual_route": "blockRawRatioPromotion",
+      "accepted": false
+    },
+    {
+      "case_id": "admitted-transition",
+      "stage": "admitted",
+      "expected_route": "requestEvidenceTransition",
+      "actual_route": "requestEvidenceTransition",
+      "accepted": false
+    },
+    {
+      "case_id": "admitted-nonclaims",
+      "stage": "admitted",
+      "expected_route": "requestNonClaims",
+      "actual_route": "requestNonClaims",
+      "accepted": false
+    },
+    {
+      "case_id": "admitted-accepted",
+      "stage": "admitted",
+      "expected_route": "acceptConsumption",
+      "actual_route": "acceptConsumption",
+      "accepted": true
+    }
+  ],
+  "lean_verification": {
+    "command": "lake env lean AsiStackProofs/ArtifactCompressionRefinement.lean",
+    "exit_code": 0,
+    "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "support_state_effect": "none",
+  "external_effect": "none",
+  "residuals": [
+    "Finite authored lifecycle only; no NeuralFold encode was run by this refinement.",
+    "The fresh replay used RAW0, made the artifact larger, and supplies one exact roundtrip plus one corrupt-byte rejection.",
+    "The three NEURAL0 records are historical metadata observations over one decoded artifact, not a fresh encode or independent reproduction.",
+    "Probe validity, decoder correctness, utility, rare-case preservation, security, rights, costs, fallback execution, and recovery remain unmeasured gates."
+  ],
+  "non_claims": [
+    "no codec correctness, useful compression, downstream utility, deployed fallback, safety, transfer, SOTA, AGI, ASI, or support claim",
+    "no inference from archive ratio, digest agreement, route coverage, or green validators to semantic preservation",
+    "no support assignment or external effect"
+  ]
+}

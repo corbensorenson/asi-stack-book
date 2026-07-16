@@ -43,19 +43,26 @@ def main() -> None:
     if invariants.get("final_open_residuals") != 1 or invariants.get("support_state_effect") != "none":
         errors.append("Workstream D/E must preserve one open residual and no support effect")
     dispositions = load("claim_decisions/v1_x_core_claim_dispositions.json").get("summary", {})
-    if dispositions.get("manifest_chapter_core_claims") != 54 or dispositions.get("promoted_core_claims") != 0:
-        errors.append("Workstream D core-claim dispositions are incomplete or promoted")
+    if dispositions.get("manifest_chapter_core_claims") != 55 or dispositions.get("promoted_core_claims") != 0:
+        errors.append("Workstream D live core-claim dispositions are incomplete or promoted")
+    active_status = load("roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json")
+    activation = active_status.get("activation_baseline", {})
+    if activation.get("core_claim_count") != 54 or activation.get("proof_target_count") != 298:
+        errors.append("Workstream D/E historical 54-claim and 298-target closure baseline drifted")
 
     proof_manifest = load("proofs/proof_manifest.json")
     targets = proof_manifest.get("targets", proof_manifest.get("records", []))
-    if len(targets) != 298:
-        errors.append("Workstream E proof manifest must retain 298 targets")
+    live_target_count = int(proof_manifest.get("proof_target_count", len(targets)))
+    if len(targets) != live_target_count or live_target_count != activation.get("proof_target_count"):
+        errors.append(
+            "Workstream E live proof manifest must preserve the 298-target governed inventory after reviewed consolidation"
+        )
     adequacy = (ROOT / "docs/proof_adequacy_review.md").read_text(encoding="utf-8")
     for phrase in ("adequate finite-record invariant", "useful but too narrow", "needs richer state-machine or review semantics", "needs executable tests first", "needs empirical or baseline tests first"):
         if phrase not in adequacy:
             errors.append(f"Workstream E adequacy review missing class: {phrase}")
     proof_audit = (ROOT / "docs/proof_artifact_audit.md").read_text(encoding="utf-8")
-    if "Proof targets audited | 298" not in proof_audit or "Validation errors | 0" not in proof_audit:
+    if f"Proof targets audited | {live_target_count}" not in proof_audit or "Validation errors | 0" not in proof_audit:
         errors.append("Workstream E proof artifact audit is incomplete")
 
     inventory = load("sources/source_inventory.json")

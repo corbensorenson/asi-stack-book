@@ -36,6 +36,7 @@ PLAN = ROOT / "docs/per_chapter_evidence_plan.md"
 RESIDUALS = ROOT / "docs/post_v2_residual_ledger.md"
 CHANGELOG = ROOT / "appendices/F_changelog.qmd"
 REPORT = ROOT / "docs/qcsa_implementation_evidence_reconciliation.md"
+ACTIVE_STATUS = ROOT / "roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json"
 
 
 def load(path: Path) -> Any:
@@ -60,6 +61,7 @@ def snapshot() -> dict[str, Any]:
         "residuals": text(RESIDUALS),
         "changelog": text(CHANGELOG),
         "report": text(REPORT),
+        "active_status": load(ACTIVE_STATUS),
     }
 
 
@@ -136,7 +138,7 @@ def semantic_errors(data: dict[str, Any]) -> list[str]:
         errors.append("changelog lacks QCSA completion transaction")
 
     vectors = data["vectors"]
-    if vectors.get("summary", {}).get("vector_count") != 54 or vectors.get("summary", {}).get("automatic_support_state_changes") != 0:
+    if vectors.get("summary", {}).get("vector_count") != 55 or vectors.get("summary", {}).get("automatic_support_state_changes") != 0:
         errors.append("evidence-quality vector summary drifted")
     vector_by_claim = {row.get("claim_id"): row for row in vectors.get("vectors", [])}
     for owner in OWNERS:
@@ -148,8 +150,10 @@ def semantic_errors(data: dict[str, Any]) -> list[str]:
             errors.append(f"QCSA vector overstates transfer: {owner}")
 
     chapter_count = sum(len(part.get("chapters", [])) for part in data["structure"].get("parts", []))
-    if chapter_count != 54:
-        errors.append("chapter count changed while folding QCSA")
+    if chapter_count != 55:
+        errors.append("live chapter count drifted from the authorized 55-chapter successor")
+    if data["active_status"].get("activation_baseline", {}).get("active_chapter_count") != 54:
+        errors.append("historical 54-chapter QCSA reconciliation baseline drifted")
     if any(
         "qcsa" in f"{chapter.get('id', '')} {chapter.get('file', '')}".casefold()
         for part in data["structure"].get("parts", [])
@@ -195,7 +199,7 @@ def negative_controls(base: dict[str, Any]) -> list[str]:
 
 
 def main() -> None:
-    required = [*CHAPTERS.values(), DISPOSITIONS, RESULT, VERTICAL, VECTORS, STRUCTURE, SOURCE_NOTE, APPENDIX, PLAN, RESIDUALS, CHANGELOG, REPORT]
+    required = [*CHAPTERS.values(), DISPOSITIONS, RESULT, VERTICAL, VECTORS, STRUCTURE, SOURCE_NOTE, APPENDIX, PLAN, RESIDUALS, CHANGELOG, REPORT, ACTIVE_STATUS]
     missing = [path.relative_to(ROOT).as_posix() for path in required if not path.is_file()]
     if missing:
         raise SystemExit("Missing QCSA reconciliation artifacts: " + ", ".join(missing))
@@ -204,7 +208,7 @@ def main() -> None:
     errors.extend(negative_controls(data))
     if errors:
         raise SystemExit("QCSA book reconciliation validation failed:\n - " + "\n - ".join(errors))
-    print("QCSA book reconciliation passed: 9 existing chapter owners, 5 bounded review candidates, 2 narrowed claims, 2 exact refutations, 1 no-change transfer boundary, 8 explicit residuals, 54 core claims still at argument, no new chapter, and 15 rejecting mutations.")
+    print("QCSA book reconciliation passed: 9 existing chapter owners, 5 bounded review candidates, 2 narrowed claims, 2 exact refutations, 1 no-change transfer boundary, 8 explicit residuals, preserved 54-chapter historical baseline plus 55 live core claims still at argument, no standalone QCSA chapter, and 15 rejecting mutations.")
 
 
 if __name__ == "__main__":

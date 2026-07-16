@@ -1,0 +1,313 @@
+{
+  "schema_version": "asi_stack.procedural_memory_refinement.v1",
+  "result_id": "procedural-memory-refinement-2026-07-15-local",
+  "source_sha256": {
+    "lean_model": "cab21958f5bf6ae70a22d25b157f83ce593ab8263fa12d6ffa23199f23dde219"
+  },
+  "input_suites": [
+    {
+      "suite_id": "procedural_memory_loop",
+      "valid_count": 3,
+      "expected_invalid_count": 6
+    },
+    {
+      "suite_id": "procedural_trace_promotion",
+      "valid_count": 1,
+      "expected_invalid_count": 10
+    }
+  ],
+  "reachable_stage_count": 7,
+  "route_case_count": 32,
+  "route_coverage": [
+    {
+      "case_id": "idle_accepted",
+      "expected_route": "accept_cluster"
+    },
+    {
+      "case_id": "clustered_accepted",
+      "expected_route": "accept_abstraction"
+    },
+    {
+      "case_id": "abstracted_accepted",
+      "expected_route": "accept_verification"
+    },
+    {
+      "case_id": "verified_accepted",
+      "expected_route": "accept_qualification"
+    },
+    {
+      "case_id": "qualified_accepted",
+      "expected_route": "accept_route"
+    },
+    {
+      "case_id": "routable_accepted",
+      "expected_route": "accept_retirement"
+    },
+    {
+      "case_id": "idle_comparableTracesPresent",
+      "expected_route": "request_comparable_traces"
+    },
+    {
+      "case_id": "idle_negativeExamplesPreserved",
+      "expected_route": "request_negative_examples"
+    },
+    {
+      "case_id": "idle_sourceReceiptsPresent",
+      "expected_route": "request_source_receipts"
+    },
+    {
+      "case_id": "idle_effectReceiptsPresent",
+      "expected_route": "request_effect_receipts"
+    },
+    {
+      "case_id": "clustered_invariantPresent",
+      "expected_route": "request_invariant"
+    },
+    {
+      "case_id": "clustered_parametersPresent",
+      "expected_route": "request_parameters"
+    },
+    {
+      "case_id": "clustered_preconditionsPresent",
+      "expected_route": "request_preconditions"
+    },
+    {
+      "case_id": "clustered_postconditionsPresent",
+      "expected_route": "request_postconditions"
+    },
+    {
+      "case_id": "abstracted_verificationPassed",
+      "expected_route": "request_verification"
+    },
+    {
+      "case_id": "abstracted_regressionFailed",
+      "expected_route": "quarantine_regression_failure"
+    },
+    {
+      "case_id": "abstracted_benchmarkFloorPreserved",
+      "expected_route": "request_benchmark_floor"
+    },
+    {
+      "case_id": "verified_activeScfPresent",
+      "expected_route": "request_active_scf"
+    },
+    {
+      "case_id": "verified_rollbackPlanPresent",
+      "expected_route": "request_rollback_plan"
+    },
+    {
+      "case_id": "verified_rollbackRehearsed",
+      "expected_route": "request_rollback_rehearsal"
+    },
+    {
+      "case_id": "qualified_monitoringPlanPresent",
+      "expected_route": "request_monitoring_plan"
+    },
+    {
+      "case_id": "qualified_residualsPresent",
+      "expected_route": "request_residuals"
+    },
+    {
+      "case_id": "qualified_nonClaimsPresent",
+      "expected_route": "request_non_claims"
+    },
+    {
+      "case_id": "qualified_consumerAcknowledgmentPresent",
+      "expected_route": "request_consumer_acknowledgment"
+    },
+    {
+      "case_id": "routable_retirementTriggered",
+      "expected_route": "request_retirement_trigger"
+    },
+    {
+      "case_id": "routable_retirementReceiptPresent",
+      "expected_route": "request_retirement_receipt"
+    },
+    {
+      "case_id": "wrong_stage",
+      "expected_route": "reject_wrong_stage"
+    },
+    {
+      "case_id": "event_replay",
+      "expected_route": "reject_event_replay"
+    },
+    {
+      "case_id": "support_leak",
+      "expected_route": "reject_authority_leak"
+    },
+    {
+      "case_id": "effect_leak",
+      "expected_route": "reject_authority_leak"
+    },
+    {
+      "case_id": "procedure_substitution",
+      "expected_route": "reject_procedure_substitution"
+    },
+    {
+      "case_id": "lineage_substitution",
+      "expected_route": "reject_lineage_substitution"
+    }
+  ],
+  "mutation_count": 33,
+  "mutation_rejection_count": 33,
+  "mutation_receipts": [
+    {
+      "mutation_id": "abstractionDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "procedureId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "procedureVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "regressionSuiteDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "scfDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "sourceSetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "traceClusterDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "idle_comparableTracesPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "idle_negativeExamplesPreserved",
+      "rejected": true
+    },
+    {
+      "mutation_id": "idle_sourceReceiptsPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "idle_effectReceiptsPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "clustered_invariantPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "clustered_parametersPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "clustered_preconditionsPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "clustered_postconditionsPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "abstracted_verificationPassed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "abstracted_regressionFailed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "abstracted_benchmarkFloorPreserved",
+      "rejected": true
+    },
+    {
+      "mutation_id": "verified_activeScfPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "verified_rollbackPlanPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "verified_rollbackRehearsed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "qualified_monitoringPlanPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "qualified_residualsPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "qualified_nonClaimsPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "qualified_consumerAcknowledgmentPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "routable_retirementTriggered",
+      "rejected": true
+    },
+    {
+      "mutation_id": "routable_retirementReceiptPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "eventDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "supportAssignmentRequested",
+      "rejected": true
+    },
+    {
+      "mutation_id": "externalEffectRequested",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong_kind",
+      "rejected": true
+    }
+  ],
+  "command_receipts": [
+    {
+      "command": "python3 scripts/validate_procedural_memory_loop.py",
+      "exit_code": 0,
+      "output_sha256": "12188ce32e484100ff4b13e2e152a3348213f3b4c487863eb64bd95d6b495894"
+    },
+    {
+      "command": "python3 scripts/validate_procedural_trace_promotion.py",
+      "exit_code": 0,
+      "output_sha256": "07f7ba2853095d64e8dbee9cfa999de721186551c86084d1b69f07deeb2e960f"
+    }
+  ],
+  "witness": {
+    "terminal_stage": "retired",
+    "receipt_count": 6,
+    "qualified_route_count": 1,
+    "support_assignment_count": 0,
+    "external_effect_count": 0
+  },
+  "support_state_effect": "none",
+  "non_claims": [
+    "no natural trace-mining result",
+    "no generated-tool correctness",
+    "no deployed routing or retirement",
+    "no support promotion"
+  ]
+}

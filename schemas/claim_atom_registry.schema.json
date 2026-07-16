@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASI Stack Claim Atom Registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "roadmap_id", "source_of_truth", "generation_policy", "summary", "atoms", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.claim_atom_registry.v0"},
+    "roadmap_id": {"const": "asi-stack-post-v2-3-claim-proof-sota-challenge-2026-07-14"},
+    "source_of_truth": {"type": "string", "minLength": 1},
+    "generation_policy": {"type": "object"},
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chapter_count", "atom_count", "role_counts", "review_state_counts", "prose_candidate_count", "prose_review_state_counts", "support_state_effect"],
+      "properties": {
+        "chapter_count": {"const": 54},
+        "atom_count": {"type": "integer", "minimum": 54},
+        "role_counts": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+        "review_state_counts": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+        "prose_candidate_count": {"type": "integer", "minimum": 0},
+        "prose_review_state_counts": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+        "support_state_effect": {"const": "none"}
+      }
+    },
+    "atoms": {
+      "type": "array",
+      "minItems": 54,
+      "items": {"$ref": "#/$defs/atom"}
+    },
+    "non_claims": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "nonemptyStringArray": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "atom": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "atom_id", "chapter_id", "chapter_title", "owner", "role", "ordinal", "manifest_pointer",
+        "proposition", "proposition_type", "claim_label", "support_state", "current_disposition",
+        "review_state", "scope", "assumptions", "dependencies", "strongest_counterclaim", "falsifier",
+        "required_lanes", "evidence_refs", "contrary_evidence", "known_confounds", "acceptance_criteria",
+        "narrowing_criteria", "refutation_criteria", "deprecation_criteria", "promotion_ceiling",
+        "reproduction", "terminal_disposition", "residual", "non_claims"
+      ],
+      "properties": {
+        "atom_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]+$"},
+        "chapter_id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+        "chapter_title": {"type": "string", "minLength": 1},
+        "owner": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+        "role": {"enum": ["core", "problem", "insufficiency", "mechanism", "interface", "invariant", "failure_mode", "minimum", "beyond_sota", "formal_target", "prose"]},
+        "ordinal": {"type": "integer", "minimum": 1},
+        "manifest_pointer": {"type": "string", "minLength": 1},
+        "proposition": {"type": "string", "minLength": 6},
+        "proposition_type": {"enum": ["formal", "executable", "empirical", "causal", "transfer", "source-synthesis", "normative", "composite", "untyped"]},
+        "claim_label": {"enum": ["Demonstrated", "Measured", "Mechanized", "Hypothesized", "Design rationale", "Speculative"]},
+        "support_state": {"enum": ["unsupported", "argument", "source-derived", "prototype-backed", "synthetic-test-backed", "empirical-test-backed", "external-literature-backed", "deprecated", "refuted"]},
+        "current_disposition": {"type": "string", "minLength": 1},
+        "review_state": {"enum": ["machine_candidate", "semantically_reviewed", "campaign_frozen", "terminally_adjudicated"]},
+        "scope": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["population", "environment", "model", "authority", "time", "artifact"],
+          "properties": {
+            "population": {"type": "string", "minLength": 1},
+            "environment": {"type": "string", "minLength": 1},
+            "model": {"type": "string", "minLength": 1},
+            "authority": {"type": "string", "minLength": 1},
+            "time": {"type": "string", "minLength": 1},
+            "artifact": {"type": "string", "minLength": 1}
+          }
+        },
+        "assumptions": {"$ref": "#/$defs/nonemptyStringArray"},
+        "dependencies": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "strongest_counterclaim": {"type": "string", "minLength": 6},
+        "falsifier": {"type": "string", "minLength": 6},
+        "required_lanes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["lane", "necessity"],
+            "properties": {
+              "lane": {"enum": ["formal", "executable", "empirical", "causal", "transfer", "source-synthesis", "normative"]},
+              "necessity": {"type": "string", "minLength": 6}
+            }
+          }
+        },
+        "evidence_refs": {"type": "object"},
+        "contrary_evidence": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "known_confounds": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "acceptance_criteria": {"$ref": "#/$defs/nonemptyStringArray"},
+        "narrowing_criteria": {"$ref": "#/$defs/nonemptyStringArray"},
+        "refutation_criteria": {"$ref": "#/$defs/nonemptyStringArray"},
+        "deprecation_criteria": {"$ref": "#/$defs/nonemptyStringArray"},
+        "promotion_ceiling": {"type": "string", "minLength": 1},
+        "reproduction": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["command", "environment_lock", "artifact_digest", "evaluator_identity"],
+          "properties": {
+            "command": {"type": ["string", "null"]},
+            "environment_lock": {"type": ["string", "null"]},
+            "artifact_digest": {"type": ["string", "null"]},
+            "evaluator_identity": {"type": ["string", "null"]}
+          }
+        },
+        "terminal_disposition": {"type": ["string", "null"]},
+        "residual": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["owner", "next_unblocking_condition"],
+          "properties": {
+            "owner": {"type": "string", "minLength": 1},
+            "next_unblocking_condition": {"type": "string", "minLength": 1}
+          }
+        },
+        "non_claims": {"$ref": "#/$defs/nonemptyStringArray"}
+      }
+    }
+  }
+}

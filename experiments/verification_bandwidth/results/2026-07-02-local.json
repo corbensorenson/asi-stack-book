@@ -11,10 +11,10 @@
       "support_state_effect_none": true,
       "valid_contradiction_trace_present": true
     },
-    "module": "AsiStackProofs.VerificationBandwidth",
+    "module": "AsiStackProofs.VerificationBandwidthRefinement",
     "proof_tag": "lean:verification_bandwidth.contradiction_probe_fixture_bridge",
     "theorem_refs": [
-      "verification_bandwidth_contradiction_probe_fixture_bridge"
+      "contradiction_blocks_evidence_handoff"
     ]
   },
   "negative_controls": {

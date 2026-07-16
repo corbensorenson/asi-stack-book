@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Procedural Memory Refinement Result",
+  "type": "object",
+  "required": ["schema_version", "result_id", "source_sha256", "input_suites", "reachable_stage_count", "route_case_count", "route_coverage", "mutation_count", "mutation_rejection_count", "mutation_receipts", "command_receipts", "witness", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.procedural_memory_refinement.v1"},
+    "result_id": {"const": "procedural-memory-refinement-2026-07-15-local"},
+    "source_sha256": {"type": "object"},
+    "input_suites": {"type": "array", "minItems": 2, "maxItems": 2},
+    "reachable_stage_count": {"const": 7},
+    "route_case_count": {"const": 32},
+    "route_coverage": {"type": "array", "minItems": 32, "maxItems": 32},
+    "mutation_count": {"const": 33},
+    "mutation_rejection_count": {"const": 33},
+    "mutation_receipts": {"type": "array", "minItems": 33, "maxItems": 33},
+    "command_receipts": {"type": "array", "minItems": 2, "maxItems": 2},
+    "witness": {"type": "object"},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 4}
+  },
+  "additionalProperties": false
+}

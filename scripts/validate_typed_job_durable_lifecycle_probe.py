@@ -19,24 +19,17 @@ ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
 VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
-LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "TypedJobs.lean"
+LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "TypedJobRefinement.lean"
 
 COMMAND = "python3 scripts/validate_typed_job_durable_lifecycle_probe.py"
 PROOF_TAG = "lean:jobs.lifecycle.durable_lifecycle_probe_bridge"
 CODEX_TEST_NAME = "Typed job durable lifecycle probe"
 REQUIRED_THEOREMS = [
-    "durable_retry_without_idempotency_rejected",
-    "durable_retry_authority_widening_rejected",
-    "durable_retry_permission_overreach_rejected",
-    "durable_expired_lease_dispatch_rejected",
-    "durable_evidence_ready_missing_completion_receipt_rejected",
-    "durable_evidence_ready_missing_replay_ref_rejected",
-    "durable_blocked_without_residual_owner_rejected",
-    "durable_missing_non_claim_boundary_rejected",
-    "durable_support_promotion_rejected",
-    "durable_retry_complete_trace_accepted",
-    "durable_expired_lease_blocked_trace_accepted",
-    "typed_job_durable_lifecycle_probe_fixture_bridge",
+    "expired_lease_cannot_dispatch",
+    "retry_requires_idempotency_key",
+    "retry_cannot_widen_authority",
+    "evidence_ready_adjudication_requires_replay_reference",
+    "full_typed_job_lifecycle_reaches_closed_state",
 ]
 REQUIRED_NON_CLAIMS = [
     "does not execute a deployed scheduler",
@@ -546,7 +539,7 @@ def build_expected_result(valid_count: int, invalid_count: int) -> dict[str, Any
             "support_state_no_promotion": True,
         },
         "lean_fixture_alignment": {
-            "module": "AsiStackProofs.TypedJobs",
+            "module": "AsiStackProofs.TypedJobRefinement",
             "proof_tag": PROOF_TAG,
             "theorem_refs": REQUIRED_THEOREMS,
             "expected": {
@@ -608,12 +601,15 @@ def validate_lean(errors: list[str]) -> None:
         if not re.search(rf"\btheorem\s+{re.escape(theorem)}\b", text):
             errors.append(f"{rel(LEAN_FILE)} missing theorem {theorem}.")
     for field in (
-        "retryResumeTracePresent",
-        "expiredLeaseBlockTracePresent",
-        "negativeControlsRejected",
-        "completionAndReplayBoundaries",
-        "supportStateEffectNone",
-        "nonClaimBoundary",
+        "retryAttempted",
+        "idempotencyKeyPresent",
+        "retryAuthorityUnchanged",
+        "leaseActive",
+        "completionReceiptPresent",
+        "replayReferencePresent",
+        "residualOwnerPresent",
+        "supportAssignmentRequested",
+        "externalEffectRequested",
     ):
         if field not in text:
             errors.append(f"{rel(LEAN_FILE)} missing fixture field {field}.")

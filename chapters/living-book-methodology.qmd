@@ -3,8 +3,8 @@ title: "Living Book Methodology"
 chapter_id: "living-book-methodology"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-02"
+draft_maturity: "v0.3 semantically audited manuscript"
+last_updated: "2026-07-15"
 primary_sources:
   - "benchmaxxing"
   - "viea"
@@ -13,10 +13,19 @@ primary_sources:
   - "moecot"
   - "moecot_md"
   - "road_to_agi"
+  - "ext_openunlearning_2025"
+  - "ext_literate_programming_1984"
+  - "ext_jupyter_book_docs"
+  - "ext_quarto_books_docs"
+  - "ext_nist_ai_rmf_1_0_2023"
+  - "ext_frontier_ai_regulation_2023"
+  - "ext_helm_2022"
+  - "ext_livebench_2024"
+  - "ext_benchmark_contamination_2023"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records passage-reviewed mappings for all seven assigned sources, including source-note-only MoECOT/Road To AGI context; support remains argument because release checks prove repository hygiene, not manuscript quality or the truth of chapter claims."
+  - "Appendix C records passage-reviewed mappings for all sixteen assigned sources, including source-note-only runtime context, OpenUnlearning, and eight publication, governance, evaluation, living-benchmark, and contamination comparators; support remains argument because release checks prove bounded repository hygiene, not manuscript quality or chapter truth."
   - "The living_book_release_record fixture, living_book_change_packet schema/harness, reader release-candidate bridge, and AsiStackProofs.LivingBook finite-record predicates validate release-record shape, audience scope, derived-artifact boundaries, support-state effect, manifest linkage, structural-update sync predicates, change-packet receipt discipline, reader-release blocker routing, and bounded negative cases for missing drafting artifacts, unsynced structural updates, release readiness without validation/changelog/residuals, derived artifacts missing source/review/support-state boundaries, change packets missing validation/changelog/non-claims, equal-authority reader derivatives, support promotion without evidence-transition refs, and local format evidence treated as reader-release approval only; they do not prove manuscript quality, source interpretation quality, editorial completeness, reader artifact approval, audio artifact production, or GitHub Pages availability."
   - "Source-noted external comparators now position the method against literate programming, Jupyter Book-style executable books, Quarto book publishing, AI risk-management reporting, transparent evaluation, living benchmarks, and benchmark-contamination warnings; this is lineage and positioning only, not external review, manuscript-quality evidence, or artifact approval."
   - "BugBrain is used only as cautionary implementation-lineage context; no build, emulation, flash, bridge, hardware, AGI, or consciousness claim is promoted."
@@ -30,9 +39,9 @@ open_evidence_gaps:
 | Chapter ID | `living-book-methodology` |
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-02 |
-| Primary source records | `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`, `moecot`, `moecot_md`, `road_to_agi` |
+| Manuscript maturity | v0.3 semantically audited manuscript |
+| Last updated | 2026-07-15 |
+| Primary source records | `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`, `moecot`, `moecot_md`, `road_to_agi`, `ext_openunlearning_2025`, `ext_literate_programming_1984`, `ext_jupyter_book_docs`, `ext_quarto_books_docs`, `ext_nist_ai_rmf_1_0_2023`, `ext_frontier_ai_regulation_2023`, `ext_helm_2022`, `ext_livebench_2024`, `ext_benchmark_contamination_2023` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `benchmaxxing`, `viea`; supporting: `bugbrain`, `cognitive_loop_closure`; connector/recovery: `moecot`, `moecot_md`, `road_to_agi`; external comparators: `ext_literate_programming_1984`, `ext_jupyter_book_docs`, `ext_quarto_books_docs`, `ext_nist_ai_rmf_1_0_2023`, `ext_frontier_ai_regulation_2023`, `ext_helm_2022`, `ext_livebench_2024`, `ext_benchmark_contamination_2023` |
@@ -85,13 +94,13 @@ The audience split makes this stricter, not looser. AI assistants need structure
 
 ## Core Claim
 
-[living-book-methodology.core, label: Design rationale, support: argument] The living book should model the ASI stack discipline through manifest-driven Quarto, source queues, claim/evidence matrices, proof manifests, tests, changelogs, and releases.
+[living-book-methodology.core, label: Design rationale, support: argument] Living Book Methodology owns a book-, edition-, change-, source-, claim-, proof-, test-, render-, audience-, derivative-, release-, rights-, reviewer-, consumer-, environment-, and time-specific **Evidence-Preserving Publication Transaction**. It binds every substantive intake, structural edit, claim change, proof or test change, render, reader or audio projection, release, correction, rollback, and successor handoff to canonical source state, provenance, authority, validation, evidence effect, residuals, non-claims, and immutable lineage. Generated scaffolds, green validators, theorem builds, successful renders, local format artifacts, publication activity, or a polished release never by themselves establish source interpretation, editorial quality, accessibility, reader approval, chapter truth, capability, safety, external reproduction, transfer, AGI, ASI, or SOTA.
 
 The claim remains at `argument` support. The repository demonstrates the method in part through generated scaffolds, validators, proof manifests, schema fixtures, changelog entries, commits, and GitHub Pages renders. Those artifacts support release discipline, not the truth of every chapter claim.
 
 ### Claim-source mapping status
 
-Appendix C now records seven passage-reviewed mappings for this claim. The review grounds the chapter's maintenance discipline without turning release hygiene into evidence for the book's architecture claims.
+Appendix C now records sixteen passage-reviewed mappings for this claim: seven local or connector-context sources, OpenUnlearning, and eight publication, governance, evaluation, living-benchmark, and contamination comparators previously cited in prose. The review grounds maintenance discipline without turning release hygiene, publication lineage, or external frameworks into evidence for the book's architecture claims.
 
 | Source group | Reviewed support | Boundary |
 |---|---|---|
@@ -110,25 +119,47 @@ Appendix C now records seven passage-reviewed mappings for this claim. The revie
 
 ## Mechanism
 
-The living-book method is a ratcheted publication loop. Each improvement should leave the repository more informative than it found it, preserve the reason for the change, and keep the AI/research scaffold separate from downstream reader and audio editions.
+The owned object is an **Evidence-Preserving Publication Transaction**, not Quarto, CI, or a release checklist. Its lifecycle is:
 
-The method is deliberately more than "write in Quarto." Quarto renders the book, but the living-book method controls how claims, sources, proofs, tests, releases, and reader projections are allowed to change. That distinction keeps a publishing tool from being confused with a research governance system.
+| Phase | Required operations |
+|---|---|
+| 1. Freeze and identify | Freeze change objective, canonical commit, affected graph, audiences, authority, rights, release target, environments, time, and non-claims; assign stable IDs to chapters, sources, claims, proofs, tests, figures, derivatives, releases, residuals, corrections, and successors. |
+| 2. Ingest and separate | Route public, local, private, connector, conversation, project, and external inputs through provenance, permission, source-note, passage-review, readiness, and non-claim states; separate source report, author intent, synthesis, experiment, proof, editorial judgment, and open question. |
+| 3. Atomize and change | Bind material claims to falsifiers, evidence lanes, mappings, contrary evidence, disposition, ceiling, residual, and consumers; link proof, executable, benchmark, and transition artifacts without substitution; issue a typed change packet for every substantive edit. |
+| 4. Regenerate and validate | Regenerate scaffold, proof manifest, appendices, metrics, projections, status, and releases from canonical inputs; run the semantic, source, proof, executable, adversarial, rights, accessibility, render, browser, release, reproducibility, and deployment gates appropriate to the surface. |
+| 5. Derive and decide | Keep AI/research, Human view, reader, HTML, DOCX, EPUB, PDF, companion, article, image, and audio outputs as typed derivatives; distinguish generation, inspection, accessibility, editorial approval, release approval, deployment, observation, archive, and external publication; move support only by accepted transition. |
+| 6. Correct and continue | Preserve every terminal result and denominator; propagate corrections, downgrades, proof retirement, test failure, rights changes, release revocation, and derivative drift; monitor quality, freshness, debt, drift, accessibility, residuals, burden, and cost; hand exactly one active roadmap to the successor and expire changed transactions. |
 
-In pattern-language terms, `book_structure.json`, `docs/book_outline.md`, source notes, Appendix C, proof manifests, validators, release records, reader manifests, and changelog entries are not administrative clutter. They are the records, receipts, lifecycle states, and rollback handles that keep revision from becoming ungoverned self-improvement by another name.
+The transaction begins by freezing what is changing and who may rely on the
+result. That freeze separates canonical source from generated projections and
+gives every affected claim, proof, test, figure, derivative, and release a
+stable identity. Intake then records provenance, permission, public-safety
+state, and source-reading depth before material is used. Atomization binds each
+load-bearing proposition to falsifiers, contrary evidence, required lanes,
+consumers, and a ceiling, so an elegant paragraph cannot outrun the records
+that would challenge it.
 
-- Use `book_structure.json` for order and dynamic chapters.
-- Use `docs/book_outline.md` for drafting, source queues, and Lean scope.
-- Treat conversation-mined packets as author-intent and lineage context, not as independent evidence.
-- Keep live AI/research scaffolding, reader-edition manuscripts, companion notes, and audio-script workspaces as distinct layers derived from one source.
-- Require meaningful updates to sync scaffold, proof manifest, validation, render, and changelog.
+Regeneration is a dependency operation, not cosmetic housekeeping. A changed
+manifest must update the outline, chapter projections, proof manifest,
+appendices, status surfaces, and derivatives that consume it. Validation checks
+the appropriate semantic, executable, formal, adversarial, rights,
+accessibility, render, browser, release, and deployment contracts while keeping
+their meanings separate. A green render says the page rendered; a passing Lean
+build says stated finite propositions compile; neither decides whether a source
+was interpreted correctly or a core claim deserves stronger support.
 
-The key artifact split is deliberate. `book_structure.json` controls order and stable IDs. `docs/book_outline.md` controls drafting intent, source queues, and proof targets. Source notes record what has actually been read. Appendix C records claim support state. The proof manifest records formalization targets. The changelog records meaningful movement. GitHub Pages renders the public state.
+Derivation and correction complete the loop. Human view, reader formats,
+article text, images, audio, archives, and public sites retain their source
+commit, generation environment, review state, approval state, residuals, and
+non-claims. Corrections propagate through exact consumer edges, while negative,
+failed, blocked, unpublished, superseded, and revoked outcomes remain visible.
+The successor roadmap inherits unresolved obligations and one active authority
+path, preventing maintenance from manufacturing completion by dropping old
+failures or opening parallel definitions of current work.
 
-Conversation-mined material has a bounded role: it can preserve author intent, terminology, lineage, and recovery tasks, but it is not external evidence. Raw sources stay private unless publication is approved. Public claims move only when the evidence artifact exists.
+Every terminal state therefore remains inspectable by its named consumers.
 
-The publication surfaces follow the same separation. The live book keeps the AI/research scaffold: source queues, claim matrices, proof hooks, schemas, and guardrails. The live site can also project a Human view that hides the same repeated live-only sections used by the reader-release strip policy, so interested readers can follow the prose spine without downloading a separate artifact. Major reader and audio editions remain downstream derivatives that strip or adapt that scaffold only after the live source passes validation and review. A generated EPUB, DOCX, PDF, or audio package is never implied by a profile entry; it exists only when the artifact is produced and recorded.
-
-The unit of change is a living-book change packet. It contains the affected chapter IDs, source IDs, claim IDs, proof tags, schema or fixture paths, validation commands, render result, release target, audience profile, derived-artifact boundary, support-state effect, public URL if published, and explicit non-claims. Changelog prose is the human-readable summary of that packet, not a substitute for it.
+Quarto renders the book, but canonical structure, claim authority, proof scope, release identity, and derivative boundaries live in separate records. That separation is the rollback handle: a polished output can be rebuilt or withdrawn without rewriting what the source, claim, proof, or approval state actually was.
 
 ## Operating loop
 
@@ -159,69 +190,31 @@ When an AI agent writes from the outline, the outline should behave like a build
 
 ## Interfaces
 
-- Source ingestion feeds source notes.
-- Drafting feeds claim matrices.
-- Tests feed support states.
-- Releases feed GitHub Pages.
-
-The Living Book Release Record is the publication interface: release state, source commit, audience profile, canonical scope, rendered site, scaffold sync, proof manifest sync, validation commands, validation status, changelog refs, public URL, derived artifacts, support-state effect, residuals, and non-claims. It makes the publication state inspectable without pretending a release is an empirical benchmark or a human-consumption bundle.
-
-The reader-edition interface needs the same discipline: edition profile, source commit, stripped sections, retained diagrams, format targets, render commands, review state, accessibility notes, audio-script status, and non-claims. A format listed in a profile is not a release artifact until that record exists.
-
-Those interfaces keep the book from treating publication as proof. A successful Pages build, reader-source generation, or audio-script generation is a release artifact with a scope and review state. It can improve accessibility and continuity while leaving evidence support unchanged until a separate evidence transition exists.
+The transaction joins twelve interfaces while leaving authority distinct: (1) human intent, editorial judgment, rights, accessibility, and publication approval; (2) source inventory, notes, passage reviews, caches, connectors, projects, and source appendices; (3) manifest, outline, chapters, figures, appendices, glossary, citations, and changelog; (4) claim registry, reviews, Appendix C, transitions, contrary evidence, residuals, and non-claims; (5) proof manifest, Lean, proof reviews, Appendix E, schemas, fixtures, validators, benchmarks, and results; (6) Git commits, diffs, tags, archives, releases, citations, checksums, and reproducibility; (7) Quarto, HTML, Human view, browser checks, navigation, search, figures, styles, and deployment; (8) reader, DOCX, EPUB, PDF, companion, article, image, and audio derivatives; (9) validation registry, CI, supply-chain pins, rights, accessibility, deployment attestation, and public-truth gates; (10) roadmaps, status, goals, work contracts, stewardship, terminals, and successor handoffs; (11) external publication, governance, evaluation, and contamination comparators; and (12) readers, researchers, AI agents, builders, reviewers, citers, mirrors, archives, downstream repositories, and future editions.
 
 ## Invariants
 
-The methodology invariants protect the book from confusing publication activity with evidence: every release can improve prose, diagrams, schemas, or proofs, but it cannot silently upgrade unsupported claims.
-
-- No fabricated source content.
-- No fabricated test results.
-- Deprecated claims remain visible.
-
-Evidence separation is the living-book invariant that prevents false completion. A source note, schema validation, Lean build, Quarto render, GitHub Pages deployment, and editorial judgment are different evidence artifacts and must not be merged into one vague notion of "done."
-
-Stable addressability lets the book change without losing itself. Parts, chapters, claims, sources, proof targets, and release records need stable IDs so the book can split, merge, reorder, and publish without losing lineage.
-
-Release records must also preserve what was not reviewed, rendered, proved, tested, or packaged in each version.
+The eighteen invariants require exact transaction scope; canonical-source primacy; stable identities; zero fabricated source, proof, test, render, review, or publication claims; lane separation; complete material-claim records; accepted evidence transitions only; explicit proof scope and consumers; generated-projection synchronization; typed derivative boundaries; distinct generation, review, approval, deployment, observation, archive, and publication states; retained negative and unpublished outcomes; correction propagation; commit-bound release identity; visible living versus immutable versus local truth; joint quality, failure, burden, and cost; exactly one active successor roadmap; and a strict boundary around what green validation or polished prose can prove. Release lineage remains immutable even when the living source, public site, derivatives, or current claims later change.
 
 ## Failure modes
 
-- Public site diverges from Quarto source.
-- Outline and manifest drift.
-- Readers cannot tell which claims are speculative.
-
-Public-site divergence should block release. Outline/manifest drift should be caught by scaffold and proof-manifest sync. Speculation ambiguity should be fixed in Appendix C, chapter guardrails, and changelog entries rather than smoothed over in prose.
-
-Publication laundering is the living-book failure. A polished reader artifact, rendered website, or successful build is treated as if it proved source interpretation, architecture quality, or empirical claims. Release quality and claim support are related, but they are not the same evidence state.
-
-Automation drift can then preserve the wrong contract, where a validator continues to pass after the writing contract it was meant to enforce has changed.
+The named falsifiers are canonical/projection inversion; manifest-outline-chapter-proof drift; source laundering; claim laundering; proof theater; validation theater; release laundering; derivative equality; derivative drift; latest-release overwrite; stale public truth; editorial automation that smooths uncertainty; accessibility theater; rights or provenance drift; correction failure; maintenance bloat; successor discontinuity; and unsupported transfer. Each failure must create a blocking validator, correction, erratum, residual, downgrade, reverted derivative, revoked release, archived supersession, or successor work item. Publication and claim support remain related but separate: a beautiful, accessible, reproducible release can still contain an unsupported claim, while a well-supported claim can still be packaged badly. Maintenance debt becomes a failure when duplicate machinery obscures rather than strengthens the current publication contract.
 
 ## Minimum Viable Implementation
 
-The methodology is already anchored in the current public Quarto repo with dynamic scaffold, source matrix, claim matrix, proof manifest, validation, GitHub Pages, a living-book release fixture, and public release records that distinguish live-site publication from reader, ebook, document, companion, and audio derivatives.
+The implemented minimum contains sixteen exact source mappings, a living-book release-record fixture, and a change-packet harness with three valid and six expected-invalid synthetic cases. The reader release-candidate bridge covers the current blocked candidate, three additional valid routes, and five expected-invalid controls. Canonical workflows also synchronize manifest, outline, proof manifest, claim and source appendices, trust metrics, Quarto HTML, Human view, browser checks, changelog, release records, and the authoritative validation registry.
 
-Repository release fixtures and public release records validate release-record shape, audience scope, derived-artifact status, and release-hygiene support effects only. A release record leaves manuscript completeness, source accuracy, claim truth, reader-edition review, and audio production unproved.
+Four proof targets are implemented by twenty-one Lean declarations over hand-authored finite manifest, structural-update, release, derivative, change-packet, and reader-route records. They reject missing drafting artifacts, unsynced changes, incomplete release records, boundaryless derivatives, missing change receipts, equal-authority derivatives, unsupported promotion, and reader approval despite accessibility, audio, approval, or non-claim blockers. The current blocked reader candidate is a hand-authored finite route fixture, not a reader-quality result.
 
-The change-packet record is now the methodology's first executable update object. The repository contains a schema, three valid synthetic packets, six expected-invalid mutation controls, a result record, and finite Lean predicates for the same boundary: public-surface edits need validation and changelog receipts, reader/audio derivatives cannot become equal authority, and support-state movement cannot be claimed without evidence-transition refs. The reader release-candidate bridge adds the current release-boundary counterpart: the blocked curated-reader candidate has useful local HTML, EPUB, DOCX, PDF, application, keyboard, accessibility-tree, figure, and audio-script preparation evidence, but it still routes to accessibility review rather than release approval while screen-reader/WCAG, audio artifact, timecoding, and explicit approval blockers remain. These bridges make the living process more auditable while leaving final manuscript quality, source interpretation, release approval, reader artifacts, and audio artifacts unclaimed.
+These artifacts establish repository, record, build, render, derivative, and release discipline only. Source interpretation, editorial quality, accessibility approval, chapter truth, reader or audio approval, external reproduction, transfer, and a chapter-core support effect remain outside their scope.
 
 ## Beyond the State of the Art
 
-The endpoint is a research operating system that happens to render as a book. The live site would remain the canonical, AI-readable, researcher-auditable surface, while Human view, reader editions, ebook formats, and future audio scripts would be derived projections with explicit strip policies and release records.
+The mature argument-exit campaign must follow a prospectively frozen stream of natural substantive updates: new sources, conflicts, promotion and refutation, proof retirement, schema changes, figures, accessibility fixes, corrections, rollbacks, releases, reader derivatives, and successor handoffs performed by multiple independent human and AI maintainers. It must compare the Evidence-Preserving Publication Transaction with matched static manuscript, wiki, ordinary Git repository, literate-programming, executable-book, docs-as-code, and strongest conventional scholarly publishing workflows under equal content, tooling, time, and review opportunity.
 
-Compared with literate programming and executable-book systems, the beyond-SOTA endpoint is claim-state aware. It would not only weave explanation with executable artifacts; it would also preserve source-readiness state, claim support state, proof target scope, failed validation, review state, release approval, reader-derivative deltas, and non-claims as first-class publication objects.
+The campaign must inject source revocation, citation error, claim drift, proof bloat, validator weakness, rights conflict, derivative drift, release mismatch, deployment failure, errata, and handoff loss. It must jointly measure claim accuracy and calibration, source and proof traceability, error detection, correction latency, reproducibility, rollback, accessibility, reader comprehension, editorial quality, maintenance burden, reviewer time, compute, storage, hosting, opportunity cost, and total cost.
 
-A mature living-book workflow would let a future agent ingest a new AI paper, mine its public-safe content, decide whether to update a chapter or add a precise new one, update the outline and manifest, generate proof/test backlog, draft or revise prose, validate source/evidence boundaries, render the live site, and prepare reader editions without hand-renumbering or hidden support-state changes.
-
-A living-book release surface needs:
-
-- A manifest-driven book graph where `book_structure.json` controls order and `docs/book_outline.md` controls chapter jobs, source queues, Lean scope, minimum implementation, and beyond-SOTA end states.
-- A tri-audience publication system: default AI/researcher view, on-site Human view, and major-version reader/audio derivatives with recorded strip policies.
-- Source-ingestion workflows for public papers, private/local notes, Google Drive sources, conversation-mined context, project repositories, external literature, and blocked sources.
-- Claim/evidence ledgers that separate labels, support states, source mappings, tests, proof receipts, benchmark records, release hygiene, and publication quality.
-- Writing skills, runbooks, validators, changelog entries, release profiles, proof manifests, reader-spine checks, and rendered-site checks that keep future drafting agents consistent.
-- Failure closure for fabricated source content, fabricated test results, outline/manifest drift, reader/live divergence, stale proof targets, unsupported citations, and publication laundering.
-
-In the living research OS, "write the book" would be a governed build goal, not a prompt that overwrites uncertainty. The system would continuously improve prose, proofs, diagrams, schemas, and reader artifacts while preserving non-claims and open gaps. The living research OS remains a target architecture until ingestion, drafting, review, release, reader-edition, and evidence-transition records show that continuous improvement preserves the audit trail.
+Independent maintainers, editors, accessibility reviewers, readers, repositories, institutions, formats, hosting systems, and domains must reproduce and transfer positive, negative, null, narrowed, blocked, and refuted outcomes. Results also retain abandoned changes, publication refusals, unresolved rights, reader disagreement, and costs displaced onto future maintainers. Until then the transaction remains a target architecture, not proof of superior scholarship, editorial quality, accessibility, reader value, governance effectiveness, external reproducibility, transfer, or SOTA publishing.
 
 ## Codex test plan
 
@@ -253,6 +246,10 @@ These checks validate release discipline. They do not validate every chapter cla
 | `lean:living_book.methodology.reader_release_candidate_bridge` | `AsiStackProofs.LivingBook` | A current reader release-candidate route cannot treat local format evidence as approval while accessibility, audio, release-approval, or non-claim blockers remain. | implemented |
 
 These Lean hooks are implemented as finite-record predicates over chapter-manifest, structural-update, release-readiness, derived-artifact, change-packet, and reader release-candidate reviews. They prove only the record-level gates: a manifest chapter has outline proof targets and generated claim placeholders, a structural update marked valid requires regenerated scaffold and proof manifest, a release-ready record needs validation/changelog/residuals, a derived artifact needs source/review/support boundaries, a public-surface change packet needs validation, changelog, support-state, non-claim, derivative-boundary, and evidence-transition discipline, and a reader release candidate with local format evidence still routes to accessibility, audio, or approval review while blockers remain. The module proves bounded negative cases named `manifest_chapter_missing_outline_targets_or_claim_placeholders_rejected`, `structural_update_marked_valid_without_sync_artifacts_rejected`, `release_ready_without_validation_changelog_or_residuals_rejected`, `derived_artifact_without_source_review_or_support_boundary_rejected`, `change_packet_without_validation_changelog_support_or_nonclaims_rejected`, `derived_artifact_equal_authority_change_packet_rejected`, `support_promotion_without_evidence_transition_rejected`, `local_reader_artifacts_do_not_clear_missing_accessibility_review`, `reader_release_candidate_missing_audio_routes_to_audio_review`, `reader_release_candidate_missing_approval_routes_to_release_approval`, and `reader_release_candidate_support_promotion_claim_rejected`. These cases reject malformed maintenance/release records; they do not prove manuscript quality, source-to-claim completeness, editorial judgment, GitHub Pages availability, reader artifact approval, audio artifact approval, future-agent correctness, or support-state promotion.
+
+### Formal-proof audit boundary
+
+The module contains twenty-one declarations. They are finite implications, negative cases, or reductions of hand-authored manifest, structural-update, release-readiness, derivative, change-packet, and reader-route records. The longest cluster routes one fixed blocked reader candidate and field-level mutations through accessibility, audio, approval, rejection, or readiness states. None proves that the records are semantically truthful, that the validators are adequate, that prose is correct or readable, that accessibility or editorial review succeeds, that a public site is continuously available, or that the method improves scholarship, maintenance, governance, reproduction, or transfer.
 
 ## Source crosswalk
 

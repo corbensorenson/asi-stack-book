@@ -41,6 +41,7 @@ SCF separates a capability's durable semantic identity from the replaceable mach
 - Capability Replacement and Rollback
 - Recursive Self-Improvement Boundaries
 - Routing Heads and Specialist Cores
+- `replaceable-cognitive-substrates-beyond-transformer-monoculture` (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
 - Readiness Gates, Residual Escrow, and Quarantine
 - Personal Compute Hives and Federated Edge Intelligence
 - Executable Specifications and Lean Proof Envelope

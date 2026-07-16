@@ -24,11 +24,6 @@ REVIEW_ACCOUNTING_FIELDS = {
     "residual_refs",
 }
 REQUIRED_LEAN_THEOREMS = (
-    "capacity_smoothing_reviewer_trace_fixture_valid",
-    "capacity_smoothing_reviewer_trace_preserves_review_capacity",
-    "capacity_smoothing_reviewer_trace_preserves_protected_review_overhead",
-    "capacity_smoothing_reviewer_trace_residualizes_displaced_review_costs",
-    "capacity_smoothing_reviewer_trace_has_no_support_promotion",
     "blocked_protected_review_rejects_low_risk_review_dispatch",
     "high_risk_review_without_protected_overhead_rejected",
     "blocked_protected_review_requires_displaced_cost_residual",

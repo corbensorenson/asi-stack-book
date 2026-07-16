@@ -3,8 +3,8 @@ title: "Runtime Adapters, Tool Permissions, and Human Approval"
 chapter_id: "runtime-adapters-tool-permissions-and-human-approval"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-10"
+draft_maturity: "v0.3 claim-proof program"
+last_updated: "2026-07-14"
 primary_sources:
   - "talos"
   - "viea"
@@ -15,18 +15,29 @@ primary_sources:
   - "field_of_god_ai_constitution"
   - "theseus_operator_os"
   - "ext_cap_theorem_gilbert_lynch_2002"
+  - "ext_humans_automation_1997"
+  - "ext_ironies_automation_1983"
+  - "ext_levels_automation_2000"
+  - "ext_complacency_bias_automation_2010"
+  - "ext_inspect_ai_2024"
+  - "ext_agentdojo_2024"
+  - "ext_camel_prompt_injection_2025"
+  - "ext_owasp_agentic_top_10_2026"
   - "moecot_manifest_project"
   - "beastbrain_project"
   - "bugbrain_project"
   - "corbens_trainer_project"
   - "corbens_best_model_possible_project"
+  - "ext_claw_swe_bench_2026"
+  - "ext_txfs_2018"
+  - "qcsa_whitepaper"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records exact claim-source mappings with passage-reviewed references for five local raw-cache sources plus two local public-project sources; `moecot` remains connector/source-note mapped."
+  - "Appendix C records twenty-five reviewed claim-source mappings spanning architecture, operator, human-factors, distributed-systems, evaluation, injection, threat, historical-project, recovery, and QCSA comparators; none supplies deployed adapter evidence."
   - "Protocol schema/fixture validation, finite Lean permission, approval, effect-lease, rollback-obligation, authority-ceiling, confused-deputy, sandbox-escape, effect-receipt, dispatch-route, effect-replay, adversarial-boundary, revocation-route, and human-oversight degradation predicates, Runtime Adapters negative-case theorems, a synthetic runtime-adapter permission harness, a public-safe Runtime adapter effect replay probe, a deterministic Runtime adapter adversarial boundary probe, a deterministic Human oversight degradation fixture, an accepted human-oversight no-promotion decision, and the cross-boundary partitioned-authority fixture are implemented; the effect probe performs one generated temp-file write, the adversarial probe covers two valid synthetic adapter boundary reviews plus twelve expected-invalid controls, the oversight fixture covers three valid finite records plus seven expected-invalid controls, the no-promotion decision blocks approval-workflow and deployed-human-factors promotion, and the partitioned-authority fixture covers stale grants, revocation-delay quarantine, fresh authority receipt requirements, grant/effect race residual ownership, no-mutation evidence, and CAP-style authority consistency boundaries. No deployed adapter execution, real sandbox, approval service, secret-handle mediation, deployed partition tolerance, distributed consensus, revocation propagation, policy-enforcement correctness, rollback service, reviewer-correctness result, deployed human-factors result, or security review has been run for the runtime-adapter layer."
   - "One hand-authored five-project capability-envelope record and ten deterministic mutations now distinguish executable/path/network/write/clock/randomness scopes, process observation, OS enforcement, playback, bounded live reexecution, irreversible residuals, and ordinary dispatch; no OS-enforced sandbox or deployed adapter is claimed."
-  - "No support-state promotion is implied by this drafting pass."
+  - "No natural multi-target adapter campaign, independently observed OS/hardware confinement, prompt-injection comparison, live approval-quality study, deployed secret broker, distributed authority service, target-service rollback, causal ablation, clean reproduction, or heterogeneous transfer result exists; no support-state promotion is implied by this semantic sweep."
 ---
 
 ## Chapter status
@@ -36,18 +47,28 @@ open_evidence_gaps:
 | Chapter ID | `runtime-adapters-tool-permissions-and-human-approval` |
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-10 |
-| Primary source records | `talos`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `moecot`, `field_of_god_ai_constitution`, `theseus_operator_os`, `ext_cap_theorem_gilbert_lynch_2002`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project` |
+| Manuscript maturity | v0.3 claim-proof program |
+| Last updated | 2026-07-14 |
+| Primary source records | all twenty-five assigned architecture, operator, human-factors, distributed-systems, security-evaluation, historical-project, recovery, and QCSA mappings |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `talos`, `viea`; supporting: `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `field_of_god_ai_constitution`, `theseus_operator_os`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project`; external comparator: `ext_cap_theorem_gilbert_lynch_2002`; connector/recovery: `moecot` |
-| Source loading state | passage-reviewed local raw cache: `talos`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`; passage-reviewed local public-project source: `field_of_god_ai_constitution`, `theseus_operator_os`; connector/source-note mapped: `moecot` |
+| Source loading state | all twenty-five mappings reviewed at bounded local-cache, public-project, source-note, or local-whitepaper scope; none supplies natural deployed adapter, approval, sandbox, or secret-broker evidence |
 | Test state | Runtime adapter fixture validation now includes invocation state, impact class, risk tier, approval scope/expiry, effect lease, pre/post state refs, external side effects, verification refs, irreversible residuals, incident/audit refs, support-state effect, non-claims, and authority probes; finite permission, approval, effect-lease, rollback-obligation, authority-ceiling, confused-deputy, sandbox-escape, effect-receipt, dispatch-route, effect-replay, adversarial-boundary, revocation-route, and human-oversight degradation predicates plus negative-case theorems are implemented in `AsiStackProofs.RuntimeAdapters` for missing parent-job permission, high-impact unapproved adapter calls that try to remain unrejected, missing scoped approval, mismatched effect leases, expired leases, revoked leases, unsandboxed leases, over-ceiling requested authority, confused-deputy attempts, sandbox-escape attempts, high-impact rollback-required calls without rollback handles, revoked approvals and authority receipts without no-mutation denial evidence, missing effect receipts, missing no-mutation evidence, inexact rollback, repository/network side effects, support-state effects, parentage mismatch, approval expiry, sandbox path escape, secret materialization, missing audit refs, missing non-claim boundaries, reviewer overload, rubber-stamped approval, alarm fatigue, and automation-bias contradictions; `python3 scripts/validate_runtime_adapter_permissions.py` checks 2 valid and 7 expected-invalid synthetic typed-job, adapter-invocation, authority-use-receipt, and authority-probe scenarios; the Runtime adapter effect replay probe (`python3 scripts/validate_runtime_adapter_effect_probe.py`) checks `valid_low_impact_local_write_effect_replay`, a rollback-exact temp-file restoration, `invalid_missing_permission_no_mutation`, and `invalid_expired_approval_no_mutation`; the Runtime adapter adversarial boundary probe (`python3 scripts/validate_runtime_adapter_adversarial_boundary_probe.py`) checks two valid synthetic adapter boundary reviews and twelve expected-invalid controls without support-state promotion; the Human oversight degradation fixture (`python3 scripts/validate_human_oversight_degradation.py`) writes `experiments/human_oversight_degradation/results/2026-07-03-local.json`; `evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json` records an accepted `blocks_promotion` no-change decision for approval-workflow, reviewer-correctness, alert-quality, deployed-human-factors, runtime-adapter-safety, and chapter-core promotion claims; and the partitioned authority fixture (`python3 scripts/validate_partitioned_authority_fixture.py`) writes `experiments/partitioned_authority/results/2026-07-03-local.json` with stale-grant, fresh authority receipt, grant/effect race, no-mutation evidence, and CAP-style authority consistency checks. Deployed adapter execution, sandbox isolation, approval-service behavior, reviewer correctness, deployed human-factors behavior, secret-handle safety, rollback-service behavior, deployed partition tolerance, distributed consensus, revocation propagation, policy-enforcement correctness, and security review remain untested. |
 
 ## Drafting guardrail
 
-The runtime-adapter layer treats adapters as effect-boundary records, not as proof that tools were safely executed. The repo validates an adapter-invocation fixture and now proves finite permission, approval, effect-lease, rollback-obligation, authority-ceiling, confused-deputy, sandbox-escape, effect-receipt, dispatch-route, effect-replay, adversarial-boundary, revocation-route, and human-oversight degradation predicates with negative cases for missing parent permission, high-impact approval bypass, missing scoped approval, mismatched leases, expired leases, revoked leases, unsandboxed leases, over-ceiling requested authority, confused-deputy attempts, sandbox-escape attempts, revoked approvals or authority receipts without no-mutation denial evidence, missing rollback handles, missing effect receipts, missing no-mutation evidence, inexact rollback, repository/network side effects, support-state effects, parentage mismatch, approval expiry, sandbox path escape, secret materialization, missing audit refs, missing non-claim boundaries, reviewer overload, rubber-stamped approval, alarm fatigue, and automation-bias contradictions. The synthetic harness now adds expected-invalid ambient-authority confused-deputy and revoked-receipt probes. The separate Runtime adapter effect replay probe executes one generated public-safe temp-file write in a temporary workspace, records pre/post/rollback hashes, verifies rollback-exact restoration, and denies `invalid_missing_permission_no_mutation` plus `invalid_expired_approval_no_mutation`. The Runtime adapter adversarial boundary probe adds two valid synthetic adapter boundary reviews and twelve expected-invalid controls. The Human oversight degradation fixture adds three valid finite records and seven expected-invalid controls grounded by source notes for automation use/misuse/disuse/abuse, automation irony, automation levels, complacency, and automation bias; the accepted no-promotion decision `evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json` now makes the promotion block explicit for approval-workflow, reviewer-correctness, alert-quality, deployed-human-factors, runtime-adapter-safety, and chapter-core claims. The partitioned authority fixture adds finite stale-grant, fresh-authority-receipt, grant/effect race, no-mutation-evidence, and CAP-style authority consistency checks at the hives/runtime boundary. Twelve assigned source mappings have passage-reviewed refs or source notes, while `moecot` remains connector/source-note mapped. These probes still do not inject a secret, enforce a live approval service, enforce a production sandbox, measure reviewer correctness, test deployed human-factors behavior, prove deployed partition tolerance, propagate revocation in a deployed service, exercise a rollback service, or prove deployed adapter safety.
+The runtime-adapter layer treats adapters as effect-boundary records, not as proof that tools were safely executed. The repo validates an adapter-invocation fixture and now proves finite permission, approval, effect-lease, rollback-obligation, authority-ceiling, confused-deputy, sandbox-escape, effect-receipt, dispatch-route, effect-replay, adversarial-boundary, revocation-route, and human-oversight degradation predicates with negative cases for missing parent permission, high-impact approval bypass, missing scoped approval, mismatched leases, expired leases, revoked leases, unsandboxed leases, over-ceiling requested authority, confused-deputy attempts, sandbox-escape attempts, revoked approvals or authority receipts without no-mutation denial evidence, missing rollback handles, missing effect receipts, missing no-mutation evidence, inexact rollback, repository/network side effects, support-state effects, parentage mismatch, approval expiry, sandbox path escape, secret materialization, missing audit refs, missing non-claim boundaries, reviewer overload, rubber-stamped approval, alarm fatigue, and automation-bias contradictions. The synthetic harness now adds expected-invalid ambient-authority confused-deputy and revoked-receipt probes. The separate Runtime adapter effect replay probe executes one generated public-safe temp-file write in a temporary workspace, records pre/post/rollback hashes, verifies rollback-exact restoration, and denies `invalid_missing_permission_no_mutation` plus `invalid_expired_approval_no_mutation`. The Runtime adapter adversarial boundary probe adds two valid synthetic adapter boundary reviews and twelve expected-invalid controls. The Human oversight degradation fixture adds three valid finite records and seven expected-invalid controls grounded by source notes for automation use/misuse/disuse/abuse, automation irony, automation levels, complacency, and automation bias; the accepted no-promotion decision `evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json` now makes the promotion block explicit for approval-workflow, reviewer-correctness, alert-quality, deployed-human-factors, runtime-adapter-safety, and chapter-core claims. The partitioned authority fixture adds finite stale-grant, fresh-authority-receipt, grant/effect race, no-mutation-evidence, and CAP-style authority consistency checks at the hives/runtime boundary. All twenty-five assigned source mappings are reviewed at bounded scope. These probes still do not inject a secret, enforce a live approval service, enforce a production sandbox, measure reviewer correctness, test deployed human-factors behavior, prove deployed partition tolerance, propagate revocation in a deployed service, exercise a rollback service, or prove deployed adapter safety.
+
+All twenty-five assigned mappings are now reviewed at their exact boundary. This
+layer owns the leased dispatch, independent observation, containment, and
+terminal receipt of an external effect. It does **not** own objective or plan
+correctness, principal or policy authorship, permission or approval legitimacy,
+context truth, artifact truth, mode-specific verification, evidence acceptance,
+support, readiness, or release. The current forty-nine Lean declarations under
+six public targets divide into ten predicate/projection or blocking
+consequences, thirty-seven finite route or negative-case consequences, and two
+authored-summary bridges. No current record or theorem changes core support.
 
 The runtime-adapter layer sits after artifact graphs so the reader already has the evidence surface in mind before the book turns to external effects. The runtime adapter is the narrow point where a typed job may receive authority, use a tool, produce an effect receipt, and hand evidence back to the artifact graph.
 
@@ -103,7 +124,13 @@ The claim remains at `argument` support. Talos supplies adapter and approval dis
 
 ### Claim-source mapping status
 
-Appendix C now maps this runtime-adapter claim to all assigned source notes, including passage-reviewed references for seven durable local sources. The mappings support typed permissions, sandbox and approval boundaries, handle-mediated authority, least-power governance, operator visibility, and post-action evidence capture, not safe tool execution in this repository.
+Appendix C maps all twenty-five assigned sources at their reviewed local-cache,
+public-project, source-note, or local-whitepaper boundary. Together they support
+typed effects, capability and secret mediation, approval and human-factors
+pressure, partitioned authority, adversarial tool-use evaluation, control/data
+separation, threat coverage, rollback, and receipt design. They do not
+establish safe tool execution, sandbox enforcement, approval correctness,
+secret isolation, or SOTA performance in this repository.
 
 | Source | What it supports | Review state | Limit |
 |---|---|---|---|
@@ -121,6 +148,60 @@ Appendix C now maps this runtime-adapter claim to all assigned source notes, inc
 A runtime adapter is the authority chokepoint between cognitive work and external effects. The model may propose an action, and the job may carry a contract, but only an adapter can touch files, APIs, services, deployment surfaces, hardware, fabrication systems, credentials, or organizational workflows. Talos supplies the controlled runtime discipline, VIEA supplies the intent-to-runtime feedback boundary, Ladon supplies opaque handles for sensitive authority, GenesisCode supplies capability-mediated effects, and the Theseus Operator OS supplies the operator-visible surface for mutating work.
 
 A Runtime Adapter Invocation therefore has to be more than a function call. It is a permission decision, sandbox decision, approval decision, authority-handle decision, effect receipt, rollback/residual record, and artifact-graph handoff.
+
+The complete effect contract has eighteen mechanisms:
+
+1. Freeze invocation, job, attempt, adapter, target, operation, requester,
+   consumer, consequence, risk, authority, rights, budget, deadline, expiry,
+   policy, and environment identities before outcomes.
+2. Classify target type, effect class, impact, reversibility, visibility,
+   affected parties, data sensitivity, secrets, and recovery objective.
+3. Validate exact contract, plan, job, attempt, principal, delegation,
+   authority ceiling, approval policy, lifecycle, and blockers.
+4. Resolve an envelope over executable/digest, arguments, objects, paths,
+   network, APIs, data fields, clock, randomness, environment, secrets,
+   hardware, rate, cost, retention, and delegation.
+5. Bind stable target/input identity, provenance, context transaction, taint,
+   rights, freshness, policy, and pre-state; aliases and semantic neighbors
+   cannot substitute for the authorized object.
+6. Intersect parent authority, principal delegation, capability and target
+   policy, security state, data/rights policy, risk, budget, and revocation;
+   the adapter cannot mint a grant.
+7. Keep semantic resolution, certificates, discovery, model confidence, and
+   intent interpretation separate from authorization.
+8. Require structured approval with target, operation, scope, inputs, risk,
+   reversibility, evidence view, approver competence and authority, expiry,
+   revocation, reuse, appeal, and non-claims.
+9. Assess reviewer workload, approval streak, alert and rationale quality,
+   contradiction, automation recommendation, independent evidence, conflict,
+   fatigue, rotation, delay, and escalation.
+10. Issue a purpose-bound effect lease over capability, target, scope,
+    authority, sandbox, secrets, time, rate, cost, idempotency, retry,
+    revocation, partition, and delegation.
+11. Provision and independently identify the enforcement environment,
+    sandbox, process/container boundary, filesystem/network policy, secret
+    broker, resource limits, observation hooks, cleanup, and attestation.
+12. Capture pre-state, expected post-state, effect inventory, verification,
+    checkpoint, rollback/compensation, irreversible-residual forecast,
+    incident route, and abort conditions.
+13. Dispatch the exact adapter, executable, arguments, inputs, target, lease,
+    and environment with duplicate-effect and confused-deputy defenses.
+14. Independently observe actual reads, writes, messages, calls, flows, secret
+    uses, costs, outputs, errors, side records, post-state, and downstream
+    effects.
+15. Route denial, timeout, crash, partial effect, partition, stale grant,
+    revocation race, lease/observer loss, escape, secret exposure, unknown
+    outcome, and intervention to typed custody.
+16. Roll back, compensate, revoke, contain, clean up, or quarantine while
+    preserving copies, disclosures, messages, physical effects, descendants,
+    recovery time, failed restoration, and residuals.
+17. Issue a terminal receipt binding request, parentage, authority, approval,
+    lease, sandbox, secrets, actual effects, state, verification, rollback,
+    incidents, costs, artifact refs, support ceiling, and non-claims.
+18. Compare direct tools, prompt-only controls, OS/container sandboxes,
+    capability systems, policy-mediated calls, human approval, workflow
+    engines, CaMeL-like separation, AgentDojo-like attacks, Inspect-like
+    harnesses, and the full adapter under matched natural work.
 
 ```{mermaid}
 flowchart LR
@@ -240,9 +321,40 @@ this core claim remain at `argument`.
 
 Runtime work reaches tools through the Runtime Adapter Invocation.
 
-- Execution owns adapters.
-- Security mediates secrets.
-- Evidence records deployment outcomes.
+1. Intent, Contracts, Planning, and Labor OS supply the exact authorized job,
+   requester, plan node, consequence, risk, and lifecycle; adapters own effect
+   dispatch, not objective or plan correctness.
+2. Security kernels, identity, delegation, policy, and secret brokers issue and
+   revoke principals, capabilities, authority ceilings, sandbox policy, and
+   opaque handles; adapters cannot widen them.
+3. VCM and Context Transactions supply exact input views, targets, taint,
+   freshness, deletion, rights, and semantic certificates; availability and
+   semantic resolution are not authority.
+4. Artifact Graphs own identity, lineage, replay grade, audit reconstruction,
+   receipt faithfulness, and impact closure; adapters emit observations and
+   receipts into that custody.
+5. Accountable humans and approval-policy owners own high-impact approval,
+   reviewer qualification, exception, appeal, override, incident, and
+   irreversible-effect decisions.
+6. Privacy, Rights, Licensing, data owners, and affected-party governance
+   constrain collection, access, disclosure, retention, deletion, export,
+   redress, and derivatives.
+7. Verification, proof, benchmark, and outcome evaluators own correctness and
+   utility judgments; an effect receipt reports what happened, not whether it
+   was wise or successful.
+8. Resource Economics supplies compute, latency, rate, spend, storage, review,
+   recovery, and displaced-work budgets with full denominators.
+9. Inter-Stack Protocols supply remote principal, peer, credential, delegation,
+   budget, revocation, dispute, and settlement records; protocol success is not
+   local effect authority.
+10. Replacement, Rollback, Readiness, and Publication decide promotion,
+    deployment, recovery standing, external delivery, and release.
+11. Incident response, monitoring, and operators consume denials, escapes,
+    secret exposure, unknown outcomes, stale authority, rollback failures,
+    residuals, and remediation duties.
+12. Inspect AI, AgentDojo, CaMeL, OWASP, human-factors literature, CAP,
+    workflows, sandboxes, and capability systems supply comparators and threat
+    vocabulary, not local enforcement or SOTA evidence.
 
 Minimum fields:
 
@@ -298,21 +410,55 @@ This receipt structure keeps "tool call succeeded" from becoming a broad evidenc
 
 ## Invariants
 
-- No adapter executes beyond granted scope.
-- High-impact actions require approval.
-- Rollback handles are captured when available.
-- Approval scope expires and does not authorize unrelated reuse.
-- Revoked approval, lease, or authority receipt records block dispatch unless denial-before-mutation and unchanged-state evidence are recorded.
-- Partitioned authority or a possible stale grant blocks high-impact dispatch until a fresh authority receipt or quarantine/no-mutation evidence exists.
-- Effect receipts separate request, approval, execution, verification, and rollback state.
-- Executable, read-path, write-path, network, clock, randomness, environment,
-  and secret-handle scopes remain independently declared and checked.
-- Process observation, simulated policy, and declared scope cannot be labeled
-  OS enforcement without an identified observed sandbox instance.
-- Playback, deterministic simulation, bounded live reexecution, and deployed
-  live reexecution remain distinct replay grades.
-- Irreversible residuals have an explicit state, owner, and review trigger even
-  when the bounded probe observed none.
+1. Every invocation binds one exact job, attempt, principal, delegation,
+   adapter, target, operation, capability, consequence, risk, authority,
+   rights, policy, budget, expiry, environment, consumer, and owner.
+2. Executable, arguments, reads, writes, network, APIs, data, clock,
+   randomness, environment, secrets, hardware, rate, cost, retention, and
+   delegation stay inside the intersection of current scopes.
+3. Semantic resolution, aliases, addresses, certificates, discovery, model
+   confidence, and intent interpretation never create or widen authority.
+4. Target, input, context, policy, approval, authority, capability, lease,
+   sandbox, secret, executable, and pre-state are fresh at dispatch or the gate
+   reruns.
+5. High-impact, external, privacy-sensitive, credentialed, irreversible,
+   safety-relevant, financial, physical, or institutional effects require the
+   exact current approval when policy requires it.
+6. Approval is competent, informed, purpose-bound, scoped, expiring,
+   revocable, non-transitive, and non-reusable by default.
+7. Reviewer overload, rubber-stamping, alarm fatigue, automation bias,
+   conflict, missing qualification/evidence, or visible contradiction cannot
+   route directly to high-impact dispatch.
+8. Effect leases are least-privilege, purpose-bound, time/rate/cost bounded,
+   revocable, non-escalating, partition-aware, and preserved across retry,
+   resume, delegation, and replay.
+9. Declared scope, simulation, cooperation, or process observation cannot be
+   labeled OS/hardware enforcement without an identified independent instance.
+10. Secret values stay in the broker and authorized destination; context,
+    logs, receipts, errors, artifacts, and prompts receive handles or bounded
+    disclosures.
+11. Actual reads, writes, calls, flows, messages, secret use, cost, outputs,
+    errors, effects, state, and policy decisions remain independently
+    observable within declared limits.
+12. Queue, dispatch, tool return, status, file, API acknowledgement, approval,
+    and receipt shape never replace effect observation and terminal custody.
+13. Playback, deterministic simulation, bounded live reexecution, and deployed
+    live reexecution remain distinct with exact executable, environment,
+    effects, observers, and irreversible boundaries.
+14. Revoked, expired, stale, partitioned, mismatched, over-ceiling, or unknown
+    authority state blocks mutation until fresh authority or observed
+    no-mutation closure exists.
+15. Rollback and compensation inventory every local, remote, informational,
+    financial, physical, organizational, copied, disclosed, and descendant
+    effect; unhandled effects remain residuals.
+16. Receipts separate request, approval, dispatch, observation, verification,
+    rollback, incident, artifact, evidence, support, readiness, and release.
+17. Denials, false refusals, missed help, approval delay, human work, sandbox
+    and observer cost, partial effects, exposure, incidents, rollback failure,
+    cleanup, and residuals remain in denominators.
+18. Schemas, fixtures, finite theorems, temp-file writes, exact local rollback,
+    synthetic tasks, frameworks, taxonomies, and green commands retain their
+    exact evidence ceilings.
 
 No adapter invocation is valid unless the parent job permissions include the adapter capability. A high-impact adapter call without approval is rejected before the tool receives authority.
 
@@ -320,18 +466,47 @@ The adapter boundary must preserve separation between request, approval, executi
 
 ## Failure modes
 
-- Tool overreach.
-- Approval bypass.
-- Human oversight degradation through approval fatigue, rubber-stamping, alarm fatigue, or automation bias.
-- Irreversible deployment without rollback.
-- Approval laundering, where a narrow human approval is reused as broad authorization.
-- Receipt laundering, where a successful tool response is treated as verified task success.
-- Sandbox theater, where declared paths or a cooperative process are described
-  as OS-enforced confinement.
-- Replay laundering, where receipt playback is described as live effect
-  reexecution or a bounded disposable probe is described as deployed replay.
-- Capability aliasing, where one executable, path, network, clock, or randomness
-  grant silently authorizes another.
+1. Ambient tool authority permits effects without exact parent job, principal,
+   capability, target, lease, policy, or receipt.
+2. Capability overreach widens executable, arguments, objects, paths, network,
+   APIs, data, clock, randomness, environment, secrets, hardware, rate, cost,
+   retention, or delegation.
+3. Semantic or alias escalation turns recognition, address proximity,
+   discovery, rationale, or certificate into authority over another target.
+4. Confused-deputy and delegation laundering use authority held by the adapter,
+   service, human, or peer but never by the requester.
+5. Prompt/data injection lets untrusted content alter policy, tools, arguments,
+   destination, secret use, approval interpretation, or scope.
+6. Approval bypass, laundering, reuse, expiry loss, coercion, capture, or
+   self-approval converts a narrow or stale decision into broad authority.
+7. Oversight degradation makes overloaded, unqualified, rubber-stamping,
+   alarm-fatigued, biased, conflicted, or evidence-starved reviewers decorative.
+8. Sandbox theater presents declared or cooperative scope as enforcement while
+   escape, network, child-process, side-channel, or host paths remain reachable.
+9. Secret-handle failure materializes credentials into context, logs, errors,
+   artifacts, child processes, destinations, or retained memory.
+10. Stale and partitioned authority dispatches on revoked grants, expired
+    leases, unsynchronized policy, healed caches, or grant/effect races.
+11. Unobserved-effect laundering omits calls, messages, disclosures, costs,
+    copies, physical actions, side records, or delayed consequences.
+12. Success and receipt laundering turns return, acknowledgement, file,
+    approval, rollback handle, or receipt into correct, useful, safe, supported,
+    or released work.
+13. Replay laundering promotes playback or simulation to live reexecution, or
+    a disposable bounded probe to deployed equivalence.
+14. Retry, resume, delegation, or duplicate dispatch repeats non-idempotent
+    effects, widens authority, reuses stale approval, or loses partial outcomes.
+15. Rollback/compensation laundering declares restoration while messages,
+    payments, disclosures, deployments, remote/physical effects, copies,
+    descendants, or obligations persist.
+16. Incident/residual abandonment leaves denial, escape, exposure, unknown
+    outcome, partial effect, disputed approval, failed rollback, or affected
+    party without owner and remedy.
+17. Safety-by-refusal and denominator laundering hide false refusals, missed
+    help, delayed approval, human work, or failed/unsafe effects.
+18. Portability and SOTA theater treats one temp-file trace, fixture, sandbox,
+    parser, benchmark, model, tool, organization, authority regime, or threat
+    taxonomy as general safety.
 
 Tool overreach means the adapter performed beyond granted scope. Approval bypass means governance was skipped. Irreversible deployment without rollback means a failed action cannot be repaired. These failures should produce effect residuals and block future route promotion.
 
@@ -343,7 +518,22 @@ Partitioned authority is the adapter-level version of a stale control signal. A 
 
 ## Minimum Viable Implementation
 
-A runtime-adapter contract with permissions, approval requirements, result evidence, finite route predicates, a synthetic permission harness, a public-safe local effect replay, and an adversarial boundary probe for parentage, authority, approval, sandbox, secret, rollback, receipt, audit, support-state, and non-claim controls.
+The current minimum is one public invocation schema; a 2 valid/7 rejecting
+permission harness; one rollback-exact temporary-file effect with two
+no-mutation denial controls; 2 valid/12 rejecting adversarial-boundary records;
+3 valid/7 rejecting human-oversight records and one accepted no-promotion
+decision; 3 valid/6 rejecting partitioned-authority records; one bounded/10
+rejecting historical capability-envelope record; adjacent QCSA synthetic
+authority and reversible vertical-effect results at their exact non-core
+ceilings; and forty-nine Lean declarations under six public targets.
+
+These artifacts exercise record shape, finite route consequences, one local
+write/restore, and synthetic authority, approval, injection-adjacent,
+revocation, reviewer, and partition controls. They do not establish deployed
+adapters, OS/hardware confinement, prompt-injection robustness, approval
+quality, reviewer correctness, secret isolation, distributed authority,
+target-service rollback, useful-effect advantage, production safety,
+independent reproduction, or transfer.
 
 The adapter boundary begins with a `runtime_adapter_invocation` schema and fixture. It validates adapter ID, invocation state, target, capability, permission, sandbox, impact class, risk tier, approval scope/expiry, authority handle, effect lease, effect receipt, pre/post state refs, external side effects, verification refs, rollback handle, irreversible residuals, incident/audit refs, support-state effect, residuals, and non-claims. It does not execute a tool.
 
@@ -367,23 +557,56 @@ residual detail, ordinary dispatch from a bounded probe, and fixture-based
 support promotion. The record says `sandbox_claim_allowed=false` and does not
 retroactively turn the temp-file probe into a sandbox test.
 
+The argument-exit campaign must use natural public-safe and deployment-like
+document, code, database, API, messaging, payment-simulator, service,
+hardware-simulator, and organizational tasks across multiple models, tools,
+sandboxes, capability systems, approval policies, secret brokers, and authority
+services. Direct tool calling, prompt-only controls, OS/container sandboxes,
+capability systems, policy-mediated tools, workflow engines, human approval,
+CaMeL-like control/data separation, AgentDojo-like adversarial tasks,
+Inspect-like harnesses, and the full adapter must receive matched information,
+authority, resources, faults, attacks, and horizons.
+
+Independent observers must jointly measure correct useful effects,
+unauthorized and hidden effects, scope precision/recall, injection success,
+confused-deputy and escape success, secret exposure, approval calibration and
+degradation, stale/revoked dispatch, duplicate effects, receipt fidelity,
+rollback/compensation completeness, false refusal, missed help, privacy,
+latency, human work, recovery, and total cost. Prospective ablations remove
+parent authority, typed capability, control/data separation, approval,
+reviewer-readiness checks, leases, observed enforcement, secret handles,
+pre-state, independent observation, revocation freshness, rollback inventory,
+receipts, or complete denominators. A clean implementation must reproduce the
+result, and transfer must vary models, tasks, tools, targets, operating systems,
+sandboxes, organizations, authority and rights regimes, partitions, attacks,
+and time. Until then, the core support ceiling remains `argument`.
+
 ## Beyond the State of the Art
 
-Runtime adaptation matures into a capability firewall for external effects. Tools are not exposed as ambient functions; scoped, expiring effect leases go to typed jobs only after target, capability, sandbox, authority handle, approval requirement, risk tier, pre-state, post-state expectations, rollback path, and evidence obligations are checked.
+The proposed capability firewall combines typed least-privilege leases,
+control/data separation, independently observed enforcement, scoped human
+approval, reviewer-degradation controls, secret handles, partition-aware
+revocation, effect observation, effect-complete rollback accounting, and
+terminal receipts. Each component has mature partial precedents. Any novelty
+claim attaches only to their governed composition and must survive strong
+component baselines rather than describing familiar security practice as new.
 
-With capability adapters, a successful tool response is not the end of the story. The adapter returns an effect receipt that separates request, approval, execution, verification, rollback, irreversible residuals, incident refs, audit refs, and support-state effect. Approval is also scoped: approving one deployment, file edit, message, payment, hardware action, or credential use does not authorize every similar future action.
+The SOTA test is a joint frontier, not a zero-incident headline. The full
+adapter must improve correct useful effects and containment together while
+accounting for unauthorized and hidden effects, injection and escape success,
+secret exposure, stale dispatch, approval quality, false refusal, missed help,
+duplicate effects, rollback gaps, privacy, latency, human work, recovery, and
+total cost. Conservative non-dispatch is not a safety win when it merely
+removes useful work or hides risk outside the denominator.
 
-A capability-firewall surface needs:
-
-- Adapter contracts for documents, code, APIs, services, databases, deployments, messages, payments, hardware, fabrication, robotics, credentials, and organizational workflows.
-- Permission lookup against parent typed jobs, authority ceilings, secret-handle policies, sandbox modes, and active governance constraints.
-- Human approval artifacts with target, scope, risk tier, expiration, reuse rule, revocation path, approver role, and audit refs.
-- Human oversight degradation controls that track reviewer load, consecutive approvals, alarm quality, rationale quality, automation recommendations, contradictory evidence, independent-evidence checks, reviewer rotation, and non-claim boundaries.
-- Partition-aware authority controls that track grant freshness, revocation visibility, lease state, partition indicators, reconciliation receipts, residual ownership, and no-mutation evidence before dispatch.
-- Effect receipts with pre/post state, external side effects, rollback handles, irreversible residuals, verification refs, incident refs, and artifact-graph links.
-- Promotion gates that refuse to convert successful tool calls into verified task success without evidence and residual accounting.
-
-This lease-bound action surface is still proposed architecture. Tool-use support stays at `argument` until adapter harnesses, sandbox checks, approval workflows, secret-handle tests, rollback records, and effect-receipt validation show that the stack can use tools without giving cognition ambient power over the world.
+Each signature mechanism needs a predicted causal fingerprint. Removing typed
+capability should widen scope; removing control/data separation should raise
+injection success; removing reviewer-readiness checks should degrade approval
+calibration under load; removing independent observation should raise hidden-
+effect error; removing revocation freshness should admit stale grants; removing
+effect inventory should create false rollback. Those effects must survive a
+clean implementation and heterogeneous transfer. No such campaign has passed,
+so the core claim remains at `argument`.
 
 ## Codex test plan
 
@@ -422,6 +645,14 @@ Fixture-shape validation, bounded Lean theorem declarations over finite permissi
 | `lean:runtime.adapters.revocation_route_bridge` | `AsiStackProofs.RuntimeAdapters` | A modeled runtime-adapter revocation review routes revoked approvals, revoked leases, and revoked authority receipts away from dispatch unless no-mutation denial evidence exists, while complete non-revoked records preserve receipt, audit, support-state, and non-claim boundaries. | implemented |
 | `lean:runtime.adapters.human_oversight_degradation_fixture_bridge` | `AsiStackProofs.RuntimeAdapters` | A modeled human-oversight degradation fixture accepts scoped low-fatigue approval, routes overloaded reviewers to delay or rotation, blocks automation-bias cases, and rejects missing qualifications, rubber-stamped approvals, alarm-fatigue acceptance, support-state promotion, and missing non-claim boundaries. | implemented |
 
+The forty-nine theorem declarations divide into ten predicate, projection, or
+blocking consequences; thirty-seven finite route or negative-case
+consequences; and two authored-summary fixture bridges. None refines a deployed
+adapter, operating-system or hardware sandbox, capability service, approval
+service, secret broker, distributed authority service, effect observer,
+rollback service, or support gate. This is executable vocabulary and finite
+counterexample coverage, not semantic or empirical proof of the core claim.
+
 These proof hooks are implemented as finite-record predicates plus negative-case and route theorems over modeled records. They prove only record-level implications: valid leased invocations require parent permission plus an active scoped sandboxed lease; mismatched, expired, revoked, or unsandboxed leases do not satisfy the modeled validity predicate; high-impact unapproved or underscoped-approved calls are routed to approval; over-ceiling authority requests are denied; confused-deputy and sandbox-escape attempts are rejected; high-impact rollback-required calls without rollback handles cannot satisfy the rollback-obligation predicate while remaining unrejected; revoked approvals, leases, and authority receipts block dispatch only when denial-before-mutation and unchanged-state evidence are recorded, otherwise they request no-mutation evidence; missing receipt/audit/non-claim records block dispatch; effect-replay records without permission, active approval, no-mutation evidence, exact rollback, receipts, public-safe side-effect boundaries, or non-promoting support effects cannot be accepted; the adversarial boundary route rejects parentage mismatch, authority ceiling overrun, approval expiry, sandbox path escape, secret materialization, missing rollback/receipt/audit/non-claim records, and support-state effects; the human-oversight degradation bridge mirrors a finite fixture that routes overload, rubber-stamping, alarm fatigue, and automation-bias contradiction away from accepted dispatch; and complete low-impact and scoped high-impact records route to dispatch. They do not prove deployed sandboxing, authority-handle mediation, actual production tool invocation, effect receipt validity, approval-service quality, reviewer correctness, deployed human-factors behavior, secret-handle safety, deployed revocation propagation, or rollback behavior in a target service.
 
 ## Source crosswalk
@@ -444,7 +675,14 @@ These proof hooks are implemented as finite-record predicates plus negative-case
 | `ext_inspect_ai_2024`, `ext_agentdojo_2024`, `ext_camel_prompt_injection_2025`, `ext_owasp_agentic_top_10_2026` | Inspect AI, AgentDojo, CaMeL, and OWASP Agentic Top 10 | agent_tool_security | Current comparators for agent/tool evaluation, indirect injection, capability-secure data flow, and agentic-risk coverage. | source notes available; no local adapter robustness, approval quality, or safety result |
 | `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project` | Historical-project runtime lineage | local implementation-reference and negative-case lineage | Exact capability scopes, effect/replay records, declared-versus-enforced boundaries, quarantine, irreversible residuals, and playback/live-replay distinctions. | public-safe source notes available; projects not replayed; one related lineage, not independent confirmation |
 
-The source set anchors the effects boundary: authority handles, approval gates, tool permissions, operator-visible control surfaces, human oversight degradation, and partitioned authority. Five Google Docs raw-cache sources, two local public-project sources, four external human-factors comparators, and one distributed-systems comparator now have passage-reviewed Appendix C mappings or source-note records. `moecot` remains connector/source-note mapped until runtime artifacts, approval traces, sandbox records, benchmark/replay logs, or external corroboration are imported and inspected. The crosswalk does not claim safe tool execution, reviewer correctness, deployed approval-service behavior, distributed consensus, partition tolerance, or revocation propagation has been demonstrated here.
+The twenty-five-source set anchors authority handles, approvals, tool
+permissions, operator control, human oversight degradation, partitioned
+authority, evaluation harnesses, prompt/data injection, current agentic risk,
+historical failures, transactional recovery, and semantic non-authority. Every
+mapping is reviewed at its exact boundary. The crosswalk does not claim safe
+tool execution, reviewer correctness, sandbox enforcement, secret isolation,
+distributed consensus, partition tolerance, revocation propagation, local
+baseline reproduction, or SOTA standing.
 
 ### Manifest source assignment reconciliation
 
@@ -472,11 +710,21 @@ secret isolation, or production revocation.
 
 ## Summary
 
-Runtime adapters, tool permissions, and human approval form the effects boundary. They map jobs to adapters, check permissions, mediate authority handles, enforce approval gates, invoke tools in bounded modes, record effect receipts, and capture rollback or residuals.
+Runtime adapters form the leased external-effect boundary. Their distinct job is
+to dispatch, independently observe, contain, and receipt one exact effect under
+current authority; objective, policy, approval legitimacy, artifact truth,
+evidence, support, readiness, and release remain elsewhere. All twenty-five
+assigned sources are now reconciled against that boundary.
 
 The rule is that real-world effects require explicit authority. Planning may propose action; only an authorized adapter may perform it. In this repository, the evidence now reaches one narrow toy trace: a generated temp-file write, rollback-exact restoration, and two denial controls. It still has no deployed adapter trace, approval service, production sandbox run, live secret-handle path, revocation propagation, or target-service rollback execution. Once real effect traces accumulate, the system can ask which recurring patterns deserve to become procedural memory.
 
-That conservative boundary is what lets execution become useful without becoming ambient power. A tool call should know which job authorized it, which input fields it received, which sandbox or approval lease constrained it, what changed, what failed, and what remains irreversible. Human approval is not a decorative click; it is a scoped transition with expiry, evidence, and review duties. When those receipts exist, repeated success can later be abstracted into tools. Without those receipts, automation may look efficient while destroying the evidence needed to govern it.
+The current evidence remains narrow: one schema, five authored fixture families,
+one rollback-exact temp-file effect, one accepted no-promotion decision,
+adjacent bounded QCSA results, and forty-nine finite Lean declarations under six
+targets. A natural multi-target comparison with independent effect observers,
+causal ablations, clean reproduction, and heterogeneous transfer is still
+required. Until it passes, bounded denials and receipts sharpen the argument;
+they do not prove adapter safety.
 
 ## Handoff
 

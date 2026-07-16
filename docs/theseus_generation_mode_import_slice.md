@@ -71,28 +71,25 @@ This is negative evidence against raw-throughput promotion. It shows the report
 discipline detecting that faster accepted-span accounting is insufficient when
 verified task success stays at zero.
 
-## Lean Fixture Bridge
+## Lean Policy Model
 
-The validator checks `lean/AsiStackProofs/FastGeneration.lean` for
-`theseusGenerationModeImportFixture` and the theorem names
-`theseus_generation_mode_import_fixture_matches_public_summary`,
-`theseus_generation_mode_import_has_no_promotable_comparisons`,
-`theseus_generation_mode_import_boundary_gates_all_pass`,
-`theseus_generation_mode_import_missing_report_refs_zero`,
-`theseus_generation_mode_import_speed_lift_not_useful_solution_evidence`,
-`theseus_generation_mode_import_boundary_gate_failure_blocks_public_summary`,
-and `theseus_generation_mode_import_missing_report_refs_blocks_public_summary`.
-The finite Lean fixture must match the public JSON summary for the 18 mode
-count, 13 comparison count, zero hard gaps, zero modes with missing report
-refs, five boundary gates, five passed boundary gates, five accepted-span
-speed-lift warnings, thirteen zero-task-pass warnings, zero promotable
-comparisons, zero useful-solution-per-second evidence, and
-public-safety/support-state/raw-speed overclaim boundaries. It also proves
-finite negative cases for a failed hard boundary gate and nonzero missing-report
-refs.
+The validator checks `lean/AsiStackProofs/FastGenerationRefinement.lean` and
+its independently routed Fast Generation lifecycle. The checked theorems are
+`raw_speed_proxy_without_accepted_output_is_blocked`,
+`support_promotion_without_transition_blocks_decision`,
+`verified_fast_lifecycle_reaches_closed_without_support_or_effect_authority`,
+and `fallback_lifecycle_reaches_closed_with_fallback_accounted`.
+
+The boundary is deliberate: the digest-bound Python validator owns the exact
+public report counts, while Lean owns the reachable mode, fallback, accounting,
+promotion, and closure policy. This avoids proving a second hand-copied summary
+of the JSON and instead proves rules that apply across all packets admitted by
+the model. The external validator still rejects hard boundary-gate failure,
+missing-report-ref overclaim, raw-speed promotion, private-payload copying, and
+useful-speed overclaim.
 
 This bridge makes the imported no-promotion decision harder to drift inside the
-book's proof layer. It is still only a finite fixture bridge over a static
+book's proof layer. It is still only a finite authored lifecycle over a static
 summary; it is not a clean Theseus replay and not a speed-quality experiment.
 
 ## Negative Controls

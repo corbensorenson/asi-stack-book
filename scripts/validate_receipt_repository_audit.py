@@ -29,11 +29,11 @@ LEDGER_MD = ROOT / "docs" / "contribution_novelty_ledger.md"
 LEDGER_JSON = ROOT / "docs" / "contribution_novelty_ledger.json"
 VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 BOOK_STRUCTURE = ROOT / "book_structure.json"
-LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ArtifactGraph.lean"
+LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ArtifactRealityRefinement.lean"
 
 COMMAND = "python3 scripts/validate_receipt_repository_audit.py"
 RESULT_ID = "receipt-repository-audit-2026-07-03-local"
-LEAN_THEOREM = "receipt_repository_audit_fixture_bridge"
+LEAN_THEOREM = "full_artifact_reality_lifecycle_reaches_admission"
 CODEX_TEST_NAME = "Receipt repository audit"
 
 AUDITED_RECEIPTS = [
@@ -404,7 +404,7 @@ def build_result(errors: list[str]) -> dict[str, Any]:
         "mutation_controls": controls,
         "trace_summary": summary,
         "lean_fixture_alignment": {
-            "module": "AsiStackProofs.ArtifactGraph",
+            "module": "AsiStackProofs.ArtifactRealityRefinement",
             "theorem_refs": [LEAN_THEOREM],
             "expected": summary,
         },
@@ -484,7 +484,7 @@ def validate_surfaces(errors: list[str]) -> None:
                 "Implemented receipt repository audit",
                 COMMAND,
                 rel(RESULT),
-                LEAN_THEOREM,
+                "AsiStackProofs.ArtifactRealityRefinement",
             ],
         ),
         rel(ROADMAP): (
@@ -525,8 +525,8 @@ def validate_surfaces(errors: list[str]) -> None:
         rel(LEAN_FILE): (
             LEAN_FILE,
             [
-                "ReceiptRepositoryAuditSummary",
-                "receiptRepositoryAuditSummary",
+                "contentDigest",
+                "observedArtifactPresent",
                 LEAN_THEOREM,
             ],
         ),
@@ -581,12 +581,11 @@ def validate_book_structure(errors: list[str]) -> None:
 def validate_lean_shape(errors: list[str]) -> None:
     text = LEAN_FILE.read_text(encoding="utf-8")
     for fragment in (
-        "ReceiptRepositoryAuditSummary",
-        "receiptRepositoryAuditSummary",
-        "ReceiptRepositoryAuditValid",
         LEAN_THEOREM,
-        "digestMismatchControlRejected",
-        "supportPromotionControlRejected",
+        "contentDigest",
+        "observedArtifactPresent",
+        "independentCrossCheckMatched",
+        "supportAssignmentRequested",
     ):
         if fragment not in text:
             errors.append(f"{rel(LEAN_FILE)} missing {fragment}.")

@@ -1,0 +1,481 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "routing-heads-and-specialist-cores",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/routing-heads-and-specialist-cores.qmd",
+    "structured_atoms_reviewed": 76,
+    "prose_candidates_adjudicated": 60,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, all seventeen source mappings, three public record schemas, routing-lease and readiness/residual fixtures, both bounded routing programs, two evidence transitions, twenty Lean declarations, every manifest atom, every prose candidate, test plan, crosswalk, summary, and handoff. The sweep made the eighteen-stage task-local routing lease lifecycle and twelve owner interfaces explicit; expanded to eighteen invariants and eighteen failure modes; classified the formal surface as three direct predicate/projection checks plus seventeen derived finite route or negative consequences; preserved the post-v2 tie and post-v2.1 zero-substantive-answer negative result; specified matched natural baselines, joint usefulness and governance metrics, causal ablations, independent reproduction, and heterogeneous transfer; and preserved zero core support effect."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Natural and adversarial AI work requiring selection among models, specialists, tools, retrieval lanes, proof checkers, human lanes, and local or remote runtimes under explicit task, capability, authority, readiness, resource, and fallback constraints.",
+      "environment": "Seventeen reviewed source assignments; three public schemas; three valid and seven invalid routing-lease fixtures; four valid and five invalid readiness/residual fixtures; a separable 300-example three-seed program; one 60-request synthetic ambiguous workload using one 4-bit 4B model and one internal deterministic evaluator; two accepted no-promotion or narrow transitions; and twenty finite Lean declarations. No production router or MoECOT runtime is represented.",
+      "model": "A governed routing relation over frozen tasks, versioned candidate registries, separate semantic and physical identities, eligibility gates, admissible features, candidate-specific outcome estimates, selective actions, least-capability and least-authority choice, task-local leases, execution receipts, outcome separation, routing memory, load monitoring, lifecycle gates, and replayable packets.",
+      "authority": "Intent, Contracts, and Planning own task meaning; Stable Capability Fields owns qualifications; Context and Procedural Memory own admitted state; Security, Privacy, Rights, and Legal own ceilings; Runtime, Humans, and Inter-Stack own effects; Verification, Artifact Graphs, and Evidence own result support; Resources owns budgets; Readiness, Replacement, and Residual owners govern routability and lifecycle. Routing owns only selection among currently eligible candidates and issuance of the bounded route lease.",
+      "time": "Semantic review current through 2026-07-14; changes to task, consumer, registry, policy, feature, model, specialist, tool, context, memory, evaluator, rights, readiness, load, environment, or time invalidate affected route decisions and transfer claims.",
+      "artifact": "Chapter and manifest contract; seventeen source mappings; three schemas; routing-lease and readiness/residual fixtures; post-v2 and post-v2.1 result bundles and transitions; twenty declarations in AsiStackProofs.Routing and AsiStackProofs.MoECOTRuntime; and the future natural multi-model causal and transfer campaign."
+    },
+    "current_disposition": "retain_argument_with_local_route_discrimination_and_non_answer_boundary_pending_useful_natural_multi_model_campaign",
+    "assumptions": [
+      "Tasks, requested capabilities, candidate identities, authority and rights ceilings, readiness, resources, selective actions, outcomes, interventions, costs, and residuals can be observed without collapsing route choice into answer quality.",
+      "Semantic identity, capability identity, implementation, node, worker, and route can be versioned separately.",
+      "Oracle, learned, rule, generalist, random, cost-aware, confidence-cascade, selective, human, and governed policies can receive matched admissible information, authority, tools, help, retries, evaluators, and time.",
+      "Independent-enough evaluators can label route correctness, substantive usefulness, safety, evidence adequacy, overprivilege, calibration, interference, cost, and delayed residuals.",
+      "Abstention, clarification, fallback, escalation, refusal, no-route, failed candidates, retries, human repair, and unresolved residuals stay in denominators.",
+      "Natural workloads, adversarial ambiguity, multiple strong current models, multiple seeds, independent implementations, and transfer settings can be frozen before outcome-bearing execution."
+    ],
+    "dependencies": [
+      "human-intent-as-a-formal-input",
+      "intent-to-execution-contracts",
+      "planning-as-a-control-layer",
+      "stable-capability-fields",
+      "procedural-memory-and-cognitive-loop-closure",
+      "virtual-context-abi",
+      "security-kernel-and-digital-scifs",
+      "privacy-rights-and-legal-constraints",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "inter-stack-protocols-identity-and-economic-exchange",
+      "verification-bandwidth-and-context-adequacy",
+      "spinoza-verification-and-proof-carrying-claims",
+      "artifact-graphs-audit-logs-and-replay",
+      "evidence-states-and-claim-discipline",
+      "resource-economics-and-token-budgets",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "capability-replacement-and-rollback",
+      "labor-os-and-typed-jobs",
+      "human-collaboration-and-dispute-resolution",
+      "personal-compute-hives-and-federated-edge-intelligence",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
+    "strongest_counterclaim": "A strong general model with ordinary tool selection, confidence thresholds, and human escalation matches or dominates a governed specialist market once registry maintenance, routing error, calibration, verification, authority checks, load balancing, retries, latency, and human work are counted.",
+    "falsifier": "Under matched natural and adversarial work, the governed routing relation fails to improve the joint frontier over strong generalist, cascade, selective, cost-aware, and human baselines; its predicted ablation signatures do not appear; or it silently widens authority, hides wrong substantive answers behind non-answer actions, loses rejected candidates or residuals, or fails independent reproduction and transfer.",
+    "required_lanes": [
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze the strongest mixture-of-experts, model-routing, selective prediction, retrieval-routing, tool-routing, human-escalation, and runtime comparators without importing their reported performance."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify least authority, disclosure, refusal, escalation, human responsibility, residual custody, and lifecycle decisions."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify candidate eligibility, authority intersection, freshness, selective actions, lifecycle invalidation, replay, and countermodels beyond trusted record Booleans."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Run real current heterogeneous models, specialists, tools, human lanes, gates, leases, load states, fallbacks, receipts, replay, and rejecting controls."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure substantive utility, route and answer calibration, selective risk and coverage, unsafe release, latency, compute and money, human work, verification, interference, recovery, and residuals jointly."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate learned selection, specialization, readiness, authority, selective actions, independent evaluation, routing memory, load awareness, and lifecycle invalidation under matched resources."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Reproduce independently and transfer across models, specialists, tasks, domains, tools, organizations, rights regimes, attacks, capacity states, and time."
+      }
+    ],
+    "evidence_refs": {
+      "chapter": "chapters/routing-heads-and-specialist-cores.qmd",
+      "routing_lease_validator": "scripts/validate_routing_decision_lease.py",
+      "readiness_validator": "scripts/validate_readiness_residual_gates.py",
+      "post_v2_transition": "evidence_transitions/post_v2/routing_deliberation_no_change.json",
+      "post_v2_1_transition": "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
+      "post_v2_1_result": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+      "lean_routing": "lean/AsiStackProofs/Routing.lean",
+      "lean_runtime": "lean/AsiStackProofs/MoECOTRuntime.lean",
+      "manifest": "book_structure.json"
+    },
+    "contrary_evidence": [
+      "The post-v2 program was too separable: oracle, learned, rule, and fallback policies tied at 162/180 and selective routes never activated.",
+      "The post-v2.1 learned router selected 59/60 routes, yet all 360 substantive candidates were wrong; its twenty correct outcomes were non-answer actions.",
+      "The ambiguous program used one synthetic six-action workload, one seed, one 4-bit 4B model, and one internal deterministic evaluator.",
+      "The QCSA adjacent program failed its exact matched-advantage and resource gates and refuted active-question value on that corpus.",
+      "The routing and readiness fixtures are authored and synthetic; no production authority enforcement, natural route safety result, trained-specialist interference result, or MoECOT replay ran.",
+      "Twenty Lean declarations consist of three direct predicate/projection checks and seventeen derived finite route or negative consequences; they do not establish empirical usefulness or transfer.",
+      "Specialist registries, calibration, monitoring, verification, load balancing, and lifecycle control may cost more than routing saves.",
+      "A strong generalist, ordinary cascade, or human escalation policy may dominate the full governed route on useful throughput and total lifecycle cost."
+    ],
+    "known_confounds": [
+      "Synthetic tasks may expose route labels lexically or omit natural ambiguity, distribution shift, delayed effects, private data, irreversible tools, and organizational pressure.",
+      "Specialists and the generalist may differ in training data, model scale, prompts, tools, context, retries, or evaluator access.",
+      "The same model, prompt family, code, data, organization, or incentives may generate routes, answers, and judgments.",
+      "Selective policies can appear safe or accurate by suppressing coverage while substantive utility stays low.",
+      "Oracle, fallback, human, unavailable, failed, costly, and no-route candidates may disappear from denominators.",
+      "Short runs can miss load, interference, collusion, stale qualifications, delayed residuals, lifecycle drift, and total governance cost.",
+      "Routing accuracy can improve independently of answer utility, as the current ambiguous result demonstrates."
+    ],
+    "acceptance_criteria": [
+      "Every stage from frozen task through registry, eligibility, features, candidate outcomes, selective calibration, lease, execution, evaluation, memory, lifecycle, replay, and residual has an exact producer, consumer, valid case, rejecting mutation, and consequence.",
+      "A preregistered natural campaign meets joint substantive-usefulness, selective-risk, authority, rights, privacy, calibration, latency, cost, human-work, verification, interference, recovery, residual, causal, independent-reproduction, and transfer gates against strong matched controls.",
+      "Each signature mechanism produces its predicted effect under matched ablation without explanation by easier tasks, extra resources, label leakage, shared evaluators, hidden human repair, denial, or denominator changes."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to exact workload, split, seed, model, specialist, prompt, tool, context, policy, threshold, evaluator, authority, rights regime, load, environment, horizon, metric, cost, and residual.",
+      "Separate semantic fit, eligibility, route choice, dispatch, answer quality, artifact truth, effect safety, evidence adequacy, support, readiness, and release.",
+      "Report non-answer coverage and substantive answer utility separately; unknown transfer, independence, enforcement, runtime replay, safety, or cost remains residual or blocked."
+    ],
+    "refutation_criteria": [
+      "Refute an invariant when a reachable ordinary or adversarial trace satisfies its premises and violates candidate preservation, authority intersection, freshness, outcome separation, matched resources, lifecycle invalidation, replay, or scope.",
+      "Refute a mechanism benefit when its matched ablation preserves the joint outcome, improves the frontier, or the observed effect is explained by resources, selection, leakage, shared evaluation, hidden repair, denial, or denominator changes.",
+      "Refute useful, safe, efficient, governable, transferable, or state-of-the-art routing language when a simpler comparator wins or substantive answers remain wrong despite better route selection."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only when a more precise capability-selection owner supersedes the atom and every live route, lease, receipt, qualification, dependency, artifact, effect, and residual migrates with preserved lineage."
+    ],
+    "promotion_ceiling": "argument_until_useful_natural_multi_model_causal_campaign_and_accepted_evidence_transition",
+    "reproduction": {
+      "command": "python3 scripts/validate_routing_decision_lease.py && python3 scripts/validate_readiness_residual_gates.py && python3 scripts/validate_post_v2_1_outcomes.py && python3 scripts/validate_post_v2_1_empirical_reconciliation.py && cd lean && lake build AsiStackProofs.Routing AsiStackProofs.MoECOTRuntime",
+      "environment_lock": "Repository artifacts and pinned post-v2.1 MLX model metadata current through 2026-07-14; natural multi-model campaign not yet frozen.",
+      "artifact_digest": null,
+      "evaluator_identity": "Current post-v2.1 criterion evaluator is internal and deterministic; independent evaluator required for promotion."
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "routing-heads-and-specialist-cores",
+      "next_unblocking_condition": "Preregister and execute the natural heterogeneous multi-model routing campaign with useful specialists, matched strong baselines, complete selective denominators, joint metrics, causal ablations, independent evaluation and implementation, production-like authority and load controls, runtime replay, and transfer."
+    },
+    "non_claims": [
+      "A schema, valid fixture, finite theorem, route-accuracy score, fallback activation, abstention, clarification, source crosswalk, or green command does not establish useful specialist intelligence, safe authority enforcement, production readiness, MoECOT behavior, or SOTA status.",
+      "The current strongest positive boundary is local route discrimination and selective non-answer coverage; all 360 substantive candidates in the ambiguous workload were wrong.",
+      "No support, readiness, release, AGI, or ASI state changes through this semantic review."
+    ]
+  },
+  "atom_reviews": {
+    "routing-heads-and-specialist-cores.core": {
+      "current_disposition": "retain_distinct_governed_capability_selection_owner_at_argument",
+      "strongest_counterclaim": "A strong generalist with tools, confidence routing, and human escalation matches the full specialist market at lower total governance cost.",
+      "falsifier": "Matched natural work shows no unique joint-frontier benefit, predicted causal signatures fail, or the router cannot preserve authority, outcome separation, and residuals.",
+      "acceptance_criteria": [
+        "Demonstrate natural useful routing, authority fidelity, calibration, complete cost, causality, independent reproduction, and heterogeneous transfer against strong matched baselines."
+      ]
+    },
+    "routing-heads-and-specialist-cores.minimum.001": {
+      "current_disposition": "retain_as_finite_and_bounded_negative_boundary_only",
+      "strongest_counterclaim": "The present schemas, fixtures, finite declarations, and synthetic programs test authored surfaces rather than a useful specialist system.",
+      "falsifier": "A validator accepts a rejecting mutation, recorded counts or outcomes drift, negative results disappear, or prose describes route discrimination as substantive specialist utility.",
+      "acceptance_criteria": [
+        "Keep exact fixture counts, twenty-declaration classification, both transition boundaries, zero-substantive-answer result, and all non-claims reproducible."
+      ]
+    },
+    "routing-heads-and-specialist-cores.beyond_sota.001": {
+      "current_disposition": "retain_as_falsifiable_argument_exit_program",
+      "strongest_counterclaim": "The proposed campaign is too broad and expensive to isolate a routing contribution, and strong generalist or cascade controls will dominate.",
+      "falsifier": "The campaign lacks natural adversarial workloads, matched strong baselines, joint metrics, predicted ablation signatures, independent evaluation and implementation, complete denominators, or transfer.",
+      "acceptance_criteria": [
+        "Preregister tasks, models, specialists, tools, authority, baselines, metrics, gates, ablations, evaluator independence, reproduction, and transfer before execution."
+      ]
+    }
+  },
+  "prose_candidate_dispositions": {
+    "routing-heads-and-specialist-cores.prose.e26eb6f1f2de": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "routing-heads-and-specialist-cores.prose.09a75454f796": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "routing-heads-and-specialist-cores.prose.2f75025d8a80": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.d2f3b7a7d282": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.187e8566c0a7": {
+      "state": "editorial_or_question",
+      "rationale": "Operational framing question, not a separately asserted proposition."
+    },
+    "routing-heads-and-specialist-cores.prose.19ed4109b83f": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "routing-heads-and-specialist-cores.mechanism.010",
+      "rationale": "The sentence restates the cited structured routing atom and adds no independent support or promotion."
+    },
+    "routing-heads-and-specialist-cores.prose.13b344066752": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "routing-heads-and-specialist-cores.mechanism.014",
+      "rationale": "The sentence restates the cited structured routing atom and adds no independent support or promotion."
+    },
+    "routing-heads-and-specialist-cores.prose.43c43f665cde": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.460bb601c022": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.46f0fdf46b1c": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "routing-heads-and-specialist-cores.mechanism.017",
+      "rationale": "The sentence restates the cited structured routing atom and adds no independent support or promotion."
+    },
+    "routing-heads-and-specialist-cores.prose.cc1baf3a11d2": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "routing-heads-and-specialist-cores.core",
+      "rationale": "The sentence restates the cited structured routing atom and adds no independent support or promotion."
+    },
+    "routing-heads-and-specialist-cores.prose.191144ac14ec": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "routing-heads-and-specialist-cores.prose.509c19c77854": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.a5c92246c8b1": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "routing-heads-and-specialist-cores.mechanism.010",
+      "rationale": "The sentence restates the cited structured routing atom and adds no independent support or promotion."
+    },
+    "routing-heads-and-specialist-cores.prose.d77df0d21456": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.bc3335b2a31d": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "routing-heads-and-specialist-cores.invariant.009",
+      "rationale": "The sentence restates the cited structured routing atom and adds no independent support or promotion."
+    },
+    "routing-heads-and-specialist-cores.prose.206dbe71c350": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.af37ac419b12": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.9981dd109231": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.1e9ced7d6561": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.4e921d663494": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.80db889e9731": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "routing-heads-and-specialist-cores.prose.35f03c26f8cd": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "routing-heads-and-specialist-cores.prose.e26c5c543cec": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "routing-heads-and-specialist-cores.prose.f5a614bd94b6": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "routing-heads-and-specialist-cores.prose.7d8aff9b1881": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "routing-heads-and-specialist-cores.prose.606680a31de8": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "routing-heads-and-specialist-cores.invariant.005",
+      "rationale": "The sentence restates the cited structured routing atom and adds no independent support or promotion."
+    },
+    "routing-heads-and-specialist-cores.prose.970a18885ae3": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "routing-heads-and-specialist-cores.invariant.011",
+      "rationale": "The sentence restates the cited structured routing atom and adds no independent support or promotion."
+    },
+    "routing-heads-and-specialist-cores.prose.c1983258d5ef": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "routing-heads-and-specialist-cores.invariant.014",
+      "rationale": "The sentence restates the cited structured routing atom and adds no independent support or promotion."
+    },
+    "routing-heads-and-specialist-cores.prose.98b05377a0d2": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "routing-heads-and-specialist-cores.invariant.008",
+      "rationale": "The sentence restates the cited structured routing atom and adds no independent support or promotion."
+    },
+    "routing-heads-and-specialist-cores.prose.30ec415996ef": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "routing-heads-and-specialist-cores.mechanism.017",
+      "rationale": "The sentence restates the cited structured routing atom and adds no independent support or promotion."
+    },
+    "routing-heads-and-specialist-cores.prose.57fb58e560f2": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.081e85ca214a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.8615549d3ca8": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.3c0c9a1c04d0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.bf104169d822": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.c299df830308": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.04e39ad1590c": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "routing-heads-and-specialist-cores.minimum.001",
+      "rationale": "The sentence restates the cited structured routing atom and adds no independent support or promotion."
+    },
+    "routing-heads-and-specialist-cores.prose.f0b6bd1013a9": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "routing-heads-and-specialist-cores.prose.6e480acee119": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "routing-heads-and-specialist-cores.beyond_sota.001",
+      "rationale": "The sentence restates the cited structured routing atom and adds no independent support or promotion."
+    },
+    "routing-heads-and-specialist-cores.prose.4875a8ee2115": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.ef691a7c689d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.69b2c1f1ed98": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "routing-heads-and-specialist-cores.invariant.012",
+      "rationale": "The sentence restates the cited structured routing atom and adds no independent support or promotion."
+    },
+    "routing-heads-and-specialist-cores.prose.7fb761222f2b": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "routing-heads-and-specialist-cores.beyond_sota.001",
+      "rationale": "The sentence restates the cited structured routing atom and adds no independent support or promotion."
+    },
+    "routing-heads-and-specialist-cores.prose.617b83158aeb": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "routing-heads-and-specialist-cores.beyond_sota.001",
+      "rationale": "The sentence restates the cited structured routing atom and adds no independent support or promotion."
+    },
+    "routing-heads-and-specialist-cores.prose.3d4137a074e3": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.e1aaf6897be1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.480f5f0ff56d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.0bf67ec340aa": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.6dae8fdb6a4b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.1cfe68027b65": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "routing-heads-and-specialist-cores.prose.87095f1a4608": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.0e6d257f4002": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "routing-heads-and-specialist-cores.prose.3ba46fc2a367": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "routing-heads-and-specialist-cores.prose.cf14401770f6": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "routing-heads-and-specialist-cores.prose.f94f22d111ba": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.68ce734d9794": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.a7885e9566ff": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "routing-heads-and-specialist-cores.prose.690f3547313f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    }
+  ,
+    "routing-heads-and-specialist-cores.prose.1e2dedfb4689": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Rewritten non-claim boundary already governed by the structured routing atoms and chapter defaults."
+    }
+  },
+  "prose_review_lineage": [
+  {
+    "retired_candidate_id": "routing-heads-and-specialist-cores.prose.5f11278ac4ec",
+    "retired_source": "chapters/routing-heads-and-specialist-cores.qmd:530",
+    "retired_sentence": "Neither surface proves routing accuracy, useful specialist answers,",
+    "preserved_disposition": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "retirement_reason": "The chapter proof surface was rewritten during the active refinement; this sentence is no longer current prose. Listed replacements preserve the nearest current semantic role, not textual identity.",
+    "replacement_candidate_ids": [
+      "routing-heads-and-specialist-cores.prose.1e2dedfb4689"
+    ],
+    "recorded_on": "2026-07-15"
+  },
+  {
+    "retired_candidate_id": "routing-heads-and-specialist-cores.prose.6a0b85cbae66",
+    "retired_source": "chapters/routing-heads-and-specialist-cores.qmd:350",
+    "retired_sentence": "These fields do not prove route quality or runtime behavior; they preserve the information future route-quality, replay, and runtime-evidence tests need.",
+    "preserved_disposition": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explanatory elaboration, example, transition, or line-wrapped fragment already governed by the structured routing atoms and chapter defaults."
+    },
+    "retirement_reason": "The sentence was rewritten to remove formulaic prose while preserving its bounded meaning; the old sentence hash is no longer current prose.",
+    "replacement_candidate_ids": [],
+    "recorded_on": "2026-07-15"
+  },
+  {
+    "retired_candidate_id": "routing-heads-and-specialist-cores.prose.dd9a73e68a96",
+    "retired_source": "chapters/routing-heads-and-specialist-cores.qmd:429",
+    "retired_sentence": "about the encoded finite records; they do not prove that a learned router finds",
+    "preserved_disposition": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, fixture, formal-surface, or empirical-result report with explicit scope and non-claims; it does not alter core support."
+    },
+    "retirement_reason": "The sentence was rewritten to remove formulaic prose while preserving its bounded meaning; the old sentence hash is no longer current prose.",
+    "replacement_candidate_ids": [],
+    "recorded_on": "2026-07-15"
+  }
+],
+  "non_claims": [
+    "This review adjudicates materiality, ownership, scope, and proof burden without promoting support.",
+    "No natural multi-model useful-routing campaign, production authority enforcement, trained-specialist interference study, independent evaluator, MoECOT replay, or transfer study was run by this sweep."
+  ]
+}

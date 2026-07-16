@@ -35,7 +35,7 @@ ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 BOOK_STRUCTURE = ROOT / "book_structure.json"
-LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "PersonalComputeHives.lean"
+LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "HiveLifecycleRefinement.lean"
 SOURCE_INVENTORY = ROOT / "sources" / "source_inventory.json"
 SOURCE_NOTE = ROOT / "sources" / "source_notes" / "ext_cap_theorem_gilbert_lynch_2002.md"
 STATUS = ROOT / "docs" / "test_harness_status_ledger.md"
@@ -45,7 +45,7 @@ COMMAND = "python3 scripts/validate_partitioned_authority_fixture.py"
 SOURCE_ID = "ext_cap_theorem_gilbert_lynch_2002"
 CODEX_TEST_NAME = "Partitioned authority fixture"
 LEAN_TAG = "lean:personal_hives.partitioned_authority.fixture_bridge"
-LEAN_THEOREM = "partitioned_authority_fixture_bridge"
+LEAN_THEOREM = "partitioned_stale_grant_quarantines_before_mutation"
 REQUIRED_NON_CLAIMS = [
     "does not prove deployed partition tolerance",
     "does not prove distributed consensus or availability",
@@ -215,7 +215,7 @@ def build_result(errors: list[str]) -> dict[str, Any]:
         "expected_invalid_controls": expected_invalid_controls,
         "trace_summary": summary,
         "lean_fixture_alignment": {
-            "module": "AsiStackProofs.PersonalComputeHives",
+            "module": "AsiStackProofs.HiveLifecycleRefinement",
             "theorem_refs": [LEAN_THEOREM],
             "expected": summary,
         },
@@ -336,8 +336,8 @@ def validate_surfaces(errors: list[str]) -> None:
         rel(LEAN_FILE): (
             LEAN_FILE,
             [
-                "PartitionedAuthorityFixtureSummary",
-                "partitionedAuthorityFixtureSummary",
+                "inductive Stage",
+                "def routeFor",
                 LEAN_THEOREM,
             ],
         ),
@@ -410,11 +410,11 @@ def validate_lean_shape(errors: list[str]) -> None:
     if not re.search(rf"theorem\s+{re.escape(LEAN_THEOREM)}\b", text):
         errors.append(f"{rel(LEAN_FILE)} missing theorem {LEAN_THEOREM}.")
     for field in (
-        "partitionRevocationQuarantined",
-        "healedPartitionRequiresFreshReceipt",
-        "staleGrantDispatchRejected",
-        "mutationWithoutNoMutationEvidenceRejected",
-        "deployedPartitionToleranceNotClaimed",
+        "partitionDetected",
+        "staleGrantPossible",
+        "deniedBeforeMutation",
+        "stateUnchanged",
+        "quarantinePartition",
     ):
         if field not in text:
             errors.append(f"{rel(LEAN_FILE)} missing partitioned-authority field {field}.")

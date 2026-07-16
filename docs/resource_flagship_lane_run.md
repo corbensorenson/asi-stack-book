@@ -35,14 +35,13 @@ budget-ledger fixtures, capacity-smoothing trace, local live replay probe,
 workload-quality probe, load-stability probe, CI cost profile,
 simulation-transfer boundary fixtures, and evidence-transition validation.
 
-## Aggregate Lean Alignment
+## Aggregate refinement alignment
 
-The result record now carries an aggregate Python/Lean flagship invariant. The
+The result record now carries an aggregate Python/refinement lifecycle boundary. The
 Python validator recomputes the aggregate from the current replay record,
 transition refs, no-promotion decisions, residual list, negative controls, and
-tracked artifact list. The Lean fixture
-`resourceFlagshipLaneAggregateFixture` mirrors the same finite counts and
-guards:
+tracked artifact list. The Python side owns the exact replay counts below; the
+Lean side owns the allocation-to-closure authority boundary:
 
 | Field | Value |
 |---|---:|
@@ -52,12 +51,13 @@ guards:
 | Sublane no-promotion decisions | 5 |
 
 The checked Lean theorems are
-`resource_flagship_lane_aggregate_fixture_valid`,
-`resource_flagship_lane_aggregate_preserves_no_core_promotion`, and
-`resource_flagship_lane_aggregate_carries_transition_accounting`.
+`missing_failure_retention_blocks_verification`,
+`raw_proxy_cannot_promote_executed_work`, and
+`complete_resource_lifecycle_reaches_closed_without_support_or_effect_authority`
+in `AsiStackProofs.ResourceEconomicsRefinement`.
 
-This aggregate bridge proves only finite-record agreement between the local
-Resource flagship replay and the modeled aggregate invariant. It does not
+This alignment checks finite-record accounting plus the stronger lifecycle
+boundary; it does not encode the replay counts as theorem assumptions. It does not
 prove deployed scheduler behavior, production workload behavior, economic
 optimality, model quality, external review, artifact approval, or Resource
 Economics chapter-core support-state promotion.
@@ -66,7 +66,7 @@ Economics chapter-core support-state promotion.
 
 The CI cost profile sublane now also carries a narrower Lean bridge:
 `finite CI failure-classification summary`. It points to
-`resourceCICostProfileFixture` in `AsiStackProofs.ResourceEconomics` and checks
+`completePacket` in `AsiStackProofs.ResourceEconomicsRefinement` and checks
 the recorded Pages-window accounting: 8 runs, 8 completed runs, 5 successes, 3
 classified deploy-service failures, 0 in-progress runs, a 131-second recovery
 boundary, publication-metadata-only scope, and no support-state or chapter-core

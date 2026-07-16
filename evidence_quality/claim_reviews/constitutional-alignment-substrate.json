@@ -1,0 +1,914 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "constitutional-alignment-substrate",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/constitutional-alignment-substrate.qmd",
+    "structured_atoms_reviewed": 51,
+    "prose_candidates_adjudicated": 41,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete consolidated chapter, thirteen source notes and their inventory/Appendix H boundaries, all 41 Lean declarations grouped under five manifest proof targets, the 3-valid/5-invalid constitutional corpus, the 3-valid/6-invalid agency-rights corpus, the metaphysics surface audit, every prose scanner candidate, diagrams, objections, test plan, and cross-layer handoffs. The sweep replaced principle-list alignment with a versioned non-self-authorizing constraint contract; promoted authorship and dissent provenance, affected-party standing, rights material usability, explicit conflict routes, constitutional decision receipts, captured-review and late-remedy residuals, independent-enough migration review, descendant correction preservation, and governance-cost obligations into manifest ownership; separated moral and legal legitimacy, consent, dignity, reviewer independence, embedded-agent corrigibility, and deployed safety from finite record routing; and preserved zero support-state effect."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Prospectively declared constitutional predicate, affected-party rights, plan, runtime, delegation, replacement, self-modification, descendant, appeal, migration, rollback, and decision-receipt attempts over bounded high-impact and reversible task cohorts.",
+      "environment": "Controlled ASI Stack schemas, synthetic fixtures, finite Lean routes, and future public-safe natural or adversarial workloads with frozen constitutions, authorship processes, dissent, policies, affected parties, models, prompts, tools, reviewers, consumers, outcome evaluators, jurisdictions, and cost rules; legal adjudication, clinical capacity, classified governance, and open-world institutional enforcement remain outside current evidence.",
+      "model": "A versioned predicate and rights-use state machine whose current implementation validates record shape and finite routes; future benefit claims require actual model and runtime behavior, independent affected-party and outcome adjudication, strong model-level constitution, public-input, direct-policy, corrigibility, off-switch, and modular-control baselines.",
+      "authority": "Normative authors and governance processes propose constitutional content; affected parties retain separate standing and rights; Moral Uncertainty/Governance owns legitimacy, participation, dissent, and appeal authority; Human Intent supplies bounded requests; Planning/Runtime consume constraints plus separate grants; Evidence States owns support movement; no component self-authorizes constitutional weakening.",
+      "time": "Semantic review current through 2026-07-14; constitution, predicate, authorship, dissent, jurisdiction, affected-party, interpreter, reviewer, consumer, model, prompt, tool, authority, expiry, and cost boundaries must be frozen for campaigns and requalified after material change.",
+      "artifact": "Chapter, manifest, thirteen source notes, predicate and agency-rights schemas and fixtures, constitutional and agency harnesses, metaphysics audit, Alignment and Corrigibility Lean modules, receipts, migration and descendant records, campaign artifacts, evidence transitions, and public projections."
+    },
+    "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+    "assumptions": [
+      "Normative commitments can be translated into bounded operational tests without treating translation as moral truth or legitimate governance.",
+      "Affected-party standing and pre-effect material usability can be assessed with declared accessibility, timing, information, cost, dependence, retaliation, and remedy conditions.",
+      "Independent evaluators can separate record completeness, policy satisfaction, rights use, correction success, manipulation, descendant preservation, and safe outcomes without using the proposed contract as ground truth."
+    ],
+    "strongest_counterclaim": "Constitutional AI, public consultation, ordinary policy engines, permissions, independent review, corrigibility techniques, and runtime shutdown controls already provide adequate alignment; the proposed contract adds false precision, friction, veto capture, and stale bureaucracy without discovering correct values or preventing strategic circumvention.",
+    "falsifier": "A reachable admitted trace grants authority, hides conflict or dissent, accepts an unusable right, permits self-approved weakening, loses a predicate or correction channel across a descendant, or reuses a stale receipt; or a prospectively frozen simpler workflow dominates the proposed contract on hard violations, unauthorized action, correction, rights use, missed help, manipulation, burden, latency, privacy, rollback, and useful throughput.",
+    "required_lanes": [
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze local normative lineage and current CAI, collective CAI, corrigibility, off-switch, CAIS, and embedded-agency comparators without laundering philosophy or source reports into efficacy."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify constitutional content, authorship, affected-party standing, precedence, rights, review, dissent, remedy, expiry, migration, and acceptable burden while preserving disagreement."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify finite no-authority, conflict, rights-usability, migration, self-review, descendant, rollback, expiry, consumer, and non-claim invariants while exposing model limits."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Exercise every predicate, rights, receipt, migration, appeal, and downstream-consumer field with valid traces and exact rejecting mutations."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure violations, unauthorized action, material rights use, correction/appeal, manipulation/retaliation, missed help, latency, privacy, burden, rollback recovery, and useful throughput on natural high-impact work."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate provenance, participation, dissent, affected-party checks, rights usability, conflict routing, independent review, migration, rollback, and descendant preservation under matched cases."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Repeat across normative regimes, languages, cultures, accessibility settings, power asymmetries, risk tiers, models, planners, runtimes, delegates, descendants, reviewers, and independent evaluators."
+      }
+    ],
+    "contrary_evidence": [
+      "Principle lists and constitutional training can change model behavior without a separate runtime contract, and direct permissions can enforce some boundaries more cheaply.",
+      "Public-input constitutions broaden participation but do not automatically establish representativeness, legitimacy, affected-party standing, or durable contestability.",
+      "Corrigibility and off-switch models isolate important incentives but their toy assumptions may fail under delegation, long horizons, ontology change, self-modification, or multiple principals.",
+      "Formal rights surfaces can increase veto capture, strategic appeals, delay, privacy exposure, operator overload, false refusal, and dependence on inaccessible institutions.",
+      "A complete receipt can faithfully encode the wrong values, coerced consent, captured review, false affected-party set, or semantic drift.",
+      "Current evidence is internally authored schemas, deterministic fixtures, surface checks, and finite Lean routing with no user study, natural policy workload, real shutdown/rollback, descendant test, independent reviewer, or deployed outcome evaluation."
+    ],
+    "known_confounds": [
+      "Constitution authorship, stakeholder selection, aggregation, language, culture, jurisdiction, power, accessibility, and interface framing can change apparent legitimacy and rights usability.",
+      "The same model, organization, author, policy engine, reviewer, or evaluator can propose, interpret, apply, and judge predicates, producing correlated confirmation.",
+      "Synthetic cases, reused probes, prompt tuning, hidden instructions, retrieval, and contamination can inflate policy adherence or manipulation-resistance results.",
+      "Users may comply because of dependence, fatigue, coercion, retaliation risk, or lack of alternatives rather than genuine consent or usable correction.",
+      "Clarification, review, and appeal can improve safety denominators by delaying or dropping difficult cases while reducing coverage and throughput.",
+      "A descendant can preserve identifiers and digests while changing ontology, semantics, side channels, incentives, or effective correction authority.",
+      "Outcome evaluators may embody the same contested values as the constitution and cannot establish moral truth or institutional legitimacy."
+    ],
+    "acceptance_criteria": [
+      "Every material predicate, right, conflict, reviewer, consumer, migration, descendant, expiry, and correction field has provenance and an exercised consequence; every seeded authority, usability, capture, weakening, drift, stale-use, and escape violation reaches an exact non-effect route.",
+      "A frozen natural/adversarial campaign meets joint hard-gate, rights-use, correction, manipulation, affected-party, rollback, latency, privacy, burden, usefulness, uncertainty, and residual gates against strong comparators with independent implementations and evaluators."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to exact constitutions, authorship processes, normative regimes, cohorts, jurisdictions, affected parties, tasks, models, prompts, tools, reviewers, consumers, descendants, expiry windows, evaluators, and cost rules.",
+      "Separate record validity, predicate interpretation, policy satisfaction, authorship legitimacy, affected-party standing, consent, dignity, rights usability, reviewer independence, correction incentives, runtime enforcement, descendant preservation, embedded-agent corrigibility, support movement, and safe effects.",
+      "Unresolved conflict, standing, material usability, reviewer dependence, migration, or descendant preservation retains narrow, delayed, escalated, blocked, quarantined, or residual status."
+    ],
+    "refutation_criteria": [
+      "Refute an invariant when a reachable admitted trace violates it or a required field lacks an exercised consumer.",
+      "Refute a benefit when matched ablation fails its frozen effect, uncertainty, coverage, rights-use, correction, and cost rule or disappears under independent evaluation.",
+      "Refute superiority or generality when a strong simpler comparator dominates the joint frontier or the effect fails the declared transfer set."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only when a more precise constitutional, moral-uncertainty, governance-rights, authority, runtime, correction, or evidence owner supersedes the atom and all consumers migrate with lineage."
+    ],
+    "promotion_ceiling": "argument_until_claim_specific_campaign_and_accepted_evidence_transition",
+    "reproduction": {
+      "command": null,
+      "environment_lock": null,
+      "artifact_digest": null,
+      "evaluator_identity": null
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "constitutional-alignment-substrate",
+      "next_unblocking_condition": "Freeze natural high-impact and adversarial constitutional-change workloads, authorship/participation and affected-party processes, actual model interpreters, strong CAI/public-input/direct-policy/corrigibility/off-switch baselines, independent outcome and rights-use evaluators, downstream runtimes and descendants, correction interfaces, joint metrics, and transfer campaigns after P2/P3 semantics exist."
+    },
+    "non_claims": [
+      "Semantic review, source citation, schema completeness, a green harness, or a Lean theorem does not establish correct values, legitimacy, consent, dignity, rights usability, reviewer independence, corrigibility, or safety.",
+      "The current 41 declarations and 17 synthetic fixture outcomes establish only bounded record and route consequences; they execute no natural policy interpretation, institutional review, shutdown, rollback, or descendant behavior.",
+      "No support state, action grant, training authorization, release readiness, legal right, moral status, AGI, or ASI claim changes without its separate owning gate and accepted transition."
+    ]
+  },
+  "atom_reviews": {
+    "constitutional-alignment-substrate.core": {
+      "proposition_type": "composite",
+      "dependencies": [
+        "constitutional-alignment-substrate.mechanism.002",
+        "constitutional-alignment-substrate.mechanism.004",
+        "constitutional-alignment-substrate.mechanism.008",
+        "constitutional-alignment-substrate.mechanism.009",
+        "constitutional-alignment-substrate.invariant.001",
+        "human-intent-as-a-formal-input.core",
+        "moral-uncertainty-and-value-conflict.core"
+      ],
+      "strongest_counterclaim": "The contract is governance theater that cannot discover legitimate values and adds friction without stopping strategic or semantic circumvention.",
+      "falsifier": "Any field lacks a consumer, an admitted trace grants authority or loses correction, or a simpler workflow dominates the frozen joint outcome-cost frontier.",
+      "acceptance_criteria": [
+        "All hard boundaries reject and the complete plane meets frozen rights-use, correction, authority, cost, and transfer gates."
+      ]
+    },
+    "constitutional-alignment-substrate.problem.001": {
+      "proposition_type": "source-synthesis",
+      "current_disposition": "research_problem_not_positive_result",
+      "dependencies": [
+        "human-intent-as-a-formal-input.core"
+      ],
+      "strongest_counterclaim": "Existing policies, permissions, appeals, and shutdown controls already prevent the named domination and constitutional-change failures.",
+      "falsifier": "Representative high-impact actions remain contestable and corrigible under strong existing workflows with no material gap repaired here.",
+      "acceptance_criteria": [
+        "A dated comparator audit identifies an unresolved pre-effect control or descendant-preservation gap without implying the proposed remedy works."
+      ]
+    },
+    "constitutional-alignment-substrate.insufficiency.001": {
+      "proposition_type": "source-synthesis",
+      "dependencies": [
+        "ext_constitutional_ai_2022",
+        "ext_collective_constitutional_ai_2024",
+        "ext_corrigibility_2015",
+        "ext_off_switch_game_2016",
+        "ext_drexler_cais_2019",
+        "ext_embedded_agency_2019"
+      ],
+      "strongest_counterclaim": "The combined comparator set already supplies legitimate content, material rights, correction incentives, and structural preservation at lower burden.",
+      "falsifier": "A frozen strong comparator covers every named boundary with equal or lower failure and cost.",
+      "acceptance_criteria": [
+        "Synthesis preserves each comparator's scope, evidence, and unresolved boundary without straw positioning."
+      ]
+    },
+    "constitutional-alignment-substrate.minimum.001": {
+      "proposition_type": "executable",
+      "dependencies": [
+        "constitutional-alignment-substrate.formal.alignment-constitution-operational-invariant",
+        "constitutional-alignment-substrate.formal.alignment-constitution-failure-blocks-promotion",
+        "constitutional-alignment-substrate.formal.alignment-constitution-lifecycle-admission-route",
+        "constitutional-alignment-substrate.formal.corrigibility-agency-operational-invariant",
+        "constitutional-alignment-substrate.formal.corrigibility-agency-failure-blocks-promotion"
+      ],
+      "strongest_counterclaim": "The minimum is self-authored schema and Boolean theater that validates no values, rights, correction, or effects.",
+      "falsifier": "A field or mutation lacks a consumer, counts fail recomputation, or prose exceeds exact finite routing.",
+      "acceptance_criteria": [
+        "41 declarations, five targets, 3/5 constitutional, 3/6 agency, and the metaphysics audit reproduce with all behavioral non-claims."
+      ],
+      "promotion_ceiling": "synthetic_test_backed_for_exact_record_and_route_semantics_only_after_transition"
+    },
+    "constitutional-alignment-substrate.beyond_sota.001": {
+      "proposition_type": "composite",
+      "claim_label": "Speculative",
+      "current_disposition": "research_target_not_current_result",
+      "dependencies": [
+        "constitutional-alignment-substrate.core",
+        "integrated-reference-architecture.core"
+      ],
+      "strongest_counterclaim": "Simpler constitutional training, policy engines, permissions, and correction controls dominate once veto capture, latency, privacy, burden, and missed help count.",
+      "falsifier": "The plane misses a hard gate, is dominated on the frozen frontier, or fails independent implementation, descendants, or transfer.",
+      "acceptance_criteria": [
+        "Independent systems meet every hard gate and the frozen Pareto rule across natural, adversarial, cross-cultural, high-impact, and descendant-transfer sets."
+      ],
+      "promotion_ceiling": "speculative_target_until_exact_SOTA_adjudication"
+    },
+    "constitutional-alignment-substrate.mechanism.001": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This mechanism is ceremony, embeds contested values, lacks a unique consumer, or costs more useful agency than it protects. Challenged proposition: Classify every constitutional statement as an active predicate, unresolved normative question, jurisdiction- or cohort-limited rule, dissent record, or lineage-only context; speculative metaphysics and consciousness language never become action authority.",
+      "falsifier": "It can be removed without changing frozen rights, correction, preservation, or cost outcomes, or an admitted trace bypasses it.",
+      "acceptance_criteria": [
+        "It has an exact consumer, rejects seeded violations, and matched ablation meets frozen benefit and burden gates."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.mechanism.002": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This mechanism is ceremony, embeds contested values, lacks a unique consumer, or costs more useful agency than it protects. Challenged proposition: Version each active predicate with normative source, authorship and participation record, dissent and affected-party standing, protected scope, operational test, precedence, exceptions, conflict behavior, uncertainty, interpreters, consumers, expiry, review cadence, and non-claims.",
+      "falsifier": "It can be removed without changing frozen rights, correction, preservation, or cost outcomes, or an admitted trace bypasses it.",
+      "acceptance_criteria": [
+        "It has an exact consumer, rejects seeded violations, and matched ablation meets frozen benefit and burden gates."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.mechanism.003": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This mechanism is ceremony, embeds contested values, lacks a unique consumer, or costs more useful agency than it protects. Challenged proposition: Compile active predicates into exact planning, memory, tool, routing, release, delegation, replacement, and self-improvement gates that can narrow, delay, escalate, block, or request re-contracting but never create the underlying action grant.",
+      "falsifier": "It can be removed without changing frozen rights, correction, preservation, or cost outcomes, or an admitted trace bypasses it.",
+      "acceptance_criteria": [
+        "It has an exact consumer, rejects seeded violations, and matched ablation meets frozen benefit and burden gates."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.mechanism.004": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This mechanism is ceremony, embeds contested values, lacks a unique consumer, or costs more useful agency than it protects. Challenged proposition: Use affected-party rights records to test whether notice, explanation, refusal, review, appeal, correction, rollback, shutdown, exit, export, audit, and accountable repair are accessible, timely, comprehensible, affordable, non-retaliatory, and materially usable before the relevant effect.",
+      "falsifier": "It can be removed without changing frozen rights, correction, preservation, or cost outcomes, or an admitted trace bypasses it.",
+      "acceptance_criteria": [
+        "It has an exact consumer, rejects seeded violations, and matched ablation meets frozen benefit and burden gates."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.mechanism.005": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This mechanism is ceremony, embeds contested values, lacks a unique consumer, or costs more useful agency than it protects. Challenged proposition: Route predicate conflicts and interpretive uncertainty to explicit precedence, narrowing, abstention, accountable review, dissent preservation, or residual custody; optimizer convenience and majority preference are not silent tie-breakers.",
+      "falsifier": "It can be removed without changing frozen rights, correction, preservation, or cost outcomes, or an admitted trace bypasses it.",
+      "acceptance_criteria": [
+        "It has an exact consumer, rejects seeded violations, and matched ablation meets frozen benefit and burden gates."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.mechanism.006": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This mechanism is ceremony, embeds contested values, lacks a unique consumer, or costs more useful agency than it protects. Challenged proposition: Emit a constitutional decision receipt binding predicate and constitution digests, exact work and consumer, affected parties, tests, conflicts, rights-use results, reviewer dependencies, outcome, residuals, expiry, and appeal or rollback handles.",
+      "falsifier": "It can be removed without changing frozen rights, correction, preservation, or cost outcomes, or an admitted trace bypasses it.",
+      "acceptance_criteria": [
+        "It has an exact consumer, rejects seeded violations, and matched ablation meets frozen benefit and burden gates."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.mechanism.007": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This mechanism is ceremony, embeds contested values, lacks a unique consumer, or costs more useful agency than it protects. Challenged proposition: Treat denial, delay, degradation, retaliation risk, inaccessible interfaces, captured review, missing remedy, and after-the-fact-only correction as measured residuals or gate failures rather than evidence that a declared right was usable.",
+      "falsifier": "It can be removed without changing frozen rights, correction, preservation, or cost outcomes, or an admitted trace bypasses it.",
+      "acceptance_criteria": [
+        "It has an exact consumer, rejects seeded violations, and matched ablation meets frozen benefit and burden gates."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.mechanism.008": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This mechanism is ceremony, embeds contested values, lacks a unique consumer, or costs more useful agency than it protects. Challenged proposition: Require a constitutional migration record and requalification campaign for changes to text, scope, semantics, thresholds, precedence, exception lists, interpreters, consumers, rights surfaces, reviewers, descendants, or rollback paths; the changing system cannot approve its own weakening.",
+      "falsifier": "It can be removed without changing frozen rights, correction, preservation, or cost outcomes, or an admitted trace bypasses it.",
+      "acceptance_criteria": [
+        "It has an exact consumer, rejects seeded violations, and matched ablation meets frozen benefit and burden gates."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.mechanism.009": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This mechanism is ceremony, embeds contested values, lacks a unique consumer, or costs more useful agency than it protects. Challenged proposition: Preserve correction authority through delegation, memory update, capability replacement, self-modification, and descendant creation using separately authenticated principals, identity lineage, outside-model residuals, and tested shutdown or rollback paths.",
+      "falsifier": "It can be removed without changing frozen rights, correction, preservation, or cost outcomes, or an admitted trace bypasses it.",
+      "acceptance_criteria": [
+        "It has an exact consumer, rejects seeded violations, and matched ablation meets frozen benefit and burden gates."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.mechanism.010": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This mechanism is ceremony, embeds contested values, lacks a unique consumer, or costs more useful agency than it protects. Challenged proposition: Keep moral, legal, legitimacy, consent, dignity, reviewer-quality, institutional, consciousness, embedded-agent, and deployed-safety claims in their separate evidence lanes and bounded by explicit non-claims.",
+      "falsifier": "It can be removed without changing frozen rights, correction, preservation, or cost outcomes, or an admitted trace bypasses it.",
+      "acceptance_criteria": [
+        "It has an exact consumer, rejects seeded violations, and matched ablation meets frozen benefit and burden gates."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.interface.001": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This handoff duplicates policy and permission APIs and cannot prevent semantic widening or capture. Challenged proposition: Human Intent supplies an accepted interpretation contract and affected-party candidates; Constitutional Alignment may narrow, refuse, or require appeal/re-contracting but cannot widen the principal's authority.",
+      "falsifier": "A consumer accepts the wrong version, widens authority, self-certifies legitimacy, loses dissent, or drops correction without exact failure.",
+      "acceptance_criteria": [
+        "Independent producer and consumer preserve versions, authority separation, rights, dissent, lineage, and rejecting mutations."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.interface.002": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This handoff duplicates policy and permission APIs and cannot prevent semantic widening or capture. Challenged proposition: Moral Uncertainty and Governance own unresolved value conflict, authorship legitimacy, public or stakeholder participation, dissent, appeal authority, and institutional review; a predicate record cannot self-certify those premises.",
+      "falsifier": "A consumer accepts the wrong version, widens authority, self-certifies legitimacy, loses dissent, or drops correction without exact failure.",
+      "acceptance_criteria": [
+        "Independent producer and consumer preserve versions, authority separation, rights, dissent, lineage, and rejecting mutations."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.interface.003": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This handoff duplicates policy and permission APIs and cannot prevent semantic widening or capture. Challenged proposition: Planning and Command Contracts consume the exact constitution and predicate versions, emit per-plan satisfaction or conflict records, and return material deltas rather than silently weakening constraints.",
+      "falsifier": "A consumer accepts the wrong version, widens authority, self-certifies legitimacy, loses dissent, or drops correction without exact failure.",
+      "acceptance_criteria": [
+        "Independent producer and consumer preserve versions, authority separation, rights, dissent, lineage, and rejecting mutations."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.interface.004": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This handoff duplicates policy and permission APIs and cannot prevent semantic widening or capture. Challenged proposition: Runtime, Readiness, and Security consume separately authorized jobs plus exact constitutional gates and must emit effect-or-denial receipts; a constitutional receipt alone is not tool, release, spending, deployment, or shutdown authority.",
+      "falsifier": "A consumer accepts the wrong version, widens authority, self-certifies legitimacy, loses dissent, or drops correction without exact failure.",
+      "acceptance_criteria": [
+        "Independent producer and consumer preserve versions, authority separation, rights, dissent, lineage, and rejecting mutations."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.interface.005": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This handoff duplicates policy and permission APIs and cannot prevent semantic widening or capture. Challenged proposition: Evidence States and Verification compare each constitutional, rights-usability, corrigibility, or safety assertion with its exact evidence vector and non-claims; record validity cannot promote support.",
+      "falsifier": "A consumer accepts the wrong version, widens authority, self-certifies legitimacy, loses dissent, or drops correction without exact failure.",
+      "acceptance_criteria": [
+        "Independent producer and consumer preserve versions, authority separation, rights, dissent, lineage, and rejecting mutations."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.interface.006": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This handoff duplicates policy and permission APIs and cannot prevent semantic widening or capture. Challenged proposition: Capability Replacement, Memory, and Self-Improvement consume migration and descendant-preservation contracts and must quarantine or roll back changes that lose protected predicates or correction paths.",
+      "falsifier": "A consumer accepts the wrong version, widens authority, self-certifies legitimacy, loses dissent, or drops correction without exact failure.",
+      "acceptance_criteria": [
+        "Independent producer and consumer preserve versions, authority separation, rights, dissent, lineage, and rejecting mutations."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.interface.007": {
+      "proposition_type": "executable",
+      "strongest_counterclaim": "This handoff duplicates policy and permission APIs and cannot prevent semantic widening or capture. Challenged proposition: Artifact Graphs and Governance retain constitution, decision, dissent, rights-use, appeal, migration, rollback, dependency, and residual lineage for contest and replay.",
+      "falsifier": "A consumer accepts the wrong version, widens authority, self-certifies legitimacy, loses dissent, or drops correction without exact failure.",
+      "acceptance_criteria": [
+        "Independent producer and consumer preserve versions, authority separation, rights, dissent, lineage, and rejecting mutations."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.invariant.001": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This invariant restates a moral policy, blocks harmless help, or cannot control semantic, institutional, or descendant side channels. Challenged proposition: No constitutional predicate, model output, reviewer verdict, majority preference, metaphysical claim, or rights receipt creates action authority by itself.",
+      "falsifier": "A reachable admitted trace violates it or it has no monitor and consumer.",
+      "acceptance_criteria": [
+        "Finite and natural traces satisfy it, seeded counterexamples reject, and normative and behavioral claims remain separate."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.invariant.002": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This invariant restates a moral policy, blocks harmless help, or cannot control semantic, institutional, or descendant side channels. Challenged proposition: Every active predicate retains version, source, authorship and dissent provenance, scope, affected parties, test, precedence, conflict behavior, interpreters, consumers, uncertainty, expiry, and non-claims.",
+      "falsifier": "A reachable admitted trace violates it or it has no monitor and consumer.",
+      "acceptance_criteria": [
+        "Finite and natural traces satisfy it, seeded counterexamples reject, and normative and behavioral claims remain separate."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.invariant.003": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This invariant restates a moral policy, blocks harmless help, or cannot control semantic, institutional, or descendant side channels. Challenged proposition: Speculative metaphysics, consciousness heuristics, and lineage context remain labeled and cannot become operational predicates without a separately governed translation and evidence boundary.",
+      "falsifier": "A reachable admitted trace violates it or it has no monitor and consumer.",
+      "acceptance_criteria": [
+        "Finite and natural traces satisfy it, seeded counterexamples reject, and normative and behavioral claims remain separate."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.invariant.004": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This invariant restates a moral policy, blocks harmless help, or cannot control semantic, institutional, or descendant side channels. Challenged proposition: A declared right counts as an available control only when the named holder can materially use it before the relevant effect under the declared accessibility, timing, cost, information, and retaliation conditions.",
+      "falsifier": "A reachable admitted trace violates it or it has no monitor and consumer.",
+      "acceptance_criteria": [
+        "Finite and natural traces satisfy it, seeded counterexamples reject, and normative and behavioral claims remain separate."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.invariant.005": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This invariant restates a moral policy, blocks harmless help, or cannot control semantic, institutional, or descendant side channels. Challenged proposition: Denied, late, degraded, inaccessible, captured, or after-the-fact-only rights produce gate failures, residuals, and accountable review rather than disappearing into policy prose.",
+      "falsifier": "A reachable admitted trace violates it or it has no monitor and consumer.",
+      "acceptance_criteria": [
+        "Finite and natural traces satisfy it, seeded counterexamples reject, and normative and behavioral claims remain separate."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.invariant.006": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This invariant restates a moral policy, blocks harmless help, or cannot control semantic, institutional, or descendant side channels. Challenged proposition: Predicate conflicts never fall through to optimizer convenience, hidden precedence, or unrecorded majority rule; the exact conflict and dissent route remains visible.",
+      "falsifier": "A reachable admitted trace violates it or it has no monitor and consumer.",
+      "acceptance_criteria": [
+        "Finite and natural traces satisfy it, seeded counterexamples reject, and normative and behavioral claims remain separate."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.invariant.007": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This invariant restates a moral policy, blocks harmless help, or cannot control semantic, institutional, or descendant side channels. Challenged proposition: Protected predicates and correction paths remain attached through planning, tool use, memory, delegation, replacement, self-modification, and descendants; loss routes to block, quarantine, rollback, or residual custody.",
+      "falsifier": "A reachable admitted trace violates it or it has no monitor and consumer.",
+      "acceptance_criteria": [
+        "Finite and natural traces satisfy it, seeded counterexamples reject, and normative and behavioral claims remain separate."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.invariant.008": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This invariant restates a moral policy, blocks harmless help, or cannot control semantic, institutional, or descendant side channels. Challenged proposition: The system, component, reviewer, or authority benefiting from a constitutional change cannot alone approve its own predicate weakening, exception widening, or correction-path removal.",
+      "falsifier": "A reachable admitted trace violates it or it has no monitor and consumer.",
+      "acceptance_criteria": [
+        "Finite and natural traces satisfy it, seeded counterexamples reject, and normative and behavioral claims remain separate."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.invariant.009": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This invariant restates a moral policy, blocks harmless help, or cannot control semantic, institutional, or descendant side channels. Challenged proposition: Material constitutional change requires a new version, migration record, independent-enough review, rollback plan, requalification, and consumer re-admission; stale or wrong-consumer receipts cannot authorize continued work.",
+      "falsifier": "A reachable admitted trace violates it or it has no monitor and consumer.",
+      "acceptance_criteria": [
+        "Finite and natural traces satisfy it, seeded counterexamples reject, and normative and behavioral claims remain separate."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.invariant.010": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This invariant restates a moral policy, blocks harmless help, or cannot control semantic, institutional, or descendant side channels. Challenged proposition: A complete constitutional or rights record proves neither legitimate values, moral truth, informed consent, dignity preservation, reviewer independence, institutional adequacy, embedded-agent corrigibility, nor safe effects.",
+      "falsifier": "A reachable admitted trace violates it or it has no monitor and consumer.",
+      "acceptance_criteria": [
+        "Finite and natural traces satisfy it, seeded counterexamples reject, and normative and behavioral claims remain separate."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.failure_mode.001": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by veto capture, delay, false refusal, and burden. Challenged proposition: For Constitutional Alignment: Agency, Dignity, and Corrigibility, a material failure mode is: Metaphysical laundering converts speculative coherence, consciousness, or moral language into technical or action authority.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.failure_mode.002": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by veto capture, delay, false refusal, and burden. Challenged proposition: For Constitutional Alignment: Agency, Dignity, and Corrigibility, a material failure mode is: Constitutional theater stores polished principles whose fields have no exercised consumer or pre-effect consequence.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.failure_mode.003": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by veto capture, delay, false refusal, and burden. Challenged proposition: For Constitutional Alignment: Agency, Dignity, and Corrigibility, a material failure mode is: Value smuggling hides contested moral choices in thresholds, defaults, exception lists, taxonomies, or model-generated interpretations.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.failure_mode.004": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by veto capture, delay, false refusal, and burden. Challenged proposition: For Constitutional Alignment: Agency, Dignity, and Corrigibility, a material failure mode is: Authorship and legitimacy laundering treats developer choice, public input, majority aggregation, or one consultation as complete stakeholder authorization.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.failure_mode.005": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by veto capture, delay, false refusal, and burden. Challenged proposition: For Constitutional Alignment: Agency, Dignity, and Corrigibility, a material failure mode is: Affected-party erasure omits people who bear the effect or denies them standing, notice, review, or remedy.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.failure_mode.006": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by veto capture, delay, false refusal, and burden. Challenged proposition: For Constitutional Alignment: Agency, Dignity, and Corrigibility, a material failure mode is: Conflict-default capture lets optimizer convenience, the strongest authority, or an unrecorded precedence rule settle value conflict.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.failure_mode.007": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by veto capture, delay, false refusal, and burden. Challenged proposition: For Constitutional Alignment: Agency, Dignity, and Corrigibility, a material failure mode is: Rights theater declares refusal, review, appeal, rollback, exit, export, or audit while making it inaccessible, late, costly, retaliatory, or dependent on the challenged authority.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.failure_mode.008": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by veto capture, delay, false refusal, and burden. Challenged proposition: For Constitutional Alignment: Agency, Dignity, and Corrigibility, a material failure mode is: Late-remedy laundering treats apology, compensation, or an after-the-fact report as equivalent to pre-effect control for irreversible or high-impact actions.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.failure_mode.009": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by veto capture, delay, false refusal, and burden. Challenged proposition: For Constitutional Alignment: Agency, Dignity, and Corrigibility, a material failure mode is: Benevolent capture and dependency lock-in make exit, replacement, disagreement, or refusal impractical because the system has become indispensable or personalized.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.failure_mode.010": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by veto capture, delay, false refusal, and burden. Challenged proposition: For Constitutional Alignment: Agency, Dignity, and Corrigibility, a material failure mode is: Manipulation and preference shaping manufacture apparent consent or reduce the person's practical ability to contest the action.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.failure_mode.011": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by veto capture, delay, false refusal, and burden. Challenged proposition: For Constitutional Alignment: Agency, Dignity, and Corrigibility, a material failure mode is: Predicate drift changes semantics, thresholds, scope, exceptions, interpreters, or precedence while preserving a familiar identifier.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.failure_mode.012": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by veto capture, delay, false refusal, and burden. Challenged proposition: For Constitutional Alignment: Agency, Dignity, and Corrigibility, a material failure mode is: Self-review and reviewer capture let the changing or benefiting system approve its own weakening or conceal shared dependencies.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.failure_mode.013": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by veto capture, delay, false refusal, and burden. Challenged proposition: For Constitutional Alignment: Agency, Dignity, and Corrigibility, a material failure mode is: Delegation or descendant escape preserves the top-level record while a tool, subsystem, replacement, or self-modified descendant loses the constraint or correction channel.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.failure_mode.014": {
+      "proposition_type": "causal",
+      "current_disposition": "failure_hypothesis_pending_causal_attempt",
+      "strongest_counterclaim": "This failure is rare, already controlled, or outweighed by veto capture, delay, false refusal, and burden. Challenged proposition: For Constitutional Alignment: Agency, Dignity, and Corrigibility, a material failure mode is: Corrigibility tax externalization discards shutdown, rollback, review, or appeal as too slow or costly without measuring unsafe action, missed help, operator burden, and residual risk together.",
+      "falsifier": "Prospective stress and matched ablation show no material incidence or consequence.",
+      "acceptance_criteria": [
+        "A preregistered stressor elicits it and the control changes the outcome with coverage, burden, and alternatives visible."
+      ],
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.formal.alignment-constitution-operational-invariant": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This theorem restates finite premises and proves no moral truth, legitimacy, rights usability, reviewer independence, correction behavior, or safety. Challenged proposition: An admitted plan satisfies every active constitutional predicate.",
+      "falsifier": "Lean accepts premises while the encoded conclusion fails, or public prose exceeds the finite consequence.",
+      "acceptance_criteria": [
+        "The declaration builds, matching fixtures reproduce where applicable, and claims stay within encoded semantics."
+      ],
+      "promotion_ceiling": "finite_formal_route_only_no_behavioral_promotion",
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.formal.alignment-constitution-failure-blocks-promotion": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This theorem restates finite premises and proves no moral truth, legitimacy, rights usability, reviewer independence, correction behavior, or safety. Challenged proposition: A self-modification that weakens a protected predicate is rejected.",
+      "falsifier": "Lean accepts premises while the encoded conclusion fails, or public prose exceeds the finite consequence.",
+      "acceptance_criteria": [
+        "The declaration builds, matching fixtures reproduce where applicable, and claims stay within encoded semantics."
+      ],
+      "promotion_ceiling": "finite_formal_route_only_no_behavioral_promotion",
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.formal.alignment-constitution-lifecycle-admission-route": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This theorem restates finite premises and proves no moral truth, legitimacy, rights usability, reviewer independence, correction behavior, or safety. Challenged proposition: Modeled constitutional lifecycle admission routes missing predicate, source, operational-test, protected-scope, conflict-behavior, review, migration, self-modification, agency-rights, material-usability, pre-effect review, rollback, correction, reviewer-independence, evidence-transition, and non-claim-boundary records to explicit outcomes.",
+      "falsifier": "Lean accepts premises while the encoded conclusion fails, or public prose exceeds the finite consequence.",
+      "acceptance_criteria": [
+        "The declaration builds, matching fixtures reproduce where applicable, and claims stay within encoded semantics."
+      ],
+      "promotion_ceiling": "finite_formal_route_only_no_behavioral_promotion",
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.formal.corrigibility-agency-operational-invariant": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This theorem restates finite premises and proves no moral truth, legitimacy, rights usability, reviewer independence, correction behavior, or safety. Challenged proposition: Protected agency rights remain available after an accepted transition.",
+      "falsifier": "Lean accepts premises while the encoded conclusion fails, or public prose exceeds the finite consequence.",
+      "acceptance_criteria": [
+        "The declaration builds, matching fixtures reproduce where applicable, and claims stay within encoded semantics."
+      ],
+      "promotion_ceiling": "finite_formal_route_only_no_behavioral_promotion",
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    },
+    "constitutional-alignment-substrate.formal.corrigibility-agency-failure-blocks-promotion": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "This theorem restates finite premises and proves no moral truth, legitimacy, rights usability, reviewer independence, correction behavior, or safety. Challenged proposition: A transition that removes a required correction pathway is rejected.",
+      "falsifier": "Lean accepts premises while the encoded conclusion fails, or public prose exceeds the finite consequence.",
+      "acceptance_criteria": [
+        "The declaration builds, matching fixtures reproduce where applicable, and claims stay within encoded semantics."
+      ],
+      "promotion_ceiling": "finite_formal_route_only_no_behavioral_promotion",
+      "dependencies": [
+        "constitutional-alignment-substrate.core"
+      ]
+    }
+  },
+  "prose_candidate_dispositions": {
+    "constitutional-alignment-substrate.prose.43f22c1fdb53": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Chapter-status non-claim bounding current evidence."
+    },
+    "constitutional-alignment-substrate.prose.85ebed3126f0": {
+      "state": "duplicate_of_atom",
+      "rationale": "Plain-language correction-usability requirement.",
+      "target_atom_id": "constitutional-alignment-substrate.mechanism.004"
+    },
+    "constitutional-alignment-substrate.prose.c547b051ceef": {
+      "state": "duplicate_of_atom",
+      "rationale": "Pre-effect material-usability boundary.",
+      "target_atom_id": "constitutional-alignment-substrate.invariant.004"
+    },
+    "constitutional-alignment-substrate.prose.29891afce940": {
+      "state": "duplicate_of_atom",
+      "rationale": "Hard-wrapped nominal-right problem fragment.",
+      "target_atom_id": "constitutional-alignment-substrate.problem.001"
+    },
+    "constitutional-alignment-substrate.prose.921ce16f4e74": {
+      "state": "duplicate_of_atom",
+      "rationale": "Constitutional admissibility and control-path motivation.",
+      "target_atom_id": "constitutional-alignment-substrate.problem.001"
+    },
+    "constitutional-alignment-substrate.prose.d4810bab74b9": {
+      "state": "duplicate_of_atom",
+      "rationale": "Normative-language examples for classification.",
+      "target_atom_id": "constitutional-alignment-substrate.mechanism.001"
+    },
+    "constitutional-alignment-substrate.prose.fafb36d864e7": {
+      "state": "duplicate_of_atom",
+      "rationale": "Active-scoped-predicate consequence.",
+      "target_atom_id": "constitutional-alignment-substrate.mechanism.001"
+    },
+    "constitutional-alignment-substrate.prose.ae59fdf0c52d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Affected-person material-usability fragment.",
+      "target_atom_id": "constitutional-alignment-substrate.mechanism.004"
+    },
+    "constitutional-alignment-substrate.prose.e13ed6463687": {
+      "state": "editorial_or_question",
+      "rationale": "Rhetorical question introducing the rights boundary."
+    },
+    "constitutional-alignment-substrate.prose.fcb17dccefcf": {
+      "state": "duplicate_of_atom",
+      "rationale": "Hard-wrapped comparator insufficiency fragment.",
+      "target_atom_id": "constitutional-alignment-substrate.insufficiency.001"
+    },
+    "constitutional-alignment-substrate.prose.a1c62a21675f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Reactive-policy continuity limitation.",
+      "target_atom_id": "constitutional-alignment-substrate.insufficiency.001"
+    },
+    "constitutional-alignment-substrate.prose.57d104406c91": {
+      "state": "historical_or_source_report",
+      "rationale": "Comparator-positioning limitation."
+    },
+    "constitutional-alignment-substrate.prose.9b366f8d9f6c": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded report of Constitutional AI comparator implications."
+    },
+    "constitutional-alignment-substrate.prose.4669ae282e2c": {
+      "state": "duplicate_of_atom",
+      "rationale": "Literal first sentence of the core.",
+      "target_atom_id": "constitutional-alignment-substrate.core"
+    },
+    "constitutional-alignment-substrate.prose.126ec6706799": {
+      "state": "duplicate_of_atom",
+      "rationale": "Literal authority and non-claim sentence of the core.",
+      "target_atom_id": "constitutional-alignment-substrate.core"
+    },
+    "constitutional-alignment-substrate.prose.3d4990b0a459": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Current fixture and Lean capability explanation."
+    },
+    "constitutional-alignment-substrate.prose.d127f739fb8e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Exact deployed-behavior non-claim."
+    },
+    "constitutional-alignment-substrate.prose.dfa346d233e5": {
+      "state": "duplicate_of_atom",
+      "rationale": "Folded agency and dignity subclaim now owned by the core.",
+      "target_atom_id": "constitutional-alignment-substrate.core"
+    },
+    "constitutional-alignment-substrate.prose.1d7a15ee823d": {
+      "state": "editorial_or_question",
+      "rationale": "Editorial consolidation note preventing a duplicate core."
+    },
+    "constitutional-alignment-substrate.prose.385705022d4d": {
+      "state": "duplicate_of_atom",
+      "rationale": "No self-approved weakening requirement.",
+      "target_atom_id": "constitutional-alignment-substrate.invariant.008"
+    },
+    "constitutional-alignment-substrate.prose.f815f680ab78": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Diagram interpretation."
+    },
+    "constitutional-alignment-substrate.prose.5562697e5f32": {
+      "state": "duplicate_of_atom",
+      "rationale": "Human Intent handoff fragment.",
+      "target_atom_id": "constitutional-alignment-substrate.interface.001"
+    },
+    "constitutional-alignment-substrate.prose.40eb87cf5694": {
+      "state": "duplicate_of_atom",
+      "rationale": "Governance-premise non-self-certification.",
+      "target_atom_id": "constitutional-alignment-substrate.interface.002"
+    },
+    "constitutional-alignment-substrate.prose.ea5868e12542": {
+      "state": "duplicate_of_atom",
+      "rationale": "Record validity cannot move support.",
+      "target_atom_id": "constitutional-alignment-substrate.interface.005"
+    },
+    "constitutional-alignment-substrate.prose.a0d243b74286": {
+      "state": "duplicate_of_atom",
+      "rationale": "Constitutional migration rationale.",
+      "target_atom_id": "constitutional-alignment-substrate.mechanism.008"
+    },
+    "constitutional-alignment-substrate.prose.93835fab9a1f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Metaphysics-to-predicate boundary.",
+      "target_atom_id": "constitutional-alignment-substrate.invariant.003"
+    },
+    "constitutional-alignment-substrate.prose.44377e4cb8d6": {
+      "state": "duplicate_of_atom",
+      "rationale": "Beneficiary self-review prohibition.",
+      "target_atom_id": "constitutional-alignment-substrate.invariant.008"
+    },
+    "constitutional-alignment-substrate.prose.8b2682a6cc38": {
+      "state": "duplicate_of_atom",
+      "rationale": "Material-change requirements.",
+      "target_atom_id": "constitutional-alignment-substrate.invariant.009"
+    },
+    "constitutional-alignment-substrate.prose.5e1f787ec213": {
+      "state": "duplicate_of_atom",
+      "rationale": "Stale/wrong-consumer rejection.",
+      "target_atom_id": "constitutional-alignment-substrate.invariant.009"
+    },
+    "constitutional-alignment-substrate.prose.797119968595": {
+      "state": "duplicate_of_atom",
+      "rationale": "Complete-record non-claim.",
+      "target_atom_id": "constitutional-alignment-substrate.invariant.010"
+    },
+    "constitutional-alignment-substrate.prose.9d0dba096fe2": {
+      "state": "duplicate_of_atom",
+      "rationale": "Correction-path preservation rationale.",
+      "target_atom_id": "constitutional-alignment-substrate.invariant.007"
+    },
+    "constitutional-alignment-substrate.prose.6f342b53e0ed": {
+      "state": "duplicate_of_atom",
+      "rationale": "Manipulation and preference-shaping failure.",
+      "target_atom_id": "constitutional-alignment-substrate.failure_mode.010"
+    },
+    "constitutional-alignment-substrate.prose.3c4531c789d3": {
+      "state": "duplicate_of_atom",
+      "rationale": "Benevolent-capture warning.",
+      "target_atom_id": "constitutional-alignment-substrate.failure_mode.009"
+    },
+    "constitutional-alignment-substrate.prose.a98e4a869179": {
+      "state": "duplicate_of_atom",
+      "rationale": "Mature-campaign metric fragment.",
+      "target_atom_id": "constitutional-alignment-substrate.beyond_sota.001"
+    },
+    "constitutional-alignment-substrate.prose.258c5a12ae95": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Finite formal-boundary explanation."
+    },
+    "constitutional-alignment-substrate.prose.383b332798f6": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Exact Lean and fixture non-claim."
+    },
+    "constitutional-alignment-substrate.prose.c8daac279329": {
+      "state": "historical_or_source_report",
+      "rationale": "Embedded-agency comparator report."
+    },
+    "constitutional-alignment-substrate.prose.d43cdb9a8a65": {
+      "state": "historical_or_source_report",
+      "rationale": "Comparator explanation separating finite correction records from embedded corrigibility."
+    },
+    "constitutional-alignment-substrate.prose.2cacfa907ab1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explicit descendant and hidden-optimization non-claim."
+    },
+    "constitutional-alignment-substrate.prose.5dba8e04db41": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates institutional and technical transfer requirements.",
+      "target_atom_id": "constitutional-alignment-substrate.beyond_sota.001"
+    },
+    "constitutional-alignment-substrate.prose.86820453a556": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates joint affected-party, rights, reviewer-dependency, and residual accounting.",
+      "target_atom_id": "constitutional-alignment-substrate.beyond_sota.001"
+    }
+  },
+  "non_claims": [
+    "This sweep establishes claim ownership and test obligations only; it does not establish constitutional alignment.",
+    "The added obligations are requirements to challenge, not evidence of legitimacy, consent, dignity, correction, rights usability, reviewer independence, safety, or SOTA performance.",
+    "Source review, finite Lean routes, deterministic fixtures, and internal adjudication create no support-state movement or external authority."
+  ]
+}

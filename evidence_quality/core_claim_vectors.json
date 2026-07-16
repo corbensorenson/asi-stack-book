@@ -4,37 +4,37 @@
   "snapshot_date": "2026-07-13",
   "scope": "All active chapter-core claims; vectors expose quality dimensions without changing the authoritative support summary.",
   "summary": {
-    "vector_count": 54,
+    "vector_count": 55,
     "dimension_count": 8,
     "summary_support_states": {
-      "argument": 54
+      "argument": 55
     },
     "dimension_state_counts": {
       "independence": {
-        "internal_only": 54
+        "internal_only": 55
       },
       "reproducibility": {
         "adjacent_local_replay": 33,
-        "not_demonstrated_for_claim": 21
+        "not_demonstrated_for_claim": 22
       },
       "recency": {
-        "repository_snapshot_current": 54
+        "repository_snapshot_current": 55
       },
       "coverage": {
-        "claim_scope_unmeasured": 54
+        "claim_scope_unmeasured": 55
       },
       "adversarial_strength": {
         "adjacent_bounded_controls": 33,
-        "not_demonstrated_for_claim": 21
+        "not_demonstrated_for_claim": 22
       },
       "validity": {
-        "not_independently_assessed": 54
+        "not_independently_assessed": 55
       },
       "artifact_access": {
-        "public_claim_records_partial_evidence": 54
+        "public_claim_records_partial_evidence": 55
       },
       "transfer_distance": {
-        "not_established": 54
+        "not_established": 55
       }
     },
     "numeric_aggregate_count": 0,
@@ -4034,6 +4034,123 @@
             "claim_decisions/v1_x_core_claim_dispositions.json",
             "claim_decisions/post_v2_1_empirical_dispositions.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json"
+          ],
+          "residuals": [
+            "External-context and deployed-context transfer remain unknown."
+          ]
+        }
+      },
+      "aggregation": {
+        "policy": "non_aggregating",
+        "scalar_score": "prohibited",
+        "automatic_support_state_derivation": "prohibited"
+      },
+      "support_state_effect": "none",
+      "non_claims": [
+        "This vector does not promote the chapter-core claim.",
+        "Current, public, or locally replayed records do not imply independent validity or transfer."
+      ]
+    },
+    {
+      "vector_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.core.quality.2026-07-13",
+      "claim_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.core",
+      "chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "chapter_file": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
+      "summary_support_state": "argument",
+      "summary_source": "claim_decisions/v1_x_core_claim_dispositions.json",
+      "dimensions": {
+        "independence": {
+          "state": "internal_only",
+          "rationale": "The book, mappings, checks, and disposition were produced inside the author/AI project; no accepted independent human review is recorded.",
+          "evidence_refs": [
+            "docs/external_review_status.md",
+            "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Shared project incentives and correlated review remain unresolved."
+          ]
+        },
+        "reproducibility": {
+          "state": "not_demonstrated_for_claim",
+          "rationale": "No accepted replay directly reproduces this chapter-core architectural claim.",
+          "evidence_refs": [
+            "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Direct independent reproduction of the claim-bounded result is absent."
+          ]
+        },
+        "recency": {
+          "state": "repository_snapshot_current",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-13 repository snapshot.",
+          "evidence_refs": [
+            "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Repository freshness does not establish empirical recency or protect against future drift."
+          ]
+        },
+        "coverage": {
+          "state": "claim_scope_unmeasured",
+          "rationale": "The recorded lane is Source-reviewed Cognitive Kernel ABI contract, architecture taxonomy, 15-atom claim addendum, and one planned formal target; current artifacts do not cover the broad chapter-core claim population.",
+          "evidence_refs": [
+            "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "The chapter has a source-reviewed architecture taxonomy, a typed Cognitive Kernel ABI design, explicit falsifiers, 15 reviewed claim atoms, and a planned proof and experiment program, but no ABI implementation, heterogeneous-kernel conformance run, architecture tournament, OneCell model, frozen-core ratchet, architectural-RSI lifecycle, reproduction, or transfer has been accepted as evidence for the broad claim."
+          ]
+        },
+        "adversarial_strength": {
+          "state": "not_demonstrated_for_claim",
+          "rationale": "No accepted adversarial program directly tests the chapter-core claim.",
+          "evidence_refs": [
+            "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Adaptive and independent claim-bounded red-team evidence is absent."
+          ]
+        },
+        "validity": {
+          "state": "not_independently_assessed",
+          "rationale": "Internal mappings and validators do not establish that available artifacts measure or prove the construct expressed by the core claim.",
+          "evidence_refs": [
+            "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Construct and criterion validity require independent, claim-specific assessment; QCSA's internal separation is not external independence."
+          ]
+        },
+        "artifact_access": {
+          "state": "public_claim_records_partial_evidence",
+          "rationale": "The chapter, Appendix C row, disposition, and public-safe references are accessible, while complete claim-bounded evidence is not available because it has not been produced.",
+          "evidence_refs": [
+            "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Public metadata and partial artifacts are not a complete reproducibility bundle."
+          ]
+        },
+        "transfer_distance": {
+          "state": "not_established",
+          "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
+          "evidence_refs": [
+            "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
           ],
           "residuals": [
             "External-context and deployed-context transfer remain unknown."

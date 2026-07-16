@@ -42,6 +42,7 @@ Ratcheting Modular Intelligence, or RMI, argues that AI systems should improve b
 - `recursive-self-improvement-boundaries` (Recursive Self-Improvement Boundaries)
 - `procedural-memory-and-cognitive-loop-closure` (Procedural Memory and Cognitive Loop Closure)
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
+- `replaceable-cognitive-substrates-beyond-transformer-monoculture` (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
 - `readiness-gates-residual-escrow-and-quarantine` (Readiness Gates, Residual Escrow, and Quarantine)
 - `personal-compute-hives-and-federated-edge-intelligence` (Personal Compute Hives and Federated Edge Intelligence)
 - `compact-generative-systems-and-residual-honesty` (Compact Generative Systems and Residual Honesty)

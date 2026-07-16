@@ -14,16 +14,6 @@ def GeneratedToolHasClosureArtifacts
       review.parametersPresent = true ∧
         review.verificationResultRecorded = true
 
-theorem generated_tool_records_source_traces_parameters_and_verification_result
-    {review : GeneratedToolRecordReview} :
-    GeneratedToolHasClosureArtifacts review ->
-    review.generatedTool = true ->
-    review.sourceTracesPresent = true ∧
-      review.parametersPresent = true ∧
-        review.verificationResultRecorded = true := by
-  intro valid generated
-  exact valid generated
-
 theorem generated_tool_missing_closure_artifact_rejected
     {review : GeneratedToolRecordReview} :
     review.generatedTool = true ->
@@ -55,14 +45,6 @@ def FailedRegressionBlocksRoutablePromotion
     (review : RegressionPromotionReview) : Prop :=
   review.regressionFailed = true ->
     review.routableStatusPromoted = false
-
-theorem tool_with_failed_regression_cannot_be_promoted_to_routable_status
-    {review : RegressionPromotionReview} :
-    FailedRegressionBlocksRoutablePromotion review ->
-    review.regressionFailed = true ->
-    review.routableStatusPromoted = false := by
-  intro valid failed
-  exact valid failed
 
 theorem failed_regression_with_routable_promotion_rejected
     {review : RegressionPromotionReview} :
@@ -429,21 +411,5 @@ theorem unverified_source_state_cannot_become_routable
     verificationPassed, regressionClean, floorPreserved, scfActive,
     noRetirement, monitoringPresent, residualsPresent, nonClaims,
     sourceNotVerified]
-
-theorem valid_routable_with_negative_examples_fixture_admitted :
-    ProcedureLifecycleRouteFor validRoutableWithNegativeExamplesReview =
-      ProcedureLifecycleRoute.admitTransition := by
-  simp [ProcedureLifecycleRouteFor, validRoutableWithNegativeExamplesReview,
-    ProcedureLifecycleState.canRequestRoutable]
-
-theorem valid_failed_regression_quarantined_fixture_admitted :
-    ProcedureLifecycleRouteFor validFailedRegressionQuarantinedReview =
-      ProcedureLifecycleRoute.admitTransition := by
-  simp [ProcedureLifecycleRouteFor, validFailedRegressionQuarantinedReview]
-
-theorem valid_retired_stale_precondition_fixture_admitted :
-    ProcedureLifecycleRouteFor validRetiredStalePreconditionReview =
-      ProcedureLifecycleRoute.admitTransition := by
-  simp [ProcedureLifecycleRouteFor, validRetiredStalePreconditionReview]
 
 end AsiStackProofs.ProceduralMemory

@@ -189,7 +189,12 @@ def reader_sections(text: str) -> dict[str, dict[str, str]]:
     for index, match in enumerate(matches):
         title = match.group(2).strip()
         start = match.end()
-        end = matches[index + 1].start() if index + 1 < len(matches) else len(stripped)
+        level = len(match.group(1))
+        end = len(stripped)
+        for following in matches[index + 1:]:
+            if len(following.group(1)) <= level:
+                end = following.start()
+                break
         sections.setdefault(
             normalize_heading(title),
             {

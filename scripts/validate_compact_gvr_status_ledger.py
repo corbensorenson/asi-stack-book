@@ -16,7 +16,7 @@ SUMMARY = ROOT / "docs" / "compact_gvr_slice.md"
 INPUT = ROOT / "experiments" / "compact_gvr_slice" / "input" / "v1_x_compact_gvr_records.json"
 RESULT = ROOT / "experiments" / "compact_gvr_slice" / "results" / "2026-07-01-local.json"
 TRANSITION = ROOT / "evidence_transitions" / "v1_x_measured" / "compact_gvr_slice_synthetic_test_backed.json"
-LEAN_FIXTURE = ROOT / "lean" / "AsiStackProofs" / "CompactGenerativeSystems.lean"
+LEAN_FIXTURE = ROOT / "lean" / "AsiStackProofs" / "CompactGenerationRefinement.lean"
 VALIDATOR = ROOT / "scripts" / "validate_compact_gvr_slice.py"
 
 EXPECTED_SELECTED = "receipt://repeat-generator-plus-repair"
@@ -27,11 +27,10 @@ EXPECTED_REJECTED = {
     "receipt://negative-rate-no-fallback",
 }
 REQUIRED_THEOREMS = (
-    "compact_gvr_fixture_selected_is_eligible",
-    "lossy_marked_exact_fixture_rejected",
-    "negative_rate_without_fallback_fixture_rejected",
-    "bounded_search_overrun_fixture_rejected",
-    "compact_gvr_fixture_selected_beats_literal_baseline",
+    "lossy_exactness_is_blocked_before_verification",
+    "reconstruction_mismatch_activates_preserved_source_fallback",
+    "reconstruction_mismatch_without_executable_fallback_is_blocked",
+    "fallback_lifecycle_reaches_closed_without_support_or_effect_authority",
 )
 REQUIRED_BOUNDARIES = (
     "does not promote any chapter core claim",
@@ -262,7 +261,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         "`docs/compact_gvr_status_ledger.md`; `docs/compact_gvr_slice.md`; "
         "`experiments/compact_gvr_slice/input/v1_x_compact_gvr_records.json`; "
         "`experiments/compact_gvr_slice/results/2026-07-01-local.json`; "
-        "`lean/AsiStackProofs/CompactGenerativeSystems.lean`; "
+        "`lean/AsiStackProofs/CompactGenerationRefinement.lean`; "
         "`evidence_transitions/v1_x_measured/compact_gvr_slice_synthetic_test_backed.json`; "
         "`python3 scripts/validate_compact_gvr_status_ledger.py`; "
         "`python3 scripts/validate_compact_gvr_slice.py` |"

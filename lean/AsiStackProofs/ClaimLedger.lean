@@ -98,22 +98,6 @@ def BeliefRevisionRecordValid (record : BeliefRevisionRecord) : Prop :=
                   record.promotionAccepted = false ∧
                     record.ledgerEffect = LedgerEffect.blocked)
 
-theorem valid_belief_revision_record_preserves_identity_history_and_boundary
-    {record : BeliefRevisionRecord} :
-    BeliefRevisionRecordValid record ->
-    record.claimIdentityPresent = true ∧
-      record.priorSupportStateRecorded = true ∧
-        record.newSupportStateRecorded = true ∧
-          record.revisionReasonPresent = true ∧
-            record.historyRefsPresent = true ∧
-              record.nonClaimBoundaryPresent = true := by
-  intro valid
-  exact And.intro valid.1
-    (And.intro valid.2.1
-      (And.intro valid.2.2.1
-        (And.intro valid.2.2.2.1
-          (And.intro valid.2.2.2.2.1 valid.2.2.2.2.2.1))))
-
 theorem accepted_belief_revision_promotion_requires_evidence_handled_contradiction_and_increase
     {record : BeliefRevisionRecord} :
     BeliefRevisionRecordValid record ->
@@ -238,111 +222,6 @@ def completeClaimLedgerRevisionReview : ClaimLedgerRevisionReview where
   residualRefsPresent := true
   nonClaimBoundaryPresent := true
 
-theorem revision_request_missing_claim_identity_rejected :
-    ClaimLedgerRevisionRouteFor
-        { completeClaimLedgerRevisionReview with
-          claimIdentityPresent := false } =
-      ClaimLedgerRevisionRoute.rejectMissingClaimIdentity := by
-  simp [ClaimLedgerRevisionRouteFor, completeClaimLedgerRevisionReview]
-
-theorem missing_support_state_record_requests_support_state_record :
-    ClaimLedgerRevisionRouteFor
-        { completeClaimLedgerRevisionReview with
-          newSupportStateRecorded := false } =
-      ClaimLedgerRevisionRoute.requestSupportStateRecord := by
-  simp [ClaimLedgerRevisionRouteFor, completeClaimLedgerRevisionReview]
-
-theorem promotion_without_evidence_transition_requests_evidence_transition :
-    ClaimLedgerRevisionRouteFor
-        { completeClaimLedgerRevisionReview with
-          promotionRequested := true
-          evidenceTransitionPresent := false
-          supportStateIncreased := true } =
-      ClaimLedgerRevisionRoute.requestEvidenceTransition := by
-  simp [ClaimLedgerRevisionRouteFor, completeClaimLedgerRevisionReview]
-
-theorem promotion_without_evidence_refs_requests_evidence_transition :
-    ClaimLedgerRevisionRouteFor
-        { completeClaimLedgerRevisionReview with
-          promotionRequested := true
-          evidenceRefsPresent := false
-          supportStateIncreased := true } =
-      ClaimLedgerRevisionRoute.requestEvidenceTransition := by
-  simp [ClaimLedgerRevisionRouteFor, completeClaimLedgerRevisionReview]
-
-theorem open_contradiction_promotion_is_blocked :
-    ClaimLedgerRevisionRouteFor
-        { completeClaimLedgerRevisionReview with
-          promotionRequested := true
-          supportStateIncreased := true
-          contradictionState := ContradictionState.open } =
-      ClaimLedgerRevisionRoute.blockOpenContradictionPromotion := by
-  simp [ClaimLedgerRevisionRouteFor, completeClaimLedgerRevisionReview]
-
-theorem open_contradiction_without_promotion_requests_handling :
-    ClaimLedgerRevisionRouteFor
-        { completeClaimLedgerRevisionReview with
-          contradictionState := ContradictionState.open } =
-      ClaimLedgerRevisionRoute.requestContradictionHandling := by
-  simp [ClaimLedgerRevisionRouteFor, completeClaimLedgerRevisionReview]
-
-theorem revision_without_history_refs_preserves_history :
-    ClaimLedgerRevisionRouteFor
-        { completeClaimLedgerRevisionReview with
-          historyRefsPresent := false } =
-      ClaimLedgerRevisionRoute.preserveRevisionHistory := by
-  simp [ClaimLedgerRevisionRouteFor, completeClaimLedgerRevisionReview]
-
-theorem revision_without_non_overwrite_attestation_preserves_attestation :
-    ClaimLedgerRevisionRouteFor
-        { completeClaimLedgerRevisionReview with
-          nonOverwriteAttestationPresent := false } =
-      ClaimLedgerRevisionRoute.preserveNonOverwriteAttestation := by
-  simp [ClaimLedgerRevisionRouteFor, completeClaimLedgerRevisionReview]
-
-theorem incomplete_surface_sync_requests_synchronization :
-    ClaimLedgerRevisionRouteFor
-        { completeClaimLedgerRevisionReview with
-          changedSurfaceRefsComplete := false } =
-      ClaimLedgerRevisionRoute.requestSurfaceSynchronization := by
-  simp [ClaimLedgerRevisionRouteFor, completeClaimLedgerRevisionReview]
-
-theorem split_without_child_history_preserves_split_history :
-    ClaimLedgerRevisionRouteFor
-        { completeClaimLedgerRevisionReview with
-          splitRequested := true
-          childClaimsCarryHistory := false } =
-      ClaimLedgerRevisionRoute.preserveSplitHistory := by
-  simp [ClaimLedgerRevisionRouteFor, completeClaimLedgerRevisionReview]
-
-theorem downgrade_without_reason_requests_downgrade_reason :
-    ClaimLedgerRevisionRouteFor
-        { completeClaimLedgerRevisionReview with
-          downgradeRequested := true
-          downgradeReasonPresent := false } =
-      ClaimLedgerRevisionRoute.requestDowngradeReason := by
-  simp [ClaimLedgerRevisionRouteFor, completeClaimLedgerRevisionReview]
-
-theorem required_residual_without_refs_requests_residual_record :
-    ClaimLedgerRevisionRouteFor
-        { completeClaimLedgerRevisionReview with
-          residualRequired := true
-          residualRefsPresent := false } =
-      ClaimLedgerRevisionRoute.requestResidualRecord := by
-  simp [ClaimLedgerRevisionRouteFor, completeClaimLedgerRevisionReview]
-
-theorem revision_without_non_claim_boundary_preserves_boundary :
-    ClaimLedgerRevisionRouteFor
-        { completeClaimLedgerRevisionReview with
-          nonClaimBoundaryPresent := false } =
-      ClaimLedgerRevisionRoute.preserveNonClaimBoundary := by
-  simp [ClaimLedgerRevisionRouteFor, completeClaimLedgerRevisionReview]
-
-theorem complete_claim_ledger_revision_accepts :
-    ClaimLedgerRevisionRouteFor completeClaimLedgerRevisionReview =
-      ClaimLedgerRevisionRoute.acceptLedgerRevision := by
-  simp [ClaimLedgerRevisionRouteFor, completeClaimLedgerRevisionReview]
-
 structure SemanticAssumptionFixtureSummary where
   semanticVariantMergePresent : Bool
   assumptionContextSplitPresent : Bool
@@ -362,18 +241,5 @@ def SemanticAssumptionFixtureSummaryValid
           summary.invalidUnsyncedVariantRejected = true ∧
             summary.supportStateEffectNone = true ∧
               summary.nonClaimBoundary = true
-
-theorem semantic_assumption_fixture_bridge
-    {summary : SemanticAssumptionFixtureSummary} :
-    SemanticAssumptionFixtureSummaryValid summary ->
-      summary.semanticVariantMergePresent = true ∧
-        summary.assumptionContextSplitPresent = true ∧
-          summary.invalidScopeMergeRejected = true ∧
-            summary.invalidAssumptionErasureRejected = true ∧
-              summary.invalidUnsyncedVariantRejected = true ∧
-                summary.supportStateEffectNone = true ∧
-                  summary.nonClaimBoundary = true := by
-  intro valid
-  exact valid
 
 end AsiStackProofs.ClaimLedger

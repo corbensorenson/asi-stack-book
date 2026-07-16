@@ -5,7 +5,7 @@
     "docs/theseus_support_replay_probe.md",
     "scripts/validate_theseus_report.py",
     "scripts/validate_theseus_generation_mode_import.py",
-    "lean/AsiStackProofs/FastGeneration.lean",
+    "lean/AsiStackProofs/FastGenerationRefinement.lean",
     "experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json",
     "experiments/theseus_import/results/2026-06-29-local.json",
     "experiments/theseus_generation_mode_import/fixtures/valid/generation_mode_gate_public_summary.valid.json",
@@ -25,11 +25,11 @@
   "pass": true,
   "probe_id": "theseus-support-replay-probe-2026-07-01-local",
   "record_kind": "theseus_support_replay_probe",
-  "recorded_at_utc": "2026-07-02T12:49:39Z",
+  "recorded_at_utc": "2026-07-15T22:44:27Z",
   "replay_commands": [
     {
       "command": "python3 scripts/validate_theseus_report.py",
-      "elapsed_ms": 30.367,
+      "elapsed_ms": 85.578,
       "evidence_surface": "public-safe static Project Theseus architecture-gate import",
       "exit_code": 0,
       "id": "theseus_architecture_gate_import",
@@ -40,7 +40,7 @@
     },
     {
       "command": "python3 scripts/validate_theseus_generation_mode_import.py",
-      "elapsed_ms": 32.576,
+      "elapsed_ms": 41.847,
       "evidence_surface": "public-safe static Project Theseus generation-mode import plus Fast Generation Lean bridge",
       "exit_code": 0,
       "id": "theseus_generation_mode_import",
@@ -60,10 +60,10 @@
       "sha256": "7a1360efbbcbe9bb28d441dc0a4210ab850aeb0ca1e78bbe137bc32b7b51f651"
     },
     {
-      "bytes": 6301,
-      "lines": 148,
+      "bytes": 6087,
+      "lines": 145,
       "path": "docs/theseus_generation_mode_import_slice.md",
-      "sha256": "2b668fec5047169aeefabb1ee9658c462b8d597edc42f84379668e4b0bb96381"
+      "sha256": "a9da2f9f3b65457c688d306629b78879870a089f943ea1f6dfb897551d91aeb2"
     },
     {
       "bytes": 3150,
@@ -78,16 +78,16 @@
       "sha256": "12d705c974de2589ed24c3cac723f0bf36e566e0df8732a079fd6d597dbd506d"
     },
     {
-      "bytes": 21679,
-      "lines": 492,
+      "bytes": 19016,
+      "lines": 436,
       "path": "scripts/validate_theseus_generation_mode_import.py",
-      "sha256": "e28194c24ba80561f092f7a6913ebc556ad86951d781fb0c314fc9ec58f349f3"
+      "sha256": "7692fc8c8e0bb2284b0c25f4f2484349e648255b488d28a79ce86c5ea5ba9f16"
     },
     {
-      "bytes": 25953,
-      "lines": 681,
-      "path": "lean/AsiStackProofs/FastGeneration.lean",
-      "sha256": "09baff821e03972eefb0d73c6db00187564c9cd5b02d61e837da418b91a865cb"
+      "bytes": 17415,
+      "lines": 359,
+      "path": "lean/AsiStackProofs/FastGenerationRefinement.lean",
+      "sha256": "720fbb7a468ef9c788b91de431bd9f12fa0733104f6c55877076b87821156321"
     },
     {
       "bytes": 7621,
@@ -108,10 +108,10 @@
       "sha256": "492041459a221bf207cf55c72495a8376f3cc40e934c47283489c15d5dfba1d8"
     },
     {
-      "bytes": 2579,
-      "lines": 53,
+      "bytes": 1979,
+      "lines": 35,
       "path": "experiments/theseus_generation_mode_import/results/2026-07-01-local.json",
-      "sha256": "4c522338e11948dc6ea2c1a07035495d65ba7e3254576d67272cf641f15ef171"
+      "sha256": "fed3452e068bf751b36e9d6f4a63af204bc3a58b2ca3eb98ef663a33cd468f59"
     }
   ]
 }

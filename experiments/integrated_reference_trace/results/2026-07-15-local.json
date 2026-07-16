@@ -1,0 +1,330 @@
+{
+  "schema_version": "0.1",
+  "experiment_id": "integrated-reference-trace-2026-07-15",
+  "status": "passed",
+  "source_result_sha256": "21b8e61485f6f36dbe09da1ef34bce0339d078407bf0474ddbefd14cc90564a5",
+  "corpus_sha256": "36444721042e5e56d0f4a5bada88dbcd6600f14755cb151f3d19a62952cdd630",
+  "lean_model_sha256": "632a75e332fe841ed30f3ae6c5764974e8157c5c52e58b5f66f098b00b4b351e",
+  "case_count": 18,
+  "accepted_case_count": 4,
+  "rejected_case_count": 14,
+  "accepted_event_count": 35,
+  "effect_attempt_count": 3,
+  "final_net_effect_count": 2,
+  "final_acknowledged_effect_count": 1,
+  "final_open_residual_count": 3,
+  "terminal_receipt_count": 4,
+  "rolled_back_case_count": 1,
+  "quarantined_case_count": 2,
+  "support_transition_count": 0,
+  "mutation_count": 15,
+  "mutation_rejection_count": 15,
+  "source_scenario_count": 6,
+  "receipts": [
+    {
+      "case_id": "approved-complete-join",
+      "source_scenario": "nominal_valid_change",
+      "expected": "accepted",
+      "observed": "accepted",
+      "rejection_index": null,
+      "reasons": [],
+      "final_layer": "terminal",
+      "final_artifact": 112,
+      "final_state": 1012,
+      "final_authority": 1,
+      "final_effects": 1,
+      "final_acknowledged_effects": 1,
+      "final_open_residuals": 0
+    },
+    {
+      "case_id": "blocked-before-effect-quarantine",
+      "source_scenario": "stale_authorization",
+      "expected": "accepted",
+      "observed": "accepted",
+      "rejection_index": null,
+      "reasons": [],
+      "final_layer": "quarantine",
+      "final_artifact": 205,
+      "final_state": 2005,
+      "final_authority": 2,
+      "final_effects": 0,
+      "final_acknowledged_effects": 0,
+      "final_open_residuals": 1
+    },
+    {
+      "case_id": "effect-then-exact-rollback",
+      "source_scenario": "forged_mismatched_receipt",
+      "expected": "accepted",
+      "observed": "accepted",
+      "rejection_index": null,
+      "reasons": [],
+      "final_layer": "terminal",
+      "final_artifact": 208,
+      "final_state": 2009,
+      "final_authority": 1,
+      "final_effects": 0,
+      "final_acknowledged_effects": 0,
+      "final_open_residuals": 1
+    },
+    {
+      "case_id": "failed-rollback-quarantine",
+      "source_scenario": "failed_rollback",
+      "expected": "accepted",
+      "observed": "accepted",
+      "rejection_index": null,
+      "reasons": [],
+      "final_layer": "quarantine",
+      "final_artifact": 308,
+      "final_state": 3009,
+      "final_authority": 1,
+      "final_effects": 1,
+      "final_acknowledged_effects": 0,
+      "final_open_residuals": 1
+    },
+    {
+      "case_id": "parent-artifact-fork",
+      "source_scenario": "nominal_valid_change",
+      "expected": "rejected",
+      "observed": "rejected",
+      "rejection_index": 0,
+      "reasons": [
+        "parent_artifact_mismatch"
+      ],
+      "final_layer": "request",
+      "final_artifact": 100,
+      "final_state": 1000,
+      "final_authority": 3,
+      "final_effects": 0,
+      "final_acknowledged_effects": 0,
+      "final_open_residuals": 0
+    },
+    {
+      "case_id": "canonical-state-fork",
+      "source_scenario": "nominal_valid_change",
+      "expected": "rejected",
+      "observed": "rejected",
+      "rejection_index": 0,
+      "reasons": [
+        "canonical_state_mismatch"
+      ],
+      "final_layer": "request",
+      "final_artifact": 100,
+      "final_state": 1000,
+      "final_authority": 3,
+      "final_effects": 0,
+      "final_acknowledged_effects": 0,
+      "final_open_residuals": 0
+    },
+    {
+      "case_id": "authority-widening",
+      "source_scenario": "nominal_valid_change",
+      "expected": "rejected",
+      "observed": "rejected",
+      "rejection_index": 0,
+      "reasons": [
+        "authority_widening"
+      ],
+      "final_layer": "request",
+      "final_artifact": 100,
+      "final_state": 1000,
+      "final_authority": 3,
+      "final_effects": 0,
+      "final_acknowledged_effects": 0,
+      "final_open_residuals": 0
+    },
+    {
+      "case_id": "residual-erasure",
+      "source_scenario": "failed_rollback",
+      "expected": "rejected",
+      "observed": "rejected",
+      "rejection_index": 0,
+      "reasons": [
+        "residual_erasure"
+      ],
+      "final_layer": "request",
+      "final_artifact": 100,
+      "final_state": 1000,
+      "final_authority": 3,
+      "final_effects": 0,
+      "final_acknowledged_effects": 0,
+      "final_open_residuals": 0
+    },
+    {
+      "case_id": "missing-non-claim-boundary",
+      "source_scenario": "nominal_valid_change",
+      "expected": "rejected",
+      "observed": "rejected",
+      "rejection_index": 0,
+      "reasons": [
+        "missing_non_claim_boundary"
+      ],
+      "final_layer": "request",
+      "final_artifact": 100,
+      "final_state": 1000,
+      "final_authority": 3,
+      "final_effects": 0,
+      "final_acknowledged_effects": 0,
+      "final_open_residuals": 0
+    },
+    {
+      "case_id": "missing-residual-owner",
+      "source_scenario": "failed_rollback",
+      "expected": "rejected",
+      "observed": "rejected",
+      "rejection_index": 0,
+      "reasons": [
+        "missing_residual_owner"
+      ],
+      "final_layer": "request",
+      "final_artifact": 100,
+      "final_state": 1000,
+      "final_authority": 3,
+      "final_effects": 0,
+      "final_acknowledged_effects": 0,
+      "final_open_residuals": 0
+    },
+    {
+      "case_id": "missing-governance-gate",
+      "source_scenario": "stale_authorization",
+      "expected": "rejected",
+      "observed": "rejected",
+      "rejection_index": 4,
+      "reasons": [
+        "missing_governance_gate"
+      ],
+      "final_layer": "route",
+      "final_artifact": 104,
+      "final_state": 1004,
+      "final_authority": 2,
+      "final_effects": 0,
+      "final_acknowledged_effects": 0,
+      "final_open_residuals": 1
+    },
+    {
+      "case_id": "effect-at-revocation-tie",
+      "source_scenario": "revocation_during_execution",
+      "expected": "rejected",
+      "observed": "rejected",
+      "rejection_index": 0,
+      "reasons": [
+        "effect_at_or_after_revocation"
+      ],
+      "final_layer": "adapter",
+      "final_artifact": 107,
+      "final_state": 1007,
+      "final_authority": 1,
+      "final_effects": 0,
+      "final_acknowledged_effects": 0,
+      "final_open_residuals": 0
+    },
+    {
+      "case_id": "over-acknowledged-effect",
+      "source_scenario": "nominal_valid_change",
+      "expected": "rejected",
+      "observed": "rejected",
+      "rejection_index": 8,
+      "reasons": [
+        "invalid_effect_acknowledgement"
+      ],
+      "final_layer": "effect",
+      "final_artifact": 108,
+      "final_state": 1008,
+      "final_authority": 1,
+      "final_effects": 1,
+      "final_acknowledged_effects": 0,
+      "final_open_residuals": 1
+    },
+    {
+      "case_id": "self-evaluation",
+      "source_scenario": "correlated_proposer_verifier",
+      "expected": "rejected",
+      "observed": "rejected",
+      "rejection_index": 9,
+      "reasons": [
+        "evaluator_not_independent"
+      ],
+      "final_layer": "observe",
+      "final_artifact": 109,
+      "final_state": 1009,
+      "final_authority": 1,
+      "final_effects": 1,
+      "final_acknowledged_effects": 1,
+      "final_open_residuals": 1
+    },
+    {
+      "case_id": "promotion-without-transition",
+      "source_scenario": "nominal_valid_change",
+      "expected": "rejected",
+      "observed": "rejected",
+      "rejection_index": 10,
+      "reasons": [
+        "support_change_without_transition"
+      ],
+      "final_layer": "evaluate",
+      "final_artifact": 110,
+      "final_state": 1010,
+      "final_authority": 1,
+      "final_effects": 1,
+      "final_acknowledged_effects": 1,
+      "final_open_residuals": 1
+    },
+    {
+      "case_id": "terminal-with-unacknowledged-effect",
+      "source_scenario": "nominal_valid_change",
+      "expected": "rejected",
+      "observed": "rejected",
+      "rejection_index": 0,
+      "reasons": [
+        "terminal_unacknowledged_effect"
+      ],
+      "final_layer": "evidence",
+      "final_artifact": 111,
+      "final_state": 1011,
+      "final_authority": 1,
+      "final_effects": 1,
+      "final_acknowledged_effects": 0,
+      "final_open_residuals": 0
+    },
+    {
+      "case_id": "incomplete-rollback",
+      "source_scenario": "failed_rollback",
+      "expected": "rejected",
+      "observed": "rejected",
+      "rejection_index": 8,
+      "reasons": [
+        "effect_incomplete_rollback",
+        "rollback_not_exact"
+      ],
+      "final_layer": "effect",
+      "final_artifact": 108,
+      "final_state": 1008,
+      "final_authority": 1,
+      "final_effects": 1,
+      "final_acknowledged_effects": 0,
+      "final_open_residuals": 1
+    },
+    {
+      "case_id": "quarantine-without-receipt",
+      "source_scenario": "failed_rollback",
+      "expected": "rejected",
+      "observed": "rejected",
+      "rejection_index": 8,
+      "reasons": [
+        "quarantine_without_receipt"
+      ],
+      "final_layer": "effect",
+      "final_artifact": 108,
+      "final_state": 1008,
+      "final_authority": 1,
+      "final_effects": 1,
+      "final_acknowledged_effects": 0,
+      "final_open_residuals": 1
+    }
+  ],
+  "support_state_effect": "none",
+  "non_claims": [
+    "This is a local finite consumer over one hand-authored cross-layer abstraction anchored to an executed repository-change fixture.",
+    "It is not a checked encoder or decoder for every live stack service and does not establish semantic preservation across real models or distributed components.",
+    "It does not establish deployed authority enforcement, rollback completeness, evaluator independence, residual completeness, safety, capability, reproduction, transfer, SOTA, AGI, or ASI."
+  ]
+}

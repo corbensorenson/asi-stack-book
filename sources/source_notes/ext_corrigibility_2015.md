@@ -37,6 +37,7 @@ This source belongs in the corrigibility chapter as the external reference for s
 ## Book Chapters Supported
 
 - `constitutional-alignment-substrate` (Constitutional Alignment: Agency, Dignity, and Corrigibility)
+- `moral-uncertainty-and-value-conflict` (Moral Uncertainty, Value Conflict, and Contestable Governance)
 - `governance-rights-fork-exit-and-audit` (Governance Rights, Fork, Exit, and Audit)
 - `recursive-self-improvement-boundaries` (Recursive Self-Improvement Boundaries)
 - `capability-replacement-and-rollback` (Capability Replacement and Rollback)

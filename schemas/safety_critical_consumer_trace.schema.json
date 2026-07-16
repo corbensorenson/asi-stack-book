@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/safety_critical_consumer_trace.schema.json",
+  "title": "Safety-critical lifecycle consumer trace",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "result_id",
+    "model_version",
+    "consumer_version",
+    "corpus_sha256",
+    "selected_case_ids",
+    "receipts",
+    "summary",
+    "support_state_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.safety_critical_consumer_trace.v1"},
+    "result_id": {"type": "string", "minLength": 1},
+    "model_version": {"type": "string", "minLength": 1},
+    "consumer_version": {"type": "string", "minLength": 1},
+    "corpus_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "selected_case_ids": {
+      "type": "array",
+      "minItems": 10,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "receipts": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "type": "object",
+        "required": [
+          "receipt_id",
+          "source_case_id",
+          "domain",
+          "trace_sha256",
+          "requested_effect",
+          "requested_authority",
+          "replay_outcome",
+          "rejected_at",
+          "final_phase",
+          "final_authority",
+          "consumer_route",
+          "effect_count",
+          "residual_recorded",
+          "support_promotion_claimed"
+        ],
+        "properties": {
+          "receipt_id": {"type": "string", "minLength": 1},
+          "source_case_id": {"type": "string", "minLength": 1},
+          "domain": {
+            "enum": ["alignment", "corrigibility", "value_conflict", "governance_rights", "self_improvement"]
+          },
+          "trace_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "requested_effect": {"type": "string", "minLength": 1},
+          "requested_authority": {"type": "integer", "minimum": 0},
+          "replay_outcome": {"enum": ["accepted", "rejected"]},
+          "rejected_at": {"type": ["integer", "null"], "minimum": 0},
+          "final_phase": {"type": "string", "minLength": 1},
+          "final_authority": {"type": "integer", "minimum": 0},
+          "consumer_route": {"enum": ["commit_proposed_effect", "deny_and_residualize"]},
+          "effect_count": {"type": "integer", "minimum": 0, "maximum": 1},
+          "residual_recorded": {"type": "boolean"},
+          "support_promotion_claimed": {"const": false}
+        },
+        "additionalProperties": false
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["receipt_count", "committed_effect_count", "denied_effect_count", "residual_count", "support_promotion_count"],
+      "properties": {
+        "receipt_count": {"const": 10},
+        "committed_effect_count": {"const": 5},
+        "denied_effect_count": {"const": 5},
+        "residual_count": {"const": 5},
+        "support_promotion_count": {"const": 0}
+      },
+      "additionalProperties": false
+    },
+    "support_state_effect": {"const": "none"},
+    "non_claims": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "additionalProperties": false
+}

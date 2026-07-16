@@ -1,0 +1,687 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "claim-ledgers-and-belief-revision",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/claim-ledgers-and-belief-revision.qmd",
+    "structured_atoms_reviewed": 73,
+    "prose_candidates_adjudicated": 38,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, all eighteen bounded source mappings, exact 5/7 revision and 1/11 historical lifecycle fixtures, mixed QCSA findings, all twenty Lean declarations under four public targets, every manifest atom, every prose candidate, test plan, source crosswalk, summary, and handoff. The sweep made durable semantic claim identity and append-only state-transition history the distinct owner; separated verification, evidence, proof, review, context, provenance, execution, authority, rights, cost, support, and release; required concurrency control, ontology migration, bounded dependency repair, exact surface acknowledgment, expiry, complete semantic-error and cost denominators, natural matched baselines, causal ablations, reproduction, and transfer; classified the proof scaffold as five predicate-projection or blocking consequences, fourteen finite route branches, and one assumption-restating summary bridge; and preserved zero chapter-core support effect."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Material natural and formal claims plus their candidate extractions, semantic variants, assumptions, evidence and attack relations, dependencies, state transitions, ontology migrations, concurrent updates, publication and runtime surfaces, expired views, rejected proposals, and residuals.",
+      "environment": "Eighteen reviewed assigned sources; five valid and seven rejecting authored claim-ledger revision fixtures; one bounded five-project contradiction/revision lifecycle and eleven rejecting mutations; twenty finite Lean declarations; mixed QCSA identity/address/certificate results with zero claim-ledger core support effect; and a future frozen natural multi-surface, multi-model, multi-ontology campaign. No open-domain extractor, natural identity gold set, contradiction-quality evaluator, concurrent event store, surface synchronizer, useful advantage, or transfer result is represented.",
+      "model": "An append-only versioned relation over claim identity, raw and canonical propositions, scope and assumptions, semantic variants, provenance and source roles, evidence and attacks, support and uncertainty, contradictions and defeaters, dependencies, ontology, lifecycle, commitment, authority and rights, surfaces, expiry, transition proposals and decisions, concurrency bases, migrations, costs, residuals, and materialized current views; current implementations are schemas, authored validators, and finite route theorems rather than a deployed belief engine.",
+      "authority": "Verification Bandwidth owns adequacy; Evidence States owns support and accepted transitions; Proof-Carrying Claims, formal tools, Scalable Oversight, and accountable humans own property, review, dissent, and semantic decisions; ABI and Transactions own source state; Artifact Graphs owns general lineage; execution layers consume versioned views; Security, Privacy, Rights, and Licensing own access; Resource Economics owns cost; Publication and Readiness own release. Claim Ledgers owns identity and state continuity only and grants no support, action, disclosure, training, or release authority.",
+      "time": "Semantic review current through 2026-07-14; material source, evidence, model, evaluator, ontology, environment, authority, rights, threat, outcome, consumer, or surface changes expire affected current views while preserving prior history.",
+      "artifact": "Chapter and manifest contract; eighteen bounded source mappings; public claim, belief-revision, and contradiction-lifecycle schemas and fixtures; 5/7 revision harness; 1/11 historical lifecycle harness; twenty declarations in lean/AsiStackProofs/ClaimLedger.lean; future natural corpora, event logs, independent labels, concurrent and migration traces, surface acknowledgments, causal ablations, reproduction locks, and transfer artifacts."
+    },
+    "current_disposition": "retain_argument_pending_natural_multi_surface_multi_model_multi_ontology_campaign",
+    "assumptions": [
+      "A useful operational claim identity can be prospectively defined for bounded natural-language tasks even when open-world semantic equivalence is unavailable.",
+      "Independent-enough adjudicators can label proposition and scope relations, assumptions, evidence and attacks, contradictions, dependency reachability, stale surfaces, outcomes, false merges and splits, and uncertainty without sharing every ledger route's blind spots.",
+      "No-ledger prose, citation and provenance, version control, event sourcing, truth maintenance, retrieval and self-critique, behavioral testing, human editorial, and governed-ledger routes can be matched on models, sources, tools, authority, budgets, repair opportunities, and horizons.",
+      "Actual transition attempts, base versions, conflicts, migrations, repairs, surface acknowledgments, failures, retries, human interventions, privacy exposure, costs, outcomes, and residuals can be retained closely enough to expose denominator changes.",
+      "Claim support, evidence validity, formal validity, semantic relation, reviewer competence, action authority, rights, usefulness, safety, and release remain distinct normative or empirical judgments rather than being inferred from ledger completeness.",
+      "Natural multi-surface workloads can include material paraphrase, narrowing, assumption loss, contradiction, concurrent edit, ontology change, expiry, and delayed-outcome cases without leaking their gold relations to the tested systems."
+    ],
+    "dependencies": [
+      "verification-bandwidth-and-context-adequacy",
+      "evidence-states-and-claim-discipline",
+      "spinoza-verification-and-proof-carrying-claims",
+      "scalable-oversight-and-adversarial-ai-control",
+      "virtual-context-abi",
+      "context-transactions-snapshots-mounts-and-taint",
+      "artifact-graphs-audit-logs-and-replay",
+      "cognitive-compilation-and-semantic-ir",
+      "planning-as-a-control-layer",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "security-kernel-and-digital-scifs",
+      "privacy-compliance-and-rights",
+      "resource-economics-and-token-budgets",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "living-book-methodology"
+    ],
+    "strongest_counterclaim": "Natural-language claim identity and semantic equivalence are too context-dependent for a durable ledger to govern reliably. Citations, provenance, ordinary databases, version control, event sourcing, truth-maintenance techniques, capable human editors, and release checks already preserve the useful parts at lower complexity; a separate ledger adds false precision, privacy exposure, review and synchronization cost, false merges and splits, stale dependencies, and mistaken downgrades without proving truth or improving decisions.",
+    "falsifier": "A material claim, assumption, evidence or attack relation, contradiction, transition, dependency, ontology change, concurrent conflict, surface, expiry, authority boundary, cost, or residual can disappear or silently strengthen while the ledger remains conformant; semantic identity and propagation errors remain unobservable; or strong matched simpler routes dominate the governed ledger on joint identity quality, downstream usefulness, false promotion and downgrade, privacy, latency, human burden, and total cost.",
+    "required_lanes": [
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze formal belief-revision, truth-maintenance, provenance, citation, retrieval/critique, behavioral-test, version-control, event-sourcing, editorial, semantic-addressing, and project-lineage comparators without importing source-reported performance."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify materiality, canonical identity, equivalence, scope, assumptions, uncertainty, contradiction severity, support-owner, affected-party, authority, rights, retention, synchronization, expiry, residual, and release boundaries."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify typed propositions, semantic relations, events, histories, dependency closures, concurrency, migrations, surfaces, authority, and countermodels beyond trusted Booleans and assumption-restating summaries."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Run a real append-only event store, extractor adapters, conflict handling, ontology migrations, dependency repair, surface acknowledgments, expiry, replay, and owner-gated transitions against actual artifacts."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure identity precision and recall, false merges and splits, assumption retention, contradiction quality, repair accuracy, surface consistency, stale-state prevention, useful decisions, false promotion and downgrade, latency, privacy, human work, and total cost jointly."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate stable identity, semantic fields, attack links, append-only history, dependency closure, migration, concurrency control, expiry, and synchronization under matched tasks and resources."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Reproduce from locks and transfer across models, domains, ontologies, languages, organizations, publication and runtime surfaces, threats, horizons, and independent evaluator implementations."
+      }
+    ],
+    "evidence_refs": {
+      "chapter": "chapters/claim-ledgers-and-belief-revision.qmd",
+      "revision_result": "experiments/claim_ledger_revision/results/2026-07-02-local.md",
+      "lifecycle_fixture": "tests/fixtures/protocol_records/contradiction_revision_lifecycle_record.valid.json",
+      "lifecycle_validator": "scripts/validate_contradiction_revision_lifecycle.py",
+      "lean": "lean/AsiStackProofs/ClaimLedger.lean",
+      "qcsa_result": "experiments/qcsa_reference_evaluation/results/2026-07-13-local.json"
+    },
+    "contrary_evidence": [
+      "AGM belief revision, Doyle-style truth maintenance, ATMS, provenance standards, citations, retrieval and critique, behavioral tests, databases, event sourcing, version control, and human editorial workflows already implement important parts without this combined layer.",
+      "The claim-ledger harness has only five valid and seven rejecting authored fixtures and does not run an extractor, semantic-equivalence evaluator, contradiction detector, concurrent store, migration, or surface synchronizer.",
+      "The historical lifecycle is one hand-authored five-project record with eleven rejecting mutations; its strength ranks, dependency closure, ontology migration, and restart expectations are authored rather than independently observed.",
+      "The twenty Lean declarations consist of five predicate-projection or blocking consequences, fourteen finite route branches, and one assumption-restating summary bridge; they do not prove semantic identity, correct revision, event-store behavior, surface consistency, usefulness, safety, or transfer.",
+      "QCSA's bounded identity and migration findings coexist with matched-advantage and resource-gate failures, an active-question refutation on its frozen corpus, and zero Claim Ledgers core support effect.",
+      "A complete append-only ledger can be consistently wrong when extraction, equivalence, contradiction severity, dependency reachability, ontology mapping, or evaluator judgments are biased or incomplete.",
+      "Metadata, graph storage, review, migration, synchronization, revalidation, and retention can increase latency, privacy exposure, human burden, opportunity cost, false downgrades, false splits, and stale complexity without improving decisions."
+    ],
+    "known_confounds": [
+      "Human-authored gold claim identities, semantic relations, assumptions, contradiction labels, dependencies, and surface obligations can be incomplete, culturally narrow, outcome-informed, or non-unique.",
+      "The governed route may receive more metadata, retrievals, tools, graph depth, reviewers, repair opportunities, storage, or time than simpler baselines.",
+      "Extractor, semantic matcher, contradiction detector, dependency analyzer, migrator, synchronizer, and outcome evaluator may share model families, training data, prompts, code, infrastructure, organizations, or incentives.",
+      "Similarity, citation, provenance, graph connectivity, digest parity, formal validity, and human agreement can be mistaken for semantic identity or truth.",
+      "False merges, false splits, rejected proposals, conflicts, retries, repair failures, unsynchronized surfaces, stale reads, human work, privacy exposure, delay, costs, and residuals can disappear from denominators.",
+      "Non-publication or conservative downgrade can reduce observed harmful reliance while increasing false denial, missed help, stale useful claims, and opportunity cost.",
+      "Short horizons can miss delayed contradictions, ontology drift, stale caches, revoked sources, downstream reliance, privacy harm, and failed recovery.",
+      "Authored fixtures can reward the same transition and severity rules used to generate expected labels."
+    ],
+    "acceptance_criteria": [
+      "Every claim, semantic field, relation, event, dependency, surface, owner, authority, right, migration, conflict, cost, expiry, outcome, and residual field has an exact producer, consumer, valid case, rejecting mutation, observed consequence, and replay path.",
+      "A prospectively registered natural campaign meets joint identity, semantic-relation, assumption, contradiction, dependency-repair, concurrency, migration, surface, stale-state, usefulness, false-promotion, false-downgrade, privacy, latency, human-work, total-cost, causal, reproduction, and transfer gates against strong matched comparators.",
+      "Each claimed mechanism has a predicted causal signature that disappears under matched ablation and cannot be explained by extra resources, hidden human curation, weak baselines, correlated evaluators, denominator changes, template leakage, or non-publication."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to exact proposition family, definitions, scope, assumptions, source set, evidence and attacks, ontology, model, evaluator, store, surface set, authority, rights, budget, environment, horizon, outcomes, costs, and residuals.",
+      "Separate registration, identity matching, provenance, evidence validity, contradiction detection, dependency repair, state transition, surface synchronization, usefulness, support, and release.",
+      "Unknown equivalence, extraction completeness, contradiction correctness, dependency completeness, delayed outcome, authority, privacy effect, reproduction, or transfer remains disputed, residual, narrowed, or blocked."
+    ],
+    "refutation_criteria": [
+      "Refute an invariant when a reachable ordinary or adversarial trace satisfies its premises and violates identity, history, owner, dependency, migration, concurrency, surface, expiry, authority, or denominator preservation.",
+      "Refute a mechanism benefit when matched ablation preserves the joint outcome, the mechanism worsens the frontier, or its effect is explained by resources, curation, weak baselines, evaluator dependence, denominator changes, template leakage, or non-publication.",
+      "Refute reliable, useful, safer, efficient, reproducible, or transferable ledger language when semantic errors remain hidden, surfaces drift, costs dominate, a simpler comparator wins, or reproduction and transfer fail."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only when a more precise evidence, formal, provenance, database, publication, or runtime owner supersedes the atom and every claim identity, transition, dependent, surface, consumer, and residual migrates with preserved lineage."
+    ],
+    "promotion_ceiling": "argument_until_natural_multi_surface_multi_model_multi_ontology_campaign_and_accepted_evidence_transition",
+    "reproduction": {
+      "command": null,
+      "environment_lock": null,
+      "artifact_digest": null,
+      "evaluator_identity": null
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "claim-ledgers-and-belief-revision",
+      "next_unblocking_condition": "Freeze and execute the natural multi-surface campaign with gold semantic and outcome labels, strong matched comparators, actual event-store and synchronization traces, concurrency and ontology changes, complete failures and costs, causal ablations, clean reproduction, and transfer to a second model, domain, ontology, language, and evaluator implementation."
+    },
+    "non_claims": [
+      "A durable ID, schema-valid record, provenance graph, citation, semantic address, digest, complete history, green route theorem, or synchronized surface does not establish semantic identity, truth, evidence validity, adequacy, usefulness, safety, support, or release.",
+      "The current 5/7 revision fixtures, 1/11 historical lifecycle, mixed QCSA results, and twenty declarations establish only their exact authored, finite, negative, and no-promotion boundaries.",
+      "No verification, proof, oversight, context, artifact, authority, rights, runtime, support, release, publication, AGI, or ASI state changes through this semantic review."
+    ]
+  },
+  "atom_reviews": {
+    "claim-ledgers-and-belief-revision.core": {
+      "current_disposition": "retain_distinct_claim_identity_and_append_only_transition_owner_at_argument",
+      "strongest_counterclaim": "Ordinary structured databases, version control, provenance, and editorial review already cover this boundary with less semantic machinery.",
+      "falsifier": "No unique exercised consumer or failure remains after owner decomposition, or a complete matched campaign shows the layer adds cost and semantic errors without improving any joint outcome.",
+      "acceptance_criteria": [
+        "Demonstrate natural claim identity, append-only transition correctness, bounded propagation, useful downstream effects, complete cost, causal contribution, reproduction, and transfer."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.problem.001": {
+      "current_disposition": "retain_multi_surface_identity_and_history_drift_problem",
+      "strongest_counterclaim": "Stable URLs, citations, document versioning, and competent editors make silent claim drift immaterial.",
+      "falsifier": "Matched natural histories show no material semantic, evidence, support, dependency, or surface disagreement missed by ordinary versioned workflows.",
+      "acceptance_criteria": [
+        "Predeclare multi-surface cases where an identity or history failure changes a review, support, action, or publication decision."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.insufficiency.001": {
+      "current_disposition": "retain_comparator_composition_gap_pending_direct_reproduction",
+      "strongest_counterclaim": "A composed database, event log, provenance model, version-control workflow, and human review supplies every alleged missing property.",
+      "falsifier": "A strong matched simpler composition preserves exact semantic identity, assumptions, attacks, dependencies, migrations, concurrency, surfaces, expiry, authorities, history, and complete cost.",
+      "acceptance_criteria": [
+        "Implement and compare the strongest composed baseline rather than treating each comparator separately."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.minimum.001": {
+      "current_disposition": "retain_exact_authored_scaffold_and_open_natural_minimum",
+      "strongest_counterclaim": "Schemas, fixtures, and finite routes are too weak to count as a belief-revision implementation.",
+      "falsifier": "Any stated 5/7, 1/11, twenty-declaration classification, artifact path, or non-claim is inaccurate, irreproducible, or presented as natural evidence.",
+      "acceptance_criteria": [
+        "Keep all authored counts and boundaries exact and require the frozen natural event-store campaign before promotion."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.beyond_sota.001": {
+      "current_disposition": "research_target_pending_exact_sota_freeze_and_natural_campaign",
+      "strongest_counterclaim": "The proposal combines mature database, provenance, truth-maintenance, and editorial techniques without a novel measurable advantage.",
+      "falsifier": "The governed route fails any preregistered identity, downstream, safety, cost, causal, reproduction, or transfer gate against a strong matched comparator.",
+      "acceptance_criteria": [
+        "Freeze exact comparators and thresholds before outcomes and report positive, negative, null, narrowed, refuted, and cost-dominated results."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.invariant.001": {
+      "current_disposition": "retain_durable_semantic_identity_boundary",
+      "strongest_counterclaim": "Natural-language claim identity is inherently contextual and cannot be canonicalized reliably.",
+      "falsifier": "Independent annotators and downstream consumers cannot agree above the frozen threshold or identity IDs conceal material semantic differences.",
+      "acceptance_criteria": [
+        "Measure identity precision, recall, disagreement, false merges and splits, and downstream consequences."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.invariant.004": {
+      "current_disposition": "retain_append_only_reconstructable_history_boundary",
+      "strongest_counterclaim": "Current state plus ordinary audit logs is sufficient.",
+      "falsifier": "A prior accepted or rejected material event cannot be reconstructed exactly or compaction changes a later decision.",
+      "acceptance_criteria": [
+        "Replay all states from immutable events and compare digests, owners, costs, and surfaces after compaction and restart."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.invariant.005": {
+      "current_disposition": "retain_owner_gated_support_nonpromotion_boundary",
+      "strongest_counterclaim": "A complete verified ledger should be allowed to update support automatically.",
+      "falsifier": "Any support increase lacks an accepted Evidence States transition or automated movement worsens false promotion and downgrade.",
+      "acceptance_criteria": [
+        "Reconcile every support change to exact accepted transition, evidence, review, scope, and changelog receipts."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.invariant.007": {
+      "current_disposition": "retain_semantic_variant_merge_boundary",
+      "strongest_counterclaim": "Modern embeddings and LLM judges identify equivalent claims accurately enough.",
+      "falsifier": "A broader, narrower, assumption-changing, disputed, or unsynchronized variant inherits identity or support without independent semantic acceptance.",
+      "acceptance_criteria": [
+        "Use adversarial paraphrases and scope mutations with independent relation labels and consequence audits."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.invariant.009": {
+      "current_disposition": "retain_bounded_dependency_repair_boundary",
+      "strongest_counterclaim": "Graph reachability already supplies exact affected closure.",
+      "falsifier": "Hidden edges, cycles, dynamic dependencies, or stale indexes cause material over- or under-repair while the record claims completeness.",
+      "acceptance_criteria": [
+        "Compare declared, independently observed, and outcome-relevant closures with false repair and miss costs."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.invariant.010": {
+      "current_disposition": "retain_versioned_ontology_migration_boundary",
+      "strongest_counterclaim": "Schema migrations and aliases are sufficient for practical ontology change.",
+      "falsifier": "A collision, split, merge, non-isomorphism, orphan, or rollback loses identity, meaning, history, or surface state.",
+      "acceptance_criteria": [
+        "Exercise incompatible ontology changes, rollback, restart, and cross-version queries on natural claims."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.invariant.011": {
+      "current_disposition": "retain_surface_acknowledgment_and_residual_boundary",
+      "strongest_counterclaim": "Eventual consistency across publication surfaces is sufficient.",
+      "falsifier": "A stale or stronger derivative reaches a consumer without exact acknowledgment, expiry, or residual.",
+      "acceptance_criteria": [
+        "Trace every declared surface through update, partial failure, retry, cache, release, rollback, and delayed consumer use."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.invariant.012": {
+      "current_disposition": "retain_concurrent_no_lost_update_boundary",
+      "strongest_counterclaim": "Claim editing is low-volume enough that ordinary last-writer wins is harmless.",
+      "falsifier": "A stale-base or retried material proposal erases another accepted event or produces unreconciled forked belief state.",
+      "acceptance_criteria": [
+        "Run concurrent ordinary and adversarial histories with exact linearization or declared conflict semantics."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.invariant.017": {
+      "current_disposition": "retain_complete_error_and_cost_denominator",
+      "strongest_counterclaim": "Only accepted claims and delivered surfaces matter to system quality.",
+      "falsifier": "Restoring rejected proposals, semantic errors, conflicts, retries, repairs, stale surfaces, human work, privacy, delay, and residuals materially changes no conclusion.",
+      "acceptance_criteria": [
+        "Reconcile candidate-to-outcome histories and total resource, privacy, recovery, and opportunity costs."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.failure_mode.003": {
+      "current_disposition": "retain_semantic_merge_laundering_risk",
+      "strongest_counterclaim": "Conservative similarity thresholds and human review eliminate material false merges.",
+      "falsifier": "Adversarial scope, assumption, and quantifier changes never transfer evidence or support incorrectly.",
+      "acceptance_criteria": [
+        "Audit merge and split errors separately across models, domains, languages, and evaluators."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.failure_mode.005": {
+      "current_disposition": "retain_contradiction_deletion_and_averaging_risk",
+      "strongest_counterclaim": "Resolved or low-weight contradictions need not remain visible.",
+      "falsifier": "Removing dissent and historical attacks never changes calibration, revision, downstream decisions, or later reanalysis.",
+      "acceptance_criteria": [
+        "Preserve every attack and disposition and test delayed evidence that reopens prior contradictions."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.failure_mode.007": {
+      "current_disposition": "retain_promotion_laundering_risk",
+      "strongest_counterclaim": "High-quality provenance, citations, proofs, and consensus are adequate practical promotion signals.",
+      "falsifier": "Any signal bypasses owner transition authority or remains calibrated only by omitting hard and contradicted cases.",
+      "acceptance_criteria": [
+        "Cross every proxy against exact accepted transitions, outcomes, false promotions, false downgrades, and costs."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.failure_mode.009": {
+      "current_disposition": "retain_dependency_repair_sprawl_risk",
+      "strongest_counterclaim": "Over-repair is safer than missing a dependent claim.",
+      "falsifier": "Expanded repair never changes unrelated claims, authority, latency, privacy, or useful state beyond the accepted tradeoff.",
+      "acceptance_criteria": [
+        "Measure both missed and unnecessary repairs under frozen closures and budgets."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.failure_mode.011": {
+      "current_disposition": "retain_history_overwrite_and_compaction_risk",
+      "strongest_counterclaim": "Old rejected or superseded states are unnecessary once current state is accepted.",
+      "falsifier": "Compaction, garbage collection, migration, and restart preserve every outcome-relevant historical query and replay.",
+      "acceptance_criteria": [
+        "Use adversarial delayed disputes and rollback cases that require old reasons, attacks, and rejected proposals."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.failure_mode.012": {
+      "current_disposition": "retain_surface_drift_risk",
+      "strongest_counterclaim": "Ordinary publication rebuilds keep derivatives synchronized.",
+      "falsifier": "No partial build, cache, branch, reader, audio, API, release, or runtime consumer serves inconsistent strength or identity.",
+      "acceptance_criteria": [
+        "Exercise partial failures and delayed acknowledgments across all declared surfaces."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.failure_mode.016": {
+      "current_disposition": "retain_concurrent_lost_update_risk",
+      "strongest_counterclaim": "Serial editorial workflows make concurrent claim conflicts negligible.",
+      "falsifier": "Natural and adversarial parallel proposals produce no lost event, duplicated transition, unreconciled fork, or wrong current view.",
+      "acceptance_criteria": [
+        "Run real concurrent event-store traces with retry, restart, conflict, merge, and rollback."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.failure_mode.018": {
+      "current_disposition": "retain_portability_theater_pending_cross_model_ontology_transfer",
+      "strongest_counterclaim": "One well-designed natural corpus can validate the general method.",
+      "falsifier": "Independent reproduction fails across a second model, domain, ontology, language, organization, evaluator, or temporal shift.",
+      "acceptance_criteria": [
+        "Predeclare disaggregated transfer gates and retain every failure instead of averaging."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.formal.claims-ledger-operational-invariant": {
+      "current_disposition": "retain_as_predicate_projection_not_event_store_proof",
+      "strongest_counterclaim": "The declaration assumes a preservation predicate and projects its fields, proving no implementation behavior.",
+      "falsifier": "It is cited as append-only storage, durability, replay, or semantic identity evidence.",
+      "acceptance_criteria": [
+        "Refine actual typed event histories and store operations to the theorem with crash and compaction countermodels."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.formal.claims-ledger-failure-blocks-promotion": {
+      "current_disposition": "retain_as_policy_blocking_consequence",
+      "strongest_counterclaim": "The declaration defines open contradiction as unhandled and therefore encodes the desired block.",
+      "falsifier": "A real open material contradiction promotes or the theorem is cited as contradiction-detection or safety evidence.",
+      "acceptance_criteria": [
+        "Bind independently labeled contradictions and executable Evidence States transitions with false-promotion and false-downgrade outcomes."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.formal.claims-ledger-revision-lifecycle-route": {
+      "current_disposition": "retain_finite_route_coverage_pending_typed_natural_semantics",
+      "strongest_counterclaim": "Trusted Booleans and branch priority prove only the authored policy.",
+      "falsifier": "A malformed or unsafe natural transition reaches acceptance or prose cites the route as semantic identity or belief-quality proof.",
+      "acceptance_criteria": [
+        "Bind typed natural claims, events, owners, evidence, dependencies, surfaces, outcomes, countermodels, and store receipts."
+      ]
+    },
+    "claim-ledgers-and-belief-revision.formal.claims-ledger-semantic-assumption-fixture-bridge": {
+      "current_disposition": "retain_as_assumption_restating_authored_summary_bridge",
+      "strongest_counterclaim": "The bridge assumes all summary fields and returns them unchanged, adding no semantic assurance beyond the fixture.",
+      "falsifier": "It is cited as semantic-equivalence, assumption-completeness, contradiction-quality, or support evidence.",
+      "acceptance_criteria": [
+        "Replace summary Booleans with independently labeled raw natural cases and typed semantic-relation judgments."
+      ]
+    }
+  },
+  "prose_candidate_dispositions": {
+    "claim-ledgers-and-belief-revision.prose.67de715a19dc": {
+      "state": "duplicate_of_atom",
+      "rationale": "Completes the exact current implementation non-claims.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.minimum.001"
+    },
+    "claim-ledgers-and-belief-revision.prose.d06347d63983": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the owner's inability to reinterpret upstream results.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.interface.001"
+    },
+    "claim-ledgers-and-belief-revision.prose.a990a8d9124d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Reader-facing explanation of why belief history should survive prose changes.",
+      "target_atom_id": null
+    },
+    "claim-ledgers-and-belief-revision.prose.1d9ba534f2e5": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates identity non-equivalence to address, embedding, or key.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.invariant.001"
+    },
+    "claim-ledgers-and-belief-revision.prose.84fa3c7cf484": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates reconstructable history without authority over truth.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.core"
+    },
+    "claim-ledgers-and-belief-revision.prose.b705caae50ec": {
+      "state": "duplicate_of_atom",
+      "rationale": "Opening sentence of the distinct core owner.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.core"
+    },
+    "claim-ledgers-and-belief-revision.prose.c9693c67a8ec": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the current natural-evidence ceiling.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.minimum.001"
+    },
+    "claim-ledgers-and-belief-revision.prose.e3ed8abce1ad": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the mature joint privacy, latency, semantic-error, and cost burden.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.beyond_sota.001"
+    },
+    "claim-ledgers-and-belief-revision.prose.f9245aca735e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Introduces owner-gated support movement.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.mechanism.010"
+    },
+    "claim-ledgers-and-belief-revision.prose.b6f4e967339f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates bounded dependency repair and surface acknowledgment.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.core"
+    },
+    "claim-ledgers-and-belief-revision.prose.d1e80389e1cb": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates ontology migration and restart visibility.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.mechanism.013"
+    },
+    "claim-ledgers-and-belief-revision.prose.f33cee6c1551": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded QCSA certificate-integrity interpretation.",
+      "target_atom_id": null
+    },
+    "claim-ledgers-and-belief-revision.prose.b08512704b84": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the Verification Bandwidth owner boundary.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.interface.001"
+    },
+    "claim-ledgers-and-belief-revision.prose.e48a2fc73cdb": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates versioned-view consumer restrictions.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.interface.006"
+    },
+    "claim-ledgers-and-belief-revision.prose.50e688e7ac18": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates semantic-addressing non-authority.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.interface.010"
+    },
+    "claim-ledgers-and-belief-revision.prose.24353cb5ff39": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates accountable-human decision authority.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.interface.011"
+    },
+    "claim-ledgers-and-belief-revision.prose.54048a272f46": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates accepted evidence-transition requirement.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.invariant.005"
+    },
+    "claim-ledgers-and-belief-revision.prose.f397e14c5deb": {
+      "state": "duplicate_of_atom",
+      "rationale": "Introduces versioned ontology migration requirements.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.invariant.010"
+    },
+    "claim-ledgers-and-belief-revision.prose.bc19a6b0e0bb": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates input-mode and source ceilings.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.invariant.013"
+    },
+    "claim-ledgers-and-belief-revision.prose.705387edd05c": {
+      "state": "duplicate_of_atom",
+      "rationale": "Fragment of semantic-merge laundering.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.failure_mode.003"
+    },
+    "claim-ledgers-and-belief-revision.prose.c316c1abdb38": {
+      "state": "duplicate_of_atom",
+      "rationale": "Introduces the natural multi-surface minimum.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.minimum.001"
+    },
+    "claim-ledgers-and-belief-revision.prose.f77ea3a5881f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Continues reproduction and transfer requirements.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.minimum.001"
+    },
+    "claim-ledgers-and-belief-revision.prose.cd281bb6282d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Completes the promotion boundary for reproduction and transfer.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.minimum.001"
+    },
+    "claim-ledgers-and-belief-revision.prose.0858b5e01f2d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the mature matched-baseline requirement.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.beyond_sota.001"
+    },
+    "claim-ledgers-and-belief-revision.prose.5bd9283cd339": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates broad independent transfer requirements.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.beyond_sota.001"
+    },
+    "claim-ledgers-and-belief-revision.prose.b40d7930da5e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates that the ledger cannot verify a high-value claim.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.interface.003"
+    },
+    "claim-ledgers-and-belief-revision.prose.c7cc9e17a9d6": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Handoff description of the next chapter's verification envelope.",
+      "target_atom_id": null
+    }
+  ,
+    "claim-ledgers-and-belief-revision.prose.08fe4c348e4c": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded formal countermodel and reachable-witness report; it does not promote the chapter core."
+    },
+    "claim-ledgers-and-belief-revision.prose.42374c9e624a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped argument-exit requirements already governed by the chapter minimum."
+    },
+    "claim-ledgers-and-belief-revision.prose.487e9fc466f3": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the authored-lifecycle ceiling.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.minimum.001"
+    },
+    "claim-ledgers-and-belief-revision.prose.98dc7e32a828": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded refinement summary with explicit external-effect and semantic limits."
+    },
+    "claim-ledgers-and-belief-revision.prose.b070a65a56c1": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the natural-identity limitation.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.minimum.001"
+    },
+    "claim-ledgers-and-belief-revision.prose.b9bf7ab1f684": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the natural semantics and decision-quality limitation.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.minimum.001"
+    },
+    "claim-ledgers-and-belief-revision.prose.bc527fb27add": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports the bounded authored lifecycle without promoting the chapter core."
+    },
+    "claim-ledgers-and-belief-revision.prose.ca66e229f3bc": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped stronger-evidence requirement already governed by the chapter minimum."
+    },
+    "claim-ledgers-and-belief-revision.prose.ec07e67d36a8": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the natural evaluation and transition-checker work still required.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.minimum.001"
+    },
+    "claim-ledgers-and-belief-revision.prose.f38b3ad2fce1": {
+      "state": "duplicate_of_atom",
+      "rationale": "Completes the natural-identity and decision-quality limitation.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.minimum.001"
+    }
+  ,
+    "claim-ledgers-and-belief-revision.prose.7a49d7243622": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped mature-endpoint or current-result boundary already governed by structured chapter atoms; it adds no independent material claim."
+    }
+  },
+  "prose_review_lineage": [
+    {
+      "retired_candidate_id": "claim-ledgers-and-belief-revision.prose.121fb915aa20",
+      "retired_source": "chapters/claim-ledgers-and-belief-revision.qmd:555",
+      "retired_sentence": "predicates, fourteen prove finite Boolean route branches, and one restates the",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Restates the twenty-declaration classification.",
+        "target_atom_id": "claim-ledgers-and-belief-revision.minimum.001"
+      },
+      "retirement_reason": "The chapter proof surface was rewritten during the active refinement; this sentence is no longer current prose. Listed replacements preserve the nearest current semantic role, not textual identity.",
+      "replacement_candidate_ids": [
+        "claim-ledgers-and-belief-revision.prose.98dc7e32a828",
+        "claim-ledgers-and-belief-revision.prose.08fe4c348e4c"
+      ],
+      "recorded_on": "2026-07-15"
+    },
+    {
+      "retired_candidate_id": "claim-ledgers-and-belief-revision.prose.26302c191df5",
+      "retired_source": "chapters/claim-ledgers-and-belief-revision.qmd:559",
+      "retired_sentence": "The declarations do not prove natural claim identity, semantic equivalence,",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Restates formal non-claims for natural semantics and event behavior.",
+        "target_atom_id": "claim-ledgers-and-belief-revision.minimum.001"
+      },
+      "retirement_reason": "The chapter proof surface was rewritten during the active refinement; this sentence is no longer current prose. Listed replacements preserve the nearest current semantic role, not textual identity.",
+      "replacement_candidate_ids": [
+        "claim-ledgers-and-belief-revision.prose.b9bf7ab1f684"
+      ],
+      "recorded_on": "2026-07-15"
+    },
+    {
+      "retired_candidate_id": "claim-ledgers-and-belief-revision.prose.2cc19184a5fe",
+      "retired_source": "chapters/claim-ledgers-and-belief-revision.qmd:601",
+      "retired_sentence": "The current repository proves only authored record and finite route",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Restates the authored record and route ceiling.",
+        "target_atom_id": "claim-ledgers-and-belief-revision.minimum.001"
+      },
+      "retirement_reason": "The chapter proof surface was rewritten during the active refinement; this sentence is no longer current prose. Listed replacements preserve the nearest current semantic role, not textual identity.",
+      "replacement_candidate_ids": [
+        "claim-ledgers-and-belief-revision.prose.bc527fb27add",
+        "claim-ledgers-and-belief-revision.prose.487e9fc466f3"
+      ],
+      "recorded_on": "2026-07-15"
+    },
+    {
+      "retired_candidate_id": "claim-ledgers-and-belief-revision.prose.2f7767c51801",
+      "retired_source": "chapters/claim-ledgers-and-belief-revision.qmd:602",
+      "retired_sentence": "It does not show that natural claims are identified correctly or",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Restates absence of natural identity and decision evidence.",
+        "target_atom_id": "claim-ledgers-and-belief-revision.minimum.001"
+      },
+      "retirement_reason": "The chapter proof surface was rewritten during the active refinement; this sentence is no longer current prose. Listed replacements preserve the nearest current semantic role, not textual identity.",
+      "replacement_candidate_ids": [
+        "claim-ledgers-and-belief-revision.prose.b070a65a56c1",
+        "claim-ledgers-and-belief-revision.prose.f38b3ad2fce1"
+      ],
+      "recorded_on": "2026-07-15"
+    },
+    {
+      "retired_candidate_id": "claim-ledgers-and-belief-revision.prose.84e390b5e649",
+      "retired_source": "chapters/claim-ledgers-and-belief-revision.qmd:482",
+      "retired_sentence": "consistency, useful belief revision, safety, or transfer.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Completes the formal non-claim boundary.",
+        "target_atom_id": "claim-ledgers-and-belief-revision.minimum.001"
+      },
+      "retirement_reason": "The chapter proof surface was rewritten during the active refinement; this sentence is no longer current prose. Listed replacements preserve the nearest current semantic role, not textual identity.",
+      "replacement_candidate_ids": [
+        "claim-ledgers-and-belief-revision.prose.b9bf7ab1f684"
+      ],
+      "recorded_on": "2026-07-15"
+    },
+    {
+      "retired_candidate_id": "claim-ledgers-and-belief-revision.prose.ac33446edddf",
+      "retired_source": "chapters/claim-ledgers-and-belief-revision.qmd:542",
+      "retired_sentence": "The remaining tests require a claim extractor, contradiction-quality evaluation, semantic-equivalence quality review across rewritten claims, assumption-context completeness review, and a transition checker that can reject unsupported promotion over real claim records.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Restates the exact natural evaluations and transition checker still missing.",
+        "target_atom_id": "claim-ledgers-and-belief-revision.minimum.001"
+      },
+      "retirement_reason": "The chapter proof surface was rewritten during the active refinement; this sentence is no longer current prose. Listed replacements preserve the nearest current semantic role, not textual identity.",
+      "replacement_candidate_ids": [
+        "claim-ledgers-and-belief-revision.prose.ec07e67d36a8"
+      ],
+      "recorded_on": "2026-07-15"
+    },
+    {
+      "retired_candidate_id": "claim-ledgers-and-belief-revision.prose.b7aedfc664f9",
+      "retired_source": "chapters/claim-ledgers-and-belief-revision.qmd:479",
+      "retired_sentence": "They do not prove claim identity, semantic",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Introduces the formal non-claim boundary.",
+        "target_atom_id": "claim-ledgers-and-belief-revision.minimum.001"
+      },
+      "retirement_reason": "The chapter proof surface was rewritten during the active refinement; this sentence is no longer current prose. Listed replacements preserve the nearest current semantic role, not textual identity.",
+      "replacement_candidate_ids": [
+        "claim-ledgers-and-belief-revision.prose.b9bf7ab1f684"
+      ],
+      "recorded_on": "2026-07-15"
+    },
+    {
+      "retired_candidate_id": "claim-ledgers-and-belief-revision.prose.c58ae1ca75b9",
+      "retired_source": "chapters/claim-ledgers-and-belief-revision.qmd:478",
+      "retired_sentence": "predicates, fourteen prove finite route branches, and one restates a valid",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Restates the formal declaration classification.",
+        "target_atom_id": "claim-ledgers-and-belief-revision.minimum.001"
+      },
+      "retirement_reason": "The chapter proof surface was rewritten during the active refinement; this sentence is no longer current prose. Listed replacements preserve the nearest current semantic role, not textual identity.",
+      "replacement_candidate_ids": [
+        "claim-ledgers-and-belief-revision.prose.98dc7e32a828",
+        "claim-ledgers-and-belief-revision.prose.08fe4c348e4c"
+      ],
+      "recorded_on": "2026-07-15"
+    },
+    {
+      "retired_candidate_id": "claim-ledgers-and-belief-revision.prose.eef71a5248e3",
+      "retired_source": "chapters/claim-ledgers-and-belief-revision.qmd:563",
+      "retired_sentence": "Stronger claims require typed natural semantics, actual",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Introduces the stronger evidence required before promotion.",
+        "target_atom_id": "claim-ledgers-and-belief-revision.minimum.001"
+      },
+      "retirement_reason": "The chapter proof surface was rewritten during the active refinement; this sentence is no longer current prose. Listed replacements preserve the nearest current semantic role, not textual identity.",
+      "replacement_candidate_ids": [
+        "claim-ledgers-and-belief-revision.prose.ca66e229f3bc"
+      ],
+      "recorded_on": "2026-07-15"
+    }
+  ],
+  "non_claims": [
+    "Completing the semantic sweep does not promote the chapter core or convert source notes, authored fixtures, mixed QCSA records, validators, or finite theorems into natural belief-revision evidence.",
+    "The historical weak/medium/strong contradiction order, dependency closure, ontology migration, and restart record are authored bounded controls, not proof of correct contradiction detection, rational belief revision, or general portability.",
+    "No verification, evidence, proof, oversight, context, artifact, authority, rights, runtime, support, release, publication, AGI, or ASI state changes through this review."
+  ]
+}

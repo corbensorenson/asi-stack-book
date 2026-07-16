@@ -10,14 +10,6 @@ def FormalTierHasJustificationArtifact
   review.formalSupportTier = true ->
     review.validJustificationArtifactRef = true
 
-theorem formal_support_tier_requires_valid_justification_artifact
-    {review : FormalTierClaimReview} :
-    FormalTierHasJustificationArtifact review ->
-    review.formalSupportTier = true ->
-    review.validJustificationArtifactRef = true := by
-  intro valid formalTier
-  exact valid formalTier
-
 structure FailedVerifierPromotionReview where
   verifierFailed : Bool
   claimDowngradedOrBlocked : Bool
@@ -29,15 +21,6 @@ def FailedVerifierBlocksPromotion
   review.verifierFailed = true ->
     review.claimDowngradedOrBlocked = true ∧
       review.claimPromoted = false
-
-theorem failed_verifier_result_downgrades_or_blocks_claim_promotion
-    {review : FailedVerifierPromotionReview} :
-    FailedVerifierBlocksPromotion review ->
-    review.verifierFailed = true ->
-    review.claimDowngradedOrBlocked = true ∧
-      review.claimPromoted = false := by
-  intro valid failed
-  exact valid failed
 
 inductive VerifierResult where
   | passed
@@ -98,26 +81,6 @@ def ProofCarryingClaimRecordValid
                     (NegativeVerifierResult record.verifierResult ->
                       NonPromotionalEffect record.claimValidityEffect)
 
-theorem valid_proof_carrying_claim_record_preserves_mapping_scope_limits_and_boundary
-    {record : ProofCarryingClaimRecord} :
-    ProofCarryingClaimRecordValid record ->
-    record.requestedTierPresent = true ∧
-      record.interpretationMappingPresent = true ∧
-        record.interpretationConfidenceRecorded = true ∧
-          record.justificationArtifactRefPresent = true ∧
-            record.formalScopeRecorded = true ∧
-              record.limitationsRecorded = true ∧
-                record.supportStateEffectRecorded = true ∧
-                  record.nonClaimsPresent = true := by
-  intro valid
-  exact And.intro valid.1
-    (And.intro valid.2.1
-      (And.intro valid.2.2.1
-        (And.intro valid.2.2.2.1
-          (And.intro valid.2.2.2.2.1
-            (And.intro valid.2.2.2.2.2.1
-              (And.intro valid.2.2.2.2.2.2.1 valid.2.2.2.2.2.2.2.1))))))
-
 theorem passed_verifier_result_requires_verifier_artifact_reference
     {record : ProofCarryingClaimRecord} :
     ProofCarryingClaimRecordValid record ->
@@ -173,17 +136,5 @@ def AdversarialReviewDossierProbeSummaryValid
     summary.llmJudgeOnlyRejected = true ∧
     summary.supportStateEffectNone = true ∧
     summary.nonClaimBoundary = true
-
-theorem adversarial_review_dossier_probe_bridge
-    {summary : AdversarialReviewDossierProbeSummary} :
-    AdversarialReviewDossierProbeSummaryValid summary ->
-      summary.scopedAcceptDossierPresent = true ∧
-        summary.mismatchRejectionDossierPresent = true ∧
-        summary.negativeControlsRejected = true ∧
-        summary.llmJudgeOnlyRejected = true ∧
-        summary.supportStateEffectNone = true ∧
-        summary.nonClaimBoundary = true := by
-  intro valid
-  exact valid
 
 end AsiStackProofs.ProofCarryingClaims

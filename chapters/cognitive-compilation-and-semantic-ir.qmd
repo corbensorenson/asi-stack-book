@@ -3,8 +3,8 @@ title: "Cognitive Compilation and Semantic IR"
 chapter_id: "cognitive-compilation-and-semantic-ir"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-10"
+draft_maturity: "v0.3 semantically reviewed proof-contract draft"
+last_updated: "2026-07-14"
 primary_sources:
   - "cognitive_compilation"
   - "planforge_compiler_arch"
@@ -14,13 +14,21 @@ primary_sources:
   - "cca_project"
   - "moecot_manifest_project"
   - "corbens_best_model_possible_project"
+  - "qcsa_whitepaper"
+  - "ext_pddl_1998"
+  - "ext_shop2_2003"
+  - "ext_tree_of_thoughts_2023"
+  - "ext_dreamcoder_2020"
+  - "ext_llvm_langref_docs"
+  - "ext_mlir_2020"
+  - "ext_translation_validation_1998"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "All five assigned local raw-cache mappings are passage-reviewed; support remains argument until compiler traces, target lowering, localized repair, or artifact validators exist."
-  - "Source-noted external comparators now ground program synthesis, compiler IR, multi-level IR, and translation-validation vocabulary; no LLVM/MLIR toolchain, compiler pass, semantic lowering trace, translation validator, source-target proof, or program-synthesis run was executed from this repository."
-  - "Protocol schema/fixture validation, synthetic requirement-preservation fixtures, a synthetic cognitive-compilation trace harness, the three-project semantic contract-preservation harness, and finite Lean route predicates are implemented. The new harness checks authority-bearing IR, ambiguity and field lineage, pass/failure retention, semantic obligations, observed repair blast radius, and nine negative cases, but it is hand-authored. No source-plan parser, compiler backend, generated target-artifact validator, repair-locality benchmark, or behavioral comparison has been run for this chapter."
-  - "No support-state promotion is implied by this drafting pass."
+  - "All sixteen assigned sources are reviewed at their available boundary: five local raw caches, three pinned-project notes, the QCSA paper and bounded local program, and seven external comparators. Source mapping does not establish local reproduction, semantic preservation, or novelty."
+  - "The current scaffold contains two valid and four rejecting compilation traces, one blocked semantic-preservation record with nine rejecting mutations, and 24 live Lean declarations across the retained route module and reachable refinement under three targets. These are hand-authored record and finite-transition evidence, not a source parser, compiler backend, translation proof, or natural artifact result."
+  - "The QCSA program produced 2,340 deterministic predictions over 60 cases, 13 systems, and three seeds plus one 13-stage zero-model temporary-file trace with ten rejecting adversarial paths and one exact rollback. QCSA tied the selected baseline at 1.000 task accuracy while using 1.913386 times the operations; matched advantage and resource gates failed, active-question value was refuted on the exact corpus, and the chapter core received no support movement."
+  - "No natural accepted plan has been compiled into a concrete cognitive artifact and independently validated for semantic preservation, useful quality, causal repair benefit, reproducibility, or cross-target transfer."
 ---
 
 ## Chapter status
@@ -30,18 +38,18 @@ open_evidence_gaps:
 | Chapter ID | `cognitive-compilation-and-semantic-ir` |
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-10 |
-| Primary source records | `cognitive_compilation`, `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project` |
+| Manuscript maturity | v0.3 semantically reviewed proof-contract draft |
+| Last updated | 2026-07-14 |
+| Primary source records | 16 mapped sources: five author-lineage raw-cache sources, three pinned-project records, QCSA, and seven external comparators |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `cognitive_compilation`; supporting: `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project`; external comparators: `ext_pddl_1998`, `ext_shop2_2003`, `ext_tree_of_thoughts_2023`, `ext_dreamcoder_2020`, `ext_llvm_langref_docs`, `ext_mlir_2020`, `ext_translation_validation_1998` |
-| Source loading state | source notes and passage-reviewed local raw cache: `cognitive_compilation`, `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea`; public-safe pinned-project source notes: `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project`; source notes: `ext_pddl_1998`, `ext_shop2_2003`, `ext_tree_of_thoughts_2023`, `ext_dreamcoder_2020`, `ext_llvm_langref_docs`, `ext_mlir_2020`, `ext_translation_validation_1998` |
-| Test state | Existing semantic-atom, plan-execution, trace, and Lean gates remain. `python3 scripts/validate_semantic_contract_preservation.py` additionally accepts one blocked three-project lineage fixture and rejects nine mutations for adversarial paraphrase, omission, positional insertion, authority loss, whole-graph repair, digest-parity laundering, failure-bundle erasure, unresolved ambiguity, and target-requirement loss. It does not parse a source plan, lower a generated artifact, authorize execution, measure repair locality, or promote support. |
+| Source queue | primary: `cognitive_compilation`; supporting: `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project`, `qcsa_whitepaper`; external comparators: `ext_pddl_1998`, `ext_shop2_2003`, `ext_tree_of_thoughts_2023`, `ext_dreamcoder_2020`, `ext_llvm_langref_docs`, `ext_mlir_2020`, `ext_translation_validation_1998` |
+| Source loading state | all sixteen source notes reviewed; five local raw caches and the QCSA paper passage-reviewed; three pinned private projects represented by public-safe notes; external systems not locally reproduced |
+| Test state | Exact current boundary: two valid/four rejecting hand-authored compilation traces; one independent seven-event obligation/repair refinement with 47 rejected mutations; one blocked semantic-preservation record/nine rejecting mutations; 24 live Lean declarations across two modules under three targets; 2,340 QCSA predictions over 60 synthetic cases, 13 systems, and three seeds; one 13-stage zero-model reversible trace with ten rejecting adversarial controls; no natural cognitive artifact, matched advantage, or chapter-core support movement. |
 
 ## Drafting guardrail
 
-This chapter treats cognitive compilation as an architectural boundary and prototype target. The repository validates semantic-atom records, a small hand-authored trace harness, and one authority-bearing source-to-IR-to-target preservation fixture with nine adversarial mutations. It still does not contain a source-plan parser, compiler backend, generated artifact validator, localized-repair benchmark, or measured quality comparison against direct generation.
+The compiler boundary is a translation contract, not a claim that structured generation understands meaning. Current records and finite routes make obligations and failures addressable; they do not prove that a source obligation was correctly interpreted, lowered, or useful.
 
 It follows PlanForge because a scheduled DAG still needs an artifact language. Semantic IR gives each node an addressable obligation before it becomes code, prose, a schema, a proof target, or a tool job.
 
@@ -61,17 +69,33 @@ The intermediate form is where vague intent becomes specific enough to preserve,
 
 ## Problem
 
-LLM workflows need intermediate representations that separate requirements, plans, artifacts, repairs, and target runtimes.
+After Planning admits an obligation for lowering, the stack still has to
+translate it across a source contract, semantic representation, target
+representation, and concrete artifact. Each representation can silently lose
+an objective, non-goal, authority bound, affected party, source limitation,
+validator, stop, recovery duty, or residual while the final output remains
+fluent and plausible.
 
-Direct generation asks one model turn to hold the user's intent, infer missing constraints, choose an architecture, write the artifact, preserve prior decisions, and repair failures. That collapses several compiler jobs into one opaque act. Cognitive compilation splits those jobs apart: source plan, semantic IR, target lowering, execution, validation, and localized repair.
+Direct generation collapses interpretation, representation choice, target
+construction, validation, and repair into one opaque act. A later model or
+reviewer may see only the target and be unable to tell whether a requirement
+was preserved, intentionally revised, or forgotten. A prompt transcript gives
+few stable identities for the failed obligation or for the descendants that a
+repair must invalidate.
 
-The layer receives accepted goals and command contracts from planning. It emits typed semantic atoms with dependencies, constraints, validators, target hints, and repair surfaces. The output should be boring in the best sense: a downstream worker can inspect what must be preserved without rereading the entire conversation.
-
-Repair locality creates the second pressure. When a generated artifact fails, an opaque prompt transcript gives the system few stable addresses for what broke. A semantic IR should identify which obligation, dependency, validator, or lowering step failed so repair does not rewrite the whole artifact by accident. That is how compilation turns generation into inspectable work.
+The compiler boundary begins after intent acceptance and planning. It owns the
+representation transformation, not the decision that the work should exist.
+Its output must let downstream owners inspect what was lowered, what changed,
+which assumptions and losses were introduced, which validator can falsify the
+translation, which target artifact was actually checked, and which repair or
+residual follows a failure.
 
 ## Why existing approaches are insufficient
 
-Generate-from-prompt workflows entangle requirements and implementation, drift over long contexts, and make incremental repair fragile.
+Prompt templates, schemas, planning languages, workflow engines, search traces,
+program synthesis, and conventional compiler infrastructure each solve part of
+the problem. None alone establishes consumer-relative semantic preservation for
+open-ended cognitive artifacts.
 
 The `cognitive_compilation` source identifies the recurring failure pattern: requirement and implementation entangle, independent work is serialized, expensive models are overused, and repairs become global regeneration. PlanForge contributes the scheduling side of the answer; GenesisCode contributes the evidence/provenance side; TreeLLM contributes the representation-side intuition that the model should navigate explicit structure rather than memorize everything internally.
 
@@ -79,7 +103,11 @@ External baselines sharpen the compiler analogy. PDDL (`ext_pddl_1998`) and SHOP
 
 A prompt can still be the input surface. It should not be the internal build artifact.
 
-The recurring insufficiency is not that prompting is weak; it is that prompting lacks stable intermediate obligations. Once the conversation moves on, the system can no longer tell whether a later artifact preserved a requirement, intentionally revised it, or simply forgot it.
+Typed shape is not meaning. A digest is not equivalence. A compiler-authored
+validator can share the compiler's mistake. Declared repair scope is not
+observed locality. A valid target can still be useless, unauthorized,
+under-specified, or more expensive than direct generation. Even translation
+validation fails if its source semantics omit what the consumer cared about.
 
 ### Strongest objection
 
@@ -91,13 +119,38 @@ verification surface, not as proof that meaning was captured correctly.
 
 ## Core Claim
 
-[cognitive-compilation-and-semantic-ir.core, label: Design rationale, support: argument] Cognitive compilation should transform goals into semantic intermediate representations that can be optimized, verified, repaired, and targeted.
+[cognitive-compilation-and-semantic-ir.core, label: Design rationale, support: argument]
+Cognitive Compilation should own a versioned, consumer- and target-relative
+translation contract that lowers an already accepted plan obligation through
+source, semantic, and target representations into a concrete artifact candidate
+while preserving addressable obligation, non-goal, authority, rights,
+assumption, source/context, evidence, resource, verifier, repair, and residual
+lineage.
 
-The claim remains at `argument` support. Cognitive Compilation supplies the compiler pipeline and semantic-atom vocabulary; PlanForge compiler architecture supplies scheduling and tier-routing pressure; GenesisCode supplies provenance, obligation, and effect-boundary discipline; TreeLLM supplies the external semantic-substrate intuition; VIEA supplies the intent-to-artifact ledger that the compiler must feed. The mined CCA and MoECOT Manifest projects deepen the design with explicit ambiguity, authority-bearing semantic fields, pass/failure bundles, and applied repair receipts. Corben's Best Model Possible supplies the decisive negative cases: equal-looking digests are not semantics, positional node identity is fragile, and interface presence is not causal effect. External comparator notes ground prior-art vocabulary, and the local fixtures check record discipline, but none is a reproduced cognitive-compiler run.
+Every pass binds typed source and target semantics; declared normalization,
+loss, and ambiguity; preconditions and postconditions; dependencies;
+deterministic and nondeterministic inputs; compiler and validator identities;
+costs; receipts; and failure consequences. Acceptance requires
+post-translation validation against the actual target artifact by an
+independent-enough evaluator. Repair uses stable semantic identities, observed
+mutation sets, dependency closure, downstream rebuild, and revalidation.
+
+The compiler may block, narrow, request clarification, or residualize a
+lowering. It does not reinterpret intent, choose the plan, grant authority,
+execute effects, self-certify semantic adequacy, or move support or release
+state. The claim remains at `argument`: the current evidence establishes exact
+synthetic records, mixed bounded QCSA findings, and finite route consequences,
+not a natural cognitive compiler.
 
 ### Claim-source mapping status
 
-Appendix C maps this cognitive-compilation claim to eight assigned source notes: five passage-reviewed local raw-cache sources and three public-safe pinned-project notes. The mappings support semantic IR, compiler-style boundaries, provenance, authority and ambiguity retention, pass/failure traceability, localized-repair receipts, and negative cases. They do not establish compiler correctness, arbitrary paraphrase equivalence, benchmarked repair locality, measured quality gains, or a working target-lowering stack.
+Appendix C maps all sixteen assigned sources: five passage-reviewed local raw
+caches, three public-safe pinned-project notes, QCSA, and seven external
+comparators. They support IR and translation vocabulary, provenance, authority
+and ambiguity retention, pass/failure traceability, localized-repair receipts,
+multi-level lowering, translation validation, and negative cases. They do not
+establish compiler correctness, arbitrary semantic equivalence, natural repair
+locality, useful advantage, or production transfer.
 
 | Source | What it supports | Limit |
 |---|---|---|
@@ -110,15 +163,54 @@ Appendix C maps this cognitive-compilation claim to eight assigned source notes:
 | `moecot_manifest_project` | Pinned-project note: authority chain from goals through semantic and target IR; field/provenance/ambiguity retention; pass schemas, strict failure, reproducer bundles, applied localized-repair receipts, semantic portability, and execution-versus-mutation authority. | Broad implementation context only; its compilers, holdouts, and deployments were not rerun, and actual repair locality still requires observed-mutation proof. |
 | `corbens_best_model_possible_project` | Pinned-project negative record: rich Task spell and compiler-pass surfaces coexist with keyword-driven parsing, mostly linear plans, digest equality mislabeled as semantic parity, positional repair identities, and ordinary-path defaults. | The project does not establish semantic compilation correctness; interface and artifact presence cannot substitute for causal runtime effect. |
 
-The external comparator notes sit outside Appendix C claim-source mapping. `ext_pddl_1998`, `ext_shop2_2003`, and `ext_tree_of_thoughts_2023` ground planning-language, HTN decomposition, and reasoning-search vocabulary. `ext_dreamcoder_2020` grounds program-synthesis and reusable-abstraction vocabulary. `ext_llvm_langref_docs` and `ext_mlir_2020` ground compiler IR, multi-level IR, verifier, dialect, pass, and lowering vocabulary. `ext_translation_validation_1998` grounds per-translation source-target validation vocabulary. None of those sources proves a semantic-atom parser, cognitive compiler, target backend, LLVM/MLIR integration, translation validator, localized-repair benchmark, or support-state promotion.
+The external comparators are now first-class Appendix C mappings with explicit
+limits. PDDL, SHOP2, and Tree of Thoughts ground representation, decomposition,
+and search boundaries; DreamCoder grounds synthesis and reusable abstraction;
+LLVM and MLIR ground typed and multi-level IR practice; translation validation
+grounds per-translation source-target checking. None proves a semantic parser,
+cognitive backend, LLVM/MLIR integration, local translation validator, repair
+benchmark, or support movement.
 
 ## Mechanism
 
-Cognitive Compilation turns planned work into a compiler boundary. Its source plan, semantic atoms, dependency analysis, validator requirements, target lowering, and localized repair supply the main pipeline. PlanForge compiler architecture contributes DAG scheduling and tier-routing pressure; GenesisCode contributes canonical forms, provenance, obligations, semantic patches, and effect boundaries; TreeLLM motivates explicit semantic substrates; VIEA supplies the artifact and verification ledger that the compiler must feed.
+Cognitive Compilation begins with a frozen translation context: consumer,
+purpose, accepted contract and plan-node versions, source and target languages,
+compiler and pass set, environment, evaluator policy and dependencies, authority
+and rights ceilings, budgets, horizon, support ceiling, and material-change
+triggers. A changed source, compiler, evaluator, target, policy, dependency, or
+environment creates a new build identity rather than inheriting a green receipt.
 
-This semantic IR pipeline moves from source plan to typed atoms, from atoms to target artifacts, from failed validators back to localized repair, and from accepted outputs into the artifact graph.
+The source-plan dialect preserves objectives, non-goals, units, quantifiers,
+precedence, provenance, ambiguity, affected parties, authority, rights,
+criteria, stops, recovery, and residual duties. Stable semantic identities name
+obligations, objects, fields, relations, assumptions, validators, artifacts,
+and residuals independently of text position, names, hashes, embeddings,
+addresses, graph positions, or storage. An ambiguity ledger records what is
+resolved, deferred, conflicting, unknown, or abstained and who had authority to
+change that state.
 
-The reviewed passages make one architectural move sharper: the compiler is not another prompt template. It is a boundary where obligations become addressable records. Cognitive Compilation supplies the typed S-IR and repair loop; PlanForge supplies scheduling pressure; GenesisCode supplies evidence-carrying acceptance and replay; TreeLLM supplies the intuition that semantic structure should be addressable outside model weights; VIEA supplies the artifact-ledger destination. The current repository now checks a hand-authored trace shape, but it still has to demonstrate arbitrary-goal parsing into S-IR, lowering into real artifacts, concrete artifact validation, local repair under load, and any measured advantage over direct generation.
+Lowering is progressive. Each pass names its input and output dialects,
+preconditions, postconditions, legality rules, allowed loss, obligation and
+authority effects, deterministic and nondeterministic inputs, dependency
+changes, costs, failure outputs, and reproducer bundle. Concrete backends emit
+code, prose, schemas, proofs, experiments, diagrams, or job packets while
+retaining the exact target language, dependencies, build inputs, environment,
+and artifact identity.
+
+Translation validation is separate from generation. Requirement-specific
+validators compare the accepted source obligation with the actual target
+artifact and keep source validity, IR validity, lowering preservation, target
+validity, artifact usefulness, external effects, and support movement as
+different decisions. Evaluator method, model, prompt, code, data,
+infrastructure, organization, incentive, and exposure dependencies remain
+visible; self-checks cannot silently become independent acceptance.
+
+Repair operates on stable identities and observed mutations. It records the
+declared scope, actual node and file changes, invalidated caches and artifacts,
+dependency-closed rebuild set, post-repair validation, costs, retained failures,
+and residuals. The complete denominator includes every parse, IR candidate,
+pass, backend emission, validation, retry, repair, cache hit, timeout, human
+intervention, failure, and discarded artifact.
 
 ```{mermaid}
 flowchart LR
@@ -237,11 +329,34 @@ value outside the frozen fixtures.
 
 ## Interfaces
 
-The interface for Cognitive Compilation and Semantic IR is a typed DAG, not a prose plan.
+The public interface is a typed translation graph and receipt set, not a prose
+plan or permission token.
 
-- Planning produces or consumes IR.
-- Execution receives target-specific artifacts.
-- Verification checks IR-to-output preservation.
+- **Intent-to-Execution Contracts** and **Planning** supply an accepted,
+  version-bound obligation. The compiler may lower or reject it but cannot
+  reinterpret, add, reorder, or widen the plan.
+- **Context** and the **Virtual Context ABI** supply exact source identities,
+  versions, provenance, adequacy, taint, omissions, permitted uses, and
+  authority ceilings. Retrieved material remains data.
+- **Planning** consumes compile feasibility, failure, cost, and residual
+  records for later scheduling; target lowering does not own dispatch priority.
+- **Labor OS** and **Runtime Adapters** consume accepted target IR or artifacts
+  as job or effect requests. A successful compile is not a job, permission,
+  effect, or completion receipt.
+- **Artifact Graphs** preserve source, IR, pass, target, validator, repair,
+  rebuild, cost, failure, and residual lineage without claiming correctness.
+- **Verification** and **Scalable Oversight** supply independent-enough
+  source-target, artifact, outcome, and delayed-effect evaluation.
+- **Security**, **Authority**, **Rights**, **Privacy**, **Licensing**, and
+  **Publication** owners decide use, execution, disclosure, and release.
+- **Resource Economics** supplies observed compute, storage, latency, tool,
+  model, verifier, human, rebuild, recovery, and opportunity cost.
+- **Evidence States** and **Readiness Gates** own support, promotion,
+  quarantine, and release; green compilation cannot move them.
+- **Procedural Memory** may retain qualified passes, backends, validators, and
+  repair procedures under exact lineage, regression, authority, and expiry.
+- **Supply-chain** and **weight-custody** owners bind toolchains, models,
+  dependencies, environments, signatures, caches, and revocation.
 
 Minimum semantic-atom fields:
 
@@ -271,7 +386,10 @@ Minimum semantic-atom fields:
 - `residuals`
 - `non_claims`
 
-The planner owns graph formation and scheduling. The compiler owns preservation of obligations across lowering. The executor owns side effects. The verifier owns acceptance or rejection. Keeping those roles separate is what prevents an impressive generated artifact from silently overwriting its own requirements.
+Planning owns obligation selection and order. The compiler owns representation
+transformation. Execution owns effects. Verification owns independent
+acceptance. Evidence and release owners retain their decisions. Keeping those
+roles separate prevents an impressive target from overwriting its own source.
 
 The boundary should also distinguish four validity questions: whether the source plan is accepted, whether the semantic IR is well formed, whether the lowering is obligation-preserving, and whether the target artifact satisfies its validators. A failure in any one of those states should not be reported as a successful compile.
 
@@ -279,14 +397,50 @@ The public semantic-atom schema now records atom state, source-plan refs, obliga
 
 ## Invariants
 
-- IR preserves declared requirements.
-- Repair changes are localized and auditable.
-- Target compilation records assumptions.
-- Authority and non-goals cannot be widened, invented, or silently erased by lowering.
-- Every source field has explicit lineage through semantic IR into its target representation.
-- Unresolved ambiguity blocks or escalates strict compilation rather than disappearing into fluent prose.
-- Pass bundles retain known failure references, and repair locality is judged from observed mutations rather than proposed scope.
-- Digest parity is an identity signal only; semantic-preservation claims require requirement-specific validators.
+- Every translation binds one accepted obligation, consumer, purpose, source
+  and target language, compiler/pass set, evaluator policy, environment,
+  authority and rights ceiling, budget, horizon, and support ceiling.
+- Every source obligation and non-goal is preserved, explicitly refined,
+  split, merged, deferred, rejected, or residualized with reason and authority.
+- Stable semantic identity remains distinct from text position, label, hash,
+  embedding, address, graph location, target identity, and storage route.
+- Every field and obligation has source-to-IR-to-target-to-artifact lineage with
+  provenance, consumer, validator, allowed loss, observed disposition, and
+  falsifier.
+- Unresolved, deferred, conflicting, or unknown ambiguity blocks strict
+  lowering when meaning, authority, rights, effects, verification, or release
+  can change.
+- A pass may preserve, narrow, block, or request separately authorized change;
+  it cannot widen authority, rights, purpose, means, effects, support, or
+  release.
+- Well-formed source, IR, target, and artifact records remain distinct from
+  semantic preservation, validator adequacy, usefulness, safety, execution,
+  and support.
+- Digest equality answers only its declared identity question. Semantic
+  equivalence needs an explicit source-target relation and validation against
+  actual target content or behavior.
+- Introduced assumptions, normalization, approximation, undefined behavior,
+  information loss, target constraints, and omitted distinctions stay explicit.
+- Passes, backends, and validators retain exact identities, versions,
+  dependencies, inputs, nondeterminism, receipts, failures, and reproduction
+  limits.
+- Compiler, generator, and target cannot be the sole semantic evaluator for
+  their own output; dependencies and disagreement remain visible.
+- Declared repair scope is not locality. Observed mutations, invalidation,
+  rebuilt descendants, cache state, revalidation, and retained failures decide
+  the repair claim.
+- Material source, compiler, dependency, evaluator, target, policy, or
+  environment change expires affected receipts and triggers rebuild or an
+  explicit residual.
+- Identity, semantic address, evidence, physical route, authority, execution,
+  and support remain separate lifecycle states.
+- Every candidate, attempt, failure, retry, repair, cache hit, human
+  intervention, cost, discard, and residual remains in the denominator.
+- Faster builds, shorter IR, cleaner artifacts, lower repair cost, or zero
+  release are not semantic, useful, safe, or cost superiority by themselves.
+- Finite records, routes, synthetic evaluations, and reversible local traces
+  establish only their exact scopes and cannot universalize preservation or
+  transfer.
 
 Compiler success is not the preserved boundary; addressable failure is. If a validator fails, the failed atom, dependency edge, target artifact, and repair scope should be visible. If a repair changes a prior obligation, the claim ledger must record that the build graph changed rather than pretending the final artifact still satisfies the original plan.
 
@@ -294,14 +448,38 @@ Obligation non-erasure prevents compilation from erasing commitments. A compilat
 
 ## Failure modes
 
-- IR drift.
-- Compiler hallucination.
-- Repair that breaks earlier requirements.
-- Authority loss during normalization or target lowering.
-- Adversarial paraphrase that keeps tone while deleting an obligation or non-goal.
-- Positional insertion that orphans repair identities or expands the actual mutation set.
-- Failure-bundle erasure that makes a repaired build look as though the failure never occurred.
-- Digest-parity laundering that relabels equal hashes as semantic equivalence.
+- Source-meaning capture or compiler hallucination turns a mistaken
+  interpretation into precise IR.
+- Obligation, non-goal, authority, rights, affected-party, evidence, stop,
+  recovery, or residual state disappears during lowering.
+- IR drift changes identity, type, unit, quantifier, precedence, dependency, or
+  semantics across passes.
+- Schema or type theater treats well-formed records as correct meaning.
+- Digest, embedding, address, graph-position, or token similarity is laundered
+  into semantic equivalence.
+- Ambiguity is defaulted or erased without the required authority.
+- Scarce or proxy validators accept fluent, compiling, or schema-valid targets
+  while missing source obligations.
+- Validator capture, shared-model correlation, self-verification, exposure, or
+  gaming makes translation validation self-confirming.
+- A successful pass is laundered into execution, mutation, disclosure,
+  publication, or support authority.
+- Target assumptions, undefined behavior, lossy normalization, platform
+  constraints, or dependencies remain hidden.
+- Positional or unstable identities orphan obligations and repair history.
+- Repair-radius laundering hides mutations, invalidations, caches,
+  descendants, or effects outside declared scope.
+- Stale-build laundering reuses receipts after material change.
+- Failure-bundle erasure and best-artifact survivorship remove rejected parses,
+  failed targets, repairs, timeouts, or discarded candidates.
+- Fragmentation, verifier burden, or coordination cost dominates direct
+  generation without useful gain.
+- Semantic identity, atlas compatibility, or certificate integrity is
+  laundered into truth, capability, or execution permission.
+- Round-trip theater uses a correlated evaluator to reconstruct the same
+  mistaken structure and call it preservation.
+- Portability theater infers cross-model, language, target, organization,
+  safety, or production validity from one synthetic toolchain.
 
 The hardest failure is semantic under-specification: a graph can be perfectly typed and still omit the thing the human cared about. The second failure is validator scarcity: prose, diagrams, and policy documents often lack executable checks. The third is overhead: for small tasks, the compiler can cost more than direct generation. Compilation therefore runs only for tasks whose risk, complexity, reuse, or repair burden justifies the extra layer.
 
@@ -309,31 +487,92 @@ Compilation laundering happens when a generated artifact is accepted because it 
 
 ## Minimum Viable Implementation
 
-A semantic IR sketch and compile/verify/repair loop for one artifact type.
+The current minimum is a record-and-bounded-reference scaffold:
 
-Cognitive compilation can start with a JSON schema for semantic atoms plus a toy compile/verify/repair loop for one artifact class, such as a chapter section, protocol schema, or small code file. The test should intentionally break one requirement and demonstrate that the repair can be localized to the responsible atom instead of regenerating the whole artifact.
+- a semantic-atom schema and related source, target, receipt, repair, and
+  preservation record surfaces;
+- two valid and four rejecting hand-authored compilation traces for source-plan
+  coverage, lowering receipts, target audits, validator state, and repair scope;
+- one blocked three-project semantic-preservation record and nine rejecting
+  mutations for paraphrase, omission, positional identity, authority loss,
+  whole-graph repair, digest laundering, failure erasure, ambiguity, and target
+  requirement loss;
+- twenty-four live Lean theorem declarations across the retained route module
+  and reachable refinement, grouped under three public targets; and
+- the QCSA reference package: 60 deterministic synthetic cases, 13 systems,
+  three seeds, 2,340 predictions, and one 13-stage zero-model temporary-file
+  trace with ten rejecting adversarial paths and one byte-exact rollback.
 
-The current schema records one semantic atom shape with atom state, obligation refs/status, assumptions, IR validity state, validator status, lowering state, target artifact ref, lowering receipt, repair-ledger refs, source refs, support-state effect, residuals, and non-claims. The original trace harness adds two passing and four expected-invalid hand-authored records for source-plan requirements, semantic atoms, lowering receipts, target audits, and repair traces. The historical-project closure adds `schemas/semantic_contract_preservation_record.schema.json`, one blocked three-source contract-preservation fixture, and `python3 scripts/validate_semantic_contract_preservation.py`. That harness rejects nine mutations spanning paraphrase, omission, positional insertion, authority loss, whole-graph repair, digest-parity laundering, erased failures, unresolved ambiguity, and target-requirement loss.
+The QCSA result is mixed rather than promotional. Full QCSA and the selected
+best baseline both reached 1.000 task-decision accuracy in every seed, while
+QCSA used 1.913386 times the operations; matched-advantage and resource gates
+failed. Removing active questions left object and task accuracy at 1.000, so
+active-question value is refuted for the exact corpus. Plural facets, stable
+identity/address indirection, certificate/authority fields, migration
+compatibility, and task calibration earned bounded non-core dispositions.
+Round-trip preservation and the governance/resource tradeoff were narrowed.
+The core claim received an accepted `no_change` decision.
 
-This is stronger record discipline, not a compiler run. The fixture is hand-authored, its semantic validators are references rather than generated-artifact inspections, strict execution remains false, and support promotion remains blocked. A compiler claim still needs graph construction from real source plans, lowering rules, concrete target artifacts, artifact-aware validators, repairs over generated artifacts, and measured evidence that repair stays local under load.
+These artifacts do not compile a natural accepted obligation through a real
+cognitive backend into a concrete artifact and independently validate semantic
+preservation. The trace fixtures are hand-authored, the Lean model trusts its
+fields, the QCSA workload is template-generated, the observer is internal, the
+vertical path uses no model calls, and the only effect is a reversible temporary
+file.
 
-A tiny source plan now anchors the first compiler rehearsal as synthetic records: valid fixtures preserve requirements through receipts and target audits, while expected-invalid controls reject a missing receipt, a dropped obligation, whole-graph repair, and a syntactic pass that lacks obligation-preservation audit. The next rehearsal has to connect the same control surface to a concrete target artifact and validator before any autonomous compiler claim is available.
+The next honest minimum is a preregistered campaign over natural held-out source
+obligations and one concrete artifact class. It must compare direct generation,
+schema-only prompting, a strong workflow, human-authored artifacts, and the
+governed compiler with matched models, tools, sources, authority, budgets, and
+repair opportunities. Independently implemented evaluators must label source
+obligations, inspect actual targets, inject adversarial loss, measure observed
+repair blast radius and rebuild closure, retain every attempt and cost, rerun
+from locked artifacts, and transfer to a second target class.
 
 ## Beyond the State of the Art
 
-Cognitive compilation reaches product form as a compiler toolchain for cognitive work. Goals, command contracts, plans, and source context lower into semantic intermediate representations before producing code, prose, schemas, proof targets, experiments, or tool jobs. The central product is not the generated artifact; it is the obligation-preserving build graph that explains why the artifact should exist and what it must continue to satisfy.
+A mature cognitive compiler is an obligation-preserving multi-level build system
+for cognitive work, not a larger prompt template. Accepted plan obligations and
+source context lower through inspectable source, semantic, and target dialects;
+typed passes emit concrete code, prose, schema, proof, experiment, diagram, or
+job artifacts; post-translation validators inspect actual target content and
+behavior; and changes rebuild and revalidate dependency-closed descendants.
 
-In a cognitive compiler, every important artifact has a lowering receipt. The receipt names the source plan, semantic atoms, obligations, assumptions, validators, target constraints, authority requirements, repair scope, support-state effect, and residuals that produced it. A later writer, model, compiler pass, or reviewer can change one node without erasing unrelated obligations or pretending that a syntactic pass is semantic acceptance.
+The empirical question is whether that toolchain improves useful semantic
+preservation over simpler practice. Natural tasks compare direct generation,
+schema-only prompting, strong workflows, planning and search pipelines,
+human-authored artifacts, conventional compiler and build tools, program
+synthesis, and current agents under matched models, sources, tools, authority,
+budgets, repair opportunities, and outcome horizons.
 
-A semantic compiler toolchain needs:
+Independent implementations jointly measure obligation precision and recall,
+semantic preservation, ambiguity calibration, authority and rights retention,
+artifact validity and usefulness, repair locality, rebuild correctness,
+unauthorized outputs, abstention and missed help, delayed effects, latency,
+compute, storage, verifier and human work, recovery, and total governance cost.
+The compiler must earn its overhead rather than moving verification and repair
+outside the ledger.
 
-- A source-plan language that preserves user intent, constraints, source boundaries, authority limits, quality criteria, and expected artifacts.
-- A semantic IR with typed atoms, dependencies, obligations, validators, assumptions, target hints, repair scopes, and support-state effects.
-- Compiler passes for extraction, normalization, typing, dependency analysis, linting, scheduling, target lowering, validation, and localized repair.
-- Target backends for chapters, diagrams, schemas, code, Lean proof targets, benchmark fixtures, release notes, and runtime job packets.
-- Build-system style traces that show which artifacts are up to date, which validators failed, which obligations changed, and which downstream artifacts must be rebuilt.
+Adversaries delete and paraphrase obligations, exploit target assumptions and
+undefined behavior, poison caches, capture validators, widen authority, forge
+receipts, break stable identities, and escape repair scope. Causal ablations
+remove field lineage, ambiguity handling, multi-level passes, translation
+validation, evaluator separation, failure retention, dependency-closed rebuild,
+and observed repair accounting one at a time. Independent replication and
+transfer span models, languages, modalities, artifact classes, compilers,
+evaluators, organizations, jurisdictions, threats, horizons, and time.
 
-This obligation-preserving compiler is still proposed architecture. The evidence state should remain `argument` until compiler traces, lowering rules, validators, repair-locality tests, target backends, and benchmark comparisons show that the stack can optimize, route, repair, and rebuild cognitive artifacts while keeping semantic obligations addressable.
+Promotion requires nonzero useful opportunity, strong matched baselines,
+independent evaluation, effect-bearing controls where relevant, predicted
+causal signatures, complete denominators, reproducible traces, cross-target
+transfer, and accepted claim-specific evidence transitions. Otherwise the exact
+claim remains argument, narrows, stays null, becomes negative or refuted, or is
+blocked after a full attempt.
+
+No current result meets this obligation-preserving compilation endpoint;
+support remains `argument` until natural source-to-target translations,
+effect-bearing controls, independent evaluation, reproduction, and transfer
+pass.
 
 ## Codex test plan
 
@@ -344,19 +583,49 @@ This obligation-preserving compiler is still proposed architecture. The evidence
 | Semantic lowering route proof | Check that a finite semantic-lowering review routes missing source plans, missing atoms, missing obligation links, cyclic dependencies, authority escapes, missing validators, validator failures, missing receipts, obligation loss, invalidating repairs without ledger updates, known residuals, and complete lowering reviews to explicit outcomes. | implemented by Lean build; finite semantic-lowering route coverage only |
 | Incremental repair regression test | Break one atom-level requirement and check that the repair can stay within the declared repair scope. | implemented in `python3 scripts/validate_cognitive_compilation_traces.py`; synthetic trace records only |
 | Target compilation audit | Check that a target artifact records which atoms, assumptions, validators, and residuals produced it. | implemented in `python3 scripts/validate_cognitive_compilation_traces.py`; synthetic trace records only |
+| Executed obligation-preserving compilation refinement | Preserve exact source obligations and target identity through lowering, validation, localized repair, versioned ledger update, and acceptance, while independently classifying every existing trace fixture. | implemented in `python3 scripts/validate_cognitive_compilation_refinement.py`: two accepted/four rejected fixtures, one seven-event repaired witness, and 47/47 rejected mutations; support-state effect `none` |
 | Historical-project contract-preservation fixture | Check authority-bearing IR, ambiguity ledger, complete field lineage, retained pass/failure bundle, source-requirement obligations, observed repair blast radius, and the insufficiency of digest parity against nine mutations. | implemented in `python3 scripts/validate_semantic_contract_preservation.py`; one hand-authored blocked fixture only, no parser, backend, execution authority, measured repair locality, or support promotion |
+| QCSA held-out reference evaluation | Compare full QCSA, seven baselines, and five ablations on 60 deterministic synthetic cases across three seeds, preserving all 2,340 predictions and exact resource and failure denominators. | implemented and dispositioned; full and best baseline both reached 1.000 task accuracy, operation ratio was 1.913386, matched-advantage/resource gates failed, active-question value was refuted on this corpus, bounded non-core mechanisms were promoted or narrowed, and the chapter core stayed `argument` |
+| QCSA governed vertical reference | Exercise intent, semantic IR, stable identity/address, evidence graph, question trace, context, physical route, separate authority, one temporary-file effect, independent byte observation, artifact receipts, migration, and rollback. | implemented as one 13-stage zero-model local trace with ten rejected adversarial paths and one byte-exact rollback; no natural compiler, learned model, irreversible effect, external evaluator, production transfer, or support movement |
 
-The fixture-shape check, finite Lean predicates, synthetic plan-execution harness, cognitive-compilation trace harness, and historical-project contract-preservation harness now cover narrow requirement-preservation records, authority and ambiguity lineage, represented lowering receipts, target-audit shape, observed repair scope, and adversarial negative controls. The remaining tests require a source-plan parser, a concrete generated target artifact, validators that inspect artifact content, and measured repair/quality comparison.
+The fixture-shape check, finite Lean predicates, synthetic trace and
+contract-preservation harnesses, and bounded QCSA program cover narrow record
+lineage, identity/address separation, represented receipts, target-audit shape,
+declared versus observed repair scope, adversarial controls, and mixed
+fixture-level mechanism outcomes. The remaining minimum requires a natural
+source-plan parser, concrete generated cognitive artifact, independent
+source-target and artifact validators, observed incremental repair, matched
+usefulness and cost, clean reproduction, and cross-target transfer.
+
+The reachable compilation refinement runs with
+`python3 scripts/validate_cognitive_compilation_refinement.py` and records
+`experiments/cognitive_compilation_refinement/results/2026-07-15-local.json`.
+It preserves one plan, three represented obligations, one source constraint,
+one target, approved authority, and lowering/validation/repair custody through
+a seven-event localized-repair trace. Its independently written consumer
+accepts exactly the two intended trace fixtures, rejects all four known-invalid
+fixtures, and rejects 47 mutations. Numeric identities and record labels remain
+trusted; this is not natural-language semantic equivalence or a backend result.
 
 ### Formalization hooks
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:cognitive_compilation.ir.operational_invariant` | `AsiStackProofs.CognitiveCompilation` | A compiled artifact preserves all required IR obligations. | implemented |
-| `lean:cognitive_compilation.ir.failure_blocks_promotion` | `AsiStackProofs.CognitiveCompilation` | A repair that invalidates an existing obligation cannot be accepted without updating the ledger. | implemented |
-| `lean:cognitive_compilation.ir.semantic_lowering_route_envelope` | `AsiStackProofs.CognitiveCompilation` | A structured semantic-lowering review routes missing source plans, missing atoms, missing obligation links, cyclic dependencies, authority escapes, missing validators, validator failures, missing receipts, obligation loss, invalidating repairs without ledger updates, known residuals, and complete lowering reviews into explicit outcomes. | implemented |
+| `lean:cognitive_compilation.ir.operational_invariant` | `AsiStackProofs.CognitiveCompilationRefinement` | Every accepted target in the finite reachable lowering model preserves the exact plan, three represented obligations, source constraint, target identity, approved authority, and lowering/validation custody. | implemented |
+| `lean:cognitive_compilation.ir.failure_blocks_promotion` | `AsiStackProofs.CognitiveCompilationRefinement` | A material repair can return to validated state only with localized scope, exact affected-obligation preservation, a one-step repair-ledger version increment, and a ledger receipt; open residuals block acceptance. | implemented |
+| `lean:cognitive_compilation.ir.semantic_lowering_route_envelope` | `AsiStackProofs.CognitiveCompilationRefinement` | The original finite lowering routes are consumed alongside a seven-event reachable refinement and independent six-fixture/47-mutation consumer covering source, obligation, authority, target, validation, receipt, repair, ledger, and residual failures. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over compiled-artifact, repair-acceptance, and semantic-lowering reviews. They prove only the record-level gates: required IR obligations are preserved when a valid compilation review says so, a repair that invalidates an existing obligation cannot be accepted without a ledger update, and a structured lowering review routes known invalid or complete states to explicit outcomes. The synthetic trace harness exercises compatible fixture boundaries, but neither the Lean hooks nor the harness prove source-plan parsing, target lowering, localized repair performance, compiler correctness, or artifact-level validator coverage.
+The three public targets now group 24 live declarations: twelve retained finite
+route consequences and twelve reachable-refinement consequences, including a
+seven-event witness and eight countermodels. The two former assumption
+projections are physically retired with frozen lineage. The refinement proves
+exact abstract identity and transition consequences; it still does not inspect
+source or target meaning, establish arbitrary obligation completeness, run a
+backend, validate actual artifact content, measure repair locality, or prove
+runtime refinement.
+
+These targets do not prove semantic preservation, compiler correctness,
+incremental-repair locality, artifact usefulness, or production transfer.
 
 ## Source crosswalk
 
@@ -378,7 +647,15 @@ These Lean hooks are implemented as finite-record predicates over compiled-artif
 | `ext_mlir_2020` | MLIR: A Compiler Infrastructure for the End of Moore's Law | multi_level_compiler_ir | External comparator for multi-level IR, dialects, modular passes, verifiers, and progressive lowering. | source note available; comparator only |
 | `ext_translation_validation_1998` | Translation Validation | translation_validation | External comparator for per-translation source-target validation through semantic frameworks, refinement, and simulation-based proof. | source note available; comparator only |
 
-The compiler source set supports semantic IR, representation, provenance, authority and ambiguity retention, and artifact-ledger integration. Five assigned local mappings have passage review, three pinned-project mappings have public-safe source notes, and the external comparators ground the prior-art lineage for program synthesis, planning interfaces, compiler IR, multi-level lowering, and translation validation. The synthetic trace and contract-preservation harnesses provide book-gated record-discipline checks for receipts, target audits, field lineage, retained failures, and repair scope. The core claim stays at `argument` because parser behavior, compiler correctness, real target-lowering preservation, artifact-validator adequacy, localized-repair performance, and quality/cost improvements remain unimplemented or unmeasured here.
+All sixteen assigned sources are mapped at their available evidence boundary.
+The author and project lineage supports semantic IR, provenance, ambiguity,
+authority, repair, QCSA identity/address/route separation, and negative
+implementation cases. The external comparators ground planning interfaces,
+search, synthesis, typed and multi-level IR, and per-translation validation.
+None supplies a reproduced natural cognitive compiler. The core stays at
+`argument` because parser behavior, source-target semantics, real artifact
+preservation, evaluator adequacy, repair locality, useful advantage,
+reproduction, and transfer remain open.
 
 ### Manifest source assignment reconciliation
 
@@ -391,11 +668,26 @@ These rows keep Cognitive Compilation and Semantic IR's manifest assignments vis
 <!-- manifest-source-reconciliation:end -->
 ## Summary
 
-Cognitive Compilation and Semantic IR gives the stack a compiler boundary between intention and artifact. It asks the system to stop treating generation as one opaque act and instead lower goals into semantic atoms, obligations, validators, repair locations, and target backends that can be scheduled and audited.
+Cognitive Compilation owns representation transformation after planning and
+before jobs or effects. Its contract binds an accepted obligation through
+source, semantic, target, and artifact forms while keeping assumptions,
+ambiguity, authority, rights, validators, failures, repair, costs, and residuals
+addressable.
 
-The practical claim is modest: the stack needs an artifact between intent and execution. That artifact should be typed enough to schedule, validate, repair, replay, and audit. The repository now has a semantic-atom schema plus a hand-authored trace harness, but it still lacks a compiler prototype over concrete artifacts, so the core claim remains design rationale. Compiled work then depends on the virtual context substrate that supplies the right memory and evidence to those atoms.
+The present evidence is deliberately narrower: hand-authored trace records,
+one blocked preservation fixture with mutations, fourteen finite theorem
+declarations, and a mixed bounded QCSA program. QCSA demonstrated exact
+fixture-level identity, certificate, migration, calibration, and reversible
+trace mechanisms, but tied the best baseline on task accuracy, exceeded the
+resource ceiling, and did not benefit from active questions on its exact corpus.
+No natural cognitive artifact or chapter-core support movement follows.
 
-A compiled artifact should be explainable through its obligations. If the system cannot point from target output back to source plan, semantic atoms, validators, lowering assumptions, and residuals, it has generated an artifact rather than compiled one.
+A compiled artifact earns the name only when the system can point from actual
+target content back to accepted obligations, pass semantics, validators,
+assumptions, losses, failures, and residuals—and when independent evaluation
+shows that the extra machinery improves useful preservation over matched
+simpler routes. The Virtual Context ABI supplies the versioned source and
+representation boundary those translations need next.
 
 ## Handoff
 

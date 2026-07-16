@@ -1,0 +1,314 @@
+{
+  "schema_version": "asi_stack.claim_ledger_refinement.v1",
+  "result_id": "claim-ledger-refinement-2026-07-15-local",
+  "source_sha256": {
+    "lean_model": "1e786a445e0892ef4d2968eaff6786bac2c3983f585d03ee1cd5adc9c91b6339",
+    "revision_fixtures": "1dc650f20a5987019e2f86aab994d5231524cfaa1ef84318873c2caaf4a28824",
+    "historical_record": "c357ee80a2e9c74714ca1aa586ccc74f0e0deeae18018706a8e891d649959fb9",
+    "historical_schema": "1b7f12d0641780e9f6e4be2a5e3ac73eaf663bf27e95b0c6d9530d2c4eede9e8"
+  },
+  "input_suites": [
+    {
+      "suite_id": "claim_ledger_revision",
+      "valid_count": 5,
+      "expected_invalid_count": 7,
+      "suite_passed": true,
+      "validator_sha256": "5179ee1cb3d609ac11f0f9576b7e49c5cc269bb75c90976cedd14cd7e58f5c1f"
+    },
+    {
+      "suite_id": "contradiction_revision_lifecycle",
+      "valid_count": 1,
+      "expected_invalid_count": 11,
+      "suite_passed": true,
+      "validator_sha256": "bfb6e643c25d645b3331d3f95fd85ae05ca187da6a84846a963fad658bc534f0"
+    }
+  ],
+  "reachable_stage_count": 5,
+  "route_case_count": 17,
+  "route_coverage": [
+    {
+      "case_id": "wrong_stage",
+      "expected_route": "reject_wrong_stage",
+      "observed_route": "reject_wrong_stage"
+    },
+    {
+      "case_id": "stale_base",
+      "expected_route": "reject_stale_base",
+      "observed_route": "reject_stale_base"
+    },
+    {
+      "case_id": "event_substitution",
+      "expected_route": "reject_event_substitution",
+      "observed_route": "reject_event_substitution"
+    },
+    {
+      "case_id": "ledger_authority_leak",
+      "expected_route": "reject_ledger_authority_leak",
+      "observed_route": "reject_ledger_authority_leak"
+    },
+    {
+      "case_id": "open_contradiction",
+      "expected_route": "block_open_contradiction",
+      "observed_route": "block_open_contradiction"
+    },
+    {
+      "case_id": "evidence_owner_handoff",
+      "expected_route": "handoff_to_evidence_owner",
+      "observed_route": "handoff_to_evidence_owner"
+    },
+    {
+      "case_id": "history_missing",
+      "expected_route": "request_history_and_non_overwrite",
+      "observed_route": "request_history_and_non_overwrite"
+    },
+    {
+      "case_id": "reason_missing",
+      "expected_route": "request_revision_reason",
+      "observed_route": "request_revision_reason"
+    },
+    {
+      "case_id": "residual_missing",
+      "expected_route": "request_residual_record",
+      "observed_route": "request_residual_record"
+    },
+    {
+      "case_id": "dependency_open",
+      "expected_route": "request_dependency_closure",
+      "observed_route": "request_dependency_closure"
+    },
+    {
+      "case_id": "migration_missing",
+      "expected_route": "request_ontology_migration",
+      "observed_route": "request_ontology_migration"
+    },
+    {
+      "case_id": "surface_plan_missing",
+      "expected_route": "request_surface_plan",
+      "observed_route": "request_surface_plan"
+    },
+    {
+      "case_id": "surface_ack_missing",
+      "expected_route": "request_surface_acknowledgment",
+      "observed_route": "request_surface_acknowledgment"
+    },
+    {
+      "case_id": "proposal_accepted",
+      "expected_route": "accept_proposal",
+      "observed_route": "accept_proposal"
+    },
+    {
+      "case_id": "append_authorized",
+      "expected_route": "authorize_append",
+      "observed_route": "authorize_append"
+    },
+    {
+      "case_id": "view_materialized",
+      "expected_route": "materialize_view",
+      "observed_route": "materialize_view"
+    },
+    {
+      "case_id": "surfaces_acknowledged",
+      "expected_route": "acknowledge_surfaces",
+      "observed_route": "acknowledge_surfaces"
+    }
+  ],
+  "mutation_count": 29,
+  "mutation_rejection_count": 29,
+  "mutation_receipts": [
+    {
+      "mutation_id": "proposal_claim_id",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_stale_base"
+    },
+    {
+      "mutation_id": "proposal_base_ledger_version",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_stale_base"
+    },
+    {
+      "mutation_id": "proposal_prior_head_digest",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_stale_base"
+    },
+    {
+      "mutation_id": "proposal_prior_semantic_version",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_stale_base"
+    },
+    {
+      "mutation_id": "proposal_next_semantic_version",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_stale_base"
+    },
+    {
+      "mutation_id": "proposal_prior_ontology_version",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_stale_base"
+    },
+    {
+      "mutation_id": "proposal_prior_support_rank",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_stale_base"
+    },
+    {
+      "mutation_id": "proposal_ledger_self_approves_support",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_ledger_authority_leak"
+    },
+    {
+      "mutation_id": "proposal_external_effect_requested",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_ledger_authority_leak"
+    },
+    {
+      "mutation_id": "proposal_open_contradiction",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "block_open_contradiction"
+    },
+    {
+      "mutation_id": "proposal_missing_evidence_owner_receipt_present",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "handoff_to_evidence_owner"
+    },
+    {
+      "mutation_id": "proposal_missing_history_refs_present",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "request_history_and_non_overwrite"
+    },
+    {
+      "mutation_id": "proposal_missing_non_overwrite_attestation_present",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "request_history_and_non_overwrite"
+    },
+    {
+      "mutation_id": "proposal_missing_revision_reason_present",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "request_revision_reason"
+    },
+    {
+      "mutation_id": "proposal_missing_dependency_closure_complete",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "request_dependency_closure"
+    },
+    {
+      "mutation_id": "proposal_missing_ontology_migration_receipt_present",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "request_ontology_migration"
+    },
+    {
+      "mutation_id": "proposal_missing_surface_plan_complete",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "request_surface_plan"
+    },
+    {
+      "mutation_id": "proposal_missing_residual",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "request_residual_record"
+    },
+    {
+      "mutation_id": "proposal_zero_surfaces",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "request_surface_plan"
+    },
+    {
+      "mutation_id": "append_substitution",
+      "rejected": true,
+      "terminal_stage": "proposed",
+      "failure_route": "reject_event_substitution"
+    },
+    {
+      "mutation_id": "append_stale_base",
+      "rejected": true,
+      "terminal_stage": "proposed",
+      "failure_route": "reject_stale_base"
+    },
+    {
+      "mutation_id": "materialize_substitution",
+      "rejected": true,
+      "terminal_stage": "appended",
+      "failure_route": "reject_event_substitution"
+    },
+    {
+      "mutation_id": "materialize_stale_base",
+      "rejected": true,
+      "terminal_stage": "appended",
+      "failure_route": "reject_event_substitution"
+    },
+    {
+      "mutation_id": "ack_substitution",
+      "rejected": true,
+      "terminal_stage": "materialized",
+      "failure_route": "reject_event_substitution"
+    },
+    {
+      "mutation_id": "ack_missing_receipt",
+      "rejected": true,
+      "terminal_stage": "materialized",
+      "failure_route": "request_surface_acknowledgment"
+    },
+    {
+      "mutation_id": "ack_count_short",
+      "rejected": true,
+      "terminal_stage": "materialized",
+      "failure_route": "request_surface_acknowledgment"
+    },
+    {
+      "mutation_id": "skip_proposal",
+      "rejected": true,
+      "terminal_stage": "idle",
+      "failure_route": "reject_wrong_stage"
+    },
+    {
+      "mutation_id": "skip_append",
+      "rejected": true,
+      "terminal_stage": "proposed",
+      "failure_route": "reject_wrong_stage"
+    },
+    {
+      "mutation_id": "skip_materialize",
+      "rejected": true,
+      "terminal_stage": "appended",
+      "failure_route": "reject_wrong_stage"
+    }
+  ],
+  "final_state": {
+    "claim_id": 101,
+    "ledger_version": 8,
+    "head_digest": 8001,
+    "semantic_version": 4,
+    "ontology_version": 3,
+    "support_rank": 2,
+    "stage": "acknowledged",
+    "required_surface_acks": 3,
+    "observed_surface_acks": 3,
+    "materialized_ledger_version": 8,
+    "append_count": 8,
+    "external_effects": 0
+  },
+  "strongest_effect": "append_materialize_and_acknowledge_evidence_owner_decision",
+  "support_state_effect": "none",
+  "non_claims": [
+    "This finite authored lifecycle does not establish claim truth, evidence validity, reviewer competence, semantic equivalence, assumption completeness, or natural-language claim extraction.",
+    "The recorded support rank changes only after an authored evidence-owner receipt; the ledger does not authorize support movement, commit an external effect, approve release, or prove safety or usefulness.",
+    "The exact 5/7 revision suite, five-project 1/11 lifecycle, route cases, and mutations do not establish a deployed concurrent event store, causal benefit, reproduction, transfer, SOTA, AGI, ASI, or chapter-core support."
+  ]
+}

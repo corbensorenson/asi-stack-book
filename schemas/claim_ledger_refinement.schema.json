@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/claim_ledger_refinement.schema.json",
+  "title": "Claim Ledger Refinement Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "result_id",
+    "source_sha256",
+    "input_suites",
+    "reachable_stage_count",
+    "route_case_count",
+    "route_coverage",
+    "mutation_count",
+    "mutation_rejection_count",
+    "mutation_receipts",
+    "final_state",
+    "strongest_effect",
+    "support_state_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.claim_ledger_refinement.v1"},
+    "result_id": {"type": "string", "minLength": 1},
+    "source_sha256": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lean_model", "revision_fixtures", "historical_record", "historical_schema"],
+      "properties": {
+        "lean_model": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "revision_fixtures": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "historical_record": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "historical_schema": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "input_suites": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["suite_id", "valid_count", "expected_invalid_count", "suite_passed", "validator_sha256"],
+        "properties": {
+          "suite_id": {"type": "string", "minLength": 1},
+          "valid_count": {"type": "integer", "minimum": 0},
+          "expected_invalid_count": {"type": "integer", "minimum": 0},
+          "suite_passed": {"const": true},
+          "validator_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "reachable_stage_count": {"const": 5},
+    "route_case_count": {"const": 17},
+    "route_coverage": {
+      "type": "array",
+      "minItems": 17,
+      "maxItems": 17,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["case_id", "expected_route", "observed_route"],
+        "properties": {
+          "case_id": {"type": "string", "minLength": 1},
+          "expected_route": {"type": "string", "minLength": 1},
+          "observed_route": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "mutation_count": {"type": "integer", "minimum": 20},
+    "mutation_rejection_count": {"type": "integer", "minimum": 20},
+    "mutation_receipts": {
+      "type": "array",
+      "minItems": 20,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["mutation_id", "rejected", "terminal_stage", "failure_route"],
+        "properties": {
+          "mutation_id": {"type": "string", "minLength": 1},
+          "rejected": {"const": true},
+          "terminal_stage": {"type": "string", "minLength": 1},
+          "failure_route": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "final_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim_id", "ledger_version", "head_digest", "semantic_version", "ontology_version", "support_rank", "stage", "append_count", "external_effects", "required_surface_acks", "observed_surface_acks", "materialized_ledger_version"],
+      "properties": {
+        "claim_id": {"const": 101},
+        "ledger_version": {"const": 8},
+        "head_digest": {"const": 8001},
+        "semantic_version": {"const": 4},
+        "ontology_version": {"const": 3},
+        "support_rank": {"const": 2},
+        "stage": {"const": "acknowledged"},
+        "append_count": {"const": 8},
+        "external_effects": {"const": 0},
+        "required_surface_acks": {"const": 3},
+        "observed_surface_acks": {"const": 3},
+        "materialized_ledger_version": {"const": 8}
+      }
+    },
+    "strongest_effect": {"const": "append_materialize_and_acknowledge_evidence_owner_decision"},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}}
+  }
+}

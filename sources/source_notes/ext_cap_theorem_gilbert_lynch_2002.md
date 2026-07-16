@@ -37,6 +37,8 @@ Gilbert and Lynch formalize Brewer's CAP intuition as a distributed-systems trad
 
 ## Book Chapters Supported
 
+- `context-transactions-snapshots-mounts-and-taint` (Context Transactions,
+  Snapshots, Mounts, and Taint)
 - `personal-compute-hives-and-federated-edge-intelligence` (Personal Compute Hives and Federated Edge Intelligence)
 - `runtime-adapters-tool-permissions-and-human-approval` (Runtime Adapters, Tool Permissions, and Human Approval)
 

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/command_semantic_refinement.schema.json",
+  "title": "Command Semantic Refinement Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "result_id", "source_sha256", "plan_fixture_count",
+    "command_schema_valid_fixture_count", "command_interface_violation_count",
+    "correctly_blocked_at_command_interface_count", "command_interface_admissible_count",
+    "fixture_receipts", "handoff_trace_count", "handoff_invalid_control_count",
+    "vertical_scenario_count", "vertical_accepted_event_count", "reachable_trace_event_count",
+    "reference_trace_final_state", "mutation_count", "mutation_rejection_count",
+    "mutation_receipts", "support_state_effect", "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.command_semantic_refinement.v1"},
+    "result_id": {"const": "command-semantic-refinement-2026-07-15-local"},
+    "source_sha256": {
+      "type": "object", "additionalProperties": false,
+      "required": ["lean_model", "command_schema", "plan_fixture_inventory", "handoff_result", "vertical_execution_result"],
+      "properties": {
+        "lean_model": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "command_schema": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "plan_fixture_inventory": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "handoff_result": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "vertical_execution_result": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "plan_fixture_count": {"const": 13},
+    "command_schema_valid_fixture_count": {"const": 13},
+    "command_interface_violation_count": {"const": 5},
+    "correctly_blocked_at_command_interface_count": {"const": 2},
+    "command_interface_admissible_count": {"const": 6},
+    "fixture_receipts": {
+      "type": "array", "minItems": 13, "maxItems": 13,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["fixture", "command_schema_valid", "classification", "reason", "whole_fixture_acceptance_inferred"],
+        "properties": {
+          "fixture": {"type": "string", "minLength": 1},
+          "command_schema_valid": {"const": true},
+          "classification": {"enum": ["command_interface_violation", "correctly_blocked_at_command_interface", "command_interface_admissible"]},
+          "reason": {"type": "string", "minLength": 1},
+          "whole_fixture_acceptance_inferred": {"const": false}
+        }
+      }
+    },
+    "handoff_trace_count": {"const": 9},
+    "handoff_invalid_control_count": {"const": 7},
+    "vertical_scenario_count": {"const": 9},
+    "vertical_accepted_event_count": {"const": 89},
+    "reachable_trace_event_count": {"const": 5},
+    "reference_trace_final_state": {"type": "object"},
+    "mutation_count": {"const": 38},
+    "mutation_rejection_count": {"const": 38},
+    "mutation_receipts": {
+      "type": "array", "minItems": 38, "maxItems": 38,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["mutation_id", "rejected", "failed_event_index", "reasons"],
+        "properties": {
+          "mutation_id": {"type": "string", "minLength": 1},
+          "rejected": {"const": true},
+          "failed_event_index": {"type": "integer", "minimum": 0, "maximum": 4},
+          "reasons": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+        }
+      }
+    },
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  }
+}

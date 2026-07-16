@@ -15,20 +15,21 @@
       "supersessionWithResidualAccepted": true,
       "supportStateEffectNone": true
     },
-    "module": "AsiStackProofs.ReadinessGates",
+    "module": "AsiStackProofs.ReadinessRefinement",
     "proof_tag": "lean:readiness.gates.lifecycle_probe_bridge",
     "theorem_refs": [
-      "readiness_lifecycle_transition_must_be_forward_or_terminal",
-      "allowed_readiness_transition_requires_core_records",
-      "default_readiness_requires_regression_authority_and_route",
-      "default_readiness_without_regression_floor_rejected",
-      "default_readiness_without_authority_scope_rejected",
-      "quarantine_transition_blocks_ordinary_and_requires_fallback",
-      "quarantined_lifecycle_transition_with_ordinary_route_rejected",
-      "supersession_without_record_rejected",
-      "retirement_without_receipt_rejected",
-      "retired_readiness_state_cannot_transition",
-      "readiness_lifecycle_probe_fixture_bridge"
+      "apply_event_preserves_capability_and_evidence_identity",
+      "apply_event_cannot_assign_support_or_external_effect",
+      "stale_gate_blocks_canary",
+      "regression_blocks_canary",
+      "missing_residual_escrow_blocks_canary",
+      "missing_fallback_blocks_canary",
+      "threshold_breach_quarantines_qualification",
+      "missing_independent_evaluation_blocks_default",
+      "incomplete_quarantine_propagation_blocks_transition",
+      "ordinary_route_must_be_blocked_in_quarantine",
+      "missing_terminal_receipt_blocks_termination",
+      "full_readiness_lifecycle_reaches_terminal_state"
     ]
   },
   "negative_controls": {

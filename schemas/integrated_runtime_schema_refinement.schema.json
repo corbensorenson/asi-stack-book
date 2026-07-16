@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/integrated_runtime_schema_refinement.schema.json",
+  "title": "Integrated Runtime Schema Refinement Result",
+  "type": "object",
+  "required": [
+    "schema_version", "result_id", "source_result_ref", "source_result_sha256",
+    "source_schema_ref", "source_schema_sha256", "lean_model_ref", "lean_model_sha256",
+    "scenario_count", "round_trip_count", "trace_class_counts", "mutation_count",
+    "mutation_rejection_count", "records", "support_state_effect", "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.integrated_runtime_schema_refinement_result.v1"},
+    "result_id": {"type": "string", "minLength": 1},
+    "source_result_ref": {"const": "experiments/governed_repository_change_slice/results/2026-07-10-local.json"},
+    "source_result_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_schema_ref": {"const": "schemas/governed_repository_change_result.schema.json"},
+    "source_schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "lean_model_ref": {"const": "lean/AsiStackProofs/IntegratedReferenceTrace.lean"},
+    "lean_model_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "scenario_count": {"const": 9},
+    "round_trip_count": {"const": 9},
+    "trace_class_counts": {
+      "type": "object",
+      "required": ["approved_completion", "pre_effect_refusal", "exact_rollback", "failed_rollback_quarantine"],
+      "properties": {
+        "approved_completion": {"const": 3},
+        "pre_effect_refusal": {"const": 3},
+        "exact_rollback": {"const": 2},
+        "failed_rollback_quarantine": {"const": 1}
+      },
+      "additionalProperties": false
+    },
+    "mutation_count": {"const": 20},
+    "mutation_rejection_count": {"const": 20},
+    "records": {
+      "type": "array", "minItems": 9, "maxItems": 9,
+      "items": {
+        "type": "object",
+        "required": ["scenario_id", "trace_class", "projection_sha256", "effect_committed", "effect_acknowledged", "rollback_exact", "rollback_failed", "open_residuals", "terminal_receipt"],
+        "properties": {
+          "scenario_id": {"type": "string", "minLength": 1},
+          "trace_class": {"enum": ["approved_completion", "pre_effect_refusal", "exact_rollback", "failed_rollback_quarantine"]},
+          "projection_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "effect_committed": {"type": "boolean"},
+          "effect_acknowledged": {"type": "boolean"},
+          "rollback_exact": {"type": "boolean"},
+          "rollback_failed": {"type": "boolean"},
+          "open_residuals": {"type": "integer", "minimum": 0},
+          "terminal_receipt": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": false
+}

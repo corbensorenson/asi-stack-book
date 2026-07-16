@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/intent_execution_vertical_refinement.schema.json",
+  "title": "Intent-to-Execution Vertical Refinement Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "source_result_sha256", "source_schema_sha256", "prior_probe_sha256", "lean_model_sha256", "scenario_count", "release_count", "pre_effect_refusal_count", "exact_rollback_refusal_count", "failed_rollback_quarantine_count", "accepted_event_count", "material_effect_count", "independently_observed_effect_count", "exact_rollback_count", "open_residual_scenario_count", "mutation_count", "mutation_rejection_count", "scenario_receipts", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.intent_execution_vertical_refinement.v1"},
+    "result_id": {"const": "intent-execution-vertical-refinement-2026-07-15-local"},
+    "source_result_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "prior_probe_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "lean_model_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "scenario_count": {"const": 9},
+    "release_count": {"const": 3},
+    "pre_effect_refusal_count": {"const": 3},
+    "exact_rollback_refusal_count": {"const": 2},
+    "failed_rollback_quarantine_count": {"const": 1},
+    "accepted_event_count": {"const": 89},
+    "material_effect_count": {"const": 6},
+    "independently_observed_effect_count": {"const": 6},
+    "exact_rollback_count": {"const": 2},
+    "open_residual_scenario_count": {"const": 2},
+    "mutation_count": {"const": 30},
+    "mutation_rejection_count": {"const": 30},
+    "scenario_receipts": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"type": "object", "additionalProperties": false, "required": ["scenario_id", "decision", "event_count", "errors"], "properties": {"scenario_id": {"type": "string"}, "decision": {"enum": ["release", "refuse", "quarantine"]}, "event_count": {"type": "integer", "minimum": 1}, "errors": {"type": "array", "maxItems": 0}}}},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}}
+  }
+}

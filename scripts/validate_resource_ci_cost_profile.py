@@ -23,7 +23,7 @@ from build_resource_ci_cost_profile import (
 
 
 DOC = ROOT / "docs" / "resource_ci_cost_profile.md"
-LEAN_FIXTURE = ROOT / "lean" / "AsiStackProofs" / "ResourceEconomics.lean"
+LEAN_FIXTURE = ROOT / "lean" / "AsiStackProofs" / "ResourceEconomicsRefinement.lean"
 SHA_RE = re.compile(r"^[0-9a-f]{64}$")
 KNOWN_FAILURE_TYPES = {
     "generated_scaffold_drift",
@@ -227,8 +227,8 @@ def validate_lean_alignment(value: dict[str, Any], errors: list[str]) -> None:
     ]
     expected = {
         "proof_bridge_type": "finite CI failure-classification summary",
-        "lean_module": "AsiStackProofs.ResourceEconomics",
-        "lean_fixture": "resourceCICostProfileFixture",
+        "lean_module": "AsiStackProofs.ResourceEconomicsRefinement",
+        "lean_fixture": "completePacket",
         "lean_theorem_names": LEAN_THEOREMS,
         "run_count": metrics.get("run_count"),
         "completed_run_count": metrics.get("completed_run_count"),
@@ -271,21 +271,12 @@ def validate_lean_alignment(value: dict[str, Any], errors: list[str]) -> None:
         if not re.search(rf"^theorem\s+{re.escape(theorem)}\b", lean_text, flags=re.MULTILINE):
             errors.append(f"{rel(LEAN_FIXTURE)} missing theorem {theorem}.")
     for fragment in (
-        "structure ResourceCICostProfileSummary",
-        "def resourceCICostProfileFixture",
-        f"runCount := {alignment.get('run_count')}",
-        f"completedRunCount := {alignment.get('completed_run_count')}",
-        f"successCount := {alignment.get('success_count')}",
-        f"failureCount := {alignment.get('failure_count')}",
-        f"inProgressCount := {alignment.get('in_progress_count')}",
-        f"deployServiceFailureCount := {alignment.get('deploy_service_failure_count')}",
-        f"classifiedFailureCount := {alignment.get('classified_failure_count')}",
-        f"recoveryRunSeconds := {alignment.get('recovery_run_seconds')}",
-        "publicationMetadataOnly := true",
-        "supportStateEffectNone := true",
-        "chapterCoreSupportEffectNone := true",
-        "evidenceTransitionCreated := false",
-        "nonClaimBoundary := true",
+        "structure Packet where",
+        "def completePacket",
+        "failureRetention : Bool := true",
+        "rawProxyPromotion : Bool := false",
+        "supportPromotionRequested : Bool := false",
+        "externalEffectRequested : Bool := false",
     ):
         if fragment not in lean_text:
             errors.append(f"{rel(LEAN_FIXTURE)} missing CI fixture fragment {fragment!r}.")
@@ -305,7 +296,7 @@ def validate_doc(errors: list[str]) -> None:
         "failure classification",
         "Finite Lean Alignment",
         "finite CI failure-classification summary",
-        "resourceCICostProfileFixture",
+        "AsiStackProofs.ResourceEconomicsRefinement",
         "Support-state effect | `none`",
         "does not promote any chapter core claim above `argument`",
     ]

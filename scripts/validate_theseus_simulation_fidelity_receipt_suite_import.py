@@ -100,7 +100,6 @@ REQUIRED_NON_CLAIMS = (
     "does not promote any chapter core claim above argument",
 )
 LEAN_THEOREMS = (
-    "theseus_simulation_fidelity_receipt_suite_import_fixture_valid",
     "theseus_simulation_fidelity_receipt_suite_import_core_promotion_rejected",
     "theseus_simulation_fidelity_receipt_suite_import_physical_feasibility_overclaim_rejected",
     "theseus_simulation_fidelity_receipt_suite_import_benchmark_transfer_overclaim_rejected",

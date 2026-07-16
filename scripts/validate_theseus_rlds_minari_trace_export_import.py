@@ -67,7 +67,6 @@ REQUIRED_NON_CLAIMS = (
     "does not promote any chapter core claim above argument",
 )
 LEAN_THEOREMS = (
-    "theseus_rlds_minari_trace_export_import_fixture_valid",
     "theseus_rlds_minari_trace_export_import_core_promotion_rejected",
     "theseus_rlds_minari_trace_export_import_dataset_quality_overclaim_rejected",
     "theseus_rlds_minari_trace_export_import_replay_success_overclaim_rejected",

@@ -12,21 +12,14 @@
       "retryResumeTracePresent": true,
       "supportStateEffectNone": true
     },
-    "module": "AsiStackProofs.TypedJobs",
+    "module": "AsiStackProofs.TypedJobRefinement",
     "proof_tag": "lean:jobs.lifecycle.durable_lifecycle_probe_bridge",
     "theorem_refs": [
-      "durable_retry_without_idempotency_rejected",
-      "durable_retry_authority_widening_rejected",
-      "durable_retry_permission_overreach_rejected",
-      "durable_expired_lease_dispatch_rejected",
-      "durable_evidence_ready_missing_completion_receipt_rejected",
-      "durable_evidence_ready_missing_replay_ref_rejected",
-      "durable_blocked_without_residual_owner_rejected",
-      "durable_missing_non_claim_boundary_rejected",
-      "durable_support_promotion_rejected",
-      "durable_retry_complete_trace_accepted",
-      "durable_expired_lease_blocked_trace_accepted",
-      "typed_job_durable_lifecycle_probe_fixture_bridge"
+      "expired_lease_cannot_dispatch",
+      "retry_requires_idempotency_key",
+      "retry_cannot_widen_authority",
+      "evidence_ready_adjudication_requires_replay_reference",
+      "full_typed_job_lifecycle_reaches_closed_state"
     ]
   },
   "negative_controls": {

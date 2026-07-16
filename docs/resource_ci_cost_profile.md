@@ -65,14 +65,13 @@ or economic adequacy.
 ## Finite Lean Alignment
 
 The result record carries `lean_fixture_alignment` with proof bridge type
-`finite CI failure-classification summary`. The bridge points to
-`AsiStackProofs.ResourceEconomics.resourceCICostProfileFixture` and the Lean
-theorems `resource_ci_cost_profile_fixture_valid`,
-`resource_ci_cost_profile_preserves_no_core_promotion`,
-`resource_ci_cost_profile_classifies_all_failures`, and
-`resource_ci_cost_profile_records_recovery_boundary`.
+`finite CI failure-classification summary`. Python owns the exact historical CI
+counts. The bridge points to `AsiStackProofs.ResourceEconomicsRefinement` and
+the Lean theorems `missing_failure_retention_blocks_verification`,
+`raw_proxy_cannot_promote_executed_work`, and
+`complete_resource_lifecycle_reaches_closed_without_support_or_effect_authority`.
 
-This fixture checks only finite metadata accounting: 8 recorded Pages runs, 8
+This combined check covers only finite metadata accounting: 8 recorded Pages runs, 8
 completed runs, 5 successes, 3 classified deploy-service failures, 0
 in-progress runs, the 131-second recovery boundary, publication-metadata-only
 scope, non-evidence classification, and no support-state or chapter-core

@@ -18,7 +18,7 @@ python3 scripts/validate_resource_load_stability_probe.py
 
 The first command writes the deterministic local result. The second command
 recomputes the runner output, checks tracked artifact hashes, verifies the
-finite Lean fixture bridge in `AsiStackProofs.ResourceEconomics`, checks route
+finite Lean lifecycle bridge in `AsiStackProofs.ResourceEconomicsRefinement`, checks route
 selection fields, and enforces the non-claim boundary.
 
 ## Result Record
@@ -53,21 +53,18 @@ Result record:
 
 ## Lean Fixture Bridge
 
-`AsiStackProofs.ResourceEconomics` contains a finite
-`LoadSmoothingWorkloadSummary` fixture for this result. The validator checks
-that the result record names the bridge and that these theorem references are
-present:
+The Python result owns the finite load arithmetic. The validator separately
+checks the stronger `AsiStackProofs.ResourceEconomicsRefinement` lifecycle
+boundary and requires these theorem references:
 
-- `resource_load_smoothing_workload_fixture_valid`
-- `resource_load_smoothing_workload_reduces_overrun`
-- `resource_load_smoothing_workload_rejects_review_erasure`
-- `resource_load_smoothing_workload_residualizes_deferrals`
-- `resource_load_smoothing_workload_has_no_support_promotion`
+- `missing_protected_floor_blocks_reservation`
+- `missing_reviewer_capacity_blocks_schedule`
+- `complete_resource_lifecycle_reaches_closed_without_support_or_effect_authority`
 
-The bridge is deliberately narrow. It links the public JSON result to finite
-workload facts: 10 tasks, 3 routes, baseline total overrun of 5 units, selected
-overrun of 0 units, 7 selected deferred task-ticks, 7 residualized selected
-deferrals, and 3 negative-control protected-review violations.
+The alignment is deliberately narrow. The JSON validator checks the 10-task,
+three-route arithmetic, while Lean checks protected-floor, reviewer-capacity,
+closure, support, and effect boundaries. Neither side proves deployed load
+stability.
 
 ## What It Adds
 

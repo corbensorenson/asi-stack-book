@@ -428,13 +428,11 @@ def build_record() -> dict[str, Any]:
         "workload": WORKLOAD,
         "routes": route_records,
         "lean_fixture_alignment": {
-            "module": "AsiStackProofs.ResourceEconomics",
+            "module": "AsiStackProofs.ResourceEconomicsRefinement",
             "theorem_refs": [
-                "resource_load_smoothing_workload_fixture_valid",
-                "resource_load_smoothing_workload_reduces_overrun",
-                "resource_load_smoothing_workload_rejects_review_erasure",
-                "resource_load_smoothing_workload_residualizes_deferrals",
-                "resource_load_smoothing_workload_has_no_support_promotion",
+                "missing_protected_floor_blocks_reservation",
+                "missing_reviewer_capacity_blocks_schedule",
+                "complete_resource_lifecycle_reaches_closed_without_support_or_effect_authority",
             ],
             "expected": lean_expected,
         },

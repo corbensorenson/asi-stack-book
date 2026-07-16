@@ -27,14 +27,12 @@ from run_resource_load_stability_probe import (
 
 
 DOC = ROOT / "docs" / "resource_load_stability_probe.md"
-LEAN_FIXTURE = ROOT / "lean" / "AsiStackProofs" / "ResourceEconomics.lean"
+LEAN_FIXTURE = ROOT / "lean" / "AsiStackProofs" / "ResourceEconomicsRefinement.lean"
 SHA_RE = re.compile(r"^[0-9a-f]{64}$")
 REQUIRED_THEOREMS = (
-    "resource_load_smoothing_workload_fixture_valid",
-    "resource_load_smoothing_workload_reduces_overrun",
-    "resource_load_smoothing_workload_rejects_review_erasure",
-    "resource_load_smoothing_workload_residualizes_deferrals",
-    "resource_load_smoothing_workload_has_no_support_promotion",
+    "missing_protected_floor_blocks_reservation",
+    "missing_reviewer_capacity_blocks_schedule",
+    "complete_resource_lifecycle_reaches_closed_without_support_or_effect_authority",
 )
 REQUIRED_NON_CLAIM_TERMS = (
     "does not promote any chapter core claim",
@@ -213,8 +211,8 @@ def validate_lean_alignment(value: dict[str, Any], errors: list[str]) -> None:
     if not isinstance(alignment, dict):
         errors.append(f"{rel(RESULT)}: lean_fixture_alignment must be an object.")
         return
-    if alignment.get("module") != "AsiStackProofs.ResourceEconomics":
-        errors.append(f"{rel(RESULT)}: lean_fixture_alignment.module must be AsiStackProofs.ResourceEconomics.")
+    if alignment.get("module") != "AsiStackProofs.ResourceEconomicsRefinement":
+        errors.append(f"{rel(RESULT)}: lean_fixture_alignment.module must be AsiStackProofs.ResourceEconomicsRefinement.")
     theorem_refs = alignment.get("theorem_refs")
     if theorem_refs != list(REQUIRED_THEOREMS):
         errors.append(f"{rel(RESULT)}: lean_fixture_alignment.theorem_refs must list the required load-smoothing theorems.")

@@ -100,7 +100,8 @@
     "priority": "must_use",
     "layer": "governance_recursive_self_improvement",
     "chapter_targets": [
-      "05"
+      "05",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
     ],
     "url": "https://docs.google.com/document/d/1hQ9LqEgpeHo2SAntUVk15Eegms_xRVfOhtndVM5TDS4",
     "notes": "Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution."
@@ -252,7 +253,8 @@
     "layer": "capability_ratchet",
     "chapter_targets": [
       "10",
-      "13"
+      "13",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
     ],
     "url": "https://docs.google.com/document/d/16ULc3Y82TuqkFGBpjKyhrEVZYt9_Vlvatq2kiO-q1VI",
     "notes": "Benchmark pressure, residual escrow, verified modular capability, regression preservation."
@@ -277,7 +279,8 @@
     "chapter_targets": [
       "13",
       "capability-thresholds-and-deployment-commitments",
-      "safety-cases-and-structured-assurance"
+      "safety-cases-and-structured-assurance",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
     ],
     "url": "https://docs.google.com/document/d/1m1EycQk56VDh1Rg3IY8GYwkebIVn3bGAWIHs93a3628",
     "notes": "Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards."
@@ -2216,7 +2219,8 @@
       "procedural-memory-and-cognitive-loop-closure",
       "compact-generative-systems-and-residual-honesty",
       "rankfold-neuralfold-and-artifact-compression",
-      "mathematical-and-search-substrates"
+      "mathematical-and-search-substrates",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
     ],
     "url": "https://arxiv.org/abs/2006.08381",
     "notes": "External program-synthesis source for wake-sleep library learning, reusable abstractions, interpretable learned programs, and compression-through-abstraction vocabulary.",
@@ -2757,7 +2761,8 @@
     "layer": "sequence_memory_recurrence",
     "chapter_targets": [
       "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "coilra-multicoil-rope-and-cyclic-mixers"
+      "coilra-multicoil-rope-and-cyclic-mixers",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
     ],
     "url": "https://arxiv.org/abs/2307.08621",
     "notes": "External retention/recurrent-sequence comparator for the relationship between recurrence and attention, recurrent/chunkwise computation, and inference-efficiency tradeoffs.",
@@ -2776,7 +2781,8 @@
     "chapter_targets": [
       "fast-generation",
       "math-substrates",
-      "coilra-multicoil-rope-and-cyclic-mixers"
+      "coilra-multicoil-rope-and-cyclic-mixers",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
     ],
     "url": "https://arxiv.org/abs/2312.00752",
     "notes": "Primary external paper for selective state-space sequence models as a different long-sequence substrate and inference-efficiency axis from decoding tricks.",
@@ -4270,7 +4276,7 @@
     "source_type": "conference_paper",
     "published": "2024",
     "updated": "2024",
-    "citation_label": "Gutiérrez et al. (2024), HippoRAG",
+    "citation_label": "Guti\u00e9rrez et al. (2024), HippoRAG",
     "doi": "10.52202/079017-1902"
   },
   {
@@ -4491,7 +4497,8 @@
     "chapter_targets": [
       "governed-deliberation-and-test-time-scaling",
       "mathematical-and-search-substrates",
-      "coil-attention-cyclic-memory-and-recurrence-contracts"
+      "coil-attention-cyclic-memory-and-recurrence-contracts",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
     ],
     "url": "https://arxiv.org/abs/1807.03819",
     "notes": "Primary ICLR comparator for shared-weight depth recurrence, parallel self-attention, and per-position dynamic halting; benchmark results and theoretical expressivity do not establish stable deep recurrence, efficient scaling, local reproduction, or the book's cyclic-memory claims.",
@@ -4531,7 +4538,8 @@
       "governed-deliberation-and-test-time-scaling",
       "resource-economics-and-token-budgets",
       "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "benchmark-ratchets-and-anti-goodhart-evidence"
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
     ],
     "url": "https://arxiv.org/abs/2602.08864",
     "notes": "Current preprint comparator for complexity-controlled tests of token-level variable-depth compute and online halting; its negative result that difficulty-aligned compute need not generalize is a boundary against equating adaptive depth with algorithmic extrapolation or local capability.",
@@ -4756,5 +4764,446 @@
     "updated": "2019-02-25",
     "citation_label": "Demski and Garrabrant (2019), Embedded Agency",
     "doi": "10.48550/arXiv.1902.09469"
+  },
+  {
+    "id": "ext_ietf_rats_architecture_2023",
+    "title": "Remote ATtestation procedureS (RATS) Architecture",
+    "priority": "external_literature",
+    "layer": "remote_attestation_architecture",
+    "chapter_targets": [
+      "model-weight-custody-and-hardware-roots-of-trust"
+    ],
+    "url": "https://www.rfc-editor.org/rfc/rfc9334.html",
+    "notes": "Primary IETF architecture and terminology comparator for Attester, Verifier, Relying Party, Evidence, Attestation Results, appraisal policies, reference values, freshness, layered environments, privacy, trust roots, and confidential-model key release. It is informational architecture, not a protocol, hardware assurance level, verifier-independence result, or local attestation deployment.",
+    "source_type": "informational_rfc",
+    "published": "2023-01",
+    "updated": "2023-01",
+    "citation_label": "Birkholz et al. (2023), RATS Architecture",
+    "doi": "10.17487/RFC9334"
+  },
+  {
+    "id": "ext_nist_key_management_2020",
+    "title": "Recommendation for Key Management: Part 1 \u2013 General",
+    "priority": "external_literature",
+    "layer": "cryptographic_key_management",
+    "chapter_targets": [
+      "model-weight-custody-and-hardware-roots-of-trust"
+    ],
+    "url": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final",
+    "notes": "Current final NIST key-management baseline for key and metadata protection, inventory, authorization, access control, usage periods, compromise, backup, recovery, trust anchors, and lifecycle policy. A Revision 6 draft exists, so this source is the final baseline rather than a claim that guidance has stopped evolving; no local key-management conformance or security result is established.",
+    "source_type": "standard",
+    "published": "2020-05-04",
+    "updated": "2025-04-25",
+    "citation_label": "Barker (2020), NIST SP 800-57 Part 1 Rev. 5",
+    "doi": "10.6028/NIST.SP.800-57pt1r5"
+  },
+  {
+    "id": "ext_nist_media_sanitization_2025",
+    "title": "Guidelines for Media Sanitization",
+    "priority": "external_literature",
+    "layer": "media_sanitization_and_disposal",
+    "chapter_targets": [
+      "model-weight-custody-and-hardware-roots-of-trust"
+    ],
+    "url": "https://csrc.nist.gov/pubs/sp/800/88/r2/final",
+    "notes": "Current final NIST media-sanitization comparator for rendering target data access infeasible at a stated effort level using sensitivity- and media-appropriate controls, including cryptographic erase. It does not prove that all model copies, plaintext memory, cloud replicas, derivatives, or recipients were discovered or sanitized, and no local erasure test was run.",
+    "source_type": "standard",
+    "published": "2025-09-26",
+    "updated": "2025-09-26",
+    "citation_label": "Chandramouli and Hibbard (2025), NIST SP 800-88 Rev. 2",
+    "doi": "10.6028/NIST.SP.800-88r2"
+  },
+  {
+    "id": "corben_chatgpt_kiss_irreducible_intelligence_2026",
+    "title": "KISS versus Irreducible Intelligence (author-supplied design conversation)",
+    "priority": "supporting",
+    "layer": "author_intent_replaceable_cognitive_substrates",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://chatgpt.com/share/6a57604d-59b4-83ea-8da7-b9d3d52658f8",
+    "notes": "Corben-supplied design conversation for search-verify-compile, exact-latent separation, a compact recursive kernel, and total-system KISS accounting. Author intent only; not independent evidence or a reproduced architecture.",
+    "source_type": "author_supplied_conversation",
+    "published": "2026-07-15",
+    "citation_label": "Sorenson and ChatGPT (2026), KISS versus Irreducible Intelligence"
+  },
+  {
+    "id": "corben_chatgpt_onecell_theseus_2026",
+    "title": "OneCell and Theseus Architecture Handoff (author-supplied design conversation)",
+    "priority": "supporting",
+    "layer": "author_intent_onecell_and_architectural_rsi",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://chatgpt.com/share/6a57781e-17a4-83ea-aaae-fa263a9ac2fd",
+    "notes": "Corben-supplied design conversation for a Cognitive Kernel ABI, typed state lanes, inner recurrence, outer exact search, verified abstraction, and Theseus-governed architecture tournaments. Author intent only; OneCell remains an unimplemented falsifiable candidate.",
+    "source_type": "author_supplied_conversation",
+    "published": "2026-07-15",
+    "citation_label": "Sorenson and ChatGPT (2026), OneCell and Theseus Architecture Handoff"
+  },
+  {
+    "id": "ext_attention_is_all_you_need_2017",
+    "title": "Attention Is All You Need",
+    "priority": "external_literature",
+    "layer": "dense_attention_sequence_substrate",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/1706.03762",
+    "notes": "Primary Transformer paper and dense-attention baseline. It supports the historical architecture and parallel sequence-processing comparison, not a claim that Transformers are universally optimal or locally reproduced.",
+    "source_type": "conference_paper",
+    "arxiv_id": "1706.03762",
+    "published": "2017-06-12",
+    "citation_label": "Vaswani et al. (2017), Attention Is All You Need",
+    "doi": "10.48550/arXiv.1706.03762"
+  },
+  {
+    "id": "ext_mamba2_ssd_2024",
+    "title": "Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality",
+    "priority": "external_literature",
+    "layer": "state_space_duality_and_sequence_substrates",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2405.21060",
+    "notes": "Primary Mamba-2/structured-state-space-duality comparator connecting SSM and attention-like formulations. No local model, kernel, quality, scaling, or hardware result is reproduced.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2405.21060",
+    "published": "2024-05-31",
+    "citation_label": "Dao and Gu (2024), Transformers are SSMs",
+    "doi": "10.48550/arXiv.2405.21060"
+  },
+  {
+    "id": "ext_s4_2022",
+    "title": "Efficiently Modeling Long Sequences with Structured State Spaces",
+    "priority": "external_literature",
+    "layer": "structured_state_space_sequence_substrates",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2111.00396",
+    "notes": "Foundational S4 comparator for structured state-space sequence models, efficient long-range computation, and the lineage that precedes selective SSMs. Source-reported benchmark and generation results are not reproduced and do not establish exact recall or governed substitutability.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2111.00396",
+    "published": "2021-10-31",
+    "citation_label": "Gu, Goel, and Re (2022), Structured State Spaces",
+    "doi": "10.48550/arXiv.2111.00396"
+  },
+  {
+    "id": "ext_mamba3_2026",
+    "title": "Mamba-3: Improved Sequence Modeling using State Space Principles",
+    "priority": "external_literature",
+    "layer": "modern_selective_state_space_sequence_substrates",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2603.15569",
+    "notes": "Current 2026 selective-SSM comparator for complex-valued state updates, discretization, and multi-input/multi-output formulation. Recent source-reported results are not locally reproduced and must not set the chapter conclusion by recency.",
+    "source_type": "preprint",
+    "arxiv_id": "2603.15569",
+    "published": "2026-03-16",
+    "citation_label": "Lahoti et al. (2026), Mamba-3",
+    "doi": "10.48550/arXiv.2603.15569"
+  },
+  {
+    "id": "ext_hyperscale_lottery_2026",
+    "title": "The Hyperscale Lottery: How State-Space Models Have Sacrificed Edge Efficiency",
+    "priority": "external_literature",
+    "layer": "hardware_specific_state_space_efficiency_counterevidence",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2604.07935",
+    "notes": "Current edge-hardware counterstudy measuring Mamba-family latency outside hyperscale-GPU conditions. Its source-reported results require platform-stratified latency, memory, and energy accounting; they are not locally reproduced and do not settle the quality-efficiency frontier.",
+    "source_type": "preprint",
+    "arxiv_id": "2604.07935",
+    "published": "2026-04-09",
+    "citation_label": "Geens et al. (2026), The Hyperscale Lottery",
+    "doi": "10.48550/arXiv.2604.07935"
+  },
+  {
+    "id": "ext_gated_deltanet_2024",
+    "title": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+    "priority": "external_literature",
+    "layer": "linear_attention_and_adaptive_memory",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2412.06464",
+    "notes": "Primary gated-delta-rule comparator for targeted recurrent-memory updates, rapid erasure, parallel training, and hybrid attention/SSM compositions. Source-reported retrieval, extrapolation, efficiency, and quality results are not locally reproduced.",
+    "source_type": "preprint",
+    "arxiv_id": "2412.06464",
+    "published": "2024-12-09",
+    "citation_label": "Yang et al. (2024), Gated Delta Networks",
+    "doi": "10.48550/arXiv.2412.06464"
+  },
+  {
+    "id": "ext_jamba_2024",
+    "title": "Jamba: A Hybrid Transformer-Mamba Language Model",
+    "priority": "external_literature",
+    "layer": "hybrid_attention_state_space_mixture_of_experts",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2403.19887",
+    "notes": "Primary large-scale hybrid Transformer-Mamba-MoE comparator. It motivates route- and composition-aware accounting; its reported quality, context, throughput, and memory results are not locally reproduced and do not establish that the specific mixture is generally optimal.",
+    "source_type": "preprint",
+    "arxiv_id": "2403.19887",
+    "published": "2024-03-28",
+    "citation_label": "Lieber et al. (2024), Jamba",
+    "doi": "10.48550/arXiv.2403.19887"
+  },
+  {
+    "id": "ext_neural_message_passing_2017",
+    "title": "Neural Message Passing for Quantum Chemistry",
+    "priority": "external_literature",
+    "layer": "graph_relational_message_passing",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/1704.01212",
+    "notes": "Primary message-passing neural-network framework for learned computation over graph structure. Its molecular results motivate a non-token-native relational lane but do not establish general reasoning, dynamic graph memory, exact state, or local reproduction.",
+    "source_type": "conference_paper",
+    "arxiv_id": "1704.01212",
+    "published": "2017-04-04",
+    "citation_label": "Gilmer et al. (2017), Neural Message Passing for Quantum Chemistry",
+    "doi": "10.48550/arXiv.1704.01212"
+  },
+  {
+    "id": "ext_hyena_hierarchy_2023",
+    "title": "Hyena Hierarchy: Towards Larger Convolutional Language Models",
+    "priority": "external_literature",
+    "layer": "long_convolution_sequence_substrates",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2302.10866",
+    "notes": "Primary long-convolution comparator for subquadratic sequence mixing and hardware-aware architecture comparisons. No local training, throughput, quality, recall, or scaling result is reproduced.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2302.10866",
+    "published": "2023-02-21",
+    "citation_label": "Poli et al. (2023), Hyena Hierarchy",
+    "doi": "10.48550/arXiv.2302.10866"
+  },
+  {
+    "id": "ext_rwkv_2023",
+    "title": "RWKV: Reinventing RNNs for the Transformer Era",
+    "priority": "external_literature",
+    "layer": "linear_recurrent_language_models",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://aclanthology.org/2023.findings-emnlp.936/",
+    "notes": "Primary recurrent language-model comparator combining parallelizable training with recurrent inference. Reported benchmark, memory, and inference properties are not reproduced locally.",
+    "source_type": "conference_paper",
+    "published": "2023-12-01",
+    "citation_label": "Peng et al. (2023), RWKV",
+    "doi": "10.18653/v1/2023.findings-emnlp.936"
+  },
+  {
+    "id": "ext_xlstm_2024",
+    "title": "xLSTM: Extended Long Short-Term Memory",
+    "priority": "external_literature",
+    "layer": "modern_gated_recurrent_sequence_substrates",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2405.04517",
+    "notes": "Primary modern-LSTM comparator for revised gating, memory, and scalable recurrent language modeling. No xLSTM training, scaling, quality, or inference result is reproduced locally.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2405.04517",
+    "published": "2024-05-07",
+    "citation_label": "Beck et al. (2024), xLSTM",
+    "doi": "10.48550/arXiv.2405.04517"
+  },
+  {
+    "id": "ext_ttt_layers_2024",
+    "title": "Learning to (Learn at Test Time): RNNs with Expressive Hidden States",
+    "priority": "external_literature",
+    "layer": "test_time_learned_state_sequence_substrates",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2407.04620",
+    "notes": "Primary test-time-training-layer comparator that treats hidden state as a learned model updated on the sequence. It motivates explicit online-state custody and rollback; no local quality or efficiency result is reproduced.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2407.04620",
+    "published": "2024-07-05",
+    "citation_label": "Sun et al. (2024), Learning to Learn at Test Time",
+    "doi": "10.48550/arXiv.2407.04620"
+  },
+  {
+    "id": "ext_titans_2025",
+    "title": "Titans: Learning to Memorize at Test Time",
+    "priority": "external_literature",
+    "layer": "test_time_neural_long_term_memory",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2501.00663",
+    "notes": "Primary neural-memory comparator for test-time memorization and long-context sequence modeling. The paper motivates mutable-state provenance and rollback tests; no local model or benchmark result is reproduced.",
+    "source_type": "preprint",
+    "arxiv_id": "2501.00663",
+    "published": "2025-01-01",
+    "citation_label": "Behrouz et al. (2025), Titans",
+    "doi": "10.48550/arXiv.2501.00663"
+  },
+  {
+    "id": "ext_kan_2024",
+    "title": "KAN: Kolmogorov-Arnold Networks",
+    "priority": "external_literature",
+    "layer": "learned_univariate_function_networks",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2404.19756",
+    "notes": "Primary KAN proposal replacing fixed node activations/linear edge weights with learned univariate edge functions. Interpretability and scientific-task demonstrations are source-reported and do not establish a general MLP or Transformer replacement.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2404.19756",
+    "published": "2024-04-30",
+    "citation_label": "Liu et al. (2024), KAN",
+    "doi": "10.48550/arXiv.2404.19756"
+  },
+  {
+    "id": "ext_kan_or_mlp_fairer_comparison_2024",
+    "title": "KAN or MLP: A Fairer Comparison",
+    "priority": "external_literature",
+    "layer": "architecture_comparison_methodology",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2407.16674",
+    "notes": "Critical matched-comparison source for KAN versus MLP under parameter, FLOP, and task controls. It is included to prevent architecture enthusiasm from substituting for fair accounting; no local comparison is reproduced.",
+    "source_type": "preprint",
+    "arxiv_id": "2407.16674",
+    "published": "2024-07-23",
+    "citation_label": "Yu et al. (2024), KAN or MLP",
+    "doi": "10.48550/arXiv.2407.16674"
+  },
+  {
+    "id": "ext_neural_turing_machines_2014",
+    "title": "Neural Turing Machines",
+    "priority": "external_literature",
+    "layer": "differentiable_external_memory",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/1410.5401",
+    "notes": "Primary differentiable-controller/external-memory source. It motivates variable-size memory interfaces and out-of-distribution algorithmic tests; toy-task results do not establish reliable exact memory or general computation.",
+    "source_type": "preprint",
+    "arxiv_id": "1410.5401",
+    "published": "2014-10-20",
+    "citation_label": "Graves, Wayne, and Danihelka (2014), Neural Turing Machines",
+    "doi": "10.48550/arXiv.1410.5401"
+  },
+  {
+    "id": "ext_differentiable_neural_computer_2016",
+    "title": "Hybrid computing using a neural network with dynamic external memory",
+    "priority": "external_literature",
+    "layer": "differentiable_external_memory",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://doi.org/10.1038/nature20101",
+    "notes": "Primary Differentiable Neural Computer source for learned controllers over dynamic external memory. Source-reported graph and reasoning tasks do not establish reliable exact state, scalable memory, or local reproduction.",
+    "source_type": "journal_article",
+    "published": "2016-10-12",
+    "citation_label": "Graves et al. (2016), Differentiable Neural Computer",
+    "doi": "10.1038/nature20101"
+  },
+  {
+    "id": "ext_liquid_time_constant_networks_2021",
+    "title": "Liquid Time-constant Networks",
+    "priority": "external_literature",
+    "layer": "continuous_time_neural_dynamics",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://doi.org/10.1609/aaai.v35i9.16936",
+    "notes": "Primary continuous-time recurrent architecture source for input-dependent time constants and dynamical-system behavior. Reported time-series results and stability analysis do not establish broad cognitive superiority or a local implementation.",
+    "source_type": "conference_paper",
+    "published": "2021-05-18",
+    "citation_label": "Hasani et al. (2021), Liquid Time-constant Networks",
+    "doi": "10.1609/aaai.v35i9.16936"
+  },
+  {
+    "id": "ext_tiny_recursive_model_2025",
+    "title": "Less is More: Recursive Reasoning with Tiny Networks",
+    "priority": "external_literature",
+    "layer": "tiny_weight_tied_recursive_reasoning",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2510.04871",
+    "notes": "Primary Tiny Recursive Model proposal and narrow puzzle-domain result. It motivates a compact weight-tied OneCell comparator but does not establish general reasoning, language capability, deep effective recursion, or total-system simplicity.",
+    "source_type": "preprint",
+    "arxiv_id": "2510.04871",
+    "published": "2025-10-06",
+    "citation_label": "Jolicoeur-Martineau (2025), Less is More",
+    "doi": "10.48550/arXiv.2510.04871"
+  },
+  {
+    "id": "ext_trm_arc_agi_analysis_2025",
+    "title": "Tiny Recursive Models on ARC-AGI-1: Inductive Biases, Identity Conditioning, and Test-Time Compute",
+    "priority": "external_literature",
+    "layer": "recursive_model_critical_evaluation",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2512.11847",
+    "notes": "Critical TRM analysis reporting material dependence on 1000-sample voting, puzzle identity, and shallow effective recursion. It is a source-reported audit rather than a local reproduction and sets preregistered identity, sampling, and recursion-depth controls.",
+    "source_type": "preprint",
+    "arxiv_id": "2512.11847",
+    "published": "2025-12-04",
+    "citation_label": "Roye-Azar et al. (2025), Tiny Recursive Models on ARC-AGI-1",
+    "doi": "10.48550/arXiv.2512.11847"
+  },
+  {
+    "id": "ext_tiny_autoregressive_recursive_models_2026",
+    "title": "Tiny Autoregressive Recursive Models",
+    "priority": "external_literature",
+    "layer": "recursive_model_controlled_ablation",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2603.08082",
+    "notes": "Controlled compute-matched study that progressively transforms a standard autoregressive model into a TRM-like system and reports no reliable advantage from the full autoregressive TRM mechanism. It motivates mechanism-level rather than label-level ablation.",
+    "source_type": "workshop_paper",
+    "arxiv_id": "2603.08082",
+    "published": "2026-03-09",
+    "citation_label": "Rauba, Fanconi, and van der Schaar (2026), Tiny Autoregressive Recursive Models",
+    "doi": "10.48550/arXiv.2603.08082"
+  },
+  {
+    "id": "ext_unimatrix_2026",
+    "title": "Associative-State Universal Transformers: Sparse Retrieval Meets Structured Recurrence",
+    "priority": "external_literature",
+    "layer": "structured_recurrence_and_sparse_retrieval",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2604.25930",
+    "notes": "Current UniMatrix preprint whose negative associative-recall result shows compressed recurrent state alone is insufficient in its setup, while explicit sparse slots and pointer-level routing materially change the result. No local reproduction or general conclusion follows.",
+    "source_type": "preprint",
+    "arxiv_id": "2604.25930",
+    "published": "2026-04-01",
+    "citation_label": "Xiao (2026), Associative-State Universal Transformers",
+    "doi": "10.48550/arXiv.2604.25930"
+  },
+  {
+    "id": "ext_memory_caching_2026",
+    "title": "Memory Caching: RNNs with Growing Memory",
+    "priority": "external_literature",
+    "layer": "growing_recurrent_memory",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2602.24281",
+    "notes": "Current recurrent-memory comparator that caches hidden-state checkpoints and exposes a trade between fixed recurrent memory and growing addressable memory. Its source-reported recall results still leave the Transformer strongest on the reported in-context recall tasks.",
+    "source_type": "preprint",
+    "arxiv_id": "2602.24281",
+    "published": "2026-02-27",
+    "citation_label": "Behrouz et al. (2026), Memory Caching",
+    "doi": "10.48550/arXiv.2602.24281"
   }
 ]

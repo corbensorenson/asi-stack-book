@@ -3,8 +3,8 @@ title: "Integrated Reference Architecture"
 chapter_id: "integrated-reference-architecture"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-10"
+draft_maturity: "v0.3 manuscript draft"
+last_updated: "2026-07-15"
 primary_sources:
   - "viea"
   - "scf"
@@ -31,13 +31,17 @@ primary_sources:
   - "bugbrain_project"
   - "corbens_trainer_project"
   - "corbens_best_model_possible_project"
+  - "ext_drexler_cais_2019"
+  - "ext_adas_2024"
+  - "qcsa_whitepaper"
+  - "ext_v_jepa_2_2025"
+  - "ext_embedded_agency_2019"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records passage-reviewed mappings for all twenty assigned sources, including source-note-only review for MoECOT and VCM Editable plus pinned local Theseus project-file references; support remains argument until integrated trace artifacts, tests, reproduced reports, or accepted evidence transitions justify promotion."
-  - "The reference_trace_record fixture validates schema/example consistency, trace state, execution boundary, parent artifacts, authority/evidence/residual deltas, promotion blockers, source refs, support-state effect, and non-claims; `python3 scripts/validate_reference_trace.py` now checks deterministic valid and expected-invalid reference-trace fixtures for parentage, layer coverage, authority deltas, residuals, stop conditions, validation commands, and support-state non-promotion. AsiStackProofs.ReferenceArchitecture implements finite record predicates only; no end-to-end runtime trace, deployed authority stop-condition checker, live artifact continuity audit, deployed runtime, or report replay has been run."
-  - "Local Theseus project references are report-first implementation context only; one static architecture-gate report fixture is now digest-verified as implementation-reference evidence, but no current Theseus dashboards, commands, board steps, compiler proof, end-to-end trace, or benchmark ledgers were rerun from this repository."
-  - "No support-state promotion, integrated runtime claim, benchmark success, model-quality result, deployment readiness, or raw source publication is implied."
+  - "No natural heterogeneous campaign has compared the joined stack with matched direct, monolithic-agent, workflow-orchestrator, service-composition, and no-governance baselines under equal models, tools, context, compute, tuning, retries, frozen authority, and complete denominators."
+  - "No deployed multi-service trace jointly establishes semantic preservation, authority timing, canonical/projection integrity, effect and receipt completeness, evaluator independence, evidence and residual integrity, lifecycle and bounded liveness, incident containment, effect-complete rollback, correction propagation, embedded residuals, useful throughput, failures, latency, governance burden, and total cost."
+  - "No independent implementer, operator, evaluator, institution, infrastructure, legal regime, or transfer environment has reproduced the local fixture and repository-slice results or established whole-stack execution, safety, capability, readiness, release, transfer, AGI, ASI, or SOTA."
 ---
 
 ## Chapter status
@@ -47,9 +51,9 @@ open_evidence_gaps:
 | Chapter ID | `integrated-reference-architecture` |
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-02 |
-| Primary source records | `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`, `moecot`, `vcm_editable`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer` |
+| Manuscript maturity | v0.3 manuscript draft |
+| Last updated | 2026-07-15 |
+| Primary source records | 30 assigned and 30 exact passage-reviewed mappings spanning the stack sources, local implementation lineage, CAIS, ADAS, QCSA, V-JEPA 2, and Embedded Agency |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`; supporting: `alignment_field`, `cgs`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`; connector/recovery: `moecot`, `vcm_editable` |
@@ -102,13 +106,13 @@ A single all-purpose agent loop can make this worse by turning every boundary in
 
 ## Core Claim
 
-[integrated-reference-architecture.core, label: Design rationale, support: argument] The stack can be specified as an integrated reference architecture with typed handoffs, authority stops, artifacts, evidence updates, and self-improvement gates.
+[integrated-reference-architecture.core, label: Design rationale, support: argument] Integrated Reference Architecture owns a trace-, run-, request-, intent-, authority-, artifact-, parentage-, layer-, canonical-state-, material-effect-, terminal-receipt-, evaluator-, evidence-, residual-, rollback-, consumer-, environment-, and time-specific **Cross-Layer Trace Join Contract**: it proves integration only when every participating owner remains distinct and its typed input, output, authority delta, state identity, observed effect, acknowledgement, evaluation, evidence delta, residual, stop, repair, rollback, and non-claim remain joinable across approved, blocked, failed, revoked, rolled-back, and quarantined paths; a diagram, shared prompt, interface name, projection, green service, replay, fixture, theorem, or locally successful slice cannot establish whole-stack execution, semantic preservation, governance enforcement, safety, capability, deployment, transfer, or SOTA.
 
 The claim remains at `argument` support. The source notes support architecture synthesis across intent, command contracts, plans, VCM, routing, claims, execution, benchmarks, SCFs, and report-first implementation references. The bounded QCSA vertical trace now shows one completed 13-stage local reversible run, but it does not show the broad learned-model, multi-service, deployed integrated stack described by the core claim.
 
 ### Claim-source mapping status
 
-Appendix C now records twenty-five passage-reviewed mappings for this synthesis. The five historical-project records count as one related implementation lineage, not five independent confirmations. The review makes the source map traceable enough for drafting and later support review, but it does not move the core claim above `argument` support. It also does not convert Project Theseus reports, historical-project notes, MoECOT connector context, VCM Editable terminology, schemas, fixtures, or finite Lean predicates into an integrated runtime result.
+Appendix C now records thirty passage-reviewed mappings for this synthesis. The five historical-project records count as one related implementation lineage, not five independent confirmations. The review makes the source map traceable enough for drafting and later support review, but it does not move the core claim above `argument` support. It also does not convert CAIS or ADAS results, Project Theseus reports, historical-project notes, MoECOT connector context, VCM Editable terminology, schemas, fixtures, or finite Lean predicates into an integrated runtime result.
 
 | Mapping group | Reviewed support | Boundary |
 |---|---|---|
@@ -117,6 +121,7 @@ Appendix C now records twenty-five passage-reviewed mappings for this synthesis.
 | Connector/recovery sources | MoECOT and VCM Editable source notes for runtime orchestration and richer VCM terminology. | Source-note only; raw connector text is not published here and no runtime, VCM-Bench, model-facing, or context-policy result is promoted. |
 | Pinned Theseus project files | Whitepaper, plan compiler, self-evolution system, architecture gate, operator OS/work board, and Circle transfer lane as report-first implementation references. | No current reports, commands, dashboards, board steps, compiler proof, transfer consumer, benchmark ledger, or model artifact was rerun or independently inspected here. |
 | Historical-project lineage | CCA, MoECOT Manifest, BugBrain, Corben's Trainer, and Corben's Best Model Possible expose compiler/control-plane breadth together with canonical/projection drift, silently lost effects, stale promotion state, incomplete completion acknowledgement, and interface-without-causal-effect failures. | Public-safe source notes only; the projects were not rerun, repeated mechanisms are not independent evidence, and the fixture does not establish an integrated runtime or capability result. |
+| External architecture and foundations comparators | CAIS for service composition, ADAS for code-defined architecture search, QCSA for a semantic control plane, V-JEPA 2 for predictive-state planning, and Embedded Agency for the open-world limit of finite internal traces. | No comparator result was reproduced; none establishes this stack's joinability, semantic preservation, governance, safety, capability, deployment, or transfer. |
 | Formal and fixture artifacts | `reference_trace_record.valid.json` and finite Lean predicates define record-level handoff and gate expectations. | They prove record-shape gates only, not deployed layer behavior, artifact continuity, authority-stop behavior, or stack safety. |
 
 ## Mechanism
@@ -134,6 +139,35 @@ The control question at every step is simple: what artifact was received, what a
 The trace should include positive and negative checkpoints. A positive checkpoint says what the layer completed and which downstream dependency may now consume it. A negative checkpoint says why the flow stopped, narrowed, escalated, or entered quarantine. This makes the blocked path a first-class artifact instead of an exception that disappears into prose.
 
 The reference trace below is conceptual. It is a design target for later schemas, tests, and proofs, not a report of a completed implementation. The deterministic fixtures under `experiments/reference_trace/fixtures/` now provide a record-level worked trace for that design target, but they remain `fixture_only` records rather than runtime execution.
+
+### Eighteen-stage cross-layer join lifecycle
+
+The contract (1) freezes purpose, request, intent, affected parties, consumers,
+environments, owners, effects, acceptance, and non-claims; (2) binds authority,
+delegation, ceilings, approvals, revocation, stops, exceptions, and terminal
+authority; (3) assigns stable identities and digests to every parent, state,
+effect, receipt, evaluator, evidence event, residual, rollback, and descendant;
+(4) specifies every layer as a typed owner contract; (5) traces intent through
+governance, command, plan, context, route, claim, work, effect, observation,
+evidence, readiness, release, and improvement; and (6) links compression,
+memory, learning, data, replacement, stewardship, resource, security, and
+incident subtraces rather than hiding them.
+
+It then (7) retains every terminal path and denominator; (8) joins request,
+policy, canonical state, effect, receipt, evaluator, and claim boundary; (9)
+keeps canonical state authoritative over projections; (10) binds all join
+digests; (11) records evaluator identity and dependence; (12) applies
+authority, revocation, evidence, residual, causal-order, lifecycle, and bounded-
+liveness invariants; (13) runs semantic, negative, fault, replay, differential,
+and mutation checks; and (14) compares matched direct, monolithic-agent,
+workflow, service-composition, and no-governance baselines.
+
+Finally, it (15) reconciles outcomes into exact terminal decisions; (16)
+propagates corrections, revocations, rollback, evidence downgrades, and residual
+changes; (17) monitors join completeness, orphans, drift, unacknowledged
+effects, evaluator capture, latency, residual age, rollback, usefulness,
+failures, and cost; and (18) expires after material interface or environment
+change.
 
 ```{mermaid}
 sequenceDiagram
@@ -306,9 +340,17 @@ at `argument`.
 
 ## Interfaces
 
-- All stack layers participate.
-- Artifacts and evidence ledgers provide continuity.
-- SCF gates control improvement.
+Twelve owner groups participate without surrendering authority: intent,
+constitution, morality, and system authority; command contracts, planning,
+compilation, and labor; context, transactions, adequacy, memory, and retrieval;
+routing, specialists, deliberation, search, compression, and model mechanisms;
+claims, evidence, Spinoza, specifications, Lean, and proof contracts; runtime,
+security, SCIF, supply chain, weights, and hives; artifact graphs, replay, and
+data custody; benchmarks, adversarial evaluation, assurance, thresholds, and
+oversight; policy, replacement, and improvement; capability fields, readiness,
+residuals, incidents, releases, and publication; resources, stewardship,
+governance, and contribution; and the Living Book. The trace owns their join,
+not any neighbor's decision.
 
 The Reference Trace Record carries the interface: a finite public record of trace state, execution boundary, intent, parent artifacts, authority chain and deltas, layer handoffs, artifacts, evidence updates and deltas, residual deltas, stop conditions, missing contracts, validation commands, promotion blockers, source refs, support-state effect, and non-claims. It gives a future runtime trace harness a stable target without pretending that the harness already exists.
 
@@ -329,6 +371,17 @@ Continuity under authority is the strongest integration invariant. A downstream 
 
 Completeness is also an invariant. A blank field in the trace must mean "not applicable" or "not yet available," not "the system forgot to ask." Missing contracts, missing evidence, missing approvals, and missing rollback paths should be visible as records that block, narrow, or defer work.
 
+The full invariant set forbids a trace super-owner, scopes every join exactly,
+prevents downstream authority widening, binds named interfaces to material
+effects, preserves canonical-over-projection authority, rejects orphan effects
+and phantom completion, exposes evaluator dependence, requires accepted
+evidence transitions, conserves residuals, preserves causal and lifecycle
+order, keeps all terminal paths in denominators, gates improvement and release,
+requires effect-complete rollback, reports usefulness and governance cost
+together, bounds transfer, expires changed joins, and limits diagrams, schemas,
+fixtures, slices, proofs, builds, and validator counts to their exact evidence
+boundary.
+
 ## Failure modes
 
 - Untraceable handoffs.
@@ -344,7 +397,31 @@ Integration theater is the reference-architecture failure: every layer name appe
 
 Trace fragmentation is the companion failure, where each layer records locally valid receipts that cannot be joined into one accountable run.
 
+The complete failure inventory also includes super-owner collapse, handoff
+laundering, canonical/projection inversion, request-to-effect drift, orphan
+effects, phantom completion, revocation races, exception and evaluator
+laundering, evidence laundering, residual erasure, replay and rollback theater,
+monolithic-loop opacity, happy-path-only testing, integration overhead and false
+blocking, embedded-model closure, and unsupported transfer. A trace can be
+locally coherent while joining the wrong effect, hiding a revoked authority,
+or restoring only the visible repository; each failure therefore has its own
+observable and terminal route.
+
 ## Minimum Viable Implementation
+
+The exact current minimum is one trace schema and valid protocol fixture; three
+valid and six expected-invalid reference fixtures; one local validator replay
+bound to thirteen tracked artifact digests; one blocked five-project name-to-
+effect lineage with eight mutations; one disposable repository-change slice
+over nine scenarios and eight attacks where the direct baseline produced eight
+false accepts while the governed path produced zero false accepts, zero unsafe
+releases, and three rollback attempts; one finite invariant extraction over
+three authority handoffs, three timed effects, nine evidence events, two
+residuals created, one discharged, one open, and four rejected mutations; and
+sixteen Lean declarations across two modules. No language-model planning or
+generation, deployed multi-service runtime, production authorization or
+rollback service, independent evaluator, natural workload, external
+reproduction, transfer, whole-stack deployment, or core effect exists.
 
 A minimum integrated architecture first exists as the reference flow diagram plus the `reference_trace_record` schema and deterministic fixture set. The reference-trace fixtures check record shape, trace state, execution boundary, parentage, deltas, blockers, source refs, and support-state effect only: they do not execute the architecture, replay a runtime trace, or prove that every layer handoff is implemented.
 
@@ -353,6 +430,21 @@ The historical-project packet adds the smaller `name_to_effect_trace_record` con
 That tiny dry-run trace set now exists at fixture level: one approved flow carries stable artifact IDs from intent through plan, context, route, work order, audit log, evidence update, and SCF no-promotion review; one blocked flow fails because execution authority is missing and governance review remains required. A first actual command replay exists as a local Resource flagship validator trace with an artifact bundle, output digest, and attached blocked-path stop conditions. The governed repository-change slice now adds an executed local Git workflow with code mutation, tests, independent byte-and-behavior observation, matched baseline accounting, release/refusal decisions, exact and failed rollback, and quarantine. A live or external runtime trace remains stronger and still needs comparable records from real deployed layer handoffs.
 
 ## Beyond the State of the Art
+
+### Argument-exit campaign
+
+Exiting argument support requires natural heterogeneous tasks through
+independently operated layer services and matched direct, monolithic-agent,
+workflow-orchestrator, service-composition, and no-governance baselines with
+equal models, tools, context, compute, tuning, and retries. The campaign must
+test semantic preservation, authority and revocation timing, canonical and
+projection integrity, effect and receipt completeness, evaluator independence,
+evidence and residual integrity, lifecycle and bounded liveness, incident
+containment, effect-complete rollback, correction propagation, learning and
+release gates, embedded residuals, usefulness, failures, latency, resources,
+governance burden, and total cost. Independent implementers, operators,
+evaluators, institutions, infrastructures, legal regimes, and transfer sites
+must reproduce every terminal outcome.
 
 The integration endpoint is a trace kernel for the whole ASI Stack. The stack would not be a diagram of cooperating layers; it would be an inspectable machine that can explain what authority entered, which artifacts were produced, what evidence changed, which residuals survived, and why a path was promoted, blocked, narrowed, rolled back, or escalated.
 
@@ -427,10 +519,71 @@ residual preserved by quarantine. Four mutations try to widen authority, allow
 an effect at revocation time, change support without a transition, and erase
 the open residual; all are rejected by
 `scripts/validate_governed_trace_invariants.py`. Lean target
-`lean:reference_architecture.governed_trace.four_invariants` proves the same
-finite values in `AsiStackProofs.GovernedRepositoryTrace`. These are bounded
-trace semantics connected to an executed local log, not a distributed-runtime,
-service-enforcement, completeness, safety, or chapter-core promotion claim.
+`lean:reference_architecture.governed_trace.four_invariants` now resolves to the
+stronger `AsiStackProofs.IntegratedReferenceTrace` transition model. The older
+four-table extraction remains a source-anchored historical result, while the
+live proof target owns joined transitions rather than theorem-per-fixture
+normalizations. These are bounded trace semantics connected to an executed
+local log, not a distributed-runtime, service-enforcement, completeness,
+safety, or chapter-core promotion claim.
+
+### Integrated transition consumer
+
+The stronger P2 model replaces the headline record implications with one
+partial cross-layer transition system. It follows request, intent, context,
+plan, route, authorization, job, adapter, material effect, independent
+observation, independent evaluation, evidence, terminal receipt, and quarantine
+states. Every admitted transition must join the exact parent artifact and
+canonical state, narrow or preserve active authority, preserve the authority
+ceiling, carry residual ownership and a non-claim boundary, obey governance
+gates and logical time, and keep effect, acknowledgement, evidence, rollback,
+and terminal receipt as distinct lanes.
+
+`AsiStackProofs.IntegratedReferenceTrace` proves that every accepted step joins
+artifact/state parentage, every accepted finite trace keeps authority
+non-increasing, and trace execution composes across concatenated subtraces. It
+also checks a complete twelve-event terminal trace and rejects parent/state
+forks, authority widening, gate deletion, effect at a revocation tie,
+unacknowledged terminal effects, and residual erasure.
+
+The independently encoded consumer is anchored to the existing executed
+repository-change result before it replays eighteen cases. Four paths are
+accepted: approved completion, pre-effect quarantine, exact rollback, and
+failed-rollback quarantine. Fourteen invalid paths and fifteen targeted
+mutations are rejected. Across accepted paths it records thirty-five events,
+three attempted effects, two final net effects, one final acknowledged effect,
+three open residuals, four terminal/quarantine receipts, one exact rollback,
+two quarantines, and zero support transitions.
+
+The next refinement consumes the complete tracked governed repository-change
+result through its public JSON Schema rather than authoring another abstract
+corpus. The adapter projects the exact concrete fields used by the abstraction,
+custody-wraps and losslessly decodes all nine source scenarios, and derives
+three approved completions, three pre-effect refusals, two exact rollbacks, and
+one failed-rollback quarantine. Twenty concrete-field mutations are rejected.
+This is checked executable refinement for one projected live result schema, not
+a Lean-verified compiler, a universal service encoder, distributed replay,
+unprojected semantic preservation, deployment, safety, or support promotion.
+
+The formal model now also separates per-effect lifecycle state from the
+cross-layer spine. Each effect has an identity and shared authority epoch;
+attempt, observation, acknowledgement, compensation, residualization, and
+revocation are distinct transitions. Equal logical times admit multi-effect
+interleavings while revocation wins a tie against a later-linearized attempt.
+Lean checks a two-effect interleaving in which one effect is acknowledged and
+the other remains explicitly residualized, and rejects a same-time post-
+revocation attempt. This is linearizable logical-time concurrency, not a proof
+about distributed clocks, partitions, retries, scheduler fairness, or real
+effect discovery.
+
+An independently implemented consumer now exercises sixteen traces: four
+accepted and twelve rejected. It treats effect identity as an idempotency key,
+accepts an exact same-epoch retry without duplicating the effect, rejects stale
+or revoked retries, requires observation before terminal custody, and separates
+acknowledgement, compensation, and residualization. Twelve additional semantic
+mutations reject. This closes the finite logical-time consumer placeholder, not
+distributed transport retry, partition recovery, scheduler fairness, deployed
+adapter enforcement, or complete effect discovery.
 
 When the trace kernel works, a future implementation could be evaluated by trace quality before anyone argues about intelligence. If the run cannot show parentage, authority, evidence, residuals, and stops, it has not instantiated this architecture. The integration trace kernel remains a target architecture until real trace harnesses, blocked-path tests, artifact-continuity audits, authority stop-condition checks, and accepted evidence transitions show that the layers compose under pressure.
 
@@ -444,7 +597,10 @@ When the trace kernel works, a future implementation could be evaluated by trace
 | Authority stop-condition test | Check deterministic blocked reference-trace fixtures for stop conditions and promotion blockers when execution authority is missing. | implemented by `python3 scripts/validate_reference_trace.py`; no deployed authority stop-condition checker exists |
 | Actual command replay trace | Record one actual repository validator command as a Reference Trace Record with output digest, artifact bundle, and blocked-path stop conditions. | implemented by `python3 scripts/run_reference_trace_replay.py --write-result` and `python3 scripts/validate_reference_trace_replay.py`; local replay only, no deployed runtime trace |
 | Governed repository-change slice | Execute intent, authority, plan, context, route, local code effect, independent observation, receipt reconciliation, evidence gate, release/refusal, rollback, and quarantine against a simpler matched baseline and eight adversarial cases. | implemented by `python3 scripts/run_governed_repository_change_slice.py --write-result` and `python3 scripts/validate_governed_repository_change_slice.py`; bounded disposable Git repositories only, no deployed runtime or chapter-core promotion |
-| Governed cross-stack trace invariants test | Derive authority monotonicity, revocation-before-effect with tie precedence, evidence-transition integrity, residual conservation, causal order, and four mutation controls from the executed repository-change log. | implemented by `python3 scripts/run_governed_trace_invariants.py --write-result`, `python3 scripts/validate_governed_trace_invariants.py`, and `AsiStackProofs.GovernedRepositoryTrace`; finite local trace only |
+| Governed cross-stack trace invariants test | Derive authority monotonicity, revocation-before-effect with tie precedence, evidence-transition integrity, residual conservation, causal order, and four mutation controls from the executed repository-change log. | implemented by `python3 scripts/run_governed_trace_invariants.py --write-result`, `python3 scripts/validate_governed_trace_invariants.py`, and the successor `AsiStackProofs.IntegratedReferenceTrace`; finite local trace only |
+| Integrated cross-layer trace consumer | Join artifact/state parentage, authority, effect/acknowledgement, evaluation, evidence, residual, rollback, receipt, and quarantine state across approved and contained paths. | implemented by `python3 scripts/validate_integrated_reference_trace_consumer.py` and `AsiStackProofs.IntegratedReferenceTrace`; 18 finite cases and 15 rejecting mutations, with concrete-schema refinement covered separately and no deployment or support promotion |
+| Governed-result schema refinement | Validate the executed governed-result object against its JSON Schema, losslessly encode/decode the exact claimed projection, derive all nine scenario dispositions, and reject concrete-field mutations. | implemented by `python3 scripts/validate_integrated_runtime_schema_refinement.py`; 9/9 projections round-trip and 20/20 mutations reject, but this is not a Lean-verified compiler, universal stack-schema refinement, or deployment evidence |
+| Concurrent effect-ledger consumer | Check effect identity/idempotency, authority epochs, revocation ties, observation causality, exclusive acknowledgement/compensation/residualization, receipts, and partial-failure custody. | implemented by `python3 scripts/validate_concurrent_effect_ledger.py`; 16 cases, 4 accepted, 12 rejected, and 12 additional mutations, with no distributed-clock, partition, deployed-adapter, or support claim |
 | Historical-project name-to-effect trace | Join request-derived input, policy, canonical state, observed effect, acknowledged receipt, evaluator, and claim boundary while rejecting eight interface-theater mutations. | implemented by `python3 scripts/validate_name_to_effect_trace.py`; one bounded five-project lineage fixture only, no deployed runtime or chapter-core promotion |
 
 The implemented rows validate deterministic fixture behavior, one local command replay, and one executed local repository-change workflow. They do not replay a deployed demo with independently operated services across layers. A future runtime integration test still needs deployed or external layer-handoff records, environment notes, runtime trace artifacts, and independent result review.
@@ -453,11 +609,23 @@ The implemented rows validate deterministic fixture behavior, one local command 
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:reference_architecture.trace.operational_invariant` | `AsiStackProofs.ReferenceArchitecture` | An end-to-end trace contains required artifacts for each layer handoff. | implemented |
-| `lean:reference_architecture.trace.failure_blocks_promotion` | `AsiStackProofs.ReferenceArchitecture` | A trace with a missing governance gate cannot be marked valid. | implemented |
-| `lean:reference_architecture.governed_trace.four_invariants` | `AsiStackProofs.GovernedRepositoryTrace` | The bounded executed repository-change trace satisfies authority monotonicity, revocation-before-effect, evidence-transition integrity, and residual conservation, and rejects one mutation per invariant. | implemented |
+| `lean:reference_architecture.trace.operational_invariant` | `AsiStackProofs.IntegratedReferenceTrace` | Every accepted finite cross-layer trace joins exact parent artifacts and canonical state across typed layers, preserves the authority ceiling, and cannot widen active authority. | implemented |
+| `lean:reference_architecture.trace.failure_blocks_promotion` | `AsiStackProofs.IntegratedReferenceTrace` | A cross-layer transition with a parent/state fork, missing governance gate, residual erasure, effect after revocation, unacknowledged terminal effect, missing receipt, or incomplete rollback is rejected or contained in quarantine. | implemented |
+| `lean:reference_architecture.governed_trace.four_invariants` | `AsiStackProofs.IntegratedReferenceTrace` | The source-anchored finite consumer composes approved, blocked, rolled-back, and quarantined traces while preserving joined artifact/state lineage, authority, effect acknowledgement, evidence, residual, terminal-receipt, and no-promotion boundaries and rejecting targeted mutations. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over layer-handoff, governance-gate, and trace-route reviews. They prove only the record-level gates: a declared handoff has its required artifact, a trace missing a required governance gate cannot be marked valid, and modeled traces with missing parent artifacts, missing authority deltas, missing residual deltas, missing required governance gates, or missing validation commands route to repair, blocking, or validation rather than accepted trace status. The deterministic reference-trace harness adds fixture-level checks for parentage, layer coverage, authority deltas, residuals, blocked-path stop conditions, validation commands, and support-state non-promotion. Together these checks do not prove an implemented ASI runtime, real layer enforcement, artifact continuity across a deployed trace, authority stop-condition behavior, or runtime replay.
+**Formal audit.** The live headline targets now resolve to the partial
+`IntegratedReferenceTrace` transition system rather than the two projection
+implications or the four-fixture conjunction. Its general theorems establish
+accepted-step joins, authority preservation, accepted-trace non-widening, and
+trace composition inside the declared sequential model; its exact fixtures and
+independent consumer supply positive, containment, countermodel, and mutation
+coverage. The retained `ReferenceArchitecture` route reductions remain narrow
+repair-routing lemmas, and the older `GovernedRepositoryTrace` invariant
+extraction remains historical executable lineage. These results do not prove artifact truth,
+semantic equivalence of live payloads, authority completeness, distributed
+revocation, effect causality, evaluator independence, residual completeness,
+rollback closure beyond the fixture, deployed enforcement, reproduction, or
+transfer.
 
 ## Predictive-state handoff and the embedded-system boundary
 

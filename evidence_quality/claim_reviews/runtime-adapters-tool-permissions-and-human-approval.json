@@ -1,0 +1,718 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+    "structured_atoms_reviewed": 77,
+    "prose_candidates_adjudicated": 64,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, all twenty-five bounded source mappings, five authored fixture families, one local effect trace, one accepted no-promotion decision, adjacent QCSA results, all forty-nine Lean declarations under six public targets, every manifest atom, every prose candidate, test plan, crosswalk, summary, and handoff. The sweep made leased effect dispatch, independent observation, containment, and terminal receipt custody the distinct owner; separated objective, plan, identity, policy, grants, approval legitimacy, context, artifact truth, verification, evidence, support, readiness, and release; required typed multidimensional capabilities, semantic non-authority, reviewer-degradation gates, identified enforcement, secret non-materialization, fault/partition/revocation custody, effect-complete recovery, complete denominators, natural matched baselines, causal ablations, independent reproduction, and heterogeneous transfer; classified the proof scaffold as ten predicate/projection/blocking consequences, thirty-seven finite route/negative consequences, and two authored-summary bridges; and preserved zero core support effect."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Natural and adversarial public-safe or deployment-like document, code, database, API, messaging, payment-simulator, service, hardware-simulator, credential, and organizational effects requested by typed AI work under explicit principals, authority, approvals, capability policy, rights, faults, attacks, and delayed outcomes.",
+      "environment": "Twenty-five reviewed source mappings; one public invocation schema; 2/7 permission, one executable temp-file effect plus two denials, 2/12 adversarial boundary, 3/7 human oversight, 3/6 partitioned authority, and 1/10 historical capability-envelope records; one no-promotion decision; adjacent bounded QCSA results; forty-nine finite Lean declarations; and a future natural multi-target campaign. No deployed adapter, OS/hardware enforcement observer, approval service, secret broker, distributed authority service, target-service rollback, natural causal result, or transfer result is represented.",
+      "model": "A leased external-effect relation over job and principal parentage, target and operation identity, typed capability, semantic non-authority, policy and rights intersection, structured approval, reviewer readiness, effect leases, identified enforcement, secret handles, pre-state and effect inventory, dispatch, independent observation, revocation and partition races, incidents, rollback or compensation, terminal receipts, costs, and residuals; current implementations are authored records, one local temp-file trace, synthetic tasks, and finite consequences rather than a deployed capability firewall.",
+      "authority": "Intent, Contracts, Planning, and Labor OS own objectives and job lifecycle; identity, security, policy, rights, and secret owners issue grants; accountable humans own approvals and exceptions; Context owns inputs; Artifact Graphs owns lineage and receipt faithfulness; evaluators own correctness and utility; Evidence and Claim Ledgers own support; Replacement, Readiness, and Publication own deployment and release. Runtime Adapters own exact leased dispatch, independent effect observation, containment, and terminal effect receipts only.",
+      "time": "Semantic review current through 2026-07-14; changes to job, principal, delegation, target, operation, capability, input, context, policy, rights, risk, approval, reviewer, lease, sandbox, secret, executable, environment, observer, partition, revocation, or pre-state expire affected decisions.",
+      "artifact": "Chapter and manifest contract; twenty-five bounded source mappings; public invocation and historical capability schemas; permission, effect, adversarial, oversight, partition, and capability records; one no-promotion decision; adjacent QCSA evidence; forty-nine declarations in lean/AsiStackProofs/RuntimeAdapters.lean; future natural effect traces, independent observations, attacks, incidents, recovery records, reproduction locks, and transfer artifacts."
+    },
+    "current_disposition": "retain_argument_pending_natural_multi_target_effect_campaign_with_independent_observation_causality_reproduction_and_transfer",
+    "assumptions": [
+      "Principals, delegation, targets, operations, capabilities, approvals, leases, enforcement instances, secret uses, effects, post-state, costs, and residuals can be observed independently enough to distinguish declared from performed action.",
+      "Direct tools, prompt-only controls, sandboxes, capability systems, policy-mediated calls, workflows, human approval, control/data separation, adversarial benchmarks, and the full adapter can be matched on information, authority, resources, faults, attacks, and horizon.",
+      "Public-safe or simulated tasks can exercise meaningful authority, injection, escape, secret, revocation, partition, rollback, and human-factors failures without converting toy effects into production safety claims.",
+      "Approval quality, effect correctness, usefulness, artifact reality, evidence, support, readiness, and release remain separable from dispatch-record conformance.",
+      "Independent-enough evaluators can label correct useful effects, unauthorized or hidden effects, scope, injection, escape, secret exposure, approval degradation, stale dispatch, duplicate effects, rollback, false refusal, missed help, privacy, and delayed harm.",
+      "Denials, failures, non-dispatch, human intervention, privacy work, recovery, cleanup, false refusals, missed help, and residuals remain in denominators."
+    ],
+    "dependencies": [
+      "human-intent-as-a-formal-input",
+      "intent-to-execution-contracts",
+      "planning-as-a-control-layer",
+      "labor-os-and-typed-jobs",
+      "security-kernel-and-digital-scifs",
+      "system-boundaries-and-authority",
+      "virtual-context-abi",
+      "context-transactions-snapshots-mounts-and-taint",
+      "artifact-graphs-audit-logs-and-replay",
+      "inter-stack-protocols-identity-and-economic-exchange",
+      "verification-bandwidth-and-context-adequacy",
+      "evidence-states-and-claim-discipline",
+      "capability-replacement-and-rollback",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "resource-economics-and-token-budgets"
+    ],
+    "strongest_counterclaim": "Mature OS/container sandboxes, capability systems, secret managers, workflow engines, policy enforcement points, audit logs, human approval, and incident tooling already cover the useful effect boundary. The proposed adapter adds ceremony, latency, privacy exposure, false refusal, reviewer burden, and brittle cross-system metadata while still trusting shared policy parsers, observers, roots, and operators; prompt injection, confused deputies, covert channels, stale authority, irreversible effects, and reviewer capture remain unsolved.",
+    "falsifier": "An invocation stays conformant while a target, operation, capability, secret, authority, approval, sandbox, effect, copy, cost, or residual silently widens or disappears; a stale or injected path mutates state; rollback reports closure with persistent effects; or matched simpler controls dominate the full adapter on correct useful effects, unauthorized effects, injection and escape, secret exposure, approval quality, false refusal, missed help, latency, human work, recovery, and total cost.",
+    "required_lanes": [
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze capability, sandbox, secret, workflow, human-factors, distributed-authority, injection, evaluation, threat-taxonomy, recovery, and QCSA lineage without importing reported performance."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify authority, affected-party protection, approval, reviewer competence, denial, override, privacy, secret use, irreversible effect, incident, remedy, and release boundaries."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify principals, delegation, partial authority order, leases, policy intersection, effect semantics, concurrency, partitions, revocation, retries, liveness, noninterference, rollback closure, and countermodels beyond trusted Booleans and authored routes."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Run actual adapters, targets, capability checks, enforcement instances, secret brokers, approvals, observers, attacks, partitions, revocations, retries, incidents, rollback/compensation, receipts, and downstream gates."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure useful correct effects, unauthorized/hidden effects, scope, injection, deputy/escape, secrets, approval calibration/degradation, stale dispatch, duplicates, receipt fidelity, rollback, false refusal, missed help, privacy, latency, human work, recovery, and cost jointly."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate parent authority, typed capability, control/data separation, approval, reviewer readiness, leases, observed enforcement, secret handles, pre-state, independent observation, revocation freshness, rollback inventory, receipts, and complete denominators."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Reproduce independently and transfer across models, tasks, tools, targets, operating systems, sandboxes, organizations, authority and rights regimes, partitions, attacks, and time."
+      }
+    ],
+    "evidence_refs": {
+      "chapter": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+      "permission_validator": "scripts/validate_runtime_adapter_permissions.py",
+      "effect_result": "experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json",
+      "adversarial_result": "experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json",
+      "oversight_result": "experiments/human_oversight_degradation/results/2026-07-03-local.json",
+      "partition_result": "experiments/partitioned_authority/results/2026-07-03-local.json",
+      "no_promotion_decision": "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
+      "lean": "lean/AsiStackProofs/RuntimeAdapters.lean"
+    },
+    "contrary_evidence": [
+      "OS/container sandboxes, capability systems, secret brokers, workflows, policy enforcement points, and approval systems already implement important pieces of the proposed boundary.",
+      "The current schema and five fixture families are authored; the only executed effect is a generated temporary-file write/restore outside a deployed adapter or enforcement instance.",
+      "The forty-nine declarations are ten predicate/projection/blocking consequences, thirty-seven finite route/negative consequences, and two authored-summary bridges; none refines a deployed runtime.",
+      "A scoped lease can authorize the wrong objective, a perfect sandbox can contain a harmful allowed effect, and an exact receipt can faithfully describe an unwise or useless action.",
+      "Human approval can degrade under workload and automation bias; stricter gates can increase false refusal, missed help, delay, gaming, and responsibility diffusion.",
+      "Secret and sandbox claims face covert channels, shared infrastructure, kernel and hardware trust, side effects, service behavior, and organizational failures outside the record.",
+      "No Inspect, AgentDojo, CaMeL, OS sandbox, capability system, workflow engine, or distributed authority service is locally reproduced as a matched baseline."
+    ],
+    "known_confounds": [
+      "The full adapter may receive stronger sandboxes, richer policy, more retries, better observers, more human review, or more time than baselines.",
+      "Tasks may favor local, reversible, deterministic, low-cost effects and omit remote services, physical systems, private data, real credentials, and affected parties.",
+      "Policy parser, adapter, sandbox, secret broker, observer, verifier, approval UI, and evaluator may share implementation, infrastructure, logs, organizations, or incentives.",
+      "A denial-heavy route can appear safe by suppressing useful work; file restoration can hide messages, copies, disclosures, costs, descendants, and delayed consequences.",
+      "Synthetic injection strings, reviewer fields, partition flags, and authority records may be easier than natural adaptive attacks and organizational failures.",
+      "Rejected, delayed, manually repaired, retried, privacy-expensive, partially effective, rolled-back, and residual cases can disappear from denominators.",
+      "Short horizons can miss stale grants, secret retention, downstream copies, delayed API effects, human reliance, cleanup failure, and incident recurrence."
+    ],
+    "acceptance_criteria": [
+      "Every principal, delegation, target, operation, capability, approval, reviewer, lease, enforcement instance, secret use, observed effect, state change, incident, rollback, cost, and residual has an exact producer, consumer, valid case, rejecting mutation, independent observation, and downstream consequence.",
+      "A preregistered natural campaign meets joint usefulness, authorization, scope, injection, deputy/escape, secret, approval, revocation, duplicate-effect, receipt, rollback, false-refusal, missed-help, privacy, latency, human-work, recovery, cost, causal, reproduction, and transfer gates against strong matched controls.",
+      "Each signature mechanism has a predicted causal effect that disappears under matched ablation and cannot be explained by added resources, easier tasks, stronger baseline restrictions, shared observers, hidden human repair, non-dispatch, or denominator changes."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to exact task, model, tool, target, principal, authority, policy, approval, sandbox, secret broker, observer, effect class, fault, attack, rights regime, environment, horizon, metrics, costs, and residuals.",
+      "Separate semantic resolution, authorization, dispatch, enforcement, actual effect, verification, rollback, artifact, evidence, support, readiness, and release.",
+      "Unknown authority, hidden effects, secret exposure, reviewer quality, enforcement, external copies, rollback, usefulness, reproduction, or transfer remains disputed, residual, narrowed, or blocked."
+    ],
+    "refutation_criteria": [
+      "Refute an invariant when a reachable ordinary or adversarial trace satisfies its premises and violates parentage, scope, semantic non-authority, freshness, approval, reviewer, lease, enforcement, secret, observation, revocation, replay, rollback, receipt, or denominator preservation.",
+      "Refute a mechanism benefit when matched ablation preserves the joint outcome, worsens the frontier, or the effect is explained by resources, task selection, weak baselines, shared observers, hidden repair, non-dispatch, or denominator changes.",
+      "Refute safety, usefulness, rollback, privacy, efficiency, reproducibility, or SOTA language when unauthorized or hidden effects persist, secrets leak, approval degrades, false refusal dominates, recovery fails, a simpler comparator wins, or reproduction and transfer fail."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only when a more precise security, capability, workflow, effect, approval, artifact, or incident owner supersedes the atom and every invocation, grant, effect, consumer, incident, and residual migrates with preserved lineage."
+    ],
+    "promotion_ceiling": "argument_until_natural_multi_target_effect_campaign_and_accepted_evidence_transition",
+    "reproduction": {
+      "command": null,
+      "environment_lock": null,
+      "artifact_digest": null,
+      "evaluator_identity": null
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "runtime-adapters-tool-permissions-and-human-approval",
+      "next_unblocking_condition": "Execute the natural multi-target campaign through actual adapters, capability and approval services, identified enforcement, secret brokers, independent effect observers, attacks, partitions, revocations, retries, incidents, rollback/compensation, complete costs, causal ablations, independent reproduction, and heterogeneous transfer."
+    },
+    "non_claims": [
+      "A permission row, capability, certificate, approval, lease, sandbox label, tool return, file, receipt, rollback handle, replay, framework, benchmark, threat taxonomy, or green command does not establish authority correctness, enforcement, useful safety, support, or release.",
+      "The current schema, fixture families, temp-file trace, no-promotion record, QCSA results, and forty-nine declarations establish only their exact authored, synthetic, local, and finite boundaries.",
+      "No job authority, external effect, evidence, support, readiness, release, AGI, or ASI state changes through this semantic review."
+    ]
+  },
+  "non_claims": [
+    "Semantic review and atomization do not promote the Runtime Adapters core or any proof target.",
+    "Current schemas, fixtures, the temp-file trace, adjacent QCSA results, and Lean build establish only their exact bounded surfaces.",
+    "External frameworks, benchmarks, papers, and taxonomies supply comparator lineage, not local enforcement, approval quality, or SOTA evidence."
+  ],
+  "atom_reviews": {
+    "runtime-adapters-tool-permissions-and-human-approval.core": {
+      "current_disposition": "retain_distinct_leased_effect_dispatch_observation_containment_and_receipt_owner_at_argument",
+      "strongest_counterclaim": "Existing sandboxes, capabilities, policy points, approvals, and logs already own this boundary.",
+      "falsifier": "No unique exercised consumer or failure remains, or matched natural work shows only burden without joint usefulness and containment improvement.",
+      "acceptance_criteria": [
+        "Demonstrate natural useful effects, authority fidelity, attack resistance, recovery, complete cost, causality, reproduction, and transfer."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.problem.001": {
+      "current_disposition": "retain_external_effect_authority_boundary_problem",
+      "strongest_counterclaim": "Ordinary tool APIs and operator procedures are adequate.",
+      "falsifier": "Natural effects remain equally authorized, observable, recoverable, and useful without the adapter contract.",
+      "acceptance_criteria": [
+        "Compare real effects and incidents against strong ordinary tool/workflow controls."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.insufficiency.001": {
+      "current_disposition": "retain_implicit_tool_authority_insufficiency",
+      "strongest_counterclaim": "Tool APIs and platform IAM already prevent meaningful overreach.",
+      "falsifier": "Prompt-only or platform-native controls lose no authorization, scope, observation, recovery, or usefulness outcome.",
+      "acceptance_criteria": [
+        "Measure hidden/unauthorized effects, false refusal, recovery, and cost under matched attacks."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.minimum.001": {
+      "current_disposition": "retain_exact_finite_scaffold_and_natural_campaign_boundary",
+      "strongest_counterclaim": "The current temp-file effect and many fixtures already establish safe adapter execution.",
+      "falsifier": "Current artifacts exercise deployed enforcement, real approval quality, secret safety, natural utility, independent reproduction, or transfer.",
+      "acceptance_criteria": [
+        "Preserve exact counts and require the natural campaign for argument exit."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.beyond_sota.001": {
+      "current_disposition": "retain_conditional_joint_frontier_capability_firewall_target",
+      "strongest_counterclaim": "Mature component systems already dominate the proposed composition.",
+      "falsifier": "The full adapter is dominated on useful effects, containment, privacy, false refusal, latency, human work, recovery, or total cost.",
+      "acceptance_criteria": [
+        "Require matched baselines, causal fingerprints, clean reproduction, and heterogeneous transfer."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.mechanism.004": {
+      "current_disposition": "retain_multidimensional_typed_capability_envelope",
+      "strongest_counterclaim": "Platform IAM and tool schemas already express sufficient scope.",
+      "falsifier": "An executable, object, network, data, secret, rate, cost, or delegation dimension widens silently.",
+      "acceptance_criteria": [
+        "Exercise all dimensions under aliases, delegation, retry, and adversarial arguments."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.mechanism.007": {
+      "current_disposition": "retain_semantic_resolution_non_authority_boundary",
+      "strongest_counterclaim": "Correct semantic identification can safely imply the requested operation.",
+      "falsifier": "A label, address, certificate, confidence, or discovery result grants an effect not independently authorized.",
+      "acceptance_criteria": [
+        "Separate semantic and policy routes under aliases, stale addresses, and hostile content."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.mechanism.009": {
+      "current_disposition": "retain_human_oversight_degradation_gate",
+      "strongest_counterclaim": "Any accountable human click supplies adequate approval.",
+      "falsifier": "Overload, bias, alarm fatigue, conflict, or missing evidence produces materially wrong dispatch.",
+      "acceptance_criteria": [
+        "Measure calibration and outcomes under realistic load, alerts, contradiction, and rotation."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.mechanism.011": {
+      "current_disposition": "retain_identified_observed_enforcement_boundary",
+      "strongest_counterclaim": "Declared sandbox configuration is sufficient evidence.",
+      "falsifier": "An escape or hidden channel exists while the adapter reports enforced confinement.",
+      "acceptance_criteria": [
+        "Use independently identified instances, escape probes, child processes, network tests, and host checks."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.mechanism.014": {
+      "current_disposition": "retain_independent_actual_effect_observation",
+      "strongest_counterclaim": "Tool responses and platform logs accurately report effects.",
+      "falsifier": "Independent state, network, service, or downstream observation diverges from the receipt.",
+      "acceptance_criteria": [
+        "Use external observers, traps, delayed outcomes, and side-record reconciliation."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.mechanism.015": {
+      "current_disposition": "retain_fault_partition_revocation_and_incident_custody",
+      "strongest_counterclaim": "Ordinary errors and retries are operationally sufficient.",
+      "falsifier": "A stale grant, race, crash, unknown outcome, escape, or exposure becomes silent success.",
+      "acceptance_criteria": [
+        "Inject faults, partitions, revocations, lost acknowledgements, and observer loss."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.mechanism.016": {
+      "current_disposition": "retain_effect_complete_rollback_compensation_and_residual_boundary",
+      "strongest_counterclaim": "A rollback handle or restored local file establishes recovery.",
+      "falsifier": "Messages, payments, disclosures, copies, remote/physical effects, descendants, or duties persist unrecorded.",
+      "acceptance_criteria": [
+        "Inventory and independently observe every effect through rollback, compensation, cleanup, and delay."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.invariant.003": {
+      "current_disposition": "retain_semantic_non_authority_invariant",
+      "strongest_counterclaim": "Semantic certificates can be treated as capability grants.",
+      "falsifier": "Any semantic object widens authority without an independent current grant.",
+      "acceptance_criteria": [
+        "Adversarially separate operation identity from principal/target/scope authorization."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.invariant.007": {
+      "current_disposition": "retain_reviewer_degradation_non_dispatch_invariant",
+      "strongest_counterclaim": "Human accountability makes reviewer-state checks unnecessary.",
+      "falsifier": "A degraded review state routes a high-impact effect without independent repair.",
+      "acceptance_criteria": [
+        "Exercise load, bias, false alarms, qualifications, conflict, and contradictory evidence."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.invariant.009": {
+      "current_disposition": "retain_observed_enforcement_claim_ceiling",
+      "strongest_counterclaim": "Process behavior is a practical proxy for sandbox enforcement.",
+      "falsifier": "Cooperative behavior is reported as enforced despite reachable escapes.",
+      "acceptance_criteria": [
+        "Distinguish declaration, simulation, process observation, OS, and hardware observation."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.invariant.010": {
+      "current_disposition": "retain_opaque_secret_non_materialization_boundary",
+      "strongest_counterclaim": "Redaction after execution is enough to protect credentials.",
+      "falsifier": "Secret bytes reach model context, logs, errors, artifacts, child processes, or unauthorized destinations.",
+      "acceptance_criteria": [
+        "Use canary secrets and independent scans across complete process and artifact paths."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.invariant.014": {
+      "current_disposition": "retain_fresh_authority_or_no_mutation_boundary",
+      "strongest_counterclaim": "Availability justifies cached grants during partitions.",
+      "falsifier": "A stale, revoked, expired, mismatched, or unknown grant mutates state.",
+      "acceptance_criteria": [
+        "Test partitions, revocation races, cache healing, fresh receipts, and no-mutation evidence."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.invariant.015": {
+      "current_disposition": "retain_effect_complete_recovery_inventory",
+      "strongest_counterclaim": "Local pre-state restoration is enough.",
+      "falsifier": "Any reachable external or descendant effect persists outside the recovery record.",
+      "acceptance_criteria": [
+        "Audit local, remote, informational, financial, physical, copied, and organizational effects."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.invariant.017": {
+      "current_disposition": "retain_complete_effect_failure_and_cost_denominator",
+      "strongest_counterclaim": "Only successful dispatched effects matter.",
+      "falsifier": "Adding denials, false refusals, missed help, review, recovery, privacy, cleanup, and residuals changes no conclusion.",
+      "acceptance_criteria": [
+        "Reconcile every request through terminal outcome and total cost."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.failure_mode.005": {
+      "current_disposition": "retain_prompt_and_data_injection_effect_risk",
+      "strongest_counterclaim": "Modern prompt filters make tool injection a minor residual.",
+      "falsifier": "Untrusted content changes policy, tool, argument, destination, secret use, approval, or scope.",
+      "acceptance_criteria": [
+        "Use adaptive natural attacks across multiple models, tools, data channels, and policy implementations."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.failure_mode.007": {
+      "current_disposition": "retain_human_oversight_degradation_risk",
+      "strongest_counterclaim": "Human review reliably catches high-impact mistakes.",
+      "falsifier": "Realistic load or automation advice changes reviewer error and downstream harm.",
+      "acceptance_criteria": [
+        "Measure approval calibration and outcomes with independent evidence and delayed feedback."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.failure_mode.008": {
+      "current_disposition": "retain_sandbox_theater_risk",
+      "strongest_counterclaim": "Container or path declarations adequately imply confinement.",
+      "falsifier": "Escape or covert effect remains reachable while enforcement is reported.",
+      "acceptance_criteria": [
+        "Probe OS, network, process, filesystem, secret, side-channel, and host boundaries."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.failure_mode.010": {
+      "current_disposition": "retain_stale_partitioned_authority_risk",
+      "strongest_counterclaim": "Cached grants are necessary and safe enough for availability.",
+      "falsifier": "A revoked or expired grant mutates state during or after partition.",
+      "acceptance_criteria": [
+        "Run live partition, revocation, reconciliation, and fresh-receipt traces."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.failure_mode.012": {
+      "current_disposition": "retain_success_receipt_and_support_laundering_risk",
+      "strongest_counterclaim": "A successful authorized effect is strong evidence of task success.",
+      "falsifier": "Receipt success changes support or release despite incorrect, useless, or harmful outcomes.",
+      "acceptance_criteria": [
+        "Separate effect, outcome, evidence, support, and release across natural tasks."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.failure_mode.015": {
+      "current_disposition": "retain_rollback_and_compensation_laundering_risk",
+      "strongest_counterclaim": "Restoring tracked state establishes practical recovery.",
+      "falsifier": "External effects, copies, disclosures, descendants, or obligations remain after declared closure.",
+      "acceptance_criteria": [
+        "Audit effect-complete recovery under irreversible and delayed effects."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.failure_mode.017": {
+      "current_disposition": "retain_refusal_and_denominator_laundering_risk",
+      "strongest_counterclaim": "Conservative refusal is always the safer operating point.",
+      "falsifier": "Restoring missed help, delay, human work, and rejected useful actions reverses the conclusion.",
+      "acceptance_criteria": [
+        "Measure useful throughput and safety together under complete denominators."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.formal.runtime-adapters-operational-invariant": {
+      "current_disposition": "retain_as_permission_and_lease_predicate_not_runtime_enforcement_proof",
+      "strongest_counterclaim": "The theorem proves real adapter invocations are authorized and sandboxed.",
+      "falsifier": "The premises encode desired fields, omit reachable runtime states, or remain disconnected from an independently observed producer and consumer.",
+      "acceptance_criteria": [
+        "Map premises to generated runtime state, add countermodels and mutations, and prove refinement or preserve the exact finite ceiling."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.formal.runtime-adapters-failure-blocks-promotion": {
+      "current_disposition": "retain_as_finite_blocking_consequences_not_deployed_attack_resistance",
+      "strongest_counterclaim": "The theorem proves approval bypass, confused deputies, and sandbox escape cannot occur.",
+      "falsifier": "The premises encode desired fields, omit reachable runtime states, or remain disconnected from an independently observed producer and consumer.",
+      "acceptance_criteria": [
+        "Map premises to generated runtime state, add countermodels and mutations, and prove refinement or preserve the exact finite ceiling."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.formal.runtime-adapters-effect-replay-fixture-bridge": {
+      "current_disposition": "retain_as_finite_authored_route_or_fixture_bridge_not_runtime_refinement",
+      "strongest_counterclaim": "The formal target proves deployed effect, revocation, replay, or adversarial behavior.",
+      "falsifier": "The premises encode desired fields, omit reachable runtime states, or remain disconnected from an independently observed producer and consumer.",
+      "acceptance_criteria": [
+        "Map premises to generated runtime state, add countermodels and mutations, and prove refinement or preserve the exact finite ceiling."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.formal.runtime-adapters-adversarial-boundary-probe-bridge": {
+      "current_disposition": "retain_as_finite_authored_route_or_fixture_bridge_not_runtime_refinement",
+      "strongest_counterclaim": "The formal target proves deployed effect, revocation, replay, or adversarial behavior.",
+      "falsifier": "The premises encode desired fields, omit reachable runtime states, or remain disconnected from an independently observed producer and consumer.",
+      "acceptance_criteria": [
+        "Map premises to generated runtime state, add countermodels and mutations, and prove refinement or preserve the exact finite ceiling."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.formal.runtime-adapters-revocation-route-bridge": {
+      "current_disposition": "retain_as_finite_authored_route_or_fixture_bridge_not_runtime_refinement",
+      "strongest_counterclaim": "The formal target proves deployed effect, revocation, replay, or adversarial behavior.",
+      "falsifier": "The premises encode desired fields, omit reachable runtime states, or remain disconnected from an independently observed producer and consumer.",
+      "acceptance_criteria": [
+        "Map premises to generated runtime state, add countermodels and mutations, and prove refinement or preserve the exact finite ceiling."
+      ]
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.formal.runtime-adapters-human-oversight-degradation-fixture-bridge": {
+      "current_disposition": "retain_as_authored_human_factors_fixture_summary_not_reviewer_quality_evidence",
+      "strongest_counterclaim": "The bridge proves real human approval remains reliable under automation.",
+      "falsifier": "The premises encode desired fields, omit reachable runtime states, or remain disconnected from an independently observed producer and consumer.",
+      "acceptance_criteria": [
+        "Map premises to generated runtime state, add countermodels and mutations, and prove refinement or preserve the exact finite ceiling."
+      ]
+    }
+  },
+  "prose_candidate_dispositions": {
+    "runtime-adapters-tool-permissions-and-human-approval.prose.a71772edae30": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.666455d4e859": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.mechanism.017"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.a1f99f5532e9": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.mechanism.009"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.40fe5060954d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.core"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.971c0418506a": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports a bounded source, fixture, adjacent result, or implementation artifact rather than adding an independent core claim."
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.7ba1111578a9": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.core"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.6d8fe5628e15": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.core"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.8bc8fe3e5e57": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports a bounded source, fixture, adjacent result, or implementation artifact rather than adding an independent core claim."
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.526cca22eed2": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.invariant.003"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.d23c551f8075": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.mechanism.008"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.b3dcc744c0cd": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.invariant.006"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.279da9fce0f0": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.invariant.006"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.a10adc79a5d6": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports a bounded source, fixture, adjacent result, or implementation artifact rather than adding an independent core claim."
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.7a8597d50b1b": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports a bounded source, fixture, adjacent result, or implementation artifact rather than adding an independent core claim."
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.92cd3df92a78": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.core"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.512a4c857f90": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.mechanism.005"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.2127196bd81e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.mechanism.006"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.ad69bd829f9f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.mechanism.008"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.2dbf1195043a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.core"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.e663ebf71cda": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.invariant.005"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.e72d01237cd0": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.minimum.001"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.50d032f078fb": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.870cd0e97f0b": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.invariant.005"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.26f4fdbbc7e6": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.mechanism.017"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.bb9f77e047fc": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.mechanism.017"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.a2fba6414bfc": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.mechanism.016"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.edb981439394": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.mechanism.007"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.be0abc02c796": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.eb83d50e7607": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.interface.002"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.abad02195382": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.mechanism.008"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.7f59e43e91b3": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.invariant.010"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.feb487e23334": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.interface.004"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.c49f56c76b4a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.invariant.005"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.0d44281301bc": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.invariant.005"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.c7dc54d5a4d9": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.invariant.007"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.eed0e6615f1c": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.invariant.009"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.b6a3f47c7b3c": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.invariant.016"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.54c87c08a444": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.invariant.006"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.9b4a6f169b48": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.invariant.015"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.cf683a762110": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.failure_mode.015"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.17758c0f7a96": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.failure_mode.016"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.f8eebc65b698": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.invariant.006"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.98b21012f86f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.invariant.004"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.6d681a990069": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.mechanism.015"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.968e238d79e8": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports a bounded source, fixture, adjacent result, or implementation artifact rather than adding an independent core claim."
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.638953d43ccf": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports a bounded source, fixture, adjacent result, or implementation artifact rather than adding an independent core claim."
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.cbdb0e415d70": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.minimum.001"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.1eb61cf25b9a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.minimum.001"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.936c03bacfaa": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.minimum.001"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.5e40069332b4": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.beyond_sota.001"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.96d77f3b987c": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.beyond_sota.001"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.274490d7746f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.beyond_sota.001"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.753304ab37e4": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.beyond_sota.001"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.2c2ba2fcfc14": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.beyond_sota.001"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.f28af11a0a96": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.beyond_sota.001"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.5f0a0e8d8c40": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.beyond_sota.001"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.bee69f752470": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.beyond_sota.001"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.2325a4da24be": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.beyond_sota.001"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.ac529911c184": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.minimum.001"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.5243de4455ff": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.44b41995c5a9": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports a bounded source, fixture, adjacent result, or implementation artifact rather than adding an independent core claim."
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.072ed796d8c4": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.core"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.0f12acbd2187": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.beyond_sota.001"
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.af00ecd0e651": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rendered prose restates or specializes an owned structured atom.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.beyond_sota.001"
+    }
+  }
+}

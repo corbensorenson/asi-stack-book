@@ -19,12 +19,16 @@ ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
 VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
-LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ProofCarryingClaims.lean"
+LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ProofCarryingClaimsRefinement.lean"
 
 COMMAND = "python3 scripts/validate_adversarial_review_dossier_probe.py"
 PROOF_TAG = "lean:spinoza.adversarial_review.dossier_probe_bridge"
 CODEX_TEST_NAME = "Adversarial review dossier and verdict-quality probe"
-REQUIRED_THEOREMS = ["adversarial_review_dossier_probe_bridge"]
+REQUIRED_THEOREMS = [
+    "mismatch_requires_tribunal_effect",
+    "high_risk_without_independent_dossier_is_rejected",
+    "full_verification_lifecycle_reaches_owner_writeback",
+]
 REQUIRED_NON_CLAIMS = [
     "does not prove semantic equivalence",
     "does not prove reviewer independence",
@@ -377,7 +381,7 @@ def build_expected_result(valid_count: int, invalid_count: int) -> dict[str, Any
             "support_state_no_promotion": True,
         },
         "lean_fixture_alignment": {
-            "module": "AsiStackProofs.ProofCarryingClaims",
+            "module": "AsiStackProofs.ProofCarryingClaimsRefinement",
             "proof_tag": PROOF_TAG,
             "theorem_refs": REQUIRED_THEOREMS,
             "expected": {
@@ -439,12 +443,13 @@ def validate_lean(errors: list[str]) -> None:
         if not re.search(rf"\btheorem\s+{re.escape(theorem)}\b", text):
             errors.append(f"{rel(LEAN_FILE)} missing theorem {theorem}.")
     for field in (
-        "scopedAcceptDossierPresent",
-        "mismatchRejectionDossierPresent",
-        "negativeControlsRejected",
-        "llmJudgeOnlyRejected",
-        "supportStateEffectNone",
-        "nonClaimBoundary",
+        "dossierPresent",
+        "independentReviewPresent",
+        "dissentPreserved",
+        "limitationsPresent",
+        "residualPresent",
+        "supportAssignmentCount",
+        "externalEffectCount",
     ):
         if field not in text:
             errors.append(f"{rel(LEAN_FILE)} missing fixture field {field}.")

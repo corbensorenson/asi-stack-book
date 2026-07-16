@@ -10,9 +10,9 @@ FIXTURE = ROOT / "experiments/deliberation_admission/fixtures/cases.json"
 RESULT = ROOT / "experiments/deliberation_admission/results/2026-07-13-local.json"
 FS = ROOT / "schemas/deliberation_admission_fixture.schema.json"
 RS = ROOT / "schemas/deliberation_admission_result.schema.json"
-LEAN = ROOT / "lean/AsiStackProofs/Deliberation.lean"
+LEAN = ROOT / "lean/AsiStackProofs/DeliberationRefinement.lean"
 IDS = ["valid_high_risk_to_planning", "invalid_missing_budget_record", "invalid_missing_search_mode", "invalid_missing_verifier_scope", "invalid_missing_candidate_history", "invalid_missing_stop_condition", "invalid_missing_residual_owner", "invalid_trace_authority_laundering", "invalid_budget_exhausted", "invalid_high_risk_missing_independent_verifier"]
-THEOREMS = ["missing_independent_verifier_blocks_high_risk_execution", "exhausted_deliberation_budget_escrows_residual", "complete_high_risk_record_reaches_planning", "missing_budget_record_requires_review", "missing_search_mode_requires_review", "missing_verifier_scope_requires_review", "missing_candidate_history_requires_review", "missing_stop_condition_requires_review", "missing_residual_owner_requires_review", "trace_cannot_launder_execution_authority"]
+THEOREMS = ["high_risk_without_independent_review_blocks_evaluation", "budget_exhaustion_without_residual_blocks_handoff", "raw_score_cannot_promote_selected_candidate", "execution_authority_cannot_cross_planning_handoff", "verified_deliberation_lifecycle_reaches_closed_without_support_or_effect_authority"]
 
 def route(r):
     if not r["request_recorded"]: return "retain_as_draft"
@@ -54,6 +54,6 @@ def main():
     d={"fixture":load_json(FIXTURE),"result":load_json(RESULT),"lean":LEAN.read_text()}
     e=validate_against_schema(d["fixture"],load_json(FS),FIXTURE.relative_to(ROOT).as_posix())+validate_against_schema(d["result"],load_json(RS),RESULT.relative_to(ROOT).as_posix())+errors(d)+negative_controls(d)
     if e: raise SystemExit("Deliberation admission validation failed:\n - "+"\n - ".join(e))
-    print("Deliberation admission passed: 10 routes, 10 owned Lean theorems, 15 harms preserved, no support movement, and 11 rejecting mutations.")
+    print("Deliberation admission passed: 10 routes, 5 refinement-policy Lean theorems, 15 harms preserved, no support movement, and 11 rejecting mutations.")
 
 if __name__ == "__main__": main()

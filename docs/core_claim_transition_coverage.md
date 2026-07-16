@@ -9,9 +9,9 @@ It checks the v1.0 claim-state gate: every manifest chapter core claim must have
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 54 |
+| Manifest chapter core claims | 55 |
 | Accepted core evidence-transition records | 22 |
-| Accepted explicit no-promotion decisions | 32 |
+| Accepted explicit no-promotion decisions | 33 |
 | Missing core-claim coverage | 0 |
 
 All chapter core support states remain `argument`. The separate measured/replayed transitions for `living-book-methodology.phase5_harness_registry_runner`, `resource-economics.costed_route_budget_slice`, and `circle-calculus.external_rope_receipt_replay` are not chapter core claims and are not counted in this coverage table.
@@ -75,6 +75,7 @@ All chapter core support states remain `argument`. The separate measured/replaye
 | `project-theseus-as-report-first-implementation-reference.core` | Project Theseus as Report-First Implementation Reference | `argument_only` | static architecture-gate import exists only as implementation-reference evidence; no clean live report bundle; no accepted Theseus gate replay; no general capability evidence |
 | `prototype-roadmap.core` | Prototype Roadmap | `argument_only` | no prototype phase acceptance record; no implementation benchmark; no governed replacement run |
 | `rankfold-neuralfold-and-artifact-compression.core` | RankFold, NeuralFold, and Artifact Compression | `argument_only` | no compression ratio result; no utility benchmark; no baseline-symmetric comparison |
+| `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | Replaceable Cognitive Substrates: Beyond Transformer Monoculture | `argument_only` | no common ABI, conformance checker, substrate swap, or mixed-kernel trace; no matched natural workload, hardware-aware lifecycle-cost packet, independent evaluator, reproduction, or transfer; OneCell and every named architecture remain candidates with no local superiority evidence |
 | `routing-heads-and-specialist-cores.core` | Routing Heads and Specialist Cores | `argument_only` | no real routing trace; no capability-quality measurement; no authority-enforced specialist lease; no imported MoECOT orchestration benchmark or replay artifact |
 | `safety-cases-and-structured-assurance.core` | Safety Cases and Structured Assurance | `argument_only` | no local safety case, threat model, hazard analysis, countercase search, or review workflow; no measured evidence adequacy, countercase quality, control efficacy, risk, readiness, or deployment result; finite theorems do not establish defeater correctness, case truth, safety, readiness, authority, or generality |
 | `scalable-oversight-and-adversarial-ai-control.core` | Scalable Oversight and Adversarial AI Control | `argument_only` | no local supervision protocol, evaluator, or outcome workload; no measured reviewer calibration, independence, or protocol comparison; finite theorems do not establish reviewer correctness, debate efficacy, weak-to-strong generalization, alignment, safety, or generality |

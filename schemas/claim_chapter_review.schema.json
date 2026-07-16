@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASI Stack Chapter Claim Semantic Review Packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "chapter_id", "review_state", "semantic_sweep", "chapter_defaults", "atom_reviews", "prose_candidate_dispositions", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.claim_chapter_review.v0"},
+    "chapter_id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+    "review_state": {"enum": ["in_progress", "completed"]},
+    "semantic_sweep": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reviewed_source", "structured_atoms_reviewed", "prose_candidates_adjudicated", "unowned_material_claims", "review_note"],
+      "properties": {
+        "reviewed_source": {"type": "string", "minLength": 1},
+        "structured_atoms_reviewed": {"type": "integer", "minimum": 0},
+        "prose_candidates_adjudicated": {"type": "integer", "minimum": 0},
+        "unowned_material_claims": {"type": "integer", "minimum": 0},
+        "review_note": {"type": "string", "minLength": 20}
+      }
+    },
+    "chapter_defaults": {"type": "object"},
+    "atom_reviews": {"type": "object", "additionalProperties": {"type": "object"}},
+    "prose_candidate_dispositions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["state", "rationale"],
+        "properties": {
+          "state": {"enum": ["material_atom", "nonmaterial_explanation", "duplicate_of_atom", "editorial_or_question", "historical_or_source_report"]},
+          "rationale": {"type": "string", "minLength": 8},
+          "target_atom_id": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "prose_review_lineage": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["retired_candidate_id", "retired_source", "retired_sentence", "preserved_disposition", "retirement_reason", "replacement_candidate_ids", "recorded_on"],
+        "properties": {
+          "retired_candidate_id": {"type": "string", "pattern": "^[a-z0-9-]+\\.prose\\.[a-f0-9]{12}$"},
+          "retired_source": {"type": "string", "minLength": 1},
+          "retired_sentence": {"type": "string", "minLength": 6},
+          "preserved_disposition": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["state", "rationale"],
+            "properties": {
+              "state": {"enum": ["material_atom", "nonmaterial_explanation", "duplicate_of_atom", "editorial_or_question", "historical_or_source_report"]},
+              "rationale": {"type": "string", "minLength": 8},
+              "target_atom_id": {"type": ["string", "null"]}
+            }
+          },
+          "retirement_reason": {"type": "string", "minLength": 20},
+          "replacement_candidate_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {"type": "string", "pattern": "^[a-z0-9-]+\\.prose\\.[a-f0-9]{12}$"}
+          },
+          "recorded_on": {"type": "string", "format": "date"}
+        }
+      }
+    },
+    "non_claims": {"type": "array", "minItems": 2, "items": {"type": "string", "minLength": 1}}
+  }
+}

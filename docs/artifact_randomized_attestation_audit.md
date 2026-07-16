@@ -26,10 +26,10 @@ It scores a six-artifact public-safe candidate pool with
 `sha256(seed + ':' + artifact_path)`, sorts by score, and selects the first
 four artifacts. The current selected artifacts are:
 
-- `experiments/receipt_repository_audit/results/2026-07-03-local.json`
+- `experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json`
 - `experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json`
-- `experiments/epistemic_tcb/results/2026-07-03-local.json`
-- `experiments/artifact_live_attestation/results/2026-07-04-local.json`
+- `experiments/capability_replacement_trace/results/2026-07-02-local.json`
+- `experiments/residual_honesty_conservation/results/2026-07-03-local.json`
 
 ## What Is Checked
 

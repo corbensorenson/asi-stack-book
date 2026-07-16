@@ -15,29 +15,29 @@
       "validator": "python3 scripts/validate_artifact_graph_record_reality_sequence.py"
     },
     {
-      "artifact": "experiments/artifact_live_attestation/results/2026-07-04-local.json",
-      "selection_score": "c9e3c5630e9ffa7ddd350f7fdaac047d1ac3a1efb71a2d93e3c64ced12b74ba6",
-      "validator": "python3 scripts/validate_artifact_live_attestation_probe.py"
+      "artifact": "experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json",
+      "selection_score": "2b114ad7bc446dba624e39ebaf7dc1e7b2bbd0635d7db648a6ece0c308747577",
+      "validator": "python3 scripts/validate_artifact_steward_lifecycle_probe.py"
     },
     {
-      "artifact": "experiments/epistemic_tcb/results/2026-07-03-local.json",
-      "selection_score": "511e02c8bdff3d046598a833e9dc0b6880848dc8e05b749154193758183ee8b2",
-      "validator": "python3 scripts/validate_epistemic_trusted_computing_base.py"
+      "artifact": "experiments/authority_revocation_trace/results/2026-07-03-local.json",
+      "selection_score": "edfd103c3cb3883c3da33f75143aa0d08e2ef7c768aa539a2de2b964d5f70265",
+      "validator": "python3 scripts/validate_authority_revocation_trace.py"
     },
     {
-      "artifact": "experiments/receipt_faithfulness/results/2026-07-03-local.json",
-      "selection_score": "e332fcd443f21dd3315d5982e5d5c219b6855175feb962c6e2ec645609ba85a7",
-      "validator": "python3 scripts/validate_receipt_faithfulness.py"
+      "artifact": "experiments/capability_replacement_trace/results/2026-07-02-local.json",
+      "selection_score": "bb2552614b63e03d9e06e8fea992d7ccdea87d782b37a9bd6bbafff995109ffa",
+      "validator": "python3 scripts/validate_capability_replacement_trace_probe.py"
     },
     {
-      "artifact": "experiments/receipt_repository_audit/results/2026-07-03-local.json",
-      "selection_score": "2f758d07eb1797972045b46e6943e11f74c8bffcdcec7449067c6aeb6f2acf69",
-      "validator": "python3 scripts/validate_receipt_repository_audit.py"
+      "artifact": "experiments/readiness_lifecycle_probe/results/2026-07-02-local.json",
+      "selection_score": "f9c1b68efe7ad8704bb39c0d083cd0628c5c2126708bbc7d3ed278ad4c1956e6",
+      "validator": "python3 scripts/validate_readiness_lifecycle_probe.py"
     },
     {
-      "artifact": "experiments/receipt_repository_audit/results/2026-07-04-challenge.json",
-      "selection_score": "d177543728e9611b6477567efb64d40f9f3a307adbe52a156c6e38ae65bfbca7",
-      "validator": "python3 scripts/validate_receipt_repository_challenge.py"
+      "artifact": "experiments/residual_honesty_conservation/results/2026-07-03-local.json",
+      "selection_score": "edf8ea449d982991d3c4ee645d45a8a1b5400bde2a7bbef7e7c4032545a54300",
+      "validator": "python3 scripts/validate_residual_honesty_conservation.py"
     }
   ],
   "chapter_core_support_effect": "none",
@@ -61,9 +61,9 @@
       "trap_receipt_count": 4,
       "trap_receipts_rejected": true
     },
-    "module": "AsiStackProofs.ArtifactGraph",
+    "module": "AsiStackProofs.ArtifactRealityRefinement",
     "theorem_refs": [
-      "artifact_randomized_attestation_audit_bridge"
+      "full_artifact_reality_lifecycle_reaches_admission"
     ]
   },
   "mutation_controls": [
@@ -79,7 +79,7 @@
       "control_id": "invalid_filesystem_digest_mismatch_in_sample",
       "rejected": true,
       "rejection_reasons": [
-        "experiments/receipt_repository_audit/results/2026-07-03-local.json:filesystem_digest_mismatch",
+        "experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json:filesystem_digest_mismatch",
         "trace_summary_missing"
       ]
     },
@@ -87,7 +87,7 @@
       "control_id": "invalid_git_object_digest_mismatch_in_sample",
       "rejected": true,
       "rejection_reasons": [
-        "experiments/receipt_repository_audit/results/2026-07-03-local.json:git_object_digest_mismatch",
+        "experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json:git_object_digest_mismatch",
         "trace_summary_missing"
       ]
     },
@@ -95,7 +95,7 @@
       "control_id": "invalid_command_replay_failure_in_sample",
       "rejected": true,
       "rejection_reasons": [
-        "experiments/receipt_repository_audit/results/2026-07-03-local.json:command_replay_failed",
+        "experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json:command_replay_failed",
         "trace_summary_missing"
       ]
     },
@@ -163,43 +163,43 @@
   "schema_version": "asi_stack.artifact_randomized_attestation.result.v0",
   "selected_artifacts": [
     {
-      "artifact": "experiments/receipt_repository_audit/results/2026-07-03-local.json",
-      "artifact_result_id": "receipt-repository-audit-2026-07-03-local",
-      "artifact_sha256": "6bc5f15cc18667d9df2ed7a94eb93b8394e85ba44854b5d5d8b084f397e4dc51",
+      "artifact": "experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json",
+      "artifact_result_id": null,
+      "artifact_sha256": "847cfd54af58786fbb0b7327c1a5b2ccccee66b538f090b28bc168655ba72485",
       "clean_in_worktree": true,
       "observation_routes": [
         {
           "accepted": true,
-          "observed_ref": "experiments/receipt_repository_audit/results/2026-07-03-local.json",
-          "observed_sha256": "6bc5f15cc18667d9df2ed7a94eb93b8394e85ba44854b5d5d8b084f397e4dc51",
+          "observed_ref": "experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json",
+          "observed_sha256": "847cfd54af58786fbb0b7327c1a5b2ccccee66b538f090b28bc168655ba72485",
           "observer_role": "filesystem_reader",
           "route_id": "filesystem_bytes"
         },
         {
           "accepted": true,
-          "git_blob_sha1": "1b672d4bd28faa0df9b08076f6ed8ef5f611c4b6",
-          "observed_ref": "HEAD:experiments/receipt_repository_audit/results/2026-07-03-local.json",
-          "observed_sha256": "6bc5f15cc18667d9df2ed7a94eb93b8394e85ba44854b5d5d8b084f397e4dc51",
+          "git_blob_sha1": "0373c900056651452b8068dc68e229b62592a809",
+          "observed_ref": "HEAD:experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json",
+          "observed_sha256": "847cfd54af58786fbb0b7327c1a5b2ccccee66b538f090b28bc168655ba72485",
           "observer_role": "git_object_database",
           "route_id": "git_object_bytes"
         },
         {
           "accepted": true,
-          "command": "python3 scripts/validate_receipt_repository_audit.py",
+          "command": "python3 scripts/validate_artifact_steward_lifecycle_probe.py",
           "exit_code": 0,
           "observer_role": "command_replay_validator",
           "output_excerpt": [
-            "Receipt repository audit validation passed: 4 receipt record(s), 55 tracked digest check(s), 5 mutation control(s), no support-state effect."
+            "Artifact steward lifecycle probe validation passed: 2 valid routes and 6 expected-invalid controls checked with no steward execution or support-state movement."
           ],
-          "output_sha256": "b5c9a09832f7d9d17b400886ece56614332dbe1bda9edf9fa01b31e77506c179",
+          "output_sha256": "71ae0eaab518bef2ef203e331122f5424ac955290bc5464392d50c4ead4089ac",
           "route_id": "command_replay"
         }
       ],
       "selection_rank": 1,
-      "selection_score": "2f758d07eb1797972045b46e6943e11f74c8bffcdcec7449067c6aeb6f2acf69",
+      "selection_score": "2b114ad7bc446dba624e39ebaf7dc1e7b2bbd0635d7db648a6ece0c308747577",
       "trap_receipt": {
         "expected_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
-        "observed_sha256": "6bc5f15cc18667d9df2ed7a94eb93b8394e85ba44854b5d5d8b084f397e4dc51",
+        "observed_sha256": "847cfd54af58786fbb0b7327c1a5b2ccccee66b538f090b28bc168655ba72485",
         "receipt_shape_valid": true,
         "rejected": true,
         "rejection_reasons": [
@@ -207,7 +207,7 @@
         ],
         "trap_id": "shape_valid_wrong_digest_attestation_1"
       },
-      "validator": "python3 scripts/validate_receipt_repository_audit.py"
+      "validator": "python3 scripts/validate_artifact_steward_lifecycle_probe.py"
     },
     {
       "artifact": "experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json",
@@ -257,43 +257,43 @@
       "validator": "python3 scripts/validate_artifact_graph_record_reality_sequence.py"
     },
     {
-      "artifact": "experiments/epistemic_tcb/results/2026-07-03-local.json",
-      "artifact_result_id": "2026-07-03-epistemic-trusted-computing-base-fixture",
-      "artifact_sha256": "13ef0b6e6be36e11b0a0be3da6ce74c47a60d696275a42dd8c298f0fc2e8d2b0",
+      "artifact": "experiments/capability_replacement_trace/results/2026-07-02-local.json",
+      "artifact_result_id": "2026-07-02-capability-replacement-trace-probe",
+      "artifact_sha256": "8ae1f639e60f9c9b0b544f94c910735a1d6979bec9e9b627e951f92519573659",
       "clean_in_worktree": true,
       "observation_routes": [
         {
           "accepted": true,
-          "observed_ref": "experiments/epistemic_tcb/results/2026-07-03-local.json",
-          "observed_sha256": "13ef0b6e6be36e11b0a0be3da6ce74c47a60d696275a42dd8c298f0fc2e8d2b0",
+          "observed_ref": "experiments/capability_replacement_trace/results/2026-07-02-local.json",
+          "observed_sha256": "8ae1f639e60f9c9b0b544f94c910735a1d6979bec9e9b627e951f92519573659",
           "observer_role": "filesystem_reader",
           "route_id": "filesystem_bytes"
         },
         {
           "accepted": true,
-          "git_blob_sha1": "696f14e9895b3ac20f30a2aa8ac7110b5c426be6",
-          "observed_ref": "HEAD:experiments/epistemic_tcb/results/2026-07-03-local.json",
-          "observed_sha256": "13ef0b6e6be36e11b0a0be3da6ce74c47a60d696275a42dd8c298f0fc2e8d2b0",
+          "git_blob_sha1": "b098be2fb27ad7f2e3aa5fc6901942ba17a88224",
+          "observed_ref": "HEAD:experiments/capability_replacement_trace/results/2026-07-02-local.json",
+          "observed_sha256": "8ae1f639e60f9c9b0b544f94c910735a1d6979bec9e9b627e951f92519573659",
           "observer_role": "git_object_database",
           "route_id": "git_object_bytes"
         },
         {
           "accepted": true,
-          "command": "python3 scripts/validate_epistemic_trusted_computing_base.py",
+          "command": "python3 scripts/validate_capability_replacement_trace_probe.py",
           "exit_code": 0,
           "observer_role": "command_replay_validator",
           "output_excerpt": [
-            "Epistemic trusted computing base validation passed: 3 valid records, 6 expected-invalid controls, verifier-trust laundering rejected, no support-state effect."
+            "Capability replacement trace probe validation passed."
           ],
-          "output_sha256": "052247f6682ce2e9ad0e372327086dda4e5c0992d4a9135e24f39f2631081d80",
+          "output_sha256": "b3076247aa7310aed4202f75b20c7bfc25f6c1d9786a267871a9fc0322cb63ea",
           "route_id": "command_replay"
         }
       ],
       "selection_rank": 3,
-      "selection_score": "511e02c8bdff3d046598a833e9dc0b6880848dc8e05b749154193758183ee8b2",
+      "selection_score": "bb2552614b63e03d9e06e8fea992d7ccdea87d782b37a9bd6bbafff995109ffa",
       "trap_receipt": {
         "expected_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
-        "observed_sha256": "13ef0b6e6be36e11b0a0be3da6ce74c47a60d696275a42dd8c298f0fc2e8d2b0",
+        "observed_sha256": "8ae1f639e60f9c9b0b544f94c910735a1d6979bec9e9b627e951f92519573659",
         "receipt_shape_valid": true,
         "rejected": true,
         "rejection_reasons": [
@@ -301,46 +301,46 @@
         ],
         "trap_id": "shape_valid_wrong_digest_attestation_3"
       },
-      "validator": "python3 scripts/validate_epistemic_trusted_computing_base.py"
+      "validator": "python3 scripts/validate_capability_replacement_trace_probe.py"
     },
     {
-      "artifact": "experiments/artifact_live_attestation/results/2026-07-04-local.json",
-      "artifact_result_id": "artifact-live-attestation-probe-2026-07-04",
-      "artifact_sha256": "499d2138b5f768c70d4868a0b09a99ecd467f6f44c70bb899306c4a8436fe654",
+      "artifact": "experiments/residual_honesty_conservation/results/2026-07-03-local.json",
+      "artifact_result_id": "2026-07-03-residual-honesty-conservation",
+      "artifact_sha256": "49459d10c7a3988bab47b278c9512db8d60d1094c9266da5cc2d1c131d132745",
       "clean_in_worktree": true,
       "observation_routes": [
         {
           "accepted": true,
-          "observed_ref": "experiments/artifact_live_attestation/results/2026-07-04-local.json",
-          "observed_sha256": "499d2138b5f768c70d4868a0b09a99ecd467f6f44c70bb899306c4a8436fe654",
+          "observed_ref": "experiments/residual_honesty_conservation/results/2026-07-03-local.json",
+          "observed_sha256": "49459d10c7a3988bab47b278c9512db8d60d1094c9266da5cc2d1c131d132745",
           "observer_role": "filesystem_reader",
           "route_id": "filesystem_bytes"
         },
         {
           "accepted": true,
-          "git_blob_sha1": "0ff0f875418ee70167b7bf5a0b4b1f4c743bfec8",
-          "observed_ref": "HEAD:experiments/artifact_live_attestation/results/2026-07-04-local.json",
-          "observed_sha256": "499d2138b5f768c70d4868a0b09a99ecd467f6f44c70bb899306c4a8436fe654",
+          "git_blob_sha1": "76c39dc9e9ec4391dbdcb6be8e20e68f4160d899",
+          "observed_ref": "HEAD:experiments/residual_honesty_conservation/results/2026-07-03-local.json",
+          "observed_sha256": "49459d10c7a3988bab47b278c9512db8d60d1094c9266da5cc2d1c131d132745",
           "observer_role": "git_object_database",
           "route_id": "git_object_bytes"
         },
         {
           "accepted": true,
-          "command": "python3 scripts/validate_artifact_live_attestation_probe.py",
+          "command": "python3 scripts/validate_residual_honesty_conservation.py",
           "exit_code": 0,
           "observer_role": "command_replay_validator",
           "output_excerpt": [
-            "Artifact live attestation probe validation passed: 3 observation route(s), 7 mutation control(s), no support-state effect."
+            "Residual honesty conservation validation passed: 3 valid residual cases, 5 expected-invalid controls, no support-state effect."
           ],
-          "output_sha256": "638437a72a9d8a869f034b23ca1fb6d3a0851ac5611ab79080a0ef29a5057ac0",
+          "output_sha256": "a474b7e473091efe6171d0547ddb1beaeab773790d8f93d9730ae3823a12dd08",
           "route_id": "command_replay"
         }
       ],
       "selection_rank": 4,
-      "selection_score": "c9e3c5630e9ffa7ddd350f7fdaac047d1ac3a1efb71a2d93e3c64ced12b74ba6",
+      "selection_score": "edf8ea449d982991d3c4ee645d45a8a1b5400bde2a7bbef7e7c4032545a54300",
       "trap_receipt": {
         "expected_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
-        "observed_sha256": "499d2138b5f768c70d4868a0b09a99ecd467f6f44c70bb899306c4a8436fe654",
+        "observed_sha256": "49459d10c7a3988bab47b278c9512db8d60d1094c9266da5cc2d1c131d132745",
         "receipt_shape_valid": true,
         "rejected": true,
         "rejection_reasons": [
@@ -348,7 +348,7 @@
         ],
         "trap_id": "shape_valid_wrong_digest_attestation_4"
       },
-      "validator": "python3 scripts/validate_artifact_live_attestation_probe.py"
+      "validator": "python3 scripts/validate_residual_honesty_conservation.py"
     }
   ],
   "selection_algorithm": "sha256(seed + ':' + artifact_path), ascending, first four candidates",

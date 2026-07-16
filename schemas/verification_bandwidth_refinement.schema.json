@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/verification_bandwidth_refinement.schema.json",
+  "title": "Verification Bandwidth Refinement Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "result_id",
+    "source_sha256",
+    "input_suites",
+    "reachable_stage_count",
+    "reference_route",
+    "route_case_count",
+    "route_coverage",
+    "mutation_count",
+    "mutation_rejection_count",
+    "mutation_receipts",
+    "strongest_effect",
+    "support_state_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.verification_bandwidth_refinement.v1"},
+    "result_id": {"type": "string", "minLength": 1},
+    "source_sha256": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lean_model", "context_adequacy_schema", "probe_result", "capacity_result"],
+      "properties": {
+        "lean_model": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "context_adequacy_schema": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "probe_result": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "capacity_result": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "input_suites": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["suite_id", "valid_count", "expected_invalid_count", "suite_passed", "validator_sha256"],
+        "properties": {
+          "suite_id": {"type": "string", "minLength": 1},
+          "valid_count": {"type": "integer", "minimum": 0},
+          "expected_invalid_count": {"type": "integer", "minimum": 0},
+          "suite_passed": {"const": true},
+          "validator_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "reachable_stage_count": {"const": 5},
+    "reference_route": {"const": "handoff_to_evidence_gate"},
+    "route_case_count": {"const": 12},
+    "route_coverage": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["case_id", "expected_route", "observed_route"],
+        "properties": {
+          "case_id": {"type": "string", "minLength": 1},
+          "expected_route": {"type": "string", "minLength": 1},
+          "observed_route": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "mutation_count": {"type": "integer", "minimum": 1},
+    "mutation_rejection_count": {"type": "integer", "minimum": 1},
+    "mutation_receipts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["mutation_id", "rejected", "observed_route", "semantic_errors"],
+        "properties": {
+          "mutation_id": {"type": "string", "minLength": 1},
+          "rejected": {"const": true},
+          "observed_route": {"type": "string", "minLength": 1},
+          "semantic_errors": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "strongest_effect": {"const": "handoff_to_independent_evidence_gate"},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}}
+  }
+}

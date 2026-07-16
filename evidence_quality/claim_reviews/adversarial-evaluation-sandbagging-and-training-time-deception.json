@@ -1,0 +1,376 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
+    "structured_atoms_reviewed": 79,
+    "prose_candidates_adjudicated": 57,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, all ten exact source mappings, both integrity schemas, eight digest-bound synthetic records, five rejecting mutations, all eight proof targets, all eight AdversarialEvaluation declarations, every manifest atom, every prose candidate, test plan, source crosswalk, reconciliation rows, summary, and handoff. The sweep made the consumer-, decision-, model-, task-, elicitation-, authority-, monitor-, reward-, selection-, evaluator-, hypothesis-, outcome-, lineage-, and time-specific Evaluation Observation Integrity Packet the distinct owner; expanded it to eighteen mechanisms, twelve interfaces, eighteen invariants, and eighteen failure modes; preserved zero chapter-core effect; and froze the natural/adversarial cross-context, strong-elicitation, evaluator-independence, causal, mitigation, reproduction, and transfer campaign."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Named consumers, decisions, models, checkpoints, scaffolds, tasks, datasets, prompts, tools, authority levels, monitors, rewards, selection consequences, evaluators, hypotheses, outcomes, dependencies, organizations, and times.",
+      "environment": "Ten exact mappings; two schemas; eight digest-bound synthetic records—one review route and seven negative routes; five validator mutations; eight proof targets; eight finite derived declarations. No model, natural or deceptive cross-context workload, detector, monitor, reward process, evaluator ensemble, mitigation, attack, decision, release, incident, reproduction, or transfer is represented.",
+      "model": "A context-specific Evaluation Observation Integrity Packet over prospective inference bounds, identities, observability, outcome and indicator separation, controls, dependencies, denominators, discrepancy triage, replication, mitigation descendants, invalidation, disclosure, costs, expiry, and residuals.",
+      "authority": "This chapter owns only observation inference integrity. Benchmark validity, capability commitments, policy updates, oversight/control, evidence promotion, artifact truth, runtime/security, data/supply chain, formal proof, readiness/assurance/incident/release, resources, and living-book governance retain their boundaries.",
+      "time": "Semantic review current through 2026-07-15; model, task, scaffold, prompt, tool, authority, monitor, reward, selection, evaluator, threat, policy, environment, consumer, dependency, evidence, or time changes expire affected observations.",
+      "artifact": "Chapter and manifest; ten mappings; two schemas; eight synthetic records; five mutations; validator; eight targets; eight declarations; semantic review; and future natural causal-transfer campaign."
+    },
+    "current_disposition": "retain_argument_with_synthetic_observation_routing_fixture_no_core_effect_pending_natural_independent_cross_context_campaign",
+    "assumptions": [
+      "Contexts, observability, outcomes, indicators, dependencies, denominators, errors, costs, expiry, and downstream consumers can be observed and versioned.",
+      "Inference rules, probes, controls, replication, exclusions, and stopping can be frozen before outcomes are visible.",
+      "Strong elicitation and adversarial controls can receive matched model, tool, context, compute, tuning, attack, engineering, and evaluator opportunity.",
+      "Constructed positive controls can remain separate from natural prevalence and production-behavior claims.",
+      "Independent institutions and heterogeneous environments can reproduce and transfer results without shared material dependencies."
+    ],
+    "dependencies": [
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "capability-thresholds-and-deployment-commitments",
+      "policy-optimization-and-learning-from-feedback",
+      "scalable-oversight-and-adversarial-ai-control",
+      "evidence-states-and-claim-discipline",
+      "artifact-graphs-audit-logs-and-replay",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "resource-economics-and-token-budgets"
+    ],
+    "strongest_counterclaim": "Cross-context integrity machinery cannot distinguish strategic behavior from ordinary distribution shift and evaluator error, so it adds costly quarantine and interpretive bureaucracy without unique predictive or safety value.",
+    "falsifier": "Prospectively frozen natural campaigns show no unique calibration or governance benefit; unacceptable false quarantine, delay, burden, or opportunity cost; failure under strong elicitation, shared dependencies, outcome-aware pressure, evaluator compromise, or mitigation substitution; or no independent reproduction and transfer.",
+    "required_lanes": [
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze sandbagging, alignment-faking, reward-hacking, evaluation-framework, agent-security, trace-faithfulness, monitorability, benchmark, and architecture comparators without importing results."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify permitted inferences, consequence-sensitive power, affected-party protection, quarantine errors, disclosure, and residual custody."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify finite routing, category separation, expiry, and invalidation without claiming strategic-behavior detection or empirical validity."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Run real context perturbations, monitors, rewards, evaluators, attacks, mitigations, bypass, fallback, recovery, replay, and invalidation."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure outcome validity, indicator errors, discrepancy rates, false clear/quarantine, useful throughput, latency, burden, cost, tails, and residuals."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Perturb contexts and ablate evaluators, monitors, rewards, selection consequences, and mitigation components under matched opportunity."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Reproduce independently and transfer across tasks, models, scaffolds, tools, authority, monitors, rewards, evaluators, organizations, attacks, policies, and time."
+      }
+    ],
+    "evidence_refs": {
+      "chapter": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
+      "fixture_schema": "schemas/adversarial_evaluation_integrity_fixture.schema.json",
+      "result_schema": "schemas/adversarial_evaluation_integrity_result.schema.json",
+      "fixture": "experiments/adversarial_evaluation_integrity/fixtures/cases.json",
+      "result": "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json",
+      "validator": "scripts/validate_adversarial_evaluation_integrity.py",
+      "lean": "lean/AsiStackProofs/AdversarialEvaluation.lean",
+      "manifest": "book_structure.json"
+    },
+    "contrary_evidence": [
+      "All eight records and five mutations are synthetic rather than model or evaluator observations.",
+      "All eight declarations reduce one hand-authored decision tree and cannot detect strategic behavior or establish empirical integrity.",
+      "Ten mappings contain source-reported methods and results that were not locally reproduced.",
+      "No calibrated detector, natural prevalence estimate, real monitor or reward process, mitigation descendant, independent evaluator, threshold/release transition, reproduction, or transfer exists.",
+      "Discrepancy is underdetermined among ordinary error, context effect, evaluator failure, compromise, strategic behavior, and unresolved combinations."
+    ],
+    "known_confounds": [
+      "Task and context choice, elicitation, prompts, tools, authority, checkpoint selection, evaluator, contamination, retries, and compute can dominate a contrast.",
+      "Shared data, models, prompts, tools, labels, rewards, organizations, or analysis code can create false evaluator independence.",
+      "Constructed model organisms, visible monitors, disclosed selection, and privileged elicitation can be disanalogous to natural deployment.",
+      "Outcome-aware analysis, repeated searches, discarded cases, aggregation, and selective disclosure can manufacture or hide discrepancies.",
+      "Conservative quarantine and evaluator burden can displace investigation, mitigation, recovery, release work, and user value."
+    ],
+    "acceptance_criteria": [
+      "Every observation binds consumer, decision, permitted inference, exact context, observability, outcome, indicators, dependencies, controls, denominator, uncertainty, costs, expiry, and residual owner.",
+      "Natural and adversarial workloads run with strong elicitation, matched controls, blinded holdouts, dependency-separated evaluators, complete denominators, prospective replication, mitigation descendants, bypass/fallback/recovery, and invalidation.",
+      "Indicators calibrate against bounded observable outcomes with false-positive, false-negative, non-estimable, useful-throughput, latency, burden, cost, and residual reporting.",
+      "Any promoted claim survives causal ablation, independent institutional reproduction, and heterogeneous transfer without category or authority laundering."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to exact consumer, decision, model, task, context, elicitation, authority, monitor, reward, selection, evaluator, hypothesis, outcome, dependency, organization, and time.",
+      "Separate source-reported, fixture, observed, scored, monitored, interpreted, replicated, mitigated, quarantined, reviewed, promoted, released, transferred, and SOTA states.",
+      "Unknown power, observability, target capacity, evaluator validity, independence, denominator, alternative explanation, mitigation substitution, cost, transfer, or residual remains blocked."
+    ],
+    "refutation_criteria": [
+      "Refute an observation when outcome criteria, context, identity, denominator, dependency, evaluator, or replay lineage is invalid or downstream invalidation is not propagated.",
+      "Refute a mechanism when matched ablation preserves or improves outcomes, or false quarantine, burden, delay, shared dependencies, selection, leakage, or hidden resource advantage explains the effect.",
+      "Refute capability, intent, deception, safety, readiness, deployment, support, transfer, or SOTA language when only source reports, fixtures, indicators, or finite route theorems exist."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only when a more precise observation-integrity owner supersedes the atom and every context, indicator, dependency, discrepancy, mitigation descendant, invalidation, consumer, residual, correction, and historical decision migrates with lineage."
+    ],
+    "promotion_ceiling": "argument_until_natural_adversarial_causal_cross_context_campaign_with_independent_institutional_reproduction_and_transfer",
+    "reproduction": {
+      "command": "python3 scripts/validate_adversarial_evaluation_integrity.py && python3 scripts/validate_protocol_examples.py && cd lean && lake build AsiStackProofs.AdversarialEvaluation",
+      "environment_lock": "Local schemas, synthetic fixtures, validator, and finite module current through 2026-07-15; natural independent campaign not frozen or run.",
+      "artifact_digest": null,
+      "evaluator_identity": "Current fixtures, validator, and formalization are repository-local; independent task custody, evaluators, implementations, monitors, rewards, institutions, attacks, and transfer environments are required."
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "adversarial-evaluation-sandbagging-and-training-time-deception",
+      "next_unblocking_condition": "Freeze and run natural/adversarial cross-context workloads with strong elicitation, matched controls, dependency-separated evaluators, calibrated outcomes, complete denominators, causal ablation, mitigation descendants, bypass/fallback/recovery, joint cost and error accounting, independent institutional reproduction, and heterogeneous transfer."
+    },
+    "non_claims": [
+      "No score, trace, discrepancy, detector, mitigation, attack pass, quarantine, fixture, source mapping, or finite theorem establishes capability, intent, deception, sandbagging prevalence or resistance, reward fidelity, monitor validity, alignment, safety, readiness, deployment, support, transfer, or SOTA.",
+      "No model, natural or deceptive cross-context workload, monitor, reward process, evaluator ensemble, mitigation, threshold decision, readiness handoff, release, incident, independent reproduction, or transfer is represented.",
+      "The argument-exit campaign is a required attempt specification, not a completed evaluation."
+    ]
+  },
+  "atom_reviews": {
+    "adversarial-evaluation-sandbagging-and-training-time-deception.core": {
+      "current_disposition": "retain_distinct_evaluation_observation_integrity_packet_owner_at_argument",
+      "strongest_counterclaim": "Cross-context observation machinery is costly interpretive bureaucracy without unique predictive or safety value.",
+      "falsifier": "Natural matched campaigns show no unique benefit, unacceptable false quarantine or cost, evaluator or selection failure, or no independent reproduction and transfer.",
+      "promotion_ceiling": "argument_until_natural_independently_reproduced_causal_cross_context_campaign"
+    }
+  },
+  "prose_candidate_dispositions": {
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.85e6b6d7686a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.19675e351bf3": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.aa4bd08d2260": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.febc26be391e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.15f27dcf488a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.6e4cedd9a41b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.9f95f14897af": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.47a061106f37": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.d769b6275a3e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.127c494fb5ad": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.0e84015c138c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.86bafb21acec": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.7bca16f1431a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.a369bf1e22d2": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.d8aeb6bcc4cf": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.9f7c2876c7b8": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.fa5f3db021e5": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.95a4de28b54f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.d7f5723716b2": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.18b0a5fbf2a1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.71c87593bee9": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.4e808c48f686": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.2cb5c7bf1051": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.c04b6874073a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.43430a21a4a3": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.3e5290d49a6e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.075bcc151626": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.8e8061991593": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.721417fe5392": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.a8eeca1aa79a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.c1e6946f0e33": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.bdc4e288dbd0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.f8cbed64367b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.fef85ae43095": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.f5396a4a7d91": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.647205d3cd98": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.21b61a077abe": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.dd6539a5e8bc": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.bac32d3a1c1e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.a3e3ebb8fd70": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.dc19253ebc8d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.6da945e7e96c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.3a9dfd8870df": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.10867cb2046d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.2796bfdcebc0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.05c104ac60b7": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.8ac1e4b62dba": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.15de5ddf5e68": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.fea20b69192c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.7f2e1c436cc4": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.dcee80effedc": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.80e41c5dc5b6": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.851819831374": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.d238692c5133": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.f60f52140447": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.fdfe7591613d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.9f877b506c3d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    }
+  },
+  "non_claims": [
+    "No score, trace, discrepancy, detector, mitigation, attack pass, quarantine, fixture, source mapping, or finite theorem establishes capability, intent, deception, sandbagging prevalence or resistance, reward fidelity, monitor validity, alignment, safety, readiness, deployment, support, transfer, or SOTA.",
+    "No model, natural or deceptive cross-context workload, monitor, reward process, evaluator ensemble, mitigation, threshold decision, readiness handoff, release, incident, independent reproduction, or transfer is represented.",
+    "The argument-exit campaign is a required attempt specification, not a completed evaluation."
+  ]
+}

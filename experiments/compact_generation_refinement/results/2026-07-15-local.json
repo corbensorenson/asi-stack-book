@@ -1,0 +1,490 @@
+{
+  "schema_version": "asi_stack.compact_generation_refinement.result.v1",
+  "result_id": "2026-07-15-compact-generation-refinement",
+  "recorded_date": "2026-07-15",
+  "command": "python3 scripts/validate_compact_generation_refinement.py",
+  "model": {
+    "lean_module": "lean/AsiStackProofs/CompactGenerationRefinement.lean",
+    "stage_count": 9,
+    "stages": [
+      "requested",
+      "sourceBound",
+      "generated",
+      "verified",
+      "residualized",
+      "published",
+      "migrated",
+      "consumed",
+      "closed"
+    ],
+    "route_count": 60,
+    "independently_reached_route_count": 60,
+    "rejected_mutation_count": 51,
+    "route_case_count": 60,
+    "fallback_route_reached": true,
+    "support_assignment_count": 0,
+    "external_effect_count": 0
+  },
+  "source_result_refinement": {
+    "counts": {
+      "gvr_case_count": 5,
+      "gvr_negative_control_count": 3,
+      "gvr_baseline_bytes": 368,
+      "gvr_selected_bytes": 78,
+      "residual_valid_count": 3,
+      "residual_invalid_count": 5,
+      "trace_entry_count": 4,
+      "storage_entry_count": 4,
+      "storage_invalid_count": 5
+    },
+    "sha256": {
+      "experiments/compact_gvr_slice/results/2026-07-01-local.json": "4879f993ef530266af303a5bc2f842816c534d88c4000b3b49c207872febad82",
+      "experiments/residual_honesty_conservation/results/2026-07-03-local.json": "b28eb50fbd3b8f1dd6677041f4294f4ddc0b338af69b4248349a1d637fb42f3c",
+      "experiments/residual_ledger_trace/results/2026-07-03-local.json": "96f84ed1801712391a45e97d0fa501e22fd915f85fa0d3d8c41deaed9d6f6fb1",
+      "experiments/residual_ledger_storage_replay/results/2026-07-04-local.json": "259cbdae5d43bc3d0767fd4c60d97eec3d65a0d80e73110d0ef7002549b837fc"
+    }
+  },
+  "route_cases": [
+    {
+      "case_id": "wrong-stage",
+      "stage": "requested",
+      "expected_route": "reject_wrong_stage",
+      "actual_route": "reject_wrong_stage",
+      "accepted": false
+    },
+    {
+      "case_id": "representation-substitution",
+      "stage": "requested",
+      "expected_route": "reject_representation_substitution",
+      "actual_route": "reject_representation_substitution",
+      "accepted": false
+    },
+    {
+      "case_id": "consumer-substitution",
+      "stage": "requested",
+      "expected_route": "reject_consumer_substitution",
+      "actual_route": "reject_consumer_substitution",
+      "accepted": false
+    },
+    {
+      "case_id": "result-substitution",
+      "stage": "requested",
+      "expected_route": "reject_result_digest_substitution",
+      "actual_route": "reject_result_digest_substitution",
+      "accepted": false
+    },
+    {
+      "case_id": "event-replay",
+      "stage": "requested",
+      "expected_route": "reject_event_replay",
+      "actual_route": "reject_event_replay",
+      "accepted": false
+    },
+    {
+      "case_id": "authority-leak",
+      "stage": "requested",
+      "expected_route": "reject_authority_leak",
+      "actual_route": "reject_authority_leak",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-requestWellFormed",
+      "stage": "requested",
+      "expected_route": "reject_malformed_request",
+      "actual_route": "reject_malformed_request",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-sourceArtifactPresent",
+      "stage": "requested",
+      "expected_route": "require_source_artifact",
+      "actual_route": "require_source_artifact",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-sourceDigestBound",
+      "stage": "requested",
+      "expected_route": "require_source_digest",
+      "actual_route": "require_source_digest",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-rightsBound",
+      "stage": "requested",
+      "expected_route": "require_rights",
+      "actual_route": "require_rights",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-versionedContract",
+      "stage": "requested",
+      "expected_route": "require_versioned_contract",
+      "actual_route": "require_versioned_contract",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-compressionBoundary",
+      "stage": "requested",
+      "expected_route": "require_compression_boundary",
+      "actual_route": "require_compression_boundary",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-consumerPolicy",
+      "stage": "requested",
+      "expected_route": "require_consumer_policy",
+      "actual_route": "require_consumer_policy",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-accepted",
+      "stage": "requested",
+      "expected_route": "accept_source_binding",
+      "actual_route": "accept_source_binding",
+      "accepted": true
+    },
+    {
+      "case_id": "sourceBound-generatorPresent",
+      "stage": "sourceBound",
+      "expected_route": "require_generator",
+      "actual_route": "require_generator",
+      "accepted": false
+    },
+    {
+      "case_id": "sourceBound-seedOrLawPresent",
+      "stage": "sourceBound",
+      "expected_route": "require_seed_or_law",
+      "actual_route": "require_seed_or_law",
+      "accepted": false
+    },
+    {
+      "case_id": "sourceBound-searchBound",
+      "stage": "sourceBound",
+      "expected_route": "require_search_bound",
+      "actual_route": "require_search_bound",
+      "accepted": false
+    },
+    {
+      "case_id": "sourceBound-generatedArtifactPresent",
+      "stage": "sourceBound",
+      "expected_route": "require_generated_artifact",
+      "actual_route": "require_generated_artifact",
+      "accepted": false
+    },
+    {
+      "case_id": "sourceBound-generationCostRecorded",
+      "stage": "sourceBound",
+      "expected_route": "require_generation_cost",
+      "actual_route": "require_generation_cost",
+      "accepted": false
+    },
+    {
+      "case_id": "sourceBound-accepted",
+      "stage": "sourceBound",
+      "expected_route": "accept_generation",
+      "actual_route": "accept_generation",
+      "accepted": true
+    },
+    {
+      "case_id": "migrated-consumerAcknowledgment",
+      "stage": "migrated",
+      "expected_route": "require_consumer_acknowledgment",
+      "actual_route": "require_consumer_acknowledgment",
+      "accepted": false
+    },
+    {
+      "case_id": "migrated-policyCompatible",
+      "stage": "migrated",
+      "expected_route": "require_policy_compatibility",
+      "actual_route": "require_policy_compatibility",
+      "accepted": false
+    },
+    {
+      "case_id": "migrated-downstreamEvaluation",
+      "stage": "migrated",
+      "expected_route": "require_downstream_evaluation",
+      "actual_route": "require_downstream_evaluation",
+      "accepted": false
+    },
+    {
+      "case_id": "migrated-utilityMeasured",
+      "stage": "migrated",
+      "expected_route": "require_utility_measurement",
+      "actual_route": "require_utility_measurement",
+      "accepted": false
+    },
+    {
+      "case_id": "migrated-accepted",
+      "stage": "migrated",
+      "expected_route": "accept_consumption",
+      "actual_route": "accept_consumption",
+      "accepted": true
+    },
+    {
+      "case_id": "consumed-residualClosedOrEscrowed",
+      "stage": "consumed",
+      "expected_route": "require_residual_closure",
+      "actual_route": "require_residual_closure",
+      "accepted": false
+    },
+    {
+      "case_id": "consumed-chainIntegrity",
+      "stage": "consumed",
+      "expected_route": "require_chain_integrity",
+      "actual_route": "require_chain_integrity",
+      "accepted": false
+    },
+    {
+      "case_id": "consumed-descendantReferences",
+      "stage": "consumed",
+      "expected_route": "require_descendant_references",
+      "actual_route": "require_descendant_references",
+      "accepted": false
+    },
+    {
+      "case_id": "consumed-cleanup",
+      "stage": "consumed",
+      "expected_route": "require_cleanup",
+      "actual_route": "require_cleanup",
+      "accepted": false
+    },
+    {
+      "case_id": "consumed-finalNonClaims",
+      "stage": "consumed",
+      "expected_route": "require_final_non_claims",
+      "actual_route": "require_final_non_claims",
+      "accepted": false
+    },
+    {
+      "case_id": "consumed-accepted",
+      "stage": "consumed",
+      "expected_route": "accept_closure",
+      "actual_route": "accept_closure",
+      "accepted": true
+    },
+    {
+      "case_id": "lossy-exact",
+      "stage": "generated",
+      "expected_route": "block_lossy_exactness",
+      "actual_route": "block_lossy_exactness",
+      "accepted": false
+    },
+    {
+      "case_id": "verifier-identity",
+      "stage": "generated",
+      "expected_route": "require_verifier_identity",
+      "actual_route": "require_verifier_identity",
+      "accepted": false
+    },
+    {
+      "case_id": "independent-evaluator",
+      "stage": "generated",
+      "expected_route": "require_independent_evaluator",
+      "actual_route": "require_independent_evaluator",
+      "accepted": false
+    },
+    {
+      "case_id": "observed-reconstruction",
+      "stage": "generated",
+      "expected_route": "require_observed_reconstruction",
+      "actual_route": "require_observed_reconstruction",
+      "accepted": false
+    },
+    {
+      "case_id": "mismatch-fallback",
+      "stage": "generated",
+      "expected_route": "activate_fallback",
+      "actual_route": "activate_fallback",
+      "accepted": true
+    },
+    {
+      "case_id": "mismatch-no-fallback",
+      "stage": "generated",
+      "expected_route": "require_executable_fallback",
+      "actual_route": "require_executable_fallback",
+      "accepted": false
+    },
+    {
+      "case_id": "verifier-cost",
+      "stage": "generated",
+      "expected_route": "require_verifier_cost",
+      "actual_route": "require_verifier_cost",
+      "accepted": false
+    },
+    {
+      "case_id": "verification-accepted",
+      "stage": "generated",
+      "expected_route": "accept_verification",
+      "actual_route": "accept_verification",
+      "accepted": true
+    },
+    {
+      "case_id": "obligation-scan",
+      "stage": "verified",
+      "expected_route": "require_obligation_scan",
+      "actual_route": "require_obligation_scan",
+      "accepted": false
+    },
+    {
+      "case_id": "residual-record",
+      "stage": "verified",
+      "expected_route": "require_residual_record",
+      "actual_route": "require_residual_record",
+      "accepted": false
+    },
+    {
+      "case_id": "residual-owner",
+      "stage": "verified",
+      "expected_route": "require_residual_owner",
+      "actual_route": "require_residual_owner",
+      "accepted": false
+    },
+    {
+      "case_id": "residual-burden",
+      "stage": "verified",
+      "expected_route": "require_residual_burden",
+      "actual_route": "require_residual_burden",
+      "accepted": false
+    },
+    {
+      "case_id": "zero-residual-overclaim",
+      "stage": "verified",
+      "expected_route": "block_zero_residual_overclaim",
+      "actual_route": "block_zero_residual_overclaim",
+      "accepted": false
+    },
+    {
+      "case_id": "source-provenance",
+      "stage": "verified",
+      "expected_route": "require_source_provenance",
+      "actual_route": "require_source_provenance",
+      "accepted": false
+    },
+    {
+      "case_id": "total-cost",
+      "stage": "verified",
+      "expected_route": "require_total_cost",
+      "actual_route": "require_total_cost",
+      "accepted": false
+    },
+    {
+      "case_id": "fallback-receipt",
+      "stage": "verified",
+      "expected_route": "require_fallback_receipt",
+      "actual_route": "require_fallback_receipt",
+      "accepted": false
+    },
+    {
+      "case_id": "residualization-accepted",
+      "stage": "verified",
+      "expected_route": "accept_residualization",
+      "actual_route": "accept_residualization",
+      "accepted": true
+    },
+    {
+      "case_id": "artifact-receipt",
+      "stage": "residualized",
+      "expected_route": "require_artifact_receipt",
+      "actual_route": "require_artifact_receipt",
+      "accepted": false
+    },
+    {
+      "case_id": "bound-result-digests",
+      "stage": "residualized",
+      "expected_route": "require_bound_result_digests",
+      "actual_route": "require_bound_result_digests",
+      "accepted": false
+    },
+    {
+      "case_id": "evidence-transition",
+      "stage": "residualized",
+      "expected_route": "require_evidence_transition",
+      "actual_route": "require_evidence_transition",
+      "accepted": false
+    },
+    {
+      "case_id": "publication-nonclaims",
+      "stage": "residualized",
+      "expected_route": "require_publication_non_claims",
+      "actual_route": "require_publication_non_claims",
+      "accepted": false
+    },
+    {
+      "case_id": "publication-accepted",
+      "stage": "residualized",
+      "expected_route": "accept_publication",
+      "actual_route": "accept_publication",
+      "accepted": true
+    },
+    {
+      "case_id": "provenance-identity",
+      "stage": "published",
+      "expected_route": "require_provenance_identity",
+      "actual_route": "require_provenance_identity",
+      "accepted": false
+    },
+    {
+      "case_id": "provenance-content",
+      "stage": "published",
+      "expected_route": "require_provenance_content",
+      "actual_route": "require_provenance_content",
+      "accepted": false
+    },
+    {
+      "case_id": "grounding-evaluator",
+      "stage": "published",
+      "expected_route": "require_grounding_evaluator",
+      "actual_route": "require_grounding_evaluator",
+      "accepted": false
+    },
+    {
+      "case_id": "migration-record",
+      "stage": "published",
+      "expected_route": "require_migration_record",
+      "actual_route": "require_migration_record",
+      "accepted": false
+    },
+    {
+      "case_id": "reference-continuity",
+      "stage": "published",
+      "expected_route": "require_reference_continuity",
+      "actual_route": "require_reference_continuity",
+      "accepted": false
+    },
+    {
+      "case_id": "consumer-map",
+      "stage": "published",
+      "expected_route": "require_consumer_map",
+      "actual_route": "require_consumer_map",
+      "accepted": false
+    },
+    {
+      "case_id": "migration-accepted",
+      "stage": "published",
+      "expected_route": "accept_migration",
+      "actual_route": "accept_migration",
+      "accepted": true
+    }
+  ],
+  "verification": {
+    "lean": {
+      "command": "lake env lean AsiStackProofs/CompactGenerationRefinement.lean",
+      "exit_code": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "result": "pass"
+  },
+  "support_state_effect": "none",
+  "external_effect": "none",
+  "residuals": [
+    "The lifecycle is a finite authored policy model; it does not discover real obligations, prove codec correctness, or establish semantic grounding.",
+    "The four source results are digest-bound and independently re-read, but remain synthetic/local bounded fixtures.",
+    "Fallback is reachable in the model, not a deployed fallback service or recovery measurement.",
+    "UtilityMeasured is an authored gate in this refinement, not evidence of useful compression or downstream utility."
+  ],
+  "non_claims": [
+    "no general compression, codec, semantic utility, grounding, safety, deployment, transfer, SOTA, AGI, or ASI claim",
+    "no chapter-core support transition",
+    "no inference from route coverage or green validation to empirical adequacy"
+  ]
+}

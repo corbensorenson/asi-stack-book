@@ -38,6 +38,7 @@ Mamba proposes selective state-space sequence modeling as an efficient alternati
 - `fast-generation-architectures` (Fast Generation Architectures)
 - `mathematical-and-search-substrates` (Mathematical and Search Substrates)
 - `coilra-multicoil-rope-and-cyclic-mixers` (CoilRA, MultiCoil RoPE, and Cyclic Mixers)
+- `replaceable-cognitive-substrates-beyond-transformer-monoculture` (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
 
 ## Claims To Add Or Update
 

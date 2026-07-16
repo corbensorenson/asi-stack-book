@@ -1,0 +1,152 @@
+{
+  "schema_version": "asi_stack.claim_atom_addendum.v0",
+  "snapshot_date": "2026-07-15",
+  "chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+  "activation_registry_boundary": "The 54-chapter P1 registry remains an immutable activation-era audit. This addendum atomizes the one authorized post-activation chapter without rewriting that historical receipt.",
+  "support_state_effect": "none",
+  "semantic_review_state": "reviewed",
+  "atoms": [
+    {
+      "id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.core",
+      "type": "architecture_contract",
+      "claim": "Learned cognition should be supplied through a typed Cognitive Kernel ABI whose implementations are admitted only for an exact route envelope under matched evidence, state, authority, cost, fallback, and rollback contracts.",
+      "scope": "Exact task family, consumer, modality, versions, memory and state contract, hardware/runtime, authority and rights envelope, budget, evaluator, fallback, rollback, and time horizon.",
+      "acceptance": "At least three heterogeneous kernels conform to one independently checked ABI; matched campaigns show at least one bounded route where qualification and substitution work without authority widening, state loss, hidden assistance, or dominated total cost; reproduction and transfer retain the result.",
+      "falsifier": "The ABI erases competitive capabilities, cannot preserve exact obligations, or its adapter/routing/lifecycle burden dominates a strong simple baseline across the tested scope.",
+      "support_state": "argument"
+    },
+    {
+      "id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.abi-proposal-effect-separation",
+      "type": "formal_interface",
+      "claim": "A cognitive kernel may propose state changes and effects but cannot commit them or mint authority through the ABI.",
+      "scope": "Finite ABI state machine and executable serialization/refinement.",
+      "acceptance": "Formal trace property plus independent malicious-kernel checker rejects effect commits, forged receipts, and authority widening.",
+      "falsifier": "Any accepted trace or executable packet lets the kernel commit effect or widen authority without the external consumer gate.",
+      "support_state": "argument"
+    },
+    {
+      "id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.exact-latent-separation",
+      "type": "state_invariant",
+      "claim": "Identity, authority, protected predicates, effects, receipts, provenance, program counters, durable commitments, revocations, and checkpoint parentage remain exact outside unconstrained latent state.",
+      "scope": "Declared exact fields for each qualified route and checkpoint schema.",
+      "acceptance": "Migration and replay preserve every declared field or reject before effect under independent comparison.",
+      "falsifier": "A qualified route silently depends on latent reconstruction of a declared exact field or accepts lossy migration.",
+      "support_state": "argument"
+    },
+    {
+      "id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.route-shape-neutrality",
+      "type": "architecture_interface",
+      "claim": "Reflex, reaction, deliberation, search, and specialist route shapes can select qualified kernels without being Transformer-specific or widening authority.",
+      "scope": "At least one preregistered workload per route shape and the declared ABI operations.",
+      "acceptance": "Multiple heterogeneous kernels and one deterministic primitive execute behind the same route contract with exact contribution receipts and bounded authority.",
+      "falsifier": "The route contract relies on hidden Transformer-only state or cannot attribute component assistance and authority.",
+      "support_state": "argument"
+    },
+    {
+      "id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.total-system-kiss",
+      "type": "measurement",
+      "claim": "Architectural simplicity must be evaluated over the complete lifecycle rather than central parameter count alone.",
+      "scope": "Training, inference, state, retrieval, search, verification, repair, compilation, routing, adapters, hardware kernels, maintenance, migration, governance, fallback, and expected failure cost.",
+      "acceptance": "Every comparison reports both equal-active-parameter and equal-total-lifecycle-cost views with assistance and residual accounting.",
+      "falsifier": "A preferred conclusion changes when omitted external burden is included or required cost dimensions cannot be measured or bounded.",
+      "support_state": "argument"
+    },
+    {
+      "id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.transformer-baseline",
+      "type": "external_baseline",
+      "claim": "A competitive dense-attention Transformer is the historical and empirical baseline, not the definition of the ABI.",
+      "scope": "Scale-, data-, task-, and hardware-appropriate comparison arm.",
+      "acceptance": "Baseline training/evaluation quality and assistance are matched or discrepancies are explicitly bounded.",
+      "falsifier": "The experiment uses a materially weaker Transformer and attributes the gap to architecture.",
+      "support_state": "argument"
+    },
+    {
+      "id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.state-space-and-recurrence",
+      "type": "empirical_family",
+      "claim": "Selective SSM, retention, and recurrent kernels may offer useful streaming or state-cost tradeoffs on bounded routes.",
+      "scope": "Mamba-class, RetNet/RWKV-class, or gated recurrent implementations under matched workloads.",
+      "acceptance": "At least one independently reproduced route-level frontier improvement survives copying, state tracking, distractor, extrapolation, and migration tests.",
+      "falsifier": "Gains vanish under matched total cost or critical state and extrapolation controls fail.",
+      "support_state": "argument"
+    },
+    {
+      "id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.long-convolution",
+      "type": "empirical_family",
+      "claim": "Long convolution can be a qualified sequence-mixing substrate where realized hardware and task behavior beats strong baselines.",
+      "scope": "Hyena-class implementation on long-sequence workloads.",
+      "acceptance": "Quality and realized cost improvement survives selective recall, distractors, kernel, memory-traffic, and migration accounting.",
+      "falsifier": "Nominal asymptotic advantage does not survive end-to-end comparison.",
+      "support_state": "argument"
+    },
+    {
+      "id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.mutable-test-time-state",
+      "type": "state_and_safety",
+      "claim": "Test-time-trained layers and neural memory require explicit provenance, custody, checkpoint, poisoning, revocation, rollback, and delayed-outcome qualification.",
+      "scope": "TTT- and Titans-class mutable inference state.",
+      "acceptance": "Full-state restore, selective contamination tests, delayed outcomes, and lineage checks pass without treating weights as the complete state.",
+      "falsifier": "Influence cannot be attributed or rolled back, or benefit disappears when update cost and delayed failures are counted.",
+      "support_state": "argument"
+    },
+    {
+      "id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.external-memory",
+      "type": "empirical_family",
+      "claim": "A learned controller over external memory qualifies only where it beats exact memory/program baselines and extrapolates in size or topology.",
+      "scope": "NTM/DNC-class controllers on algorithmic and structured workloads.",
+      "acceptance": "Held-out size/topology tests, exactness checks, custody, migration, and total-access-cost comparisons pass.",
+      "falsifier": "Soft addressing fails exactness or extrapolation, or an exact data structure dominates.",
+      "support_state": "argument"
+    },
+    {
+      "id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.kan",
+      "type": "empirical_family",
+      "claim": "KAN components may qualify for bounded scientific or symbolic routes but have no presumed status as a general MLP or Transformer replacement.",
+      "scope": "Declared KAN variant, task regime, dimensionality, training, and hardware.",
+      "acceptance": "A matched MLP and relevant symbolic/scientific baseline are beaten under parameters, FLOPs, wall time, memory, calibration, and transfer reporting.",
+      "falsifier": "Gains vanish under fair accounting or remain too narrow for the claimed route.",
+      "support_state": "argument"
+    },
+    {
+      "id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.continuous-time",
+      "type": "empirical_family",
+      "claim": "Continuous-time neural dynamics qualify only on irregular-time or control routes that justify solver and replay complexity.",
+      "scope": "LTC-class implementation and declared temporal workload.",
+      "acceptance": "Matched discrete baselines are beaten after solver steps, tolerances, numerical error, latency, replay, and hardware cost are counted.",
+      "falsifier": "The advantage disappears outside parameter count or cannot reproduce under fixed solver settings.",
+      "support_state": "argument"
+    },
+    {
+      "id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.architecture-portfolio",
+      "type": "causal_composition",
+      "claim": "A routed heterogeneous portfolio is useful only if composition improves the joint frontier beyond its routing, translation, calibration, maintenance, and recovery burden.",
+      "scope": "Single-kernel, routed, hybrid, oracle-router, random-router, and strong-generalist controls.",
+      "acceptance": "A preregistered routed arm produces reproducible accepted-usefulness benefit without higher unsafe release or dominated total cost, and causal ablation attributes the gain to routing diversity.",
+      "falsifier": "A strong single kernel dominates or the apparent gain comes from unequal assistance or evaluator leakage.",
+      "support_state": "argument"
+    },
+    {
+      "id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.onecell",
+      "type": "architecture_hypothesis",
+      "claim": "A compact shared recurrent transition cell plus exact external state, outer search, and verified abstraction may accumulate capability without proportional central-model growth.",
+      "scope": "Frozen central parameters, declared adapter, exact state lanes, verifier, library, retrieval, and search budget.",
+      "acceptance": "Held-out solve rate rises or future search cost falls across reproduction and transfer while hidden assistance, contamination, outer compute growth, and false activation remain bounded against controls.",
+      "falsifier": "A large adapter or answer-bearing retrieval is required, search grows with capability, recurrence fails beyond trained depth, abstractions do not transfer, or a matched baseline dominates total cost.",
+      "support_state": "argument"
+    },
+    {
+      "id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.architectural-rsi",
+      "type": "governed_lifecycle",
+      "claim": "Recursive self-improvement includes governed architecture candidate generation, training, evaluation, shadow, canary, promotion, composition, rollback, retirement, and descendant invalidation.",
+      "scope": "One isolated candidate lifecycle with independent evaluator and fixed authority ceiling.",
+      "acceptance": "The candidate cannot self-approve or widen authority; promotion denial, effect-complete rollback, retirement, and descendant invalidation are exercised with durable receipts.",
+      "falsifier": "The candidate controls its evaluator or acceptance gate, recovery omits state, or promotion can occur without the required lifecycle evidence.",
+      "support_state": "argument"
+    }
+  ],
+  "summary": {
+    "atom_count": 15,
+    "pending_semantic_review_count": 0,
+    "argument_count": 15,
+    "promoted_count": 0,
+    "refuted_count": 0
+  }
+}

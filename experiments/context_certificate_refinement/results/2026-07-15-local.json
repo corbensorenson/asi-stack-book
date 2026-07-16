@@ -1,0 +1,652 @@
+{
+  "schema_version": "asi_stack.context_certificate_refinement.v1",
+  "result_id": "context-certificate-refinement-2026-07-15-local",
+  "source_sha256": {
+    "lean_model": "12f1ad5d7e7a9448f835fb2478062fb1621aad11654bb8c217cb7b3c6bcbe1ac",
+    "certificate_schema": "6f467235364cb4b858451c65ae1e98f29293f02de4a64b5e7e8daaf3d4c84847",
+    "protocol_fixture": "e35427e4db87cdc2fe67e81a92c2f280e1639db191f8181e43dc907b847323a1",
+    "scenario_inventory": "4dd6ca1ec34f343de9071cdefaac16ca5df79ee84dd138d715380b157fe91e41",
+    "admission_validator": "d977b41287a726a974c9725d73a2ed8dd7ba2cc8c773ba9ae18ea962e89757f7"
+  },
+  "protocol_fixture_schema_valid": true,
+  "scenario_certificate_count": 12,
+  "schema_valid_scenario_certificate_count": 12,
+  "shape_complete_scenario_certificate_count": 12,
+  "active_certificate_count": 11,
+  "stale_certificate_count": 1,
+  "scenario_certificate_receipts": [
+    {
+      "fixture": "invalid_admission_as_verification.json#cell://paper-a-summary",
+      "schema_valid": true,
+      "shape_complete": true,
+      "revocation_state": "active",
+      "verification_state": "adequate_for_drafting"
+    },
+    {
+      "fixture": "invalid_admission_as_verification.json#cell://paper-b-summary",
+      "schema_valid": true,
+      "shape_complete": true,
+      "revocation_state": "active",
+      "verification_state": "adequate_for_drafting"
+    },
+    {
+      "fixture": "invalid_conflict_promoted.json#cell://claim-a-promoted",
+      "schema_valid": true,
+      "shape_complete": true,
+      "revocation_state": "active",
+      "verification_state": "adequate_for_local_check"
+    },
+    {
+      "fixture": "invalid_conflict_promoted.json#cell://claim-b-promoted",
+      "schema_valid": true,
+      "shape_complete": true,
+      "revocation_state": "active",
+      "verification_state": "adequate_for_local_check"
+    },
+    {
+      "fixture": "invalid_deleted_derivative_materialized.json#cell://deleted-summary",
+      "schema_valid": true,
+      "shape_complete": true,
+      "revocation_state": "active",
+      "verification_state": "adequate_for_local_check"
+    },
+    {
+      "fixture": "invalid_mode_confusion.json#cell://schema-fixture",
+      "schema_valid": true,
+      "shape_complete": true,
+      "revocation_state": "active",
+      "verification_state": "adequate_for_local_check"
+    },
+    {
+      "fixture": "invalid_stale_certificate_use.json#cell://stale-note",
+      "schema_valid": true,
+      "shape_complete": true,
+      "revocation_state": "stale",
+      "verification_state": "adequate_for_local_check"
+    },
+    {
+      "fixture": "valid_admitted_but_inadequate.json#cell://source-a-summary",
+      "schema_valid": true,
+      "shape_complete": true,
+      "revocation_state": "active",
+      "verification_state": "adequate_for_drafting"
+    },
+    {
+      "fixture": "valid_admitted_but_inadequate.json#cell://source-b-constraint",
+      "schema_valid": true,
+      "shape_complete": true,
+      "revocation_state": "active",
+      "verification_state": "adequate_for_drafting"
+    },
+    {
+      "fixture": "valid_conflict_escalation.json#cell://claim-a",
+      "schema_valid": true,
+      "shape_complete": true,
+      "revocation_state": "active",
+      "verification_state": "adequate_for_local_check"
+    },
+    {
+      "fixture": "valid_conflict_escalation.json#cell://claim-b",
+      "schema_valid": true,
+      "shape_complete": true,
+      "revocation_state": "active",
+      "verification_state": "adequate_for_local_check"
+    },
+    {
+      "fixture": "valid_local_check_public_context.json#cell://public-note-local",
+      "schema_valid": true,
+      "shape_complete": true,
+      "revocation_state": "active",
+      "verification_state": "adequate_for_local_check"
+    }
+  ],
+  "admission_valid_fixture_count": 3,
+  "admission_invalid_fixture_count": 5,
+  "admission_suite_passed": true,
+  "reachable_trace_event_count": 5,
+  "reference_trace_final_state": {
+    "stage": "admitted",
+    "certificate_id": 101,
+    "source_id": 201,
+    "source_authority": 3,
+    "derived_id": 301,
+    "derived_authority": 2,
+    "loss_contract_id": 401,
+    "omission_ledger_id": 501,
+    "permitted_use_id": 601,
+    "lifecycle_epoch": 1,
+    "source_binding_receipt": true,
+    "certificate_receipt": true,
+    "verification_receipt": true,
+    "deletion_closure_required": true,
+    "deletion_closure_receipt": true,
+    "evidence_transition_required": false,
+    "evidence_transition_receipt": false,
+    "revoked": false,
+    "tainted": false,
+    "admitted": true,
+    "logical_time": 5
+  },
+  "mutation_count": 64,
+  "mutation_rejection_count": 64,
+  "mutation_receipts": [
+    {
+      "mutation_id": "bind_certificate_missing",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "source_identity_missing"
+      ]
+    },
+    {
+      "mutation_id": "bind_source_missing",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "source_identity_missing"
+      ]
+    },
+    {
+      "mutation_id": "bind_authority",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "source_authority_over_ceiling"
+      ]
+    },
+    {
+      "mutation_id": "bind_epoch",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "epoch_missing"
+      ]
+    },
+    {
+      "mutation_id": "bind_malformed",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "malformed"
+      ]
+    },
+    {
+      "mutation_id": "bind_revoked",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "blocked_source"
+      ]
+    },
+    {
+      "mutation_id": "bind_tainted",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "blocked_source"
+      ]
+    },
+    {
+      "mutation_id": "bind_time",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "time_not_monotonic"
+      ]
+    },
+    {
+      "mutation_id": "derive_certificate",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "derive_source",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "derive_source_authority",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "derive_derived_missing",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "derived_identity_missing"
+      ]
+    },
+    {
+      "mutation_id": "derive_authority",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "authority_escalation"
+      ]
+    },
+    {
+      "mutation_id": "derive_not_derived",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "not_derived"
+      ]
+    },
+    {
+      "mutation_id": "derive_bindings",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "source_bindings_missing"
+      ]
+    },
+    {
+      "mutation_id": "derive_receipt",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "source_binding_receipt_missing"
+      ]
+    },
+    {
+      "mutation_id": "derive_revoked",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "blocked_derivation"
+      ]
+    },
+    {
+      "mutation_id": "derive_tainted",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "blocked_derivation"
+      ]
+    },
+    {
+      "mutation_id": "derive_time",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "time_not_monotonic"
+      ]
+    },
+    {
+      "mutation_id": "certify_certificate",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "derived_substitution"
+      ]
+    },
+    {
+      "mutation_id": "certify_source",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "derived_substitution"
+      ]
+    },
+    {
+      "mutation_id": "certify_source_authority",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "derived_substitution"
+      ]
+    },
+    {
+      "mutation_id": "certify_derived",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "derived_substitution"
+      ]
+    },
+    {
+      "mutation_id": "certify_derived_authority",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "derived_substitution"
+      ]
+    },
+    {
+      "mutation_id": "certify_loss_decl",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "loss_contract_missing"
+      ]
+    },
+    {
+      "mutation_id": "certify_omission_decl",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "omission_ledger_missing"
+      ]
+    },
+    {
+      "mutation_id": "certify_uses_decl",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "permitted_use_missing"
+      ]
+    },
+    {
+      "mutation_id": "certify_loss_id",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "contract_identity_missing"
+      ]
+    },
+    {
+      "mutation_id": "certify_omission_id",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "contract_identity_missing"
+      ]
+    },
+    {
+      "mutation_id": "certify_use_id",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "contract_identity_missing"
+      ]
+    },
+    {
+      "mutation_id": "certify_epoch",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "stale_epoch"
+      ]
+    },
+    {
+      "mutation_id": "certify_receipt",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "certificate_receipt_missing"
+      ]
+    },
+    {
+      "mutation_id": "certify_revoked",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "blocked_certificate"
+      ]
+    },
+    {
+      "mutation_id": "certify_tainted",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "blocked_certificate"
+      ]
+    },
+    {
+      "mutation_id": "verify_certificate",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "contract_substitution"
+      ]
+    },
+    {
+      "mutation_id": "verify_source",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "contract_substitution"
+      ]
+    },
+    {
+      "mutation_id": "verify_source_authority",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "contract_substitution"
+      ]
+    },
+    {
+      "mutation_id": "verify_derived",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "contract_substitution"
+      ]
+    },
+    {
+      "mutation_id": "verify_derived_authority",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "contract_substitution"
+      ]
+    },
+    {
+      "mutation_id": "verify_loss",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "contract_substitution"
+      ]
+    },
+    {
+      "mutation_id": "verify_omission",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "contract_substitution"
+      ]
+    },
+    {
+      "mutation_id": "verify_use",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "contract_substitution"
+      ]
+    },
+    {
+      "mutation_id": "verify_epoch",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "contract_substitution"
+      ]
+    },
+    {
+      "mutation_id": "verify_refs",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "verifier_refs_missing"
+      ]
+    },
+    {
+      "mutation_id": "verify_failed",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "verification_failed"
+      ]
+    },
+    {
+      "mutation_id": "verify_receipt",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "verification_receipt_missing"
+      ]
+    },
+    {
+      "mutation_id": "verify_requirement",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "deletion_requirement_substitution"
+      ]
+    },
+    {
+      "mutation_id": "verify_deletion",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "deletion_closure_missing"
+      ]
+    },
+    {
+      "mutation_id": "verify_revoked",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "blocked_verification"
+      ]
+    },
+    {
+      "mutation_id": "verify_tainted",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "blocked_verification"
+      ]
+    },
+    {
+      "mutation_id": "verify_time",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "time_not_monotonic"
+      ]
+    },
+    {
+      "mutation_id": "admit_certificate",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "contract_substitution"
+      ]
+    },
+    {
+      "mutation_id": "admit_source",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "contract_substitution"
+      ]
+    },
+    {
+      "mutation_id": "admit_source_authority",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "contract_substitution"
+      ]
+    },
+    {
+      "mutation_id": "admit_derived",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "contract_substitution"
+      ]
+    },
+    {
+      "mutation_id": "admit_derived_authority",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "contract_substitution"
+      ]
+    },
+    {
+      "mutation_id": "admit_loss",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "contract_substitution"
+      ]
+    },
+    {
+      "mutation_id": "admit_omission",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "contract_substitution"
+      ]
+    },
+    {
+      "mutation_id": "admit_use",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "contract_substitution"
+      ]
+    },
+    {
+      "mutation_id": "admit_epoch",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "contract_substitution"
+      ]
+    },
+    {
+      "mutation_id": "admit_scope",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "consumer_scope_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "admit_promotion",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "support_promotion_laundering"
+      ]
+    },
+    {
+      "mutation_id": "admit_receipt",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "admission_receipt_missing"
+      ]
+    },
+    {
+      "mutation_id": "admit_time",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "time_not_monotonic"
+      ]
+    }
+  ],
+  "support_state_effect": "none",
+  "non_claims": [
+    "Schema-valid and shape-complete certificates are not thereby truthful, fresh, adequate, or admissible for a consumer.",
+    "The eight scenario certificates are inspected separately from the whole-scenario 3/5 admission judgment; certificate shape does not launder scenario validity.",
+    "This packet does not establish source or payload truth, transformation or omission fidelity, verifier independence, deployed certificate enforcement, natural-workload usefulness, reproduction, transfer, safety, SOTA, AGI, ASI, or chapter-core support."
+  ]
+}

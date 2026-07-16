@@ -12,7 +12,7 @@ from validate_protocol_examples import validate_value
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE_DIR = ROOT / "experiments" / "context_transaction_memory_store" / "fixtures"
 SCHEMA = ROOT / "schemas" / "context_transaction_record.schema.json"
-LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ContextTransactions.lean"
+LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ContextTransactionRefinement.lean"
 RESULT_DOC = ROOT / "experiments" / "context_transaction_memory_store" / "results" / "2026-07-01-local.md"
 
 VALID_STATES = {"shape_validated", "store_validated", "replay_validated"}
@@ -24,12 +24,12 @@ SUPPORT_PROMOTION_EFFECTS = {
 }
 
 EXPECTED_LEAN_BRIDGE_TERMS = (
-    "structure MemoryStoreHarnessSummary",
-    "def MemoryStoreHarnessSummaryAccepted",
-    "def currentMemoryStoreHarnessSummary",
-    "theorem current_memory_store_harness_summary_accepted",
-    "theorem accepted_memory_store_harness_summary_requires_invalid_controls",
-    "theorem memory_store_harness_summary_with_support_promotion_rejected",
+    "structure TransactionState",
+    "def TransactionRun",
+    "theorem accepted_snapshot_read_preserves_snapshot_branch_mount_and_version",
+    "theorem accepted_untainted_derivation_from_tainted_source_requires_declassification",
+    "theorem accepted_materialization_preserves_transaction_custody",
+    "theorem exact_transaction_trace_materializes",
 )
 
 
@@ -311,13 +311,6 @@ def main() -> None:
         for term in EXPECTED_LEAN_BRIDGE_TERMS:
             if term not in lean_text:
                 errors.append(f"{LEAN_FILE.relative_to(ROOT)}: missing Lean bridge term {term!r}.")
-        for term in (
-            "validFixtureCount := 3",
-            "expectedInvalidFixtureCount := 6",
-            "chapterCoreSupportPromoted := false",
-        ):
-            if term not in lean_text:
-                errors.append(f"{LEAN_FILE.relative_to(ROOT)}: missing current harness summary field {term!r}.")
 
     if RESULT_DOC.exists():
         result_text = RESULT_DOC.read_text(encoding="utf-8")

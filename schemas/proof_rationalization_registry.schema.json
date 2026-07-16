@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/proof_rationalization_registry.schema.json",
+  "title": "ASI Stack proof rationalization registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "roadmap_id",
+    "baseline_frozen_at",
+    "generated_from",
+    "summary",
+    "baseline_theorems",
+    "baseline_targets",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.proof_rationalization_registry.v0"},
+    "roadmap_id": {"type": "string", "minLength": 1},
+    "baseline_frozen_at": {"type": "string", "format": "date"},
+    "generated_from": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "summary": {
+      "type": "object",
+      "required": [
+        "baseline_theorem_declaration_count",
+        "baseline_proof_target_count",
+        "chapter_count",
+        "module_count",
+        "fully_reviewed_module_count",
+        "safety_critical_module_count",
+        "safety_critical_fully_reviewed_module_count",
+        "theorem_review_state_counts",
+        "target_review_state_counts",
+        "depth_class_counts",
+        "missing_current_theorem_count",
+        "changed_current_theorem_count",
+        "missing_current_target_count",
+        "changed_current_target_count",
+        "support_state_effect"
+      ]
+    },
+    "baseline_theorems": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/theorem"}
+    },
+    "baseline_targets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/target"}
+    },
+    "non_claims": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "commonReview": {
+      "type": "object",
+      "required": [
+        "chapter_id",
+        "claim_atom_id",
+        "module_path",
+        "review_state",
+        "disposition",
+        "semantic_role",
+        "assumptions",
+        "excluded_effects",
+        "countermodel_refs",
+        "mutation_refs",
+        "consumer_refs",
+        "runtime_consumer_refs",
+        "replacement_refs",
+        "review_rationale",
+        "current_present",
+        "current_matches_baseline"
+      ]
+    },
+    "theorem": {
+      "allOf": [
+        {"$ref": "#/$defs/commonReview"},
+        {
+          "type": "object",
+          "required": [
+            "theorem_id",
+            "name",
+            "source_start_line",
+            "source_end_line",
+            "baseline_signature",
+            "baseline_block_sha256",
+            "current_block_sha256",
+            "depth_class",
+            "depth_evidence",
+            "safety_critical_module",
+            "candidate_target_tags",
+            "theorem_dependencies",
+            "theorem_consumers"
+          ]
+        }
+      ]
+    },
+    "target": {
+      "allOf": [
+        {"$ref": "#/$defs/commonReview"},
+        {
+          "type": "object",
+          "required": [
+            "target_id",
+            "module",
+            "formal_target",
+            "baseline_status",
+            "baseline_outline_line",
+            "candidate_theorem_ids",
+            "dependencies",
+            "current_status"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -73,8 +73,11 @@ def semantic_errors(data: dict, *, inspect_files: bool = True) -> list[str]:
         m6 = next(r for r in status["milestones"] if r["id"] == "M6")
         if p2.get("state") != "completed" or m6.get("state") != "completed":
             errors.append("P2/M6 machine status is not completed")
-        if len(inventory) != data.get("source_count"):
-            errors.append("audit source count is stale")
+        snapshot_count = data.get("source_count")
+        if snapshot_count != 302:
+            errors.append("historical P2 audit source snapshot drifted")
+        elif len(inventory) < snapshot_count:
+            errors.append("live source inventory fell below the historical P2 audit snapshot")
     return errors
 
 

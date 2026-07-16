@@ -22,14 +22,6 @@ def SnapshotReadValid (read : SnapshotRead) : Prop :=
   read.event.committed = true ∧
     EventVisibleInSnapshot read.event read.snapshot
 
-theorem snapshot_read_sees_committed_event_in_declared_view
-    {read : SnapshotRead} :
-    SnapshotReadValid read ->
-      read.event.committed = true ∧
-        EventVisibleInSnapshot read.event read.snapshot := by
-  intro valid
-  exact valid
-
 structure DerivedContext where
   sourceTainted : Bool
   declassificationAuthorized : Bool
@@ -40,15 +32,6 @@ def TaintPropagationValid (context : DerivedContext) : Prop :=
   context.sourceTainted = true ->
     context.declassificationAuthorized = false ->
     context.derivedTainted = true
-
-theorem tainted_source_taints_derivative_without_declassification
-    {context : DerivedContext} :
-    TaintPropagationValid context ->
-    context.sourceTainted = true ->
-    context.declassificationAuthorized = false ->
-    context.derivedTainted = true := by
-  intro valid sourceTainted noDeclassification
-  exact valid sourceTainted noDeclassification
 
 theorem untainted_derivative_from_tainted_source_requires_declassification
     {context : DerivedContext} :
@@ -437,38 +420,6 @@ def MemoryStoreHarnessSummaryAccepted
                       summary.supportPromotionRejected = true ∧
                         summary.chapterCoreSupportPromoted = false
 
-def currentMemoryStoreHarnessSummary : MemoryStoreHarnessSummary :=
-  {
-    validFixtureCount := 3
-    expectedInvalidFixtureCount := 6
-    readVisibilityChecked := true
-    branchIsolationChecked := true
-    mountVisibilityChecked := true
-    deletionClosureChecked := true
-    taintPropagationChecked := true
-    replayBoundaryRecorded := true
-    unauthorizedMountRejected := true
-    deletedMaterializationRejected := true
-    supportPromotionRejected := true
-    chapterCoreSupportPromoted := false
-  }
-
-theorem current_memory_store_harness_summary_accepted :
-    MemoryStoreHarnessSummaryAccepted currentMemoryStoreHarnessSummary := by
-  unfold MemoryStoreHarnessSummaryAccepted currentMemoryStoreHarnessSummary
-  simp
-
-theorem accepted_memory_store_harness_summary_requires_invalid_controls
-    {summary : MemoryStoreHarnessSummary} :
-    MemoryStoreHarnessSummaryAccepted summary ->
-      summary.expectedInvalidFixtureCount = 6 := by
-  intro accepted
-  rcases accepted with ⟨_validCount, invalidCount, _readVisibility,
-    _branchIsolation, _mountVisibility, _deletionClosure, _taintPropagation,
-    _replayBoundary, _unauthorizedMount, _deletedMaterialization,
-    _supportPromotion, _noCorePromotion⟩
-  exact invalidCount
-
 theorem memory_store_harness_summary_with_support_promotion_rejected
     {summary : MemoryStoreHarnessSummary} :
     summary.chapterCoreSupportPromoted = true ->
@@ -504,37 +455,6 @@ def ContextTransactionSequenceSummaryAccepted
               summary.invalidControlsRejected = true ∧
                 summary.supportPromotionRejected = true ∧
                   summary.chapterCoreSupportPromoted = false
-
-def currentContextTransactionSequenceSummary :
-    ContextTransactionSequenceSummary :=
-  {
-    validSequenceFixtureCount := 2
-    expectedInvalidSequenceFixtureCount := 4
-    orderedTransactionsChecked := true
-    readAfterWriteChecked := true
-    replayBoundariesChecked := true
-    taintBlockingChecked := true
-    invalidControlsRejected := true
-    supportPromotionRejected := true
-    chapterCoreSupportPromoted := false
-  }
-
-theorem current_context_transaction_sequence_summary_accepted :
-    ContextTransactionSequenceSummaryAccepted
-      currentContextTransactionSequenceSummary := by
-  unfold ContextTransactionSequenceSummaryAccepted
-    currentContextTransactionSequenceSummary
-  simp
-
-theorem accepted_context_transaction_sequence_summary_requires_order
-    {summary : ContextTransactionSequenceSummary} :
-    ContextTransactionSequenceSummaryAccepted summary ->
-      summary.orderedTransactionsChecked = true := by
-  intro accepted
-  rcases accepted with ⟨_validCount, _invalidCount, ordered,
-    _readAfterWrite, _replayBoundaries, _taintBlocking, _invalidControls,
-    _supportPromotion, _noCorePromotion⟩
-  exact ordered
 
 theorem context_transaction_sequence_with_support_promotion_rejected
     {summary : ContextTransactionSequenceSummary} :

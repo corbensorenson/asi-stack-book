@@ -1,0 +1,407 @@
+{
+  "schema_version": "asi_stack.readiness_refinement.v1",
+  "result_id": "readiness-refinement-2026-07-15-local",
+  "source_sha256": {
+    "lean_model": "996a8b875f7e8fe73bd1428850f57ec61da61a7e5868b6b857577f96997628f1"
+  },
+  "input_suites": [
+    {
+      "suite_id": "readiness_residual_gates",
+      "valid_count": 4,
+      "expected_invalid_count": 5
+    },
+    {
+      "suite_id": "readiness_lifecycle_probe",
+      "valid_count": 6,
+      "expected_invalid_count": 12
+    },
+    {
+      "suite_id": "readiness_check_lifecycle",
+      "valid_count": 1,
+      "expected_invalid_count": 9,
+      "project_count": 6
+    }
+  ],
+  "reachable_stage_count": 7,
+  "route_case_count": 40,
+  "route_coverage": [
+    {
+      "case_id": "candidate_accepted",
+      "expected_route": "accept_shadow"
+    },
+    {
+      "case_id": "shadow_accepted",
+      "expected_route": "accept_canary"
+    },
+    {
+      "case_id": "canary_accepted",
+      "expected_route": "accept_qualification"
+    },
+    {
+      "case_id": "qualified_accepted",
+      "expected_route": "accept_default"
+    },
+    {
+      "case_id": "defaultReady_accepted",
+      "expected_route": "accept_quarantine"
+    },
+    {
+      "case_id": "quarantined_accepted",
+      "expected_route": "accept_termination"
+    },
+    {
+      "case_id": "candidate_workloadPresent",
+      "expected_route": "request_workload"
+    },
+    {
+      "case_id": "candidate_baselinePresent",
+      "expected_route": "request_baseline"
+    },
+    {
+      "case_id": "candidate_evaluatorPresent",
+      "expected_route": "request_evaluator"
+    },
+    {
+      "case_id": "candidate_nonClaimsPresent",
+      "expected_route": "request_non_claims"
+    },
+    {
+      "case_id": "shadow_shadowEvidencePresent",
+      "expected_route": "request_shadow_evidence"
+    },
+    {
+      "case_id": "shadow_gateEvidenceFresh",
+      "expected_route": "request_fresh_gate"
+    },
+    {
+      "case_id": "shadow_regressionFloorPreserved",
+      "expected_route": "block_regression"
+    },
+    {
+      "case_id": "shadow_residualEscrowPresent",
+      "expected_route": "request_residual_escrow"
+    },
+    {
+      "case_id": "shadow_fallbackPresent",
+      "expected_route": "request_fallback"
+    },
+    {
+      "case_id": "shadow_rollbackPlanPresent",
+      "expected_route": "request_rollback_plan"
+    },
+    {
+      "case_id": "shadow_monitoringPresent",
+      "expected_route": "request_monitoring"
+    },
+    {
+      "case_id": "canary_canaryEvidencePresent",
+      "expected_route": "request_canary_evidence"
+    },
+    {
+      "case_id": "canary_usefulThroughputRecorded",
+      "expected_route": "request_useful_throughput"
+    },
+    {
+      "case_id": "canary_unsafeReleaseRecorded",
+      "expected_route": "request_unsafe_release_record"
+    },
+    {
+      "case_id": "canary_latencyCostRecorded",
+      "expected_route": "request_latency_cost"
+    },
+    {
+      "case_id": "canary_thresholdBreached",
+      "expected_route": "quarantine_threshold_breach"
+    },
+    {
+      "case_id": "qualified_qualificationEvidencePresent",
+      "expected_route": "request_qualification_evidence"
+    },
+    {
+      "case_id": "qualified_independentEvaluationPresent",
+      "expected_route": "request_independent_evaluation"
+    },
+    {
+      "case_id": "qualified_transferEvidencePresent",
+      "expected_route": "request_transfer"
+    },
+    {
+      "case_id": "qualified_delayedOutcomesPresent",
+      "expected_route": "request_delayed_outcomes"
+    },
+    {
+      "case_id": "defaultReady_quarantineTriggerPresent",
+      "expected_route": "request_quarantine_trigger"
+    },
+    {
+      "case_id": "defaultReady_transitivePropagationComplete",
+      "expected_route": "request_transitive_propagation"
+    },
+    {
+      "case_id": "defaultReady_ordinaryRouteBlocked",
+      "expected_route": "request_ordinary_route_block"
+    },
+    {
+      "case_id": "defaultReady_boundedDiagnosticsPresent",
+      "expected_route": "request_bounded_diagnostics"
+    },
+    {
+      "case_id": "quarantined_terminalReasonPresent",
+      "expected_route": "request_terminal_reason"
+    },
+    {
+      "case_id": "quarantined_terminalReceiptPresent",
+      "expected_route": "request_terminal_receipt"
+    },
+    {
+      "case_id": "quarantined_dependencyClosureComplete",
+      "expected_route": "request_dependency_closure"
+    },
+    {
+      "case_id": "quarantined_revocationClosureComplete",
+      "expected_route": "request_revocation_closure"
+    },
+    {
+      "case_id": "quarantined_consumerAcknowledgmentPresent",
+      "expected_route": "request_consumer_acknowledgment"
+    },
+    {
+      "case_id": "wrong_stage",
+      "expected_route": "reject_wrong_stage"
+    },
+    {
+      "case_id": "capability_substitution",
+      "expected_route": "reject_capability_substitution"
+    },
+    {
+      "case_id": "evidence_substitution",
+      "expected_route": "reject_evidence_substitution"
+    },
+    {
+      "case_id": "event_replay",
+      "expected_route": "reject_event_replay"
+    },
+    {
+      "case_id": "authority_leak",
+      "expected_route": "reject_authority_leak"
+    }
+  ],
+  "mutation_count": 45,
+  "mutation_rejection_count": 45,
+  "mutation_receipts": [
+    {
+      "mutation_id": "binding_authorityDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_baselineDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_capabilityId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_capabilityVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_evaluatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_fallbackDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_implementationDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_modelStateDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_residualDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_workloadDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_candidate_workloadPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_candidate_baselinePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_candidate_evaluatorPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_candidate_nonClaimsPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_shadow_shadowEvidencePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_shadow_gateEvidenceFresh",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_shadow_regressionFloorPreserved",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_shadow_residualEscrowPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_shadow_fallbackPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_shadow_rollbackPlanPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_shadow_monitoringPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_canary_canaryEvidencePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_canary_usefulThroughputRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_canary_unsafeReleaseRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_canary_latencyCostRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_canary_thresholdBreached",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_qualified_qualificationEvidencePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_qualified_independentEvaluationPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_qualified_transferEvidencePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_qualified_delayedOutcomesPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_defaultReady_quarantineTriggerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_defaultReady_transitivePropagationComplete",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_defaultReady_ordinaryRouteBlocked",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_defaultReady_boundedDiagnosticsPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_quarantined_terminalReasonPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_quarantined_terminalReceiptPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_quarantined_dependencyClosureComplete",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_quarantined_revocationClosureComplete",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_quarantined_consumerAcknowledgmentPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong_kind",
+      "rejected": true
+    },
+    {
+      "mutation_id": "event_replay",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support_leak",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect_leak",
+      "rejected": true
+    }
+  ],
+  "command_receipts": [
+    {
+      "command": "python3 scripts/validate_readiness_residual_gates.py",
+      "exit_code": 0,
+      "output_sha256": "e4676c6bc155cc88ebe62b3ce77cb91f38f1113a23073fbd435e93a02d1b55b1"
+    },
+    {
+      "command": "python3 scripts/validate_readiness_lifecycle_probe.py",
+      "exit_code": 0,
+      "output_sha256": "6e2c5a9bc6e53c395512c945490ea977436a8ef121d483bed478c96d2ef3a4c2"
+    },
+    {
+      "command": "python3 scripts/validate_readiness_check_lifecycle.py",
+      "exit_code": 0,
+      "output_sha256": "ea33280b0a53900da3ec2704b31a2fdbc1036de5aebafce7bd9643c5a739ebd7"
+    }
+  ],
+  "witness": {
+    "terminal_stage": "terminal",
+    "receipt_count": 6,
+    "ordinary_release_count": 1,
+    "quarantine_count": 1,
+    "terminal_count": 1,
+    "support_assignment_count": 0,
+    "external_effect_count": 0
+  },
+  "support_state_effect": "none",
+  "non_claims": [
+    "no deployed readiness engine",
+    "no evaluator adequacy or gate calibration",
+    "no effect-complete rollback execution",
+    "no natural useful-throughput or transfer result",
+    "no support promotion"
+  ]
+}

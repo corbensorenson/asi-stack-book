@@ -3,8 +3,8 @@ title: "Project Theseus as Report-First Implementation Reference"
 chapter_id: "project-theseus-as-report-first-implementation-reference"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-05"
+draft_maturity: "v0.3 semantically audited manuscript"
+last_updated: "2026-07-15"
 primary_sources:
   - "project_theseus_whitepaper"
   - "theseus_plan_compiler"
@@ -12,10 +12,14 @@ primary_sources:
   - "theseus_architecture_gate"
   - "theseus_operator_os"
   - "theseus_circle_transfer"
+  - "ext_model_cards_2019"
+  - "ext_datasheets_datasets_2021"
+  - "ext_factsheets_ai_services_2019"
+  - "ext_ml_reproducibility_program_2021"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records passage-reviewed mappings for all six assigned Theseus sources using pinned local project-file references; support remains argument until current reports, replay commands, benchmark environments, public-safe artifacts, or accepted evidence transitions justify promotion."
+  - "Appendix C records passage-reviewed mappings for all ten assigned sources: six pinned Project Theseus sources and four external reporting or reproducibility comparators. The chapter core remains argument because documentation lineage and bounded imports do not establish current runtime, capability, safety, deployment, reproduction, or transfer."
   - "The theseus_report_crosswalk_record fixture validates schema/example consistency and AsiStackProofs.TheseusReference implements finite record predicates plus bounded negative cases for dashboard-only claims, missing/failing gate promotion, incomplete report bundles, replay-readiness gaps, and public-artifact support overclaim; the separate Project Theseus static architecture-gate and generation-mode imports validate public-safe digest-verified report fixtures, the Theseus support replay probe reruns those ASI-side validators with command-output and artifact digests, `scripts/validate_theseus_report_bundle_audit.py` validates a public-safe report-bundle audit fixture with replay-readiness, crosswalk, gate-mapping, work-board, artifact-gap, and intervention-ladder controls, `scripts/validate_theseus_artifact_retention_replay_import.py` validates one sanitized artifact-retention replay import as a bounded non-core `prototype-backed` transition, `scripts/validate_theseus_module_definition_of_done_import.py` validates a sanitized Theseus module definition-of-done gate import with 22 of 22 major module records ready, `scripts/validate_theseus_project_registry_import.py` validates a sanitized Theseus project-registry import with 5,662 registered paths, `scripts/validate_theseus_accelerator_parity_manifest_import.py` validates a sanitized accelerator parity manifest import with 7 of 7 surfaces, 7 MLX report summaries, 4 Metal report summaries, and no full parity, production-routing, model-promotion, or chapter-core claim, `scripts/validate_theseus_book_crosswalk_import.py` validates a sanitized book-to-Theseus crosswalk import with 53 public-safe pointer rows and no support-state promotion, and `scripts/validate_theseus_concrete_evidence_surface.py` keeps those concrete facts visible in public surfaces and the outline. No clean live Theseus report bundle, benchmark environment, current work-board state, transfer-lane consumer, deployed residual-ledger storage, deployed artifact-graph behavior, full CUDA, MLX, or Metal parity, production scheduler routing, model-quality result, module-capability result, deployment result, self-evolution safety result, or external review has been rerun or proven."
   - "Source-noted external reporting and reproducibility comparators now position the report-first boundary against model cards, dataset datasheets, AI service FactSheets, and ML reproducibility programs; none of those external sources has been implemented or reproduced for Theseus in this repository."
   - "Theseus implementation references are report-first context only; source-reported snapshots, dashboards, compiler status, gate state, self-evolution machinery, board state, and transfer-lane reports are not promoted without current artifacts."
@@ -29,9 +33,9 @@ open_evidence_gaps:
 | Chapter ID | `project-theseus-as-report-first-implementation-reference` |
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-05 |
-| Primary source records | `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer` |
+| Manuscript maturity | v0.3 semantically audited manuscript |
+| Last updated | 2026-07-15 |
+| Primary source records | `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `ext_model_cards_2019`, `ext_datasheets_datasets_2021`, `ext_factsheets_ai_services_2019`, `ext_ml_reproducibility_program_2021` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`; supporting: `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `rmi`, `cgs`, `benchmaxxing`, `cognitive_loop_closure`, `viea`, `vcm_public`, `scf`; external comparators: `ext_model_cards_2019`, `ext_datasheets_datasets_2021`, `ext_factsheets_ai_services_2019`, `ext_ml_reproducibility_program_2021` |
@@ -78,7 +82,7 @@ External positioning: Project Theseus remains a local implementation-reference c
 
 ## Core Claim
 
-[project-theseus-as-report-first-implementation-reference.core, label: Design rationale, support: argument] Project Theseus should be mined as a report-first implementation reference for RMI, showing how pressure, residuals, gates, ledgers, operator work boards, checkpoints, and self-evolution governance can instantiate the ASI stack without promoting local results as general capability claims.
+[project-theseus-as-report-first-implementation-reference.core, label: Design rationale, support: argument] Project Theseus as Report-First Implementation Reference owns a source-project-, pinned-revision-, report-family-, command-, environment-, artifact-, lineage-, evidence-state-, replay-, public-safety-, publication-permission-, reviewer-, consumer-, and time-specific **Implementation-Reference Evidence Packet**. It binds every imported or replayed report, configuration, ledger, work-board summary, registry, gate, crosswalk, trace, retained artifact, command, environment note, digest, missing artifact, decision, residual, and non-claim to `source_note_only`, `imported`, `replay_ready`, `replay_failed`, `locally_reproduced`, `stale`, `runtime_blocked`, or `archived_lineage`. Dashboards and latest files are projections only. No GREEN gate, complete registry, module card, pointer row, metadata snapshot, parity manifest, command replay, fixture, theorem, or sanitized import alone establishes current runtime truth, clean live replay, model quality, capability, benchmark validity, safety, deployment, support, transfer, AGI, ASI, or SOTA.
 
 ::: {.asi-ai-only}
 The claim remains at `argument` support. The source notes support report-first implementation discussion, `docs/theseus_report_import_slice.md` adds one static digest-verified architecture-gate report fixture, `docs/theseus_generation_mode_import_slice.md` adds one static digest-verified generation-mode gate fixture, `docs/theseus_support_replay_probe.md` records a local replay of both ASI-side validators with command-output and artifact digests, `docs/theseus_report_bundle_audit.md` records a public-safe report-bundle audit fixture with 7 expected-invalid controls, `docs/theseus_artifact_retention_replay_import.md` records one sanitized artifact-retention replay import, `docs/theseus_module_definition_of_done_import.md` records one sanitized module definition-of-done gate import, `docs/theseus_project_registry_import.md` records one sanitized project-registry import, `docs/theseus_accelerator_parity_manifest_import.md` records one sanitized accelerator parity manifest import, `docs/theseus_book_crosswalk_import.md` records one sanitized pointer-only book-to-Theseus crosswalk import, `docs/theseus_work_board_import.md` records one stale-snapshot work-board metadata import, `docs/theseus_assistant_reference_trace_import.md` records one sanitized assistant reference-trace import, and `docs/theseus_pretraining_readiness_currentness_import.md` records one clean same-commit readiness-gate replay. Those fixtures, probes, audit, and imports are implementation-reference evidence only: they do not give this repository reproduced benchmark runs, a whole-system Theseus replay, current-after-commit runtime or dashboard verification, route-quality evidence, private-verifier evidence, full CUDA, MLX, or Metal parity, production scheduler routing, public-safe private workload artifacts, deployed residual-ledger storage, deployed artifact-graph behavior, module-capability evidence, deployment evidence, self-evolution safety evidence, independent replication, useful-solution-per-second evidence, or a generation-speed result.
@@ -86,7 +90,7 @@ The claim remains at `argument` support. The source notes support report-first i
 
 ### Claim-source mapping status
 
-Appendix C now records six passage-reviewed mappings for the Project Theseus core claim. The review makes the Theseus references traceable enough for drafting and later support review, while the static architecture-gate and generation-mode imports add CI-verifiable implementation-reference fixtures. Neither move takes the claim above `argument` support, and neither converts source-reported status, current-state notes, dashboards, schemas, fixtures, or finite Lean predicates into public empirical evidence.
+Appendix C now records ten passage-reviewed mappings for the Project Theseus core claim: six pinned local-project sources and four external reporting or reproducibility comparators. The review makes the reference traceable enough for drafting and later support review, while bounded imports add exact implementation-reference facts. No mapping or import takes the chapter core above `argument`, and none converts source-reported status, current-state notes, dashboards, documentation formats, schemas, fixtures, validator passes, or finite Lean predicates into public empirical evidence.
 
 | Mapping group | Reviewed support | Boundary |
 |---|---|---|
@@ -129,13 +133,27 @@ Those facts do not promote the Theseus core claim. They do not rerun Project The
 
 ## Mechanism
 
-Theseus is useful here because it makes the stack operationally visible. The whitepaper gives the pressure loop: benchmark or operator demand, attempted work, residual, diagnosis, compression, verification, new structure, and renewed pressure. The plan compiler gives that loop a contract surface through typed goals, semantic IR DAGs, VCM slices, executor routes, claim/evidence targets, and replay traces. The self-evolution and architecture-gate notes keep the loop from becoming open-ended mutation: architecture changes, teacher edits, training runs, and candidate promotion require reports, branches, checks, ledgers, and gates.
+The owned object is the **Implementation-Reference Evidence Packet**, not Project Theseus as a whole and not a dashboard about it. Its lifecycle has six auditable phases, each with three operations:
 
-The operator OS adds the human-control surface. Work does not disappear into a dashboard; it becomes board state, command vocabulary, node eligibility, hook output, feedback route, and safety-visible control. The Circle transfer lane adds a second boundary: deterministic structural fixtures can shape private experiments, but they cannot become model-quality evidence without named workloads, baselines, metrics, scripts, and reports.
+| Phase | Required operations |
+|---|---|
+| 1. Scope and inventory | Freeze source project, pinned revision, report families, permissions, public/private boundary, consumers, environment, and time; inventory reports, configs, tools, boards, registries, ledgers, checkpoints, artifacts, dashboards, generators, and owners; bind every source path or note to version, digest, timestamp, generator, command, environment, dependencies, input boundary, expected output class, and failure behavior. |
+| 2. Classify and protect | Assign `source_note_only`, `imported`, `artifact_missing`, `replay_ready`, `replay_failed`, `locally_reproduced`, `stale`, `runtime_blocked`, or `archived_lineage`; sanitize under explicit permission with no undisclosed private payload; keep dashboards, latest aliases, pointers, and status summaries as projections over retained artifacts. |
+| 3. Crosswalk and replay | Map each stack layer and claim to exact artifact, gate, residual, state, and non-claim; bind intent, approval, agency, resource, rollback, work-board, review, and residual records; replay eligible commands in locked environments while retaining output, exit status, digests, failures, duration, resources, dependencies, and mutations. |
+| 4. Validate and compare | Test bundle completeness, lineage, gates, public safety, work contracts, missing artifacts, and intervention ordering with valid and rejecting controls; import static summaries only at exact revisions and states; compare packet fields with model cards, datasheets, FactSheets, and reproducibility programs without treating those formats as evidence. |
+| 5. Adjudicate and propagate | Expose benchmark and calibration partitions, external inference, teacher use, selection, retries, task access, and training-row status; require separate evidence transitions for capability, training, self-evolution, deployment, or chapter-core support; retain negative, null, failed, stale, missing, blocked, and no-promotion outcomes and propagate corrections or downgrades to every consumer. |
+| 6. Monitor and retire | Monitor replay age, dependency drift, missing artifacts, stale snapshots, public-safety and private-data pressure, failures, promotion pressure, latency, resources, review burden, and cost; expire or replace affected packets when assumptions change; archive or retire them without erasing lineage. |
 
-The evidence ladder should stay visible in every Theseus reference: `source_note_only`, `report_imported`, `artifact_missing`, `replay_ready`, `replay_failed`, `locally_reproduced`, `runtime_blocked`, and `archived_lineage`. These states let the book use Theseus as implementation guidance without pretending that a historical note, a dashboard panel, a local report, and a reproduced command have the same evidential weight. The crosswalk fixture validates a public-safe row, and the static architecture-gate import advances one narrow report to `report_imported`; neither imports a live bundle or licenses broader promotion.
+The pressure loop remains useful inside that packet: demand produces a contract, an attempt produces reports and effects, failures produce residuals, and the smallest governed intervention creates the next candidate. The packet prevents this implementation story from becoming evidence laundering. A Circle fixture can shape an experiment, a gate can block an attempt, and a retained artifact can establish one storage fact; none inherits model-quality or capability scope.
 
-The implementation-reference view is two coupled loops: the Theseus report loop that turns pressure into governed structure, and the Circle transfer lane that can supply deterministic contract fixtures without becoming model-quality evidence.
+Each phase must leave a consumer-visible receipt rather than merely advancing a
+dashboard. Scope and inventory produce the frozen packet identity; protection
+produces the public/private boundary; crosswalk and replay produce exact command
+and artifact observations; comparison produces bounded accept or reject facts;
+adjudication produces support and non-claim decisions; and monitoring produces
+expiry, correction, or retirement. If any receipt is absent, later work may
+continue only as explicitly isolated research, never as evidence of whole-system
+operation.
 
 ```{mermaid}
 flowchart LR
@@ -164,82 +182,80 @@ That distinction is the public safety valve. Source-note lineage can explain why
 
 ## Interfaces
 
-- The plan compiler supplies contracts, semantic IR DAGs, VCM slices, routes, claim targets, and replay traces.
-- Octopus arms, SymLiquid CGS, SparkStream control, and Hive runtime map stack layers into reports and configs.
-- Genesis-style artifact kernels preserve claims, critiques, benchmark results, tool promotions, architecture decisions, and feedback.
-- Capability matrices and benchmark ledgers expose readiness and residuals without turning local reports into public empirical proof.
+The packet joins twelve interfaces while leaving their authority separate:
 
-Theseus connects to the book through the Theseus Report Crosswalk Record: stack layer, source reports, config/tool refs, gate refs, residual refs, public claim boundary, verification status, missing artifacts, non-claims, and evidence refs.
+1. The pinned Project Theseus checkout, report generators, configurations, tools, registries, ledgers, work board, checkpoints, and retained artifacts supply exact source-project facts.
+2. The source inventory, source notes, source-to-chapter matrix, queue, and Appendix G supply bibliographic and local-project provenance.
+3. Human Intent, the plan compiler, agency contracts, work contracts, and authority records supply goal, permission, resource, rollback, and acceptance boundaries.
+4. Labor OS, the work board, operator commands, node registry, Artifact Steward agents, and feedback routes supply owned work and continuity records.
+5. Artifact Graphs, supply-chain controls, data engines, weight custody, residual escrow, and replay supply identity, custody, retention, deletion, and lineage.
+6. Benchmarks, generation modes, simulation, routing, specialist arms, external-inference controls, and teacher governance supply workload and computation records.
+7. Claim Ledgers, Evidence States, formal methods, proof-carrying contracts, Appendices C and E, and accepted transitions supply claim identity, proof scope, support, defeaters, and non-claims.
+8. Readiness, Stable Capability Fields, Capability Replacement, Recursive Improvement, and self-evolution gates consume packet facts without inheriting capability authority.
+9. Security Kernel, runtime adapters, Digital SCIFs, public-safety filters, rights records, and publication permissions constrain commands, payloads, environments, and disclosure.
+10. Resource Economics and compute governance supply budgets, accelerator surfaces, external-service accounting, duration, and cost boundaries.
+11. Model cards, datasheets, FactSheets, and reproducibility programs supply reporting comparators without certifying Theseus.
+12. The Living Book, outline, appendices, roadmap, status records, release surfaces, and readers consume only adjudicated packet facts and currentness boundaries.
 
-For future ingestion, the crosswalk should be wrapped in a Theseus Report Packet. The packet should name the originating intent or benchmark pressure, plan/compiler contract hash, work-board item, node or arm route, report bundle path, gate report, residual ledger entry, replay command, environment notes, artifact checksum, reviewer decision, publication permission, missing artifacts, and non-claims. A packet can be source-note-only, imported, replay-ready, reproduced, failed, blocked, or archived. Only reproduced or otherwise accepted evidence transitions should affect Appendix C.
-
-The crosswalk should also name the human-control artifacts where they exist: originating intent contract, approval receipt, agency checklist, rollback or shutdown path, operator work-board item, and review residual. Those fields keep implementation detail connected to the alignment and governance layers instead of letting Part IV become a purely technical appendix.
+These interfaces exchange immutable references and acknowledgements, not
+authority by proximity. A report generator can supply a digest but cannot
+declare support; a readiness gate can block a route but cannot prove model
+quality; a publication surface can disclose an accepted packet but cannot make
+it current. The packet remains incomplete until every intended consumer either
+acknowledges the exact version or leaves a visible unresolved edge.
 
 ## Invariants
 
-The Theseus invariants preserve the boundary between report-first implementation evidence and public-book claims: a dashboard, work board, or private run can orient the architecture only when its report trail survives.
+The packet is valid only while all of these invariants hold:
 
-- The frontier moves while the regression floor holds.
-- Promotion uses external-inference-zero evidence where the local gate requires it.
-- Reports survive the run and are not replaced by dashboard prose.
-- Private experiments and public calibration remain separated.
-- Unknown task kinds are blocked rather than guessed.
-- Architecture changes follow the intervention ladder.
-- Latest-file status never overwrites report lineage.
-- Current-state claims require current artifacts, not historical source-note lineage.
+1. Scope names the exact project, revision, report family, command, environment, artifacts, permission, reviewer, consumer, dependencies, and time.
+2. A retained artifact at an exact digest—not dashboard prose, a latest alias, pointer, badge, or summary—owns each imported fact.
+3. Current-state claims require current artifacts or clean bounded replay; historical imports never become current runtime truth.
+4. Regeneration never erases versions, failures, stale snapshots, corrections, rejecting controls, or no-promotion decisions.
+5. Every fact remains bound to source, revision, digest, generator, command, environment, dependencies, timestamp, and review.
+6. All nine evidence states remain distinct and machine-visible.
+7. Sanitization proves only compliance with the declared public boundary.
+8. Public packets disclose no training rows or raw private material without exact permission and purpose.
+9. Data partitions, external inference, teacher use, selection, retries, and task access remain visible.
+10. Missing, stale, failed, dirty, drifted, and runtime-blocked artifacts remain visible and block broader claims.
+11. GREEN, complete, ready, parity, wired, pointer, registered, retained, or replayed labels never cross-promote.
+12. Gates are necessary only within their declared scope and never sufficient for chapter-core support.
+13. Bundle shape requires goal and work contracts, plan artifact, gate, residual, lineage, replay state, review, publication boundary, and non-claims.
+14. Private sources and public projections remain separated, with redaction loss recorded.
+15. Human approval, delegated agency, work ownership, kill and rollback authority, reviewer identity, conflicts, and decisions remain visible.
+16. Corrections, revocations, expiry, staleness, permission changes, and downgrades propagate to every consumer.
+17. Replay age, duration, resource and service use, failures, review burden, storage, and total cost stay beside positive results.
+18. Record implications, fixture normalizations, validator passes, and theorem counts establish only their exact finite boundaries.
 
-Report primacy is the Theseus reference's strongest invariant: if a claim relies on a run, gate, benchmark, or work-board state, the report or replayable artifact must exist before the claim can move.
-
-Currentness is the boundary on implementation-reference claims. A pinned source file can support design lineage, but it cannot prove today's dashboard state, benchmark result, model quality, safety gate, or readiness status. Current-state claims require current artifacts, commands, environment notes, and publication permission.
+Together these invariants make currentness a property of a named packet and
+consumer path, not of the Project Theseus label. A clean replay at one revision
+does not update later revisions, and a corrected artifact does not silently
+repair every downstream claim. Versioned invalidation must reach each consumer
+before the predecessor can be retired.
 
 ## Failure modes
 
-- Latest-file report overwrites history.
-- Benchmark overfit becomes capability evidence.
-- Teacher dependence replaces local evidence.
-- Architecture churn outruns residual diagnosis.
-- Remote work proceeds without allowlists, TTLs, or kill switches.
-- Local prototype results are overclaimed as public evidence.
-- Report-state drift, where an imported or historical report is narrated as a current reproduced run.
-- Missing-artifact smoothing, where absent commands, environment notes, checksums, or permissions disappear from the public boundary.
+The principal falsifiers are: (1) latest-file overwrite or dashboard theater; (2) report-shape or checklist laundering; (3) stale-snapshot currentness; (4) path, digest, revision, generator, command, environment, or dependency drift; (5) sanitized-import truth laundering; (6) private-payload leakage; (7) benchmark-headline laundering; (8) GREEN-gate-to-capability promotion; (9) module, registry, board, pointer, or lifecycle completeness promoted to runtime truth; (10) manifest surfaces promoted to full accelerator or scheduler parity; (11) pointer crosswalks promoted to referenced-artifact truth; (12) narrow validator replay promoted to whole-project reproduction; (13) hidden teacher use or external inference; (14) retention or compression promoted to behavior or quality; (15) self-evolution promotion without causal outcome evidence; (16) suppression of negative, stale, missing, blocked, or no-promotion rows; (17) publication-permission drift; and (18) unsupported transfer across projects, models, tasks, institutions, infrastructures, legal regimes, environments, reviewers, or time.
 
-Theseus import failures produce residual, blocked-promotion, or missing-artifact rows. The public book should prefer saying "not imported or not rerun" over smoothing source-reported implementation state into a stronger claim.
-
-Operator invisibility breaks the implementation-reference value. If a local system advances through automated loops but the operator cannot see which queue item, contract, gate, or residual caused the transition, the implementation has lost the report-first property even if the dashboard looks healthy.
+Each failure creates a visible residual, downgrade, blocked promotion, or missing-artifact row. “Not imported,” “stale,” “not rerun,” and “runtime blocked” are correct terminal observations when the corresponding evidence is absent; they are not defects to smooth away.
 
 ## Minimum Viable Implementation
 
-The Theseus reference begins with a report crosswalk record from ASI Stack layer to source reports, configs, gates, residuals, public claim boundary, verification status, and missing artifacts.
+The implemented slice contains ten exact source mappings and twelve proof targets. Fifty-four Lean declarations implement finite record implications, route reductions, fixture normalizations, and explicit overclaim controls; none is an empirical projection. The repository also contains one crosswalk schema and fixture, a static 14/14 architecture-gate import, an 18-mode and 13-comparison generation-mode import with zero promotable comparisons, and a two-command ten-artifact support replay with no transition.
 
-The repository fixture validates only that public-safe crosswalk shape. It imports no current Theseus report bundle and reproduces no benchmark.
+The wider packet surface includes one valid and seven invalid report-bundle cases; a metadata-only 64-task public bundle with zero public training rows; a selected aggregate with four command replays, sixteen artifact digests, sixty-eight task records, fourteen rejected controls, and two accepted no-promotion decisions; and bounded artifact-retention, 22-module definition-of-done, 5,662-path registry, 53-pointer crosswalk, stale 130-task work-board, 19-record-type assistant trace, seven-surface accelerator parity, and clean-checkout pre-training-readiness currentness imports. Several narrow non-core imports have accepted `prototype-backed` transitions. Those transitions remain exact; the sweep does not erase them merely because the chapter core stays at `argument`.
 
-A public-safe miniature report bundle turns the reference boundary into something inspectable. The repository now has a fixture-level version in `docs/theseus_report_bundle_audit.md`: one goal contract, one plan/compiler artifact, one work-board item, one gate record, one residual, one non-claim, one review note, and one publication boundary. The bundle lets the book demonstrate report-first discipline while neither exposing private runs nor implying general capability evidence.
+The public-task component is `theseus_public_task_bundle_import_2026_07_03_local`. Its accepted decision at `evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json` preserves metadata-only task boundaries and blocks clean-live-replay, model-quality, benchmark-superiority, generation-speed, useful-solution-per-second, deployment, self-evolution, support-state, and chapter-core promotion.
 
-The miniature bundle deliberately includes blocked live replay and visible artifact-gap rows. Those negative rows make the test useful: a report-first system is credible not because every row is green, but because the absent and blocked rows survive the summary and prevent stronger claims.
-
-The next public-safe imports are bounded summaries, not benchmark reproductions. `docs/theseus_public_task_bundle_import.md` records `theseus_public_task_bundle_import_2026_07_03_local`: 64 public BigCodeBench metadata-only tasks, 0 public training rows, 0 external inference calls, 12 of 12 operator gates passed, 18 of 18 benchmark gates passed, 19 residuals, 512 summarized student candidates, 45 source quality-passing candidates, and 0 task-level regressions. The validator rejects clean-live-replay overclaim, public-training leakage, public prompt export, support-state promotion, hidden task regression, hidden artifact-gap rows, and benchmark-gate failure. The accepted no-promotion decision `evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json` keeps that import at `argument` support and blocks clean-live-replay, model-quality, benchmark-superiority, generation-speed, useful-solution-per-second, support-state, and chapter-core promotion claims.
-
-The artifact-retention replay import is narrower but stronger on one implementation-reference fact. `docs/theseus_artifact_retention_replay_import.md` and `python3 scripts/validate_theseus_artifact_retention_replay_import.py` record an exact retained-payload hash replay from a sanitized Theseus report summary while preserving private-path redaction and public-safety boundaries. The clean live Theseus replay remains unclaimed, and the import carries no model-quality, benchmark-superiority, generation-speed, useful-solution-per-second, deployed residual-ledger, deployed artifact-graph, chapter-core support-state, or chapter-core-promotion result.
-
-The accelerator parity manifest import is an additional minimum slice for substrate discipline. `docs/theseus_accelerator_parity_manifest_import.md` and `python3 scripts/validate_theseus_accelerator_parity_manifest_import.py` record a sanitized audit manifest with 7 of 7 surfaces, seven MLX summaries, four Metal summaries, four artifact manifests, zero public training rows, zero external inference calls, and explicit locks against full parity, production routing, and model promotion. It is useful because it makes the accelerator-portability boundary visible without pretending that the book has reproduced a benchmark or enabled a scheduler.
+What is absent is equally important: no clean live whole-project replay, current work-board or runtime proof, model-quality or capability result, benchmark-validity or useful-throughput result, production routing, deployment, safety result, chapter-core support effect, independent reproduction, or transfer exists. The minimum implementation therefore proves that selected report facts can be represented, bounded, replayed in narrow cases, and prevented from overclaiming—not that Project Theseus works as a complete intelligent system.
 
 ## Beyond the State of the Art
 
-Project Theseus becomes valuable here only as a public-safe implementation-reference lab. Project Theseus would remain useful to this book only if its reports, configs, gates, ledgers, work-board entries, residuals, and replay notes can be mined without turning private or local runs into general capability claims.
+The mature end state must begin from a pinned, public-safe Project Theseus release or report bundle. Its argument-exit campaign requires an independent implementer to perform a clean-room replay from documented commands, environment definitions, dependency locks, input boundaries, artifact digests, current board and registry snapshots, permissions, and retained failures. A successful replay must show the same exact revision before and after, distinguish generated outputs from source mutations, and preserve every negative, stale, missing, blocked, and no-promotion row.
 
-A mature Theseus reference lane would provide importable report bundles rather than dashboard impressions. Each bundle would identify the ASI Stack layer it exercises, the command or report source, configuration, environment boundary, artifact checksum, gate result, residual, missing artifact, public claim boundary, and non-claims. A dashboard could visualize those bundles, but the report bundle would be the evidence object.
+The campaign must then leave report-shape validation behind. It must run natural workloads and matched ordinary baselines through actual model, routing, training, tool, benchmark, resource, operator, rollback, and self-evolution paths. It must disclose teacher and external-inference use and jointly measure useful throughput, quality, unsafe or false promotion, false blocking, currentness, safety, failures, latency, compute, storage, review burden, recovery, residuals, and total cost. Named attacks must test staleness, digest and environment drift, private-payload pressure, gate and dashboard laundering, missing artifacts, benchmark headline pressure, negative-result retention, revocation, and correction propagation.
 
-A report-first implementation surface needs:
-
-- A report-bundle importer that maps plan-compiler artifacts, operator work-board items, architecture gates, benchmark ledgers, residual escrow, self-evolution interventions, and Circle transfer records onto ASI Stack layers.
-- A public/private boundary that marks which artifacts are publishable, summarized, redacted, blocked, source-reported only, or reproduced locally.
-- Replay-readiness records with command, environment, input boundary, expected output class, checksum or artifact id, and failure behavior.
-- Gate semantics for heavy training, candidate promotion, teacher use, architecture change, remote work, rented compute, and self-evolution intervention level.
-- Capability matrices that preserve regression floors and residuals instead of narrating local dashboards as general readiness.
-- Operator visibility through durable work boards, node registries, TTLs, kill switches, hooks, feedback reports, and missing-artifact rows.
-- Failure closure for latest-file overwrite, dashboard prose laundering, benchmark overfit, teacher dependence, architecture churn, unsafe remote work, and public overclaiming.
-
-At the report-first endpoint, Theseus would become a falsifiable implementation reference: every useful report would either support a narrow public boundary or explicitly fail to do so. The report lab remains a target architecture until public-safe report bundles are imported or reproduced, missing artifacts stay visible, and the relevant gate and replay checks show which implementation claims survive inspection.
+Independent implementers, operators, artifact reviewers, evaluators, institutions, infrastructures, legal regimes, and transfer settings must reproduce positive, negative, null, narrowed, blocked, and refuted outcomes over time. The core claim can move only through an accepted evidence transition tied to those exact results. Until then, the Implementation-Reference Evidence Packet is not proof of current Theseus behavior, capability, model quality, benchmark superiority, safety, deployment, transfer, AGI, ASI, or SOTA.
 
 ## Codex test plan
 
@@ -292,6 +308,10 @@ The implemented rows validate fixture/schema consistency, static architecture-ga
 | `lean:theseus.reference.assistant_reference_trace_import.fixture_bridge` | `AsiStackProofs.TheseusReference` | A sanitized Project Theseus assistant reference-trace import fixture records 19 required reference-trace record types, 27 / 27 gates, 2,203 VIEA view records, 12 selected VCM pages, zero blockers, zero fallback returns, zero public training rows, zero external inference calls, public-safety boundaries, and rejects clean-live-replay, private-payload, model-quality, benchmark-headline, and chapter-core-promotion overclaims. | implemented |
 
 These Lean hooks are implemented as finite-record predicates over implementation-reference claim reviews, gate-before-promotion reviews, public report-bundle reviews, replay-readiness reviews, public-safe artifact reviews, the report-bundle audit summary, the public task-bundle import summary, the selected support-lane aggregate, the artifact-retention replay import summary, the module definition-of-done import summary, the project-registry import summary, the book-to-Theseus crosswalk import summary, the work-board metadata import summary, and the assistant reference-trace import summary. The derived negative cases are `implementation_reference_claim_without_artifact_surface_rejected`, `accepted_promotion_with_missing_or_failing_gate_reports_rejected`, `imported_report_bundle_missing_required_artifact_rejected`, `replay_ready_without_replay_boundary_artifacts_rejected`, and `public_theseus_artifact_with_private_payload_or_support_overclaim_rejected`; the audit bridge adds `hidden_artifact_gap_rejects_theseus_report_bundle_audit`, `complete_theseus_report_bundle_audit_accepts`, `accepted_theseus_report_bundle_audit_preserves_public_boundaries`, and `complete_theseus_report_bundle_audit_satisfies_public_bundle_review`; the public task-bundle bridge adds `theseus_public_task_bundle_import_fixture_public_safe`, `theseus_public_task_bundle_import_fixture_gates_complete`, `theseus_public_task_bundle_import_fixture_preserves_no_promotion_boundary`, and `theseus_public_task_bundle_import_clean_replay_overclaim_rejected`; the support aggregate adds `theseus_fast_support_aggregate_fixture_valid`, `theseus_fast_support_aggregate_preserves_no_promotion`, `theseus_fast_support_aggregate_carries_task_and_control_counts`, and `theseus_fast_support_aggregate_clean_replay_overclaim_rejected`; the artifact-retention import adds `theseus_artifact_retention_replay_import_fixture_valid`, `theseus_artifact_retention_replay_import_hash_mismatch_rejected`, and `theseus_artifact_retention_replay_import_core_promotion_rejected`; the module definition-of-done import adds `theseus_module_definition_of_done_import_fixture_valid`, `theseus_module_definition_of_done_import_core_promotion_rejected`, and `theseus_module_definition_of_done_import_capability_overclaim_rejected`; the project-registry import adds `theseus_project_registry_import_fixture_valid`, `theseus_project_registry_import_unregistered_sources_rejected`, `theseus_project_registry_import_clean_replay_overclaim_rejected`, `theseus_project_registry_import_core_promotion_rejected`, and `theseus_project_registry_import_private_payload_rejected`; the book-to-Theseus crosswalk import adds `theseus_book_crosswalk_import_fixture_valid`, `theseus_book_crosswalk_import_pointer_only_preserves_argument`, `theseus_book_crosswalk_import_source_sync_failure_rejected`, `theseus_book_crosswalk_import_public_safety_failure_rejected`, `theseus_book_crosswalk_import_core_promotion_rejected`, and `theseus_book_crosswalk_import_clean_replay_overclaim_rejected`; the work-board metadata import adds `theseus_work_board_import_fixture_valid`, `theseus_work_board_import_stale_snapshot_blocks_currentness`, `theseus_work_board_import_clean_replay_overclaim_rejected`, `theseus_work_board_import_private_payload_rejected`, `theseus_work_board_import_core_promotion_rejected`, and `theseus_work_board_import_public_training_rows_rejected`; and the assistant reference-trace import adds `theseus_assistant_reference_trace_import_fixture_valid`, `theseus_assistant_reference_trace_import_requires_all_hops`, `theseus_assistant_reference_trace_import_private_payload_rejected`, `theseus_assistant_reference_trace_import_core_promotion_rejected`, `theseus_assistant_reference_trace_import_model_quality_overclaim_rejected`, and `theseus_assistant_reference_trace_import_clean_replay_overclaim_rejected`. They prove only record-level gates: implementation-reference claims require a report, config, or tool surface rather than dashboard prose alone; capability or self-evolution promotion is blocked without present passing gate reports; imported bundles require all named artifacts; replay-ready rows require replay boundary fields; public artifacts cannot copy private payloads or claim support promotion without an accepted transition; accepted report-bundle audit summaries preserve no-live-replay and no-support-promotion boundaries; public task-bundle import summaries preserve metadata-only public task boundaries, 0 public training rows, 0 task-level regressions, visible gaps, clean-live-replay non-claims, and no-promotion boundaries; the selected support-lane aggregate preserves the two support lanes as a no-promotion package; the artifact-retention import preserves exact-hash replay, redaction, zero public training rows, record-count, and no-chapter-core-promotion boundaries; the module definition-of-done import preserves module-card coverage, no hard gaps, no warnings, source-backlog routing, public redaction, no chapter-core promotion, and no capability overclaim; the project-registry import preserves registered-path counts, lifecycle-surface counts, coverage, zero unregistered active sources, zero stale or missing report outputs, zero generated source artifacts, zero registry-governance violations, public redaction, no clean-live-replay claim, and no chapter-core promotion; the book-to-Theseus crosswalk import preserves pointer-only evidence, 53 public-safe pointer rows, 20 backlog cards, source-sync and public-safety gates, no raw-report copy, no clean-live-replay claim, no upward support-state transition, and no chapter-core promotion; the work-board metadata import preserves metadata-only row counts, stale-snapshot currentness blocking, zero public training rows, zero external inference calls, no raw-report or SQLite/task payload copy, no clean-live-replay claim, no current-board claim, and no chapter-core promotion; and the assistant reference-trace import preserves required trace-record coverage, all 27 gates passing in the imported report, public-safety boundaries, zero public training rows, zero external inference calls, diagnostic benchmark blocking, no clean-live-replay claim, no model-quality claim, no benchmark-headline claim, and no chapter-core promotion. They do not prove any Theseus gate truth beyond the imported fixture record, import private Theseus reports, rerun benchmarks, verify dashboard state, execute a clean live Theseus replay, approve a public artifact, establish deployed residual-ledger or artifact-graph behavior, establish module capability, establish registry truth beyond the imported report, establish book-crosswalk truth beyond the imported pointer record, establish current work-board truth beyond the imported stale snapshot, establish assistant runtime truth beyond the imported reference trace, establish route quality, establish private verifier quality, establish model quality, establish generation speed, establish unattended safety, establish self-evolution safety, or promote the Project Theseus chapter core claim; the separate static report fixtures, local support replay probe, report-bundle audit, task-bundle import, Fast Generation task bundle, selected support aggregate, artifact-retention replay import, module definition-of-done import, project-registry import, book-to-Theseus crosswalk import, work-board metadata import, and assistant reference-trace import record bounded public-safe evidence without changing those formal limits.
+
+### Formal-proof audit boundary
+
+The module contains fifty-four declarations. The first eleven derive finite consequences from hand-authored implementation-reference, gate, bundle, replay, and public-artifact records. The remaining forty-three normalize finite imported fixtures or reject explicit overclaims for the public task bundle, selected support aggregate, artifact retention, module definition of done, project registry, book crosswalk, stale work-board metadata, assistant trace, and accelerator parity manifest. None directly projects empirical data into a theorem, proves the imported reports true, or establishes clean live replay, current runtime state, model quality, capability, generation speed, benchmark performance, route quality, production routing, deployment, safety, self-evolution, external reproduction, transfer, or the chapter core. All twelve proof targets are implemented, but their value is boundary enforcement rather than empirical support.
 
 ## Source crosswalk
 

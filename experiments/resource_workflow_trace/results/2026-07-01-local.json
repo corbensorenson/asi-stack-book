@@ -20,13 +20,6 @@
     "proof_bridge_type": "trace-property Python/Lean fixture equivalence",
     "lean_module": "lean/AsiStackProofs/ResourceEconomics.lean",
     "checked_theorem_names": [
-      "resource_workflow_trace_fixture_valid",
-      "resource_workflow_trace_fixture_preserves_high_risk_ordering",
-      "resource_workflow_trace_fixture_residualizes_displaced_costs",
-      "resource_workflow_trace_fixture_rejects_physical_feasibility_overclaim",
-      "resource_workflow_trace_fixture_rejects_latency_only_selection",
-      "resource_workflow_trace_fixture_rejects_capacity_budget_overrun",
-      "resource_workflow_trace_fixture_has_no_support_promotion",
       "resource_workflow_trace_fixture_events_roll_up_to_summary",
       "resource_workflow_trace_fixture_events_keep_high_risk_first",
       "resource_workflow_trace_fixture_events_preserve_guard_flags"

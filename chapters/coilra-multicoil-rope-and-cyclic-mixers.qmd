@@ -3,8 +3,8 @@ title: "CoilRA, MultiCoil RoPE, and Cyclic Mixers"
 chapter_id: "coilra-multicoil-rope-and-cyclic-mixers"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-05"
+draft_maturity: "v0.3 manuscript draft"
+last_updated: "2026-07-15"
 primary_sources:
   - "coilra_multicoil_rope"
   - "rope_position_certifier"
@@ -29,8 +29,8 @@ open_evidence_gaps:
 | Chapter ID | `coilra-multicoil-rope-and-cyclic-mixers` |
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-05 |
+| Manuscript maturity | v0.3 manuscript draft |
+| Last updated | 2026-07-15 |
 | Primary source records | `coilra_multicoil_rope`, `rope_position_certifier`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -81,7 +81,14 @@ External positioning: CoilRA and cyclic mixers now have source-noted comparator 
 
 ## Core Claim
 
-[coilra-multicoil-rope-and-cyclic-mixers.core, label: Design rationale, support: argument] CoilRA, MultiCoil RoPE, and cyclic mixers should be treated as optional specialist substrates whose structural guarantees must be paired with dense, LoRA, RoPE, learned, recurrent, or state-space baselines before adoption.
+[coilra-multicoil-rope-and-cyclic-mixers.core, label: Design rationale, support: argument] CoilRA, MultiCoil RoPE, and Cyclic Mixers owns a model-, layer-, mechanism-version-, workload-, baseline-, kernel-, hardware-, claim-axis-, and time-specific Cyclic Mechanism Tradeoff Packet: a cyclic adapter, phase bank, rotary scheme, route head, circulant operator, or block-cyclic mixer may enter a canary only when exact residue/winding, phase horizon, alias/collision/load, dense-reference parity, parameter and operation accounting, numerical error, kernel availability, complete cost, quality, failure, fallback, and rights evidence is matched against strong ordinary controls; equivariance, finite proofs, receipt validity, parameter reduction, or structural parity alone confers no quality, context-length, speed, memory, stability, efficiency, safety, deployment, transfer, support, or SOTA authority.
+
+The distinct owner is not general substrate adoption—that belongs to
+Mathematical and Search Substrates. The cyclic-specific layer owns the
+tradeoff packet that adoption consumes: phase and winding diagnostics,
+dense-reference parity, complete parameter/operation accounting, real kernel
+and hardware behavior, and axis-separated model evidence for one exact
+mechanism and layer.
 
 The claim remains at `argument` support. The source notes support discussion of cyclic adapter/mixer contracts, exact/discretized phase-bank receipts, residue/winding diagnostics, parameter accounting, baselines, controls, and non-claims. They do not support model improvement claims here.
 
@@ -173,6 +180,23 @@ The cyclic mixer ledger separates:
 
 This separation is what lets the book be friendly to cyclic methods without becoming credulous. A future experiment can promote a narrow route if it wins honestly. A failed route can still preserve a useful structural receipt. A result that wins on parameter count but loses on quality or runtime can stay as a cautionary record rather than being rewritten as progress.
 
+### Eighteen-stage cyclic mechanism lifecycle
+
+The packet registers mechanism, model/layer, implementation/kernel, workload,
+consumer, hardware, rights, axes, and non-claims; justifies why cyclic structure
+is native; freezes strong ordinary and embarrassing controls; pins receipts and
+their exact-to-real limits; computes winding, phase horizons, aliases,
+collisions, and load; checks dense-reference parity and numeric error; accounts
+for every parameter, state, byte, operation, transform, and fallback; builds and
+profiles real kernels; preregisters natural workloads and falsifiers; runs
+alias, wrong-period, drift, parity, accounting, shape, kernel, and overclaim
+mutations; executes matched training and inference canaries; measures quality,
+context, stability, latency, memory, traffic, energy, verification, safety,
+rights, and residuals jointly; performs matched causal ablations; issues a
+least-authority packet and canary; monitors drift and regressions; refuses,
+narrow, rolls back, or retires failures; reproduces independently and transfers;
+then expires the packet and assigns every residual.
+
 ## Interfaces
 
 Cyclic mixer changes are evaluated through the Cyclic Mixer Evaluation Record.
@@ -211,6 +235,16 @@ Minimum fields:
 
 Semantic representation chapters define when cyclic structure is actually present. Routing heads may consume cyclic features only inside declared authority and evidence boundaries. Resource economics accounts for parameters, kernels, memory, and latency. Proof contracts and prototype experiments keep structural facts separate from performance results.
 
+Twelve owner interfaces keep the packet distinct: general adoption remains
+with Mathematical and Search Substrates; theorem/receipt identity with Proof
+Contract Transport; semantic fidelity with Representation/Context; route choice
+with Routing; memory/recurrence admission with State-Carry; optimization and
+checkpoint evidence with Training; compiled behavior with Runtime/Serving;
+complete cost with Resource Economics; task adequacy with Verification and
+Benchmarks; attack/data/license constraints with Security/Privacy/Rights;
+canary/rollback/public authority with Readiness/Incident/Release; and support,
+reproduction, transfer, expiry, and residual lineage with Claims/Evidence.
+
 Hardware refusal belongs in the evaluation record. If a cyclic design assumes kernels, layouts, or precision behavior that the deployment substrate cannot provide, the evaluation record should block adoption or narrow scope rather than hiding the mismatch behind parameter counts.
 
 The canary decision record makes rejection ordinary. If alias diagnostics fail, hardware notes are missing, baselines are asymmetric, or metrics remain unrun, routing and architecture consumers should receive a blocked or research-only decision. A cyclic candidate can stay valuable as an experiment without becoming a default substrate.
@@ -229,6 +263,15 @@ Baseline symmetry prevents cyclic evaluation from grading itself on an easier cu
 
 Adoption records also preserve failed comparisons, because an elegant substrate may still lose under governed workload conditions.
 
+The full invariant set also requires exact packet scope, workload-native cyclic
+justification, claim-axis separation, exact/discrete-to-real boundaries,
+visible winding and load tails, scoped dense parity, complete parameter/state/
+byte accounting, complete operation and governance cost, matched engineering
+effort, complete failure denominators, visible numerical and subgroup tails, no
+parameter-to-speed laundering, executable fallback, expiry on any relevant
+change, independent reproduction, exact transition authority, no private-result
+inference, and owned residuals.
+
 ## Failure modes
 
 - Mathematical elegance outruns kernels and baselines.
@@ -243,6 +286,15 @@ Cyclic favoritism is the evaluation failure to block early. The cyclic candidate
 
 Alias blindness is a separate danger, where position collisions are treated as harmless because average metrics still look acceptable.
 
+The matched failure set includes aesthetic adoption, theorem laundering,
+finite-to-floating-point overreach, hidden winding and load, toy dense parity
+called model parity, incomplete parameter accounting, theoretical operations
+that disappear in traffic or transforms, unequal kernel engineering, silent
+slow paths, weak or missing controls, outcome-driven period/rank/kernel search,
+censored failures, averages hiding rare collapse, imported source results,
+unsupported hardware transfer, broken fallback, causal nulls preserved as wins,
+and sunk-cost resistance to retirement.
+
 ## Minimum Viable Implementation
 
 Cyclic mixer work should start as an evaluation record that separates architecture shape from performance evidence. The repository fixture records evaluation state, workload target, structural invariant, receipt refs, proof or receipt boundary, claim partitions, alias and load diagnostics, parameter accounting, hardware notes, hardware refusal path, baselines, baseline matrix refs, baseline symmetry, negative controls, failure-case refs, resource costs, required metrics, metrics status, tradeoff packet ref, consumer policy, adoption state and rationale, source refs, support-state effect, non-claims, and evidence references.
@@ -250,6 +302,15 @@ Cyclic mixer work should start as an evaluation record that separates architectu
 The fixture establishes only that the adoption boundary can be represented. It cannot turn structural facts into performance claims or show that a mixer should be routed into a workload.
 
 The next minimum packet should force the tradeoff: one structural receipt accepted for diagnostics, one quality-promotion request rejected for missing baselines, one hardware mismatch that blocks deployment scope, and one canary route allowed only after baseline-symmetric metrics exist.
+
+The exact current minimum is one schema-valid evaluation record; one inherited
+RoPE structural receipt boundary; one Circle cyclic-mixer receipt with bounded
+dense-reference parity and parameter accounting; one MultiCoil phase receipt
+with finite phase and relative-shift facts; two no-change decisions for the
+cyclic slices; and seven finite local theorem declarations. It includes no
+trained cyclic model, natural workload, baseline matrix, real kernel/hardware
+benchmark, measured quality, context, runtime, memory, stability or efficiency
+benefit, independent reproduction, transfer, or chapter-core transition.
 
 ## Beyond the State of the Art
 
@@ -260,6 +321,40 @@ Cyclic mixers remain optional specialist substrates until structural receipts, d
 The lane would keep exact or discretized RoPE receipts separate from real-valued numerical diagnostics, parameter counts, quality metrics, runtime metrics, memory metrics, training stability, hardware efficiency, and transfer claims. Semantic representation would identify where cyclic structure is actually present; routing would consume cyclic features only inside declared evidence and authority boundaries; resource economics would price kernels, memory, and latency; proof contracts would preserve structural receipts; substrate adoption would decide canary, fallback, or retirement state. Diagnostic-only receipts would stay structural, missing baselines would block quality promotion, and wrong-period or negative-control failures would remain residual evidence.
 
 Cyclic-substrate adoption is therefore still a canary-route proposal. Promotion beyond `argument` needs baseline comparisons, attention-pattern tradeoff records, canary-route traces, regression/fallback tests, and structural-versus-capability reviews showing when cyclic mixers are a justified substrate choice rather than an attractive mechanism.
+
+### Argument-exit campaign
+
+The full attempt must run natural language-modeling and long-context tasks,
+parameter-efficient adaptation tasks, phase-sensitive sequence tasks, and
+routing or mixer tasks whose cyclic structure is declared before results are
+seen. It must implement actual CoilRA, MultiCoil, circulant, and block-cyclic
+candidates beside tuned dense, LoRA, ordinary RoPE, learned-position,
+recurrent, and state-space baselines plus wrong-period, random-phase,
+nonperiodic, and no-mechanism controls. Model family, data and splits, sequence
+lengths, seeds, scale, tuning budget, hardware, kernel version, precision,
+batching, failure states, metrics, falsifier, and promotion rule are frozen
+before the decisive runs.
+
+The resulting packet must report structural and numerical integrity; task
+quality, calibration, context use, and robustness; convergence and stability;
+latency, tail latency, and throughput; complete memory, traffic, energy,
+parameter, state, and operation burden; verifier and operator cost; safety and
+rights constraints; and fallback, recovery, and residual outcomes. Divergence,
+OOM, timeout, unsupported shape, missing kernel, fallback, repair, and failed
+seed remain in the denominators. Causal runs remove cyclic tying, phase banks,
+winding, block structure, circulant operation, relative rotation, and hardware
+specialization one at a time while matching parameter or operation budget,
+tuning opportunity, and evaluator access.
+
+At least one independent mechanism implementation, one independent kernel
+implementation, and one independently implemented evaluator must reproduce the
+decisive result. A qualified packet must then survive heterogeneous transfer
+across models, scales, tasks, sequence lengths, accelerators, compilers,
+attacks, and time. The campaign may qualify a narrow use, narrow or null the
+claim, refute or retire a candidate, or record `blocked_after_full_attempt` when
+a competent attempt reaches an external limit. Until those gates pass, the
+chapter core remains `argument` even when structural fixtures and finite proofs
+are green.
 
 ## Codex test plan
 
@@ -289,6 +384,23 @@ The implemented rows validate fixture/schema consistency and finite-record negat
 | `lean:cyclic_mixers.baseline_required.failure_blocks_promotion` | `AsiStackProofs.CyclicMixers` | A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics. | implemented |
 
 These Lean hooks are implemented as finite-record predicates over cyclic mixer claim reviews and substrate-promotion reviews. They prove only the record-level gates: structural invariants are recorded separately from quality, runtime, memory, and parameter claims, and promoted cyclic substrates require baseline references plus tradeoff metrics. The module also now proves bounded negative cases named `cyclic_mixer_claim_missing_claim_partition_rejected`, `cyclic_substrate_promotion_without_baselines_or_tradeoffs_rejected`, `cyclic_alias_diagnostic_without_winding_or_visible_residual_rejected`, `cyclic_adoption_without_complete_tradeoff_packet_rejected`, and `hardware_mismatch_without_refusal_path_rejected`. These cases reject malformed records; they do not prove CoilRA, MultiCoil RoPE, cyclic mixer quality, context length, runtime, memory, hardware-kernel behavior, deployment readiness, or parameter efficiency.
+
+The formal audit counts seven theorem declarations. Two are direct record
+projections:
+`cyclic_mixer_claim_records_structure_separately_from_quality_runtime_memory_and_parameters`
+and
+`cyclic_substrate_promotion_requires_baselines_and_tradeoff_metrics`. Five are
+derived finite negative cases covering missing claim partitions, promotion
+without baselines or tradeoffs, alias review without winding or visible
+residuals, an incomplete tradeoff packet, and hardware mismatch without a
+refusal path. None proves cyclic mechanism semantics, functional equivalence
+beyond the bounded fixture, numerical stability, trained-model quality,
+context use, kernel correctness or performance, runtime, memory, parameter
+efficiency, fallback liveness, reproduction, or transfer. Future formal work
+should replace unconsumed projections with mechanism semantics, numerical
+refinement bounds, kernel-to-reference equivalence, explicit countermodels,
+and fallback or recovery liveness only where those obligations constrain a
+real consumer.
 
 ## Source crosswalk
 

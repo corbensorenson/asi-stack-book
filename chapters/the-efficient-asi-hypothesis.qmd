@@ -4,7 +4,7 @@ chapter_id: "the-efficient-asi-hypothesis"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-02"
+last_updated: "2026-07-14"
 primary_sources:
   - "viea"
   - "rmi"
@@ -32,7 +32,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-02 |
+| Last updated | 2026-07-14 |
 | Primary source records | `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -58,7 +58,7 @@ The target is not austerity; it is measured adequacy under a trace that later la
 
 ## Problem
 
-The architecture needs a non-scale-only theory for how capability can increase without spending maximal cognition on every subtask.
+The architecture needs a non-scale-only theory for how useful capability can increase without spending maximal cognition on every subtask.
 
 ASI as a stack has an economic consequence. If every task is routed to the largest available model with the fullest available context, the system may look capable while burning verification budget, hiding residuals, and making repeated work non-durable. If every task is routed to the cheapest component, the system may look efficient while silently dropping constraints that only a stronger verifier, richer memory packet, or human review could preserve.
 
@@ -68,7 +68,7 @@ Efficiency in this book is always three-sided. A route must say what quality it 
 
 ## Why existing approaches are insufficient
 
-Parameter count alone does not explain routing, context selectivity, procedural memory, compression, runtime targeting, or verification effort.
+A scale-only allocation policy cannot, without additional state, select among routes using task-specific quality predicates, authority ceilings, total costs, residuals, or fallback readiness.
 
 A scale-only account has no native place to record why a cheap route was adequate, why a costly route was necessary, what quality predicate was satisfied, what verification was skipped, or what residual burden remains. It also makes benchmarks too easy to misuse. A benchmark gain can represent genuine capability, prompt overfitting, hidden context cost, more human correction, a larger model invoked in the background, or a compression decision that moved complexity into an uncounted repair stream.
 
@@ -82,7 +82,7 @@ Self-improving systems sharpen the accounting problem. If a system can rewrite p
 
 ## Core Claim
 
-[the-efficient-asi-hypothesis.core, label: Design rationale, support: argument] Capability improves when cognition is routed, compressed, reused, governed, and tested with visible residuals.
+[the-efficient-asi-hypothesis.core, label: Design rationale, support: argument] On repeated workloads with multiple authorized routes, selecting the lowest-cost route that satisfies a fixed quality predicate and compiling reusable work can improve useful-task success per total contract cost over always-maximal and always-cheapest policies, provided authority, verification, residual, and fallback obligations remain intact.
 
 The claim remains at `argument` support. RMI supports residual escrow and ratcheting, CGS supports smallest-adequate-structure reasoning, BBVCA and RankFold/NeuralFold support compression vocabulary, Simulation Scaling keeps feasibility tied to scope and fidelity, and Aletheia/BeastBrain variants support risk-weighted verification and routing vocabulary. None of those source notes is a reproduced efficiency benchmark in this repository.
 
@@ -193,11 +193,11 @@ This distinction matters because different layers can optimize different costs w
 
 ## Invariants
 
-- Efficiency claims include quality and cost.
-- Compression exposes residuals.
-- Fallback routes remain available.
-- Verification and repair costs remain attached to the route that made them necessary.
-- No route may be called efficient by bypassing authority or approval gates.
+- Every efficiency claim names a fixed quality predicate and total contract cost.
+- Every compression claim records downstream utility checks, repair cost, and residual obligations.
+- Every admitted cheap or compressed route records a tested fallback or an explicit fallback-unavailable state.
+- Context construction, verification, repair, human review, regression maintenance, rollback, and residual costs remain attributed to the route that caused them.
+- No route may be classified as efficient by bypassing authority, approval, verification, or rollback gates.
 
 Comparison is the efficiency hypothesis's strongest invariant: a route is minimum viable only relative to a declared quality predicate, authority ceiling, and candidate set. If a lower-cost route was not tried, was unauthorized, or failed the predicate, the record should say so. If the system cannot reconstruct that comparison, the efficiency claim should stay as design rationale rather than measurement.
 

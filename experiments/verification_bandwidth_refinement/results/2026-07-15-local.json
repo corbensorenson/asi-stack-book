@@ -1,0 +1,340 @@
+{
+  "schema_version": "asi_stack.verification_bandwidth_refinement.v1",
+  "result_id": "verification-bandwidth-refinement-2026-07-15-local",
+  "source_sha256": {
+    "lean_model": "a50b430c1f2f3c5128853dfe1b28283b1507c3264fe0ee282dfafa8b30efb62b",
+    "context_adequacy_schema": "07650ede900ffb136c5dde67bc14b02aac4df264c76ddb3549ca7ce17551225e",
+    "probe_result": "b9c8d0ea9552b1a158b8f291faf5893e531fc79be2d33a17ed7c0f1f24ef6558",
+    "capacity_result": "6072da6472fa3730a56f38cd286ed354075b161a3dbb974a1e61a3b21d58c86e"
+  },
+  "input_suites": [
+    {
+      "suite_id": "context_admission_adequacy",
+      "valid_count": 3,
+      "expected_invalid_count": 5,
+      "suite_passed": true,
+      "validator_sha256": "d977b41287a726a974c9725d73a2ed8dd7ba2cc8c773ba9ae18ea962e89757f7"
+    },
+    {
+      "suite_id": "verification_bandwidth_probe",
+      "valid_count": 2,
+      "expected_invalid_count": 7,
+      "suite_passed": true,
+      "validator_sha256": "c9a80379fd1b4762b2ac1583e9ae521f86ddc6c97756a80785b89cb64a251b48"
+    },
+    {
+      "suite_id": "verification_bandwidth_capacity",
+      "valid_count": 3,
+      "expected_invalid_count": 5,
+      "suite_passed": true,
+      "validator_sha256": "ff95ffb089483bc236ec1678bcda3ef01bd8d933aecad07a3d30f6055efede45"
+    }
+  ],
+  "reachable_stage_count": 5,
+  "reference_route": "handoff_to_evidence_gate",
+  "route_case_count": 12,
+  "route_coverage": [
+    {
+      "case_id": "malformed_claim",
+      "expected_route": "reject_malformed",
+      "observed_route": "reject_malformed"
+    },
+    {
+      "case_id": "unadmitted_packet",
+      "expected_route": "request_context",
+      "observed_route": "request_context"
+    },
+    {
+      "case_id": "missing_obligation_plan",
+      "expected_route": "require_obligation_plan",
+      "observed_route": "require_obligation_plan"
+    },
+    {
+      "case_id": "promotion_authority_leak",
+      "expected_route": "block_unauthorized_promotion",
+      "observed_route": "block_unauthorized_promotion"
+    },
+    {
+      "case_id": "count_mismatch",
+      "expected_route": "block_inconsistent_counts",
+      "observed_route": "block_inconsistent_counts"
+    },
+    {
+      "case_id": "contradiction",
+      "expected_route": "block_contradiction",
+      "observed_route": "block_contradiction"
+    },
+    {
+      "case_id": "open_failure",
+      "expected_route": "record_residual",
+      "observed_route": "record_residual"
+    },
+    {
+      "case_id": "correlated_high_risk_evaluator",
+      "expected_route": "require_independent_evaluator",
+      "observed_route": "require_independent_evaluator"
+    },
+    {
+      "case_id": "negative_search_missing",
+      "expected_route": "require_negative_search",
+      "observed_route": "require_negative_search"
+    },
+    {
+      "case_id": "artifact_missing",
+      "expected_route": "require_artifacts",
+      "observed_route": "require_artifacts"
+    },
+    {
+      "case_id": "draft_only_complete",
+      "expected_route": "allow_draft",
+      "observed_route": "allow_draft"
+    },
+    {
+      "case_id": "evidence_gate_handoff",
+      "expected_route": "handoff_to_evidence_gate",
+      "observed_route": "handoff_to_evidence_gate"
+    }
+  ],
+  "mutation_count": 31,
+  "mutation_rejection_count": 31,
+  "mutation_receipts": [
+    {
+      "mutation_id": "zero_plan_id",
+      "rejected": true,
+      "observed_route": "reject_malformed",
+      "semantic_errors": [
+        "binding",
+        "plan_id"
+      ]
+    },
+    {
+      "mutation_id": "zero_claim_id",
+      "rejected": true,
+      "observed_route": "reject_malformed",
+      "semantic_errors": [
+        "binding",
+        "claim_id"
+      ]
+    },
+    {
+      "mutation_id": "zero_claim_version",
+      "rejected": true,
+      "observed_route": "reject_malformed",
+      "semantic_errors": [
+        "binding",
+        "claim_version"
+      ]
+    },
+    {
+      "mutation_id": "zero_packet_digest",
+      "rejected": true,
+      "observed_route": "reject_malformed",
+      "semantic_errors": [
+        "binding",
+        "packet_digest"
+      ]
+    },
+    {
+      "mutation_id": "zero_obligation_count",
+      "rejected": true,
+      "observed_route": "require_obligation_plan",
+      "semantic_errors": [
+        "disposition_count",
+        "obligation_count"
+      ]
+    },
+    {
+      "mutation_id": "false_packet_admitted",
+      "rejected": true,
+      "observed_route": "request_context",
+      "semantic_errors": [
+        "packet_admitted"
+      ]
+    },
+    {
+      "mutation_id": "false_transaction_valid",
+      "rejected": true,
+      "observed_route": "request_context",
+      "semantic_errors": [
+        "transaction_valid"
+      ]
+    },
+    {
+      "mutation_id": "false_authority_valid",
+      "rejected": true,
+      "observed_route": "reject_malformed",
+      "semantic_errors": [
+        "authority_valid"
+      ]
+    },
+    {
+      "mutation_id": "false_rights_valid",
+      "rejected": true,
+      "observed_route": "reject_malformed",
+      "semantic_errors": [
+        "rights_valid"
+      ]
+    },
+    {
+      "mutation_id": "false_budget_declared",
+      "rejected": true,
+      "observed_route": "reject_malformed",
+      "semantic_errors": [
+        "budget_declared"
+      ]
+    },
+    {
+      "mutation_id": "false_horizon_declared",
+      "rejected": true,
+      "observed_route": "reject_malformed",
+      "semantic_errors": [
+        "horizon_declared"
+      ]
+    },
+    {
+      "mutation_id": "false_stop_rule_declared",
+      "rejected": true,
+      "observed_route": "reject_malformed",
+      "semantic_errors": [
+        "stop_rule_declared"
+      ]
+    },
+    {
+      "mutation_id": "unauthorized_promotion",
+      "rejected": true,
+      "observed_route": "block_unauthorized_promotion",
+      "semantic_errors": []
+    },
+    {
+      "mutation_id": "substitute_plan_id",
+      "rejected": true,
+      "observed_route": "block_inconsistent_counts",
+      "semantic_errors": [
+        "binding"
+      ]
+    },
+    {
+      "mutation_id": "substitute_claim_id",
+      "rejected": true,
+      "observed_route": "block_inconsistent_counts",
+      "semantic_errors": [
+        "binding"
+      ]
+    },
+    {
+      "mutation_id": "substitute_claim_version",
+      "rejected": true,
+      "observed_route": "block_inconsistent_counts",
+      "semantic_errors": [
+        "binding"
+      ]
+    },
+    {
+      "mutation_id": "substitute_packet_digest",
+      "rejected": true,
+      "observed_route": "block_inconsistent_counts",
+      "semantic_errors": [
+        "binding"
+      ]
+    },
+    {
+      "mutation_id": "count_short",
+      "rejected": true,
+      "observed_route": "block_inconsistent_counts",
+      "semantic_errors": [
+        "disposition_count"
+      ]
+    },
+    {
+      "mutation_id": "count_long",
+      "rejected": true,
+      "observed_route": "block_inconsistent_counts",
+      "semantic_errors": [
+        "disposition_count"
+      ]
+    },
+    {
+      "mutation_id": "open_failed",
+      "rejected": true,
+      "observed_route": "record_residual",
+      "semantic_errors": []
+    },
+    {
+      "mutation_id": "open_contradicted",
+      "rejected": true,
+      "observed_route": "block_contradiction",
+      "semantic_errors": []
+    },
+    {
+      "mutation_id": "open_disputed",
+      "rejected": true,
+      "observed_route": "record_residual",
+      "semantic_errors": []
+    },
+    {
+      "mutation_id": "open_unknown",
+      "rejected": true,
+      "observed_route": "record_residual",
+      "semantic_errors": []
+    },
+    {
+      "mutation_id": "open_infeasible",
+      "rejected": true,
+      "observed_route": "record_residual",
+      "semantic_errors": []
+    },
+    {
+      "mutation_id": "open_blocked",
+      "rejected": true,
+      "observed_route": "record_residual",
+      "semantic_errors": []
+    },
+    {
+      "mutation_id": "open_unattempted",
+      "rejected": true,
+      "observed_route": "record_residual",
+      "semantic_errors": []
+    },
+    {
+      "mutation_id": "open_failure_without_residual",
+      "rejected": true,
+      "observed_route": "record_residual",
+      "semantic_errors": [
+        "residuals_recorded"
+      ]
+    },
+    {
+      "mutation_id": "correlated_evaluator",
+      "rejected": true,
+      "observed_route": "require_independent_evaluator",
+      "semantic_errors": []
+    },
+    {
+      "mutation_id": "negative_search_missing",
+      "rejected": true,
+      "observed_route": "require_negative_search",
+      "semantic_errors": []
+    },
+    {
+      "mutation_id": "artifacts_missing",
+      "rejected": true,
+      "observed_route": "require_artifacts",
+      "semantic_errors": []
+    },
+    {
+      "mutation_id": "expiry_missing",
+      "rejected": true,
+      "observed_route": "block_inconsistent_counts",
+      "semantic_errors": [
+        "expiry_declared"
+      ]
+    }
+  ],
+  "strongest_effect": "handoff_to_independent_evidence_gate",
+  "support_state_effect": "none",
+  "non_claims": [
+    "This finite authored lifecycle does not measure model verification bandwidth, natural-claim adequacy, contradiction discovery, distractor resistance, evaluator competence, or evaluator independence.",
+    "A handoff_to_evidence_gate route is not a support transition, truth judgment, release authorization, safety result, or permission to promote the chapter core.",
+    "The consumed suites and mutations do not establish a universal capacity law, deployed ledger or escalation behavior, usefulness, causal advantage, reproduction, transfer, SOTA, AGI, or ASI."
+  ]
+}

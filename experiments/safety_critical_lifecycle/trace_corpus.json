@@ -1,0 +1,279 @@
+{
+  "schema_version": "asi_stack.safety_critical_trace_corpus.v1",
+  "model_version": "safety-critical-lifecycle.v1",
+  "lean_module": "AsiStackProofs.SafetyCriticalLifecycle",
+  "support_state_effect": "none",
+  "non_claims": [
+    "This finite corpus does not establish moral correctness, legal adequacy, affected-party completeness, evaluator independence quality, or deployed safety.",
+    "Acceptance proves only that the independently implemented transition checker found the declared finite trace admissible.",
+    "Rejection proves only that the named finite counterexample violates this model; it does not establish completeness against unknown attacks."
+  ],
+  "domain_requirements": {
+    "alignment": [
+      "protected_predicate",
+      "operational_test",
+      "pre_effect_review",
+      "correction_path",
+      "rollback_path",
+      "independent_evaluator"
+    ],
+    "corrigibility": [
+      "affected_party",
+      "material_notice",
+      "pre_effect_review",
+      "current_approval",
+      "bounded_delegation",
+      "correction_path",
+      "rollback_path",
+      "accountable_principal"
+    ],
+    "value_conflict": [
+      "pre_effect_review",
+      "residual_record",
+      "dissent_payload",
+      "correction_path",
+      "accountable_principal"
+    ],
+    "governance_rights": [
+      "protected_predicate",
+      "audit_material",
+      "appeal_path",
+      "exit_export",
+      "fork_safety_review",
+      "fork_obligations",
+      "dissent_payload",
+      "durable_receipt",
+      "correction_path"
+    ],
+    "self_improvement": [
+      "protected_predicate",
+      "pre_effect_review",
+      "independent_evaluator",
+      "rollback_path",
+      "monitor_window",
+      "evidence_transition"
+    ]
+  },
+  "cases": [
+    {
+      "id": "valid_alignment_effect",
+      "domain": "alignment",
+      "events": [
+        "record:operational_test",
+        "record:pre_effect_review",
+        "record:correction_path",
+        "record:rollback_path",
+        "record:independent_evaluator",
+        "commit_effect"
+      ],
+      "expected": "accepted",
+      "expected_final": {"phase": "effect_committed", "authority": 3}
+    },
+    {
+      "id": "valid_corrigibility_effect",
+      "domain": "corrigibility",
+      "events": [
+        "record:affected_party",
+        "record:material_notice",
+        "record:pre_effect_review",
+        "record:current_approval",
+        "record:bounded_delegation",
+        "record:correction_path",
+        "record:rollback_path",
+        "record:accountable_principal",
+        "commit_effect"
+      ],
+      "expected": "accepted",
+      "expected_final": {"phase": "effect_committed", "authority": 3}
+    },
+    {
+      "id": "valid_value_conflict_effect",
+      "domain": "value_conflict",
+      "events": [
+        "record:pre_effect_review",
+        "record:residual_record",
+        "record:dissent_payload",
+        "record:correction_path",
+        "record:accountable_principal",
+        "commit_effect"
+      ],
+      "expected": "accepted",
+      "expected_final": {"phase": "effect_committed", "authority": 3}
+    },
+    {
+      "id": "valid_governance_rights_effect",
+      "domain": "governance_rights",
+      "events": [
+        "record:audit_material",
+        "record:appeal_path",
+        "record:exit_export",
+        "record:fork_safety_review",
+        "record:fork_obligations",
+        "record:dissent_payload",
+        "record:durable_receipt",
+        "record:correction_path",
+        "commit_effect"
+      ],
+      "expected": "accepted",
+      "expected_final": {"phase": "effect_committed", "authority": 3}
+    },
+    {
+      "id": "valid_self_improvement_effect",
+      "domain": "self_improvement",
+      "events": [
+        "record:pre_effect_review",
+        "record:independent_evaluator",
+        "record:rollback_path",
+        "record:monitor_window",
+        "record:evidence_transition",
+        "commit_effect"
+      ],
+      "expected": "accepted",
+      "expected_final": {"phase": "effect_committed", "authority": 3}
+    },
+    {
+      "id": "valid_support_promotion",
+      "domain": "alignment",
+      "events": [
+        "record:operational_test",
+        "record:pre_effect_review",
+        "record:correction_path",
+        "record:rollback_path",
+        "record:independent_evaluator",
+        "commit_effect",
+        "request_support_promotion",
+        "record:evidence_transition",
+        "record:non_claim_boundary",
+        "record:durable_receipt",
+        "promote_support"
+      ],
+      "expected": "accepted",
+      "expected_final": {"phase": "promoted", "authority": 3}
+    },
+    {
+      "id": "valid_effect_rollback",
+      "domain": "alignment",
+      "events": [
+        "record:operational_test",
+        "record:pre_effect_review",
+        "record:correction_path",
+        "record:rollback_path",
+        "record:independent_evaluator",
+        "commit_effect",
+        "rollback"
+      ],
+      "expected": "accepted",
+      "expected_final": {"phase": "rolled_back", "authority": 3}
+    },
+    {
+      "id": "valid_narrow_then_revoke",
+      "domain": "alignment",
+      "events": ["narrow_authority:1", "revoke"],
+      "expected": "accepted",
+      "expected_final": {"phase": "revoked", "authority": 0}
+    },
+    {
+      "id": "reject_alignment_missing_review",
+      "domain": "alignment",
+      "events": [
+        "record:operational_test",
+        "record:correction_path",
+        "record:rollback_path",
+        "record:independent_evaluator",
+        "commit_effect"
+      ],
+      "expected": "rejected",
+      "rejected_at": 4
+    },
+    {
+      "id": "reject_corrigibility_missing_affected_party",
+      "domain": "corrigibility",
+      "events": [
+        "record:material_notice",
+        "record:pre_effect_review",
+        "record:current_approval",
+        "record:bounded_delegation",
+        "record:correction_path",
+        "record:rollback_path",
+        "record:accountable_principal",
+        "commit_effect"
+      ],
+      "expected": "rejected",
+      "rejected_at": 7
+    },
+    {
+      "id": "reject_value_conflict_missing_residual",
+      "domain": "value_conflict",
+      "events": [
+        "record:pre_effect_review",
+        "record:dissent_payload",
+        "record:correction_path",
+        "record:accountable_principal",
+        "commit_effect"
+      ],
+      "expected": "rejected",
+      "rejected_at": 4
+    },
+    {
+      "id": "reject_governance_missing_exit",
+      "domain": "governance_rights",
+      "events": [
+        "record:audit_material",
+        "record:appeal_path",
+        "record:fork_safety_review",
+        "record:fork_obligations",
+        "record:dissent_payload",
+        "record:durable_receipt",
+        "record:correction_path",
+        "commit_effect"
+      ],
+      "expected": "rejected",
+      "rejected_at": 7
+    },
+    {
+      "id": "reject_self_improvement_self_evaluation",
+      "domain": "self_improvement",
+      "events": [
+        "record:pre_effect_review",
+        "record:rollback_path",
+        "record:monitor_window",
+        "record:evidence_transition",
+        "commit_effect"
+      ],
+      "expected": "rejected",
+      "rejected_at": 4
+    },
+    {
+      "id": "reject_protected_removal",
+      "domain": "governance_rights",
+      "events": ["remove_protected_predicate"],
+      "expected": "rejected",
+      "rejected_at": 0
+    },
+    {
+      "id": "reject_authority_widening",
+      "domain": "self_improvement",
+      "events": ["widen_authority:4"],
+      "expected": "rejected",
+      "rejected_at": 0
+    },
+    {
+      "id": "reject_support_promotion_without_receipt",
+      "domain": "alignment",
+      "events": [
+        "record:operational_test",
+        "record:pre_effect_review",
+        "record:correction_path",
+        "record:rollback_path",
+        "record:independent_evaluator",
+        "commit_effect",
+        "request_support_promotion",
+        "record:evidence_transition",
+        "record:non_claim_boundary",
+        "promote_support"
+      ],
+      "expected": "rejected",
+      "rejected_at": 9
+    }
+  ]
+}

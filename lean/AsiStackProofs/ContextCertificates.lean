@@ -32,16 +32,6 @@ def DerivedCellValid (certificate : ContextCellCertificate) : Prop :=
   certificate.derived = true ->
     CertificateComplete certificate
 
-theorem derived_context_cell_carries_bindings_and_loss_use_contracts
-    {certificate : ContextCellCertificate} :
-    DerivedCellValid certificate ->
-    certificate.derived = true ->
-    certificate.sourceBindingsDeclared = true ∧
-      certificate.lossContractDeclared = true ∧
-      certificate.permittedUsesDeclared = true := by
-  intro valid derived
-  exact valid derived
-
 structure SourceCell where
   authorityCeiling : AuthorityLevel
 deriving DecidableEq, Repr
@@ -58,14 +48,6 @@ def SummaryRespectsSourceAuthority
 def AuthorityEscalates
     (summary : SummaryCell) (source : SourceCell) : Prop :=
   source.authorityCeiling.rank < summary.authorityCeiling.rank
-
-theorem summary_authority_cannot_exceed_source_ceiling
-    {summary : SummaryCell} {sources : List SourceCell} {source : SourceCell} :
-    SummaryRespectsSourceAuthority summary sources ->
-    source ∈ sources ->
-    summary.authorityCeiling.rank <= source.authorityCeiling.rank := by
-  intro respects member
-  exact respects source member
 
 theorem authority_preservation_rejects_escalating_summary
     {summary : SummaryCell} {sources : List SourceCell} {source : SourceCell} :

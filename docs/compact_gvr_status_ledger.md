@@ -15,7 +15,7 @@ It does **not** create a new compact-generation result, promote a chapter core c
 | Selected receipt bytes | 78 |
 | Byte reduction versus literal baseline | 78.8% |
 | Rejected negative controls | 3 |
-| Lean fixture names checked | 5 |
+| Lean fixture names checked | 4 |
 
 ## Receipt Outcome
 
@@ -36,7 +36,7 @@ It does **not** create a new compact-generation result, promote a chapter core c
 - `experiments/compact_gvr_slice/input/v1_x_compact_gvr_records.json` contains the public-safe compact-generation records.
 - `experiments/compact_gvr_slice/results/2026-07-01-local.json` records the recomputed local deterministic result.
 - `evidence_transitions/v1_x_measured/compact_gvr_slice_synthetic_test_backed.json` records the accepted narrow non-core transition.
-- `lean/AsiStackProofs/CompactGenerativeSystems.lean` contains the finite fixture bridge names checked by `scripts/validate_compact_gvr_slice.py`.
+- `lean/AsiStackProofs/CompactGenerationRefinement.lean` contains the finite fixture bridge names checked by `scripts/validate_compact_gvr_slice.py`.
 
 ## Non-Claim Boundary
 

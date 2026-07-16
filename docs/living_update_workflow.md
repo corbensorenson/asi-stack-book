@@ -9,6 +9,42 @@ The book order is manifest-driven.
 - Chapter filenames use stable slugs, not numbers.
 - Quarto generates displayed chapter numbers during render.
 
+## Roadmap Continuity
+
+- A living-book roadmap may close only in the same transaction that activates
+  one exact successor roadmap and reconciles its prose roadmap, machine status,
+  schema, validator, outline authority, public pointers, and changelog entry.
+- The active successor must contain unfinished work only. Completed roadmaps
+  remain immutable execution history and do not reacquire the active marker.
+- If no immediate experiment or publication campaign remains, activate a
+  maintenance and evidence-renewal successor with explicit source, benchmark,
+  dependency, artifact, claim, and release revalidation triggers.
+- Zero active successors discards current planning context; multiple active
+  successors create ambiguous authority. Both states are invalid at closure.
+- Roadmap activation or continuity is planning authority only. It does not
+  create evidence, support movement, a release, a deployment, or a rights
+  grant.
+
+## Maintained X Article Synopsis
+
+- Treat `docs/x_article_synopsis_contract.md` as the durable contract for the
+  public synopsis of at most 9,999 words and exact 5:2 header derivative.
+- Generate or refresh the synopsis only from an evidence-reconciled book state.
+  The first visible body line must be the canonical live-book URL, and every
+  substantive article claim must map to a chapter atom, support state, evidence
+  lane, artifact, and book anchor.
+- Every public book release must either refresh and validate the synopsis or
+  record an exact `not_refreshed` disposition. Claim promotion, narrowing,
+  refutation, deprecation, chapter/URL changes, decisive evidence changes, and
+  relevant X composer changes also make the derivative stale.
+- Re-check X's current official Article guidance and the live composer at each
+  refresh. Repository readiness does not authorize publishing, editing,
+  unpublishing, or deleting content on X; those external mutations require
+  Corben's explicit authorization.
+- Preserve the canonical Markdown, claim crosswalk, exact word count, header
+  dimensions/digest/provenance/alt text, composer-preview receipt, and
+  publication or `ready_not_published` record.
+
 ## Add a Part
 
 ```bash

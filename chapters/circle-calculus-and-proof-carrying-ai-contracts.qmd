@@ -3,8 +3,8 @@ title: "Circle Calculus and Proof-Carrying AI Contracts"
 chapter_id: "circle-calculus-and-proof-carrying-ai-contracts"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-01"
+draft_maturity: "v0.3 manuscript draft"
+last_updated: "2026-07-14"
 primary_sources:
   - "circle_calculus_core"
   - "circle_ai_contract_suite"
@@ -14,11 +14,11 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records exact passage-reviewed mappings for all five assigned proof-carrying contract sources; support remains at argument until local Circle theorem-id resolution, clean replay from this repo, Circle Lean builds, downstream workloads, or accepted chapter-core evidence transitions exist."
-  - "The proof_target_record and proof_contract_receipt_record fixtures validate proof-record and receipt-record schema/example consistency; the receipt fixture now records receipt state, proof boundary, fingerprint status, consumer state, staleness policy, source refs, support-state effect, and non-claims. `AsiStackProofs.ProofCarryingContracts` implements local finite-record boundary predicates plus negative cases for missing receipt fields, missing contract readiness, stale/unsupported consumer gates, and replay artifacts. `scripts/validate_circle_public_replay.py` validates one public ASI-side consumer-gate fixture by pinned digest and rejects digest-mismatch, missing-theorem, stale-contract, and unsupported-transfer mutations; `scripts/validate_circle_contract_pack_archive.py` validates a public-safe archived Circle contract pack and acceptance-policy report by digest, contract fingerprints, public-safety hygiene, and expected-invalid controls. No external Circle Lean build, theorem-id resolver, Circle contract command, or sidecar regeneration has been run from this repo."
-  - "Pinned Circle project references support proof-boundary and contract-shape discussion, the external Circle receipt slice records a local clean-checkout replay for Circle commit `63b0f511`, and the ASI-side consumer gate validates downstream receipt boundaries for `CC-AI-CONTRACT-ROPE-001`; the Circle chapter still does not claim local Circle proof ownership, vendored contract artifacts, chapter-core support promotion, or downstream model-quality evidence."
-  - "RoPE material is used only for exact/discretized position-bookkeeping contract boundaries and numerical-diagnostic separation; it does not support model-quality, context-length, speed, memory, training-stability, or deployment-readiness claims."
-  - "No chapter-core support-state promotion, raw source publication, local Circle proof ownership claim, clean Circle replay from this repo, downstream model-quality claim, or substrate-performance claim is implied by this drafting pass."
+  - "Appendix C records exact passage-reviewed mappings for all five assigned sources. They support proof and receipt shape, finite Circle contract families, exact/discretized RoPE boundaries, cyclic-compute lineage, and anti-overclaim discipline; none independently proves a general transport service or downstream empirical result."
+  - "The exact current minimum contains two schema-valid records; one external clean-checkout Circle rope slice with a narrow non-core prototype-backed transition; one ASI-side gate accepting one pinned receipt and rejecting four mutations with no core effect; one digest-verified archive of nine contracts and four policy receipts with five rejected controls and a no-change decision; and ten finite local theorem declarations."
+  - "No locally built general theorem resolver, producer-to-multiple-consumer service, authenticated transport, semantic refinement proof, descendant revocation, liveness or recovery campaign, independent implementation, heterogeneous transfer, downstream model-quality result, or accepted chapter-core transition exists."
+  - "A competent full attempt requires natural multi-consumer contract transport against signed manifests, hashes, schemas, tests, SBOM/provenance systems, and ordinary versioned APIs; exact resolution and semantic-refinement measurement; adversarial mutations; complete cost and rights accounting; revocation/fallback/recovery; causal ablations; independent producers/resolvers/consumers; and heterogeneous transfer."
+  - "Model quality, runtime, memory, safety, deployment, transfer, support, or SOTA remain separate empirical claims. No chapter-core support effect, local Circle proof ownership, private-result inference, or general proof-transport claim follows from the current fixtures, external replay, archive, or finite Lean checks."
 ---
 
 ## Chapter status
@@ -28,8 +28,8 @@ open_evidence_gaps:
 | Chapter ID | `circle-calculus-and-proof-carrying-ai-contracts` |
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-01 |
+| Manuscript maturity | v0.3 manuscript draft |
+| Last updated | 2026-07-14 |
 | Primary source records | `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`, `circle_ai_architectures` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -75,7 +75,15 @@ Another insufficiency is stale proof reference drift. The text may preserve a th
 
 ## Core Claim
 
-[circle-calculus-and-proof-carrying-ai-contracts.core, label: Design rationale, support: argument] Proof-carrying AI contracts should package finite structural facts as theorem-linked receipts with deterministic fields, consumer gates, validation commands, and explicit non-claims.
+[circle-calculus-and-proof-carrying-ai-contracts.core, label: Design rationale, support: argument] Circle Calculus and Proof-Carrying AI Contracts owns a theorem-, model-, artifact-, implementation-, consumer-, claim-, version-, and time-specific Proof Contract Transport Envelope: a finite formal fact may travel only with resolvable proof identity, exact assumptions and semantics, source and toolchain provenance, content fingerprints, deterministic recomputation or replay, least-authority consumer gates, expiry and revocation, and preserved non-claims; theorem validity, receipt readiness, archive integrity, or transport success alone confers no model-quality, runtime, memory, safety, deployment, transfer, support, or SOTA authority.
+
+The distinct owner is transport of an already scoped formal fact from a named
+producer artifact to a named consumer. Formal Methods retains theorem truth;
+Executable Specifications retains the engineering-to-model refinement;
+Runtime retains behavior; Evidence retains empirical support; Readiness,
+Incident, and Release retain operational and public authority. The envelope
+cannot manufacture any of those facts—it can only keep a real one from changing
+identity, scope, assumptions, or non-claims in transit.
 
 Circle source mappings ground the discussion of theorem-linked contract families, proof-status discipline, receipt fields, exact/discretized RoPE boundaries, cyclic address proofs, CLI reports, and explicit non-claims. The separate external receipt slice and ASI-side consumer gate show a bounded structural receipt path, not a local Circle proof stack or downstream model-behavior improvement.
 
@@ -95,7 +103,10 @@ Appendix C now records passage-reviewed mappings for all five assigned sources. 
 
 Proof-carrying contracts sit one layer below substrate adoption. They do not decide whether a substrate is useful; they decide whether a finite structural fact can travel without losing its theorem status, deterministic fields, fingerprints, replay requirements, and non-claim boundary. The Circle source family supplies the pattern: theorem manifests and proof policy from the core project, consumer fields and receipt gates from the AI contract suite, exact/discretized phase-bank boundaries from the RoPE certifier, cyclic-address and backend-separation discipline from circular computation, and baseline discipline from Circle AI Architectures.
 
-The working mechanism has three gates. First, model an engineering object as a finite circular address, schedule, window, or phase structure only when that model is faithful. Second, attach theorem IDs, proof status, dictionary IDs, fingerprints, deterministic fields, receipt or replay checks, and non-claims. Third, require downstream workloads, ordinary baselines, negative controls, and metrics before any quality, runtime, memory, or transfer claim is promoted.
+The working mechanism is an eighteen-stage transport lifecycle. It separates
+theorem verification, semantic correspondence, deterministic computation,
+artifact transport, consumer authority, and downstream empirical support so a
+green state in one cannot silently fill another.
 
 The receipt boundary is the main artifact. It lets the book say "this finite structural fact is proof-linked" without smuggling in claims about model behavior. In this repo, the new proof-contract receipt fixture is intentionally conservative: it can describe a source-reported external theorem family and a not-run replay state, but it cannot make the theorem local, replayed, or performance-bearing.
 
@@ -145,6 +156,32 @@ The concrete surface matters because it gives readers numbers, theorem IDs, fing
 
 ### Proof receipt lifecycle
 
+The complete lifecycle is:
+
+1. Register the exact theorem, statement, assumptions, finite model, source, toolchain, implementation object, intended consumer, and prohibited inferences.
+2. Pin public-safe source, dependencies, prover, build configuration, theorem manifest, schema, dictionary, and artifact digests.
+3. Build the named formal target and retain the command, environment, logs, failures, proof boundary, and compiled-declaration receipt.
+4. Resolve every theorem and dictionary ID to one compiled declaration, exact statement, assumptions, proof status, source location, and version.
+5. Bind the engineering object to the formal model through explicit abstraction, discretization, numerical, representation, and implementation-refinement obligations.
+6. Canonicalize the contract and fingerprint source, model, theorem set, deterministic fields, receipt, consumer policy, and pack.
+7. Recompute bounded reference outputs from pinned inputs while separating exact arithmetic, tolerances, numerical diagnostics, nondeterminism, and non-proof layers.
+8. Attach non-claims for all unproved semantic, empirical, causal, resource, safety, deployment, transfer, support, and SOTA axes.
+9. Validate schemas, fields, state transitions, provenance closure, consumer policy, staleness, failure behavior, and support-state effect.
+10. Replay in a clean environment from public-safe artifacts, checking digests, resolution, build, recomputation, receipt fingerprint, and archived output.
+11. Reject missing theorem, changed statement, digest mismatch, stale proof, ambiguous resolver, altered assumptions, forged status, missing non-claim, unsupported consumer, replay omission, and promotion-overclaim mutations.
+12. Issue a least-authority gate naming the exact fact, object, version, permitted use, prohibited inference, evidence state, expiry, verifier command, fallback, and residual owner.
+13. Require separate natural workloads, strong baselines, controls, metrics, complete costs, independent evaluation, and result artifacts before empirical promotion.
+14. Transport through artifact graphs with authenticated provenance, immutable lineage, dependency closure, custody, access and rights controls, acknowledgements, and consumer receipts.
+15. Monitor theorem, source, toolchain, schema, implementation, consumer, policy, rights, and threat drift and invalidate all affected descendants.
+16. Fail closed, quarantine, use the last verified or ordinary fallback, repair, replay, and recover without retaining stale authority.
+17. Reproduce resolution, build, recomputation, transport, invalidation, and recovery with independent producers, resolvers, and consumers, then test heterogeneous transfer.
+18. Expire on material change or horizon and assign every model gap, unverifiable dependency, replay failure, consumer misuse, revocation, and residual.
+
+The shorter receipt-state vocabulary below remains useful, but it is not the
+whole transport protocol. A `fingerprinted` receipt can still have the wrong
+semantic model; a `resolver_checked` receipt can still be stale downstream; and
+a `consumer_gated` receipt can still lack empirical evidence.
+
 The receipt lifecycle is explicit:
 
 | State | Meaning | Allowed use |
@@ -159,10 +196,18 @@ The receipt lifecycle is explicit:
 
 ## Interfaces
 
-- Lean and proof manifests supply theorem status.
-- Python or CLI tools emit receipts and validation reports.
-- Theseus-style private experiments consume contracts without importing private results into public claims.
-- The evidence matrix records claim boundaries and support states.
+- Formal Methods owns theorem truth, statement, assumptions, proof status, compiled declarations, and prover soundness; Transport owns their envelope only.
+- Executable Specifications owns the engineering-to-model refinement obligation; a receipt cannot invent semantic correspondence.
+- Artifact Graphs and Supply Chain own source, dependency, build, signature, custody, access, and lineage provenance.
+- Runtime owns executable binding and behavioral conformance; a structural receipt is not runtime behavior.
+- Context, Memory, Recurrence, Routing, Compression, and Cyclic Substrates consume only named structural facts within their gates.
+- Verification owns evaluator adequacy, theorem resolution, replay, negative controls, and dispute state.
+- Security, Privacy, and Rights own adversarial provenance, trust roots, confidentiality, license, data, access, and revocation.
+- Resource Economics owns build, resolution, recomputation, storage, verification, transport, human, recovery, and opportunity costs.
+- Claim Ledgers and Evidence own support states, transitions, non-claims, contrary evidence, reproduction, transfer, expiry, and residuals.
+- Readiness and Incident Response own admission, quarantine, rollback, recovery, and descendant invalidation.
+- Release owns public artifact and statement authority; transport cannot publish or promote by itself.
+- Private consumers may return public-safe receipts and boundaries, but private outcomes cannot be inferred from acceptance.
 
 The interface lets adjacent layers compose without absorbing each other's authority. Coil memory can consume a freshness or coverage receipt as a structural guardrail. Cyclic mixers can consume a phase-bank or collision receipt as a diagnostic. Evidence ledgers should still demand workloads, baselines, metrics, and run artifacts before quality or runtime claims move.
 
@@ -200,10 +245,24 @@ Minimum proof-contract receipt fields:
 
 The proof-contract invariants keep structural receipts from inflating into quality claims: theorem references, executable checks, and non-claim boundaries must survive every downstream transfer.
 
-- Proof status is not a model-quality claim.
-- Python tests and diagrams are evidence, not formal proof.
-- Consumer readiness is not downstream success.
-- Non-claims survive transfer into later chapters.
+- Every fact is specific to theorem, statement, assumptions, model, artifact, implementation relation, consumer, use, version, and time.
+- Theorem identity resolves uniquely to a compiled declaration under pinned source and toolchain, or the envelope fails closed.
+- Proof, schema, deterministic computation, numerical diagnostics, replay, archive integrity, consumer readiness, and empirical support remain distinct.
+- A theorem authorizes only its statement under its assumptions; semantic correspondence and implementation refinement are separate obligations.
+- Fingerprints cover canonical content and dependencies; algorithm, canonicalization, collision policy, and trust root remain explicit.
+- Deterministic fields reproduce from pinned public-safe inputs, with tolerances, nondeterminism, failures, and discarded attempts visible.
+- Every theorem, dictionary, artifact, source, dependency, schema, policy, and consumer reference resolves or remains an explicit residual.
+- Non-claims survive quotation, summary, serialization, transport, caching, supersession, and downstream consumption.
+- Consumer permission is least-authority across fact, object, use, claim axis, environment, version, and expiry.
+- Downstream quality, runtime, memory, safety, deployment, or transfer promotion requires separate natural workload evidence with strong controls.
+- Missing, ambiguous, stale, altered, revoked, unsupported, rights-incompatible, or unreplayable envelopes block use.
+- Every descendant, cache, citation, claim, artifact, and consumer receipt inherits upstream invalidation.
+- The ordinary or last verified fallback remains executable, tested, rights-compatible, and reachable within the recovery window.
+- Independent reproduction does not share the decisive producer, resolver, consumer, trust root, or implementation defect.
+- Private inputs and outcomes never enter public evidence through inference from a public-safe receipt.
+- Support, deployment, release, safety, transfer, or SOTA movement requires an accepted transition for that exact claim and scope.
+- Qualifications expire on material theorem, source, toolchain, model, implementation, schema, consumer, policy, rights, threat, or time change.
+- Every theorem-model gap, unverifiable dependency, replay failure, consumer misuse, revocation, and residual has an owner and reopening condition.
 
 Non-claim preservation is the proof-contract invariant that matters most. A proof-carrying receipt must not lose its boundaries when it is copied into a later chapter, benchmark card, route decision, or prototype roadmap.
 
@@ -211,10 +270,24 @@ Consumer specificity keeps the receipt from becoming universal by accident. A re
 
 ## Failure modes
 
-- Theorem laundering into quality claims.
-- Stale or failed theorem IDs.
-- Missing baseline or negative-control experiments.
-- Exact finite models mistaken for real-valued deployment behavior.
+- A theorem name, badge, diagram, proof count, or green build creates authority beyond the statement.
+- A theorem ID resolves to the wrong declaration, changed statement, different assumptions, stale source, or incompatible toolchain.
+- The formal model is correct but does not faithfully represent the engineering object or deployed implementation.
+- Exact finite facts are applied to approximate, floating-point, probabilistic, continuous, or adversarial behavior without a bridge.
+- Canonicalization, hash coverage, collision policy, signatures, or trust roots omit a decision-relevant field.
+- Replay checks a copied receipt instead of rebuilding, resolving, and recomputing from pinned sources.
+- Generated fields, tolerances, nondeterminism, failed commands, or discarded attempts disappear behind a passing summary.
+- Non-claims disappear in an appendix, summary, API conversion, cache, prompt, or downstream chapter.
+- Consumer readiness, archive integrity, or transport success is mistaken for workload success, model quality, or deployment safety.
+- A consumer broadens fact, use, claim axis, environment, version, or expiry beyond the gate.
+- Baselines, controls, evaluator independence, or complete costs are waived because the structural proof is strong.
+- Revocation or theorem drift fails to reach descendants, cached receipts, citations, releases, or private consumers.
+- Fallback depends on the invalid envelope, is stale or rights-incompatible, or exceeds the recovery window.
+- Producer, resolver, verifier, consumer, and trust root share one defect while appearing independent.
+- Private results or inaccessible artifacts are implied by a public-safe receipt or acceptance record.
+- A clean checkout, archived pack, fixture, or finite Lean bridge is described as deployed proof-contract transport.
+- A narrow external rope result is generalized to all Circle contracts, substrates, real RoPE, model quality, safety, or transfer.
+- Transport and governance cost exceed ambiguity reduction, but institutional commitment prevents retirement.
 
 Theorem laundering should block support-state promotion. Stale theorem IDs should remain residuals until a resolver or external build confirms them. Missing baselines should prevent downstream adoption. Exact finite models should stay distinct from numerical diagnostics and real-valued deployment behavior.
 
@@ -228,7 +301,18 @@ The first transportable Circle artifact is a proof or contract record with theor
 
 The current implementation has five public pieces. The `proof_target_record` fixture validates the record shape for proof targets. The `proof_contract_receipt_record` fixture validates the record shape for theorem-linked structural receipts, including receipt state, not-run resolver and replay states, fingerprint status, consumer state, staleness policy, source refs, support-state effect, and non-claims. The Lean module `AsiStackProofs.ProofCarryingContracts` implements finite-record predicates requiring theorem references, deterministic fields, and a non-claim boundary before downstream use, requiring workload, baseline, metric, and evidence artifacts before downstream promotion, and modeling the public Circle consumer-gate fixture as one valid receipt, four rejected mutation controls, seven required theorem IDs, pinned digest fields, blocked support movement, no chapter-core promotion, and no deployed-transport claim. The Circle public consumer-gate lane validates one pinned receipt fixture, checks seven theorem IDs and the recorded fingerprints, and rejects missing-theorem, digest-mismatch, stale-contract, and unsupported-transfer mutations. The Circle contract-pack archive validates a public-safe pack snapshot from Circle commit `63b0f511` with 9 archived contracts, 4 acceptance-policy receipts, pack fingerprint `df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae`, raw pack digest `b5488c93109ef120b97fdea7bd5d5605f32b2618c6cbfb9dde9a3328652551c4`, and no-promotion decision `circle_contract_pack_archive_no_change.json`.
 
-The archive leaves the chapter core claim at `argument`, creates no support-state transition, and reruns no Circle Lean target. Its value is archive integrity and boundary discipline, not deployed transport, model quality, context length, runtime speed, memory scaling, deployment safety, transfer, safety, or ASI evidence. The next build slice should be a clean Circle replay from this repo or a transport-oriented local surrogate with one stale theorem reference, one fingerprint mismatch, one consumer gate that allows structural use only, and one promotion attempt blocked for missing workload evidence.
+The archive leaves the chapter core claim at `argument`, creates no support-state transition, and reruns no Circle Lean target. Its value is archive integrity and boundary discipline, not deployed transport, model quality, context length, runtime speed, memory scaling, deployment safety, transfer, safety, or ASI evidence.
+
+The exact current minimum is therefore two schema-valid records; one external
+clean-checkout Circle rope slice with a narrow non-core
+`argument`-to-`prototype-backed` transition; one ASI-side consumer gate with one
+valid receipt and four rejected mutations but no core effect; one archive of
+nine contracts and four policy receipts with five rejected controls and a
+no-change decision; and ten local theorem declarations. It does not provide a
+general resolver built in this repo, producer-to-multiple-consumer service,
+authenticated transport, engineering-to-model refinement proof, descendant
+revocation, liveness, recovery, independent reproduction, downstream empirical
+benefit, or chapter-core transition.
 
 ## Beyond the State of the Art
 
@@ -238,7 +322,46 @@ Proof-carrying AI contracts would become useful only when the receipt itself is 
 
 The mature transport lane would separate receipt states from capability states. A theorem-linked, dictionary-bound, fingerprinted, resolver-checked, consumer-gated, workload-blocked, retired, or superseded receipt is a statement about proof transport, not a measured model result. Lean and proof manifests would expose proof status; CLI or Python tools would emit receipts and validation reports; memory, RoPE, cyclic mixer, and substrate chapters would consume structural receipts only through consumer gates. Stale theorem IDs would become residuals, fingerprint mismatches would block replay, consumer-gate failures would prevent downstream use, and workload-blocked receipts would preserve structural facts without quality promotion.
 
-The current book has not demonstrated that transport service. `argument` remains the right support state until receipt records, theorem-resolution checks, clean replay status, stronger consumer-gate tests, stale-proof failure behavior, and downstream promotion reviews show that proof-carrying claims are usable without overstating what the proof stack established.
+### Argument-exit campaign
+
+The mature test uses natural multi-consumer work rather than another authored
+receipt. Independent producers emit formal facts for several contract families;
+independently implemented resolvers and clean builders identify declarations,
+statements, assumptions, source versions, toolchains, and proof status; at least
+two consumers accept, refuse, cache, supersede, and revoke those facts through
+ordinary artifact infrastructure. Strong controls include signed manifests,
+plain hashes, schemas and type checks, conventional tests, SBOM or provenance
+attestations, and ordinary versioned APIs without theorem-linked transport.
+
+The preregistration freezes source and toolchain matrices, trust roots,
+canonicalization, hash coverage, public-safe artifacts, theorem-model
+refinement obligations, consumer policies, mutation families, network and cache
+faults, expiry, revocation graph, fallback, recovery window, costs, and
+promotion rule. Measurements include unique-resolution and statement-match
+accuracy, semantic-refinement defect detection, false acceptance and refusal,
+clean-replay determinism, tamper and stale-proof detection, descendant
+revocation completeness, availability and liveness, fallback success, recovery
+time, latency, storage, compute, verifier and operator work, rights compliance,
+consumer misuse, and residuals. Failures and unavailable dependencies remain in
+the denominator.
+
+Causal ablations remove theorem resolution, semantic refinement checks,
+canonical fingerprints, non-claim preservation, consumer specificity,
+authenticated provenance, expiry, descendant revocation, or replay while
+holding ordinary controls and resources fixed. Each proposed mechanism must
+produce its preregistered signature. Independent producer, resolver, verifier,
+and consumer implementations then reproduce the transport result across
+different theorem families, languages or provers, artifacts, organizations,
+rights regimes, attacks, and time. Downstream model quality, runtime, memory,
+safety, deployment, transfer, support, and SOTA remain separate campaigns even
+if transport succeeds.
+
+The current book has not demonstrated that service. `argument` remains the
+right core state until natural multi-consumer transport clears semantic-
+refinement, strong-control, adversarial, cost, rights, revocation, liveness,
+recovery, causal, independent-reproduction, and heterogeneous-transfer gates.
+The honest terminal result may be qualified, narrowed, null, refuted, retired,
+or blocked after a competent full attempt.
 
 ## Codex test plan
 
@@ -272,6 +395,21 @@ The implemented rows validate fixture/schema consistency, the ASI-side public Ci
 | `lean:circle_contracts.public_consumer_gate.fixture_bridge` | `AsiStackProofs.ProofCarryingContracts` | The public Circle consumer-gate fixture records one valid receipt, four rejected mutation controls, seven required theorem IDs, pinned digest fields, blocked support movement, no chapter-core promotion, and no deployed-transport claim. | implemented |
 
 These Lean hooks are implemented as local finite-record predicates over receipt, consumer-gate, and replay records. The derived negative cases are `downstream_ready_receipt_missing_boundary_field_rejected`, `promoted_downstream_claim_without_contract_ready_rejected`, `consumer_gate_acceptance_with_stale_or_unsupported_receipt_rejected`, `circle_public_consumer_gate_promotion_overclaim_rejected`, `circle_public_consumer_gate_missing_mutation_control_rejected`, and `passing_replay_without_replay_artifacts_rejected`. They prove only ASI Stack boundary rules over finite records: downstream-ready receipts require theorem refs, deterministic fields, and non-claim boundaries; promoted downstream claims require contract readiness and workload evidence; public consumer-gate acceptance carries blocked support movement, no upward transition, no chapter-core promotion, and no deployed-transport claim; consumer acceptance fails on unresolved refs, fingerprint mismatch, stale status, disallowed consumers, unsupported transfer claims, missing mutation-control rejection, overclaimed promotion, or missing non-claims; and passing replay status requires replay artifacts. They do not prove Circle contracts, resolve external theorem IDs, replay receipts from source, vendor Circle packs, approve transfer, promote support state, or evaluate downstream model behavior.
+
+The module contains ten theorem declarations. Two are direct predicate or
+record-projection consequences: the downstream receipt boundary and the public
+consumer-gate no-promotion projection. Seven are derived finite or negative
+consequences over missing boundary fields, incomplete empirical promotion,
+missing readiness, stale or unsupported consumers, missing replay artifacts,
+promotion overclaim, and missing mutation controls. One is an authored fixture
+bridge accepting the public consumer-gate summary. This classification is not
+formal depth: none proves unique theorem resolution, statement equivalence,
+semantic correspondence, implementation refinement, authenticated transport,
+revocation closure, liveness, recovery, independent reproduction, downstream
+utility, or transfer. Declarations without named consumers should be retired or
+replaced by resolver soundness, transport transition semantics, descendant
+invalidation, countermodels, liveness, and implementation-refinement theorems
+rather than retained for their count.
 
 ## Source crosswalk
 

@@ -1,0 +1,285 @@
+{
+  "schema_version": "asi_stack.intent_resolution_refinement.v1",
+  "result_id": "intent-resolution-refinement-2026-07-15-local",
+  "source_sha256": {
+    "lean_model": "b75f562cf8364c2ef3c8a9e0252c73209aeaa6c9103377a64c70df01227c7373",
+    "intake_result": "1aee8323c4e01c1c620ff274afd9539fdd3701a7a24d04a5753dd5cc337bfa3a",
+    "recontract_result": "7d43dc9c9295e78eb90dc9e261f5a893837bced3d6601972b1ca130c34ef786e"
+  },
+  "intake_valid_scenario_count": 4,
+  "intake_invalid_control_count": 6,
+  "intake_signal_count": 6,
+  "recontract_valid_scenario_count": 2,
+  "recontract_invalid_control_count": 7,
+  "plan_fixture_count": 13,
+  "plan_valid_fixture_count": 3,
+  "plan_invalid_fixture_count": 10,
+  "reachable_trace_event_count": 5,
+  "accepted_contract_version": 2,
+  "mutation_count": 30,
+  "mutation_rejection_count": 30,
+  "reference_trace_final_state": {
+    "stage": "accepted",
+    "root": 101,
+    "version": 2,
+    "constraint": 501,
+    "stop": 601,
+    "ceiling": 3,
+    "approved": 3,
+    "ambiguity": false,
+    "accepted": true,
+    "recontract": false,
+    "blocked": false,
+    "time": 5
+  },
+  "mutation_receipts": [
+    {
+      "mutation_id": "parse_source_constraint",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "invalid_parse"
+      ]
+    },
+    {
+      "mutation_id": "parse_source_stop",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "invalid_parse"
+      ]
+    },
+    {
+      "mutation_id": "parse_prohibited",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "invalid_parse"
+      ]
+    },
+    {
+      "mutation_id": "parse_hidden",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "invalid_parse"
+      ]
+    },
+    {
+      "mutation_id": "parse_time",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "lineage_or_time_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "parse_root",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "lineage_or_time_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "authority_authority",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "invalid_authority_review"
+      ]
+    },
+    {
+      "mutation_id": "authority_authority_receipt",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "invalid_authority_review"
+      ]
+    },
+    {
+      "mutation_id": "authority_from",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "lineage_or_time_mismatch",
+        "invalid_authority_review"
+      ]
+    },
+    {
+      "mutation_id": "authority_root",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "lineage_or_time_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "authority_time",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "lineage_or_time_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "compile_source_constraint",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "invalid_compile"
+      ]
+    },
+    {
+      "mutation_id": "compile_source_stop",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "invalid_compile"
+      ]
+    },
+    {
+      "mutation_id": "compile_output_constraint",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "invalid_compile"
+      ]
+    },
+    {
+      "mutation_id": "compile_output_stop",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "invalid_compile"
+      ]
+    },
+    {
+      "mutation_id": "compile_authority",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "invalid_compile"
+      ]
+    },
+    {
+      "mutation_id": "compile_hidden",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "invalid_compile"
+      ]
+    },
+    {
+      "mutation_id": "compile_prohibited",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "invalid_compile"
+      ]
+    },
+    {
+      "mutation_id": "compile_ambiguity",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "invalid_compile"
+      ]
+    },
+    {
+      "mutation_id": "compile_input_version",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "lineage_or_time_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "delta_no_material_change",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "material_delta_not_custodied"
+      ]
+    },
+    {
+      "mutation_id": "delta_wrong_target",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "material_delta_not_custodied"
+      ]
+    },
+    {
+      "mutation_id": "delta_silent_continue",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "silent_material_delta"
+      ]
+    },
+    {
+      "mutation_id": "recontract_recontract_receipt",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "invalid_recontract"
+      ]
+    },
+    {
+      "mutation_id": "recontract_output_version",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "invalid_recontract"
+      ]
+    },
+    {
+      "mutation_id": "recontract_output_constraint",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "invalid_recontract"
+      ]
+    },
+    {
+      "mutation_id": "recontract_output_stop",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "invalid_recontract"
+      ]
+    },
+    {
+      "mutation_id": "recontract_authority",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "invalid_recontract"
+      ]
+    },
+    {
+      "mutation_id": "recontract_from",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "lineage_or_time_mismatch",
+        "invalid_recontract"
+      ]
+    },
+    {
+      "mutation_id": "recontract_time",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "lineage_or_time_mismatch"
+      ]
+    }
+  ],
+  "support_state_effect": "none",
+  "non_claims": [
+    "The consumer reads structured bounded records and does not establish natural-language intent understanding or semantic completeness.",
+    "Numeric hashes, authority and receipts are trusted inputs; the packet does not establish authentic authority extraction, prompt-injection containment, or deployed dispatch.",
+    "Passing does not establish user satisfaction, natural-workload usefulness, reproduction, transfer, safety, SOTA, AGI, ASI, or chapter-core support."
+  ]
+}

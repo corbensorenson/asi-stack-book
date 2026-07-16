@@ -1,0 +1,375 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "capability-thresholds-and-deployment-commitments",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/capability-thresholds-and-deployment-commitments.qmd",
+    "structured_atoms_reviewed": 79,
+    "prose_candidates_adjudicated": 57,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, all six exact source mappings, both commitment schemas, eight digest-bound synthetic records, five rejecting mutations, all eight proof targets, all eight CapabilityThresholds declarations, every manifest atom, every prose candidate, test plan, source crosswalk, reconciliation rows, summary, and handoff. The sweep made the domain-, threat-, assessment-, policy-version-, safeguard-package-, release-path-, authority-, exception-, residual-, and time-specific Capability-to-Deployment Commitment the distinct owner; expanded it to eighteen mechanisms, twelve interfaces, eighteen invariants, and eighteen failure modes; preserved zero chapter-core effect; and froze the natural/adversarial assessment, safeguard exercise, exception, institutional, causal, reproduction, and transfer campaign."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Named domains, threats, assessment units and versions, model and scaffold configurations, access levels, policies, safeguard packages, release paths, authorities, exceptions, residuals, affected parties, and decision times.",
+      "environment": "Six exact mappings; two schemas; eight digest-bound synthetic valid records and five rejecting mutations; eight proof targets; eight finite derived declarations. No real capability evaluation, safeguard implementation or exercise, independent verification, exception event, readiness decision, release, deployment, incident, reproduction, or transfer is represented.",
+      "model": "A prospective Capability-to-Deployment Commitment that maps crossing, non-crossing, incomparable, stale, or invalid scoped assessment states to predeclared safeguards, verification, deadlines, constraints, reassessment, exceptions, residual custody, rollback, disclosure, and release-path effects.",
+      "authority": "This chapter owns the commitment binding assessment state to deployment consequences only. Benchmark integrity, elicitation, safeguard implementation, readiness, release, deployment, support, incident response, rights, and SOTA authority remain with their existing owners.",
+      "time": "Semantic review current through 2026-07-15; domain, threat, assessment, model, scaffold, access, policy, safeguard, release path, authority, exception, residual, evidence, or time changes expire affected commitments.",
+      "artifact": "Chapter and manifest; six mappings; two schemas; eight valid synthetic records; five mutations; validator; eight proof targets; eight finite declarations; semantic review; and the future natural causal-transfer campaign."
+    },
+    "current_disposition": "retain_argument_with_synthetic_commitment_fixture_no_core_effect_pending_natural_independent_threshold_and_safeguard_campaign",
+    "assumptions": [
+      "Assessment scope, elicitation, validity, uncertainty, contamination, freshness, safeguards, verification, authority, exceptions, residuals, rollback, disclosure, and release-path effects can be observed and versioned.",
+      "Commitments can be frozen before outcomes are visible and cannot be weakened by schedule, competition, institutional pressure, or sunk cost without recorded authority and expiry.",
+      "Strong assessment and safeguard comparators can receive matched model, tool, scaffold, access, compute, tuning, retry, attack, engineering, and evaluator opportunity.",
+      "False clearances, false blocks, stale acceptances, reassessment latency, burden, cost, failures, exceptions, and discarded alternatives remain in denominators.",
+      "Independent assessment, safeguard verification, institutional reproduction, and heterogeneous transfer can be run without shared leakage or authority collapse."
+    ],
+    "dependencies": [
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "adversarial-evaluation-sandbagging-and-training-time-deception",
+      "scalable-oversight-and-adversarial-ai-control",
+      "readiness-assurance-and-safety-cases",
+      "capability-replacement-and-rollback",
+      "claim-ledgers-and-belief-revision",
+      "release-engineering-for-a-living-book"
+    ],
+    "strongest_counterclaim": "Capability thresholds are unstable proxies whose commitment machinery adds delay and paperwork while competitive deployment decisions remain better governed by direct expert judgment, incident monitoring, and case-specific controls.",
+    "falsifier": "Prospectively frozen natural campaigns show that threshold-linked commitments add no unique safety, calibration, consistency, accountability, or recovery benefit; create unacceptable false blocks, latency, or burden; fail under elicitation, safeguard bypass, exception pressure, correlated portfolios, or institutional incentives; or do not reproduce and transfer.",
+    "required_lanes": [
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze primary capability-scaling, preparedness, evaluation, benchmark, architecture-gate, and commitment comparators without importing their conclusions."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify threshold choice, affected-party protection, authority, exceptions, disclosure, residual custody, and acceptable false-clear/false-block tradeoffs."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify scoped commitment, expiry, exception, safeguard-verification, and finite route semantics without claiming empirical threshold validity or safeguard efficacy."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Exercise real assessment-to-commitment transitions, safeguards, verification, exceptions, rollback, fallback, monitoring, and disclosure."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure predictive validity, elicitation robustness, false clear/block rates, safeguard efficacy and bypass, latency, burden, cost, tails, and residuals."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate threshold and commitment components under matched opportunities and institutional pressures."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Reproduce independently and transfer across domains, threats, models, scaffolds, access levels, safeguards, policies, organizations, jurisdictions, and time."
+      }
+    ],
+    "evidence_refs": {
+      "chapter": "chapters/capability-thresholds-and-deployment-commitments.qmd",
+      "fixture_schema": "schemas/capability_threshold_commitment_fixture.schema.json",
+      "result_schema": "schemas/capability_threshold_commitment_result.schema.json",
+      "fixture": "experiments/capability_threshold_commitment/fixtures/cases.json",
+      "result": "experiments/capability_threshold_commitment/results/2026-07-13-local.json",
+      "validator": "scripts/validate_capability_threshold_commitment.py",
+      "lean": "lean/AsiStackProofs/CapabilityThresholds.lean",
+      "manifest": "book_structure.json"
+    },
+    "contrary_evidence": [
+      "All eight accepted records and five mutations are synthetic fixtures rather than natural assessment, safeguard, or deployment events.",
+      "All eight declarations are derived finite reductions of one hand-authored decision tree; none proves threshold validity, capability, dangerousness, safeguard efficacy, readiness, safety, or deployment correctness.",
+      "Six source mappings report external methods and policies that were not locally reproduced.",
+      "No independent verifier, exercised safeguard, threshold calibration, false-clear or false-block estimate, exception event, release transition, incident, reproduction, or transfer exists.",
+      "A non-crossing, crossing, green handoff, or absence of known incident cannot establish general capability, safety, support, or deployment authority."
+    ],
+    "known_confounds": [
+      "Domain definition, task choice, elicitation, prompts, tools, scaffolds, access, checkpoint selection, evaluator choice, contamination, retries, and compute can dominate crossing status.",
+      "Shared developers, assessors, safeguard implementers, data, attacks, or institutions can create false verification independence.",
+      "Policy revision, threshold gaming, selective disclosure, exception pressure, correlated portfolio risk, and sunk cost can preserve favorable decisions.",
+      "Aggregate scores can hide incomparable domains, subgroups, tails, bypasses, retained hazards, rollback infeasibility, and residual age.",
+      "Commitment burden and false blocks can displace useful evaluation, mitigation, recovery, and public benefit."
+    ],
+    "acceptance_criteria": [
+      "Every commitment prospectively binds exact scope, assessment state and uncertainty, policy version, safeguards, verification, deadlines, constraints, reassessment, authority, exceptions, residuals, rollback, disclosure, release-path effects, and expiry.",
+      "Natural and adversarial assessments run with strong elicitation, hidden and temporal controls, complete denominators, safeguard exercises and bypass attempts, exception pressure, rollback and fallback, and complete costs.",
+      "Threshold and safeguard decisions are calibrated against later natural outcomes, false clear/block rates, latency, burden, tails, incidents, and residuals.",
+      "Any promoted claim survives causal ablation, independent institutional reproduction, and heterogeneous transfer without crossing category or authority boundaries."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to exact domain, threat, task, model, scaffold, tool, access, assessment, elicitation, policy, safeguard, release path, authority, exception, residual, organization, and time.",
+      "Separate schema, fixture, source-reported, assessed, crossed, non-crossed, incomparable, stale, safeguarded, verified, readiness, released, deployed, incident, support, transferred, and SOTA states.",
+      "Unknown assessment validity, elicitation adequacy, contamination, uncertainty, safeguard efficacy, verification independence, exception effect, rollback feasibility, cost, rights, or residual remains blocked."
+    ],
+    "refutation_criteria": [
+      "Refute a threshold when it is invalid, uncalibrated, easily gamed, stale, incomparable, or no better than simpler direct assessment.",
+      "Refute a commitment mechanism when matched ablation preserves or improves safety and accountability, or burden, delay, false blocks, institutional capture, exception pressure, or hidden residuals dominate.",
+      "Refute capability, safety, readiness, release, deployment, support, transfer, or SOTA language when only source reports, fixtures, or finite route theorems exist."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only when a more precise owner supersedes the commitment and every assessment, safeguard, authority, exception, release effect, residual, correction, and historical decision migrates with lineage."
+    ],
+    "promotion_ceiling": "argument_until_natural_adversarial_calibrated_safeguard_campaign_with_independent_reproduction_and_transfer",
+    "reproduction": {
+      "command": "python3 scripts/validate_capability_threshold_commitment.py && python3 scripts/validate_protocol_examples.py && cd lean && lake build AsiStackProofs.CapabilityThresholds",
+      "environment_lock": "Local schemas, synthetic fixtures, validator, and finite module current through 2026-07-15; natural independent assessment and safeguard campaign not frozen or run.",
+      "artifact_digest": null,
+      "evaluator_identity": "Current fixtures, validator, and formalization are repository-local; independent assessors, safeguard verifiers, implementations, institutions, attacks, and transfer environments are required."
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "capability-thresholds-and-deployment-commitments",
+      "next_unblocking_condition": "Freeze and run natural/adversarial capability assessments with strong elicitation and controls, prospectively bound safeguards, independent verification, exception and institutional-pressure tests, calibrated false-clear/false-block and cost accounting, rollback/fallback, causal ablation, independent reproduction, and heterogeneous transfer."
+    },
+    "non_claims": [
+      "No threshold score, crossing, non-crossing, fixture, source mapping, or finite theorem establishes general capability, dangerousness, safeguard efficacy, safety, readiness, deployment, support, transfer, or SOTA.",
+      "No real assessment, safeguard exercise, independent verification, exception, release, deployment, incident, reproduction, or transfer is represented.",
+      "The argument-exit campaign is a required attempt specification, not a completed evaluation."
+    ]
+  },
+  "atom_reviews": {
+    "capability-thresholds-and-deployment-commitments.core": {
+      "current_disposition": "retain_distinct_capability_to_deployment_commitment_owner_at_argument",
+      "strongest_counterclaim": "Threshold commitments are unstable proxy bureaucracy without unique natural safety or governance value.",
+      "falsifier": "Natural matched campaigns show no unique benefit, unacceptable false blocks or latency, gaming or capture, safeguard failure, or no independent reproduction and transfer.",
+      "promotion_ceiling": "argument_until_natural_independently_reproduced_causal_threshold_and_safeguard_campaign"
+    }
+  },
+  "prose_candidate_dispositions": {
+    "capability-thresholds-and-deployment-commitments.prose.3c23fdf3d1db": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.ddf08d4acb9b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.1de7cf36147a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.6ef3298adb69": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.bc70ab3739f0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.84f3c8532928": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.76b9d07d2f54": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.0444fe863b05": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.0c509f859234": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.164beac2b0ff": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.2a3c37932f2f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.cabd265be001": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.bbcf6b20ba47": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.8d877db4dcf6": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.04062fbb03cd": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.d677eafb404d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.41b851c91679": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.c993449c8b86": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.1c18d050d569": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.a8e029afd4d7": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.974d9a9c2a07": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.ce58b8d7b5c5": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.537a4f9423e4": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.b27bd924ccef": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.018c0c059844": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.438eaf64ba16": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.c788ca036298": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.689cb0bad288": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.263b0341eb0b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.7da517662354": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.125ceee96f24": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.5bcb30bedbd9": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.4a99997d431a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.1d56b79278b4": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.f7863478ba49": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.5192804f5312": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.ac16c704b8e8": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.05fd0f37848e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.de5cc7489e78": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.bb39b6eaea9a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.ba48ec272b8d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.7f33cc2fb405": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.c13158a74a86": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.47b27b593bc1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.0f423c03e735": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.0e842ac8d884": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.8e70b0e512c1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.22b3f0e2c5ad": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.09eeed96c6b0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.20bce116f9fe": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.6e6d394b4025": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.dc6c8038149d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.eab381dbc15b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.937812c060c4": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.53f4c363108a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.10a065f2885b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "capability-thresholds-and-deployment-commitments.prose.18c6f3ff39e1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    }
+  },
+  "non_claims": [
+    "No threshold score, crossing, non-crossing, fixture, source mapping, or finite theorem establishes general capability, dangerousness, safeguard efficacy, safety, readiness, deployment, support, transfer, or SOTA.",
+    "No real assessment, safeguard exercise, independent verification, exception, release, deployment, incident, reproduction, or transfer is represented.",
+    "The argument-exit campaign is a required attempt specification, not a completed evaluation."
+  ]
+}

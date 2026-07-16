@@ -1,0 +1,688 @@
+{
+  "schema_version": "asi_stack.context_transaction_refinement.v1",
+  "result_id": "context-transaction-refinement-2026-07-15-local",
+  "source_sha256": {
+    "lean_model": "cd0c32b6b7205b68401518572f0b2ff993b094c09ab86382e6e445dbcfe77b03",
+    "transaction_schema": "5df8e03749a4df28ec28a7082fcba4f9a0cae269a99881538e5038b52fcc5500",
+    "store_validator": "74b7968b02c3c577b13ec8c8038797995f93731b734190508df10b52d34666f2",
+    "sequence_validator": "d5c5c400d21a9ee244aaddae3aebdd73bf71815e9834641c733233be99ecc47b"
+  },
+  "store_suite": {
+    "fixture_count": 9,
+    "valid_count": 3,
+    "invalid_count": 6,
+    "suite_passed": true,
+    "inventory_sha256": "13d0a004ba1737e9782e04e3a70a66d274fc2ae4a73b07dfbe1df86c54f0b878"
+  },
+  "sequence_suite": {
+    "fixture_count": 6,
+    "valid_count": 2,
+    "invalid_count": 4,
+    "suite_passed": true,
+    "inventory_sha256": "eaf364f15a633041ad97c62937d78c89eb1ff5d0f9df2e655940bc0a8e2a00f8"
+  },
+  "reachable_trace_event_count": 6,
+  "reference_trace_final_state": {
+    "stage": "materialized",
+    "transaction_id": 101,
+    "snapshot_id": 201,
+    "snapshot_epoch": 1,
+    "branch_id": 301,
+    "mount_id": 401,
+    "cell_id": 501,
+    "authority_epoch": 1,
+    "committed_version": 1,
+    "visible_version": 1,
+    "source_tainted": false,
+    "derived_tainted": false,
+    "declassification_authorized": false,
+    "deletion_obligation_open": false,
+    "deletion_closure_receipt": false,
+    "snapshot_receipt": true,
+    "write_receipt": true,
+    "commit_receipt": true,
+    "read_receipt": true,
+    "derivation_receipt": true,
+    "replay_receipt": true,
+    "audit_receipt": true,
+    "materialization_receipt": true,
+    "evidence_transition_receipt": false,
+    "materialized": true,
+    "logical_time": 6
+  },
+  "mutation_count": 78,
+  "mutation_rejection_count": 78,
+  "mutation_receipts": [
+    {
+      "mutation_id": "bind_transaction_id",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "identity"
+      ]
+    },
+    {
+      "mutation_id": "bind_snapshot_id",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "identity"
+      ]
+    },
+    {
+      "mutation_id": "bind_snapshot_epoch",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "identity"
+      ]
+    },
+    {
+      "mutation_id": "bind_branch_id",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "identity"
+      ]
+    },
+    {
+      "mutation_id": "bind_mount_id",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "identity"
+      ]
+    },
+    {
+      "mutation_id": "bind_authority_epoch",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "identity"
+      ]
+    },
+    {
+      "mutation_id": "bind_snapshot_present",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "snapshot_custody"
+      ]
+    },
+    {
+      "mutation_id": "bind_snapshot_current",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "snapshot_custody"
+      ]
+    },
+    {
+      "mutation_id": "bind_branch_matches",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "snapshot_custody"
+      ]
+    },
+    {
+      "mutation_id": "bind_mount_permitted",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "snapshot_custody"
+      ]
+    },
+    {
+      "mutation_id": "bind_snapshot_receipt",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "snapshot_custody"
+      ]
+    },
+    {
+      "mutation_id": "bind_replay_receipt",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "snapshot_custody"
+      ]
+    },
+    {
+      "mutation_id": "bind_audit_receipt",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "snapshot_custody"
+      ]
+    },
+    {
+      "mutation_id": "bind_time",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "time"
+      ]
+    },
+    {
+      "mutation_id": "stage_transaction_id",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "snapshot_substitution"
+      ]
+    },
+    {
+      "mutation_id": "stage_snapshot_id",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "snapshot_substitution"
+      ]
+    },
+    {
+      "mutation_id": "stage_snapshot_epoch",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "snapshot_substitution"
+      ]
+    },
+    {
+      "mutation_id": "stage_branch_id",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "snapshot_substitution"
+      ]
+    },
+    {
+      "mutation_id": "stage_mount_id",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "snapshot_substitution"
+      ]
+    },
+    {
+      "mutation_id": "stage_authority_epoch",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "snapshot_substitution"
+      ]
+    },
+    {
+      "mutation_id": "commit_transaction_id",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "cell_substitution"
+      ]
+    },
+    {
+      "mutation_id": "commit_snapshot_id",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "cell_substitution"
+      ]
+    },
+    {
+      "mutation_id": "commit_snapshot_epoch",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "cell_substitution"
+      ]
+    },
+    {
+      "mutation_id": "commit_branch_id",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "cell_substitution"
+      ]
+    },
+    {
+      "mutation_id": "commit_mount_id",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "cell_substitution"
+      ]
+    },
+    {
+      "mutation_id": "commit_authority_epoch",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "cell_substitution"
+      ]
+    },
+    {
+      "mutation_id": "read_transaction_id",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "cell_substitution"
+      ]
+    },
+    {
+      "mutation_id": "read_snapshot_id",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "cell_substitution"
+      ]
+    },
+    {
+      "mutation_id": "read_snapshot_epoch",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "cell_substitution"
+      ]
+    },
+    {
+      "mutation_id": "read_branch_id",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "cell_substitution"
+      ]
+    },
+    {
+      "mutation_id": "read_mount_id",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "cell_substitution"
+      ]
+    },
+    {
+      "mutation_id": "read_authority_epoch",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "cell_substitution"
+      ]
+    },
+    {
+      "mutation_id": "derive_transaction_id",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "cell_substitution"
+      ]
+    },
+    {
+      "mutation_id": "derive_snapshot_id",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "cell_substitution"
+      ]
+    },
+    {
+      "mutation_id": "derive_snapshot_epoch",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "cell_substitution"
+      ]
+    },
+    {
+      "mutation_id": "derive_branch_id",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "cell_substitution"
+      ]
+    },
+    {
+      "mutation_id": "derive_mount_id",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "cell_substitution"
+      ]
+    },
+    {
+      "mutation_id": "derive_authority_epoch",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "cell_substitution"
+      ]
+    },
+    {
+      "mutation_id": "materialize_transaction_id",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "materialization_substitution"
+      ]
+    },
+    {
+      "mutation_id": "materialize_snapshot_id",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "materialization_substitution"
+      ]
+    },
+    {
+      "mutation_id": "materialize_snapshot_epoch",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "materialization_substitution"
+      ]
+    },
+    {
+      "mutation_id": "materialize_branch_id",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "materialization_substitution"
+      ]
+    },
+    {
+      "mutation_id": "materialize_mount_id",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "materialization_substitution"
+      ]
+    },
+    {
+      "mutation_id": "materialize_authority_epoch",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "materialization_substitution"
+      ]
+    },
+    {
+      "mutation_id": "stage_cell",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "write_identity"
+      ]
+    },
+    {
+      "mutation_id": "stage_version",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "write_identity"
+      ]
+    },
+    {
+      "mutation_id": "stage_receipt",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "write_policy"
+      ]
+    },
+    {
+      "mutation_id": "stage_branch",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "write_policy"
+      ]
+    },
+    {
+      "mutation_id": "stage_mount",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "write_policy"
+      ]
+    },
+    {
+      "mutation_id": "stage_time",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "time"
+      ]
+    },
+    {
+      "mutation_id": "commit_cell",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "cell_substitution"
+      ]
+    },
+    {
+      "mutation_id": "commit_input",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "commit_version"
+      ]
+    },
+    {
+      "mutation_id": "commit_output",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "commit_version"
+      ]
+    },
+    {
+      "mutation_id": "commit_flag",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "commit_custody"
+      ]
+    },
+    {
+      "mutation_id": "commit_receipt",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "commit_custody"
+      ]
+    },
+    {
+      "mutation_id": "commit_audit",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "commit_custody"
+      ]
+    },
+    {
+      "mutation_id": "commit_time",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "time"
+      ]
+    },
+    {
+      "mutation_id": "read_cell",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "cell_substitution"
+      ]
+    },
+    {
+      "mutation_id": "read_version",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "read_version"
+      ]
+    },
+    {
+      "mutation_id": "read_commit",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "read_custody"
+      ]
+    },
+    {
+      "mutation_id": "read_visible",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "read_custody"
+      ]
+    },
+    {
+      "mutation_id": "read_receipt",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "read_custody"
+      ]
+    },
+    {
+      "mutation_id": "read_replay",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "read_custody"
+      ]
+    },
+    {
+      "mutation_id": "read_branch",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "read_custody"
+      ]
+    },
+    {
+      "mutation_id": "read_mount",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "read_custody"
+      ]
+    },
+    {
+      "mutation_id": "read_time",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "time"
+      ]
+    },
+    {
+      "mutation_id": "derive_cell",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "cell_substitution"
+      ]
+    },
+    {
+      "mutation_id": "derive_version",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "derivation_source"
+      ]
+    },
+    {
+      "mutation_id": "derive_source",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "derivation_source",
+        "taint_laundering"
+      ]
+    },
+    {
+      "mutation_id": "derive_deletion",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "deletion_gap"
+      ]
+    },
+    {
+      "mutation_id": "derive_receipt",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "derivation_receipt"
+      ]
+    },
+    {
+      "mutation_id": "derive_time",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "time"
+      ]
+    },
+    {
+      "mutation_id": "materialize_cell",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "materialization_substitution"
+      ]
+    },
+    {
+      "mutation_id": "materialize_version",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "materialization_substitution"
+      ]
+    },
+    {
+      "mutation_id": "materialize_support",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "support_laundering"
+      ]
+    },
+    {
+      "mutation_id": "materialize_receipt",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "materialization_receipt"
+      ]
+    },
+    {
+      "mutation_id": "materialize_flag",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "materialization_receipt"
+      ]
+    },
+    {
+      "mutation_id": "materialize_time",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "time"
+      ]
+    }
+  ],
+  "support_state_effect": "none",
+  "non_claims": [
+    "This finite sequential model does not establish serializability, linearizability, distributed isolation, crash recovery, or a deployed store.",
+    "Fixture-suite validity is consumed at its exact hand-authored boundary and does not establish natural-workload usefulness or transfer.",
+    "Numeric identities, policy decisions, taint/deletion facts, authority epochs, and receipts are trusted; no source truth, erasure, side-channel safety, reproduction, SOTA, AGI, ASI, or chapter-core support follows."
+  ]
+}

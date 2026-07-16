@@ -1,0 +1,380 @@
+{
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd",
+    "structured_atoms_reviewed": 80,
+    "prose_candidates_adjudicated": 48,
+    "unowned_material_claims": 0,
+    "review_note": "Reviewed the complete chapter, all ten bounded source mappings, the nine-record fixture and eleven rejecting mutations, all nine Lean declarations, every manifest atom, every prose candidate, the test plan, crosswalk, summary, and handoff. The sweep made versioned cross-stack exchange identity, delegation, privacy obligation, economic-state separation, dispute, revocation, and residual custody the distinct owner; preserved local effect, intent, organization, security, context, artifact, evidence, resource, rights, federation, adjudication, readiness, and release owners; expanded the lifecycle to eighteen mechanisms, twelve interfaces, eighteen invariants, and eighteen failure modes; classified all nine theorems as finite route or negative-control consequences with zero predicate-projection or authored-summary bridges; specified matched natural baselines, joint usefulness and governance metrics, causal ablations, independent reproduction, and heterogeneous transfer; and preserved zero core support effect."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Natural and adversarial public-safe cross-stack tool, agent-task, artifact, identity, credential, delegation, and value-bearing exchanges under explicit principals, peer roles, versions, privacy obligations, disputes, revocations, and residual owners.",
+      "environment": "Ten reviewed source mappings; nine digest-bound synthetic exchange records; eleven rejecting mutations; nine finite Lean route consequences; one adjacent bounded QCSA result package; and a future natural multi-peer campaign. No live MCP or A2A peer, DID resolver, VC workflow, delegation service, payment connector, settlement network, dispute service, privacy program, or remote effect is represented.",
+      "model": "A versioned exchange relation over protocol/schema/binding, actors, task and artifact semantics, endpoint declarations, identity resolution, credentials, delegation, local authorization handoff, economic states, privacy and rights obligations, response binding, independent verification, retry and dispute, revocation propagation, audit, and residual custody.",
+      "authority": "Intent and Contracts own task meaning; Labor OS owns organizational roles; Security owns secrets and local authority policy; Runtime Adapters own local effects; Context owns admitted inputs; Artifact Graphs and Evidence own lineage, verification, and support; Resources owns local cost policy; Privacy, Rights, and Legal owns obligations; humans own consequential dispute and appeal; Hives owns federation topology; Readiness and Release own promotion. Inter-Stack owns only the bounded contract crossing a selected independently operated boundary.",
+      "time": "Semantic review current through 2026-07-14; changes to protocol, schema, binding, session, endpoint, capability declaration, identity, controller, key, credential, delegation, policy, task, artifact, budget, privacy obligation, dispute, revocation, or residual ownership expire affected decisions.",
+      "artifact": "Chapter and manifest contract; ten source mappings; nine-record fixture and result; eleven rejecting mutations; nine declarations in lean/AsiStackProofs/InterStackProtocols.lean; future natural traces, threat probes, economic-state records, causal ablations, independent reproduction locks, and transfer artifacts."
+    },
+    "current_disposition": "retain_argument_pending_natural_multi_peer_interoperability_campaign_with_causality_reproduction_and_transfer",
+    "assumptions": [
+      "Peer roles, protocol and binding versions, semantic payloads, identity and credential state, delegation, authorization decisions, privacy disclosures, economic states, responses, disputes, revocations, and residuals can be observed independently enough to prevent silent state collapse.",
+      "Direct APIs, MCP, A2A, IAM-like controls, DID/VC, brokers or workflows, Interledger-like value exchange, and the full contract can be matched on tasks, information, models, authority, resources, threats, and horizon.",
+      "Public-safe implementations and value simulators can exercise realistic interoperability, identity, delegation, privacy, replay, downgrade, dispute, refund, and cascade failures without becoming production-safety claims.",
+      "Protocol conformance, identity resolution, credential validity, authorization, result correctness, settlement, privacy, evidence, support, readiness, and release remain separable.",
+      "Independent-enough evaluators can label useful interoperability, task and artifact correctness, false authorization, delegation drift, stale acceptance, privacy leakage, economic-state errors, human work, cost, recovery, and residuals.",
+      "Failures, refusals, retries, partial delivery, human repair, disclosure, disputes, refunds, cleanup, and unresolved obligations remain in denominators."
+    ],
+    "dependencies": [
+      "human-intent-as-a-formal-input",
+      "intent-to-execution-contracts",
+      "labor-os-and-typed-jobs",
+      "security-kernel-and-digital-scifs",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "virtual-context-abi",
+      "artifact-graphs-audit-logs-and-replay",
+      "evidence-states-and-claim-discipline",
+      "resource-economics-and-token-budgets",
+      "privacy-rights-and-legal-constraints",
+      "human-collaboration-and-dispute-resolution",
+      "personal-compute-hives-and-federated-edge-intelligence",
+      "readiness-gates-residual-escrow-and-quarantine"
+    ],
+    "strongest_counterclaim": "Existing protocol standards, IAM, credential frameworks, API gateways, workflow engines, payment systems, audit logs, and dispute processes already cover useful cross-stack exchange. A universal local envelope adds latency, metadata, privacy risk, false denial, brittle integration, and governance burden while still trusting peers, issuers, resolvers, policy engines, evaluators, operators, and legal systems.",
+    "falsifier": "A conformant exchange silently widens identity, delegation, authority, disclosure, economic obligation, result meaning, or residual custody; replay, downgrade, revocation, partial failure, dispute, or cascade escapes accountable routing; or matched simpler controls dominate the full contract on useful work, authorization, correctness, privacy, economic outcomes, latency, human effort, cost, recovery, and residuals.",
+    "required_lanes": [
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze protocol, identity, credential, value-transfer, threat, audit, semantic-address, and economic comparators without importing reported performance."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify principal, delegation, consent, disclosure, economic obligation, refusal, dispute, appeal, remedy, and residual boundaries."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify actor separation, authentication and authorization, bounded delegation, freshness, replay, downgrade, idempotency, revocation, economic states, privacy flow, liveness, and countermodels beyond trusted Booleans."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Run public-safe protocol peers, resolvers, credential paths, delegation checks, value simulation, local authorization handoffs, threat probes, disputes, refunds, revocations, retries, and independent result checks."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure useful interoperability, task and artifact correctness, false authorization, delegation drift, stale acceptance, downgrade and replay, privacy leakage, economic-state correctness, latency, human effort, fees, recovery, and residuals jointly."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate semantic binding, identity, credential verification, delegation, local authorization, privacy constraints, economic-state separation, revocation propagation, and independent result verification under matched resources."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Reproduce independently and transfer across protocols, versions, bindings, identity methods, issuers, peers, vendors, models, domains, organizations, jurisdictions, threats, and time."
+      }
+    ],
+    "evidence_refs": {
+      "chapter": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd",
+      "validator": "scripts/validate_inter_stack_exchange_contract.py",
+      "result": "experiments/inter_stack_exchange_contract/results/2026-07-13-local.json",
+      "lean": "lean/AsiStackProofs/InterStackProtocols.lean",
+      "manifest": "book_structure.json"
+    },
+    "contrary_evidence": [
+      "MCP, A2A, DID/VC, Interledger, IAM, API gateways, brokers, workflows, and payment systems already implement important pieces of the proposed boundary.",
+      "The current exchange fixture is authored and synthetic; no real peer, protocol message, resolver, credential, delegation, payment, dispute, privacy control, or remote effect ran.",
+      "All nine Lean declarations are finite route or negative-control consequences; none refines a deployed protocol, identity system, economic network, or runtime.",
+      "The bounded QCSA package supports local semantic identity and migration behavior but failed its exact matched-advantage and resource gates and exercised no federation.",
+      "More metadata can increase privacy leakage, correlation, parser disagreement, stale state, integration burden, and denial of useful work.",
+      "Credential and identity systems retain issuer, resolver, controller, key, status, governance, and policy trust outside the envelope.",
+      "Economic simulations cannot establish legal finality, fair price, consent, welfare, or production settlement.",
+      "No current result compares the full contract with strong matched natural baselines or independently reproduces and transfers its effects."
+    ],
+    "known_confounds": [
+      "The full contract may receive richer metadata, stronger identity, more review, stricter baselines, more retries, or more time than comparators.",
+      "Tasks may favor structured reversible exchanges and omit private data, physical effects, irreversible obligations, real counterparties, legal disputes, and adaptive attackers.",
+      "Peers, resolvers, issuers, policy engines, protocol adapters, value simulators, observers, and evaluators may share implementations, infrastructure, organizations, logs, or incentives.",
+      "A denial-heavy policy can appear secure by suppressing useful work; a message-success metric can hide wrong results, privacy loss, disputes, human repair, and residuals.",
+      "Synthetic revocation, replay, downgrade, injection, and dispute cases may be easier than natural multi-peer failures and organizational pressure.",
+      "Failed peers, incompatible bindings, refusals, retries, partial delivery, disclosure, disputes, refunds, human work, and fees can disappear from denominators.",
+      "Short horizons can miss stale credentials, correlation, downstream artifact use, delayed settlement, legal claims, recurrence, and residual abandonment."
+    ],
+    "acceptance_criteria": [
+      "Every protocol version, binding, actor, semantic payload, endpoint declaration, identity result, credential, delegation, authorization handoff, disclosure, economic transition, response, verification, dispute, revocation, audit, and residual has an exact producer, consumer, valid case, rejecting mutation, and downstream consequence.",
+      "A preregistered natural campaign meets joint usefulness, task-quality, authorization, delegation, freshness, replay, downgrade, privacy, economic-state, latency, human-work, cost, recovery, causal, independent-reproduction, and transfer gates against strong matched controls.",
+      "Each signature mechanism has a predicted causal effect that disappears under matched ablation and cannot be explained by added resources, easier tasks, weaker baselines, shared evaluators, hidden human repair, denial, or denominator changes."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to exact protocol, revision, binding, peer, implementation, identity method, issuer, credential, delegation, task, model, organization, jurisdiction, threat, economic simulator, horizon, metric, cost, and residual.",
+      "Separate parsing, discovery, identity, credential verification, delegation, authorization, dispatch, effect, response, independent verification, reservation, delivery, acceptance, settlement, refund, dispute, evidence, support, readiness, and release.",
+      "Unknown peer trust, authority, task truth, disclosure, settlement, legal status, fairness, reproduction, or transfer remains disputed, residual, narrowed, or blocked."
+    ],
+    "refutation_criteria": [
+      "Refute an invariant when a reachable ordinary or adversarial trace satisfies its premises and violates version, actor, semantic, capability, identity, credential, delegation, authorization, privacy, economic, replay, revocation, custody, or denominator preservation.",
+      "Refute a mechanism benefit when matched ablation preserves the joint outcome, worsens the frontier, or the effect is explained by resources, selection, weak baselines, shared evaluators, hidden repair, denial, or denominator changes.",
+      "Refute useful, secure, private, economically correct, reproducible, transferable, or state-of-the-art language when a simpler comparator wins, significant failure remains hidden, or independent reproduction and transfer fail."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only when a more precise protocol, identity, authorization, economic, privacy, artifact, or dispute owner supersedes the atom and every live exchange, dependency, obligation, receipt, and residual migrates with preserved lineage."
+    ],
+    "promotion_ceiling": "argument_until_natural_multi_peer_campaign_and_accepted_evidence_transition",
+    "reproduction": {
+      "command": null,
+      "environment_lock": null,
+      "artifact_digest": null,
+      "evaluator_identity": null
+    },
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "inter-stack-protocols-identity-and-economic-exchange",
+      "next_unblocking_condition": "Execute the preregistered natural multi-peer campaign with public-safe protocol implementations, identity and credential paths, bounded delegation, privacy controls, value simulation, adversarial probes, joint metrics, causal ablations, independent reproduction, and heterogeneous transfer."
+    },
+    "non_claims": [
+      "A parsed message, endpoint declaration, identifier, credential, delegation record, reservation, routed value packet, receipt, signature, dispute record, replay, taxonomy, fixture, theorem, or green command does not establish peer trust, authorization, task truth, privacy, settlement, legal validity, fairness, useful safety, support, or release.",
+      "The present nine records, eleven mutations, nine finite declarations, and adjacent QCSA result establish only their exact authored, synthetic, local, and finite boundaries.",
+      "No identity, authority, effect, payment, evidence, support, readiness, release, AGI, or ASI state changes through this semantic review."
+    ]
+  },
+  "atom_reviews": {
+    "inter-stack-protocols-identity-and-economic-exchange.core": {
+      "current_disposition": "retain_distinct_cross_stack_exchange_contract_owner_at_argument",
+      "strongest_counterclaim": "Existing standards and gateways already cover the boundary; the envelope may add cost without unique causal benefit.",
+      "falsifier": "No unique exercised consumer or failure remains, or matched natural work shows only added burden without joint interoperability, authority, privacy, economic, and recovery improvement.",
+      "acceptance_criteria": [
+        "Demonstrate natural useful exchange, authority fidelity, task correctness, privacy, economic-state correctness, recovery, complete cost, causality, independent reproduction, and transfer."
+      ]
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.minimum.001": {
+      "current_disposition": "retain_as_finite_route_and_negative_control_evidence_only",
+      "strongest_counterclaim": "Nine authored records and finite theorem consequences test the model, not interoperability.",
+      "falsifier": "The validator accepts a mutated record, a theorem tag lacks a matching route, a digest drifts, or the chapter describes the fixture as a real peer or protocol result.",
+      "acceptance_criteria": [
+        "Keep nine expected routes, eleven rejecting mutations, digest binding, exact theorem ownership, and explicit non-claims green."
+      ]
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.beyond_sota.001": {
+      "current_disposition": "retain_as_falsifiable_argument_exit_program",
+      "strongest_counterclaim": "The proposed campaign remains too broad, costly, and integration-heavy to isolate a useful contribution.",
+      "falsifier": "The campaign lacks matched natural baselines, joint metrics, predicted ablation signatures, independent implementation and evaluation, complete denominators, or heterogeneous transfer.",
+      "acceptance_criteria": [
+        "Preregister implementations, tasks, threats, baselines, metrics, gates, ablations, evaluator independence, reproduction, and transfer before execution."
+      ]
+    }
+  },
+  "prose_candidate_dispositions": {
+    "inter-stack-protocols-identity-and-economic-exchange.prose.72862cc79b62": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.48746e6aa52e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.6e879fb1df64": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.d61bbd531f94": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.9da12440221c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.5cc0e6a5b34a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.07b5869089f3": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.5c49aed2f9ee": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.d4deb1995f02": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded QCSA result report with explicit local scope and non-claims; it does not alter Inter-Stack support."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.3c7273bbe9a0": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded QCSA result report with explicit local scope and non-claims; it does not alter Inter-Stack support."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.67976d027d6a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.c37a7a8425d2": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.a90ce1d81f00": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.d90134188bf5": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.8232bc7ecb23": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.3ef32f974273": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.547cffb86a17": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.5ae06b08d951": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.3270f163ebbd": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.55ffa8d55883": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.30492e0c0ae0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.9734dccdbf91": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.45db3d7f4f30": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.462b052765b1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.7f2c091c12f0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.241b977b7d3a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.841019df24cf": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.fddf1b0fb2f6": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.c6682eb1cc04": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.53dfead0af5c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.560f67098d18": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.bed6f958a457": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.1d1f50334ee9": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "inter-stack-protocols-identity-and-economic-exchange.beyond_sota.001",
+      "rationale": "Campaign requirement, causal signature, reproduction, or transfer detail already governed by the structured beyond-SOTA atom and chapter acceptance criteria."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.2171d6e29e65": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "inter-stack-protocols-identity-and-economic-exchange.beyond_sota.001",
+      "rationale": "Campaign requirement, causal signature, reproduction, or transfer detail already governed by the structured beyond-SOTA atom and chapter acceptance criteria."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.7cf76f7082f2": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "inter-stack-protocols-identity-and-economic-exchange.beyond_sota.001",
+      "rationale": "Campaign requirement, causal signature, reproduction, or transfer detail already governed by the structured beyond-SOTA atom and chapter acceptance criteria."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.97092bee37db": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "inter-stack-protocols-identity-and-economic-exchange.beyond_sota.001",
+      "rationale": "Campaign requirement, causal signature, reproduction, or transfer detail already governed by the structured beyond-SOTA atom and chapter acceptance criteria."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.80cad7b6175c": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "inter-stack-protocols-identity-and-economic-exchange.beyond_sota.001",
+      "rationale": "Campaign requirement, causal signature, reproduction, or transfer detail already governed by the structured beyond-SOTA atom and chapter acceptance criteria."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.297673d0fe69": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "inter-stack-protocols-identity-and-economic-exchange.beyond_sota.001",
+      "rationale": "Campaign requirement, causal signature, reproduction, or transfer detail already governed by the structured beyond-SOTA atom and chapter acceptance criteria."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.3540856b71de": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "inter-stack-protocols-identity-and-economic-exchange.beyond_sota.001",
+      "rationale": "Campaign requirement, causal signature, reproduction, or transfer detail already governed by the structured beyond-SOTA atom and chapter acceptance criteria."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.471efc8ac453": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "inter-stack-protocols-identity-and-economic-exchange.beyond_sota.001",
+      "rationale": "Campaign requirement, causal signature, reproduction, or transfer detail already governed by the structured beyond-SOTA atom and chapter acceptance criteria."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.79c6c48267a9": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "inter-stack-protocols-identity-and-economic-exchange.beyond_sota.001",
+      "rationale": "Campaign requirement, causal signature, reproduction, or transfer detail already governed by the structured beyond-SOTA atom and chapter acceptance criteria."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.4d22881936fc": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "inter-stack-protocols-identity-and-economic-exchange.beyond_sota.001",
+      "rationale": "Campaign requirement, causal signature, reproduction, or transfer detail already governed by the structured beyond-SOTA atom and chapter acceptance criteria."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.3efd4b67d0ad": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "inter-stack-protocols-identity-and-economic-exchange.beyond_sota.001",
+      "rationale": "Campaign requirement, causal signature, reproduction, or transfer detail already governed by the structured beyond-SOTA atom and chapter acceptance criteria."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.293e17a48ad0": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "inter-stack-protocols-identity-and-economic-exchange.minimum.001",
+      "rationale": "Finite-proof boundary is already governed by the structured minimum atom, proof targets, and non-claims."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.42d43e88b43e": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "inter-stack-protocols-identity-and-economic-exchange.minimum.001",
+      "rationale": "Finite-proof boundary is already governed by the structured minimum atom, proof targets, and non-claims."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.9e49930bc96a": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "inter-stack-protocols-identity-and-economic-exchange.beyond_sota.001",
+      "rationale": "Campaign requirement, causal signature, reproduction, or transfer detail already governed by the structured beyond-SOTA atom and chapter acceptance criteria."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.6bd213c8e73e": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "inter-stack-protocols-identity-and-economic-exchange.beyond_sota.001",
+      "rationale": "Campaign requirement, causal signature, reproduction, or transfer detail already governed by the structured beyond-SOTA atom and chapter acceptance criteria."
+    }
+  ,
+    "inter-stack-protocols-identity-and-economic-exchange.prose.38f7f48c8ff5": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped mature-endpoint or current-result boundary already governed by structured chapter atoms; it adds no independent material claim."
+    }
+  },
+  "non_claims": [
+    "This review adjudicates claim materiality and scope; it does not promote support.",
+    "No external peer, protocol, identity, credential, delegation, payment, settlement, dispute, privacy control, or remote effect was run."
+  ]
+}
