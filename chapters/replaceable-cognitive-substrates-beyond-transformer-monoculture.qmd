@@ -15,6 +15,7 @@ primary_sources:
   - "ext_hyperscale_lottery_2026"
   - "ext_gated_deltanet_2024"
   - "ext_jamba_2024"
+  - "ext_inkling_2026"
   - "ext_neural_message_passing_2017"
   - "ext_hyena_hierarchy_2023"
   - "ext_rwkv_2023"
@@ -57,10 +58,10 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
 | Last updated | 2026-07-15 |
-| Primary source records | 33 bounded assignments spanning two author-intent conversations; dense attention; S4 and Mamba/SSD through Mamba-3; an edge-hardware SSM counterstudy; Gated DeltaNet; Jamba; graph message passing; long convolution; recurrent, tiny-recursive, test-time-memory, external-memory, continuous-time, KAN, and program-learning comparators; two independent TRM pressure tests; two current recurrence-versus-addressable-memory studies; and the existing SCF/RMI/benchmark sources. |
+| Primary source records | 34 bounded assignments spanning two author-intent conversations; dense attention; S4 and Mamba/SSD through Mamba-3; an edge-hardware SSM counterstudy; Gated DeltaNet; Jamba; the release-day Inkling hybrid; graph message passing; long convolution; recurrent, tiny-recursive, test-time-memory, external-memory, continuous-time, KAN, and program-learning comparators; two independent TRM pressure tests; two current recurrence-versus-addressable-memory studies; and the existing SCF/RMI/benchmark sources. |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | All 32 assigned records have source notes and reviewed, bounded claim mappings. The two public shares are author-intent inputs; the architecture sources are external comparators. No architecture result was imported as local evidence. |
+| Source loading state | All 34 assigned records have source notes and reviewed, bounded claim mappings. The two public shares are author-intent inputs; the architecture sources are external comparators. No architecture result was imported as local evidence. |
 | Test state | Bounded synthetic ABI conformance and malicious-kernel rejection are implemented. The matched heterogeneous-kernel tournament, frozen-core verified-abstraction ratchet, and governed architectural-RSI lifecycle remain preregistered and unrun. |
 
 ## Drafting guardrail
@@ -264,6 +265,36 @@ separate recurrent computation from addressable retrieval; freeze sampling and
 vote budgets; plot marginal utility by recursion step; remove task-identity
 shortcuts; and use progressive mechanism ablations. Parameter count is never a
 substitute for that packet.
+
+### Inkling: a hybrid case, not a component verdict
+
+Inkling is a timely example of why the stack should record topology rather than
+architecture slogans. Its official release describes a 66-layer multimodal
+Transformer with 256 routed and two shared experts, six routed experts active
+per token, five local-attention layers for each global layer, relative position
+features, and short convolutions. The released configuration fixes the local
+window at 512 tokens, while the model card reports 975 billion total and 41
+billion active parameters and a one-million-token configured maximum. These are
+provider records, not locally reproduced results.
+
+That combination does not show that sliding attention, MoE routing, relative
+positions, convolutions, scale, multimodal data, or large-scale RL caused any
+reported benchmark score. It shows that a useful capability card cannot stop at
+“Transformer” or “hybrid.” It must name local/global cadence, window, position
+mechanism, convolutional paths, expert topology, active and total parameters,
+modality encoders, configured versus served versus tested context, numerics,
+hardware, mutable state, and effort control. Internal token-to-expert routing
+also remains distinct from the stack's task-to-kernel routing; if both operate,
+both candidate sets, costs, and failures need receipts.
+
+Inkling's reported controllable effort supplies another actuator, not a
+governance policy. The model was trained to vary effort through instructions and
+per-token cost, but the stack still has to calibrate when extra computation is
+useful, when it corrupts an initially correct answer, when to stop or abstain,
+and what a candidate may influence. Direct reproduction may also be blocked by
+the model card's reported minimum of 600 GB aggregate VRAM for NVFP4 or 2 TB for
+BF16. A smaller mechanism-matched proxy can test components, but it cannot be
+reported as an Inkling reproduction.
 
 ## Reflex, reaction, deliberation, and specialist routes
 
@@ -641,6 +672,7 @@ interchangeable, safe, or suitable for deployment.
 | `ext_mamba3_2026` | Mamba-3: Improved Sequence Modeling using State Space Principles | Planned use from inventory/manifest: Current 2026 selective-SSM comparator for complex-valued state updates, discretization, and multi-input/multi-output formulation. Recent source-reported results are not locally reproduced and must not set the chapter conclusion by recency. |
 | `ext_gated_deltanet_2024` | Gated Delta Networks: Improving Mamba2 with Delta Rule | Planned use from inventory/manifest: Primary gated-delta-rule comparator for targeted memory updates, rapid erasure, parallel training, and recurrent/hybrid sequence models. No local retrieval, extrapolation, efficiency, or hardware result is reproduced. |
 | `ext_jamba_2024` | Jamba: A Hybrid Transformer-Mamba Language Model | Planned use from inventory/manifest: Primary large-scale Transformer-Mamba-MoE hybrid comparator. It makes composition a first-class design variable without establishing a universally optimal mixture or hiding active/total, routing, state, and serving costs. |
+| `ext_inkling_2026` | Inkling: Our open-weights model | Release-day primary-source case for a multimodal sparse-MoE Transformer combining five local-attention layers per global layer, relative positions, short convolutions, controllable effort, and explicit active/total and hardware disclosures. It motivates topology-complete capability cards and component ablations; provider-reported scores are not locally reproduced and do not isolate any component. |
 | `ext_neural_message_passing_2017` | Neural Message Passing for Quantum Chemistry | Planned use from inventory/manifest: Primary graph-message-passing framework for a non-token-native relational lane. Molecular results do not establish general reasoning, dynamic graph memory, exact state, or local reproduction. |
 | `ext_hyena_hierarchy_2023` | Hyena Hierarchy: Towards Larger Convolutional Language Models | Planned use from inventory/manifest: Primary long-convolution comparator for subquadratic sequence mixing and hardware-aware architecture comparisons. No local training, throughput, quality, recall, or scaling result is reproduced. |
 | `ext_rwkv_2023` | RWKV: Reinventing RNNs for the Transformer Era | Planned use from inventory/manifest: Primary recurrent language-model comparator combining parallelizable training with recurrent inference. Reported benchmark, memory, and inference properties are not reproduced locally. |

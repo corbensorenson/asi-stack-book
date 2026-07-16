@@ -2930,8 +2930,12 @@ Structural insertion receipt, followed by the remaining exact sequence:
    compute-matched autoregressive analyses; UniMatrix's compressed-state versus
    sparse-pointer recall contrast; and Memory Caching's fixed-state versus
    growing-memory tradeoff; and an edge-hardware counterstudy that prevents
-   cloud throughput from standing in for device-neutral efficiency. The live
-   inventory now contains 312 sources; the chapter has 33 bounded assignments
+   cloud throughput from standing in for device-neutral efficiency. The queue
+   now also includes Inkling's release-day primary records as a current hybrid
+   case: sparse MoE, five-local-to-one-global attention, relative positions,
+   short convolutions, multimodal encoders, controllable effort, and explicit
+   hardware/numerics boundaries. The live inventory now contains 313 sources;
+   the chapter has 34 bounded assignments
    and every assignment has a source note.
 2. **Completed 2026-07-15:** define the core claim, subordinate claims, falsifiers, promotion ceilings,
    non-claims, chapter-family owner, and source mappings before drafting.
@@ -3240,16 +3244,26 @@ is not an architecture leaderboard. It requires:
    size/depth/topology extrapolation, continual drift, exact execution, and
    hardware-sensitive workloads;
 4. single-kernel, routed, hybrid, oracle-router, random-router, and strong-
-   generalist controls with exact contribution receipts;
-5. fixed recurrent-state, growing-cache, sparse-slot, exact-memory, and
+   generalist controls with exact contribution receipts; when a model contains
+   internal expert routing, keep token-to-expert and task-to-kernel candidate
+   sets, costs, failures, and ablations separate;
+5. a topology-complete capability card and matched component ablations for
+   hybrid attention candidates: local window, global cadence, positional
+   mechanism, convolutional paths, expert topology, active and total
+   parameters, modality encoders, configured/served/tested context, numerics,
+   hardware, effort actuator, and mutable state. Inkling is the current primary
+   case; if its reported 600 GB NVFP4 or 2 TB BF16 minimum blocks direct replay,
+   record that blocker and label any smaller mechanism-matched proxy as a proxy,
+   not an Inkling reproduction;
+6. fixed recurrent-state, growing-cache, sparse-slot, exact-memory, and
    attention controls that distinguish computation from addressable memory;
-6. for OneCell/TRM-class arms, canonical single-pass, matched sampling/voting,
+7. for OneCell/TRM-class arms, canonical single-pass, matched sampling/voting,
    blank/random/unseen identity, marginal-utility-by-recursion-step, learned-
    stopping, and progressive mechanism-ablation views;
-7. a frozen-core ratchet against no-library, random-library, retrieval-only,
+8. a frozen-core ratchet against no-library, random-library, retrieval-only,
    growing-core, and oracle-library controls, with contamination, false
    activation, maintenance, rollback, and transfer audits; and
-8. one governed architecture lifecycle through proposal, independent
+9. one governed architecture lifecycle through proposal, independent
    evaluation, shadow, canary, promotion denial or admission, effect-complete
    rollback, retirement, and descendant invalidation without self-approval.
 
@@ -3302,7 +3316,10 @@ weaker-comparator study—not a SOTA challenge.
    retention/linear recurrence; long convolution; modern gated and
    shared-depth recurrence; test-time learned memory; differentiable external
    memory; continuous-time dynamics; KANs plus matched critical comparisons;
-   graph/relational processors; program/library learning; and hybrids. A survey
+   graph/relational processors; program/library learning; and hybrids,
+   including current local/global-attention-plus-MoE systems such as Inkling.
+   For hybrid systems, freeze an effort-quality-cost curve and component-credit
+   ablations rather than comparing only a provider's maximum-effort point. A survey
    can locate papers but cannot substitute for primary-paper and official-
    implementation review.
 10. Implement at least a strong Transformer baseline, a recurrent/state-space

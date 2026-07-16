@@ -4,6 +4,7 @@
   "recorded_date": "2026-07-15",
   "base_commit": "5eddb15d56b0c813666ed2b2ea41e7c87f1cf297",
   "checkpoint_commit": "f27a6a8dffe03977969b6332d0e81314f29be052",
+  "closure_commit": "1fb4e23fb5208d8798b89eb9cd1fc2e65eeaea78",
   "changed_path_count": 724,
   "independent_work_package_count": 5,
   "changed_path_soft_limit": 250,
@@ -60,7 +61,8 @@
     "attestation_result_path": "experiments/artifact_randomized_attestation/results/2026-07-04-local.json",
     "attestation_state": "passes_against_checkpoint_commit_objects",
     "dependent_artifact_reality_state": "passes",
-    "expected_worktree_state_after_closure_commit": "clean",
+    "closure_commit_parent_is_checkpoint_commit": true,
+    "worktree_was_clean_after_closure_commit": true,
     "external_actions_authorized": false
   },
   "next_checkpoint_requirement": "Keep the worktree clean after the local attestation-closure commit, then resume the next unfinished roadmap campaign. Push, tag, deploy, and publication remain separately unauthorized.",

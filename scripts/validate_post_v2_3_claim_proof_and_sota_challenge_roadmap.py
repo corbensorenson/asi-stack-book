@@ -355,14 +355,6 @@ def errors(data: dict) -> list[str]:
     if not set(expected_first_atoms).issubset(registered_atom_ids):
         out.append("latest-review first campaign batch contains an unregistered atom")
     wip = data["wip_checkpoint_inventory"]
-    current_changed_paths = len(subprocess.run(
-        ["git", "status", "--porcelain=v1", "-uall"],
-        cwd=ROOT,
-        text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        check=True,
-    ).stdout.splitlines())
     if wip.get("base_commit") != "5eddb15d56b0c813666ed2b2ea41e7c87f1cf297":
         out.append("WIP checkpoint base commit drifted")
     if wip.get("independent_work_package_count") != len(wip.get("packages", [])) or len(wip.get("packages", [])) != 5:
@@ -389,14 +381,39 @@ def errors(data: dict) -> list[str]:
         ).returncode == 0
         if not commit_exists or not commit_is_ancestor:
             out.append("completed WIP checkpoint commit is absent from current history")
-    if current_changed_paths != 0:
-        out.append(f"completed WIP checkpoint closure requires a clean worktree: {current_changed_paths} changed path(s)")
+    closure_commit = str(wip.get("closure_commit", ""))
+    if not re.fullmatch(r"[0-9a-f]{40}", closure_commit):
+        out.append("completed WIP checkpoint lacks an exact closure-commit identity")
+    else:
+        closure_exists = subprocess.run(
+            ["git", "cat-file", "-e", f"{closure_commit}^{{commit}}"],
+            cwd=ROOT,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        ).returncode == 0
+        closure_is_ancestor = subprocess.run(
+            ["git", "merge-base", "--is-ancestor", closure_commit, "HEAD"],
+            cwd=ROOT,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        ).returncode == 0
+        closure_parent = subprocess.run(
+            ["git", "rev-parse", f"{closure_commit}^"],
+            cwd=ROOT,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        ).stdout.strip()
+        if not closure_exists or not closure_is_ancestor or closure_parent != checkpoint_commit:
+            out.append("completed WIP checkpoint closure is absent or not the checkpoint's direct child")
     closure = wip.get("checkpoint_closure", {})
     if closure.get("attestation_state") != "passes_against_checkpoint_commit_objects":
         out.append("completed WIP checkpoint lacks passing committed-object attestation state")
     if closure.get("dependent_artifact_reality_state") != "passes":
         out.append("completed WIP checkpoint lacks passing dependent Artifact Reality state")
-    if closure.get("expected_worktree_state_after_closure_commit") != "clean" or closure.get("external_actions_authorized") is not False:
+    if closure.get("closure_commit_parent_is_checkpoint_commit") is not True:
+        out.append("completed WIP checkpoint parent/closure assertion drifted")
+    if closure.get("worktree_was_clean_after_closure_commit") is not True or closure.get("external_actions_authorized") is not False:
         out.append("completed WIP checkpoint closure boundary drifted")
     if wip.get("support_state_effect") != "none" or wip.get("release_effect") != "none":
         out.append("WIP checkpoint invented support or release effect")

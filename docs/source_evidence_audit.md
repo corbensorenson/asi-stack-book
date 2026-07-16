@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 55 |
-| Assigned source/chapter pairs | 812 |
-| Exact claim-source mappings | 809 |
+| Assigned source/chapter pairs | 813 |
+| Exact claim-source mappings | 810 |
 | Unmapped assigned pairs | 3 |
-| Source notes present for assigned pairs | 812 |
-| Source notes listing assigned chapter | 812 |
-| Passage-reviewed mappings recorded | 809 |
+| Source notes present for assigned pairs | 813 |
+| Source notes listing assigned chapter | 813 |
+| Passage-reviewed mappings recorded | 810 |
 | Support-state counts | {"argument": 55} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -63,7 +63,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `inter-stack-protocols-identity-and-economic-exchange` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
 | `procedural-memory-and-cognitive-loop-closure` | 18 | 18 | 18 | 18 | 18 | argument | eligible for support review |
 | `routing-heads-and-specialist-cores` | 17 | 17 | 17 | 17 | 17 | argument | eligible for support review |
-| `replaceable-cognitive-substrates-beyond-transformer-monoculture` | 33 | 33 | 33 | 33 | 33 | argument | eligible for support review |
+| `replaceable-cognitive-substrates-beyond-transformer-monoculture` | 34 | 34 | 34 | 34 | 34 | argument | eligible for support review |
 | `readiness-gates-residual-escrow-and-quarantine` | 17 | 17 | 17 | 17 | 17 | argument | eligible for support review |
 | `personal-compute-hives-and-federated-edge-intelligence` | 23 | 23 | 23 | 23 | 23 | argument | eligible for support review |
 | `compact-generative-systems-and-residual-honesty` | 17 | 17 | 17 | 17 | 17 | argument | eligible for support review |
@@ -285,6 +285,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_hyperscale_lottery_2026` | 1 | yes |
 | `ext_gated_deltanet_2024` | 1 | yes |
 | `ext_jamba_2024` | 1 | yes |
+| `ext_inkling_2026` | 1 | yes |
 | `ext_neural_message_passing_2017` | 1 | yes |
 | `ext_hyena_hierarchy_2023` | 1 | yes |
 | `ext_rwkv_2023` | 1 | yes |
@@ -788,6 +789,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_hyperscale_lottery_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_gated_deltanet_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_jamba_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_inkling_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_neural_message_passing_2017` | mapped | note present | chapter listed | passage-reviewed |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_hyena_hierarchy_2023` | mapped | note present | chapter listed | passage-reviewed |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_rwkv_2023` | mapped | note present | chapter listed | passage-reviewed |

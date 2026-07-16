@@ -10990,6 +10990,7 @@
             "ext_hyperscale_lottery_2026",
             "ext_gated_deltanet_2024",
             "ext_jamba_2024",
+            "ext_inkling_2026",
             "ext_neural_message_passing_2017",
             "ext_hyena_hierarchy_2023",
             "ext_rwkv_2023",
@@ -11031,6 +11032,7 @@
               "ext_hyperscale_lottery_2026",
               "ext_gated_deltanet_2024",
               "ext_jamba_2024",
+              "ext_inkling_2026",
               "ext_neural_message_passing_2017",
               "ext_hyena_hierarchy_2023",
               "ext_rwkv_2023",
@@ -11196,6 +11198,18 @@
                 "arXiv:2403.19887, Abstract and architecture sections"
               ],
               "passage_review_note": "Primary source or author-supplied design input was reviewed for this bounded contribution and its limits. No local implementation, reproduction, superiority, safety, deployment, or support-state movement is inferred.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_inkling_2026",
+              "mapped_support": "Provides a current released hybrid-topology case: sparse MoE, a five-local-to-one-global attention schedule, relative positional features, short convolutions, multimodal encoders, controllable effort, and explicit active/total/hardware disclosures inside one Transformer family.",
+              "limits": "Provider-reported architecture and evaluations are not locally reproduced; no published ablation isolates sliding attention, MoE, relative position, convolution, scale, data, or RL, and open weights do not erase the reported 600 GB to 2 TB VRAM access boundary.",
+              "passage_refs": [
+                "Thinking Machines Lab release, Architecture, Training, RL at scale, and Inkling-Small sections, reviewed 2026-07-15",
+                "Thinking Machines Lab Inkling model card, Model properties, distribution, safety, and limitations, reviewed 2026-07-15",
+                "Hugging Face thinkingmachines/Inkling config.json, reviewed 2026-07-15"
+              ],
+              "passage_review_note": "Reviewed the primary release, official model card, and released configuration for topology, context, numerics, hardware, effort-control, safety, and evaluation boundaries; no weights, inference, training, benchmark, ablation, deployment, or support-state result is imported.",
               "passage_review_state": "reviewed"
             },
             {

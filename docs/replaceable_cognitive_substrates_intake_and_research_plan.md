@@ -116,7 +116,7 @@ interface.
 | Learned edge functions | KANs | Are gains specific to low-dimensional symbolic/scientific tasks, splines, initialization, or unfair parameter/FLOP accounting? |
 | Graph and relational processors | Message Passing Neural Networks and neural algorithmic reasoning | Can typed relational state extrapolate in size/topology without hiding answer-bearing retrieval? |
 | Program/library learning | DreamCoder, Stitch, exact interpreters | Does verified abstraction reduce held-out future search rather than rename traces? |
-| Hybrid portfolios | Jamba-class attention–SSM–MoE, neural–symbolic, reflex/reaction/deliberation mixtures | Does composition improve the joint utility/cost/safety frontier or only multiply routing and verification burden? |
+| Hybrid portfolios | Jamba-class attention–SSM–MoE; Inkling-class local/global-attention–MoE–convolution stacks; neural–symbolic; reflex/reaction/deliberation mixtures | Does composition improve the joint utility/cost/safety frontier or only multiply routing, component-credit, hardware, and verification burden? |
 
 ## Primary-source intake already located
 
@@ -138,6 +138,8 @@ These are research candidates, not yet local reproductions or chapter support.
   <https://arxiv.org/abs/2412.06464>
 - Lieber et al., *Jamba: A Hybrid Transformer-Mamba Language Model* (2024):
   <https://arxiv.org/abs/2403.19887>
+- Thinking Machines Lab, *Inkling: Our open-weights model* (2026), already
+  inventoried as `ext_inkling_2026`: <https://thinkingmachines.ai/news/introducing-inkling/>
 - Gilmer et al., *Neural Message Passing for Quantum Chemistry* (2017):
   <https://arxiv.org/abs/1704.01212>
 - Poli et al., *Hyena Hierarchy* (2023):
