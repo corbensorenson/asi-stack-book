@@ -84,6 +84,9 @@ ROUTING_DOSSIER = "evidence_quality/model_adequacy_dossiers/routing-refinement.m
 SAFETY_CASE_RESULT = "experiments/safety_case_refinement/results/2026-07-15-local.json"
 SAFETY_CASE_RECEIPT = "docs/safety_case_refinement.md"
 SAFETY_CASE_DOSSIER = "evidence_quality/model_adequacy_dossiers/safety-case-refinement.md"
+CAPABILITY_THRESHOLD_RESULT = "experiments/capability_threshold_refinement/results/2026-07-15-local.json"
+CAPABILITY_THRESHOLD_RECEIPT = "docs/capability_threshold_refinement.md"
+CAPABILITY_THRESHOLD_DOSSIER = "evidence_quality/model_adequacy_dossiers/capability-threshold-refinement.md"
 READINESS_RESULT = "experiments/readiness_refinement/results/2026-07-15-local.json"
 READINESS_RECEIPT = "docs/readiness_refinement.md"
 READINESS_DOSSIER = "evidence_quality/model_adequacy_dossiers/readiness-refinement.md"
@@ -254,6 +257,9 @@ def snapshot() -> dict:
         "safety_case_result": load(SAFETY_CASE_RESULT),
         "safety_case_receipt": text(SAFETY_CASE_RECEIPT),
         "safety_case_dossier": text(SAFETY_CASE_DOSSIER),
+        "capability_threshold_result": load(CAPABILITY_THRESHOLD_RESULT),
+        "capability_threshold_receipt": text(CAPABILITY_THRESHOLD_RECEIPT),
+        "capability_threshold_dossier": text(CAPABILITY_THRESHOLD_DOSSIER),
         "readiness_result": load(READINESS_RESULT),
         "readiness_receipt": text(READINESS_RECEIPT),
         "readiness_dossier": text(READINESS_DOSSIER),
@@ -1084,8 +1090,8 @@ def errors(data: dict) -> list[str]:
 
     expected_claim_ledger_contract = {
         "current_missing_or_changed_theorem_count":296,
-        "current_missing_or_changed_target_count":131,
-        "current_live_theorem_declaration_count":1253,
+        "current_missing_or_changed_target_count":139,
+        "current_live_theorem_declaration_count":1265,
         "current_live_proof_target_count":298,
         "claim_ledger_model_path":"lean/AsiStackProofs/ClaimLedgerRefinement.lean",
         "claim_ledger_dossier_path":CLAIM_LEDGER_DOSSIER,
@@ -1337,6 +1343,32 @@ def errors(data: dict) -> list[str]:
     safety_case_chapter=next((row for row in structure_rows if row.get("id")=="safety-cases-and-structured-assurance"),{})
     if {row.get("module") for row in safety_case_chapter.get("proof_targets",[])}!={"AsiStackProofs.SafetyCaseRefinement"}:
         out.append("Safety Case public targets do not all resolve to refinement")
+
+    expected_capability_threshold_contract={
+        "capability_threshold_model_path":"lean/AsiStackProofs/CapabilityThresholdRefinement.lean",
+        "capability_threshold_dossier_path":CAPABILITY_THRESHOLD_DOSSIER,
+        "capability_threshold_consumer_path":CAPABILITY_THRESHOLD_RECEIPT,
+        "capability_threshold_result_path":CAPABILITY_THRESHOLD_RESULT,
+        "capability_threshold_state":"validated_finite_authored_repeated_assessment_lifecycle_not_capability_valid_or_deployed",
+        "capability_threshold_inherited_case_count":8,"capability_threshold_reachable_stage_count":6,
+        "capability_threshold_route_case_count":43,"capability_threshold_mutation_rejection_count":48,
+        "capability_threshold_retained_legacy_theorem_count":8,"capability_threshold_readiness_handoff_count":1,
+        "capability_threshold_reassessment_count":1,"capability_threshold_support_state_effect":"none"}
+    for key,value in expected_capability_threshold_contract.items():
+        if proof_contract.get(key)!=value: out.append(f"capability-threshold contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    capability_threshold=data["capability_threshold_result"]
+    for key,value in {"reachable_stage_count":6,"route_case_count":43,"mutation_count":48,
+                      "mutation_rejection_count":48,"support_state_effect":"none"}.items():
+        if capability_threshold.get(key)!=value: out.append(f"capability-threshold result drifted: {key}")
+    if capability_threshold.get("input_suite")!={"suite_id":"capability_threshold_commitment","case_count":8,"passed_count":8}:
+        out.append("capability-threshold inherited-suite counts drifted")
+    for phrase in ["six-stage lifecycle", "all 43 routes", "48/48", "Support-state effect is exactly `none`"]:
+        if phrase.casefold() not in data["capability_threshold_receipt"].casefold(): out.append(f"capability-threshold receipt missing exact boundary: {phrase}")
+    for phrase in ["Six stages", "Forty-three routes", "Inadequate for capability measurement", "Support-state effect: exactly `none`"]:
+        if phrase.casefold() not in data["capability_threshold_dossier"].casefold(): out.append(f"capability-threshold dossier missing adequacy boundary: {phrase}")
+    capability_threshold_chapter=next((row for row in structure_rows if row.get("id")=="capability-thresholds-and-deployment-commitments"),{})
+    if {row.get("module") for row in capability_threshold_chapter.get("proof_targets",[])}!={"AsiStackProofs.CapabilityThresholdRefinement"}:
+        out.append("Capability Threshold public targets do not all resolve to refinement")
 
     expected_readiness_contract={
         "readiness_model_path":"lean/AsiStackProofs/ReadinessRefinement.lean","readiness_dossier_path":READINESS_DOSSIER,
@@ -1737,6 +1769,10 @@ def main() -> None:
     safety_case_support["safety_case_result"]["support_state_effect"] = "prototype-backed"
     mutations.append(("safety-case support laundering", safety_case_support))
 
+    capability_threshold_support = copy.deepcopy(base)
+    capability_threshold_support["capability_threshold_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("capability-threshold support laundering", capability_threshold_support))
+
     readiness_support = copy.deepcopy(base)
     readiness_support["readiness_result"]["support_state_effect"] = "prototype-backed"
     mutations.append(("readiness support laundering", readiness_support))
@@ -1803,7 +1839,7 @@ def main() -> None:
         "55 live chapter-core programs across CF-01..CF-08 with a frozen 54-chapter activation baseline, exact proof/evidence/reader baseline, "
         "proof rationalization and argument-exit contracts, maintained X Article and exact 5:2 header contract, "
         "no support or release effect, no external-human gate, same-transaction successor continuity, "
-        "validated shared-safety, Cognitive Kernel ABI, integrated reference trace, concrete-schema refinement, concurrent effect, reachable stack-boundary, Intent-to-Execution vertical, Authority grant-to-effect, Human Intent resolution, Command semantic-interface, Cognitive Compilation obligation-refinement, Virtual Context binding/materialization/fault, Context Certificate provenance/lifecycle, Context Transaction snapshot/store, Verification Bandwidth evidence-gate, Claim Ledger append-only, Proof-Carrying Claims target-to-writeback, Tribunal versioned-verdict/appeal, Typed Job versioned execution/closure, Artifact record-reality/trust, Procedural Memory promotion/retirement, Routing/MoECOT request-to-closure, Safety Case readiness/invalidation, Readiness candidate-to-terminal, Hive policy-to-closure, Compact Generation source-to-closure, Fast Generation request-to-closure, Governed Deliberation request-to-closure, Artifact Compression artifact-to-consumption, and Resource Economics allocation-and-simulation-transport receipts, bounded WIP and first-campaign/SOTA entry gates, and 49 rejecting mutations."
+        "validated shared-safety, Cognitive Kernel ABI, integrated reference trace, concrete-schema refinement, concurrent effect, reachable stack-boundary, Intent-to-Execution vertical, Authority grant-to-effect, Human Intent resolution, Command semantic-interface, Cognitive Compilation obligation-refinement, Virtual Context binding/materialization/fault, Context Certificate provenance/lifecycle, Context Transaction snapshot/store, Verification Bandwidth evidence-gate, Claim Ledger append-only, Proof-Carrying Claims target-to-writeback, Tribunal versioned-verdict/appeal, Typed Job versioned execution/closure, Artifact record-reality/trust, Procedural Memory promotion/retirement, Routing/MoECOT request-to-closure, Safety Case readiness/invalidation, Capability Threshold repeated assessment, Readiness candidate-to-terminal, Hive policy-to-closure, Compact Generation source-to-closure, Fast Generation request-to-closure, Governed Deliberation request-to-closure, Artifact Compression artifact-to-consumption, and Resource Economics allocation-and-simulation-transport receipts, bounded WIP and first-campaign/SOTA entry gates, and 50 rejecting mutations."
     )
 
 

@@ -17380,69 +17380,74 @@
             "Rollback, recovery, blocked-path alternatives, monitoring, or residual custody is infeasible when the commitment triggers.",
             "Historical policy prestige or sunk cost prevents re-evaluation, narrowing, revocation, refutation, or retirement after evidence changes."
           ],
-          "minimal_implementation": "The exact current minimum is one digest-bound synthetic threshold-commitment result containing eight valid modeled records and five rejecting mutations, plus eight local CapabilityThresholds declarations that route crossed and non-crossed records, missing evaluation scope, baseline, uncertainty, residual custody, safeguard records, and safeguard verification. It runs no model, capability task, time-horizon suite, dangerous-capability profile, human baseline, real safeguard, bypass test, exception review, independent verifier, readiness service, release process, deployment, incident response, reproduction, transfer, chapter-core transition, or SOTA comparison.",
+          "minimal_implementation": "The exact current minimum preserves eight digest-bound commitment cases in a six-stage, 43-route repeated-assessment lifecycle with 48/48 rejecting mutations, twelve CapabilityThresholdRefinement declarations, one readiness handoff, and one version-2 reassessment witness. It runs no model, capability task, time-horizon suite, dangerous-capability profile, human baseline, real safeguard, bypass test, exception review, independent verifier, deployed invalidation, readiness service, release process, deployment, incident response, reproduction, transfer, chapter-core transition, or SOTA comparison.",
           "beyond_state_of_art": "The mature Capability-to-Deployment Commitment Control Plane runs domain-specific natural and adversarial assessments under versioned evaluation envelopes, precommits typed crossing/non-crossing/incomparable/stale responses, independently exercises safeguard completion, efficacy, bypass, degradation, rollback and recovery, governs prospective exceptions and cumulative portfolios, measures false clearance, false block, stale acceptance, latency, burden, cost and residual age, and automatically re-evaluates on model, scaffold, access, elicitation, threat, safeguard, policy, incident or time change. It requires independent institutions and transfer before broadening any commitment and preserves narrow, null, contested, revoked, retired, or blocked-after-full-attempt outcomes rather than optimizing threshold crossings or green release labels.",
           "draft_maturity": "v0.2 depth-leveled chapter",
           "open_evidence_gaps": [
             "No ASI Stack capability assessment, time-horizon task suite, human baseline, dangerous-capability profile, threshold crossing, safeguard verification, exception review, release decision, or deployment result has been run.",
             "No local result establishes threshold validity, metric comparability, capability level, time horizon, general autonomy, safeguard efficacy, residual-risk reduction, readiness, safety, or authority to deploy.",
-            "The eight Lean routes and digest-bound fixture establish only structured-record consequences; they do not establish that the threshold, assessment, safeguard, exception, reviewer, readiness decision, or institution is correct.",
-            "Run the prospectively frozen public-safe repeated assessment and mock-safeguard campaign before considering empirical support movement."
+            "The six-stage lifecycle, 43-route consumer, and 48 rejecting mutations establish only structured repeated-assessment record consequences; they do not establish that the threshold, assessment, evaluator, safeguard, bypass test, rollback plan, exception, invalidation, readiness decision, or institution is correct or effective.",
+            "Run the prospectively frozen natural/adversarial assessment and exercised-safeguard campaign before considering empirical support movement."
           ],
           "codex_tests": [
             "Crossed-threshold safeguard-completeness route",
             "Stale or incomparable assessment residual fixture",
             "Exception-expiry and compensating-control negative control",
-            "Matched threshold-commitment workload"
+            "Matched threshold-commitment workload",
+            {
+              "name": "Capability-threshold repeated-assessment refinement",
+              "implementation_status": "implemented",
+              "result_status": "passes the exact eight-case suite, 43 routes, six reachable stages, and 48/48 rejecting mutations; one readiness handoff returns to scoped assessment only through version-2 reassessment; support/effect none; no capability, threshold-validity, evaluator-independence, safeguard-efficacy, exception, readiness, deployed-invalidation, transfer, or support claim"
+            }
           ],
-          "lean_module": "AsiStackProofs.CapabilityThresholds",
+          "lean_module": "AsiStackProofs.CapabilityThresholds; AsiStackProofs.CapabilityThresholdRefinement",
           "proof_targets": [
             {
               "tag": "lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release",
-              "module": "AsiStackProofs.CapabilityThresholds",
-              "target": "A finite threshold-commitment record with a crossed scoped threshold and missing verified safeguards routes the affected release path to block rather than release, without inferring capability level, safeguard efficacy, safety, readiness, or ASI.",
+              "module": "AsiStackProofs.CapabilityThresholdRefinement",
+              "target": "A crossed-threshold lifecycle cannot reach control completion without a safeguard package, verifier, bypass test, and rollback plan.",
               "status": "implemented"
             },
             {
               "tag": "lean:capability_thresholds.missing_evaluation_envelope.requires_reevaluation",
-              "module": "AsiStackProofs.CapabilityThresholds",
-              "target": "Missing evaluation scope routes to re-evaluation.",
+              "module": "AsiStackProofs.CapabilityThresholdRefinement",
+              "target": "Missing evaluation envelope, elicitation, baseline, uncertainty, independent-evaluator, or assessment-result custody blocks assessment.",
               "status": "implemented"
             },
             {
               "tag": "lean:capability_thresholds.complete_crossed.reaches_readiness_review",
-              "module": "AsiStackProofs.CapabilityThresholds",
-              "target": "A complete crossed record reaches readiness review, not deployment.",
+              "module": "AsiStackProofs.CapabilityThresholdRefinement",
+              "target": "A fully recorded crossed-threshold assessment can emit only a readiness handoff after control, monitoring, residual, authority, and release-path custody.",
               "status": "implemented"
             },
             {
               "tag": "lean:capability_thresholds.complete_non_crossing.reaches_readiness_review",
-              "module": "AsiStackProofs.CapabilityThresholds",
-              "target": "A complete non-crossing reaches readiness review without becoming general clearance.",
+              "module": "AsiStackProofs.CapabilityThresholdRefinement",
+              "target": "A recorded non-crossing may bypass crossed-only safeguard gates but still requires monitoring, residual, authority, and release-path custody before readiness review.",
               "status": "implemented"
             },
             {
               "tag": "lean:capability_thresholds.missing_baseline.requires_reevaluation",
-              "module": "AsiStackProofs.CapabilityThresholds",
-              "target": "Missing baseline routes to re-evaluation.",
+              "module": "AsiStackProofs.CapabilityThresholdRefinement",
+              "target": "Missing baseline blocks the scoped-to-assessed transition without mutating threshold state.",
               "status": "implemented"
             },
             {
               "tag": "lean:capability_thresholds.missing_uncertainty.requires_reevaluation",
-              "module": "AsiStackProofs.CapabilityThresholds",
-              "target": "Missing uncertainty routes to re-evaluation.",
+              "module": "AsiStackProofs.CapabilityThresholdRefinement",
+              "target": "Missing assessment or decision uncertainty blocks lifecycle progress without converting absence into a non-crossing.",
               "status": "implemented"
             },
             {
               "tag": "lean:capability_thresholds.missing_residual_owner.requires_exception",
-              "module": "AsiStackProofs.CapabilityThresholds",
-              "target": "Missing residual custody routes to accountable exception.",
+              "module": "AsiStackProofs.CapabilityThresholdRefinement",
+              "target": "Missing residual ownership blocks adjudication or readiness; an exception additionally requires owner, expiry, compensating controls, and a review trigger.",
               "status": "implemented"
             },
             {
               "tag": "lean:capability_thresholds.crossed.missing_safeguard_record.blocks_release",
-              "module": "AsiStackProofs.CapabilityThresholds",
-              "target": "A crossed threshold without its required safeguard record blocks the affected release.",
+              "module": "AsiStackProofs.CapabilityThresholdRefinement",
+              "target": "A crossed threshold without the complete safeguard-verification envelope remains blocked, while later envelope change requires descendant invalidation and a successor assessment version.",
               "status": "implemented"
             }
           ]

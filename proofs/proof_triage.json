@@ -2713,82 +2713,82 @@
     {
       "tag": "lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release",
       "chapter_id": "capability-thresholds-and-deployment-commitments",
-      "module": "AsiStackProofs.CapabilityThresholds",
-      "formal_target": "A finite threshold-commitment record with a crossed scoped threshold and missing verified safeguards routes the affected release path to block rather than release, without inferring capability level, safeguard efficacy, safety, readiness, or ASI.",
+      "module": "AsiStackProofs.CapabilityThresholdRefinement",
+      "formal_target": "A crossed-threshold lifecycle cannot reach control completion without a safeguard package, verifier, bypass test, and rollback plan.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.CapabilityThresholds as a finite safeguard-completeness boundary, with a companion missing-evaluation-envelope route. It does not establish assessment correctness, threshold adequacy, safeguard efficacy, reviewer correctness, capability level, readiness, safety, authority, or ASI."
+      "rationale": "Reachable repeated-assessment lifecycle with exact custody, safeguard/exception boundaries, successor-version reassessment, 43 routes, 48 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:capability_thresholds.missing_evaluation_envelope.requires_reevaluation",
       "chapter_id": "capability-thresholds-and-deployment-commitments",
-      "module": "AsiStackProofs.CapabilityThresholds",
-      "formal_target": "Missing evaluation scope routes to re-evaluation.",
+      "module": "AsiStackProofs.CapabilityThresholdRefinement",
+      "formal_target": "Missing evaluation envelope, elicitation, baseline, uncertainty, independent-evaluator, or assessment-result custody blocks assessment.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite scope routing only; it does not establish evaluator validity."
+      "rationale": "Reachable repeated-assessment lifecycle with exact custody, safeguard/exception boundaries, successor-version reassessment, 43 routes, 48 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:capability_thresholds.complete_crossed.reaches_readiness_review",
       "chapter_id": "capability-thresholds-and-deployment-commitments",
-      "module": "AsiStackProofs.CapabilityThresholds",
-      "formal_target": "A complete crossed record reaches readiness review, not deployment.",
+      "module": "AsiStackProofs.CapabilityThresholdRefinement",
+      "formal_target": "A fully recorded crossed-threshold assessment can emit only a readiness handoff after control, monitoring, residual, authority, and release-path custody.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite handoff only; it does not establish readiness or authority."
+      "rationale": "Reachable repeated-assessment lifecycle with exact custody, safeguard/exception boundaries, successor-version reassessment, 43 routes, 48 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:capability_thresholds.complete_non_crossing.reaches_readiness_review",
       "chapter_id": "capability-thresholds-and-deployment-commitments",
-      "module": "AsiStackProofs.CapabilityThresholds",
-      "formal_target": "A complete non-crossing reaches readiness review without becoming general clearance.",
+      "module": "AsiStackProofs.CapabilityThresholdRefinement",
+      "formal_target": "A recorded non-crossing may bypass crossed-only safeguard gates but still requires monitoring, residual, authority, and release-path custody before readiness review.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite non-crossing routing only; it does not establish safety."
+      "rationale": "Reachable repeated-assessment lifecycle with exact custody, safeguard/exception boundaries, successor-version reassessment, 43 routes, 48 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:capability_thresholds.missing_baseline.requires_reevaluation",
       "chapter_id": "capability-thresholds-and-deployment-commitments",
-      "module": "AsiStackProofs.CapabilityThresholds",
-      "formal_target": "Missing baseline routes to re-evaluation.",
+      "module": "AsiStackProofs.CapabilityThresholdRefinement",
+      "formal_target": "Missing baseline blocks the scoped-to-assessed transition without mutating threshold state.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite baseline routing only; it does not establish comparability."
+      "rationale": "Reachable repeated-assessment lifecycle with exact custody, safeguard/exception boundaries, successor-version reassessment, 43 routes, 48 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:capability_thresholds.missing_uncertainty.requires_reevaluation",
       "chapter_id": "capability-thresholds-and-deployment-commitments",
-      "module": "AsiStackProofs.CapabilityThresholds",
-      "formal_target": "Missing uncertainty routes to re-evaluation.",
+      "module": "AsiStackProofs.CapabilityThresholdRefinement",
+      "formal_target": "Missing assessment or decision uncertainty blocks lifecycle progress without converting absence into a non-crossing.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite uncertainty routing only; it does not establish calibration."
+      "rationale": "Reachable repeated-assessment lifecycle with exact custody, safeguard/exception boundaries, successor-version reassessment, 43 routes, 48 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:capability_thresholds.missing_residual_owner.requires_exception",
       "chapter_id": "capability-thresholds-and-deployment-commitments",
-      "module": "AsiStackProofs.CapabilityThresholds",
-      "formal_target": "Missing residual custody routes to accountable exception.",
+      "module": "AsiStackProofs.CapabilityThresholdRefinement",
+      "formal_target": "Missing residual ownership blocks adjudication or readiness; an exception additionally requires owner, expiry, compensating controls, and a review trigger.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite custody routing only; it does not establish residual completeness."
+      "rationale": "Reachable repeated-assessment lifecycle with exact custody, safeguard/exception boundaries, successor-version reassessment, 43 routes, 48 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:capability_thresholds.crossed.missing_safeguard_record.blocks_release",
       "chapter_id": "capability-thresholds-and-deployment-commitments",
-      "module": "AsiStackProofs.CapabilityThresholds",
-      "formal_target": "A crossed threshold without its required safeguard record blocks the affected release.",
+      "module": "AsiStackProofs.CapabilityThresholdRefinement",
+      "formal_target": "A crossed threshold without the complete safeguard-verification envelope remains blocked, while later envelope change requires descendant invalidation and a successor assessment version.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite safeguard-record routing only; it does not establish safeguard efficacy."
+      "rationale": "Reachable repeated-assessment lifecycle with exact custody, safeguard/exception boundaries, successor-version reassessment, 43 routes, 48 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:scalable_oversight.high_risk.missing_outcome_audit_blocks_admission",

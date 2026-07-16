@@ -13,7 +13,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "All six assigned sources have exact passage-reviewed mappings, but no comparator policy, assessment, task, threshold, safeguard, or deployment result is imported as local evidence."
-  - "The exact local evidence is eight valid synthetic commitment records, five rejecting mutations, eight finite route declarations, and no support effect. No model, capability assessment, real safeguard, exception, independent verification, readiness service, release, deployment, reproduction, or transfer ran."
+  - "The exact local evidence is the inherited eight-case suite, a six-stage/43-route repeated-assessment consumer, 48/48 rejecting mutations, twelve refinement declarations, one readiness handoff, one version-2 reassessment, and no support/effect assignment. No model, capability assessment, real safeguard, bypass or rollback exercise, exception process, deployed invalidation, independent verification, readiness service, release, deployment, reproduction, or transfer ran."
   - "Argument exit requires natural and adversarial domain assessments, prospective policy freezing, complete assessment and decision denominators, real safeguard implementation and independent exercise, exception and portfolio governance, false-clear/false-block and latency/cost measurement, rollback/recovery, institutional reproduction, transfer, and exact release-path transitions."
 ---
 
@@ -29,7 +29,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Time-horizon and published-policy comparators are source-noted; no local evaluation, policy audit, or deployment process has been reproduced. |
-| Test state | A finite safeguard-completeness routing theorem is implemented. No threshold assessment, safeguard verification, exception review, or release process has run. |
+| Test state | A six-stage repeated-assessment model preserves the eight-case suite, covers 43 routes, and rejects 48/48 mutations with no support/effect assignment. No threshold assessment, safeguard exercise, deployed invalidation, exception review, or release process has run. |
 
 ## Drafting guardrail
 
@@ -544,11 +544,12 @@ slice would add matched synthetic records for a clear crossing, stale coverage,
 incomparable elicitation, expired exception, missing safeguard verification,
 and an attempted release, each with a visible residual and no capability claim.
 
-The exact current minimum is one digest-bound synthetic result containing eight
-valid modeled commitment records and five rejecting mutations, plus eight local
-CapabilityThresholds declarations that route crossed and non-crossed records,
-missing evaluation scope, baseline, uncertainty, residual custody, safeguard
-records, and safeguard verification. It runs no model, capability task,
+The exact current minimum preserves the eight digest-bound commitment cases but
+now consumes them through a six-stage, 43-route repeated-assessment lifecycle
+with 48/48 rejecting mutations. Twelve local
+`CapabilityThresholdRefinement` declarations check rejection without mutation,
+one-receipt accepted advancement, zero support/effect assignment, eight bounded
+countermodels, and a readiness-to-version-2 reassessment witness. It runs no model, capability task,
 time-horizon suite, dangerous-capability profile, human baseline, real
 safeguard, bypass test, exception review, independent verifier, readiness
 service, release process, deployment, incident response, reproduction,
@@ -612,38 +613,43 @@ green readiness handoffs are non-terminal.
 |---|---|---|
 | Crossed-threshold safeguard-completeness route | Ensure a requested affected release with a crossed threshold and missing verified safeguards routes to block. | Implemented in the eight-case Lean/JSON bridge. |
 | Stale or incomparable assessment fixture | Route incomplete, stale, or under-elicited assessment records to re-evaluation or residual custody. | Finite missing-envelope/baseline/uncertainty controls implemented; no assessment harness ran. |
-| Exception-expiry negative control | Reject an exception with no review trigger, compensating control, or residual owner. | Planned. |
+| Exception-expiry negative control | Reject an exception with no expiry, review trigger, compensating control, or residual owner. | Implemented as independently encoded lifecycle routes and mutations; no real exception process ran. |
+| Versioned reassessment and invalidation route | After one readiness handoff, require a named trigger, descendant invalidation, ordinary-route blocking, and a successor assessment version before returning to assessment. | Implemented in the six-stage witness; no deployed dependency graph or invalidation service ran. |
 | Matched threshold-commitment workload | Exercise domain-scoped synthetic commitments with baseline, uncertainty, safeguard, exception, and release-path records. | Planned; no workload has run. |
 
 ## Formalization hooks
 
 | Tag | Status | Scope |
 |---|---|---|
-| `lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release` | implemented | A finite crossed scoped threshold with missing verified safeguards routes its requested affected release to block. |
-| `lean:capability_thresholds.missing_evaluation_envelope.requires_reevaluation` | implemented | Missing evaluation scope routes to re-evaluation. |
-| `lean:capability_thresholds.complete_crossed.reaches_readiness_review` | implemented | A complete crossed record reaches readiness review, not deployment. |
-| `lean:capability_thresholds.complete_non_crossing.reaches_readiness_review` | implemented | A complete scoped non-crossing reaches readiness review without becoming clearance. |
-| `lean:capability_thresholds.missing_baseline.requires_reevaluation` | implemented | Missing baseline routes to re-evaluation. |
-| `lean:capability_thresholds.missing_uncertainty.requires_reevaluation` | implemented | Missing uncertainty routes to re-evaluation. |
-| `lean:capability_thresholds.missing_residual_owner.requires_exception` | implemented | Missing residual custody routes to accountable exception. |
-| `lean:capability_thresholds.crossed.missing_safeguard_record.blocks_release` | implemented | A crossed threshold without the required safeguard record blocks the path. |
+| `lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release` | implemented | A crossed lifecycle cannot complete control without the safeguard package, verifier, bypass test, and rollback plan. |
+| `lean:capability_thresholds.missing_evaluation_envelope.requires_reevaluation` | implemented | Missing envelope, elicitation, baseline, uncertainty, independent-evaluator, or result custody blocks assessment. |
+| `lean:capability_thresholds.complete_crossed.reaches_readiness_review` | implemented | A fully recorded crossing emits only a readiness handoff after control, monitoring, residual, authority, and path custody. |
+| `lean:capability_thresholds.complete_non_crossing.reaches_readiness_review` | implemented | A non-crossing bypasses crossed-only safeguards but still requires monitoring, residual, authority, and path custody. |
+| `lean:capability_thresholds.missing_baseline.requires_reevaluation` | implemented | Missing baseline blocks assessment without mutating threshold state. |
+| `lean:capability_thresholds.missing_uncertainty.requires_reevaluation` | implemented | Missing assessment or decision uncertainty blocks progress without becoming a non-crossing. |
+| `lean:capability_thresholds.missing_residual_owner.requires_exception` | implemented | Missing residual ownership blocks adjudication/readiness; exceptions also require owner, expiry, compensating controls, and review trigger. |
+| `lean:capability_thresholds.crossed.missing_safeguard_record.blocks_release` | implemented | A crossing without the complete safeguard envelope remains blocked; later envelope change requires invalidation and a successor version. |
 
-These eight finite routes and the digest-bound fixture do not prove an assessment's correctness, a
-threshold's adequacy, safeguard efficacy, reviewer independence, readiness,
-safety, or authority. It only preserves the bounded record rule that missing
-required verification cannot coexist with release on the affected path.
+The public tags now resolve to `AsiStackProofs.CapabilityThresholdRefinement`.
+Its reachable model binds exact capability, system, policy, release path,
+evaluation envelope, threshold, baseline, evaluator, safeguard, authority,
+residual, and assessment-version identity across draft, scoped, assessed,
+adjudicated, controlled, and readiness-bound stages. The independent consumer
+preserves the original eight cases, covers all 43 routes, rejects all 48
+registered mutations, emits one bounded readiness handoff, and then requires
+trigger, descendant-invalidation, ordinary-route-block, and version-2 records
+before returning to scoped assessment. The witness assigns neither support nor
+an external effect.
 
-The formal audit classifies all eight declarations as derived finite reductions
-of one hand-authored `ThresholdCommitmentRouteFor` decision tree. They cover a
-crossing without safeguard verification, missing envelope, complete crossing,
-complete non-crossing, missing baseline, missing uncertainty, missing residual
-owner, and missing safeguard record. They do not prove threshold validity,
-measurement comparability, completeness of the decision tree, temporal or
-concurrent policy semantics, safeguard efficacy, exception governance,
-institutional compliance, readiness, safety, deployment, reproduction, or
-transfer. Useful future proof work must model versioned temporal commitments,
-non-bypass, portfolio interaction, revocation, rollback/recovery liveness, and
-implementation refinement; assessment and safeguard efficacy remain empirical.
+This is adequate only for that finite authored record discipline. Every
+identifier, Boolean, assessment result, threshold decision, evaluator label,
+safeguard record, bypass result, rollback plan, exception record, invalidation
+assertion, and authority field is trusted input. The model does not prove
+capability measurement, threshold validity or crossing, evaluator independence,
+safeguard/bypass/rollback efficacy, exception legitimacy, deployed invalidation,
+portfolio interaction, institutional compliance, readiness, safety, release,
+reproduction, or transfer. Those behavioral and empirical claims remain in the
+prospectively frozen campaign.
 
 ## Source crosswalk
 

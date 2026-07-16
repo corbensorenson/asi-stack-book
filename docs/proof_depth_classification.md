@@ -13,11 +13,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 298 |
-| Lean modules scanned | 91 |
-| Theorem declarations classified | 1253 |
-| Direct/projection-style theorem declarations | 214 |
-| Derived/decomposed theorem declarations | 885 |
-| Unknown or mixed theorem declarations | 154 |
+| Lean modules scanned | 92 |
+| Theorem declarations classified | 1265 |
+| Direct/projection-style theorem declarations | 222 |
+| Derived/decomposed theorem declarations | 888 |
+| Unknown or mixed theorem declarations | 155 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -63,6 +63,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | system-boundaries-and-authority | 2 | 12 | 0 | 4 | 8 | manual review |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 3 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | open-research-agenda-and-bibliography-plan | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | unmapped | 0 | 12 | 8 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CapabilityThresholds.lean` | capability-thresholds-and-deployment-commitments | 8 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ClaimLedger.lean` | unmapped | 0 | 4 | 3 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | claim-ledgers-and-belief-revision | 4 | 12 | 0 | 5 | 7 | manual review |
@@ -121,8 +122,8 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Routing.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | routing-heads-and-specialist-cores | 5 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 6 | 49 | 5 | 44 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/SafetyCaseRefinement.lean` | unmapped | 0 | 10 | 6 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/SafetyCases.lean` | safety-cases-and-structured-assurance | 8 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/SafetyCaseRefinement.lean` | safety-cases-and-structured-assurance | 8 | 10 | 6 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/SafetyCases.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | constitutional-alignment-substrate, moral-uncertainty-and-value-conflict, recursive-self-improvement-boundaries | 10 | 21 | 1 | 9 | 11 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ScalableOversight.lean` | scalable-oversight-and-adversarial-ai-control | 7 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 3 | 11 | 3 | 8 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -305,6 +306,18 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/BibliographyPlan.lean` | `new_source_cannot_be_assigned_to_nonexistent_chapter` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | `source_derived_claim_requires_source_note_or_ingested_source_artifact` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | `source_derived_claim_without_source_record_rejected` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | `accepted_event_adds_one_receipt` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | `authority_laundering_blocks_readiness` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | `crossed_threshold_without_bypass_test_blocks_controls` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | `crossed_threshold_without_safeguards_blocks_controls` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | `event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | `exception_without_expiry_blocks_readiness` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | `full_threshold_lifecycle_requires_versioned_reassessment` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | `incomplete_descendant_invalidation_blocks_reassessment` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | `missing_evaluation_envelope_blocks_assessment` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | `missing_uncertainty_blocks_assessment` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | `rejected_event_preserves_state` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | `stale_successor_version_blocks_reassessment` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CapabilityThresholds.lean` | `complete_crossed_threshold_reaches_readiness_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/CapabilityThresholds.lean` | `complete_non_crossing_reaches_readiness_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/CapabilityThresholds.lean` | `crossed_threshold_without_safeguard_record_blocks_release` | derived_or_decomposed | no | uses simp, unfold |

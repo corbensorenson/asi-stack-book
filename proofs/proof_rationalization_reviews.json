@@ -29447,20 +29447,30 @@
       "excluded_effects": [
         "Capability-domain truth, threshold definition/crossing, evaluation validity, safeguard efficacy, residual custody, review/release execution, readiness, safety, reproduction, transfer, and ASI are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations"
+        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations",
+        "scripts/validate_capability_threshold_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release",
-        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks"
+        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks",
+        "docs:capability_threshold_refinement",
+        "evidence_quality:model_adequacy_dossiers/capability-threshold-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_capability_threshold_commitment.py",
-        "experiments/capability_threshold_commitment/results/2026-07-13-local.json"
+        "experiments/capability_threshold_commitment/results/2026-07-13-local.json",
+        "scripts/validate_capability_threshold_refinement.py",
+        "schemas/capability_threshold_refinement.schema.json",
+        "experiments/capability_threshold_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:capability-thresholds.crossed_threshold_without_verified_safeguards_blocks_release.effect-refinement.v1"
+        "proof-model:capability-thresholds.crossed_threshold_without_verified_safeguards_blocks_release.effect-refinement.v1",
+        "proof-model:capability-threshold-refinement.v1",
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
       ],
       "review_rationale": "Retain at exact deterministic route-function scope; the validator recomputes the frozen case route but does not execute the named governance or evaluation effect."
     },
@@ -29474,20 +29484,30 @@
       "excluded_effects": [
         "Capability-domain truth, threshold definition/crossing, evaluation validity, safeguard efficacy, residual custody, review/release execution, readiness, safety, reproduction, transfer, and ASI are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations"
+        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations",
+        "scripts/validate_capability_threshold_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:capability_thresholds.missing_evaluation_envelope.requires_reevaluation",
-        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks"
+        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks",
+        "docs:capability_threshold_refinement",
+        "evidence_quality:model_adequacy_dossiers/capability-threshold-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_capability_threshold_commitment.py",
-        "experiments/capability_threshold_commitment/results/2026-07-13-local.json"
+        "experiments/capability_threshold_commitment/results/2026-07-13-local.json",
+        "scripts/validate_capability_threshold_refinement.py",
+        "schemas/capability_threshold_refinement.schema.json",
+        "experiments/capability_threshold_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:capability-thresholds.missing_evaluation_envelope_requires_reevaluation.effect-refinement.v1"
+        "proof-model:capability-thresholds.missing_evaluation_envelope_requires_reevaluation.effect-refinement.v1",
+        "proof-model:capability-threshold-refinement.v1",
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
       ],
       "review_rationale": "Retain at exact deterministic route-function scope; the validator recomputes the frozen case route but does not execute the named governance or evaluation effect."
     },
@@ -29501,20 +29521,30 @@
       "excluded_effects": [
         "Capability-domain truth, threshold definition/crossing, evaluation validity, safeguard efficacy, residual custody, review/release execution, readiness, safety, reproduction, transfer, and ASI are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations"
+        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations",
+        "scripts/validate_capability_threshold_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:capability_thresholds.complete_crossed.reaches_readiness_review",
-        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks"
+        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks",
+        "docs:capability_threshold_refinement",
+        "evidence_quality:model_adequacy_dossiers/capability-threshold-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_capability_threshold_commitment.py",
-        "experiments/capability_threshold_commitment/results/2026-07-13-local.json"
+        "experiments/capability_threshold_commitment/results/2026-07-13-local.json",
+        "scripts/validate_capability_threshold_refinement.py",
+        "schemas/capability_threshold_refinement.schema.json",
+        "experiments/capability_threshold_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:capability-thresholds.complete_crossed_threshold_reaches_readiness_review.effect-refinement.v1"
+        "proof-model:capability-thresholds.complete_crossed_threshold_reaches_readiness_review.effect-refinement.v1",
+        "proof-model:capability-threshold-refinement.v1",
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
       ],
       "review_rationale": "Retain at exact deterministic route-function scope; the validator recomputes the frozen case route but does not execute the named governance or evaluation effect."
     },
@@ -29528,20 +29558,30 @@
       "excluded_effects": [
         "Capability-domain truth, threshold definition/crossing, evaluation validity, safeguard efficacy, residual custody, review/release execution, readiness, safety, reproduction, transfer, and ASI are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations"
+        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations",
+        "scripts/validate_capability_threshold_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:capability_thresholds.complete_non_crossing.reaches_readiness_review",
-        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks"
+        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks",
+        "docs:capability_threshold_refinement",
+        "evidence_quality:model_adequacy_dossiers/capability-threshold-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_capability_threshold_commitment.py",
-        "experiments/capability_threshold_commitment/results/2026-07-13-local.json"
+        "experiments/capability_threshold_commitment/results/2026-07-13-local.json",
+        "scripts/validate_capability_threshold_refinement.py",
+        "schemas/capability_threshold_refinement.schema.json",
+        "experiments/capability_threshold_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:capability-thresholds.complete_non_crossing_reaches_readiness_review.effect-refinement.v1"
+        "proof-model:capability-thresholds.complete_non_crossing_reaches_readiness_review.effect-refinement.v1",
+        "proof-model:capability-threshold-refinement.v1",
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
       ],
       "review_rationale": "Retain at exact deterministic route-function scope; the validator recomputes the frozen case route but does not execute the named governance or evaluation effect."
     },
@@ -29555,20 +29595,30 @@
       "excluded_effects": [
         "Capability-domain truth, threshold definition/crossing, evaluation validity, safeguard efficacy, residual custody, review/release execution, readiness, safety, reproduction, transfer, and ASI are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations"
+        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations",
+        "scripts/validate_capability_threshold_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:capability_thresholds.missing_baseline.requires_reevaluation",
-        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks"
+        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks",
+        "docs:capability_threshold_refinement",
+        "evidence_quality:model_adequacy_dossiers/capability-threshold-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_capability_threshold_commitment.py",
-        "experiments/capability_threshold_commitment/results/2026-07-13-local.json"
+        "experiments/capability_threshold_commitment/results/2026-07-13-local.json",
+        "scripts/validate_capability_threshold_refinement.py",
+        "schemas/capability_threshold_refinement.schema.json",
+        "experiments/capability_threshold_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:capability-thresholds.missing_baseline_requires_reevaluation.effect-refinement.v1"
+        "proof-model:capability-thresholds.missing_baseline_requires_reevaluation.effect-refinement.v1",
+        "proof-model:capability-threshold-refinement.v1",
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
       ],
       "review_rationale": "Retain at exact deterministic route-function scope; the validator recomputes the frozen case route but does not execute the named governance or evaluation effect."
     },
@@ -29582,20 +29632,30 @@
       "excluded_effects": [
         "Capability-domain truth, threshold definition/crossing, evaluation validity, safeguard efficacy, residual custody, review/release execution, readiness, safety, reproduction, transfer, and ASI are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations"
+        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations",
+        "scripts/validate_capability_threshold_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:capability_thresholds.missing_uncertainty.requires_reevaluation",
-        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks"
+        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks",
+        "docs:capability_threshold_refinement",
+        "evidence_quality:model_adequacy_dossiers/capability-threshold-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_capability_threshold_commitment.py",
-        "experiments/capability_threshold_commitment/results/2026-07-13-local.json"
+        "experiments/capability_threshold_commitment/results/2026-07-13-local.json",
+        "scripts/validate_capability_threshold_refinement.py",
+        "schemas/capability_threshold_refinement.schema.json",
+        "experiments/capability_threshold_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:capability-thresholds.missing_uncertainty_requires_reevaluation.effect-refinement.v1"
+        "proof-model:capability-thresholds.missing_uncertainty_requires_reevaluation.effect-refinement.v1",
+        "proof-model:capability-threshold-refinement.v1",
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
       ],
       "review_rationale": "Retain at exact deterministic route-function scope; the validator recomputes the frozen case route but does not execute the named governance or evaluation effect."
     },
@@ -29609,20 +29669,30 @@
       "excluded_effects": [
         "Capability-domain truth, threshold definition/crossing, evaluation validity, safeguard efficacy, residual custody, review/release execution, readiness, safety, reproduction, transfer, and ASI are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations"
+        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations",
+        "scripts/validate_capability_threshold_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:capability_thresholds.missing_residual_owner.requires_exception",
-        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks"
+        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks",
+        "docs:capability_threshold_refinement",
+        "evidence_quality:model_adequacy_dossiers/capability-threshold-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_capability_threshold_commitment.py",
-        "experiments/capability_threshold_commitment/results/2026-07-13-local.json"
+        "experiments/capability_threshold_commitment/results/2026-07-13-local.json",
+        "scripts/validate_capability_threshold_refinement.py",
+        "schemas/capability_threshold_refinement.schema.json",
+        "experiments/capability_threshold_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:capability-thresholds.missing_residual_owner_requires_accountable_exception.effect-refinement.v1"
+        "proof-model:capability-thresholds.missing_residual_owner_requires_accountable_exception.effect-refinement.v1",
+        "proof-model:capability-threshold-refinement.v1",
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
       ],
       "review_rationale": "Retain at exact deterministic route-function scope; the validator recomputes the frozen case route but does not execute the named governance or evaluation effect."
     },
@@ -29636,20 +29706,30 @@
       "excluded_effects": [
         "Capability-domain truth, threshold definition/crossing, evaluation validity, safeguard efficacy, residual custody, review/release execution, readiness, safety, reproduction, transfer, and ASI are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations"
+        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations",
+        "scripts/validate_capability_threshold_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:capability_thresholds.crossed.missing_safeguard_record.blocks_release",
-        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks"
+        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks",
+        "docs:capability_threshold_refinement",
+        "evidence_quality:model_adequacy_dossiers/capability-threshold-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_capability_threshold_commitment.py",
-        "experiments/capability_threshold_commitment/results/2026-07-13-local.json"
+        "experiments/capability_threshold_commitment/results/2026-07-13-local.json",
+        "scripts/validate_capability_threshold_refinement.py",
+        "schemas/capability_threshold_refinement.schema.json",
+        "experiments/capability_threshold_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:capability-thresholds.crossed_threshold_without_safeguard_record_blocks_release.effect-refinement.v1"
+        "proof-model:capability-thresholds.crossed_threshold_without_safeguard_record_blocks_release.effect-refinement.v1",
+        "proof-model:capability-threshold-refinement.v1",
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
       ],
       "review_rationale": "Retain at exact deterministic route-function scope; the validator recomputes the frozen case route but does not execute the named governance or evaluation effect."
     },
@@ -41835,233 +41915,313 @@
       "dependencies": [
         "capability-thresholds-and-deployment-commitments.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks"
+        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks",
+        "docs:capability_threshold_refinement",
+        "evidence_quality:model_adequacy_dossiers/capability-threshold-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route: a fully recorded crossed-threshold record with unverified safeguards selects blockAffectedRelease.",
+      "semantic_role": "Reachable draft-to-readiness threshold lifecycle with explicit safeguard, exception, authority, invalidation, and successor-version reassessment boundaries.",
       "assumptions": [
-        "Lean/Python route functions align and the digest-bound finite fixture/result remain current."
+        "Capability/system/policy/release-path, envelope, threshold, baseline, evaluator, safeguard, authority, residual, crossing, invalidation, and assessment-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Capability-domain truth, threshold definition/crossing, evaluation validity, safeguard efficacy, residual custody, review/release execution, readiness, safety, reproduction, transfer, and ASI are excluded."
+        "Capability measurement, threshold validity or crossing, evaluator competence or independence, safeguard/bypass/rollback efficacy, exception validity, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations"
+        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations",
+        "scripts/validate_capability_threshold_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_capability_threshold_commitment.py",
-        "experiments/capability_threshold_commitment/results/2026-07-13-local.json"
+        "experiments/capability_threshold_commitment/results/2026-07-13-local.json",
+        "scripts/validate_capability_threshold_refinement.py",
+        "schemas/capability_threshold_refinement.schema.json",
+        "experiments/capability_threshold_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:capability-thresholds.crossed_threshold_without_verified_safeguards_blocks_release.effect-refinement.v1"
+        "proof-model:capability-thresholds.crossed_threshold_without_verified_safeguards_blocks_release.effect-refinement.v1",
+        "proof-model:capability-threshold-refinement.v1",
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
       ],
-      "review_rationale": "Retain at exact deterministic route scope; route labels are not observed real-world effects or evidence of the underlying capability/evaluation facts."
+      "review_rationale": "Strengthen isolated route reductions with a reachable repeated-assessment lifecycle, independent replay, forty-three routes, and 48 rejecting mutations."
     },
     "lean:capability_thresholds.missing_evaluation_envelope.requires_reevaluation": {
       "dependencies": [
         "capability-thresholds-and-deployment-commitments.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks"
+        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks",
+        "docs:capability_threshold_refinement",
+        "evidence_quality:model_adequacy_dossiers/capability-threshold-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route: missing evaluation envelope after domain/threat records selects requireReevaluation.",
+      "semantic_role": "Reachable draft-to-readiness threshold lifecycle with explicit safeguard, exception, authority, invalidation, and successor-version reassessment boundaries.",
       "assumptions": [
-        "Lean/Python route functions align and the digest-bound finite fixture/result remain current."
+        "Capability/system/policy/release-path, envelope, threshold, baseline, evaluator, safeguard, authority, residual, crossing, invalidation, and assessment-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Capability-domain truth, threshold definition/crossing, evaluation validity, safeguard efficacy, residual custody, review/release execution, readiness, safety, reproduction, transfer, and ASI are excluded."
+        "Capability measurement, threshold validity or crossing, evaluator competence or independence, safeguard/bypass/rollback efficacy, exception validity, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations"
+        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations",
+        "scripts/validate_capability_threshold_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_capability_threshold_commitment.py",
-        "experiments/capability_threshold_commitment/results/2026-07-13-local.json"
+        "experiments/capability_threshold_commitment/results/2026-07-13-local.json",
+        "scripts/validate_capability_threshold_refinement.py",
+        "schemas/capability_threshold_refinement.schema.json",
+        "experiments/capability_threshold_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:capability-thresholds.missing_evaluation_envelope_requires_reevaluation.effect-refinement.v1"
+        "proof-model:capability-thresholds.missing_evaluation_envelope_requires_reevaluation.effect-refinement.v1",
+        "proof-model:capability-threshold-refinement.v1",
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
       ],
-      "review_rationale": "Retain at exact deterministic route scope; route labels are not observed real-world effects or evidence of the underlying capability/evaluation facts."
+      "review_rationale": "Strengthen isolated route reductions with a reachable repeated-assessment lifecycle, independent replay, forty-three routes, and 48 rejecting mutations."
     },
     "lean:capability_thresholds.complete_crossed.reaches_readiness_review": {
       "dependencies": [
         "capability-thresholds-and-deployment-commitments.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks"
+        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks",
+        "docs:capability_threshold_refinement",
+        "evidence_quality:model_adequacy_dossiers/capability-threshold-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route: a complete crossed-threshold record with verified safeguards and requested release selects readiness review, not deployment.",
+      "semantic_role": "Reachable draft-to-readiness threshold lifecycle with explicit safeguard, exception, authority, invalidation, and successor-version reassessment boundaries.",
       "assumptions": [
-        "Lean/Python route functions align and the digest-bound finite fixture/result remain current."
+        "Capability/system/policy/release-path, envelope, threshold, baseline, evaluator, safeguard, authority, residual, crossing, invalidation, and assessment-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Capability-domain truth, threshold definition/crossing, evaluation validity, safeguard efficacy, residual custody, review/release execution, readiness, safety, reproduction, transfer, and ASI are excluded."
+        "Capability measurement, threshold validity or crossing, evaluator competence or independence, safeguard/bypass/rollback efficacy, exception validity, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations"
+        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations",
+        "scripts/validate_capability_threshold_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_capability_threshold_commitment.py",
-        "experiments/capability_threshold_commitment/results/2026-07-13-local.json"
+        "experiments/capability_threshold_commitment/results/2026-07-13-local.json",
+        "scripts/validate_capability_threshold_refinement.py",
+        "schemas/capability_threshold_refinement.schema.json",
+        "experiments/capability_threshold_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:capability-thresholds.complete_crossed_threshold_reaches_readiness_review.effect-refinement.v1"
+        "proof-model:capability-thresholds.complete_crossed_threshold_reaches_readiness_review.effect-refinement.v1",
+        "proof-model:capability-threshold-refinement.v1",
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
       ],
-      "review_rationale": "Retain at exact deterministic route scope; route labels are not observed real-world effects or evidence of the underlying capability/evaluation facts."
+      "review_rationale": "Strengthen isolated route reductions with a reachable repeated-assessment lifecycle, independent replay, forty-three routes, and 48 rejecting mutations."
     },
     "lean:capability_thresholds.complete_non_crossing.reaches_readiness_review": {
       "dependencies": [
         "capability-thresholds-and-deployment-commitments.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks"
+        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks",
+        "docs:capability_threshold_refinement",
+        "evidence_quality:model_adequacy_dossiers/capability-threshold-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route: a complete declared non-crossing record with requested release selects readiness review, not general clearance.",
+      "semantic_role": "Reachable draft-to-readiness threshold lifecycle with explicit safeguard, exception, authority, invalidation, and successor-version reassessment boundaries.",
       "assumptions": [
-        "Lean/Python route functions align and the digest-bound finite fixture/result remain current."
+        "Capability/system/policy/release-path, envelope, threshold, baseline, evaluator, safeguard, authority, residual, crossing, invalidation, and assessment-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Capability-domain truth, threshold definition/crossing, evaluation validity, safeguard efficacy, residual custody, review/release execution, readiness, safety, reproduction, transfer, and ASI are excluded."
+        "Capability measurement, threshold validity or crossing, evaluator competence or independence, safeguard/bypass/rollback efficacy, exception validity, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations"
+        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations",
+        "scripts/validate_capability_threshold_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_capability_threshold_commitment.py",
-        "experiments/capability_threshold_commitment/results/2026-07-13-local.json"
+        "experiments/capability_threshold_commitment/results/2026-07-13-local.json",
+        "scripts/validate_capability_threshold_refinement.py",
+        "schemas/capability_threshold_refinement.schema.json",
+        "experiments/capability_threshold_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:capability-thresholds.complete_non_crossing_reaches_readiness_review.effect-refinement.v1"
+        "proof-model:capability-thresholds.complete_non_crossing_reaches_readiness_review.effect-refinement.v1",
+        "proof-model:capability-threshold-refinement.v1",
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
       ],
-      "review_rationale": "Retain at exact deterministic route scope; route labels are not observed real-world effects or evidence of the underlying capability/evaluation facts."
+      "review_rationale": "Strengthen isolated route reductions with a reachable repeated-assessment lifecycle, independent replay, forty-three routes, and 48 rejecting mutations."
     },
     "lean:capability_thresholds.missing_baseline.requires_reevaluation": {
       "dependencies": [
         "capability-thresholds-and-deployment-commitments.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks"
+        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks",
+        "docs:capability_threshold_refinement",
+        "evidence_quality:model_adequacy_dossiers/capability-threshold-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route: missing baseline selects requireReevaluation after higher-priority fields are present.",
+      "semantic_role": "Reachable draft-to-readiness threshold lifecycle with explicit safeguard, exception, authority, invalidation, and successor-version reassessment boundaries.",
       "assumptions": [
-        "Lean/Python route functions align and the digest-bound finite fixture/result remain current."
+        "Capability/system/policy/release-path, envelope, threshold, baseline, evaluator, safeguard, authority, residual, crossing, invalidation, and assessment-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Capability-domain truth, threshold definition/crossing, evaluation validity, safeguard efficacy, residual custody, review/release execution, readiness, safety, reproduction, transfer, and ASI are excluded."
+        "Capability measurement, threshold validity or crossing, evaluator competence or independence, safeguard/bypass/rollback efficacy, exception validity, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations"
+        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations",
+        "scripts/validate_capability_threshold_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_capability_threshold_commitment.py",
-        "experiments/capability_threshold_commitment/results/2026-07-13-local.json"
+        "experiments/capability_threshold_commitment/results/2026-07-13-local.json",
+        "scripts/validate_capability_threshold_refinement.py",
+        "schemas/capability_threshold_refinement.schema.json",
+        "experiments/capability_threshold_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:capability-thresholds.missing_baseline_requires_reevaluation.effect-refinement.v1"
+        "proof-model:capability-thresholds.missing_baseline_requires_reevaluation.effect-refinement.v1",
+        "proof-model:capability-threshold-refinement.v1",
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
       ],
-      "review_rationale": "Retain at exact deterministic route scope; route labels are not observed real-world effects or evidence of the underlying capability/evaluation facts."
+      "review_rationale": "Strengthen isolated route reductions with a reachable repeated-assessment lifecycle, independent replay, forty-three routes, and 48 rejecting mutations."
     },
     "lean:capability_thresholds.missing_uncertainty.requires_reevaluation": {
       "dependencies": [
         "capability-thresholds-and-deployment-commitments.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks"
+        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks",
+        "docs:capability_threshold_refinement",
+        "evidence_quality:model_adequacy_dossiers/capability-threshold-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route: missing uncertainty selects requireReevaluation after higher-priority fields are present.",
+      "semantic_role": "Reachable draft-to-readiness threshold lifecycle with explicit safeguard, exception, authority, invalidation, and successor-version reassessment boundaries.",
       "assumptions": [
-        "Lean/Python route functions align and the digest-bound finite fixture/result remain current."
+        "Capability/system/policy/release-path, envelope, threshold, baseline, evaluator, safeguard, authority, residual, crossing, invalidation, and assessment-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Capability-domain truth, threshold definition/crossing, evaluation validity, safeguard efficacy, residual custody, review/release execution, readiness, safety, reproduction, transfer, and ASI are excluded."
+        "Capability measurement, threshold validity or crossing, evaluator competence or independence, safeguard/bypass/rollback efficacy, exception validity, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations"
+        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations",
+        "scripts/validate_capability_threshold_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_capability_threshold_commitment.py",
-        "experiments/capability_threshold_commitment/results/2026-07-13-local.json"
+        "experiments/capability_threshold_commitment/results/2026-07-13-local.json",
+        "scripts/validate_capability_threshold_refinement.py",
+        "schemas/capability_threshold_refinement.schema.json",
+        "experiments/capability_threshold_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:capability-thresholds.missing_uncertainty_requires_reevaluation.effect-refinement.v1"
+        "proof-model:capability-thresholds.missing_uncertainty_requires_reevaluation.effect-refinement.v1",
+        "proof-model:capability-threshold-refinement.v1",
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
       ],
-      "review_rationale": "Retain at exact deterministic route scope; route labels are not observed real-world effects or evidence of the underlying capability/evaluation facts."
+      "review_rationale": "Strengthen isolated route reductions with a reachable repeated-assessment lifecycle, independent replay, forty-three routes, and 48 rejecting mutations."
     },
     "lean:capability_thresholds.missing_residual_owner.requires_exception": {
       "dependencies": [
         "capability-thresholds-and-deployment-commitments.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks"
+        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks",
+        "docs:capability_threshold_refinement",
+        "evidence_quality:model_adequacy_dossiers/capability-threshold-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route: missing residual owner selects requireAccountableException after evaluation fields are present.",
+      "semantic_role": "Reachable draft-to-readiness threshold lifecycle with explicit safeguard, exception, authority, invalidation, and successor-version reassessment boundaries.",
       "assumptions": [
-        "Lean/Python route functions align and the digest-bound finite fixture/result remain current."
+        "Capability/system/policy/release-path, envelope, threshold, baseline, evaluator, safeguard, authority, residual, crossing, invalidation, and assessment-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Capability-domain truth, threshold definition/crossing, evaluation validity, safeguard efficacy, residual custody, review/release execution, readiness, safety, reproduction, transfer, and ASI are excluded."
+        "Capability measurement, threshold validity or crossing, evaluator competence or independence, safeguard/bypass/rollback efficacy, exception validity, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations"
+        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations",
+        "scripts/validate_capability_threshold_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_capability_threshold_commitment.py",
-        "experiments/capability_threshold_commitment/results/2026-07-13-local.json"
+        "experiments/capability_threshold_commitment/results/2026-07-13-local.json",
+        "scripts/validate_capability_threshold_refinement.py",
+        "schemas/capability_threshold_refinement.schema.json",
+        "experiments/capability_threshold_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:capability-thresholds.missing_residual_owner_requires_accountable_exception.effect-refinement.v1"
+        "proof-model:capability-thresholds.missing_residual_owner_requires_accountable_exception.effect-refinement.v1",
+        "proof-model:capability-threshold-refinement.v1",
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
       ],
-      "review_rationale": "Retain at exact deterministic route scope; route labels are not observed real-world effects or evidence of the underlying capability/evaluation facts."
+      "review_rationale": "Strengthen isolated route reductions with a reachable repeated-assessment lifecycle, independent replay, forty-three routes, and 48 rejecting mutations."
     },
     "lean:capability_thresholds.crossed.missing_safeguard_record.blocks_release": {
       "dependencies": [
         "capability-thresholds-and-deployment-commitments.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks"
+        "chapter:capability-thresholds-and-deployment-commitments#formalization-hooks",
+        "docs:capability_threshold_refinement",
+        "evidence_quality:model_adequacy_dossiers/capability-threshold-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route: a crossed threshold with no required-safeguard record selects blockAffectedRelease.",
+      "semantic_role": "Reachable draft-to-readiness threshold lifecycle with explicit safeguard, exception, authority, invalidation, and successor-version reassessment boundaries.",
       "assumptions": [
-        "Lean/Python route functions align and the digest-bound finite fixture/result remain current."
+        "Capability/system/policy/release-path, envelope, threshold, baseline, evaluator, safeguard, authority, residual, crossing, invalidation, and assessment-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Capability-domain truth, threshold definition/crossing, evaluation validity, safeguard efficacy, residual custody, review/release execution, readiness, safety, reproduction, transfer, and ASI are excluded."
+        "Capability measurement, threshold validity or crossing, evaluator competence or independence, safeguard/bypass/rollback efficacy, exception validity, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations"
+        "scripts/validate_capability_threshold_commitment.py#five-rejecting-mutations",
+        "scripts/validate_capability_threshold_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_capability_threshold_commitment.py",
-        "experiments/capability_threshold_commitment/results/2026-07-13-local.json"
+        "experiments/capability_threshold_commitment/results/2026-07-13-local.json",
+        "scripts/validate_capability_threshold_refinement.py",
+        "schemas/capability_threshold_refinement.schema.json",
+        "experiments/capability_threshold_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:capability-thresholds.crossed_threshold_without_safeguard_record_blocks_release.effect-refinement.v1"
+        "proof-model:capability-thresholds.crossed_threshold_without_safeguard_record_blocks_release.effect-refinement.v1",
+        "proof-model:capability-threshold-refinement.v1",
+        "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
       ],
-      "review_rationale": "Retain at exact deterministic route scope; route labels are not observed real-world effects or evidence of the underlying capability/evaluation facts."
+      "review_rationale": "Strengthen isolated route reductions with a reachable repeated-assessment lifecycle, independent replay, forty-three routes, and 48 rejecting mutations."
     },
     "lean:adversarial_evaluation.integrity.complete_to_promotion_review": {
       "dependencies": [

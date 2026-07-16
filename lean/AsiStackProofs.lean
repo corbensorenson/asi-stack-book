@@ -9,6 +9,7 @@ import AsiStackProofs.ArtifactStewardAgents
 import AsiStackProofs.BibliographyPlan
 import AsiStackProofs.BenchmarkRatchets
 import AsiStackProofs.CapabilityThresholds
+import AsiStackProofs.CapabilityThresholdRefinement
 import AsiStackProofs.ClaimLedger
 import AsiStackProofs.ClaimLedgerRefinement
 import AsiStackProofs.CognitiveCompilation

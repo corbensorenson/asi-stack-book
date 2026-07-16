@@ -4204,7 +4204,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 298 proof targets, 91 Lean modules, 1253 theorem declarations, 885 derived/decomposed, 214 direct/projection, 154 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 298 proof targets, 92 Lean modules, 1265 theorem declarations, 888 derived/decomposed, 222 direct/projection, 155 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -4436,13 +4436,14 @@ Draft deliverables:
 
 - A versioned threshold-commitment record with its assessment, safeguard, exception, residual, and release-path boundaries.
 - Source notes for the time-horizon and published-policy comparators plus supporting benchmark and gate connections.
-- Implemented owned bridge: eight Lean routes and eight digest-bound records
-  cover crossed/non-crossed handoff, evaluation scope, baseline, uncertainty,
-  residual custody, safeguard declaration, and safeguard verification. Five
-  rejecting mutations preserve the no-support and non-claim boundaries.
+- Implemented owned bridge: the eight legacy records now feed a six-stage,
+  43-route repeated-assessment lifecycle with exact identity custody, 48/48
+  mutation rejection, one readiness handoff, and one version-2 reassessment.
+  The witness preserves the no-support and no-external-effect boundaries.
 
 Exact current minimum: eight valid digest-bound synthetic commitment records,
-five rejecting mutations, and eight derived finite route declarations. No
+43 independently encoded routes, 48 rejecting mutations, and twelve finite
+lifecycle/countermodel declarations. No
 model, capability task, time-horizon suite, human baseline, real safeguard,
 bypass test, exception review, independent verifier, readiness service,
 release, deployment, incident response, reproduction, transfer, chapter-core
@@ -4459,24 +4460,28 @@ assurance, latency, burden, complete cost, residual age, incidents, fallback,
 and recovery; reproduce independently and transfer. Narrow, null, contested,
 revoked, refuted, retired, and `blocked_after_full_attempt` are valid outcomes.
 
-Formal audit: all eight declarations are derived reductions of one hand-authored
-finite decision tree. They do not prove threshold validity, measurement
-comparability, decision-tree completeness, temporal/concurrent policy
-semantics, safeguard efficacy, exception governance, institutional compliance,
-readiness, safety, deployment, reproduction, or transfer.
+Formal audit: all eight public targets resolve to
+`AsiStackProofs.CapabilityThresholdRefinement`. The model reaches draft,
+scoped, assessed, adjudicated, controlled, and readiness-bound stages; preserves
+exact capability/system/policy/path/evidence/control/authority/version custody;
+and requires trigger, descendant invalidation, ordinary-route blocking, and a
+successor version before reassessment. It does not prove threshold validity or
+crossing, measurement comparability, evaluator independence, safeguard,
+bypass, rollback, or exception efficacy, deployed invalidation, institutional
+compliance, readiness, safety, release, reproduction, or transfer.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release` | `AsiStackProofs.CapabilityThresholds` | A finite threshold-commitment record with a crossed scoped threshold and missing verified safeguards routes the affected release path to block rather than release, without inferring capability level, safeguard efficacy, safety, readiness, or ASI. | implemented |
-| `lean:capability_thresholds.missing_evaluation_envelope.requires_reevaluation` | `AsiStackProofs.CapabilityThresholds` | Missing evaluation scope routes to re-evaluation. | implemented |
-| `lean:capability_thresholds.complete_crossed.reaches_readiness_review` | `AsiStackProofs.CapabilityThresholds` | A complete crossed record reaches readiness review, not deployment. | implemented |
-| `lean:capability_thresholds.complete_non_crossing.reaches_readiness_review` | `AsiStackProofs.CapabilityThresholds` | A complete non-crossing reaches readiness review without becoming general clearance. | implemented |
-| `lean:capability_thresholds.missing_baseline.requires_reevaluation` | `AsiStackProofs.CapabilityThresholds` | Missing baseline routes to re-evaluation. | implemented |
-| `lean:capability_thresholds.missing_uncertainty.requires_reevaluation` | `AsiStackProofs.CapabilityThresholds` | Missing uncertainty routes to re-evaluation. | implemented |
-| `lean:capability_thresholds.missing_residual_owner.requires_exception` | `AsiStackProofs.CapabilityThresholds` | Missing residual custody routes to accountable exception. | implemented |
-| `lean:capability_thresholds.crossed.missing_safeguard_record.blocks_release` | `AsiStackProofs.CapabilityThresholds` | A crossed threshold without its required safeguard record blocks the affected release. | implemented |
+| `lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release` | `AsiStackProofs.CapabilityThresholdRefinement` | A crossed-threshold lifecycle cannot reach control completion without a safeguard package, verifier, bypass test, and rollback plan. | implemented |
+| `lean:capability_thresholds.missing_evaluation_envelope.requires_reevaluation` | `AsiStackProofs.CapabilityThresholdRefinement` | Missing evaluation envelope, elicitation, baseline, uncertainty, independent-evaluator, or assessment-result custody blocks assessment. | implemented |
+| `lean:capability_thresholds.complete_crossed.reaches_readiness_review` | `AsiStackProofs.CapabilityThresholdRefinement` | A fully recorded crossed-threshold assessment can emit only a readiness handoff after control, monitoring, residual, authority, and release-path custody. | implemented |
+| `lean:capability_thresholds.complete_non_crossing.reaches_readiness_review` | `AsiStackProofs.CapabilityThresholdRefinement` | A recorded non-crossing may bypass crossed-only safeguard gates but still requires monitoring, residual, authority, and release-path custody before readiness review. | implemented |
+| `lean:capability_thresholds.missing_baseline.requires_reevaluation` | `AsiStackProofs.CapabilityThresholdRefinement` | Missing baseline blocks the scoped-to-assessed transition without mutating threshold state. | implemented |
+| `lean:capability_thresholds.missing_uncertainty.requires_reevaluation` | `AsiStackProofs.CapabilityThresholdRefinement` | Missing assessment or decision uncertainty blocks lifecycle progress without converting absence into a non-crossing. | implemented |
+| `lean:capability_thresholds.missing_residual_owner.requires_exception` | `AsiStackProofs.CapabilityThresholdRefinement` | Missing residual ownership blocks adjudication or readiness; an exception additionally requires owner, expiry, compensating controls, and a review trigger. | implemented |
+| `lean:capability_thresholds.crossed.missing_safeguard_record.blocks_release` | `AsiStackProofs.CapabilityThresholdRefinement` | A crossed threshold without the complete safeguard-verification envelope remains blocked, while later envelope change requires descendant invalidation and a successor assessment version. | implemented |
 
 ### Adversarial Evaluation, Sandbagging, and Training-Time Deception
 

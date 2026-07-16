@@ -1,0 +1,410 @@
+{
+  "schema_version": "asi_stack.capability_threshold_refinement.v1",
+  "result_id": "capability-threshold-refinement-2026-07-15-local",
+  "source_sha256": {
+    "lean_model": "5a22ae9379af85df54fa2f1692b4f92ee46171774588356679dcc76aea871a0d",
+    "input_fixture": "ecfa6732b6ea2744fba1213be93614cc380bfe4930349c7c101974878d82face"
+  },
+  "input_suite": {
+    "suite_id": "capability_threshold_commitment",
+    "case_count": 8,
+    "passed_count": 8
+  },
+  "reachable_stage_count": 6,
+  "route_case_count": 43,
+  "route_coverage": [
+    {
+      "case_id": "draft_accepted",
+      "expected_route": "accept_scope"
+    },
+    {
+      "case_id": "scoped_accepted",
+      "expected_route": "accept_assessment"
+    },
+    {
+      "case_id": "assessed_accepted",
+      "expected_route": "accept_adjudication"
+    },
+    {
+      "case_id": "adjudicated_accepted",
+      "expected_route": "accept_controls"
+    },
+    {
+      "case_id": "controlled_accepted",
+      "expected_route": "accept_readiness"
+    },
+    {
+      "case_id": "readinessBound_accepted",
+      "expected_route": "accept_reassessment"
+    },
+    {
+      "case_id": "draft_capabilityDomainPresent",
+      "expected_route": "request_capability_domain"
+    },
+    {
+      "case_id": "draft_threatModelPresent",
+      "expected_route": "request_threat_model"
+    },
+    {
+      "case_id": "draft_thresholdDefinitionPresent",
+      "expected_route": "request_threshold_definition"
+    },
+    {
+      "case_id": "draft_coverageDeadlinePresent",
+      "expected_route": "request_coverage_deadline"
+    },
+    {
+      "case_id": "scoped_evaluationEnvelopePresent",
+      "expected_route": "request_evaluation_envelope"
+    },
+    {
+      "case_id": "scoped_elicitationPresent",
+      "expected_route": "request_elicitation"
+    },
+    {
+      "case_id": "scoped_baselinePresent",
+      "expected_route": "request_baseline"
+    },
+    {
+      "case_id": "scoped_uncertaintyPresent",
+      "expected_route": "request_uncertainty"
+    },
+    {
+      "case_id": "scoped_independentEvaluatorPresent",
+      "expected_route": "request_independent_evaluator"
+    },
+    {
+      "case_id": "scoped_assessmentResultPresent",
+      "expected_route": "request_assessment_result"
+    },
+    {
+      "case_id": "assessed_thresholdDecisionPresent",
+      "expected_route": "request_threshold_decision"
+    },
+    {
+      "case_id": "assessed_decisionUncertaintyPresent",
+      "expected_route": "request_decision_uncertainty"
+    },
+    {
+      "case_id": "assessed_affectedPathsPresent",
+      "expected_route": "request_affected_paths"
+    },
+    {
+      "case_id": "assessed_residualOwnerPresent",
+      "expected_route": "request_residual_owner"
+    },
+    {
+      "case_id": "adjudicated_safeguardPackagePresent",
+      "expected_route": "block_missing_safeguards"
+    },
+    {
+      "case_id": "adjudicated_safeguardVerifierPresent",
+      "expected_route": "block_missing_safeguard_verifier"
+    },
+    {
+      "case_id": "adjudicated_bypassTestPresent",
+      "expected_route": "block_missing_bypass_test"
+    },
+    {
+      "case_id": "adjudicated_rollbackPlanPresent",
+      "expected_route": "block_missing_rollback"
+    },
+    {
+      "case_id": "controlled_monitoringPresent",
+      "expected_route": "request_monitoring"
+    },
+    {
+      "case_id": "controlled_exceptionOwnerPresent",
+      "expected_route": "request_exception_owner"
+    },
+    {
+      "case_id": "controlled_exceptionExpiryPresent",
+      "expected_route": "request_exception_expiry"
+    },
+    {
+      "case_id": "controlled_compensatingControlsPresent",
+      "expected_route": "request_compensating_controls"
+    },
+    {
+      "case_id": "controlled_exceptionReviewTriggerPresent",
+      "expected_route": "request_exception_review_trigger"
+    },
+    {
+      "case_id": "controlled_residualOwnerPresent",
+      "expected_route": "request_residual_owner"
+    },
+    {
+      "case_id": "controlled_decisionAuthorityPresent",
+      "expected_route": "request_decision_authority"
+    },
+    {
+      "case_id": "controlled_authoritySeparationPresent",
+      "expected_route": "reject_authority_laundering"
+    },
+    {
+      "case_id": "controlled_releasePathPresent",
+      "expected_route": "request_release_path"
+    },
+    {
+      "case_id": "readinessBound_reassessmentTriggerPresent",
+      "expected_route": "request_reassessment_trigger"
+    },
+    {
+      "case_id": "readinessBound_descendantInvalidationComplete",
+      "expected_route": "request_descendant_invalidation"
+    },
+    {
+      "case_id": "readinessBound_ordinaryRouteBlocked",
+      "expected_route": "request_ordinary_route_block"
+    },
+    {
+      "case_id": "readinessBound_successorAssessmentVersion",
+      "expected_route": "reject_successor_version"
+    },
+    {
+      "case_id": "adjudicated_non_crossing",
+      "expected_route": "accept_controls"
+    },
+    {
+      "case_id": "controlled_complete_exception",
+      "expected_route": "accept_readiness"
+    },
+    {
+      "case_id": "wrong_stage",
+      "expected_route": "reject_wrong_stage"
+    },
+    {
+      "case_id": "identity_substitution",
+      "expected_route": "reject_identity_substitution"
+    },
+    {
+      "case_id": "event_replay",
+      "expected_route": "reject_replay"
+    },
+    {
+      "case_id": "authority_leak",
+      "expected_route": "reject_authority_leak"
+    }
+  ],
+  "mutation_count": 48,
+  "mutation_rejection_count": 48,
+  "mutation_receipts": [
+    {
+      "mutation_id": "binding_authorityDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_baselineDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_capabilityId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_currentAssessmentVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_envelopeDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_evaluatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_releasePathDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_residualDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_safeguardDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_systemDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_thresholdDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_capabilityDomainPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_threatModelPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_thresholdDefinitionPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_coverageDeadlinePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_evaluationEnvelopePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_elicitationPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_baselinePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_uncertaintyPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_independentEvaluatorPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_assessmentResultPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_assessed_thresholdDecisionPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_assessed_decisionUncertaintyPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_assessed_affectedPathsPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_assessed_residualOwnerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_safeguardPackagePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_safeguardVerifierPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_bypassTestPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_rollbackPlanPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_controlled_monitoringPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_controlled_exceptionOwnerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_controlled_exceptionExpiryPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_controlled_compensatingControlsPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_controlled_exceptionReviewTriggerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_controlled_residualOwnerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_controlled_decisionAuthorityPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_controlled_authoritySeparationPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_controlled_releasePathPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_readinessBound_reassessmentTriggerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_readinessBound_descendantInvalidationComplete",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_readinessBound_ordinaryRouteBlocked",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_readinessBound_successorAssessmentVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong_kind",
+      "rejected": true
+    },
+    {
+      "mutation_id": "event_replay",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support_leak",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect_leak",
+      "rejected": true
+    },
+    {
+      "mutation_id": "stale_readiness_after_reassessment",
+      "rejected": true
+    }
+  ],
+  "command_receipts": [
+    {
+      "command": "python3 scripts/validate_capability_threshold_commitment.py",
+      "exit_code": 0,
+      "output_sha256": "d94152e699a309a8d5b3c51b530f29fe74288d7998cc175146cacc606fb1849c"
+    }
+  ],
+  "witness": {
+    "terminal_stage": "scoped",
+    "assessment_version": 2,
+    "receipt_count": 6,
+    "readiness_handoff_count": 1,
+    "reassessment_count": 1,
+    "support_assignment_count": 0,
+    "external_effect_count": 0
+  },
+  "support_state_effect": "none",
+  "non_claims": [
+    "no real capability measurement",
+    "no threshold validity or crossing result",
+    "no evaluator-independence result",
+    "no safeguard, bypass, or rollback efficacy result",
+    "no exception approval or deployed invalidation",
+    "no readiness, safety, release, or support promotion"
+  ]
+}
