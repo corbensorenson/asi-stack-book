@@ -90,6 +90,9 @@ CAPABILITY_THRESHOLD_DOSSIER = "evidence_quality/model_adequacy_dossiers/capabil
 ADVERSARIAL_EVALUATION_RESULT = "experiments/adversarial_evaluation_refinement/results/2026-07-15-local.json"
 ADVERSARIAL_EVALUATION_RECEIPT = "docs/adversarial_evaluation_refinement.md"
 ADVERSARIAL_EVALUATION_DOSSIER = "evidence_quality/model_adequacy_dossiers/adversarial-evaluation-refinement.md"
+SCALABLE_OVERSIGHT_RESULT = "experiments/scalable_oversight_refinement/results/2026-07-15-local.json"
+SCALABLE_OVERSIGHT_RECEIPT = "docs/scalable_oversight_refinement.md"
+SCALABLE_OVERSIGHT_DOSSIER = "evidence_quality/model_adequacy_dossiers/scalable-oversight-refinement.md"
 READINESS_RESULT = "experiments/readiness_refinement/results/2026-07-15-local.json"
 READINESS_RECEIPT = "docs/readiness_refinement.md"
 READINESS_DOSSIER = "evidence_quality/model_adequacy_dossiers/readiness-refinement.md"
@@ -266,6 +269,9 @@ def snapshot() -> dict:
         "adversarial_evaluation_result": load(ADVERSARIAL_EVALUATION_RESULT),
         "adversarial_evaluation_receipt": text(ADVERSARIAL_EVALUATION_RECEIPT),
         "adversarial_evaluation_dossier": text(ADVERSARIAL_EVALUATION_DOSSIER),
+        "scalable_oversight_result": load(SCALABLE_OVERSIGHT_RESULT),
+        "scalable_oversight_receipt": text(SCALABLE_OVERSIGHT_RECEIPT),
+        "scalable_oversight_dossier": text(SCALABLE_OVERSIGHT_DOSSIER),
         "readiness_result": load(READINESS_RESULT),
         "readiness_receipt": text(READINESS_RECEIPT),
         "readiness_dossier": text(READINESS_DOSSIER),
@@ -1096,8 +1102,8 @@ def errors(data: dict) -> list[str]:
 
     expected_claim_ledger_contract = {
         "current_missing_or_changed_theorem_count":296,
-        "current_missing_or_changed_target_count":147,
-        "current_live_theorem_declaration_count":1277,
+        "current_missing_or_changed_target_count":154,
+        "current_live_theorem_declaration_count":1289,
         "current_live_proof_target_count":298,
         "claim_ledger_model_path":"lean/AsiStackProofs/ClaimLedgerRefinement.lean",
         "claim_ledger_dossier_path":CLAIM_LEDGER_DOSSIER,
@@ -1401,6 +1407,32 @@ def errors(data: dict) -> list[str]:
     adversarial_evaluation_chapter=next((row for row in structure_rows if row.get("id")=="adversarial-evaluation-sandbagging-and-training-time-deception"),{})
     if {row.get("module") for row in adversarial_evaluation_chapter.get("proof_targets",[])}!={"AsiStackProofs.AdversarialEvaluationRefinement"}:
         out.append("Adversarial Evaluation public targets do not all resolve to refinement")
+
+    expected_scalable_oversight_contract={
+        "scalable_oversight_model_path":"lean/AsiStackProofs/ScalableOversightRefinement.lean",
+        "scalable_oversight_dossier_path":SCALABLE_OVERSIGHT_DOSSIER,
+        "scalable_oversight_consumer_path":SCALABLE_OVERSIGHT_RECEIPT,
+        "scalable_oversight_result_path":SCALABLE_OVERSIGHT_RESULT,
+        "scalable_oversight_state":"validated_finite_authored_oversight_review_readmission_lifecycle_not_competence_empirical_or_deployed",
+        "scalable_oversight_inherited_case_count":7,"scalable_oversight_reachable_stage_count":7,
+        "scalable_oversight_route_case_count":58,"scalable_oversight_mutation_rejection_count":65,
+        "scalable_oversight_retained_legacy_theorem_count":8,"scalable_oversight_bounded_use_handoff_count":1,
+        "scalable_oversight_readmission_count":1,"scalable_oversight_support_state_effect":"none"}
+    for key,value in expected_scalable_oversight_contract.items():
+        if proof_contract.get(key)!=value: out.append(f"scalable-oversight contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    scalable_oversight=data["scalable_oversight_result"]
+    for key,value in {"reachable_stage_count":7,"route_case_count":58,"mutation_count":65,
+                      "mutation_rejection_count":65,"support_state_effect":"none"}.items():
+        if scalable_oversight.get(key)!=value: out.append(f"scalable-oversight result drifted: {key}")
+    if scalable_oversight.get("input_suite")!={"suite_id":"scalable_oversight_protocol","case_count":7,"passed_count":7}:
+        out.append("scalable-oversight inherited-suite counts drifted")
+    for phrase in ["seven-stage lifecycle", "all 58 routes", "65/65", "Support-state effect is exactly `none`"]:
+        if phrase.casefold() not in data["scalable_oversight_receipt"].casefold(): out.append(f"scalable-oversight receipt missing exact boundary: {phrase}")
+    for phrase in ["Seven stages", "Fifty-eight routes", "Inadequate for reviewer competence", "Support-state effect: exactly `none`"]:
+        if phrase.casefold() not in data["scalable_oversight_dossier"].casefold(): out.append(f"scalable-oversight dossier missing adequacy boundary: {phrase}")
+    scalable_oversight_chapter=next((row for row in structure_rows if row.get("id")=="scalable-oversight-and-adversarial-ai-control"),{})
+    if {row.get("module") for row in scalable_oversight_chapter.get("proof_targets",[])}!={"AsiStackProofs.ScalableOversightRefinement"}:
+        out.append("Scalable Oversight public targets do not all resolve to refinement")
 
     expected_readiness_contract={
         "readiness_model_path":"lean/AsiStackProofs/ReadinessRefinement.lean","readiness_dossier_path":READINESS_DOSSIER,
@@ -1809,6 +1841,10 @@ def main() -> None:
     adversarial_evaluation_support["adversarial_evaluation_result"]["support_state_effect"] = "prototype-backed"
     mutations.append(("adversarial-evaluation support laundering", adversarial_evaluation_support))
 
+    scalable_oversight_support = copy.deepcopy(base)
+    scalable_oversight_support["scalable_oversight_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("scalable-oversight support laundering", scalable_oversight_support))
+
     readiness_support = copy.deepcopy(base)
     readiness_support["readiness_result"]["support_state_effect"] = "prototype-backed"
     mutations.append(("readiness support laundering", readiness_support))
@@ -1875,7 +1911,7 @@ def main() -> None:
         "55 live chapter-core programs across CF-01..CF-08 with a frozen 54-chapter activation baseline, exact proof/evidence/reader baseline, "
         "proof rationalization and argument-exit contracts, maintained X Article and exact 5:2 header contract, "
         "no support or release effect, no external-human gate, same-transaction successor continuity, "
-        "validated shared-safety, Cognitive Kernel ABI, integrated reference trace, concrete-schema refinement, concurrent effect, reachable stack-boundary, Intent-to-Execution vertical, Authority grant-to-effect, Human Intent resolution, Command semantic-interface, Cognitive Compilation obligation-refinement, Virtual Context binding/materialization/fault, Context Certificate provenance/lifecycle, Context Transaction snapshot/store, Verification Bandwidth evidence-gate, Claim Ledger append-only, Proof-Carrying Claims target-to-writeback, Tribunal versioned-verdict/appeal, Typed Job versioned execution/closure, Artifact record-reality/trust, Procedural Memory promotion/retirement, Routing/MoECOT request-to-closure, Safety Case readiness/invalidation, Capability Threshold repeated assessment, Adversarial Evaluation observation/re-evaluation, Readiness candidate-to-terminal, Hive policy-to-closure, Compact Generation source-to-closure, Fast Generation request-to-closure, Governed Deliberation request-to-closure, Artifact Compression artifact-to-consumption, and Resource Economics allocation-and-simulation-transport receipts, bounded WIP and first-campaign/SOTA entry gates, and 51 rejecting mutations."
+        "validated shared-safety, Cognitive Kernel ABI, integrated reference trace, concrete-schema refinement, concurrent effect, reachable stack-boundary, Intent-to-Execution vertical, Authority grant-to-effect, Human Intent resolution, Command semantic-interface, Cognitive Compilation obligation-refinement, Virtual Context binding/materialization/fault, Context Certificate provenance/lifecycle, Context Transaction snapshot/store, Verification Bandwidth evidence-gate, Claim Ledger append-only, Proof-Carrying Claims target-to-writeback, Tribunal versioned-verdict/appeal, Typed Job versioned execution/closure, Artifact record-reality/trust, Procedural Memory promotion/retirement, Routing/MoECOT request-to-closure, Safety Case readiness/invalidation, Capability Threshold repeated assessment, Adversarial Evaluation observation/re-evaluation, Scalable Oversight review/readmission, Readiness candidate-to-terminal, Hive policy-to-closure, Compact Generation source-to-closure, Fast Generation request-to-closure, Governed Deliberation request-to-closure, Artifact Compression artifact-to-consumption, and Resource Economics allocation-and-simulation-transport receipts, bounded WIP and first-campaign/SOTA entry gates, and 52 rejecting mutations."
     )
 
 

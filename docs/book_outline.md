@@ -636,6 +636,15 @@ Draft arc:
   owns dossier and verdict constraints. Policy Optimization owns behavior-update
   leases. Runtime Adapters and Readiness Gates retain effect and release power.
 
+Current executable boundary: the seven inherited Boolean cases are preserved
+inside a seven-stage, 58-route oversight-review lifecycle with exact identity and
+protocol-version custody, twelve refinement declarations, 65/65 rejecting
+mutations, one bounded-use handoff, and one version-2 readmission witness.
+Protocol completion remains distinct from reviewer competence, outcome truth,
+support movement, release authority, and external execution. No model, reviewer,
+human, debate, consultancy, weak-to-strong learner, natural task, or outcome
+workload has run.
+
 Primary invariants:
 
 - A role label, vote count, long transcript, or self-score is not independent
@@ -712,13 +721,13 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:scalable_oversight.high_risk.missing_outcome_audit_blocks_admission` | `AsiStackProofs.ScalableOversight` | A finite high-risk oversight record with a requested downstream admission and no independent outcome audit routes to accountable escalation rather than bounded admission, without inferring supervisor quality, protocol efficacy, alignment, safety, or ASI. | implemented |
-| `lean:scalable_oversight.use.complete_bounded_admission` | `AsiStackProofs.ScalableOversight` | A complete finite use record with an audited protocol, declared consumer and expiry, preserved no-authority boundary, requested downstream use, and no abstention routes to bounded use without establishing protocol efficacy. | implemented |
-| `lean:scalable_oversight.use.missing_evidence_views_requires_repair` | `AsiStackProofs.ScalableOversight` | A finite use record with the protocol digest, cohort, and capability envelopes present but evidence views absent routes to access repair. | implemented |
-| `lean:scalable_oversight.use.undisclosed_dependencies_require_review` | `AsiStackProofs.ScalableOversight` | A finite use record with missing shared-dependency disclosure routes to dependency review without claiming that disclosed reviewers are independent. | implemented |
-| `lean:scalable_oversight.use.missing_outcome_audit_requires_audit` | `AsiStackProofs.ScalableOversight` | A high-risk finite use record without an independent outcome-audit record routes to an audit requirement rather than bounded use. | implemented |
-| `lean:scalable_oversight.use.unjustified_abstention_requires_evidence` | `AsiStackProofs.ScalableOversight` | A finite downstream-use record requesting abstention without its evidence record routes to an abstention-evidence requirement. | implemented |
-| `lean:scalable_oversight.use.authority_laundering_rejected` | `AsiStackProofs.ScalableOversight` | A finite downstream-use record that fails to preserve the no-authority-grant boundary routes to authority-laundering rejection. | implemented |
+| `lean:scalable_oversight.high_risk.missing_outcome_audit_blocks_admission` | `AsiStackProofs.ScalableOversightRefinement` | A reachable high-risk review lifecycle without an independent outcome-audit record blocks bounded-use adjudication without mutating lifecycle state or inferring reviewer competence. | implemented |
+| `lean:scalable_oversight.use.complete_bounded_admission` | `AsiStackProofs.ScalableOversightRefinement` | A complete versioned review lifecycle emits only one bounded-use handoff to its named consumer and assigns neither support nor an external effect. | implemented |
+| `lean:scalable_oversight.use.missing_evidence_views_requires_repair` | `AsiStackProofs.ScalableOversightRefinement` | Missing bound evidence views block review recording without mutating lifecycle state. | implemented |
+| `lean:scalable_oversight.use.undisclosed_dependencies_require_review` | `AsiStackProofs.ScalableOversightRefinement` | Missing shared-dependency disclosure blocks independent outcome-audit admission without treating role separation as reviewer independence. | implemented |
+| `lean:scalable_oversight.use.missing_outcome_audit_requires_audit` | `AsiStackProofs.ScalableOversightRefinement` | A high-risk reviewed record without an independent outcome audit cannot advance to use adjudication. | implemented |
+| `lean:scalable_oversight.use.unjustified_abstention_requires_evidence` | `AsiStackProofs.ScalableOversightRefinement` | An abstention request without evidence and a defeater cannot advance to its accountable escalation disposition. | implemented |
+| `lean:scalable_oversight.use.authority_laundering_rejected` | `AsiStackProofs.ScalableOversightRefinement` | A bounded-use request without preserved release- and policy-authority separation is rejected and cannot assign support or an external effect. | implemented |
 
 ### Human Intent as a Formal Input
 
@@ -4204,7 +4213,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 298 proof targets, 93 Lean modules, 1277 theorem declarations, 891 derived/decomposed, 230 direct/projection, 156 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 298 proof targets, 94 Lean modules, 1289 theorem declarations, 894 derived/decomposed, 230 direct/projection, 165 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

@@ -13,11 +13,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 298 |
-| Lean modules scanned | 93 |
-| Theorem declarations classified | 1277 |
+| Lean modules scanned | 94 |
+| Theorem declarations classified | 1289 |
 | Direct/projection-style theorem declarations | 230 |
-| Derived/decomposed theorem declarations | 891 |
-| Unknown or mixed theorem declarations | 156 |
+| Derived/decomposed theorem declarations | 894 |
+| Unknown or mixed theorem declarations | 165 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -127,6 +127,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SafetyCases.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | constitutional-alignment-substrate, moral-uncertainty-and-value-conflict, recursive-self-improvement-boundaries | 10 | 21 | 1 | 9 | 11 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ScalableOversight.lean` | scalable-oversight-and-adversarial-ai-control | 7 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/ScalableOversightRefinement.lean` | unmapped | 0 | 12 | 0 | 3 | 9 | manual review |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 3 | 11 | 3 | 8 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SecurityKernel.lean` | security-kernel-and-digital-scifs | 4 | 22 | 1 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 1 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
@@ -1148,6 +1149,18 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ScalableOversight.lean` | `missing_outcome_audit_blocks_high_risk_admission` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ScalableOversight.lean` | `undisclosed_shared_dependencies_require_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ScalableOversight.lean` | `unjustified_abstention_requires_evidence` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `accepted_event_adds_one_receipt` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `complete_bounded_use_is_admitted` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `complete_lifecycle_reaches_version_two_readmission` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `downstream_use_cannot_launder_authority` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `high_risk_use_without_outcome_audit_requires_audit` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `missing_baseline_requires_protocol_redesign` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `missing_evidence_views_requires_access_repair` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `missing_outcome_audit_blocks_high_risk_admission` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `rejected_event_preserves_state` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `undisclosed_shared_dependencies_require_review` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `unjustified_abstention_requires_evidence` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `canary_substrate_without_complete_evidence_packet_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `qualified_substrate_requires_passing_evidence` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

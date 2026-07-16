@@ -19304,15 +19304,28 @@
       "excluded_effects": [
         "Audit independence/quality, supervisor capability, outcome validity, escalation execution, protocol efficacy, alignment, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
-      "mutation_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean#countermodels"
+      ],
+      "mutation_refs": [
+        "scripts/validate_scalable_oversight_refinement.py#mutations"
+      ],
       "consumer_refs": [
         "proof-target:lean:scalable_oversight.high_risk.missing_outcome_audit_blocks_admission",
-        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks"
+        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks",
+        "docs:scalable_oversight_refinement",
+        "evidence_quality:model_adequacy_dossiers/scalable-oversight-refinement.md"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_scalable_oversight_refinement.py",
+        "schemas/scalable_oversight_refinement.schema.json",
+        "experiments/scalable_oversight_refinement/results/2026-07-15-local.json",
+        "scripts/validate_scalable_oversight_protocol.py"
+      ],
       "replacement_refs": [
-        "proof-model:scalable-oversight.protocol-admission-result-refinement.v1"
+        "proof-model:scalable-oversight.protocol-admission-result-refinement.v1",
+        "proof-model:scalable-oversight-refinement.v1",
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean"
       ],
       "review_rationale": "Retain as a general finite priority branch; the existing validator checks theorem presence but does not independently recompute this separate protocol-record route."
     },
@@ -19326,15 +19339,28 @@
       "excluded_effects": [
         "Baseline validity or matching, reviewer quality, redesign execution, protocol efficacy, alignment, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
-      "mutation_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean#countermodels"
+      ],
+      "mutation_refs": [
+        "scripts/validate_scalable_oversight_refinement.py#mutations"
+      ],
       "consumer_refs": [
         "proof-model:scalable-oversight.protocol-admission-route.v1",
-        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks"
+        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks",
+        "docs:scalable_oversight_refinement",
+        "evidence_quality:model_adequacy_dossiers/scalable-oversight-refinement.md"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_scalable_oversight_refinement.py",
+        "schemas/scalable_oversight_refinement.schema.json",
+        "experiments/scalable_oversight_refinement/results/2026-07-15-local.json",
+        "scripts/validate_scalable_oversight_protocol.py"
+      ],
       "replacement_refs": [
-        "proof-model:scalable-oversight.protocol-admission-result-refinement.v1"
+        "proof-model:scalable-oversight.protocol-admission-result-refinement.v1",
+        "proof-model:scalable-oversight-refinement.v1",
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean"
       ],
       "review_rationale": "Retain as a general finite priority branch; the use-record validator covers an analogous missing-baseline route but not this protocol-record function."
     },
@@ -19348,20 +19374,30 @@
       "excluded_effects": [
         "Reviewer independence/calibration, audit quality, protocol usefulness/efficacy, alignment, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_scalable_oversight_protocol.py#negative-controls"
+        "scripts/validate_scalable_oversight_protocol.py#negative-controls",
+        "scripts/validate_scalable_oversight_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:scalable_oversight.use.complete_bounded_admission",
-        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks"
+        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks",
+        "docs:scalable_oversight_refinement",
+        "evidence_quality:model_adequacy_dossiers/scalable-oversight-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_scalable_oversight_protocol.py",
-        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json"
+        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json",
+        "scripts/validate_scalable_oversight_refinement.py",
+        "schemas/scalable_oversight_refinement.schema.json",
+        "experiments/scalable_oversight_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:scalable-oversight.use-result-refinement.v1"
+        "proof-model:scalable-oversight.use-result-refinement.v1",
+        "proof-model:scalable-oversight-refinement.v1",
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean"
       ],
       "review_rationale": "Retain at exact finite record-routing scope; admission is only to bounded review/use and proves no oversight efficacy."
     },
@@ -19375,20 +19411,30 @@
       "excluded_effects": [
         "Evidence completeness/truth, reviewer access adequacy, repair execution, protocol efficacy, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_scalable_oversight_protocol.py#wrong-route"
+        "scripts/validate_scalable_oversight_protocol.py#wrong-route",
+        "scripts/validate_scalable_oversight_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:scalable_oversight.use.missing_evidence_views_requires_repair",
-        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks"
+        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks",
+        "docs:scalable_oversight_refinement",
+        "evidence_quality:model_adequacy_dossiers/scalable-oversight-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_scalable_oversight_protocol.py",
-        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json"
+        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json",
+        "scripts/validate_scalable_oversight_refinement.py",
+        "schemas/scalable_oversight_refinement.schema.json",
+        "experiments/scalable_oversight_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:scalable-oversight.use-result-refinement.v1"
+        "proof-model:scalable-oversight.use-result-refinement.v1",
+        "proof-model:scalable-oversight-refinement.v1",
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean"
       ],
       "review_rationale": "Retain at exact finite record-routing scope; access repair and evidence-view adequacy are not executed or measured."
     },
@@ -19402,20 +19448,30 @@
       "excluded_effects": [
         "Dependency discovery/completeness, reviewer independence, correlation measurement, review quality, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_scalable_oversight_protocol.py#wrong-route"
+        "scripts/validate_scalable_oversight_protocol.py#wrong-route",
+        "scripts/validate_scalable_oversight_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:scalable_oversight.use.undisclosed_dependencies_require_review",
-        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks"
+        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks",
+        "docs:scalable_oversight_refinement",
+        "evidence_quality:model_adequacy_dossiers/scalable-oversight-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_scalable_oversight_protocol.py",
-        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json"
+        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json",
+        "scripts/validate_scalable_oversight_refinement.py",
+        "schemas/scalable_oversight_refinement.schema.json",
+        "experiments/scalable_oversight_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:scalable-oversight.use-result-refinement.v1"
+        "proof-model:scalable-oversight.use-result-refinement.v1",
+        "proof-model:scalable-oversight-refinement.v1",
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean"
       ],
       "review_rationale": "Retain at exact finite record-routing scope; disclosure does not establish actual independence or low correlation."
     },
@@ -19429,20 +19485,30 @@
       "excluded_effects": [
         "Risk calibration, audit independence/quality, audit execution, protocol efficacy, alignment, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_scalable_oversight_protocol.py#audit-laundering"
+        "scripts/validate_scalable_oversight_protocol.py#audit-laundering",
+        "scripts/validate_scalable_oversight_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:scalable_oversight.use.missing_outcome_audit_requires_audit",
-        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks"
+        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks",
+        "docs:scalable_oversight_refinement",
+        "evidence_quality:model_adequacy_dossiers/scalable-oversight-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_scalable_oversight_protocol.py",
-        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json"
+        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json",
+        "scripts/validate_scalable_oversight_refinement.py",
+        "schemas/scalable_oversight_refinement.schema.json",
+        "experiments/scalable_oversight_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:scalable-oversight.use-result-refinement.v1"
+        "proof-model:scalable-oversight.use-result-refinement.v1",
+        "proof-model:scalable-oversight-refinement.v1",
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean"
       ],
       "review_rationale": "Retain at exact finite record-routing scope; an audit requirement is not evidence that an independent or effective audit occurred."
     },
@@ -19456,20 +19522,30 @@
       "excluded_effects": [
         "Abstention calibration, evidence/defeater validity, usefulness, reviewer burden, protocol efficacy, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_scalable_oversight_protocol.py#wrong-route"
+        "scripts/validate_scalable_oversight_protocol.py#wrong-route",
+        "scripts/validate_scalable_oversight_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:scalable_oversight.use.unjustified_abstention_requires_evidence",
-        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks"
+        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks",
+        "docs:scalable_oversight_refinement",
+        "evidence_quality:model_adequacy_dossiers/scalable-oversight-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_scalable_oversight_protocol.py",
-        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json"
+        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json",
+        "scripts/validate_scalable_oversight_refinement.py",
+        "schemas/scalable_oversight_refinement.schema.json",
+        "experiments/scalable_oversight_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:scalable-oversight.use-result-refinement.v1"
+        "proof-model:scalable-oversight.use-result-refinement.v1",
+        "proof-model:scalable-oversight-refinement.v1",
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean"
       ],
       "review_rationale": "Retain at exact finite record-routing scope; no selective-risk or useful-throughput result follows."
     },
@@ -19483,21 +19559,31 @@
       "excluded_effects": [
         "Authority provenance/legitimacy, hidden grants/effects, runtime rejection, protocol efficacy, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_scalable_oversight_protocol.py#authority-laundering"
+        "scripts/validate_scalable_oversight_protocol.py#authority-laundering",
+        "scripts/validate_scalable_oversight_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:scalable_oversight.use.authority_laundering_rejected",
-        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks"
+        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks",
+        "docs:scalable_oversight_refinement",
+        "evidence_quality:model_adequacy_dossiers/scalable-oversight-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_scalable_oversight_protocol.py",
-        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json"
+        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json",
+        "scripts/validate_scalable_oversight_refinement.py",
+        "schemas/scalable_oversight_refinement.schema.json",
+        "experiments/scalable_oversight_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
         "proof-model:scalable-oversight.use-result-refinement.v1",
-        "proof-model:authority.effect-capability-refinement.v1"
+        "proof-model:authority.effect-capability-refinement.v1",
+        "proof-model:scalable-oversight-refinement.v1",
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean"
       ],
       "review_rationale": "Retain at exact finite routing scope; the fixture rejects a Boolean record and does not prove deployed authority confinement."
     },
@@ -38568,200 +38654,273 @@
       "dependencies": [
         "scalable-oversight-and-adversarial-ai-control.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks"
+        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks",
+        "docs:scalable_oversight_refinement",
+        "evidence_quality:model_adequacy_dossiers/scalable-oversight-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_load_bearing_semantic",
-      "semantic_role": "General finite protocol-admission route escalating a high-risk downstream request without an independent outcome-audit record.",
+      "semantic_role": "Reachable scope-to-protocol-to-review-to-audit-to-adjudication-to-bounded-use lifecycle with exact identity, abstention, authority, invalidation, and successor-version boundaries.",
       "assumptions": [
-        "Protocol fields are truthful and OversightAdmissionRouteFor is the complete bounded priority policy."
+        "Task/consumer/protocol/cohort/system/supervisor/evidence/dependency/baseline/auditor/policy/residual/authority, review, outcome, abstention, invalidation, and protocol-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Audit independence/quality, supervisor capability, outcome validity, escalation execution, protocol efficacy, alignment, safety, reproduction, and transfer are excluded."
+        "Reviewer competence, independence, calibration, outcome truth, protocol efficacy, debate/consultancy/weak-to-strong value, causal usefulness, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
-      "mutation_refs": [],
-      "runtime_consumer_refs": [],
+      "mutation_refs": [
+        "scripts/validate_scalable_oversight_refinement.py#mutations"
+      ],
+      "runtime_consumer_refs": [
+        "scripts/validate_scalable_oversight_refinement.py",
+        "schemas/scalable_oversight_refinement.schema.json",
+        "experiments/scalable_oversight_refinement/results/2026-07-15-local.json",
+        "scripts/validate_scalable_oversight_protocol.py"
+      ],
       "replacement_refs": [
-        "proof-model:scalable-oversight.protocol-admission-result-refinement.v1"
+        "proof-model:scalable-oversight.protocol-admission-result-refinement.v1",
+        "proof-model:scalable-oversight-refinement.v1",
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean"
       ],
-      "review_rationale": "Retain the formal route at finite scope; the existing executable validator covers the separate use-record function and only checks this theorem's presence."
+      "review_rationale": "Strengthen disconnected route reductions with a reachable versioned review lifecycle, independent replay, fifty-eight routes, and 65 rejecting mutations."
     },
     "lean:scalable_oversight.use.complete_bounded_admission": {
       "dependencies": [
         "scalable-oversight-and-adversarial-ai-control.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks"
+        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks",
+        "docs:scalable_oversight_refinement",
+        "evidence_quality:model_adequacy_dossiers/scalable-oversight-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Finite complete-use admission route independently recomputed in the frozen seven-case protocol fixture.",
+      "semantic_role": "Reachable scope-to-protocol-to-review-to-audit-to-adjudication-to-bounded-use lifecycle with exact identity, abstention, authority, invalidation, and successor-version boundaries.",
       "assumptions": [
-        "Lean and validator route priorities/fields remain aligned and the digest-bound result is current."
+        "Task/consumer/protocol/cohort/system/supervisor/evidence/dependency/baseline/auditor/policy/residual/authority, review, outcome, abstention, invalidation, and protocol-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Reviewer independence/calibration, audit quality, usefulness, protocol efficacy, alignment, safety, reproduction, and transfer are excluded."
+        "Reviewer competence, independence, calibration, outcome truth, protocol efficacy, debate/consultancy/weak-to-strong value, causal usefulness, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_scalable_oversight_protocol.py#negative-controls"
+        "scripts/validate_scalable_oversight_protocol.py#negative-controls",
+        "scripts/validate_scalable_oversight_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_scalable_oversight_protocol.py",
-        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json"
+        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json",
+        "scripts/validate_scalable_oversight_refinement.py",
+        "schemas/scalable_oversight_refinement.schema.json",
+        "experiments/scalable_oversight_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:scalable-oversight.use-result-refinement.v1"
+        "proof-model:scalable-oversight.use-result-refinement.v1",
+        "proof-model:scalable-oversight-refinement.v1",
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean"
       ],
-      "review_rationale": "Retain at exact finite routing scope; bounded admission is not an efficacy or safety result."
+      "review_rationale": "Strengthen disconnected route reductions with a reachable versioned review lifecycle, independent replay, fifty-eight routes, and 65 rejecting mutations."
     },
     "lean:scalable_oversight.use.missing_evidence_views_requires_repair": {
       "dependencies": [
         "scalable-oversight-and-adversarial-ai-control.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks"
+        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks",
+        "docs:scalable_oversight_refinement",
+        "evidence_quality:model_adequacy_dossiers/scalable-oversight-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Finite missing-evidence-view repair route independently recomputed in the frozen seven-case fixture.",
+      "semantic_role": "Reachable scope-to-protocol-to-review-to-audit-to-adjudication-to-bounded-use lifecycle with exact identity, abstention, authority, invalidation, and successor-version boundaries.",
       "assumptions": [
-        "Lean and validator route priorities/fields remain aligned and the digest-bound result is current."
+        "Task/consumer/protocol/cohort/system/supervisor/evidence/dependency/baseline/auditor/policy/residual/authority, review, outcome, abstention, invalidation, and protocol-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Evidence truth/completeness, access adequacy, repair execution, protocol efficacy, safety, reproduction, and transfer are excluded."
+        "Reviewer competence, independence, calibration, outcome truth, protocol efficacy, debate/consultancy/weak-to-strong value, causal usefulness, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_scalable_oversight_protocol.py#wrong-route"
+        "scripts/validate_scalable_oversight_protocol.py#wrong-route",
+        "scripts/validate_scalable_oversight_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_scalable_oversight_protocol.py",
-        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json"
+        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json",
+        "scripts/validate_scalable_oversight_refinement.py",
+        "schemas/scalable_oversight_refinement.schema.json",
+        "experiments/scalable_oversight_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:scalable-oversight.use-result-refinement.v1"
+        "proof-model:scalable-oversight.use-result-refinement.v1",
+        "proof-model:scalable-oversight-refinement.v1",
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean"
       ],
-      "review_rationale": "Retain at exact finite routing scope only."
+      "review_rationale": "Strengthen disconnected route reductions with a reachable versioned review lifecycle, independent replay, fifty-eight routes, and 65 rejecting mutations."
     },
     "lean:scalable_oversight.use.undisclosed_dependencies_require_review": {
       "dependencies": [
         "scalable-oversight-and-adversarial-ai-control.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks"
+        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks",
+        "docs:scalable_oversight_refinement",
+        "evidence_quality:model_adequacy_dossiers/scalable-oversight-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Finite missing-dependency review route independently recomputed in the frozen seven-case fixture.",
+      "semantic_role": "Reachable scope-to-protocol-to-review-to-audit-to-adjudication-to-bounded-use lifecycle with exact identity, abstention, authority, invalidation, and successor-version boundaries.",
       "assumptions": [
-        "Lean and validator route priorities/fields remain aligned and the digest-bound result is current."
+        "Task/consumer/protocol/cohort/system/supervisor/evidence/dependency/baseline/auditor/policy/residual/authority, review, outcome, abstention, invalidation, and protocol-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Dependency completeness, reviewer independence, correlation measurement, review quality, safety, reproduction, and transfer are excluded."
+        "Reviewer competence, independence, calibration, outcome truth, protocol efficacy, debate/consultancy/weak-to-strong value, causal usefulness, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_scalable_oversight_protocol.py#wrong-route"
+        "scripts/validate_scalable_oversight_protocol.py#wrong-route",
+        "scripts/validate_scalable_oversight_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_scalable_oversight_protocol.py",
-        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json"
+        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json",
+        "scripts/validate_scalable_oversight_refinement.py",
+        "schemas/scalable_oversight_refinement.schema.json",
+        "experiments/scalable_oversight_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:scalable-oversight.use-result-refinement.v1"
+        "proof-model:scalable-oversight.use-result-refinement.v1",
+        "proof-model:scalable-oversight-refinement.v1",
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean"
       ],
-      "review_rationale": "Retain at exact finite routing scope; disclosure is not independence evidence."
+      "review_rationale": "Strengthen disconnected route reductions with a reachable versioned review lifecycle, independent replay, fifty-eight routes, and 65 rejecting mutations."
     },
     "lean:scalable_oversight.use.missing_outcome_audit_requires_audit": {
       "dependencies": [
         "scalable-oversight-and-adversarial-ai-control.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks"
+        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks",
+        "docs:scalable_oversight_refinement",
+        "evidence_quality:model_adequacy_dossiers/scalable-oversight-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Finite high-risk missing-audit route independently recomputed in the frozen seven-case fixture.",
+      "semantic_role": "Reachable scope-to-protocol-to-review-to-audit-to-adjudication-to-bounded-use lifecycle with exact identity, abstention, authority, invalidation, and successor-version boundaries.",
       "assumptions": [
-        "Lean and validator route priorities/fields remain aligned and the digest-bound result is current."
+        "Task/consumer/protocol/cohort/system/supervisor/evidence/dependency/baseline/auditor/policy/residual/authority, review, outcome, abstention, invalidation, and protocol-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Risk calibration, audit independence/quality/execution, protocol efficacy, alignment, safety, reproduction, and transfer are excluded."
+        "Reviewer competence, independence, calibration, outcome truth, protocol efficacy, debate/consultancy/weak-to-strong value, causal usefulness, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_scalable_oversight_protocol.py#audit-laundering"
+        "scripts/validate_scalable_oversight_protocol.py#audit-laundering",
+        "scripts/validate_scalable_oversight_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_scalable_oversight_protocol.py",
-        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json"
+        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json",
+        "scripts/validate_scalable_oversight_refinement.py",
+        "schemas/scalable_oversight_refinement.schema.json",
+        "experiments/scalable_oversight_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:scalable-oversight.use-result-refinement.v1"
+        "proof-model:scalable-oversight.use-result-refinement.v1",
+        "proof-model:scalable-oversight-refinement.v1",
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean"
       ],
-      "review_rationale": "Retain at exact finite routing scope; requiring an audit does not prove an adequate audit occurred."
+      "review_rationale": "Strengthen disconnected route reductions with a reachable versioned review lifecycle, independent replay, fifty-eight routes, and 65 rejecting mutations."
     },
     "lean:scalable_oversight.use.unjustified_abstention_requires_evidence": {
       "dependencies": [
         "scalable-oversight-and-adversarial-ai-control.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks"
+        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks",
+        "docs:scalable_oversight_refinement",
+        "evidence_quality:model_adequacy_dossiers/scalable-oversight-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Finite missing-abstention-evidence route independently recomputed in the frozen seven-case fixture.",
+      "semantic_role": "Reachable scope-to-protocol-to-review-to-audit-to-adjudication-to-bounded-use lifecycle with exact identity, abstention, authority, invalidation, and successor-version boundaries.",
       "assumptions": [
-        "Lean and validator route priorities/fields remain aligned and the digest-bound result is current."
+        "Task/consumer/protocol/cohort/system/supervisor/evidence/dependency/baseline/auditor/policy/residual/authority, review, outcome, abstention, invalidation, and protocol-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Abstention calibration, evidence/defeater validity, useful throughput, reviewer burden, safety, reproduction, and transfer are excluded."
+        "Reviewer competence, independence, calibration, outcome truth, protocol efficacy, debate/consultancy/weak-to-strong value, causal usefulness, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_scalable_oversight_protocol.py#wrong-route"
+        "scripts/validate_scalable_oversight_protocol.py#wrong-route",
+        "scripts/validate_scalable_oversight_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_scalable_oversight_protocol.py",
-        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json"
+        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json",
+        "scripts/validate_scalable_oversight_refinement.py",
+        "schemas/scalable_oversight_refinement.schema.json",
+        "experiments/scalable_oversight_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:scalable-oversight.use-result-refinement.v1"
+        "proof-model:scalable-oversight.use-result-refinement.v1",
+        "proof-model:scalable-oversight-refinement.v1",
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean"
       ],
-      "review_rationale": "Retain at exact finite routing scope; no selective-risk or usefulness result follows."
+      "review_rationale": "Strengthen disconnected route reductions with a reachable versioned review lifecycle, independent replay, fifty-eight routes, and 65 rejecting mutations."
     },
     "lean:scalable_oversight.use.authority_laundering_rejected": {
       "dependencies": [
         "scalable-oversight-and-adversarial-ai-control.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks"
+        "chapter:scalable-oversight-and-adversarial-ai-control#formalization-hooks",
+        "docs:scalable_oversight_refinement",
+        "evidence_quality:model_adequacy_dossiers/scalable-oversight-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Finite no-authority-boundary rejection independently recomputed in the frozen seven-case fixture.",
+      "semantic_role": "Reachable scope-to-protocol-to-review-to-audit-to-adjudication-to-bounded-use lifecycle with exact identity, abstention, authority, invalidation, and successor-version boundaries.",
       "assumptions": [
-        "Lean and validator route priorities/fields remain aligned and the digest-bound result is current."
+        "Task/consumer/protocol/cohort/system/supervisor/evidence/dependency/baseline/auditor/policy/residual/authority, review, outcome, abstention, invalidation, and protocol-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Authority provenance/legitimacy, hidden grants/effects, runtime rejection, protocol efficacy, safety, reproduction, and transfer are excluded."
+        "Reviewer competence, independence, calibration, outcome truth, protocol efficacy, debate/consultancy/weak-to-strong value, causal usefulness, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_scalable_oversight_protocol.py#authority-laundering"
+        "scripts/validate_scalable_oversight_protocol.py#authority-laundering",
+        "scripts/validate_scalable_oversight_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_scalable_oversight_protocol.py",
-        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json"
+        "experiments/scalable_oversight_protocol/results/2026-07-13-local.json",
+        "scripts/validate_scalable_oversight_refinement.py",
+        "schemas/scalable_oversight_refinement.schema.json",
+        "experiments/scalable_oversight_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
         "proof-model:scalable-oversight.use-result-refinement.v1",
-        "proof-model:authority.effect-capability-refinement.v1"
+        "proof-model:authority.effect-capability-refinement.v1",
+        "proof-model:scalable-oversight-refinement.v1",
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean"
       ],
-      "review_rationale": "Retain at exact finite routing scope; no deployed authority-confinement claim follows."
+      "review_rationale": "Strengthen disconnected route reductions with a reachable versioned review lifecycle, independent replay, fifty-eight routes, and 65 rejecting mutations."
     },
     "lean:scf.field_identity.operational_invariant": {
       "dependencies": [

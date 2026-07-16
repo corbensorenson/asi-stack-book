@@ -1690,7 +1690,7 @@
             "Stale-admission reuse carries a favorable receipt across a changed model, task distribution, retrieval corpus, prompt, evidence view, judge, or auditor without requalification.",
             "Operator-cost externalization improves a narrow accuracy score by creating unsustainable latency, privacy exposure, model/tool cost, queue growth, or human escalation burden."
           ],
-          "minimal_implementation": "A versioned oversight-protocol and use receipt with task/risk/authority scope, protocol digest, task cohort, supervisor and system envelopes, exact evidence views, roles and incentives, shared-dependency disclosure, direct-review baseline, declared outcome-audit status, abstention evidence and defeater, residual, permitted consumer, expiry, escalation owner, and no-authority grant. The current executable boundary is eight finite Lean route theorems plus seven deterministic Boolean cases and eight rejecting mutations for missing evidence views, dependency disclosure, baseline, high-risk audit, abstention evidence, authority separation, fixture integrity, theorem inventory, and support/non-claim laundering; it measures no reviewer, model, protocol, or outcome quality.",
+          "minimal_implementation": "The exact current minimum preserves the seven inherited oversight cases in a seven-stage, 58-route oversight-review lifecycle with 65/65 rejecting mutations, twelve ScalableOversightRefinement declarations, one bounded-use handoff, and one protocol-version-2 readmission witness. It runs no model, reviewer, human, debate, consultancy, weak-to-strong learner, natural task, outcome workload, causal intervention, release, deployment, reproduction, transfer, chapter-core transition, or SOTA comparison.",
           "beyond_state_of_art": "A mature oversight control plane prospectively selects direct review, consultation, structured adversarial review, constrained abstention, or escalation using task risk, capability and access asymmetry, dependency graph, calibrated outcome evidence, selective risk, monitorability, expected verification value, operator capacity, and accountable escalation. It challenges actual model-produced candidates on deliberately ambiguous and natural held-out workloads against informed direct review and strong baselines, uses an independently implemented outcome evaluator, preserves all failures and dissent, and jointly measures useful throughput, unsafe admission, false rejection, latency, privacy exposure, governance cost, coverage, and residual risk. Qualification is consumer-specific and expires after material change. This remains a target architecture, not evidence that the repository has solved weak-to-strong oversight, debate, alignment, safety, or autonomous control.",
           "codex_tests": [
             "High-risk outcome-audit admission fixture",
@@ -1699,58 +1699,64 @@
             "Evidence-view access-repair fixture",
             "Abstention-evidence fixture",
             "Authority-laundering negative control",
-            "Oversight protocol workload comparison"
+            "Oversight protocol workload comparison",
+            {
+              "name": "Scalable-oversight review-lifecycle refinement",
+              "implementation_status": "implemented",
+              "result_status": "passes the exact seven-case suite, 58 routes, seven reachable stages, and 65/65 rejecting mutations; one bounded-use handoff returns to scoped protocol binding only through version-2 readmission; support/effect none; no reviewer-competence, independence, calibration, outcome-validity, efficacy, release, transfer, or support claim"
+            }
           ],
-          "lean_module": "AsiStackProofs.ScalableOversight",
+          "lean_module": "AsiStackProofs.ScalableOversight; AsiStackProofs.ScalableOversightRefinement",
           "proof_targets": [
             {
               "tag": "lean:scalable_oversight.high_risk.missing_outcome_audit_blocks_admission",
-              "module": "AsiStackProofs.ScalableOversight",
-              "target": "A finite high-risk oversight record with a requested downstream admission and no independent outcome audit routes to accountable escalation rather than bounded admission, without inferring supervisor quality, protocol efficacy, alignment, safety, or ASI.",
+              "module": "AsiStackProofs.ScalableOversightRefinement",
+              "target": "A reachable high-risk review lifecycle without an independent outcome-audit record blocks bounded-use adjudication without mutating lifecycle state or inferring reviewer competence.",
               "status": "implemented"
             },
             {
               "tag": "lean:scalable_oversight.use.complete_bounded_admission",
-              "module": "AsiStackProofs.ScalableOversight",
-              "target": "A complete finite use record with an audited protocol, declared consumer and expiry, preserved no-authority boundary, requested downstream use, and no abstention routes to bounded use without establishing protocol efficacy.",
+              "module": "AsiStackProofs.ScalableOversightRefinement",
+              "target": "A complete versioned review lifecycle emits only one bounded-use handoff to its named consumer and assigns neither support nor an external effect.",
               "status": "implemented"
             },
             {
               "tag": "lean:scalable_oversight.use.missing_evidence_views_requires_repair",
-              "module": "AsiStackProofs.ScalableOversight",
-              "target": "A finite use record with the protocol digest, cohort, and capability envelopes present but evidence views absent routes to access repair.",
+              "module": "AsiStackProofs.ScalableOversightRefinement",
+              "target": "Missing bound evidence views block review recording without mutating lifecycle state.",
               "status": "implemented"
             },
             {
               "tag": "lean:scalable_oversight.use.undisclosed_dependencies_require_review",
-              "module": "AsiStackProofs.ScalableOversight",
-              "target": "A finite use record with missing shared-dependency disclosure routes to dependency review without claiming that disclosed reviewers are independent.",
+              "module": "AsiStackProofs.ScalableOversightRefinement",
+              "target": "Missing shared-dependency disclosure blocks independent outcome-audit admission without treating role separation as reviewer independence.",
               "status": "implemented"
             },
             {
               "tag": "lean:scalable_oversight.use.missing_outcome_audit_requires_audit",
-              "module": "AsiStackProofs.ScalableOversight",
-              "target": "A high-risk finite use record without an independent outcome-audit record routes to an audit requirement rather than bounded use.",
+              "module": "AsiStackProofs.ScalableOversightRefinement",
+              "target": "A high-risk reviewed record without an independent outcome audit cannot advance to use adjudication.",
               "status": "implemented"
             },
             {
               "tag": "lean:scalable_oversight.use.unjustified_abstention_requires_evidence",
-              "module": "AsiStackProofs.ScalableOversight",
-              "target": "A finite downstream-use record requesting abstention without its evidence record routes to an abstention-evidence requirement.",
+              "module": "AsiStackProofs.ScalableOversightRefinement",
+              "target": "An abstention request without evidence and a defeater cannot advance to its accountable escalation disposition.",
               "status": "implemented"
             },
             {
               "tag": "lean:scalable_oversight.use.authority_laundering_rejected",
-              "module": "AsiStackProofs.ScalableOversight",
-              "target": "A finite downstream-use record that fails to preserve the no-authority-grant boundary routes to authority-laundering rejection.",
+              "module": "AsiStackProofs.ScalableOversightRefinement",
+              "target": "A bounded-use request without preserved release- and policy-authority separation is rejected and cannot assign support or an external effect.",
               "status": "implemented"
             }
           ],
           "draft_maturity": "v0.2 depth-leveled chapter",
           "open_evidence_gaps": [
-            "No ASI Stack oversight protocol, human study, weak judge, debater, consultant, passage verifier, training signal, fleet-scale review window, or measured outcome has been run.",
-            "No local result establishes supervisor calibration, evaluator independence, debate or consultancy efficacy, reliable weak-to-strong generalization, alignment, safety, execution authority, or model quality.",
-            "The eight finite Lean theorems and seven-case deterministic fixture establish only structured-record routing consequences; they do not establish that any auditor is independent, capable, or correct, or that the protocol improves outcomes."
+            "No ASI Stack model, natural task cohort, human reviewer, AI judge, debater, consultant, weak-to-strong learner, outcome workload, causal intervention, release, incident, reproduction, or transfer has run.",
+            "No local result establishes reviewer competence, independence, calibration, outcome truth, protocol efficacy, debate or consultancy value, weak-to-strong generalization, causal usefulness, readiness, safety, or deployment authority.",
+            "The seven-stage lifecycle, 58-route consumer, and 65 rejecting mutations establish only structured oversight-review record consequences; all identities, protocol fields, review outcomes, audits, disagreements, abstentions, invalidation assertions, and authority fields remain trusted.",
+            "Run the prospectively frozen matched direct/assisted/adversarial review campaign with independent outcomes, correlated-reviewer negatives, natural and ambiguous tasks, causal ablations, heterogeneous transfer, and operator-cost reporting before considering empirical support movement."
           ]
         },
         {

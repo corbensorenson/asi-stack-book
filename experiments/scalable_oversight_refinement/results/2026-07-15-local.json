@@ -1,0 +1,538 @@
+{
+  "schema_version": "asi_stack.scalable_oversight_refinement.v1",
+  "result_id": "scalable-oversight-refinement-2026-07-15-local",
+  "source_sha256": {
+    "lean_model": "aab0b5f0795bfcc1b78af1477093591e2b609a3cdfc8c5e67d2718afac683e68",
+    "input_fixture": "2dad2470b5530f2ab2e149bd508eee195093d5631e2f9ed0f0f98811f1759068"
+  },
+  "input_suite": {
+    "suite_id": "scalable_oversight_protocol",
+    "case_count": 7,
+    "passed_count": 7
+  },
+  "reachable_stage_count": 7,
+  "route_case_count": 58,
+  "route_coverage": [
+    {
+      "case_id": "draft_accepted",
+      "expected_route": "accept_scope"
+    },
+    {
+      "case_id": "scoped_accepted",
+      "expected_route": "accept_protocol"
+    },
+    {
+      "case_id": "protocolBound_accepted",
+      "expected_route": "accept_review"
+    },
+    {
+      "case_id": "reviewed_accepted",
+      "expected_route": "accept_audit"
+    },
+    {
+      "case_id": "audited_accepted",
+      "expected_route": "accept_use_adjudication"
+    },
+    {
+      "case_id": "adjudicated_accepted",
+      "expected_route": "accept_bounded_use"
+    },
+    {
+      "case_id": "useBound_accepted",
+      "expected_route": "accept_readmission"
+    },
+    {
+      "case_id": "draft_taskScopePresent",
+      "expected_route": "request_task_scope"
+    },
+    {
+      "case_id": "draft_consumerPresent",
+      "expected_route": "request_consumer"
+    },
+    {
+      "case_id": "draft_authorityScopePresent",
+      "expected_route": "request_authority_scope"
+    },
+    {
+      "case_id": "draft_riskTierPresent",
+      "expected_route": "request_risk_tier"
+    },
+    {
+      "case_id": "draft_permittedInferencePresent",
+      "expected_route": "request_permitted_inference"
+    },
+    {
+      "case_id": "draft_escalationOwnerPresent",
+      "expected_route": "request_escalation_owner"
+    },
+    {
+      "case_id": "scoped_supervisorEnvelopePresent",
+      "expected_route": "request_supervisor_envelope"
+    },
+    {
+      "case_id": "scoped_systemEnvelopePresent",
+      "expected_route": "request_system_envelope"
+    },
+    {
+      "case_id": "scoped_capabilityEnvelopePresent",
+      "expected_route": "request_capability_envelope"
+    },
+    {
+      "case_id": "scoped_informationAccessPresent",
+      "expected_route": "request_information_access"
+    },
+    {
+      "case_id": "scoped_rolesAndIncentivesPresent",
+      "expected_route": "request_roles_and_incentives"
+    },
+    {
+      "case_id": "scoped_taskCohortPresent",
+      "expected_route": "request_task_cohort"
+    },
+    {
+      "case_id": "scoped_prospectiveFailureRulePresent",
+      "expected_route": "request_failure_rule"
+    },
+    {
+      "case_id": "scoped_expiryPresent",
+      "expected_route": "request_expiry"
+    },
+    {
+      "case_id": "protocolBound_evidenceViewsPresent",
+      "expected_route": "request_evidence_views"
+    },
+    {
+      "case_id": "protocolBound_directReviewBaselinePresent",
+      "expected_route": "request_direct_review_baseline"
+    },
+    {
+      "case_id": "protocolBound_reviewOutcomePresent",
+      "expected_route": "request_review_outcome"
+    },
+    {
+      "case_id": "protocolBound_disagreementRecorded",
+      "expected_route": "request_disagreement_record"
+    },
+    {
+      "case_id": "protocolBound_completeDenominator",
+      "expected_route": "request_complete_denominator"
+    },
+    {
+      "case_id": "protocolBound_coverageRecorded",
+      "expected_route": "request_coverage_record"
+    },
+    {
+      "case_id": "protocolBound_abstentionReasonRecorded",
+      "expected_route": "request_abstention_reason"
+    },
+    {
+      "case_id": "protocolBound_costRecordPresent",
+      "expected_route": "request_cost_record"
+    },
+    {
+      "case_id": "reviewed_independentOutcomeAuditPresent",
+      "expected_route": "request_independent_outcome_audit"
+    },
+    {
+      "case_id": "reviewed_auditorSeparationPresent",
+      "expected_route": "reject_auditor_dependency"
+    },
+    {
+      "case_id": "reviewed_sharedDependenciesDisclosed",
+      "expected_route": "request_shared_dependency_disclosure"
+    },
+    {
+      "case_id": "reviewed_correlationChallengePresent",
+      "expected_route": "request_correlation_challenge"
+    },
+    {
+      "case_id": "reviewed_outcomeCriterionPresent",
+      "expected_route": "request_outcome_criterion"
+    },
+    {
+      "case_id": "reviewed_auditOutcomePresent",
+      "expected_route": "request_audit_outcome"
+    },
+    {
+      "case_id": "reviewed_failureCasesPreserved",
+      "expected_route": "request_failure_cases"
+    },
+    {
+      "case_id": "audited_uncertaintyPresent",
+      "expected_route": "request_uncertainty"
+    },
+    {
+      "case_id": "audited_residualOwnerPresent",
+      "expected_route": "request_residual_owner"
+    },
+    {
+      "case_id": "audited_disagreementDispositionPresent",
+      "expected_route": "request_disagreement_disposition"
+    },
+    {
+      "case_id": "audited_abstentionEvidencePresent",
+      "expected_route": "request_abstention_evidence"
+    },
+    {
+      "case_id": "audited_abstentionDefeaterPresent",
+      "expected_route": "request_abstention_defeater"
+    },
+    {
+      "case_id": "audited_escalationRoutePresent",
+      "expected_route": "request_escalation_route"
+    },
+    {
+      "case_id": "audited_noCompetenceInferenceRecorded",
+      "expected_route": "reject_competence_inference"
+    },
+    {
+      "case_id": "audited_policyAuthoritySeparated",
+      "expected_route": "reject_policy_authority_laundering"
+    },
+    {
+      "case_id": "adjudicated_permittedConsumerPresent",
+      "expected_route": "request_permitted_consumer"
+    },
+    {
+      "case_id": "adjudicated_boundedUseRecordPresent",
+      "expected_route": "request_bounded_use_record"
+    },
+    {
+      "case_id": "adjudicated_protocolDigestBound",
+      "expected_route": "request_protocol_binding"
+    },
+    {
+      "case_id": "adjudicated_expiryChecked",
+      "expected_route": "request_expiry_check"
+    },
+    {
+      "case_id": "adjudicated_noReleaseAuthorityRecorded",
+      "expected_route": "reject_release_authority_laundering"
+    },
+    {
+      "case_id": "useBound_materialChangeTriggerPresent",
+      "expected_route": "request_material_change_trigger"
+    },
+    {
+      "case_id": "useBound_descendantInvalidationComplete",
+      "expected_route": "request_descendant_invalidation"
+    },
+    {
+      "case_id": "useBound_ordinaryRouteBlocked",
+      "expected_route": "request_ordinary_route_block"
+    },
+    {
+      "case_id": "useBound_successorProtocolVersion",
+      "expected_route": "reject_successor_version"
+    },
+    {
+      "case_id": "audited_abstention_complete",
+      "expected_route": "accept_abstention_escalation"
+    },
+    {
+      "case_id": "wrong_stage",
+      "expected_route": "reject_wrong_stage"
+    },
+    {
+      "case_id": "identity_substitution",
+      "expected_route": "reject_identity_substitution"
+    },
+    {
+      "case_id": "event_replay",
+      "expected_route": "reject_replay"
+    },
+    {
+      "case_id": "authority_leak",
+      "expected_route": "reject_authority_leak"
+    }
+  ],
+  "mutation_count": 65,
+  "mutation_rejection_count": 65,
+  "mutation_receipts": [
+    {
+      "mutation_id": "binding_auditorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_authorityDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_baselineDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_cohortDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_consumerId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_currentProtocolVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_dependencyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_evidenceViewDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_protocolDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_residualDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_supervisorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_systemDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_taskId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_taskScopePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_consumerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_authorityScopePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_riskTierPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_permittedInferencePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_escalationOwnerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_supervisorEnvelopePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_systemEnvelopePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_capabilityEnvelopePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_informationAccessPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_rolesAndIncentivesPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_taskCohortPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_prospectiveFailureRulePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_expiryPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_protocolBound_evidenceViewsPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_protocolBound_directReviewBaselinePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_protocolBound_reviewOutcomePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_protocolBound_disagreementRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_protocolBound_completeDenominator",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_protocolBound_coverageRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_protocolBound_abstentionReasonRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_protocolBound_costRecordPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_reviewed_independentOutcomeAuditPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_reviewed_auditorSeparationPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_reviewed_sharedDependenciesDisclosed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_reviewed_correlationChallengePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_reviewed_outcomeCriterionPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_reviewed_auditOutcomePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_reviewed_failureCasesPreserved",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_audited_uncertaintyPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_audited_residualOwnerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_audited_disagreementDispositionPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_audited_abstentionEvidencePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_audited_abstentionDefeaterPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_audited_escalationRoutePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_audited_noCompetenceInferenceRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_audited_policyAuthoritySeparated",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_permittedConsumerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_boundedUseRecordPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_protocolDigestBound",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_expiryChecked",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_noReleaseAuthorityRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_useBound_materialChangeTriggerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_useBound_descendantInvalidationComplete",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_useBound_ordinaryRouteBlocked",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_useBound_successorProtocolVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong_kind",
+      "rejected": true
+    },
+    {
+      "mutation_id": "event_replay",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support_leak",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect_leak",
+      "rejected": true
+    },
+    {
+      "mutation_id": "stale_use_after_readmission",
+      "rejected": true
+    }
+  ],
+  "command_receipts": [
+    {
+      "command": "python3 scripts/validate_scalable_oversight_protocol.py",
+      "exit_code": 0,
+      "output_sha256": "2dc99d1699b003c5278333fb33ef3f47a75e5805e0809a1d1ca18a7327e58bbf"
+    }
+  ],
+  "witness": {
+    "terminal_stage": "scoped",
+    "protocol_version": 2,
+    "receipt_count": 7,
+    "bounded_use_handoff_count": 1,
+    "readmission_count": 1,
+    "support_assignment_count": 0,
+    "external_effect_count": 0
+  },
+  "support_state_effect": "none",
+  "non_claims": [
+    "no reviewer competence or calibration result",
+    "no debate, consultancy, or weak-to-strong efficacy result",
+    "no model or human outcome workload",
+    "no independence, causal, usefulness, safety, or transfer result",
+    "no deployed invalidation or policy enforcement",
+    "no release, execution, or support authority"
+  ]
+}

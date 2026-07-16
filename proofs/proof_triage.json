@@ -2793,72 +2793,72 @@
     {
       "tag": "lean:scalable_oversight.high_risk.missing_outcome_audit_blocks_admission",
       "chapter_id": "scalable-oversight-and-adversarial-ai-control",
-      "module": "AsiStackProofs.ScalableOversight",
-      "formal_target": "A finite high-risk oversight record with a requested downstream admission and no independent outcome audit routes to accountable escalation rather than bounded admission, without inferring supervisor quality, protocol efficacy, alignment, safety, or ASI.",
+      "module": "AsiStackProofs.ScalableOversightRefinement",
+      "formal_target": "A reachable high-risk review lifecycle without an independent outcome-audit record blocks bounded-use adjudication without mutating lifecycle state or inferring reviewer competence.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.ScalableOversight as a finite high-risk admission boundary, with a companion baseline-completeness route. It does not establish reviewer independence, supervisor calibration, debate or consultancy efficacy, training safety, execution authority, model quality, safety, or ASI."
+      "rationale": "Reachable oversight-review lifecycle with prospective scope/protocol custody, review, independent-audit, adjudication, bounded-use handoff, and successor-version readmission boundaries, 58 routes, 65 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:scalable_oversight.use.complete_bounded_admission",
       "chapter_id": "scalable-oversight-and-adversarial-ai-control",
-      "module": "AsiStackProofs.ScalableOversight",
-      "formal_target": "A complete finite use record with an audited protocol, declared consumer and expiry, preserved no-authority boundary, requested downstream use, and no abstention routes to bounded use without establishing protocol efficacy.",
+      "module": "AsiStackProofs.ScalableOversightRefinement",
+      "formal_target": "A complete versioned review lifecycle emits only one bounded-use handoff to its named consumer and assigns neither support nor an external effect.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented as a derived finite-record route and connected to the deterministic protocol fixture. It establishes only routing completeness, not that oversight is useful, correct, independent, or safe."
+      "rationale": "Reachable oversight-review lifecycle with prospective scope/protocol custody, review, independent-audit, adjudication, bounded-use handoff, and successor-version readmission boundaries, 58 routes, 65 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:scalable_oversight.use.missing_evidence_views_requires_repair",
       "chapter_id": "scalable-oversight-and-adversarial-ai-control",
-      "module": "AsiStackProofs.ScalableOversight",
-      "formal_target": "A finite use record with the protocol digest, cohort, and capability envelopes present but evidence views absent routes to access repair.",
+      "module": "AsiStackProofs.ScalableOversightRefinement",
+      "formal_target": "Missing bound evidence views block review recording without mutating lifecycle state.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented as a derived access-completeness route. It does not establish that a recorded evidence view is adequate or truth preserving."
+      "rationale": "Reachable oversight-review lifecycle with prospective scope/protocol custody, review, independent-audit, adjudication, bounded-use handoff, and successor-version readmission boundaries, 58 routes, 65 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:scalable_oversight.use.undisclosed_dependencies_require_review",
       "chapter_id": "scalable-oversight-and-adversarial-ai-control",
-      "module": "AsiStackProofs.ScalableOversight",
-      "formal_target": "A finite use record with missing shared-dependency disclosure routes to dependency review without claiming that disclosed reviewers are independent.",
+      "module": "AsiStackProofs.ScalableOversightRefinement",
+      "formal_target": "Missing shared-dependency disclosure blocks independent outcome-audit admission without treating role separation as reviewer independence.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented as a derived dependency-disclosure route. It does not measure or prove evaluator independence."
+      "rationale": "Reachable oversight-review lifecycle with prospective scope/protocol custody, review, independent-audit, adjudication, bounded-use handoff, and successor-version readmission boundaries, 58 routes, 65 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:scalable_oversight.use.missing_outcome_audit_requires_audit",
       "chapter_id": "scalable-oversight-and-adversarial-ai-control",
-      "module": "AsiStackProofs.ScalableOversight",
-      "formal_target": "A high-risk finite use record without an independent outcome-audit record routes to an audit requirement rather than bounded use.",
+      "module": "AsiStackProofs.ScalableOversightRefinement",
+      "formal_target": "A high-risk reviewed record without an independent outcome audit cannot advance to use adjudication.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented as a derived high-risk audit route. It does not establish that a present audit is independent, correct, or sufficient."
+      "rationale": "Reachable oversight-review lifecycle with prospective scope/protocol custody, review, independent-audit, adjudication, bounded-use handoff, and successor-version readmission boundaries, 58 routes, 65 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:scalable_oversight.use.unjustified_abstention_requires_evidence",
       "chapter_id": "scalable-oversight-and-adversarial-ai-control",
-      "module": "AsiStackProofs.ScalableOversight",
-      "formal_target": "A finite downstream-use record requesting abstention without its evidence record routes to an abstention-evidence requirement.",
+      "module": "AsiStackProofs.ScalableOversightRefinement",
+      "formal_target": "An abstention request without evidence and a defeater cannot advance to its accountable escalation disposition.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented as a derived abstention route. It does not establish that an evidence-backed abstention is calibrated or beneficial."
+      "rationale": "Reachable oversight-review lifecycle with prospective scope/protocol custody, review, independent-audit, adjudication, bounded-use handoff, and successor-version readmission boundaries, 58 routes, 65 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:scalable_oversight.use.authority_laundering_rejected",
       "chapter_id": "scalable-oversight-and-adversarial-ai-control",
-      "module": "AsiStackProofs.ScalableOversight",
-      "formal_target": "A finite downstream-use record that fails to preserve the no-authority-grant boundary routes to authority-laundering rejection.",
+      "module": "AsiStackProofs.ScalableOversightRefinement",
+      "formal_target": "A bounded-use request without preserved release- and policy-authority separation is rejected and cannot assign support or an external effect.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented as a derived authority-separation route. It preserves a record boundary but does not implement or authorize an external action."
+      "rationale": "Reachable oversight-review lifecycle with prospective scope/protocol custody, review, independent-audit, adjudication, bounded-use handoff, and successor-version readmission boundaries, 58 routes, 65 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:reference_architecture.governed_trace.four_invariants",
