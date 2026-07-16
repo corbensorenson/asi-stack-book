@@ -96,6 +96,9 @@ SCALABLE_OVERSIGHT_DOSSIER = "evidence_quality/model_adequacy_dossiers/scalable-
 POLICY_OPTIMIZATION_RESULT = "experiments/policy_optimization_refinement/results/2026-07-16-local.json"
 POLICY_OPTIMIZATION_RECEIPT = "docs/policy_optimization_refinement.md"
 POLICY_OPTIMIZATION_DOSSIER = "evidence_quality/model_adequacy_dossiers/policy-optimization-refinement.md"
+DATA_ENGINE_LIFECYCLE_RESULT = "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json"
+DATA_ENGINE_LIFECYCLE_RECEIPT = "docs/data_engine_lifecycle_refinement.md"
+DATA_ENGINE_LIFECYCLE_DOSSIER = "evidence_quality/model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
 READINESS_RESULT = "experiments/readiness_refinement/results/2026-07-15-local.json"
 READINESS_RECEIPT = "docs/readiness_refinement.md"
 READINESS_DOSSIER = "evidence_quality/model_adequacy_dossiers/readiness-refinement.md"
@@ -278,6 +281,9 @@ def snapshot() -> dict:
         "policy_optimization_result": load(POLICY_OPTIMIZATION_RESULT),
         "policy_optimization_receipt": text(POLICY_OPTIMIZATION_RECEIPT),
         "policy_optimization_dossier": text(POLICY_OPTIMIZATION_DOSSIER),
+        "data_engine_lifecycle_result": load(DATA_ENGINE_LIFECYCLE_RESULT),
+        "data_engine_lifecycle_receipt": text(DATA_ENGINE_LIFECYCLE_RECEIPT),
+        "data_engine_lifecycle_dossier": text(DATA_ENGINE_LIFECYCLE_DOSSIER),
         "readiness_result": load(READINESS_RESULT),
         "readiness_receipt": text(READINESS_RECEIPT),
         "readiness_dossier": text(READINESS_DOSSIER),
@@ -1108,8 +1114,8 @@ def errors(data: dict) -> list[str]:
 
     expected_claim_ledger_contract = {
         "current_missing_or_changed_theorem_count":296,
-        "current_missing_or_changed_target_count":158,
-        "current_live_theorem_declaration_count":1290,
+        "current_missing_or_changed_target_count":173,
+        "current_live_theorem_declaration_count":1291,
         "current_live_proof_target_count":298,
         "claim_ledger_model_path":"lean/AsiStackProofs/ClaimLedgerRefinement.lean",
         "claim_ledger_dossier_path":CLAIM_LEDGER_DOSSIER,
@@ -1469,6 +1475,49 @@ def errors(data: dict) -> list[str]:
     policy_optimization_chapter=next((row for row in structure_rows if row.get("id")=="policy-optimization-and-learning-from-feedback"),{})
     if {row.get("module") for row in policy_optimization_chapter.get("proof_targets",[])}!={"AsiStackProofs.PolicyOptimizationRefinement"}:
         out.append("Policy Optimization public targets do not all resolve to refinement")
+
+    expected_data_engine_lifecycle_contract={
+        "data_engine_lifecycle_model_path":"lean/AsiStackProofs/DataEngineLifecycleRefinement.lean",
+        "data_engine_lifecycle_dossier_path":DATA_ENGINE_LIFECYCLE_DOSSIER,
+        "data_engine_lifecycle_consumer_path":DATA_ENGINE_LIFECYCLE_RECEIPT,
+        "data_engine_lifecycle_result_path":DATA_ENGINE_LIFECYCLE_RESULT,
+        "data_engine_lifecycle_state":"validated_finite_authored_custody_update_deletion_readmission_lifecycle_not_learning_erasure_or_deployed",
+        "data_engine_lifecycle_admission_scenario_count":4,
+        "data_engine_lifecycle_full_state_surface_count":24,
+        "data_engine_lifecycle_full_state_transaction_count":15,
+        "data_engine_lifecycle_update_seed_count":3,
+        "data_engine_lifecycle_update_arm_count":12,
+        "data_engine_lifecycle_reachable_stage_count":8,
+        "data_engine_lifecycle_route_case_count":82,
+        "data_engine_lifecycle_mutation_rejection_count":96,
+        "data_engine_lifecycle_retained_legacy_theorem_count":15,
+        "data_engine_lifecycle_bounded_custody_count":1,
+        "data_engine_lifecycle_readmission_count":1,
+        "data_engine_lifecycle_support_state_effect":"none"}
+    for key,value in expected_data_engine_lifecycle_contract.items():
+        if proof_contract.get(key)!=value: out.append(f"data-engine lifecycle contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    data_engine_lifecycle=data["data_engine_lifecycle_result"]
+    for key,value in {"reachable_stage_count":8,"route_case_count":82,"mutation_count":96,
+                      "mutation_rejection_count":96,"support_state_effect":"none"}.items():
+        if data_engine_lifecycle.get(key)!=value: out.append(f"data-engine lifecycle result drifted: {key}")
+    inherited_data_engine=data_engine_lifecycle.get("inherited_results",{})
+    for key,value in {"admission_scenario_count":4,"full_state_surface_count":24,
+                      "full_state_transaction_count":15,"full_state_exact_rollback_count":15,
+                      "full_state_storage_erasure_count":0,"update_seed_count":3,
+                      "update_arm_count":12,"update_no_change_disposition_count":4,
+                      "support_state_effect":"none"}.items():
+        if inherited_data_engine.get(key)!=value: out.append(f"data-engine inherited result drifted: {key}")
+    data_engine_witness=data_engine_lifecycle.get("witness",{})
+    for key,value in {"terminal_stage":"scoped","protocol_version":2,"bounded_custody_count":1,
+                      "readmission_count":1,"support_assignment_count":0,"external_effect_count":0}.items():
+        if data_engine_witness.get(key)!=value: out.append(f"data-engine lifecycle witness drifted: {key}")
+    for phrase in ["eight-stage custody lifecycle", "all 82 routes", "96/96", "Support-state and external-effect authority remain exactly `none`"]:
+        if phrase.casefold() not in data["data_engine_lifecycle_receipt"].casefold(): out.append(f"data-engine lifecycle receipt missing exact boundary: {phrase}")
+    for phrase in ["Eight reachable stages", "all 82 routes", "Inadequate for source or rights truth", "No support transition"]:
+        if phrase.casefold() not in data["data_engine_lifecycle_dossier"].casefold(): out.append(f"data-engine lifecycle dossier missing adequacy boundary: {phrase}")
+    data_engine_chapter=next((row for row in structure_rows if row.get("id")=="data-engines-continual-learning-and-unlearning"),{})
+    if {row.get("module") for row in data_engine_chapter.get("proof_targets",[])}!={"AsiStackProofs.DataEngineLifecycleRefinement"}:
+        out.append("Data Engines public targets do not all resolve to refinement")
 
     expected_readiness_contract={
         "readiness_model_path":"lean/AsiStackProofs/ReadinessRefinement.lean","readiness_dossier_path":READINESS_DOSSIER,
@@ -1885,6 +1934,10 @@ def main() -> None:
     policy_optimization_support["policy_optimization_result"]["support_state_effect"] = "prototype-backed"
     mutations.append(("policy-optimization support laundering", policy_optimization_support))
 
+    data_engine_lifecycle_support = copy.deepcopy(base)
+    data_engine_lifecycle_support["data_engine_lifecycle_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("data-engine lifecycle support laundering", data_engine_lifecycle_support))
+
     readiness_support = copy.deepcopy(base)
     readiness_support["readiness_result"]["support_state_effect"] = "prototype-backed"
     mutations.append(("readiness support laundering", readiness_support))
@@ -1951,7 +2004,7 @@ def main() -> None:
         "55 live chapter-core programs across CF-01..CF-08 with a frozen 54-chapter activation baseline, exact proof/evidence/reader baseline, "
         "proof rationalization and argument-exit contracts, maintained X Article and exact 5:2 header contract, "
         "no support or release effect, no external-human gate, same-transaction successor continuity, "
-        "validated shared-safety, Cognitive Kernel ABI, integrated reference trace, concrete-schema refinement, concurrent effect, reachable stack-boundary, Intent-to-Execution vertical, Authority grant-to-effect, Human Intent resolution, Command semantic-interface, Cognitive Compilation obligation-refinement, Virtual Context binding/materialization/fault, Context Certificate provenance/lifecycle, Context Transaction snapshot/store, Verification Bandwidth evidence-gate, Claim Ledger append-only, Proof-Carrying Claims target-to-writeback, Tribunal versioned-verdict/appeal, Typed Job versioned execution/closure, Artifact record-reality/trust, Procedural Memory promotion/retirement, Routing/MoECOT request-to-closure, Safety Case readiness/invalidation, Capability Threshold repeated assessment, Adversarial Evaluation observation/re-evaluation, Scalable Oversight review/readmission, Policy Optimization governed-update/readmission, Readiness candidate-to-terminal, Hive policy-to-closure, Compact Generation source-to-closure, Fast Generation request-to-closure, Governed Deliberation request-to-closure, Artifact Compression artifact-to-consumption, and Resource Economics allocation-and-simulation-transport receipts, bounded WIP and first-campaign/SOTA entry gates, and 53 rejecting mutations."
+        "validated shared-safety, Cognitive Kernel ABI, integrated reference trace, concrete-schema refinement, concurrent effect, reachable stack-boundary, Intent-to-Execution vertical, Authority grant-to-effect, Human Intent resolution, Command semantic-interface, Cognitive Compilation obligation-refinement, Virtual Context binding/materialization/fault, Context Certificate provenance/lifecycle, Context Transaction snapshot/store, Verification Bandwidth evidence-gate, Claim Ledger append-only, Proof-Carrying Claims target-to-writeback, Tribunal versioned-verdict/appeal, Typed Job versioned execution/closure, Artifact record-reality/trust, Procedural Memory promotion/retirement, Routing/MoECOT request-to-closure, Safety Case readiness/invalidation, Capability Threshold repeated assessment, Adversarial Evaluation observation/re-evaluation, Scalable Oversight review/readmission, Policy Optimization governed-update/readmission, Data Engines custody/update/deletion/readmission, Readiness candidate-to-terminal, Hive policy-to-closure, Compact Generation source-to-closure, Fast Generation request-to-closure, Governed Deliberation request-to-closure, Artifact Compression artifact-to-consumption, and Resource Economics allocation-and-simulation-transport receipts, bounded WIP and first-campaign/SOTA entry gates, and 54 rejecting mutations."
     )
 
 

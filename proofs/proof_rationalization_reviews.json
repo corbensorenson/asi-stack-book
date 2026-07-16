@@ -30764,20 +30764,32 @@
       "excluded_effects": [
         "Dataset/provenance/authority/contamination truth, model training, production state completeness, remote effects, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_data_admission_receipt_probe.py#rejecting-controls"
+        "scripts/validate_data_admission_receipt_probe.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:data_engines.provenance_authority.failure_blocks_admission",
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_admission_receipt_probe.py",
-        "experiments/data_admission_receipt_probe/results/2026-07-10-local.json"
+        "experiments/data_admission_receipt_probe/results/2026-07-10-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_engine_full_state_bridge.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.missing_provenance_or_authority_blocks_data_admission.effect-refinement.v1"
+        "proof-model:data-engines.missing_provenance_or_authority_blocks_data_admission.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -30791,20 +30803,32 @@
       "excluded_effects": [
         "Dataset/provenance/authority/contamination truth, model training, production state completeness, remote effects, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_data_admission_receipt_probe.py#rejecting-controls"
+        "scripts/validate_data_admission_receipt_probe.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:data_engines.contamination.failure_routes",
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_admission_receipt_probe.py",
-        "experiments/data_admission_receipt_probe/results/2026-07-10-local.json"
+        "experiments/data_admission_receipt_probe/results/2026-07-10-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_engine_full_state_bridge.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.missing_split_exclusion_or_contamination_check_quarantines_data.effect-refinement.v1"
+        "proof-model:data-engines.missing_split_exclusion_or_contamination_check_quarantines_data.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -30818,20 +30842,32 @@
       "excluded_effects": [
         "Dataset/provenance/authority/contamination truth, model training, production state completeness, remote effects, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_data_admission_receipt_probe.py#rejecting-controls"
+        "scripts/validate_data_admission_receipt_probe.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:data_engines.complete_receipt.eligibility_invariant",
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_admission_receipt_probe.py",
-        "experiments/data_admission_receipt_probe/results/2026-07-10-local.json"
+        "experiments/data_admission_receipt_probe/results/2026-07-10-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_engine_full_state_bridge.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.complete_data_record_routes_to_eligible.effect-refinement.v1"
+        "proof-model:data-engines.complete_data_record_routes_to_eligible.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -30845,20 +30881,32 @@
       "excluded_effects": [
         "Dataset/provenance/authority/contamination truth, model training, production state completeness, remote effects, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:data_engines.full_state.complete_reaches_evidence_review",
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.complete_full_state_update_reaches_evidence_review.effect-refinement.v1"
+        "proof-model:data-engines.complete_full_state_update_reaches_evidence_review.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -30872,20 +30920,32 @@
       "excluded_effects": [
         "Dataset/provenance/authority/contamination truth, model training, production state completeness, remote effects, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:data_engines.full_state.missing_optimizer_requires_repair",
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.missing_optimizer_state_requires_inventory_repair.effect-refinement.v1"
+        "proof-model:data-engines.missing_optimizer_state_requires_inventory_repair.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -30899,20 +30959,32 @@
       "excluded_effects": [
         "Dataset/provenance/authority/contamination truth, model training, production state completeness, remote effects, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:data_engines.full_state.missing_scheduler_requires_repair",
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.missing_scheduler_state_requires_inventory_repair.effect-refinement.v1"
+        "proof-model:data-engines.missing_scheduler_state_requires_inventory_repair.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -30926,20 +30998,32 @@
       "excluded_effects": [
         "Dataset/provenance/authority/contamination truth, model training, production state completeness, remote effects, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:data_engines.full_state.missing_rng_requires_repair",
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.missing_rng_state_requires_inventory_repair.effect-refinement.v1"
+        "proof-model:data-engines.missing_rng_state_requires_inventory_repair.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -30953,20 +31037,32 @@
       "excluded_effects": [
         "Dataset/provenance/authority/contamination truth, model training, production state completeness, remote effects, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:data_engines.full_state.missing_cache_requires_repair",
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.missing_cache_state_requires_inventory_repair.effect-refinement.v1"
+        "proof-model:data-engines.missing_cache_state_requires_inventory_repair.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -30980,20 +31076,32 @@
       "excluded_effects": [
         "Dataset/provenance/authority/contamination truth, model training, production state completeness, remote effects, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:data_engines.full_state.missing_backup_requires_repair",
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.missing_backup_state_requires_inventory_repair.effect-refinement.v1"
+        "proof-model:data-engines.missing_backup_state_requires_inventory_repair.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -31007,20 +31115,32 @@
       "excluded_effects": [
         "Dataset/provenance/authority/contamination truth, model training, production state completeness, remote effects, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:data_engines.full_state.missing_descendant_requires_repair",
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.missing_descendant_state_requires_inventory_repair.effect-refinement.v1"
+        "proof-model:data-engines.missing_descendant_state_requires_inventory_repair.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -31034,20 +31154,32 @@
       "excluded_effects": [
         "Dataset/provenance/authority/contamination truth, model training, production state completeness, remote effects, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:data_engines.full_state.missing_checkpoint_authority_requires_repair",
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.missing_prospective_checkpoint_authority_requires_repair.effect-refinement.v1"
+        "proof-model:data-engines.missing_prospective_checkpoint_authority_requires_repair.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -31061,20 +31193,32 @@
       "excluded_effects": [
         "Dataset/provenance/authority/contamination truth, model training, production state completeness, remote effects, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:data_engines.full_state.rollback_mismatch_requires_repair",
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.rollback_mismatch_requires_repair.effect-refinement.v1"
+        "proof-model:data-engines.rollback_mismatch_requires_repair.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -31088,20 +31232,32 @@
       "excluded_effects": [
         "Dataset/provenance/authority/contamination truth, model training, production state completeness, remote effects, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:data_engines.unlearning.behavior_cannot_launder_influence",
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.behavioral_change_cannot_launder_influence_reduction.effect-refinement.v1"
+        "proof-model:data-engines.behavioral_change_cannot_launder_influence_reduction.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -31115,20 +31271,32 @@
       "excluded_effects": [
         "Dataset/provenance/authority/contamination truth, model training, production state completeness, remote effects, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:data_engines.unlearning.behavior_cannot_launder_privacy",
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.behavioral_change_cannot_launder_privacy_erasure.effect-refinement.v1"
+        "proof-model:data-engines.behavioral_change_cannot_launder_privacy_erasure.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -31142,20 +31310,32 @@
       "excluded_effects": [
         "Dataset/provenance/authority/contamination truth, model training, production state completeness, remote effects, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:data_engines.unlearning.lineage_cannot_launder_storage",
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.lineage_propagation_cannot_launder_storage_erasure.effect-refinement.v1"
+        "proof-model:data-engines.lineage_propagation_cannot_launder_storage_erasure.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -43167,436 +43347,616 @@
       "dependencies": [
         "data-engines-continual-learning-and-unlearning.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route plus adjacent validator evidence: Missing provenance or authority selects block.",
+      "semantic_role": "Reachable scope-to-admission-to-full-state-to-update-to-deletion-assessment-to-claim-adjudication-to-bounded-custody lifecycle with exact identity, rollback, claim-axis, invalidation, authority, and successor-version boundaries.",
       "assumptions": [
-        "Declared fields and tracked validator/campaign inputs remain current."
+        "All datum/cohort/provenance/rights/authority/split/dataset/model/checkpoint/optimizer/scheduler/RNG/cache/backup/lineage/descendant/deletion/evaluator/consumer identities, checks, statuses, rollback receipts, monitors, invalidations, and version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No dataset quality, semantic contamination absence, model training, language-model continual learning, remote/production state completeness, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, or transfer."
+        "Source/rights truth, semantic contamination control, data quality, language-model learning, influence removal, forgetting, privacy/legal/storage/backup erasure, semantic/production recovery, capability, safety, readiness, release, reproduction, transfer, SOTA, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_data_admission_receipt_probe.py#rejecting-controls"
+        "scripts/validate_data_admission_receipt_probe.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_admission_receipt_probe.py",
-        "experiments/data_admission_receipt_probe/results/2026-07-10-local.json"
+        "experiments/data_admission_receipt_probe/results/2026-07-10-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_engine_full_state_bridge.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.missing_provenance_or_authority_blocks_data_admission.effect-refinement.v1"
+        "proof-model:data-engines.missing_provenance_or_authority_blocks_data_admission.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
-      "review_rationale": "Retain only the bounded route or validator-owned fixture; no training, quality, or deployment conclusion follows."
+      "review_rationale": "Join fifteen disconnected finite routes and three bounded result suites into a reachable versioned custody lifecycle, independent replay, eighty-two routes, and 96 rejecting mutations."
     },
     "lean:data_engines.contamination.failure_routes": {
       "dependencies": [
         "data-engines-continual-learning-and-unlearning.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route plus adjacent validator evidence: Missing split exclusion or contamination-check record selects quarantine after provenance/authority.",
+      "semantic_role": "Reachable scope-to-admission-to-full-state-to-update-to-deletion-assessment-to-claim-adjudication-to-bounded-custody lifecycle with exact identity, rollback, claim-axis, invalidation, authority, and successor-version boundaries.",
       "assumptions": [
-        "Declared fields and tracked validator/campaign inputs remain current."
+        "All datum/cohort/provenance/rights/authority/split/dataset/model/checkpoint/optimizer/scheduler/RNG/cache/backup/lineage/descendant/deletion/evaluator/consumer identities, checks, statuses, rollback receipts, monitors, invalidations, and version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No dataset quality, semantic contamination absence, model training, language-model continual learning, remote/production state completeness, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, or transfer."
+        "Source/rights truth, semantic contamination control, data quality, language-model learning, influence removal, forgetting, privacy/legal/storage/backup erasure, semantic/production recovery, capability, safety, readiness, release, reproduction, transfer, SOTA, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_data_admission_receipt_probe.py#rejecting-controls"
+        "scripts/validate_data_admission_receipt_probe.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_admission_receipt_probe.py",
-        "experiments/data_admission_receipt_probe/results/2026-07-10-local.json"
+        "experiments/data_admission_receipt_probe/results/2026-07-10-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_engine_full_state_bridge.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.missing_split_exclusion_or_contamination_check_quarantines_data.effect-refinement.v1"
+        "proof-model:data-engines.missing_split_exclusion_or_contamination_check_quarantines_data.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
-      "review_rationale": "Retain only the bounded route or validator-owned fixture; no training, quality, or deployment conclusion follows."
+      "review_rationale": "Join fifteen disconnected finite routes and three bounded result suites into a reachable versioned custody lifecycle, independent replay, eighty-two routes, and 96 rejecting mutations."
     },
     "lean:data_engines.complete_receipt.eligibility_invariant": {
       "dependencies": [
         "data-engines-continual-learning-and-unlearning.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route plus adjacent validator evidence: A complete declared data-admission record selects eligible.",
+      "semantic_role": "Reachable scope-to-admission-to-full-state-to-update-to-deletion-assessment-to-claim-adjudication-to-bounded-custody lifecycle with exact identity, rollback, claim-axis, invalidation, authority, and successor-version boundaries.",
       "assumptions": [
-        "Declared fields and tracked validator/campaign inputs remain current."
+        "All datum/cohort/provenance/rights/authority/split/dataset/model/checkpoint/optimizer/scheduler/RNG/cache/backup/lineage/descendant/deletion/evaluator/consumer identities, checks, statuses, rollback receipts, monitors, invalidations, and version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No dataset quality, semantic contamination absence, model training, language-model continual learning, remote/production state completeness, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, or transfer."
+        "Source/rights truth, semantic contamination control, data quality, language-model learning, influence removal, forgetting, privacy/legal/storage/backup erasure, semantic/production recovery, capability, safety, readiness, release, reproduction, transfer, SOTA, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_data_admission_receipt_probe.py#rejecting-controls"
+        "scripts/validate_data_admission_receipt_probe.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_admission_receipt_probe.py",
-        "experiments/data_admission_receipt_probe/results/2026-07-10-local.json"
+        "experiments/data_admission_receipt_probe/results/2026-07-10-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_engine_full_state_bridge.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.complete_data_record_routes_to_eligible.effect-refinement.v1"
+        "proof-model:data-engines.complete_data_record_routes_to_eligible.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
-      "review_rationale": "Retain only the bounded route or validator-owned fixture; no training, quality, or deployment conclusion follows."
+      "review_rationale": "Join fifteen disconnected finite routes and three bounded result suites into a reachable versioned custody lifecycle, independent replay, eighty-two routes, and 96 rejecting mutations."
     },
     "lean:data_engines.full_state.complete_reaches_evidence_review": {
       "dependencies": [
         "data-engines-continual-learning-and-unlearning.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route plus adjacent validator evidence: Complete declared full-state inventory, checkpoint authority, and exact rollback select evidence review.",
+      "semantic_role": "Reachable scope-to-admission-to-full-state-to-update-to-deletion-assessment-to-claim-adjudication-to-bounded-custody lifecycle with exact identity, rollback, claim-axis, invalidation, authority, and successor-version boundaries.",
       "assumptions": [
-        "Declared fields and tracked validator/campaign inputs remain current."
+        "All datum/cohort/provenance/rights/authority/split/dataset/model/checkpoint/optimizer/scheduler/RNG/cache/backup/lineage/descendant/deletion/evaluator/consumer identities, checks, statuses, rollback receipts, monitors, invalidations, and version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No dataset quality, semantic contamination absence, model training, language-model continual learning, remote/production state completeness, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, or transfer."
+        "Source/rights truth, semantic contamination control, data quality, language-model learning, influence removal, forgetting, privacy/legal/storage/backup erasure, semantic/production recovery, capability, safety, readiness, release, reproduction, transfer, SOTA, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.complete_full_state_update_reaches_evidence_review.effect-refinement.v1"
+        "proof-model:data-engines.complete_full_state_update_reaches_evidence_review.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
-      "review_rationale": "Retain only the bounded route or validator-owned fixture; no training, quality, or deployment conclusion follows."
+      "review_rationale": "Join fifteen disconnected finite routes and three bounded result suites into a reachable versioned custody lifecycle, independent replay, eighty-two routes, and 96 rejecting mutations."
     },
     "lean:data_engines.full_state.missing_optimizer_requires_repair": {
       "dependencies": [
         "data-engines-continual-learning-and-unlearning.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route plus adjacent validator evidence: Missing optimizer state selects inventory repair.",
+      "semantic_role": "Reachable scope-to-admission-to-full-state-to-update-to-deletion-assessment-to-claim-adjudication-to-bounded-custody lifecycle with exact identity, rollback, claim-axis, invalidation, authority, and successor-version boundaries.",
       "assumptions": [
-        "Declared fields and tracked validator/campaign inputs remain current."
+        "All datum/cohort/provenance/rights/authority/split/dataset/model/checkpoint/optimizer/scheduler/RNG/cache/backup/lineage/descendant/deletion/evaluator/consumer identities, checks, statuses, rollback receipts, monitors, invalidations, and version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No dataset quality, semantic contamination absence, model training, language-model continual learning, remote/production state completeness, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, or transfer."
+        "Source/rights truth, semantic contamination control, data quality, language-model learning, influence removal, forgetting, privacy/legal/storage/backup erasure, semantic/production recovery, capability, safety, readiness, release, reproduction, transfer, SOTA, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.missing_optimizer_state_requires_inventory_repair.effect-refinement.v1"
+        "proof-model:data-engines.missing_optimizer_state_requires_inventory_repair.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
-      "review_rationale": "Retain only the bounded route or validator-owned fixture; no training, quality, or deployment conclusion follows."
+      "review_rationale": "Join fifteen disconnected finite routes and three bounded result suites into a reachable versioned custody lifecycle, independent replay, eighty-two routes, and 96 rejecting mutations."
     },
     "lean:data_engines.full_state.missing_scheduler_requires_repair": {
       "dependencies": [
         "data-engines-continual-learning-and-unlearning.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route plus adjacent validator evidence: Missing scheduler state selects inventory repair.",
+      "semantic_role": "Reachable scope-to-admission-to-full-state-to-update-to-deletion-assessment-to-claim-adjudication-to-bounded-custody lifecycle with exact identity, rollback, claim-axis, invalidation, authority, and successor-version boundaries.",
       "assumptions": [
-        "Declared fields and tracked validator/campaign inputs remain current."
+        "All datum/cohort/provenance/rights/authority/split/dataset/model/checkpoint/optimizer/scheduler/RNG/cache/backup/lineage/descendant/deletion/evaluator/consumer identities, checks, statuses, rollback receipts, monitors, invalidations, and version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No dataset quality, semantic contamination absence, model training, language-model continual learning, remote/production state completeness, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, or transfer."
+        "Source/rights truth, semantic contamination control, data quality, language-model learning, influence removal, forgetting, privacy/legal/storage/backup erasure, semantic/production recovery, capability, safety, readiness, release, reproduction, transfer, SOTA, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.missing_scheduler_state_requires_inventory_repair.effect-refinement.v1"
+        "proof-model:data-engines.missing_scheduler_state_requires_inventory_repair.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
-      "review_rationale": "Retain only the bounded route or validator-owned fixture; no training, quality, or deployment conclusion follows."
+      "review_rationale": "Join fifteen disconnected finite routes and three bounded result suites into a reachable versioned custody lifecycle, independent replay, eighty-two routes, and 96 rejecting mutations."
     },
     "lean:data_engines.full_state.missing_rng_requires_repair": {
       "dependencies": [
         "data-engines-continual-learning-and-unlearning.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route plus adjacent validator evidence: Missing RNG state selects inventory repair.",
+      "semantic_role": "Reachable scope-to-admission-to-full-state-to-update-to-deletion-assessment-to-claim-adjudication-to-bounded-custody lifecycle with exact identity, rollback, claim-axis, invalidation, authority, and successor-version boundaries.",
       "assumptions": [
-        "Declared fields and tracked validator/campaign inputs remain current."
+        "All datum/cohort/provenance/rights/authority/split/dataset/model/checkpoint/optimizer/scheduler/RNG/cache/backup/lineage/descendant/deletion/evaluator/consumer identities, checks, statuses, rollback receipts, monitors, invalidations, and version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No dataset quality, semantic contamination absence, model training, language-model continual learning, remote/production state completeness, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, or transfer."
+        "Source/rights truth, semantic contamination control, data quality, language-model learning, influence removal, forgetting, privacy/legal/storage/backup erasure, semantic/production recovery, capability, safety, readiness, release, reproduction, transfer, SOTA, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.missing_rng_state_requires_inventory_repair.effect-refinement.v1"
+        "proof-model:data-engines.missing_rng_state_requires_inventory_repair.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
-      "review_rationale": "Retain only the bounded route or validator-owned fixture; no training, quality, or deployment conclusion follows."
+      "review_rationale": "Join fifteen disconnected finite routes and three bounded result suites into a reachable versioned custody lifecycle, independent replay, eighty-two routes, and 96 rejecting mutations."
     },
     "lean:data_engines.full_state.missing_cache_requires_repair": {
       "dependencies": [
         "data-engines-continual-learning-and-unlearning.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route plus adjacent validator evidence: Missing cache state selects inventory repair.",
+      "semantic_role": "Reachable scope-to-admission-to-full-state-to-update-to-deletion-assessment-to-claim-adjudication-to-bounded-custody lifecycle with exact identity, rollback, claim-axis, invalidation, authority, and successor-version boundaries.",
       "assumptions": [
-        "Declared fields and tracked validator/campaign inputs remain current."
+        "All datum/cohort/provenance/rights/authority/split/dataset/model/checkpoint/optimizer/scheduler/RNG/cache/backup/lineage/descendant/deletion/evaluator/consumer identities, checks, statuses, rollback receipts, monitors, invalidations, and version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No dataset quality, semantic contamination absence, model training, language-model continual learning, remote/production state completeness, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, or transfer."
+        "Source/rights truth, semantic contamination control, data quality, language-model learning, influence removal, forgetting, privacy/legal/storage/backup erasure, semantic/production recovery, capability, safety, readiness, release, reproduction, transfer, SOTA, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.missing_cache_state_requires_inventory_repair.effect-refinement.v1"
+        "proof-model:data-engines.missing_cache_state_requires_inventory_repair.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
-      "review_rationale": "Retain only the bounded route or validator-owned fixture; no training, quality, or deployment conclusion follows."
+      "review_rationale": "Join fifteen disconnected finite routes and three bounded result suites into a reachable versioned custody lifecycle, independent replay, eighty-two routes, and 96 rejecting mutations."
     },
     "lean:data_engines.full_state.missing_backup_requires_repair": {
       "dependencies": [
         "data-engines-continual-learning-and-unlearning.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route plus adjacent validator evidence: Missing backup state selects inventory repair.",
+      "semantic_role": "Reachable scope-to-admission-to-full-state-to-update-to-deletion-assessment-to-claim-adjudication-to-bounded-custody lifecycle with exact identity, rollback, claim-axis, invalidation, authority, and successor-version boundaries.",
       "assumptions": [
-        "Declared fields and tracked validator/campaign inputs remain current."
+        "All datum/cohort/provenance/rights/authority/split/dataset/model/checkpoint/optimizer/scheduler/RNG/cache/backup/lineage/descendant/deletion/evaluator/consumer identities, checks, statuses, rollback receipts, monitors, invalidations, and version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No dataset quality, semantic contamination absence, model training, language-model continual learning, remote/production state completeness, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, or transfer."
+        "Source/rights truth, semantic contamination control, data quality, language-model learning, influence removal, forgetting, privacy/legal/storage/backup erasure, semantic/production recovery, capability, safety, readiness, release, reproduction, transfer, SOTA, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.missing_backup_state_requires_inventory_repair.effect-refinement.v1"
+        "proof-model:data-engines.missing_backup_state_requires_inventory_repair.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
-      "review_rationale": "Retain only the bounded route or validator-owned fixture; no training, quality, or deployment conclusion follows."
+      "review_rationale": "Join fifteen disconnected finite routes and three bounded result suites into a reachable versioned custody lifecycle, independent replay, eighty-two routes, and 96 rejecting mutations."
     },
     "lean:data_engines.full_state.missing_descendant_requires_repair": {
       "dependencies": [
         "data-engines-continual-learning-and-unlearning.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route plus adjacent validator evidence: Missing descendant state selects inventory repair.",
+      "semantic_role": "Reachable scope-to-admission-to-full-state-to-update-to-deletion-assessment-to-claim-adjudication-to-bounded-custody lifecycle with exact identity, rollback, claim-axis, invalidation, authority, and successor-version boundaries.",
       "assumptions": [
-        "Declared fields and tracked validator/campaign inputs remain current."
+        "All datum/cohort/provenance/rights/authority/split/dataset/model/checkpoint/optimizer/scheduler/RNG/cache/backup/lineage/descendant/deletion/evaluator/consumer identities, checks, statuses, rollback receipts, monitors, invalidations, and version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No dataset quality, semantic contamination absence, model training, language-model continual learning, remote/production state completeness, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, or transfer."
+        "Source/rights truth, semantic contamination control, data quality, language-model learning, influence removal, forgetting, privacy/legal/storage/backup erasure, semantic/production recovery, capability, safety, readiness, release, reproduction, transfer, SOTA, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.missing_descendant_state_requires_inventory_repair.effect-refinement.v1"
+        "proof-model:data-engines.missing_descendant_state_requires_inventory_repair.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
-      "review_rationale": "Retain only the bounded route or validator-owned fixture; no training, quality, or deployment conclusion follows."
+      "review_rationale": "Join fifteen disconnected finite routes and three bounded result suites into a reachable versioned custody lifecycle, independent replay, eighty-two routes, and 96 rejecting mutations."
     },
     "lean:data_engines.full_state.missing_checkpoint_authority_requires_repair": {
       "dependencies": [
         "data-engines-continual-learning-and-unlearning.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route plus adjacent validator evidence: Missing prospective checkpoint authority selects authority repair after inventory completion.",
+      "semantic_role": "Reachable scope-to-admission-to-full-state-to-update-to-deletion-assessment-to-claim-adjudication-to-bounded-custody lifecycle with exact identity, rollback, claim-axis, invalidation, authority, and successor-version boundaries.",
       "assumptions": [
-        "Declared fields and tracked validator/campaign inputs remain current."
+        "All datum/cohort/provenance/rights/authority/split/dataset/model/checkpoint/optimizer/scheduler/RNG/cache/backup/lineage/descendant/deletion/evaluator/consumer identities, checks, statuses, rollback receipts, monitors, invalidations, and version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No dataset quality, semantic contamination absence, model training, language-model continual learning, remote/production state completeness, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, or transfer."
+        "Source/rights truth, semantic contamination control, data quality, language-model learning, influence removal, forgetting, privacy/legal/storage/backup erasure, semantic/production recovery, capability, safety, readiness, release, reproduction, transfer, SOTA, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.missing_prospective_checkpoint_authority_requires_repair.effect-refinement.v1"
+        "proof-model:data-engines.missing_prospective_checkpoint_authority_requires_repair.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
-      "review_rationale": "Retain only the bounded route or validator-owned fixture; no training, quality, or deployment conclusion follows."
+      "review_rationale": "Join fifteen disconnected finite routes and three bounded result suites into a reachable versioned custody lifecycle, independent replay, eighty-two routes, and 96 rejecting mutations."
     },
     "lean:data_engines.full_state.rollback_mismatch_requires_repair": {
       "dependencies": [
         "data-engines-continual-learning-and-unlearning.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route plus adjacent validator evidence: Declared rollback mismatch selects rollback repair after inventory and authority completion.",
+      "semantic_role": "Reachable scope-to-admission-to-full-state-to-update-to-deletion-assessment-to-claim-adjudication-to-bounded-custody lifecycle with exact identity, rollback, claim-axis, invalidation, authority, and successor-version boundaries.",
       "assumptions": [
-        "Declared fields and tracked validator/campaign inputs remain current."
+        "All datum/cohort/provenance/rights/authority/split/dataset/model/checkpoint/optimizer/scheduler/RNG/cache/backup/lineage/descendant/deletion/evaluator/consumer identities, checks, statuses, rollback receipts, monitors, invalidations, and version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No dataset quality, semantic contamination absence, model training, language-model continual learning, remote/production state completeness, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, or transfer."
+        "Source/rights truth, semantic contamination control, data quality, language-model learning, influence removal, forgetting, privacy/legal/storage/backup erasure, semantic/production recovery, capability, safety, readiness, release, reproduction, transfer, SOTA, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.rollback_mismatch_requires_repair.effect-refinement.v1"
+        "proof-model:data-engines.rollback_mismatch_requires_repair.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
-      "review_rationale": "Retain only the bounded route or validator-owned fixture; no training, quality, or deployment conclusion follows."
+      "review_rationale": "Join fifteen disconnected finite routes and three bounded result suites into a reachable versioned custody lifecycle, independent replay, eighty-two routes, and 96 rejecting mutations."
     },
     "lean:data_engines.unlearning.behavior_cannot_launder_influence": {
       "dependencies": [
         "data-engines-continual-learning-and-unlearning.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route plus adjacent validator evidence: Behavioral change plus an influence claim without influence evidence selects influence-laundering rejection.",
+      "semantic_role": "Reachable scope-to-admission-to-full-state-to-update-to-deletion-assessment-to-claim-adjudication-to-bounded-custody lifecycle with exact identity, rollback, claim-axis, invalidation, authority, and successor-version boundaries.",
       "assumptions": [
-        "Declared fields and tracked validator/campaign inputs remain current."
+        "All datum/cohort/provenance/rights/authority/split/dataset/model/checkpoint/optimizer/scheduler/RNG/cache/backup/lineage/descendant/deletion/evaluator/consumer identities, checks, statuses, rollback receipts, monitors, invalidations, and version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No dataset quality, semantic contamination absence, model training, language-model continual learning, remote/production state completeness, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, or transfer."
+        "Source/rights truth, semantic contamination control, data quality, language-model learning, influence removal, forgetting, privacy/legal/storage/backup erasure, semantic/production recovery, capability, safety, readiness, release, reproduction, transfer, SOTA, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.behavioral_change_cannot_launder_influence_reduction.effect-refinement.v1"
+        "proof-model:data-engines.behavioral_change_cannot_launder_influence_reduction.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
-      "review_rationale": "Retain only the bounded route or validator-owned fixture; no training, quality, or deployment conclusion follows."
+      "review_rationale": "Join fifteen disconnected finite routes and three bounded result suites into a reachable versioned custody lifecycle, independent replay, eighty-two routes, and 96 rejecting mutations."
     },
     "lean:data_engines.unlearning.behavior_cannot_launder_privacy": {
       "dependencies": [
         "data-engines-continual-learning-and-unlearning.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route plus adjacent validator evidence: Behavioral change plus privacy-erasure claim without privacy evidence selects privacy-laundering rejection.",
+      "semantic_role": "Reachable scope-to-admission-to-full-state-to-update-to-deletion-assessment-to-claim-adjudication-to-bounded-custody lifecycle with exact identity, rollback, claim-axis, invalidation, authority, and successor-version boundaries.",
       "assumptions": [
-        "Declared fields and tracked validator/campaign inputs remain current."
+        "All datum/cohort/provenance/rights/authority/split/dataset/model/checkpoint/optimizer/scheduler/RNG/cache/backup/lineage/descendant/deletion/evaluator/consumer identities, checks, statuses, rollback receipts, monitors, invalidations, and version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No dataset quality, semantic contamination absence, model training, language-model continual learning, remote/production state completeness, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, or transfer."
+        "Source/rights truth, semantic contamination control, data quality, language-model learning, influence removal, forgetting, privacy/legal/storage/backup erasure, semantic/production recovery, capability, safety, readiness, release, reproduction, transfer, SOTA, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.behavioral_change_cannot_launder_privacy_erasure.effect-refinement.v1"
+        "proof-model:data-engines.behavioral_change_cannot_launder_privacy_erasure.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
-      "review_rationale": "Retain only the bounded route or validator-owned fixture; no training, quality, or deployment conclusion follows."
+      "review_rationale": "Join fifteen disconnected finite routes and three bounded result suites into a reachable versioned custody lifecycle, independent replay, eighty-two routes, and 96 rejecting mutations."
     },
     "lean:data_engines.unlearning.lineage_cannot_launder_storage": {
       "dependencies": [
         "data-engines-continual-learning-and-unlearning.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean#data_engine_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks"
+        "chapter:data-engines-continual-learning-and-unlearning#formalization-hooks",
+        "docs:data_engine_lifecycle_refinement",
+        "evidence_quality:model_adequacy_dossiers/data-engine-lifecycle-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route plus adjacent validator evidence: Lineage propagation plus unverified storage-erasure claim selects storage-laundering rejection.",
+      "semantic_role": "Reachable scope-to-admission-to-full-state-to-update-to-deletion-assessment-to-claim-adjudication-to-bounded-custody lifecycle with exact identity, rollback, claim-axis, invalidation, authority, and successor-version boundaries.",
       "assumptions": [
-        "Declared fields and tracked validator/campaign inputs remain current."
+        "All datum/cohort/provenance/rights/authority/split/dataset/model/checkpoint/optimizer/scheduler/RNG/cache/backup/lineage/descendant/deletion/evaluator/consumer identities, checks, statuses, rollback receipts, monitors, invalidations, and version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No dataset quality, semantic contamination absence, model training, language-model continual learning, remote/production state completeness, causal influence reduction, privacy/legal/storage erasure, production rollback, capability, safety, reproduction, or transfer."
+        "Source/rights truth, semantic contamination control, data quality, language-model learning, influence removal, forgetting, privacy/legal/storage/backup erasure, semantic/production recovery, capability, safety, readiness, release, reproduction, transfer, SOTA, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls"
+        "scripts/validate_data_engine_full_state_bridge.py#rejecting-controls",
+        "scripts/validate_data_engine_lifecycle_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_data_engine_full_state_bridge.py",
-        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json"
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "scripts/validate_post_v2_update_causality.py"
       ],
       "replacement_refs": [
-        "proof-model:data-engines.lineage_propagation_cannot_launder_storage_erasure.effect-refinement.v1"
+        "proof-model:data-engines.lineage_propagation_cannot_launder_storage_erasure.effect-refinement.v1",
+        "proof-model:data-engine-lifecycle-refinement.v1",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
       ],
-      "review_rationale": "Retain only the bounded route or validator-owned fixture; no training, quality, or deployment conclusion follows."
+      "review_rationale": "Join fifteen disconnected finite routes and three bounded result suites into a reachable versioned custody lifecycle, independent replay, eighty-two routes, and 96 rejecting mutations."
     },
     "lean:artifact_stewards.work_contract.operational_invariant": {
       "dependencies": [

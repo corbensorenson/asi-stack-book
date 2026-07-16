@@ -1633,152 +1633,152 @@
     {
       "tag": "lean:data_engines.provenance_authority.failure_blocks_admission",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "module": "AsiStackProofs.DataEngines",
-      "formal_target": "Missing provenance or authority routes a finite data-admission review to block.",
+      "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+      "formal_target": "Missing bound provenance, rights, or authority blocks the reachable custody lifecycle before data admission.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.DataEngines as a finite admission-route predicate: a declared missing provenance or authority field routes the review to block, without inspecting source truth, dataset contents, or downstream artifacts."
+      "rationale": "Reachable Data-and-Descendant Custody lifecycle with prospective scope, admission, full-state binding, update receipt, deletion assessment, separated claim axes, bounded custody, successor-version readmission, 82 routes, 96 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:data_engines.contamination.failure_routes",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "module": "AsiStackProofs.DataEngines",
-      "formal_target": "Missing split exclusions or contamination checks routes a finite data-admission review to quarantine.",
+      "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+      "formal_target": "Missing split exclusions or a contamination-check record blocks the reachable custody lifecycle before admission.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.DataEngines as a finite admission-route predicate: a declared missing split-exclusion or contamination-check field routes the review to quarantine, without detecting leakage or validating a heldout corpus."
+      "rationale": "Reachable Data-and-Descendant Custody lifecycle with prospective scope, admission, full-state binding, update receipt, deletion assessment, separated claim axes, bounded custody, successor-version readmission, 82 routes, 96 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:data_engines.complete_receipt.eligibility_invariant",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "module": "AsiStackProofs.DataEngines",
-      "formal_target": "A complete finite data-admission review routes to eligibility without claiming that data quality, training, or unlearning has been verified.",
+      "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+      "formal_target": "A complete admission record advances only to full-state binding and does not establish data quality, training, deletion, or support.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.DataEngines as a finite completeness route: declared control fields yield eligibility for bounded use only, without establishing provenance truth, data quality, training value, deletion propagation, or chapter-core support movement."
+      "rationale": "Reachable Data-and-Descendant Custody lifecycle with prospective scope, admission, full-state binding, update receipt, deletion assessment, separated claim axes, bounded custody, successor-version readmission, 82 routes, 96 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:data_engines.full_state.complete_reaches_evidence_review",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "module": "AsiStackProofs.DataEngines",
-      "formal_target": "A complete finite state record reaches evidence review, not promotion.",
+      "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+      "formal_target": "Complete declared full-state custody and a prospectively fixed selection rule advance only to an update receipt, not promotion.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite state-record routing bridged to the existing local campaign; it does not establish useful learning, transfer, or promotion."
+      "rationale": "Reachable Data-and-Descendant Custody lifecycle with prospective scope, admission, full-state binding, update receipt, deletion assessment, separated claim axes, bounded custody, successor-version readmission, 82 routes, 96 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:data_engines.full_state.missing_optimizer_requires_repair",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "module": "AsiStackProofs.DataEngines",
-      "formal_target": "Missing optimizer state requires inventory repair.",
+      "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+      "formal_target": "Missing optimizer state blocks full-state binding.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite inventory routing only; it does not establish inventory completeness beyond declared scope."
+      "rationale": "Reachable Data-and-Descendant Custody lifecycle with prospective scope, admission, full-state binding, update receipt, deletion assessment, separated claim axes, bounded custody, successor-version readmission, 82 routes, 96 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:data_engines.full_state.missing_scheduler_requires_repair",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "module": "AsiStackProofs.DataEngines",
-      "formal_target": "Missing scheduler state requires inventory repair.",
+      "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+      "formal_target": "Missing scheduler state blocks full-state binding.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite inventory routing only; it does not establish inventory completeness beyond declared scope."
+      "rationale": "Reachable Data-and-Descendant Custody lifecycle with prospective scope, admission, full-state binding, update receipt, deletion assessment, separated claim axes, bounded custody, successor-version readmission, 82 routes, 96 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:data_engines.full_state.missing_rng_requires_repair",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "module": "AsiStackProofs.DataEngines",
-      "formal_target": "Missing RNG state requires inventory repair.",
+      "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+      "formal_target": "Missing RNG state blocks full-state binding.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite inventory routing only; it does not establish deterministic production replay."
+      "rationale": "Reachable Data-and-Descendant Custody lifecycle with prospective scope, admission, full-state binding, update receipt, deletion assessment, separated claim axes, bounded custody, successor-version readmission, 82 routes, 96 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:data_engines.full_state.missing_cache_requires_repair",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "module": "AsiStackProofs.DataEngines",
-      "formal_target": "Missing cache state requires inventory repair.",
+      "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+      "formal_target": "Missing cache state blocks full-state binding.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite inventory routing only; it does not establish cache discovery or external invalidation."
+      "rationale": "Reachable Data-and-Descendant Custody lifecycle with prospective scope, admission, full-state binding, update receipt, deletion assessment, separated claim axes, bounded custody, successor-version readmission, 82 routes, 96 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:data_engines.full_state.missing_backup_requires_repair",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "module": "AsiStackProofs.DataEngines",
-      "formal_target": "Missing backup state requires inventory repair.",
+      "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+      "formal_target": "Missing backup state blocks full-state binding.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite inventory routing only; it does not establish remote backup closure or erasure."
+      "rationale": "Reachable Data-and-Descendant Custody lifecycle with prospective scope, admission, full-state binding, update receipt, deletion assessment, separated claim axes, bounded custody, successor-version readmission, 82 routes, 96 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:data_engines.full_state.missing_descendant_requires_repair",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "module": "AsiStackProofs.DataEngines",
-      "formal_target": "Missing descendant state requires inventory repair.",
+      "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+      "formal_target": "Missing descendant state blocks full-state binding.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite inventory routing only; it does not establish world-complete lineage."
+      "rationale": "Reachable Data-and-Descendant Custody lifecycle with prospective scope, admission, full-state binding, update receipt, deletion assessment, separated claim axes, bounded custody, successor-version readmission, 82 routes, 96 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:data_engines.full_state.missing_checkpoint_authority_requires_repair",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "module": "AsiStackProofs.DataEngines",
-      "formal_target": "Missing prospective checkpoint authority requires repair.",
+      "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+      "formal_target": "Missing prospective checkpoint authority or selection rule blocks full-state binding.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite authority-record routing only; it does not establish checkpoint quality or deployment authority."
+      "rationale": "Reachable Data-and-Descendant Custody lifecycle with prospective scope, admission, full-state binding, update receipt, deletion assessment, separated claim axes, bounded custody, successor-version readmission, 82 routes, 96 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:data_engines.full_state.rollback_mismatch_requires_repair",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "module": "AsiStackProofs.DataEngines",
-      "formal_target": "A rollback mismatch requires repair.",
+      "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+      "formal_target": "A declared-surface rollback mismatch blocks the update record and cannot be generalized to semantic or production recovery.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite exactness-input routing only; the campaign bridge is bounded to 24 local surfaces."
+      "rationale": "Reachable Data-and-Descendant Custody lifecycle with prospective scope, admission, full-state binding, update receipt, deletion assessment, separated claim axes, bounded custody, successor-version readmission, 82 routes, 96 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:data_engines.unlearning.behavior_cannot_launder_influence",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "module": "AsiStackProofs.DataEngines",
-      "formal_target": "Behavioral change without influence evidence cannot support an influence claim.",
+      "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+      "formal_target": "Behavioral cohort change cannot serve as evidence of causal influence reduction in deletion-claim adjudication.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite claim-separation routing only; it does not measure causal influence."
+      "rationale": "Reachable Data-and-Descendant Custody lifecycle with prospective scope, admission, full-state binding, update receipt, deletion assessment, separated claim axes, bounded custody, successor-version readmission, 82 routes, 96 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:data_engines.unlearning.behavior_cannot_launder_privacy",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "module": "AsiStackProofs.DataEngines",
-      "formal_target": "Behavioral change without privacy evidence cannot support a privacy-erasure claim.",
+      "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+      "formal_target": "Behavioral cohort change cannot serve as evidence of privacy protection or erasure in deletion-claim adjudication.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite claim-separation routing only; it does not measure privacy or legal erasure."
+      "rationale": "Reachable Data-and-Descendant Custody lifecycle with prospective scope, admission, full-state binding, update receipt, deletion assessment, separated claim axes, bounded custody, successor-version readmission, 82 routes, 96 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:data_engines.unlearning.lineage_cannot_launder_storage",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "module": "AsiStackProofs.DataEngines",
-      "formal_target": "Lineage propagation without verified erasure cannot support a storage-erasure claim.",
+      "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+      "formal_target": "Lineage propagation or invalidation cannot serve as evidence of physical storage or backup erasure in deletion-claim adjudication.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite claim-separation routing only; it does not verify storage or backup erasure."
+      "rationale": "Reachable Data-and-Descendant Custody lifecycle with prospective scope, admission, full-state binding, update receipt, deletion assessment, separated claim axes, bounded custody, successor-version readmission, 82 routes, 96 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:artifact_stewards.work_contract.operational_invariant",

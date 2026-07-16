@@ -4213,7 +4213,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 298 proof targets, 95 Lean modules, 1290 theorem declarations, 894 derived/decomposed, 230 direct/projection, 166 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 298 proof targets, 96 Lean modules, 1291 theorem declarations, 894 derived/decomposed, 230 direct/projection, 167 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -4891,12 +4891,18 @@ Draft deliverables:
   lineage propagation, influence as unestablished, storage erasure as false,
   fifteen derived Lean declarations, six rejecting mutations, and no support
   effect.
-- Exact current minimum: one schema and four-scenario probe; a five-arm,
-  three-seed small-PyTorch campaign; 24 declared state surfaces; 15/15 exact
+- Implemented custody/update/deletion lifecycle refinement that independently
+  reruns the admission, full-state, and update-causality suites, reaches all 82
+  routes over eight stages, rejects 96/96 mutations, issues one bounded custody
+  handoff, and requires one material-change readmission at version 2.
+- Exact current minimum: one schema and four-scenario probe; a three-seed,
+  twelve-arm small-model update result; 24 declared state surfaces; 15/15 exact
   local restores; `no_change`; behavioral changes 4/0/1; three lineage
-  invalidations per seed; and fifteen declarations derived from three finite
-  route functions. Influence is proxy-only, source storage remains retained,
-  and no privacy, legal, backup, external-descendant, production, transfer, or
+  invalidations per seed; fifteen retained finite route theorems; and one
+  combined lifecycle theorem with an independent consumer. Influence remains
+  unestablished, source storage remains retained, storage erasure remains zero,
+  and no source-truth, semantic-contamination, foundation-model learning,
+  privacy, legal, backup, external-descendant, production, transfer, or
   core-promotion result exists.
 - Argument exit: natural heterogeneous workloads, frozen complete partitions,
   matched strong policy arms, full-state and descendant accounting, joint
@@ -4904,10 +4910,13 @@ Draft deliverables:
   deletion/erasure/regrowth/rollback/cost measures, and independent trainer,
   custodian, privacy, storage, institution, and transfer reproduction with all
   terminal outcomes visible.
-- Formal audit: all fifteen declarations are derived reductions of three
-  hand-authored finite route functions, not empirical projections; they prove
-  no learning, reward validity, convergence, causal improvement, forgetting,
-  influence, privacy, storage erasure, runtime enforcement, or transfer.
+- Formal audit: all fifteen legacy declarations remain finite route
+  consequences; the refinement adds one combined route theorem and an
+  independently implemented 82-route/96-mutation consumer. It binds rather
+  than merges the three evidence lanes and proves no provenance or rights
+  truth, semantic-contamination control, learning, target improvement,
+  forgetting, influence, privacy, storage or backup erasure, runtime
+  enforcement, reproduction, or transfer.
 
 Reader direction:
 
@@ -4923,21 +4932,21 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:data_engines.provenance_authority.failure_blocks_admission` | `AsiStackProofs.DataEngines` | Missing provenance or authority routes a finite data-admission review to block. | implemented |
-| `lean:data_engines.contamination.failure_routes` | `AsiStackProofs.DataEngines` | Missing split exclusions or contamination checks routes a finite data-admission review to quarantine. | implemented |
-| `lean:data_engines.complete_receipt.eligibility_invariant` | `AsiStackProofs.DataEngines` | A complete finite data-admission review routes to eligibility without claiming that data quality, training, or unlearning has been verified. | implemented |
-| `lean:data_engines.full_state.complete_reaches_evidence_review` | `AsiStackProofs.DataEngines` | A complete finite state record reaches evidence review, not promotion. | implemented |
-| `lean:data_engines.full_state.missing_optimizer_requires_repair` | `AsiStackProofs.DataEngines` | Missing optimizer state requires inventory repair. | implemented |
-| `lean:data_engines.full_state.missing_scheduler_requires_repair` | `AsiStackProofs.DataEngines` | Missing scheduler state requires inventory repair. | implemented |
-| `lean:data_engines.full_state.missing_rng_requires_repair` | `AsiStackProofs.DataEngines` | Missing RNG state requires inventory repair. | implemented |
-| `lean:data_engines.full_state.missing_cache_requires_repair` | `AsiStackProofs.DataEngines` | Missing cache state requires inventory repair. | implemented |
-| `lean:data_engines.full_state.missing_backup_requires_repair` | `AsiStackProofs.DataEngines` | Missing backup state requires inventory repair. | implemented |
-| `lean:data_engines.full_state.missing_descendant_requires_repair` | `AsiStackProofs.DataEngines` | Missing descendant state requires inventory repair. | implemented |
-| `lean:data_engines.full_state.missing_checkpoint_authority_requires_repair` | `AsiStackProofs.DataEngines` | Missing prospective checkpoint authority requires repair. | implemented |
-| `lean:data_engines.full_state.rollback_mismatch_requires_repair` | `AsiStackProofs.DataEngines` | A rollback mismatch requires repair. | implemented |
-| `lean:data_engines.unlearning.behavior_cannot_launder_influence` | `AsiStackProofs.DataEngines` | Behavioral change without influence evidence cannot support an influence claim. | implemented |
-| `lean:data_engines.unlearning.behavior_cannot_launder_privacy` | `AsiStackProofs.DataEngines` | Behavioral change without privacy evidence cannot support a privacy-erasure claim. | implemented |
-| `lean:data_engines.unlearning.lineage_cannot_launder_storage` | `AsiStackProofs.DataEngines` | Lineage propagation without verified erasure cannot support a storage-erasure claim. | implemented |
+| `lean:data_engines.provenance_authority.failure_blocks_admission` | `AsiStackProofs.DataEngineLifecycleRefinement` | Missing bound provenance, rights, or authority blocks the reachable custody lifecycle before data admission. | implemented |
+| `lean:data_engines.contamination.failure_routes` | `AsiStackProofs.DataEngineLifecycleRefinement` | Missing split exclusions or a contamination-check record blocks the reachable custody lifecycle before admission. | implemented |
+| `lean:data_engines.complete_receipt.eligibility_invariant` | `AsiStackProofs.DataEngineLifecycleRefinement` | A complete admission record advances only to full-state binding and does not establish data quality, training, deletion, or support. | implemented |
+| `lean:data_engines.full_state.complete_reaches_evidence_review` | `AsiStackProofs.DataEngineLifecycleRefinement` | Complete declared full-state custody and a prospectively fixed selection rule advance only to an update receipt, not promotion. | implemented |
+| `lean:data_engines.full_state.missing_optimizer_requires_repair` | `AsiStackProofs.DataEngineLifecycleRefinement` | Missing optimizer state blocks full-state binding. | implemented |
+| `lean:data_engines.full_state.missing_scheduler_requires_repair` | `AsiStackProofs.DataEngineLifecycleRefinement` | Missing scheduler state blocks full-state binding. | implemented |
+| `lean:data_engines.full_state.missing_rng_requires_repair` | `AsiStackProofs.DataEngineLifecycleRefinement` | Missing RNG state blocks full-state binding. | implemented |
+| `lean:data_engines.full_state.missing_cache_requires_repair` | `AsiStackProofs.DataEngineLifecycleRefinement` | Missing cache state blocks full-state binding. | implemented |
+| `lean:data_engines.full_state.missing_backup_requires_repair` | `AsiStackProofs.DataEngineLifecycleRefinement` | Missing backup state blocks full-state binding. | implemented |
+| `lean:data_engines.full_state.missing_descendant_requires_repair` | `AsiStackProofs.DataEngineLifecycleRefinement` | Missing descendant state blocks full-state binding. | implemented |
+| `lean:data_engines.full_state.missing_checkpoint_authority_requires_repair` | `AsiStackProofs.DataEngineLifecycleRefinement` | Missing prospective checkpoint authority or selection rule blocks full-state binding. | implemented |
+| `lean:data_engines.full_state.rollback_mismatch_requires_repair` | `AsiStackProofs.DataEngineLifecycleRefinement` | A declared-surface rollback mismatch blocks the update record and cannot be generalized to semantic or production recovery. | implemented |
+| `lean:data_engines.unlearning.behavior_cannot_launder_influence` | `AsiStackProofs.DataEngineLifecycleRefinement` | Behavioral cohort change cannot serve as evidence of causal influence reduction in deletion-claim adjudication. | implemented |
+| `lean:data_engines.unlearning.behavior_cannot_launder_privacy` | `AsiStackProofs.DataEngineLifecycleRefinement` | Behavioral cohort change cannot serve as evidence of privacy protection or erasure in deletion-claim adjudication. | implemented |
+| `lean:data_engines.unlearning.lineage_cannot_launder_storage` | `AsiStackProofs.DataEngineLifecycleRefinement` | Lineage propagation or invalidation cannot serve as evidence of physical storage or backup erasure in deletion-claim adjudication. | implemented |
 
 ### Artifact Steward Agents and Living Project Governance
 

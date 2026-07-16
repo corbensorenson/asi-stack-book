@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASI Stack data-engine lifecycle refinement result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "source_sha256", "inherited_results", "reachable_stage_count", "route_case_count", "route_coverage", "mutation_count", "mutation_rejection_count", "mutation_receipts", "command_receipts", "witness", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.data_engine_lifecycle_refinement.v1"},
+    "result_id": {"const": "data-engine-lifecycle-refinement-2026-07-16-local"},
+    "source_sha256": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "inherited_results": {"type": "object", "additionalProperties": false, "required": ["admission_scenario_count", "admission_rejected_control_count", "full_state_surface_count", "full_state_transaction_count", "full_state_exact_rollback_count", "full_state_best_final_disagreement_count", "full_state_deletion_behavior_changes", "full_state_lineage_propagation_count", "full_state_influence_reduction_state", "full_state_storage_erasure_count", "update_seed_count", "update_arm_count", "update_parameter_mutation_count", "update_best_final_disagreement_count", "update_exact_rollback_count", "update_invalidated_descendant_count", "update_no_change_disposition_count", "support_state_effect"], "properties": {"admission_scenario_count": {"const": 4}, "admission_rejected_control_count": {"const": 4}, "full_state_surface_count": {"const": 24}, "full_state_transaction_count": {"const": 15}, "full_state_exact_rollback_count": {"const": 15}, "full_state_best_final_disagreement_count": {"const": 6}, "full_state_deletion_behavior_changes": {"const": [4, 0, 1]}, "full_state_lineage_propagation_count": {"const": 3}, "full_state_influence_reduction_state": {"const": "not_established_true-confidence-proxy_only"}, "full_state_storage_erasure_count": {"const": 0}, "update_seed_count": {"const": 3}, "update_arm_count": {"const": 12}, "update_parameter_mutation_count": {"const": 9}, "update_best_final_disagreement_count": {"const": 62}, "update_exact_rollback_count": {"const": 3}, "update_invalidated_descendant_count": {"const": 9}, "update_no_change_disposition_count": {"const": 4}, "support_state_effect": {"const": "none"}}},
+    "reachable_stage_count": {"const": 8},
+    "route_case_count": {"const": 82},
+    "route_coverage": {"type": "array", "minItems": 82, "maxItems": 82, "items": {"type": "object", "required": ["case_id", "expected_route"], "properties": {"case_id": {"type": "string"}, "expected_route": {"type": "string"}}, "additionalProperties": false}},
+    "mutation_count": {"const": 96},
+    "mutation_rejection_count": {"const": 96},
+    "mutation_receipts": {"type": "array", "minItems": 96, "maxItems": 96, "items": {"type": "object", "required": ["mutation_id", "rejected"], "properties": {"mutation_id": {"type": "string"}, "rejected": {"const": true}}, "additionalProperties": false}},
+    "command_receipts": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "required": ["command", "exit_code", "output_sha256"], "properties": {"command": {"type": "string"}, "exit_code": {"const": 0}, "output_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": false}},
+    "witness": {"type": "object", "additionalProperties": false, "required": ["terminal_stage", "protocol_version", "receipt_count", "bounded_custody_count", "readmission_count", "support_assignment_count", "external_effect_count"], "properties": {"terminal_stage": {"const": "scoped"}, "protocol_version": {"const": 2}, "receipt_count": {"const": 8}, "bounded_custody_count": {"const": 1}, "readmission_count": {"const": 1}, "support_assignment_count": {"const": 0}, "external_effect_count": {"const": 0}}},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 6, "items": {"type": "string"}}
+  }
+}

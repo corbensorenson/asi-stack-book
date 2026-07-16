@@ -18821,7 +18821,7 @@
             "Cost externalization omits compute, storage, reviewer, privacy, deletion, retraining, rollback, affected-party, environmental, and downstream-custody burdens.",
             "Unsupported transfer generalizes a local synthetic or single-institution result across data regimes, models, languages, domains, institutions, descendants, or time."
           ],
-          "minimal_implementation": "One data-admission schema and a deterministic four-scenario receipt probe; one preregistered small-PyTorch campaign over five arms and three seeds; one digest-bound full-state bridge inventorying 24 declared surfaces and recording exact restoration in 15/15 local transactions; a no-change update disposition; deletion-aware behavioral changes of 4, 0, and 1 with three declared lineage invalidations per seed; and fifteen Lean declarations derived from three hand-authored finite route functions. Influence remains proxy-only, source storage remains retained, and no privacy, legal, backup, external-descendant, production-custody, natural-task-transfer, or chapter-core promotion result exists.",
+          "minimal_implementation": "The exact current minimum preserves all fifteen legacy data-admission, full-state, and unlearning-claim route theorems; the four-scenario admission probe; the 24-surface/15-transaction full-state bridge; and the three-seed/twelve-arm small-model update result inside an eight-stage, 82-route custody/update/deletion lifecycle with 96/96 rejecting mutations, one bounded custody handoff, and one protocol-version-2 readmission witness. Influence remains unestablished, storage erasure remains zero, all four affected claims remain no-change, and no source/rights truth, semantic contamination, foundation-model learning, privacy/legal/backup/external-descendant erasure, production rollback, transfer, chapter-core transition, or SOTA result exists.",
           "beyond_state_of_art": "The mature operational contract requires an argument-exit campaign over natural heterogeneous learning and deletion workloads with frozen partitions and matched strong replacement, accumulation, replay, reweighting, synthetic-augmentation, quarantine, retraining, sharding, fine-tuning, and no-change policies; inventory and restore model, adapter, optimizer, scheduler, RNG, sampler, cache, retrieval, replica, backup, credential, evaluation, publication, and descendant state; and jointly measure coverage, contamination, poisoning, leakage, rights, natural utility, calibration, tails, forgetting, causal influence, privacy, sequential deletion, storage and backup erasure, regrowth, external-descendant closure, effect-complete rollback, latency, and total cost. Independent trainers, custodians, privacy evaluators, storage verifiers, institutions, and transfer sites must reproduce the terminal outcomes, including null, negative, blocked, narrowed, and refuted results. Until then this is not evidence of production custody, forgetting, privacy or legal erasure, storage closure, capability promotion, deployment, transfer, or SOTA.",
           "codex_tests": [
             {
@@ -18851,6 +18851,11 @@
               "status": "planned; requires a scoped dataset, baseline, negative controls, and independent replay",
               "implementation_status": "planned",
               "result_status": "not run"
+            },
+            {
+              "name": "Data-engine custody/update/deletion lifecycle refinement",
+              "implementation_status": "implemented",
+              "result_status": "passes three inherited result suites, 82 routes, eight reachable stages, and 96/96 rejecting mutations; one bounded custody handoff returns to scoped admission only through version-2 readmission; support/effect none; no source-truth, learning, influence, forgetting, privacy/legal/storage erasure, production rollback, release, transfer, or support claim"
             }
           ],
           "source_queue": {
@@ -18868,96 +18873,96 @@
               "Source notes record reviewed primary-paper or pinned-local-source context only; no training, data admission, or deletion result is imported."
             ]
           },
-          "lean_module": "AsiStackProofs.DataEngines",
+          "lean_module": "AsiStackProofs.DataEngines; AsiStackProofs.DataEngineLifecycleRefinement",
           "proof_targets": [
             {
               "tag": "lean:data_engines.provenance_authority.failure_blocks_admission",
-              "module": "AsiStackProofs.DataEngines",
-              "target": "Missing provenance or authority routes a finite data-admission review to block.",
+              "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+              "target": "Missing bound provenance, rights, or authority blocks the reachable custody lifecycle before data admission.",
               "status": "implemented"
             },
             {
               "tag": "lean:data_engines.contamination.failure_routes",
-              "module": "AsiStackProofs.DataEngines",
-              "target": "Missing split exclusions or contamination checks routes a finite data-admission review to quarantine.",
+              "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+              "target": "Missing split exclusions or a contamination-check record blocks the reachable custody lifecycle before admission.",
               "status": "implemented"
             },
             {
               "tag": "lean:data_engines.complete_receipt.eligibility_invariant",
-              "module": "AsiStackProofs.DataEngines",
-              "target": "A complete finite data-admission review routes to eligibility without claiming that data quality, training, or unlearning has been verified.",
+              "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+              "target": "A complete admission record advances only to full-state binding and does not establish data quality, training, deletion, or support.",
               "status": "implemented"
             },
             {
               "tag": "lean:data_engines.full_state.complete_reaches_evidence_review",
-              "module": "AsiStackProofs.DataEngines",
-              "target": "A complete finite state record reaches evidence review, not promotion.",
+              "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+              "target": "Complete declared full-state custody and a prospectively fixed selection rule advance only to an update receipt, not promotion.",
               "status": "implemented"
             },
             {
               "tag": "lean:data_engines.full_state.missing_optimizer_requires_repair",
-              "module": "AsiStackProofs.DataEngines",
-              "target": "Missing optimizer state requires inventory repair.",
+              "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+              "target": "Missing optimizer state blocks full-state binding.",
               "status": "implemented"
             },
             {
               "tag": "lean:data_engines.full_state.missing_scheduler_requires_repair",
-              "module": "AsiStackProofs.DataEngines",
-              "target": "Missing scheduler state requires inventory repair.",
+              "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+              "target": "Missing scheduler state blocks full-state binding.",
               "status": "implemented"
             },
             {
               "tag": "lean:data_engines.full_state.missing_rng_requires_repair",
-              "module": "AsiStackProofs.DataEngines",
-              "target": "Missing RNG state requires inventory repair.",
+              "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+              "target": "Missing RNG state blocks full-state binding.",
               "status": "implemented"
             },
             {
               "tag": "lean:data_engines.full_state.missing_cache_requires_repair",
-              "module": "AsiStackProofs.DataEngines",
-              "target": "Missing cache state requires inventory repair.",
+              "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+              "target": "Missing cache state blocks full-state binding.",
               "status": "implemented"
             },
             {
               "tag": "lean:data_engines.full_state.missing_backup_requires_repair",
-              "module": "AsiStackProofs.DataEngines",
-              "target": "Missing backup state requires inventory repair.",
+              "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+              "target": "Missing backup state blocks full-state binding.",
               "status": "implemented"
             },
             {
               "tag": "lean:data_engines.full_state.missing_descendant_requires_repair",
-              "module": "AsiStackProofs.DataEngines",
-              "target": "Missing descendant state requires inventory repair.",
+              "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+              "target": "Missing descendant state blocks full-state binding.",
               "status": "implemented"
             },
             {
               "tag": "lean:data_engines.full_state.missing_checkpoint_authority_requires_repair",
-              "module": "AsiStackProofs.DataEngines",
-              "target": "Missing prospective checkpoint authority requires repair.",
+              "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+              "target": "Missing prospective checkpoint authority or selection rule blocks full-state binding.",
               "status": "implemented"
             },
             {
               "tag": "lean:data_engines.full_state.rollback_mismatch_requires_repair",
-              "module": "AsiStackProofs.DataEngines",
-              "target": "A rollback mismatch requires repair.",
+              "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+              "target": "A declared-surface rollback mismatch blocks the update record and cannot be generalized to semantic or production recovery.",
               "status": "implemented"
             },
             {
               "tag": "lean:data_engines.unlearning.behavior_cannot_launder_influence",
-              "module": "AsiStackProofs.DataEngines",
-              "target": "Behavioral change without influence evidence cannot support an influence claim.",
+              "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+              "target": "Behavioral cohort change cannot serve as evidence of causal influence reduction in deletion-claim adjudication.",
               "status": "implemented"
             },
             {
               "tag": "lean:data_engines.unlearning.behavior_cannot_launder_privacy",
-              "module": "AsiStackProofs.DataEngines",
-              "target": "Behavioral change without privacy evidence cannot support a privacy-erasure claim.",
+              "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+              "target": "Behavioral cohort change cannot serve as evidence of privacy protection or erasure in deletion-claim adjudication.",
               "status": "implemented"
             },
             {
               "tag": "lean:data_engines.unlearning.lineage_cannot_launder_storage",
-              "module": "AsiStackProofs.DataEngines",
-              "target": "Lineage propagation without verified erasure cannot support a storage-erasure claim.",
+              "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+              "target": "Lineage propagation or invalidation cannot serve as evidence of physical storage or backup erasure in deletion-claim adjudication.",
               "status": "implemented"
             }
           ],
@@ -18965,6 +18970,7 @@
           "open_evidence_gaps": [
             "No natural heterogeneous data and deletion campaign has frozen complete partitions and denominators, compared strong matched replacement, accumulation, replay, reweighting, synthetic, quarantine, retraining, sharding, fine-tuning, and no-change policies, or prevented outcome-aware protocol change.",
             "No real campaign jointly establishes coverage, semantic leakage, contamination, poisoning, privacy, rights, full-state restoration, effect-complete rollback, sequential deletion, replica and backup erasure, regrowth control, external-descendant closure, and complete cost accounting.",
+            "The eight-stage lifecycle, 82-route consumer, and 96 rejecting mutations establish only finite authored custody consequences; all digests, rights, inventories, checks, rollback receipts, deletion statuses, monitors, and invalidations remain trusted.",
             "No independent trainer, custodian, privacy evaluator, storage verifier, institution, or transfer site has reproduced the bounded local results or adjudicated the separate behavioral, influence, privacy, lineage, legal, storage, backup, and external-descendant claim axes."
           ]
         },

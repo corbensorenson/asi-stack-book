@@ -1661,7 +1661,13 @@
     "docs/policy_optimization_refinement.md",
     "evidence_quality/model_adequacy_dossiers/policy-optimization-refinement.md",
     "lean/AsiStackProofs/PolicyOptimizationRefinement.lean",
-    "lean/AsiStackProofs/PolicyOptimization.lean"
+    "lean/AsiStackProofs/PolicyOptimization.lean",
+    "scripts/validate_data_engine_lifecycle_refinement.py",
+    "schemas/data_engine_lifecycle_refinement.schema.json",
+    "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+    "docs/data_engine_lifecycle_refinement.md",
+    "evidence_quality/model_adequacy_dossiers/data-engine-lifecycle-refinement.md",
+    "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
   ],
   "units": [
     {
@@ -10361,11 +10367,54 @@
       "prohibited_inference": "Does not establish learning, reward validity, evaluator validity, causal improvement, forgetting control, rollback efficacy, policy/task quality, safety, alignment, readiness, release, reproduction, transfer, SOTA, AGI, ASI, or chapter-core support.",
       "contract_precision": "inherited",
       "semantic_review_state": "checked_structured_policy_update_lifecycle_not_learning_empirical_deployed_or_support_authority"
+    },
+    {
+      "id": "validate_data_engine_lifecycle_refinement.py:352",
+      "order": 352,
+      "script": "validate_data_engine_lifecycle_refinement.py",
+      "args": [],
+      "execution_tier": "deep",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Reachable Lean data-custody/update/deletion lifecycle, exact inherited admission/full-state/update suites, independent consumer, result schema, receipt, and model-adequacy dossier.",
+      "input_artifacts": [
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "schemas/data_engine_lifecycle_refinement.schema.json",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+        "docs/data_engine_lifecycle_refinement.md",
+        "evidence_quality/model_adequacy_dossiers/data-engine-lifecycle-refinement.md",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean",
+        "lean/AsiStackProofs/DataEngines.lean",
+        "scripts/validate_data_admission_receipt_probe.py",
+        "experiments/data_admission_receipt_probe/results/2026-07-10-local.json",
+        "scripts/validate_data_engine_full_state_bridge.py",
+        "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
+        "scripts/validate_post_v2_update_causality.py",
+        "experiments/post_v2_update_causality/results/2026-07-10-local.json"
+      ],
+      "output_contract": "Reject identity substitution, incomplete scope/admission/full-state/update/deletion/adjudication/custody/readmission records, behavioral/influence/privacy/storage laundering, rollback mismatch, replay, support assignment, and external-effect requests.",
+      "output_assertions": [
+        "three exact inherited result suites",
+        "eight reachable stages and eighty-two routes",
+        "ninety-six rejected mutations",
+        "one bounded custody handoff followed by successor-version readmission",
+        "no support-state or external-effect authority"
+      ],
+      "claim_scope": "One finite authored Data-and-Descendant Custody Lease plus the existing bounded local admission, full-state, and small-model update results only.",
+      "negative_controls": "validator_owned_identity_scope_admission_state_update_deletion_claim_axis_custody_readmission_mutations",
+      "negative_control_cases": [
+        "datum, cohort, provenance, rights, authority, split, dataset, model, checkpoint, optimizer, scheduler, RNG, cache, backup, lineage, descendant, deletion, evaluator, consumer, or version substitution",
+        "missing scope, admission, inventory, selection, update, rollback, deletion, axis-separation, residual, custody, invalidation, or readmission record",
+        "behavioral change used as influence or privacy evidence, lineage used as storage-erasure evidence, or erasure/release/support authority laundering",
+        "wrong stage, replay, support assignment, or external-effect request"
+      ],
+      "prohibited_inference": "Does not establish source/rights truth, semantic contamination control, data quality, foundation-model learning, influence removal, forgetting, privacy/legal/storage/backup erasure, semantic/production rollback, capability, safety, readiness, release, reproduction, transfer, SOTA, AGI, ASI, or chapter-core support.",
+      "contract_precision": "inherited",
+      "semantic_review_state": "checked_structured_data_custody_update_deletion_lifecycle_not_learning_erasure_deployed_or_support_authority"
     }
   ],
   "summary": {
-    "required_artifact_count": 1617,
-    "unit_count": 351
+    "required_artifact_count": 1623,
+    "unit_count": 352
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

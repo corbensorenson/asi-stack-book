@@ -13,11 +13,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 298 |
-| Lean modules scanned | 95 |
-| Theorem declarations classified | 1290 |
+| Lean modules scanned | 96 |
+| Theorem declarations classified | 1291 |
 | Direct/projection-style theorem declarations | 230 |
 | Derived/decomposed theorem declarations | 894 |
-| Unknown or mixed theorem declarations | 166 |
+| Unknown or mixed theorem declarations | 167 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -81,7 +81,8 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ContextTransactions.lean` | unmapped | 0 | 17 | 0 | 17 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 1 | 4 | 0 | 4 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/DataEngines.lean` | data-engines-continual-learning-and-unlearning | 15 | 15 | 0 | 15 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | data-engines-continual-learning-and-unlearning | 15 | 1 | 0 | 0 | 1 | manual review |
+| `lean/AsiStackProofs/DataEngines.lean` | unmapped | 0 | 15 | 0 | 15 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Deliberation.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | governed-deliberation-and-test-time-scaling | 10 | 11 | 6 | 3 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 4 | 26 | 2 | 24 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -504,6 +505,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_substrate_promotion_requires_baselines_and_tradeoff_metrics` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_substrate_promotion_without_baselines_or_tradeoffs_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `hardware_mismatch_without_refusal_path_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | `data_engine_lifecycle_routes` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/DataEngines.lean` | `behavioral_change_cannot_launder_influence_reduction` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/DataEngines.lean` | `behavioral_change_cannot_launder_privacy_erasure` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/DataEngines.lean` | `complete_data_record_routes_to_eligible` | derived_or_decomposed | no | uses rcases, simp |

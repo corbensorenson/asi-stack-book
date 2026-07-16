@@ -5,19 +5,19 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/data-engines-continual-learning-and-unlearning.qmd",
     "structured_atoms_reviewed": 86,
-    "prose_candidates_adjudicated": 61,
+    "prose_candidates_adjudicated": 62,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete chapter, all eleven exact source mappings, receipt schema and four-scenario probe, preregistered five-arm/three-seed PyTorch campaign, 24-surface full-state bridge, all fifteen proof targets and declarations, every manifest atom, every prose candidate, test plan, source crosswalk, summary, and handoff. The sweep made the Data-and-Descendant Custody Lease the distinct owner; expanded it to eighteen mechanisms, twelve interfaces, eighteen invariants, and eighteen failure modes; preserved the no-change update disposition and zero chapter-core effect; separated behavioral, influence, privacy, lineage, legal, storage, backup, and external-descendant claims; and froze the natural matched-policy, full-state, causal, erasure, reproduction, and transfer campaign."
+    "review_note": "Reviewed the complete chapter, all eleven exact source mappings, receipt schema and four-scenario probe, three-seed/twelve-arm small-model update result, 24-surface/15-transaction full-state bridge, eight-stage/82-route custody lifecycle, all fifteen stable proof targets, every manifest atom, every current prose candidate, test plan, source crosswalk, summary, and handoff. The sweep preserves the Data-and-Descendant Custody Lease as the distinct owner, the no-change update disposition, zero storage erasure, and zero chapter-core effect; separates behavioral, influence, privacy, lineage, legal, storage, backup, and external-descendant claims; and freezes the natural matched-policy, full-state, causal, erasure, reproduction, and transfer campaign."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
     "scope": {
       "population": "Named data or cohorts, consumers, purposes, learning lanes, rights envelopes, partitions, policies, models, checkpoints, state surfaces, deletion requests, descendants, claim axes, institutions, environments, and times.",
-      "environment": "Eleven exact mappings; one schema and four-scenario deterministic probe; one small PyTorch campaign over five arms and three seeds; 24 declared state surfaces; 15/15 local restorations; behavior changes 4, 0, and 1; three lineage invalidations per seed; fifteen finite declarations. Influence is proxy-only, source storage remains retained, and no privacy, legal, backup, external-descendant, production, reproduction, or transfer closure exists.",
+      "environment": "Eleven exact mappings; one schema and four-scenario deterministic probe; one three-seed/twelve-arm small-model update result; 24 declared state surfaces and 15/15 local restorations; behavior changes 4, 0, and 1; three lineage propagations; fifteen stable proof targets; and one eight-stage/82-route lifecycle with 96/96 mutation rejection. Influence is unestablished, source storage remains retained, storage erasure is zero, and no privacy, legal, backup, external-descendant, production, reproduction, or transfer closure exists.",
       "model": "A scoped Data-and-Descendant Custody Lease over admission, rights, lineage, partitions, competing learning policies, full state, prospective checkpoint authority, deletion propagation, eight independent claim axes, verification, rollback, monitoring, expiry, and terminal custody.",
       "authority": "This chapter owns data and descendant custody only. Policy optimization, artifact and supply-chain custody, benchmarks, context and memory, evidence and formalization, capability and readiness, runtime security, normative governance, resources, incidents, release, and publication retain their boundaries.",
-      "time": "Semantic review current through 2026-07-15; changes to data, rights, partitions, transformations, state, models, checkpoints, descendants, claims, consumers, institutions, environments, or time expire affected leases.",
-      "artifact": "Chapter and manifest; eleven mappings; schema and fixture; deterministic receipt result; five-arm campaign; 24-surface bridge; validators; fifteen targets and declarations; semantic review; and future natural independent causal-erasure campaign."
+      "time": "Semantic review current through 2026-07-16; changes to data, rights, partitions, transformations, state, models, checkpoints, descendants, claims, consumers, institutions, environments, or time expire affected leases and require versioned readmission.",
+      "artifact": "Chapter and manifest; eleven mappings; admission schema, fixture, and result; three-seed/twelve-arm update result; 24-surface bridge; eight-stage lifecycle model, independent consumer, schema, result, receipt, and adequacy dossier; fifteen stable targets; semantic review; and future natural independent causal-erasure campaign."
     },
     "current_disposition": "retain_argument_with_synthetic_receipt_and_small_campaign_no_core_effect_pending_natural_independent_causal_erasure_campaign",
     "assumptions": [
@@ -75,14 +75,16 @@
       "receipt_result": "experiments/data_admission_receipt_probe/results/2026-07-10-local.json",
       "campaign_result": "experiments/post_v2_update_causality/results/2026-07-10-local.json",
       "bridge_result": "experiments/data_engine_full_state_bridge/results/2026-07-13-local.json",
-      "lean": "lean/AsiStackProofs/DataEngines.lean",
+      "lifecycle_result": "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json",
+      "lean": "lean/AsiStackProofs/DataEngines.lean; lean/AsiStackProofs/DataEngineLifecycleRefinement.lean",
+      "adequacy_dossier": "evidence_quality/model_adequacy_dossiers/data-engine-lifecycle-refinement.md",
       "manifest": "book_structure.json"
     },
     "contrary_evidence": [
       "Zero of nine eligible challenger seed-arms met the registered 0.05 target-utility gain, so the update disposition is no_change.",
       "Deletion-aware behavioral changes were only 4, 0, and 1; influence remains a proxy, source storage remains retained, and privacy, legal, backup, and external-descendant erasure were not shown.",
       "The receipt probe is four deterministic synthetic scenarios and cannot establish provenance truth, data fitness, contamination freedom, lawful use, or learning value.",
-      "All fifteen declarations are reductions of three hand-authored finite route functions, not empirical projections.",
+      "The fifteen legacy declarations and one combined lifecycle theorem remain authored finite-route consequences; the independent consumer binds existing local results but does not turn them into learning, forgetting, privacy, erasure, recovery, reproduction, or transfer evidence.",
       "Eleven mappings include external and source-reported methods and results that were not reproduced locally."
     ],
     "known_confounds": [
@@ -113,8 +115,8 @@
     ],
     "promotion_ceiling": "argument_until_natural_causal_full_state_deletion_campaign_with_independent_reproduction_and_transfer",
     "reproduction": {
-      "command": "python3 scripts/validate_data_admission_receipt_probe.py && python3 scripts/validate_post_v2_update_causality.py && python3 scripts/validate_data_engine_full_state_bridge.py && cd lean && lake build AsiStackProofs.DataEngines",
-      "environment_lock": "Local schema, deterministic receipt result, small PyTorch campaign, 24-surface bridge, validators, and finite module current through 2026-07-15; natural independent causal-erasure campaign not frozen or run.",
+      "command": "python3 scripts/validate_data_engine_lifecycle_refinement.py && cd lean && lake build AsiStackProofs.DataEngineLifecycleRefinement",
+      "environment_lock": "Local admission schema/result, three-seed/twelve-arm small-model update result, 24-surface bridge, eight-stage lifecycle model, independent consumer, and validators current through 2026-07-16; natural independent causal-erasure campaign not frozen or run.",
       "artifact_digest": null,
       "evaluator_identity": "Current trainers, fixtures, validators, state inventory, and formalization are repository-local; independent trainers, custodians, privacy evaluators, storage verifiers, institutions, and transfer sites are required."
     },
@@ -346,19 +348,23 @@
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source or campaign report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
     },
-    "data-engines-continual-learning-and-unlearning.prose.ef679f5a56c9": {
+    "data-engines-continual-learning-and-unlearning.prose.2da760cf0325": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source or campaign report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
     },
-    "data-engines-continual-learning-and-unlearning.prose.d2127f6c84d3": {
+    "data-engines-continual-learning-and-unlearning.prose.a000a89732cb": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source or campaign report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
     },
-    "data-engines-continual-learning-and-unlearning.prose.3e3b92eec711": {
+    "data-engines-continual-learning-and-unlearning.prose.51f4e04d1669": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source or campaign report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
     },
-    "data-engines-continual-learning-and-unlearning.prose.354093f2d0e8": {
+    "data-engines-continual-learning-and-unlearning.prose.ca419b4d9fe5": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source or campaign report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "data-engines-continual-learning-and-unlearning.prose.fa7a3d621f3b": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source or campaign report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
     },
@@ -383,6 +389,66 @@
       "rationale": "Semantically reviewed as bounded explanation, source or campaign report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
     }
   },
+  "prose_review_lineage": [
+    {
+      "retired_candidate_id": "data-engines-continual-learning-and-unlearning.prose.ef679f5a56c9",
+      "retired_source": "chapters/data-engines-continual-learning-and-unlearning.qmd:610",
+      "retired_sentence": "provenance truth, detect semantic leakage, learn, validate a reward, prove",
+      "preserved_disposition": {
+        "state": "nonmaterial_explanation",
+        "rationale": "Semantically reviewed as bounded explanation, source or campaign report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+      },
+      "retirement_reason": "The formal-audit paragraph was replaced by the stronger lifecycle audit while preserving its non-claim boundary.",
+      "replacement_candidate_ids": [
+        "data-engines-continual-learning-and-unlearning.prose.51f4e04d1669",
+        "data-engines-continual-learning-and-unlearning.prose.ca419b4d9fe5"
+      ],
+      "recorded_on": "2026-07-16"
+    },
+    {
+      "retired_candidate_id": "data-engines-continual-learning-and-unlearning.prose.d2127f6c84d3",
+      "retired_source": "chapters/data-engines-continual-learning-and-unlearning.qmd:611",
+      "retired_sentence": "convergence or target improvement, control forgetting, reduce causal",
+      "preserved_disposition": {
+        "state": "nonmaterial_explanation",
+        "rationale": "Semantically reviewed as bounded explanation, source or campaign report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+      },
+      "retirement_reason": "The formal-audit paragraph was replaced by the stronger lifecycle audit while preserving its non-claim boundary.",
+      "replacement_candidate_ids": [
+        "data-engines-continual-learning-and-unlearning.prose.fa7a3d621f3b"
+      ],
+      "recorded_on": "2026-07-16"
+    },
+    {
+      "retired_candidate_id": "data-engines-continual-learning-and-unlearning.prose.3e3b92eec711",
+      "retired_source": "chapters/data-engines-continual-learning-and-unlearning.qmd:612",
+      "retired_sentence": "influence, reduce privacy leakage, erase storage, enforce a production route,",
+      "preserved_disposition": {
+        "state": "nonmaterial_explanation",
+        "rationale": "Semantically reviewed as bounded explanation, source or campaign report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+      },
+      "retirement_reason": "The formal-audit paragraph was replaced by the stronger lifecycle audit while preserving its non-claim boundary.",
+      "replacement_candidate_ids": [
+        "data-engines-continual-learning-and-unlearning.prose.fa7a3d621f3b"
+      ],
+      "recorded_on": "2026-07-16"
+    },
+    {
+      "retired_candidate_id": "data-engines-continual-learning-and-unlearning.prose.354093f2d0e8",
+      "retired_source": "chapters/data-engines-continual-learning-and-unlearning.qmd:613",
+      "retired_sentence": "restore an undeclared effect, or establish transfer.",
+      "preserved_disposition": {
+        "state": "nonmaterial_explanation",
+        "rationale": "Semantically reviewed as bounded explanation, source or campaign report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+      },
+      "retirement_reason": "The formal-audit paragraph was replaced by the stronger lifecycle audit while preserving its non-claim boundary.",
+      "replacement_candidate_ids": [
+        "data-engines-continual-learning-and-unlearning.prose.2da760cf0325",
+        "data-engines-continual-learning-and-unlearning.prose.51f4e04d1669"
+      ],
+      "recorded_on": "2026-07-16"
+    }
+  ],
   "non_claims": [
     "No receipt, checksum, exclusion, invalidation, behavior change, benchmark score, rollback match, source mapping, finite route, or synthetic campaign establishes forgetting, privacy, erasure, safety, readiness, deployment, support, transfer, or SOTA.",
     "Influence remains proxy-only, source storage remains retained, and no privacy, legal, backup, external-descendant, production, independent reproduction, or transfer closure exists.",

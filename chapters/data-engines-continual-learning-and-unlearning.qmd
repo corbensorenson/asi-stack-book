@@ -4,7 +4,7 @@ chapter_id: "data-engines-continual-learning-and-unlearning"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-15"
+last_updated: "2026-07-16"
 primary_sources:
   - "ext_bourtoule_machine_unlearning_2021"
   - "ext_shumailov_model_collapse_2023"
@@ -476,16 +476,16 @@ new descendant reopens the relevant obligation.
 
 ## Minimum Viable Implementation
 
-The exact current minimum is one data-admission schema and deterministic
-four-scenario receipt probe; one preregistered small-PyTorch campaign over five
-arms and three seeds; one digest-bound full-state bridge inventorying 24
-declared surfaces and recording exact restoration in 15/15 local transactions;
-a `no_change` update disposition; deletion-aware behavioral changes of 4, 0,
-and 1 with three declared lineage invalidations per seed; and fifteen Lean
-declarations derived from three hand-authored finite route functions. Influence
-remains proxy-only, source storage remains retained, and no privacy, legal,
-backup, external-descendant, production-custody, natural-task-transfer, or
-chapter-core promotion result exists.
+The exact current minimum preserves the fifteen admission, full-state, and
+claim-separation route theorems; the four-scenario receipt probe; the
+24-surface/15-transaction full-state bridge; and the three-seed/twelve-arm
+small-model update result inside an eight-stage, 82-route custody lifecycle
+with 96/96 rejecting mutations, one bounded custody handoff, and one version-2
+readmission witness. Influence remains unestablished, source storage remains
+retained, storage erasure remains zero, all affected claims remain `no_change`,
+and no source or rights truth, semantic-contamination control, foundation-model
+learning, privacy/legal/backup/external-descendant erasure, production recovery,
+natural-task transfer, or chapter-core promotion result exists.
 
 The receipt fixture records a synthetic template-mutation candidate, source-note
 lineage, split and benchmark exclusions, an exact-overlap negative
@@ -521,6 +521,20 @@ no-change/narrow dispositions. It does not supply semantic-contamination
 detection, natural-task transfer, independent external replay, influence or
 privacy evidence, or storage erasure. Those are the next evidence obligations,
 so the architecture and core claim remain at `argument`.
+
+The custody-lifecycle refinement at
+`experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json`
+independently reruns the admission probe, full-state bridge, and update-causality
+validator, then reaches all 82 routes across scope, admission, full-state
+binding, update receipt, deletion assessment, claim-axis adjudication, bounded
+custody, and material-change readmission. Exact identity custody includes data,
+cohort, provenance, rights, authority, partitions, model and checkpoint state,
+optimizer, scheduler, RNG, caches, backups, lineage, descendants, deletion
+request, evaluator, consumer, and version. All 96 registered mutations reject.
+The result proves authored custody and transition consequences only: every
+right, check, inventory, rollback receipt, deletion status, propagation claim,
+monitor, and invalidation remains trusted input, and exact rollback remains
+limited to prospectively declared local surfaces.
 
 ## Beyond the State of the Art
 
@@ -575,6 +589,7 @@ and deletion verification are independently replayed and accepted.
 | Continual-learning policy comparison | Compare no-update, bounded update, EWC mitigation, deletion-aware retraining, and an authorized-data comparator under frozen baselines. | implemented on one synthetic small-network workload; zero of nine eligible challenger seed-arms met the promotion threshold, so no capability result |
 | Descendant-deletion trace | Distinguish behavioral change, influence, privacy, lineage propagation, and storage erasure. | bounded lineage invalidation implemented; influence remains proxy-only and storage erasure false |
 | Semantic-overlap adversary | Falsify an exact-overlap-only assurance before an admission path can feed a learning run. | planned; no semantic-leakage detector or adversarial corpus exists |
+| Data-engine custody/update/deletion lifecycle refinement | Join exact admission, full-state, update, deletion-axis, bounded-custody, and successor-version boundaries without cross-promoting claims. | implemented by `python3 scripts/validate_data_engine_lifecycle_refinement.py`; three inherited suites pass, all 82 routes are reached, 96/96 mutations reject, support/effect none; no source-truth, learning, influence, forgetting, privacy/legal/storage erasure, production recovery, release, transfer, or support claim |
 
 The implemented checks are deliberately narrow. Schema validation cannot
 tell whether a provenance statement is true, and a finite Lean route cannot
@@ -586,34 +601,32 @@ baselines, controls, residuals, and replay records.
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:data_engines.provenance_authority.failure_blocks_admission` | `AsiStackProofs.DataEngines` | Missing provenance or authority routes a finite data-admission review to block. | implemented |
-| `lean:data_engines.contamination.failure_routes` | `AsiStackProofs.DataEngines` | Missing split exclusions or contamination checks routes a finite data-admission review to quarantine. | implemented |
-| `lean:data_engines.complete_receipt.eligibility_invariant` | `AsiStackProofs.DataEngines` | A complete finite data-admission review routes to eligibility without claiming that data quality, training, or unlearning has been verified. | implemented |
-| `lean:data_engines.full_state.complete_reaches_evidence_review` | `AsiStackProofs.DataEngines` | A complete finite state record reaches evidence review, not promotion. | implemented |
-| `lean:data_engines.full_state.missing_optimizer_requires_repair` | `AsiStackProofs.DataEngines` | Missing optimizer state requires inventory repair. | implemented |
-| `lean:data_engines.full_state.missing_scheduler_requires_repair` | `AsiStackProofs.DataEngines` | Missing scheduler state requires inventory repair. | implemented |
-| `lean:data_engines.full_state.missing_rng_requires_repair` | `AsiStackProofs.DataEngines` | Missing RNG state requires inventory repair. | implemented |
-| `lean:data_engines.full_state.missing_cache_requires_repair` | `AsiStackProofs.DataEngines` | Missing cache state requires inventory repair. | implemented |
-| `lean:data_engines.full_state.missing_backup_requires_repair` | `AsiStackProofs.DataEngines` | Missing backup state requires inventory repair. | implemented |
-| `lean:data_engines.full_state.missing_descendant_requires_repair` | `AsiStackProofs.DataEngines` | Missing descendant state requires inventory repair. | implemented |
-| `lean:data_engines.full_state.missing_checkpoint_authority_requires_repair` | `AsiStackProofs.DataEngines` | Missing prospective checkpoint authority requires repair. | implemented |
-| `lean:data_engines.full_state.rollback_mismatch_requires_repair` | `AsiStackProofs.DataEngines` | A rollback mismatch requires repair. | implemented |
-| `lean:data_engines.unlearning.behavior_cannot_launder_influence` | `AsiStackProofs.DataEngines` | Behavioral change without influence evidence cannot support an influence claim. | implemented |
-| `lean:data_engines.unlearning.behavior_cannot_launder_privacy` | `AsiStackProofs.DataEngines` | Behavioral change without privacy evidence cannot support a privacy-erasure claim. | implemented |
-| `lean:data_engines.unlearning.lineage_cannot_launder_storage` | `AsiStackProofs.DataEngines` | Lineage propagation without verified erasure cannot support a storage-erasure claim. | implemented |
+| `lean:data_engines.provenance_authority.failure_blocks_admission` | `AsiStackProofs.DataEngineLifecycleRefinement` | Missing bound provenance, rights, or authority blocks the reachable custody lifecycle before data admission. | implemented |
+| `lean:data_engines.contamination.failure_routes` | `AsiStackProofs.DataEngineLifecycleRefinement` | Missing split exclusions or a contamination-check record blocks the reachable custody lifecycle before admission. | implemented |
+| `lean:data_engines.complete_receipt.eligibility_invariant` | `AsiStackProofs.DataEngineLifecycleRefinement` | A complete admission record advances only to full-state binding and does not establish data quality, training, deletion, or support. | implemented |
+| `lean:data_engines.full_state.complete_reaches_evidence_review` | `AsiStackProofs.DataEngineLifecycleRefinement` | Complete declared full-state custody and a prospectively fixed selection rule advance only to an update receipt, not promotion. | implemented |
+| `lean:data_engines.full_state.missing_optimizer_requires_repair` | `AsiStackProofs.DataEngineLifecycleRefinement` | Missing optimizer state blocks full-state binding. | implemented |
+| `lean:data_engines.full_state.missing_scheduler_requires_repair` | `AsiStackProofs.DataEngineLifecycleRefinement` | Missing scheduler state blocks full-state binding. | implemented |
+| `lean:data_engines.full_state.missing_rng_requires_repair` | `AsiStackProofs.DataEngineLifecycleRefinement` | Missing RNG state blocks full-state binding. | implemented |
+| `lean:data_engines.full_state.missing_cache_requires_repair` | `AsiStackProofs.DataEngineLifecycleRefinement` | Missing cache state blocks full-state binding. | implemented |
+| `lean:data_engines.full_state.missing_backup_requires_repair` | `AsiStackProofs.DataEngineLifecycleRefinement` | Missing backup state blocks full-state binding. | implemented |
+| `lean:data_engines.full_state.missing_descendant_requires_repair` | `AsiStackProofs.DataEngineLifecycleRefinement` | Missing descendant state blocks full-state binding. | implemented |
+| `lean:data_engines.full_state.missing_checkpoint_authority_requires_repair` | `AsiStackProofs.DataEngineLifecycleRefinement` | Missing prospective checkpoint authority or selection rule blocks full-state binding. | implemented |
+| `lean:data_engines.full_state.rollback_mismatch_requires_repair` | `AsiStackProofs.DataEngineLifecycleRefinement` | A declared-surface rollback mismatch blocks the update record and cannot be generalized to semantic or production recovery. | implemented |
+| `lean:data_engines.unlearning.behavior_cannot_launder_influence` | `AsiStackProofs.DataEngineLifecycleRefinement` | Behavioral cohort change cannot serve as evidence of causal influence reduction in deletion-claim adjudication. | implemented |
+| `lean:data_engines.unlearning.behavior_cannot_launder_privacy` | `AsiStackProofs.DataEngineLifecycleRefinement` | Behavioral cohort change cannot serve as evidence of privacy protection or erasure in deletion-claim adjudication. | implemented |
+| `lean:data_engines.unlearning.lineage_cannot_launder_storage` | `AsiStackProofs.DataEngineLifecycleRefinement` | Lineage propagation or invalidation cannot serve as evidence of physical storage or backup erasure in deletion-claim adjudication. | implemented |
 
-**Formal audit.** All fifteen declarations are derived reductions of three
-hand-authored finite route functions: three admission routes, nine full-state
-update routes, and three unlearning claim-separation routes. None is a direct
-projection of empirical campaign data. They establish only the declared
-consequences of finite records; they do not inspect a dataset, establish
-provenance truth, detect semantic leakage, learn, validate a reward, prove
-convergence or target improvement, control forgetting, reduce causal
-influence, reduce privacy leakage, erase storage, enforce a production route,
-restore an undeclared effect, or establish transfer. The receipt probe and P3
-campaign are separate evidence lanes. The digest-bound bridge links their
-record identities and rejects six mutations but does not turn theorems into
-measurements or broaden either result.
+**Formal audit.** All fifteen legacy declarations remain derived finite route
+consequences, and the refinement adds one combined route theorem over a
+reachable eight-stage model plus an independently implemented 82-route,
+96-mutation consumer. The consumer binds rather than merges the admission,
+full-state, and update result lanes. None of this establishes provenance or
+rights truth, detects semantic leakage, learns, proves target improvement or
+forgetting, reduces causal influence or privacy leakage, erases storage or
+backups, enforces a production route, restores an undeclared effect, or
+establishes reproduction or transfer. The favorable formal endpoint is bounded
+custody only; it creates no support or release authority.
 
 ## World-model data, versions, and prediction-error custody
 
