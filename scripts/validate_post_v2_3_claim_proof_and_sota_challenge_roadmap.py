@@ -87,6 +87,9 @@ SAFETY_CASE_DOSSIER = "evidence_quality/model_adequacy_dossiers/safety-case-refi
 CAPABILITY_THRESHOLD_RESULT = "experiments/capability_threshold_refinement/results/2026-07-15-local.json"
 CAPABILITY_THRESHOLD_RECEIPT = "docs/capability_threshold_refinement.md"
 CAPABILITY_THRESHOLD_DOSSIER = "evidence_quality/model_adequacy_dossiers/capability-threshold-refinement.md"
+ADVERSARIAL_EVALUATION_RESULT = "experiments/adversarial_evaluation_refinement/results/2026-07-15-local.json"
+ADVERSARIAL_EVALUATION_RECEIPT = "docs/adversarial_evaluation_refinement.md"
+ADVERSARIAL_EVALUATION_DOSSIER = "evidence_quality/model_adequacy_dossiers/adversarial-evaluation-refinement.md"
 READINESS_RESULT = "experiments/readiness_refinement/results/2026-07-15-local.json"
 READINESS_RECEIPT = "docs/readiness_refinement.md"
 READINESS_DOSSIER = "evidence_quality/model_adequacy_dossiers/readiness-refinement.md"
@@ -260,6 +263,9 @@ def snapshot() -> dict:
         "capability_threshold_result": load(CAPABILITY_THRESHOLD_RESULT),
         "capability_threshold_receipt": text(CAPABILITY_THRESHOLD_RECEIPT),
         "capability_threshold_dossier": text(CAPABILITY_THRESHOLD_DOSSIER),
+        "adversarial_evaluation_result": load(ADVERSARIAL_EVALUATION_RESULT),
+        "adversarial_evaluation_receipt": text(ADVERSARIAL_EVALUATION_RECEIPT),
+        "adversarial_evaluation_dossier": text(ADVERSARIAL_EVALUATION_DOSSIER),
         "readiness_result": load(READINESS_RESULT),
         "readiness_receipt": text(READINESS_RECEIPT),
         "readiness_dossier": text(READINESS_DOSSIER),
@@ -1090,8 +1096,8 @@ def errors(data: dict) -> list[str]:
 
     expected_claim_ledger_contract = {
         "current_missing_or_changed_theorem_count":296,
-        "current_missing_or_changed_target_count":139,
-        "current_live_theorem_declaration_count":1265,
+        "current_missing_or_changed_target_count":147,
+        "current_live_theorem_declaration_count":1277,
         "current_live_proof_target_count":298,
         "claim_ledger_model_path":"lean/AsiStackProofs/ClaimLedgerRefinement.lean",
         "claim_ledger_dossier_path":CLAIM_LEDGER_DOSSIER,
@@ -1369,6 +1375,32 @@ def errors(data: dict) -> list[str]:
     capability_threshold_chapter=next((row for row in structure_rows if row.get("id")=="capability-thresholds-and-deployment-commitments"),{})
     if {row.get("module") for row in capability_threshold_chapter.get("proof_targets",[])}!={"AsiStackProofs.CapabilityThresholdRefinement"}:
         out.append("Capability Threshold public targets do not all resolve to refinement")
+
+    expected_adversarial_evaluation_contract={
+        "adversarial_evaluation_model_path":"lean/AsiStackProofs/AdversarialEvaluationRefinement.lean",
+        "adversarial_evaluation_dossier_path":ADVERSARIAL_EVALUATION_DOSSIER,
+        "adversarial_evaluation_consumer_path":ADVERSARIAL_EVALUATION_RECEIPT,
+        "adversarial_evaluation_result_path":ADVERSARIAL_EVALUATION_RESULT,
+        "adversarial_evaluation_state":"validated_finite_authored_observation_reevaluation_lifecycle_not_detection_empirical_or_deployed",
+        "adversarial_evaluation_inherited_case_count":8,"adversarial_evaluation_reachable_stage_count":7,
+        "adversarial_evaluation_route_case_count":56,"adversarial_evaluation_mutation_rejection_count":60,
+        "adversarial_evaluation_retained_legacy_theorem_count":8,"adversarial_evaluation_decision_handoff_count":1,
+        "adversarial_evaluation_reevaluation_count":1,"adversarial_evaluation_support_state_effect":"none"}
+    for key,value in expected_adversarial_evaluation_contract.items():
+        if proof_contract.get(key)!=value: out.append(f"adversarial-evaluation contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    adversarial_evaluation=data["adversarial_evaluation_result"]
+    for key,value in {"reachable_stage_count":7,"route_case_count":56,"mutation_count":60,
+                      "mutation_rejection_count":60,"support_state_effect":"none"}.items():
+        if adversarial_evaluation.get(key)!=value: out.append(f"adversarial-evaluation result drifted: {key}")
+    if adversarial_evaluation.get("input_suite")!={"suite_id":"adversarial_evaluation_integrity","case_count":8,"passed_count":8}:
+        out.append("adversarial-evaluation inherited-suite counts drifted")
+    for phrase in ["seven-stage lifecycle", "all 56 routes", "60/60", "Support-state effect is exactly `none`"]:
+        if phrase.casefold() not in data["adversarial_evaluation_receipt"].casefold(): out.append(f"adversarial-evaluation receipt missing exact boundary: {phrase}")
+    for phrase in ["Seven stages", "Fifty-six routes", "Inadequate for deception detection", "Support-state effect: exactly `none`"]:
+        if phrase.casefold() not in data["adversarial_evaluation_dossier"].casefold(): out.append(f"adversarial-evaluation dossier missing adequacy boundary: {phrase}")
+    adversarial_evaluation_chapter=next((row for row in structure_rows if row.get("id")=="adversarial-evaluation-sandbagging-and-training-time-deception"),{})
+    if {row.get("module") for row in adversarial_evaluation_chapter.get("proof_targets",[])}!={"AsiStackProofs.AdversarialEvaluationRefinement"}:
+        out.append("Adversarial Evaluation public targets do not all resolve to refinement")
 
     expected_readiness_contract={
         "readiness_model_path":"lean/AsiStackProofs/ReadinessRefinement.lean","readiness_dossier_path":READINESS_DOSSIER,
@@ -1773,6 +1805,10 @@ def main() -> None:
     capability_threshold_support["capability_threshold_result"]["support_state_effect"] = "prototype-backed"
     mutations.append(("capability-threshold support laundering", capability_threshold_support))
 
+    adversarial_evaluation_support = copy.deepcopy(base)
+    adversarial_evaluation_support["adversarial_evaluation_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("adversarial-evaluation support laundering", adversarial_evaluation_support))
+
     readiness_support = copy.deepcopy(base)
     readiness_support["readiness_result"]["support_state_effect"] = "prototype-backed"
     mutations.append(("readiness support laundering", readiness_support))
@@ -1839,7 +1875,7 @@ def main() -> None:
         "55 live chapter-core programs across CF-01..CF-08 with a frozen 54-chapter activation baseline, exact proof/evidence/reader baseline, "
         "proof rationalization and argument-exit contracts, maintained X Article and exact 5:2 header contract, "
         "no support or release effect, no external-human gate, same-transaction successor continuity, "
-        "validated shared-safety, Cognitive Kernel ABI, integrated reference trace, concrete-schema refinement, concurrent effect, reachable stack-boundary, Intent-to-Execution vertical, Authority grant-to-effect, Human Intent resolution, Command semantic-interface, Cognitive Compilation obligation-refinement, Virtual Context binding/materialization/fault, Context Certificate provenance/lifecycle, Context Transaction snapshot/store, Verification Bandwidth evidence-gate, Claim Ledger append-only, Proof-Carrying Claims target-to-writeback, Tribunal versioned-verdict/appeal, Typed Job versioned execution/closure, Artifact record-reality/trust, Procedural Memory promotion/retirement, Routing/MoECOT request-to-closure, Safety Case readiness/invalidation, Capability Threshold repeated assessment, Readiness candidate-to-terminal, Hive policy-to-closure, Compact Generation source-to-closure, Fast Generation request-to-closure, Governed Deliberation request-to-closure, Artifact Compression artifact-to-consumption, and Resource Economics allocation-and-simulation-transport receipts, bounded WIP and first-campaign/SOTA entry gates, and 50 rejecting mutations."
+        "validated shared-safety, Cognitive Kernel ABI, integrated reference trace, concrete-schema refinement, concurrent effect, reachable stack-boundary, Intent-to-Execution vertical, Authority grant-to-effect, Human Intent resolution, Command semantic-interface, Cognitive Compilation obligation-refinement, Virtual Context binding/materialization/fault, Context Certificate provenance/lifecycle, Context Transaction snapshot/store, Verification Bandwidth evidence-gate, Claim Ledger append-only, Proof-Carrying Claims target-to-writeback, Tribunal versioned-verdict/appeal, Typed Job versioned execution/closure, Artifact record-reality/trust, Procedural Memory promotion/retirement, Routing/MoECOT request-to-closure, Safety Case readiness/invalidation, Capability Threshold repeated assessment, Adversarial Evaluation observation/re-evaluation, Readiness candidate-to-terminal, Hive policy-to-closure, Compact Generation source-to-closure, Fast Generation request-to-closure, Governed Deliberation request-to-closure, Artifact Compression artifact-to-consumption, and Resource Economics allocation-and-simulation-transport receipts, bounded WIP and first-campaign/SOTA entry gates, and 51 rejecting mutations."
     )
 
 

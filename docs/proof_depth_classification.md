@@ -13,11 +13,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 298 |
-| Lean modules scanned | 92 |
-| Theorem declarations classified | 1265 |
-| Direct/projection-style theorem declarations | 222 |
-| Derived/decomposed theorem declarations | 888 |
-| Unknown or mixed theorem declarations | 155 |
+| Lean modules scanned | 93 |
+| Theorem declarations classified | 1277 |
+| Direct/projection-style theorem declarations | 230 |
+| Derived/decomposed theorem declarations | 891 |
+| Unknown or mixed theorem declarations | 156 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -52,7 +52,8 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 
 | Lean module | Chapters | Proof targets | Theorems | Direct/projection | Derived/decomposed | Unknown/mixed | Suggested treatment |
 |---|---|---:|---:|---:|---:|---:|---|
-| `lean/AsiStackProofs/AdversarialEvaluation.lean` | adversarial-evaluation-sandbagging-and-training-time-deception | 8 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/AdversarialEvaluation.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | adversarial-evaluation-sandbagging-and-training-time-deception | 8 | 12 | 8 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 1 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | rankfold-neuralfold-and-artifact-compression | 3 | 8 | 0 | 0 | 8 | manual review |
@@ -63,8 +64,8 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | system-boundaries-and-authority | 2 | 12 | 0 | 4 | 8 | manual review |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 3 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | open-research-agenda-and-bibliography-plan | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | unmapped | 0 | 12 | 8 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/CapabilityThresholds.lean` | capability-thresholds-and-deployment-commitments | 8 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | capability-thresholds-and-deployment-commitments | 8 | 12 | 8 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/CapabilityThresholds.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ClaimLedger.lean` | unmapped | 0 | 4 | 3 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | claim-ledgers-and-belief-revision | 4 | 12 | 0 | 5 | 7 | manual review |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | unmapped | 0 | 12 | 0 | 12 | 0 | derived/decomposed by classifier |
@@ -157,6 +158,18 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/AdversarialEvaluation.lean` | `missing_selection_context_requires_repair` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/AdversarialEvaluation.lean` | `observation_cannot_launder_intent_inference` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/AdversarialEvaluation.lean` | `unresolved_discrepancy_routes_to_quarantine` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | `accepted_event_adds_one_receipt` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | `complete_integrity_lifecycle_reaches_promotion_review` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | `event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | `full_observation_lifecycle_requires_versioned_reevaluation` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | `missing_cross_context_probe_blocks_adjudication` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | `missing_independent_evaluation_blocks_probe` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | `missing_monitor_provenance_blocks_observation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | `missing_reward_provenance_blocks_observation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | `missing_selection_context_blocks_observation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | `observation_cannot_launder_intent_inference` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | `rejected_event_preserves_state` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | `unresolved_discrepancy_requires_quarantine_record` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/Alignment.lean` | `accepted_transition_cannot_drop_protected_predicate` | derived_or_decomposed | yes | uses contradiction, rw, simp, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `complete_constitutional_lifecycle_admits_constraint` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `constitutional_record_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | yes | uses simp, unfold |

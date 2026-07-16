@@ -1,0 +1,510 @@
+{
+  "schema_version": "asi_stack.adversarial_evaluation_refinement.v1",
+  "result_id": "adversarial-evaluation-refinement-2026-07-15-local",
+  "source_sha256": {
+    "lean_model": "3273988ec623559b7d9d85ca8eb8165ed249afcfb37ce75a4d5fcfa63ed19ac1",
+    "input_fixture": "5ace0bae9425f3376faae54c135b793c2927213a74607800ec999f1827b1dff8"
+  },
+  "input_suite": {
+    "suite_id": "adversarial_evaluation_integrity",
+    "case_count": 8,
+    "passed_count": 8
+  },
+  "reachable_stage_count": 7,
+  "route_case_count": 56,
+  "route_coverage": [
+    {
+      "case_id": "draft_accepted",
+      "expected_route": "accept_scope"
+    },
+    {
+      "case_id": "scoped_accepted",
+      "expected_route": "accept_protocol"
+    },
+    {
+      "case_id": "protocolBound_accepted",
+      "expected_route": "accept_observation"
+    },
+    {
+      "case_id": "observed_accepted",
+      "expected_route": "accept_independent_probe"
+    },
+    {
+      "case_id": "independentlyProbed_accepted",
+      "expected_route": "accept_promotion_adjudication"
+    },
+    {
+      "case_id": "adjudicated_accepted",
+      "expected_route": "accept_decision_review"
+    },
+    {
+      "case_id": "decisionBound_accepted",
+      "expected_route": "accept_reevaluation"
+    },
+    {
+      "case_id": "draft_consumerPresent",
+      "expected_route": "request_consumer"
+    },
+    {
+      "case_id": "draft_decisionPresent",
+      "expected_route": "request_decision"
+    },
+    {
+      "case_id": "draft_modelTaskPresent",
+      "expected_route": "request_model_task"
+    },
+    {
+      "case_id": "draft_elicitationContextPresent",
+      "expected_route": "request_elicitation_context"
+    },
+    {
+      "case_id": "draft_authorityContextPresent",
+      "expected_route": "request_authority_context"
+    },
+    {
+      "case_id": "draft_permittedInferencePresent",
+      "expected_route": "request_permitted_inference"
+    },
+    {
+      "case_id": "scoped_selectionContextPresent",
+      "expected_route": "request_selection_context"
+    },
+    {
+      "case_id": "scoped_rewardProvenancePresent",
+      "expected_route": "request_reward_provenance"
+    },
+    {
+      "case_id": "scoped_monitorProvenancePresent",
+      "expected_route": "request_monitor_provenance"
+    },
+    {
+      "case_id": "scoped_hypothesisSetPresent",
+      "expected_route": "request_hypothesis_set"
+    },
+    {
+      "case_id": "scoped_outcomeCriterionPresent",
+      "expected_route": "request_outcome_criterion"
+    },
+    {
+      "case_id": "scoped_prospectivePlanPresent",
+      "expected_route": "request_prospective_plan"
+    },
+    {
+      "case_id": "scoped_blindingPresent",
+      "expected_route": "request_blinding"
+    },
+    {
+      "case_id": "protocolBound_observationPresent",
+      "expected_route": "request_observation"
+    },
+    {
+      "case_id": "protocolBound_transcriptPresent",
+      "expected_route": "request_transcript"
+    },
+    {
+      "case_id": "protocolBound_denominatorComplete",
+      "expected_route": "request_complete_denominator"
+    },
+    {
+      "case_id": "protocolBound_failureCasesPreserved",
+      "expected_route": "request_failure_cases"
+    },
+    {
+      "case_id": "protocolBound_costRecordPresent",
+      "expected_route": "request_cost_record"
+    },
+    {
+      "case_id": "observed_independentEvaluationPresent",
+      "expected_route": "request_independent_evaluation"
+    },
+    {
+      "case_id": "observed_evaluatorSeparationPresent",
+      "expected_route": "reject_evaluator_dependency"
+    },
+    {
+      "case_id": "observed_crossContextProbePresent",
+      "expected_route": "request_cross_context_probe"
+    },
+    {
+      "case_id": "observed_matchedAccessPresent",
+      "expected_route": "request_matched_access"
+    },
+    {
+      "case_id": "observed_dependencyDisclosurePresent",
+      "expected_route": "request_dependency_disclosure"
+    },
+    {
+      "case_id": "observed_discrepancyRecorded",
+      "expected_route": "request_discrepancy_record"
+    },
+    {
+      "case_id": "observed_alternativeHypothesesPreserved",
+      "expected_route": "request_alternative_hypotheses"
+    },
+    {
+      "case_id": "independentlyProbed_discrepancyDispositionPresent",
+      "expected_route": "request_discrepancy_disposition"
+    },
+    {
+      "case_id": "independentlyProbed_alternativeDispositionPresent",
+      "expected_route": "request_alternative_disposition"
+    },
+    {
+      "case_id": "independentlyProbed_uncertaintyPresent",
+      "expected_route": "request_uncertainty"
+    },
+    {
+      "case_id": "independentlyProbed_residualOwnerPresent",
+      "expected_route": "request_residual_owner"
+    },
+    {
+      "case_id": "independentlyProbed_noIntentInferenceRecorded",
+      "expected_route": "reject_intent_laundering"
+    },
+    {
+      "case_id": "independentlyProbed_mitigationDescendantPresent",
+      "expected_route": "request_mitigation_descendant"
+    },
+    {
+      "case_id": "independentlyProbed_quarantineRecordPresent",
+      "expected_route": "request_quarantine_record"
+    },
+    {
+      "case_id": "independentlyProbed_expiryPresent",
+      "expected_route": "request_expiry"
+    },
+    {
+      "case_id": "independentlyProbed_decisionAuthoritySeparated",
+      "expected_route": "reject_decision_authority_laundering"
+    },
+    {
+      "case_id": "adjudicated_decisionReviewRecordPresent",
+      "expected_route": "request_decision_review_record"
+    },
+    {
+      "case_id": "adjudicated_decisionConsumerPresent",
+      "expected_route": "request_decision_consumer"
+    },
+    {
+      "case_id": "adjudicated_boundedObservationStatusPresent",
+      "expected_route": "request_bounded_observation_status"
+    },
+    {
+      "case_id": "adjudicated_noReleaseAuthorityRecorded",
+      "expected_route": "reject_release_authority_laundering"
+    },
+    {
+      "case_id": "decisionBound_reevaluationTriggerPresent",
+      "expected_route": "request_reevaluation_trigger"
+    },
+    {
+      "case_id": "decisionBound_descendantInvalidationComplete",
+      "expected_route": "request_descendant_invalidation"
+    },
+    {
+      "case_id": "decisionBound_ordinaryRouteBlocked",
+      "expected_route": "request_ordinary_route_block"
+    },
+    {
+      "case_id": "decisionBound_successorProtocolVersion",
+      "expected_route": "reject_successor_version"
+    },
+    {
+      "case_id": "adjudication_unresolved_complete",
+      "expected_route": "accept_quarantine_adjudication"
+    },
+    {
+      "case_id": "adjudication_no_promotion",
+      "expected_route": "accept_observation_closure"
+    },
+    {
+      "case_id": "adjudication_mitigation_complete",
+      "expected_route": "accept_promotion_adjudication"
+    },
+    {
+      "case_id": "wrong_stage",
+      "expected_route": "reject_wrong_stage"
+    },
+    {
+      "case_id": "identity_substitution",
+      "expected_route": "reject_identity_substitution"
+    },
+    {
+      "case_id": "event_replay",
+      "expected_route": "reject_replay"
+    },
+    {
+      "case_id": "authority_leak",
+      "expected_route": "reject_authority_leak"
+    }
+  ],
+  "mutation_count": 60,
+  "mutation_rejection_count": 60,
+  "mutation_receipts": [
+    {
+      "mutation_id": "binding_consumerId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_currentProtocolVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_decisionDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_evaluatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_hypothesisDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_modelDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_monitorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_outcomeDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_protocolDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_rewardDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_selectionDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_taskDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_consumerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_decisionPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_modelTaskPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_elicitationContextPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_authorityContextPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_permittedInferencePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_selectionContextPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_rewardProvenancePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_monitorProvenancePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_hypothesisSetPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_outcomeCriterionPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_prospectivePlanPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_blindingPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_protocolBound_observationPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_protocolBound_transcriptPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_protocolBound_denominatorComplete",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_protocolBound_failureCasesPreserved",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_protocolBound_costRecordPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_observed_independentEvaluationPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_observed_evaluatorSeparationPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_observed_crossContextProbePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_observed_matchedAccessPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_observed_dependencyDisclosurePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_observed_discrepancyRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_observed_alternativeHypothesesPreserved",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_independentlyProbed_discrepancyDispositionPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_independentlyProbed_alternativeDispositionPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_independentlyProbed_uncertaintyPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_independentlyProbed_residualOwnerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_independentlyProbed_noIntentInferenceRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_independentlyProbed_mitigationDescendantPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_independentlyProbed_quarantineRecordPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_independentlyProbed_expiryPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_independentlyProbed_decisionAuthoritySeparated",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_decisionReviewRecordPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_decisionConsumerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_boundedObservationStatusPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_noReleaseAuthorityRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_decisionBound_reevaluationTriggerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_decisionBound_descendantInvalidationComplete",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_decisionBound_ordinaryRouteBlocked",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_decisionBound_successorProtocolVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong_kind",
+      "rejected": true
+    },
+    {
+      "mutation_id": "event_replay",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support_leak",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect_leak",
+      "rejected": true
+    },
+    {
+      "mutation_id": "stale_decision_after_reevaluation",
+      "rejected": true
+    }
+  ],
+  "command_receipts": [
+    {
+      "command": "python3 scripts/validate_adversarial_evaluation_integrity.py",
+      "exit_code": 0,
+      "output_sha256": "d1149aae88dd14035d15d29b6176303ccac90b3aeb572e602b03c7eb90fcbb4a"
+    }
+  ],
+  "witness": {
+    "terminal_stage": "scoped",
+    "protocol_version": 2,
+    "receipt_count": 7,
+    "decision_review_handoff_count": 1,
+    "reevaluation_count": 1,
+    "support_assignment_count": 0,
+    "external_effect_count": 0
+  },
+  "support_state_effect": "none",
+  "non_claims": [
+    "no deception, sandbagging, or alignment-faking detection",
+    "no capability, intent, or prevalence result",
+    "no monitor, reward, outcome, or evaluator validity result",
+    "no independent-institution or mitigation-efficacy result",
+    "no quarantine correctness or deployed invalidation",
+    "no readiness, safety, release, transfer, or support promotion"
+  ]
+}

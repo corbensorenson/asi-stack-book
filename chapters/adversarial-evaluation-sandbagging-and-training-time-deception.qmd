@@ -36,7 +36,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | All ten assigned sources have exact passage-reviewed mappings at their recorded boundaries. No source experiment was reproduced. |
-| Test state | Two schemas and eight digest-bound synthetic records route one review handoff and seven negative cases through eight finite declarations; no model, detector, mitigation, monitor, reward process, evaluator ensemble, or cross-context workload ran. |
+| Test state | A seven-stage observation model preserves the eight-case suite, covers 56 routes, and rejects 60/60 mutations with no support/effect assignment; no model, detector, mitigation, monitor, reward process, evaluator ensemble, or natural cross-context workload ran. |
 
 ## Drafting guardrail
 
@@ -539,11 +539,13 @@ observations across every evaluation consumer.
 
 ### Exact current minimum
 
-The repository currently has two public schemas and eight digest-bound
-synthetic evaluation-integrity records: one reaches Promotion Review and seven
-exercise context repair, independent evaluation, discrepancy quarantine, or
-intent-laundering rejection. Five validator mutations test the bridge. Eight
-owned Lean declarations reduce the same hand-authored finite decision tree.
+The repository preserves the eight digest-bound evaluation-integrity records,
+but now consumes them through a seven-stage, 56-route observation lifecycle with
+60/60 rejecting mutations. Twelve local
+`AdversarialEvaluationRefinement` declarations check rejection without state
+mutation, one-receipt advancement, zero support/effect assignment, eight
+bounded countermodels, and a decision-review-to-protocol-version-2
+re-evaluation witness.
 No model, benign or deceptive cross-context workload, detector, monitor,
 evaluator ensemble, reward process, mitigation, attack, threshold decision,
 readiness handoff, release, incident, independent reproduction, or transfer
@@ -614,6 +616,7 @@ Treat this endpoint as a target architecture, not a current result. It remains b
 | Test | Purpose | Status |
 |---|---|---|
 | Evaluation-integrity record fixture | Route context, provenance, independent-evaluation, probe, discrepancy, and intent-laundering failures away from ordinary promotion. | implemented over eight finite records; no model, evaluator ensemble, or detector run |
+| Versioned observation lifecycle | Bind prospective scope, protocol, observation denominator, independent probe, alternative hypotheses, adjudication, decision handoff, expiry, descendant invalidation, and successor-version re-evaluation. | implemented across seven stages, 56 routes, and 60/60 rejecting mutations; no natural workload or deployed invalidation ran |
 | Cross-context discrepancy probe | Compare declared baseline and altered-monitor/selection contexts with held-out controls. | planned; requires a public-safe workload and independent replay |
 | Training-time deception boundary review | Track source-setting reward-hacking and alignment-faking findings without claiming local reproduction or general causal law. | source-noted; no local experiment or mitigation result |
 
@@ -621,32 +624,39 @@ Treat this endpoint as a target architecture, not a current result. It remains b
 
 | Tag | Status | Scope |
 |---|---|---|
-| `lean:adversarial_evaluation.integrity.complete_to_promotion_review` | implemented | A complete integrity packet reaches review, not promotion. |
-| `lean:adversarial_evaluation.integrity.missing_selection_context` | implemented | Missing selection context routes to repair. |
-| `lean:adversarial_evaluation.integrity.missing_reward_provenance` | implemented | Missing reward provenance routes to repair. |
-| `lean:adversarial_evaluation.integrity.missing_monitor_provenance` | implemented | Missing monitor provenance routes to repair. |
-| `lean:adversarial_evaluation.integrity.missing_independent_evaluation` | implemented | Missing independent evaluation blocks review. |
-| `lean:adversarial_evaluation.integrity.missing_cross_context_probe` | implemented | Missing cross-context probe blocks review. |
-| `lean:adversarial_evaluation.integrity.unresolved_discrepancy` | implemented | An unresolved integrity discrepancy routes to quarantine. |
-| `lean:adversarial_evaluation.integrity.intent_laundering` | implemented | An observation cannot become an intent inference. |
+| `lean:adversarial_evaluation.integrity.complete_to_promotion_review` | implemented | A complete reachable lifecycle emits only a bounded decision-review handoff after observation, independent-probe, hypothesis, discrepancy, residual, expiry, and authority custody. |
+| `lean:adversarial_evaluation.integrity.missing_selection_context` | implemented | Missing selection context blocks observation admission without state mutation. |
+| `lean:adversarial_evaluation.integrity.missing_reward_provenance` | implemented | Missing reward provenance blocks observation admission without becoming behavioral evidence. |
+| `lean:adversarial_evaluation.integrity.missing_monitor_provenance` | implemented | Missing monitor provenance blocks observation admission without treating absence as negative evidence. |
+| `lean:adversarial_evaluation.integrity.missing_independent_evaluation` | implemented | Missing independent evaluation or evaluator separation blocks adjudication. |
+| `lean:adversarial_evaluation.integrity.missing_cross_context_probe` | implemented | Missing cross-context or matched-access comparison blocks adjudication. |
+| `lean:adversarial_evaluation.integrity.unresolved_discrepancy` | implemented | An unresolved discrepancy requires quarantine custody and cannot take the favorable review route. |
+| `lean:adversarial_evaluation.integrity.intent_laundering` | implemented | An observation lifecycle rejects intent inference and cannot assign support or an external effect. |
 
-The formal surface now owns `AsiStackProofs.AdversarialEvaluation`; it no longer
-borrows `AsiStackProofs.PolicyOptimization`. The eight routes and digest-bound
-fixture establish record routing only. They do not prove or detect deception, establish
-sandbagging resistance, prove evaluator validity, infer capability or intent,
-or establish alignment, safety, readiness, model quality, or ASI.
+The public tags now resolve to
+`AsiStackProofs.AdversarialEvaluationRefinement`. Its reachable model binds
+exact consumer, decision, model, task, protocol, policy, evaluator, monitor,
+reward, selection, hypothesis, outcome, and version identity across draft,
+scoped, protocol-bound, observed, independently probed, adjudicated, and decision-bound
+stages. The independent consumer preserves the original eight cases, covers all
+56 routes, rejects all 60 registered mutations, emits one bounded decision-
+review handoff, and requires trigger, descendant-invalidation, ordinary-route-
+block, and protocol-version-2 records before renewed protocol binding. It assigns
+neither support nor an external effect.
 
 ### Formal adequacy audit
 
-All eight declarations are derived finite reductions of one hand-authored
-`EvaluationIntegrityRouteFor` decision tree. They are useful regression checks
-for route precedence and the non-laundering boundary, but they do not model an
-agent, latent objective, learning dynamics, evaluator error, causal
-faithfulness, capability access, adversarial search, mitigation efficacy,
-institutional independence, runtime enforcement, or transfer. The module has
-no direct empirical projection and supplies no deception detector or proof that
-the record fields correspond to reality. Its authority ends at the synthetic
-record-routing semantics.
+This is adequate only for finite authored observation-record discipline. Every
+identifier, context, provenance record, observation, transcript, denominator,
+failure list, evaluator label, cross-context result, discrepancy, hypothesis,
+uncertainty, mitigation, quarantine, expiry, invalidation assertion, and
+authority field is trusted input. The model does not represent an agent or
+latent objective and does not establish deception, sandbagging, alignment
+faking, reward hacking, capability, intent, prevalence, causal faithfulness,
+monitor/reward/outcome/evaluator validity, mitigation efficacy, quarantine
+correctness, institutional independence, runtime enforcement, readiness,
+safety, release, reproduction, or transfer. Those claims remain in the frozen
+natural and adversarial campaign.
 
 ## Monitorability and trace-action stress tests
 

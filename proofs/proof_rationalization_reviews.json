@@ -29743,20 +29743,30 @@
       "excluded_effects": [
         "Model/task identity, elicitation/selection/reward/monitor provenance truth, evaluator independence, cross-context probe adequacy, discrepancy truth, intent, quarantine/repair/review effects, model quality, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations"
+        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations",
+        "scripts/validate_adversarial_evaluation_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:adversarial_evaluation.integrity.complete_to_promotion_review",
-        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks"
+        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks",
+        "docs:adversarial_evaluation_refinement",
+        "evidence_quality:model_adequacy_dossiers/adversarial-evaluation-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_adversarial_evaluation_integrity.py",
-        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json"
+        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json",
+        "scripts/validate_adversarial_evaluation_refinement.py",
+        "schemas/adversarial_evaluation_refinement.schema.json",
+        "experiments/adversarial_evaluation_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:adversarial-evaluation.complete_integrity_record_reaches_promotion_review.effect-refinement.v1"
+        "proof-model:adversarial-evaluation.complete_integrity_record_reaches_promotion_review.effect-refinement.v1",
+        "proof-model:adversarial-evaluation-refinement.v1",
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
       ],
       "review_rationale": "Retain at exact deterministic route-function scope; the validator recomputes the frozen case route but does not execute the named governance or evaluation effect."
     },
@@ -29770,20 +29780,30 @@
       "excluded_effects": [
         "Model/task identity, elicitation/selection/reward/monitor provenance truth, evaluator independence, cross-context probe adequacy, discrepancy truth, intent, quarantine/repair/review effects, model quality, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations"
+        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations",
+        "scripts/validate_adversarial_evaluation_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:adversarial_evaluation.integrity.missing_selection_context",
-        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks"
+        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks",
+        "docs:adversarial_evaluation_refinement",
+        "evidence_quality:model_adequacy_dossiers/adversarial-evaluation-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_adversarial_evaluation_integrity.py",
-        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json"
+        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json",
+        "scripts/validate_adversarial_evaluation_refinement.py",
+        "schemas/adversarial_evaluation_refinement.schema.json",
+        "experiments/adversarial_evaluation_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:adversarial-evaluation.missing_selection_context_requires_repair.effect-refinement.v1"
+        "proof-model:adversarial-evaluation.missing_selection_context_requires_repair.effect-refinement.v1",
+        "proof-model:adversarial-evaluation-refinement.v1",
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
       ],
       "review_rationale": "Retain at exact deterministic route-function scope; the validator recomputes the frozen case route but does not execute the named governance or evaluation effect."
     },
@@ -29797,20 +29817,30 @@
       "excluded_effects": [
         "Model/task identity, elicitation/selection/reward/monitor provenance truth, evaluator independence, cross-context probe adequacy, discrepancy truth, intent, quarantine/repair/review effects, model quality, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations"
+        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations",
+        "scripts/validate_adversarial_evaluation_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:adversarial_evaluation.integrity.missing_reward_provenance",
-        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks"
+        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks",
+        "docs:adversarial_evaluation_refinement",
+        "evidence_quality:model_adequacy_dossiers/adversarial-evaluation-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_adversarial_evaluation_integrity.py",
-        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json"
+        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json",
+        "scripts/validate_adversarial_evaluation_refinement.py",
+        "schemas/adversarial_evaluation_refinement.schema.json",
+        "experiments/adversarial_evaluation_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:adversarial-evaluation.missing_reward_provenance_requires_repair.effect-refinement.v1"
+        "proof-model:adversarial-evaluation.missing_reward_provenance_requires_repair.effect-refinement.v1",
+        "proof-model:adversarial-evaluation-refinement.v1",
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
       ],
       "review_rationale": "Retain at exact deterministic route-function scope; the validator recomputes the frozen case route but does not execute the named governance or evaluation effect."
     },
@@ -29824,20 +29854,30 @@
       "excluded_effects": [
         "Model/task identity, elicitation/selection/reward/monitor provenance truth, evaluator independence, cross-context probe adequacy, discrepancy truth, intent, quarantine/repair/review effects, model quality, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations"
+        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations",
+        "scripts/validate_adversarial_evaluation_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:adversarial_evaluation.integrity.missing_monitor_provenance",
-        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks"
+        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks",
+        "docs:adversarial_evaluation_refinement",
+        "evidence_quality:model_adequacy_dossiers/adversarial-evaluation-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_adversarial_evaluation_integrity.py",
-        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json"
+        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json",
+        "scripts/validate_adversarial_evaluation_refinement.py",
+        "schemas/adversarial_evaluation_refinement.schema.json",
+        "experiments/adversarial_evaluation_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:adversarial-evaluation.missing_monitor_provenance_requires_repair.effect-refinement.v1"
+        "proof-model:adversarial-evaluation.missing_monitor_provenance_requires_repair.effect-refinement.v1",
+        "proof-model:adversarial-evaluation-refinement.v1",
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
       ],
       "review_rationale": "Retain at exact deterministic route-function scope; the validator recomputes the frozen case route but does not execute the named governance or evaluation effect."
     },
@@ -29851,20 +29891,30 @@
       "excluded_effects": [
         "Model/task identity, elicitation/selection/reward/monitor provenance truth, evaluator independence, cross-context probe adequacy, discrepancy truth, intent, quarantine/repair/review effects, model quality, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations"
+        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations",
+        "scripts/validate_adversarial_evaluation_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:adversarial_evaluation.integrity.missing_independent_evaluation",
-        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks"
+        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks",
+        "docs:adversarial_evaluation_refinement",
+        "evidence_quality:model_adequacy_dossiers/adversarial-evaluation-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_adversarial_evaluation_integrity.py",
-        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json"
+        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json",
+        "scripts/validate_adversarial_evaluation_refinement.py",
+        "schemas/adversarial_evaluation_refinement.schema.json",
+        "experiments/adversarial_evaluation_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:adversarial-evaluation.missing_independent_evaluation_blocks_review.effect-refinement.v1"
+        "proof-model:adversarial-evaluation.missing_independent_evaluation_blocks_review.effect-refinement.v1",
+        "proof-model:adversarial-evaluation-refinement.v1",
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
       ],
       "review_rationale": "Retain at exact deterministic route-function scope; the validator recomputes the frozen case route but does not execute the named governance or evaluation effect."
     },
@@ -29878,20 +29928,30 @@
       "excluded_effects": [
         "Model/task identity, elicitation/selection/reward/monitor provenance truth, evaluator independence, cross-context probe adequacy, discrepancy truth, intent, quarantine/repair/review effects, model quality, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations"
+        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations",
+        "scripts/validate_adversarial_evaluation_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:adversarial_evaluation.integrity.missing_cross_context_probe",
-        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks"
+        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks",
+        "docs:adversarial_evaluation_refinement",
+        "evidence_quality:model_adequacy_dossiers/adversarial-evaluation-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_adversarial_evaluation_integrity.py",
-        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json"
+        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json",
+        "scripts/validate_adversarial_evaluation_refinement.py",
+        "schemas/adversarial_evaluation_refinement.schema.json",
+        "experiments/adversarial_evaluation_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:adversarial-evaluation.missing_cross_context_probe_blocks_review.effect-refinement.v1"
+        "proof-model:adversarial-evaluation.missing_cross_context_probe_blocks_review.effect-refinement.v1",
+        "proof-model:adversarial-evaluation-refinement.v1",
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
       ],
       "review_rationale": "Retain at exact deterministic route-function scope; the validator recomputes the frozen case route but does not execute the named governance or evaluation effect."
     },
@@ -29905,20 +29965,30 @@
       "excluded_effects": [
         "Model/task identity, elicitation/selection/reward/monitor provenance truth, evaluator independence, cross-context probe adequacy, discrepancy truth, intent, quarantine/repair/review effects, model quality, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations"
+        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations",
+        "scripts/validate_adversarial_evaluation_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:adversarial_evaluation.integrity.unresolved_discrepancy",
-        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks"
+        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks",
+        "docs:adversarial_evaluation_refinement",
+        "evidence_quality:model_adequacy_dossiers/adversarial-evaluation-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_adversarial_evaluation_integrity.py",
-        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json"
+        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json",
+        "scripts/validate_adversarial_evaluation_refinement.py",
+        "schemas/adversarial_evaluation_refinement.schema.json",
+        "experiments/adversarial_evaluation_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:adversarial-evaluation.unresolved_discrepancy_routes_to_quarantine.effect-refinement.v1"
+        "proof-model:adversarial-evaluation.unresolved_discrepancy_routes_to_quarantine.effect-refinement.v1",
+        "proof-model:adversarial-evaluation-refinement.v1",
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
       ],
       "review_rationale": "Retain at exact deterministic route-function scope; the validator recomputes the frozen case route but does not execute the named governance or evaluation effect."
     },
@@ -29932,20 +30002,30 @@
       "excluded_effects": [
         "Model/task identity, elicitation/selection/reward/monitor provenance truth, evaluator independence, cross-context probe adequacy, discrepancy truth, intent, quarantine/repair/review effects, model quality, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations"
+        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations",
+        "scripts/validate_adversarial_evaluation_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:adversarial_evaluation.integrity.intent_laundering",
-        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks"
+        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks",
+        "docs:adversarial_evaluation_refinement",
+        "evidence_quality:model_adequacy_dossiers/adversarial-evaluation-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_adversarial_evaluation_integrity.py",
-        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json"
+        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json",
+        "scripts/validate_adversarial_evaluation_refinement.py",
+        "schemas/adversarial_evaluation_refinement.schema.json",
+        "experiments/adversarial_evaluation_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:adversarial-evaluation.observation_cannot_launder_intent_inference.effect-refinement.v1"
+        "proof-model:adversarial-evaluation.observation_cannot_launder_intent_inference.effect-refinement.v1",
+        "proof-model:adversarial-evaluation-refinement.v1",
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
       ],
       "review_rationale": "Retain at exact deterministic route-function scope; the validator recomputes the frozen case route but does not execute the named governance or evaluation effect."
     },
@@ -42227,233 +42307,313 @@
       "dependencies": [
         "adversarial-evaluation-sandbagging-and-training-time-deception.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks"
+        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks",
+        "docs:adversarial_evaluation_refinement",
+        "evidence_quality:model_adequacy_dossiers/adversarial-evaluation-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route: a complete declared integrity packet selects promotion review, not promotion.",
+      "semantic_role": "Reachable scope-to-protocol-to-observation-to-independent-probe-to-adjudication-to-decision lifecycle with explicit hypothesis, discrepancy, mitigation, quarantine, authority, invalidation, and successor-version boundaries.",
       "assumptions": [
-        "Lean/Python route functions align and the digest-bound finite fixture/result remain current."
+        "Consumer/decision/model/task/protocol/policy/evaluator/monitor/reward/selection/hypothesis/outcome, observation, discrepancy, mitigation, quarantine, authority, invalidation, and protocol-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Model/task identity, elicitation/selection/reward/monitor provenance truth, evaluator independence, cross-context probe adequacy, discrepancy truth, intent, quarantine/repair/review effects, model quality, safety, reproduction, and transfer are excluded."
+        "Deception or sandbagging detection, capability or intent inference, prevalence, monitor/reward/outcome/evaluator validity, mitigation efficacy, quarantine correctness, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations"
+        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations",
+        "scripts/validate_adversarial_evaluation_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_adversarial_evaluation_integrity.py",
-        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json"
+        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json",
+        "scripts/validate_adversarial_evaluation_refinement.py",
+        "schemas/adversarial_evaluation_refinement.schema.json",
+        "experiments/adversarial_evaluation_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:adversarial-evaluation.complete_integrity_record_reaches_promotion_review.effect-refinement.v1"
+        "proof-model:adversarial-evaluation.complete_integrity_record_reaches_promotion_review.effect-refinement.v1",
+        "proof-model:adversarial-evaluation-refinement.v1",
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
       ],
-      "review_rationale": "Retain at exact deterministic route scope; route labels are not observed real-world effects or evidence of the underlying capability/evaluation facts."
+      "review_rationale": "Strengthen isolated route reductions with a reachable versioned observation lifecycle, independent replay, fifty-six routes, and 60 rejecting mutations."
     },
     "lean:adversarial_evaluation.integrity.missing_selection_context": {
       "dependencies": [
         "adversarial-evaluation-sandbagging-and-training-time-deception.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks"
+        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks",
+        "docs:adversarial_evaluation_refinement",
+        "evidence_quality:model_adequacy_dossiers/adversarial-evaluation-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route: missing selection context selects context repair.",
+      "semantic_role": "Reachable scope-to-protocol-to-observation-to-independent-probe-to-adjudication-to-decision lifecycle with explicit hypothesis, discrepancy, mitigation, quarantine, authority, invalidation, and successor-version boundaries.",
       "assumptions": [
-        "Lean/Python route functions align and the digest-bound finite fixture/result remain current."
+        "Consumer/decision/model/task/protocol/policy/evaluator/monitor/reward/selection/hypothesis/outcome, observation, discrepancy, mitigation, quarantine, authority, invalidation, and protocol-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Model/task identity, elicitation/selection/reward/monitor provenance truth, evaluator independence, cross-context probe adequacy, discrepancy truth, intent, quarantine/repair/review effects, model quality, safety, reproduction, and transfer are excluded."
+        "Deception or sandbagging detection, capability or intent inference, prevalence, monitor/reward/outcome/evaluator validity, mitigation efficacy, quarantine correctness, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations"
+        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations",
+        "scripts/validate_adversarial_evaluation_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_adversarial_evaluation_integrity.py",
-        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json"
+        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json",
+        "scripts/validate_adversarial_evaluation_refinement.py",
+        "schemas/adversarial_evaluation_refinement.schema.json",
+        "experiments/adversarial_evaluation_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:adversarial-evaluation.missing_selection_context_requires_repair.effect-refinement.v1"
+        "proof-model:adversarial-evaluation.missing_selection_context_requires_repair.effect-refinement.v1",
+        "proof-model:adversarial-evaluation-refinement.v1",
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
       ],
-      "review_rationale": "Retain at exact deterministic route scope; route labels are not observed real-world effects or evidence of the underlying capability/evaluation facts."
+      "review_rationale": "Strengthen isolated route reductions with a reachable versioned observation lifecycle, independent replay, fifty-six routes, and 60 rejecting mutations."
     },
     "lean:adversarial_evaluation.integrity.missing_reward_provenance": {
       "dependencies": [
         "adversarial-evaluation-sandbagging-and-training-time-deception.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks"
+        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks",
+        "docs:adversarial_evaluation_refinement",
+        "evidence_quality:model_adequacy_dossiers/adversarial-evaluation-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route: missing reward provenance selects context repair.",
+      "semantic_role": "Reachable scope-to-protocol-to-observation-to-independent-probe-to-adjudication-to-decision lifecycle with explicit hypothesis, discrepancy, mitigation, quarantine, authority, invalidation, and successor-version boundaries.",
       "assumptions": [
-        "Lean/Python route functions align and the digest-bound finite fixture/result remain current."
+        "Consumer/decision/model/task/protocol/policy/evaluator/monitor/reward/selection/hypothesis/outcome, observation, discrepancy, mitigation, quarantine, authority, invalidation, and protocol-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Model/task identity, elicitation/selection/reward/monitor provenance truth, evaluator independence, cross-context probe adequacy, discrepancy truth, intent, quarantine/repair/review effects, model quality, safety, reproduction, and transfer are excluded."
+        "Deception or sandbagging detection, capability or intent inference, prevalence, monitor/reward/outcome/evaluator validity, mitigation efficacy, quarantine correctness, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations"
+        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations",
+        "scripts/validate_adversarial_evaluation_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_adversarial_evaluation_integrity.py",
-        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json"
+        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json",
+        "scripts/validate_adversarial_evaluation_refinement.py",
+        "schemas/adversarial_evaluation_refinement.schema.json",
+        "experiments/adversarial_evaluation_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:adversarial-evaluation.missing_reward_provenance_requires_repair.effect-refinement.v1"
+        "proof-model:adversarial-evaluation.missing_reward_provenance_requires_repair.effect-refinement.v1",
+        "proof-model:adversarial-evaluation-refinement.v1",
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
       ],
-      "review_rationale": "Retain at exact deterministic route scope; route labels are not observed real-world effects or evidence of the underlying capability/evaluation facts."
+      "review_rationale": "Strengthen isolated route reductions with a reachable versioned observation lifecycle, independent replay, fifty-six routes, and 60 rejecting mutations."
     },
     "lean:adversarial_evaluation.integrity.missing_monitor_provenance": {
       "dependencies": [
         "adversarial-evaluation-sandbagging-and-training-time-deception.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks"
+        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks",
+        "docs:adversarial_evaluation_refinement",
+        "evidence_quality:model_adequacy_dossiers/adversarial-evaluation-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route: missing monitor provenance selects context repair.",
+      "semantic_role": "Reachable scope-to-protocol-to-observation-to-independent-probe-to-adjudication-to-decision lifecycle with explicit hypothesis, discrepancy, mitigation, quarantine, authority, invalidation, and successor-version boundaries.",
       "assumptions": [
-        "Lean/Python route functions align and the digest-bound finite fixture/result remain current."
+        "Consumer/decision/model/task/protocol/policy/evaluator/monitor/reward/selection/hypothesis/outcome, observation, discrepancy, mitigation, quarantine, authority, invalidation, and protocol-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Model/task identity, elicitation/selection/reward/monitor provenance truth, evaluator independence, cross-context probe adequacy, discrepancy truth, intent, quarantine/repair/review effects, model quality, safety, reproduction, and transfer are excluded."
+        "Deception or sandbagging detection, capability or intent inference, prevalence, monitor/reward/outcome/evaluator validity, mitigation efficacy, quarantine correctness, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations"
+        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations",
+        "scripts/validate_adversarial_evaluation_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_adversarial_evaluation_integrity.py",
-        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json"
+        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json",
+        "scripts/validate_adversarial_evaluation_refinement.py",
+        "schemas/adversarial_evaluation_refinement.schema.json",
+        "experiments/adversarial_evaluation_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:adversarial-evaluation.missing_monitor_provenance_requires_repair.effect-refinement.v1"
+        "proof-model:adversarial-evaluation.missing_monitor_provenance_requires_repair.effect-refinement.v1",
+        "proof-model:adversarial-evaluation-refinement.v1",
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
       ],
-      "review_rationale": "Retain at exact deterministic route scope; route labels are not observed real-world effects or evidence of the underlying capability/evaluation facts."
+      "review_rationale": "Strengthen isolated route reductions with a reachable versioned observation lifecycle, independent replay, fifty-six routes, and 60 rejecting mutations."
     },
     "lean:adversarial_evaluation.integrity.missing_independent_evaluation": {
       "dependencies": [
         "adversarial-evaluation-sandbagging-and-training-time-deception.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks"
+        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks",
+        "docs:adversarial_evaluation_refinement",
+        "evidence_quality:model_adequacy_dossiers/adversarial-evaluation-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route: missing independent-evaluation record selects requireIndependentEvaluation.",
+      "semantic_role": "Reachable scope-to-protocol-to-observation-to-independent-probe-to-adjudication-to-decision lifecycle with explicit hypothesis, discrepancy, mitigation, quarantine, authority, invalidation, and successor-version boundaries.",
       "assumptions": [
-        "Lean/Python route functions align and the digest-bound finite fixture/result remain current."
+        "Consumer/decision/model/task/protocol/policy/evaluator/monitor/reward/selection/hypothesis/outcome, observation, discrepancy, mitigation, quarantine, authority, invalidation, and protocol-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Model/task identity, elicitation/selection/reward/monitor provenance truth, evaluator independence, cross-context probe adequacy, discrepancy truth, intent, quarantine/repair/review effects, model quality, safety, reproduction, and transfer are excluded."
+        "Deception or sandbagging detection, capability or intent inference, prevalence, monitor/reward/outcome/evaluator validity, mitigation efficacy, quarantine correctness, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations"
+        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations",
+        "scripts/validate_adversarial_evaluation_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_adversarial_evaluation_integrity.py",
-        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json"
+        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json",
+        "scripts/validate_adversarial_evaluation_refinement.py",
+        "schemas/adversarial_evaluation_refinement.schema.json",
+        "experiments/adversarial_evaluation_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:adversarial-evaluation.missing_independent_evaluation_blocks_review.effect-refinement.v1"
+        "proof-model:adversarial-evaluation.missing_independent_evaluation_blocks_review.effect-refinement.v1",
+        "proof-model:adversarial-evaluation-refinement.v1",
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
       ],
-      "review_rationale": "Retain at exact deterministic route scope; route labels are not observed real-world effects or evidence of the underlying capability/evaluation facts."
+      "review_rationale": "Strengthen isolated route reductions with a reachable versioned observation lifecycle, independent replay, fifty-six routes, and 60 rejecting mutations."
     },
     "lean:adversarial_evaluation.integrity.missing_cross_context_probe": {
       "dependencies": [
         "adversarial-evaluation-sandbagging-and-training-time-deception.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks"
+        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks",
+        "docs:adversarial_evaluation_refinement",
+        "evidence_quality:model_adequacy_dossiers/adversarial-evaluation-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route: missing cross-context probe selects requireIndependentEvaluation.",
+      "semantic_role": "Reachable scope-to-protocol-to-observation-to-independent-probe-to-adjudication-to-decision lifecycle with explicit hypothesis, discrepancy, mitigation, quarantine, authority, invalidation, and successor-version boundaries.",
       "assumptions": [
-        "Lean/Python route functions align and the digest-bound finite fixture/result remain current."
+        "Consumer/decision/model/task/protocol/policy/evaluator/monitor/reward/selection/hypothesis/outcome, observation, discrepancy, mitigation, quarantine, authority, invalidation, and protocol-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Model/task identity, elicitation/selection/reward/monitor provenance truth, evaluator independence, cross-context probe adequacy, discrepancy truth, intent, quarantine/repair/review effects, model quality, safety, reproduction, and transfer are excluded."
+        "Deception or sandbagging detection, capability or intent inference, prevalence, monitor/reward/outcome/evaluator validity, mitigation efficacy, quarantine correctness, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations"
+        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations",
+        "scripts/validate_adversarial_evaluation_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_adversarial_evaluation_integrity.py",
-        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json"
+        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json",
+        "scripts/validate_adversarial_evaluation_refinement.py",
+        "schemas/adversarial_evaluation_refinement.schema.json",
+        "experiments/adversarial_evaluation_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:adversarial-evaluation.missing_cross_context_probe_blocks_review.effect-refinement.v1"
+        "proof-model:adversarial-evaluation.missing_cross_context_probe_blocks_review.effect-refinement.v1",
+        "proof-model:adversarial-evaluation-refinement.v1",
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
       ],
-      "review_rationale": "Retain at exact deterministic route scope; route labels are not observed real-world effects or evidence of the underlying capability/evaluation facts."
+      "review_rationale": "Strengthen isolated route reductions with a reachable versioned observation lifecycle, independent replay, fifty-six routes, and 60 rejecting mutations."
     },
     "lean:adversarial_evaluation.integrity.unresolved_discrepancy": {
       "dependencies": [
         "adversarial-evaluation-sandbagging-and-training-time-deception.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks"
+        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks",
+        "docs:adversarial_evaluation_refinement",
+        "evidence_quality:model_adequacy_dossiers/adversarial-evaluation-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route: unresolved declared integrity discrepancy selects quarantine.",
+      "semantic_role": "Reachable scope-to-protocol-to-observation-to-independent-probe-to-adjudication-to-decision lifecycle with explicit hypothesis, discrepancy, mitigation, quarantine, authority, invalidation, and successor-version boundaries.",
       "assumptions": [
-        "Lean/Python route functions align and the digest-bound finite fixture/result remain current."
+        "Consumer/decision/model/task/protocol/policy/evaluator/monitor/reward/selection/hypothesis/outcome, observation, discrepancy, mitigation, quarantine, authority, invalidation, and protocol-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Model/task identity, elicitation/selection/reward/monitor provenance truth, evaluator independence, cross-context probe adequacy, discrepancy truth, intent, quarantine/repair/review effects, model quality, safety, reproduction, and transfer are excluded."
+        "Deception or sandbagging detection, capability or intent inference, prevalence, monitor/reward/outcome/evaluator validity, mitigation efficacy, quarantine correctness, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations"
+        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations",
+        "scripts/validate_adversarial_evaluation_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_adversarial_evaluation_integrity.py",
-        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json"
+        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json",
+        "scripts/validate_adversarial_evaluation_refinement.py",
+        "schemas/adversarial_evaluation_refinement.schema.json",
+        "experiments/adversarial_evaluation_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:adversarial-evaluation.unresolved_discrepancy_routes_to_quarantine.effect-refinement.v1"
+        "proof-model:adversarial-evaluation.unresolved_discrepancy_routes_to_quarantine.effect-refinement.v1",
+        "proof-model:adversarial-evaluation-refinement.v1",
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
       ],
-      "review_rationale": "Retain at exact deterministic route scope; route labels are not observed real-world effects or evidence of the underlying capability/evaluation facts."
+      "review_rationale": "Strengthen isolated route reductions with a reachable versioned observation lifecycle, independent replay, fifty-six routes, and 60 rejecting mutations."
     },
     "lean:adversarial_evaluation.integrity.intent_laundering": {
       "dependencies": [
         "adversarial-evaluation-sandbagging-and-training-time-deception.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean#countermodels"
+      ],
       "consumer_refs": [
-        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks"
+        "chapter:adversarial-evaluation-sandbagging-and-training-time-deception#formalization-hooks",
+        "docs:adversarial_evaluation_refinement",
+        "evidence_quality:model_adequacy_dossiers/adversarial-evaluation-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "General finite route: requested promotion without a no-intent-inference record selects rejectIntentLaundering.",
+      "semantic_role": "Reachable scope-to-protocol-to-observation-to-independent-probe-to-adjudication-to-decision lifecycle with explicit hypothesis, discrepancy, mitigation, quarantine, authority, invalidation, and successor-version boundaries.",
       "assumptions": [
-        "Lean/Python route functions align and the digest-bound finite fixture/result remain current."
+        "Consumer/decision/model/task/protocol/policy/evaluator/monitor/reward/selection/hypothesis/outcome, observation, discrepancy, mitigation, quarantine, authority, invalidation, and protocol-version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Model/task identity, elicitation/selection/reward/monitor provenance truth, evaluator independence, cross-context probe adequacy, discrepancy truth, intent, quarantine/repair/review effects, model quality, safety, reproduction, and transfer are excluded."
+        "Deception or sandbagging detection, capability or intent inference, prevalence, monitor/reward/outcome/evaluator validity, mitigation efficacy, quarantine correctness, readiness, safety, release execution, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations"
+        "scripts/validate_adversarial_evaluation_integrity.py#five-rejecting-mutations",
+        "scripts/validate_adversarial_evaluation_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_adversarial_evaluation_integrity.py",
-        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json"
+        "experiments/adversarial_evaluation_integrity/results/2026-07-13-local.json",
+        "scripts/validate_adversarial_evaluation_refinement.py",
+        "schemas/adversarial_evaluation_refinement.schema.json",
+        "experiments/adversarial_evaluation_refinement/results/2026-07-15-local.json"
       ],
       "replacement_refs": [
-        "proof-model:adversarial-evaluation.observation_cannot_launder_intent_inference.effect-refinement.v1"
+        "proof-model:adversarial-evaluation.observation_cannot_launder_intent_inference.effect-refinement.v1",
+        "proof-model:adversarial-evaluation-refinement.v1",
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
       ],
-      "review_rationale": "Retain at exact deterministic route scope; route labels are not observed real-world effects or evidence of the underlying capability/evaluation facts."
+      "review_rationale": "Strengthen isolated route reductions with a reachable versioned observation lifecycle, independent replay, fifty-six routes, and 60 rejecting mutations."
     },
     "lean:policy_optimization.update.operational_invariant": {
       "dependencies": [

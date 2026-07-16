@@ -17672,69 +17672,75 @@
             "Evaluation burden, false quarantine, delay, or disclosure consumes investigation and release capacity without joint useful-throughput accounting.",
             "Expired or differently scoped observations are reused across models, tasks, tools, monitors, rewards, policies, organizations, deployments, or time."
           ],
-          "minimal_implementation": "Two public schemas plus eight digest-bound synthetic evaluation-integrity records\u2014one route to promotion review and seven negative routes\u2014and five validator mutations bridge eight owned Lean declarations. All eight declarations are derived finite reductions of one hand-authored EvaluationIntegrityRouteFor decision tree. No model, deceptive or benign cross-context workload, detector, monitor, evaluator ensemble, reward process, mitigation, attack, threshold decision, readiness handoff, release, incident, independent reproduction, or transfer ran; chapter-core support effect is zero.",
+          "minimal_implementation": "The exact current minimum preserves the eight digest-bound integrity cases in a seven-stage, 56-route evaluation-observation lifecycle with 60/60 rejecting mutations, twelve AdversarialEvaluationRefinement declarations, one bounded decision-review handoff, and one protocol-version-2 re-evaluation witness. It runs no model, natural or deceptive cross-context workload, monitor or reward process, evaluator ensemble, detector, mitigation, attack, quarantine service, threshold decision, release, deployment, reproduction, transfer, chapter-core transition, or SOTA comparison.",
           "beyond_state_of_art": "The mature Evaluation Observation Integrity program preregisters natural and adversarial workloads over benign context sensitivity, constructed positive controls, capability hiding, reward shortcutting, monitor interference, selection adaptation, evaluation compromise, and trace-action inconsistency; uses strong elicitation, matched controls, blinded holdouts, dependency-separated evaluators, calibrated outcome criteria, complete denominators, causal perturbations and ablations, mitigation descendants, bypass/fallback/recovery, and joint useful-throughput and governance-cost measures; then requires independent institutional reproduction and heterogeneous transfer across tasks, models, scaffolds, tools, authority levels, monitors, rewards, evaluators, organizations, attacks, policies, and time. It records positive, negative, null, inconclusive, narrowed, refuted, revoked, retired, and blocked-after-full-attempt outcomes. This is a target campaign, not a current detector, prevalence estimate, safety result, or deployment authority.",
           "codex_tests": [
             "Evaluation-integrity record fixture",
             "Cross-context discrepancy probe",
-            "Training-time deception boundary review"
+            "Training-time deception boundary review",
+            {
+              "name": "Adversarial-evaluation observation-lifecycle refinement",
+              "implementation_status": "implemented",
+              "result_status": "passes the exact eight-case suite, 56 routes, seven reachable stages, and 60/60 rejecting mutations; one decision-review handoff returns to scoped protocol binding only through version-2 re-evaluation; support/effect none; no deception, capability, intent, prevalence, evaluator-validity, mitigation-efficacy, quarantine-correctness, release, transfer, or support claim"
+            }
           ],
-          "lean_module": "AsiStackProofs.AdversarialEvaluation",
+          "lean_module": "AsiStackProofs.AdversarialEvaluation; AsiStackProofs.AdversarialEvaluationRefinement",
           "proof_targets": [
             {
               "tag": "lean:adversarial_evaluation.integrity.complete_to_promotion_review",
-              "module": "AsiStackProofs.AdversarialEvaluation",
-              "target": "A complete integrity packet reaches review, not promotion.",
+              "module": "AsiStackProofs.AdversarialEvaluationRefinement",
+              "target": "A reachable, prospectively bound observation lifecycle can emit only a bounded decision-review handoff after complete observation, independent-probe, alternative-hypothesis, discrepancy, uncertainty, residual, expiry, and authority-separation custody.",
               "status": "implemented"
             },
             {
               "tag": "lean:adversarial_evaluation.integrity.missing_selection_context",
-              "module": "AsiStackProofs.AdversarialEvaluation",
-              "target": "Missing selection context routes to repair.",
+              "module": "AsiStackProofs.AdversarialEvaluationRefinement",
+              "target": "Missing selection context blocks observation admission without mutating lifecycle state.",
               "status": "implemented"
             },
             {
               "tag": "lean:adversarial_evaluation.integrity.missing_reward_provenance",
-              "module": "AsiStackProofs.AdversarialEvaluation",
-              "target": "Missing reward provenance routes to repair.",
+              "module": "AsiStackProofs.AdversarialEvaluationRefinement",
+              "target": "Missing reward provenance blocks observation admission without converting absence into behavioral evidence.",
               "status": "implemented"
             },
             {
               "tag": "lean:adversarial_evaluation.integrity.missing_monitor_provenance",
-              "module": "AsiStackProofs.AdversarialEvaluation",
-              "target": "Missing monitor provenance routes to repair.",
+              "module": "AsiStackProofs.AdversarialEvaluationRefinement",
+              "target": "Missing monitor provenance blocks observation admission without treating an unobserved trace as negative evidence.",
               "status": "implemented"
             },
             {
               "tag": "lean:adversarial_evaluation.integrity.missing_independent_evaluation",
-              "module": "AsiStackProofs.AdversarialEvaluation",
-              "target": "Missing independent evaluation blocks review.",
+              "module": "AsiStackProofs.AdversarialEvaluationRefinement",
+              "target": "Missing independent evaluation or evaluator separation blocks adjudication.",
               "status": "implemented"
             },
             {
               "tag": "lean:adversarial_evaluation.integrity.missing_cross_context_probe",
-              "module": "AsiStackProofs.AdversarialEvaluation",
-              "target": "Missing cross-context probe blocks review.",
+              "module": "AsiStackProofs.AdversarialEvaluationRefinement",
+              "target": "Missing cross-context or matched-access comparison blocks adjudication.",
               "status": "implemented"
             },
             {
               "tag": "lean:adversarial_evaluation.integrity.unresolved_discrepancy",
-              "module": "AsiStackProofs.AdversarialEvaluation",
-              "target": "An unresolved integrity discrepancy routes to quarantine.",
+              "module": "AsiStackProofs.AdversarialEvaluationRefinement",
+              "target": "An unresolved discrepancy requires explicit quarantine custody and cannot take the favorable promotion-review route.",
               "status": "implemented"
             },
             {
               "tag": "lean:adversarial_evaluation.integrity.intent_laundering",
-              "module": "AsiStackProofs.AdversarialEvaluation",
-              "target": "An observation cannot become an intent inference.",
+              "module": "AsiStackProofs.AdversarialEvaluationRefinement",
+              "target": "An observation lifecycle rejects intent inference and cannot assign support or an external decision effect.",
               "status": "implemented"
             }
           ],
           "draft_maturity": "v0.3 manuscript draft",
           "open_evidence_gaps": [
-            "Freeze and run the natural/adversarial cross-context campaign with strong elicitation, complete denominators, calibrated observable outcomes, constructed controls kept separate, and no outcome-aware changes.",
-            "Implement dependency-separated evaluators, real monitor and reward processes, mitigation descendants, bypass/fallback/recovery tests, and joint useful-throughput, false-clear, false-quarantine, latency, burden, cost, and residual measures.",
-            "Run causal ablations, independent institutional reproduction, and heterogeneous transfer before considering any empirical observation-integrity, sandbagging-resistance, monitor-validity, mitigation-efficacy, safety, or SOTA promotion."
+            "No ASI Stack model, natural or deceptive cross-context workload, monitor, reward process, evaluator ensemble, detector, mitigation, attack, decision, release, incident, reproduction, or transfer has run.",
+            "No local result establishes deception, sandbagging, alignment faking, reward hacking, capability, intent, prevalence, monitor/reward fidelity, outcome validity, evaluator independence, mitigation efficacy, quarantine correctness, readiness, safety, or deployment authority.",
+            "The seven-stage lifecycle, 56-route consumer, and 60 rejecting mutations establish only structured observation-record consequences; all input identities, provenance, observations, outcomes, discrepancies, hypotheses, invalidation assertions, and authority fields remain trusted.",
+            "Run the prospectively frozen natural/adversarial cross-context, causal-ablation, mitigation, independent-institution, and heterogeneous-transfer campaign before considering empirical support movement."
           ]
         },
         {

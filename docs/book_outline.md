@@ -4204,7 +4204,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 298 proof targets, 92 Lean modules, 1265 theorem declarations, 888 derived/decomposed, 222 direct/projection, 155 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 298 proof targets, 93 Lean modules, 1277 theorem declarations, 891 derived/decomposed, 230 direct/projection, 156 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -4527,32 +4527,37 @@ Draft arc:
   mitigation, evaluator-plurality, outcome-aware, aggregation, compromise,
   trace-causality, prevalence, hidden-selection, coverage, burden, and reuse
   laundering.
-- Current minimum: two schemas, eight digest-bound synthetic records—one review
-  route and seven negative routes—five validator mutations, and eight derived
-  finite reductions of one hand-authored decision tree. No model, workload,
-  detector, monitor, evaluator ensemble, reward process, mitigation, attack,
-  decision, release, incident, reproduction, or transfer ran; core effect zero.
+- Current minimum: the eight digest-bound records now feed a seven-stage,
+  56-route observation lifecycle with exact identity custody, 60/60 mutation
+  rejection, one bounded decision-review handoff, and one protocol-version-2
+  re-evaluation. No model, workload, detector, monitor, evaluator ensemble,
+  reward process, mitigation, attack, decision, release, incident,
+  reproduction, or transfer ran; core effect zero.
 - Argument-exit campaign: natural/adversarial workloads, strong elicitation,
   matched controls, blinded holdouts, dependency-separated evaluators,
   calibrated outcomes, complete denominators, causal ablation, mitigation
   descendants, bypass/fallback/recovery, joint useful-throughput and cost,
   independent institutional reproduction, and heterogeneous transfer.
-- Formal audit: all eight declarations reduce the finite route function; none
-  models strategic behavior, learning, evaluator error, causal faithfulness,
-  capability, mitigation efficacy, runtime enforcement, safety, or transfer.
+- Formal audit: all eight public targets resolve to
+  `AsiStackProofs.AdversarialEvaluationRefinement`. The reachable model binds
+  prospective protocol, observation, independent-probe, hypothesis,
+  discrepancy, mitigation/quarantine, authority, expiry, invalidation, and
+  successor-version custody. It does not model strategic behavior, learning,
+  evaluator error, causal faithfulness, capability, mitigation efficacy,
+  runtime enforcement, safety, or transfer.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:adversarial_evaluation.integrity.complete_to_promotion_review` | `AsiStackProofs.AdversarialEvaluation` | A complete integrity packet reaches review, not promotion. | implemented |
-| `lean:adversarial_evaluation.integrity.missing_selection_context` | `AsiStackProofs.AdversarialEvaluation` | Missing selection context routes to repair. | implemented |
-| `lean:adversarial_evaluation.integrity.missing_reward_provenance` | `AsiStackProofs.AdversarialEvaluation` | Missing reward provenance routes to repair. | implemented |
-| `lean:adversarial_evaluation.integrity.missing_monitor_provenance` | `AsiStackProofs.AdversarialEvaluation` | Missing monitor provenance routes to repair. | implemented |
-| `lean:adversarial_evaluation.integrity.missing_independent_evaluation` | `AsiStackProofs.AdversarialEvaluation` | Missing independent evaluation blocks review. | implemented |
-| `lean:adversarial_evaluation.integrity.missing_cross_context_probe` | `AsiStackProofs.AdversarialEvaluation` | Missing cross-context probe blocks review. | implemented |
-| `lean:adversarial_evaluation.integrity.unresolved_discrepancy` | `AsiStackProofs.AdversarialEvaluation` | An unresolved integrity discrepancy routes to quarantine. | implemented |
-| `lean:adversarial_evaluation.integrity.intent_laundering` | `AsiStackProofs.AdversarialEvaluation` | An observation cannot become an intent inference. | implemented |
+| `lean:adversarial_evaluation.integrity.complete_to_promotion_review` | `AsiStackProofs.AdversarialEvaluationRefinement` | A reachable, prospectively bound observation lifecycle can emit only a bounded decision-review handoff after complete observation, independent-probe, alternative-hypothesis, discrepancy, uncertainty, residual, expiry, and authority-separation custody. | implemented |
+| `lean:adversarial_evaluation.integrity.missing_selection_context` | `AsiStackProofs.AdversarialEvaluationRefinement` | Missing selection context blocks observation admission without mutating lifecycle state. | implemented |
+| `lean:adversarial_evaluation.integrity.missing_reward_provenance` | `AsiStackProofs.AdversarialEvaluationRefinement` | Missing reward provenance blocks observation admission without converting absence into behavioral evidence. | implemented |
+| `lean:adversarial_evaluation.integrity.missing_monitor_provenance` | `AsiStackProofs.AdversarialEvaluationRefinement` | Missing monitor provenance blocks observation admission without treating an unobserved trace as negative evidence. | implemented |
+| `lean:adversarial_evaluation.integrity.missing_independent_evaluation` | `AsiStackProofs.AdversarialEvaluationRefinement` | Missing independent evaluation or evaluator separation blocks adjudication. | implemented |
+| `lean:adversarial_evaluation.integrity.missing_cross_context_probe` | `AsiStackProofs.AdversarialEvaluationRefinement` | Missing cross-context or matched-access comparison blocks adjudication. | implemented |
+| `lean:adversarial_evaluation.integrity.unresolved_discrepancy` | `AsiStackProofs.AdversarialEvaluationRefinement` | An unresolved discrepancy requires explicit quarantine custody and cannot take the favorable promotion-review route. | implemented |
+| `lean:adversarial_evaluation.integrity.intent_laundering` | `AsiStackProofs.AdversarialEvaluationRefinement` | An observation lifecycle rejects intent inference and cannot assign support or an external decision effect. | implemented |
 
 ### Safety Cases and Structured Assurance
 

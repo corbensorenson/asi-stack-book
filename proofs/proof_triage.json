@@ -2153,82 +2153,82 @@
     {
       "tag": "lean:adversarial_evaluation.integrity.complete_to_promotion_review",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "module": "AsiStackProofs.AdversarialEvaluation",
-      "formal_target": "A complete integrity packet reaches review, not promotion.",
+      "module": "AsiStackProofs.AdversarialEvaluationRefinement",
+      "formal_target": "A reachable, prospectively bound observation lifecycle can emit only a bounded decision-review handoff after complete observation, independent-probe, alternative-hypothesis, discrepancy, uncertainty, residual, expiry, and authority-separation custody.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite promotion-review handoff only; it does not establish promotion, evaluator validity, deception, intent, capability, or safety."
+      "rationale": "Reachable observation lifecycle with prospective scope/protocol custody, independent-probe, adjudication, decision-handoff, and successor-version re-evaluation boundaries, 56 routes, 60 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:adversarial_evaluation.integrity.missing_selection_context",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "module": "AsiStackProofs.AdversarialEvaluation",
-      "formal_target": "Missing selection context routes to repair.",
+      "module": "AsiStackProofs.AdversarialEvaluationRefinement",
+      "formal_target": "Missing selection context blocks observation admission without mutating lifecycle state.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite context routing only; it does not detect sandbagging."
+      "rationale": "Reachable observation lifecycle with prospective scope/protocol custody, independent-probe, adjudication, decision-handoff, and successor-version re-evaluation boundaries, 56 routes, 60 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:adversarial_evaluation.integrity.missing_reward_provenance",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "module": "AsiStackProofs.AdversarialEvaluation",
-      "formal_target": "Missing reward provenance routes to repair.",
+      "module": "AsiStackProofs.AdversarialEvaluationRefinement",
+      "formal_target": "Missing reward provenance blocks observation admission without converting absence into behavioral evidence.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite provenance routing only; it does not establish reward fidelity."
+      "rationale": "Reachable observation lifecycle with prospective scope/protocol custody, independent-probe, adjudication, decision-handoff, and successor-version re-evaluation boundaries, 56 routes, 60 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:adversarial_evaluation.integrity.missing_monitor_provenance",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "module": "AsiStackProofs.AdversarialEvaluation",
-      "formal_target": "Missing monitor provenance routes to repair.",
+      "module": "AsiStackProofs.AdversarialEvaluationRefinement",
+      "formal_target": "Missing monitor provenance blocks observation admission without treating an unobserved trace as negative evidence.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite provenance routing only; it does not establish monitor validity."
+      "rationale": "Reachable observation lifecycle with prospective scope/protocol custody, independent-probe, adjudication, decision-handoff, and successor-version re-evaluation boundaries, 56 routes, 60 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:adversarial_evaluation.integrity.missing_independent_evaluation",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "module": "AsiStackProofs.AdversarialEvaluation",
-      "formal_target": "Missing independent evaluation blocks review.",
+      "module": "AsiStackProofs.AdversarialEvaluationRefinement",
+      "formal_target": "Missing independent evaluation or evaluator separation blocks adjudication.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite independence routing only; it does not establish actual evaluator independence."
+      "rationale": "Reachable observation lifecycle with prospective scope/protocol custody, independent-probe, adjudication, decision-handoff, and successor-version re-evaluation boundaries, 56 routes, 60 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:adversarial_evaluation.integrity.missing_cross_context_probe",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "module": "AsiStackProofs.AdversarialEvaluation",
-      "formal_target": "Missing cross-context probe blocks review.",
+      "module": "AsiStackProofs.AdversarialEvaluationRefinement",
+      "formal_target": "Missing cross-context or matched-access comparison blocks adjudication.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite probe routing only; it does not establish probe adequacy."
+      "rationale": "Reachable observation lifecycle with prospective scope/protocol custody, independent-probe, adjudication, decision-handoff, and successor-version re-evaluation boundaries, 56 routes, 60 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:adversarial_evaluation.integrity.unresolved_discrepancy",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "module": "AsiStackProofs.AdversarialEvaluation",
-      "formal_target": "An unresolved integrity discrepancy routes to quarantine.",
+      "module": "AsiStackProofs.AdversarialEvaluationRefinement",
+      "formal_target": "An unresolved discrepancy requires explicit quarantine custody and cannot take the favorable promotion-review route.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite discrepancy routing only; it does not diagnose deception."
+      "rationale": "Reachable observation lifecycle with prospective scope/protocol custody, independent-probe, adjudication, decision-handoff, and successor-version re-evaluation boundaries, 56 routes, 60 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:adversarial_evaluation.integrity.intent_laundering",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "module": "AsiStackProofs.AdversarialEvaluation",
-      "formal_target": "An observation cannot become an intent inference.",
+      "module": "AsiStackProofs.AdversarialEvaluationRefinement",
+      "formal_target": "An observation lifecycle rejects intent inference and cannot assign support or an external decision effect.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite no-intent boundary only; it does not infer latent objectives."
+      "rationale": "Reachable observation lifecycle with prospective scope/protocol custody, independent-probe, adjudication, decision-handoff, and successor-version re-evaluation boundaries, 56 routes, 60 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:open_ended_improvement.campaign.complete_candidate_to_governor_review",
