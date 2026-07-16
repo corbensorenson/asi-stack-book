@@ -13,11 +13,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 298 |
-| Lean modules scanned | 97 |
-| Theorem declarations classified | 1292 |
+| Lean modules scanned | 98 |
+| Theorem declarations classified | 1294 |
 | Direct/projection-style theorem declarations | 230 |
 | Derived/decomposed theorem declarations | 894 |
-| Unknown or mixed theorem declarations | 168 |
+| Unknown or mixed theorem declarations | 170 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -33,7 +33,7 @@ The v1.0 roadmap prioritizes these modules because projection-style hooks in ali
 | `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 1 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 1 | 4 | 0 | 4 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 1 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 1 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/SelfImprovement.lean` | unmapped | 0 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 21 | 1 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 
 ## Safety-Critical Chapter Classification
@@ -45,7 +45,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Alignment.lean` | `chapters/constitutional-alignment-substrate.qmd` | 0 | no | yes |
 | `lean/AsiStackProofs/Corrigibility.lean` | `chapters/constitutional-alignment-substrate.qmd` | 0 | no | yes |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `chapters/moral-uncertainty-and-value-conflict.qmd` | 0 | no | yes |
-| `lean/AsiStackProofs/SelfImprovement.lean` | `chapters/recursive-self-improvement-boundaries.qmd` | 0 | no | yes |
+| `lean/AsiStackProofs/SelfImprovement.lean` | `chapters/recursive-self-improvement-boundaries.qmd` | 0 | no | no |
 | `lean/AsiStackProofs/ValueConflict.lean` | `chapters/moral-uncertainty-and-value-conflict.qmd` | 1 | yes | yes |
 
 ## Module Classification
@@ -128,12 +128,13 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 6 | 49 | 5 | 44 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SafetyCaseRefinement.lean` | safety-cases-and-structured-assurance | 8 | 10 | 6 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SafetyCases.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | constitutional-alignment-substrate, moral-uncertainty-and-value-conflict, recursive-self-improvement-boundaries | 10 | 21 | 1 | 9 | 11 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | constitutional-alignment-substrate, moral-uncertainty-and-value-conflict | 8 | 21 | 1 | 9 | 11 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ScalableOversight.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | scalable-oversight-and-adversarial-ai-control | 7 | 12 | 0 | 3 | 9 | manual review |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 3 | 11 | 3 | 8 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SecurityKernel.lean` | security-kernel-and-digital-scifs | 4 | 22 | 1 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 1 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/SelfImprovement.lean` | unmapped | 0 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/SelfImprovementRefinement.lean` | recursive-self-improvement-boundaries | 3 | 2 | 0 | 0 | 2 | manual review |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | unmapped | 0 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 4 | 25 | 8 | 17 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -1220,6 +1221,8 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SelfImprovement.lean` | `sole_self_evaluation_routes_to_review` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `stale_gate_requires_evidence_rerun` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `unpreserved_protected_invariant_routes_to_review` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/SelfImprovementRefinement.lean` | `self_improvement_full_lifecycle_witness` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SelfImprovementRefinement.lean` | `self_improvement_refinement_routes` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | `grounded_semantic_node_without_provenance_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | `hierarchy_update_without_references_or_supersession_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | `evidence_use_without_scope_declaration_rejected` | derived_or_decomposed | no | uses cases, have, rw, unfold |

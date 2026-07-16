@@ -4517,7 +4517,7 @@
             "Audit and evaluator disclosure expose private data, model secrets, security controls, or vulnerable people while claiming transparency.",
             "Stale-gate reuse carries old evidence, permissions, or approvals across material model, evaluator, architecture, corpus, threat, ontology, or lifecycle change."
           ],
-          "minimal_implementation": "The smallest honest slice is a versioned self-improvement transition record and fail-closed router over one non-deployed field: one frozen self-model and state inventory, one candidate-authored proposal, one separately implemented evaluator, one boundary-delta and protected-invariant review, one strong baseline, one rejected or canary-only route, one injected monitor failure, one exact declared-state rollback plus descendant invalidation, one compensation residual for effects outside the inventory, and append-only positive, negative, null, cost, and terminal receipts; it tests record and route discipline, not safe recursive improvement.",
+          "minimal_implementation": "The exact current minimum preserves the 3-valid/10-invalid self-improvement fixture, 4-valid/5-invalid readiness fixture, 5-valid/9-invalid replacement fixture, two-transaction/three-control replacement trace, eight-trace/six-control intent bridge, three-seed/twelve-arm fixed update result, Open-Ended Improvement governor handoff, 22 legacy SelfImprovement declarations, and shared safety lifecycle inside an eight-stage, 118-route proposal-to-outcome lifecycle with 129/129 rejecting mutations, one bounded replacement handoff, one returned outcome reconciliation, and one protocol-version-2 readmission witness. The update result retains four no-change dispositions and three exact local rollbacks; the Open-Ended challenger retains zero threshold passes; support/effect remain none. No adaptive proposal generation, live self-modification, natural useful improvement, evaluator or monitor competence, live authority enforcement, production replacement, semantic recovery, effect-complete rollback, transfer, chapter-core transition, or SOTA result exists.",
           "beyond_state_of_art": "The mature target is a governed self-improvement market in which system-generated changes can be tested quickly without acquiring permission to define or ratify their own success. For every declared consumer, use, self-model, mutable partition, authority envelope, and horizon, candidates carry exact lineage and full declared-state manifests; evaluators expose dependency and correlated-blind-spot risk; strong matched baselines, adversarial and deception controls, shifted tasks, delayed outcomes, and joint usefulness-safety-cost-rights-recovery measures determine scoped eligibility; staged exposure has effect-complete stop, rollback, compensation, and descendant-invalidation paths; and every positive, negative, null, narrowed, or refuted result remains available to later generations. Evidence, permissions, gates, and claims expire when their causal context changes. This would exceed the chapter's current finite Boolean routes and synthetic keyword fixtures only after independent implementations demonstrate that the boundary produces better joint outcomes than strong simpler controls across models, tasks, organizations, adversaries, recursive depths, and time; it remains a research target, not a current safety, corrigibility, or ASI result.",
           "codex_tests": [
             {
@@ -4566,26 +4566,31 @@
               "name": "Self-improvement transition route proof",
               "implementation_status": "implemented",
               "result_status": "passes via Lean build; finite transition-route coverage only"
+            },
+            {
+              "name": "Recursive self-improvement proposal-to-outcome lifecycle refinement",
+              "implementation_status": "implemented",
+              "result_status": "passes seven inherited suites, eight reachable stages, all 118 routes, and 129/129 rejecting mutations; one bounded replacement handoff consumes one outcome reconciliation and returns only through version-2 readmission; support/effect none; no useful-improvement, evaluator/monitor-competence, live replacement, safety, release, transfer, or support claim"
             }
           ],
-          "lean_module": "AsiStackProofs.SelfImprovement; AsiStackProofs.SafetyCriticalLifecycle",
+          "lean_module": "AsiStackProofs.SafetyCriticalLifecycle; AsiStackProofs.SelfImprovement; AsiStackProofs.SelfImprovementRefinement",
           "proof_targets": [
             {
               "tag": "lean:self_improvement.boundary.operational_invariant",
-              "module": "AsiStackProofs.SafetyCriticalLifecycle",
-              "target": "A self-improvement effect commits only after protected-predicate, pre-effect review, independent-evaluator, rollback, monitor, and evidence-transition obligations are recorded, while accepted traces preserve protected state and non-increasing authority.",
+              "module": "AsiStackProofs.SelfImprovementRefinement",
+              "target": "A complete finite self-improvement governance trace preserves exact protected-partition and non-widening-authority records through bounded replacement handoff, returned outcome reconciliation, and successor-version readmission without support or external-effect authority.",
               "status": "implemented"
             },
             {
               "tag": "lean:self_improvement.boundary.failure_blocks_promotion",
-              "module": "AsiStackProofs.SafetyCriticalLifecycle",
-              "target": "The missing-independent-evaluator and authority-widening countermodels are rejected, and support promotion without a durable receipt and non-claim boundary cannot commit.",
+              "module": "AsiStackProofs.SelfImprovementRefinement",
+              "target": "Protected-invariant weakening, authority widening, self-ratified objectives, missing independent evaluation or monitoring, stale gates, missing rollback or residual custody, and support or release laundering block the reachable lifecycle.",
               "status": "implemented"
             },
             {
               "tag": "lean:self_improvement.boundary.transition_route_envelope",
-              "module": "AsiStackProofs.SelfImprovement",
-              "target": "A structured self-improvement transition review routes missing proposals, missing invariant declarations, missing evidence bundles, invariant breaches, sole self-evaluation, missing independent evaluators, authority/security/resource boundary deltas, missing approval, missing rollback, stale gates, missing residual escrow, canary monitor failures, complete canary reviews, and complete promotion reviews into explicit outcomes.",
+              "module": "AsiStackProofs.SelfImprovementRefinement",
+              "target": "A versioned eight-stage self-improvement proposal-to-outcome lifecycle reaches all 118 finite routes, binds exact identity and full-state custody, and requires material-change invalidation before version-2 readmission.",
               "status": "implemented"
             }
           ],
@@ -4782,6 +4787,12 @@
               "passage_review_state": "reviewed",
               "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
             }
+          ],
+          "open_evidence_gaps": [
+            "No preregistered natural candidate-authored change has compared no-update, cheaper intervention, human-authored, CI/CD, archive-search, and strongest source-system baselines under matched task, model, tool, data, compute, latency, verification, and human budgets.",
+            "No separately operated evaluator, monitor, approval service, capability-field governor, replacement runner, or compensation process has exercised a live proposal through effect-bearing canary, observed outcome, rollback or commit, descendant invalidation, and terminal reconciliation.",
+            "The eight-stage lifecycle, 118-route consumer, and 129 rejecting mutations establish only finite authored governance custody; objective legitimacy, rights premises, state completeness, evaluator and monitor records, effects, rollback, restoration, remediation, compensation, and invalidations remain trusted inputs.",
+            "No independent implementation or transfer site has reproduced the lifecycle or established useful improvement, evaluator independence, deception detection, semantic recovery, effect-complete rollback, recursive composition safety, or a joint usefulness/safety/cost/rights frontier."
           ]
         },
         {

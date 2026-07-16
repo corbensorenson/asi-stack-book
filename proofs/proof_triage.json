@@ -453,12 +453,12 @@
     {
       "tag": "lean:self_improvement.boundary.transition_route_envelope",
       "chapter_id": "recursive-self-improvement-boundaries",
-      "module": "AsiStackProofs.SelfImprovement",
-      "formal_target": "A structured self-improvement transition review routes missing proposals, missing invariant declarations, missing evidence bundles, invariant breaches, sole self-evaluation, missing independent evaluators, authority/security/resource boundary deltas, missing approval, missing rollback, stale gates, missing residual escrow, canary monitor failures, complete canary reviews, and complete promotion reviews into explicit outcomes.",
+      "module": "AsiStackProofs.SelfImprovementRefinement",
+      "formal_target": "A versioned eight-stage self-improvement proposal-to-outcome lifecycle reaches all 118 finite routes, binds exact identity and full-state custody, and requires material-change invalidation before version-2 readmission.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.SelfImprovement as a finite transition-route function and derived route theorems for missing proposals, missing invariant declarations, missing evidence bundles, invariant breaches, sole self-evaluation, missing independent evaluators, authority/security/resource boundary deltas, missing approval, missing rollback, stale gates, missing residual escrow, canary monitor failures, complete canary reviews, and complete promotion reviews."
+      "rationale": "Reachable proposal-to-outcome lifecycle with prospective scope, exact proposal and full-state custody, independent evaluation/monitor records, bounded replacement handoff, outcome reconciliation, successor-version readmission, 118 routes, 129 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:intent_execution.contracts.operational_invariant",
@@ -2963,22 +2963,22 @@
     {
       "tag": "lean:self_improvement.boundary.operational_invariant",
       "chapter_id": "recursive-self-improvement-boundaries",
-      "module": "AsiStackProofs.SafetyCriticalLifecycle",
-      "formal_target": "A self-improvement effect commits only after protected-predicate, pre-effect review, independent-evaluator, rollback, monitor, and evidence-transition obligations are recorded, while accepted traces preserve protected state and non-increasing authority.",
+      "module": "AsiStackProofs.SelfImprovementRefinement",
+      "formal_target": "A complete finite self-improvement governance trace preserves exact protected-partition and non-widening-authority records through bounded replacement handoff, returned outcome reconciliation, and successor-version readmission without support or external-effect authority.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "P2 replacement target implemented in the shared safety-critical lifecycle state machine with accepted-trace preservation, explicit readiness, rejecting transitions or deletion countermodels, and independent executable refinement. The result is bounded to the encoded model and does not establish normative adequacy, deployed enforcement, empirical safety, reproduction, transfer, or chapter-core support."
+      "rationale": "Reachable proposal-to-outcome lifecycle with prospective scope, exact proposal and full-state custody, independent evaluation/monitor records, bounded replacement handoff, outcome reconciliation, successor-version readmission, 118 routes, 129 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:self_improvement.boundary.failure_blocks_promotion",
       "chapter_id": "recursive-self-improvement-boundaries",
-      "module": "AsiStackProofs.SafetyCriticalLifecycle",
-      "formal_target": "The missing-independent-evaluator and authority-widening countermodels are rejected, and support promotion without a durable receipt and non-claim boundary cannot commit.",
+      "module": "AsiStackProofs.SelfImprovementRefinement",
+      "formal_target": "Protected-invariant weakening, authority widening, self-ratified objectives, missing independent evaluation or monitoring, stale gates, missing rollback or residual custody, and support or release laundering block the reachable lifecycle.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "P2 replacement target implemented in the shared safety-critical lifecycle state machine with accepted-trace preservation, explicit readiness, rejecting transitions or deletion countermodels, and independent executable refinement. The result is bounded to the encoded model and does not establish normative adequacy, deployed enforcement, empirical safety, reproduction, transfer, or chapter-core support."
+      "rationale": "Reachable proposal-to-outcome lifecycle with prospective scope, exact proposal and full-state custody, independent evaluation/monitor records, bounded replacement handoff, outcome reconciliation, successor-version readmission, 118 routes, 129 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:cognitive_kernel.abi_trace_invariants",

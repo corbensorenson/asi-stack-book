@@ -1,0 +1,1077 @@
+{
+  "schema_version": "asi_stack.self_improvement_refinement.v1",
+  "result_id": "self-improvement-refinement-2026-07-16-local",
+  "source_sha256": {
+    "lean_model": "2c3e7c823556e7b2d84a8afdf1be747b2e780419b789ac4a7b2bfcc462f64d7e"
+  },
+  "inherited_results": {
+    "self_improvement_valid_count": 3,
+    "self_improvement_invalid_count": 10,
+    "readiness_valid_count": 4,
+    "readiness_invalid_count": 5,
+    "replacement_valid_count": 5,
+    "replacement_invalid_count": 9,
+    "replacement_trace_transaction_count": 2,
+    "replacement_trace_negative_control_count": 3,
+    "intent_trace_count": 8,
+    "intent_invalid_control_count": 6,
+    "update_seed_count": 3,
+    "update_arm_count": 12,
+    "update_parameter_mutation_count": 9,
+    "update_exact_rollback_count": 3,
+    "update_no_change_disposition_count": 4,
+    "open_ended_governor_handoff_count": 1,
+    "open_ended_threshold_pass_count": 0,
+    "support_state_effect": "none"
+  },
+  "reachable_stage_count": 8,
+  "route_case_count": 118,
+  "route_coverage": [
+    {
+      "case_id": "draft_accepted",
+      "expected_route": "accept_scope"
+    },
+    {
+      "case_id": "scoped_accepted",
+      "expected_route": "accept_proposal_binding"
+    },
+    {
+      "case_id": "proposalBound_accepted",
+      "expected_route": "accept_implementation_review"
+    },
+    {
+      "case_id": "implementationReviewed_accepted",
+      "expected_route": "accept_state_binding"
+    },
+    {
+      "case_id": "evaluated_accepted",
+      "expected_route": "accept_evaluation"
+    },
+    {
+      "case_id": "adjudicated_accepted",
+      "expected_route": "accept_adjudication"
+    },
+    {
+      "case_id": "replacementBound_accepted",
+      "expected_route": "accept_outcome_reconciliation"
+    },
+    {
+      "case_id": "outcomeReconciled_accepted",
+      "expected_route": "accept_readmission"
+    },
+    {
+      "case_id": "draft_consumerPresent",
+      "expected_route": "request_consumer"
+    },
+    {
+      "case_id": "draft_usePresent",
+      "expected_route": "request_use"
+    },
+    {
+      "case_id": "draft_selfModelPresent",
+      "expected_route": "request_self_model"
+    },
+    {
+      "case_id": "draft_mutablePartitionPresent",
+      "expected_route": "request_mutable_partition"
+    },
+    {
+      "case_id": "draft_protectedPartitionPresent",
+      "expected_route": "request_protected_partition"
+    },
+    {
+      "case_id": "draft_authorityEnvelopePresent",
+      "expected_route": "request_authority_envelope"
+    },
+    {
+      "case_id": "draft_optimizationTargetPresent",
+      "expected_route": "request_optimization_target"
+    },
+    {
+      "case_id": "draft_riskClassPresent",
+      "expected_route": "request_risk_class"
+    },
+    {
+      "case_id": "draft_evaluationHorizonPresent",
+      "expected_route": "request_evaluation_horizon"
+    },
+    {
+      "case_id": "draft_recursiveDepthPresent",
+      "expected_route": "request_recursive_depth"
+    },
+    {
+      "case_id": "draft_stopAuthorityPresent",
+      "expected_route": "request_stop_authority"
+    },
+    {
+      "case_id": "draft_supportCeilingPresent",
+      "expected_route": "request_support_ceiling"
+    },
+    {
+      "case_id": "draft_stateInventoryPresent",
+      "expected_route": "request_state_inventory"
+    },
+    {
+      "case_id": "draft_unknownStateResidualPresent",
+      "expected_route": "request_unknown_state_residual"
+    },
+    {
+      "case_id": "draft_rightsPremisesPresent",
+      "expected_route": "request_rights_premises"
+    },
+    {
+      "case_id": "draft_evaluatorPolicyPresent",
+      "expected_route": "request_evaluator_policy"
+    },
+    {
+      "case_id": "draft_baselinePolicyPresent",
+      "expected_route": "request_baseline_policy"
+    },
+    {
+      "case_id": "scoped_proposalPresent",
+      "expected_route": "request_proposal"
+    },
+    {
+      "case_id": "scoped_changeIdentityPresent",
+      "expected_route": "request_change_identity"
+    },
+    {
+      "case_id": "scoped_diffPresent",
+      "expected_route": "request_diff"
+    },
+    {
+      "case_id": "scoped_lineagePresent",
+      "expected_route": "request_lineage"
+    },
+    {
+      "case_id": "scoped_dependenciesPresent",
+      "expected_route": "request_dependencies"
+    },
+    {
+      "case_id": "scoped_proposerPresent",
+      "expected_route": "request_proposer"
+    },
+    {
+      "case_id": "scoped_implementerPresent",
+      "expected_route": "request_implementer"
+    },
+    {
+      "case_id": "scoped_mechanismPresent",
+      "expected_route": "request_mechanism"
+    },
+    {
+      "case_id": "scoped_expectedEffectsPresent",
+      "expected_route": "request_expected_effects"
+    },
+    {
+      "case_id": "scoped_nonGoalsPresent",
+      "expected_route": "request_non_goals"
+    },
+    {
+      "case_id": "scoped_cheaperInterventionsPresent",
+      "expected_route": "request_cheaper_interventions"
+    },
+    {
+      "case_id": "scoped_noSelfRatifiedObjectiveRecorded",
+      "expected_route": "reject_self_ratified_objective"
+    },
+    {
+      "case_id": "proposalBound_implementationArtifactPresent",
+      "expected_route": "request_implementation_artifact"
+    },
+    {
+      "case_id": "proposalBound_observedMutationSetPresent",
+      "expected_route": "request_observed_mutation_set"
+    },
+    {
+      "case_id": "proposalBound_protectedInvariantReviewPresent",
+      "expected_route": "request_protected_invariant_review"
+    },
+    {
+      "case_id": "proposalBound_boundaryDeltaReviewPresent",
+      "expected_route": "request_boundary_delta_review"
+    },
+    {
+      "case_id": "proposalBound_authorityDeltaPresent",
+      "expected_route": "request_authority_delta"
+    },
+    {
+      "case_id": "proposalBound_securityDeltaPresent",
+      "expected_route": "request_security_delta"
+    },
+    {
+      "case_id": "proposalBound_dataPrivacyDeltaPresent",
+      "expected_route": "request_data_privacy_delta"
+    },
+    {
+      "case_id": "proposalBound_resourceDeltaPresent",
+      "expected_route": "request_resource_delta"
+    },
+    {
+      "case_id": "proposalBound_evaluatorDeltaPresent",
+      "expected_route": "request_evaluator_delta"
+    },
+    {
+      "case_id": "proposalBound_rightsDeltaPresent",
+      "expected_route": "request_rights_delta"
+    },
+    {
+      "case_id": "proposalBound_noProtectedWeakeningRecorded",
+      "expected_route": "reject_protected_weakening"
+    },
+    {
+      "case_id": "proposalBound_noAuthorityWideningRecorded",
+      "expected_route": "reject_authority_widening"
+    },
+    {
+      "case_id": "implementationReviewed_fullStateSnapshotPresent",
+      "expected_route": "request_full_state_snapshot"
+    },
+    {
+      "case_id": "implementationReviewed_modelStatePresent",
+      "expected_route": "request_model_state"
+    },
+    {
+      "case_id": "implementationReviewed_optimizerStatePresent",
+      "expected_route": "request_optimizer_state"
+    },
+    {
+      "case_id": "implementationReviewed_schedulerStatePresent",
+      "expected_route": "request_scheduler_state"
+    },
+    {
+      "case_id": "implementationReviewed_rngStatePresent",
+      "expected_route": "request_rng_state"
+    },
+    {
+      "case_id": "implementationReviewed_cacheStatePresent",
+      "expected_route": "request_cache_state"
+    },
+    {
+      "case_id": "implementationReviewed_promptPolicyStatePresent",
+      "expected_route": "request_prompt_policy_state"
+    },
+    {
+      "case_id": "implementationReviewed_toolCredentialStatePresent",
+      "expected_route": "request_tool_credential_state"
+    },
+    {
+      "case_id": "implementationReviewed_evaluatorBenchmarkStatePresent",
+      "expected_route": "request_evaluator_benchmark_state"
+    },
+    {
+      "case_id": "implementationReviewed_environmentStatePresent",
+      "expected_route": "request_environment_state"
+    },
+    {
+      "case_id": "implementationReviewed_checkpointBackupStatePresent",
+      "expected_route": "request_checkpoint_backup_state"
+    },
+    {
+      "case_id": "implementationReviewed_externalEffectStatePresent",
+      "expected_route": "request_external_effect_state"
+    },
+    {
+      "case_id": "implementationReviewed_descendantStatePresent",
+      "expected_route": "request_descendant_state"
+    },
+    {
+      "case_id": "implementationReviewed_rollbackAuthorityPresent",
+      "expected_route": "request_rollback_authority"
+    },
+    {
+      "case_id": "implementationReviewed_compensationPlanPresent",
+      "expected_route": "request_compensation_plan"
+    },
+    {
+      "case_id": "implementationReviewed_irreversibleResidualsPresent",
+      "expected_route": "request_irreversible_residuals"
+    },
+    {
+      "case_id": "evaluated_strongBaselinePresent",
+      "expected_route": "request_strong_baseline"
+    },
+    {
+      "case_id": "evaluated_naturalTaskDistributionPresent",
+      "expected_route": "request_natural_task_distribution"
+    },
+    {
+      "case_id": "evaluated_freshHoldoutPresent",
+      "expected_route": "request_fresh_holdout"
+    },
+    {
+      "case_id": "evaluated_contaminationChecksPresent",
+      "expected_route": "request_contamination_checks"
+    },
+    {
+      "case_id": "evaluated_independentEvaluatorPresent",
+      "expected_route": "request_independent_evaluator"
+    },
+    {
+      "case_id": "evaluated_evaluatorDependenciesPresent",
+      "expected_route": "request_evaluator_dependencies"
+    },
+    {
+      "case_id": "evaluated_independentMonitorPresent",
+      "expected_route": "request_independent_monitor"
+    },
+    {
+      "case_id": "evaluated_monitorDependenciesPresent",
+      "expected_route": "request_monitor_dependencies"
+    },
+    {
+      "case_id": "evaluated_usefulOutcomePresent",
+      "expected_route": "request_useful_outcome"
+    },
+    {
+      "case_id": "evaluated_regressionsPresent",
+      "expected_route": "request_regressions"
+    },
+    {
+      "case_id": "evaluated_unsafeReleaseMeasurePresent",
+      "expected_route": "request_unsafe_release_measure"
+    },
+    {
+      "case_id": "evaluated_deceptionProbePresent",
+      "expected_route": "request_deception_probe"
+    },
+    {
+      "case_id": "evaluated_delayedOutcomePresent",
+      "expected_route": "request_delayed_outcome"
+    },
+    {
+      "case_id": "evaluated_totalCostPresent",
+      "expected_route": "request_total_cost"
+    },
+    {
+      "case_id": "evaluated_evidenceBundlePresent",
+      "expected_route": "request_evidence_bundle"
+    },
+    {
+      "case_id": "adjudicated_governanceApprovalPresent",
+      "expected_route": "request_governance_approval"
+    },
+    {
+      "case_id": "adjudicated_evidenceTransitionPresent",
+      "expected_route": "request_evidence_transition"
+    },
+    {
+      "case_id": "adjudicated_permittedConsumerPresent",
+      "expected_route": "request_permitted_consumer"
+    },
+    {
+      "case_id": "adjudicated_boundedScopePresent",
+      "expected_route": "request_bounded_scope"
+    },
+    {
+      "case_id": "adjudicated_trafficAllocationPresent",
+      "expected_route": "request_traffic_allocation"
+    },
+    {
+      "case_id": "adjudicated_canaryPlanPresent",
+      "expected_route": "request_canary_plan"
+    },
+    {
+      "case_id": "adjudicated_monitorWindowPresent",
+      "expected_route": "request_monitor_window"
+    },
+    {
+      "case_id": "adjudicated_stopPathPresent",
+      "expected_route": "request_stop_path"
+    },
+    {
+      "case_id": "adjudicated_rollbackDryRunPresent",
+      "expected_route": "request_rollback_dry_run"
+    },
+    {
+      "case_id": "adjudicated_residualOwnerPresent",
+      "expected_route": "request_residual_owner"
+    },
+    {
+      "case_id": "adjudicated_noCandidatePromotionAuthorityRecorded",
+      "expected_route": "reject_candidate_promotion_authority"
+    },
+    {
+      "case_id": "replacementBound_replacementTransactionPresent",
+      "expected_route": "request_replacement_transaction"
+    },
+    {
+      "case_id": "replacementBound_transactionOwnerPresent",
+      "expected_route": "request_transaction_owner"
+    },
+    {
+      "case_id": "replacementBound_canaryReceiptPresent",
+      "expected_route": "request_canary_receipt"
+    },
+    {
+      "case_id": "replacementBound_observedEffectReceiptPresent",
+      "expected_route": "request_observed_effect_receipt"
+    },
+    {
+      "case_id": "replacementBound_monitorReceiptPresent",
+      "expected_route": "request_monitor_receipt"
+    },
+    {
+      "case_id": "replacementBound_rollbackOrCommitDispositionPresent",
+      "expected_route": "request_rollback_or_commit_disposition"
+    },
+    {
+      "case_id": "replacementBound_exactInventoryRestorationPresent",
+      "expected_route": "request_exact_inventory_restoration"
+    },
+    {
+      "case_id": "replacementBound_semanticRecoverySeparated",
+      "expected_route": "request_semantic_recovery_separation"
+    },
+    {
+      "case_id": "replacementBound_descendantInvalidationPresent",
+      "expected_route": "request_descendant_invalidation"
+    },
+    {
+      "case_id": "replacementBound_externalRemediationPresent",
+      "expected_route": "request_external_remediation"
+    },
+    {
+      "case_id": "replacementBound_compensationReceiptPresent",
+      "expected_route": "request_compensation_receipt"
+    },
+    {
+      "case_id": "replacementBound_incidentDisclosurePresent",
+      "expected_route": "request_incident_disclosure"
+    },
+    {
+      "case_id": "replacementBound_appendOnlyOutcomePresent",
+      "expected_route": "request_append_only_outcome"
+    },
+    {
+      "case_id": "replacementBound_noSupportPromotionRecorded",
+      "expected_route": "reject_support_promotion"
+    },
+    {
+      "case_id": "replacementBound_noReleaseAuthorityRecorded",
+      "expected_route": "reject_release_authority"
+    },
+    {
+      "case_id": "outcomeReconciled_materialChangeTriggerPresent",
+      "expected_route": "request_material_change_trigger"
+    },
+    {
+      "case_id": "outcomeReconciled_affectedPathPresent",
+      "expected_route": "request_affected_path"
+    },
+    {
+      "case_id": "outcomeReconciled_readmissionDescendantInvalidationPresent",
+      "expected_route": "request_readmission_descendant_invalidation"
+    },
+    {
+      "case_id": "outcomeReconciled_ordinaryRouteBlocked",
+      "expected_route": "request_ordinary_route_block"
+    },
+    {
+      "case_id": "outcomeReconciled_staleGateExpirationPresent",
+      "expected_route": "request_stale_gate_expiration"
+    },
+    {
+      "case_id": "outcomeReconciled_newStateInventoryPresent",
+      "expected_route": "request_new_state_inventory"
+    },
+    {
+      "case_id": "outcomeReconciled_rerunRequirementPresent",
+      "expected_route": "request_rerun_requirement"
+    },
+    {
+      "case_id": "outcomeReconciled_successorVersion",
+      "expected_route": "reject_successor_version"
+    },
+    {
+      "case_id": "wrong_stage",
+      "expected_route": "reject_wrong_stage"
+    },
+    {
+      "case_id": "identity_substitution",
+      "expected_route": "reject_identity_substitution"
+    },
+    {
+      "case_id": "event_replay",
+      "expected_route": "reject_replay"
+    },
+    {
+      "case_id": "authority_leak",
+      "expected_route": "reject_authority_leak"
+    }
+  ],
+  "mutation_count": 129,
+  "mutation_rejection_count": 129,
+  "mutation_receipts": [
+    {
+      "mutation_id": "binding_authorityDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_baselineDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_currentVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_evaluatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_evidencePolicyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_implementationDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_monitorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_mutablePartitionDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_objectiveDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_proposalDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_protectedPartitionDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_replacementTransactionDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_residualDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_selfModelDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_stateInventoryDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_stopAuthorityDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_transitionId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_consumerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_usePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_selfModelPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_mutablePartitionPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_protectedPartitionPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_authorityEnvelopePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_optimizationTargetPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_riskClassPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_evaluationHorizonPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_recursiveDepthPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_stopAuthorityPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_supportCeilingPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_stateInventoryPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_unknownStateResidualPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_rightsPremisesPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_evaluatorPolicyPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_baselinePolicyPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_proposalPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_changeIdentityPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_diffPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_lineagePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_dependenciesPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_proposerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_implementerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_mechanismPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_expectedEffectsPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_nonGoalsPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_cheaperInterventionsPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_noSelfRatifiedObjectiveRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_proposalBound_implementationArtifactPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_proposalBound_observedMutationSetPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_proposalBound_protectedInvariantReviewPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_proposalBound_boundaryDeltaReviewPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_proposalBound_authorityDeltaPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_proposalBound_securityDeltaPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_proposalBound_dataPrivacyDeltaPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_proposalBound_resourceDeltaPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_proposalBound_evaluatorDeltaPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_proposalBound_rightsDeltaPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_proposalBound_noProtectedWeakeningRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_proposalBound_noAuthorityWideningRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_implementationReviewed_fullStateSnapshotPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_implementationReviewed_modelStatePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_implementationReviewed_optimizerStatePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_implementationReviewed_schedulerStatePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_implementationReviewed_rngStatePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_implementationReviewed_cacheStatePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_implementationReviewed_promptPolicyStatePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_implementationReviewed_toolCredentialStatePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_implementationReviewed_evaluatorBenchmarkStatePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_implementationReviewed_environmentStatePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_implementationReviewed_checkpointBackupStatePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_implementationReviewed_externalEffectStatePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_implementationReviewed_descendantStatePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_implementationReviewed_rollbackAuthorityPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_implementationReviewed_compensationPlanPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_implementationReviewed_irreversibleResidualsPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_evaluated_strongBaselinePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_evaluated_naturalTaskDistributionPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_evaluated_freshHoldoutPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_evaluated_contaminationChecksPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_evaluated_independentEvaluatorPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_evaluated_evaluatorDependenciesPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_evaluated_independentMonitorPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_evaluated_monitorDependenciesPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_evaluated_usefulOutcomePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_evaluated_regressionsPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_evaluated_unsafeReleaseMeasurePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_evaluated_deceptionProbePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_evaluated_delayedOutcomePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_evaluated_totalCostPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_evaluated_evidenceBundlePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_governanceApprovalPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_evidenceTransitionPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_permittedConsumerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_boundedScopePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_trafficAllocationPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_canaryPlanPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_monitorWindowPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_stopPathPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_rollbackDryRunPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_residualOwnerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_noCandidatePromotionAuthorityRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_replacementBound_replacementTransactionPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_replacementBound_transactionOwnerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_replacementBound_canaryReceiptPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_replacementBound_observedEffectReceiptPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_replacementBound_monitorReceiptPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_replacementBound_rollbackOrCommitDispositionPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_replacementBound_exactInventoryRestorationPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_replacementBound_semanticRecoverySeparated",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_replacementBound_descendantInvalidationPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_replacementBound_externalRemediationPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_replacementBound_compensationReceiptPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_replacementBound_incidentDisclosurePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_replacementBound_appendOnlyOutcomePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_replacementBound_noSupportPromotionRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_replacementBound_noReleaseAuthorityRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_outcomeReconciled_materialChangeTriggerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_outcomeReconciled_affectedPathPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_outcomeReconciled_readmissionDescendantInvalidationPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_outcomeReconciled_ordinaryRouteBlocked",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_outcomeReconciled_staleGateExpirationPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_outcomeReconciled_newStateInventoryPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_outcomeReconciled_rerunRequirementPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_outcomeReconciled_successorVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong_kind",
+      "rejected": true
+    },
+    {
+      "mutation_id": "event_replay",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support_leak",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect_leak",
+      "rejected": true
+    },
+    {
+      "mutation_id": "stale_handoff_after_readmission",
+      "rejected": true
+    }
+  ],
+  "command_receipts": [
+    {
+      "command": "python3 scripts/validate_self_improvement_boundaries.py",
+      "exit_code": 0,
+      "output_sha256": "144cc152b38684cdec031ce3c752814283f6b20bb02944732adc6d2f6a394a33"
+    },
+    {
+      "command": "python3 scripts/validate_readiness_residual_gates.py",
+      "exit_code": 0,
+      "output_sha256": "e4676c6bc155cc88ebe62b3ce77cb91f38f1113a23073fbd435e93a02d1b55b1"
+    },
+    {
+      "command": "python3 scripts/validate_capability_replacement.py",
+      "exit_code": 0,
+      "output_sha256": "b084242955f920a94b4d06837b1af3df62f5e86c25f22d17ec622903bea57f3d"
+    },
+    {
+      "command": "python3 scripts/validate_capability_replacement_trace_probe.py",
+      "exit_code": 0,
+      "output_sha256": "b3076247aa7310aed4202f75b20c7bfc25f6c1d9786a267871a9fc0322cb63ea"
+    },
+    {
+      "command": "python3 scripts/validate_intent_governed_replacement_bridge.py",
+      "exit_code": 0,
+      "output_sha256": "8329d29ad248b8186f8247dd3e7553879dc2612b90e24c208e37ad5c110ac954"
+    },
+    {
+      "command": "python3 scripts/validate_post_v2_update_causality.py",
+      "exit_code": 0,
+      "output_sha256": "852e78bc8ca35cf72dfa8ada7aa2ffa20e4ea24354f3b36f30c05baa71f171d8"
+    },
+    {
+      "command": "python3 scripts/validate_open_ended_improvement_refinement.py",
+      "exit_code": 0,
+      "output_sha256": "b3db506817e032f3bd25ab279a4dd383b81a4d26f7df25888c19e4da31f08f8f"
+    }
+  ],
+  "witness": {
+    "terminal_stage": "scoped",
+    "protocol_version": 2,
+    "receipt_count": 8,
+    "replacement_handoff_count": 1,
+    "outcome_reconciliation_count": 1,
+    "readmission_count": 1,
+    "support_assignment_count": 0,
+    "external_effect_count": 0
+  },
+  "support_state_effect": "none",
+  "non_claims": [
+    "no adaptive proposal generator, live self-modification, or production replacement executed",
+    "all legitimacy, evaluation, monitoring, state, effect, rollback, compensation, and invalidation records remain trusted authored inputs",
+    "no evaluator or monitor competence, useful improvement, safety, recovery, transfer, deployment, SOTA, AGI, or ASI result",
+    "no support transition, release authority, or external effect"
+  ]
+}

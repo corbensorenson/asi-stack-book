@@ -102,6 +102,9 @@ DATA_ENGINE_LIFECYCLE_DOSSIER = "evidence_quality/model_adequacy_dossiers/data-e
 OPEN_ENDED_IMPROVEMENT_RESULT = "experiments/open_ended_improvement_refinement/results/2026-07-16-local.json"
 OPEN_ENDED_IMPROVEMENT_RECEIPT = "docs/open_ended_improvement_refinement.md"
 OPEN_ENDED_IMPROVEMENT_DOSSIER = "evidence_quality/model_adequacy_dossiers/open-ended-improvement-refinement.md"
+SELF_IMPROVEMENT_RESULT = "experiments/self_improvement_refinement/results/2026-07-16-local.json"
+SELF_IMPROVEMENT_RECEIPT = "docs/self_improvement_refinement.md"
+SELF_IMPROVEMENT_DOSSIER = "evidence_quality/model_adequacy_dossiers/self-improvement-refinement.md"
 READINESS_RESULT = "experiments/readiness_refinement/results/2026-07-15-local.json"
 READINESS_RECEIPT = "docs/readiness_refinement.md"
 READINESS_DOSSIER = "evidence_quality/model_adequacy_dossiers/readiness-refinement.md"
@@ -290,6 +293,9 @@ def snapshot() -> dict:
         "open_ended_improvement_result": load(OPEN_ENDED_IMPROVEMENT_RESULT),
         "open_ended_improvement_receipt": text(OPEN_ENDED_IMPROVEMENT_RECEIPT),
         "open_ended_improvement_dossier": text(OPEN_ENDED_IMPROVEMENT_DOSSIER),
+        "self_improvement_result": load(SELF_IMPROVEMENT_RESULT),
+        "self_improvement_receipt": text(SELF_IMPROVEMENT_RECEIPT),
+        "self_improvement_dossier": text(SELF_IMPROVEMENT_DOSSIER),
         "readiness_result": load(READINESS_RESULT),
         "readiness_receipt": text(READINESS_RECEIPT),
         "readiness_dossier": text(READINESS_DOSSIER),
@@ -1120,8 +1126,8 @@ def errors(data: dict) -> list[str]:
 
     expected_claim_ledger_contract = {
         "current_missing_or_changed_theorem_count":296,
-        "current_missing_or_changed_target_count":180,
-        "current_live_theorem_declaration_count":1292,
+        "current_missing_or_changed_target_count":181,
+        "current_live_theorem_declaration_count":1294,
         "current_live_proof_target_count":298,
         "claim_ledger_model_path":"lean/AsiStackProofs/ClaimLedgerRefinement.lean",
         "claim_ledger_dossier_path":CLAIM_LEDGER_DOSSIER,
@@ -1571,6 +1577,67 @@ def errors(data: dict) -> list[str]:
     if {row.get("module") for row in open_ended_chapter.get("proof_targets",[])}!={"AsiStackProofs.OpenEndedImprovementRefinement"}:
         out.append("Open-Ended Improvement public targets do not all resolve to refinement")
 
+    expected_self_improvement_contract={
+        "self_improvement_model_path":"lean/AsiStackProofs/SelfImprovementRefinement.lean",
+        "self_improvement_dossier_path":SELF_IMPROVEMENT_DOSSIER,
+        "self_improvement_consumer_path":SELF_IMPROVEMENT_RECEIPT,
+        "self_improvement_result_path":SELF_IMPROVEMENT_RESULT,
+        "self_improvement_state":"validated_finite_authored_proposal_outcome_readmission_lifecycle_not_useful_safe_or_deployed",
+        "self_improvement_valid_count":3,
+        "self_improvement_invalid_count":10,
+        "self_improvement_readiness_valid_count":4,
+        "self_improvement_readiness_invalid_count":5,
+        "self_improvement_replacement_valid_count":5,
+        "self_improvement_replacement_invalid_count":9,
+        "self_improvement_replacement_transaction_count":2,
+        "self_improvement_replacement_negative_control_count":3,
+        "self_improvement_intent_trace_count":8,
+        "self_improvement_intent_invalid_control_count":6,
+        "self_improvement_update_seed_count":3,
+        "self_improvement_update_arm_count":12,
+        "self_improvement_update_parameter_mutation_count":9,
+        "self_improvement_update_exact_rollback_count":3,
+        "self_improvement_update_no_change_disposition_count":4,
+        "self_improvement_open_ended_governor_handoff_count":1,
+        "self_improvement_open_ended_threshold_pass_count":0,
+        "self_improvement_reachable_stage_count":8,
+        "self_improvement_route_case_count":118,
+        "self_improvement_mutation_rejection_count":129,
+        "self_improvement_retained_legacy_theorem_count":22,
+        "self_improvement_replacement_handoff_count":1,
+        "self_improvement_outcome_reconciliation_count":1,
+        "self_improvement_readmission_count":1,
+        "self_improvement_support_state_effect":"none"}
+    for key,value in expected_self_improvement_contract.items():
+        if proof_contract.get(key)!=value: out.append(f"self-improvement contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    self_improvement=data["self_improvement_result"]
+    for key,value in {"reachable_stage_count":8,"route_case_count":118,"mutation_count":129,
+                      "mutation_rejection_count":129,"support_state_effect":"none"}.items():
+        if self_improvement.get(key)!=value: out.append(f"self-improvement result drifted: {key}")
+    inherited_self_improvement=self_improvement.get("inherited_results",{})
+    for key,value in {"self_improvement_valid_count":3,"self_improvement_invalid_count":10,
+                      "readiness_valid_count":4,"readiness_invalid_count":5,
+                      "replacement_valid_count":5,"replacement_invalid_count":9,
+                      "replacement_trace_transaction_count":2,"replacement_trace_negative_control_count":3,
+                      "intent_trace_count":8,"intent_invalid_control_count":6,
+                      "update_seed_count":3,"update_arm_count":12,"update_parameter_mutation_count":9,
+                      "update_exact_rollback_count":3,"update_no_change_disposition_count":4,
+                      "open_ended_governor_handoff_count":1,"open_ended_threshold_pass_count":0,
+                      "support_state_effect":"none"}.items():
+        if inherited_self_improvement.get(key)!=value: out.append(f"self-improvement inherited result drifted: {key}")
+    self_improvement_witness=self_improvement.get("witness",{})
+    for key,value in {"terminal_stage":"scoped","protocol_version":2,"replacement_handoff_count":1,
+                      "outcome_reconciliation_count":1,"readmission_count":1,
+                      "support_assignment_count":0,"external_effect_count":0}.items():
+        if self_improvement_witness.get(key)!=value: out.append(f"self-improvement witness drifted: {key}")
+    for phrase in ["eight-stage lifecycle", "all 118 routes", "129/129", "Support-state and external-effect authority remain exactly `none`"]:
+        if phrase.casefold() not in data["self_improvement_receipt"].casefold(): out.append(f"self-improvement receipt missing exact boundary: {phrase}")
+    for phrase in ["Eight reachable stages", "all 118 routes", "Inadequate for objective legitimacy", "No support transition"]:
+        if phrase.casefold() not in data["self_improvement_dossier"].casefold(): out.append(f"self-improvement dossier missing adequacy boundary: {phrase}")
+    self_improvement_chapter=next((row for row in structure_rows if row.get("id")=="recursive-self-improvement-boundaries"),{})
+    if {row.get("module") for row in self_improvement_chapter.get("proof_targets",[])}!={"AsiStackProofs.SelfImprovementRefinement"}:
+        out.append("Recursive Self-Improvement public targets do not all resolve to refinement")
+
     expected_readiness_contract={
         "readiness_model_path":"lean/AsiStackProofs/ReadinessRefinement.lean","readiness_dossier_path":READINESS_DOSSIER,
         "readiness_consumer_path":READINESS_RECEIPT,"readiness_result_path":READINESS_RESULT,
@@ -1994,6 +2061,10 @@ def main() -> None:
     open_ended_improvement_support["open_ended_improvement_result"]["support_state_effect"] = "prototype-backed"
     mutations.append(("Open-Ended Improvement support laundering", open_ended_improvement_support))
 
+    self_improvement_support = copy.deepcopy(base)
+    self_improvement_support["self_improvement_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("Recursive Self-Improvement support laundering", self_improvement_support))
+
     readiness_support = copy.deepcopy(base)
     readiness_support["readiness_result"]["support_state_effect"] = "prototype-backed"
     mutations.append(("readiness support laundering", readiness_support))
@@ -2060,7 +2131,7 @@ def main() -> None:
         "55 live chapter-core programs across CF-01..CF-08 with a frozen 54-chapter activation baseline, exact proof/evidence/reader baseline, "
         "proof rationalization and argument-exit contracts, maintained X Article and exact 5:2 header contract, "
         "no support or release effect, no external-human gate, same-transaction successor continuity, "
-        "validated shared-safety, Cognitive Kernel ABI, integrated reference trace, concrete-schema refinement, concurrent effect, reachable stack-boundary, Intent-to-Execution vertical, Authority grant-to-effect, Human Intent resolution, Command semantic-interface, Cognitive Compilation obligation-refinement, Virtual Context binding/materialization/fault, Context Certificate provenance/lifecycle, Context Transaction snapshot/store, Verification Bandwidth evidence-gate, Claim Ledger append-only, Proof-Carrying Claims target-to-writeback, Tribunal versioned-verdict/appeal, Typed Job versioned execution/closure, Artifact record-reality/trust, Procedural Memory promotion/retirement, Routing/MoECOT request-to-closure, Safety Case readiness/invalidation, Capability Threshold repeated assessment, Adversarial Evaluation observation/re-evaluation, Scalable Oversight review/readmission, Policy Optimization governed-update/readmission, Data Engines custody/update/deletion/readmission, Open-Ended Improvement campaign-to-governor/readmission, Readiness candidate-to-terminal, Hive policy-to-closure, Compact Generation source-to-closure, Fast Generation request-to-closure, Governed Deliberation request-to-closure, Artifact Compression artifact-to-consumption, and Resource Economics allocation-and-simulation-transport receipts, bounded WIP and first-campaign/SOTA entry gates, and 55 rejecting mutations."
+        "validated shared-safety, Cognitive Kernel ABI, integrated reference trace, concrete-schema refinement, concurrent effect, reachable stack-boundary, Intent-to-Execution vertical, Authority grant-to-effect, Human Intent resolution, Command semantic-interface, Cognitive Compilation obligation-refinement, Virtual Context binding/materialization/fault, Context Certificate provenance/lifecycle, Context Transaction snapshot/store, Verification Bandwidth evidence-gate, Claim Ledger append-only, Proof-Carrying Claims target-to-writeback, Tribunal versioned-verdict/appeal, Typed Job versioned execution/closure, Artifact record-reality/trust, Procedural Memory promotion/retirement, Routing/MoECOT request-to-closure, Safety Case readiness/invalidation, Capability Threshold repeated assessment, Adversarial Evaluation observation/re-evaluation, Scalable Oversight review/readmission, Policy Optimization governed-update/readmission, Data Engines custody/update/deletion/readmission, Open-Ended Improvement campaign-to-governor/readmission, Recursive Self-Improvement proposal-to-outcome/readmission, Readiness candidate-to-terminal, Hive policy-to-closure, Compact Generation source-to-closure, Fast Generation request-to-closure, Governed Deliberation request-to-closure, Artifact Compression artifact-to-consumption, and Resource Economics allocation-and-simulation-transport receipts, bounded WIP and first-campaign/SOTA entry gates, and 56 rejecting mutations."
     )
 
 

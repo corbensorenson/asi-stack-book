@@ -77,6 +77,7 @@ import AsiStackProofs.SafetyCriticalLifecycle
 import AsiStackProofs.SemanticRepresentation
 import AsiStackProofs.SearchSubstrates
 import AsiStackProofs.SelfImprovement
+import AsiStackProofs.SelfImprovementRefinement
 import AsiStackProofs.SimulationFidelity
 import AsiStackProofs.StackBoundaries
 import AsiStackProofs.StableCapabilityFields

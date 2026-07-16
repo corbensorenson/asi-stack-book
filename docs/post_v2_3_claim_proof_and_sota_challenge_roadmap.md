@@ -2777,6 +2777,33 @@ improvement, hazard-control efficacy, autonomous discovery, transfer, safe
 self-improvement, capability, safety, readiness, release, deployment, SOTA,
 AGI, ASI, support, nor an external effect.
 
+Recursive Self-Improvement proposal-to-outcome/readmission refinement receipt:
+all three stable Recursive Self-Improvement targets now resolve to
+`AsiStackProofs.SelfImprovementRefinement` rather than stopping at disconnected
+Boolean and projection-shaped route envelopes. The independently encoded
+consumer reruns the exact 3-valid/10-invalid self-improvement fixture,
+4-valid/5-invalid readiness fixture, 5-valid/9-invalid replacement fixture,
+two-transaction/three-control replacement trace, eight-trace/six-control intent
+bridge, three-seed/twelve-arm fixed update result, and Open-Ended Improvement
+governor handoff. It reaches all 118 routes across draft, scoped,
+proposal-bound, implementation-reviewed, evaluated, adjudicated,
+replacement-bound, and outcome-reconciled stages and rejects all 129 identity,
+scope, proposal, implementation, full-state, evaluation, adjudication,
+replacement-outcome, replay, authority, support, and external-effect mutations.
+The full witness records one bounded replacement handoff, one returned outcome
+reconciliation, and protocol version 2 only after material-change, affected-path,
+descendant-invalidation, ordinary-route-blocking, stale-gate-expiry, new-state,
+and rerun records. The 22 legacy declarations remain frozen with reviewed
+lineage. The fixed update result retains three exact local rollbacks and four
+`no_change` dispositions; the Open-Ended challenger retains zero threshold
+passes; support and external-effect authority remain `none`. This establishes
+neither objective legitimacy, rights truth, state completeness, evaluator or
+monitor competence, natural useful improvement, deception detection, live
+authority enforcement, production replacement, semantic recovery,
+effect-complete rollback, compensation efficacy, recursive composition safety,
+reproduction, transfer, release, SOTA, AGI, ASI, support, nor an external
+effect.
+
 Personal Compute Hive policy-to-closure refinement receipt: all six stable Hive
 targets now resolve to `AsiStackProofs.HiveLifecycleRefinement`. The reachable
 model separates requested, policy-bound, node-selected, leased, executed,
@@ -3702,9 +3729,9 @@ All terminal records agree and one exact successor is active.
 | Milestone | State | Completion condition |
 |---|---|---|
 | M0 — Successor activation | completed | Roadmap, status, schema, validator, public pointers, continuity rule, and negative controls are installed. |
-| M1 — Claim-atom coverage | completed | All 3,730 activation structured atoms are semantically reviewed, all 2,713 current activation prose candidates are dispositioned, all 54 activation chapter sweeps have zero unowned material claims, and the authorized 55th chapter adds 15 semantically reviewed atoms in a preserved addendum; prose identity changes retain lineage and no support state changed. |
+| M1 — Claim-atom coverage | completed | All 3,730 activation structured atoms are semantically reviewed, all 2,710 current activation prose candidates are dispositioned, all 54 activation chapter sweeps have zero unowned material claims, and the authorized 55th chapter adds 15 semantically reviewed atoms in a preserved addendum; prose identity changes retain lineage and no support state changed. |
 | M2 — Measurement and reproduction foundation | pending | Natural corpus, model-selection record, evaluator suite, environment locks, statistics policy, and artifact protocol pass sacrificial preflight. |
-| M3 — Proof rationalization and formal semantic depth | in progress | All 1,151 baseline declarations and 298 targets have claim-centered dispositions; 296 baseline declarations and 180 baseline targets are now absent or changed through preserved-lineage retirement/replacement. The live corpus contains 1,292 theorem declarations and 298 targets. The shared safety lifecycle, post-activation Cognitive Kernel ABI, integrated reference trace, stack boundary, Intent-to-Execution, Authority grant-to-effect, Human Intent, Command semantic-interface, Cognitive Compilation, Virtual Context ABI, Context Certificates, Context Transactions, Verification Bandwidth, Claim Ledgers, Proof-Carrying Claims, Tribunal versioned-verdict/appeal, Typed Job versioned execution/closure, Artifact record-reality/trust, Procedural Memory promotion/retirement, Routing/MoECOT request-to-closure, Safety Case readiness/invalidation, Capability Threshold repeated assessment, Adversarial Evaluation observation/re-evaluation, Scalable Oversight review/readmission, Policy Optimization governed-update/readmission, Data Engines custody/update/deletion/readmission, Open-Ended Improvement campaign-to-governor/readmission, Readiness candidate-to-terminal, Hive policy-to-closure, Compact Generation source-to-closure, Fast Generation request-to-closure, Governed Deliberation request-to-closure, Artifact Compression artifact-to-consumption, and Resource Economics allocation-and-simulation-transport lifecycles now have explicit assumptions, reachable transition/trace semantics, countermodels, adequacy dossiers, and independent consumers. Additional live-schema refinements and consumers for the other retained proof families remain open. |
+| M3 — Proof rationalization and formal semantic depth | in progress | All 1,151 baseline declarations and 298 targets have claim-centered dispositions; 296 baseline declarations and 181 baseline targets are now absent or changed through preserved-lineage retirement/replacement. The live corpus contains 1,294 theorem declarations and 298 targets. The shared safety lifecycle, post-activation Cognitive Kernel ABI, integrated reference trace, stack boundary, Intent-to-Execution, Authority grant-to-effect, Human Intent, Command semantic-interface, Cognitive Compilation, Virtual Context ABI, Context Certificates, Context Transactions, Verification Bandwidth, Claim Ledgers, Proof-Carrying Claims, Tribunal versioned-verdict/appeal, Typed Job versioned execution/closure, Artifact record-reality/trust, Procedural Memory promotion/retirement, Routing/MoECOT request-to-closure, Safety Case readiness/invalidation, Capability Threshold repeated assessment, Adversarial Evaluation observation/re-evaluation, Scalable Oversight review/readmission, Policy Optimization governed-update/readmission, Data Engines custody/update/deletion/readmission, Open-Ended Improvement campaign-to-governor/readmission, Recursive Self-Improvement proposal-to-outcome/readmission, Readiness candidate-to-terminal, Hive policy-to-closure, Compact Generation source-to-closure, Fast Generation request-to-closure, Governed Deliberation request-to-closure, Artifact Compression artifact-to-consumption, and Resource Economics allocation-and-simulation-transport lifecycles now have explicit assumptions, reachable transition/trace semantics, countermodels, adequacy dossiers, and independent consumers. Additional live-schema refinements and consumers for the other retained proof families remain open. |
 | M4 — Integrated executable slices | pending | Governed work, learning, and assurance slices execute with failure injection, environment–observation–belief lineage, sealed quiescent stabilization, and effect-complete accounting. |
 | M5 — Governance/usefulness campaign | pending | Informative-regime matched campaign is adjudicated without zero-release or floor laundering. |
 | M6 — Routing/deliberation campaign | pending | Ambiguous held-out real-model campaign is adjudicated with the fifteen harm controls. |
