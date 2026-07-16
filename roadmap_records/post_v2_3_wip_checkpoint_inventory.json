@@ -3,14 +3,15 @@
   "roadmap_id": "asi-stack-post-v2-3-claim-proof-sota-challenge-2026-07-14",
   "recorded_date": "2026-07-15",
   "base_commit": "5eddb15d56b0c813666ed2b2ea41e7c87f1cf297",
+  "checkpoint_commit": "f27a6a8dffe03977969b6332d0e81314f29be052",
   "changed_path_count": 724,
   "independent_work_package_count": 5,
   "changed_path_soft_limit": 250,
   "independent_work_package_limit": 3,
   "threshold_exceeded": true,
   "scope_expansion_blocked": true,
-  "checkpoint_disposition": "checkpoint_authorized_local_commit_only",
-  "commit_authorized": true,
+  "checkpoint_disposition": "checkpoint_complete_local_only",
+  "commit_authorized": false,
   "authorization_basis": "The persistent user-authored goal requires completion of committed-object and deployed-attestation gates; a coherent local checkpoint is the normal in-scope implementation step needed to make those gates testable.",
   "authorization_scope": "One local coherent checkpoint commit and its local attestation-closure follow-up only; no push, tag, deploy, external publication, or release authorization is inferred.",
   "packages": [
@@ -27,7 +28,7 @@
       "surface_groups": ["lean/", "proofs/", "evidence_quality/model_adequacy_dossiers/", "docs/*_refinement.md", "experiments/*_refinement/", "scripts/*_refinement.py"],
       "authorship_mix": "authored_models_consumers_results_and_generated_registries",
       "dependency_order": 2,
-      "validation_state": "current_family_validation_complete; randomized committed-object attestation blocked until the intentional residual artifact rewrite is checkpointed",
+      "validation_state": "current_family validation complete; the intentional residual artifact rewrite is committed and the randomized committed-object attestation passes",
       "rollback_boundary": "each family requires atomic model, consumer, result, dossier, target, lineage, registry, chapter, roadmap, and changelog reconciliation"
     },
     {
@@ -51,16 +52,23 @@
       "surface_groups": ["book_structure.json", "_quarto.yml", "docs/book_outline.md", "appendices/", "validation/", "schemas/", "scripts/validate_*", "README.md", "index.qmd"],
       "authorship_mix": "manifest_authority_generated_projections_and_validators",
       "dependency_order": 5,
-      "validation_state": "PR tier passes; Lean builds 93 jobs; isolated Quarto renders 68 pages; 294 of 296 deep units pass individually; randomized dirty-HEAD attestation and its dependent Artifact Reality refinement remain blocked",
+      "validation_state": "PR tier passes; Lean builds 93 jobs; isolated Quarto renders 68 pages; randomized committed-object attestation and its dependent Artifact Reality refinement pass; complete deep rerun required after closure commit",
       "rollback_boundary": "manifest, projections, registries, validators, public pointers, and rendered artifacts must be reconciled together"
     }
   ],
-  "next_checkpoint_requirement": "Create one coherent local checkpoint commit, regenerate the randomized attestation result against that new HEAD, rerun its dependent Artifact Reality refinement and the complete deep tier, then record a clean checkpoint-closure state. Push, tag, deploy, and publication remain separately unauthorized.",
+  "checkpoint_closure": {
+    "attestation_result_path": "experiments/artifact_randomized_attestation/results/2026-07-04-local.json",
+    "attestation_state": "passes_against_checkpoint_commit_objects",
+    "dependent_artifact_reality_state": "passes",
+    "expected_worktree_state_after_closure_commit": "clean",
+    "external_actions_authorized": false
+  },
+  "next_checkpoint_requirement": "Keep the worktree clean after the local attestation-closure commit, then resume the next unfinished roadmap campaign. Push, tag, deploy, and publication remain separately unauthorized.",
   "support_state_effect": "none",
   "release_effect": "none",
   "non_claims": [
     "Changed-path and package counts are engineering-risk indicators, not semantic or empirical proof.",
-    "This inventory does not authorize staging, committing, pushing, tagging, deploying, or publishing.",
-    "Scope expansion blocked does not block finishing and validating the currently active stabilization packages."
+    "The consumed local-checkpoint authorization did not authorize pushing, tagging, deploying, publishing, or releasing.",
+    "A completed checkpoint does not establish semantic, empirical, deployment, or release support for any book claim."
   ]
 }

@@ -306,21 +306,21 @@
     {
       "artifact": "experiments/residual_honesty_conservation/results/2026-07-03-local.json",
       "artifact_result_id": "2026-07-03-residual-honesty-conservation",
-      "artifact_sha256": "49459d10c7a3988bab47b278c9512db8d60d1094c9266da5cc2d1c131d132745",
+      "artifact_sha256": "b28eb50fbd3b8f1dd6677041f4294f4ddc0b338af69b4248349a1d637fb42f3c",
       "clean_in_worktree": true,
       "observation_routes": [
         {
           "accepted": true,
           "observed_ref": "experiments/residual_honesty_conservation/results/2026-07-03-local.json",
-          "observed_sha256": "49459d10c7a3988bab47b278c9512db8d60d1094c9266da5cc2d1c131d132745",
+          "observed_sha256": "b28eb50fbd3b8f1dd6677041f4294f4ddc0b338af69b4248349a1d637fb42f3c",
           "observer_role": "filesystem_reader",
           "route_id": "filesystem_bytes"
         },
         {
           "accepted": true,
-          "git_blob_sha1": "76c39dc9e9ec4391dbdcb6be8e20e68f4160d899",
+          "git_blob_sha1": "f7f78eef71a368a62a6b45385bced5229c84041b",
           "observed_ref": "HEAD:experiments/residual_honesty_conservation/results/2026-07-03-local.json",
-          "observed_sha256": "49459d10c7a3988bab47b278c9512db8d60d1094c9266da5cc2d1c131d132745",
+          "observed_sha256": "b28eb50fbd3b8f1dd6677041f4294f4ddc0b338af69b4248349a1d637fb42f3c",
           "observer_role": "git_object_database",
           "route_id": "git_object_bytes"
         },
@@ -340,7 +340,7 @@
       "selection_score": "edf8ea449d982991d3c4ee645d45a8a1b5400bde2a7bbef7e7c4032545a54300",
       "trap_receipt": {
         "expected_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
-        "observed_sha256": "49459d10c7a3988bab47b278c9512db8d60d1094c9266da5cc2d1c131d132745",
+        "observed_sha256": "b28eb50fbd3b8f1dd6677041f4294f4ddc0b338af69b4248349a1d637fb42f3c",
         "receipt_shape_valid": true,
         "rejected": true,
         "rejection_reasons": [

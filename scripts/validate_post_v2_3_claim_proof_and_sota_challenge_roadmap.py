@@ -328,7 +328,7 @@ def errors(data: dict) -> list[str]:
         "scope_expansion_blocked_above_limit": True,
         "checkpoint_inventory_required": True,
         "checkpoint_inventory_path": "roadmap_records/post_v2_3_wip_checkpoint_inventory.json",
-        "checkpoint_inventory_state": "active_scope_expansion_blocked",
+        "checkpoint_inventory_state": "checkpoint_complete_local_only",
         "commit_requires_explicit_authorization": True,
         "no_commit_authority_disposition": "checkpoint_blocked_no_commit_authority",
         "first_campaign_minimum_terminal_atom_count": 3,
@@ -363,27 +363,41 @@ def errors(data: dict) -> list[str]:
         stderr=subprocess.PIPE,
         check=True,
     ).stdout.splitlines())
-    if wip.get("changed_path_count") != current_changed_paths:
-        out.append(f"WIP checkpoint inventory stale: {wip.get('changed_path_count')} != {current_changed_paths}")
     if wip.get("base_commit") != "5eddb15d56b0c813666ed2b2ea41e7c87f1cf297":
         out.append("WIP checkpoint base commit drifted")
     if wip.get("independent_work_package_count") != len(wip.get("packages", [])) or len(wip.get("packages", [])) != 5:
         out.append("WIP checkpoint package inventory drifted")
-    if current_changed_paths <= 250 or wip.get("threshold_exceeded") is not True or wip.get("scope_expansion_blocked") is not True:
-        out.append("oversized WIP did not block scope expansion")
-    if wip.get("commit_authorized") is True:
-        if wip.get("checkpoint_disposition") != "checkpoint_authorized_local_commit_only":
-            out.append("authorized WIP checkpoint has the wrong disposition")
-        if "user-authored goal" not in str(wip.get("authorization_basis", "")):
-            out.append("authorized WIP checkpoint lacks an explicit user-authority basis")
-        scope = str(wip.get("authorization_scope", "")).lower()
-        for forbidden in ("no push", "no push, tag, deploy", "no push, tag, deploy, external publication"):
-            if forbidden in scope:
-                break
-        else:
-            out.append("authorized WIP checkpoint lacks a bounded no-push/no-publication scope")
-    elif wip.get("checkpoint_disposition") != "checkpoint_blocked_no_commit_authority":
-        out.append("unauthorized WIP checkpoint has the wrong blocked disposition")
+    if wip.get("changed_path_count") != 724 or wip.get("threshold_exceeded") is not True or wip.get("scope_expansion_blocked") is not True:
+        out.append("historical oversized-WIP checkpoint snapshot drifted")
+    checkpoint_commit = str(wip.get("checkpoint_commit", ""))
+    if wip.get("checkpoint_disposition") != "checkpoint_complete_local_only" or wip.get("commit_authorized") is not False:
+        out.append("completed WIP checkpoint disposition drifted")
+    elif not re.fullmatch(r"[0-9a-f]{40}", checkpoint_commit):
+        out.append("completed WIP checkpoint lacks an exact commit identity")
+    else:
+        commit_exists = subprocess.run(
+            ["git", "cat-file", "-e", f"{checkpoint_commit}^{{commit}}"],
+            cwd=ROOT,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        ).returncode == 0
+        commit_is_ancestor = subprocess.run(
+            ["git", "merge-base", "--is-ancestor", checkpoint_commit, "HEAD"],
+            cwd=ROOT,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        ).returncode == 0
+        if not commit_exists or not commit_is_ancestor:
+            out.append("completed WIP checkpoint commit is absent from current history")
+    if current_changed_paths != 0:
+        out.append(f"completed WIP checkpoint closure requires a clean worktree: {current_changed_paths} changed path(s)")
+    closure = wip.get("checkpoint_closure", {})
+    if closure.get("attestation_state") != "passes_against_checkpoint_commit_objects":
+        out.append("completed WIP checkpoint lacks passing committed-object attestation state")
+    if closure.get("dependent_artifact_reality_state") != "passes":
+        out.append("completed WIP checkpoint lacks passing dependent Artifact Reality state")
+    if closure.get("expected_worktree_state_after_closure_commit") != "clean" or closure.get("external_actions_authorized") is not False:
+        out.append("completed WIP checkpoint closure boundary drifted")
     if wip.get("support_state_effect") != "none" or wip.get("release_effect") != "none":
         out.append("WIP checkpoint invented support or release effect")
 

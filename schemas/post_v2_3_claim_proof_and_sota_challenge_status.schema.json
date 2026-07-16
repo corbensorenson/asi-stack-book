@@ -1097,7 +1097,7 @@
         "scope_expansion_blocked_above_limit": {"const": true},
         "checkpoint_inventory_required": {"const": true},
         "checkpoint_inventory_path": {"const": "roadmap_records/post_v2_3_wip_checkpoint_inventory.json"},
-        "checkpoint_inventory_state": {"const": "active_scope_expansion_blocked"},
+        "checkpoint_inventory_state": {"const": "checkpoint_complete_local_only"},
         "commit_requires_explicit_authorization": {"const": true},
         "no_commit_authority_disposition": {"const": "checkpoint_blocked_no_commit_authority"},
         "first_campaign_atom_ids": {
