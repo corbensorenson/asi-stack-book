@@ -20554,20 +20554,32 @@
       "excluded_effects": [
         "Generator/evaluator behavior or independence, candidate quality, novelty, usefulness, improvement, campaign execution, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean#open_ended_improvement_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_open_ended_improvement_campaign.py#negative-controls"
+        "scripts/validate_open_ended_improvement_campaign.py#negative-controls",
+        "scripts/validate_open_ended_improvement_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:open_ended_improvement.campaign.complete_candidate_to_governor_review",
-        "chapter:open-ended-improvement-engines#formalization-hooks"
+        "chapter:open-ended-improvement-engines#formalization-hooks",
+        "docs:open_ended_improvement_refinement",
+        "evidence_quality:model_adequacy_dossiers/open-ended-improvement-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_open_ended_improvement_campaign.py",
-        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json"
+        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json",
+        "scripts/validate_open_ended_improvement_refinement.py",
+        "schemas/open_ended_improvement_refinement.schema.json",
+        "experiments/open_ended_improvement_refinement/results/2026-07-16-local.json",
+        "scripts/validate_post_v2_update_causality.py",
+        "scripts/validate_post_v2_1_outcomes.py"
       ],
       "replacement_refs": [
-        "proof-model:open-ended-improvement.campaign-result-refinement.v1"
+        "proof-model:open-ended-improvement.campaign-result-refinement.v1",
+        "proof-model:open-ended-improvement-refinement.v1",
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean"
       ],
       "review_rationale": "Retain at exact finite routing scope; governor review is not candidate admission or evidence of improvement."
     },
@@ -20581,20 +20593,32 @@
       "excluded_effects": [
         "Actual evaluator independence, qualification quality, separation execution, campaign quality, improvement, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean#open_ended_improvement_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_open_ended_improvement_campaign.py#qualification-laundering"
+        "scripts/validate_open_ended_improvement_campaign.py#qualification-laundering",
+        "scripts/validate_open_ended_improvement_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:open_ended_improvement.campaign.missing_independent_qualification",
-        "chapter:open-ended-improvement-engines#formalization-hooks"
+        "chapter:open-ended-improvement-engines#formalization-hooks",
+        "docs:open_ended_improvement_refinement",
+        "evidence_quality:model_adequacy_dossiers/open-ended-improvement-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_open_ended_improvement_campaign.py",
-        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json"
+        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json",
+        "scripts/validate_open_ended_improvement_refinement.py",
+        "schemas/open_ended_improvement_refinement.schema.json",
+        "experiments/open_ended_improvement_refinement/results/2026-07-16-local.json",
+        "scripts/validate_post_v2_update_causality.py",
+        "scripts/validate_post_v2_1_outcomes.py"
       ],
       "replacement_refs": [
-        "proof-model:open-ended-improvement.campaign-result-refinement.v1"
+        "proof-model:open-ended-improvement.campaign-result-refinement.v1",
+        "proof-model:open-ended-improvement-refinement.v1",
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean"
       ],
       "review_rationale": "Retain at exact finite routing scope; recorded separation is not independence evidence."
     },
@@ -20608,20 +20632,32 @@
       "excluded_effects": [
         "Resource-bill accuracy/completeness, real cost enforcement, repair execution, campaign efficiency, improvement, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean#open_ended_improvement_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_open_ended_improvement_campaign.py#budget-laundering"
+        "scripts/validate_open_ended_improvement_campaign.py#budget-laundering",
+        "scripts/validate_open_ended_improvement_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:open_ended_improvement.campaign.exhausted_budget",
-        "chapter:open-ended-improvement-engines#formalization-hooks"
+        "chapter:open-ended-improvement-engines#formalization-hooks",
+        "docs:open_ended_improvement_refinement",
+        "evidence_quality:model_adequacy_dossiers/open-ended-improvement-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_open_ended_improvement_campaign.py",
-        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json"
+        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json",
+        "scripts/validate_open_ended_improvement_refinement.py",
+        "schemas/open_ended_improvement_refinement.schema.json",
+        "experiments/open_ended_improvement_refinement/results/2026-07-16-local.json",
+        "scripts/validate_post_v2_update_causality.py",
+        "scripts/validate_post_v2_1_outcomes.py"
       ],
       "replacement_refs": [
-        "proof-model:open-ended-improvement.campaign-result-refinement.v1"
+        "proof-model:open-ended-improvement.campaign-result-refinement.v1",
+        "proof-model:open-ended-improvement-refinement.v1",
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean"
       ],
       "review_rationale": "Retain at exact finite routing scope; no resource use is measured."
     },
@@ -20635,21 +20671,33 @@
       "excluded_effects": [
         "Stop-authority legitimacy/reachability, interruption effectiveness, campaign execution, external effects, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean#open_ended_improvement_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_open_ended_improvement_campaign.py#stop-laundering"
+        "scripts/validate_open_ended_improvement_campaign.py#stop-laundering",
+        "scripts/validate_open_ended_improvement_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:open_ended_improvement.campaign.missing_stop_authority",
-        "chapter:open-ended-improvement-engines#formalization-hooks"
+        "chapter:open-ended-improvement-engines#formalization-hooks",
+        "docs:open_ended_improvement_refinement",
+        "evidence_quality:model_adequacy_dossiers/open-ended-improvement-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_open_ended_improvement_campaign.py",
-        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json"
+        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json",
+        "scripts/validate_open_ended_improvement_refinement.py",
+        "schemas/open_ended_improvement_refinement.schema.json",
+        "experiments/open_ended_improvement_refinement/results/2026-07-16-local.json",
+        "scripts/validate_post_v2_update_causality.py",
+        "scripts/validate_post_v2_1_outcomes.py"
       ],
       "replacement_refs": [
         "proof-model:open-ended-improvement.campaign-result-refinement.v1",
-        "proof-model:open-ended-improvement.reachable-stop-effect-trace.v1"
+        "proof-model:open-ended-improvement.reachable-stop-effect-trace.v1",
+        "proof-model:open-ended-improvement-refinement.v1",
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean"
       ],
       "review_rationale": "Retain at exact finite routing scope; no running campaign is stopped."
     },
@@ -20663,20 +20711,32 @@
       "excluded_effects": [
         "Archive completeness/authenticity/durability, failure detection, repair execution, learning, improvement, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean#open_ended_improvement_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_open_ended_improvement_campaign.py#wrong-route"
+        "scripts/validate_open_ended_improvement_campaign.py#wrong-route",
+        "scripts/validate_open_ended_improvement_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:open_ended_improvement.campaign.erased_failure_history",
-        "chapter:open-ended-improvement-engines#formalization-hooks"
+        "chapter:open-ended-improvement-engines#formalization-hooks",
+        "docs:open_ended_improvement_refinement",
+        "evidence_quality:model_adequacy_dossiers/open-ended-improvement-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_open_ended_improvement_campaign.py",
-        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json"
+        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json",
+        "scripts/validate_open_ended_improvement_refinement.py",
+        "schemas/open_ended_improvement_refinement.schema.json",
+        "experiments/open_ended_improvement_refinement/results/2026-07-16-local.json",
+        "scripts/validate_post_v2_update_causality.py",
+        "scripts/validate_post_v2_1_outcomes.py"
       ],
       "replacement_refs": [
-        "proof-model:open-ended-improvement.campaign-result-refinement.v1"
+        "proof-model:open-ended-improvement.campaign-result-refinement.v1",
+        "proof-model:open-ended-improvement-refinement.v1",
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean"
       ],
       "review_rationale": "Retain at exact finite routing scope; archive repair is not executed."
     },
@@ -20690,20 +20750,32 @@
       "excluded_effects": [
         "Residual completeness/severity, owner authority/capacity, remediation, campaign quality, improvement, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean#open_ended_improvement_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_open_ended_improvement_campaign.py#wrong-route"
+        "scripts/validate_open_ended_improvement_campaign.py#wrong-route",
+        "scripts/validate_open_ended_improvement_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:open_ended_improvement.campaign.missing_residual_owner",
-        "chapter:open-ended-improvement-engines#formalization-hooks"
+        "chapter:open-ended-improvement-engines#formalization-hooks",
+        "docs:open_ended_improvement_refinement",
+        "evidence_quality:model_adequacy_dossiers/open-ended-improvement-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_open_ended_improvement_campaign.py",
-        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json"
+        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json",
+        "scripts/validate_open_ended_improvement_refinement.py",
+        "schemas/open_ended_improvement_refinement.schema.json",
+        "experiments/open_ended_improvement_refinement/results/2026-07-16-local.json",
+        "scripts/validate_post_v2_update_causality.py",
+        "scripts/validate_post_v2_1_outcomes.py"
       ],
       "replacement_refs": [
-        "proof-model:open-ended-improvement.campaign-result-refinement.v1"
+        "proof-model:open-ended-improvement.campaign-result-refinement.v1",
+        "proof-model:open-ended-improvement-refinement.v1",
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean"
       ],
       "review_rationale": "Retain at exact finite routing scope; remediation remains open."
     },
@@ -20717,20 +20789,32 @@
       "excluded_effects": [
         "Authority provenance/legitimacy, hidden grants/effects, runtime rejection, campaign execution, safety, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean#open_ended_improvement_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_open_ended_improvement_campaign.py#authority-laundering"
+        "scripts/validate_open_ended_improvement_campaign.py#authority-laundering",
+        "scripts/validate_open_ended_improvement_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:open_ended_improvement.campaign.authority_laundering",
-        "chapter:open-ended-improvement-engines#formalization-hooks"
+        "chapter:open-ended-improvement-engines#formalization-hooks",
+        "docs:open_ended_improvement_refinement",
+        "evidence_quality:model_adequacy_dossiers/open-ended-improvement-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_open_ended_improvement_campaign.py",
-        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json"
+        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json",
+        "scripts/validate_open_ended_improvement_refinement.py",
+        "schemas/open_ended_improvement_refinement.schema.json",
+        "experiments/open_ended_improvement_refinement/results/2026-07-16-local.json",
+        "scripts/validate_post_v2_update_causality.py",
+        "scripts/validate_post_v2_1_outcomes.py"
       ],
       "replacement_refs": [
-        "proof-model:open-ended-improvement.campaign-result-refinement.v1"
+        "proof-model:open-ended-improvement.campaign-result-refinement.v1",
+        "proof-model:open-ended-improvement-refinement.v1",
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean"
       ],
       "review_rationale": "Retain at exact finite routing scope; a Boolean rejection proves no deployed authority confinement."
     },
@@ -39847,204 +39931,288 @@
       "dependencies": [
         "open-ended-improvement-engines.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean#open_ended_improvement_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:open-ended-improvement-engines#formalization-hooks"
+        "chapter:open-ended-improvement-engines#formalization-hooks",
+        "docs:open_ended_improvement_refinement",
+        "evidence_quality:model_adequacy_dossiers/open-ended-improvement-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Finite complete-candidate route independently recomputed through governor-review boundary only.",
+      "semantic_role": "Reachable scope-to-generation-to-archive-to-evaluation-to-adjudication-to-governor-handoff lifecycle with exact identity, denominator, budget, stop-effect, authority, and successor-version boundaries.",
       "assumptions": [
-        "Lean and validator fields/priorities align and the digest-bound result is current."
+        "All campaign/objective/representation/controller/policy/generator/evaluator/qualifier/archive/budget/stop/hazard/consumer/authority identities, legitimacy records, denominators, lineage, exposures, costs, hazards, dispositions, effect receipts, residuals, monitors, invalidations, and versions are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Generator/evaluator behavior or independence, novelty, usefulness, improvement, campaign execution, safety, reproduction, and transfer are excluded."
+        "Objective legitimacy, evaluator correctness or independence, adaptive-search quality, semantic novelty, useful improvement, hazard-control efficacy, autonomous discovery, transfer, safe self-improvement, capability, safety, readiness, release, deployment, SOTA, AGI, ASI, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_open_ended_improvement_campaign.py#negative-controls"
+        "scripts/validate_open_ended_improvement_campaign.py#negative-controls",
+        "scripts/validate_open_ended_improvement_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_open_ended_improvement_campaign.py",
-        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json"
+        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json",
+        "scripts/validate_open_ended_improvement_refinement.py",
+        "schemas/open_ended_improvement_refinement.schema.json",
+        "experiments/open_ended_improvement_refinement/results/2026-07-16-local.json",
+        "scripts/validate_post_v2_update_causality.py",
+        "scripts/validate_post_v2_1_outcomes.py"
       ],
       "replacement_refs": [
-        "proof-model:open-ended-improvement.campaign-result-refinement.v1"
+        "proof-model:open-ended-improvement.campaign-result-refinement.v1",
+        "proof-model:open-ended-improvement-refinement.v1",
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean"
       ],
-      "review_rationale": "Retain at exact finite routing scope; governor review is not candidate admission."
+      "review_rationale": "Join seven disconnected admission routes and three bounded result suites into a reachable versioned campaign-to-governor lifecycle, independent replay, eighty-one routes, and 91 rejecting mutations."
     },
     "lean:open_ended_improvement.campaign.missing_independent_qualification": {
       "dependencies": [
         "open-ended-improvement-engines.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean#open_ended_improvement_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:open-ended-improvement-engines#formalization-hooks"
+        "chapter:open-ended-improvement-engines#formalization-hooks",
+        "docs:open_ended_improvement_refinement",
+        "evidence_quality:model_adequacy_dossiers/open-ended-improvement-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Finite missing-qualification route independently recomputed in the fixture.",
+      "semantic_role": "Reachable scope-to-generation-to-archive-to-evaluation-to-adjudication-to-governor-handoff lifecycle with exact identity, denominator, budget, stop-effect, authority, and successor-version boundaries.",
       "assumptions": [
-        "Lean and validator fields/priorities align and the digest-bound result is current."
+        "All campaign/objective/representation/controller/policy/generator/evaluator/qualifier/archive/budget/stop/hazard/consumer/authority identities, legitimacy records, denominators, lineage, exposures, costs, hazards, dispositions, effect receipts, residuals, monitors, invalidations, and versions are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Actual evaluator independence, qualification quality, campaign quality, improvement, safety, reproduction, and transfer are excluded."
+        "Objective legitimacy, evaluator correctness or independence, adaptive-search quality, semantic novelty, useful improvement, hazard-control efficacy, autonomous discovery, transfer, safe self-improvement, capability, safety, readiness, release, deployment, SOTA, AGI, ASI, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_open_ended_improvement_campaign.py#qualification-laundering"
+        "scripts/validate_open_ended_improvement_campaign.py#qualification-laundering",
+        "scripts/validate_open_ended_improvement_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_open_ended_improvement_campaign.py",
-        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json"
+        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json",
+        "scripts/validate_open_ended_improvement_refinement.py",
+        "schemas/open_ended_improvement_refinement.schema.json",
+        "experiments/open_ended_improvement_refinement/results/2026-07-16-local.json",
+        "scripts/validate_post_v2_update_causality.py",
+        "scripts/validate_post_v2_1_outcomes.py"
       ],
       "replacement_refs": [
-        "proof-model:open-ended-improvement.campaign-result-refinement.v1"
+        "proof-model:open-ended-improvement.campaign-result-refinement.v1",
+        "proof-model:open-ended-improvement-refinement.v1",
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean"
       ],
-      "review_rationale": "Retain at exact finite routing scope; recorded separation is not independence evidence."
+      "review_rationale": "Join seven disconnected admission routes and three bounded result suites into a reachable versioned campaign-to-governor lifecycle, independent replay, eighty-one routes, and 91 rejecting mutations."
     },
     "lean:open_ended_improvement.campaign.exhausted_budget": {
       "dependencies": [
         "open-ended-improvement-engines.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean#open_ended_improvement_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:open-ended-improvement-engines#formalization-hooks"
+        "chapter:open-ended-improvement-engines#formalization-hooks",
+        "docs:open_ended_improvement_refinement",
+        "evidence_quality:model_adequacy_dossiers/open-ended-improvement-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Finite exhausted-budget route independently recomputed in the fixture.",
+      "semantic_role": "Reachable scope-to-generation-to-archive-to-evaluation-to-adjudication-to-governor-handoff lifecycle with exact identity, denominator, budget, stop-effect, authority, and successor-version boundaries.",
       "assumptions": [
-        "Lean and validator fields/priorities align and the digest-bound result is current."
+        "All campaign/objective/representation/controller/policy/generator/evaluator/qualifier/archive/budget/stop/hazard/consumer/authority identities, legitimacy records, denominators, lineage, exposures, costs, hazards, dispositions, effect receipts, residuals, monitors, invalidations, and versions are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Resource-bill accuracy, real cost enforcement, campaign efficiency, improvement, safety, reproduction, and transfer are excluded."
+        "Objective legitimacy, evaluator correctness or independence, adaptive-search quality, semantic novelty, useful improvement, hazard-control efficacy, autonomous discovery, transfer, safe self-improvement, capability, safety, readiness, release, deployment, SOTA, AGI, ASI, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_open_ended_improvement_campaign.py#budget-laundering"
+        "scripts/validate_open_ended_improvement_campaign.py#budget-laundering",
+        "scripts/validate_open_ended_improvement_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_open_ended_improvement_campaign.py",
-        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json"
+        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json",
+        "scripts/validate_open_ended_improvement_refinement.py",
+        "schemas/open_ended_improvement_refinement.schema.json",
+        "experiments/open_ended_improvement_refinement/results/2026-07-16-local.json",
+        "scripts/validate_post_v2_update_causality.py",
+        "scripts/validate_post_v2_1_outcomes.py"
       ],
       "replacement_refs": [
-        "proof-model:open-ended-improvement.campaign-result-refinement.v1"
+        "proof-model:open-ended-improvement.campaign-result-refinement.v1",
+        "proof-model:open-ended-improvement-refinement.v1",
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean"
       ],
-      "review_rationale": "Retain at exact finite routing scope; no resource use is measured."
+      "review_rationale": "Join seven disconnected admission routes and three bounded result suites into a reachable versioned campaign-to-governor lifecycle, independent replay, eighty-one routes, and 91 rejecting mutations."
     },
     "lean:open_ended_improvement.campaign.missing_stop_authority": {
       "dependencies": [
         "open-ended-improvement-engines.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean#open_ended_improvement_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:open-ended-improvement-engines#formalization-hooks"
+        "chapter:open-ended-improvement-engines#formalization-hooks",
+        "docs:open_ended_improvement_refinement",
+        "evidence_quality:model_adequacy_dossiers/open-ended-improvement-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Finite missing-stop-authority route independently recomputed in the fixture.",
+      "semantic_role": "Reachable scope-to-generation-to-archive-to-evaluation-to-adjudication-to-governor-handoff lifecycle with exact identity, denominator, budget, stop-effect, authority, and successor-version boundaries.",
       "assumptions": [
-        "Lean and validator fields/priorities align and the digest-bound result is current."
+        "All campaign/objective/representation/controller/policy/generator/evaluator/qualifier/archive/budget/stop/hazard/consumer/authority identities, legitimacy records, denominators, lineage, exposures, costs, hazards, dispositions, effect receipts, residuals, monitors, invalidations, and versions are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Stop-authority legitimacy/reachability, interruption effectiveness, campaign execution, safety, reproduction, and transfer are excluded."
+        "Objective legitimacy, evaluator correctness or independence, adaptive-search quality, semantic novelty, useful improvement, hazard-control efficacy, autonomous discovery, transfer, safe self-improvement, capability, safety, readiness, release, deployment, SOTA, AGI, ASI, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_open_ended_improvement_campaign.py#stop-laundering"
+        "scripts/validate_open_ended_improvement_campaign.py#stop-laundering",
+        "scripts/validate_open_ended_improvement_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_open_ended_improvement_campaign.py",
-        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json"
+        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json",
+        "scripts/validate_open_ended_improvement_refinement.py",
+        "schemas/open_ended_improvement_refinement.schema.json",
+        "experiments/open_ended_improvement_refinement/results/2026-07-16-local.json",
+        "scripts/validate_post_v2_update_causality.py",
+        "scripts/validate_post_v2_1_outcomes.py"
       ],
       "replacement_refs": [
-        "proof-model:open-ended-improvement.reachable-stop-effect-trace.v1"
+        "proof-model:open-ended-improvement.reachable-stop-effect-trace.v1",
+        "proof-model:open-ended-improvement-refinement.v1",
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean"
       ],
-      "review_rationale": "Retain at exact finite routing scope; no campaign is stopped."
+      "review_rationale": "Join seven disconnected admission routes and three bounded result suites into a reachable versioned campaign-to-governor lifecycle, independent replay, eighty-one routes, and 91 rejecting mutations."
     },
     "lean:open_ended_improvement.campaign.erased_failure_history": {
       "dependencies": [
         "open-ended-improvement-engines.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean#open_ended_improvement_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:open-ended-improvement-engines#formalization-hooks"
+        "chapter:open-ended-improvement-engines#formalization-hooks",
+        "docs:open_ended_improvement_refinement",
+        "evidence_quality:model_adequacy_dossiers/open-ended-improvement-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Finite erased-failure-history route independently recomputed in the fixture.",
+      "semantic_role": "Reachable scope-to-generation-to-archive-to-evaluation-to-adjudication-to-governor-handoff lifecycle with exact identity, denominator, budget, stop-effect, authority, and successor-version boundaries.",
       "assumptions": [
-        "Lean and validator fields/priorities align and the digest-bound result is current."
+        "All campaign/objective/representation/controller/policy/generator/evaluator/qualifier/archive/budget/stop/hazard/consumer/authority identities, legitimacy records, denominators, lineage, exposures, costs, hazards, dispositions, effect receipts, residuals, monitors, invalidations, and versions are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Archive completeness/authenticity, failure detection, learning, improvement, safety, reproduction, and transfer are excluded."
+        "Objective legitimacy, evaluator correctness or independence, adaptive-search quality, semantic novelty, useful improvement, hazard-control efficacy, autonomous discovery, transfer, safe self-improvement, capability, safety, readiness, release, deployment, SOTA, AGI, ASI, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_open_ended_improvement_campaign.py#wrong-route"
+        "scripts/validate_open_ended_improvement_campaign.py#wrong-route",
+        "scripts/validate_open_ended_improvement_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_open_ended_improvement_campaign.py",
-        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json"
+        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json",
+        "scripts/validate_open_ended_improvement_refinement.py",
+        "schemas/open_ended_improvement_refinement.schema.json",
+        "experiments/open_ended_improvement_refinement/results/2026-07-16-local.json",
+        "scripts/validate_post_v2_update_causality.py",
+        "scripts/validate_post_v2_1_outcomes.py"
       ],
       "replacement_refs": [
-        "proof-model:open-ended-improvement.campaign-result-refinement.v1"
+        "proof-model:open-ended-improvement.campaign-result-refinement.v1",
+        "proof-model:open-ended-improvement-refinement.v1",
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean"
       ],
-      "review_rationale": "Retain at exact finite routing scope; archive repair is not executed."
+      "review_rationale": "Join seven disconnected admission routes and three bounded result suites into a reachable versioned campaign-to-governor lifecycle, independent replay, eighty-one routes, and 91 rejecting mutations."
     },
     "lean:open_ended_improvement.campaign.missing_residual_owner": {
       "dependencies": [
         "open-ended-improvement-engines.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean#open_ended_improvement_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:open-ended-improvement-engines#formalization-hooks"
+        "chapter:open-ended-improvement-engines#formalization-hooks",
+        "docs:open_ended_improvement_refinement",
+        "evidence_quality:model_adequacy_dossiers/open-ended-improvement-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Finite missing-residual-owner route independently recomputed in the fixture.",
+      "semantic_role": "Reachable scope-to-generation-to-archive-to-evaluation-to-adjudication-to-governor-handoff lifecycle with exact identity, denominator, budget, stop-effect, authority, and successor-version boundaries.",
       "assumptions": [
-        "Lean and validator fields/priorities align and the digest-bound result is current."
+        "All campaign/objective/representation/controller/policy/generator/evaluator/qualifier/archive/budget/stop/hazard/consumer/authority identities, legitimacy records, denominators, lineage, exposures, costs, hazards, dispositions, effect receipts, residuals, monitors, invalidations, and versions are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Residual completeness/severity, owner authority/capacity, remediation, improvement, safety, reproduction, and transfer are excluded."
+        "Objective legitimacy, evaluator correctness or independence, adaptive-search quality, semantic novelty, useful improvement, hazard-control efficacy, autonomous discovery, transfer, safe self-improvement, capability, safety, readiness, release, deployment, SOTA, AGI, ASI, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_open_ended_improvement_campaign.py#wrong-route"
+        "scripts/validate_open_ended_improvement_campaign.py#wrong-route",
+        "scripts/validate_open_ended_improvement_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_open_ended_improvement_campaign.py",
-        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json"
+        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json",
+        "scripts/validate_open_ended_improvement_refinement.py",
+        "schemas/open_ended_improvement_refinement.schema.json",
+        "experiments/open_ended_improvement_refinement/results/2026-07-16-local.json",
+        "scripts/validate_post_v2_update_causality.py",
+        "scripts/validate_post_v2_1_outcomes.py"
       ],
       "replacement_refs": [
-        "proof-model:open-ended-improvement.campaign-result-refinement.v1"
+        "proof-model:open-ended-improvement.campaign-result-refinement.v1",
+        "proof-model:open-ended-improvement-refinement.v1",
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean"
       ],
-      "review_rationale": "Retain at exact finite routing scope; remediation remains open."
+      "review_rationale": "Join seven disconnected admission routes and three bounded result suites into a reachable versioned campaign-to-governor lifecycle, independent replay, eighty-one routes, and 91 rejecting mutations."
     },
     "lean:open_ended_improvement.campaign.authority_laundering": {
       "dependencies": [
         "open-ended-improvement-engines.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean#open_ended_improvement_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:open-ended-improvement-engines#formalization-hooks"
+        "chapter:open-ended-improvement-engines#formalization-hooks",
+        "docs:open_ended_improvement_refinement",
+        "evidence_quality:model_adequacy_dossiers/open-ended-improvement-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Finite candidate authority-laundering rejection independently recomputed in the fixture.",
+      "semantic_role": "Reachable scope-to-generation-to-archive-to-evaluation-to-adjudication-to-governor-handoff lifecycle with exact identity, denominator, budget, stop-effect, authority, and successor-version boundaries.",
       "assumptions": [
-        "Lean and validator fields/priorities align and the digest-bound result is current."
+        "All campaign/objective/representation/controller/policy/generator/evaluator/qualifier/archive/budget/stop/hazard/consumer/authority identities, legitimacy records, denominators, lineage, exposures, costs, hazards, dispositions, effect receipts, residuals, monitors, invalidations, and versions are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "Authority provenance/legitimacy, hidden grants/effects, runtime rejection, campaign execution, safety, reproduction, and transfer are excluded."
+        "Objective legitimacy, evaluator correctness or independence, adaptive-search quality, semantic novelty, useful improvement, hazard-control efficacy, autonomous discovery, transfer, safe self-improvement, capability, safety, readiness, release, deployment, SOTA, AGI, ASI, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_open_ended_improvement_campaign.py#authority-laundering"
+        "scripts/validate_open_ended_improvement_campaign.py#authority-laundering",
+        "scripts/validate_open_ended_improvement_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_open_ended_improvement_campaign.py",
-        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json"
+        "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json",
+        "scripts/validate_open_ended_improvement_refinement.py",
+        "schemas/open_ended_improvement_refinement.schema.json",
+        "experiments/open_ended_improvement_refinement/results/2026-07-16-local.json",
+        "scripts/validate_post_v2_update_causality.py",
+        "scripts/validate_post_v2_1_outcomes.py"
       ],
       "replacement_refs": [
-        "proof-model:open-ended-improvement.campaign-result-refinement.v1"
+        "proof-model:open-ended-improvement.campaign-result-refinement.v1",
+        "proof-model:open-ended-improvement-refinement.v1",
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean"
       ],
-      "review_rationale": "Retain at exact finite routing scope; no deployed authority confinement follows."
+      "review_rationale": "Join seven disconnected admission routes and three bounded result suites into a reachable versioned campaign-to-governor lifecycle, independent replay, eighty-one routes, and 91 rejecting mutations."
     },
     "lean:tribunal.review.operational_invariant": {
       "dependencies": [

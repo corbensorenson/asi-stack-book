@@ -1717,25 +1717,36 @@ Draft deliverables:
   ten rejecting mutations cover independent qualification, budget, stop
   authority, archive history, residual ownership, and authority laundering.
   The result is record routing only; no campaign engine or candidate ran.
+- Implemented campaign-to-governor lifecycle: seven reachable stages cover
+  prospective scope, bound generation, append-only archive custody,
+  independent evaluation, adjudication, governor-only handoff, and
+  material-change readmission at protocol version 2. An independently encoded
+  consumer reaches all 81 routes and rejects all 91 registered mutations while
+  rerunning the admission bridge and both fixed stopped campaigns.
 - Explicit source boundary: POET, FunSearch, and Voyager are primary comparators
   in specified source settings; no local environment generation, program
   search, campaign engine, candidate archive, evaluator, autonomous discovery,
   self-improvement, model-quality, safety, or support-state result is claimed.
-- Proof boundary: seven branch theorems route trusted Boolean fields only; they
-  do not implement or validate objectives, generators, evaluators, archives,
-  budgets, stops, hazards, qualification, authority, novelty, or transfer.
+- Proof boundary: seven retained branch theorems remain finite consequences of
+  trusted Boolean fields; the combined lifecycle theorem and independent
+  consumer additionally establish reachability, exact identity custody,
+  complete finite route coverage, mutation rejection, one bounded governor
+  handoff, and one successor-version readmission. They do not validate the
+  trusted objectives, legitimacy records, generators, evaluators, archives,
+  denominators, costs, hazards, stop effects, residuals, invalidations,
+  semantic novelty, useful improvement, safety, deployment, or transfer.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:open_ended_improvement.campaign.complete_candidate_to_governor_review` | `AsiStackProofs.OpenEndedImprovement` | A complete finite campaign record reaches the existing governor for review without admitting or promoting its candidate. | implemented |
-| `lean:open_ended_improvement.campaign.missing_independent_qualification` | `AsiStackProofs.OpenEndedImprovement` | Missing independent qualification routes to evaluator separation. | implemented |
-| `lean:open_ended_improvement.campaign.exhausted_budget` | `AsiStackProofs.OpenEndedImprovement` | An exhausted resource budget routes to budget repair. | implemented |
-| `lean:open_ended_improvement.campaign.missing_stop_authority` | `AsiStackProofs.OpenEndedImprovement` | Missing stop authority blocks the requested handoff. | implemented |
-| `lean:open_ended_improvement.campaign.erased_failure_history` | `AsiStackProofs.OpenEndedImprovement` | Erased failure history routes to archive repair. | implemented |
-| `lean:open_ended_improvement.campaign.missing_residual_owner` | `AsiStackProofs.OpenEndedImprovement` | Missing residual ownership blocks the requested handoff. | implemented |
-| `lean:open_ended_improvement.campaign.authority_laundering` | `AsiStackProofs.OpenEndedImprovement` | A candidate request that drops the no-authority boundary is rejected. | implemented |
+| `lean:open_ended_improvement.campaign.complete_candidate_to_governor_review` | `AsiStackProofs.OpenEndedImprovementRefinement` | A complete bounded campaign trace reaches only a governor-review handoff and grants neither admission, support, nor live authority. | implemented |
+| `lean:open_ended_improvement.campaign.missing_independent_qualification` | `AsiStackProofs.OpenEndedImprovementRefinement` | Missing independent qualification blocks evaluation in the reachable campaign lifecycle. | implemented |
+| `lean:open_ended_improvement.campaign.exhausted_budget` | `AsiStackProofs.OpenEndedImprovementRefinement` | Missing cumulative budget custody or attempted reset across descendants blocks archive progression. | implemented |
+| `lean:open_ended_improvement.campaign.missing_stop_authority` | `AsiStackProofs.OpenEndedImprovementRefinement` | Missing stop ownership, observation, or effect receipt blocks campaign adjudication. | implemented |
+| `lean:open_ended_improvement.campaign.erased_failure_history` | `AsiStackProofs.OpenEndedImprovementRefinement` | Incomplete attempt, failure, null, unsafe, timeout, or archive history blocks archive progression. | implemented |
+| `lean:open_ended_improvement.campaign.missing_residual_owner` | `AsiStackProofs.OpenEndedImprovementRefinement` | Missing residual ownership blocks campaign adjudication before governor review. | implemented |
+| `lean:open_ended_improvement.campaign.authority_laundering` | `AsiStackProofs.OpenEndedImprovementRefinement` | Score, candidate, release, support, or self-ratified controller authority cannot be laundered through the campaign lifecycle. | implemented |
 
 ## Part II - Planning, Memory, Reasoning, and Execution
 
@@ -4213,7 +4224,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 298 proof targets, 96 Lean modules, 1291 theorem declarations, 894 derived/decomposed, 230 direct/projection, 167 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 298 proof targets, 97 Lean modules, 1292 theorem declarations, 894 derived/decomposed, 230 direct/projection, 168 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

@@ -4994,63 +4994,70 @@
             "Fail-closed over-quarantine suppresses useful search, diversity, contestability, availability, or correction without reducing real hazard.",
             "Stale campaign evidence or reuse permission survives material model, generator, evaluator, representation, data, environment, objective, threat, controller, or lifecycle change."
           ],
-          "minimal_implementation": "The smallest honest engine is a preregistered, stopped, multi-round adaptive campaign on a public-safe natural program or tool workload with matched no-search, fixed-task-search, conventional-search, and human-authored baselines; exact task/candidate/evaluator/archive lineage; fresh separately implemented qualification; observed compute, calls, latency, storage, human and governance cost; retained duplicate, malformed, failed, null, hazardous, stepping-stone, and qualified outcomes; an effect-tested budget and stop trigger; one quarantined dual-use or authority-seeking candidate; and a handoff that can reach governor review without granting live authority. The current seven Boolean routes, seven theorems, ten mutations, and fixed stopped update campaigns are narrower record evidence and do not implement this engine.",
+          "minimal_implementation": "The exact current minimum preserves seven legacy campaign-admission route theorems, the seven-case/ten-control admission fixture, the three-seed/four-arm fixed update result, and the three-seed/five-arm post-v2.1 stopped result inside a seven-stage, 81-route campaign-to-governor lifecycle with 91/91 rejecting mutations, one governor-review handoff, and one protocol-version-2 readmission witness. The stopped campaigns retain four no-change claim dispositions, zero of nine eligible post-v2.1 challenger seed-arms meeting the 0.05 gain threshold, and no support effect. No adaptive task/candidate generator, evolving archive, objective-legitimacy result, evaluator-independence result, semantic novelty, useful improvement, deployed stop/quarantine, transfer, chapter-core transition, or SOTA result exists.",
           "beyond_state_of_art": "The mature target is a portfolio of constrained adaptive discovery campaigns across programs, tools, data, curricula, simulations, evaluators, and scientific hypotheses whose objectives remain socially and operationally reviewable. It preserves exact generated-distribution and candidate lineage, selection denominators, evaluator exposure and dependencies, negative and null search history, semantic novelty and consumer usefulness, dual-use and privacy custody, total resource and opportunity cost, cross-campaign contamination, stop effects, and typed downstream reuse. Strong current source systems and conventional search are reproduced under matched budgets; mechanism ablations, adversarial controls, independent replication, recursive-depth stress, and transfer decide exact scoped claims. Candidates enter procedural memory, updates, or capability fields only through separate qualification and governed replacement, and the campaign can stop without narrating search activity as progress. This remains a research target, not a current autonomous-discovery, safe self-improvement, general-improvement, AGI, or ASI result.",
           "codex_tests": [
             "Improvement-campaign admission fixture",
             "Generator-evaluator separation probe",
             "Candidate archive and stop-boundary review",
-            "Authority-laundering negative control"
+            "Authority-laundering negative control",
+            {
+              "name": "Open-ended improvement campaign-to-governor lifecycle refinement",
+              "implementation_status": "implemented",
+              "result_status": "passes three inherited result suites, 81 routes, seven reachable stages, and 91/91 rejecting mutations; one governor-review handoff returns to scoped generation only through version-2 readmission; support/effect none; no adaptive search, novelty, usefulness, evaluator-independence, safety, release, transfer, or support claim"
+            }
           ],
-          "lean_module": "AsiStackProofs.OpenEndedImprovement",
+          "lean_module": "AsiStackProofs.OpenEndedImprovement; AsiStackProofs.OpenEndedImprovementRefinement",
           "proof_targets": [
             {
               "tag": "lean:open_ended_improvement.campaign.complete_candidate_to_governor_review",
-              "module": "AsiStackProofs.OpenEndedImprovement",
-              "target": "A complete finite campaign record reaches the existing governor for review without admitting or promoting its candidate.",
+              "module": "AsiStackProofs.OpenEndedImprovementRefinement",
+              "target": "A complete bounded campaign trace reaches only a governor-review handoff and grants neither admission, support, nor live authority.",
               "status": "implemented"
             },
             {
               "tag": "lean:open_ended_improvement.campaign.missing_independent_qualification",
-              "module": "AsiStackProofs.OpenEndedImprovement",
-              "target": "Missing independent qualification routes to evaluator separation.",
+              "module": "AsiStackProofs.OpenEndedImprovementRefinement",
+              "target": "Missing independent qualification blocks evaluation in the reachable campaign lifecycle.",
               "status": "implemented"
             },
             {
               "tag": "lean:open_ended_improvement.campaign.exhausted_budget",
-              "module": "AsiStackProofs.OpenEndedImprovement",
-              "target": "An exhausted resource budget routes to budget repair.",
+              "module": "AsiStackProofs.OpenEndedImprovementRefinement",
+              "target": "Missing cumulative budget custody or attempted reset across descendants blocks archive progression.",
               "status": "implemented"
             },
             {
               "tag": "lean:open_ended_improvement.campaign.missing_stop_authority",
-              "module": "AsiStackProofs.OpenEndedImprovement",
-              "target": "Missing stop authority blocks the requested handoff.",
+              "module": "AsiStackProofs.OpenEndedImprovementRefinement",
+              "target": "Missing stop ownership, observation, or effect receipt blocks campaign adjudication.",
               "status": "implemented"
             },
             {
               "tag": "lean:open_ended_improvement.campaign.erased_failure_history",
-              "module": "AsiStackProofs.OpenEndedImprovement",
-              "target": "Erased failure history routes to archive repair.",
+              "module": "AsiStackProofs.OpenEndedImprovementRefinement",
+              "target": "Incomplete attempt, failure, null, unsafe, timeout, or archive history blocks archive progression.",
               "status": "implemented"
             },
             {
               "tag": "lean:open_ended_improvement.campaign.missing_residual_owner",
-              "module": "AsiStackProofs.OpenEndedImprovement",
-              "target": "Missing residual ownership blocks the requested handoff.",
+              "module": "AsiStackProofs.OpenEndedImprovementRefinement",
+              "target": "Missing residual ownership blocks campaign adjudication before governor review.",
               "status": "implemented"
             },
             {
               "tag": "lean:open_ended_improvement.campaign.authority_laundering",
-              "module": "AsiStackProofs.OpenEndedImprovement",
-              "target": "A candidate request that drops the no-authority boundary is rejected.",
+              "module": "AsiStackProofs.OpenEndedImprovementRefinement",
+              "target": "Score, candidate, release, support, or self-ratified controller authority cannot be laundered through the campaign lifecycle.",
               "status": "implemented"
             }
           ],
           "draft_maturity": "v0.2 depth-leveled chapter",
           "open_evidence_gaps": [
-            "The seven Lean theorems and digest-bound fixture establish finite record routing only; they do not establish campaign quality, evaluator independence or correctness, autonomous discovery, useful novelty, transfer, safe self-improvement, model quality, or ASI.",
-            "Run the prospectively specified fixed/generated/no-search campaign on a fresh cohort before considering any empirical support change."
+            "No preregistered natural adaptive campaign has compared no-search, fixed-task, conventional-search, human-authored, generated-task, and strongest source-system arms under matched task, model, tool, data, compute, latency, and human budgets.",
+            "No real adaptive generator/evaluator/archive system has measured semantic novelty, useful transfer, evaluator exposure and independence, complete denominators, hazard custody, cumulative budgets, opportunity cost, stop/quarantine effects, recursive depth, or cross-campaign contamination.",
+            "The seven-stage lifecycle, 81-route consumer, and 91 rejecting mutations establish only finite authored campaign custody; all objectives, legitimacy records, denominators, evaluator records, costs, hazards, stop effects, residuals, and invalidations remain trusted inputs.",
+            "No independent implementation or transfer site has reproduced an adaptive campaign, qualified a candidate, observed a live stop or quarantine, or established that generated-task search improves the joint usefulness/cost/safety frontier."
           ]
         }
       ]

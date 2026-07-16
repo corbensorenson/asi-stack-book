@@ -5,19 +5,19 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/open-ended-improvement-engines.qmd",
     "structured_atoms_reviewed": 81,
-    "prose_candidates_adjudicated": 62,
+    "prose_candidates_adjudicated": 65,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete chapter, all eight assigned source notes and source-setting limits, the seven-record fixture, deterministic route implementation, ten mutations, tracked result, two schemas, all seven OpenEndedImprovement theorem declarations and targets, both stopped update campaigns, every manifest atom, all prose candidates, the lifecycle diagram, worked trace, strongest objections, test plan, source crosswalk, summary, and handoff. The sweep made bounded adaptive search without admission authority the distinct owner; froze consumer/purpose, legitimate objective, representation, controller, task/candidate/evaluator/exposure/archive/hazard policies, portfolio resources, stop authority, horizon, and support ceiling; separated generator-side filtering from qualification, search from admission, durable receipts from hazardous payloads, novelty from usefulness, and stopped search from capability gain; added exact denominators, opportunity costs, stop effects, controller-change governance, causal ablations, replication, recursive-depth, and transfer gates; and preserved zero chapter-core support effect."
+    "review_note": "Reviewed the complete chapter, all eight assigned source notes and source-setting limits, the seven-record admission fixture, both stopped update campaigns, the seven-stage campaign-to-governor/readmission lifecycle, all 81 independently encoded routes, all 91 rejecting mutations, the seven retained legacy theorem declarations, the combined lifecycle theorem, every manifest atom, all current prose candidates, the lifecycle diagram, worked trace, strongest objections, test plan, source crosswalk, summary, and handoff. The sweep keeps bounded adaptive search without admission authority as the distinct owner; establishes finite authored custody, reachability, one governor-only handoff, and one version-2 readmission; preserves the 0/9 threshold result and four no-change dispositions; and explicitly excludes adaptive-search quality, semantic novelty, useful improvement, objective legitimacy, evaluator independence, safety, deployment, transfer, SOTA, AGI, ASI, and chapter-core support."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
     "scope": {
       "population": "Bounded adaptive campaigns that generate or select tasks, environments, curricula, programs, tools, procedures, agent architectures, evaluators, model or policy candidates, scientific hypotheses, archives, descendants, and follow-on campaigns for a declared consumer and purpose.",
-      "environment": "Eight reviewed assigned source notes; seven synthetic Boolean campaign records; ten rejecting mutations; seven finite Lean route theorems; one tracked digest-bound result; two fixed stopped local update campaigns; and a future preregistered public-safe natural adaptive search campaign. No deployed or genuinely open-ended campaign environment is represented.",
-      "model": "A prospectively bounded campaign contract over objective legitimacy, representation, controller, generated distributions, candidate lineage, evaluator dependencies and exposure, selection denominators, archive and hazard custody, portfolio resources, stop effects, qualification handoff, controller changes, and terminal outcomes; current implementation is a trusted-Boolean handoff router only.",
+      "environment": "Eight reviewed assigned source notes; seven synthetic Boolean campaign records and ten rejecting controls; two fixed stopped local update campaigns; a seven-stage, 81-route lifecycle with 91 rejecting mutations; and a future preregistered public-safe natural adaptive search campaign. No deployed or genuinely open-ended campaign environment is represented.",
+      "model": "A prospectively bounded campaign contract over exact scope, objective and representation identity, controller and policies, generator and selection denominators, append-only archive and hazard custody, cumulative resources, stop observations and effect receipts, independent qualification, governor-only handoff, descendant invalidation, and successor-version readmission. The implementation is a finite authored state machine over trusted records; it is not an adaptive search engine.",
       "authority": "Human or institutional governance freezes consumer/purpose, objective, representation, controller, generator/evaluator/archive/hazard policies, budgets, stop authority, horizon, support ceiling, disclosure, and publication; distinct objective author, task generator, candidate generator, evaluator, selector, archive custodian, qualifier, resource observer, stop owner, hazard owner, residual owner, admission governor, Evidence State owner, and release owner govern their exact surfaces.",
-      "time": "Semantic review current through 2026-07-14; campaign version, model, generator, evaluator, representation, task/data distribution, environment, dependencies, objective, controller, budgets, horizon, threat, lifecycle, and reuse permissions are frozen prospectively and expire after material change.",
-      "artifact": "Chapter and manifest contract; eight reviewed source mappings; fixture/result schemas; seven campaign records; ten mutations; deterministic router; tracked result; seven Lean route theorems; fixed stopped update results; future natural task, candidate, evaluator, archive, resource, stop, hazard, ablation, replication, recursive-depth, and transfer bundles."
+      "time": "Semantic review current through 2026-07-16; campaign version, model, generator, evaluator, representation, task/data distribution, environment, dependencies, objective, controller, budgets, horizon, threat, lifecycle, and reuse permissions are frozen prospectively and expire after material change.",
+      "artifact": "Chapter and manifest contract; eight reviewed source mappings; legacy fixture/result schemas; seven campaign records and ten controls; two fixed stopped update results; seven retained legacy route theorems; the seven-stage combined lifecycle theorem; independent 81-route/91-mutation consumer, schema, result, receipt, and adequacy dossier; future natural task, candidate, evaluator, archive, resource, stop, hazard, ablation, replication, recursive-depth, and transfer bundles."
     },
     "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
     "assumptions": [
@@ -63,6 +63,12 @@
       "fixture": "experiments/open_ended_improvement_campaign/fixtures/cases.json",
       "result": "experiments/open_ended_improvement_campaign/results/2026-07-13-local.json",
       "lean_module": "lean/AsiStackProofs/OpenEndedImprovement.lean",
+      "refinement_module": "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean",
+      "refinement_schema": "schemas/open_ended_improvement_refinement.schema.json",
+      "refinement_harness": "scripts/validate_open_ended_improvement_refinement.py",
+      "refinement_result": "experiments/open_ended_improvement_refinement/results/2026-07-16-local.json",
+      "refinement_receipt": "docs/open_ended_improvement_refinement.md",
+      "refinement_dossier": "evidence_quality/model_adequacy_dossiers/open-ended-improvement-refinement.md",
       "fixed_update_result": "experiments/post_v2_update_causality/results/2026-07-10-local.json",
       "stopped_update_result": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json"
     },
@@ -105,7 +111,7 @@
       "Deprecate only when a more precise data, benchmark, procedural-memory, policy-update, self-improvement, field, readiness, security, artifact, resource, evidence, or release owner supersedes the atom and all campaign consumers migrate with lineage."
     ],
     "promotion_ceiling": "argument_until_claim_specific_natural_adaptive_multi_comparator_causal_campaign_and_accepted_evidence_transition",
-    "reproduction": {"command": null, "environment_lock": null, "artifact_digest": null, "evaluator_identity": null},
+    "reproduction": {"command": "python3 scripts/validate_open_ended_improvement_refinement.py && (cd lean && lake build AsiStackProofs)", "environment_lock": "lean/lean-toolchain and lean/lake-manifest.json plus the repository Python environment", "artifact_digest": "experiments/open_ended_improvement_refinement/results/2026-07-16-local.json", "evaluator_identity": "independently encoded Python consumer plus Lean kernel"},
     "terminal_disposition": null,
     "residual": {
       "owner": "open-ended-improvement-engines",
@@ -141,7 +147,7 @@
     },
     "open-ended-improvement-engines.minimum.001": {
       "proposition_type": "executable",
-      "current_disposition": "minimum_not_yet_implemented_current_artifacts_are_record_routes",
+      "current_disposition": "finite_campaign_custody_minimum_implemented_natural_adaptive_campaign_pending",
       "strongest_counterclaim": "The proposed minimum remains campaign theater unless adaptive task/candidate generation, fresh qualification, complete attempts, observed resources, stop effects, hazard custody, and matched baselines run end to end.",
       "falsifier": "Any named minimum component lacks a producer, consumer, observed consequence, clean rerun, or exact no-authority boundary.",
       "acceptance_criteria": ["Execute the exact public-safe multi-round campaign with all matched baselines, complete dispositions, fresh qualification, observed costs, effect-tested stops, quarantined hazard, and governor-only handoff."],
@@ -234,46 +240,46 @@
       "acceptance_criteria": ["Audit all campaign and reader surfaces and inject zero-release, no-gain, archive-only, and procedural-value cases that must remain separately typed."]
     },
     "open-ended-improvement-engines.formal.open-ended-improvement-campaign-complete-candidate-to-governor-review": {
-      "current_disposition": "retain_narrow_finite_route_pending_semantic_and_runtime_refinement",
-      "strongest_counterclaim": "The theorem trusts fifteen Booleans and proves only an ordered branch to review; it validates no digest, objective, generator, evaluator, archive, resource, stop, hazard, or governor behavior.",
-      "falsifier": "The theorem is presented as campaign completeness, qualification, or admission safety, lacks a consumer, or a semantically invalid record reaches the branch.",
-      "acceptance_criteria": ["Add typed campaign state, temporal traces, countermodels, validated producers, and runtime refinement while preserving review-only authority."]
+      "current_disposition": "adequate_finite_campaign_governor_handoff_invariant_natural_campaign_pending",
+      "strongest_counterclaim": "The lifecycle and consumer establish one authored governor-review handoff but trust every scope, legitimacy, denominator, evaluation, stop-effect, residual, and invalidation record; they do not establish campaign quality or live governor behavior.",
+      "falsifier": "Any incomplete authored trace reaches governor review, any handoff grants support or authority, any registered mutation survives, or prose broadens the result beyond finite record custody.",
+      "acceptance_criteria": ["Preserve all 81 routes and 91 mutations, then run the frozen natural adaptive campaign and an independently implemented transfer consumer."]
     },
     "open-ended-improvement-engines.formal.open-ended-improvement-campaign-missing-independent-qualification": {
-      "current_disposition": "retain_boolean_route_only_pending_dependency_aware_evaluator_model",
-      "strongest_counterclaim": "The theorem checks a trusted independentQualificationRecorded bit and models no independence, qualification method, error, exposure, or dependency.",
-      "falsifier": "A dependent or self-evaluated candidate can set the bit and reach a stronger route, or prose calls the theorem evaluator independence.",
-      "acceptance_criteria": ["Model evaluator identity, dependencies, exposure, observations, disagreement, and authority with executable producer and mutation controls."]
+      "current_disposition": "adequate_finite_qualification_gate_invariant_evaluator_validity_pending",
+      "strongest_counterclaim": "The lifecycle binds evaluator and qualifier identity and blocks the missing-record route, but the identities, dependency disclosures, calibration, exposures, observations, and qualification result remain trusted inputs.",
+      "falsifier": "Missing or mismatched qualification reaches evaluation or handoff, a registered evaluator mutation survives, or the finite gate is described as evaluator independence.",
+      "acceptance_criteria": ["Run adaptive exposure and correlated-evaluator attacks with independently generated qualification evidence and measured error."]
     },
     "open-ended-improvement-engines.formal.open-ended-improvement-campaign-exhausted-budget": {
-      "current_disposition": "retain_boolean_route_only_pending_resource_ledger_refinement",
-      "strongest_counterclaim": "The theorem trusts withinRegisteredBudget and observes no resource use, lineage reset, opportunity cost, or repair effect.",
-      "falsifier": "Unmetered or reset consumption satisfies the record, or budget repair has no runtime consequence.",
-      "acceptance_criteria": ["Refine the route against observed cumulative portfolio resource ledgers and effect-bearing budget enforcement."]
+      "current_disposition": "adequate_finite_cumulative_budget_custody_invariant_observed_meter_pending",
+      "strongest_counterclaim": "The lifecycle rejects budget reset and requires carryover into version 2, but the usage, cost, opportunity, and enforcement receipts are authored rather than independently observed.",
+      "falsifier": "A descendant or successor resets custody, an unbound budget reaches archive progression, or any budget mutation survives.",
+      "acceptance_criteria": ["Bind the lifecycle to observed compute, calls, latency, storage, evaluator, human, hazard, and opportunity ledgers in a natural campaign."]
     },
     "open-ended-improvement-engines.formal.open-ended-improvement-campaign-missing-stop-authority": {
-      "current_disposition": "retain_boolean_route_only_pending_effectful_stop_semantics",
-      "strongest_counterclaim": "The theorem checks stopAuthorityRecorded and proves no observation, latency, permission, capacity, or stop effect.",
-      "falsifier": "A ceremonial owner satisfies the field or the route is described as stopping a campaign.",
-      "acceptance_criteria": ["Model trigger, observer, authority, deadline, action, effect, residual work, descendants, and recovery with runtime refinement."]
+      "current_disposition": "adequate_finite_stop_receipt_invariant_live_effect_test_pending",
+      "strongest_counterclaim": "The lifecycle requires bound owner, observation, action, effect, timeliness, residual, and descendant records, but all are trusted authored facts and no stop or quarantine executes.",
+      "falsifier": "A missing, late, ceremonial, mismatched, or effectless stop reaches adjudication or any stop mutation survives.",
+      "acceptance_criteria": ["Inject live triggers, owner unavailability, controller resistance, descendants, latency, quarantine, and recovery while independently observing effects."]
     },
     "open-ended-improvement-engines.formal.open-ended-improvement-campaign-erased-failure-history": {
-      "current_disposition": "retain_boolean_route_only_pending_archive_and_denominator_semantics",
-      "strongest_counterclaim": "The theorem trusts failureHistoryPreserved and archiveDispositionRecorded and models no emissions, filters, payloads, deletion, denominator, or replay.",
-      "falsifier": "A best-only archive satisfies the flags or the theorem is presented as archive honesty.",
-      "acceptance_criteria": ["Refine against exact generator emissions, dispositions, payload tiers, deletion receipts, denominators, and replay consequences."]
+      "current_disposition": "adequate_finite_archive_denominator_custody_invariant_evolving_archive_pending",
+      "strongest_counterclaim": "The lifecycle binds generator, denominator, archive, complete dispositions, payload custody, and replay fields, but it does not generate or inspect emissions and trusts archive completeness.",
+      "falsifier": "Incomplete attempt, failure, null, unsafe, timeout, or payload custody reaches archive progression, or an archive mutation survives.",
+      "acceptance_criteria": ["Reconcile a real adaptive generator's emissions, filters, repairs, timeouts, discards, payload tiers, deletion receipts, and replay consequences."]
     },
     "open-ended-improvement-engines.formal.open-ended-improvement-campaign-missing-residual-owner": {
-      "current_disposition": "retain_boolean_route_only_pending_ownership_and_terminality_semantics",
-      "strongest_counterclaim": "The theorem checks an owner bit and models no identity, capacity, duty, acknowledgement, closure, transfer, or terminal effect.",
-      "falsifier": "An incapable or nonexistent owner satisfies the bit or unowned residuals reach review.",
-      "acceptance_criteria": ["Model residual identity, severity, owner capability, acknowledgement, deadline, closure evidence, transfer, and terminal routing."]
+      "current_disposition": "adequate_finite_residual_custody_invariant_owner_capacity_pending",
+      "strongest_counterclaim": "The lifecycle requires exact residual and owner custody before handoff, but it trusts owner identity, capacity, acknowledgement, duty, deadline, and closure evidence.",
+      "falsifier": "Missing or mismatched residual custody reaches adjudication, an unowned residual reaches review, or a registered ownership mutation survives.",
+      "acceptance_criteria": ["Exercise owner overload, absence, transfer, acknowledgement, deadlines, closure evidence, and unresolved terminal routing in the natural campaign."]
     },
     "open-ended-improvement-engines.formal.open-ended-improvement-campaign-authority-laundering": {
-      "current_disposition": "retain_boolean_route_only_pending_authority_enforcement_refinement",
-      "strongest_counterclaim": "The theorem trusts a noAuthorityGrantRecorded bit and blocks only the explicit false case; it models no real permission, side effect, descendant, publication, or bypass.",
-      "falsifier": "A candidate gains de facto authority while the bit remains true, or the theorem is described as enforcing authority separation.",
-      "acceptance_criteria": ["Refine against real permission/effect ledgers, indirect reuse, descendants, publication, and bypass mutations with an external observer."]
+      "current_disposition": "adequate_finite_no_authority_laundering_invariant_runtime_enforcement_pending",
+      "strongest_counterclaim": "The lifecycle rejects score, candidate, release, support, and self-ratified controller authority and records zero support/effects, but real permissions, indirect reuse, descendants, publication, and side effects are not observed.",
+      "falsifier": "Any authored route grants live authority or support, any authority mutation survives, or a candidate bypasses governor review in the future executable campaign.",
+      "acceptance_criteria": ["Bind the model to real permission and effect ledgers, indirect reuse, descendants, publication, revocation, and bypass attacks under an external observer."]
     }
   },
   "prose_candidate_dispositions": {
@@ -334,15 +340,38 @@
     "open-ended-improvement-engines.prose.575b9cb26bc0": {"state": "duplicate_of_atom", "rationale": "Restates strong matched source-system and conventional baselines.", "target_atom_id": "open-ended-improvement-engines.beyond_sota.001"},
     "open-ended-improvement-engines.prose.d7b0e0139fc0": {"state": "duplicate_of_atom", "rationale": "Restates causal, replication, recursive-depth, and transfer gates.", "target_atom_id": "open-ended-improvement-engines.beyond_sota.001"},
     "open-ended-improvement-engines.prose.06770113332a": {"state": "nonmaterial_explanation", "rationale": "Line-wrapped mature-target non-claim."},
-    "open-ended-improvement-engines.prose.2fd85985a14f": {"state": "historical_or_source_report", "rationale": "Exact limit on what the seven Lean theorems prove."},
-    "open-ended-improvement-engines.prose.6ec46ea9599d": {"state": "historical_or_source_report", "rationale": "Line-wrapped formal and empirical non-claim."},
+    "open-ended-improvement-engines.prose.4285cb40c6e2": {"state": "historical_or_source_report", "rationale": "Line-wrapped statement of the exact finite authored-custody result, not a broader proof claim."},
+    "open-ended-improvement-engines.prose.cd6236450d7a": {"state": "historical_or_source_report", "rationale": "Line-wrapped non-claim preserving the missing evaluator-independence, deployed-control, reproduction, and transfer boundaries."},
+    "open-ended-improvement-engines.prose.be273e2b70da": {"state": "historical_or_source_report", "rationale": "Line-wrapped formal-audit non-claim stating that the model does not generate tasks or evaluate semantic novelty."},
+    "open-ended-improvement-engines.prose.4a636451875e": {"state": "historical_or_source_report", "rationale": "Line-wrapped formal-audit non-claim excluding useful improvement, admission authority, and stronger evidence effects."},
+    "open-ended-improvement-engines.prose.4da410af7f04": {"state": "historical_or_source_report", "rationale": "Line-wrapped formal-audit non-claim excluding reproduction, transfer, safety, release, support, SOTA, AGI, and ASI."},
     "open-ended-improvement-engines.prose.469e2dac325c": {"state": "historical_or_source_report", "rationale": "Post-v2.1 stopped-campaign boundary report."},
     "open-ended-improvement-engines.prose.57ad6c06d215": {"state": "historical_or_source_report", "rationale": "Summary of what current evidence does not establish."},
     "open-ended-improvement-engines.prose.56c89aeb6d56": {"state": "editorial_or_question", "rationale": "Part handoff instruction already owned by the qualification interface."}
   },
+  "prose_review_lineage": [
+    {
+      "retired_candidate_id": "open-ended-improvement-engines.prose.2fd85985a14f",
+      "retired_source": "chapters/open-ended-improvement-engines.qmd:615",
+      "retired_sentence": "They do not prove campaign quality,",
+      "preserved_disposition": {"state": "historical_or_source_report", "rationale": "Exact limit on what the seven Lean theorems prove."},
+      "retirement_reason": "The formal-audit surface was rewritten for the reachable lifecycle; the old sentence hash is no longer current prose and the replacements preserve its bounded non-claim.",
+      "replacement_candidate_ids": ["open-ended-improvement-engines.prose.be273e2b70da", "open-ended-improvement-engines.prose.4a636451875e", "open-ended-improvement-engines.prose.4da410af7f04"],
+      "recorded_on": "2026-07-16"
+    },
+    {
+      "retired_candidate_id": "open-ended-improvement-engines.prose.6ec46ea9599d",
+      "retired_source": "chapters/open-ended-improvement-engines.qmd:617",
+      "retired_sentence": "transfer, safe self-improvement, model quality, or ASI.",
+      "preserved_disposition": {"state": "historical_or_source_report", "rationale": "Line-wrapped formal and empirical non-claim."},
+      "retirement_reason": "The formal-audit surface was rewritten for the reachable lifecycle; the old sentence hash is no longer current prose and the replacements preserve its bounded non-claim.",
+      "replacement_candidate_ids": ["open-ended-improvement-engines.prose.cd6236450d7a", "open-ended-improvement-engines.prose.4da410af7f04"],
+      "recorded_on": "2026-07-16"
+    }
+  ],
   "non_claims": [
     "This semantic sweep does not promote the chapter, establish useful novelty, evaluator independence, objective legitimacy, adaptive campaign quality, safe self-improvement, general improvement, transfer, deployment readiness, AGI, or ASI.",
-    "All source-reported results, Boolean records, finite route theorems, digests, mutations, and fixed stopped updates remain limited to their exact task, model, evaluator, archive, resource, and authority scopes.",
+    "All source-reported results, Boolean records, finite route theorems, the combined lifecycle theorem, 81 routes, 91 mutations, and fixed stopped updates remain limited to their exact authored task, model, evaluator, archive, resource, and authority scopes.",
     "Negative, null, duplicate, malformed, ineligible, unsafe, over-budget, timed-out, failed-transfer, evaluator-disagreement, stop-failure, hazard, privacy, rights, opportunity-cost, over-quarantine, and irreversible outcomes remain visible and cannot be relabeled as successful discovery."
   ]
 }

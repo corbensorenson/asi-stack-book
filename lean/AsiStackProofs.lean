@@ -82,6 +82,7 @@ import AsiStackProofs.StackBoundaries
 import AsiStackProofs.StableCapabilityFields
 import AsiStackProofs.SupplyChainIntegrity
 import AsiStackProofs.OpenEndedImprovement
+import AsiStackProofs.OpenEndedImprovementRefinement
 import AsiStackProofs.AdversarialEvaluation
 import AsiStackProofs.AdversarialEvaluationRefinement
 import AsiStackProofs.TheseusReference

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Open-Ended Improvement Lifecycle Refinement Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "source_sha256", "inherited_results", "reachable_stage_count", "route_case_count", "route_coverage", "mutation_count", "mutation_rejection_count", "mutation_receipts", "command_receipts", "witness", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.open_ended_improvement_refinement.v1"},
+    "result_id": {"const": "open-ended-improvement-refinement-2026-07-16-local"},
+    "source_sha256": {
+      "type": "object", "additionalProperties": false,
+      "required": ["lean_model", "admission_result", "update_result", "stopped_result"],
+      "properties": {
+        "lean_model": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "admission_result": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "update_result": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "stopped_result": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "inherited_results": {"type": "object", "additionalProperties": true, "required": ["admission_case_count", "update_seed_count", "stopped_seed_count", "stopped_update_disposition", "support_state_effect"]},
+    "reachable_stage_count": {"const": 7},
+    "route_case_count": {"const": 81},
+    "route_coverage": {"type": "array", "minItems": 81, "maxItems": 81, "items": {"type": "object", "additionalProperties": false, "required": ["case_id", "expected_route"], "properties": {"case_id": {"type": "string", "minLength": 1}, "expected_route": {"type": "string", "minLength": 1}}}},
+    "mutation_count": {"const": 91},
+    "mutation_rejection_count": {"const": 91},
+    "mutation_receipts": {"type": "array", "minItems": 91, "maxItems": 91, "items": {"type": "object", "additionalProperties": false, "required": ["mutation_id", "rejected"], "properties": {"mutation_id": {"type": "string", "minLength": 1}, "rejected": {"const": true}}}},
+    "command_receipts": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "additionalProperties": false, "required": ["command", "exit_code", "output_sha256"], "properties": {"command": {"type": "string", "minLength": 1}, "exit_code": {"const": 0}, "output_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}}},
+    "witness": {"type": "object", "additionalProperties": false, "required": ["terminal_stage", "protocol_version", "receipt_count", "governor_handoff_count", "readmission_count", "support_assignment_count", "external_effect_count"], "properties": {"terminal_stage": {"const": "scoped"}, "protocol_version": {"const": 2}, "receipt_count": {"const": 7}, "governor_handoff_count": {"const": 1}, "readmission_count": {"const": 1}, "support_assignment_count": {"const": 0}, "external_effect_count": {"const": 0}}},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 12}}
+  }
+}

@@ -3,8 +3,8 @@ title: "Open-Ended Improvement Engines"
 chapter_id: "open-ended-improvement-engines"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
-draft_maturity: "v0.2 depth-leveled chapter"
-last_updated: "2026-07-14"
+draft_maturity: "v0.3 manuscript draft"
+last_updated: "2026-07-16"
 primary_sources:
   - "rmi"
   - "cognitive_loop_closure"
@@ -17,11 +17,10 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "All eight assigned source notes are reviewed and mapped at their exact conceptual or source-setting boundary; no POET, FunSearch, Voyager, ADAS, Darwin Godel Machine, RMI, Cognitive Loop Closure, or Benchmaxxing system or result is reproduced."
-  - "The current seven Boolean records, ten rejecting mutations, and seven Lean route theorems test finite campaign-handoff fields only; no task or candidate generator, adaptive evaluator, evolving archive, qualification implementation, stop effect, hazardous artifact, or campaign portfolio ran."
-  - "The post-v2 and post-v2.1 campaigns mutate real local model state but use fixed registered arms, fixed tasks, finite epochs, and exact stopping; they establish no generated distribution, useful novelty, open-endedness, or autonomous expansion."
-  - "No matched no-search, fixed-task, conventional-search, human-authored, POET, FunSearch, Voyager, ADAS, or Darwin Godel baseline has been run on a natural workload; useful novelty, selection error, transfer, hazard, opportunity cost, independent replication, recursive depth, and portfolio effects remain unmeasured."
-  - "No support-state promotion is implied by this semantic review."
+  - "No preregistered natural adaptive campaign has compared no-search, fixed-task, conventional-search, human-authored, generated-task, and strongest source-system arms under matched task, model, tool, data, compute, latency, and human budgets."
+  - "No real adaptive generator/evaluator/archive system has measured semantic novelty, useful transfer, evaluator exposure and independence, complete denominators, hazard custody, cumulative budgets, opportunity cost, stop/quarantine effects, recursive depth, or cross-campaign contamination."
+  - "The seven-stage lifecycle, 81-route consumer, and 91 rejecting mutations establish only finite authored campaign custody; all objectives, legitimacy records, denominators, evaluator records, costs, hazards, stop effects, residuals, and invalidations remain trusted inputs."
+  - "No independent implementation or transfer site has reproduced an adaptive campaign, qualified a candidate, observed a live stop or quarantine, or established that generated-task search improves the joint usefulness/cost/safety frontier."
 ---
 
 ## Chapter status
@@ -549,11 +548,28 @@ candidate. Its best candidate may reach governor review but receives no live
 authority. A negative result is terminal for the preregistered claim; a follow-
 up uses a new campaign identity and prospective budget.
 
-The current artifact is narrower. Seven Boolean records, seven route theorems,
-and ten mutations check a digest-bound handoff shape. The post-v2 campaigns
-mutate real local model state but use fixed tasks and registered arms. Together
-they establish neither an adaptive generator-evaluator-archive engine nor useful
-open-ended novelty.
+The exact current minimum preserves the seven Boolean admission records, seven
+legacy route theorems, ten admission mutations, the three-seed/four-arm fixed
+update result, and the three-seed/five-arm post-v2.1 stopped result inside a
+seven-stage, 81-route campaign-to-governor lifecycle with 91/91 rejecting
+mutations. The witness emits one governor-review handoff and returns to scoped
+generation only through protocol-version-2 readmission after material change.
+Zero of nine eligible post-v2.1 challenger seed-arms met the registered 0.05
+gain threshold, the update disposition remains `no_change`, and support and
+external-effect authority remain `none`.
+
+The refinement at
+`experiments/open_ended_improvement_refinement/results/2026-07-16-local.json`
+independently reruns the admission fixture and both stopped campaigns. Exact
+custody covers campaign, objective, representation, controller, task and
+candidate policies, generator, evaluator, qualifier, archive, cumulative
+budget, stop authority, hazard policy, consumer, authority, and version. All
+91 registered mutations reject. This proves authored campaign custody and
+route consequences only: objectives, legitimacy records, denominators,
+lineage, evaluator records, costs, hazards, stop effects, residuals, monitors,
+and invalidations remain trusted inputs. No adaptive generator/evaluator/archive
+engine, semantic novelty, useful improvement, objective legitimacy, evaluator
+independence, deployed stop or quarantine, reproduction, or transfer exists.
 
 ## Beyond the State of the Art
 
@@ -589,6 +605,7 @@ risk and total cost.
 | Test | Purpose | Status |
 |---|---|---|
 | Improvement-campaign admission fixture | Recompute seven declared handoff routes and ten mutations. | implemented; finite Boolean records only |
+| Campaign-to-governor lifecycle refinement | Join scope, generation, archive, evaluation, observed stopping, governor-only handoff, and material-change readmission without cross-promoting null results. | implemented by `python3 scripts/validate_open_ended_improvement_refinement.py`; three inherited suites pass, all 81 routes are reached, 91/91 mutations reject, support/effect none; no adaptive-search, novelty, usefulness, evaluator-independence, safety, release, transfer, or support claim |
 | Generator/evaluator dependency and exposure test | Measure adaptive overfitting, contamination, self-verification, shared dependencies, disagreement, and fresh qualification error. | planned; current identity/dependency Booleans measure no behavior |
 | Natural adaptive campaign comparison | Compare no-search, fixed-task, conventional-search, human-authored, and generated-task arms under matched budgets. | planned; no natural campaign engine or candidate ran |
 | Archive denominator and hazard-custody test | Preserve every attempt, disposition, exposure, cost, selection probability, payload tier, deletion receipt, and typed reuse relation. | planned; current failure-history Boolean has no evolving archive |
@@ -600,21 +617,22 @@ risk and total cost.
 
 | Tag | Status | Scope |
 |---|---|---|
-| `lean:open_ended_improvement.campaign.complete_candidate_to_governor_review` | implemented | A complete candidate record reaches the existing governor for review without being admitted. |
-| `lean:open_ended_improvement.campaign.missing_independent_qualification` | implemented | Missing independent qualification routes to evaluator separation. |
-| `lean:open_ended_improvement.campaign.exhausted_budget` | implemented | A recorded exhausted budget routes to budget repair. |
-| `lean:open_ended_improvement.campaign.missing_stop_authority` | implemented | Missing stop authority blocks the requested handoff. |
-| `lean:open_ended_improvement.campaign.erased_failure_history` | implemented | Erased failure history routes to archive repair. |
-| `lean:open_ended_improvement.campaign.missing_residual_owner` | implemented | Missing residual ownership blocks the handoff. |
-| `lean:open_ended_improvement.campaign.authority_laundering` | implemented | A candidate request that drops the no-authority boundary is rejected. |
+| `lean:open_ended_improvement.campaign.complete_candidate_to_governor_review` | implemented | A complete bounded campaign trace reaches only a governor-review handoff and grants neither admission, support, nor live authority. |
+| `lean:open_ended_improvement.campaign.missing_independent_qualification` | implemented | Missing independent qualification blocks evaluation in the reachable campaign lifecycle. |
+| `lean:open_ended_improvement.campaign.exhausted_budget` | implemented | Missing cumulative budget custody or attempted reset across descendants blocks archive progression. |
+| `lean:open_ended_improvement.campaign.missing_stop_authority` | implemented | Missing stop ownership, observation, or effect receipt blocks campaign adjudication. |
+| `lean:open_ended_improvement.campaign.erased_failure_history` | implemented | Incomplete attempt, failure, null, unsafe, timeout, or archive history blocks archive progression. |
+| `lean:open_ended_improvement.campaign.missing_residual_owner` | implemented | Missing residual ownership blocks campaign adjudication before governor review. |
+| `lean:open_ended_improvement.campaign.authority_laundering` | implemented | Score, candidate, release, support, or self-ratified controller authority cannot be laundered through the campaign lifecycle. |
 
-The formal surface now owns `AsiStackProofs.OpenEndedImprovement`; it no longer
-borrows `AsiStackProofs.SelfImprovement`. The seven derived theorems and
-digest-bound result at
-`experiments/open_ended_improvement_campaign/results/2026-07-13-local.json`
-cover finite record routing only. They do not prove campaign quality,
-evaluator independence or correctness, autonomous discovery, useful novelty,
-transfer, safe self-improvement, model quality, or ASI.
+The seven legacy theorems remain finite admission-route consequences. The
+refinement adds one combined route theorem over a reachable seven-stage model
+and an independently implemented 81-route, 91-mutation consumer. It binds
+rather than merges the admission and stopped-campaign evidence lanes. None of
+this generates tasks or candidates, evaluates semantic novelty, establishes
+objective legitimacy or evaluator independence, executes a deployed stop or
+quarantine, proves useful improvement, authorizes admission, or establishes
+reproduction, transfer, safety, readiness, release, support, SOTA, AGI, or ASI.
 
 ## Source crosswalk
 

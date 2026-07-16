@@ -1,0 +1,9 @@
+# Open-Ended Improvement campaign-to-governor lifecycle refinement
+
+This refinement joins three bounded evidence surfaces without turning them into an improvement result: the seven-case campaign-admission fixture, the three-seed/four-arm stopped update campaign, and the three-seed/five-arm post-v2.1 stopped campaign. The independent consumer reruns all three validators, reaches all 81 routes in a seven-stage lifecycle, and rejects 91/91 identity, scope, generation, archive, evaluation, stopping, authority, replay, support, and external-effect mutations.
+
+The seven reachable stages are draft, scoped, generation-bound, archive-bound, evaluated, adjudicated, and governor-bound. Exact custody binds campaign, objective, representation, controller, task and candidate policies, generator, evaluator, independent qualifier, archive, cumulative budget, stop authority, hazard policy, consumer, authority, and version. The model keeps generation, archival disposition, evaluation, useful-improvement inference, governor handoff, and live authority separate.
+
+The full witness emits one governor-review handoff and returns only to protocol-version-2 scoped generation after a material-change trigger, complete descendant invalidation, ordinary-route blocking, cumulative-budget carryover, a rerun requirement, and payload/receipt custody. Support-state and external-effect authority remain exactly `none`. The result is at `experiments/open_ended_improvement_refinement/results/2026-07-16-local.json`; reproduce it with `python3 scripts/validate_open_ended_improvement_refinement.py`.
+
+This is finite authored campaign custody over fixed stopped local results. It does not establish objective legitimacy, evaluator independence, adaptive search quality, semantic novelty, useful improvement, hazard-control efficacy, autonomous discovery, transfer, safe self-improvement, deployment, readiness, release, SOTA, AGI, or ASI.

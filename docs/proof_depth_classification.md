@@ -13,11 +13,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 298 |
-| Lean modules scanned | 96 |
-| Theorem declarations classified | 1291 |
+| Lean modules scanned | 97 |
+| Theorem declarations classified | 1292 |
 | Direct/projection-style theorem declarations | 230 |
 | Derived/decomposed theorem declarations | 894 |
-| Unknown or mixed theorem declarations | 167 |
+| Unknown or mixed theorem declarations | 168 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -102,7 +102,8 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 4 | 21 | 3 | 18 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/OpenEndedImprovement.lean` | open-ended-improvement-engines | 7 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/OpenEndedImprovement.lean` | unmapped | 0 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | open-ended-improvement-engines | 7 | 1 | 0 | 0 | 1 | manual review |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | unmapped | 0 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/PlanForge.lean` | planning-as-a-control-layer | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Planning.lean` | planning-as-a-control-layer | 5 | 29 | 8 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -785,6 +786,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | `missing_independent_qualification_requires_separation` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | `missing_residual_owner_blocks_admission` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | `missing_stop_authority_blocks_admission` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | `open_ended_improvement_lifecycle_routes` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `complete_hive_work_admission_review_admits` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `external_hive_access_missing_lease_boundary_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `external_hive_access_without_lease_requires_federation_lease` | derived_or_decomposed | no | uses simp, unfold |

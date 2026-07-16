@@ -2233,72 +2233,72 @@
     {
       "tag": "lean:open_ended_improvement.campaign.complete_candidate_to_governor_review",
       "chapter_id": "open-ended-improvement-engines",
-      "module": "AsiStackProofs.OpenEndedImprovement",
-      "formal_target": "A complete finite campaign record reaches the existing governor for review without admitting or promoting its candidate.",
+      "module": "AsiStackProofs.OpenEndedImprovementRefinement",
+      "formal_target": "A complete bounded campaign trace reaches only a governor-review handoff and grants neither admission, support, nor live authority.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite campaign-record routing only; governor review is not admission, promotion, campaign quality, or useful novelty."
+      "rationale": "Reachable bounded-campaign lifecycle with prospective scope, generator and denominator binding, append-only archive custody, independent qualification, observed stopping, governor-only handoff, successor-version readmission, 81 routes, 91 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:open_ended_improvement.campaign.missing_independent_qualification",
       "chapter_id": "open-ended-improvement-engines",
-      "module": "AsiStackProofs.OpenEndedImprovement",
-      "formal_target": "Missing independent qualification routes to evaluator separation.",
+      "module": "AsiStackProofs.OpenEndedImprovementRefinement",
+      "formal_target": "Missing independent qualification blocks evaluation in the reachable campaign lifecycle.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite qualification routing only; it does not establish evaluator independence or correctness."
+      "rationale": "Reachable bounded-campaign lifecycle with prospective scope, generator and denominator binding, append-only archive custody, independent qualification, observed stopping, governor-only handoff, successor-version readmission, 81 routes, 91 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:open_ended_improvement.campaign.exhausted_budget",
       "chapter_id": "open-ended-improvement-engines",
-      "module": "AsiStackProofs.OpenEndedImprovement",
-      "formal_target": "An exhausted resource budget routes to budget repair.",
+      "module": "AsiStackProofs.OpenEndedImprovementRefinement",
+      "formal_target": "Missing cumulative budget custody or attempted reset across descendants blocks archive progression.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite budget routing only; it does not establish efficiency, cost control, or search quality."
+      "rationale": "Reachable bounded-campaign lifecycle with prospective scope, generator and denominator binding, append-only archive custody, independent qualification, observed stopping, governor-only handoff, successor-version readmission, 81 routes, 91 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:open_ended_improvement.campaign.missing_stop_authority",
       "chapter_id": "open-ended-improvement-engines",
-      "module": "AsiStackProofs.OpenEndedImprovement",
-      "formal_target": "Missing stop authority blocks the requested handoff.",
+      "module": "AsiStackProofs.OpenEndedImprovementRefinement",
+      "formal_target": "Missing stop ownership, observation, or effect receipt blocks campaign adjudication.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite stop-boundary routing only; it does not establish effective intervention or safe autonomy."
+      "rationale": "Reachable bounded-campaign lifecycle with prospective scope, generator and denominator binding, append-only archive custody, independent qualification, observed stopping, governor-only handoff, successor-version readmission, 81 routes, 91 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:open_ended_improvement.campaign.erased_failure_history",
       "chapter_id": "open-ended-improvement-engines",
-      "module": "AsiStackProofs.OpenEndedImprovement",
-      "formal_target": "Erased failure history routes to archive repair.",
+      "module": "AsiStackProofs.OpenEndedImprovementRefinement",
+      "formal_target": "Incomplete attempt, failure, null, unsafe, timeout, or archive history blocks archive progression.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite archive routing only; it does not establish archive completeness, diversity, or discovery value."
+      "rationale": "Reachable bounded-campaign lifecycle with prospective scope, generator and denominator binding, append-only archive custody, independent qualification, observed stopping, governor-only handoff, successor-version readmission, 81 routes, 91 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:open_ended_improvement.campaign.missing_residual_owner",
       "chapter_id": "open-ended-improvement-engines",
-      "module": "AsiStackProofs.OpenEndedImprovement",
-      "formal_target": "Missing residual ownership blocks the requested handoff.",
+      "module": "AsiStackProofs.OpenEndedImprovementRefinement",
+      "formal_target": "Missing residual ownership blocks campaign adjudication before governor review.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite residual-custody routing only; it does not establish that residuals are complete or mitigated."
+      "rationale": "Reachable bounded-campaign lifecycle with prospective scope, generator and denominator binding, append-only archive custody, independent qualification, observed stopping, governor-only handoff, successor-version readmission, 81 routes, 91 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:open_ended_improvement.campaign.authority_laundering",
       "chapter_id": "open-ended-improvement-engines",
-      "module": "AsiStackProofs.OpenEndedImprovement",
-      "formal_target": "A candidate request that drops the no-authority boundary is rejected.",
+      "module": "AsiStackProofs.OpenEndedImprovementRefinement",
+      "formal_target": "Score, candidate, release, support, or self-ratified controller authority cannot be laundered through the campaign lifecycle.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite authority-boundary routing only; it does not establish runtime enforcement or candidate safety."
+      "rationale": "Reachable bounded-campaign lifecycle with prospective scope, generator and denominator binding, append-only archive custody, independent qualification, observed stopping, governor-only handoff, successor-version readmission, 81 routes, 91 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:deliberation.high_risk.missing_independent_verifier_blocks_execution",
