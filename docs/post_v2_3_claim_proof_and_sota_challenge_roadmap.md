@@ -3338,6 +3338,12 @@ is not an architecture leaderboard. It requires:
 9. one governed architecture lifecycle through proposal, independent
    evaluation, shadow, canary, promotion denial or admission, effect-complete
    rollback, retirement, and descendant invalidation without self-approval.
+   Include an Inkling-style model-authored fine-tuning trace as a boundary case:
+   preserve the user-supplied objective, external training service, generated
+   data and scorer, base and candidate checkpoints, independent regression
+   evaluator, supervisor-mediated switch, rollback exercise, descendant
+   invalidation, and unchanged-versus-changed architecture disposition so a
+   narrow successful fine-tune cannot be laundered into architectural RSI.
 
 ### P5 completion gate
 

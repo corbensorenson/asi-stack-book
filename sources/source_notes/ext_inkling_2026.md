@@ -5,7 +5,7 @@
 | Source ID | `ext_inkling_2026` |
 | Source title | Inkling: Our open-weights model |
 | Ingestion date | 2026-07-15 |
-| Source version / URL | Official release, https://thinkingmachines.ai/news/introducing-inkling/; official model card, https://thinkingmachines.ai/model-card/inkling/; official weight/config record, https://huggingface.co/thinkingmachines/Inkling |
+| Source version / URL | Official release, https://thinkingmachines.ai/news/introducing-inkling/; official model card, https://thinkingmachines.ai/model-card/inkling/; official Apache-2.0 weight/config record, https://huggingface.co/thinkingmachines/Inkling at reviewed revision `e4aa5ee880fbb0d2c1a93b1e4a39f2d4b97eb28a` |
 | Ingestion basis | Primary release article, primary model card, and released Hugging Face configuration reviewed on release day; no weight download, inference, training, benchmark reproduction, or architecture ablation. |
 
 ## Thesis
@@ -36,6 +36,14 @@ kernel by its complete topology and lifecycle rather than by one label such as
 - Controllable inference effort learned during large-scale asynchronous RL by
   varying system instructions and per-token cost. This is a model capability,
   not by itself a governed budget, stopping, verification, or release policy.
+- A launch demonstration in which Inkling writes a lipogram objective and
+  scoring function, prepares synthetic fine-tuning data, runs a 96-step Tinker
+  job, evaluates the narrow objective, stages the resulting checkpoint, and
+  yields to a supervisor that relaunches the updated model. This is a useful
+  update-lifecycle trace, not evidence of autonomous architectural improvement:
+  the user supplies the goal, Tinker and OpenCode supply the training and
+  execution substrate, the model owns neither independent evaluation nor
+  release authority, and the demonstrated change is one narrow output rule.
 - Open BF16 and NVFP4 weights. The model card reports at least 2 TB aggregate
   VRAM for BF16 and at least 600 GB for NVFP4, making hardware access part of
   any honest reproduction decision.
@@ -52,6 +60,11 @@ kernel by its complete topology and lifecycle rather than by one label such as
 - The provider reports that Inkling-Small has 276B total and 12B active
   parameters and shares the scalable post-training stack, but its weights were
   not released at the review boundary.
+- The release's self-customization demonstration reports a 32-batch,
+  three-epoch, 96-step supervised fine-tune and a staged checkpoint switch. It
+  does not report an independent evaluator, matched baseline distribution,
+  regression suite, causal attribution, rollback exercise, descendant
+  invalidation, or architecture change.
 - No local ASI Stack run has loaded Inkling, reproduced a score, measured its
   context behavior, isolated local/global attention, isolated short
   convolutions or relative positions, tested its expert router, or evaluated
@@ -79,6 +92,11 @@ kernel by its complete topology and lifecycle rather than by one label such as
 - **Safety persistence assumption:** base-model refusal results are assumed to
   survive arbitrary customization even though the provider explicitly treats
   fine-tuning safety as an ongoing study and recommends defense in depth.
+- **Self-improvement laundering:** a model-authored fine-tuning script and
+  supervisor-mediated checkpoint switch are described as recursive or
+  architectural self-improvement without separating the user-supplied
+  objective, external training service, same-loop evaluator, regression risk,
+  release authority, rollback, and unchanged architecture.
 
 ## Book Chapters Supported
 
@@ -96,6 +114,11 @@ kernel by its complete topology and lifecycle rather than by one label such as
 - `safety-cases-and-structured-assurance` — preserve the model card's
   defense-in-depth and post-customization residual boundary without promoting
   provider-reported tests to a local safety case.
+- `recursive-self-improvement-boundaries` — use the self-customization demo as
+  a boundary case: model-proposed update artifacts can enter a governed update
+  lifecycle, but they do not own objective legitimacy, independent evaluation,
+  checkpoint admission, rollback, descendant invalidation, or architectural
+  self-modification authority.
 
 ## Claims To Add Or Update
 
@@ -114,6 +137,11 @@ kernel by its complete topology and lifecycle rather than by one label such as
 - If official hardware requirements make direct reproduction infeasible, the
   comparator ledger must record a blocker. A smaller mechanism-matched proxy is
   informative but is not an Inkling reproduction.
+- A self-authored training job is a proposal artifact. Calling it recursive
+  self-improvement requires evidence about objective selection, independent
+  evaluation, regressions, causal contribution, checkpoint authority, rollback,
+  descendant invalidation, and architecture change—not merely a successful
+  narrow fine-tune and supervisor-mediated restart.
 
 ## Open Questions
 

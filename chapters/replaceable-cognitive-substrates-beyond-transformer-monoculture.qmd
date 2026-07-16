@@ -296,6 +296,19 @@ the model card's reported minimum of 600 GB aggregate VRAM for NVFP4 or 2 TB for
 BF16. A smaller mechanism-matched proxy can test components, but it cannot be
 reported as an Inkling reproduction.
 
+The launch's “self-fine-tuning” trace sharpens a second boundary. Inkling writes
+a lipogram objective and scorer, prepares a small supervised job, asks Tinker to
+train it, evaluates the narrow rule, stages a checkpoint, and then yields so a
+supervisor can relaunch the new weights. That is a useful model-proposed update
+trace, but it is not yet recursive architectural self-improvement: the user
+supplies the goal; OpenCode and Tinker supply the execution and training
+substrate; the model does not own independent evaluation or checkpoint
+authority; no broad regression, rollback, descendant-invalidation, or causal
+architecture test is reported; and the architecture remains unchanged. The
+stack should admit the generated training artifacts as proposals to the normal
+update lifecycle, never as evidence that a model may approve or deploy its own
+successor.
+
 ## Reflex, reaction, deliberation, and specialist routes
 
 The route shape sits above the kernel:
