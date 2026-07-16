@@ -3383,12 +3383,19 @@ is not an architecture leaderboard. It requires:
    sets, costs, failures, and ablations separate;
 5. a topology-complete capability card and matched component ablations for
    hybrid attention candidates: local window, global cadence, positional
-   mechanism, convolutional paths, expert topology, active and total
-   parameters, modality encoders, configured/served/tested context, numerics,
-   hardware, effort actuator, and mutable state. Inkling is the current primary
-   case; if its reported 600 GB NVFP4 or 2 TB BF16 minimum blocks direct replay,
-   record that blocker and label any smaller mechanism-matched proxy as a proxy,
-   not an Inkling reproduction;
+   mechanism, query/KV topology, convolutional paths, expert topology and dense
+   exceptions, active and total parameters, modality tokenization/frontends,
+   configured/served/tested context, numerics, hardware, auxiliary prediction
+   blocks, effort actuator, and mutable state. Keep fixed layer composition,
+   learned internal expert routing, caller-selected effort, and stack-level
+   kernel routing as four separately observed control planes. Inkling is the
+   current primary case: its released configuration records 55 local and 11
+   global layers, different local/global KV-head counts, one dense-MLP exception,
+   and an eight-layer MTP block whose released serving role is undocumented.
+   Preregister component and interaction ablations; do not infer MTP use or
+   speedup from configuration presence. If the reported 600 GB NVFP4 or 2 TB
+   BF16 minimum blocks direct replay, record that blocker and label any smaller
+   mechanism-matched proxy as a proxy, not an Inkling reproduction;
 6. fixed recurrent-state, growing-cache, sparse-slot, exact-memory, and
    attention controls that distinguish computation from addressable memory;
 7. for OneCell/TRM-class arms, canonical single-pass, matched sampling/voting,

@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-07-16 — Deepen the Inkling hybrid-topology audit
+
+- Rechecked the live Thinking Machines Lab release, model card, and exact released Hugging Face revision without downloading weights or importing provider-reported scores as local evidence.
+- Separated Inkling's fixed 55-local/11-global layer composition, learned token-to-expert routing, caller-selected effort control, and the ASI Stack's task-to-kernel routing into four distinct control planes with separate intervention and receipt requirements.
+- Added the local/global KV-head difference, dense-MLP exception, lightweight multimodal frontend boundary, and configured eight-layer MTP block to the capability-card and ablation requirements; configuration presence alone does not establish that MTP is used in serving or improves speed.
+- Preserved the direct-reproduction blocker and no-promotion boundary: no Inkling inference, training, benchmark, causal component attribution, safety persistence, useful-context, fast-generation, deployment, or support claim is established.
+
 ## 2026-07-16 — Join Open-Ended Improvement into a campaign-to-governor lifecycle
 
 - Added `AsiStackProofs.OpenEndedImprovementRefinement`, a seven-stage versioned lifecycle covering prospective scope, bound generation and denominators, append-only archive custody, independent evaluation, stopping and residual adjudication, governor-only handoff, descendant invalidation, and material-change readmission.

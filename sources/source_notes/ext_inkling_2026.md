@@ -13,7 +13,7 @@
 Inkling is a useful current case of architecture *composition*: a 66-layer,
 decoder-only, multimodal Transformer combines sparse mixture-of-experts feed-
 forward layers, interleaved local and global attention, relative positional
-features, short convolutions, modality-specific encoders, and controllable
+features, short convolutions, lightweight modality frontends, and controllable
 reasoning effort. It therefore strengthens the book's requirement to describe a
 kernel by its complete topology and lifecycle rather than by one label such as
 “Transformer,” “sliding window,” or “MoE.”
@@ -24,15 +24,26 @@ kernel by its complete topology and lifecycle rather than by one label such as
   and six routed experts active per token; the official release describes a
   sigmoid router with auxiliary-loss-free balancing and joint normalization of
   routed and shared expert scores.
-- Five local-attention layers for each global-attention layer. The released
-  configuration records a 512-token sliding window, 64 query heads, eight global
-  KV heads, and sixteen local KV heads.
+- Fifty-five local-attention layers and eleven global-attention layers, arranged
+  as five local layers for each global layer. The released configuration records
+  a 512-token sliding window, 64 query heads, eight global KV heads, and sixteen
+  local KV heads. Cadence, window, and KV topology are therefore separate
+  intervention variables rather than one indivisible “sliding attention” choice.
 - Relative positional embeddings rather than RoPE, plus kernel-size-four short
   convolutions after key/value projections and on attention/MLP residual-branch
   outputs.
+- One configured dense-MLP exception at layer index 2 inside an otherwise sparse
+  expert-backed feed-forward stack. A topology card must record dense exceptions,
+  not merely quote the expert count.
 - Shared decoder space for text, image/video patches, and discretized audio;
-  the released configuration records a four-layer hierarchical vision encoder
-  with 40-pixel patches and dMel audio encoding.
+  the release describes an encoder-free multimodal design with lightweight input
+  embeddings, while the released configuration records a four-layer hMLP vision
+  frontend with 40-pixel patches and dMel audio encoding. This wording difference
+  is a documentation boundary, not evidence for a separate large modality model.
+- The released configuration also contains an `mtp_config` with eight next-token
+  prediction layers. The announcement and model card do not explain whether or
+  how those layers participate in released inference, so they are a discovery
+  lead for the Fast Generation campaign, not evidence of MTP decoding speedup.
 - Controllable inference effort learned during large-scale asynchronous RL by
   varying system instructions and per-token cost. This is a model capability,
   not by itself a governed budget, stopping, verification, or release policy.
@@ -86,6 +97,13 @@ kernel by its complete topology and lifecycle rather than by one label such as
 - **Router conflation:** token-level expert routing inside one model is confused
   with stack-level selection among separately qualified kernels, tools, human
   lanes, and authority envelopes.
+- **Control-topology conflation:** a fixed local/global layer schedule, learned
+  token-to-expert routing, and a caller-selected effort instruction are described
+  as one routing mechanism even though they have different state, observability,
+  intervention, failure, and governance contracts.
+- **Dormant-component laundering:** a configuration field such as the eight-layer
+  MTP block is treated as proof that the component is used in released serving or
+  causes a speed result without a documented execution path and matched trace.
 - **Open-weight accessibility laundering:** downloadable weights are treated as
   reproducible or broadly deployable despite the reported 600 GB to 2 TB VRAM
   requirements.
@@ -108,6 +126,10 @@ kernel by its complete topology and lifecycle rather than by one label such as
 - `governed-deliberation-and-test-time-scaling` — treat controllable model effort
   as an offered actuator whose budget, stopping, verification, corruption, and
   downstream authority still require external governance.
+- `fast-generation-architectures` — retain the configured eight-layer MTP block
+  as an unresolved implementation lead; do not claim multi-token decoding,
+  throughput, latency, or accepted-quality benefit until the served path is
+  observed and reproduced.
 - `resource-economics-and-token-budgets` — require total/active parameters,
   local/global attention mix, context used, numerics, hardware, memory, and
   complete effort curves rather than one benchmark operating point.
@@ -124,11 +146,14 @@ kernel by its complete topology and lifecycle rather than by one label such as
 
 - A cognitive-kernel capability card should name attention topology, local
   window, global cadence, positional mechanism, convolutional mixing, expert
-  topology, active and total parameters, modality encoders, mutable state,
-  context configured/served/tested, numerics, hardware envelope, and effort
-  control.
+  topology and dense exceptions, active and total parameters, modality
+  tokenization/frontends, mutable state, context configured/served/tested,
+  numerics, hardware envelope, auxiliary prediction blocks, and effort control.
 - Hybrid architectures require component and interaction ablations; a model-
   level score cannot identify which component supplied the gain.
+- Fixed composition, learned internal routing, caller-selected compute, and
+  stack-level kernel routing need separate receipts even when one deployed model
+  contains all four.
 - Internal expert routing and external stack routing are complementary but must
   retain separate candidate sets, costs, failure states, and authority.
 - Controllable reasoning effort becomes useful to the stack only through a
