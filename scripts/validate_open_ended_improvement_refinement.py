@@ -15,6 +15,7 @@ RESULT=ROOT/'experiments/open_ended_improvement_refinement/results/2026-07-16-lo
 COMMAND='python3 scripts/validate_open_ended_improvement_refinement.py'
 STAGES=['draft','scoped','generationBound','archiveBound','evaluated','adjudicated','governorBound']
 KINDS={'draft':'scopeCampaign','scoped':'bindGeneration','generationBound':'recordArchive','archiveBound':'recordEvaluation','evaluated':'adjudicateCampaign','adjudicated':'requestGovernorHandoff','governorBound':'triggerReadmission'}
+NEXT={'draft':'scoped','scoped':'generationBound','generationBound':'archiveBound','archiveBound':'evaluated','evaluated':'adjudicated','adjudicated':'governorBound','governorBound':'scoped'}
 ACCEPTED={'accept_scope','accept_generation_binding','accept_archive_record','accept_evaluation','accept_adjudication','accept_governor_handoff','accept_readmission'}
 IDENTITY={'campaignId','objectiveDigest','representationDigest','controllerDigest','taskPolicyDigest','candidatePolicyDigest','generatorDigest','evaluatorDigest','qualifierDigest','archiveDigest','budgetDigest','stopAuthorityDigest','hazardPolicyDigest','consumerDigest','authorityDigest','currentVersion'}
 GATES={
@@ -45,6 +46,39 @@ def route(stage:str,kind:str,p:dict[str,Any],last:int=0,version:int=1)->str:
    if p[field]!=version+1:return answer
   elif p[field] is False:return answer
  return {'draft':'accept_scope','scoped':'accept_generation_binding','generationBound':'accept_archive_record','archiveBound':'accept_evaluation','evaluated':'accept_adjudication','adjudicated':'accept_governor_handoff','governorBound':'accept_readmission'}[stage]
+
+def initial_state()->dict[str,Any]:
+ return {'stage':'draft','version':1,'last_event_digest':0,'receipt_count':0,'governor_handoff_count':0,'readmission_count':0,'support_assignment_count':0,'external_effect_count':0}
+
+def apply_event(state:dict[str,Any],kind:str,p:dict[str,Any])->tuple[dict[str,Any],str]:
+ answer=route(state['stage'],kind,p,state['last_event_digest'],state['version'])
+ if answer not in ACCEPTED:return dict(state),answer
+ out=dict(state);out['stage']=NEXT[state['stage']];out['last_event_digest']=p['eventDigest'];out['receipt_count']+=1
+ if answer=='accept_governor_handoff':out['governor_handoff_count']+=1
+ if answer=='accept_readmission':out['readmission_count']+=1;out['version']=p['successorVersion']
+ return out,answer
+
+def lifecycle(mutation_step:int=0,changes:dict[str,Any]|None=None)->tuple[dict[str,Any],list[str]]:
+ state=initial_state();routes=[]
+ for index,intended_stage in enumerate(STAGES,1):
+  p=packet();p['eventDigest']=index;p['currentVersion']=state['version']
+  if intended_stage=='governorBound':p['successorVersion']=state['version']+1
+  if index==mutation_step and changes:p.update(changes)
+  state,answer=apply_event(state,KINDS[intended_stage],p);routes.append(answer)
+ return state,routes
+
+def cross_stage_mutations()->list[dict[str,Any]]:
+ specs=[
+  ('budget_reset_blocks_handoff_and_readmission',3,{'cumulativeBudgetAcrossDescendants':False},'generationBound',2,0,0),
+  ('missing_stop_effect_blocks_handoff_and_readmission',5,{'stopEffectReceiptPresent':False},'evaluated',4,0,0),
+  ('candidate_authority_grant_blocks_handoff_and_readmission',6,{'noCandidateAuthorityGrantRecorded':False},'adjudicated',5,0,0),
+ ]
+ rows=[]
+ for mutation_id,step,changes,stage,receipts,handoffs,readmissions in specs:
+  state,routes=lifecycle(step,changes)
+  rejected=(state['stage']==stage and state['receipt_count']==receipts and state['governor_handoff_count']==handoffs and state['readmission_count']==readmissions and not any(route in ACCEPTED for route in routes[step-1:]))
+  rows.append({'mutation_id':mutation_id,'rejected':rejected,'terminal_stage':state['stage'],'receipt_count':state['receipt_count'],'governor_handoff_count':state['governor_handoff_count'],'readmission_count':state['readmission_count']})
+ return rows
 
 def run(command:str)->dict[str,Any]:
  p=subprocess.run(command.split(),cwd=ROOT,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
@@ -94,17 +128,19 @@ def build()->dict[str,Any]:
   p=packet()
   if field:p[field]=value
   mutations.append({'mutation_id':mid,'rejected':route(stage,kind,p) not in ACCEPTED})
- return {'schema_version':'asi_stack.open_ended_improvement_refinement.v1','result_id':'open-ended-improvement-refinement-2026-07-16-local','source_sha256':{'lean_model':hashlib.sha256(LEAN.read_bytes()).hexdigest(),'admission_result':hashlib.sha256(ADMISSION.read_bytes()).hexdigest(),'update_result':hashlib.sha256(UPDATE.read_bytes()).hexdigest(),'stopped_result':hashlib.sha256(STOPPED.read_bytes()).hexdigest()},'inherited_results':inherited_summary(),'reachable_stage_count':7,'route_case_count':len(cases),'route_coverage':cases,'mutation_count':len(mutations),'mutation_rejection_count':sum(x['rejected'] for x in mutations),'mutation_receipts':mutations,'command_receipts':[run('python3 scripts/validate_open_ended_improvement_campaign.py'),run('python3 scripts/validate_post_v2_update_causality.py'),run('python3 scripts/validate_post_v2_1_outcomes.py')],'witness':{'terminal_stage':'scoped','protocol_version':2,'receipt_count':7,'governor_handoff_count':1,'readmission_count':1,'support_assignment_count':0,'external_effect_count':0},'support_state_effect':'none','non_claims':['no adaptive task or candidate generator, evolving archive, or self-modifying controller ran','no objective legitimacy, evaluator independence, semantic novelty, usefulness, transfer, or hazard-control result','the inherited fixed stopped campaigns preserve null and narrow outcomes and do not establish open-ended improvement','no deployed stop, quarantine, rollback, admission, publication, or external effect','no capability, safety, readiness, support, SOTA, AGI, or ASI authority']}
+ full_state,full_routes=lifecycle();cross=cross_stage_mutations()
+ return {'schema_version':'asi_stack.open_ended_improvement_refinement.v1','result_id':'open-ended-improvement-refinement-2026-07-16-local','source_sha256':{'lean_model':hashlib.sha256(LEAN.read_bytes()).hexdigest(),'admission_result':hashlib.sha256(ADMISSION.read_bytes()).hexdigest(),'update_result':hashlib.sha256(UPDATE.read_bytes()).hexdigest(),'stopped_result':hashlib.sha256(STOPPED.read_bytes()).hexdigest()},'inherited_results':inherited_summary(),'reachable_stage_count':7,'route_case_count':len(cases),'route_coverage':cases,'mutation_count':len(mutations),'mutation_rejection_count':sum(x['rejected'] for x in mutations),'mutation_receipts':mutations,'composition_theorems':['open_ended_improvement_full_cycle_composes','open_ended_improvement_budget_reset_blocks_handoff_and_readmission'],'cross_stage_mutation_count':len(cross),'cross_stage_mutation_rejection_count':sum(x['rejected'] for x in cross),'cross_stage_mutation_receipts':cross,'command_receipts':[run('python3 scripts/validate_open_ended_improvement_campaign.py'),run('python3 scripts/validate_post_v2_update_causality.py'),run('python3 scripts/validate_post_v2_1_outcomes.py')],'witness':{'terminal_stage':full_state['stage'],'protocol_version':full_state['version'],'receipt_count':full_state['receipt_count'],'governor_handoff_count':full_state['governor_handoff_count'],'readmission_count':full_state['readmission_count'],'support_assignment_count':full_state['support_assignment_count'],'external_effect_count':full_state['external_effect_count'],'accepted_route_count':sum(x in ACCEPTED for x in full_routes)},'support_state_effect':'none','non_claims':['no adaptive task or candidate generator, evolving archive, or self-modifying controller ran','no objective legitimacy, evaluator independence, semantic novelty, usefulness, transfer, or hazard-control result','the inherited fixed stopped campaigns preserve null and narrow outcomes and do not establish open-ended improvement','no deployed stop, quarantine, rollback, admission, publication, or external effect','no capability, safety, readiness, support, SOTA, AGI, or ASI authority']}
 
 def main()->None:
  a=argparse.ArgumentParser();a.add_argument('--write',action='store_true');args=a.parse_args();result=build();errors=[]
  if result['route_case_count']!=81:errors.append('route count drifted')
  if result['mutation_count']!=91 or result['mutation_rejection_count']!=91:errors.append('mutation contract drifted')
- for needle in ('inductive Stage','def routeFor','open_ended_improvement_lifecycle_routes'):
+ if result['cross_stage_mutation_count']!=3 or result['cross_stage_mutation_rejection_count']!=3:errors.append('cross-stage mutation contract drifted')
+ for needle in ('inductive Stage','def routeFor','open_ended_improvement_lifecycle_routes','open_ended_improvement_full_cycle_composes','open_ended_improvement_budget_reset_blocks_handoff_and_readmission'):
   if needle not in LEAN.read_text():errors.append('Lean model missing '+needle)
  jsonschema.validate(result,json.loads(SCHEMA.read_text()));serialized=json.dumps(result,indent=2)+'\n'
  if args.write:RESULT.parent.mkdir(parents=True,exist_ok=True);RESULT.write_text(serialized)
  elif not RESULT.exists() or RESULT.read_text()!=serialized:errors.append(f'{RESULT.relative_to(ROOT)} is stale; run {COMMAND} --write')
  if errors:print('Open-ended improvement refinement failed:\n - '+'\n - '.join(errors));sys.exit(1)
- print('Open-ended improvement refinement passed: 3 inherited suites, 7 stages, 81 routes, 91/91 mutations rejected, support effect none.')
+ print('Open-ended improvement refinement passed: 3 inherited suites, 7-stage composed lifecycle, 81 routes, 91/91 route mutations and 3/3 cross-stage mutations rejected, support effect none.')
 if __name__=='__main__':main()

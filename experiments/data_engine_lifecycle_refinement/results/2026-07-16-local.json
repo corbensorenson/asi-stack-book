@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.data_engine_lifecycle_refinement.v1",
   "result_id": "data-engine-lifecycle-refinement-2026-07-16-local",
   "source_sha256": {
-    "lean_model": "8677af0f1d2b3376009ecfaf87c99d1b92b96e72a4e86d2da5b4dbd54fee1fb2",
+    "lean_model": "cc4081f88b1065674157506f546ea4ec260f9699b623e0c82d86498165c62e03",
     "admission_result": "c37f0fb1f668ddf1452bcf08d951ccbafd431fa8c02312163358ac7b4b422521",
     "full_state_result": "dd7c89ca6f3ae3812f34f955c84e1959a70631f38f8841b80e3265c763d327e6",
     "update_result": "4bb8aec5648e01da1d01ad68420849e2dcf93e18b2f9936266c74890ad0ec3ef"
@@ -751,6 +751,38 @@
       "rejected": true
     }
   ],
+  "composition_theorems": [
+    "data_engine_full_cycle_composes",
+    "data_engine_axis_laundering_blocks_custody_and_readmission"
+  ],
+  "cross_stage_mutation_count": 3,
+  "cross_stage_mutation_rejection_count": 3,
+  "cross_stage_mutation_receipts": [
+    {
+      "mutation_id": "behavior_as_influence_blocks_custody_and_readmission",
+      "rejected": true,
+      "terminal_stage": "deletionAssessed",
+      "receipt_count": 5,
+      "bounded_custody_count": 0,
+      "readmission_count": 0
+    },
+    {
+      "mutation_id": "lineage_as_storage_blocks_custody_and_readmission",
+      "rejected": true,
+      "terminal_stage": "deletionAssessed",
+      "receipt_count": 5,
+      "bounded_custody_count": 0,
+      "readmission_count": 0
+    },
+    {
+      "mutation_id": "incomplete_descendant_invalidation_blocks_readmission",
+      "rejected": true,
+      "terminal_stage": "custodyBound",
+      "receipt_count": 7,
+      "bounded_custody_count": 1,
+      "readmission_count": 0
+    }
+  ],
   "command_receipts": [
     {
       "command": "python3 scripts/validate_data_admission_receipt_probe.py",
@@ -775,7 +807,8 @@
     "bounded_custody_count": 1,
     "readmission_count": 1,
     "support_assignment_count": 0,
-    "external_effect_count": 0
+    "external_effect_count": 0,
+    "accepted_route_count": 8
   },
   "support_state_effect": "none",
   "non_claims": [

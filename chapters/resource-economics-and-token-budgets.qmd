@@ -4,7 +4,7 @@ chapter_id: "resource-economics-and-token-budgets"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-14"
+last_updated: "2026-07-16"
 primary_sources:
   - "tokenmana"
   - "planforge"
@@ -22,6 +22,7 @@ primary_sources:
   - "ext_recurrent_transformer_2026"
   - "ext_dynamic_compute_recurrent_transformers_2026"
   - "ext_claw_swe_bench_2026"
+  - "reflexive_router_whitepaper"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -40,11 +41,11 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
 | Last updated | 2026-07-14 |
-| Primary source records | all 16 manifest-assigned resource, simulation, serving, memory, recurrent-compute, verification, and harness comparators |
+| Primary source records | all 17 manifest-assigned resource, simulation, serving, memory, recurrent-compute, verification, routing-economics, and harness records |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `tokenmana`, `planforge`; supporting: the local resource/simulation lineage; external comparators: PagedAttention, Reluplex, Mem0, Recurrent Transformer, Dynamic Compute, and Claw-SWE-Bench |
-| Source loading state | exact passage-reviewed mappings exist for all 16 assigned sources; local and external results remain source-scoped unless a named repository artifact independently supports them. |
+| Source queue | primary: `tokenmana`, `planforge`; supporting: the local resource/simulation lineage and `reflexive_router_whitepaper`; external comparators: PagedAttention, Reluplex, Mem0, Recurrent Transformer, Dynamic Compute, and Claw-SWE-Bench |
+| Source loading state | exact passage-reviewed mappings exist for all 17 assigned sources; local and external results remain source-scoped unless a named repository artifact independently supports them. |
 | Test state | `resource_budget_record.valid.json` and `simulation_contract_record.valid.json` pass repository-level protocol fixture validation; `python3 scripts/validate_generation_mode_baselines.py` checks paired generation-mode/resource-budget fixture alignment; `python3 scripts/validate_costed_route_resource_slice.py` checks the four-route costed selector against JSON costs, eligibility fields, negative controls, a finite Lean selector-state trace theorem, and the tracked result's field-level Python/Lean alignment record; `python3 scripts/validate_resource_budget_ledgers.py` checks 6 valid and 7 expected-invalid deterministic budget-ledger dispatch, escalation, protected-overhead, security-overhead erasure rejection, displaced-cost residualization, review-capacity hoarding, KV-cache/serving-memory accounting separation, throughput-to-quality overclaim rejection, evidence-ref, and no-promotion scenarios; `python3 scripts/validate_capacity_smoothing.py` checks 3 valid and 6 expected-invalid toy capacity traces for bounded regeneration arithmetic, priority deferral, reviewer-capacity arithmetic, protected-review overhead, displaced-review-cost residualization, overload rejection, Lean bridge coverage, and no-promotion boundaries; `python3 scripts/validate_resource_workflow_trace.py` checks 1 valid and 5 expected-invalid deterministic workflow fixtures for selected-route cost recomputation, scheduler ordering, protected high-risk review, displaced-cost residuals, capacity-budget-overrun rejection, physical-feasibility overclaim rejection, no-promotion boundaries, and the tracked result's trace-property Python/Lean alignment record over finite dispatch events, rollup totals, high-risk-first order, guard flags, over-budget rejection, and no-promotion boundaries; `python3 scripts/validate_resource_live_probe.py` replays 5 local Resource Economics validators and checks command-output digests plus tracked artifact hashes without creating a support-state transition; `python3 scripts/validate_resource_workload_quality_probe.py` checks 3 local route candidates across 5 measured samples each for a scoped workflow-trace review task, selects `validate_resource_workflow_trace.py` over the broader Resource live-probe baseline by median elapsed time, rejects a cheaper no-op success-text route, records residuals, and preserves no-promotion boundaries; `python3 scripts/validate_resource_load_stability_probe.py` checks a 10-task local synthetic burst-review workload across admit-arrivals, protected capacity-smoothing, and review-erasure routes, verifies 100.0 percent selected-vs-baseline finite overload reduction, 7 residualized selected deferrals, 3 review-erasure negative-control violations, Lean fixture alignment, and no-promotion boundaries; `python3 scripts/validate_resource_ci_cost_profile.py` checks 8 recorded GitHub Pages runs, 8 completed runs, 5 successful completed runs, 3 classified deploy-service failures, a 131-second recovery boundary, finite Lean fixture alignment, duration metrics, and no-transition boundaries as publication-pipeline metadata only; `python3 scripts/validate_simulation_transfer_boundaries.py` checks 3 valid and 6 expected-invalid simulation-transfer fixtures for fidelity declaration, resource bills, bottlenecks, omissions, approximation liberties, instrumentation effects, transfer decisions, residual/downgrade behavior, and support-state non-promotion; `python3 scripts/validate_resource_flagship_lane.py` now also checks an aggregate Python/Lean flagship invariant over 10 command replays, 26 tracked artifacts, 3 accepted narrow transitions, 5 no-promotion decisions, preserved negative controls, residuals, non-claims, and the no-core-promotion/no-new-transition boundary; `AsiStackProofs.ResourceEconomics` and `AsiStackProofs.SimulationFidelity` implement finite record-level predicates plus negative cases for disabled required gates, high-risk insufficient-budget dispatch, finite selector-state trace selection, finite workflow event rollup/order/guard preservation, finite capacity-smoothing reviewer trace guards, aggregate serving-throughput quality overclaim rejection, aggregate flagship replay accounting, CI failure-classification accounting, missing simulation scope, and fidelity overclaim; deployed scheduler, real load-stability, verification-tax optimization, KV-cache behavior, serving throughput, single-request quality, physical-feasibility, runtime security-budget enforcement, reviewer-capacity optimization, displaced-cost measurement, stable speedup, external workload-quality review, and live cost-quality tests remain planned. |
 
 One narrow non-core import has moved: the Theseus simulation-fidelity receipt suite import, `resource-economics.simulation_fidelity_receipt_suite_import`, is `prototype-backed` through `python3 scripts/validate_theseus_simulation_fidelity_receipt_suite_import.py`. It records a public-safe digest-and-count summary of 5/5 passed fixture scenarios, six simulation contract records, six fidelity records, six world-adapter receipts, six evidence-transition records, six failure-boundary records, one blocked transfer, one downgraded claim, one scenario-only record, and seven expected-invalid controls. It does not prove simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment, live simulator behavior, model quality, economic outcome, learned generation, clean live Project Theseus replay, or any chapter-core support-state promotion.
@@ -229,6 +230,47 @@ flowchart LR
 **Reading the claim-transport gate:** A simulation output is not promoted merely because it came from a simulator. It moves only after scope, fidelity, temporal semantics, resources, bottlenecks, omissions, and transfer are explicit. Failed transfer is still useful: it becomes a downgrade, residual, reduced-scope test, or blocked claim rather than hidden evidence inflation.
 
 This fold preserves the old simulation-fidelity chapter's restoration condition. Simulation Fidelity and Physical Constraints should be restored as a standalone chapter if public-safe artifacts create a distinct evidence lane: a feasibility calculator, physical-computation audit, simulation benchmark with negative controls, executable simulator evidence tied to a `Simulation Contract Record`, or independent external review showing that the simulation contract is too central to remain a section inside resource economics.
+
+### Minimum sufficient compute is a qualified frontier
+
+The Reflexive Router turns “use the cheapest mechanism” into a constrained
+selection rule. Let route proposals carry a generalized cost vector over
+latency, model and tool compute, memory, energy, money, verification,
+monitoring, human work, governance, recovery, opportunity cost, and residual
+risk. The optimizer may compare those costs only after capability, freshness,
+authority, rights, quality, verifier, effect, fallback, and resource
+obligations qualify the route. A cheap inadmissible route is not on the
+frontier.
+
+This distinction changes fast-path accounting. Raw reflex coverage can rise
+when a router overuses easy rules, refuses difficult work, or omits expensive
+verification. A useful ledger must retain qualified coverage, useful outcome
+rate, wrong-fast-path rate, selective risk, route regret against the best
+qualified alternative, abstention and fallback, verification escape,
+unauthorized effects, recovery, and displaced work beside latency and cost.
+
+The paper proposes “Useful Reflex Efficiency” as a synthesis metric, but this
+chapter treats it only as a view over non-collapsible measures. No scalar may
+hide zero useful throughput, unsafe release, false refusal, verifier burden,
+monitoring cost, human burden, energy, or residual risk. Pareto analysis and
+claim-specific floors remain authoritative; a system that is faster because it
+discarded governance has not demonstrated minimum sufficient compute.
+
+The source includes illustrative budgets and launch gates, not measured
+resource results. Its economics therefore strengthens the natural campaign and
+cost ledger while leaving the core at `argument`.
+
+### P4/M6 bounded cost record
+
+All eight routing policies consumed the same closed candidate bytes and share
+32 local model calls and 1,148.660632 seconds of generation. Useful Reflex
+Efficiency therefore appears only beside useful-outcome, wrong-fast-path, and
+unsafe-output denominators. The run measured no calibrated energy; zero
+marginal API charge excludes hardware, electricity, and operator time; human
+scoring was automated internal evaluation; and displaced work was not
+estimable. Those missing burdens block any acceptable-cost or deployment
+claim, even though the full policy's useful outcomes per shared model call were
+higher on this one authored corpus.
 
 ## Interfaces
 
@@ -440,6 +482,7 @@ Across the two folded modules, fifty-eight theorem declarations are present: for
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
+| `reflexive_router_whitepaper` | The Reflexive Router | pre_deliberative_reflexive_routing_control_plane | Qualification-before-cost optimization, generalized route cost, Useful Reflex Efficiency as a non-authoritative synthesis, route regret, displaced work, and joint usefulness/safety/cost accounting. | complete Corben-authored v1.2 paper passage-reviewed; proposed targets only, no measured efficiency result |
 | `tokenmana` | TokenMana | resource_economics | Regenerative capacity mechanisms for load-stable token pricing. | source note available; local raw cache available |
 | `planforge` | PlanForge | planning_control | Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage. | source note available; local raw cache available |
 | `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. | source note available; connector or recovery required |
@@ -463,6 +506,7 @@ These rows keep Resource Economics and Token Budgets's manifest assignments visi
 | Source | Intake role | Boundary |
 |---|---|---|
 | `ext_claw_swe_bench_2026` | Passage-reviewed comparator: Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks. Supports binding coding-agent outcomes to a fixed model, harness, workspace, patch extraction, evaluator, runtime budget, and cost rather than attributing a harness result to the model alone. | Primary preprint comparator only; no reported task, score, harness, cost, contamination control, or safety result was reproduced here. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 measured governance cost
@@ -525,6 +569,25 @@ validates the harness boundary only. It is not evidence of model quality,
 production rollback, acceptable governance cost, useful governed throughput,
 or the resource-economics core claim. The accepted transition is
 `evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json`.
+
+## P4/M5 informative-regime result
+
+The successor protocol repaired the measurement regime rather than erasing the
+zero-output result. A prospectively pooled tuning sequence admitted 32/40
+candidates and populated all useful-safe, useful-unsafe, useless-safe, and
+useless-unsafe cells. A disjoint 16-task held-out run then admitted 15
+candidates with zero evaluator disagreement. Full governance released 9 useful
+and 0 unsafe candidates; candidate self-release and record-only released none.
+Removing evidence freshness produced one additional useful-unsafe release.
+
+This establishes a bounded local governance-policy effect, but not an economic
+optimum. The primary gate did not require a latency, energy, dollar, human-
+effort, or displaced-work advantage, and the baseline's zero release makes its
+opportunity cost unusually high. The result therefore moves one non-core claim
+to `synthetic-test-backed` while leaving the resource-economics core at
+`argument`. A proper cost claim still needs matched strong baselines that
+release useful work, repeated timing and energy measurement, operator burden,
+uncertainty, and transfer.
 
 ## Summary
 

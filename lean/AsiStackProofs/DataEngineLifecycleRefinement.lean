@@ -367,6 +367,60 @@ def canonicalState (stage : Stage) : State := {
   receiptCount := 0, boundedCustodyCount := 0, readmissionCount := 0,
   supportAssignmentCount := 0, externalEffectCount := 0 }
 
+def canonicalLifecycleState : State :=
+  let s1 := (applyEvent (canonicalState .draft) .scopeCustody
+    { canonicalPacket with eventDigest := 1 }).1
+  let s2 := (applyEvent s1 .admitData
+    { canonicalPacket with eventDigest := 2 }).1
+  let s3 := (applyEvent s2 .bindFullState
+    { canonicalPacket with eventDigest := 3 }).1
+  let s4 := (applyEvent s3 .recordUpdate
+    { canonicalPacket with eventDigest := 4 }).1
+  let s5 := (applyEvent s4 .assessDeletion
+    { canonicalPacket with eventDigest := 5 }).1
+  let s6 := (applyEvent s5 .adjudicateClaims
+    { canonicalPacket with eventDigest := 6 }).1
+  let s7 := (applyEvent s6 .bindCustody
+    { canonicalPacket with eventDigest := 7 }).1
+  (applyEvent s7 .triggerReadmission
+    { canonicalPacket with eventDigest := 8, successorVersion := 2 }).1
+
+def influenceLaunderingBlockedLifecycleState : State :=
+  let s1 := (applyEvent (canonicalState .draft) .scopeCustody
+    { canonicalPacket with eventDigest := 1 }).1
+  let s2 := (applyEvent s1 .admitData
+    { canonicalPacket with eventDigest := 2 }).1
+  let s3 := (applyEvent s2 .bindFullState
+    { canonicalPacket with eventDigest := 3 }).1
+  let s4 := (applyEvent s3 .recordUpdate
+    { canonicalPacket with eventDigest := 4 }).1
+  let s5 := (applyEvent s4 .assessDeletion
+    { canonicalPacket with eventDigest := 5 }).1
+  let s6 := (applyEvent s5 .adjudicateClaims
+    { canonicalPacket with eventDigest := 6, behaviorUsedAsInfluenceEvidence := true }).1
+  let s7 := (applyEvent s6 .bindCustody
+    { canonicalPacket with eventDigest := 7 }).1
+  (applyEvent s7 .triggerReadmission
+    { canonicalPacket with eventDigest := 8, successorVersion := 2 }).1
+
+theorem data_engine_full_cycle_composes :
+    canonicalLifecycleState.stage = .scoped ∧
+    canonicalLifecycleState.version = 2 ∧
+    canonicalLifecycleState.receiptCount = 8 ∧
+    canonicalLifecycleState.boundedCustodyCount = 1 ∧
+    canonicalLifecycleState.readmissionCount = 1 ∧
+    canonicalLifecycleState.supportAssignmentCount = 0 ∧
+    canonicalLifecycleState.externalEffectCount = 0 := by native_decide
+
+theorem data_engine_axis_laundering_blocks_custody_and_readmission :
+    influenceLaunderingBlockedLifecycleState.stage = .deletionAssessed ∧
+    influenceLaunderingBlockedLifecycleState.version = 1 ∧
+    influenceLaunderingBlockedLifecycleState.receiptCount = 5 ∧
+    influenceLaunderingBlockedLifecycleState.boundedCustodyCount = 0 ∧
+    influenceLaunderingBlockedLifecycleState.readmissionCount = 0 ∧
+    influenceLaunderingBlockedLifecycleState.supportAssignmentCount = 0 ∧
+    influenceLaunderingBlockedLifecycleState.externalEffectCount = 0 := by native_decide
+
 theorem data_engine_lifecycle_routes :
     routeFor (canonicalState .draft) .scopeCustody
         { canonicalPacket with provenancePresent := false } = .requestProvenance ∧

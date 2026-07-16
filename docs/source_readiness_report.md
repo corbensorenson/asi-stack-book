@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 38
 - `connector_readable`: 7
 - `source_note_available_public_project`: 18
-- `source_note_available_uncached`: 248
+- `source_note_available_uncached`: 251
 
 ## Records
 
@@ -295,6 +295,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_unlearning_benchmarks_weak_2024` | Position: LLM Unlearning Benchmarks are Weak Measures of Progress | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_openunlearning_2025` | OpenUnlearning: Accelerating LLM Unlearning via Unified Benchmarking of Methods and Metrics | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `qcsa_whitepaper` | Question-Compiled Semantic Addressing | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `reflexive_router_whitepaper` | The Reflexive Router: A Pre-Deliberative Architecture for Fast, Governed, Tool-Native Intelligence | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_faithfulness_information_flow_2026` | Faithfulness as Information Flow: Evaluating and Training Faithful Chain-of-Thought Reasoning | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_monitorbench_2026` | MonitorBench: A Comprehensive Benchmark for Chain-of-Thought Monitorability in Large Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_v_jepa_2_2025` | V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
@@ -308,6 +309,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_mamba2_ssd_2024` | Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_s4_2022` | Efficiently Modeling Long Sequences with Structured State Spaces | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_mamba3_2026` | Mamba-3: Improved Sequence Modeling using State Space Principles | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_hyperscale_lottery_2026` | The Hyperscale Lottery: How State-Space Models Have Sacrificed Edge Efficiency | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_gated_deltanet_2024` | Gated Delta Networks: Improving Mamba2 with Delta Rule | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_jamba_2024` | Jamba: A Hybrid Transformer-Mamba Language Model | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_neural_message_passing_2017` | Neural Message Passing for Quantum Chemistry | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
@@ -326,3 +328,4 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_tiny_autoregressive_recursive_models_2026` | Tiny Autoregressive Recursive Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_unimatrix_2026` | Associative-State Universal Transformers: Sparse Retrieval Meets Structured Recurrence | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_memory_caching_2026` | Memory Caching: RNNs with Growing Memory | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_inkling_2026` | Inkling: Our open-weights model | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |

@@ -3,7 +3,7 @@
   "title": "ASI Stack data-engine lifecycle refinement result",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "result_id", "source_sha256", "inherited_results", "reachable_stage_count", "route_case_count", "route_coverage", "mutation_count", "mutation_rejection_count", "mutation_receipts", "command_receipts", "witness", "support_state_effect", "non_claims"],
+  "required": ["schema_version", "result_id", "source_sha256", "inherited_results", "reachable_stage_count", "route_case_count", "route_coverage", "mutation_count", "mutation_rejection_count", "mutation_receipts", "composition_theorems", "cross_stage_mutation_count", "cross_stage_mutation_rejection_count", "cross_stage_mutation_receipts", "command_receipts", "witness", "support_state_effect", "non_claims"],
   "properties": {
     "schema_version": {"const": "asi_stack.data_engine_lifecycle_refinement.v1"},
     "result_id": {"const": "data-engine-lifecycle-refinement-2026-07-16-local"},
@@ -15,8 +15,12 @@
     "mutation_count": {"const": 96},
     "mutation_rejection_count": {"const": 96},
     "mutation_receipts": {"type": "array", "minItems": 96, "maxItems": 96, "items": {"type": "object", "required": ["mutation_id", "rejected"], "properties": {"mutation_id": {"type": "string"}, "rejected": {"const": true}}, "additionalProperties": false}},
+    "composition_theorems": {"const": ["data_engine_full_cycle_composes", "data_engine_axis_laundering_blocks_custody_and_readmission"]},
+    "cross_stage_mutation_count": {"const": 3},
+    "cross_stage_mutation_rejection_count": {"const": 3},
+    "cross_stage_mutation_receipts": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "additionalProperties": false, "required": ["mutation_id", "rejected", "terminal_stage", "receipt_count", "bounded_custody_count", "readmission_count"], "properties": {"mutation_id": {"type": "string"}, "rejected": {"const": true}, "terminal_stage": {"enum": ["deletionAssessed", "custodyBound"]}, "receipt_count": {"type": "integer", "minimum": 5, "maximum": 7}, "bounded_custody_count": {"type": "integer", "minimum": 0, "maximum": 1}, "readmission_count": {"const": 0}}}},
     "command_receipts": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "required": ["command", "exit_code", "output_sha256"], "properties": {"command": {"type": "string"}, "exit_code": {"const": 0}, "output_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": false}},
-    "witness": {"type": "object", "additionalProperties": false, "required": ["terminal_stage", "protocol_version", "receipt_count", "bounded_custody_count", "readmission_count", "support_assignment_count", "external_effect_count"], "properties": {"terminal_stage": {"const": "scoped"}, "protocol_version": {"const": 2}, "receipt_count": {"const": 8}, "bounded_custody_count": {"const": 1}, "readmission_count": {"const": 1}, "support_assignment_count": {"const": 0}, "external_effect_count": {"const": 0}}},
+    "witness": {"type": "object", "additionalProperties": false, "required": ["terminal_stage", "protocol_version", "receipt_count", "bounded_custody_count", "readmission_count", "support_assignment_count", "external_effect_count", "accepted_route_count"], "properties": {"terminal_stage": {"const": "scoped"}, "protocol_version": {"const": 2}, "receipt_count": {"const": 8}, "bounded_custody_count": {"const": 1}, "readmission_count": {"const": 1}, "support_assignment_count": {"const": 0}, "external_effect_count": {"const": 0}, "accepted_route_count": {"const": 8}}},
     "support_state_effect": {"const": "none"},
     "non_claims": {"type": "array", "minItems": 6, "items": {"type": "string"}}
   }

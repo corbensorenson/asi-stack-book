@@ -4,7 +4,7 @@ chapter_id: "claim-ledgers-and-belief-revision"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-15"
+last_updated: "2026-07-16"
 primary_sources:
   - "spinoza"
   - "viea"
@@ -24,6 +24,7 @@ primary_sources:
   - "bugbrain_project"
   - "corbens_best_model_possible_project"
   - "qcsa_whitepaper"
+  - "reflexive_router_whitepaper"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -42,11 +43,11 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
 | Last updated | 2026-07-15 |
-| Primary source records | `spinoza`, `viea`, `coherence_exchange`, `aletheia`, `uat`, `ext_agm_belief_revision_1985`, `ext_truth_maintenance_system_1979`, `ext_assumption_based_tms_1986`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_checklist_2020`, `ext_w3c_prov_o_2013`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project`, `qcsa_whitepaper` |
+| Primary source records | `spinoza`, `viea`, `coherence_exchange`, `aletheia`, `uat`, `ext_agm_belief_revision_1985`, `ext_truth_maintenance_system_1979`, `ext_assumption_based_tms_1986`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_checklist_2020`, `ext_w3c_prov_o_2013`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project`, `qcsa_whitepaper`, `reflexive_router_whitepaper` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `spinoza`, `viea`; supporting: `coherence_exchange`, `aletheia`, `uat`, and five historical projects; external comparators: AGM, TMS, ATMS, ALCE, Self-RAG, CheckList, and PROV-O; local semantic-addressing lineage: QCSA |
-| Source loading state | all 18 source notes inspected and mapped; passage-reviewed local raw cache: `spinoza`, `viea`, `aletheia`, `uat`; source-note/connector boundary: `coherence_exchange`; public-safe pinned notes: five historical projects and QCSA; bounded primary-record or primary-paper notes: seven external comparators |
+| Source queue | primary: `spinoza`, `viea`; supporting: `coherence_exchange`, `aletheia`, `uat`, five historical projects, and `reflexive_router_whitepaper`; external comparators: AGM, TMS, ATMS, ALCE, Self-RAG, CheckList, and PROV-O; local semantic-addressing lineage: QCSA |
+| Source loading state | all 19 source notes inspected and mapped; passage-reviewed local raw cache: `spinoza`, `viea`, `aletheia`, `uat`, `reflexive_router_whitepaper`; source-note/connector boundary: `coherence_exchange`; public-safe pinned notes: five historical projects and QCSA; bounded primary-record or primary-paper notes: seven external comparators |
 | Test state | Exact authored refinement: 5 valid/7 rejecting revision fixtures; 1 valid/11 rejecting historical lifecycle fixtures; 5 reachable stages, 17 routes, and 29/29 rejected lifecycle mutations; 12 refinement declarations under 4 public targets, with 16 weak baseline declarations retired and 4 bounded legacy lemmas retained. No open-domain extractor, natural workload, semantic-equivalence or contradiction-quality evaluator, concurrent ledger, natural migration or surface synchronizer, independent reviewer, useful advantage, or chapter-core support effect. |
 
 ## Drafting guardrail
@@ -310,6 +311,37 @@ held-out labels were constructed from the same finite fixture family, and no
 natural contradictory corpus or independent truth adjudication was used. The
 claim ledger remains the only owner of support-state movement, and this core
 claim remains at `argument`.
+
+### Chronicle records and bitemporal correction
+
+The Reflexive Router proposes a Chronicle as the temporal substrate consulted
+by routing, but the claim ledger must prevent it from collapsing unlike record
+types. An event says something happened or was observed; a state says what held
+over an interval; a claim says what is asserted; a plan says what is intended;
+a prediction says what is expected; and a counterfactual says what would have
+happened under another condition. Sharing an entity ID does not make these
+objects interchangeable.
+
+Every Chronicle-bearing claim or observation carries valid time and
+transaction time separately. A correction may reveal today that a state was
+different last week without rewriting what the system believed yesterday.
+Supersession, contradiction, retraction, expiry, and unresolved conflict remain
+append-only transitions with provenance, derivation, epistemic status, and
+affected-consumer closure. Routing may consume a current materialized view, but
+the view must retain the ledger and Chronicle refs that make later replay and
+invalidation possible.
+
+Typed result packets can append observations and proposed claims, yet they do
+not settle either. A verifier receipt, tool return, model confidence, or
+fluent rendering can itself be wrong. Claim admission still requires the
+chapter's evidence and review gates; conflicting records remain visible rather
+than being resolved by recency alone. Poisoned Chronicle updates, future-dated
+facts, stale transaction epochs, and circular derivations are explicit attack
+classes for the routing campaign.
+
+The paper supplies this record separation and threat model as design rationale.
+It supplies no implemented Chronicle, temporal-accuracy result, or independent
+belief-revision evidence, so support remains `argument`.
 
 ## Interfaces
 
@@ -595,6 +627,7 @@ chapter-core support.
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
+| `reflexive_router_whitepaper` | The Reflexive Router | pre_deliberative_reflexive_routing_control_plane | Chronicle separation of events, states, claims, plans, predictions, and counterfactuals; valid/transaction time; correction, contradiction, poisoning, and consumer invalidation. | complete Corben-authored v1.2 paper passage-reviewed; no implemented Chronicle or temporal result |
 | `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | passage-reviewed local raw cache |
 | `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | passage-reviewed local raw cache |
 | `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. | source note available; connector or recovery required |

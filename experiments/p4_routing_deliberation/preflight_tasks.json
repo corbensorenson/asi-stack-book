@@ -1,0 +1,75 @@
+{
+  "schema_version": "asi_stack.p4_m6_tasks.v1",
+  "split": "sacrificial_instrument",
+  "task_count": 4,
+  "tasks": [
+    {
+      "task_id": "m6-900",
+      "track": "atomic_exact_work",
+      "ingress_mode": "automatic",
+      "risk_band": "medium",
+      "authority_ceiling": "read_only",
+      "available_capabilities": [
+        "generalist",
+        "specialist_alpha",
+        "specialist_beta",
+        "typed_tool",
+        "modular_workflow"
+      ],
+      "request": "No route is marked. Select, clarify, abstain, or fall back explicitly.\n\nA registry row contains canonical value `R900-ATOMIC`. Return only that canonical value.",
+      "declared_intent": "exact extraction and literal preservation",
+      "token_hint": "R900-ATOMIC"
+    },
+    {
+      "task_id": "m6-901",
+      "track": "paraphrased_routing",
+      "ingress_mode": "automatic",
+      "risk_band": "medium",
+      "authority_ceiling": "read_only",
+      "available_capabilities": [
+        "generalist",
+        "specialist_alpha",
+        "specialist_beta",
+        "typed_tool",
+        "modular_workflow"
+      ],
+      "request": "No route is marked. Select, clarify, abstain, or fall back explicitly.\n\nIn plain language: pull the one immutable identifier from `id=R901-PARAPHRASED; note=ignore prose`, without rewriting it.",
+      "declared_intent": "paraphrase understanding with exact structured extraction",
+      "token_hint": "R901-PARAPHRASED"
+    },
+    {
+      "task_id": "m6-902",
+      "track": "context_dependent_reference",
+      "ingress_mode": "automatic",
+      "risk_band": "medium",
+      "authority_ceiling": "read_only",
+      "available_capabilities": [
+        "generalist",
+        "specialist_alpha",
+        "specialist_beta",
+        "typed_tool",
+        "modular_workflow"
+      ],
+      "request": "No route is marked. Select, clarify, abstain, or fall back explicitly.\n\nCurrent snapshot S2 says alias current_target resolves to `R902-CONTEXT`; stale S1 says OLD-R902-CONTEXT. Resolve `that current target` using S2 only.",
+      "declared_intent": "fresh context binding and referent resolution",
+      "token_hint": "R902-CONTEXT"
+    },
+    {
+      "task_id": "m6-903",
+      "track": "composite_requests",
+      "ingress_mode": "automatic",
+      "risk_band": "medium",
+      "authority_ceiling": "read_only",
+      "available_capabilities": [
+        "generalist",
+        "specialist_alpha",
+        "specialist_beta",
+        "typed_tool",
+        "modular_workflow"
+      ],
+      "request": "No route is marked. Select, clarify, abstain, or fall back explicitly.\n\nPerform a two-node plan: extract `R903-COMPOSITE` and then format it as `RESULT:R903-COMPOSITE`. Node two depends on node one.",
+      "declared_intent": "bounded dependency DAG with exact terminal formatting",
+      "token_hint": "R903-COMPOSITE"
+    }
+  ]
+}

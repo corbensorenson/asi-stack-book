@@ -305,7 +305,9 @@ synthetic routing samples, two holdouts, five candidate policies, three
 expected-invalid candidates, one selected canary kept experimental, and one
 fixture-only rollback dry run. Eleven useful legacy contradiction and route
 theorems now sit inside a seven-stage, 63-route update lifecycle checked by an
-independent consumer with 73/73 rejecting mutations. The adjacent anti-Goodhart
+independent consumer with 73/73 route and 3/3 cross-stage mutations rejected.
+Two composition theorems derive the complete cycle and a failed-evaluation
+prefix. The adjacent anti-Goodhart
 harness belongs to Benchmark Ratchets. No optimizer, model, live router,
 natural workload, preference dataset, reward model, real canary, deployed
 rollback, causal improvement, independent reproduction, or transfer ran. The
@@ -317,7 +319,7 @@ The fixture records update state, target layer, policy ref, policy delta summary
 
 The Policy update lease probe at `experiments/policy_update_lease/results/2026-07-02-local.json` is the first bounded rehearsal of the lease idea. It uses six synthetic router-policy samples, five candidate policies, one selected source-grounded canary kept experimental, and three expected-invalid controls: a reward-only fast route, an authority-expanding route, and a missing-rollback route. The validator checks holdout coverage, contamination check presence, reward-hacking probes, unchanged authority, rollback plan, residuals, and non-claims, then injects a synthetic monitor event and records that the dry-run rollback restores the baseline policy. This is a deterministic fixture only: it is no PPO, DPO, GRPO, RLVR, router-policy, context-policy, execution-policy, verifier-policy, or reasoning-budget training run, and it is not a deployed canary, live rollback, route-quality result, reward-quality result, policy-improvement result, or support-state transition.
 
-The update-lifecycle refinement at `experiments/policy_optimization_refinement/results/2026-07-16-local.json` reruns that exact lease probe through a separately implemented consumer, then reaches all 63 routes across scope, full training-state binding, update receipt, independent evaluation, adjudication, bounded lease, and material-change readmission. It binds model and candidate checkpoints together with optimizer, scheduler, RNG, cache, backup, descendant, evaluator, rollback, consumer, authority, and version identities; it also requires target evaluation, a strong baseline, causal ablation, reward-hacking probes, regressions, forgetting, safety and rights checks, uncertainty, monitoring, effect-complete rollback, and descendant invalidation. All 73 registered mutations reject, and the complete witness emits one bounded lease before version-2 readmission. These are authored record consequences, not evidence that any field is true or effective: no training, learning, reward validation, causal improvement, live rollback, monitoring, reproduction, transfer, release, or support transition occurred.
+The update-lifecycle refinement at `experiments/policy_optimization_refinement/results/2026-07-16-local.json` reruns that exact lease probe through a separately implemented consumer, then reaches all 63 routes across scope, full training-state binding, update receipt, independent evaluation, adjudication, bounded lease, and material-change readmission. It binds model and candidate checkpoints together with optimizer, scheduler, RNG, cache, backup, descendant, evaluator, rollback, consumer, authority, and version identities; it also requires target evaluation, a strong baseline, causal ablation, reward-hacking probes, regressions, forgetting, safety and rights checks, uncertainty, monitoring, effect-complete rollback, and descendant invalidation. Two Lean composition theorems execute the full seven-transition cycle and a failed-evaluation prefix. All 73 route mutations and three cross-stage mutations reject: missing causal ablation prevents adjudication, lease, and readmission; support-authority laundering prevents lease and readmission; and incomplete effect rollback prevents readmission after the bounded lease. The complete witness emits one bounded lease before version-2 readmission. These are authored record consequences, not evidence that any field is true or effective: no training, learning, reward validation, causal improvement, live rollback, monitoring, reproduction, transfer, release, or support transition occurred.
 
 A policy-delta trace should carry the first governed-learning rehearsal: one offline preference update kept experimental, one reward-hacking probe that blocks promotion, one router-policy canary with authority unchanged, one latency reward rejected for suppressing verification, and one rollback dry run.
 
@@ -380,7 +382,7 @@ At the governed learning endpoint, learning would be continuous but never sovere
 | Reasoning-budget penalty test | Check whether shorter reasoning preserves correctness and verification adequacy. | planned; not run |
 | Rollback and promotion gate test | Check that failed evaluation or governance gates produce rollback/quarantine rather than promotion. | implemented by benchmark anti-Goodhart harness for synthetic blocked-ratchet promotion rejection; no live rollback or policy canary run |
 | Policy update lease probe | Check a deterministic synthetic router-policy canary lease with holdouts, contamination check, reward-hacking probes, unchanged authority, dry-run rollback, expected-invalid controls, residuals, and non-claims. | implemented by `python3 scripts/validate_policy_update_lease_probe.py` over `experiments/policy_update_lease/results/2026-07-02-local.json`; no optimizer, deployed canary, live rollback, route-quality claim, or support-state promotion |
-| Policy-optimization update-lifecycle refinement | Check exact update identity, full optimizer/checkpoint/RNG and descendant custody, independent evaluation, causal/forgetting/rollback gates, bounded consumption, and successor-version readmission. | implemented by `python3 scripts/validate_policy_optimization_refinement.py`; inherited lease passes, all 63 routes are reached, 73/73 mutations reject, support/effect none; no learning, reward-validity, causal, rollback-efficacy, deployment, or support claim |
+| Policy-optimization update-lifecycle refinement | Check exact update identity, full optimizer/checkpoint/RNG and descendant custody, independent evaluation, causal/forgetting/rollback gates, bounded consumption, and successor-version readmission. | implemented by `python3 scripts/validate_policy_optimization_refinement.py`; two composed Lean traces, inherited lease, all 63 routes, 73/73 route mutations, and 3/3 cross-stage mutations pass, support/effect none; no learning, reward-validity, causal, rollback-efficacy, deployment, or support claim |
 
 Only fixture-shape validation and finite record predicates are implemented. The remaining tests require executable training or simulation harnesses.
 
@@ -400,8 +402,10 @@ The original finite contradictions and guard-priority routes remain useful, but 
 The nineteen legacy declarations remain finite: five projections are retired,
 four contradictions and seven guard-priority routes remain useful, and three
 copied fixture normalizations are replaced by generated result conformance. The
-refinement adds one combined route theorem over a reachable seven-stage model
-and an independent 63-route, 73-mutation consumer. None models gradient
+refinement adds one combined route theorem, one complete-cycle theorem, and one
+failed-evaluation/downstream-blocking theorem over a reachable seven-stage
+model, plus an independent 63-route consumer with 73 route and three cross-
+stage mutations. None models gradient
 estimation, optimizer convergence, learning dynamics, reward correctness,
 evaluator error, causal target improvement, catastrophic forgetting,
 full-state recovery, runtime enforcement, institutional independence, or

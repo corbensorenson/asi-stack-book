@@ -1,6 +1,6 @@
 # Non-Core Evidence Ledger
 
-Last updated: 2026-07-14
+Last updated: 2026-07-16
 
 This ledger makes the currently accepted non-core evidence transitions visible
 without promoting any chapter core claim. It is a public trust surface for
@@ -11,7 +11,7 @@ readers, reviewers, and future writing agents.
 | Field | Status |
 |---|---|
 | Chapter core claims | All 55 remain at `argument`. |
-| Accepted non-core upward transitions | 19 narrow transitions. |
+| Accepted non-core upward transitions | 20 narrow transitions. |
 | Accepted refuted non-core claims | 2 exact QCSA fixture claims; no chapter-core refutation. |
 | Accepted no-promotion side-lane decisions | 57 accepted `blocks_promotion` decisions; no support-state movement. |
 | Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement. |
@@ -23,6 +23,7 @@ readers, reviewers, and future writing agents.
 
 | Claim ID | New support state | Evidence packet | What moved | What did not move |
 |---|---|---|---|---|
+| `governed-usefulness.held-out-local-policy-effect` | `synthetic-test-backed` | `docs/p4_governed_usefulness_campaign.md`; `evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json` | On one prospectively frozen 16-task held-out local corpus and one quantized Qwen3-8B run, full governance released 9 useful and 0 unsafe candidates versus 0 useful and 0 unsafe releases under candidate self-release; removing evidence freshness exposed one additional useful-unsafe release. | No chapter-core claim, model/workload transfer, deployed policy, open-world safety, effect-complete rollback, independent external validity, acceptable governance-cost, SOTA, AGI, or ASI claim moved. |
 | `living-book-methodology.phase5_harness_registry_runner` | `synthetic-test-backed` | `docs/phase5_harness_runner.md`; `evidence_transitions/v1_0_measured/phase5_harness_runner_synthetic_test_backed.json` | The repository-infrastructure claim that the Phase 5 harness registry can be replayed by one local runner command, executes all registered synthetic harnesses, and matches each registry result summary. | No chapter core claim, deployed runtime behavior, model quality, benchmark quality, source interpretation, safety, alignment, or governance-effectiveness claim moved. |
 | `resource-economics.costed_route_budget_slice` | `synthetic-test-backed` | `docs/costed_route_resource_slice.md`; `evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json` | The bounded synthetic costed-route/resource-budget selector slice that rejects a cheap failed negative control, keeps an adequate overkill baseline, and selects the lowest-cost eligible route in the public-safe fixture. | No chapter core claim, deployed routing, scheduler, runtime, load, KV-cache, economic, benchmark, model-quality, safety, or source-interpretation claim moved. |
 | `resource-economics.finite_burst_load_smoothing_selector` | `synthetic-test-backed` | `docs/resource_load_stability_probe.md`; `evidence_transitions/v1_x_measured/resource_load_stability_selector_synthetic_test_backed.json` | The bounded finite synthetic load-smoothing selector claim that a 10-task burst-review workload selects protected capacity smoothing over admit-arrivals, reduces instability units from 5 to 0, residualizes 7 deferred task-ticks, and rejects a cheaper review-erasure negative control. | No chapter core claim, real load-stability, deployed scheduler, TokenMana, PlanForge, reviewer-optimization, human-productivity, economic, benchmark, model-quality, safety, or source-interpretation claim moved. |

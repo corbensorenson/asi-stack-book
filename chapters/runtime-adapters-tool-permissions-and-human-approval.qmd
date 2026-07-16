@@ -4,7 +4,7 @@ chapter_id: "runtime-adapters-tool-permissions-and-human-approval"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-14"
+last_updated: "2026-07-16"
 primary_sources:
   - "talos"
   - "viea"
@@ -31,6 +31,7 @@ primary_sources:
   - "ext_claw_swe_bench_2026"
   - "ext_txfs_2018"
   - "qcsa_whitepaper"
+  - "reflexive_router_whitepaper"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -49,11 +50,11 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
 | Last updated | 2026-07-14 |
-| Primary source records | all twenty-five assigned architecture, operator, human-factors, distributed-systems, security-evaluation, historical-project, recovery, and QCSA mappings |
+| Primary source records | all twenty-six assigned architecture, operator, human-factors, distributed-systems, security-evaluation, historical-project, recovery, QCSA, and Reflexive Router mappings |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `talos`, `viea`; supporting: `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `field_of_god_ai_constitution`, `theseus_operator_os`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project`; external comparator: `ext_cap_theorem_gilbert_lynch_2002`; connector/recovery: `moecot` |
-| Source loading state | all twenty-five mappings reviewed at bounded local-cache, public-project, source-note, or local-whitepaper scope; none supplies natural deployed adapter, approval, sandbox, or secret-broker evidence |
+| Source queue | primary: `talos`, `viea`; supporting: `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `field_of_god_ai_constitution`, `theseus_operator_os`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project`, `reflexive_router_whitepaper`; external comparator: `ext_cap_theorem_gilbert_lynch_2002`; connector/recovery: `moecot` |
+| Source loading state | all twenty-six mappings reviewed at bounded local-cache, public-project, source-note, or local-whitepaper scope; none supplies natural deployed adapter, approval, sandbox, or secret-broker evidence |
 | Test state | Runtime adapter fixture validation now includes invocation state, impact class, risk tier, approval scope/expiry, effect lease, pre/post state refs, external side effects, verification refs, irreversible residuals, incident/audit refs, support-state effect, non-claims, and authority probes; finite permission, approval, effect-lease, rollback-obligation, authority-ceiling, confused-deputy, sandbox-escape, effect-receipt, dispatch-route, effect-replay, adversarial-boundary, revocation-route, and human-oversight degradation predicates plus negative-case theorems are implemented in `AsiStackProofs.RuntimeAdapters` for missing parent-job permission, high-impact unapproved adapter calls that try to remain unrejected, missing scoped approval, mismatched effect leases, expired leases, revoked leases, unsandboxed leases, over-ceiling requested authority, confused-deputy attempts, sandbox-escape attempts, high-impact rollback-required calls without rollback handles, revoked approvals and authority receipts without no-mutation denial evidence, missing effect receipts, missing no-mutation evidence, inexact rollback, repository/network side effects, support-state effects, parentage mismatch, approval expiry, sandbox path escape, secret materialization, missing audit refs, missing non-claim boundaries, reviewer overload, rubber-stamped approval, alarm fatigue, and automation-bias contradictions; `python3 scripts/validate_runtime_adapter_permissions.py` checks 2 valid and 7 expected-invalid synthetic typed-job, adapter-invocation, authority-use-receipt, and authority-probe scenarios; the Runtime adapter effect replay probe (`python3 scripts/validate_runtime_adapter_effect_probe.py`) checks `valid_low_impact_local_write_effect_replay`, a rollback-exact temp-file restoration, `invalid_missing_permission_no_mutation`, and `invalid_expired_approval_no_mutation`; the Runtime adapter adversarial boundary probe (`python3 scripts/validate_runtime_adapter_adversarial_boundary_probe.py`) checks two valid synthetic adapter boundary reviews and twelve expected-invalid controls without support-state promotion; the Human oversight degradation fixture (`python3 scripts/validate_human_oversight_degradation.py`) writes `experiments/human_oversight_degradation/results/2026-07-03-local.json`; `evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json` records an accepted `blocks_promotion` no-change decision for approval-workflow, reviewer-correctness, alert-quality, deployed-human-factors, runtime-adapter-safety, and chapter-core promotion claims; and the partitioned authority fixture (`python3 scripts/validate_partitioned_authority_fixture.py`) writes `experiments/partitioned_authority/results/2026-07-03-local.json` with stale-grant, fresh authority receipt, grant/effect race, no-mutation evidence, and CAP-style authority consistency checks. Deployed adapter execution, sandbox isolation, approval-service behavior, reviewer correctness, deployed human-factors behavior, secret-handle safety, rollback-service behavior, deployed partition tolerance, distributed consensus, revocation propagation, policy-enforcement correctness, and security review remain untested. |
 
 ## Drafting guardrail
@@ -316,6 +317,36 @@ public-safe, no external human or deployed policy service participated, and a
 single exact rollback cannot establish effect-complete recovery in an open
 system. Permission correctness, human-approval quality, production safety, and
 this core claim remain at `argument`.
+
+### The Effect Commit Kernel
+
+The Reflexive Router draws a hard line between understanding an action and
+committing an effect. Natural-language interpretation, a learned router, a
+workflow compiler, or a direct capability command may propose a typed effect.
+Only a narrow Effect Commit Kernel may authorize, prepare, commit, observe,
+verify, record, compensate, or quarantine it. A direct command can skip action
+interpretation, but it cannot skip the kernel.
+
+The kernel binds authenticated principal and delegation, stable target and
+pre-state, operation and typed arguments, policy and authority epoch,
+consequence and reversibility class, affected parties, approvals, sandbox or
+execution boundary, idempotency and retry lineage, expected postconditions,
+observer and verifier, rollback/compensation plan, expiry, and residual owner.
+Preparation is not execution; a tool's success return is not observation; an
+observed change is not verification; and compensation is not erasure of an
+irreversible external effect.
+
+Terminal custody must cover `denied`, `prepared`, `committed`, `observed`,
+`verified`, `partially_effected`, `rolled_back`, `compensated`, `quarantined`,
+and `unknown_outcome`. Retry is permitted only when the original attempt and
+observed effect state make duplication safe. Every committed or indeterminate
+path returns an effect receipt and feeds the typed result packet, Chronicle,
+artifact graph, residual ledger, and incident monitor.
+
+This kernel is a proposed authority boundary, not a claim that the repository
+implements production enforcement. The source contains no deployed adapter,
+approval service, irreversible-effect campaign, or effect-complete rollback
+result; the runtime-adapter core remains at `argument`.
 
 ## Interfaces
 
@@ -659,6 +690,7 @@ These proof hooks are implemented as finite-record predicates plus negative-case
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
+| `reflexive_router_whitepaper` | The Reflexive Router | pre_deliberative_reflexive_routing_control_plane | Action-understanding/effect-commit separation, non-bypassable authority admission, prepare/commit/observe/verify custody, idempotency, compensation, typed terminal outcomes, and effect receipts. | complete Corben-authored v1.2 paper passage-reviewed; no deployed kernel or effect campaign |
 | `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw cache available |
 | `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache available |
 | `ladon_manhattan` | Ladon & The Manhattan Protocol | security_governance | Kernel-level security architecture for high-agency AI. | source note available; local raw cache available |
@@ -708,6 +740,26 @@ judged by useful releases, unsafe releases, and effect-complete rollback
 together. It does not establish an OS sandbox, deployed approval service,
 secret isolation, or production revocation.
 
+## P4/M5 held-out policy result
+
+A later prospectively frozen recampaign separates candidate generation from
+release policy. On one fresh 16-task authored corpus and one local quantized
+Qwen3-8B run, 15 outputs were schema-admissible and two deterministic evaluator
+implementations disagreed on none. The self-release and record-only policies
+released 0 useful and 0 unsafe candidates. Full governance released 9 useful
+and 0 unsafe candidates; its evidence-freshness ablation released one
+additional candidate classified useful-unsafe. The residualized partial-
+recovery case did not release under full governance.
+
+That exact local policy effect is recorded as a non-core
+`synthetic-test-backed` result. It is evidence that the implemented freshness
+gate mattered on this corpus, not that adapters are secure, approvals are
+legitimate, effects are completely inventoried, or rollback is complete in an
+open system. The candidate baseline's zero releases also means this run does
+not estimate unsafe-release reduction against a permissive production
+baseline. Model-family, workload, evaluator, organizational, and temporal
+transfer remain untested.
+
 ## Summary
 
 Runtime adapters form the leased external-effect boundary. Their distinct job is
@@ -718,13 +770,13 @@ assigned sources are now reconciled against that boundary.
 
 The rule is that real-world effects require explicit authority. Planning may propose action; only an authorized adapter may perform it. In this repository, the evidence now reaches one narrow toy trace: a generated temp-file write, rollback-exact restoration, and two denial controls. It still has no deployed adapter trace, approval service, production sandbox run, live secret-handle path, revocation propagation, or target-service rollback execution. Once real effect traces accumulate, the system can ask which recurring patterns deserve to become procedural memory.
 
-The current evidence remains narrow: one schema, five authored fixture families,
-one rollback-exact temp-file effect, one accepted no-promotion decision,
-adjacent bounded QCSA results, and forty-nine finite Lean declarations under six
-targets. A natural multi-target comparison with independent effect observers,
-causal ablations, clean reproduction, and heterogeneous transfer is still
-required. Until it passes, bounded denials and receipts sharpen the argument;
-they do not prove adapter safety.
+The current evidence remains narrow: one schema, five authored fixture
+families, one rollback-exact temp-file effect, the bounded P4/M5 policy result,
+adjacent bounded QCSA results, and forty-nine finite Lean declarations under
+six targets. A natural multi-target comparison with independently developed
+effect observers, clean reproduction, real effects, and heterogeneous transfer
+is still required. Until it passes, the local result supports one policy
+subclaim; it does not prove adapter safety.
 
 ## Handoff
 

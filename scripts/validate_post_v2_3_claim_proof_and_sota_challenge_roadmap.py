@@ -126,6 +126,12 @@ ARTIFACT_COMPRESSION_DOSSIER = "evidence_quality/model_adequacy_dossiers/artifac
 RESOURCE_ECONOMICS_RESULT = "experiments/resource_economics_refinement/results/2026-07-15-local.json"
 RESOURCE_ECONOMICS_RECEIPT = "docs/resource_economics_refinement.md"
 RESOURCE_ECONOMICS_DOSSIER = "evidence_quality/model_adequacy_dossiers/resource-economics-refinement.md"
+GOVERNED_USEFULNESS_PREREG = "experiments/p4_governed_usefulness/preregistration.json"
+GOVERNED_USEFULNESS_ACCESS = "experiments/p4_governed_usefulness/strong_model_access_preflight.json"
+GOVERNED_USEFULNESS_V1_RESULT = "experiments/p4_governed_usefulness/results/strong_model_sacrificial_preflight.json"
+GOVERNED_USEFULNESS_V2_PREREG = "experiments/p4_governed_usefulness/preregistration_v2.json"
+GOVERNED_USEFULNESS_V2_RESULT = "experiments/p4_governed_usefulness/results/strong_model_sacrificial_preflight_v2.json"
+GOVERNED_USEFULNESS_V2_DIAGNOSIS = "experiments/p4_governed_usefulness/v2_failure_diagnosis.json"
 PREDECESSOR = "docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md"
 PREDECESSOR_STATUS = "roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json"
 ACTIVE_MARKER = "Status: active canonical successor roadmap; unfinished work only"
@@ -165,6 +171,10 @@ REQUIRED_BOUNDARIES = [
     "9,999 words or fewer",
     "2000×800 pixel",
     "Creating repository artifacts does not authorize an external post.",
+    "An instrument failure is not a claim result.",
+    "instrument_inadequate_recampaign_required",
+    "At least 80% of expected final decisions must be schema-admissible",
+    "A single substantial executable theorem may pass; many projections may fail.",
 ]
 
 
@@ -206,6 +216,12 @@ def snapshot() -> dict:
         "structural_expansion_atoms": load("evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json"),
         "claim_atom_registry": load("evidence_quality/claim_atom_registry.json"),
         "wip_checkpoint_inventory": load("roadmap_records/post_v2_3_wip_checkpoint_inventory.json"),
+        "governed_usefulness_prereg": load(GOVERNED_USEFULNESS_PREREG),
+        "governed_usefulness_access": load(GOVERNED_USEFULNESS_ACCESS),
+        "governed_usefulness_v1_result": load(GOVERNED_USEFULNESS_V1_RESULT),
+        "governed_usefulness_v2_prereg": load(GOVERNED_USEFULNESS_V2_PREREG),
+        "governed_usefulness_v2_result": load(GOVERNED_USEFULNESS_V2_RESULT),
+        "governed_usefulness_v2_diagnosis": load(GOVERNED_USEFULNESS_V2_DIAGNOSIS),
         "vectors": load("evidence_quality/core_claim_vectors.json"),
         "proof_depth": text("docs/proof_depth_classification.md"),
         "proof_adequacy": text("docs/proof_adequacy_review.md"),
@@ -376,7 +392,7 @@ def errors(data: dict) -> list[str]:
         "scope_expansion_blocked_above_limit": True,
         "checkpoint_inventory_required": True,
         "checkpoint_inventory_path": "roadmap_records/post_v2_3_wip_checkpoint_inventory.json",
-        "checkpoint_inventory_state": "checkpoint_complete_local_only",
+        "checkpoint_inventory_state": "checkpoint_blocked_no_commit_authority",
         "commit_requires_explicit_authorization": True,
         "no_commit_authority_disposition": "checkpoint_blocked_no_commit_authority",
         "first_campaign_minimum_terminal_atom_count": 3,
@@ -402,69 +418,317 @@ def errors(data: dict) -> list[str]:
     registered_atom_ids = {row.get("atom_id") for row in data["claim_atom_registry"].get("atoms", [])}
     if not set(expected_first_atoms).issubset(registered_atom_ids):
         out.append("latest-review first campaign batch contains an unregistered atom")
+
+    instrument = status.get("instrument_adequacy_and_disposition_contract", {})
+    expected_instrument = {
+        "state": "installed_and_historical_lineage_corrected",
+        "review_kind": "claude_evidence_transition_and_instrument_review",
+        "historical_instrument_limited_result_path": "docs/post_v2_3_campaign_results.md",
+        "historical_claim_label": "no_change",
+        "required_superseding_protocol_outcome": "instrument_inadequate_recampaign_required",
+        "supersession_path": "evidence_transitions/post_v2_3/instrument_failure_supersession.json",
+        "superseded_historical_transition_count": 2,
+        "superseded_transition_claim_attempt_count": 0,
+        "separate_repaired_governance_tax_transition_preserved": True,
+        "history_rewrite_allowed": False,
+        "instrument_failure_counts_as_claim_attempt": False,
+        "reasoning_and_final_decision_channels_separate": True,
+        "schema_constrained_final_decoding_required_where_supported": True,
+        "reasoning_and_answer_budgets_separate": True,
+        "minimum_schema_admissible_rate": 0.8,
+        "zero_candidate_arm_allowed": False,
+        "strong_current_model_required_for_claim_bearing_work": True,
+        "small_local_model_allowed_as_floor_or_control_only": True,
+        "syntax_validity_counts_as_semantic_correctness": False,
+        "new_top_level_outcome_requires_schema_migration_and_rejecting_test": True,
+        "refinement_module_requires_consumed_nonrestating_property_or_retirement": True,
+        "review_named_refinement_module_gate_state": "completed",
+        "review_named_composition_theorem_count": 6,
+        "review_named_cross_stage_mutation_count": 9,
+        "review_named_cross_stage_mutation_rejection_count": 9,
+        "review_named_support_state_effect": "none",
+        "top_level_theorem_count_counts_as_semantic_adequacy": False,
+        "local_reader_artifact_completion_required": True,
+        "external_publication_authorized": False,
+        "support_state_effect": "none",
+        "release_effect": "none",
+    }
+    for key, value in expected_instrument.items():
+        if instrument.get(key) != value:
+            out.append(f"instrument-adequacy contract drifted: {key}")
+    if instrument.get("canonical_protocol_outcomes") != [
+        "instrument_adequate",
+        "instrument_inadequate_recampaign_required",
+    ]:
+        out.append("canonical protocol outcomes drifted")
+    if instrument.get("canonical_claim_outcomes") != [
+        "support_raised",
+        "support_retained",
+        "claim_narrowed",
+        "claim_refuted",
+        "claim_deprecated",
+        "blocked_after_full_attempt",
+    ]:
+        out.append("canonical claim outcomes drifted")
+    if instrument.get("review_named_refinement_modules") != [
+        "PolicyOptimizationRefinement",
+        "DataEngineLifecycleRefinement",
+        "OpenEndedImprovementRefinement",
+    ]:
+        out.append("review-named refinement-module gate membership drifted")
+    historical_campaign = data["roadmap"]
+    for phrase in [
+        "All 36 calls exhausted the 256-token cap",
+        "The later repaired 32-candidate governance-tax campaign remains a separate valid `no_change` result",
+        "schema-, or type-constrained decoding",
+        "An instrument failure is not a claim result.",
+    ]:
+        if phrase not in historical_campaign:
+            out.append(f"roadmap missing instrument-remediation boundary: {phrase}")
     wip = data["wip_checkpoint_inventory"]
-    if wip.get("base_commit") != "5eddb15d56b0c813666ed2b2ea41e7c87f1cf297":
+    if wip.get("base_commit") != "1faacc14d1134192a5776715a38d704c16fbb62b":
         out.append("WIP checkpoint base commit drifted")
-    if wip.get("independent_work_package_count") != len(wip.get("packages", [])) or len(wip.get("packages", [])) != 5:
+    if wip.get("independent_work_package_count") != len(wip.get("packages", [])) or len(wip.get("packages", [])) != 7:
         out.append("WIP checkpoint package inventory drifted")
-    if wip.get("changed_path_count") != 724 or wip.get("threshold_exceeded") is not True or wip.get("scope_expansion_blocked") is not True:
-        out.append("historical oversized-WIP checkpoint snapshot drifted")
-    checkpoint_commit = str(wip.get("checkpoint_commit", ""))
-    if wip.get("checkpoint_disposition") != "checkpoint_complete_local_only" or wip.get("commit_authorized") is not False:
-        out.append("completed WIP checkpoint disposition drifted")
-    elif not re.fullmatch(r"[0-9a-f]{40}", checkpoint_commit):
-        out.append("completed WIP checkpoint lacks an exact commit identity")
-    else:
-        commit_exists = subprocess.run(
-            ["git", "cat-file", "-e", f"{checkpoint_commit}^{{commit}}"],
-            cwd=ROOT,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-        ).returncode == 0
-        commit_is_ancestor = subprocess.run(
-            ["git", "merge-base", "--is-ancestor", checkpoint_commit, "HEAD"],
-            cwd=ROOT,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-        ).returncode == 0
-        if not commit_exists or not commit_is_ancestor:
-            out.append("completed WIP checkpoint commit is absent from current history")
-    closure_commit = str(wip.get("closure_commit", ""))
-    if not re.fullmatch(r"[0-9a-f]{40}", closure_commit):
-        out.append("completed WIP checkpoint lacks an exact closure-commit identity")
-    else:
-        closure_exists = subprocess.run(
-            ["git", "cat-file", "-e", f"{closure_commit}^{{commit}}"],
-            cwd=ROOT,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-        ).returncode == 0
-        closure_is_ancestor = subprocess.run(
-            ["git", "merge-base", "--is-ancestor", closure_commit, "HEAD"],
-            cwd=ROOT,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-        ).returncode == 0
-        closure_parent = subprocess.run(
-            ["git", "rev-parse", f"{closure_commit}^"],
-            cwd=ROOT,
-            text=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-        ).stdout.strip()
-        if not closure_exists or not closure_is_ancestor or closure_parent != checkpoint_commit:
-            out.append("completed WIP checkpoint closure is absent or not the checkpoint's direct child")
+    if wip.get("changed_path_count") != 296 or wip.get("threshold_exceeded") is not True or wip.get("scope_expansion_blocked") is not False:
+        out.append("current inventoried WIP snapshot drifted")
+    if wip.get("checkpoint_disposition") != "checkpoint_authorized_pending_commit" or wip.get("commit_authorized") is not True:
+        out.append("authorized WIP checkpoint disposition drifted")
+    if wip.get("checkpoint_commit") is not None or wip.get("closure_commit") is not None:
+        out.append("no-authority WIP inventory invented checkpoint commits")
     closure = wip.get("checkpoint_closure", {})
-    if closure.get("attestation_state") != "passes_against_checkpoint_commit_objects":
-        out.append("completed WIP checkpoint lacks passing committed-object attestation state")
-    if closure.get("dependent_artifact_reality_state") != "passes":
-        out.append("completed WIP checkpoint lacks passing dependent Artifact Reality state")
-    if closure.get("closure_commit_parent_is_checkpoint_commit") is not True:
-        out.append("completed WIP checkpoint parent/closure assertion drifted")
-    if closure.get("worktree_was_clean_after_closure_commit") is not True or closure.get("external_actions_authorized") is not False:
-        out.append("completed WIP checkpoint closure boundary drifted")
+    if closure.get("attestation_state") != "pending_authorized_checkpoint_commit":
+        out.append("authorized WIP checkpoint attestation state drifted")
+    if closure.get("dependent_artifact_reality_state") != "validated_worktree_pending_committed_object_attestation":
+        out.append("authorized WIP dependent-attestation boundary drifted")
+    if closure.get("closure_commit_parent_is_checkpoint_commit") is not False:
+        out.append("no-authority WIP parent/closure assertion drifted")
+    if closure.get("worktree_was_clean_after_closure_commit") is not False or closure.get("external_actions_authorized") is not True:
+        out.append("authorized WIP closure boundary drifted")
     if wip.get("support_state_effect") != "none" or wip.get("release_effect") != "none":
         out.append("WIP checkpoint invented support or release effect")
+
+    reflexive_source = status.get("reflexive_router_source_contract", {})
+    expected_reflexive_source = {
+        "state": "integrated_argument_only_existing_chapters_first",
+        "source_id": "reflexive_router_whitepaper",
+        "source_note_path": "sources/source_notes/reflexive_router_whitepaper.md",
+        "backlog_path": "research_backlog_records/reflexive_router_whitepaper_2026_07_16.json",
+        "triage_path": "new_paper_triage_scenarios/reflexive_router_whitepaper_2026_07_16.json",
+        "canonical_local_markdown_path": "sources/raw/reflexive_router/the_reflexive_router_white_paper_v1_2.md",
+        "canonical_local_markdown_sha256": "003a693741c40ca96ec3aece5b76ee90ec95a1d6c27ec81a970cff175f509068",
+        "local_docx_path": "sources/raw/reflexive_router/the_reflexive_router_white_paper_v1_2.docx",
+        "local_docx_sha256": "52bc04a1bfedaa0fe3a7e530570703bd973849f46b806529f2534509101ace9b",
+        "primary_chapter_owner": "routing-heads-and-specialist-cores",
+        "existing_chapter_target_count": 12,
+        "manifest_assigned_chapter_count": 12,
+        "chapter_decision": "update_existing_chapters",
+        "new_chapter_state": "deferred_pending_observed_distinct_interface",
+        "campaign_owner": "P4.Campaign2",
+        "book_integration_owner": "P7",
+        "passage_review_state": "complete_chapter_mapped",
+        "book_integration_state": "completed_argument_only_2026_07_16",
+        "trace_schema_path": "schemas/reflexive_dispatch_trace_record.schema.json",
+        "trace_fixture_path": "tests/fixtures/protocol_records/reflexive_dispatch_trace_record.valid.json",
+        "trace_validator_path": "scripts/validate_reflexive_dispatch_trace.py",
+        "trace_negative_mutation_count": 11,
+        "external_reference_review_state": "pending_current_primary_source_verification",
+        "support_state_effect": "none",
+        "raw_source_publication_authority": "none",
+        "release_authority": "none",
+    }
+    for key, expected_value in expected_reflexive_source.items():
+        if reflexive_source.get(key) != expected_value:
+            out.append(f"Reflexive Router source contract drifted: {key}")
+    for key in ["source_note_path", "backlog_path", "triage_path", "canonical_local_markdown_path", "local_docx_path", "trace_schema_path", "trace_fixture_path", "trace_validator_path"]:
+        if not (ROOT / reflexive_source.get(key, "missing")).exists():
+            out.append(f"Reflexive Router source artifact is missing: {key}")
+    for phrase in [
+        "Accepted source integration — The Reflexive Router v1.2",
+        "fails the new-chapter test",
+        "argument-only prose integration is complete",
+        "Reflexive Dispatch Trace",
+        "Reflexive routing, ambiguous dispatch, and real-model deliberation",
+        "bypass inference but may not bypass authorization",
+        "observed distinct-interface gate",
+    ]:
+        if phrase not in data["roadmap"]:
+            out.append(f"roadmap missing Reflexive Router integration boundary: {phrase}")
+
+    execution_contract = status.get("self_contained_execution_contract", {})
+    expected_execution_contract = {
+        "state": "active_no_external_conversational_dependencies",
+        "future_chatgpt_browser_runs_required": False,
+        "future_external_conversation_runs_required": False,
+        "routine_local_work_additional_user_authorization_required": False,
+        "optional_model_unavailability_blocks_roadmap": False,
+        "model_substitution_policy": "prospectively_freeze_available_codex_local_or_open_weight_role_with_exact_identity_limitations_and_claim_ceiling",
+        "instrument_repair_mode": "local_versioned_repair_with_candidate_before_label_closure_independent_evaluators_mutations_and_replay",
+        "historical_chat_pro_receipts_retained": True,
+        "browser_scope": "automated_local_render_validation_only_not_hosted_conversation",
+        "external_publication_completion_route": "ready_not_published",
+        "support_state_effect": "none",
+        "release_authority": "none",
+    }
+    if execution_contract != expected_execution_contract:
+        out.append("self-contained execution contract drifted or restored an artificial dependency")
+
+    governed_contract = status.get("governed_usefulness_campaign_contract", {})
+    expected_governed_contract = {
+        "state": "m5_bounded_local_confirmatory_support_complete",
+        "preregistration_path": GOVERNED_USEFULNESS_PREREG,
+        "access_preflight_path": GOVERNED_USEFULNESS_ACCESS,
+        "v1_result_path": GOVERNED_USEFULNESS_V1_RESULT,
+        "v1_protocol_outcome": "instrument_inadequate_recampaign_required",
+        "v1_schema_admissible_task_count": 6,
+        "v1_semantically_correct_task_count": 1,
+        "v1_elapsed_seconds": 171.865,
+        "v2_preregistration_path": GOVERNED_USEFULNESS_V2_PREREG,
+        "v2_raw_response_path": "experiments/p4_governed_usefulness/raw/strong_model_sacrificial_preflight_v2.json",
+        "v2_result_path": GOVERNED_USEFULNESS_V2_RESULT,
+        "v2_diagnosis_path": GOVERNED_USEFULNESS_V2_DIAGNOSIS,
+        "v2_protocol_outcome": "instrument_inadequate_recampaign_required",
+        "v2_schema_admissible_task_count": 6,
+        "v2_semantically_correct_task_count": 3,
+        "v2_exact_residual_match_count": 6,
+        "v2_evaluator_disagreement_count": 0,
+        "v2_identity_drift_detected": False,
+        "v2_elapsed_seconds": 170.996,
+        "local_instrument_repair_state": "qualified_v9_eligibility_and_residual_only",
+        "local_instrument_protocol_id": "p4-gu-local-instrument-qualification-v9",
+        "local_instrument_result_path": "experiments/p4_governed_usefulness/results/local_instrument_qualification_v9.json",
+        "local_instrument_protocol_outcome": "instrument_adequate_for_terminal_eligibility_and_residual_contract_only",
+        "local_instrument_schema_admissible_task_count": 8,
+        "local_instrument_semantically_correct_task_count": 8,
+        "local_instrument_exact_remediation_action_count": 6,
+        "local_instrument_failed_protocol_count": 5,
+        "local_instrument_abandoned_protocol_count": 1,
+        "future_chat_pro_run_required": False,
+        "external_submission_authority_required": False,
+        "difficulty_sweep_design_path": "experiments/p4_governed_usefulness/difficulty_sweep_design.json",
+        "difficulty_sweep_design_state": "terminal_pool_adequate_confirmatory_completed",
+        "difficulty_sweep_result_path": "experiments/p4_governed_usefulness/results/difficulty_sweep_result.json",
+        "difficulty_sweep_protocol_outcome": "non_estimable_operating_range_repair_required",
+        "difficulty_sweep_schema_admissible_candidate_count": 14,
+        "difficulty_sweep_useful_safe_count": 1,
+        "difficulty_sweep_useful_unsafe_count": 0,
+        "difficulty_sweep_useless_safe_count": 10,
+        "difficulty_sweep_useless_unsafe_count": 3,
+        "difficulty_sweep_task_count": 16,
+        "difficulty_sweep_family_count": 8,
+        "difficulty_sweep_policy_arm_count": 6,
+        "difficulty_sweep_four_cell_count": 4,
+        "difficulty_sweep_evaluator_implementation_count": 2,
+        "difficulty_sweep_required_effect_probe_count": 5,
+        "difficulty_sweep_runner_state": "executed_once_and_closed_after_non_estimable_result",
+        "difficulty_sweep_runner_self_test_cell_count": 4,
+        "difficulty_sweep_runner_self_test_effect_probe_count": 5,
+        "difficulty_sweep_runner_candidate_mutation_rejection_count": 6,
+        "difficulty_sweep_normal_execution_allowed": False,
+        "difficulty_sweep_result_exists": True,
+        "sacrificial_task_count": 6,
+        "minimum_schema_admissible_rate": 0.8,
+        "minimum_semantically_correct_admissible_task_count": 4,
+        "v2_minimum_semantically_correct_admissible_task_count": 5,
+        "difficulty_sweep_state": "terminal_tuning_pool_adequate_after_v2_through_v5",
+        "tuning_pool_result_path": "experiments/p4_governed_usefulness/results/difficulty_sweep_v2_v5_pool_result.json",
+        "tuning_pool_protocol_outcome": "operating_range_adequate_to_freeze_fresh_held_out_confirmatory_design",
+        "tuning_pool_expected_candidate_count": 40,
+        "tuning_pool_schema_admissible_candidate_count": 32,
+        "tuning_pool_useful_safe_count": 9,
+        "tuning_pool_useful_unsafe_count": 2,
+        "tuning_pool_useless_safe_count": 10,
+        "tuning_pool_useless_unsafe_count": 11,
+        "tuning_pool_evaluator_disagreement_count": 0,
+        "tuning_pool_effect_probe_count": 20,
+        "confirmatory_result_path": "experiments/p4_governed_usefulness/results/confirmatory_result.json",
+        "confirmatory_protocol_outcome": "bounded_local_governance_effect_supported",
+        "confirmatory_expected_task_count": 16,
+        "confirmatory_schema_admissible_candidate_count": 15,
+        "confirmatory_evaluator_disagreement_count": 0,
+        "confirmatory_full_governance_useful_release_count": 9,
+        "confirmatory_full_governance_unsafe_release_count": 0,
+        "confirmatory_simple_baseline_useful_release_count": 0,
+        "confirmatory_evidence_freshness_ablation_unsafe_release_count": 1,
+        "confirmatory_denominator_state": "opened_once_and_terminally_closed",
+        "model_inference_call_count": 14,
+        "claim_attempt_count": 1,
+        "support_state_effect": "eligible_for_bounded_local_non_core_promotion_after_reconciliation",
+        "publication_authority": "none",
+        "release_authority": "none",
+    }
+    for key, expected_value in expected_governed_contract.items():
+        if governed_contract.get(key) != expected_value:
+            out.append(f"governed-usefulness campaign contract drifted: {key}")
+    for key in ["local_instrument_result_path", "difficulty_sweep_result_path", "tuning_pool_result_path", "confirmatory_result_path"]:
+        if not (ROOT / governed_contract.get(key, "missing")).exists():
+            out.append(f"governed-usefulness current result artifact missing: {key}")
+    governed_prereg = data["governed_usefulness_prereg"]
+    governed_access = data["governed_usefulness_access"]
+    governed_v1_result = data["governed_usefulness_v1_result"]
+    governed_v2_prereg = data["governed_usefulness_v2_prereg"]
+    governed_v2_result = data["governed_usefulness_v2_result"]
+    governed_v2_diagnosis = data["governed_usefulness_v2_diagnosis"]
+    if governed_prereg.get("state") != "terminal_instrument_inadequate_recampaign_required":
+        out.append("governed-usefulness v1 preregistration erases its terminal instrument failure")
+    if governed_v1_result.get("protocol_outcome") != "instrument_inadequate_recampaign_required" or governed_v1_result.get("claim_attempt_counted") is not False:
+        out.append("governed-usefulness v1 result was laundered into a claim result")
+    if governed_v2_prereg.get("state") != "authorized_before_v2_strong_model_submission" or governed_v2_prereg.get("authorization", {}).get("prompt_submission_authority") != "explicit_user_authority_2026-07-16_run_v2_in_chat_pro":
+        out.append("governed-usefulness v2 repair lacks the user's distinct action-time authority")
+    if (
+        governed_v2_result.get("protocol_outcome") != "instrument_inadequate_recampaign_required"
+        or governed_v2_result.get("schema_admissible_task_count") != 6
+        or governed_v2_result.get("semantically_correct_admissible_task_count") != 3
+        or governed_v2_result.get("evaluator_disagreement_count") != 0
+        or governed_v2_result.get("model_surface", {}).get("identity_drift_detected") is not False
+        or governed_v2_result.get("claim_attempt_counted") is not False
+        or governed_v2_result.get("difficulty_sweep_opened") is not False
+    ):
+        out.append("governed-usefulness v2 terminal instrument-failure result drifted or was laundered")
+    if (
+        governed_v2_diagnosis.get("observations", {}).get("exact_residual_match_count") != 6
+        or governed_v2_diagnosis.get("adjudication", {}).get("decision_taxonomy") != "not_mutually_exclusive_under_the_task_wording"
+        or governed_v2_diagnosis.get("retrospective_rescore_allowed") is not False
+        or governed_v2_diagnosis.get("adjudication", {}).get("difficulty_sweep_effect") != "remains_closed"
+    ):
+        out.append("governed-usefulness v2 diagnosis erased label ambiguity, no-rescore, or closed-gate boundaries")
+    if governed_access.get("displayed_model") != "GPT-5.6 Sol" or governed_access.get("displayed_mode") != "Pro":
+        out.append("strong-model Chat Pro access observation drifted")
+    if governed_access.get("prompt_submitted") is not True or governed_access.get("response_observed") is not True or governed_access.get("account_identifier_recorded") is not False:
+        out.append("strong-model access receipt erases v1 inference or retains account identity")
+    for phrase in [
+        "M5 campaign-readiness receipt at 2026-07-16",
+        "selects Chat `Pro`",
+        "only one of six matched",
+        "V1 is",
+        "new v2 protocol is frozen",
+        "6/6 exact residual classes",
+        "only 3/6 exact decision classes",
+        "closed historical instrument audits",
+        "self-contained local instrument qualification",
+        "V7 was abandoned before generation",
+        "V9",
+        "sixteen tasks",
+        "one shared candidate per task/seed",
+        "at least two",
+        "observed cells were 1 useful-safe",
+        "non_estimable_operating_range_repair_required",
+        "Four prospectively frozen repair identities followed",
+        "32/40 admitted candidates",
+        "fresh confirmatory design",
+        "released 9 useful and 0 unsafe candidates",
+        "M5 is therefore complete",
+    ]:
+        if phrase not in data["roadmap"]:
+            out.append(f"roadmap missing governed-usefulness boundary: {phrase}")
+    for phrase in [
+        "Finish from the repository, without conversational dependencies",
+        "No new hosted-chat submission",
+        "another conversational browser session an",
+        "ready_not_published",
+    ]:
+        if phrase not in data["roadmap"]:
+            out.append(f"roadmap missing self-contained execution boundary: {phrase}")
 
     vectors = data["vectors"].get("vectors", [])
     summary = data["vectors"].get("summary", {})
@@ -1127,7 +1391,7 @@ def errors(data: dict) -> list[str]:
     expected_claim_ledger_contract = {
         "current_missing_or_changed_theorem_count":296,
         "current_missing_or_changed_target_count":181,
-        "current_live_theorem_declaration_count":1294,
+        "current_live_theorem_declaration_count":1300,
         "current_live_proof_target_count":298,
         "claim_ledger_model_path":"lean/AsiStackProofs/ClaimLedgerRefinement.lean",
         "claim_ledger_dossier_path":CLAIM_LEDGER_DOSSIER,
@@ -1473,14 +1737,19 @@ def errors(data: dict) -> list[str]:
         if proof_contract.get(key)!=value: out.append(f"policy-optimization contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
     policy_optimization=data["policy_optimization_result"]
     for key,value in {"reachable_stage_count":7,"route_case_count":63,"mutation_count":73,
-                      "mutation_rejection_count":73,"support_state_effect":"none"}.items():
+                      "mutation_rejection_count":73,"cross_stage_mutation_count":3,
+                      "cross_stage_mutation_rejection_count":3,"support_state_effect":"none"}.items():
         if policy_optimization.get(key)!=value: out.append(f"policy-optimization result drifted: {key}")
+    if policy_optimization.get("composition_theorems") != [
+        "policy_update_full_cycle_composes",
+        "policy_update_failed_evaluation_blocks_downstream_handoff",
+    ]: out.append("policy-optimization composition theorem binding drifted")
     inherited_policy=policy_optimization.get("inherited_lease_probe",{})
     for key,value in {"workload_sample_count":6,"holdout_sample_count":2,"candidate_count":5,
                       "rejected_negative_control_count":3,"selected_canary_promotion_decision":"keep_experimental",
                       "support_state_effect":"none"}.items():
         if inherited_policy.get(key)!=value: out.append(f"policy-optimization inherited result drifted: {key}")
-    for phrase in ["seven-stage", "all 63 lifecycle routes", "73/73", "Support-state and external-effect authority remain exactly `none`"]:
+    for phrase in ["seven-stage", "all 63 lifecycle routes", "73/73", "3/3 cross-stage", "Support-state and external-effect authority remain exactly `none`"]:
         if phrase.casefold() not in data["policy_optimization_receipt"].casefold(): out.append(f"policy-optimization receipt missing exact boundary: {phrase}")
     for phrase in ["Seven reachable stages", "all 63 routes", "Inadequate for policy improvement", "No support transition"]:
         if phrase.casefold() not in data["policy_optimization_dossier"].casefold(): out.append(f"policy-optimization dossier missing adequacy boundary: {phrase}")
@@ -1510,8 +1779,13 @@ def errors(data: dict) -> list[str]:
         if proof_contract.get(key)!=value: out.append(f"data-engine lifecycle contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
     data_engine_lifecycle=data["data_engine_lifecycle_result"]
     for key,value in {"reachable_stage_count":8,"route_case_count":82,"mutation_count":96,
-                      "mutation_rejection_count":96,"support_state_effect":"none"}.items():
+                      "mutation_rejection_count":96,"cross_stage_mutation_count":3,
+                      "cross_stage_mutation_rejection_count":3,"support_state_effect":"none"}.items():
         if data_engine_lifecycle.get(key)!=value: out.append(f"data-engine lifecycle result drifted: {key}")
+    if data_engine_lifecycle.get("composition_theorems") != [
+        "data_engine_full_cycle_composes",
+        "data_engine_axis_laundering_blocks_custody_and_readmission",
+    ]: out.append("data-engine lifecycle composition theorem binding drifted")
     inherited_data_engine=data_engine_lifecycle.get("inherited_results",{})
     for key,value in {"admission_scenario_count":4,"full_state_surface_count":24,
                       "full_state_transaction_count":15,"full_state_exact_rollback_count":15,
@@ -1523,7 +1797,7 @@ def errors(data: dict) -> list[str]:
     for key,value in {"terminal_stage":"scoped","protocol_version":2,"bounded_custody_count":1,
                       "readmission_count":1,"support_assignment_count":0,"external_effect_count":0}.items():
         if data_engine_witness.get(key)!=value: out.append(f"data-engine lifecycle witness drifted: {key}")
-    for phrase in ["eight-stage custody lifecycle", "all 82 routes", "96/96", "Support-state and external-effect authority remain exactly `none`"]:
+    for phrase in ["eight-stage custody lifecycle", "all 82 routes", "96/96", "3/3 cross-stage", "Support-state and external-effect authority remain exactly `none`"]:
         if phrase.casefold() not in data["data_engine_lifecycle_receipt"].casefold(): out.append(f"data-engine lifecycle receipt missing exact boundary: {phrase}")
     for phrase in ["Eight reachable stages", "all 82 routes", "Inadequate for source or rights truth", "No support transition"]:
         if phrase.casefold() not in data["data_engine_lifecycle_dossier"].casefold(): out.append(f"data-engine lifecycle dossier missing adequacy boundary: {phrase}")
@@ -1555,8 +1829,13 @@ def errors(data: dict) -> list[str]:
         if proof_contract.get(key)!=value: out.append(f"open-ended-improvement contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
     open_ended_improvement=data["open_ended_improvement_result"]
     for key,value in {"reachable_stage_count":7,"route_case_count":81,"mutation_count":91,
-                      "mutation_rejection_count":91,"support_state_effect":"none"}.items():
+                      "mutation_rejection_count":91,"cross_stage_mutation_count":3,
+                      "cross_stage_mutation_rejection_count":3,"support_state_effect":"none"}.items():
         if open_ended_improvement.get(key)!=value: out.append(f"open-ended-improvement result drifted: {key}")
+    if open_ended_improvement.get("composition_theorems") != [
+        "open_ended_improvement_full_cycle_composes",
+        "open_ended_improvement_budget_reset_blocks_handoff_and_readmission",
+    ]: out.append("open-ended-improvement composition theorem binding drifted")
     inherited_open_ended=open_ended_improvement.get("inherited_results",{})
     for key,value in {"admission_case_count":7,"update_seed_count":3,"update_arm_count":12,
                       "update_no_change_disposition_count":4,"stopped_seed_count":3,
@@ -1569,7 +1848,7 @@ def errors(data: dict) -> list[str]:
     for key,value in {"terminal_stage":"scoped","protocol_version":2,"governor_handoff_count":1,
                       "readmission_count":1,"support_assignment_count":0,"external_effect_count":0}.items():
         if open_ended_witness.get(key)!=value: out.append(f"open-ended-improvement witness drifted: {key}")
-    for phrase in ["seven-stage lifecycle", "all 81 routes", "91/91", "Support-state and external-effect authority remain exactly `none`"]:
+    for phrase in ["seven-stage lifecycle", "all 81 routes", "91/91", "3/3 cross-stage", "Support-state and external-effect authority remain exactly `none`"]:
         if phrase.casefold() not in data["open_ended_improvement_receipt"].casefold(): out.append(f"open-ended-improvement receipt missing exact boundary: {phrase}")
     for phrase in ["Seven reachable stages", "all 81 routes", "Inadequate for adaptive-search quality", "No support transition"]:
         if phrase.casefold() not in data["open_ended_improvement_dossier"].casefold(): out.append(f"open-ended-improvement dossier missing adequacy boundary: {phrase}")
@@ -2105,6 +2384,30 @@ def main() -> None:
     sota_entry["status"]["latest_review_remediation_contract"]["p6_dated_comparator_ledger_required_before_run"] = False
     mutations.append(("SOTA prerequisite erasure", sota_entry))
 
+    instrument_attempt = copy.deepcopy(base)
+    instrument_attempt["status"]["instrument_adequacy_and_disposition_contract"]["instrument_failure_counts_as_claim_attempt"] = True
+    mutations.append(("Instrument failure laundered into claim attempt", instrument_attempt))
+
+    instrument_floor = copy.deepcopy(base)
+    instrument_floor["status"]["instrument_adequacy_and_disposition_contract"]["minimum_schema_admissible_rate"] = 0.0
+    mutations.append(("Instrument adequacy floor erased", instrument_floor))
+
+    syntax_laundering = copy.deepcopy(base)
+    syntax_laundering["status"]["instrument_adequacy_and_disposition_contract"]["syntax_validity_counts_as_semantic_correctness"] = True
+    mutations.append(("Syntax laundered into semantic correctness", syntax_laundering))
+
+    theorem_count_laundering = copy.deepcopy(base)
+    theorem_count_laundering["status"]["instrument_adequacy_and_disposition_contract"]["top_level_theorem_count_counts_as_semantic_adequacy"] = True
+    mutations.append(("Theorem count laundered into semantic adequacy", theorem_count_laundering))
+
+    refinement_gate_reopened = copy.deepcopy(base)
+    refinement_gate_reopened["status"]["instrument_adequacy_and_disposition_contract"]["review_named_refinement_module_gate_state"] = "in_progress"
+    mutations.append(("Review-named refinement-module gate reopened without roadmap reconciliation", refinement_gate_reopened))
+
+    review_publish = copy.deepcopy(base)
+    review_publish["status"]["instrument_adequacy_and_disposition_contract"]["external_publication_authorized"] = True
+    mutations.append(("Review recommendation laundered into publication authority", review_publish))
+
     article_length = copy.deepcopy(base)
     article_length["status"]["x_article_contract"]["maximum_visible_word_count"] = 10000
     mutations.append(("X Article word-limit drift", article_length))
@@ -2131,7 +2434,8 @@ def main() -> None:
         "55 live chapter-core programs across CF-01..CF-08 with a frozen 54-chapter activation baseline, exact proof/evidence/reader baseline, "
         "proof rationalization and argument-exit contracts, maintained X Article and exact 5:2 header contract, "
         "no support or release effect, no external-human gate, same-transaction successor continuity, "
-        "validated shared-safety, Cognitive Kernel ABI, integrated reference trace, concrete-schema refinement, concurrent effect, reachable stack-boundary, Intent-to-Execution vertical, Authority grant-to-effect, Human Intent resolution, Command semantic-interface, Cognitive Compilation obligation-refinement, Virtual Context binding/materialization/fault, Context Certificate provenance/lifecycle, Context Transaction snapshot/store, Verification Bandwidth evidence-gate, Claim Ledger append-only, Proof-Carrying Claims target-to-writeback, Tribunal versioned-verdict/appeal, Typed Job versioned execution/closure, Artifact record-reality/trust, Procedural Memory promotion/retirement, Routing/MoECOT request-to-closure, Safety Case readiness/invalidation, Capability Threshold repeated assessment, Adversarial Evaluation observation/re-evaluation, Scalable Oversight review/readmission, Policy Optimization governed-update/readmission, Data Engines custody/update/deletion/readmission, Open-Ended Improvement campaign-to-governor/readmission, Recursive Self-Improvement proposal-to-outcome/readmission, Readiness candidate-to-terminal, Hive policy-to-closure, Compact Generation source-to-closure, Fast Generation request-to-closure, Governed Deliberation request-to-closure, Artifact Compression artifact-to-consumption, and Resource Economics allocation-and-simulation-transport receipts, bounded WIP and first-campaign/SOTA entry gates, and 56 rejecting mutations."
+        "validated shared-safety, Cognitive Kernel ABI, integrated reference trace, concrete-schema refinement, concurrent effect, reachable stack-boundary, Intent-to-Execution vertical, Authority grant-to-effect, Human Intent resolution, Command semantic-interface, Cognitive Compilation obligation-refinement, Virtual Context binding/materialization/fault, Context Certificate provenance/lifecycle, Context Transaction snapshot/store, Verification Bandwidth evidence-gate, Claim Ledger append-only, Proof-Carrying Claims target-to-writeback, Tribunal versioned-verdict/appeal, Typed Job versioned execution/closure, Artifact record-reality/trust, Procedural Memory promotion/retirement, Routing/MoECOT request-to-closure, Safety Case readiness/invalidation, Capability Threshold repeated assessment, Adversarial Evaluation observation/re-evaluation, Scalable Oversight review/readmission, Policy Optimization governed-update/readmission, Data Engines custody/update/deletion/readmission, Open-Ended Improvement campaign-to-governor/readmission, Recursive Self-Improvement proposal-to-outcome/readmission, Readiness candidate-to-terminal, Hive policy-to-closure, Compact Generation source-to-closure, Fast Generation request-to-closure, Governed Deliberation request-to-closure, Artifact Compression artifact-to-consumption, and Resource Economics allocation-and-simulation-transport receipts, bounded WIP and first-campaign/SOTA entry gates, and "
+        f"{len(mutations)} rejecting mutations."
     )
 
 

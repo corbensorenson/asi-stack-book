@@ -1,76 +1,168 @@
 {
   "schema_version": "asi_stack.wip_checkpoint_inventory.v0",
   "roadmap_id": "asi-stack-post-v2-3-claim-proof-sota-challenge-2026-07-14",
-  "recorded_date": "2026-07-15",
-  "base_commit": "5eddb15d56b0c813666ed2b2ea41e7c87f1cf297",
-  "checkpoint_commit": "f27a6a8dffe03977969b6332d0e81314f29be052",
-  "closure_commit": "1fb4e23fb5208d8798b89eb9cd1fc2e65eeaea78",
-  "changed_path_count": 724,
-  "independent_work_package_count": 5,
+  "recorded_date": "2026-07-16",
+  "base_commit": "1faacc14d1134192a5776715a38d704c16fbb62b",
+  "checkpoint_commit": null,
+  "closure_commit": null,
+  "changed_path_count": 296,
+  "independent_work_package_count": 7,
   "changed_path_soft_limit": 250,
   "independent_work_package_limit": 3,
   "threshold_exceeded": true,
-  "scope_expansion_blocked": true,
-  "checkpoint_disposition": "checkpoint_complete_local_only",
-  "commit_authorized": false,
-  "authorization_basis": "The persistent user-authored goal requires completion of committed-object and deployed-attestation gates; a coherent local checkpoint is the normal in-scope implementation step needed to make those gates testable.",
-  "authorization_scope": "One local coherent checkpoint commit and its local attestation-closure follow-up only; no push, tag, deploy, external publication, or release authorization is inferred.",
+  "scope_expansion_blocked": false,
+  "checkpoint_disposition": "checkpoint_authorized_pending_commit",
+  "commit_authorized": true,
+  "authorization_basis": "On 2026-07-16 the user explicitly instructed Codex to reconcile the current work onto main and push it so GitHub main reflects the most current project state, while prohibiting new branches.",
+  "authorization_scope": "Commit the complete validated intended worktree directly on main, attest the committed checkpoint, record closure, push main, and delete the two obsolete remote codex branches after verifying both are ancestors of main. No tag, deployment, raw-source publication, book release, or social publication is authorized.",
   "packages": [
     {
-      "package_id": "claim-proof-constitution-and-atom-registry",
-      "surface_groups": ["docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md", "evidence_quality/claim_*", "evidence_quality/prose_*", "schemas/claim_*", "scripts/build_claim_*"],
-      "authorship_mix": "authored_and_generated",
+      "package_id": "review-named-lifecycle-composition-and-reconciliation",
+      "surface_groups": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean",
+        "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean",
+        "scripts/validate_*_refinement.py",
+        "experiments/*_refinement/results/2026-07-16-local.json",
+        "evidence_quality/claim_*",
+        "proofs/proof_*",
+        "book_structure.json",
+        "docs/book_outline.md"
+      ],
+      "authorship_mix": "authored Lean composition theorems, independently implemented cross-stage consumers, deterministic results, and generated claim/proof projections",
       "dependency_order": 1,
-      "validation_state": "active_validated_surfaces_with_remaining_campaign_work",
-      "rollback_boundary": "claim registries, review overlays, schemas, dossiers, and roadmap authority must move together"
+      "validation_state": "six composition theorems and 9/9 cross-stage mutations pass; full deep registry, Lean build, and Quarto render passed before the later P2-P3 packages",
+      "rollback_boundary": "three Lean modules, three consumers/results/schemas/dossiers, proof and claim lineage, chapter wording, outline, roadmap, registry, and changelog move together"
     },
     {
-      "package_id": "p2-proof-rationalization-and-semantic-refinement",
-      "surface_groups": ["lean/", "proofs/", "evidence_quality/model_adequacy_dossiers/", "docs/*_refinement.md", "experiments/*_refinement/", "scripts/*_refinement.py"],
-      "authorship_mix": "authored_models_consumers_results_and_generated_registries",
+      "package_id": "p2-m3-proof-closure-audit",
+      "surface_groups": [
+        "proofs/p2_closure_audit.json",
+        "scripts/validate_p2_closure_audit.py",
+        "scripts/register_p2_closure_audit.py",
+        "scripts/build_proof_rationalization_registry.py",
+        "docs/proof_rationalization_registry.md",
+        "docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md",
+        "roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json"
+      ],
+      "authorship_mix": "authored closure authority and validator plus generated rationalization report",
       "dependency_order": 2,
-      "validation_state": "current_family validation complete; the intentional residual artifact rewrite is committed and the randomized committed-object attestation passes",
-      "rollback_boundary": "each family requires atomic model, consumer, result, dossier, target, lineage, registry, chapter, roadmap, and changelog reconciliation"
+      "validation_state": "1,151/1,151 baseline declarations, 298/298 baseline/current targets, 65/65 modules, 298 adequacy routes, nine model consumers, and six negative mutations pass with no support effect",
+      "rollback_boundary": "closure audit, status/roadmap states, rationalization generator/report, validation registration, and changelog move together"
     },
     {
-      "package_id": "replaceable-cognitive-substrates-chapter-and-source-program",
-      "surface_groups": ["chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd", "docs/replaceable_cognitive_substrates_intake_and_research_plan.md", "sources/source_notes/ext_*", "lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean", "experiments/cognitive_kernel_abi/"],
-      "authorship_mix": "authored_chapter_sources_model_and_results",
+      "package_id": "m2-measurement-and-reproduction-foundation",
+      "surface_groups": [
+        "experiments/research_foundation/",
+        "scripts/validate_research_foundation.py",
+        "scripts/register_research_foundation.py",
+        "docs/research_measurement_and_reproduction_foundation.md"
+      ],
+      "authorship_mix": "authored corpus, isolated labels, model/inference/evaluator/statistics/environment/safety/artifact contracts, sacrificial canaries, validator, and receipt",
       "dependency_order": 3,
-      "validation_state": "bounded_abi_slice_complete_empirical_campaigns_pending",
-      "rollback_boundary": "chapter, manifest placement, source assignments, claim addendum, ABI model, and generated projections move together"
+      "validation_state": "24 tasks, exact 6/6/12 splits, 12 isolated labels, three model roles, 8/10 schema-admissible and 7/8 semantically correct admitted canaries, two evaluators, and six negative mutations pass",
+      "rollback_boundary": "foundation, corpus, labels, preflight, validator, registry, status/roadmap states, receipt, and changelog move together"
     },
     {
-      "package_id": "inherited-evidence-reader-and-public-truth-renewal",
-      "surface_groups": ["experiments/*", "evidence_transitions/", "claim_decisions/", "editions/", "release_records/", "docs/public*", "docs/v1_*"],
-      "authorship_mix": "historical_results_refreshed_receipts_and_generated_public_surfaces",
+      "package_id": "p3-m4-integrated-executable-slices",
+      "surface_groups": [
+        "experiments/p3_integrated_slices/",
+        "evidence_transitions/post_v2_3/instrument_failure_supersession.json",
+        "scripts/validate_p3_integrated_slices.py",
+        "scripts/register_p3_integrated_slices.py",
+        "docs/p3_integrated_executable_slices.md",
+        "validation/registry.json"
+      ],
+      "authorship_mix": "authored executable local effect replay, source-bound result, superseding protocol lineage, validator, receipt, and generated validation registry",
       "dependency_order": 4,
-      "validation_state": "preserved_from_prior_cycles_with_current_digest_refreshes",
-      "rollback_boundary": "result, transition, decision, reader, release, and public truth records must remain mutually consistent"
+      "validation_state": "12 cases, ten lifecycle states, three slices, six observed effects, three exact rollbacks, one residualized partial effect, one quarantine, 20/20 contained boundary injections, one sealed cross-slice trace, and eleven negative mutations pass",
+      "rollback_boundary": "integrated result, source identities, historical protocol supersession, validator, registry, P3/M4 status/roadmap states, receipt, and changelog move together"
     },
     {
-      "package_id": "manifest-generated-projections-and-validation-authority",
-      "surface_groups": ["book_structure.json", "_quarto.yml", "docs/book_outline.md", "appendices/", "validation/", "schemas/", "scripts/validate_*", "README.md", "index.qmd"],
-      "authorship_mix": "manifest_authority_generated_projections_and_validators",
+      "package_id": "p4-m5-governed-usefulness-terminal-campaign",
+      "surface_groups": [
+        "experiments/p4_governed_usefulness/",
+        "scripts/validate_p4_governed_usefulness_preregistration.py",
+        "scripts/evaluate_p4_governed_usefulness_preflight.py",
+        "scripts/validate_p4_governed_usefulness_instrument_repair.py",
+        "scripts/evaluate_p4_governed_usefulness_preflight_v2.py",
+        "scripts/register_p4_governed_usefulness_instrument_repair.py",
+        "scripts/validate_p4_governed_usefulness_difficulty_sweep_design.py",
+        "scripts/register_p4_governed_usefulness_difficulty_sweep_design.py",
+        "scripts/run_p4_governed_usefulness_difficulty_sweep.py",
+        "scripts/validate_p4_governed_usefulness_difficulty_sweep_runner.py",
+        "scripts/register_p4_governed_usefulness_difficulty_sweep_runner.py",
+        "scripts/register_p4_governed_usefulness_preregistration.py",
+        "scripts/evaluate_p4_governed_usefulness_tuning_pool.py",
+        "scripts/generate_p4_governed_usefulness_confirmatory_candidates.py",
+        "scripts/run_p4_governed_usefulness_confirmatory.py",
+        "scripts/validate_p4_governed_usefulness_confirmatory.py",
+        "scripts/register_p4_governed_usefulness_confirmatory.py",
+        "evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json",
+        "docs/p4_governed_usefulness_campaign.md",
+        "docs/non_core_evidence_ledger.md",
+        "appendices/C_claim_evidence_matrix.qmd",
+        "roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json",
+        "schemas/post_v2_3_claim_proof_and_sota_challenge_status.schema.json",
+        "validation/registry.json"
+      ],
+      "authorship_mix": "immutable hosted-chat history, authored local instrument and tuning repairs, open-weight candidate generation, frozen held-out policy comparison, deterministic independent evaluators, bounded effect probes, accepted non-core transition, validators, registry, status contract, and book reconciliation",
       "dependency_order": 5,
-      "validation_state": "PR tier passes; Lean builds 93 jobs; isolated Quarto renders 68 pages; randomized committed-object attestation and its dependent Artifact Reality refinement pass; complete deep rerun required after closure commit",
-      "rollback_boundary": "manifest, projections, registries, validators, public pointers, and rendered artifacts must be reconciled together"
+      "validation_state": "local v9 instrument adequacy passes; four preserved tuning repairs produce a prospectively pooled 32/40 operating-range pass with 9/2/10/11 cells, zero evaluator disagreement, and 20 effect probes; a disjoint 16-task held-out run admits 15 candidates and passes all six co-primary gates with full governance at 9 useful/0 unsafe versus baseline 0/0 and one evidence-freshness ablation unsafe release; schema, book, publication, trust, transition, roadmap, validation-registry, 68-page render, and rendered Human-view checks pass",
+      "rollback_boundary": "historical instrument lineage, all local instrument/tuning/confirmatory artifacts, accepted non-core transition, four owner chapters, Appendix C, public trust counts, roadmap/status/schema, validation registry, readable receipt, changelog, rendered outputs, and checkpoint inventory move together"
+    },
+    {
+      "package_id": "p4-m6-routing-deliberation-terminal-campaign",
+      "surface_groups": [
+        "experiments/p4_routing_deliberation/",
+        "scripts/*p4_m6*",
+        "evidence_transitions/post_v2_3/routing_deliberation_mixed_no_promotion.json",
+        "chapters/routing-heads-and-specialist-cores.qmd",
+        "chapters/governed-deliberation-and-test-time-scaling.qmd",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+        "chapters/resource-economics-and-token-budgets.qmd",
+        "docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md",
+        "validation/registry.json"
+      ],
+      "authorship_mix": "prospectively frozen authored corpus and labels, exact local open-weight candidate generation, preserved failed and repaired instrument lineage, internally separate deterministic evaluators and effect observer, matched policy adjudication, negative mutations, no-promotion transition, and book reconciliation",
+      "dependency_order": 6,
+      "validation_state": "v1 1/4 schema failure and v2 4/4 qualification retained; 32/32 held-out candidates across eight tracks, four ingress modes, eight routing arms, four stopping arms, seventeen control classes, and fifteen historical harm regressions pass exact validation; full reflexive 31 route-correct/21 useful/1 wrong-fast/2 unsafe yields no promotion",
+      "rollback_boundary": "M6 design, task/label/training corpus, generation receipts and candidates, instrument lineage, terminal result, validator/registry, no-promotion decision, four chapter reconciliations, roadmap/status, and changelog move together"
+    },
+    {
+      "package_id": "kerc-source-intake-and-roadmap-program",
+      "surface_groups": [
+        "sources/source_notes/kernel_english_residual_compiler.md",
+        "sources/source_inventory.json",
+        "research_backlog_records/kernel_english_residual_compiler_2026_07_16.json",
+        "new_paper_triage_scenarios/kernel_english_residual_compiler_2026_07_16.json",
+        "scripts/integrate_kernel_english_residual_compiler_source.py",
+        "book_structure.json",
+        "docs/book_outline.md",
+        "appendices/G_corben_source_corpus.qmd",
+        "docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md"
+      ],
+      "authorship_mix": "two user-supplied raw-source forms retained in ignored local cache, passage-bounded source analysis, existing-owner triage, manifest/source-queue assignments, an evidence-gated fourteen-part campaign, and explicit no-chapter/no-support boundaries",
+      "dependency_order": 7,
+      "validation_state": "canonical Markdown and DOCX hashes bound; one source inventory entry, source note, backlog record, triage scenario, twelve existing chapter assignments, generated source crosswalks, Campaign 6, and no chapter/support change pass schema, book, publication, and roadmap validation",
+      "rollback_boundary": "KERC raw-cache placement, public-safe note/inventory/backlog/triage, twelve source assignments and crosswalks, Appendix G, roadmap Campaign 6, milestone wording, and changelog move together"
     }
   ],
   "checkpoint_closure": {
-    "attestation_result_path": "experiments/artifact_randomized_attestation/results/2026-07-04-local.json",
-    "attestation_state": "passes_against_checkpoint_commit_objects",
-    "dependent_artifact_reality_state": "passes",
-    "closure_commit_parent_is_checkpoint_commit": true,
-    "worktree_was_clean_after_closure_commit": true,
-    "external_actions_authorized": false
+    "attestation_result_path": null,
+    "attestation_state": "pending_authorized_checkpoint_commit",
+    "dependent_artifact_reality_state": "validated_worktree_pending_committed_object_attestation",
+    "closure_commit_parent_is_checkpoint_commit": false,
+    "worktree_was_clean_after_closure_commit": false,
+    "external_actions_authorized": true
   },
-  "next_checkpoint_requirement": "Keep the worktree clean after the local attestation-closure commit, then resume the next unfinished roadmap campaign. Push, tag, deploy, and publication remain separately unauthorized.",
+  "next_checkpoint_requirement": "Create one coherent main-branch checkpoint for these seven packages, run committed-object and clean-worktree attestation, record the checkpoint and closure commits, push main, and delete only the two verified ancestor remote codex branches. Do not tag, deploy, publish raw sources, release the book, or publish the X article.",
   "support_state_effect": "none",
   "release_effect": "none",
   "non_claims": [
     "Changed-path and package counts are engineering-risk indicators, not semantic or empirical proof.",
-    "The consumed local-checkpoint authorization did not authorize pushing, tagging, deploying, publishing, or releasing.",
-    "A completed checkpoint does not establish semantic, empirical, deployment, or release support for any book claim."
+    "Inventory completion is not checkpoint completion; commit and push authority comes only from the user's explicit 2026-07-16 instruction.",
+    "The current uncommitted worktree has no committed-object attestation yet; closure must record it after the checkpoint commit.",
+    "No tag, deploy, raw-source publication, book release, social publication, support, reproduction, transfer, SOTA, AGI, or ASI claim follows."
   ]
 }

@@ -1,0 +1,41 @@
+{
+  "schema_version": "asi_stack.p4_governed_usefulness_instrument_diagnosis.v1",
+  "diagnosis_id": "p4-gu-v1-evaluator-taxonomy-diagnosis-2026-07-16",
+  "protocol_id": "p4-gu-instrument-preflight-v1",
+  "result_path": "experiments/p4_governed_usefulness/results/strong_model_sacrificial_preflight.json",
+  "result_sha256": "e866ee2ec8ad8b4442867052ec393737743fcc1aaeae59990cc3e10da27f4619",
+  "raw_response_path": "experiments/p4_governed_usefulness/raw/strong_model_sacrificial_preflight_v1.json",
+  "raw_response_sha256": "45f22814663f29ef02f4fddf4fd4d811b15c8f8defb8dd969816cd9c41061c43",
+  "protocol_outcome": "instrument_inadequate_recampaign_required",
+  "claim_outcome": null,
+  "claim_attempt_counted": false,
+  "observed": {
+    "schema_admissible_task_count": 6,
+    "expected_task_count": 6,
+    "exact_route_and_residual_match_count": 1,
+    "evaluator_disagreement_count": 0,
+    "identity_drift_detected": false,
+    "transport_retry_count": 0
+  },
+  "failure_class": "evaluator_taxonomy_and_lexical_contract_inadequate",
+  "diagnosis": [
+    "Three records matched the frozen route but used an unregistered synonym or broader phrase for the residual.",
+    "One record differed on both the non-release route name and the residual phrase.",
+    "One record preserved the exact residual but selected a different non-release route name.",
+    "The v1 contract incorrectly treated exact free-form snake_case wording and a fine-grained route name as semantic identity.",
+    "The concise reasons appear directionally relevant on manual inspection, but that post-outcome observation is diagnostic only and cannot rescore the frozen result."
+  ],
+  "repair_requirements": [
+    "Create a new protocol identity and freeze it before a new response.",
+    "Separate a small canonical decision class from free-form route detail.",
+    "Use a closed residual-class vocabulary visible to the candidate while keeping task-to-label mappings evaluator-only.",
+    "Preserve the v1 raw response, result, costs, and failure label unchanged.",
+    "Do not open the difficulty sweep or confirmatory denominator until the new sacrificial protocol independently passes."
+  ],
+  "retrospective_rescore_allowed": false,
+  "difficulty_sweep_opened": false,
+  "confirmatory_denominator_opened": false,
+  "support_state_effect": "none",
+  "publication_authority": "none",
+  "release_authority": "none"
+}

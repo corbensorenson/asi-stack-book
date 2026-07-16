@@ -476,6 +476,17 @@ residual ledger, natural benchmark and canary campaign, independent evaluator,
 transitive quarantine enforcement, effect-complete rollback and compensation,
 terminal-state governance, runtime replay, and heterogeneous transfer.
 
+The P4/M5 held-out campaign adds one narrow causal policy result. Among 15
+admitted outputs on a fixed 16-task local corpus, full governance released 9
+useful and 0 unsafe candidates, while the candidate's self-release baseline
+released none. Removing evidence freshness admitted one additional
+useful-unsafe candidate; the residualized partial-recovery task remained
+non-released. This supports only the non-core claim that the frozen readiness
+policy and its freshness gate changed release behavior on this exact corpus.
+It does not calibrate a deployed gate, establish prevalence, prove residual
+custody, or validate effect-complete rollback. The chapter core therefore
+remains `argument`.
+
 ### Formalization hooks
 
 | Tag | Module | Target | Status |

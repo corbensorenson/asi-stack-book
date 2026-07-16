@@ -4,7 +4,7 @@ chapter_id: "stable-capability-fields"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 proof-program manuscript"
-last_updated: "2026-07-14"
+last_updated: "2026-07-16"
 primary_sources:
   - "scf"
   - "viea"
@@ -14,6 +14,7 @@ primary_sources:
   - "ext_capability_based_computer_systems_1984"
   - "ext_semver_2_0_0"
   - "ext_slsa_v1_0"
+  - "reflexive_router_whitepaper"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -33,11 +34,11 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.3 proof-program manuscript |
 | Last updated | 2026-07-14 |
-| Primary source records | `scf`, `viea`, `talos`, `ladon_manhattan`, `moecot`, `ext_capability_based_computer_systems_1984`, `ext_semver_2_0_0`, `ext_slsa_v1_0` |
+| Primary source records | `scf`, `viea`, `talos`, `ladon_manhattan`, `moecot`, `ext_capability_based_computer_systems_1984`, `ext_semver_2_0_0`, `ext_slsa_v1_0`, `reflexive_router_whitepaper` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `scf`; supporting: `viea`, `talos`, `ladon_manhattan`; connector/recovery: `moecot`; external variants: `ext_capability_based_computer_systems_1984`, `ext_semver_2_0_0`, `ext_slsa_v1_0` |
-| Source loading state | all eight source notes reviewed and manifest-mapped; local raw passages reviewed for `scf`, `viea`, `talos`, and `ladon_manhattan`; `moecot` mapped from its durable source note; three external specifications/texts mapped through reviewed source notes |
+| Source queue | primary: `scf`; supporting: `viea`, `talos`, `ladon_manhattan`, `reflexive_router_whitepaper`; connector/recovery: `moecot`; external variants: `ext_capability_based_computer_systems_1984`, `ext_semver_2_0_0`, `ext_slsa_v1_0` |
+| Source loading state | all nine source notes reviewed and manifest-mapped; local raw passages reviewed for `scf`, `viea`, `talos`, `ladon_manhattan`, and `reflexive_router_whitepaper`; `moecot` mapped from its durable source note; three external specifications/texts mapped through reviewed source notes |
 | Test state | public SCF harness: 3 valid / 6 expected-invalid synthetic records; readiness/residual harness: selected route and rollback prerequisites; lifecycle probe: 2 valid traces / 6 expected-invalid controls; Lean: 25 theorem declarations under 4 manifest targets. No real candidate comparison, full behavioral-refinement evaluator, provenance verification, state migration, effect-complete rollback, or deployed enforcement has run. |
 
 ## Drafting guardrail
@@ -140,6 +141,34 @@ The field owns history and downstream reliance. Regressions, incidents, dissent,
 Recovery must be effect-complete. The record identifies the prior implementation and route, but also reverse migration, data and cache restoration, credential and policy state, learned updates, descendants, external actions and commitments, affected consumers, monitors, compensating actions, residual irreversibility, trigger authority, and accountable owner. A stored artifact pointer is rollback metadata; it is not rollback evidence.
 
 Every decision emits a replacement receipt binding old and new identities, evidence views, authority delta, consumers, state movement, monitors, residuals, recovery trigger and owner, terminal outcome, and support-state non-effect. This is the durable handoff to Capability Replacement and Rollback's transaction protocol.
+
+### Reflexes target fields, not implementations
+
+The Reflexive Router supplies a concrete consumer for the SCF abstraction. A
+route, direct command, workflow node, or compiled reflex should name a stable
+semantic capability and field version rather than a vendor, model, prompt,
+tool binary, or service endpoint. The field resolves that name to an exact
+candidate only after consumer, purpose, environment, authority, freshness,
+quality, verifier, failure, and effect obligations are qualified.
+
+Compatibility is broader than input/output shape. A replacement must preserve
+the result schema, refusal and abstention semantics, typed failure classes,
+temporal behavior, authority ceiling, verifier expectations, side-effect
+contract, resource envelope, observability, and fallback behavior needed by
+each dependent reflex. A change in any of those can invalidate a route even
+when the capability name and nominal output type stay unchanged.
+
+Compiled procedures therefore create an explicit reliance graph. Each reflex
+records the field version, qualification lease, accepted implementation set,
+negative cases, monitoring policy, expiry, and decompilation route. Candidate
+replacement triggers differential replay and requalification of affected
+reflexes; it does not inherit their trust automatically. Conversely, retiring
+a field invalidates caches, aliases, workflows, and procedures that depend on
+it or leaves them as owned residuals.
+
+This is source-derived design pressure, not substitution evidence. The paper
+does not compare real implementations, demonstrate refinement, or execute
+rollback. The SCF core remains at `argument`.
 
 ## Interfaces
 
@@ -289,6 +318,7 @@ The module contains 25 theorem declarations grouped under these four manifest ta
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
+| `reflexive_router_whitepaper` | The Reflexive Router | pre_deliberative_reflexive_routing_control_plane | Stable semantic targets for routes and reflexes, consumer-relative compatibility, qualification leases, reliance invalidation, and decompilation after field change. | complete Corben-authored v1.2 paper passage-reviewed; design rationale only |
 | `scf` | Stable Capability Fields | governance_recursive_self_improvement | Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. | source note available; local raw cache available; passage reviewed for field identity, qualification, route validation, authority, lifecycle, and rollback vocabulary |
 | `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache available; passage reviewed for artifact graphs, support states, residuals, regressions, routing, and permission envelopes |
 | `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw cache available; passage reviewed for typed jobs, evidence-bound artifacts, proof bundles, replay, and residual uncertainty |

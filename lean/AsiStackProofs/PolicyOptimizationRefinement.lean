@@ -295,6 +295,56 @@ def canonicalState (stage : Stage) : State := {
   boundedLeaseCount := 0, readmissionCount := 0, supportAssignmentCount := 0,
   externalEffectCount := 0 }
 
+def canonicalLifecycleState : State :=
+  let s1 := (applyEvent (canonicalState .draft) .scopeUpdate
+    { canonicalPacket with eventDigest := 1 }).1
+  let s2 := (applyEvent s1 .bindTrainingState
+    { canonicalPacket with eventDigest := 2 }).1
+  let s3 := (applyEvent s2 .recordUpdate
+    { canonicalPacket with eventDigest := 3 }).1
+  let s4 := (applyEvent s3 .recordEvaluation
+    { canonicalPacket with eventDigest := 4 }).1
+  let s5 := (applyEvent s4 .adjudicateUpdate
+    { canonicalPacket with eventDigest := 5 }).1
+  let s6 := (applyEvent s5 .requestBoundedLease
+    { canonicalPacket with eventDigest := 6 }).1
+  (applyEvent s6 .triggerReadmission
+    { canonicalPacket with eventDigest := 7, successorVersion := 2 }).1
+
+def causalAblationBlockedLifecycleState : State :=
+  let s1 := (applyEvent (canonicalState .draft) .scopeUpdate
+    { canonicalPacket with eventDigest := 1 }).1
+  let s2 := (applyEvent s1 .bindTrainingState
+    { canonicalPacket with eventDigest := 2 }).1
+  let s3 := (applyEvent s2 .recordUpdate
+    { canonicalPacket with eventDigest := 3 }).1
+  let s4 := (applyEvent s3 .recordEvaluation
+    { canonicalPacket with eventDigest := 4, causalAblationPresent := false }).1
+  let s5 := (applyEvent s4 .adjudicateUpdate
+    { canonicalPacket with eventDigest := 5 }).1
+  let s6 := (applyEvent s5 .requestBoundedLease
+    { canonicalPacket with eventDigest := 6 }).1
+  (applyEvent s6 .triggerReadmission
+    { canonicalPacket with eventDigest := 7, successorVersion := 2 }).1
+
+theorem policy_update_full_cycle_composes :
+    canonicalLifecycleState.stage = .scoped ∧
+    canonicalLifecycleState.version = 2 ∧
+    canonicalLifecycleState.receiptCount = 7 ∧
+    canonicalLifecycleState.boundedLeaseCount = 1 ∧
+    canonicalLifecycleState.readmissionCount = 1 ∧
+    canonicalLifecycleState.supportAssignmentCount = 0 ∧
+    canonicalLifecycleState.externalEffectCount = 0 := by native_decide
+
+theorem policy_update_failed_evaluation_blocks_downstream_handoff :
+    causalAblationBlockedLifecycleState.stage = .updated ∧
+    causalAblationBlockedLifecycleState.version = 1 ∧
+    causalAblationBlockedLifecycleState.receiptCount = 3 ∧
+    causalAblationBlockedLifecycleState.boundedLeaseCount = 0 ∧
+    causalAblationBlockedLifecycleState.readmissionCount = 0 ∧
+    causalAblationBlockedLifecycleState.supportAssignmentCount = 0 ∧
+    causalAblationBlockedLifecycleState.externalEffectCount = 0 := by native_decide
+
 theorem policy_update_lifecycle_routes :
     routeFor (canonicalState .scoped) .bindTrainingState
         { canonicalPacket with optimizerPresent := false } = .requestOptimizer ∧

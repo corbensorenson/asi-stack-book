@@ -1,0 +1,29 @@
+{
+  "schema_version": "asi_stack.p4_governed_usefulness_local_instrument_failure_diagnosis.v8",
+  "protocol_id": "p4-gu-local-instrument-qualification-v8",
+  "diagnosed_at_utc": "2026-07-16T14:22:19Z",
+  "raw_response_path": "experiments/p4_governed_usefulness/raw/local_instrument_qualification_v8_qwen3_8b.json",
+  "raw_response_sha256": "e670164f91648fda0208edf7dfcfc7e06b3fa124ecfbcf2a98aaa7d6a4af6d55",
+  "result_path": "experiments/p4_governed_usefulness/results/local_instrument_qualification_v8.json",
+  "result_sha256": "4318c01aa5877a86ed2d95d582106f34a14710a0100ae168f43e899dfcb1a201",
+  "protocol_outcome": "instrument_inadequate_recampaign_required",
+  "claim_attempt_counted": false,
+  "retrospective_rescore_allowed": false,
+  "observations": {"schema_admissible_task_count":8,"exact_terminal_eligibility_count":8,"exact_residual_class_count":8,"exact_remediation_action_count":6,"exact_full_tuple_count":6,"evaluator_disagreement_count":0,"retry_count":0,"elapsed_seconds":83.191122},
+  "mismatches": [
+    {"task_id":"local-sac-01","expected_action":"defer","observed_action":"quarantine","eligibility_and_residual_exact":true},
+    {"task_id":"local-sac-05","expected_action":"defer","observed_action":"rollback","eligibility_and_residual_exact":true}
+  ],
+  "adjudication": {
+    "root_cause": "The 8B generator recognized every terminal blocker and residual but selected neighboring non-release lifecycle verbs on two tasks. Exact remediation syntax is useful diagnostic information but is not required to establish that the answer channel recognizes eligibility and the decisive blocker before a tuning sweep whose utility rubric separately scores exact actions.",
+    "why_not_rescore_v8": "V8 prospectively scored the full tuple, so it remains failed. V9 changes the scored construct under a new identity rather than reinterpreting v8.",
+    "difficulty_sweep_effect": "remains_closed_until_v9_passes_and_design_is_separately_frozen",
+    "support_state_effect": "none"
+  },
+  "prospective_v9_requirements": [
+    "Require schema-admissible action enums but score terminal eligibility and exact residual only for the sacrificial answer-channel gate.",
+    "Retain exact remediation match as a reported diagnostic and keep exact action scoring in the subsequent tuning utility rubric.",
+    "Keep 7/8 schema and scored-semantic floors, zero evaluator disagreement, one-shot 8B generation, label isolation, and all non-claims."
+  ],
+  "non_claims": ["V8 remains failed.","V9 construct repair does not declare the two v8 actions correct.","No campaign or support claim follows."]
+}

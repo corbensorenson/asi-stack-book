@@ -13,6 +13,7 @@ RESULT=ROOT/'experiments/policy_optimization_refinement/results/2026-07-16-local
 COMMAND='python3 scripts/validate_policy_optimization_refinement.py'
 STAGES=['draft','scoped','stateBound','updated','evaluated','adjudicated','leaseBound']
 KINDS={'draft':'scopeUpdate','scoped':'bindTrainingState','stateBound':'recordUpdate','updated':'recordEvaluation','evaluated':'adjudicateUpdate','adjudicated':'requestBoundedLease','leaseBound':'triggerReadmission'}
+NEXT={'draft':'scoped','scoped':'stateBound','stateBound':'updated','updated':'evaluated','evaluated':'adjudicated','adjudicated':'leaseBound','leaseBound':'scoped'}
 ACCEPTED={'accept_scope','accept_state_binding','accept_update_receipt','accept_evaluation','accept_adjudication','accept_bounded_lease','accept_readmission'}
 IDENTITY={'updateId','targetPolicyDigest','baselineDigest','objectiveDigest','datasetDigest','feedbackDigest','baseCheckpointDigest','candidateCheckpointDigest','optimizerDigest','schedulerDigest','rngDigest','evaluatorDigest','rollbackDigest','consumerDigest','authorityDigest','currentVersion'}
 GATES={
@@ -44,6 +45,39 @@ def route(stage:str,kind:str,p:dict[str,Any],last:int=0,version:int=1)->str:
    if p[field]!=version+1:return answer
   elif p[field] is False:return answer
  return {'draft':'accept_scope','scoped':'accept_state_binding','stateBound':'accept_update_receipt','updated':'accept_evaluation','evaluated':'accept_adjudication','adjudicated':'accept_bounded_lease','leaseBound':'accept_readmission'}[stage]
+
+def initial_state()->dict[str,Any]:
+ return {'stage':'draft','version':1,'last_event_digest':0,'receipt_count':0,'bounded_lease_count':0,'readmission_count':0,'support_assignment_count':0,'external_effect_count':0}
+
+def apply_event(state:dict[str,Any],kind:str,p:dict[str,Any])->tuple[dict[str,Any],str]:
+ answer=route(state['stage'],kind,p,state['last_event_digest'],state['version'])
+ if answer not in ACCEPTED:return dict(state),answer
+ out=dict(state);out['stage']=NEXT[state['stage']];out['last_event_digest']=p['eventDigest'];out['receipt_count']+=1
+ if answer=='accept_bounded_lease':out['bounded_lease_count']+=1
+ if answer=='accept_readmission':out['readmission_count']+=1;out['version']=p['successorVersion']
+ return out,answer
+
+def lifecycle(mutation_step:int=0,changes:dict[str,Any]|None=None)->tuple[dict[str,Any],list[str]]:
+ state=initial_state();routes=[]
+ for index,intended_stage in enumerate(STAGES,1):
+  p=packet();p['eventDigest']=index;p['currentVersion']=state['version']
+  if intended_stage=='leaseBound':p['successorVersion']=state['version']+1
+  if index==mutation_step and changes:p.update(changes)
+  state,answer=apply_event(state,KINDS[intended_stage],p);routes.append(answer)
+ return state,routes
+
+def cross_stage_mutations()->list[dict[str,Any]]:
+ specs=[
+  ('missing_causal_ablation_blocks_lease_and_readmission',4,{'causalAblationPresent':False},'updated',3,0,0),
+  ('support_authority_laundering_blocks_lease_and_readmission',6,{'noSupportAuthorityRecorded':False},'adjudicated',5,0,0),
+  ('incomplete_effect_rollback_blocks_readmission',7,{'effectCompleteRollbackPresent':False},'leaseBound',6,1,0),
+ ]
+ rows=[]
+ for mutation_id,step,changes,stage,receipts,leases,readmissions in specs:
+  state,routes=lifecycle(step,changes)
+  rejected=(state['stage']==stage and state['receipt_count']==receipts and state['bounded_lease_count']==leases and state['readmission_count']==readmissions and not any(route in ACCEPTED for route in routes[step-1:]))
+  rows.append({'mutation_id':mutation_id,'rejected':rejected,'terminal_stage':state['stage'],'receipt_count':state['receipt_count'],'bounded_lease_count':state['bounded_lease_count'],'readmission_count':state['readmission_count']})
+ return rows
 
 def run(command:str)->dict[str,Any]:
  p=subprocess.run(command.split(),cwd=ROOT,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
@@ -80,18 +114,20 @@ def build()->dict[str,Any]:
   p=packet()
   if field:p[field]=value
   mutations.append({'mutation_id':mid,'rejected':route(stage,kind,p) not in ACCEPTED})
+ full_state,full_routes=lifecycle();cross=cross_stage_mutations()
  inherited_counts={'workload_sample_count':inherited['workload_sample_count'],'holdout_sample_count':inherited['holdout_sample_count'],'candidate_count':inherited['candidate_count'],'rejected_negative_control_count':sum(inherited['negative_controls'].values()),'selected_canary_promotion_decision':inherited['selected_canary_promotion_decision'],'support_state_effect':inherited['support_state_effect']}
- return {'schema_version':'asi_stack.policy_optimization_refinement.v1','result_id':'policy-optimization-refinement-2026-07-16-local','source_sha256':{'lean_model':hashlib.sha256(LEAN.read_bytes()).hexdigest(),'inherited_result':hashlib.sha256(INHERITED.read_bytes()).hexdigest()},'inherited_lease_probe':inherited_counts,'reachable_stage_count':7,'route_case_count':len(cases),'route_coverage':cases,'mutation_count':len(mutations),'mutation_rejection_count':sum(x['rejected'] for x in mutations),'mutation_receipts':mutations,'command_receipts':[run('python3 scripts/validate_policy_update_lease_probe.py')],'witness':{'terminal_stage':'scoped','protocol_version':2,'receipt_count':7,'bounded_lease_count':1,'readmission_count':1,'support_assignment_count':0,'external_effect_count':0},'support_state_effect':'none','non_claims':['no optimizer, model, trainer, preference dataset, reward model, or policy update ran','no reward, evaluator, causal, forgetting, rollback, policy, or task quality result','no natural workload, deployed canary, live monitor, or external effect','no independent reproduction or heterogeneous transfer','no release, readiness, safety, alignment, support, SOTA, AGI, or ASI authority']}
+ return {'schema_version':'asi_stack.policy_optimization_refinement.v1','result_id':'policy-optimization-refinement-2026-07-16-local','source_sha256':{'lean_model':hashlib.sha256(LEAN.read_bytes()).hexdigest(),'inherited_result':hashlib.sha256(INHERITED.read_bytes()).hexdigest()},'inherited_lease_probe':inherited_counts,'reachable_stage_count':7,'route_case_count':len(cases),'route_coverage':cases,'mutation_count':len(mutations),'mutation_rejection_count':sum(x['rejected'] for x in mutations),'mutation_receipts':mutations,'composition_theorems':['policy_update_full_cycle_composes','policy_update_failed_evaluation_blocks_downstream_handoff'],'cross_stage_mutation_count':len(cross),'cross_stage_mutation_rejection_count':sum(x['rejected'] for x in cross),'cross_stage_mutation_receipts':cross,'command_receipts':[run('python3 scripts/validate_policy_update_lease_probe.py')],'witness':{'terminal_stage':full_state['stage'],'protocol_version':full_state['version'],'receipt_count':full_state['receipt_count'],'bounded_lease_count':full_state['bounded_lease_count'],'readmission_count':full_state['readmission_count'],'support_assignment_count':full_state['support_assignment_count'],'external_effect_count':full_state['external_effect_count'],'accepted_route_count':sum(x in ACCEPTED for x in full_routes)},'support_state_effect':'none','non_claims':['no optimizer, model, trainer, preference dataset, reward model, or policy update ran','no reward, evaluator, causal, forgetting, rollback, policy, or task quality result','no natural workload, deployed canary, live monitor, or external effect','no independent reproduction or heterogeneous transfer','no release, readiness, safety, alignment, support, SOTA, AGI, or ASI authority']}
 
 def main()->None:
  a=argparse.ArgumentParser();a.add_argument('--write',action='store_true');args=a.parse_args();result=build();errors=[]
  if result['route_case_count']!=63:errors.append('route count drifted')
  if result['mutation_count']!=73 or result['mutation_rejection_count']!=73:errors.append('mutation contract drifted')
- for needle in ('inductive Stage','def routeFor','policy_update_lifecycle_routes'):
+ if result['cross_stage_mutation_count']!=3 or result['cross_stage_mutation_rejection_count']!=3:errors.append('cross-stage mutation contract drifted')
+ for needle in ('inductive Stage','def routeFor','policy_update_lifecycle_routes','policy_update_full_cycle_composes','policy_update_failed_evaluation_blocks_downstream_handoff'):
   if needle not in LEAN.read_text():errors.append('Lean model missing '+needle)
  jsonschema.validate(result,json.loads(SCHEMA.read_text()));serialized=json.dumps(result,indent=2)+'\n'
  if args.write:RESULT.parent.mkdir(parents=True,exist_ok=True);RESULT.write_text(serialized)
  elif not RESULT.exists() or RESULT.read_text()!=serialized:errors.append(f'{RESULT.relative_to(ROOT)} is stale; run {COMMAND} --write')
  if errors:print('Policy-optimization refinement failed:\n - '+'\n - '.join(errors));sys.exit(1)
- print('Policy-optimization refinement passed: inherited 6-sample/5-candidate lease, 7 stages, 63 routes, 73/73 mutations rejected, support effect none.')
+ print('Policy-optimization refinement passed: inherited 6-sample/5-candidate lease, 7-stage composed lifecycle, 63 routes, 73/73 route mutations and 3/3 cross-stage mutations rejected, support effect none.')
 if __name__=='__main__':main()

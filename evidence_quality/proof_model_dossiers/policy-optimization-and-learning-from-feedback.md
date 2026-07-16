@@ -8,7 +8,7 @@ Generated from the frozen activation-baseline inventory and semantic review over
 |---|---|---|
 | `lean:policy_optimization.update.operational_invariant` | terminally_dispositioned | replace_with_stronger_model |
 | `lean:policy_optimization.reward_boundary.failure_blocks_promotion` | terminally_dispositioned | replace_with_stronger_model |
-| `lean:policy_optimization.promotion_route.failure_routes` | semantically_reviewed | retain_load_bearing_semantic |
+| `lean:policy_optimization.promotion_route.failure_routes` | semantically_reviewed | replace_with_stronger_model |
 | `lean:policy_optimization.lease_probe_fixture_bridge` | semantically_reviewed | retain_refinement_or_executable_bridge |
 
 ## Baseline theorem declarations

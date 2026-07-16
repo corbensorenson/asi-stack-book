@@ -244,6 +244,20 @@ of its first candidates was correct. A mature test distinguishes "extra
 compute did not rescue a wrong answer" from "extra compute corrupted a right
 answer"; one aggregate accuracy number loses that causal fact.
 
+### P4/M6 real-model stopping result
+
+The P4/M6 held-out run finally exercised real model candidates under a shared
+three-candidate budget. Direct generation ended 12/32 correct. Fixed
+deliberation ended 11/32, corrupted three initially correct answers, and
+repaired two initially incorrect answers. Adaptive stopping ended 12/32 with
+one corruption and one repair. The separate contract verifier also ended 12/32;
+it preserved all twelve initially correct answers but repaired none. The
+fifteen inherited correct-to-incorrect cases passed active policy regression,
+but their original prompts and traces do not exist here and no new calls were
+made for them. The result rejects the claim that extra compute or a stopping
+gate was useful on this authored corpus. It preserves the narrower value of
+corruption accounting and stops at `argument` support.
+
 ## Interfaces
 
 | Boundary owner | Deliberation handoff |

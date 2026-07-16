@@ -2,11 +2,11 @@
 
 ## Reachable model
 
-Seven reachable stages connect prospective campaign scope to generator and denominator binding, append-only archive custody, independent qualification and evaluation, stopping and residual adjudication, one governor-review handoff, and successor-version readmission. The independent consumer reaches all 81 routes and rejects 91/91 registered mutations.
+Seven reachable stages connect prospective campaign scope to generator and denominator binding, append-only archive custody, independent qualification and evaluation, stopping and residual adjudication, one governor-review handoff, and successor-version readmission. Two Lean composition theorems execute the complete lifecycle and a budget-reset prefix. The independent state-transition consumer reaches all 81 routes and rejects 91/91 route mutations plus 3/3 cross-stage mutations.
 
 ## Consumed evidence and countermodels
 
-The consumer reruns three exact validators. It preserves seven deterministic admission cases and ten rejecting controls; a three-seed/four-arm fixed update campaign with real parameter mutations, three exact rollbacks, nine invalidated descendants, and four `no_change` claim dispositions; and the post-v2.1 three-seed/five-arm stopped campaign with 332/332 registered model calls, zero of nine eligible challenger seed-arms meeting the 0.05 gain threshold, exact rollback across 15 transactions, and a `no_change` update disposition. The seven legacy route theorems remain bounded consequences. The refinement adds reachable countermodels for missing qualification, erased failure history, budget reset across descendants, ceremonial stopping, candidate authority laundering, and stale handoff reuse.
+The consumer reruns three exact validators. It preserves seven deterministic admission cases and ten rejecting controls; a three-seed/four-arm fixed update campaign with real parameter mutations, three exact rollbacks, nine invalidated descendants, and four `no_change` claim dispositions; and the post-v2.1 three-seed/five-arm stopped campaign with 332/332 registered model calls, zero of nine eligible challenger seed-arms meeting the 0.05 gain threshold, exact rollback across 15 transactions, and a `no_change` update disposition. The seven legacy route theorems remain bounded consequences. The cross-stage traces establish that a budget reset blocks archive progression and every downstream handoff, a missing stop-effect receipt blocks adjudication and handoff, and candidate-authority laundering blocks governor handoff and readmission.
 
 ## Assumptions, exclusions, and adequacy verdict
 

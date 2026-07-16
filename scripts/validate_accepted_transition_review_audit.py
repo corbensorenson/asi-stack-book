@@ -430,8 +430,8 @@ def validate_surfaces(errors: list[str]) -> None:
         DOC: [
             "Accepted Transition Review Audit",
             rel(RESULT),
-            "103 accepted transition records",
-            "nineteen bounded non-core upward transitions",
+            "105 accepted transition records",
+            "twenty bounded non-core upward transitions",
             "two accepted exact refutations",
             "seven expected-invalid mutation controls",
             "no support-state transition",
@@ -439,8 +439,8 @@ def validate_surfaces(errors: list[str]) -> None:
         CHAPTER: [
             "Accepted live transition review audit",
             rel(RESULT),
-            "103 accepted transition records",
-            "nineteen bounded non-core upward transitions",
+            "105 accepted transition records",
+            "twenty bounded non-core upward transitions",
             "two accepted exact refutations",
         ],
         READER: [

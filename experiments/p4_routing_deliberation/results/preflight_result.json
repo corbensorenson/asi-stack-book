@@ -1,0 +1,24 @@
+{
+  "schema_version": "asi_stack.p4_m6_instrument_result.v1",
+  "candidate_sha256": "649c2a24abf3a599429139cffd59c3676bc2e1f7f2be5c763cb92c2e3c40d708",
+  "expected_task_count": 4,
+  "schema_admissible_count": 1,
+  "exclusions": [
+    {
+      "task_id": "m6-901",
+      "reason": "unparsed"
+    },
+    {
+      "task_id": "m6-902",
+      "reason": "unparsed"
+    },
+    {
+      "task_id": "m6-903",
+      "reason": "unparsed"
+    }
+  ],
+  "protocol_outcome": "instrument_inadequate",
+  "heldout_opened": false,
+  "claim_attempt_counted": false,
+  "support_state_effect": "none"
+}

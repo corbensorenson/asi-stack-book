@@ -4,7 +4,7 @@ chapter_id: "planning-as-a-control-layer"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-14"
+last_updated: "2026-07-16"
 primary_sources:
   - "planforge"
   - "viea"
@@ -15,6 +15,7 @@ primary_sources:
   - "coherence_exchange"
   - "tokenmana"
   - "ext_v_jepa_2_2025"
+  - "reflexive_router_whitepaper"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -33,10 +34,10 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
 | Last updated | 2026-07-14 |
-| Primary source records | `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `moecot`, `planforge_compiler_arch`, `coherence_exchange`, `tokenmana`, `ext_v_jepa_2_2025` |
+| Primary source records | `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `moecot`, `planforge_compiler_arch`, `coherence_exchange`, `tokenmana`, `ext_v_jepa_2_2025`, `reflexive_router_whitepaper` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `planforge`, `viea`, `planforge_compiler_arch`; supporting: `cognitive_compilation`, `software_magic_grimoire`, `tokenmana`; connector/recovery: `moecot`, `coherence_exchange` |
+| Source queue | primary: `planforge`, `viea`, `planforge_compiler_arch`; supporting: `cognitive_compilation`, `software_magic_grimoire`, `tokenmana`, `reflexive_router_whitepaper`; connector/recovery: `moecot`, `coherence_exchange` |
 | Source loading state | source notes: `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `moecot`, `planforge_compiler_arch`, `coherence_exchange`, `tokenmana`; passage-reviewed local raw cache: `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `planforge_compiler_arch`, `tokenmana`; connector/source-note only: `moecot`, `coherence_exchange` |
 | Test state | The schema/fixture, plan-execution, scheduler-state, runtime-replan, and Lean checks pass over their exact synthetic records. Across them, seven valid records, 26 rejecting cases, two accepted no-change transitions, and 33 theorem declarations under seven targets establish record shape and finite route consequences only. No natural planner output, planner-quality result, live scheduler, observed replan benefit, cost-quality dominance, or support transition exists. |
 
@@ -251,6 +252,38 @@ That extra structure changes the meaning of "use a smaller model." A cheap route
 Every node therefore carries two contracts. The work contract names what the node may do. The adequacy contract names what would make the output usable by downstream dependents. Scheduling without the second contract creates text or artifacts without reliable progress.
 
 The DAG also makes local repair possible. If one source-reading node used stale evidence, the scheduler should identify the affected subgraph, repair the stale node, rerun dependents whose assumptions changed, and preserve unaffected work. That is the compiler intuition behind PlanForge: the graph lets the stack rebuild only the parts whose dependencies changed while keeping residuals and rejected routes visible.
+
+### Semantic-operation DAGs and partial qualification
+
+The Reflexive Router narrows “composite request” into a planning obligation.
+The pre-deliberative layer may detect that one request contains several
+semantic operations, but it may emit only a bounded candidate DAG whose nodes
+name operation type, inputs, outputs, dependencies, capability contract,
+authority demand, verifier, effect class, budget, fallback, and provenance.
+Planning remains the owner of the graph; the router owns candidate routes for
+its nodes.
+
+Qualification is node-local and dependency-aware. Exact transforms, retrieval,
+proof, specialist inference, deliberation, and effects need not share a route,
+yet no node becomes dispatchable merely because another node passed. A plan may
+partially qualify safe branches while preserving blocked, ambiguous, stale, or
+unauthorized branches as explicit residuals. Any merge must state how partial
+results, contradictions, missing nodes, and verifier failures affect the
+downstream acceptance predicate.
+
+The graph contract must also fix cancellation, idempotent retry, fallback,
+deadline, partial-result, and compensation behavior before execution. A retry
+of a retrieval node is not equivalent to a retry of a monetary or publication
+effect. A failed forced route cannot silently relabel the node and proceed. A
+replan retains the original operation identities, qualification receipts,
+route proposals, rejected candidates, and changed assumptions so later outcome
+evaluation can distinguish planning quality from route luck.
+
+This integration strengthens the planned natural multi-planner campaign: it
+must score DAG validity, argument binding, dependency truth, partial
+qualification, cancellation and retry correctness, plan provenance, and final
+outcome separately. The paper contains no executed DAG planner or measured
+benefit, so the planning core remains at `argument`.
 
 ## Interfaces
 
@@ -469,6 +502,7 @@ do not establish local control quality or safety.
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
+| `reflexive_router_whitepaper` | The Reflexive Router | pre_deliberative_reflexive_routing_control_plane | Bounded semantic-operation DAGs, node-local qualification, mixed capability routes, partial results, explicit retry/cancellation/fallback semantics, and plan provenance. | complete Corben-authored v1.2 paper passage-reviewed; no executed planner result |
 | `planforge` | PlanForge | planning_control | Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage. | source note available; local raw cache passage-reviewed |
 | `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache passage-reviewed |
 | `cognitive_compilation` | Cognitive Compilation | planning_semantic_ir | Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. | source note available; local raw cache passage-reviewed |

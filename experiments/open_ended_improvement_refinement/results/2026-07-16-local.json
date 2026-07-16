@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.open_ended_improvement_refinement.v1",
   "result_id": "open-ended-improvement-refinement-2026-07-16-local",
   "source_sha256": {
-    "lean_model": "27973fc5dfa55f70b950b1ace1ea6376a4f7ebc5e23fb24abe2451bbd21e7eec",
+    "lean_model": "47be689188f642862a3ceed86c80b3b6edd0cf3cba863a6e35b5c11185e767a6",
     "admission_result": "45162748bfde8d6ffb311c79858ccf0f035b9c0ac68c0b8a11091ea5bd262552",
     "update_result": "4bb8aec5648e01da1d01ad68420849e2dcf93e18b2f9936266c74890ad0ec3ef",
     "stopped_result": "aaedd64c15afe0903b0b15b9569313fffa1dbb977ee0d8234b56252bef779d76"
@@ -721,6 +721,38 @@
       "rejected": true
     }
   ],
+  "composition_theorems": [
+    "open_ended_improvement_full_cycle_composes",
+    "open_ended_improvement_budget_reset_blocks_handoff_and_readmission"
+  ],
+  "cross_stage_mutation_count": 3,
+  "cross_stage_mutation_rejection_count": 3,
+  "cross_stage_mutation_receipts": [
+    {
+      "mutation_id": "budget_reset_blocks_handoff_and_readmission",
+      "rejected": true,
+      "terminal_stage": "generationBound",
+      "receipt_count": 2,
+      "governor_handoff_count": 0,
+      "readmission_count": 0
+    },
+    {
+      "mutation_id": "missing_stop_effect_blocks_handoff_and_readmission",
+      "rejected": true,
+      "terminal_stage": "evaluated",
+      "receipt_count": 4,
+      "governor_handoff_count": 0,
+      "readmission_count": 0
+    },
+    {
+      "mutation_id": "candidate_authority_grant_blocks_handoff_and_readmission",
+      "rejected": true,
+      "terminal_stage": "adjudicated",
+      "receipt_count": 5,
+      "governor_handoff_count": 0,
+      "readmission_count": 0
+    }
+  ],
   "command_receipts": [
     {
       "command": "python3 scripts/validate_open_ended_improvement_campaign.py",
@@ -745,7 +777,8 @@
     "governor_handoff_count": 1,
     "readmission_count": 1,
     "support_assignment_count": 0,
-    "external_effect_count": 0
+    "external_effect_count": 0,
+    "accepted_route_count": 7
   },
   "support_state_effect": "none",
   "non_claims": [

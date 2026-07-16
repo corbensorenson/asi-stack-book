@@ -4,7 +4,7 @@ The Accepted Transition Review Audit checks the real accepted transition
 records under `evidence_transitions/` and the accepted no-promotion ledger in
 `claim_decisions/v1_0_core_claim_no_promotion.json`.
 
-It verifies 103 accepted transition records, including nineteen bounded
+It verifies 105 accepted transition records, including twenty bounded
 non-core upward transitions, two accepted exact refutations, and no accepted
 upward transition for a chapter core claim.
 It also checks the accepted no-promotion decision ledger for current manifest

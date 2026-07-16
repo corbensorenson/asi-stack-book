@@ -1,0 +1,25 @@
+{
+  "schema_version": "asi_stack.p4_governed_usefulness_local_instrument_failure_diagnosis.v5",
+  "protocol_id": "p4-gu-local-instrument-qualification-v5",
+  "diagnosed_at_utc": "2026-07-16T14:04:30Z",
+  "raw_response_path": "experiments/p4_governed_usefulness/raw/local_instrument_qualification_v5_qwen3_4b.json",
+  "raw_response_sha256": "81e0b627e8fc8045823676c6301ad55d2362922674419893f0cf0a14deef64f7",
+  "result_path": "experiments/p4_governed_usefulness/results/local_instrument_qualification_v5.json",
+  "result_sha256": "1d5fef722a01e4433183725e13cbbcb2449167ffeb63cbbf025e91dda5bbb853",
+  "protocol_outcome": "instrument_inadequate_recampaign_required",
+  "claim_attempt_counted": false,
+  "retrospective_rescore_allowed": false,
+  "observations": {"schema_admissible_task_count":8,"semantically_correct_admissible_task_count":6,"exact_terminal_eligibility_count":6,"exact_remediation_action_count":7,"exact_residual_class_count":7,"evaluator_disagreement_count":0,"retry_count":0,"elapsed_seconds":49.71173},
+  "adjudication": {
+    "root_cause": "The clarified v5 contract was followed on six tasks but the local quantized Qwen3-4B generator contradicted explicit facts on two tasks, including calling a label-contaminated self-adjudicated evaluation immediately admissible with no blocker. The remaining failure is attributed to generator-role adequacy on this canary rather than another label repair.",
+    "why_not_lower_the_floor": "The prospective 7/8 floor distinguishes a usable answer-channel canary from a generator that misses multiple explicit decisive facts. Lowering it after observing 6/8 would be retrospective acceptance.",
+    "difficulty_sweep_effect": "remains_closed",
+    "support_state_effect": "none"
+  },
+  "prospective_v6_requirements": [
+    "Keep the v5 tasks, construct, labels, 7/8 floors, and zero-disagreement rule semantically unchanged under a new protocol identity.",
+    "Substitute a separately cached local model and record its exact snapshot and claim ceiling.",
+    "Retain one-shot generation, candidate-before-label closure, two evaluators, no hosted chat, and no retrospective v5 rescore."
+  ],
+  "non_claims": ["This is a bounded generator-role diagnosis, not a model benchmark.","V5 remains failed.","No campaign or support claim follows."]
+}

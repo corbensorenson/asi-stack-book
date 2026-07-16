@@ -31,7 +31,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Lean module path | Targets | Theorems | Rationalized targets | Defs | Structures |
 |---|---:|---:|---:|---:|---:|
-| `lean/AsiStackProofs/AdversarialEvaluation.lean` | 8 | 8 | 0 | 1 | 1 |
+| `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | 8 | 12 | 0 | 9 | 2 |
 | `lean/AsiStackProofs/Alignment.lean` | 1 | 21 | 0 | 8 | 3 |
 | `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | 3 | 8 | 0 | 5 | 2 |
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | 10 | 15 | 0 | 32 | 3 |
@@ -40,7 +40,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | 2 | 12 | 0 | 12 | 3 |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | 3 | 8 | 0 | 5 | 4 |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | 2 | 4 | 0 | 2 | 2 |
-| `lean/AsiStackProofs/CapabilityThresholds.lean` | 8 | 8 | 0 | 1 | 1 |
+| `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | 8 | 12 | 0 | 9 | 2 |
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | 4 | 12 | 0 | 12 | 2 |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | 3 | 12 | 0 | 18 | 2 |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | 2 | 6 | 0 | 4 | 4 |
@@ -50,7 +50,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | 4 | 20 | 0 | 18 | 2 |
 | `lean/AsiStackProofs/Corrigibility.lean` | 1 | 4 | 0 | 6 | 2 |
 | `lean/AsiStackProofs/CyclicMixers.lean` | 2 | 7 | 0 | 5 | 5 |
-| `lean/AsiStackProofs/DataEngines.lean` | 15 | 15 | 0 | 4 | 3 |
+| `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | 15 | 3 | 15 | 10 | 2 |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | 10 | 11 | 0 | 12 | 3 |
 | `lean/AsiStackProofs/Efficiency.lean` | 4 | 26 | 0 | 9 | 4 |
 | `lean/AsiStackProofs/EvidenceStates.lean` | 7 | 31 | 0 | 17 | 7 |
@@ -66,10 +66,10 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/InterStackProtocols.lean` | 9 | 9 | 0 | 1 | 1 |
 | `lean/AsiStackProofs/LivingBook.lean` | 4 | 21 | 0 | 11 | 6 |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | 8 | 9 | 0 | 2 | 2 |
-| `lean/AsiStackProofs/OpenEndedImprovement.lean` | 7 | 7 | 0 | 1 | 1 |
+| `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | 7 | 3 | 7 | 10 | 2 |
 | `lean/AsiStackProofs/PlanForge.lean` | 2 | 4 | 0 | 4 | 3 |
 | `lean/AsiStackProofs/Planning.lean` | 5 | 29 | 0 | 11 | 8 |
-| `lean/AsiStackProofs/PolicyOptimization.lean` | 4 | 19 | 0 | 10 | 8 |
+| `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | 4 | 3 | 4 | 10 | 2 |
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | 2 | 14 | 0 | 21 | 3 |
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | 3 | 11 | 0 | 31 | 3 |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | 3 | 10 | 0 | 7 | 6 |
@@ -81,12 +81,12 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | 11 | 8 | 11 | 4 | 2 |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | 5 | 17 | 0 | 21 | 3 |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | 6 | 49 | 0 | 13 | 9 |
-| `lean/AsiStackProofs/SafetyCases.lean` | 8 | 8 | 0 | 1 | 1 |
-| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | 10 | 21 | 0 | 20 | 2 |
-| `lean/AsiStackProofs/ScalableOversight.lean` | 7 | 8 | 0 | 2 | 2 |
+| `lean/AsiStackProofs/SafetyCaseRefinement.lean` | 8 | 10 | 0 | 9 | 2 |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | 8 | 21 | 0 | 20 | 2 |
+| `lean/AsiStackProofs/ScalableOversightRefinement.lean` | 7 | 12 | 0 | 8 | 2 |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | 3 | 11 | 0 | 8 | 5 |
 | `lean/AsiStackProofs/SecurityKernel.lean` | 4 | 22 | 0 | 5 | 6 |
-| `lean/AsiStackProofs/SelfImprovement.lean` | 1 | 20 | 0 | 6 | 4 |
+| `lean/AsiStackProofs/SelfImprovementRefinement.lean` | 3 | 2 | 3 | 10 | 2 |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | 4 | 25 | 0 | 16 | 5 |
 | `lean/AsiStackProofs/StackBoundaries.lean` | 3 | 9 | 0 | 13 | 7 |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | 6 | 7 | 0 | 1 | 1 |
@@ -183,13 +183,13 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:evidence.claim_ledger.completeness_audit_bridge` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:evidence.accepted_transition.review_audit_bridge` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:evidence.claim_state.transition_bridge` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:scalable_oversight.high_risk.missing_outcome_audit_blocks_admission` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversight` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:scalable_oversight.use.complete_bounded_admission` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversight` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:scalable_oversight.use.missing_evidence_views_requires_repair` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversight` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:scalable_oversight.use.undisclosed_dependencies_require_review` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversight` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:scalable_oversight.use.missing_outcome_audit_requires_audit` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversight` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:scalable_oversight.use.unjustified_abstention_requires_evidence` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversight` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:scalable_oversight.use.authority_laundering_rejected` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversight` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:scalable_oversight.high_risk.missing_outcome_audit_blocks_admission` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversightRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:scalable_oversight.use.complete_bounded_admission` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversightRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:scalable_oversight.use.missing_evidence_views_requires_repair` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversightRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:scalable_oversight.use.undisclosed_dependencies_require_review` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversightRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:scalable_oversight.use.missing_outcome_audit_requires_audit` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversightRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:scalable_oversight.use.unjustified_abstention_requires_evidence` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversightRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:scalable_oversight.use.authority_laundering_rejected` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversightRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent.contract.operational_invariant` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentResolutionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent.contract.failure_blocks_promotion` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentResolutionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent.resolution.route_envelope` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentContracts` | triage ok; module ok; chapter tag ok; limitation ok |
@@ -235,16 +235,16 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:ai_supply_chain.missing_component_inventory.requires_review` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `AsiStackProofs.SupplyChainIntegrity` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:ai_supply_chain.missing_revocation_path.requires_repair` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `AsiStackProofs.SupplyChainIntegrity` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:ai_supply_chain.missing_residual_owner.requires_review` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `AsiStackProofs.SupplyChainIntegrity` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:self_improvement.boundary.operational_invariant` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:self_improvement.boundary.failure_blocks_promotion` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:self_improvement.boundary.transition_route_envelope` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SelfImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:open_ended_improvement.campaign.complete_candidate_to_governor_review` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:open_ended_improvement.campaign.missing_independent_qualification` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:open_ended_improvement.campaign.exhausted_budget` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:open_ended_improvement.campaign.missing_stop_authority` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:open_ended_improvement.campaign.erased_failure_history` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:open_ended_improvement.campaign.missing_residual_owner` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:open_ended_improvement.campaign.authority_laundering` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:self_improvement.boundary.operational_invariant` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SelfImprovementRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:self_improvement.boundary.failure_blocks_promotion` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SelfImprovementRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:self_improvement.boundary.transition_route_envelope` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SelfImprovementRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:open_ended_improvement.campaign.complete_candidate_to_governor_review` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovementRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:open_ended_improvement.campaign.missing_independent_qualification` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovementRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:open_ended_improvement.campaign.exhausted_budget` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovementRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:open_ended_improvement.campaign.missing_stop_authority` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovementRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:open_ended_improvement.campaign.erased_failure_history` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovementRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:open_ended_improvement.campaign.missing_residual_owner` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovementRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:open_ended_improvement.campaign.authority_laundering` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovementRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent_execution.contracts.operational_invariant` | `intent-to-execution-contracts` | `AsiStackProofs.IntentExecutionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent_execution.contracts.failure_blocks_promotion` | `intent-to-execution-contracts` | `AsiStackProofs.IntentExecutionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent_execution.contracts.dispatch_route_envelope` | `intent-to-execution-contracts` | `AsiStackProofs.IntentToExecution` | triage ok; module ok; chapter tag ok; limitation ok |
@@ -385,49 +385,49 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:benchmarks.ratchet.operational_invariant` | `benchmark-ratchets-and-anti-goodhart-evidence` | `AsiStackProofs.BenchmarkRatchets` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:benchmarks.ratchet.failure_blocks_promotion` | `benchmark-ratchets-and-anti-goodhart-evidence` | `AsiStackProofs.BenchmarkRatchets` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:benchmarks.ratchet.fixture_bridge` | `benchmark-ratchets-and-anti-goodhart-evidence` | `AsiStackProofs.BenchmarkRatchets` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholds` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:capability_thresholds.missing_evaluation_envelope.requires_reevaluation` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholds` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:capability_thresholds.complete_crossed.reaches_readiness_review` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholds` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:capability_thresholds.complete_non_crossing.reaches_readiness_review` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholds` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:capability_thresholds.missing_baseline.requires_reevaluation` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholds` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:capability_thresholds.missing_uncertainty.requires_reevaluation` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholds` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:capability_thresholds.missing_residual_owner.requires_exception` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholds` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:capability_thresholds.crossed.missing_safeguard_record.blocks_release` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholds` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:adversarial_evaluation.integrity.complete_to_promotion_review` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:adversarial_evaluation.integrity.missing_selection_context` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:adversarial_evaluation.integrity.missing_reward_provenance` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:adversarial_evaluation.integrity.missing_monitor_provenance` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:adversarial_evaluation.integrity.missing_independent_evaluation` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:adversarial_evaluation.integrity.missing_cross_context_probe` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:adversarial_evaluation.integrity.unresolved_discrepancy` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:adversarial_evaluation.integrity.intent_laundering` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:safety_cases.complete_case.reaches_readiness_review` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCases` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:safety_cases.missing_context.retains_draft` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCases` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:safety_cases.missing_hazard.requires_case_repair` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCases` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:safety_cases.stale_evidence.requires_repair` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCases` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:safety_cases.missing_countercase.requires_review` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCases` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:safety_cases.missing_independent_review.requires_review` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCases` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:safety_cases.unresolved_defeater.blocks_affected_release` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCases` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:safety_cases.case_status.cannot_authorize_release` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCases` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:policy_optimization.update.operational_invariant` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimization` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:policy_optimization.reward_boundary.failure_blocks_promotion` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimization` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:policy_optimization.promotion_route.failure_routes` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimization` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:policy_optimization.lease_probe_fixture_bridge` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimization` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:data_engines.provenance_authority.failure_blocks_admission` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:data_engines.contamination.failure_routes` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:data_engines.complete_receipt.eligibility_invariant` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:data_engines.full_state.complete_reaches_evidence_review` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:data_engines.full_state.missing_optimizer_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:data_engines.full_state.missing_scheduler_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:data_engines.full_state.missing_rng_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:data_engines.full_state.missing_cache_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:data_engines.full_state.missing_backup_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:data_engines.full_state.missing_descendant_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:data_engines.full_state.missing_checkpoint_authority_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:data_engines.full_state.rollback_mismatch_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:data_engines.unlearning.behavior_cannot_launder_influence` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:data_engines.unlearning.behavior_cannot_launder_privacy` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:data_engines.unlearning.lineage_cannot_launder_storage` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholdRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:capability_thresholds.missing_evaluation_envelope.requires_reevaluation` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholdRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:capability_thresholds.complete_crossed.reaches_readiness_review` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholdRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:capability_thresholds.complete_non_crossing.reaches_readiness_review` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholdRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:capability_thresholds.missing_baseline.requires_reevaluation` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholdRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:capability_thresholds.missing_uncertainty.requires_reevaluation` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholdRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:capability_thresholds.missing_residual_owner.requires_exception` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholdRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:capability_thresholds.crossed.missing_safeguard_record.blocks_release` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholdRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:adversarial_evaluation.integrity.complete_to_promotion_review` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:adversarial_evaluation.integrity.missing_selection_context` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:adversarial_evaluation.integrity.missing_reward_provenance` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:adversarial_evaluation.integrity.missing_monitor_provenance` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:adversarial_evaluation.integrity.missing_independent_evaluation` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:adversarial_evaluation.integrity.missing_cross_context_probe` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:adversarial_evaluation.integrity.unresolved_discrepancy` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:adversarial_evaluation.integrity.intent_laundering` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:safety_cases.complete_case.reaches_readiness_review` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCaseRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:safety_cases.missing_context.retains_draft` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCaseRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:safety_cases.missing_hazard.requires_case_repair` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCaseRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:safety_cases.stale_evidence.requires_repair` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCaseRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:safety_cases.missing_countercase.requires_review` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCaseRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:safety_cases.missing_independent_review.requires_review` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCaseRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:safety_cases.unresolved_defeater.blocks_affected_release` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCaseRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:safety_cases.case_status.cannot_authorize_release` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCaseRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:policy_optimization.update.operational_invariant` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimizationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:policy_optimization.reward_boundary.failure_blocks_promotion` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimizationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:policy_optimization.promotion_route.failure_routes` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimizationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:policy_optimization.lease_probe_fixture_bridge` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimizationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.provenance_authority.failure_blocks_admission` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngineLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.contamination.failure_routes` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngineLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.complete_receipt.eligibility_invariant` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngineLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.full_state.complete_reaches_evidence_review` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngineLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.full_state.missing_optimizer_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngineLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.full_state.missing_scheduler_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngineLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.full_state.missing_rng_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngineLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.full_state.missing_cache_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngineLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.full_state.missing_backup_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngineLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.full_state.missing_descendant_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngineLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.full_state.missing_checkpoint_authority_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngineLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.full_state.rollback_mismatch_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngineLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.unlearning.behavior_cannot_launder_influence` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngineLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.unlearning.behavior_cannot_launder_privacy` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngineLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.unlearning.lineage_cannot_launder_storage` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngineLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.work_contract.operational_invariant` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.treasury_boundary.failure_blocks_promotion` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.release_gate.operational_invariant` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |

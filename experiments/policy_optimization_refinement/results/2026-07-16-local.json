@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.policy_optimization_refinement.v1",
   "result_id": "policy-optimization-refinement-2026-07-16-local",
   "source_sha256": {
-    "lean_model": "5bbe96f96e3baeb227385cc195ed36d9a2771e942d8594e884d24ac3ef66186a",
+    "lean_model": "7899edded4deac1ad632b06396d0e847f2ede464d8f62b4878152f9f39e967b7",
     "inherited_result": "c63a1b182cf2d3b1b0c78a94952974796750b1236d809b18897ebdef4b44ab5c"
   },
   "inherited_lease_probe": {
@@ -565,6 +565,38 @@
       "rejected": true
     }
   ],
+  "composition_theorems": [
+    "policy_update_full_cycle_composes",
+    "policy_update_failed_evaluation_blocks_downstream_handoff"
+  ],
+  "cross_stage_mutation_count": 3,
+  "cross_stage_mutation_rejection_count": 3,
+  "cross_stage_mutation_receipts": [
+    {
+      "mutation_id": "missing_causal_ablation_blocks_lease_and_readmission",
+      "rejected": true,
+      "terminal_stage": "updated",
+      "receipt_count": 3,
+      "bounded_lease_count": 0,
+      "readmission_count": 0
+    },
+    {
+      "mutation_id": "support_authority_laundering_blocks_lease_and_readmission",
+      "rejected": true,
+      "terminal_stage": "adjudicated",
+      "receipt_count": 5,
+      "bounded_lease_count": 0,
+      "readmission_count": 0
+    },
+    {
+      "mutation_id": "incomplete_effect_rollback_blocks_readmission",
+      "rejected": true,
+      "terminal_stage": "leaseBound",
+      "receipt_count": 6,
+      "bounded_lease_count": 1,
+      "readmission_count": 0
+    }
+  ],
   "command_receipts": [
     {
       "command": "python3 scripts/validate_policy_update_lease_probe.py",
@@ -579,7 +611,8 @@
     "bounded_lease_count": 1,
     "readmission_count": 1,
     "support_assignment_count": 0,
-    "external_effect_count": 0
+    "external_effect_count": 0,
+    "accepted_route_count": 7
   },
   "support_state_effect": "none",
   "non_claims": [

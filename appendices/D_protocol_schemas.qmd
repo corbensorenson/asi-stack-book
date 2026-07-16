@@ -65,6 +65,7 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/new_paper_triage_scenario.schema.json`
 - `schemas/resource_budget_record.schema.json`
 - `schemas/routing_decision_record.schema.json`
+- `schemas/reflexive_dispatch_trace_record.schema.json`
 - `schemas/runtime_adapter_invocation.schema.json`
 - `schemas/sandboxed_adapter_capability_record.schema.json`
 - `schemas/self_improvement_transition.schema.json`
@@ -617,6 +618,37 @@ routing_decision_record:
 ```
 
 This record turns router selection into an auditable decision. It separates candidate discovery, rejected candidates, non-selection evidence, selection, route shape, route receipt, authority subset, denied authority, leases, verifier requirement, budget, expiry, readiness check, cost-quality reasoning, fallback, residual owner, residuals, ledger references, and non-claims.
+
+## Reflexive Dispatch Trace Record
+
+```yaml
+reflexive_dispatch_trace_record:
+  schema_version: asi_stack.reflexive_dispatch_trace.v1
+  trace_id: string
+  source_id: reflexive_router_whitepaper
+  event: {event_id, principal, authenticated, received_at, valid_time, authority_ref, context_handles, resource_budget, literal_payload}
+  ingress: {mode, command_authenticated, requested_route, fallback_policy, inference_bypassed}
+  proposals: []
+  qualification: []
+  selection: {kind, selected_proposal_ids, reason, fallback_used, terminal_outcome}
+  plan_nodes: []
+  effect: {required, state, authority_ref, receipt_ref, residuals}
+  result: {result_id, schema_id, route_policy_ref, implementation_refs, input_digest, valid_time, recorded_at, epistemic_state, evidence_refs, verification_state, effect_receipt_ref, dependency_refs, dispatch_provenance_ref, authoritative_artifact_ref}
+  chronicle: {record_refs, transaction_time, valid_time, update_state}
+  compilation: {state, source_trace_refs, negative_case_refs, differential_test_ref, expiry, decompilation_route}
+  metrics: {useful_outcome_state, fast_path, wrong_fast_path, route_regret_state, total_cost_record_ref}
+  support_state_effect: none
+  non_claims: []
+```
+
+This record joins the paper's cross-layer ordering without creating a routing
+super-owner. It keeps authenticated event and command state, route proposals,
+qualification, selection, plan nodes, effect custody, typed-result provenance,
+bitemporal Chronicle updates, reflex lifecycle, joint metrics, and non-claims
+in one replayable design trace. The valid fixture and semantic validator
+establish only finite record and rejecting-mutation behavior; they do not
+establish a router, Effect Commit Kernel, Chronicle, compiler, useful outcome,
+safety, deployment, or support transition.
 
 ## Device Resource Card
 

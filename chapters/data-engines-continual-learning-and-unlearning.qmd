@@ -480,7 +480,8 @@ The exact current minimum preserves the fifteen admission, full-state, and
 claim-separation route theorems; the four-scenario receipt probe; the
 24-surface/15-transaction full-state bridge; and the three-seed/twelve-arm
 small-model update result inside an eight-stage, 82-route custody lifecycle
-with 96/96 rejecting mutations, one bounded custody handoff, and one version-2
+with 96/96 route and 3/3 cross-stage mutations rejected, one bounded custody
+handoff, and one version-2
 readmission witness. Influence remains unestablished, source storage remains
 retained, storage erasure remains zero, all affected claims remain `no_change`,
 and no source or rights truth, semantic-contamination control, foundation-model
@@ -530,7 +531,8 @@ binding, update receipt, deletion assessment, claim-axis adjudication, bounded
 custody, and material-change readmission. Exact identity custody includes data,
 cohort, provenance, rights, authority, partitions, model and checkpoint state,
 optimizer, scheduler, RNG, caches, backups, lineage, descendants, deletion
-request, evaluator, consumer, and version. All 96 registered mutations reject.
+request, evaluator, consumer, and version. Two Lean composition theorems execute
+the full eight-transition cycle and an influence-laundering prefix. All 96 route mutations and three cross-stage mutations reject: behavior-as-influence and lineage-as-storage laundering prevent custody and readmission, while incomplete descendant invalidation prevents readmission after custody.
 The result proves authored custody and transition consequences only: every
 right, check, inventory, rollback receipt, deletion status, propagation claim,
 monitor, and invalidation remains trusted input, and exact rollback remains
@@ -589,7 +591,7 @@ and deletion verification are independently replayed and accepted.
 | Continual-learning policy comparison | Compare no-update, bounded update, EWC mitigation, deletion-aware retraining, and an authorized-data comparator under frozen baselines. | implemented on one synthetic small-network workload; zero of nine eligible challenger seed-arms met the promotion threshold, so no capability result |
 | Descendant-deletion trace | Distinguish behavioral change, influence, privacy, lineage propagation, and storage erasure. | bounded lineage invalidation implemented; influence remains proxy-only and storage erasure false |
 | Semantic-overlap adversary | Falsify an exact-overlap-only assurance before an admission path can feed a learning run. | planned; no semantic-leakage detector or adversarial corpus exists |
-| Data-engine custody/update/deletion lifecycle refinement | Join exact admission, full-state, update, deletion-axis, bounded-custody, and successor-version boundaries without cross-promoting claims. | implemented by `python3 scripts/validate_data_engine_lifecycle_refinement.py`; three inherited suites pass, all 82 routes are reached, 96/96 mutations reject, support/effect none; no source-truth, learning, influence, forgetting, privacy/legal/storage erasure, production recovery, release, transfer, or support claim |
+| Data-engine custody/update/deletion lifecycle refinement | Join exact admission, full-state, update, deletion-axis, bounded-custody, and successor-version boundaries without cross-promoting claims. | implemented by `python3 scripts/validate_data_engine_lifecycle_refinement.py`; two composed Lean traces, three inherited suites, all 82 routes, 96/96 route mutations, and 3/3 cross-stage mutations pass, support/effect none; no source-truth, learning, influence, forgetting, privacy/legal/storage erasure, production recovery, release, transfer, or support claim |
 
 The implemented checks are deliberately narrow. Schema validation cannot
 tell whether a provenance statement is true, and a finite Lean route cannot
@@ -618,10 +620,12 @@ baselines, controls, residuals, and replay records.
 | `lean:data_engines.unlearning.lineage_cannot_launder_storage` | `AsiStackProofs.DataEngineLifecycleRefinement` | Lineage propagation or invalidation cannot serve as evidence of physical storage or backup erasure in deletion-claim adjudication. | implemented |
 
 **Formal audit.** All fifteen legacy declarations remain derived finite route
-consequences, and the refinement adds one combined route theorem over a
-reachable eight-stage model plus an independently implemented 82-route,
-96-mutation consumer. The consumer binds rather than merges the admission,
-full-state, and update result lanes. None of this establishes provenance or
+consequences, and the refinement adds one combined route theorem, one complete-
+cycle theorem, and one axis-laundering/downstream-blocking theorem over a
+reachable eight-stage model plus an independently implemented 82-route consumer
+with 96 route and three cross-stage mutations. The consumer binds rather than merges the admission,
+full-state, and update result lanes. These finite records do not prove their inputs true or their controls effective.
+None of this establishes provenance or
 rights truth, detects semantic leakage, learns, proves target improvement or
 forgetting, reduces causal influence or privacy leakage, erases storage or
 backups, enforces a production route, restores an undeclared effect, or

@@ -21,6 +21,10 @@ README = ROOT / "README.md"
 INDEX = ROOT / "index.qmd"
 
 EXPECTED = {
+    "governed-usefulness.held-out-local-policy-effect": {
+        "state": "synthetic-test-backed",
+        "transition": "evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json",
+    },
     "living-book-methodology.phase5_harness_registry_runner": {
         "state": "synthetic-test-backed",
         "transition": "evidence_transitions/v1_0_measured/phase5_harness_runner_synthetic_test_backed.json",
@@ -107,7 +111,7 @@ NO_PROMOTION_DIRS = [
 ]
 
 REQUIRED_LEDGER_STRINGS = [
-    "Accepted non-core upward transitions | 19 narrow transitions.",
+    "Accepted non-core upward transitions | 20 narrow transitions.",
     "Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement.",
     "claim_revisions/v1_x/manifest_core_claim_count_narrowing.json",
     "Accepted No-Promotion Side-Lane Decisions",
@@ -298,9 +302,9 @@ def main() -> None:
             errors.append(f"{name} does not reference {ref}")
 
     surface_counts = [
-        ("README.md", readme, "Nineteen narrow non-core transitions are recorded in"),
-        ("index.qmd", index, "Nineteen narrow non-core evidence transitions accepted"),
-        ("index.qmd", index, "Nineteen narrow non-core transitions are recorded in"),
+        ("README.md", readme, "Twenty narrow non-core transitions are recorded in"),
+        ("index.qmd", index, "Twenty narrow non-core evidence transitions accepted"),
+        ("index.qmd", index, "Twenty narrow non-core transitions are recorded in"),
     ]
     for name, text, required in surface_counts:
         if required.lower() not in text.lower():

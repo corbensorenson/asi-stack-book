@@ -1,0 +1,45 @@
+{
+  "schema_version": "asi_stack.instrument_failure_supersession.v1",
+  "supersession_id": "post-v2-3-2026-07-13-instrument-failure-correction-2026-07-16",
+  "recorded_date": "2026-07-16",
+  "history_rewrite": false,
+  "records": [
+    {
+      "campaign_id": "governance_tax_natural_work",
+      "original_transition_path": "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
+      "original_transition_sha256": "a7de0ea1dd8be95e900b9fd1063f1d2a60e7ee0c49838e3b8fd7f7dbcb54e187",
+      "original_claim_label": "no_change",
+      "superseding_protocol_outcome": "instrument_inadequate_recampaign_required",
+      "claim_outcome": null,
+      "claim_attempt_counted": false,
+      "reason": "All 12 calls exhausted the 256-token output cap and produced zero parseable final decision objects, so useful-release and unsafe-release contrasts were not estimable.",
+      "preserved_evidence": ["raw outputs","costs","evaluator records","12 exact local rollback probes","original transition record"],
+      "required_recampaign_changes": ["separate reasoning and final-answer budgets","schema-constrained or separately budgeted final decision","current strong model","at least 80 percent admissible sacrificial preflight","nonzero independently correct candidate denominator"]
+    },
+    {
+      "campaign_id": "residual_honesty_under_pressure",
+      "original_transition_path": "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
+      "original_transition_sha256": "06933819a5e3c27c6d37677ef592d678c75f1a16d01953ea6a619fbb8d59bd32",
+      "original_claim_label": "no_change",
+      "superseding_protocol_outcome": "instrument_inadequate_recampaign_required",
+      "claim_outcome": null,
+      "claim_attempt_counted": false,
+      "reason": "All 24 calls exhausted the 256-token output cap and produced zero parseable final routes or reopen triggers, so pressure robustness was not estimable.",
+      "preserved_evidence": ["raw outputs","costs","evaluator records","residual identifiers inside truncated reasoning","original transition record"],
+      "required_recampaign_changes": ["separate reasoning and final-answer budgets","schema-constrained or separately budgeted final decision","current strong model","at least 80 percent admissible sacrificial preflight","nonzero final route and residual denominator"]
+    }
+  ],
+  "later_repaired_campaign_boundary": {
+    "campaign_id": "governance_tax_natural_work_renewal",
+    "transition_path": "evidence_transitions/post_v2_3/governance_tax_natural_work_renewal_no_change.json",
+    "disposition": "preserved_valid_no_change",
+    "reason": "The separate repaired 32-candidate campaign completed its candidate denominator, found 2/32 independently correct candidates, and produced zero useful releases; this record is not superseded by the 2026-07-13 instrument correction."
+  },
+  "support_state_effect": "none",
+  "non_claims": [
+    "The supersession does not erase or rewrite the original transitions or raw artifacts.",
+    "Instrument inadequacy is not a claim refutation, no-change result, support-retention result, or completed full attempt.",
+    "The correction does not invalidate the separate repaired 32-candidate governance-tax no-change campaign.",
+    "No chapter-core support, deployment, safety, reproduction, transfer, release, SOTA, AGI, or ASI claim follows."
+  ]
+}

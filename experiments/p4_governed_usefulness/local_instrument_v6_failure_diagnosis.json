@@ -1,0 +1,25 @@
+{
+  "schema_version": "asi_stack.p4_governed_usefulness_local_instrument_failure_diagnosis.v6",
+  "protocol_id": "p4-gu-local-instrument-qualification-v6",
+  "diagnosed_at_utc": "2026-07-16T14:07:10Z",
+  "raw_response_path": "experiments/p4_governed_usefulness/raw/local_instrument_qualification_v6_phi4_mini.json",
+  "raw_response_sha256": "dbd52b31e6f6ccc3e46e51bf9dccaecf8beba6b282023422a5481405b09b40b3",
+  "result_path": "experiments/p4_governed_usefulness/results/local_instrument_qualification_v6.json",
+  "result_sha256": "d915f1f70ebc8a08b207421cb7526318e26c7420c3c157773e67f05864edbd3c",
+  "protocol_outcome": "instrument_inadequate_recampaign_required",
+  "claim_attempt_counted": false,
+  "retrospective_rescore_allowed": false,
+  "observations": {"schema_admissible_task_count":0,"semantically_correct_admissible_task_count":0,"evaluator_disagreement_count":0,"retry_count":0,"elapsed_seconds":32.228267},
+  "adjudication": {
+    "root_cause": "The substituted local Phi-4-mini generator did not follow the frozen output contract: every row omitted brief_reason and remediation_action, added action_definition, and several rows contradicted explicit blockers. The failure is generator-role/schema adequacy, not evaluator ambiguity.",
+    "why_not_repair_or_parse_leniently": "Accepting renamed or missing fields after observation would erase the schema floor and conceal that the candidate interface was not followed.",
+    "difficulty_sweep_effect": "remains_closed",
+    "support_state_effect": "none"
+  },
+  "prospective_v7_requirements": [
+    "Keep the v5/v6 construct and evaluator labels unchanged under a new protocol identity.",
+    "Use the current Codex task model as the allowed self-contained candidate role and record that exact backend identity is unavailable.",
+    "Keep candidate-before-evaluator-file closure, exact fields, 7/8 floors, two evaluators, eight mutations, zero disagreement, and no claim effect."
+  ],
+  "non_claims": ["This is not a Phi benchmark.","V6 remains failed.","No campaign, support, publication, or release claim follows."]
+}

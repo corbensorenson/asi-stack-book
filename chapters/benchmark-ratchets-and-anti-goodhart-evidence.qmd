@@ -4,7 +4,7 @@ chapter_id: "benchmark-ratchets-and-anti-goodhart-evidence"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-15"
+last_updated: "2026-07-16"
 primary_sources:
   - "benchmaxxing"
   - "rmi"
@@ -18,6 +18,7 @@ primary_sources:
   - "theseus_architecture_gate"
   - "theseus_self_evolution_system"
   - "theseus_circle_transfer"
+  - "reflexive_router_whitepaper"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -35,10 +36,10 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
 | Last updated | 2026-07-15 |
-| Primary source records | `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `moecot`, `road_to_agi`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer` |
+| Primary source records | `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `moecot`, `road_to_agi`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`, `reflexive_router_whitepaper` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `benchmaxxing`, `rmi`; supporting: `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`; connector/recovery: `moecot`, `road_to_agi` |
+| Source queue | primary: `benchmaxxing`, `rmi`; supporting: `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`, `reflexive_router_whitepaper`; connector/recovery: `moecot`, `road_to_agi` |
 | Source loading state | source notes: `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `moecot`, `road_to_agi`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`; raw cache: `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `tokenmana`, `road_to_agi`; connector/recovery: `coherence_exchange`, `moecot` |
 | Test state | `benchmark_ratchet_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.BenchmarkRatchets` implements finite capability-promotion evidence, saturated-benchmark higher-readiness gates, a ratchet-decision envelope, and `lean:benchmarks.ratchet.fixture_bridge`; `python3 scripts/validate_benchmark_antigoodhart.py` validates synthetic saturation, holdout/contamination/mutation-or-transfer, regression-ref, negative-result, and promotion-blocking semantics; `python3 scripts/validate_benchmark_fixture_bridge.py` validates `experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json` against 2 valid fixtures, 5 expected-invalid controls, and the Lean fixture bridge. Empirical benchmark runs, hidden holdout execution, contamination audits, policy-training runs, steward release execution, source-reported replay, and current Theseus report verification remain planned. |
 
@@ -222,6 +223,59 @@ flowchart LR
 **How to read the provenance gate:** the number enters from the left, but its origin and causal route determine whether it can reach a promotion review. A blocked metric may still be valuable as a regression, negative case, or residual. The figure does not report a benchmark result.
 
 The strongest objection is that metric provenance can become paperwork around bad constructs. That objection is correct when fields are filled without changing a decision. The gate therefore rejects records that cannot name a target construct, representation-capacity basis, observation, evaluator, inherited floor, retry lineage, and causal output binding. An exact blocker is preferable to a complete-looking but meaningless packet.
+
+### ReflexBench as an argument-exit program
+
+The Reflexive Router contributes a benchmark design rather than a benchmark
+result. ReflexBench must cover eight task tracks: atomic exact operations,
+paraphrase, context-dependent resolution, composite DAGs, temporal reasoning,
+effectful work, adversarial routing, and trace-to-reflex compilation. Each
+track should exercise unmarked automatic routing, forced-route commands,
+direct typed commands, and compiled workflows where applicable.
+
+The matched comparator matrix includes LLM-first execution, hard rules, a
+learned router, semantic cache, tool agent, modular specialist routing, the
+full reflexive stack, and an oracle analysis arm. Comparisons freeze models,
+candidate bytes, context, tools, authority, retry policy, verifier access,
+budgets, and total-cost accounting. Route labels are evaluated separately from
+answer or artifact usefulness and separately again from observed effects.
+Independent route, outcome, and effect evaluators must retain disagreement and
+may not share one implementation as hidden ground truth.
+
+The negative-control surface includes command-looking untrusted text, literal
+escaping, ambiguity, stale context, OOD inputs, contract rejection, silent
+fallback, cache collision, Chronicle poisoning, authority widening, partial
+effects, duplicate retries, verifier monoculture, premature compilation,
+distribution drift, quarantine, rollback, and failed decompilation. Complete
+denominators include proposals, disqualifications, abstentions, retries,
+fallbacks, human interventions, partial effects, verifier failures, and
+discarded compiler candidates.
+
+Primary measures remain plural: useful task outcome, qualified and fast-path
+coverage, wrong-fast-path rate, selective risk, route regret, override
+fidelity, silent fallback, argument binding, DAG validity, context continuity,
+temporal accuracy, initial-correct corruption, unauthorized effects,
+verification escape, postcondition satisfaction, rollback completeness,
+compilation transfer, latency, compute, energy, money, human and monitoring
+work, governance cost, residuals, and displaced work. A scalar summary cannot
+override any safety, usefulness, effect, or denominator failure.
+
+No ReflexBench run accompanies the paper. This section freezes what a proper
+attempt must test; it promotes no routing, safety, efficiency, or compilation
+claim.
+
+### P4/M6 instrument and metric lesson
+
+M6 demonstrates why instrument failures and joint denominators belong in the
+benchmark record. A repeated-role JSON array failed at 1/4 sacrificial
+admissibility; a single prospectively frozen fixed-key repair passed 4/4 before
+the 32-task denominator opened. The terminal report keeps route correctness,
+useful outcomes, wrong-fast-path count, unsafe outputs, selective coverage,
+effect observations, and deliberation corruption/repair together. Reporting
+31/32 route correctness or 21/32 useful outcomes alone would erase the two
+unsafe outputs; reporting zero unsafe LLM-first outputs alone would erase its
+18 wrong fast paths and nine useful outcomes. The validator rejects both forms
+of laundering and preserves all seventeen active control classes.
 
 ## Interfaces
 
@@ -438,6 +492,7 @@ implementation refinement; empirical obligations stay empirical.
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
+| `reflexive_router_whitepaper` | The Reflexive Router | pre_deliberative_reflexive_routing_control_plane | ReflexBench tracks and ingress modes, matched comparator matrix, independent route/outcome/effect evaluation, adversarial controls, complete denominators, and joint usefulness/safety/effect/cost measures. | complete Corben-authored v1.2 paper passage-reviewed; benchmark proposal only; no result |
 | `benchmaxxing` | Benchmaxxing: The Performance Ratchet | benchmarks_evidence | Benchmark lifecycle, wall diagnosis, anti-Goodhart safeguards, and regression/frontier discipline. | source note available; local raw cache available |
 | `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Benchmark pressure, residual escrow, verified modular capability, regression preservation. | source note available; local raw cache available |
 | `cognitive_loop_closure` | Cognitive Loop Closure | procedural_memory | Repeated cognition should become procedural memory / verified tools. | source note available; local raw cache available |
@@ -468,6 +523,7 @@ These rows keep Benchmark Ratchets and Anti-Goodhart Evidence's manifest assignm
 | `ext_muse_unlearning_2025` | Passage-reviewed comparator: MUSE: Machine Unlearning Six-Way Evaluation for Language Models. Supports separating memorization, privacy leakage, retained utility, removal-scale behavior, and sequential sustainability instead of using one forgetting score. | No MUSE corpus, method, 7B model, privacy probe, scale test, or sequential deletion request was reproduced by the local small policy network. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_unlearning_benchmarks_weak_2024` | Passage-reviewed comparator: Position: LLM Unlearning Benchmarks are Weak Measures of Progress. Supports treating unlearning benchmark validity, target ambiguity, forget/retain dependence, and benign perturbation robustness as separate evidence burdens. | The position paper raises the interpretation standard but does not validate the local workload or establish influence, privacy, legal erasure, or storage erasure. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_openunlearning_2025` | Passage-reviewed comparator: OpenUnlearning: Accelerating LLM Unlearning via Unified Benchmarking of Methods and Metrics. Supports versioned unlearning methods, standardized execution interfaces, public checkpoints, diverse evaluations, and meta-evaluation of metric faithfulness. | The framework, methods, checkpoints, evaluations, and meta-evaluations were not run; standardized record shape does not establish semantic validity or erasure. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

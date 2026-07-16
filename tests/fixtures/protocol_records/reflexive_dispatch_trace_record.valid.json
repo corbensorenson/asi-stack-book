@@ -1,0 +1,112 @@
+{
+  "schema_version": "asi_stack.reflexive_dispatch_trace.v1",
+  "trace_id": "reflexive-dispatch-fixture-001",
+  "source_id": "reflexive_router_whitepaper",
+  "event": {
+    "event_id": "event-001",
+    "principal": "author-fixture",
+    "authenticated": true,
+    "received_at": "2026-07-16T13:30:00Z",
+    "valid_time": "2026-07-16T13:30:00Z",
+    "authority_ref": "authority://bounded-local-fixture",
+    "context_handles": ["context://paper-source-note"],
+    "resource_budget": "budget://fixture-only",
+    "literal_payload": "validate one reversible local fixture effect"
+  },
+  "ingress": {
+    "mode": "forced_route",
+    "command_authenticated": true,
+    "requested_route": "capability://bounded-local-write-and-verify",
+    "fallback_policy": "no_fallback",
+    "inference_bypassed": true
+  },
+  "proposals": [
+    {
+      "proposal_id": "proposal-001",
+      "proposer_type": "command_binding",
+      "capability_id": "capability://bounded-local-write-and-verify",
+      "score": 1.0,
+      "ood": false,
+      "composite": false
+    }
+  ],
+  "qualification": [
+    {
+      "proposal_id": "proposal-001",
+      "capability_id": "capability://bounded-local-write-and-verify",
+      "qualified": true,
+      "obligations": ["schema", "authority", "freshness", "verifier", "reversible_effect"],
+      "failures": [],
+      "receipt_ref": "qualification://proposal-001"
+    }
+  ],
+  "selection": {
+    "kind": "atomic",
+    "selected_proposal_ids": ["proposal-001"],
+    "reason": "the forced route is qualified inside the bounded local fixture",
+    "fallback_used": false,
+    "terminal_outcome": "selected"
+  },
+  "plan_nodes": [
+    {
+      "node_id": "node-001",
+      "capability_id": "capability://bounded-local-write-and-verify",
+      "dependencies": ["qualification://proposal-001"],
+      "qualification_ref": "qualification://proposal-001",
+      "effect_class": "reversible",
+      "verifier_ref": "verifier://independent-byte-read"
+    }
+  ],
+  "effect": {
+    "required": true,
+    "state": "verified",
+    "authority_ref": "authority://bounded-local-fixture",
+    "receipt_ref": "effect://fixture-write-observed-and-restored",
+    "residuals": ["no open-system rollback claim"]
+  },
+  "result": {
+    "result_id": "result-001",
+    "schema_id": "schema://bounded-local-fixture-result",
+    "route_policy_ref": "route-policy://reflexive-fixture-v1",
+    "implementation_refs": ["implementation://fixture-adapter-v1"],
+    "input_digest": "sha256:fixture-input",
+    "valid_time": "2026-07-16T13:30:00Z",
+    "recorded_at": "2026-07-16T13:30:01Z",
+    "epistemic_state": "observed",
+    "evidence_refs": ["effect://fixture-write-observed-and-restored"],
+    "verification_state": "passed",
+    "effect_receipt_ref": "effect://fixture-write-observed-and-restored",
+    "dependency_refs": ["qualification://proposal-001", "verifier://independent-byte-read"],
+    "dispatch_provenance_ref": "dispatch://proposal-001-selected",
+    "authoritative_artifact_ref": "artifact://reflexive-dispatch-fixture-001"
+  },
+  "chronicle": {
+    "record_refs": ["event://fixture-effect-observed", "state://fixture-restored"],
+    "transaction_time": "2026-07-16T13:30:01Z",
+    "valid_time": "2026-07-16T13:30:00Z",
+    "update_state": "appended"
+  },
+  "compilation": {
+    "state": "ineligible",
+    "source_trace_refs": ["trace://reflexive-dispatch-fixture-001"],
+    "negative_case_refs": ["case://single-trace-insufficient"],
+    "differential_test_ref": "",
+    "expiry": "2026-07-17T13:30:00Z",
+    "decompilation_route": "route://full-deliberative-parent"
+  },
+  "metrics": {
+    "useful_outcome_state": "not_measured",
+    "fast_path": false,
+    "wrong_fast_path": false,
+    "route_regret_state": "not_measured",
+    "total_cost_record_ref": "cost://fixture-not-campaign-evidence"
+  },
+  "support_state_effect": "none",
+  "non_claims": [
+    "no router implementation",
+    "no useful-outcome measurement",
+    "no production effect kernel",
+    "no safe reflex compilation",
+    "no chapter-core support transition"
+  ]
+}

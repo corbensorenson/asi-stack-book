@@ -4,7 +4,7 @@ chapter_id: "context-transactions-snapshots-mounts-and-taint"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-14"
+last_updated: "2026-07-16"
 primary_sources:
   - "vcm_public"
   - "ladon_manhattan"
@@ -21,6 +21,7 @@ primary_sources:
   - "beastbrain_project"
   - "bugbrain_project"
   - "corbens_best_model_possible_project"
+  - "reflexive_router_whitepaper"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -40,11 +41,11 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
 | Last updated | 2026-07-14 |
-| Primary source records | `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `vcm_editable`, `ext_graphrag_2024`, `ext_mem0_2025`, `ext_cap_theorem_gilbert_lynch_2002`, `ext_txfs_2018`, `ext_bourtoule_machine_unlearning_2021`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project` |
+| Primary source records | `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `vcm_editable`, `ext_graphrag_2024`, `ext_mem0_2025`, `ext_cap_theorem_gilbert_lynch_2002`, `ext_txfs_2018`, `ext_bourtoule_machine_unlearning_2021`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project`, `reflexive_router_whitepaper` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `vcm_public`; supporting: `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `ext_cap_theorem_gilbert_lynch_2002`, `ext_txfs_2018`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project`; variants: `ext_graphrag_2024`, `ext_mem0_2025`; connector/recovery: `vcm_editable`, `ext_bourtoule_machine_unlearning_2021` |
-| Source loading state | all 15 source notes inspected and mapped; passage-reviewed local raw cache: `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`; connector/source-note boundary: `vcm_editable`; bounded primary-record or primary-paper notes: GraphRAG, Mem0, CAP, TxFS, and Machine Unlearning; public-safe pinned notes: five historical projects |
+| Source queue | primary: `vcm_public`; supporting: `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `ext_cap_theorem_gilbert_lynch_2002`, `ext_txfs_2018`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project`, `reflexive_router_whitepaper`; variants: `ext_graphrag_2024`, `ext_mem0_2025`; connector/recovery: `vcm_editable`, `ext_bourtoule_machine_unlearning_2021` |
+| Source loading state | all 16 source notes inspected and mapped; passage-reviewed local raw cache: `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `reflexive_router_whitepaper`; connector/source-note boundary: `vcm_editable`; bounded primary-record or primary-paper notes: GraphRAG, Mem0, CAP, TxFS, and Machine Unlearning; public-safe pinned notes: five historical projects |
 | Test state | Exact authored scaffold: 3 valid/6 rejecting memory-store records; 2 valid/4 rejecting ordered sequences; 1 bounded five-project restart lifecycle/10 rejecting mutations; reachable 6-event transaction execution with 78/78 rejected mutations; 37 live Lean declarations under 4 targets. No concurrent store, actual process crash, filesystem-journal recovery, distributed commit, natural model-backed workload, useful advantage, or chapter-core support effect. |
 
 ## Drafting guardrail
@@ -288,6 +289,35 @@ Index and content epochs advance atomically; a detected partial write blocks
 ordinary commit and rolls back to the last shared epoch. Restart then proves
 only that the hand-authored committed set is visible again—not that a deployed
 store, filesystem, or compactor behaves this way.
+
+### Routing projections, caches, and temporal invalidation
+
+The Reflexive Router makes a context transaction visible to dispatch. A route
+may depend on a compact projection of entity identity, current state, claim
+status, policy, authority, freshness, privacy, capability availability, and
+resource state, but the transaction layer remains the owner of the durable
+versions behind that view. The routing projection records its snapshot,
+generation, dependency closure, valid-time horizon, transaction-time epoch,
+and derivation so it can be invalidated without pretending to be the store.
+
+A semantic cache is therefore a materialized context descendant. Its key must
+bind tenant, principal and authority, purpose, policy and schema versions,
+source and object versions, valid time, privacy/rights class, route and field
+versions, verifier requirements, and transformation identity. A textual or
+embedding match alone is insufficient. Cache hits return the original typed
+result and dependency receipt; they do not silently refresh an expired lease or
+erase a contradiction, revocation, correction, or route override.
+
+Chronicle updates, claim corrections, source changes, authority revocation,
+field replacement, policy change, and atlas migration must invalidate every
+affected hot projection, cached result, alias, workflow, and compiled reflex or
+leave an owned residual. Invalidating the visible cache without its descendants
+does not restore the pre-change state. Conversely, retaining the durable record
+while a consumer view expires preserves history without authorizing reuse.
+
+These rules are architectural requirements from the paper. They have not been
+tested under concurrent actors, real cache collisions, cross-tenant traffic,
+crashes, or production invalidation, so the core remains at `argument`.
 
 ## Interfaces
 
@@ -600,6 +630,7 @@ natural outcomes, and accepted evidence transitions.
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
+| `reflexive_router_whitepaper` | The Reflexive Router | pre_deliberative_reflexive_routing_control_plane | Routing projections over durable state, dependency-complete semantic-cache keys, bitemporal freshness, and invalidation across cached routes, aliases, workflows, and compiled reflexes. | complete Corben-authored v1.2 paper passage-reviewed; no deployed cache or transaction result |
 | `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw cache passage-reviewed |
 | `ladon_manhattan` | Ladon & The Manhattan Protocol | security_governance | Kernel-level security architecture for high-agency AI. | source note available; local raw cache passage-reviewed |
 | `context_engineer` | Context Engineer / Manhattan Protocol | memory_context_lineage | Context as supply chain; compartmentalized information logistics. | source note available; local raw cache passage-reviewed |
@@ -617,6 +648,15 @@ filesystem transactions, model-unlearning boundaries, security compartments,
 memory budgets, and historical project failures. They do not establish this
 chapter's runtime behavior or support promotion.
 
+### Manifest source assignment reconciliation
+
+These rows keep Context Transactions, Snapshots, Mounts, and Taint's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Context Transactions owns dynamic durable context-state change. It binds an

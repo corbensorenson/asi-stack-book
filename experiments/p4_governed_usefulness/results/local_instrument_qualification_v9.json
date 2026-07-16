@@ -1,0 +1,91 @@
+{
+  "schema_version": "asi_stack.p4_governed_usefulness_local_instrument_result.v1",
+  "protocol_id": "p4-gu-local-instrument-qualification-v9",
+  "preregistration_path": "experiments/p4_governed_usefulness/local_instrument_preregistration_v9.json",
+  "preregistration_sha256": "337e51f766e970d8f577f6c8132b2baae45912349041c3f150c63f5b0c61acb6",
+  "raw_response_path": "experiments/p4_governed_usefulness/raw/local_instrument_qualification_v9_qwen3_8b.json",
+  "raw_response_sha256": "f7233c4251e870c3a86e98a10abb794fc0f26f738ea53347d2eafdc038982d6b",
+  "candidate_artifact_closed_before_labels_loaded": true,
+  "labels_sha256": "60334df5432fc27a0d28d1a95c77dc0ab0ba6da3bb890e20a06925714df61c07",
+  "candidate_generator_role": "local_open_weight_candidate_generator",
+  "model_repository": "mlx-community/Qwen3-8B-4bit",
+  "snapshot_commit": "545dc4251c05440727734bcd94334791f6ab0192",
+  "claim_ceiling": "one_local_quantized_qwen3_8b_eligibility_residual_instrument_canary_not_action_accuracy_model_quality_transfer_or_independent_reproduction",
+  "expected_task_count": 8,
+  "schema_admissible_task_count": 8,
+  "semantically_correct_admissible_task_count": 8,
+  "evaluator_implementation_count": 2,
+  "evaluator_disagreement_count": 0,
+  "parse_error": null,
+  "records": [
+    {
+      "task_id": "local-sac-01",
+      "schema_admissible": true,
+      "duplicate": false,
+      "evaluator_a_correct": true,
+      "evaluator_b_correct": true
+    },
+    {
+      "task_id": "local-sac-02",
+      "schema_admissible": true,
+      "duplicate": false,
+      "evaluator_a_correct": true,
+      "evaluator_b_correct": true
+    },
+    {
+      "task_id": "local-sac-03",
+      "schema_admissible": true,
+      "duplicate": false,
+      "evaluator_a_correct": true,
+      "evaluator_b_correct": true
+    },
+    {
+      "task_id": "local-sac-04",
+      "schema_admissible": true,
+      "duplicate": false,
+      "evaluator_a_correct": true,
+      "evaluator_b_correct": true
+    },
+    {
+      "task_id": "local-sac-05",
+      "schema_admissible": true,
+      "duplicate": false,
+      "evaluator_a_correct": true,
+      "evaluator_b_correct": true
+    },
+    {
+      "task_id": "local-sac-06",
+      "schema_admissible": true,
+      "duplicate": false,
+      "evaluator_a_correct": true,
+      "evaluator_b_correct": true
+    },
+    {
+      "task_id": "local-sac-07",
+      "schema_admissible": true,
+      "duplicate": false,
+      "evaluator_a_correct": true,
+      "evaluator_b_correct": true
+    },
+    {
+      "task_id": "local-sac-08",
+      "schema_admissible": true,
+      "duplicate": false,
+      "evaluator_a_correct": true,
+      "evaluator_b_correct": true
+    }
+  ],
+  "protocol_outcome": "instrument_adequate_for_terminal_eligibility_and_residual_contract_only",
+  "difficulty_sweep_opened": true,
+  "confirmatory_denominator_opened": false,
+  "claim_attempt_counted": false,
+  "support_state_effect": "none",
+  "publication_authority": "none",
+  "release_authority": "none",
+  "scored_semantic_fields": [
+    "terminal_eligibility",
+    "residual_class"
+  ],
+  "remediation_action_required_enum_but_unscored_for_instrument_gate": true,
+  "exact_remediation_action_count": 6
+}

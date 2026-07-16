@@ -4,7 +4,7 @@ chapter_id: "virtual-context-abi"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 proof-program manuscript"
-last_updated: "2026-07-14"
+last_updated: "2026-07-16"
 primary_sources:
   - "vcm_public"
   - "context_engineer"
@@ -18,6 +18,7 @@ primary_sources:
   - "beastbrain_project"
   - "bugbrain_project"
   - "qcsa_whitepaper"
+  - "reflexive_router_whitepaper"
   - "ext_graphrag_2024"
   - "ext_hipporag_2024"
   - "ext_raptor_2024"
@@ -48,11 +49,11 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.3 proof-program manuscript |
 | Last updated | 2026-07-15 |
-| Primary source records | 24 assigned records: VCM and adjacent author sources, four pinned projects, QCSA, and twelve external comparators |
+| Primary source records | 25 assigned records: VCM and adjacent author sources, four pinned projects, QCSA, The Reflexive Router, and twelve external comparators |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `vcm_public`; supporting: eight author/project notes plus QCSA; connector/recovery: `vcm_editable`, `moecot`; external comparators: graph retrieval, hierarchical abstraction, persistent memory, RAG, long-context use, citations, adaptive retrieval, OS-style tiering, and prompt compression |
-| Source loading state | all 24 sources have exact bounded Appendix C mappings; local raw passages, source notes, and pinned-project notes are distinguished from metadata-first external comparator intake and local reproduction |
+| Source queue | primary: `vcm_public`; supporting: eight author/project notes plus QCSA and `reflexive_router_whitepaper`; connector/recovery: `vcm_editable`, `moecot`; external comparators: graph retrieval, hierarchical abstraction, persistent memory, RAG, long-context use, citations, adaptive retrieval, OS-style tiering, and prompt compression |
+| Source loading state | all 25 sources have exact bounded mappings; local raw passages, source notes, and pinned-project notes are distinguished from metadata-first external comparator intake and local reproduction |
 | Test state | Exact bounded scaffold: 3 valid/5 rejecting admission-adequacy fixtures; 2 valid/9 rejecting resolver/certificate routes; 1 bounded four-project certificate/11 rejecting mutations; reachable 4-event materialization and 2-event mandatory-fault traces with 55/55 rejected mutations; reachable 5-event certificate admission with 12 real certificate projections and 64/64 rejected mutations; 61 live Lean declarations under 6 targets; and QCSA's mixed synthetic identity/address/certificate results. No deployed resolver, natural source-to-packet fidelity test, model-use observation, useful context advantage, transaction isolation, deletion enforcement, VCM-Bench run, or production transfer. |
 
 The executed merge combines two current record families:
@@ -365,6 +366,38 @@ failed. The ABI should adopt the stable-identity, plural-address, certificate,
 typed-fault, and migration records without treating them as semantic-quality
 or production evidence; the core claim remains at `argument`.
 
+### Typed result continuity and the hot routing projection
+
+The Reflexive Router extends the ABI in the opposite direction: not only must
+context enter a capability through typed packets, non-LLM and mixed-route
+results must re-enter context without being flattened into anonymous prose. A
+typed result packet preserves value and schema; route and implementation
+identity; input and dependency digests; valid time and recorded time;
+epistemic state; source and evidence refs; verifier state; effects and
+residuals; dispatch provenance; authority and privacy scope; and handles to the
+authoritative artifact, claim, transaction, or Chronicle records.
+
+Rendering is downstream of this packet. A conversational sentence, compact UI
+card, planner cell, verifier view, and audit export may project different
+fields, but none becomes the authoritative record. The ABI must disclose
+omissions and prevent a compact rendering from erasing uncertainty, stale time,
+failed verification, partial effects, or a forced-route override. It must also
+keep result value separate from the model or tool's narration about that value.
+
+Routing may consume a deliberately small “hot projection”: operation type,
+entity and task identity, freshness, authority class, risk/effect class,
+capability requirements, budget, uncertainty, and context handles. That
+projection is a cacheable view, not a second truth store. Its cache key and
+invalidation set must include tenant, principal/authority, purpose, policy,
+source and schema versions, valid-time horizon, privacy class, and dependent
+field versions. Omitting those dependencies risks cross-tenant disclosure or
+stale route reuse.
+
+No typed packet proves its own truth or usefulness. This paper contributes the
+continuity contract and failure hypotheses only; no production materializer,
+cache, or context-quality result is established, and support stays at
+`argument`.
+
 ## Interfaces
 
 The public interface is a static request, candidate set, certificate, packet,
@@ -674,6 +707,7 @@ boundary that keeps those context objects from becoming anonymous prompt mass.
 
 | Source ID | Planned use | Readiness |
 |---|---|---|
+| `reflexive_router_whitepaper` | Typed result packets, authoritative-record versus rendering separation, hot routing projections, dispatch provenance, temporal continuity, and dependency-complete cache invalidation. | complete Corben-authored v1.2 paper passage-reviewed; architecture proposal only |
 | `vcm_public` | Primary source for semantic objects, versions, representations, validations, packets, materializations, source/authority binding, adequacy/admission separation, semantic faults, semantic pages, certificates, and conformance boundaries. | source note available; local raw cache passage-reviewed |
 | `context_engineer` | Context supply-chain, need-to-know delivery, structured mission briefs, clearance fields, context shards, memory masks, allowed tools, and Digital SCIF pressure. | source note available; local raw cache passage-reviewed |
 | `verification_bandwidth` | Distinguishes admitted context from verification-adequate context and motivates explicit summary-loss and adequacy boundaries. | source note available; local raw cache passage-reviewed |
@@ -697,6 +731,7 @@ These rows keep The Virtual Context ABI: Typed Pages, Cells, and Certificates's 
 | Source | Intake role | Boundary |
 |---|---|---|
 | `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Adds stable SOID identity, plural contextual SVA leases, atlas epochs, SAC adequacy and residual fields, bounded graph materialization, revalidation triggers, and explicit failure when semantic uncertainty is insufficient for a consumer; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and active-question value was refuted on this corpus. No natural-task, learned-model, universal-semantic, production, safety, privacy, external-independence, chapter-core promotion, AGI, or ASI result is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

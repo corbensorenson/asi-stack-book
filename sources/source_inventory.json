@@ -4687,6 +4687,32 @@
     "citation_label": "Sorenson (2026), Question-Compiled Semantic Addressing"
   },
   {
+    "id": "reflexive_router_whitepaper",
+    "title": "The Reflexive Router: A Pre-Deliberative Architecture for Fast, Governed, Tool-Native Intelligence",
+    "priority": "must_use",
+    "layer": "pre_deliberative_reflexive_routing_control_plane",
+    "chapter_targets": [
+      "routing-heads-and-specialist-cores",
+      "intent-to-execution-contracts",
+      "planning-as-a-control-layer",
+      "stable-capability-fields",
+      "virtual-context-abi",
+      "context-transactions-snapshots-mounts-and-taint",
+      "claim-ledgers-and-belief-revision",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "procedural-memory-and-cognitive-loop-closure",
+      "resource-economics-and-token-budgets",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "integrated-reference-architecture"
+    ],
+    "url": "local-source:sources/raw/reflexive_router/the_reflexive_router_white_paper_v1_2.md@sha256:003a693741c40ca96ec3aece5b76ee90ec95a1d6c27ec81a970cff175f509068",
+    "notes": "Corben-authored version 1.2 architecture proposal for a pre-deliberative command and routing plane, qualification-first dispatch, calibrated abstention, bounded execution DAGs, stable capability contracts, a non-bypassable effect commit kernel, typed result continuity, bitemporal Chronicle records, and governed trace-to-reflex compilation. It is assigned to existing chapter owners first; it adds no standalone chapter and supplies no implementation, benchmark, safety, deployment, transfer, novelty, AGI, ASI, or support-state result.",
+    "source_type": "author_whitepaper",
+    "published": "2026-07-16",
+    "updated": "2026-07-16",
+    "citation_label": "Sorenson (2026), The Reflexive Router, v1.2"
+  },
+  {
     "id": "ext_faithfulness_information_flow_2026",
     "title": "Faithfulness as Information Flow: Evaluating and Training Faithful Chain-of-Thought Reasoning",
     "priority": "external_literature",
@@ -5220,5 +5246,31 @@
     "published": "2026-07-15",
     "citation_label": "Thinking Machines Lab (2026), Inkling",
     "doi": null
+  },
+  {
+    "id": "kernel_english_residual_compiler",
+    "title": "Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning",
+    "priority": "must_use",
+    "layer": "canonical_cognitive_compilation_and_hierarchical_residual_runtime",
+    "chapter_targets": [
+      "cognitive-compilation-and-semantic-ir",
+      "compact-generative-systems-and-residual-honesty",
+      "virtual-context-abi",
+      "context-transactions-snapshots-mounts-and-taint",
+      "verification-bandwidth-and-context-adequacy",
+      "fast-generation-architectures",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "resource-economics-and-token-budgets",
+      "security-kernel-and-digital-scifs",
+      "procedural-memory-and-cognitive-loop-closure",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "integrated-reference-architecture"
+    ],
+    "url": "local-source:sources/raw/kernel_english_residual_compiler/kernel_english_hierarchical_residuals.md@sha256:f560c61196cb2a114475ebd455f8643536e78c82dbbf6ec8dd712d993f2b6519",
+    "notes": "Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred.",
+    "source_type": "author_whitepaper",
+    "published": "2026-07-16",
+    "updated": "2026-07-16",
+    "citation_label": "Sorenson (2026), Kernel English with Hierarchical, Interaction-Amortized Residuals"
   }
 ]

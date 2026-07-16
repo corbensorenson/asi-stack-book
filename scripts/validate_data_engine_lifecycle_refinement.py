@@ -15,6 +15,7 @@ RESULT=ROOT/'experiments/data_engine_lifecycle_refinement/results/2026-07-16-loc
 COMMAND='python3 scripts/validate_data_engine_lifecycle_refinement.py'
 STAGES=['draft','scoped','admitted','stateBound','updated','deletionAssessed','adjudicated','custodyBound']
 KINDS={'draft':'scopeCustody','scoped':'admitData','admitted':'bindFullState','stateBound':'recordUpdate','updated':'assessDeletion','deletionAssessed':'adjudicateClaims','adjudicated':'bindCustody','custodyBound':'triggerReadmission'}
+NEXT={'draft':'scoped','scoped':'admitted','admitted':'stateBound','stateBound':'updated','updated':'deletionAssessed','deletionAssessed':'adjudicated','adjudicated':'custodyBound','custodyBound':'scoped'}
 ACCEPTED={'accept_scope','accept_admission','accept_state_binding','accept_update_record','accept_deletion_assessment','accept_claim_adjudication','accept_bounded_custody','accept_readmission'}
 IDENTITY={'datumDigest','cohortDigest','provenanceDigest','rightsDigest','authorityDigest','splitDigest','datasetDigest','modelDigest','baseCheckpointDigest','selectedCheckpointDigest','optimizerDigest','schedulerDigest','rngDigest','cacheDigest','backupDigest','lineageDigest','descendantDigest','deletionRequestDigest','evaluatorDigest','consumerDigest','currentVersion'}
 GATES={
@@ -50,6 +51,39 @@ def route(stage:str,kind:str,p:dict[str,Any],last:int=0,version:int=1)->str:
    if p[field]!=version+1:return answer
   elif p[field] is bad:return answer
  return {'draft':'accept_scope','scoped':'accept_admission','admitted':'accept_state_binding','stateBound':'accept_update_record','updated':'accept_deletion_assessment','deletionAssessed':'accept_claim_adjudication','adjudicated':'accept_bounded_custody','custodyBound':'accept_readmission'}[stage]
+
+def initial_state()->dict[str,Any]:
+ return {'stage':'draft','version':1,'last_event_digest':0,'receipt_count':0,'bounded_custody_count':0,'readmission_count':0,'support_assignment_count':0,'external_effect_count':0}
+
+def apply_event(state:dict[str,Any],kind:str,p:dict[str,Any])->tuple[dict[str,Any],str]:
+ answer=route(state['stage'],kind,p,state['last_event_digest'],state['version'])
+ if answer not in ACCEPTED:return dict(state),answer
+ out=dict(state);out['stage']=NEXT[state['stage']];out['last_event_digest']=p['eventDigest'];out['receipt_count']+=1
+ if answer=='accept_bounded_custody':out['bounded_custody_count']+=1
+ if answer=='accept_readmission':out['readmission_count']+=1;out['version']=p['successorVersion']
+ return out,answer
+
+def lifecycle(mutation_step:int=0,changes:dict[str,Any]|None=None)->tuple[dict[str,Any],list[str]]:
+ state=initial_state();routes=[]
+ for index,intended_stage in enumerate(STAGES,1):
+  p=packet();p['eventDigest']=index;p['currentVersion']=state['version']
+  if intended_stage=='custodyBound':p['successorVersion']=state['version']+1
+  if index==mutation_step and changes:p.update(changes)
+  state,answer=apply_event(state,KINDS[intended_stage],p);routes.append(answer)
+ return state,routes
+
+def cross_stage_mutations()->list[dict[str,Any]]:
+ specs=[
+  ('behavior_as_influence_blocks_custody_and_readmission',6,{'behaviorUsedAsInfluenceEvidence':True},'deletionAssessed',5,0,0),
+  ('lineage_as_storage_blocks_custody_and_readmission',6,{'lineageUsedAsStorageEvidence':True},'deletionAssessed',5,0,0),
+  ('incomplete_descendant_invalidation_blocks_readmission',8,{'completeInvalidationPresent':False},'custodyBound',7,1,0),
+ ]
+ rows=[]
+ for mutation_id,step,changes,stage,receipts,custodies,readmissions in specs:
+  state,routes=lifecycle(step,changes)
+  rejected=(state['stage']==stage and state['receipt_count']==receipts and state['bounded_custody_count']==custodies and state['readmission_count']==readmissions and not any(route in ACCEPTED for route in routes[step-1:]))
+  rows.append({'mutation_id':mutation_id,'rejected':rejected,'terminal_stage':state['stage'],'receipt_count':state['receipt_count'],'bounded_custody_count':state['bounded_custody_count'],'readmission_count':state['readmission_count']})
+ return rows
 
 def run(command:str)->dict[str,Any]:
  p=subprocess.run(command.split(),cwd=ROOT,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
@@ -90,17 +124,19 @@ def build()->dict[str,Any]:
   p=packet()
   if field:p[field]=value
   mutations.append({'mutation_id':mid,'rejected':route(stage,kind,p) not in ACCEPTED})
- return {'schema_version':'asi_stack.data_engine_lifecycle_refinement.v1','result_id':'data-engine-lifecycle-refinement-2026-07-16-local','source_sha256':{'lean_model':hashlib.sha256(LEAN.read_bytes()).hexdigest(),'admission_result':hashlib.sha256(ADMISSION.read_bytes()).hexdigest(),'full_state_result':hashlib.sha256(FULL_STATE.read_bytes()).hexdigest(),'update_result':hashlib.sha256(UPDATE.read_bytes()).hexdigest()},'inherited_results':inherited_summary(),'reachable_stage_count':8,'route_case_count':len(cases),'route_coverage':cases,'mutation_count':len(mutations),'mutation_rejection_count':sum(x['rejected'] for x in mutations),'mutation_receipts':mutations,'command_receipts':[run('python3 scripts/validate_data_admission_receipt_probe.py'),run('python3 scripts/validate_data_engine_full_state_bridge.py'),run('python3 scripts/validate_post_v2_update_causality.py')],'witness':{'terminal_stage':'scoped','protocol_version':2,'receipt_count':8,'bounded_custody_count':1,'readmission_count':1,'support_assignment_count':0,'external_effect_count':0},'support_state_effect':'none','non_claims':['no source truth, semantic contamination, dataset quality, or rights validity result','no language-model continual-learning, capability, or transfer result','behavioral change does not establish influence reduction or forgetting','lineage invalidation does not establish privacy, legal, storage, backup, or external-descendant erasure','declared-surface digest rollback does not establish semantic or production recovery','no safety, readiness, release, support, SOTA, AGI, or ASI authority']}
+ full_state,full_routes=lifecycle();cross=cross_stage_mutations()
+ return {'schema_version':'asi_stack.data_engine_lifecycle_refinement.v1','result_id':'data-engine-lifecycle-refinement-2026-07-16-local','source_sha256':{'lean_model':hashlib.sha256(LEAN.read_bytes()).hexdigest(),'admission_result':hashlib.sha256(ADMISSION.read_bytes()).hexdigest(),'full_state_result':hashlib.sha256(FULL_STATE.read_bytes()).hexdigest(),'update_result':hashlib.sha256(UPDATE.read_bytes()).hexdigest()},'inherited_results':inherited_summary(),'reachable_stage_count':8,'route_case_count':len(cases),'route_coverage':cases,'mutation_count':len(mutations),'mutation_rejection_count':sum(x['rejected'] for x in mutations),'mutation_receipts':mutations,'composition_theorems':['data_engine_full_cycle_composes','data_engine_axis_laundering_blocks_custody_and_readmission'],'cross_stage_mutation_count':len(cross),'cross_stage_mutation_rejection_count':sum(x['rejected'] for x in cross),'cross_stage_mutation_receipts':cross,'command_receipts':[run('python3 scripts/validate_data_admission_receipt_probe.py'),run('python3 scripts/validate_data_engine_full_state_bridge.py'),run('python3 scripts/validate_post_v2_update_causality.py')],'witness':{'terminal_stage':full_state['stage'],'protocol_version':full_state['version'],'receipt_count':full_state['receipt_count'],'bounded_custody_count':full_state['bounded_custody_count'],'readmission_count':full_state['readmission_count'],'support_assignment_count':full_state['support_assignment_count'],'external_effect_count':full_state['external_effect_count'],'accepted_route_count':sum(x in ACCEPTED for x in full_routes)},'support_state_effect':'none','non_claims':['no source truth, semantic contamination, dataset quality, or rights validity result','no language-model continual-learning, capability, or transfer result','behavioral change does not establish influence reduction or forgetting','lineage invalidation does not establish privacy, legal, storage, backup, or external-descendant erasure','declared-surface digest rollback does not establish semantic or production recovery','no safety, readiness, release, support, SOTA, AGI, or ASI authority']}
 
 def main()->None:
  a=argparse.ArgumentParser();a.add_argument('--write',action='store_true');args=a.parse_args();result=build();errors=[]
  if result['route_case_count']!=82:errors.append('route count drifted')
  if result['mutation_count']!=96 or result['mutation_rejection_count']!=96:errors.append('mutation contract drifted')
- for needle in ('inductive Stage','def routeFor','data_engine_lifecycle_routes'):
+ if result['cross_stage_mutation_count']!=3 or result['cross_stage_mutation_rejection_count']!=3:errors.append('cross-stage mutation contract drifted')
+ for needle in ('inductive Stage','def routeFor','data_engine_lifecycle_routes','data_engine_full_cycle_composes','data_engine_axis_laundering_blocks_custody_and_readmission'):
   if needle not in LEAN.read_text():errors.append('Lean model missing '+needle)
  jsonschema.validate(result,json.loads(SCHEMA.read_text()));serialized=json.dumps(result,indent=2)+'\n'
  if args.write:RESULT.parent.mkdir(parents=True,exist_ok=True);RESULT.write_text(serialized)
  elif not RESULT.exists() or RESULT.read_text()!=serialized:errors.append(f'{RESULT.relative_to(ROOT)} is stale; run {COMMAND} --write')
  if errors:print('Data-engine lifecycle refinement failed:\n - '+'\n - '.join(errors));sys.exit(1)
- print('Data-engine lifecycle refinement passed: 3 inherited suites, 8 stages, 82 routes, 96/96 mutations rejected, support effect none.')
+ print('Data-engine lifecycle refinement passed: 3 inherited suites, 8-stage composed lifecycle, 82 routes, 96/96 route mutations and 3/3 cross-stage mutations rejected, support effect none.')
 if __name__=='__main__':main()

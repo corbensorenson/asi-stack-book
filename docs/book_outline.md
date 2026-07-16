@@ -557,7 +557,7 @@ Draft deliverables:
 - Implemented Lean proof target: finite evidence-transition lifecycle routing sends no-change requests, missing claim records, scope-boundary gaps, support-effect gaps, support-effect mismatches, review gaps, missing required evidence, missing negative evidence, downgrade-trigger gaps, terminal-effect mismatches, missing changelog refs, and missing non-claim boundaries to explicit modeled outcomes.
 - Implemented Codex test: Evidence bundle completeness and changelog-consistency probe, via `python3 scripts/validate_evidence_bundle_completeness_probe.py`, checks two valid synthetic evidence bundles and seven expected-invalid controls for no-change records, blocked promotion, artifact/result refs, commands, changelog refs, limitations, non-claims, stale changelogs, fixture overclaims, and no support-state transition. Result: `experiments/evidence_bundle_completeness/results/2026-07-02-local.json`.
 - Implemented Codex test: Claim ledger completeness audit, via `python3 scripts/validate_claim_ledger_completeness_audit.py`, checks the real Appendix C ledger against 44 manifest chapter core claims, expected labels, support states, assigned sources, open gaps, promotion paths, duplicate/stale rows, and seven expected-invalid mutation controls. Result: `experiments/claim_ledger_completeness/results/2026-07-02-local.json`.
-- Implemented Codex test: Accepted live transition review audit, via `python3 scripts/validate_accepted_transition_review_audit.py`, checks 103 accepted transition records, nineteen bounded non-core upward transitions, two accepted exact refutations, the accepted no-promotion ledger, no accepted upward chapter-core transition, review/changelog/evidence-packet/non-claim boundaries, and seven expected-invalid mutation controls. Result: `experiments/accepted_transition_review/results/2026-07-02-local.json`.
+- Implemented Codex test: Accepted live transition review audit, via `python3 scripts/validate_accepted_transition_review_audit.py`, checks 105 accepted transition records, twenty bounded non-core upward transitions, two accepted exact refutations, the accepted no-promotion ledger, no accepted upward chapter-core transition, review/changelog/evidence-packet/non-claim boundaries, and seven expected-invalid mutation controls. Result: `experiments/accepted_transition_review/results/2026-07-02-local.json`.
 - Implemented Codex test: Claim-state transition bridge, via `python3 scripts/validate_claim_state_transition_bridge.py`, checks synthetic claim narrowing, support downgrade, terminal refutation, negative-evidence requirements, rejected mutation controls, bounded support-state effects, no live claim movement, and non-claim boundaries. Result: `experiments/claim_state_transition_bridge/results/2026-07-04-local.json`.
 - Implemented historical-project packet: `schemas/evidence_cell.schema.json`, `tests/fixtures/protocol_records/evidence_cell.valid.json`, and `python3 scripts/validate_evidence_cells.py` encode one six-project lineage cell and reject missing causal stages, dishonest missingness, ownership/capability conflation, unsupported updated-state claims, and false verifier independence. The fixture records an incomplete checkpoint-to-response chain and has `argument_only` support effect; it does not reproduce the projects or promote the chapter core claim.
 - Source-noted external comparator rows now position evidence states against model cards, datasheets, ML reproducibility-review practice, proof-carrying-code lineage, Transformer Circuits, and monosemantic feature decomposition as adjacent reporting, proof-carrying, and mechanistic-interpretability disciplines; no model-card, datasheet, external reproducibility-review, proof-carrying-code implementation, circuit analysis, sparse-autoencoder run, model transparency result, or support-state promotion is claimed.
@@ -1075,6 +1075,8 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 | External literature variants | `ext_capability_based_computer_systems_1984`, `ext_semver_2_0_0`, `ext_slsa_v1_0` | Use as capability-authority, versioned-interface, and artifact-provenance comparators; do not treat them as deployed SCF enforcement or support-state promotion. |
 
+
+| Manifest assignment reconciliation | `reflexive_router_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: nominal upgrades can preserve names, APIs, and average scores while changing failures, abstentions, side effects, authority, privacy, resources, consumers, state, dependencies, or recovery.
@@ -1251,6 +1253,8 @@ Source loading queue:
 
 
 | Pinned implementation counterexamples | `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project` | Use for contract-versus-effect, metadata-versus-enforcement, isolation, audit, revocation, root, and evaluator-independence failures; public-safe notes only, with no security support promotion. |
+
+| Manifest assignment reconciliation | `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: untrusted content can induce privileged information flow or effects across model, runtime, tool, operator, vendor, hardware, log, backup, and descendant trust zones.
@@ -1722,15 +1726,19 @@ Draft deliverables:
   prospective scope, bound generation, append-only archive custody,
   independent evaluation, adjudication, governor-only handoff, and
   material-change readmission at protocol version 2. An independently encoded
-  consumer reaches all 81 routes and rejects all 91 registered mutations while
-  rerunning the admission bridge and both fixed stopped campaigns.
+  consumer reaches all 81 routes, executes two composed Lean traces, and
+  rejects all 91 route plus three cross-stage mutations while rerunning the
+  admission bridge and both fixed stopped campaigns. Budget reset, missing stop
+  effect, and candidate-authority laundering each block every downstream
+  handoff.
 - Explicit source boundary: POET, FunSearch, and Voyager are primary comparators
   in specified source settings; no local environment generation, program
   search, campaign engine, candidate archive, evaluator, autonomous discovery,
   self-improvement, model-quality, safety, or support-state result is claimed.
 - Proof boundary: seven retained branch theorems remain finite consequences of
-  trusted Boolean fields; the combined lifecycle theorem and independent
-  consumer additionally establish reachability, exact identity custody,
+  trusted Boolean fields; the combined route theorem, complete-cycle theorem,
+  budget-reset/downstream-blocking theorem, and independent consumer
+  additionally establish reachability, exact identity custody,
   complete finite route coverage, mutation rejection, one bounded governor
   handoff, and one successor-version readmission. They do not validate the
   trusted objectives, legitimacy records, generators, evaluators, archives,
@@ -1780,6 +1788,8 @@ Source loading queue:
 | Capability-secure execution comparator | `ext_camel_prompt_injection_2025` | Use for trusted-query control-flow extraction, untrusted-data separation, and tool-call capability enforcement. Do not claim correct local intent extraction, universal injection resistance, or deployed policy enforcement. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived runtime claims. |
 
+
+| Manifest assignment reconciliation | `reflexive_router_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: every representation and material effect after accepted intent can change meaning or authority.
@@ -1874,7 +1884,7 @@ Source loading queue:
 | Connector or recovery required | `moecot`, `coherence_exchange` | Use as source-note/connector context only unless raw text, code, logs, release artifacts, benchmark records, simulations, or external corroboration are imported or inspected. |
 
 
-| Manifest assignment reconciliation | `ext_v_jepa_2_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `ext_v_jepa_2_2025`, `reflexive_router_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: after a contract is accepted, the stack must choose and revise obligation order, alternatives, observations, feasibility, capacity, and dispatch boundaries under uncertainty.
@@ -1960,6 +1970,8 @@ Source loading queue:
 | External comparators | `ext_pddl_1998`, `ext_shop2_2003`, `ext_tree_of_thoughts_2023`, `ext_dreamcoder_2020`, `ext_llvm_langref_docs`, `ext_mlir_2020`, `ext_translation_validation_1998` | Use for planning-language, decomposition, reasoning-search, program-synthesis, compiler-IR, multi-level IR, and translation-validation positioning only; do not treat as cognitive-compiler runtime evidence. |
 
 
+
+| Manifest assignment reconciliation | `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: after Planning admits an obligation, every source-to-IR-to-target transformation can silently lose meaning, non-goals, authority, rights, evidence, repair identity, or residual duties while retaining fluent output.
@@ -2030,6 +2042,8 @@ Source loading queue:
 | External memory comparators | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_mem0_2025`, `ext_rag_2020`, `ext_lost_in_middle_2023`, `ext_longbench_2023`, `ext_ruler_2024`, `ext_memgpt_2023`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_longllmlingua_2023` | Compare retrieval, graph/community and associative navigation, hierarchical abstraction, persistent memory, long-context use, citations, adaptive retrieval, OS-style tiering, and compression. Preserve provenance, actual use, loss, poisoning, update, cost, and local-reproduction limits. |
 | Connector or recovery required | `vcm_editable`, `moecot` | Use source notes or connector reads before source-derived claims; no resolver, VCM-Bench, runtime, or benchmark result is promoted from these sources. |
 
+
+| Manifest assignment reconciliation | `reflexive_router_whitepaper`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: a consumer must connect exact durable source state to the actual finite packet it receives without losing identity, lineage, authority, rights, omissions, costs, or faults.
@@ -2114,6 +2128,8 @@ Source loading queue:
 | External memory comparators | `ext_graphrag_2024`, `ext_mem0_2025` | Use for derived graph/community state and cross-session memory extraction/consolidation. Require version, taint, revocation, deletion, provenance, and authority boundaries; do not inherit production-readiness claims. |
 | Connector or recovery required | `vcm_editable`, `ext_bourtoule_machine_unlearning_2021` | Use editable VCM for vocabulary only and Machine Unlearning to separate storage deletion from parametric influence, privacy, behavioral forgetting, and downstream erasure. |
 
+
+| Manifest assignment reconciliation | `reflexive_router_whitepaper`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Parallel and long-lived context mutation cannot be governed from retrieval results or success-shaped logs.
@@ -2182,6 +2198,8 @@ Source loading queue:
 | Supporting | `spinoza`, `treellm`, `ext_alce_2023`, `ext_checklist_2020`, `ext_gpqa_2023`, `ext_dont_hallucinate_abstain_2024`, `ext_reluplex_2017` | Mine for explicit support states, verification modes, citation quality, behavioral and expert evaluation, abstention and panel dependence, and property-specific formal verification. Preserve each mode's scope ceiling. |
 | Retrieval, context, and compression variants | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_longbench_2023`, `ext_ruler_2024`, `ext_longllmlingua_2023` | Compare graph, associative, hierarchical, long-context, complexity-stress, and compression routes. Availability or source-reported performance is not claim adequacy or local evidence. |
 | Connector or recovery boundary | `vcm_editable` | Use its source note and connector-readable refinement only; no VCM-Bench or model-facing packet result is imported. |
+
+| Manifest assignment reconciliation | `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Relevant context, tools, citations, formal checks, reviewers, and compute can coexist with missing obligations, weak or correlated checks, undiscovered contradictions, and unaffordable verification.
@@ -2285,6 +2303,8 @@ Source loading queue:
 | Supporting | `coherence_exchange`, `aletheia`, `uat`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project` | Mine after primary sources for cross-layer connections, variants, failure modes, and the historical contradiction/revision lineage. |
 | External comparators | `ext_agm_belief_revision_1985`, `ext_truth_maintenance_system_1979`, `ext_assumption_based_tms_1986`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_checklist_2020`, `ext_w3c_prov_o_2013` | Position the owner against formal belief revision, truth maintenance, assumption contexts, citation support, retrieval critique, behavioral testing, and interoperable provenance. Treat them as bounded comparators, not local result evidence. |
 | Semantic-addressing lineage | `qcsa_whitepaper` | Use for the separation among ontology, proposition, evidence, provenance, support, contradiction, address, and permitted use; preserve QCSA's mixed results and zero core support effect. |
+
+| Manifest assignment reconciliation | `reflexive_router_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Claims can drift across paraphrases, assumptions, evidence changes, contradictions, ontologies, concurrent updates, and publication surfaces without a reconstructable identity or history.
@@ -2688,7 +2708,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `ext_claw_swe_bench_2026`, `ext_txfs_2018`, `qcsa_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `ext_claw_swe_bench_2026`, `ext_txfs_2018`, `qcsa_whitepaper`, `reflexive_router_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Ownership: exact leased effect dispatch, independent effect observation,
@@ -2932,6 +2952,8 @@ Source loading queue:
 | Persistent-memory comparator | `ext_mem0_2025` | Compare extraction, consolidation, graph linkage, cross-session retrieval, latency, and token cost while keeping conversational/episodic memory distinct from procedural lessons and governed belief revision. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
+
+| Manifest assignment reconciliation | `reflexive_router_whitepaper`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Repeated reasoning trajectories should not be improvised forever when they can become verified procedures or tools.
@@ -3019,7 +3041,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `ext_dont_hallucinate_abstain_2024`, `qcsa_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `ext_dont_hallucinate_abstain_2024`, `qcsa_whitepaper`, `reflexive_router_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs to allocate cognition across specialists rather than force one system to do every task.
@@ -3125,7 +3147,7 @@ Source loading queue:
 | Mutable/external/dynamical/function/graph/program alternatives | `ext_ttt_layers_2024`, `ext_titans_2025`, `ext_kan_2024`, `ext_kan_or_mlp_fairer_comparison_2024`, `ext_neural_turing_machines_2014`, `ext_differentiable_neural_computer_2016`, `ext_liquid_time_constant_networks_2021`, `ext_neural_message_passing_2017`, `ext_dreamcoder_2020` | Use for online-state custody, fair KAN comparison, memory and topology extrapolation, continuous-time cost, relational processing, and verified abstraction tests. |
 | Hybrid composition | `ext_jamba_2024` | Use to make layer/expert/substrate composition and active-versus-total accounting explicit; do not infer a generally optimal mixture or local result. |
 
-| Manifest assignment reconciliation | `ext_hyperscale_lottery_2026`, `ext_inkling_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `ext_hyperscale_lottery_2026`, `ext_inkling_2026`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Explain why a stable stack must abstract architecture without pretending that
@@ -3394,7 +3416,7 @@ Source loading queue:
 | Hierarchical-compression comparator | `ext_raptor_2024` | Use for recursively clustered and summarized retrieval trees. Require source bindings, loss contracts, reversibility limits, and residuals; do not infer local summary fidelity or benchmark gains. |
 
 
-| Manifest assignment reconciliation | `qcsa_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `qcsa_whitepaper`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: visible size can fall while total reconstruction, semantic, verification, repair, fallback, source, rights, human, governance, recovery, and residual burden rises.
@@ -3506,6 +3528,8 @@ External literature queue:
 | State-space and recurrent sequence models | Compare sequence-processing efficiency as a different speed axis from multi-token acceptance. | source-noted via `ext_mamba_2023`; no local substrate A/B run |
 | KV-cache and serving-layer accelerators | Compare memory-bandwidth and throughput improvements separately from single-request latency. | source-noted via `ext_pagedattention_vllm_2023`; no local serving benchmark |
 
+
+| Manifest assignment reconciliation | `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: token rate and serving throughput are routinely measured outside the consumer, quality, verifier, load, resource, rights, and recovery boundary needed for a useful-work claim.
@@ -3742,7 +3766,7 @@ Source loading queue:
 | Memory and adaptive-compute comparators | `ext_mem0_2025`, `ext_recurrent_transformer_2026`, `ext_dynamic_compute_recurrent_transformers_2026` | Compare token/latency savings, recurrent cache/traffic claims, and difficulty-dependent compute. Require pinned configurations and distinguish allocation from generalization, quality, and safety. |
 
 
-| Manifest assignment reconciliation | `ext_claw_swe_bench_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `ext_claw_swe_bench_2026`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Compute, context, verification, simulation fidelity, and human attention are scarce resources that the architecture must allocate explicitly.
@@ -4225,7 +4249,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 298 proof targets, 98 Lean modules, 1294 theorem declarations, 894 derived/decomposed, 230 direct/projection, 170 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 298 proof targets, 98 Lean modules, 1300 theorem declarations, 894 derived/decomposed, 230 direct/projection, 176 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -4312,7 +4336,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs a way to move capability claims through evidence without overfitting to fixed benchmarks.
@@ -4757,7 +4781,7 @@ Draft deliverables:
 - A policy optimization record schema with update state, target layer, policy delta, feedback source/admissibility, reward signal/boundary, verifier refs, reward-hacking probes, update constraint, drift bound, holdouts, regressions, evaluation refs, governance gates, authority effect, rollback plan, monitor window, evidence packet refs, deployment scope, support-state effect, residuals, and non-claims.
 - Implemented repository-level fixture: `policy_optimization_record.valid.json` validates update state, policy delta summary, feedback admissibility, reward boundary, reward-hacking probes, holdouts, regressions, authority effect, monitor window, evidence packet refs, deployment scope, support-state effect, and non-claims only; no PPO, DPO, GRPO, RLVR, router-policy, context-policy, or reasoning-budget experiment has been run.
 - Implemented deterministic Policy update lease probe: `python3 scripts/validate_policy_update_lease_probe.py` validates `experiments/policy_update_lease/results/2026-07-02-local.json`, a six-sample synthetic router-policy canary lease with holdouts, contamination check, reward-hacking probes, unchanged authority, rollback dry run, expected-invalid controls, residuals, and non-claims only; no optimizer, live canary, deployed rollback, route-quality result, or support-state promotion exists.
-- Implemented update-lifecycle refinement: `python3 scripts/validate_policy_optimization_refinement.py` independently reruns the inherited lease, reaches all 63 routes across seven stages, rejects 73/73 mutations, emits one bounded lease and version-2 readmission witness, and preserves support/external-effect authority at none; no optimizer, learning, reward-validity, causal, forgetting, rollback-efficacy, deployment, reproduction, transfer, or support result exists.
+- Implemented update-lifecycle refinement: `python3 scripts/validate_policy_optimization_refinement.py` independently reruns the inherited lease, executes two composed Lean traces, reaches all 63 routes across seven stages, rejects 73/73 route and 3/3 cross-stage mutations, emits one bounded lease and version-2 readmission witness, and proves that failed causal evaluation, support laundering, or incomplete effect rollback blocks downstream handoff/readmission while support/external-effect authority remains none; no optimizer, learning, reward-validity, causal, forgetting, rollback-efficacy, deployment, reproduction, transfer, or support result exists.
 - Public-safe ingestion report: `docs/policy_optimization_context_ingestion_report.md`.
 - External literature queue: initial source records and conservative source notes now exist for TRPO, PPO, ReMax, DPO, IPO/preference-learning theory, ORPO, KTO, SimPO, REINFORCE-style RLHF, DeepSeek-R1, DAPO, GSPO, S-GRPO, LongRLVR, and RLHF limitation work; process-reward work beyond LongRLVR remains queued.
 - Planned Codex test: DPO/offline preference baseline test.
@@ -4905,13 +4929,17 @@ Draft deliverables:
   effect.
 - Implemented custody/update/deletion lifecycle refinement that independently
   reruns the admission, full-state, and update-causality suites, reaches all 82
-  routes over eight stages, rejects 96/96 mutations, issues one bounded custody
-  handoff, and requires one material-change readmission at version 2.
+  routes over eight stages, executes two composed Lean traces, rejects 96/96
+  route and 3/3 cross-stage mutations, issues one bounded custody handoff, and
+  requires one material-change readmission at version 2. Behavioral-as-
+  influence and lineage-as-storage laundering block custody/readmission, and
+  incomplete descendant invalidation blocks readmission after custody.
 - Exact current minimum: one schema and four-scenario probe; a three-seed,
   twelve-arm small-model update result; 24 declared state surfaces; 15/15 exact
   local restores; `no_change`; behavioral changes 4/0/1; three lineage
   invalidations per seed; fifteen retained finite route theorems; and one
-  combined lifecycle theorem with an independent consumer. Influence remains
+  combined route theorem plus two lifecycle-composition theorems with an
+  independent consumer. Influence remains
   unestablished, source storage remains retained, storage erasure remains zero,
   and no source-truth, semantic-contamination, foundation-model learning,
   privacy, legal, backup, external-descendant, production, transfer, or
@@ -4923,8 +4951,10 @@ Draft deliverables:
   custodian, privacy, storage, institution, and transfer reproduction with all
   terminal outcomes visible.
 - Formal audit: all fifteen legacy declarations remain finite route
-  consequences; the refinement adds one combined route theorem and an
-  independently implemented 82-route/96-mutation consumer. It binds rather
+  consequences; the refinement adds one combined route theorem, one complete-
+  cycle theorem, one failed-prefix downstream-blocking theorem, and an
+  independently implemented 82-route/96-route-mutation/3-cross-stage-mutation
+  consumer. It binds rather
   than merges the three evidence lanes and proves no provenance or rights
   truth, semantic-contamination control, learning, target improvement,
   forgetting, influence, privacy, storage or backup erasure, runtime
@@ -5115,7 +5145,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `qcsa_whitepaper`, `ext_v_jepa_2_2025`, `ext_embedded_agency_2019` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `qcsa_whitepaper`, `ext_v_jepa_2_2025`, `ext_embedded_agency_2019`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Readers need to see how the layers operate as one machine from intent to governed action and improvement.

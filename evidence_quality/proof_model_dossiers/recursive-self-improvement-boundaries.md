@@ -8,7 +8,7 @@ Generated from the frozen activation-baseline inventory and semantic review over
 |---|---|---|
 | `lean:self_improvement.boundary.operational_invariant` | terminally_dispositioned | replace_with_stronger_model |
 | `lean:self_improvement.boundary.failure_blocks_promotion` | terminally_dispositioned | replace_with_stronger_model |
-| `lean:self_improvement.boundary.transition_route_envelope` | semantically_reviewed | retain_load_bearing_semantic |
+| `lean:self_improvement.boundary.transition_route_envelope` | semantically_reviewed | replace_with_stronger_model |
 
 ## Baseline theorem declarations
 

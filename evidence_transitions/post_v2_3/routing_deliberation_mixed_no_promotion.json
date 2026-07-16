@@ -1,0 +1,28 @@
+{
+  "schema_version": "asi_stack.evidence_transition.v1",
+  "transition_id": "post-v2-3-m6-routing-deliberation-mixed-no-promotion",
+  "claim_id": "routing-deliberation.heldout-local-policy-effect",
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_type": "no_promotion_after_full_attempt",
+  "transition_validity_state": "review_accepted",
+  "evidence_refs": [
+    "experiments/p4_routing_deliberation/results/confirmatory_result.json",
+    "experiments/p4_routing_deliberation/results/preflight_result.json",
+    "experiments/p4_routing_deliberation/results/preflight_v2_result.json"
+  ],
+  "decision": "retain_and_narrow",
+  "rationale": "On one authored balanced 32-task held-out corpus and one local quantized Qwen3-8B snapshot, the full reflexive policy improved route correctness from 6 to 31 and useful outcomes from 9 to 21 relative to LLM-first, while reducing wrong fast paths from 18 to 1. It was not a Pareto improvement: the full policy had two unsafe outputs versus zero for LLM-first, and its contract verifier repaired no initially incorrect deliberation cases. The bounded routing effect is retained as a result, but no support promotion is accepted.",
+  "deliberation_disposition": "Fixed deliberation corrupted three initially correct answers and repaired two; adaptive stopping corrupted one and repaired one; verifier-gated stopping preserved all twelve initially correct answers but repaired none. The fifteen historical correct-to-incorrect cases remain active regression cases without reconstructed prompts or new model calls.",
+  "support_state_effect": "none",
+  "chapter_core_promotion_count": 0,
+  "publication_authority": "none",
+  "release_authority": "none",
+  "non_claims": [
+    "does not establish a safe or generally useful reflexive router",
+    "does not establish useful test-time scaling",
+    "does not establish evaluator independence outside internal implementation separation",
+    "does not establish transfer, deployment, SOTA, AGI, or ASI",
+    "does not add a pre-deliberative chapter"
+  ]
+}

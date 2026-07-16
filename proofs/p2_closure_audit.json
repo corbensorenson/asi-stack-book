@@ -1,0 +1,152 @@
+{
+  "schema_version": "asi_stack.p2_closure_audit.v1",
+  "roadmap_id": "asi-stack-post-v2-3-claim-proof-sota-challenge-2026-07-14",
+  "as_of": "2026-07-16",
+  "state": "completed",
+  "activation_baseline": {
+    "theorem_declarations": 1151,
+    "proof_targets": 298,
+    "theorem_machine_candidates": 0,
+    "target_machine_candidates": 0,
+    "fully_reviewed_modules": 65,
+    "fully_reviewed_safety_critical_modules": 5
+  },
+  "current_surface": {
+    "theorem_declarations": 1300,
+    "proof_targets": 298,
+    "missing_or_changed_baseline_theorems": 296,
+    "missing_or_changed_baseline_targets": 181,
+    "implemented_current_targets": 298
+  },
+  "adequacy_routes": [
+    {
+      "adequacy_class": "adequate finite-record invariant",
+      "target_count": 73,
+      "p2_disposition": "proved_or_narrowed_to_explicit_finite_model",
+      "forward_priorities": ["P7"]
+    },
+    {
+      "adequacy_class": "useful but too narrow",
+      "target_count": 158,
+      "p2_disposition": "narrowed_and_routed_to_executable_or_family_campaign",
+      "forward_priorities": ["P3", "P5"]
+    },
+    {
+      "adequacy_class": "needs richer state-machine or review semantics",
+      "target_count": 16,
+      "p2_disposition": "bounded_by_existing_lifecycle_model_and_routed_beyond_record_semantics",
+      "forward_priorities": ["P3", "P4"]
+    },
+    {
+      "adequacy_class": "needs executable tests first",
+      "target_count": 35,
+      "p2_disposition": "routed_to_integrated_execution_or_family_campaign",
+      "forward_priorities": ["P3", "P5"]
+    },
+    {
+      "adequacy_class": "needs empirical or baseline tests first",
+      "target_count": 14,
+      "p2_disposition": "routed_to_causal_family_or_sota_campaign",
+      "forward_priorities": ["P4", "P5", "P6"]
+    },
+    {
+      "adequacy_class": "research-agenda until artifact import",
+      "target_count": 2,
+      "p2_disposition": "bounded_as_research_agenda_and_routed_to_import_or_reproduction",
+      "forward_priorities": ["P5", "P6"]
+    }
+  ],
+  "richer_semantics_forward_routes": [
+    {
+      "chapter_id": "constitutional-alignment-substrate",
+      "target_count": 6,
+      "current_model": "AsiStackProofs.SafetyCriticalLifecycle",
+      "remaining_work": [
+        "real-schema affected-party and constitutional-event encoders",
+        "concurrent and delayed effect semantics",
+        "effect-complete rollback and descendant recovery",
+        "reviewer-quality and material-rights-use evaluation"
+      ],
+      "forward_priorities": ["P3", "P4"]
+    },
+    {
+      "chapter_id": "moral-uncertainty-and-value-conflict",
+      "target_count": 6,
+      "current_model": "AsiStackProofs.SafetyCriticalLifecycle",
+      "remaining_work": [
+        "real-schema stakeholder and conflict-event encoders",
+        "concurrent appeal, dissent, exit, and fork effects",
+        "effect-complete correction and descendant preservation",
+        "reviewer-quality, representation, and contestability evaluation"
+      ],
+      "forward_priorities": ["P3", "P4"]
+    },
+    {
+      "chapter_id": "resource-economics-and-token-budgets",
+      "target_count": 4,
+      "current_model": "AsiStackProofs.ResourceEconomicsRefinement",
+      "remaining_work": [
+        "live scheduler and queue traces",
+        "measured reviewer, verifier, serving, and recovery costs",
+        "physical-feasibility and simulator review",
+        "open-world reproduction and transfer"
+      ],
+      "forward_priorities": ["P3", "P4", "P6"]
+    }
+  ],
+  "required_semantic_models": [
+    {
+      "model_id": "safety-critical-lifecycle",
+      "dossier": "evidence_quality/model_adequacy_dossiers/safety-critical-lifecycle.md",
+      "consumer_validator": "validate_safety_critical_lifecycle_consumer_trace.py"
+    },
+    {
+      "model_id": "self-improvement-refinement",
+      "dossier": "evidence_quality/model_adequacy_dossiers/self-improvement-refinement.md",
+      "consumer_validator": "validate_self_improvement_refinement.py"
+    },
+    {
+      "model_id": "authority-effect-refinement",
+      "dossier": "evidence_quality/model_adequacy_dossiers/authority-effect-refinement.md",
+      "consumer_validator": "validate_authority_effect_refinement.py"
+    },
+    {
+      "model_id": "stack-boundary-effect",
+      "dossier": "evidence_quality/model_adequacy_dossiers/stack-boundary-effect.md",
+      "consumer_validator": "validate_stack_boundary_effect_consumer.py"
+    },
+    {
+      "model_id": "integrated-reference-trace",
+      "dossier": "evidence_quality/model_adequacy_dossiers/integrated-reference-trace.md",
+      "consumer_validator": "validate_integrated_reference_trace_consumer.py"
+    },
+    {
+      "model_id": "resource-economics-refinement",
+      "dossier": "evidence_quality/model_adequacy_dossiers/resource-economics-refinement.md",
+      "consumer_validator": "validate_resource_economics_refinement.py"
+    },
+    {
+      "model_id": "policy-optimization-refinement",
+      "dossier": "evidence_quality/model_adequacy_dossiers/policy-optimization-refinement.md",
+      "consumer_validator": "validate_policy_optimization_refinement.py"
+    },
+    {
+      "model_id": "data-engine-lifecycle-refinement",
+      "dossier": "evidence_quality/model_adequacy_dossiers/data-engine-lifecycle-refinement.md",
+      "consumer_validator": "validate_data_engine_lifecycle_refinement.py"
+    },
+    {
+      "model_id": "open-ended-improvement-refinement",
+      "dossier": "evidence_quality/model_adequacy_dossiers/open-ended-improvement-refinement.md",
+      "consumer_validator": "validate_open_ended_improvement_refinement.py"
+    }
+  ],
+  "support_state_effect": "none",
+  "non_claims": [
+    "P2 closure does not establish that any chapter-core claim is true.",
+    "P2 closure does not establish deployed behavior, effect-complete rollback, evaluator competence, safety, usefulness, or economic optimality.",
+    "P2 closure does not turn authored Boolean or finite-record fields into observations or measurements.",
+    "P2 closure does not establish reproduction, transfer, SOTA, AGI, or ASI.",
+    "All forward routes remain mandatory gates in P3 through P7; routing is not completion of that work."
+  ]
+}

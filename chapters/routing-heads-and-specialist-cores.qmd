@@ -4,7 +4,7 @@ chapter_id: "routing-heads-and-specialist-cores"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-15"
+last_updated: "2026-07-16"
 primary_sources:
   - "octopus_router"
   - "rmi"
@@ -23,6 +23,7 @@ primary_sources:
   - "ext_hipporag_2024"
   - "ext_dont_hallucinate_abstain_2024"
   - "qcsa_whitepaper"
+  - "reflexive_router_whitepaper"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -40,10 +41,10 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
 | Last updated | 2026-07-15 |
-| Primary source records | All 17 assigned routing, runtime, associative-retrieval, abstention, and semantic-addressing records |
+| Primary source records | All 18 assigned routing, runtime, associative-retrieval, abstention, semantic-addressing, and reflexive-dispatch records |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `octopus_router`, `rmi`, `benchmaxxing`; supporting: `beastbrain`, `cognitive_loop_closure`, `rgs`, `viea`, `scf`, `talos`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`; variant: `moecot_md`; connector/recovery: `moecot` |
+| Source queue | primary: `octopus_router`, `rmi`, `benchmaxxing`; supporting: `beastbrain`, `cognitive_loop_closure`, `rgs`, `viea`, `scf`, `talos`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`, `reflexive_router_whitepaper`; variant: `moecot_md`; connector/recovery: `moecot` |
 | Source loading state | passage-reviewed local raw cache: `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`, `benchmaxxing`, `viea`, `scf`, `talos`; passage-reviewed local public-project source: `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`; authenticated connector text reviewed for `moecot` and the `moecot_md` variant; raw source text is not published. |
 | Test state | Three routing/runtime schemas; 3/7 route-lease and 4/5 readiness fixtures; a 300-example matched three-seed program; one 60-request ambiguous single-model workload; two conservative dispositions; and 21 live family declarations. The new refinement contributes seventeen lifecycle theorems, retains four load-bearing legacy theorems, and physically retires sixteen projection/fixture declarations. Its independent consumer covers seven stages, all 42 routes, and 47/47 rejecting mutations while keeping route and answer outcomes distinct. The only current narrow empirical result remains route discrimination plus exercised non-answer behavior, not useful specialist answers. |
 
@@ -248,6 +249,71 @@ Routing should retain stable identity, separate authority, fallback, receipt,
 and migration interfaces, but it cannot cite this experiment as learned-route,
 latency, throughput, or efficiency evidence. The core claim remains at
 `argument`.
+
+### Pre-deliberative reflexive dispatch
+
+*The Reflexive Router* sharpens this routing boundary by separating route
+proposal from route admission. An authenticated event first encounters the
+constitutional and authority boundary. An explicit route, capability, or
+workflow command is then resolved before automatic routing, but it may bypass
+route inference only. It cannot bypass schema validation, qualification,
+authority, consequence classification, verification, audit, expiry, or
+revocation. If a forced route is unavailable or inadmissible, the terminal
+result is a typed failure or an explicitly authorized fallback—never a silent
+change of route.
+
+Automatic routing is likewise two-stage. Deterministic rules, a calibrated
+learned model, cache lookup, or another proposer may nominate candidates and
+emit scores, OOD signals, ambiguity, and abstention. A separate qualification
+predicate admits only candidates whose capability contract, entity binding,
+freshness, authority, quality floor, verifier, effect policy, resource budget,
+and fallback obligations hold. Cost optimization happens only over that
+qualified set. A high-confidence learned prediction therefore remains a
+proposal; it does not mint a capability, authority, or execution lease.
+
+```{mermaid}
+flowchart LR
+  A["Authenticated event"] --> B{"Explicit command?"}
+  B -- "yes" --> C["Deterministic command binding"]
+  B -- "no" --> D["Rule / learned / cache proposals"]
+  C --> E["Qualification + authority admission"]
+  D --> E
+  E -- "atomic" --> F["Qualified capability route"]
+  E -- "composite" --> G["Bounded semantic-operation DAG"]
+  E -- "none" --> H["Clarify / abstain / typed failure"]
+  F --> I["Verifier or effect kernel"]
+  G --> I
+  I --> J["Typed result + dispatch provenance"]
+```
+
+Composite work changes the unit of routing from one label per prompt to a
+small typed semantic-operation DAG. Exact transforms, retrieval, proof,
+specialist inference, deliberation, verification, and effects may use different
+routes while preserving dependencies, qualification receipts, cancellation,
+retry, partial-result, and plan provenance. The route record must retain the
+ingress mode, proposals, disqualifications, selected nodes, overrides,
+fallbacks, and terminal outcome so fast-path coverage cannot hide wrong or
+unauthorized dispatch.
+
+This is a design integration, not a result. The paper supplies the ordering,
+contracts, algorithms, threat hypotheses, and ReflexBench plan; it supplies no
+trained router, implementation, benchmark result, effect campaign, or external
+reproduction. The core routing claim remains at `argument`.
+
+### P4/M6 held-out routing result
+
+The completed P4/M6 campaign supplies a bounded mixed result, not chapter-core
+support. After a 1/4 sacrificial schema failure and a prospectively frozen 4/4
+repair, one local quantized Qwen3-8B snapshot produced 32/32 admissible
+candidate banks over eight tracks and four ingress modes with zero retries.
+The full reflexive policy routed 31/32 correctly and produced 21 useful outcomes
+with one wrong fast path, versus LLM-first at 6/32 routes, nine useful outcomes,
+and eighteen wrong fast paths. The same full policy produced two unsafe outputs
+versus zero for LLM-first. That mixed frontier is the finding: qualification-
+first routing changed behavior substantially, but this implementation did not
+earn a safe or generally useful router claim. All seventeen control classes and
+fifteen historical harm regressions remain visible; the accepted disposition
+retains and narrows the result with no support promotion and no new chapter.
 
 ## Interfaces
 
@@ -552,6 +618,7 @@ correctness, deployment readiness, or source-reported performance.
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
+| `reflexive_router_whitepaper` | The Reflexive Router | pre_deliberative_reflexive_routing_control_plane | Command-before-automatic ordering, proposal/admission separation, qualification-first selection, calibrated abstention, atomic versus DAG routing, typed fallback, and dispatch provenance. | complete Corben-authored v1.2 paper passage-reviewed; architecture proposal only; no local router or benchmark result |
 | `octopus_router` | Octopus Router Architecture | routing_modular_intelligence | Lightweight head/router with dynamically loaded specialist arms and local boundaries. | source note available; passage-reviewed local raw cache |
 | `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Benchmark pressure, residual escrow, verified modular capability, regression preservation. | source note available; passage-reviewed local raw cache |
 | `beastbrain` | BeastBrain Cognitive Architecture | whole_stack_lineage | Architecture lineage. Organism paradigm, SSD-native/geometrically verified intelligence. | source note available; passage-reviewed local raw cache |

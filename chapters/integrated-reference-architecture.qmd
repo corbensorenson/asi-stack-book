@@ -4,7 +4,7 @@ chapter_id: "integrated-reference-architecture"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-15"
+last_updated: "2026-07-16"
 primary_sources:
   - "viea"
   - "scf"
@@ -36,6 +36,7 @@ primary_sources:
   - "qcsa_whitepaper"
   - "ext_v_jepa_2_2025"
   - "ext_embedded_agency_2019"
+  - "reflexive_router_whitepaper"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -53,10 +54,10 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
 | Last updated | 2026-07-15 |
-| Primary source records | 30 assigned and 30 exact passage-reviewed mappings spanning the stack sources, local implementation lineage, CAIS, ADAS, QCSA, V-JEPA 2, and Embedded Agency |
+| Primary source records | 31 assigned and 31 exact passage-reviewed mappings spanning the stack sources, local implementation lineage, CAIS, ADAS, QCSA, The Reflexive Router, V-JEPA 2, and Embedded Agency |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`; supporting: `alignment_field`, `cgs`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`; connector/recovery: `moecot`, `vcm_editable` |
+| Source queue | primary: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`; supporting: `alignment_field`, `cgs`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `reflexive_router_whitepaper`; connector/recovery: `moecot`, `vcm_editable` |
 | Source loading state | source notes: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`, `moecot`, `vcm_editable`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`; raw cache: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`; connector/recovery: `moecot`, `vcm_editable` |
 | Test state | `reference_trace_record.valid.json` passes repository-level protocol fixture validation with trace state, execution boundary, parent artifacts, authority/evidence/residual deltas, promotion blockers, source refs, support-state effect, and non-claims; `python3 scripts/validate_reference_trace.py` checks 2 valid and 6 expected-invalid deterministic reference-trace fixtures; `AsiStackProofs.ReferenceArchitecture` implements finite handoff-artifact and governance-gate trace predicates. No integrated runtime trace, live artifact-continuity audit, deployed authority stop-condition checker, or runtime replay exists. |
 
@@ -337,6 +338,63 @@ irreversible effects. P2 failed its matched-resource advantage gate. The trace
 therefore supports integration mechanics and falsifiability, not a deployed
 stack, general performance, safety, AGI, or ASI; the chapter core claim remains
 at `argument`.
+
+### The reflexive dispatch trace across the stack
+
+The Reflexive Router contributes an ordering contract that joins existing
+owners without merging them. One dispatch trace begins with an authenticated
+event and optional command constraint; records deterministic and learned route
+proposals; admits only qualified routes; selects one atomic capability or a
+bounded semantic-operation DAG; executes cognition or an independently
+authorized effect; returns a typed result; updates context and Chronicle views;
+and, only after repeated verified evidence, may propose compilation into a
+reflex.
+
+```{mermaid}
+flowchart LR
+  E["Canonical event"] --> C["Command / intent contract"]
+  C --> P["Rule + learned route proposals"]
+  P --> Q["Qualification + authority receipt"]
+  Q --> D["Atomic route or bounded DAG"]
+  D --> S["Stable capability implementation"]
+  S --> K{"Effect required?"}
+  K -- "no" --> R["Typed result packet"]
+  K -- "yes" --> X["Effect Commit Kernel"]
+  X --> R
+  R --> T["Context + Chronicle updates"]
+  T --> L["Claim / artifact / residual ledgers"]
+  L --> M{"Repeated verified trace?"}
+  M -- "yes" --> G["Guarded reflex candidate"]
+  M -- "no" --> H["Retain deliberative path"]
+  G --> V["Replay / differential / shadow qualification"]
+  V --> P
+```
+
+Each arrow is a typed handoff, not a shared ambient state transition. The
+command contract owns accepted route intent; Routing owns proposals and route
+provenance; SCF owns semantic capability and substitution; Planning owns DAG
+obligations; Runtime owns effect admission and observation; the Context ABI
+owns materialized packets; Context Transactions own durable context change;
+Claim Ledgers own claims and Chronicle materializations; Procedural Memory owns
+compilation; Benchmark Ratchets and Resource Economics own evidence and joint
+cost. No layer may infer another layer's authority from the presence of its
+record.
+
+The joined trace must preserve nine non-collapsible identities: event,
+principal/authority, command and ingress mode, route proposal and policy,
+qualification receipt, plan/node, capability implementation, effect attempt,
+and typed result/ledger descendants. It must also preserve rejected routes,
+fallbacks, abstentions, partial effects, verifier disagreement, invalidations,
+and residuals. A fast response without that join is an output, not evidence of
+the architecture.
+
+The paper supplies the proposed cross-layer spine and attack surface. The new
+`reflexive_dispatch_trace_record` fixture makes its record shape executable and
+rejects selected ordering, authority, qualification, effect, temporal, and
+premature-compilation violations. That validates a finite authored contract
+only; it is not an implemented router, real effect kernel, safe compiler,
+usefulness result, or whole-stack demonstration. Chapter-core support remains
+`argument`.
 
 ## Interfaces
 
@@ -655,6 +713,7 @@ embedded world-models, robust delegation, or subsystem alignment.
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
+| `reflexive_router_whitepaper` | The Reflexive Router | pre_deliberative_reflexive_routing_control_plane | End-to-end event, command, proposal, qualification, DAG, capability, effect-kernel, typed-result, Chronicle, ledger, and trace-to-reflex ordering with distinct authorities. | complete Corben-authored v1.2 paper passage-reviewed; finite design-contract fixture only, no integrated runtime result |
 | `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache available |
 | `scf` | Stable Capability Fields | governance_recursive_self_improvement | Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. | source note available; local raw cache available |
 | `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw cache available |
@@ -694,6 +753,7 @@ These rows keep Integrated Reference Architecture's manifest assignments visible
 | `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Defines QCSA as the semantic control plane connecting grounding, context, planning, memory, claims, routing, tools, generation, evidence acquisition, lifecycle migration, governance, and execution receipts through identity-address-route indirection; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and active-question value was refuted on this corpus. The local vertical path does not establish broad deployment, production safety, chapter-core promotion, AGI, or ASI. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_v_jepa_2_2025` | Passage-reviewed comparator: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning. Supplies the external predictive-state-to-planning interface for a governed world-model lane while preserving camera, search-cost, representation, and sim-to-real residuals. | The reported video and robot results do not establish local model quality, causal understanding, safe control, transfer, deployment, or an ASI Stack result. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_embedded_agency_2019` | Passage-reviewed comparator: Embedded Agency. Supplies the open-world foundations residual beneath the finite reference trace: the stack is inside the world it records and cannot treat its own ledger as an external omniscient model. | The paper is an informal obstacle survey, not a solved theory; the ASI Stack's finite records and proofs do not solve logical uncertainty, self-reference, robust delegation, subsystem alignment, or open-world embedded agency. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

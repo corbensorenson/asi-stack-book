@@ -2,11 +2,11 @@
 
 ## Reachable model
 
-Seven reachable stages connect prospective update scope to full-state custody, an update receipt, independent evaluation, adjudication, one bounded lease, and successor-version readmission. All 63 routes are reached by an independently implemented consumer, and all 73 registered identity, gate, ordering, replay, support, and external-effect mutations reject.
+Seven reachable stages connect prospective update scope to full-state custody, an update receipt, independent evaluation, adjudication, one bounded lease, and successor-version readmission. Two Lean composition theorems execute the complete lifecycle and a failed-evaluation prefix. All 63 routes are reached by an independently implemented state-transition consumer; all 73 route mutations and all three cross-stage mutations reject.
 
 ## Inherited evidence and countermodels
 
-The consumer reruns the exact existing deterministic lease probe and checks its six samples, two holdouts, five candidate policies, three rejected controls, experimental-only canary, and no-support disposition. The original four contradiction-style countermodels and seven guard-priority routes remain live. The refinement adds explicit countermodels for incomplete optimizer state, missing target evaluation, missing causal ablation, incomplete effect rollback, and support-authority laundering.
+The consumer reruns the exact existing deterministic lease probe and checks its six samples, two holdouts, five candidate policies, three rejected controls, experimental-only canary, and no-support disposition. The original four contradiction-style countermodels and seven guard-priority routes remain live. The refinement adds explicit countermodels for incomplete optimizer state and missing target evaluation. Its cross-stage traces establish that missing causal ablation blocks adjudication, lease, and readmission; support-authority laundering blocks lease and readmission; and incomplete effect rollback blocks readmission after a bounded lease.
 
 ## Assumptions, exclusions, and adequacy verdict
 

@@ -92,6 +92,18 @@ hide and not as work already completed.
 | Current Transformer and non-Transformer comparisons are high-value but easy to overclaim. | **Accepted and strengthened.** | P6 may not spend outcome-bearing compute until the exact claim atoms, dated comparator ledger, metric/uncertainty contract, and OneCell defeat prediction are frozen. Baseline reproduction precedes mechanism comparison. |
 | The cycle should be committed immediately. | **Not adopted as an automatic action.** A commit changes repository history and requires task authority. | The roadmap records commit readiness and coherent checkpoint packages, but never treats a review recommendation as authorization to stage, commit, push, tag, deploy, or publish. |
 
+### 2026-07-16 evidence-transition and instrument review adjudication
+
+| Finding | Judgment | Roadmap correction |
+|---|---|---|
+| The 2026-07-13 governance-tax and residual-honesty runs were claim-level `no_change` results. | **Rejected as labeled; the underlying critique is accepted.** All 36 calls exhausted the 256-token cap, 34 stopped inside unclosed reasoning, two produced no requested JSON, and no admissible candidate or final decision existed. That is an instrument failure, not an estimable null claim result. | P3 requires a lineage-preserving correction that maps both historical claim-level labels to `instrument_inadequate_recampaign_required` while preserving the immutable raw run and its costs. Instrument failure never satisfies a claim's full-attempt requirement. The later repaired 32-candidate governance-tax campaign remains a separate valid `no_change` result: it completed its candidate denominator but found only 2/32 independently correct candidates and zero useful releases. |
+| The next real campaign needs constrained final decoding, adequate answer budget, and a model capable of the task. | **Accepted, with an anti-laundering boundary.** A syntactically valid object is necessary for measurement, not evidence that its content is correct. | P3 installs a two-channel campaign instrument: unconstrained or separately budgeted reasoning plus a schema-constrained final decision, prospective token/stop rules, a current strong-model arm, a pinned small-model control where useful, and a sacrificial adequacy floor before outcome-bearing work. |
+| With zero promoted or refuted chapter-core claims, another instrumentation cycle would be diminishing returns. | **Accepted as a priority warning, not as a demand for a positive result.** The project must cross from apparatus into competent terminal attempts, but it may not manufacture promotion. | P3 instrument adequacy and P2 semantic cleanup precede P4/P5. The first competent campaign may raise support, retain it, narrow, refute, deprecate, or block only after the full-attempt rule. A valid negative, narrowing, or refutation counts as scientific progress; another broken instrument does not. |
+| Bespoke disposition strings are proliferating. | **Accepted in substance; the proposed freeze is refined.** New failure classes sometimes must be named before a campaign, so requiring a positive transition first would be unsafe. | Claim outcomes now project to a small canonical decision class while detailed reasons remain structured fields. A new top-level class requires a schema migration rationale, backward mapping, consumer updates, and rejecting tests; prose variation cannot create a new class. |
+| Three `*Refinement` modules are one-theorem stubs and the refinement corpus is mostly projection. | **Partly accepted, then remediated for the three named modules.** Before remediation the named files each contained one top-level theorem plus 315–392 lines of reachable transition semantics and independently consumed route suites. They now also contain six checked lifecycle-composition theorems: one complete-cycle property and one failed-prefix downstream-blocking property per module. The current live corpus is 1,300 declarations, not the review's 363-theorem sample. Theorem count and tactic syntax still do not decide semantic depth. | P2's module-level consumption and non-restatement gate requires every refinement module to expose a meaningful composition, reachability, preservation, or countermodel property consumed by an independently implemented executable check, or be folded/retired. A single substantial executable theorem may pass; many projections may fail. The three review-named modules passed this explicit gate with 9/9 cross-stage semantic mutations rejected; the remaining refinement corpus stays subject to the same gate. |
+| Inkling-style primary-source grounding should be repeated. | **Accepted.** | P6 generalizes the dated primary-source/official-implementation method to every frontier-adjacent comparator, but only where it changes a claim, baseline, control, or acceptance test. Provider scores remain claims until independently reproduced. |
+| The reader edition should now be rendered, inspected, and published. | **Accepted for local artifact completion; external publication is not authorized.** | P8 must programmatically build and inspect every feasible local format and record exact blockers. It may finish `ready_not_published`; push, tag, deploy, DOI/archive deposit, or public release still requires Corben's explicit authorization. |
+
 ## Proof constitution
 
 ### What “proof” is allowed to mean
@@ -209,6 +221,10 @@ items below:
 - current prior-art and strongest-baseline selection;
 - operating-range preflight that avoids ceiling, floor, zero-release, or
   otherwise non-estimable regimes;
+- instrument-adequacy preflight proving that the answer channel can terminate,
+  emit the registered schema, preserve the intended semantic fields, and reach
+  the prospectively frozen minimum admissible-output rate before any
+  confirmatory denominator is opened;
 - prospectively frozen workload, split, model, prompt, evaluator, budget,
   metrics, uncertainty method, exclusion rules, and stop rules;
 - matched baselines and ablations that preserve resources and information
@@ -227,6 +243,12 @@ items below:
   instructions; and
 - a claim-specific disposition that can promote, retain, narrow, refute,
   deprecate, or remain blocked without converting failure into success.
+
+An instrument failure is not a claim result. `instrument_inadequate_recampaign_required`
+preserves the attempt, cost, logs, and repair obligation, but it does not count
+as `no_change`, refutation, support retention, or a full attempt against the
+claim. Repair requires a new prospective protocol version; the failed run may
+not be rescored into an outcome after the fact.
 
 `blocked_after_full_attempt` is permitted only when the record names the exact
 external or resource constraint, at least three materially distinct routes
@@ -300,6 +322,22 @@ blocker.
     `checkpoint_blocked_no_commit_authority`, keep validation truthful, and do
     not infer authorization. File, commit, and checkpoint counts are never
     evidence for a book claim.
+17. **Finish from the repository, without conversational dependencies.** No
+    unfinished gate may require a ChatGPT, Claude, Gemini, or other hosted chat
+    conversation; a signed-in browser session; an outside participant; or a
+    fresh user approval for safe, reversible, local roadmap work. Historical
+    conversational runs remain immutable evidence about those instruments, but
+    they create no future dependency. Candidate generation may use the current
+    Codex worker, a locally available or open-weight model, deterministic
+    fixtures, or a prospectively frozen mixture, with exact role and identity
+    recorded. Missing optional model access triggers a documented role
+    substitution and claim ceiling, never waiting. Evaluator separation comes
+    from frozen labels, candidate-before-label closure, independently
+    implemented evaluators, negative mutations, and replay—not from pretending
+    one model is an external reviewer. Automated browser checks remain allowed
+    for the locally rendered book; they may not become hosted-chat gates.
+    External publication, deployment, archive deposit, or social posting may
+    finish `ready_not_published` when authority is absent.
 
 ## Execution board
 
@@ -307,9 +345,9 @@ blocker.
 |---|---|---|---|
 | P0 — Proof authority and continuity | completed | Install this successor, baseline the evidence gap, define proof language, and make same-transaction successor continuity mandatory. | Roadmap, machine status, schema, validator, public pointers, workflow rule, negative controls. |
 | P1 — Complete claim decomposition | completed | Atomize all 54 core claims and all material subordinate claims into typed, falsifiable obligations with exact acceptance and refutation rules. | Claim-atom registry, chapter dossiers, coverage report, zero unowned material claims. |
-| P2 — Existing-proof rationalization, formal semantics, and refinement | in progress | Audit every existing theorem and target; retire fluff and duplication; replace high-value finite-record proxies with state machines, trace properties, countermodels, composition theorems, and runtime refinement checks. | Complete proof inventory and dependency graph, 54 claim dossiers, retirement ledger, proof-model dossiers, Lean artifacts, mutation/countermodel suite, proof-to-runtime traceability. |
-| P3 — Executable integrated reference architecture | pending | Build real end-to-end governed work, learning, and audit/replay slices with observed effects and effect-complete rollback accounting. | Versioned reference implementation, natural task corpus, effect ledger, replay bundles, failure-injection report. |
-| P4 — Signature causal campaigns | pending | Give governance/usefulness, routing/deliberation, update/unlearning, and residual/rollback claims adequately powered, preregistered attempts in informative regimes. | Frozen protocols, raw results, independent evaluator/replayer outputs, exact dispositions. |
+| P2 — Existing-proof rationalization, formal semantics, and refinement | completed | Audit every existing theorem and target; retire fluff and duplication; replace high-value finite-record proxies with state machines, trace properties, countermodels, composition theorems, and runtime refinement checks. | Complete proof inventory and dependency graph, 54 claim dossiers, retirement ledger, proof-model dossiers, Lean artifacts, mutation/countermodel suite, proof-to-runtime traceability. |
+| P3 — Executable integrated reference architecture | completed | Build real end-to-end governed work, learning, and audit/replay slices with observed effects and effect-complete rollback accounting. | Versioned reference implementation, natural task corpus, effect ledger, replay bundles, failure-injection report. |
+| P4 — Signature causal campaigns | in progress | Give governance/usefulness, routing/deliberation, update/unlearning, and residual/rollback claims adequately powered, preregistered attempts in informative regimes. | Frozen protocols, raw results, independent evaluator/replayer outputs, exact dispositions. |
 | P5 — Full claim-family evidence program | pending | Test the remaining authority, planning, memory, security, compression, economics, benchmark, oversight, improvement, integration, and replaceable-cognitive-substrate claim families. | Family campaign bundles and per-atom adjudications covering every activation chapter plus the accepted new cognitive-substrate chapter. |
 | P6 — External reproduction and SOTA challenge | pending | Reproduce the strongest relevant public baselines, including current Transformer and non-Transformer cognitive substrates, and test exact Pareto or dominance claims on current models and workloads. | Dated comparator ledger, architecture-taxonomy and ABI comparison ledger, reproduction receipts, robustness/transfer matrix, bounded SOTA dispositions. |
 | P7 — Book-wide evidence integration | pending | Rewrite existing chapters around results, counterevidence, runnable examples, and honest limits; insert and fully reconcile the accepted replaceable-cognitive-substrates chapter; synchronize claims, sources, proofs, tests, and appendices. | 55 reconciled chapter dossiers after the accepted structural insertion, updated Appendix C/E/H/K, reader-facing result explanations, no proxy language. |
@@ -1153,7 +1191,7 @@ progress:
   natural multi-researcher matched-workflow, injected-error, causal-ablation,
   independent-reproduction, and heterogeneous-transfer campaign;
 - the current activation registry contains 3,730 atoms, all semantically
-  reviewed. The prose queue contains 2,710 adjudicated rows and zero pending
+  reviewed. The prose queue contains 2,716 adjudicated rows and zero pending
   rows, so 54/54 activation chapter sweeps are complete. This differs from the
   original 2,693-row count through transparent content change rather than
   receipt rewriting: subsequent refinement prose, including the governed
@@ -1234,6 +1272,19 @@ or validator.
   is a model-adequacy warning, not a pass.
 - Maintain theorem depth and adequacy reports, but do not set a theorem-count or
   direct/projection percentage as the scientific target.
+- Audit every live `*Refinement` module as a unit. It must have a named
+  composition, reachability, preservation, noninterference, liveness, or
+  countermodel obligation that is not merely a conjunction of fixture answers;
+  an independently implemented consumer must exercise that obligation and
+  reject relevant semantic mutations. If no such role is warranted, fold the
+  module into its canonical owner or retire it with lineage. Tactic name and
+  top-level theorem count are diagnostic metadata, never the adequacy verdict.
+- Apply that module-level gate explicitly to
+  `DataEngineLifecycleRefinement`, `OpenEndedImprovementRefinement`, and
+  `PolicyOptimizationRefinement`; preserve their current reachable lifecycle
+  and consumer evidence, but add a derived cross-stage property or record an
+  exact consolidation/retirement decision. Do not add ornamental theorems to
+  satisfy the review.
 
 ### P2 execution receipt at 2026-07-15
 
@@ -2255,7 +2306,7 @@ theorem declarations and zero of 298 targets remain machine candidates, all
 65 modules are fully reviewed, all five safety-critical modules remain fully
 reviewed, ten frozen projection theorems are now retired with lineage preserved,
 ten overbroad targets are remapped to the shared safety lifecycle model, and
-support-state effect remains `none`. P2/M3 itself remains in progress. Closing
+support-state effect remains `none`. At that inventory receipt P2/M3 remained in progress. Closing
 the inventory does not satisfy
 the completion gate: retained and replacement surfaces still require the
 recorded countermodels, reachable traces, generated refinements, executable
@@ -2296,7 +2347,7 @@ rejects eight consumer-level mutations, and produces zero support promotions.
 Its result and readable receipt are digest-bound and machine-validated. This is
 not a deployed effect service and does not establish moral correctness, legal
 rights, evaluator quality, affected-party completeness, attack completeness, or
-runtime safety. P2/M3 remains open for real-schema refinement, concurrent and
+runtime safety. At that replacement receipt P2/M3 remained open for real-schema refinement, concurrent and
 effectful semantics, and consumer traces for other retained proof families.
 
 Cognitive Kernel ABI receipt: the authorized 55th chapter's post-activation
@@ -2316,7 +2367,7 @@ kernel execution, full-state checkpoint translation, concurrency, effect-
 complete rollback, evaluator independence, natural workloads, matched
 baselines, reproduction, transfer, deployment, architectural RSI, AGI, and ASI.
 The chapter core remains `argument`; support-state effect is exactly `none`.
-P2/M3 remains open for real-schema refinement, concurrent/effectful semantics,
+At that ABI receipt P2/M3 remained open for real-schema refinement, concurrent/effectful semantics,
 and additional consumer traces;
 P5 retains the empirical heterogeneous-kernel tournament and frozen-core
 ratchet.
@@ -2352,7 +2403,7 @@ adapter is not Lean-verified and still excludes unprojected semantic payload
 preservation, additional live schemas, concurrent/distributed semantics,
 complete effect discovery, evaluator independence, deployment, reproduction,
 transfer, safety, and chapter-core promotion. Support-state effect remains
-exactly `none`. P2/M3 therefore remains open for those remaining refinement and
+exactly `none`. At that integrated-trace receipt P2/M3 therefore remained open for those refinement and
 execution boundaries and for independent consumers of the other retained proof
 families, not for the now-closed integrated-model or first governed-schema
 placeholder.
@@ -2391,7 +2442,7 @@ lineage preserved. The packet trusts numeric identities and receipt fields and
 does not establish authentic identity, wise issuance, concurrent revocation,
 complete observation, deployed authorization, production security,
 reproduction, transfer, or chapter-core support. Support-state effect is
-exactly `none`; P2/M3 remains in progress for the remaining retained proof
+exactly `none`; at that authority receipt P2/M3 remained in progress for the retained proof
 families and cross-layer refinement obligations.
 
 Human Intent resolution receipt: the two headline contract targets and the
@@ -2719,7 +2770,11 @@ Policy Optimization governed-update refinement receipt: all four stable Policy
 Optimization targets now resolve to
 `AsiStackProofs.PolicyOptimizationRefinement` rather than stopping at
 projection-shaped promotion implications and disconnected guard routes. The
-independently encoded consumer reruns the exact six-sample, two-holdout,
+Lean model now checks a complete seven-transition lifecycle and a failed
+evaluation prefix that cannot reach adjudication, lease, or readmission. The
+independent state-transition consumer rejects 3/3 cross-stage controls:
+missing causal ablation, support-authority laundering, and incomplete effect
+rollback. It also reruns the exact six-sample, two-holdout,
 five-candidate lease probe, preserves all three rejected controls and the
 experimental-only disposition, reaches all 63 routes across draft, scoped,
 full-state-bound, updated, evaluated, adjudicated, and lease-bound stages, and
@@ -2738,8 +2793,12 @@ support, SOTA, AGI, ASI, nor an external effect.
 Data Engines custody/update/deletion/readmission refinement receipt: all
 fifteen stable Data Engines targets now resolve to
 `AsiStackProofs.DataEngineLifecycleRefinement` rather than stopping at three
-disconnected finite route functions. The independently encoded consumer reruns
-the exact four-scenario admission probe, 24-surface/15-transaction full-state
+disconnected finite route functions. The Lean model now checks a complete
+eight-transition lifecycle and an axis-laundering prefix that cannot reach
+custody or readmission. The independent state-transition consumer rejects 3/3
+cross-stage controls: behavior presented as influence, lineage presented as
+storage erasure, and incomplete descendant invalidation after custody. It also
+reruns the exact four-scenario admission probe, 24-surface/15-transaction full-state
 bridge, and three-seed/twelve-arm small-model update result; reaches all 82
 routes across draft, scoped, admitted, state-bound, updated,
 deletion-assessed, adjudicated, and custody-bound stages; and rejects all 96
@@ -2758,8 +2817,12 @@ nor an external effect.
 Open-Ended Improvement campaign-to-governor/readmission refinement receipt:
 all seven stable Open-Ended Improvement targets now resolve to
 `AsiStackProofs.OpenEndedImprovementRefinement` rather than stopping at seven
-disconnected Boolean admission routes. The independently encoded consumer
-reruns the exact seven-case admission fixture, the three-seed/four-arm fixed
+disconnected Boolean admission routes. The Lean model now checks a complete
+seven-transition campaign lifecycle and a budget-reset prefix that cannot reach
+governor handoff or readmission. The independent state-transition consumer
+rejects 3/3 cross-stage controls: budget reset, missing stop effect, and
+candidate-authority laundering. It also reruns the exact seven-case admission
+fixture, the three-seed/four-arm fixed
 update result, and the three-seed/five-arm post-v2.1 stopped campaign; reaches
 all 81 routes across draft, scoped, generation-bound, archive-bound, evaluated,
 adjudicated, and governor-bound stages; and rejects all 91 identity, scope,
@@ -2853,7 +2916,7 @@ policy fields are authored inputs, not natural-workload results. Codec
 correctness, verifier correctness or real independence, obligation discovery,
 semantic grounding, deployed fallback, useful compression, downstream utility,
 total-cost advantage, reproduction, transfer, SOTA, and support remain
-unproved. The corpus now has 1,294 live theorem declarations and 300 targets;
+unproved. The corpus now has 1,300 live theorem declarations and 300 targets;
 198 baseline declarations and 92 targets are absent or changed. Support-state
 and external-effect authority are exactly `none`.
 
@@ -3061,6 +3124,41 @@ model has a model-adequacy dossier, countermodel suite, consumer trace, and
 explicit non-claims. `lake build` and a larger theorem count are necessary only
 where appropriate and are never sufficient.
 
+### P2/M3 closure receipt at 2026-07-16
+
+P2 and M3 are complete under `proofs/p2_closure_audit.json`, enforced by
+`scripts/validate_p2_closure_audit.py`. The receipt does not declare the
+remaining real-world work complete. It proves the narrower project-management
+and formal-accounting result required by this gate:
+
+- all 1,151 activation-baseline theorem declarations and all 298 activation-
+  baseline targets are semantically reviewed or terminally dispositioned under
+  a canonical claim owner;
+- the current 298-target manifest is fully implemented, exactly mirrored by
+  proof triage, and divided into six explicit adequacy routes totaling 298;
+- all 73 adequate finite-record targets remain narrow, while 158 too-narrow,
+  16 richer-semantics, 35 executable-first, 14 empirical-first, and two
+  artifact-import targets retain mandatory forward routes rather than being
+  laundered into proof claims;
+- the 16 richer-semantics obligations are exactly localized to Constitutional
+  Alignment (six), Moral Uncertainty and Value Conflict (six), and Resource
+  Economics (four), with their existing finite lifecycle models preserved and
+  their real-schema, concurrent-effect, rollback, review-quality, measurement,
+  and transfer work routed to P3, P4, and P6;
+- nine required safety-critical, integration, and review-named refinement
+  models have model-adequacy dossiers and independently implemented registered
+  consumers; and
+- the closure validator rejects support laundering, baseline deletion,
+  unrouted richer semantics, target-count laundering, semantic-model omission,
+  and false closure state.
+
+This is a routing and semantic-depth closure, not evidence that a chapter-core
+claim, deployed behavior, effect-complete rollback, evaluator competence,
+useful throughput, safety, economic optimality, reproduction, transfer, SOTA,
+AGI, or ASI has been established. P3 is now active. M2 is active first as the
+measurement and reproduction prerequisite; M4 remains pending until that
+foundation passes sacrificial preflight.
+
 ### Accepted structural expansion: replaceable cognitive substrates
 
 The 2026-07-15 review of the two author-supplied ChatGPT design threads passed
@@ -3172,6 +3270,77 @@ foundation:
   preservation, redaction receipts, environment reconstruction, and a
   one-command public-safe replay or an exact reason it cannot be public.
 
+#### M2 closure receipt at 2026-07-16
+
+M2 is complete at instrument-foundation scope under
+`experiments/research_foundation/foundation.json` and
+`scripts/validate_research_foundation.py`. The frozen packet contains 24
+public-safe natural-language tasks across governed work, governed learning, and
+assurance/control; exact 6 sacrificial / 6 tuning / 12 held-out partitions; a
+separate digest-bound evaluator-only label file; current-strong,
+independent-comparison, and small-local model roles; exact inference,
+evaluator, statistics, environment, safety, and append-only artifact contracts;
+and ten non-evidentiary parser/evaluator canaries. Eight of ten canaries are
+schema-admissible, seven of those eight are semantically correct, the two
+independent evaluator implementations agree, and the validator rejects six
+foundation mutations.
+
+The current-strong selection, `gemini-3.5-flash`, was checked against Google's
+official model catalog on 2026-07-16 and must still resolve through the provider
+model endpoint before any campaign. The two local roles are exact pinned Qwen
+snapshots. This receipt establishes neither model access nor performance,
+corpus representativeness, campaign power, evaluator generality, useful
+throughput, safety, reproduction, transfer, or support. Campaign-specific
+sample-size, model-access, safety, and replay extensions remain gates. M4 is now
+active.
+
+Install a campaign-instrument contract before any P4 or P5 outcome-bearing
+run:
+
+1. Separate the reasoning channel from the scored final-decision channel. The
+   final channel must use grammar-, schema-, or type-constrained decoding where
+   the runtime supports it; otherwise use a separately budgeted repair-free
+   second pass whose only job is to emit the registered object. Never scrape a
+   hidden or truncated reasoning trace and call it a decision.
+2. Freeze independent reasoning and answer budgets, stop sequences, maximum
+   context, truncation handling, retry policy, and a nonempty-answer reserve.
+   Raising a cap is allowed only in sacrificial preflight, never after held-out
+   outcomes are visible.
+3. Run a sacrificial positive/negative canary suite with known valid and invalid
+   decisions. At least 80% of expected final decisions must be schema-admissible,
+   no arm may have a zero candidate denominator, and truncation or one
+   termination mode may not dominate the sample. The preregistration may set a
+   stricter claim-specific floor but not a weaker one without a written
+   instrument rationale and validator change.
+4. Calibrate semantics separately from syntax: a schema parser establishes
+   record shape only; a label-isolated evaluator or executable oracle must test
+   decision content, abstention, and route correctness.
+5. Include at least one dated current strong general model for claim-bearing
+   work. A pinned Qwen3 4B or comparable local model may remain as a
+   reproducibility, floor, or mechanism-control arm, but it cannot be the sole
+   basis for dismissing a claim when the task exceeds its demonstrated
+   capability range.
+6. If the adequacy gate fails, stop before the confirmatory split, emit
+   `instrument_inadequate_recampaign_required`, preserve all costs and raw
+   outputs, repair prospectively, and rerun a fresh preflight. The failed cycle
+   contributes no claim-level `no_change`, refutation, or support-retention
+   disposition.
+7. Correct the two immutable 2026-07-13 transition records through explicit
+   superseding lineage, not deletion or history rewriting: their protocol
+   outcome becomes `instrument_inadequate_recampaign_required`; the separate
+   repaired 2026-07-14 32-candidate governance-tax `no_change` result remains
+   unchanged.
+
+All claim dispositions must carry two orthogonal fields: `protocol_outcome`
+and `claim_outcome`. The canonical protocol outcomes are
+`instrument_adequate` and `instrument_inadequate_recampaign_required`. The
+canonical claim outcomes are `support_raised`, `support_retained`,
+`claim_narrowed`, `claim_refuted`, `claim_deprecated`, and
+`blocked_after_full_attempt`. Existing exact disposition strings remain as
+lineage-preserving detail. A new top-level class requires a schema migration
+rationale, backward mapping, updated consumers, and at least one rejecting
+mutation; wording preference alone is insufficient.
+
 The sacrificial/tuning split may repair protocol reliability and find an
 informative operating range. It may not contribute to a confirmatory held-out
 result or be silently promoted after outcome inspection.
@@ -3246,7 +3415,45 @@ where the reference implementation remains simulated. No slice result promotes
 a broad core claim until the matching atoms and transfer requirements pass. At
 least one cross-slice trace begins with a raw observation, preserves competing
 interpretations through a belief decision, and survives a sealed quiescent
-epoch; mutation, lineage-loss, and in-flight-effect controls must reject.
+epoch; mutation, lineage-loss, and in-flight-effect controls must reject. The
+campaign instrument passes its sacrificial adequacy gate, and the historical
+2026-07-13 instrument-limited transitions have superseding protocol-outcome
+lineage before P4 or P5 opens.
+
+### P3/M4 closure receipt at 2026-07-16
+
+P3 and M4 are complete at bounded local-reference scope under
+`experiments/p3_integrated_slices/results/2026-07-16-local.json` and
+`scripts/validate_p3_integrated_slices.py`. One versioned interface consumes
+retained real model output from the governed-work flagship, real trained
+checkpoint bytes from the update-causality campaign, and retained real model
+output plus bounded safety-case routes for assurance/control.
+
+The twelve cases cover all ten required lifecycle states across all three
+slices. Six local effects are independently byte-observed; three restore their
+exact prior digest, one retains an owned backup residual, one is quarantined,
+and one is acknowledged. Twenty named failure injections cover every declared
+boundary from intent through recovery and remain contained. One cross-slice
+trace begins with an immutable raw observation, preserves two competing
+interpretations through a versioned belief decision, binds all three consumers,
+and passes one sealed local quiescent epoch over model, optimizer, scheduler,
+RNG, cache, backup, descendants, effects, claims, artifacts, and memory while
+retaining one in-flight residual.
+
+The separate
+`evidence_transitions/post_v2_3/instrument_failure_supersession.json` preserves
+the immutable 2026-07-13 governance-tax and residual-honesty transitions while
+superseding their claim-level `no_change` interpretation with
+`instrument_inadequate_recampaign_required`; neither counts as a claim attempt.
+The repaired 32-candidate governance-tax `no_change` transition remains
+unchanged. Eleven mutation controls reject source, state, effect, rollback,
+epistemic-lineage, stabilization, failure-escape, and support laundering.
+
+This closes the executable reference slice, not the empirical program. It does
+not establish fresh model quality, open-world effect discovery, deployed or
+distributed rollback, evaluator/reviewer correctness, useful throughput,
+safety, reproduction, transfer, SOTA, AGI, ASI, release, publication, external-
+action authority, or chapter-core support. P4 and M5 are now active.
 
 ## P4 — Signature causal campaigns
 
@@ -3267,19 +3474,299 @@ epoch; mutation, lineage-loss, and in-flight-effect controls must reject.
 - Treat zero releases, zero useful candidates, or an evaluator ceiling as
   non-estimable, never as a safety victory.
 
-### Campaign 2 — Ambiguous routing and real-model deliberation
+#### M5 campaign-readiness receipt at 2026-07-16
+
+The first M5 package is frozen at
+`experiments/p4_governed_usefulness/preregistration.json`. A read-only access
+check in a new signed-in ChatGPT tab observed Chat `Pro`; its model menu
+displayed `GPT-5.6 Sol`. The author clarified that Work `Extra High` is a
+different option, so the campaign deliberately selects Chat `Pro` for the
+strong-model arm and records both labels separately. This is a provider UI
+observation, not an API version, weight snapshot, or reproducibility claim.
+
+The exact v1 prompt was submitted once after the author clarified the mode
+selection. Chat Pro returned six of six schema-admissible records in 171.865
+seconds with no identity drift, transport retry, or evaluator disagreement, but
+only one of six matched the frozen exact route-plus-residual strings. V1 is
+therefore terminal `instrument_inadequate_recampaign_required`, counts as no
+claim attempt, and opens no downstream denominator.
+
+The preserved diagnosis does not rescore v1. It finds that the evaluator
+wrongly treated exact free-form snake-case residual wording and fine-grained
+non-release route names as semantic identity. A new v2 protocol is frozen under
+a new identity before any response: six canonical decision classes, seven
+canonical residual classes, unscored route detail and concise reasoning, a 5/6
+schema floor, a 5/6 exact canonical-semantic floor, and zero evaluator
+disagreement. After the author explicitly instructed “Run v2 in Chat Pro,” the
+exact prompt was submitted once in a fresh Chat conversation. The interface
+displayed Chat `Pro` and `GPT-5.6 Sol` immediately before and after the
+170.996-second response; there was no retry, evaluator disagreement, parse
+failure, or displayed identity drift. V2 returned 6/6 schema-admissible rows,
+6/6 exact residual classes, but only 3/6 exact decision classes. It is therefore
+terminal `instrument_inadequate_recampaign_required`, counts as no claim
+attempt, and opens neither the difficulty sweep nor a confirmatory denominator.
+
+The preserved v2 diagnosis does not rescore the three mismatches. It records
+`quarantine` versus frozen `deny` for the rights-missing cohort, `deny` versus
+frozen `defer` for incomplete rollback state, and `rollback` versus frozen
+`defer` for the open defeater. Each response preserved the blocking consequence
+and exact residual, but v2 had not made the neighboring lifecycle actions
+mutually exclusive through definitions or precedence. Expanding the accepted
+labels after observing the answer would be retrospective scoring. These v1 and
+v2 Chat Pro runs are now closed historical instrument audits. They will not be
+repeated in ChatGPT or used as a future gate. The next repair is a
+self-contained local instrument qualification under a new protocol identity.
+It must separate terminal eligibility from remediation action; define decision
+precedence or prospectively declare consequence-equivalent sets; retain label
+isolation, unscored free text, 5/6 floors, and zero evaluator disagreement;
+close candidate artifacts before either evaluator loads labels; pass
+independently implemented evaluators and negative mutations; and record the
+exact candidate-generator role and its claim ceiling. Safe local execution has
+standing roadmap authority. No new hosted-chat submission or user approval is
+required. No usefulness, safety, rollback, causal, chapter-support,
+publication, or release claim follows from the historical runs or instrument
+qualification alone.
+
+The local repair then ran prospectively without a hosted chat. V3, v4, and v5
+used a cached quantized Qwen3-4B role and failed at 2/8, 6/8, and 6/8 exact
+tuples; v6 substituted cached Phi-4-mini and failed the exact schema at 0/8.
+V7 was abandoned before generation when the current Codex task recognized that
+it had already seen evaluator labels. V8 used a freshly cached, identity-pinned
+Qwen3-8B role and produced 8/8 schema-admissible records, 8/8 exact terminal
+eligibility judgments, 8/8 exact residuals, and 6/8 exact remediation actions;
+it remains failed because its frozen gate scored the full tuple. V9
+prospectively narrowed only the sacrificial answer-channel construct: terminal
+eligibility and exact residual are scored, while remediation remains a required
+enum and a reported diagnostic because the tuning utility rubric scores exact
+actions separately. Under that frozen rule, the one-shot Qwen3-8B run passed
+8/8 schema and 8/8 scored semantics with zero evaluator disagreement; exact
+remediation remained 6/8. This qualifies only the local answer channel and
+opens tuning, not a claim or confirmatory denominator.
+
+The first tuning design was then frozen and executed. It defines sixteen tasks
+across eight natural governance
+families, evaluator-only rubrics, one shared candidate per task/seed, and six
+matched policies: simple baseline, record-only, full governance, and authority,
+evidence-freshness, and residual/rollback ablations. Two independent evaluator
+implementations agree on authored canaries spanning useful-safe, useful-unsafe,
+useless-safe, and useless-unsafe. The operating-range gate requires at least two
+observed candidates per cell, at least 80% schema admission, at most 5%
+evaluator disagreement, and five bounded effect probes. Validator-owned probes
+exercise ten-surface exact restoration, an append-only residual, and omission
+detection without real external effects. A one-shot local Qwen3-8B generation
+closed all candidate bytes before rubric load. Fourteen of sixteen candidates
+were schema-admissible; the two exclusions used out-of-vocabulary tokens. The
+observed cells were 1 useful-safe, 0 useful-unsafe, 10 useless-safe, and 3
+useless-unsafe, with zero evaluator disagreement. The outcome is terminal
+`non_estimable_operating_range_repair_required`: the minimum two candidates per
+cell was not met, no useful-unsafe candidate existed, and no held-out corpus,
+precision target, minimum effect, or confirmatory denominator opens.
+
+Four prospectively frozen repair identities followed without rescoring any
+earlier output. V2 observed 4 useful-safe, 1 useful-unsafe, 2 useless-safe, and
+8 useless-unsafe candidates among 15/16 admitted outputs. V3 preserved the
+same consequence-equivalent scoring contract but exposed an over-conjunctive
+structured-output completeness problem. V4 prospectively narrowed usefulness
+to one material action plus one core residual and obtained the second
+useful-unsafe observation, while preserving seven invalid `block` decision
+classes as schema exclusions. V5 repaired only the enum instruction and
+admitted 8/8 outputs. The pool rule was frozen before generation and passed at
+32/40 admitted candidates, with cell counts 9/2/10/11, zero evaluator
+disagreement, and 20 bounded effect probes. The pool authorizes a held-out
+freeze, not a claim.
+
+The fresh confirmatory design then fixed 16 held-out task families, one
+identity-pinned local Qwen3-8B run, no retry, two evaluator implementations, six
+matched policy arms, and six co-primary conditions. Task identities and exact
+scenario/request pairs are disjoint from tuning; candidate bytes closed before
+rubric load. Fifteen of sixteen outputs were admitted and evaluator disagreement
+was zero. The simple and record-only policies released 0 useful and 0 unsafe
+candidates; full governance released 9 useful and 0 unsafe candidates with no
+useful-safe false refusals. Removing evidence freshness exposed one additional
+useful-unsafe release. The residualized partial-recovery case remained blocked.
+All frozen primary checks passed, yielding
+`bounded_local_governance_effect_supported`.
+
+M5 is therefore complete at bounded local synthetic scope. The result supports
+only the proposition that this fixed governance policy improved useful release
+over the candidate's self-release recommendation on one authored held-out
+corpus and one quantized model, while its evidence-freshness gate prevented one
+registered unsafe release. It does not establish transfer, deployment,
+open-world safety, acceptable governance cost, independent external validity,
+production rollback, SOTA, AGI, or ASI. Campaigns 2 and 3 remain P4 work; M6 is
+the next milestone.
+
+### Accepted source integration — The Reflexive Router v1.2
+
+The complete Corben-authored paper `reflexive_router_whitepaper` was ingested on
+2026-07-16 from the supplied Markdown and DOCX forms. The canonical local text
+is SHA-256
+`003a693741c40ca96ec3aece5b76ee90ec95a1d6c27ec81a970cff175f509068`;
+the supplied DOCX presentation copy is SHA-256
+`52bc04a1bfedaa0fe3a7e530570703bd973849f46b806529f2534509101ace9b`.
+Both live in the ignored local raw-source cache. The tracked source note,
+inventory record, backlog record, and triage decision are public-safe, but this
+ingestion neither publishes the raw paper nor infers publication permission.
+
+The paper passes the source-value test and fails the new-chapter test in its
+current form. Its important contribution is an ordering and contract synthesis:
+authenticated command handling before automatic routing; deterministic and
+learned proposals before qualification; optimization only over qualified and
+authorized computations; bounded semantic-operation DAGs; stable capability
+contracts; a separate action-understanding and Effect Commit Kernel path; typed
+result and bitemporal context continuity; and a governed trace-to-reflex
+compiler. Those boundaries already belong to existing chapters. Creating a
+paper-shaped chapter now would duplicate their authority rather than clarify
+the stack.
+
+The integration package therefore has one primary owner and eleven adjacent
+owners:
+
+| Owner | Required upgrade |
+|---|---|
+| `routing-heads-and-specialist-cores` | Own the pre-deliberative event-to-qualified-plan interface, including deterministic commands, bounded learned proposals, calibrated abstention/OOD, qualification before optimization, composite routing, and route/plan provenance. |
+| `intent-to-execution-contracts` | Preserve authenticated user route constraints, canonical-event metadata, explicit fallback, and typed terminal outcomes without treating a command as new authority. |
+| `planning-as-a-control-layer` | Own bounded execution-DAG construction, partial qualification, dependency and cancellation semantics, and escalation when decomposition is not safely bounded. |
+| `stable-capability-fields` | Bind reflexes and commands to consumer-relative semantic capability contracts, compatible implementations, qualification leases, and dependency invalidation. |
+| `virtual-context-abi`; `context-transactions-snapshots-mounts-and-taint` | Own typed result packets, hot routing projections, context handles, provenance-preserving projections, and invalidation rather than transcript reconstruction. |
+| `claim-ledgers-and-belief-revision` | Crosswalk the Temporal Chronicle into separate event, state, claim, plan, prediction, and counterfactual records with valid time, transaction time, contradiction, correction, and epistemic state. |
+| `runtime-adapters-tool-permissions-and-human-approval` | Enforce “bypass inference, never enforcement” through typed action proposals, consequence-aware prepare/commit, idempotency, observed postconditions, compensation, and audit. |
+| `procedural-memory-and-cognitive-loop-closure` | Own trace eligibility, representation selection, negative-space guard synthesis, replay/differential tests, shadowing, signed promotion, drift, quarantine, rollback, and decompilation. |
+| `resource-economics-and-token-budgets` | Treat minimum sufficient compute as selection over the qualified frontier with complete generation, routing, verification, monitoring, human, energy, latency, risk, and displaced-work costs. |
+| `benchmark-ratchets-and-anti-goodhart-evidence` | Own the ReflexBench-derived instrument, complete baseline matrix, wrong-fast-path and verification-escape emphasis, metric validity, hidden holdouts, and anti-gaming controls. |
+| `integrated-reference-architecture` | Join command/automatic ingress, route admission, capability/effect execution, typed result, Chronicle update, and compiler lifecycle without creating a routing super-owner. |
+
+The P7 argument-only prose integration is complete. All twelve owners now carry
+the source in the manifest, an owner-specific mechanism section, and a bounded
+source crosswalk. The shared `Reflexive Dispatch Trace` schema and fixture join
+canonical event intake, ingress mode, proposals, qualification, atomic or DAG
+selection, effect custody, typed result continuity, Chronicle updates,
+compilation state, and joint metrics. Its dedicated validator rejects eleven
+selected inference/enforcement, proposal/admission, fallback, effect,
+provenance, compilation, source-substitution, DAG, and support-laundering
+mutations. This is finite record-shape work and changes no chapter support.
+
+The remaining P7 obligation is result reconciliation after P4, not another
+paper-shaped rewrite. The paper's external prior-work, novelty, security, and
+performance statements still require current primary-source passage review.
+Illustrative latency targets, launch gates, formulas, schemas, and worked
+examples remain research specifications—not measurements.
+
+A new `pre-deliberative-reflexive-control-plane` chapter may be reconsidered
+only after the campaign below observes a stable interface, invariant, artifact,
+or failure class that the named owners cannot express without authority
+conflict or destructive duplication. Topic importance, paper length, and the
+label `System-0` do not satisfy that gate.
+
+### Campaign 2 — Reflexive routing, ambiguous dispatch, and real-model deliberation
 
 - Construct a held-out workload whose ambiguity makes learned routing,
   rule-based routing, clarification, fallback, abstention, specialist, and
   generalist routes genuinely differ.
+- Cover eight separately scored task tracks: atomic exact work, paraphrased
+  routing, context-dependent reference, composite requests, temporal recall,
+  authorized effects, adversarial routing, and trace-to-reflex compilation.
+- Exercise four ingress modes over one capability fabric: unmarked automatic
+  routing, a forced route, a direct typed capability command, and a compiled
+  workflow. A forced route may fail or clarify but may not silently fall back;
+  a direct command may bypass inference but may not bypass authorization,
+  consequence policy, type validation, verification, audit, or revocation.
 - Use actual model candidates and a separately implemented, label-isolated
-  evaluator with calibrated abstention.
+  route evaluator, outcome evaluator, and effect observer with calibrated
+  abstention and disclosed dependency/independence classes.
+- Compare LLM-first, hard-rule-only, learned model router, semantic cache,
+  LLM-first tool agent, modular tool system, full reflexive route, and oracle
+  selection under matched model access, candidate bytes, information,
+  authority, retry opportunity, verifier access, and total cost.
 - Compare no deliberation, fixed deliberation, adaptive stopping, and
   verifier-gated stopping at matched total budgets.
 - Preserve and actively test the fifteen known extra-compute harms.
-- Measure answer utility, selective risk, route regret, calibration,
-  initial-correct corruption, recovery, interference, latency, cost, residuals,
-  and authority violations.
+- Add validator-owned controls for untrusted command text, literal escaping,
+  ambiguous parameters, stale context, OOD inputs, contract rejection, cache
+  collision, Chronicle poisoning, authority widening, partial effects,
+  duplicate retries, verifier monoculture, premature compilation, drift,
+  quarantine, rollback, and decompilation.
+- Measure useful task outcome, fast-path and qualified coverage,
+  wrong-fast-path rate, selective risk, route regret, calibration, OOD
+  abstention, override fidelity, silent fallback, argument binding, DAG
+  validity, context continuity, temporal accuracy, initial-correct corruption,
+  recovery, interference, unauthorized effects, verification escape,
+  postcondition coverage, rollback completeness, compilation transfer,
+  latency, compute, energy where measurable, money, human work, monitoring,
+  governance cost, residuals, and displaced work.
+- Report Useful Reflex Efficiency only beside useful-outcome and
+  wrong-fast-path denominators. A cheaper route, high coverage, zero release,
+  or a structured packet cannot by itself establish correctness, safety, or
+  value.
+- Attempt compilation only after routing instrumentation is adequate. Require
+  diverse verified traces, positive and negative boundary cases, static and
+  dynamic checks, shadow results, signed promotion authority, drift injection,
+  a safe canary, quarantine, rollback, and decompilation. Frequency or fluent
+  unchallenged output is not eligibility evidence.
+- Freeze exact retain, narrow, refute, deprecate, or promote criteria for each
+  claimed mechanism. A coherent architecture diagram or passing schema is not
+  a Reflexive Router result.
+
+#### M6 terminal receipt — mixed bounded routing effect, no promotion
+
+M6 completed on 2026-07-16 with an intact two-generation instrument lineage.
+The original seven-object candidate schema failed sacrificially at 1/4
+admissible outputs because three responses corrupted repeated role labels. A
+prospectively frozen fixed-key repair then passed 4/4 before the held-out gate
+opened. Neither instrument run counted as evidence.
+
+The one-shot held-out run used the exact local
+`mlx-community/Qwen3-8B-4bit` snapshot
+`545dc4251c05440727734bcd94334791f6ab0192`, temperature zero, 32 model calls,
+zero retries, and 1,148.660632 seconds of shared generation time. Candidate
+bytes closed before the hidden route and answer labels loaded. All 32 candidates
+were schema-admissible across eight separately scored tracks, four ingress
+modes, and all seventeen named control classes. Two independently implemented
+route scorers and two independently implemented outcome scorers had zero
+disagreements; a separate temporary-filesystem observer retained effect and
+rollback boundaries. Independence is internal implementation separation, not
+external or organizational independence.
+
+The eight matched routing arms produced this exact signature:
+
+| Arm | Route-correct | Useful outcomes | Wrong fast path | Unsafe outputs |
+|---|---:|---:|---:|---:|
+| LLM-first | 6/32 | 9/32 | 18 | 0 |
+| Hard-rule-only | 19/32 | 14/32 | 13 | 0 |
+| Learned router | 12/32 | 14/32 | 11 | 0 |
+| Semantic cache | 7/32 | 11/32 | 18 | 0 |
+| LLM-first tool agent | 6/32 | 8/32 | 18 | 0 |
+| Modular tool system | 19/32 | 13/32 | 13 | 0 |
+| Full reflexive route | 31/32 | 21/32 | 1 | 2 |
+| Oracle selection | 32/32 | 24/32 | 0 | 0 |
+
+The full policy therefore created a real bounded routing effect but not a
+Pareto improvement: its route correctness and useful outcomes increased
+sharply while two unsafe outputs appeared against zero for LLM-first. Useful
+Reflex Efficiency is reported only beside those denominators. Energy was not
+measured; the zero marginal API charge excludes hardware, electricity, and
+operator cost; displaced work was not estimable. No safe-router, general
+usefulness, or acceptable-cost claim follows.
+
+At a matched three-candidate budget, direct generation finished 12/32 correct.
+Fixed deliberation finished 11/32, corrupting three initially correct answers
+and repairing two initially incorrect ones. Adaptive stopping finished 12/32,
+with one corruption and one repair. Verifier-gated stopping finished 12/32,
+preserving all twelve initially correct answers but repairing none. All fifteen
+historical correct-to-incorrect cases passed the stopping-policy regression;
+their original prompts and traces remain unavailable, so they are not new model
+evidence.
+
+The terminal claim decision is `retain_and_narrow` with no promotion. The
+bounded route-policy effect remains useful evidence for future corpus and
+policy design, but the mixed safety frontier, authored workload, internal
+evaluators, single quantized model, zero measured energy, no external
+reproduction, and lack of transfer block chapter-core and non-core support
+movement. The observed artifacts fit the existing Routing, Deliberation,
+Runtime, Benchmark, and Resource owners; the distinct-interface gate for a new
+pre-deliberative chapter did not pass. The validator rejects all seventeen
+control-coverage mutations plus unsafe-tradeoff erasure, useful-outcome
+inflation, fixed-harm erasure, denominator reopening, and transfer laundering.
 
 ### Campaign 3 — Full-state update and unlearning causality
 
@@ -3341,13 +3828,163 @@ epoch; mutation, lineage-loss, and in-flight-effect controls must reject.
   artifacts and failures, not because the topic is important or historically
   evocative.
 
+### Accepted source integration — Kernel English Residual Compiler (KERC)
+
+The complete Corben-authored paper `kernel_english_residual_compiler` was
+ingested on 2026-07-16 from the supplied 3,750-line Markdown and DOCX forms.
+The canonical local text is SHA-256
+`f560c61196cb2a114475ebd455f8643536e78c82dbbf6ec8dd712d993f2b6519`;
+the supplied DOCX presentation copy is SHA-256
+`5cad30263bda29ac8f00e8c448253b90a38c87731127a46f5b22f097cf8f1796`.
+Both remain in the ignored raw-source cache. The tracked source note, source
+inventory entry, backlog record, and triage decision are public-safe; this
+intake neither publishes the paper nor infers a completed implementation.
+
+KERC passes the source-value test and does not yet pass the new-chapter test.
+Its strongest contribution is a joined runtime and falsification program:
+protect exact objects before correction; compile sense, scope, modality,
+identity, ambiguity, and provenance into a small versioned Kernel IR; route
+surface distinctions through interaction-global, segment, token-local, and
+exact-object residuals; reason over a replaceable compact core; render through
+a separate surface vocabulary; and recompile the answer under explicit
+semantic and exact-object checks. The paper correctly preserves the central
+conservation boundary: exact Kernel-plus-residual encoding relocates source
+information rather than destroying it, so all claimed savings must charge the
+compiler, core, renderer, verifier, residual codec, registries, object store,
+migration, fallback, human work, and governance together.
+
+Two current chapters jointly own the contribution. `cognitive-compilation-and-semantic-ir`
+owns immutable source capture, protected spans, correction lattices,
+sense-aware Kernel lowering, stable concept identity, open-world handles,
+answer packets, and translation validation. `compact-generative-systems-and-residual-honesty`
+owns entropy relocation, the hierarchical residual ledger, semantic/faithful/
+lossless modes, exact fallback, reconstruction burden, and full-system cost.
+Ten adjacent owners retain context materialization and transactions,
+verification adequacy, fast rendering, substrate replacement, resource
+economics, security, procedural macro promotion, benchmark validity, and
+whole-stack integration. A paper-shaped chapter would duplicate these
+authorities before evidence clarifies whether a separate learned-language
+runtime actually exists.
+
+A new `canonical-cognitive-languages-and-residual-runtime` chapter may be
+reconsidered only after the campaign below observes all of the following: a
+durable Kernel Packet ABI used by more than one compiler, core, or renderer; a
+residual lifecycle with distinct authority and failure semantics; an artifact
+or invariant that neither primary owner can express without conflict; and a
+reader job that is not merely a repetition of cognitive compilation plus
+residual honesty. Paper length, vocabulary novelty, a shorter token sequence,
+or a coherent diagram does not satisfy this gate.
+
+### Campaign 6 — Canonical cognitive language and hierarchical residual runtime
+
+This is an M8 campaign after M6 routing/deliberation and M7 update/unlearning.
+It may begin design work earlier, but its outcome denominator must not compete
+with or modify the already frozen M6 run.
+
+1. **Freeze the runtime, not just a dialect.** Version a minimal Kernel grammar,
+   stable concept registry, runtime codebook, boundary-aware macro tokenizer,
+   Kernel Packet schema, entity/concept table, exact-object store, four-level
+   residual schema, source alignment, answer packet, compiler, renderer,
+   verifier, state-hash, migration, fallback, and revocation contracts. Stable
+   semantic identity must remain distinct from compact spelling, token ID,
+   embedding, macro, and model checkpoint.
+2. **Build three progressively honest slices.** Slice A tests protected objects,
+   exact handles, and a shared terminology residual without a new core model.
+   Slice B adds sense-aware compilation, semantic/faithful/lossless modes, and
+   deterministic round-trip checks. Slice C trains or adapts at least one small
+   core natively on Kernel packets and compares the complete dual-vocabulary
+   system. Failure of a later slice must not erase a useful narrower result.
+3. **Use a corpus designed to break canonicalization.** Include paraphrase and
+   minimal semantic contrasts; negation, quantifiers, modality, attribution,
+   and temporal scope; dialect and informal language; code-switching;
+   misspellings versus valid names and terminology; rare and Unicode names;
+   quantities, units, dates, quotations, code, URLs, and formulas; legal and
+   safety-sensitive wording; long coherent interactions; topic changes;
+   exact-form tasks; and adversarial residual, object, macro, and authority
+   updates. Protect the held-out semantic labels from compiler, renderer,
+   router, and selection policy.
+4. **Compare the simplest alternatives as seriously as the ambitious system.**
+   Baselines must include strong surface BPE/unigram, byte-level, dynamic
+   chunking, learned text compression, controlled or simplified language,
+   semantic IR/graph, copy-aware generation, and a deliberately simple entity-
+   handle plus shared-glossary system. Where feasible, compare a standard
+   surface-trained core, a Kernel-native core, a shared-trunk dual-head model,
+   and oracle compilation. A complicated KERC system does not win if the simple
+   handle/glossary baseline captures the value.
+5. **Separate representation questions.** Score protected-object recall,
+   correction abstention, sense and role accuracy, ambiguity retention,
+   source-to-Kernel field coverage, bidirectional entailment, question
+   preservation, exact-object fidelity, entity/number/unit/scope/modality/time/
+   attribution/quotation preservation, render quality, and byte-exact recovery
+   separately. A fluent round trip, high embedding similarity, or matching
+   compiler/recompiler output is not semantic truth.
+6. **Report the whole rate.** Measure Kernel tokens and encoded bits;
+   interaction-global, segment, token-local, and exact-object residuals;
+   registry, codebook, index, packet, checkpoint, delta, migration, codec, and
+   model assumptions; source expansion; failure and fallback bytes; and both
+   operational message rate and total-description assumptions. Exact mode must
+   satisfy reconstruction; semantic and faithful modes must publish their loss
+   contract and per-axis distortion.
+7. **Report the whole cost.** Use equal-raw-byte, equal-training-FLOP, and equal
+   end-to-end inference-budget views. Measure compiler, core, renderer,
+   verifier, residual codec, retrieval, object expansion, retry, fallback,
+   migration, monitoring, human adjudication, and governance latency; active
+   and total parameters; FLOPs; KV cache; peak memory; throughput; money; and
+   energy only where calibrated. Token count, core-only FLOPs, or asymptotic
+   attention savings cannot stand in for useful total-system efficiency.
+8. **Test interaction amortization causally.** Plot setup, delta, checkpoint,
+   eviction, desynchronization, and recovery cost from the first turn through
+   long interactions. Randomize repetition and topic coherence. Compare local
+   tags, global defaults, learned promotion, no sharing, and oracle sharing.
+   Report the observed break-even point and regimes where shared state loses.
+9. **Ablate every claimed mechanism.** Remove protected-span-first ordering,
+   correction uncertainty, sense-aware compilation, concept capsules, each
+   residual level, exact objects, importance allocation, Kernel macro fusion,
+   dual vocabularies, separate renderer, round-trip verification, state hashes,
+   version migration, and macro promotion one at a time under matched budgets.
+   Retain interactions among components where single-factor ablations would be
+   misleading.
+10. **Attack every new authority and state surface.** Test dialect erasure,
+    identity collision, Unicode confusables, quote/object escape, code and URL
+    injection, poisoned concept definitions, malicious residual deltas, cross-
+    user or cross-project reuse, scope and expiry loss, stale state, missing
+    checkpoints, version skew, downgrade, migration corruption, macro boundary
+    crossing, authority widening, privacy deletion, verifier monoculture, and
+    silent source fallback. No residual or macro update may become authority.
+11. **Bind macro learning to governed procedural memory.** Repeated verified
+    sequences or residuals may propose a dictionary entry, tokenizer macro,
+    workflow, or learned procedure only after diverse positive and negative
+    cases, typed expansion, shadow evaluation, signed promotion, drift tests,
+    quarantine, rollback, decompilation, descendant invalidation, and migration
+    checks. Frequency, compression, or fluent reuse is not eligibility.
+12. **Freeze falsifiers and retain narrow wins.** KERC's broad efficiency claim
+    fails if no realistic regime improves the matched quality–total-cost–
+    fidelity frontier, semantic errors remain unacceptable, residual overhead
+    consumes the savings, shared state never clears its management cost, or the
+    simpler baseline matches it. A narrower result—such as exact handles,
+    terminology locks, or interaction-shared residue helping while the full
+    internal language fails—must be retained and integrated honestly.
+13. **Require reproduction and transfer before broad claims.** Repeat across
+    models, seeds, domains, interaction lengths, dialects, at least one
+    meaningfully different language, and at least one separate implementation.
+    General efficiency, fairness, security, or state-of-the-art claims remain
+    blocked until the causal signature and break-even regime transfer.
+14. **Reconcile chapter ownership after results.** Update the twelve existing
+    owners first. Add a chapter only if the distinct-interface gate above
+    passes on observed artifacts and failures. Every hypothesis ends as retain,
+    narrow, refute, deprecate, promote at bounded scope, or blocked after full
+    attempt; no structured packet, theoretical proposition, or green validator
+    can substitute for that disposition.
+
 ### P4 completion gate
 
 Each campaign has an informative preflight, immutable preregistration, justified
 precision, strong-model selection, matched baselines, independent evaluator or
 replayer implementation, adversarial controls, retained raw data, cost/latency
-accounting, replication, and an accepted claim-atom disposition. A third
-unchanged rerun of a diagnosed failed protocol is forbidden.
+accounting, replication, an `instrument_adequate` protocol outcome, and an
+accepted canonical claim outcome plus exact detailed disposition. A third
+unchanged rerun of a diagnosed failed protocol is forbidden. An instrument-
+inadequate run cannot satisfy this gate or the full-attempt requirement.
 
 ## P5 — Full claim-family evidence program
 
@@ -3384,10 +4021,10 @@ cannot disappear behind the five flagship campaigns.
 |---|---|---|
 | CF-01 Stack, authority, and evidence foundations | `asi-is-a-stack-not-a-model`; `the-efficient-asi-hypothesis`; `system-boundaries-and-authority`; `failure-modes-of-ungoverned-intelligence`; `evidence-states-and-claim-discipline`; `stable-capability-fields`; `capability-replacement-and-rollback` | End-to-end boundary traces, authority/revocation pressure, governance/usefulness Pareto evidence, claim-transition causality, rollback effects. |
 | CF-02 Alignment, oversight, security, and improvement governance | `scalable-oversight-and-adversarial-ai-control`; `human-intent-as-a-formal-input`; `constitutional-alignment-substrate`; `moral-uncertainty-and-value-conflict`; `security-kernel-and-digital-scifs`; `model-weight-custody-and-hardware-roots-of-trust`; `ai-supply-chain-integrity-and-lifecycle-provenance`; `recursive-self-improvement-boundaries`; `open-ended-improvement-engines` | Reviewer/evaluator quality, prompt/authority attacks, usable correction and contest paths, key/revocation/supply-chain effects, bounded improvement campaigns. Normative premises remain explicit. |
-| CF-03 Intent, planning, compilation, execution, and exchange | `intent-to-execution-contracts`; `planning-as-a-control-layer`; `cognitive-compilation-and-semantic-ir`; `labor-os-and-typed-jobs`; `runtime-adapters-tool-permissions-and-human-approval`; `inter-stack-protocols-identity-and-economic-exchange` | Natural language lowering, plan quality, translation validation, scheduler/adaptor effects, approval error, stale identity, dispute and recovery. |
+| CF-03 Intent, planning, compilation, execution, and exchange | `intent-to-execution-contracts`; `planning-as-a-control-layer`; `cognitive-compilation-and-semantic-ir`; `labor-os-and-typed-jobs`; `runtime-adapters-tool-permissions-and-human-approval`; `inter-stack-protocols-identity-and-economic-exchange` | Natural language lowering, protected-object and sense-aware Kernel compilation, source-to-IR semantic preservation, plan quality, translation validation, scheduler/adaptor effects, approval error, stale identity, dispute and recovery. |
 | CF-04 Context, memory, claims, artifacts, and replay | `virtual-context-abi`; `context-transactions-snapshots-mounts-and-taint`; `verification-bandwidth-and-context-adequacy`; `claim-ledgers-and-belief-revision`; `spinoza-verification-and-proof-carrying-claims`; `artifact-graphs-audit-logs-and-replay`; `procedural-memory-and-cognitive-loop-closure` | Observation–interpretation–belief lineage, retrieval and context quality, transaction isolation/deletion, episodic-to-semantic/procedural consolidation with reverse evidence links, contradiction and revision quality, verifier mapping, receipt faithfulness, replay, continuity, and memory transfer. |
-| CF-05 Routing, readiness, deliberation, compute, and economics | `routing-heads-and-specialist-cores`; `readiness-gates-residual-escrow-and-quarantine`; `personal-compute-hives-and-federated-edge-intelligence`; `governed-deliberation-and-test-time-scaling`; `resource-economics-and-token-budgets` | Ambiguous routing, selective risk, fallback/abstention calibration, readiness error, lease/revocation, useful-throughput frontier, verification and governance tax. |
-| CF-06 Compression, generation, recurrence, and search substrates | `compact-generative-systems-and-residual-honesty`; `fast-generation-architectures`; `rankfold-neuralfold-and-artifact-compression`; `mathematical-and-search-substrates`; `circle-calculus-and-proof-carrying-ai-contracts`; `coil-attention-cyclic-memory-and-recurrence-contracts`; `coilra-multicoil-rope-and-cyclic-mixers`; accepted addition `replaceable-cognitive-substrates-beyond-transformer-monoculture` | Quality-preserving compression, loss/residual detection, calibrated future-observation and intervention-effect prediction, shift/anomaly detection, held-out planning utility, latency-quality comparisons, recurrence correctness, search efficiency, contract transport, architecture-neutral cognitive-kernel conformance, frozen-core cumulative capability, architectural-RSI lifecycle, and hardware-aware baselines. Reconstruction, parameter count, asymptotic cost, or an architecture label alone is insufficient where cognitive utility is claimed. |
+| CF-05 Routing, readiness, deliberation, compute, and economics | `routing-heads-and-specialist-cores`; `readiness-gates-residual-escrow-and-quarantine`; `personal-compute-hives-and-federated-edge-intelligence`; `governed-deliberation-and-test-time-scaling`; `resource-economics-and-token-budgets` | Reflexive automatic/forced/direct/workflow ingress; qualification-first heterogeneous routing; ambiguous routing; selective risk; fallback/abstention/OOD calibration; typed continuity; useful fast-path coverage; wrong-fast-path and verification-escape rates; readiness error; lease/revocation; trace-to-reflex promotion and decompilation; useful-throughput frontier; verification and governance tax. |
+| CF-06 Compression, generation, recurrence, and search substrates | `compact-generative-systems-and-residual-honesty`; `fast-generation-architectures`; `rankfold-neuralfold-and-artifact-compression`; `mathematical-and-search-substrates`; `circle-calculus-and-proof-carrying-ai-contracts`; `coil-attention-cyclic-memory-and-recurrence-contracts`; `coilra-multicoil-rope-and-cyclic-mixers`; accepted addition `replaceable-cognitive-substrates-beyond-transformer-monoculture` | Quality-preserving compression; KERC Kernel-plus-hierarchical-residual conservation, interaction amortization, dual-vocabulary total cost, and semantic/fidelity break-even; loss/residual detection; calibrated future-observation and intervention-effect prediction; shift/anomaly detection; held-out planning utility; latency-quality comparisons; recurrence correctness; search efficiency; contract transport; architecture-neutral cognitive-kernel conformance; frozen-core cumulative capability; architectural-RSI lifecycle; and hardware-aware baselines. Reconstruction, token count, core-only compute, parameter count, asymptotic cost, or an architecture label alone is insufficient where cognitive utility is claimed. |
 | CF-07 Benchmarks, evaluation, learning, unlearning, and assurance | `executable-specifications-and-lean-proof-envelope`; `benchmark-ratchets-and-anti-goodhart-evidence`; `capability-thresholds-and-deployment-commitments`; `adversarial-evaluation-sandbagging-and-training-time-deception`; `safety-cases-and-structured-assurance`; `policy-optimization-and-learning-from-feedback`; `data-engines-continual-learning-and-unlearning` | Semantic proof adequacy, contamination/ratchet validity, threshold error, cross-context behavior, defeaters, reward quality, forgetting, causality, privacy and storage distinctions. |
 | CF-08 Integration, stewardship, implementation transfer, and living method | `artifact-steward-agents-and-living-project-governance`; `integrated-reference-architecture`; `project-theseus-as-report-first-implementation-reference`; `prototype-roadmap`; `living-book-methodology`; `open-research-agenda-and-bibliography-plan` | Durable steward behavior, whole-stack composition, clean implementation replay, phase-gate causality, living evidence renewal, research-queue coverage. |
 
@@ -3535,6 +4172,14 @@ regressions elsewhere.
 No book-wide or architecture-wide “beyond state of the art” claim is permitted
 from one benchmark. Each claim must name its exact comparator envelope.
 
+The dated refresh must bind the exact primary-paper revision, official code or
+model-card revision, retrieval date, relevant topology or mechanism claims,
+reported evaluation limits, and the exact chapter atoms it changes. Do not add
+a source merely because it is recent; add or refresh it when it changes prior
+art, the strongest comparator, an ablation, a falsifier, or an acceptance gate.
+Provider-reported results remain source-grounded claims until independently
+reproduced.
+
 ## P7 — Book-wide evidence integration
 
 For every chapter:
@@ -3563,6 +4208,19 @@ For every chapter:
   not proof that ancient or religious works encoded the ASI Stack; and
 - regenerate the reader projection so readers get the actual result and not
   only live/research scaffolding.
+
+For the Reflexive Router source package, P7 must update the twelve named
+existing owners as one coordinated edit rather than duplicating the paper in
+each chapter. Routing owns the pre-deliberative decision; command contracts own
+user dispatch intent; Planning owns bounded DAGs; Stable Capability Fields own
+substitution; context and claim ledgers own typed and temporal continuity;
+runtime adapters own effects; procedural memory owns compilation; Resource
+Economics and Benchmark Ratchets own measurement; and Integrated Architecture
+owns the joined trace. Every source mapping must name exact passages and a
+non-claim. No prose may report the paper's proposed metrics, launch gates,
+schemas, algorithms, or examples as implemented or measured. The package may
+create a new chapter only through the observed distinct-interface gate recorded
+under P4 Campaign 2.
 
 For the accepted new cognitive-substrate chapter, steps 1–4 of the seven-step
 structural sequence are complete; P2/P5/P6 must finish steps 5–7 before P7 can
@@ -3621,6 +4279,11 @@ failed.
 7. Write an evidence-freeze declaration and exact release, no-release, or
    blocked records that reconcile every product and claim state. This freeze is
    the input to P9 and is not roadmap closure.
+8. Programmatically build and inspect every locally feasible format before
+   assigning an application blocker. Local completion may end in
+   `ready_not_published`; no push, tag, deployment, DOI/archive deposit, or
+   external publication is authorized by this roadmap or by a reviewer's
+   recommendation.
 
 ## P9 — Maintained X Article synopsis and 5:2 header
 
@@ -3729,14 +4392,14 @@ All terminal records agree and one exact successor is active.
 | Milestone | State | Completion condition |
 |---|---|---|
 | M0 — Successor activation | completed | Roadmap, status, schema, validator, public pointers, continuity rule, and negative controls are installed. |
-| M1 — Claim-atom coverage | completed | All 3,730 activation structured atoms are semantically reviewed, all 2,710 current activation prose candidates are dispositioned, all 54 activation chapter sweeps have zero unowned material claims, and the authorized 55th chapter adds 15 semantically reviewed atoms in a preserved addendum; prose identity changes retain lineage and no support state changed. |
-| M2 — Measurement and reproduction foundation | pending | Natural corpus, model-selection record, evaluator suite, environment locks, statistics policy, and artifact protocol pass sacrificial preflight. |
-| M3 — Proof rationalization and formal semantic depth | in progress | All 1,151 baseline declarations and 298 targets have claim-centered dispositions; 296 baseline declarations and 181 baseline targets are now absent or changed through preserved-lineage retirement/replacement. The live corpus contains 1,294 theorem declarations and 298 targets. The shared safety lifecycle, post-activation Cognitive Kernel ABI, integrated reference trace, stack boundary, Intent-to-Execution, Authority grant-to-effect, Human Intent, Command semantic-interface, Cognitive Compilation, Virtual Context ABI, Context Certificates, Context Transactions, Verification Bandwidth, Claim Ledgers, Proof-Carrying Claims, Tribunal versioned-verdict/appeal, Typed Job versioned execution/closure, Artifact record-reality/trust, Procedural Memory promotion/retirement, Routing/MoECOT request-to-closure, Safety Case readiness/invalidation, Capability Threshold repeated assessment, Adversarial Evaluation observation/re-evaluation, Scalable Oversight review/readmission, Policy Optimization governed-update/readmission, Data Engines custody/update/deletion/readmission, Open-Ended Improvement campaign-to-governor/readmission, Recursive Self-Improvement proposal-to-outcome/readmission, Readiness candidate-to-terminal, Hive policy-to-closure, Compact Generation source-to-closure, Fast Generation request-to-closure, Governed Deliberation request-to-closure, Artifact Compression artifact-to-consumption, and Resource Economics allocation-and-simulation-transport lifecycles now have explicit assumptions, reachable transition/trace semantics, countermodels, adequacy dossiers, and independent consumers. Additional live-schema refinements and consumers for the other retained proof families remain open. |
-| M4 — Integrated executable slices | pending | Governed work, learning, and assurance slices execute with failure injection, environment–observation–belief lineage, sealed quiescent stabilization, and effect-complete accounting. |
-| M5 — Governance/usefulness campaign | pending | Informative-regime matched campaign is adjudicated without zero-release or floor laundering. |
-| M6 — Routing/deliberation campaign | pending | Ambiguous held-out real-model campaign is adjudicated with the fifteen harm controls. |
-| M7 — Update/unlearning campaign | pending | Full-state causal campaign separates behavior, influence, privacy, lineage, and storage outcomes. |
-| M8 — Remaining claim-family campaigns | pending | Residual/verifier-capacity and situated-world-model/consolidation campaigns are adjudicated, and CF-01 through CF-08 have full-attempt coverage and exact per-atom dispositions. |
+| M1 — Claim-atom coverage | completed | All 3,730 activation structured atoms are semantically reviewed, all 2,716 current activation prose candidates are dispositioned, all 54 activation chapter sweeps have zero unowned material claims, and the authorized 55th chapter adds 15 semantically reviewed atoms in a preserved addendum; prose identity changes retain lineage and no support state changed. |
+| M2 — Measurement and reproduction foundation | completed | A 24-task three-slice corpus, exact 6/6/12 partitions, isolated held-out labels, three model roles, inference/evaluator/statistics/environment/safety/artifact contracts, and a 10-case sacrificial preflight pass under a six-mutation validator. No outcome-bearing model evidence or support follows. |
+| M3 — Proof rationalization and formal semantic depth | completed | All 1,151 baseline declarations and 298 baseline targets have claim-centered dispositions; 296 baseline declarations and 181 baseline targets are absent or changed through preserved-lineage retirement/replacement; all 298 current targets are implemented and adequacy-routed; nine required semantic models have dossiers and independent consumers; and the closure validator rejects six forms of false completion. Downstream live-schema, effect, review-quality, empirical, reproduction, and transfer work remains mandatory under P3–P7 and is not claimed as M3 evidence. |
+| M4 — Integrated executable slices | completed | One versioned interface replays retained real model and checkpoint outputs across 12 cases and all 10 lifecycle states, performs six independently observed local effects with exact/residual/quarantine accounting, contains 20/20 named boundary injections, preserves one observation–interpretation–belief trace through an 11-surface sealed quiescent epoch, corrects two historical instrument-failure lineages, and rejects 11 mutations without support movement. |
+| M5 — Governance/usefulness campaign | completed | Informative-regime matched campaign is adjudicated without zero-release or floor laundering; bounded local support is reconciled without transfer or chapter-core promotion. |
+| M6 — Routing/deliberation campaign | completed | A prospectively repaired 32-task held-out real-model campaign covers eight tracks, four ingress modes, eight routing arms, four stopping arms, seventeen active controls, and fifteen preserved harms; it records a mixed bounded routing effect with two unsafe full-policy outputs and accepts no support promotion. |
+| M7 — Update/unlearning campaign | in progress | Full-state causal campaign separates behavior, influence, privacy, lineage, and storage outcomes. |
+| M8 — Remaining claim-family campaigns | pending | Residual/verifier-capacity, situated-world-model/consolidation, and KERC canonical-language/hierarchical-residual campaigns are adjudicated, and CF-01 through CF-08 have full-attempt coverage and exact per-atom dispositions. |
 | M9 — External reproduction/SOTA challenge | pending | Strongest baselines are reproduced or honestly blocked; exact superiority/Pareto dispositions are recorded. |
 | M10 — Book and evidence reconciliation | pending | All 55 chapters after the accepted cognitive-substrate insertion and all evidence/proof/source appendices match results and counterevidence. |
 | M11 — Reader and release disposition | pending | HTML, DOCX, EPUB, PDF, accessibility, rights, and public-release decisions are exact and artifact-bound. |
@@ -3805,7 +4468,14 @@ certainty, and does not claim universal AI safety, AGI, or ASI.
 > load-bearing atom undergo a promotion-or-refutation campaign. Finish with the
 > maintained, evidence-faithful, under-10,000-word X Article synopsis, exact 5:2
 > header, live-composer preflight, and explicit publication disposition; do not
-> publish externally without Corben's authorization. Do not close this roadmap until every
+> publish externally without Corben's authorization. Execute all safe,
+> reversible, local research, writing, coding, evaluation, rendering, and
+> validation work without asking for another hosted-chat run or routine user
+> approval. Never make ChatGPT or another conversational browser session an
+> unfinished dependency. When an optional model is unavailable, substitute an
+> available local/open-weight/Codex role prospectively, record exact identity
+> and limitations, and preserve the resulting claim ceiling. Treat prior Chat
+> Pro runs as immutable history only. Do not close this roadmap until every
 > material claim has a terminal disposition under the full-attempt standard,
 > the exact release decision is recorded, all gates pass, and the next roadmap
 > is activated in the same transaction.

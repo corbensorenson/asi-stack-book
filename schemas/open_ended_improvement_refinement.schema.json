@@ -3,7 +3,7 @@
   "title": "Open-Ended Improvement Lifecycle Refinement Result",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "result_id", "source_sha256", "inherited_results", "reachable_stage_count", "route_case_count", "route_coverage", "mutation_count", "mutation_rejection_count", "mutation_receipts", "command_receipts", "witness", "support_state_effect", "non_claims"],
+  "required": ["schema_version", "result_id", "source_sha256", "inherited_results", "reachable_stage_count", "route_case_count", "route_coverage", "mutation_count", "mutation_rejection_count", "mutation_receipts", "composition_theorems", "cross_stage_mutation_count", "cross_stage_mutation_rejection_count", "cross_stage_mutation_receipts", "command_receipts", "witness", "support_state_effect", "non_claims"],
   "properties": {
     "schema_version": {"const": "asi_stack.open_ended_improvement_refinement.v1"},
     "result_id": {"const": "open-ended-improvement-refinement-2026-07-16-local"},
@@ -24,8 +24,12 @@
     "mutation_count": {"const": 91},
     "mutation_rejection_count": {"const": 91},
     "mutation_receipts": {"type": "array", "minItems": 91, "maxItems": 91, "items": {"type": "object", "additionalProperties": false, "required": ["mutation_id", "rejected"], "properties": {"mutation_id": {"type": "string", "minLength": 1}, "rejected": {"const": true}}}},
+    "composition_theorems": {"const": ["open_ended_improvement_full_cycle_composes", "open_ended_improvement_budget_reset_blocks_handoff_and_readmission"]},
+    "cross_stage_mutation_count": {"const": 3},
+    "cross_stage_mutation_rejection_count": {"const": 3},
+    "cross_stage_mutation_receipts": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "additionalProperties": false, "required": ["mutation_id", "rejected", "terminal_stage", "receipt_count", "governor_handoff_count", "readmission_count"], "properties": {"mutation_id": {"type": "string", "minLength": 1}, "rejected": {"const": true}, "terminal_stage": {"enum": ["generationBound", "evaluated", "adjudicated"]}, "receipt_count": {"type": "integer", "minimum": 2, "maximum": 5}, "governor_handoff_count": {"const": 0}, "readmission_count": {"const": 0}}}},
     "command_receipts": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "additionalProperties": false, "required": ["command", "exit_code", "output_sha256"], "properties": {"command": {"type": "string", "minLength": 1}, "exit_code": {"const": 0}, "output_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}}},
-    "witness": {"type": "object", "additionalProperties": false, "required": ["terminal_stage", "protocol_version", "receipt_count", "governor_handoff_count", "readmission_count", "support_assignment_count", "external_effect_count"], "properties": {"terminal_stage": {"const": "scoped"}, "protocol_version": {"const": 2}, "receipt_count": {"const": 7}, "governor_handoff_count": {"const": 1}, "readmission_count": {"const": 1}, "support_assignment_count": {"const": 0}, "external_effect_count": {"const": 0}}},
+    "witness": {"type": "object", "additionalProperties": false, "required": ["terminal_stage", "protocol_version", "receipt_count", "governor_handoff_count", "readmission_count", "support_assignment_count", "external_effect_count", "accepted_route_count"], "properties": {"terminal_stage": {"const": "scoped"}, "protocol_version": {"const": 2}, "receipt_count": {"const": 7}, "governor_handoff_count": {"const": 1}, "readmission_count": {"const": 1}, "support_assignment_count": {"const": 0}, "external_effect_count": {"const": 0}, "accepted_route_count": {"const": 7}}},
     "support_state_effect": {"const": "none"},
     "non_claims": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 12}}
   }

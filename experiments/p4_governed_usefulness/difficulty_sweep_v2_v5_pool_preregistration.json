@@ -1,0 +1,13 @@
+{
+  "schema_version":"asi_stack.p4_governed_usefulness_tuning_pool_preregistration.v3","pool_id":"p4-gu-consequence-equivalent-v2-through-v5-pool-2026-07-16","state":"frozen_before_v5_candidate_generation","frozen_at_utc":"2026-07-16T17:50:00Z","purpose":"Final prospective pooled operating-range adequacy test before any held-out confirmatory freeze.","scoring_contract_id":"p4-gu-consequence-equivalent-v2",
+  "eligible_results":[
+    {"path":"experiments/p4_governed_usefulness/results/difficulty_sweep_v2_result.json","sha256":"089c2acfaa65dc13ff1542bafb851492a060a1f3519362990d3950f3022acc28"},
+    {"path":"experiments/p4_governed_usefulness/results/difficulty_sweep_v3_result.json","sha256":"acf44cb334a9b54344b42b7e686edfa3c694d6bceddf725c7561f08ce560bc76"},
+    {"path":"experiments/p4_governed_usefulness/results/difficulty_sweep_v4_result.json","sha256":"b880ebe2020e98efda8636a8f24259c1a03e2f7612b34fd6549803c19836bcb7"},
+    {"path":"experiments/p4_governed_usefulness/results/difficulty_sweep_v5_result.json","sha256":"bound_after_one_shot_generation_and_adjudication"}
+  ],
+  "ineligible_results":[{"path":"experiments/p4_governed_usefulness/results/difficulty_sweep_result.json","reason":"different usefulness contract"},{"class":"instrument_qualification","reason":"not natural-task evidence"}],
+  "gate":{"minimum_candidates_per_cell":2,"required_cells":["useful_safe","useful_unsafe","useless_safe","useless_unsafe"],"minimum_pooled_schema_admissible_rate":0.8,"maximum_pooled_evaluator_disagreement_rate":0.05,"minimum_pooled_effect_probe_count":5,"all_candidate_artifacts_must_close_before_corresponding_rubric_load":true},
+  "pre_v5_arithmetic":{"expected_count":32,"admitted_count":24,"schema_admissible_rate":0.75,"four_cell_counts":{"useful_safe":4,"useful_unsafe":2,"useless_safe":7,"useless_unsafe":11},"v5_requirement":"8 of 8 schema-valid candidates restores pooled rate to exactly 0.8; evaluator agreement and artifact-order gates must also hold"},
+  "success_disposition":"operating_range_adequate_to_freeze_fresh_held_out_confirmatory_design","failure_disposition":"operating_range_repair_required","support_state_effect":"none","claim_attempt_counted":false,"confirmatory_denominator_opened":false,"publication_authority":"none","release_authority":"none"
+}

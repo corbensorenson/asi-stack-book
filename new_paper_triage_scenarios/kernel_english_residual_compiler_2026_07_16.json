@@ -1,0 +1,40 @@
+{
+  "scenario_id": "kernel-english-residual-compiler-triage-2026-07-16",
+  "scenario_scope": "Real intake decision for Corben's KERC dual-vocabulary compiler and hierarchical residual-runtime proposal.",
+  "case_validity_state": "reviewed",
+  "cases": [
+    {
+      "case_id": "kerc-existing-owner-integration",
+      "intake_kind": "new_source",
+      "access_state": "source_note_available",
+      "source_storage_policy": "local_private_cache",
+      "public_safety_state": "public_safe_source_note_only",
+      "deduplication_state": "overlaps_existing_chapters_with_new_joined_experiment",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapters",
+      "existing_chapter_id": "cognitive-compilation-and-semantic-ir",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Cognitive Compilation already owns the typed source-to-semantic-to-target boundary; Compact Generative Systems already owns residual conservation and total burden. The durable KERC contribution is a joined implementation and falsification program across those owners, not a new narrative authority.",
+      "promotion_blockers": ["proposal only", "no implementation", "no matched benchmark", "no independent reproduction"],
+      "non_claims": ["does not validate KERC", "does not promote any chapter"]
+    },
+    {
+      "case_id": "kerc-standalone-chapter-reconsideration",
+      "intake_kind": "source_variant",
+      "access_state": "source_note_available",
+      "source_storage_policy": "local_private_cache",
+      "public_safety_state": "public_safe_source_note_only",
+      "deduplication_state": "deferred_distinct_interface_test",
+      "candidate_decision": "defer",
+      "chapter_manifest_action": "defer_to_backlog",
+      "existing_chapter_id": "cognitive-compilation-and-semantic-ir",
+      "proposed_chapter_id": "canonical-cognitive-languages-and-residual-runtime",
+      "decision_rationale": "Reconsider only if a real implementation establishes a durable Kernel Packet ABI plus residual-runtime lifecycle whose invariants, authority, tests, and reader job cannot be expressed by Cognitive Compilation and Compact Generative Systems without conflict or destructive duplication.",
+      "required_before_drafting": ["implement a bounded reference runtime", "observe a distinct unowned interface", "pass owner-conflict adjudication", "define exact handoffs and manifest position"],
+      "non_claims": ["does not reserve or add the chapter", "paper length and novelty framing are not chapter criteria"]
+    }
+  ],
+  "validation_boundary": "Records an existing-chapter-first decision and an evidence-gated reconsideration. It does not validate KERC, its literature claims, implementation, efficiency, fidelity, security, transfer, or support effect.",
+  "support_state_effect": "backlog_only",
+  "non_claims": ["does not change chapter order", "does not publish the raw paper", "does not promote any claim"]
+}

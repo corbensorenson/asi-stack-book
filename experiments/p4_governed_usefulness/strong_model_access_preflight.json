@@ -1,0 +1,32 @@
+{
+  "schema_version": "asi_stack.p4_strong_model_access_preflight.v1",
+  "preflight_id": "p4-governed-usefulness-chatgpt-access-2026-07-16",
+  "observed_at_utc": "2026-07-16T10:04:29Z",
+  "surface": "ChatGPT web application in a newly opened Chrome tab",
+  "access_state": "signed_in_prompt_surface_available",
+  "displayed_model": "GPT-5.6 Sol",
+  "displayed_mode": "Pro",
+  "displayed_effort": "not_separately_displayed_in_chat_pro_mode",
+  "model_identity_scope": "provider_ui_display_only_not_api_snapshot_or_reproducible_weight_identity",
+  "prompt_box_present": true,
+  "prompt_submitted": true,
+  "response_observed": true,
+  "submission_started_at_utc": "2026-07-16T10:13:32.760Z",
+  "response_completed_at_utc": "2026-07-16T10:16:24.625Z",
+  "elapsed_seconds": 171.865,
+  "raw_response_path": "experiments/p4_governed_usefulness/raw/strong_model_sacrificial_preflight_v1.json",
+  "raw_response_sha256": "45f22814663f29ef02f4fddf4fd4d811b15c8f8defb8dd969816cd9c41061c43",
+  "result_path": "experiments/p4_governed_usefulness/results/strong_model_sacrificial_preflight.json",
+  "result_sha256": "e866ee2ec8ad8b4442867052ec393737743fcc1aaeae59990cc3e10da27f4619",
+  "account_identifier_recorded": false,
+  "private_project_payload_observed_or_transmitted": false,
+  "external_spend_incurred_usd": 0,
+  "authority": "explicit_user_instruction_to_choose_and_use_chat_pro_for_the_frozen_public_safe_preflight",
+  "selection_note": "Chat Pro was deliberately selected over Work Extra High for the strong-model sacrificial arm after the author clarified the available modes.",
+  "next_action": "preserve the terminal v1 instrument failure and require a separately authorized prospective v2 repair run",
+  "support_state_effect": "none",
+  "non_claims": [
+    "The displayed product label does not establish an API model identifier, weight snapshot, serving revision, capability level, reproducibility, or continued availability.",
+    "No model inference, campaign outcome, useful-throughput estimate, safety result, claim transition, publication, or release occurred."
+  ]
+}

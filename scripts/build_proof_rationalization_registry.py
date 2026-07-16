@@ -340,7 +340,7 @@ This inventory freezes the 1,151 theorem declarations and 298 proof targets that
 
 ## Closure rule
 
-P2 remains open until every baseline target and theorem has a claim-centered semantic disposition; every retained item has exact assumptions, exclusions, dependencies, countermodels or negative cases, mutation coverage, and a live consumer; and every retired, merged, or replaced item preserves lineage. The separate chapter dossiers are under `evidence_quality/proof_model_dossiers/`.
+P2 closed on 2026-07-16 only after every baseline target and theorem received a claim-centered semantic disposition; every retained item received exact assumptions, exclusions, dependencies, countermodels or negative cases, mutation coverage, and a live consumer; every retired, merged, or replaced item preserved lineage; and all 298 current targets received an explicit adequacy route in `proofs/p2_closure_audit.json`. The separate chapter dossiers remain under `evidence_quality/proof_model_dossiers/`. Downstream executable, empirical, reproduction, and transfer routes remain mandatory; closure does not promote support.
 """
     return registry, report, dossiers
 

@@ -1,0 +1,53 @@
+{
+"protocol_id": "p4-gu-instrument-preflight-v2",
+"decisions": [
+{
+"task_id": "gw-sac-01",
+"decision_class": "defer",
+"residual_class": "stale_public_surface",
+"route_detail": "Hold terminal acceptance, refresh the public roadmap pointer, and rerun the exact validator.",
+"confidence": "high",
+"brief_reason": "The successful build does not cure the failed public-pointer validation."
+},
+{
+"task_id": "gw-sac-02",
+"decision_class": "narrow",
+"residual_class": "authority_missing",
+"route_detail": "Permit local editing only, block publication, and escalate for explicit publishing authority.",
+"confidence": "high",
+"brief_reason": "The accepted contract authorizes local edits but provides no authority to publish."
+},
+{
+"task_id": "gl-sac-01",
+"decision_class": "quarantine",
+"residual_class": "rights_missing",
+"route_detail": "Exclude the cohort from training and isolate it pending a documented usable rights basis.",
+"confidence": "high",
+"brief_reason": "Provenance and utility cannot substitute for the rights required for lawful admission."
+},
+{
+"task_id": "gl-sac-02",
+"decision_class": "deny",
+"residual_class": "rollback_state_incomplete",
+"route_detail": "Do not certify rollback readiness until all recovery state, caches, and descendants are captured.",
+"confidence": "high",
+"brief_reason": "Weights alone cannot restore the full execution and lineage state of the candidate update."
+},
+{
+"task_id": "ac-sac-01",
+"decision_class": "defer",
+"residual_class": "evaluation_integrity_missing",
+"route_detail": "Withhold threshold acceptance until evaluator identity and contamination checks are documented and verified.",
+"confidence": "high",
+"brief_reason": "Scores without evaluator attribution and contamination controls do not establish an admissible threshold crossing."
+},
+{
+"task_id": "ac-sac-02",
+"decision_class": "rollback",
+"residual_class": "open_defeater",
+"route_detail": "Return the safety case from ready status to active review until the defeater is resolved or formally dispositioned.",
+"confidence": "high",
+"brief_reason": "A recorded unanswered defeater prevents the safety case from completing the ready lifecycle stage."
+}
+]
+}

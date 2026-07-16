@@ -1,0 +1,16 @@
+{
+  "schema_version": "asi_stack.p4_m6_instrument_repair.v2",
+  "state": "frozen_after_v1_instrument_failure_before_heldout_generation",
+  "v1_result_path": "experiments/p4_routing_deliberation/results/preflight_result.json",
+  "v1_result_sha256": "4078a15ef5795bb2f38a1b15b6f7d3e616069e7cd1ada313de91cc7c9dda7b08",
+  "diagnosis": "Three of four raw outputs contained useful answer text but invalid JSON because the model corrupted repeated role labels inside a seven-object array.",
+  "single_change": "Replace the repeated candidate-object array with one fixed-key answers object; task content, route enums, model snapshot, temperature, retry count, evidence ceiling, and held-out denominator remain unchanged.",
+  "candidate_contract_version": "p4-m6-candidate-contract-v2-fixed-answer-keys",
+  "preflight_tasks_v2_sha256": "a962715ca605230a81aeec9129b1764e5184773b56921d9d8f28198a538db162",
+  "heldout_open": false,
+  "outcome_aware_retry_allowed": false,
+  "claim_attempt_count": 0,
+  "support_state_effect": "none",
+  "publication_authority": "none",
+  "release_authority": "none"
+}

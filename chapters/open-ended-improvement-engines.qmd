@@ -551,8 +551,10 @@ up uses a new campaign identity and prospective budget.
 The exact current minimum preserves the seven Boolean admission records, seven
 legacy route theorems, ten admission mutations, the three-seed/four-arm fixed
 update result, and the three-seed/five-arm post-v2.1 stopped result inside a
-seven-stage, 81-route campaign-to-governor lifecycle with 91/91 rejecting
-mutations. The witness emits one governor-review handoff and returns to scoped
+seven-stage, 81-route campaign-to-governor lifecycle with 91/91 route and 3/3
+cross-stage mutations rejected. Two composition theorems derive the complete
+cycle and a budget-reset/downstream-blocking prefix. The witness emits one
+governor-review handoff and returns to scoped
 generation only through protocol-version-2 readmission after material change.
 Zero of nine eligible post-v2.1 challenger seed-arms met the registered 0.05
 gain threshold, the update disposition remains `no_change`, and support and
@@ -564,7 +566,8 @@ independently reruns the admission fixture and both stopped campaigns. Exact
 custody covers campaign, objective, representation, controller, task and
 candidate policies, generator, evaluator, qualifier, archive, cumulative
 budget, stop authority, hazard policy, consumer, authority, and version. All
-91 registered mutations reject. This proves authored campaign custody and
+91 route mutations and three cross-stage mutations reject. Two Lean composition
+theorems execute the complete seven-transition cycle and a budget-reset prefix. A descendant-budget reset prevents archive progression and every later handoff; a missing stop-effect receipt prevents adjudication and handoff; and candidate-authority laundering prevents governor handoff and readmission. This proves authored campaign custody and
 route consequences only: objectives, legitimacy records, denominators,
 lineage, evaluator records, costs, hazards, stop effects, residuals, monitors,
 and invalidations remain trusted inputs. No adaptive generator/evaluator/archive
@@ -605,7 +608,7 @@ risk and total cost.
 | Test | Purpose | Status |
 |---|---|---|
 | Improvement-campaign admission fixture | Recompute seven declared handoff routes and ten mutations. | implemented; finite Boolean records only |
-| Campaign-to-governor lifecycle refinement | Join scope, generation, archive, evaluation, observed stopping, governor-only handoff, and material-change readmission without cross-promoting null results. | implemented by `python3 scripts/validate_open_ended_improvement_refinement.py`; three inherited suites pass, all 81 routes are reached, 91/91 mutations reject, support/effect none; no adaptive-search, novelty, usefulness, evaluator-independence, safety, release, transfer, or support claim |
+| Campaign-to-governor lifecycle refinement | Join scope, generation, archive, evaluation, observed stopping, governor-only handoff, and material-change readmission without cross-promoting null results. | implemented by `python3 scripts/validate_open_ended_improvement_refinement.py`; two composed Lean traces, three inherited suites, all 81 routes, 91/91 route mutations, and 3/3 cross-stage mutations pass, support/effect none; no adaptive-search, novelty, usefulness, evaluator-independence, safety, release, transfer, or support claim |
 | Generator/evaluator dependency and exposure test | Measure adaptive overfitting, contamination, self-verification, shared dependencies, disagreement, and fresh qualification error. | planned; current identity/dependency Booleans measure no behavior |
 | Natural adaptive campaign comparison | Compare no-search, fixed-task, conventional-search, human-authored, and generated-task arms under matched budgets. | planned; no natural campaign engine or candidate ran |
 | Archive denominator and hazard-custody test | Preserve every attempt, disposition, exposure, cost, selection probability, payload tier, deletion receipt, and typed reuse relation. | planned; current failure-history Boolean has no evolving archive |
@@ -626,9 +629,11 @@ risk and total cost.
 | `lean:open_ended_improvement.campaign.authority_laundering` | implemented | Score, candidate, release, support, or self-ratified controller authority cannot be laundered through the campaign lifecycle. |
 
 The seven legacy theorems remain finite admission-route consequences. The
-refinement adds one combined route theorem over a reachable seven-stage model
-and an independently implemented 81-route, 91-mutation consumer. It binds
-rather than merges the admission and stopped-campaign evidence lanes. None of
+refinement adds one combined route theorem, one complete-cycle composition
+theorem, and one cross-stage budget-reset theorem over a reachable seven-stage
+model, plus an independently implemented 81-route consumer with 91 route and
+three cross-stage mutations. It binds
+rather than merges the admission and stopped-campaign evidence lanes. These finite records do not prove their inputs true or their controls effective. None of
 this generates tasks or candidates, evaluates semantic novelty, establishes
 objective legitimacy or evaluator independence, executes a deployed stop or
 quarantine, proves useful improvement, authorizes admission, or establishes

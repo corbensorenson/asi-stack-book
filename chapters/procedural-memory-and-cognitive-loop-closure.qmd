@@ -4,7 +4,7 @@ chapter_id: "procedural-memory-and-cognitive-loop-closure"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-15"
+last_updated: "2026-07-16"
 primary_sources:
   - "cognitive_loop_closure"
   - "rmi"
@@ -24,6 +24,7 @@ primary_sources:
   - "ext_voyager_2023"
   - "ext_dreamcoder_2020"
   - "ext_mem0_2025"
+  - "reflexive_router_whitepaper"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -41,10 +42,10 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
 | Last updated | 2026-07-15 |
-| Primary source records | 18 assigned and bounded records spanning the local architecture corpus, four historical projects, MemGPT, Toolformer, Voyager, DreamCoder, and Mem0 |
+| Primary source records | 19 assigned and bounded records spanning the local architecture corpus, four historical projects, The Reflexive Router, MemGPT, Toolformer, Voyager, DreamCoder, and Mem0 |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | All 18 assigned sources have bounded mappings. Five external memory, learned-tool-use, skill-library, and library-learning comparators remain at their note-specific review depth; no reported performance is imported. |
+| Source loading state | All 19 assigned sources have bounded mappings. Five external memory, learned-tool-use, skill-library, and library-learning comparators remain at their note-specific review depth; no reported performance is imported. |
 | Test state | `AsiStackProofs.ProceduralMemoryRefinement` reaches seven stages over thirty-two routes. Its independent consumer preserves the exact three-valid/six-invalid loop and one-valid/ten-invalid trace-promotion suites and rejects 33/33 mutations. Twenty-eight declarations remain live: fourteen refinement theorems and fourteen retained negative cases; five weak projections or fixture admissions were retired. No deployed procedure-foundry or support claim follows. |
 
 ## Drafting guardrail
@@ -205,6 +206,43 @@ ran; a trace can show an observed route and effect, but it does not become a
 timeless semantic fact. Promotion binds every candidate trace to both a source
 receipt and an effect receipt, retains failed attempts as negative examples,
 and requires a passing regression suite plus a rehearsed rollback route.
+
+### Governed trace-to-reflex compilation
+
+The Reflexive Router makes the loop-closure product broader than a tool card.
+A verified recurring trace may compile into a deterministic rule, query,
+semantic-cache plan, workflow, program, solver template, or bounded specialist
+policy. Representation is chosen only after the invariant, parameters,
+preconditions, effect class, verifier, latency/cost target, and failure
+semantics are explicit; compilation is not synonymous with distillation into
+weights.
+
+Eligibility requires complete comparable traces rather than repeated fluent
+success. The compiler retains negative examples, near misses, abstentions,
+human interventions, partial effects, rollbacks, delayed failures, and censored
+outcomes. It then synthesizes the *negative space*: guards for contexts in which
+the candidate must not run, including ambiguity, stale evidence, OOD inputs,
+authority mismatch, temporal conflict, risky effects, verifier absence, and
+known rare exceptions. Positive traces alone underdetermine those guards.
+
+Promotion proceeds through static analysis, property and mutation checks,
+replay, differential comparison with the deliberative parent, adversarial and
+shifted holdouts, shadow execution, canary use, qualification, signed
+promotion, and monitored leases. The compiled reflex preserves source-trace,
+field, schema, policy, evaluator, authority, and environment dependencies.
+Material change triggers quarantine, fallback to the full deliberative path,
+and descendant invalidation.
+
+Decompilation is a first-class recovery path. It disables the rule or policy,
+invalidates aliases, caches, routes, workflows, and descendants, restores the
+deliberative route, preserves affected effects and residuals, and records why
+the optimization failed. A reflex that cannot expire, quarantine, roll back,
+or decompile is not governed procedural memory.
+
+The paper offers this lifecycle and falsification program, not an implemented
+compiler or measured efficiency gain. Existing synthetic
+qualification records do not establish trace mining or safe compilation, so
+the core remains at `argument`.
 
 ## Interfaces
 
@@ -446,6 +484,7 @@ completeness, generalization, or transfer.
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
+| `reflexive_router_whitepaper` | The Reflexive Router | pre_deliberative_reflexive_routing_control_plane | Multiple reflex representations, complete trace eligibility, negative-space guard synthesis, differential/shadow qualification, signed promotion, monitored leases, quarantine, and decompilation. | complete Corben-authored v1.2 paper passage-reviewed; no compiler or efficiency result |
 | `cognitive_loop_closure` | Cognitive Loop Closure | procedural_memory | Repeated cognition should become procedural memory / verified tools. | source note available; passage-reviewed local raw cache |
 | `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Benchmark pressure, residual escrow, verified modular capability, regression preservation. | source note available; passage-reviewed local raw cache |
 | `rgs` | Ratcheting Generative Systems | compression_capability_growth | Bridge between active compression, procedural memory, benchmark frontiers, verified AI growth. | source note available; passage-reviewed local raw cache |
@@ -471,6 +510,15 @@ eighteen assigned sources have bounded mappings at their recorded review depth;
 reported external performance and historical runtime behavior are not imported.
 No mapping establishes a working loop-closure pipeline.
 
+### Manifest source assignment reconciliation
+
+These rows keep Procedural Memory and Cognitive Loop Closure's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Procedural Memory and Cognitive Loop Closure governs the transition from repeated

@@ -1,0 +1,85 @@
+{
+  "schema_version": "asi_stack.p4_governed_usefulness_local_instrument_result.v1",
+  "protocol_id": "p4-gu-local-instrument-qualification-v6",
+  "preregistration_path": "experiments/p4_governed_usefulness/local_instrument_preregistration_v6.json",
+  "preregistration_sha256": "b6dd13586ed4d65091c6401a19305097ac3ccfe1852781e66139b0f214e27c90",
+  "raw_response_path": "experiments/p4_governed_usefulness/raw/local_instrument_qualification_v6_phi4_mini.json",
+  "raw_response_sha256": "dbd52b31e6f6ccc3e46e51bf9dccaecf8beba6b282023422a5481405b09b40b3",
+  "candidate_artifact_closed_before_labels_loaded": true,
+  "labels_sha256": "bd3c8209f8b54769a890c10391c9a61b49b1e4b95c029e6a01a0b017a813d463",
+  "candidate_generator_role": "substituted_local_open_weight_candidate_generator",
+  "model_repository": "mlx-community/Phi-4-mini-instruct-4bit",
+  "snapshot_commit": "ac1c269cb4222a4e136a3d09edad301056c1f36a",
+  "claim_ceiling": "one_local_quantized_phi4_mini_instrument_canary_not_frontier_model_quality_transfer_or_independent_reproduction",
+  "expected_task_count": 8,
+  "schema_admissible_task_count": 0,
+  "semantically_correct_admissible_task_count": 0,
+  "evaluator_implementation_count": 2,
+  "evaluator_disagreement_count": 0,
+  "parse_error": null,
+  "records": [
+    {
+      "task_id": "local-sac-01",
+      "schema_admissible": false,
+      "duplicate": false,
+      "evaluator_a_correct": false,
+      "evaluator_b_correct": false
+    },
+    {
+      "task_id": "local-sac-02",
+      "schema_admissible": false,
+      "duplicate": false,
+      "evaluator_a_correct": false,
+      "evaluator_b_correct": false
+    },
+    {
+      "task_id": "local-sac-03",
+      "schema_admissible": false,
+      "duplicate": false,
+      "evaluator_a_correct": false,
+      "evaluator_b_correct": false
+    },
+    {
+      "task_id": "local-sac-04",
+      "schema_admissible": false,
+      "duplicate": false,
+      "evaluator_a_correct": false,
+      "evaluator_b_correct": false
+    },
+    {
+      "task_id": "local-sac-05",
+      "schema_admissible": false,
+      "duplicate": false,
+      "evaluator_a_correct": false,
+      "evaluator_b_correct": false
+    },
+    {
+      "task_id": "local-sac-06",
+      "schema_admissible": false,
+      "duplicate": false,
+      "evaluator_a_correct": false,
+      "evaluator_b_correct": false
+    },
+    {
+      "task_id": "local-sac-07",
+      "schema_admissible": false,
+      "duplicate": false,
+      "evaluator_a_correct": false,
+      "evaluator_b_correct": false
+    },
+    {
+      "task_id": "local-sac-08",
+      "schema_admissible": false,
+      "duplicate": false,
+      "evaluator_a_correct": false,
+      "evaluator_b_correct": false
+    }
+  ],
+  "protocol_outcome": "instrument_inadequate_recampaign_required",
+  "difficulty_sweep_opened": false,
+  "confirmatory_denominator_opened": false,
+  "claim_attempt_counted": false,
+  "support_state_effect": "none",
+  "publication_authority": "none",
+  "release_authority": "none"
+}

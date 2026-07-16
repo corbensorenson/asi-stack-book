@@ -1,0 +1,60 @@
+{
+  "schema_version": "asi_stack.p4_governed_usefulness_local_instrument_preregistration.v1",
+  "protocol_id": "p4-gu-local-instrument-qualification-v3",
+  "campaign_id": "p4-governed-usefulness-effect-complete-rollback-2026-07-16",
+  "state": "frozen_before_local_candidate_generation",
+  "frozen_at_utc": "2026-07-16T13:54:35Z",
+  "historical_parent": {
+    "v2_result_path": "experiments/p4_governed_usefulness/results/strong_model_sacrificial_preflight_v2.json",
+    "v2_protocol_outcome": "instrument_inadequate_recampaign_required",
+    "retrospective_rescore_allowed": false,
+    "future_hosted_chat_run_required": false
+  },
+  "candidate_generator": {
+    "role": "local_open_weight_candidate_generator",
+    "implementation": "mlx_lm.generate 0.29.1",
+    "model_repository": "mlx-community/Qwen3-4B-4bit",
+    "snapshot_commit": "4dcb3d101c2a062e5c1d4bb173588c54ea6c4d25",
+    "config_sha256": "b5efdcf3b0035a3638e7228dad4d85f5c4a23f156eb7cdb0b44c8366a5d34d9b",
+    "model_index_sha256": "f7825defe5865d179c3b593173d37056be5f202dcb7153985cf74e75ecf1628b",
+    "tokenizer_config_sha256": "253153d0738ceb4c668d2eff957714dd2bea0b56de772a9fdccd96cbf517e6a0",
+    "generation": {"temperature": 0.0, "seed": 20260716, "maximum_new_tokens": 1800, "thinking_enabled": false, "retry_count": 0},
+    "claim_ceiling": "one_local_quantized_4b_instrument_canary_not_frontier_model_quality_transfer_or_independent_reproduction"
+  },
+  "instrument": {
+    "tasks_path": "experiments/p4_governed_usefulness/local_instrument_tasks.json",
+    "tasks_sha256": "d5df0784d27342c8f52fd0c97a34e942406c56225551df51c6aa77d91d733810",
+    "labels_path": "experiments/p4_governed_usefulness/local_instrument_labels.json",
+    "labels_sha256": "3cf701e7c845bea086fad137acd99f8e9c99342a75623d67e6cc56e2be1ab5d9",
+    "prompt_path": "experiments/p4_governed_usefulness/local_instrument_prompt.md",
+    "prompt_sha256": "d35e414494e05221fdd6cddb79fd99a235472c8f787d3d0fd09c0f8a742015c6",
+    "runner_path": "scripts/run_p4_governed_usefulness_local_instrument.py",
+    "validator_path": "scripts/validate_p4_governed_usefulness_local_instrument.py",
+    "raw_response_path": "experiments/p4_governed_usefulness/raw/local_instrument_qualification_qwen3_4b.json",
+    "result_path": "experiments/p4_governed_usefulness/results/local_instrument_qualification.json",
+    "task_count": 8,
+    "minimum_schema_admissible_task_count": 7,
+    "minimum_semantically_correct_admissible_task_count": 7,
+    "maximum_evaluator_disagreement_count": 0,
+    "candidate_artifact_closes_before_labels_load": true,
+    "separate_terminal_eligibility_and_remediation": true,
+    "negative_mutation_count": 8,
+    "pass_outcome": "instrument_adequate_for_sacrificial_canonical_decisions_only",
+    "fail_outcome": "instrument_inadequate_recampaign_required"
+  },
+  "authorization": {
+    "safe_local_execution_authority": "standing_user_authority_2026-07-16_complete_roadmap_without_external_chat",
+    "hosted_chat_submission_authority_required": false,
+    "publication_authority": "none",
+    "release_authority": "none"
+  },
+  "difficulty_sweep_state": "closed_until_this_qualification_passes_and_design_is_separately_frozen",
+  "confirmatory_denominator_state": "closed",
+  "claim_attempt_counted": false,
+  "support_state_effect": "none",
+  "non_claims": [
+    "Passing qualifies only this local response contract on eight sacrificial tasks.",
+    "The local 4-bit 4B model is not represented as a frontier or independently reproduced model.",
+    "No usefulness, safety, rollback, causality, transfer, SOTA, chapter-support, publication, or release claim follows."
+  ]
+}

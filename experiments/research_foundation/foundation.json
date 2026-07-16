@@ -1,0 +1,128 @@
+{
+  "schema_version": "asi_stack.research_foundation.v1",
+  "foundation_id": "m2-shared-research-foundation-2026-07-16",
+  "frozen_at": "2026-07-16",
+  "state": "sacrificial_preflight_passed",
+  "task_corpus_contract": {
+    "path": "experiments/research_foundation/task_corpus.json",
+    "sha256": "bbabc988cec1018352a436e5238ec5db0b8b1ce348558df0d5b72632c80c9d49",
+    "task_count": 24,
+    "split_counts": {"sacrificial": 6, "tuning": 6, "held_out": 12},
+    "slice_counts": {"governed_work": 8, "governed_learning": 8, "assurance_control": 8},
+    "duplicate_policy": "Exact normalized request duplicates are forbidden across all splits; held-out near-duplicates require exclusion before labels open.",
+    "contamination_policy": "Search task text, identifiers, and gold fields against prompts, model context, source corpora, and prior outputs before each campaign; any match is reported and the task is excluded prospectively.",
+    "difficulty_policy": "Difficulty 1-5 is author-assigned for stratification only and is not evidence of actual model difficulty.",
+    "retention_policy": "Preserve frozen corpus, exclusions, failed runs, candidates, labels, evaluator outputs, costs, and dispositions append-only for the roadmap lifecycle."
+  },
+  "held_out_label_contract": {
+    "path": "experiments/research_foundation/held_out_labels.json",
+    "sha256": "bbf93dc00539aba8f61c12ddb573e1065137003ad5c22116e3408522ce605730",
+    "label_count": 12,
+    "isolation_rule": "Candidate generation closes and is digest-bound before the evaluator process may load held-out labels."
+  },
+  "model_selection": [
+    {
+      "role": "current_strong_general",
+      "provider": "Google",
+      "model_id": "gemini-3.5-flash",
+      "identity_kind": "provider_stable_model_code_verified_2026-07-16",
+      "source": "https://ai.google.dev/gemini-api/docs/models",
+      "availability": "selected_requires_credentials_and_preflight",
+      "drift_rule": "Resolve the model through the provider models endpoint and record returned metadata before every campaign; any identity or behavior-version change forces requalification."
+    },
+    {
+      "role": "independent_comparison_family",
+      "provider": "Alibaba_Qwen_MLX_community_conversion",
+      "model_id": "mlx-community/Qwen3-4B-4bit",
+      "snapshot": "4dcb3d101c2a062e5c1d4bb173588c54ea6c4d25",
+      "availability": "local_snapshot_present",
+      "drift_rule": "Exact snapshot, tokenizer, MLX runtime, prompt template, reasoning budget, final-answer reserve, and decoding contract are frozen per campaign."
+    },
+    {
+      "role": "small_reproducible_control",
+      "provider": "Qwen",
+      "model_id": "Qwen/Qwen2.5-Coder-0.5B-Instruct",
+      "snapshot": "ea3f2471cf1b1f0db85067f1ef93848e38e88c25",
+      "availability": "local_snapshot_present",
+      "drift_rule": "Exact snapshot and tokenizer only; this arm is a mechanism floor and cannot refute claims beyond its demonstrated capability range."
+    }
+  ],
+  "inference_contract": {
+    "required_identity_fields": ["provider","model_id","snapshot_or_provider_resolution","tokenizer","runtime","sampling","reasoning_budget","final_answer_budget","context_limit","system_prompt_sha256","tool_manifest_sha256","retry_policy","stop_policy"],
+    "reasoning_answer_separation": "Reasoning may be retained as an unscored diagnostic when available; only the registered schema-constrained final-decision object is scored.",
+    "retry_policy": "No outcome-aware retry. Transport retries retain the same request identity and are counted; semantic retries require a new prospectively versioned protocol.",
+    "upstream_drift_rule": "Any model, API, tokenizer, runtime, prompt, tool, or decoding identity change invalidates comparability until sacrificial preflight reruns."
+  },
+  "evaluator_contract": {
+    "gold_or_oracle": "Frozen route plus required-residual labels for bounded decision tasks, executable outcomes for code/effect tasks, and explicit abstention where neither is available.",
+    "label_isolation": "Candidate artifacts close before held-out labels load.",
+    "independent_implementations": 2,
+    "syntax_semantics_separated": true,
+    "adjudication": "Disagreement routes to abstention and recorded adjudication; the candidate-generating model cannot adjudicate itself.",
+    "calibration_metrics": ["schema_admissibility","false_accept","false_reject","abstention","inter_implementation_disagreement"],
+    "candidate_evaluator_contamination_control": "No evaluator prompt, gold label, or executable oracle output appears in candidate context."
+  },
+  "statistics_policy": {
+    "confirmatory_unit": "held-out task with seed nested within task and model arm",
+    "estimands": ["useful_release_rate","unsafe_release_rate","abstention_rate","fallback_rate","effect_complete_recovery_rate","latency","visible_cost","governance_cost","residual_burden"],
+    "minimum_meaningful_effect": "Frozen per campaign before tuning outcomes; default absolute rate difference 0.10 is a planning value, not a universal scientific threshold.",
+    "intervals": "Report Wilson intervals for bounded rates and bootstrap task-cluster intervals for paired differences; report raw denominators and per-task outcomes.",
+    "precision_power": "Each campaign must justify sample size from its estimand and minimum effect before held-out execution; M2 does not manufacture a universal powered denominator.",
+    "multiplicity": "Name primary estimands prospectively; secondary analyses are labeled exploratory and family-wise or false-discovery handling is recorded where multiple claims are tested.",
+    "missingness": "Preserve and classify every missing, invalid, truncated, timed-out, or excluded run; no complete-case deletion without a stated sensitivity analysis.",
+    "sequential_stopping": "Only preregistered adequacy, safety, futility, or budget stops; no peeking-based success stop.",
+    "robustness": ["task-family stratification","seed sensitivity","evaluator disagreement","cost definition sensitivity","abstention treatment","contamination exclusions"],
+    "exploratory_boundary": "Sacrificial and tuning results may repair instruments or select ranges but never enter confirmatory estimates."
+  },
+  "environment_manifest": {
+    "os": "macOS 15.0 build 24A5320a",
+    "architecture": "arm64",
+    "hardware": "Apple M1, 16 GiB unified memory",
+    "python": "3.9.23",
+    "quarto": "1.9.38",
+    "lean": "4.31.0",
+    "lake": "5.0.0-src+68218e8",
+    "repository_head_at_freeze": "1faacc14d1134192a5776715a38d704c16fbb62b",
+    "seeds": [2026071601,2026071602,2026071603],
+    "locale": "en_US.UTF-8",
+    "timezone": "America/Chicago",
+    "network_policy": "disabled for local control arms; provider arms permit only the recorded provider endpoint",
+    "clock_policy": "monotonic clock for durations and UTC timestamps for records",
+    "process_file_policy": "campaign-specific temporary directory, explicit input/output allowlist, no inherited writable project paths except declared artifact destination",
+    "nondeterminism": ["provider serving implementation","accelerator kernels","operating-system scheduling","network latency"]
+  },
+  "safety_envelope": {
+    "credentials": "least privilege, environment-injected, never written to artifacts",
+    "sandbox": "isolated repository copy or temporary workspace with synthetic/reversible effects",
+    "external_actions": "no unbounded browsing, messaging, publication, account mutation, spending, self-propagation, or long-lived process",
+    "ceilings": {"provider_spend_usd_per_preflight":25,"wall_clock_hours_per_arm":4,"retries_per_request":1},
+    "emergency_stop": "operator interrupt plus immediate new-request stop; in-flight and completed effects remain in the ledger",
+    "data_minimization": "public-safe corpus only; scan candidates and artifacts for secrets, tokens, email addresses, and private paths before retention or export",
+    "incident_route": "stop new work, preserve evidence, revoke credentials, quarantine artifacts, inventory effects, assign residual owner, and require prospectively versioned restart"
+  },
+  "artifact_protocol": {
+    "append_only": true,
+    "required_records": ["preregistration","environment","requests","raw_responses","parsed_candidates","evaluator_outputs","effect_ledger","cost_ledger","exclusions","incidents","adjudication","replay_receipt"],
+    "checksums": "SHA-256 for every retained input, output, manifest, and derived result; derivations bind exact parent digests.",
+    "failed_run_policy": "Retain failed, malformed, truncated, excluded, and stopped runs with cost and reason; never overwrite them with repaired outcomes.",
+    "redaction": "Redactions create a receipt naming source digest, removed field classes, policy basis, reviewer, and public artifact digest.",
+    "reconstruction": "Record environment, dependency locks, exact commands, seeds, model identities, and unavoidable nondeterminism.",
+    "public_replay": "Provide one public-safe command when licenses and payload safety permit; otherwise record the exact blocking reason and a sanitized verifier packet.",
+    "publication_authority": "none"
+  },
+  "sacrificial_preflight": {
+    "path": "experiments/research_foundation/sacrificial_preflight.json",
+    "sha256": "b87d5af61663f5a8bb69cf85d245f942d8df97e731beb0f0d630e30c4a43f377",
+    "minimum_schema_admissible_rate": 0.8,
+    "outcome": "instrument_adequate"
+  },
+  "activation_rule": "M2 may close after this tracked foundation and its sacrificial parser/evaluator canaries validate. No outcome-bearing model campaign starts until its campaign-specific model access, sample-size, safety, and replay extensions also validate.",
+  "support_state_effect": "none",
+  "non_claims": [
+    "The authored corpus is not proof that the tasks are representative, difficult, natural in distribution, uncontaminated in every model, or sufficient for any chapter claim.",
+    "The sacrificial canaries test parser and evaluator plumbing, not model capability, usefulness, safety, or transfer.",
+    "Selecting a current provider model does not establish access, identity resolution, performance, reproducibility, or provider-reported claims.",
+    "The statistics policy does not manufacture power; each outcome-bearing campaign still requires a prospective sample-size justification.",
+    "No publication, release, external action, support promotion, SOTA, AGI, or ASI authority follows."
+  ]
+}

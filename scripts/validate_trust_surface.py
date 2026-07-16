@@ -30,6 +30,7 @@ NO_PROMOTION_DIRS = [
 NON_CORE_LEDGER = ROOT / "docs" / "non_core_evidence_ledger.md"
 
 EXPECTED_NON_CORE = {
+    "governed-usefulness.held-out-local-policy-effect": "synthetic-test-backed",
     "living-book-methodology.phase5_harness_registry_runner": "synthetic-test-backed",
     "resource-economics.costed_route_budget_slice": "synthetic-test-backed",
     "resource-economics.finite_burst_load_smoothing_selector": "synthetic-test-backed",
@@ -187,7 +188,7 @@ def assert_surface(
         f"{chapters}/{chapters} chapters",
         "externally positioned",
         "0 explicit external-baseline exceptions",
-        "Nineteen narrow non-core transitions are recorded in",
+        "Twenty narrow non-core transitions are recorded in",
         f"alongside {no_promotion_decisions} accepted `blocks_promotion` decisions",
         "Choose the product you need",
     ]

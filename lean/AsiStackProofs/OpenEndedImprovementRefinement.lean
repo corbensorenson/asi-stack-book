@@ -348,6 +348,56 @@ def canonicalState (stage : Stage) : State := {
   governorHandoffCount := 0, readmissionCount := 0, supportAssignmentCount := 0,
   externalEffectCount := 0 }
 
+def canonicalLifecycleState : State :=
+  let s1 := (applyEvent (canonicalState .draft) .scopeCampaign
+    { canonicalPacket with eventDigest := 1 }).1
+  let s2 := (applyEvent s1 .bindGeneration
+    { canonicalPacket with eventDigest := 2 }).1
+  let s3 := (applyEvent s2 .recordArchive
+    { canonicalPacket with eventDigest := 3 }).1
+  let s4 := (applyEvent s3 .recordEvaluation
+    { canonicalPacket with eventDigest := 4 }).1
+  let s5 := (applyEvent s4 .adjudicateCampaign
+    { canonicalPacket with eventDigest := 5 }).1
+  let s6 := (applyEvent s5 .requestGovernorHandoff
+    { canonicalPacket with eventDigest := 6 }).1
+  (applyEvent s6 .triggerReadmission
+    { canonicalPacket with eventDigest := 7, successorVersion := 2 }).1
+
+def budgetResetBlockedLifecycleState : State :=
+  let s1 := (applyEvent (canonicalState .draft) .scopeCampaign
+    { canonicalPacket with eventDigest := 1 }).1
+  let s2 := (applyEvent s1 .bindGeneration
+    { canonicalPacket with eventDigest := 2 }).1
+  let s3 := (applyEvent s2 .recordArchive
+    { canonicalPacket with eventDigest := 3, cumulativeBudgetAcrossDescendants := false }).1
+  let s4 := (applyEvent s3 .recordEvaluation
+    { canonicalPacket with eventDigest := 4 }).1
+  let s5 := (applyEvent s4 .adjudicateCampaign
+    { canonicalPacket with eventDigest := 5 }).1
+  let s6 := (applyEvent s5 .requestGovernorHandoff
+    { canonicalPacket with eventDigest := 6 }).1
+  (applyEvent s6 .triggerReadmission
+    { canonicalPacket with eventDigest := 7, successorVersion := 2 }).1
+
+theorem open_ended_improvement_full_cycle_composes :
+    canonicalLifecycleState.stage = .scoped ∧
+    canonicalLifecycleState.version = 2 ∧
+    canonicalLifecycleState.receiptCount = 7 ∧
+    canonicalLifecycleState.governorHandoffCount = 1 ∧
+    canonicalLifecycleState.readmissionCount = 1 ∧
+    canonicalLifecycleState.supportAssignmentCount = 0 ∧
+    canonicalLifecycleState.externalEffectCount = 0 := by native_decide
+
+theorem open_ended_improvement_budget_reset_blocks_handoff_and_readmission :
+    budgetResetBlockedLifecycleState.stage = .generationBound ∧
+    budgetResetBlockedLifecycleState.version = 1 ∧
+    budgetResetBlockedLifecycleState.receiptCount = 2 ∧
+    budgetResetBlockedLifecycleState.governorHandoffCount = 0 ∧
+    budgetResetBlockedLifecycleState.readmissionCount = 0 ∧
+    budgetResetBlockedLifecycleState.supportAssignmentCount = 0 ∧
+    budgetResetBlockedLifecycleState.externalEffectCount = 0 := by native_decide
+
 theorem open_ended_improvement_lifecycle_routes :
     routeFor (canonicalState .archiveBound) .recordEvaluation
         { canonicalPacket with independentQualifierPresent := false } =

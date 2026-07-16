@@ -1,0 +1,69 @@
+{
+  "schema_version": "asi_stack.p4_m6_candidates.v1",
+  "phase": "preflight",
+  "run_id": "p4-m6-qwen3-8b-heldout-001-instrument",
+  "task_count": 4,
+  "candidates": [
+    {
+      "task_id": "m6-900",
+      "raw_sha256": "97969c6b20c759769f328d6aed0f88327b5c97cad47b6241eac9dca730983ceb",
+      "candidate": {
+        "task_id": "m6-900",
+        "run_id": "p4-m6-qwen3-8b-heldout-001-instrument",
+        "route_proposal": "clarify",
+        "route_confidence": 0.7,
+        "ambiguity": "medium",
+        "stop_recommendation": "initial",
+        "residuals": [
+          "registry row canonical value not resolved",
+          "exact extraction not confirmed"
+        ],
+        "candidates": [
+          {
+            "role": "initial",
+            "answer": "R900-ATOMIC"
+          },
+          {
+            "role": "revision",
+            "answer": "The canonical value from the registry row is R900-ATOMIC."
+          },
+          {
+            "role": "deep_revision",
+            "answer": "The task requires returning the canonical value `R900-ATOMIC` from the registry row."
+          },
+          {
+            "role": "specialist_alpha",
+            "answer": "The registry row contains the canonical value `R900-ATOMIC`, which should be returned."
+          },
+          {
+            "role": "specialist_beta",
+            "answer": "The exact canonical value `R900-ATOMIC` must be extracted and returned."
+          },
+          {
+            "role": "tool_agent",
+            "answer": "The registry row's canonical value `R900-ATOMIC` is to be returned as per the task."
+          },
+          {
+            "role": "modular_system",
+            "answer": "The canonical value `R900-ATOMIC` from the registry row is the required output."
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "m6-901",
+      "raw_sha256": "e955e0db1a44756734eb070616aff912db7676a14bc07d1dd954038697728abd",
+      "candidate": null
+    },
+    {
+      "task_id": "m6-902",
+      "raw_sha256": "c883251e78d17f53ddf05a4cf9093892cec5f4e16fbbd70ca995d09043eed4f7",
+      "candidate": null
+    },
+    {
+      "task_id": "m6-903",
+      "raw_sha256": "b88fca5259aea2cd2f030c83a49cc3b9b38852b7d48decb65e6dfeec4ae69d2a",
+      "candidate": null
+    }
+  ]
+}

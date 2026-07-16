@@ -1,0 +1,727 @@
+{
+  "schema_version": "asi_stack.p4_m6_router_training.v1",
+  "split": "router_training_only",
+  "row_count": 48,
+  "rows": [
+    {
+      "training_id": "m6-train-01",
+      "features": {
+        "exact": true,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": true,
+        "paraphrased": true
+      },
+      "gold_route": "specialist_alpha",
+      "surface_text": "training family 0 route signal specialist_alpha variant 0"
+    },
+    {
+      "training_id": "m6-train-02",
+      "features": {
+        "exact": false,
+        "temporal": true,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "specialist_beta",
+      "surface_text": "training family 1 route signal specialist_beta variant 0"
+    },
+    {
+      "training_id": "m6-train-03",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": true,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "generalist",
+      "surface_text": "training family 2 route signal generalist variant 0"
+    },
+    {
+      "training_id": "m6-train-04",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": true,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": true
+      },
+      "gold_route": "clarify",
+      "surface_text": "training family 3 route signal clarify variant 0"
+    },
+    {
+      "training_id": "m6-train-05",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": true,
+        "specialist_unavailable": false,
+        "risk_high": true,
+        "paraphrased": false
+      },
+      "gold_route": "abstain",
+      "surface_text": "training family 4 route signal abstain variant 0"
+    },
+    {
+      "training_id": "m6-train-06",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": true,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "fallback",
+      "surface_text": "training family 5 route signal fallback variant 0"
+    },
+    {
+      "training_id": "m6-train-07",
+      "features": {
+        "exact": true,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": true
+      },
+      "gold_route": "specialist_alpha",
+      "surface_text": "training family 6 route signal specialist_alpha variant 0"
+    },
+    {
+      "training_id": "m6-train-08",
+      "features": {
+        "exact": false,
+        "temporal": true,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "specialist_beta",
+      "surface_text": "training family 7 route signal specialist_beta variant 0"
+    },
+    {
+      "training_id": "m6-train-09",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": true,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": true,
+        "paraphrased": false
+      },
+      "gold_route": "generalist",
+      "surface_text": "training family 0 route signal generalist variant 1"
+    },
+    {
+      "training_id": "m6-train-10",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": true,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": true
+      },
+      "gold_route": "clarify",
+      "surface_text": "training family 1 route signal clarify variant 1"
+    },
+    {
+      "training_id": "m6-train-11",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": true,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "abstain",
+      "surface_text": "training family 2 route signal abstain variant 1"
+    },
+    {
+      "training_id": "m6-train-12",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": true,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "fallback",
+      "surface_text": "training family 3 route signal fallback variant 1"
+    },
+    {
+      "training_id": "m6-train-13",
+      "features": {
+        "exact": true,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": true,
+        "paraphrased": true
+      },
+      "gold_route": "specialist_alpha",
+      "surface_text": "training family 4 route signal specialist_alpha variant 1"
+    },
+    {
+      "training_id": "m6-train-14",
+      "features": {
+        "exact": false,
+        "temporal": true,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "specialist_beta",
+      "surface_text": "training family 5 route signal specialist_beta variant 1"
+    },
+    {
+      "training_id": "m6-train-15",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": true,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "generalist",
+      "surface_text": "training family 6 route signal generalist variant 1"
+    },
+    {
+      "training_id": "m6-train-16",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": true,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": true
+      },
+      "gold_route": "clarify",
+      "surface_text": "training family 7 route signal clarify variant 1"
+    },
+    {
+      "training_id": "m6-train-17",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": true,
+        "specialist_unavailable": false,
+        "risk_high": true,
+        "paraphrased": false
+      },
+      "gold_route": "abstain",
+      "surface_text": "training family 0 route signal abstain variant 2"
+    },
+    {
+      "training_id": "m6-train-18",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": true,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "fallback",
+      "surface_text": "training family 1 route signal fallback variant 2"
+    },
+    {
+      "training_id": "m6-train-19",
+      "features": {
+        "exact": true,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": true
+      },
+      "gold_route": "specialist_alpha",
+      "surface_text": "training family 2 route signal specialist_alpha variant 2"
+    },
+    {
+      "training_id": "m6-train-20",
+      "features": {
+        "exact": false,
+        "temporal": true,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "specialist_beta",
+      "surface_text": "training family 3 route signal specialist_beta variant 2"
+    },
+    {
+      "training_id": "m6-train-21",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": true,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": true,
+        "paraphrased": false
+      },
+      "gold_route": "generalist",
+      "surface_text": "training family 4 route signal generalist variant 2"
+    },
+    {
+      "training_id": "m6-train-22",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": true,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": true
+      },
+      "gold_route": "clarify",
+      "surface_text": "training family 5 route signal clarify variant 2"
+    },
+    {
+      "training_id": "m6-train-23",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": true,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "abstain",
+      "surface_text": "training family 6 route signal abstain variant 2"
+    },
+    {
+      "training_id": "m6-train-24",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": true,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "fallback",
+      "surface_text": "training family 7 route signal fallback variant 2"
+    },
+    {
+      "training_id": "m6-train-25",
+      "features": {
+        "exact": true,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": true,
+        "paraphrased": true
+      },
+      "gold_route": "specialist_alpha",
+      "surface_text": "training family 0 route signal specialist_alpha variant 3"
+    },
+    {
+      "training_id": "m6-train-26",
+      "features": {
+        "exact": false,
+        "temporal": true,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "specialist_beta",
+      "surface_text": "training family 1 route signal specialist_beta variant 3"
+    },
+    {
+      "training_id": "m6-train-27",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": true,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "generalist",
+      "surface_text": "training family 2 route signal generalist variant 3"
+    },
+    {
+      "training_id": "m6-train-28",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": true,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": true
+      },
+      "gold_route": "clarify",
+      "surface_text": "training family 3 route signal clarify variant 3"
+    },
+    {
+      "training_id": "m6-train-29",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": true,
+        "specialist_unavailable": false,
+        "risk_high": true,
+        "paraphrased": false
+      },
+      "gold_route": "abstain",
+      "surface_text": "training family 4 route signal abstain variant 3"
+    },
+    {
+      "training_id": "m6-train-30",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": true,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "fallback",
+      "surface_text": "training family 5 route signal fallback variant 3"
+    },
+    {
+      "training_id": "m6-train-31",
+      "features": {
+        "exact": true,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": true
+      },
+      "gold_route": "specialist_alpha",
+      "surface_text": "training family 6 route signal specialist_alpha variant 3"
+    },
+    {
+      "training_id": "m6-train-32",
+      "features": {
+        "exact": false,
+        "temporal": true,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "specialist_beta",
+      "surface_text": "training family 7 route signal specialist_beta variant 3"
+    },
+    {
+      "training_id": "m6-train-33",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": true,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": true,
+        "paraphrased": false
+      },
+      "gold_route": "generalist",
+      "surface_text": "training family 0 route signal generalist variant 4"
+    },
+    {
+      "training_id": "m6-train-34",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": true,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": true
+      },
+      "gold_route": "clarify",
+      "surface_text": "training family 1 route signal clarify variant 4"
+    },
+    {
+      "training_id": "m6-train-35",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": true,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "abstain",
+      "surface_text": "training family 2 route signal abstain variant 4"
+    },
+    {
+      "training_id": "m6-train-36",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": true,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "fallback",
+      "surface_text": "training family 3 route signal fallback variant 4"
+    },
+    {
+      "training_id": "m6-train-37",
+      "features": {
+        "exact": true,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": true,
+        "paraphrased": true
+      },
+      "gold_route": "specialist_alpha",
+      "surface_text": "training family 4 route signal specialist_alpha variant 4"
+    },
+    {
+      "training_id": "m6-train-38",
+      "features": {
+        "exact": false,
+        "temporal": true,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "specialist_beta",
+      "surface_text": "training family 5 route signal specialist_beta variant 4"
+    },
+    {
+      "training_id": "m6-train-39",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": true,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "generalist",
+      "surface_text": "training family 6 route signal generalist variant 4"
+    },
+    {
+      "training_id": "m6-train-40",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": true,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": true
+      },
+      "gold_route": "clarify",
+      "surface_text": "training family 7 route signal clarify variant 4"
+    },
+    {
+      "training_id": "m6-train-41",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": true,
+        "specialist_unavailable": false,
+        "risk_high": true,
+        "paraphrased": false
+      },
+      "gold_route": "abstain",
+      "surface_text": "training family 0 route signal abstain variant 5"
+    },
+    {
+      "training_id": "m6-train-42",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": true,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "fallback",
+      "surface_text": "training family 1 route signal fallback variant 5"
+    },
+    {
+      "training_id": "m6-train-43",
+      "features": {
+        "exact": true,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": true
+      },
+      "gold_route": "specialist_alpha",
+      "surface_text": "training family 2 route signal specialist_alpha variant 5"
+    },
+    {
+      "training_id": "m6-train-44",
+      "features": {
+        "exact": false,
+        "temporal": true,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "specialist_beta",
+      "surface_text": "training family 3 route signal specialist_beta variant 5"
+    },
+    {
+      "training_id": "m6-train-45",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": true,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": true,
+        "paraphrased": false
+      },
+      "gold_route": "generalist",
+      "surface_text": "training family 4 route signal generalist variant 5"
+    },
+    {
+      "training_id": "m6-train-46",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": true,
+        "evidence_missing": false,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": true
+      },
+      "gold_route": "clarify",
+      "surface_text": "training family 5 route signal clarify variant 5"
+    },
+    {
+      "training_id": "m6-train-47",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": true,
+        "specialist_unavailable": false,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "abstain",
+      "surface_text": "training family 6 route signal abstain variant 5"
+    },
+    {
+      "training_id": "m6-train-48",
+      "features": {
+        "exact": false,
+        "temporal": false,
+        "cross_domain": false,
+        "authority_conflict": false,
+        "evidence_missing": false,
+        "specialist_unavailable": true,
+        "risk_high": false,
+        "paraphrased": false
+      },
+      "gold_route": "fallback",
+      "surface_text": "training family 7 route signal fallback variant 5"
+    }
+  ]
+}

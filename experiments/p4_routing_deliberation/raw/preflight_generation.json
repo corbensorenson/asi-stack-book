@@ -1,0 +1,99 @@
+{
+  "schema_version": "asi_stack.p4_m6_generation_receipt.v1",
+  "phase": "preflight",
+  "run_id": "p4-m6-qwen3-8b-heldout-001-instrument",
+  "prompt_version": "p4-m6-candidate-contract-v1",
+  "model_repository": "mlx-community/Qwen3-8B-4bit",
+  "snapshot_commit": "545dc4251c05440727734bcd94334791f6ab0192",
+  "temperature": 0.0,
+  "seed": 20260723,
+  "retry_count": 0,
+  "task_count": 4,
+  "model_call_count": 4,
+  "labels_loaded_by_generator": false,
+  "rubrics_loaded_by_generator": false,
+  "environment": {
+    "platform": "macOS-15.0-arm64-arm-64bit",
+    "mlx_lm": "0.29.1"
+  },
+  "elapsed_seconds": 190.736204,
+  "records": [
+    {
+      "task_id": "m6-900",
+      "prompt_sha256": "7c480681a6fa60073b207e900c637129a21af07cf3d3de31d754ba128060b997",
+      "raw_sha256": "97969c6b20c759769f328d6aed0f88327b5c97cad47b6241eac9dca730983ceb",
+      "elapsed_seconds": 42.291879,
+      "raw": "{\n  \"task_id\": \"m6-900\",\n  \"run_id\": \"p4-m6-qwen3-8b-heldout-001-instrument\",\n  \"route_proposal\": \"clarify\",\n  \"route_confidence\": 0.7,\n  \"ambiguity\": \"medium\",\n  \"stop_recommendation\": \"initial\",\n  \"residuals\": [\n    \"registry row canonical value not resolved\",\n    \"exact extraction not confirmed\"\n  ],\n  \"candidates\": [\n    {\n      \"role\": \"initial\",\n      \"answer\": \"R900-ATOMIC\"\n    },\n    {\n      \"role\": \"revision\",\n      \"answer\": \"The canonical value from the registry row is R900-ATOMIC.\"\n    },\n    {\n      \"role\": \"deep_revision\",\n      \"answer\": \"The task requires returning the canonical value `R900-ATOMIC` from the registry row.\"\n    },\n    {\n      \"role\": \"specialist_alpha\",\n      \"answer\": \"The registry row contains the canonical value `R900-ATOMIC`, which should be returned.\"\n    },\n    {\n      \"role\": \"specialist_beta\",\n      \"answer\": \"The exact canonical value `R900-ATOMIC` must be extracted and returned.\"\n    },\n    {\n      \"role\": \"tool_agent\",\n      \"answer\": \"The registry row's canonical value `R900-ATOMIC` is to be returned as per the task.\"\n    },\n    {\n      \"role\": \"modular_system\",\n      \"answer\": \"The canonical value `R900-ATOMIC` from the registry row is the required output.\"\n    }\n  ]\n}",
+      "parsed": {
+        "task_id": "m6-900",
+        "run_id": "p4-m6-qwen3-8b-heldout-001-instrument",
+        "route_proposal": "clarify",
+        "route_confidence": 0.7,
+        "ambiguity": "medium",
+        "stop_recommendation": "initial",
+        "residuals": [
+          "registry row canonical value not resolved",
+          "exact extraction not confirmed"
+        ],
+        "candidates": [
+          {
+            "role": "initial",
+            "answer": "R900-ATOMIC"
+          },
+          {
+            "role": "revision",
+            "answer": "The canonical value from the registry row is R900-ATOMIC."
+          },
+          {
+            "role": "deep_revision",
+            "answer": "The task requires returning the canonical value `R900-ATOMIC` from the registry row."
+          },
+          {
+            "role": "specialist_alpha",
+            "answer": "The registry row contains the canonical value `R900-ATOMIC`, which should be returned."
+          },
+          {
+            "role": "specialist_beta",
+            "answer": "The exact canonical value `R900-ATOMIC` must be extracted and returned."
+          },
+          {
+            "role": "tool_agent",
+            "answer": "The registry row's canonical value `R900-ATOMIC` is to be returned as per the task."
+          },
+          {
+            "role": "modular_system",
+            "answer": "The canonical value `R900-ATOMIC` from the registry row is the required output."
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "m6-901",
+      "prompt_sha256": "0694d9f3eaba214aa75dd46ed1a3b8011d50949a68684ee7d00532252308558a",
+      "raw_sha256": "e955e0db1a44756734eb070616aff912db7676a14bc07d1dd954038697728abd",
+      "elapsed_seconds": 48.046916,
+      "raw": "{\n  \"task_id\": \"m6-901\",\n  \"run_id\": \"p4-m6-qwen3-8b-heldout-001-instrument\",\n  \"route_proposal\": \"clarify\",\n  \"route_confidence\": 0.7,\n  \"ambiguity\": \"medium\",\n  \"stop_recommendation\": \"initial\",\n  \"residuals\": [\n    \"immutable identifier extraction from structured data\"\n  ],\n  \"candidates\": [\n    {\n      \"role\": \"initial\",\n      \"answer\": \"Extract the immutable identifier 'id=R901-PARAPHRASED' from the structured data.\"\n    },\n    {\n      \"role\": \"revision\",\n      \"answer\": \"The immutable identifier to be extracted is 'id=R901-PARAPHRASED' as specified in the structured data.\"\n    },\n    {\n      \"role\": \"deep_revision\",\n      \"answer\": \"The structured data explicitly states the immutable identifier as 'id=R901-PARAPHRASED', which should be extracted.\"\n    },\n    {\n      \"role\": \"specialist_alpha\",\n      \"answer\": \"The immutable identifier 'id=R901-PARAPHRASED' is present in the structured data and should be extracted.\"\n    },\n    {\n      \"role\": \"specialist_beta\",\n      \"answer\": \"The identifier 'id=R901-PARAPHRASED' is the correct immutable identifier to be extracted from the structured data.\"\n    },\n    {\n      \"role\": \"tool_agent\",\n      \"answer\": \"The immutable identifier 'id=R901-PARAPHRASED' is the correct value to be extracted from the structured data.\"\n    },\n    {\n      \"role\": analogical_system\",\n      \"answer\": \"The immutable identifier 'id=R901-PARAPHRASED' is the correct value to be extracted from the structured data.\"\n    }\n  ]\n}",
+      "parsed": null
+    },
+    {
+      "task_id": "m6-902",
+      "prompt_sha256": "3971aea241fa13428863cca495eb669947eb37257d929c9a84c470f7bb69509c",
+      "raw_sha256": "c883251e78d17f53ddf05a4cf9093892cec5f4e16fbbd70ca995d09043eed4f7",
+      "elapsed_seconds": 51.856688,
+      "raw": "{\n  \"task_id\": \"m6-902\",\n  \"run_id\": \"p4-m6-qwen3-8b-heldout-001-instrument\",\n  \"route_proposal\": \"clarify\",\n  \"route_confidence\": 0.6,\n  \"ambiguity\": \"high\",\n  \"stop_recommendation\": \"initial\",\n  \"residuals\": [\n    \"alias current_target resolves to `R902-CONTEXT`\",\n    \"stale S1 says OLD-R902-CONTEXT\",\n    \"resolve `that current target` using S2 only\"\n  ],\n  \"candidates\": [\n    {\n      \"role\": \"initial\",\n      \"answer\": \"The alias current_target resolves to `R902-CONTEXT` based on the current snapshot S2.\"\n    },\n    {\n      \"role\": \"revision\",\n      \"answer\": \"The alias current_target is resolved to `R902-CONTEXT` using only the current snapshot S2.\"\n    },\n    {\n      \"role\": \"deep_revision\",\n      \"answer\": \"The alias current_target resolves to `R902-CONTEXT` as per the current snapshot S2, which overrides the stale S1 reference.\"\n    },\n    {\n      \"role\": \"specialist_alpha\",\n      \"answer\": \"The alias current_target resolves to `R902-CONTEXT` using the current snapshot S2, which is the only valid source.\"\n    },\n    {\n      \"role\": analogously,\n      \"answer\": \"The alias current_target resolves to `R902-CONTEXT` using the current snapshot S2, which is the only valid source.\"\n    },\n    {\n      \"role\": \"tool_agent\",\n      \"answer\": \"The alias current_target resolves to `R902-CONTEXT` using the current snapshot S2, which is the only valid source.\"\n    },\n    {\n      \"role\": \"modular_system\",\n      \"answer\": \"The alias current_target resolves to `R902-CONTEXT` using the current snapshot S2, which is the only valid source.\"\n    }\n  ]\n}",
+      "parsed": null
+    },
+    {
+      "task_id": "m6-903",
+      "prompt_sha256": "da3915b6bdcdc780c3a289e9891ada492b90aea1df43860aaadda3d3470e1dc6",
+      "raw_sha256": "b88fca5259aea2cd2f030c83a49cc3b9b38852b7d48decb65e6dfeec4ae69d2a",
+      "elapsed_seconds": 48.394785,
+      "raw": "{\n  \"task_id\": \"m6-903\",\n  \"run_id\": \"p4-m6-qwen3-8b-heldout-001-instrument\",\n  \"route_proposal\": \"clarify\",\n  \"route_confidence\": 0.6,\n  \"ambiguity\": \"high\",\n  \"stop_recommendation\": \"initial\",\n  \"residuals\": [\n    \"unresolved dependency on R903-COMPOSITE\",\n    \"formatting requirement not satisfied\"\n  ],\n  \"candidates\": [\n    {\n      \"role\": \"initial\",\n      \"answer\": \"The task requires extracting and formatting R903-COMPOSITE, but the exact content is not provided. Clarification is needed.\"\n    },\n    {\n      \"role\": \"revision\",\n      \"answer\": \"The task depends on the extraction of R903-COMPOSITE, which is not available. Further details are required to proceed.\"\n    },\n    {\n      \"role\": \"deep_revision\",\n      \"answer\": \"The task is ambiguous due to the lack of explicit data for R903-COMPOSITE. A direct command may bypass route inference, but the required data is missing.\"\n    },\n    {\n      \"role\": \"specialist_alpha\",\n      \"answer\": \"The task requires a two-node plan, but the first node's output (R903-COMPOSITE) is not available. Clarification is needed.\"\n    },\n    {\n      \"role\": \"specialist_beta\",\n      \"answer\": \"The formatting requirement is not met, and the dependency on R903-COMPOSITE is unresolved. Further information is required.\"\n    },\n    {\n      \"role\": \"tool_agent\",\n      \"answer\": \"The task cannot be executed without the data for R903-COMPOSITE. Please provide the necessary information.\"\n    },\n    {\n      \"role\": analogical_system\",\n      \"answer\": \"The task requires a composite request with a specific format, but the required data is missing. Clarification is needed.\"\n    }\n  ]\n}",
+      "parsed": null
+    }
+  ],
+  "claim_attempt_counted": false,
+  "support_state_effect": "none_pending_adjudication",
+  "publication_authority": "none",
+  "release_authority": "none"
+}
