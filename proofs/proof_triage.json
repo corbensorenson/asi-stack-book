@@ -2403,82 +2403,82 @@
     {
       "tag": "lean:safety_cases.complete_case.reaches_readiness_review",
       "chapter_id": "safety-cases-and-structured-assurance",
-      "module": "AsiStackProofs.SafetyCases",
-      "formal_target": "A complete finite case record reaches only readiness review.",
+      "module": "AsiStackProofs.SafetyCaseRefinement",
+      "formal_target": "A reachable case lifecycle binds exact case, context, hazard, evidence, challenge, review, authority, and residual identity before emitting a readiness handoff that assigns no release authority.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite synthetic record routing only; it does not establish case validity, evidence adequacy, safety, readiness, or authority."
+      "rationale": "Reachable six-stage safety-case lifecycle with exact custody, explicit readiness/invalidation boundaries, 30 routes, 35 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:safety_cases.missing_context.retains_draft",
       "chapter_id": "safety-cases-and-structured-assurance",
-      "module": "AsiStackProofs.SafetyCases",
-      "formal_target": "A missing deployment context retains the record as a case draft.",
+      "module": "AsiStackProofs.SafetyCaseRefinement",
+      "formal_target": "Missing deployment context blocks the draft-to-scoped transition without mutating case state.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite context-record routing only; it does not establish context completeness."
+      "rationale": "Reachable six-stage safety-case lifecycle with exact custody, explicit readiness/invalidation boundaries, 30 routes, 35 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:safety_cases.missing_hazard.requires_case_repair",
       "chapter_id": "safety-cases-and-structured-assurance",
-      "module": "AsiStackProofs.SafetyCases",
-      "formal_target": "A missing hazard model requires case repair.",
+      "module": "AsiStackProofs.SafetyCaseRefinement",
+      "formal_target": "Missing hazard or argument structure blocks scope admission without mutating case state.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite hazard-record routing only; it does not validate a hazard model."
+      "rationale": "Reachable six-stage safety-case lifecycle with exact custody, explicit readiness/invalidation boundaries, 30 routes, 35 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:safety_cases.stale_evidence.requires_repair",
       "chapter_id": "safety-cases-and-structured-assurance",
-      "module": "AsiStackProofs.SafetyCases",
-      "formal_target": "A stale evidence dependency requires evidence repair.",
+      "module": "AsiStackProofs.SafetyCaseRefinement",
+      "formal_target": "Missing, stale, or assumption-free evidence blocks the scoped-to-evidenced transition.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite currentness-input routing only; it does not establish evidence quality or live provenance."
+      "rationale": "Reachable six-stage safety-case lifecycle with exact custody, explicit readiness/invalidation boundaries, 30 routes, 35 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:safety_cases.missing_countercase.requires_review",
       "chapter_id": "safety-cases-and-structured-assurance",
-      "module": "AsiStackProofs.SafetyCases",
-      "formal_target": "A missing countercase review requires dedicated review.",
+      "module": "AsiStackProofs.SafetyCaseRefinement",
+      "formal_target": "Missing countercase review or defeater disposition blocks challenge closure.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite review-record routing only; it does not establish countercase adequacy."
+      "rationale": "Reachable six-stage safety-case lifecycle with exact custody, explicit readiness/invalidation boundaries, 30 routes, 35 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:safety_cases.missing_independent_review.requires_review",
       "chapter_id": "safety-cases-and-structured-assurance",
-      "module": "AsiStackProofs.SafetyCases",
-      "formal_target": "A missing independent review cannot reach readiness review.",
+      "module": "AsiStackProofs.SafetyCaseRefinement",
+      "formal_target": "Missing competence records, conflict disclosure, or independent review blocks reviewed status.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite review-record routing only; it does not establish reviewer independence or correctness."
+      "rationale": "Reachable six-stage safety-case lifecycle with exact custody, explicit readiness/invalidation boundaries, 30 routes, 35 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:safety_cases.unresolved_defeater.blocks_affected_release",
       "chapter_id": "safety-cases-and-structured-assurance",
-      "module": "AsiStackProofs.SafetyCases",
-      "formal_target": "An unresolved defeater routes a finite case record to accountable review.",
+      "module": "AsiStackProofs.SafetyCaseRefinement",
+      "formal_target": "An unresolved defeater blocks progression, while later invalidation requires cause, affected paths, and complete descendant invalidation before returning a readiness-bound case to challenge.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite defeater-record routing only; it does not establish defeater correctness, safety, or readiness."
+      "rationale": "Reachable six-stage safety-case lifecycle with exact custody, explicit readiness/invalidation boundaries, 30 routes, 35 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:safety_cases.case_status.cannot_authorize_release",
       "chapter_id": "safety-cases-and-structured-assurance",
-      "module": "AsiStackProofs.SafetyCases",
-      "formal_target": "A case record without explicit separation from release authority is rejected.",
+      "module": "AsiStackProofs.SafetyCaseRefinement",
+      "formal_target": "Case status cannot assign support or an external effect, and missing separation between case status and decision authority rejects the readiness handoff.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite authority-separation routing only; it does not establish runtime enforcement or release correctness."
+      "rationale": "Reachable six-stage safety-case lifecycle with exact custody, explicit readiness/invalidation boundaries, 30 routes, 35 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:model_weight_custody.required.invalid_attestation_blocks_load",

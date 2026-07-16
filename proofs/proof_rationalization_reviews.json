@@ -7258,20 +7258,31 @@
       "excluded_effects": [
         "Hazard-model correctness, evidence adequacy, countercase completeness, reviewer independence, control efficacy, risk reduction, safety, readiness, release authority, deployment, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_safety_case_assurance.py#five-negative-mutations"
+        "scripts/validate_safety_case_assurance.py#five-negative-mutations",
+        "scripts/validate_safety_case_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:safety_cases.complete_case.reaches_readiness_review",
-        "chapter:safety-cases-and-structured-assurance#formalization-hooks"
+        "chapter:safety-cases-and-structured-assurance#formalization-hooks",
+        "docs:safety_case_refinement",
+        "evidence_quality:model_adequacy_dossiers/safety-case-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_safety_case_assurance.py",
         "experiments/safety_case_assurance/fixtures/cases.json",
-        "experiments/safety_case_assurance/results/2026-07-13-local.json"
+        "experiments/safety_case_assurance/results/2026-07-13-local.json",
+        "scripts/validate_safety_case_refinement.py",
+        "schemas/safety_case_refinement.schema.json",
+        "experiments/safety_case_refinement/results/2026-07-15-local.json"
       ],
-      "replacement_refs": [],
+      "replacement_refs": [
+        "proof-model:safety-case-refinement.v1",
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean"
+      ],
       "review_rationale": "Retain because an independently encoded validator recomputes all eight routes, checks exact theorem ownership, and rejects five registry/result mutations; scope remains finite synthetic routing only."
     },
     "lean/AsiStackProofs/SafetyCases.lean::missing_deployment_context_retains_draft": {
@@ -7284,20 +7295,31 @@
       "excluded_effects": [
         "Hazard-model correctness, evidence adequacy, countercase completeness, reviewer independence, control efficacy, risk reduction, safety, readiness, release authority, deployment, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_safety_case_assurance.py#five-negative-mutations"
+        "scripts/validate_safety_case_assurance.py#five-negative-mutations",
+        "scripts/validate_safety_case_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:safety_cases.missing_context.retains_draft",
-        "chapter:safety-cases-and-structured-assurance#formalization-hooks"
+        "chapter:safety-cases-and-structured-assurance#formalization-hooks",
+        "docs:safety_case_refinement",
+        "evidence_quality:model_adequacy_dossiers/safety-case-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_safety_case_assurance.py",
         "experiments/safety_case_assurance/fixtures/cases.json",
-        "experiments/safety_case_assurance/results/2026-07-13-local.json"
+        "experiments/safety_case_assurance/results/2026-07-13-local.json",
+        "scripts/validate_safety_case_refinement.py",
+        "schemas/safety_case_refinement.schema.json",
+        "experiments/safety_case_refinement/results/2026-07-15-local.json"
       ],
-      "replacement_refs": [],
+      "replacement_refs": [
+        "proof-model:safety-case-refinement.v1",
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean"
+      ],
       "review_rationale": "Retain because an independently encoded validator recomputes all eight routes, checks exact theorem ownership, and rejects five registry/result mutations; scope remains finite synthetic routing only."
     },
     "lean/AsiStackProofs/SafetyCases.lean::missing_hazard_model_requires_case_repair": {
@@ -7310,20 +7332,31 @@
       "excluded_effects": [
         "Hazard-model correctness, evidence adequacy, countercase completeness, reviewer independence, control efficacy, risk reduction, safety, readiness, release authority, deployment, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_safety_case_assurance.py#five-negative-mutations"
+        "scripts/validate_safety_case_assurance.py#five-negative-mutations",
+        "scripts/validate_safety_case_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:safety_cases.missing_hazard.requires_case_repair",
-        "chapter:safety-cases-and-structured-assurance#formalization-hooks"
+        "chapter:safety-cases-and-structured-assurance#formalization-hooks",
+        "docs:safety_case_refinement",
+        "evidence_quality:model_adequacy_dossiers/safety-case-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_safety_case_assurance.py",
         "experiments/safety_case_assurance/fixtures/cases.json",
-        "experiments/safety_case_assurance/results/2026-07-13-local.json"
+        "experiments/safety_case_assurance/results/2026-07-13-local.json",
+        "scripts/validate_safety_case_refinement.py",
+        "schemas/safety_case_refinement.schema.json",
+        "experiments/safety_case_refinement/results/2026-07-15-local.json"
       ],
-      "replacement_refs": [],
+      "replacement_refs": [
+        "proof-model:safety-case-refinement.v1",
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean"
+      ],
       "review_rationale": "Retain because an independently encoded validator recomputes all eight routes, checks exact theorem ownership, and rejects five registry/result mutations; scope remains finite synthetic routing only."
     },
     "lean/AsiStackProofs/SafetyCases.lean::stale_evidence_dependency_requires_repair": {
@@ -7336,20 +7369,31 @@
       "excluded_effects": [
         "Hazard-model correctness, evidence adequacy, countercase completeness, reviewer independence, control efficacy, risk reduction, safety, readiness, release authority, deployment, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_safety_case_assurance.py#five-negative-mutations"
+        "scripts/validate_safety_case_assurance.py#five-negative-mutations",
+        "scripts/validate_safety_case_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:safety_cases.stale_evidence.requires_repair",
-        "chapter:safety-cases-and-structured-assurance#formalization-hooks"
+        "chapter:safety-cases-and-structured-assurance#formalization-hooks",
+        "docs:safety_case_refinement",
+        "evidence_quality:model_adequacy_dossiers/safety-case-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_safety_case_assurance.py",
         "experiments/safety_case_assurance/fixtures/cases.json",
-        "experiments/safety_case_assurance/results/2026-07-13-local.json"
+        "experiments/safety_case_assurance/results/2026-07-13-local.json",
+        "scripts/validate_safety_case_refinement.py",
+        "schemas/safety_case_refinement.schema.json",
+        "experiments/safety_case_refinement/results/2026-07-15-local.json"
       ],
-      "replacement_refs": [],
+      "replacement_refs": [
+        "proof-model:safety-case-refinement.v1",
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean"
+      ],
       "review_rationale": "Retain because an independently encoded validator recomputes all eight routes, checks exact theorem ownership, and rejects five registry/result mutations; scope remains finite synthetic routing only."
     },
     "lean/AsiStackProofs/SafetyCases.lean::missing_countercase_review_requires_review": {
@@ -7362,20 +7406,31 @@
       "excluded_effects": [
         "Hazard-model correctness, evidence adequacy, countercase completeness, reviewer independence, control efficacy, risk reduction, safety, readiness, release authority, deployment, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_safety_case_assurance.py#five-negative-mutations"
+        "scripts/validate_safety_case_assurance.py#five-negative-mutations",
+        "scripts/validate_safety_case_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:safety_cases.missing_countercase.requires_review",
-        "chapter:safety-cases-and-structured-assurance#formalization-hooks"
+        "chapter:safety-cases-and-structured-assurance#formalization-hooks",
+        "docs:safety_case_refinement",
+        "evidence_quality:model_adequacy_dossiers/safety-case-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_safety_case_assurance.py",
         "experiments/safety_case_assurance/fixtures/cases.json",
-        "experiments/safety_case_assurance/results/2026-07-13-local.json"
+        "experiments/safety_case_assurance/results/2026-07-13-local.json",
+        "scripts/validate_safety_case_refinement.py",
+        "schemas/safety_case_refinement.schema.json",
+        "experiments/safety_case_refinement/results/2026-07-15-local.json"
       ],
-      "replacement_refs": [],
+      "replacement_refs": [
+        "proof-model:safety-case-refinement.v1",
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean"
+      ],
       "review_rationale": "Retain because an independently encoded validator recomputes all eight routes, checks exact theorem ownership, and rejects five registry/result mutations; scope remains finite synthetic routing only."
     },
     "lean/AsiStackProofs/SafetyCases.lean::missing_independent_review_requires_review": {
@@ -7388,20 +7443,31 @@
       "excluded_effects": [
         "Hazard-model correctness, evidence adequacy, countercase completeness, reviewer independence, control efficacy, risk reduction, safety, readiness, release authority, deployment, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_safety_case_assurance.py#five-negative-mutations"
+        "scripts/validate_safety_case_assurance.py#five-negative-mutations",
+        "scripts/validate_safety_case_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:safety_cases.missing_independent_review.requires_review",
-        "chapter:safety-cases-and-structured-assurance#formalization-hooks"
+        "chapter:safety-cases-and-structured-assurance#formalization-hooks",
+        "docs:safety_case_refinement",
+        "evidence_quality:model_adequacy_dossiers/safety-case-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_safety_case_assurance.py",
         "experiments/safety_case_assurance/fixtures/cases.json",
-        "experiments/safety_case_assurance/results/2026-07-13-local.json"
+        "experiments/safety_case_assurance/results/2026-07-13-local.json",
+        "scripts/validate_safety_case_refinement.py",
+        "schemas/safety_case_refinement.schema.json",
+        "experiments/safety_case_refinement/results/2026-07-15-local.json"
       ],
-      "replacement_refs": [],
+      "replacement_refs": [
+        "proof-model:safety-case-refinement.v1",
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean"
+      ],
       "review_rationale": "Retain because an independently encoded validator recomputes all eight routes, checks exact theorem ownership, and rejects five registry/result mutations; scope remains finite synthetic routing only."
     },
     "lean/AsiStackProofs/SafetyCases.lean::unresolved_defeater_requires_accountable_review": {
@@ -7414,20 +7480,31 @@
       "excluded_effects": [
         "Hazard-model correctness, evidence adequacy, countercase completeness, reviewer independence, control efficacy, risk reduction, safety, readiness, release authority, deployment, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_safety_case_assurance.py#five-negative-mutations"
+        "scripts/validate_safety_case_assurance.py#five-negative-mutations",
+        "scripts/validate_safety_case_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:safety_cases.unresolved_defeater.blocks_affected_release",
-        "chapter:safety-cases-and-structured-assurance#formalization-hooks"
+        "chapter:safety-cases-and-structured-assurance#formalization-hooks",
+        "docs:safety_case_refinement",
+        "evidence_quality:model_adequacy_dossiers/safety-case-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_safety_case_assurance.py",
         "experiments/safety_case_assurance/fixtures/cases.json",
-        "experiments/safety_case_assurance/results/2026-07-13-local.json"
+        "experiments/safety_case_assurance/results/2026-07-13-local.json",
+        "scripts/validate_safety_case_refinement.py",
+        "schemas/safety_case_refinement.schema.json",
+        "experiments/safety_case_refinement/results/2026-07-15-local.json"
       ],
-      "replacement_refs": [],
+      "replacement_refs": [
+        "proof-model:safety-case-refinement.v1",
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean"
+      ],
       "review_rationale": "Retain because an independently encoded validator recomputes all eight routes, checks exact theorem ownership, and rejects five registry/result mutations; scope remains finite synthetic routing only."
     },
     "lean/AsiStackProofs/SafetyCases.lean::case_cannot_launder_release_authority": {
@@ -7440,20 +7517,31 @@
       "excluded_effects": [
         "Hazard-model correctness, evidence adequacy, countercase completeness, reviewer independence, control efficacy, risk reduction, safety, readiness, release authority, deployment, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_safety_case_assurance.py#five-negative-mutations"
+        "scripts/validate_safety_case_assurance.py#five-negative-mutations",
+        "scripts/validate_safety_case_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:safety_cases.case_status.cannot_authorize_release",
-        "chapter:safety-cases-and-structured-assurance#formalization-hooks"
+        "chapter:safety-cases-and-structured-assurance#formalization-hooks",
+        "docs:safety_case_refinement",
+        "evidence_quality:model_adequacy_dossiers/safety-case-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_safety_case_assurance.py",
         "experiments/safety_case_assurance/fixtures/cases.json",
-        "experiments/safety_case_assurance/results/2026-07-13-local.json"
+        "experiments/safety_case_assurance/results/2026-07-13-local.json",
+        "scripts/validate_safety_case_refinement.py",
+        "schemas/safety_case_refinement.schema.json",
+        "experiments/safety_case_refinement/results/2026-07-15-local.json"
       ],
-      "replacement_refs": [],
+      "replacement_refs": [
+        "proof-model:safety-case-refinement.v1",
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean"
+      ],
       "review_rationale": "Retain because an independently encoded validator recomputes all eight routes, checks exact theorem ownership, and rejects five registry/result mutations; scope remains finite synthetic routing only."
     },
     "lean/AsiStackProofs/IntentToExecution.lean::compiled_execution_job_preserves_parent_contract_constraints": {
@@ -35138,226 +35226,314 @@
     "lean:safety_cases.complete_case.reaches_readiness_review": {
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Exact finite complete-record route to readiness review only.",
+      "semantic_role": "Reachable draft-to-readiness safety-case lifecycle with exact identity custody and explicit challenge re-entry after descendant-aware invalidation.",
       "assumptions": [
-        "The fixture fields are truthful, Lean and Python route priority remain aligned, and the validator-owned result is current."
+        "Case/version, context, claim, hazard, evidence, countercase, reviewer, authority, residual, affected-path, and invalidation-completeness records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No real safety case, hazard model, evidence edge, countercase search, reviewer independence, control adequacy, safety, readiness, release, deployment, reproduction, or transfer is established."
+        "Argument truth, hazard completeness, causal relevance, evidence adequacy, reviewer competence or independence, control effectiveness, safety, readiness, release authority, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "dependencies": [
         "safety-cases-and-structured-assurance.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_safety_case_assurance.py#five-negative-mutations"
+        "scripts/validate_safety_case_assurance.py#five-negative-mutations",
+        "scripts/validate_safety_case_refinement.py#mutations"
       ],
       "consumer_refs": [
-        "chapter:safety-cases-and-structured-assurance#formalization-hooks"
+        "chapter:safety-cases-and-structured-assurance#formalization-hooks",
+        "docs:safety_case_refinement",
+        "evidence_quality:model_adequacy_dossiers/safety-case-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_safety_case_assurance.py",
         "experiments/safety_case_assurance/fixtures/cases.json",
-        "experiments/safety_case_assurance/results/2026-07-13-local.json"
+        "experiments/safety_case_assurance/results/2026-07-13-local.json",
+        "scripts/validate_safety_case_refinement.py",
+        "schemas/safety_case_refinement.schema.json",
+        "experiments/safety_case_refinement/results/2026-07-15-local.json"
       ],
-      "replacement_refs": [],
-      "review_rationale": "Retain at the eight-case deterministic assurance-route scope; the route explicitly cannot serve as evidence of safety or release authority."
+      "replacement_refs": [
+        "proof-model:safety-case-refinement.v1",
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean"
+      ],
+      "review_rationale": "Strengthen isolated route reductions with a reachable lifecycle, independent replay, thirty routes, descendant-aware invalidation, and 35 rejecting mutations."
     },
     "lean:safety_cases.missing_context.retains_draft": {
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Exact finite incomplete/challenged-record route away from readiness review or release authority.",
+      "semantic_role": "Reachable draft-to-readiness safety-case lifecycle with exact identity custody and explicit challenge re-entry after descendant-aware invalidation.",
       "assumptions": [
-        "The fixture fields are truthful, Lean and Python route priority remain aligned, and the validator-owned result is current."
+        "Case/version, context, claim, hazard, evidence, countercase, reviewer, authority, residual, affected-path, and invalidation-completeness records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No real safety case, hazard model, evidence edge, countercase search, reviewer independence, control adequacy, safety, readiness, release, deployment, reproduction, or transfer is established."
+        "Argument truth, hazard completeness, causal relevance, evidence adequacy, reviewer competence or independence, control effectiveness, safety, readiness, release authority, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "dependencies": [
         "safety-cases-and-structured-assurance.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_safety_case_assurance.py#five-negative-mutations"
+        "scripts/validate_safety_case_assurance.py#five-negative-mutations",
+        "scripts/validate_safety_case_refinement.py#mutations"
       ],
       "consumer_refs": [
-        "chapter:safety-cases-and-structured-assurance#formalization-hooks"
+        "chapter:safety-cases-and-structured-assurance#formalization-hooks",
+        "docs:safety_case_refinement",
+        "evidence_quality:model_adequacy_dossiers/safety-case-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_safety_case_assurance.py",
         "experiments/safety_case_assurance/fixtures/cases.json",
-        "experiments/safety_case_assurance/results/2026-07-13-local.json"
+        "experiments/safety_case_assurance/results/2026-07-13-local.json",
+        "scripts/validate_safety_case_refinement.py",
+        "schemas/safety_case_refinement.schema.json",
+        "experiments/safety_case_refinement/results/2026-07-15-local.json"
       ],
-      "replacement_refs": [],
-      "review_rationale": "Retain at the eight-case deterministic assurance-route scope; the route explicitly cannot serve as evidence of safety or release authority."
+      "replacement_refs": [
+        "proof-model:safety-case-refinement.v1",
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean"
+      ],
+      "review_rationale": "Strengthen isolated route reductions with a reachable lifecycle, independent replay, thirty routes, descendant-aware invalidation, and 35 rejecting mutations."
     },
     "lean:safety_cases.missing_hazard.requires_case_repair": {
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Exact finite incomplete/challenged-record route away from readiness review or release authority.",
+      "semantic_role": "Reachable draft-to-readiness safety-case lifecycle with exact identity custody and explicit challenge re-entry after descendant-aware invalidation.",
       "assumptions": [
-        "The fixture fields are truthful, Lean and Python route priority remain aligned, and the validator-owned result is current."
+        "Case/version, context, claim, hazard, evidence, countercase, reviewer, authority, residual, affected-path, and invalidation-completeness records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No real safety case, hazard model, evidence edge, countercase search, reviewer independence, control adequacy, safety, readiness, release, deployment, reproduction, or transfer is established."
+        "Argument truth, hazard completeness, causal relevance, evidence adequacy, reviewer competence or independence, control effectiveness, safety, readiness, release authority, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "dependencies": [
         "safety-cases-and-structured-assurance.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_safety_case_assurance.py#five-negative-mutations"
+        "scripts/validate_safety_case_assurance.py#five-negative-mutations",
+        "scripts/validate_safety_case_refinement.py#mutations"
       ],
       "consumer_refs": [
-        "chapter:safety-cases-and-structured-assurance#formalization-hooks"
+        "chapter:safety-cases-and-structured-assurance#formalization-hooks",
+        "docs:safety_case_refinement",
+        "evidence_quality:model_adequacy_dossiers/safety-case-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_safety_case_assurance.py",
         "experiments/safety_case_assurance/fixtures/cases.json",
-        "experiments/safety_case_assurance/results/2026-07-13-local.json"
+        "experiments/safety_case_assurance/results/2026-07-13-local.json",
+        "scripts/validate_safety_case_refinement.py",
+        "schemas/safety_case_refinement.schema.json",
+        "experiments/safety_case_refinement/results/2026-07-15-local.json"
       ],
-      "replacement_refs": [],
-      "review_rationale": "Retain at the eight-case deterministic assurance-route scope; the route explicitly cannot serve as evidence of safety or release authority."
+      "replacement_refs": [
+        "proof-model:safety-case-refinement.v1",
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean"
+      ],
+      "review_rationale": "Strengthen isolated route reductions with a reachable lifecycle, independent replay, thirty routes, descendant-aware invalidation, and 35 rejecting mutations."
     },
     "lean:safety_cases.stale_evidence.requires_repair": {
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Exact finite incomplete/challenged-record route away from readiness review or release authority.",
+      "semantic_role": "Reachable draft-to-readiness safety-case lifecycle with exact identity custody and explicit challenge re-entry after descendant-aware invalidation.",
       "assumptions": [
-        "The fixture fields are truthful, Lean and Python route priority remain aligned, and the validator-owned result is current."
+        "Case/version, context, claim, hazard, evidence, countercase, reviewer, authority, residual, affected-path, and invalidation-completeness records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No real safety case, hazard model, evidence edge, countercase search, reviewer independence, control adequacy, safety, readiness, release, deployment, reproduction, or transfer is established."
+        "Argument truth, hazard completeness, causal relevance, evidence adequacy, reviewer competence or independence, control effectiveness, safety, readiness, release authority, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "dependencies": [
         "safety-cases-and-structured-assurance.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_safety_case_assurance.py#five-negative-mutations"
+        "scripts/validate_safety_case_assurance.py#five-negative-mutations",
+        "scripts/validate_safety_case_refinement.py#mutations"
       ],
       "consumer_refs": [
-        "chapter:safety-cases-and-structured-assurance#formalization-hooks"
+        "chapter:safety-cases-and-structured-assurance#formalization-hooks",
+        "docs:safety_case_refinement",
+        "evidence_quality:model_adequacy_dossiers/safety-case-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_safety_case_assurance.py",
         "experiments/safety_case_assurance/fixtures/cases.json",
-        "experiments/safety_case_assurance/results/2026-07-13-local.json"
+        "experiments/safety_case_assurance/results/2026-07-13-local.json",
+        "scripts/validate_safety_case_refinement.py",
+        "schemas/safety_case_refinement.schema.json",
+        "experiments/safety_case_refinement/results/2026-07-15-local.json"
       ],
-      "replacement_refs": [],
-      "review_rationale": "Retain at the eight-case deterministic assurance-route scope; the route explicitly cannot serve as evidence of safety or release authority."
+      "replacement_refs": [
+        "proof-model:safety-case-refinement.v1",
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean"
+      ],
+      "review_rationale": "Strengthen isolated route reductions with a reachable lifecycle, independent replay, thirty routes, descendant-aware invalidation, and 35 rejecting mutations."
     },
     "lean:safety_cases.missing_countercase.requires_review": {
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Exact finite incomplete/challenged-record route away from readiness review or release authority.",
+      "semantic_role": "Reachable draft-to-readiness safety-case lifecycle with exact identity custody and explicit challenge re-entry after descendant-aware invalidation.",
       "assumptions": [
-        "The fixture fields are truthful, Lean and Python route priority remain aligned, and the validator-owned result is current."
+        "Case/version, context, claim, hazard, evidence, countercase, reviewer, authority, residual, affected-path, and invalidation-completeness records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No real safety case, hazard model, evidence edge, countercase search, reviewer independence, control adequacy, safety, readiness, release, deployment, reproduction, or transfer is established."
+        "Argument truth, hazard completeness, causal relevance, evidence adequacy, reviewer competence or independence, control effectiveness, safety, readiness, release authority, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "dependencies": [
         "safety-cases-and-structured-assurance.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_safety_case_assurance.py#five-negative-mutations"
+        "scripts/validate_safety_case_assurance.py#five-negative-mutations",
+        "scripts/validate_safety_case_refinement.py#mutations"
       ],
       "consumer_refs": [
-        "chapter:safety-cases-and-structured-assurance#formalization-hooks"
+        "chapter:safety-cases-and-structured-assurance#formalization-hooks",
+        "docs:safety_case_refinement",
+        "evidence_quality:model_adequacy_dossiers/safety-case-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_safety_case_assurance.py",
         "experiments/safety_case_assurance/fixtures/cases.json",
-        "experiments/safety_case_assurance/results/2026-07-13-local.json"
+        "experiments/safety_case_assurance/results/2026-07-13-local.json",
+        "scripts/validate_safety_case_refinement.py",
+        "schemas/safety_case_refinement.schema.json",
+        "experiments/safety_case_refinement/results/2026-07-15-local.json"
       ],
-      "replacement_refs": [],
-      "review_rationale": "Retain at the eight-case deterministic assurance-route scope; the route explicitly cannot serve as evidence of safety or release authority."
+      "replacement_refs": [
+        "proof-model:safety-case-refinement.v1",
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean"
+      ],
+      "review_rationale": "Strengthen isolated route reductions with a reachable lifecycle, independent replay, thirty routes, descendant-aware invalidation, and 35 rejecting mutations."
     },
     "lean:safety_cases.missing_independent_review.requires_review": {
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Exact finite incomplete/challenged-record route away from readiness review or release authority.",
+      "semantic_role": "Reachable draft-to-readiness safety-case lifecycle with exact identity custody and explicit challenge re-entry after descendant-aware invalidation.",
       "assumptions": [
-        "The fixture fields are truthful, Lean and Python route priority remain aligned, and the validator-owned result is current."
+        "Case/version, context, claim, hazard, evidence, countercase, reviewer, authority, residual, affected-path, and invalidation-completeness records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No real safety case, hazard model, evidence edge, countercase search, reviewer independence, control adequacy, safety, readiness, release, deployment, reproduction, or transfer is established."
+        "Argument truth, hazard completeness, causal relevance, evidence adequacy, reviewer competence or independence, control effectiveness, safety, readiness, release authority, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "dependencies": [
         "safety-cases-and-structured-assurance.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_safety_case_assurance.py#five-negative-mutations"
+        "scripts/validate_safety_case_assurance.py#five-negative-mutations",
+        "scripts/validate_safety_case_refinement.py#mutations"
       ],
       "consumer_refs": [
-        "chapter:safety-cases-and-structured-assurance#formalization-hooks"
+        "chapter:safety-cases-and-structured-assurance#formalization-hooks",
+        "docs:safety_case_refinement",
+        "evidence_quality:model_adequacy_dossiers/safety-case-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_safety_case_assurance.py",
         "experiments/safety_case_assurance/fixtures/cases.json",
-        "experiments/safety_case_assurance/results/2026-07-13-local.json"
+        "experiments/safety_case_assurance/results/2026-07-13-local.json",
+        "scripts/validate_safety_case_refinement.py",
+        "schemas/safety_case_refinement.schema.json",
+        "experiments/safety_case_refinement/results/2026-07-15-local.json"
       ],
-      "replacement_refs": [],
-      "review_rationale": "Retain at the eight-case deterministic assurance-route scope; the route explicitly cannot serve as evidence of safety or release authority."
+      "replacement_refs": [
+        "proof-model:safety-case-refinement.v1",
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean"
+      ],
+      "review_rationale": "Strengthen isolated route reductions with a reachable lifecycle, independent replay, thirty routes, descendant-aware invalidation, and 35 rejecting mutations."
     },
     "lean:safety_cases.unresolved_defeater.blocks_affected_release": {
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Exact finite incomplete/challenged-record route away from readiness review or release authority.",
+      "semantic_role": "Reachable draft-to-readiness safety-case lifecycle with exact identity custody and explicit challenge re-entry after descendant-aware invalidation.",
       "assumptions": [
-        "The fixture fields are truthful, Lean and Python route priority remain aligned, and the validator-owned result is current."
+        "Case/version, context, claim, hazard, evidence, countercase, reviewer, authority, residual, affected-path, and invalidation-completeness records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No real safety case, hazard model, evidence edge, countercase search, reviewer independence, control adequacy, safety, readiness, release, deployment, reproduction, or transfer is established."
+        "Argument truth, hazard completeness, causal relevance, evidence adequacy, reviewer competence or independence, control effectiveness, safety, readiness, release authority, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "dependencies": [
         "safety-cases-and-structured-assurance.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_safety_case_assurance.py#five-negative-mutations"
+        "scripts/validate_safety_case_assurance.py#five-negative-mutations",
+        "scripts/validate_safety_case_refinement.py#mutations"
       ],
       "consumer_refs": [
-        "chapter:safety-cases-and-structured-assurance#formalization-hooks"
+        "chapter:safety-cases-and-structured-assurance#formalization-hooks",
+        "docs:safety_case_refinement",
+        "evidence_quality:model_adequacy_dossiers/safety-case-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_safety_case_assurance.py",
         "experiments/safety_case_assurance/fixtures/cases.json",
-        "experiments/safety_case_assurance/results/2026-07-13-local.json"
+        "experiments/safety_case_assurance/results/2026-07-13-local.json",
+        "scripts/validate_safety_case_refinement.py",
+        "schemas/safety_case_refinement.schema.json",
+        "experiments/safety_case_refinement/results/2026-07-15-local.json"
       ],
-      "replacement_refs": [],
-      "review_rationale": "Retain at the eight-case deterministic assurance-route scope; the route explicitly cannot serve as evidence of safety or release authority."
+      "replacement_refs": [
+        "proof-model:safety-case-refinement.v1",
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean"
+      ],
+      "review_rationale": "Strengthen isolated route reductions with a reachable lifecycle, independent replay, thirty routes, descendant-aware invalidation, and 35 rejecting mutations."
     },
     "lean:safety_cases.case_status.cannot_authorize_release": {
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Exact finite incomplete/challenged-record route away from readiness review or release authority.",
+      "semantic_role": "Reachable draft-to-readiness safety-case lifecycle with exact identity custody and explicit challenge re-entry after descendant-aware invalidation.",
       "assumptions": [
-        "The fixture fields are truthful, Lean and Python route priority remain aligned, and the validator-owned result is current."
+        "Case/version, context, claim, hazard, evidence, countercase, reviewer, authority, residual, affected-path, and invalidation-completeness records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No real safety case, hazard model, evidence edge, countercase search, reviewer independence, control adequacy, safety, readiness, release, deployment, reproduction, or transfer is established."
+        "Argument truth, hazard completeness, causal relevance, evidence adequacy, reviewer competence or independence, control effectiveness, safety, readiness, release authority, deployed invalidation, transfer, and chapter-core support are excluded."
       ],
       "dependencies": [
         "safety-cases-and-structured-assurance.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean#countermodels"
+      ],
       "mutation_refs": [
-        "scripts/validate_safety_case_assurance.py#five-negative-mutations"
+        "scripts/validate_safety_case_assurance.py#five-negative-mutations",
+        "scripts/validate_safety_case_refinement.py#mutations"
       ],
       "consumer_refs": [
-        "chapter:safety-cases-and-structured-assurance#formalization-hooks"
+        "chapter:safety-cases-and-structured-assurance#formalization-hooks",
+        "docs:safety_case_refinement",
+        "evidence_quality:model_adequacy_dossiers/safety-case-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_safety_case_assurance.py",
         "experiments/safety_case_assurance/fixtures/cases.json",
-        "experiments/safety_case_assurance/results/2026-07-13-local.json"
+        "experiments/safety_case_assurance/results/2026-07-13-local.json",
+        "scripts/validate_safety_case_refinement.py",
+        "schemas/safety_case_refinement.schema.json",
+        "experiments/safety_case_refinement/results/2026-07-15-local.json"
       ],
-      "replacement_refs": [],
-      "review_rationale": "Retain at the eight-case deterministic assurance-route scope; the route explicitly cannot serve as evidence of safety or release authority."
+      "replacement_refs": [
+        "proof-model:safety-case-refinement.v1",
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean"
+      ],
+      "review_rationale": "Strengthen isolated route reductions with a reachable lifecycle, independent replay, thirty routes, descendant-aware invalidation, and 35 rejecting mutations."
     },
     "lean:intent_execution.contracts.operational_invariant": {
       "dependencies": [

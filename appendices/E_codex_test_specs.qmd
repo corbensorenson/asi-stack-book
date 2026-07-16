@@ -456,6 +456,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `safety-cases-and-structured-assurance` | Safety Cases and Structured Assurance | Stale evidence, countercase, independent-review, and unresolved-defeater routes | planned | not run |
 | `safety-cases-and-structured-assurance` | Safety Cases and Structured Assurance | Authority-laundering rejection | planned | not run |
 | `safety-cases-and-structured-assurance` | Safety Cases and Structured Assurance | Eight-case digest-bound synthetic assurance bridge | planned | not run |
+| `safety-cases-and-structured-assurance` | Safety Cases and Structured Assurance | Safety-case lifecycle refinement | implemented | passes the exact eight-case suite, 30 routes, six reachable stages, and 35/35 rejecting mutations; one readiness handoff is invalidated back to challenge with no support or external effect; no argument-truth, hazard-completeness, evidence-adequacy, reviewer-independence, safety, readiness, deployed-invalidation, transfer, or support claim |
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | DPO/offline preference baseline test | planned | not run |
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | PPO online RL baseline test | planned | not run |
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | GRPO/RLOO toy math reward test | planned | not run |

@@ -17886,56 +17886,61 @@
             "Missing context and hazard-model negative controls",
             "Stale evidence, countercase, independent-review, and unresolved-defeater routes",
             "Authority-laundering rejection",
-            "Eight-case digest-bound synthetic assurance bridge"
+            "Eight-case digest-bound synthetic assurance bridge",
+            {
+              "name": "Safety-case lifecycle refinement",
+              "implementation_status": "implemented",
+              "result_status": "passes the exact eight-case suite, 30 routes, six reachable stages, and 35/35 rejecting mutations; one readiness handoff is invalidated back to challenge with no support or external effect; no argument-truth, hazard-completeness, evidence-adequacy, reviewer-independence, safety, readiness, deployed-invalidation, transfer, or support claim"
+            }
           ],
-          "lean_module": "AsiStackProofs.SafetyCases",
+          "lean_module": "AsiStackProofs.SafetyCases; AsiStackProofs.SafetyCaseRefinement",
           "proof_targets": [
             {
               "tag": "lean:safety_cases.complete_case.reaches_readiness_review",
-              "module": "AsiStackProofs.SafetyCases",
-              "target": "A complete finite case record reaches only readiness review.",
+              "module": "AsiStackProofs.SafetyCaseRefinement",
+              "target": "A reachable case lifecycle binds exact case, context, hazard, evidence, challenge, review, authority, and residual identity before emitting a readiness handoff that assigns no release authority.",
               "status": "implemented"
             },
             {
               "tag": "lean:safety_cases.missing_context.retains_draft",
-              "module": "AsiStackProofs.SafetyCases",
-              "target": "A missing deployment context retains the record as a case draft.",
+              "module": "AsiStackProofs.SafetyCaseRefinement",
+              "target": "Missing deployment context blocks the draft-to-scoped transition without mutating case state.",
               "status": "implemented"
             },
             {
               "tag": "lean:safety_cases.missing_hazard.requires_case_repair",
-              "module": "AsiStackProofs.SafetyCases",
-              "target": "A missing hazard model requires case repair.",
+              "module": "AsiStackProofs.SafetyCaseRefinement",
+              "target": "Missing hazard or argument structure blocks scope admission without mutating case state.",
               "status": "implemented"
             },
             {
               "tag": "lean:safety_cases.stale_evidence.requires_repair",
-              "module": "AsiStackProofs.SafetyCases",
-              "target": "A stale evidence dependency requires evidence repair.",
+              "module": "AsiStackProofs.SafetyCaseRefinement",
+              "target": "Missing, stale, or assumption-free evidence blocks the scoped-to-evidenced transition.",
               "status": "implemented"
             },
             {
               "tag": "lean:safety_cases.missing_countercase.requires_review",
-              "module": "AsiStackProofs.SafetyCases",
-              "target": "A missing countercase review requires dedicated review.",
+              "module": "AsiStackProofs.SafetyCaseRefinement",
+              "target": "Missing countercase review or defeater disposition blocks challenge closure.",
               "status": "implemented"
             },
             {
               "tag": "lean:safety_cases.missing_independent_review.requires_review",
-              "module": "AsiStackProofs.SafetyCases",
-              "target": "A missing independent review cannot reach readiness review.",
+              "module": "AsiStackProofs.SafetyCaseRefinement",
+              "target": "Missing competence records, conflict disclosure, or independent review blocks reviewed status.",
               "status": "implemented"
             },
             {
               "tag": "lean:safety_cases.unresolved_defeater.blocks_affected_release",
-              "module": "AsiStackProofs.SafetyCases",
-              "target": "An unresolved defeater routes a finite case record to accountable review.",
+              "module": "AsiStackProofs.SafetyCaseRefinement",
+              "target": "An unresolved defeater blocks progression, while later invalidation requires cause, affected paths, and complete descendant invalidation before returning a readiness-bound case to challenge.",
               "status": "implemented"
             },
             {
               "tag": "lean:safety_cases.case_status.cannot_authorize_release",
-              "module": "AsiStackProofs.SafetyCases",
-              "target": "A case record without explicit separation from release authority is rejected.",
+              "module": "AsiStackProofs.SafetyCaseRefinement",
+              "target": "Case status cannot assign support or an external effect, and missing separation between case status and decision authority rejects the readiness handoff.",
               "status": "implemented"
             }
           ],

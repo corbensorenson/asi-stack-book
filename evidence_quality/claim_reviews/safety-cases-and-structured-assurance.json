@@ -5,19 +5,19 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/safety-cases-and-structured-assurance.qmd",
     "structured_atoms_reviewed": 79,
-    "prose_candidates_adjudicated": 47,
+    "prose_candidates_adjudicated": 48,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete chapter, all four exact source mappings, both assurance schemas, eight digest-bound synthetic records, five rejecting mutations, all eight proof targets, all eight SafetyCases declarations, every manifest atom, every prose candidate, test plan, source crosswalk, summary, and handoff. The sweep made the deployment-context-, hazard-, claim-, strategy-, evidence-, assumption-, defeater-, safeguard-, threshold-, readiness-, authority-, release-path-, residual-, version-, and time-specific Assurance Argument Compilation Packet the distinct owner; expanded it to eighteen mechanisms, twelve interfaces, eighteen invariants, and eighteen failure modes; preserved zero chapter-core effect; and froze the natural multi-hazard, seeded-fault, countercase, semantic/evidence, causal, institutional-reproduction, and transfer campaign."
+    "review_note": "Reviewed the complete chapter, all four exact source mappings, the original two assurance schemas and eight-case/five-mutation route bridge, the six-stage/30-route/35-mutation SafetyCaseRefinement package, all eight proof targets, all eight legacy SafetyCases declarations, every manifest atom, every prose candidate, test plan, source crosswalk, summary, and handoff. The sweep made the deployment-context-, hazard-, claim-, strategy-, evidence-, assumption-, defeater-, safeguard-, threshold-, readiness-, authority-, release-path-, residual-, version-, and time-specific Assurance Argument Compilation Packet the distinct owner; preserved zero chapter-core effect; and froze the natural multi-hazard, seeded-fault, countercase, semantic/evidence, causal, institutional-reproduction, and transfer campaign."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
     "scope": {
       "population": "Named systems, versions, deployment contexts, populations, hazards, claims, strategies, evidence, assumptions, defeaters, safeguards, thresholds, readiness states, authorities, release paths, residuals, reviewers, organizations, and times.",
-      "environment": "Four exact mappings; two schemas; eight digest-bound synthetic records—one readiness-review and seven negative routes; five mutations; eight targets; eight finite derived declarations. No real case, hazard analysis, threat model, evidence review, countercase search, safeguard verification, independent institution, decision, release, incident, reproduction, or transfer is represented.",
+      "environment": "Four exact mappings; the original two schemas and eight digest-bound synthetic records; a six-stage versioned refinement with 30 routes and 35 rejecting mutations; eight targets; and eight finite legacy declarations. No real case, hazard analysis, threat model, evidence review, countercase search, safeguard verification, independent institution, decision, release, incident, reproduction, or transfer is represented.",
       "model": "A scoped Assurance Argument Compilation Packet over typed nodes and bounded edges, authoritative dependencies, assumptions, hazards, countercases, review, acceptance, residuals, versioning, invalidation, disclosure, routing, maintenance, and retirement.",
       "authority": "This chapter owns assurance-argument compilation only. Evidence, benchmark/observation, threshold, readiness/residual, artifact, runtime/security/oversight, data/supply chain, formal, normative/governance, resource, incident/rollback/release, and publication owners retain their boundaries.",
       "time": "Semantic review current through 2026-07-15; system, context, population, hazard, evidence, safeguard, threshold, policy, reviewer, criterion, authority, release path, residual, or time changes invalidate affected case descendants.",
-      "artifact": "Chapter and manifest; four mappings; two schemas; eight synthetic records; five mutations; validator; eight proof targets; eight declarations; semantic review; and future natural causal-transfer campaign."
+      "artifact": "Chapter and manifest; four mappings; original route fixture/result; versioned refinement model, schema, result, validator, receipt, and adequacy dossier; eight proof targets; eight legacy declarations; semantic review; and future natural causal-transfer campaign."
     },
     "current_disposition": "retain_argument_with_synthetic_assurance_routing_fixture_no_core_effect_pending_natural_independent_multi_hazard_campaign",
     "assumptions": [
@@ -76,7 +76,10 @@
       "fixture": "experiments/safety_case_assurance/fixtures/cases.json",
       "result": "experiments/safety_case_assurance/results/2026-07-13-local.json",
       "validator": "scripts/validate_safety_case_assurance.py",
-      "lean": "lean/AsiStackProofs/SafetyCases.lean",
+      "lean": "lean/AsiStackProofs/SafetyCases.lean; lean/AsiStackProofs/SafetyCaseRefinement.lean",
+      "refinement_result": "experiments/safety_case_refinement/results/2026-07-15-local.json",
+      "refinement_validator": "scripts/validate_safety_case_refinement.py",
+      "refinement_dossier": "evidence_quality/model_adequacy_dossiers/safety-case-refinement.md",
       "manifest": "book_structure.json"
     },
     "contrary_evidence": [
@@ -326,6 +329,10 @@
     "safety-cases-and-structured-assurance.prose.8069feab2e7d": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "safety-cases-and-structured-assurance.prose.710c29da170f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as a line-wrapped lifecycle restatement of the already atomized invalidation obligation; it creates no independent claim or support effect."
     }
   },
   "non_claims": [

@@ -81,6 +81,9 @@ PROCEDURAL_MEMORY_DOSSIER = "evidence_quality/model_adequacy_dossiers/procedural
 ROUTING_RESULT = "experiments/routing_refinement/results/2026-07-15-local.json"
 ROUTING_RECEIPT = "docs/routing_refinement.md"
 ROUTING_DOSSIER = "evidence_quality/model_adequacy_dossiers/routing-refinement.md"
+SAFETY_CASE_RESULT = "experiments/safety_case_refinement/results/2026-07-15-local.json"
+SAFETY_CASE_RECEIPT = "docs/safety_case_refinement.md"
+SAFETY_CASE_DOSSIER = "evidence_quality/model_adequacy_dossiers/safety-case-refinement.md"
 READINESS_RESULT = "experiments/readiness_refinement/results/2026-07-15-local.json"
 READINESS_RECEIPT = "docs/readiness_refinement.md"
 READINESS_DOSSIER = "evidence_quality/model_adequacy_dossiers/readiness-refinement.md"
@@ -248,6 +251,9 @@ def snapshot() -> dict:
         "routing_result": load(ROUTING_RESULT),
         "routing_receipt": text(ROUTING_RECEIPT),
         "routing_dossier": text(ROUTING_DOSSIER),
+        "safety_case_result": load(SAFETY_CASE_RESULT),
+        "safety_case_receipt": text(SAFETY_CASE_RECEIPT),
+        "safety_case_dossier": text(SAFETY_CASE_DOSSIER),
         "readiness_result": load(READINESS_RESULT),
         "readiness_receipt": text(READINESS_RECEIPT),
         "readiness_dossier": text(READINESS_DOSSIER),
@@ -1078,8 +1084,8 @@ def errors(data: dict) -> list[str]:
 
     expected_claim_ledger_contract = {
         "current_missing_or_changed_theorem_count":296,
-        "current_missing_or_changed_target_count":123,
-        "current_live_theorem_declaration_count":1243,
+        "current_missing_or_changed_target_count":131,
+        "current_live_theorem_declaration_count":1253,
         "current_live_proof_target_count":298,
         "claim_ledger_model_path":"lean/AsiStackProofs/ClaimLedgerRefinement.lean",
         "claim_ledger_dossier_path":CLAIM_LEDGER_DOSSIER,
@@ -1305,6 +1311,32 @@ def errors(data: dict) -> list[str]:
     routing_chapter=next((row for row in structure_rows if row.get("id")=="routing-heads-and-specialist-cores"),{})
     routing_modules={row.get("module") for row in routing_chapter.get("proof_targets",[])}
     if routing_modules!={"AsiStackProofs.RoutingRefinement"}: out.append("Routing/MoECOT public targets do not all resolve to refinement")
+
+    expected_safety_case_contract={
+        "safety_case_model_path":"lean/AsiStackProofs/SafetyCaseRefinement.lean",
+        "safety_case_dossier_path":SAFETY_CASE_DOSSIER,
+        "safety_case_consumer_path":SAFETY_CASE_RECEIPT,
+        "safety_case_result_path":SAFETY_CASE_RESULT,
+        "safety_case_state":"validated_finite_authored_case_readiness_invalidation_lifecycle_not_truth_safe_or_deployed",
+        "safety_case_inherited_case_count":8,"safety_case_reachable_stage_count":6,
+        "safety_case_route_case_count":30,"safety_case_mutation_rejection_count":35,
+        "safety_case_retained_legacy_theorem_count":8,"safety_case_readiness_handoff_count":1,
+        "safety_case_invalidation_count":1,"safety_case_support_state_effect":"none"}
+    for key,value in expected_safety_case_contract.items():
+        if proof_contract.get(key)!=value: out.append(f"safety-case contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
+    safety_case=data["safety_case_result"]
+    for key,value in {"reachable_stage_count":6,"route_case_count":30,"mutation_count":35,
+                      "mutation_rejection_count":35,"support_state_effect":"none"}.items():
+        if safety_case.get(key)!=value: out.append(f"safety-case result drifted: {key}")
+    if safety_case.get("input_suite")!={"suite_id":"safety_case_assurance","case_count":8,"passed_count":8}:
+        out.append("safety-case inherited-suite counts drifted")
+    for phrase in ["six-stage case lifecycle", "all 30 lifecycle routes", "35/35", "Support-state effect is exactly `none`"]:
+        if phrase.casefold() not in data["safety_case_receipt"].casefold(): out.append(f"safety-case receipt missing exact boundary: {phrase}")
+    for phrase in ["Reachable model", "Assumptions, exclusions, and adequacy verdict", "Inadequate for assurance-argument truth", "Support-state effect: exactly `none`"]:
+        if phrase.casefold() not in data["safety_case_dossier"].casefold(): out.append(f"safety-case dossier missing adequacy boundary: {phrase}")
+    safety_case_chapter=next((row for row in structure_rows if row.get("id")=="safety-cases-and-structured-assurance"),{})
+    if {row.get("module") for row in safety_case_chapter.get("proof_targets",[])}!={"AsiStackProofs.SafetyCaseRefinement"}:
+        out.append("Safety Case public targets do not all resolve to refinement")
 
     expected_readiness_contract={
         "readiness_model_path":"lean/AsiStackProofs/ReadinessRefinement.lean","readiness_dossier_path":READINESS_DOSSIER,
@@ -1701,6 +1733,10 @@ def main() -> None:
     routing_support["routing_result"]["support_state_effect"] = "prototype-backed"
     mutations.append(("routing support laundering", routing_support))
 
+    safety_case_support = copy.deepcopy(base)
+    safety_case_support["safety_case_result"]["support_state_effect"] = "prototype-backed"
+    mutations.append(("safety-case support laundering", safety_case_support))
+
     readiness_support = copy.deepcopy(base)
     readiness_support["readiness_result"]["support_state_effect"] = "prototype-backed"
     mutations.append(("readiness support laundering", readiness_support))
@@ -1767,7 +1803,7 @@ def main() -> None:
         "55 live chapter-core programs across CF-01..CF-08 with a frozen 54-chapter activation baseline, exact proof/evidence/reader baseline, "
         "proof rationalization and argument-exit contracts, maintained X Article and exact 5:2 header contract, "
         "no support or release effect, no external-human gate, same-transaction successor continuity, "
-        "validated shared-safety, Cognitive Kernel ABI, integrated reference trace, concrete-schema refinement, concurrent effect, reachable stack-boundary, Intent-to-Execution vertical, Authority grant-to-effect, Human Intent resolution, Command semantic-interface, Cognitive Compilation obligation-refinement, Virtual Context binding/materialization/fault, Context Certificate provenance/lifecycle, Context Transaction snapshot/store, Verification Bandwidth evidence-gate, Claim Ledger append-only, Proof-Carrying Claims target-to-writeback, Tribunal versioned-verdict/appeal, Typed Job versioned execution/closure, Artifact record-reality/trust, Procedural Memory promotion/retirement, Routing/MoECOT request-to-closure, Readiness candidate-to-terminal, Hive policy-to-closure, Compact Generation source-to-closure, Fast Generation request-to-closure, Governed Deliberation request-to-closure, Artifact Compression artifact-to-consumption, and Resource Economics allocation-and-simulation-transport receipts, bounded WIP and first-campaign/SOTA entry gates, and 48 rejecting mutations."
+        "validated shared-safety, Cognitive Kernel ABI, integrated reference trace, concrete-schema refinement, concurrent effect, reachable stack-boundary, Intent-to-Execution vertical, Authority grant-to-effect, Human Intent resolution, Command semantic-interface, Cognitive Compilation obligation-refinement, Virtual Context binding/materialization/fault, Context Certificate provenance/lifecycle, Context Transaction snapshot/store, Verification Bandwidth evidence-gate, Claim Ledger append-only, Proof-Carrying Claims target-to-writeback, Tribunal versioned-verdict/appeal, Typed Job versioned execution/closure, Artifact record-reality/trust, Procedural Memory promotion/retirement, Routing/MoECOT request-to-closure, Safety Case readiness/invalidation, Readiness candidate-to-terminal, Hive policy-to-closure, Compact Generation source-to-closure, Fast Generation request-to-closure, Governed Deliberation request-to-closure, Artifact Compression artifact-to-consumption, and Resource Economics allocation-and-simulation-transport receipts, bounded WIP and first-campaign/SOTA entry gates, and 49 rejecting mutations."
     )
 
 

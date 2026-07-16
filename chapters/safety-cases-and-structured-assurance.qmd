@@ -542,6 +542,7 @@ effective controls, safe system, or authorized deployment.
 | Countercase and independent-review routes | Prevent progression when challenge review or independent review is absent. | Implemented in Lean and the synthetic bridge. |
 | Defeater and residual route | Send an unresolved challenge or ownerless residual to accountable review. | Implemented in Lean and the synthetic bridge. |
 | Authority-laundering negative control | Reject a requested path when case status is treated as release authority. | Implemented in Lean and the synthetic bridge. |
+| Versioned lifecycle and invalidation | Bind case identity through scope, evidence, challenge, review, and readiness handoff; require affected-path and descendant invalidation before returning a readiness-bound case to challenge. | Implemented in `AsiStackProofs.SafetyCaseRefinement`; exact 8-case suite, 30 routes, and 35/35 mutations pass locally with no support or external effect. |
 | Real public-safe assurance workflow | Compile and independently review actual bounded case fragments under preregistration. | Not run; exact campaign contract is specified above. |
 
 ## Formalization hooks
@@ -563,16 +564,27 @@ reviewer is independent, that a control works, that a system is safe, or that a
 release may proceed. They establish only deterministic consequences of the
 modeled Boolean record and preserve a separate readiness-review boundary.
 
+`AsiStackProofs.SafetyCaseRefinement` now supplies the stronger consumer model
+for all eight hooks. It preserves exact case/version, context, claim, hazard,
+evidence, countercase, reviewer, authority, and residual identity across six
+reachable stages. A complete record emits only a readiness handoff. A later
+invalidation needs a cause, affected paths, and complete descendant
+invalidation, then returns the case to challenge. The independent consumer
+reruns the original eight fixtures, reaches all 30 routes, rejects all 35
+registered mutations, and records zero support assignments and zero external
+effects.
+
 ### Formal adequacy audit
 
-All eight declarations are derived finite reductions of one hand-authored
-`SafetyCaseRouteFor` decision tree. They are useful route-precedence and
-authority-separation regressions, but they do not formalize argument semantics,
-hazard completeness, causal risk, evidence adequacy, reviewer independence,
-control behavior, uncertainty, institutional incentives, runtime enforcement,
-or deployment effects. The module contains no direct empirical projection and
-no refinement link to a real assurance tool or decision process. Its authority
-ends at deterministic Boolean record routing.
+The original eight declarations remain useful finite route-precedence and
+authority-separation regressions, but they are reductions of one hand-authored
+`SafetyCaseRouteFor` tree. The refinement adds reachable versioned state,
+identity custody, rejection-without-mutation, explicit handoff accounting, and
+challenge re-entry after invalidation; it still does not formalize argument
+semantics, hazard completeness, causal risk, evidence adequacy, reviewer
+independence, control behavior, uncertainty, institutional incentives, runtime
+enforcement, or deployment effects. Its authority ends at one finite authored
+lifecycle and local consumer.
 
 ## Source crosswalk
 

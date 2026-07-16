@@ -1,10 +1,17 @@
 # Changelog
 
+## 2026-07-15 — Replace Safety Case route islands with a versioned invalidation lifecycle
+
+- Added `AsiStackProofs.SafetyCaseRefinement`, a six-stage draft-to-readiness model that preserves exact case/version, context, claim, hazard, evidence, countercase, reviewer, authority, and residual identity.
+- Added an independent consumer that preserves the exact eight-case assurance suite, reaches all 30 routes, and rejects 35/35 identity, lifecycle, replay, authority, defeater, review, and invalidation mutations.
+- Exercised one readiness handoff followed by one cause-, affected-path-, and descendant-complete invalidation back to challenge; the witness records zero support assignments and zero external effects.
+- Rebound all eight Safety Case proof targets to the stronger model and added a result schema, adequacy dossier, roadmap receipt, chapter reconciliation, and deep validation unit without claiming argument truth, hazard completeness, evidence adequacy, reviewer independence, control efficacy, safety, readiness, deployed invalidation, transfer, or support.
+
 ## 2026-07-15 — Reconcile prose-review identity after proof-surface rewrites
 
 - Regenerated the claim/prose corpus after the current proof and reader-surface refinements and reconciled twenty-five affected chapter packets instead of deleting stale sentence-hash decisions.
 - Preserved thirty-seven retired prose-review identities with their original sentence, source pointer, disposition, retirement reason, and any nearest current semantic successors; successor links do not assert textual identity.
-- Semantically adjudicated fifty-four current candidates, corrected every completed-sweep count, and refreshed the registry to 3,730 structured atoms, 2,712 prose candidates, fifty-four dossiers, and zero pending candidates without changing support state.
+- Semantically adjudicated fifty-five current candidates, corrected every completed-sweep count, and refreshed the registry to 3,730 structured atoms, 2,713 prose candidates, fifty-four dossiers, and zero pending candidates without changing support state.
 - Extended the chapter-review schema and validator so retired IDs must hash to their preserved sentence, cannot still be current, cannot escape chapter ownership, and may point only to current candidates; thirteen negative mutations now include retired-hash and successor laundering controls.
 - Corrected the reader-spine section parser to respect Markdown heading hierarchy, removed reader-facing manuscript meta-language, and restored governed-deliberation, Theseus, prototype-roadmap, living-book, and research-agenda prose floors; all fifty-five reader chapters now pass with a 2,083-word minimum.
 - Reconciled the proof envelope to the current 298-target, 90-module, 1,243-declaration surface; retired two obsolete Resource Economics summary counts, refreshed semantic-adequacy and traceability audits, and allowed target consolidation only when every affected target has reviewed lineage to the stronger current module.
@@ -4973,7 +4980,7 @@
 - Boundary: these artifacts prove only finite record-routing and schema shape.
   They do not admit training data, run a training loop, measure data quality,
   establish leakage absence, verify unlearning, or promote a chapter core claim.
-- Proof-depth surface synchronization: Current proof-depth snapshot: 298 proof targets, 90 Lean modules, 1243 theorem declarations, 882 derived/decomposed, 208 direct/projection, 153 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Proof-depth surface synchronization: Current proof-depth snapshot: 298 proof targets, 91 Lean modules, 1253 theorem declarations, 885 derived/decomposed, 214 direct/projection, 154 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 
 ## 2026-07-10 - Freeze the v1.0 reader candidate before active-spine expansion
 

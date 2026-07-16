@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 54,
-    "candidate_count": 2712,
+    "candidate_count": 2713,
     "review_state_counts": {
       "duplicate_of_atom": 1229,
       "editorial_or_question": 51,
       "historical_or_source_report": 253,
       "material_atom": 3,
-      "nonmaterial_explanation": 1176
+      "nonmaterial_explanation": 1177
     }
   },
   "candidates": [
@@ -44118,7 +44118,7 @@
     {
       "candidate_id": "safety-cases-and-structured-assurance.prose.a76d205c8038",
       "chapter_id": "safety-cases-and-structured-assurance",
-      "source": "chapters/safety-cases-and-structured-assurance.qmd:560",
+      "source": "chapters/safety-cases-and-structured-assurance.qmd:561",
       "sentence": "These finite formal routes do not prove that a defeater is correct, that a case",
       "cues": [
         "prove"
@@ -44135,9 +44135,28 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "safety-cases-and-structured-assurance.prose.710c29da170f",
+      "chapter_id": "safety-cases-and-structured-assurance",
+      "source": "chapters/safety-cases-and-structured-assurance.qmd:571",
+      "sentence": "invalidation needs a cause, affected paths, and complete descendant",
+      "cues": [
+        "cause"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Semantically reviewed as a line-wrapped lifecycle restatement of the already atomized invalidation obligation; it creates no independent claim or support effect.",
+      "target_atom_id": null
+    },
+    {
       "candidate_id": "safety-cases-and-structured-assurance.prose.0c040728acde",
       "chapter_id": "safety-cases-and-structured-assurance",
-      "source": "chapters/safety-cases-and-structured-assurance.qmd:595",
+      "source": "chapters/safety-cases-and-structured-assurance.qmd:607",
       "sentence": "It cannot certify a benchmark, validate a proof's modeling",
       "cues": [
         "cannot"
@@ -44156,7 +44175,7 @@
     {
       "candidate_id": "safety-cases-and-structured-assurance.prose.8069feab2e7d",
       "chapter_id": "safety-cases-and-structured-assurance",
-      "source": "chapters/safety-cases-and-structured-assurance.qmd:602",
+      "source": "chapters/safety-cases-and-structured-assurance.qmd:614",
       "sentence": "Learning should update behavior from a",
       "cues": [
         "should"

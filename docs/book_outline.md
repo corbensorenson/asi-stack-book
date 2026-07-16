@@ -4204,7 +4204,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 298 proof targets, 90 Lean modules, 1243 theorem declarations, 882 derived/decomposed, 208 direct/projection, 153 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 298 proof targets, 91 Lean modules, 1253 theorem declarations, 885 derived/decomposed, 214 direct/projection, 154 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -4626,20 +4626,20 @@ Draft deliverables:
 - A versioned assurance-case record with scoped claim, deployment/hazard context, support and challenge references, assumptions, acceptance criterion, authority, residuals, and affected release path.
 - Source notes for the GSN standard, evaluations-based scheming safety cases, and AISI safety-case methodology.
 - Eight owned finite Lean routes for complete, incomplete, stale, challenged, independently reviewed, and authority-separated records; they are not a safety case, risk analysis, evidence-adequacy proof, or release decision.
-- Implemented eight-case digest-bound synthetic compilation bridge with five rejecting mutations and no support-state effect.
+- Implemented eight-case digest-bound synthetic compilation bridge plus a six-stage versioned safety-case refinement covering 30 routes and 35/35 rejecting mutations, with explicit readiness handoff and descendant-aware invalidation and no support-state or external-effect authority.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:safety_cases.complete_case.reaches_readiness_review` | `AsiStackProofs.SafetyCases` | A complete finite case record reaches only readiness review. | implemented |
-| `lean:safety_cases.missing_context.retains_draft` | `AsiStackProofs.SafetyCases` | A missing deployment context retains the record as a case draft. | implemented |
-| `lean:safety_cases.missing_hazard.requires_case_repair` | `AsiStackProofs.SafetyCases` | A missing hazard model requires case repair. | implemented |
-| `lean:safety_cases.stale_evidence.requires_repair` | `AsiStackProofs.SafetyCases` | A stale evidence dependency requires evidence repair. | implemented |
-| `lean:safety_cases.missing_countercase.requires_review` | `AsiStackProofs.SafetyCases` | A missing countercase review requires dedicated review. | implemented |
-| `lean:safety_cases.missing_independent_review.requires_review` | `AsiStackProofs.SafetyCases` | A missing independent review cannot reach readiness review. | implemented |
-| `lean:safety_cases.unresolved_defeater.blocks_affected_release` | `AsiStackProofs.SafetyCases` | An unresolved defeater routes a finite case record to accountable review. | implemented |
-| `lean:safety_cases.case_status.cannot_authorize_release` | `AsiStackProofs.SafetyCases` | A case record without explicit separation from release authority is rejected. | implemented |
+| `lean:safety_cases.complete_case.reaches_readiness_review` | `AsiStackProofs.SafetyCaseRefinement` | A reachable case lifecycle binds exact case, context, hazard, evidence, challenge, review, authority, and residual identity before emitting a readiness handoff that assigns no release authority. | implemented |
+| `lean:safety_cases.missing_context.retains_draft` | `AsiStackProofs.SafetyCaseRefinement` | Missing deployment context blocks the draft-to-scoped transition without mutating case state. | implemented |
+| `lean:safety_cases.missing_hazard.requires_case_repair` | `AsiStackProofs.SafetyCaseRefinement` | Missing hazard or argument structure blocks scope admission without mutating case state. | implemented |
+| `lean:safety_cases.stale_evidence.requires_repair` | `AsiStackProofs.SafetyCaseRefinement` | Missing, stale, or assumption-free evidence blocks the scoped-to-evidenced transition. | implemented |
+| `lean:safety_cases.missing_countercase.requires_review` | `AsiStackProofs.SafetyCaseRefinement` | Missing countercase review or defeater disposition blocks challenge closure. | implemented |
+| `lean:safety_cases.missing_independent_review.requires_review` | `AsiStackProofs.SafetyCaseRefinement` | Missing competence records, conflict disclosure, or independent review blocks reviewed status. | implemented |
+| `lean:safety_cases.unresolved_defeater.blocks_affected_release` | `AsiStackProofs.SafetyCaseRefinement` | An unresolved defeater blocks progression, while later invalidation requires cause, affected paths, and complete descendant invalidation before returning a readiness-bound case to challenge. | implemented |
+| `lean:safety_cases.case_status.cannot_authorize_release` | `AsiStackProofs.SafetyCaseRefinement` | Case status cannot assign support or an external effect, and missing separation between case status and decision authority rejects the readiness handoff. | implemented |
 
 ### Policy Optimization and Learning from Feedback
 
