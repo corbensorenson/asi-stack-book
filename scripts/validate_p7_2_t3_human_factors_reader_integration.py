@@ -93,10 +93,11 @@ def errors(data: dict[str, Any]) -> list[str]:
     if any(integration.get(key) is not True for key in required_integration) or integration.get("glossary_terms_added") != 2:
         out.append("reader integration surface drifted")
     status = data["status"]
-    if status["execution_readiness"].get("immediate_book_packet") != "P7.2-T4-governed-operations-incident-command-and-graceful-degradation":
-        out.append("machine status did not advance to T4")
+    immediate_packet = status["execution_readiness"].get("immediate_book_packet")
+    if not isinstance(immediate_packet, str) or immediate_packet == "P7.2-T3-human-factors-and-meaningful-control-in-oversight":
+        out.append("machine status did not advance beyond T3")
     first = status["quality_uplift_program"]["structural_completeness_tranche"]["first_tranche"]
-    if first.get("completed_reader_chapter_count") != 3 or CHAPTER_ID not in first.get("terminal_reader_chapter_ids", []) or CHAPTER_ID in first.get("remaining_reader_chapter_ids", []):
+    if first.get("completed_reader_chapter_count", 0) < 3 or CHAPTER_ID not in first.get("terminal_reader_chapter_ids", []) or CHAPTER_ID in first.get("remaining_reader_chapter_ids", []):
         out.append("first-tranche terminal denominator drifted")
     for key in ("support_state_effect", "release_effect", "publication_effect"):
         if audit.get(key) != "none":

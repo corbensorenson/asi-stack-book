@@ -3055,7 +3055,7 @@
       "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
       "module": "AsiStackProofs.GovernedOperations",
       "formal_target": "Every finite degraded-mode transition preserves or narrows capability, data, tool, and duration authority.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Prove authority non-escalation over modeled degraded-mode transitions. Detection quality, containment effectiveness, external effects, operator performance, operational resilience, and safe deployment remain executable and empirical questions."
@@ -3065,7 +3065,7 @@
       "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
       "module": "AsiStackProofs.GovernedOperations",
       "formal_target": "Normal-service recovery is rejected when any required internal-state component, external-effect disposition, acceptance check, or emergency-authority expiry is missing.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Model a declared recovery checklist and derive rejection for missing components. The formal target trusts state enumeration and dispositions and cannot prove semantic completeness, effect reversibility, recovery safety, bounded harm, reproduction, or transfer."

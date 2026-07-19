@@ -1,6 +1,6 @@
 # Reader Audio-Script Probe Manifest
 
-Last updated: 2026-07-10
+Last updated: 2026-07-19
 
 This summary is synced from
 `editions/reader_manuscript/v1_0/audio_script_probe_manifest.json`. It records
@@ -26,7 +26,7 @@ python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest
 | Source mode | `generated_reader_edition` |
 | Source generator | `scripts/build_reader_edition.py` |
 | Audio profile | `audio_release` |
-| Script files | 59 |
+| Script files | 64 |
 | Implementation-horizon script status | pass |
 | Review status | review_required |
 
@@ -38,26 +38,26 @@ Required review files are generated in the ignored workspace:
 ## Audio Script Reading-Flow Review
 
 The generated script workspace now has an automated reading-flow review. It
-checks that `index.md`, `preface.md`, the 54 active chapter scripts, and the included
+checks that `index.md`, `preface.md`, the 59 active chapter scripts, and the included
 appendix scripts follow `book_structure.json` order instead of alphabetical
 filesystem order. It also checks that `chapter_markers.md` follows the same
 script order.
 
 | Metric | Value |
 |---|---:|
-| Script files checked | 59 |
+| Script files checked | 64 |
 | Front-matter scripts checked | 2 |
-| Chapter scripts checked | 54 |
+| Chapter scripts checked | 59 |
 | Appendix scripts checked | 3 |
 | Script order | matches book-structure order |
-| Ordered chapter markers | 59 ordered markers |
-| Chapter-marker timecodes | 59 `TBD` rows |
-| Narration notes | 107 narration notes |
-| Table narration notes | 28 |
-| Diagram narration notes | 68 |
+| Ordered chapter markers | 64 ordered markers |
+| Chapter-marker timecodes | 64 `TBD` rows |
+| Narration notes | 154 narration notes |
+| Table narration notes | 68 |
+| Diagram narration notes | 74 |
 | Image narration notes | 11 |
-| Code/schema narration notes | 0 |
-| Implementation-horizon chapter scripts | 54 |
+| Code/schema narration notes | 1 |
+| Implementation-horizon chapter scripts | 59 |
 | Script statistics | Current digest and text statistics are recorded in the tracked audio-script probe manifest. |
 | Replacement characters | 0 |
 | Live/research marker hits | 0 |
@@ -80,9 +80,9 @@ timecoding, not an audiobook, not audio generation, and not release approval.
 
 | Material | Count |
 |---|---:|
-| Tables | 28 |
-| Mermaid diagrams | 68 |
-| Code/schema blocks | 0 |
+| Tables | 68 |
+| Mermaid diagrams | 74 |
+| Code/schema blocks | 1 |
 | Images | 11 |
 
 These counts are script-preparation cues. They tell a future narration review

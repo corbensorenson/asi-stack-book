@@ -3,7 +3,7 @@ title: "Governed Operations, Incident Command, and Graceful Degradation"
 chapter_id: "governed-operations-incident-command-and-graceful-degradation"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
-draft_maturity: "v0.3 manuscript draft"
+draft_maturity: "v0.4 integrated reader chapter"
 last_updated: "2026-07-19"
 primary_sources:
   - "scf"
@@ -18,9 +18,10 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "No local full-state rollback harness yet covers external effects and descendants."
+  - "The implemented authored control case covers eleven declared state classes, descendants, authority narrowing, an unknown external effect, and safe hold, but no effect-complete runtime rollback harness or natural incident has run."
   - "No adversarial game-day evidence yet calibrates severity and recovery thresholds."
   - "NIST incident-response transfer to autonomous AI has not been independently validated."
+  - "The schema, fixture, independent consumer, mutations, and Lean model establish finite declared-record consequences only; they do not establish detector quality, inventory completeness, effect reversal, fallback usefulness, or recovery efficacy."
 ---
 
 ## Chapter status
@@ -30,13 +31,14 @@ open_evidence_gaps:
 | Chapter ID | `governed-operations-incident-command-and-graceful-degradation` |
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
+| Manuscript maturity | v0.4 integrated reader chapter |
 | Last updated | 2026-07-19 |
 | Primary source records | `scf`, `deterministic_capability_compilation`, `theseus_operator_os`, `viea`, `talos`, `platonic_world_model`, `ext_nist_ai_rmf_1_0_2023`, `ext_nist_deployed_ai_monitoring_2026`, `ext_nist_incident_response_2025` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Source notes are available for all nine assigned records, and the manifest records claim-level mappings and limits. The three NIST records are external comparators; the six Corben/local records contribute architecture or implementation lineage, not independent incident-performance evidence. |
-| Test state | The rollback mutation suite, incident-command game-day matrix, and graceful-degradation comparison are planned and have not run. No T4 joined trace, local incident-response implementation, or external reproduction is recorded. |
-| Formal state | Two finite Lean targets are planned in the manifest. No `AsiStackProofs.GovernedOperations` module, mechanized result, runtime consumer, or proof-backed operational claim is recorded. |
+| Test state | The governed-operations packet schema, authored safe-hold fixture, independent route consumer, completed positive recovery control, and eighteen rejecting mutations are implemented. The four-arm natural-service campaign is protocol-ready but unexecuted; no flagship T4 trace, natural incident, game day, or external reproduction is recorded. |
+| Formal state | Both public targets are implemented in `AsiStackProofs.GovernedOperations` through thirteen theorem declarations. Their maximum inference is finite declared-record routing only. |
 
 ## Drafting guardrail
 
@@ -51,12 +53,12 @@ rollback, and state-reconciliation mechanisms. None of those records
 establishes that this repository operates an incident system, satisfies NIST
 guidance, reverses external effects, or degrades safely.
 
-The chapter therefore remains **Design rationale + argument**. Every mechanism
-below is a proposed contract unless an implementation artifact is named
-explicitly. The current Theseus flagship gate `T4` is still prospective, so
-this chapter does not narrate a natural authority-to-effect trace or infer any
-result from one. Formal targets, game days, and empirical comparisons remain
-work to do.
+The chapter therefore remains **Design rationale + argument**. The implemented
+packet, authored case, route consumer, mutations, and finite Lean model are
+record-shape and route evidence only. The current Theseus flagship gate `T4`
+is still prospective, so the governed-operations argument does not narrate a natural authority-to-
+effect trace or infer any result from one. Game days and empirical comparisons
+remain work to do.
 
 ::: {.asi-human-only}
 ## Human Reading Path
@@ -142,6 +144,15 @@ on. Rollback defines how a replacement can return to an earlier qualified
 state. Governed operations asks whether the live service can detect loss of its
 operating envelope, narrow authority, preserve command, and earn restoration
 after effects have begun.
+
+The terminal reader decision is therefore **integrate at argument support**.
+The chapter owns the closed post-deployment incident lifecycle and gives its
+records a finite executable boundary, while Runtime retains effect enforcement,
+Rollback retains replacement semantics, Human Factors retains control-role
+credibility, and the flagship program retains natural authority-to-effect
+evidence. Removing the governed-operations owner would leave incident command, degraded modes,
+recovery attestation, disclosure, learning, and decommissioning without one
+reader owner.
 
 ## Why existing approaches are insufficient
 
@@ -242,6 +253,32 @@ a second audit system. Their operational contribution is the transition rule:
 a missing artifact changes which service mode is reachable. Record production
 alone does not establish that a detector is accurate, a fallback works, or an
 external consequence was repaired.
+
+### The authored joined authority-to-effect case
+
+The repository now contains one deliberately bounded control case at
+`tests/fixtures/protocol_records/governed_operations_control_packet.valid.json`.
+It joins exact deployment, model, policy, prompt, toolset, data, evaluator,
+incident, command-lease, recovery-candidate, and event identities to an
+authority envelope, containment receipt, eleven-class internal-state inventory,
+external-effect ledger, acceptance checks, and terminal route.
+
+The incident may enter degraded service because capability, data, tool,
+population, and duration authority all narrow and containment does not depend
+on the suspected component. It may not recover: a notification effect remains
+unknown and independently unobserved, so the expected recovery route is
+`safe_hold`. The independent consumer also repairs that development-only
+positive control—without touching a held-out denominator—and verifies that a
+fully dispositioned effect plus fresh checks and expired emergency authority
+can reach `accept_recovery`.
+
+This is an authored joined authority-to-effect case, not the natural Theseus
+flagship `T4` trace and not an incident-response result. It proves neither that
+the eleven declared classes are complete nor that any external effect was
+really reversed. Its value is narrower: a named authority widening, missing
+state class, unknown effect, stale check, dependent verifier, active emergency
+lease, unqualified fallback, or authority-laundering request changes the route
+rather than disappearing inside prose.
 
 ### Incident state machine
 
@@ -892,7 +929,8 @@ adequacy nor operational safety by themselves.
 
 | Test | Purpose | Status |
 |---|---|---|
-| Effect-complete rollback mutation suite | Mutate model, optimizer, scheduler, random state, cache, memory, backup, credential, replica, descendant, and external-effect state and verify incomplete restoration is detected. A deterministic suite can establish mutation coverage and route behavior only; it cannot prove that the inventory is complete or external effects are reversible. | planned; not run |
+| Governed operations control-contract suite | Mutate deployment/command identity, five authority dimensions, eleven declared state classes, external effects, freshness, verifier separation, emergency expiry, fallback, and authority requests. The authored safe-hold fixture and completed positive control establish record sensitivity only. | implemented; 18 rejecting mutations |
+| Effect-complete rollback runtime suite | Mutate model, optimizer, scheduler, random state, cache, memory, backup, credential, replica, descendant, and external-effect state in a multi-process service and verify observed restoration or disposition. | planned; not run |
 | Incident command game-day matrix | Inject ambiguous, compound, detector-degrading, authority-conflicting, dependency-correlated, and operator-overload failures; measure detection, command resolution, containment, recovery, harm, latency, burden, and cost. Claim-bearing use requires the competence dossier, positive controls, matched baselines, sealed outcomes, independent evaluation, uncertainty, and fair rescue specified above. | planned; not run |
 | Graceful-degradation dominance test | Compare qualified degraded routes with stop-only, generic-SRE, full shutdown/manual work, and normal operation on safe useful throughput, reversibility, workload, false blocking, and governance cost. Retain a degraded route only where it improves the joint frontier; availability alone is not success. | planned; not run |
 | T4 joined-trace integration check | Once T4 exists, verify that one natural happy path and one blocked or rollback path preserve identity, command, effect, outcome, residual, and credit boundaries. The trace is a prospective case and integration check, not a held-out campaign or support transition. | blocked; T4 does not yet exist |
@@ -901,31 +939,27 @@ adequacy nor operational safety by themselves.
 
 | Tag | Manifest status | Intended finite target | Current disposition |
 |---|---|---|---|
-| `lean:operations.degradation_never_widens_authority` | planned | Every modeled degraded-mode transition preserves or narrows capability, data, tool, population, and duration authority. | Defer implementation until the authority lattice, mode schema, transition semantics, and rejecting runtime consumer exist. |
-| `lean:operations.recovery_requires_complete_state` | planned | Normal-service recovery is rejected when any required internal-state component, external-effect disposition, acceptance check, or emergency-authority expiry is absent. | Defer implementation until state classes, requiredness, effect dispositions, candidate identity, and the recovery-gate consumer are executable. |
+| `lean:operations.degradation_never_widens_authority` | implemented | Every accepted modeled degraded-mode transition preserves or narrows capability, data, tool, population, and duration authority. | The general consequence and five widening countermodels are checked against the same dimensions consumed by the independent packet validator. |
+| `lean:operations.recovery_requires_complete_state` | implemented | Modeled recovery acceptance requires exact declared-state reconciliation, descendant inventory, external-effect disposition, fresh independent acceptance, qualified fallback, emergency-authority expiry, and no authority request. | The general completeness consequence, rejecting countermodels, and complete declared-inventory witness are checked. |
 
 ### Formalization disposition
 
-The two targets are appropriate finite control properties, but proving them
-against an invented Boolean record now would be formalization theater. A useful
-model must first consume the same schema used by a rollback/degradation
-reference implementation and must reject mutations at an actual transition
-boundary. The abstraction map must state which deployed identities, authority
-dimensions, state classes, descendants, and external-effect dispositions are
-represented and which are omitted.
+The two finite targets are now implemented against the same authority
+dimensions, state-class count, effect-disposition, acceptance, fallback, and
+lease fields used by the independent packet consumer. Thirteen theorem
+declarations include general accepted-route consequences, five authority-
+widening countermodels, missing-state, unknown-effect, stale-check, active-
+lease countermodels, and a complete declared-inventory witness.
 
-Once that consumer exists, a finite state machine can mechanize reachability,
-authority monotonicity, emergency-lease expiry, rejection without state
-mutation, and recovery completeness relative to the declared inventory.
-Countermodels should demonstrate that a route fails when one authority
-dimension widens, a required state class is missing, a high-consequence effect
-is unknown, an acceptance check is stale, or the emergency lease remains
-active.
-
-Even an adequate mechanization would not prove detector sensitivity, manifest
-completeness, external-effect truth, compensation adequacy, fallback
-usefulness, human command performance, incident-response efficacy, safety,
-transfer, or NIST conformance. No Lean module or proof result is claimed here.
+The abstraction remains deliberately smaller than the architecture. It models
+five authority dimensions and recovery completeness relative to eleven named
+state classes; it represents external effects through declared completeness
+rather than a world model. It omits detector sensitivity, manifest discovery,
+effect truth, compensation adequacy, fallback usefulness, human command
+performance, concurrent incidents, distributed enforcement, and time beyond a
+lease-expiry predicate. That finite model is adequate for the two manifest targets,
+but it does not establish incident-response efficacy, safety, transfer, or
+NIST conformance, and it does not prove that any real recovery path works.
 
 ## Source crosswalk
 
@@ -955,14 +989,16 @@ The current evidence record supports the following narrow statements:
 - assigned Corben/local sources describe proposed authority, artifact,
   operator, execution, semantic-state, replacement, and recovery mechanisms;
 - the manifest defines the exclusive job, interfaces, invariants,
-  planned tests, planned formal targets, and open evidence gaps; and
+  tests, implemented finite formal targets, and open evidence gaps;
+- the authored packet consumer rejects authority widening and incomplete
+  declared recovery while preserving an unknown-effect safe hold; and
 - the resulting architecture can be stated coherently enough to expose
   falsifiers, simpler baselines, and implementation obligations.
 
 It does **not** support claims that:
 
-- an ASI Stack incident system, rollback engine, degraded-mode router, or
-  recovery attestor exists;
+- an effect-complete ASI Stack incident system, rollback engine, deployed
+  degraded-mode router, or recovery attestor exists;
 - any local game day, real incident, NIST compliance exercise, external
   reproduction, or independent review has run;
 - deployed monitoring is complete, calibrated, adversary-resistant, or
@@ -972,7 +1008,8 @@ It does **not** support claims that:
 - any external effect has been reversed or any descendant state has been
   recovered;
 - T4 has produced a joined happy or blocked/rollback trace;
-- either planned Lean target is implemented or semantically adequate;
+- the finite Lean results establish detector quality, inventory completeness,
+  external-effect truth, recovery efficacy, or operational safety;
 - graceful degradation dominates shutdown or a competent generic-SRE baseline;
 - the system is safe, resilient, compliant, ready to deploy, superior to the
   state of the art, AGI, or ASI; or
@@ -1003,8 +1040,9 @@ Its distinctive AI adaptation must still earn its cost against strong ordinary
 operations. The honest route is a bounded reference implementation, rejecting
 mutation suites, adversarial game days, matched stop-only and generic-SRE
 baselines, independent outcome truth, complete cost and burden accounting, and
-a competence-gated natural campaign. T4 can eventually supply a joined reader
-case, but only prospectively and never as a substitute for that evidence.
+a competence-gated natural campaign. The authored joined case makes the control
+boundary executable; flagship T4 can eventually supply a natural reader case,
+but only prospectively and never as a substitute for that evidence.
 
 ## Handoff
 

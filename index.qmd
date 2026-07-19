@@ -83,12 +83,15 @@ flowchart LR
   Route --> Reason["Reasoning, claims, and verification"]
   Reason --> Execute["Labor OS and runtime adapters"]
   Execute --> Artifacts["Artifacts, audit logs, and replay"]
+  Execute --> Operations["Governed operations and incident control"]
+  Operations -. "degrade, hold, recover, or decommission" .-> Execute
   Artifacts --> BehavioralEvidence["Behavioral evidence and benchmark ratchets"]
   Reason -. "scoped internal observations" .-> WhiteBox["White-box evidence packets"]
   BehavioralEvidence --> Evidence["Claim and evidence transition"]
   WhiteBox -. "preserve, restrict, escalate, reject, or expire; never grant" .-> Evidence
   Execute -. "independent observations" .-> RealityResidual["Reality-residual records"]
   RealityResidual -. "re-estimate, replan, fallback, review, or hold" .-> WorldModel
+  Operations --> Evidence
   Evidence --> Improve["Governed self-improvement"]
   Improve --> Authority
 
@@ -106,6 +109,12 @@ load, time, authority, alternatives, or an effective intervention path and can
 therefore force added capacity, reduced autonomy, safe hold, or abstention. It
 cannot infer a person's internal state, assign moral responsibility, approve an
 effect, or certify meaningful control.
+
+The operations loop is equally non-promotional. Its control packet can narrow
+capability, data, tools, population, and duration; reconcile declared internal
+state and external-effect dispositions; expire emergency authority; and keep an
+unknown effect in safe hold. It cannot prove that the inventory is complete,
+that an effect was reversed, that fallback is useful, or that recovery is safe.
 
 ## Dependency spine
 

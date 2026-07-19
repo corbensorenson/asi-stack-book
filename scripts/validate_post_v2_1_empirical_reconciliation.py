@@ -181,11 +181,9 @@ def validate(data: dict) -> list[str]:
         or proof_status_counts != record_status_counts
         or len(later_admitted_records) != added_proof_count
         or {row.get("chapter_id") for row in later_admitted_records} != admitted_chapter_ids
-        or proof_status_counts
-        != {
-            "implemented": historical_proof_count + len(later_implemented_records),
-            "planned": len(planned_records),
-        }
+        or proof_status_counts.get("implemented", 0)
+        != historical_proof_count + len(later_implemented_records)
+        or proof_status_counts.get("planned", 0) != len(planned_records)
         or len(planned_records) + len(later_implemented_records) != added_proof_count
         or not {row.get("chapter_id") for row in planned_records}.issubset(admitted_chapter_ids)
         or any(row.get("summary_support_state") not in (None, "argument") for row in planned_records)
@@ -194,6 +192,21 @@ def validate(data: dict) -> list[str]:
     if outcome.get("support_state_effect") != "none" or ledger.get("summary", {}).get("promote") != 0:
         errors.append("outcome or ledger invents promotion")
     return errors
+
+
+def mutate_unadmitted_planned_proof(data: dict) -> None:
+    """Create the forbidden state even when the live manifest has zero planned rows."""
+    proof_manifest = data["proof_manifest"]
+    record = next(
+        row
+        for row in proof_manifest["records"]
+        if row.get("chapter_id") == "intent-to-execution-contracts"
+        and row.get("status") == "implemented"
+    )
+    record["status"] = "planned"
+    counts = proof_manifest["status_counts"]
+    counts["implemented"] -= 1
+    counts["planned"] = counts.get("planned", 0) + 1
 
 
 def main() -> None:
@@ -225,7 +238,7 @@ def main() -> None:
         ("source target erasure", lambda x: next(row for row in x["source_inventory"] if row["id"] == "ext_txfs_2018")["chapter_targets"].pop()),
         ("Appendix H erasure", lambda x: x.__setitem__("appendix_h", x["appendix_h"].replace("ext_muse_unlearning_2025", "erased"))),
         ("proof invention", lambda x: x["proof_manifest"].__setitem__("proof_target_count", 299)),
-        ("unadmitted planned proof", lambda x: next(row for row in x["proof_manifest"]["records"] if row.get("status") == "planned").__setitem__("chapter_id", "intent-to-execution-contracts")),
+        ("unadmitted planned proof", mutate_unadmitted_planned_proof),
         ("changelog erasure", lambda x: x.__setitem__("changelog", "")),
     ]
     for name, mutate in mutations:
@@ -243,7 +256,7 @@ def main() -> None:
         raise SystemExit(1)
     live_chapter_count = sum(len(part.get("chapters", [])) for part in data["manifest"].get("parts", []))
     proof_manifest = data["proof_manifest"]
-    print(f"Post-v2.1 reconciliation passed: 6 bounded transitions, 14 core no-change decisions and chapter owners, 11 residual dispositions, 19 modern-source routes, preserved 54-chapter/298-target activation and authorized 55th-chapter historical lineage, {live_chapter_count} live argument-state vectors, {proof_manifest.get('proof_target_count')} current targets ({proof_manifest.get('status_counts', {}).get('implemented')} implemented plus {proof_manifest.get('status_counts', {}).get('planned')} planned on later manifest-admitted chapters), no theorem invented by the historical cycle, and 13 rejecting mutations.")
+    print(f"Post-v2.1 reconciliation passed: 6 bounded transitions, 14 core no-change decisions and chapter owners, 11 residual dispositions, 19 modern-source routes, preserved 54-chapter/298-target activation and authorized 55th-chapter historical lineage, {live_chapter_count} live argument-state vectors, {proof_manifest.get('proof_target_count')} current targets ({proof_manifest.get('status_counts', {}).get('implemented', 0)} implemented plus {proof_manifest.get('status_counts', {}).get('planned', 0)} planned on later manifest-admitted chapters), no theorem invented by the historical cycle, and 13 rejecting mutations.")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASI Stack Governed Operations Control Packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "packet_id", "case_kind", "identity", "incident", "current_authority", "proposed_degraded_authority", "command_lease", "containment", "internal_state", "external_effects", "acceptance", "expected_routes", "non_authorities", "source_ids"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.governed_operations_control_packet.v1"},
+    "packet_id": {"type": "string", "minLength": 1},
+    "case_kind": {"const": "authored_control_case_not_natural_incident"},
+    "identity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["deployment_id", "model_digest", "policy_digest", "prompt_digest", "toolset_digest", "data_digest", "evaluator_digest", "incident_id", "command_lease_id", "recovery_candidate_id", "event_id"],
+      "properties": {
+        "deployment_id": {"type": "string", "minLength": 1}, "model_digest": {"type": "string", "minLength": 1}, "policy_digest": {"type": "string", "minLength": 1}, "prompt_digest": {"type": "string", "minLength": 1}, "toolset_digest": {"type": "string", "minLength": 1}, "data_digest": {"type": "string", "minLength": 1}, "evaluator_digest": {"type": "string", "minLength": 1}, "incident_id": {"type": "string", "minLength": 1}, "command_lease_id": {"type": "string", "minLength": 1}, "recovery_candidate_id": {"type": "string", "minLength": 1}, "event_id": {"type": "string", "minLength": 1}
+      }
+    },
+    "incident": {"type": "object", "additionalProperties": false, "required": ["declared", "classification", "commander_bound", "containment_independent_of_suspected_component", "evidence_append_only"], "properties": {"declared": {"type": "boolean"}, "classification": {"type": "string", "minLength": 1}, "commander_bound": {"type": "boolean"}, "containment_independent_of_suspected_component": {"type": "boolean"}, "evidence_append_only": {"type": "boolean"}}},
+    "current_authority": {"$ref": "#/$defs/authority"},
+    "proposed_degraded_authority": {"$ref": "#/$defs/authority"},
+    "command_lease": {"type": "object", "additionalProperties": false, "required": ["present", "scope_bound", "expires_at", "expired_before_recovery"], "properties": {"present": {"type": "boolean"}, "scope_bound": {"type": "boolean"}, "expires_at": {"type": "string", "format": "date-time"}, "expired_before_recovery": {"type": "boolean"}}},
+    "containment": {"type": "object", "additionalProperties": false, "required": ["effective_path_observed", "suspected_component_cooperation_required", "selected_mode", "fallback_qualified"], "properties": {"effective_path_observed": {"type": "boolean"}, "suspected_component_cooperation_required": {"type": "boolean"}, "selected_mode": {"enum": ["degraded", "manual", "safe_hold", "shutdown", "decommission"]}, "fallback_qualified": {"type": "boolean"}}},
+    "internal_state": {"type": "object", "additionalProperties": false, "required": ["required_classes", "reconciled_classes", "descendant_inventory_complete"], "properties": {"required_classes": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}, "reconciled_classes": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}, "descendant_inventory_complete": {"type": "boolean"}}},
+    "external_effects": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["effect_id", "consequence_class", "disposition", "independently_observed"], "properties": {"effect_id": {"type": "string", "minLength": 1}, "consequence_class": {"enum": ["reversible", "compensable", "disclosable", "monitorable", "irreversible", "unknown"]}, "disposition": {"enum": ["reversed", "compensated", "disclosed", "monitored", "accepted_irreversible", "unknown"]}, "independently_observed": {"type": "boolean"}}}},
+    "acceptance": {"type": "object", "additionalProperties": false, "required": ["candidate_identity_exact", "state_integrity_fresh", "effect_check_fresh", "useful_service_check_fresh", "safety_check_fresh", "independent_verifier", "irreversible_residual_accepted_by_authority"], "properties": {"candidate_identity_exact": {"type": "boolean"}, "state_integrity_fresh": {"type": "boolean"}, "effect_check_fresh": {"type": "boolean"}, "useful_service_check_fresh": {"type": "boolean"}, "safety_check_fresh": {"type": "boolean"}, "independent_verifier": {"type": "boolean"}, "irreversible_residual_accepted_by_authority": {"type": "boolean"}}},
+    "expected_routes": {"type": "object", "additionalProperties": false, "required": ["degradation", "recovery"], "properties": {"degradation": {"enum": ["accept_degraded", "reject_identity", "reject_authority_widening", "reject_lease", "request_containment"]}, "recovery": {"enum": ["accept_recovery", "reject_identity", "request_state_inventory", "request_external_effect_disposition", "request_fresh_acceptance", "request_independent_verifier", "request_emergency_expiry", "safe_hold"]}}},
+    "non_authorities": {"type": "object", "additionalProperties": false, "required": ["support_promotion_requested", "release_requested", "publication_requested", "external_effect_authority_requested"], "properties": {"support_promotion_requested": {"const": false}, "release_requested": {"const": false}, "publication_requested": {"const": false}, "external_effect_authority_requested": {"const": false}}},
+    "source_ids": {"type": "array", "minItems": 9, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "authority": {"type": "object", "additionalProperties": false, "required": ["capabilities", "data_classes", "tools", "population_ceiling", "duration_seconds"], "properties": {"capabilities": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}, "data_classes": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}, "tools": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}, "population_ceiling": {"type": "integer", "minimum": 0}, "duration_seconds": {"type": "integer", "minimum": 0}}}
+  }
+}

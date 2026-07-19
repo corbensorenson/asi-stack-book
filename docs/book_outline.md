@@ -4506,7 +4506,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 306 proof targets, 102 Lean modules, 1333 theorem declarations, 914 derived/decomposed, 230 direct/projection, 189 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 306 proof targets, 102 Lean modules, 1346 theorem declarations, 917 derived/decomposed, 230 direct/projection, 199 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -5143,8 +5143,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:operations.degradation_never_widens_authority` | `AsiStackProofs.GovernedOperations` | Every finite degraded-mode transition preserves or narrows capability, data, tool, and duration authority. | planned |
-| `lean:operations.recovery_requires_complete_state` | `AsiStackProofs.GovernedOperations` | Normal-service recovery is rejected when any required internal-state component, external-effect disposition, acceptance check, or emergency-authority expiry is missing. | planned |
+| `lean:operations.degradation_never_widens_authority` | `AsiStackProofs.GovernedOperations` | Every finite degraded-mode transition preserves or narrows capability, data, tool, and duration authority. | implemented |
+| `lean:operations.recovery_requires_complete_state` | `AsiStackProofs.GovernedOperations` | Normal-service recovery is rejected when any required internal-state component, external-effect disposition, acceptance check, or emergency-authority expiry is missing. | implemented |
 
 ### Policy Optimization and Learning from Feedback
 

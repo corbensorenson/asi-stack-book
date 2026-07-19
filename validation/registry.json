@@ -2103,7 +2103,21 @@
     "proofs/semantic_cluster_audits/self_improvement_and_readiness.json",
     "docs/p4_c5_self_improvement_and_readiness_semantic_audit.md",
     "chapters/recursive-self-improvement-boundaries.qmd",
-    "chapters/readiness-gates-residual-escrow-and-quarantine.qmd"
+    "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
+    "scripts/validate_governed_operations_control_contract.py",
+    "schemas/governed_operations_control_packet.schema.json",
+    "tests/fixtures/protocol_records/governed_operations_control_packet.valid.json",
+    "experiments/governed_operations_argument_exit/preregistration.json",
+    "lean/AsiStackProofs/GovernedOperations.lean",
+    "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
+    "scripts/register_p7_2_t4_and_p4_c6_tranche.py",
+    "scripts/validate_p7_2_t4_governed_operations_reader_integration.py",
+    "evidence_quality/p7_2_t4_governed_operations_reader_integration.json",
+    "docs/p7_2_t4_governed_operations_reader_integration.md",
+    "scripts/validate_p4_c6_semantic_proof_cluster.py",
+    "proofs/semantic_cluster_audits/resource_artifact_and_lifecycle_economics.json",
+    "docs/p4_c6_resource_artifact_and_lifecycle_economics_semantic_audit.md",
+    "lean/AsiStackProofs/ArtifactStewardAgents.lean"
   ],
   "units": [
     {
@@ -6631,8 +6645,8 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D–F closure audit.",
-      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D–F closure boundaries.",
+      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D\u2013F closure audit.",
+      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D\u2013F closure boundaries.",
       "claim_scope": "Local roadmap closure for Workstreams D, E, and F at their explicitly bounded empirical, formal, and source-governance scopes.",
       "negative_controls": "validator_owned",
       "prohibited_inference": "Local closure does not prove deployed safety, general cost-effectiveness, formal runtime enforcement, novelty, exhaustive literature coverage, or independent review.",
@@ -13599,11 +13613,155 @@
         "chapters/capability-thresholds-and-deployment-commitments.qmd",
         "scripts/register_p7_2_t3_and_p4_c5_tranche.py"
       ]
+    },
+    {
+      "script": "validate_governed_operations_control_contract.py",
+      "input_contract": "One authored identity-bound authority-to-effect control case, an eleven-class declared state inventory, a prospective unexecuted four-arm natural-service campaign, and a finite authority/recovery model.",
+      "output_contract": "Require five-dimensional authority narrowing, independent containment, exact state/effect reconciliation, fresh independent acceptance, qualified fallback, emergency expiry, thirteen Lean declarations, one completed development positive control, and eighteen rejecting mutations.",
+      "output_assertions": [
+        "1 authored safe-hold case",
+        "5 authority dimensions narrow",
+        "11 state classes",
+        "4 campaign arms",
+        "9 competence gates",
+        "13 Lean declarations",
+        "18 mutations reject",
+        "support/release/publication none"
+      ],
+      "claim_scope": "Governed-operations packet shape and finite degradation/recovery route semantics only.",
+      "negative_controls": "validator_owned_eighteen_identity_authority_containment_state_effect_acceptance_expiry_fallback_source_and_authority_mutations",
+      "negative_control_cases": [
+        "five authority widenings",
+        "identity deletion",
+        "command loss",
+        "cooperation dependency",
+        "state omission",
+        "stale acceptance",
+        "dependent verifier",
+        "active emergency lease",
+        "fallback loss",
+        "support and release laundering"
+      ],
+      "prohibited_inference": "The authored case and finite model do not establish natural incident behavior, detector quality, inventory completeness, effect reversal, fallback usefulness, recovery efficacy, safety, transfer, deployment, support, release, publication, AGI, or ASI.",
+      "semantic_review_state": "checked_governed_operations_authority_effect_recovery_and_non_authority_semantics",
+      "id": "validate_governed_operations_control_contract.py:412",
+      "order": 412,
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "contract_precision": "exact_record_denominator_and_semantic_disposition_contract",
+      "input_artifacts": [
+        "scripts/validate_governed_operations_control_contract.py",
+        "schemas/governed_operations_control_packet.schema.json",
+        "tests/fixtures/protocol_records/governed_operations_control_packet.valid.json",
+        "experiments/governed_operations_argument_exit/preregistration.json",
+        "lean/AsiStackProofs/GovernedOperations.lean",
+        "lean/AsiStackProofs.lean",
+        "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
+        "scripts/register_p7_2_t4_and_p4_c6_tranche.py"
+      ]
+    },
+    {
+      "script": "validate_p7_2_t4_governed_operations_reader_integration.py",
+      "input_contract": "The admitted Operations chapter, nine exact source mappings, two implemented targets, one authored safe-hold case, one closed campaign, and adjacent reader surfaces.",
+      "output_contract": "Bind exact artifact digests, preserve source/proof/campaign/flagship denominators, require reader handoffs and synthesis, close the four-chapter first tranche, advance to one second-tranche adjudication, and reject thirteen integration mutations.",
+      "output_assertions": [
+        "4 first-tranche chapters terminal",
+        "9 source mappings",
+        "2 implemented targets",
+        "13 Lean declarations",
+        "authored case not flagship T4",
+        "0 natural incidents",
+        "13 integration mutations reject",
+        "support effect none"
+      ],
+      "claim_scope": "P7.2-T4 chapter necessity, argument-level reader integration, finite traceability, and flagship separation only.",
+      "negative_controls": "validator_owned_thirteen_terminal_source_digest_proof_incident_recovery_outcome_denominator_flagship_role_status_and_support_mutations",
+      "negative_control_cases": [
+        "terminal removal",
+        "source deletion",
+        "digest drift",
+        "proof reduction",
+        "incident invention",
+        "recovery overclaim",
+        "outcome opening",
+        "denominator overlap",
+        "flagship laundering",
+        "status reopening",
+        "support laundering"
+      ],
+      "prohibited_inference": "Terminal reader integration does not establish operational efficacy, resilience, recovery, safety, NIST conformance, empirical support, release, publication, AGI, or ASI.",
+      "semantic_review_state": "checked_terminal_governed_operations_argument_chapter_integration",
+      "id": "validate_p7_2_t4_governed_operations_reader_integration.py:413",
+      "order": 413,
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "contract_precision": "exact_record_denominator_and_semantic_disposition_contract",
+      "input_artifacts": [
+        "scripts/validate_p7_2_t4_governed_operations_reader_integration.py",
+        "evidence_quality/p7_2_t4_governed_operations_reader_integration.json",
+        "docs/p7_2_t4_governed_operations_reader_integration.md",
+        "book_structure.json",
+        "sources/source_inventory.json",
+        "proofs/proof_manifest.json",
+        "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
+        "index.qmd",
+        "appendices/B_glossary.qmd",
+        "chapters/safety-cases-and-structured-assurance.qmd",
+        "chapters/policy-optimization-and-learning-from-feedback.qmd",
+        "chapters/integrated-reference-architecture.qmd",
+        "scripts/register_p7_2_t4_and_p4_c6_tranche.py"
+      ]
+    },
+    {
+      "script": "validate_p4_c6_semantic_proof_cluster.py",
+      "input_contract": "The frozen four-module resource/artifact/steward/compression cluster with 31 public targets and 48 theorem declarations.",
+      "output_contract": "Require propositions, state, assumptions, countermodels, consumers, mutation evidence, semantic separations, and ceilings; execute four consumers and reject twelve audit mutations.",
+      "output_assertions": [
+        "4 adequate modules",
+        "31 public targets",
+        "48 theorem declarations",
+        "6 semantic separations",
+        "4 consumers pass",
+        "12 mutations reject",
+        "all 6 P4 clusters terminal"
+      ],
+      "claim_scope": "Bounded finite resource, artifact, steward, compression, reconciliation, fallback, and closure semantics only.",
+      "negative_controls": "validator_owned_twelve_cluster_denominator_disposition_semantic_separation_status_and_support_mutations",
+      "negative_control_cases": [
+        "module deletion",
+        "semantic-field erasure",
+        "target inflation",
+        "theorem inflation",
+        "cost-efficiency merger",
+        "stewardship-ownership merger",
+        "status reopening",
+        "support laundering"
+      ],
+      "prohibited_inference": "The audit proves no efficiency, optimal allocation, artifact truth or durability, ownership, competent stewardship, useful compression, lifecycle success, deployment, transfer, support, release, or publication.",
+      "semantic_review_state": "checked_terminal_resource_artifact_steward_and_compression_semantics",
+      "id": "validate_p4_c6_semantic_proof_cluster.py:414",
+      "order": 414,
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "contract_precision": "exact_record_denominator_and_semantic_disposition_contract",
+      "input_artifacts": [
+        "scripts/validate_p4_c6_semantic_proof_cluster.py",
+        "proofs/semantic_cluster_audits/resource_artifact_and_lifecycle_economics.json",
+        "docs/p4_c6_resource_artifact_and_lifecycle_economics_semantic_audit.md",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "lean/AsiStackProofs/ArtifactRealityRefinement.lean",
+        "lean/AsiStackProofs/ArtifactStewardAgents.lean",
+        "lean/AsiStackProofs/ArtifactCompressionRefinement.lean",
+        "scripts/register_p7_2_t4_and_p4_c6_tranche.py"
+      ]
     }
   ],
   "summary": {
-    "required_artifact_count": 2059,
-    "unit_count": 411
+    "required_artifact_count": 2073,
+    "unit_count": 414
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

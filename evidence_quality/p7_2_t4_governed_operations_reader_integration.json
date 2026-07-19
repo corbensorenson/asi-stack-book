@@ -1,0 +1,93 @@
+{
+  "schema_version": "asi_stack.p7_2_structural_reader_integration.v1",
+  "packet_id": "P7.2-T4-governed-operations-incident-command-and-graceful-degradation",
+  "state": "terminal_integrated_argument_chapter",
+  "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
+  "chapter_path": "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
+  "chapter_sha256": "f9f4aa401ec7792e82f460915bd4b3aea1031d022d632e8fbbf36cdb13e43e7c",
+  "reader_role": "load-bearing-reference",
+  "terminal_decision": "integrate_at_argument_support",
+  "exclusive_owner": "post-deployment continuity and control across field observability, incident declaration, scoped command, independent containment, degraded and fallback modes, state/effect reconciliation, recovery, disclosure, learning handoff, and decommissioning",
+  "source_crosswalk": {
+    "assigned_source_count": 9,
+    "primary_external_source_ids": [
+      "ext_nist_ai_rmf_1_0_2023",
+      "ext_nist_deployed_ai_monitoring_2026",
+      "ext_nist_incident_response_2025"
+    ],
+    "supporting_corben_source_ids": [
+      "scf",
+      "deterministic_capability_compilation",
+      "theseus_operator_os",
+      "viea",
+      "talos",
+      "platonic_world_model"
+    ],
+    "all_inventory_targets_reconciled": true,
+    "external_results_inherited_as_local_support": false
+  },
+  "formalization": {
+    "module": "AsiStackProofs.GovernedOperations",
+    "module_path": "lean/AsiStackProofs/GovernedOperations.lean",
+    "module_sha256": "532d249a15e3940d49ea751bbb57b48fd25b616a2d59d73a8ec3fa8a5ea5fa14",
+    "public_target_count": 2,
+    "implemented_target_count": 2,
+    "theorem_declaration_count": 13,
+    "maximum_inference": "Finite declared-record identity, five-dimensional authority monotonicity, recovery-completeness, safe-hold, and no-authority consequences only; no detector sensitivity, inventory completeness, external-effect truth or reversal, fallback usefulness, human command performance, incident efficacy, recovery efficacy, safety, or deployment result."
+  },
+  "record_contract": {
+    "schema_path": "schemas/governed_operations_control_packet.schema.json",
+    "schema_sha256": "da9a34adf43fda4d624f5422219d98b1197dec90d8a6f3ff8f5900262715b82a",
+    "fixture_path": "tests/fixtures/protocol_records/governed_operations_control_packet.valid.json",
+    "fixture_sha256": "9c42bdb4a4436846b39af3108a6b70af43b24b345b28a619bde03ded55638e0c",
+    "fixture_degradation_route": "accept_degraded",
+    "fixture_recovery_route": "safe_hold",
+    "declared_state_class_count": 11,
+    "semantic_mutations_rejected": 18,
+    "record_shape_only": true,
+    "natural_incidents_observed": 0
+  },
+  "claim_bearing_empirical_lane": {
+    "protocol_path": "experiments/governed_operations_argument_exit/preregistration.json",
+    "protocol_sha256": "5ba99796b4e0121dd992bcfb63356aad7a8a1dab3f00dc32f19039b60173be7c",
+    "state": "protocol_ready_resource_and_environment_authority_required_not_executed",
+    "arm_count": 4,
+    "competence_gate_count": 9,
+    "positive_control_count": 5,
+    "adversarial_control_count": 8,
+    "rescue_step_count": 6,
+    "joint_outcome_count": 13,
+    "maximum_negative_level": "N3_exact",
+    "natural_tasks_run": 0,
+    "fault_injections_run": 0,
+    "operators_recruited": 0,
+    "protected_outcomes_opened": false,
+    "p2_q1_q2_overlap_allowed": false,
+    "p2_displacement_allowed": false,
+    "empirical_result": "none"
+  },
+  "flagship_separation": {
+    "authored_case_is_theseus_t4": false,
+    "theseus_t4_state": "blocked_by_T2_and_T3",
+    "flagship_outcomes_opened": false,
+    "flagship_support_transferred": false
+  },
+  "reader_integration": {
+    "opening_map_updated": true,
+    "role_classification_preserved": true,
+    "exclusive_owner_section_present": true,
+    "previous_handoff_updated": true,
+    "next_handoff_updated": true,
+    "overview_figure_updated": true,
+    "glossary_terms_added": 2,
+    "claim_matrix_reconciled": true,
+    "corben_source_appendix_reconciled": true,
+    "external_source_appendix_reconciled": true,
+    "final_synthesis_updated": true,
+    "reader_removal_reason": "none"
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "publication_effect": "none",
+  "residual_owner": "Governed Operations owns the unexecuted matched natural-service campaign and effect-complete multi-process runtime harness. The Theseus flagship program separately owns T4 natural happy and blocked/rollback traces; neither may borrow P2/Q1/Q2 denominators or support."
+}

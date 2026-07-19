@@ -21,8 +21,8 @@ MAINTENANCE_STATUS = ROOT / "roadmap_records" / "post_v2_3_maintenance_transfer_
 
 HISTORICAL_PROOF_TARGET_COUNT = 298
 CURRENT_PROOF_TARGET_COUNT = 306
-CURRENT_IMPLEMENTED_TARGET_COUNT = 304
-CURRENT_PLANNED_TARGET_COUNT = 2
+CURRENT_IMPLEMENTED_TARGET_COUNT = 306
+CURRENT_PLANNED_TARGET_COUNT = 0
 HISTORICAL_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
     "useful but too narrow": 158,
@@ -45,11 +45,7 @@ ADMITTED_CHAPTERS = {
     "human-factors-and-meaningful-control-in-oversight",
     "governed-operations-incident-command-and-graceful-degradation",
 }
-PLANNED_CHAPTERS = ADMITTED_CHAPTERS - {
-    "white-box-evidence-interpretability-and-activation-governance",
-    "governed-world-models-and-reality-grounding",
-    "human-factors-and-meaningful-control-in-oversight",
-}
+PLANNED_CHAPTERS: set[str] = set()
 EXPECTED_RICHER = {
     "constitutional-alignment-substrate": 6,
     "moral-uncertainty-and-value-conflict": 6,
@@ -101,15 +97,12 @@ def current_proof_errors(
         manifest.get("proof_target_count") != CURRENT_PROOF_TARGET_COUNT
         or len(current_targets) != CURRENT_PROOF_TARGET_COUNT
         or len(set(manifest_ids)) != CURRENT_PROOF_TARGET_COUNT
-        or dict(status_counts) != {
-            "implemented": CURRENT_IMPLEMENTED_TARGET_COUNT,
-            "planned": CURRENT_PLANNED_TARGET_COUNT,
-        }
+        or dict(status_counts) != {"implemented": CURRENT_IMPLEMENTED_TARGET_COUNT}
         or manifest.get("status_counts") != dict(status_counts)
         or activation_truth.get("proof_target_count") != CURRENT_PROOF_TARGET_COUNT
         or activation_truth.get("chapter_core_promotion_count") != 0
     ):
-        out.append("current proof manifest/status is not exactly 306 unique targets: 304 implemented plus 2 planned with no core promotion")
+        out.append("current proof manifest/status is not exactly 306 unique implemented targets with no planned target or core promotion")
     if (
         maintenance_status.get("status") != "active"
         or maintenance_status.get("roadmap_path") != "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
@@ -119,7 +112,7 @@ def current_proof_errors(
         or {row.get("chapter_id") for row in planned_targets} != PLANNED_CHAPTERS
         or planned_chapter_counts != Counter({chapter_id: 2 for chapter_id in PLANNED_CHAPTERS})
     ):
-        out.append("planned proof targets are not tied exactly to the one unfinished manifest-admitted chapter")
+        out.append("terminal first-tranche proof inventory retains a planned target or loses admitted-chapter custody")
     triage_by_tag = {row.get("tag"): row for row in triage_records}
     if (
         triage.get("record_count") != CURRENT_PROOF_TARGET_COUNT
@@ -281,9 +274,9 @@ def main() -> None:
         failures.append("negative mutation accepted: current proof-target invention")
     current_mutation_count += 1
     escaped_plan = copy.deepcopy(current_manifest)
-    next(row for row in escaped_plan["records"] if row.get("status") == "planned")["chapter_id"] = "asi-is-a-stack-not-a-model"
+    escaped_plan["records"][0]["status"] = "planned"
     if not current_proof_errors(escaped_plan, current_triage, current_status, adequacy_text):
-        failures.append("negative mutation accepted: planned target escaped admitted chapters")
+        failures.append("negative mutation accepted: terminal target reopened as planned")
     current_mutation_count += 1
     current_status_drift = copy.deepcopy(current_status)
     current_status_drift["activation_truth"]["proof_target_count"] = HISTORICAL_PROOF_TARGET_COUNT
@@ -295,7 +288,7 @@ def main() -> None:
     print(
         "P2 closure audit passed: 1,151 baseline theorem declarations, 298 unique historical targets, "
         "65/65 reviewed modules, 298/298 frozen historical adequacy routes, 306 current targets "
-        "(304 implemented plus 2 planned exactly on one unfinished admitted chapter), 306/306 current adequacy classifications, "
+        "(306 implemented and zero planned after terminal first-tranche integration), 306/306 current adequacy classifications, "
         f"nine semantic-model dossiers/consumers, {len(mutations) + current_mutation_count} rejecting mutations, and no support-state effect."
     )
 

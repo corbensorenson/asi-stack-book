@@ -226,11 +226,9 @@ def semantic_errors(data: dict[str, Any]) -> list[str]:
         or proof_status_counts != dict(record_status_counts)
         or len(later_admitted_records) != added_proof_count
         or {row.get("chapter_id") for row in later_admitted_records} != admitted_chapter_ids
-        or proof_status_counts
-        != {
-            "implemented": historical_proof_count + len(later_implemented_records),
-            "planned": len(planned_records),
-        }
+        or proof_status_counts.get("implemented", 0)
+        != historical_proof_count + len(later_implemented_records)
+        or proof_status_counts.get("planned", 0) != len(planned_records)
         or len(planned_records) + len(later_implemented_records) != added_proof_count
         or not {row.get("chapter_id") for row in planned_records}.issubset(admitted_chapter_ids)
     ):
@@ -246,6 +244,20 @@ def semantic_errors(data: dict[str, Any]) -> list[str]:
         if phrase not in data["report"]:
             errors.append(f"reconciliation report lacks required decision: {phrase}")
     return errors
+
+
+def mutate_planned_proof_escape(data: dict[str, Any], owner: str) -> None:
+    """Construct the forbidden state even after all live proof rows are implemented."""
+    proof_manifest = data["proof_manifest"]
+    record = next(
+        row
+        for row in proof_manifest["records"]
+        if row.get("chapter_id") == owner and row.get("status") == "implemented"
+    )
+    record["status"] = "planned"
+    counts = proof_manifest["status_counts"]
+    counts["implemented"] -= 1
+    counts["planned"] = counts.get("planned", 0) + 1
 
 
 def negative_controls(base: dict[str, Any]) -> list[str]:
@@ -273,7 +285,7 @@ def negative_controls(base: dict[str, Any]) -> list[str]:
     mutate("vector transfer promoted", lambda d: next(row for row in d["vectors"]["vectors"] if row["claim_id"] == f"{owner}.core")["dimensions"]["transfer_distance"].__setitem__("state", "established"))
     mutate("new QCSA chapter", lambda d: d["structure"]["parts"][0]["chapters"].append("chapters/qcsa.qmd"))
     mutate("proof target invention", lambda d: d["proof_manifest"].__setitem__("proof_target_count", 307))
-    mutate("planned proof escapes admitted chapter", lambda d: next(row for row in d["proof_manifest"]["records"] if row.get("status") == "planned").__setitem__("chapter_id", owner))
+    mutate("planned proof escapes admitted chapter", lambda d: mutate_planned_proof_escape(d, owner))
     mutate("current authority promotion", lambda d: d["maintenance_status"]["activation_truth"].__setitem__("chapter_core_promotion_count", 1))
     failures = []
     for label, value in mutations:
@@ -297,7 +309,7 @@ def main() -> None:
         for part in data["structure"].get("parts", [])
     )
     proof_manifest = data["proof_manifest"]
-    print(f"QCSA book reconciliation passed: 9 existing chapter owners, 5 bounded review candidates, 2 narrowed claims, 2 exact refutations, 1 no-change transfer boundary, 8 explicit residuals, preserved 54-chapter/298-target historical baseline and authorized 55th-chapter expansion, {live_chapter_count} live core claims still at argument, {proof_manifest.get('proof_target_count')} current proof targets constrained to {proof_manifest.get('status_counts', {}).get('implemented')} implemented plus {proof_manifest.get('status_counts', {}).get('planned')} planned on later admitted chapters, no standalone QCSA chapter, and 18 rejecting mutations.")
+    print(f"QCSA book reconciliation passed: 9 existing chapter owners, 5 bounded review candidates, 2 narrowed claims, 2 exact refutations, 1 no-change transfer boundary, 8 explicit residuals, preserved 54-chapter/298-target historical baseline and authorized 55th-chapter expansion, {live_chapter_count} live core claims still at argument, {proof_manifest.get('proof_target_count')} current proof targets constrained to {proof_manifest.get('status_counts', {}).get('implemented', 0)} implemented plus {proof_manifest.get('status_counts', {}).get('planned', 0)} planned on later admitted chapters, no standalone QCSA chapter, and 18 rejecting mutations.")
 
 
 if __name__ == "__main__":

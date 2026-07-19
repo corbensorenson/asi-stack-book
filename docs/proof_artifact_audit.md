@@ -11,9 +11,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 306 |
-| Manifest status counts | {"implemented": 304, "planned": 2} |
+| Manifest status counts | {"implemented": 306} |
 | Triage class counts | {"formal-invariant": 306} |
-| Lean modules referenced | 68 |
+| Lean modules referenced | 69 |
 | Chapters with proof targets | 59 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -57,6 +57,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/FailureModes.lean` | 4 | 23 | 0 | 6 | 4 |
 | `lean/AsiStackProofs/FastGenerationRefinement.lean` | 5 | 17 | 0 | 12 | 3 |
 | `lean/AsiStackProofs/GovernanceRights.lean` | 1 | 7 | 0 | 11 | 3 |
+| `lean/AsiStackProofs/GovernedOperations.lean` | 2 | 13 | 0 | 7 | 2 |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | 2 | 9 | 0 | 6 | 2 |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | 6 | 17 | 0 | 10 | 3 |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | 2 | 9 | 0 | 6 | 1 |
@@ -126,7 +127,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `failure-modes-of-ungoverned-intelligence` | 4 | 4 | 0 | 0 |
 | `fast-generation-architectures` | 5 | 5 | 0 | 0 |
 | `governed-deliberation-and-test-time-scaling` | 10 | 10 | 0 | 0 |
-| `governed-operations-incident-command-and-graceful-degradation` | 2 | 0 | 0 | 0 |
+| `governed-operations-incident-command-and-graceful-degradation` | 2 | 2 | 0 | 0 |
 | `governed-world-models-and-reality-grounding` | 2 | 2 | 0 | 0 |
 | `human-factors-and-meaningful-control-in-oversight` | 2 | 2 | 0 | 0 |
 | `human-intent-as-a-formal-input` | 4 | 4 | 0 | 0 |
@@ -422,8 +423,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:safety_cases.missing_independent_review.requires_review` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCaseRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:safety_cases.unresolved_defeater.blocks_affected_release` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCaseRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:safety_cases.case_status.cannot_authorize_release` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCaseRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:operations.degradation_never_widens_authority` | `governed-operations-incident-command-and-graceful-degradation` | `AsiStackProofs.GovernedOperations` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
-| `lean:operations.recovery_requires_complete_state` | `governed-operations-incident-command-and-graceful-degradation` | `AsiStackProofs.GovernedOperations` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:operations.degradation_never_widens_authority` | `governed-operations-incident-command-and-graceful-degradation` | `AsiStackProofs.GovernedOperations` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:operations.recovery_requires_complete_state` | `governed-operations-incident-command-and-graceful-degradation` | `AsiStackProofs.GovernedOperations` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:policy_optimization.update.operational_invariant` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimizationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:policy_optimization.reward_boundary.failure_blocks_promotion` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimizationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:policy_optimization.promotion_route.failure_routes` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimizationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |

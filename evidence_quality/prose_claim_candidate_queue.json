@@ -47007,7 +47007,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.7dcd0a75aaef",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:73",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:79",
       "sentence": "Benchmark ratchets create improvement pressure that policy updates must govern carefully.",
       "cues": [
         "must"
@@ -47026,7 +47026,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.35704e38ea1d",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:75",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:81",
       "sentence": "A policy update should carry evidence, scope, rollback, residuals, and governance review before it becomes the new default.",
       "cues": [
         "should"
@@ -47045,7 +47045,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.ac26f9c86991",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:77",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:83",
       "sentence": "The lease names what may change, what must not change, how regressions are detected, and who can roll it back.",
       "cues": [
         "must"
@@ -47064,7 +47064,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.5bd32da98c7c",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:81",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:87",
       "sentence": "The learning loop should update behavior without rewriting the system's authority.",
       "cues": [
         "should"
@@ -47083,7 +47083,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.e4e9e2a5c7d5",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:88",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:94",
       "sentence": "Without that layer, the book can explain how to measure, review, and gate capabilities, but not how the system learns which behaviors to repeat, suppress, shorten, route, verify, or retire.",
       "cues": [
         "measure"
@@ -47102,7 +47102,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.37dff58cea21",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:90",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:96",
       "sentence": "The hard part is not saying \"use reinforcement learning.\" The hard part is deciding what policy is being updated, what feedback is admissible, how far the update may move, what evidence is required before promotion, and how rollback works when the reward was wrong.",
       "cues": [
         "required"
@@ -47121,7 +47121,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.161a25214958",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:102",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:108",
       "sentence": "The update record must keep the proxy and the target claim separate.",
       "cues": [
         "must"
@@ -47140,7 +47140,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.49effda5aab6",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:110",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:116",
       "sentence": "conflation; they do not prove reward adequacy or policy improvement.",
       "cues": [
         "prove"
@@ -47159,7 +47159,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.ab14ffbdf84d",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:140",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:146",
       "sentence": "transfer evaluation; attacks the reward and evaluator; retains every rollout,",
       "cues": [
         "transfer"
@@ -47178,7 +47178,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.42777e9c8b2b",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:164",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:170",
       "sentence": "**What the feedback update gate shows:** Feedback does not update behavior until admissibility, target policy, reward boundary, drift bound, rollback, holdouts, regressions, and reward-hacking probes are visible.",
       "cues": [
         "shows"
@@ -47197,7 +47197,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.5ba83730842e",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:176",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:182",
       "sentence": "The core rule is simple: policy optimization may learn from feedback, but the book should never let a reward signal silently become evidence, authority, or readiness.",
       "cues": [
         "should"
@@ -47216,7 +47216,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.d2fb2f75fa3a",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:178",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:184",
       "sentence": "Every update should produce a policy-delta receipt.",
       "cues": [
         "should"
@@ -47235,7 +47235,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.e9fe9e5e573e",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:193",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:199",
       "sentence": "Policy optimization should not become an acronym catalog.",
       "cues": [
         "should"
@@ -47254,7 +47254,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.c30ed64f60ab",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:197",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:203",
       "sentence": "The target policy should be explicit before an optimizer is named.",
       "cues": [
         "should"
@@ -47273,7 +47273,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.bb23960b1063",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:210",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:216",
       "sentence": "The training mode should match the available feedback and risk.",
       "cues": [
         "should"
@@ -47292,7 +47292,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.527ba1dfdf20",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:242",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:248",
       "sentence": "Generator policy: reward verified answer quality, concise reasoning when sufficient, and repairable uncertainty.",
       "cues": [
         "sufficient"
@@ -47311,7 +47311,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.7ca8d8d2f6c1",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:261",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:267",
       "sentence": "Policy updates cannot expand authority by training side effect.",
       "cues": [
         "cannot"
@@ -47330,7 +47330,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.06a3a8140167",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:266",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:272",
       "sentence": "A policy update may improve route choice, context selection, or reasoning length, but it cannot create permission to act outside the authority envelope that governed the original policy.",
       "cues": [
         "cannot",
@@ -47350,7 +47350,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.3ef01e704b35",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:268",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:274",
       "sentence": "Optimizing a proxy cannot promote the target claim unless target-specific evaluation, residuals, and failure probes are recorded.",
       "cues": [
         "cannot"
@@ -47369,7 +47369,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.020d65d43693",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:270",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:276",
       "sentence": "The full invariant set additionally requires legitimate-objective and consumer",
       "cues": [
         "requires"
@@ -47388,7 +47388,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.4e283d992af7",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:276",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:282",
       "sentence": "reproduction and transfer, and the rule that finite artifacts prove no causal",
       "cues": [
         "prove",
@@ -47408,7 +47408,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.974173375c40",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:287",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:293",
       "sentence": "If the update improves one metric while harming regressions, benchmark ratchets preserve the regression floor rather than celebrating the local gain.",
       "cues": [
         "improves"
@@ -47427,7 +47427,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.c99bea034b8e",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:289",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:295",
       "sentence": "The policy improves the reward, then the writeup describes it as improving the underlying task while reward hacks, preference bias, verifier blind spots, or regression losses remain unexamined.",
       "cues": [
         "improves"
@@ -47446,7 +47446,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.9086c91e10f7",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:313",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:319",
       "sentence": "rollback, causal improvement, independent reproduction, or transfer ran.",
       "cues": [
         "transfer"
@@ -47465,7 +47465,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.7ca6b9f5046c",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:316",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:322",
       "sentence": "Policy learning should begin as `policy_optimization_record.schema.json` with one valid fixture, one deterministic policy-update lease probe, and a finite Lean module.",
       "cues": [
         "should"
@@ -47484,7 +47484,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.5b3570b5ec18",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:322",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:328",
       "sentence": "It binds model and candidate checkpoints together with optimizer, scheduler, RNG, cache, backup, descendant, evaluator, rollback, consumer, authority, and version identities; it also requires target evaluation, a strong baseline, causal ablation, reward-hacking probes, regressions, forgetting, safety and rights checks, uncertainty, monitoring, effect-complete rollback, and descendant invalidation.",
       "cues": [
         "requires"
@@ -47503,7 +47503,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.cd2cbe254e31",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:322",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:328",
       "sentence": "All 73 route mutations and three cross-stage mutations reject: missing causal ablation prevents adjudication, lease, and readmission; support-authority laundering prevents lease and readmission; and incomplete effect rollback prevents readmission after the bounded lease.",
       "cues": [
         "prevents"
@@ -47522,7 +47522,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.85b5f33655be",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:322",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:328",
       "sentence": "These are authored record consequences, not evidence that any field is true or effective: no training, learning, reward validation, causal improvement, live rollback, monitoring, reproduction, transfer, release, or support transition occurred.",
       "cues": [
         "transfer"
@@ -47541,7 +47541,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.a03409688abc",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:324",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:330",
       "sentence": "A policy-delta trace should carry the first governed-learning rehearsal: one offline preference update kept experimental, one reward-hacking probe that blocks promotion, one router-policy canary with authority unchanged, one latency reward rejected for suppressing verification, and one rollback dry run.",
       "cues": [
         "should"
@@ -47560,7 +47560,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.4ed3119afde0",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:341",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:347",
       "sentence": "energy, human burden, opportunity cost, and residuals jointly; then require",
       "cues": [
         "require"
@@ -47579,7 +47579,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.9da811c22645",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:360",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:366",
       "sentence": "Failure closure that blocks reward laundering: proxy improvement cannot become task improvement unless target-specific evaluations and residuals support that transition.",
       "cues": [
         "cannot"
@@ -47598,7 +47598,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.79f6e0f62688",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:362",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:368",
       "sentence": "The system could improve its policies while preserving authority conservation, rollback, evidence review, and human/governance control.",
       "cues": [
         "improve"
@@ -47617,7 +47617,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.1ef7c33963d4",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:362",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:368",
       "sentence": "The learning actuator remains a target architecture until local policy-update harnesses, reward-quality studies, rollout records, rollback dry runs, and accepted evidence transitions show that improvement is governed instead of merely optimized.",
       "cues": [
         "show"
@@ -47636,7 +47636,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.49a283e55433",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:387",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:393",
       "sentence": "The remaining tests require executable training or simulation harnesses.",
       "cues": [
         "require"
@@ -47655,7 +47655,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.7bc9fef89b8a",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:398",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:404",
       "sentence": "These checks prove only finite authored record and transition consequences.",
       "cues": [
         "prove"
@@ -47674,7 +47674,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.11983fcfc93e",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:398",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:404",
       "sentence": "They do not prove reward quality, evaluator validity, RL convergence, benchmark improvement, causal policy improvement, retained capability, forgetting control, policy safety, route quality, reward-hacking resistance, hidden-holdout or contamination quality, approval quality, effect-complete runtime rollback, live monitoring, reproduction, or transfer.",
       "cues": [
         "prove",
@@ -47694,7 +47694,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.aff9dc861c04",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:431",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:437",
       "sentence": "shows the sharper failure: visible-test reward can rise while a code-repair",
       "cues": [
         "shows"
@@ -47713,7 +47713,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.4a1fedfb372a",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:500",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:506",
       "sentence": "This establishes local checkpoint/output causality and preserves modest gains,",
       "cues": [
         "establishes"
@@ -47732,7 +47732,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.c131c11353d5",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:525",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:531",
       "sentence": "A steward agent may coordinate work and preserve memory, but it cannot turn feedback loops into ownership, treasury authority, or silent governance change.",
       "cues": [
         "cannot"
@@ -47751,7 +47751,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.8958c7f00ed1",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:571",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:577",
       "sentence": "Policy updates decide how behavior responds to feedback, but they still require a",
       "cues": [
         "require"
@@ -47770,7 +47770,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.346b1c43b827",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:577",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:583",
       "sentence": "policy optimization must not manufacture for itself before the book turns to",
       "cues": [
         "must"
@@ -50845,7 +50845,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.0d4218cab39a",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:446",
+      "source": "chapters/integrated-reference-architecture.qmd:455",
       "sentence": "A downstream artifact cannot inherit authority merely because it descends from an approved intent; each handoff must preserve or narrow the authority chain.",
       "cues": [
         "cannot",
@@ -50865,7 +50865,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.b76b6703a315",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:448",
+      "source": "chapters/integrated-reference-architecture.qmd:457",
       "sentence": "A blank field in the trace must mean \"not applicable\" or \"not yet available,\" not \"the system forgot to ask.\" Missing contracts, missing evidence, missing approvals, and missing rollback paths should be visible as records that block, narrow, or defer work.",
       "cues": [
         "must",
@@ -50885,7 +50885,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.ef6dad458cc8",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:451",
+      "source": "chapters/integrated-reference-architecture.qmd:460",
       "sentence": "prevents downstream authority widening, binds named interfaces to material",
       "cues": [
         "prevents"
@@ -50904,7 +50904,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.92609e983ec5",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:453",
+      "source": "chapters/integrated-reference-architecture.qmd:462",
       "sentence": "and phantom completion, exposes evaluator dependence, requires accepted",
       "cues": [
         "requires"
@@ -50923,7 +50923,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.6caac925895e",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:456",
+      "source": "chapters/integrated-reference-architecture.qmd:465",
       "sentence": "requires effect-complete rollback, reports usefulness and governance cost",
       "cues": [
         "requires"
@@ -50942,7 +50942,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.23fd2d51b266",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:457",
+      "source": "chapters/integrated-reference-architecture.qmd:466",
       "sentence": "together, bounds transfer, expires changed joins, and limits diagrams, schemas,",
       "cues": [
         "transfer"
@@ -50961,7 +50961,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.5447e0b68ee2",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:470",
+      "source": "chapters/integrated-reference-architecture.qmd:479",
       "sentence": "Untraceable handoffs should create missing-contract records.",
       "cues": [
         "should"
@@ -50980,7 +50980,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.e84776fcaaaf",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:470",
+      "source": "chapters/integrated-reference-architecture.qmd:479",
       "sentence": "Planning/execution collapse should preserve the failed plan, runtime artifact, and residual.",
       "cues": [
         "should"
@@ -50999,7 +50999,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.4e8af7b11125",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:470",
+      "source": "chapters/integrated-reference-architecture.qmd:479",
       "sentence": "Self-improvement without evaluator integrity should stop at the SCF gate.",
       "cues": [
         "should"
@@ -51018,7 +51018,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.71d87a9d0b2a",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:472",
+      "source": "chapters/integrated-reference-architecture.qmd:481",
       "sentence": "A reference architecture should make that theater obvious because the trace record will have missing parentage, unsupported evidence deltas, or stop conditions that were acknowledged but ignored.",
       "cues": [
         "should"
@@ -51037,7 +51037,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.edfb3eed0680",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:474",
+      "source": "chapters/integrated-reference-architecture.qmd:483",
       "sentence": "Trace fragmentation is the companion failure, where each layer records locally valid receipts that cannot be joined into one accountable run.",
       "cues": [
         "cannot"
@@ -51056,7 +51056,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.b2d3321d0cb1",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:481",
+      "source": "chapters/integrated-reference-architecture.qmd:490",
       "sentence": "blocking, embedded-model closure, and unsupported transfer.",
       "cues": [
         "transfer"
@@ -51075,7 +51075,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.f9f9ab740726",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:500",
+      "source": "chapters/integrated-reference-architecture.qmd:509",
       "sentence": "reproduction, transfer, whole-stack deployment, or core effect exists.",
       "cues": [
         "transfer"
@@ -51094,7 +51094,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.78404ed4d042",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:502",
+      "source": "chapters/integrated-reference-architecture.qmd:511",
       "sentence": "The reference-trace fixtures check record shape, trace state, execution boundary, parentage, deltas, blockers, source refs, and support-state effect only: they do not execute the architecture, replay a runtime trace, or prove that every layer handoff is implemented.",
       "cues": [
         "prove"
@@ -51113,7 +51113,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.e1eb501a8232",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:506",
+      "source": "chapters/integrated-reference-architecture.qmd:515",
       "sentence": "That tiny dry-run trace set now exists at fixture level: one approved flow carries stable artifact IDs from intent through plan, context, route, work order, audit log, evidence update, and SCF no-promotion review; one blocked flow fails because execution authority is missing and governance review remains required.",
       "cues": [
         "required"
@@ -51132,7 +51132,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.217a0ac297d2",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:512",
+      "source": "chapters/integrated-reference-architecture.qmd:521",
       "sentence": "Exiting argument support requires natural heterogeneous tasks through",
       "cues": [
         "requires"
@@ -51151,7 +51151,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.1b580170493f",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:522",
+      "source": "chapters/integrated-reference-architecture.qmd:531",
       "sentence": "evaluators, institutions, infrastructures, legal regimes, and transfer sites",
       "cues": [
         "transfer"
@@ -51170,7 +51170,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.2a5d072f0c3b",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:536",
+      "source": "chapters/integrated-reference-architecture.qmd:545",
       "sentence": "Cross-layer consumers that can reject a trace when a required artifact, source ref, validation command, non-claim, or approval is missing.",
       "cues": [
         "required"
@@ -51189,7 +51189,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.b17f9315dd8b",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:542",
+      "source": "chapters/integrated-reference-architecture.qmd:551",
       "sentence": "negative control: a support-seeking receipt must survive independent",
       "cues": [
         "must"
@@ -51208,7 +51208,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.bfcddd2c1938",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:546",
+      "source": "chapters/integrated-reference-architecture.qmd:555",
       "sentence": "prevents record-shape laundering inside the static architecture.",
       "cues": [
         "prevents"
@@ -51227,7 +51227,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.ca7a8c35de69",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:549",
+      "source": "chapters/integrated-reference-architecture.qmd:558",
       "sentence": "A reference trace must not merely say \"the verifier passed.\"",
       "cues": [
         "must"
@@ -51246,7 +51246,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.baa6bdca5210",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:550",
+      "source": "chapters/integrated-reference-architecture.qmd:559",
       "sentence": "It must identify the trusted core, root-of-trust refs, delegation rule,",
       "cues": [
         "must"
@@ -51265,7 +51265,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.bb2769a96bce",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:554",
+      "source": "chapters/integrated-reference-architecture.qmd:563",
       "sentence": "records; it does not prove a deployed trust base or verifier correctness.",
       "cues": [
         "prove"
@@ -51284,7 +51284,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.65bedd8e2b31",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:577",
+      "source": "chapters/integrated-reference-architecture.qmd:586",
       "sentence": "and does not prove a deployed authorization, sandbox, verifier, rollback,",
       "cues": [
         "prove"
@@ -51303,7 +51303,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.363318005abf",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:587",
+      "source": "chapters/integrated-reference-architecture.qmd:596",
       "sentence": "requires unchanged support when no transition exists and accepted review,",
       "cues": [
         "requires"
@@ -51322,7 +51322,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.ff2c317a5cc0",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:589",
+      "source": "chapters/integrated-reference-architecture.qmd:598",
       "sentence": "Residual conservation requires created residuals to equal",
       "cues": [
         "requires"
@@ -51341,7 +51341,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.c74f8ea76e6b",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:612",
+      "source": "chapters/integrated-reference-architecture.qmd:621",
       "sentence": "Every admitted transition must join the exact parent artifact and",
       "cues": [
         "must"
@@ -51360,7 +51360,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.6e9d1de75ea9",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:618",
+      "source": "chapters/integrated-reference-architecture.qmd:627",
       "sentence": "`AsiStackProofs.IntegratedReferenceTrace` proves that every accepted step joins",
       "cues": [
         "proves"
@@ -51379,7 +51379,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.c5679d523cdd",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:658",
+      "source": "chapters/integrated-reference-architecture.qmd:667",
       "sentence": "or revoked retries, requires observation before terminal custody, and separates",
       "cues": [
         "requires"
@@ -51398,7 +51398,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.bdf15b2eee2b",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:664",
+      "source": "chapters/integrated-reference-architecture.qmd:673",
       "sentence": "If the run cannot show parentage, authority, evidence, residuals, and stops, it has not instantiated this architecture.",
       "cues": [
         "cannot",
@@ -51418,7 +51418,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.2e89c49ca960",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:664",
+      "source": "chapters/integrated-reference-architecture.qmd:673",
       "sentence": "The integration trace kernel remains a target architecture until real trace harnesses, blocked-path tests, artifact-continuity audits, authority stop-condition checks, and accepted evidence transitions show that the layers compose under pressure.",
       "cues": [
         "show"
@@ -51437,7 +51437,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.5632ffa48238",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:700",
+      "source": "chapters/integrated-reference-architecture.qmd:709",
       "sentence": "These results do not prove artifact truth,",
       "cues": [
         "prove"
@@ -51456,7 +51456,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.c51061c5ea19",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:736",
+      "source": "chapters/integrated-reference-architecture.qmd:745",
       "sentence": "The environment can challenge predictions; it cannot grant power.",
       "cues": [
         "cannot"
@@ -51475,7 +51475,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.dbb426ba4a34",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:737",
+      "source": "chapters/integrated-reference-architecture.qmd:746",
       "sentence": "candidate can propose a better behavior; it cannot silently rewrite the Form or",
       "cues": [
         "cannot"
@@ -51494,7 +51494,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.a982ce27e9fd",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:741",
+      "source": "chapters/integrated-reference-architecture.qmd:750",
       "sentence": "The honest vertical slice must implement one bounded",
       "cues": [
         "must"
@@ -51513,7 +51513,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.21650e107a4d",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:828",
+      "source": "chapters/integrated-reference-architecture.qmd:837",
       "sentence": "If a demo cannot produce parent artifacts, authority deltas, evidence deltas, residual deltas, and blocked-path records, then it may still be interesting, but it has not yet instantiated this reference architecture.",
       "cues": [
         "cannot"
@@ -51532,7 +51532,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.1871386fdc59",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:830",
+      "source": "chapters/integrated-reference-architecture.qmd:839",
       "sentence": "Project Theseus becomes useful precisely because it is report-first: it shows how pieces of this trace could become inspectable machinery without letting local reports stand in for public empirical proof.",
       "cues": [
         "shows"
@@ -51551,7 +51551,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.cad6836eb8c4",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:830",
+      "source": "chapters/integrated-reference-architecture.qmd:839",
       "sentence": "The current static architecture-gate import demonstrates the report-import boundary while leaving the end-to-end runtime trace unclaimed.",
       "cues": [
         "demonstrates"
@@ -51570,7 +51570,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.d195a7ce1da8",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:867",
+      "source": "chapters/integrated-reference-architecture.qmd:876",
       "sentence": "The integrated trace defines what a complete stack must preserve; an implementation reference shows where that trace can become concrete without pretending the proof is already public.",
       "cues": [
         "must",

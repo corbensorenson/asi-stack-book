@@ -2113,45 +2113,220 @@
             "ext_agentic_oversight_practice_2026"
           ],
           "source_queue": {
-            "primary": ["ext_humans_automation_1997", "ext_ironies_automation_1983", "ext_meaningful_human_control_actionable_2022"],
-            "supporting": ["viea", "talos", "theseus_operator_os", "scf"],
-            "variants": ["ext_levels_automation_2000", "ext_complacency_bias_automation_2010", "ext_agentic_oversight_practice_2026"],
+            "primary": [
+              "ext_humans_automation_1997",
+              "ext_ironies_automation_1983",
+              "ext_meaningful_human_control_actionable_2022"
+            ],
+            "supporting": [
+              "viea",
+              "talos",
+              "theseus_operator_os",
+              "scf"
+            ],
+            "variants": [
+              "ext_levels_automation_2000",
+              "ext_complacency_bias_automation_2010",
+              "ext_agentic_oversight_practice_2026"
+            ],
             "connector_or_recovery": [],
-            "handoff_or_recovery_notes": ["Receives explicit intent and authority from Human Intent as a Formal Input; hands bounded oversight contracts to Constitutional Alignment and Policy Compilation without treating a visible human as meaningful control."]
+            "handoff_or_recovery_notes": [
+              "Receives explicit intent and authority from Human Intent as a Formal Input; hands bounded oversight contracts to Constitutional Alignment and Policy Compilation without treating a visible human as meaningful control."
+            ]
           },
           "problem": "A formally permitted AI action can still be practically uncontrollable when operators lack time, attention, comprehension, calibrated trust, or an effective intervention path.",
           "insufficient": "A dashboard, approval click, nominal human-in-the-loop, or fixed automation level does not establish meaningful control; each can preserve responsibility theater while automation bias, out-of-the-loop degradation, mode confusion, workload saturation, and delayed effects defeat intervention.",
           "core_claim": "Meaningful oversight is a resource-bounded control contract: the system must preserve an identified human controller's knowledge, authority, time, observability, and effective intervention path, and must degrade or abstain when that control envelope cannot be maintained.",
           "claim_source_mappings": [
-            {"source_id":"viea","mapped_support":"Supports structured roles, authority, constraints, verification, failure behavior, and escalation in human-to-system command contracts.","limits":"Does not empirically establish operator cognition, trust calibration, or intervention effectiveness.","passage_refs":["sources/source_notes/viea.md"],"passage_review_note":"Reviewed local note and raw-source mapping; used only for contract structure.","passage_review_state":"reviewed"},
-            {"source_id":"talos","mapped_support":"Supports explicit operator authority, approval boundaries, escalation, and auditable intervention surfaces.","limits":"Project design evidence does not prove human-factors performance in deployment.","passage_refs":["sources/source_notes/talos.md"],"passage_review_note":"Reviewed local source note; retained as architectural support only.","passage_review_state":"reviewed"},
-            {"source_id":"theseus_operator_os","mapped_support":"Supplies an operator-console and incident-facing design lineage for visible system state and bounded action.","limits":"Interface concepts are not evidence that operators notice, understand, or correctly act under pressure.","passage_refs":["sources/source_notes/theseus_operator_os.md"],"passage_review_note":"Reviewed local source note; no usability result promoted.","passage_review_state":"reviewed"},
-            {"source_id":"scf","mapped_support":"Supports governance roles, review gates, escalation, and recorded accountability around capability changes.","limits":"Governance process alone cannot establish moment-to-moment human control.","passage_refs":["sources/source_notes/scf.md"],"passage_review_note":"Reviewed local source note; mapped to institutional control only.","passage_review_state":"reviewed"},
-            {"source_id":"ext_humans_automation_1997","mapped_support":"Grounds human-centered automation in keeping the human informed, trained, and involved at an appropriate functional allocation.","limits":"Foundational design principles do not validate this book's proposed control envelope.","passage_refs":["sources/source_notes/ext_humans_automation_1997.md"],"passage_review_note":"Reviewed source note and its primary-source framing.","passage_review_state":"reviewed"},
-            {"source_id":"ext_ironies_automation_1983","mapped_support":"Grounds the irony that automation can leave humans with rare, difficult, poorly practiced supervisory work.","limits":"Conceptual analysis predates modern foundation-model agents and does not quantify current failure rates.","passage_refs":["sources/source_notes/ext_ironies_automation_1983.md"],"passage_review_note":"Reviewed source note; used for failure taxonomy, not magnitude claims.","passage_review_state":"reviewed"},
-            {"source_id":"ext_levels_automation_2000","mapped_support":"Provides a multidimensional account of what functions are automated and to what degree, avoiding a single scalar autonomy label.","limits":"A taxonomy is not a control guarantee or an optimal-allocation theorem.","passage_refs":["sources/source_notes/ext_levels_automation_2000.md"],"passage_review_note":"Reviewed source note; used as design vocabulary.","passage_review_state":"reviewed"},
-            {"source_id":"ext_complacency_bias_automation_2010","mapped_support":"Supports treating complacency and automation bias as predictable interaction risks rather than operator moral failure.","limits":"Reported findings do not directly validate ASI-stack interfaces or high-autonomy settings.","passage_refs":["sources/source_notes/ext_complacency_bias_automation_2010.md"],"passage_review_note":"Reviewed source note; preserved domain and transfer limits.","passage_review_state":"reviewed"},
-            {"source_id":"ext_meaningful_human_control_actionable_2022","mapped_support":"Supports operationalizing meaningful human control through traceability and tracking conditions tied to reasons and human moral understanding.","limits":"Normative operationalization does not by itself prove technical effectiveness or settle accountability law.","passage_refs":["sources/source_notes/ext_meaningful_human_control_actionable_2022.md"],"passage_review_note":"Reviewed source note; used for the control contract's normative boundary.","passage_review_state":"reviewed"},
-            {"source_id":"ext_agentic_oversight_practice_2026","mapped_support":"Provides current practice-oriented evidence about oversight challenges for agentic AI and the need for monitoring, intervention, and governance across execution.","limits":"Recent guidance is not a controlled evaluation and may change with systems and regulation.","passage_refs":["sources/source_notes/ext_agentic_oversight_practice_2026.md"],"passage_review_note":"Reviewed source note; treated as contemporary practice context.","passage_review_state":"reviewed"}
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports structured roles, authority, constraints, verification, failure behavior, and escalation in human-to-system command contracts.",
+              "limits": "Does not empirically establish operator cognition, trust calibration, or intervention effectiveness.",
+              "passage_refs": [
+                "sources/source_notes/viea.md"
+              ],
+              "passage_review_note": "Reviewed local note and raw-source mapping; used only for contract structure.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports explicit operator authority, approval boundaries, escalation, and auditable intervention surfaces.",
+              "limits": "Project design evidence does not prove human-factors performance in deployment.",
+              "passage_refs": [
+                "sources/source_notes/talos.md"
+              ],
+              "passage_review_note": "Reviewed local source note; retained as architectural support only.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "theseus_operator_os",
+              "mapped_support": "Supplies an operator-console and incident-facing design lineage for visible system state and bounded action.",
+              "limits": "Interface concepts are not evidence that operators notice, understand, or correctly act under pressure.",
+              "passage_refs": [
+                "sources/source_notes/theseus_operator_os.md"
+              ],
+              "passage_review_note": "Reviewed local source note; no usability result promoted.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "scf",
+              "mapped_support": "Supports governance roles, review gates, escalation, and recorded accountability around capability changes.",
+              "limits": "Governance process alone cannot establish moment-to-moment human control.",
+              "passage_refs": [
+                "sources/source_notes/scf.md"
+              ],
+              "passage_review_note": "Reviewed local source note; mapped to institutional control only.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_humans_automation_1997",
+              "mapped_support": "Grounds human-centered automation in keeping the human informed, trained, and involved at an appropriate functional allocation.",
+              "limits": "Foundational design principles do not validate this book's proposed control envelope.",
+              "passage_refs": [
+                "sources/source_notes/ext_humans_automation_1997.md"
+              ],
+              "passage_review_note": "Reviewed source note and its primary-source framing.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_ironies_automation_1983",
+              "mapped_support": "Grounds the irony that automation can leave humans with rare, difficult, poorly practiced supervisory work.",
+              "limits": "Conceptual analysis predates modern foundation-model agents and does not quantify current failure rates.",
+              "passage_refs": [
+                "sources/source_notes/ext_ironies_automation_1983.md"
+              ],
+              "passage_review_note": "Reviewed source note; used for failure taxonomy, not magnitude claims.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_levels_automation_2000",
+              "mapped_support": "Provides a multidimensional account of what functions are automated and to what degree, avoiding a single scalar autonomy label.",
+              "limits": "A taxonomy is not a control guarantee or an optimal-allocation theorem.",
+              "passage_refs": [
+                "sources/source_notes/ext_levels_automation_2000.md"
+              ],
+              "passage_review_note": "Reviewed source note; used as design vocabulary.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_complacency_bias_automation_2010",
+              "mapped_support": "Supports treating complacency and automation bias as predictable interaction risks rather than operator moral failure.",
+              "limits": "Reported findings do not directly validate ASI-stack interfaces or high-autonomy settings.",
+              "passage_refs": [
+                "sources/source_notes/ext_complacency_bias_automation_2010.md"
+              ],
+              "passage_review_note": "Reviewed source note; preserved domain and transfer limits.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_meaningful_human_control_actionable_2022",
+              "mapped_support": "Supports operationalizing meaningful human control through traceability and tracking conditions tied to reasons and human moral understanding.",
+              "limits": "Normative operationalization does not by itself prove technical effectiveness or settle accountability law.",
+              "passage_refs": [
+                "sources/source_notes/ext_meaningful_human_control_actionable_2022.md"
+              ],
+              "passage_review_note": "Reviewed source note; used for the control contract's normative boundary.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_agentic_oversight_practice_2026",
+              "mapped_support": "Provides current practice-oriented evidence about oversight challenges for agentic AI and the need for monitoring, intervention, and governance across execution.",
+              "limits": "Recent guidance is not a controlled evaluation and may change with systems and regulation.",
+              "passage_refs": [
+                "sources/source_notes/ext_agentic_oversight_practice_2026.md"
+              ],
+              "passage_review_note": "Reviewed source note; treated as contemporary practice context.",
+              "passage_review_state": "reviewed"
+            }
           ],
-          "mechanism": ["Compile consequential tasks into oversight contracts naming controller, rights, intervention points, deadlines, and safe defaults.", "Estimate an oversight budget over attention, comprehension time, workload, practice recency, and action latency.", "Expose uncertainty, mode, authority, provenance, consequence, and time-to-irreversibility instead of raw telemetry alone.", "Require active comprehension checks for high-impact transitions.", "Calibrate trust with representative successes, failures, abstentions, and recovery drills.", "Route overload, ambiguity, stale qualification, or lost intervention capacity to slowdown, reduced autonomy, safe hold, or abstention.", "Record opportunities, observations, decisions, timing, and system response without converting logs into blame automation.", "Rehearse rare interventions and update allocation when measured capability changes."],
-          "interfaces": ["intent and authority contract", "operator-state and workload estimator", "explanation and uncertainty view", "intervention and override channel", "safe-state controller", "training and rehearsal service", "incident and accountability ledger"],
-          "invariants": ["Consequential action has an identified controller with current authority.", "Required intervention time does not exceed time before irreversibility.", "Loss of observability or intervention capacity cannot silently preserve autonomy.", "Approval requires task-relevant comprehension, not presence or click-through.", "Automation mode and authority are visible and unambiguous.", "Safety does not depend on constant perfect vigilance.", "Recorded responsibility never exceeds supplied authority and control.", "Degradation preserves a reachable safe state."],
-          "failure_modes": ["automation bias", "complacency", "out-of-the-loop skill decay", "mode confusion", "alarm flooding", "attention tunneling", "explanation overload", "rubber-stamp approval", "authority without control", "control without knowledge", "intervention latency", "stale training", "unsafe handoff", "blame-oriented logging"],
+          "mechanism": [
+            "Compile consequential tasks into oversight contracts naming controller, rights, intervention points, deadlines, and safe defaults.",
+            "Estimate an oversight budget over attention, comprehension time, workload, practice recency, and action latency.",
+            "Expose uncertainty, mode, authority, provenance, consequence, and time-to-irreversibility instead of raw telemetry alone.",
+            "Require active comprehension checks for high-impact transitions.",
+            "Calibrate trust with representative successes, failures, abstentions, and recovery drills.",
+            "Route overload, ambiguity, stale qualification, or lost intervention capacity to slowdown, reduced autonomy, safe hold, or abstention.",
+            "Record opportunities, observations, decisions, timing, and system response without converting logs into blame automation.",
+            "Rehearse rare interventions and update allocation when measured capability changes."
+          ],
+          "interfaces": [
+            "intent and authority contract",
+            "operator-state and workload estimator",
+            "explanation and uncertainty view",
+            "intervention and override channel",
+            "safe-state controller",
+            "training and rehearsal service",
+            "incident and accountability ledger"
+          ],
+          "invariants": [
+            "Consequential action has an identified controller with current authority.",
+            "Required intervention time does not exceed time before irreversibility.",
+            "Loss of observability or intervention capacity cannot silently preserve autonomy.",
+            "Approval requires task-relevant comprehension, not presence or click-through.",
+            "Automation mode and authority are visible and unambiguous.",
+            "Safety does not depend on constant perfect vigilance.",
+            "Recorded responsibility never exceeds supplied authority and control.",
+            "Degradation preserves a reachable safe state."
+          ],
+          "failure_modes": [
+            "automation bias",
+            "complacency",
+            "out-of-the-loop skill decay",
+            "mode confusion",
+            "alarm flooding",
+            "attention tunneling",
+            "explanation overload",
+            "rubber-stamp approval",
+            "authority without control",
+            "control without knowledge",
+            "intervention latency",
+            "stale training",
+            "unsafe handoff",
+            "blame-oriented logging"
+          ],
           "minimal_implementation": "Implement one bounded high-impact workflow with a versioned oversight contract, workload and deadline gate, mode/authority display, comprehension probe, exercised override, safe hold, intervention receipt, and simulator scenarios for overload, missed alarms, mode confusion, and late intervention.",
           "beyond_state_of_art": "The mature target architecture is an empirically calibrated control-envelope controller that reallocates autonomy using measured human and system state while preserving authority, contestability, and graceful degradation. Its operational contract publishes versioned workload, comprehension, intervention-latency, reversible-window, qualification, and fallback thresholds; compares strong allocation and interface baselines; and retains failures, operator burden, and residual harm. It remains a research target until preregistered, representative, independently reproduced trials show better joint safety and useful throughput without responsibility or authority laundering.",
           "codex_tests": [
-            {"name":"Oversight-envelope boundary suite","purpose":"Vary workload, explanation burden, intervention time, authority, and observability to test whether autonomy degrades before control is nominal only.","implementation_status":"planned","result_status":"not_run"},
-            {"name":"Automation-bias and mode-confusion adversarial study","purpose":"Compare interface and allocation variants on detection, comprehension, correct intervention, false intervention, latency, and useful throughput.","implementation_status":"planned","result_status":"not_run"},
-            {"name":"Rare-event intervention retention study","purpose":"Test whether rehearsal cadence and recovery design preserve performance under long quiet intervals.","implementation_status":"planned","result_status":"not_run"}
+            {
+              "name": "Oversight-envelope boundary suite",
+              "purpose": "Vary workload, explanation burden, intervention time, authority, and observability to test whether autonomy degrades before control is nominal only.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            },
+            {
+              "name": "Automation-bias and mode-confusion adversarial study",
+              "purpose": "Compare interface and allocation variants on detection, comprehension, correct intervention, false intervention, latency, and useful throughput.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            },
+            {
+              "name": "Rare-event intervention retention study",
+              "purpose": "Test whether rehearsal cadence and recovery design preserve performance under long quiet intervals.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            }
           ],
           "lean_module": "AsiStackProofs.HumanFactorsOversight",
           "proof_targets": [
-            {"tag":"lean:oversight.control_envelope.blocks_action","module":"AsiStackProofs.HumanFactorsOversight","target":"In the finite model, any consequential transition lacking authority, observability, comprehension, timely intervention, or a reachable safe state is rejected or degraded.","status":"implemented"},
-            {"tag":"lean:oversight.responsibility_requires_control","module":"AsiStackProofs.HumanFactorsOversight","target":"The bounded accountability assignment never attributes operational responsibility beyond the authority and effective control recorded in the oversight contract.","status":"implemented"}
+            {
+              "tag": "lean:oversight.control_envelope.blocks_action",
+              "module": "AsiStackProofs.HumanFactorsOversight",
+              "target": "In the finite model, any consequential transition lacking authority, observability, comprehension, timely intervention, or a reachable safe state is rejected or degraded.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:oversight.responsibility_requires_control",
+              "module": "AsiStackProofs.HumanFactorsOversight",
+              "target": "The bounded accountability assignment never attributes operational responsibility beyond the authority and effective control recorded in the oversight contract.",
+              "status": "implemented"
+            }
           ],
-          "draft_maturity": "admitted_packet_complete",
-          "open_evidence_gaps": ["No representative human-subject study yet measures the complete control envelope.", "No independently replicated threshold for attention, comprehension, or intervention latency is established.", "Transfer from legacy automation studies to modern agentic systems remains a hypothesis to test."]
+          "draft_maturity": "integrated_argument_chapter_formal_and_protocol_contract_complete",
+          "open_evidence_gaps": [
+            "No representative human-subject study yet measures the complete control envelope.",
+            "No independently replicated threshold for attention, comprehension, or intervention latency is established.",
+            "Transfer from legacy automation studies to modern agentic systems remains a hypothesis to test."
+          ]
         },
         {
           "id": "constitutional-alignment-substrate",
@@ -6031,44 +6206,210 @@
             "ext_v_jepa_2_2025"
           ],
           "source_queue": {
-            "primary": ["ext_world_models_2018", "ext_dreamer_v3_2025", "ext_v_jepa_2_2025"],
-            "supporting": ["platonic_world_model", "simulation_scaling", "planforge"],
-            "variants": ["deterministic_capability_compilation", "qcsa_whitepaper", "cognitive_compilation"],
+            "primary": [
+              "ext_world_models_2018",
+              "ext_dreamer_v3_2025",
+              "ext_v_jepa_2_2025"
+            ],
+            "supporting": [
+              "platonic_world_model",
+              "simulation_scaling",
+              "planforge"
+            ],
+            "variants": [
+              "deterministic_capability_compilation",
+              "qcsa_whitepaper",
+              "cognitive_compilation"
+            ],
             "connector_or_recovery": [],
-            "handoff_or_recovery_notes": ["Receives bounded plans from Planning as a Control Layer; hands uncertainty-bearing imagined outcomes to Cognitive Compilation and action governance without identifying prediction with reality."]
+            "handoff_or_recovery_notes": [
+              "Receives bounded plans from Planning as a Control Layer; hands uncertainty-bearing imagined outcomes to Cognitive Compilation and action governance without identifying prediction with reality."
+            ]
           },
           "problem": "Planning and control fail when an agent's latent or simulated future is mistaken for the world, when prediction error is hidden, or when model updates expand action authority without evidence.",
           "insufficient": "A more accurate predictor, larger simulator, or compelling rollout is not enough: open-loop scores can conceal compounding error, partial observability, distribution shift, causal confusion, reward exploitation, and unsafe actions selected from attractive hallucinated futures.",
           "core_claim": "A world model should be governed as a fallible, versioned prediction service whose state, horizon, uncertainty, provenance, and calibration bound which imagined consequences may influence planning and action; observation must repeatedly reconcile imagination with reality.",
           "claim_source_mappings": [
-            {"source_id":"platonic_world_model","mapped_support":"Supports shared latent structure, prediction interfaces, and the possibility of substrate-independent world representations.","limits":"Does not prove a unique world model, causal correctness, or safe action selection.","passage_refs":["sources/source_notes/platonic_world_model.md"],"passage_review_note":"Reviewed local source note; philosophical and architectural claims kept separate from empirical support.","passage_review_state":"reviewed"},
-            {"source_id":"deterministic_capability_compilation","mapped_support":"Supports versioned contracts, deterministic compilation, provenance, admission gates, and revocable capability boundaries around model use.","limits":"Does not establish predictive accuracy or learned-representation quality.","passage_refs":["sources/source_notes/deterministic_capability_compilation.md"],"passage_review_note":"Reviewed local source note; used for governance mechanics only.","passage_review_state":"reviewed"},
-            {"source_id":"qcsa_whitepaper","mapped_support":"Supports modular predictive substrates and controlled interfaces between heterogeneous reasoning components.","limits":"Architecture proposal does not validate world-model learning or grounding.","passage_refs":["sources/source_notes/qcsa_whitepaper.md"],"passage_review_note":"Reviewed local source note; no performance claim promoted.","passage_review_state":"reviewed"},
-            {"source_id":"simulation_scaling","mapped_support":"Supports explicit simulation budgets, multi-resolution rollouts, uncertainty, and selective expansion of imagined futures.","limits":"Local design source does not prove calibrated long-horizon prediction.","passage_refs":["sources/source_notes/simulation_scaling.md"],"passage_review_note":"Reviewed local source note; retained as a design hypothesis.","passage_review_state":"reviewed"},
-            {"source_id":"cognitive_compilation","mapped_support":"Supports compiling high-level cognitive products into typed, inspectable intermediate artifacts.","limits":"Does not show that latent predictions are true or causally adequate.","passage_refs":["sources/source_notes/cognitive_compilation.md"],"passage_review_note":"Reviewed local source note; mapped to interfaces and receipts.","passage_review_state":"reviewed"},
-            {"source_id":"planforge","mapped_support":"Supports bounded plan artifacts, verification, replanning, and failure-aware execution handoffs.","limits":"Planning structure alone cannot repair a misspecified model of the world.","passage_refs":["sources/source_notes/planforge.md"],"passage_review_note":"Reviewed local source note; used for planner-model boundary.","passage_review_state":"reviewed"},
-            {"source_id":"ext_world_models_2018","mapped_support":"Demonstrates agent learning and acting through compact learned environment models and imagined rollouts in bounded tasks.","limits":"Toy-domain results do not establish open-world grounding, causal fidelity, or safe deployment.","passage_refs":["sources/source_notes/ext_world_models_2018.md"],"passage_review_note":"Reviewed source note; preserved domain limits.","passage_review_state":"reviewed"},
-            {"source_id":"ext_dreamer_v3_2025","mapped_support":"Supports learning behaviors across diverse domains through a learned dynamics model and latent imagination.","limits":"Benchmark breadth is not proof of calibrated real-world counterfactuals or governance effectiveness.","passage_refs":["sources/source_notes/ext_dreamer_v3_2025.md"],"passage_review_note":"Reviewed source note; used as empirical architecture evidence only.","passage_review_state":"reviewed"},
-            {"source_id":"ext_v_jepa_2_2025","mapped_support":"Supports self-supervised predictive representations for understanding and planning in physical environments.","limits":"Reported embodiment results do not prove general causal models, long-horizon reliability, or ASI-scale safety.","passage_refs":["sources/source_notes/ext_v_jepa_2_2025.md"],"passage_review_note":"Reviewed source note; bounded to reported tasks and methods.","passage_review_state":"reviewed"}
+            {
+              "source_id": "platonic_world_model",
+              "mapped_support": "Supports shared latent structure, prediction interfaces, and the possibility of substrate-independent world representations.",
+              "limits": "Does not prove a unique world model, causal correctness, or safe action selection.",
+              "passage_refs": [
+                "sources/source_notes/platonic_world_model.md"
+              ],
+              "passage_review_note": "Reviewed local source note; philosophical and architectural claims kept separate from empirical support.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "deterministic_capability_compilation",
+              "mapped_support": "Supports versioned contracts, deterministic compilation, provenance, admission gates, and revocable capability boundaries around model use.",
+              "limits": "Does not establish predictive accuracy or learned-representation quality.",
+              "passage_refs": [
+                "sources/source_notes/deterministic_capability_compilation.md"
+              ],
+              "passage_review_note": "Reviewed local source note; used for governance mechanics only.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "qcsa_whitepaper",
+              "mapped_support": "Supports modular predictive substrates and controlled interfaces between heterogeneous reasoning components.",
+              "limits": "Architecture proposal does not validate world-model learning or grounding.",
+              "passage_refs": [
+                "sources/source_notes/qcsa_whitepaper.md"
+              ],
+              "passage_review_note": "Reviewed local source note; no performance claim promoted.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "simulation_scaling",
+              "mapped_support": "Supports explicit simulation budgets, multi-resolution rollouts, uncertainty, and selective expansion of imagined futures.",
+              "limits": "Local design source does not prove calibrated long-horizon prediction.",
+              "passage_refs": [
+                "sources/source_notes/simulation_scaling.md"
+              ],
+              "passage_review_note": "Reviewed local source note; retained as a design hypothesis.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "cognitive_compilation",
+              "mapped_support": "Supports compiling high-level cognitive products into typed, inspectable intermediate artifacts.",
+              "limits": "Does not show that latent predictions are true or causally adequate.",
+              "passage_refs": [
+                "sources/source_notes/cognitive_compilation.md"
+              ],
+              "passage_review_note": "Reviewed local source note; mapped to interfaces and receipts.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "planforge",
+              "mapped_support": "Supports bounded plan artifacts, verification, replanning, and failure-aware execution handoffs.",
+              "limits": "Planning structure alone cannot repair a misspecified model of the world.",
+              "passage_refs": [
+                "sources/source_notes/planforge.md"
+              ],
+              "passage_review_note": "Reviewed local source note; used for planner-model boundary.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_world_models_2018",
+              "mapped_support": "Demonstrates agent learning and acting through compact learned environment models and imagined rollouts in bounded tasks.",
+              "limits": "Toy-domain results do not establish open-world grounding, causal fidelity, or safe deployment.",
+              "passage_refs": [
+                "sources/source_notes/ext_world_models_2018.md"
+              ],
+              "passage_review_note": "Reviewed source note; preserved domain limits.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_dreamer_v3_2025",
+              "mapped_support": "Supports learning behaviors across diverse domains through a learned dynamics model and latent imagination.",
+              "limits": "Benchmark breadth is not proof of calibrated real-world counterfactuals or governance effectiveness.",
+              "passage_refs": [
+                "sources/source_notes/ext_dreamer_v3_2025.md"
+              ],
+              "passage_review_note": "Reviewed source note; used as empirical architecture evidence only.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_v_jepa_2_2025",
+              "mapped_support": "Supports self-supervised predictive representations for understanding and planning in physical environments.",
+              "limits": "Reported embodiment results do not prove general causal models, long-horizon reliability, or ASI-scale safety.",
+              "passage_refs": [
+                "sources/source_notes/ext_v_jepa_2_2025.md"
+              ],
+              "passage_review_note": "Reviewed source note; bounded to reported tasks and methods.",
+              "passage_review_state": "reviewed"
+            }
           ],
-          "mechanism": ["Represent world-model outputs as versioned state-transition hypotheses with provenance, horizon, uncertainty, and validity domains.", "Separate observation encoding, latent dynamics, decoding, value/reward prediction, and policy use so each can be challenged independently.", "Calibrate uncertainty by horizon, state region, intervention type, and consequence class.", "Use receding-horizon observation updates and explicit residuals to reconcile predicted and observed state.", "Admit imagined rollouts to planning only inside tested support and authority envelopes.", "Fork competing models or ensembles when material hypotheses disagree.", "Detect model exploitation by testing whether proposed actions seek high-value low-support states.", "Retain counterfactual receipts linking decisions to model version, observations, alternatives, and uncertainty."],
-          "interfaces": ["observation and state estimator", "latent dynamics service", "counterfactual rollout API", "uncertainty and calibration registry", "planner admission gate", "reality-residual monitor", "model-version and provenance ledger", "safe-action controller"],
-          "invariants": ["Predictions are labeled by model version, horizon, and support domain.", "Low-support or high-consequence rollouts cannot silently authorize action.", "Observation can override imagination and trigger replanning.", "Uncertainty is not collapsed into a point estimate at governance boundaries.", "World-model updates cannot widen execution authority by themselves.", "Counterfactual comparisons use compatible state and intervention semantics.", "Reality residuals are preserved rather than averaged away.", "A reachable safe action exists when predictive confidence collapses."],
-          "failure_modes": ["latent hallucination", "compounding rollout error", "partial-observation aliasing", "causal confusion", "distribution shift", "reward-model leakage", "model exploitation", "uncertainty miscalibration", "representation collapse", "stale model version", "simulator overfitting", "unsupported long-horizon planning", "observation overwrite", "unsafe reality gap"],
+          "mechanism": [
+            "Represent world-model outputs as versioned state-transition hypotheses with provenance, horizon, uncertainty, and validity domains.",
+            "Separate observation encoding, latent dynamics, decoding, value/reward prediction, and policy use so each can be challenged independently.",
+            "Calibrate uncertainty by horizon, state region, intervention type, and consequence class.",
+            "Use receding-horizon observation updates and explicit residuals to reconcile predicted and observed state.",
+            "Admit imagined rollouts to planning only inside tested support and authority envelopes.",
+            "Fork competing models or ensembles when material hypotheses disagree.",
+            "Detect model exploitation by testing whether proposed actions seek high-value low-support states.",
+            "Retain counterfactual receipts linking decisions to model version, observations, alternatives, and uncertainty."
+          ],
+          "interfaces": [
+            "observation and state estimator",
+            "latent dynamics service",
+            "counterfactual rollout API",
+            "uncertainty and calibration registry",
+            "planner admission gate",
+            "reality-residual monitor",
+            "model-version and provenance ledger",
+            "safe-action controller"
+          ],
+          "invariants": [
+            "Predictions are labeled by model version, horizon, and support domain.",
+            "Low-support or high-consequence rollouts cannot silently authorize action.",
+            "Observation can override imagination and trigger replanning.",
+            "Uncertainty is not collapsed into a point estimate at governance boundaries.",
+            "World-model updates cannot widen execution authority by themselves.",
+            "Counterfactual comparisons use compatible state and intervention semantics.",
+            "Reality residuals are preserved rather than averaged away.",
+            "A reachable safe action exists when predictive confidence collapses."
+          ],
+          "failure_modes": [
+            "latent hallucination",
+            "compounding rollout error",
+            "partial-observation aliasing",
+            "causal confusion",
+            "distribution shift",
+            "reward-model leakage",
+            "model exploitation",
+            "uncertainty miscalibration",
+            "representation collapse",
+            "stale model version",
+            "simulator overfitting",
+            "unsupported long-horizon planning",
+            "observation overwrite",
+            "unsafe reality gap"
+          ],
           "minimal_implementation": "Build a bounded partially observed control task with two independently trained dynamics models, horizon-conditional calibration, receding observation updates, model-disagreement routing, support-aware action gating, counterfactual receipts, and adversarial tests for exploitation and distribution shift.",
           "beyond_state_of_art": "The mature target architecture is a plural, causally testable world-model substrate that can revise its abstractions while a versioned operational contract keeps prediction, uncertainty, intervention semantics, authority, observation, and residual reality distinct. It admits imagined futures only inside calibrated support, routes material disagreement and shift to fallback or safe hold, and records every counterfactual dependency. Maturity requires held-out interventions, causal ablations, independent reproduction, and real-world transfer that outperform strong reactive, model-free, and single-model baselines without worsening unsafe action, latency, or governance cost.",
           "codex_tests": [
-            {"name":"Reality-gap and horizon calibration benchmark","purpose":"Measure error, calibration, decision regret, and safe abstention across horizons and controlled shifts against reactive, model-free, and single-model baselines.","implementation_status":"planned","result_status":"not_run"},
-            {"name":"Model-exploitation red-team suite","purpose":"Search for policies that exploit uncertain or misspecified regions and verify that support-aware governance blocks them.","implementation_status":"planned","result_status":"not_run"},
-            {"name":"Counterfactual intervention test","purpose":"Evaluate whether predicted effects survive held-out interventions rather than observational correlation alone.","implementation_status":"planned","result_status":"not_run"}
+            {
+              "name": "Reality-gap and horizon calibration benchmark",
+              "purpose": "Measure error, calibration, decision regret, and safe abstention across horizons and controlled shifts against reactive, model-free, and single-model baselines.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            },
+            {
+              "name": "Model-exploitation red-team suite",
+              "purpose": "Search for policies that exploit uncertain or misspecified regions and verify that support-aware governance blocks them.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            },
+            {
+              "name": "Counterfactual intervention test",
+              "purpose": "Evaluate whether predicted effects survive held-out interventions rather than observational correlation alone.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            }
           ],
           "lean_module": "AsiStackProofs.GovernedWorldModels",
           "proof_targets": [
-            {"tag":"lean:world_model.unsupported_rollout_no_authority","module":"AsiStackProofs.GovernedWorldModels","target":"In the finite admission model, an unsupported, stale, materially disagreeing, or uncalibrated rollout cannot authorize a consequential action.","status":"implemented"},
-            {"tag":"lean:world_model.reality_residual_forces_route","module":"AsiStackProofs.GovernedWorldModels","target":"A material observation residual forces bounded re-estimation, fallback, review, or safe hold before further model-based execution.","status":"implemented"}
+            {
+              "tag": "lean:world_model.unsupported_rollout_no_authority",
+              "module": "AsiStackProofs.GovernedWorldModels",
+              "target": "In the finite admission model, an unsupported, stale, materially disagreeing, or uncalibrated rollout cannot authorize a consequential action.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:world_model.reality_residual_forces_route",
+              "module": "AsiStackProofs.GovernedWorldModels",
+              "target": "A material observation residual forces bounded re-estimation, fallback, review, or safe hold before further model-based execution.",
+              "status": "implemented"
+            }
           ],
-          "draft_maturity": "admitted_packet_complete",
-          "open_evidence_gaps": ["No local held-out intervention benchmark yet distinguishes causal prediction from correlation.", "No representative real-world transfer result establishes governance thresholds.", "Plural-model benefits and costs have not been compared against strong single-model and reactive baselines."]
+          "draft_maturity": "integrated_argument_chapter_formal_and_protocol_contract_complete",
+          "open_evidence_gaps": [
+            "No local held-out intervention benchmark yet distinguishes causal prediction from correlation.",
+            "No representative real-world transfer result establishes governance thresholds.",
+            "Plural-model benefits and costs have not been compared against strong single-model and reactive baselines."
+          ]
         },
         {
           "id": "cognitive-compilation-and-semantic-ir",
@@ -17551,43 +17892,199 @@
             "ext_circuit_tracing_2025"
           ],
           "source_queue": {
-            "primary": ["ext_transformer_circuits_2021", "ext_monosemanticity_2023", "ext_scaling_sparse_autoencoders_2024", "ext_circuit_tracing_2025"],
-            "supporting": ["deterministic_capability_compilation", "kernel_english_residual_compiler"],
-            "variants": ["qcsa_whitepaper", "platonic_world_model"],
+            "primary": [
+              "ext_transformer_circuits_2021",
+              "ext_monosemanticity_2023",
+              "ext_scaling_sparse_autoencoders_2024",
+              "ext_circuit_tracing_2025"
+            ],
+            "supporting": [
+              "deterministic_capability_compilation",
+              "kernel_english_residual_compiler"
+            ],
+            "variants": [
+              "qcsa_whitepaper",
+              "platonic_world_model"
+            ],
             "connector_or_recovery": [],
-            "handoff_or_recovery_notes": ["Receives behavioral claims and benchmark residuals from the evidence chapters; hands bounded internal-state evidence to Capability Thresholds and Safety Cases without allowing an interpretation to become an authorization token."]
+            "handoff_or_recovery_notes": [
+              "Receives behavioral claims and benchmark residuals from the evidence chapters; hands bounded internal-state evidence to Capability Thresholds and Safety Cases without allowing an interpretation to become an authorization token."
+            ]
           },
           "problem": "Behavioral tests can reveal what a model did without identifying the internal features, circuits, representations, or causal pathways that produced it, while interpretability methods can themselves generate persuasive but unstable stories.",
           "insufficient": "A probe, visualization, sparse feature label, attribution map, or circuit diagram is not white-box proof unless it is reproducible, causally tested, stable under relevant transformations, scoped to a model/version/data regime, and compared with plausible alternative explanations.",
           "core_claim": "Internal-state observations should enter governance only as typed evidence artifacts with lineage, method assumptions, replication status, causal interventions, stability checks, coverage limits, and explicit non-authority; white-box evidence complements but does not replace behavioral and operational evidence.",
           "claim_source_mappings": [
-            {"source_id":"deterministic_capability_compilation","mapped_support":"Supports typed evidence artifacts, provenance, deterministic receipts, admission policy, and non-authority boundaries.","limits":"Does not validate any interpretability method or mechanistic claim.","passage_refs":["sources/source_notes/deterministic_capability_compilation.md"],"passage_review_note":"Reviewed local source note; used for evidence plumbing only.","passage_review_state":"reviewed"},
-            {"source_id":"kernel_english_residual_compiler","mapped_support":"Supports compiling residual observations and structured natural-language interpretations into inspectable, challengeable artifacts.","limits":"Structured descriptions are not faithful explanations by construction.","passage_refs":["sources/source_notes/kernel_english_residual_compiler.md"],"passage_review_note":"Reviewed local source note; preserved compiler-versus-truth distinction.","passage_review_state":"reviewed"},
-            {"source_id":"qcsa_whitepaper","mapped_support":"Supports modular instrumentation across heterogeneous substrates and interfaces for comparing internal representations.","limits":"Architecture proposal does not prove interpretability transfer across substrates.","passage_refs":["sources/source_notes/qcsa_whitepaper.md"],"passage_review_note":"Reviewed local source note; used as an interface hypothesis.","passage_review_state":"reviewed"},
-            {"source_id":"platonic_world_model","mapped_support":"Motivates comparison of representation geometry and shared latent structure across models.","limits":"Representational similarity does not establish identical concepts, computations, or causal roles.","passage_refs":["sources/source_notes/platonic_world_model.md"],"passage_review_note":"Reviewed local source note; no ontological equivalence claimed.","passage_review_state":"reviewed"},
-            {"source_id":"ext_transformer_circuits_2021","mapped_support":"Provides a framework for describing transformer computation through features and circuits and for forming mechanistic hypotheses.","limits":"Framework and case studies do not imply complete, unique, or scalable explanations.","passage_refs":["sources/source_notes/ext_transformer_circuits_2021.md"],"passage_review_note":"Reviewed source note; mapped to methodology and limits.","passage_review_state":"reviewed"},
-            {"source_id":"ext_monosemanticity_2023","mapped_support":"Shows sparse dictionary learning can recover more interpretable feature directions in a small transformer setting.","limits":"Feature labels are imperfect; small-model findings do not establish completeness, causal sufficiency, or frontier-model coverage.","passage_refs":["sources/source_notes/ext_monosemanticity_2023.md"],"passage_review_note":"Reviewed source note; scale and causal limits retained.","passage_review_state":"reviewed"},
-            {"source_id":"ext_scaling_sparse_autoencoders_2024","mapped_support":"Provides evidence and engineering lessons for scaling sparse autoencoders and evaluating learned features on larger models.","limits":"Reconstruction and interpretability metrics do not prove faithful decomposition or governance readiness.","passage_refs":["sources/source_notes/ext_scaling_sparse_autoencoders_2024.md"],"passage_review_note":"Reviewed source note; used for scaling evidence with metric caveats.","passage_review_state":"reviewed"},
-            {"source_id":"ext_circuit_tracing_2025","mapped_support":"Demonstrates model-specific circuit-tracing methods and causal graph hypotheses for selected behaviors.","limits":"Traced graphs are method- and task-dependent, may omit pathways, and do not constitute complete model understanding.","passage_refs":["sources/source_notes/ext_circuit_tracing_2025.md"],"passage_review_note":"Reviewed source note; bounded to reported interventions and examples.","passage_review_state":"reviewed"}
+            {
+              "source_id": "deterministic_capability_compilation",
+              "mapped_support": "Supports typed evidence artifacts, provenance, deterministic receipts, admission policy, and non-authority boundaries.",
+              "limits": "Does not validate any interpretability method or mechanistic claim.",
+              "passage_refs": [
+                "sources/source_notes/deterministic_capability_compilation.md"
+              ],
+              "passage_review_note": "Reviewed local source note; used for evidence plumbing only.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "kernel_english_residual_compiler",
+              "mapped_support": "Supports compiling residual observations and structured natural-language interpretations into inspectable, challengeable artifacts.",
+              "limits": "Structured descriptions are not faithful explanations by construction.",
+              "passage_refs": [
+                "sources/source_notes/kernel_english_residual_compiler.md"
+              ],
+              "passage_review_note": "Reviewed local source note; preserved compiler-versus-truth distinction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "qcsa_whitepaper",
+              "mapped_support": "Supports modular instrumentation across heterogeneous substrates and interfaces for comparing internal representations.",
+              "limits": "Architecture proposal does not prove interpretability transfer across substrates.",
+              "passage_refs": [
+                "sources/source_notes/qcsa_whitepaper.md"
+              ],
+              "passage_review_note": "Reviewed local source note; used as an interface hypothesis.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "platonic_world_model",
+              "mapped_support": "Motivates comparison of representation geometry and shared latent structure across models.",
+              "limits": "Representational similarity does not establish identical concepts, computations, or causal roles.",
+              "passage_refs": [
+                "sources/source_notes/platonic_world_model.md"
+              ],
+              "passage_review_note": "Reviewed local source note; no ontological equivalence claimed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_transformer_circuits_2021",
+              "mapped_support": "Provides a framework for describing transformer computation through features and circuits and for forming mechanistic hypotheses.",
+              "limits": "Framework and case studies do not imply complete, unique, or scalable explanations.",
+              "passage_refs": [
+                "sources/source_notes/ext_transformer_circuits_2021.md"
+              ],
+              "passage_review_note": "Reviewed source note; mapped to methodology and limits.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_monosemanticity_2023",
+              "mapped_support": "Shows sparse dictionary learning can recover more interpretable feature directions in a small transformer setting.",
+              "limits": "Feature labels are imperfect; small-model findings do not establish completeness, causal sufficiency, or frontier-model coverage.",
+              "passage_refs": [
+                "sources/source_notes/ext_monosemanticity_2023.md"
+              ],
+              "passage_review_note": "Reviewed source note; scale and causal limits retained.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_scaling_sparse_autoencoders_2024",
+              "mapped_support": "Provides evidence and engineering lessons for scaling sparse autoencoders and evaluating learned features on larger models.",
+              "limits": "Reconstruction and interpretability metrics do not prove faithful decomposition or governance readiness.",
+              "passage_refs": [
+                "sources/source_notes/ext_scaling_sparse_autoencoders_2024.md"
+              ],
+              "passage_review_note": "Reviewed source note; used for scaling evidence with metric caveats.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_circuit_tracing_2025",
+              "mapped_support": "Demonstrates model-specific circuit-tracing methods and causal graph hypotheses for selected behaviors.",
+              "limits": "Traced graphs are method- and task-dependent, may omit pathways, and do not constitute complete model understanding.",
+              "passage_refs": [
+                "sources/source_notes/ext_circuit_tracing_2025.md"
+              ],
+              "passage_review_note": "Reviewed source note; bounded to reported interventions and examples.",
+              "passage_review_state": "reviewed"
+            }
           ],
-          "mechanism": ["Define an evidence packet containing model hash, dataset slice, method version, feature/circuit identifiers, assumptions, and confidence.", "Separate observational association, predictive decoding, causal necessity, causal sufficiency, and completeness claims.", "Require held-out replication across prompts, seeds, checkpoints, and relevant transformations.", "Use activation patching, ablation, steering, counterfactual replacement, and negative controls to challenge causal claims.", "Track reconstruction loss, feature splitting/merging, dead features, superposition, and unexplained residual.", "Compare multiple interpretation methods and independent implementations where decisions are consequential.", "Bind every label to examples, counterexamples, uncertainty, and an expiration condition.", "Permit evidence to raise scrutiny or restrict action, never to silently grant capability authority."],
-          "interfaces": ["model and checkpoint registry", "activation capture boundary", "feature and circuit registry", "intervention runner", "replication and stability harness", "evidence packet store", "behavioral benchmark crosswalk", "governance admission gate"],
-          "invariants": ["Every internal claim names the exact model and method version.", "Association is never represented as causal sufficiency.", "Labels retain examples, counterexamples, and uncertainty.", "Unexplained residual is measured and visible.", "Interpretability evidence cannot widen action authority by itself.", "Consequential claims require a negative control and held-out replication.", "Method disagreement is preserved rather than averaged into certainty.", "Stale evidence is invalidated after material model or tokenizer change."],
-          "failure_modes": ["feature hallucination", "confirmation-biased labeling", "probe leakage", "polysemantic feature collapse", "feature splitting and merging", "causal overclaim", "circuit incompleteness", "method monoculture", "checkpoint drift", "dataset cherry-picking", "unstable explanations", "residual suppression", "interpretability theater", "evidence-to-authority escalation"],
+          "mechanism": [
+            "Define an evidence packet containing model hash, dataset slice, method version, feature/circuit identifiers, assumptions, and confidence.",
+            "Separate observational association, predictive decoding, causal necessity, causal sufficiency, and completeness claims.",
+            "Require held-out replication across prompts, seeds, checkpoints, and relevant transformations.",
+            "Use activation patching, ablation, steering, counterfactual replacement, and negative controls to challenge causal claims.",
+            "Track reconstruction loss, feature splitting/merging, dead features, superposition, and unexplained residual.",
+            "Compare multiple interpretation methods and independent implementations where decisions are consequential.",
+            "Bind every label to examples, counterexamples, uncertainty, and an expiration condition.",
+            "Permit evidence to raise scrutiny or restrict action, never to silently grant capability authority."
+          ],
+          "interfaces": [
+            "model and checkpoint registry",
+            "activation capture boundary",
+            "feature and circuit registry",
+            "intervention runner",
+            "replication and stability harness",
+            "evidence packet store",
+            "behavioral benchmark crosswalk",
+            "governance admission gate"
+          ],
+          "invariants": [
+            "Every internal claim names the exact model and method version.",
+            "Association is never represented as causal sufficiency.",
+            "Labels retain examples, counterexamples, and uncertainty.",
+            "Unexplained residual is measured and visible.",
+            "Interpretability evidence cannot widen action authority by itself.",
+            "Consequential claims require a negative control and held-out replication.",
+            "Method disagreement is preserved rather than averaged into certainty.",
+            "Stale evidence is invalidated after material model or tokenizer change."
+          ],
+          "failure_modes": [
+            "feature hallucination",
+            "confirmation-biased labeling",
+            "probe leakage",
+            "polysemantic feature collapse",
+            "feature splitting and merging",
+            "causal overclaim",
+            "circuit incompleteness",
+            "method monoculture",
+            "checkpoint drift",
+            "dataset cherry-picking",
+            "unstable explanations",
+            "residual suppression",
+            "interpretability theater",
+            "evidence-to-authority escalation"
+          ],
           "minimal_implementation": "The implemented minimum is a strict internal-evidence packet schema, one explicitly expired record-shape fixture, a separately implemented semantic consumer with twelve rejecting mutations, and a finite Lean route that rejects scientifically incomplete packets, expires changed packets, and cannot grant authority. The claim-bearing campaign is prospectively frozen and resource-isolated but unexecuted; it requires one digest-bound open model, two independently owned methods, a tuned behavioral baseline, positive and negative controls, causal interventions, stability and residual accounting, an independent evaluator, and a one-time held-out opening after seven competence gates.",
           "beyond_state_of_art": "The mature operational contract is a substrate-aware white-box evidence layer that estimates causal coverage, instability, method disagreement, and unexplained residual across model families while preserving exact checkpoint, data, intervention, and evaluator lineage. It predicts behaviorally relevant changes before deployment, expires after material model changes, and can restrict but never widen authority. Maturity requires independently implemented methods, held-out negative controls, causal interventions, blinded adjudication, independent reproduction, and transfer to heterogeneous architectures; even then, the product surface must not claim complete, unique, or faithful mechanistic understanding.",
           "codex_tests": [
-            {"name":"Interpretation stability and negative-control suite","purpose":"Test labels and circuits across prompts, seeds, checkpoints, transformations, shuffled controls, and independent implementations.","implementation_status":"protocol_ready_resource_isolated","result_status":"not_run_protected_outcomes_closed"},
-            {"name":"Causal intervention benchmark","purpose":"Compare observational, probe, ablation, patching, and steering claims on necessity, sufficiency, side effects, and held-out behavioral prediction.","implementation_status":"protocol_ready_resource_isolated","result_status":"not_run_protected_outcomes_closed"},
-            {"name":"Governance non-authority mutation test","purpose":"Verify that forged, stale, incomplete, or favorable interpretability packets cannot widen capability or release authority.","implementation_status":"implemented","result_status":"12_of_12_semantic_mutations_rejected_support_effect_none"}
+            {
+              "name": "Interpretation stability and negative-control suite",
+              "purpose": "Test labels and circuits across prompts, seeds, checkpoints, transformations, shuffled controls, and independent implementations.",
+              "implementation_status": "protocol_ready_resource_isolated",
+              "result_status": "not_run_protected_outcomes_closed"
+            },
+            {
+              "name": "Causal intervention benchmark",
+              "purpose": "Compare observational, probe, ablation, patching, and steering claims on necessity, sufficiency, side effects, and held-out behavioral prediction.",
+              "implementation_status": "protocol_ready_resource_isolated",
+              "result_status": "not_run_protected_outcomes_closed"
+            },
+            {
+              "name": "Governance non-authority mutation test",
+              "purpose": "Verify that forged, stale, incomplete, or favorable interpretability packets cannot widen capability or release authority.",
+              "implementation_status": "implemented",
+              "result_status": "12_of_12_semantic_mutations_rejected_support_effect_none"
+            }
           ],
           "lean_module": "AsiStackProofs.WhiteBoxEvidence",
           "proof_targets": [
-            {"tag":"lean:white_box.evidence_never_grants_authority","module":"AsiStackProofs.WhiteBoxEvidence","target":"In the finite policy model, no interpretability evidence packet can widen execution or release authority; it may only preserve, restrict, escalate, or reject.","status":"implemented"},
-            {"tag":"lean:white_box.invalid_packet_rejected","module":"AsiStackProofs.WhiteBoxEvidence","target":"Packets with stale lineage, missing method assumptions, absent negative controls, or unsupported causal state are rejected before governance use.","status":"implemented"}
+            {
+              "tag": "lean:white_box.evidence_never_grants_authority",
+              "module": "AsiStackProofs.WhiteBoxEvidence",
+              "target": "In the finite policy model, no interpretability evidence packet can widen execution or release authority; it may only preserve, restrict, escalate, or reject.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:white_box.invalid_packet_rejected",
+              "module": "AsiStackProofs.WhiteBoxEvidence",
+              "target": "Packets with stale lineage, missing method assumptions, absent negative controls, or unsupported causal state are rejected before governance use.",
+              "status": "implemented"
+            }
           ],
           "draft_maturity": "integrated_argument_chapter_formal_and_protocol_contract_complete",
-          "open_evidence_gaps": ["No local independent-method replication has been run; the protected campaign remains unexecuted behind exact competence and resource gates.", "No accepted completeness or causal-coverage metric exists for frontier models.", "Transfer across architectures and checkpoint updates remains unproven."]
+          "open_evidence_gaps": [
+            "No local independent-method replication has been run; the protected campaign remains unexecuted behind exact competence and resource gates.",
+            "No accepted completeness or causal-coverage metric exists for frontier models.",
+            "Transfer across architectures and checkpoint updates remains unproven."
+          ]
         },
         {
           "id": "capability-thresholds-and-deployment-commitments",
@@ -18360,44 +18857,216 @@
             "ext_nist_incident_response_2025"
           ],
           "source_queue": {
-            "primary": ["ext_nist_ai_rmf_1_0_2023", "ext_nist_deployed_ai_monitoring_2026", "ext_nist_incident_response_2025"],
-            "supporting": ["scf", "theseus_operator_os", "viea", "talos"],
-            "variants": ["deterministic_capability_compilation", "platonic_world_model"],
+            "primary": [
+              "ext_nist_ai_rmf_1_0_2023",
+              "ext_nist_deployed_ai_monitoring_2026",
+              "ext_nist_incident_response_2025"
+            ],
+            "supporting": [
+              "scf",
+              "theseus_operator_os",
+              "viea",
+              "talos"
+            ],
+            "variants": [
+              "deterministic_capability_compilation",
+              "platonic_world_model"
+            ],
             "connector_or_recovery": [],
-            "handoff_or_recovery_notes": ["Receives safety-case obligations, runtime telemetry, and authority contracts; hands incident residuals to policy optimization and update governance without turning emergency power into permanent authority."]
+            "handoff_or_recovery_notes": [
+              "Receives safety-case obligations, runtime telemetry, and authority contracts; hands incident residuals to policy optimization and update governance without turning emergency power into permanent authority."
+            ]
           },
           "problem": "A system can satisfy pre-deployment requirements yet fail after release through drift, dependency failure, operator overload, ambiguous incidents, correlated faults, or recovery actions that create new hazards.",
           "insufficient": "Monitoring, a kill switch, backups, an incident plan, or rollback alone is not operational resilience: signals may be stale, effects may be irreversible, authority may be unclear, dependencies may share failure modes, and rollback may restore code while leaving data, memory, credentials, or downstream consequences changed.",
           "core_claim": "Governed operation is a closed incident lifecycle that binds detection, classification, command authority, containment, effect-complete rollback, graceful degradation, recovery evidence, and learning to the exact deployed system and its dependency graph.",
           "claim_source_mappings": [
-            {"source_id":"scf","mapped_support":"Supports accountable roles, change control, review gates, escalation, and lifecycle governance.","limits":"Governance design does not prove detection quality or recovery success.","passage_refs":["sources/source_notes/scf.md"],"passage_review_note":"Reviewed local source note; mapped to institutional command and change control.","passage_review_state":"reviewed"},
-            {"source_id":"deterministic_capability_compilation","mapped_support":"Supports immutable release identity, authority-scoped artifacts, deterministic receipts, revocation, and rollback lineage.","limits":"Compilation controls cannot reverse external effects or guarantee runtime resilience.","passage_refs":["sources/source_notes/deterministic_capability_compilation.md"],"passage_review_note":"Reviewed local source note; external-effect limits retained.","passage_review_state":"reviewed"},
-            {"source_id":"theseus_operator_os","mapped_support":"Supports an operator-facing control plane for status, intervention, degraded modes, and incident work.","limits":"Design lineage is not evidence of usability or incident performance.","passage_refs":["sources/source_notes/theseus_operator_os.md"],"passage_review_note":"Reviewed local source note; no deployment claim promoted.","passage_review_state":"reviewed"},
-            {"source_id":"viea","mapped_support":"Supports explicit commands, roles, verification, failure behavior, artifacts, and escalation paths.","limits":"Does not establish incident detection, recovery, or effect reversal.","passage_refs":["sources/source_notes/viea.md"],"passage_review_note":"Reviewed local source note; used for incident command contracts.","passage_review_state":"reviewed"},
-            {"source_id":"talos","mapped_support":"Supports bounded operator authority, audit, emergency intervention, and policy-controlled execution.","limits":"Architectural proposal does not validate incident drills or graceful degradation.","passage_refs":["sources/source_notes/talos.md"],"passage_review_note":"Reviewed local source note; maintained proposal status.","passage_review_state":"reviewed"},
-            {"source_id":"platonic_world_model","mapped_support":"Supports explicit environment state, residuals, and model-versus-reality distinctions useful for incident diagnosis.","limits":"Does not supply an incident-management standard or recovery evidence.","passage_refs":["sources/source_notes/platonic_world_model.md"],"passage_review_note":"Reviewed local source note; used for state reconciliation only.","passage_review_state":"reviewed"},
-            {"source_id":"ext_nist_ai_rmf_1_0_2023","mapped_support":"Provides lifecycle AI risk-management functions and governance context spanning map, measure, manage, and govern activities.","limits":"Voluntary framework guidance does not prove that a particular operational implementation is effective or compliant.","passage_refs":["sources/source_notes/ext_nist_ai_rmf_1_0_2023.md"],"passage_review_note":"Reviewed source note; used as governance baseline.","passage_review_state":"reviewed"},
-            {"source_id":"ext_nist_deployed_ai_monitoring_2026","mapped_support":"Provides current NIST guidance on monitoring deployed AI systems, including performance, risk, change, and operational context.","limits":"Guidance and examples do not establish universal metrics, thresholds, or incident outcomes.","passage_refs":["sources/source_notes/ext_nist_deployed_ai_monitoring_2026.md"],"passage_review_note":"Reviewed source note; preserved draft/current-practice limitations recorded there.","passage_review_state":"reviewed"},
-            {"source_id":"ext_nist_incident_response_2025","mapped_support":"Grounds incident response in preparation integrated with risk management plus detection, response, recovery, and continuous improvement.","limits":"Cybersecurity incident guidance requires explicit adaptation and validation for autonomous AI and irreversible real-world effects.","passage_refs":["sources/source_notes/ext_nist_incident_response_2025.md"],"passage_review_note":"Reviewed the official NIST publication record and local note; AI-specific transfer remains a proposed adaptation.","passage_review_state":"reviewed"}
+            {
+              "source_id": "scf",
+              "mapped_support": "Supports accountable roles, change control, review gates, escalation, and lifecycle governance.",
+              "limits": "Governance design does not prove detection quality or recovery success.",
+              "passage_refs": [
+                "sources/source_notes/scf.md"
+              ],
+              "passage_review_note": "Reviewed local source note; mapped to institutional command and change control.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "deterministic_capability_compilation",
+              "mapped_support": "Supports immutable release identity, authority-scoped artifacts, deterministic receipts, revocation, and rollback lineage.",
+              "limits": "Compilation controls cannot reverse external effects or guarantee runtime resilience.",
+              "passage_refs": [
+                "sources/source_notes/deterministic_capability_compilation.md"
+              ],
+              "passage_review_note": "Reviewed local source note; external-effect limits retained.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "theseus_operator_os",
+              "mapped_support": "Supports an operator-facing control plane for status, intervention, degraded modes, and incident work.",
+              "limits": "Design lineage is not evidence of usability or incident performance.",
+              "passage_refs": [
+                "sources/source_notes/theseus_operator_os.md"
+              ],
+              "passage_review_note": "Reviewed local source note; no deployment claim promoted.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports explicit commands, roles, verification, failure behavior, artifacts, and escalation paths.",
+              "limits": "Does not establish incident detection, recovery, or effect reversal.",
+              "passage_refs": [
+                "sources/source_notes/viea.md"
+              ],
+              "passage_review_note": "Reviewed local source note; used for incident command contracts.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports bounded operator authority, audit, emergency intervention, and policy-controlled execution.",
+              "limits": "Architectural proposal does not validate incident drills or graceful degradation.",
+              "passage_refs": [
+                "sources/source_notes/talos.md"
+              ],
+              "passage_review_note": "Reviewed local source note; maintained proposal status.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "platonic_world_model",
+              "mapped_support": "Supports explicit environment state, residuals, and model-versus-reality distinctions useful for incident diagnosis.",
+              "limits": "Does not supply an incident-management standard or recovery evidence.",
+              "passage_refs": [
+                "sources/source_notes/platonic_world_model.md"
+              ],
+              "passage_review_note": "Reviewed local source note; used for state reconciliation only.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_nist_ai_rmf_1_0_2023",
+              "mapped_support": "Provides lifecycle AI risk-management functions and governance context spanning map, measure, manage, and govern activities.",
+              "limits": "Voluntary framework guidance does not prove that a particular operational implementation is effective or compliant.",
+              "passage_refs": [
+                "sources/source_notes/ext_nist_ai_rmf_1_0_2023.md"
+              ],
+              "passage_review_note": "Reviewed source note; used as governance baseline.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_nist_deployed_ai_monitoring_2026",
+              "mapped_support": "Provides current NIST guidance on monitoring deployed AI systems, including performance, risk, change, and operational context.",
+              "limits": "Guidance and examples do not establish universal metrics, thresholds, or incident outcomes.",
+              "passage_refs": [
+                "sources/source_notes/ext_nist_deployed_ai_monitoring_2026.md"
+              ],
+              "passage_review_note": "Reviewed source note; preserved draft/current-practice limitations recorded there.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_nist_incident_response_2025",
+              "mapped_support": "Grounds incident response in preparation integrated with risk management plus detection, response, recovery, and continuous improvement.",
+              "limits": "Cybersecurity incident guidance requires explicit adaptation and validation for autonomous AI and irreversible real-world effects.",
+              "passage_refs": [
+                "sources/source_notes/ext_nist_incident_response_2025.md"
+              ],
+              "passage_review_note": "Reviewed the official NIST publication record and local note; AI-specific transfer remains a proposed adaptation.",
+              "passage_review_state": "reviewed"
+            }
           ],
-          "mechanism": ["Maintain a deployment manifest covering model, policy, prompts, tools, data, identities, caches, dependencies, owners, and rollback authority.", "Fuse behavioral, safety, security, dependency, human, and business signals into versioned incident hypotheses rather than a single health score.", "Classify incidents by consequence, reversibility, scope, uncertainty, and propagation risk.", "Bind each class to incident commander, technical and safety leads, communication duties, action limits, and emergency expiry.", "Contain through least-disruptive effective controls: rate limit, tool revoke, route restrict, isolate, safe hold, or shutdown.", "Perform effect-complete rollback across model, optimizer, scheduler, RNG, cache, memory, credentials, data, replicas, and descendants where applicable.", "Recover by staged canary with independent acceptance evidence and explicit residual-risk disposition.", "Feed incident residuals into tests, safety cases, thresholds, training, and architecture while preserving evidence."],
-          "interfaces": ["deployment and dependency manifest", "telemetry and detector bus", "incident classifier", "command and authority registry", "containment controller", "rollback and compensation engine", "degraded-mode router", "recovery attestation and learning ledger"],
-          "invariants": ["Every deployment has a named incident commander and reachable safe state.", "Emergency authority is scoped, logged, and expires.", "Containment does not require the suspected component to cooperate.", "Rollback completeness is assessed over internal state and external effects.", "Degraded mode never silently widens capability or data access.", "Recovery requires fresh evidence tied to the candidate state.", "Incident evidence is append-only and provenance-bound.", "Unresolved high-consequence uncertainty blocks normal service restoration."],
-          "failure_modes": ["silent drift", "detector blindness", "alert storm", "ambiguous command", "kill-switch dependency", "correlated backup failure", "partial rollback", "irreversible external effect", "credential persistence", "stale cache or memory", "unsafe degraded mode", "premature recovery", "emergency-power persistence", "postmortem without control change"],
+          "mechanism": [
+            "Maintain a deployment manifest covering model, policy, prompts, tools, data, identities, caches, dependencies, owners, and rollback authority.",
+            "Fuse behavioral, safety, security, dependency, human, and business signals into versioned incident hypotheses rather than a single health score.",
+            "Classify incidents by consequence, reversibility, scope, uncertainty, and propagation risk.",
+            "Bind each class to incident commander, technical and safety leads, communication duties, action limits, and emergency expiry.",
+            "Contain through least-disruptive effective controls: rate limit, tool revoke, route restrict, isolate, safe hold, or shutdown.",
+            "Perform effect-complete rollback across model, optimizer, scheduler, RNG, cache, memory, credentials, data, replicas, and descendants where applicable.",
+            "Recover by staged canary with independent acceptance evidence and explicit residual-risk disposition.",
+            "Feed incident residuals into tests, safety cases, thresholds, training, and architecture while preserving evidence."
+          ],
+          "interfaces": [
+            "deployment and dependency manifest",
+            "telemetry and detector bus",
+            "incident classifier",
+            "command and authority registry",
+            "containment controller",
+            "rollback and compensation engine",
+            "degraded-mode router",
+            "recovery attestation and learning ledger"
+          ],
+          "invariants": [
+            "Every deployment has a named incident commander and reachable safe state.",
+            "Emergency authority is scoped, logged, and expires.",
+            "Containment does not require the suspected component to cooperate.",
+            "Rollback completeness is assessed over internal state and external effects.",
+            "Degraded mode never silently widens capability or data access.",
+            "Recovery requires fresh evidence tied to the candidate state.",
+            "Incident evidence is append-only and provenance-bound.",
+            "Unresolved high-consequence uncertainty blocks normal service restoration."
+          ],
+          "failure_modes": [
+            "silent drift",
+            "detector blindness",
+            "alert storm",
+            "ambiguous command",
+            "kill-switch dependency",
+            "correlated backup failure",
+            "partial rollback",
+            "irreversible external effect",
+            "credential persistence",
+            "stale cache or memory",
+            "unsafe degraded mode",
+            "premature recovery",
+            "emergency-power persistence",
+            "postmortem without control change"
+          ],
           "minimal_implementation": "Operate a fault-injected reference service with an exact deployment manifest, independent telemetry, a versioned incident workflow record, named incident roles, tool and credential revocation, safe degraded modes, full-state rollback plus external-effect compensation, staged recovery, and game-day scenarios including detector loss, correlated dependency failure, and a rollback that appears successful while hidden state remains changed.",
           "beyond_state_of_art": "The mature target architecture is a machine-checkable operational safety case whose live evidence continuously constrains exact deployment state, incident authority, containment, degradation, rollback, compensation, and recovery across heterogeneous agents, dependencies, descendants, and external effects. Its operational contract makes emergency authority expire, reconciles hidden state and irreversible outcomes, requires fresh independent recovery evidence, and retains complete denominators and residual ownership. Maturity requires adversarial compound game days, real incident learning, independent reproduction, and transfer showing bounded harm and recovery without unacceptable useful-throughput, operator-load, latency, or governance cost.",
           "codex_tests": [
-            {"name":"Effect-complete rollback mutation suite","purpose":"Mutate model, optimizer, scheduler, RNG, cache, memory, backup, credential, replica, descendant, and external-effect state and verify incomplete restoration is detected.","implementation_status":"planned","result_status":"not_run"},
-            {"name":"Incident command game-day matrix","purpose":"Inject ambiguous, compound, and detector-degrading failures and measure detection, authority resolution, containment, recovery, harm, latency, and operator cost.","implementation_status":"planned","result_status":"not_run"},
-            {"name":"Graceful-degradation dominance test","purpose":"Compare degraded routes with shutdown and normal operation on safety, useful throughput, reversibility, and governance load.","implementation_status":"planned","result_status":"not_run"}
+            {
+              "name": "Governed operations control-contract suite",
+              "purpose": "Reject identity, authority-widening, containment, state, effect, freshness, verifier, expiry, fallback, source, and authority mutations against one authored safe-hold case and a completed development positive control.",
+              "implementation_status": "implemented",
+              "result_status": "18_of_18_semantic_mutations_rejected_support_effect_none"
+            },
+            {
+              "name": "Effect-complete rollback mutation suite",
+              "purpose": "Mutate model, optimizer, scheduler, RNG, cache, memory, backup, credential, replica, descendant, and external-effect state and verify incomplete restoration is detected.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            },
+            {
+              "name": "Incident command game-day matrix",
+              "purpose": "Inject ambiguous, compound, and detector-degrading failures and measure detection, authority resolution, containment, recovery, harm, latency, and operator cost.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            },
+            {
+              "name": "Graceful-degradation dominance test",
+              "purpose": "Compare degraded routes with shutdown and normal operation on safety, useful throughput, reversibility, and governance load.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            }
           ],
           "lean_module": "AsiStackProofs.GovernedOperations",
           "proof_targets": [
-            {"tag":"lean:operations.degradation_never_widens_authority","module":"AsiStackProofs.GovernedOperations","target":"Every finite degraded-mode transition preserves or narrows capability, data, tool, and duration authority.","status":"planned"},
-            {"tag":"lean:operations.recovery_requires_complete_state","module":"AsiStackProofs.GovernedOperations","target":"Normal-service recovery is rejected when any required internal-state component, external-effect disposition, acceptance check, or emergency-authority expiry is missing.","status":"planned"}
+            {
+              "tag": "lean:operations.degradation_never_widens_authority",
+              "module": "AsiStackProofs.GovernedOperations",
+              "target": "Every finite degraded-mode transition preserves or narrows capability, data, tool, and duration authority.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:operations.recovery_requires_complete_state",
+              "module": "AsiStackProofs.GovernedOperations",
+              "target": "Normal-service recovery is rejected when any required internal-state component, external-effect disposition, acceptance check, or emergency-authority expiry is missing.",
+              "status": "implemented"
+            }
           ],
-          "draft_maturity": "admitted_packet_complete",
-          "open_evidence_gaps": ["No local full-state rollback harness yet covers external effects and descendants.", "No adversarial game-day evidence yet calibrates severity and recovery thresholds.", "NIST incident-response transfer to autonomous AI has not been independently validated."]
+          "draft_maturity": "integrated_argument_chapter_formal_and_protocol_contract_complete",
+          "open_evidence_gaps": [
+            "No local full-state rollback harness yet covers external effects and descendants.",
+            "No adversarial game-day evidence yet calibrates severity and recovery thresholds.",
+            "NIST incident-response transfer to autonomous AI has not been independently validated."
+          ]
         },
         {
           "id": "policy-optimization-and-learning-from-feedback",

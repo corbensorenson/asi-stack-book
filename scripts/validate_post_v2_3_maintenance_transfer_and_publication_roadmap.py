@@ -676,10 +676,10 @@ def errors(data: dict) -> list[str]:
         out.append("execution board lost its bounded WIP or blocked-lane rule")
     if execution_readiness.get("protected_outcome_inspection_allowed") is not False:
         out.append("execution board permits protected-outcome inspection")
-    if execution_readiness.get("immediate_book_packet") != "P7.2-T4-governed-operations-incident-command-and-graceful-degradation":
-        out.append("execution board does not advance to P7.2-T4")
-    if execution_readiness.get("immediate_formal_packet") != "P4-C6-resource-artifact-and-lifecycle-economics-semantic-audit":
-        out.append("execution board does not advance to P4-C6")
+    if execution_readiness.get("immediate_book_packet") != "P6.4-A1-governed-model-training-distributed-optimization-and-scaling-adjudication":
+        out.append("execution board does not advance to second-tranche A1")
+    if execution_readiness.get("immediate_formal_packet") != "P4-terminal-no-open-formal-packet":
+        out.append("execution board reopens terminal P4 formal work")
     if execution_readiness.get("maximum_concurrent_second_tranche_candidates") != 1:
         out.append("execution board permits structural-candidate sprawl")
     expected_first_tranche_order = [
@@ -740,8 +740,8 @@ def errors(data: dict) -> list[str]:
     ):
         out.append("Q1/Q2 isolation or support boundary weakened")
     narrative_gate = quality_program.get("narrative_quality_gate", {})
-    if narrative_gate.get("case_independent_compression_state") != "p7_2_t2_terminal_t3_ready":
-        out.append("P7.2-T2 terminal/P7.2-T3 execution state drifted")
+    if narrative_gate.get("case_independent_compression_state") != "first_tranche_terminal_second_tranche_a1_ready":
+        out.append("first-tranche terminal/second-tranche A1 execution state drifted")
     if narrative_gate.get("flagship_threading_state") != "blocked_by_T4":
         out.append("flagship-dependent P7.1b work lost its T4 gate")
     if not all(
@@ -755,14 +755,14 @@ def errors(data: dict) -> list[str]:
     ):
         out.append("narrative quality gate lost a required meaning-preservation control")
     first_tranche = quality_program.get("structural_completeness_tranche", {}).get("first_tranche", {})
-    if first_tranche.get("state") != "three_terminal_one_reader_integration_remaining":
-        out.append("first structural tranche progress state drifted")
-    if first_tranche.get("completed_reader_chapter_count") != 3:
+    if first_tranche.get("state") != "terminal_four_reader_chapters":
+        out.append("first structural tranche terminal state drifted")
+    if first_tranche.get("completed_reader_chapter_count") != 4:
         out.append("first structural tranche completion count drifted")
-    if first_tranche.get("terminal_reader_chapter_ids") != expected_first_tranche_order[:3]:
-        out.append("T1/T2/T3 terminal reader custody drifted")
-    if first_tranche.get("remaining_reader_chapter_ids") != expected_first_tranche_order[3:]:
-        out.append("first structural tranche residual order drifted")
+    if first_tranche.get("terminal_reader_chapter_ids") != expected_first_tranche_order:
+        out.append("T1/T2/T3/T4 terminal reader custody drifted")
+    if first_tranche.get("remaining_reader_chapter_ids") != []:
+        out.append("terminal first structural tranche retains a residual chapter")
 
     p2_execution = status.get("p2_replacement_execution", {})
     execution_expected = {
@@ -875,7 +875,7 @@ def errors(data: dict) -> list[str]:
         r"(\d+) unknown/mixed",
         data["proof_review"],
     )
-    expected_proof = (306, 102, 1333, 914, 230, 189)
+    expected_proof = (306, 102, 1346, 917, 230, 199)
     if not proof_match or tuple(map(int, proof_match.groups())) != expected_proof:
         out.append("proof-depth baseline drifted without roadmap reconciliation")
     if data["proof_manifest"].get("proof_target_count") != expected_proof[0]:
@@ -900,12 +900,10 @@ def errors(data: dict) -> list[str]:
     missing_modules = sorted(set(listed_modules) - manifest_modules)
     if missing_modules:
         out.append(f"semantic proof inventory names absent modules: {missing_modules}")
-    if proof_inventory.get("state") != "cluster_5_terminal_1_pending":
-        out.append("semantic proof inventory progress state drifted")
-    if len(proof_clusters) < 5 or any(row.get("state") != "adequate" for row in proof_clusters[:5]):
-        out.append("P4-C1/C2/C3/C4/C5 lack terminal adequate bounded-scope dispositions")
-    if any(row.get("state") != "strengthen" for row in proof_clusters[5:]):
-        out.append("remaining P4-C6 semantic proof cluster lost its strengthen state")
+    if proof_inventory.get("state") != "all_6_clusters_terminal":
+        out.append("semantic proof inventory terminal state drifted")
+    if len(proof_clusters) != 6 or any(row.get("state") != "adequate" for row in proof_clusters):
+        out.append("P4-C1 through P4-C6 lack terminal adequate bounded-scope dispositions")
 
     expected_ids = [f"P{i}" for i in range(9)]
     if [row.get("id") for row in status.get("priorities", [])] != expected_ids:
@@ -1055,7 +1053,7 @@ def main() -> None:
         "90 accepted historical negatives classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5; "
         "the frozen 75-surface rehabilitation snapshot including the then-live 55 chapters reconciled with zero overbroad negative language; "
         "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary reinstates rank five as setup-retry-pending, keeps rank six closed, and blocks the complete 30-image pool before any further protected content opens; Q1 D1 and Theseus Q2 D2 remain disjoint and sealed; remeasurement, qualification, construct, and heldout gates remain closed; "
-        "five of six semantic proof clusters are terminally adequate at bounded scope and one remains frozen for audit; White-Box Evidence, Governed World Models, and Human Factors are terminally integrated structural chapters with protected empirical outcomes closed; current proof and main-attestation baselines exact; no support/release effect; "
+        "all six semantic proof clusters are terminally adequate at bounded scope; all four first-tranche structural chapters are terminally integrated with protected empirical outcomes closed; second-tranche A1 is the sole active chapter adjudication; current proof and main-attestation baselines exact; no support/release effect; "
         f"{len(mutations)}/{len(mutations)} mutations rejected."
     )
 
