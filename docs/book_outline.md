@@ -5517,6 +5517,17 @@ Lean proof targets:
 
 Stable ID: `open-research-agenda-and-bibliography-plan`
 
+Structural-completeness queue (2026-07-19):
+`docs/structural_completeness_chapter_research_2026_07_19.md` admits no merges
+and four manifest-gated chapter candidates—white-box evidence and activation
+governance, governed world models and reality grounding, human factors and
+meaningful oversight, and governed operations/incident command. The active
+manifest remains 55 chapters. Each candidate must pass its exclusive-owner,
+primary-source, Corben-source, chapter-packet, competent-evidence,
+formalization, reader-integration, and full-validation gates before insertion;
+failed candidates return to named existing sections and do not become thin
+chapters. The work is non-displacing relative to P2 and changes no support.
+
 Chapter job: The book needs an evidence-gated research backlog that admits and closes papers, local projects, missing artifacts, conflicts, proofs, experiments, reproductions, corrections, and chapter proposals without laundering activity into support.
 
 Core claim: Open Research Agenda and Bibliography Plan owns a research-program-, source-or-gap-, backlog-item-, access-, provenance-, public-safety-, chapter-boundary-, claim-, proof-or-experiment-, deduplication-, evidence-transition-, owner-, next-action-, closure-, consumer-, environment-, and time-specific Research Backlog Admission and Closure Contract: every new paper, local project, missing artifact, conflicting result, proof idea, experiment, reproduction need, correction, or chapter proposal enters through exact intake, triage, assignment, preconditions, blockers, non-claims, and terminal closure before it changes prose or support; no title, citation, source count, inventory row, source note, queue, priority label, backlog size, fixture, theorem, validator, or completed reading task alone establishes citation accuracy, literature completeness, research quality, claim support, reproduction, transfer, AGI, ASI, or SOTA.

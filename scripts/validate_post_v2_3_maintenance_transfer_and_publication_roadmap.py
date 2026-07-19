@@ -37,6 +37,17 @@ P2_RESOURCE = ROOT / "evidence_quality/p2_resource_ceiling.json"
 P2_REPLACEMENT_QUEUE = ROOT / "experiments/p2_governed_repository_admission/corpus/replacement_queue.json"
 READER_MANIFEST = ROOT / "editions/reader_manuscript/reader_2026_07_18/manifest.json"
 READER_RELEASE_RECORD = ROOT / "release_records/2026-07-18-reader-2026-07-18-0921a924.json"
+STRUCTURAL_RESEARCH = ROOT / "docs/structural_completeness_chapter_research_2026_07_19.md"
+SOURCE_INVENTORY = ROOT / "sources/source_inventory.json"
+STRUCTURAL_SOURCE_IDS = [
+    "ext_circuit_tracing_2025",
+    "ext_scaling_sparse_autoencoders_2024",
+    "ext_world_models_2018",
+    "ext_dreamer_v3_2025",
+    "ext_meaningful_human_control_actionable_2022",
+    "ext_agentic_oversight_practice_2026",
+    "ext_nist_deployed_ai_monitoring_2026",
+]
 PUBLIC_SURFACES = [
     ROOT / p
     for p in ["README.md", "index.qmd", "docs/publication_readiness.md", "docs/public_status_contract.md"]
@@ -102,6 +113,8 @@ def inputs() -> dict:
         "p2_replacement_queue": load(P2_REPLACEMENT_QUEUE),
         "reader_manifest": load(READER_MANIFEST),
         "reader_release_record": load(READER_RELEASE_RECORD),
+        "structural_research": STRUCTURAL_RESEARCH.read_text(encoding="utf-8"),
+        "source_inventory": load(SOURCE_INVENTORY),
         "transition_snapshot": transition_snapshot(atom_ids),
         "proof_review": PROOF_REVIEW.read_text(encoding="utf-8"),
         "proof_manifest": load(PROOF_MANIFEST),
@@ -185,9 +198,37 @@ def errors(data: dict) -> list[str]:
         "ASI-THESEUS-Q2-D2",
         "non-overlapping, independently sealed held-out denominators",
         "all 30 candidates hold sealed recipes and receipts",
+        "P6.3 — Structural-completeness source and chapter tranche",
+        "P7.2 — Structural-tranche reader integration",
+        "no chapter merges",
+        "roadmap admission is not manifest admission",
+        "55 to 59 chapters",
     ]:
         if phrase.casefold() not in roadmap_normalized:
             out.append(f"roadmap governing boundary missing: {phrase}")
+
+    structural = data["structural_research"]
+    structural_normalized = re.sub(r"\s+", " ", structural).casefold()
+    for phrase in [
+        "Status: **roadmap-admitted research tranche; manifest admission gated**",
+        "Merge no chapters",
+        "White-Box Evidence, Interpretability, and Activation Governance",
+        "Governed World Models and Reality Grounding",
+        "Human Factors and Meaningful Control in Oversight",
+        "Governed Operations, Incident Command, and Graceful Degradation",
+        "Tranche-wide admission gates",
+        "Corben-source crosswalk",
+        "No cited result promotes a chapter core claim",
+    ]:
+        if phrase.casefold() not in structural_normalized:
+            out.append(f"structural research boundary missing: {phrase}")
+    inventory = {row.get("id"): row for row in data["source_inventory"]}
+    for source_id in STRUCTURAL_SOURCE_IDS:
+        if source_id not in inventory:
+            out.append(f"structural source missing from inventory: {source_id}")
+        note = ROOT / f"sources/source_notes/{source_id}.md"
+        if not note.exists():
+            out.append(f"structural source note missing: {source_id}")
 
     contract = data["competence"]
     for section in [

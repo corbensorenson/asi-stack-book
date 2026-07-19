@@ -1,5 +1,119 @@
 [
   {
+    "id": "ext_circuit_tracing_2025",
+    "title": "Circuit Tracing: Revealing Computational Graphs in Language Models",
+    "priority": "external_literature",
+    "layer": "mechanistic_interpretability",
+    "chapter_targets": [
+      "white-box-evidence-interpretability-and-activation-governance"
+    ],
+    "url": "https://transformer-circuits.pub/2025/attribution-graphs/methods.html",
+    "notes": "Primary mechanistic-interpretability comparator for replacement-model attribution graphs, perturbation validation, reconstruction error, and mechanistic-faithfulness limits; it does not establish whole-model understanding, faithful causal explanation, safe activation steering, or an ASI Stack result.",
+    "source_type": "research_article",
+    "published": "2025-03-27",
+    "updated": "2025-03-27",
+    "citation_label": "Ameisen et al. (2025), Circuit Tracing"
+  },
+  {
+    "id": "ext_scaling_sparse_autoencoders_2024",
+    "title": "Scaling and evaluating sparse autoencoders",
+    "priority": "external_literature",
+    "layer": "mechanistic_interpretability",
+    "chapter_targets": [
+      "white-box-evidence-interpretability-and-activation-governance"
+    ],
+    "url": "https://arxiv.org/abs/2406.04093",
+    "notes": "Primary sparse-autoencoder comparator for scalable feature extraction, reconstruction-sparsity tradeoffs, dead latents, and feature-quality metrics; it does not establish semantic completeness, causal faithfulness, model safety, or an ASI Stack result.",
+    "source_type": "preprint",
+    "arxiv_id": "2406.04093",
+    "published": "2024-06-06",
+    "updated": "2024-06-06",
+    "citation_label": "Gao et al. (2024), Scaling and evaluating sparse autoencoders",
+    "doi": "10.48550/arXiv.2406.04093"
+  },
+  {
+    "id": "ext_world_models_2018",
+    "title": "World Models",
+    "priority": "external_literature",
+    "layer": "world_models",
+    "chapter_targets": [
+      "governed-world-models-and-reality-grounding"
+    ],
+    "url": "https://arxiv.org/abs/1803.10122",
+    "notes": "Primary learned-world-model comparator for compressed spatial-temporal state, policy training inside imagined rollouts, and dream-to-environment transfer; it does not establish accurate reality grounding, causal adequacy, safe planning, transfer, or an ASI Stack result.",
+    "source_type": "preprint",
+    "arxiv_id": "1803.10122",
+    "published": "2018-03-27",
+    "updated": "2018-03-27",
+    "citation_label": "Ha and Schmidhuber (2018), World Models",
+    "doi": "10.48550/arXiv.1803.10122"
+  },
+  {
+    "id": "ext_dreamer_v3_2025",
+    "title": "Mastering diverse control tasks through world models",
+    "priority": "external_literature",
+    "layer": "world_models",
+    "chapter_targets": [
+      "governed-world-models-and-reality-grounding"
+    ],
+    "url": "https://www.nature.com/articles/s41586-025-08744-2",
+    "notes": "Primary DreamerV3 comparator for learned predictive state, imagined actor-critic trajectories, robust fixed-configuration control, and broad task evaluation; it does not establish deployment grounding, causal correctness, safe control, or an ASI Stack result.",
+    "source_type": "journal_article",
+    "published": "2025-04-02",
+    "updated": "2025-04-02",
+    "citation_label": "Hafner et al. (2025), Mastering diverse control tasks through world models",
+    "doi": "10.1038/s41586-025-08744-2"
+  },
+  {
+    "id": "ext_meaningful_human_control_actionable_2022",
+    "title": "Meaningful human control: actionable properties for AI system development",
+    "priority": "external_literature",
+    "layer": "human_factors_oversight",
+    "chapter_targets": [
+      "human-factors-and-meaningful-control-in-oversight"
+    ],
+    "url": "https://link.springer.com/article/10.1007/s43681-022-00167-3",
+    "notes": "Primary socio-technical comparator for operationalizing meaningful human control through operating-domain, representation, authority-and-ability, and responsibility-link properties; it does not establish that a local approval gate is meaningful, effective, or safe.",
+    "source_type": "journal_article",
+    "published": "2022-05-19",
+    "updated": "2022-05-19",
+    "citation_label": "Siebert et al. (2022), Meaningful human control: actionable properties",
+    "doi": "10.1007/s43681-022-00167-3"
+  },
+  {
+    "id": "ext_agentic_oversight_practice_2026",
+    "title": "Human oversight of agentic systems in practice: Examining the oversight work, challenges, and heuristics of developers using software agents",
+    "priority": "external_literature",
+    "layer": "human_factors_oversight",
+    "chapter_targets": [
+      "human-factors-and-meaningful-control-in-oversight"
+    ],
+    "url": "https://arxiv.org/abs/2606.05391",
+    "notes": "Primary exploratory human-subjects comparator for a priori control, co-planning, real-time monitoring, post hoc review, and situated oversight failures in software-agent use; it does not establish population-wide effects, control efficacy, safety, or an ASI Stack result.",
+    "source_type": "preprint",
+    "arxiv_id": "2606.05391",
+    "published": "2026-06-03",
+    "updated": "2026-06-03",
+    "citation_label": "Dhanorkar, Passi, and Vorvoreanu (2026), Human oversight of agentic systems in practice",
+    "doi": "10.48550/arXiv.2606.05391"
+  },
+  {
+    "id": "ext_nist_deployed_ai_monitoring_2026",
+    "title": "Challenges to the Monitoring of Deployed AI Systems",
+    "priority": "external_literature",
+    "layer": "ai_operations_and_monitoring",
+    "chapter_targets": [
+      "governed-operations-incident-command-and-graceful-degradation"
+    ],
+    "url": "https://doi.org/10.6028/NIST.AI.800-4",
+    "notes": "Official NIST post-deployment monitoring comparator for functionality, operational, input, output, impact, and security monitoring plus field-method gaps; it does not prescribe a complete incident system or establish local monitoring effectiveness, resilience, compliance, or safety.",
+    "source_type": "government_report",
+    "published": "2026-03-06",
+    "updated": "2026-03-18",
+    "citation_label": "Rao et al. (2026), Challenges to the Monitoring of Deployed AI Systems",
+    "doi": "10.6028/NIST.AI.800-4"
+  },
+  {
     "id": "ext_metr_time_horizons_2025",
     "title": "Measuring AI Ability to Complete Long Software Tasks",
     "priority": "external_literature",

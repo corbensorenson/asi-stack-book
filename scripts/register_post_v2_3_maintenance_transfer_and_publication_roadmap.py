@@ -9,6 +9,15 @@ REGISTRY = ROOT / "validation/registry.json"
 SCRIPT = "validate_post_v2_3_maintenance_transfer_and_publication_roadmap.py"
 ARTIFACTS = [
     "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
+    "docs/structural_completeness_chapter_research_2026_07_19.md",
+    "sources/source_inventory.json",
+    "sources/source_notes/ext_circuit_tracing_2025.md",
+    "sources/source_notes/ext_scaling_sparse_autoencoders_2024.md",
+    "sources/source_notes/ext_world_models_2018.md",
+    "sources/source_notes/ext_dreamer_v3_2025.md",
+    "sources/source_notes/ext_meaningful_human_control_actionable_2022.md",
+    "sources/source_notes/ext_agentic_oversight_practice_2026.md",
+    "sources/source_notes/ext_nist_deployed_ai_monitoring_2026.md",
     "docs/claim_bearing_experiment_competence_standard.md",
     "evidence_quality/claim_identity_graph.json",
     "schemas/claim_identity_graph.schema.json",

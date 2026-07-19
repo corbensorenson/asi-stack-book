@@ -1,7 +1,7 @@
 # Current Release Status
 
 <!-- canonical-status:generated-begin -->
-_Current canonical metrics (generated from machine records): **55 manifest chapters; 319 public-safe records; 55 chapter-core claims; 55/55 chapters externally positioned; 0 promoted core claims; 115/115 accepted transitions identity-resolved (25 direct, 61 subclaim, 29 proxy; 0 parent movements).**_
+_Current canonical metrics (generated from machine records): **55 manifest chapters; 326 public-safe records; 55 chapter-core claims; 55/55 chapters externally positioned; 0 promoted core claims; 115/115 accepted transitions identity-resolved (25 direct, 61 subclaim, 29 proxy; 0 parent movements).**_
 <!-- canonical-status:generated-end -->
 
 Last updated: 2026-07-10
@@ -36,7 +36,7 @@ final release record do not exist until the final release transaction succeeds.
 | Book structure | 4 parts, 55 manifest-driven chapters, 11 appendices | `book_structure.json`; `python3 scripts/sync_scaffold.py` |
 | Manifest claim contract | 55 chapters explicitly declare `claim_label` and `evidence_level`; current distribution is 55 `Design rationale` labels and 55 `argument` support states; missing or invalid values fail validation | `book_structure.json`; `python3 scripts/validate_book.py` |
 | Manuscript scale | 55 chapter files; 393,278 chapter words excluding YAML front matter; 405,392 raw chapter-file words including metadata and live scaffolding | Local word-count check on `chapters/*.qmd` |
-| Source inventory | 319 public-safe source records, each with a matching public source note; | `sources/source_inventory.json`; `sources/source_notes/` |
+| Source inventory | 326 public-safe source records, each with a matching public source note; | `sources/source_inventory.json`; `sources/source_notes/` |
 | Source appendix ownership | Appendix G (`Corben's Own Sources, Papers, and Local Projects`) and Appendix H (`External Sources by Other Authors`) are independent top-level appendices with explicit source-ownership boundary blocks, ownership-rule rows, and appendix-local identity rows: G contains Corben's own papers, Corben-supplied materials, recovered project records, and local project records; H contains external records and third-party literature marked `external_literature`; neither appendix renders the other source class as a second ownership row | `python3 scripts/validate_source_appendices.py` |
 | Claim/source traceability | 884 assigned source/chapter pairs, 816 exact claim-source mappings, 816 passage-reviewed mappings | `docs/source_evidence_audit.md`; `python3 scripts/validate_source_evidence_audit.py` |
 | Support states | All 55 chapter core claims remain at `argument`; detailed core coverage, disposition, non-core upward transitions, and no-promotion side-lane decisions live in generated ledgers. Current counts: 22 accepted core no-change records, 33 accepted explicit core no-promotion decisions, 25 accepted narrow non-core upward transitions, 61 accepted `blocks_promotion` side-lane decisions, 0 promoted core claims, and no chapter core claim support-state promotion. | `book_structure.json`; Appendix C; `docs/core_claim_transition_coverage.md`; `docs/core_claim_disposition_ledger.md`; `docs/non_core_evidence_ledger.md`; `python3 scripts/validate_evidence_transitions.py`; `python3 scripts/validate_core_claim_decisions.py`; `python3 scripts/validate_v1_x_core_claim_dispositions.py`; `python3 scripts/validate_non_core_evidence_ledger.py` |

@@ -27,7 +27,7 @@
       "additionalProperties": false,
       "required": [
         "state", "shared_flagship_id", "shared_research_question",
-        "critical_path", "empirical_lanes", "narrative_quality_gate", "support_state_effect",
+        "critical_path", "empirical_lanes", "narrative_quality_gate", "structural_completeness_tranche", "support_state_effect",
         "release_effect"
       ],
       "properties": {
@@ -81,6 +81,38 @@
             "requires_shared_case_threading": {"const": true},
             "requires_strongest_alternative_and_simpler_baseline": {"const": true},
             "requires_meaning_preservation_audit": {"const": true}
+          }
+        },
+        "structural_completeness_tranche": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "state", "research_path", "current_manifest_chapter_count",
+            "maximum_post_tranche_chapter_count", "planned_merge_count",
+            "candidate_count", "candidate_ids", "manifest_admitted_count",
+            "primary_source_record_count_added", "p2_displacement_allowed",
+            "support_state_effect", "release_effect"
+          ],
+          "properties": {
+            "state": {"const": "roadmap_admitted_manifest_gated"},
+            "research_path": {"const": "docs/structural_completeness_chapter_research_2026_07_19.md"},
+            "current_manifest_chapter_count": {"const": 55},
+            "maximum_post_tranche_chapter_count": {"const": 59},
+            "planned_merge_count": {"const": 0},
+            "candidate_count": {"const": 4},
+            "candidate_ids": {
+              "const": [
+                "white-box-evidence-interpretability-and-activation-governance",
+                "governed-world-models-and-reality-grounding",
+                "human-factors-and-meaningful-control-in-oversight",
+                "governed-operations-incident-command-and-graceful-degradation"
+              ]
+            },
+            "manifest_admitted_count": {"const": 0},
+            "primary_source_record_count_added": {"const": 7},
+            "p2_displacement_allowed": {"const": false},
+            "support_state_effect": {"const": "none"},
+            "release_effect": {"const": "none"}
           }
         },
         "support_state_effect": {"const": "none"},

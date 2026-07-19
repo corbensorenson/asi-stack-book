@@ -671,6 +671,47 @@ planning value, blast-radius recall, packet sufficiency, information-flow
 leakage, latency, storage, review burden, and maintenance cost. Reject any PWM
 component that simpler systems match at materially lower total cost.
 
+### P6.3 — Structural-completeness source and chapter tranche
+
+The 2026-07-19 merge/addition audit is bound to
+`docs/structural_completeness_chapter_research_2026_07_19.md`. Its current
+decision is **no chapter merges** and four roadmap-admitted, manifest-gated
+chapter candidates. The measured maximum pairwise chapter similarity is 0.298;
+editorial repetition is handled by P7.1a and cannot be used to collapse
+distinct owners. If every candidate passes admission, the live manifest moves
+from 55 to 59 chapters:
+
+1. `white-box-evidence-interpretability-and-activation-governance` in Part IV
+   after Benchmark Ratchets owns model-internal evidence packets, mechanistic
+   faithfulness, activation interventions, side effects, and release authority.
+2. `governed-world-models-and-reality-grounding` in Part II after Planning owns
+   predictive-state identity, imagined/observed separation, model/world
+   discrepancy, external correction, and action-grounding gates.
+3. `human-factors-and-meaningful-control-in-oversight` in Part I after Human
+   Intent owns whether oversight is genuinely exercisable under information,
+   time, workload, competence, authority, incentives, interface, and fallback.
+4. `governed-operations-incident-command-and-graceful-degradation` in Part IV
+   after Safety Cases owns field observability, incident declaration and
+   command, containment, degrade/failover/manual modes, recovery, disclosure,
+   learning, and decommissioning.
+
+Roadmap admission is not manifest admission. Each chapter must first have an
+exclusive-job and adjacent-boundary audit, three source-noted primary external
+comparators including a limitation/failure source, a Corben-source crosswalk,
+a complete chapter packet, a competent claim-bearing empirical lane, an honest
+formalization disposition, reader assets, and full manifest/scaffold/proof/
+reader validation. Failure returns the material to named existing sections;
+it does not authorize a thin chapter. No source, chapter draft, or structural
+decision changes support by itself.
+
+The sequence is interpretability, world models, human factors, then operations.
+Interpretability supplies the white-box evidence vocabulary; world models
+sharpens the Platonic World Model and Theseus grounding boundary; human factors
+waits for a reviewable ethics/privacy-aware study protocol; and operations may
+be designed now but uses the joined T4 authority-to-effect case for its central
+reader example. This lane runs beside P2 with protected capacity and may not
+delay, shrink, retune, or read P2/Q1/Q2 held-out work.
+
 ## P7 — Reader remediation and owner-authorized publication
 
 The first Round 15 publication transaction is complete. The
@@ -746,6 +787,56 @@ opening map's strongest-evidence claims, the happy/blocked/rollback case
 spine, and the closing synthesis) waits for `T4`. Running P7.1a early must
 not pre-commit P7.1b's structure, and neither lane may delete a unique claim,
 caveat, source, equation, protocol, proof boundary, or non-claim.
+
+The 2026-07-19 chapter-overlap audit fixes P7.1a's concrete targets. A
+pairwise tf-idf similarity scan across all 55 chapters found a maximum pair
+score of 0.298 — no duplicate or near-duplicate chapters exist, and **no
+chapter merge is planned**; the two most title-adjacent pairs
+(`coil-attention-cyclic-memory-and-recurrence-contracts` /
+`coilra-multicoil-rope-and-cyclic-mixers`, and the custody / supply-chain
+pair) instead each add one explicit opening boundary sentence stating which
+contracts the sibling chapter owns. The measured repetition lives elsewhere
+and defines the P7.1a work items:
+
+1. **Template-block centralization.** 1,364 distinct verbatim 12-grams appear
+   in eight or more chapters; the widest blocks (the per-chapter disposition
+   tables and the "prospectively frozen 3,745-atom repository audit" scaffold)
+   repeat verbatim in all 55 chapters. State the invariant methodology once in
+   a single front-matter/methodology surface, keep only chapter-specific rows
+   in per-chapter tables, and let validators — not repeated prose — carry the
+   invariant guarantees.
+2. **Opening-formula variation.** Chapter openings reuse a small number of
+   sentence templates ("This chapter treats X as Y, not Z"; "The consolidated
+   X layer remains conceptual"). Rewrite openings so each chapter leads with
+   its own subject and stakes while preserving every non-claim boundary.
+3. **Consolidation-residue repair.** At least `virtual-context-abi` and
+   `intent-to-execution-contracts` open with retired-chapter bookkeeping
+   ("archived under `archive/retired_chapters/`") before their subject. Move
+   merge lineage to a chapter-end provenance note in every affected chapter.
+4. **Unowned failure-mode insertions (coverage, not new chapters).**
+   `epistemic security` and `gradual disempowerment` currently appear in zero
+   chapters. Add a named epistemic-security/persuasion-defense section to
+   `scalable-oversight-and-adversarial-ai-control` (or
+   `adversarial-evaluation-sandbagging-and-training-time-deception`) and a
+   named gradual-disempowerment section to
+   `failure-modes-of-ungoverned-intelligence`, each with sources, atoms, and
+   explicit non-claims.
+5. **Thesis-chapter depth-leveling.** The two thesis-bearing chapters
+   (`asi-is-a-stack-not-a-model`, `the-efficient-asi-hypothesis`) and
+   `failure-modes-of-ungoverned-intelligence` are among the six shortest
+   chapters while carrying the book's central claims; level them upward toward
+   the spine's evidentiary and argumentative density without padding.
+
+### P7.2 — Structural-tranche reader integration
+
+After each P6.3 candidate passes manifest admission, integrate it as a real
+reader chapter rather than an appendix-shaped registry. Each insertion must
+update the opening map, chapter-role classification, adjacent handoffs,
+overview figure, glossary, claim/evidence surfaces, source appendix, and final
+synthesis. Re-run the 59-chapter overlap and reader-flow audit only after the
+full tranche is admitted or terminally rejected. The four additions may not
+restore boilerplate removed by P7.1a or present source-derived architecture as
+local evidence.
 
 “Ready, not published” is an honest terminal public-state disposition when
 external authority is absent; it is not a reason to block evidence work. At
@@ -839,10 +930,13 @@ is not a debugging interface.
    exact rollback or compensation, crash recovery, full learning state,
    revocation, and descendant-aware deletion. Implementation volume follows
    the case; it does not precede it.
-6. **Evidence and instrument renewal (`P6`).** Keep primary comparators,
+6. **Evidence, instrument, and structural renewal (`P6`).** Keep primary comparators,
    evaluator sensitivity, false-negative controls, alternative substrates,
    governed update/unlearning, Deterministic Capability Compilation, and the
    Platonic World Model current without allowing prose to inherit evidence.
+   Execute the source-noted four-chapter structural-completeness tranche under
+   exclusive-owner, competence, and non-displacement gates; roadmap admission
+   alone changes neither the 55-chapter manifest nor support.
 7. **Narrative and reader quality (`P7`).** Preserve the published
    `reader-2026-07-18` receipts, close only compatibility claims that are
    actually tested, execute P7.1a now under a meaning-preservation audit, and
@@ -879,7 +973,7 @@ lies.
 | M3 — Reproduction and transfer | pending | Any broadened result has independent reproduction and two prospectively selected materially different transfer settings. |
 | M4 — Semantic formal depth | in progress | Six frozen clusters with 24 exact modules are machine-enumerated; close only after each receives an adequate/merge/reclassify/remove disposition with a meaningful model, countermodels, consumers, and honest inference ceiling. |
 | M5 — Effect-complete reference | pending | Multi-process authority-to-effect, rollback/residual, full-state, and deletion behavior passes adversarial and recovery tests. |
-| M6 — Renewal discipline | in progress | Dated primary-source, comparator, evaluator, and false-negative instrument renewal is current and mapped to claims. |
+| M6 — Renewal and structural completeness | in progress | Dated primary-source, comparator, evaluator, and false-negative instrument renewal is current and mapped to claims; all four structural candidates are either admitted with complete packets, evidence lanes, reader integration, and validation or terminally returned to named existing owners. |
 | M7 — Reader/publication disposition | in progress | PDF, EPUB, and DOCX are published with exact receipts and verified public redownloads. Close only after compatibility residuals are terminally accepted or cleared, all public surfaces remain synchronized, and the final main/Pages attestation succeeds. |
 | M8 — Successor continuity | pending | Every open item has a terminal disposition and the next exact authority is active. |
 
@@ -893,6 +987,7 @@ identity, claim-commensurate competence, immutable raw evidence, N0–N5 negativ
 scope, semantic rather than count-based formal depth, independent transfer for
 broad claims, effect-complete implementation boundaries, current sources and
 instruments, non-overlapping Q1/Q2 denominators, a meaning-preserving
-reader-spine synthesis around the shared flagship case, exact `main`
+reader-spine synthesis around the shared flagship case, terminal disposition
+of the four-chapter structural-completeness tranche, exact `main`
 attestation, terminal reader/publication dispositions, and uninterrupted
 successor ownership.
