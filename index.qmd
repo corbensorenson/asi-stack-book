@@ -105,13 +105,42 @@ flowchart TD
   ChangeRights --> ControlSpine["Intent contracts, commands, plans, semantic IR, and context ABI"]
   ControlSpine --> EpistemicSpine["Context adequacy, claim ledgers, proof-carrying claims, and tribunal review"]
   EpistemicSpine --> ExecutionSpine["Typed jobs, artifacts, adapters, and procedural memory"]
-  ExecutionSpine --> CapabilitySpine["Routing, readiness gates, MoECOT, and personal compute hives"]
-  CapabilitySpine --> EfficiencySpine["Compact generation, compression, fast generation, semantic representation, and resource budgets"]
-  EfficiencySpine --> SubstrateSpine["Simulation, search substrates, Circle contracts, coil memory, and cyclic mixers"]
-  SubstrateSpine --> EvidenceSpine["Executable specs, benchmarks, policy optimization, and artifact stewards"]
+  ExecutionSpine --> CapabilitySpine["Routing, replaceable substrates, readiness, and personal compute hives"]
+  CapabilitySpine --> EfficiencySpine["Compact generation, fast generation, deliberation, compression, and resource budgets"]
+  EfficiencySpine --> SubstrateSpine["Mathematical/search substrates, Circle contracts, coil memory, and cyclic mixers"]
+  SubstrateSpine --> EvidenceSpine["Executable specs, benchmarks, white-box evidence, thresholds, adversarial evaluation, safety cases, and operations"]
   EvidenceSpine --> IntegrationSpine["Integrated reference architecture, Theseus reference path, prototype roadmap, living method, and research backlog"]
   IntegrationSpine --> EvidenceLanguage
 ```
+
+## Chapter roles
+
+Breadth does not mean that all 59 chapters make equally central or equally
+supported claims. The current reader-role audit assigns every chapter one
+primary job:
+
+| Role | Chapters | Reader contract |
+|---|---:|---|
+| Thesis-bearing | 11 | Advances a central architectural claim and states the strongest alternative, failure case, and evidence that could change it. |
+| Load-bearing reference | 30 | Owns an interface, invariant, artifact, or failure family needed to implement or audit the thesis. |
+| Implementation case | 7 | Shows how contracts compose in artifacts, runtime effects, reference traces, prototypes, operations, or the living-book workflow. |
+| Speculative/deferred research | 11 | Preserves promising mechanisms and research programs without presenting argument-level possibilities as established architecture. |
+
+```{mermaid}
+flowchart LR
+  Thesis["Thesis-bearing chapters<br/>why the architecture should exist"] --> Reference["Load-bearing reference<br/>what each boundary must own"]
+  Reference --> Cases["Implementation cases<br/>how boundaries compose and fail"]
+  Reference --> Research["Speculative / deferred research<br/>what must still earn admission"]
+  Cases --> Evidence["Observed effects, residuals, and revision"]
+  Research --> Evidence
+  Evidence --> Thesis
+```
+
+The role is editorial, not evidentiary. A thesis-bearing chapter is not thereby
+proved; a reference chapter is not secondary in implementation; an
+implementation case does not imply deployment; and a speculative chapter is
+not rejected. The complete classification and its meaning-preservation checks
+are recorded in the P7.1a-W2 narrative audit.
 
 ## Reading path
 

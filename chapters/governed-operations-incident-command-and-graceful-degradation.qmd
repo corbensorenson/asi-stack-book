@@ -40,14 +40,16 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter is a source-noted design synthesis. NIST AI RMF 1.0 supplies a
-lifecycle risk-management comparator; NIST AI 800-4 supplies a deployed-AI
-monitoring taxonomy and an account of current gaps; and NIST SP 800-61 Rev. 3
-supplies the generic preparation, detection, response, recovery, and
-improvement baseline. The ASI Stack sources supply proposed identity,
-authority, operator, artifact, rollback, and state-reconciliation mechanisms.
-None of those records establishes that this repository operates an incident
-system, satisfies NIST guidance, reverses external effects, or degrades safely.
+Operational governance begins when a changing service no longer matches the
+conditions under which it was admitted. The chapter assembles a source-noted
+design response to that problem: NIST AI RMF 1.0 supplies a lifecycle risk-
+management comparator; NIST AI 800-4 supplies a deployed-AI monitoring
+taxonomy and account of current gaps; and NIST SP 800-61 Rev. 3 supplies the
+generic preparation, detection, response, recovery, and improvement baseline.
+ASI Stack sources add proposed identity, authority, operator, artifact,
+rollback, and state-reconciliation mechanisms. None of those records
+establishes that this repository operates an incident system, satisfies NIST
+guidance, reverses external effects, or degrades safely.
 
 The chapter therefore remains **Design rationale + argument**. Every mechanism
 below is a proposed contract unless an implementation artifact is named

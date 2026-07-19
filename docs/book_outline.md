@@ -85,6 +85,45 @@ Throughout the outline, `layer` means a logical responsibility and authority bou
 - Use drafting annotations in private notes when helpful: `[SOURCE]`, `[AUTHOR INTENT]`, `[SYNTHESIS]`, `[EXPERIMENT]`, and `[OPEN]`.
 - Keep chapter IDs and filenames stable; Quarto handles displayed chapter numbering.
 
+### Current reader-role classification
+
+P7.1a-W2 assigns every manifest chapter one primary reader role. The machine
+record is `evidence_quality/p7_1a_w2_narrative_audit.json`; this outline keeps
+the compact drafting view. Roles guide emphasis and navigation only. They do
+not change claim labels, support states, chapter order, evidence lanes, or
+publication status.
+
+- **Thesis-bearing (11):** `asi-is-a-stack-not-a-model`,
+  `the-efficient-asi-hypothesis`, `system-boundaries-and-authority`,
+  `failure-modes-of-ungoverned-intelligence`,
+  `evidence-states-and-claim-discipline`,
+  `scalable-oversight-and-adversarial-ai-control`,
+  `recursive-self-improvement-boundaries`, `intent-to-execution-contracts`,
+  `planning-as-a-control-layer`,
+  `verification-bandwidth-and-context-adequacy`, and
+  `resource-economics-and-token-budgets`.
+- **Implementation case (7):** `artifact-graphs-audit-logs-and-replay`,
+  `runtime-adapters-tool-permissions-and-human-approval`,
+  `governed-operations-incident-command-and-graceful-degradation`,
+  `integrated-reference-architecture`,
+  `project-theseus-as-report-first-implementation-reference`,
+  `prototype-roadmap`, and `living-book-methodology`.
+- **Speculative/deferred research (11):** `open-ended-improvement-engines`,
+  `personal-compute-hives-and-federated-edge-intelligence`,
+  `compact-generative-systems-and-residual-honesty`,
+  `fast-generation-architectures`,
+  `governed-deliberation-and-test-time-scaling`,
+  `rankfold-neuralfold-and-artifact-compression`,
+  `mathematical-and-search-substrates`,
+  `circle-calculus-and-proof-carrying-ai-contracts`,
+  `coil-attention-cyclic-memory-and-recurrence-contracts`,
+  `coilra-multicoil-rope-and-cyclic-mixers`, and
+  `open-research-agenda-and-bibliography-plan`.
+- **Load-bearing reference (30):** every remaining manifest chapter. Each owns
+  a distinct interface, invariant, artifact, lifecycle, or failure family and
+  remains discoverable through the architecture-reference product even when
+  omitted from the fifteen-chapter narrative derivative.
+
 ## Historical Project Incorporation Overlay
 
 The detailed execution order is

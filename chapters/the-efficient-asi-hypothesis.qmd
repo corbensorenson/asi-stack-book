@@ -42,7 +42,12 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter argues for a cost/quality/accounting discipline. It does not claim that small models are sufficient for ASI, that scale is unnecessary, or that the repository has measured efficiency gains.
+Efficiency here means choosing and reusing cognition under a complete contract,
+not merely spending fewer tokens or preferring smaller models. The argument
+therefore begins with quality, authority, verification, residual, fallback,
+and total-cost accounting together. It does not claim that small models are
+sufficient for ASI, that scale is unnecessary, or that this repository has
+measured an efficiency gain.
 
 It inherits the stack boundary from the opening frame and asks the first design question that boundary makes possible: where should cognition be spent, where should it be reused, and where should the remaining burden stay visible?
 
@@ -102,6 +107,87 @@ Appendix C now maps this core claim to every assigned source note. Nine mappings
 | `beastbrain_timeless` | Roadmap-independent BeastBrain framing for local intelligence, hardware adaptation, SSD-native memory, planning, verification, and multimodal interaction. | Does not validate hardware adaptation, geometric verification, or distributed scaling. |
 | `aletheia` | Verification and context effort routed by risk, uncertainty, ambiguity, and historical failure. | No live-oracle, adversarial, or implementation evidence for route quality or efficiency. |
 | `moecot` | Compact orchestration, specialist lanes, readiness gates, promotion blockers, residual tracking, ledgers, replay, and handoff. | Runtime and benchmark artifacts have not been ingested or reproduced. |
+
+## The denominator of useful efficiency
+
+The hypothesis rises or falls on its denominator. Raw tokens, model calls,
+latency, or accelerator time are useful measurements, but none is the object
+the architecture is trying to maximize. The numerator is useful accepted work:
+a task outcome that satisfies the prospectively fixed quality predicate, stays
+inside its authority ceiling, survives the required verification, and leaves
+its remaining obligations visible. The denominator is total contract cost:
+generation, context acquisition, routing, verification, repair, fallback,
+human review, rollback preparation, delayed failures, maintenance, and the
+opportunity cost imposed on other work.
+
+This definition prevents three common substitutions. First, throughput is not
+usefulness: generating more candidates can increase verifier load while
+leaving accepted work unchanged. Second, local savings are not system savings:
+a smaller worker may transfer cost to a stronger reviewer, a human operator,
+or a later repair. Third, average cost is not enough when the cheap route
+creates a heavy tail of rare but expensive failures. A route is efficient only
+relative to a named task distribution, risk tier, baseline family, time
+horizon, and failure-accounting policy.
+
+The comparison must include both obvious degenerate policies. An
+`always_maximal` policy asks the strongest available route to do every task; it
+can waste cognition and prevent reuse, but it supplies a serious quality
+baseline. An `always_cheapest` policy minimizes visible inference cost; it
+exposes whether governance is merely adding ceremony to a route that was
+already adequate. The proposed adaptive policy earns credit only if it
+improves useful accepted work per total contract cost over both, with matched
+task access, tuning effort, verification, fallback, and outcome observation.
+
+Compilation and memory add a temporal dimension. The first execution of a
+procedure may cost more because the system creates a tested tool, cache,
+specialist, or proof artifact. Later executions may be cheaper, but only while
+the artifact's assumptions, dependencies, authority, and regression tests
+remain current. Amortization is therefore versioned. A stale reusable artifact
+is not accumulated intelligence; it is deferred validation debt.
+
+The hypothesis also has a natural weakening condition. On novel,
+high-uncertainty, or high-consequence work, the strongest route plus broad
+verification may dominate because route prediction is unreliable and errors
+are expensive. The architecture should be allowed to learn that selectivity
+has no value in such a regime. “Use minimum viable intelligence” is a policy
+candidate, not an axiom.
+
+## Alternatives, failure case, and decisive evidence
+
+The strongest alternative explanation is that apparent routing gains come
+from task heterogeneity and benchmark leakage rather than an architectural
+advantage. Easy tasks are cheap for almost any policy, hard tasks are sent to
+the strongest model, and the router receives credit for a partition the
+benchmark already revealed. A second alternative is that a frontier model with
+prompt caching, speculative generation, and good tool use captures most of the
+benefit without a persistent specialist stack. A third is that verification
+and governance costs erase the savings once human time and long-tail repair are
+measured honestly.
+
+A competent test must make those explanations compete. Freeze a natural task
+cohort before final evaluation; tune adaptive, always-maximal, always-cheapest,
+and strong monolithic-with-tools baselines under matched budgets; prevent
+outcome-aware rescue; and report the joint frontier of accepted-task success,
+unsafe release, false refusal, latency, compute, reviewer burden, repair,
+rollback, and maintenance. Route-selection accuracy is secondary: a router can
+choose the nominal expert and still produce no useful answer.
+
+The decisive failure case is a hidden-cost win. Suppose the adaptive route
+uses half the model compute and passes the immediate test suite, but it doubles
+review time, misses a policy dependency, and requires a later rollback. The
+route is neither efficient nor safely adequate, even if a token-only dashboard
+calls it a success. The ledger must attach those downstream effects to the
+decision that caused them.
+
+Evidence would change the conclusion in either direction. Repeated,
+source-disjoint natural workloads showing a robust improvement over all strong
+matched baselines would support a bounded efficiency claim for that task and
+deployment envelope. Results showing no advantage after full lifecycle cost,
+unstable gains across seeds or domains, systematic tail failures, or an
+always-maximal/monolithic baseline matching the frontier at lower governance
+cost would narrow or reject the hypothesis. This repository has not yet run
+that decisive comparison; the chapter remains an argument and a measurement
+contract.
 
 ## Mechanism
 
@@ -324,4 +410,8 @@ Across 24 atoms, the terminal ledger records 19 `blocked_after_full_attempt`; 5 
 
 ## Handoff
 
-Efficiency only helps if the system knows where permission stops. System Boundaries and Authority takes the route ledger's quality and cost discipline and adds the missing control question: which principal, layer, grant, lease, or ceiling authorizes the action? The book has now separated the stack from the model and efficient cognition from brute force; authority accounting prevents efficient routes from becoming permission leaks.
+The efficiency denominator is incomplete until every candidate route knows
+where permission stops. **System Boundaries and Authority** therefore takes
+the route ledger's task, quality, fallback, and cost fields and binds them to a
+principal, grant, lease, scope, ceiling, and revocation state. A cheaper route
+that widens authority is an unsafe saving, not evidence for this hypothesis.

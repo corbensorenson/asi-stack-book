@@ -86,8 +86,8 @@ outcomes, or evaluator judgments remain closed while other work proceeds.
 | Slot | Next packet | Entry condition | Terminal output |
 |---|---|---|---|
 | Continuous custody | P0 repository and public-truth reconciliation | Always open | Clean `main`, exact generated/source boundaries, current roadmap pointers, and no stale claim or release identity. |
-| Book slot — now | `P7.1a-W2-opening-variation-and-thesis-depth-leveling` | W1 terminal; independent of T4 | Vary formulaic openings, level up the two thesis chapters and Failure Modes without padding, refresh role/handoff/overview surfaces, and extend the meaning-preservation audit. |
-| Formal slot — now | `P4-C2-safety-assurance-and-oversight-semantic-audit` | C1 terminal; uses only the frozen second proof cluster | Give the four safety/oversight modules terminal dispositions with exact propositions, assumptions, countermodels, consumers, mutations, and maximum inference. |
+| Book slot — now | `P7.2-T1-white-box-evidence-interpretability-and-activation-governance` | P7.1a terminal; first in the frozen four-chapter completion order | Complete the chapter's formalization disposition, competent claim-bearing empirical lane, reader-level integration, exact argument-exit boundary, and terminal integration-or-removal decision without borrowing support from cited interpretability work. |
+| Formal slot — now | `P4-C3-authority-effect-rollback-and-corrigibility-semantic-audit` | C2 terminal; uses only the frozen third proof cluster | Give the four authority/effect/rollback/corrigibility modules terminal dispositions with exact propositions, assumptions, countermodels, consumers, mutations, and maximum inference. |
 | Empirical headline — blocked | P2 pool-wide sequential materialization | Exact host free space meets the frozen 50 GiB floor and every setup action remains inside the approved Docker-scoped protocol | Thirty sealed candidate recipes and receipts, then rank 5 setup retry eligibility without protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — next book packet | Complete `white-box-evidence-interpretability-and-activation-governance`, then World Models, Human Factors, and Operations in that order | The current book packet closes and the chapter's source-role, formalization, and evidence protocol inputs are frozen | One terminally integrated reader chapter at a time, or removal with material returned to named owners. |
 | Second structural tranche — after one first-tranche chapter closes | Adjudicate one candidate at a time in the dependency batches below | No active second-tranche candidate; four source roles and owner boundary are ready | Admit, narrow, return to existing owners, or reject with a durable decision packet. Research admission alone is never success. |
@@ -106,6 +106,25 @@ route or countermodel semantics while denying direct projections stronger
 credit. Its authority is
 `proofs/semantic_cluster_audits/evidence_claim_and_proof_custody.json`. Neither
 packet changes support, release, or publication state.
+
+The following 2026-07-19 checkpoint closed
+`P7.1a-W2-opening-variation-and-thesis-depth-leveling` and
+`P4-C2-safety-assurance-and-oversight-semantic-audit`. W2 removes all eight
+occurrences of the six frozen opening-formula families, classifies all 59
+chapters exactly once as 11 thesis-bearing, 30 load-bearing reference, 7
+implementation case, and 11 speculative/deferred research chapters, refreshes
+the overview and three central handoffs, and adds 710, 728, and 664 substantive
+word tokens to the two thesis chapters and Failure Modes. Its authority is
+`evidence_quality/p7_1a_w2_narrative_audit.json`. C2 gives all four modules an
+adequate bounded-scope disposition across 31 public targets, with exact
+propositions, assumptions, countermodels, consumers, mutations, and maximum
+inference in
+`proofs/semantic_cluster_audits/safety_assurance_and_oversight.json`. The
+formal result is finite preservation, lifecycle, route, handoff, invalidation,
+quarantine, and authority-separation semantics—not protected-predicate truth,
+safety-case validity, reviewer independence, deception detection, control
+efficacy, or deployment safety. Neither packet changes support, release, or
+publication state.
 
 Second-tranche adjudication uses four dependency batches, preserving the order
 within each batch unless a dated amendment explains why an input dependency

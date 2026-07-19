@@ -674,6 +674,10 @@ def errors(data: dict) -> list[str]:
         out.append("execution board lost its bounded WIP or blocked-lane rule")
     if execution_readiness.get("protected_outcome_inspection_allowed") is not False:
         out.append("execution board permits protected-outcome inspection")
+    if execution_readiness.get("immediate_book_packet") != "P7.2-T1-white-box-evidence-interpretability-and-activation-governance":
+        out.append("execution board does not advance to P7.2-T1")
+    if execution_readiness.get("immediate_formal_packet") != "P4-C3-authority-effect-rollback-and-corrigibility-semantic-audit":
+        out.append("execution board does not advance to P4-C3")
     if execution_readiness.get("maximum_concurrent_second_tranche_candidates") != 1:
         out.append("execution board permits structural-candidate sprawl")
     expected_first_tranche_order = [
@@ -734,8 +738,8 @@ def errors(data: dict) -> list[str]:
     ):
         out.append("Q1/Q2 isolation or support boundary weakened")
     narrative_gate = quality_program.get("narrative_quality_gate", {})
-    if narrative_gate.get("case_independent_compression_state") != "w1_terminal_w2_ready":
-        out.append("P7.1a W1/W2 execution state drifted")
+    if narrative_gate.get("case_independent_compression_state") != "p7_1a_terminal_p7_2_t1_ready":
+        out.append("P7.1a terminal/P7.2-T1 execution state drifted")
     if narrative_gate.get("flagship_threading_state") != "blocked_by_T4":
         out.append("flagship-dependent P7.1b work lost its T4 gate")
     if not all(
@@ -885,11 +889,11 @@ def errors(data: dict) -> list[str]:
     missing_modules = sorted(set(listed_modules) - manifest_modules)
     if missing_modules:
         out.append(f"semantic proof inventory names absent modules: {missing_modules}")
-    if proof_inventory.get("state") != "cluster_1_terminal_5_pending":
+    if proof_inventory.get("state") != "cluster_2_terminal_4_pending":
         out.append("semantic proof inventory progress state drifted")
-    if not proof_clusters or proof_clusters[0].get("state") != "adequate":
-        out.append("P4-C1 lacks its terminal adequate bounded-scope disposition")
-    if any(row.get("state") != "strengthen" for row in proof_clusters[1:]):
+    if len(proof_clusters) < 2 or any(row.get("state") != "adequate" for row in proof_clusters[:2]):
+        out.append("P4-C1/C2 lack their terminal adequate bounded-scope dispositions")
+    if any(row.get("state") != "strengthen" for row in proof_clusters[2:]):
         out.append("unaudited semantic proof clusters lost their strengthen state")
 
     expected_ids = [f"P{i}" for i in range(9)]
@@ -1020,6 +1024,8 @@ def main() -> None:
     mutate("P2 pre-content rank skipping", lambda c: c["status"]["p2_sequential_materialization_contract"].__setitem__("pre_content_failure_may_skip_or_burn_rank", True))
     mutate("P2 post-content replay", lambda c: c["status"]["p2_sequential_materialization_contract"].__setitem__("post_content_replay_allowed", True))
     mutate("semantic proof cluster deletion", lambda c: c["status"]["semantic_proof_cluster_inventory"]["clusters"].pop())
+    mutate("P7 next packet rollback", lambda c: c["status"]["execution_readiness"].__setitem__("immediate_book_packet", "P7.1a-W2-opening-variation-and-thesis-depth-leveling"))
+    mutate("P4 next packet rollback", lambda c: c["status"]["execution_readiness"].__setitem__("immediate_formal_packet", "P4-C2-safety-assurance-and-oversight-semantic-audit"))
     mutate("reader format history laundering", lambda c: c["status"]["activation_truth"].__setitem__("current_published_reader_formats", ["html"]))
 
     for label, candidate in mutations:
@@ -1035,7 +1041,7 @@ def main() -> None:
         "90 accepted historical negatives classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5; "
         "the frozen 75-surface rehabilitation snapshot including the then-live 55 chapters reconciled with zero overbroad negative language; "
         "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary reinstates rank five as setup-retry-pending, keeps rank six closed, and blocks the complete 30-image pool before any further protected content opens; Q1 D1 and Theseus Q2 D2 remain disjoint and sealed; remeasurement, qualification, construct, and heldout gates remain closed; "
-        "six semantic proof clusters containing 24 unique modules are frozen for audit; current proof and main-attestation baselines exact; no support/release effect; "
+        "two of six semantic proof clusters are terminally adequate at bounded scope and four remain frozen for audit; current proof and main-attestation baselines exact; no support/release effect; "
         f"{len(mutations)}/{len(mutations)} mutations rejected."
     )
 

@@ -178,6 +178,84 @@ that the stack already detects or prevents the failures.
 | `ext_optimal_policies_power_2019` | Option-preservation and power-seeking pressure as reasons to account for authority expansion. | External formal framing only; no local theorem, environment, or runtime authority-control result is imported. |
 | `ext_goodhart_variants_2018` | Proxy-metric failure families that help separate benchmark capture, reward drift, and evaluator gaming. | External taxonomy only; no local Goodhart classifier, benchmark audit, or anti-Goodhart protection is implemented here. |
 
+## From taxonomy to prospective control obligations
+
+A failure taxonomy becomes architectural only before the incident. The map
+must say what observable event would instantiate the class, which detector or
+observer can notice it, what sensitivity is expected, which invariant the
+event threatens, who may contain it, and what happens when the event cannot be
+classified confidently. Retrospective labels can improve learning, but they
+cannot establish that the system was governable at the moment an effect was
+created.
+
+This changes how the book uses risk language. “Authority creep” is not merely
+a concern; it is a prospective comparison between requested scope, current
+grant, delegated ceiling, target, operation, and observed effect. “Context
+pollution” is an admission failure over provenance, taint, authority, purpose,
+freshness, and consumer adequacy. “Evaluator capture” is a dependency and
+intervention problem: the evaluated system, training process, or policy can
+alter the instrument that judges it. “Residual hiding” is an accounting
+failure in which an unresolved obligation leaves the route or denominator that
+created it.
+
+Each class therefore needs positive and negative controls. A detector should
+fire on seeded violations that exercise the intended mechanism, remain quiet
+on benign near-neighbors, abstain on out-of-scope cases, and retain false
+positive and false negative costs. A containment path should be tested against
+an actual bounded effect or faithful simulator, not only a schema-valid
+incident packet. When the implementation is too weak to activate the proposed
+mechanism, a null result is N0 or N1 evidence about the test, not evidence that
+the failure cannot occur.
+
+Failures compose across layers. Poisoned context can induce a bad plan; a broad
+grant can turn the plan into an effect; a correlated verifier can certify the
+receipt; a narrow benchmark can reward the outcome; and a self-improvement
+loop can preserve the route as a successful procedure. Local controls may all
+pass while the joined trace fails. The failure map must retain causal and
+temporal edges, not merely count categories, so one incident can reopen every
+affected contract and descendant artifact.
+
+The default terminal state for an unclassified or partially contained event is
+not success. It is an owned residual with severity, uncertainty, affected
+scope, expiry, containment state, escalation route, and evidence needed for
+closure. That rule is intentionally costly. It prevents the architecture from
+becoming safer on paper by deleting the cases its current taxonomy cannot
+explain.
+
+## Strongest objection and decisive tests
+
+The strongest objection is that the taxonomy is elastic enough to redescribe
+almost any bad outcome after the fact. If every incident can be called
+authority creep, evaluator drift, context pollution, or residual hiding, the
+chapter may create vocabulary without prediction, detection, or prevention.
+A related objection is that an extensive failure ledger can overload operators
+and make truly urgent signals harder to see.
+
+The simpler baseline is a conventional incident model with a small severity
+scale, named owner, containment state, and postmortem. The stack taxonomy earns
+its extra structure only if prospective field bindings improve detection,
+triage, containment, recovery, or recurrence prevention relative to that
+baseline. Evaluation must include previously unseen events, ambiguous cases,
+cross-layer cascades, label noise, delayed effects, and changes to architecture
+or policy after the detector was calibrated.
+
+The decisive campaign would freeze detector definitions and escalation rules,
+seed known-effect violations and benign controls, independently label outcomes,
+and measure missed detection, false alarm, abstention quality, time to contain,
+escape, rollback or compensation completeness, recurrence, operator burden,
+useful-throughput loss, and governance cost. Component ablations would test
+whether the typed fields, causal edges, residual custody, and recurrence logic
+each add value rather than merely documentation.
+
+Results showing better prose but no prospective benefit would require
+consolidation. High false-alarm burden, unstable labels, poor transfer, or a
+simpler incident system matching containment and recovery at materially lower
+cost would narrow the taxonomy. Repeated source-disjoint incidents in which
+the mapped boundaries detect, block, recover, or preserve evidence better than
+strong controls would support only those named classes and deployment
+conditions. It would not prove the absence of unmodeled failures or the safety
+of the whole stack.
+
 ## Mechanism
 
 Failure is treated as a boundary event, not an impression. SCF identifies replacement, evaluator, migration, dependency, and recovery failures. VCM identifies context admission, taint, revocation, adequacy, and hostile-text failures. Talos identifies job, tool, approval, secret, audit, and replay failures. Spinoza identifies unsupported claims, failed verification, contradiction, and protected-axiom failures. VIEA adds artifact and residual loss, Simulation Scaling adds unbounded simulation claims, MoECOT adds runtime overpromotion, and the Field of God lineage keeps agency and governance harms visible without turning them into empirical safety evidence.
@@ -480,4 +558,9 @@ Across 32 atoms, the terminal ledger records 24 `blocked_after_full_attempt`; 8 
 
 ## Handoff
 
-Failure records are useful only when the book can say what kind of evidence would repair, preserve, or downgrade them. Evidence States and Claim Discipline therefore follows the failure taxonomy with the support-state machinery that keeps prevention, detection, tests, proofs, source notes, and negative results from collapsing into confidence. Risk language becomes governed claim language: each assertion about failure has to carry the support it has earned.
+Prospective failure obligations create claims about detectors, controls,
+containment, and recovery; those claims can fail just as the underlying system
+can. **Evidence States and Claim Discipline** follows by separating taxonomy,
+mechanism evidence, observed incidents, mitigation results, and broader safety
+inference. The handoff prevents a seeded detector pass or a polished
+postmortem from becoming an unsupported claim that the failure has been solved.

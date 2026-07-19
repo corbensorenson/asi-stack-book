@@ -2033,7 +2033,24 @@
     "sources/source_notes/ext_dreamer_v3_2025.md",
     "sources/source_notes/ext_meaningful_human_control_actionable_2022.md",
     "sources/source_notes/ext_agentic_oversight_practice_2026.md",
-    "sources/source_notes/ext_nist_deployed_ai_monitoring_2026.md"
+    "sources/source_notes/ext_nist_deployed_ai_monitoring_2026.md",
+    "scripts/validate_p7_1a_w1_editorial_boundary_audit.py",
+    "evidence_quality/p7_1a_w1_editorial_boundary_audit.json",
+    "docs/p7_1a_w1_editorial_boundary_audit.md",
+    "chapters/living-book-methodology.qmd",
+    "scripts/register_p7_editorial_and_p4_semantic_tranche.py",
+    "scripts/validate_p7_1a_w2_narrative_audit.py",
+    "evidence_quality/p7_1a_w2_narrative_audit.json",
+    "docs/p7_1a_w2_narrative_audit.md",
+    "chapters/asi-is-a-stack-not-a-model.qmd",
+    "chapters/the-efficient-asi-hypothesis.qmd",
+    "chapters/failure-modes-of-ungoverned-intelligence.qmd",
+    "scripts/validate_p4_c1_semantic_proof_cluster.py",
+    "proofs/semantic_cluster_audits/evidence_claim_and_proof_custody.json",
+    "docs/p4_c1_evidence_claim_and_proof_custody_semantic_audit.md",
+    "scripts/validate_p4_c2_semantic_proof_cluster.py",
+    "proofs/semantic_cluster_audits/safety_assurance_and_oversight.json",
+    "docs/p4_c2_safety_assurance_and_oversight_semantic_audit.md"
   ],
   "units": [
     {
@@ -12082,7 +12099,7 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "publication_gate",
-      "input_contract": "Completed claim-proof predecessor; exact no-release terminal record; active unfinished-work successor; 3,745 canonical atoms; all 117 transition files and 115 accepted transitions; complete 25-direct/90-indirect claim identity graph; retrospective N0-N5 rehabilitation of all 90 accepted negative/no-change results; prospective P2 selection, natural development-corpus custody, fixed-denominator gold diagnosis, frozen replacement policy and resource ceiling, and deterministic metadata-only replacement queue; current proof-depth receipt; N0-N5 experiment-competence contract; stale main attestation boundary; X derivative disposition; and four public truth surfaces.",
+      "input_contract": "Completed claim-proof predecessor; exact no-release terminal record; active unfinished-work successor; 3,745 canonical atoms; all 117 transition files and 115 accepted transitions; complete 25-direct/90-indirect claim identity graph; retrospective N0-N5 rehabilitation of all 90 accepted negative/no-change results; prospective P2 selection, natural development-corpus custody, fixed-denominator gold diagnosis, frozen replacement policy and resource ceiling, and deterministic metadata-only replacement queue; terminal P7.1a W1/W2 audits; two terminal bounded semantic proof clusters; current proof-depth receipt; N0-N5 experiment-competence contract; stale main attestation boundary; X derivative disposition; and four public truth surfaces.",
       "input_artifacts": [
         "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
         "docs/structural_completeness_chapter_research_2026_07_19.md",
@@ -12136,6 +12153,10 @@
         "schemas/post_v2_3_maintenance_transfer_and_publication_status.schema.json",
         "scripts/validate_post_v2_3_maintenance_transfer_and_publication_roadmap.py",
         "scripts/register_post_v2_3_maintenance_transfer_and_publication_roadmap.py",
+        "evidence_quality/p7_1a_w2_narrative_audit.json",
+        "scripts/validate_p7_1a_w2_narrative_audit.py",
+        "proofs/semantic_cluster_audits/safety_assurance_and_oversight.json",
+        "scripts/validate_p4_c2_semantic_proof_cluster.py",
         "docs/x_article_synopsis_completion.md",
         "release_records/2026-07-16-post-v2-3-claim-proof-sota-roadmap-complete-no-public-release.json"
       ],
@@ -12153,16 +12174,18 @@
         "replacement policy and monitored resource ceiling frozen before draw",
         "metadata-only queue contains 30 unique repositories while candidate content remains unopened",
         "construct and resource gates pending with heldout closed",
+        "P7.1a terminal with P7.2-T1 next",
+        "two of six semantic proof clusters terminal at bounded adequate scope with P4-C3 next",
         "N0-N5 competence contract",
         "current proof snapshot",
         "main-only stale attestation truth",
         "v2.3.0 latest public release",
         "X source current and historical platform draft stale",
         "no support or release effect",
-        "thirty-one mutations reject"
+        "fifty-seven mutations reject"
       ],
       "claim_scope": "Roadmap continuity, experiment-competence governance, claim-identity truth, public-state maintenance, and owner-gated external actions only.",
-      "negative_controls": "validator_owned_thirty_one_competence_identity_rehabilitation_surface_p2_gold_replacement_queue_resource_attestation_mutations",
+      "negative_controls": "validator_owned_fifty_seven_competence_identity_rehabilitation_surface_p2_editorial_semantic_proof_and_attestation_mutations",
       "negative_control_cases": [
         "false publication",
         "support laundering",
@@ -12189,6 +12212,9 @@
         "P2 replacement queue repository reuse",
         "P2 resource premature pass",
         "P2 resource claim laundering",
+        "P7 next-packet rollback",
+        "P4 next-packet rollback",
+        "semantic-cluster progress drift",
         "false clean attestation",
         "branch permission",
         "N5 deletion",
@@ -12916,11 +12942,167 @@
       "prohibited_inference": "Does not establish PDF/UA, screen-reader, Apple Books, Microsoft Word, external-human, legal, peer-review, empirical, safety, AGI, ASI, or chapter-core support.",
       "contract_precision": "exact",
       "semantic_review_state": "checked_reader_identity_rights_qa_and_residual_boundary"
+    },
+    {
+      "script": "validate_p7_1a_w1_editorial_boundary_audit.py",
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Activation-era 55-chapter compact evidence packets, immutable terminal atom custody, one declared baseline tokenizer, two bounded boundary additions, and consolidation-provenance repairs.",
+      "output_contract": "Recompute baseline/final repetition, preserve all 3,745 protected atoms and packet fields, bind the compact digest, and reject deletion, source, support, or provenance drift.",
+      "output_assertions": [
+        "55 chapter packets",
+        "3,745 protected atoms",
+        "1,142 to 727 repeated 12-grams",
+        "8 mutations reject",
+        "support effect none"
+      ],
+      "claim_scope": "P7.1a-W1 editorial and evidence-boundary custody only.",
+      "negative_controls": "validator_owned_eight_packet_source_provenance_and_support_mutations",
+      "negative_control_cases": [
+        "packet field deletion",
+        "source-boundary erasure",
+        "atom-denominator drift",
+        "support laundering"
+      ],
+      "prohibited_inference": "Compression and boundary coverage do not establish chapter truth, empirical support, release, or publication.",
+      "contract_precision": "exact_packet_digest_and_recomputed_baseline",
+      "semantic_review_state": "checked_terminal_editorial_boundary_semantics",
+      "id": "validate_p7_1a_w1_editorial_boundary_audit.py:399",
+      "order": 399,
+      "args": [],
+      "input_artifacts": [
+        "scripts/validate_p7_1a_w1_editorial_boundary_audit.py",
+        "scripts/reconcile_p7_chapter_evidence.py",
+        "evidence_quality/p7_1a_w1_editorial_boundary_audit.json",
+        "docs/p7_1a_w1_editorial_boundary_audit.md",
+        "chapters/living-book-methodology.qmd",
+        "scripts/register_p7_editorial_and_p4_semantic_tranche.py"
+      ]
+    },
+    {
+      "script": "validate_p7_1a_w2_narrative_audit.py",
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Commit-bound 59-chapter prose baseline, six frozen opening phrase families, exact role partition, three depth-leveling chapters, overview/handoff surfaces, and protected meaning/evidence custody.",
+      "output_contract": "Reduce the frozen opening families from eight occurrences to zero, classify every manifest chapter once, require substantive central-argument additions, preserve claims/sources/equations/proof tags/protocol refs/support, and reject nine mutations.",
+      "output_assertions": [
+        "59 chapters classified once",
+        "11 thesis, 30 reference, 7 implementation, 11 speculative/deferred",
+        "8 opening formulas to 0",
+        "710/728/664 token additions",
+        "9 mutations reject",
+        "support effect none"
+      ],
+      "claim_scope": "P7.1a-W2 case-independent narrative quality and meaning preservation only.",
+      "negative_controls": "validator_owned_nine_role_opening_depth_meaning_overview_and_support_mutations",
+      "negative_control_cases": [
+        "role omission or duplication",
+        "formula restoration",
+        "depth heading erasure",
+        "claim or source deletion",
+        "support laundering",
+        "flagship precommitment"
+      ],
+      "prohibited_inference": "Reader roles and deeper argument do not establish empirical or formal support, flagship evidence, release, or publication.",
+      "contract_precision": "exact_commit_bound_meaning_preservation",
+      "semantic_review_state": "checked_terminal_narrative_role_depth_and_handoff_semantics",
+      "id": "validate_p7_1a_w2_narrative_audit.py:400",
+      "order": 400,
+      "args": [],
+      "input_artifacts": [
+        "scripts/validate_p7_1a_w2_narrative_audit.py",
+        "evidence_quality/p7_1a_w2_narrative_audit.json",
+        "docs/p7_1a_w2_narrative_audit.md",
+        "index.qmd",
+        "docs/book_outline.md",
+        "chapters/asi-is-a-stack-not-a-model.qmd",
+        "chapters/the-efficient-asi-hypothesis.qmd",
+        "chapters/failure-modes-of-ungoverned-intelligence.qmd",
+        "scripts/register_p7_editorial_and_p4_semantic_tranche.py"
+      ]
+    },
+    {
+      "script": "validate_p4_c1_semantic_proof_cluster.py",
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Frozen evidence/claim/proof-custody cluster of four modules and sixteen public targets with exact propositions, assumptions, countermodels, consumers, and inference ceilings.",
+      "output_contract": "Require one terminal disposition per module, execute six consumers, preserve target/theorem denominators and chapter ceilings, and reject nine semantic-cluster mutations.",
+      "output_assertions": [
+        "4 modules",
+        "16 public targets",
+        "2 adequate and 2 reclassified",
+        "6 consumers pass",
+        "9 mutations reject",
+        "support effect none"
+      ],
+      "claim_scope": "Bounded finite evidence, claim-ledger, proof-carrying-claim, and proof-envelope semantics only.",
+      "negative_controls": "validator_owned_nine_cluster_denominator_disposition_semantic_and_support_mutations",
+      "negative_control_cases": [
+        "module deletion",
+        "invented disposition",
+        "semantic-field erasure",
+        "target inflation",
+        "support laundering",
+        "status reopening"
+      ],
+      "prohibited_inference": "The cluster does not prove evidence or claim truth, verifier soundness, runtime enforcement, empirical behavior, safety, or support movement.",
+      "contract_precision": "exact_module_target_and_semantic_disposition",
+      "semantic_review_state": "checked_terminal_bounded_evidence_claim_and_proof_custody_semantics",
+      "id": "validate_p4_c1_semantic_proof_cluster.py:401",
+      "order": 401,
+      "args": [],
+      "input_artifacts": [
+        "scripts/validate_p4_c1_semantic_proof_cluster.py",
+        "proofs/semantic_cluster_audits/evidence_claim_and_proof_custody.json",
+        "docs/p4_c1_evidence_claim_and_proof_custody_semantic_audit.md",
+        "scripts/register_p7_editorial_and_p4_semantic_tranche.py"
+      ]
+    },
+    {
+      "script": "validate_p4_c2_semantic_proof_cluster.py",
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Frozen safety/assurance/oversight cluster of four modules and thirty-one public targets with exact propositions, modeled state, assumptions, countermodels, consumers, mutation evidence, and maximum inference.",
+      "output_contract": "Require four terminal bounded dispositions, execute five independent consumers, preserve target/theorem denominators and chapter limitation surfaces, and reject nine semantic-cluster mutations.",
+      "output_assertions": [
+        "4 modules",
+        "31 public targets",
+        "4 adequate bounded dispositions",
+        "5 consumers pass",
+        "9 mutations reject",
+        "support effect none"
+      ],
+      "claim_scope": "Bounded finite safety-critical, safety-case, oversight, and adversarial-evaluation lifecycle semantics only.",
+      "negative_controls": "validator_owned_nine_cluster_denominator_disposition_semantic_and_support_mutations",
+      "negative_control_cases": [
+        "module deletion",
+        "invented disposition",
+        "semantic-field erasure",
+        "target inflation",
+        "support laundering",
+        "status reopening"
+      ],
+      "prohibited_inference": "The cluster does not prove protected predicates sufficient, safety cases valid, reviewers independent, deception detected, controls effective, deployment safe, or support moved.",
+      "contract_precision": "exact_module_target_and_semantic_disposition",
+      "semantic_review_state": "checked_terminal_bounded_safety_assurance_and_oversight_semantics",
+      "id": "validate_p4_c2_semantic_proof_cluster.py:402",
+      "order": 402,
+      "args": [],
+      "input_artifacts": [
+        "scripts/validate_p4_c2_semantic_proof_cluster.py",
+        "proofs/semantic_cluster_audits/safety_assurance_and_oversight.json",
+        "docs/p4_c2_safety_assurance_and_oversight_semantic_audit.md",
+        "lean/AsiStackProofs/SafetyCriticalLifecycle.lean",
+        "lean/AsiStackProofs/SafetyCaseRefinement.lean",
+        "lean/AsiStackProofs/ScalableOversightRefinement.lean",
+        "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean",
+        "scripts/register_p7_editorial_and_p4_semantic_tranche.py"
+      ]
     }
   ],
   "summary": {
-    "required_artifact_count": 1989,
-    "unit_count": 398
+    "required_artifact_count": 2006,
+    "unit_count": 402
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

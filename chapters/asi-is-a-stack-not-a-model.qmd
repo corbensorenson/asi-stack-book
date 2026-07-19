@@ -100,6 +100,92 @@ Appendix C now records exact source-note mappings for this core claim across all
 | `moecot` | Compact orchestrator, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, and handoff as implementation-reference context. | Code, logs, benchmark artifacts, and runtime claims have not been ingested or reproduced. |
 | `scf` | Stable capability fields as governed replacement boundaries with contracts, evidence registries, qualification, routing, authority, lifecycle, and recovery paths. | Does not prove production safety, global alignment, or whole-stack reversibility. |
 
+## What the stack thesis commits us to
+
+Calling advanced AI a stack is useful only if it changes engineering
+decisions. The thesis commits the architecture to five separations that remain
+visible even when one model implements several roles.
+
+First, **capability is not authority**. A component may generate an excellent
+plan or discover a vulnerability without receiving permission to execute,
+deploy, conceal, or persist anything. Authority comes from an external grant
+whose scope, lifetime, delegability, and revocation state are inspectable at
+the effect boundary.
+
+Second, **context is not belief**. Retrieved passages, summaries, memories,
+simulations, and model states are inputs with provenance, freshness, taint,
+rights, and adequacy limits. They become evidence for a claim only through a
+consumer-specific verification path. This prevents a long context window or a
+confident synthesis from silently becoming epistemic authority.
+
+Third, **a plan is not execution**. Planning explores dependencies,
+alternatives, and contingencies. Execution occurs through a narrow adapter that
+rechecks current authority, records pre-state and observed post-state, and
+retains rollback, compensation, quarantine, or residual custody for effects
+that cannot be reversed exactly.
+
+Fourth, **a receipt is not reality**. Logs and attestations say what a component
+reported or what a bounded checker observed. Independent observation must be
+able to contradict them, and unresolved discrepancies must survive as owned
+residuals rather than being averaged into a success status.
+
+Fifth, **improvement is not inheritance**. A replacement model, router,
+verifier, policy, memory representation, or tool does not inherit the support,
+authority, or readiness of its predecessor merely because it has the same
+name. Qualification binds the candidate to the capability field it is supposed
+to preserve, the regression envelope it was tested against, and the recovery
+path available if the change fails.
+
+These commitments are logical boundaries, not a mandate for microservices.
+A monolithic model can sit behind all five contracts if the surrounding system
+can enforce and audit them. Conversely, a graph of many agents is not a
+governed stack when they share unbounded credentials, copy unversioned context,
+approve one another, and report success without independent effect checks.
+Modularity is an implementation choice; accountable separation is the thesis.
+
+## Strong alternatives and what would decide between them
+
+The strongest objection is that sufficiently capable end-to-end models may
+internalize planning, memory, routing, criticism, and repair more reliably than
+an explicit stack. Interfaces can lose information, introduce latency, create
+new attack surfaces, and turn fluid cognition into brittle bureaucracy. A
+second objection is that ordinary operating-system isolation, least-privilege
+tooling, provenance logs, and release engineering may provide the necessary
+control without a book-specific architecture. A third is that the stack can
+produce excellent records while failing to improve the external outcomes that
+matter.
+
+The thesis survives those objections only as an empirical and formal program,
+not by definition. A fair comparison would place a strong monolithic agent, a
+lightweight tool wrapper, and the governed stack on the same natural tasks with
+matched models, context, tools, tuning effort, and total resource budgets. It
+would measure useful completion, unsafe or unauthorized effect, false refusal,
+recovery completeness, discrepancy discovery, latency, compute, reviewer
+burden, maintenance cost, and performance after component replacement. It
+would include attacks on stale grants, correlated verifiers, poisoned context,
+forged receipts, hidden side effects, and rollback gaps.
+
+Any boundary should be narrowed wherever a simpler design performs equally
+well. If a session-scoped permission wrapper matches typed authority under
+revocation and confused-deputy pressure, the richer grant record has not earned
+its cost. If one end-to-end model preserves context and task quality better
+than a multi-stage lowering pipeline without weakening observation or
+rollback, the pipeline should collapse. The architecture is not entitled to
+layers; each layer must own a distinct failure family or measurable interface
+benefit.
+
+Evidence that would strengthen the thesis is equally specific: repeated
+natural traces in which explicit boundaries prevent or recover failures that
+stronger simple controls miss, while preserving useful throughput at an
+acceptable lifecycle cost; successful replacement of a component without
+identity or evidence leakage; and independent reproduction across materially
+different tasks and systems. Evidence that would weaken it includes persistent
+composition failures, governance burden that drives bypass, no benefit over
+well-engineered monoliths, or controls that remain descriptive rather than
+effect-enforcing. None of those broad comparisons is complete here. The book
+currently offers a disciplined architecture candidate and bounded local
+mechanism evidence, not a proven optimal decomposition.
+
 ## Draft Key Figure: ASI Stack Control Plane
 
 ::: {.asi-key-figure}
@@ -347,7 +433,12 @@ Across 24 atoms, the terminal ledger records 16 `blocked_after_full_attempt`; 8 
 
 ## Handoff
 
-With the stack boundary established, The Efficient ASI Hypothesis asks how capability should grow without turning scale into the only design variable. Architecture identity now has to become architecture economics: if intelligence is a stack of governed layers, then efficiency means routing, reuse, compression, verification, and residual accounting at the correct layer rather than spending maximum cognition everywhere.
+The thesis now hands a falsifiable allocation question to The Efficient ASI Hypothesis.
+If explicit boundaries cannot route and reuse cognition more
+effectively than strong monolithic or lightweight-wrapper baselines after full
+verification, repair, and governance cost, the stack should become smaller.
+The next chapter defines that comparison rather than assuming decomposition is
+efficient.
 **The stack is embedded in the world it governs.**
 
 `ext_embedded_agency_2019` removes a simplifying picture that a stack diagram

@@ -1,0 +1,155 @@
+{
+  "schema_version": "asi_stack.p7_1a_w2_narrative_audit.v1",
+  "packet_id": "P7.1a-W2-opening-variation-and-thesis-depth-leveling",
+  "state": "terminal_complete",
+  "baseline_commit": "0b936ce7b9ea6a8393d01a752e44db6ea548b332",
+  "manifest_chapter_count": 59,
+  "protected_terminal_atom_count": 3745,
+  "opening_variation": {
+    "audited_phrase_families": [
+      "This chapter treats",
+      "This chapter argues",
+      "This chapter is a source-noted design synthesis",
+      "This chapter is architecture argument",
+      "The consolidated alignment/governance layer remains conceptual",
+      "The consolidated contestability layer remains conceptual"
+    ],
+    "baseline_occurrence_count": 8,
+    "final_occurrence_count": 0,
+    "rewritten_chapter_ids": [
+      "the-efficient-asi-hypothesis",
+      "human-intent-as-a-formal-input",
+      "constitutional-alignment-substrate",
+      "moral-uncertainty-and-value-conflict",
+      "routing-heads-and-specialist-cores",
+      "mathematical-and-search-substrates",
+      "coil-attention-cyclic-memory-and-recurrence-contracts",
+      "governed-operations-incident-command-and-graceful-degradation"
+    ]
+  },
+  "depth_leveling": [
+    {
+      "chapter_id": "asi-is-a-stack-not-a-model",
+      "baseline_word_tokens": 5262,
+      "final_word_tokens": 5972,
+      "added_section_headings": [
+        "What the stack thesis commits us to",
+        "Strong alternatives and what would decide between them"
+      ],
+      "argument_job": "Turn the stack slogan into five engineering commitments, the strongest simpler alternatives, weakening conditions, and matched evidence that could decide between them."
+    },
+    {
+      "chapter_id": "the-efficient-asi-hypothesis",
+      "baseline_word_tokens": 4974,
+      "final_word_tokens": 5702,
+      "added_section_headings": [
+        "The denominator of useful efficiency",
+        "Alternatives, failure case, and decisive evidence"
+      ],
+      "argument_job": "Define useful accepted work over total contract cost, compare against always-maximal, always-cheapest, and strong monolithic baselines, and state the hidden-cost failure and rejection conditions."
+    },
+    {
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "baseline_word_tokens": 5795,
+      "final_word_tokens": 6459,
+      "added_section_headings": [
+        "From taxonomy to prospective control obligations",
+        "Strongest objection and decisive tests"
+      ],
+      "argument_job": "Require prospective observables, controls, abstention, composition, and residual custody, then compare the taxonomy against a simpler incident model under detection, containment, recovery, burden, and transfer measures."
+    }
+  ],
+  "chapter_roles": {
+    "thesis-bearing": [
+      "asi-is-a-stack-not-a-model",
+      "the-efficient-asi-hypothesis",
+      "system-boundaries-and-authority",
+      "failure-modes-of-ungoverned-intelligence",
+      "evidence-states-and-claim-discipline",
+      "scalable-oversight-and-adversarial-ai-control",
+      "recursive-self-improvement-boundaries",
+      "intent-to-execution-contracts",
+      "planning-as-a-control-layer",
+      "verification-bandwidth-and-context-adequacy",
+      "resource-economics-and-token-budgets"
+    ],
+    "load-bearing-reference": [
+      "human-intent-as-a-formal-input",
+      "human-factors-and-meaningful-control-in-oversight",
+      "constitutional-alignment-substrate",
+      "moral-uncertainty-and-value-conflict",
+      "stable-capability-fields",
+      "capability-replacement-and-rollback",
+      "security-kernel-and-digital-scifs",
+      "model-weight-custody-and-hardware-roots-of-trust",
+      "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "governed-world-models-and-reality-grounding",
+      "cognitive-compilation-and-semantic-ir",
+      "virtual-context-abi",
+      "context-transactions-snapshots-mounts-and-taint",
+      "claim-ledgers-and-belief-revision",
+      "spinoza-verification-and-proof-carrying-claims",
+      "labor-os-and-typed-jobs",
+      "inter-stack-protocols-identity-and-economic-exchange",
+      "procedural-memory-and-cognitive-loop-closure",
+      "routing-heads-and-specialist-cores",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "executable-specifications-and-lean-proof-envelope",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "white-box-evidence-interpretability-and-activation-governance",
+      "capability-thresholds-and-deployment-commitments",
+      "adversarial-evaluation-sandbagging-and-training-time-deception",
+      "safety-cases-and-structured-assurance",
+      "policy-optimization-and-learning-from-feedback",
+      "data-engines-continual-learning-and-unlearning",
+      "artifact-steward-agents-and-living-project-governance"
+    ],
+    "implementation-case": [
+      "artifact-graphs-audit-logs-and-replay",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "governed-operations-incident-command-and-graceful-degradation",
+      "integrated-reference-architecture",
+      "project-theseus-as-report-first-implementation-reference",
+      "prototype-roadmap",
+      "living-book-methodology"
+    ],
+    "speculative-deferred-research": [
+      "open-ended-improvement-engines",
+      "personal-compute-hives-and-federated-edge-intelligence",
+      "compact-generative-systems-and-residual-honesty",
+      "fast-generation-architectures",
+      "governed-deliberation-and-test-time-scaling",
+      "rankfold-neuralfold-and-artifact-compression",
+      "mathematical-and-search-substrates",
+      "circle-calculus-and-proof-carrying-ai-contracts",
+      "coil-attention-cyclic-memory-and-recurrence-contracts",
+      "coilra-multicoil-rope-and-cyclic-mixers",
+      "open-research-agenda-and-bibliography-plan"
+    ]
+  },
+  "overview_and_handoffs": {
+    "overview_surface": "index.qmd#chapter-roles",
+    "overview_dependency_labels_refreshed": true,
+    "outline_surface": "docs/book_outline.md#current-reader-role-classification",
+    "handoff_chapter_ids": [
+      "asi-is-a-stack-not-a-model",
+      "the-efficient-asi-hypothesis",
+      "failure-modes-of-ungoverned-intelligence"
+    ]
+  },
+  "meaning_custody": {
+    "unique_claim_markers_deleted": 0,
+    "assigned_source_ids_deleted": 0,
+    "equations_deleted": 0,
+    "proof_tags_deleted": 0,
+    "protocol_or_schema_refs_deleted": 0,
+    "chapter_core_support_movements": 0,
+    "protected_atom_rows_mutated": 0,
+    "new_argument_sections_claim_empirical_or_formal_support": false,
+    "flagship_case_structure_precommitted": false
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "publication_effect": "none"
+}

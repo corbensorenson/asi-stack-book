@@ -45,7 +45,11 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter treats cyclic memory, sparse coverage, KV freshness, and recurrence schedules as structural contracts. It does not claim retrieval quality, reasoning quality, longer usable context, speed, memory reduction, or model improvement.
+Cyclic memory earns a route only through structural facts that downstream
+consumers can check: coverage, freshness, aliasing, recurrence budget, exit,
+and fallback. Those facts can govern admission without standing in for
+retrieval quality, reasoning quality, longer usable context, speed, memory
+reduction, or model improvement.
 
 Proof-carrying receipts preserve finite structural boundaries. Memory and recurrence need that same receipt discipline because the tempting overclaim is semantic: a slot is fresh, a lag is covered, or a loop exits, therefore the model must remember or reason better. The ASI Stack keeps those facts useful by treating them as guardrails for admission, fallback, and residual handling rather than as task-success evidence.
 

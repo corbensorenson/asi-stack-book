@@ -1,0 +1,120 @@
+{
+  "schema_version": "asi_stack.semantic_proof_cluster_audit.v1",
+  "cluster_id": "safety_assurance_and_oversight",
+  "packet_id": "P4-C2-safety-assurance-and-oversight-semantic-audit",
+  "state": "adequate",
+  "scope": "bounded_finite_safety_assurance_and_oversight_semantics",
+  "module_count": 4,
+  "public_target_count": 31,
+  "module_dispositions": [
+    {
+      "module": "AsiStackProofs.SafetyCriticalLifecycle",
+      "path": "lean/AsiStackProofs/SafetyCriticalLifecycle.lean",
+      "disposition": "adequate",
+      "public_target_count": 8,
+      "theorem_declaration_count": 21,
+      "plain_language_proposition": "Within a five-domain finite transition system, every accepted event preserves an initially recorded protected predicate and cannot increase numeric authority; an effect commits only after the selected domain's declared Boolean obligations are recorded, and support-promotion routing additionally requires a transition record, non-claim boundary, and durable receipt.",
+      "modeled_state": "Five domains, seven phases, twenty-two Boolean evidence requirements, authority and ceiling naturals, ten event families, finite trace execution, five complete effect traces, five missing-obligation countermodels, rollback, revocation, and a bounded promotion route.",
+      "assumptions": [
+        "The protected predicate, evidence fields, authority values, domain choice, approvals, affected-party records, evaluator labels, and receipts are truthful inputs.",
+        "The hand-authored requirement map is sufficient for the declared finite domain; moral, legal, institutional, and open-world completeness are not derived.",
+        "A committed fixture effect is not a deployed external effect, and the model does not discover side effects, descendants, compensation duties, or incomplete rollback."
+      ],
+      "countermodels": [
+        "Protected-predicate removal and actual authority widening are rejected by the transition function.",
+        "Deleting each of thirty-four required obligations from the positive domain traces prevents the corresponding effect commitment.",
+        "Promotion without both a durable receipt and a non-claim boundary is rejected, while five domain-specific missing-obligation traces fail."
+      ],
+      "consumers": [
+        "scripts/validate_safety_critical_lifecycle.py",
+        "scripts/validate_safety_critical_lifecycle_consumer_trace.py",
+        "experiments/safety_critical_lifecycle/trace_corpus.json",
+        "experiments/safety_critical_lifecycle/results/2026-07-15-consumer-local.json"
+      ],
+      "mutation_evidence": "The independent corpus replay checks 8 accepted and 8 rejected traces plus 34 obligation-deletion countermodels; a separately implemented set-based effect consumer commits 5 bounded fixture effects, denies 5 with residuals, and rejects 8 receipt, route, and authority mutations.",
+      "maximum_inference": "Adequate for preservation, non-increasing-authority, readiness-gated finite transition, rollback/revocation route, and deletion-countermodel semantics in the recorded five-domain model. It does not establish that predicates or obligations are true, complete, morally or legally sufficient, usable by affected parties, independently evaluated, externally enforced, effect-complete, safe, transferable, or support-promoting."
+    },
+    {
+      "module": "AsiStackProofs.SafetyCaseRefinement",
+      "path": "lean/AsiStackProofs/SafetyCaseRefinement.lean",
+      "disposition": "adequate",
+      "public_target_count": 8,
+      "theorem_declaration_count": 10,
+      "plain_language_proposition": "A versioned finite safety-case record can progress from draft through scope, evidence, challenge, review, and one readiness handoff only while exact identity and the declared context, hazard, evidence, assumption, countercase, defeater, reviewer, authority, residual, and separation fields are present; later invalidation requires cause, affected paths, and descendant closure before re-entering challenge.",
+      "modeled_state": "Six stages, thirty routes, exact case and artifact digests, replay rejection, five accepted lifecycle events plus invalidation, receipt and handoff counts, unresolved-defeater blocking, and zero support or external-effect assignment.",
+      "assumptions": [
+        "Case identifiers, digests, evidence currency, assumptions, hazard records, countercases, reviewer competence and conflict declarations, residual ownership, invalidation scope, and descendant closure are truthful.",
+        "The route order and Boolean fields are sufficient for this authored case lifecycle.",
+        "The model does not interpret arguments, estimate causal risk, test controls, or establish institutional independence."
+      ],
+      "countermodels": [
+        "Missing hazard structure or stale evidence blocks progression without mutating state.",
+        "An unresolved defeater or conflicted/incompetent review blocks the favorable route.",
+        "Case-status authority laundering and incomplete descendant invalidation are rejected."
+      ],
+      "consumers": [
+        "scripts/validate_safety_case_refinement.py",
+        "experiments/safety_case_refinement/results/2026-07-15-local.json",
+        "schemas/safety_case_refinement.schema.json"
+      ],
+      "mutation_evidence": "The independent consumer preserves the 8 inherited fixtures, covers all 30 routes and 6 stages, and rejects 35/35 identity, stage, gate, replay, authority, invalidation, support, and effect mutations.",
+      "maximum_inference": "Adequate for exact finite case identity, lifecycle custody, rejection-without-mutation, one readiness-handoff count, authority separation, and versioned invalidation semantics. It does not establish argument validity, hazard completeness, evidence adequacy, reviewer competence or independence, control effectiveness, risk, safety, readiness, release, deployment, transfer, or support movement."
+    },
+    {
+      "module": "AsiStackProofs.ScalableOversightRefinement",
+      "path": "lean/AsiStackProofs/ScalableOversightRefinement.lean",
+      "disposition": "adequate",
+      "public_target_count": 7,
+      "theorem_declaration_count": 12,
+      "plain_language_proposition": "A versioned finite oversight protocol can emit one bounded-use handoff only after exact consumer, decision, task, protocol, reviewer, evidence-view, baseline, disagreement, outcome-audit, abstention, dependency, uncertainty, residual, expiry, and authority-separation custody; material change forces descendant invalidation and a successor protocol before readmission.",
+      "modeled_state": "Seven stages, fifty-eight routes, high-risk and abstention state, exact protocol identities, review and independent outcome-audit records, bounded-use and readmission counts, rejection-without-mutation, and zero support or external-effect assignment.",
+      "assumptions": [
+        "Participant, evidence-view, baseline, review, disagreement, outcome-audit, dependency, abstention, residual, invalidation, and authority records are truthful.",
+        "Role labels and disclosed dependencies do not prove psychological, organizational, data, model, tool, incentive, or evaluator independence.",
+        "The model contains no human or AI capability, task outcome, persuasion process, causal intervention, or deployed enforcement."
+      ],
+      "countermodels": [
+        "Missing evidence views or a direct-review baseline routes to repair or redesign.",
+        "High-risk use without an independent outcome audit and undisclosed shared dependencies cannot advance.",
+        "Unjustified abstention and downstream release-authority laundering are rejected."
+      ],
+      "consumers": [
+        "scripts/validate_scalable_oversight_refinement.py",
+        "experiments/scalable_oversight_refinement/results/2026-07-15-local.json",
+        "schemas/scalable_oversight_refinement.schema.json"
+      ],
+      "mutation_evidence": "The independent consumer preserves 7 inherited fixtures, reaches 7 stages, covers all 58 routes, and rejects 65/65 identity, gate, abstention, dependency, replay, authority, successor, support, and effect mutations.",
+      "maximum_inference": "Adequate for finite protocol identity, review/audit custody, bounded-use handoff, abstention escalation, authority separation, and versioned readmission semantics. It does not establish reviewer competence, independence, calibration, correctness, protocol efficacy, outcome truth, weak-to-strong generalization, debate or consultancy value, causal usefulness, safety, deployment, transfer, or support movement."
+    },
+    {
+      "module": "AsiStackProofs.AdversarialEvaluationRefinement",
+      "path": "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean",
+      "disposition": "adequate",
+      "public_target_count": 8,
+      "theorem_declaration_count": 12,
+      "plain_language_proposition": "A prospectively bound finite evaluation record can reach one decision-review handoff only after exact model, task, protocol, policy, evaluator, monitor, reward, selection, hypothesis, outcome, observation, denominator, independent-probe, discrepancy, alternative, uncertainty, residual, expiry, and authority custody; unresolved discrepancy takes quarantine rather than favorable review and material change requires versioned reevaluation.",
+      "modeled_state": "Seven stages, fifty-six routes, exact evaluation identities, observation and independent-probe records, promotion, quarantine and closure adjudication routes, decision-review and reevaluation counts, rejection-without-mutation, and zero support or external-effect assignment.",
+      "assumptions": [
+        "All provenance, observation, transcript, denominator, failure, evaluator-separation, cross-context, discrepancy, hypothesis, mitigation, quarantine, expiry, invalidation, and authority fields are truthful.",
+        "Prospective binding and route completeness are authored policy, not learned or validated construct evidence.",
+        "The model has no representation of latent objectives, strategic behavior, causal trace faithfulness, evaluator accuracy, or deployed quarantine effects."
+      ],
+      "countermodels": [
+        "Missing selection, reward, or monitor provenance blocks observation admission without becoming behavioral evidence.",
+        "Missing independent evaluation or cross-context matched-access probing blocks adjudication.",
+        "Unresolved discrepancy without quarantine custody and any attempted inference of intent are rejected."
+      ],
+      "consumers": [
+        "scripts/validate_adversarial_evaluation_refinement.py",
+        "experiments/adversarial_evaluation_refinement/results/2026-07-15-local.json",
+        "schemas/adversarial_evaluation_refinement.schema.json"
+      ],
+      "mutation_evidence": "The independent consumer preserves 8 inherited fixtures, reaches 7 stages, covers all 56 routes, and rejects 60/60 identity, provenance, probe, discrepancy, quarantine, reevaluation, authority, support, and effect mutations.",
+      "maximum_inference": "Adequate for finite observation/probe identity, discrepancy and alternative custody, quarantine routing, decision-review separation, and versioned reevaluation semantics. It does not detect or establish deception, sandbagging, alignment faking, reward hacking, capability, intent, prevalence, monitor or evaluator validity, causal faithfulness, mitigation efficacy, quarantine correctness, safety, readiness, release, transfer, or support movement."
+    }
+  ],
+  "cluster_maximum_inference": "The cluster is adequate for its recorded finite preservation, lifecycle, route, custody, handoff, invalidation, quarantine, and authority-separation semantics. It proves no protected predicate true or sufficient, no safety case valid, no reviewer independent or correct, no adversarial behavior detected, no control effective, no external effect complete, and no empirical, safety, transfer, deployment, SOTA, AGI, ASI, support, release, or publication claim.",
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "publication_effect": "none"
+}
