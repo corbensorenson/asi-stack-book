@@ -159,6 +159,12 @@ def validate(data: dict) -> list[str]:
     current_proof_count = proof_manifest.get("proof_target_count")
     historical_proof_count = activation.get("proof_target_count")
     planned_records = [row for row in proof_records if row.get("status") == "planned"]
+    later_admitted_records = [
+        row for row in proof_records if row.get("chapter_id") in admitted_chapter_ids
+    ]
+    later_implemented_records = [
+        row for row in later_admitted_records if row.get("status") == "implemented"
+    ]
     record_status_counts: dict[str, int] = {}
     for row in proof_records:
         record_status = row.get("status")
@@ -173,9 +179,15 @@ def validate(data: dict) -> list[str]:
         or current_proof_count != activation_truth.get("proof_target_count")
         or current_proof_count != len(proof_records)
         or proof_status_counts != record_status_counts
-        or proof_status_counts != {"implemented": historical_proof_count, "planned": added_proof_count}
-        or len(planned_records) != added_proof_count
-        or {row.get("chapter_id") for row in planned_records} != admitted_chapter_ids
+        or len(later_admitted_records) != added_proof_count
+        or {row.get("chapter_id") for row in later_admitted_records} != admitted_chapter_ids
+        or proof_status_counts
+        != {
+            "implemented": historical_proof_count + len(later_implemented_records),
+            "planned": len(planned_records),
+        }
+        or len(planned_records) + len(later_implemented_records) != added_proof_count
+        or not {row.get("chapter_id") for row in planned_records}.issubset(admitted_chapter_ids)
         or any(row.get("summary_support_state") not in (None, "argument") for row in planned_records)
     ):
         errors.append("proof/no-new-theorem boundary drifted")

@@ -122,12 +122,19 @@ def validate(data: dict) -> list[str]:
     ):
         errors.append("live evidence vectors moved or miscounted a chapter-core claim")
 
+    qcsa_manifest_routes = {
+        chapter.get("id")
+        for chapter in records
+        if SOURCE_ID in chapter.get("source_ids", [])
+    }
+    later_qcsa_routes = qcsa_manifest_routes - TARGETS
+
     source_rows = [row for row in inventory if row.get("id") == SOURCE_ID]
     if len(source_rows) != 1:
         errors.append("source inventory must contain exactly one QCSA record")
     else:
         source = source_rows[0]
-        if set(source.get("chapter_targets", [])) != TARGETS:
+        if set(source.get("chapter_targets", [])) != qcsa_manifest_routes:
             errors.append("QCSA inventory chapter targets drifted")
         if source.get("priority") != "must_use" or source.get("source_type") != "author_whitepaper":
             errors.append("QCSA inventory classification drifted")
@@ -143,12 +150,6 @@ def validate(data: dict) -> list[str]:
     if "Keep the active 54-chapter architecture" not in note:
         errors.append("QCSA source note lost the chapter decision")
 
-    qcsa_manifest_routes = {
-        chapter.get("id")
-        for chapter in records
-        if SOURCE_ID in chapter.get("source_ids", [])
-    }
-    later_qcsa_routes = qcsa_manifest_routes - TARGETS
     if not later_qcsa_routes.issubset(admitted_chapter_ids):
         errors.append("later QCSA source reuse escaped manifest-admitted chapters")
 

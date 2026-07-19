@@ -214,13 +214,25 @@ def semantic_errors(data: dict[str, Any]) -> list[str]:
         else -1
     )
     planned_records = [row for row in proof_records if row.get("status") == "planned"]
+    later_admitted_records = [
+        row for row in proof_records if row.get("chapter_id") in admitted_chapter_ids
+    ]
+    later_implemented_records = [
+        row for row in later_admitted_records if row.get("status") == "implemented"
+    ]
     if (
         current_proof_count != activation_truth.get("proof_target_count")
         or current_proof_count != len(proof_records)
         or proof_status_counts != dict(record_status_counts)
-        or proof_status_counts != {"implemented": historical_proof_count, "planned": added_proof_count}
-        or len(planned_records) != added_proof_count
-        or {row.get("chapter_id") for row in planned_records} != admitted_chapter_ids
+        or len(later_admitted_records) != added_proof_count
+        or {row.get("chapter_id") for row in later_admitted_records} != admitted_chapter_ids
+        or proof_status_counts
+        != {
+            "implemented": historical_proof_count + len(later_implemented_records),
+            "planned": len(planned_records),
+        }
+        or len(planned_records) + len(later_implemented_records) != added_proof_count
+        or not {row.get("chapter_id") for row in planned_records}.issubset(admitted_chapter_ids)
     ):
         errors.append("current proof additions escaped historical baseline or admitted chapters")
     if any(
@@ -285,7 +297,7 @@ def main() -> None:
         for part in data["structure"].get("parts", [])
     )
     proof_manifest = data["proof_manifest"]
-    print(f"QCSA book reconciliation passed: 9 existing chapter owners, 5 bounded review candidates, 2 narrowed claims, 2 exact refutations, 1 no-change transfer boundary, 8 explicit residuals, preserved 54-chapter/298-target historical baseline and authorized 55th-chapter expansion, {live_chapter_count} live core claims still at argument, {proof_manifest.get('proof_target_count')} current proof targets constrained to 298 implemented plus 8 planned on admitted chapters, no standalone QCSA chapter, and 18 rejecting mutations.")
+    print(f"QCSA book reconciliation passed: 9 existing chapter owners, 5 bounded review candidates, 2 narrowed claims, 2 exact refutations, 1 no-change transfer boundary, 8 explicit residuals, preserved 54-chapter/298-target historical baseline and authorized 55th-chapter expansion, {live_chapter_count} live core claims still at argument, {proof_manifest.get('proof_target_count')} current proof targets constrained to {proof_manifest.get('status_counts', {}).get('implemented')} implemented plus {proof_manifest.get('status_counts', {}).get('planned')} planned on later admitted chapters, no standalone QCSA chapter, and 18 rejecting mutations.")
 
 
 if __name__ == "__main__":
