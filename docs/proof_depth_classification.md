@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 306 |
 | Lean modules scanned | 102 |
-| Theorem declarations classified | 1324 |
+| Theorem declarations classified | 1333 |
 | Direct/projection-style theorem declarations | 230 |
-| Derived/decomposed theorem declarations | 910 |
-| Unknown or mixed theorem declarations | 184 |
+| Derived/decomposed theorem declarations | 914 |
+| Unknown or mixed theorem declarations | 189 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -95,7 +95,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/GovernedOperations.lean` | governed-operations-incident-command-and-graceful-degradation | 2 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | governed-world-models-and-reality-grounding | 2 | 9 | 0 | 5 | 4 | manual review |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | personal-compute-hives-and-federated-edge-intelligence | 6 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/HumanFactorsOversight.lean` | human-factors-and-meaningful-control-in-oversight | 2 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | human-factors-and-meaningful-control-in-oversight | 2 | 9 | 0 | 4 | 5 | manual review |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | integrated-reference-architecture | 3 | 23 | 0 | 13 | 10 | manual review |
 | `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 1 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | intent-to-execution-contracts | 2 | 12 | 0 | 6 | 6 | manual review |
@@ -679,6 +679,15 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `overprivileged_node_blocks_selection` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `partition_without_no_mutation_evidence_blocks` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `partitioned_stale_grant_quarantines_before_mutation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `authority_leak_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `blame_without_control_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `bounded_review_preserves_declared_conditions` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `complete_fixture_routes_to_bounded_review` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `control_envelope_blocks_action` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `control_route_never_grants_support_or_effect` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `late_fixture_reduces_autonomy` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `overloaded_fixture_requests_capacity` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `responsibility_requires_control` | derived_or_decomposed | no | uses split, unfold |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_acknowledgement_closes_effect` | derived_or_decomposed | no | uses cases, simp, split, unfold |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_attempt_records_idempotency_key` | derived_or_decomposed | no | uses by_cases, cases, simp, split, unfold |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_concurrent_attempt_precedes_revocation` | derived_or_decomposed | no | uses simp |

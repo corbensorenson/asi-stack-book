@@ -409,7 +409,7 @@ usefulness result, or whole-stack demonstration. Chapter-core support remains
 ## Interfaces
 
 Twelve owner groups participate without surrendering authority: intent,
-constitution, morality, and system authority; command contracts, planning,
+human control-envelope capacity, constitution, morality, and system authority; command contracts, planning,
 compilation, and labor; context, transactions, adequacy, memory, and retrieval;
 routing, specialists, deliberation, search, compression, and model mechanisms;
 claims, evidence, Spinoza, specifications, Lean, and proof contracts; runtime,
@@ -423,6 +423,14 @@ not any neighbor's decision.
 The Reference Trace Record carries the interface: a finite public record of trace state, execution boundary, intent, parent artifacts, authority chain and deltas, layer handoffs, artifacts, evidence updates and deltas, residual deltas, stop conditions, missing contracts, validation commands, promotion blockers, source refs, support-state effect, and non-claims. It gives a future runtime trace harness a stable target without pretending that the harness already exists.
 
 A useful trace record is not merely chronological. It records parentage, authority deltas, evidence deltas, and residual deltas. Parentage says which artifact produced the next artifact. Authority deltas say whether authority narrowed, expired, escalated, or was denied. Evidence deltas say which claim state changed, if any. Residual deltas say what risk or missing work survived the handoff. Without those deltas, the trace becomes a log of events rather than an architecture record.
+
+Where a human role is assigned, the joined trace also carries the exact
+control-envelope packet rather than a bare approval bit. Missing evidence,
+incompatible representation, overload, a non-positive intervention window,
+unreachable channels, unmanaged conflict, or responsibility beyond effective
+control must remain visible as a route-changing residual. Passing the finite
+packet removes recorded defeaters only; it does not prove comprehension,
+meaningful control, responsibility, or safe action.
 
 ## Invariants
 

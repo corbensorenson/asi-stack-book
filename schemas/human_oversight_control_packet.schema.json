@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/human_oversight_control_packet.schema.json",
+  "title": "Human Oversight Control-Envelope Packet",
+  "type": "object",
+  "required": [
+    "schema_version", "packet_id", "claim_id", "origin_class", "disposition",
+    "task_and_controller", "evidence_and_comprehension", "workload_and_time",
+    "authority_and_intervention", "responsibility_and_privacy", "outcome_and_lifecycle",
+    "authority_boundary", "support_state_effect", "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.human_oversight_control_packet.v1"},
+    "packet_id": {"type": "string", "minLength": 1},
+    "claim_id": {"const": "human-factors-and-meaningful-control-in-oversight.core"},
+    "origin_class": {"type": "string", "enum": ["repository_fixture", "local_human_subjects_run", "external_human_subjects_run"]},
+    "disposition": {"type": "string", "enum": ["bounded_review", "add_capacity", "reduce_autonomy", "safe_hold", "reject_responsibility", "reject", "expired"]},
+    "task_and_controller": {
+      "type": "object",
+      "required": ["task_id", "consequence_class", "controller_role", "controller_pseudonym", "qualification_ref", "qualification_current", "accessibility_ref", "controller_identified"],
+      "properties": {
+        "task_id": {"type": "string", "minLength": 1},
+        "consequence_class": {"type": "string", "enum": ["reversible_low", "reversible_material", "irreversible_or_high"]},
+        "controller_role": {"type": "string", "minLength": 1},
+        "controller_pseudonym": {"type": "string", "minLength": 1},
+        "qualification_ref": {"type": "string", "minLength": 1},
+        "qualification_current": {"type": "boolean"},
+        "accessibility_ref": {"type": "string", "minLength": 1},
+        "controller_identified": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "evidence_and_comprehension": {
+      "type": "object",
+      "required": ["evidence_view_digest", "independent_evidence_ref", "known_omissions_ref", "representation_profile_ref", "evidence_observable", "representation_compatible", "comprehension_probe_ref", "comprehension_disposition", "uncertainty_ref"],
+      "properties": {
+        "evidence_view_digest": {"type": "string", "minLength": 1},
+        "independent_evidence_ref": {"type": "string", "minLength": 1},
+        "known_omissions_ref": {"type": "string", "minLength": 1},
+        "representation_profile_ref": {"type": "string", "minLength": 1},
+        "evidence_observable": {"type": "boolean"},
+        "representation_compatible": {"type": "boolean"},
+        "comprehension_probe_ref": {"type": "string", "minLength": 1},
+        "comprehension_disposition": {"type": "string", "enum": ["not_run", "pass", "fail", "uncertain"]},
+        "uncertainty_ref": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "workload_and_time": {
+      "type": "object",
+      "required": ["active_review_count", "queue_age_ms", "interruption_count", "workload_bound_ref", "workload_inside_bound", "notice_ms", "understand_ms", "decide_ms", "act_ms", "system_response_ms", "safety_margin_ms", "time_to_irreversibility_ms", "decision_window_positive"],
+      "properties": {
+        "active_review_count": {"type": "integer", "minimum": 0},
+        "queue_age_ms": {"type": "integer", "minimum": 0},
+        "interruption_count": {"type": "integer", "minimum": 0},
+        "workload_bound_ref": {"type": "string", "minLength": 1},
+        "workload_inside_bound": {"type": "boolean"},
+        "notice_ms": {"type": "integer", "minimum": 0},
+        "understand_ms": {"type": "integer", "minimum": 0},
+        "decide_ms": {"type": "integer", "minimum": 0},
+        "act_ms": {"type": "integer", "minimum": 0},
+        "system_response_ms": {"type": "integer", "minimum": 0},
+        "safety_margin_ms": {"type": "integer", "minimum": 0},
+        "time_to_irreversibility_ms": {"type": "integer", "minimum": 0},
+        "decision_window_positive": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "authority_and_intervention": {
+      "type": "object",
+      "required": ["authority_ref", "task_authority_present", "alternatives_ref", "veto_or_stop_present", "intervention_channel_ref", "channel_rehearsal_ref", "intervention_channel_reachable", "system_response_inside_window", "safe_state_ref", "safe_state_reachable", "conflict_ref", "conflict_managed"],
+      "properties": {
+        "authority_ref": {"type": "string", "minLength": 1},
+        "task_authority_present": {"type": "boolean"},
+        "alternatives_ref": {"type": "string", "minLength": 1},
+        "veto_or_stop_present": {"type": "boolean"},
+        "intervention_channel_ref": {"type": "string", "minLength": 1},
+        "channel_rehearsal_ref": {"type": "string", "minLength": 1},
+        "intervention_channel_reachable": {"type": "boolean"},
+        "system_response_inside_window": {"type": "boolean"},
+        "safe_state_ref": {"type": "string", "minLength": 1},
+        "safe_state_reachable": {"type": "boolean"},
+        "conflict_ref": {"type": "string", "minLength": 1},
+        "conflict_managed": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "responsibility_and_privacy": {
+      "type": "object",
+      "required": ["responsibility_role", "effective_control_ref", "responsibility_inside_effective_control", "data_minimization_ref", "retention_ref", "consent_or_waiver_ref", "punitive_inference_prohibited", "biometric_or_emotion_inference_used"],
+      "properties": {
+        "responsibility_role": {"type": "string", "minLength": 1},
+        "effective_control_ref": {"type": "string", "minLength": 1},
+        "responsibility_inside_effective_control": {"type": "boolean"},
+        "data_minimization_ref": {"type": "string", "minLength": 1},
+        "retention_ref": {"type": "string", "minLength": 1},
+        "consent_or_waiver_ref": {"type": "string", "minLength": 1},
+        "punitive_inference_prohibited": {"const": true},
+        "biometric_or_emotion_inference_used": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "outcome_and_lifecycle": {
+      "type": "object",
+      "required": ["decision_ref", "intervention_attempt_ref", "observed_response_ref", "independent_outcome_ref", "appeal_ref", "residual_ref", "residual_owner", "expiry", "material_change_trigger"],
+      "properties": {
+        "decision_ref": {"type": "string", "minLength": 1},
+        "intervention_attempt_ref": {"type": "string", "minLength": 1},
+        "observed_response_ref": {"type": "string", "minLength": 1},
+        "independent_outcome_ref": {"type": "string", "minLength": 1},
+        "appeal_ref": {"type": "string", "minLength": 1},
+        "residual_ref": {"type": "string", "minLength": 1},
+        "residual_owner": {"type": "string", "minLength": 1},
+        "expiry": {"type": "string", "minLength": 1},
+        "material_change_trigger": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "authority_boundary": {
+      "type": "object",
+      "required": ["authority_delta", "effect_authorized", "support_assignment_authorized", "release_authority"],
+      "properties": {
+        "authority_delta": {"const": "none"},
+        "effect_authorized": {"const": false},
+        "support_assignment_authorized": {"const": false},
+        "release_authority": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": false
+}

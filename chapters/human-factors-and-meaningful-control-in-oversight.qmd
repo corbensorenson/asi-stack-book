@@ -3,7 +3,7 @@ title: "Human Factors and Meaningful Control in Oversight"
 chapter_id: "human-factors-and-meaningful-control-in-oversight"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
+draft_maturity: "v0.3 terminal structural draft"
 last_updated: "2026-07-19"
 primary_sources:
   - "viea"
@@ -22,7 +22,7 @@ open_evidence_gaps:
   - "No representative human-subjects study has measured the complete proposed control envelope, and no chapter-level empirical test has been run in this repository."
   - "No independently replicated threshold for attention, task comprehension, workload, qualification recency, or intervention latency is established."
   - "Transfer from legacy automation findings and an exploratory software-agent interview study to modern high-autonomy or high-stakes systems remains untested."
-  - "The two finite formal targets remain planned; no semantically adequate runtime consumer or Lean proof is implemented for this chapter."
+  - "The implemented schema, safe-hold fixture, independent validator, and finite Lean model establish record-routing consequences only; no human-state predicate, workload threshold, comprehension, responsibility, or intervention efficacy is proven."
 ---
 
 ## Chapter status
@@ -32,13 +32,13 @@ open_evidence_gaps:
 | Chapter ID | `human-factors-and-meaningful-control-in-oversight` |
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
+| Manuscript maturity | v0.3 terminal structural draft |
 | Last updated | 2026-07-19 |
 | Primary source records | `viea`, `talos`, `theseus_operator_os`, `scf`, `ext_humans_automation_1997`, `ext_ironies_automation_1983`, `ext_levels_automation_2000`, `ext_complacency_bias_automation_2010`, `ext_meaningful_human_control_actionable_2022`, `ext_agentic_oversight_practice_2026` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Source notes are available for all ten assigned records; Appendix C contains ten exact claim-level mappings. The four legacy automation notes are based on inspected primary metadata/abstract records, not locally reproduced studies. |
-| Test state | Three chapter tests and two formal targets are planned and not run. No human-subjects study, deployed oversight service, or control-envelope benchmark is claimed. |
+| Test state | The control-envelope schema, safe-hold fixture, independent semantic validator, rejecting mutations, and two public Lean targets through nine declarations are implemented. The four-arm human-subjects campaign is protocol-ready but requires exact ethics, privacy, participant, and resource authority before recruitment; protected outcomes remain closed. |
 
 ## Drafting guardrail
 
@@ -122,6 +122,28 @@ grant of authority. Conversely, this chapter should not absorb their authority,
 policy, evidence, moral, or effect-admission decisions. It returns one bounded
 answer: whether the proposed human role remains inside a declared control
 envelope, must be degraded, or is too uncertain to rely on.
+
+## Why this boundary earns a chapter
+
+Human Intent owns what was requested, Scalable Oversight owns how difficult
+outputs are judged, Runtime owns effect enforcement, and governance chapters
+own normative and institutional authority. None owns whether the named person
+at their junction can actually exercise the assigned control under this task's
+representation, workload, time, alternatives, incentives, intervention path,
+and recovery conditions.
+
+Folding this boundary into approval mechanics would let a click stand in for
+comprehension and effective intervention. Folding it into institutional
+governance would hide the episode-level latency and workload failure. Folding
+it into scalable oversight would conflate evidence quality with the capacity
+of the person expected to act on that evidence. The object remains distinct: a
+versioned control-envelope packet that may defeat reliance on a nominal human
+role but cannot grant authority or declare moral responsibility.
+
+The terminal reader decision is therefore **integrate at argument support**.
+The chapter earns its place through that exclusive operator-capacity and
+responsibility-control boundary, not through a claim that the formal packet or
+the prospective study proves meaningful control.
 
 ## Why existing approaches are insufficient
 
@@ -600,7 +622,8 @@ If those checks fail, use a preregistered rescue ladder:
 | Envelope gate improves preregistered joint outcomes in one competent held-out study | A narrow empirical claim may become eligible for review; the chapter core remains at `argument` pending replication, transfer, and normative review. |
 | Independent replication succeeds across materially different tasks and representative participants, with acceptable harm and cost | Consider a scoped `empirical-test-backed` transition for the operational necessary-condition claim only. Meaningful-control sufficiency, high-stakes safety, and general transfer remain non-claims. |
 
-The exit lane is prospective. It does not itself create a reviewer-facing
+The exact four-arm campaign is **protocol-ready with ethics and resource
+authority required, not executed**. The exit lane is prospective. It does not itself create a reviewer-facing
 promotion record or authorize support movement. Any transition still requires
 the book's evidence-state process, exact artifacts, commands, limitations,
 independent review, and changelog reconciliation.
@@ -609,13 +632,13 @@ independent review, and changelog reconciliation.
 
 | Test | Purpose | Status |
 |---|---|---|
-| Oversight-envelope boundary suite | Vary workload, explanation burden, intervention time, authority, observability, and safe-state reachability; verify that missing necessary conditions route to clarification, degradation, safe hold, or abstention before consequential dispatch. | planned; not run |
+| Oversight-envelope boundary suite | Vary workload, explanation burden, intervention time, authority, observability, and safe-state reachability; verify that missing necessary conditions route to clarification, degradation, safe hold, or abstention before consequential dispatch. | implemented for finite authored packet predicates with fifteen rejecting mutations; no human state, dispatch, or efficacy result |
 | Automation-bias and mode-confusion adversarial study | Compare nominal, static-baseline, and envelope-gated interfaces on known-defect detection, calibrated reliance, correct and false intervention, latency, burden, privacy, and useful throughput. | planned; not run; human-subjects and ethics review required |
 | Rare-event intervention retention study | Test whether declared rehearsal cadence and context-restoration design preserve bounded intervention performance after quiet intervals. | planned; not run; human-subjects and ethics review required |
 
 No test result is implied by the specificity of this plan.
 
-## Formalization disposition
+## Formalization hooks
 
 Formalization is appropriate for **policy consequences of declared inputs**,
 not for proving human understanding, fatigue, moral responsibility, or
@@ -627,15 +650,24 @@ state.
 
 | Tag | Module | Finite target | Status |
 |---|---|---|---|
-| `lean:oversight.control_envelope.blocks_action` | `AsiStackProofs.HumanFactorsOversight` | In a finite record model, any consequential transition lacking declared authority, observability, comprehension disposition, timely intervention, or a reachable safe state is rejected or degraded. | planned; no Lean artifact or runtime consumer implemented |
-| `lean:oversight.responsibility_requires_control` | `AsiStackProofs.HumanFactorsOversight` | A bounded accountability assignment never attributes operational responsibility beyond the authority and effective control recorded in the oversight contract. | planned; no Lean artifact or runtime consumer implemented |
+| `lean:oversight.control_envelope.blocks_action` | `AsiStackProofs.HumanFactorsOversight` | In a finite record model, any consequential transition lacking declared authority, observability, comprehension disposition, timely intervention, or a reachable safe state is rejected or degraded. | implemented through nine declarations and an independent consumer |
+| `lean:oversight.responsibility_requires_control` | `AsiStackProofs.HumanFactorsOversight` | A bounded accountability assignment never attributes operational responsibility beyond the authority and effective control recorded in the oversight contract. | implemented through the same finite route model and consumer |
 
-The proof work should remain deferred until a versioned oversight-contract
-schema, fixture suite, adjudication semantics, and independent runtime consumer
-exist. Otherwise theorems would merely restate trusted Boolean inputs and risk
-turning measurement assumptions into formal-looking conclusions. A future
-refinement bridge must keep the human-state operationalization outside the
-theorem's claim and test the consumer that actually blocks or degrades action.
+The `human_oversight_control_packet.schema.json` contract and deliberately
+incompetent safe-hold fixture now provide the versioned record boundary. The
+fixture recruits or observes no person. `AsiStackProofs.HumanFactorsOversight`
+implements both public targets through nine theorem declarations: missing
+necessary predicates cannot reach bounded review, responsibility outside
+effective control is rejected, and no review route grants support or external
+effect authority. The independent consumer checks the same consequences and
+rejects semantic mutations.
+
+This formalization does not prove comprehension, workload calibration, trust,
+consent, privacy adequacy, responsibility, intervention efficacy, moral
+meaningfulness, or safety. Every human-state, authority, timing, and channel
+predicate remains trusted input. It is adequate only for finite routing over
+declared records; the prospective human-subjects protocol owns the empirical
+burden and remains unopened.
 
 ## Evidence and non-claims
 

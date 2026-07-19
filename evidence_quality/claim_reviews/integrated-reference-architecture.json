@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/integrated-reference-architecture.qmd",
     "structured_atoms_reviewed": 74,
-    "prose_candidates_adjudicated": 77,
+    "prose_candidates_adjudicated": 79,
     "unowned_material_claims": 0,
     "review_note": "Reviewed the complete chapter, all thirty exact mappings, trace fixtures, replay, blocked lineage, governed repository slice, the successor integrated transition model and independent consumer, all three proof targets, every current manifest atom and 71 prose candidates, tests, crosswalk, summary, and handoff. Made the Cross-Layer Trace Join Contract the distinct owner; preserved zero core effect; froze the natural independently operated multi-service matched-baseline campaign."
   },
@@ -138,6 +138,15 @@
     }
   },
   "prose_candidate_dispositions": {
+    "integrated-reference-architecture.prose.eb5a16e581a5": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the joined-trace obligation to preserve route-changing residuals.",
+      "target_atom_id": "integrated-reference-architecture.formal.reference-architecture-trace-operational-invariant"
+    },
+    "integrated-reference-architecture.prose.5215a1b2a001": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explicit ceiling on what a finite human control-envelope packet can establish."
+    },
     "integrated-reference-architecture.prose.763af68967ab": {
       "state": "nonmaterial_explanation",
       "rationale": "Joined-trace identity list elaborates the existing Cross-Layer Trace Join Contract."

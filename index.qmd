@@ -72,7 +72,8 @@ The central design move is simple: never let intelligence, authority, memory, ev
 
 ```{mermaid}
 flowchart LR
-  Intent["Human intent"] --> Constitution["Alignment and constitution"]
+  Intent["Human intent"] --> HumanControl["Human control-envelope check"]
+  HumanControl --> Constitution["Alignment and constitution"]
   Constitution --> Authority["Governance and authority"]
   Authority --> Plan["Planning and semantic IR"]
   Plan --> WorldModel["Qualified world-model branches"]
@@ -98,6 +99,13 @@ flowchart LR
 ```
 
 Every arrow is meant to become an interface, not just a metaphor. The book is organized so each chapter owns one boundary: what enters it, what artifact it emits, what invariants must hold, what can fail, and what evidence would justify stronger claims.
+
+The human-control arrow is deliberately non-authorizing. Its packet can show
+that a named reviewer lacks information, comprehension opportunity, workable
+load, time, authority, alternatives, or an effective intervention path and can
+therefore force added capacity, reduced autonomy, safe hold, or abstention. It
+cannot infer a person's internal state, assign moral responsibility, approve an
+effect, or certify meaningful control.
 
 ## Dependency spine
 

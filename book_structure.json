@@ -2147,8 +2147,8 @@
           ],
           "lean_module": "AsiStackProofs.HumanFactorsOversight",
           "proof_targets": [
-            {"tag":"lean:oversight.control_envelope.blocks_action","module":"AsiStackProofs.HumanFactorsOversight","target":"In the finite model, any consequential transition lacking authority, observability, comprehension, timely intervention, or a reachable safe state is rejected or degraded.","status":"planned"},
-            {"tag":"lean:oversight.responsibility_requires_control","module":"AsiStackProofs.HumanFactorsOversight","target":"The bounded accountability assignment never attributes operational responsibility beyond the authority and effective control recorded in the oversight contract.","status":"planned"}
+            {"tag":"lean:oversight.control_envelope.blocks_action","module":"AsiStackProofs.HumanFactorsOversight","target":"In the finite model, any consequential transition lacking authority, observability, comprehension, timely intervention, or a reachable safe state is rejected or degraded.","status":"implemented"},
+            {"tag":"lean:oversight.responsibility_requires_control","module":"AsiStackProofs.HumanFactorsOversight","target":"The bounded accountability assignment never attributes operational responsibility beyond the authority and effective control recorded in the oversight contract.","status":"implemented"}
           ],
           "draft_maturity": "admitted_packet_complete",
           "open_evidence_gaps": ["No representative human-subject study yet measures the complete control envelope.", "No independently replicated threshold for attention, comprehension, or intervention latency is established.", "Transfer from legacy automation studies to modern agentic systems remains a hypothesis to test."]

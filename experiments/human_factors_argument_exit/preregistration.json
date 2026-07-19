@@ -1,0 +1,135 @@
+{
+  "schema_version": "asi_stack.human_factors_argument_exit_preregistration.v1",
+  "campaign_id": "HUMAN-FACTORS-ARGUMENT-EXIT-01",
+  "state": "protocol_ready_ethics_and_resource_authority_required_not_executed",
+  "claim_id": "human-factors-and-meaningful-control-in-oversight.core",
+  "frozen_question": "In one prospectively selected minimal-risk sandboxed review domain, can a preregistered control-envelope gate identify ceremonial approval episodes and improve the joint known-defect, correct-intervention, useful-throughput, burden, privacy, accessibility, and unequal-impact frontier over a strong static risk-tiered oversight baseline?",
+  "current_support_state": "argument",
+  "support_state_effect": "none",
+  "protected_outcomes_opened": false,
+  "human_participants_recruited": false,
+  "execution_authority": "not_granted_by_this_record",
+  "ethics_and_privacy_gate": {
+    "ethics_review_required_before_recruitment": true,
+    "jurisdiction_and_institution_review_required": true,
+    "minimal_risk_sandbox_only": true,
+    "real_external_effects_allowed": false,
+    "employment_or_performance_scoring_allowed": false,
+    "covert_surveillance_allowed": false,
+    "biometric_affective_gaze_camera_or_keystroke_capture_default": false,
+    "secondary_use_without_separate_approval_allowed": false,
+    "informed_consent_required": true,
+    "withdrawal_without_penalty_required": true,
+    "accessibility_accommodations_required": true,
+    "pseudonymous_episode_ids_required": true,
+    "short_retention_and_deletion_plan_required": true,
+    "adverse_event_complaint_debrief_and_appeal_required": true,
+    "deception_policy": "Only if scientifically necessary, specifically approved, sandbox-bounded, promptly debriefed, and compatible with withdrawal or deletion obligations."
+  },
+  "selection_before_outcomes": {
+    "task_domain_candidates": [
+      "sandboxed software-change review with independently seeded functional and policy defects",
+      "sandboxed incident triage with time-to-irreversibility and reversible intervention controls",
+      "sandboxed document or data-release review with known privacy and provenance defects"
+    ],
+    "population_boundary": "Adults with prospectively defined domain competence; pilot and held-out cohorts remain disjoint; convenience samples cannot support population-wide claims.",
+    "selection_rule": "Use pilot-only task competence, known-effect sensitivity, intervention reachability, accessibility, evaluator agreement, variance, burden, privacy, and resource feasibility; freeze one domain, participant profile, interface, automation version, manipulation set, and denominator before held-out recruitment.",
+    "forbidden_selection_inputs": ["held-out outcomes", "held-out subgroup rankings", "participant employment records", "P2/Q1/Q2 tasks, labels, outcomes, evaluators, or retry decisions"]
+  },
+  "arms": [
+    {"id": "A-MANUAL", "role": "unassisted or minimally assisted review where feasible", "required_competence": "task and time floors without automation-induced confounds"},
+    {"id": "B-NOMINAL", "role": "nominal click approval with ordinary information", "required_competence": "instrument sensitivity comparator only; never a preferred deployment baseline"},
+    {"id": "C-STATIC", "role": "strong static risk-tiered oversight with fixed information, escalation, and safe-hold rules", "required_competence": "known-defect, correct-intervention, burden, and useful-throughput floors"},
+    {"id": "D-ENVELOPE", "role": "versioned control-envelope gate with workload, time, representation, authority, intervention, conflict, privacy, and responsibility routing", "required_competence": "all gate activations, safe alternatives, and no-authority boundaries observable before held-out opening"}
+  ],
+  "manipulations": [
+    "concurrent review load and interruption burden",
+    "time window relative to independently implemented irreversibility",
+    "explanation presence, fidelity, and fluent-misleading mismatch",
+    "automation confidence including false high confidence",
+    "alert quality including flooding and stale evidence",
+    "mode visibility and visible mode mismatch",
+    "intervention cost, disabled intervention, and system response latency",
+    "safe-hold availability and viable alternatives"
+  ],
+  "competence_gates": [
+    "Exact task, automation, interface, intervention, safe-state, ground-truth, evaluator, randomization, participant-profile, manipulation, cost, and analysis identities are frozen before held-out recruitment.",
+    "Independent task truth contains known seeded defects and consequence labels unavailable to the automation, interface authors, participants, and primary scorer until the appropriate episode stage.",
+    "All arms pass prospectively defined task usability and baseline floors under matched task information except the registered manipulations; the static baseline is tuned on pilot data only.",
+    "Participants receive domain-relevant training, current qualification checks, accessibility accommodations, comprehension practice, withdrawal rights, and compensation independent of agreement or speed.",
+    "Obvious-defect, impossible-window, disabled-channel, visible-mode-mismatch, and faithful-explanation positive controls pass frozen sensitivity floors.",
+    "The independent evaluator recovers frozen ground truth and intervention consequences with preregistered agreement while blinded to treatment and participant confidence where feasible.",
+    "The gate demonstrably changes routes for overload, missing authority, incompatible representation, late intervention, unavailable safe state, unmanaged conflict, and responsibility beyond effective control without granting support or effect authority.",
+    "Power, clustering, multiplicity, exclusions, missingness, attrition, subgroup analyses, adverse events, privacy incidents, rescues, retries, and the one-time held-out opening are frozen and fully retained.",
+    "Ethics, privacy, data-protection, accessibility, security, and institutional or jurisdictional approvals are current and authorize the exact recruitment, collection, retention, deception, debrief, and deletion plan."
+  ],
+  "positive_controls": [
+    "obvious independently seeded defect",
+    "clearly impossible intervention window",
+    "disabled intervention channel",
+    "visible mode mismatch",
+    "faithful explanation expected to improve one narrow comprehension item"
+  ],
+  "adversarial_controls": [
+    "misleading but fluent explanation",
+    "high test-pass signal with a hidden defect",
+    "false high automation confidence",
+    "alert flooding",
+    "stale evidence",
+    "nominal authority without a viable action",
+    "forced abstention or fallback"
+  ],
+  "rescue_ladder": [
+    "audit ground truth, randomization, logging, evaluator independence, and treatment masking",
+    "repair accessibility, instructions, training, interface, or task defects using pilot data only",
+    "verify every manipulation changed the intended condition without introducing an uncontrolled confound",
+    "rerun positive controls on a new pilot cohort without inspecting held-out outcomes",
+    "revise the competence dossier and freeze a new campaign identity before any fresh held-out recruitment",
+    "stop as ethics-, privacy-, instrument-, construct-, baseline-, power-, population-, accessibility-, or resource-inadequate rather than infer efficacy or impossibility"
+  ],
+  "outcomes": [
+    "known-defect detection and missed-defect rate",
+    "correct and false intervention rate",
+    "response latency relative to time-to-irreversibility",
+    "safe useful throughput with holds, abstentions, and displaced work retained",
+    "task-relevant comprehension and representation mismatch",
+    "calibrated reliance under true and false confidence",
+    "workload, interruption, training, and review burden",
+    "retention after quiet intervals",
+    "abstention, escalation, appeal, and correction quality",
+    "privacy acceptability and collected-signal burden",
+    "accessibility and subgroup burden without population-wide extrapolation",
+    "participant time, analyst time, compute, false-hold, false-intervention, recovery, and residual cost"
+  ],
+  "decision_rule": {
+    "positive": "The envelope arm passes all competence, ethics, privacy, accessibility, burden, and non-inferiority gates and improves the frozen joint known-defect/correct-intervention/useful-throughput frontier over the strong static baseline with uncertainty excluding the minimum useful effect; no single favorable score may average away privacy, unequal burden, false intervention, or unsafe outcomes.",
+    "negative_exact": "Every competence and ethical gate passes, rescue is exhausted prospectively, the study is powered for the minimum useful effect, and the frozen envelope arm fails the joint rule against the tuned static baseline.",
+    "mixed": "Ceremonial episodes are detected but throughput, false intervention, privacy, accessibility, subgroup burden, or residual harm worsens; deployment remains blocked and axes remain separate.",
+    "inconclusive": "Any human, task, interface, baseline, instrument, ground-truth, evaluator, ethics, privacy, accessibility, power, population, identity, isolation, or resource gate fails after bounded rescue.",
+    "maximum_negative_level": "N3 for the exact frozen task domain, participant population, interface, automation, evaluator, intervention, manipulations, time, and resource regime only; meaningful control in general cannot be refuted."
+  },
+  "resource_and_isolation_gate": {
+    "maximum_participants": 160,
+    "maximum_pilot_participants": 40,
+    "maximum_new_storage_gib": 2,
+    "p2_reserved_storage_may_be_reclaimed": false,
+    "p2_images_or_denominators_may_be_changed": false,
+    "prepublication_human_review_substitution_allowed": false,
+    "execution_trigger": "Open only after exact ethics and jurisdictional approval, competence dossier, power analysis, independent ground truth/evaluator, accessibility/privacy plans, participant budget, resource floor, and sealed denominator manifest pass."
+  },
+  "artifact_contract": [
+    "immutable ethics, consent, privacy, accessibility, recruitment, compensation, task, automation, interface, evaluator, intervention, and analysis manifests",
+    "sealed participant-profile, task, manipulation, randomization, pilot, held-out, and subgroup digests",
+    "one human oversight control packet per episode with pseudonymous identity and minimized fields",
+    "all decisions, interventions, system responses, independent outcomes, holds, abstentions, failures, exclusions, attrition, rescues, adverse events, complaints, appeals, and deletions",
+    "positive/adversarial control, evaluator agreement, masking, manipulation-check, and leakage ledgers",
+    "separate useful-throughput, defect, intervention, time, burden, privacy, accessibility, unequal-impact, cost, and residual estimates",
+    "retention and deletion receipts without participant content in the public repository",
+    "accepted or rejected evidence-transition record with N0-N5 classification and exact population/task ceiling"
+  ],
+  "non_claims": [
+    "Protocol readiness is not a human-subjects, comprehension, workload, trust, intervention, privacy, responsibility, safety, or meaningful-control result.",
+    "No participant is recruited or studied, and no ethics approval is inferred or bypassed by this repository record.",
+    "No support, effect authority, readiness, release, deployment, SOTA, AGI, or ASI movement is authorized."
+  ]
+}

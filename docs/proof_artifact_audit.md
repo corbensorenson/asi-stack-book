@@ -11,9 +11,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 306 |
-| Manifest status counts | {"implemented": 302, "planned": 4} |
+| Manifest status counts | {"implemented": 304, "planned": 2} |
 | Triage class counts | {"formal-invariant": 306} |
-| Lean modules referenced | 67 |
+| Lean modules referenced | 68 |
 | Chapters with proof targets | 59 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -59,6 +59,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/GovernanceRights.lean` | 1 | 7 | 0 | 11 | 3 |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | 2 | 9 | 0 | 6 | 2 |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | 6 | 17 | 0 | 10 | 3 |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | 2 | 9 | 0 | 6 | 1 |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | 3 | 23 | 0 | 33 | 4 |
 | `lean/AsiStackProofs/IntentContracts.lean` | 1 | 20 | 0 | 2 | 2 |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | 2 | 12 | 0 | 8 | 2 |
@@ -127,7 +128,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `governed-deliberation-and-test-time-scaling` | 10 | 10 | 0 | 0 |
 | `governed-operations-incident-command-and-graceful-degradation` | 2 | 0 | 0 | 0 |
 | `governed-world-models-and-reality-grounding` | 2 | 2 | 0 | 0 |
-| `human-factors-and-meaningful-control-in-oversight` | 2 | 0 | 0 | 0 |
+| `human-factors-and-meaningful-control-in-oversight` | 2 | 2 | 0 | 0 |
 | `human-intent-as-a-formal-input` | 4 | 4 | 0 | 0 |
 | `integrated-reference-architecture` | 3 | 3 | 0 | 0 |
 | `intent-to-execution-contracts` | 7 | 7 | 0 | 0 |
@@ -200,8 +201,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:intent.contract.failure_blocks_promotion` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentResolutionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent.resolution.route_envelope` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentContracts` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent.intake.probe_fixture_bridge` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentResolutionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:oversight.control_envelope.blocks_action` | `human-factors-and-meaningful-control-in-oversight` | `AsiStackProofs.HumanFactorsOversight` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
-| `lean:oversight.responsibility_requires_control` | `human-factors-and-meaningful-control-in-oversight` | `AsiStackProofs.HumanFactorsOversight` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:oversight.control_envelope.blocks_action` | `human-factors-and-meaningful-control-in-oversight` | `AsiStackProofs.HumanFactorsOversight` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:oversight.responsibility_requires_control` | `human-factors-and-meaningful-control-in-oversight` | `AsiStackProofs.HumanFactorsOversight` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:alignment.constitution.operational_invariant` | `constitutional-alignment-substrate` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:alignment.constitution.failure_blocks_promotion` | `constitutional-alignment-substrate` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:alignment.constitution.lifecycle_admission_route` | `constitutional-alignment-substrate` | `AsiStackProofs.Alignment` | triage ok; module ok; chapter tag ok; limitation ok |

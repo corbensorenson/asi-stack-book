@@ -120,7 +120,7 @@ def errors(data: dict[str, Any]) -> list[str]:
             out.append(f"external appendix integration missing: {source_id}")
 
     tranche = data["status"]["quality_uplift_program"]["structural_completeness_tranche"]["first_tranche"]
-    if tranche.get("completed_reader_chapter_count") != 2 or CHAPTER_ID not in tranche.get("terminal_reader_chapter_ids", []) or CHAPTER_ID in tranche.get("remaining_reader_chapter_ids", []):
+    if tranche.get("completed_reader_chapter_count", 0) < 2 or CHAPTER_ID not in tranche.get("terminal_reader_chapter_ids", []) or CHAPTER_ID in tranche.get("remaining_reader_chapter_ids", []):
         out.append("machine status lacks terminal T2 custody")
     if any(audit.get(key) != "none" for key in ("support_state_effect", "release_effect", "publication_effect")):
         out.append("integration packet claims unauthorized state movement")

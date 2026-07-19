@@ -42,8 +42,8 @@
         "work_in_progress_limit": {"const": 2},
         "blocked_lane_consumes_work_in_progress": {"const": false},
         "protected_outcome_inspection_allowed": {"const": false},
-        "immediate_book_packet": {"const": "P7.2-T3-human-factors-and-meaningful-control-in-oversight"},
-        "immediate_formal_packet": {"const": "P4-C5-self-improvement-and-readiness-semantic-audit"},
+        "immediate_book_packet": {"const": "P7.2-T4-governed-operations-incident-command-and-graceful-degradation"},
+        "immediate_formal_packet": {"const": "P4-C6-resource-artifact-and-lifecycle-economics-semantic-audit"},
         "first_tranche_completion_order": {
           "const": [
             "white-box-evidence-interpretability-and-activation-governance",
@@ -178,7 +178,7 @@
                 "primary_source_record_count_added"
               ],
               "properties": {
-                "state": {"const": "two_terminal_two_reader_integrations_remaining"},
+                "state": {"const": "three_terminal_one_reader_integration_remaining"},
                 "research_path": {"const": "docs/structural_completeness_chapter_research_2026_07_19.md"},
                 "candidate_count": {"const": 4},
                 "candidate_ids": {
@@ -191,13 +191,16 @@
                 },
                 "manifest_admitted_count": {"const": 4},
                 "drafted_chapter_count": {"const": 4},
-                "completed_reader_chapter_count": {"const": 2},
+                "completed_reader_chapter_count": {"const": 3},
                 "terminal_reader_chapter_ids": {
-                  "const": ["white-box-evidence-interpretability-and-activation-governance", "governed-world-models-and-reality-grounding"]
+                  "const": [
+                    "white-box-evidence-interpretability-and-activation-governance",
+                    "governed-world-models-and-reality-grounding",
+                    "human-factors-and-meaningful-control-in-oversight"
+                  ]
                 },
                 "remaining_reader_chapter_ids": {
                   "const": [
-                    "human-factors-and-meaningful-control-in-oversight",
                     "governed-operations-incident-command-and-graceful-degradation"
                   ]
                 },
@@ -343,10 +346,10 @@
         "sota_supported_count": {"const": 0},
         "proof_target_count": {"const": 306},
         "lean_module_count": {"const": 102},
-        "theorem_declaration_count": {"const": 1324},
-        "derived_or_decomposed_theorem_count": {"const": 910},
+        "theorem_declaration_count": {"const": 1333},
+        "derived_or_decomposed_theorem_count": {"const": 914},
         "direct_or_projection_theorem_count": {"const": 230},
-        "unknown_or_mixed_theorem_count": {"const": 184},
+        "unknown_or_mixed_theorem_count": {"const": 189},
         "historical_v2_2_approved_exact_local_reader_formats": {"const": ["html"]},
         "historical_v2_2_bounded_not_release_approved_reader_formats": {"const": ["epub", "docx"]},
         "historical_v2_2_failed_reader_formats": {"const": ["pdf"]},
@@ -689,7 +692,7 @@
       "additionalProperties": false,
       "required": ["state", "amendment_rule", "clusters", "support_state_effect", "release_effect"],
       "properties": {
-        "state": {"const": "cluster_4_terminal_2_pending"},
+        "state": {"const": "cluster_5_terminal_1_pending"},
         "amendment_rule": {"const": "dated_machine_validated_amendment_with_terminal_disposition_required"},
         "clusters": {
           "type": "array",
@@ -720,7 +723,7 @@
       "properties": {
         "required_branch": {"const": "main"},
         "branches_allowed_for_book_work": {"const": false},
-        "attested_head": {"const": "6eb63a70074a11a523fb66bc693117bfa98bbc32"},
+        "attested_head": {"const": "841c0c5f89142301457637d158fbcd2a053fc3d5"},
         "state": {"const": "pushed_deployed_clean_ancestral_checkpoint"},
         "working_tree_delta_file_count_at_review": {"const": 0},
         "commit_authority": {"const": "owner_authorized_in_thread"},
@@ -841,7 +844,7 @@
     "proofClusterSafety": {"allOf": [{"$ref": "#/$defs/proofCluster"}, {"properties": {"id": {"const": "safety_assurance_and_oversight"}, "state": {"const": "adequate"}, "modules": {"const": ["AsiStackProofs.SafetyCriticalLifecycle", "AsiStackProofs.SafetyCaseRefinement", "AsiStackProofs.ScalableOversightRefinement", "AsiStackProofs.AdversarialEvaluationRefinement"]}}}]},
     "proofClusterRollback": {"allOf": [{"$ref": "#/$defs/proofCluster"}, {"properties": {"id": {"const": "authority_effect_rollback_and_corrigibility"}, "state": {"const": "adequate"}, "modules": {"const": ["AsiStackProofs.AuthorityEffectRefinement", "AsiStackProofs.Replacement", "AsiStackProofs.Corrigibility", "AsiStackProofs.IntentExecutionRefinement"]}}}]},
     "proofClusterLearning": {"allOf": [{"$ref": "#/$defs/proofCluster"}, {"properties": {"id": {"const": "learning_update_state_and_unlearning"}, "state": {"const": "adequate"}, "modules": {"const": ["AsiStackProofs.DataEngineLifecycleRefinement", "AsiStackProofs.PolicyOptimizationRefinement", "AsiStackProofs.ModelWeightCustody", "AsiStackProofs.ContextTransactionRefinement"]}}}]},
-    "proofClusterImprovement": {"allOf": [{"$ref": "#/$defs/proofCluster"}, {"properties": {"id": {"const": "self_improvement_and_readiness"}, "state": {"const": "strengthen"}, "modules": {"const": ["AsiStackProofs.SelfImprovementRefinement", "AsiStackProofs.OpenEndedImprovementRefinement", "AsiStackProofs.ReadinessRefinement", "AsiStackProofs.CapabilityThresholdRefinement"]}}}]},
+    "proofClusterImprovement": {"allOf": [{"$ref": "#/$defs/proofCluster"}, {"properties": {"id": {"const": "self_improvement_and_readiness"}, "state": {"const": "adequate"}, "modules": {"const": ["AsiStackProofs.SelfImprovementRefinement", "AsiStackProofs.OpenEndedImprovementRefinement", "AsiStackProofs.ReadinessRefinement", "AsiStackProofs.CapabilityThresholdRefinement"]}}}]},
     "proofClusterEconomics": {"allOf": [{"$ref": "#/$defs/proofCluster"}, {"properties": {"id": {"const": "resource_artifact_and_lifecycle_economics"}, "state": {"const": "strengthen"}, "modules": {"const": ["AsiStackProofs.ResourceEconomicsRefinement", "AsiStackProofs.ArtifactRealityRefinement", "AsiStackProofs.ArtifactStewardAgents", "AsiStackProofs.ArtifactCompressionRefinement"]}}}]},
     "row": {
       "type": "object",

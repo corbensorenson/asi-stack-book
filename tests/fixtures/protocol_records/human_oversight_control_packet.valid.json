@@ -1,0 +1,90 @@
+{
+  "schema_version": "asi_stack.human_oversight_control_packet.v1",
+  "packet_id": "human-oversight-record-shape-fixture-001",
+  "claim_id": "human-factors-and-meaningful-control-in-oversight.core",
+  "origin_class": "repository_fixture",
+  "disposition": "safe_hold",
+  "task_and_controller": {
+    "task_id": "fixture-no-effect-review",
+    "consequence_class": "reversible_low",
+    "controller_role": "fixture-reviewer",
+    "controller_pseudonym": "fixture-person-not-observed",
+    "qualification_ref": "fixture://not-assessed",
+    "qualification_current": false,
+    "accessibility_ref": "fixture://requirements-unmeasured",
+    "controller_identified": true
+  },
+  "evidence_and_comprehension": {
+    "evidence_view_digest": "sha256:fixture-view",
+    "independent_evidence_ref": "fixture://none",
+    "known_omissions_ref": "fixture://all-content-omitted",
+    "representation_profile_ref": "fixture://not-tested",
+    "evidence_observable": false,
+    "representation_compatible": false,
+    "comprehension_probe_ref": "fixture://not-run",
+    "comprehension_disposition": "not_run",
+    "uncertainty_ref": "fixture://unmeasured"
+  },
+  "workload_and_time": {
+    "active_review_count": 0,
+    "queue_age_ms": 0,
+    "interruption_count": 0,
+    "workload_bound_ref": "fixture://not-calibrated",
+    "workload_inside_bound": false,
+    "notice_ms": 0,
+    "understand_ms": 0,
+    "decide_ms": 0,
+    "act_ms": 0,
+    "system_response_ms": 0,
+    "safety_margin_ms": 0,
+    "time_to_irreversibility_ms": 0,
+    "decision_window_positive": false
+  },
+  "authority_and_intervention": {
+    "authority_ref": "fixture://no-live-authority",
+    "task_authority_present": false,
+    "alternatives_ref": "fixture://no-live-alternative",
+    "veto_or_stop_present": false,
+    "intervention_channel_ref": "fixture://no-channel",
+    "channel_rehearsal_ref": "fixture://not-run",
+    "intervention_channel_reachable": false,
+    "system_response_inside_window": false,
+    "safe_state_ref": "fixture://no-effect-hold",
+    "safe_state_reachable": true,
+    "conflict_ref": "fixture://not-assessed",
+    "conflict_managed": false
+  },
+  "responsibility_and_privacy": {
+    "responsibility_role": "none-assigned",
+    "effective_control_ref": "fixture://none",
+    "responsibility_inside_effective_control": false,
+    "data_minimization_ref": "fixture://synthetic-only",
+    "retention_ref": "fixture://repository-fixture",
+    "consent_or_waiver_ref": "fixture://no-human-subject",
+    "punitive_inference_prohibited": true,
+    "biometric_or_emotion_inference_used": false
+  },
+  "outcome_and_lifecycle": {
+    "decision_ref": "fixture://safe-hold-only",
+    "intervention_attempt_ref": "fixture://none",
+    "observed_response_ref": "fixture://no-effect",
+    "independent_outcome_ref": "fixture://not-run",
+    "appeal_ref": "fixture://not-applicable",
+    "residual_ref": "fixture://all-human-factors-claims-unmeasured",
+    "residual_owner": "human-factors-chapter-research-backlog",
+    "expiry": "fixture-only",
+    "material_change_trigger": "any human, task, interface, authority, workload, time, or intervention substitution"
+  },
+  "authority_boundary": {
+    "authority_delta": "none",
+    "effect_authorized": false,
+    "support_assignment_authorized": false,
+    "release_authority": false
+  },
+  "support_state_effect": "none",
+  "non_claims": [
+    "No human participant was recruited, observed, scored, or surveilled.",
+    "No comprehension, workload, trust, intervention, responsibility, privacy, safety, or meaningful-control result exists.",
+    "The packet is a record-shape safe-hold fixture and grants no support, effect, release, deployment, AGI, or ASI authority."
+  ]
+}

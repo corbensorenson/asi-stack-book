@@ -13,8 +13,8 @@
     "work_in_progress_limit": 2,
     "blocked_lane_consumes_work_in_progress": false,
     "protected_outcome_inspection_allowed": false,
-    "immediate_book_packet": "P7.2-T3-human-factors-and-meaningful-control-in-oversight",
-    "immediate_formal_packet": "P4-C5-self-improvement-and-readiness-semantic-audit",
+    "immediate_book_packet": "P7.2-T4-governed-operations-incident-command-and-graceful-degradation",
+    "immediate_formal_packet": "P4-C6-resource-artifact-and-lifecycle-economics-semantic-audit",
     "first_tranche_completion_order": [
       "white-box-evidence-interpretability-and-activation-governance",
       "governed-world-models-and-reality-grounding",
@@ -108,7 +108,7 @@
       "maximum_if_all_candidates_pass": 72,
       "planned_merge_count": 0,
       "first_tranche": {
-        "state": "two_terminal_two_reader_integrations_remaining",
+        "state": "three_terminal_one_reader_integration_remaining",
         "research_path": "docs/structural_completeness_chapter_research_2026_07_19.md",
         "candidate_count": 4,
         "candidate_ids": [
@@ -119,13 +119,13 @@
         ],
         "manifest_admitted_count": 4,
         "drafted_chapter_count": 4,
-        "completed_reader_chapter_count": 2,
+        "completed_reader_chapter_count": 3,
         "terminal_reader_chapter_ids": [
           "white-box-evidence-interpretability-and-activation-governance",
-          "governed-world-models-and-reality-grounding"
+          "governed-world-models-and-reality-grounding",
+          "human-factors-and-meaningful-control-in-oversight"
         ],
         "remaining_reader_chapter_ids": [
-          "human-factors-and-meaningful-control-in-oversight",
           "governed-operations-incident-command-and-graceful-degradation"
         ],
         "primary_source_record_count_added": 8
@@ -211,10 +211,10 @@
     "sota_supported_count": 0,
     "proof_target_count": 306,
     "lean_module_count": 102,
-    "theorem_declaration_count": 1324,
-    "derived_or_decomposed_theorem_count": 910,
+    "theorem_declaration_count": 1333,
+    "derived_or_decomposed_theorem_count": 914,
     "direct_or_projection_theorem_count": 230,
-    "unknown_or_mixed_theorem_count": 184,
+    "unknown_or_mixed_theorem_count": 189,
     "historical_v2_2_approved_exact_local_reader_formats": ["html"],
     "historical_v2_2_bounded_not_release_approved_reader_formats": ["epub", "docx"],
     "historical_v2_2_failed_reader_formats": ["pdf"],
@@ -437,7 +437,7 @@
     "release_effect": "none"
   },
   "semantic_proof_cluster_inventory": {
-    "state": "cluster_4_terminal_2_pending",
+    "state": "cluster_5_terminal_1_pending",
     "amendment_rule": "dated_machine_validated_amendment_with_terminal_disposition_required",
     "clusters": [
       {
@@ -462,7 +462,7 @@
       },
       {
         "id": "self_improvement_and_readiness",
-        "state": "strengthen",
+        "state": "adequate",
         "modules": ["AsiStackProofs.SelfImprovementRefinement", "AsiStackProofs.OpenEndedImprovementRefinement", "AsiStackProofs.ReadinessRefinement", "AsiStackProofs.CapabilityThresholdRefinement"]
       },
       {
@@ -477,7 +477,7 @@
   "attestation": {
     "required_branch": "main",
     "branches_allowed_for_book_work": false,
-    "attested_head": "6eb63a70074a11a523fb66bc693117bfa98bbc32",
+    "attested_head": "841c0c5f89142301457637d158fbcd2a053fc3d5",
     "state": "pushed_deployed_clean_ancestral_checkpoint",
     "working_tree_delta_file_count_at_review": 0,
     "commit_authority": "owner_authorized_in_thread",

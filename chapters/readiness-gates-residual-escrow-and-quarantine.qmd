@@ -521,6 +521,12 @@ not prove benchmark quality, evaluator adequacy, residual storage, transition
 execution, live routing enforcement, rollback, terminal governance, MoECOT
 replay, current module readiness, or transfer.
 
+The refinement is adequate only for exact finite readiness-record routing:
+capability and evidence identity, stage ordering, failed-event preservation,
+quarantine, revocation, and acknowledged terminal closure. A `defaultReady`
+route is not a calibrated estimate, a safety case, release authority, or proof
+that deployment is useful, recoverable, or socially legitimate.
+
 ## Source crosswalk
 
 | Source ID | Title | Layer | Planned use | Readiness |

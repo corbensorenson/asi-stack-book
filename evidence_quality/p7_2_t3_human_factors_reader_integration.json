@@ -1,0 +1,79 @@
+{
+  "schema_version": "asi_stack.p7_2_structural_reader_integration.v1",
+  "packet_id": "P7.2-T3-human-factors-and-meaningful-control-in-oversight",
+  "state": "terminal_integrated_argument_chapter",
+  "chapter_id": "human-factors-and-meaningful-control-in-oversight",
+  "chapter_path": "chapters/human-factors-and-meaningful-control-in-oversight.qmd",
+  "chapter_sha256": "87dac1401aa1b98e4b27146dbd25a7611c4c27678e09c6da703069dc7598bb48",
+  "reader_role": "load-bearing-reference",
+  "terminal_decision": "integrate_at_argument_support",
+  "exclusive_owner": "episode-level operational credibility of an assigned human control role across representation, comprehension opportunity, workload, time, authority, alternatives, intervention, conflict, privacy, and responsibility-control coupling",
+  "source_crosswalk": {
+    "assigned_source_count": 10,
+    "primary_external_source_ids": [
+      "ext_humans_automation_1997",
+      "ext_ironies_automation_1983",
+      "ext_levels_automation_2000",
+      "ext_complacency_bias_automation_2010",
+      "ext_meaningful_human_control_actionable_2022",
+      "ext_agentic_oversight_practice_2026"
+    ],
+    "supporting_corben_source_ids": ["viea", "talos", "theseus_operator_os", "scf"],
+    "all_inventory_targets_reconciled": true,
+    "external_results_inherited_as_local_support": false
+  },
+  "formalization": {
+    "module": "AsiStackProofs.HumanFactorsOversight",
+    "module_path": "lean/AsiStackProofs/HumanFactorsOversight.lean",
+    "module_sha256": "f04b55f1639f083a4262c82e68b54e732656ed32590bfe0b227fee5903788bca",
+    "public_target_count": 2,
+    "implemented_target_count": 2,
+    "theorem_declaration_count": 9,
+    "maximum_inference": "Finite declared-record routing, necessary-condition blocking, responsibility-control rejection, and no-authority consequences only; no comprehension, workload calibration, consent, privacy adequacy, moral responsibility, intervention efficacy, meaningful control, or safety result."
+  },
+  "record_contract": {
+    "schema_path": "schemas/human_oversight_control_packet.schema.json",
+    "schema_sha256": "80e946721debedf14c8fc435bc671833fd9e2b49417ae067da425b50a51842f6",
+    "fixture_path": "tests/fixtures/protocol_records/human_oversight_control_packet.valid.json",
+    "fixture_sha256": "bd8e405a0f8c28ebd19df030c7cdba9e6c6a65f200529dd7005b17305f2acb48",
+    "fixture_disposition": "safe_hold",
+    "human_participants_observed": 0,
+    "semantic_mutations_rejected": 15,
+    "record_shape_only": true
+  },
+  "claim_bearing_empirical_lane": {
+    "protocol_path": "experiments/human_factors_argument_exit/preregistration.json",
+    "protocol_sha256": "5effbb21899e8ea83310eeee1e3774154c5bd37b845897bd0d3efbcd47eeefeb",
+    "state": "protocol_ready_ethics_and_resource_authority_required_not_executed",
+    "arm_count": 4,
+    "competence_gate_count": 9,
+    "positive_control_count": 5,
+    "adversarial_control_count": 7,
+    "rescue_step_count": 6,
+    "joint_outcome_count": 12,
+    "maximum_negative_level": "N3_exact",
+    "human_participants_recruited": 0,
+    "protected_outcomes_opened": false,
+    "p2_displacement_allowed": false,
+    "prepublication_human_review_substitution_allowed": false,
+    "empirical_result": "none"
+  },
+  "reader_integration": {
+    "opening_map_updated": true,
+    "role_classification_preserved": true,
+    "exclusive_owner_section_present": true,
+    "previous_handoff_updated": true,
+    "next_handoff_updated": true,
+    "overview_figure_updated": true,
+    "glossary_terms_added": 2,
+    "claim_matrix_reconciled": true,
+    "corben_source_appendix_reconciled": true,
+    "external_source_appendix_reconciled": true,
+    "final_synthesis_updated": true,
+    "reader_removal_reason": "none"
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "publication_effect": "none",
+  "residual_owner": "The Human Factors chapter owns a future minimal-risk human-subjects argument-exit campaign. Recruitment remains unauthorized until exact ethics, privacy, accessibility, participant, competence, power, independent-evaluator, resource, and sealed-denominator gates pass."
+}

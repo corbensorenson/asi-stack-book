@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 54,
-    "candidate_count": 2880,
+    "candidate_count": 2883,
     "review_state_counts": {
-      "duplicate_of_atom": 1274,
+      "duplicate_of_atom": 1275,
       "editorial_or_question": 52,
       "historical_or_source_report": 278,
       "material_atom": 3,
-      "nonmaterial_explanation": 1273
+      "nonmaterial_explanation": 1275
     }
   },
   "candidates": [
@@ -7295,10 +7295,29 @@
       "target_atom_id": "constitutional-alignment-substrate.problem.001"
     },
     {
-      "candidate_id": "constitutional-alignment-substrate.prose.921ce16f4e74",
+      "candidate_id": "constitutional-alignment-substrate.prose.1ec504778afc",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:113",
-      "sentence": "all, what means are admissible, and what human-control paths must remain",
+      "source": "chapters/constitutional-alignment-substrate.qmd:109",
+      "sentence": "can show that a named review role is unusable under the task's information,",
+      "cues": [
+        "show"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Human-control usability handoff fragment; the Human Factors chapter owns the material control-envelope claim.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "constitutional-alignment-substrate.prose.f278bf23ec35",
+      "chapter_id": "constitutional-alignment-substrate",
+      "source": "chapters/constitutional-alignment-substrate.qmd:115",
+      "sentence": "admissible, and what human-control paths must remain available while the work",
       "cues": [
         "must"
       ],
@@ -7310,13 +7329,13 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Constitutional admissibility and control-path motivation.",
+      "disposition_rationale": "Constitutional admissibility and preserved control-path motivation.",
       "target_atom_id": "constitutional-alignment-substrate.problem.001"
     },
     {
       "candidate_id": "constitutional-alignment-substrate.prose.d4810bab74b9",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:117",
+      "source": "chapters/constitutional-alignment-substrate.qmd:119",
       "sentence": "such as agency, dignity, non-domination, corrigibility, least sufficient power,",
       "cues": [
         "sufficient"
@@ -7335,7 +7354,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.fafb36d864e7",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:121",
+      "source": "chapters/constitutional-alignment-substrate.qmd:123",
       "sentence": "The distinction matters because only active, scoped predicates should gate a",
       "cues": [
         "should"
@@ -7354,7 +7373,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.ae59fdf0c52d",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:125",
+      "source": "chapters/constitutional-alignment-substrate.qmd:127",
       "sentence": "if it cannot preserve the affected person's ability to understand, refuse,",
       "cues": [
         "cannot"
@@ -7373,7 +7392,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.e13ed6463687",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:126",
+      "source": "chapters/constitutional-alignment-substrate.qmd:128",
       "sentence": "The governing question is: what must remain available to people",
       "cues": [
         "must"
@@ -7392,7 +7411,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.fcb17dccefcf",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:134",
+      "source": "chapters/constitutional-alignment-substrate.qmd:136",
       "sentence": "problem, but none alone establishes legitimate constitutional content,",
       "cues": [
         "establishes"
@@ -7411,7 +7430,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.a1c62a21675f",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:139",
+      "source": "chapters/constitutional-alignment-substrate.qmd:141",
       "sentence": "but they do not define what must remain stable when the system optimizes,",
       "cues": [
         "must"
@@ -7430,7 +7449,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.57d104406c91",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:151",
+      "source": "chapters/constitutional-alignment-substrate.qmd:153",
       "sentence": "External comparators help position the argument but do not prove it.",
       "cues": [
         "prove"
@@ -7449,7 +7468,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.9b366f8d9f6c",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:152",
+      "source": "chapters/constitutional-alignment-substrate.qmd:154",
       "sentence": "Constitutional AI and Collective Constitutional AI show that rules,",
       "cues": [
         "show"
@@ -7468,7 +7487,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.4669ae282e2c",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:164",
+      "source": "chapters/constitutional-alignment-substrate.qmd:166",
       "sentence": "[constitutional-alignment-substrate.core, label: Design rationale, support: argument] A constitutional alignment substrate should be represented as a versioned, non-self-authorizing constraint contract that binds each active predicate to its normative source and authorship process, protected scope and affected parties, operational test, precedence and conflict behavior, evidence and uncertainty, authorized interpreters and consumers, pre-effect rights and correction channels, expiry and review cadence, and migration, rollback, appeal, dissent, and residual rules.",
       "cues": [
         "should"
@@ -7487,7 +7506,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.126ec6706799",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:164",
+      "source": "chapters/constitutional-alignment-substrate.qmd:166",
       "sentence": "It may narrow, delay, escalate, block, or require re-contracting of separately authorized work, but it cannot grant action authority or prove moral correctness, legitimacy, dignity preservation, informed consent, reviewer independence, whole-system corrigibility, or deployed safety by itself.",
       "cues": [
         "cannot",
@@ -7508,7 +7527,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.3d4990b0a459",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:168",
+      "source": "chapters/constitutional-alignment-substrate.qmd:170",
       "sentence": "fixtures and Lean modules show that the repository can express small record",
       "cues": [
         "show"
@@ -7527,7 +7546,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.d127f739fb8e",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:169",
+      "source": "chapters/constitutional-alignment-substrate.qmd:171",
       "sentence": "They do not show that a deployed system is",
       "cues": [
         "show"
@@ -7546,7 +7565,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.dfa346d233e5",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:185",
+      "source": "chapters/constitutional-alignment-substrate.qmd:187",
       "sentence": "a preserved subclaim inside this alignment layer: a governed stack should preserve agency, dignity,",
       "cues": [
         "should"
@@ -7565,7 +7584,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.1d7a15ee823d",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:187",
+      "source": "chapters/constitutional-alignment-substrate.qmd:189",
       "sentence": "disappear, and it should not remain as a second repeated core claim.",
       "cues": [
         "should"
@@ -7584,7 +7603,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.385705022d4d",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:222",
+      "source": "chapters/constitutional-alignment-substrate.qmd:224",
       "sentence": "The changing system cannot approve its own",
       "cues": [
         "cannot"
@@ -7603,7 +7622,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.f815f680ab78",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:252",
+      "source": "chapters/constitutional-alignment-substrate.qmd:254",
       "sentence": "**What this constitutional alignment diagram shows:** The diagram traces the alignment layer mechanism from upstream records into the gates and receipts that constrain action.",
       "cues": [
         "shows"
@@ -7622,7 +7641,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.5562697e5f32",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:323",
+      "source": "chapters/constitutional-alignment-substrate.qmd:325",
       "sentence": "candidates; this layer may narrow, refuse, or require appeal/re-contracting,",
       "cues": [
         "require"
@@ -7641,7 +7660,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.40eb87cf5694",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:327",
+      "source": "chapters/constitutional-alignment-substrate.qmd:329",
       "sentence": "Predicate records cannot self-certify those premises.",
       "cues": [
         "cannot"
@@ -7660,7 +7679,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.ea5868e12542",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:337",
+      "source": "chapters/constitutional-alignment-substrate.qmd:339",
       "sentence": "non-claims; record validity cannot move support.",
       "cues": [
         "cannot"
@@ -7679,7 +7698,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.a0d243b74286",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:351",
+      "source": "chapters/constitutional-alignment-substrate.qmd:353",
       "sentence": "cannot quietly weaken the predicate that originally constrained it.",
       "cues": [
         "cannot"
@@ -7698,7 +7717,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.93835fab9a1f",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:360",
+      "source": "chapters/constitutional-alignment-substrate.qmd:362",
       "sentence": "Speculative metaphysics, consciousness heuristics, and lineage context cannot",
       "cues": [
         "cannot"
@@ -7717,7 +7736,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.44377e4cb8d6",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:373",
+      "source": "chapters/constitutional-alignment-substrate.qmd:375",
       "sentence": "A system, component, reviewer, or authority benefiting from a change cannot",
       "cues": [
         "cannot"
@@ -7736,7 +7755,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.8b2682a6cc38",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:376",
+      "source": "chapters/constitutional-alignment-substrate.qmd:378",
       "sentence": "Material change requires a new version, migration record, independent-enough",
       "cues": [
         "requires"
@@ -7755,7 +7774,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.5e1f787ec213",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:378",
+      "source": "chapters/constitutional-alignment-substrate.qmd:380",
       "sentence": "wrong-consumer receipts cannot authorize continued work.",
       "cues": [
         "cannot"
@@ -7774,7 +7793,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.797119968595",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:379",
+      "source": "chapters/constitutional-alignment-substrate.qmd:381",
       "sentence": "A complete constitutional or rights record proves neither legitimate values,",
       "cues": [
         "proves"
@@ -7793,7 +7812,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.9d0dba096fe2",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:383",
+      "source": "chapters/constitutional-alignment-substrate.qmd:385",
       "sentence": "Operationally, a locally attractive action must not erase the",
       "cues": [
         "must"
@@ -7812,7 +7831,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.6f342b53e0ed",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:410",
+      "source": "chapters/constitutional-alignment-substrate.qmd:412",
       "sentence": "Manipulation and preference shaping manufacture apparent consent or reduce",
       "cues": [
         "reduce"
@@ -7831,7 +7850,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.3c4531c789d3",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:423",
+      "source": "chapters/constitutional-alignment-substrate.qmd:425",
       "sentence": "The merged chapter should be especially suspicious of benevolent capture.",
       "cues": [
         "should"
@@ -7850,7 +7869,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.a98e4a869179",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:474",
+      "source": "chapters/constitutional-alignment-substrate.qmd:476",
       "sentence": "The campaign jointly measures hard-gate violations, unauthorized action,",
       "cues": [
         "measures"
@@ -7869,7 +7888,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.5dba8e04db41",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:486",
+      "source": "chapters/constitutional-alignment-substrate.qmd:488",
       "sentence": "Success must also survive institutional and technical disagreement.",
       "cues": [
         "must"
@@ -7888,7 +7907,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.86820453a556",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:489",
+      "source": "chapters/constitutional-alignment-substrate.qmd:491",
       "sentence": "The evidence must preserve whose interests were represented, which",
       "cues": [
         "must"
@@ -7907,7 +7926,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.258c5a12ae95",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:519",
+      "source": "chapters/constitutional-alignment-substrate.qmd:521",
       "sentence": "These Lean modules prove small finite-record properties,",
       "cues": [
         "prove"
@@ -7926,7 +7945,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.920ad2d11e5c",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:534",
+      "source": "chapters/constitutional-alignment-substrate.qmd:536",
       "sentence": "independent runtime consumer and must not be cited as a corrigibility theorem.",
       "cues": [
         "must"
@@ -7945,7 +7964,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.ea6ed48512b9",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:535",
+      "source": "chapters/constitutional-alignment-substrate.qmd:537",
       "sentence": "These hooks do not prove moral correctness, deployed alignment, human dignity,",
       "cues": [
         "prove"
@@ -7964,7 +7983,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.d83a126797d2",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:542",
+      "source": "chapters/constitutional-alignment-substrate.qmd:544",
       "sentence": "modeled protected predicate and never increase the numeric authority field;",
       "cues": [
         "increase"
@@ -7983,7 +8002,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.31c21c5a9a89",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:543",
+      "source": "chapters/constitutional-alignment-substrate.qmd:545",
       "sentence": "effect commitment requires the Boolean obligations assigned to one of five",
       "cues": [
         "requires"
@@ -8002,7 +8021,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.cfa8d918f84e",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:547",
+      "source": "chapters/constitutional-alignment-substrate.qmd:549",
       "sentence": "establishes accepted-trace preservation only inside its recorded finite model;",
       "cues": [
         "establishes"
@@ -8021,7 +8040,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.c8daac279329",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:638",
+      "source": "chapters/constitutional-alignment-substrate.qmd:640",
       "sentence": "Corrigibility cannot assume an agent that stands outside a known environment.",
       "cues": [
         "cannot"
@@ -8040,7 +8059,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.d43cdb9a8a65",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:643",
+      "source": "chapters/constitutional-alignment-substrate.qmd:645",
       "sentence": "embedded-agency comparator explains why a finite correction record cannot",
       "cues": [
         "cannot"
@@ -8059,7 +8078,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.2cacfa907ab1",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:650",
+      "source": "chapters/constitutional-alignment-substrate.qmd:652",
       "sentence": "It does not prove that hidden optimization, delegated components,",
       "cues": [
         "prove"
@@ -14546,7 +14565,7 @@
     {
       "candidate_id": "recursive-self-improvement-boundaries.prose.70d29d7b4389",
       "chapter_id": "recursive-self-improvement-boundaries",
-      "source": "chapters/recursive-self-improvement-boundaries.qmd:492",
+      "source": "chapters/recursive-self-improvement-boundaries.qmd:498",
       "sentence": "Exact rollback cannot substitute for evaluator independence,",
       "cues": [
         "cannot"
@@ -14565,7 +14584,7 @@
     {
       "candidate_id": "recursive-self-improvement-boundaries.prose.67afc833c95f",
       "chapter_id": "recursive-self-improvement-boundaries",
-      "source": "chapters/recursive-self-improvement-boundaries.qmd:497",
+      "source": "chapters/recursive-self-improvement-boundaries.qmd:503",
       "sentence": "No current result establishes that recursive self-improvement is safe.",
       "cues": [
         "establishes"
@@ -14584,7 +14603,7 @@
     {
       "candidate_id": "recursive-self-improvement-boundaries.prose.08d81d300d37",
       "chapter_id": "recursive-self-improvement-boundaries",
-      "source": "chapters/recursive-self-improvement-boundaries.qmd:507",
+      "source": "chapters/recursive-self-improvement-boundaries.qmd:513",
       "sentence": "Part II can now build machinery under a clear condition: every new layer must remain governable when it learns, compiles, routes, or replaces itself.",
       "cues": [
         "must"
@@ -14603,7 +14622,7 @@
     {
       "candidate_id": "recursive-self-improvement-boundaries.prose.a36dec0bdeec",
       "chapter_id": "recursive-self-improvement-boundaries",
-      "source": "chapters/recursive-self-improvement-boundaries.qmd:512",
+      "source": "chapters/recursive-self-improvement-boundaries.qmd:518",
       "sentence": "deception resistance, semantic recovery, recursive composition, or transfer.",
       "cues": [
         "transfer"
@@ -14622,7 +14641,7 @@
     {
       "candidate_id": "recursive-self-improvement-boundaries.prose.afd6c50328a2",
       "chapter_id": "recursive-self-improvement-boundaries",
-      "source": "chapters/recursive-self-improvement-boundaries.qmd:554",
+      "source": "chapters/recursive-self-improvement-boundaries.qmd:560",
       "sentence": "Part I establishes the governing frame: stack boundaries, efficiency accounting, authority ceilings, failure records, evidence states, human intent, constitutional predicates, rights, replacement, security, bounded improvement, and the governed generation campaigns that can propose future changes.",
       "cues": [
         "establishes"
@@ -14641,7 +14660,7 @@
     {
       "candidate_id": "recursive-self-improvement-boundaries.prose.7e915a512438",
       "chapter_id": "recursive-self-improvement-boundaries",
-      "source": "chapters/recursive-self-improvement-boundaries.qmd:561",
+      "source": "chapters/recursive-self-improvement-boundaries.qmd:567",
       "sentence": "mutation manifest can enumerate declared state; it cannot prove that the",
       "cues": [
         "cannot",
@@ -14661,7 +14680,7 @@
     {
       "candidate_id": "recursive-self-improvement-boundaries.prose.d9f32c69de92",
       "chapter_id": "recursive-self-improvement-boundaries",
-      "source": "chapters/recursive-self-improvement-boundaries.qmd:568",
+      "source": "chapters/recursive-self-improvement-boundaries.qmd:574",
       "sentence": "Record-level correctness must not be upgraded into",
       "cues": [
         "must"
@@ -15900,7 +15919,7 @@
     {
       "candidate_id": "open-ended-improvement-engines.prose.469e2dac325c",
       "chapter_id": "open-ended-improvement-engines",
-      "source": "chapters/open-ended-improvement-engines.qmd:675",
+      "source": "chapters/open-ended-improvement-engines.qmd:682",
       "sentence": "It demonstrates how an improvement engine can terminate without",
       "cues": [
         "demonstrates"
@@ -15919,7 +15938,7 @@
     {
       "candidate_id": "open-ended-improvement-engines.prose.57ad6c06d215",
       "chapter_id": "open-ended-improvement-engines",
-      "source": "chapters/open-ended-improvement-engines.qmd:689",
+      "source": "chapters/open-ended-improvement-engines.qmd:696",
       "sentence": "They do not show that adaptive search produces useful",
       "cues": [
         "show"
@@ -15938,7 +15957,7 @@
     {
       "candidate_id": "open-ended-improvement-engines.prose.56c89aeb6d56",
       "chapter_id": "open-ended-improvement-engines",
-      "source": "chapters/open-ended-improvement-engines.qmd:737",
+      "source": "chapters/open-ended-improvement-engines.qmd:744",
       "sentence": "That trace must carry campaign-derived artifacts only after their",
       "cues": [
         "must"
@@ -30432,7 +30451,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.3fa2b72fe3e6",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:550",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:556",
       "sentence": "`d2343540`; neither establishes deployment readiness or model quality.",
       "cues": [
         "establishes"
@@ -30451,7 +30470,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.a7a4bbf5f282",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:569",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:575",
       "sentence": "The governed program shows why “safe” and “ready” cannot be synonyms: it",
       "cues": [
         "cannot",
@@ -30471,7 +30490,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.1e9a1986dc26",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:583",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:589",
       "sentence": "A readiness gate must not treat that",
       "cues": [
         "must"
@@ -30490,7 +30509,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.1832ca7d388a",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:590",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:596",
       "sentence": "on 6/6 cases, retained all required residual IDs, released 3/3 clean controls,",
       "cues": [
         "required"
@@ -30509,7 +30528,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.5054aac1cab3",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:595",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:601",
       "sentence": "readiness lesson: a correct stop/release boundary cannot compensate for a",
       "cues": [
         "cannot"
@@ -30528,7 +30547,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.153797836c88",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:617",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:623",
       "sentence": "These results sharpen what readiness must reject.",
       "cues": [
         "must"
@@ -30547,7 +30566,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.62783737bb23",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:617",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:623",
       "sentence": "They do not show that the",
       "cues": [
         "show"
@@ -30566,7 +30585,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.6aedb59c2b5f",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:618",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:624",
       "sentence": "proposed lifecycle improves useful safe operation.",
       "cues": [
         "improves"
@@ -30585,7 +30604,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.6ad07e4c86d3",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:620",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:626",
       "sentence": "A concrete runtime reference must then record enough detail for this routing and readiness discipline to become operational evidence.",
       "cues": [
         "must"
@@ -30604,7 +30623,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.93524d4e4584",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:622",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:628",
       "sentence": "That runtime reference must publish the same evidence shape the gate expects: route decisions, specialist states, replay links, benchmark or regression records, residuals, and promotion blockers.",
       "cues": [
         "must"
@@ -30623,7 +30642,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.72b7317d945b",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:624",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:630",
       "sentence": "A readiness decision should still be understandable after the module changes",
       "cues": [
         "should"
@@ -50786,9 +50805,47 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "integrated-reference-architecture.prose.eb5a16e581a5",
+      "chapter_id": "integrated-reference-architecture",
+      "source": "chapters/integrated-reference-architecture.qmd:431",
+      "sentence": "control must remain visible as a route-changing residual.",
+      "cues": [
+        "must"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Restates the joined-trace obligation to preserve route-changing residuals.",
+      "target_atom_id": "integrated-reference-architecture.formal.reference-architecture-trace-operational-invariant"
+    },
+    {
+      "candidate_id": "integrated-reference-architecture.prose.5215a1b2a001",
+      "chapter_id": "integrated-reference-architecture",
+      "source": "chapters/integrated-reference-architecture.qmd:432",
+      "sentence": "packet removes recorded defeaters only; it does not prove comprehension,",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Explicit ceiling on what a finite human control-envelope packet can establish.",
+      "target_atom_id": null
+    },
+    {
       "candidate_id": "integrated-reference-architecture.prose.0d4218cab39a",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:438",
+      "source": "chapters/integrated-reference-architecture.qmd:446",
       "sentence": "A downstream artifact cannot inherit authority merely because it descends from an approved intent; each handoff must preserve or narrow the authority chain.",
       "cues": [
         "cannot",
@@ -50808,7 +50865,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.b76b6703a315",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:440",
+      "source": "chapters/integrated-reference-architecture.qmd:448",
       "sentence": "A blank field in the trace must mean \"not applicable\" or \"not yet available,\" not \"the system forgot to ask.\" Missing contracts, missing evidence, missing approvals, and missing rollback paths should be visible as records that block, narrow, or defer work.",
       "cues": [
         "must",
@@ -50828,7 +50885,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.ef6dad458cc8",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:443",
+      "source": "chapters/integrated-reference-architecture.qmd:451",
       "sentence": "prevents downstream authority widening, binds named interfaces to material",
       "cues": [
         "prevents"
@@ -50847,7 +50904,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.92609e983ec5",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:445",
+      "source": "chapters/integrated-reference-architecture.qmd:453",
       "sentence": "and phantom completion, exposes evaluator dependence, requires accepted",
       "cues": [
         "requires"
@@ -50866,7 +50923,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.6caac925895e",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:448",
+      "source": "chapters/integrated-reference-architecture.qmd:456",
       "sentence": "requires effect-complete rollback, reports usefulness and governance cost",
       "cues": [
         "requires"
@@ -50885,7 +50942,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.23fd2d51b266",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:449",
+      "source": "chapters/integrated-reference-architecture.qmd:457",
       "sentence": "together, bounds transfer, expires changed joins, and limits diagrams, schemas,",
       "cues": [
         "transfer"
@@ -50904,7 +50961,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.5447e0b68ee2",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:462",
+      "source": "chapters/integrated-reference-architecture.qmd:470",
       "sentence": "Untraceable handoffs should create missing-contract records.",
       "cues": [
         "should"
@@ -50923,7 +50980,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.e84776fcaaaf",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:462",
+      "source": "chapters/integrated-reference-architecture.qmd:470",
       "sentence": "Planning/execution collapse should preserve the failed plan, runtime artifact, and residual.",
       "cues": [
         "should"
@@ -50942,7 +50999,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.4e8af7b11125",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:462",
+      "source": "chapters/integrated-reference-architecture.qmd:470",
       "sentence": "Self-improvement without evaluator integrity should stop at the SCF gate.",
       "cues": [
         "should"
@@ -50961,7 +51018,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.71d87a9d0b2a",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:464",
+      "source": "chapters/integrated-reference-architecture.qmd:472",
       "sentence": "A reference architecture should make that theater obvious because the trace record will have missing parentage, unsupported evidence deltas, or stop conditions that were acknowledged but ignored.",
       "cues": [
         "should"
@@ -50980,7 +51037,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.edfb3eed0680",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:466",
+      "source": "chapters/integrated-reference-architecture.qmd:474",
       "sentence": "Trace fragmentation is the companion failure, where each layer records locally valid receipts that cannot be joined into one accountable run.",
       "cues": [
         "cannot"
@@ -50999,7 +51056,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.b2d3321d0cb1",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:473",
+      "source": "chapters/integrated-reference-architecture.qmd:481",
       "sentence": "blocking, embedded-model closure, and unsupported transfer.",
       "cues": [
         "transfer"
@@ -51018,7 +51075,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.f9f9ab740726",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:492",
+      "source": "chapters/integrated-reference-architecture.qmd:500",
       "sentence": "reproduction, transfer, whole-stack deployment, or core effect exists.",
       "cues": [
         "transfer"
@@ -51037,7 +51094,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.78404ed4d042",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:494",
+      "source": "chapters/integrated-reference-architecture.qmd:502",
       "sentence": "The reference-trace fixtures check record shape, trace state, execution boundary, parentage, deltas, blockers, source refs, and support-state effect only: they do not execute the architecture, replay a runtime trace, or prove that every layer handoff is implemented.",
       "cues": [
         "prove"
@@ -51056,7 +51113,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.e1eb501a8232",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:498",
+      "source": "chapters/integrated-reference-architecture.qmd:506",
       "sentence": "That tiny dry-run trace set now exists at fixture level: one approved flow carries stable artifact IDs from intent through plan, context, route, work order, audit log, evidence update, and SCF no-promotion review; one blocked flow fails because execution authority is missing and governance review remains required.",
       "cues": [
         "required"
@@ -51075,7 +51132,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.217a0ac297d2",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:504",
+      "source": "chapters/integrated-reference-architecture.qmd:512",
       "sentence": "Exiting argument support requires natural heterogeneous tasks through",
       "cues": [
         "requires"
@@ -51094,7 +51151,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.1b580170493f",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:514",
+      "source": "chapters/integrated-reference-architecture.qmd:522",
       "sentence": "evaluators, institutions, infrastructures, legal regimes, and transfer sites",
       "cues": [
         "transfer"
@@ -51113,7 +51170,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.2a5d072f0c3b",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:528",
+      "source": "chapters/integrated-reference-architecture.qmd:536",
       "sentence": "Cross-layer consumers that can reject a trace when a required artifact, source ref, validation command, non-claim, or approval is missing.",
       "cues": [
         "required"
@@ -51132,7 +51189,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.b17f9315dd8b",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:534",
+      "source": "chapters/integrated-reference-architecture.qmd:542",
       "sentence": "negative control: a support-seeking receipt must survive independent",
       "cues": [
         "must"
@@ -51151,7 +51208,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.bfcddd2c1938",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:538",
+      "source": "chapters/integrated-reference-architecture.qmd:546",
       "sentence": "prevents record-shape laundering inside the static architecture.",
       "cues": [
         "prevents"
@@ -51170,7 +51227,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.ca7a8c35de69",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:541",
+      "source": "chapters/integrated-reference-architecture.qmd:549",
       "sentence": "A reference trace must not merely say \"the verifier passed.\"",
       "cues": [
         "must"
@@ -51189,7 +51246,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.baa6bdca5210",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:542",
+      "source": "chapters/integrated-reference-architecture.qmd:550",
       "sentence": "It must identify the trusted core, root-of-trust refs, delegation rule,",
       "cues": [
         "must"
@@ -51208,7 +51265,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.bb2769a96bce",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:546",
+      "source": "chapters/integrated-reference-architecture.qmd:554",
       "sentence": "records; it does not prove a deployed trust base or verifier correctness.",
       "cues": [
         "prove"
@@ -51227,7 +51284,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.65bedd8e2b31",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:569",
+      "source": "chapters/integrated-reference-architecture.qmd:577",
       "sentence": "and does not prove a deployed authorization, sandbox, verifier, rollback,",
       "cues": [
         "prove"
@@ -51246,7 +51303,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.363318005abf",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:579",
+      "source": "chapters/integrated-reference-architecture.qmd:587",
       "sentence": "requires unchanged support when no transition exists and accepted review,",
       "cues": [
         "requires"
@@ -51265,7 +51322,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.ff2c317a5cc0",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:581",
+      "source": "chapters/integrated-reference-architecture.qmd:589",
       "sentence": "Residual conservation requires created residuals to equal",
       "cues": [
         "requires"
@@ -51284,7 +51341,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.c74f8ea76e6b",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:604",
+      "source": "chapters/integrated-reference-architecture.qmd:612",
       "sentence": "Every admitted transition must join the exact parent artifact and",
       "cues": [
         "must"
@@ -51303,7 +51360,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.6e9d1de75ea9",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:610",
+      "source": "chapters/integrated-reference-architecture.qmd:618",
       "sentence": "`AsiStackProofs.IntegratedReferenceTrace` proves that every accepted step joins",
       "cues": [
         "proves"
@@ -51322,7 +51379,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.c5679d523cdd",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:650",
+      "source": "chapters/integrated-reference-architecture.qmd:658",
       "sentence": "or revoked retries, requires observation before terminal custody, and separates",
       "cues": [
         "requires"
@@ -51341,7 +51398,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.bdf15b2eee2b",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:656",
+      "source": "chapters/integrated-reference-architecture.qmd:664",
       "sentence": "If the run cannot show parentage, authority, evidence, residuals, and stops, it has not instantiated this architecture.",
       "cues": [
         "cannot",
@@ -51361,7 +51418,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.2e89c49ca960",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:656",
+      "source": "chapters/integrated-reference-architecture.qmd:664",
       "sentence": "The integration trace kernel remains a target architecture until real trace harnesses, blocked-path tests, artifact-continuity audits, authority stop-condition checks, and accepted evidence transitions show that the layers compose under pressure.",
       "cues": [
         "show"
@@ -51380,7 +51437,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.5632ffa48238",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:692",
+      "source": "chapters/integrated-reference-architecture.qmd:700",
       "sentence": "These results do not prove artifact truth,",
       "cues": [
         "prove"
@@ -51399,7 +51456,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.c51061c5ea19",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:728",
+      "source": "chapters/integrated-reference-architecture.qmd:736",
       "sentence": "The environment can challenge predictions; it cannot grant power.",
       "cues": [
         "cannot"
@@ -51418,7 +51475,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.dbb426ba4a34",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:729",
+      "source": "chapters/integrated-reference-architecture.qmd:737",
       "sentence": "candidate can propose a better behavior; it cannot silently rewrite the Form or",
       "cues": [
         "cannot"
@@ -51437,7 +51494,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.a982ce27e9fd",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:733",
+      "source": "chapters/integrated-reference-architecture.qmd:741",
       "sentence": "The honest vertical slice must implement one bounded",
       "cues": [
         "must"
@@ -51456,7 +51513,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.21650e107a4d",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:820",
+      "source": "chapters/integrated-reference-architecture.qmd:828",
       "sentence": "If a demo cannot produce parent artifacts, authority deltas, evidence deltas, residual deltas, and blocked-path records, then it may still be interesting, but it has not yet instantiated this reference architecture.",
       "cues": [
         "cannot"
@@ -51475,7 +51532,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.1871386fdc59",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:822",
+      "source": "chapters/integrated-reference-architecture.qmd:830",
       "sentence": "Project Theseus becomes useful precisely because it is report-first: it shows how pieces of this trace could become inspectable machinery without letting local reports stand in for public empirical proof.",
       "cues": [
         "shows"
@@ -51494,7 +51551,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.cad6836eb8c4",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:822",
+      "source": "chapters/integrated-reference-architecture.qmd:830",
       "sentence": "The current static architecture-gate import demonstrates the report-import boundary while leaving the end-to-end runtime trace unclaimed.",
       "cues": [
         "demonstrates"
@@ -51513,7 +51570,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.d195a7ce1da8",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:859",
+      "source": "chapters/integrated-reference-architecture.qmd:867",
       "sentence": "The integrated trace defines what a complete stack must preserve; an implementation reference shows where that trace can become concrete without pretending the proof is already public.",
       "cues": [
         "must",

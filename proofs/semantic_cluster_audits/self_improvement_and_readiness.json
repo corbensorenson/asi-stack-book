@@ -1,0 +1,124 @@
+{
+  "schema_version": "asi_stack.semantic_proof_cluster_audit.v1",
+  "cluster_id": "self_improvement_and_readiness",
+  "packet_id": "P4-C5-self-improvement-and-readiness-semantic-audit",
+  "state": "adequate",
+  "scope": "bounded_finite_self_improvement_open_ended_campaign_capability_threshold_and_readiness_lifecycle_semantics",
+  "module_count": 4,
+  "public_target_count": 21,
+  "theorem_declaration_count": 36,
+  "module_dispositions": [
+    {
+      "module": "AsiStackProofs.SelfImprovementRefinement",
+      "path": "lean/AsiStackProofs/SelfImprovementRefinement.lean",
+      "disposition": "adequate",
+      "public_target_count": 3,
+      "theorem_declaration_count": 2,
+      "plain_language_proposition": "A finite eight-stage proposal-to-outcome lifecycle preserves exact identity, protected-partition, authority-ceiling, full-state, evaluation, rollback, residual, descendant, and successor-version custody from scope through replacement handoff, returned outcome, and readmission.",
+      "modeled_state": "Authored request, proposal, implementation, evaluation, adjudication, replacement, outcome, and readmission packets across 118 routes, including model, optimizer, scheduler, RNG, cache, prompt-policy, tool-credential, evaluator, environment, backup, descendant, external-effect, compensation, and authority records.",
+      "assumptions": [
+        "Every objective, rights, identity, protected partition, state surface, evaluation, monitor, effect, rollback, compensation, descendant, residual, and authority field is truthful and complete for the declared inventory.",
+        "The hand-authored sequential lifecycle represents only the encoded proposal and one returned outcome; adaptive proposal generation, concurrent modification, recursive interaction, delayed effects, and live enforcement are omitted.",
+        "A complete route or exact declared-state restoration does not establish objective legitimacy, useful self-improvement, semantic recovery, effect-complete rollback, safety, or justified deployment."
+      ],
+      "countermodels": [
+        "A self-ratified objective, protected-invariant weakening, or authority widening blocks the proposal lifecycle.",
+        "Missing full-state, independent evaluation, monitor, natural-task, regression, unsafe-release, delayed-outcome, cost, rollback, or residual custody blocks handoff or reconciliation.",
+        "Material change without affected-path invalidation, ordinary-route blocking, new state inventory, and successor-version readmission cannot return to the scoped state."
+      ],
+      "consumers": [
+        "scripts/validate_self_improvement_refinement.py",
+        "experiments/self_improvement_refinement/results/2026-07-16-local.json"
+      ],
+      "mutation_evidence": "The independent consumer recomputes 118 routes, reruns seven inherited suites, and rejects 129 of 129 identity, gate, replay, authority, and stale-handoff mutations while preserving support and external effects at none.",
+      "maximum_inference": "Adequate for the exact finite proposal-to-outcome route, failed-event preservation, authority ceiling, declared-state custody, handoff, reconciliation, invalidation, and readmission consequences. It does not establish objective legitimacy, state completeness, adaptive self-improvement, evaluator or monitor competence, useful improvement, semantic recovery, rollback efficacy, safety, transfer, deployment, or support movement."
+    },
+    {
+      "module": "AsiStackProofs.OpenEndedImprovementRefinement",
+      "path": "lean/AsiStackProofs/OpenEndedImprovementRefinement.lean",
+      "disposition": "adequate",
+      "public_target_count": 7,
+      "theorem_declaration_count": 5,
+      "plain_language_proposition": "A finite seven-stage campaign lifecycle preserves objective, generator, archive, denominator, exposure, cumulative-budget, qualification, hazard, stop-effect, residual, governor-handoff, invalidation, and successor-version records while preventing a candidate or score from granting its own authority.",
+      "modeled_state": "Authored campaign scope, generation, archive, evaluation, adjudication, governor-handoff, and readmission packets across 81 routes, with an explicit full-cycle witness and budget-reset countermodel.",
+      "assumptions": [
+        "Objective legitimacy, generator identity, denominator completeness, lineage, exposure, archive, budget, evaluator, hazard, stop-effect, quarantine, residual, and authority fields are truthful and complete.",
+        "The finite route graph does not generate tasks or candidates, evolve an archive, adapt a controller, observe novelty, or execute stop, quarantine, rollback, or deployment effects.",
+        "A governor handoff is only a bounded record transition and does not establish candidate quality, open-endedness, useful improvement, safe autonomy, or admission authority."
+      ],
+      "countermodels": [
+        "Missing task or candidate denominators, lineage, exposure, typed failures, payload custody, or cumulative descendant budget blocks archive progression.",
+        "Missing independent qualification, fresh holdout, evaluator dependencies, calibration, disagreement, baseline, ablation, hazard, or usefulness-transfer separation blocks evaluation.",
+        "Budget reset, controller self-ratification, score-as-admission, authority laundering, or incomplete descendant invalidation blocks governor handoff or readmission."
+      ],
+      "consumers": [
+        "scripts/validate_open_ended_improvement_refinement.py",
+        "experiments/open_ended_improvement_refinement/results/2026-07-16-local.json"
+      ],
+      "mutation_evidence": "The independent consumer composes three inherited suites through seven stages and 81 routes, rejecting 91 of 91 route mutations and 3 of 3 cross-stage mutations, including cumulative-budget reset, without support movement.",
+      "maximum_inference": "Adequate for exact bounded campaign-record custody, route ordering, rejected-event preservation, cumulative-budget conservation, governor handoff, invalidation, and versioned readmission. It does not establish adaptive generation, semantic novelty, objective legitimacy, archive quality, evaluator independence, useful open-ended improvement, hazard control, stop efficacy, safety, deployment, transfer, or support movement."
+    },
+    {
+      "module": "AsiStackProofs.ReadinessRefinement",
+      "path": "lean/AsiStackProofs/ReadinessRefinement.lean",
+      "disposition": "adequate",
+      "public_target_count": 3,
+      "theorem_declaration_count": 17,
+      "plain_language_proposition": "A finite seven-stage readiness lifecycle binds exact capability and evidence identity from candidate through shadow, canary, qualification, default readiness, quarantine, and acknowledged terminal closure while blocking stale, incomplete, unsafe, untransferred, or unrevoked records.",
+      "modeled_state": "Authored capability, implementation, model-state, workload, baseline, evaluator, policy, authority, consumer, fallback, residual, release, quarantine, revocation, and acknowledgment fields across 40 routes and a six-receipt terminal witness.",
+      "assumptions": [
+        "Capability, evidence, workload, baseline, evaluator, freshness, regression, throughput, unsafe-release, transfer, delayed-outcome, quarantine, revocation, consumer, and authority fields are truthful and complete.",
+        "The finite lifecycle observes no natural workload, deployed release, monitoring process, real rollback, transitive dependency graph, delayed consequence, or institutional decision.",
+        "Default-ready and terminal are authored route states, not calibrated estimates or evidence that a system is useful, safe, recoverable, deployable, or socially ready."
+      ],
+      "countermodels": [
+        "Missing baseline, evaluator, workload, non-claims, fresh evidence, regression floor, residual escrow, fallback, rollback, or monitoring blocks shadow or canary progress.",
+        "Missing useful-throughput, unsafe-release, latency-cost, independent evaluation, transfer, or delayed-outcome records blocks qualification or default readiness.",
+        "Incomplete transitive quarantine, ordinary-route blocking, terminal reason, dependency closure, revocation, or consumer acknowledgment blocks terminal closure."
+      ],
+      "consumers": [
+        "scripts/validate_readiness_refinement.py",
+        "experiments/readiness_refinement/results/2026-07-15-local.json"
+      ],
+      "mutation_evidence": "The independent consumer preserves three exact inherited suites, exercises 40 routes and the terminal witness, and rejects 45 of 45 binding, gate, replay, support, and effect mutations.",
+      "maximum_inference": "Adequate for exact finite readiness-record identity, gate ordering, failed-event preservation, quarantine, revocation, and terminal acknowledgment consequences. It does not establish gate calibration, evaluator adequacy, natural useful throughput, safety, rollback efficacy, transfer, delayed outcomes, dependency completeness, deployment readiness, or support movement."
+    },
+    {
+      "module": "AsiStackProofs.CapabilityThresholdRefinement",
+      "path": "lean/AsiStackProofs/CapabilityThresholdRefinement.lean",
+      "disposition": "adequate",
+      "public_target_count": 8,
+      "theorem_declaration_count": 12,
+      "plain_language_proposition": "A finite six-stage capability-threshold lifecycle preserves exact assessment identity and requires declared envelope, elicitation, baseline, uncertainty, independent evaluation, affected paths, safeguards, bypass tests, rollback, exceptions, authority separation, monitoring, and versioned reassessment before a readiness handoff.",
+      "modeled_state": "Authored draft, scope, assessment, adjudication, control, readiness-handoff, and reassessment records across 43 routes, one eight-case inherited suite, and a successor-version witness.",
+      "assumptions": [
+        "Capability, threat, threshold, elicitation, baseline, uncertainty, evaluator, assessment, safeguard, bypass, rollback, exception, monitoring, release-path, descendant, and authority fields are truthful and complete.",
+        "The finite model performs no capability measurement, elicitation, threshold estimation, safeguard verification, bypass attack, rollback execution, exception governance, release, or live reassessment.",
+        "A readiness handoff records satisfied authored predicates only; it does not establish a true threshold crossing, effective control, safe release, or deployment legitimacy."
+      ],
+      "countermodels": [
+        "Missing evaluation envelope, elicitation, baseline, uncertainty, independent evaluator, or assessment result blocks assessment.",
+        "A crossed threshold without safeguards, a verifier, bypass testing, rollback, monitoring, or complete exception custody blocks control or readiness handoff.",
+        "Authority laundering, incomplete descendant invalidation, an unblocked ordinary route, or a stale successor version blocks reassessment."
+      ],
+      "consumers": [
+        "scripts/validate_capability_threshold_refinement.py",
+        "experiments/capability_threshold_refinement/results/2026-07-15-local.json"
+      ],
+      "mutation_evidence": "The independent consumer preserves the eight inherited cases, exercises 43 routes, and rejects 48 of 48 identity, gate, replay, authority, and stale-readiness mutations without support movement.",
+      "maximum_inference": "Adequate for exact finite assessment, control, exception, readiness-handoff, invalidation, and reassessment record consequences. It does not establish capability measurement, threshold validity or crossing, evaluator independence, safeguard or rollback efficacy, exception legitimacy, readiness, safety, release, transfer, deployment, or support movement."
+    }
+  ],
+  "semantic_separations": {
+    "proposal_governance": "A complete proposal record constrains routing; it is not evidence that the proposal is intelligent, legitimate, useful, or safe.",
+    "campaign_open_endedness": "A bounded campaign lifecycle and archive schema do not establish adaptive task generation, semantic novelty, or open-ended improvement.",
+    "capability_assessment": "A recorded assessment and threshold decision do not establish measurement validity or an actual capability crossing.",
+    "readiness_handoff": "A readiness handoff is not release authority, deployed readiness, safety, or social legitimacy.",
+    "rollback_and_recovery": "Declared-state restoration is not semantic recovery, external-effect reversal, compensation, or removal of all descendants.",
+    "recursive_composition": "One finite lifecycle does not establish stability or safety across recursive generations, interacting campaigns, or self-modifying evaluators."
+  },
+  "cluster_maximum_inference": "The cluster is adequate for its exact finite proposal, campaign, assessment, readiness, quarantine, invalidation, rollback-record, governor-handoff, and readmission semantics. It proves no objective legitimate, no adaptive or open-ended generator operating, no capability measured or threshold crossed, no candidate useful, no safeguard or rollback effective, no system ready or safe, no recursive composition stable, and no empirical, transfer, deployment, SOTA, AGI, ASI, support, release, or publication claim.",
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "publication_effect": "none"
+}

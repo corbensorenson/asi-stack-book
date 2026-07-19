@@ -3,8 +3,8 @@
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
   "proof_target_count": 306,
   "status_counts": {
-    "implemented": 302,
-    "planned": 4
+    "implemented": 304,
+    "planned": 2
   },
   "chapter_counts": {
     "adversarial-evaluation-sandbagging-and-training-time-deception": 8,
@@ -404,7 +404,7 @@
       "tag": "lean:oversight.control_envelope.blocks_action",
       "module": "AsiStackProofs.HumanFactorsOversight",
       "formal_target": "In the finite model, any consequential transition lacking authority, observability, comprehension, timely intervention, or a reachable safe state is rejected or degraded.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 1018,
       "module_path": "lean/AsiStackProofs/HumanFactorsOversight.lean"
     },
@@ -414,7 +414,7 @@
       "tag": "lean:oversight.responsibility_requires_control",
       "module": "AsiStackProofs.HumanFactorsOversight",
       "formal_target": "The bounded accountability assignment never attributes operational responsibility beyond the authority and effective control recorded in the oversight contract.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 1019,
       "module_path": "lean/AsiStackProofs/HumanFactorsOversight.lean"
     },

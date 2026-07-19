@@ -2995,20 +2995,20 @@
       "chapter_id": "human-factors-and-meaningful-control-in-oversight",
       "module": "AsiStackProofs.HumanFactorsOversight",
       "formal_target": "In the finite model, any consequential transition lacking authority, observability, comprehension, timely intervention, or a reachable safe state is rejected or degraded.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Model a bounded oversight envelope and prove only its enumerated rejection or degradation consequence. Human cognition, workload calibration, intervention efficacy, responsibility legitimacy, safety, reproduction, and transfer require separate empirical and normative lanes."
+      "rationale": "Implemented as a bounded finite oversight envelope with nine declarations and an independently encoded consumer. It proves only the enumerated rejection or safe-hold consequence; human cognition, workload calibration, intervention efficacy, responsibility legitimacy, safety, reproduction, and transfer remain separate empirical and normative lanes."
     },
     {
       "tag": "lean:oversight.responsibility_requires_control",
       "chapter_id": "human-factors-and-meaningful-control-in-oversight",
       "module": "AsiStackProofs.HumanFactorsOversight",
       "formal_target": "The bounded accountability assignment never attributes operational responsibility beyond the authority and effective control recorded in the oversight contract.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Encode responsibility assignment as a finite relation bounded by recorded authority and effective-control fields. The theorem cannot establish actual control, consent, competence, legal accountability, or the truth of the input records."
+      "rationale": "Implemented as a finite responsibility relation bounded by recorded authority and effective-control fields. The theorem cannot establish actual control, consent, competence, legal accountability, or the truth of the input records."
     },
     {
       "tag": "lean:world_model.unsupported_rollout_no_authority",
