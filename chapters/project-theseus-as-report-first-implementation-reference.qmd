@@ -367,74 +367,33 @@ That caution is what makes the reference valuable. Theseus shows what kind of im
 <!-- P7-EVIDENCE-RECONCILIATION:START -->
 ## Evidence reconciliation (2026-07-16)
 
-This chapter owns **83** structured claim atoms in `CF-08`. The
-frozen repository-wide terminal audit records 83 `blocked_after_full_attempt`. Its core
-atom `project-theseus-as-report-first-implementation-reference.core` remains at `argument` with terminal
-disposition `blocked_after_full_attempt`. The authoritative per-atom rows
-are the `project-theseus-as-report-first-implementation-reference` slice of
-`experiments/claim_family_terminal_coverage/results/result.json`; this summary
-does not replace that ledger.
+The invariant protocol, field meanings, and inference limits are stated once in
+[Living Book Methodology](living-book-methodology.qmd#chapter-evidence-packet-contract).
+This packet contains only the chapter-specific projection; its authoritative
+per-atom rows are the `project-theseus-as-report-first-implementation-reference` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`.
 
 ::: {.asi-human-only}
-### What the evidence now says
-
-The chapter's core remains **blocked after full attempt**
-at `argument` support. Across its 83 structured claims,
-83 still lack required proof lanes,
-0 were narrowed, and
-0 received only a bounded subordinate
-promotion. No chapter-core claim moved upward.
-
-The strongest relevant family attempt was **Integrated governed lifecycle slices**. It gives
-this family one real success/failure boundary under rejecting controls, but it
-does not prove the rest of this chapter. What worked was limited to its declared
-scope; what failed or remains open is preserved in the blocked and narrowed
-counts above. The decisive boundary is: Bounded local replay only; no deployment, whole-book proof, external effect authority, transfer, publication, or release claim.
-
-The conclusion changes only when new atom-specific work fills the missing
-lanes—`normative`, `transfer`—under a prospective protocol and an accepted
-evidence transition. Until then, nearby tests, formal models, source counts, and
-the family result cannot substitute for the missing evidence.
+The core remains **blocked after full attempt** at
+`argument` support. The strongest family attempt was
+**Integrated governed lifecycle slices**. Its exact boundary is: Bounded local replay only; no deployment, whole-book proof, external effect authority, transfer, publication, or release claim.
+Across 83 atoms, the terminal ledger records 83 `blocked_after_full_attempt`.
 :::
 
 ::: {.asi-ai-only}
-
-### Evidence packet
-
-| Field | Exact chapter boundary |
+| Chapter-specific field | Value |
 |---|---|
-| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-08` minimum family bundle. |
+| Family / atom denominator | `CF-08` / 83 atoms |
+| Terminal dispositions | 83 `blocked_after_full_attempt` |
+| Core | `project-theseus-as-report-first-implementation-reference.core`: `blocked_after_full_attempt` at `argument` |
+| Core attempted / missing lanes | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` / `normative`, `transfer` |
 | Attempted local lanes | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` |
 | Missing or unproved lanes | `normative`, `transfer` |
-| Family-level natural-work or end-to-end bundle | **Integrated governed lifecycle slices** (`end_to_end`): Three versioned integrated slices, 12 cases, all ten lifecycle states, six observed effects, rollback/residual/quarantine outcomes, and an eleven-surface sealed epoch. |
+| Strongest family bundle | **Integrated governed lifecycle slices** (`end_to_end`): Three versioned integrated slices, 12 cases, all ten lifecycle states, six observed effects, rollback/residual/quarantine outcomes, and an eleven-surface sealed epoch. |
 | Negative controls | 20 named boundary injections; three exact rollbacks; partial-effect residual and quarantine; 11 rejecting mutations. |
-| Exact accepted transitions in this chapter | none |
-| Core outcome | `blocked_after_full_attempt` at `argument`; no chapter-core promotion. |
-| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
-| Reproduction path | Replay `scripts/validate_p3_integrated_slices.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
-
-### Worked success, failure, and boundary cases
-
-- **Success case:** the family-level bundle passed its own rejecting validator
-  within this exact scope: Three versioned integrated slices, 12 cases, all ten lifecycle states, six observed effects, rollback/residual/quarantine outcomes, and an eleven-surface sealed epoch. This is evidence that the family
-  received a competent attempt, not that every claim in this chapter succeeded.
-- **Failure or non-promotion case:** 83 atoms
-  remain blocked and 0 are narrowed. A
-  green family validator cannot fill their missing lanes or raise the core.
-- **Boundary case:** Bounded local replay only; no deployment, whole-book proof, external effect authority, transfer, publication, or release claim.
-
-### Argument-exit table
-
-| Atom set | Count | Work performed | Terminal reason and next burden |
-|---|---:|---|---|
-| Core: `project-theseus-as-report-first-implementation-reference.core` | 1 | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` | `blocked_after_full_attempt`; missing or unproved: `normative`, `transfer`. |
-| blocked after full attempt | 83 | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` | Missing or unproved lanes across this set: `normative`, `transfer`. These are residual proof obligations, not false claims. |
-
-This table is a disposition map, not a promotion quota. The next valid movement
-is atom-specific evidence that fills the named missing lanes, survives relevant
-negative controls, and enters through an accepted evidence transition. Until
-then, source counts, theorem counts, fixtures, validators, or nearby family
-results cannot be used as substitutes.
+| Accepted transitions | none |
+| Maximum inference | Bounded local replay only; no deployment, whole-book proof, external effect authority, transfer, publication, or release claim. |
+| Reproduction / next burden | Replay `scripts/validate_p3_integrated_slices.py` and `scripts/validate_claim_family_terminal_program.py`; fill the named atom-specific lanes under a new prospective protocol. |
 :::
 <!-- P7-EVIDENCE-RECONCILIATION:END -->
 

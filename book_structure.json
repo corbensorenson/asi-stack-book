@@ -893,7 +893,8 @@
             "ext_goal_misgeneralization_2022",
             "ext_learned_optimization_risks_2019",
             "ext_optimal_policies_power_2019",
-            "ext_goodhart_variants_2018"
+            "ext_goodhart_variants_2018",
+            "ext_gradual_disempowerment_2025"
           ],
           "source_queue": {
             "primary": [
@@ -912,7 +913,8 @@
               "ext_goal_misgeneralization_2022",
               "ext_learned_optimization_risks_2019",
               "ext_optimal_policies_power_2019",
-              "ext_goodhart_variants_2018"
+              "ext_goodhart_variants_2018",
+              "ext_gradual_disempowerment_2025"
             ],
             "connector_or_recovery": [
               "vcm_editable",
@@ -1110,6 +1112,18 @@
                 "sources/source_notes/ext_goodhart_variants_2018.md:39-48"
               ],
               "passage_review_note": "Reviewed source note for proxy-metric failure variants; use to sharpen benchmark-capture language without implying benchmark validity.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_gradual_disempowerment_2025",
+              "mapped_support": "Adds a slow, distributed failure pathway in which locally rational AI adoption can erode explicit and dependency-mediated human influence across mutually reinforcing economic, cultural, and state systems without requiring a coordinated takeover.",
+              "limits": "Conceptual systemic-risk argument only; no causal forecast, probability, timeline, validated warning threshold, intervention result, or local ASI Stack detector or mitigation is established.",
+              "passage_refs": [
+                "sources/source_notes/ext_gradual_disempowerment_2025.md:15-36",
+                "sources/source_notes/ext_gradual_disempowerment_2025.md:38-55",
+                "sources/source_notes/ext_gradual_disempowerment_2025.md:57-72"
+              ],
+              "passage_review_note": "Reviewed official arXiv v2 abstract, argument, cross-system dynamics, measurement proposals, mitigation sections, and limitations; use as an obligation-map comparator, not a trajectory or mitigation result.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -1575,7 +1589,10 @@
             "ext_scalable_oversight_weak_llms_2024",
             "ext_ai_safety_debate_2018",
             "verification_bandwidth",
-            "ext_monitorbench_2026"
+            "ext_monitorbench_2026",
+            "ext_conversational_persuasion_gpt4_2025",
+            "ext_anthropic_model_persuasiveness_2024",
+            "ext_commercial_persuasion_ai_2026"
           ],
           "source_queue": {
             "primary": [
@@ -1586,7 +1603,11 @@
             "supporting": [
               "verification_bandwidth"
             ],
-            "variants": [],
+            "variants": [
+              "ext_conversational_persuasion_gpt4_2025",
+              "ext_anthropic_model_persuasiveness_2024",
+              "ext_commercial_persuasion_ai_2026"
+            ],
             "connector_or_recovery": [],
             "handoff_or_recovery_notes": [
               "The primary papers are source-setting comparators. No ASI Stack supervision protocol, weak judge, debater, training signal, outcome audit, human study, or fleet-scale review system has been run."
@@ -1644,6 +1665,39 @@
               ],
               "passage_review_state": "reviewed",
               "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
+            },
+            {
+              "source_id": "ext_conversational_persuasion_gpt4_2025",
+              "mapped_support": "Provides a preregistered controlled-debate comparator showing why personalization data, dialogue state, human baselines, and measured belief change belong in an epistemic-security evaluation packet.",
+              "limits": "Short structured debate and stated agreement do not establish durable behavior change, real-world influence, truth improvement, mitigation efficacy, or a local oversight result.",
+              "passage_refs": [
+                "sources/source_notes/ext_conversational_persuasion_gpt4_2025.md:15-43",
+                "sources/source_notes/ext_conversational_persuasion_gpt4_2025.md:45-64"
+              ],
+              "passage_review_note": "Reviewed the source note's official-article-grounded design, aggregate findings, limitations, and governance implications; no local human study or mitigation was run.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_anthropic_model_persuasiveness_2024",
+              "mapped_support": "Provides a provider-run one-message capability-evaluation comparator that separates pre/post agreement change from permission, beneficial purpose, informed consent, and downstream action.",
+              "limits": "Provider provenance, a single-message design, and stated-opinion outcomes do not establish deployed influence, cross-domain transfer, safety, or mitigation efficacy.",
+              "passage_refs": [
+                "sources/source_notes/ext_anthropic_model_persuasiveness_2024.md:15-43",
+                "sources/source_notes/ext_anthropic_model_persuasiveness_2024.md:45-64"
+              ],
+              "passage_review_note": "Reviewed the official provider report through its source note for methods, result framing, and open questions; no dataset or result was reproduced locally.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_commercial_persuasion_ai_2026",
+              "mapped_support": "Adds sponsorship, incentive, disclosure, steering detection, and observed choice as explicit communication-risk fields for apparently helpful conversational systems.",
+              "limits": "Abstract-only version-one preprint intake cannot establish detailed statistics, a general persuasion effect, disclosure causality, long-run outcomes, or mitigation efficacy.",
+              "passage_refs": [
+                "sources/source_notes/ext_commercial_persuasion_ai_2026.md:15-42",
+                "sources/source_notes/ext_commercial_persuasion_ai_2026.md:44-63"
+              ],
+              "passage_review_note": "Reviewed official arXiv metadata and abstract through the source note; paper body, preregistration, materials, code, and replications were not audited.",
+              "passage_review_state": "reviewed"
             }
           ],
           "problem": "A system can ask a weaker human or model to judge a stronger system without recording whether the supervisor can see the relevant evidence, whether the protocol is vulnerable to persuasion or correlated failure, what direct-review baseline exists, or who escalates an unresolved result.",

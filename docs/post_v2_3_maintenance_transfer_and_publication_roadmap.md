@@ -86,11 +86,26 @@ outcomes, or evaluator judgments remain closed while other work proceeds.
 | Slot | Next packet | Entry condition | Terminal output |
 |---|---|---|---|
 | Continuous custody | P0 repository and public-truth reconciliation | Always open | Clean `main`, exact generated/source boundaries, current roadmap pointers, and no stale claim or release identity. |
-| Book slot — now | `P7.1a-W1-template-centralization-and-boundary-coverage` | Ready; independent of T4 | Freeze the repeated-block denominator; centralize the two widest methodology templates; repair retired-chapter opening residue; add the mandatory epistemic-security and gradual-disempowerment sections; preserve every unique claim, caveat, equation, source, protocol, proof boundary, and non-claim. |
-| Formal slot — now | `P4-C1-evidence-claim-and-proof-custody-semantic-audit` | Ready; uses only the frozen first proof cluster | Give each module an adequate/merge/reclassify/remove disposition with its model, countermodel, consumer, mutation, and maximum inference. Theorem count is not an exit condition. |
+| Book slot — now | `P7.1a-W2-opening-variation-and-thesis-depth-leveling` | W1 terminal; independent of T4 | Vary formulaic openings, level up the two thesis chapters and Failure Modes without padding, refresh role/handoff/overview surfaces, and extend the meaning-preservation audit. |
+| Formal slot — now | `P4-C2-safety-assurance-and-oversight-semantic-audit` | C1 terminal; uses only the frozen second proof cluster | Give the four safety/oversight modules terminal dispositions with exact propositions, assumptions, countermodels, consumers, mutations, and maximum inference. |
 | Empirical headline — blocked | P2 pool-wide sequential materialization | Exact host free space meets the frozen 50 GiB floor and every setup action remains inside the approved Docker-scoped protocol | Thirty sealed candidate recipes and receipts, then rank 5 setup retry eligibility without protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — next book packet | Complete `white-box-evidence-interpretability-and-activation-governance`, then World Models, Human Factors, and Operations in that order | The current book packet closes and the chapter's source-role, formalization, and evidence protocol inputs are frozen | One terminally integrated reader chapter at a time, or removal with material returned to named owners. |
 | Second structural tranche — after one first-tranche chapter closes | Adjudicate one candidate at a time in the dependency batches below | No active second-tranche candidate; four source roles and owner boundary are ready | Admit, narrow, return to existing owners, or reject with a durable decision packet. Research admission alone is never success. |
+
+The 2026-07-19 checkpoint closed both former immediate packets,
+`P7.1a-W1-template-centralization-and-boundary-coverage` and
+`P4-C1-evidence-claim-and-proof-custody-semantic-audit`. P7.1a-W1
+centralized the repeated evidence method, reduced reproducibly measured
+high-spread 12-grams by 36.34%, moved consolidation history out of three
+openings, and added source/atom/non-claim bounded epistemic-security and
+gradual-disempowerment sections; its machine audit is
+`evidence_quality/p7_1a_w1_editorial_boundary_audit.json`. P4-C1 gave all four
+evidence/claim/proof-custody modules terminal bounded-scope dispositions: two
+adequate reachable refinements and two reclassifications that preserve useful
+route or countermodel semantics while denying direct projections stronger
+credit. Its authority is
+`proofs/semantic_cluster_audits/evidence_claim_and_proof_custody.json`. Neither
+packet changes support, release, or publication state.
 
 Second-tranche adjudication uses four dependency batches, preserving the order
 within each batch unless a dated amendment explains why an input dependency
@@ -618,11 +633,13 @@ consumers is better than a large decidable mirror of authored records. Formal
 success remains formal evidence; it cannot establish empirical competence,
 evaluator truth, deployed enforcement, safety, or transfer.
 
-To keep this audit finite, the machine status now freezes six named clusters,
-all initially `strengthen`: evidence/claim/proof custody; safety assurance and
+To keep this audit finite, the machine status freezes six named clusters:
+evidence/claim/proof custody; safety assurance and
 oversight; authority/effect/rollback/corrigibility; learning-update state and
 unlearning; self-improvement and readiness; and resource/artifact/lifecycle
-economics. Their exact 24-module membership is machine-validated. M4 closes by
+economics. Their exact 24-module membership is machine-validated. The first
+cluster is terminal `adequate` at bounded finite custody scope after two module
+reclassifications; the remaining five stay `strengthen`. M4 closes by
 giving every cluster an `adequate`, `merge`, `reclassify`, or `remove`
 disposition with the required proposition, assumptions, countermodel,
 consumer, and inference ceiling. No unlisted cluster may be added later

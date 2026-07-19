@@ -252,6 +252,8 @@ def errors(data: dict) -> list[str]:
         "Work-in-progress limit",
         "P7.1a-W1-template-centralization-and-boundary-coverage",
         "P4-C1-evidence-claim-and-proof-custody-semantic-audit",
+        "P7.1a-W2-opening-variation-and-thesis-depth-leveling",
+        "P4-C2-safety-assurance-and-oversight-semantic-audit",
         "A blocked packet does not consume a slot",
     ]:
         if phrase.casefold() not in roadmap_normalized:
@@ -732,8 +734,8 @@ def errors(data: dict) -> list[str]:
     ):
         out.append("Q1/Q2 isolation or support boundary weakened")
     narrative_gate = quality_program.get("narrative_quality_gate", {})
-    if narrative_gate.get("case_independent_compression_state") != "ready":
-        out.append("case-independent P7.1a work is artificially blocked")
+    if narrative_gate.get("case_independent_compression_state") != "w1_terminal_w2_ready":
+        out.append("P7.1a W1/W2 execution state drifted")
     if narrative_gate.get("flagship_threading_state") != "blocked_by_T4":
         out.append("flagship-dependent P7.1b work lost its T4 gate")
     if not all(
@@ -883,8 +885,12 @@ def errors(data: dict) -> list[str]:
     missing_modules = sorted(set(listed_modules) - manifest_modules)
     if missing_modules:
         out.append(f"semantic proof inventory names absent modules: {missing_modules}")
-    if proof_inventory.get("state") != "inventory_frozen_audit_pending":
-        out.append("semantic proof inventory falsely claims audit completion")
+    if proof_inventory.get("state") != "cluster_1_terminal_5_pending":
+        out.append("semantic proof inventory progress state drifted")
+    if not proof_clusters or proof_clusters[0].get("state") != "adequate":
+        out.append("P4-C1 lacks its terminal adequate bounded-scope disposition")
+    if any(row.get("state") != "strengthen" for row in proof_clusters[1:]):
+        out.append("unaudited semantic proof clusters lost their strengthen state")
 
     expected_ids = [f"P{i}" for i in range(9)]
     if [row.get("id") for row in status.get("priorities", [])] != expected_ids:

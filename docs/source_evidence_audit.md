@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 59 |
-| Assigned source/chapter pairs | 920 |
-| Exact claim-source mappings | 852 |
+| Assigned source/chapter pairs | 924 |
+| Exact claim-source mappings | 856 |
 | Unmapped assigned pairs | 68 |
-| Source notes present for assigned pairs | 920 |
-| Source notes listing assigned chapter | 920 |
-| Passage-reviewed mappings recorded | 852 |
+| Source notes present for assigned pairs | 924 |
+| Source notes listing assigned chapter | 924 |
+| Passage-reviewed mappings recorded | 856 |
 | Support-state counts | {"argument": 59} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -36,9 +36,9 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `asi-is-a-stack-not-a-model` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
 | `the-efficient-asi-hypothesis` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
 | `system-boundaries-and-authority` | 14 | 12 | 14 | 14 | 12 | argument | passage review required before source-derived promotion |
-| `failure-modes-of-ungoverned-intelligence` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
+| `failure-modes-of-ungoverned-intelligence` | 15 | 15 | 15 | 15 | 15 | argument | eligible for support review |
 | `evidence-states-and-claim-discipline` | 15 | 14 | 15 | 15 | 14 | argument | passage review required before source-derived promotion |
-| `scalable-oversight-and-adversarial-ai-control` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
+| `scalable-oversight-and-adversarial-ai-control` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
 | `human-intent-as-a-formal-input` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
 | `human-factors-and-meaningful-control-in-oversight` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
 | `constitutional-alignment-substrate` | 13 | 13 | 13 | 13 | 13 | argument | eligible for support review |
@@ -229,8 +229,12 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_learned_optimization_risks_2019` | 1 | yes |
 | `ext_optimal_policies_power_2019` | 1 | yes |
 | `ext_goodhart_variants_2018` | 1 | yes |
+| `ext_gradual_disempowerment_2025` | 1 | yes |
 | `ext_weak_to_strong_generalization_2023` | 1 | yes |
 | `ext_scalable_oversight_weak_llms_2024` | 1 | yes |
+| `ext_conversational_persuasion_gpt4_2025` | 1 | yes |
+| `ext_anthropic_model_persuasiveness_2024` | 1 | yes |
+| `ext_commercial_persuasion_ai_2026` | 1 | yes |
 | `ext_goal_oriented_requirements_engineering_2001` | 1 | yes |
 | `ext_cooperative_inverse_rl_2016` | 1 | yes |
 | `ext_deep_rl_human_preferences_2017` | 1 | yes |
@@ -443,6 +447,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `ext_learned_optimization_risks_2019` | mapped | note present | chapter listed | passage-reviewed |
 | `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `ext_optimal_policies_power_2019` | mapped | note present | chapter listed | passage-reviewed |
 | `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `ext_goodhart_variants_2018` | mapped | note present | chapter listed | passage-reviewed |
+| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `ext_gradual_disempowerment_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
 | `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
 | `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `viea` | mapped | note present | chapter listed | passage-reviewed |
@@ -463,6 +468,9 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `scalable-oversight-and-adversarial-ai-control.core` | `scalable-oversight-and-adversarial-ai-control` | `ext_ai_safety_debate_2018` | mapped | note present | chapter listed | passage-reviewed |
 | `scalable-oversight-and-adversarial-ai-control.core` | `scalable-oversight-and-adversarial-ai-control` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
 | `scalable-oversight-and-adversarial-ai-control.core` | `scalable-oversight-and-adversarial-ai-control` | `ext_monitorbench_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `scalable-oversight-and-adversarial-ai-control.core` | `scalable-oversight-and-adversarial-ai-control` | `ext_conversational_persuasion_gpt4_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `scalable-oversight-and-adversarial-ai-control.core` | `scalable-oversight-and-adversarial-ai-control` | `ext_anthropic_model_persuasiveness_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `scalable-oversight-and-adversarial-ai-control.core` | `scalable-oversight-and-adversarial-ai-control` | `ext_commercial_persuasion_ai_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `software_magic_grimoire` | mapped | note present | chapter listed | passage-reviewed |
 | `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `planforge` | mapped | note present | chapter listed | passage-reviewed |

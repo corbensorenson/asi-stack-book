@@ -53,6 +53,7 @@ mitigation evaluation.
 - Proposed: `human-ai-communication-persuasion-and-epistemic-security`
 - Existing boundary owners: `capability-thresholds-and-deployment-commitments`,
   `benchmark-ratchets-and-anti-goodhart-evidence`,
+  `scalable-oversight-and-adversarial-ai-control`,
   `human-factors-and-meaningful-control-in-oversight`, and
   `adversarial-evaluation-sandbagging-and-training-time-deception`
 

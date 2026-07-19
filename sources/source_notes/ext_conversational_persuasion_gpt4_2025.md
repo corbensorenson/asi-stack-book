@@ -53,6 +53,7 @@ durable action, broad population transfer, or deployed-platform evidence.
 
 - Proposed: `human-ai-communication-persuasion-and-epistemic-security`
 - Existing boundary owners: `human-factors-and-meaningful-control-in-oversight`,
+  `scalable-oversight-and-adversarial-ai-control`,
   `claim-ledgers-and-belief-revision`, `moral-uncertainty-and-value-conflict`,
   `runtime-adapters-tool-permissions-and-human-approval`, and
   `capability-thresholds-and-deployment-commitments`

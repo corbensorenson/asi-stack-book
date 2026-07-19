@@ -458,6 +458,8 @@ Source loading queue:
 | External comparators | `ext_concrete_ai_safety_2016`, `ext_goal_misgeneralization_2022`, `ext_learned_optimization_risks_2019`, `ext_optimal_policies_power_2019`, `ext_goodhart_variants_2018` | Load after internal failure-mode sources to map stack vocabulary to accident-risk, goal-misgeneralization, learned-optimization, power-seeking, and Goodhart/proxy-failure families. Treat them as taxonomy grounding, not proof that the ASI Stack detects or prevents these failures. |
 | Connector or recovery required | `vcm_editable`, `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
+
+| Manifest assignment reconciliation | `ext_gradual_disempowerment_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Governance, reliability, and self-improvement claims cannot be tested unless their failure conditions, observable boundary events, evidence records, and owners are declared prospectively.
@@ -614,7 +616,7 @@ Source loading queue:
 | External lineage not yet chapter-owning | `ext_gpqa_2023` | Use only after fuller source review for hard-question benchmark pressure. Do not promote benchmark difficulty into local human-review quality or oversight claims. |
 
 
-| Manifest assignment reconciliation | `ext_monitorbench_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `ext_monitorbench_2026`, `ext_conversational_persuasion_gpt4_2025`, `ext_anthropic_model_persuasiveness_2024`, `ext_commercial_persuasion_ai_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: A limited reviewer may be asked to judge stronger or less transparent

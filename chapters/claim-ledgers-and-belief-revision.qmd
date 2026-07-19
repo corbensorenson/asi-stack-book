@@ -707,75 +707,33 @@ Review, which owns the separate property, verifier, and tribunal envelope.
 <!-- P7-EVIDENCE-RECONCILIATION:START -->
 ## Evidence reconciliation (2026-07-16)
 
-This chapter owns **73** structured claim atoms in `CF-04`. The
-frozen repository-wide terminal audit records 72 `blocked_after_full_attempt`; 1 `narrowed_after_full_attempt`. Its core
-atom `claim-ledgers-and-belief-revision.core` remains at `argument` with terminal
-disposition `narrowed_after_full_attempt`. The authoritative per-atom rows
-are the `claim-ledgers-and-belief-revision` slice of
-`experiments/claim_family_terminal_coverage/results/result.json`; this summary
-does not replace that ledger.
+The invariant protocol, field meanings, and inference limits are stated once in
+[Living Book Methodology](living-book-methodology.qmd#chapter-evidence-packet-contract).
+This packet contains only the chapter-specific projection; its authoritative
+per-atom rows are the `claim-ledgers-and-belief-revision` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`.
 
 ::: {.asi-human-only}
-### What the evidence now says
-
-The chapter's core remains **narrowed after full attempt**
-at `argument` support. Across its 73 structured claims,
-72 still lack required proof lanes,
-1 were narrowed, and
-0 received only a bounded subordinate
-promotion. No chapter-core claim moved upward.
-
-The strongest relevant family attempt was **Situated world-model acquisition and consolidation campaign**. It gives
-this family one real success/failure boundary under rejecting controls, but it
-does not prove the rest of this chapter. What worked was limited to its declared
-scope; what failed or remains open is preserved in the blocked and narrowed
-counts above. The decisive boundary is: Bounded finite POMDP result only; no open-world truth, general memory transfer, deployment, or chapter-core promotion.
-
-The conclusion changes only when new atom-specific work fills the missing
-lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
-evidence transition. Until then, nearby tests, formal models, source counts, and
-the family result cannot substitute for the missing evidence.
+The core remains **narrowed after full attempt** at
+`argument` support. The strongest family attempt was
+**Situated world-model acquisition and consolidation campaign**. Its exact boundary is: Bounded finite POMDP result only; no open-world truth, general memory transfer, deployment, or chapter-core promotion.
+Across 73 atoms, the terminal ledger records 72 `blocked_after_full_attempt`; 1 `narrowed_after_full_attempt`.
 :::
 
 ::: {.asi-ai-only}
-
-### Evidence packet
-
-| Field | Exact chapter boundary |
+| Chapter-specific field | Value |
 |---|---|
-| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-04` minimum family bundle. |
+| Family / atom denominator | `CF-04` / 73 atoms |
+| Terminal dispositions | 72 `blocked_after_full_attempt`; 1 `narrowed_after_full_attempt` |
+| Core | `claim-ledgers-and-belief-revision.core`: `narrowed_after_full_attempt` at `argument` |
+| Core attempted / missing lanes | `source-synthesis` / `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer` |
 | Attempted local lanes | `source-synthesis` |
 | Missing or unproved lanes | `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer` |
-| Family-level natural-work or end-to-end bundle | **Situated world-model acquisition and consolidation campaign** (`natural_work_and_end_to_end`): Two partially observed environments, 11,250 episodes, 6,000 held-out episodes, six directional ablation signatures, and governed replacement/rollback. |
+| Strongest family bundle | **Situated world-model acquisition and consolidation campaign** (`natural_work_and_end_to_end`): Two partially observed environments, 11,250 episodes, 6,000 held-out episodes, six directional ablation signatures, and governed replacement/rollback. |
 | Negative controls | ten arms; six matched ablations; ten laundering mutations; replacement and rollback checks. |
-| Exact accepted transitions in this chapter | `v1_0_pilot.claim_ledgers.no_change` |
-| Core outcome | `narrowed_after_full_attempt` at `argument`; no chapter-core promotion. |
-| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
-| Reproduction path | Replay `scripts/validate_p4_m8_world_model_campaign.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
-
-### Worked success, failure, and boundary cases
-
-- **Success case:** the family-level bundle passed its own rejecting validator
-  within this exact scope: Two partially observed environments, 11,250 episodes, 6,000 held-out episodes, six directional ablation signatures, and governed replacement/rollback. This is evidence that the family
-  received a competent attempt, not that every claim in this chapter succeeded.
-- **Failure or non-promotion case:** 72 atoms
-  remain blocked and 1 are narrowed. A
-  green family validator cannot fill their missing lanes or raise the core.
-- **Boundary case:** Bounded finite POMDP result only; no open-world truth, general memory transfer, deployment, or chapter-core promotion.
-
-### Argument-exit table
-
-| Atom set | Count | Work performed | Terminal reason and next burden |
-|---|---:|---|---|
-| Core: `claim-ledgers-and-belief-revision.core` | 1 | `source-synthesis` | `narrowed_after_full_attempt`; missing or unproved: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. |
-| narrowed after full attempt | 1 | `source-synthesis` | The exact accepted transition lineage is preserved: `v1_0_pilot.claim_ledgers.no_change`. The claim is not widened. |
-| blocked after full attempt | 72 | `source-synthesis` | Missing or unproved lanes across this set: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. These are residual proof obligations, not false claims. |
-
-This table is a disposition map, not a promotion quota. The next valid movement
-is atom-specific evidence that fills the named missing lanes, survives relevant
-negative controls, and enters through an accepted evidence transition. Until
-then, source counts, theorem counts, fixtures, validators, or nearby family
-results cannot be used as substitutes.
+| Accepted transitions | `v1_0_pilot.claim_ledgers.no_change` |
+| Maximum inference | Bounded finite POMDP result only; no open-world truth, general memory transfer, deployment, or chapter-core promotion. |
+| Reproduction / next burden | Replay `scripts/validate_p4_m8_world_model_campaign.py` and `scripts/validate_claim_family_terminal_program.py`; fill the named atom-specific lanes under a new prospective protocol. |
 :::
 <!-- P7-EVIDENCE-RECONCILIATION:END -->
 

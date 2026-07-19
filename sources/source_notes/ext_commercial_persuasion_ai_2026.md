@@ -51,6 +51,7 @@ model-specific, disclosure-causal, long-run, or cross-domain claims here.
 - Proposed: `human-ai-communication-persuasion-and-epistemic-security`
 - Existing boundary owners: `moral-uncertainty-and-value-conflict`,
   `human-factors-and-meaningful-control-in-oversight`,
+  `scalable-oversight-and-adversarial-ai-control`,
   `inter-stack-protocols-identity-and-economic-exchange`,
   `runtime-adapters-tool-permissions-and-human-approval`, and
   `resource-economics-and-token-budgets`

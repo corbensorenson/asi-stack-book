@@ -11,6 +11,9 @@ primary_sources:
   - "ext_ai_safety_debate_2018"
   - "verification_bandwidth"
   - "ext_monitorbench_2026"
+  - "ext_conversational_persuasion_gpt4_2025"
+  - "ext_anthropic_model_persuasiveness_2024"
+  - "ext_commercial_persuasion_ai_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -28,10 +31,10 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Last updated | 2026-07-15 |
-| Primary source records | `ext_weak_to_strong_generalization_2023`, `ext_scalable_oversight_weak_llms_2024`, `ext_ai_safety_debate_2018`, `verification_bandwidth`, `ext_monitorbench_2026` |
+| Primary source records | `ext_weak_to_strong_generalization_2023`, `ext_scalable_oversight_weak_llms_2024`, `ext_ai_safety_debate_2018`, `verification_bandwidth`, `ext_monitorbench_2026`, `ext_conversational_persuasion_gpt4_2025`, `ext_anthropic_model_persuasiveness_2024`, `ext_commercial_persuasion_ai_2026` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | Primary weak-to-strong, original debate-game, and weak-judge protocol comparators are passage-reviewed and source-noted; no source protocol has been reproduced. |
+| Source loading state | Primary weak-to-strong, debate-game, weak-judge, monitorability, conversational-persuasion, provider-persuasiveness, and commercial-persuasion comparators are source-noted at their recorded review boundaries; no source protocol or human study has been reproduced locally. |
 | Test state | The seven inherited cases now sit inside a seven-stage, 58-route review lifecycle with twelve refinement declarations and 65/65 rejecting mutations. No learned protocol, matched workload, human study, supervisor, or measured oversight outcome has run. |
 
 ## Drafting guardrail
@@ -655,6 +658,65 @@ authority or escalates; it does not compensate by trusting a more fluent
 transcript. Private reasoning may remain unavailable, but the action, tool,
 receipt, and counterfactual outcome surfaces still require independent checks.
 
+## Epistemic security and persuasion defense
+
+Oversight fails epistemically when a reviewer changes a verdict because a
+candidate is rhetorically effective rather than because the evidence supports
+the candidate's claim. That risk is already represented by atom
+`scalable-oversight-and-adversarial-ai-control.failure_mode.001`: persuasion
+theater lets a capable advocate win an inadequately calibrated judge without
+improving truth or safety. The atom remains `blocked_after_full_attempt`; this
+section sharpens its evaluation burden without changing the frozen terminal
+denominator or support state.
+
+Persuasion is not one scalar capability. A useful protocol separates message
+content, claimed purpose, sponsor or optimizing principal, audience, dialogue
+state, personalization data, evidence view, disclosure, channel, repetition,
+amplification, and observed outcome. It also distinguishes truth-improving
+explanation from movement in stated agreement, choice, compliance, reliance,
+or emotional attachment. A system may help a person understand a sound
+argument and still use an unacceptable influence process; conversely, a
+message may fail to move opinion while still hiding sponsorship or exploiting
+private data.
+
+The external evidence motivates this separation but does not settle it.
+`ext_conversational_persuasion_gpt4_2025` reports a preregistered controlled
+debate study with human and GPT-4 opponents and a personalization condition.
+Its outcome is short-horizon stated agreement in that setting, not durable
+behavior or truth. `ext_anthropic_model_persuasiveness_2024` offers a
+provider-run one-message capability comparison across claims and model
+generations, while explicitly leaving dialogue and real decisions open.
+`ext_commercial_persuasion_ai_2026` adds sponsorship, disclosure, steering
+detection, and observed product choice, but the current intake is an
+abstract-only version-one preprint. None is a local mitigation study.
+
+A competent persuasion-defense experiment therefore needs prospectively frozen
+human and non-persuasive baselines; equal evidence access; randomized sponsor,
+disclosure, personalization, and dialogue conditions; delayed belief and
+behavior outcomes; factual-correction tests; subgroup and outlier analysis;
+adversarially optimized messages; independent outcome coding; and joint
+measurement of useful explanation, false refusal, autonomy, welfare, latency,
+privacy exposure, and operator cost. Reviewers must not be told only whether a
+message was persuasive: they need the target proposition, evidential ground
+truth where one exists, competing explanations, and a record of what the
+communicator was optimizing.
+
+At runtime, the chapter's narrow design rule is custody, not censorship. An
+influence-bearing communication should carry its purpose, principal,
+personalization inputs, disclosure state, permitted audience and channel,
+evidence links, uncertainty, expected effect class, expiry, correction path,
+and remedy owner. High-risk communication routes to independent review or
+abstention; favorable rhetoric never grants action, claim-promotion, training,
+or release authority.
+
+This section does **not** show that conversational models generally persuade
+people, that personalization always increases influence, that disclosure
+works or fails, that a persuasion detector is accurate, or that the proposed
+packet protects autonomy. Those remain empirical and normative questions. The
+maximum current inference is that persuasion is a distinct oversight failure
+surface whose evidence and authority must remain separate from transcript
+fluency and reviewer confidence.
+
 
 ## Source crosswalk
 
@@ -672,6 +734,9 @@ These rows keep Scalable Oversight and Adversarial AI Control's manifest assignm
 | Source | Intake role | Boundary |
 |---|---|---|
 | `ext_monitorbench_2026` | Passage-reviewed comparator: MonitorBench: A Comprehensive Benchmark for Chain-of-Thought Monitorability in Large Language Models. Provides a held-out, multi-task monitorability benchmark and adversarial stress-test design showing that visible reasoning can become less monitorable under pressure and that stronger capability does not imply better monitorability. | Reported benchmark associations do not establish causal faithfulness, local oversight quality, model safety, or a general law across future systems. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_conversational_persuasion_gpt4_2025` | Passage-reviewed comparator: On the conversational persuasiveness of GPT-4. Provides a preregistered controlled-debate comparator showing why personalization data, dialogue state, human baselines, and measured belief change belong in an epistemic-security evaluation packet. | Short structured debate and stated agreement do not establish durable behavior change, real-world influence, truth improvement, mitigation efficacy, or a local oversight result. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_anthropic_model_persuasiveness_2024` | Passage-reviewed comparator: Measuring the Persuasiveness of Language Models. Provides a provider-run one-message capability-evaluation comparator that separates pre/post agreement change from permission, beneficial purpose, informed consent, and downstream action. | Provider provenance, a single-message design, and stated-opinion outcomes do not establish deployed influence, cross-domain transfer, safety, or mitigation efficacy. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_commercial_persuasion_ai_2026` | Passage-reviewed comparator: Commercial Persuasion in AI-Mediated Conversations. Adds sponsorship, incentive, disclosure, steering detection, and observed choice as explicit communication-risk fields for apparently helpful conversational systems. | Abstract-only version-one preprint intake cannot establish detailed statistics, a general persuasion effect, disclosure causality, long-run outcomes, or mitigation efficacy. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary
@@ -708,74 +773,33 @@ the supervisor is not allowed to decide.
 <!-- P7-EVIDENCE-RECONCILIATION:START -->
 ## Evidence reconciliation (2026-07-16)
 
-This chapter owns **45** structured claim atoms in `CF-02`. The
-frozen repository-wide terminal audit records 45 `blocked_after_full_attempt`. Its core
-atom `scalable-oversight-and-adversarial-ai-control.core` remains at `argument` with terminal
-disposition `blocked_after_full_attempt`. The authoritative per-atom rows
-are the `scalable-oversight-and-adversarial-ai-control` slice of
-`experiments/claim_family_terminal_coverage/results/result.json`; this summary
-does not replace that ledger.
+The invariant protocol, field meanings, and inference limits are stated once in
+[Living Book Methodology](living-book-methodology.qmd#chapter-evidence-packet-contract).
+This packet contains only the chapter-specific projection; its authoritative
+per-atom rows are the `scalable-oversight-and-adversarial-ai-control` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`.
 
 ::: {.asi-human-only}
-### What the evidence now says
-
-The chapter's core remains **blocked after full attempt**
-at `argument` support. Across its 45 structured claims,
-45 still lack required proof lanes,
-0 were narrowed, and
-0 received only a bounded subordinate
-promotion. No chapter-core claim moved upward.
-
-The strongest relevant family attempt was **Safety-critical lifecycle consumer trace**. It gives
-this family one real success/failure boundary under rejecting controls, but it
-does not prove the rest of this chapter. What worked was limited to its declared
-scope; what failed or remains open is preserved in the blocked and narrowed
-counts above. The decisive boundary is: Finite local fixture consumer only; no authentic deployment, general alignment, evaluator independence, or broad security claim.
-
-The conclusion changes only when new atom-specific work fills the missing
-lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
-evidence transition. Until then, nearby tests, formal models, source counts, and
-the family result cannot substitute for the missing evidence.
+The core remains **blocked after full attempt** at
+`argument` support. The strongest family attempt was
+**Safety-critical lifecycle consumer trace**. Its exact boundary is: Finite local fixture consumer only; no authentic deployment, general alignment, evaluator independence, or broad security claim.
+Across 45 atoms, the terminal ledger records 45 `blocked_after_full_attempt`.
 :::
 
 ::: {.asi-ai-only}
-
-### Evidence packet
-
-| Field | Exact chapter boundary |
+| Chapter-specific field | Value |
 |---|---|
-| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-02` minimum family bundle. |
+| Family / atom denominator | `CF-02` / 45 atoms |
+| Terminal dispositions | 45 `blocked_after_full_attempt` |
+| Core | `scalable-oversight-and-adversarial-ai-control.core`: `blocked_after_full_attempt` at `argument` |
+| Core attempted / missing lanes | `executable`, `formal`, `source-synthesis` / `causal`, `empirical`, `normative`, `transfer` |
 | Attempted local lanes | `executable`, `formal`, `source-synthesis` |
 | Missing or unproved lanes | `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer` |
-| Family-level natural-work or end-to-end bundle | **Safety-critical lifecycle consumer trace** (`end_to_end`): Ten finite lifecycle receipts spanning bounded effects, denials, residual accounting, and safety-critical state transitions. |
+| Strongest family bundle | **Safety-critical lifecycle consumer trace** (`end_to_end`): Ten finite lifecycle receipts spanning bounded effects, denials, residual accounting, and safety-critical state transitions. |
 | Negative controls | five explicit denials with residuals; eight rejecting mutations. |
-| Exact accepted transitions in this chapter | none |
-| Core outcome | `blocked_after_full_attempt` at `argument`; no chapter-core promotion. |
-| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
-| Reproduction path | Replay `scripts/validate_safety_critical_lifecycle_consumer_trace.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
-
-### Worked success, failure, and boundary cases
-
-- **Success case:** the family-level bundle passed its own rejecting validator
-  within this exact scope: Ten finite lifecycle receipts spanning bounded effects, denials, residual accounting, and safety-critical state transitions. This is evidence that the family
-  received a competent attempt, not that every claim in this chapter succeeded.
-- **Failure or non-promotion case:** 45 atoms
-  remain blocked and 0 are narrowed. A
-  green family validator cannot fill their missing lanes or raise the core.
-- **Boundary case:** Finite local fixture consumer only; no authentic deployment, general alignment, evaluator independence, or broad security claim.
-
-### Argument-exit table
-
-| Atom set | Count | Work performed | Terminal reason and next burden |
-|---|---:|---|---|
-| Core: `scalable-oversight-and-adversarial-ai-control.core` | 1 | `executable`, `formal`, `source-synthesis` | `blocked_after_full_attempt`; missing or unproved: `causal`, `empirical`, `normative`, `transfer`. |
-| blocked after full attempt | 45 | `executable`, `formal`, `source-synthesis` | Missing or unproved lanes across this set: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. These are residual proof obligations, not false claims. |
-
-This table is a disposition map, not a promotion quota. The next valid movement
-is atom-specific evidence that fills the named missing lanes, survives relevant
-negative controls, and enters through an accepted evidence transition. Until
-then, source counts, theorem counts, fixtures, validators, or nearby family
-results cannot be used as substitutes.
+| Accepted transitions | none |
+| Maximum inference | Finite local fixture consumer only; no authentic deployment, general alignment, evaluator independence, or broad security claim. |
+| Reproduction / next burden | Replay `scripts/validate_safety_critical_lifecycle_consumer_trace.py` and `scripts/validate_claim_family_terminal_program.py`; fill the named atom-specific lanes under a new prospective protocol. |
 :::
 <!-- P7-EVIDENCE-RECONCILIATION:END -->
 

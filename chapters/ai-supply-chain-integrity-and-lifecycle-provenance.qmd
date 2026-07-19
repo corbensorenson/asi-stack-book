@@ -777,74 +777,33 @@ visible and blocks only the affected consumer path.
 <!-- P7-EVIDENCE-RECONCILIATION:START -->
 ## Evidence reconciliation (2026-07-16)
 
-This chapter owns **69** structured claim atoms in `CF-02`. The
-frozen repository-wide terminal audit records 69 `blocked_after_full_attempt`. Its core
-atom `ai-supply-chain-integrity-and-lifecycle-provenance.core` remains at `argument` with terminal
-disposition `blocked_after_full_attempt`. The authoritative per-atom rows
-are the `ai-supply-chain-integrity-and-lifecycle-provenance` slice of
-`experiments/claim_family_terminal_coverage/results/result.json`; this summary
-does not replace that ledger.
+The invariant protocol, field meanings, and inference limits are stated once in
+[Living Book Methodology](living-book-methodology.qmd#chapter-evidence-packet-contract).
+This packet contains only the chapter-specific projection; its authoritative
+per-atom rows are the `ai-supply-chain-integrity-and-lifecycle-provenance` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`.
 
 ::: {.asi-human-only}
-### What the evidence now says
-
-The chapter's core remains **blocked after full attempt**
-at `argument` support. Across its 69 structured claims,
-69 still lack required proof lanes,
-0 were narrowed, and
-0 received only a bounded subordinate
-promotion. No chapter-core claim moved upward.
-
-The strongest relevant family attempt was **Safety-critical lifecycle consumer trace**. It gives
-this family one real success/failure boundary under rejecting controls, but it
-does not prove the rest of this chapter. What worked was limited to its declared
-scope; what failed or remains open is preserved in the blocked and narrowed
-counts above. The decisive boundary is: Finite local fixture consumer only; no authentic deployment, general alignment, evaluator independence, or broad security claim.
-
-The conclusion changes only when new atom-specific work fills the missing
-lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
-evidence transition. Until then, nearby tests, formal models, source counts, and
-the family result cannot substitute for the missing evidence.
+The core remains **blocked after full attempt** at
+`argument` support. The strongest family attempt was
+**Safety-critical lifecycle consumer trace**. Its exact boundary is: Finite local fixture consumer only; no authentic deployment, general alignment, evaluator independence, or broad security claim.
+Across 69 atoms, the terminal ledger records 69 `blocked_after_full_attempt`.
 :::
 
 ::: {.asi-ai-only}
-
-### Evidence packet
-
-| Field | Exact chapter boundary |
+| Chapter-specific field | Value |
 |---|---|
-| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-02` minimum family bundle. |
+| Family / atom denominator | `CF-02` / 69 atoms |
+| Terminal dispositions | 69 `blocked_after_full_attempt` |
+| Core | `ai-supply-chain-integrity-and-lifecycle-provenance.core`: `blocked_after_full_attempt` at `argument` |
+| Core attempted / missing lanes | `source-synthesis` / `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer` |
 | Attempted local lanes | `source-synthesis` |
 | Missing or unproved lanes | `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer` |
-| Family-level natural-work or end-to-end bundle | **Safety-critical lifecycle consumer trace** (`end_to_end`): Ten finite lifecycle receipts spanning bounded effects, denials, residual accounting, and safety-critical state transitions. |
+| Strongest family bundle | **Safety-critical lifecycle consumer trace** (`end_to_end`): Ten finite lifecycle receipts spanning bounded effects, denials, residual accounting, and safety-critical state transitions. |
 | Negative controls | five explicit denials with residuals; eight rejecting mutations. |
-| Exact accepted transitions in this chapter | none |
-| Core outcome | `blocked_after_full_attempt` at `argument`; no chapter-core promotion. |
-| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
-| Reproduction path | Replay `scripts/validate_safety_critical_lifecycle_consumer_trace.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
-
-### Worked success, failure, and boundary cases
-
-- **Success case:** the family-level bundle passed its own rejecting validator
-  within this exact scope: Ten finite lifecycle receipts spanning bounded effects, denials, residual accounting, and safety-critical state transitions. This is evidence that the family
-  received a competent attempt, not that every claim in this chapter succeeded.
-- **Failure or non-promotion case:** 69 atoms
-  remain blocked and 0 are narrowed. A
-  green family validator cannot fill their missing lanes or raise the core.
-- **Boundary case:** Finite local fixture consumer only; no authentic deployment, general alignment, evaluator independence, or broad security claim.
-
-### Argument-exit table
-
-| Atom set | Count | Work performed | Terminal reason and next burden |
-|---|---:|---|---|
-| Core: `ai-supply-chain-integrity-and-lifecycle-provenance.core` | 1 | `source-synthesis` | `blocked_after_full_attempt`; missing or unproved: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. |
-| blocked after full attempt | 69 | `source-synthesis` | Missing or unproved lanes across this set: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. These are residual proof obligations, not false claims. |
-
-This table is a disposition map, not a promotion quota. The next valid movement
-is atom-specific evidence that fills the named missing lanes, survives relevant
-negative controls, and enters through an accepted evidence transition. Until
-then, source counts, theorem counts, fixtures, validators, or nearby family
-results cannot be used as substitutes.
+| Accepted transitions | none |
+| Maximum inference | Finite local fixture consumer only; no authentic deployment, general alignment, evaluator independence, or broad security claim. |
+| Reproduction / next burden | Replay `scripts/validate_safety_critical_lifecycle_consumer_trace.py` and `scripts/validate_claim_family_terminal_program.py`; fill the named atom-specific lanes under a new prospective protocol. |
 :::
 <!-- P7-EVIDENCE-RECONCILIATION:END -->
 

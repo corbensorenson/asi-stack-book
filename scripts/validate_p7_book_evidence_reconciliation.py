@@ -70,6 +70,10 @@ AMENDMENT_APPENDIX_DIGESTS = {
 }
 
 HISTORICAL_PACKET_DIGESTS_SHA256 = "83616012a3a9a9263f4a978ad1d5d2c7f3bca09b7ca9e7ce25621b7a64d72a68"
+# P7.1a centralizes the invariant packet prose while preserving every
+# activation-era chapter's data-bearing projection. Historical bytes remain
+# pinned above; this digest governs the compact live projections only.
+LIVE_COMPACT_PACKET_DIGESTS_SHA256 = "9ec4eea98ad28623458630a098ac6e0f67ebd622d532a58b79b02c1f4f8a68dd"
 LINEAGE_LOCK_FILE_SHA256 = "8e2b683aea65c05f1cff216cf569343de2b6570ded40a2c74c7ee0fa4759b45b"
 LINEAGE_LOCK_SEMANTIC_SHA256 = "7ce4f2c88b86488f78d4e0d4e7890cd89d3e76b4407984ba534dfb1f0b248618"
 IMMUTABLE_ARTIFACT_DIGESTS = {
@@ -443,12 +447,23 @@ def current_errors(data: dict[str, Any]) -> list[str]:
             continue
         packet = text[text.index(P7_START) : text.index(P7_END) + len(P7_END)]
         packet_digests[str(chapter_id)] = sha_bytes(packet.encode("utf-8"))
-        if any(
-            packet.count(heading) != 1
-            for heading in ("### What the evidence now says", "### Evidence packet", "### Argument-exit table")
-        ):
+        required_live_fragments = (
+            "## Evidence reconciliation (2026-07-16)",
+            "living-book-methodology.qmd#chapter-evidence-packet-contract",
+            "| Chapter-specific field | Value |",
+            "| Family / atom denominator |",
+            "| Terminal dispositions |",
+            "| Core |",
+            "| Core attempted / missing lanes |",
+            "| Strongest family bundle |",
+            "| Negative controls |",
+            "| Accepted transitions |",
+            "| Maximum inference |",
+            "| Reproduction / next burden |",
+        )
+        if any(packet.count(fragment) != 1 for fragment in required_live_fragments):
             out.append(f"current historical chapter P7 packet shape drifted: {chapter_id}")
-    if semantic_sha(packet_digests) != HISTORICAL_PACKET_DIGESTS_SHA256:
+    if semantic_sha(packet_digests) != LIVE_COMPACT_PACKET_DIGESTS_SHA256:
         out.append("current historical P7 packet bytes drifted")
     for chapter_id in live_ids - historical_ids:
         text = data["chapter_texts"].get(str(chapter_id), "")

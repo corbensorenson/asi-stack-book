@@ -62,15 +62,6 @@ def build_block(chapter_id: str, family_id: str, rows: list[dict], bundle: dict)
     attempted = sorted({lane for row in rows for lane in row.get("attempted_local_lanes", [])})
     missing = sorted({lane for row in rows for lane in row.get("missing_or_unproved_lanes", [])})
     accepted = sorted({row["accepted_transition_ref"] for row in rows if row.get("accepted_transition_ref")})
-    state_rows = [row_for_state(state, rows) for state in [
-        "promoted_at_bounded_scope",
-        "narrowed_after_full_attempt",
-        "refuted_after_full_attempt",
-        "deprecated_after_full_attempt",
-        "retained_after_full_attempt",
-        "blocked_after_full_attempt",
-    ]]
-    state_rows = [row for row in state_rows if row]
     p6 = ""
     if chapter_id == "replaceable-cognitive-substrates-beyond-transformer-monoculture":
         p6 = (
@@ -85,74 +76,33 @@ def build_block(chapter_id: str, family_id: str, rows: list[dict], bundle: dict)
     return f"""{START}
 ## Evidence reconciliation (2026-07-16)
 
-This chapter owns **{len(rows)}** structured claim atoms in `{family_id}`. The
-frozen repository-wide terminal audit records {count_text(counts)}. Its core
-atom `{core['atom_id']}` remains at `{core['support_state']}` with terminal
-disposition `{core['terminal_disposition']}`. The authoritative per-atom rows
-are the `{chapter_id}` slice of
-`experiments/claim_family_terminal_coverage/results/result.json`; this summary
-does not replace that ledger.{p6}
+The invariant protocol, field meanings, and inference limits are stated once in
+[Living Book Methodology](living-book-methodology.qmd#chapter-evidence-packet-contract).
+This packet contains only the chapter-specific projection; its authoritative
+per-atom rows are the `{chapter_id}` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`.{p6}
 
 ::: {{.asi-human-only}}
-### What the evidence now says
-
-The chapter's core remains **{core['terminal_disposition'].replace('_', ' ')}**
-at `{core['support_state']}` support. Across its {len(rows)} structured claims,
-{counts['blocked_after_full_attempt']} still lack required proof lanes,
-{counts['narrowed_after_full_attempt']} were narrowed, and
-{counts['promoted_at_bounded_scope']} received only a bounded subordinate
-promotion. No chapter-core claim moved upward.
-
-The strongest relevant family attempt was **{bundle['bundle_name']}**. It gives
-this family one real success/failure boundary under rejecting controls, but it
-does not prove the rest of this chapter. What worked was limited to its declared
-scope; what failed or remains open is preserved in the blocked and narrowed
-counts above. The decisive boundary is: {bundle['terminal_boundary']}
-
-The conclusion changes only when new atom-specific work fills the missing
-lanes—{prose_list(missing)}—under a prospective protocol and an accepted
-evidence transition. Until then, nearby tests, formal models, source counts, and
-the family result cannot substitute for the missing evidence.
+The core remains **{core['terminal_disposition'].replace('_', ' ')}** at
+`{core['support_state']}` support. The strongest family attempt was
+**{bundle['bundle_name']}**. Its exact boundary is: {bundle['terminal_boundary']}
+Across {len(rows)} atoms, the terminal ledger records {count_text(counts)}.
 :::
 
 ::: {{.asi-ai-only}}
-
-### Evidence packet
-
-| Field | Exact chapter boundary |
+| Chapter-specific field | Value |
 |---|---|
-| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `{family_id}` minimum family bundle. |
+| Family / atom denominator | `{family_id}` / {len(rows)} atoms |
+| Terminal dispositions | {count_text(counts)} |
+| Core | `{core['atom_id']}`: `{core['terminal_disposition']}` at `{core['support_state']}` |
+| Core attempted / missing lanes | {prose_list(core.get('attempted_local_lanes', []))} / {prose_list(core.get('missing_or_unproved_lanes', []))} |
 | Attempted local lanes | {prose_list(attempted)} |
 | Missing or unproved lanes | {prose_list(missing)} |
-| Family-level natural-work or end-to-end bundle | **{bundle['bundle_name']}** (`{bundle['bundle_kind']}`): {bundle['scope']} |
+| Strongest family bundle | **{bundle['bundle_name']}** (`{bundle['bundle_kind']}`): {bundle['scope']} |
 | Negative controls | {'; '.join(bundle['negative_controls'])}. |
-| Exact accepted transitions in this chapter | {prose_list(accepted)} |
-| Core outcome | `{core['terminal_disposition']}` at `{core['support_state']}`; no chapter-core promotion. |
-| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
-| Reproduction path | Replay `{bundle['validator_path']}` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
-
-### Worked success, failure, and boundary cases
-
-- **Success case:** the family-level bundle passed its own rejecting validator
-  within this exact scope: {bundle['scope']} This is evidence that the family
-  received a competent attempt, not that every claim in this chapter succeeded.
-- **Failure or non-promotion case:** {counts['blocked_after_full_attempt']} atoms
-  remain blocked and {counts['narrowed_after_full_attempt']} are narrowed. A
-  green family validator cannot fill their missing lanes or raise the core.
-- **Boundary case:** {bundle['terminal_boundary']}
-
-### Argument-exit table
-
-| Atom set | Count | Work performed | Terminal reason and next burden |
-|---|---:|---|---|
-| Core: `{core['atom_id']}` | 1 | {prose_list(core.get('attempted_local_lanes', []))} | `{core['terminal_disposition']}`; missing or unproved: {prose_list(core.get('missing_or_unproved_lanes', []))}. |
-{chr(10).join(state_rows)}
-
-This table is a disposition map, not a promotion quota. The next valid movement
-is atom-specific evidence that fills the named missing lanes, survives relevant
-negative controls, and enters through an accepted evidence transition. Until
-then, source counts, theorem counts, fixtures, validators, or nearby family
-results cannot be used as substitutes.
+| Accepted transitions | {prose_list(accepted)} |
+| Maximum inference | {bundle['terminal_boundary']} |
+| Reproduction / next burden | Replay `{bundle['validator_path']}` and `scripts/validate_claim_family_terminal_program.py`; fill the named atom-specific lanes under a new prospective protocol. |
 :::
 {END}
 """

@@ -88,6 +88,9 @@ def chapter_paths() -> list[str]:
 
 def audit() -> dict:
     chapters = chapter_paths()
+    methodology_text = (ROOT / "chapters/living-book-methodology.qmd").read_text(encoding="utf-8")
+    methodology_normalized = re.sub(r"\s+", " ", methodology_text)
+    centralized_boundary = "These are residual proof obligations, not false claims."
     paths = sorted(set(PUBLIC_SURFACES + chapters))
     records = []
     forbidden_hits = []
@@ -115,8 +118,12 @@ def audit() -> dict:
         for key, count in counts.items():
             term_counts[key] += count
         if relative in chapters and "blocked_after_full_attempt" in text:
-            required_boundary = "These are residual proof obligations, not false claims."
-            if required_boundary not in text:
+            has_local_boundary = centralized_boundary in normalized_text
+            has_centralized_boundary = (
+                "living-book-methodology.qmd#chapter-evidence-packet-contract" in text
+                and centralized_boundary in methodology_normalized
+            )
+            if not (has_local_boundary or has_centralized_boundary):
                 blocked_boundary_failures.append(relative)
         records.append({
             "path": relative,

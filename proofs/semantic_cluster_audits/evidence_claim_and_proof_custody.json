@@ -1,0 +1,120 @@
+{
+  "schema_version": "asi_stack.semantic_proof_cluster_audit.v1",
+  "cluster_id": "evidence_claim_and_proof_custody",
+  "packet_id": "P4-C1-evidence-claim-and-proof-custody-semantic-audit",
+  "state": "adequate",
+  "scope": "bounded_finite_custody_semantics",
+  "module_count": 4,
+  "public_target_count": 16,
+  "module_dispositions": [
+    {
+      "module": "AsiStackProofs.EvidenceStates",
+      "path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "disposition": "reclassify",
+      "public_target_count": 7,
+      "theorem_declaration_count": 31,
+      "plain_language_proposition": "A versioned evidence-state request can reach an accepted bounded transition only when its claim identity, scope, declared effect, review, state-specific evidence, negative-evidence and downgrade or terminal conditions, changelog, and non-claim boundary follow the modeled route; otherwise the route names the missing obligation.",
+      "modeled_state": "Nine support states, five transition effects, a transition-review record, state-specific evidence availability, terminal and downgrade semantics, and finite bridge summaries for current repository audits.",
+      "assumptions": [
+        "Record fields, evidence references, review status, and state labels are truthful inputs.",
+        "The route priority and RequiredEvidence mapping are complete for the declared finite policy.",
+        "The Lean model does not inspect artifact content or execute the external audits it summarizes."
+      ],
+      "countermodels": [
+        "An upward transition without accepted review routes to requestAcceptedReview.",
+        "A synthetic-test-backed request without a test run routes to requestRequiredEvidence.",
+        "A downward or terminal transition without negative evidence, trigger, matching effect, changelog, or non-claim boundary is rejected or narrowed."
+      ],
+      "consumers": [
+        "scripts/validate_evidence_bundle_completeness_probe.py",
+        "scripts/validate_claim_ledger_completeness_audit.py",
+        "scripts/validate_accepted_transition_review_audit.py",
+        "scripts/validate_claim_state_transition_bridge.py"
+      ],
+      "mutation_evidence": "Four independent deterministic consumers reject 7, 7, 7, and 6 declared invalid controls respectively; the cluster validator also mutates module identity, proposition, countermodels, consumers, and inference ceilings.",
+      "maximum_inference": "Adequate only as finite evidence-transition policy, route, and repository-audit bridge semantics. It does not establish evidence truth, reviewer competence or independence, source interpretation, artifact validity, open-world soundness, runtime enforcement, or support movement. The direct conjunction projection is reclassified as lineage rather than semantic evidence."
+    },
+    {
+      "module": "AsiStackProofs.ClaimLedgerRefinement",
+      "path": "lean/AsiStackProofs/ClaimLedgerRefinement.lean",
+      "disposition": "adequate",
+      "public_target_count": 4,
+      "theorem_declaration_count": 12,
+      "plain_language_proposition": "A single-claim append-only revision lifecycle preserves exact claim identity and external-effect count, admits an append only from an exact base with evidence-owner custody and required contradiction, dependency, residual, migration, and history records, advances the ledger exactly once, and reaches surface acknowledgment only after exact materialization.",
+      "modeled_state": "Five lifecycle stages, seventeen routes, immutable claim identity, semantic and ontology versions, head and append counts, contradiction state, evidence-owner receipt, history, dependency, residual, migration, materialized view, and surface acknowledgment.",
+      "assumptions": [
+        "Identifiers, digests, evidence-owner receipts, dependencies, migrations, and surface acknowledgments are truthful.",
+        "Digest collision resistance and concurrent event-store behavior are outside the model.",
+        "The route fields are sufficient for this single-claim lifecycle."
+      ],
+      "countermodels": [
+        "A stale base or ledger self-approval is rejected.",
+        "Upward revision with an open contradiction is blocked; missing evidence-owner custody is handed off rather than accepted.",
+        "Ontology change without migration custody and acknowledgment before materialization are rejected."
+      ],
+      "consumers": [
+        "scripts/validate_claim_ledger_refinement.py",
+        "experiments/claim_ledger_refinement/results/2026-07-15-local.json",
+        "schemas/claim_ledger_refinement.schema.json"
+      ],
+      "mutation_evidence": "The independent consumer covers all 17 routes, the 5/7 revision fixtures and 1/11 historical lifecycle, and rejects 29 identity, version, history, contradiction, ownership, migration, surface, order, and acknowledgment mutations.",
+      "maximum_inference": "Adequate for the represented reachable append-only lifecycle, route priority, identity/history custody, exact append accounting, and authority separation. It does not establish natural claim extraction, semantic equivalence, evidence or reviewer quality, contradiction discovery, concurrency, persistence, causal benefit, transfer, or chapter-core support."
+    },
+    {
+      "module": "AsiStackProofs.ProofCarryingClaimsRefinement",
+      "path": "lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean",
+      "disposition": "adequate",
+      "public_target_count": 3,
+      "theorem_declaration_count": 11,
+      "plain_language_proposition": "A frozen claim target can move through artifact binding, verifier execution, bounded adjudication, and owner writeback only with exact target, interpretation, artifact, verifier, trusted-base, attempt-history, semantic-review, dossier, dissent, limitation, residual, and authority custody; accepted steps preserve identity, add one receipt, and cannot assign support or an external effect.",
+      "modeled_state": "Six stages, twenty-three routes, exact target and artifact bindings, verifier result distinct from semantic adequacy, risk and tribunal requirements, attempt history, dissent, limitations, residuals, owner handoff, receipt count, support-assignment count, and external-effect count.",
+      "assumptions": [
+        "Identifiers, digests, artifact presence, verifier result, semantic review, trusted base, dossier quality, and owner receipt are truthful inputs.",
+        "Verifier soundness, reviewer independence, and semantic equivalence are not derived.",
+        "The route ordering is the declared policy for one verification event."
+      ],
+      "countermodels": [
+        "A passed verifier without artifact references and a negative result without attempt history are rejected.",
+        "A negative result cannot propose promotion, and a mismatch cannot bypass tribunal effect.",
+        "An unverified pass, high-risk result without an independent dossier, or writeback requesting support assignment is blocked."
+      ],
+      "consumers": [
+        "scripts/validate_proof_carrying_claims_refinement.py",
+        "experiments/proof_carrying_claims_refinement/results/2026-07-15-local.json",
+        "schemas/proof_carrying_claims_refinement.schema.json"
+      ],
+      "mutation_evidence": "The independent consumer covers all 23 routes, consumes 3/5 proof fixtures and 2/7 adversarial-dossier cases, and rejects 36 target, interpretation, artifact, verifier, result, dossier, dissent, limitation, residual, writeback, support, and effect mutations.",
+      "maximum_inference": "Adequate for the represented target-specific verification lifecycle, binding custody, negative-result handling, receipt accounting, and authority separation. It does not establish target interpretation, artifact or source truth, proof or verifier soundness, reviewer competence or independence, verdict quality, claim truth, useful outcomes, safety, transfer, or chapter-core support."
+    },
+    {
+      "module": "AsiStackProofs.ProofEnvelope",
+      "path": "lean/AsiStackProofs/ProofEnvelope.lean",
+      "disposition": "reclassify",
+      "public_target_count": 2,
+      "theorem_declaration_count": 7,
+      "plain_language_proposition": "Within the finite proof-envelope record, contradictions rule out implemented status when a module is missing or a build failed, non-Lean artifacts cannot be labeled Lean proofs, support promotion is invalid without an accepted transition and bounded semantic and non-claim records, and external theorem references require exact identity and scope boundaries.",
+      "modeled_state": "Proof-target status with module/build flags plus artifact lane, verifier result, semantic-adequacy label, support-effect request, accepted-transition flag, consumer match, limitations, non-claims, and external theorem identity fields.",
+      "assumptions": [
+        "All record fields are truthful and the bounded predicates are complete for the declared admission decision.",
+        "Module existence, build success, theorem semantics, external theorem identity, and consumer effects are not checked by Lean itself.",
+        "The positive implemented-target and non-operational-routing theorems are direct projections from assumed predicates."
+      ],
+      "countermodels": [
+        "Implemented status with a missing module or failing build contradicts ImplementedTargetValid.",
+        "A non-Lean artifact carrying a Lean-proof claim is rejected.",
+        "Support promotion without transition, adequate finite semantics, limitations, non-claims, or consumer match is rejected; external references without identifiers or boundaries are rejected."
+      ],
+      "consumers": [
+        "scripts/validate_proof_readiness.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "proofs/proof_manifest.json"
+      ],
+      "mutation_evidence": "Repository proof-readiness and artifact-audit validators exercise the executable manifest surface; this cluster validator rejects missing module, countermodel, consumer, and maximum-inference records. There is no checked Lean-to-runtime refinement, so the positive projection theorems are reclassified rather than credited as enforcement.",
+      "maximum_inference": "Retain only as finite proof-artifact admission countermodels and specification-layer policy. It does not establish that files exist, builds ran, theorems are true or semantically adequate, external references resolve, support transitions are enforced, consumers obey the envelope, or any empirical or safety claim holds."
+    }
+  ],
+  "cluster_maximum_inference": "The cluster is adequate at bounded finite custody semantics after reclassifying direct projections and non-executable proof-envelope rules. It proves no claim truth, evidence truth, verifier soundness, reviewer quality, deployed enforcement, empirical behavior, safety, transfer, SOTA, AGI, ASI, or support-state movement.",
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "publication_effect": "none"
+}

@@ -20,6 +20,7 @@ primary_sources:
   - "ext_learned_optimization_risks_2019"
   - "ext_optimal_policies_power_2019"
   - "ext_goodhart_variants_2018"
+  - "ext_gradual_disempowerment_2025"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -38,13 +39,13 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
 | Last updated | 2026-07-14 |
-| Primary source records | `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`, `vcm_editable`, `moecot`, `ext_concrete_ai_safety_2016`, `ext_goal_misgeneralization_2022`, `ext_learned_optimization_risks_2019`, `ext_optimal_policies_power_2019`, `ext_goodhart_variants_2018` |
+| Primary source records | `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`, `vcm_editable`, `moecot`, `ext_concrete_ai_safety_2016`, `ext_goal_misgeneralization_2022`, `ext_learned_optimization_risks_2019`, `ext_optimal_policies_power_2019`, `ext_goodhart_variants_2018`, `ext_gradual_disempowerment_2025` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `scf`, `vcm_public`, `talos`; supporting: `spinoza`, `field_of_god`, `viea`, `simulation_scaling`; external variants: `ext_concrete_ai_safety_2016`, `ext_goal_misgeneralization_2022`, `ext_learned_optimization_risks_2019`, `ext_optimal_policies_power_2019`, `ext_goodhart_variants_2018`; connector/recovery: `vcm_editable`, `moecot` |
-| Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`; connector-only/source-note mapped: `vcm_editable`, `moecot`; external-literature source-note mapped: `ext_concrete_ai_safety_2016`, `ext_goal_misgeneralization_2022`, `ext_learned_optimization_risks_2019`, `ext_optimal_policies_power_2019`, `ext_goodhart_variants_2018` |
+| Source queue | primary: `scf`, `vcm_public`, `talos`; supporting: `spinoza`, `field_of_god`, `viea`, `simulation_scaling`; external variants: `ext_concrete_ai_safety_2016`, `ext_goal_misgeneralization_2022`, `ext_learned_optimization_risks_2019`, `ext_optimal_policies_power_2019`, `ext_goodhart_variants_2018`, `ext_gradual_disempowerment_2025`; connector/recovery: `vcm_editable`, `moecot` |
+| Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`; connector-only/source-note mapped: `vcm_editable`, `moecot`; external-literature source-note mapped: `ext_concrete_ai_safety_2016`, `ext_goal_misgeneralization_2022`, `ext_learned_optimization_risks_2019`, `ext_optimal_policies_power_2019`, `ext_goodhart_variants_2018`, `ext_gradual_disempowerment_2025` |
 | Test state | `failure_boundary_map.valid.json` passes protocol fixture validation with failure class, affected contract refs, promotion blocker, source refs, support-state effect, and non-claims, and `AsiStackProofs.FailureModes` builds locally with finite invariant, governance-failure, incident-route, and recurrence-escalation predicates; no runtime authority gate, context-admission detector, evaluator-independence probe, claim-verification harness, recurrence detector, or deployed failure detector has run. |
-| External taxonomy bridge | The chapter maps stack terms to concrete AI safety accident risks, goal misgeneralization, learned optimization, power-seeking/option preservation, and Goodhart/proxy-failure families; this is source-noted positioning only. |
+| External taxonomy bridge | The chapter maps stack terms to concrete AI safety accident risks, goal misgeneralization, learned optimization, power-seeking/option preservation, Goodhart/proxy-failure, and gradual-disempowerment families; this is source-noted positioning only. |
 
 ## Drafting guardrail
 
@@ -343,6 +344,63 @@ This failure-radar layer is still an architectural safety discipline. Its suppor
 
 These proof targets are implemented only over finite Lean records in `AsiStackProofs.FailureModes`. They prove that a modeled component with a failed required invariant is not promotable, that an unbounded authority field is represented as a governance failure, that four modeled incident states route to review, quarantine, frozen review, or blocked promotion, and that modeled failure recurrence records route missing class, boundary, receipt, owner, containment, residual, learning-path, normalization-guard, review, quarantine, evidence-transition, and non-claim-boundary fields to explicit outcomes. The detector-probe bridge records only that the synthetic fixture contains authority-creep and Goodhart/evaluator-drift incidents, rejected controls, residual boundaries, no support-state effect, and non-claim boundaries. Runtime scenario coverage, evaluator independence, context-pollution containment, claim-verifier quality, recurrence detection, deployed failure detection, and prevention remain executable-test obligations. These hooks do not prove runtime scenario coverage, evaluator independence, context-pollution containment, claim-verifier quality, recurrence detection, deployed failure detection, prevention, mitigation effectiveness, or chapter support-state promotion.
 
+## Gradual disempowerment and option-value loss
+
+Not every loss of control begins with an agent crossing an authority ceiling.
+Human influence can decline through many locally authorized decisions that are
+individually reversible yet collectively difficult to contest or unwind. The
+relevant failure is gradual disempowerment: a sustained reduction in people's
+effective ability to command resources, shape institutions, understand or
+contest decisions, coordinate with one another, and recover meaningful choice.
+It can occur without a sudden capability jump, a coordinated betrayal, or an
+individually power-seeking system.
+
+This pathway is anchored to the existing frozen atoms
+`failure-modes-of-ungoverned-intelligence.core` and
+`failure-modes-of-ungoverned-intelligence.failure_mode.006`, which already
+require explicit boundary records and treat normalized expansion of option
+control as a failure surface. The new source does not retroactively add an atom
+to the protected 3,745-atom terminal denominator. A future evidence epoch may
+split a dedicated gradual-disempowerment atom only through its declared
+amendment and transition rules.
+
+`ext_gradual_disempowerment_2025` develops the systemic argument across three
+coupled domains: economy, culture, and states. Its key distinction is between
+explicit influence, such as voting and consumer choice, and the implicit
+leverage people receive because institutions still depend on human labor and
+cognition. If AI substitutes reduce both forms of dependence, local adoption
+pressure can weaken human influence in one domain while economic, political,
+and cultural feedback accelerates the loss in the others. Aggregate output can
+rise while relative human authority and option value fall.
+
+The failure record therefore cannot be a deployment count or GDP proxy. A
+candidate measurement packet needs domain, affected population, decision
+class, baseline, time horizon, human and AI shares of consequential decisions,
+resource command, contestability, comprehension, exit and reversal capacity,
+distributional effects, cross-domain influence edges, uncertainty, and an
+accountable owner. It must distinguish augmentation from displacement, relative
+from absolute loss, and temporary dependence from plausibly irreversible
+feedback. Leading indicators, thresholds, and intervention triggers must be
+frozen before outcome inspection.
+
+Testing this idea competently is difficult. A toy economy or simulated polity
+can identify a mechanism or falsify a local model, but it cannot establish a
+civilization-scale trajectory. Strong work would combine longitudinal
+institutional data, natural experiments, heterogeneous adoption cohorts,
+causal models with explicit alternative explanations, red-team scenarios for
+cross-system feedback, distribution-sensitive welfare and agency measures,
+and replication across jurisdictions. It should jointly report beneficial
+augmentation, productivity, human voice, resource access, coordination,
+reversibility, governance cost, and the harms caused by false-positive
+intervention.
+
+This section does **not** claim that gradual disempowerment is inevitable, give
+it a probability or date, equate all automation with disempowerment, validate a
+warning threshold, or show that any proposed intervention works. The source is
+a conceptual systemic-risk argument. Its present contribution is narrower: an
+obligation map limited to abrupt takeover misses slow, distributed,
+cross-system erosion of human option value.
+
 ## Source crosswalk
 
 | Source ID | Title | Layer | Planned use | Readiness |
@@ -364,6 +422,15 @@ These proof targets are implemented only over finite Lean records in `AsiStackPr
 
 The crosswalk names the source family for the taxonomy. It does not turn every listed failure into a demonstrated incident or a solved safety property.
 
+### Manifest source assignment reconciliation
+
+These rows keep Failure Modes of Ungoverned Intelligence's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_gradual_disempowerment_2025` | Passage-reviewed comparator: Gradual Disempowerment: Systemic Existential Risks from Incremental AI Development. Adds a slow, distributed failure pathway in which locally rational AI adoption can erode explicit and dependency-mediated human influence across mutually reinforcing economic, cultural, and state systems without requiring a coordinated takeover. | Conceptual systemic-risk argument only; no causal forecast, probability, timeline, validated warning threshold, intervention result, or local ASI Stack detector or mitigation is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Failure Modes of Ungoverned Intelligence gives the stack its obligation map.
@@ -381,75 +448,33 @@ A failure mode should have somewhere to go. If it cannot produce a receipt, owne
 <!-- P7-EVIDENCE-RECONCILIATION:START -->
 ## Evidence reconciliation (2026-07-16)
 
-This chapter owns **32** structured claim atoms in `CF-01`. The
-frozen repository-wide terminal audit records 24 `blocked_after_full_attempt`; 8 `retained_after_full_attempt`. Its core
-atom `failure-modes-of-ungoverned-intelligence.core` remains at `argument` with terminal
-disposition `blocked_after_full_attempt`. The authoritative per-atom rows
-are the `failure-modes-of-ungoverned-intelligence` slice of
-`experiments/claim_family_terminal_coverage/results/result.json`; this summary
-does not replace that ledger.
+The invariant protocol, field meanings, and inference limits are stated once in
+[Living Book Methodology](living-book-methodology.qmd#chapter-evidence-packet-contract).
+This packet contains only the chapter-specific projection; its authoritative
+per-atom rows are the `failure-modes-of-ungoverned-intelligence` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`.
 
 ::: {.asi-human-only}
-### What the evidence now says
-
-The chapter's core remains **blocked after full attempt**
-at `argument` support. Across its 32 structured claims,
-24 still lack required proof lanes,
-0 were narrowed, and
-0 received only a bounded subordinate
-promotion. No chapter-core claim moved upward.
-
-The strongest relevant family attempt was **Governed usefulness confirmatory campaign**. It gives
-this family one real success/failure boundary under rejecting controls, but it
-does not prove the rest of this chapter. What worked was limited to its declared
-scope; what failed or remains open is preserved in the blocked and narrowed
-counts above. The decisive boundary is: Bounded local non-core governance effect only; no family-wide truth, transfer, deployment, or chapter-core promotion.
-
-The conclusion changes only when new atom-specific work fills the missing
-lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
-evidence transition. Until then, nearby tests, formal models, source counts, and
-the family result cannot substitute for the missing evidence.
+The core remains **blocked after full attempt** at
+`argument` support. The strongest family attempt was
+**Governed usefulness confirmatory campaign**. Its exact boundary is: Bounded local non-core governance effect only; no family-wide truth, transfer, deployment, or chapter-core promotion.
+Across 32 atoms, the terminal ledger records 24 `blocked_after_full_attempt`; 8 `retained_after_full_attempt`.
 :::
 
 ::: {.asi-ai-only}
-
-### Evidence packet
-
-| Field | Exact chapter boundary |
+| Chapter-specific field | Value |
 |---|---|
-| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-01` minimum family bundle. |
+| Family / atom denominator | `CF-01` / 32 atoms |
+| Terminal dispositions | 24 `blocked_after_full_attempt`; 8 `retained_after_full_attempt` |
+| Core | `failure-modes-of-ungoverned-intelligence.core`: `blocked_after_full_attempt` at `argument` |
+| Core attempted / missing lanes | `executable`, `formal`, `source-synthesis` / `causal`, `empirical`, `normative`, `transfer` |
 | Attempted local lanes | `executable`, `formal`, `source-synthesis` |
 | Missing or unproved lanes | `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer` |
-| Family-level natural-work or end-to-end bundle | **Governed usefulness confirmatory campaign** (`natural_work`): One fresh 16-task held-out local confirmatory denominator after a separately frozen 40-candidate tuning pool. |
+| Strongest family bundle | **Governed usefulness confirmatory campaign** (`natural_work`): One fresh 16-task held-out local confirmatory denominator after a separately frozen 40-candidate tuning pool. |
 | Negative controls | simple baseline; evidence-freshness ablation; six co-primary checks; validator-owned laundering mutations. |
-| Exact accepted transitions in this chapter | none |
-| Core outcome | `blocked_after_full_attempt` at `argument`; no chapter-core promotion. |
-| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
-| Reproduction path | Replay `scripts/validate_p4_governed_usefulness_confirmatory.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
-
-### Worked success, failure, and boundary cases
-
-- **Success case:** the family-level bundle passed its own rejecting validator
-  within this exact scope: One fresh 16-task held-out local confirmatory denominator after a separately frozen 40-candidate tuning pool. This is evidence that the family
-  received a competent attempt, not that every claim in this chapter succeeded.
-- **Failure or non-promotion case:** 24 atoms
-  remain blocked and 0 are narrowed. A
-  green family validator cannot fill their missing lanes or raise the core.
-- **Boundary case:** Bounded local non-core governance effect only; no family-wide truth, transfer, deployment, or chapter-core promotion.
-
-### Argument-exit table
-
-| Atom set | Count | Work performed | Terminal reason and next burden |
-|---|---:|---|---|
-| Core: `failure-modes-of-ungoverned-intelligence.core` | 1 | `executable`, `formal`, `source-synthesis` | `blocked_after_full_attempt`; missing or unproved: `causal`, `empirical`, `normative`, `transfer`. |
-| retained after full attempt | 8 | `executable`, `formal`, `source-synthesis` | All atom-required local routes were present at the frozen audit boundary, but no accepted upward transition was inferred. |
-| blocked after full attempt | 24 | `executable`, `formal`, `source-synthesis` | Missing or unproved lanes across this set: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. These are residual proof obligations, not false claims. |
-
-This table is a disposition map, not a promotion quota. The next valid movement
-is atom-specific evidence that fills the named missing lanes, survives relevant
-negative controls, and enters through an accepted evidence transition. Until
-then, source counts, theorem counts, fixtures, validators, or nearby family
-results cannot be used as substitutes.
+| Accepted transitions | none |
+| Maximum inference | Bounded local non-core governance effect only; no family-wide truth, transfer, deployment, or chapter-core promotion. |
+| Reproduction / next burden | Replay `scripts/validate_p4_governed_usefulness_confirmatory.py` and `scripts/validate_claim_family_terminal_program.py`; fill the named atom-specific lanes under a new prospective protocol. |
 :::
 <!-- P7-EVIDENCE-RECONCILIATION:END -->
 

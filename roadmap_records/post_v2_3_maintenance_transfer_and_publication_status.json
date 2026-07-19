@@ -1,5 +1,5 @@
 {
-  "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v10",
+  "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v11",
   "roadmap_id": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17",
   "roadmap_path": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
   "snapshot_date": "2026-07-19",
@@ -13,8 +13,8 @@
     "work_in_progress_limit": 2,
     "blocked_lane_consumes_work_in_progress": false,
     "protected_outcome_inspection_allowed": false,
-    "immediate_book_packet": "P7.1a-W1-template-centralization-and-boundary-coverage",
-    "immediate_formal_packet": "P4-C1-evidence-claim-and-proof-custody-semantic-audit",
+    "immediate_book_packet": "P7.1a-W2-opening-variation-and-thesis-depth-leveling",
+    "immediate_formal_packet": "P4-C2-safety-assurance-and-oversight-semantic-audit",
     "first_tranche_completion_order": [
       "white-box-evidence-interpretability-and-activation-governance",
       "governed-world-models-and-reality-grounding",
@@ -94,7 +94,7 @@
     },
     "narrative_quality_gate": {
       "state": "split_lane_active",
-      "case_independent_compression_state": "ready",
+      "case_independent_compression_state": "w1_terminal_w2_ready",
       "flagship_threading_state": "blocked_by_T4",
       "reader_spine_repetition_reduction_target": "15_to_25_percent_diagnostic_not_acceptance_test",
       "requires_chapter_role_classification": true,
@@ -429,12 +429,12 @@
     "release_effect": "none"
   },
   "semantic_proof_cluster_inventory": {
-    "state": "inventory_frozen_audit_pending",
+    "state": "cluster_1_terminal_5_pending",
     "amendment_rule": "dated_machine_validated_amendment_with_terminal_disposition_required",
     "clusters": [
       {
         "id": "evidence_claim_and_proof_custody",
-        "state": "strengthen",
+        "state": "adequate",
         "modules": ["AsiStackProofs.EvidenceStates", "AsiStackProofs.ClaimLedgerRefinement", "AsiStackProofs.ProofCarryingClaimsRefinement", "AsiStackProofs.ProofEnvelope"]
       },
       {

@@ -1,0 +1,86 @@
+{
+  "schema_version": "asi_stack.p7_1a_w1_editorial_boundary_audit.v1",
+  "packet_id": "P7.1a-W1-template-centralization-and-boundary-coverage",
+  "state": "terminal_complete",
+  "baseline_commit": "9418585743e953d0a6c4c78f3c00a5ee2945bbc8",
+  "historical_chapter_count": 55,
+  "protected_terminal_atom_count": 3745,
+  "measurement": {
+    "token_pattern": "[A-Za-z0-9_`'-]+",
+    "n_gram_size": 12,
+    "minimum_chapter_spread": 8,
+    "roadmap_prior_distinct_repeated_12_grams": 1364,
+    "reproduced_baseline_distinct_repeated_12_grams": 1142,
+    "final_distinct_repeated_12_grams": 727,
+    "reproduced_reduction_percent": 36.34,
+    "baseline_word_tokens": 412044,
+    "final_word_tokens": 394332,
+    "word_token_reduction_percent": 4.3,
+    "maximum_chapter_spread_before": 55,
+    "maximum_chapter_spread_after": 55,
+    "interpretation": "The historical roadmap count used an earlier audit implementation; the validator reproduces baseline and final with one declared tokenizer. Maximum spread remains 55 because compact table labels and one methodology link are intentionally shared."
+  },
+  "centralized_contract": {
+    "chapter_id": "living-book-methodology",
+    "anchor": "chapter-evidence-packet-contract",
+    "generator": "scripts/reconcile_p7_chapter_evidence.py",
+    "live_packet_validator": "scripts/validate_p7_book_evidence_reconciliation.py",
+    "authoritative_atom_ledger": "experiments/claim_family_terminal_coverage/results/result.json",
+    "compact_packet_digest": "9ec4eea98ad28623458630a098ac6e0f67ebd622d532a58b79b02c1f4f8a68dd"
+  },
+  "boundary_sections": [
+    {
+      "chapter_id": "scalable-oversight-and-adversarial-ai-control",
+      "heading": "Epistemic security and persuasion defense",
+      "atom_refs": [
+        "scalable-oversight-and-adversarial-ai-control.failure_mode.001"
+      ],
+      "source_ids": [
+        "ext_conversational_persuasion_gpt4_2025",
+        "ext_anthropic_model_persuasiveness_2024",
+        "ext_commercial_persuasion_ai_2026"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "heading": "Gradual disempowerment and option-value loss",
+      "atom_refs": [
+        "failure-modes-of-ungoverned-intelligence.core",
+        "failure-modes-of-ungoverned-intelligence.failure_mode.006"
+      ],
+      "source_ids": [
+        "ext_gradual_disempowerment_2025"
+      ],
+      "support_state_effect": "none"
+    }
+  ],
+  "consolidation_provenance_chapters": [
+    "intent-to-execution-contracts",
+    "spinoza-verification-and-proof-carrying-claims",
+    "virtual-context-abi"
+  ],
+  "meaning_custody": {
+    "unique_claims_deleted": 0,
+    "equations_deleted": 0,
+    "source_assignments_deleted": 0,
+    "protocol_or_proof_boundaries_deleted": 0,
+    "terminal_atom_rows_mutated": 0,
+    "chapter_core_support_movements": 0,
+    "historical_packet_bytes_preserved_in_lineage_lock": true,
+    "live_packets_preserve": [
+      "family_and_atom_denominator",
+      "all_terminal_disposition_counts",
+      "core_atom_and_support_state",
+      "core_and_chapter_attempted_and_missing_lanes",
+      "strongest_family_bundle_scope",
+      "negative_controls",
+      "accepted_transitions",
+      "maximum_inference",
+      "reproduction_and_next_burden"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "publication_effect": "none"
+}
