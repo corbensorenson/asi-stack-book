@@ -13,7 +13,7 @@ It does **not** add proof targets, prove semantic adequacy, promote support stat
 | Proof targets in manifest | 306 |
 | Implemented proof targets | 302 |
 | Planned proof targets | 4 |
-| Lean modules referenced | 66 |
+| Lean modules referenced | 67 |
 | Chapters with proof targets | 59 |
 | Theorem declarations classified | 1324 |
 | Derived/decomposed theorem declarations | 910 |

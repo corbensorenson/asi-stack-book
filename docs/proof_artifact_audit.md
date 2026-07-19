@@ -11,9 +11,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 306 |
-| Manifest status counts | {"implemented": 300, "planned": 6} |
+| Manifest status counts | {"implemented": 302, "planned": 4} |
 | Triage class counts | {"formal-invariant": 306} |
-| Lean modules referenced | 66 |
+| Lean modules referenced | 67 |
 | Chapters with proof targets | 59 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -57,6 +57,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/FailureModes.lean` | 4 | 23 | 0 | 6 | 4 |
 | `lean/AsiStackProofs/FastGenerationRefinement.lean` | 5 | 17 | 0 | 12 | 3 |
 | `lean/AsiStackProofs/GovernanceRights.lean` | 1 | 7 | 0 | 11 | 3 |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | 2 | 9 | 0 | 6 | 2 |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | 6 | 17 | 0 | 10 | 3 |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | 3 | 23 | 0 | 33 | 4 |
 | `lean/AsiStackProofs/IntentContracts.lean` | 1 | 20 | 0 | 2 | 2 |
@@ -125,7 +126,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `fast-generation-architectures` | 5 | 5 | 0 | 0 |
 | `governed-deliberation-and-test-time-scaling` | 10 | 10 | 0 | 0 |
 | `governed-operations-incident-command-and-graceful-degradation` | 2 | 0 | 0 | 0 |
-| `governed-world-models-and-reality-grounding` | 2 | 0 | 0 | 0 |
+| `governed-world-models-and-reality-grounding` | 2 | 2 | 0 | 0 |
 | `human-factors-and-meaningful-control-in-oversight` | 2 | 0 | 0 | 0 |
 | `human-intent-as-a-formal-input` | 4 | 4 | 0 | 0 |
 | `integrated-reference-architecture` | 3 | 3 | 0 | 0 |
@@ -266,8 +267,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:planning.runtime_replan.delta_audit_bridge` | `planning-as-a-control-layer` | `AsiStackProofs.Planning` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:planforge.dag.operational_invariant` | `planning-as-a-control-layer` | `AsiStackProofs.PlanForge` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:planforge.dag.failure_blocks_promotion` | `planning-as-a-control-layer` | `AsiStackProofs.PlanForge` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:world_model.unsupported_rollout_no_authority` | `governed-world-models-and-reality-grounding` | `AsiStackProofs.GovernedWorldModels` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
-| `lean:world_model.reality_residual_forces_route` | `governed-world-models-and-reality-grounding` | `AsiStackProofs.GovernedWorldModels` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:world_model.unsupported_rollout_no_authority` | `governed-world-models-and-reality-grounding` | `AsiStackProofs.GovernedWorldModels` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:world_model.reality_residual_forces_route` | `governed-world-models-and-reality-grounding` | `AsiStackProofs.GovernedWorldModels` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:cognitive_compilation.ir.operational_invariant` | `cognitive-compilation-and-semantic-ir` | `AsiStackProofs.CognitiveCompilationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:cognitive_compilation.ir.failure_blocks_promotion` | `cognitive-compilation-and-semantic-ir` | `AsiStackProofs.CognitiveCompilationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:cognitive_compilation.ir.semantic_lowering_route_envelope` | `cognitive-compilation-and-semantic-ir` | `AsiStackProofs.CognitiveCompilationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |

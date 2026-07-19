@@ -632,7 +632,7 @@ any of those conclusions.
 | Counterfactual intervention test | Compare predicted effects with held-out action interventions while preserving independent environment truth and separate model, policy, observation, and evaluator error. | planned; not implemented or run |
 | Model-update migration trace | Exercise checkpoint replacement, stale branch invalidation, calibration inheritance limits, rollback scope, and unchanged authority ceilings. | planned; not implemented or run |
 
-### Formalization disposition
+## Formalization hooks
 
 Finite formalization is appropriate for two route invariants because their
 objects and consumers can be modeled without pretending to formalize reality.
@@ -647,6 +647,8 @@ rejecting mutations.
 | `lean:world_model.reality_residual_forces_route` | a transition system with material residual and routes for re-estimation, fallback, review, safe hold, or continued model-based execution | a material residual cannot transition directly to continued model-based execution before a bounded response route | the theorem cannot determine whether an observation is true, a residual is material, or the selected recovery is sufficient |
 
 These are consequences of authored finite predicates, not truth certificates.
+The formalization does not prove observation truth, causal grounding,
+calibration validity, model quality, planner utility, or safe control.
 Formalizing causal adequacy, real-world grounding, calibrated uncertainty, or
 the superiority of plural models from uninterpreted predicates would be
 formalization theater. Richer proof targets wait for a semantically adequate
