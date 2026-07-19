@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 import json
 import re
 import subprocess
@@ -569,9 +570,23 @@ def errors(data: dict) -> list[str]:
     for key, expected_value in expected_reflexive_source.items():
         if reflexive_source.get(key) != expected_value:
             out.append(f"Reflexive Router source contract drifted: {key}")
-    for key in ["source_note_path", "backlog_path", "triage_path", "canonical_local_markdown_path", "local_docx_path", "trace_schema_path", "trace_fixture_path", "trace_validator_path"]:
+    for key in ["source_note_path", "backlog_path", "triage_path", "trace_schema_path", "trace_fixture_path", "trace_validator_path"]:
         if not (ROOT / reflexive_source.get(key, "missing")).exists():
             out.append(f"Reflexive Router source artifact is missing: {key}")
+    # The author manuscript is intentionally local-only and ignored because the
+    # contract grants no raw-source publication authority. Validate its custody
+    # digest when present without making a private file a clean-clone/CI gate.
+    for path_key, digest_key in [
+        ("canonical_local_markdown_path", "canonical_local_markdown_sha256"),
+        ("local_docx_path", "local_docx_sha256"),
+    ]:
+        local_source = ROOT / reflexive_source[path_key]
+        if local_source.exists() and (
+            not local_source.is_file()
+            or hashlib.sha256(local_source.read_bytes()).hexdigest()
+            != reflexive_source[digest_key]
+        ):
+            out.append(f"Reflexive Router local source digest drifted: {path_key}")
     for phrase in [
         "Accepted source integration — The Reflexive Router v1.2",
         "fails the new-chapter test",
