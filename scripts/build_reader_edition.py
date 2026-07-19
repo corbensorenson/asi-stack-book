@@ -68,8 +68,14 @@ NON_HEADING_TRANSFORM_KEYS = {
     "core_claim_markers_removed",
     "support_boilerplate_humanized",
     "reader_scaffold_terms_humanized",
+    "reader_chapter_meta_terms_humanized",
     "reader_source_appendix_tables_converted",
 }
+READER_CHAPTER_META_TERM_REPLACEMENTS = [
+    (re.compile(r"\bthis chapter\b", re.IGNORECASE), "this layer"),
+    (re.compile(r"\bthe chapter's\b", re.IGNORECASE), "the layer's"),
+    (re.compile(r"\bthe chapter\b", re.IGNORECASE), "the layer"),
+]
 WORD_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9'_-]*")
 OVERLAY_ACTIONS = {
     "replace_section",
@@ -329,6 +335,21 @@ def humanize_reader_scaffold_terms(text: str) -> tuple[str, int]:
     count = 0
     cleaned = text
     for pattern, replacement in READER_SCAFFOLD_TERM_REPLACEMENTS:
+        def preserve_initial_case(match: re.Match[str]) -> str:
+            if match.group(0)[:1].isupper():
+                return replacement[:1].upper() + replacement[1:]
+            return replacement
+
+        cleaned, replacements = pattern.subn(preserve_initial_case, cleaned)
+        count += replacements
+    return cleaned, count
+
+
+def humanize_reader_chapter_meta_terms(text: str) -> tuple[str, int]:
+    """Remove manuscript-production language from human chapter prose only."""
+    count = 0
+    cleaned = text
+    for pattern, replacement in READER_CHAPTER_META_TERM_REPLACEMENTS:
         def preserve_initial_case(match: re.Match[str]) -> str:
             if match.group(0)[:1].isupper():
                 return replacement[:1].upper() + replacement[1:]
@@ -1100,6 +1121,9 @@ def clean_file(
     cleaned, marker_count = strip_core_claim_markers(cleaned)
     cleaned, support_boilerplate_count = humanize_support_boilerplate(cleaned)
     cleaned, reader_scaffold_terms_count = humanize_reader_scaffold_terms(cleaned)
+    chapter_meta_terms_count = 0
+    if chapter_title:
+        cleaned, chapter_meta_terms_count = humanize_reader_chapter_meta_terms(cleaned)
     cleaned = normalize_reader_spacing(cleaned)
     if chapter_title:
         cleaned = f"# {chapter_title}\n\n{cleaned.lstrip()}"
@@ -1112,6 +1136,8 @@ def clean_file(
         removed["support_boilerplate_humanized"] = support_boilerplate_count
     if reader_scaffold_terms_count:
         removed["reader_scaffold_terms_humanized"] = reader_scaffold_terms_count
+    if chapter_meta_terms_count:
+        removed["reader_chapter_meta_terms_humanized"] = chapter_meta_terms_count
     return removed
 
 
@@ -1207,6 +1233,8 @@ def write_quarto(output_dir: Path, structure: dict, profile: dict) -> None:
         lines.extend([
             "  docx:",
             "    toc: true",
+            "    filters:",
+            "      - assets/reader-limit-diagram-size.lua",
         ])
     if "pdf" in formats:
         lines.extend([
@@ -1217,6 +1245,7 @@ def write_quarto(output_dir: Path, structure: dict, profile: dict) -> None:
             "      - assets/pdf-long-inline-code.tex",
             "    filters:",
             "      - assets/pdf-break-inline-code.lua",
+            "      - assets/reader-limit-diagram-size.lua",
         ])
 
     lines.extend(["", "execute:", "  freeze: auto", ""])

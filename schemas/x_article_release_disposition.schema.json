@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/x_article_release_disposition.schema.json",
+  "title": "X Article Synopsis Release Disposition",
+  "type": "object",
+  "required": [
+    "schema_version", "record_type", "record_date", "roadmap", "priority",
+    "milestones", "decision", "manifest", "article", "header", "draft_id",
+    "draft_url", "public_article_url", "publish_action_taken",
+    "publication_authority", "publication_effect", "support_state_effect",
+    "platform_residuals", "successor", "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.x_article_release_disposition.v1"},
+    "record_type": {"const": "x_article_synopsis_ready_not_published"},
+    "record_date": {"type": "string", "minLength": 1},
+    "roadmap": {"type": "string", "minLength": 1},
+    "priority": {"const": "P9"},
+    "milestones": {"type": "array", "items": {"type": "string"}},
+    "decision": {"type": "string", "minLength": 1},
+    "manifest": {"type": "object"},
+    "article": {"type": "object"},
+    "header": {"type": "object"},
+    "draft_id": {"type": "string", "minLength": 1},
+    "draft_url": {"type": "string", "minLength": 1},
+    "public_article_url": {},
+    "publish_action_taken": {"type": "boolean"},
+    "publication_authority": {"type": "string", "minLength": 1},
+    "publication_effect": {"type": "string", "minLength": 1},
+    "support_state_effect": {"type": "string", "minLength": 1},
+    "platform_residuals": {"type": "array", "items": {"type": "string"}},
+    "successor": {"type": "string", "minLength": 1},
+    "non_claims": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

@@ -1,7 +1,7 @@
 # Current Release Status
 
 <!-- canonical-status:generated-begin -->
-_Current canonical metrics (generated from machine records): **55 manifest chapters; 319 public-safe records; 55 chapter-core claims; 55/55 chapters externally positioned; 0 promoted core claims.**_
+_Current canonical metrics (generated from machine records): **55 manifest chapters; 319 public-safe records; 55 chapter-core claims; 55/55 chapters externally positioned; 0 promoted core claims; 115/115 accepted transitions identity-resolved (25 direct, 61 subclaim, 29 proxy; 0 parent movements).**_
 <!-- canonical-status:generated-end -->
 
 Last updated: 2026-07-10

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://asi-stack.local/schemas/p2_infrastructure_content_freeze_amendment.schema.json",
+  "title": "P2 infrastructure/content freeze amendment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "recorded_date",
+    "state",
+    "claim_id",
+    "supersedes_policy_interpretation_only",
+    "immutable_history",
+    "infrastructure_phase",
+    "protected_content_boundary",
+    "historical_reconciliation",
+    "current_capacity",
+    "campaign_disposition_custody",
+    "negative_inference_level",
+    "support_state_effect",
+    "release_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.p2_infrastructure_content_freeze_amendment.v1"},
+    "recorded_date": {"const": "2026-07-18"},
+    "state": {"const": "prospectively_frozen_pool_infrastructure_blocked_protected_content_boundary_active"},
+    "claim_id": {"const": "p2.governed_natural_repository_change_admission_joint_frontier"},
+    "supersedes_policy_interpretation_only": {"type": "string", "minLength": 20},
+    "immutable_history": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "string", "minLength": 20}},
+    "infrastructure_phase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["protected_task_content_may_be_opened", "whole_frozen_queue_materialization_required_before_unopened_rank_activation", "candidate_count", "bounded_attempts_per_exact_artifact_and_failure_class", "attempt_receipts_required", "retry_ceilings_frozen_before_attempt", "selection_may_condition_on_pull_speed", "retry_exhaustion_effect", "cost_accounting_effect"],
+      "properties": {
+        "protected_task_content_may_be_opened": {"const": false},
+        "whole_frozen_queue_materialization_required_before_unopened_rank_activation": {"const": true},
+        "candidate_count": {"const": 30},
+        "bounded_attempts_per_exact_artifact_and_failure_class": {"const": 3},
+        "attempt_receipts_required": {"const": true},
+        "retry_ceilings_frozen_before_attempt": {"const": true},
+        "selection_may_condition_on_pull_speed": {"const": false},
+        "retry_exhaustion_effect": {"const": "block_pool_do_not_advance_rank"},
+        "cost_accounting_effect": {"type": "string", "minLength": 20}
+      }
+    },
+    "protected_content_boundary": {"type": "object"},
+    "historical_reconciliation": {"type": "object"},
+    "current_capacity": {"type": "object"},
+    "campaign_disposition_custody": {"type": "object"},
+    "negative_inference_level": {"const": "N0"},
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 20}}
+  }
+}

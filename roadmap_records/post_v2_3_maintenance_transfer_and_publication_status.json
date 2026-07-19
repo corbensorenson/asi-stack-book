@@ -242,15 +242,15 @@
   "attestation": {
     "required_branch": "main",
     "branches_allowed_for_book_work": false,
-    "attested_head": "cd98c0c4bfe69604b2df9b96a7d299ce7346f4cd",
-    "state": "stale_relative_to_working_tree",
-    "working_tree_delta_file_count_at_review": 260,
-    "commit_authority": "none",
-    "push_authority": "none",
-    "required_reconciliation": "commit_bound_main_tree_validation_release_and_public_state_receipt"
+    "attested_head": "882b2a82c8e7af3c90265dd1ff23ecbfacf4b0db",
+    "state": "pushed_ancestral_custody_checkpoint",
+    "working_tree_delta_file_count_at_review": 0,
+    "commit_authority": "owner_authorized_in_thread",
+    "push_authority": "owner_authorized_in_thread",
+    "required_reconciliation": "next_public_release_commit_must_be_clean_and_attested_by_release_receipt"
   },
   "priorities": [
-    {"id": "P0", "state": "waiting_owner_authority", "purpose": "reconcile public truth, claim identity, and main-only commit attestation"},
+    {"id": "P0", "state": "in_progress", "purpose": "reconcile public truth, claim identity, and main-only commit attestation"},
     {"id": "P1", "state": "completed", "purpose": "rehabilitate historical negative results and prevent false-negative inference"},
     {"id": "P2", "state": "in_progress", "purpose": "produce one competence-qualified natural non-authored empirical result"},
     {"id": "P3", "state": "pending", "purpose": "establish independent reproduction, transfer, and honest SOTA challenges"},

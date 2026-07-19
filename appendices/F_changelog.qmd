@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-18 — Round 15 custody, P2 freeze-boundary, proof-depth, and shipping corrective
+
+- Committed and pushed the previously dirty post-v2.3 evidence corpus to
+  `main` at `882b2a82c`, then added a release-tier git-custody validator that
+  prevents modified, staged, or untracked evidence and release records from
+  counting as durable evidence.
+- Added a prospective P2 amendment that permits at most three fully logged
+  setup retries before protected task content opens, makes no-rerun absolute at
+  first content exposure, reinstates rank 5 as infrastructure-pending, blocks
+  rank 6, and records the current pool-wide storage/materialization blocker.
+- Strengthened and explicitly dispositioned the four Round 15 refinement
+  modules with quantified state-preservation, receipt-increment, and authority
+  non-acceptance theorems while preserving their non-empirical inference
+  ceilings.
+- Made the canonical public-status object and generated public readiness block
+  consume the claim-identity graph's 115/115 resolution and graph digest.
+- Reopened reader shipping as an execution obligation: PDF/DOCX layout repair,
+  exact format validation, publication receipts, and clean commit-bound
+  attestation are required rather than another inherited no-release record.
+
 ## 2026-07-18 — Capability compilation and semantic-continuity source integration
 
 - Ingested Corben Sorenson's July 2026 *Deterministic Capability Compilation*

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/p8_terminal_release_record.schema.json",
+  "title": "P8 Reader Evidence Freeze Terminal Record",
+  "type": "object",
+  "required": [
+    "schema_version", "record_type", "record_date", "roadmap", "priority",
+    "milestone", "decision", "manifest", "evidence_freeze",
+    "format_review_matrix", "release_disposition", "chapter_count",
+    "html_page_count", "format_states", "publication_authority",
+    "publication_effect", "release_effect", "support_state_effect", "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.p8_terminal_release_record.v1"},
+    "record_type": {"const": "reader_evidence_freeze_no_public_release"},
+    "record_date": {"type": "string", "minLength": 1},
+    "roadmap": {"type": "string", "minLength": 1},
+    "priority": {"const": "P8"},
+    "milestone": {"const": "M11"},
+    "decision": {"type": "string", "minLength": 1},
+    "manifest": {"type": "object"},
+    "evidence_freeze": {"type": "object"},
+    "format_review_matrix": {"type": "object"},
+    "release_disposition": {"type": "object"},
+    "chapter_count": {"type": "number"},
+    "html_page_count": {"type": "number"},
+    "format_states": {"type": "object"},
+    "publication_authority": {"type": "string", "minLength": 1},
+    "publication_effect": {"type": "string", "minLength": 1},
+    "release_effect": {"type": "string", "minLength": 1},
+    "support_state_effect": {"type": "string", "minLength": 1},
+    "non_claims": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

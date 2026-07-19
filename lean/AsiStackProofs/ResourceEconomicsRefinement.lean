@@ -167,6 +167,32 @@ def route (s : State) (kind : EventKind) (p : Packet) : Route :=
       if !p.acknowledgment then .requestAcknowledgment else if !p.resultDigestBound then .requestResultDigest
       else if !p.cleanup then .requestCleanup else .acceptClosed
 
+def accepted : Route → Bool
+  | .acceptBudgeting | .acceptReservation | .acceptSchedule | .acceptExecution
+  | .acceptVerification | .acceptTransfer | .acceptReconciliation | .acceptClosure
+  | .acceptClosed => true
+  | _ => false
+
+theorem authority_request_never_accepts
+    (s : State) (kind : EventKind) (p : Packet)
+    (h : p.supportPromotionRequested || p.externalEffectRequested = true) :
+    accepted (route s kind p) = false := by
+  by_cases h₁ : kind != expectedKind s.stage
+  · simp [route, h₁, accepted]
+  by_cases h₂ : p.requestDigest != s.requestDigest || p.consumerDigest != s.consumerDigest || p.taskDigest != s.taskDigest
+  · simp [route, h₁, h₂, accepted]
+  by_cases h₃ : p.policyDigest != s.policyDigest || p.rightsDigest != s.rightsDigest
+  · simp [route, h₁, h₂, h₃, accepted]
+  by_cases h₄ : p.resourceDigest != s.resourceDigest
+  · simp [route, h₁, h₂, h₃, h₄, accepted]
+  by_cases h₅ : p.evaluatorDigest != s.evaluatorDigest || p.simulationDigest != s.simulationDigest || p.resultDigest != s.resultDigest
+  · simp [route, h₁, h₂, h₃, h₄, h₅, accepted]
+  by_cases h₆ : p.eventDigest = s.lastEventDigest
+  · simp [route, h₁, h₂, h₃, h₄, h₅, h₆, accepted]
+  cases hs : p.supportPromotionRequested <;>
+    cases he : p.externalEffectRequested <;>
+    simp_all [route, accepted]
+
 def completeState (selectedStage : Stage) : State where
   stage := selectedStage
   requestDigest := 6001

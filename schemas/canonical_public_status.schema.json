@@ -18,6 +18,7 @@
     "counts",
     "claim_state_distribution",
     "transition_counts",
+    "claim_identity",
     "digests",
     "chapter_order",
     "appendix_order",
@@ -82,15 +83,40 @@
       },
       "additionalProperties": false
     },
+    "claim_identity": {
+      "type": "object",
+      "required": [
+        "review_accepted_transition_count",
+        "resolved_transition_count",
+        "unresolved_transition_count",
+        "canonical_atom_count",
+        "direct_atom_relation_count",
+        "subclaim_relation_count",
+        "proxy_relation_count",
+        "parent_support_movements"
+      ],
+      "properties": {
+        "review_accepted_transition_count": {"type": "integer", "minimum": 0},
+        "resolved_transition_count": {"type": "integer", "minimum": 0},
+        "unresolved_transition_count": {"type": "integer", "minimum": 0},
+        "canonical_atom_count": {"type": "integer", "minimum": 1},
+        "direct_atom_relation_count": {"type": "integer", "minimum": 0},
+        "subclaim_relation_count": {"type": "integer", "minimum": 0},
+        "proxy_relation_count": {"type": "integer", "minimum": 0},
+        "parent_support_movements": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
     "digests": {
       "type": "object",
-      "required": ["book_structure_sha256", "source_inventory_sha256", "claim_dispositions_sha256", "release_profiles_sha256", "chapter_order_sha256"],
+      "required": ["book_structure_sha256", "source_inventory_sha256", "claim_dispositions_sha256", "release_profiles_sha256", "chapter_order_sha256", "claim_identity_graph_sha256"],
       "properties": {
         "book_structure_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
         "source_inventory_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
         "claim_dispositions_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
         "release_profiles_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
-        "chapter_order_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        "chapter_order_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "claim_identity_graph_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
       },
       "additionalProperties": false
     },

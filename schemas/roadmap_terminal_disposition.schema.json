@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/roadmap_terminal_disposition.schema.json",
+  "title": "Roadmap Terminal Disposition",
+  "type": "object",
+  "required": [
+    "schema_version", "record_type", "record_date", "roadmap", "status_record",
+    "decision", "completed_priorities", "completed_milestones", "terminal_truth",
+    "reader_evidence_freeze_record", "x_article_record", "successor",
+    "public_release_created", "commit_action_taken", "push_action_taken",
+    "tag_action_taken", "deployment_action_taken", "archive_or_doi_action_taken",
+    "license_change_taken", "x_publish_action_taken", "publication_authority",
+    "release_effect", "support_state_effect", "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.roadmap_terminal_disposition.v1"},
+    "record_type": {"const": "post_v2_3_claim_proof_sota_roadmap_terminal"},
+    "record_date": {"type": "string", "minLength": 1},
+    "roadmap": {"type": "string", "minLength": 1},
+    "status_record": {"type": "string", "minLength": 1},
+    "decision": {"type": "string", "minLength": 1},
+    "completed_priorities": {"type": "array", "items": {"type": "string"}},
+    "completed_milestones": {"type": "array", "items": {"type": "string"}},
+    "terminal_truth": {"type": "object"},
+    "reader_evidence_freeze_record": {"type": "string", "minLength": 1},
+    "x_article_record": {"type": "string", "minLength": 1},
+    "successor": {"type": "object"},
+    "public_release_created": {"type": "boolean"},
+    "commit_action_taken": {"type": "boolean"},
+    "push_action_taken": {"type": "boolean"},
+    "tag_action_taken": {"type": "boolean"},
+    "deployment_action_taken": {"type": "boolean"},
+    "archive_or_doi_action_taken": {"type": "boolean"},
+    "license_change_taken": {"type": "boolean"},
+    "x_publish_action_taken": {"type": "boolean"},
+    "publication_authority": {"type": "string", "minLength": 1},
+    "release_effect": {"type": "string", "minLength": 1},
+    "support_state_effect": {"type": "string", "minLength": 1},
+    "non_claims": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

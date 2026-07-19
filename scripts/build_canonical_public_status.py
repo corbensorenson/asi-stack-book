@@ -30,6 +30,7 @@ STRUCTURE = ROOT / "book_structure.json"
 INVENTORY = ROOT / "sources" / "source_inventory.json"
 DISPOSITIONS = ROOT / "claim_decisions" / "v1_x_core_claim_dispositions.json"
 RELEASE_PROFILES = ROOT / "editions" / "release_profiles.json"
+CLAIM_IDENTITY_GRAPH = ROOT / "evidence_quality" / "claim_identity_graph.json"
 TRANSITION_DIRS = (
     ROOT / "evidence_transitions" / "v1_0_measured",
     ROOT / "evidence_transitions" / "v1_x_measured",
@@ -41,13 +42,17 @@ GENERATED_STATUS_END = "<!-- canonical-status:generated-end -->"
 def public_status_summary_block(status: dict[str, Any]) -> str:
     counts = status["counts"]
     promoted = status["transition_counts"]["promoted_core_claims"]
+    identity = status["claim_identity"]
     return (
         f"{GENERATED_STATUS_BEGIN}\n"
         "_Current canonical metrics (generated from machine records): "
         f"**{counts['chapters']} manifest chapters; {counts['sources']} public-safe records; "
         f"{counts['chapters']} chapter-core claims; "
         f"{counts['externally_positioned_chapters']}/{counts['chapters']} chapters externally positioned; "
-        f"{promoted} promoted core claims.**_\n"
+        f"{promoted} promoted core claims; "
+        f"{identity['resolved_transition_count']}/{identity['review_accepted_transition_count']} accepted transitions identity-resolved "
+        f"({identity['direct_atom_relation_count']} direct, {identity['subclaim_relation_count']} subclaim, "
+        f"{identity['proxy_relation_count']} proxy; {identity['parent_support_movements']} parent movements).**_\n"
         f"{GENERATED_STATUS_END}"
     )
 
@@ -191,12 +196,15 @@ def build_status(
     structure = load_json(STRUCTURE)
     inventory = load_json(INVENTORY)
     dispositions = load_json(DISPOSITIONS)
+    identity_graph = load_json(CLAIM_IDENTITY_GRAPH)
     if not isinstance(config, dict) or not isinstance(structure, dict):
         raise TypeError("public status config and book structure must contain objects")
     if not isinstance(inventory, list):
         raise TypeError("source inventory must contain a list")
     if not isinstance(dispositions, dict) or not isinstance(dispositions.get("summary"), dict):
         raise TypeError("core claim dispositions must contain a summary object")
+    if not isinstance(identity_graph, dict) or not isinstance(identity_graph.get("summary"), dict):
+        raise TypeError("claim identity graph must contain a summary object")
 
     chapters = [
         chapter
@@ -231,6 +239,7 @@ def build_status(
     externally_positioned = sum(1 for row in positioning_rows if row["status"] == "positioned")
     upward, blocks = accepted_transition_counts()
     summary = dispositions["summary"]
+    identity_summary = identity_graph["summary"]
     commit = source_commit_override or source_commit()
     tree_state = source_tree_state_override or source_tree_state()
     if len(commit) != 40 or any(ch not in "0123456789abcdef" for ch in commit):
@@ -270,12 +279,23 @@ def build_status(
             "accepted_non_core_upward_transitions": upward,
             "accepted_blocks_promotion_decisions": blocks,
         },
+        "claim_identity": {
+            "review_accepted_transition_count": int(identity_summary["review_accepted_transition_count"]),
+            "resolved_transition_count": int(identity_summary["resolved_transition_count"]),
+            "unresolved_transition_count": int(identity_summary["unresolved_transition_count"]),
+            "canonical_atom_count": int(identity_summary["canonical_atom_count"]),
+            "direct_atom_relation_count": int(identity_summary["relation_counts"]["atom"]),
+            "subclaim_relation_count": int(identity_summary["relation_counts"]["subclaim_of"]),
+            "proxy_relation_count": int(identity_summary["relation_counts"]["proxy_for"]),
+            "parent_support_movements": 0,
+        },
         "digests": {
             "book_structure_sha256": sha256_file(STRUCTURE),
             "source_inventory_sha256": sha256_file(INVENTORY),
             "claim_dispositions_sha256": sha256_file(DISPOSITIONS),
             "release_profiles_sha256": sha256_file(RELEASE_PROFILES),
             "chapter_order_sha256": sha256_bytes(order_bytes),
+            "claim_identity_graph_sha256": sha256_file(CLAIM_IDENTITY_GRAPH),
         },
         "chapter_order": chapter_order,
         "appendix_order": appendix_order,
@@ -300,7 +320,7 @@ def validate_status_shape(status: dict[str, Any]) -> None:
     required = {
         "schema_version", "status_id", "active_version", "baseline_release", "release_profile",
         "deployment_channel", "site_url", "source_commit", "source_tree_state", "build_context",
-        "build_timestamp", "counts", "claim_state_distribution", "transition_counts", "digests",
+        "build_timestamp", "counts", "claim_state_distribution", "transition_counts", "claim_identity", "digests",
         "chapter_order", "appendix_order", "non_claims",
     }
     missing = sorted(required - set(status))
@@ -318,6 +338,18 @@ def validate_status_shape(status: dict[str, Any]) -> None:
         raise ValueError("chapter and source counts must be positive")
     if not 0 <= int(status["counts"]["externally_positioned_chapters"]) <= chapters:
         raise ValueError("externally positioned chapter count must be within manifest chapter bounds")
+    identity = status["claim_identity"]
+    if identity["resolved_transition_count"] != identity["review_accepted_transition_count"]:
+        raise ValueError("accepted transition identity graph is not fully resolved")
+    if identity["unresolved_transition_count"] != 0 or identity["parent_support_movements"] != 0:
+        raise ValueError("claim identity graph permits unresolved identity or parent support movement")
+    relation_total = (
+        identity["direct_atom_relation_count"]
+        + identity["subclaim_relation_count"]
+        + identity["proxy_relation_count"]
+    )
+    if relation_total != identity["resolved_transition_count"]:
+        raise ValueError("claim identity relation counts do not equal resolved transitions")
 
 
 def main() -> None:

@@ -299,6 +299,18 @@ def applyEvent (state : State) (kind : EventKind) (packet : Packet) : State × R
        readmissionCount := state.readmissionCount + (if route = .acceptReadmission then 1 else 0) }, route)
   else (state, route)
 
+theorem rejected_event_preserves_complete_state
+    (state : State) (kind : EventKind) (packet : Packet)
+    (h : accepted (routeFor state kind packet) = false) :
+    applyEvent state kind packet = (state, routeFor state kind packet) := by
+  simp [applyEvent, h]
+
+theorem accepted_event_increments_receipt_count
+    (state : State) (kind : EventKind) (packet : Packet)
+    (h : accepted (routeFor state kind packet) = true) :
+    (applyEvent state kind packet).1.receiptCount = state.receiptCount + 1 := by
+  simp [applyEvent, h]
+
 def canonicalPacket : Packet := {
   campaignId := 1201, objectiveDigest := 1202, representationDigest := 1203,
   controllerDigest := 1204, taskPolicyDigest := 1205, candidatePolicyDigest := 1206,

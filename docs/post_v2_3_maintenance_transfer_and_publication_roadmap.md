@@ -34,8 +34,10 @@ they earn an N0–N5 classification.
 
 The latest immutable public living-book release remains `v2.3.0`. The current
 55-chapter working book, v2.2 reader evidence freeze, and X Article synopsis are
-newer local artifacts. No commit, push, deployment, release, DOI/archive
-deposit, license grant, or public post is implied by this roadmap.
+newer artifacts. The post-v2.3 evidence corpus was committed and pushed to
+`main` at `882b2a82c` on 2026-07-18. That custody checkpoint is not a new
+living-book or reader release, DOI/archive deposit, license grant, or public
+post.
 
 ## Review adjudication and corrected baseline
 
@@ -53,7 +55,25 @@ current repository truth.
 | Frozen structured denominator | 3,730 activation atoms + 15 reviewed addendum atoms | Campaign claims must not be silently promoted into the atom denominator or chapter cores. |
 | Registry support movement | 2 of 3,730 activation atoms are above argument | Claim-ID reconciliation must report evidence truth without inflating core or atom support. |
 | Formal snapshot | 298 targets, 98 modules, 1,300 theorem declarations; 894 derived/decomposed, 230 direct/projection, 176 unknown/mixed | The old 91/278 count is stale, but syntax classification is not semantic depth; P4 audits meaning, consumers, countermodels, and refinement. |
-| Attested Git state | `main` HEAD `cd98c0c4bfe69604b2df9b96a7d299ce7346f4cd`; 260 changed/untracked files at review | The named attestation is stale relative to the working tree. P0 requires commit-bound reconciliation on `main` when Corben authorizes commit/push. |
+| Attested Git state | Review baseline: `cd98c0c4b` plus 380 dirty paths. Custody checkpoint: pushed `main` commit `882b2a82c`. | P0 now enforces post-commit evidence custody and requires the final remediation checkpoint to be re-attested after every campaign disposition. |
+
+## Round 15 adjudication and required corrective
+
+The 2026-07-18 Round 15 review had four criticisms with teeth. The repository
+adopts them without adopting stale proof counts or pretending blocked work
+completed.
+
+| Criticism | Adjudication | Corrective and terminal criterion |
+|---|---|---|
+| 380 dirty files put irreplaceable evidence at risk | **Accepted and corrected immediately.** | All existing work was committed and pushed to `main` at `882b2a82c`. The release-tier git-custody gate now rejects any modified, staged, or untracked path under `evidence_transitions/`, `evidence_quality/`, or `release_records/`. Every terminal campaign disposition ends in committed custody before it counts. |
+| P2 burned ranks on infrastructure weather before an outcome existed | **Accepted.** | `docs/p2_infrastructure_materialization_and_content_freeze_amendment.md` makes bounded, receipt-complete setup retries legal only before protected task content opens; requires pool-wide infrastructure readiness; blocks rather than advances on setup exhaustion; keeps rank 4 irreversible; reinstates rank 5 as setup-pending; and keeps rank 6 closed. The current 60-GiB host constraint is a named blocker, not a fake slot-1 completion. |
+| Four refinement modules remained silent stubs | **Underlying demand accepted; snapshot stale.** | `docs/round_15_proof_depth_disposition.md` retains the four non-stub finite models, adds quantified state-preservation/receipt or authority non-acceptance theorems, binds consumers and mutations, and keeps their inference ceilings explicit. Wider semantic-depth work remains open. |
+| Repeated no-release records became an avoidance pattern | **Accepted.** | P7 must repair and fully re-render PDF/DOCX, validate EPUB/PDF/DOCX/HTML by exact format-specific gates, publish approved reader artifacts to the existing GitHub Release target, and record deployed/release identities. The X synopsis remains staged. A failed format may remain blocked only with a current exact defect receipt, not an inherited roadmap disposition. |
+
+Appendix C already consumes the claim-identity graph. The canonical public
+status object and generated `publication_readiness.md` block now consume its
+115/115 resolution, 25 direct, 61 subclaim, 29 proxy, and zero-parent-movement
+counts and bind the graph digest.
 
 The KERC result is retained as the observation that its frozen configured
 pipeline failed its preregistered gate on the authored 192-record corpus. Its
@@ -80,9 +100,12 @@ broader architecture unless a competence audit establishes a stronger N-level.
 5. **Historical evidence is immutable but interpretation is revisable.** Failed
    attempts, raw outcomes, instrument defects, inaccessible comparators, and
    platform limitations remain visible with exact lineage.
-6. **No outcome-aware rescue.** Rescue and tuning use development or
-   sacrificial data. Final held-out data is opened once, only after every
-   competence gate passes.
+6. **No outcome-aware rescue.** Infrastructure setup may receive only the
+   prospectively frozen bounded retries in the P2 amendment while protected
+   task content remains unopened. The no-rerun rule becomes absolute at the
+   first protected-content exposure. Rescue and tuning otherwise use
+   development or sacrificial data; final held-out data is opened once only
+   after every competence gate passes.
 7. **No conversational dependency.** Routine work is local or reproducibly
    tooled. Hosted-chat interaction is never a completion gate.
 8. **No external-human prepublication gate.** The roadmap does not require
@@ -143,10 +166,10 @@ support state. `docs/claim_identity_graph_reconciliation.md` exposes the full
 crosswalk, and `scripts/validate_claim_identity_graph.py` rejects twelve
 identity, scope, artifact, and support-laundering mutations.
 
-P0 remains open only for commit-bound `main` reconciliation and attestation,
-which still requires Corben's explicit action-time commit/push authority. The
-current stale-attestation state is reported exactly rather than presented as a
-clean or published checkpoint.
+The first P0 custody checkpoint is complete at pushed `main` commit
+`882b2a82c`. P0 remains continuous: the Round 15 remediation itself requires a
+new clean commit-bound attestation, and the custody gate prevents dirty evidence
+from being counted or released.
 
 ## P1 — Negative-result rehabilitation and false-negative defense
 
@@ -595,15 +618,20 @@ is not a debugging interface.
    synopsis/public surfaces, and `blocked_after_full_attempt` language are
    reconciled across 75 surfaces. KERC is N1, QCSA's two historical refutation
    labels are N2, and no broad or chapter-core negative inference survives.
-4. **In progress:** P2 frontier selection, natural corpus acquisition, the
+4. **Blocked honestly:** P2 frontier selection, natural corpus acquisition, the
    fixed-denominator gold diagnosis, replacement policy, evaluator calibration,
-   resource-semantics repair, and the first five Rust replacement dispositions
-   are complete. Continue slot 1 at frozen rank 6 and qualify the two Go and one
-   Java slots without weakening gates; rerun all twelve twice; then complete
-   independent task review, mechanism activation, strong-model, baseline,
-   sensitivity, and rescue preflights before freezing its final denominator.
-5. Perform semantic audits of the four named refinement modules. Retain only
-   theorem clusters with meaningful models, countermodels, and consumers.
+   and historical ranks 1–5 are preserved. Do not continue at rank 6. Execute
+   the pool-wide infrastructure materialization amendment first; rank 5 is
+   setup-retry-pending because no protected content opened. Only after 30/30
+   exact infrastructure receipts and monitor soak pass may still-unopened
+   content activate. Then qualify all slots, rerun the final twelve twice, and
+   complete independent task review, mechanism activation, strong-model,
+   baseline, sensitivity, and rescue preflights before freezing the final
+   denominator.
+5. **Specific Round 15 proof audit completed:** the four named refinement
+   modules are retained with quantified semantic theorems, route-complete
+   consumers, failed-prefix controls, and explicit non-claims. Continue the
+   wider module-by-module semantic audit; do not use theorem counts as closure.
 6. Design the P5 reference slice around durable identity,
    authority-to-observed-effect linkage, effect-complete rollback, concurrent
    ledgers, revocation, crash recovery, full learning state, and descendant-
@@ -614,10 +642,12 @@ is not a debugging interface.
    foundry lane, and the incremental Platonic World Model semantic-continuity
    lane. Do not allow either new source to inherit evidence from its prose.
 8. Repair PDF pages 48 and 50, then DOCX page 6, before broad format polish.
-   Preserve failing images and compare the exact rebuilt artifacts.
-9. Prepare one commit-bound `main` reconciliation and attestation packet. Do
-   not claim it is committed, pushed, deployed, or public until Corben grants
-   that exact authority and the action succeeds.
+   Preserve failing images, compare exact rebuilt artifacts, visually inspect
+   every PDF/DOCX page, validate EPUB structure and navigation, and publish only
+   the formats that pass their own release gate.
+9. Complete a new commit-bound `main` reconciliation and attestation packet for
+   this remediation. Push `main`, observe CI/Pages, bind the reader Release
+   assets and deployed URLs, and leave no dirty protected evidence surface.
 
 ## Checkpoint receipt
 
@@ -636,14 +666,14 @@ lies.
 
 | Milestone | State | Completion condition |
 |---|---|---|
-| M0 — Truth and identity control | in progress | Public/local truth remains current; all accepted transition IDs resolve; `main` attestation state is exact. |
+| M0 — Truth and identity control | in progress | Identity is complete and the first custody checkpoint is pushed; close only after this remediation has a clean commit-bound attestation and the new custody gate passes. |
 | M1 — Negative-result rehabilitation | completed | All 90 accepted negative/no-change transitions are classified (1 N0, 15 N1, 74 N2, zero N3–N5), and 75 current surfaces including all 55 chapters preserve the resulting ceilings. |
 | M2 — Competent natural empirical result | in progress | A high-value natural, non-authored campaign passes every competence gate and ends with a bounded positive, negative, or inconclusive disposition. |
 | M3 — Reproduction and transfer | pending | Any broadened result has independent reproduction and two prospectively selected materially different transfer settings. |
-| M4 — Semantic formal depth | pending | Consequential theorem clusters have adequate models, countermodels, consumers, and honest inference ceilings; empty stubs are removed or reclassified. |
+| M4 — Semantic formal depth | in progress | The four Round 15 modules are explicitly retained and strengthened; close after every consequential cluster has an adequate model, countermodels, consumers, and honest inference ceiling, with empty stubs removed or reclassified. |
 | M5 — Effect-complete reference | pending | Multi-process authority-to-effect, rollback/residual, full-state, and deletion behavior passes adversarial and recovery tests. |
 | M6 — Renewal discipline | pending | Dated primary-source, comparator, evaluator, and false-negative instrument renewal is current and mapped to claims. |
-| M7 — Reader/publication disposition | pending | Local formats are repaired or exactly bounded; each public product is authorized and published with receipts or honestly remains unreleased. |
+| M7 — Reader/publication disposition | in progress | Repair and visually validate the reader formats, publish each approved artifact to the existing target with exact receipts, and retain any rejected format only with a current defect-bound disposition. |
 | M8 — Successor continuity | pending | Every open item has a terminal disposition and the next exact authority is active. |
 
 ## Definition of done

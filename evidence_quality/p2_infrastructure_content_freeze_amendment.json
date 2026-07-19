@@ -1,0 +1,70 @@
+{
+  "schema_version": "asi_stack.p2_infrastructure_content_freeze_amendment.v1",
+  "recorded_date": "2026-07-18",
+  "state": "prospectively_frozen_pool_infrastructure_blocked_protected_content_boundary_active",
+  "claim_id": "p2.governed_natural_repository_change_admission_joint_frontier",
+  "supersedes_policy_interpretation_only": "evidence_quality/p2_task_qualification_and_replacement_policy.json",
+  "immutable_history": [
+    "evidence_quality/p2_slot1_rank4_task_opening.json",
+    "evidence_quality/p2_slot1_rank5_image_preflight_diagnosis.json"
+  ],
+  "infrastructure_phase": {
+    "protected_task_content_may_be_opened": false,
+    "whole_frozen_queue_materialization_required_before_unopened_rank_activation": true,
+    "candidate_count": 30,
+    "bounded_attempts_per_exact_artifact_and_failure_class": 3,
+    "attempt_receipts_required": true,
+    "retry_ceilings_frozen_before_attempt": true,
+    "selection_may_condition_on_pull_speed": false,
+    "retry_exhaustion_effect": "block_pool_do_not_advance_rank",
+    "cost_accounting_effect": "retain_as_infrastructure_resource_bill_not_claim_result"
+  },
+  "protected_content_boundary": {
+    "trigger": "first_read_decode_application_or_evaluator_exposure",
+    "protected_surfaces": [
+      "problem_statement",
+      "solution_patch",
+      "test_patch",
+      "test_identity",
+      "expected_status",
+      "task_specific_command",
+      "baseline_outcome",
+      "gold_outcome"
+    ],
+    "after_trigger_no_rerun": true,
+    "after_trigger_no_retry_budget_change": true,
+    "after_trigger_no_candidate_skip": true,
+    "after_trigger_no_favorable_replacement": true
+  },
+  "historical_reconciliation": {
+    "rank_4": "content_exposed_irrevocable",
+    "rank_5": "no_content_exposed_infrastructure_retry_pending",
+    "rank_5_advance_to_rank_6_instruction": "superseded",
+    "rank_6_may_open": false
+  },
+  "current_capacity": {
+    "observed_free_gib_approx": 60,
+    "retained_docker_image_count": 0,
+    "pool_wide_materialization_demonstrated": false,
+    "slot_1_state": "blocked_at_pool_wide_infrastructure_gate",
+    "unblock_trigger": "exact_storage_runtime_plan_plus_30_of_30_infrastructure_receipts_and_monitor_soak_pass"
+  },
+  "campaign_disposition_custody": {
+    "commit_required_before_counting": true,
+    "protected_roots": [
+      "evidence_transitions",
+      "evidence_quality",
+      "release_records"
+    ],
+    "validator": "scripts/validate_evidence_git_custody.py"
+  },
+  "negative_inference_level": "N0",
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "Bounded infrastructure retries before protected content opens do not create a task outcome or support claim.",
+    "A blocked pool-wide infrastructure gate is not evidence against governed repository admission.",
+    "Committed custody does not validate the scientific content of a record.",
+    "This amendment does not complete P2 slot 1 or create an empirical-test-backed transition."
+  ]
+}

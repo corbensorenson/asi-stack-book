@@ -112,34 +112,28 @@ Appendix C now records exact source-note mappings for this core claim across all
 
 ```{mermaid}
 flowchart TB
-  Constitution["Alignment and constitution"]
-  Governance["Governance and authority"]
-  Intent["Intent and command contracts"]
-  Planning["Planning and semantic IR"]
-  Memory["Virtual context memory"]
-  Reasoning["Claims, belief revision, and verification"]
-  Execution["Labor OS, tools, and runtime adapters"]
-  Routing["Routing and specialist capability fields"]
-  Compression["Compression, representation, and residuals"]
-  Evidence["Evidence, tests, proofs, and benchmarks"]
-  Improvement["Governed self-improvement"]
+  Constitution["Alignment + constitution"] --> Governance["Governance + authority"]
+  Governance --> Intent["Intent + contracts"]
 
-  Constitution --> Governance
-  Governance --> Intent
-  Intent --> Planning
-  Planning --> Memory
-  Memory --> Reasoning
-  Reasoning --> Execution
+  subgraph Cognition["Operational cognition"]
+    direction LR
+    Intent --> Planning["Planning + semantic IR"]
+    Planning --> Memory["Source-bound memory"]
+    Memory --> Reasoning["Claims + verification"]
+    Reasoning --> Execution["Tools + execution"]
+  end
+
+  subgraph Adaptation["Replaceable capability path"]
+    direction LR
+    Routing["Routing + capability fields"] --> Compression["Compression + residuals"]
+    Compression --> Evidence["Evidence + tests + proofs"]
+  end
+
   Planning --> Routing
-  Routing --> Compression
   Execution --> Evidence
-  Compression --> Evidence
-  Evidence --> Improvement
+  Evidence -- "qualification receipt" --> Improvement["Governed improvement"]
   Improvement --> Governance
-
-  Governance -. "authority ceilings" .-> Execution
-  Evidence -. "qualification and rollback" .-> Routing
-  Memory -. "source-bound context" .-> Reasoning
+  Governance -. "authority ceiling" .-> Execution
 ```
 
 **How to read the stack map:** Read this stack map as a substrate-neutral responsibility loop, not a capability ladder or a physical topology. A monolithic model, modular service graph, hybrid system, or human/AI process can instantiate it only to the extent that the named interfaces and authority boundaries remain enforceable. Self-improvement is not outside the stack; it returns to governance, where new capabilities must be qualified, bounded, and made reversible before they become defaults.
@@ -159,17 +153,14 @@ The living-book workflow mirrors the architecture. Source queues prevent context
 The layer contract has a lifecycle:
 
 ```{mermaid}
-flowchart LR
-  A["Source idea or implementation pressure"] --> B["Assign owner layer"]
-  B --> C["Define interface artifact"]
-  C --> D["Declare authority ceiling"]
-  D --> E["Name invariant and failure mode"]
-  E --> F["Attach evidence gate"]
-  F --> G{"Validated surface exists?"}
-  G -- "yes" --> H["Candidate for promotion"]
-  G -- "no" --> I["Design rationale or residual"]
-  H --> J["Regression, proof, schema, or runtime trace"]
-  I --> F
+flowchart TB
+  A["Source idea or implementation pressure"] --> B["Owner + interface artifact"]
+  B --> C["Authority ceiling + invariant + failure mode"]
+  C --> D["Evidence gate"]
+  D --> E{"Validated surface?"}
+  E -- "yes" --> F["Candidate promotion + regression receipt"]
+  E -- "no" --> G["Design rationale or owned residual"]
+  G --> D
 ```
 
 This lifecycle is intentionally conservative. It lets the book absorb new papers, code, diagrams, and proofs without renumbering the architecture around every new artifact. The stable object is the contract. Prose can improve, chapters can move, and implementations can be replaced, but the contract must continue to say what the layer owns and what it is not allowed to claim.

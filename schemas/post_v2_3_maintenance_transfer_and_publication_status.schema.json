@@ -393,12 +393,12 @@
       "properties": {
         "required_branch": {"const": "main"},
         "branches_allowed_for_book_work": {"const": false},
-        "attested_head": {"const": "cd98c0c4bfe69604b2df9b96a7d299ce7346f4cd"},
-        "state": {"const": "stale_relative_to_working_tree"},
-        "working_tree_delta_file_count_at_review": {"const": 260},
-        "commit_authority": {"const": "none"},
-        "push_authority": {"const": "none"},
-        "required_reconciliation": {"const": "commit_bound_main_tree_validation_release_and_public_state_receipt"}
+        "attested_head": {"const": "882b2a82c8e7af3c90265dd1ff23ecbfacf4b0db"},
+        "state": {"const": "pushed_ancestral_custody_checkpoint"},
+        "working_tree_delta_file_count_at_review": {"const": 0},
+        "commit_authority": {"const": "owner_authorized_in_thread"},
+        "push_authority": {"const": "owner_authorized_in_thread"},
+        "required_reconciliation": {"const": "next_public_release_commit_must_be_clean_and_attested_by_release_receipt"}
       }
     },
     "priorities": {
@@ -406,7 +406,7 @@
       "minItems": 9,
       "maxItems": 9,
       "prefixItems": [
-        {"$ref": "#/$defs/waitingP0"},
+        {"$ref": "#/$defs/inProgressP0"},
         {"$ref": "#/$defs/completedP1"}, {"$ref": "#/$defs/inProgressP2"},
         {"$ref": "#/$defs/pendingPriority"}, {"$ref": "#/$defs/pendingPriority"},
         {"$ref": "#/$defs/pendingPriority"}, {"$ref": "#/$defs/pendingPriority"},
@@ -458,10 +458,10 @@
         "purpose": {"type": "string", "minLength": 10}
       }
     },
-    "waitingP0": {
+    "inProgressP0": {
       "allOf": [
         {"$ref": "#/$defs/row"},
-        {"properties": {"id": {"const": "P0"}, "state": {"const": "waiting_owner_authority"}}}
+        {"properties": {"id": {"const": "P0"}, "state": {"const": "in_progress"}}}
       ]
     },
     "completedP1": {

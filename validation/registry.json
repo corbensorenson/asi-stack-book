@@ -2010,7 +2010,16 @@
     "schemas/p2_independent_test_log_evaluator_calibration.schema.json",
     "docs/p2_replacement_task_opening_and_evaluator_calibration.md",
     "scripts/validate_p2_replacement_task_opening_and_evaluator.py",
-    "scripts/register_p2_replacement_task_opening_and_evaluator.py"
+    "scripts/register_p2_replacement_task_opening_and_evaluator.py",
+    "evidence_quality/p2_infrastructure_content_freeze_amendment.json",
+    "schemas/p2_infrastructure_content_freeze_amendment.schema.json",
+    "docs/p2_infrastructure_materialization_and_content_freeze_amendment.md",
+    "scripts/validate_p2_infrastructure_content_freeze_amendment.py",
+    "scripts/register_p2_infrastructure_content_freeze_amendment.py",
+    "evidence_quality/p2_slot1_rank4_task_opening.json",
+    "evidence_quality/p2_slot1_rank5_image_preflight_diagnosis.json",
+    "scripts/validate_evidence_git_custody.py",
+    "scripts/register_evidence_git_custody.py"
   ],
   "units": [
     {
@@ -12753,11 +12762,85 @@
       "prohibited_inference": "Task opening or parser calibration does not establish task validity, coding ability, governance benefit, safety, transfer, SOTA, release, AGI, or ASI.",
       "contract_precision": "exact",
       "semantic_review_state": "task_identity_expected_sets_path_separation_independent_parser_calibration_failure_lineage_and_custody_reviewed"
+    },
+    {
+      "id": "validate_p2_infrastructure_content_freeze_amendment.py:396",
+      "order": 396,
+      "script": "validate_p2_infrastructure_content_freeze_amendment.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Frozen 30-candidate metadata queue, immutable rank-4/rank-5 history, bounded pre-content infrastructure retries, exact protected-content boundary, current capacity receipt, and post-commit custody rule.",
+      "input_artifacts": [
+        "evidence_quality/p2_infrastructure_content_freeze_amendment.json",
+        "schemas/p2_infrastructure_content_freeze_amendment.schema.json",
+        "docs/p2_infrastructure_materialization_and_content_freeze_amendment.md",
+        "scripts/validate_p2_infrastructure_content_freeze_amendment.py",
+        "scripts/register_p2_infrastructure_content_freeze_amendment.py",
+        "evidence_quality/p2_slot1_rank4_task_opening.json",
+        "evidence_quality/p2_slot1_rank5_image_preflight_diagnosis.json"
+      ],
+      "output_contract": "Permit bounded logged infrastructure retries before protected content, prohibit rank advancement on setup weather, and make no-rerun absolute at first protected-content exposure.",
+      "output_assertions": [
+        "three attempts per exact setup failure class",
+        "whole-pool infrastructure gate before unopened ranks",
+        "rank 4 remains irreversible",
+        "rank 5 returns to setup-pending",
+        "rank 6 remains closed",
+        "pool capacity is not falsely claimed",
+        "campaign evidence requires commit custody",
+        "eight mutations reject"
+      ],
+      "claim_scope": "P2 setup and content-exposure governance only; no natural-task outcome or empirical support follows.",
+      "negative_controls": "validator_owned_retry_selection_rank_boundary_capacity_custody_and_support_mutations",
+      "negative_control_cases": [
+        "unbounded retry",
+        "pull-speed selection",
+        "rank burn",
+        "post-content rerun",
+        "rank-6 opening",
+        "fake pool pass",
+        "optional custody",
+        "support promotion"
+      ],
+      "prohibited_inference": "Does not establish P2 completion, task validity, model capability, governance benefit, safety, transfer, SOTA, release, AGI, ASI, or chapter-core support.",
+      "contract_precision": "exact",
+      "semantic_review_state": "checked_infrastructure_retry_content_irreversibility_capacity_and_commit_custody_boundary"
+    },
+    {
+      "id": "validate_evidence_git_custody.py:397",
+      "order": 397,
+      "script": "validate_evidence_git_custody.py",
+      "args": [],
+      "execution_tier": "release",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Git porcelain state for evidence_transitions, evidence_quality, and release_records at the exact tested commit.",
+      "input_artifacts": [
+        "scripts/validate_evidence_git_custody.py",
+        "scripts/register_evidence_git_custody.py"
+      ],
+      "output_contract": "Reject release or attestation while any claim-bearing evidence transition, evidence-quality record, or release record is modified, staged, or untracked.",
+      "output_assertions": [
+        "all three protected roots are clean relative to HEAD",
+        "modified evidence rejects",
+        "staged evidence rejects",
+        "untracked release records reject"
+      ],
+      "claim_scope": "Repository durability and release-gate custody only; a clean commit does not validate evidence truth.",
+      "negative_controls": "validator_owned_modified_staged_and_untracked_porcelain_rows",
+      "negative_control_cases": [
+        "modified evidence",
+        "staged transition",
+        "untracked release record"
+      ],
+      "prohibited_inference": "Committed custody does not establish result validity, independence, reproduction, transfer, safety, publication merit, or chapter-core support.",
+      "contract_precision": "exact",
+      "semantic_review_state": "checked_post_commit_evidence_durability_gate"
     }
   ],
   "summary": {
-    "required_artifact_count": 1966,
-    "unit_count": 395
+    "required_artifact_count": 1975,
+    "unit_count": 397
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

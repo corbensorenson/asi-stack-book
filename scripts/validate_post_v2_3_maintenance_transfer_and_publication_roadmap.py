@@ -578,12 +578,18 @@ def errors(data: dict) -> list[str]:
     attestation = status.get("attestation", {})
     if git["branch"] != "main" or attestation.get("required_branch") != "main":
         out.append("active book work must remain on main")
-    if git["head"] != attestation.get("attested_head"):
-        out.append("attested HEAD drifted; reconcile status before claiming continuity")
-    if attestation.get("state") == "stale_relative_to_working_tree" and git["dirty_count"] == 0:
-        out.append("status claims stale working-tree attestation but tree is clean")
-    if attestation.get("state") != "stale_relative_to_working_tree" and git["dirty_count"] > 0:
-        out.append("dirty tree cannot have a clean commit-bound attestation state")
+    ancestor = subprocess.run(
+        ["git", "merge-base", "--is-ancestor", attestation.get("attested_head", ""), git["head"]],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+    )
+    if ancestor.returncode != 0:
+        out.append("attested custody checkpoint is not an ancestor of current main")
+    if attestation.get("state") != "pushed_ancestral_custody_checkpoint":
+        out.append("attestation must describe an ancestral checkpoint, not self-reference current HEAD")
+    if attestation.get("working_tree_delta_file_count_at_review") != 0:
+        out.append("attested custody checkpoint was not clean when reviewed")
 
     for path, text in data["public"].items():
         if "post_v2_3_maintenance_transfer_and_publication_roadmap.md" not in text:
@@ -640,7 +646,7 @@ def main() -> None:
     mutate("P2 sequential execution rollback", lambda c: c["status"]["p2_replacement_execution"].__setitem__("slot1_next_rank", 1))
     mutate("P2 resource premature pass", lambda c: c["p2_resource"]["qualification_state"].__setitem__("resource_gate_passed", True))
     mutate("P2 resource claim laundering", lambda c: c["p2_resource"]["campaign_ceilings"].__setitem__("resource_exhaustion_effect", "claim_failure"))
-    mutate("false clean attestation", lambda c: c["status"]["attestation"].__setitem__("state", "commit_bound_clean"))
+    mutate("false self-referential attestation", lambda c: c["status"]["attestation"].__setitem__("state", "commit_bound_clean"))
     mutate("branch permission", lambda c: c["status"]["attestation"].__setitem__("branches_allowed_for_book_work", True))
     mutate("N5 deletion", lambda c: c.__setitem__("competence", c["competence"].replace("N5 — Broad claim refutation", "N5 removed", 1)))
     mutate("false-negative rule deletion", lambda c: c.__setitem__("roadmap", c["roadmap"].replace("No false-negative laundering", "Deleted rule", 1)))
@@ -655,11 +661,11 @@ def main() -> None:
             "Evidence-competence roadmap validation failed:\n - " + "\n - ".join(failures)
         )
     print(
-        "Evidence-competence roadmap passed: P0 authority wait, P1/M1 complete, active P2/M2; 115 accepted transitions, "
+        "Evidence-competence roadmap passed: P0 ancestral custody checkpoint pushed, P1/M1 complete, active P2/M2; 115 accepted transitions, "
         "25 direct and 90 indirect identities resolved with zero unmapped; N0-N5 competence contract active and historical rehabilitation complete; "
         "90 accepted historical negatives classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5; "
         "75 current surfaces including 55 chapters reconciled with zero overbroad negative language; "
-        "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the monitored resource ceiling was frozen before a metadata-only queue of 30 unique replacement repositories; five Rust ranks are terminal, rank six is next, the other three slots remain outcome-closed, and remeasurement, qualification, construct, and heldout gates remain closed; "
+        "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary now reinstates rank five as pending and blocks the complete 30-image pool before any further protected content opens; remeasurement, qualification, construct, and heldout gates remain closed; "
         "current proof and main-attestation baselines exact; no support/release effect; "
         f"{len(mutations)}/{len(mutations)} mutations rejected."
     )

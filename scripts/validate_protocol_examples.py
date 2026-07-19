@@ -72,6 +72,13 @@ def validate_value(value: Any, schema: dict[str, Any], path: str) -> list[str]:
 
 
 def release_schema_for(value: Any) -> Path:
+    custom_schemas = {
+        "asi_stack.p8_terminal_release_record.v1": "p8_terminal_release_record.schema.json",
+        "asi_stack.x_article_release_disposition.v1": "x_article_release_disposition.schema.json",
+        "asi_stack.roadmap_terminal_disposition.v1": "roadmap_terminal_disposition.schema.json",
+    }
+    if isinstance(value, dict) and value.get("schema_version") in custom_schemas:
+        return SCHEMA_DIR / custom_schemas[value["schema_version"]]
     if (
         isinstance(value, dict)
         and value.get("schema_version") == "asi_stack.post_v2_3_cycle_no_release.v0"
