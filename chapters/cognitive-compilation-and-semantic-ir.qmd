@@ -83,7 +83,14 @@ was preserved, intentionally revised, or forgotten. A prompt transcript gives
 few stable identities for the failed obligation or for the descendants that a
 repair must invalidate.
 
-The compiler boundary begins after intent acceptance and planning. It owns the
+The compiler boundary begins after intent acceptance and planning. When
+Planning used a world model, the input includes the exact qualified branch
+packet and reality-residual obligations from **Governed World Models and
+Reality Grounding**. Compilation must preserve observation, belief, prediction,
+checkpoint, horizon, uncertainty, disagreement, and authority labels; it may
+not compile an imagined consequence into truth, evidence, or permission.
+
+It owns the
 representation transformation, not the decision that the work should exist.
 Its output must let downstream owners inspect what was lowered, what changed,
 which assumptions and losses were introduced, which validator can falsify the

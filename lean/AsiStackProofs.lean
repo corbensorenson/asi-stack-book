@@ -36,6 +36,7 @@ import AsiStackProofs.FastGenerationRefinement
 import AsiStackProofs.FailureModes
 import AsiStackProofs.GenerateVerifyRepair
 import AsiStackProofs.GovernanceRights
+import AsiStackProofs.GovernedWorldModels
 import AsiStackProofs.IntentContracts
 import AsiStackProofs.IntentResolutionRefinement
 import AsiStackProofs.IntentToExecution

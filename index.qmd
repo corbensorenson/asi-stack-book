@@ -75,6 +75,8 @@ flowchart LR
   Intent["Human intent"] --> Constitution["Alignment and constitution"]
   Constitution --> Authority["Governance and authority"]
   Authority --> Plan["Planning and semantic IR"]
+  Plan --> WorldModel["Qualified world-model branches"]
+  WorldModel -. "prediction, uncertainty, discrepancy; no authority" .-> Plan
   Plan --> Memory["Virtual context memory"]
   Memory --> Route["Routing and specialist cores"]
   Route --> Reason["Reasoning, claims, and verification"]
@@ -84,6 +86,8 @@ flowchart LR
   Reason -. "scoped internal observations" .-> WhiteBox["White-box evidence packets"]
   BehavioralEvidence --> Evidence["Claim and evidence transition"]
   WhiteBox -. "preserve, restrict, escalate, reject, or expire; never grant" .-> Evidence
+  Execute -. "independent observations" .-> RealityResidual["Reality-residual records"]
+  RealityResidual -. "re-estimate, replan, fallback, review, or hold" .-> WorldModel
   Evidence --> Improve["Governed self-improvement"]
   Improve --> Authority
 

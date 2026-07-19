@@ -557,6 +557,15 @@ Across 75 atoms, the terminal ledger records 75 `blocked_after_full_attempt`.
 :::
 <!-- P7-EVIDENCE-RECONCILIATION:END -->
 
+### Semantic proof ceiling
+
+The P4-C4 audit finds `AsiStackProofs.PolicyOptimizationRefinement`
+**adequate only for exact bounded update-lease and readmission semantics**. Its
+four public targets and five declarations constrain authored records; they do
+not establish optimizer correctness, reward validity, actual learning, causal
+policy improvement, forgetting control, live monitoring, rollback efficacy,
+deployment, transfer, or support movement.
+
 ## Handoff
 
 Policy updates decide how behavior responds to feedback, but they still require a

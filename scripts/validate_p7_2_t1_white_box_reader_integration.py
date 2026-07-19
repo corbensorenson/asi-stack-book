@@ -77,7 +77,7 @@ def errors(data: dict[str, Any]) -> list[str]:
     if CHAPTER_ID not in data["roles"]["chapter_roles"].get("load-bearing-reference", []):
         out.append("reader-role classification drifted")
     status_first = data["status"]["quality_uplift_program"]["structural_completeness_tranche"]["first_tranche"]
-    if status_first.get("completed_reader_chapter_count") != 1 or status_first.get("terminal_reader_chapter_ids") != [CHAPTER_ID]:
+    if status_first.get("completed_reader_chapter_count", 0) < 1 or CHAPTER_ID not in status_first.get("terminal_reader_chapter_ids", []):
         out.append("machine first-tranche completion custody drifted")
     protocol = load(ROOT / audit["claim_bearing_empirical_lane"]["protocol_path"])
     if protocol.get("state") != "protocol_ready_resource_isolated_not_executed" or protocol.get("protected_outcomes_opened") is not False:

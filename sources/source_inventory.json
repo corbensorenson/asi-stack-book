@@ -536,7 +536,8 @@
     "priority": "must_use",
     "layer": "planning_control",
     "chapter_targets": [
-      "06"
+      "06",
+      "governed-world-models-and-reality-grounding"
     ],
     "url": "https://docs.google.com/document/d/12mSs7u6JxrtVQ_GbNpBY7lXCA5uyE62Lx91gi_VRjgo",
     "notes": "Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage."
@@ -559,7 +560,8 @@
     "layer": "planning_semantic_ir",
     "chapter_targets": [
       "06",
-      "12"
+      "12",
+      "governed-world-models-and-reality-grounding"
     ],
     "url": "https://docs.google.com/document/d/1spEWiRnk1NUFuK3BLh3X80r_Up_SyebO1c3JSEzTUis",
     "notes": "Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair."
@@ -1001,7 +1003,8 @@
     "chapter_targets": [
       "03",
       "11",
-      "appendix"
+      "appendix",
+      "governed-world-models-and-reality-grounding"
     ],
     "url": "https://docs.google.com/document/d/1rt0lnpwZ9X6M_ejLC7PYHQSXsvajYICGo4ETS-ndUFA",
     "notes": "Resource constraints on scope, clockspeed, and fidelity in simulations."
@@ -5209,6 +5212,7 @@
       "mathematical-and-search-substrates",
       "planning-as-a-control-layer",
       "data-engines-continual-learning-and-unlearning",
+      "governed-world-models-and-reality-grounding",
       "integrated-reference-architecture"
     ],
     "url": "https://arxiv.org/abs/2506.09985",
@@ -5768,7 +5772,8 @@
       "project-theseus-as-report-first-implementation-reference",
       "prototype-roadmap",
       "open-research-agenda-and-bibliography-plan",
-      "white-box-evidence-interpretability-and-activation-governance"
+      "white-box-evidence-interpretability-and-activation-governance",
+      "governed-world-models-and-reality-grounding"
     ],
     "url": "local-source:sources/raw/corben_papers/deterministic_capability_compilation/deterministic_capability_compilation.md@sha256:8306d2bd40662245f8d3f044b4ca11a61c0fb18ab7cb799ccfe64f5e8c8a80c1",
     "notes": "Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred.",
@@ -5802,7 +5807,8 @@
       "integrated-reference-architecture",
       "prototype-roadmap",
       "open-research-agenda-and-bibliography-plan",
-      "white-box-evidence-interpretability-and-activation-governance"
+      "white-box-evidence-interpretability-and-activation-governance",
+      "governed-world-models-and-reality-grounding"
     ],
     "url": "local-source:sources/raw/corben_papers/platonic_world_model/platonic_world_model.md@sha256:8ae760b6b2fd814b4c75260f146bf53789481b9c65fa5aded67a8934bb32427b",
     "notes": "Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred.",

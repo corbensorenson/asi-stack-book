@@ -1,0 +1,110 @@
+{
+  "schema_version": "asi_stack.governed_world_model_argument_exit_preregistration.v1",
+  "campaign_id": "GOVERNED-WORLD-MODEL-ARGUMENT-EXIT-01",
+  "state": "protocol_ready_resource_isolated_not_executed",
+  "claim_id": "governed-world-models-and-reality-grounding.core",
+  "frozen_question": "In one prospectively selected public partially observed control regime with hidden state, rare hazards, interventions, and shift, does a plural governed predictive controller improve the joint useful-control, calibration, hazard, recovery, and total-cost frontier over tuned reactive, model-free, ordinary predictive, and single-model controls without acquiring effect authority from prediction?",
+  "current_support_state": "argument",
+  "support_state_effect": "none",
+  "protected_outcomes_opened": false,
+  "execution_authority": "not_granted_by_this_record",
+  "predecessor_evidence_boundary": {
+    "campaign_ref": "experiments/p4_situated_world_model/results/confirmatory_result.json",
+    "disposition": "adjacent_bounded_synthetic_evidence_only",
+    "retained_facts": "The prior P4/M8 campaign used two authored finite environments, 11,250 episodes, 6,000 held-out episodes, and 10/10 governed replacement/rollback checks, yielding one bounded non-core synthetic transition.",
+    "prohibited_transfer": "That campaign does not establish this chapter core, a neural world model, natural-task control, independent truth, causal grounding, open-world transfer, or safe deployment."
+  },
+  "selection_before_outcomes": {
+    "environment_candidates": [
+      "public partially observed navigation with action interventions, hidden hazards, and procedural shift",
+      "public resource-control environment with delayed effects, sensor corruption, and rare irreversible penalties",
+      "public manipulation or control environment with externally scored state, held-out dynamics, and reachable safe hold"
+    ],
+    "selection_rule": "Use development-only baseline competence, mechanism activation, evaluator sensitivity, intervention availability, rare-hazard incidence, and resource feasibility; freeze one regime, environment version, action/observation interface, and all shift families before sealing the final denominator.",
+    "forbidden_selection_inputs": ["final held-out outcomes", "final arm rankings", "Q1 P2-Q1-D1 tasks or outcomes", "Q2 ASI-THESEUS-Q2-D2 tasks or outcomes"]
+  },
+  "arms": [
+    {"id": "A-REACTIVE", "role": "tuned reactive controller", "required_competence": "development utility and safe-action floors"},
+    {"id": "B-MODEL-FREE", "role": "tuned model-free controller", "required_competence": "matched interaction and optimization budget"},
+    {"id": "C-ORDINARY-MPC", "role": "single short-horizon predictive controller with ordinary receding-horizon replanning", "required_competence": "prediction, planning, and action competence floors"},
+    {"id": "D-SINGLE-GOVERNED", "role": "single world model with support-aware admission", "required_competence": "calibration, exploitation, fallback, and receipt activation floors"},
+    {"id": "E-PLURAL-GOVERNED", "role": "two independently initialized predictive models with disagreement routing and separate effect authority", "required_competence": "both models contribute, disagreement changes eligible actions, and reality residuals trigger a bounded route"},
+    {"id": "F-ORACLE-SENSITIVITY", "role": "symbolic or environment-oracle upper bound", "required_competence": "sensitivity comparator only; never reported as a deployable matched win"}
+  ],
+  "data_and_outcome_custody": {
+    "development_split": "model/controller training, tuning, and bounded rescue only",
+    "qualification_split": "positive controls, mechanism activation, calibration and evaluator sensitivity only",
+    "held_out_split": "sealed until every competence gate passes; opened once for frozen arms and estimands",
+    "transfer_split": "unopened and out of scope until a local accepted result plus a separate amendment",
+    "independent_truth": "Environment transition and outcome truth is implemented outside learned predictors, actor, critic, planner admission policy, and calibration producer.",
+    "denominator_separation": "No P2/Q1/Q2 task, label, outcome, evaluator judgment, retry decision, or tuned configuration may enter this campaign."
+  },
+  "competence_gates": [
+    "Exact environment, observation/action semantics, model/controller checkpoints, code, runtime, seeds, splits, shift families, cost policy, and evaluator identities are frozen.",
+    "All deployable baselines pass prospectively defined useful-control and safe-action floors under matched interactions, search, tuning, retry, and compute accounting.",
+    "Known predictable transitions, hidden-state aliases, injected model bias, sensor corruption, rare hazards, unsupported horizons, and shift controls are detected at frozen sensitivity floors.",
+    "Both plural models make non-identical, competent predictions; disagreement changes at least one eligible planning action and is distinguishable from random or undertrained disagreement.",
+    "Receding observation updates alter belief and planning when expected, and a material reality residual reaches re-estimation, replan, fallback, review, or safe hold before continued model-based execution.",
+    "Planner-exploitation probes can find known favorable model errors, and the admission/effect separation blocks or narrows them without making the safe alternative unreachable.",
+    "An independently implemented evaluator scores environment truth, interventions, hazards, recovery, false blocks, and costs without consuming producer predictions or held-out arm rankings.",
+    "Power, clustering, multiplicity, missingness, timeouts, failures, retries, rescues, exclusions, human interventions, and the one-time final opening are frozen and fully retained."
+  ],
+  "rescue_ladder": [
+    "verify observation, action, reward, intervention, hazard, clock, branch, and outcome identities",
+    "repair only preregistered environment adapters, trace capture, evaluator blind spots, and positive-control failures on development data",
+    "tune all deployable arms within the same frozen family-specific search and total-cost rules",
+    "check model undertraining, collapse, correlated initialization, inactive disagreement, calibration blindness, task floor or ceiling, and unreachable safe actions",
+    "repair only preregistered horizon, threshold, observation cadence, and planner-search ranges on development data",
+    "replace the environment only if a predeclared construct or sensitivity gate fails before held-out opening, then restart with a new campaign identity",
+    "stop as implementation-, instrument-, construct-, sensitivity-, or resource-inadequate rather than inspect final outcomes after a failed gate"
+  ],
+  "outcomes": [
+    "useful task return and completion under matched interaction budgets",
+    "state and consequence prediction error by horizon, region, intervention, and shift",
+    "calibration, coverage, selective risk, abstention, and false-block curves",
+    "rare-hazard recall, violation rate, residual harm, and safe-action reachability",
+    "held-out intervention error and observationally matched counterfactual error",
+    "action regret and planner-exploitation success or prevention",
+    "re-estimation, replanning, fallback, rollback, and safe-hold recovery time and completeness",
+    "model, policy/critic, observation, and evaluator error attribution",
+    "training, inference, search, memory, latency, energy proxy, observation, reviewer, recovery, and blocked-work cost",
+    "joint useful-safe-release frontier with every failed, abstained, timed-out, excluded, and rescued case retained"
+  ],
+  "causal_ablations": [
+    "remove plural disagreement while matching model and search compute",
+    "remove support-aware admission while preserving prediction access",
+    "remove receding observation reconciliation",
+    "share actor/critic/evaluator model dependencies",
+    "remove independent effect-authority enforcement",
+    "replace model disagreement with random or frequency-matched disagreement"
+  ],
+  "decision_rule": {
+    "positive": "The plural governed arm passes every competence and non-inferiority safety/cost gate and improves at least one frozen co-primary joint-frontier estimand over every deployable simpler baseline with uncertainty excluding the minimum useful effect; held-out intervention and exploitation results must support the claimed mechanism.",
+    "negative_exact": "Every competence gate passes, rescue is exhausted prospectively, the study is powered for the minimum useful effect, and the frozen plural governed arm fails the joint rule against the tuned simpler baselines.",
+    "inconclusive": "Any mechanism, baseline, model, instrument, construct, evaluator, power, identity, safe-action, isolation, or resource gate fails after bounded rescue.",
+    "maximum_negative_level": "N3 for the exact frozen environment, models, controllers, evaluator, horizons, shifts, budgets, and governance policy only; broad claims about world models, grounding, planning, or architecture are prohibited."
+  },
+  "resource_and_isolation_gate": {
+    "maximum_new_environment_and_model_cache_gib": 16,
+    "maximum_accelerator_hours": 48,
+    "minimum_free_space_before_materialization_gib": 70,
+    "p2_reserved_storage_may_be_reclaimed": false,
+    "p2_images_or_denominators_may_be_changed": false,
+    "execution_trigger": "Open only after exact environment/model identities, all eight competence-gate implementations, independent evaluator, power analysis, resource floor, and sealed denominator manifest pass."
+  },
+  "artifact_contract": [
+    "immutable environment, observation/action, model, controller, planner, evaluator, and cost manifests",
+    "sealed split, shift, intervention, rare-hazard, and denominator digests",
+    "one governed world-model packet for every admitted, narrowed, rejected, and residualized branch",
+    "all raw predictions, actions, observations, effects, evaluator inputs, failures, retries, exclusions, and rescue receipts",
+    "calibration, disagreement, exploitation, causal-ablation, and error-attribution ledgers",
+    "effect-authority, fallback, rollback, safe-hold, and independent-observation receipts",
+    "complete lifecycle cost and blocked-use ledger",
+    "accepted or rejected evidence-transition record with N0-N5 classification"
+  ],
+  "non_claims": [
+    "Protocol readiness is not a world-model, grounding, prediction, planning, control, calibration, causal, or safety result.",
+    "The prior finite P4/M8 campaign is not promoted or generalized by this protocol.",
+    "No support, effect authority, readiness, release, deployment, SOTA, AGI, or ASI movement is authorized."
+  ]
+}

@@ -86,10 +86,10 @@ outcomes, or evaluator judgments remain closed while other work proceeds.
 | Slot | Next packet | Entry condition | Terminal output |
 |---|---|---|---|
 | Continuous custody | P0 repository and public-truth reconciliation | Always open | Clean `main`, exact generated/source boundaries, current roadmap pointers, and no stale claim or release identity. |
-| Book slot — now | `P7.2-T2-governed-world-models-and-reality-grounding` | T1 terminal; second in the frozen four-chapter completion order | Complete the chapter's formalization disposition, competent predictive-control and discrepancy lane, reader-level integration, exact argument-exit boundary, and terminal integration-or-removal decision without borrowing grounding or control evidence from cited world-model work. |
-| Formal slot — now | `P4-C4-learning-update-state-and-unlearning-semantic-audit` | C3 terminal; uses only the frozen fourth proof cluster | Give the four data/update/weight/context modules terminal dispositions with exact propositions, assumptions, countermodels, consumers, mutations, and maximum inference while preserving the behavioral/influence/privacy/storage-erasure distinction. |
+| Book slot — now | `P7.2-T3-human-factors-and-meaningful-control-in-oversight` | T2 terminal; third in the frozen four-chapter completion order | Complete the chapter's exclusive operator-workload boundary, formalization disposition, competence-gated human-factors lane, reader integration, and terminal integration-or-removal decision without treating an approval field as meaningful control. |
+| Formal slot — now | `P4-C5-self-improvement-and-readiness-semantic-audit` | C4 terminal; uses only the frozen fifth proof cluster | Give the four self-improvement/readiness modules terminal dispositions with exact propositions, assumptions, countermodels, consumers, mutations, and maximum inference while preventing finite readiness routes from becoming improvement, safety, or deployment claims. |
 | Empirical headline — blocked | P2 pool-wide sequential materialization | Exact host free space meets the frozen 50 GiB floor and every setup action remains inside the approved Docker-scoped protocol | Thirty sealed candidate recipes and receipts, then rank 5 setup retry eligibility without protected-content leakage. No deletion of non-Docker user data is authorized. |
-| First structural tranche — next book packet | White-Box is terminal; complete World Models, then Human Factors and Operations in that order | The current book packet closes and the chapter's source-role, formalization, and evidence protocol inputs are frozen | One terminally integrated reader chapter at a time, or removal with material returned to named owners. |
+| First structural tranche — next book packet | White-Box and World Models are terminal; complete Human Factors, then Operations | The current book packet closes and the chapter's source-role, formalization, and evidence protocol inputs are frozen | One terminally integrated reader chapter at a time, or removal with material returned to named owners. |
 | Second structural tranche — after one first-tranche chapter closes | Adjudicate one candidate at a time in the dependency batches below | No active second-tranche candidate; four source roles and owner boundary are ready | Admit, narrow, return to existing owners, or reject with a durable decision packet. Research admission alone is never success. |
 
 The 2026-07-19 checkpoint closed both former immediate packets,
@@ -144,6 +144,23 @@ semantics, while `Corrigibility` is reclassified as countermodel-only because
 it has no transition lifecycle or independent runtime consumer. Its authority
 is `proofs/semantic_cluster_audits/authority_effect_rollback_and_corrigibility.json`.
 Neither packet changes support, release, or publication state.
+
+The next 2026-07-19 checkpoint closes
+`P7.2-T2-governed-world-models-and-reality-grounding` and
+`P4-C4-learning-update-state-and-unlearning-semantic-audit`. T2 terminally
+integrates Governed World Models as a load-bearing argument-level chapter with
+nine reconciled sources, an exact qualified-branch and reality-residual schema,
+one deliberately stale unsupported safe-hold fixture, two implemented public
+Lean targets through nine declarations, thirteen rejecting contract mutations,
+and overview, glossary, handoff, claim-matrix, and final-synthesis integration.
+Its six-arm, eight-gate, seven-rescue-step claim-bearing protocol is ready but
+unexecuted and resource-isolated; the earlier P4/M8 authored-environment result
+remains adjacent bounded synthetic evidence and does not establish the chapter
+core. C4 finds all four data/update/weight/context modules adequate only for
+their exact finite record semantics across 31 public targets and 39 theorem
+declarations while preserving separate behavioral, influence, privacy,
+lineage, legal, storage, and backup-erasure axes. Neither packet changes
+support, release, or publication state.
 
 Second-tranche adjudication uses four dependency batches, preserving the order
 within each batch unless a dated amendment explains why an input dependency
@@ -1235,9 +1252,9 @@ lies.
 | M1 — Negative-result rehabilitation | completed | All 90 accepted negative/no-change transitions are classified (1 N0, 15 N1, 74 N2, zero N3–N5), and the frozen 75-surface snapshot including the then-live 55 chapters preserves the resulting ceilings. |
 | M2 — Competent natural empirical result | in progress | A high-value natural, non-authored campaign passes every competence gate and ends with a bounded positive, negative, or inconclusive disposition. |
 | M3 — Reproduction and transfer | pending | Any broadened result has independent reproduction and two prospectively selected materially different transfer settings. |
-| M4 — Semantic formal depth | in progress | Three of six frozen clusters are terminal across 12 modules; close only after the remaining three clusters receive adequate/merge/reclassify/remove dispositions with meaningful models, countermodels, consumers, and honest inference ceilings. |
+| M4 — Semantic formal depth | in progress | Four of six frozen clusters are terminal across 16 modules; close only after the remaining self-improvement/readiness and resource/artifact/lifecycle-economics clusters receive adequate/merge/reclassify/remove dispositions with meaningful models, countermodels, consumers, and honest inference ceilings. |
 | M5 — Effect-complete reference | pending | Multi-process authority-to-effect, rollback/residual, full-state, and deletion behavior passes adversarial and recovery tests. |
-| M6 — Renewal and structural completeness | in progress | White-Box Evidence is the first terminally integrated first-tranche chapter; the remaining three first-tranche entries and all thirteen second-tranche research candidates must be completed with honest packets, claim-commensurate evidence lanes, reader integration, and validation or terminally returned to named existing owners. |
+| M6 — Renewal and structural completeness | in progress | White-Box Evidence and Governed World Models are terminally integrated; Human Factors, Operations, and all thirteen second-tranche research candidates must be completed with honest packets, claim-commensurate evidence lanes, reader integration, and validation or terminally returned to named existing owners. |
 | M7 — Reader/publication disposition | in progress | PDF, EPUB, and DOCX are published with exact receipts and verified public redownloads. Close only after compatibility residuals are terminally accepted or cleared, all public surfaces remain synchronized, and the final main/Pages attestation succeeds. |
 | M8 — Successor continuity | pending | Every open item has a terminal disposition and the next exact authority is active. |
 

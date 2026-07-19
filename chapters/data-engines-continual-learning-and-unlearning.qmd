@@ -818,6 +818,15 @@ Across 86 atoms, the terminal ledger records 86 `blocked_after_full_attempt`.
 :::
 <!-- P7-EVIDENCE-RECONCILIATION:END -->
 
+### Semantic proof ceiling
+
+The P4-C4 audit finds `AsiStackProofs.DataEngineLifecycleRefinement`
+**adequate only for its bounded eight-stage custody and claim-axis-separation
+semantics**. Its fifteen public targets and five declarations constrain authored
+records; they do not establish learning, forgetting, influence removal,
+privacy, legal compliance, storage or backup erasure, inventory completeness,
+rollback efficacy, deployment, or support movement.
+
 ## Handoff
 
 Data decisions create durable obligations: datasets, evaluation slices,

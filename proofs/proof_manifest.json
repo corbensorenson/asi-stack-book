@@ -3,8 +3,8 @@
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
   "proof_target_count": 306,
   "status_counts": {
-    "implemented": 300,
-    "planned": 6
+    "implemented": 302,
+    "planned": 4
   },
   "chapter_counts": {
     "adversarial-evaluation-sandbagging-and-training-time-deception": 8,
@@ -1074,7 +1074,7 @@
       "tag": "lean:world_model.unsupported_rollout_no_authority",
       "module": "AsiStackProofs.GovernedWorldModels",
       "formal_target": "In the finite admission model, an unsupported, stale, materially disagreeing, or uncalibrated rollout cannot authorize a consequential action.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 2204,
       "module_path": "lean/AsiStackProofs/GovernedWorldModels.lean"
     },
@@ -1084,7 +1084,7 @@
       "tag": "lean:world_model.reality_residual_forces_route",
       "module": "AsiStackProofs.GovernedWorldModels",
       "formal_target": "A material observation residual forces bounded re-estimation, fallback, review, or safe hold before further model-based execution.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 2205,
       "module_path": "lean/AsiStackProofs/GovernedWorldModels.lean"
     },

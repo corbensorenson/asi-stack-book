@@ -3,9 +3,9 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 54,
-    "candidate_count": 2878,
+    "candidate_count": 2880,
     "review_state_counts": {
-      "duplicate_of_atom": 1272,
+      "duplicate_of_atom": 1274,
       "editorial_or_question": 52,
       "historical_or_source_report": 278,
       "material_atom": 3,
@@ -17630,6 +17630,25 @@
       "target_atom_id": "planning-as-a-control-layer.beyond_sota.001"
     },
     {
+      "candidate_id": "planning-as-a-control-layer.prose.15391e775a25",
+      "chapter_id": "planning-as-a-control-layer",
+      "source": "chapters/planning-as-a-control-layer.qmd:646",
+      "sentence": "predicted world is true and cannot authorize an effect.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Restates the chapter core and authority-boundary rule that planning may consume model-relative state but cannot establish truth or authorize an effect.",
+      "target_atom_id": "planning-as-a-control-layer.core"
+    },
+    {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.a5b7d524c932",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
       "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:52",
@@ -17668,9 +17687,28 @@
       "target_atom_id": "cognitive-compilation-and-semantic-ir.core"
     },
     {
+      "candidate_id": "cognitive-compilation-and-semantic-ir.prose.bc88366ebe85",
+      "chapter_id": "cognitive-compilation-and-semantic-ir",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:89",
+      "sentence": "Compilation must preserve observation, belief, prediction,",
+      "cues": [
+        "must"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Restates the core compiler obligation to preserve typed source distinctions and authority bounds across lowering; it adds no independent support claim.",
+      "target_atom_id": "cognitive-compilation-and-semantic-ir.core"
+    },
+    {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.ac47481cfe19",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:87",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:94",
       "sentence": "representation transformation, not the decision that the work should exist.",
       "cues": [
         "should"
@@ -17689,7 +17727,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.ce82a30baf76",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:88",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:95",
       "sentence": "Its output must let downstream owners inspect what was lowered, what changed,",
       "cues": [
         "must"
@@ -17708,7 +17746,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.96c3bef02cb1",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:97",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:104",
       "sentence": "None alone establishes consumer-relative semantic preservation for",
       "cues": [
         "establishes"
@@ -17727,7 +17765,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.8b74a55ae1d7",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:100",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:107",
       "sentence": "PlanForge contributes the scheduling side of the answer; GenesisCode contributes the evidence/provenance side; TreeLLM contributes the representation-side intuition that the model should navigate explicit structure rather than memorize everything internally.",
       "cues": [
         "should"
@@ -17746,7 +17784,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.99037ecb2780",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:102",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:109",
       "sentence": "PDDL (`ext_pddl_1998`) and SHOP2 (`ext_shop2_2003`) show why action models and decomposition methods deserve explicit intermediate forms, Tree of Thoughts (`ext_tree_of_thoughts_2023`) treats reasoning paths as inspectable candidates, and DreamCoder (`ext_dreamcoder_2020`) shows library learning as compression through reusable abstractions.",
       "cues": [
         "show",
@@ -17766,7 +17804,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.ff5773fc8a7f",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:102",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:109",
       "sentence": "Translation validation (`ext_translation_validation_1998`) supplies the exact missing safety pressure: each lowering should be checkable against its source obligation after translation, not accepted because a generator ran.",
       "cues": [
         "should"
@@ -17785,7 +17823,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.d69819bbd972",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:104",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:111",
       "sentence": "It should not be the internal build artifact.",
       "cues": [
         "should"
@@ -17804,7 +17842,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.4cde95ba70ee",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:123",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:130",
       "sentence": "Cognitive Compilation should own a versioned, consumer- and target-relative",
       "cues": [
         "should"
@@ -17823,7 +17861,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.c66d18d27552",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:141",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:148",
       "sentence": "The claim remains at `argument`: the current evidence establishes exact",
       "cues": [
         "establishes"
@@ -17842,7 +17880,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.3bb82406fe87",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:153",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:160",
       "sentence": "locality, useful advantage, or production transfer.",
       "cues": [
         "transfer"
@@ -17861,7 +17899,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.313ecf4849cf",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:206",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:213",
       "sentence": "visible; self-checks cannot silently become independent acceptance.",
       "cues": [
         "cannot"
@@ -17880,7 +17918,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.c74d6aa3341e",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:232",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:239",
       "sentence": "Lowering can produce jobs, code, schemas, documents, or proof targets, but every target artifact should preserve the obligations that made the node necessary.",
       "cues": [
         "necessary",
@@ -17900,7 +17938,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.5d5e373d8f60",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:251",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:258",
       "sentence": "A pass may carry or narrow the authority granted by the source contract; it cannot invent execution authority, mutation authority, or a new target owner.",
       "cues": [
         "cannot"
@@ -17919,7 +17957,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.d2df4fb7e079",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:251",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:258",
       "sentence": "An unresolved or deferred ambiguity must block or escalate any strict route for which its meaning matters.",
       "cues": [
         "must"
@@ -17938,7 +17976,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.befd02c60588",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:253",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:260",
       "sentence": "Its linked preservation obligation must pass a semantic validator that inspects the relevant target field.",
       "cues": [
         "must"
@@ -17957,7 +17995,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.86d5d9043ac7",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:253",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:260",
       "sentence": "The same rule separates content digests from meaning: digest equality can establish byte or declared-input identity; unequal digests can still preserve meaning; neither fact alone proves semantic equivalence.",
       "cues": [
         "proves"
@@ -17976,7 +18014,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.dbfcd99fe193",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:298",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:305",
       "sentence": "families and immutable Form versions prevent labels, embeddings, recognizers,",
       "cues": [
         "prevent"
@@ -17995,7 +18033,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.aa6cba2b0571",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:306",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:313",
       "sentence": "Together the papers require two conservation ledgers: the capability compiler",
       "cues": [
         "require"
@@ -18014,7 +18052,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.81d6fe7eec09",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:307",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:314",
       "sentence": "must account for source obligations, while the semantic compiler must account",
       "cues": [
         "must"
@@ -18033,7 +18071,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.e0d3b45e0359",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:320",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:327",
       "sentence": "atlas or moving an expert must not silently rename the source obligation.",
       "cues": [
         "must"
@@ -18052,7 +18090,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.d564c070011f",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:328",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:335",
       "sentence": "required distinction, strict lowering returns a typed adequacy fault instead",
       "cues": [
         "required"
@@ -18071,7 +18109,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.d88ee8695911",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:350",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:357",
       "sentence": "The vertical trace demonstrates one explicit",
       "cues": [
         "demonstrates"
@@ -18090,7 +18128,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.b726e59641af",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:352",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:359",
       "sentence": "should therefore keep question selection as a governed interface while treating",
       "cues": [
         "should"
@@ -18109,7 +18147,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.1a5b5dbaee4a",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:354",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:361",
       "sentence": "workload and internal evaluator cannot establish an exact or broad refutation.",
       "cues": [
         "cannot"
@@ -18128,7 +18166,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.0884f0885823",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:372",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:379",
       "sentence": "The compiler may lower or reject it but cannot",
       "cues": [
         "cannot"
@@ -18147,7 +18185,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.5ff84ad63d22",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:391",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:398",
       "sentence": "quarantine, and release; green compilation cannot move them.",
       "cues": [
         "cannot"
@@ -18166,7 +18204,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.73f5a1653f6a",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:428",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:435",
       "sentence": "roles separate prevents an impressive target from overwriting its own source.",
       "cues": [
         "prevents"
@@ -18185,7 +18223,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.ac8fe3b9ae23",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:430",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:437",
       "sentence": "The boundary should also distinguish four validity questions: whether the source plan is accepted, whether the semantic IR is well formed, whether the lowering is obligation-preserving, and whether the target artifact satisfies its validators.",
       "cues": [
         "should"
@@ -18204,7 +18242,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.5beba4de284c",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:430",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:437",
       "sentence": "A failure in any one of those states should not be reported as a successful compile.",
       "cues": [
         "should"
@@ -18223,7 +18261,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.b93838d81239",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:432",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:439",
       "sentence": "It gives later compiler traces a stable place to show which obligations survived lowering, which assumptions were introduced, which validator state blocks acceptance, and which repair ledger must change before promotion.",
       "cues": [
         "must",
@@ -18243,7 +18281,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.9aca98f01c84",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:450",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:457",
       "sentence": "it cannot widen authority, rights, purpose, means, effects, support, or",
       "cues": [
         "cannot"
@@ -18262,7 +18300,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.4e8d554c2a24",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:463",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:470",
       "sentence": "Compiler, generator, and target cannot be the sole semantic evaluator for",
       "cues": [
         "cannot"
@@ -18281,7 +18319,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.0e9967281843",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:478",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:485",
       "sentence": "establish only their exact scopes and cannot universalize preservation or",
       "cues": [
         "cannot"
@@ -18300,7 +18338,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.7ec835938ab6",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:481",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:488",
       "sentence": "If a validator fails, the failed atom, dependency edge, target artifact, and repair scope should be visible.",
       "cues": [
         "should"
@@ -18319,7 +18357,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.4db4770f45c2",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:481",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:488",
       "sentence": "If a repair changes a prior obligation, the claim ledger must record that the build graph changed rather than pretending the final artifact still satisfies the original plan.",
       "cues": [
         "must"
@@ -18338,7 +18376,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.b53d7ce33ad0",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:483",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:490",
       "sentence": "Obligation non-erasure prevents compilation from erasing commitments.",
       "cues": [
         "prevents"
@@ -18357,7 +18395,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.122590d6eaa0",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:483",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:490",
       "sentence": "A compilation pass may refine, split, defer, or reject an obligation, but it cannot silently drop it.",
       "cues": [
         "cannot"
@@ -18376,7 +18414,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.b9792ecbd97e",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:496",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:503",
       "sentence": "Ambiguity is defaulted or erased without the required authority.",
       "cues": [
         "required"
@@ -18395,7 +18433,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.074fe6075c23",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:564",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:571",
       "sentence": "Independently implemented evaluators must label source",
       "cues": [
         "must"
@@ -18414,7 +18452,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.cac511ab87ce",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:565",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:572",
       "sentence": "obligations, inspect actual targets, inject adversarial loss, measure observed",
       "cues": [
         "measure"
@@ -18433,7 +18471,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.6cb9efe8b398",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:567",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:574",
       "sentence": "from locked artifacts, and transfer to a second target class.",
       "cues": [
         "transfer"
@@ -18452,7 +18490,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.76e594de7979",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:578",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:585",
       "sentence": "The empirical question is whether that toolchain improves useful semantic",
       "cues": [
         "improves"
@@ -18471,7 +18509,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.cd62416d79f3",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:585",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:592",
       "sentence": "Independent implementations jointly measure obligation precision and recall,",
       "cues": [
         "measure"
@@ -18490,7 +18528,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.5bfd2651dcbf",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:590",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:597",
       "sentence": "The compiler must earn its overhead rather than moving verification and repair",
       "cues": [
         "must"
@@ -18509,7 +18547,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.68272ef12113",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:599",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:606",
       "sentence": "transfer span models, languages, modalities, artifact classes, compilers,",
       "cues": [
         "transfer"
@@ -18528,7 +18566,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.bbefed0f1144",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:602",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:609",
       "sentence": "Promotion requires nonzero useful opportunity, strong matched baselines,",
       "cues": [
         "requires"
@@ -18547,7 +18585,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.ed1b17cee8f0",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:605",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:612",
       "sentence": "transfer, and accepted claim-specific evidence transitions.",
       "cues": [
         "transfer"
@@ -18566,7 +18604,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.b1be7c49e8f7",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:611",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:618",
       "sentence": "effect-bearing controls, independent evaluation, reproduction, and transfer",
       "cues": [
         "transfer"
@@ -18585,7 +18623,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.ea826e7f706f",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:632",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:639",
       "sentence": "The remaining minimum requires a natural",
       "cues": [
         "requires"
@@ -18604,7 +18642,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.1a4e3f2d18ad",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:635",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:642",
       "sentence": "usefulness and cost, clean reproduction, and cross-target transfer.",
       "cues": [
         "transfer"
@@ -18623,7 +18661,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.9be43cfcd04f",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:661",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:668",
       "sentence": "backend, validate actual artifact content, measure repair locality, or prove",
       "cues": [
         "measure",
@@ -18643,7 +18681,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.98263405b88e",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:664",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:671",
       "sentence": "These targets do not prove semantic preservation, compiler correctness,",
       "cues": [
         "prove"
@@ -18662,7 +18700,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.fe8b527274c7",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:665",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:672",
       "sentence": "incremental-repair locality, artifact usefulness, or production transfer.",
       "cues": [
         "transfer"
@@ -18681,7 +18719,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.1430cf3c674a",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:728",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:735",
       "sentence": "shows that the extra machinery improves useful preservation over matched",
       "cues": [
         "improves",
@@ -18701,7 +18739,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.4134164da5e9",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:767",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:774",
       "sentence": "Semantic IR can only preserve obligations when the context feeding those obligations is addressable, authorized, and reviewable.",
       "cues": [
         "can only"
@@ -20259,7 +20297,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.6deeb3783790",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:738",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:747",
       "sentence": "Valid context operations are necessary, but they do not automatically give enough evidence for a claim.",
       "cues": [
         "necessary"
@@ -47694,7 +47732,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.8958c7f00ed1",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:562",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:571",
       "sentence": "Policy updates decide how behavior responds to feedback, but they still require a",
       "cues": [
         "require"
@@ -47713,7 +47751,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.346b1c43b827",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:568",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:577",
       "sentence": "policy optimization must not manufacture for itself before the book turns to",
       "cues": [
         "must"
@@ -48952,7 +48990,7 @@
     {
       "candidate_id": "data-engines-continual-learning-and-unlearning.prose.b0f520af87c6",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "source": "chapters/data-engines-continual-learning-and-unlearning.qmd:824",
+      "source": "chapters/data-engines-continual-learning-and-unlearning.qmd:833",
       "sentence": "deletion requests, residuals, and derived artifacts must remain intelligible",
       "cues": [
         "must"

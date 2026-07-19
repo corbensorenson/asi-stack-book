@@ -2070,7 +2070,23 @@
     "chapters/system-boundaries-and-authority.qmd",
     "chapters/capability-replacement-and-rollback.qmd",
     "chapters/constitutional-alignment-substrate.qmd",
-    "chapters/intent-to-execution-contracts.qmd"
+    "chapters/intent-to-execution-contracts.qmd",
+    "scripts/validate_governed_world_model_contract.py",
+    "schemas/governed_world_model_packet.schema.json",
+    "tests/fixtures/protocol_records/governed_world_model_packet.valid.json",
+    "experiments/governed_world_model_argument_exit/preregistration.json",
+    "lean/AsiStackProofs/GovernedWorldModels.lean",
+    "chapters/governed-world-models-and-reality-grounding.qmd",
+    "scripts/register_p7_2_t2_and_p4_c4_tranche.py",
+    "scripts/validate_p7_2_t2_governed_world_models_reader_integration.py",
+    "evidence_quality/p7_2_t2_governed_world_models_reader_integration.json",
+    "docs/p7_2_t2_governed_world_models_reader_integration.md",
+    "chapters/planning-as-a-control-layer.qmd",
+    "scripts/validate_p4_c4_semantic_proof_cluster.py",
+    "proofs/semantic_cluster_audits/learning_update_state_and_unlearning.json",
+    "docs/p4_c4_learning_update_state_and_unlearning_semantic_audit.md",
+    "chapters/policy-optimization-and-learning-from-feedback.qmd",
+    "chapters/context-transactions-snapshots-mounts-and-taint.qmd"
   ],
   "units": [
     {
@@ -10927,7 +10943,7 @@
       "output_assertions": [
         "1,151/1,151 activation-baseline theorem declarations and 298/298 baseline targets are reviewed and dispositioned",
         "298/298 historical proof targets remain implemented and explicitly adequacy-routed",
-        "306 current targets comprise 300 implemented and 6 planned exactly across the three unfinished admitted chapters",
+        "306 current targets comprise 302 implemented and 4 planned exactly across the two unfinished admitted chapters",
         "the sixteen richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
         "nine required safety-critical, integration, and review-named refinement models have dossiers and registered consumers",
         "P2/M3 is completed, P3 is active, and prerequisite M2 is active without support-state movement"
@@ -12121,7 +12137,7 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "publication_gate",
-      "input_contract": "Completed claim-proof predecessor; exact no-release terminal record; active unfinished-work successor; 3,745 canonical atoms; all 117 transition files and 115 accepted transitions; complete 25-direct/90-indirect claim identity graph; retrospective N0-N5 rehabilitation of all 90 accepted negative/no-change results; prospective P2 selection, natural development-corpus custody, fixed-denominator gold diagnosis, frozen replacement policy and resource ceiling, and deterministic metadata-only replacement queue; terminal P7.1a W1/W2 audits; terminal P7.2-T1 white-box reader integration with protected outcomes closed; three terminal bounded semantic proof clusters; current proof-depth receipt; N0-N5 experiment-competence contract; stale main attestation boundary; X derivative disposition; and four public truth surfaces.",
+      "input_contract": "Completed claim-proof predecessor; exact no-release terminal record; active unfinished-work successor; 3,745 canonical atoms; all 117 transition files and 115 accepted transitions; complete 25-direct/90-indirect claim identity graph; retrospective N0-N5 rehabilitation of all 90 accepted negative/no-change results; prospective P2 selection, natural development-corpus custody, fixed-denominator gold diagnosis, frozen replacement policy and resource ceiling, and deterministic metadata-only replacement queue; terminal P7.1a W1/W2 audits; terminal P7.2-T1/T2 reader integrations with protected outcomes closed; four terminal bounded semantic proof clusters; current proof-depth receipt; N0-N5 experiment-competence contract; stale main attestation boundary; X derivative disposition; and four public truth surfaces.",
       "input_artifacts": [
         "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
         "docs/structural_completeness_chapter_research_2026_07_19.md",
@@ -12183,6 +12199,10 @@
         "scripts/validate_p7_2_t1_white_box_reader_integration.py",
         "proofs/semantic_cluster_audits/authority_effect_rollback_and_corrigibility.json",
         "scripts/validate_p4_c3_semantic_proof_cluster.py",
+        "evidence_quality/p7_2_t2_governed_world_models_reader_integration.json",
+        "scripts/validate_p7_2_t2_governed_world_models_reader_integration.py",
+        "proofs/semantic_cluster_audits/learning_update_state_and_unlearning.json",
+        "scripts/validate_p4_c4_semantic_proof_cluster.py",
         "docs/x_article_synopsis_completion.md",
         "release_records/2026-07-16-post-v2-3-claim-proof-sota-roadmap-complete-no-public-release.json"
       ],
@@ -12200,8 +12220,8 @@
         "replacement policy and monitored resource ceiling frozen before draw",
         "metadata-only queue contains 30 unique repositories while candidate content remains unopened",
         "construct and resource gates pending with heldout closed",
-        "P7.2-T1 terminal with P7.2-T2 next",
-        "three of six semantic proof clusters terminal at bounded adequate scope with P4-C4 next",
+        "P7.2-T1/T2 terminal with P7.2-T3 next",
+        "four of six semantic proof clusters terminal at bounded adequate scope with P4-C5 next",
         "N0-N5 competence contract",
         "current proof snapshot",
         "main-only stale attestation truth",
@@ -13265,11 +13285,156 @@
         "chapters/intent-to-execution-contracts.qmd",
         "scripts/register_p7_2_t1_and_p4_c3_tranche.py"
       ]
+    },
+    {
+      "script": "validate_governed_world_model_contract.py",
+      "input_contract": "One typed safe-hold record-shape fixture, a prospectively frozen but unexecuted six-arm world-model campaign, and a finite admission/residual/non-authority model.",
+      "output_contract": "Require exact model/observation/rollout/residual custody, protected outcome closure, eight competence gates, seven rescue steps, an N3 exact ceiling, nine Lean declarations, and thirteen rejecting mutations.",
+      "output_assertions": [
+        "1 safe-hold record fixture",
+        "6 matched arms",
+        "8 competence gates",
+        "7 rescue steps",
+        "9 Lean declarations",
+        "13 mutations reject",
+        "support/effect authority none"
+      ],
+      "claim_scope": "Qualified-branch packet shape, campaign custody, and finite admission/residual-route semantics only.",
+      "negative_controls": "validator_owned_thirteen_identity_freshness_support_authority_residual_protocol_and_predecessor_mutations",
+      "negative_control_cases": [
+        "effect authorization",
+        "release grant",
+        "freshness laundering",
+        "unsupported admission",
+        "residual deletion",
+        "outcome opening",
+        "negative-scope inflation",
+        "predecessor support borrowing",
+        "P2 displacement"
+      ],
+      "prohibited_inference": "The fixture, theorem, and protocol do not establish prediction quality, grounding, calibration, useful planning, safe control, support, release, publication, AGI, or ASI.",
+      "semantic_review_state": "checked_world_model_packet_residual_and_non_authority_semantics",
+      "id": "validate_governed_world_model_contract.py:406",
+      "order": 406,
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "contract_precision": "exact_record_denominator_and_semantic_disposition_contract",
+      "input_artifacts": [
+        "scripts/validate_governed_world_model_contract.py",
+        "schemas/governed_world_model_packet.schema.json",
+        "tests/fixtures/protocol_records/governed_world_model_packet.valid.json",
+        "experiments/governed_world_model_argument_exit/preregistration.json",
+        "lean/AsiStackProofs/GovernedWorldModels.lean",
+        "chapters/governed-world-models-and-reality-grounding.qmd",
+        "scripts/register_p7_2_t2_and_p4_c4_tranche.py"
+      ]
+    },
+    {
+      "script": "validate_p7_2_t2_governed_world_models_reader_integration.py",
+      "input_contract": "The admitted world-model chapter, nine exact source mappings, two implemented public proof targets, bounded predecessor evidence, a closed protected campaign, and adjacent reader surfaces.",
+      "output_contract": "Bind artifact digests, preserve source/role/proof/predecessor denominators, require handoffs and synthesis surfaces, keep protected outcomes closed, and reject thirteen integration mutations.",
+      "output_assertions": [
+        "1 terminal argument-level chapter",
+        "9 source mappings",
+        "2 implemented proof targets",
+        "9 Lean declarations",
+        "6 claim-bearing arms",
+        "13 integration mutations reject",
+        "support effect none"
+      ],
+      "claim_scope": "P7.2-T2 chapter necessity, argument-level integration, traceability, and reader continuity only.",
+      "negative_controls": "validator_owned_thirteen_manifest_source_digest_proof_predecessor_custody_role_and_support_mutations",
+      "negative_control_cases": [
+        "chapter deletion",
+        "source-target deletion",
+        "digest drift",
+        "proof reduction",
+        "predecessor borrowing",
+        "outcome opening",
+        "P2 displacement",
+        "role deletion",
+        "support laundering"
+      ],
+      "prohibited_inference": "Terminal reader integration does not establish a world-model, grounding, causal, control, safety, empirical, release, publication, AGI, or ASI result.",
+      "semantic_review_state": "checked_terminal_governed_world_models_argument_chapter_integration",
+      "id": "validate_p7_2_t2_governed_world_models_reader_integration.py:407",
+      "order": 407,
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "contract_precision": "exact_record_denominator_and_semantic_disposition_contract",
+      "input_artifacts": [
+        "scripts/validate_p7_2_t2_governed_world_models_reader_integration.py",
+        "evidence_quality/p7_2_t2_governed_world_models_reader_integration.json",
+        "docs/p7_2_t2_governed_world_models_reader_integration.md",
+        "book_structure.json",
+        "sources/source_inventory.json",
+        "proofs/proof_manifest.json",
+        "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
+        "index.qmd",
+        "appendices/B_glossary.qmd",
+        "appendices/C_claim_evidence_matrix.qmd",
+        "appendices/G_corben_source_corpus.qmd",
+        "appendices/H_external_sources.qmd",
+        "chapters/planning-as-a-control-layer.qmd",
+        "chapters/cognitive-compilation-and-semantic-ir.qmd",
+        "chapters/integrated-reference-architecture.qmd",
+        "scripts/register_p7_2_t2_and_p4_c4_tranche.py"
+      ]
+    },
+    {
+      "script": "validate_p4_c4_semantic_proof_cluster.py",
+      "input_contract": "A frozen four-module data/update/weight/context cluster with 31 public targets and 39 theorem declarations.",
+      "output_contract": "Require exact propositions, modeled state, assumptions, countermodels, consumers, mutation evidence, claim-axis separation, and ceilings; execute four consumers and reject twelve audit mutations.",
+      "output_assertions": [
+        "4 adequate modules",
+        "31 public targets",
+        "39 theorem declarations",
+        "7 unlearning claim axes separated",
+        "4 consumers pass",
+        "12 mutations reject",
+        "support effect none"
+      ],
+      "claim_scope": "Bounded finite data/update custody, policy lease, weight custody, context transaction, and unlearning claim-axis semantics only.",
+      "negative_controls": "validator_owned_twelve_cluster_denominator_disposition_semantic_axis_status_and_support_mutations",
+      "negative_control_cases": [
+        "module deletion",
+        "semantic-field erasure",
+        "target inflation",
+        "theorem inflation",
+        "behavior/influence merger",
+        "storage/backup merger",
+        "status reopening",
+        "support laundering"
+      ],
+      "prohibited_inference": "The audit proves no learning, forgetting, influence removal, privacy reduction, storage or backup erasure, legal compliance, rollback efficacy, deployment, support, release, or publication.",
+      "semantic_review_state": "checked_terminal_bounded_learning_update_weight_context_and_unlearning_axis_semantics",
+      "id": "validate_p4_c4_semantic_proof_cluster.py:408",
+      "order": 408,
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "contract_precision": "exact_record_denominator_and_semantic_disposition_contract",
+      "input_artifacts": [
+        "scripts/validate_p4_c4_semantic_proof_cluster.py",
+        "proofs/semantic_cluster_audits/learning_update_state_and_unlearning.json",
+        "docs/p4_c4_learning_update_state_and_unlearning_semantic_audit.md",
+        "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean",
+        "lean/AsiStackProofs/ModelWeightCustody.lean",
+        "lean/AsiStackProofs/ContextTransactionRefinement.lean",
+        "chapters/data-engines-continual-learning-and-unlearning.qmd",
+        "chapters/policy-optimization-and-learning-from-feedback.qmd",
+        "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
+        "scripts/register_p7_2_t2_and_p4_c4_tranche.py"
+      ]
     }
   ],
   "summary": {
-    "required_artifact_count": 2026,
-    "unit_count": 405
+    "required_artifact_count": 2042,
+    "unit_count": 408
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

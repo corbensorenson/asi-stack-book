@@ -1,0 +1,125 @@
+{
+  "schema_version": "asi_stack.semantic_proof_cluster_audit.v1",
+  "cluster_id": "learning_update_state_and_unlearning",
+  "packet_id": "P4-C4-learning-update-state-and-unlearning-semantic-audit",
+  "state": "adequate",
+  "scope": "bounded_finite_data_update_weight_custody_context_transaction_and_unlearning_claim_axis_semantics",
+  "module_count": 4,
+  "public_target_count": 31,
+  "theorem_declaration_count": 39,
+  "module_dispositions": [
+    {
+      "module": "AsiStackProofs.DataEngineLifecycleRefinement",
+      "path": "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean",
+      "disposition": "adequate",
+      "public_target_count": 15,
+      "theorem_declaration_count": 5,
+      "plain_language_proposition": "A finite eight-stage data-and-descendant custody lifecycle rejects missing provenance, rights, contamination controls, prospectively fixed checkpoint authority, declared full-state surfaces, evaluation partitions, deletion-axis separation, rollback closure, or material-change readmission, and preserves complete state on every rejected event.",
+      "modeled_state": "Authored records for eligibility, admission, full-state binding, update receipt, evaluation, deletion adjudication, rollback, and versioned readmission across 82 routes; declared state includes model, optimizer, scheduler, RNG, cache, checkpoint, backup, descendants, authority, partitions, receipts, and separate behavioral, influence, privacy, lineage, storage, and backup axes.",
+      "assumptions": [
+        "Every identity, provenance, rights, partition, state-surface, evaluator, deletion, rollback, descendant, and authority field is truthful and complete for the declared finite inventory.",
+        "The hand-authored sequential lifecycle and prospective selection rule cover only the modeled records; concurrency, inaccessible replicas, undeclared descendants, regenerating processes, and external effects are omitted.",
+        "A route, digest, rollback match, invalidation, or changed behavioral cohort does not establish learning quality, causal influence removal, privacy improvement, legal compliance, or physical storage and backup erasure."
+      ],
+      "countermodels": [
+        "Missing provenance, rights, split exclusions, or contamination custody blocks admission.",
+        "Missing optimizer, scheduler, RNG, cache, backup, or descendant state blocks full-state binding and prevents a complete update receipt.",
+        "Behavioral change cannot satisfy influence, privacy, lineage, storage, or backup claims, and incomplete rollback or material-change custody blocks readmission."
+      ],
+      "consumers": [
+        "scripts/validate_data_engine_lifecycle_refinement.py",
+        "experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json"
+      ],
+      "mutation_evidence": "The independent consumer composes three inherited suites through eight stages and 82 routes, rejecting 96 of 96 route mutations and 3 of 3 cross-stage mutations while preserving support effect none.",
+      "maximum_inference": "Adequate for the exact finite custody, route, no-op-on-rejection, claim-axis-separation, rollback, and readmission consequences of the declared records. It does not establish data quality, learning, forgetting, influence removal, privacy, legal compliance, storage or backup erasure, inventory completeness, rollback efficacy, deployment, transfer, or support movement."
+    },
+    {
+      "module": "AsiStackProofs.PolicyOptimizationRefinement",
+      "path": "lean/AsiStackProofs/PolicyOptimizationRefinement.lean",
+      "disposition": "adequate",
+      "public_target_count": 4,
+      "theorem_declaration_count": 5,
+      "plain_language_proposition": "A finite seven-stage policy-update lifecycle binds exact target, baseline, data, feedback, full training state, evaluation, adjudication, bounded lease, rollback, and readmission records; missing causal, reward-hacking, regression, forgetting, rights, uncertainty, monitoring, or rollback predicates prevent later stages.",
+      "modeled_state": "Authored scope, full-state, update, independent-evaluation, adjudication, lease, rollback, descendant-invalidation, and readmission fields across 63 routes, including model and candidate checkpoints, optimizer, scheduler, RNG, cache, backup, descendants, evaluator, consumer, authority, and version identities.",
+      "assumptions": [
+        "Target, objective, feedback, baseline, model-state, evaluation, independence, causal, safety, rights, monitoring, rollback, descendant, and authority fields are truthful and complete.",
+        "The finite sequential route order represents only the declared update lease; actual optimization dynamics, stochastic training, delayed effects, and deployed monitoring are outside the model.",
+        "A passing finite lease or rollback record does not establish reward validity, learned improvement, retained capability, causal attribution, alignment, or effective recovery."
+      ],
+      "countermodels": [
+        "Incomplete optimizer/checkpoint/RNG or descendant custody blocks a complete update state.",
+        "Missing target evaluation, causal ablation, reward-hacking probes, regressions, forgetting, safety or rights checks, uncertainty, or evaluator separation blocks adjudication.",
+        "Support-authority laundering or incomplete effect rollback blocks the bounded lease or successor-version readmission."
+      ],
+      "consumers": [
+        "scripts/validate_policy_optimization_refinement.py",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json"
+      ],
+      "mutation_evidence": "The independent consumer composes the inherited six-sample/five-candidate lease through seven stages and 63 routes, rejecting 73 of 73 route mutations and 3 of 3 cross-stage mutations while preserving support effect none.",
+      "maximum_inference": "Adequate for exact bounded record custody, stage ordering, failed-event preservation, lease consumption, rollback predicates, and versioned readmission. It does not establish optimizer correctness, reward validity, actual learning, causal policy improvement, forgetting control, live monitoring, rollback efficacy, deployment, transfer, or support movement."
+    },
+    {
+      "module": "AsiStackProofs.ModelWeightCustody",
+      "path": "lean/AsiStackProofs/ModelWeightCustody.lean",
+      "disposition": "adequate",
+      "public_target_count": 8,
+      "theorem_declaration_count": 9,
+      "plain_language_proposition": "Finite weight-custody records route missing identity, lineage, attestation, freshness, key, role, purpose, authority-separation, exposure, recovery, sanitization, recipient, irreversibility, or residual fields away from bounded load or distribution records.",
+      "modeled_state": "Eight deterministic load, denial, quarantine, revocation, sanitization, bounded-transfer, and irreversible-release routes over exact authored asset, derivative, holder, purpose, key, attestation, authority, exposure, backup, recipient, descendant, and residual predicates.",
+      "assumptions": [
+        "Asset, derivative, key, identity, attestation, freshness, role, purpose, recipient, exposure, recovery, deletion, revocation, and residual fields are authentic and complete.",
+        "Eight finite route outcomes are sufficient only for the encoded decisions; cryptographic protocols, hardware behavior, side channels, concurrent copies, remote recipients, and physical destruction are not modeled.",
+        "A bounded-load or irreversible-release record is a route classification, not execution authority or proof that confidentiality, sanitization, revocation, or deletion succeeded."
+      ],
+      "countermodels": [
+        "Missing identity, lineage, attestation, freshness, purpose, or role custody prevents bounded load.",
+        "Authority laundering, plaintext/output-extraction exposure, or absent recovery and revocation custody routes away from ordinary use.",
+        "A distribution request without explicit recipient, descendant, irreversibility, residual, and no-authority fields cannot become an irreversible-release record."
+      ],
+      "consumers": [
+        "scripts/validate_model_weight_custody_lifecycle.py",
+        "experiments/model_weight_custody_lifecycle/results/2026-07-13-local.json"
+      ],
+      "mutation_evidence": "The independent lifecycle consumer checks eight deterministic routes, nine Lean declarations, and nine rejecting mutations without support movement.",
+      "maximum_inference": "Adequate for the exact finite load, deny, quarantine, sanitization, revocation, transfer, and release-record routing consequences. It does not establish authentic custody facts, cryptographic or hardware security, confidentiality, copy or descendant completeness, sanitization or deletion efficacy, actual load or distribution, safety, readiness, deployment, or support movement."
+    },
+    {
+      "module": "AsiStackProofs.ContextTransactionRefinement",
+      "path": "lean/AsiStackProofs/ContextTransactionRefinement.lean",
+      "disposition": "adequate",
+      "public_target_count": 4,
+      "theorem_declaration_count": 20,
+      "plain_language_proposition": "A finite context-transaction lifecycle preserves exact snapshot, parent, participant, read/write, taint, declassification, deletion, derivative, materialization, and receipt custody across six events; invalid events leave state unchanged and cannot silently convert context mutation into support or external-effect authority.",
+      "modeled_state": "Authored snapshot, begin, operation, commit, materialization, and closure records with branch, ordering, isolation, taint, declassification, deletion, derivative, cache/store, recovery, durability, effect, and support fields; three of six store fixtures and two of four sequence fixtures are accepted.",
+      "assumptions": [
+        "Principal, snapshot, participant, ordering, isolation, taint, declassification, deletion, derivative, durability, recovery, materialization, receipt, effect, and support fields are truthful and complete.",
+        "One finite six-event sequence captures only the encoded transaction; concurrent actors, weak memory, crashes, partitions, real databases, cache races, and external effects are omitted.",
+        "Exact state preservation and a materialization receipt do not establish serializability, linearizability, durable I/O, source truth, deletion efficacy, forgetting, or reversal of an external effect."
+      ],
+      "countermodels": [
+        "Wrong parent, participant, snapshot, read/write, ordering, or isolation identity rejects the corresponding transaction event without changing state.",
+        "Unresolved taint, absent declassification authority, or incomplete deletion and derivative closure blocks commit or materialization.",
+        "Support or external-effect authority laundering and incomplete recovery or closure records are rejected."
+      ],
+      "consumers": [
+        "scripts/validate_context_transaction_refinement.py",
+        "experiments/context_transaction_refinement/results/2026-07-15-local.json"
+      ],
+      "mutation_evidence": "The independent consumer accepts three of six store fixtures and two of four sequence fixtures, composes six events, and rejects 78 semantic mutations while preserving support effect none.",
+      "maximum_inference": "Adequate for exact finite context-record admission, six-event sequencing, rejected-event state preservation, taint/deletion closure predicates, and non-authority routing. It does not establish concurrency correctness, serializability, linearizability, durability, recovery, cache invalidation completeness, deletion or forgetting, external-effect rollback, deployment, transfer, or support movement."
+    }
+  ],
+  "claim_axis_separation": {
+    "behavioral_change": "Observed output change on the declared cohort only.",
+    "influence_removal": "Requires causal attribution beyond behavioral change.",
+    "privacy_reduction": "Requires an independent privacy threat model and measurement.",
+    "lineage_invalidation": "Marks declared descendants ineligible; it does not erase bytes.",
+    "storage_erasure": "Requires identity-bound primary and replica postconditions.",
+    "backup_erasure": "Requires separately scoped backup and regeneration postconditions.",
+    "legal_compliance": "Requires the applicable rights and legal authority; no technical receipt decides it."
+  },
+  "cluster_maximum_inference": "The cluster is adequate for its recorded finite sequential data/update custody, policy-update lease, weight-custody routing, context-transaction sequencing, and explicit unlearning claim-axis separation. It proves no input field authentic or complete, no model learned or forgot, no influence or privacy removed, no bytes or backups erased, no legal duty satisfied, no rollback or sanitization effective, no transaction deployed, and no empirical, safety, transfer, SOTA, AGI, ASI, support, release, or publication claim.",
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "publication_effect": "none"
+}

@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/planning-as-a-control-layer.qmd",
     "structured_atoms_reviewed": 76,
-    "prose_candidates_adjudicated": 41,
+    "prose_candidates_adjudicated": 42,
     "unowned_material_claims": 0,
     "review_note": "Reviewed the complete chapter, all nine assigned source notes and their limitations, both plan schemas, three deterministic planning harnesses, seven valid synthetic records, twenty-six rejecting controls, two accepted no-change transitions, all thirty-three theorem declarations grouped under seven manifest targets, every manifest atom, every prose candidate, lifecycle and interface boundaries, test plan, source crosswalk, summary, and handoff. The sweep made prospective obligation scheduling under uncertainty the distinct owner; separated semantic conformance, lowering, worker qualification, job creation, authority, effects, verification, evidence, release, rights, and cost owners; added candidate and attempt denominators, dependency falsifiers, observed feedback, effect-tested stop and recovery, causal ablations, reproduction, and transfer gates; and preserved zero chapter-core support effect."
   },
@@ -241,6 +241,11 @@
     }
   },
   "prose_candidate_dispositions": {
+    "planning-as-a-control-layer.prose.15391e775a25": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the chapter core and authority-boundary rule that planning may consume model-relative state but cannot establish truth or authorize an effect.",
+      "target_atom_id": "planning-as-a-control-layer.core"
+    },
     "planning-as-a-control-layer.prose.4ca05a9f4e28": {"state": "nonmaterial_explanation", "rationale": "Line-wrapped merge requirement restates structured planning interface and invariant atoms."},
     "planning-as-a-control-layer.prose.a38c0d6481f2": {"state": "nonmaterial_explanation", "rationale": "Line-wrapped graph-contract requirement is already owned by structured mechanism and interface atoms."},
     "planning-as-a-control-layer.prose.48e0df478562": {"state": "nonmaterial_explanation", "rationale": "Forced-route failure sentence specializes the existing fail-closed planning invariant."},

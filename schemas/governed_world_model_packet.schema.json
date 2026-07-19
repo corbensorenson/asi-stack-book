@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/governed_world_model_packet.schema.json",
+  "title": "Governed World-Model Branch and Reality-Residual Packet",
+  "type": "object",
+  "required": [
+    "schema_version", "packet_id", "claim_id", "origin_class", "disposition",
+    "model_identity", "observation_basis", "belief_state", "rollout_semantics",
+    "prediction", "calibration_and_disagreement", "planner_admission",
+    "authority_boundary", "reconciliation", "residual_and_lifecycle",
+    "support_state_effect", "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.governed_world_model_packet.v1"},
+    "packet_id": {"type": "string", "minLength": 1},
+    "claim_id": {"const": "governed-world-models-and-reality-grounding.core"},
+    "origin_class": {"type": "string", "enum": ["repository_fixture", "local_empirical_run", "external_empirical_run"]},
+    "disposition": {"type": "string", "enum": ["admit_for_planning", "narrow", "reobserve", "fallback", "review", "safe_hold", "reject", "expired"]},
+    "model_identity": {
+      "type": "object",
+      "required": ["model_id", "checkpoint_digest", "runtime_digest", "training_lineage_ref", "validity_profile_ref", "current_version"],
+      "properties": {
+        "model_id": {"type": "string", "minLength": 1},
+        "checkpoint_digest": {"type": "string", "minLength": 1},
+        "runtime_digest": {"type": "string", "minLength": 1},
+        "training_lineage_ref": {"type": "string", "minLength": 1},
+        "validity_profile_ref": {"type": "string", "minLength": 1},
+        "current_version": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "observation_basis": {
+      "type": "object",
+      "required": ["observation_ids", "source_refs", "capture_cutoff", "fresh", "quality_ref", "missingness_ref", "corruption_ref", "branch_id"],
+      "properties": {
+        "observation_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "source_refs": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "capture_cutoff": {"type": "string", "minLength": 1},
+        "fresh": {"type": "boolean"},
+        "quality_ref": {"type": "string", "minLength": 1},
+        "missingness_ref": {"type": "string", "minLength": 1},
+        "corruption_ref": {"type": "string", "minLength": 1},
+        "branch_id": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "belief_state": {
+      "type": "object",
+      "required": ["estimator_id", "state_vocabulary_ref", "alternative_state_refs", "uncertainty_ref", "unresolved_aliases_ref"],
+      "properties": {
+        "estimator_id": {"type": "string", "minLength": 1},
+        "state_vocabulary_ref": {"type": "string", "minLength": 1},
+        "alternative_state_refs": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "uncertainty_ref": {"type": "string", "minLength": 1},
+        "unresolved_aliases_ref": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "rollout_semantics": {
+      "type": "object",
+      "required": ["intervention_id", "action_semantics_ref", "horizon", "resolution", "consequence_class", "resource_budget_ref", "prohibited_uses"],
+      "properties": {
+        "intervention_id": {"type": "string", "minLength": 1},
+        "action_semantics_ref": {"type": "string", "minLength": 1},
+        "horizon": {"type": "integer", "minimum": 1},
+        "resolution": {"type": "string", "minLength": 1},
+        "consequence_class": {"type": "string", "enum": ["reversible_low", "reversible_material", "irreversible_or_high"]},
+        "resource_budget_ref": {"type": "string", "minLength": 1},
+        "prohibited_uses": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    },
+    "prediction": {
+      "type": "object",
+      "required": ["branch_id", "predicted_state_ref", "uncertainty_by_horizon_ref", "validity_domain_ref", "omissions_ref", "support_ceiling"],
+      "properties": {
+        "branch_id": {"type": "string", "minLength": 1},
+        "predicted_state_ref": {"type": "string", "minLength": 1},
+        "uncertainty_by_horizon_ref": {"type": "string", "minLength": 1},
+        "validity_domain_ref": {"type": "string", "minLength": 1},
+        "omissions_ref": {"type": "string", "minLength": 1},
+        "support_ceiling": {"type": "string", "enum": ["unsupported", "diagnostic_only", "planning_candidate"]}
+      },
+      "additionalProperties": false
+    },
+    "calibration_and_disagreement": {
+      "type": "object",
+      "required": ["calibration_ref", "heldout_intervention_ref", "model_ids", "material_disagreement", "exploitation_probe_ref", "independent_evaluator_id"],
+      "properties": {
+        "calibration_ref": {"type": "string", "minLength": 1},
+        "heldout_intervention_ref": {"type": "string", "minLength": 1},
+        "model_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "material_disagreement": {"type": "boolean"},
+        "exploitation_probe_ref": {"type": "string", "minLength": 1},
+        "independent_evaluator_id": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "planner_admission": {
+      "type": "object",
+      "required": ["policy_id", "decision", "accepted_uses", "prohibited_uses", "reobservation_trigger", "safe_alternative_ref", "receipt_id"],
+      "properties": {
+        "policy_id": {"type": "string", "minLength": 1},
+        "decision": {"type": "string", "enum": ["admit", "narrow", "reobserve", "fallback", "review", "safe_hold", "reject"]},
+        "accepted_uses": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "prohibited_uses": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "reobservation_trigger": {"type": "string", "minLength": 1},
+        "safe_alternative_ref": {"type": "string", "minLength": 1},
+        "receipt_id": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "authority_boundary": {
+      "type": "object",
+      "required": ["authority_ceiling_ref", "authority_delta", "effect_authorized", "release_authority", "reversibility_ref"],
+      "properties": {
+        "authority_ceiling_ref": {"type": "string", "minLength": 1},
+        "authority_delta": {"const": "none"},
+        "effect_authorized": {"const": false},
+        "release_authority": {"const": false},
+        "reversibility_ref": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "reconciliation": {
+      "type": "object",
+      "required": ["action_taken_ref", "observed_effect_ref", "observer_id", "forecast_preserved", "model_error_ref", "policy_error_ref", "observation_error_ref", "evaluator_error_ref"],
+      "properties": {
+        "action_taken_ref": {"type": "string", "minLength": 1},
+        "observed_effect_ref": {"type": "string", "minLength": 1},
+        "observer_id": {"type": "string", "minLength": 1},
+        "forecast_preserved": {"type": "boolean"},
+        "model_error_ref": {"type": "string", "minLength": 1},
+        "policy_error_ref": {"type": "string", "minLength": 1},
+        "observation_error_ref": {"type": "string", "minLength": 1},
+        "evaluator_error_ref": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "residual_and_lifecycle": {
+      "type": "object",
+      "required": ["material_residual", "residual_ref", "invalidated_descendants_ref", "required_route", "checkpoint_disposition", "rollback_ref", "residual_owner"],
+      "properties": {
+        "material_residual": {"type": "boolean"},
+        "residual_ref": {"type": "string", "minLength": 1},
+        "invalidated_descendants_ref": {"type": "string", "minLength": 1},
+        "required_route": {"type": "string", "enum": ["continue_bounded", "reestimate", "replan", "fallback", "review", "safe_hold"]},
+        "checkpoint_disposition": {"type": "string", "enum": ["retain_bounded", "shadow", "quarantine", "retire", "fixture_only"]},
+        "rollback_ref": {"type": "string", "minLength": 1},
+        "residual_owner": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 2, "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": false
+}

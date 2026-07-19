@@ -733,6 +733,15 @@ Across 73 atoms, the terminal ledger records 73 `blocked_after_full_attempt`.
 :::
 <!-- P7-EVIDENCE-RECONCILIATION:END -->
 
+### Semantic proof ceiling
+
+The P4-C4 audit finds `AsiStackProofs.ContextTransactionRefinement` **adequate
+only for exact finite record admission and six-event sequencing**. Its four
+public targets and twenty declarations do not establish concurrency
+correctness, serializability, linearizability, durable I/O, recovery, cache
+invalidation completeness, deletion or forgetting, external-effect rollback,
+deployment, transfer, or support movement.
+
 ## Handoff
 
 Valid context operations are necessary, but they do not automatically give enough evidence for a claim. Verification Bandwidth and Context Adequacy separates coherent access from adequate understanding. It asks whether the system has enough time, comparison method, tools, reviewer bandwidth, and contradiction search for the claim at hand, so memory validity does not inflate into epistemic confidence.

@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 306 |
 | Lean modules scanned | 102 |
-| Theorem declarations classified | 1315 |
+| Theorem declarations classified | 1324 |
 | Direct/projection-style theorem declarations | 230 |
-| Derived/decomposed theorem declarations | 905 |
-| Unknown or mixed theorem declarations | 180 |
+| Derived/decomposed theorem declarations | 910 |
+| Unknown or mixed theorem declarations | 184 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -93,7 +93,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 1 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/GovernedOperations.lean` | governed-operations-incident-command-and-graceful-degradation | 2 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/GovernedWorldModels.lean` | governed-world-models-and-reality-grounding | 2 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | governed-world-models-and-reality-grounding | 2 | 9 | 0 | 5 | 4 | manual review |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | personal-compute-hives-and-federated-edge-intelligence | 6 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | human-factors-and-meaningful-control-in-oversight | 2 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | integrated-reference-architecture | 3 | 23 | 0 | 13 | 10 | manual review |
@@ -653,6 +653,15 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/GovernanceRights.lean` | `theseus_governance_rights_receipt_suite_import_core_promotion_rejected` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `theseus_governance_rights_receipt_suite_import_fixture_valid` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `theseus_governance_rights_receipt_suite_import_legal_rights_overclaim_rejected` | derived_or_decomposed | yes | uses simp |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `admitted_rollout_preserves_declared_boundary` | derived_or_decomposed | no | uses cases, split, unfold |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `material_fixture_holds_safely` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `material_residual_selects_bounded_response` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `qualified_fixture_admits_for_planning` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `reality_residual_forces_route` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `rollout_never_authorizes_effect` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `stale_fixture_requires_reobservation` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `unsupported_fixture_falls_back` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `unsupported_rollout_no_authority` | derived_or_decomposed | no | uses split, unfold |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `accepted_step_adds_one_receipt` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `apply_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `apply_event_preserves_job_node_lease_identity` | derived_or_decomposed | no | uses by_cases, simp |

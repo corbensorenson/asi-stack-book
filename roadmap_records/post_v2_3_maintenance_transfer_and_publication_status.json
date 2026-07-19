@@ -13,8 +13,8 @@
     "work_in_progress_limit": 2,
     "blocked_lane_consumes_work_in_progress": false,
     "protected_outcome_inspection_allowed": false,
-    "immediate_book_packet": "P7.2-T2-governed-world-models-and-reality-grounding",
-    "immediate_formal_packet": "P4-C4-learning-update-state-and-unlearning-semantic-audit",
+    "immediate_book_packet": "P7.2-T3-human-factors-and-meaningful-control-in-oversight",
+    "immediate_formal_packet": "P4-C5-self-improvement-and-readiness-semantic-audit",
     "first_tranche_completion_order": [
       "white-box-evidence-interpretability-and-activation-governance",
       "governed-world-models-and-reality-grounding",
@@ -94,7 +94,7 @@
     },
     "narrative_quality_gate": {
       "state": "split_lane_active",
-      "case_independent_compression_state": "p7_2_t1_terminal_t2_ready",
+      "case_independent_compression_state": "p7_2_t2_terminal_t3_ready",
       "flagship_threading_state": "blocked_by_T4",
       "reader_spine_repetition_reduction_target": "15_to_25_percent_diagnostic_not_acceptance_test",
       "requires_chapter_role_classification": true,
@@ -108,7 +108,7 @@
       "maximum_if_all_candidates_pass": 72,
       "planned_merge_count": 0,
       "first_tranche": {
-        "state": "one_terminal_three_reader_integrations_remaining",
+        "state": "two_terminal_two_reader_integrations_remaining",
         "research_path": "docs/structural_completeness_chapter_research_2026_07_19.md",
         "candidate_count": 4,
         "candidate_ids": [
@@ -119,12 +119,12 @@
         ],
         "manifest_admitted_count": 4,
         "drafted_chapter_count": 4,
-        "completed_reader_chapter_count": 1,
+        "completed_reader_chapter_count": 2,
         "terminal_reader_chapter_ids": [
-          "white-box-evidence-interpretability-and-activation-governance"
+          "white-box-evidence-interpretability-and-activation-governance",
+          "governed-world-models-and-reality-grounding"
         ],
         "remaining_reader_chapter_ids": [
-          "governed-world-models-and-reality-grounding",
           "human-factors-and-meaningful-control-in-oversight",
           "governed-operations-incident-command-and-graceful-degradation"
         ],
@@ -211,10 +211,10 @@
     "sota_supported_count": 0,
     "proof_target_count": 306,
     "lean_module_count": 102,
-    "theorem_declaration_count": 1307,
-    "derived_or_decomposed_theorem_count": 901,
+    "theorem_declaration_count": 1324,
+    "derived_or_decomposed_theorem_count": 910,
     "direct_or_projection_theorem_count": 230,
-    "unknown_or_mixed_theorem_count": 176,
+    "unknown_or_mixed_theorem_count": 184,
     "historical_v2_2_approved_exact_local_reader_formats": ["html"],
     "historical_v2_2_bounded_not_release_approved_reader_formats": ["epub", "docx"],
     "historical_v2_2_failed_reader_formats": ["pdf"],
@@ -437,7 +437,7 @@
     "release_effect": "none"
   },
   "semantic_proof_cluster_inventory": {
-    "state": "cluster_3_terminal_3_pending",
+    "state": "cluster_4_terminal_2_pending",
     "amendment_rule": "dated_machine_validated_amendment_with_terminal_disposition_required",
     "clusters": [
       {
@@ -457,7 +457,7 @@
       },
       {
         "id": "learning_update_state_and_unlearning",
-        "state": "strengthen",
+      "state": "adequate",
         "modules": ["AsiStackProofs.DataEngineLifecycleRefinement", "AsiStackProofs.PolicyOptimizationRefinement", "AsiStackProofs.ModelWeightCustody", "AsiStackProofs.ContextTransactionRefinement"]
       },
       {

@@ -3,7 +3,7 @@ title: "Governed World Models and Reality Grounding"
 chapter_id: "governed-world-models-and-reality-grounding"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
-draft_maturity: "v0.1 substantive manuscript draft"
+draft_maturity: "v0.4 integrated reader chapter"
 last_updated: "2026-07-19"
 primary_sources:
   - "platonic_world_model"
@@ -18,10 +18,10 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "No local held-out intervention benchmark yet distinguishes causal prediction from correlation."
+  - "The chapter has an implemented packet contract, finite non-authority and discrepancy model, and protocol-ready resource-isolated empirical lane, but no claim-bearing world-model campaign has run."
   - "No representative real-world transfer result establishes governance thresholds."
   - "Plural-model benefits and costs have not been compared against strong single-model, model-free, and reactive baselines."
-  - "The two finite Lean targets and all chapter-level empirical tests remain planned; no support-state promotion is implied."
+  - "The prior P4/M8 finite synthetic campaign remains adjacent bounded evidence and does not establish the chapter core; no support-state promotion is implied."
 ---
 
 ## Chapter status
@@ -31,14 +31,14 @@ open_evidence_gaps:
 | Chapter ID | `governed-world-models-and-reality-grounding` |
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
-| Manuscript maturity | v0.1 substantive manuscript draft |
+| Manuscript maturity | v0.4 integrated reader chapter |
 | Last updated | 2026-07-19 |
 | Primary source records | `platonic_world_model`, `deterministic_capability_compilation`, `qcsa_whitepaper`, `simulation_scaling`, `cognitive_compilation`, `planforge`, `ext_world_models_2018`, `ext_dreamer_v3_2025`, `ext_v_jepa_2_2025` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `ext_world_models_2018`, `ext_dreamer_v3_2025`, `ext_v_jepa_2_2025`; supporting: `platonic_world_model`, `simulation_scaling`, `planforge`; variants: `deterministic_capability_compilation`, `qcsa_whitepaper`, `cognitive_compilation` |
 | Source loading state | Public-safe source notes exist for all nine assigned records. External results remain source-reported and unreproduced; Corben-authored sources contribute architecture and bounded lineage at their recorded limits. |
-| Test state | Reality-gap, model-exploitation, counterfactual-intervention, and formal route tests are specified below but have not been implemented or run for this layer. |
+| Test state | The governed packet schema, safe-hold record fixture, independent semantic validator, thirteen negative mutations, and two public Lean targets through nine declarations are implemented. The six-arm claim-bearing campaign is protocol-ready and resource-isolated, not executed; protected outcomes remain closed. |
 
 ## Drafting guardrail
 
@@ -102,6 +102,31 @@ agent plans through a learned, symbolic, simulated, or hybrid world model.
 | Mathematical and Search Substrates | candidate algorithms, representations, recurrent structures, search families, and substrate adoption | world-model checkpoint lifecycle, horizon error budgets, grounding gates, and model-use residuals |
 | Artifact Graphs, Audit Logs, and Replay | general provenance, lineage, invalidation, and replay across the stack | distinct observation, belief, prediction, branch, intervention, and observed-effect identities |
 | Runtime Adapters, Tool Permissions, and Human Approval | permission and mechanisms for external effects | whether modeled state is sufficiently supported to request that authority |
+
+## Why this boundary earns a chapter
+
+Planning owns what to pursue and how candidate work is ordered. Perception owns
+how environmental signals become admitted observations. Runtime owns whether an
+effect is permitted. None owns the intervening prediction object: the exact
+model-relative branch that may influence a plan while remaining defeasible,
+versioned, uncertainty-bearing, and answerable to later observation.
+
+That object creates a distinct failure and governance surface. A planner can
+exploit a favorable model error even when every plan edge is well formed; a
+fresh observation can invalidate an attractive branch without invalidating the
+goal; and a model update can silently retarget cached branches while leaving
+the effect-authority record untouched. Returning these concerns to adjacent
+chapters would either make Planning responsible for model validity, make
+Perception responsible for counterfactuals, or let Runtime decide whether an
+imagined state was evidentially admissible. Each move collapses an interface the
+stack needs to inspect independently.
+
+The terminal reader decision is therefore **integrate at argument support**.
+The chapter earns its place through its exclusive qualified-branch and
+reality-residual contract, not through source prestige or the prior synthetic
+campaign. Its formal record and protocol make the boundary executable and
+falsifiable while causal grounding, utility, safe control, transfer, and
+deployment remain open.
 
 ## Why existing approaches are insufficient
 
@@ -573,6 +598,21 @@ replanning, authority separation, and recovery. Their mapped contribution is
 architectural. The joined governed-world-model service, its thresholds, and its
 claimed frontier advantage remain untested.
 
+The earlier P4/M8 situated-world-model campaign is adjacent bounded synthetic
+evidence: it exercised two authored finite environments, but it **does not
+establish the chapter core**. It neither trained a neural world model nor tested
+natural partially observed tasks, independent outcome truth, planner
+exploitation, transfer, or the joint useful-safe-cost frontier required here.
+
+The minimum executable boundary is now concrete. The
+`governed_world_model_packet.schema.json` contract and its deliberately stale,
+unsupported safe-hold fixture make qualified-branch, authority, and
+reality-residual custody independently rejectable. The fixture is record-shape
+evidence only: no predictor was trained or evaluated, and it produces no
+support-state or authority change. The six-arm claim-bearing campaign is
+**protocol-ready and resource-isolated, not executed**; its protected outcomes
+remain closed.
+
 No claim is made here that the layer solves philosophical symbol grounding,
 implements generic perception, discovers a true causal state, guarantees
 calibration, prevents all model exploitation, supplies a local neural world
@@ -585,7 +625,9 @@ any of those conclusions.
 
 | Test | Purpose | Status |
 |---|---|---|
-| Reality-gap and horizon calibration benchmark | Measure prediction error, calibration, decision regret, safe abstention, and resource cost across horizons and controlled shifts against reactive, model-free, ordinary predictive, and single-model baselines. | planned; not implemented or run |
+| Qualified-branch and reality-residual contract | Reject stale, unsupported, materially disagreeing, authority-widening, or residual-laundering packets before they reach Planning. | implemented as one schema, one safe-hold record fixture, one independent validator, 13 rejecting mutations, and two public Lean targets through nine theorem declarations; record-shape evidence only |
+| Prior situated-world-model campaign | Exercise bounded model-state, discrepancy, and rollback routes in two authored finite environments. | completed adjacent synthetic evidence; does not transfer to the chapter core |
+| Reality-gap and horizon calibration benchmark | Measure prediction error, calibration, decision regret, safe abstention, and resource cost across horizons and controlled shifts against reactive, model-free, ordinary predictive, single-governed, plural-governed, and oracle-sensitivity arms. | six-arm protocol ready; protected outcomes closed; not executed |
 | Model-exploitation red-team suite | Search for policies that target high-value, low-support, stale, aliased, or misspecified regions and test whether the admission and authority boundaries reject or narrow them. | planned; not implemented or run |
 | Counterfactual intervention test | Compare predicted effects with held-out action interventions while preserving independent environment truth and separate model, policy, observation, and evaluator error. | planned; not implemented or run |
 | Model-update migration trace | Exercise checkpoint replacement, stale branch invalidation, calibration inheritance limits, rollback scope, and unchanged authority ceilings. | planned; not implemented or run |
@@ -594,19 +636,22 @@ any of those conclusions.
 
 Finite formalization is appropriate for two route invariants because their
 objects and consumers can be modeled without pretending to formalize reality.
-The planned module is `AsiStackProofs.GovernedWorldModels`; no declaration or
-build result is reported for it here.
+The compiled module is `AsiStackProofs.GovernedWorldModels`. Both public targets
+are implemented through nine theorem declarations; the independent contract
+validator also checks the schema, fixture, protocol, chapter ceiling, and
+rejecting mutations.
 
-| Planned target | Finite model | Honest conclusion | Semantic limit |
+| Implemented target | Finite model | Honest conclusion | Semantic limit |
 |---|---|---|---|
 | `lean:world_model.unsupported_rollout_no_authority` | a rollout record with version-currentness, support, calibration, disagreement, consequence, and authority-request flags | unsupported, stale, materially disagreeing, or uncalibrated rollout states cannot reach the consequential authorization constructor | the booleans do not establish that support domains, calibration estimates, disagreement thresholds, or consequence classes are correct |
 | `lean:world_model.reality_residual_forces_route` | a transition system with material residual and routes for re-estimation, fallback, review, safe hold, or continued model-based execution | a material residual cannot transition directly to continued model-based execution before a bounded response route | the theorem cannot determine whether an observation is true, a residual is material, or the selected recovery is sufficient |
 
+These are consequences of authored finite predicates, not truth certificates.
 Formalizing causal adequacy, real-world grounding, calibrated uncertainty, or
 the superiority of plural models from uninterpreted predicates would be
 formalization theater. Richer proof targets wait for a semantically adequate
-record schema, implemented runtime consumer, and empirical procedures that can
-populate the predicates with defensible evidence.
+runtime consumer and empirical procedures that can populate the existing
+record schema with defensible evidence.
 
 ## Source crosswalk
 

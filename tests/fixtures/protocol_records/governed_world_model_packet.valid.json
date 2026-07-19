@@ -1,0 +1,97 @@
+{
+  "schema_version": "asi_stack.governed_world_model_packet.v1",
+  "packet_id": "governed-world-model-record-shape-fixture-001",
+  "claim_id": "governed-world-models-and-reality-grounding.core",
+  "origin_class": "repository_fixture",
+  "disposition": "safe_hold",
+  "model_identity": {
+    "model_id": "fixture-model-not-trained",
+    "checkpoint_digest": "sha256:fixture-checkpoint",
+    "runtime_digest": "sha256:fixture-runtime",
+    "training_lineage_ref": "fixture://no-training-lineage",
+    "validity_profile_ref": "fixture://record-shape-only",
+    "current_version": false
+  },
+  "observation_basis": {
+    "observation_ids": ["fixture-observation-001"],
+    "source_refs": ["fixture://synthetic-observation"],
+    "capture_cutoff": "2026-07-19T00:00:00Z",
+    "fresh": false,
+    "quality_ref": "fixture://quality-not-measured",
+    "missingness_ref": "fixture://missingness-unresolved",
+    "corruption_ref": "fixture://corruption-not-tested",
+    "branch_id": "fixture-actuality-branch"
+  },
+  "belief_state": {
+    "estimator_id": "fixture-estimator",
+    "state_vocabulary_ref": "fixture://state-vocabulary",
+    "alternative_state_refs": ["fixture://unknown-state"],
+    "uncertainty_ref": "fixture://uncertainty-not-measured",
+    "unresolved_aliases_ref": "fixture://all-aliases-unresolved"
+  },
+  "rollout_semantics": {
+    "intervention_id": "fixture-no-effect-intervention",
+    "action_semantics_ref": "fixture://action-semantics",
+    "horizon": 1,
+    "resolution": "fixture-step",
+    "consequence_class": "reversible_low",
+    "resource_budget_ref": "fixture://zero-execution-budget",
+    "prohibited_uses": ["external effects", "support promotion", "release"]
+  },
+  "prediction": {
+    "branch_id": "fixture-imagined-branch",
+    "predicted_state_ref": "fixture://no-prediction",
+    "uncertainty_by_horizon_ref": "fixture://not-measured",
+    "validity_domain_ref": "fixture://none",
+    "omissions_ref": "fixture://all-model-content-omitted",
+    "support_ceiling": "unsupported"
+  },
+  "calibration_and_disagreement": {
+    "calibration_ref": "fixture://not-calibrated",
+    "heldout_intervention_ref": "fixture://not-run",
+    "model_ids": ["fixture-model-not-trained"],
+    "material_disagreement": true,
+    "exploitation_probe_ref": "fixture://not-run",
+    "independent_evaluator_id": "fixture-schema-validator"
+  },
+  "planner_admission": {
+    "policy_id": "fixture-policy",
+    "decision": "safe_hold",
+    "accepted_uses": [],
+    "prohibited_uses": ["planning", "execution", "evidence", "release"],
+    "reobservation_trigger": "any real observation or model substitution",
+    "safe_alternative_ref": "fixture://no-effect-hold",
+    "receipt_id": "fixture-admission-receipt-001"
+  },
+  "authority_boundary": {
+    "authority_ceiling_ref": "fixture://no-effect-authority",
+    "authority_delta": "none",
+    "effect_authorized": false,
+    "release_authority": false,
+    "reversibility_ref": "fixture://no-effect-to-reverse"
+  },
+  "reconciliation": {
+    "action_taken_ref": "fixture://no-action",
+    "observed_effect_ref": "fixture://no-effect",
+    "observer_id": "fixture-independent-record-consumer",
+    "forecast_preserved": true,
+    "model_error_ref": "fixture://not-estimable",
+    "policy_error_ref": "fixture://not-estimable",
+    "observation_error_ref": "fixture://not-estimable",
+    "evaluator_error_ref": "fixture://record-shape-only"
+  },
+  "residual_and_lifecycle": {
+    "material_residual": true,
+    "residual_ref": "fixture://no-world-model-evidence",
+    "invalidated_descendants_ref": "fixture://all-descendants-blocked",
+    "required_route": "safe_hold",
+    "checkpoint_disposition": "fixture_only",
+    "rollback_ref": "fixture://no-effect-to-rollback",
+    "residual_owner": "governed-world-models-chapter-research-backlog"
+  },
+  "support_state_effect": "none",
+  "non_claims": [
+    "No learned or symbolic world model was trained, queried, or evaluated.",
+    "No prediction, grounding, calibration, causal, control, safety, transfer, support, release, AGI, or ASI result exists."
+  ]
+}

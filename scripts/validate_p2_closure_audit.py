@@ -21,8 +21,8 @@ MAINTENANCE_STATUS = ROOT / "roadmap_records" / "post_v2_3_maintenance_transfer_
 
 HISTORICAL_PROOF_TARGET_COUNT = 298
 CURRENT_PROOF_TARGET_COUNT = 306
-CURRENT_IMPLEMENTED_TARGET_COUNT = 300
-CURRENT_PLANNED_TARGET_COUNT = 6
+CURRENT_IMPLEMENTED_TARGET_COUNT = 302
+CURRENT_PLANNED_TARGET_COUNT = 4
 HISTORICAL_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
     "useful but too narrow": 158,
@@ -46,7 +46,8 @@ ADMITTED_CHAPTERS = {
     "governed-operations-incident-command-and-graceful-degradation",
 }
 PLANNED_CHAPTERS = ADMITTED_CHAPTERS - {
-    "white-box-evidence-interpretability-and-activation-governance"
+    "white-box-evidence-interpretability-and-activation-governance",
+    "governed-world-models-and-reality-grounding",
 }
 EXPECTED_RICHER = {
     "constitutional-alignment-substrate": 6,
@@ -107,7 +108,7 @@ def current_proof_errors(
         or activation_truth.get("proof_target_count") != CURRENT_PROOF_TARGET_COUNT
         or activation_truth.get("chapter_core_promotion_count") != 0
     ):
-        out.append("current proof manifest/status is not exactly 306 unique targets: 300 implemented plus 6 planned with no core promotion")
+        out.append("current proof manifest/status is not exactly 306 unique targets: 302 implemented plus 4 planned with no core promotion")
     if (
         maintenance_status.get("status") != "active"
         or maintenance_status.get("roadmap_path") != "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
@@ -117,7 +118,7 @@ def current_proof_errors(
         or {row.get("chapter_id") for row in planned_targets} != PLANNED_CHAPTERS
         or planned_chapter_counts != Counter({chapter_id: 2 for chapter_id in PLANNED_CHAPTERS})
     ):
-        out.append("planned proof targets are not tied exactly to the three unfinished manifest-admitted chapters")
+        out.append("planned proof targets are not tied exactly to the two unfinished manifest-admitted chapters")
     triage_by_tag = {row.get("tag"): row for row in triage_records}
     if (
         triage.get("record_count") != CURRENT_PROOF_TARGET_COUNT
@@ -293,7 +294,7 @@ def main() -> None:
     print(
         "P2 closure audit passed: 1,151 baseline theorem declarations, 298 unique historical targets, "
         "65/65 reviewed modules, 298/298 frozen historical adequacy routes, 306 current targets "
-        "(300 implemented plus 6 planned exactly on three unfinished admitted chapters), 306/306 current adequacy classifications, "
+        "(302 implemented plus 4 planned exactly on two unfinished admitted chapters), 306/306 current adequacy classifications, "
         f"nine semantic-model dossiers/consumers, {len(mutations) + current_mutation_count} rejecting mutations, and no support-state effect."
     )
 
