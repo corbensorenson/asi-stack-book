@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 298 |
 | Lean modules scanned | 98 |
-| Theorem declarations classified | 1300 |
+| Theorem declarations classified | 1307 |
 | Direct/projection-style theorem declarations | 230 |
-| Derived/decomposed theorem declarations | 894 |
+| Derived/decomposed theorem declarations | 901 |
 | Unknown or mixed theorem declarations | 176 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
@@ -81,7 +81,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ContextTransactions.lean` | unmapped | 0 | 17 | 0 | 17 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 1 | 4 | 0 | 4 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | data-engines-continual-learning-and-unlearning | 15 | 3 | 0 | 0 | 3 | manual review |
+| `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | data-engines-continual-learning-and-unlearning | 15 | 5 | 0 | 2 | 3 | manual review |
 | `lean/AsiStackProofs/DataEngines.lean` | unmapped | 0 | 15 | 0 | 15 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Deliberation.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | governed-deliberation-and-test-time-scaling | 10 | 11 | 6 | 3 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -103,12 +103,12 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | unmapped | 0 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | open-ended-improvement-engines | 7 | 3 | 0 | 0 | 3 | manual review |
+| `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | open-ended-improvement-engines | 7 | 5 | 0 | 2 | 3 | manual review |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | unmapped | 0 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/PlanForge.lean` | planning-as-a-control-layer | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Planning.lean` | planning-as-a-control-layer | 5 | 29 | 8 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | unmapped | 0 | 19 | 7 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | policy-optimization-and-learning-from-feedback | 4 | 3 | 0 | 0 | 3 | manual review |
+| `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | policy-optimization-and-learning-from-feedback | 4 | 5 | 0 | 2 | 3 | manual review |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | unmapped | 0 | 14 | 0 | 14 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | procedural-memory-and-cognitive-loop-closure | 2 | 14 | 10 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | unmapped | 0 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -122,7 +122,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | replaceable-cognitive-substrates-beyond-transformer-monoculture | 1 | 16 | 0 | 11 | 5 | manual review |
 | `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 6 | 37 | 8 | 29 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | unmapped | 0 | 14 | 0 | 11 | 3 | manual review |
-| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | resource-economics-and-token-budgets | 11 | 8 | 0 | 0 | 8 | manual review |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | resource-economics-and-token-budgets | 11 | 9 | 0 | 1 | 8 | manual review |
 | `lean/AsiStackProofs/Routing.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | routing-heads-and-specialist-cores | 5 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 6 | 49 | 5 | 44 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -507,9 +507,11 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_substrate_promotion_requires_baselines_and_tradeoff_metrics` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_substrate_promotion_without_baselines_or_tradeoffs_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `hardware_mismatch_without_refusal_path_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | `accepted_event_increments_receipt_count` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | `data_engine_axis_laundering_blocks_custody_and_readmission` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | `data_engine_full_cycle_composes` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | `data_engine_lifecycle_routes` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | `rejected_event_preserves_complete_state` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/DataEngines.lean` | `behavioral_change_cannot_launder_influence_reduction` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/DataEngines.lean` | `behavioral_change_cannot_launder_privacy_erasure` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/DataEngines.lean` | `complete_data_record_routes_to_eligible` | derived_or_decomposed | no | uses rcases, simp |
@@ -789,9 +791,11 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | `missing_independent_qualification_requires_separation` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | `missing_residual_owner_blocks_admission` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | `missing_stop_authority_blocks_admission` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | `accepted_event_increments_receipt_count` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | `open_ended_improvement_budget_reset_blocks_handoff_and_readmission` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | `open_ended_improvement_full_cycle_composes` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | `open_ended_improvement_lifecycle_routes` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | `rejected_event_preserves_complete_state` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `complete_hive_work_admission_review_admits` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `external_hive_access_missing_lease_boundary_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `external_hive_access_without_lease_requires_federation_lease` | derived_or_decomposed | no | uses simp, unfold |
@@ -865,9 +869,11 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `reward_proxy_promotion_requires_target_evaluation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `reward_proxy_without_target_evaluation_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `unverified_reward_or_missing_governance_gate_blocks_policy_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | `accepted_event_increments_receipt_count` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | `policy_update_failed_evaluation_blocks_downstream_handoff` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | `policy_update_full_cycle_composes` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | `policy_update_lifecycle_routes` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | `rejected_event_preserves_complete_state` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | `failed_regression_with_routable_promotion_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | `generated_tool_missing_closure_artifact_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | `routable_failed_regression_routes_quarantine` | derived_or_decomposed | no | uses simp, unfold |
@@ -1039,6 +1045,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_workflow_trace_fixture_events_roll_up_to_summary` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `selected_route_is_lowest_cost_eligible_in_fixture` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `serving_memory_throughput_quality_overclaim_rejected` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `authority_request_never_accepts` | derived_or_decomposed | no | uses by_cases, cases, simp |
 | `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `complete_resource_lifecycle_reaches_closed_without_support_or_effect_authority` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `complete_simulation_transport_reaches_reconciliation_without_promotion` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `missing_failure_retention_blocks_verification` | unknown_or_mixed | no | no recognized depth pattern |

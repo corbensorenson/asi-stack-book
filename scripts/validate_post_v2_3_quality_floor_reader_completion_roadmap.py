@@ -33,7 +33,9 @@ SUCCESSOR_FORMAT_MATRIX_PATH = "editions/reader_manuscript/v2_0/format_review_ma
 SUCCESSOR_EPUB_DISPOSITION_PATH = "editions/reader_manuscript/v2_0/epub_disposition.json"
 NEXT_SUCCESSOR_ROADMAP_PATH = "docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md"
 NEXT_SUCCESSOR_STATUS_PATH = "roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json"
-ACTIVE_MARKER = "Status: active canonical successor roadmap; unfinished work only"
+ACTIVE_CURRENT_ROADMAP_PATH = "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
+ACTIVE_CURRENT_STATUS_PATH = "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json"
+ACTIVE_MARKER = "Status: **active canonical successor**"
 TARGET_IDS = [
     "scalable-oversight-and-adversarial-ai-control",
     "model-weight-custody-and-hardware-roots-of-trust",
@@ -105,6 +107,7 @@ def snapshot() -> dict:
         "successor_format_matrix": load_json(ROOT / SUCCESSOR_FORMAT_MATRIX_PATH),
         "successor_epub_disposition": load_json(ROOT / SUCCESSOR_EPUB_DISPOSITION_PATH),
         "next_successor_status": load_json(ROOT / NEXT_SUCCESSOR_STATUS_PATH),
+        "active_current_status": load_json(ROOT / ACTIVE_CURRENT_STATUS_PATH),
         "active_roadmaps": active_roadmaps(),
         "hygiene_errors": hygiene_errors(),
     }
@@ -128,8 +131,8 @@ def semantic_errors(data: dict) -> list[str]:
 
     if status.get("status") != "completed":
         errors.append("post-v2.3 roadmap must be completed after every terminal gate closes")
-    if data["active_roadmaps"] != [NEXT_SUCCESSOR_ROADMAP_PATH]:
-        errors.append("terminal roadmap history must expose the exact active claim-proof/SOTA successor")
+    if data["active_roadmaps"] != [ACTIVE_CURRENT_ROADMAP_PATH]:
+        errors.append("terminal roadmap history must expose the exact active evidence-competence successor")
     if "Status: completed 2026-07-13" not in data["predecessor"]:
         errors.append("predecessor roadmap lost completed status")
     if len(rows) != 55 or len(source_rows) < 280:
@@ -144,6 +147,11 @@ def semantic_errors(data: dict) -> list[str]:
         errors.append("claim-proof successor lost the frozen 54-chapter activation baseline")
     if next_status.get("structural_expansion_contract", {}).get("live_chapter_count") != 55:
         errors.append("claim-proof successor lost the authorized 55th chapter")
+    if next_status.get("status") != "completed" or next_status.get("roadmap_path") != NEXT_SUCCESSOR_ROADMAP_PATH:
+        errors.append("claim-proof successor is not preserved as completed history")
+    active_current = data["active_current_status"]
+    if active_current.get("status") != "active" or active_current.get("roadmap_path") != ACTIVE_CURRENT_ROADMAP_PATH:
+        errors.append("current evidence-competence roadmap machine authority is stale")
 
     cohort = status.get("chapter_cohort", [])
     if [row.get("id") for row in cohort] != TARGET_IDS:
@@ -366,14 +374,15 @@ def semantic_errors(data: dict) -> list[str]:
         if roadmap.count(f"`{name}`") < 1:
             errors.append(f"roadmap does not identify target chapter: {name}")
 
-    for name, text in {
-        "README.md": data["readme"],
-        "index.qmd": data["index"],
-        "docs/publication_readiness.md": data["publication"],
-        "docs/public_status_contract.md": data["public_contract"],
-    }.items():
+    surface_requirements = {
+        "README.md": (data["readme"], "55/55 chapter-core claims at `argument`"),
+        "index.qmd": (data["index"], "55/55 chapter-core claims at `argument`"),
+        "docs/publication_readiness.md": (data["publication"], "All 55 live chapter-core claims remain at `argument`"),
+        "docs/public_status_contract.md": (data["public_contract"], "55/55 chapter-core claims at `argument`"),
+    }
+    for name, (text, live_claim_phrase) in surface_requirements.items():
         normalized = " ".join(text.split())
-        for phrase in [ROADMAP_PATH, STATUS_PATH, SUCCESSOR_ROADMAP_PATH, SUCCESSOR_STATUS_PATH, NEXT_SUCCESSOR_ROADMAP_PATH, NEXT_SUCCESSOR_STATUS_PATH, "v2.3.0", "all 54 chapter-core claims remain at `argument`"]:
+        for phrase in [NEXT_SUCCESSOR_ROADMAP_PATH, NEXT_SUCCESSOR_STATUS_PATH, ACTIVE_CURRENT_ROADMAP_PATH, ACTIVE_CURRENT_STATUS_PATH, "v2.3.0", live_claim_phrase]:
             if phrase not in text and phrase not in normalized:
                 errors.append(f"{name} missing active roadmap truth: {phrase}")
     for phrase in [ROADMAP_PATH, "Successor activated: 2026-07-13"]:
@@ -387,7 +396,7 @@ def mutation_controls(base: dict) -> list[str]:
     mutations: list[tuple[str, dict]] = []
 
     duplicate = copy.deepcopy(base)
-    duplicate["active_roadmaps"] = [NEXT_SUCCESSOR_ROADMAP_PATH, "docs/fake_roadmap.md"]
+    duplicate["active_roadmaps"] = [ACTIVE_CURRENT_ROADMAP_PATH, "docs/fake_roadmap.md"]
     mutations.append(("duplicate active roadmap", duplicate))
 
     missing_chapter = copy.deepcopy(base)
@@ -422,7 +431,7 @@ def mutation_controls(base: dict) -> list[str]:
     mutations.append(("undeclared chapter HTML", orphan))
 
     stale_pointer = copy.deepcopy(base)
-    stale_pointer["readme"] = stale_pointer["readme"].replace(SUCCESSOR_ROADMAP_PATH, PREDECESSOR_PATH)
+    stale_pointer["readme"] = stale_pointer["readme"].replace(ACTIVE_CURRENT_ROADMAP_PATH, PREDECESSOR_PATH)
     mutations.append(("stale public pointer", stale_pointer))
 
     external_review = copy.deepcopy(base)
@@ -436,7 +445,7 @@ def mutation_controls(base: dict) -> list[str]:
 
 
 def main() -> None:
-    required = [ROADMAP_PATH, STATUS_PATH, SCHEMA_PATH, PREDECESSOR_PATH, HISTORICAL_READER_PATH, PROVISIONAL_READER_PATH, QUALITY_PACKETS_PATH, COMPLETION_PATH, NO_RELEASE_PATH, SUCCESSOR_ROADMAP_PATH, SUCCESSOR_STATUS_PATH, SUCCESSOR_SCHEMA_PATH, SUCCESSOR_P0_RECEIPT_PATH, SUCCESSOR_TEXT_FORMAT_PROFILE_PATH, SUCCESSOR_DOCX_REFERENCE_PATH, NEXT_SUCCESSOR_STATUS_PATH]
+    required = [ROADMAP_PATH, STATUS_PATH, SCHEMA_PATH, PREDECESSOR_PATH, HISTORICAL_READER_PATH, PROVISIONAL_READER_PATH, QUALITY_PACKETS_PATH, COMPLETION_PATH, NO_RELEASE_PATH, SUCCESSOR_ROADMAP_PATH, SUCCESSOR_STATUS_PATH, SUCCESSOR_SCHEMA_PATH, SUCCESSOR_P0_RECEIPT_PATH, SUCCESSOR_TEXT_FORMAT_PROFILE_PATH, SUCCESSOR_DOCX_REFERENCE_PATH, NEXT_SUCCESSOR_STATUS_PATH, ACTIVE_CURRENT_STATUS_PATH]
     missing = [path for path in required if not (ROOT / path).is_file()]
     if missing:
         raise SystemExit("missing post-v2.3 roadmap artifacts: " + ", ".join(missing))

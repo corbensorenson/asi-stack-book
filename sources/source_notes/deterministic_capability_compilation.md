@@ -44,7 +44,7 @@ always*. “Preserve” means preserving typed obligations, evidence, fallback,
 authority ceilings, and recovery—not assuming behavioral cloning has captured
 the capability.
 
-## Core Mechanisms
+## Mechanisms
 
 1. **Capability charter and vector envelope.** A field declares input and
    output schemas, preconditions, postconditions, invariants, failure semantics,

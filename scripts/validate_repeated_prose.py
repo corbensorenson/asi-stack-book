@@ -8,6 +8,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MIN_WORDS = 18
+P7_RECONCILIATION_RE = re.compile(
+    r"<!-- P7-EVIDENCE-RECONCILIATION:START -->.*?"
+    r"<!-- P7-EVIDENCE-RECONCILIATION:END -->",
+    re.S,
+)
 FORMULAIC_BEYOND_OPENERS = (
     "The mature version of",
     "The mature version is",
@@ -112,12 +117,19 @@ def strip_frontmatter(text: str) -> str:
     return text
 
 
+def strip_generated_evidence_reconciliation(text: str) -> str:
+    """Exclude machine-generated per-atom packets from editorial-repeat checks."""
+    return P7_RECONCILIATION_RE.sub("", text)
+
+
 def paragraph_words(paragraph: str) -> list[str]:
     return re.findall(r"\b[\w'-]+\b", paragraph)
 
 
 def normalized_paragraphs(path: Path) -> list[str]:
-    text = strip_frontmatter(path.read_text(encoding="utf-8", errors="ignore"))
+    text = strip_generated_evidence_reconciliation(
+        strip_frontmatter(path.read_text(encoding="utf-8", errors="ignore"))
+    )
     paragraphs: list[str] = []
     in_code = False
     current: list[str] = []
@@ -182,7 +194,9 @@ def main() -> None:
     formulaic_general_phrases: list[tuple[str, str]] = []
     formulaic_regex_phrases: list[tuple[str, str]] = []
     for path in sorted((ROOT / "chapters").glob("*.qmd")):
-        chapter_text = strip_frontmatter(path.read_text(encoding="utf-8", errors="ignore"))
+        chapter_text = strip_generated_evidence_reconciliation(
+            strip_frontmatter(path.read_text(encoding="utf-8", errors="ignore"))
+        )
         for paragraph in normalized_paragraphs(path):
             locations[paragraph].append(str(path.relative_to(ROOT)))
         for phrase in FORMULAIC_GENERAL_PHRASES:

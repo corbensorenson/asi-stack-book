@@ -31,6 +31,9 @@ CURRENT_SUCCESSOR_STATUS = ROOT / CURRENT_SUCCESSOR_STATUS_PATH
 NEXT_SUCCESSOR_PATH = "docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md"
 NEXT_SUCCESSOR_STATUS_PATH = "roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json"
 NEXT_SUCCESSOR_STATUS = ROOT / NEXT_SUCCESSOR_STATUS_PATH
+ACTIVE_CURRENT_PATH = "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
+ACTIVE_CURRENT_STATUS_PATH = "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json"
+ACTIVE_CURRENT_STATUS = ROOT / ACTIVE_CURRENT_STATUS_PATH
 EXPECTED_PRIORITIES = [f"P{i}" for i in range(6)]
 EXPECTED_MILESTONES = [f"M{i}" for i in range(8)]
 EXPECTED_LANES = [f"QI-{i:02d}" for i in range(1, 13)]
@@ -59,11 +62,11 @@ REQUIRED_ROADMAP_SECTIONS = [
 
 
 def active_roadmaps() -> list[str]:
-    marker = "Status: active canonical successor roadmap; unfinished work only"
     return [
         path.relative_to(ROOT).as_posix()
         for path in sorted((ROOT / "docs").glob("*roadmap*.md"))
-        if marker in path.read_text(encoding="utf-8", errors="ignore")[:1200]
+        if "Status: **active canonical successor**"
+        in path.read_text(encoding="utf-8", errors="ignore")[:1200]
     ]
 
 
@@ -85,8 +88,8 @@ def semantic_errors(data: dict) -> list[str]:
         errors.append("machine roadmap path drifted")
     if status.get("status") == "active" and data["active_roadmaps"] != [ROADMAP_PATH]:
         errors.append("there must be exactly one active canonical roadmap")
-    if status.get("status") == "completed" and data["active_roadmaps"] != [NEXT_SUCCESSOR_PATH]:
-        errors.append("terminal roadmap history must coexist with the exact active claim-proof/SOTA successor")
+    if status.get("status") == "completed" and data["active_roadmaps"] != [ACTIVE_CURRENT_PATH]:
+        errors.append("terminal roadmap history must coexist with the exact current evidence-competence successor")
 
     baseline = status.get("baseline", {})
     expected_baseline = {
@@ -117,6 +120,11 @@ def semantic_errors(data: dict) -> list[str]:
         errors.append("frozen 54-chapter activation lineage drifted")
     if next_status.get("structural_expansion_contract", {}).get("live_chapter_count") != 55:
         errors.append("authorized 55th-chapter expansion is absent")
+    if next_status.get("status") != "completed" or next_status.get("roadmap_path") != NEXT_SUCCESSOR_PATH:
+        errors.append("claim-proof/SOTA successor is not preserved as completed history")
+    active_current_status = data["active_current_status"]
+    if active_current_status.get("status") != "active" or active_current_status.get("roadmap_path") != ACTIVE_CURRENT_PATH:
+        errors.append("current evidence-competence successor machine authority is stale")
 
     qowners = {chapter.get("id") for chapter in chapters if "qcsa_whitepaper" in chapter.get("source_ids", [])}
     if qowners != QCSA_OWNERS:
@@ -164,7 +172,7 @@ def semantic_errors(data: dict) -> list[str]:
             errors.append(f"roadmap does not define {lane_id}")
 
     for name, text in [("README.md", data["readme"]), ("index.qmd", data["index"])]:
-        for phrase in [ROADMAP_PATH, STATUS_PATH, ACTIVE_SUCCESSOR_PATH, ACTIVE_SUCCESSOR_STATUS_PATH, CURRENT_SUCCESSOR_PATH, CURRENT_SUCCESSOR_STATUS_PATH, NEXT_SUCCESSOR_PATH, NEXT_SUCCESSOR_STATUS_PATH, "v2.2.0", "v2.3.0", "e27661166e9105f37cb36d63b15795f80715ca24", "all 54 chapter-core claims remain at `argument`"]:
+        for phrase in [NEXT_SUCCESSOR_PATH, NEXT_SUCCESSOR_STATUS_PATH, ACTIVE_CURRENT_PATH, ACTIVE_CURRENT_STATUS_PATH, "v2.3.0", "e27661166e9105f37cb36d63b15795f80715ca24", "55/55 chapter-core claims at `argument`"]:
             if phrase not in text:
                 errors.append(f"{name} missing roadmap/release truth: {phrase}")
     predecessor = data["predecessor"]
@@ -205,11 +213,11 @@ def negative_controls(base: dict) -> list[str]:
     mutations.append(("standalone chapter invention", chapter_invention))
 
     duplicate_active = copy.deepcopy(base)
-    duplicate_active["active_roadmaps"] = [NEXT_SUCCESSOR_PATH, "docs/fake_roadmap.md"]
+    duplicate_active["active_roadmaps"] = [ACTIVE_CURRENT_PATH, "docs/fake_roadmap.md"]
     mutations.append(("duplicate active roadmap", duplicate_active))
 
     stale_pointer = copy.deepcopy(base)
-    stale_pointer["readme"] = stale_pointer["readme"].replace(ROADMAP_PATH, "docs/post_v2_1_residual_and_transfer_roadmap.md")
+    stale_pointer["readme"] = stale_pointer["readme"].replace(ACTIVE_CURRENT_PATH, "docs/post_v2_1_residual_and_transfer_roadmap.md")
     mutations.append(("stale README pointer", stale_pointer))
 
     terminal_regression = copy.deepcopy(base)
@@ -223,7 +231,7 @@ def negative_controls(base: dict) -> list[str]:
 
 
 def main() -> None:
-    required = [ROADMAP, STATUS, SCHEMA, STRUCTURE, SOURCES, VECTORS, README, INDEX, PREDECESSOR, PREDECESSOR_COMPLETION, CYCLE_COMPLETION, CURRENT_SUCCESSOR_STATUS, NEXT_SUCCESSOR_STATUS]
+    required = [ROADMAP, STATUS, SCHEMA, STRUCTURE, SOURCES, VECTORS, README, INDEX, PREDECESSOR, PREDECESSOR_COMPLETION, CYCLE_COMPLETION, CURRENT_SUCCESSOR_STATUS, NEXT_SUCCESSOR_STATUS, ACTIVE_CURRENT_STATUS]
     missing = [path.relative_to(ROOT).as_posix() for path in required if not path.is_file()]
     if missing:
         raise SystemExit("missing post-v2.2 roadmap artifacts: " + ", ".join(missing))
@@ -242,6 +250,7 @@ def main() -> None:
         "active_roadmaps": active_roadmaps(),
         "current_successor_status": load_json(CURRENT_SUCCESSOR_STATUS),
         "next_successor_status": load_json(NEXT_SUCCESSOR_STATUS),
+        "active_current_status": load_json(ACTIVE_CURRENT_STATUS),
     }
     errors = validate_against_schema(status, load_json(SCHEMA), STATUS.relative_to(ROOT).as_posix())
     errors.extend(semantic_errors(data))
@@ -251,7 +260,7 @@ def main() -> None:
     print(
         "Post-v2.2 implementation roadmap passed: completed terminal roadmap, 6 priorities, "
         "8 milestones, 12 QCSA implementation lanes, 9 existing chapter owners, "
-        "a frozen 54-claim activation baseline plus 55 live argument-state core claims, exact claim-proof/SOTA successor active, no QCSA chapter/format effect, and 8 rejecting mutations."
+        "a frozen 54-claim activation baseline plus 55 live argument-state core claims, exact evidence-competence successor active, no QCSA chapter/format effect, and 8 rejecting mutations."
     )
 
 

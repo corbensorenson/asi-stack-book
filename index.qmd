@@ -14,6 +14,17 @@ _Current canonical metrics (generated from machine records): **55 manifest chapt
 | Architecture reference | Interfaces, invariants, failure routes, protocols, tests, proofs, and implementation horizons across all 55 live chapters. | [Open the architecture index](products/architecture-reference/index.html) |
 | Evidence registry | Current commit/count state, claim support, sources, tests, proofs, releases, and residuals. | [Open the evidence registry](products/evidence-registry/index.html) or [inspect the claim matrix](appendices/C_claim_evidence_matrix.qmd) |
 
+## Download the reader edition
+
+The public `reader-2026-07-18` edition packages the current 55-chapter human
+spine as [PDF](https://github.com/corbensorenson/asi-stack-book/releases/download/reader-2026-07-18/the-asi-stack-reader-2026-07-18.pdf),
+[EPUB](https://github.com/corbensorenson/asi-stack-book/releases/download/reader-2026-07-18/the-asi-stack-reader-2026-07-18.epub),
+and [DOCX](https://github.com/corbensorenson/asi-stack-book/releases/download/reader-2026-07-18/the-asi-stack-reader-2026-07-18.docx).
+The [release notes and exact hashes](https://github.com/corbensorenson/asi-stack-book/releases/tag/reader-2026-07-18)
+record the compatibility and accessibility residuals. This all-rights-reserved
+reader release is not the canonical evidence release; `v2.3.0` remains the
+latest immutable living-book release.
+
 All three products derive from one canonical source tree; their density, navigation, artifact, and review boundaries are defined in [`docs/product_contracts.md`](docs/product_contracts.md), with executable projection details in [`docs/product_projection_artifacts.md`](docs/product_projection_artifacts.md). The [`Post-v2.3 Claim Proof, Causal Validation, and SOTA-Challenge Roadmap`](docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md) is complete with an exact [`terminal no-public-release record`](release_records/2026-07-16-post-v2-3-claim-proof-sota-roadmap-complete-no-public-release.json). The [`Post-v2.3 Evidence Competence, Transfer, and Publication Roadmap`](docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md) is the sole active successor, with machine authority in [`roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`](roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json), an [`N0–N5 claim-bearing experiment standard`](docs/claim_bearing_experiment_competence_standard.md), and a [`complete accepted-transition identity crosswalk`](docs/claim_identity_graph_reconciliation.md). All 115 accepted transitions now resolve through 25 exact atom, 61 bounded subclaim, and 29 proxy relations with zero indirect parent support movement. The competence contract prevents weak implementations, invalid instruments, bad proxies, and underpowered tests from becoming negative evidence about an architecture. The live working tree has 55/55 chapter-core claims at `argument`, zero chapter-core promotions, zero external reproductions, and no SOTA support; the local X synopsis source is current, but its older unpublished platform draft is stale and must be refreshed before publication. `v2.3.0` remains the latest immutable public living-book release. <!-- canonical-status:historical -->
 
 ![Layered conceptual architecture for the ASI Stack](assets/images/asi-stack-hero.png){#fig-asi-stack-hero fig-alt="A light technical illustration of a layered transparent systems stack with routing nodes, ledgers, and controlled feedback loops."}

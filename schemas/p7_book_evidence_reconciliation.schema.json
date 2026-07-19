@@ -15,7 +15,7 @@
     "narrowed_atom_count": {"const": 9},
     "bounded_promotion_count": {"const": 2},
     "chapter_records": {"type":"array","minItems":55,"maxItems":55,"items":{"type":"object","additionalProperties":false,"required":["chapter_id","path","sha256","atom_count","core_disposition","human_summary_count","ai_packet_count","argument_exit_table_count"],"properties":{"chapter_id":{"type":"string"},"path":{"type":"string"},"sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"atom_count":{"type":"integer","minimum":1},"core_disposition":{"enum":["blocked_after_full_attempt","narrowed_after_full_attempt","retained_after_full_attempt","promoted_at_bounded_scope"]},"human_summary_count":{"const":1},"ai_packet_count":{"const":1},"argument_exit_table_count":{"const":1}}}},
-    "source_count": {"const": 316},
+    "source_count": {"const": 319},
     "new_current_comparator_source_id": {"const": "ext_gated_deltanet2_2026"},
     "appendix_digests": {"type":"object","minProperties":5,"additionalProperties":{"type":"string","pattern":"^[0-9a-f]{64}$"}},
     "reader_projection_check_passed": {"const": true},

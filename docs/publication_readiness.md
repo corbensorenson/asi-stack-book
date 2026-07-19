@@ -92,8 +92,25 @@ It creates no support state or release effect and does not alter the immutable
   `argument` in the live manifest.
 <!-- canonical-status:historical-end -->
 - EPUB, DOCX, PDF, audio, and curated-reader editions are not v2.3.0 release
-  artifacts. The terminal local reader record approves exact HTML and DOCX
-  only; it does not create a public reader release.
+  artifacts. The separate all-rights-reserved `reader-2026-07-18` GitHub
+  Release now publishes exact PDF, EPUB, and DOCX derivatives with tracked
+  hashes and compatibility residuals at
+  `docs/reader_release_2026_07_18.md`; it does not replace or modify the
+  canonical v2.3.0 evidence release. No audiobook is published.
+
+## Public reader edition
+
+- Release page:
+  <https://github.com/corbensorenson/asi-stack-book/releases/tag/reader-2026-07-18>
+- Exact machine manifest:
+  `editions/reader_manuscript/reader_2026_07_18/manifest.json`
+- Exact release record:
+  `release_records/2026-07-18-reader-2026-07-18-0921a924.json`
+- Public redownload verification: PDF, EPUB, and DOCX each matched the approved
+  local byte count and SHA-256 digest.
+- Preserved residuals: untagged PDF; no native-reader or assistive-technology
+  EPUB review; no Microsoft Word DOCX review; no accessibility, external-review,
+  peer-review, legal-review, or open-license claim.
 
 ## Ready
 

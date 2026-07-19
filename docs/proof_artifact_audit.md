@@ -50,7 +50,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | 4 | 20 | 0 | 18 | 2 |
 | `lean/AsiStackProofs/Corrigibility.lean` | 1 | 4 | 0 | 6 | 2 |
 | `lean/AsiStackProofs/CyclicMixers.lean` | 2 | 7 | 0 | 5 | 5 |
-| `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | 15 | 3 | 15 | 10 | 2 |
+| `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | 15 | 5 | 15 | 10 | 2 |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | 10 | 11 | 0 | 12 | 3 |
 | `lean/AsiStackProofs/Efficiency.lean` | 4 | 26 | 0 | 9 | 4 |
 | `lean/AsiStackProofs/EvidenceStates.lean` | 7 | 31 | 0 | 17 | 7 |
@@ -66,10 +66,10 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/InterStackProtocols.lean` | 9 | 9 | 0 | 1 | 1 |
 | `lean/AsiStackProofs/LivingBook.lean` | 4 | 21 | 0 | 11 | 6 |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | 8 | 9 | 0 | 2 | 2 |
-| `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | 7 | 3 | 7 | 10 | 2 |
+| `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | 7 | 5 | 7 | 10 | 2 |
 | `lean/AsiStackProofs/PlanForge.lean` | 2 | 4 | 0 | 4 | 3 |
 | `lean/AsiStackProofs/Planning.lean` | 5 | 29 | 0 | 11 | 8 |
-| `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | 4 | 3 | 4 | 10 | 2 |
+| `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | 4 | 5 | 0 | 10 | 2 |
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | 2 | 14 | 0 | 21 | 3 |
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | 3 | 11 | 0 | 31 | 3 |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | 3 | 10 | 0 | 7 | 6 |
@@ -78,7 +78,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ReadinessRefinement.lean` | 3 | 17 | 0 | 10 | 3 |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | 1 | 16 | 0 | 15 | 2 |
 | `lean/AsiStackProofs/Replacement.lean` | 6 | 37 | 0 | 10 | 6 |
-| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | 11 | 8 | 11 | 4 | 2 |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | 11 | 9 | 11 | 5 | 2 |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | 5 | 17 | 0 | 21 | 3 |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | 6 | 49 | 0 | 13 | 9 |
 | `lean/AsiStackProofs/SafetyCaseRefinement.lean` | 8 | 10 | 0 | 9 | 2 |

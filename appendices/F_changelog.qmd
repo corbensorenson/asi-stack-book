@@ -19,6 +19,19 @@
 - Reopened reader shipping as an execution obligation: PDF/DOCX layout repair,
   exact format validation, publication receipts, and clean commit-bound
   attestation are required rather than another inherited no-release record.
+- Published the all-rights-reserved `reader-2026-07-18` GitHub Release with
+  exact PDF, EPUB, and DOCX assets. Redownloaded all three public assets and
+  verified their byte counts and SHA-256 digests against the approved local
+  artifacts. The reader release is deliberately not latest and does not change
+  canonical living-book release `v2.3.0`, claim support, licensing, or evidence.
+- Completed page-wide PDF and DOCX raster/contact-sheet review and EPUB package,
+  spine, navigation, and text review. Preserved the untagged-PDF,
+  native-reader/assistive-technology EPUB, and Microsoft Word DOCX residuals
+  instead of laundering them into accessibility or compatibility claims.
+- Reconciled historical roadmap validators so completed cycles remain
+  auditable history while the evidence-competence roadmap is the only active
+  successor. Refreshed the proof-depth ledger to 1,307 theorem declarations:
+  901 derived/decomposed, 230 direct/projection, and 176 unknown/mixed.
 
 ## 2026-07-18 — Capability compilation and semantic-continuity source integration
 
@@ -5572,7 +5585,7 @@
 - Boundary: these artifacts prove only finite record-routing and schema shape.
   They do not admit training data, run a training loop, measure data quality,
   establish leakage absence, verify unlearning, or promote a chapter core claim.
-- Proof-depth surface synchronization: Current proof-depth snapshot: 298 proof targets, 98 Lean modules, 1300 theorem declarations, 894 derived/decomposed, 230 direct/projection, 176 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Proof-depth surface synchronization: Current proof-depth snapshot: 298 proof targets, 98 Lean modules, 1307 theorem declarations, 901 derived/decomposed, 230 direct/projection, 176 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 
 ## 2026-07-10 - Freeze the v1.0 reader candidate before active-spine expansion
 

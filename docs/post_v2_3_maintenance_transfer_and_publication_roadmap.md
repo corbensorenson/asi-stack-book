@@ -54,7 +54,7 @@ current repository truth.
 | Accepted transition states | 87 argument/no-change, 14 synthetic, 10 prototype, 3 refuted, 1 empirical | The target is the first **competence-qualified natural, non-authored, independently evaluated transfer-aware** empirical transition—not the first empirical label ever. |
 | Frozen structured denominator | 3,730 activation atoms + 15 reviewed addendum atoms | Campaign claims must not be silently promoted into the atom denominator or chapter cores. |
 | Registry support movement | 2 of 3,730 activation atoms are above argument | Claim-ID reconciliation must report evidence truth without inflating core or atom support. |
-| Formal snapshot | 298 targets, 98 modules, 1,300 theorem declarations; 894 derived/decomposed, 230 direct/projection, 176 unknown/mixed | The old 91/278 count is stale, but syntax classification is not semantic depth; P4 audits meaning, consumers, countermodels, and refinement. |
+| Formal snapshot | 298 targets, 98 modules, 1,307 theorem declarations; 901 derived/decomposed, 230 direct/projection, 176 unknown/mixed | The old 91/278 count is stale, but syntax classification is not semantic depth; P4 audits meaning, consumers, countermodels, and refinement. |
 | Attested Git state | Review baseline: `cd98c0c4b` plus 380 dirty paths. Custody checkpoint: pushed `main` commit `882b2a82c`. | P0 now enforces post-commit evidence custody and requires the final remediation checkpoint to be re-attested after every campaign disposition. |
 
 ## Round 15 adjudication and required corrective
@@ -532,13 +532,28 @@ component that simpler systems match at materially lower total cost.
 
 ## P7 — Reader remediation and owner-authorized publication
 
-Repair the confirmed PDF page-48 clipping and page-50 right-edge overflow, then
-rerun full raster and application inspection. Repair the DOCX page-6 figure
-break and inspect the exact artifact in Microsoft Word before any Word-quality
-claim. Expand EPUB review beyond the bounded Apple Books sample to complete
-navigation, chapter coverage, and relevant device or assistive-technology
-checks. Preserve exact before/after evidence and the approved local HTML
-history.
+The first Round 15 publication transaction is complete. The
+`reader-2026-07-18` GitHub Release publishes exact PDF, EPUB, and DOCX assets
+from release-metadata commit `0921a92484cd2a429790f180a4d3ce7bd304446b`.
+All three public assets were redownloaded and matched their approved local byte
+counts and SHA-256 digests. The machine manifest is
+`editions/reader_manuscript/reader_2026_07_18/manifest.json`; the exact release
+record is `release_records/2026-07-18-reader-2026-07-18-0921a924.json`; and the
+public release is
+<https://github.com/corbensorenson/asi-stack-book/releases/tag/reader-2026-07-18>.
+It is deliberately not marked latest, makes no new license grant, changes no
+support state, and does not replace canonical living-book release `v2.3.0`.
+
+The released PDF repairs the confirmed clipping/overflow defects and passed a
+923-page raster audit plus review of all 20 contact sheets. The released DOCX
+passed a 737-page LibreOffice raster audit plus all 16 contact sheets. The EPUB
+passed ZIP, spine, navigation, chapter/appendix coverage, and text checks. The
+remaining gates are compatibility claims, not retroactive publication claims:
+the PDF remains untagged; the EPUB still needs native-reader and
+assistive-technology review before any such compatibility or accessibility
+claim; and the DOCX still needs Microsoft Word inspection before any
+Microsoft-Word-quality claim. Preserve exact before/after evidence and the
+approved local HTML history.
 
 Continue browser, keyboard, accessibility-tree, contrast, link, and responsive
 checks over every page. The X Article header retains canonical local alt text;
@@ -673,7 +688,7 @@ lies.
 | M4 — Semantic formal depth | in progress | The four Round 15 modules are explicitly retained and strengthened; close after every consequential cluster has an adequate model, countermodels, consumers, and honest inference ceiling, with empty stubs removed or reclassified. |
 | M5 — Effect-complete reference | pending | Multi-process authority-to-effect, rollback/residual, full-state, and deletion behavior passes adversarial and recovery tests. |
 | M6 — Renewal discipline | pending | Dated primary-source, comparator, evaluator, and false-negative instrument renewal is current and mapped to claims. |
-| M7 — Reader/publication disposition | in progress | Repair and visually validate the reader formats, publish each approved artifact to the existing target with exact receipts, and retain any rejected format only with a current defect-bound disposition. |
+| M7 — Reader/publication disposition | in progress | PDF, EPUB, and DOCX are published with exact receipts and verified public redownloads. Close only after compatibility residuals are terminally accepted or cleared, all public surfaces remain synchronized, and the final main/Pages attestation succeeds. |
 | M8 — Successor continuity | pending | Every open item has a terminal disposition and the next exact authority is active. |
 
 ## Definition of done

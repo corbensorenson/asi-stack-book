@@ -364,8 +364,17 @@ def errors(data: dict) -> list[str]:
         out.append("roadmap must be terminally completed after successor activation")
     if data["active_roadmaps"] != [SUCCESSOR]:
         out.append("there must be exactly one active canonical roadmap and it must be the maintenance successor")
-    if data["successor_status"].get("status") != "active" or data["successor_status"].get("current_priority") != "P0":
-        out.append("maintenance successor must be active at P0")
+    successor_status = data["successor_status"]
+    successor_frontier = successor_status.get("current_priority")
+    successor_priorities = {
+        row.get("id"): row.get("state") for row in successor_status.get("priorities", [])
+    }
+    if (
+        successor_status.get("status") != "active"
+        or successor_status.get("roadmap_path") != SUCCESSOR
+        or successor_priorities.get(successor_frontier) != "in_progress"
+    ):
+        out.append("maintenance successor must be active at its declared in-progress frontier")
     if status.get("predecessor", {}).get("path") != PREDECESSOR or data["predecessor_status"].get("status") != "completed":
         out.append("completed predecessor authority is absent or drifted")
     if "Status: completed 2026-07-14; no active successor" not in data["predecessor"]:
@@ -2764,7 +2773,7 @@ def main() -> None:
     if failures:
         raise SystemExit("Claim-proof/SOTA roadmap validation failed:\n - " + "\n - ".join(failures))
     print(
-        "Claim-proof/SOTA roadmap passed: terminal P0-P9/M0-M13 predecessor with maintenance successor active at P0/M0, "
+        "Claim-proof/SOTA roadmap passed: terminal P0-P9/M0-M13 predecessor with maintenance successor active at its declared frontier, "
         "55 live chapter-core programs across CF-01..CF-08 with a frozen 54-chapter activation baseline, exact proof/evidence/reader baseline, "
         "proof rationalization and argument-exit contracts, maintained X Article and exact 5:2 header contract, "
         "no support or release effect, no external-human gate, same-transaction successor continuity, "

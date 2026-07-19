@@ -17,7 +17,7 @@ def errors(v):
   p=ROOT/path
   if not p.exists() or sha(p)!=digest:out.append("appendix digest:"+path)
  inventory=load(ROOT/"sources/source_inventory.json")
- if len(inventory)!=316 or not any(x.get("id")=="ext_gated_deltanet2_2026" for x in inventory):out.append("current source inventory")
+ if len(inventory)!=319 or not any(x.get("id")=="ext_gated_deltanet2_2026" for x in inventory):out.append("current source inventory")
  chapter=(ROOT/"chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd").read_text();h=(ROOT/"appendices/H_external_sources.qmd").read_text();e=(ROOT/"appendices/E_codex_test_specs.qmd").read_text();k=(ROOT/"appendices/K_implementation_horizons.qmd").read_text()
  if "Gated DeltaNet-2" not in chapter or "ext_gated_deltanet2_2026" not in h:out.append("current comparator integration")
  if e.count("candidate and strongest-comparator envelope unavailable")!=1 or "P6 made a full access attempt and ended blocked" not in k:out.append("P6 appendix reconciliation")

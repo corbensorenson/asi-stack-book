@@ -1,0 +1,85 @@
+{
+  "record_type": "edition_release",
+  "release_id": "reader-2026-07-18",
+  "major_version": "v2.3-reader",
+  "source_commit": "0921a92484cd2a429790f180a4d3ce7bd304446b",
+  "source_tag": "reader-2026-07-18",
+  "edition_profile": "reader_release",
+  "primary_audiences": [
+    "human_researchers",
+    "interested_humans"
+  ],
+  "derivation_source": "The 55-chapter reader spine generated from the canonical living-book source tree at content commit 3c76d54848d6054b4b99fa20f4dc1f12e996a427, with release metadata committed at 0921a92484cd2a429790f180a4d3ce7bd304446b.",
+  "artifact_formats": [
+    {
+      "format": "pdf",
+      "status": "published",
+      "command_or_tool": "Quarto/Pandoc reader build followed by scripts/remove_verified_pagination_only_pdf_page.py and complete raster/contact-sheet review",
+      "path_or_uri": "https://github.com/corbensorenson/asi-stack-book/releases/download/reader-2026-07-18/the-asi-stack-reader-2026-07-18.pdf",
+      "notes": "13,022,967 bytes; SHA-256 249a7e745fdb302398b532bd03d898b8bc6f07f96fbc6ad3794df69d3d1e1192; 923/923 pages rasterized; PDF is not tagged."
+    },
+    {
+      "format": "epub",
+      "status": "published",
+      "command_or_tool": "Pandoc conversion from the visually reviewed reader DOCX plus EPUB package, spine, navigation, and text inspection",
+      "path_or_uri": "https://github.com/corbensorenson/asi-stack-book/releases/download/reader-2026-07-18/the-asi-stack-reader-2026-07-18.epub",
+      "notes": "10,129,904 bytes; SHA-256 c5ea58db02310c966ac0760348cc476ed6fba75446c7527105c0a9c4778a108f; native-reader and assistive-technology review remain unperformed."
+    },
+    {
+      "format": "docx",
+      "status": "published",
+      "command_or_tool": "Pandoc reader build followed by LibreOffice conversion and complete raster/contact-sheet review",
+      "path_or_uri": "https://github.com/corbensorenson/asi-stack-book/releases/download/reader-2026-07-18/the-asi-stack-reader-2026-07-18.docx",
+      "notes": "8,622,060 bytes; SHA-256 3b446abce2722aed960ce0b8d3cbdc7470486df7b9ba3b56f892acdefd8b4ee8; Microsoft Word review remains unperformed."
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/validate_reader_spine.py --check",
+    "python3 scripts/validate_reader_public_release_manifest.py --check-assets build/reader_release_2026_07_18/assets",
+    "unzip -t build/reader_release_2026_07_18/assets/the-asi-stack-reader-2026-07-18.epub",
+    "public redownload byte-count and SHA-256 comparison for PDF, EPUB, and DOCX"
+  ],
+  "validation_status": "pass",
+  "review_status": {
+    "reader_continuity_review": "pass",
+    "source_scaffold_removed": "pass",
+    "audio_script_review": "not_required",
+    "notes": "All 55 reader chapters passed the generated-spine contract; PDF and DOCX received complete raster contact-sheet review. No external-human, native-reader, assistive-technology, Microsoft Word, or legal review is claimed."
+  },
+  "reader_manuscript": {
+    "source_dir": "build/reader_release_2026_07_18/reader_source",
+    "status": "published",
+    "review_notes": "The published derivatives bind to the tracked manifest at editions/reader_manuscript/reader_2026_07_18/manifest.json; the generated source directory remains an ignored reproducible build workspace."
+  },
+  "human_consumption_gate": {
+    "reader_spine_review": "pass",
+    "ebook_layout_review": "in_progress",
+    "diagram_image_review": "pass",
+    "bedtime_readability_review": "not_required",
+    "companion_notes_status": "not_required",
+    "notes": "Page-complete PDF/DOCX visual review and EPUB structural review passed. EPUB native-application and assistive-technology review remain explicit post-publication compatibility residuals."
+  },
+  "audiobook_gate": {
+    "script_review": "not_required",
+    "spoken_treatment_review": "not_required",
+    "metadata_review": "not_required",
+    "chapter_marker_review": "not_required",
+    "audio_spot_check": "not_required",
+    "embedded_epub_check": "not_required",
+    "status": "not_required",
+    "notes": "This transaction publishes no audiobook or embedded-audio EPUB."
+  },
+  "release_notes": "Published at https://github.com/corbensorenson/asi-stack-book/releases/tag/reader-2026-07-18 and deliberately not marked latest. All three public assets were redownloaded and matched the approved local bytes and SHA-256 digests. The canonical immutable living-book evidence release remains v2.3.0.",
+  "residuals": [
+    "The PDF is untagged and makes no PDF/UA or screen-reader conformance claim.",
+    "The EPUB was not reviewed in a native reading application or with assistive technology.",
+    "The DOCX was not reviewed in Microsoft Word.",
+    "The PDF repair removed one renderer-created pagination-only page; subsequent printed page numbers retain their original values."
+  ],
+  "non_claims": [
+    "This reader release does not replace or modify the canonical v2.3.0 living-book evidence release.",
+    "Publication does not promote any chapter-core claim or strengthen any empirical conclusion.",
+    "No accessibility conformance, independent review, peer review, legal review, or open-license grant is claimed.",
+    "All rights remain reserved."
+  ]
+}

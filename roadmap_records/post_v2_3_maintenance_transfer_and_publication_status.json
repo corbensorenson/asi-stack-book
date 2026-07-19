@@ -1,8 +1,8 @@
 {
-  "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v3",
+  "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v4",
   "roadmap_id": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17",
   "roadmap_path": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
-  "snapshot_date": "2026-07-17",
+  "snapshot_date": "2026-07-18",
   "authority": "Corben Sorenson",
   "status": "active",
   "current_priority": "P2",
@@ -38,8 +38,8 @@
     "sota_supported_count": 0,
     "proof_target_count": 298,
     "lean_module_count": 98,
-    "theorem_declaration_count": 1300,
-    "derived_or_decomposed_theorem_count": 894,
+    "theorem_declaration_count": 1307,
+    "derived_or_decomposed_theorem_count": 901,
     "direct_or_projection_theorem_count": 230,
     "unknown_or_mixed_theorem_count": 176,
     "approved_exact_local_reader_formats": ["html"],
@@ -249,6 +249,21 @@
     "push_authority": "owner_authorized_in_thread",
     "required_reconciliation": "next_public_release_commit_must_be_clean_and_attested_by_release_receipt"
   },
+  "reader_release_receipt": {
+    "state": "published_public_assets_redownload_verified",
+    "release_id": "reader-2026-07-18",
+    "tag": "reader-2026-07-18",
+    "release_commit": "0921a92484cd2a429790f180a4d3ce7bd304446b",
+    "release_url": "https://github.com/corbensorenson/asi-stack-book/releases/tag/reader-2026-07-18",
+    "manifest_path": "editions/reader_manuscript/reader_2026_07_18/manifest.json",
+    "release_record_path": "release_records/2026-07-18-reader-2026-07-18-0921a924.json",
+    "published_formats": ["pdf", "epub", "docx"],
+    "public_redownload_sha256_match_count": 3,
+    "canonical_living_release": "v2.3.0",
+    "rights_state": "all_rights_reserved",
+    "accessibility_conformance_claimed": false,
+    "support_state_effect": "none"
+  },
   "priorities": [
     {"id": "P0", "state": "in_progress", "purpose": "reconcile public truth, claim identity, and main-only commit attestation"},
     {"id": "P1", "state": "completed", "purpose": "rehabilitate historical negative results and prevent false-negative inference"},
@@ -257,7 +272,7 @@
     {"id": "P4", "state": "pending", "purpose": "replace proof-count theater with semantically meaningful formal evidence"},
     {"id": "P5", "state": "pending", "purpose": "build and test an effect-complete governed reference system"},
     {"id": "P6", "state": "pending", "purpose": "renew sources, comparators, evaluators, instruments, and false-negative controls"},
-    {"id": "P7", "state": "pending", "purpose": "remediate reader formats and execute only owner-authorized publication"},
+    {"id": "P7", "state": "in_progress", "purpose": "maintain the published PDF/EPUB/DOCX reader release and close compatibility residuals without overclaim"},
     {"id": "P8", "state": "pending", "purpose": "close every residual with an exact disposition and successor continuity"}
   ],
   "milestones": [
@@ -268,7 +283,7 @@
     {"id": "M4", "state": "pending", "purpose": "retain only semantically meaningful formal evidence"},
     {"id": "M5", "state": "pending", "purpose": "validate effect-complete multi-process governed behavior"},
     {"id": "M6", "state": "pending", "purpose": "keep evidence and instrument renewal current"},
-    {"id": "M7", "state": "pending", "purpose": "record exact reader and public-product dispositions"},
+    {"id": "M7", "state": "in_progress", "purpose": "preserve exact reader-release receipts while native-app and accessibility residuals remain open"},
     {"id": "M8", "state": "pending", "purpose": "activate the next exact authority"}
   ],
   "self_contained_execution": {

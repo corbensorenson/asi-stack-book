@@ -44,6 +44,18 @@ silently merged.
   may change who fits a description but cannot grant access or power without a
   separately authorized policy transition.
 
+## Mechanisms
+
+The proposed mechanism is a six-plane semantic substrate joined by immutable
+Form versions, typed Essence Contracts, explicit world branches, qualified
+grounding adapters, evidence-bearing commitments, and governed semantic
+transactions. Stable identities and versioned contracts preserve replay;
+branch, context, and authority gates prevent predictions or descriptive edits
+from silently changing actuality or permission; dependency-aware diffs and
+migrations make self-editing reviewable. The six planes below separate these
+responsibilities so a well-typed concept, a supported proposition, and an
+authorized action cannot be collapsed into one model score.
+
 ## Six-Plane Architecture
 
 1. **Form Plane:** stable concepts, relations, roles, qualities, actions, norms,
@@ -195,7 +207,7 @@ execution, invariant replay, external authorization, and preserved recovery.
   behavior.
 - Packet compilation and federation obey purpose-bound information flow.
 
-## Threats and Failure Modes
+## Failure Modes
 
 - Ontology poisoning, lexical alias injection, and equivalence abuse.
 - Evidence laundering and context or modality confusion.

@@ -8,16 +8,16 @@
     "authority", "status", "current_priority", "predecessor",
     "activation_truth", "competence_and_identity_contract", "claim_identity_graph",
     "negative_result_rehabilitation", "p2_frontier_selection", "p2_development_corpus_preflight",
-    "p2_gold_preflight_diagnosis", "p2_replacement_queue", "p2_replacement_execution", "p2_resource_ceiling", "attestation",
+    "p2_gold_preflight_diagnosis", "p2_replacement_queue", "p2_replacement_execution", "p2_resource_ceiling", "attestation", "reader_release_receipt",
     "priorities", "milestones", "self_contained_execution",
     "closure_requires_active_successor", "support_state_effect",
     "release_effect", "non_claims"
   ],
   "properties": {
-    "schema_version": {"const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v3"},
+    "schema_version": {"const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v4"},
     "roadmap_id": {"const": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17"},
     "roadmap_path": {"const": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"},
-    "snapshot_date": {"const": "2026-07-17"},
+    "snapshot_date": {"const": "2026-07-18"},
     "authority": {"const": "Corben Sorenson"},
     "status": {"const": "active"},
     "current_priority": {"const": "P2"},
@@ -81,8 +81,8 @@
         "sota_supported_count": {"const": 0},
         "proof_target_count": {"const": 298},
         "lean_module_count": {"const": 98},
-        "theorem_declaration_count": {"const": 1300},
-        "derived_or_decomposed_theorem_count": {"const": 894},
+        "theorem_declaration_count": {"const": 1307},
+        "derived_or_decomposed_theorem_count": {"const": 901},
         "direct_or_projection_theorem_count": {"const": 230},
         "unknown_or_mixed_theorem_count": {"const": 176},
         "approved_exact_local_reader_formats": {"const": ["html"]},
@@ -401,6 +401,31 @@
         "required_reconciliation": {"const": "next_public_release_commit_must_be_clean_and_attested_by_release_receipt"}
       }
     },
+    "reader_release_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state", "release_id", "tag", "release_commit", "release_url",
+        "manifest_path", "release_record_path", "published_formats",
+        "public_redownload_sha256_match_count", "canonical_living_release",
+        "rights_state", "accessibility_conformance_claimed", "support_state_effect"
+      ],
+      "properties": {
+        "state": {"const": "published_public_assets_redownload_verified"},
+        "release_id": {"const": "reader-2026-07-18"},
+        "tag": {"const": "reader-2026-07-18"},
+        "release_commit": {"const": "0921a92484cd2a429790f180a4d3ce7bd304446b"},
+        "release_url": {"const": "https://github.com/corbensorenson/asi-stack-book/releases/tag/reader-2026-07-18"},
+        "manifest_path": {"const": "editions/reader_manuscript/reader_2026_07_18/manifest.json"},
+        "release_record_path": {"const": "release_records/2026-07-18-reader-2026-07-18-0921a924.json"},
+        "published_formats": {"const": ["pdf", "epub", "docx"]},
+        "public_redownload_sha256_match_count": {"const": 3},
+        "canonical_living_release": {"const": "v2.3.0"},
+        "rights_state": {"const": "all_rights_reserved"},
+        "accessibility_conformance_claimed": {"const": false},
+        "support_state_effect": {"const": "none"}
+      }
+    },
     "priorities": {
       "type": "array",
       "minItems": 9,
@@ -410,7 +435,7 @@
         {"$ref": "#/$defs/completedP1"}, {"$ref": "#/$defs/inProgressP2"},
         {"$ref": "#/$defs/pendingPriority"}, {"$ref": "#/$defs/pendingPriority"},
         {"$ref": "#/$defs/pendingPriority"}, {"$ref": "#/$defs/pendingPriority"},
-        {"$ref": "#/$defs/pendingPriority"}, {"$ref": "#/$defs/pendingPriority"}
+        {"$ref": "#/$defs/inProgressP7"}, {"$ref": "#/$defs/pendingPriority"}
       ],
       "items": false
     },
@@ -423,7 +448,7 @@
         {"$ref": "#/$defs/completedM1"}, {"$ref": "#/$defs/inProgressM2"},
         {"$ref": "#/$defs/pendingMilestone"}, {"$ref": "#/$defs/pendingMilestone"},
         {"$ref": "#/$defs/pendingMilestone"}, {"$ref": "#/$defs/pendingMilestone"},
-        {"$ref": "#/$defs/pendingMilestone"}, {"$ref": "#/$defs/pendingMilestone"}
+        {"$ref": "#/$defs/inProgressM7"}, {"$ref": "#/$defs/pendingMilestone"}
       ],
       "items": false
     },
@@ -482,10 +507,22 @@
         {"properties": {"id": {"pattern": "^P[3-8]$"}, "state": {"const": "pending"}}}
       ]
     },
+    "inProgressP7": {
+      "allOf": [
+        {"$ref": "#/$defs/row"},
+        {"properties": {"id": {"const": "P7"}, "state": {"const": "in_progress"}}}
+      ]
+    },
     "inProgressM0": {
       "allOf": [
         {"$ref": "#/$defs/row"},
         {"properties": {"id": {"const": "M0"}, "state": {"const": "in_progress"}}}
+      ]
+    },
+    "inProgressM7": {
+      "allOf": [
+        {"$ref": "#/$defs/row"},
+        {"properties": {"id": {"const": "M7"}, "state": {"const": "in_progress"}}}
       ]
     },
     "completedM1": {

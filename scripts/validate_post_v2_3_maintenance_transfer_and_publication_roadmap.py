@@ -34,6 +34,8 @@ P2_GOLD = ROOT / "evidence_quality/p2_gold_preflight_diagnosis.json"
 P2_POLICY = ROOT / "evidence_quality/p2_task_qualification_and_replacement_policy.json"
 P2_RESOURCE = ROOT / "evidence_quality/p2_resource_ceiling.json"
 P2_REPLACEMENT_QUEUE = ROOT / "experiments/p2_governed_repository_admission/corpus/replacement_queue.json"
+READER_MANIFEST = ROOT / "editions/reader_manuscript/reader_2026_07_18/manifest.json"
+READER_RELEASE_RECORD = ROOT / "release_records/2026-07-18-reader-2026-07-18-0921a924.json"
 PUBLIC_SURFACES = [
     ROOT / p
     for p in ["README.md", "index.qmd", "docs/publication_readiness.md", "docs/public_status_contract.md"]
@@ -97,6 +99,8 @@ def inputs() -> dict:
         "p2_policy": load(P2_POLICY),
         "p2_resource": load(P2_RESOURCE),
         "p2_replacement_queue": load(P2_REPLACEMENT_QUEUE),
+        "reader_manifest": load(READER_MANIFEST),
+        "reader_release_record": load(READER_RELEASE_RECORD),
         "transition_snapshot": transition_snapshot(atom_ids),
         "proof_review": PROOF_REVIEW.read_text(encoding="utf-8"),
         "git": {
@@ -162,9 +166,9 @@ def errors(data: dict) -> list[str]:
         "positive-control-failing",
         "native_decide",
         "DataEngineLifecycleRefinement",
-        "page-48 clipping",
-        "page-50 right-edge overflow",
-        "DOCX page-6 figure break",
+        "reader-2026-07-18",
+        "public assets were redownloaded",
+        "Microsoft-Word-quality claim",
         "draft `2077875347220041728`",
         "publish only with explicit action-time authorization",
         "The held-out set is not a debugging interface",
@@ -564,7 +568,7 @@ def errors(data: dict) -> list[str]:
         r"(\d+) unknown/mixed",
         data["proof_review"],
     )
-    expected_proof = (298, 98, 1300, 894, 230, 176)
+    expected_proof = (298, 98, 1307, 901, 230, 176)
     if not proof_match or tuple(map(int, proof_match.groups())) != expected_proof:
         out.append("proof-depth baseline drifted without roadmap reconciliation")
 
@@ -607,6 +611,24 @@ def errors(data: dict) -> list[str]:
         out.append(f"active roadmap marker set drifted: {active_markers}")
     if status.get("support_state_effect") != "none" or status.get("release_effect") != "none":
         out.append("roadmap revision cannot create support or release effects")
+
+    reader_receipt = status.get("reader_release_receipt", {})
+    reader_manifest = data["reader_manifest"]
+    reader_release_record = data["reader_release_record"]
+    if reader_manifest.get("release_state") != "published":
+        out.append("Round 15 reader manifest is not published")
+    if reader_manifest.get("release_commit") != reader_receipt.get("release_commit"):
+        out.append("reader manifest and roadmap release commit disagree")
+    if reader_manifest.get("release_url") != reader_receipt.get("release_url"):
+        out.append("reader manifest and roadmap release URL disagree")
+    if [row.get("format") for row in reader_manifest.get("artifacts", [])] != reader_receipt.get("published_formats"):
+        out.append("reader manifest and roadmap published-format inventory disagree")
+    if any(row.get("status") != "published" or not row.get("download_url") for row in reader_manifest.get("artifacts", [])):
+        out.append("reader manifest retains an unpublished or URL-less artifact")
+    if reader_release_record.get("release_id") != reader_receipt.get("release_id") or reader_release_record.get("validation_status") != "pass":
+        out.append("exact reader edition-release record is absent or invalid")
+    if reader_release_record.get("source_commit") != reader_receipt.get("release_commit"):
+        out.append("reader edition-release record commit disagrees with roadmap receipt")
     return out
 
 
@@ -648,6 +670,7 @@ def main() -> None:
     mutate("P2 resource claim laundering", lambda c: c["p2_resource"]["campaign_ceilings"].__setitem__("resource_exhaustion_effect", "claim_failure"))
     mutate("false self-referential attestation", lambda c: c["status"]["attestation"].__setitem__("state", "commit_bound_clean"))
     mutate("branch permission", lambda c: c["status"]["attestation"].__setitem__("branches_allowed_for_book_work", True))
+    mutate("reader publication laundering", lambda c: c["reader_manifest"].__setitem__("release_state", "candidate"))
     mutate("N5 deletion", lambda c: c.__setitem__("competence", c["competence"].replace("N5 — Broad claim refutation", "N5 removed", 1)))
     mutate("false-negative rule deletion", lambda c: c.__setitem__("roadmap", c["roadmap"].replace("No false-negative laundering", "Deleted rule", 1)))
     mutate("missing successor continuity", lambda c: c["status"].__setitem__("closure_requires_active_successor", False))

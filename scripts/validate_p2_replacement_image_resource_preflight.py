@@ -55,7 +55,7 @@ def failures(record: dict, *, inspect_files: bool = True) -> list[str]:
         for row, source in zip(rows, provenance["candidates"]):
             if row.get("instance_id") != source.get("instance_id") or row.get("image") != source["image_manifest"]["image"] or row.get("manifest_digest") != source["image_manifest"]["digest"]: out.append(f"provenance candidate drift: {row.get('instance_id')}")
             if row.get("pull_wall_seconds", 10**9) > ceilings["image_pull_seconds"]: out.append(f"pull ceiling breached: {row.get('instance_id')}")
-            if row.get("expanded_image_size_bytes", 10**30) > ceilings["expanded_image_bytes"]: out.append(f"size ceiling breached: {row.get('instance_id')}")
+            if row.get("expanded_image_size_bytes", 10**30) > ceilings["engine_content_size_bytes"]: out.append(f"engine content-size ceiling breached: {row.get('instance_id')}")
             if row.get("post_cleanup_host_free_byte_loss", 10**30) > ceilings["maximum_post_cleanup_host_free_byte_loss"]: out.append(f"task residual breached: {row.get('instance_id')}")
             for kind in ["pull", "cleanup"]:
                 path = ROOT / row.get(f"{kind}_log_path", "")

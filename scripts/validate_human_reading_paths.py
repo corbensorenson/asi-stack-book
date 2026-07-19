@@ -181,11 +181,15 @@ def validate_source_chapters(chapters: list[dict]) -> tuple[list[dict[str, objec
         text = path.read_text(encoding="utf-8", errors="ignore")
         blocks = extract_human_blocks(text)
 
-        if len(blocks) != 1:
-            errors.append(f"{relative}: expected exactly one .{HUMAN_CLASS} block, found {len(blocks)}.")
+        reading_blocks = [block for block in blocks if HUMAN_HEADING in str(block["text"])]
+        if len(reading_blocks) != 1:
+            errors.append(
+                f"{relative}: expected exactly one {HUMAN_HEADING} .{HUMAN_CLASS} block, "
+                f"found {len(reading_blocks)} among {len(blocks)} human-only blocks."
+            )
             continue
 
-        block = blocks[0]
+        block = reading_blocks[0]
         block_text = str(block["text"])
         bridge_text = reader_bridge_text(block_text)
         words = word_count(bridge_text)
@@ -268,7 +272,10 @@ def validate_generated_reader(chapters: list[dict]) -> list[str]:
             if f".{HUMAN_CLASS}" in text:
                 errors.append(f"{relative}: generated reader chapter still contains .{HUMAN_CLASS} marker.")
             source_text = (ROOT / relative).read_text(encoding="utf-8", errors="ignore")
-            source_blocks = extract_human_blocks(source_text)
+            source_blocks = [
+                block for block in extract_human_blocks(source_text)
+                if HUMAN_HEADING in str(block["text"])
+            ]
             if len(source_blocks) == 1:
                 expected_bridge = reader_bridge_text(str(source_blocks[0]["text"]))
                 snippet = expected_bridge[:120]
