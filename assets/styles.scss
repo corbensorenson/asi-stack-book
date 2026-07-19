@@ -194,6 +194,13 @@ main.content th code {
   word-break: break-word;
 }
 
+/* Keep long display equations inside the reading column on narrow screens. */
+main.content mjx-container[display="true"] {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
 .asi-sr-only {
   position: absolute;
   width: 1px;

@@ -45,6 +45,7 @@ PlanForge is a planning middleware layer that compiles natural-language goals in
 - Integrated Reference Architecture
 - Prototype Roadmap
 - Open Research Agenda and Bibliography Plan
+- `governed-world-models-and-reality-grounding`
 
 ## Claims To Add Or Update
 

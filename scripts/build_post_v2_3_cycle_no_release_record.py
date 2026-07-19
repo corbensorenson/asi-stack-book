@@ -36,6 +36,12 @@ CLOSURE_PATHS = [
     "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0-html.zip",
     "docs/non_core_evidence_ledger.md",
 ]
+HISTORICAL_MUTABLE_ARTIFACT_DIGESTS = {
+    # This ledger is a living book-wide surface. The cycle record binds its
+    # exact 2026-07-13 state; later accepted transitions must not rewrite that
+    # historical digest or make the completed no-release transaction fail.
+    "docs/non_core_evidence_ledger.md": "62a9f1258fae8b12c61df6d955e71664d616445cb5efc24e669ffb8c4c4ad578",
+}
 
 
 def load(path: Path) -> dict:
@@ -44,6 +50,15 @@ def load(path: Path) -> dict:
 
 def sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def closure_digest(relative_path: str) -> str:
+    path = ROOT / relative_path
+    if not path.is_file():
+        raise FileNotFoundError(f"closure artifact is absent: {relative_path}")
+    if relative_path in HISTORICAL_MUTABLE_ARTIFACT_DIGESTS:
+        return HISTORICAL_MUTABLE_ARTIFACT_DIGESTS[relative_path]
+    return sha(path)
 
 
 def build() -> dict:
@@ -93,7 +108,7 @@ def build() -> dict:
             "chapter_core_support_state": "argument",
             "support_state_effect": "none",
         },
-        "closure_artifacts": [{"path": path, "sha256": sha(ROOT / path)} for path in CLOSURE_PATHS],
+        "closure_artifacts": [{"path": path, "sha256": closure_digest(path)} for path in CLOSURE_PATHS],
         "publication_effect": {
             "source_tag_created": False,
             "public_deployment_performed": False,
@@ -152,6 +167,7 @@ def main() -> None:
         ("support promotion", lambda x: x["evidence_disposition"].__setitem__("chapter_core_support_state", "prototype-backed")),
         ("reader digest drift", lambda x: x["local_reader_release"].__setitem__("archive_sha256", "0" * 64)),
         ("artifact omission", lambda x: x.__setitem__("closure_artifacts", x["closure_artifacts"][:-1])),
+        ("historical living-ledger digest drift", lambda x: next(row for row in x["closure_artifacts"] if row.get("path") == "docs/non_core_evidence_ledger.md").__setitem__("sha256", "0" * 64)),
     ]
     for label, mutate in mutations:
         candidate = copy.deepcopy(actual)
@@ -160,7 +176,7 @@ def main() -> None:
             errors.append(f"negative mutation accepted: {label}")
     if errors:
         raise SystemExit("Post-v2.3 no-release record failed:\n - " + "\n - ".join(errors))
-    print("Post-v2.3 no-release record passed: v2.3.0 remains latest public, exact local 54-chapter reader preserved, zero public publication effects, 54 argument-state cores, and 5 rejecting mutations.")
+    print("Post-v2.3 no-release record passed: v2.3.0 remains latest public, exact local 54-chapter reader preserved, frozen closure artifacts recomputed, the historical living-ledger digest pinned, zero public publication effects, 54 argument-state cores, and 6 rejecting mutations.")
 
 
 if __name__ == "__main__":

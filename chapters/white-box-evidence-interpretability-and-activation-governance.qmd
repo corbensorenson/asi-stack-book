@@ -1,0 +1,596 @@
+---
+title: "White-Box Evidence, Interpretability, and Activation Governance"
+chapter_id: "white-box-evidence-interpretability-and-activation-governance"
+part_id: "evidence-implementation-living-book"
+status: "conceptual"
+draft_maturity: "v0.3 manuscript draft"
+last_updated: "2026-07-19"
+primary_sources:
+  - "deterministic_capability_compilation"
+  - "kernel_english_residual_compiler"
+  - "qcsa_whitepaper"
+  - "platonic_world_model"
+  - "ext_transformer_circuits_2021"
+  - "ext_monosemanticity_2023"
+  - "ext_scaling_sparse_autoencoders_2024"
+  - "ext_circuit_tracing_2025"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "The chapter has a complete conceptual packet and source-noted comparators, but no white-box method has been run in this repository."
+  - "No feature, circuit, causal intervention, activation policy, cross-checkpoint stability, or safety-relevant prediction has been locally reproduced."
+  - "Argument exit requires a competent multi-method campaign with behavioral baselines, positive controls, causal interventions, held-out prediction, coverage and side-effect accounting, independent evaluation, and a claim-specific transition."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `white-box-evidence-interpretability-and-activation-governance` |
+| Part | Part IV — Evidence, Implementation, and the Living Book |
+| Status | conceptual |
+| Manuscript maturity | v0.3 manuscript draft |
+| Last updated | 2026-07-19 |
+| Primary source records | `deterministic_capability_compilation`, `kernel_english_residual_compiler`, `qcsa_whitepaper`, `platonic_world_model`, `ext_transformer_circuits_2021`, `ext_monosemanticity_2023`, `ext_scaling_sparse_autoencoders_2024`, `ext_circuit_tracing_2025` |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | All assigned records have inventory entries and source notes; external results remain source-reported. |
+| Test state | No chapter-specific interpretability experiment, intervention benchmark, or support transition has been executed. |
+
+## Drafting guardrail
+
+This chapter proposes how model-internal observations may enter the ASI Stack's
+evidence and governance machinery. It does not claim that a discovered feature
+is a concept, that a circuit is a complete explanation, that an intervention is
+safe, or that mechanistic interpretability currently makes advanced models
+transparent. Source-reported methods and results remain external comparators
+until the exact artifacts are reproduced or independently challenged.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+Behavioral evaluation asks what a system did and whether that behavior survives
+challenge. White-box work asks what internal state helped produce it.
+Activation access does not make an interpretation true. A feature can split, merge, drift,
+or receive a convenient label that fits only selected examples.
+
+Internal evidence should increase scrutiny before trust. A stable causal
+result may support a narrow decision. A visualization, probe, or story cannot
+widen authority, certify safety, or replace observed
+behavior.
+
+Finding a pattern, naming it, showing that it predicts an output, changing it,
+and releasing the changed model are separate steps. Each needs its own record,
+controls, uncertainty, side-effect checks, and decision owner. Skipping those
+separations lets an attractive story carry more authority than it earned.
+
+Value is measured against a strong behavioral baseline. Internal evidence may
+localize a regression earlier, reveal a dormant mechanism, or permit a more
+selective intervention. If it adds no decision value after compute,
+maintenance, privacy, and analyst costs, the simpler route should win. The goal
+is disciplined uncertainty about model internals, not a ceremonial claim of
+transparency.
+:::
+
+## Problem
+
+Black-box tests are necessary but incomplete. They can miss dormant mechanisms,
+rare trigger paths, distributed representations, or internal changes that have
+not yet altered the sampled behavior. They also say little about *why* a model
+changed after training, fine-tuning, editing, routing, compression, or substrate
+replacement. For recursive improvement, checkpoint qualification, and
+activation steering, that blindness can matter.
+
+White-box methods create a different danger. Once a representation is visible,
+humans are tempted to name it, draw a graph around it, and treat the resulting
+story as an explanation. Predictive probes can exploit information without
+identifying the computation that uses it. Sparse features can reconstruct some
+activations without recovering a privileged semantic basis. Attribution graphs
+can depend on replacement models and thresholds. Ablations can damage many
+unrelated computations. Steering can suppress a measured behavior while moving
+the underlying risk somewhere the evaluator does not look.
+
+The stack therefore needs a custody and inference layer between internal access
+and governance. Its job is not to make every model legible. Its job is to keep
+the exact observation, interpretation, intervention, residual, and authority
+boundary visible long enough for other evidence owners to challenge it.
+
+## Why existing approaches are insufficient
+
+Interpretability work is often discussed as though it had one output called an
+“explanation.” In practice it spans materially different claims:
+
+1. an internal tensor or event was captured;
+2. a method extracted a feature, component, pathway, or graph;
+3. a human or automated process assigned it a semantic label;
+4. the representation predicts a behavior or state;
+5. changing it alters an outcome;
+6. it is necessary or sufficient under a stated intervention;
+7. the recovered structure covers a meaningful share of the relevant causal
+   process; and
+8. an activation policy built from it remains useful and safe in deployment.
+
+Each step can fail while the earlier step remains true. Collapsing the ladder
+creates white-box laundering: an activation capture becomes a feature; a
+feature becomes a concept; a concept becomes a cause; a cause becomes a
+complete mechanism; and a mechanism becomes authority to steer or release.
+
+Behavioral evaluation, formal specifications, security controls, and runtime
+monitoring do not solve that problem individually. Behavioral tests may not
+localize a mechanism. A formal proof can certify record routing without proving
+the interpretation faithful. Security can authorize activation access without
+making the analysis correct. Runtime monitors can observe an intervention
+without proving that its side effects are bounded. The missing object is a
+typed white-box evidence packet with an explicit maximum inference.
+
+The external comparison set is deliberately plural. `ext_transformer_circuits_2021`
+supplies a circuit-analysis vocabulary; `ext_monosemanticity_2023` and
+`ext_scaling_sparse_autoencoders_2024` supply dictionary-learning and scaling
+comparators; and `ext_circuit_tracing_2025` supplies replacement-model
+attribution graphs and perturbation checks. Their source notes preserve
+approximation, reconstruction, feature-quality, and faithfulness limits. None
+is represented as local reproduction, a complete account of model computation,
+or proof that an activation intervention is safe.
+
+## Core Claim
+
+[white-box-evidence-interpretability-and-activation-governance.core, label: Design rationale, support: argument] White-Box Evidence, Interpretability, and Activation Governance owns a model-, checkpoint-, substrate-, tokenizer-, population-, capture-, method-, feature-or-circuit-, label-, intervention-, comparator-, evaluator-, authority-, and time-specific Internal Evidence Packet: internal observations may influence scrutiny or activation policy only when their lineage, assumptions, reconstruction error, stability, causal status, behavioral cross-check, side effects, unexplained residual, uncertainty, expiry, and maximum inference survive review; no activation, probe, feature, label, attribution graph, steering result, source-reported mechanism, or formal record check alone establishes semantic truth, causal completeness, model safety, release readiness, support, transfer, AGI, or ASI.
+
+The claim remains at `argument`. It states the governance burden for white-box
+evidence; it does not assert that present methods can meet that burden broadly.
+
+## The internal-evidence packet
+
+The packet preserves six objects that must never be collapsed:
+
+| Object | What it records | What it does not establish |
+|---|---|---|
+| Capture record | Exact model, checkpoint, site, tensor/event, input population, software, precision, and access policy | That the captured state is semantically meaningful |
+| Extraction record | Method, hyperparameters, basis, replacement model, reconstruction, sparsity, thresholds, and seeds | That the extracted unit is natural, unique, or causal |
+| Interpretation record | Label author, examples, counterexamples, alternatives, adjudication, uncertainty, and expiry | That the label is the model's own concept |
+| Causal record | Intervention target, control, necessity/sufficiency question, behavioral effect, dose, and uncertainty | Completeness, safety, or transfer outside the intervention envelope |
+| Coverage and residual record | Reconstructed variance, unexplained behavior, missing paths, feature splitting/merging, and method disagreement | That a scalar coverage estimate captures all relevant computation |
+| Policy and release record | Proposed monitor/steer rule, scope, authority, side effects, fallback, rollback, and qualification decision | Authority to deploy merely because an intervention worked in a study |
+
+Every packet ends with one of a small number of permitted dispositions:
+`observed`, `predictive_only`, `causal_bounded`, `contradicted`, `unstable`,
+`incomplete`, `expired`, `policy_candidate`, or `rejected`. None is a synonym
+for “the model is understood.”
+
+```{mermaid}
+flowchart LR
+  A["Exact model and capture lease"] --> B["Feature / circuit extraction"]
+  B --> C["Labels, alternatives, counterexamples"]
+  C --> D["Held-out stability and behavioral prediction"]
+  D --> E["Ablation, patching, replacement, steering"]
+  E --> F["Side effects, coverage, unexplained residual"]
+  F --> G{"Evidence disposition"}
+  G -->|"weak, unstable, contradicted"| H["Archive / raise scrutiny / residual"]
+  G -->|"bounded causal evidence"| I["Activation-policy candidate"]
+  I --> J["Independent qualification and release authority"]
+  J --> K["Monitor, expire, rollback or retire"]
+  K --> L["Re-evaluate after material model change"]
+```
+
+**What the flow shows:** white-box access begins an evidence process; it does
+not end one. Even a bounded causal result must pass separate policy,
+qualification, release, monitoring, and rollback decisions.
+
+## Ownership boundaries
+
+| Adjacent owner | It keeps | This chapter exclusively owns |
+|---|---|---|
+| Evidence States and Claim Discipline | Support states, transitions, review, and claim identity | Admissibility and maximum inference of model-internal evidence |
+| Benchmark Ratchets | Behavioral instrument validity, baselines, contamination, and score lineage | Feature/circuit extraction and causal-internal validation |
+| Adversarial Evaluation | Elicitation, sandbagging, monitor sabotage, and behavioral deception tests | Internal mechanism hypotheses and activation interventions |
+| Replaceable Cognitive Substrates | Architecture-family capability cards and adoption/rollback | Cross-checkpoint and cross-substrate interpretation identity |
+| Model Weight Custody | Weight access, storage, transfer, and protected artifact release | Scoped access to internal states and derived interpretability artifacts |
+| Security Kernel | Information-flow policy, isolation, secrets, and hostile access | Whether an authorized internal observation is epistemically admissible |
+| Runtime Adapters | Permission and receipts for tool or external effects | Permission and receipts for activation observation or intervention |
+| Readiness and Safety Cases | Deployment decision and structured assurance | White-box evidence packet supplied to those decisions |
+
+## Mechanism
+
+### 1. Register the model and observation boundary
+
+The packet binds the exact weights, checkpoint lineage, tokenizer, architecture,
+precision, adapters, router state, runtime code, and data population. A model
+edit, merge, quantization change, tokenizer change, substrate swap, or material
+distribution shift expires affected interpretations by default. “Same model
+family” is not sufficient identity.
+
+Activation access receives its own purpose, audience, retention, disclosure,
+and derivative-use lease. Internal states can leak training data, user data,
+security-sensitive triggers, or proprietary weights; interpretability is not a
+privacy or custody exception.
+
+### 2. Preserve extraction assumptions
+
+An extracted object records the method that made it visible. For sparse
+autoencoders, that includes dictionary size, sparsity and reconstruction
+trade-offs, dead latents, optimization state, seeds, and feature-selection
+rules. For circuit or attribution work, it includes the computational graph,
+replacement-model assumptions, edge thresholds, pruning, and reconstruction
+error. For probes, it includes target construction, regularization, leakage
+controls, and whether the probed information is actually used by the model.
+
+Method outputs remain method-relative. Stable identifiers may track a feature
+through one experiment, but they do not imply that nature supplied a canonical
+feature basis.
+
+### 3. Separate labels from mechanisms
+
+A semantic label is an adjudicated hypothesis. It carries positive examples,
+hard counterexamples, nearest alternative labels, annotator or model identity,
+agreement, selection process, uncertainty, and expiry. Automated explanation
+models cannot certify their own labels. A useful label may still be incomplete,
+anthropomorphic, or downstream of the computation that matters.
+
+### 4. Demand predictive and causal challenge
+
+The study first asks whether the internal hypothesis predicts held-out behavior
+better than simple behavioral signals. It then asks distinct causal questions:
+
+- **Necessity:** does removing or replacing the component reduce the behavior?
+- **Sufficiency:** does adding or activating it induce the behavior in an
+  otherwise appropriate context?
+- **Specificity:** are unrelated capabilities and neighboring behaviors spared?
+- **Dose response:** does the outcome vary coherently with intervention strength?
+- **Mediation:** does the proposed path explain the effect better than plausible
+  alternative paths?
+
+Ablation, patching, counterfactual replacement, and steering have different
+intervention semantics. Agreement across them is stronger than any one method,
+but still does not establish whole-model causal completeness.
+
+### 5. Keep coverage and residuals visible
+
+Reconstruction loss is not semantic coverage. Variance explained is not causal
+coverage. A graph that reproduces one answer is not a complete algorithm. The
+packet therefore keeps reconstruction, behavioral prediction, causal effect,
+feature stability, unexplained residual, and method disagreement as separate
+quantities. Missing or contradictory paths remain first-class residuals.
+
+### 6. Govern activation policies as model changes
+
+An activation monitor or steering rule is a new component, not a free
+interpretation by-product. It receives a version, authority ceiling, trigger
+policy, expected benefit, false-positive/false-negative envelope, latency and
+resource cost, protected-capability set, side-effect tests, fallback,
+compensation or rollback route, monitoring period, and retirement rule.
+
+White-box evidence may block, narrow, quarantine, or demand more review before
+it may widen authority. A release decision remains with readiness and assurance
+owners after independent behavioral qualification.
+
+## Interfaces
+
+No single interface is allowed to collapse internal observation into a release
+decision. Each handoff preserves the exact producer, consumer, artifact,
+authority, freshness, failure, and residual state. Missing identity or an
+unresolved material change closes the packet rather than inviting a best-effort
+interpretation from stale data.
+
+The interfaces form an evidence chain rather than a pipeline of automatic
+promotion. The model registry tells the capture service which artifact was
+observed; custody and privacy constrain why the observation exists and who may
+see its derivatives; the feature registry retains method-relative identities;
+and the intervention runner reports actual behavioral and collateral effects.
+The evaluator then tests the result without inheriting the extraction method's
+labels as ground truth. Only the evidence ledger may expose a bounded packet to
+readiness and release owners, and it exposes residuals and expiry alongside any
+favorable finding. A missing link therefore produces an incomplete or rejected
+packet, not an invitation for a downstream consumer to reconstruct the missing
+assumption from context.
+
+| Interface | Required handoff |
+|---|---|
+| Model and checkpoint registry | Exact artifact identity, lineage, architecture, tokenizer, adapters, and material-change events |
+| Custody and privacy | Activation-access purpose, audience, retention, disclosure, subject/data obligations, and revocation |
+| Activation capture | Sites, tensors/events, precision, hooks, runtime effects, lossiness, and capture receipts |
+| Feature/circuit registry | Method-relative identifiers, extraction state, labels, alternatives, examples, and expiry |
+| Intervention runner | Target, operation, dose, controls, observed behavioral changes, side effects, and recovery |
+| Behavioral evaluator | Held-out tasks, output identity, baseline, uncertainty, negative controls, and task limits |
+| Evidence ledger | Packet disposition, maximum inference, residuals, challenges, consumers, and transition eligibility |
+| Readiness and release | Policy candidate, protected capabilities, rollback, monitor period, unresolved defeaters, and decision authority |
+
+## Invariants
+
+The invariants preserve the distance between seeing a model's internals and
+understanding them. They make every semantic and causal step challengeable,
+keep approximation and unexplained computation visible, and expire results
+when the artifact or method changes. They also prevent the governance path from
+using interpretability as a privileged shortcut: white-box evidence may narrow
+or block action early, but cannot grant authority, move support, or certify a
+release without the same behavioral and operational owners that govern any
+other evidence.
+
+- Every internal claim names the exact model, checkpoint, runtime, population,
+  capture, method, and time boundary.
+- Captured state, extracted object, semantic label, predictive association,
+  causal result, coverage claim, activation policy, and released artifact remain
+  distinct states.
+- Association is never represented as necessity, sufficiency, mediation, or
+  completeness.
+- Every label retains examples, counterexamples, alternatives, authorship,
+  selection lineage, uncertainty, and expiry.
+- Every consequential causal claim has a matched intervention control, a
+  behavioral cross-check, and a side-effect denominator.
+- Reconstruction error, dead or missing features, graph pruning, unexplained
+  behavior, and method disagreement remain visible.
+- Material changes to weights, topology, tokenizer, adapters, routing, method,
+  threat model, or input population expire affected packets.
+- Internal access obeys custody, privacy, security, and purpose limits; derived
+  artifacts do not escape those obligations.
+- White-box evidence cannot promote support, widen runtime authority, certify
+  safety, or authorize release by itself.
+- Rejected, unstable, contradicted, harmful, and null results remain in the
+  denominator with retries, analyst choices, and post-hoc rescue visible.
+
+## Failure modes
+
+The threat model includes ordinary scientific error, motivated interpretation,
+model and evaluator gaming, malicious access, and institutional pressure to
+turn a legible story into a release justification.
+
+These failures can arise even when every participant is acting in good faith.
+An analyst can select unusually coherent examples, a probe can exploit unused
+information, an intervention can disrupt neighboring computation, and a model
+update can invalidate yesterday's feature identity. Strategic systems add
+stronger pressures: they may route around a monitored feature, shape visible
+activations, exploit evaluator assumptions, or make a suppressive intervention
+look like genuine risk removal. Organizational incentives can then complete the
+failure by converting a favorable picture into release pressure. The response
+is not to average these uncertainties away; it is to retain contradictory
+methods, counterexamples, side effects, expiry, and the attempted authority
+movement in the packet.
+
+| Failure family | Example | Required response |
+|---|---|---|
+| Feature hallucination | A sparse feature receives a coherent label from selected examples but fails hard counterexamples | Narrow or reject the label; preserve alternatives and selection lineage |
+| Probe leakage | A classifier decodes information that the model does not use | Require causal challenge and leakage controls |
+| Polysemantic collapse | One feature combines materially different behaviors | Split the claim or retain an explicit mixed/unknown state |
+| Feature splitting/merging | Identity drifts across seeds, checkpoints, or dictionary sizes | Expire stable identity and report matching uncertainty |
+| Circuit incompleteness | A graph omits alternative paths or relies on a high-error replacement model | Bound inference by reconstruction and causal residuals |
+| Intervention collateral | Steering changes neighboring capabilities, calibration, or safety behavior | Block policy admission; restore or retire the intervention |
+| Method monoculture | Extraction and evaluator share assumptions or implementation defects | Add a materially different method and evaluator |
+| Checkpoint drift | An old interpretation is applied after fine-tuning, merging, or quantization | Expire and requalify the packet |
+| Cherry-picking | Prompts, features, labels, or intervention strengths are selected after outcomes | Close claim-bearing inference or open a fresh preregistered campaign |
+| Monitor gaming | Training or deployment learns to hide from the chosen feature monitor | Use adversarial evaluation, randomized challenge, and behavioral fallback |
+| Access leakage | Activations expose protected user or training information | Revoke access, preserve incident lineage, and route to privacy/custody owners |
+| Evidence-to-authority escalation | A favorable internal result silently justifies deployment | Reject the transition and preserve the attempted authority widening |
+
+## Strongest objection
+
+The strongest objection is that white-box evidence may add fragile complexity
+without outperforming a good behavioral safety stack. Feature bases are not
+unique, labels are contestable, causal interventions can be destructive, and
+models can change faster than interpretations can be maintained. A behavior-
+only system with diverse tests, runtime monitors, canaries, conservative
+authority, and rollback may be cheaper and more reliable.
+
+That baseline must be treated seriously. White-box governance earns its place
+only when it adds decision-relevant information before or beyond the behavioral
+route—for example, earlier detection of a known mechanism, better localization
+of a regression, more selective intervention, or improved prediction of a
+held-out behavior—without worse collateral effects or unacceptable total cost.
+If a tuned behavioral baseline matches it, the white-box component should not
+be retained merely because it is intellectually appealing.
+
+## Minimum Viable Implementation
+
+Use one tractable open model, one well-defined behavior family, and at least two
+materially different internal methods. Freeze the model and task population;
+capture exact activation and method lineage; train or construct the methods on
+development data; produce label packets with hard counterexamples; and keep a
+sealed natural held-out set.
+
+The implementation must include:
+
+- an exact model/checkpoint and activation-capture registry;
+- two extraction routes, plus random-feature and behavior-only controls;
+- positive controls where an injected or otherwise independently known
+  mechanism should be recovered;
+- predictive held-out tests across prompts, seeds, and at least one nearby
+  checkpoint;
+- ablation, patching or replacement, and steering with matched sham controls;
+- reconstruction, stability, causal effect, specificity, collateral-damage,
+  unexplained-residual, latency, compute, and analyst-cost records;
+- an independently implemented evaluator that does not consume the extraction
+  method's labels as ground truth; and
+- a policy packet whose only initial authority is to raise scrutiny, block, or
+  route to further qualification.
+
+The minimum implementation is intentionally narrower than “interpret the
+model.” Its output is a reviewable evidence packet and a decision about whether
+white-box work added value in one exact envelope.
+
+## Formalization disposition
+
+A finite formal target is useful for packet routing. A model can enforce that a
+policy candidate cannot become release-eligible when checkpoint identity is
+missing, causal status is merely observational, required negative controls
+failed, side effects are unresolved, residual coverage is absent, or authority
+would widen. It can also prove that material model change expires a packet and
+that an expired packet cannot authorize an intervention.
+
+Those are record and workflow properties. A Lean theorem over a finite packet
+type does not prove that a discovered feature is real, that a circuit is the
+model's algorithm, that an intervention isolates the intended cause, that
+coverage is complete, or that a steered model is safe. Formalization is omitted
+for those empirical and semantic claims because pretending otherwise would be
+proof theater.
+
+The planned target
+`lean:white_box.evidence_never_grants_authority` owns the finite
+non-escalation route: a packet may preserve, restrict, escalate, or reject, but
+cannot widen execution or release authority. The companion target
+`lean:white_box.invalid_packet_rejected` owns rejection of stale lineage,
+missing method assumptions, absent negative controls, and unsupported causal
+states. Both targets remain planned, and even checked implementations would
+establish consequences only inside their encoded packet model.
+
+## Competent argument-exit campaign
+
+The campaign must give white-box methods a fair chance without allowing them to
+grade themselves.
+
+### Frozen question
+
+For a named model, behavior family, and material-change envelope, do two
+internal methods add held-out predictive or intervention value beyond strong
+behavioral monitors at acceptable collateral and lifecycle cost?
+
+### Comparators
+
+- tuned behavior-only monitoring and adversarial evaluation;
+- a linear probe with leakage controls;
+- random and frequency-matched feature controls;
+- each white-box method independently;
+- the combined method only if its composition is frozen prospectively; and
+- sham, off-target, and dose controls for interventions.
+
+### Competence gates
+
+Before held-out opening, the implementation must recover positive controls,
+beat chance on development tasks without ceiling effects, demonstrate
+activation of the intended method, reproduce source-compatible smoke behavior,
+pass label-counterexample review, show evaluator sensitivity to known effects,
+and complete a bounded rescue ladder for optimization, dictionary size,
+thresholds, intervention dose, and checkpoint selection. A failed method,
+inactive intervention, blind evaluator, or broken positive control is N0/N1,
+not evidence against interpretability.
+
+### Outcomes
+
+Measure predictive discrimination and calibration, causal effect with
+uncertainty, necessity/sufficiency asymmetry, specificity, feature identity
+stability, reconstruction and causal residuals, cross-checkpoint transfer,
+false positive and false negative rates, protected-capability regressions,
+latency, compute, storage, analyst/reviewer time, privacy exposure, and policy
+decision value. Preserve every failed feature, label, seed, retry, intervention,
+and excluded case.
+
+### Inference ceiling
+
+A local positive can support only the exact model, methods, behavior, and
+checkpoint envelope. Cross-architecture or safety-general claims require
+materially separate implementations, evaluators, organizations, and transfer
+settings. A competent local negative may reject one frozen packet or mechanism;
+it cannot show that mechanistic interpretability as a field is useless. No
+result licenses covert activation monitoring, unbounded steering, deployment,
+or support promotion without the owning reviews.
+
+## Beyond the State of the Art
+
+The research target is a substrate-aware internal-evidence layer that can track
+method-relative mechanisms across checkpoints and architecture families,
+quantify causal and unexplained residuals, predict consequential behavioral
+change before release, and govern selective interventions with independent
+qualification and effect-complete rollback. It should expose when a simpler
+behavioral baseline dominates and preserve incompatible interpretations rather
+than averaging them into confidence.
+
+That target is not a current result. “Beyond the state of the art” here names a
+falsifiable program: decision-relevant early warning or selective control with
+lower joint risk and total cost than strong behavioral alternatives. Failure to
+clear that comparison should remove or narrow the mechanism.
+
+A mature target architecture would also make interpretation maintenance an
+explicit systems cost. It would detect when a checkpoint edit, tokenizer
+change, new training distribution, quantization pass, router update, or
+substrate replacement invalidates a feature identity; schedule only the
+requalification needed by affected consumers; and preserve historical packets
+so a reviewer can distinguish genuine mechanism continuity from a convenient
+new label. Methods would be selected by the questions they can answer rather
+than by one global interpretability score. Conflicting explanations would
+remain queryable, and an evidence consumer could see exactly which conclusion
+survives the conflict.
+
+The architectural endpoint is not maximal introspection. It is a calibrated
+choice among internal evidence, behavioral evidence, conservative fallback,
+and abstention. Some systems or decisions may warrant no activation access;
+others may justify it only inside a secure research boundary. The mature layer
+would make both outcomes legitimate and compare the full lifecycle burden of
+maintaining internal evidence against the risk reduction it actually buys.
+
+No such campaign has passed here. The present repository supplies an argument,
+source notes, a packet design, and bounded future tests. That evidence ceiling
+leaves the chapter's core at `argument` until a competent study establishes decision value in the exact
+scope claimed and an accepted evidence transition records that movement.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Internal-evidence packet schema and mutation suite | Accept complete model/method/intervention packets and reject missing identity, causal-status laundering, hidden residuals, stale packets, and authority widening. | planned; not run |
+| Interpretation stability and positive-control suite | Challenge feature and circuit identities across seeds, prompts, checkpoints, extraction methods, counterexamples, and independently known mechanisms. | planned; not run |
+| Causal intervention and collateral benchmark | Compare observation, probes, ablation, patching, replacement, and steering against sham/off-target controls and protected-capability outcomes. | planned; not run |
+| Behavioral-baseline and governance-value comparison | Test whether internal evidence improves held-out prediction or selective control beyond tuned behavioral monitors after latency, compute, analyst effort, privacy, and maintenance costs. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Use in this chapter | Boundary |
+|---|---|---|
+| `ext_transformer_circuits_2021` | Mathematical vocabulary for transformer components and circuit-level analysis | Framework and worked analyses do not establish complete or universal model mechanisms |
+| `ext_monosemanticity_2023` | Dictionary-learning route for extracting more interpretable features | Source-reported feature examples do not establish a canonical semantic basis, causal completeness, or local reproduction |
+| `ext_scaling_sparse_autoencoders_2024` | Scalable sparse-autoencoder training and evaluation comparator, including reconstruction/sparsity and dead-latent concerns | Scaling a feature extractor does not establish semantic faithfulness, causal coverage, safety, or transfer |
+| `ext_circuit_tracing_2025` | Replacement-model attribution graphs, perturbation validation, and reconstruction-error boundary | Source-reported graph results do not establish whole-model understanding, safe steering, or local reproduction |
+| `deterministic_capability_compilation` | Candidate-specific validation, residual escrow, authority ceilings, and reification boundaries for learned capability objects | Corben-authored design program; no foundry implementation or preservation result is inherited |
+| `kernel_english_residual_compiler` | Protected objects, explicit residuals, round-trip checks, and versioned migration as internal-evidence design analogies | Corben-authored proposal; no efficiency, fidelity, or model-internal result is inherited |
+| `qcsa_whitepaper` | Stable semantic identity and evidence-bearing hypergraph concepts for versioned feature/circuit records | Existing local QCSA results do not test mechanistic interpretability and cannot promote this chapter |
+| `platonic_world_model` | Proposition/attestation/proof separation and branch-protected semantic continuity | Conceptual architecture; it does not solve grounding or validate internal interpretations |
+
+## Current evidence and non-claims
+
+The repository currently contains a manifest packet, this chapter, source
+inventory records and notes, and planned test/proof targets. It contains no
+locally executed sparse-autoencoder training, circuit tracing, activation
+capture, label study, causal intervention, steering trial, model monitor,
+cross-checkpoint analysis, independent reproduction, or chapter-specific
+support transition.
+
+Accordingly, this chapter does not claim that:
+
+- internal features have unique or human-legible meanings;
+- a cited method reproduces locally or transfers to other substrates;
+- activation steering is safe, robust, private, or resistant to gaming;
+- white-box evidence is superior to behavioral evaluation;
+- any model is understood, aligned, ready, or safe; or
+- the ASI Stack has achieved mechanistic transparency, AGI, or ASI.
+
+## Summary
+
+White-box evidence is valuable precisely because behavior alone can leave
+important uncertainty. It is dangerous for the same reason: internal access
+creates stories faster than it creates justified explanations. The ASI Stack
+therefore treats capture, extraction, labeling, prediction, causality,
+coverage, policy, and release as separate states. Internal evidence may raise
+scrutiny early; it earns trust only through stable identity, causal challenge,
+behavioral comparison, visible residuals, independent evaluation, and bounded
+authority.
+
+A credible packet binds the exact model and method, keeps semantic labels
+hypothetical, distinguishes necessity from sufficiency, measures collateral
+effects, and expires after material change. It also preserves failed features,
+contradictions, analyst choices, and unexplained computation. This makes a
+white-box result challengeable by behavioral evaluators, custody and privacy
+owners, safety cases, and release authorities without allowing any of them to
+inherit more than the result earned.
+
+The decisive test is practical rather than aesthetic: internal evidence must
+improve a bounded prediction, diagnosis, or intervention decision beyond a
+strong behavioral baseline while retaining acceptable uncertainty and total
+cost. Until that evidence exists, model-internal visibility remains a promising
+research instrument and a governed source of scrutiny—not a certificate of
+understanding, safety, readiness, or intelligence.
+
+## Handoff
+
+White-box packets supply a constrained evidence input; they do not replace the
+owners of behavior, assurance, or release. Capability Thresholds and Deployment Commitments receives the exact internal-evidence disposition, maximum
+inference, uncertainty, expiry, side effects, and residuals and decides whether
+a scoped capability assessment crosses a prospectively declared commitment.
+Adversarial Evaluation, Safety Cases, and Readiness can challenge or consume
+the packet later, but no downstream owner inherits causal completeness or
+release authority from internal visibility alone.

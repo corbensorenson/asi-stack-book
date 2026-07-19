@@ -1,6 +1,6 @@
 # Workstreams D–F Closure Audit
 
-Last updated: 2026-07-10
+Last updated: 2026-07-19
 
 ## Workstream D — Evidence and empirical depth
 
@@ -14,7 +14,7 @@ derived trace uses one vocabulary for authority monotonicity,
 revocation-before-effect with tie precedence, evidence-transition integrity,
 residual conservation, and causal order; four mutations are rejected and one
 open residual remains visible. The closure snapshot covered 54 core claims;
-the live book now covers all 55 core claims with explicit accepted transition
+the live book now covers all 59 core claims with explicit accepted transition
 or no-promotion dispositions, and this run creates no transition.
 
 Status: **proven locally at the bounded fixture scope**. It is not a deployed,
@@ -23,12 +23,12 @@ model-generated, general safety, or cost-effectiveness result.
 ## Workstream E — Formal depth
 
 The closure snapshot contains 298 implemented targets across 54 chapters. The
-live manifest contains 298 implemented targets across 55 chapters after
-reviewed consolidation retired redundant summary targets while preserving the
-post-activation architecture work. The frozen P2 registry preserves the
-original 298-target lineage and the replacement records that connect retired
-declarations to stronger current modules. Every live target has an adequacy
-class and next action; public
+live manifest now contains 306 targets across 59 chapters: the historical 298
+remain implemented and the first structural-completeness tranche contributes
+eight planned targets without claimed theorems. The frozen P2 registry
+preserves the original 298-target lineage and the replacement records that
+connect retired declarations to stronger current modules. Every live target
+has an adequacy class and next action; public
 proof language is checked against chapter limitation prose. The governed trace
 module uses the same executed event vocabulary as Workstream D, explicitly
 models finite logical time and revocation-wins ties, rejects four invariant
@@ -37,12 +37,13 @@ bridges, proof-manifest alignment, proof-depth classification, and artifact
 traceability validators pass. The clean Lean build remains the final-candidate
 gate.
 
-Status: **proven locally for finite formal models**, without runtime-safety or
+Status: **proven locally for the historical finite formal models**; the eight
+new obligations remain planned, and neither lane supports runtime-safety or
 deployment claims.
 
 ## Workstream F — Sources, prior art, and terminology
 
-The 54-chapter closure snapshot and all 55 live chapters have source-noted external positioning before their source
+The 54-chapter closure snapshot and all 59 live chapters have source-noted external positioning before their source
 crosswalk, and every assigned source has a note. The five defended tracks are
 positioned against 20 source-noted comparators. Appendix G/H ownership keeps
 local/author material separate from 205+ external literature records. The

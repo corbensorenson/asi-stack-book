@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 55 |
-| Assigned source/chapter pairs | 884 |
-| Exact claim-source mappings | 816 |
+| Chapters audited | 59 |
+| Assigned source/chapter pairs | 920 |
+| Exact claim-source mappings | 852 |
 | Unmapped assigned pairs | 68 |
-| Source notes present for assigned pairs | 884 |
-| Source notes listing assigned chapter | 884 |
-| Passage-reviewed mappings recorded | 816 |
-| Support-state counts | {"argument": 55} |
+| Source notes present for assigned pairs | 920 |
+| Source notes listing assigned chapter | 920 |
+| Passage-reviewed mappings recorded | 852 |
+| Support-state counts | {"argument": 59} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -40,6 +40,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `evidence-states-and-claim-discipline` | 15 | 14 | 15 | 15 | 14 | argument | passage review required before source-derived promotion |
 | `scalable-oversight-and-adversarial-ai-control` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `human-intent-as-a-formal-input` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
+| `human-factors-and-meaningful-control-in-oversight` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
 | `constitutional-alignment-substrate` | 13 | 13 | 13 | 13 | 13 | argument | eligible for support review |
 | `moral-uncertainty-and-value-conflict` | 13 | 12 | 13 | 13 | 12 | argument | passage review required before source-derived promotion |
 | `stable-capability-fields` | 10 | 8 | 10 | 10 | 8 | argument | passage review required before source-derived promotion |
@@ -51,6 +52,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `open-ended-improvement-engines` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
 | `intent-to-execution-contracts` | 14 | 12 | 14 | 14 | 12 | argument | passage review required before source-derived promotion |
 | `planning-as-a-control-layer` | 11 | 9 | 11 | 11 | 9 | argument | passage review required before source-derived promotion |
+| `governed-world-models-and-reality-grounding` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
 | `cognitive-compilation-and-semantic-ir` | 19 | 16 | 19 | 19 | 16 | argument | passage review required before source-derived promotion |
 | `virtual-context-abi` | 28 | 24 | 28 | 28 | 24 | argument | passage review required before source-derived promotion |
 | `context-transactions-snapshots-mounts-and-taint` | 18 | 15 | 18 | 18 | 15 | argument | passage review required before source-derived promotion |
@@ -77,9 +79,11 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `coilra-multicoil-rope-and-cyclic-mixers` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `executable-specifications-and-lean-proof-envelope` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 34 | 30 | 34 | 34 | 30 | argument | passage review required before source-derived promotion |
+| `white-box-evidence-interpretability-and-activation-governance` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
 | `capability-thresholds-and-deployment-commitments` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
 | `safety-cases-and-structured-assurance` | 4 | 4 | 4 | 4 | 4 | argument | eligible for support review |
+| `governed-operations-incident-command-and-graceful-degradation` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
 | `policy-optimization-and-learning-from-feedback` | 29 | 29 | 29 | 29 | 29 | argument | eligible for support review |
 | `data-engines-continual-learning-and-unlearning` | 13 | 11 | 13 | 13 | 11 | argument | passage review required before source-derived promotion |
 | `artifact-steward-agents-and-living-project-governance` | 23 | 23 | 23 | 23 | 23 | argument | eligible for support review |
@@ -95,42 +99,42 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 
 | Source ID | Assigned chapter count | Source note exists |
 |---|---:|---|
-| `viea` | 23 | yes |
-| `talos` | 23 | yes |
+| `viea` | 25 | yes |
+| `talos` | 25 | yes |
+| `deterministic_capability_compilation` | 25 | yes |
 | `moecot` | 22 | yes |
-| `deterministic_capability_compilation` | 22 | yes |
+| `platonic_world_model` | 22 | yes |
 | `benchmaxxing` | 19 | yes |
-| `platonic_world_model` | 19 | yes |
+| `scf` | 18 | yes |
 | `rmi` | 17 | yes |
 | `moecot_manifest_project` | 17 | yes |
-| `scf` | 16 | yes |
 | `cca_project` | 16 | yes |
 | `spinoza` | 15 | yes |
 | `corbens_best_model_possible_project` | 14 | yes |
 | `bugbrain_project` | 13 | yes |
 | `vcm_public` | 13 | yes |
+| `kernel_english_residual_compiler` | 13 | yes |
 | `beastbrain_project` | 12 | yes |
 | `reflexive_router_whitepaper` | 12 | yes |
 | `cognitive_loop_closure` | 12 | yes |
-| `kernel_english_residual_compiler` | 12 | yes |
 | `project_theseus_whitepaper` | 12 | yes |
 | `coherence_exchange` | 11 | yes |
+| `planforge` | 11 | yes |
+| `qcsa_whitepaper` | 11 | yes |
 | `genesiscode` | 10 | yes |
 | `corbens_trainer_project` | 10 | yes |
 | `verification_bandwidth` | 10 | yes |
-| `planforge` | 10 | yes |
-| `qcsa_whitepaper` | 9 | yes |
+| `theseus_operator_os` | 10 | yes |
+| `cognitive_compilation` | 8 | yes |
 | `theseus_architecture_gate` | 8 | yes |
 | `tokenmana` | 8 | yes |
-| `theseus_operator_os` | 8 | yes |
 | `theseus_circle_transfer` | 8 | yes |
 | `cgs` | 7 | yes |
+| `simulation_scaling` | 7 | yes |
 | `ladon_manhattan` | 7 | yes |
-| `cognitive_compilation` | 7 | yes |
 | `alignment_field` | 7 | yes |
 | `field_of_god_ai_constitution` | 7 | yes |
 | `theseus_self_evolution_system` | 7 | yes |
-| `simulation_scaling` | 6 | yes |
 | `ext_owasp_agentic_top_10_2026` | 6 | yes |
 | `vcm_editable` | 6 | yes |
 | `circle_ai_contract_suite` | 6 | yes |
@@ -138,6 +142,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `uat` | 5 | yes |
 | `ext_w3c_prov_o_2013` | 5 | yes |
 | `software_magic_grimoire` | 5 | yes |
+| `ext_v_jepa_2_2025` | 5 | yes |
 | `treellm` | 5 | yes |
 | `ext_mem0_2025` | 5 | yes |
 | `ext_swe_rebench_v2_2026` | 5 | yes |
@@ -152,7 +157,6 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_mlcommons_croissant_1_1_2026` | 4 | yes |
 | `ext_darwin_godel_machine_2025` | 4 | yes |
 | `ext_adas_2024` | 4 | yes |
-| `ext_v_jepa_2_2025` | 4 | yes |
 | `ext_graphrag_2024` | 4 | yes |
 | `ext_hipporag_2024` | 4 | yes |
 | `ext_raptor_2024` | 4 | yes |
@@ -184,11 +188,16 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `rope_position_certifier` | 3 | yes |
 | `ext_muse_unlearning_2025` | 3 | yes |
 | `ext_openunlearning_2025` | 3 | yes |
+| `ext_nist_ai_rmf_1_0_2023` | 3 | yes |
 | `theseus_plan_compiler` | 3 | yes |
 | `beastbrain_timeless` | 2 | yes |
 | `field_of_god` | 2 | yes |
 | `ext_ai_safety_debate_2018` | 2 | yes |
 | `ext_monitorbench_2026` | 2 | yes |
+| `ext_humans_automation_1997` | 2 | yes |
+| `ext_ironies_automation_1983` | 2 | yes |
+| `ext_levels_automation_2000` | 2 | yes |
+| `ext_complacency_bias_automation_2010` | 2 | yes |
 | `ethica_mechanica` | 2 | yes |
 | `ext_collective_constitutional_ai_2024` | 2 | yes |
 | `ext_off_switch_game_2016` | 2 | yes |
@@ -213,7 +222,6 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_deepseek_r1_2025` | 2 | yes |
 | `ext_s_grpo_2025` | 2 | yes |
 | `coilmoecot` | 2 | yes |
-| `ext_nist_ai_rmf_1_0_2023` | 2 | yes |
 | `ext_mmlu_2020` | 2 | yes |
 | `ext_livebench_2024` | 2 | yes |
 | `ext_concrete_ai_safety_2016` | 1 | yes |
@@ -226,6 +234,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_goal_oriented_requirements_engineering_2001` | 1 | yes |
 | `ext_cooperative_inverse_rl_2016` | 1 | yes |
 | `ext_deep_rl_human_preferences_2017` | 1 | yes |
+| `ext_meaningful_human_control_actionable_2022` | 1 | yes |
+| `ext_agentic_oversight_practice_2026` | 1 | yes |
 | `eternal_code` | 1 | yes |
 | `ext_constitutional_ai_2022` | 1 | yes |
 | `ext_reinforcement_learning_moral_uncertainty_2020` | 1 | yes |
@@ -252,6 +262,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_spdx_ai_profile_3_0_1` | 1 | yes |
 | `ext_poet_2019` | 1 | yes |
 | `ext_funsearch_2024` | 1 | yes |
+| `ext_world_models_2018` | 1 | yes |
+| `ext_dreamer_v3_2025` | 1 | yes |
 | `ext_pddl_1998` | 1 | yes |
 | `ext_llvm_langref_docs` | 1 | yes |
 | `ext_mlir_2020` | 1 | yes |
@@ -271,10 +283,6 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_bpmn_2_0_2_spec` | 1 | yes |
 | `ext_kubernetes_jobs_docs` | 1 | yes |
 | `spinoza_composer` | 1 | yes |
-| `ext_humans_automation_1997` | 1 | yes |
-| `ext_ironies_automation_1983` | 1 | yes |
-| `ext_levels_automation_2000` | 1 | yes |
-| `ext_complacency_bias_automation_2010` | 1 | yes |
 | `ext_mcp_protocol_2025_11_25` | 1 | yes |
 | `ext_a2a_protocol_1_0_0` | 1 | yes |
 | `ext_w3c_did_core_1_0_2022` | 1 | yes |
@@ -330,6 +338,10 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `rankfold_compressor` | 1 | yes |
 | `temporal_coil_research` | 1 | yes |
 | `coil_attention_memory` | 1 | yes |
+| `ext_transformer_circuits_2021` | 1 | yes |
+| `ext_monosemanticity_2023` | 1 | yes |
+| `ext_scaling_sparse_autoencoders_2024` | 1 | yes |
+| `ext_circuit_tracing_2025` | 1 | yes |
 | `ext_metr_time_horizons_2025` | 1 | yes |
 | `ext_anthropic_rsp_2026` | 1 | yes |
 | `ext_openai_preparedness_framework_2025` | 1 | yes |
@@ -339,6 +351,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_gsn_community_standard_2011` | 1 | yes |
 | `ext_evaluations_safety_cases_scheming_2024` | 1 | yes |
 | `ext_aisi_safety_cases_2024` | 1 | yes |
+| `ext_nist_deployed_ai_monitoring_2026` | 1 | yes |
+| `ext_nist_incident_response_2025` | 1 | yes |
 | `ext_trpo_2015` | 1 | yes |
 | `ext_ppo_2017` | 1 | yes |
 | `ext_remax_2023` | 1 | yes |
@@ -457,6 +471,16 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `ext_goal_oriented_requirements_engineering_2001` | mapped | note present | chapter listed | passage-reviewed |
 | `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `ext_cooperative_inverse_rl_2016` | mapped | note present | chapter listed | passage-reviewed |
 | `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `ext_deep_rl_human_preferences_2017` | mapped | note present | chapter listed | passage-reviewed |
+| `human-factors-and-meaningful-control-in-oversight.core` | `human-factors-and-meaningful-control-in-oversight` | `viea` | mapped | note present | chapter listed | passage-reviewed |
+| `human-factors-and-meaningful-control-in-oversight.core` | `human-factors-and-meaningful-control-in-oversight` | `talos` | mapped | note present | chapter listed | passage-reviewed |
+| `human-factors-and-meaningful-control-in-oversight.core` | `human-factors-and-meaningful-control-in-oversight` | `theseus_operator_os` | mapped | note present | chapter listed | passage-reviewed |
+| `human-factors-and-meaningful-control-in-oversight.core` | `human-factors-and-meaningful-control-in-oversight` | `scf` | mapped | note present | chapter listed | passage-reviewed |
+| `human-factors-and-meaningful-control-in-oversight.core` | `human-factors-and-meaningful-control-in-oversight` | `ext_humans_automation_1997` | mapped | note present | chapter listed | passage-reviewed |
+| `human-factors-and-meaningful-control-in-oversight.core` | `human-factors-and-meaningful-control-in-oversight` | `ext_ironies_automation_1983` | mapped | note present | chapter listed | passage-reviewed |
+| `human-factors-and-meaningful-control-in-oversight.core` | `human-factors-and-meaningful-control-in-oversight` | `ext_levels_automation_2000` | mapped | note present | chapter listed | passage-reviewed |
+| `human-factors-and-meaningful-control-in-oversight.core` | `human-factors-and-meaningful-control-in-oversight` | `ext_complacency_bias_automation_2010` | mapped | note present | chapter listed | passage-reviewed |
+| `human-factors-and-meaningful-control-in-oversight.core` | `human-factors-and-meaningful-control-in-oversight` | `ext_meaningful_human_control_actionable_2022` | mapped | note present | chapter listed | passage-reviewed |
+| `human-factors-and-meaningful-control-in-oversight.core` | `human-factors-and-meaningful-control-in-oversight` | `ext_agentic_oversight_practice_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `alignment_field` | mapped | note present | chapter listed | passage-reviewed |
 | `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `field_of_god` | mapped | note present | chapter listed | passage-reviewed |
 | `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `ethica_mechanica` | mapped | note present | chapter listed | passage-reviewed |
@@ -595,6 +619,15 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `tokenmana` | mapped | note present | chapter listed | passage-reviewed |
 | `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `ext_v_jepa_2_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `reflexive_router_whitepaper` | unmapped | note present | chapter listed | not passage-reviewed |
+| `governed-world-models-and-reality-grounding.core` | `governed-world-models-and-reality-grounding` | `platonic_world_model` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-world-models-and-reality-grounding.core` | `governed-world-models-and-reality-grounding` | `deterministic_capability_compilation` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-world-models-and-reality-grounding.core` | `governed-world-models-and-reality-grounding` | `qcsa_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-world-models-and-reality-grounding.core` | `governed-world-models-and-reality-grounding` | `simulation_scaling` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-world-models-and-reality-grounding.core` | `governed-world-models-and-reality-grounding` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-world-models-and-reality-grounding.core` | `governed-world-models-and-reality-grounding` | `planforge` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-world-models-and-reality-grounding.core` | `governed-world-models-and-reality-grounding` | `ext_world_models_2018` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-world-models-and-reality-grounding.core` | `governed-world-models-and-reality-grounding` | `ext_dreamer_v3_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-world-models-and-reality-grounding.core` | `governed-world-models-and-reality-grounding` | `ext_v_jepa_2_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
 | `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `deterministic_capability_compilation` | unmapped | note present | chapter listed | not passage-reviewed |
 | `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `platonic_world_model` | unmapped | note present | chapter listed | not passage-reviewed |
@@ -1058,6 +1091,14 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `reflexive_router_whitepaper` | unmapped | note present | chapter listed | not passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `kernel_english_residual_compiler` | unmapped | note present | chapter listed | not passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `ext_swe_rebench_v2_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `deterministic_capability_compilation` | mapped | note present | chapter listed | passage-reviewed |
+| `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `kernel_english_residual_compiler` | mapped | note present | chapter listed | passage-reviewed |
+| `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `qcsa_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
+| `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `platonic_world_model` | mapped | note present | chapter listed | passage-reviewed |
+| `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_transformer_circuits_2021` | mapped | note present | chapter listed | passage-reviewed |
+| `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_monosemanticity_2023` | mapped | note present | chapter listed | passage-reviewed |
+| `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_scaling_sparse_autoencoders_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_circuit_tracing_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `capability-thresholds-and-deployment-commitments.core` | `capability-thresholds-and-deployment-commitments` | `ext_metr_time_horizons_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `capability-thresholds-and-deployment-commitments.core` | `capability-thresholds-and-deployment-commitments` | `ext_anthropic_rsp_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `capability-thresholds-and-deployment-commitments.core` | `capability-thresholds-and-deployment-commitments` | `ext_openai_preparedness_framework_2025` | mapped | note present | chapter listed | passage-reviewed |
@@ -1078,6 +1119,15 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `safety-cases-and-structured-assurance.core` | `safety-cases-and-structured-assurance` | `ext_evaluations_safety_cases_scheming_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `safety-cases-and-structured-assurance.core` | `safety-cases-and-structured-assurance` | `ext_aisi_safety_cases_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `safety-cases-and-structured-assurance.core` | `safety-cases-and-structured-assurance` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-operations-incident-command-and-graceful-degradation.core` | `governed-operations-incident-command-and-graceful-degradation` | `scf` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-operations-incident-command-and-graceful-degradation.core` | `governed-operations-incident-command-and-graceful-degradation` | `deterministic_capability_compilation` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-operations-incident-command-and-graceful-degradation.core` | `governed-operations-incident-command-and-graceful-degradation` | `theseus_operator_os` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-operations-incident-command-and-graceful-degradation.core` | `governed-operations-incident-command-and-graceful-degradation` | `viea` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-operations-incident-command-and-graceful-degradation.core` | `governed-operations-incident-command-and-graceful-degradation` | `talos` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-operations-incident-command-and-graceful-degradation.core` | `governed-operations-incident-command-and-graceful-degradation` | `platonic_world_model` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-operations-incident-command-and-graceful-degradation.core` | `governed-operations-incident-command-and-graceful-degradation` | `ext_nist_ai_rmf_1_0_2023` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-operations-incident-command-and-graceful-degradation.core` | `governed-operations-incident-command-and-graceful-degradation` | `ext_nist_deployed_ai_monitoring_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-operations-incident-command-and-graceful-degradation.core` | `governed-operations-incident-command-and-graceful-degradation` | `ext_nist_incident_response_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |

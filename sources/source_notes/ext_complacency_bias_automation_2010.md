@@ -48,6 +48,7 @@ approval-service benchmark, or deployed reviewer-quality result is claimed.
 - `runtime-adapters-tool-permissions-and-human-approval`
 - `human-intent-as-a-formal-input`
 - `evidence-states-and-claim-discipline`
+- `human-factors-and-meaningful-control-in-oversight`
 
 ## Claims To Add Or Update
 

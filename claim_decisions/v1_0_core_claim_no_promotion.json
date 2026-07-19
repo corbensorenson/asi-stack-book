@@ -959,6 +959,118 @@
         "evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json",
         "appendices/C_claim_evidence_matrix.qmd#replaceable-cognitive-substrates-beyond-transformer-monoculture.core"
       ]
+    },
+    {
+      "claim_id": "human-factors-and-meaningful-control-in-oversight.core",
+      "chapter_id": "human-factors-and-meaningful-control-in-oversight",
+      "chapter_title": "Human Factors and Meaningful Control in Oversight",
+      "decision": "no_promotion",
+      "current_support_state": "argument",
+      "support_state_effect": "argument_only",
+      "decision_reason": "The chapter has a source-reviewed control-envelope design and human-automation comparators, but no representative ASI Stack human-subject campaign, calibrated control threshold, exercised deployed intervention system, independent reproduction, or transfer result has been accepted for its broad claim.",
+      "required_evidence": [
+        "preregistered representative human-subject trials with strong allocation and interface baselines, natural and adversarial tasks, ethical stopping rules, and complete denominators",
+        "joint measurement of comprehension, correct and false intervention, timing, workload, trust calibration, useful throughput, residual harm, and responsibility allocation",
+        "independent reproduction and transfer before any broad meaningful-control support change"
+      ],
+      "blockers": [
+        "no local representative human-subject study or deployed oversight envelope",
+        "no independently calibrated workload, comprehension, or intervention-latency thresholds",
+        "legacy automation evidence does not by itself establish transfer to modern agentic systems"
+      ],
+      "non_claims": [
+        "does not prove operator comprehension, competence, consent, or effective intervention",
+        "does not prove that a visible human, explanation, dashboard, or approval click supplies meaningful control",
+        "does not prove safety, accountability, readiness, deployment, or ASI"
+      ],
+      "refs": [
+        "chapters/human-factors-and-meaningful-control-in-oversight.qmd",
+        "appendices/C_claim_evidence_matrix.qmd#human-factors-and-meaningful-control-in-oversight.core"
+      ]
+    },
+    {
+      "claim_id": "governed-world-models-and-reality-grounding.core",
+      "chapter_id": "governed-world-models-and-reality-grounding",
+      "chapter_title": "Governed World Models and Reality Grounding",
+      "decision": "no_promotion",
+      "current_support_state": "argument",
+      "support_state_effect": "argument_only",
+      "decision_reason": "The chapter has source-reviewed learned-world-model comparators and a versioned prediction-service design, but no local held-out causal intervention campaign, calibrated planning result, real-world transfer, independent reproduction, or accepted support transition exists for the broad claim.",
+      "required_evidence": [
+        "held-out partially observed intervention workload with reactive, model-free, strong single-model, ensemble, and governed baselines under matched resources",
+        "calibration, shift, disagreement, exploitation, residual, useful-outcome, unsafe-action, latency, and governance-cost records with causal ablations",
+        "independent reproduction and transfer to a second environment"
+      ],
+      "blockers": [
+        "no local learned world-model campaign or held-out causal intervention benchmark",
+        "no representative threshold connects prediction support and uncertainty to safe action admission",
+        "reported benchmark performance does not establish open-world grounding, causal fidelity, or transfer"
+      ],
+      "non_claims": [
+        "does not prove that a latent state, simulation, or rollout represents reality",
+        "does not prove causal prediction, calibrated planning, safe action selection, or real-world transfer",
+        "does not prove readiness, deployment authority, safety, or ASI"
+      ],
+      "refs": [
+        "chapters/governed-world-models-and-reality-grounding.qmd",
+        "appendices/C_claim_evidence_matrix.qmd#governed-world-models-and-reality-grounding.core"
+      ]
+    },
+    {
+      "claim_id": "white-box-evidence-interpretability-and-activation-governance.core",
+      "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
+      "chapter_title": "White-Box Evidence, Interpretability, and Activation Governance",
+      "decision": "no_promotion",
+      "current_support_state": "argument",
+      "support_state_effect": "argument_only",
+      "decision_reason": "The chapter has source-reviewed mechanistic-interpretability comparators and a typed evidence-packet design, but no local independent-method replication, accepted completeness measure, held-out causal coverage result, cross-checkpoint stability result, or cross-architecture transfer has been accepted for its broad claim.",
+      "required_evidence": [
+        "two independently implemented interpretability method families on preregistered held-out behaviors with negative controls and blinded labeling",
+        "causal interventions, checkpoint and transformation stability, behavioral prediction, side-effect, unexplained-residual, disagreement, cost, and full failure accounting",
+        "independent reproduction on a second model family without evidence-to-authority escalation"
+      ],
+      "blockers": [
+        "no local independent-method interpretability replication",
+        "no accepted metric establishes causal or mechanistic completeness on frontier models",
+        "feature and circuit stability across checkpoints, architectures, methods, and tasks remains unproven"
+      ],
+      "non_claims": [
+        "does not prove a feature label, probe, attribution, or circuit is complete, unique, or causally sufficient",
+        "does not prove model intent, reasoning-trace faithfulness, behavioral safety, or cross-architecture transfer",
+        "does not grant capability, readiness, release, deployment, or support authority"
+      ],
+      "refs": [
+        "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
+        "appendices/C_claim_evidence_matrix.qmd#white-box-evidence-interpretability-and-activation-governance.core"
+      ]
+    },
+    {
+      "claim_id": "governed-operations-incident-command-and-graceful-degradation.core",
+      "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
+      "chapter_title": "Governed Operations, Incident Command, and Graceful Degradation",
+      "decision": "no_promotion",
+      "current_support_state": "argument",
+      "support_state_effect": "argument_only",
+      "decision_reason": "The chapter has source-reviewed lifecycle and incident guidance plus an effect-complete operations design, but no local fault-injected service, adversarial game-day matrix, full-state rollback and compensation result, real incident, independent reproduction, or transfer has been accepted for its broad claim.",
+      "required_evidence": [
+        "fault-injected reference service covering model, optimizer, scheduler, RNG, cache, memory, data, credentials, replicas, descendants, backups, and external effects",
+        "compound, correlated, ambiguous, and detector-degrading game days with strong SRE baselines and joint harm, useful-throughput, latency, operator-load, and governance-cost accounting",
+        "independent recovery exercise and transfer with expiring emergency authority and complete residual disposition"
+      ],
+      "blockers": [
+        "no local effect-complete rollback and compensation harness covering descendants and external effects",
+        "no adversarial game-day evidence calibrates detection, severity, containment, or recovery thresholds",
+        "general incident-response guidance has not been independently validated for autonomous AI"
+      ],
+      "non_claims": [
+        "does not prove detector quality, rollback completeness, effect reversibility, or recovery safety",
+        "does not prove resilience from monitoring, backups, a kill switch, an incident plan, or a successful code restore",
+        "does not prove bounded harm, readiness, safe deployment, or ASI"
+      ],
+      "refs": [
+        "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
+        "appendices/C_claim_evidence_matrix.qmd#governed-operations-incident-command-and-graceful-degradation.core"
+      ]
     }
   ]
 }

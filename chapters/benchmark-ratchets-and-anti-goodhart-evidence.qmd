@@ -688,4 +688,12 @@ results cannot be used as substitutes.
 
 ## Handoff
 
-Benchmark Ratchets and Anti-Goodhart Evidence makes measurements harder to game; Capability Thresholds and Deployment Commitments now converts a scoped, integrity-bounded assessment into a versioned precommitment about safeguards, exceptions, residuals, and release-path constraints before Adversarial Evaluation tests whether the observation itself was elicited under trustworthy conditions.
+Benchmark Ratchets and Anti-Goodhart Evidence makes behavioral measurements
+harder to game, but a score
+cannot reveal which internal mechanism
+produced the result. White-Box Evidence, Interpretability, and Activation Governance
+receives exact model/checkpoint and behavioral-instrument identity and decides
+whether model-internal observations or interventions are admissible, bounded,
+stable, and non-authorizing evidence. Capability Thresholds and Deployment
+Commitments can then consume both behavioral and white-box packets without
+turning either into an automatic release decision.

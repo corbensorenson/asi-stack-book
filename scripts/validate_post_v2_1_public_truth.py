@@ -171,12 +171,13 @@ def validate(data: dict[str, object]) -> list[str]:
 
     structure = mapping(data["structure"], "book structure", errors)
     chapters = [c for p in structure.get("parts", []) if isinstance(p, dict) for c in p.get("chapters", [])]
-    if len(chapters) != 55:
-        errors.append("live manifest chapter count is not 55")
+    live_chapter_count = len(chapters)
+    if live_chapter_count == 0:
+        errors.append("live manifest has no chapters")
     vectors_obj = data["vectors"]
     vectors = vectors_obj.get("vectors", []) if isinstance(vectors_obj, dict) else vectors_obj
-    if not isinstance(vectors, list) or len(vectors) != 55:
-        errors.append("live evidence-vector count is not 55")
+    if not isinstance(vectors, list) or len(vectors) != live_chapter_count:
+        errors.append("live evidence-vector count disagrees with the manifest")
     elif any(row.get("summary_support_state") != "argument" for row in vectors if isinstance(row, dict)):
         errors.append("an evidence-vector core support state moved above argument")
     activation = mapping(next_successor.get("activation_baseline"), "claim-proof activation baseline", errors)
@@ -184,7 +185,9 @@ def validate(data: dict[str, object]) -> list[str]:
     if activation.get("active_chapter_count") != 54 or activation.get("core_claim_count") != 54:
         errors.append("frozen 54-chapter claim-proof activation baseline drifted")
     if expansion.get("live_chapter_count") != 55 or expansion.get("support_state_effect") != "none":
-        errors.append("authorized 55th-chapter expansion is absent or invented a support effect")
+        errors.append("historical authorized 55th-chapter expansion is absent or invented a support effect")
+    if live_chapter_count < 55:
+        errors.append("live manifest regressed below the historical authorized 55th-chapter expansion")
 
     citation = str(data["citation"])
     citation_fragments = [
@@ -198,12 +201,14 @@ def validate(data: dict[str, object]) -> list[str]:
     if re.search(r"^doi\s*:", citation, re.MULTILINE | re.IGNORECASE):
         errors.append("CITATION.cff invents a DOI")
 
+    live_claim_identity = f"{live_chapter_count}/{live_chapter_count} chapter-core claims at `argument`"
+    live_claim_sentence = f"All {live_chapter_count} live chapter-core claims remain at `argument`"
     required_by_surface = {
-        "README.md": (str(data["readme"]), [VERSION, NEXT_SUCCESSOR, NEXT_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, COMMIT, DIGEST, "55/55 chapter-core claims at `argument`", "root site and `/latest/` are mutable", "sole active successor"]),
-        "index.qmd": (str(data["index"]), [VERSION, NEXT_SUCCESSOR, NEXT_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, COMMIT, DIGEST, "55/55 chapter-core claims at `argument`", "root site and `/latest/` are mutable", "sole active successor"]),
-        "docs/publication_readiness.md": (str(data["publication"]), [VERSION, NEXT_SUCCESSOR, NEXT_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, COMMIT, DIGEST, "All 55 live chapter-core claims remain at `argument`", "root site and `/latest/` are mutable", "Active canonical successor roadmap"]),
+        "README.md": (str(data["readme"]), [VERSION, NEXT_SUCCESSOR, NEXT_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, COMMIT, DIGEST, live_claim_identity, "root site and `/latest/` are mutable", "sole active successor"]),
+        "index.qmd": (str(data["index"]), [VERSION, NEXT_SUCCESSOR, NEXT_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, COMMIT, DIGEST, live_claim_identity, "root site and `/latest/` are mutable", "sole active successor"]),
+        "docs/publication_readiness.md": (str(data["publication"]), [VERSION, NEXT_SUCCESSOR, NEXT_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, COMMIT, DIGEST, live_claim_sentence, "root site and `/latest/` are mutable", "Active canonical successor roadmap"]),
         "docs/release_reproducibility.md": (str(data["reproducibility"]), [VERSION, COMMIT, DIGEST, "root and `/latest/` are mutable", "Historical v1.0.0 citation"]),
-        "docs/public_status_contract.md": (str(data["public_contract"]), [f"`active_version` currently reports" , active_version, NEXT_SUCCESSOR, NEXT_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, "sole active successor", "55/55 chapter-core claims at `argument`", "root or `/latest/` commits remain mutable"]),
+        "docs/public_status_contract.md": (str(data["public_contract"]), [f"`active_version` currently reports" , active_version, NEXT_SUCCESSOR, NEXT_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, "sole active successor", live_claim_identity, "root or `/latest/` commits remain mutable"]),
     }
     for name, (text, fragments) in required_by_surface.items():
         for fragment in fragments:
@@ -291,9 +296,15 @@ def main() -> None:
         for error in errors:
             print(f" - {error}")
         sys.exit(1)
+    structure = data["structure"]
+    live_chapter_count = sum(
+        len(part.get("chapters", []))
+        for part in structure.get("parts", [])
+        if isinstance(part, dict)
+    ) if isinstance(structure, dict) else 0
     print(
         "Post-v2.1 public-truth validation passed: v2.3.0 release/commit/archive, "
-        "completed predecessor/release/post-v2.3 roadmaps with the exact evidence-competence successor active, a frozen 54-claim activation baseline plus 55 live argument-level core claims, tag-bound rights, "
+        f"completed predecessor/release/post-v2.3 roadmaps with the exact evidence-competence successor active, a frozen 54-claim activation baseline, the historical 55th-chapter expansion, and {live_chapter_count} live argument-level core claims, tag-bound rights, "
         "mutable latest channel, optional-format boundary, and 7 rejecting mutations."
     )
 

@@ -36,6 +36,7 @@ This source belongs in the failure-mode, recursive self-improvement, and policy-
 
 ## Book Chapters Supported
 
+- Proposed: `governed-objective-formation-value-learning-and-goal-integrity`
 - `failure-modes-of-ungoverned-intelligence` (Failure Modes of Ungoverned Intelligence)
 - `recursive-self-improvement-boundaries` (Recursive Self-Improvement Boundaries)
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)

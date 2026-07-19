@@ -17,14 +17,31 @@ TRIAGE = ROOT / "proofs" / "proof_triage.json"
 ADEQUACY = ROOT / "docs" / "proof_adequacy_review.md"
 VALIDATION = ROOT / "validation" / "registry.json"
 STATUS = ROOT / "roadmap_records" / "post_v2_3_claim_proof_and_sota_challenge_status.json"
+MAINTENANCE_STATUS = ROOT / "roadmap_records" / "post_v2_3_maintenance_transfer_and_publication_status.json"
 
-EXPECTED_CLASSES = {
+HISTORICAL_PROOF_TARGET_COUNT = 298
+CURRENT_PROOF_TARGET_COUNT = 306
+HISTORICAL_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
     "useful but too narrow": 158,
     "needs richer state-machine or review semantics": 16,
     "needs executable tests first": 35,
     "needs empirical or baseline tests first": 14,
     "research-agenda until artifact import": 2,
+}
+CURRENT_EXPECTED_CLASSES = {
+    "adequate finite-record invariant": 73,
+    "useful but too narrow": 158,
+    "needs richer state-machine or review semantics": 20,
+    "needs executable tests first": 37,
+    "needs empirical or baseline tests first": 16,
+    "research-agenda until artifact import": 2,
+}
+ADMITTED_CHAPTERS = {
+    "white-box-evidence-interpretability-and-activation-governance",
+    "governed-world-models-and-reality-grounding",
+    "human-factors-and-meaningful-control-in-oversight",
+    "governed-operations-incident-command-and-graceful-degradation",
 }
 EXPECTED_RICHER = {
     "constitutional-alignment-substrate": 6,
@@ -53,6 +70,61 @@ def adequacy_counts(text: str) -> Counter[str]:
     return counts
 
 
+def current_proof_errors(
+    manifest: dict[str, Any],
+    triage: dict[str, Any],
+    maintenance_status: dict[str, Any],
+    adequacy_text: str,
+) -> list[str]:
+    out: list[str] = []
+    current_targets = manifest.get("records", [])
+    manifest_ids = [row.get("tag") for row in current_targets]
+    triage_records = triage.get("records", [])
+    triage_ids = [row.get("tag") for row in triage_records]
+    status_counts = Counter(row.get("status") for row in current_targets)
+    planned_targets = [row for row in current_targets if row.get("status") == "planned"]
+    planned_chapter_counts = Counter(row.get("chapter_id") for row in planned_targets)
+    activation_truth = maintenance_status.get("activation_truth", {})
+    first_tranche = (
+        maintenance_status.get("quality_uplift_program", {})
+        .get("structural_completeness_tranche", {})
+        .get("first_tranche", {})
+    )
+    if (
+        manifest.get("proof_target_count") != CURRENT_PROOF_TARGET_COUNT
+        or len(current_targets) != CURRENT_PROOF_TARGET_COUNT
+        or len(set(manifest_ids)) != CURRENT_PROOF_TARGET_COUNT
+        or dict(status_counts) != {"implemented": HISTORICAL_PROOF_TARGET_COUNT, "planned": 8}
+        or manifest.get("status_counts") != dict(status_counts)
+        or activation_truth.get("proof_target_count") != CURRENT_PROOF_TARGET_COUNT
+        or activation_truth.get("chapter_core_promotion_count") != 0
+    ):
+        out.append("current proof manifest/status is not exactly 306 unique targets: 298 implemented plus 8 planned with no core promotion")
+    if (
+        maintenance_status.get("status") != "active"
+        or maintenance_status.get("roadmap_path") != "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
+        or first_tranche.get("manifest_admitted_count") != len(ADMITTED_CHAPTERS)
+        or set(first_tranche.get("candidate_ids", [])) != ADMITTED_CHAPTERS
+        or len(planned_targets) != 8
+        or {row.get("chapter_id") for row in planned_targets} != ADMITTED_CHAPTERS
+        or planned_chapter_counts != Counter({chapter_id: 2 for chapter_id in ADMITTED_CHAPTERS})
+    ):
+        out.append("planned proof targets are not tied exactly to the four later manifest-admitted chapters")
+    triage_by_tag = {row.get("tag"): row for row in triage_records}
+    if (
+        triage.get("record_count") != CURRENT_PROOF_TARGET_COUNT
+        or len(triage_records) != CURRENT_PROOF_TARGET_COUNT
+        or len(set(triage_ids)) != CURRENT_PROOF_TARGET_COUNT
+        or set(manifest_ids) != set(triage_ids)
+        or any(triage_by_tag.get(row.get("tag"), {}).get("target_status") != row.get("status") for row in current_targets)
+    ):
+        out.append("current proof manifest and triage identities/statuses differ")
+    observed_classes = dict(adequacy_counts(adequacy_text))
+    if observed_classes != CURRENT_EXPECTED_CLASSES or sum(observed_classes.values()) != CURRENT_PROOF_TARGET_COUNT:
+        out.append(f"current proof-adequacy classes drifted: {observed_classes}")
+    return out
+
+
 def errors(audit: dict[str, Any]) -> list[str]:
     out: list[str] = []
     rationalization = load(RATIONALIZATION)
@@ -60,6 +132,7 @@ def errors(audit: dict[str, Any]) -> list[str]:
     triage = load(TRIAGE)
     validation = load(VALIDATION)
     status = load(STATUS)
+    maintenance_status = load(MAINTENANCE_STATUS)
 
     if audit.get("schema_version") != "asi_stack.p2_closure_audit.v1":
         out.append("wrong audit schema version")
@@ -73,6 +146,11 @@ def errors(audit: dict[str, Any]) -> list[str]:
     theorems = rationalization.get("baseline_theorems", [])
     baseline_targets = rationalization.get("baseline_targets", [])
     summary = rationalization.get("summary", {})
+    baseline_target_ids = [row.get("target_id") for row in baseline_targets]
+    if len(baseline_targets) != HISTORICAL_PROOF_TARGET_COUNT or len(set(baseline_target_ids)) != HISTORICAL_PROOF_TARGET_COUNT:
+        out.append("frozen P2 baseline does not contain exactly 298 unique target identities")
+    if any(row.get("baseline_status") != "implemented" for row in baseline_targets):
+        out.append("frozen P2 baseline contains a non-implemented target")
     if any(row.get("review_state") not in REVIEWED_STATES for row in theorems + baseline_targets):
         out.append("activation-baseline proof inventory still contains an unreviewed item")
     if any(not row.get("disposition") or not row.get("claim_atom_id") for row in theorems + baseline_targets):
@@ -89,34 +167,23 @@ def errors(audit: dict[str, Any]) -> list[str]:
     if audit.get("activation_baseline") != expected_baseline:
         out.append("activation-baseline closure counts drifted")
 
-    current_targets = manifest.get("records", [])
-    manifest_ids = [row.get("tag") for row in current_targets]
-    triage_ids = [row.get("tag") for row in triage.get("records", [])]
-    if len(current_targets) != 298 or len(set(manifest_ids)) != 298:
-        out.append("current proof manifest is not exactly 298 unique targets")
-    if set(manifest_ids) != set(triage_ids):
-        out.append("proof manifest and proof triage target identities differ")
-    if any(row.get("status") != "implemented" for row in current_targets):
-        out.append("current proof manifest contains a non-implemented target")
-
     contract = status.get("proof_rationalization_contract", {})
-    expected_current = {
+    expected_historical_surface = {
         "theorem_declarations": contract.get("current_live_theorem_declaration_count"),
         "proof_targets": contract.get("current_live_proof_target_count"),
         "missing_or_changed_baseline_theorems": contract.get("current_missing_or_changed_theorem_count"),
         "missing_or_changed_baseline_targets": contract.get("current_missing_or_changed_target_count"),
-        "implemented_current_targets": len(current_targets),
+        "implemented_current_targets": HISTORICAL_PROOF_TARGET_COUNT,
     }
-    if audit.get("current_surface") != expected_current:
-        out.append("current proof-surface closure counts drifted")
+    if audit.get("current_surface") != expected_historical_surface:
+        out.append("frozen P2 proof-surface closure counts drifted")
+    if contract.get("current_live_proof_target_count") != HISTORICAL_PROOF_TARGET_COUNT:
+        out.append("historical P2 status no longer preserves its 298-target closure surface")
 
-    observed_classes = dict(adequacy_counts(ADEQUACY.read_text(encoding="utf-8")))
-    if observed_classes != EXPECTED_CLASSES:
-        out.append(f"proof-adequacy classes drifted: {observed_classes}")
     routes = audit.get("adequacy_routes", [])
     route_counts = {row.get("adequacy_class"): row.get("target_count") for row in routes}
-    if route_counts != EXPECTED_CLASSES or sum(route_counts.values()) != 298:
-        out.append("P2 adequacy routes do not cover all 298 current targets exactly")
+    if route_counts != HISTORICAL_EXPECTED_CLASSES or sum(route_counts.values()) != HISTORICAL_PROOF_TARGET_COUNT:
+        out.append("frozen P2 adequacy routes do not cover all 298 historical targets exactly")
     for row in routes:
         priorities = set(row.get("forward_priorities", []))
         if not row.get("p2_disposition") or not priorities or not priorities <= FORWARD_PRIORITIES:
@@ -157,6 +224,14 @@ def errors(audit: dict[str, Any]) -> list[str]:
         out.append("current priority regressed before P3 after P2 closure")
     if len(audit.get("non_claims", [])) < 5:
         out.append("P2 closure audit lacks explicit non-claims")
+    out.extend(
+        current_proof_errors(
+            manifest,
+            triage,
+            maintenance_status,
+            ADEQUACY.read_text(encoding="utf-8"),
+        )
+    )
     return out
 
 
@@ -185,12 +260,33 @@ def main() -> None:
     for label, candidate in mutations:
         if not errors(candidate):
             failures.append(f"negative mutation accepted: {label}")
+    current_manifest = load(MANIFEST)
+    current_triage = load(TRIAGE)
+    current_status = load(MAINTENANCE_STATUS)
+    adequacy_text = ADEQUACY.read_text(encoding="utf-8")
+    current_mutation_count = 0
+    proof_invention = copy.deepcopy(current_manifest)
+    proof_invention["proof_target_count"] = CURRENT_PROOF_TARGET_COUNT + 1
+    if not current_proof_errors(proof_invention, current_triage, current_status, adequacy_text):
+        failures.append("negative mutation accepted: current proof-target invention")
+    current_mutation_count += 1
+    escaped_plan = copy.deepcopy(current_manifest)
+    next(row for row in escaped_plan["records"] if row.get("status") == "planned")["chapter_id"] = "asi-is-a-stack-not-a-model"
+    if not current_proof_errors(escaped_plan, current_triage, current_status, adequacy_text):
+        failures.append("negative mutation accepted: planned target escaped admitted chapters")
+    current_mutation_count += 1
+    current_status_drift = copy.deepcopy(current_status)
+    current_status_drift["activation_truth"]["proof_target_count"] = HISTORICAL_PROOF_TARGET_COUNT
+    if not current_proof_errors(current_manifest, current_triage, current_status_drift, adequacy_text):
+        failures.append("negative mutation accepted: current proof-status regression")
+    current_mutation_count += 1
     if failures:
         raise SystemExit("P2 closure audit failed:\n - " + "\n - ".join(failures))
     print(
-        "P2 closure audit passed: 1,151 baseline theorem declarations, 298 baseline/current targets, "
-        "65/65 reviewed modules, 298/298 adequacy routes, nine semantic-model dossiers/consumers, "
-        "six rejecting mutations, and no support-state effect."
+        "P2 closure audit passed: 1,151 baseline theorem declarations, 298 unique historical targets, "
+        "65/65 reviewed modules, 298/298 frozen historical adequacy routes, 306 current targets "
+        "(298 implemented plus 8 planned exactly on four admitted chapters), 306/306 current adequacy classifications, "
+        f"nine semantic-model dossiers/consumers, {len(mutations) + current_mutation_count} rejecting mutations, and no support-state effect."
     )
 
 

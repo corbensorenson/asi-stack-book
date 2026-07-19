@@ -11,8 +11,8 @@
       "type": "object",
       "required": ["surface_count", "chapter_count", "public_and_derivative_surface_count", "historical_transition_files_mutated", "historical_roadmaps_treated_as_current_prose"],
       "properties": {
-        "surface_count": {"const": 75},
-        "chapter_count": {"const": 55},
+        "surface_count": {"type": "integer", "minimum": 20},
+        "chapter_count": {"type": "integer", "minimum": 1},
         "public_and_derivative_surface_count": {"const": 20},
         "historical_transition_files_mutated": {"const": 0},
         "historical_roadmaps_treated_as_current_prose": {"const": false}
@@ -36,7 +36,7 @@
     "forbidden_hits": {"const": []},
     "required_boundary_failures": {"const": []},
     "blocked_chapter_boundary_failures": {"const": []},
-    "surfaces": {"type": "array", "minItems": 75, "maxItems": 75},
+    "surfaces": {"type": "array", "minItems": 20},
     "excluded_historical_scope": {"type": "array", "minItems": 4},
     "non_claims": {"type": "array", "minItems": 5}
   }

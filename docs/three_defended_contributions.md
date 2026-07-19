@@ -50,9 +50,9 @@ Honesty, and Resource Economics and Token Budgets.
 
 ## Chapter assignment rule
 
-`products/contribution_focus_contract.json` assigns all 55 manifest chapters
+`products/contribution_focus_contract.json` assigns all 59 manifest chapters
 to exactly one primary program contribution. Eleven are primary owners; the
-other 44 are supporting or integration chapters. Every assignment explicitly
+other 48 are supporting or integration chapters. Every assignment explicitly
 sets `independent_flagship_claim` to false. The contract is generated in
 manifest order and checked by `scripts/validate_contribution_focus_contract.py`.
 

@@ -37,6 +37,7 @@ Cooperative inverse reinforcement learning is an external comparator for formali
 
 ## Book Chapters Supported
 
+- Proposed: `governed-objective-formation-value-learning-and-goal-integrity`
 - `human-intent-as-a-formal-input` (Human Intent as a Formal Input)
 
 ## Claims To Add Or Update

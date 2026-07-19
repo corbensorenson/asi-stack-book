@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-15",
+  "updated": "2026-07-19",
   "generated_from": "proofs/proof_manifest.json",
   "note": "Initial conservative triage. It prevents ceremonial Lean by distinguishing formal invariants from schema, process, and research targets.",
   "triage_classes": {
@@ -2989,7 +2989,87 @@
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Post-activation target implemented as a finite ABI transition model plus an independently encoded 16-case executable consumer. It preserves authority and declared checkpoint identity, separates proposals from commits, exercises a mixed-family route, rejects revoked or incompatible routes, and retains custody fields only inside the bounded schema; it does not establish real-kernel capability, full-state migration, evaluator independence, deployment, or chapter support."
+    },
+    {
+      "tag": "lean:oversight.control_envelope.blocks_action",
+      "chapter_id": "human-factors-and-meaningful-control-in-oversight",
+      "module": "AsiStackProofs.HumanFactorsOversight",
+      "formal_target": "In the finite model, any consequential transition lacking authority, observability, comprehension, timely intervention, or a reachable safe state is rejected or degraded.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Model a bounded oversight envelope and prove only its enumerated rejection or degradation consequence. Human cognition, workload calibration, intervention efficacy, responsibility legitimacy, safety, reproduction, and transfer require separate empirical and normative lanes."
+    },
+    {
+      "tag": "lean:oversight.responsibility_requires_control",
+      "chapter_id": "human-factors-and-meaningful-control-in-oversight",
+      "module": "AsiStackProofs.HumanFactorsOversight",
+      "formal_target": "The bounded accountability assignment never attributes operational responsibility beyond the authority and effective control recorded in the oversight contract.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Encode responsibility assignment as a finite relation bounded by recorded authority and effective-control fields. The theorem cannot establish actual control, consent, competence, legal accountability, or the truth of the input records."
+    },
+    {
+      "tag": "lean:world_model.unsupported_rollout_no_authority",
+      "chapter_id": "governed-world-models-and-reality-grounding",
+      "module": "AsiStackProofs.GovernedWorldModels",
+      "formal_target": "In the finite admission model, an unsupported, stale, materially disagreeing, or uncalibrated rollout cannot authorize a consequential action.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Prove non-authorization for enumerated prediction-record defects while keeping model accuracy, uncertainty calibration, causal fidelity, grounding, planner usefulness, real-world transfer, and safety outside the theorem."
+    },
+    {
+      "tag": "lean:world_model.reality_residual_forces_route",
+      "chapter_id": "governed-world-models-and-reality-grounding",
+      "module": "AsiStackProofs.GovernedWorldModels",
+      "formal_target": "A material observation residual forces bounded re-estimation, fallback, review, or safe hold before further model-based execution.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Represent a finite observation-residual transition and derive its bounded route. Materiality truth, observation quality, recovery efficacy, safe-state reachability in deployment, reproduction, and transfer remain open evidence obligations."
+    },
+    {
+      "tag": "lean:white_box.evidence_never_grants_authority",
+      "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
+      "module": "AsiStackProofs.WhiteBoxEvidence",
+      "formal_target": "In the finite policy model, no interpretability evidence packet can widen execution or release authority; it may only preserve, restrict, escalate, or reject.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Prove non-escalation over an explicit evidence-policy route without asserting that any feature, label, circuit, causal intervention, completeness estimate, evaluator, or packet premise is scientifically valid."
+    },
+    {
+      "tag": "lean:white_box.invalid_packet_rejected",
+      "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
+      "module": "AsiStackProofs.WhiteBoxEvidence",
+      "formal_target": "Packets with stale lineage, missing method assumptions, absent negative controls, or unsupported causal state are rejected before governance use.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Encode the enumerated packet-admission defects and their rejecting consequence. The proof cannot establish mechanistic truth, completeness, method independence, negative-control adequacy, behavioral safety, or cross-architecture transfer."
+    },
+    {
+      "tag": "lean:operations.degradation_never_widens_authority",
+      "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
+      "module": "AsiStackProofs.GovernedOperations",
+      "formal_target": "Every finite degraded-mode transition preserves or narrows capability, data, tool, and duration authority.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Prove authority non-escalation over modeled degraded-mode transitions. Detection quality, containment effectiveness, external effects, operator performance, operational resilience, and safe deployment remain executable and empirical questions."
+    },
+    {
+      "tag": "lean:operations.recovery_requires_complete_state",
+      "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
+      "module": "AsiStackProofs.GovernedOperations",
+      "formal_target": "Normal-service recovery is rejected when any required internal-state component, external-effect disposition, acceptance check, or emergency-authority expiry is missing.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Model a declared recovery checklist and derive rejection for missing components. The formal target trusts state enumeration and dispositions and cannot prove semantic completeness, effect reversibility, recovery safety, bounded harm, reproduction, or transfer."
     }
   ],
-  "record_count": 298
+  "record_count": 306
 }

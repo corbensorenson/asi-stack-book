@@ -47,6 +47,7 @@ Simulation Scaling Law treats simulation feasibility as contract-relative. A sim
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets; includes Simulation Fidelity and Claim Transport)
 - `mathematical-and-search-substrates` (Mathematical and Search Substrates)
 - `open-research-agenda-and-bibliography-plan` (Open Research Agenda and Bibliography Plan)
+- `governed-world-models-and-reality-grounding`
 
 ## Claims To Add Or Update
 

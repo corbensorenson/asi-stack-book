@@ -15,7 +15,7 @@
     "release_effect", "non_claims"
   ],
   "properties": {
-    "schema_version": {"const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v6"},
+    "schema_version": {"const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v9"},
     "roadmap_id": {"const": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17"},
     "roadmap_path": {"const": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"},
     "snapshot_date": {"const": "2026-07-19"},
@@ -87,29 +87,111 @@
           "type": "object",
           "additionalProperties": false,
           "required": [
-            "state", "research_path", "current_manifest_chapter_count",
-            "maximum_post_tranche_chapter_count", "planned_merge_count",
-            "candidate_count", "candidate_ids", "manifest_admitted_count",
-            "primary_source_record_count_added", "p2_displacement_allowed",
+            "state", "current_manifest_chapter_count",
+            "maximum_if_all_candidates_pass", "planned_merge_count",
+            "first_tranche", "second_tranche", "p2_displacement_allowed",
             "support_state_effect", "release_effect"
           ],
           "properties": {
-            "state": {"const": "roadmap_admitted_manifest_gated"},
-            "research_path": {"const": "docs/structural_completeness_chapter_research_2026_07_19.md"},
-            "current_manifest_chapter_count": {"const": 55},
-            "maximum_post_tranche_chapter_count": {"const": 59},
+            "state": {"const": "first_tranche_manifest_admitted_second_tranche_research_gated"},
+            "current_manifest_chapter_count": {"const": 59},
+            "maximum_if_all_candidates_pass": {"const": 72},
             "planned_merge_count": {"const": 0},
-            "candidate_count": {"const": 4},
-            "candidate_ids": {
-              "const": [
-                "white-box-evidence-interpretability-and-activation-governance",
-                "governed-world-models-and-reality-grounding",
-                "human-factors-and-meaningful-control-in-oversight",
-                "governed-operations-incident-command-and-graceful-degradation"
-              ]
+            "first_tranche": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "state", "research_path", "candidate_count", "candidate_ids",
+                "manifest_admitted_count", "drafted_chapter_count", "completed_reader_chapter_count",
+                "primary_source_record_count_added"
+              ],
+              "properties": {
+                "state": {"const": "manifest_admitted_initial_drafts_complete_evidence_and_reader_integration_gated"},
+                "research_path": {"const": "docs/structural_completeness_chapter_research_2026_07_19.md"},
+                "candidate_count": {"const": 4},
+                "candidate_ids": {
+                  "const": [
+                    "white-box-evidence-interpretability-and-activation-governance",
+                    "governed-world-models-and-reality-grounding",
+                    "human-factors-and-meaningful-control-in-oversight",
+                    "governed-operations-incident-command-and-graceful-degradation"
+                  ]
+                },
+                "manifest_admitted_count": {"const": 4},
+                "drafted_chapter_count": {"const": 4},
+                "completed_reader_chapter_count": {"const": 0},
+                "primary_source_record_count_added": {"const": 8}
+              }
             },
-            "manifest_admitted_count": {"const": 0},
-            "primary_source_record_count_added": {"const": 7},
+            "second_tranche": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "state", "audit_path", "candidate_count", "candidate_ids",
+                "manifest_admitted_count", "primary_source_record_count_added",
+                "communication_required_source_ids",
+                "communication_source_admission_gate_state",
+                "scientific_discovery_requires_control_plane_gate",
+                "communication_requires_source_ethics_and_effect_gate",
+                "institutions_require_authority_legitimacy_and_update_gate",
+                "deployment_transition_requires_realized_outcome_and_distribution_gate",
+                "physical_compute_requires_facility_environment_and_retirement_gate",
+                "objective_formation_requires_target_proxy_integrity_and_ontology_gate",
+                "embedded_agency_remains_cross_book_foundations_program",
+                "societal_part_requires_three_admitted_owner_gate",
+                "source_roles_required_where_literature_permits"
+              ],
+              "properties": {
+                "state": {"const": "research_admitted_manifest_gated"},
+                "audit_path": {"const": "docs/structural_completeness_gap_audit_2026_07_19.md"},
+                "candidate_count": {"const": 13},
+                "candidate_ids": {
+                  "const": [
+                    "governed-model-training-distributed-optimization-and-scaling",
+                    "perception-sensor-fusion-and-observation-trust",
+                    "embodied-agency-real-time-control-and-physical-safety",
+                    "privacy-data-rights-and-information-flow-governance",
+                    "human-ai-organizations-delegation-and-accountability",
+                    "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+                    "autonomous-replication-proliferation-and-containment",
+                    "scientific-discovery-and-experimental-governance",
+                    "human-ai-communication-persuasion-and-epistemic-security",
+                    "institutions-international-coordination-and-public-legitimacy",
+                    "ai-deployment-transition-distribution-and-human-agency",
+                    "physical-compute-infrastructure-energy-and-environmental-constraints",
+                    "governed-objective-formation-value-learning-and-goal-integrity"
+                  ]
+                },
+                "manifest_admitted_count": {"const": 0},
+                "primary_source_record_count_added": {"const": 17},
+                "communication_required_source_ids": {
+                  "const": [
+                    "ext_conversational_persuasion_gpt4_2025",
+                    "ext_anthropic_model_persuasiveness_2024",
+                    "ext_commercial_persuasion_ai_2026"
+                  ]
+                },
+                "communication_source_admission_gate_state": {
+                  "const": "pending_correction_retraction_or_provenance_intervention_comparator_and_full_review"
+                },
+                "scientific_discovery_requires_control_plane_gate": {"const": true},
+                "communication_requires_source_ethics_and_effect_gate": {"const": true},
+                "institutions_require_authority_legitimacy_and_update_gate": {"const": true},
+                "deployment_transition_requires_realized_outcome_and_distribution_gate": {"const": true},
+                "physical_compute_requires_facility_environment_and_retirement_gate": {"const": true},
+                "objective_formation_requires_target_proxy_integrity_and_ontology_gate": {"const": true},
+                "embedded_agency_remains_cross_book_foundations_program": {"const": true},
+                "societal_part_requires_three_admitted_owner_gate": {"const": true},
+                "source_roles_required_where_literature_permits": {
+                  "const": [
+                    "mechanism_or_capability",
+                    "limitation_or_failure",
+                    "competing_design",
+                    "measurement_or_evaluation"
+                  ]
+                }
+              }
+            },
             "p2_displacement_allowed": {"const": false},
             "support_state_effect": {"const": "none"},
             "release_effect": {"const": "none"}
@@ -156,11 +238,11 @@
       ],
       "properties": {
         "latest_public_living_book_release": {"const": "v2.3.0"},
-        "live_working_chapter_count": {"const": 55},
+        "live_working_chapter_count": {"const": 59},
         "activation_registry_atom_count": {"const": 3730},
         "post_activation_addendum_atom_count": {"const": 15},
         "total_structured_atom_count": {"const": 3745},
-        "chapter_core_argument_count": {"const": 55},
+        "chapter_core_argument_count": {"const": 59},
         "chapter_core_promotion_count": {"const": 0},
         "activation_registry_non_argument_atom_count": {"const": 2},
         "blocked_after_full_attempt_atom_count": {"const": 3698},
@@ -178,8 +260,8 @@
         "competence_qualified_natural_non_authored_empirical_transition_count": {"const": 0},
         "external_reproduction_count": {"const": 0},
         "sota_supported_count": {"const": 0},
-        "proof_target_count": {"const": 298},
-        "lean_module_count": {"const": 98},
+        "proof_target_count": {"const": 306},
+        "lean_module_count": {"const": 102},
         "theorem_declaration_count": {"const": 1307},
         "derived_or_decomposed_theorem_count": {"const": 901},
         "direct_or_projection_theorem_count": {"const": 230},
@@ -265,7 +347,9 @@
         "n2_count", "n3_count", "n4_count", "n5_count",
         "broad_negative_inference_count", "chapter_core_negative_inference_count",
         "historical_raw_outcomes_preserved", "surface_audit_path",
-        "surface_audit_validator_path", "current_surface_count",
+        "surface_audit_validator_path", "frozen_snapshot_commit",
+        "frozen_snapshot_sha256", "frozen_surface_count",
+        "frozen_chapter_surface_count", "current_surface_count",
         "live_chapter_surface_count", "forbidden_overbroad_phrase_count",
         "missing_rehabilitation_boundary_count",
         "blocked_chapter_boundary_failure_count", "support_state_effect",
@@ -289,8 +373,12 @@
         "historical_raw_outcomes_preserved": {"const": true},
         "surface_audit_path": {"const": "evidence_quality/negative_inference_surface_audit.json"},
         "surface_audit_validator_path": {"const": "scripts/validate_negative_inference_surface_audit.py"},
-        "current_surface_count": {"const": 75},
-        "live_chapter_surface_count": {"const": 55},
+        "frozen_snapshot_commit": {"const": "295642f21a39e2d735553b3a51ef6ba2f5e76d2c"},
+        "frozen_snapshot_sha256": {"const": "bb20c1f8932e915b392a76ae776c7487817ee734b0cd3684134e2b9d57e75ba1"},
+        "frozen_surface_count": {"const": 75},
+        "frozen_chapter_surface_count": {"const": 55},
+        "current_surface_count": {"type": "integer", "minimum": 75},
+        "live_chapter_surface_count": {"type": "integer", "minimum": 55},
         "forbidden_overbroad_phrase_count": {"const": 0},
         "missing_rehabilitation_boundary_count": {"const": 0},
         "blocked_chapter_boundary_failure_count": {"const": 0},

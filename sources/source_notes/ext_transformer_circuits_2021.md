@@ -38,6 +38,7 @@ Transformer Circuits is an external mechanistic-interpretability comparator for 
 ## Book Chapters Supported
 
 - `evidence-states-and-claim-discipline` (Evidence States and Claim Discipline)
+- `white-box-evidence-interpretability-and-activation-governance`
 
 ## Claims To Add Or Update
 

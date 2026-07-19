@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 import json
 import re
 import subprocess
@@ -38,7 +39,15 @@ P2_REPLACEMENT_QUEUE = ROOT / "experiments/p2_governed_repository_admission/corp
 READER_MANIFEST = ROOT / "editions/reader_manuscript/reader_2026_07_18/manifest.json"
 READER_RELEASE_RECORD = ROOT / "release_records/2026-07-18-reader-2026-07-18-0921a924.json"
 STRUCTURAL_RESEARCH = ROOT / "docs/structural_completeness_chapter_research_2026_07_19.md"
+STRUCTURAL_GAP_AUDIT = ROOT / "docs/structural_completeness_gap_audit_2026_07_19.md"
 SOURCE_INVENTORY = ROOT / "sources/source_inventory.json"
+BOOK_MANIFEST = ROOT / "book_structure.json"
+STRUCTURAL_CHAPTER_PATHS = {
+    "white-box-evidence-interpretability-and-activation-governance": ROOT / "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
+    "governed-world-models-and-reality-grounding": ROOT / "chapters/governed-world-models-and-reality-grounding.qmd",
+    "human-factors-and-meaningful-control-in-oversight": ROOT / "chapters/human-factors-and-meaningful-control-in-oversight.qmd",
+    "governed-operations-incident-command-and-graceful-degradation": ROOT / "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
+}
 STRUCTURAL_SOURCE_IDS = [
     "ext_circuit_tracing_2025",
     "ext_scaling_sparse_autoencoders_2024",
@@ -47,6 +56,30 @@ STRUCTURAL_SOURCE_IDS = [
     "ext_meaningful_human_control_actionable_2022",
     "ext_agentic_oversight_practice_2026",
     "ext_nist_deployed_ai_monitoring_2026",
+    "ext_nist_incident_response_2025",
+]
+STRUCTURAL_GAP_SOURCE_IDS = [
+    "ext_llama3_herd_2024",
+    "ext_3d_detection_corruptions_2023",
+    "ext_foundation_robotics_physical_risk_2025",
+    "ext_nist_differential_privacy_2025",
+    "ext_moral_crumple_zones_2019",
+    "ext_multi_agent_risks_2025",
+    "ext_replibench_2025",
+    "ext_autonomous_lab_materials_2023",
+    "ext_conversational_persuasion_gpt4_2025",
+    "ext_anthropic_model_persuasiveness_2024",
+    "ext_commercial_persuasion_ai_2026",
+    "ext_un_global_digital_compact_2024",
+    "ext_council_europe_ai_convention_2024",
+    "ext_generative_ai_at_work_2025",
+    "ext_ilo_genai_jobs_index_2025",
+    "ext_iea_energy_and_ai_2025",
+    "ext_lbnl_data_center_energy_2024",
+    "ext_cooperative_inverse_rl_2016",
+    "ext_goal_misgeneralization_2022",
+    "ext_learned_optimization_risks_2019",
+    "ext_emergent_misalignment_reward_hacking_2025",
 ]
 PUBLIC_SURFACES = [
     ROOT / p
@@ -114,7 +147,9 @@ def inputs() -> dict:
         "reader_manifest": load(READER_MANIFEST),
         "reader_release_record": load(READER_RELEASE_RECORD),
         "structural_research": STRUCTURAL_RESEARCH.read_text(encoding="utf-8"),
+        "structural_gap_audit": STRUCTURAL_GAP_AUDIT.read_text(encoding="utf-8"),
         "source_inventory": load(SOURCE_INVENTORY),
+        "book_manifest": load(BOOK_MANIFEST),
         "transition_snapshot": transition_snapshot(atom_ids),
         "proof_review": PROOF_REVIEW.read_text(encoding="utf-8"),
         "proof_manifest": load(PROOF_MANIFEST),
@@ -199,10 +234,20 @@ def errors(data: dict) -> list[str]:
         "non-overlapping, independently sealed held-out denominators",
         "all 30 candidates hold sealed recipes and receipts",
         "P6.3 — Structural-completeness source and chapter tranche",
+        "P6.4 — Second structural-boundary completeness audit",
         "P7.2 — Structural-tranche reader integration",
         "no chapter merges",
-        "roadmap admission is not manifest admission",
-        "55 to 59 chapters",
+        "Manifest admission is not chapter completion",
+        "59 to at most 72 chapters",
+        "human-ai-communication-persuasion-and-epistemic-security",
+        "institutions-international-coordination-and-public-legitimacy",
+        "ai-deployment-transition-distribution-and-human-agency",
+        "physical-compute-infrastructure-energy-and-environmental-constraints",
+        "governed-objective-formation-value-learning-and-goal-integrity",
+        "whether Candidates I, J, K, or L pass, are narrowed, or return to those owners",
+        "Candidates J, K, and L each have two new source-noted comparators",
+        "whether Candidate M passes",
+        "Organizations, Institutions, and Societal Transition",
     ]:
         if phrase.casefold() not in roadmap_normalized:
             out.append(f"roadmap governing boundary missing: {phrase}")
@@ -210,25 +255,89 @@ def errors(data: dict) -> list[str]:
     structural = data["structural_research"]
     structural_normalized = re.sub(r"\s+", " ", structural).casefold()
     for phrase in [
-        "Status: **roadmap-admitted research tranche; manifest admission gated**",
+        "Status: **first tranche manifest-admitted; initial drafts complete; evidence and reader integration gated**",
         "Merge no chapters",
         "White-Box Evidence, Interpretability, and Activation Governance",
         "Governed World Models and Reality Grounding",
         "Human Factors and Meaningful Control in Oversight",
         "Governed Operations, Incident Command, and Graceful Degradation",
-        "Tranche-wide admission gates",
+        "Tranche-wide admission and completion gates",
         "Corben-source crosswalk",
         "No cited result promotes a chapter core claim",
     ]:
         if phrase.casefold() not in structural_normalized:
             out.append(f"structural research boundary missing: {phrase}")
+
+    structural_gap = data["structural_gap_audit"]
+    structural_gap_normalized = re.sub(r"\s+", " ", structural_gap).casefold()
+    for phrase in [
+        "Status: **second-tranche coverage audit; roadmap admission does not imply manifest admission**",
+        "bounded thirteen-candidate second tranche",
+        "Governed Model Training, Distributed Optimization, and Scaling",
+        "Perception, Sensor Fusion, and Observation Trust",
+        "Embodied Agency, Real-Time Control, and Physical Safety",
+        "Privacy, Data Rights, and Information-Flow Governance",
+        "Human–AI Organizations, Delegation, and Accountability",
+        "Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk",
+        "Autonomous Replication, Proliferation, and Containment",
+        "Scientific Discovery and Experimental Governance",
+        "Human–AI Communication, Persuasion, and Epistemic Security",
+        "Institutions, International Coordination, and Public Legitimacy",
+        "AI Deployment, Transition, Distribution, and Human Agency",
+        "Physical Compute Infrastructure, Energy, and Environmental Constraints",
+        "Governed Objective Formation, Value Learning, and Goal Integrity",
+        "ext_conversational_persuasion_gpt4_2025",
+        "ext_anthropic_model_persuasiveness_2024",
+        "ext_commercial_persuasion_ai_2026",
+        "ext_un_global_digital_compact_2024",
+        "ext_council_europe_ai_convention_2024",
+        "ext_generative_ai_at_work_2025",
+        "ext_ilo_genai_jobs_index_2025",
+        "ext_iea_energy_and_ai_2025",
+        "ext_lbnl_data_center_energy_2024",
+        "required source-role admission gate is **not** satisfied",
+        "Candidate J's source-role gate remains open",
+        "Candidate K's source gate remains open",
+        "Candidate L's source gate remains open",
+        "Candidate M's source-role gate remains open",
+        "Required section-scale additions, not chapters",
+        "Seventy-two is not a target",
+        "remain required whether Candidate I is admitted, rejected, or narrowed",
+        "Embedded agency, self-reference, and robust delegation",
+        "mechanism or capability, limitation or failure, competing design, and measurement or evaluation",
+    ]:
+        if phrase.casefold() not in structural_gap_normalized:
+            out.append(f"structural gap audit boundary missing: {phrase}")
     inventory = {row.get("id"): row for row in data["source_inventory"]}
-    for source_id in STRUCTURAL_SOURCE_IDS:
+    for source_id in STRUCTURAL_SOURCE_IDS + STRUCTURAL_GAP_SOURCE_IDS:
         if source_id not in inventory:
             out.append(f"structural source missing from inventory: {source_id}")
         note = ROOT / f"sources/source_notes/{source_id}.md"
         if not note.exists():
             out.append(f"structural source note missing: {source_id}")
+
+    manifest_chapters = [
+        chapter
+        for part in data["book_manifest"].get("parts", [])
+        for chapter in part.get("chapters", [])
+    ]
+    manifest_ids = {chapter.get("id") for chapter in manifest_chapters}
+    first_ids = set(status["quality_uplift_program"]["structural_completeness_tranche"]["first_tranche"]["candidate_ids"])
+    second_ids = set(status["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"]["candidate_ids"])
+    if len(manifest_chapters) != 59:
+        out.append(f"working manifest chapter count is {len(manifest_chapters)}, expected 59")
+    if not first_ids.issubset(manifest_ids):
+        out.append(f"first structural tranche missing manifest IDs: {sorted(first_ids - manifest_ids)}")
+    if set(STRUCTURAL_CHAPTER_PATHS) != first_ids:
+        out.append("first structural tranche chapter-path contract drifted")
+    missing_drafts = sorted(
+        chapter_id for chapter_id, path in STRUCTURAL_CHAPTER_PATHS.items()
+        if not path.exists() or not path.read_text(encoding="utf-8").strip()
+    )
+    if missing_drafts:
+        out.append(f"first structural tranche initial drafts missing or empty: {missing_drafts}")
+    if second_ids.intersection(manifest_ids):
+        out.append(f"manifest-gated second structural tranche admitted prematurely: {sorted(second_ids & manifest_ids)}")
 
     contract = data["competence"]
     for section in [
@@ -364,17 +473,35 @@ def errors(data: dict) -> list[str]:
     }.items():
         if surface_summary.get(field) != expected:
             out.append(f"negative-inference surface audit drift: {field}")
-    if surface_scope.get("surface_count") != 75 or surface_scope.get("chapter_count") != 55:
-        out.append("negative-inference surface audit denominator drifted")
+    if surface_scope.get("surface_count") != rehabilitation_status.get("current_surface_count"):
+        out.append("negative-inference current surface denominator drifted")
+    if surface_scope.get("chapter_count") != rehabilitation_status.get("live_chapter_surface_count"):
+        out.append("negative-inference live chapter denominator drifted")
+    if surface_scope.get("public_and_derivative_surface_count") != 20:
+        out.append("negative-inference public/derivative surface denominator drifted")
     for field, expected in {
-        "current_surface_count": 75,
-        "live_chapter_surface_count": 55,
         "forbidden_overbroad_phrase_count": 0,
         "missing_rehabilitation_boundary_count": 0,
         "blocked_chapter_boundary_failure_count": 0,
     }.items():
         if rehabilitation_status.get(field) != expected:
             out.append(f"roadmap surface-rehabilitation status drift: {field}")
+    frozen_commit = rehabilitation_status.get("frozen_snapshot_commit")
+    frozen_digest = rehabilitation_status.get("frozen_snapshot_sha256")
+    if rehabilitation_status.get("frozen_surface_count") != 75 or rehabilitation_status.get("frozen_chapter_surface_count") != 55:
+        out.append("frozen negative-inference snapshot denominator drifted")
+    try:
+        frozen = subprocess.run(
+            ["git", "show", f"{frozen_commit}:evidence_quality/negative_inference_surface_audit.json"],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+        ).stdout
+    except subprocess.CalledProcessError:
+        out.append("frozen negative-inference snapshot commit is unavailable")
+    else:
+        if hashlib.sha256(frozen).hexdigest() != frozen_digest:
+            out.append("frozen negative-inference snapshot digest drifted")
 
     p2 = data["p2_selection"]
     p2_status = status.get("p2_frontier_selection", {})
@@ -681,9 +808,11 @@ def errors(data: dict) -> list[str]:
         r"(\d+) unknown/mixed",
         data["proof_review"],
     )
-    expected_proof = (298, 98, 1307, 901, 230, 176)
+    expected_proof = (306, 102, 1307, 901, 230, 176)
     if not proof_match or tuple(map(int, proof_match.groups())) != expected_proof:
         out.append("proof-depth baseline drifted without roadmap reconciliation")
+    if data["proof_manifest"].get("proof_target_count") != expected_proof[0]:
+        out.append("proof manifest target count disagrees with reconciled proof-depth baseline")
 
     proof_inventory = status.get("semantic_proof_cluster_inventory", {})
     proof_clusters = proof_inventory.get("clusters", [])
@@ -817,6 +946,14 @@ def main() -> None:
     mutate("stale predecessor", lambda c: c["predecessor"].__setitem__("status", "active"))
     mutate("shared flagship identity drift", lambda c: c["status"]["quality_uplift_program"].__setitem__("shared_flagship_id", "drifted"))
     mutate("editorial meaning-preservation deletion", lambda c: c["status"]["quality_uplift_program"]["narrative_quality_gate"].__setitem__("requires_meaning_preservation_audit", False))
+    mutate("communication candidate gate weakening", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"].__setitem__("communication_requires_source_ethics_and_effect_gate", False))
+    mutate("institutional candidate gate weakening", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"].__setitem__("institutions_require_authority_legitimacy_and_update_gate", False))
+    mutate("deployment-transition candidate gate weakening", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"].__setitem__("deployment_transition_requires_realized_outcome_and_distribution_gate", False))
+    mutate("physical-compute candidate gate weakening", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"].__setitem__("physical_compute_requires_facility_environment_and_retirement_gate", False))
+    mutate("objective-formation candidate gate weakening", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"].__setitem__("objective_formation_requires_target_proxy_integrity_and_ontology_gate", False))
+    mutate("embedded-agency foundations laundering", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"].__setitem__("embedded_agency_remains_cross_book_foundations_program", False))
+    mutate("societal-part premature creation", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"].__setitem__("societal_part_requires_three_admitted_owner_gate", False))
+    mutate("source-role gate weakening", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"]["source_roles_required_where_literature_permits"].pop())
     mutate("Q1 Q2 denominator overlap", lambda c: c["status"]["quality_uplift_program"]["empirical_lanes"].__setitem__("denominator_overlap_allowed", True))
     mutate("Q1 outcome tuning leakage", lambda c: c["status"]["quality_uplift_program"]["empirical_lanes"].__setitem__("q1_outcomes_may_tune_q2_or_student", True))
     mutate("P7.1a artificial T4 blocker", lambda c: c["status"]["quality_uplift_program"]["narrative_quality_gate"].__setitem__("case_independent_compression_state", "blocked_by_T4"))
@@ -836,7 +973,7 @@ def main() -> None:
         "Evidence-competence roadmap passed: P0 clean pushed/build/deploy ancestral custody checkpoint attested, P1/M1 complete, active P2/M2; 115 accepted transitions, "
         "25 direct and 90 indirect identities resolved with zero unmapped; N0-N5 competence contract active and historical rehabilitation complete; "
         "90 accepted historical negatives classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5; "
-        "75 current surfaces including 55 chapters reconciled with zero overbroad negative language; "
+        "the frozen 75-surface rehabilitation snapshot including the then-live 55 chapters reconciled with zero overbroad negative language; "
         "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary reinstates rank five as setup-retry-pending, keeps rank six closed, and blocks the complete 30-image pool before any further protected content opens; Q1 D1 and Theseus Q2 D2 remain disjoint and sealed; remeasurement, qualification, construct, and heldout gates remain closed; "
         "six semantic proof clusters containing 24 unique modules are frozen for audit; current proof and main-attestation baselines exact; no support/release effect; "
         f"{len(mutations)}/{len(mutations)} mutations rejected."

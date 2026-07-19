@@ -5,9 +5,12 @@ Recorded: 2026-07-10
 All three active empirical programs are complete and accepted at their bounded
 local scope. The historical post-v2 cycle kept its 54-chapter architecture;
 nine existing chapter owners were updated and no new chapter was warranted by
-those results. The live successor now contains 55 chapters because a later,
-separately adjudicated cognitive-substrate intake passed the distinct-interface
-test. That addition does not alter this cycle's results or support effects.
+those results. The immediate live successor contained 55 chapters because a
+later, separately adjudicated cognitive-substrate intake passed the
+distinct-interface test. The current manifest contains 59 chapters after the
+separate structural-completeness tranche admitted Human Factors, Governed World
+Models, White-Box Evidence, and Governed Operations. Those later additions do
+not alter this cycle's results or support effects.
 
 | Program | Affected core claims | Disposition | Why support stays at `argument` |
 |---|---:|---|---|

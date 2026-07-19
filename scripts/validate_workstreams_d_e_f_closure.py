@@ -42,8 +42,18 @@ def main() -> None:
         errors.append("Workstream D/E must reject four invariant mutations")
     if invariants.get("final_open_residuals") != 1 or invariants.get("support_state_effect") != "none":
         errors.append("Workstream D/E must preserve one open residual and no support effect")
+    manifest = load("book_structure.json")
+    live_chapter_ids = {
+        str(chapter.get("id", ""))
+        for part in manifest.get("parts", [])
+        for chapter in part.get("chapters", [])
+    }
     dispositions = load("claim_decisions/v1_x_core_claim_dispositions.json").get("summary", {})
-    if dispositions.get("manifest_chapter_core_claims") != 55 or dispositions.get("promoted_core_claims") != 0:
+    if (
+        dispositions.get("manifest_chapter_core_claims") != len(live_chapter_ids)
+        or dispositions.get("promoted_core_claims") != 0
+        or dispositions.get("chapter_core_claims_remaining_at_argument") != len(live_chapter_ids)
+    ):
         errors.append("Workstream D live core-claim dispositions are incomplete or promoted")
     active_status = load("roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json")
     activation = active_status.get("activation_baseline", {})
@@ -53,9 +63,14 @@ def main() -> None:
     proof_manifest = load("proofs/proof_manifest.json")
     targets = proof_manifest.get("targets", proof_manifest.get("records", []))
     live_target_count = int(proof_manifest.get("proof_target_count", len(targets)))
-    if len(targets) != live_target_count or live_target_count != activation.get("proof_target_count"):
+    proof_chapter_ids = set(proof_manifest.get("chapter_counts", {}))
+    if (
+        len(targets) != live_target_count
+        or live_target_count < int(activation.get("proof_target_count", 0))
+        or proof_chapter_ids != live_chapter_ids
+    ):
         errors.append(
-            "Workstream E live proof manifest must preserve the 298-target governed inventory after reviewed consolidation"
+            "Workstream E live proof manifest must preserve the historical 298-target inventory while covering every current manifest chapter"
         )
     adequacy = (ROOT / "docs/proof_adequacy_review.md").read_text(encoding="utf-8")
     for phrase in ("adequate finite-record invariant", "useful but too narrow", "needs richer state-machine or review semantics", "needs executable tests first", "needs empirical or baseline tests first"):
@@ -70,7 +85,6 @@ def main() -> None:
     for source_id in ("ext_mcp_protocol_2025_11_25", "ext_a2a_protocol_1_0_0", "ext_owasp_agentic_top_10_2026", "ext_nist_ai_rmf_1_0_2023"):
         if source_id not in source_ids:
             errors.append(f"Workstream F volatile refresh missing {source_id}")
-    manifest = load("book_structure.json")
     inter_stack = next(ch for part in manifest["parts"] for ch in part["chapters"] if ch["id"] == "inter-stack-protocols-identity-and-economic-exchange")
     for source_id in ("ext_mcp_protocol_2025_11_25", "ext_a2a_protocol_1_0_0"):
         if source_id not in inter_stack.get("source_ids", []):

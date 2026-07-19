@@ -75,7 +75,7 @@ and 0 N3–N5. Their raw outcomes remain immutable, but none currently supports
 an exact, mechanism-level, architectural, parent, or chapter-core refutation.
 The broader prose and `blocked_after_full_attempt` audit remains active. This
 rehabilitation creates no support-state or release effect.
-The live manifest has 55/55 chapter-core claims at `argument`, zero external
+The live manifest has 59/59 chapter-core claims at `argument`, zero external
 reproductions, and no SOTA support. The local X synopsis source is current; its older unpublished platform draft is stale after the competence-language refresh and must be refreshed before publication.
 Later
 root or `/latest/` commits remain mutable and are not part of the immutable

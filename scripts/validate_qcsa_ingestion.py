@@ -14,6 +14,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE_ID = "qcsa_whitepaper"
 RAW = ROOT / "sources" / "raw" / "question_compiled_semantic_addressing_whitepaper.md"
 DIGEST = "d9e594d40dfd62c899ab25e9d395d34c702dac12e8afd75eed133392f78c0c8c"
+HISTORICAL_55TH_CHAPTER = "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+ACTIVE_MAINTENANCE_ROADMAP = "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
 TARGETS = {
     "cognitive-compilation-and-semantic-ir",
     "virtual-context-abi",
@@ -62,7 +64,9 @@ def snapshot() -> dict:
         "inventory": inventory,
         "note": note,
         "chapters": chapters,
-        "active_status": load_json("roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json"),
+        "historical_status": load_json("roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json"),
+        "maintenance_status": load_json("roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json"),
+        "vectors": load_json("evidence_quality/core_claim_vectors.json"),
     }
 
 
@@ -72,15 +76,51 @@ def validate(data: dict) -> list[str]:
     inventory = data.get("inventory", [])
     chapters = data.get("chapters", {})
     records = [chapter for part in structure.get("parts", []) for chapter in part.get("chapters", [])]
-    if len(records) != 55:
-        errors.append("live architecture must retain the authorized 55 chapters")
-    activation = data.get("active_status", {}).get("activation_baseline", {})
+    live_chapter_count = len(records)
+    record_ids = {chapter.get("id") for chapter in records}
+    if len(record_ids) != live_chapter_count:
+        errors.append("live architecture contains duplicate chapter identifiers")
+    historical_status = data.get("historical_status", {})
+    activation = historical_status.get("activation_baseline", {})
     if activation.get("active_chapter_count") != 54:
         errors.append("historical QCSA-era 54-chapter activation baseline drifted")
+    historical_expansion = historical_status.get("structural_expansion_contract", {})
+    if (
+        historical_expansion.get("live_chapter_count") != 55
+        or historical_expansion.get("chapter_id") != HISTORICAL_55TH_CHAPTER
+        or historical_expansion.get("support_state_effect") != "none"
+    ):
+        errors.append("historical QCSA/55th-chapter ingestion contract drifted")
+    maintenance_status = data.get("maintenance_status", {})
+    activation_truth = maintenance_status.get("activation_truth", {})
+    structural_tranche = maintenance_status.get("quality_uplift_program", {}).get("structural_completeness_tranche", {})
+    first_tranche = structural_tranche.get("first_tranche", {})
+    admitted_chapter_ids = set(first_tranche.get("candidate_ids", []))
+    if (
+        maintenance_status.get("status") != "active"
+        or maintenance_status.get("roadmap_path") != ACTIVE_MAINTENANCE_ROADMAP
+        or activation_truth.get("live_working_chapter_count") != live_chapter_count
+        or activation_truth.get("chapter_core_argument_count") != live_chapter_count
+        or activation_truth.get("chapter_core_promotion_count") != 0
+        or structural_tranche.get("current_manifest_chapter_count") != live_chapter_count
+        or first_tranche.get("manifest_admitted_count") != len(admitted_chapter_ids)
+        or not admitted_chapter_ids.issubset(record_ids)
+    ):
+        errors.append("current live architecture disagrees with active maintenance authority")
     if any(chapter.get("id") in {"qcsa", "question-compiled-semantic-addressing"} for chapter in records):
         errors.append("QCSA ingestion unexpectedly created a standalone chapter")
     if any(chapter.get("evidence_level") != "argument" for chapter in records):
         errors.append("QCSA ingestion moved a core claim above argument")
+    vectors = data.get("vectors", {})
+    vector_rows = vectors.get("vectors", [])
+    vector_summary = vectors.get("summary", {})
+    if (
+        len(vector_rows) != live_chapter_count
+        or vector_summary.get("vector_count") != live_chapter_count
+        or vector_summary.get("summary_support_states") != {"argument": live_chapter_count}
+        or any(row.get("summary_support_state") != "argument" for row in vector_rows)
+    ):
+        errors.append("live evidence vectors moved or miscounted a chapter-core claim")
 
     source_rows = [row for row in inventory if row.get("id") == SOURCE_ID]
     if len(source_rows) != 1:
@@ -103,7 +143,16 @@ def validate(data: dict) -> list[str]:
     if "Keep the active 54-chapter architecture" not in note:
         errors.append("QCSA source note lost the chapter decision")
 
-    for chapter_id in TARGETS:
+    qcsa_manifest_routes = {
+        chapter.get("id")
+        for chapter in records
+        if SOURCE_ID in chapter.get("source_ids", [])
+    }
+    later_qcsa_routes = qcsa_manifest_routes - TARGETS
+    if not later_qcsa_routes.issubset(admitted_chapter_ids):
+        errors.append("later QCSA source reuse escaped manifest-admitted chapters")
+
+    for chapter_id in TARGETS | later_qcsa_routes:
         owner = chapters.get(chapter_id)
         if not owner:
             errors.append(f"missing QCSA chapter owner: {chapter_id}")
@@ -148,6 +197,13 @@ def mutation_controls(base: dict) -> list[str]:
     boundary_erasure = copy.deepcopy(base)
     boundary_erasure["note"] = boundary_erasure["note"].replace("The source itself remains conceptual architecture and design rationale", "The source proves the completed architecture")
     mutations.append(("non-claim erasure", boundary_erasure))
+    unauthorized_route = copy.deepcopy(base)
+    unauthorized_chapter = next(chapter for part in unauthorized_route["structure"]["parts"] for chapter in part["chapters"] if chapter.get("id") == "prototype-roadmap")
+    unauthorized_chapter.setdefault("source_ids", []).append(SOURCE_ID)
+    mutations.append(("unauthorized later source reuse", unauthorized_route))
+    authority_promotion = copy.deepcopy(base)
+    authority_promotion["maintenance_status"]["activation_truth"]["chapter_core_promotion_count"] = 1
+    mutations.append(("current authority promotion", authority_promotion))
     for name, mutated in mutations:
         if not validate(mutated):
             failures.append(name)
@@ -169,7 +225,17 @@ def main() -> None:
         for error in errors:
             print(f" - {error}")
         sys.exit(1)
-    print("QCSA ingestion passed: 1 digest-bound author source, 9 passage-reviewed existing-chapter routes, preserved 54-chapter historical decision plus 55 live argument-state chapters, no QCSA standalone chapter, and 6 rejecting mutations.")
+    live_chapter_count = sum(
+        len(part.get("chapters", []))
+        for part in data["structure"].get("parts", [])
+    )
+    later_route_count = len({
+        chapter.get("id")
+        for part in data["structure"].get("parts", [])
+        for chapter in part.get("chapters", [])
+        if SOURCE_ID in chapter.get("source_ids", []) and chapter.get("id") not in TARGETS
+    })
+    print(f"QCSA ingestion passed: 1 digest-bound author source, 9 passage-reviewed historical chapter routes plus {later_route_count} bounded reuses in later manifest-admitted chapters, preserved 54-chapter activation and historical authorized 55th-chapter ingestion, {live_chapter_count} live argument-state chapters, no QCSA standalone chapter, and 8 rejecting mutations.")
 
 
 if __name__ == "__main__":

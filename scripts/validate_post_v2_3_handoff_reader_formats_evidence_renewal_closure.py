@@ -41,6 +41,7 @@ def snapshot() -> dict:
         "roadmap": text(ROADMAP),
         "declaration": text(DECLARATION),
         "terminal": load(TERMINAL_RECORD),
+        "structure": load("book_structure.json"),
         "vectors": load("evidence_quality/core_claim_vectors.json"),
         "epub": load("editions/reader_manuscript/v2_0/epub_disposition.json"),
         "pdf": load("editions/reader_manuscript/v2_0/pdf_disposition.json"),
@@ -86,6 +87,9 @@ def errors(data: dict) -> list[str]:
     active_current = data["active_current_status"]
     if active_current.get("status") != "active" or active_current.get("roadmap_path") != ACTIVE_CURRENT:
         out.append("current evidence-competence successor machine authority is absent")
+    current_truth = active_current.get("activation_truth", {})
+    live_chapter_count = current_truth.get("live_working_chapter_count")
+    live_argument_count = current_truth.get("chapter_core_argument_count")
 
     terminal = data["terminal"]
     if terminal.get("decision") != "exact_local_reader_multiformat_disposition_no_public_release" or terminal.get("validation_status") != "pass":
@@ -106,11 +110,31 @@ def errors(data: dict) -> list[str]:
     if data["reader_v21"].get("status") != "reconciled_source_only" or data["reader_v21"].get("release_state") != "not_released_source_only":
         out.append("v2.1 source-only reader state is not bounded")
 
+    manifest_ids = [
+        chapter.get("id")
+        for part in data["structure"].get("parts", [])
+        for chapter in part.get("chapters", [])
+    ]
     vectors = data["vectors"].get("vectors", [])
-    if len(vectors) != 55 or any(row.get("summary_support_state") != "argument" for row in vectors):
-        out.append("55-core live argument boundary drifted")
+    if (
+        not isinstance(live_chapter_count, int)
+        or live_chapter_count < 55
+        or live_argument_count != live_chapter_count
+        or len(manifest_ids) != live_chapter_count
+        or len(vectors) != live_chapter_count
+        or [row.get("chapter_id") for row in vectors] != manifest_ids
+        or any(row.get("summary_support_state") != "argument" for row in vectors)
+    ):
+        out.append("current manifest, vector identity, live count, or argument-only boundary drifted")
     if active_successor.get("activation_baseline", {}).get("core_claim_count") != 54:
         out.append("frozen 54-core historical activation boundary drifted")
+    expansion = active_successor.get("structural_expansion_contract", {})
+    if (
+        expansion.get("live_chapter_count") != 55
+        or expansion.get("chapter_id")
+        != "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ):
+        out.append("authorized historical 55th-chapter expansion boundary drifted")
     flagship = data["flagship"]
     outcomes = flagship.get("outcomes", {})
     baseline = outcomes.get("baseline", {})
@@ -133,6 +157,13 @@ def errors(data: dict) -> list[str]:
         for phrase in [ACTIVE_SUCCESSOR, ACTIVE_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, "v2.3.0"]:
             if phrase.casefold() not in body_normalized.casefold():
                 out.append(f"{path} missing terminal public truth: {phrase}")
+        live_claim_phrase = (
+            f"All {live_chapter_count} live chapter-core claims remain at `argument`"
+            if path == "docs/publication_readiness.md"
+            else f"{live_argument_count}/{live_chapter_count} chapter-core claims at `argument`"
+        )
+        if live_claim_phrase not in body and live_claim_phrase not in body_normalized:
+            out.append(f"{path} missing current live-claim truth: {live_claim_phrase}")
         if "No successor roadmap is active" in body:
             out.append(f"{path} retains obsolete no-successor language")
         if "active canonical successor roadmap: fake" in body.casefold():
@@ -157,7 +188,12 @@ def main() -> None:
             failures.append(f"negative mutation accepted: {label}")
     if failures:
         raise SystemExit("Post-v2.3 handoff/reader/evidence closure failed:\n - " + "\n - ".join(failures))
-    print("Post-v2.3 handoff/reader/evidence closure passed: P0-P4, M0-M8, historical HTML+DOCX local approval and EPUB/PDF blockers, 55 live argument cores, v2.3.0 unchanged, exact evidence-competence successor active, and 8 rejecting mutations.")
+    print(
+        "Post-v2.3 handoff/reader/evidence closure passed: P0-P4, M0-M8, "
+        "historical HTML+DOCX local approval and EPUB/PDF blockers, frozen 54-core activation and authorized 55th chapter preserved, "
+        f"current {base['active_current_status']['activation_truth']['chapter_core_argument_count']} live argument cores, "
+        "v2.3.0 unchanged, exact evidence-competence successor active, and 8 rejecting mutations."
+    )
 
 
 if __name__ == "__main__":

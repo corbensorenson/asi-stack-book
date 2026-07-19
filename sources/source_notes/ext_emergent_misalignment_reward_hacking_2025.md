@@ -43,6 +43,7 @@ neither a task-success proof nor a guarantee of safe generalization.
 
 ## Book Chapters Supported
 
+- Proposed: `governed-objective-formation-value-learning-and-goal-integrity`
 - `adversarial-evaluation-sandbagging-and-training-time-deception`
   (Adversarial Evaluation, Sandbagging, and Training-Time Deception)
 

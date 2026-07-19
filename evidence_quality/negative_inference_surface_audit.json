@@ -2,8 +2,8 @@
   "schema_version": "asi_stack.negative_inference_surface_audit.v1",
   "recorded_date": "2026-07-17",
   "scope": {
-    "surface_count": 75,
-    "chapter_count": 55,
+    "surface_count": 79,
+    "chapter_count": 59,
     "public_and_derivative_surface_count": 20,
     "historical_transition_files_mutated": 0,
     "historical_roadmaps_treated_as_current_prose": false
@@ -26,7 +26,7 @@
     "release_effect": "none"
   },
   "term_counts": {
-    "refuted": 95,
+    "refuted": 96,
     "no_change": 366,
     "blocked_after_full_attempt": 217
   },
@@ -36,8 +36,8 @@
   "surfaces": [
     {
       "path": "README.md",
-      "sha256": "97561e227fe68d85f9aa2da9985d146fea6b50d198ad62c6a0c67535f73c3b08",
-      "bytes": 102660,
+      "sha256": "97371c0a6a7382a330b97bf83dd6e46db75174886a6ce21d646b116e0eb4d3f0",
+      "bytes": 102703,
       "term_counts": {
         "refuted": 3,
         "no_change": 14,
@@ -46,8 +46,8 @@
     },
     {
       "path": "appendices/A_source_matrix.qmd",
-      "sha256": "5d0d5ee7f415e594e35e500c346626b33d55eae5356bf35d496dd77cc612601d",
-      "bytes": 262258,
+      "sha256": "a89f76eb97a93b6e1f5291ca8cc33532ba2d9a7ff7c1d6c36a045a9cfd8eb876",
+      "bytes": 280115,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -56,8 +56,8 @@
     },
     {
       "path": "appendices/C_claim_evidence_matrix.qmd",
-      "sha256": "f003dafcd17b173f385ef3312e24f65187e867db00e8a969bff35d51f628183a",
-      "bytes": 422371,
+      "sha256": "f8cb0310b90d798e3acc5ceae34b69857dd9127c7d4c9260c3393ca0d2d6eaba",
+      "bytes": 436869,
       "term_counts": {
         "refuted": 1,
         "no_change": 0,
@@ -66,8 +66,8 @@
     },
     {
       "path": "appendices/K_implementation_horizons.qmd",
-      "sha256": "2987dc5a2085a80a5eb5737aa98c89dfdb93b2a49ab94b8aa358236c2f086a78",
-      "bytes": 121096,
+      "sha256": "bd5a2a71d27bcebebf8b312d7e1f015ce1dbc13c1ee1bfe300dbc0107c8384dc",
+      "bytes": 125802,
       "term_counts": {
         "refuted": 25,
         "no_change": 0,
@@ -126,8 +126,8 @@
     },
     {
       "path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-      "sha256": "7cc69022aeda43bbf87a2f837baace53c2eae398cab28b1c004a7ab37c8aaac8",
-      "bytes": 72875,
+      "sha256": "d09e29507c2b4f7c6862737de9d2ee047bb76512fd1a5b24feb2f50d4ae229a8",
+      "bytes": 73068,
       "term_counts": {
         "refuted": 0,
         "no_change": 1,
@@ -256,8 +256,8 @@
     },
     {
       "path": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
-      "sha256": "2fa8b4735477e998f364a5bc0b93597ed65ab95b3ed143944bce079c72781602",
-      "bytes": 53358,
+      "sha256": "250455c15fecb9520de6e3d857594762941bd0b55c19e0f812b19380d1f799c8",
+      "bytes": 53430,
       "term_counts": {
         "refuted": 1,
         "no_change": 1,
@@ -295,9 +295,39 @@
       }
     },
     {
+      "path": "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
+      "sha256": "191e33d1fd1de729f2f1ea316a55739051f92017d037e310944bde4ab0156524",
+      "bytes": 69216,
+      "term_counts": {
+        "refuted": 0,
+        "no_change": 0,
+        "blocked_after_full_attempt": 0
+      }
+    },
+    {
+      "path": "chapters/governed-world-models-and-reality-grounding.qmd",
+      "sha256": "7c9d3a1e839466471c80956ab0a57812e7359c1156bd80708e07105d388378a2",
+      "bytes": 49289,
+      "term_counts": {
+        "refuted": 0,
+        "no_change": 0,
+        "blocked_after_full_attempt": 0
+      }
+    },
+    {
+      "path": "chapters/human-factors-and-meaningful-control-in-oversight.qmd",
+      "sha256": "d89cf863bb1ab25643f4646c0eebe9e9131cfc93e75d43113eabcc004bf21eab",
+      "bytes": 56789,
+      "term_counts": {
+        "refuted": 1,
+        "no_change": 0,
+        "blocked_after_full_attempt": 0
+      }
+    },
+    {
       "path": "chapters/human-intent-as-a-formal-input.qmd",
-      "sha256": "9b6a50bfbe18b68970e2a9af2fc9b72adad521520086b0171b704c450d073d60",
-      "bytes": 48425,
+      "sha256": "7482f20e5bdef7a8928b99a91b82f544cdac620590bb30fc85b9c0b24b8357f1",
+      "bytes": 48567,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -416,8 +446,8 @@
     },
     {
       "path": "chapters/planning-as-a-control-layer.qmd",
-      "sha256": "05fe8470113e897dccb87e61fb1c3fa922f21a6e3a8334df32980d6e1fd1af0b",
-      "bytes": 54398,
+      "sha256": "25e56907d288ef97197f7fa4a62f9703de594ce1acf1d193f8a3cb7a95fca6b0",
+      "bytes": 54494,
       "term_counts": {
         "refuted": 0,
         "no_change": 3,
@@ -536,8 +566,8 @@
     },
     {
       "path": "chapters/safety-cases-and-structured-assurance.qmd",
-      "sha256": "b56e1bd0ab78b3ccf5a9a0c7099f5a341d31be35a7483ca60658b37b616efd48",
-      "bytes": 45709,
+      "sha256": "49644c1c6517729e4e1c16a1e16125604e731c34332d5c3c4a858c275beb6ef9",
+      "bytes": 45834,
       "term_counts": {
         "refuted": 1,
         "no_change": 0,
@@ -625,6 +655,16 @@
       }
     },
     {
+      "path": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
+      "sha256": "7cf12e8cee214ec0e44aeefc1ee0a7a2409cde36b25739fc4d37df227914ebda",
+      "bytes": 37420,
+      "term_counts": {
+        "refuted": 0,
+        "no_change": 0,
+        "blocked_after_full_attempt": 0
+      }
+    },
+    {
       "path": "docs/accepted_transition_review_audit.md",
       "sha256": "f4b650ebcd0549300f95e5be0d62a3222c434529cedb115b4d51e80a5f462c40",
       "bytes": 1932,
@@ -636,8 +676,8 @@
     },
     {
       "path": "docs/book_outline.md",
-      "sha256": "dcb5348027aed52eb5906f7eb15627a83c9f50ba54e2b791f3ba063d008faa0a",
-      "bytes": 752419,
+      "sha256": "5b351ac95af4180df8abad66e8cc012561e856b300e80a202463d80103f3a3d7",
+      "bytes": 777150,
       "term_counts": {
         "refuted": 7,
         "no_change": 35,
@@ -686,7 +726,7 @@
     },
     {
       "path": "docs/non_core_evidence_ledger.md",
-      "sha256": "62a9f1258fae8b12c61df6d955e71664d616445cb5efc24e669ffb8c4c4ad578",
+      "sha256": "a223207489b68923e740b707c43f9a72a0f4764827db2fa0f33c2b8b1ffeaa7a",
       "bytes": 70340,
       "term_counts": {
         "refuted": 6,
@@ -696,8 +736,8 @@
     },
     {
       "path": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
-      "sha256": "29259190ee796efc3297d065789eb2547562ee4daf3a3d22a1b0a4be8cc94275",
-      "bytes": 65665,
+      "sha256": "576adf1a690f72b092086ea44571b92aca221abe0220ea409a5bc72b50920771",
+      "bytes": 76689,
       "term_counts": {
         "refuted": 5,
         "no_change": 1,
@@ -706,7 +746,7 @@
     },
     {
       "path": "docs/public_status_contract.md",
-      "sha256": "d6ebbd97ddae35bd646facf6a3457e69986a8aa527a44a6757a60d94782e0d77",
+      "sha256": "bf53d04a4ac96ecb7f6357537aea9a563ef5680494e68678e66da545eaa99092",
       "bytes": 8554,
       "term_counts": {
         "refuted": 0,
@@ -716,8 +756,8 @@
     },
     {
       "path": "docs/publication_readiness.md",
-      "sha256": "f3f3537366c6d42f6fd158176038db05ff546a79ab1e7621d5f6c2ffd9aca2bc",
-      "bytes": 40449,
+      "sha256": "b36cb6661e2619cfe383c66d3660691b416811cabef1ddc2275a1a0098d68a83",
+      "bytes": 40537,
       "term_counts": {
         "refuted": 1,
         "no_change": 3,
@@ -756,8 +796,8 @@
     },
     {
       "path": "index.qmd",
-      "sha256": "47d2f150b10f6b6306ab040c7bf13c4cffc9d654c762a3b4e2266228569556f9",
-      "bytes": 14339,
+      "sha256": "58989f4d9ab129d9c0b7ed123debbb1f19880694fcf14cb064d1d86a00b538d5",
+      "bytes": 14351,
       "term_counts": {
         "refuted": 1,
         "no_change": 1,
@@ -766,8 +806,8 @@
     },
     {
       "path": "sources/source_notes/kernel_english_residual_compiler.md",
-      "sha256": "705697704432234e7b46017a4a49b5291a5fe13f7ffdf2f25264c2d5dd42e0a4",
-      "bytes": 16462,
+      "sha256": "902e6e368a759a86bcc763d4f0d63100db6cb99806e53fd8166e99e01ab1cb01",
+      "bytes": 16724,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -776,8 +816,8 @@
     },
     {
       "path": "sources/source_notes/qcsa_whitepaper.md",
-      "sha256": "d73399b718d7f7bf10979caa98703e890a7a01a977cf9e4ffd1ba2d15dbf8f7a",
-      "bytes": 16020,
+      "sha256": "d30d26da4dd77cbac3bc3905defe83e64366550ac9a04858febb4e6fb6bf5dd4",
+      "bytes": 16662,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,

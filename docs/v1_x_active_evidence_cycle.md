@@ -9,7 +9,7 @@ Active successor: `docs/post_v2_evidence_roadmap.md`
 This ledger names the current v1.x evidence-cycle chapter lanes selected from
 `docs/per_chapter_evidence_plan.md`. It exists to enforce the lane cap: this
 cycle selects one flagship measured lane plus two direct support lanes and
-leaves the other 52 chapter lanes planned-only. It is a planning and
+leaves the other 56 chapter lanes planned-only. It is a planning and
 release-control record, not a support-state transition.
 
 The selected lanes sit inside a wider defended-contribution pool where the
@@ -26,13 +26,13 @@ promotion.
 | Field | Value |
 |---|---|
 | Selected chapter lanes | 3 |
-| Planned-only chapter lanes | 52 |
+| Planned-only chapter lanes | 56 |
 | Lane cap | 1 flagship measured lane plus at most 2 direct support lanes per v1.x cycle |
 | Flagship measured lane | `resource-economics-and-token-budgets` |
 | Direct support lanes | `project-theseus-as-report-first-implementation-reference`; `fast-generation-architectures` |
-| Chapter core support effect | None; all 55 chapter core claims remain `argument`. |
+| Chapter core support effect | None; all 59 chapter core claims remain `argument`. |
 | Non-core support effect | Existing non-core transitions remain scoped to their accepted records. |
-| No-sweep rule | No 55-lane fixture sweep is claimed or implied. |
+| No-sweep rule | No 59-lane fixture sweep is claimed or implied. |
 
 ## Selected Lanes
 
@@ -81,6 +81,7 @@ promotion.
 - `evidence-states-and-claim-discipline`
 - `scalable-oversight-and-adversarial-ai-control`
 - `human-intent-as-a-formal-input`
+- `human-factors-and-meaningful-control-in-oversight`
 - `constitutional-alignment-substrate`
 - `moral-uncertainty-and-value-conflict`
 - `stable-capability-fields`
@@ -92,6 +93,7 @@ promotion.
 - `open-ended-improvement-engines`
 - `intent-to-execution-contracts`
 - `planning-as-a-control-layer`
+- `governed-world-models-and-reality-grounding`
 - `cognitive-compilation-and-semantic-ir`
 - `virtual-context-abi`
 - `context-transactions-snapshots-mounts-and-taint`
@@ -116,9 +118,11 @@ promotion.
 - `coilra-multicoil-rope-and-cyclic-mixers`
 - `executable-specifications-and-lean-proof-envelope`
 - `benchmark-ratchets-and-anti-goodhart-evidence`
+- `white-box-evidence-interpretability-and-activation-governance`
 - `capability-thresholds-and-deployment-commitments`
 - `adversarial-evaluation-sandbagging-and-training-time-deception`
 - `safety-cases-and-structured-assurance`
+- `governed-operations-incident-command-and-graceful-degradation`
 - `policy-optimization-and-learning-from-feedback`
 - `data-engines-continual-learning-and-unlearning`
 - `artifact-steward-agents-and-living-project-governance`

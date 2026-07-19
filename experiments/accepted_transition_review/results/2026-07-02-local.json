@@ -3,7 +3,7 @@
   "accepted_core_upward_transition_count": 0,
   "accepted_exact_refutation_count": 3,
   "accepted_no_change_record_count": 87,
-  "accepted_no_promotion_decision_count": 33,
+  "accepted_no_promotion_decision_count": 37,
   "accepted_transition_record_count": 115,
   "chapter_core_support_effect": "none",
   "command": "python3 scripts/validate_accepted_transition_review_audit.py",
@@ -36,7 +36,7 @@
       "accepted_transition_review_audit_bridge"
     ]
   },
-  "manifest_core_claim_count": 55,
+  "manifest_core_claim_count": 59,
   "negative_controls": {
     "core_upward_transition_rejected": true,
     "missing_changelog_rejected": true,

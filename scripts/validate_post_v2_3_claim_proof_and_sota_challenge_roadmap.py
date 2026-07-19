@@ -386,8 +386,9 @@ def errors(data: dict) -> list[str]:
     source_rows = data["sources"] if isinstance(data["sources"], list) else data["sources"].get("sources", [])
     program = status.get("chapter_claim_program", [])
     program_ids = [row.get("chapter_id") for row in program]
-    if len(chapter_ids) != 55 or program_ids != chapter_ids:
-        out.append("the live machine proof program must cover all 55 manifest chapters once and in order")
+    historical_program_ids = [chapter_id for chapter_id in chapter_ids if chapter_id in set(program_ids)]
+    if len(program_ids) != 55 or program_ids != historical_program_ids:
+        out.append("the completed machine proof program must preserve its 55-chapter historical scope once and in current relative order")
     if len(set(program_ids)) != 55:
         out.append("chapter proof-program ownership is missing or duplicated")
     for row in program:
@@ -1104,8 +1105,22 @@ def errors(data: dict) -> list[str]:
         out.append("active roadmap validator is absent from the authoritative validation registry")
     if exact_contracts != 88:
         out.append("activation must not silently alter the 88 exact high-impact contract baseline")
-    if len(vectors) != 55 or any(row.get("summary_support_state") != "argument" for row in vectors):
-        out.append("live successor must preserve 55 argument-level chapter-core claims while the 54-claim activation baseline stays frozen")
+    live_chapter_count = len(chapter_ids)
+    vector_summary = data["vectors"].get("summary", {})
+    successor_activation_truth = successor_status.get("activation_truth", {})
+    successor_structural_tranche = successor_status.get("quality_uplift_program", {}).get("structural_completeness_tranche", {})
+    if (
+        len(vectors) != live_chapter_count
+        or vector_summary.get("vector_count") != live_chapter_count
+        or vector_summary.get("summary_support_states") != {"argument": live_chapter_count}
+        or vector_summary.get("automatic_support_state_changes") != 0
+        or any(row.get("summary_support_state") != "argument" for row in vectors)
+        or successor_activation_truth.get("live_working_chapter_count") != live_chapter_count
+        or successor_activation_truth.get("chapter_core_argument_count") != live_chapter_count
+        or successor_activation_truth.get("chapter_core_promotion_count") != 0
+        or successor_structural_tranche.get("current_manifest_chapter_count") != live_chapter_count
+    ):
+        out.append("live successor manifest, argument vectors, and active maintenance authority disagree while the 54-claim activation baseline stays frozen")
 
     outcomes = data["flagship"].get("outcomes", {})
     task_quality = outcomes.get("task_quality", {})
@@ -1181,7 +1196,7 @@ def errors(data: dict) -> list[str]:
     )
     expansion_complete = (
         expansion.get("state") == "inserted_source_reviewed_and_atomized"
-        and expansion.get("live_chapter_count") == len(chapter_ids) == 55
+        and expansion.get("live_chapter_count") == 55
         and expansion.get("assigned_source_count") == 33
         and expansion.get("atom_count") == len(expansion_atoms.get("atoms", [])) == 15
         and expansion.get("pending_semantic_review_count") == 0
@@ -1195,7 +1210,7 @@ def errors(data: dict) -> list[str]:
         and (ROOT / expansion.get("claim_dossier_path", "missing")).exists()
     )
     if not expansion_complete:
-        out.append("the accepted 55th chapter must remain inserted, source-reviewed, atomized, bounded-ABI validated, and non-promoted")
+        out.append("the historically accepted 55th chapter must remain inserted, source-reviewed, atomized, bounded-ABI validated, and non-promoted")
     for phrase in ["Adequacy adjudication", "Executable refinement boundary", "does not establish"]:
         if phrase.casefold() not in data["abi_model_dossier"].casefold():
             out.append(f"Cognitive Kernel ABI dossier missing adequacy boundary: {phrase}")
@@ -2495,11 +2510,16 @@ def errors(data: dict) -> list[str]:
         "support_state_effect": "none", "release_effect": "none",
     }:
         out.append("terminal successor contract drifted")
+    live_claim_identity = f"{live_chapter_count}/{live_chapter_count} chapter-core claims at `argument`"
+    live_claim_sentence = f"All {live_chapter_count} live chapter-core claims remain at `argument`"
     for path, body in data["public"].items():
         body_normalized = " ".join(body.split())
-        for phrase in [ROADMAP, STATUS, SUCCESSOR, SUCCESSOR_STATUS, "v2.3.0", "55"]:
+        for phrase in [ROADMAP, STATUS, SUCCESSOR, SUCCESSOR_STATUS, "v2.3.0"]:
             if phrase.casefold() not in body_normalized.casefold():
                 out.append(f"{path} missing terminal/successor roadmap truth: {phrase}")
+        live_phrase = live_claim_sentence if path == "docs/publication_readiness.md" else live_claim_identity
+        if live_phrase.casefold() not in body_normalized.casefold():
+            out.append(f"{path} missing current active-maintenance claim identity: {live_phrase}")
         if "No successor roadmap is active" in body:
             out.append(f"{path} retains obsolete no-successor language")
     for name, body in [("living workflow", data["workflow"]), ("master prompt", data["master"])]:
@@ -2553,6 +2573,18 @@ def main() -> None:
     stale_public = copy.deepcopy(base)
     stale_public["public"]["README.md"] = stale_public["public"]["README.md"].replace(ROADMAP, PREDECESSOR)
     mutations.append(("stale public pointer", stale_public))
+
+    live_chapter_count = len(chapters(base["structure"]))
+    stale_live_identity = copy.deepcopy(base)
+    stale_live_identity["public"]["docs/public_status_contract.md"] = stale_live_identity["public"]["docs/public_status_contract.md"].replace(
+        f"{live_chapter_count}/{live_chapter_count} chapter-core claims at `argument`",
+        "55/55 chapter-core claims at `argument`",
+    )
+    mutations.append(("stale public live-claim identity", stale_live_identity))
+
+    current_authority_promotion = copy.deepcopy(base)
+    current_authority_promotion["successor_status"]["activation_truth"]["chapter_core_promotion_count"] = 1
+    mutations.append(("current maintenance support promotion", current_authority_promotion))
 
     reader_laundering = copy.deepcopy(base)
     reader_laundering["reader_epub"]["decision"] = "approved_exact_local_artifact"
@@ -2789,7 +2821,7 @@ def main() -> None:
         raise SystemExit("Claim-proof/SOTA roadmap validation failed:\n - " + "\n - ".join(failures))
     print(
         "Claim-proof/SOTA roadmap passed: terminal P0-P9/M0-M13 predecessor with maintenance successor active at its declared frontier, "
-        "55 live chapter-core programs across CF-01..CF-08 with a frozen 54-chapter activation baseline, exact proof/evidence/reader baseline, "
+        f"55 historical chapter-core programs across CF-01..CF-08 with a frozen 54-chapter activation baseline and authorized 55th-chapter expansion, {live_chapter_count} current argument-state chapter cores, exact proof/evidence/reader baseline, "
         "proof rationalization and argument-exit contracts, maintained X Article and exact 5:2 header contract, "
         "no support or release effect, no external-human gate, same-transaction successor continuity, "
         "validated shared-safety, Cognitive Kernel ABI, integrated reference trace, concrete-schema refinement, concurrent effect, reachable stack-boundary, Intent-to-Execution vertical, Authority grant-to-effect, Human Intent resolution, Command semantic-interface, Cognitive Compilation obligation-refinement, Virtual Context binding/materialization/fault, Context Certificate provenance/lifecycle, Context Transaction snapshot/store, Verification Bandwidth evidence-gate, Claim Ledger append-only, Proof-Carrying Claims target-to-writeback, Tribunal versioned-verdict/appeal, Typed Job versioned execution/closure, Artifact record-reality/trust, Procedural Memory promotion/retirement, Routing/MoECOT request-to-closure, Safety Case readiness/invalidation, Capability Threshold repeated assessment, Adversarial Evaluation observation/re-evaluation, Scalable Oversight review/readmission, Policy Optimization governed-update/readmission, Data Engines custody/update/deletion/readmission, Open-Ended Improvement campaign-to-governor/readmission, Recursive Self-Improvement proposal-to-outcome/readmission, Readiness candidate-to-terminal, Hive policy-to-closure, Compact Generation source-to-closure, Fast Generation request-to-closure, Governed Deliberation request-to-closure, Artifact Compression artifact-to-consumption, and Resource Economics allocation-and-simulation-transport receipts, bounded WIP and first-campaign/SOTA entry gates, and "

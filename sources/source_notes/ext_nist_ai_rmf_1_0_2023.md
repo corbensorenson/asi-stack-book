@@ -40,6 +40,7 @@ This source belongs in the governance and methodology chapters as an official ri
 - `readiness-gates-residual-escrow-and-quarantine` (Readiness Gates, Residual Escrow, and Quarantine)
 - `living-book-methodology` (Living Book Methodology)
 - `prototype-roadmap` (Prototype Roadmap)
+- `governed-operations-incident-command-and-graceful-degradation`
 
 ## Claims To Add Or Update
 

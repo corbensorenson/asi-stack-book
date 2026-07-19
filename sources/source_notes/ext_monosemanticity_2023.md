@@ -38,6 +38,7 @@ Towards Monosemanticity is an external mechanistic-interpretability comparator f
 ## Book Chapters Supported
 
 - `evidence-states-and-claim-discipline` (Evidence States and Claim Discipline)
+- `white-box-evidence-interpretability-and-activation-governance`
 
 ## Claims To Add Or Update
 

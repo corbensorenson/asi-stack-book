@@ -47,6 +47,7 @@ service implements every level.
 
 - `runtime-adapters-tool-permissions-and-human-approval`
 - `human-intent-as-a-formal-input`
+- `human-factors-and-meaningful-control-in-oversight`
 
 ## Claims To Add Or Update
 

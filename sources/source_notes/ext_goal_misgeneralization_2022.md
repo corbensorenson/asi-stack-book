@@ -36,6 +36,7 @@ This source belongs in the failure-mode and policy-optimization chapters as an e
 
 ## Book Chapters Supported
 
+- Proposed: `governed-objective-formation-value-learning-and-goal-integrity`
 - `failure-modes-of-ungoverned-intelligence` (Failure Modes of Ungoverned Intelligence)
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)

@@ -128,6 +128,10 @@ def semantic_errors(data: dict) -> list[str]:
     source_rows = sources_obj if isinstance(sources_obj, list) else sources_obj.get("sources", [])
     vectors_obj = data["vectors"]
     vectors = vectors_obj.get("vectors", []) if isinstance(vectors_obj, dict) else vectors_obj
+    active_current = data["active_current_status"]
+    current_truth = active_current.get("activation_truth", {})
+    live_chapter_count = current_truth.get("live_working_chapter_count")
+    live_argument_count = current_truth.get("chapter_core_argument_count")
 
     if status.get("status") != "completed":
         errors.append("post-v2.3 roadmap must be completed after every terminal gate closes")
@@ -135,13 +139,26 @@ def semantic_errors(data: dict) -> list[str]:
         errors.append("terminal roadmap history must expose the exact active evidence-competence successor")
     if "Status: completed 2026-07-13" not in data["predecessor"]:
         errors.append("predecessor roadmap lost completed status")
-    if len(rows) != 55 or len(source_rows) < 280:
-        errors.append("live chapter count drifted or historical public-safe source floor was violated")
+    if (
+        not isinstance(live_chapter_count, int)
+        or live_chapter_count < 55
+        or len(rows) != live_chapter_count
+        or len(source_rows) < 280
+    ):
+        errors.append(
+            "current manifest disagrees with active-roadmap chapter truth or the historical public-safe source floor was violated"
+        )
     digest = hashlib.sha256("\n".join(activation_ids).encode()).hexdigest()
     if status["activation_baseline"].get("activation_chapter_ids_sha256") != digest:
         errors.append("historical 54-chapter activation identity/order drifted")
-    if not isinstance(vectors, list) or len(vectors) != 55 or any(row.get("summary_support_state") != "argument" for row in vectors):
-        errors.append("roadmap activation changed a chapter-core support state")
+    if (
+        live_argument_count != live_chapter_count
+        or not isinstance(vectors, list)
+        or len(vectors) != live_chapter_count
+        or [row.get("chapter_id") for row in vectors] != ids
+        or any(row.get("summary_support_state") != "argument" for row in vectors)
+    ):
+        errors.append("current chapter-core vector identity, count, or argument-only state drifted")
     next_status = data["next_successor_status"]
     if next_status.get("activation_baseline", {}).get("active_chapter_count") != 54:
         errors.append("claim-proof successor lost the frozen 54-chapter activation baseline")
@@ -149,7 +166,6 @@ def semantic_errors(data: dict) -> list[str]:
         errors.append("claim-proof successor lost the authorized 55th chapter")
     if next_status.get("status") != "completed" or next_status.get("roadmap_path") != NEXT_SUCCESSOR_ROADMAP_PATH:
         errors.append("claim-proof successor is not preserved as completed history")
-    active_current = data["active_current_status"]
     if active_current.get("status") != "active" or active_current.get("roadmap_path") != ACTIVE_CURRENT_ROADMAP_PATH:
         errors.append("current evidence-competence roadmap machine authority is stale")
 
@@ -374,11 +390,15 @@ def semantic_errors(data: dict) -> list[str]:
         if roadmap.count(f"`{name}`") < 1:
             errors.append(f"roadmap does not identify target chapter: {name}")
 
+    current_claim_ratio = f"{live_argument_count}/{live_chapter_count} chapter-core claims at `argument`"
     surface_requirements = {
-        "README.md": (data["readme"], "55/55 chapter-core claims at `argument`"),
-        "index.qmd": (data["index"], "55/55 chapter-core claims at `argument`"),
-        "docs/publication_readiness.md": (data["publication"], "All 55 live chapter-core claims remain at `argument`"),
-        "docs/public_status_contract.md": (data["public_contract"], "55/55 chapter-core claims at `argument`"),
+        "README.md": (data["readme"], current_claim_ratio),
+        "index.qmd": (data["index"], current_claim_ratio),
+        "docs/publication_readiness.md": (
+            data["publication"],
+            f"All {live_chapter_count} live chapter-core claims remain at `argument`",
+        ),
+        "docs/public_status_contract.md": (data["public_contract"], current_claim_ratio),
     }
     for name, (text, live_claim_phrase) in surface_requirements.items():
         normalized = " ".join(text.split())
@@ -456,9 +476,10 @@ def main() -> None:
     if errors:
         raise SystemExit("Post-v2.3 quality-floor roadmap validation failed:\n - " + "\n - ".join(errors))
     print(
-        "Post-v2.3 quality-floor roadmap passed: completed authority with one declared clean-handoff successor, frozen 54-chapter activation spine plus 55 live chapters, "
+        "Post-v2.3 quality-floor roadmap passed: completed authority with one declared clean-handoff successor, frozen 54-chapter activation spine and historical 55-chapter expansion preserved, "
+        f"current {data['active_current_status']['activation_truth']['live_working_chapter_count']} live chapters, "
         f"10 exact depth targets, 44-record historical reader preserved, 54-record successor {data['status']['reader_successor']['state']}, "
-        "10 declared redirects, 55 live argument-state core claims, and 10 rejecting mutations."
+        f"10 declared redirects, {data['active_current_status']['activation_truth']['chapter_core_argument_count']} live argument-state core claims, and 10 rejecting mutations."
     )
 
 

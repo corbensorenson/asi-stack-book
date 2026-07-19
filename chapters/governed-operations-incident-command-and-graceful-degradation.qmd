@@ -1,0 +1,1022 @@
+---
+title: "Governed Operations, Incident Command, and Graceful Degradation"
+chapter_id: "governed-operations-incident-command-and-graceful-degradation"
+part_id: "evidence-implementation-living-book"
+status: "conceptual"
+draft_maturity: "v0.3 manuscript draft"
+last_updated: "2026-07-19"
+primary_sources:
+  - "scf"
+  - "deterministic_capability_compilation"
+  - "theseus_operator_os"
+  - "viea"
+  - "talos"
+  - "platonic_world_model"
+  - "ext_nist_ai_rmf_1_0_2023"
+  - "ext_nist_deployed_ai_monitoring_2026"
+  - "ext_nist_incident_response_2025"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No local full-state rollback harness yet covers external effects and descendants."
+  - "No adversarial game-day evidence yet calibrates severity and recovery thresholds."
+  - "NIST incident-response transfer to autonomous AI has not been independently validated."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `governed-operations-incident-command-and-graceful-degradation` |
+| Part | Part IV - Evidence, Implementation, and the Living Book |
+| Status | conceptual |
+| Last updated | 2026-07-19 |
+| Primary source records | `scf`, `deterministic_capability_compilation`, `theseus_operator_os`, `viea`, `talos`, `platonic_world_model`, `ext_nist_ai_rmf_1_0_2023`, `ext_nist_deployed_ai_monitoring_2026`, `ext_nist_incident_response_2025` |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | Source notes are available for all nine assigned records, and the manifest records claim-level mappings and limits. The three NIST records are external comparators; the six Corben/local records contribute architecture or implementation lineage, not independent incident-performance evidence. |
+| Test state | The rollback mutation suite, incident-command game-day matrix, and graceful-degradation comparison are planned and have not run. No T4 joined trace, local incident-response implementation, or external reproduction is recorded. |
+| Formal state | Two finite Lean targets are planned in the manifest. No `AsiStackProofs.GovernedOperations` module, mechanized result, runtime consumer, or proof-backed operational claim is recorded. |
+
+## Drafting guardrail
+
+This chapter is a source-noted design synthesis. NIST AI RMF 1.0 supplies a
+lifecycle risk-management comparator; NIST AI 800-4 supplies a deployed-AI
+monitoring taxonomy and an account of current gaps; and NIST SP 800-61 Rev. 3
+supplies the generic preparation, detection, response, recovery, and
+improvement baseline. The ASI Stack sources supply proposed identity,
+authority, operator, artifact, rollback, and state-reconciliation mechanisms.
+None of those records establishes that this repository operates an incident
+system, satisfies NIST guidance, reverses external effects, or degrades safely.
+
+The chapter therefore remains **Design rationale + argument**. Every mechanism
+below is a proposed contract unless an implementation artifact is named
+explicitly. The current Theseus flagship gate `T4` is still prospective, so
+this chapter does not narrate a natural authority-to-effect trace or infer any
+result from one. Formal targets, game days, and empirical comparisons remain
+work to do.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+A system does not stop being governed when it leaves a test environment. Its
+models, policies, data, tools, and dependencies keep changing. A release that
+was reasonable yesterday can become unsafe or
+unreliable today: an odd output, a user complaint, a
+failed dependency, or a mismatch between what the system reports and what
+happened.
+
+Operations is the discipline that turns those signs into accountable action.
+It determines who may declare an incident, what must be contained, which
+reduced service can continue, when human work can substitute, and what evidence
+is required before service returns. A
+backup or kill switch is only one instrument inside that lifecycle. It is not
+the lifecycle itself.
+
+The central idea is conservative: uncertainty should narrow
+authority before it widens it. A degraded service may do less, use fewer tools,
+serve fewer users, or stop entirely. Recovery is not complete because a
+checkpoint loaded successfully; the system must reconcile hidden state,
+credentials, descendants, and effects already caused in the world. That is the
+difference between restarting software and restoring governed operation.
+:::
+
+## Problem
+
+Pre-deployment evidence expires against a changing service. Inputs drift.
+Users adapt. Dependencies fail or change behavior. A model, prompt, policy,
+router, evaluator, tool, cache, credential, or data source can move out of the
+state that a readiness decision actually examined. Human operators can become
+overloaded at the same moment that the system produces more ambiguous alerts.
+Several individually tolerable faults can correlate into one incident, while
+the component that appears healthy continues to propagate effects.
+
+AI services add operational identities that ordinary service health often does
+not capture. Two endpoints can return successful HTTP responses while serving
+different model checkpoints, policies, prompt packages, tool grants, memory
+states, or online-learning descendants. The system may be nondeterministic even
+when its infrastructure is stable. Its own explanations and monitors may be
+wrong, compromised, or affected by the same drift as the behavior under
+inspection. A service-level rollback can restore code while leaving a changed
+optimizer, random state, cache, memory, credential, replica, downstream
+artifact, or external consequence behind.
+
+The governance problem begins when observation must become action. Who may
+declare an incident? Which signals are sufficient for containment when their
+interpretation remains uncertain? Can an incident commander revoke tools
+without the suspected component's cooperation? Which reduced service is
+permitted to continue? Is a manual fallback staffed, practiced, and capable of
+meeting the same non-negotiable constraints? What evidence makes restoration
+more than an optimistic restart?
+
+The answer cannot be deferred to a postmortem. By the time a team agrees on a
+story, an irreversible effect may already have occurred. Governed operations
+must bind the exact deployed state, the dependency graph, observable effects,
+command authority, containment controls, fallback routes, recovery evidence,
+and residuals before an incident. It must also remain useful when detectors
+disagree, communication channels fail, or the preferred recovery path is the
+source of the fault.
+
+### Exclusive job and adjacent boundaries
+
+Governed Operations owns **post-deployment continuity and control**: field
+observability, incident declaration and command, containment, degraded service,
+failover and manual fallback, recovery, disclosure, incident learning, and
+decommissioning. It does not absorb the layers that produce its inputs.
+
+| Adjacent owner | That owner keeps | Governed Operations owns |
+|---|---|---|
+| Readiness Gates, Residual Escrow, and Quarantine | Admission, qualification, quarantine, and residual custody before release. | Continuity, intervention, and mode control after an admitted service begins operating. |
+| Safety Cases and Structured Assurance | Compilation of scoped assurance claims, evidence, assumptions, defeaters, and decision boundaries. | Operational invalidation of those dependencies, incident action, and fresh restored-state evidence. |
+| Artifact Graphs, Audit Logs, and Replay | General provenance, event identity, custody, and replay. | The incident timeline, command receipts, containment state, recovery attestation, disclosure, and closure record. |
+| Capability Replacement and Rollback | Replacement transactions, candidate equivalence, fallback identity, and state-recovery semantics. | Service-level degrade, failover, manual operation, effect reconciliation, and the complete incident lifecycle. |
+| Runtime Adapters, Tool Permissions, and Human Approval | Enforcement of effect authority for individual actions and adapters. | Emergency restriction, revocation, isolation, safe hold, and restoration of the deployed service envelope. |
+| Human Factors and Meaningful Control in Oversight | Whether a human role is actually exercisable under workload, time, information, competence, and authority. | Which incident role is active, which commands it may issue, and what happens when human capacity falls below the operational contract. |
+| Policy Optimization and Learning from Feedback | Governed changes to future policy, models, prompts, routers, and evaluators. | Preservation and routing of incident residuals; an incident never updates a policy merely because a lesson seems obvious. |
+
+The primary invariant is different from each neighbor's. Readiness asks whether
+a candidate may enter service. Assurance asks what a bounded decision depends
+on. Rollback defines how a replacement can return to an earlier qualified
+state. Governed operations asks whether the live service can detect loss of its
+operating envelope, narrow authority, preserve command, and earn restoration
+after effects have begun.
+
+## Why existing approaches are insufficient
+
+Monitoring is necessary but cannot command. A dashboard may collect
+functionality, operations, input, output, impact, and security signals—the
+categories highlighted in NIST AI 800-4—without specifying who owns a trigger,
+what action follows, or how missing coverage changes service authority. A
+single health score is especially weak: it collapses disagreement among signals
+whose failure modes and response duties differ. Green infrastructure can
+coexist with harmful outputs; green behavior metrics can coexist with a stolen
+credential or broken dependency.
+
+A kill switch is a control, not an incident architecture. It may share power,
+network, identity, orchestration, or authorization dependencies with the
+component it must stop. It may halt new requests while queued work, replicas,
+delegated agents, or external tools continue. A switch controlled through the
+suspected model's own channel is not independent containment. Even a reliable
+shutdown can be the wrong first move where a smaller restriction arrests the
+effect while preserving a critical service.
+
+Backups and rollback are similarly incomplete. A backup can share the same
+corruption, compromised credential, dependency, evaluator, or semantic error as
+the primary system. Loading an old checkpoint says little about prompts,
+policies, tools, caches, memory, optimizer state, random state, descendants, or
+actions already taken outside the system. Some effects can be reversed, some
+can only be compensated, disclosed, or monitored, and some remain unknown.
+Calling all of these cases “rolled back” hides the residual that matters most.
+
+An incident plan can fail through authority ambiguity. Several teams may each
+believe they command the response; no one may have power to revoke the relevant
+tool; a communications owner may disclose before evidence is preserved; or an
+emergency role may persist after the emergency. NIST SP 800-61 Rev. 3 provides
+the appropriate generic baseline—preparation integrated with risk management,
+then detection, response, recovery, and improvement—but the AI adaptation must
+bind model, policy, data, evaluator, learning state, human feedback, and
+external-effect identity explicitly. Renaming an ordinary incident process does
+not perform that adaptation.
+
+Finally, graceful degradation is not “keep something running.” A reduced mode
+can silently widen data access, route to an unqualified model, drop a safeguard,
+or overload a manual team. Failover can send work to a dependency with the same
+fault. A nominal human fallback can be too slow or too unfamiliar to use.
+Degradation is governed only when it preserves non-negotiable constraints,
+narrows authority, names its expiry, and exposes which service obligations it
+can no longer meet.
+
+## Core Claim
+
+[governed-operations-incident-command-and-graceful-degradation.core, label: Design rationale, support: argument] Governed operation is a closed incident lifecycle that binds detection, classification, command authority, containment, effect-complete rollback, graceful degradation, recovery evidence, and learning to the exact deployed system and its dependency graph.
+
+The claim is architectural, not empirical. “Closed” means that every admitted
+signal receives an explicit disposition; every emergency action has an
+authorized owner, receipt, and expiry; every service mode has a bounded
+authority envelope; every recovery candidate is reconciled against internal
+state and external effects; and every unresolved residual reaches an owner.
+Closure does not mean that all harm is reversible, every incident is detected,
+or uncertainty is eliminated.
+
+The maximum present inference is that these relationships form a coherent
+control contract grounded in reviewed monitoring, risk-management,
+incident-response, authority, artifact, and rollback concepts. No source count,
+record completeness, diagram, or planned proof establishes incident readiness,
+safe degradation, recovery effectiveness, compliance, or superiority over a
+well-run conventional service.
+
+## Mechanism
+
+### The operational contract and its artifacts
+
+Before release, the operator prepares a versioned **Operational Continuity
+Contract** for one exact service envelope. It binds service, model, policy,
+prompt, evaluator, data, tool, identity, cache, memory, dependency, replica, and
+learning-state versions where applicable. It also names critical functions,
+impact tolerances, telemetry coverage, detector limitations, incident classes,
+declaration authority, command roles, containment actions, degraded routes,
+fallback prerequisites, recovery objectives, disclosure duties, evidence
+preservation, and decommissioning conditions.
+
+The contract is not one large document. It is a family of linked artifacts with
+separate owners and lifecycles.
+
+| Artifact | Required content | Failure route |
+|---|---|---|
+| Deployment and dependency manifest | Exact release identities, owners, replicas, mutable state, credentials, descendants, external effects, and authority endpoints. | Missing or stale identity blocks normal operation or forces a narrower mode. |
+| Observability coverage map | Required signal, subject, cadence, provenance, expected range, detector version, blind spots, retention, and accountable responder. | Uncovered high-consequence state becomes an explicit residual and may require safe hold. |
+| Incident hypothesis record | Signal set, competing explanations, affected scope, consequence, reversibility, propagation, uncertainty, and falsifying observations. | Disagreement remains visible; it cannot be averaged into a false all-clear. |
+| Declaration and command lease | Incident ID, commander, delegated roles, permitted actions, communication channels, start, expiry, succession, and conflicts. | Ambiguous, expired, or conflicting command cannot authorize escalation. |
+| Containment plan and receipt | Independent control path, target, action, expected effect, observed effect, collateral service loss, and residual propagation. | Failed containment escalates to a stronger independent control or safe shutdown. |
+| Degraded-mode contract | Allowed functions, model/tool/data envelope, safeguards retained, load ceiling, duration, observability, exit, and prohibited substitutions. | Any implicit authority widening rejects the route. |
+| Failover or manual-fallback qualification | Dependency diversity, current readiness, staffing, rehearsal, capacity, information available, and non-negotiable constraints. | Unqualified fallback is unavailable, not “best effort.” |
+| State and effect reconciliation ledger | Expected and observed internal state, descendant state, external effects, compensation, irreversibility, unknowns, and evidence provenance. | Missing required state or unresolved high-consequence effect blocks restoration. |
+| Recovery attestation | Candidate identity, repairs, acceptance tests, independent reviewer, canary scope, monitor window, residual disposition, and emergency-authority expiry. | Failed or incomplete evidence returns the service to containment, degradation, or safe hold. |
+| Disclosure and communication record | Audience, authority, factual basis, uncertainty, timing, privacy/security limits, corrections, and affected parties. | Missing facts remain marked unknown; disclosure cannot rewrite the evidence timeline. |
+| Decommission record | Credential revocation, traffic drain, job cancellation, artifact freeze, dependency notice, data and descendant disposition, residual owner, and successor. | A stopped endpoint with live authority or descendants is not decommissioned. |
+
+The artifacts use the general provenance and replay layer rather than creating
+a second audit system. Their operational contribution is the transition rule:
+a missing artifact changes which service mode is reachable. Record production
+alone does not establish that a detector is accurate, a fallback works, or an
+external consequence was repaired.
+
+### Incident state machine
+
+The lifecycle below is a control model, not a claim that transitions are
+automatic. Each arrow requires a command receipt and the evidence appropriate
+to that transition. A service can move backward when a detector, acceptance
+test, residual check, or new observation defeats the current hypothesis.
+
+```{mermaid}
+flowchart TD
+    Normal["Normal<br/>admitted envelope"]
+    Suspected["Suspected<br/>competing hypotheses"]
+    Declared["Declared<br/>scoped command lease"]
+    Contained["Contained<br/>propagation arrested"]
+    Degraded["Degraded<br/>qualified reduced service"]
+    SafeHold["Safe hold<br/>effect authority stopped"]
+    ManualFallback["Manual fallback<br/>qualified human route"]
+    RecoveryCandidate["Recovery candidate<br/>state and effect reconciliation"]
+    Restored["Restored<br/>elevated monitor window"]
+    Decommissioned["Decommissioned<br/>authority revoked"]
+
+    Normal -->|"signal, report, or violated envelope"| Suspected
+    Suspected -->|"hypothesis rejected with evidence"| Normal
+    Suspected -->|"authorized declaration"| Declared
+    Declared -->|"independent containment takes effect"| Contained
+    Contained -->|"qualified reduced route exists"| Degraded
+    Contained -->|"no qualified reduced route"| SafeHold
+    Degraded -->|"human route required"| ManualFallback
+    Degraded -->|"repair and reconciliation complete"| RecoveryCandidate
+    ManualFallback -->|"repair and reconciliation complete"| RecoveryCandidate
+    SafeHold -->|"repair and reconciliation complete"| RecoveryCandidate
+    RecoveryCandidate -->|"acceptance or residual check fails"| Degraded
+    RecoveryCandidate -->|"independent checks pass"| Restored
+    RecoveryCandidate -->|"recovery envelope cannot be met"| Decommissioned
+    Restored -->|"monitor window closes"| Normal
+    Restored -->|"recurrence or new evidence"| Declared
+```
+
+**How to read the governed incident state machine:** Follow the solid arrows
+from a field signal into declared command and independent containment. The
+middle branch asks whether reduced automation, qualified human work, or safe
+hold is actually available. Every active branch reaches the same recovery
+candidate gate, where failed evidence moves service backward and only an
+independent pass permits restoration; an unrepairable envelope terminates in
+decommissioning.
+
+**Normal** means the exact deployment remains inside its admitted operating
+envelope; it does not mean absence of risk. **Suspected** preserves competing
+hypotheses while allowing pre-authorized precautionary restrictions.
+**Declared** activates a scoped command lease. **Contained** means propagation
+has been arrested to the extent currently evidenced, not that the cause is
+known. **Degraded**, **ManualFallback**, and **SafeHold** are distinct service
+choices with different utility and burden. **RecoveryCandidate** is a testable
+state, not an announcement. **Restored** begins an elevated monitoring window.
+**Decommissioned** ends service authority while preserving evidence and
+residual custody.
+
+The separation between Suspected and Declared prevents every alert from
+silently granting emergency power. The separation between Contained and
+Recovered prevents propagation control from being mistaken for state repair.
+The separation between Restored and Normal preserves recurrence monitoring and
+makes premature closure observable.
+
+### Observability is coverage, not a health score
+
+The observability layer follows the NIST deployed-monitoring distinction among
+functionality, operations, inputs, outputs, impacts, and security. The design
+adds explicit identity and response fields to each signal. A monitor record
+names what it sees, what it cannot see, how often it updates, which deployed
+state it describes, who can act on it, and what missing or contradictory data
+means.
+
+Useful coverage is heterogeneous:
+
+- **Functionality signals** ask whether intended capabilities and constraints
+  still behave within the admitted envelope.
+- **Operational signals** cover latency, saturation, queue state, errors,
+  replicas, schedulers, and dependency health.
+- **Input signals** cover drift, corruption, provenance, abuse patterns, and
+  scope changes.
+- **Output signals** cover policy violations, abstention, error patterns,
+  calibration proxies, and downstream rejection.
+- **Impact signals** look beyond model output to user, institutional,
+  environmental, and other external consequences.
+- **Security signals** cover identity, credential, tool, data, supply-chain,
+  and control-plane compromise.
+- **Human-capacity signals**, treated with appropriate privacy limits, indicate
+  whether the assigned oversight and fallback roles remain exercisable.
+
+These streams feed a versioned incident-hypothesis ledger, not one opaque
+classifier. The ledger retains alternative causes and dependencies: a harmful
+effect could reflect model drift, a policy mismatch, poisoned input, a tool
+adapter, operator error, a changed external context, or several at once.
+Detector disagreement raises uncertainty; it does not disappear through a
+weighted average.
+
+At least one containment path and one evidence path must remain independent of
+the suspected component. Independence is dependency-based, not merely a
+different process name. Two monitors using the same model, data pipeline,
+credential, or logging sink can fail together. The coverage map therefore
+records shared dependencies and tests detector loss as an incident condition
+in its own right.
+
+### Declaration, classification, and incident command
+
+Declaration authority is preassigned by incident family and consequence. A
+human may declare based on incomplete evidence when delay threatens an
+irreversible effect; the record must preserve the uncertainty and the reason
+for precaution. Automation may apply a previously authorized narrow
+restriction, such as rate limiting or tool revocation, but it does not invent a
+new emergency mandate.
+
+Classification uses a vector rather than a single severity label:
+consequence, reversibility, affected scope, propagation potential, uncertainty,
+and time before irreversibility. Two incidents with similar immediate harm can
+require different responses if one is reversible and local while the other is
+uncertain and spreading. Severity controls the minimum command roles,
+communication cadence, evidence preservation, containment authority, and
+recovery review; it never supplies proof that those measures are sufficient.
+
+| Role | Operational duty | Authority boundary |
+|---|---|---|
+| Incident commander | Owns incident objective, priorities, mode transitions, role assignment, and closure proposal. | May act only inside the incident-class lease; cannot promote evidence, rewrite policy, or retain authority after expiry. |
+| Technical lead | Diagnoses deployed state and executes approved containment, repair, rollback, and failover actions. | Cannot self-approve recovery evidence for changes they implemented. |
+| Safety and impact lead | Tracks consequence, uncertainty, affected parties, irreversibility, and safety-case invalidation. | Does not command infrastructure unless separately delegated. |
+| Evidence custodian | Preserves logs, identities, hypotheses, commands, failed attempts, state comparisons, and disclosure basis. | Custody does not determine truth or incident severity. |
+| Service and human-fallback lead | Protects critical functions, staffing, workload, manual procedure, and handback. | Cannot declare a fallback qualified merely because staff are present. |
+| Communications and disclosure lead | Coordinates internal, user, partner, regulator, or public communication under the applicable duties. | Communication authority does not permit certainty inflation or evidence deletion. |
+
+The command lease records an out-of-band channel, succession rule, conflict
+rule, start and expiry, available controls, and forbidden actions. Every
+delegation narrows or preserves authority. Emergency power cannot amend the
+constitutional or release boundary by implication. If command channels split,
+the predeclared conflict rule moves the system toward the safest reachable
+mode while evidence custody continues.
+
+### Containment
+
+Containment seeks the least disruptive action that is evidenced to arrest the
+suspected propagation. The available ladder can include request throttling,
+scope restriction, route restriction, output quarantine, tool or credential
+revocation, memory write freeze, update freeze, replica isolation, dependency
+cutoff, safe hold, or shutdown. The ladder is not mechanically ordered in every
+incident: high uncertainty and short time-to-irreversibility can justify a
+stronger first action.
+
+Each action is tested against three questions:
+
+1. Can the action be executed without the suspected component's cooperation?
+2. Does observation show the intended effect actually stopped or narrowed?
+3. Which critical function, evidence source, or recovery path did the action
+   itself remove?
+
+Containment that blinds the only effect monitor creates a new residual.
+Revoking a credential without canceling delegated jobs may leave propagation
+intact. Isolating one replica while a descendant continues acting is partial
+containment. The receipt therefore records expected and observed state, not
+only that a command returned success.
+
+### Degraded modes, failover, and manual fallback
+
+A degraded mode is a prequalified operating contract. It names the functions
+that remain, the capabilities and tools removed, the data boundary, the model
+or deterministic substitute, the retained safeguards, the load ceiling, the
+maximum duration, the monitor set, the exit trigger, and the critical promises
+that can no longer be met. Its authority envelope must be a subset of the
+normal envelope. A reduction in quality does not justify an increase in access.
+
+Graceful degradation has three legitimate outcomes:
+
+- **Reduced automated service** continues a bounded subset of work through a
+  route whose dependencies and failure mode remain acceptable.
+- **Manual fallback** transfers a bounded function to qualified humans with
+  current instructions, necessary information, realistic capacity, and a
+  practiced handback path.
+- **Safe hold or shutdown** is selected when neither reduced automation nor
+  manual operation can preserve the non-negotiable constraints.
+
+Failover requires evidence of relevant diversity. A backup model behind the
+same corrupted policy, data source, evaluator, credential, or orchestration
+plane is not independent for that incident. Manual fallback is not available
+merely because a runbook exists. It must be exercised under expected load and
+time pressure, and Human Factors owns whether the role is genuinely usable.
+When a fallback is stale, overloaded, or unqualified, the incident record says
+so and routes to safe hold rather than ceremonial control.
+
+Degraded service also expires. A temporary exception that becomes routine can
+accumulate unreviewed risk, hidden labor, and missing evidence. Expiry forces
+renewed review, stronger containment, recovery, or decommissioning; it cannot
+silently roll forward.
+
+### Recovery and effect-complete reconciliation
+
+Recovery begins with a candidate state assembled from a named repair,
+replacement, rollback, compensation plan, or clean rebuild. The candidate is
+compared with the last qualified state across every applicable state class:
+model and adapter weights; policy and prompt packages; optimizer, scheduler,
+and random state; tool and identity grants; caches and memory; data and
+indices; queues and jobs; replicas and descendants; monitors and evaluators;
+and dependency versions.
+
+This comparison is **effect-complete in scope**, not magically effect-reversing.
+The incident ledger classifies external effects as:
+
+- reversed with evidence;
+- compensated under an authorized plan;
+- disclosed and monitored;
+- irreversible with a named residual owner; or
+- unknown and still under investigation.
+
+An old checkpoint can restore an internal model state while leaving all five
+external dispositions unresolved. The recovery gate therefore asks whether
+every required internal component has an accepted state and every known
+external effect has an explicit disposition. Unknown high-consequence effects
+block normal restoration.
+
+The candidate then passes fresh acceptance checks tied to its exact identity,
+not recycled evidence from the failed state. Checks include the incident's
+falsifying condition, regression and safety constraints, control-path tests,
+credential and descendant closure, fallback availability, and independent
+outcome observation. Restoration proceeds through a staged canary with a
+bounded population, heightened monitoring, stop rule, and rollback path.
+
+The implementer cannot be the sole recovery adjudicator. An independent
+reviewer examines the evidence against predeclared acceptance criteria. Before
+the service can become Restored, the emergency command lease must expire or be
+replaced by ordinary authority; the safety case and readiness records affected
+by the incident must receive invalidation or refresh dispositions; and every
+remaining residual must have an owner and deadline.
+
+### Closure, disclosure, learning, and decommissioning
+
+Incident closure is a record transition, not the moment a call ends. It
+requires a reconciled timeline, containment disposition, service-mode history,
+state comparison, external-effect ledger, evidence-preservation receipt,
+disclosure status, recovery or decommission decision, residual owners, and
+recurrence-monitoring plan. Disputed facts and missing evidence remain visible.
+
+Disclosure is scoped to affected audiences and obligations. The design does
+not prescribe one universal public notice rule. It requires the operational
+contract to name who can communicate, what evidence supports the statement,
+which uncertainty remains, which privacy or security limits apply, and how
+corrections will propagate. Communications cannot retroactively simplify the
+incident record.
+
+Learning occurs through typed handoffs. A detector miss can propose a new
+monitor; a containment failure can propose an independent control; a hidden
+state mutation can propose a broader rollback check; and an operator overload
+case can propose a revised fallback design. None of these proposals changes a
+model, policy, threshold, evaluator, or governance rule automatically.
+Policy Optimization, Evidence States, Safety Cases, Readiness, and the relevant
+component owner retain their own admission authority. This separation prevents
+urgent experience from contaminating training data, canonizing a mistaken
+postmortem, or turning emergency power into permanent policy.
+
+Decommissioning is the terminal option when recovery cannot satisfy the
+operating envelope, recurrence remains unacceptable, dependencies cannot be
+trusted, or the service no longer justifies its operational burden. It revokes
+authority and credentials, drains traffic, cancels jobs, isolates replicas and
+descendants, freezes evidence, dispositions data and memory, notifies
+dependents, transfers critical functions where possible, and assigns every
+irreversible or unknown effect. A powered-off endpoint with live credentials,
+queued work, or active descendants is not decommissioned.
+
+## Interfaces
+
+The incident layer consumes references and emits bounded operational records.
+No interface transfers the source owner's truth or authority by implication.
+At runtime, these links answer four different questions: what exact state is
+operating, what has been observed, who may change the service mode, and what
+evidence is required to change it back. Keeping the questions separate matters
+when one subsystem is unavailable or disputed. Telemetry can remain admissible
+while classification is unsettled; containment can proceed while root cause is
+unknown; and recovery can remain blocked even after a repair succeeds. Each
+interface therefore carries identity, provenance, authority, expiry, and a
+failure route rather than a success flag alone.
+
+| Interface | Input | Output | Non-transfer rule |
+|---|---|---|---|
+| Deployment and dependency manifest | Exact service, model, policy, prompt, data, tool, identity, state, replica, and dependency versions. | The incident's affected-state and recovery scope. | Manifest completeness does not prove behavior, safety, or dependency independence. |
+| Telemetry and detector bus | Functionality, operations, input, output, impact, security, dependency, and human-capacity signals with provenance. | Versioned observations and detector-health events. | A signal is not a diagnosis or command. |
+| Incident classifier | Observations, competing hypotheses, consequence, reversibility, scope, propagation, uncertainty, and timing. | Incident class and required command envelope. | Classification does not establish cause or grant authority beyond the registry. |
+| Command and authority registry | Prepared roles, leases, delegation, expiry, succession, conflict, and communication rules. | Signed declaration, command, delegation, and expiry receipts. | Emergency authority cannot amend evidence, release, constitutional, or policy state. |
+| Containment controller | Authorized target and independent control path. | Observed containment state and collateral residuals. | A successful command response is not evidence that propagation stopped. |
+| Rollback and compensation engine | Qualified predecessor state, changed-state inventory, external effects, and recovery plan. | State reconciliation and effect dispositions. | Compensation is not reversal; unknown and irreversible effects remain residuals. |
+| Degraded-mode router | Qualified reduced, failover, manual, safe-hold, and shutdown contracts. | Time-bounded service-mode lease. | Degradation cannot widen capability, data, tool, or duration authority. |
+| Recovery attestation and learning ledger | Fresh candidate evidence, independent review, residuals, disclosure, and incident lessons. | Restoration, continued degradation, decommission, and bounded change proposals. | Recovery status cannot promote support, and lessons cannot update policy automatically. |
+
+The interface with Safety Cases is bidirectional. An incident can invalidate an
+assumption, safeguard result, dependency, or operating context. The safety case
+then owns the revised argument status; operations owns the immediate mode and
+containment decision. The interface with Capability Replacement is equally
+strict: replacement supplies a candidate and rollback semantics, while
+operations determines whether the live service, external effects, and critical
+functions have actually reached an acceptable mode.
+
+## Invariants
+
+The invariants define conditions that every incident route must preserve even
+when diagnosis is incomplete. They are intentionally asymmetric. Operations
+may narrow service on precautionary evidence, but it may not restore ordinary
+authority on weaker evidence than the recovery contract requires. A missing
+commander, expired lease, cooperative-only containment path, widened degraded
+mode, stale acceptance result, or unresolved high-consequence effect is not a
+documentation defect to repair later; it changes the reachable operating
+state now.
+
+Enforcement belongs at transition boundaries. Declaration checks command
+identity, containment checks independent control, mode selection checks
+authority monotonicity, and restoration checks complete candidate state,
+effect disposition, fresh evidence, and emergency-power expiry. The checks
+remain relative to a declared inventory, so they cannot establish that the
+inventory includes every dependency or consequence. They make omissions
+visible and fail closed where the contract already knows the omission matters.
+
+| Invariant | Operational reading | Required failure route |
+|---|---|---|
+| Every deployment has a named incident commander and reachable safe state. | The name, succession rule, independent control path, and safe-state preconditions resolve for the exact release. | Missing command or safe-state reachability blocks release or forces a non-operating state. |
+| Emergency authority is scoped, logged, and expires. | Every declaration and delegation names permitted actions, target, start, expiry, and successor. | Expired or unlogged authority is rejected and investigated as a separate incident. |
+| Containment does not require the suspected component to cooperate. | At least one control path can restrict effect authority out of band. | A cooperative-only control cannot satisfy containment readiness. |
+| Rollback completeness is assessed over internal state and external effects. | The recovery record covers applicable model, policy, learning, cache, memory, identity, data, replica, descendant, and external-effect state. | Missing required state or effect disposition blocks restoration. |
+| Degraded mode never silently widens capability or data access. | Capability, tool, data, population, duration, and effect authority are preserved or narrowed. | Any widening requires a separately authorized release path; otherwise the route is rejected. |
+| Recovery requires fresh evidence tied to the candidate state. | Acceptance evidence resolves the exact restored identity and post-incident context. | Stale, aliased, or predecessor evidence returns the candidate to repair or degradation. |
+| Incident evidence is append-only and provenance-bound. | Signals, hypotheses, commands, failures, state comparisons, disclosure, and corrections retain identity and prior versions. | Missing custody blocks closure and limits any later inference. |
+| Unresolved high-consequence uncertainty blocks normal service restoration. | Unknown cause or effect may coexist with degraded or safe-hold operation, but not an unqualified normal route. | Continue containment, degrade, investigate, or decommission. |
+
+These invariants are control obligations, not proof that the chosen safe state
+is safe, the dependency manifest is complete, or an operator will perform
+correctly. Their value is to make those missing facts route-changing rather
+than invisible.
+
+## Failure modes
+
+The threat model includes faults without an adversary: ordinary drift,
+misconfiguration, overload, stale state, ambiguous interfaces, correlated
+dependencies, and mistaken recovery. It also includes a compromised or
+strategic model, tool, monitor, operator credential, dependency, or update
+path. The architecture cannot assume the system under investigation reports
+honestly, that a backup is independent, or that the first incident narrative
+is correct.
+
+### Observation and diagnosis failures
+
+- **Silent drift** changes behavior or impact without crossing the selected
+  thresholds.
+- **Detector blindness** leaves a consequential state unobserved, including
+  failure of the detector itself.
+- **Distributed-log fragmentation** prevents an end-to-end account of which
+  identity caused which effect.
+- **Alert storms** exhaust human and automated triage, hiding the important
+  signal among correlated symptoms.
+- **Hypothesis collapse** converts one convenient explanation into fact and
+  suppresses alternatives.
+- **Model-owned observability** lets the suspected component shape the evidence
+  used to judge it.
+
+### Command and governance failures
+
+- **Ambiguous command** leaves competing incident commanders or no authorized
+  decision maker.
+- **Channel divergence** gives dashboard, CLI, mobile, or relay operators
+  different state or permissions.
+- **Authority without control** names a responsible person who cannot execute
+  the required restriction.
+- **Control without review** lets an operator perform high-consequence actions
+  without evidence custody or independent recovery checks.
+- **Emergency-power persistence** converts a temporary incident lease into
+  ordinary authority.
+- **Disclosure laundering** presents a settled narrative while evidence,
+  scope, or affected parties remain uncertain.
+
+### Containment and dependency failures
+
+- **Kill-switch dependency** places the stop path behind the component,
+  credential, network, or orchestrator it must contain.
+- **Partial containment** stops the visible service while queues, replicas,
+  agents, tools, or descendants continue.
+- **Correlated backup failure** routes to a nominally different system with the
+  same data, policy, evaluator, identity, or supply-chain fault.
+- **Containment-induced blindness** removes the evidence needed to observe
+  propagation or recovery.
+- **Unsafe substitution** chooses a degraded model or deterministic path whose
+  operating envelope was never qualified for the affected function.
+
+### State, effect, and recovery failures
+
+- **Partial rollback** restores a checkpoint but misses optimizer, scheduler,
+  random, cache, memory, data, or policy state.
+- **Credential persistence** leaves effect authority usable after apparent
+  restoration or shutdown.
+- **Stale cache or memory** reintroduces the incident after clean code and model
+  state are loaded.
+- **Replica or descendant escape** leaves copied, delegated, or derived state
+  outside the rollback boundary.
+- **Irreversible external effect** is relabeled as recovered because internal
+  state looks normal.
+- **Premature recovery** uses stale evidence, implementer self-attestation, or
+  a short canary to reopen the full service.
+- **Lost evidence** makes the recovery story unreplayable and constrains any
+  defensible conclusion.
+
+### Degradation, fallback, and learning failures
+
+- **Unsafe degraded mode** drops a safeguard, widens access, or hides reduced
+  service quality.
+- **Unusable manual fallback** exceeds human capacity, information, skill, or
+  decision time.
+- **Mode confusion** leaves users and operators unable to tell which authority
+  and guarantees are active.
+- **Fallback debt** allows a temporary reduced mode to persist without renewal,
+  accumulating risk and hidden labor.
+- **Incident-learning contamination** trains on disputed, sensitive, or
+  outcome-selected records without a governed update lease.
+- **Postmortem without control change** produces a persuasive narrative while
+  leaving the failed detector, authority, dependency, or recovery path intact.
+- **Recurrence laundering** counts repeated versions of one unresolved defect
+  as unrelated incidents.
+
+No finite taxonomy establishes completeness. New incident families must enter
+the threat model without backfilling historical confidence. Unknown remains a
+first-class operational state.
+
+## Strongest objection and simpler baseline
+
+The strongest objection is that the proposal is ordinary site-reliability and
+cybersecurity incident management with AI terminology added. That objection is
+substantially correct about the baseline. Preparation, monitoring, detection,
+response, recovery, backups, failover, incident command, communications, and
+continuous improvement are not ASI Stack inventions. A competent conventional
+service using a deployment inventory, independent monitors, practiced
+runbooks, least privilege, backup restoration, incident roles, and staged
+recovery is the default comparator.
+
+The proposed chapter earns a separate job only where the ordinary baseline
+leaves an AI-specific control boundary unowned: exact model/policy/prompt/data/
+evaluator identity; nondeterministic and feedback-shaped behavior; mutable
+learning state; disagreement between model report and external effect;
+authority-bearing tool use; safety-case invalidation; hidden cache, memory,
+replica, and descendant state; and external effects that cannot be undone by
+restoring software.
+
+Three simpler baselines must remain in every empirical comparison:
+
+| Baseline | What it does well | What the proposed layer must add to justify its cost |
+|---|---|---|
+| Stop-only | Provides a simple, fast response when any trigger fires. | Preserve useful critical service only where a qualified reduced route is demonstrably no less controlled than shutdown. |
+| Generic SRE/incident response | Uses standard monitors, on-call roles, runbooks, failover, rollback, recovery, and postmortems. | Detect and control AI-specific identity, learning-state, evaluator, authority, and external-effect failures that the matched baseline misses. |
+| Full shutdown plus manual work | Removes automated effect authority and uses people for necessary functions. | Beat the joint safety, useful-throughput, latency, workload, and cost frontier without relying on ceremonial or overloaded human control. |
+
+If a well-tuned generic baseline matches detection, containment, residual harm,
+recovery, recurrence, useful service, and total cost, the additional
+architecture is unnecessary for that regime. If stop-only dominates degraded
+operation, the degraded route should be removed. If manual fallback is safer
+but unacceptably slow, the result is a tradeoff to govern, not permission to
+declare automated degradation graceful.
+
+## Consequences and tradeoffs
+
+Governed operations imposes permanent cost. Exact manifests and telemetry
+coverage require maintenance. Independent monitors and containment paths add
+infrastructure. Practiced manual fallbacks consume scarce human time. Evidence
+preservation and disclosure create privacy, security, and retention burdens.
+Staged recovery slows restoration. A cautious classifier can false-alarm or
+false-block useful work, while a permissive one can delay containment.
+
+The design also concentrates emergency power. Expiry, delegation limits,
+out-of-band evidence custody, and post-incident review reduce that risk but do
+not remove it. Institutions can still reward fast reopening, suppress
+disclosure, or normalize degraded operation. A formally valid lease cannot
+make the incident commander competent or legitimate.
+
+Observability itself can cause harm. Monitoring users, operators, prompts, or
+outputs may expose sensitive data, create chilling effects, or become an
+attack surface. The coverage map must therefore bind purpose, access,
+retention, redaction, and disclosure constraints. “More telemetry” is not an
+unconditional safety improvement.
+
+The appropriate objective is a joint frontier: bounded harm, safe useful
+throughput, reversibility, operator load, privacy, latency, evidence quality,
+recurrence, and total lifecycle cost. A design that lowers one visible incident
+metric by hiding work in humans, external parties, or unknown residuals has not
+improved the system.
+
+## Minimum Viable Implementation
+
+The smallest honest implementation is one bounded, fault-injected,
+multi-process reference service with one public or local model route, one
+authority-bearing tool, one external-effect sandbox, one mutable state path,
+one independent monitor path, and one human fallback. It would not be a
+production incident platform. Its purpose would be to make the lifecycle
+executable and to reveal missing state, authority, and evidence joins.
+
+The slice must include:
+
+1. an exact deployment and dependency manifest for model, policy, prompt,
+   tool, identity, cache, memory, data, replicas, mutable learning state, and
+   rollback owner where applicable;
+2. functionality, operations, input, output, impact, security, dependency, and
+   detector-health telemetry with at least one path independent of the model;
+3. a versioned incident-hypothesis ledger and explicit declaration authority;
+4. command leases with incident commander, technical, safety/impact,
+   evidence-custody, fallback, and communication roles;
+5. independent rate-limit, route-restrict, tool-revoke, isolate, safe-hold, and
+   shutdown controls appropriate to the slice;
+6. one qualified degraded automated mode, one exercised manual fallback, and a
+   proof-of-unavailability route when either cannot meet its contract;
+7. state reconciliation across checkpoint, prompt/policy, mutable state,
+   cache/memory, credentials, jobs, replicas, descendants, and the sandboxed
+   external effect;
+8. staged recovery with an independent acceptance check, residual disposition,
+   monitor window, and emergency-authority expiry; and
+9. decommissioning that revokes authority and accounts for queued and
+   descendant work.
+
+The first game days must include detector loss, an alert storm, model/version
+mismatch, corrupted input, a dependency failure shared by the primary and
+backup, unsafe output, human capacity exhaustion, an uncooperative component,
+and a rollback that appears successful while a credential, cache, descendant,
+or external effect remains changed.
+
+No such complete slice is recorded in this repository. The current minimum is
+therefore a build target, not a prototype-backed claim. A schema or deterministic
+fixture could establish only that records validate and routes are reachable.
+It could not establish monitor quality, incident performance, safe
+degradation, usable fallback, effect reversal, or recovery.
+
+## Empirical argument-exit lane
+
+The core claim leaves `argument` only through a prospective, claim-bearing
+campaign that satisfies the book's competence and false-negative standard.
+The first bounded empirical claim should be narrower than the architecture's
+core claim:
+
+> For a frozen multi-process AI service and fault envelope, the governed
+> operations condition improves the joint safe-useful service frontier over
+> matched stop-only and generic-SRE conditions at an acceptable measured
+> lifecycle cost.
+
+The campaign should use natural, non-authored service work with a real public
+or local model, an external-effect sandbox, stateful updates, distributed
+telemetry, explicit incident roles, and matched infrastructure across arms.
+Fault injection supplies causal stress; it does not turn an authored toy
+fixture into natural deployment evidence. The frozen envelope should include
+drift, corrupted inputs, model or policy identity mismatch, monitor loss,
+correlated dependency failure, unsafe output, rollback incompleteness, and
+human-capacity exhaustion.
+
+### Competence dossier before held-out opening
+
+| Gate | Prospective requirement |
+|---|---|
+| Claim and mechanism identity | Freeze the exact service, fault population, operating contract, proposed causal pathway, canonical claim mapping, maximum positive and negative inference, alternative implementations, and falsifier. |
+| Implementation competence | Show that every load-bearing monitor, command, containment, degrade, fallback, state-reconciliation, recovery, expiry, and decommission mechanism activates and changes the intended state; preserve traces; match engineering and tuning effort across arms. |
+| Construct validity | Use natural tasks, known licensing and sampling, ordinary and adverse conditions, strong current baselines, favorable regimes, mechanism ablations, and difficulty that avoids floor and ceiling effects. |
+| Evaluator competence | Keep independent environment truth outside the governed system; score syntax, state integrity, external effect, useful outcome, and authority separately; calibrate false accepts, false rejects, abstentions, and missing data on injected known effects. |
+| Sensitivity and uncertainty | Preregister minimum practical effects, independent units, seeds, attrition, subgroup and stopping rules, intervals, effect sizes, multiplicity, and the distinction between no meaningful effect and insufficient information. |
+| Fair rescue | On development cases only, repair pipelines, verify mechanism activation, test an oracle or favorable upper bound, tune within budget, test a competent alternative implementation, and require baselines and positive controls to behave as expected. |
+| Cost and burden | Measure compute, storage, operator time, rehearsal, false blocks, service loss, privacy/retention burden, and recovery delay, not only fault-response latency. |
+| Custody | Seal held-out cases and outcomes before final runs; forbid outcome-aware route changes, metric swaps, arm additions, or unregistered retries. |
+
+Positive controls should include a known-detectable version mismatch, a
+revocable tool effect, a deliberately planted hidden-state mutation, and a
+manual-fallback case within practiced capacity. Negative controls should
+include two nominal monitors with one shared failing dependency, a backup that
+shares the primary fault, a checkpoint restore that leaves a credential or
+descendant active, an expired emergency lease, and a missing evidence segment.
+Failure to detect the positive controls closes the denominator as an instrument
+or implementation failure.
+
+The primary outcomes are time to detection, declaration, effective
+containment, effect arrest, and qualified recovery; safe useful throughput;
+irreversible or unknown residuals; false alarms and false blocks; evidence
+completeness; operator load; disclosure timeliness where applicable;
+recurrence; and total lifecycle cost. Recovery counts only after independent
+outcome and state-integrity checks. A command acknowledgment or loaded
+checkpoint is not a recovery event.
+
+An exploratory harness failure is N0 or N1, not evidence against the
+architecture. A competent negative result in one frozen service and fault
+envelope can rise at most to N3 and narrows only that implementation-setting
+claim. N4 requires multiple competent implementations, mechanism-positive
+controls, strong matched baselines, and valid tasks showing the proposed
+effect absent or reversed. N5 additionally requires natural diversity,
+adequate power, independent institutional reproduction, at least two
+materially different transfer settings, and no surviving preregistered rescue.
+A positive result remains equally bounded and does not establish general
+operational safety.
+
+### Prospective use of the Theseus T4 joined trace
+
+The flagship gate `T4` is currently blocked by `T2` and `T3`. When it
+eventually produces a stable natural happy path and a stable blocked or
+rollback path from intent through observed effect and terminal outcome, those
+two traces can become the central reader example and a development
+case for checking artifact joins. They cannot be described now, because no
+such evidence pack exists.
+
+Even after T4 exists, two traces do not test the proposed empirical claim.
+They may reveal orphaned identities, stale projections, missing command
+receipts, incomplete effect accounting, or learned-credit laundering. They may
+help instantiate the service boundary before the final protocol is frozen.
+They may not serve as a hidden held-out denominator, tune evaluators after
+their outcomes are known, transfer Q1 or Q2 support, or establish incident
+efficacy, safety, recovery, or generalization. The matched campaign remains a
+separate prospective evidence event.
+
+The argument-exit disposition may be positive, negative, or inconclusive. Any
+movement still requires an accepted evidence transition tied to the exact
+claim. A polished T4 narrative, a complete game-day report, or favorable
+latency alone cannot raise the core claim.
+
+## Beyond the State of the Art
+
+The mature target is a machine-checkable operational safety-case control plane
+whose live evidence constrains which deployment state, incident authority,
+service mode, and recovery transition are reachable. It would maintain exact
+identity across heterogeneous models, policies, tools, data, monitors,
+learning state, replicas, descendants, and external effects. Signals would
+update explicit hypotheses; hypotheses would activate preauthorized command
+leases; controls would narrow effect authority independently of the suspected
+component; and every degraded or restored state would carry its own evidence
+and expiry.
+
+At that endpoint, recovery would be effect-aware rather than checkpoint-
+centric. Internal state would be reconciled component by component, while
+external effects would be separately reversed, compensated, disclosed,
+monitored, or retained as irreversible residuals. Safety-case dependencies
+would invalidate when their operating assumptions fail. Emergency authority
+would expire mechanically at the consumer boundary. Incident lessons would
+enter policy, monitor, threshold, training, and architecture workflows as
+proposals with preserved evidence rather than as automatic updates.
+
+The mature system would also know when not to continue. It could choose reduced
+automation, practiced human fallback, safe hold, shutdown, or decommissioning
+based on qualified contracts and current human capacity. It would make the
+economic and institutional tradeoff visible: useful service preserved,
+residual harm, operator burden, privacy cost, evidence quality, recurrence, and
+total lifecycle expense.
+
+This is a research target, not a current result. It remains unproven until
+adversarial game days and natural incidents show bounded harm and qualified
+recovery without unacceptable useful-throughput or governance cost, and until
+independent reproduction and materially different transfer settings justify
+any broader inference. Machine-checkable records would prove neither detector
+adequacy nor operational safety by themselves.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Effect-complete rollback mutation suite | Mutate model, optimizer, scheduler, random state, cache, memory, backup, credential, replica, descendant, and external-effect state and verify incomplete restoration is detected. A deterministic suite can establish mutation coverage and route behavior only; it cannot prove that the inventory is complete or external effects are reversible. | planned; not run |
+| Incident command game-day matrix | Inject ambiguous, compound, detector-degrading, authority-conflicting, dependency-correlated, and operator-overload failures; measure detection, command resolution, containment, recovery, harm, latency, burden, and cost. Claim-bearing use requires the competence dossier, positive controls, matched baselines, sealed outcomes, independent evaluation, uncertainty, and fair rescue specified above. | planned; not run |
+| Graceful-degradation dominance test | Compare qualified degraded routes with stop-only, generic-SRE, full shutdown/manual work, and normal operation on safe useful throughput, reversibility, workload, false blocking, and governance cost. Retain a degraded route only where it improves the joint frontier; availability alone is not success. | planned; not run |
+| T4 joined-trace integration check | Once T4 exists, verify that one natural happy path and one blocked or rollback path preserve identity, command, effect, outcome, residual, and credit boundaries. The trace is a prospective case and integration check, not a held-out campaign or support transition. | blocked; T4 does not yet exist |
+
+## Formalization hooks
+
+| Tag | Manifest status | Intended finite target | Current disposition |
+|---|---|---|---|
+| `lean:operations.degradation_never_widens_authority` | planned | Every modeled degraded-mode transition preserves or narrows capability, data, tool, population, and duration authority. | Defer implementation until the authority lattice, mode schema, transition semantics, and rejecting runtime consumer exist. |
+| `lean:operations.recovery_requires_complete_state` | planned | Normal-service recovery is rejected when any required internal-state component, external-effect disposition, acceptance check, or emergency-authority expiry is absent. | Defer implementation until state classes, requiredness, effect dispositions, candidate identity, and the recovery-gate consumer are executable. |
+
+### Formalization disposition
+
+The two targets are appropriate finite control properties, but proving them
+against an invented Boolean record now would be formalization theater. A useful
+model must first consume the same schema used by a rollback/degradation
+reference implementation and must reject mutations at an actual transition
+boundary. The abstraction map must state which deployed identities, authority
+dimensions, state classes, descendants, and external-effect dispositions are
+represented and which are omitted.
+
+Once that consumer exists, a finite state machine can mechanize reachability,
+authority monotonicity, emergency-lease expiry, rejection without state
+mutation, and recovery completeness relative to the declared inventory.
+Countermodels should demonstrate that a route fails when one authority
+dimension widens, a required state class is missing, a high-consequence effect
+is unknown, an acceptance check is stale, or the emergency lease remains
+active.
+
+Even an adequate mechanization would not prove detector sensitivity, manifest
+completeness, external-effect truth, compensation adequacy, fallback
+usefulness, human command performance, incident-response efficacy, safety,
+transfer, or NIST conformance. No Lean module or proof result is claimed here.
+
+## Source crosswalk
+
+| Source ID | Chapter use | Evidence boundary |
+|---|---|---|
+| `ext_nist_ai_rmf_1_0_2023` | Lifecycle risk-management and Govern/Map/Measure/Manage comparator; motivates linking operational response to organizational governance. | Voluntary framework guidance; no compliance mapping, audit, certification, control assessment, or effectiveness result for this project. |
+| `ext_nist_deployed_ai_monitoring_2026` | Functionality, operations, input, output, impact, and security monitoring taxonomy; motivates contextual signal, cadence, actor, field-study, and fragmentation boundaries. | A gap-mapping report, not a validated incident blueprint; no universal threshold, detector, resilience, or local monitoring result. |
+| `ext_nist_incident_response_2025` | Generic preparation, detection, response, recovery, communications, and continuous-improvement baseline integrated with risk management. | Cybersecurity guidance requires explicit AI adaptation; no local exercise, response-efficacy, recovery, compliance, or safety result. |
+| `scf` | Accountable roles, change control, review gates, incidents, appeals, canaries, rollback, lifecycle events, and bounded authority. | Governance architecture does not establish detector quality, command performance, degradation safety, or recovery success. |
+| `deterministic_capability_compilation` | Immutable capability and release identity, proof-carrying receipts, revocation, full learning-state inventory, candidate-specific validation, fallback, descendants, and effect-complete recovery. | Conceptual architecture and research program; no foundry, rollback harness, external-effect reversal, or runtime-resilience result. |
+| `theseus_operator_os` | Shared command vocabulary, durable work board, channel parity, visible modes, TTLs, kill switches, node state, feedback routing, and operator surfaces. | Implementation/control-surface note; no board, dashboard, command channel, incident drill, usability, or unattended-safety result was run here. |
+| `viea` | Explicit command contracts, roles, constraints, verification, failure behavior, artifacts, runtime targets, feedback, residuals, and regression coverage. | Architecture proposal; does not establish incident detection, effect arrest, recovery, deployment, or field-feedback performance. |
+| `talos` | Typed jobs, contract locks, tool isolation, evidence, audit, replay, adjudication, delivery, approval gates, and controlled execution. | Execution-OS design source; no Talos runtime, security enforcement, incident game day, graceful-degradation result, or benchmark reproduction. |
+| `platonic_world_model` | Explicit observed versus predicted state, world branches, grounding qualifications, semantic versions, residuals, authority separation, dependency-aware change, containment, and rollback distinctions. | Conceptual semantic architecture; no implemented substrate, state-reconciliation service, incident standard, recovery evidence, grounding result, or safety result. |
+
+The crosswalk supports the vocabulary and design synthesis. It does not combine
+nine limited records into empirical support. Source-note availability and
+manifest mapping justify disciplined use of the concepts while the chapter
+core remains at `argument`.
+
+## Evidence and non-claims
+
+The current evidence record supports the following narrow statements:
+
+- official NIST sources provide lifecycle risk-management, deployed-monitoring,
+  and generic incident-response comparators with explicit limits;
+- assigned Corben/local sources describe proposed authority, artifact,
+  operator, execution, semantic-state, replacement, and recovery mechanisms;
+- the manifest defines the exclusive job, interfaces, invariants,
+  planned tests, planned formal targets, and open evidence gaps; and
+- the resulting architecture can be stated coherently enough to expose
+  falsifiers, simpler baselines, and implementation obligations.
+
+It does **not** support claims that:
+
+- an ASI Stack incident system, rollback engine, degraded-mode router, or
+  recovery attestor exists;
+- any local game day, real incident, NIST compliance exercise, external
+  reproduction, or independent review has run;
+- deployed monitoring is complete, calibrated, adversary-resistant, or
+  actionable;
+- a kill switch, manual fallback, failover, rollback, compensation, disclosure,
+  or decommissioning path works;
+- any external effect has been reversed or any descendant state has been
+  recovered;
+- T4 has produced a joined happy or blocked/rollback trace;
+- either planned Lean target is implemented or semantically adequate;
+- graceful degradation dominates shutdown or a competent generic-SRE baseline;
+- the system is safe, resilient, compliant, ready to deploy, superior to the
+  state of the art, AGI, or ASI; or
+- chapter completeness, source coverage, or formal structure changes the
+  recorded support state.
+
+The three decisive gaps remain a full-state and external-effect rollback
+harness, adversarial game-day evidence that calibrates incident and recovery
+decisions, and independent validation of the transfer from generic
+cybersecurity incident response to autonomous AI services.
+
+## Summary
+
+Governed operations begins where readiness ends: after an admitted system
+starts changing the world. Its job is to keep exact deployment identity,
+field observability, incident hypotheses, command authority, containment,
+service mode, internal state, external effects, recovery evidence, disclosure,
+and residual ownership connected through one closed lifecycle.
+
+The architecture refuses several convenient substitutions. Monitoring is not
+command. A kill switch is not containment. A backup is not an independent
+fallback. A loaded checkpoint is not effect-complete recovery. A staffed
+runbook is not meaningful manual control. A postmortem is not learning until
+its proposals pass through the owners of evidence, policy, readiness, and
+change.
+
+Its distinctive AI adaptation must still earn its cost against strong ordinary
+operations. The honest route is a bounded reference implementation, rejecting
+mutation suites, adversarial game days, matched stop-only and generic-SRE
+baselines, independent outcome truth, complete cost and burden accounting, and
+a competence-gated natural campaign. T4 can eventually supply a joined reader
+case, but only prospectively and never as a substitute for that evidence.
+
+## Handoff
+
+Safety Cases and Structured Assurance supplies the scoped claims, assumptions,
+defeaters, safeguards, and decision boundaries whose failure can trigger or
+constrain an incident. Governed Operations turns those live violations into
+observable hypotheses, expiring command authority, containment, degraded or
+fallback service, effect-aware recovery, disclosure, residuals, and—when
+recovery cannot be earned—decommissioning.
+
+Policy Optimization and Learning from Feedback receives only bounded incident
+residuals and change proposals with their exact evidence, failed controls,
+affected identities, costs, uncertainty, privacy limits, and non-claims. It
+must decide through a separate governed update lease whether any model, policy,
+prompt, router, monitor, evaluator, or training process should change.
+Emergency authority expires at this boundary; an urgent incident lesson is
+never permanent update authority by implication.

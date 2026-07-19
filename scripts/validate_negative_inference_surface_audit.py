@@ -50,7 +50,8 @@ def main() -> None:
     if failures:
         raise SystemExit("Negative-inference surface audit failed:\n - " + "\n - ".join(failures))
     print(
-        "Negative-inference surface audit passed: 75 current surfaces including 55/55 chapters; "
+        f"Negative-inference surface audit passed: {value['scope']['surface_count']} current surfaces "
+        f"including {value['scope']['chapter_count']}/{value['scope']['chapter_count']} chapters; "
         "zero forbidden overbroad phrases, zero missing rehabilitation boundaries, zero blocked-claim boundary failures; "
         "8/8 mutations rejected."
     )

@@ -13,6 +13,7 @@ This generated audit checks every active chapter against the architecture-refere
 | `evidence-states-and-claim-discipline` | pass | bounded in insufficiency section | complete packet surface |
 | `scalable-oversight-and-adversarial-ai-control` | pass | bounded in insufficiency section | complete packet surface |
 | `human-intent-as-a-formal-input` | pass | bounded in insufficiency section | complete packet surface |
+| `human-factors-and-meaningful-control-in-oversight` | pass | bounded in insufficiency section | complete packet surface |
 | `constitutional-alignment-substrate` | pass | bounded in insufficiency section | complete packet surface |
 | `moral-uncertainty-and-value-conflict` | pass | bounded in insufficiency section | complete packet surface |
 | `stable-capability-fields` | pass | bounded in insufficiency section | complete packet surface |
@@ -24,6 +25,7 @@ This generated audit checks every active chapter against the architecture-refere
 | `open-ended-improvement-engines` | pass | bounded in insufficiency section | complete packet surface |
 | `intent-to-execution-contracts` | pass | explicit heading | complete packet surface |
 | `planning-as-a-control-layer` | pass | explicit heading | complete packet surface |
+| `governed-world-models-and-reality-grounding` | pass | explicit heading | complete packet surface |
 | `cognitive-compilation-and-semantic-ir` | pass | explicit heading | complete packet surface |
 | `virtual-context-abi` | pass | explicit heading | complete packet surface |
 | `context-transactions-snapshots-mounts-and-taint` | pass | explicit heading | complete packet surface |
@@ -50,9 +52,11 @@ This generated audit checks every active chapter against the architecture-refere
 | `coilra-multicoil-rope-and-cyclic-mixers` | pass | bounded in insufficiency section | complete packet surface |
 | `executable-specifications-and-lean-proof-envelope` | pass | bounded in insufficiency section | complete packet surface |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | pass | bounded in insufficiency section | complete packet surface |
+| `white-box-evidence-interpretability-and-activation-governance` | pass | explicit heading | complete packet surface |
 | `capability-thresholds-and-deployment-commitments` | pass | bounded in insufficiency section | complete packet surface |
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | pass | bounded in insufficiency section | complete packet surface |
 | `safety-cases-and-structured-assurance` | pass | bounded in insufficiency section | complete packet surface |
+| `governed-operations-incident-command-and-graceful-degradation` | pass | bounded in insufficiency section | complete packet surface |
 | `policy-optimization-and-learning-from-feedback` | pass | explicit heading | complete packet surface |
 | `data-engines-continual-learning-and-unlearning` | pass | bounded in insufficiency section | complete packet surface |
 | `artifact-steward-agents-and-living-project-governance` | pass | bounded in insufficiency section | complete packet surface |
@@ -62,6 +66,6 @@ This generated audit checks every active chapter against the architecture-refere
 | `living-book-methodology` | pass | bounded in insufficiency section | complete packet surface |
 | `open-research-agenda-and-bibliography-plan` | pass | bounded in insufficiency section | complete packet surface |
 
-Summary: 55 of 55 active chapters pass; 0 remain open.
+Summary: 59 of 59 active chapters pass; 0 remain open.
 
 Non-claims: this is a structural and bounded semantic audit, not proof of prose quality, source interpretation, empirical validity, formal adequacy, deployment, safety, or independent review.

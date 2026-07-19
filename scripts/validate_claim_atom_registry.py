@@ -26,7 +26,13 @@ REGISTRY_SCHEMA = ROOT / "schemas/claim_atom_registry.schema.json"
 QUEUE_SCHEMA = ROOT / "schemas/prose_claim_candidate_queue.schema.json"
 REVIEWS_SCHEMA = ROOT / "schemas/claim_atom_reviews.schema.json"
 CHAPTER_REVIEW_SCHEMA = ROOT / "schemas/claim_chapter_review.schema.json"
-POST_ACTIVATION_EXPANSION_ID = "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+POST_ACTIVATION_EXPANSION_IDS = {
+    "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "human-factors-and-meaningful-control-in-oversight",
+    "governed-world-models-and-reality-grounding",
+    "white-box-evidence-interpretability-and-activation-governance",
+    "governed-operations-incident-command-and-graceful-degradation",
+}
 POST_ACTIVATION_FORMAL_TARGETS = {"lean:corrigibility.agency.generic_countermodel_routes"}
 
 def accepted_upward_states() -> dict[str, str]:
@@ -50,7 +56,7 @@ def chapters(structure: dict[str, Any]) -> list[dict[str, Any]]:
         chapter
         for part in structure["parts"]
         for chapter in part["chapters"]
-        if chapter.get("id") != POST_ACTIVATION_EXPANSION_ID
+        if chapter.get("id") not in POST_ACTIVATION_EXPANSION_IDS
     ]
 
 

@@ -268,6 +268,9 @@ concepts incompatibly.
 | `procedural-memory-and-cognitive-loop-closure` | Adds bounded semantic residue and gated promotion into canonical concepts or skills. | §§13–14, 22 | Residue is not automatic memory truth. |
 | `prototype-roadmap` | Supplies incremental P0–P4 implementation profiles and a maturity ladder. | §§18.9, 20.8 | Profile naming is not conformance. |
 | `open-research-agenda-and-bibliography-plan` | Owns prior-art passage review, longitudinal benchmarks, baselines, ablations, and disconfirmation. | §§20–21, 23 | Backlog presence is not evidence. |
+| `governed-world-models-and-reality-grounding` | Owns prediction-state custody, observation reconciliation, model disagreement, reality residuals, and the rule that simulation cannot authorize effects without fresh grounding. | §§5, 9–12, 18–20 | No validated world model, calibrated closed-loop controller, or reality oracle exists here. |
+| `white-box-evidence-interpretability-and-activation-governance` | Uses semantic and internal representations as scoped evidence objects while preserving method assumptions, lineage, defeaters, and authority separation. | §§5, 10–13, 16–18 | Representation structure is not automatically causal, faithful, or governance-ready evidence. |
+| `governed-operations-incident-command-and-graceful-degradation` | Carries semantic state, branch, residual, revocation, and recovery obligations into incident containment and restoration. | §§10–12, 16–18 | No deployed incident-command or recovery-completeness result. |
 
 The section-family closure ledger is
 `docs/july_2026_two_paper_mining_completeness_audit.md`. It maps every

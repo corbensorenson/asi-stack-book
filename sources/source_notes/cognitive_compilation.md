@@ -48,6 +48,7 @@ Cognitive Compilation reframes complex generative work as a compiler pipeline. I
 - `artifact-graphs-audit-logs-and-replay` (Artifact Graphs, Audit Logs, and Replay)
 - `compact-generative-systems-and-residual-honesty` (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty)
 - `mathematical-and-search-substrates` (Mathematical and Search Substrates)
+- `governed-world-models-and-reality-grounding`
 
 ## Claims To Add Or Update
 

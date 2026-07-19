@@ -58,6 +58,8 @@ Talos treats AI work as a labor operating system: typed jobs, deterministic cont
 - Artifact Steward Agents and Living Project Governance
 - Integrated Reference Architecture
 - Open Research Agenda and Bibliography Plan
+- `human-factors-and-meaningful-control-in-oversight`
+- `governed-operations-incident-command-and-graceful-degradation`
 
 ## Claims To Add Or Update
 

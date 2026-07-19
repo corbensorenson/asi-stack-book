@@ -48,6 +48,7 @@ GROUPS = {
     "governed-cognition-interface-contracts": [
         "asi-is-a-stack-not-a-model", "system-boundaries-and-authority",
         "scalable-oversight-and-adversarial-ai-control", "human-intent-as-a-formal-input",
+        "human-factors-and-meaningful-control-in-oversight",
         "constitutional-alignment-substrate", "moral-uncertainty-and-value-conflict",
         "stable-capability-fields", "capability-replacement-and-rollback",
         "security-kernel-and-digital-scifs", "model-weight-custody-and-hardware-roots-of-trust",
@@ -71,11 +72,14 @@ GROUPS = {
         "benchmark-ratchets-and-anti-goodhart-evidence",
         "capability-thresholds-and-deployment-commitments",
         "adversarial-evaluation-sandbagging-and-training-time-deception",
-        "safety-cases-and-structured-assurance", "living-book-methodology",
+        "safety-cases-and-structured-assurance",
+        "white-box-evidence-interpretability-and-activation-governance",
+        "living-book-methodology",
         "open-research-agenda-and-bibliography-plan"
     ],
     "record-reality-residual-honesty": [
         "the-efficient-asi-hypothesis", "failure-modes-of-ungoverned-intelligence",
+        "governed-world-models-and-reality-grounding",
         "context-transactions-snapshots-mounts-and-taint",
         "artifact-graphs-audit-logs-and-replay",
         "procedural-memory-and-cognitive-loop-closure",
@@ -86,6 +90,7 @@ GROUPS = {
         "coilra-multicoil-rope-and-cyclic-mixers",
         "policy-optimization-and-learning-from-feedback",
         "data-engines-continual-learning-and-unlearning",
+        "governed-operations-incident-command-and-graceful-degradation",
         "project-theseus-as-report-first-implementation-reference", "prototype-roadmap"
     ],
 }

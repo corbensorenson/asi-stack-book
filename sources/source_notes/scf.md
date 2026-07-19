@@ -50,6 +50,8 @@ SCF separates a capability's durable semantic identity from the replaceable mach
 - Integrated Reference Architecture
 - Prototype Roadmap
 - Open Research Agenda and Bibliography Plan
+- `human-factors-and-meaningful-control-in-oversight`
+- `governed-operations-incident-command-and-graceful-degradation`
 
 ## Claims To Add Or Update
 

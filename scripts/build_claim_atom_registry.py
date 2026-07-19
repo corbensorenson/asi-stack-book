@@ -25,7 +25,13 @@ REGISTRY = ROOT / "evidence_quality/claim_atom_registry.json"
 QUEUE = ROOT / "evidence_quality/prose_claim_candidate_queue.json"
 REPORT = ROOT / "docs/claim_atom_registry.md"
 DOSSIERS = ROOT / "evidence_quality/claim_dossiers"
-POST_ACTIVATION_EXPANSION_ID = "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+POST_ACTIVATION_EXPANSION_IDS = {
+    "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "human-factors-and-meaningful-control-in-oversight",
+    "governed-world-models-and-reality-grounding",
+    "white-box-evidence-interpretability-and-activation-governance",
+    "governed-operations-incident-command-and-graceful-degradation",
+}
 POST_ACTIVATION_FORMAL_TARGETS = {"lean:corrigibility.agency.generic_countermodel_routes"}
 
 SINGLE_ROLES = (
@@ -68,14 +74,15 @@ def dump(data: Any) -> str:
 
 
 def chapters(structure: dict[str, Any]) -> list[dict[str, Any]]:
-    # P1 is a frozen 54-chapter activation-baseline audit. The authorized 55th
-    # chapter is maintained through its separately reviewed atom addendum and
-    # dossier, so regenerating P1 must not rewrite historical completion truth.
+    # P1 is a frozen 54-chapter activation-baseline audit. Later authorized
+    # structural additions are governed by their own intake/research packets
+    # and the active successor roadmap; regenerating P1 must not rewrite its
+    # historical completion truth or launder those additions as reviewed atoms.
     return [
         chapter
         for part in structure["parts"]
         for chapter in part["chapters"]
-        if chapter.get("id") != POST_ACTIVATION_EXPANSION_ID
+        if chapter.get("id") not in POST_ACTIVATION_EXPANSION_IDS
     ]
 
 
@@ -529,7 +536,7 @@ def main() -> None:
             extra = [
                 str(path.relative_to(ROOT))
                 for path in DOSSIERS.glob("*.md")
-                if path not in wanted and path.stem != POST_ACTIVATION_EXPANSION_ID
+                if path not in wanted and path.stem not in POST_ACTIVATION_EXPANSION_IDS
             ]
         if stale or extra:
             raise SystemExit(f"claim-atom artifacts stale: stale={stale[:10]} extra={extra[:10]}")

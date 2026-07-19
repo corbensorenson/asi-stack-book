@@ -32,8 +32,10 @@ no-change results where the new competence standard was not yet applied. Raw
 outcomes remain immutable; overbroad negative inferences are quarantined until
 they earn an N0–N5 classification.
 
-The latest immutable public living-book release remains `v2.3.0`. The current
-55-chapter working book, v2.2 reader evidence freeze, and X Article synopsis are
+The latest immutable public living-book release remains `v2.3.0`. At roadmap
+activation, the working book contained 55 chapters; the first structural tranche
+has since moved the working manifest and manuscript to 59 argument-level
+chapters. The v2.2 reader evidence freeze and X Article synopsis are separate
 newer artifacts. The post-v2.3 evidence corpus first reached committed custody
 at `882b2a82c`. The latest clean, pushed, built, and deployed ancestral
 checkpoint is `6eb63a7007` on 2026-07-18. Neither checkpoint is a new
@@ -44,18 +46,19 @@ post.
 
 The book's strongest assets are architecture breadth, explicit interfaces,
 claim discipline, negative-evidence hygiene, and reproducible research
-machinery. Its limiting weakness is causal concentration: all 55 chapter cores
+machinery. Its limiting weakness is causal concentration: all 59 chapter cores
 remain `Design rationale` at `argument`, no competence-qualified natural,
 non-authored empirical transition exists, and the reader must traverse many
 mechanisms before seeing one decisive case that tests the stack against a
 simpler alternative.
 
-The next quality gain is therefore not another chapter, proof-count increase,
-source-count increase, report family, or synthetic campaign. It is one shared
-empirical spine with Project Theseus, followed by an editorial pass that makes
-the book's hierarchy and evidence boundaries obvious. New sources continue to
-route into existing owners unless they expose a genuinely unowned interface,
-invariant, artifact type, or failure mode.
+The largest quality gain remains one shared empirical spine with Project
+Theseus, followed by an editorial pass that makes the book's hierarchy and
+evidence boundaries obvious; chapter count, proof count, source count, report
+families, and synthetic campaigns are not substitutes for that work. A bounded
+structural audit may still add a chapter when it exposes a genuinely unowned
+interface, invariant, artifact type, lifecycle transition, or failure family.
+Every other new source routes into an existing owner.
 
 The roadmap optimizes for five outcomes, in order:
 
@@ -320,8 +323,11 @@ is N1, and the two QCSA-labeled refutations are N2. The validator rejects twelve
 history rewriting, competence invention, held-out reopening, scope widening,
 and support-laundering mutations.
 
-P1 is complete. `evidence_quality/negative_inference_surface_audit.json` binds
-75 current reader-facing surfaces, including all 55 live chapters, and reports
+P1 is complete. The original 75-surface rehabilitation snapshot, including
+the 55 chapters live when that audit ran, remains digest-bound to commit
+`295642f21a39e2d735553b3a51ef6ba2f5e76d2c` in the maintenance status record.
+The maintained `evidence_quality/negative_inference_surface_audit.json` now
+recomputes the live projection: 79 surfaces including all 59 current chapters,
 zero forbidden overbroad phrases, zero missing named rehabilitation boundaries,
 and zero chapters that use `blocked_after_full_attempt` without also stating
 that the gaps are residual proof obligations rather than false claims. The X
@@ -538,7 +544,7 @@ wins.
 
 ## P4 — Semantically meaningful formal evidence
 
-Audit the 298 proof targets and 98 Lean modules for semantic adequacy, not proof
+Audit the current 306 proof targets and 102 Lean modules for semantic adequacy, not proof
 shape alone. The 901 `derived/decomposed` classifications are syntax-level
 signals; `native_decide`, case splits, arithmetic, or induction do not by
 themselves establish that the model captures the book's claim.
@@ -674,12 +680,12 @@ component that simpler systems match at materially lower total cost.
 ### P6.3 — Structural-completeness source and chapter tranche
 
 The 2026-07-19 merge/addition audit is bound to
-`docs/structural_completeness_chapter_research_2026_07_19.md`. Its current
-decision is **no chapter merges** and four roadmap-admitted, manifest-gated
-chapter candidates. The measured maximum pairwise chapter similarity is 0.298;
-editorial repetition is handled by P7.1a and cannot be used to collapse
-distinct owners. If every candidate passes admission, the live manifest moves
-from 55 to 59 chapters:
+`docs/structural_completeness_chapter_research_2026_07_19.md`. Its decision is
+**no chapter merges**. The measured maximum pairwise chapter similarity is
+0.298; editorial repetition is handled by P7.1a and cannot be used to collapse
+distinct owners. All four first-tranche candidates have now passed the source,
+exclusive-owner, Corben-crosswalk, and chapter-packet gates and are present in
+the 59-entry working manifest as conceptual, argument-level chapters:
 
 1. `white-box-evidence-interpretability-and-activation-governance` in Part IV
    after Benchmark Ratchets owns model-internal evidence packets, mechanistic
@@ -695,22 +701,166 @@ from 55 to 59 chapters:
    command, containment, degrade/failover/manual modes, recovery, disclosure,
    learning, and decommissioning.
 
-Roadmap admission is not manifest admission. Each chapter must first have an
-exclusive-job and adjacent-boundary audit, three source-noted primary external
-comparators including a limitation/failure source, a Corben-source crosswalk,
-a complete chapter packet, a competent claim-bearing empirical lane, an honest
-formalization disposition, reader assets, and full manifest/scaffold/proof/
-reader validation. Failure returns the material to named existing sections;
-it does not authorize a thin chapter. No source, chapter draft, or structural
-decision changes support by itself.
+Manifest admission is not chapter completion, evidence, or publication. All
+four initial chapter drafts now exist and their outline, source-note, claim,
+proof-scaffold, appendix, and adjacent-handoff registrations are present. Their
+formalization dispositions, competent claim-bearing empirical lanes, reader-
+level integration, full render/validation, and publication reconciliation
+remain open.
+Any chapter that fails those remaining gates is removed and its material
+returns to named existing sections; an empty or thin manifest entry is not a
+terminal success. No source, packet, chapter draft, or structural decision
+changes support by itself.
 
-The sequence is interpretability, world models, human factors, then operations.
-Interpretability supplies the white-box evidence vocabulary; world models
-sharpens the Platonic World Model and Theseus grounding boundary; human factors
-waits for a reviewable ethics/privacy-aware study protocol; and operations may
-be designed now but uses the joined T4 authority-to-effect case for its central
-reader example. This lane runs beside P2 with protected capacity and may not
-delay, shrink, retune, or read P2/Q1/Q2 held-out work.
+The initial drafts were created in the sequence interpretability, world models,
+human factors, then operations. Interpretability supplies the white-box evidence
+vocabulary; world models sharpens the Platonic World Model and Theseus grounding
+boundary; the Human Factors empirical lane waits for a reviewable ethics/privacy-
+aware study protocol; and Operations waits for the joined T4 authority-to-effect
+case before freezing its central reader example. This lane runs beside P2 with
+protected capacity and may not delay, shrink, retune, or read P2/Q1/Q2 held-out
+work.
+
+### P6.4 — Second structural-boundary completeness audit
+
+The end-to-end ownership audit is bound to
+`docs/structural_completeness_gap_audit_2026_07_19.md`. It finds thirteen further
+chapter candidates whose proposed contracts are absent from the current
+59-entry manifest. These are **research-admitted and manifest-gated**; they are
+not thirteen promised chapters. If and only if every candidate survives source,
+boundary, competence, and reader-value adjudication, the manifest would move
+from 59 to at most 72 chapters:
+
+1. `governed-model-training-distributed-optimization-and-scaling` owns the
+   training-run transaction from frozen inputs and topology through distributed
+   execution, full-state recovery, checkpoint-family selection, and qualified
+   handoff.
+2. `perception-sensor-fusion-and-observation-trust` owns how time-bound,
+   calibrated, provenance-bearing environmental evidence becomes an admitted
+   observation rather than assumed truth.
+3. `embodied-agency-real-time-control-and-physical-safety` owns the transition
+   from an authorized symbolic action to a deadline-bound physical control
+   trace under dynamics, interlocks, fallback controllers, and irreversible
+   effects.
+4. `privacy-data-rights-and-information-flow-governance` owns purpose, consent,
+   minimization, privacy loss, subject and group rights, derivative obligations,
+   correction, export, deletion, and remedy across the information lifecycle.
+5. `human-ai-organizations-delegation-and-accountability` owns organization
+   charters, roles, competence, workload, decision rights, delegation,
+   separation of duties, incentives, escalation, accountability, succession,
+   and dissolution across human and AI actors.
+6. `multi-agent-dynamics-collective-intelligence-and-systemic-risk` owns
+   population-level cooperation, conflict, collusion, cascades, concentration,
+   correlated failure, institutional feedback, and gradual disempowerment that
+   pairwise-valid exchanges cannot certify.
+7. `autonomous-replication-proliferation-and-containment` owns the composed
+   resource, copy, credential, deployment, descendant-identity, persistence,
+   recall, shutdown, and proliferation lifecycle in a safe synthetic boundary.
+8. `scientific-discovery-and-experimental-governance` provisionally owns a
+   domain-independent loop from hypothesis and preregistration through
+   instrument authority, measurement, causal/statistical analysis, replication,
+   dual-use review, and evidence-ledger handoff.
+9. `human-ai-communication-persuasion-and-epistemic-security` owns the outbound
+   transaction from an evidence-bounded claim through audience and vulnerability
+   classification, personalization, channel and amplification policy, observed
+   belief or choice effects, correction, retraction, and remedy.
+10. `institutions-international-coordination-and-public-legitimacy` owns the
+    public-institution transaction from mandate and jurisdiction through
+    participation, law/policy/standard mapping, international commitments,
+    scientific assessment, verification, enforcement, remedy, amendment, and
+    withdrawal without pretending technical architecture creates legitimacy.
+11. `ai-deployment-transition-distribution-and-human-agency` owns the
+    prospectively governed deployment-to-transition transaction across tasks,
+    jobs, skills, wages, ownership, bargaining power, access, prices,
+    concentration, critical services, observed affected-party distribution,
+    remedy, and retained human option value.
+12. `physical-compute-infrastructure-energy-and-environmental-constraints` owns
+    the delivery and retirement of physical compute across accelerators,
+    memory, networks, facilities, power, grids, cooling, water, land,
+    emissions, materials, resilience, and affected communities.
+13. `governed-objective-formation-value-learning-and-goal-integrity` owns the
+    positive transition from authorized purposes, preferences, constitutional
+    predicates, affected-party claims, and unresolved uncertainty to a
+    versioned target-property/proxy contract with explicit consumers,
+    generalization and ontology assumptions, integrity tests, expiry,
+    reauthorization, and retirement.
+
+Privacy and model training are adjudicated first because current chapters
+already delegate responsibilities to owners that do not exist. Perception is
+adjudicated before the World Models draft; embodiment follows after its
+Perception and Runtime Adapter boundaries stabilize. Human–AI Organizations
+must remain a meso-level designed-institution owner between Labor OS and
+Inter-Stack Protocols; Multi-Agent Dynamics must remain a macro-level emergent-
+population owner and freeze a population-level empirical program and human-
+influence indicators.
+Replication must freeze a synthetic-provider boundary, descendant authority,
+shutdown controls, and a non-proliferation review before any execution.
+Human–AI Communication is adjudicated after the Human Factors interfaces are
+stable and before organization/population integration closes. It must preserve
+an exclusive evidence-to-audience-to-effect-to-correction control plane; pass
+ethics, privacy, vulnerability, and non-manipulation review; use benign
+prospective tasks, heterogeneous held-out audiences, simpler neutral-helpfulness
+and no-personalization baselines, independent outcome scoring, and correction/
+retraction tests; and reject population-level claims from synthetic classifiers
+or a single convenience sample.
+Institutions and AI Deployment Transition are adjudicated after Human–AI
+Organizations and before Multi-Agent Dynamics closes: the former must remain a
+technology-neutral public-authority and cross-jurisdiction control plane rather
+than a volatile law survey, and the latter must measure realized heterogeneous
+outcomes rather than convert task exposure or firm productivity into
+macroeconomic forecasts. Physical Compute follows Governed Training and Resource
+Economics and is rejected if its facility, grid, cooling, water, materials,
+community, and retirement lifecycle can be carried cleanly by those owners.
+Objective Formation is adjudicated early because current downstream chapters
+assume a legitimate objective they do not create. It is rejected if its
+target/proxy/consumer binding and objective-version lifecycle collapse into
+Human Intent, Constitutional Alignment, Moral Uncertainty, Policy Optimization,
+Planning, or RSI. Its four existing source records establish only a preliminary
+capability/failure set; plural aggregation, ontology migration, competing-
+contract, and measurement roles remain open. Candidates J, K, and L each have
+two new source-noted comparators, not a completed admission bibliography. Their
+source-role gates remain open pending the additional passage-reviewed
+comparators and limitation/counterevidence specified in the audit.
+Scientific Discovery is decided last and is rejected as a separate chapter if
+it cannot specify a reusable experimental control plane beyond Planning,
+Runtime Adapters, Benchmark Ratchets, Artifact Graphs, and the Living Book.
+
+Each candidate needs passage-reviewed primary comparators covering
+mechanism/capability, limitation/failure, competing design, and
+measurement/evaluation roles where the literature permits; a Corben-source
+crosswalk; adjacent-owner table; complete chapter packet; claim-commensurate
+evidence and competent positive controls where empirical claims are made; a
+simpler baseline; an honest finite-formalization disposition; a reader figure;
+and an explicit argument-exit condition before manifest admission. Perception and embodiment
+remain separate unless the boundary audit shows their observe-versus-act
+artifacts and failure families cannot sustain two useful chapters. The Human–AI
+Organizations packet must prove that responsibility-control coupling, decision
+rights, role competence, incentives, succession, and dissolution cannot be
+absorbed by Human Factors, Labor OS, Human Intent, System Boundaries, or the
+proposed multi-agent chapter. Uncertainty/calibration, epistemic security,
+semantic memory, reasoning-trace faithfulness, and model welfare receive named
+section-scale owners; importance alone does not justify another chapter.
+Epistemic-security, distributional impact, institutional/jurisdictional, and
+physical-resource boundary sections remain mandatory in their named existing
+owners whether Candidates I, J, K, or L pass, are narrowed, or return to those
+owners. Objective-provenance duties remain mandatory in Human Intent,
+Constitutional Alignment, Moral Uncertainty, Policy Optimization, Planning,
+Benchmark Ratchets, and RSI whether Candidate M passes. Embedded agency,
+self-reference, and robust delegation remain a named foundations program across
+ASI Is a Stack, System Boundaries, RSI Boundaries, and the Integrated Reference
+Architecture until they produce an operational contract and honest evidence
+program sufficient to reopen chapter admission.
+
+If at least three of Human–AI Organizations, Human–AI Communication,
+Institutions, AI Deployment Transition, and Multi-Agent Dynamics pass, P7.2
+must adjudicate a dedicated **Organizations, Institutions, and Societal
+Transition** part. Do not create that part before its owners exist.
+
+The tranche may not displace P2 or the Theseus flagship, inspect protected
+Q1/Q2 outcomes, turn a benchmark into a dangerous real-world replication
+capability, or inherit support from cited work. Failure at any gate returns the
+material to the exact existing sections listed in the audit. The upper bound of
+72 is a decision envelope, not a completion target or completeness claim.
 
 ## P7 — Reader remediation and owner-authorized publication
 
@@ -789,7 +939,7 @@ not pre-commit P7.1b's structure, and neither lane may delete a unique claim,
 caveat, source, equation, protocol, proof boundary, or non-claim.
 
 The 2026-07-19 chapter-overlap audit fixes P7.1a's concrete targets. A
-pairwise tf-idf similarity scan across all 55 chapters found a maximum pair
+pairwise tf-idf similarity scan across the pre-tranche 55 chapters found a maximum pair
 score of 0.298 — no duplicate or near-duplicate chapters exist, and **no
 chapter merge is planned**; the two most title-adjacent pairs
 (`coil-attention-cyclic-memory-and-recurrence-contracts` /
@@ -801,7 +951,7 @@ and defines the P7.1a work items:
 1. **Template-block centralization.** 1,364 distinct verbatim 12-grams appear
    in eight or more chapters; the widest blocks (the per-chapter disposition
    tables and the "prospectively frozen 3,745-atom repository audit" scaffold)
-   repeat verbatim in all 55 chapters. State the invariant methodology once in
+   repeat verbatim in all 55 pre-tranche chapters. State the invariant methodology once in
    a single front-matter/methodology surface, keep only chapter-specific rows
    in per-chapter tables, and let validators — not repeated prose — carry the
    invariant guarantees.
@@ -813,14 +963,15 @@ and defines the P7.1a work items:
    `intent-to-execution-contracts` open with retired-chapter bookkeeping
    ("archived under `archive/retired_chapters/`") before their subject. Move
    merge lineage to a chapter-end provenance note in every affected chapter.
-4. **Unowned failure-mode insertions (coverage, not new chapters).**
+4. **Boundary coverage independent of chapter admission.**
    `epistemic security` and `gradual disempowerment` currently appear in zero
    chapters. Add a named epistemic-security/persuasion-defense section to
    `scalable-oversight-and-adversarial-ai-control` (or
    `adversarial-evaluation-sandbagging-and-training-time-deception`) and a
    named gradual-disempowerment section to
    `failure-modes-of-ungoverned-intelligence`, each with sources, atoms, and
-   explicit non-claims.
+   explicit non-claims. The persuasion sections remain required whether the
+   end-to-end Human–AI Communication candidate is admitted or rejected.
 5. **Thesis-chapter depth-leveling.** The two thesis-bearing chapters
    (`asi-is-a-stack-not-a-model`, `the-efficient-asi-hypothesis`) and
    `failure-modes-of-ungoverned-intelligence` are among the six shortest
@@ -829,14 +980,19 @@ and defines the P7.1a work items:
 
 ### P7.2 — Structural-tranche reader integration
 
-After each P6.3 candidate passes manifest admission, integrate it as a real
-reader chapter rather than an appendix-shaped registry. Each insertion must
-update the opening map, chapter-role classification, adjacent handoffs,
-overview figure, glossary, claim/evidence surfaces, source appendix, and final
-synthesis. Re-run the 59-chapter overlap and reader-flow audit only after the
-full tranche is admitted or terminally rejected. The four additions may not
-restore boilerplate removed by P7.1a or present source-derived architecture as
-local evidence.
+Complete each P6.3 manifest entry as a real reader chapter rather than an
+appendix-shaped registry. Each insertion must update the opening map,
+chapter-role classification, adjacent handoffs, overview figure, glossary,
+claim/evidence surfaces, source appendix, and final synthesis. Apply the same
+integration contract independently to every P6.4 candidate that later passes
+manifest admission. Re-run overlap, ownership, source-crosswalk, and reader-
+flow audits after the first tranche reaches a terminal disposition and after
+each coherent second-tranche insertion; the final chapter count is whatever
+the gates earn, not a predetermined 72. If at least three meso-to-societal
+candidates pass, this lane must also decide whether a dedicated Organizations,
+Institutions, and Societal Transition part improves the reader spine. No
+addition may restore boilerplate
+removed by P7.1a or present source-derived architecture as local evidence.
 
 “Ready, not published” is an honest terminal public-state disposition when
 external authority is absent; it is not a reason to block evidence work. At
@@ -934,9 +1090,10 @@ is not a debugging interface.
    evaluator sensitivity, false-negative controls, alternative substrates,
    governed update/unlearning, Deterministic Capability Compilation, and the
    Platonic World Model current without allowing prose to inherit evidence.
-   Execute the source-noted four-chapter structural-completeness tranche under
-   exclusive-owner, competence, and non-displacement gates; roadmap admission
-   alone changes neither the 55-chapter manifest nor support.
+   Finish the four manifest-admitted first-tranche chapters, then adjudicate
+   the thirteen research-admitted second-tranche candidates under exclusive-owner,
+   competence, reader-value, safety, and non-displacement gates. Manifest or
+   roadmap admission alone changes no support.
 7. **Narrative and reader quality (`P7`).** Preserve the published
    `reader-2026-07-18` receipts, close only compatibility claims that are
    actually tested, execute P7.1a now under a meaning-preservation audit, and
@@ -968,12 +1125,12 @@ lies.
 | Milestone | State | Completion condition |
 |---|---|---|
 | M0 — Truth and identity control | in progress | Identity is complete and clean pushed/build/deploy checkpoint `6eb63a7007` is attested; close only after this roadmap revision and every later evidence checkpoint receive their own clean commit-bound custody and public-state reconciliation. |
-| M1 — Negative-result rehabilitation | completed | All 90 accepted negative/no-change transitions are classified (1 N0, 15 N1, 74 N2, zero N3–N5), and 75 current surfaces including all 55 chapters preserve the resulting ceilings. |
+| M1 — Negative-result rehabilitation | completed | All 90 accepted negative/no-change transitions are classified (1 N0, 15 N1, 74 N2, zero N3–N5), and the frozen 75-surface snapshot including the then-live 55 chapters preserves the resulting ceilings. |
 | M2 — Competent natural empirical result | in progress | A high-value natural, non-authored campaign passes every competence gate and ends with a bounded positive, negative, or inconclusive disposition. |
 | M3 — Reproduction and transfer | pending | Any broadened result has independent reproduction and two prospectively selected materially different transfer settings. |
 | M4 — Semantic formal depth | in progress | Six frozen clusters with 24 exact modules are machine-enumerated; close only after each receives an adequate/merge/reclassify/remove disposition with a meaningful model, countermodels, consumers, and honest inference ceiling. |
 | M5 — Effect-complete reference | pending | Multi-process authority-to-effect, rollback/residual, full-state, and deletion behavior passes adversarial and recovery tests. |
-| M6 — Renewal and structural completeness | in progress | Dated primary-source, comparator, evaluator, and false-negative instrument renewal is current and mapped to claims; all four structural candidates are either admitted with complete packets, evidence lanes, reader integration, and validation or terminally returned to named existing owners. |
+| M6 — Renewal and structural completeness | in progress | Dated primary-source, comparator, evaluator, and false-negative instrument renewal is current and mapped to claims; all four first-tranche manifest entries and all thirteen second-tranche research candidates are either completed with honest packets, claim-commensurate evidence lanes, reader integration, and validation or terminally returned to named existing owners. |
 | M7 — Reader/publication disposition | in progress | PDF, EPUB, and DOCX are published with exact receipts and verified public redownloads. Close only after compatibility residuals are terminally accepted or cleared, all public surfaces remain synchronized, and the final main/Pages attestation succeeds. |
 | M8 — Successor continuity | pending | Every open item has a terminal disposition and the next exact authority is active. |
 
@@ -988,6 +1145,6 @@ scope, semantic rather than count-based formal depth, independent transfer for
 broad claims, effect-complete implementation boundaries, current sources and
 instruments, non-overlapping Q1/Q2 denominators, a meaning-preserving
 reader-spine synthesis around the shared flagship case, terminal disposition
-of the four-chapter structural-completeness tranche, exact `main`
-attestation, terminal reader/publication dispositions, and uninterrupted
-successor ownership.
+of both bounded structural-completeness tranches without treating the 72-entry
+upper bound as a target, exact `main` attestation, terminal reader/publication
+dispositions, and uninterrupted successor ownership.

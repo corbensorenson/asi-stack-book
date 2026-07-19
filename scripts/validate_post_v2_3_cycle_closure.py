@@ -24,6 +24,9 @@ ACTIVE_SUCCESSOR_STATUS = "roadmap_records/post_v2_3_claim_proof_and_sota_challe
 ACTIVE_CURRENT = "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
 ACTIVE_CURRENT_STATUS = "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json"
 ACTIVE_MARKER = "Status: **active canonical successor**"
+HISTORICAL_MUTABLE_ARTIFACT_DIGESTS = {
+    "docs/non_core_evidence_ledger.md": "62a9f1258fae8b12c61df6d955e71664d616445cb5efc24e669ffb8c4c4ad578",
+}
 
 
 def read_json(path: str) -> dict:
@@ -50,6 +53,7 @@ def snapshot() -> dict:
         "successor_status": read_json(SUCCESSOR_STATUS),
         "active_successor_status": read_json(ACTIVE_SUCCESSOR_STATUS),
         "active_current_status": read_json(ACTIVE_CURRENT_STATUS),
+        "structure": read_json("book_structure.json"),
         "vectors": read_json("evidence_quality/core_claim_vectors.json"),
         "public_surfaces": {
             path: read_text(path)
@@ -66,6 +70,15 @@ def snapshot() -> dict:
 def errors(data: dict) -> list[str]:
     out: list[str] = []
     status = data["status"]
+    chapter_rows = [
+        chapter
+        for part in data["structure"].get("parts", [])
+        for chapter in part.get("chapters", [])
+    ]
+    chapter_ids = {chapter.get("id") for chapter in chapter_rows}
+    live_chapter_count = len(chapter_rows)
+    if len(chapter_ids) != live_chapter_count:
+        out.append("live manifest contains duplicate chapter identifiers")
     if status.get("status") != "completed":
         out.append("roadmap machine state is not completed")
     if [row.get("id") for row in status.get("priorities", [])] != [f"P{i}" for i in range(6)] or any(row.get("state") != "completed" for row in status.get("priorities", [])):
@@ -98,8 +111,15 @@ def errors(data: dict) -> list[str]:
     if [row.get("disposition") for row in campaign.get("dispositions", [])] != ["no_change", "no_change"]:
         out.append("campaign no-change dispositions drifted")
 
-    vectors = data["vectors"].get("vectors", [])
-    if len(vectors) != 55 or any(row.get("summary_support_state") != "argument" for row in vectors):
+    vectors_obj = data["vectors"]
+    vectors = vectors_obj.get("vectors", [])
+    vector_summary = vectors_obj.get("summary", {})
+    if (
+        len(vectors) != live_chapter_count
+        or vector_summary.get("vector_count") != live_chapter_count
+        or vector_summary.get("summary_support_states") != {"argument": live_chapter_count}
+        or any(row.get("summary_support_state") != "argument" for row in vectors)
+    ):
         out.append("chapter-core argument boundary drifted")
 
     closure = data["no_release"]
@@ -111,7 +131,12 @@ def errors(data: dict) -> list[str]:
         out.append("no-release record invents a publication effect")
     for row in closure.get("closure_artifacts", []):
         path = row.get("path", "")
-        if not (ROOT / path).is_file() or row.get("sha256") != sha(path):
+        expected_historical_digest = HISTORICAL_MUTABLE_ARTIFACT_DIGESTS.get(path)
+        if not (ROOT / path).is_file():
+            out.append(f"closure artifact is absent: {path}")
+        elif expected_historical_digest is not None and row.get("sha256") != expected_historical_digest:
+            out.append(f"historical mutable-artifact digest drifted: {path}")
+        elif expected_historical_digest is None and row.get("sha256") != sha(path):
             out.append(f"closure artifact digest mismatch: {path}")
 
     successor = data["successor_status"]
@@ -122,19 +147,34 @@ def errors(data: dict) -> list[str]:
         out.append("claim-proof/SOTA successor is not preserved as completed history")
     if active_successor.get("activation_baseline", {}).get("active_chapter_count") != 54:
         out.append("claim-proof/SOTA successor lost the frozen 54-chapter closure baseline")
-    if active_successor.get("structural_expansion_contract", {}).get("live_chapter_count") != 55:
-        out.append("claim-proof/SOTA successor lost the authorized 55th live chapter")
+    historical_expansion = active_successor.get("structural_expansion_contract", {})
+    if historical_expansion.get("live_chapter_count") != 55 or historical_expansion.get("support_state_effect") != "none":
+        out.append("claim-proof/SOTA successor lost or changed the historical authorized 55th chapter")
     active_current = data["active_current_status"]
     if active_current.get("status") != "active" or active_current.get("roadmap_path") != ACTIVE_CURRENT:
         out.append("current evidence-competence successor machine state is absent")
+    activation_truth = active_current.get("activation_truth", {})
+    structural_tranche = active_current.get("quality_uplift_program", {}).get("structural_completeness_tranche", {})
+    if (
+        activation_truth.get("live_working_chapter_count") != live_chapter_count
+        or activation_truth.get("chapter_core_argument_count") != live_chapter_count
+        or activation_truth.get("chapter_core_promotion_count") != 0
+        or structural_tranche.get("current_manifest_chapter_count") != live_chapter_count
+    ):
+        out.append("live manifest/core-claim identity disagrees with current active authority")
 
     for phrase in ["P0–P5", "M0–M9", NO_RELEASE, SUCCESSOR, SUCCESSOR_STATUS, "Successor activated: 2026-07-13", "All 54 chapter-core claims remain at `argument`"]:
         if phrase not in data["declaration"]:
             out.append(f"completion declaration missing: {phrase}")
+    live_claim_identity = f"{live_chapter_count}/{live_chapter_count} chapter-core claims at `argument`"
+    live_claim_sentence = f"All {live_chapter_count} live chapter-core claims remain at `argument`"
     for path, text in data["public_surfaces"].items():
         for phrase in [ACTIVE_SUCCESSOR, ACTIVE_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, "v2.3.0"]:
             if phrase not in text:
                 out.append(f"{path} missing terminal public truth: {phrase}")
+        live_phrase = live_claim_sentence if path == "docs/publication_readiness.md" else live_claim_identity
+        if live_phrase not in text:
+            out.append(f"{path} missing current live claim identity: {live_phrase}")
     return out
 
 
@@ -148,12 +188,19 @@ def main() -> None:
     reasoning_laundering = copy.deepcopy(data); reasoning_laundering["campaign"]["protocol_integrity"]["parseable_structured_outputs"] = 36; mutations.append(("reasoning laundering", reasoning_laundering))
     support = copy.deepcopy(data); support["vectors"]["vectors"][0]["summary_support_state"] = "prototype-backed"; mutations.append(("support promotion", support))
     reader = copy.deepcopy(data); reader["reader"]["artifact"]["publication_state"] = "publicly_deployed"; mutations.append(("reader deployment laundering", reader))
+    manifest = copy.deepcopy(data); manifest["structure"]["parts"][0]["chapters"].append(copy.deepcopy(manifest["structure"]["parts"][0]["chapters"][0])); mutations.append(("live manifest drift", manifest))
+    authority = copy.deepcopy(data); authority["active_current_status"]["activation_truth"]["chapter_core_promotion_count"] = 1; mutations.append(("current authority promotion", authority))
+    digest = copy.deepcopy(data); next(row for row in digest["no_release"]["closure_artifacts"] if row.get("path") == "docs/non_core_evidence_ledger.md")["sha256"] = "0" * 64; mutations.append(("historical ledger digest drift", digest))
     for label, candidate in mutations:
         if not errors(candidate):
             failures.append(f"negative mutation accepted: {label}")
     if failures:
         raise SystemExit("Post-v2.3 cycle closure failed:\n - " + "\n - ".join(failures))
-    print("Post-v2.3 cycle closure passed: P0-P5 and M0-M9 remain complete with the exact evidence-competence successor active, exact local 54-chapter reader and frozen baseline, 21 candidate and 2 campaign dispositions, v2.3.0 still latest public, 55 live argument cores, and 6 rejecting mutations.")
+    live_chapter_count = sum(
+        len(part.get("chapters", []))
+        for part in data["structure"].get("parts", [])
+    )
+    print(f"Post-v2.3 cycle closure passed: P0-P5 and M0-M9 remain complete with the exact evidence-competence successor active, exact local 54-chapter reader and frozen baseline, historical authorized 55th-chapter expansion, 21 candidate and 2 campaign dispositions, v2.3.0 still latest public, {live_chapter_count} live argument cores, and 9 rejecting mutations.")
 
 
 if __name__ == "__main__":

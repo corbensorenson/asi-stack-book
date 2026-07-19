@@ -12,8 +12,8 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 298 |
-| Lean modules scanned | 98 |
+| Proof targets in manifest | 306 |
+| Lean modules scanned | 102 |
 | Theorem declarations classified | 1307 |
 | Direct/projection-style theorem declarations | 230 |
 | Derived/decomposed theorem declarations | 901 |
@@ -92,7 +92,10 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/FastGenerationRefinement.lean` | fast-generation-architectures | 5 | 17 | 12 | 3 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 1 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/GovernedOperations.lean` | governed-operations-incident-command-and-graceful-degradation | 2 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | governed-world-models-and-reality-grounding | 2 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | personal-compute-hives-and-federated-edge-intelligence | 6 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | human-factors-and-meaningful-control-in-oversight | 2 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | integrated-reference-architecture | 3 | 23 | 0 | 13 | 10 | manual review |
 | `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 1 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | intent-to-execution-contracts | 2 | 12 | 0 | 6 | 6 | manual review |
@@ -150,6 +153,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | verification-bandwidth-and-context-adequacy | 4 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | unmapped | 0 | 11 | 0 | 11 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | virtual-context-abi | 3 | 17 | 0 | 3 | 14 | manual review |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | white-box-evidence-interpretability-and-activation-governance | 2 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 
 ## Theorem Classification
 

@@ -884,6 +884,99 @@ Lean proof targets:
 | `lean:intent.resolution.route_envelope` | `AsiStackProofs.IntentContracts` | Structured intent-resolution and intent-admission records route missing text, prohibited actions, ambiguity, conflicts, high-impact authority gaps, hidden overrides, preservation failures, re-contract triggers, and missing non-claim boundaries to rejection, clarification, repair, review, or re-contracting before compilation/admission. | implemented |
 | `lean:intent.intake.probe_fixture_bridge` | `AsiStackProofs.IntentResolutionRefinement` | The bounded intake, re-contract, and plan-fixture surfaces are digest-bound to an independent consumer with exact counts and thirty rejecting mutations rather than literal summary theorems. | implemented |
 
+### Human Factors and Meaningful Control in Oversight
+
+Stable ID: `human-factors-and-meaningful-control-in-oversight`
+
+Chapter job: Define when a human can actually supervise consequential AI work,
+rather than merely appear in an approval loop that withholds the knowledge,
+time, authority, practice, or intervention path needed for control.
+
+Core claim: Meaningful oversight is a resource-bounded control contract: the system must preserve an identified human controller's knowledge, authority, time, observability, and effective intervention path, and must degrade or abstain when that control envelope cannot be maintained.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `ext_humans_automation_1997`, `ext_ironies_automation_1983`, `ext_meaningful_human_control_actionable_2022` | Read first for human-centered automation, supervisory-control failure, and meaningful-control conditions; preserve their domain and normative limits. |
+| Supporting | `viea`, `talos`, `theseus_operator_os`, `scf` | Use for command, operator, escalation, and governance interfaces; project design does not establish human-factors performance. |
+| Variants | `ext_levels_automation_2000`, `ext_complacency_bias_automation_2010`, `ext_agentic_oversight_practice_2026` | Use for multidimensional allocation, automation-bias evidence, and current agentic practice; do not infer universal thresholds. |
+
+Draft arc:
+
+- Problem: a formally authorized action can remain practically uncontrollable
+  under workload, mode confusion, automation bias, skill decay, delayed effects,
+  weak observability, or intervention latency.
+- Insufficiency: human-in-the-loop labels, fixed autonomy levels, dashboards,
+  alerts, approval clicks, explanations, and after-the-fact blame can all retain
+  responsibility while removing effective control.
+- Mechanism: compile a versioned oversight contract naming controller, task,
+  authority, competence, observability, intervention points, deadlines, safe
+  defaults, contest rights, escalation, expiry, and recovery.
+- Mechanism: maintain an oversight budget over attention, comprehension time,
+  concurrent load, practice recency, action latency, uncertainty, consequence,
+  and time to irreversibility.
+- Mechanism: require task-relevant comprehension for high-impact transitions;
+  show mode, authority, provenance, uncertainty, consequences, and remaining
+  intervention time rather than raw telemetry alone.
+- Mechanism: route overload, stale qualification, lost observability, ambiguity,
+  or ineffective override to slowdown, reduced autonomy, safe hold, escalation,
+  or abstention before the action becomes irreversible.
+- Mechanism: rehearse rare interventions, test trust calibration against
+  successes and failures, and retain opportunity, observation, decision,
+  timing, response, recovery, and residual records without blame automation.
+- Interfaces: receives an accepted intent-and-authority boundary from Human
+  Intent; Constitutional Alignment and Policy Compilation may narrow it;
+  Runtime, Operations, Evidence, and Accountability consume exact oversight
+  records without converting them into release authority.
+
+Primary invariants:
+
+- Consequential action has an identified controller with current authority,
+  task-relevant information, and an exercised intervention path.
+- Required comprehension and intervention time fit inside the reversible window.
+- Loss of observability, competence, or intervention capacity cannot silently
+  preserve autonomy; degradation keeps a reachable safe state.
+- Responsibility attributed to a person never exceeds recorded authority and
+  effective control, and constant perfect vigilance is never a safety premise.
+- A valid finite record does not prove operator cognition, consent, control
+  efficacy, task safety, organizational legitimacy, or deployed performance.
+
+Failure modes to cover:
+
+- Automation bias; complacency; out-of-the-loop decay; mode confusion; alarm
+  flooding; attention tunneling; explanation overload; rubber-stamp approval;
+  authority without control; control without knowledge; late intervention;
+  stale training; unsafe handoff; responsibility laundering; and blame logging.
+
+Draft deliverables:
+
+- A control-envelope schema, resource budget, authority/mode display, active
+  comprehension probe, exercised override, safe-hold route, intervention
+  receipt, responsibility boundary, and simulator scenarios for overload,
+  missed alarms, mode confusion, stale practice, and late intervention.
+- Exact source-note and Appendix C mappings for all ten assigned sources, with
+  external results retained as comparators and local projects as architecture
+  lineage only. Support remains `argument`.
+- Planned Codex test: vary workload, explanation burden, intervention time,
+  authority, observability, and reversible window; reject controls that retain
+  autonomy after the control envelope fails.
+- Planned empirical campaign: representative human participants, natural and
+  adversarial tasks, strong interface/allocation baselines, preregistered
+  thresholds, complete denominators, ethical stopping rules, and joint measures
+  of detection, comprehension, correct and false intervention, useful
+  throughput, latency, workload, repair, and residual harm.
+- Formal boundary: finite routes may prove rejection/degradation and bounded
+  responsibility for the modeled fields only; they cannot prove actual human
+  cognition, calibration, intervention efficacy, or safety.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:oversight.control_envelope.blocks_action` | `AsiStackProofs.HumanFactorsOversight` | In the finite model, any consequential transition lacking authority, observability, comprehension, timely intervention, or a reachable safe state is rejected or degraded. | planned |
+| `lean:oversight.responsibility_requires_control` | `AsiStackProofs.HumanFactorsOversight` | The bounded accountability assignment never attributes operational responsibility beyond the authority and effective control recorded in the oversight contract. | planned |
+
 ### Constitutional Alignment: Agency, Dignity, and Corrigibility
 
 Stable ID: `constitutional-alignment-substrate`
@@ -1979,6 +2072,96 @@ Lean proof targets:
 | `lean:planforge.dag.failure_blocks_promotion` | `AsiStackProofs.PlanForge` | A node whose quality predicate fails must escalate or emit a residual. | implemented |
 
 Proof boundary: the seven public targets group thirty-three theorem declarations. Several operational and fixture theorems restate modeled assumptions, while the route theorems prove consequences over finite Boolean or enumerated branches. Index ordering is not a general proof of DAG acyclicity or dependency truth. The declarations are useful activation and regression scaffolds, but typed graph semantics, countermodels, executable planner producers, natural outcomes, causal superiority, runtime refinement, and transfer remain open.
+
+### Governed World Models and Reality Grounding
+
+Stable ID: `governed-world-models-and-reality-grounding`
+
+Chapter job: Govern learned or simulated futures as fallible prediction
+services so Planning can use imagination without treating it as observation,
+causal truth, permission, or evidence that an action is safe.
+
+Core claim: A world model should be governed as a fallible, versioned prediction service whose state, horizon, uncertainty, provenance, and calibration bound which imagined consequences may influence planning and action; observation must repeatedly reconcile imagination with reality.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `ext_world_models_2018`, `ext_dreamer_v3_2025`, `ext_v_jepa_2_2025` | Read for learned dynamics, latent imagination, predictive representation, and bounded empirical results; do not generalize toy or reported tasks to open-world causal fidelity. |
+| Supporting | `platonic_world_model`, `simulation_scaling`, `planforge` | Use for representation hypotheses, simulation budgets, planning interfaces, and residual-aware replanning; retain proposal status. |
+| Variants | `deterministic_capability_compilation`, `qcsa_whitepaper`, `cognitive_compilation` | Use for versioned admission, heterogeneous substrates, and typed artifacts; none establishes prediction quality. |
+
+Draft arc:
+
+- Problem: planners can optimize an attractive hallucinated future when partial
+  observability, compounding error, distribution shift, causal confusion, or
+  model exploitation is hidden behind a point prediction.
+- Insufficiency: an accurate open-loop score, large simulator, ensemble, latent
+  rollout, or compelling visualization does not establish calibrated
+  interventions, long-horizon validity, grounding, or safe action selection.
+- Mechanism: emit versioned state-transition hypotheses with observation and
+  action semantics, horizon, provenance, uncertainty, support domain,
+  environment assumptions, model lineage, and named consumers.
+- Mechanism: separate observation encoding, latent dynamics, decoding,
+  reward/value prediction, policy use, and evaluator dependencies so each can
+  be challenged and invalidated independently.
+- Mechanism: calibrate uncertainty by horizon, state region, intervention type,
+  consequence, shift condition, and abstention regime; preserve disagreement
+  and residuals rather than averaging them away.
+- Mechanism: use receding-horizon observation updates, competing models,
+  held-out interventions, exploitation probes, and support-aware action gates;
+  material reality residuals trigger re-estimation, fallback, review, replanning,
+  or safe hold.
+- Interfaces: Planning supplies a bounded question and authority ceiling;
+  Perception supplies observations; Cognitive Compilation receives typed
+  hypotheses; Runtime and Operations enforce gates and reconcile actual effects;
+  Evidence and Readiness remain the only support and release owners.
+
+Primary invariants:
+
+- Every prediction names model version, state/action semantics, horizon,
+  support domain, uncertainty, assumptions, and observation cutoff.
+- Observation may defeat imagination; low-support, stale, materially
+  disagreeing, or uncalibrated rollouts cannot authorize consequential action.
+- Model updates cannot widen execution authority, and uncertainty cannot be
+  collapsed at a governance boundary without a retained loss record.
+- Counterfactuals compare compatible states and interventions; a reachable safe
+  action remains available when confidence collapses.
+- Finite record validity does not prove causal correctness, calibration,
+  grounding, planner usefulness, real-world transfer, or safety.
+
+Failure modes to cover:
+
+- Latent hallucination; rollout compounding; observation aliasing; causal
+  confusion; shift; reward leakage; model exploitation; miscalibration;
+  representation collapse; stale model reuse; simulator overfitting;
+  unsupported horizon; observation overwrite; and reality-gap laundering.
+
+Draft deliverables:
+
+- A prediction packet, model registry, calibration ledger, disagreement route,
+  counterfactual receipt, observation-residual record, authority gate, and
+  safe-hold/replanning handoff.
+- Exact source-note and Appendix C mappings for all nine sources; reported
+  empirical papers remain bounded comparators and local sources remain design
+  lineage. Support remains `argument`.
+- Planned Codex test: a partially observed task with independently trained
+  dynamics baselines, horizon-conditional calibration, receding observations,
+  disagreement routing, exploitation attacks, shift tests, and complete costs.
+- Planned argument-exit campaign: held-out causal interventions, reactive,
+  model-free, strong single-model, ensemble, oracle-ablation, and human
+  baselines; sealed evaluation; calibration/selective-risk metrics; causal
+  component ablations; independent reproduction; and transfer to a second
+  environment without worse safety, latency, or governance cost.
+- Formal boundary: finite admission and residual routes do not prove that a
+  learned state represents reality or that any proposed intervention works.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:world_model.unsupported_rollout_no_authority` | `AsiStackProofs.GovernedWorldModels` | In the finite admission model, an unsupported, stale, materially disagreeing, or uncalibrated rollout cannot authorize a consequential action. | planned |
+| `lean:world_model.reality_residual_forces_route` | `AsiStackProofs.GovernedWorldModels` | A material observation residual forces bounded re-estimation, fallback, review, or safe hold before further model-based execution. | planned |
 
 ### Cognitive Compilation and Semantic IR
 
@@ -4282,7 +4465,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 298 proof targets, 98 Lean modules, 1307 theorem declarations, 901 derived/decomposed, 230 direct/projection, 176 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 306 proof targets, 102 Lean modules, 1307 theorem declarations, 901 derived/decomposed, 230 direct/projection, 176 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -4463,6 +4646,95 @@ Lean proof targets:
 | `lean:benchmarks.ratchet.operational_invariant` | `AsiStackProofs.BenchmarkRatchets` | A capability promotion requires benchmark evidence and preserved regression records. | implemented |
 | `lean:benchmarks.ratchet.failure_blocks_promotion` | `AsiStackProofs.BenchmarkRatchets` | A saturated benchmark cannot be the sole basis for higher readiness promotion. | implemented |
 | `lean:benchmarks.ratchet.fixture_bridge` | `AsiStackProofs.BenchmarkRatchets` | The benchmark anti-Goodhart fixture bridge mirrors 2 valid fixtures, 5 expected-invalid controls, promotion-ready, regression-floor, missing-checks, blocked-ratchet policy, reward-as-truth, saturated-promotion, release-approval, no-support-promotion, and non-claim-boundary facts. | implemented |
+
+### White-Box Evidence, Interpretability, and Activation Governance
+
+Stable ID: `white-box-evidence-interpretability-and-activation-governance`
+
+Chapter job: Turn observations and interventions on internal model state into
+typed, challengeable evidence without letting attractive explanations become
+complete mechanistic understanding, behavioral truth, or action authority.
+
+Core claim: Internal-state observations should enter governance only as typed evidence artifacts with lineage, method assumptions, replication status, causal interventions, stability checks, coverage limits, and explicit non-authority; white-box evidence complements but does not replace behavioral and operational evidence.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `ext_transformer_circuits_2021`, `ext_monosemanticity_2023`, `ext_scaling_sparse_autoencoders_2024`, `ext_circuit_tracing_2025` | Read for mechanistic frameworks, sparse features, scaling, interventions, and stated limits; do not infer completeness or cross-model transfer. |
+| Supporting | `deterministic_capability_compilation`, `kernel_english_residual_compiler`, `qcsa_whitepaper`, `platonic_world_model` | Use for evidence contracts, residual accounting, substrate plurality, and representation hypotheses; local sources provide no interpretability result. |
+
+Draft arc:
+
+- Problem: behavior tests reveal outputs but not necessarily mechanisms, while
+  probes, labels, maps, and circuit diagrams can generate stable-looking stories
+  that depend on prompts, checkpoints, dictionaries, researchers, or methods.
+- Insufficiency: association, decodability, saliency, reconstruction, steering,
+  or one successful ablation does not establish causal necessity, sufficiency,
+  completeness, uniqueness, governance relevance, or safety.
+- Mechanism: bind each packet to model/checkpoint/tokenizer hashes, dataset and
+  prompt slices, capture points, method and implementation versions, feature or
+  circuit identities, assumptions, evaluators, confidence, expiry, and consumer.
+- Mechanism: keep observation, decoding, prediction, causal necessity, causal
+  sufficiency, mediation, completeness, and behavioral consequence as distinct
+  evidence states with explicit falsifiers.
+- Mechanism: use held-out prompts, seeds, checkpoints, transformations,
+  shuffled/placebo controls, ablation, patching, steering, counterfactual
+  replacement, and method-independent reproduction.
+- Mechanism: measure reconstruction loss, dead and split/merged features,
+  superposition, missed pathways, side effects, unexplained residual, method
+  disagreement, and checkpoint drift; labels retain examples and counterexamples.
+- Interfaces: model and activation registries provide identity and access;
+  Evaluation and Safety Cases may consume scoped evidence; Capability Thresholds
+  and Readiness retain decision authority; evidence may trigger scrutiny or
+  restriction but never widen capability, deployment, or release authority.
+
+Primary invariants:
+
+- Every internal claim names exact model, method, data, intervention, scope,
+  uncertainty, consumer, and invalidation conditions.
+- Association is never represented as causal sufficiency; unexplained residual
+  and method disagreement remain visible.
+- Consequential claims require negative controls, held-out replication, and a
+  material-change rule; stale packets are invalid after model/tokenizer changes.
+- Interpretability evidence can preserve, restrict, escalate, or reject but
+  cannot grant action, support, readiness, or release authority.
+- Packet validity cannot prove a complete or unique mechanism, intent,
+  faithfulness, behavioral safety, or cross-architecture transfer.
+
+Failure modes to cover:
+
+- Feature hallucination; confirmation-biased labels; probe leakage;
+  polysemantic collapse; splitting/merging; causal overclaim; circuit omission;
+  method monoculture; checkpoint drift; cherry-picking; unstable explanations;
+  residual suppression; interpretability theater; and authority escalation.
+
+Draft deliverables:
+
+- A white-box evidence packet, model/activation and feature/circuit registries,
+  intervention receipt, replication/stability matrix, unexplained-residual
+  ledger, alternative-hypothesis record, and restricted governance handoff.
+- Exact source-note and Appendix C mappings for all eight sources, preserving
+  architecture, scale, method, and completeness limits. Support remains
+  `argument`; no local independent-method reproduction has run.
+- Planned Codex tests: interpretation stability and shuffled-control suite;
+  causal intervention benchmark comparing probe, ablation, patching, steering,
+  and counterfactual claims; and mutations proving favorable, stale, forged, or
+  incomplete packets cannot widen authority.
+- Planned argument-exit campaign: one open model and preregistered behavior,
+  two independently implemented method families, blinded labeling, held-out
+  transformations/checkpoints, causal interventions, behavioral prediction,
+  failure denominators, cost, independent reproduction, and a second model
+  family. No completeness metric is assumed in advance.
+- Formal boundary: Lean routes can constrain packet admission and policy effects
+  only; they do not prove the packet's scientific interpretation is true.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:white_box.evidence_never_grants_authority` | `AsiStackProofs.WhiteBoxEvidence` | In the finite policy model, no interpretability evidence packet can widen execution or release authority; it may only preserve, restrict, escalate, or reject. | planned |
+| `lean:white_box.invalid_packet_rejected` | `AsiStackProofs.WhiteBoxEvidence` | Packets with stale lineage, missing method assumptions, absent negative controls, or unsupported causal state are rejected before governance use. | planned |
 
 ### Capability Thresholds and Deployment Commitments
 
@@ -4728,6 +5000,102 @@ Lean proof targets:
 | `lean:safety_cases.missing_independent_review.requires_review` | `AsiStackProofs.SafetyCaseRefinement` | Missing competence records, conflict disclosure, or independent review blocks reviewed status. | implemented |
 | `lean:safety_cases.unresolved_defeater.blocks_affected_release` | `AsiStackProofs.SafetyCaseRefinement` | An unresolved defeater blocks progression, while later invalidation requires cause, affected paths, and complete descendant invalidation before returning a readiness-bound case to challenge. | implemented |
 | `lean:safety_cases.case_status.cannot_authorize_release` | `AsiStackProofs.SafetyCaseRefinement` | Case status cannot assign support or an external effect, and missing separation between case status and decision authority rejects the readiness handoff. | implemented |
+
+### Governed Operations, Incident Command, and Graceful Degradation
+
+Stable ID: `governed-operations-incident-command-and-graceful-degradation`
+
+Chapter job: Own the post-release control loop from detection through incident
+command, containment, effect-complete rollback or compensation, degraded
+service, recovery evidence, and retained learning.
+
+Core claim: Governed operation is a closed incident lifecycle that binds detection, classification, command authority, containment, effect-complete rollback, graceful degradation, recovery evidence, and learning to the exact deployed system and its dependency graph.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `ext_nist_ai_rmf_1_0_2023`, `ext_nist_deployed_ai_monitoring_2026`, `ext_nist_incident_response_2025` | Read for lifecycle risk management, deployed monitoring, preparation, detection, response, recovery, and improvement; AI-specific transfer remains to be tested. |
+| Supporting | `scf`, `theseus_operator_os`, `viea`, `talos` | Use for roles, command, operator controls, escalation, and receipts; design lineage does not prove incident performance. |
+| Variants | `deterministic_capability_compilation`, `platonic_world_model` | Use for release identity, revocation, state lineage, and model/reality residuals; neither reverses external effects. |
+
+Draft arc:
+
+- Problem: a pre-deployment case can be overtaken by drift, dependency failure,
+  operator overload, ambiguous signals, correlated faults, credential leakage,
+  persistent state, and recovery actions that create new hazards.
+- Insufficiency: monitors may be blind, the suspect component may control its
+  kill path, backups may share failures, rollback may restore code but not data,
+  optimizer, RNG, caches, memory, credentials, replicas, descendants, or
+  external effects, and emergency authority may become permanent.
+- Mechanism: maintain an exact deployment/dependency manifest for models,
+  policies, prompts, tools, data, identities, state, caches, dependencies,
+  owners, rollback/compensation paths, and incident authority.
+- Mechanism: combine behavioral, safety, security, dependency, human, and
+  service signals into versioned incident hypotheses with detector provenance,
+  uncertainty, consequence, reversibility, scope, propagation risk, and residuals.
+- Mechanism: bind incident class to commander, technical/safety leads,
+  communication duties, action limits, contestability, escalation, and expiry;
+  containment must not require cooperation from the suspect component.
+- Mechanism: select least-disruptive effective rate limits, tool/credential
+  revocation, route restriction, isolation, safe hold, or shutdown, then perform
+  effect-complete restoration or explicit compensation and residual ownership.
+- Mechanism: recovery uses fresh independently checked evidence, staged canary,
+  expired emergency power, reconciled descendants/effects, and a new decision;
+  incident learning updates tests and controls without rewriting history.
+- Interfaces: Safety Cases and Readiness supply obligations, Runtime supplies
+  telemetry and effect records, Human Factors supplies the operator envelope,
+  Policy Optimization and Update Governance receive bounded residuals, and
+  release authority remains separate from incident command.
+
+Primary invariants:
+
+- Every deployment has named incident authority, independent-enough detection,
+  a reachable safe state, and containment that does not depend on the suspect.
+- Emergency authority is scoped, receipted, contestable, and expires; degraded
+  mode never widens capability, data, tool, identity, or duration authority.
+- Rollback completeness covers required internal state and external effects;
+  an irreversible effect is compensated or retained as an owned residual.
+- Recovery requires fresh evidence tied to the candidate state and blocks on
+  unresolved high-consequence uncertainty or incomplete authority expiry.
+- A valid incident record or successful drill does not prove future detection,
+  complete reversal, bounded harm, resilience, safety, or support promotion.
+
+Failure modes to cover:
+
+- Silent drift; detector blindness; alert storm; ambiguous command; cooperative
+  kill switch; correlated backups; partial rollback; irreversible effect;
+  persistent credentials/cache/memory; unsafe degradation; premature recovery;
+  emergency-power persistence; hidden descendants; and postmortem theater.
+
+Draft deliverables:
+
+- A deployment manifest, telemetry/detector record, incident hypothesis and
+  command contract, containment receipt, full-state rollback/compensation
+  ledger, degraded-mode contract, recovery attestation, residual register, and
+  learning handoff.
+- Exact source-note and Appendix C mappings for all nine sources, preserving the
+  transfer boundary from general incident guidance to autonomous systems.
+  Support remains `argument`.
+- Planned Codex tests: mutate model, optimizer, scheduler, RNG, cache, memory,
+  data, credentials, replicas, descendants, backups, and external effects;
+  inject ambiguous, compound, correlated, and detector-degrading incidents;
+  compare graceful degradation with shutdown and ordinary operation.
+- Planned argument-exit campaign: fault-injected reference service, strong SRE
+  and incident-response baselines, preregistered severity and recovery rules,
+  full denominators, operator load, useful throughput, residual harm, latency,
+  governance cost, bypass, fallback, recovery, independent game-day execution,
+  and transfer. A rollback that restores code while hidden state differs fails.
+- Formal boundary: finite transition proofs can preserve/narrow authority and
+  block incomplete recovery only for enumerated state; they cannot establish
+  detector quality, effect reversibility, operational resilience, or safety.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:operations.degradation_never_widens_authority` | `AsiStackProofs.GovernedOperations` | Every finite degraded-mode transition preserves or narrows capability, data, tool, and duration authority. | planned |
+| `lean:operations.recovery_requires_complete_state` | `AsiStackProofs.GovernedOperations` | Normal-service recovery is rejected when any required internal-state component, external-effect disposition, acceptance check, or emergency-authority expiry is missing. | planned |
 
 ### Policy Optimization and Learning from Feedback
 
@@ -5519,14 +5887,22 @@ Stable ID: `open-research-agenda-and-bibliography-plan`
 
 Structural-completeness queue (2026-07-19):
 `docs/structural_completeness_chapter_research_2026_07_19.md` admits no merges
-and four manifest-gated chapter candidates—white-box evidence and activation
-governance, governed world models and reality grounding, human factors and
-meaningful oversight, and governed operations/incident command. The active
-manifest remains 55 chapters. Each candidate must pass its exclusive-owner,
-primary-source, Corben-source, chapter-packet, competent-evidence,
-formalization, reader-integration, and full-validation gates before insertion;
-failed candidates return to named existing sections and do not become thin
-chapters. The work is non-displacing relative to P2 and changes no support.
+and records four first-tranche manifest entries—white-box evidence and
+activation governance, governed world models and reality grounding, human
+factors and meaningful oversight, and governed operations/incident command.
+The working manifest now contains 59 entries, but those four chapter files,
+evidence lanes, reader integration, and final validation remain open.
+`docs/structural_completeness_gap_audit_2026_07_19.md` research-admits eight
+additional manifest-gated candidates: governed model training; perception and
+observation trust; embodied physical control; privacy and data rights;
+human–AI organizational design; multi-agent systemic dynamics; autonomous
+replication containment; and, provisionally, scientific experimental
+governance. Sixty-seven is an upper decision bound, not a target. Every
+candidate must pass its exclusive-owner, primary-source, Corben-source,
+chapter-packet, competent-evidence, formalization, reader-integration, safety,
+and full-validation gates; failures return to named existing sections and do
+not become thin chapters. The work is non-displacing relative to P2 and changes
+no support.
 
 Chapter job: The book needs an evidence-gated research backlog that admits and closes papers, local projects, missing artifacts, conflicts, proofs, experiments, reproductions, corrections, and chapter proposals without laundering activity into support.
 

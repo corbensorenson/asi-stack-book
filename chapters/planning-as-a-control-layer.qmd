@@ -678,4 +678,9 @@ results cannot be used as substitutes.
 
 ## Handoff
 
-DAG scheduling gives work an order, a route, and a budget, but scheduled nodes still need an artifact form that can be optimized, checked, repaired, and lowered to concrete outputs. Cognitive Compilation and Semantic IR supplies that compiler boundary. It turns plan obligations into semantic atoms, validators, target constraints, lowering receipts, and repair ledgers so the stack can audit what survived the translation from plan to artifact.
+DAG scheduling gives work an order, route, and budget, but it can still plan
+against a stale or self-confirming picture of the environment. Governed World Models and Reality Grounding receives plan-relevant observations, hypotheses,
+counterfactual queries, and uncertainty obligations and returns versioned
+predictive-state evidence, discrepancy, correction, and action-grounding gates.
+Only after that reality boundary is explicit does Cognitive Compilation and
+Semantic IR lower the surviving plan obligations into checkable artifact form.

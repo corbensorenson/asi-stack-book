@@ -154,6 +154,7 @@ Systems without conflicting invariants or destructive duplication.
 | `procedural-memory-and-cognitive-loop-closure` | Govern repeated verified Kernel sequences and local residuals becoming macros, dictionaries, or procedures; require negative cases, migration, drift, quarantine, rollback, and decompilation. |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | Own the KERC benchmark matrix, semantic/fidelity submetrics, interaction-amortization curve, simplest-alternative baselines, negative results, and break-even reporting. |
 | `integrated-reference-architecture` | Join immutable source, compiler, Kernel packet, residual state, core, renderer, verifier, memory/tool access, evidence, and rollback into one authority-preserving trace. |
+| `white-box-evidence-interpretability-and-activation-governance` | Treat Kernel packets, internal concepts, and residuals as scoped evidence artifacts with lineage, causal limits, negative controls, independent consumption, and no automatic authority effect. |
 
 ## Required empirical program
 

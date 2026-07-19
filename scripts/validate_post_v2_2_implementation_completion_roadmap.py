@@ -80,6 +80,7 @@ def semantic_errors(data: dict) -> list[str]:
     vectors = vectors_obj.get("vectors", []) if isinstance(vectors_obj, dict) else vectors_obj
     chapters = [chapter for part in structure.get("parts", []) for chapter in part.get("chapters", [])]
     chapter_ids = {chapter.get("id") for chapter in chapters}
+    live_chapter_count = len(chapters)
     source_rows = sources if isinstance(sources, list) else sources.get("sources", [])
 
     if status.get("status") not in {"active", "completed"}:
@@ -105,30 +106,50 @@ def semantic_errors(data: dict) -> list[str]:
     }
     if baseline != expected_baseline:
         errors.append("activation baseline drifted")
-    if len(chapters) != 55:
-        errors.append("live chapter count is not 55")
+    if len(chapter_ids) != live_chapter_count:
+        errors.append("live manifest contains duplicate chapter identifiers")
     if len(source_rows) < 280:
         errors.append("current public-safe source inventory fell below the 280-source historical activation floor")
     if data["current_successor_status"].get("activation_baseline", {}).get("public_safe_source_count") != 280:
         errors.append("current successor lost the exact historical 280-source activation baseline")
-    if not isinstance(vectors, list) or len(vectors) != 55:
-        errors.append("live core evidence-vector count is not 55")
+    if not isinstance(vectors, list) or len(vectors) != live_chapter_count:
+        errors.append("live core evidence-vector count disagrees with the manifest")
     elif any(row.get("summary_support_state") != "argument" for row in vectors):
         errors.append("roadmap activation moved a core support state")
     next_status = data["next_successor_status"]
     if next_status.get("activation_baseline", {}).get("active_chapter_count") != 54:
         errors.append("frozen 54-chapter activation lineage drifted")
-    if next_status.get("structural_expansion_contract", {}).get("live_chapter_count") != 55:
-        errors.append("authorized 55th-chapter expansion is absent")
+    historical_expansion = next_status.get("structural_expansion_contract", {})
+    if historical_expansion.get("live_chapter_count") != 55 or historical_expansion.get("support_state_effect") != "none":
+        errors.append("historical authorized 55th-chapter expansion is absent or changed support")
     if next_status.get("status") != "completed" or next_status.get("roadmap_path") != NEXT_SUCCESSOR_PATH:
         errors.append("claim-proof/SOTA successor is not preserved as completed history")
     active_current_status = data["active_current_status"]
     if active_current_status.get("status") != "active" or active_current_status.get("roadmap_path") != ACTIVE_CURRENT_PATH:
         errors.append("current evidence-competence successor machine authority is stale")
+    activation_truth = active_current_status.get("activation_truth", {})
+    structural_tranche = active_current_status.get("quality_uplift_program", {}).get("structural_completeness_tranche", {})
+    if (
+        activation_truth.get("live_working_chapter_count") != live_chapter_count
+        or activation_truth.get("chapter_core_argument_count") != live_chapter_count
+        or activation_truth.get("chapter_core_promotion_count") != 0
+        or structural_tranche.get("current_manifest_chapter_count") != live_chapter_count
+    ):
+        errors.append("current manifest/core-claim identity disagrees with the active successor authority")
+    vector_summary = vectors_obj.get("summary", {}) if isinstance(vectors_obj, dict) else {}
+    if (
+        vector_summary.get("vector_count") != live_chapter_count
+        or vector_summary.get("summary_support_states") != {"argument": live_chapter_count}
+    ):
+        errors.append("live evidence-vector summary disagrees with current argument-state authority")
 
-    qowners = {chapter.get("id") for chapter in chapters if "qcsa_whitepaper" in chapter.get("source_ids", [])}
-    if qowners != QCSA_OWNERS:
-        errors.append("QCSA chapter ownership differs from the nine existing owners")
+    qcsa_source_chapters = {chapter.get("id") for chapter in chapters if "qcsa_whitepaper" in chapter.get("source_ids", [])}
+    later_admitted_chapters = set(structural_tranche.get("first_tranche", {}).get("candidate_ids", []))
+    if (
+        not QCSA_OWNERS.issubset(qcsa_source_chapters)
+        or not (qcsa_source_chapters - QCSA_OWNERS).issubset(later_admitted_chapters)
+    ):
+        errors.append("historical QCSA owners are absent or later QCSA source routing escaped manifest-admitted chapters")
     if chapter_ids & {"qcsa", "question-compiled-semantic-addressing"}:
         errors.append("roadmap activation unexpectedly created a QCSA chapter")
 
@@ -171,8 +192,9 @@ def semantic_errors(data: dict) -> list[str]:
         if roadmap.count(f"`{lane_id}`") < 1:
             errors.append(f"roadmap does not define {lane_id}")
 
+    live_claim_identity = f"{live_chapter_count}/{live_chapter_count} chapter-core claims at `argument`"
     for name, text in [("README.md", data["readme"]), ("index.qmd", data["index"])]:
-        for phrase in [NEXT_SUCCESSOR_PATH, NEXT_SUCCESSOR_STATUS_PATH, ACTIVE_CURRENT_PATH, ACTIVE_CURRENT_STATUS_PATH, "v2.3.0", "e27661166e9105f37cb36d63b15795f80715ca24", "55/55 chapter-core claims at `argument`"]:
+        for phrase in [NEXT_SUCCESSOR_PATH, NEXT_SUCCESSOR_STATUS_PATH, ACTIVE_CURRENT_PATH, ACTIVE_CURRENT_STATUS_PATH, "v2.3.0", "e27661166e9105f37cb36d63b15795f80715ca24", live_claim_identity]:
             if phrase not in text:
                 errors.append(f"{name} missing roadmap/release truth: {phrase}")
     predecessor = data["predecessor"]
@@ -257,10 +279,14 @@ def main() -> None:
     errors.extend(negative_controls(data))
     if errors:
         raise SystemExit("Post-v2.2 implementation roadmap validation failed:\n - " + "\n - ".join(errors))
+    live_chapter_count = sum(
+        len(part.get("chapters", []))
+        for part in data["structure"].get("parts", [])
+    )
     print(
         "Post-v2.2 implementation roadmap passed: completed terminal roadmap, 6 priorities, "
         "8 milestones, 12 QCSA implementation lanes, 9 existing chapter owners, "
-        "a frozen 54-claim activation baseline plus 55 live argument-state core claims, exact evidence-competence successor active, no QCSA chapter/format effect, and 8 rejecting mutations."
+        f"a frozen 54-claim activation baseline, the historical authorized 55th-chapter expansion, and {live_chapter_count} live argument-state core claims, exact evidence-competence successor active, no QCSA chapter/format effect, and 8 rejecting mutations."
     )
 
 

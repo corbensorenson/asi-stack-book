@@ -1,0 +1,675 @@
+---
+title: "Governed World Models and Reality Grounding"
+chapter_id: "governed-world-models-and-reality-grounding"
+part_id: "planning-memory-reasoning-execution"
+status: "conceptual"
+draft_maturity: "v0.1 substantive manuscript draft"
+last_updated: "2026-07-19"
+primary_sources:
+  - "platonic_world_model"
+  - "deterministic_capability_compilation"
+  - "qcsa_whitepaper"
+  - "simulation_scaling"
+  - "cognitive_compilation"
+  - "planforge"
+  - "ext_world_models_2018"
+  - "ext_dreamer_v3_2025"
+  - "ext_v_jepa_2_2025"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No local held-out intervention benchmark yet distinguishes causal prediction from correlation."
+  - "No representative real-world transfer result establishes governance thresholds."
+  - "Plural-model benefits and costs have not been compared against strong single-model, model-free, and reactive baselines."
+  - "The two finite Lean targets and all chapter-level empirical tests remain planned; no support-state promotion is implied."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `governed-world-models-and-reality-grounding` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
+| Status | conceptual |
+| Manuscript maturity | v0.1 substantive manuscript draft |
+| Last updated | 2026-07-19 |
+| Primary source records | `platonic_world_model`, `deterministic_capability_compilation`, `qcsa_whitepaper`, `simulation_scaling`, `cognitive_compilation`, `planforge`, `ext_world_models_2018`, `ext_dreamer_v3_2025`, `ext_v_jepa_2_2025` |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source queue | primary: `ext_world_models_2018`, `ext_dreamer_v3_2025`, `ext_v_jepa_2_2025`; supporting: `platonic_world_model`, `simulation_scaling`, `planforge`; variants: `deterministic_capability_compilation`, `qcsa_whitepaper`, `cognitive_compilation` |
+| Source loading state | Public-safe source notes exist for all nine assigned records. External results remain source-reported and unreproduced; Corben-authored sources contribute architecture and bounded lineage at their recorded limits. |
+| Test state | Reality-gap, model-exploitation, counterfactual-intervention, and formal route tests are specified below but have not been implemented or run for this layer. |
+
+## Drafting guardrail
+
+A world model is treated here as a fallible prediction service, not as reality,
+truth, perception in general, or permission to act. Learned latent dynamics,
+symbolic transition systems, simulators, and hybrid models can all satisfy the
+interface, but none inherits reliability from the name. The available sources
+support architectural comparison and design pressure; they establish no local
+world-model implementation, reproduced control result, causal adequacy,
+real-world grounding, safe deployment, or support-state movement.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+An intelligent system can rehearse many futures and still misunderstand the situation it inhabits. The danger begins when an internal trajectory is treated as an observation, when a planner exploits a prediction error, or when an updated model gains permission to drive actions.
+
+Governed prediction keeps several things apart: what sensors reported, what the system believes, what a model predicts, which branch a planner explores, what uncertainty surrounds that branch, what action was actually authorized, and what later observation revealed. Their disagreement is evidence to preserve, not noise to smooth away.
+
+Repeated observation turns imagination into a receding-horizon control aid rather than an oracle. Unfamiliar rollouts face tighter support tests, rare hazards persist, disagreement triggers re-estimation or fallback, and an attractive low-support future cannot authorize its own pursuit.
+
+The architectural promise is conditional. Predictive models earn operational influence only when matched baselines, interventions, calibration, recovery behavior, independent outcome checks, and resource costs show a favorable frontier. Until such evidence exists, branch records and gates make uncertainty inspectable while leaving the performance and safety hypothesis unresolved.
+:::
+
+## Problem
+
+Planning through a model inserts an inferred world between an agent and the
+world that can answer back. The inferred state may compress observations,
+complete missing variables, predict transitions, estimate reward, or generate
+counterfactual branches. Every one of those operations can be useful, and every
+one can erase a rare hazard, confuse correlation with intervention, inherit a
+stale sensor assumption, or create a surface that a planner learns to exploit.
+An internally coherent rollout can therefore be decision-relevant while being
+wrong in exactly the region selected by optimization.
+
+The control problem is not merely predictive accuracy. A consequential use
+must bind the observation source and freshness, belief state, model checkpoint,
+intervention semantics, horizon, uncertainty, validity domain, competing-model
+disagreement, planner and critic identities, proposed action envelope, later
+observed effect, and unresolved residual. Without those identities, a system
+cannot reliably separate model error from policy error, compare a forecast with
+what later happened, or explain why imagination was allowed to influence an
+effect request.
+
+Reality grounding has a deliberately operational meaning at this boundary. It
+is the repeated, governed reconciliation of admitted observations, predictive
+state, imagined outcomes, authorized actions, and independently observed
+effects. It is not a proposed solution to philosophical symbol grounding and it
+does not absorb generic perception. The governed-world-model layer owns the
+validity and lifecycle of predictive state before that state can justify plan
+selection or stronger action.
+
+### Exclusive job and adjacent boundaries
+
+**Exclusive job:** Govern predictive state, imagined branches, model/world
+disagreement, replanning, external correction, and action authority when an
+agent plans through a learned, symbolic, simulated, or hybrid world model.
+
+| Adjacent owner | Keeps | Governed world models own |
+|---|---|---|
+| Planning as a Control Layer | goals, candidate decompositions, DAGs, scheduling, route choice, and replanning decisions | predictive-state validity, rollout support, imagined/observed discrepancy, and model-relative admission facts |
+| Mathematical and Search Substrates | candidate algorithms, representations, recurrent structures, search families, and substrate adoption | world-model checkpoint lifecycle, horizon error budgets, grounding gates, and model-use residuals |
+| Artifact Graphs, Audit Logs, and Replay | general provenance, lineage, invalidation, and replay across the stack | distinct observation, belief, prediction, branch, intervention, and observed-effect identities |
+| Runtime Adapters, Tool Permissions, and Human Approval | permission and mechanisms for external effects | whether modeled state is sufficiently supported to request that authority |
+
+## Why existing approaches are insufficient
+
+Better predictors, larger simulators, more diverse training tasks, and stronger
+model-predictive controllers improve important pieces of the problem. They do
+not by themselves establish that a forecast is calibrated in the state region
+an optimizer selects, that a compressed representation preserves low-frequency
+hazards, that an actor and critic are not sharing the same modeling error, or
+that a long rollout remains useful after compounding uncertainty. Aggregate
+prediction loss can improve while action-conditioned tail risk worsens.
+
+Open-loop evaluation is especially weak at an optimization boundary. A planner
+searches for trajectories with high modeled value, so it preferentially visits
+the model's favorable mistakes. Replanning from fresh observations reduces
+some drift but cannot repair poisoned observations, aliasing, an inadequate
+state vocabulary, a self-confirming evaluator, or a policy that reaches harm
+before correction is possible. Ensemble agreement helps only when the members
+have meaningfully different error paths; correlated models can agree and still
+be wrong.
+
+Governance records alone are also insufficient. A perfectly versioned false
+prediction remains false, and a conservative gate can destroy useful control
+while producing beautiful receipts. The design must therefore face matched
+reactive and model-free alternatives, a simpler predictive controller, explicit
+interventions, rare-event and shift tests, independent environment truth, and
+complete cost accounting. The layer earns influence through a better joint
+utility, grounding, risk, recovery, and cost frontier rather than through
+architectural neatness.
+
+### Strongest objection
+
+The strongest objection is that a world model adds a brittle hallucination
+layer to a system that could plan directly from observations or learned value.
+Its latent state may be harder to audit than the environment, and governance
+machinery may react only after the model has already selected a dangerous
+action. The objection remains live until a competent comparison shows that the
+governed model contributes decision value beyond extra compute, search, data,
+and conservative abstention.
+
+### Simpler baseline
+
+The simpler baseline is a reactive or model-free controller with the same
+observations, interaction budget, action set, safety constraints, compute
+ceiling, evaluator access, and recovery opportunity. A second baseline uses one
+short-horizon predictive model with ordinary receding-horizon replanning but no
+plural-model disagreement or support-aware admission gate. If either baseline
+matches the full design's utility and risk at lower total cost, the additional
+world-model governance surface should be narrowed, reserved for specific
+consequence classes, or rejected for that regime.
+
+## Core Claim
+
+[governed-world-models-and-reality-grounding.core, label: Design rationale, support: argument] A world model should be governed as a fallible, versioned prediction service whose state, horizon, uncertainty, provenance, and calibration bound which imagined consequences may influence planning and action; observation must repeatedly reconcile imagination with reality.
+
+The service returns hypotheses and branch-local state, not facts about
+actuality. Consequential admission depends on a current observation basis,
+declared intervention and horizon, support and calibration evidence, resolved
+or routed material disagreement, and an independently enforced authority
+ceiling. A model update can change predicted state but cannot widen effect
+authority, erase prior residuals, or rewrite an observed outcome as though it
+had been forecast.
+
+This claim is an architectural hypothesis at `argument` support. The external
+papers report bounded capabilities of learned predictive state and imagined
+control, while the Corben-authored sources contribute branch, contract,
+provenance, budget, compiler, and dual-view design language. No assigned source
+establishes the joined governance mechanism or its empirical advantage.
+
+### Claim-source mapping status
+
+| Source | Mapped support | Limit at this boundary |
+|---|---|---|
+| `platonic_world_model` | plural qualified transition models, explicit world branches, grounding contracts, and protected actuality | conceptual architecture; no unique, causally correct, or safely deployed world model follows |
+| `deterministic_capability_compilation` | versioned contracts, dual-view prediction/measurement disagreement, authority ceilings, and recovery | predictive accuracy and learned-representation quality remain unestablished |
+| `qcsa_whitepaper` | stable object identity, provisional world instances, typed uncertainty, evidence-bearing certificates, and route/authority separation | the whitepaper is architectural, and its later synthetic program is not a world-model evaluation |
+| `simulation_scaling` | explicit scope, clockspeed, fidelity, resource, and bottleneck contracts for simulation | a theoretical scaling framework cannot establish calibrated long-horizon prediction |
+| `cognitive_compilation` | typed intermediate artifacts, validators, provenance, and localized repair interfaces | a compiler record cannot establish that latent predictions are true |
+| `planforge` | bounded plan artifacts, verification, feedback-driven replanning, and execution handoff | a well-formed plan cannot repair a misspecified environment model |
+| `ext_world_models_2018` | source-reported compact environment state, temporal prediction, imagined policy training, and bounded transfer | reported simulated-domain results do not establish open-world grounding, causal fidelity, or safe deployment |
+| `ext_dreamer_v3_2025` | source-reported broad control through learned recurrent dynamics and imagined actor-critic trajectories | task breadth does not establish calibrated real-world counterfactuals or governance efficacy |
+| `ext_v_jepa_2_2025` | source-reported action-free video pretraining, action-conditioned latent prediction, and model-predictive control | reported robot settings do not establish general causal modeling, long-horizon reliability, or safe transfer |
+
+## Mechanism
+
+The governed service begins from an admitted observation basis rather than raw
+input alone. Observation records carry source, capture time, arrival time,
+quality checks, transformations, missingness, suspected corruption, and the
+world branch they may update. A state estimator converts those records into a
+belief state while retaining uncertainty and alternative hypotheses. The
+belief state is a defeasible input to prediction, never an unlabeled copy of
+the world.
+
+One or more version-pinned models generate action-conditioned transition
+hypotheses. A rollout request names the current belief, intervention semantics,
+horizon, resolution, consequence class, resource budget, planner purpose, and
+forbidden uses. The response contains predicted states or representations,
+reward or value estimates where relevant, uncertainty by horizon, validity
+domain, omissions, disagreement, and a support ceiling. An imagined branch has
+its own identity and cannot write into the actual-world ledger.
+
+Admission evaluates the rollout where it will be used, not only on a global
+validation score. The gate consults horizon-conditional calibration, state-
+region coverage, action or intervention class, consequence severity, model
+freshness, observation freshness, model diversity, known failures, and current
+disagreement. It also probes whether the proposed policy is seeking an
+unusually valuable state in a low-support region. Failure can shorten the
+horizon, request another observation, switch models, use a symbolic constraint,
+defer to review, choose a safe action, or block the branch.
+
+Execution remains outside the prediction service. An admitted branch can
+influence a plan and support an authority request, but a separate runtime gate
+decides whether any effect may occur. After an authorized action, an observer
+outside the model/actor/critic path records the effect when possible. The
+reconciliation step compares forecast and observation, attributes error without
+backfilling history, updates calibration evidence, invalidates dependent
+branches, and routes material residuals to re-estimation, replanning, fallback,
+review, or safe hold.
+
+Model updates use a lifecycle distinct from ordinary belief updates. A new
+checkpoint receives a new identity, training and data lineage, evaluator
+record, validity profile, migration disposition, rollback scope, and authority
+ceiling. Shadow or canary use can collect comparison evidence, but the update
+does not inherit the old checkpoint's support outside explicitly reviewed
+compatibility. Historical decisions continue to resolve against the exact
+model and observation basis used at the time.
+
+```{mermaid}
+flowchart LR
+  O["External observations and environment truth"]
+  A["Observation admission and freshness checks"]
+  B["Versioned belief state with alternatives"]
+  M["Pinned plural world models"]
+  R["Action-conditioned imagined branches"]
+  C["Calibration, support, and disagreement registry"]
+  G{"Planner admission gate"}
+  P["Plan alternatives and predicted consequences"]
+  X{"Independent effect-authority gate"}
+  E["Authorized effect and later observation"]
+  D["Reality residual and error attribution"]
+  F["Re-estimate, replan, fallback, review, or safe hold"]
+  L["Counterfactual and model-version ledger"]
+  O -- "admitted evidence" --> A
+  A --> B
+  B --> M
+  M --> R
+  R --> C
+  C -- "supported within envelope" --> G
+  C -- "stale, uncalibrated, or disagreeing" --> F
+  G -- "admit as hypothesis" --> P
+  G -- "reject or narrow" --> F
+  P --> X
+  X -- "authorized" --> E
+  X -- "denied" --> F
+  E -- "independent outcome" --> D
+  D -- "material discrepancy" --> F
+  D -- "bounded update evidence" --> C
+  R --> L
+  P --> L
+  D --> L
+  F --> B
+```
+
+**How to read the governed reality loop:** observations enter from the left and
+imagined branches remain hypotheses through both admission decisions. Only the
+independent effect gate can permit an action. Later observation returns through
+the residual path rather than overwriting the earlier prediction. The diagram
+specifies interfaces and refusal routes; it reports no implemented service or
+control result.
+
+### Governed rollout contract
+
+| Field family | Required contents | Governance use |
+|---|---|---|
+| Observation basis | source and sensor identities, capture/arrival times, freshness, transformations, missingness, corruption flags, branch | establishes which external inputs the belief may cite |
+| Belief identity | estimator version, state vocabulary, posterior or alternative states, uncertainty, unresolved aliases | prevents a point estimate from hiding partial observability |
+| Model identity | checkpoint, architecture or ruleset, training/data lineage, evaluator, validity interval, inherited limits | makes prediction and later calibration version-specific |
+| Rollout semantics | action/intervention, branch, horizon, temporal resolution, stochastic assumptions, consequence class | keeps counterfactuals comparable and branch-local |
+| Prediction packet | predicted state, reward/value if present, uncertainty, omissions, validity domain, disagreement, support ceiling | gives the planner a bounded hypothesis rather than an oracle response |
+| Admission decision | policy version, thresholds, accepted uses, prohibited uses, required re-observation, fallback, reviewer | records why the branch may or may not influence a plan |
+| Authority envelope | permitted action class, effect ceiling, reversibility, approval and safe-action requirements | prevents predictive qualification from becoming permission |
+| Reconciliation | action actually taken, observed effect, observation identity, model/policy/observer/evaluator error attribution | preserves the forecast/outcome distinction |
+| Residual and lifecycle | unresolved discrepancy, invalidated descendants, calibration delta, replan or fallback route, checkpoint disposition | turns disagreement into durable work rather than silent averaging |
+
+### Prediction lifecycle
+
+1. **Admit observation.** Validate identity, provenance, freshness, quality,
+   branch, and known sensor limitations; keep rejected or suspect inputs visible.
+2. **Estimate belief.** Produce a versioned state distribution or explicit
+   alternative set with missing variables and aliases intact.
+3. **Fork hypotheses.** Request action-conditioned branches from plural models
+   or model variants under the same declared intervention semantics.
+4. **Price the horizon.** Attach error, calibration, fidelity, compute, memory,
+   latency, and search costs to each horizon and resolution.
+5. **Test exploitation pressure.** Compare proposed high-value states with
+   support density, model disagreement, rare-event coverage, and policy/critic
+   dependence on the same model.
+6. **Admit, narrow, or refuse.** Limit allowed planner uses, shorten horizon,
+   require observation, route to another substrate, abstain, or hold safely.
+7. **Request effect separately.** Send a plan-relative prediction receipt to an
+   independent runtime authority boundary; never execute from the rollout API.
+8. **Reconcile and invalidate.** Record the observed outcome, retain the prior
+   forecast, attribute discrepancies, invalidate descendants, and select a
+   bounded recovery route.
+9. **Qualify updates.** Compare a new checkpoint in shadow or canary mode,
+   preserve old-version replay, and review any proposed validity-domain change.
+
+### Error ledgers that must not collapse
+
+| Error ledger | Question | Example route |
+|---|---|---|
+| Observation error | Was the admitted measurement stale, missing, corrupted, aliased, or misbound? | reacquire, cross-check, quarantine sensor, or narrow belief |
+| Model error | Did predicted state or consequence diverge under the declared action and horizon? | recalibrate, switch/fork model, shorten horizon, or retire checkpoint |
+| Policy/critic error | Did action selection misuse an adequate prediction, optimize a proxy, or exploit a weak region? | reject plan, change objective/critic, adversarially retrain, or restrict actions |
+| Evaluator/governance error | Did a threshold, comparator, observer, or admission policy fail to detect a material defect? | invalidate qualification, rerun independent review, or revise the gate |
+
+### Core artifact family
+
+| Artifact | Purpose |
+|---|---|
+| Observation Admission Record | binds external input, freshness, quality, branch, and rejection reasons |
+| Belief-State Record | preserves estimator identity, alternatives, aliases, missing state, and uncertainty |
+| World-Model Manifest | versions model, data/training lineage, validity domain, evaluator, known failures, and authority ceiling |
+| Rollout Request and Branch Packet | declares intervention semantics, horizon, budget, predictions, uncertainty, omissions, and prohibited uses |
+| Calibration and Disagreement Record | measures horizon/state/action/consequence-conditional reliability and plural-model conflict |
+| Planner Admission Receipt | records admit, narrow, observe, fallback, review, hold, or reject disposition |
+| Counterfactual Receipt | links a decision to branch alternatives, model versions, planner/critic, and support state at decision time |
+| Reality-Residual Record | compares predicted and observed effects without rewriting either identity |
+| Model Update and Migration Record | binds new checkpoint evidence, compatibility, shadow/canary scope, rollback, and invalidations |
+
+## Interfaces
+
+The main handoff is a **qualified branch packet**. It moves from the prediction
+service to Planning with a versioned belief, model checkpoint, intervention,
+horizon, uncertainty, validity domain, disagreement state, consequence class,
+support ceiling, prohibited uses, re-observation trigger, safe alternative, and
+receipt identity. Planning may compare that packet with other obligations and
+routes; it cannot upgrade the packet's evidence or effect authority.
+
+Observation and state-estimation providers submit measurements through the
+Observation Admission Record. Runtime Adapters receive only an authority
+request linked to an admitted plan and branch packet, never a bare model score.
+Artifact Graphs preserve lineage and invalidation, while Benchmark Ratchets and
+Evidence States consume calibration, intervention, shift, exploitation,
+recovery, and cost outcomes. Cognitive Compilation receives model-relative
+assumptions as typed inputs rather than silently converting them into facts.
+
+The refusal path is first-class. Stale observations, incompatible intervention
+semantics, unsupported horizons, material model disagreement, unavailable safe
+actions, suspected poisoning, evaluator dependence, or incomplete recovery can
+produce re-observation, narrowed action, alternate substrate, fallback, human
+review, residual escrow, or safe hold. A refusal receipt is evidence of gate
+operation, not evidence that the gate chose the optimal policy.
+
+| Interface | Producer | Consumer | Boundary condition |
+|---|---|---|---|
+| Observation admission | sensor, database, human report, or environment adapter | state estimator | provenance and freshness must be explicit; generic perception quality is out of scope |
+| Belief-state update | state estimator | world-model service and planner | alternatives and uncertainty survive the boundary |
+| Counterfactual rollout API | version-pinned model or ensemble | planner admission gate | returns branch-local hypotheses only |
+| Calibration/disagreement query | evaluation registry | admission and readiness gates | evidence is conditional on checkpoint, domain, horizon, and intervention |
+| Qualified branch packet | admission gate | Planning and Cognitive Compilation | accepted use and prohibited use travel together |
+| Effect-authority request | admitted plan | Runtime Adapters | predictive support cannot grant permission |
+| Reality-residual event | independent observer/reconciler | estimator, planner, calibration registry, artifact graph | prior prediction and later outcome retain separate identities |
+| Model-lifecycle update | training/release process | readiness, routing, rollback, and audit consumers | new checkpoints do not inherit broader authority automatically |
+
+## Invariants
+
+Prediction identity is preserved across planning, execution, and later review.
+Every consequential branch names its observation basis, belief state, model
+checkpoint, intervention, horizon, validity domain, uncertainty, planner/critic,
+and support ceiling. The later effect record links to that packet but never
+edits it in place. Historical replay resolves the exact model and policy basis
+used at decision time.
+
+Authority remains orthogonal to predictive confidence. No model score,
+ensemble vote, semantic address, calibration certificate, or branch selection
+can grant an external permission. Low-support, stale, uncalibrated,
+out-of-domain, materially disagreeing, or high-consequence rollouts cannot
+silently authorize action. A checkpoint update cannot widen either the action
+class or consequence ceiling by itself.
+
+Reality retains veto power through admitted observation. Material residuals
+force a bounded route—re-estimation, replanning, alternate model, fallback,
+review, or safe hold—before further model-based execution. Unknown state is not
+converted into false state; model disagreement is not converted into consensus
+by averaging alone; and rare hazards cannot be dropped merely because a latent
+representation assigns them low frequency.
+
+Counterfactual comparisons use compatible state vocabularies, intervention
+semantics, horizons, clocks, and consequence measures. Predicted, planned,
+simulated, fictional, and actual branches cannot leak into one another without
+an explicit adoption or observation event. A reachable safe action, reversible
+fallback, or explicit hold route must exist before predictive confidence
+collapse can occur in a consequential controller.
+
+## Failure modes
+
+### Threat model
+
+Protected assets include the actual-world ledger, observation provenance,
+belief and branch identity, model-version registry, calibration evidence,
+planner admission policy, effect-authority boundary, and residual history. A
+malicious user, compromised sensor, poisoned data supplier, optimizing policy,
+captured evaluator, or model-update process may attempt to alter those assets.
+The policy and critic are not trusted merely because they share the model's
+training objective, and agreement among correlated models is not treated as
+independent corroboration.
+
+Attacker capabilities may include crafting observations, replaying stale
+packets, choosing actions that target model blind spots, inducing long-horizon
+search, poisoning model or calibration data, hiding rare events, exhausting
+observation or review budgets, and relabeling simulated output as evidence.
+The bounded design assumes that effect authority, append-only decision
+receipts, and at least one outcome-observation path can remain outside the
+model/actor/critic update loop. If those assumptions fail, the consequential
+route degrades or closes rather than claiming grounded control.
+
+### Failure families and required routes
+
+| Failure family | Failure pressure | Observable signal | Required route |
+|---|---|---|---|
+| Latent hallucination and rare-state erasure | compression omits action-relevant or low-frequency state | intervention failure, tail error, missing hazard variable, cross-model mismatch | expand state, use alternate representation, observe, or block |
+| Compounding rollout error | autoregressive or recurrent error grows with horizon | calibration decay, branch divergence, reversal under replanning | shorten horizon, increase observation rate, or abandon branch |
+| Partial-observation aliasing | distinct world states map to the same belief | multimodal posterior, contradictory outcomes, sensor-dependent behavior | preserve alternatives and acquire discriminating evidence |
+| Causal confusion and off-policy failure | model learns observational regularity or leaves training support | held-out intervention error, policy-induced state shift | causal/intervention test, restrict actions, or use safer baseline |
+| Model exploitation | planner selects valuable predictions in weakly supported regions | value/support anticorrelation, adversarial branch concentration | reject candidate, adversarially test, or constrain search |
+| Self-confirming actor/critic error | policy, critic, and evaluator share model defects | high imagined return with poor external outcome; correlated residuals | independent observer/evaluator and model-free comparison |
+| Observation poisoning and feedback capture | sensors, labels, or post-action feedback are manipulated | provenance break, cross-sensor disagreement, implausible freshness | quarantine input, reacquire, or enter safe hold |
+| Branch leakage and simulated-evidence laundering | imagined state is written as observed or supported state | missing branch transition, outcome backfill, evidence identity mismatch | invalidate descendants, restore branch separation, review authority |
+| Distribution and sim-to-deployment shift | environment, embodiment, camera, dynamics, or goals change | calibration drift, disagreement, recovery failure | requalify, fall back, shadow-test, or retire model |
+| Uncertainty miscalibration | confidence hides region, horizon, or consequence dependence | coverage failure, selective tail loss, overconfident abstention error | conditional recalibration or stricter gate |
+| Stale version and migration error | plan, cache, critic, or receipt resolves a different checkpoint | digest/epoch mismatch, incompatible state semantics | invalidate and rebuild dependent branches |
+| Governance tax and fallback collapse | checks cost more than their avoided failures or safe action is unreachable | latency, compute, review burden, blocked useful work, unsafe emergency path | simplify scope, precompute, narrow use, or reject the architecture for the regime |
+
+## Minimum Viable Implementation
+
+A viable first slice is a bounded partially observed control harness with
+hidden state, at least one rare hazard, action interventions, controlled sensor
+corruption, and a held-out distribution shift. It contains a reactive or
+model-free baseline, one ordinary predictive controller, and a governed arm
+using two independently initialized dynamics models. The governed arm implements
+horizon-conditional calibration, receding observation updates, disagreement
+routing, a support-aware action gate, a reachable safe action, and immutable
+counterfactual and reality-residual receipts.
+
+The artifact surface can remain small: schemas for Observation Admission,
+Belief State, World-Model Manifest, Branch Packet, Admission Receipt, and
+Reality Residual; one deterministic validator; a trace renderer; and a harness
+that can inject stale observations, model disagreement, unsupported horizons,
+rare hazards, and planner exploitation. A symbolic environment oracle supplies
+outcome truth outside both learned models and their critic. The first traces
+must preserve forecast/outcome separation and distinguish model, policy,
+observation, and evaluator errors.
+
+Success at this stage is limited to record correctness, refusal behavior on
+known invalid cases, and a prospectively evaluated toy control comparison. A
+green schema, a finite route proof, or a favorable authored task leaves the core
+claim at `argument`. Broader support requires a competent held-out intervention
+campaign, matched resources and baselines, uncertainty, full costs, independent
+evaluation, reproduction, and transfer; a failed toy implementation may narrow
+that implementation but cannot settle the parent architecture.
+
+## Beyond the State of the Art
+
+Beyond current practice lies a plural, causally testable predictive substrate
+that can revise its representations while preserving model/world disagreement,
+branch identity, calibration history, authority ceilings, and exact decision
+replay. Learned latent predictors, symbolic constraints, simulators, causal
+models, and human or instrument observations can contribute under distinct
+validity contracts. The target architecture would choose resolution and model
+families by consequence and budget, preserve rare-state hypotheses, and expose
+when no available representation is adequate for the requested action.
+
+Mature operation would turn every consequential imagined trajectory into a
+qualified branch packet with an independent correction path. Calibration would
+be conditional on state region, intervention, horizon, embodiment, consequence,
+and deployment context rather than reduced to one confidence score. Model
+updates would undergo shadow comparison, migration review, descendant
+invalidation, and rollback accounting. Planners could exploit useful
+counterfactual structure while being denied the ability to turn a favorable
+model error into stronger authority.
+
+The product-level endpoint is empirical, not ornamental. It must outperform
+strong reactive, model-free, ordinary model-predictive, and single-model
+baselines on a joint utility, grounding, risk, recovery, latency, compute,
+review-burden, and total-cost frontier in a prospectively frozen favorable
+regime. Held-out interventions must distinguish predictive control from
+correlational replay, and independent environment truth must remain outside the
+learned model/evaluator loop. Positive outcomes require separate reproduction
+and materially different transfer settings before any broad deployment or
+state-of-the-art language becomes eligible.
+
+No such campaign has been run for this layer. The assigned external papers
+provide source-reported capability comparators and explicit limitations; the
+Corben-authored sources provide architecture and falsification programs. They
+do not jointly establish the governed substrate, a favorable frontier, safe
+control, or real-world transfer. The mature endpoint remains a falsifiable
+research target until the argument-exit conditions below are met through an
+accepted evidence transition.
+
+### Competent empirical argument-exit campaign
+
+The claim-bearing campaign uses a public environment with interventions,
+hidden state, rare hazards, and distribution shift. Reactive, model-free,
+ordinary short-horizon predictive, single learned world-model, plural governed
+world-model, and oracle/symbolic upper-bound arms receive matched observations,
+interactions, action spaces, safety constraints, compute accounts, wall-clock
+limits, evaluator access, and retry policies. The oracle is a sensitivity bound,
+not a fair deployable competitor.
+
+Three hypotheses are frozen before the final holdout is opened: the governed
+arm improves the joint frontier in at least one declared regime; support-aware
+gating reduces planner exploitation and rare-hazard violations without an
+unacceptable loss of useful control; and held-out action interventions predict
+outcomes better than observationally matched controls. A null or negative
+outcome is retained with its exact regime, competence state, uncertainty, and
+cost rather than generalized to all world models.
+
+| Competence dossier item | Frozen requirement before held-out opening |
+|---|---|
+| Claim and regime | exact checkpoint, environment version, observation/action space, horizons, shift families, consequence classes, and intended inference |
+| Mechanism activation | traces show that both models affect disagreement, the admission gate changes at least one eligible action, observation triggers replanning, and fallback can be reached |
+| Positive controls | known predictable transition, known hidden-state ambiguity, injected model bias, injected sensor corruption, known rare hazard, and known unsupported horizon are detected at preregistered sensitivity |
+| Independent truth and evaluation | environment transition/outcome truth is outside learned model, actor, critic, and calibration code; evaluator identity and access are fixed |
+| Leakage and denominator | development/final splits, all runs, seeds, retries, failures, timeouts, human interventions, excluded cases, and adaptive changes are recorded |
+| Uncertainty and power | primary estimand, interval method, seed/environment clustering, minimum detectable effect, multiplicity handling, and inconclusive region are declared |
+| Resource and governance cost | interaction count, training/inference compute, memory, latency, energy proxy where available, reviewer time, observation cost, recovery cost, and blocked useful work are charged |
+| Negative-inference ceiling | a failed arm can refute only its exact implementation/regime unless positive controls, mechanism activation, fair rescue, evaluator independence, reproduction, and transfer gates support a wider conclusion |
+
+The development-only rescue ladder checks record correctness, evaluator
+sensitivity, known-effect controls, mechanism activation, model competence,
+planner integration, calibration, safe-action reachability, and shift recovery
+in that order. Failed steps may trigger a bounded repair with a new identity and
+complete cost entry. Final task instances and outcomes never become debugging
+inputs; exhausting the frozen rescue budget yields an inconclusive or exact
+negative disposition rather than an outcome-aware redesign.
+
+Primary metrics include task utility; state and consequence prediction error by
+horizon; calibration and selective-risk curves; rare-hazard recall and
+violation rate; counterfactual intervention error; action regret; planner-
+exploitation success; safe abstention and false-block rates; recovery time and
+residual harm; transfer degradation; and total resource/governance cost. The
+joint decision rule rejects a headline win that hides worse tail risk,
+unavailable fallback, unmatched search, or omitted review cost.
+
+Argument exit requires a prospectively accepted result in which the full arm
+beats the declared simpler baselines on the frozen joint frontier, survives
+causal ablations and adversarial controls, preserves independent outcome truth,
+and records uncertainty and failures. Architecture-level generalization further
+requires a materially separate implementation and evaluator plus transfer
+across different environment or embodiment families. Until those gates pass,
+the empirical lane is a protocol, not evidence that the core claim is true.
+
+## Evidence boundary and non-claims
+
+Ha and Schmidhuber report compact learned environment state and training in
+imagined rollouts in bounded simulated tasks. Hafner and collaborators report
+DreamerV3 across more than 150 control tasks and multiple domains. Assran and
+collaborators report action-free video pretraining, an action-conditioned latent
+predictor, and limited zero-shot robot planning. Those results motivate the
+predictive interface and expose model exploitation, correlated actor/critic
+error, autoregressive drift, camera sensitivity, search cost, and transfer
+limits. None was reproduced in this repository.
+
+The Platonic World Model, Deterministic Capability Compilation, QCSA,
+Simulation Scaling Law, Cognitive Compilation, and PlanForge provide
+author-lineage design material for branch protection, qualified grounding,
+dual-view disagreement, stable identity, simulation budgets, typed artifacts,
+replanning, authority separation, and recovery. Their mapped contribution is
+architectural. The joined governed-world-model service, its thresholds, and its
+claimed frontier advantage remain untested.
+
+No claim is made here that the layer solves philosophical symbol grounding,
+implements generic perception, discovers a true causal state, guarantees
+calibration, prevents all model exploitation, supplies a local neural world
+model, reproduces robot control, establishes sim-to-real transfer, ensures safe
+action, beats current systems, supports deployment, or demonstrates AGI or ASI.
+Formal route rules and future toy fixtures would have narrower meanings than
+any of those conclusions.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Reality-gap and horizon calibration benchmark | Measure prediction error, calibration, decision regret, safe abstention, and resource cost across horizons and controlled shifts against reactive, model-free, ordinary predictive, and single-model baselines. | planned; not implemented or run |
+| Model-exploitation red-team suite | Search for policies that target high-value, low-support, stale, aliased, or misspecified regions and test whether the admission and authority boundaries reject or narrow them. | planned; not implemented or run |
+| Counterfactual intervention test | Compare predicted effects with held-out action interventions while preserving independent environment truth and separate model, policy, observation, and evaluator error. | planned; not implemented or run |
+| Model-update migration trace | Exercise checkpoint replacement, stale branch invalidation, calibration inheritance limits, rollback scope, and unchanged authority ceilings. | planned; not implemented or run |
+
+### Formalization disposition
+
+Finite formalization is appropriate for two route invariants because their
+objects and consumers can be modeled without pretending to formalize reality.
+The planned module is `AsiStackProofs.GovernedWorldModels`; no declaration or
+build result is reported for it here.
+
+| Planned target | Finite model | Honest conclusion | Semantic limit |
+|---|---|---|---|
+| `lean:world_model.unsupported_rollout_no_authority` | a rollout record with version-currentness, support, calibration, disagreement, consequence, and authority-request flags | unsupported, stale, materially disagreeing, or uncalibrated rollout states cannot reach the consequential authorization constructor | the booleans do not establish that support domains, calibration estimates, disagreement thresholds, or consequence classes are correct |
+| `lean:world_model.reality_residual_forces_route` | a transition system with material residual and routes for re-estimation, fallback, review, safe hold, or continued model-based execution | a material residual cannot transition directly to continued model-based execution before a bounded response route | the theorem cannot determine whether an observation is true, a residual is material, or the selected recovery is sufficient |
+
+Formalizing causal adequacy, real-world grounding, calibrated uncertainty, or
+the superiority of plural models from uninterpreted predicates would be
+formalization theater. Richer proof targets wait for a semantically adequate
+record schema, implemented runtime consumer, and empirical procedures that can
+populate the predicates with defensible evidence.
+
+## Source crosswalk
+
+### External primary comparators
+
+| Source ID | Primary record | Use here | Evidence limit |
+|---|---|---|---|
+| `ext_world_models_2018` | [Ha and Schmidhuber (2018), *World Models*](https://arxiv.org/abs/1803.10122) | compact latent state, temporal prediction, imagined policy training, transfer pressure, and model-exploitation risk | simulated-domain results are source-reported; no local run or open-world grounding result exists |
+| `ext_dreamer_v3_2025` | [Hafner et al. (2025), *Mastering diverse control tasks through world models*](https://www.nature.com/articles/s41586-025-08744-2) | modern recurrent world-model/actor/critic comparator, broad task scope, and self-confirming error pressure | task-suite results are source-reported; no local reproduction, causal-correctness, governance, or deployment result exists |
+| `ext_v_jepa_2_2025` | [Assran et al. (2025), *V-JEPA 2*](https://arxiv.org/abs/2506.09985) | action-free predictive representation, action-conditioned predictor, model-predictive control, and explicit camera/horizon/search limits | no checkpoint, robot data, benchmark, timing, or control result was run locally |
+
+### Corben-source architecture lineage
+
+| Source ID | Inherited architecture | Boundary retained |
+|---|---|---|
+| `platonic_world_model` | explicit particulars, situations, events, world branches, plural transition models, qualified grounding, branch protection, disagreement, degradation, and rollback | conceptual architecture and research agenda; no philosophical grounding solution, semantic substrate, or world-model result |
+| `deterministic_capability_compilation` | dual-view prediction and bottom-up measurement, versioned contracts, authority ceilings, environmentalization, verification bandwidth, and effect-complete recovery | no foundry, learned expert, predictive-quality, preservation, or safety result |
+| `qcsa_whitepaper` | stable object/world-instance identity, provisional open-world objects, typed uncertainty, evidence-bearing certificates, and semantic-route/physical-authority separation | whitepaper claims remain architectural; the later synthetic program did not evaluate learned world dynamics |
+| `simulation_scaling` | scope, clockspeed, fidelity, bottleneck, and resource contracts for simulations and imagined search | theoretical framework with no local physical experiment or world-model benchmark |
+| `cognitive_compilation` | typed semantic IR, validator identities, provenance, dependency-aware repair, and target lowering | no local cognitive compiler or semantic-preservation result |
+| `planforge` | goal decomposition, plan artifacts, dependencies, scheduling, feedback-driven replanning, fallback, and execution handoff | conceptual planning source with no verified scheduler or world-model evaluation |
+
+### New synthesis owned at this boundary
+
+The novel design synthesis is the single governance contract that binds
+observation freshness, belief identity, world-model checkpoint, imagined branch,
+intervention semantics, horizon, conditional calibration, model disagreement,
+planner/critic identity, action envelope, independently observed effect, and
+residual. It also makes model error, policy error, observation error, and
+evaluator error separately addressable while preserving the rule that a model
+update cannot widen authority. This synthesis is recorded as design rationale,
+not as a result reported by any one assigned source.
+
+## Summary
+
+A governed world model is a versioned prediction service whose outputs remain
+branch-local hypotheses. Observation admission creates a defeasible basis;
+belief estimation preserves uncertainty and aliases; plural or alternative
+models generate action-conditioned branches; calibration and disagreement
+bound their allowed uses; Planning consumes qualified branch packets; and an
+independent runtime boundary retains effect authority. Later observations enter
+through a reality-residual record that preserves the earlier forecast,
+separates error families, invalidates affected branches, and forces a bounded
+re-estimation, replan, fallback, review, or safe-hold route when discrepancies
+are material.
+
+The architecture is valuable only if predictive state improves consequential
+decisions after tail risk, recovery, interaction, compute, latency, observation,
+and governance costs are counted. Reactive, model-free, and ordinary
+predictive controllers remain required baselines. Held-out interventions,
+rare-hazard tests, shift, exploitation pressure, independent outcome truth,
+uncertainty, causal ablations, reproduction, and transfer define the path out
+of architectural argument. Until that program succeeds, source-reported world-
+model capabilities motivate the interface while leaving causal adequacy,
+safe control, real-world grounding, and a favorable governed frontier open.
+
+## Handoff
+
+Governed World Models leaves the planner with a qualified branch packet:
+predicted state, horizon, uncertainty, checkpoint, disagreement, reality
+residual, and an authority ceiling. That packet is still not executable work.
+**Cognitive Compilation and Semantic IR** receives admitted obligations and
+model-relative assumptions, lowers them into typed artifacts, and preserves
+which inputs were observations, beliefs, or predictions. Compilation may encode
+an imagined consequence, but it may not turn that consequence into evidence or
+permission while doing so.

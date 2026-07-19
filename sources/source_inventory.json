@@ -1,5 +1,298 @@
 [
   {
+    "id": "ext_un_global_digital_compact_2024",
+    "title": "Global Digital Compact",
+    "priority": "external_literature",
+    "layer": "international_ai_governance_and_public_legitimacy",
+    "chapter_targets": [
+      "institutions-international-coordination-and-public-legitimacy"
+    ],
+    "url": "https://www.un.org/global-digital-compact/en",
+    "notes": "Official United Nations record of the intergovernmentally negotiated Global Digital Compact, including commitments on international AI governance, interoperable approaches, inclusion, capacity building, scientific assessment, and global dialogue. It is a governance comparator, not evidence of implementation, effectiveness, legal compliance, representative legitimacy, or ASI safety.",
+    "source_type": "intergovernmental_agreement",
+    "published": "2024-09-22",
+    "updated": "2026-07-19",
+    "citation_label": "United Nations (2024), Global Digital Compact",
+    "doi": null
+  },
+  {
+    "id": "ext_council_europe_ai_convention_2024",
+    "title": "Framework Convention on Artificial Intelligence and Human Rights, Democracy and the Rule of Law",
+    "priority": "external_literature",
+    "layer": "international_ai_governance_and_public_legitimacy",
+    "chapter_targets": [
+      "institutions-international-coordination-and-public-legitimacy"
+    ],
+    "url": "https://www.coe.int/en/web/artificial-intelligence/the-framework-convention-on-artificial-intelligence",
+    "notes": "Official Council of Europe treaty page covering lifecycle principles, risk and impact management, procedural safeguards, remedies, monitoring, and the Conference of the Parties. It supplies an institutional comparator only; no local legal interpretation, treaty compliance, implementation effectiveness, democratic legitimacy, or safety result is claimed.",
+    "source_type": "international_treaty",
+    "published": "2024-09-05",
+    "updated": "2026-07-19",
+    "citation_label": "Council of Europe (2024), Framework Convention on Artificial Intelligence",
+    "doi": null
+  },
+  {
+    "id": "ext_generative_ai_at_work_2025",
+    "title": "Generative AI at Work",
+    "priority": "external_literature",
+    "layer": "ai_deployment_transition_distribution_and_human_agency",
+    "chapter_targets": [
+      "ai-deployment-transition-distribution-and-human-agency"
+    ],
+    "url": "https://academic.oup.com/qje/article/140/2/889/7990658",
+    "notes": "Open peer-reviewed field study of a staggered generative-AI assistant introduction among 5,172 customer-support agents, reporting heterogeneous worker and productivity effects in that setting. It is a bounded deployment comparator and does not establish economy-wide employment, wages, inequality, concentration, long-run skill, or ASI-transition effects.",
+    "source_type": "journal_article",
+    "published": "2025-02-04",
+    "updated": "2025-02-04",
+    "citation_label": "Brynjolfsson, Li, and Raymond (2025), Generative AI at Work",
+    "doi": "10.1093/qje/qjae044"
+  },
+  {
+    "id": "ext_ilo_genai_jobs_index_2025",
+    "title": "Generative AI and Jobs: A Refined Global Index of Occupational Exposure",
+    "priority": "external_literature",
+    "layer": "ai_deployment_transition_distribution_and_human_agency",
+    "chapter_targets": [
+      "ai-deployment-transition-distribution-and-human-agency"
+    ],
+    "url": "https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure",
+    "notes": "ILO working paper combining task data, worker surveys, expert deliberation, and model-assisted scoring to estimate occupational exposure across countries and groups. Exposure is not realized automation, displacement, welfare, or a forecast of ASI effects, and the study is not a local reproduction.",
+    "source_type": "working_paper",
+    "published": "2025-05-20",
+    "updated": "2025-05-20",
+    "citation_label": "Gmyrek et al. (2025), Generative AI and Jobs",
+    "doi": "10.54394/HETP0387"
+  },
+  {
+    "id": "ext_iea_energy_and_ai_2025",
+    "title": "Energy and AI",
+    "priority": "external_literature",
+    "layer": "physical_compute_infrastructure_energy_and_environment",
+    "chapter_targets": [
+      "physical-compute-infrastructure-energy-and-environmental-constraints"
+    ],
+    "url": "https://www.iea.org/reports/energy-and-ai",
+    "notes": "International Energy Agency report using global and regional modelling, datasets, and stakeholder consultation to examine data-centre electricity demand, energy security, emissions, affordability, and AI-for-energy opportunities. Its scenarios are external projections, not local measurements or proof of a particular facility, workload, policy, environmental outcome, or ASI scaling path.",
+    "source_type": "intergovernmental_report",
+    "published": "2025-04-10",
+    "updated": "2026-04-16",
+    "citation_label": "International Energy Agency (2025), Energy and AI",
+    "doi": null
+  },
+  {
+    "id": "ext_lbnl_data_center_energy_2024",
+    "title": "2024 United States Data Center Energy Usage Report",
+    "priority": "external_literature",
+    "layer": "physical_compute_infrastructure_energy_and_environment",
+    "chapter_targets": [
+      "physical-compute-infrastructure-energy-and-environmental-constraints"
+    ],
+    "url": "https://energyanalysis.lbl.gov/publications/2024-lbnl-data-center-energy-usage-report",
+    "notes": "Lawrence Berkeley National Laboratory report estimating historical US data-centre electricity consumption and scenario ranges through 2028, with infrastructure and water-use accounting in the full report. It does not isolate every AI workload or establish local facility capacity, water availability, grid adequacy, emissions, resilience, or frontier-scale transfer.",
+    "source_type": "government_research_report",
+    "published": "2024-12-19",
+    "updated": "2024-12-19",
+    "citation_label": "Shehabi et al. (2024), United States Data Center Energy Usage Report",
+    "doi": "10.71468/P1WC7Q"
+  },
+  {
+    "id": "ext_nist_incident_response_2025",
+    "title": "Incident Response Recommendations and Considerations for Cybersecurity Risk Management: A CSF 2.0 Community Profile",
+    "priority": "external_literature",
+    "layer": "incident_response",
+    "chapter_targets": [
+      "governed-operations-incident-command-and-graceful-degradation"
+    ],
+    "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final",
+    "notes": "Official NIST incident-response baseline for integrating preparation, detection, response, recovery, and continuous improvement into cybersecurity risk management; it does not address every AI-specific failure mode or establish local incident readiness, response efficacy, recovery, compliance, or safety.",
+    "source_type": "government_standard",
+    "published": "2025-04-03",
+    "updated": "2025-04-03",
+    "citation_label": "Nelson et al. (2025), NIST SP 800-61 Rev. 3",
+    "doi": "10.6028/NIST.SP.800-61r3"
+  },
+  {
+    "id": "ext_llama3_herd_2024",
+    "title": "The Llama 3 Herd of Models",
+    "priority": "external_literature",
+    "layer": "governed_distributed_model_training_and_scaling",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://arxiv.org/abs/2407.21783",
+    "notes": "Preliminary training-scale comparator based on the official arXiv abstract: the source presents a model family including a 405B dense Transformer, a context window up to 128K tokens, released pre-trained and post-trained versions, and extensive evaluation. No detailed training-run passage review, distributed-run audit, checkpoint reproduction, training, or benchmark reproduction has been performed locally.",
+    "source_type": "preprint",
+    "arxiv_id": "2407.21783",
+    "published": "2024-07-31",
+    "updated": "2024-11-23",
+    "citation_label": "Grattafiori et al. (2024), The Llama 3 Herd of Models",
+    "doi": "10.48550/arXiv.2407.21783"
+  },
+  {
+    "id": "ext_3d_detection_corruptions_2023",
+    "title": "Benchmarking Robustness of 3D Object Detection to Common Corruptions",
+    "priority": "external_literature",
+    "layer": "perception_sensor_fusion_and_corruption_robustness",
+    "chapter_targets": [
+      "perception-sensor-fusion-and-observation-trust"
+    ],
+    "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Dong_Benchmarking_Robustness_of_3D_Object_Detection_to_Common_Corruptions_CVPR_2023_paper.html",
+    "notes": "Preliminary perception-robustness comparator based on the official CVF abstract: the source reports 27 LiDAR/camera corruption types, three synthetically corrupted benchmark suites, and evaluation of 24 detectors. The reported findings remain source-reported; no corruption suite, model evaluation, sensor-fusion result, or physical-safety result has been reproduced locally.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2303.11040",
+    "published": "2023-06",
+    "citation_label": "Dong et al. (2023), Benchmarking Robustness of 3D Object Detection to Common Corruptions",
+    "doi": "10.1109/CVPR52729.2023.00105"
+  },
+  {
+    "id": "ext_foundation_robotics_physical_risk_2025",
+    "title": "A Comprehensive Survey on Physical Risk Control in the Era of Foundation Model-enabled Robotics",
+    "priority": "external_literature",
+    "layer": "embodied_agency_and_physical_risk_control",
+    "chapter_targets": [
+      "embodied-agency-real-time-control-and-physical-safety"
+    ],
+    "url": "https://arxiv.org/abs/2505.12583",
+    "notes": "Preliminary physical-risk taxonomy based only on the official arXiv abstract: the survey organizes controls across pre-deployment, pre-incident, and post-incident phases and identifies open gaps around pre-incident mitigation, human interaction, and foundation-model-specific issues. No surveyed controller, robot experiment, runtime-assurance result, or physical-safety claim has been reproduced locally.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2505.12583",
+    "published": "2025-05-19",
+    "updated": "2025-05-30",
+    "citation_label": "Kojima et al. (2025), Physical Risk Control in Foundation Model-enabled Robotics",
+    "doi": "10.48550/arXiv.2505.12583"
+  },
+  {
+    "id": "ext_nist_differential_privacy_2025",
+    "title": "Guidelines for Evaluating Differential Privacy Guarantees",
+    "priority": "external_literature",
+    "layer": "privacy_guarantees_and_information_flow_governance",
+    "chapter_targets": [
+      "privacy-data-rights-and-information-flow-governance"
+    ],
+    "url": "https://csrc.nist.gov/pubs/sp/800/226/final",
+    "notes": "Preliminary official-guidance comparator based on the NIST final-publication abstract: SP 800-226 describes differential privacy as a framework for quantifying privacy loss and organizes implementation considerations and hazards through a differential-privacy pyramid. It does not establish legal compliance, correct local implementation, a utility result, or a privacy guarantee for the ASI Stack.",
+    "source_type": "government_standard",
+    "published": "2025-03-06",
+    "updated": "2025-03-06",
+    "citation_label": "Near et al. (2025), NIST SP 800-226",
+    "doi": "10.6028/NIST.SP.800-226"
+  },
+  {
+    "id": "ext_multi_agent_risks_2025",
+    "title": "Multi-Agent Risks from Advanced AI",
+    "priority": "external_literature",
+    "layer": "multi_agent_dynamics_and_systemic_risk",
+    "chapter_targets": [
+      "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
+    ],
+    "url": "https://arxiv.org/abs/2502.14143",
+    "notes": "Preliminary population-risk taxonomy based only on the official arXiv abstract: the report distinguishes miscoordination, conflict, and collusion and names seven contributing risk factors. Its examples and evidence remain source-reported; no population experiment, systemic-risk indicator, intervention, or mitigation result has been reproduced locally.",
+    "source_type": "technical_report",
+    "arxiv_id": "2502.14143",
+    "published": "2025-02-19",
+    "updated": "2025-02-19",
+    "citation_label": "Hammond et al. (2025), Multi-Agent Risks from Advanced AI",
+    "doi": "10.48550/arXiv.2502.14143"
+  },
+  {
+    "id": "ext_replibench_2025",
+    "title": "RepliBench: Evaluating the Autonomous Replication Capabilities of Language Model Agents",
+    "priority": "external_literature",
+    "layer": "autonomous_replication_and_proliferation_evaluation",
+    "chapter_targets": [
+      "autonomous-replication-proliferation-and-containment"
+    ],
+    "url": "https://arxiv.org/abs/2504.18565",
+    "notes": "Preliminary autonomous-replication benchmark comparator based only on the official arXiv abstract: RepliBench decomposes capability into four domains and reports 20 task families, 86 tasks, and evaluation of five frontier models. The source-reported results do not establish a local replication capability, benchmark reproduction, containment result, or authority to test against real providers or credentials.",
+    "source_type": "preprint",
+    "arxiv_id": "2504.18565",
+    "published": "2025-04-21",
+    "updated": "2025-05-05",
+    "citation_label": "Black et al. (2025), RepliBench",
+    "doi": "10.48550/arXiv.2504.18565"
+  },
+  {
+    "id": "ext_autonomous_lab_materials_2023",
+    "title": "An autonomous laboratory for the accelerated synthesis of inorganic materials",
+    "priority": "external_literature",
+    "layer": "scientific_discovery_and_experimental_governance",
+    "chapter_targets": [
+      "scientific-discovery-and-experimental-governance"
+    ],
+    "url": "https://www.nature.com/articles/s41586-023-06734-w",
+    "notes": "Preliminary autonomous-laboratory comparator based on the corrected official Nature article abstract, selected article-page passages, and the 2026 author correction: A-Lab integrates computation, literature-derived data, machine learning, active learning, and robotics, with the corrected article reporting 36 realized compounds from 57 targets. The correction narrows the novelty wording and excludes four inconclusive identifications; no laboratory run, material synthesis, replication, or general experimental-control-plane result has been reproduced locally.",
+    "source_type": "journal_article",
+    "published": "2023-11-29",
+    "updated": "2026-01-19",
+    "citation_label": "Szymanski et al. (2023), A-Lab",
+    "doi": "10.1038/s41586-023-06734-w"
+  },
+  {
+    "id": "ext_moral_crumple_zones_2019",
+    "title": "Moral Crumple Zones: Cautionary Tales in Human-Robot Interaction",
+    "priority": "external_literature",
+    "layer": "human_ai_organizations_delegation_and_accountability",
+    "chapter_targets": [
+      "human-ai-organizations-delegation-and-accountability"
+    ],
+    "url": "https://estsjournal.org/index.php/ests/article/view/260",
+    "notes": "Preliminary socio-technical comparator based on the official journal abstract: moral crumple zones describe cases where responsibility for an automated system's behavior is assigned to a nearby human who had limited effective control. The case analysis does not establish an implemented organizational control, a local empirical result, legal compliance, or a complete accountability allocation.",
+    "source_type": "journal_article",
+    "published": "2019-03-23",
+    "updated": "2019-03-23",
+    "citation_label": "Elish (2019), Moral Crumple Zones",
+    "doi": "10.17351/ests2019.260"
+  },
+  {
+    "id": "ext_conversational_persuasion_gpt4_2025",
+    "title": "On the conversational persuasiveness of GPT-4",
+    "priority": "external_literature",
+    "layer": "human_ai_communication_persuasion_and_epistemic_security",
+    "chapter_targets": [
+      "human-ai-communication-persuasion-and-epistemic-security"
+    ],
+    "url": "https://www.nature.com/articles/s41562-025-02194-6",
+    "notes": "Preliminary persuasion comparator based on the open Nature Human Behaviour article: a preregistered N=900 controlled debate study compared human and GPT-4 opponents with and without limited sociodemographic personalization. The reported setting is short structured debate with self-reported agreement outcomes; it does not establish general real-world influence, durable behavior change, mitigation efficacy, or a local result.",
+    "source_type": "journal_article",
+    "published": "2025-05-19",
+    "updated": "2025-05-19",
+    "citation_label": "Salvi et al. (2025), Conversational Persuasiveness of GPT-4",
+    "doi": "10.1038/s41562-025-02194-6"
+  },
+  {
+    "id": "ext_anthropic_model_persuasiveness_2024",
+    "title": "Measuring the Persuasiveness of Language Models",
+    "priority": "external_literature",
+    "layer": "human_ai_communication_persuasion_and_epistemic_security",
+    "chapter_targets": [
+      "human-ai-communication-persuasion-and-epistemic-security"
+    ],
+    "url": "https://www.anthropic.com/news/measuring-model-persuasiveness",
+    "notes": "Preliminary provider-run persuasion comparator based on Anthropic's official methods/results page: it measures pre/post agreement after one written argument across 56 claims and reports within-class generational scaling. The provider explicitly identifies interactive dialogue and real-world decisions as open questions; no local reproduction or governance intervention is established.",
+    "source_type": "official_research_report",
+    "published": "2024-04-09",
+    "updated": "2024-04-09",
+    "citation_label": "Durmus et al. (2024), Measuring Model Persuasiveness",
+    "doi": null
+  },
+  {
+    "id": "ext_commercial_persuasion_ai_2026",
+    "title": "Commercial Persuasion in AI-Mediated Conversations",
+    "priority": "external_literature",
+    "layer": "human_ai_communication_persuasion_and_epistemic_security",
+    "chapter_targets": [
+      "human-ai-communication-persuasion-and-epistemic-security"
+    ],
+    "url": "https://arxiv.org/abs/2604.04263",
+    "notes": "Preliminary current preprint comparator based only on the official arXiv abstract: two preregistered experiments (N=2,012) compare conversational LLM shopping with search placement under randomized sponsorship and disclosure conditions. The source-reported choice and detection results are not peer-reviewed or locally reproduced and do not establish long-run effects, cross-domain transfer, or mitigation efficacy.",
+    "source_type": "preprint",
+    "arxiv_id": "2604.04263",
+    "published": "2026-04-05",
+    "updated": "2026-04-05",
+    "citation_label": "Salvi, Cuevas, and Horta Ribeiro (2026), Commercial Persuasion in AI-Mediated Conversations",
+    "doi": "10.48550/arXiv.2604.04263"
+  },
+  {
     "id": "ext_circuit_tracing_2025",
     "title": "Circuit Tracing: Revealing Computational Graphs in Language Models",
     "priority": "external_literature",

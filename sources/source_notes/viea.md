@@ -58,6 +58,8 @@ VIEA frames advanced AI as an intent-to-execution system rather than a response 
 - Integrated Reference Architecture
 - Prototype Roadmap
 - Living Book Methodology
+- `human-factors-and-meaningful-control-in-oversight`
+- `governed-operations-incident-command-and-graceful-degradation`
 
 ## Claims To Add Or Update
 

@@ -46,6 +46,8 @@ The Hive Operator OS is the usability and control layer for Project Theseus Hive
 - `integrated-reference-architecture` (Integrated Reference Architecture)
 - `project-theseus-as-report-first-implementation-reference` (Project Theseus as Report-First Implementation Reference)
 - `prototype-roadmap` (Prototype Roadmap)
+- `human-factors-and-meaningful-control-in-oversight`
+- `governed-operations-incident-command-and-graceful-degradation`
 
 ## Claims To Add Or Update
 

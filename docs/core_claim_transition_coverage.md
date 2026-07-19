@@ -9,9 +9,9 @@ It checks the v1.0 claim-state gate: every manifest chapter core claim must have
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 55 |
+| Manifest chapter core claims | 59 |
 | Accepted core evidence-transition records | 22 |
-| Accepted explicit no-promotion decisions | 33 |
+| Accepted explicit no-promotion decisions | 37 |
 | Missing core-claim coverage | 0 |
 
 All chapter core support states remain `argument`. The separate measured/replayed transitions for `living-book-methodology.phase5_harness_registry_runner`, `resource-economics.costed_route_budget_slice`, and `circle-calculus.external_rope_receipt_replay` are not chapter core claims and are not counted in this coverage table.
@@ -62,6 +62,9 @@ All chapter core support states remain `argument`. The separate measured/replaye
 | `data-engines-continual-learning-and-unlearning.core` | Data Engines, Continual Learning, and Unlearning | `argument_only` | no local data engine or dataset admission runtime; no measured data quality, coverage, model quality, privacy, or synthetic-data result; no verified deletion across checkpoints, adapters, caches, retrieval stores, distilled models, or published artifacts |
 | `failure-modes-of-ungoverned-intelligence.core` | Failure Modes of Ungoverned Intelligence | `argument_only` | no system-level red-team result yet; no empirical failure corpus evaluation; no deployed monitor or detector trace |
 | `governed-deliberation-and-test-time-scaling.core` | Governed Deliberation and Test-Time Scaling | `argument_only` | no local deliberation engine, verifier, or workload; no measured quality, cost, or stopping-policy result; finite theorems do not establish verifier correctness, reasoning quality, safety, or generality |
+| `governed-operations-incident-command-and-graceful-degradation.core` | Governed Operations, Incident Command, and Graceful Degradation | `argument_only` | no local effect-complete rollback and compensation harness covering descendants and external effects; no adversarial game-day evidence calibrates detection, severity, containment, or recovery thresholds; general incident-response guidance has not been independently validated for autonomous AI |
+| `governed-world-models-and-reality-grounding.core` | Governed World Models and Reality Grounding | `argument_only` | no local learned world-model campaign or held-out causal intervention benchmark; no representative threshold connects prediction support and uncertainty to safe action admission; reported benchmark performance does not establish open-world grounding, causal fidelity, or transfer |
+| `human-factors-and-meaningful-control-in-oversight.core` | Human Factors and Meaningful Control in Oversight | `argument_only` | no local representative human-subject study or deployed oversight envelope; no independently calibrated workload, comprehension, or intervention-latency thresholds; legacy automation evidence does not by itself establish transfer to modern agentic systems |
 | `human-intent-as-a-formal-input.core` | Human Intent as a Formal Input | `argument_only` | no parser or compiler benchmark; no user-intent interpretation review; no accepted execution trace |
 | `integrated-reference-architecture.core` | Integrated Reference Architecture | `argument_only` | no deployed whole-stack trace kernel; no cross-layer runtime replay; finite fixtures cannot prove observation truth, causal completeness, or service enforcement |
 | `inter-stack-protocols-identity-and-economic-exchange.core` | Inter-Stack Protocols, Identity, and Economic Exchange | `argument_only` | no local protocol endpoint, peer discovery, resolver, credential issuer or verifier, delegated-authority service, payment connector, settlement, dispute, or cross-stack dispatch; no peer-trust, task-truth, authorization, privacy, payment, legal, fairness, or effect-safety evaluation; finite theorems do not establish identity binding, credential validity, authorization correctness, payment settlement, economic fairness, peer trustworthiness, task or artifact truth, safety, or generality |
@@ -80,6 +83,7 @@ All chapter core support states remain `argument`. The separate measured/replaye
 | `safety-cases-and-structured-assurance.core` | Safety Cases and Structured Assurance | `argument_only` | no local safety case, threat model, hazard analysis, countercase search, or review workflow; no measured evidence adequacy, countercase quality, control efficacy, risk, readiness, or deployment result; finite theorems do not establish defeater correctness, case truth, safety, readiness, authority, or generality |
 | `scalable-oversight-and-adversarial-ai-control.core` | Scalable Oversight and Adversarial AI Control | `argument_only` | no local supervision protocol, evaluator, or outcome workload; no measured reviewer calibration, independence, or protocol comparison; finite theorems do not establish reviewer correctness, debate efficacy, weak-to-strong generalization, alignment, safety, or generality |
 | `verification-bandwidth-and-context-adequacy.core` | Verification Bandwidth and Context Adequacy | `argument_only` | no adequacy classifier run; no contradiction-rate measurement; no verification-bandwidth benchmark |
+| `white-box-evidence-interpretability-and-activation-governance.core` | White-Box Evidence, Interpretability, and Activation Governance | `argument_only` | no local independent-method interpretability replication; no accepted metric establishes causal or mechanistic completeness on frontier models; feature and circuit stability across checkpoints, architectures, methods, and tasks remains unproven |
 
 ## Non-Claims
 

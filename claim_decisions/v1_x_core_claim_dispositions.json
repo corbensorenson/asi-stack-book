@@ -1,7 +1,7 @@
 {
   "disposition_set_id": "v1_x.per_chapter_core_claim_dispositions",
   "date": "2026-07-03",
-  "scope_boundary": "Standing per-chapter disposition record for the 55 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
+  "scope_boundary": "Standing per-chapter disposition record for the 59 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
   "review_status": "active_validator_checked_record",
   "generated_from": [
     "book_structure.json",
@@ -12,11 +12,11 @@
   ],
   "support_state_effect": "none",
   "summary": {
-    "manifest_chapter_core_claims": 55,
+    "manifest_chapter_core_claims": 59,
     "accepted_core_transition_dispositions": 22,
-    "accepted_no_promotion_dispositions": 33,
+    "accepted_no_promotion_dispositions": 37,
     "promoted_core_claims": 0,
-    "chapter_core_claims_remaining_at_argument": 55
+    "chapter_core_claims_remaining_at_argument": 59
   },
   "dispositions": [
     {
@@ -327,6 +327,45 @@
       "formal_or_prototype_work": "Add intent ambiguity, delegation, and approval cases.",
       "human_reader_focus": "Ground formal intent in everyday instruction failures.",
       "what_would_move_this": "Intent fixture rejects underspecified or authority-widening execution.",
+      "relevant_non_core_transition_refs": []
+    },
+    {
+      "claim_id": "human-factors-and-meaningful-control-in-oversight.core",
+      "chapter_id": "human-factors-and-meaningful-control-in-oversight",
+      "chapter_title": "Human Factors and Meaningful Control in Oversight",
+      "part_id": "foundations-alignment-governance",
+      "part_title": "Part I - Foundations, Alignment, and Governance",
+      "chapter_file": "chapters/human-factors-and-meaningful-control-in-oversight.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "Meaningful oversight is a resource-bounded control contract: the system must preserve an identified human controller's knowledge, authority, time, observability, and effective intervention path, and must degrade or abstain when that control envelope cannot be maintained.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "preregistered representative human-subject trials with strong allocation and interface baselines, natural and adversarial tasks, ethical stopping rules, and complete denominators",
+        "joint measurement of comprehension, correct and false intervention, timing, workload, trust calibration, useful throughput, residual harm, and responsibility allocation",
+        "independent reproduction and transfer before any broad meaningful-control support change"
+      ],
+      "blockers": [
+        "no local representative human-subject study or deployed oversight envelope",
+        "no independently calibrated workload, comprehension, or intervention-latency thresholds",
+        "legacy automation evidence does not by itself establish transfer to modern agentic systems"
+      ],
+      "promotion_burden": "The chapter has a source-reviewed control-envelope design and human-automation comparators, but no representative ASI Stack human-subject campaign, calibrated control threshold, exercised deployed intervention system, independent reproduction, or transfer result has been accepted for its broad claim.",
+      "limitations": [],
+      "non_claims": [
+        "does not prove operator comprehension, competence, consent, or effective intervention",
+        "does not prove that a visible human, explanation, dashboard, or approval click supplies meaningful control",
+        "does not prove safety, accountability, readiness, deployment, or ASI"
+      ],
+      "current_evidence_summary": "Source notes available for all 10 assigned sources; 10 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Human-factors literature plus a resource-bounded oversight-envelope campaign",
+      "formal_or_prototype_work": "Formalize finite degradation and responsibility limits; build workload, comprehension, mode, intervention-latency, rehearsal, and safe-hold instrumentation.",
+      "human_reader_focus": "Show why a person in the loop is not meaningful control unless they can understand, decide, intervene, and recover in time.",
+      "what_would_move_this": "Representative preregistered human-subject trials beat strong interface and allocation baselines on joint detection, comprehension, correct intervention, useful throughput, workload, and residual harm without responsibility or authority laundering.",
       "relevant_non_core_transition_refs": []
     },
     {
@@ -929,6 +968,45 @@
         "evidence_transitions/v1_x_measured/planning_runtime_replan_delta_no_change.json",
         "evidence_transitions/v1_x_measured/planning_scheduler_state_probe_no_change.json"
       ]
+    },
+    {
+      "claim_id": "governed-world-models-and-reality-grounding.core",
+      "chapter_id": "governed-world-models-and-reality-grounding",
+      "chapter_title": "Governed World Models and Reality Grounding",
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_file": "chapters/governed-world-models-and-reality-grounding.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "A world model should be governed as a fallible, versioned prediction service whose state, horizon, uncertainty, provenance, and calibration bound which imagined consequences may influence planning and action; observation must repeatedly reconcile imagination with reality.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "held-out partially observed intervention workload with reactive, model-free, strong single-model, ensemble, and governed baselines under matched resources",
+        "calibration, shift, disagreement, exploitation, residual, useful-outcome, unsafe-action, latency, and governance-cost records with causal ablations",
+        "independent reproduction and transfer to a second environment"
+      ],
+      "blockers": [
+        "no local learned world-model campaign or held-out causal intervention benchmark",
+        "no representative threshold connects prediction support and uncertainty to safe action admission",
+        "reported benchmark performance does not establish open-world grounding, causal fidelity, or transfer"
+      ],
+      "promotion_burden": "The chapter has source-reviewed learned-world-model comparators and a versioned prediction-service design, but no local held-out causal intervention campaign, calibrated planning result, real-world transfer, independent reproduction, or accepted support transition exists for the broad claim.",
+      "limitations": [],
+      "non_claims": [
+        "does not prove that a latent state, simulation, or rollout represents reality",
+        "does not prove causal prediction, calibrated planning, safe action selection, or real-world transfer",
+        "does not prove readiness, deployment authority, safety, or ASI"
+      ],
+      "current_evidence_summary": "Source notes available for all 9 assigned sources; 9 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Held-out intervention, calibration, disagreement, and reality-residual campaign",
+      "formal_or_prototype_work": "Formalize unsupported-rollout non-authority and residual-triggered routing; implement versioned prediction packets and receding-observation reconciliation.",
+      "human_reader_focus": "Separate imagination from reality and show how a useful simulator earns only bounded influence over a plan.",
+      "what_would_move_this": "On partially observed natural tasks, governed world-model routes outperform strong reactive, model-free, and single-model baselines on useful outcomes and calibration under shift without worse unsafe action, latency, or governance cost, then reproduce and transfer.",
+      "relevant_non_core_transition_refs": []
     },
     {
       "claim_id": "cognitive-compilation-and-semantic-ir.core",
@@ -2215,6 +2293,45 @@
       ]
     },
     {
+      "claim_id": "white-box-evidence-interpretability-and-activation-governance.core",
+      "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
+      "chapter_title": "White-Box Evidence, Interpretability, and Activation Governance",
+      "part_id": "evidence-implementation-living-book",
+      "part_title": "Part IV - Evidence, Implementation, and the Living Book",
+      "chapter_file": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "Internal-state observations should enter governance only as typed evidence artifacts with lineage, method assumptions, replication status, causal interventions, stability checks, coverage limits, and explicit non-authority; white-box evidence complements but does not replace behavioral and operational evidence.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "two independently implemented interpretability method families on preregistered held-out behaviors with negative controls and blinded labeling",
+        "causal interventions, checkpoint and transformation stability, behavioral prediction, side-effect, unexplained-residual, disagreement, cost, and full failure accounting",
+        "independent reproduction on a second model family without evidence-to-authority escalation"
+      ],
+      "blockers": [
+        "no local independent-method interpretability replication",
+        "no accepted metric establishes causal or mechanistic completeness on frontier models",
+        "feature and circuit stability across checkpoints, architectures, methods, and tasks remains unproven"
+      ],
+      "promotion_burden": "The chapter has source-reviewed mechanistic-interpretability comparators and a typed evidence-packet design, but no local independent-method replication, accepted completeness measure, held-out causal coverage result, cross-checkpoint stability result, or cross-architecture transfer has been accepted for its broad claim.",
+      "limitations": [],
+      "non_claims": [
+        "does not prove a feature label, probe, attribution, or circuit is complete, unique, or causally sufficient",
+        "does not prove model intent, reasoning-trace faithfulness, behavioral safety, or cross-architecture transfer",
+        "does not grant capability, readiness, release, deployment, or support authority"
+      ],
+      "current_evidence_summary": "Source notes available for all 8 assigned sources; 8 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Independent-method interpretability replication plus causal intervention and stability studies",
+      "formal_or_prototype_work": "Formalize evidence non-authority and invalid-packet rejection; bind model lineage, assumptions, controls, residuals, disagreement, and expiry in a white-box packet.",
+      "human_reader_focus": "Teach readers how to use internal evidence without mistaking a feature label or circuit diagram for complete model understanding.",
+      "what_would_move_this": "Two independently implemented method families on held-out behaviors survive negative controls, causal interventions, checkpoint and transformation tests, predict behavioral change, report unexplained residuals and all failures, and reproduce on a second model family without granting authority.",
+      "relevant_non_core_transition_refs": []
+    },
+    {
       "claim_id": "capability-thresholds-and-deployment-commitments.core",
       "chapter_id": "capability-thresholds-and-deployment-commitments",
       "chapter_title": "Capability Thresholds and Deployment Commitments",
@@ -2329,6 +2446,45 @@
       "formal_or_prototype_work": "Build a public-safe assurance-case record with scoped claim, hazard/deployment context, support/challenge references, assumptions, acceptance criterion, authority, residuals, and affected release path.",
       "human_reader_focus": "Explain why a map of evidence is not evidence of safety, and why a recorded countercase should change what a team may do next.",
       "what_would_move_this": "A replayed scoped case-compilation workload with support, stale dependency, unresolved-defeater, missing-acceptance, missing-residual, and affected-release controls; no local threat model, safety case, safety, readiness, authority, or deployment claim.",
+      "relevant_non_core_transition_refs": []
+    },
+    {
+      "claim_id": "governed-operations-incident-command-and-graceful-degradation.core",
+      "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
+      "chapter_title": "Governed Operations, Incident Command, and Graceful Degradation",
+      "part_id": "evidence-implementation-living-book",
+      "part_title": "Part IV - Evidence, Implementation, and the Living Book",
+      "chapter_file": "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "Governed operation is a closed incident lifecycle that binds detection, classification, command authority, containment, effect-complete rollback, graceful degradation, recovery evidence, and learning to the exact deployed system and its dependency graph.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "fault-injected reference service covering model, optimizer, scheduler, RNG, cache, memory, data, credentials, replicas, descendants, backups, and external effects",
+        "compound, correlated, ambiguous, and detector-degrading game days with strong SRE baselines and joint harm, useful-throughput, latency, operator-load, and governance-cost accounting",
+        "independent recovery exercise and transfer with expiring emergency authority and complete residual disposition"
+      ],
+      "blockers": [
+        "no local effect-complete rollback and compensation harness covering descendants and external effects",
+        "no adversarial game-day evidence calibrates detection, severity, containment, or recovery thresholds",
+        "general incident-response guidance has not been independently validated for autonomous AI"
+      ],
+      "promotion_burden": "The chapter has source-reviewed lifecycle and incident guidance plus an effect-complete operations design, but no local fault-injected service, adversarial game-day matrix, full-state rollback and compensation result, real incident, independent reproduction, or transfer has been accepted for its broad claim.",
+      "limitations": [],
+      "non_claims": [
+        "does not prove detector quality, rollback completeness, effect reversibility, or recovery safety",
+        "does not prove resilience from monitoring, backups, a kill switch, an incident plan, or a successful code restore",
+        "does not prove bounded harm, readiness, safe deployment, or ASI"
+      ],
+      "current_evidence_summary": "Source notes available for all 9 assigned sources; 9 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Fault-injected operations service plus incident game days and effect-complete rollback mutations",
+      "formal_or_prototype_work": "Formalize degradation non-escalation and recovery completeness; implement exact deployment state, emergency authority, containment, compensation, descendant, and recovery receipts.",
+      "human_reader_focus": "Make post-release safety concrete through incidents, hidden state, expiring emergency power, degraded service, and evidence-bound recovery.",
+      "what_would_move_this": "Adversarial compound and detector-degrading game days detect partial rollback across model, optimizer, scheduler, RNG, cache, memory, data, credentials, replicas, descendants, and external effects; recovery beats strong SRE baselines on bounded harm and useful throughput, reproduces independently, and does not retain widened authority.",
       "relevant_non_core_transition_refs": []
     },
     {

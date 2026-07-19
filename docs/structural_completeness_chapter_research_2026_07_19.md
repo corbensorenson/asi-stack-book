@@ -1,21 +1,26 @@
 # Structural Completeness Chapter Research — 2026-07-19
 
-Status: **roadmap-admitted research tranche; manifest admission gated**
+Status: **first tranche manifest-admitted; initial drafts complete; evidence and reader integration gated**
 
 This note adjudicates the 2026-07-19 chapter merge and addition reviews against
-the 55-chapter manifest, current outline, source inventory, Corben-authored
-papers, and newly inspected primary literature. It is a research and drafting
-contract, not a claim-support transition. The current manifest remains the
-ordering truth until each candidate passes the gates below.
+the 55-chapter baseline manifest, current outline, source inventory, Corben-
+authored papers, and newly inspected primary literature. It is a research and
+drafting contract, not a claim-support transition. After the boundary, source,
+crosswalk, and packet work below, all four candidates entered the working
+manifest, which now contains 59 entries. All four initial chapter drafts now
+exist and are registered in the outline, source, claim, and proof scaffolds.
+Their claim-bearing empirical lanes, formal dispositions, reader integration,
+and final validation remain incomplete.
 
 ## Decision
 
 - **Merge no chapters.** The measured maximum pairwise chapter similarity is
   0.298, and boundary review finds complementary owners rather than duplicate
   theses. Repetition is a P7.1a editorial-scaffolding problem.
-- **Roadmap-admit four new chapter candidates as one bounded tranche.** Each
-  owns a currently distributed but unowned control problem. If all four pass,
-  the live manifest moves from 55 to 59 chapters.
+- **Admit four new chapters as one bounded first tranche.** Each owns a
+  currently distributed but unowned control problem. Their packet-level gates
+  passed, so the working manifest moved from 55 to 59 entries; this does not
+  establish completed chapters or supported claims.
 - **Do not let the tranche displace P2 or the Theseus flagship.** Source review,
   boundary packets, and drafting may proceed beside P2; manifest insertion,
   proof work, and experiments use separately budgeted capacity.
@@ -23,9 +28,10 @@ ordering truth until each candidate passes the gates below.
   demonstrate a distinct owner, evidence lane, falsifier, and multi-source
   future is returned to named existing sections.
 
-## Tranche-wide admission gates
+## Tranche-wide admission and completion gates
 
-Every candidate must satisfy all of these before `book_structure.json` changes:
+The manifest admission used the first four packet-level gates below. Every
+candidate must satisfy the complete set before the tranche is called complete:
 
 1. A one-sentence exclusive job and an adjacent-owner table with no shared
    primary invariant.
@@ -347,8 +353,10 @@ independent outcome and state-integrity checks.
   gaps, and field-study boundary.
 - NIST AI RMF Generative AI Profile is a candidate source for rehearsed
   third-party incident plans and role assignment; source-note before use.
-- NIST SP 800-61 Rev. 3 or another primary incident-response standard should be
-  source-noted as the generic incident baseline before chapter admission.
+- `ext_nist_incident_response_2025` — source-noted NIST SP 800-61 Rev. 3
+  baseline for prepared roles, Detect/Respond/Recover, and continuous
+  improvement; generic cybersecurity guidance does not establish AI-specific
+  observability, safe degradation, or local response efficacy.
 
 ### Corben-source crosswalk
 
@@ -364,6 +372,15 @@ independent outcome and state-integrity checks.
 
 ## Section-level additions that remain section-level
 
+This subsection records the first-tranche decision boundary. The later
+same-date end-to-end audit in
+`docs/structural_completeness_gap_audit_2026_07_19.md` supersedes its future-
+candidate disposition: persuasion, public institutions, deployment transition,
+physical compute, and governed objective formation are now research-admitted
+but still manifest-gated. Embedded agency is a named cross-book foundations
+program, not a chapter candidate yet. None is a chapter merely because the
+deeper audit reopened it.
+
 - Add epistemic-security and persuasion-defense to Scalable Oversight and/or
   Adversarial Evaluation; do not create a persuasion chapter yet.
 - Add gradual disempowerment to Failure Modes and multi-agent systemic-risk
@@ -378,20 +395,22 @@ independent outcome and state-integrity checks.
 ## Implementation sequence
 
 1. Finish the P7.1a repetition/compression audit; it changes no chapter count.
-2. Admit and draft White-Box Evidence first because its evidence vocabulary is
-   needed by later world-model and safety arguments.
-3. Admit and draft Governed World Models second and use it to sharpen the
+2. The initial White-Box Evidence draft was created first so its evidence
+   vocabulary could constrain later world-model and safety arguments.
+3. The initial Governed World Models draft was created second and sharpens the
    Theseus/Platonic World Model evidence interface.
-4. Admit and draft Human Factors third, after its study protocol and ethics/
-   privacy boundaries are reviewable.
-5. Admit and draft Governed Operations fourth, using the joined Theseus
-   authority-to-effect trace when T4 exists; design work may start earlier.
+4. The initial Human Factors draft now exists; its claim-bearing study remains
+   gated on a reviewable protocol and explicit ethics/privacy boundaries.
+5. The initial Governed Operations draft now exists; its central reader case
+   remains gated on the joined Theseus authority-to-effect trace at T4.
 6. Run a final 59-chapter boundary and reader-flow audit. Future chapter
    additions require an explicit unowned-interface proof and may not be called
    “final” merely because this tranche is complete.
 
 ## Current support and release effect
 
-This research admits no chapter to the active manifest, changes no chapter-core
-support state, claims no reproduced external result, authorizes no external
-release, and establishes no safety, SOTA, AGI, or ASI result.
+This research authorized four conceptual, argument-level manifest entries. It
+changes no chapter-core support state, claims no reproduced external result,
+authorizes no external release, and establishes no safety, SOTA, AGI, or ASI
+result. A manifest entry is not a completed chapter, empirical result, proof,
+reader artifact, or publication.

@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/human-intent-as-a-formal-input.qmd",
     "structured_atoms_reviewed": 45,
-    "prose_candidates_adjudicated": 50,
+    "prose_candidates_adjudicated": 49,
     "unowned_material_claims": 0,
     "review_note": "Reviewed the complete chapter, eight source notes and their inventory/Appendix H boundaries, all 25 Lean declarations grouped under four manifest proof targets, the 4-valid/6-invalid intake corpus, the 2-valid/7-invalid re-contract corpus, the 3-valid/10-invalid plan-execution corpus, every prose scanner candidate, diagrams, objections, test plan, and downstream handoffs. The sweep replaced prompt-as-intent shorthand with a versioned interpretation contract; promoted raw-request separation, field disposition, bounded-default limits, affected-party authority, consumer binding, material-change re-contracting, preference non-authority, correction and appeal, and clarification-cost obligations into manifest ownership; separated formal record routing from natural-language understanding, consent, preference recovery, satisfaction, runtime authority, and effect safety; and preserved zero support-state effect."
   },
@@ -858,11 +858,6 @@
       "rationale": "Downstream authority traceability.",
       "target_atom_id": "human-intent-as-a-formal-input.interface.004"
     },
-    "human-intent-as-a-formal-input.prose.7dbd65fd209e": {
-      "state": "duplicate_of_atom",
-      "rationale": "Constitutional transition.",
-      "target_atom_id": "human-intent-as-a-formal-input.interface.002"
-    },
     "human-intent-as-a-formal-input.prose.7482aace2909": {
       "state": "duplicate_of_atom",
       "rationale": "Restates the mature campaign's joint usefulness requirement.",
@@ -883,6 +878,21 @@
       "rationale": "Explicit non-claim boundary for the finite intent-resolution proof packet."
     }
   },
+  "prose_review_lineage": [
+    {
+      "retired_candidate_id": "human-intent-as-a-formal-input.prose.7dbd65fd209e",
+      "retired_source": "chapters/human-intent-as-a-formal-input.qmd:495",
+      "retired_sentence": "Intent contracts can preserve what a person asked for, but they do not by themselves decide which requests remain bounded by dignity, consent, least sufficient power, or self-modification limits.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Constitutional transition.",
+        "target_atom_id": "human-intent-as-a-formal-input.interface.002"
+      },
+      "retirement_reason": "The handoff now routes first through the newly admitted Human Factors chapter before Constitutional Alignment while preserving the original non-authority boundary.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-07-19"
+    }
+  ],
   "non_claims": [
     "This sweep establishes claim ownership and test obligations only; it does not establish that the stack understands human intent.",
     "The added obligations are requirements to challenge, not evidence of consent, preference recovery, authority, preservation, useful throughput, safety, or SOTA performance.",

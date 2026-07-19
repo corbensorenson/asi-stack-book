@@ -1,0 +1,726 @@
+---
+title: "Human Factors and Meaningful Control in Oversight"
+chapter_id: "human-factors-and-meaningful-control-in-oversight"
+part_id: "foundations-alignment-governance"
+status: "conceptual"
+draft_maturity: "v0.2 manuscript draft"
+last_updated: "2026-07-19"
+primary_sources:
+  - "viea"
+  - "talos"
+  - "theseus_operator_os"
+  - "scf"
+  - "ext_humans_automation_1997"
+  - "ext_ironies_automation_1983"
+  - "ext_levels_automation_2000"
+  - "ext_complacency_bias_automation_2010"
+  - "ext_meaningful_human_control_actionable_2022"
+  - "ext_agentic_oversight_practice_2026"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No representative human-subjects study has measured the complete proposed control envelope, and no chapter-level empirical test has been run in this repository."
+  - "No independently replicated threshold for attention, task comprehension, workload, qualification recency, or intervention latency is established."
+  - "Transfer from legacy automation findings and an exploratory software-agent interview study to modern high-autonomy or high-stakes systems remains untested."
+  - "The two finite formal targets remain planned; no semantically adequate runtime consumer or Lean proof is implemented for this chapter."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `human-factors-and-meaningful-control-in-oversight` |
+| Part | Part I - Foundations, Alignment, and Governance |
+| Status | conceptual |
+| Manuscript maturity | v0.2 manuscript draft |
+| Last updated | 2026-07-19 |
+| Primary source records | `viea`, `talos`, `theseus_operator_os`, `scf`, `ext_humans_automation_1997`, `ext_ironies_automation_1983`, `ext_levels_automation_2000`, `ext_complacency_bias_automation_2010`, `ext_meaningful_human_control_actionable_2022`, `ext_agentic_oversight_practice_2026` |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | Source notes are available for all ten assigned records; Appendix C contains ten exact claim-level mappings. The four legacy automation notes are based on inspected primary metadata/abstract records, not locally reproduced studies. |
+| Test state | Three chapter tests and two formal targets are planned and not run. No human-subjects study, deployed oversight service, or control-envelope benchmark is claimed. |
+
+## Drafting guardrail
+
+This chapter distinguishes an assigned human role from an exercisable control
+relationship. It uses source-noted human-factors literature for bounded
+conceptual and comparative grounding, and Corben-side sources for architecture
+lineage. It does not import external effect sizes, reproduce a human-subjects
+result, validate a workload threshold, or infer meaningful control from a
+record shape, a dashboard, an approval click, or a visible operator.
+
+The chapter's proposed telemetry has a deliberately narrow epistemic role. It
+can show that a necessary condition for control was absent. It cannot, by
+itself, settle whether a person had morally meaningful control, whether an
+institution assigned responsibility justly, whether consent was valid, or
+whether the resulting action was safe.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+Formal authority becomes fragile when a real person must exercise it under
+pressure.
+
+A request may be clear, the governing policy may be explicit, and the interface
+may still leave the assigned reviewer unable to act. Evidence can arrive too
+late, modes can be ambiguous, alarms can crowd one another, or the only
+available intervention can take longer than the consequence needs to become
+irreversible.
+
+Calling that arrangement human oversight does not repair it. The relevant
+question is whether this particular controller, facing these actual conditions,
+can understand the choice, reject it, select a viable alternative, and make the
+intervention take effect. Knowledge, time, workload, competence, authority,
+representation, incentives, recovery, and responsibility must align around the
+same episode.
+
+Measurements help most when they reveal a missing condition: no authority, no
+independent evidence, an impossible deadline, a saturated queue, or an untested
+stop path. They should not become a score of personal worth, a surveillance
+feed, or an automatic declaration of moral responsibility. Passing the checks
+removes known defeaters; it never proves that control was meaningful.
+:::
+
+## Problem
+
+A formally permitted AI action can still be practically uncontrollable when
+operators lack time, attention, task-relevant comprehension, calibrated trust,
+current competence, an intelligible representation, real alternatives, or an
+effective intervention path. The formal existence of a reviewer does not make
+the review feasible.
+
+This matters most when automation moves routine work away from people but
+leaves them the rare abnormal case. The person may be asked to reconstruct a
+long execution history, identify a subtle failure, resist a confident system
+recommendation, and intervene under time pressure. The nominal safety layer has
+then become a difficult operational role rather than a simple gate.
+
+The ASI Stack therefore needs a human-factors boundary between accepted intent
+and later policy or effect authorization. That boundary asks whether the human
+role behind an approval is usable under the actual task conditions. It does not
+decide what the person intended, what the constitution permits, which scalable
+oversight protocol is epistemically adequate, or whether a runtime adapter
+enforced the final permission. It decides whether assigning the human a control
+duty is operationally credible.
+
+## Exclusive job and boundaries
+
+**Exclusive job:** determine whether assigned human oversight is actually
+exercisable under the information, time, workload, competence, authority,
+interface, incentives, and recovery conditions of the task.
+
+| Adjacent owner | That chapter keeps | This chapter owns |
+|---|---|---|
+| Human Intent as a Formal Input | What a principal requested, what remains ambiguous, and what authority the accepted intent contract contains. | Whether a named person can understand, contest, and control the execution path built from that intent. |
+| Scalable Oversight and Adversarial AI Control | Protocols for judging stronger or less transparent systems, reviewer/evaluator dependence, evidence views, and bounded-use receipts. | The human-factors validity of a concrete human role: workload, reliance, task comprehension, intervention feasibility, and degradation. |
+| Runtime Adapters, Tool Permissions, and Human Approval | Enforcement of typed permissions, approval requirements, tool boundaries, effect dispatch, and receipts. | Whether the human role behind an approval gate was capable of informed and effective intervention. |
+| Constitutional Alignment: Agency, Dignity, and Corrigibility | Normative predicates, protected interests, refusal, appeal, correction, and constitutional constraints. | Whether the human control and contest paths required by those predicates are usable in the operating conditions. |
+| Moral Uncertainty, Value Conflict, and Contestable Governance | Value conflict, standing, disagreement, and contestable moral governance. | The ergonomics and capacity of review, intervention, handoff, and responsibility once a reviewer role is assigned. |
+
+No neighboring chapter should treat this chapter's capacity record as a new
+grant of authority. Conversely, this chapter should not absorb their authority,
+policy, evidence, moral, or effect-admission decisions. It returns one bounded
+answer: whether the proposed human role remains inside a declared control
+envelope, must be degraded, or is too uncertain to rely on.
+
+## Why existing approaches are insufficient
+
+A dashboard, a confirmation modal, a nominal "human in the loop," or a fixed
+level-of-automation label can all be useful. None establishes that a person
+received the right information, understood the active choice, had enough time,
+held the required authority, possessed a viable alternative, or could make an
+intervention take effect.
+
+The external source notes make several bounded insufficiencies visible:
+
+- `ext_humans_automation_1997` frames automation outcomes through use, misuse,
+  disuse, and abuse, and motivates treating trust, false alarms, workload, and
+  monitoring conditions as design variables rather than operator character.
+- `ext_ironies_automation_1983` grounds the automation irony: removing routine
+  work can leave people with rare, difficult supervisory and abnormal-condition
+  duties for which context and practice have eroded.
+- `ext_levels_automation_2000` separates information acquisition, analysis,
+  decision or action selection, and action implementation. A single approval
+  click collapses those distinct functions and obscures what the person
+  actually reviewed.
+- `ext_complacency_bias_automation_2010` supports treating complacency,
+  omission, commission, divided attention, and automation bias around imperfect
+  aids as predictable interaction risks.
+- `ext_meaningful_human_control_actionable_2022` supplies a socio-technical
+  comparator built around an explicit operating domain, compatible human and
+  machine representations, responsibility commensurate with authority and
+  ability, and traceable links to responsible human action.
+- `ext_agentic_oversight_practice_2026` provides an exploratory, interview-based
+  view of seventeen experienced developers using a priori control, co-planning,
+  live monitoring, and post hoc review with software agents. It motivates
+  workflow-wide measurement, but it is not a controlled efficacy study or a
+  population-wide result.
+
+These sources do not validate the control envelope proposed here. They establish
+why role assignment, interface visibility, and approval receipts are
+insufficient evidence on their own.
+
+## Core Claim
+
+[human-factors-and-meaningful-control-in-oversight.core, label: Design rationale, support: argument] Meaningful oversight is a resource-bounded control contract: the system must preserve an identified human controller's knowledge, authority, time, observability, and effective intervention path, and must degrade or abstain when that control envelope cannot be maintained.
+
+"Meaningful" carries both operational and normative content. This chapter does
+not collapse the normative content into a score. Its narrower architectural
+claim is that several operational conditions are necessary: if the responsible
+person lacked relevant information, comprehension opportunity, authority,
+time, alternatives, or an effective intervention channel, the stack has strong
+evidence against calling that episode meaningful control. Passing all checks
+removes some known defeaters; it does not prove the larger normative judgment.
+
+### Claim-source mapping status
+
+Appendix C maps the core claim to all ten assigned sources. The mappings support
+different parts of the design and retain distinct limits.
+
+| Source | Mapped support | Limit retained here |
+|---|---|---|
+| `viea` | Structured roles, constraints, verification, failure behavior, escalation, and human-to-system command contracts. | Architecture source; does not establish operator cognition, trust calibration, or intervention effectiveness. |
+| `talos` | Operator authority, adjudication, approval boundaries, escalation, audit, and replay surfaces. | Design lineage does not prove human-factors performance in deployment. |
+| `theseus_operator_os` | Operator-visible state, shared commands, work-board state, TTLs, kill switches, and intervention-facing surfaces. | The local project source note records no usability run and no proof that people notice, understand, or intervene correctly. |
+| `scf` | Governance roles, bounded authority, incidents, appeals, review gates, and recorded accountability. | Institutional process does not establish moment-to-moment human control. |
+| `ext_humans_automation_1997` | Human-centered automation vocabulary for use, misuse, disuse, abuse, trust, workload, false alarms, and monitoring. | Foundational framing does not validate this chapter's envelope or quantify a current agentic-system effect. |
+| `ext_ironies_automation_1983` | Residual human duties, abnormal-condition work, and the skill/context problem created by automation. | Conceptual analysis predates current agentic systems and supplies no local rate estimate. |
+| `ext_levels_automation_2000` | Multidimensional allocation across information, analysis, decision selection, and implementation. | A taxonomy is neither a control guarantee nor an optimal-allocation theorem. |
+| `ext_complacency_bias_automation_2010` | Complacency and automation bias as attention and interaction risks around imperfect aids. | Findings do not directly validate ASI Stack interfaces or high-autonomy transfer. |
+| `ext_meaningful_human_control_actionable_2022` | Operating-domain, representation, authority-and-ability, responsibility, and traceability properties. | A normative design framework does not prove technical effectiveness or settle responsibility or law. |
+| `ext_agentic_oversight_practice_2026` | Contemporary preventive, co-planning, live-monitoring, and post hoc oversight practices and difficulties. | Exploratory interviews with seventeen experienced developers do not establish causal efficacy, population effects, or safety. |
+
+Support remains `argument`. Source count, source age, and passage availability do
+not substitute for a measured control episode or an accepted evidence
+transition.
+
+## Mechanism
+
+The mechanism is a **versioned oversight contract** joined to an
+**oversight-capacity record**. The contract names the task, consequence class,
+human role, authority, evidence view, decision point, intervention paths, safe
+fallback, responsibility boundary, and expiry. The capacity record captures
+the task-level conditions present at a particular review episode. A narrow gate
+then routes the episode to proceed, clarify, add capacity, reduce autonomy, safe
+hold, or abstain.
+
+```{mermaid}
+flowchart LR
+  A["Accepted intent and authority"] --> B["Versioned oversight contract"]
+  T["Task, consequence, and time-to-irreversibility"] --> B
+  B --> C["Capacity snapshot"]
+  V["Evidence and representation view"] --> C
+  C --> D{"Necessary control conditions met?"}
+  D -- "yes, within declared scope" --> E["Bounded review or intervention"]
+  E --> F["Decision and intervention receipt"]
+  F --> G["Outcome, appeal, and residual"]
+  D -- "missing or uncertain" --> H["Clarify, add reviewer, slow, reduce autonomy, or safe hold"]
+  H --> I{"Envelope restored?"}
+  I -- "yes" --> C
+  I -- "no" --> J["Abstain and escalate"]
+  G --> K["Rehearsal, allocation, and contract review"]
+  K --> B
+```
+
+**How to read the control-envelope flow:** the contract does not send a task
+directly to an approve/reject button. It joins task demands, authority,
+evidence, and a capacity snapshot first. Missing or uncertain necessary
+conditions route toward added capacity, reduced autonomy, safe hold, or
+abstention. A receipt records what happened without converting the human into
+the sole cause or blame target.
+
+The design distinguishes four states that are often conflated:
+
+| State | Minimum interpretation | What it does not establish |
+|---|---|---|
+| `nominal_approval` | A named person produced an approval event. | That the person saw the relevant evidence, understood the choice, or could stop the effect. |
+| `informed_review` | The reviewer received a compatible representation and passed a task-relevant comprehension check under a declared workload and time window. | That an attempted intervention would work or that responsibility is justified. |
+| `effective_intervention` | The reviewer had authority, a viable alternative, sufficient time, and an exercised channel whose system response stayed inside the declared latency and safe-state bounds. | That the overall arrangement is normatively meaningful or fair. |
+| `meaningful_control` | A socio-technical judgment that incorporates the necessary operational conditions plus responsibility, reasons, contestability, affected parties, and institutional context. | It is never inferred automatically from telemetry or a click. |
+
+### The measured control envelope
+
+The envelope is a proposed measurement contract, not an established human
+performance law. For review episode $e$, it records the following dimensions:
+
+| Dimension | Proposed task-level record | Defeater that the record can expose | Fail-closed route |
+|---|---|---|---|
+| Role and qualification | Named role, required competence, qualification evidence, expiry, practice or rehearsal recency, accessibility needs. | Wrong role, stale qualification, or a task outside practiced scope. | Add or replace reviewer; narrow the task; safe hold. |
+| Information availability | Evidence-view digest, provenance, known omissions, update freshness, alternatives shown, uncertainty and conflict markers. | Relevant evidence absent, stale, selectively presented, or available only after the decision. | Repair the view; extend the window; abstain. |
+| Representation compatibility | Human-readable mapping from system state to task concepts, independent evidence path, comprehension probe, and unresolved mismatch. | Explanation fluency mistaken for understanding; system categories incompatible with the reviewer's task model. | Show raw/independent evidence; clarify; route to specialist. |
+| Decision time | Notice time, comprehension time, deliberation time, action time, system response time, and time-to-irreversibility. | The nominal override exists but cannot complete before the consequential transition. | Slow, stage, require pre-authorization, or block. |
+| Concurrent load | Active review count, queue age, interruption burden, alarm rate, deferred work, and reviewer-declared inability to continue. | Saturation, alarm fatigue, attention tunneling, or approval batching. | Queue, rotate, shed load, reduce autonomy, or safe hold. |
+| Alert or fatigue boundary | Coarse voluntary readiness declaration and task-performance indicators, with no default biometric or emotion inference. | The design depends on perfect vigilance or concealed personal-state surveillance. | Pause, rotate, or add independent review without punitive inference. |
+| Authority and alternatives | Authority basis, ceiling, allowed actions, veto or stop power, viable alternatives, appeal, escalation, and anti-retaliation boundary. | Responsibility without the legal or technical ability to change the outcome. | Transfer authority, change role assignment, or block action. |
+| Conflict and incentive state | Declared conflicts, production pressure, compensation or evaluation coupling, urgency source, and escalation independence. | Incentives reward rubber-stamping, suppress abstention, or punish delay. | Independent reviewer, recusal, or governance escalation. |
+| Intervention opportunity | Intervention point, channel health, exercised drill, expected and observed response latency, scope of stop, and reachable safe state. | A decorative kill switch, partial stop, mode confusion, or late intervention. | Repair and rehearse; reduce authority surface; safe hold. |
+| Outcome and recovery | Decision, intervention attempted, system response, independent outcome check, appeal, residual, and responsibility allocation. | Logs record the click but hide whether the intervention changed the outcome or left irreversible effects. | Incident/recovery route and contract revision. |
+
+The time condition can be made explicit without pretending that its component
+estimates are already calibrated:
+
+$$
+\Delta t_e = t_{\text{irreversible}} -
+  (t_{\text{notice}} + t_{\text{understand}} + t_{\text{decide}} +
+   t_{\text{act}} + t_{\text{system response}} + t_{\text{safety margin}}).
+$$
+
+If $\Delta t_e \leq 0$, effective intervention is unavailable under the
+declared estimates, even if an override button exists. If $\Delta t_e > 0$,
+timeliness is only one necessary condition. The equation does not measure
+understanding, validate the estimates, or prove control.
+
+A proposed finite admission predicate can likewise be written as a conjunction
+of adjudicated inputs:
+
+$$
+C_{\text{necessary}}(e) = A_e \land O_e \land Q_e \land T_e \land
+L_e \land I_e \land R_e \land X_e,
+$$
+
+where authority $A$, observability and representation $O$, qualification $Q$,
+time $T$, load $L$, intervention $I$, reachable recovery $R$, and conflict or
+incentive disposition $X$ must all pass for the declared task. This predicate
+is useful for fail-closed routing only after each input has a defensible
+operationalization. It is not a numerical score of a person and it is not a
+proof of meaningful control.
+
+### Oversight artifacts
+
+The smallest durable architecture uses related artifacts rather than one
+all-purpose log:
+
+| Artifact | Required contents | Authority and evidence boundary |
+|---|---|---|
+| Oversight contract | Contract/version ID; task and consequence class; operating domain; automation functions; controller role; required qualifications; information view; decision points; authority and alternatives; intervention paths; safe defaults; expiry; responsibility ceiling. | Assigns a proposed review role but grants no new effect authority. |
+| Capacity snapshot | Episode ID; reviewer-role pseudonym; qualification status; evidence-view digest; time budget; queue/load indicators; voluntary readiness boundary; conflict disposition; accessibility accommodations; uncertainty; missing fields. | Supports routing for this episode only; not a general worker score or proof of comprehension. |
+| Representation packet | System mode; recommendation and alternatives; uncertainty; provenance; consequence; time-to-irreversibility; independent evidence; known omissions; version digest. | A view can support review but cannot attest that it was understood. |
+| Comprehension record | Task-relevant probe, response, uncertainty, assistance used, and retry/clarification path. | A bounded probe is not a general intelligence, consent, or competence test. |
+| Intervention plan | Available stop, modify, defer, delegate, escalate, and safe-state actions; channel health; expected latency; rehearsal receipt. | Describes possible control; only an exercised response can support a narrow effectiveness claim. |
+| Decision and intervention receipt | What the reviewer saw; decision; timing; intervention request; system response; receipt integrity; unresolved residuals. | Records opportunity and response without making the reviewer solely responsible. |
+| Appeal and residual record | Disagreement, inability to review, unsafe pressure, failed intervention, affected parties, appeal owner, recovery owner, and next review. | Preserves contestability and missing control rather than smoothing it into approval. |
+| Qualification and rehearsal record | Declared task class, training basis, drill scenarios, last rehearsal, observed limitations, accommodation needs, expiry. | Cannot justify work outside the rehearsed scope or replace live capacity checks. |
+
+The lifecycle is explicit: `proposed`, `capacity_unverified`, `review_ready`,
+`review_in_progress`, `intervention_available`, `degraded`, `safe_hold`,
+`abstained`, `completed`, `appealed`, or `expired`. Material changes to the
+task, model, interface, evidence view, consequence, authority, reviewer role,
+time window, or intervention path invalidate the old admission and require a
+new snapshot or contract version.
+
+## Interfaces
+
+Meaningful control is a joined property, so its interface cannot be reduced to
+an approval API. Intent supplies the objective and authority ceiling;
+oversight supplies a task and evidence view; the runtime supplies the proposed
+effect, last reversible point, intervention channel, and safe-state behavior;
+training supplies current qualification; and constitutional owners supply the
+rights and contestability constraints. The control-envelope decision returns a
+bounded route such as review-ready, degrade, safe hold, abstain, or re-contract.
+It does not grant the external effect. Each handoff retains freshness,
+uncertainty, failure, and residual state because a valid input can become
+unusable after workload, timing, model mode, authority, or interface changes.
+The same separation prevents human-capacity measurements from becoming
+employment discipline, surveillance, proof of comprehension, or a transfer of
+blame. Runtime enforcement, normative legitimacy, support movement, and final
+release remain with their respective owners.
+
+| Interface | What enters this chapter | What leaves this chapter | Boundary |
+|---|---|---|---|
+| Intent and authority contract | Accepted objective, affected parties, means, authority ceiling, stop conditions, and open ambiguities. | Human-role requirements and any re-contract request caused by infeasible oversight. | Intent clarity does not prove reviewer capacity; this chapter cannot widen the grant. |
+| Scalable-oversight receipt | Task cohort, evidence views, protocol role, reviewer/system envelopes, dependencies, abstention, and escalation. | Human-capacity residuals, workload limits, and required reviewer support. | Protocol quality and human-role feasibility remain separate claims. |
+| Explanation and uncertainty view | Model mode, recommendation, alternatives, provenance, uncertainty, consequence, and known omissions. | Comprehension disposition and representation-mismatch residual. | A persuasive explanation receives no presumption of faithfulness or understanding. |
+| Runtime adapter and permission gate | Exact proposed effect, required approval, latest reversible point, intervention API, and safe-state behavior. | `review_ready`, `degrade`, `safe_hold`, `abstain`, or `recontract` disposition plus a decision receipt. | Capacity admission is not effect permission; the runtime retains enforcement authority. |
+| Training and rehearsal service | Task-class scenarios, known failure cases, mode changes, and recovery drills. | Qualification scope, limitations, recency, and drill receipts. | Training completion is not live readiness or universal competence. |
+| Incident and accountability ledger | Effect receipts, failed interventions, residuals, appeals, and independent outcome observations. | Capacity-relevant lessons and contract revision requests. | Logs support learning; they do not automate blame or settle legal responsibility. |
+| Constitutional and moral governance | Protected interests, standing, contestability, review requirements, and responsibility constraints. | Evidence that a nominal right or review path is unusable in the operating conditions. | Operational feasibility informs but does not settle normative legitimacy. |
+
+## Invariants
+
+These invariants make ceremonial oversight fail closed. They bind
+responsibility to effective control, require that intervention remain possible
+before irreversibility, and force reduced autonomy when information, skill,
+time, channel health, or safe fallback disappears. They also protect the human
+participant: the system cannot repair weak control by collecting unlimited
+personal telemetry or by silently assigning more responsibility. An invariant
+violation creates an explicit residual and a narrower route; an approval click
+cannot erase it.
+
+- Every consequential oversight contract names a controller role, current
+  authority basis, authority ceiling, alternatives, and responsibility ceiling.
+- Required intervention time must fit inside the measured time-to-irreversibility
+  window with a declared safety margin.
+- Loss of observability, representation compatibility, qualification, channel
+  health, or intervention capacity cannot silently preserve the same autonomy.
+- Approval requires task-relevant evidence and a bounded comprehension
+  opportunity; presence, dwell time, confidence, or click-through alone is not
+  comprehension.
+- The current automation mode, function allocation, authority holder,
+  consequential transition, and last reversible point remain visible and
+  unambiguous.
+- Safety cannot depend on constant perfect vigilance, flawless recall, or a
+  person monitoring an unbounded stream indefinitely.
+- Recorded operational responsibility never exceeds the authority,
+  information, alternatives, and effective control available to the person.
+- A degraded route preserves a reachable safe state, an accountable owner, and
+  a residual; it does not merely transfer work to another saturated reviewer.
+- Oversight telemetry cannot grant execution, training, publication, release,
+  employment-discipline, or support-state authority.
+- Personal or worker data are minimized, purpose-bound, access-controlled, and
+  separable from incident learning; missing sensitive telemetry is not treated
+  as proof of incapacity.
+- Material task, model, policy, interface, evidence-view, or authority change
+  expires the prior capacity admission.
+- An approval receipt never erases abstention, disagreement, failed
+  intervention, inaccessible alternatives, coercive pressure, or unresolved
+  residuals.
+
+## Failure modes
+
+### Threat model and failure families
+
+The protected property is not uninterrupted human approval. It is the person's
+real ability to form a task-relevant judgment, choose among viable alternatives,
+and make a bounded intervention effective without accepting inappropriate
+surveillance or responsibility.
+
+Threats can come from a strategically persuasive model, a careless interface,
+an overloaded institution, an adversarial operator, misleading metrics, or
+ordinary coordination failure. The human reviewer is not presumed to be the
+adversary. Fatigue, confusion, and skill decay are conditions the system must
+accommodate rather than moral defects to punish.
+
+| Failure family | Typical manifestation | Evidence that should remain visible | Required route |
+|---|---|---|---|
+| Automation bias and complacency | Recommendation accepted without independent evidence; contradictory evidence omitted; confidence copied from the system. | Evidence-view order, independent checks, contradictions, reliance calibration, false confidence. | Require independent view, second reviewer, clarification, or abstention. |
+| Disuse and mistrust | Repeated false alarms cause the reviewer to ignore useful automation or bypass it. | Alert precision history, overrides, missed useful alerts, reason codes. | Recalibrate alerts and allocation; do not label the person noncompliant by default. |
+| Approval and alarm fatigue | Large queues, repeated prompts, and background alerts produce batching or rubber-stamping. | Queue depth, interruptions, alarm rate, review duration distribution, abstentions, deferred items. | Shed load, rotate, aggregate safely, reduce autonomy, or safe hold. |
+| Out-of-the-loop degradation | Rare interventions require skills and context no longer practiced during routine automation. | Rehearsal recency, context restoration time, drill performance, task-class limitations. | Rehearse, narrow role, stage action, or add specialist control. |
+| Mode or authority confusion | Reviewer misunderstands whether the system is advising, acting, waiting, or already irreversible. | Mode transitions, authority display, last reversible point, comprehension result. | Block transition until mode and authority are re-established. |
+| Representation mismatch | Fluent explanation hides missing evidence, incompatible concepts, or a different system world model. | Raw and independent evidence, mapping assumptions, known omissions, disagreement. | Alternate representation, specialist review, or residual. |
+| Responsibility without control | A person is accountable but cannot veto, redirect, appeal, or reach a safe state. | Authority tuple, viable alternatives, channel test, anti-retaliation and appeal path. | Reassign authority/responsibility or block operation. |
+| Persuasion and urgency manipulation | The system or organization frames delay as harmful, suppresses uncertainty, or makes rejection costly. | Message provenance, urgency source, conflicts, incentive coupling, alternative framing. | Independent review, cooling-off window, recusal, or escalation. |
+| Intervention latency and partial stop | Override arrives after commitment, stops only a visible component, or leaves descendant/external effects active. | End-to-end timing, scope of stop, system response, residual effects, recovery state. | Pre-effect gate, broader containment, compensation, or abstention. |
+| Unsafe handoff | Work moves to another reviewer without context, authority, qualification, or available capacity. | Handoff packet, receiving-role acceptance, load and qualification snapshot. | Reject handoff, restore context, or safe hold. |
+| Metric gaming and blame logging | Response time, click rate, or low override count is optimized as evidence of good control. | Outcome-grounded measures, false intervention, missed defect, workload, appeals, privacy cost. | Separate learning from discipline; audit the metric and preserve non-claims. |
+| Reviewer surveillance harm | Biometric, affective, or behavioral monitoring becomes invasive, coercive, discriminatory, or repurposed. | Data purpose, consent basis, minimization, retention, access, deletion, and appeal. | Remove the signal, use task-level alternatives, or do not deploy the estimator. |
+
+The system must also assume interface-level adversarial behavior is possible.
+An AI may selectively surface favorable evidence, flood alerts, exploit urgency,
+hide a mode change, understate time-to-irreversibility, make the override appear
+more effective than it is, or shape explanations to increase agreement. Frozen
+views, independent evidence, end-to-end timing, system-response receipts, and
+negative controls are therefore part of the control boundary, not optional UX
+polish.
+
+## Strongest objection and simpler baseline
+
+The strongest objection is that **meaningful control is a normative and
+institutional relationship, not a telemetry product**. Any attempt to score it
+could mistake fast clicking for comprehension, reward performative vigilance,
+intensify worker surveillance, or let an institution transfer blame to the
+person whose metrics happened to be logged.
+
+The objection is correct about sufficiency. The architecture should not output
+`meaningful_control = true`. Its legitimate use is asymmetric: missing
+authority, no viable alternative, an impossible time margin, an unexercised
+intervention path, or an incompatible representation can falsify the claimed
+control relationship. Passing those tests only means that these known
+defeaters were not observed within the declared scope.
+
+The simpler baseline is intentionally credible and privacy-preserving:
+
+- documented role and authority assignment;
+- risk-tiered review with fixed minimum lead times;
+- explicit mode, consequence, alternative, and last-reversible-point display;
+- an independent evidence view for consequential decisions;
+- a tested stop or safe-hold path;
+- dual review for the highest declared tier; and
+- fixed queue limits and mandatory escalation when qualified coverage is
+  unavailable.
+
+This static baseline uses no personal-state model and no adaptive autonomy
+controller. The proposed measured envelope earns deployment only if, in a
+frozen domain, it improves defect detection, appropriate intervention,
+calibrated reliance, and useful throughput relative to that baseline without
+worsening false intervention, unequal burden, privacy intrusion, or recovery.
+If it does not, the simpler baseline should remain.
+
+## Minimum Viable Implementation
+
+Implement one bounded, consequential-but-sandboxed workflow with a versioned
+oversight contract, role and authority display, evidence-view digest, fixed
+workload and deadline gate, task-relevant comprehension probe, exercised
+override, safe hold, decision/intervention receipt, and residual/appeal path.
+
+Use task-level conditions rather than inferred personal traits. The minimum
+capacity snapshot needs qualification status, current queue/load, evidence view,
+decision window, conflict disposition, alternatives, channel health, and
+uncertainty. It does not need camera monitoring, keystroke profiling, emotion
+inference, or a general fatigue score.
+
+Before any live consequential use, the slice must pass synthetic scenarios for
+overload, missed alarms, mode confusion, misleading explanation, stale
+qualification, absent authority, inaccessible alternatives, late intervention,
+partial stop, unsafe handoff, and privacy-field overcollection. A passing
+schema or simulator run would establish only the artifact and route shape, not
+human effectiveness or meaningful control.
+
+## Beyond the State of the Art
+
+The mature research target is an empirically calibrated control-envelope
+controller that reallocates autonomy using measured task and system state while
+preserving authority, contestability, privacy, and graceful degradation. It
+would keep preventive scope control, co-planning, live monitoring,
+intervention, and post hoc review distinct; learn where human review becomes
+ceremonial; and move the system toward slower, narrower, or safer modes before
+that boundary is crossed.
+
+The target must outperform strong static review and safe-hold baselines on a
+joint frontier of defect detection, calibrated reliance, intervention quality,
+false intervention, useful throughput, operator burden, privacy cost, unequal
+impact, and recovery. It must survive changed tasks, model confidence,
+explanations, time pressure, alert quality, and intervention cost, with
+independent outcome truth and external replication.
+
+This remains a proposal. No adaptive envelope controller, representative trial,
+deployment, safety result, or beyond-state-of-the-art result is present in this
+repository.
+
+A mature target architecture would preserve longitudinal evidence without
+turning oversight into worker surveillance. It would distinguish a temporary
+capacity shortage from a systematically impossible role, expose when nominal
+responsibility exceeds practical control, and select among delay, reassignment,
+additional review, narrower authority, reversible execution, safe hold, or
+refusal. It would keep the simpler static policy continuously available and
+retire adaptive components that cannot justify their burden.
+
+Beyond current practice means demonstrating joint control value across
+materially different people, tasks, interfaces, models, institutions, and
+consequence structures—not merely fitting a workload threshold in one study.
+Independent replication, accessibility and distributional analysis, privacy-
+preserving measurement, and prospective failure tests remain necessary before
+any broader inference. Until then, the control envelope is a falsifiable design
+target and its support state remains `argument`.
+
+## Ethical and privacy-aware human-subjects boundary
+
+Any claim-bearing study for this chapter requires ethics review appropriate to
+the institution and jurisdiction before recruitment. The first study should be
+minimal risk: consequentially structured but sandboxed tasks, no real external
+effects, preregistered known defects, reversible interventions, independent
+ground truth, and compensation that does not reward agreement with automation.
+
+The protocol should include:
+
+- informed consent that distinguishes study participation from workplace
+  performance evaluation and explains every collected signal;
+- domain-relevant participant competence, accessibility accommodations, the
+  right to pause or withdraw, and no penalty for abstention;
+- data minimization, pseudonymous episode identifiers, role-based access,
+  short retention, deletion procedures, and a prohibition on secondary use
+  without separate approval;
+- task-level workload and timing measures first, with optional self-report
+  preferred over default biometric, affective, gaze, camera, keystroke, or
+  covert behavioral surveillance;
+- separation of research data from employment discipline, compensation,
+  promotion, or individualized productivity scoring;
+- prospective analysis of whether the interface or estimator burdens groups
+  differently, including language, disability, expertise, and accessibility
+  effects; and
+- an adverse-event, complaint, debrief, and appeal path, especially where the
+  study uses misleading explanations or manipulated confidence.
+
+Deception or misleading explanations should be used only when scientifically
+necessary, specifically approved, bounded to the sandbox, followed by timely
+debriefing, and compatible with withdrawal of the affected data where required.
+The study may test whether a design supports control; it may not convert
+participants into training data, public examples, or employee-risk scores by
+default.
+
+## Empirical argument-exit lane
+
+The first claim-bearing empirical target is narrower than the chapter title:
+
+> In a frozen sandboxed task domain, a preregistered control-envelope gate can
+> identify episodes where nominal approval lacks necessary control conditions
+> and can improve joint defect handling and useful throughput relative to a
+> strong static oversight baseline, without unacceptable privacy or burden
+> costs.
+
+That statement is testable and can fail. It does not claim universal meaningful
+control, high-stakes transfer, moral responsibility, or safety.
+
+### Prospective protocol freeze
+
+| Element | Required before held-out opening |
+|---|---|
+| Competence dossier | Task-domain rationale; participant qualification and exclusions; interface training; evaluator training; inter-rater procedure; pilot-only threshold development; known-effect sensitivity; accessibility plan; data-quality rules; unresolved competence limits. |
+| Tasks and ground truth | Representative sandboxed review tasks with independently authored known defects, a held-out set, consequence labels, intervention points, and outcome truth unavailable to the automation and primary interface evaluator. |
+| Baselines | Unassisted/manual review where feasible; the strong static risk-tiered baseline above; nominal click approval; and the proposed envelope-gated condition. All receive matched task information except the preregistered manipulations. |
+| Manipulations | Concurrent load, time window, explanation presence and fidelity, automation confidence, alert quality, mode visibility, intervention cost, and safe-hold availability. |
+| Primary outcomes | Known-defect detection, correct intervention, missed defect, false intervention, response latency relative to irreversibility, calibrated reliance, and safe useful throughput. |
+| Secondary outcomes | Task-relevant comprehension, workload, retention after quiet intervals, abstention quality, appeal use, unequal burden, privacy acceptability, analyst time, participant time, and compute cost. |
+| Positive controls | Obvious seeded defect; clearly impossible time window; disabled intervention channel; visible mode mismatch; and a faithful explanation condition expected to improve a narrow comprehension item. |
+| Negative/adversarial controls | Misleading but fluent explanation; high test-pass signal with a hidden defect; false high confidence; alert flooding; stale evidence; nominal authority without a viable action; forced abstention or fallback. |
+| Independent evaluator | Outcome adjudicator separated from interface authors, automation outputs, participant confidence, and treatment assignment where blinding is possible; conflicts and shared dependencies declared. |
+| Statistical plan | Power and sample-size justification from pilot variance; frozen estimands and exclusions; multiplicity handling; effect sizes with uncertainty intervals; missing-data and attrition treatment; subgroup analyses bounded against overinterpretation; no threshold chosen on the held-out set. |
+| Cost and harm accounting | Participant time, training, review latency, queue cost, false holds, false interventions, privacy burden, accessibility burden, compute, and residual recovery cost. |
+| Stop and rescue rules | Stop for adverse events, failed ground truth, failed positive controls, unusable interface, excessive differential burden, privacy breach, or evaluator leakage. Follow the rescue ladder below before interpreting a null or negative result. |
+| Negative-inference ceiling | A failed study can refute or narrow the proposed design only in the frozen task, population, interface, model, and intervention regime after apparatus competence passes. It cannot establish that meaningful control is impossible in general. |
+
+### Positive controls and rescue ladder
+
+The experiment is not competent merely because it ran. Before interpreting the
+main comparison, the study must show that participants can detect at least one
+obvious seeded defect, that the instrumentation detects a disabled intervention
+channel and an impossible time window, and that the independent evaluator
+recovers the frozen ground truth with acceptable agreement.
+
+If those checks fail, use a preregistered rescue ladder:
+
+1. audit ground truth, randomization, logging, and evaluator independence;
+2. repair accessibility, instructions, training, and interface defects using
+   pilot data only;
+3. verify that manipulations changed the intended task condition without
+   creating an uncontrolled confound;
+4. rerun positive controls on a new pilot cohort;
+5. revise the competence dossier and freeze a new protocol before opening a
+   fresh held-out set; and
+6. if competence still fails, record the campaign as uninformative rather than
+   treating the design or the human role as validated or refuted.
+
+### Argument-exit decisions
+
+| Result | Honest disposition |
+|---|---|
+| Apparatus or positive controls fail | `argument` remains. The study is uninformative; no efficacy or impossibility inference. |
+| Envelope gate performs worse than the strong static baseline under a competent protocol | Narrow or refute the proposed adaptive mechanism in that exact regime; retain the broader claim that missing necessary conditions defeat nominal control. |
+| Envelope gate detects ceremonial episodes but worsens throughput, false intervention, privacy, or unequal burden | Record a mixed result and keep deployment blocked; do not average the harms into a favorable single score. |
+| Envelope gate improves preregistered joint outcomes in one competent held-out study | A narrow empirical claim may become eligible for review; the chapter core remains at `argument` pending replication, transfer, and normative review. |
+| Independent replication succeeds across materially different tasks and representative participants, with acceptable harm and cost | Consider a scoped `empirical-test-backed` transition for the operational necessary-condition claim only. Meaningful-control sufficiency, high-stakes safety, and general transfer remain non-claims. |
+
+The exit lane is prospective. It does not itself create a reviewer-facing
+promotion record or authorize support movement. Any transition still requires
+the book's evidence-state process, exact artifacts, commands, limitations,
+independent review, and changelog reconciliation.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Oversight-envelope boundary suite | Vary workload, explanation burden, intervention time, authority, observability, and safe-state reachability; verify that missing necessary conditions route to clarification, degradation, safe hold, or abstention before consequential dispatch. | planned; not run |
+| Automation-bias and mode-confusion adversarial study | Compare nominal, static-baseline, and envelope-gated interfaces on known-defect detection, calibrated reliance, correct and false intervention, latency, burden, privacy, and useful throughput. | planned; not run; human-subjects and ethics review required |
+| Rare-event intervention retention study | Test whether declared rehearsal cadence and context-restoration design preserve bounded intervention performance after quiet intervals. | planned; not run; human-subjects and ethics review required |
+
+No test result is implied by the specificity of this plan.
+
+## Formalization disposition
+
+Formalization is appropriate for **policy consequences of declared inputs**,
+not for proving human understanding, fatigue, moral responsibility, or
+meaningful control. A finite model can prove that a record missing a required
+condition cannot follow the consequential transition and that responsibility
+assignment is bounded by recorded authority and effective control. It cannot
+prove that a checkbox or threshold truthfully represents a person's internal
+state.
+
+| Tag | Module | Finite target | Status |
+|---|---|---|---|
+| `lean:oversight.control_envelope.blocks_action` | `AsiStackProofs.HumanFactorsOversight` | In a finite record model, any consequential transition lacking declared authority, observability, comprehension disposition, timely intervention, or a reachable safe state is rejected or degraded. | planned; no Lean artifact or runtime consumer implemented |
+| `lean:oversight.responsibility_requires_control` | `AsiStackProofs.HumanFactorsOversight` | A bounded accountability assignment never attributes operational responsibility beyond the authority and effective control recorded in the oversight contract. | planned; no Lean artifact or runtime consumer implemented |
+
+The proof work should remain deferred until a versioned oversight-contract
+schema, fixture suite, adjudication semantics, and independent runtime consumer
+exist. Otherwise theorems would merely restate trusted Boolean inputs and risk
+turning measurement assumptions into formal-looking conclusions. A future
+refinement bridge must keep the human-state operationalization outside the
+theorem's claim and test the consumer that actually blocks or degrades action.
+
+## Evidence and non-claims
+
+Current evidence is architectural and source-synthetic:
+
+- Corben-side records (`viea`, `talos`, `theseus_operator_os`, `scf`) supply
+  contract, authority, operator-surface, incident, appeal, audit, and recovery
+  lineage. They do not supply human-factors efficacy.
+- Four legacy automation records supply conceptual failure and allocation
+  vocabulary. Their source notes do not report a local reproduction or justify
+  transporting effect magnitudes into current agentic systems.
+- `ext_meaningful_human_control_actionable_2022` supplies a reviewed
+  socio-technical design framework, not proof that the proposed envelope works.
+- `ext_agentic_oversight_practice_2026` supplies exploratory interview context
+  from seventeen experienced developers. The interview data were not
+  reanalyzed here, and the study does not establish causal control efficacy.
+
+This chapter does **not** claim:
+
+- that any local approval gate, operator console, kill switch, or dashboard is
+  meaningful, effective, usable, or safe;
+- that workload, comprehension, fatigue, trust, or intervention thresholds are
+  known, universal, or independently replicated;
+- that a comprehension probe measures complete understanding, consent,
+  competence, or moral agency;
+- that telemetry is sufficient for meaningful control, responsibility,
+  accountability, legal compliance, or fairness;
+- that legacy automation findings transfer unchanged to foundation-model
+  agents, ASI, other cultures, inaccessible interfaces, or high-stakes domains;
+- that the exploratory 2026 developer study is population-representative or
+  causal;
+- that reviewer monitoring may be repurposed for employment discipline,
+  productivity scoring, training, publication, or surveillance;
+- that any schema, simulation, proof, validator, study, deployed controller,
+  safety result, SOTA result, AGI result, or ASI result exists for this chapter;
+  or
+- that chapter prose, source mappings, or a planned argument-exit lane promote
+  the core claim beyond `Design rationale / argument`.
+
+## Source crosswalk
+
+| Source ID | Title | Chapter use | Readiness and boundary |
+|---|---|---|---|
+| `viea` | Verified Intent-to-Execution Architecture | Contract structure, roles, verification, escalation, feedback, and residual spine. | Source note and local raw cache inspected; architecture proposal, not human-factors result. |
+| `talos` | Talos Protocol | Typed jobs, adjudication, approval boundaries, audit, replay, and controlled execution lineage. | Source note and local cache available; no approval-service or operator study reproduced. |
+| `theseus_operator_os` | Hive Operator OS and Work Board | Visible state, shared command vocabulary, durable work board, TTLs, kill switches, and operator-facing intervention concepts. | Local project source note available; no dashboard, board, node registry, command channel, or usability test run from this repo for the note. |
+| `scf` | Stable Capability Fields | Bounded authority, incidents, appeals, governance roles, and recoverable change. | Source note and local raw cache inspected; no moment-to-moment control result. |
+| `ext_humans_automation_1997` | Humans and Automation: Use, Misuse, Disuse, Abuse | Use/misuse/disuse/abuse, trust, workload, monitoring, false-alarm, and role-design comparator. | Primary metadata and abstract inspected; paper not vendored or reproduced. |
+| `ext_ironies_automation_1983` | Ironies of Automation | Residual supervisory duties, abnormal-condition work, context loss, and skill-decay comparator. | Primary metadata/abstract record inspected; paper not vendored or reproduced. |
+| `ext_levels_automation_2000` | A Model for Types and Levels of Human Interaction with Automation | Decompose information acquisition, analysis, decision selection, and action implementation rather than treating approval as one scalar gate. | Primary metadata/abstract record inspected; taxonomy not reproduced or validated locally. |
+| `ext_complacency_bias_automation_2010` | Complacency and Bias in Human Use of Automation: An Attentional Integration | Complacency, automation bias, omission/commission, divided attention, and imperfect-aid comparator. | Primary metadata/abstract record inspected; no local human-subjects study. |
+| `ext_meaningful_human_control_actionable_2022` | Meaningful human control: actionable properties for AI system development | Operating domain, compatible representations, authority and ability, responsibility, and traceability boundary. | Abstract, four properties, methods, and limitations inspected; no local study and no proof of a particular gate. |
+| `ext_agentic_oversight_practice_2026` | Human oversight of agentic systems in practice | Preventive control, co-planning, live monitoring, post hoc review, and situated oversight-work hypotheses. | Abstract, methods overview, findings, and limitations inspected; interview data not reanalyzed; exploratory preprint, not causal efficacy evidence. |
+
+## Summary
+
+Human oversight is a control relationship, not a UI ornament. The relationship
+is credible only when a named person has compatible information, current
+competence, enough time, manageable load, visible mode and consequence, real
+authority and alternatives, an exercised intervention path, a reachable safe
+state, and responsibility no greater than the supplied control.
+
+The proposed measured envelope makes those necessary conditions inspectable and
+fail-closed. Its measurements may disqualify ceremonial oversight; they cannot
+certify meaningful control. The architecture therefore combines explicit
+contracts, privacy-minimized capacity snapshots, comprehension and intervention
+receipts, graceful degradation, residuals, appeal, and a prospective empirical
+campaign that can favor the simpler static baseline or narrow the proposal.
+
+The practical consequence is that no approval receipt can stand in for the
+conditions that made approval meaningful. Missing time, information,
+competence, authority, intervention, or safe fallback remains a control failure
+with an owner and remedy. Success is equally bounded: a person who handled one
+episode does not certify the interface, organization, model, or future
+workload. Measured capacity, conservative routing, and contestable
+responsibility keep the human role real without pretending that human presence
+alone makes an advanced system safe.
+
+## Handoff
+
+Human Intent supplies the accepted request and authority ceiling; this chapter
+tests whether the human role assigned along the execution path is actually
+usable. Constitutional Alignment: Agency, Dignity, and Corrigibility then
+receives that bounded oversight contract and its residuals. It
+decides which rights, dignity, consent, contestability, refusal, correction,
+appeal, and least-sufficient-power predicates still constrain the work. A
+capacity record may show that a promised control path is unusable, but it cannot
+decide that the underlying policy is legitimate or grant action authority.

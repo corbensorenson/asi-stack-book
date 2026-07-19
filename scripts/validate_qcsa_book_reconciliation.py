@@ -37,6 +37,10 @@ RESIDUALS = ROOT / "docs/post_v2_residual_ledger.md"
 CHANGELOG = ROOT / "appendices/F_changelog.qmd"
 REPORT = ROOT / "docs/qcsa_implementation_evidence_reconciliation.md"
 ACTIVE_STATUS = ROOT / "roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json"
+MAINTENANCE_STATUS = ROOT / "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json"
+PROOF_MANIFEST = ROOT / "proofs/proof_manifest.json"
+HISTORICAL_55TH_CHAPTER = "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+ACTIVE_MAINTENANCE_ROADMAP = "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
 
 
 def load(path: Path) -> Any:
@@ -61,7 +65,9 @@ def snapshot() -> dict[str, Any]:
         "residuals": text(RESIDUALS),
         "changelog": text(CHANGELOG),
         "report": text(REPORT),
-        "active_status": load(ACTIVE_STATUS),
+        "historical_status": load(ACTIVE_STATUS),
+        "maintenance_status": load(MAINTENANCE_STATUS),
+        "proof_manifest": load(PROOF_MANIFEST),
     }
 
 
@@ -138,9 +144,28 @@ def semantic_errors(data: dict[str, Any]) -> list[str]:
         errors.append("changelog lacks QCSA completion transaction")
 
     vectors = data["vectors"]
-    if vectors.get("summary", {}).get("vector_count") != 55 or vectors.get("summary", {}).get("automatic_support_state_changes") != 0:
+    structure = data["structure"]
+    raw_chapter_rows = [
+        chapter
+        for part in structure.get("parts", [])
+        for chapter in part.get("chapters", [])
+    ]
+    chapter_rows = [chapter for chapter in raw_chapter_rows if isinstance(chapter, dict)]
+    chapter_count = len(raw_chapter_rows)
+    chapter_ids = {chapter.get("id") for chapter in chapter_rows}
+    if len(chapter_rows) != chapter_count or len(chapter_ids) != chapter_count:
+        errors.append("live manifest contains malformed entries or duplicate chapter identifiers")
+    vector_rows = vectors.get("vectors", [])
+    vector_summary = vectors.get("summary", {})
+    if (
+        len(vector_rows) != chapter_count
+        or vector_summary.get("vector_count") != chapter_count
+        or vector_summary.get("summary_support_states") != {"argument": chapter_count}
+        or vector_summary.get("automatic_support_state_changes") != 0
+        or any(row.get("summary_support_state") != "argument" for row in vector_rows)
+    ):
         errors.append("evidence-quality vector summary drifted")
-    vector_by_claim = {row.get("claim_id"): row for row in vectors.get("vectors", [])}
+    vector_by_claim = {row.get("claim_id"): row for row in vector_rows}
     for owner in OWNERS:
         vector = vector_by_claim.get(f"{owner}.core", {})
         refs = json.dumps(vector, sort_keys=True)
@@ -149,11 +174,55 @@ def semantic_errors(data: dict[str, Any]) -> list[str]:
         if vector.get("dimensions", {}).get("transfer_distance", {}).get("state") != "not_established":
             errors.append(f"QCSA vector overstates transfer: {owner}")
 
-    chapter_count = sum(len(part.get("chapters", [])) for part in data["structure"].get("parts", []))
-    if chapter_count != 55:
-        errors.append("live chapter count drifted from the authorized 55-chapter successor")
-    if data["active_status"].get("activation_baseline", {}).get("active_chapter_count") != 54:
+    historical_status = data["historical_status"]
+    historical_activation = historical_status.get("activation_baseline", {})
+    if historical_activation.get("active_chapter_count") != 54 or historical_activation.get("proof_target_count") != 298:
         errors.append("historical 54-chapter QCSA reconciliation baseline drifted")
+    historical_expansion = historical_status.get("structural_expansion_contract", {})
+    if (
+        historical_expansion.get("live_chapter_count") != 55
+        or historical_expansion.get("chapter_id") != HISTORICAL_55TH_CHAPTER
+        or historical_expansion.get("support_state_effect") != "none"
+    ):
+        errors.append("historical authorized 55th-chapter expansion drifted")
+    maintenance_status = data["maintenance_status"]
+    activation_truth = maintenance_status.get("activation_truth", {})
+    structural_tranche = maintenance_status.get("quality_uplift_program", {}).get("structural_completeness_tranche", {})
+    first_tranche = structural_tranche.get("first_tranche", {})
+    admitted_chapter_ids = set(first_tranche.get("candidate_ids", []))
+    if (
+        maintenance_status.get("status") != "active"
+        or maintenance_status.get("roadmap_path") != ACTIVE_MAINTENANCE_ROADMAP
+        or activation_truth.get("live_working_chapter_count") != chapter_count
+        or activation_truth.get("chapter_core_argument_count") != chapter_count
+        or activation_truth.get("chapter_core_promotion_count") != 0
+        or structural_tranche.get("current_manifest_chapter_count") != chapter_count
+        or first_tranche.get("manifest_admitted_count") != len(admitted_chapter_ids)
+        or chapter_count != historical_expansion.get("live_chapter_count") + len(admitted_chapter_ids)
+        or not admitted_chapter_ids.issubset(chapter_ids)
+    ):
+        errors.append("current live chapters escaped later manifest-admitted structural authority")
+    proof_manifest = data["proof_manifest"]
+    proof_records = proof_manifest.get("records", [])
+    proof_status_counts = proof_manifest.get("status_counts", {})
+    record_status_counts = Counter(row.get("status") for row in proof_records)
+    current_proof_count = proof_manifest.get("proof_target_count")
+    historical_proof_count = historical_activation.get("proof_target_count")
+    added_proof_count = (
+        current_proof_count - historical_proof_count
+        if isinstance(current_proof_count, int) and isinstance(historical_proof_count, int)
+        else -1
+    )
+    planned_records = [row for row in proof_records if row.get("status") == "planned"]
+    if (
+        current_proof_count != activation_truth.get("proof_target_count")
+        or current_proof_count != len(proof_records)
+        or proof_status_counts != dict(record_status_counts)
+        or proof_status_counts != {"implemented": historical_proof_count, "planned": added_proof_count}
+        or len(planned_records) != added_proof_count
+        or {row.get("chapter_id") for row in planned_records} != admitted_chapter_ids
+    ):
+        errors.append("current proof additions escaped historical baseline or admitted chapters")
     if any(
         "qcsa" in f"{chapter.get('id', '')} {chapter.get('file', '')}".casefold()
         for part in data["structure"].get("parts", [])
@@ -191,6 +260,9 @@ def negative_controls(base: dict[str, Any]) -> list[str]:
     mutate("residual erased", lambda d: d.__setitem__("residuals", d["residuals"].replace("`QCSA-08`", "`ERASED`")))
     mutate("vector transfer promoted", lambda d: next(row for row in d["vectors"]["vectors"] if row["claim_id"] == f"{owner}.core")["dimensions"]["transfer_distance"].__setitem__("state", "established"))
     mutate("new QCSA chapter", lambda d: d["structure"]["parts"][0]["chapters"].append("chapters/qcsa.qmd"))
+    mutate("proof target invention", lambda d: d["proof_manifest"].__setitem__("proof_target_count", 307))
+    mutate("planned proof escapes admitted chapter", lambda d: next(row for row in d["proof_manifest"]["records"] if row.get("status") == "planned").__setitem__("chapter_id", owner))
+    mutate("current authority promotion", lambda d: d["maintenance_status"]["activation_truth"].__setitem__("chapter_core_promotion_count", 1))
     failures = []
     for label, value in mutations:
         if not semantic_errors(value):
@@ -199,7 +271,7 @@ def negative_controls(base: dict[str, Any]) -> list[str]:
 
 
 def main() -> None:
-    required = [*CHAPTERS.values(), DISPOSITIONS, RESULT, VERTICAL, VECTORS, STRUCTURE, SOURCE_NOTE, APPENDIX, PLAN, RESIDUALS, CHANGELOG, REPORT, ACTIVE_STATUS]
+    required = [*CHAPTERS.values(), DISPOSITIONS, RESULT, VERTICAL, VECTORS, STRUCTURE, SOURCE_NOTE, APPENDIX, PLAN, RESIDUALS, CHANGELOG, REPORT, ACTIVE_STATUS, MAINTENANCE_STATUS, PROOF_MANIFEST]
     missing = [path.relative_to(ROOT).as_posix() for path in required if not path.is_file()]
     if missing:
         raise SystemExit("Missing QCSA reconciliation artifacts: " + ", ".join(missing))
@@ -208,7 +280,12 @@ def main() -> None:
     errors.extend(negative_controls(data))
     if errors:
         raise SystemExit("QCSA book reconciliation validation failed:\n - " + "\n - ".join(errors))
-    print("QCSA book reconciliation passed: 9 existing chapter owners, 5 bounded review candidates, 2 narrowed claims, 2 exact refutations, 1 no-change transfer boundary, 8 explicit residuals, preserved 54-chapter historical baseline plus 55 live core claims still at argument, no standalone QCSA chapter, and 15 rejecting mutations.")
+    live_chapter_count = sum(
+        len(part.get("chapters", []))
+        for part in data["structure"].get("parts", [])
+    )
+    proof_manifest = data["proof_manifest"]
+    print(f"QCSA book reconciliation passed: 9 existing chapter owners, 5 bounded review candidates, 2 narrowed claims, 2 exact refutations, 1 no-change transfer boundary, 8 explicit residuals, preserved 54-chapter/298-target historical baseline and authorized 55th-chapter expansion, {live_chapter_count} live core claims still at argument, {proof_manifest.get('proof_target_count')} current proof targets constrained to 298 implemented plus 8 planned on admitted chapters, no standalone QCSA chapter, and 18 rejecting mutations.")
 
 
 if __name__ == "__main__":

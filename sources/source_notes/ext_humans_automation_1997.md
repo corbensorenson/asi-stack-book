@@ -47,6 +47,7 @@ claim a local experiment in human automation use.
 - `runtime-adapters-tool-permissions-and-human-approval`
 - `human-intent-as-a-formal-input`
 - `evidence-states-and-claim-discipline`
+- `human-factors-and-meaningful-control-in-oversight`
 
 ## Claims To Add Or Update
 

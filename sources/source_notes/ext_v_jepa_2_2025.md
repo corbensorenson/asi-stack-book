@@ -49,6 +49,7 @@ benchmark, robot experiment, or timing result.
 - `planning-as-a-control-layer`
 - `data-engines-continual-learning-and-unlearning`
 - `integrated-reference-architecture`
+- `governed-world-models-and-reality-grounding`
 
 ## Claims To Add Or Update
 
