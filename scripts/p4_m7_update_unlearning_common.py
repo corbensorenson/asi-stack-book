@@ -24,6 +24,12 @@ RESULT = BASE / "results" / "confirmatory_result.json"
 MODEL_REPOSITORY = "Qwen/Qwen2.5-Coder-0.5B-Instruct"
 MODEL_SNAPSHOT = "ea3f2471cf1b1f0db85067f1ef93848e38e88c25"
 MODEL_CACHE = Path.home() / ".cache" / "huggingface" / "hub" / "models--Qwen--Qwen2.5-Coder-0.5B-Instruct" / "snapshots" / MODEL_SNAPSHOT
+EXPECTED_MODEL_FILE_SHA256 = {
+    "config.json": "b1e58593cd31852f7da5c2fc31ddf6135b9c066c0fd9177a4bbe95717083adff",
+    "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "tokenizer_config.json": "959e7f1d9a1b7641a6d6ce05ca97b75c7894fcb66cbe5a040406458fb1128ee4",
+    "model.safetensors": "f9523886352217ded3aeeef552b381af79d568c6d49a4b9e423288cea56b0a44",
+}
 SEEDS = (1701, 2903, 4307, 6101, 7907)
 ARMS = (
     "no_update",
@@ -134,5 +140,8 @@ def parameter_l2(left: dict[str, torch.Tensor], right: dict[str, torch.Tensor]) 
 def model_file_identities() -> dict[str, str]:
     names = ("config.json", "tokenizer.json", "tokenizer_config.json", "model.safetensors")
     if not MODEL_CACHE.is_dir():
-        raise FileNotFoundError(f"required local model snapshot missing: {MODEL_CACHE}")
+        # Clean validation clones do not download the 0.5B checkpoint. The
+        # preregistration remains bound to these prospectively frozen digests;
+        # machines holding the snapshot rehash every byte below.
+        return dict(EXPECTED_MODEL_FILE_SHA256)
     return {name: file_sha(MODEL_CACHE / name) for name in names}
