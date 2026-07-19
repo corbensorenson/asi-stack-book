@@ -2,7 +2,7 @@
 
 Status: **active canonical successor**  
 Activated: 2026-07-16  
-Substantively revised: 2026-07-17  
+Substantively revised: 2026-07-19
 Authority: Corben Sorenson  
 Machine status: `roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`  
 Experiment authority: `docs/claim_bearing_experiment_competence_standard.md`
@@ -34,10 +34,106 @@ they earn an N0–N5 classification.
 
 The latest immutable public living-book release remains `v2.3.0`. The current
 55-chapter working book, v2.2 reader evidence freeze, and X Article synopsis are
-newer artifacts. The post-v2.3 evidence corpus was committed and pushed to
-`main` at `882b2a82c` on 2026-07-18. That custody checkpoint is not a new
+newer artifacts. The post-v2.3 evidence corpus first reached committed custody
+at `882b2a82c`. The latest clean, pushed, built, and deployed ancestral
+checkpoint is `6eb63a7007` on 2026-07-18. Neither checkpoint is a new
 living-book or reader release, DOI/archive deposit, license grant, or public
 post.
+
+## Strategic quality diagnosis
+
+The book's strongest assets are architecture breadth, explicit interfaces,
+claim discipline, negative-evidence hygiene, and reproducible research
+machinery. Its limiting weakness is causal concentration: all 55 chapter cores
+remain `Design rationale` at `argument`, no competence-qualified natural,
+non-authored empirical transition exists, and the reader must traverse many
+mechanisms before seeing one decisive case that tests the stack against a
+simpler alternative.
+
+The next quality gain is therefore not another chapter, proof-count increase,
+source-count increase, report family, or synthetic campaign. It is one shared
+empirical spine with Project Theseus, followed by an editorial pass that makes
+the book's hierarchy and evidence boundaries obvious. New sources continue to
+route into existing owners unless they expose a genuinely unowned interface,
+invariant, artifact type, or failure mode.
+
+The roadmap optimizes for five outcomes, in order:
+
+1. a useful learned behavior numerator rather than more representations of
+   capability;
+2. a natural governed-work case with observed effects and total lifecycle
+   cost;
+3. a matched causal comparison against simpler controls;
+4. a shorter, clearer reader spine organized around that case; and
+5. independent challenge and transfer before any broad architecture claim.
+
+## Shared ASI Stack–Theseus flagship
+
+The shared program ID is **`ASI-THESEUS-FLAGSHIP-01`**. Its research question is:
+
+> Can a locally trained, source-disjoint Theseus student complete useful
+> natural repository work through the governed stack, and does full governed
+> admission improve the joint useful-safe-release frontier over simpler matched
+> controls at an acceptable total lifecycle cost?
+
+The book owns canonical claim identity, the competence protocol,
+preregistration, support transitions, argument-exit language, and publication
+boundaries. Theseus owns the student, natural dogfood route, runtime effects,
+joined traces, matched controls, and public-safe evidence pack. Stable IDs and
+digests may cross repositories. Hidden answers, held-out outcomes, private
+payloads, and support states may not.
+
+| Gate | Primary owner | Book exit condition |
+|---|---|---|
+| `T0` — Finite architecture closure | Theseus | The campaign architecture is faithfully implemented or explicitly excluded with an adequacy-scoped disposition; the book records no efficacy claim. |
+| `T1` — Frozen neural-seed campaign | Theseus | Training lineage is immutable and no architecture choice is tuned from held-out outcomes. |
+| `T2` — Honest behavioral numerator | Theseus + P2 competence review | At least one student arm produces nonzero model-only, source-disjoint functional behavior, or the exact regime receives only the negative scope it earned. |
+| `T3` — Real daily use | Theseus dogfood lane | At least one week or five distinct days of real use preserve accepted, missed, ignored, corrected, completed, failed, and abstained outcomes with component attribution. |
+| `T4` — Joined governed vertical | P5 + Theseus | One natural happy path and one blocked or rollback path join intent through observed effect and terminal outcome without orphan, stale projection, or learned-credit laundering. |
+| `T5` — Matched causal flagship | P2 + P5 | Independently frozen Q1 admission and Q2 student results are composed without shared-denominator or support leakage, with independent evaluation, uncertainty, weak tails, fair rescue, and total lifecycle cost. |
+| `T6` — Synthesis and challenge | P3 + P7 | A public-safe evidence pack updates only the exact affected atoms and reader case; any broader language waits for separate reproduction and two transfer settings. |
+
+P2 may continue corpus, evaluator, construct, resource, and comparator preflight
+before `T2`. Assisted-product success may support usefulness at `T3`, but
+tools, retrieval, authored workflows, routers, teachers, and human correction
+never become learned-generation evidence.
+
+### Two-question decomposition and denominator independence
+
+The shared flagship question contains two separable claims that must never
+share support by implication:
+
+- **Q1 — Governed-admission efficacy (worker-agnostic).** Does full governed
+  admission improve the joint useful-safe-release and false-blocking frontier
+  over matched test-only and record-only controls on natural repository work?
+  Q1's worker may be any prospectively named competent current system,
+  including a strong model that is not the Theseus student.
+- **Q2 — Local student competence (Theseus-owned).** Can a locally trained,
+  source-disjoint Theseus student complete useful natural repository work
+  through the same governed path?
+
+Q1 and Q2 use two non-overlapping, independently sealed held-out denominators.
+**`P2-Q1-D1`** may open once P2's own seven competence gates pass, using the
+prospectively named strong-worker arm; Q1 does not wait for `T2`–`T4`.
+**`ASI-THESEUS-Q2-D2`** is frozen prospectively and remains outcome-sealed
+until the student, joined-path, and Q2-specific gates pass. D1 outcomes may
+calibrate instruments only under a rule fixed before D1 opens; they may not
+select, tune, rescue, or restructure the student, D2, or the Q2 architecture.
+No task, hidden test, outcome, or support movement may cross between D1 and D2.
+`T5` composes their separately earned conclusions rather than pooling their
+rows. A Q1 result moves only the governed-admission claim; it creates no
+student, learned-generation, or architecture-general support. A Q2 shortfall
+bounds only the student regime; it neither reopens nor discounts a completed
+Q1 result.
+
+### Roadmap state vocabulary
+
+- `completed`: terminal for the declared scope; retained as evidence, not active work.
+- `continuous`: an integrity or renewal obligation that is current and never a headline result.
+- `in_progress`: prerequisites are available and bounded work is underway.
+- `blocked`: the exact missing prerequisite is named; nearby green work cannot substitute.
+- `pending`: ordered work whose entry conditions are not yet true.
+- `deferred`: preserved research with an explicit trigger that cannot consume current scope.
 
 ## Review adjudication and corrected baseline
 
@@ -146,14 +242,13 @@ obsolete active-roadmap claims, missing supersession records, and derivatives
 whose bound chapter, claim, result, source, release, URL, header, or platform
 inputs have changed.
 
-The current named checkpoint attestation is stale because HEAD excludes the
-working-tree state it is being asked to describe. Without rewriting history,
-prepare one exact commit-bound reconciliation receipt containing source commit,
-tree digest, changed-file inventory, generated-artifact boundaries, validation
-results, release effect, and public-state effect. When Corben explicitly
-authorizes commit and push, record the work on `main`, push `main`, then attest
-the resulting immutable commit. A clean tree cannot be claimed before that
-sequence succeeds.
+The first custody checkpoint is complete at pushed `main` commit `882b2a82c`.
+Every later campaign or roadmap disposition still requires its own exact
+commit-bound reconciliation receipt containing source commit, tree digest,
+changed-file inventory, generated-artifact boundaries, validation results,
+release effect, and public-state effect. A current clean attestation cannot be
+claimed until the described work is committed, pushed when authorized, and
+bound to the resulting immutable commit.
 
 ### P0 claim-identity implementation receipt
 
@@ -192,6 +287,12 @@ activation, component competence, task validity, positive controls, baselines,
 tuning parity, evaluator sensitivity, power, rescue history, held-out custody,
 and scope. Missing evidence lowers the N-level. It never gets filled with a
 plausible narrative after the fact.
+
+The ladder is direction-symmetric: an instrument, implementation, proxy, or
+corpus inadequate to ground a refutation is equally inadequate to ground
+support. Positive transitions face the identical competence audit at admission
+time, so rehabilitation can only bound inference — it can never convert a
+bounded negative into implicit support for the idea the test failed to reach.
 
 For KERC, preserve the original transition and raw failure. Audit whether the
 0.5 task score and known training/implementation defects make it N1 or N2. If a
@@ -369,11 +470,40 @@ commit signature; rank 4 reproduced 331 registry archives and 57 exact-commit
 Git-source files twice, but a resource-monitor timeout during its first
 baseline arm invalidated the attempt; and rank 5 exceeded the frozen pull-time
 ceiling before image measurement. The monitor now records sampling errors and
-fails them closed, partial-layer cleanup is explicit, rank 4 is not rerun after
-partial outcome exposure, and rank 6 is next. Candidate outcomes remain closed
-for the other three slots; the final pool is still unselected and unopened.
-This remains the frozen deterministic sequential replacement rule; no later
-diagnosis may reorder candidates or weaken a gate.
+fails them closed, partial-layer cleanup is explicit, and rank 4 is not rerun
+after partial outcome exposure. The pre-amendment ledger named rank 6 as next;
+the prospective infrastructure/content amendment supersedes that authorization,
+reinstates rank 5 as setup-retry-pending, and keeps rank 6 closed until the
+pool-wide materialization gate passes. Candidate outcomes remain closed for the
+other three slots; the final pool is still unselected and unopened. This remains
+the frozen deterministic sequential replacement rule; no later diagnosis may
+reorder candidates or weaken a gate.
+
+### P2 storage-feasible materialization protocol
+
+The materialization gate must be satisfiable on the actual host. Simultaneous
+residency is not required; pool-wide readiness is defined as
+**sequential-verified**: every candidate must have been pulled,
+dependency-materialized, digest-sealed, measured against the frozen ceilings,
+and torn down at least once, leaving a deterministic re-materialization recipe
+and a measured storage high-water receipt. Each preflight records exact host
+free bytes, Docker-reclaimable bytes, candidate high-water bytes, and
+post-cleanup free bytes rather than relying on a transient prose estimate.
+Docker-scoped reclamation (image,
+container, volume, and build-cache pruning with before/after receipts) is a
+legal setup action while protected content remains unopened; reclamation never
+touches non-Docker user data. The frozen 50 GiB minimum-free floor binds every
+phase.
+
+Before protected content opens, an exact image may receive at most three fully
+logged setup retries. Exhausting those retries blocks that same rank; it does
+not burn, skip, or advance the candidate. Once any task content, hidden test,
+label, model output, evaluator judgment, or outcome-bearing signal opens, the
+attempt is never replayed and an infrastructure failure cannot authorize the
+next rank. It remains a fail-closed N0 outcome at the exact attempted scope.
+Rank 5 setup retries and any later rank opening proceed only after all 30
+candidates hold sealed recipes and receipts. This separates infrastructure
+feasibility from outcome selection while preserving the deterministic ladder.
 
 The resource and construct gates remain pending four qualified replacements
 and remeasurement of the complete twelve-task denominator. Do not reduce the
@@ -409,7 +539,7 @@ wins.
 ## P4 — Semantically meaningful formal evidence
 
 Audit the 298 proof targets and 98 Lean modules for semantic adequacy, not proof
-shape alone. The 894 `derived/decomposed` classifications are syntax-level
+shape alone. The 901 `derived/decomposed` classifications are syntax-level
 signals; `native_decide`, case splits, arithmetic, or induction do not by
 themselves establish that the model captures the book's claim.
 
@@ -435,6 +565,17 @@ theorem-count quota. A smaller proof surface with meaningful models and real
 consumers is better than a large decidable mirror of authored records. Formal
 success remains formal evidence; it cannot establish empirical competence,
 evaluator truth, deployed enforcement, safety, or transfer.
+
+To keep this audit finite, the machine status now freezes six named clusters,
+all initially `strengthen`: evidence/claim/proof custody; safety assurance and
+oversight; authority/effect/rollback/corrigibility; learning-update state and
+unlearning; self-improvement and readiness; and resource/artifact/lifecycle
+economics. Their exact 24-module membership is machine-validated. M4 closes by
+giving every cluster an `adequate`, `merge`, `reclassify`, or `remove`
+disposition with the required proposition, assumptions, countermodel,
+consumer, and inference ceiling. No unlisted cluster may be added later
+without a dated machine-validated amendment, and no listed module or cluster
+may disappear without a terminal disposition.
 
 ## P5 — Effect-complete governed reference system
 
@@ -561,6 +702,51 @@ recheck whether X exposes a header-description control before publication.
 Claim-identity, negative-result, or material source changes trigger synopsis and
 reader-derivative reconciliation.
 
+### P7.1 — Narrative synthesis and editorial compression
+
+The evidence roadmap must improve the book as a book, not only as a registry.
+Run the case-independent `P7.1a` edit as soon as its chapter-by-chapter audit is
+frozen; after `T4` produces a stable case, complete the flagship-dependent
+`P7.1b` edit before a new major reader release. Together the two lanes enforce
+these gates:
+
+- state the thesis, three defended contributions, strongest evidence, and
+  largest unresolved risks in a short opening map;
+- classify chapters as thesis-bearing, load-bearing reference, implementation
+  case, or speculative/deferred research so breadth is not mistaken for equal
+  evidentiary weight;
+- thread the `ASI-THESEUS-FLAGSHIP-01` happy, blocked, and rollback cases through
+  the reader spine; a chapter either advances the case or remains an explicitly
+  optional reference chapter;
+- remove repeated governance/evidence disclaimers, duplicated mechanism
+  introductions, and status boilerplate, targeting roughly 15–25% less repeated
+  reader-spine prose while preserving every unique claim, caveat, source,
+  equation, protocol, proof boundary, and non-claim;
+- give each defended contribution one strongest alternative explanation,
+  simpler baseline, failure case, and exact evidence still needed to change the
+  conclusion;
+- keep formal results only where a plain-language proposition, countermodel,
+  runtime consumer, and maximum inference justify the reader cost; and
+- refresh the overview diagram, glossary, chapter handoffs, and final synthesis
+  so a technical reader can recover the architecture and evidence hierarchy
+  without consulting roadmap history.
+
+Word-count reduction is a diagnostic, not the acceptance test. The gate is a
+meaning-preserving editorial diff, reader-spine validation, broken-link and
+cross-reference checks, and a chapter-by-chapter record of what was merged,
+moved to reference material, or retained because it changes the argument.
+
+The gates split into two lanes. **P7.1a — case-independent editorial
+compression** (repeated disclaimer and status-boilerplate de-duplication,
+duplicated mechanism-introduction merges, chapter-role classification,
+glossary, handoff, and overview refresh) has no dependency on the flagship
+case and may run at any checkpoint under the same meaning-preserving diff and
+validation gates. **P7.1b — flagship threading and final synthesis** (the
+opening map's strongest-evidence claims, the happy/blocked/rollback case
+spine, and the closing synthesis) waits for `T4`. Running P7.1a early must
+not pre-commit P7.1b's structure, and neither lane may delete a unique claim,
+caveat, source, equation, protocol, proof boundary, or non-claim.
+
 “Ready, not published” is an honest terminal public-state disposition when
 external authority is absent; it is not a reason to block evidence work. At
 each checkpoint, record whether each prepared product remains current, has gone
@@ -592,16 +778,20 @@ authority activates in the same transaction.
 
 ## Execution order and decision rules
 
-P0 begins immediately and remains continuous. Claim identity and stale
-attestation must be made truthful before new headline metrics or release
-claims. P1 then audits the historical negative frontier; its quarantine applies
-immediately even before every retrospective dossier is complete. P2 may design
-in parallel but cannot open final held-out data until its identity and
-competence dossier pass. P3 opens only when exact access predicates are true.
-P4 and P5 may proceed without P2, but neither can promote an empirical or broad
-claim. P6 continuously renews the inputs to P1–P5. P7 local remediation may
-proceed at any time; its external actions stay dormant until explicitly
-authorized. P8 closes every checkpoint.
+P0 remains continuous. P1 is complete and its N0–N5 ceilings remain binding.
+P2 preflight is active but storage-blocked; the storage-feasible
+materialization protocol is its unblocking path. `P2-Q1-D1` stays closed until
+P2's own competence dossier passes, then may open for the Q1 strong-worker
+arms. The disjoint `ASI-THESEUS-Q2-D2` stays closed through `T2`–`T4`; D1
+outcomes cannot tune it. `T0` through `T5` are the primary causal sequence for
+the composed flagship. P4 and P6 continue beside that sequence because they prune
+invalid inference and renew instruments. P5 may design the joined reference
+boundary before `T4`, but may not substitute fixtures for the natural
+vertical. P3 opens only after `T5` and exact access predicates are true. P7
+preserves current published artifacts now, may run the case-independent P7.1a
+compression lane at any checkpoint, and executes the P7.1b narrative synthesis
+after `T4`; external actions still require explicit action-time authority. P8
+closes every checkpoint.
 
 Every outcome-bearing item begins with an owner, stable claim identity, exact
 scope, mechanism, falsifier, prerequisites, evidence lane, competence gates,
@@ -621,48 +811,50 @@ is not a debugging interface.
 | SOTA/Pareto | Current strong comparator, preregistered defeat criterion, matched resources, uncertainty, dated scope, joint frontier | Missing code/checkpoint/hardware, incomparable budget, marketing summary, or hidden negative setting |
 | Publication readiness | Exact `main` commit, validated derivative, rights state, accessibility boundary, owner authority, deployed-byte receipt | Dirty/stale attestation, local build mistaken for publication, stale release identity, or implied license |
 
-## Initial owned queue
+## Current owned queue
 
-1. **Completed locally:** the canonical claim-identity graph maps all 115
-   accepted transitions, including the 90 non-direct claim IDs, without
-   promoting parent atoms or cores; twelve rejecting identity mutations pass.
-2. **Completed locally:** the accepted-transition rehabilitation ledger binds
-   all 90 historical no-change/refuted records as 1 N0, 15 N1, 74 N2, and zero
-   N3–N5; no broad or chapter-core negative inference survives.
-3. **Completed locally:** current chapter prose, Appendix C, evidence packets,
-   synopsis/public surfaces, and `blocked_after_full_attempt` language are
-   reconciled across 75 surfaces. KERC is N1, QCSA's two historical refutation
-   labels are N2, and no broad or chapter-core negative inference survives.
-4. **Blocked honestly:** P2 frontier selection, natural corpus acquisition, the
-   fixed-denominator gold diagnosis, replacement policy, evaluator calibration,
-   and historical ranks 1–5 are preserved. Do not continue at rank 6. Execute
-   the pool-wide infrastructure materialization amendment first; rank 5 is
-   setup-retry-pending because no protected content opened. Only after 30/30
-   exact infrastructure receipts and monitor soak pass may still-unopened
-   content activate. Then qualify all slots, rerun the final twelve twice, and
-   complete independent task review, mechanism activation, strong-model,
-   baseline, sensitivity, and rescue preflights before freezing the final
-   denominator.
-5. **Specific Round 15 proof audit completed:** the four named refinement
-   modules are retained with quantified semantic theorems, route-complete
-   consumers, failed-prefix controls, and explicit non-claims. Continue the
-   wider module-by-module semantic audit; do not use theorem counts as closure.
-6. Design the P5 reference slice around durable identity,
-   authority-to-observed-effect linkage, effect-complete rollback, concurrent
-   ledgers, revocation, crash recovery, full learning state, and descendant-
-   aware deletion before choosing implementation volume.
-7. Open the next source/instrument renewal sweep around false-negative
-   prevention, alternative cognitive substrates, evaluator science, transfer,
-   governed update/unlearning, the bounded Deterministic Capability Compilation
-   foundry lane, and the incremental Platonic World Model semantic-continuity
-   lane. Do not allow either new source to inherit evidence from its prose.
-8. Repair PDF pages 48 and 50, then DOCX page 6, before broad format polish.
-   Preserve failing images, compare exact rebuilt artifacts, visually inspect
-   every PDF/DOCX page, validate EPUB structure and navigation, and publish only
-   the formats that pass their own release gate.
-9. Complete a new commit-bound `main` reconciliation and attestation packet for
-   this remediation. Push `main`, observe CI/Pages, bind the reader Release
-   assets and deployed URLs, and leave no dirty protected evidence surface.
+1. **Continuous truth and custody (`P0`).** Keep all 115 accepted transition
+   identities resolved, reject parent-support laundering, and end every
+   evidence-bearing transaction with exact commit, tree, artifact, and public-
+   state reconciliation.
+2. **Blocked natural-campaign preflight (`P2`).** Preserve the fixed P2
+   denominator and all N0 infrastructure outcomes. Execute the storage-feasible
+   materialization protocol (sequential-verified readiness, Docker-scoped
+   reclamation with receipts, 50 GiB floor) to resolve the storage blocker,
+   then resume rank 5 setup retries and open rank 6 under the amendment; do
+   not weaken the twelve-task denominator. Once the seven competence gates
+   pass, open only `P2-Q1-D1` without waiting for Theseus gates `T2`–`T4`;
+   keep `ASI-THESEUS-Q2-D2` disjoint and outcome-sealed.
+3. **Shared flagship prerequisites (`T0`–`T4`).** Reconcile the exact Theseus
+   architecture freeze, behavior-positive student, real-use record, and joined
+   happy/blocked trace before `ASI-THESEUS-Q2-D2` opens. Cross-repository
+   handoff moves artifacts and maximum inference, never outcomes, rows, or
+   support by implication.
+4. **Semantic proof audit (`P4`).** Continue from the four strengthened Round 15
+   refinement modules through the six frozen, machine-enumerated clusters;
+   merge, reclassify, or remove proof surfaces that have no semantic leverage
+   or consumer, and never close M4 from aggregate theorem counts.
+5. **Effect-complete reference (`P5`).** Design against the `T4` joined trace:
+   durable identity, scoped authority, concurrent ledgers, observed effects,
+   exact rollback or compensation, crash recovery, full learning state,
+   revocation, and descendant-aware deletion. Implementation volume follows
+   the case; it does not precede it.
+6. **Evidence and instrument renewal (`P6`).** Keep primary comparators,
+   evaluator sensitivity, false-negative controls, alternative substrates,
+   governed update/unlearning, Deterministic Capability Compilation, and the
+   Platonic World Model current without allowing prose to inherit evidence.
+7. **Narrative and reader quality (`P7`).** Preserve the published
+   `reader-2026-07-18` receipts, close only compatibility claims that are
+   actually tested, execute P7.1a now under a meaning-preservation audit, and
+   execute only P7.1b after the joined case stabilizes. The X synopsis remains
+   staged until explicit action-time authorization.
+8. **Independent challenge (`P3`).** After `T5`, reproduce any broadened result
+   through a materially separate implementation/evaluator and two frozen
+   transfer settings; a local positive does not become SOTA or architecture-
+   general evidence by repetition in prose.
+9. **Closure (`P8`).** Give every residual a terminal disposition, owner,
+   prerequisite, and next trigger; activate exactly one successor or continuing-
+   maintenance authority in the same transaction.
 
 ## Checkpoint receipt
 
@@ -681,13 +873,13 @@ lies.
 
 | Milestone | State | Completion condition |
 |---|---|---|
-| M0 — Truth and identity control | in progress | Identity is complete and the first custody checkpoint is pushed; close only after this remediation has a clean commit-bound attestation and the new custody gate passes. |
+| M0 — Truth and identity control | in progress | Identity is complete and clean pushed/build/deploy checkpoint `6eb63a7007` is attested; close only after this roadmap revision and every later evidence checkpoint receive their own clean commit-bound custody and public-state reconciliation. |
 | M1 — Negative-result rehabilitation | completed | All 90 accepted negative/no-change transitions are classified (1 N0, 15 N1, 74 N2, zero N3–N5), and 75 current surfaces including all 55 chapters preserve the resulting ceilings. |
 | M2 — Competent natural empirical result | in progress | A high-value natural, non-authored campaign passes every competence gate and ends with a bounded positive, negative, or inconclusive disposition. |
 | M3 — Reproduction and transfer | pending | Any broadened result has independent reproduction and two prospectively selected materially different transfer settings. |
-| M4 — Semantic formal depth | in progress | The four Round 15 modules are explicitly retained and strengthened; close after every consequential cluster has an adequate model, countermodels, consumers, and honest inference ceiling, with empty stubs removed or reclassified. |
+| M4 — Semantic formal depth | in progress | Six frozen clusters with 24 exact modules are machine-enumerated; close only after each receives an adequate/merge/reclassify/remove disposition with a meaningful model, countermodels, consumers, and honest inference ceiling. |
 | M5 — Effect-complete reference | pending | Multi-process authority-to-effect, rollback/residual, full-state, and deletion behavior passes adversarial and recovery tests. |
-| M6 — Renewal discipline | pending | Dated primary-source, comparator, evaluator, and false-negative instrument renewal is current and mapped to claims. |
+| M6 — Renewal discipline | in progress | Dated primary-source, comparator, evaluator, and false-negative instrument renewal is current and mapped to claims. |
 | M7 — Reader/publication disposition | in progress | PDF, EPUB, and DOCX are published with exact receipts and verified public redownloads. Close only after compatibility residuals are terminally accepted or cleared, all public surfaces remain synchronized, and the final main/Pages attestation succeeds. |
 | M8 — Successor continuity | pending | Every open item has a terminal disposition and the next exact authority is active. |
 
@@ -700,5 +892,7 @@ surfaces all preserve that distinction. Completion requires resolved claim
 identity, claim-commensurate competence, immutable raw evidence, N0–N5 negative
 scope, semantic rather than count-based formal depth, independent transfer for
 broad claims, effect-complete implementation boundaries, current sources and
-instruments, exact `main` attestation, terminal reader/publication dispositions,
-and uninterrupted successor ownership.
+instruments, non-overlapping Q1/Q2 denominators, a meaning-preserving
+reader-spine synthesis around the shared flagship case, exact `main`
+attestation, terminal reader/publication dispositions, and uninterrupted
+successor ownership.

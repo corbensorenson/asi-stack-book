@@ -1,11 +1,59 @@
 {
-  "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v4",
+  "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v6",
   "roadmap_id": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17",
   "roadmap_path": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
-  "snapshot_date": "2026-07-18",
+  "snapshot_date": "2026-07-19",
   "authority": "Corben Sorenson",
   "status": "active",
   "current_priority": "P2",
+  "quality_uplift_program": {
+    "state": "active",
+    "shared_flagship_id": "ASI-THESEUS-FLAGSHIP-01",
+    "shared_research_question": "Can a locally trained, source-disjoint Theseus student complete useful natural repository work through the governed stack, and does full governed admission improve the joint useful-safe-release frontier over simpler matched controls at acceptable total lifecycle cost?",
+    "critical_path": [
+      {"id": "T0", "state": "in_progress", "depends_on": [], "purpose": "close or explicitly exclude every training-invalidating architecture item and freeze an independently replayed package"},
+      {"id": "T1", "state": "blocked_by_T0", "depends_on": ["T0"], "purpose": "train the frozen neural seed and matched dense control with immutable lineage"},
+      {"id": "T2", "state": "blocked_by_T1", "depends_on": ["T1"], "purpose": "establish an honest nonzero model-only source-disjoint behavioral numerator or an exactly scoped negative"},
+      {"id": "T3", "state": "ready_for_assisted_use_learned_credit_waits_for_T2", "depends_on": [], "purpose": "collect at least one week or five distinct days of real-use outcomes with component attribution"},
+      {"id": "T4", "state": "blocked_by_T2_and_T3", "depends_on": ["T2", "T3"], "purpose": "join one natural happy path and one blocked or rollback path from intent through observed effect and dogfood outcome"},
+      {"id": "T5", "state": "blocked_by_T4", "depends_on": ["T4"], "purpose": "compose independently frozen Q1 admission and Q2 student results without denominator or support leakage, then compare total lifecycle cost"},
+      {"id": "T6", "state": "blocked_by_T5", "depends_on": ["T5"], "purpose": "synthesize a public-safe book case and require separate reproduction and transfer for broader claims"}
+    ],
+    "empirical_lanes": {
+      "q1_governed_admission": {
+        "question_id": "Q1",
+        "state": "blocked_by_P2_seven_gate_competence",
+        "denominator_id": "P2-Q1-D1",
+        "worker_scope": "prospectively_named_competent_strong_worker",
+        "depends_on": ["P2-seven-gate-competence"],
+        "may_open_before_T2": true,
+        "protected_outcomes_opened": false
+      },
+      "q2_theseus_student": {
+        "question_id": "Q2",
+        "state": "blocked_by_T2_and_T4",
+        "denominator_id": "ASI-THESEUS-Q2-D2",
+        "worker_scope": "frozen_source_disjoint_theseus_student",
+        "depends_on": ["T2", "T4"],
+        "protected_outcomes_opened": false
+      },
+      "denominator_overlap_allowed": false,
+      "q1_outcomes_may_tune_q2_or_student": false,
+      "support_transfer_allowed": false
+    },
+    "narrative_quality_gate": {
+      "state": "split_lane_active",
+      "case_independent_compression_state": "ready",
+      "flagship_threading_state": "blocked_by_T4",
+      "reader_spine_repetition_reduction_target": "15_to_25_percent_diagnostic_not_acceptance_test",
+      "requires_chapter_role_classification": true,
+      "requires_shared_case_threading": true,
+      "requires_strongest_alternative_and_simpler_baseline": true,
+      "requires_meaning_preservation_audit": true
+    },
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
   "predecessor": {
     "path": "docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md",
     "status_path": "roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json",
@@ -42,9 +90,11 @@
     "derived_or_decomposed_theorem_count": 901,
     "direct_or_projection_theorem_count": 230,
     "unknown_or_mixed_theorem_count": 176,
-    "approved_exact_local_reader_formats": ["html"],
-    "bounded_not_release_approved_reader_formats": ["epub", "docx"],
-    "failed_reader_formats": ["pdf"],
+    "historical_v2_2_approved_exact_local_reader_formats": ["html"],
+    "historical_v2_2_bounded_not_release_approved_reader_formats": ["epub", "docx"],
+    "historical_v2_2_failed_reader_formats": ["pdf"],
+    "current_published_reader_release_id": "reader-2026-07-18",
+    "current_published_reader_formats": ["pdf", "epub", "docx"],
     "x_article_state": "source_ready_composer_refresh_required",
     "x_article_draft_id": "2077875347220041728",
     "publication_authority": "none",
@@ -189,12 +239,15 @@
     "release_effect": "none"
   },
   "p2_replacement_execution": {
-    "state": "slot1_rank5_terminal_rank6_next_other_slots_rank1_unexecuted",
+    "state": "pool_materialization_blocked_rank5_setup_retry_pending_rank6_closed",
     "independent_evaluator_calibration_case_count": 32,
     "rank_one_task_spec_opened_count": 4,
     "unique_candidate_task_spec_opened_count": 5,
     "slot1_terminal_candidate_count": 5,
-    "slot1_next_rank": 6,
+    "historical_next_rank_before_amendment": 6,
+    "current_setup_retry_rank": 5,
+    "rank6_authorized": false,
+    "pool_materialization_gate_passed": false,
     "slot1_qualified": false,
     "candidate_execution_started_count": 2,
     "candidate_outcome_custody_incident_count": 1,
@@ -239,11 +292,64 @@
     "support_state_effect": "none",
     "release_effect": "none"
   },
+  "p2_sequential_materialization_contract": {
+    "state": "pending_complete_pool_recipe_and_receipt_set",
+    "candidate_count": 30,
+    "complete_pool_recipe_set_required_before_rank_opening": true,
+    "task_content_must_remain_closed_during_materialization": true,
+    "pre_content_exact_image_retry_limit": 3,
+    "pre_content_failure_may_skip_or_burn_rank": false,
+    "post_content_infrastructure_failure_may_advance_rank": false,
+    "post_content_replay_allowed": false,
+    "docker_scoped_reclamation_only": true,
+    "non_docker_user_data_deletion_allowed": false,
+    "minimum_host_free_bytes": 53687091200,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "semantic_proof_cluster_inventory": {
+    "state": "inventory_frozen_audit_pending",
+    "amendment_rule": "dated_machine_validated_amendment_with_terminal_disposition_required",
+    "clusters": [
+      {
+        "id": "evidence_claim_and_proof_custody",
+        "state": "strengthen",
+        "modules": ["AsiStackProofs.EvidenceStates", "AsiStackProofs.ClaimLedgerRefinement", "AsiStackProofs.ProofCarryingClaimsRefinement", "AsiStackProofs.ProofEnvelope"]
+      },
+      {
+        "id": "safety_assurance_and_oversight",
+        "state": "strengthen",
+        "modules": ["AsiStackProofs.SafetyCriticalLifecycle", "AsiStackProofs.SafetyCaseRefinement", "AsiStackProofs.ScalableOversightRefinement", "AsiStackProofs.AdversarialEvaluationRefinement"]
+      },
+      {
+        "id": "authority_effect_rollback_and_corrigibility",
+        "state": "strengthen",
+        "modules": ["AsiStackProofs.AuthorityEffectRefinement", "AsiStackProofs.Replacement", "AsiStackProofs.Corrigibility", "AsiStackProofs.IntentExecutionRefinement"]
+      },
+      {
+        "id": "learning_update_state_and_unlearning",
+        "state": "strengthen",
+        "modules": ["AsiStackProofs.DataEngineLifecycleRefinement", "AsiStackProofs.PolicyOptimizationRefinement", "AsiStackProofs.ModelWeightCustody", "AsiStackProofs.ContextTransactionRefinement"]
+      },
+      {
+        "id": "self_improvement_and_readiness",
+        "state": "strengthen",
+        "modules": ["AsiStackProofs.SelfImprovementRefinement", "AsiStackProofs.OpenEndedImprovementRefinement", "AsiStackProofs.ReadinessRefinement", "AsiStackProofs.CapabilityThresholdRefinement"]
+      },
+      {
+        "id": "resource_artifact_and_lifecycle_economics",
+        "state": "strengthen",
+        "modules": ["AsiStackProofs.ResourceEconomicsRefinement", "AsiStackProofs.ArtifactRealityRefinement", "AsiStackProofs.ArtifactStewardAgents", "AsiStackProofs.ArtifactCompressionRefinement"]
+      }
+    ],
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
   "attestation": {
     "required_branch": "main",
     "branches_allowed_for_book_work": false,
-    "attested_head": "882b2a82c8e7af3c90265dd1ff23ecbfacf4b0db",
-    "state": "pushed_ancestral_custody_checkpoint",
+    "attested_head": "6eb63a70074a11a523fb66bc693117bfa98bbc32",
+    "state": "pushed_deployed_clean_ancestral_checkpoint",
     "working_tree_delta_file_count_at_review": 0,
     "commit_authority": "owner_authorized_in_thread",
     "push_authority": "owner_authorized_in_thread",
@@ -269,9 +375,9 @@
     {"id": "P1", "state": "completed", "purpose": "rehabilitate historical negative results and prevent false-negative inference"},
     {"id": "P2", "state": "in_progress", "purpose": "produce one competence-qualified natural non-authored empirical result"},
     {"id": "P3", "state": "pending", "purpose": "establish independent reproduction, transfer, and honest SOTA challenges"},
-    {"id": "P4", "state": "pending", "purpose": "replace proof-count theater with semantically meaningful formal evidence"},
+    {"id": "P4", "state": "in_progress", "purpose": "replace proof-count theater with semantically meaningful formal evidence"},
     {"id": "P5", "state": "pending", "purpose": "build and test an effect-complete governed reference system"},
-    {"id": "P6", "state": "pending", "purpose": "renew sources, comparators, evaluators, instruments, and false-negative controls"},
+    {"id": "P6", "state": "in_progress", "purpose": "renew sources, comparators, evaluators, instruments, and false-negative controls"},
     {"id": "P7", "state": "in_progress", "purpose": "maintain the published PDF/EPUB/DOCX reader release and close compatibility residuals without overclaim"},
     {"id": "P8", "state": "pending", "purpose": "close every residual with an exact disposition and successor continuity"}
   ],
@@ -280,9 +386,9 @@
     {"id": "M1", "state": "completed", "purpose": "classify historical negative inference under N0 through N5"},
     {"id": "M2", "state": "in_progress", "purpose": "complete a competent natural empirical campaign without forced promotion"},
     {"id": "M3", "state": "pending", "purpose": "reproduce and transfer every broadened claim"},
-    {"id": "M4", "state": "pending", "purpose": "retain only semantically meaningful formal evidence"},
+    {"id": "M4", "state": "in_progress", "purpose": "retain only semantically meaningful formal evidence"},
     {"id": "M5", "state": "pending", "purpose": "validate effect-complete multi-process governed behavior"},
-    {"id": "M6", "state": "pending", "purpose": "keep evidence and instrument renewal current"},
+    {"id": "M6", "state": "in_progress", "purpose": "keep evidence and instrument renewal current"},
     {"id": "M7", "state": "in_progress", "purpose": "preserve exact reader-release receipts while native-app and accessibility residuals remain open"},
     {"id": "M8", "state": "pending", "purpose": "activate the next exact authority"}
   ],

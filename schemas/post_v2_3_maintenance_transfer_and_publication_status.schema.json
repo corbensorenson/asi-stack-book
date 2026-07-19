@@ -5,22 +5,88 @@
   "additionalProperties": false,
   "required": [
     "schema_version", "roadmap_id", "roadmap_path", "snapshot_date",
-    "authority", "status", "current_priority", "predecessor",
+    "authority", "status", "current_priority", "quality_uplift_program", "predecessor",
     "activation_truth", "competence_and_identity_contract", "claim_identity_graph",
     "negative_result_rehabilitation", "p2_frontier_selection", "p2_development_corpus_preflight",
-    "p2_gold_preflight_diagnosis", "p2_replacement_queue", "p2_replacement_execution", "p2_resource_ceiling", "attestation", "reader_release_receipt",
+    "p2_gold_preflight_diagnosis", "p2_replacement_queue", "p2_replacement_execution", "p2_resource_ceiling",
+    "p2_sequential_materialization_contract", "semantic_proof_cluster_inventory", "attestation", "reader_release_receipt",
     "priorities", "milestones", "self_contained_execution",
     "closure_requires_active_successor", "support_state_effect",
     "release_effect", "non_claims"
   ],
   "properties": {
-    "schema_version": {"const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v4"},
+    "schema_version": {"const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v6"},
     "roadmap_id": {"const": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17"},
     "roadmap_path": {"const": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"},
-    "snapshot_date": {"const": "2026-07-18"},
+    "snapshot_date": {"const": "2026-07-19"},
     "authority": {"const": "Corben Sorenson"},
     "status": {"const": "active"},
     "current_priority": {"const": "P2"},
+    "quality_uplift_program": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state", "shared_flagship_id", "shared_research_question",
+        "critical_path", "empirical_lanes", "narrative_quality_gate", "support_state_effect",
+        "release_effect"
+      ],
+      "properties": {
+        "state": {"const": "active"},
+        "shared_flagship_id": {"const": "ASI-THESEUS-FLAGSHIP-01"},
+        "shared_research_question": {"type": "string", "minLength": 100},
+        "critical_path": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "prefixItems": [
+            {"$ref": "#/$defs/T0"}, {"$ref": "#/$defs/T1"},
+            {"$ref": "#/$defs/T2"}, {"$ref": "#/$defs/T3"},
+            {"$ref": "#/$defs/T4"}, {"$ref": "#/$defs/T5"},
+            {"$ref": "#/$defs/T6"}
+          ],
+          "items": false
+        },
+        "empirical_lanes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "q1_governed_admission", "q2_theseus_student",
+            "denominator_overlap_allowed", "q1_outcomes_may_tune_q2_or_student",
+            "support_transfer_allowed"
+          ],
+          "properties": {
+            "q1_governed_admission": {"$ref": "#/$defs/Q1"},
+            "q2_theseus_student": {"$ref": "#/$defs/Q2"},
+            "denominator_overlap_allowed": {"const": false},
+            "q1_outcomes_may_tune_q2_or_student": {"const": false},
+            "support_transfer_allowed": {"const": false}
+          }
+        },
+        "narrative_quality_gate": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "state", "case_independent_compression_state", "flagship_threading_state",
+            "reader_spine_repetition_reduction_target",
+            "requires_chapter_role_classification", "requires_shared_case_threading",
+            "requires_strongest_alternative_and_simpler_baseline",
+            "requires_meaning_preservation_audit"
+          ],
+          "properties": {
+            "state": {"const": "split_lane_active"},
+            "case_independent_compression_state": {"const": "ready"},
+            "flagship_threading_state": {"const": "blocked_by_T4"},
+            "reader_spine_repetition_reduction_target": {"const": "15_to_25_percent_diagnostic_not_acceptance_test"},
+            "requires_chapter_role_classification": {"const": true},
+            "requires_shared_case_threading": {"const": true},
+            "requires_strongest_alternative_and_simpler_baseline": {"const": true},
+            "requires_meaning_preservation_audit": {"const": true}
+          }
+        },
+        "support_state_effect": {"const": "none"},
+        "release_effect": {"const": "none"}
+      }
+    },
     "predecessor": {
       "type": "object",
       "additionalProperties": false,
@@ -50,8 +116,9 @@
         "external_reproduction_count", "sota_supported_count", "proof_target_count",
         "lean_module_count", "theorem_declaration_count",
         "derived_or_decomposed_theorem_count", "direct_or_projection_theorem_count",
-        "unknown_or_mixed_theorem_count", "approved_exact_local_reader_formats",
-        "bounded_not_release_approved_reader_formats", "failed_reader_formats",
+        "unknown_or_mixed_theorem_count", "historical_v2_2_approved_exact_local_reader_formats",
+        "historical_v2_2_bounded_not_release_approved_reader_formats", "historical_v2_2_failed_reader_formats",
+        "current_published_reader_release_id", "current_published_reader_formats",
         "x_article_state", "x_article_draft_id", "publication_authority",
         "support_state_effect"
       ],
@@ -85,9 +152,11 @@
         "derived_or_decomposed_theorem_count": {"const": 901},
         "direct_or_projection_theorem_count": {"const": 230},
         "unknown_or_mixed_theorem_count": {"const": 176},
-        "approved_exact_local_reader_formats": {"const": ["html"]},
-        "bounded_not_release_approved_reader_formats": {"const": ["epub", "docx"]},
-        "failed_reader_formats": {"const": ["pdf"]},
+        "historical_v2_2_approved_exact_local_reader_formats": {"const": ["html"]},
+        "historical_v2_2_bounded_not_release_approved_reader_formats": {"const": ["epub", "docx"]},
+        "historical_v2_2_failed_reader_formats": {"const": ["pdf"]},
+        "current_published_reader_release_id": {"const": "reader-2026-07-18"},
+        "current_published_reader_formats": {"const": ["pdf", "epub", "docx"]},
         "x_article_state": {"const": "source_ready_composer_refresh_required"},
         "x_article_draft_id": {"const": "2077875347220041728"},
         "publication_authority": {"const": "none"},
@@ -316,19 +385,24 @@
       "required": [
         "state", "independent_evaluator_calibration_case_count",
         "rank_one_task_spec_opened_count", "unique_candidate_task_spec_opened_count",
-        "slot1_terminal_candidate_count", "slot1_next_rank", "slot1_qualified",
+        "slot1_terminal_candidate_count", "historical_next_rank_before_amendment",
+        "current_setup_retry_rank", "rank6_authorized", "pool_materialization_gate_passed",
+        "slot1_qualified",
         "candidate_execution_started_count", "candidate_outcome_custody_incident_count",
         "other_slot_candidate_outcome_opened_count", "final_pool_selected",
         "final_denominator_opened", "support_state_effect", "release_effect",
         "lineage_paths"
       ],
       "properties": {
-        "state": {"const": "slot1_rank5_terminal_rank6_next_other_slots_rank1_unexecuted"},
+        "state": {"const": "pool_materialization_blocked_rank5_setup_retry_pending_rank6_closed"},
         "independent_evaluator_calibration_case_count": {"const": 32},
         "rank_one_task_spec_opened_count": {"const": 4},
         "unique_candidate_task_spec_opened_count": {"const": 5},
         "slot1_terminal_candidate_count": {"const": 5},
-        "slot1_next_rank": {"const": 6},
+        "historical_next_rank_before_amendment": {"const": 6},
+        "current_setup_retry_rank": {"const": 5},
+        "rank6_authorized": {"const": false},
+        "pool_materialization_gate_passed": {"const": false},
         "slot1_qualified": {"const": false},
         "candidate_execution_started_count": {"const": 2},
         "candidate_outcome_custody_incident_count": {"const": 1},
@@ -382,6 +456,58 @@
         "release_effect": {"const": "none"}
       }
     },
+    "p2_sequential_materialization_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state", "candidate_count", "complete_pool_recipe_set_required_before_rank_opening",
+        "task_content_must_remain_closed_during_materialization", "pre_content_exact_image_retry_limit",
+        "pre_content_failure_may_skip_or_burn_rank", "post_content_infrastructure_failure_may_advance_rank",
+        "post_content_replay_allowed", "docker_scoped_reclamation_only",
+        "non_docker_user_data_deletion_allowed", "minimum_host_free_bytes",
+        "support_state_effect", "release_effect"
+      ],
+      "properties": {
+        "state": {"const": "pending_complete_pool_recipe_and_receipt_set"},
+        "candidate_count": {"const": 30},
+        "complete_pool_recipe_set_required_before_rank_opening": {"const": true},
+        "task_content_must_remain_closed_during_materialization": {"const": true},
+        "pre_content_exact_image_retry_limit": {"const": 3},
+        "pre_content_failure_may_skip_or_burn_rank": {"const": false},
+        "post_content_infrastructure_failure_may_advance_rank": {"const": false},
+        "post_content_replay_allowed": {"const": false},
+        "docker_scoped_reclamation_only": {"const": true},
+        "non_docker_user_data_deletion_allowed": {"const": false},
+        "minimum_host_free_bytes": {"const": 53687091200},
+        "support_state_effect": {"const": "none"},
+        "release_effect": {"const": "none"}
+      }
+    },
+    "semantic_proof_cluster_inventory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "amendment_rule", "clusters", "support_state_effect", "release_effect"],
+      "properties": {
+        "state": {"const": "inventory_frozen_audit_pending"},
+        "amendment_rule": {"const": "dated_machine_validated_amendment_with_terminal_disposition_required"},
+        "clusters": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "prefixItems": [
+            {"$ref": "#/$defs/proofClusterEvidence"},
+            {"$ref": "#/$defs/proofClusterSafety"},
+            {"$ref": "#/$defs/proofClusterRollback"},
+            {"$ref": "#/$defs/proofClusterLearning"},
+            {"$ref": "#/$defs/proofClusterImprovement"},
+            {"$ref": "#/$defs/proofClusterEconomics"}
+          ],
+          "items": false
+        },
+        "support_state_effect": {"const": "none"},
+        "release_effect": {"const": "none"}
+      }
+    },
     "attestation": {
       "type": "object",
       "additionalProperties": false,
@@ -393,8 +519,8 @@
       "properties": {
         "required_branch": {"const": "main"},
         "branches_allowed_for_book_work": {"const": false},
-        "attested_head": {"const": "882b2a82c8e7af3c90265dd1ff23ecbfacf4b0db"},
-        "state": {"const": "pushed_ancestral_custody_checkpoint"},
+        "attested_head": {"const": "6eb63a70074a11a523fb66bc693117bfa98bbc32"},
+        "state": {"const": "pushed_deployed_clean_ancestral_checkpoint"},
         "working_tree_delta_file_count_at_review": {"const": 0},
         "commit_authority": {"const": "owner_authorized_in_thread"},
         "push_authority": {"const": "owner_authorized_in_thread"},
@@ -433,8 +559,8 @@
       "prefixItems": [
         {"$ref": "#/$defs/inProgressP0"},
         {"$ref": "#/$defs/completedP1"}, {"$ref": "#/$defs/inProgressP2"},
-        {"$ref": "#/$defs/pendingPriority"}, {"$ref": "#/$defs/pendingPriority"},
-        {"$ref": "#/$defs/pendingPriority"}, {"$ref": "#/$defs/pendingPriority"},
+        {"$ref": "#/$defs/pendingPriority"}, {"$ref": "#/$defs/inProgressP4"},
+        {"$ref": "#/$defs/pendingPriority"}, {"$ref": "#/$defs/inProgressP6"},
         {"$ref": "#/$defs/inProgressP7"}, {"$ref": "#/$defs/pendingPriority"}
       ],
       "items": false
@@ -446,8 +572,8 @@
       "prefixItems": [
         {"$ref": "#/$defs/inProgressM0"},
         {"$ref": "#/$defs/completedM1"}, {"$ref": "#/$defs/inProgressM2"},
-        {"$ref": "#/$defs/pendingMilestone"}, {"$ref": "#/$defs/pendingMilestone"},
-        {"$ref": "#/$defs/pendingMilestone"}, {"$ref": "#/$defs/pendingMilestone"},
+        {"$ref": "#/$defs/pendingMilestone"}, {"$ref": "#/$defs/inProgressM4"},
+        {"$ref": "#/$defs/pendingMilestone"}, {"$ref": "#/$defs/inProgressM6"},
         {"$ref": "#/$defs/inProgressM7"}, {"$ref": "#/$defs/pendingMilestone"}
       ],
       "items": false
@@ -473,6 +599,49 @@
     "non_claims": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 20}}
   },
   "$defs": {
+    "Q1": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["question_id", "state", "denominator_id", "worker_scope", "depends_on", "may_open_before_T2", "protected_outcomes_opened"],
+      "properties": {
+        "question_id": {"const": "Q1"},
+        "state": {"const": "blocked_by_P2_seven_gate_competence"},
+        "denominator_id": {"const": "P2-Q1-D1"},
+        "worker_scope": {"const": "prospectively_named_competent_strong_worker"},
+        "depends_on": {"const": ["P2-seven-gate-competence"]},
+        "may_open_before_T2": {"const": true},
+        "protected_outcomes_opened": {"const": false}
+      }
+    },
+    "Q2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["question_id", "state", "denominator_id", "worker_scope", "depends_on", "protected_outcomes_opened"],
+      "properties": {
+        "question_id": {"const": "Q2"},
+        "state": {"const": "blocked_by_T2_and_T4"},
+        "denominator_id": {"const": "ASI-THESEUS-Q2-D2"},
+        "worker_scope": {"const": "frozen_source_disjoint_theseus_student"},
+        "depends_on": {"const": ["T2", "T4"]},
+        "protected_outcomes_opened": {"const": false}
+      }
+    },
+    "proofCluster": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "state", "modules"],
+      "properties": {
+        "id": {"type": "string", "minLength": 10},
+        "state": {"enum": ["adequate", "strengthen", "merge", "reclassify", "remove"]},
+        "modules": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^AsiStackProofs\\."}}
+      }
+    },
+    "proofClusterEvidence": {"allOf": [{"$ref": "#/$defs/proofCluster"}, {"properties": {"id": {"const": "evidence_claim_and_proof_custody"}, "state": {"const": "strengthen"}, "modules": {"const": ["AsiStackProofs.EvidenceStates", "AsiStackProofs.ClaimLedgerRefinement", "AsiStackProofs.ProofCarryingClaimsRefinement", "AsiStackProofs.ProofEnvelope"]}}}]},
+    "proofClusterSafety": {"allOf": [{"$ref": "#/$defs/proofCluster"}, {"properties": {"id": {"const": "safety_assurance_and_oversight"}, "state": {"const": "strengthen"}, "modules": {"const": ["AsiStackProofs.SafetyCriticalLifecycle", "AsiStackProofs.SafetyCaseRefinement", "AsiStackProofs.ScalableOversightRefinement", "AsiStackProofs.AdversarialEvaluationRefinement"]}}}]},
+    "proofClusterRollback": {"allOf": [{"$ref": "#/$defs/proofCluster"}, {"properties": {"id": {"const": "authority_effect_rollback_and_corrigibility"}, "state": {"const": "strengthen"}, "modules": {"const": ["AsiStackProofs.AuthorityEffectRefinement", "AsiStackProofs.Replacement", "AsiStackProofs.Corrigibility", "AsiStackProofs.IntentExecutionRefinement"]}}}]},
+    "proofClusterLearning": {"allOf": [{"$ref": "#/$defs/proofCluster"}, {"properties": {"id": {"const": "learning_update_state_and_unlearning"}, "state": {"const": "strengthen"}, "modules": {"const": ["AsiStackProofs.DataEngineLifecycleRefinement", "AsiStackProofs.PolicyOptimizationRefinement", "AsiStackProofs.ModelWeightCustody", "AsiStackProofs.ContextTransactionRefinement"]}}}]},
+    "proofClusterImprovement": {"allOf": [{"$ref": "#/$defs/proofCluster"}, {"properties": {"id": {"const": "self_improvement_and_readiness"}, "state": {"const": "strengthen"}, "modules": {"const": ["AsiStackProofs.SelfImprovementRefinement", "AsiStackProofs.OpenEndedImprovementRefinement", "AsiStackProofs.ReadinessRefinement", "AsiStackProofs.CapabilityThresholdRefinement"]}}}]},
+    "proofClusterEconomics": {"allOf": [{"$ref": "#/$defs/proofCluster"}, {"properties": {"id": {"const": "resource_artifact_and_lifecycle_economics"}, "state": {"const": "strengthen"}, "modules": {"const": ["AsiStackProofs.ResourceEconomicsRefinement", "AsiStackProofs.ArtifactRealityRefinement", "AsiStackProofs.ArtifactStewardAgents", "AsiStackProofs.ArtifactCompressionRefinement"]}}}]},
     "row": {
       "type": "object",
       "additionalProperties": false,
@@ -483,6 +652,28 @@
         "purpose": {"type": "string", "minLength": 10}
       }
     },
+    "criticalPathRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "state", "depends_on", "purpose"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^T[0-6]$"},
+        "state": {"type": "string", "minLength": 5},
+        "depends_on": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^T[0-6]$"}
+        },
+        "purpose": {"type": "string", "minLength": 40}
+      }
+    },
+    "T0": {"allOf": [{"$ref": "#/$defs/criticalPathRow"}, {"properties": {"id": {"const": "T0"}, "state": {"const": "in_progress"}, "depends_on": {"const": []}}}]},
+    "T1": {"allOf": [{"$ref": "#/$defs/criticalPathRow"}, {"properties": {"id": {"const": "T1"}, "state": {"const": "blocked_by_T0"}, "depends_on": {"const": ["T0"]}}}]},
+    "T2": {"allOf": [{"$ref": "#/$defs/criticalPathRow"}, {"properties": {"id": {"const": "T2"}, "state": {"const": "blocked_by_T1"}, "depends_on": {"const": ["T1"]}}}]},
+    "T3": {"allOf": [{"$ref": "#/$defs/criticalPathRow"}, {"properties": {"id": {"const": "T3"}, "state": {"const": "ready_for_assisted_use_learned_credit_waits_for_T2"}, "depends_on": {"const": []}}}]},
+    "T4": {"allOf": [{"$ref": "#/$defs/criticalPathRow"}, {"properties": {"id": {"const": "T4"}, "state": {"const": "blocked_by_T2_and_T3"}, "depends_on": {"const": ["T2", "T3"]}}}]},
+    "T5": {"allOf": [{"$ref": "#/$defs/criticalPathRow"}, {"properties": {"id": {"const": "T5"}, "state": {"const": "blocked_by_T4"}, "depends_on": {"const": ["T4"]}}}]},
+    "T6": {"allOf": [{"$ref": "#/$defs/criticalPathRow"}, {"properties": {"id": {"const": "T6"}, "state": {"const": "blocked_by_T5"}, "depends_on": {"const": ["T5"]}}}]},
     "inProgressP0": {
       "allOf": [
         {"$ref": "#/$defs/row"},
@@ -499,6 +690,18 @@
       "allOf": [
         {"$ref": "#/$defs/row"},
         {"properties": {"id": {"const": "P2"}, "state": {"const": "in_progress"}}}
+      ]
+    },
+    "inProgressP4": {
+      "allOf": [
+        {"$ref": "#/$defs/row"},
+        {"properties": {"id": {"const": "P4"}, "state": {"const": "in_progress"}}}
+      ]
+    },
+    "inProgressP6": {
+      "allOf": [
+        {"$ref": "#/$defs/row"},
+        {"properties": {"id": {"const": "P6"}, "state": {"const": "in_progress"}}}
       ]
     },
     "pendingPriority": {
@@ -535,6 +738,18 @@
       "allOf": [
         {"$ref": "#/$defs/row"},
         {"properties": {"id": {"const": "M2"}, "state": {"const": "in_progress"}}}
+      ]
+    },
+    "inProgressM4": {
+      "allOf": [
+        {"$ref": "#/$defs/row"},
+        {"properties": {"id": {"const": "M4"}, "state": {"const": "in_progress"}}}
+      ]
+    },
+    "inProgressM6": {
+      "allOf": [
+        {"$ref": "#/$defs/row"},
+        {"properties": {"id": {"const": "M6"}, "state": {"const": "in_progress"}}}
       ]
     },
     "pendingMilestone": {

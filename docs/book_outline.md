@@ -2,8 +2,8 @@
 
 Working title: **The ASI Stack: A Governed Systems Architecture for Advanced AI, with ASI as the Stress Case**
 
-Status: expanded source-of-truth drafting outline, updated 2026-07-17 after the
-experiment-competence, claim-identity, and false-negative roadmap review.
+Status: expanded source-of-truth drafting outline, updated 2026-07-19 after the
+shared flagship, execution-order, and narrative-quality roadmap review.
 `book_structure.json` remains the ordering source of truth; Quarto generates
 displayed chapter numbers from the manifest.
 
@@ -16,38 +16,52 @@ claim atoms have terminal dispositions, 3,698 atoms remain
 `blocked_after_full_attempt`, all 55 chapter-core claims remain at `argument`,
 and zero external reproductions or SOTA-supported claims were established. Its
 terminal bookkeeping does not make every negative or no-change result a
-competent scientific test. The active roadmap now applies
+competent scientific test. The active roadmap applies
 `docs/claim_bearing_experiment_competence_standard.md`: exploratory or broken
 implementations cannot refute an architecture. All 90 accepted historical
-negative/no-change transitions now have N0–N5 ceilings—1 N0, 15 N1, 74 N2, and
-0 N3–N5—while the broader prose and `blocked_after_full_attempt` scan remains
-active. Final held-out data may open only after
-claim-specific implementation, construct, evaluator, sensitivity, and fair-
-rescue gates pass. The
-completed authority remains at
+negative/no-change transitions have N0–N5 ceilings—1 N0, 15 N1, 74 N2, and 0
+N3–N5—and the 75-surface negative-inference audit is complete. Each final
+held-out denominator may open only after its own claim-specific implementation,
+construct, evaluator, sensitivity, fair-rescue, and flagship gates pass; Q1
+governed-admission and Q2 Theseus-student denominators are non-overlapping and
+cannot exchange outcomes or support. The completed
+authority remains at
 `docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md`, with terminal state
 in `roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json`; its
 promotion-or-refutation program and `docs/x_article_synopsis_contract.md` remain
 historical execution and derivative-maintenance contracts. The
-current authority owns only unfinished or recurring work. Its first identity
-tranche now resolves all 115 accepted transition IDs through 25 exact atom, 61
-bounded subclaim, and 29 proxy relations with zero indirect parent movement.
-The remaining work includes rehabilitating historical negative results; producing competence-qualified
-natural, non-authored evidence; independent reproduction and transfer;
-semantically meaningful formal evidence; effect-complete multi-process
-implementation; source and instrument renewal; reader remediation; exact
-`main`-commit attestation; and owner-authorized publication. It does not convert
-campaign-local claims into core promotions or let proof, validator, or source
-counts stand in for evidence.
+current authority owns only unfinished or recurring work. It resolves all 115
+accepted transition IDs through 25 exact atom, 61 bounded subclaim, and 29
+proxy relations with zero indirect parent movement.
 
-The maintained X Article synopsis is complete at 5,222 canonical visible words
+The decisive current program is `ASI-THESEUS-FLAGSHIP-01`: close Theseus's
+finite training architecture, train the frozen local seed and matched control,
+establish an honest model-only behavioral numerator, collect real multi-day
+dogfood, join one natural happy trace and one blocked/rollback trace, then run
+a matched natural governed-admission comparison with total lifecycle cost. P2
+may continue instrument and corpus preflight. Its independent `P2-Q1-D1`
+strong-worker denominator may open after P2's seven competence gates without
+waiting for Theseus; `ASI-THESEUS-Q2-D2` remains separately sealed until the
+student and joined trace are competent. T5 composes separately earned
+conclusions rather than pooled rows. The remaining book work is semantically
+meaningful formal evidence, effect-complete implementation, source/instrument renewal, a
+meaning-preserving 15–25% repetition-removal target for the reader spine,
+independent reproduction and transfer, compatibility residuals, exact
+`main`-commit attestation, and owner-authorized external publication. No roadmap
+row converts campaign-local claims into core promotions or lets proof,
+validator, source, chapter, or word counts stand in for evidence.
+
+The maintained X Article synopsis is complete at 5,329 canonical visible words
 with 24 crosswalked claims and an exact 2000×800 header. Its real X draft is
 ready but unpublished, and its platform formatting and missing header-alt
-control remain explicit residuals. Exact local HTML is approved only as a local
-artifact; EPUB and DOCX remain bounded but not release-approved, and PDF remains
-failed. This priority overlay does not change chapter order, support states,
-proof results, benchmark results, reader approvals, rights, or immutable
-release history. `v2.3.0` remains the latest public living-book release.
+control remain explicit residuals. The all-rights-reserved
+`reader-2026-07-18` GitHub Release now publishes exact PDF, EPUB, and DOCX
+assets whose public redownloads match the approved local digests. The PDF is
+untagged, EPUB native-reader/assistive-technology compatibility is unclaimed,
+and DOCX Microsoft Word quality is unclaimed. This priority overlay changes no
+chapter order, support state, proof result, benchmark result, rights grant, or
+canonical release identity. `v2.3.0` remains the latest public living-book
+release.
 
 ## Drafting Thesis
 
@@ -61,6 +75,8 @@ Throughout the outline, `layer` means a logical responsibility and authority bou
 
 - Use the part-level source queue to load broad context before drafting a part.
 - Use the chapter-level source queue to load only the relevant papers for the chapter in scope.
+- Use `ASI-THESEUS-FLAGSHIP-01` as the primary reader-spine case once `T4` produces a stable joined trace. A reader-spine chapter should advance the case or be explicitly classified as optional reference material; never invent a case outcome before the evidence pack exists.
+- Preserve chapter roles—thesis-bearing, load-bearing reference, implementation case, or speculative/deferred research—during editorial compression so removing repeated prose cannot erase a unique claim, caveat, source, proof boundary, or non-claim.
 - Treat primary sources as the first mining pass, supporting sources as synthesis/context, variants as version checks, and connector/recovery sources as blockers until actually loaded.
 - Do not mark a claim `source-derived` until the actual source text has been read and a source note or equivalent mined record exists.
 - Treat conversation-mined material as author intent, terminology, architecture lineage, deduplication help, and recovery guidance. It is not external evidence and should not be quoted verbatim unless explicitly approved.

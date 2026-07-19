@@ -25,6 +25,7 @@ X_RELEASE = ROOT / "release_records/2026-07-16-x-article-synopsis-ready-not-publ
 ATOM_REGISTRY = ROOT / "evidence_quality/claim_atom_registry.json"
 ATOM_ADDENDUM = ROOT / "evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json"
 PROOF_REVIEW = ROOT / "docs/proof_adequacy_review.md"
+PROOF_MANIFEST = ROOT / "proofs/proof_manifest.json"
 IDENTITY_GRAPH = ROOT / "evidence_quality/claim_identity_graph.json"
 NEGATIVE_REHABILITATION = ROOT / "evidence_quality/negative_result_rehabilitation.json"
 NEGATIVE_SURFACE_AUDIT = ROOT / "evidence_quality/negative_inference_surface_audit.json"
@@ -103,6 +104,7 @@ def inputs() -> dict:
         "reader_release_record": load(READER_RELEASE_RECORD),
         "transition_snapshot": transition_snapshot(atom_ids),
         "proof_review": PROOF_REVIEW.read_text(encoding="utf-8"),
+        "proof_manifest": load(PROOF_MANIFEST),
         "git": {
             "branch": git_output("branch", "--show-current"),
             "head": git_output("rev-parse", "HEAD"),
@@ -127,6 +129,8 @@ def errors(data: dict) -> list[str]:
     roadmap = data["roadmap"]
     required_sections = [
         "## Purpose",
+        "## Strategic quality diagnosis",
+        "## Shared ASI Stack–Theseus flagship",
         "## Review adjudication and corrected baseline",
         "## Operating rules",
         "## P0 — Public truth, claim identity, and attestation continuity",
@@ -139,7 +143,7 @@ def errors(data: dict) -> list[str]:
         "## P7 — Reader remediation and owner-authorized publication",
         "## P8 — Closure, residual ownership, and successor continuity",
         "## Execution order and decision rules",
-        "## Initial owned queue",
+        "## Current owned queue",
         "## Checkpoint receipt",
         "## Milestones",
         "## Definition of done",
@@ -156,7 +160,6 @@ def errors(data: dict) -> list[str]:
         "Main-only repository continuity",
         "subclaim_of",
         "proxy_for",
-        "90 non-direct claim IDs",
         "N0 instrument failure",
         "N5 broad refutation",
         "KERC",
@@ -175,6 +178,13 @@ def errors(data: dict) -> list[str]:
         "Do not reduce the denominator from twelve to eight",
         "frozen deterministic sequential replacement rule",
         "62 compressed arm logs",
+        "ASI-THESEUS-FLAGSHIP-01",
+        "15–25% less repeated",
+        "P7.1 — Narrative synthesis and editorial compression",
+        "P2-Q1-D1",
+        "ASI-THESEUS-Q2-D2",
+        "non-overlapping, independently sealed held-out denominators",
+        "all 30 candidates hold sealed recipes and receipts",
     ]:
         if phrase.casefold() not in roadmap_normalized:
             out.append(f"roadmap governing boundary missing: {phrase}")
@@ -479,14 +489,57 @@ def errors(data: dict) -> list[str]:
     if p2_queue.get("support_state_effect") != "none":
         out.append("P2 replacement queue promoted support")
 
+    quality_program = status.get("quality_uplift_program", {})
+    critical_path = quality_program.get("critical_path", [])
+    if quality_program.get("shared_flagship_id") != "ASI-THESEUS-FLAGSHIP-01":
+        out.append("shared quality flagship identity drifted")
+    if [row.get("id") for row in critical_path] != [f"T{i}" for i in range(7)]:
+        out.append("shared quality critical path must be exactly T0 through T6")
+    if quality_program.get("support_state_effect") != "none" or quality_program.get("release_effect") != "none":
+        out.append("quality roadmap laundered support or release state")
+    empirical_lanes = quality_program.get("empirical_lanes", {})
+    q1 = empirical_lanes.get("q1_governed_admission", {})
+    q2 = empirical_lanes.get("q2_theseus_student", {})
+    if q1.get("denominator_id") == q2.get("denominator_id"):
+        out.append("Q1 and Q2 share a denominator identity")
+    if q1.get("denominator_id") != "P2-Q1-D1" or q2.get("denominator_id") != "ASI-THESEUS-Q2-D2":
+        out.append("Q1/Q2 denominator identity drifted")
+    if q1.get("may_open_before_T2") is not True or q1.get("depends_on") != ["P2-seven-gate-competence"]:
+        out.append("Q1 is incorrectly blocked by Theseus student gates")
+    if q2.get("depends_on") != ["T2", "T4"]:
+        out.append("Q2 lost its student or joined-path dependency")
+    if any(
+        empirical_lanes.get(field) is not False
+        for field in ["denominator_overlap_allowed", "q1_outcomes_may_tune_q2_or_student", "support_transfer_allowed"]
+    ):
+        out.append("Q1/Q2 isolation or support boundary weakened")
+    narrative_gate = quality_program.get("narrative_quality_gate", {})
+    if narrative_gate.get("case_independent_compression_state") != "ready":
+        out.append("case-independent P7.1a work is artificially blocked")
+    if narrative_gate.get("flagship_threading_state") != "blocked_by_T4":
+        out.append("flagship-dependent P7.1b work lost its T4 gate")
+    if not all(
+        narrative_gate.get(field) is True
+        for field in [
+            "requires_chapter_role_classification",
+            "requires_shared_case_threading",
+            "requires_strongest_alternative_and_simpler_baseline",
+            "requires_meaning_preservation_audit",
+        ]
+    ):
+        out.append("narrative quality gate lost a required meaning-preservation control")
+
     p2_execution = status.get("p2_replacement_execution", {})
     execution_expected = {
-        "state": "slot1_rank5_terminal_rank6_next_other_slots_rank1_unexecuted",
+        "state": "pool_materialization_blocked_rank5_setup_retry_pending_rank6_closed",
         "independent_evaluator_calibration_case_count": 32,
         "rank_one_task_spec_opened_count": 4,
         "unique_candidate_task_spec_opened_count": 5,
         "slot1_terminal_candidate_count": 5,
-        "slot1_next_rank": 6,
+        "historical_next_rank_before_amendment": 6,
+        "current_setup_retry_rank": 5,
+        "rank6_authorized": False,
+        "pool_materialization_gate_passed": False,
         "slot1_qualified": False,
         "candidate_execution_started_count": 2,
         "candidate_outcome_custody_incident_count": 1,
@@ -554,6 +607,25 @@ def errors(data: dict) -> list[str]:
     if p2_resource.get("support_state_effect") != "none":
         out.append("P2 resource ceiling promoted support")
 
+    materialization = status.get("p2_sequential_materialization_contract", {})
+    materialization_expected = {
+        "candidate_count": 30,
+        "complete_pool_recipe_set_required_before_rank_opening": True,
+        "task_content_must_remain_closed_during_materialization": True,
+        "pre_content_exact_image_retry_limit": 3,
+        "pre_content_failure_may_skip_or_burn_rank": False,
+        "post_content_infrastructure_failure_may_advance_rank": False,
+        "post_content_replay_allowed": False,
+        "docker_scoped_reclamation_only": True,
+        "non_docker_user_data_deletion_allowed": False,
+        "minimum_host_free_bytes": 53687091200,
+        "support_state_effect": "none",
+        "release_effect": "none",
+    }
+    for field, expected in materialization_expected.items():
+        if materialization.get(field) != expected:
+            out.append(f"P2 sequential materialization contract drift: {field}")
+
     if data["atom_registry"].get("summary", {}).get("atom_count") != 3730:
         out.append("activation atom registry denominator drifted")
     if len(data["atom_addendum"].get("atoms", [])) != 15:
@@ -571,6 +643,28 @@ def errors(data: dict) -> list[str]:
     expected_proof = (298, 98, 1307, 901, 230, 176)
     if not proof_match or tuple(map(int, proof_match.groups())) != expected_proof:
         out.append("proof-depth baseline drifted without roadmap reconciliation")
+
+    proof_inventory = status.get("semantic_proof_cluster_inventory", {})
+    proof_clusters = proof_inventory.get("clusters", [])
+    expected_cluster_ids = [
+        "evidence_claim_and_proof_custody",
+        "safety_assurance_and_oversight",
+        "authority_effect_rollback_and_corrigibility",
+        "learning_update_state_and_unlearning",
+        "self_improvement_and_readiness",
+        "resource_artifact_and_lifecycle_economics",
+    ]
+    if [row.get("id") for row in proof_clusters] != expected_cluster_ids:
+        out.append("semantic proof cluster inventory is not the frozen six-cluster set")
+    listed_modules = [module for row in proof_clusters for module in row.get("modules", [])]
+    if len(listed_modules) != 24 or len(set(listed_modules)) != 24:
+        out.append("semantic proof cluster inventory must contain 24 unique modules")
+    manifest_modules = {row.get("module") for row in data["proof_manifest"].get("records", [])}
+    missing_modules = sorted(set(listed_modules) - manifest_modules)
+    if missing_modules:
+        out.append(f"semantic proof inventory names absent modules: {missing_modules}")
+    if proof_inventory.get("state") != "inventory_frozen_audit_pending":
+        out.append("semantic proof inventory falsely claims audit completion")
 
     expected_ids = [f"P{i}" for i in range(9)]
     if [row.get("id") for row in status.get("priorities", [])] != expected_ids:
@@ -590,7 +684,7 @@ def errors(data: dict) -> list[str]:
     )
     if ancestor.returncode != 0:
         out.append("attested custody checkpoint is not an ancestor of current main")
-    if attestation.get("state") != "pushed_ancestral_custody_checkpoint":
+    if attestation.get("state") != "pushed_deployed_clean_ancestral_checkpoint":
         out.append("attestation must describe an ancestral checkpoint, not self-reference current HEAD")
     if attestation.get("working_tree_delta_file_count_at_review") != 0:
         out.append("attested custody checkpoint was not clean when reviewed")
@@ -613,6 +707,10 @@ def errors(data: dict) -> list[str]:
         out.append("roadmap revision cannot create support or release effects")
 
     reader_receipt = status.get("reader_release_receipt", {})
+    if truth.get("current_published_reader_release_id") != reader_receipt.get("release_id"):
+        out.append("activation truth and reader release identity disagree")
+    if truth.get("current_published_reader_formats") != reader_receipt.get("published_formats"):
+        out.append("activation truth and current published reader formats disagree")
     reader_manifest = data["reader_manifest"]
     reader_release_record = data["reader_release_record"]
     if reader_manifest.get("release_state") != "published":
@@ -665,7 +763,8 @@ def main() -> None:
     mutate("P2 replacement queue state erased", lambda c: c["p2_policy"]["replacement_rule"].__setitem__("replacement_draw_state", "not_started"))
     mutate("P2 replacement queue content leak", lambda c: c["p2_replacement_queue"].__setitem__("task_text_opened", True))
     mutate("P2 replacement queue repository reuse", lambda c: c["p2_replacement_queue"]["slots"][1]["candidates"][0].__setitem__("repo", c["p2_replacement_queue"]["slots"][0]["candidates"][0]["repo"]))
-    mutate("P2 sequential execution rollback", lambda c: c["status"]["p2_replacement_execution"].__setitem__("slot1_next_rank", 1))
+    mutate("P2 sequential execution rollback", lambda c: c["status"]["p2_replacement_execution"].__setitem__("current_setup_retry_rank", 1))
+    mutate("P2 rank-six reopening", lambda c: c["status"]["p2_replacement_execution"].__setitem__("rank6_authorized", True))
     mutate("P2 resource premature pass", lambda c: c["p2_resource"]["qualification_state"].__setitem__("resource_gate_passed", True))
     mutate("P2 resource claim laundering", lambda c: c["p2_resource"]["campaign_ceilings"].__setitem__("resource_exhaustion_effect", "claim_failure"))
     mutate("false self-referential attestation", lambda c: c["status"]["attestation"].__setitem__("state", "commit_bound_clean"))
@@ -675,6 +774,15 @@ def main() -> None:
     mutate("false-negative rule deletion", lambda c: c.__setitem__("roadmap", c["roadmap"].replace("No false-negative laundering", "Deleted rule", 1)))
     mutate("missing successor continuity", lambda c: c["status"].__setitem__("closure_requires_active_successor", False))
     mutate("stale predecessor", lambda c: c["predecessor"].__setitem__("status", "active"))
+    mutate("shared flagship identity drift", lambda c: c["status"]["quality_uplift_program"].__setitem__("shared_flagship_id", "drifted"))
+    mutate("editorial meaning-preservation deletion", lambda c: c["status"]["quality_uplift_program"]["narrative_quality_gate"].__setitem__("requires_meaning_preservation_audit", False))
+    mutate("Q1 Q2 denominator overlap", lambda c: c["status"]["quality_uplift_program"]["empirical_lanes"].__setitem__("denominator_overlap_allowed", True))
+    mutate("Q1 outcome tuning leakage", lambda c: c["status"]["quality_uplift_program"]["empirical_lanes"].__setitem__("q1_outcomes_may_tune_q2_or_student", True))
+    mutate("P7.1a artificial T4 blocker", lambda c: c["status"]["quality_uplift_program"]["narrative_quality_gate"].__setitem__("case_independent_compression_state", "blocked_by_T4"))
+    mutate("P2 pre-content rank skipping", lambda c: c["status"]["p2_sequential_materialization_contract"].__setitem__("pre_content_failure_may_skip_or_burn_rank", True))
+    mutate("P2 post-content replay", lambda c: c["status"]["p2_sequential_materialization_contract"].__setitem__("post_content_replay_allowed", True))
+    mutate("semantic proof cluster deletion", lambda c: c["status"]["semantic_proof_cluster_inventory"]["clusters"].pop())
+    mutate("reader format history laundering", lambda c: c["status"]["activation_truth"].__setitem__("current_published_reader_formats", ["html"]))
 
     for label, candidate in mutations:
         if not errors(candidate):
@@ -684,12 +792,12 @@ def main() -> None:
             "Evidence-competence roadmap validation failed:\n - " + "\n - ".join(failures)
         )
     print(
-        "Evidence-competence roadmap passed: P0 ancestral custody checkpoint pushed, P1/M1 complete, active P2/M2; 115 accepted transitions, "
+        "Evidence-competence roadmap passed: P0 clean pushed/build/deploy ancestral custody checkpoint attested, P1/M1 complete, active P2/M2; 115 accepted transitions, "
         "25 direct and 90 indirect identities resolved with zero unmapped; N0-N5 competence contract active and historical rehabilitation complete; "
         "90 accepted historical negatives classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5; "
         "75 current surfaces including 55 chapters reconciled with zero overbroad negative language; "
-        "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary now reinstates rank five as pending and blocks the complete 30-image pool before any further protected content opens; remeasurement, qualification, construct, and heldout gates remain closed; "
-        "current proof and main-attestation baselines exact; no support/release effect; "
+        "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary reinstates rank five as setup-retry-pending, keeps rank six closed, and blocks the complete 30-image pool before any further protected content opens; Q1 D1 and Theseus Q2 D2 remain disjoint and sealed; remeasurement, qualification, construct, and heldout gates remain closed; "
+        "six semantic proof clusters containing 24 unique modules are frozen for audit; current proof and main-attestation baselines exact; no support/release effect; "
         f"{len(mutations)}/{len(mutations)} mutations rejected."
     )
 
