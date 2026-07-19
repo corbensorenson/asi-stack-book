@@ -66,10 +66,22 @@ def semantic_errors(freeze: dict) -> list[str]:
     if len(chapter_files) != 55:
         errors.append(f"frozen chapter count must be 55; found {len(chapter_files)}")
 
+    expected_local_only_html = {
+        "path": "editions/reader_manuscript/v2_2/artifacts/asi-stack-reader-v2.2-html.zip",
+        "bytes": 4803154,
+        "sha256": "7ceedcbec7363e1c1ebc2d62b081e192cb066fbad7cd8dc30c723969e2886821",
+    }
     for name, record in freeze.get("artifacts", {}).items():
         path = ROOT / record.get("path", "missing")
+        if name == "html" and record != expected_local_only_html:
+            errors.append("html artifact frozen identity drift")
         if not path.is_file():
-            errors.append(f"missing {name} artifact")
+            # The historical HTML ZIP is intentionally ignored. Its exact
+            # committed freeze identity remains binding in clean clones; when
+            # locally present it is rehashed by the branch below. Current HTML
+            # is independently rendered and browser-tested later in CI.
+            if name != "html":
+                errors.append(f"missing {name} artifact")
         elif path.stat().st_size != record.get("bytes") or digest(path) != record.get("sha256"):
             errors.append(f"{name} artifact digest mismatch")
     for name, record in freeze.get("evidence_reports", {}).items():
