@@ -131,6 +131,16 @@ The reference architecture is a trace contract. A request enters through human i
 
 The participants in that trace are logical roles. They do not imply one model, process, machine, vendor, or physically separate cognitive module per lane. A single model can serve several roles when independent policy, state, and verification surfaces enforce the handoffs; one role can also be implemented by several models, deterministic tools, or human reviewers. The reference architecture is therefore substrate-neutral while remaining strict about responsibilities and authority.
 
+Behavioral and white-box evidence now join the trace as distinct siblings.
+Benchmark records say what happened under a scoped instrument. An Internal
+Evidence Packet says what one method observed or changed inside one exact model,
+how stable and causally bounded that interpretation is, and how much remains
+unexplained. The evidence ledger may compare them, but it may not let a feature,
+circuit, probe, or steering result overwrite contradictory behavior or become
+an authorization token. Material model change expires the internal packet;
+favorable internal visibility can preserve, restrict, escalate, reject, or
+expire a path, never grant execution or release authority.
+
 At trace scale, the governed-cognition pattern shifts from local boundary ownership to cross-layer composition. A layer-local record says what one boundary owns. A Reference Trace Record says whether those local records still compose after handoff, denial, residualization, or proposed improvement. That is why the trace carries parent artifacts, authority deltas, evidence deltas, residual deltas, stop conditions, and non-claims together.
 
 This is where the earlier layers compose. VIEA supplies the intent-to-execution spine, VCM supplies source-bound working memory, PlanForge and Talos supply planning and work contracts, Spinoza supplies claim discipline, Octopus/RMI/Benchmaxxing supply routing and ratchet pressure, CGS and loop closure supply compression pressure, and SCF supplies the replacement gate. Project Theseus and MoECOT remain implementation-reference context until their artifacts are imported or rerun here.
@@ -506,7 +516,7 @@ must reproduce every terminal outcome.
 
 The integration endpoint is a trace kernel for the whole ASI Stack. The stack would not be a diagram of cooperating layers; it would be an inspectable machine that can explain what authority entered, which artifacts were produced, what evidence changed, which residuals survived, and why a path was promoted, blocked, narrowed, rolled back, or escalated.
 
-A mature reference trace kernel would make every significant run emit a Reference Trace Record. The record would connect human intent, constitutional authority, command contracts, plan DAGs, VCM packets, route decisions, claim envelopes, work orders, execution logs, proof/spec receipts, benchmark ratchets, policy-update leases, steward decisions, SCF transitions, release notes, and residual ledgers. The reference architecture would be judged by whether those records survive happy paths and blocked paths, not by how coherent the diagram looks.
+A mature reference trace kernel would make every significant run emit a Reference Trace Record. The record would connect human intent, constitutional authority, command contracts, plan DAGs, VCM packets, route decisions, claim envelopes, work orders, execution logs, proof/spec receipts, behavioral benchmark ratchets, Internal Evidence Packets, policy-update leases, steward decisions, SCF transitions, release notes, and residual ledgers. The reference architecture would be judged by whether those records survive happy paths and blocked paths, not by how coherent the diagram looks.
 
 An integrated reference surface needs:
 

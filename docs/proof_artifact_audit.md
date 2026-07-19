@@ -11,9 +11,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 306 |
-| Manifest status counts | {"implemented": 298, "planned": 8} |
+| Manifest status counts | {"implemented": 300, "planned": 6} |
 | Triage class counts | {"formal-invariant": 306} |
-| Lean modules referenced | 65 |
+| Lean modules referenced | 66 |
 | Chapters with proof targets | 59 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -96,6 +96,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ValueConflict.lean` | 2 | 21 | 0 | 9 | 4 |
 | `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | 4 | 8 | 0 | 10 | 2 |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | 3 | 17 | 0 | 16 | 2 |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | 2 | 8 | 0 | 6 | 1 |
 
 ## Chapter Coverage
 
@@ -159,7 +160,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `the-efficient-asi-hypothesis` | 4 | 4 | 0 | 0 |
 | `verification-bandwidth-and-context-adequacy` | 4 | 4 | 0 | 0 |
 | `virtual-context-abi` | 6 | 6 | 0 | 0 |
-| `white-box-evidence-interpretability-and-activation-governance` | 2 | 0 | 0 | 0 |
+| `white-box-evidence-interpretability-and-activation-governance` | 2 | 2 | 0 | 0 |
 
 ## Target Trace
 
@@ -393,8 +394,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:benchmarks.ratchet.operational_invariant` | `benchmark-ratchets-and-anti-goodhart-evidence` | `AsiStackProofs.BenchmarkRatchets` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:benchmarks.ratchet.failure_blocks_promotion` | `benchmark-ratchets-and-anti-goodhart-evidence` | `AsiStackProofs.BenchmarkRatchets` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:benchmarks.ratchet.fixture_bridge` | `benchmark-ratchets-and-anti-goodhart-evidence` | `AsiStackProofs.BenchmarkRatchets` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:white_box.evidence_never_grants_authority` | `white-box-evidence-interpretability-and-activation-governance` | `AsiStackProofs.WhiteBoxEvidence` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
-| `lean:white_box.invalid_packet_rejected` | `white-box-evidence-interpretability-and-activation-governance` | `AsiStackProofs.WhiteBoxEvidence` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:white_box.evidence_never_grants_authority` | `white-box-evidence-interpretability-and-activation-governance` | `AsiStackProofs.WhiteBoxEvidence` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:white_box.invalid_packet_rejected` | `white-box-evidence-interpretability-and-activation-governance` | `AsiStackProofs.WhiteBoxEvidence` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholdRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:capability_thresholds.missing_evaluation_envelope.requires_reevaluation` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholdRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:capability_thresholds.complete_crossed.reaches_readiness_review` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholdRefinement` | triage ok; module ok; chapter tag ok; limitation ok |

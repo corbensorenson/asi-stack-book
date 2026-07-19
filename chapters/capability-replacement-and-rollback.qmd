@@ -322,6 +322,13 @@ The replacement claim advances only if the full transaction is not dominated on 
 
 These proof targets are implemented only over finite Lean replacement-commit, transaction-review, lifecycle-review, trace-summary, identity-sequence summary, and intent-governed bridge-summary records in `AsiStackProofs.Replacement`. They prove that a modeled promotion carries qualification evidence and rollback metadata, that a failed regression blocks promotion in the model, that selected transaction and lifecycle failures route away from default promotion, and that the synthetic trace, identity sequence, and bridge summaries carry the expected counts and non-claim boundary. They do not prove deployed replacement execution, regression-suite coverage or quality, monitor-window behavior, approval-service enforcement, parser behavior, or rollback execution.
 
+The P4-C3 semantic audit keeps this module because its six public targets have
+separate fixture consumers across transaction validity, identity sequencing,
+monitor-triggered rollback, and intent-bound authority. Its 37 declarations
+remain bounded consequences of authored records. They do not establish useful
+replacement, hidden-state completeness, monitor validity, recovery beyond the
+declared inventory, irreversible-effect reversal, or production rollback.
+
 The intent-governed replacement bridge closes one cross-layer boundary without claiming runtime evidence. It checks that replacement admission cannot quietly inherit authority from a command contract unless the intent reference, command reference, authority ceiling, stop conditions, forbidden means, evidence requirements, canary scope, monitor window, rollback owner, residuals, and non-claims remain present. It also checks that a default-replacement request without the required approval receipt remains blocked. The local result is `experiments/intent_governed_replacement_bridge/results/2026-07-02-local.json`; it is no deployed replacement execution, approval-service proof, production rollback, support-state transition, or chapter-core promotion.
 
 ## Source crosswalk

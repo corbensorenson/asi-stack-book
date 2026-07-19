@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/capability-thresholds-and-deployment-commitments.qmd",
     "structured_atoms_reviewed": 79,
-    "prose_candidates_adjudicated": 54,
+    "prose_candidates_adjudicated": 55,
     "unowned_material_claims": 0,
     "review_note": "Reviewed the complete chapter, all six exact source mappings, both commitment schemas, the inherited eight-case suite, the six-stage/43-route/48-mutation CapabilityThresholdRefinement package, all eight proof targets, all eight legacy CapabilityThresholds declarations, every manifest atom, every current prose candidate, test plan, source crosswalk, reconciliation rows, summary, and handoff. The sweep made the domain-, threat-, assessment-, policy-version-, safeguard-package-, release-path-, authority-, exception-, residual-, and time-specific Capability-to-Deployment Commitment the distinct owner; expanded it to eighteen mechanisms, twelve interfaces, eighteen invariants, and eighteen failure modes; preserved zero chapter-core effect; and froze the natural/adversarial assessment, safeguard exercise, exception, institutional, causal, reproduction, and transfer campaign."
   },
@@ -353,7 +353,8 @@
     "capability-thresholds-and-deployment-commitments.prose.18c6f3ff39e1": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-    }
+    },
+    "capability-thresholds-and-deployment-commitments.prose.7b35ed6edb22": {"state": "editorial_or_question", "rationale": "Incoming white-box handoff fragment preserving the chapter's existing non-authority boundary; it adds no new threshold claim."}
   },
   "non_claims": [
     "No threshold score, crossing, non-crossing, fixture, source mapping, or finite theorem establishes general capability, dangerousness, safeguard efficacy, safety, readiness, deployment, support, transfer, or SOTA.",

@@ -22,7 +22,7 @@ Human influence can then erode through ordinary local adoption pressure and
 cross-domain feedback even without a sudden capability jump, coordinated
 betrayal, or individually power-seeking system.
 
-## Mechanism and observables
+## Mechanisms
 
 - Distinguish explicit influence, such as voting and consumer choice, from the
   implicit leverage humans receive because institutions still need human labor
@@ -39,6 +39,22 @@ betrayal, or individually power-seeking system.
   the human/AI composition of influential culture, persuasive influence,
   AI roles in law, policy, and security, and cross-domain feedback loops.
 
+## Failure Modes
+
+- Slow substitution can remain below event-oriented warning thresholds while
+  progressively removing human bargaining power and institutional dependence.
+- Local adoption decisions can be individually rational yet compose into a
+  system-wide loss of voice, contestability, and recovery options.
+- Economic, cultural, and state feedback can amplify one another, so a narrow
+  sectoral metric can miss the causal pathway that matters.
+- Rising aggregate output can conceal relative human disempowerment when the
+  distribution of resources and consequential decisions shifts toward AI-run
+  institutions.
+- Alignment to each deployer's stated intent can coexist with ecosystem-level
+  outcomes that no affected human population selected or can reverse.
+- Proposed indicators can become performative or Goodharted if treated as
+  validated thresholds before causal and external-validity work exists.
+
 ## Evidence boundary
 
 This is a conceptual and interdisciplinary risk argument, not a measured
@@ -48,7 +64,7 @@ demonstrated mitigations. The paper itself emphasizes the absence of a concrete
 established solution and argues that aligning individual systems to their
 designers' intentions is not sufficient for ecosystem-level alignment.
 
-## Book chapters supported
+## Book Chapters Supported
 
 - `failure-modes-of-ungoverned-intelligence`: add gradual disempowerment as a
   distinct slow, distributed, cross-system failure class.
@@ -60,7 +76,7 @@ designers' intentions is not sufficient for ecosystem-level alignment.
   `inter-stack-protocols-identity-and-economic-exchange`, and
   `capability-thresholds-and-deployment-commitments`.
 
-## Claims to add or update
+## Claims To Add Or Update
 
 - Do not define loss of control only as a sudden agentic takeover; monitor
   declining human option value, effective voice, resource command, and ability
@@ -72,7 +88,7 @@ designers' intentions is not sufficient for ecosystem-level alignment.
 - Do not infer inevitability, a date, a probability, or mitigation efficacy
   from this source.
 
-## Open questions
+## Open Questions
 
 - Which measurements are leading indicators rather than lagging descriptions?
 - What thresholds distinguish useful augmentation from loss of meaningful

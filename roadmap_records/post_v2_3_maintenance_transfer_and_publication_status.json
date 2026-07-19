@@ -1,5 +1,5 @@
 {
-  "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v12",
+  "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v13",
   "roadmap_id": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17",
   "roadmap_path": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
   "snapshot_date": "2026-07-19",
@@ -13,8 +13,8 @@
     "work_in_progress_limit": 2,
     "blocked_lane_consumes_work_in_progress": false,
     "protected_outcome_inspection_allowed": false,
-    "immediate_book_packet": "P7.2-T1-white-box-evidence-interpretability-and-activation-governance",
-    "immediate_formal_packet": "P4-C3-authority-effect-rollback-and-corrigibility-semantic-audit",
+    "immediate_book_packet": "P7.2-T2-governed-world-models-and-reality-grounding",
+    "immediate_formal_packet": "P4-C4-learning-update-state-and-unlearning-semantic-audit",
     "first_tranche_completion_order": [
       "white-box-evidence-interpretability-and-activation-governance",
       "governed-world-models-and-reality-grounding",
@@ -94,7 +94,7 @@
     },
     "narrative_quality_gate": {
       "state": "split_lane_active",
-      "case_independent_compression_state": "p7_1a_terminal_p7_2_t1_ready",
+      "case_independent_compression_state": "p7_2_t1_terminal_t2_ready",
       "flagship_threading_state": "blocked_by_T4",
       "reader_spine_repetition_reduction_target": "15_to_25_percent_diagnostic_not_acceptance_test",
       "requires_chapter_role_classification": true,
@@ -108,7 +108,7 @@
       "maximum_if_all_candidates_pass": 72,
       "planned_merge_count": 0,
       "first_tranche": {
-        "state": "manifest_admitted_initial_drafts_complete_evidence_and_reader_integration_gated",
+        "state": "one_terminal_three_reader_integrations_remaining",
         "research_path": "docs/structural_completeness_chapter_research_2026_07_19.md",
         "candidate_count": 4,
         "candidate_ids": [
@@ -119,7 +119,15 @@
         ],
         "manifest_admitted_count": 4,
         "drafted_chapter_count": 4,
-        "completed_reader_chapter_count": 0,
+        "completed_reader_chapter_count": 1,
+        "terminal_reader_chapter_ids": [
+          "white-box-evidence-interpretability-and-activation-governance"
+        ],
+        "remaining_reader_chapter_ids": [
+          "governed-world-models-and-reality-grounding",
+          "human-factors-and-meaningful-control-in-oversight",
+          "governed-operations-incident-command-and-graceful-degradation"
+        ],
         "primary_source_record_count_added": 8
       },
       "second_tranche": {
@@ -429,7 +437,7 @@
     "release_effect": "none"
   },
   "semantic_proof_cluster_inventory": {
-    "state": "cluster_2_terminal_4_pending",
+    "state": "cluster_3_terminal_3_pending",
     "amendment_rule": "dated_machine_validated_amendment_with_terminal_disposition_required",
     "clusters": [
       {
@@ -444,7 +452,7 @@
       },
       {
         "id": "authority_effect_rollback_and_corrigibility",
-        "state": "strengthen",
+        "state": "adequate",
         "modules": ["AsiStackProofs.AuthorityEffectRefinement", "AsiStackProofs.Replacement", "AsiStackProofs.Corrigibility", "AsiStackProofs.IntentExecutionRefinement"]
       },
       {

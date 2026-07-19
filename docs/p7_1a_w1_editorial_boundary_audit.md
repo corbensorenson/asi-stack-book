@@ -16,7 +16,8 @@ and rejecting validator.
 
 Using one declared 12-gram tokenizer against commit `941858574` and the current
 55-chapter set, repeated 12-grams appearing in at least eight chapters fell
-from 1,142 to 727 (36.34%). Word tokens fell from 412,044 to 394,332 (4.30%).
+from 1,142 to 728 (36.25%). Word tokens now total 396,944 versus the 412,044
+baseline (3.66% lower).
 The roadmap's older frozen count was 1,364; that number is retained as
 historical provenance rather than silently presented as reproducible under the
 current tokenizer. Maximum spread remains 55 because compact table field names

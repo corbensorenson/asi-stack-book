@@ -637,6 +637,13 @@ completeness, authentic authority, prompt-injection resistance, approval-service
 correctness, complete effects, verifier correctness, natural-workload utility,
 production behavior, reproduction, transfer, or chapter-core support.
 
+The P4-C3 semantic audit classifies `IntentExecutionRefinement` as adequate only
+for exact root/parent preservation, non-widening authority, approval/dispatch
+custody, one observed local effect, artifact binding, verification, delivery,
+and the encoded rejection routes. Its 89-event independent replay and 30
+mutations do not establish intent fidelity, authentic authority or receipts,
+effect completeness, verifier independence, useful delivery, or deployment.
+
 External positioning: the destination treats `ext_react_2022` as an adjacent
 reasoning/action-trace baseline, `ext_pddl_1998` and `ext_shop2_2003` as
 planning-language and HTN-decomposition baselines, `ext_temporal_docs`,

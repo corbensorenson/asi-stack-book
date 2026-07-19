@@ -14,7 +14,7 @@ flagship case or claim the combined P7.1a/P7.1b 15–25% diagnostic reduction.
 The exact machine record is
 `evidence_quality/p7_1a_w2_narrative_audit.json`. Against commit `0b936ce7b`,
 the six audited opening phrase families fall from eight occurrences to zero.
-The three central chapters gain 710, 728, and 664 word tokens respectively.
+The three central chapters gain 711, 728, and 664 word tokens respectively.
 Those additions define commitments, denominators, strong alternatives,
 simpler baselines, failure cases, weakening conditions, and evidence that could
 change each conclusion.

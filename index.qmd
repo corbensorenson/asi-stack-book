@@ -80,7 +80,10 @@ flowchart LR
   Route --> Reason["Reasoning, claims, and verification"]
   Reason --> Execute["Labor OS and runtime adapters"]
   Execute --> Artifacts["Artifacts, audit logs, and replay"]
-  Artifacts --> Evidence["Evidence states and benchmark ratchets"]
+  Artifacts --> BehavioralEvidence["Behavioral evidence and benchmark ratchets"]
+  Reason -. "scoped internal observations" .-> WhiteBox["White-box evidence packets"]
+  BehavioralEvidence --> Evidence["Claim and evidence transition"]
+  WhiteBox -. "preserve, restrict, escalate, reject, or expire; never grant" .-> Evidence
   Evidence --> Improve["Governed self-improvement"]
   Improve --> Authority
 

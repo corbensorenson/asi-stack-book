@@ -16,6 +16,7 @@ ARTIFACTS = [
     "proofs/proof_triage.json",
     "docs/proof_adequacy_review.md",
     "roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json",
+    "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
 ]
 
 
@@ -41,7 +42,8 @@ def main() -> None:
             "output_contract": "Reject incomplete proof dispositions, target or adequacy-route gaps, missing semantic-model dossiers/consumers, false P2/M3 closure, and support-state laundering.",
             "output_assertions": [
                 "1,151/1,151 activation-baseline theorem declarations and 298/298 baseline targets are reviewed and dispositioned",
-                "298/298 current proof targets are implemented and explicitly adequacy-routed",
+                "298/298 historical proof targets remain implemented and explicitly adequacy-routed",
+                "306 current targets comprise 300 implemented and 6 planned exactly across the three unfinished admitted chapters",
                 "the sixteen richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
                 "nine required safety-critical, integration, and review-named refinement models have dossiers and registered consumers",
                 "P2/M3 is completed, P3 is active, and prerequisite M2 is active without support-state movement",

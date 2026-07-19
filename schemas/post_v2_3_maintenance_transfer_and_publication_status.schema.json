@@ -15,7 +15,7 @@
     "release_effect", "non_claims"
   ],
   "properties": {
-    "schema_version": {"const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v12"},
+    "schema_version": {"const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v13"},
     "roadmap_id": {"const": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17"},
     "roadmap_path": {"const": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"},
     "snapshot_date": {"const": "2026-07-19"},
@@ -42,8 +42,8 @@
         "work_in_progress_limit": {"const": 2},
         "blocked_lane_consumes_work_in_progress": {"const": false},
         "protected_outcome_inspection_allowed": {"const": false},
-        "immediate_book_packet": {"const": "P7.2-T1-white-box-evidence-interpretability-and-activation-governance"},
-        "immediate_formal_packet": {"const": "P4-C3-authority-effect-rollback-and-corrigibility-semantic-audit"},
+        "immediate_book_packet": {"const": "P7.2-T2-governed-world-models-and-reality-grounding"},
+        "immediate_formal_packet": {"const": "P4-C4-learning-update-state-and-unlearning-semantic-audit"},
         "first_tranche_completion_order": {
           "const": [
             "white-box-evidence-interpretability-and-activation-governance",
@@ -145,7 +145,7 @@
           ],
           "properties": {
             "state": {"const": "split_lane_active"},
-            "case_independent_compression_state": {"const": "p7_1a_terminal_p7_2_t1_ready"},
+            "case_independent_compression_state": {"const": "p7_2_t1_terminal_t2_ready"},
             "flagship_threading_state": {"const": "blocked_by_T4"},
             "reader_spine_repetition_reduction_target": {"const": "15_to_25_percent_diagnostic_not_acceptance_test"},
             "requires_chapter_role_classification": {"const": true},
@@ -174,10 +174,11 @@
               "required": [
                 "state", "research_path", "candidate_count", "candidate_ids",
                 "manifest_admitted_count", "drafted_chapter_count", "completed_reader_chapter_count",
+                "terminal_reader_chapter_ids", "remaining_reader_chapter_ids",
                 "primary_source_record_count_added"
               ],
               "properties": {
-                "state": {"const": "manifest_admitted_initial_drafts_complete_evidence_and_reader_integration_gated"},
+                "state": {"const": "one_terminal_three_reader_integrations_remaining"},
                 "research_path": {"const": "docs/structural_completeness_chapter_research_2026_07_19.md"},
                 "candidate_count": {"const": 4},
                 "candidate_ids": {
@@ -190,7 +191,17 @@
                 },
                 "manifest_admitted_count": {"const": 4},
                 "drafted_chapter_count": {"const": 4},
-                "completed_reader_chapter_count": {"const": 0},
+                "completed_reader_chapter_count": {"const": 1},
+                "terminal_reader_chapter_ids": {
+                  "const": ["white-box-evidence-interpretability-and-activation-governance"]
+                },
+                "remaining_reader_chapter_ids": {
+                  "const": [
+                    "governed-world-models-and-reality-grounding",
+                    "human-factors-and-meaningful-control-in-oversight",
+                    "governed-operations-incident-command-and-graceful-degradation"
+                  ]
+                },
                 "primary_source_record_count_added": {"const": 8}
               }
             },
@@ -679,7 +690,7 @@
       "additionalProperties": false,
       "required": ["state", "amendment_rule", "clusters", "support_state_effect", "release_effect"],
       "properties": {
-        "state": {"const": "cluster_2_terminal_4_pending"},
+        "state": {"const": "cluster_3_terminal_3_pending"},
         "amendment_rule": {"const": "dated_machine_validated_amendment_with_terminal_disposition_required"},
         "clusters": {
           "type": "array",
@@ -829,7 +840,7 @@
     },
     "proofClusterEvidence": {"allOf": [{"$ref": "#/$defs/proofCluster"}, {"properties": {"id": {"const": "evidence_claim_and_proof_custody"}, "state": {"const": "adequate"}, "modules": {"const": ["AsiStackProofs.EvidenceStates", "AsiStackProofs.ClaimLedgerRefinement", "AsiStackProofs.ProofCarryingClaimsRefinement", "AsiStackProofs.ProofEnvelope"]}}}]},
     "proofClusterSafety": {"allOf": [{"$ref": "#/$defs/proofCluster"}, {"properties": {"id": {"const": "safety_assurance_and_oversight"}, "state": {"const": "adequate"}, "modules": {"const": ["AsiStackProofs.SafetyCriticalLifecycle", "AsiStackProofs.SafetyCaseRefinement", "AsiStackProofs.ScalableOversightRefinement", "AsiStackProofs.AdversarialEvaluationRefinement"]}}}]},
-    "proofClusterRollback": {"allOf": [{"$ref": "#/$defs/proofCluster"}, {"properties": {"id": {"const": "authority_effect_rollback_and_corrigibility"}, "state": {"const": "strengthen"}, "modules": {"const": ["AsiStackProofs.AuthorityEffectRefinement", "AsiStackProofs.Replacement", "AsiStackProofs.Corrigibility", "AsiStackProofs.IntentExecutionRefinement"]}}}]},
+    "proofClusterRollback": {"allOf": [{"$ref": "#/$defs/proofCluster"}, {"properties": {"id": {"const": "authority_effect_rollback_and_corrigibility"}, "state": {"const": "adequate"}, "modules": {"const": ["AsiStackProofs.AuthorityEffectRefinement", "AsiStackProofs.Replacement", "AsiStackProofs.Corrigibility", "AsiStackProofs.IntentExecutionRefinement"]}}}]},
     "proofClusterLearning": {"allOf": [{"$ref": "#/$defs/proofCluster"}, {"properties": {"id": {"const": "learning_update_state_and_unlearning"}, "state": {"const": "strengthen"}, "modules": {"const": ["AsiStackProofs.DataEngineLifecycleRefinement", "AsiStackProofs.PolicyOptimizationRefinement", "AsiStackProofs.ModelWeightCustody", "AsiStackProofs.ContextTransactionRefinement"]}}}]},
     "proofClusterImprovement": {"allOf": [{"$ref": "#/$defs/proofCluster"}, {"properties": {"id": {"const": "self_improvement_and_readiness"}, "state": {"const": "strengthen"}, "modules": {"const": ["AsiStackProofs.SelfImprovementRefinement", "AsiStackProofs.OpenEndedImprovementRefinement", "AsiStackProofs.ReadinessRefinement", "AsiStackProofs.CapabilityThresholdRefinement"]}}}]},
     "proofClusterEconomics": {"allOf": [{"$ref": "#/$defs/proofCluster"}, {"properties": {"id": {"const": "resource_artifact_and_lifecycle_economics"}, "state": {"const": "strengthen"}, "modules": {"const": ["AsiStackProofs.ResourceEconomicsRefinement", "AsiStackProofs.ArtifactRealityRefinement", "AsiStackProofs.ArtifactStewardAgents", "AsiStackProofs.ArtifactCompressionRefinement"]}}}]},

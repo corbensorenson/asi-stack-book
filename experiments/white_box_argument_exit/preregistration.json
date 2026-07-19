@@ -1,0 +1,108 @@
+{
+  "schema_version": "asi_stack.white_box_argument_exit_preregistration.v1",
+  "campaign_id": "WHITE-BOX-ARGUMENT-EXIT-01",
+  "state": "protocol_ready_resource_isolated_not_executed",
+  "claim_id": "white-box-evidence-interpretability-and-activation-governance.core",
+  "frozen_question": "For one digest-bound open-weight model, one prospectively selected behavior family, and one material-change envelope, do two independently implemented internal methods add held-out predictive or intervention value beyond a tuned behavior-only monitor at acceptable collateral and lifecycle cost?",
+  "current_support_state": "argument",
+  "support_state_effect": "none",
+  "protected_outcomes_opened": false,
+  "execution_authority": "not_granted_by_this_record",
+  "selection_before_outcomes": {
+    "model_gate": "Choose one open-weight 1B-to-4B parameter causal model with reproducible activation hooks, redistributable evaluation inputs, exact checkpoint and tokenizer digests, and no P2/Q1/Q2 storage displacement.",
+    "behavior_candidates": [
+      "indirect-object or role-binding behavior with exact output scoring",
+      "bounded factual-recall relation with counterfactual subjects and exact output scoring",
+      "algorithmic comparison behavior with compositional and adversarial transformations"
+    ],
+    "selection_rule": "Use development-only floor/ceiling, positive-control recoverability, and evaluator-sensitivity checks; freeze exactly one candidate and all transformations before sealing the claim-bearing denominator.",
+    "forbidden_selection_inputs": ["held-out labels", "held-out method ranking", "held-out intervention effects", "P2-Q1-D1 outcomes", "ASI-THESEUS-Q2-D2 outcomes"]
+  },
+  "method_families": [
+    {
+      "id": "METHOD-A-SPARSE-FEATURE",
+      "family": "sparse feature decomposition or a source-compatible released dictionary",
+      "implementation_owner": "white-box-producer-a",
+      "required_outputs": ["feature activations", "reconstruction residual", "dead and split-or-merged feature ledger", "candidate labels with counterexamples"]
+    },
+    {
+      "id": "METHOD-B-CAUSAL-PATH",
+      "family": "activation patching or path-level causal tracing implemented without METHOD-A labels",
+      "implementation_owner": "white-box-producer-b",
+      "required_outputs": ["prompt-local causal hypotheses", "matched sham and off-target interventions", "necessity and sufficiency asymmetry", "unexplained causal residual"]
+    }
+  ],
+  "comparators": [
+    "tuned behavior-only monitor with matched access to development labels",
+    "linear probe with leakage and selectivity controls",
+    "random-direction and frequency-matched feature controls",
+    "sham, off-target, and dose-matched intervention controls",
+    "each internal method alone",
+    "prospectively frozen combined method if admitted before holdout"
+  ],
+  "data_custody": {
+    "development_split": "method construction and bounded rescue only",
+    "qualification_split": "positive controls, activation checks, label-counterexample review, and evaluator calibration only",
+    "held_out_split": "sealed until every competence gate passes; opened once for the frozen comparison",
+    "transfer_split": "not part of the local claim; opens only after a local result and a separate protocol amendment",
+    "denominator_separation": "No task, label, outcome, retry decision, or tuned configuration may cross from P2-Q1-D1 or ASI-THESEUS-Q2-D2."
+  },
+  "competence_gates": [
+    "Exact model, checkpoint, tokenizer, runtime, capture-site, data, and method identities are frozen.",
+    "Both methods recover independently known injected or architectural positive controls at a prospectively set sensitivity floor.",
+    "The selected natural behavior is neither floor nor ceiling on development and qualification splits.",
+    "The intended capture and intervention paths are active, dose-responsive, and distinguishable from sham and off-target controls.",
+    "Blinded label adjudication retains positive examples, hard counterexamples, alternatives, and inter-rater disagreement without treating labels as ground truth.",
+    "An independently implemented evaluator detects known prediction and collateral effects without consuming producer labels or held-out outcomes.",
+    "Every rescue-ladder choice is exhausted or frozen before the one-time held-out opening, with failures and excluded cases retained."
+  ],
+  "rescue_ladder": [
+    "verify capture tensors, token alignment, hook placement, and intervention application",
+    "sweep only preregistered method capacity, sparsity, threshold, and regularization ranges on development data",
+    "sweep only preregistered intervention sites and doses on development data",
+    "check dictionary or path collapse, leakage, inactive controls, evaluator blindness, and task floor or ceiling",
+    "use the adjacent model checkpoint only if the original checkpoint fails a predeclared instrumentation gate, then restart with a new campaign identity",
+    "stop as implementation-inadequate or instrument-inadequate rather than opening held-out outcomes after a failed competence gate"
+  ],
+  "outcomes": [
+    "held-out discrimination and calibration beyond the behavior-only baseline",
+    "causal effect and uncertainty under matched interventions",
+    "necessity-versus-sufficiency asymmetry and mediation residual",
+    "specificity and false-positive/false-negative rates",
+    "feature or path stability across seeds, transformations, and a nearby checkpoint",
+    "reconstruction, causal, and method-disagreement residuals",
+    "protected-capability regressions and collateral behavior changes",
+    "latency, accelerator time, storage, analyst time, reviewer time, and privacy exposure",
+    "net policy decision value under preserve, restrict, escalate, reject, and abstain choices"
+  ],
+  "decision_rule": {
+    "positive": "At least one prospectively frozen internal route improves the primary held-out decision metric over the tuned behavior-only baseline with uncertainty excluding the minimum useful effect, while passing collateral, calibration, stability, and total-cost ceilings.",
+    "negative_exact": "All competence gates pass, the study is adequately powered for the minimum useful effect, the full rescue ladder is complete, and neither internal route clears the frozen joint benefit/cost rule.",
+    "inconclusive": "Any competence, power, construct, evaluator, collateral, identity, or resource gate fails after the bounded rescue ladder.",
+    "maximum_negative_level": "N3 for the exact frozen model, methods, behavior, checkpoint, and evaluator only; field-wide or architecture-general negative language is prohibited."
+  },
+  "resource_and_isolation_gate": {
+    "maximum_new_model_cache_gib": 12,
+    "maximum_accelerator_hours": 24,
+    "minimum_free_space_before_materialization_gib": 62,
+    "p2_reserved_storage_may_be_reclaimed": false,
+    "p2_images_or_denominators_may_be_changed": false,
+    "execution_trigger": "Open only after the resource gate, exact model identity, independent evaluator implementation, power analysis, and sealed denominator manifest all pass."
+  },
+  "artifact_contract": [
+    "immutable model and method manifests",
+    "sealed split and denominator digests",
+    "all producer outputs and evaluator inputs",
+    "positive and negative control receipts",
+    "intervention and rollback receipts",
+    "complete failure, retry, exclusion, and side-effect ledgers",
+    "cost and privacy records",
+    "one white-box evidence packet per terminal claim",
+    "accepted or rejected evidence-transition record"
+  ],
+  "non_claims": [
+    "Protocol readiness is not an interpretability experiment or empirical result.",
+    "The protocol does not establish that any feature, circuit, label, or intervention is faithful, causal, complete, safe, private, transferable, or useful.",
+    "No support, authority, readiness, release, deployment, SOTA, AGI, or ASI movement is authorized."
+  ]
+}

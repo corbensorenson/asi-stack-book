@@ -3035,7 +3035,7 @@
       "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
       "module": "AsiStackProofs.WhiteBoxEvidence",
       "formal_target": "In the finite policy model, no interpretability evidence packet can widen execution or release authority; it may only preserve, restrict, escalate, or reject.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Prove non-escalation over an explicit evidence-policy route without asserting that any feature, label, circuit, causal intervention, completeness estimate, evaluator, or packet premise is scientifically valid."
@@ -3045,7 +3045,7 @@
       "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
       "module": "AsiStackProofs.WhiteBoxEvidence",
       "formal_target": "Packets with stale lineage, missing method assumptions, absent negative controls, or unsupported causal state are rejected before governance use.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Encode the enumerated packet-admission defects and their rejecting consequence. The proof cannot establish mechanistic truth, completeness, method independence, negative-control adequacy, behavioral safety, or cross-architecture transfer."

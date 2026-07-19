@@ -324,6 +324,12 @@ This authority type system is still an architectural target. The synthetic harne
 
 The first two targets are now implemented by the reachable model in `AsiStackProofs.AuthorityEffectRefinement`; the lifecycle route and historical revocation-surface bridge remain in `AsiStackProofs.Authority`. The stronger model proves exact finite transition consequences for issuance, approval, dispatch, effect, observation, revocation, one-shot use, and rollback, and its independent Python consumer refines the model against existing executed local records plus 38 source/model mutations. The older general ceiling lemmas and lifecycle negative cases remain useful at their exact local scope. The projection-only declaration that merely extracted audit and non-claim fields from an assumed-valid record was physically retired. This finite proof packet does not prove natural-language authority extraction, real identity or receipt authenticity, wise issuance, complete observation, concurrent or distributed revocation, tool-wrapper enforcement, deployed approval services, production security, reproduction, transfer, or chapter-core support.
 
+The P4-C3 semantic audit therefore classifies `AuthorityEffectRefinement` as
+adequate only for its bounded reachable grant-to-local-effect semantics. The
+six-event witness and 38 rejected mutations show exact routing consequences;
+they do not establish that any identity, approval, receipt, observation, or
+rollback claim is authentic, complete, concurrently enforced, or safe.
+
 ## Source crosswalk
 
 | Source ID | Title | Layer | Planned use | Readiness |

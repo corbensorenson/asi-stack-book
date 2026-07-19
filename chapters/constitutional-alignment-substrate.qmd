@@ -525,13 +525,14 @@ constitutional lifecycle route for missing predicate, normative-source,
 operational-test, protected-scope, conflict-behavior, review-route,
 migration-policy, self-modification-rule, agency-rights, material-usability,
 pre-effect-review, rollback, correction, reviewer-independence,
-evidence-transition, and non-claim-boundary records. The Corrigibility module
-now also checks a finite agency-correction lifecycle route for missing
-affected-party records, material
-notice, pre-effect review, bounded delegation, approval, correction paths,
-rollback or shutdown paths, dependency residuals, degradation reasons,
-accountability, evidence-transition records, and complete bounded action. These
-hooks do not prove moral correctness, deployed alignment, human dignity,
+evidence-transition, and non-claim-boundary records. The richer agency-correction
+lifecycle belongs to `SafetyCriticalLifecycle`, not to
+`AsiStackProofs.Corrigibility`. The P4-C3 audit reclassifies the latter as a
+countermodel-only appendix: its four declarations derive three generic route
+consequences for missing review, unbounded delegation, and missing accountable
+principal from hand-authored predicates. It has no transition lifecycle or
+independent runtime consumer and must not be cited as a corrigibility theorem.
+These hooks do not prove moral correctness, deployed alignment, human dignity,
 manipulation resistance, consent quality, institutional review quality, runtime
 corrigibility, approval-service quality, rollback or shutdown execution, or
 whole-system safety.

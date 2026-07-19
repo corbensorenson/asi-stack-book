@@ -4506,7 +4506,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 306 proof targets, 102 Lean modules, 1307 theorem declarations, 901 derived/decomposed, 230 direct/projection, 176 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 306 proof targets, 102 Lean modules, 1315 theorem declarations, 905 derived/decomposed, 230 direct/projection, 180 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -4752,9 +4752,17 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A white-box evidence packet, model/activation and feature/circuit registries,
-  intervention receipt, replication/stability matrix, unexplained-residual
-  ledger, alternative-hypothesis record, and restricted governance handoff.
+- Implemented record contract: `schemas/white_box_evidence_packet.schema.json`,
+  one explicitly expired record-shape fixture, the independently implemented
+  `scripts/validate_white_box_evidence_contract.py`, and twelve semantic
+  mutations. This validates custody and non-authority only; no model-internal
+  result or support movement exists.
+- Protocol-ready empirical lane:
+  `experiments/white_box_argument_exit/preregistration.json` freezes two
+  independently owned method families, a tuned behavioral baseline, split
+  custody, seven competence gates, a six-step rescue ladder, nine joint
+  outcomes, an N3 exact-negative ceiling, and P2/resource isolation. Protected
+  outcomes remain closed and the campaign has not run.
 - Exact source-note and Appendix C mappings for all eight sources, preserving
   architecture, scale, method, and completeness limits. Support remains
   `argument`; no local independent-method reproduction has run.
@@ -4774,8 +4782,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:white_box.evidence_never_grants_authority` | `AsiStackProofs.WhiteBoxEvidence` | In the finite policy model, no interpretability evidence packet can widen execution or release authority; it may only preserve, restrict, escalate, or reject. | planned |
-| `lean:white_box.invalid_packet_rejected` | `AsiStackProofs.WhiteBoxEvidence` | Packets with stale lineage, missing method assumptions, absent negative controls, or unsupported causal state are rejected before governance use. | planned |
+| `lean:white_box.evidence_never_grants_authority` | `AsiStackProofs.WhiteBoxEvidence` | In the finite policy model, no interpretability evidence packet can widen execution or release authority; it may only preserve, restrict, escalate, or reject. | implemented |
+| `lean:white_box.invalid_packet_rejected` | `AsiStackProofs.WhiteBoxEvidence` | Packets with stale lineage, missing method assumptions, absent negative controls, or unsupported causal state are rejected before governance use. | implemented |
 
 ### Capability Thresholds and Deployment Commitments
 
@@ -5931,8 +5939,12 @@ Structural-completeness queue (2026-07-19):
 and records four first-tranche manifest entries—white-box evidence and
 activation governance, governed world models and reality grounding, human
 factors and meaningful oversight, and governed operations/incident command.
-The working manifest now contains 59 entries, but those four chapter files,
-evidence lanes, reader integration, and final validation remain open.
+The working manifest contains 59 entries. White-Box Evidence is terminally
+integrated as an argument-level reader chapter with its packet, formal route,
+resource-isolated claim-bearing protocol, source crosswalk, and non-claim
+boundary complete; its empirical campaign remains deliberately unexecuted and
+cannot move support by protocol readiness. The other three first-tranche
+chapters still require the same terminal integration gates.
 `docs/structural_completeness_gap_audit_2026_07_19.md` research-admits eight
 additional manifest-gated candidates: governed model training; perception and
 observation trust; embodied physical control; privacy and data rights;

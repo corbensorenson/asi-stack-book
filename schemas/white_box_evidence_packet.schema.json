@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/white_box_evidence_packet.schema.json",
+  "title": "White-Box Internal Evidence Packet",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "packet_id",
+    "claim_id",
+    "origin_class",
+    "disposition",
+    "identity",
+    "method",
+    "interpretation",
+    "causal_evidence",
+    "stability",
+    "coverage_and_residual",
+    "independence",
+    "governance",
+    "expiry",
+    "support_state_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.white_box_evidence_packet.v1"},
+    "packet_id": {"type": "string", "minLength": 1},
+    "claim_id": {"type": "string", "minLength": 1},
+    "origin_class": {"type": "string", "enum": ["repository_fixture", "local_empirical_run", "external_empirical_run"]},
+    "disposition": {"type": "string", "enum": ["observed", "predictive_only", "causal_bounded", "contradicted", "unstable", "incomplete", "expired", "policy_candidate", "rejected"]},
+    "identity": {
+      "type": "object",
+      "required": ["model_id", "checkpoint_digest", "tokenizer_digest", "substrate", "runtime_digest", "capture_site", "population_id", "captured_at"],
+      "properties": {
+        "model_id": {"type": "string", "minLength": 1},
+        "checkpoint_digest": {"type": "string", "minLength": 1},
+        "tokenizer_digest": {"type": "string", "minLength": 1},
+        "substrate": {"type": "string", "minLength": 1},
+        "runtime_digest": {"type": "string", "minLength": 1},
+        "capture_site": {"type": "string", "minLength": 1},
+        "population_id": {"type": "string", "minLength": 1},
+        "captured_at": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "method": {
+      "type": "object",
+      "required": ["family", "implementation_digest", "configuration_digest", "assumptions", "random_seeds", "training_split_ref", "evaluation_split_ref"],
+      "properties": {
+        "family": {"type": "string", "minLength": 1},
+        "implementation_digest": {"type": "string", "minLength": 1},
+        "configuration_digest": {"type": "string", "minLength": 1},
+        "assumptions": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "random_seeds": {"type": "array", "items": {"type": "number"}},
+        "training_split_ref": {"type": "string", "minLength": 1},
+        "evaluation_split_ref": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "interpretation": {
+      "type": "object",
+      "required": ["object_ids", "label_status", "label_authors", "positive_examples", "hard_counterexamples", "alternative_hypotheses", "blinded_before_outcome"],
+      "properties": {
+        "object_ids": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "label_status": {"type": "string", "enum": ["unlabeled", "candidate", "adjudicated", "contradicted"]},
+        "label_authors": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "positive_examples": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "hard_counterexamples": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "alternative_hypotheses": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "blinded_before_outcome": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "causal_evidence": {
+      "type": "object",
+      "required": ["status", "behavioral_cross_check", "negative_controls", "positive_controls", "interventions", "uncertainty_ref", "side_effect_denominator_ref"],
+      "properties": {
+        "status": {"type": "string", "enum": ["observational", "predictive", "necessity_bounded", "sufficiency_bounded", "mediation_bounded", "unsupported"]},
+        "behavioral_cross_check": {"type": "boolean"},
+        "negative_controls": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "positive_controls": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "interventions": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "uncertainty_ref": {"type": "string", "minLength": 1},
+        "side_effect_denominator_ref": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "stability": {
+      "type": "object",
+      "required": ["held_out_prompts", "seed_variation", "transformation_tests", "checkpoint_tests", "method_agreement_recorded", "result_ref"],
+      "properties": {
+        "held_out_prompts": {"type": "boolean"},
+        "seed_variation": {"type": "boolean"},
+        "transformation_tests": {"type": "boolean"},
+        "checkpoint_tests": {"type": "boolean"},
+        "method_agreement_recorded": {"type": "boolean"},
+        "result_ref": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "coverage_and_residual": {
+      "type": "object",
+      "required": ["reconstruction_ref", "dead_or_missing_objects_ref", "split_merge_ref", "unexplained_residual_ref", "method_disagreement_ref", "complete_mechanism_claimed"],
+      "properties": {
+        "reconstruction_ref": {"type": "string", "minLength": 1},
+        "dead_or_missing_objects_ref": {"type": "string", "minLength": 1},
+        "split_merge_ref": {"type": "string", "minLength": 1},
+        "unexplained_residual_ref": {"type": "string", "minLength": 1},
+        "method_disagreement_ref": {"type": "string", "minLength": 1},
+        "complete_mechanism_claimed": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "independence": {
+      "type": "object",
+      "required": ["producer_id", "evaluator_id", "separate_implementation", "shared_dependencies", "independence_ceiling"],
+      "properties": {
+        "producer_id": {"type": "string", "minLength": 1},
+        "evaluator_id": {"type": "string", "minLength": 1},
+        "separate_implementation": {"type": "boolean"},
+        "shared_dependencies": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "independence_ceiling": {"type": "string", "enum": ["same_process", "separate_local_implementation", "independent_external"]}
+      },
+      "additionalProperties": false
+    },
+    "governance": {
+      "type": "object",
+      "required": ["consumer_id", "policy_effect", "authority_delta", "release_authority", "side_effects_resolved", "rollback_ref", "residual_owner"],
+      "properties": {
+        "consumer_id": {"type": "string", "minLength": 1},
+        "policy_effect": {"type": "string", "enum": ["preserve", "restrict", "escalate", "reject"]},
+        "authority_delta": {"type": "string", "enum": ["none", "reduced"]},
+        "release_authority": {"type": "boolean"},
+        "side_effects_resolved": {"type": "boolean"},
+        "rollback_ref": {"type": "string", "minLength": 1},
+        "residual_owner": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "expiry": {
+      "type": "object",
+      "required": ["expires_at", "material_change_classes", "material_change_observed", "successor_packet_ref"],
+      "properties": {
+        "expires_at": {"type": "string", "minLength": 1},
+        "material_change_classes": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "material_change_observed": {"type": "boolean"},
+        "successor_packet_ref": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,121 @@
+{
+  "schema_version": "asi_stack.semantic_proof_cluster_audit.v1",
+  "cluster_id": "authority_effect_rollback_and_corrigibility",
+  "packet_id": "P4-C3-authority-effect-rollback-and-corrigibility-semantic-audit",
+  "state": "adequate",
+  "scope": "bounded_finite_authority_effect_replacement_corrigibility_and_intent_execution_semantics",
+  "module_count": 4,
+  "public_target_count": 11,
+  "theorem_declaration_count": 65,
+  "module_dispositions": [
+    {
+      "module": "AsiStackProofs.AuthorityEffectRefinement",
+      "path": "lean/AsiStackProofs/AuthorityEffectRefinement.lean",
+      "disposition": "adequate",
+      "public_target_count": 2,
+      "theorem_declaration_count": 12,
+      "plain_language_proposition": "Within one finite grant lifecycle, an accepted issuance stays at or below the caller ceiling and binds the declared epoch and lifetime; accepted dispatch and effect steps require the exact live grant, approval, dispatch, remaining-use, and receipt fields, while one source-anchored trace reaches one independently recorded local observation and exact local rollback.",
+      "modeled_state": "Exact numeric grant, principal, operation, target, ceiling, epoch, logical time, expiry, remaining uses, approval, dispatch, revocation, local effect, observation, and rollback fields across seven event kinds and one reachable six-event trace.",
+      "assumptions": [
+        "Grant, identity, target ownership, time, epoch, approval, dispatch, effect, observation, revocation, and rollback fields are truthful and authentic inputs.",
+        "One sequential finite state machine is sufficient for the checked cases; concurrency, distributed revocation, partial observation, descendant effects, and external compensation are omitted.",
+        "The local public-safe effect and exact fixture rollback do not represent production authorization, security, or effect-complete recovery."
+      ],
+      "countermodels": [
+        "Authority above the caller ceiling and confused-deputy principal substitution are rejected.",
+        "Expired, stale-epoch, and revoked grants cannot dispatch.",
+        "Effect without dispatch and reuse of a consumed one-shot grant are rejected."
+      ],
+      "consumers": [
+        "scripts/validate_authority_effect_refinement.py",
+        "experiments/authority_effect_refinement/results/2026-07-15-local.json"
+      ],
+      "mutation_evidence": "The independently implemented consumer binds six authority fixtures, six reachable events, nine governed repository scenarios, one local effect, one independent observation, one exact rollback, two pre-effect denials, and five revocation records while rejecting 38 source/model mutations.",
+      "maximum_inference": "Adequate for exact bounded sequential grant, approval, dispatch, local effect, observation, revocation, one-shot, and rollback consequences. It does not establish authentic identities or receipts, wise grants, complete observation, concurrent or distributed revocation, deployed enforcement, effect-complete recovery, production security, safety, transfer, or support movement."
+    },
+    {
+      "module": "AsiStackProofs.Replacement",
+      "path": "lean/AsiStackProofs/Replacement.lean",
+      "disposition": "adequate",
+      "public_target_count": 6,
+      "theorem_declaration_count": 37,
+      "plain_language_proposition": "Finite replacement records route missing qualification, identity, fresh evidence, evaluator separation, regression floors, canary and monitor custody, rollback handles and dry runs, irreversible-effect and residual ownership, deprecation, retirement, non-claim, or approval fields away from default commit; three bounded bridges preserve declared trace, identity-sequence, and intent-governed replacement facts without assigning support.",
+      "modeled_state": "Commit predicates, seven transaction routes, twelve lifecycle routes, review records for identity, authority, evidence, canary, monitoring, rollback, irreversible effects, residuals, deprecation and retirement, plus trace, identity-sequence, and intent-governed summary fixtures.",
+      "assumptions": [
+        "All field identities, qualification, evaluator, regression, canary, monitor, rollback, effect, residual, approval, and non-claim records are truthful and complete for the declared inventory.",
+        "The hand-authored route order and Boolean fields adequately represent the bounded replacement decision; hidden state, concurrency, and unregistered descendants are omitted.",
+        "A fixture rollback handle, monitor status, or restored prior identifier does not establish semantic recovery, useful improvement, production rollback, or reversal of external effects."
+      ],
+      "countermodels": [
+        "Authority widening without governance and a captured evaluator route to review instead of default commit.",
+        "Failed regression, failed canary, or a monitor incident routes to quarantine, canary-only, or rollback rather than promotion.",
+        "Missing rollback, irreversible-effect owner, residual owner, deprecation notice, retirement receipt, non-claim boundary, or approval blocks terminal defaulting in the corresponding model."
+      ],
+      "consumers": [
+        "scripts/validate_capability_replacement.py",
+        "scripts/validate_capability_replacement_trace_probe.py",
+        "scripts/validate_intent_governed_replacement_bridge.py",
+        "experiments/capability_replacement_trace/results/2026-07-02-local.json",
+        "experiments/intent_governed_replacement_bridge/results/2026-07-02-local.json"
+      ],
+      "mutation_evidence": "The transaction harness accepts five and rejects nine fixtures; the replacement trace consumer checks two valid transactions, three rejecting controls, four identity-sequence controls, a monitor-triggered rollback, and no-promotion boundary; the intent-governed bridge checks two valid and six expected-invalid traces.",
+      "maximum_inference": "Adequate for the declared finite transaction/lifecycle routes and three deterministic bridge summaries. It does not establish useful replacement, field or inventory completeness, evaluator or monitor validity, semantic recovery, irreversible-effect reversal, deployed canary behavior, production rollback, safety, transfer, or support movement."
+    },
+    {
+      "module": "AsiStackProofs.Corrigibility",
+      "path": "lean/AsiStackProofs/Corrigibility.lean",
+      "disposition": "reclassify",
+      "public_target_count": 1,
+      "theorem_declaration_count": 4,
+      "plain_language_proposition": "Under hand-authored finite predicates, a high-impact action without usable or pre-effect review routes to review, a low-risk unbounded delegation routes to narrowing, and a denied action without an accountable principal preserves an audit residual.",
+      "modeled_state": "Two small decision records, two route functions, six agency phases, four route labels, and three concrete countermodel records; there is no transition lifecycle, effect, shutdown execution, learning state, or runtime consumer.",
+      "assumptions": [
+        "High-impact, review usability, delegation bounds, denial, accountability, appeal, interruption, and rollback fields are truthful authored predicates.",
+        "The branch order and route labels capture only three local policy consequences and do not model incentives, embedded agency, subsystem behavior, or correction over time.",
+        "A route label does not demonstrate that review, appeal, interruption, rollback, or accountable correction is available or effective."
+      ],
+      "countermodels": [
+        "A high-impact record with missing pre-effect review must select the review route under the assumed predicate.",
+        "A low-risk record with unbounded delegation must select narrowing under the assumed predicate.",
+        "A denied record without an accountable principal must select the audit-residual route under the assumed predicate."
+      ],
+      "consumers": [
+        "chapters/constitutional-alignment-substrate.qmd",
+        "scripts/validate_proof_depth.py"
+      ],
+      "mutation_evidence": "The four declarations are retained as generic finite counterexamples and chapter traceability only. The richer lifecycle and deletion-countermodel semantics live in SafetyCriticalLifecycle; this module has no independent runtime consumer and is prohibited from carrying a whole-system corrigibility claim.",
+      "maximum_inference": "Reclassified as countermodel-only formal evidence for three declared routing implications. It does not establish corrigibility, shutdown incentives, usable review, affected-party agency, independent oversight, successful correction, rollback execution, embedded-agent behavior, safety, deployment, transfer, or support movement."
+    },
+    {
+      "module": "AsiStackProofs.IntentExecutionRefinement",
+      "path": "lean/AsiStackProofs/IntentExecutionRefinement.lean",
+      "disposition": "adequate",
+      "public_target_count": 2,
+      "theorem_declaration_count": 12,
+      "plain_language_proposition": "A finite vertical can move from one exact root intent through command, plan, job, approval, dispatch, attempted and observed local effect, artifact binding, independent-verification receipt, and delivery only while parent identity and authority ceilings remain intact; missing approval, hidden override, authority widening, effect without dispatch, and delivery without verification are rejected.",
+      "modeled_state": "Fifteen layer states, fourteen event kinds, root and artifact identities, authority ceiling, approval and dispatch custody, attempted and observed effect counts, artifact binding, verification, delivery, residual, stop, rollback and quarantine fields, plus one ten-event delivered trace.",
+      "assumptions": [
+        "Intent, artifact, authority, approval, dispatch, observation, verifier, delivery, residual, rollback, and quarantine fields are truthful and exactly identified.",
+        "The finite vertical and event order are sufficient for the checked local scenarios; natural-language meaning, partial effects, concurrency, external descendants, and asynchronous failure are omitted.",
+        "An independentVerifier Boolean and observed-effect count do not establish evaluator independence, complete effect observation, useful delivery, or production execution."
+      ],
+      "countermodels": [
+        "Missing approval blocks authorization and authority above the root ceiling is rejected.",
+        "A hidden override or effect attempt without a prior dispatch receipt is rejected.",
+        "Delivery without a prior independent-verification receipt is rejected."
+      ],
+      "consumers": [
+        "scripts/validate_intent_execution_vertical_refinement.py",
+        "scripts/validate_intent_execution_handoff_probe.py",
+        "experiments/intent_execution_vertical_refinement/results/2026-07-15-local.json",
+        "experiments/intent_execution_handoff/results/2026-07-02-local.json"
+      ],
+      "mutation_evidence": "The independent vertical consumer checks nine scenarios, eighty-nine events, six local effects, exact schema/result identity, and thirty rejected mutations; the older handoff consumer separately preserves its deterministic source-to-delivery boundary.",
+      "maximum_inference": "Adequate for exact finite root/parent joins, non-widening authority, approval/dispatch custody, local effect observation, artifact binding, verification, delivery, and encoded rejection routes. It does not establish intent fidelity, parser correctness, authentic authority or receipts, prompt-injection resistance, complete effects, verifier independence, useful delivery, deployment, transfer, or support movement."
+    }
+  ],
+  "cluster_maximum_inference": "The cluster is adequate for its recorded finite sequential authority/effect lifecycle, replacement transaction routes and bridge summaries, three corrigibility countermodel implications, and intent-to-local-effect vertical. It proves no identity or receipt authentic, no grant wise, no monitor or verifier valid, no inventory complete, no external effect reversed, no system corrigible, no intent preserved in meaning, and no empirical, safety, deployment, transfer, SOTA, AGI, ASI, support, release, or publication claim.",
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "publication_effect": "none"
+}

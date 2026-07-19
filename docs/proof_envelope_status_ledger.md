@@ -11,14 +11,14 @@ It does **not** add proof targets, prove semantic adequacy, promote support stat
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 306 |
-| Implemented proof targets | 298 |
-| Planned proof targets | 8 |
-| Lean modules referenced | 65 |
+| Implemented proof targets | 300 |
+| Planned proof targets | 6 |
+| Lean modules referenced | 66 |
 | Chapters with proof targets | 59 |
-| Theorem declarations classified | 1307 |
-| Derived/decomposed theorem declarations | 901 |
+| Theorem declarations classified | 1315 |
+| Derived/decomposed theorem declarations | 905 |
 | Direct/projection-style theorem declarations | 230 |
-| Unknown or mixed theorem declarations | 176 |
+| Unknown or mixed theorem declarations | 180 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical chapter classifications present | 1/1 |
 

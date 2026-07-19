@@ -48,7 +48,7 @@ UNITS = [
         ],
         "input_contract": "Commit-bound 59-chapter prose baseline, six frozen opening phrase families, exact role partition, three depth-leveling chapters, overview/handoff surfaces, and protected meaning/evidence custody.",
         "output_contract": "Reduce the frozen opening families from eight occurrences to zero, classify every manifest chapter once, require substantive central-argument additions, preserve claims/sources/equations/proof tags/protocol refs/support, and reject nine mutations.",
-        "output_assertions": ["59 chapters classified once", "11 thesis, 30 reference, 7 implementation, 11 speculative/deferred", "8 opening formulas to 0", "710/728/664 token additions", "9 mutations reject", "support effect none"],
+        "output_assertions": ["59 chapters classified once", "11 thesis, 30 reference, 7 implementation, 11 speculative/deferred", "8 opening formulas to 0", "711/728/664 token additions", "9 mutations reject", "support effect none"],
         "claim_scope": "P7.1a-W2 case-independent narrative quality and meaning preservation only.",
         "negative_controls": "validator_owned_nine_role_opening_depth_meaning_overview_and_support_mutations",
         "negative_control_cases": ["role omission or duplication", "formula restoration", "depth heading erasure", "claim or source deletion", "support laundering", "flagship precommitment"],
@@ -104,13 +104,24 @@ UNITS = [
 def main() -> None:
     value = json.loads(REGISTRY.read_text(encoding="utf-8"))
     scripts = {row["script"] for row in UNITS}
+    existing_orders = {
+        row["script"]: row["order"]
+        for row in value["units"]
+        if row.get("script") in scripts
+    }
     value["units"] = [row for row in value["units"] if row.get("script") not in scripts]
-    next_order = len(value["units"]) + 1
-    for offset, spec in enumerate(UNITS):
+    used_orders = {row["order"] for row in value["units"]}
+    for spec in UNITS:
+        preferred = existing_orders.get(spec["script"])
+        order = preferred if preferred is not None and preferred not in used_orders else next(
+            index for index in range(1, len(value["units"]) + len(UNITS) + 2)
+            if index not in used_orders
+        )
+        used_orders.add(order)
         unit = {key: item for key, item in spec.items() if key != "artifacts"}
         unit.update({
-            "id": f"{spec['script']}:{next_order + offset}",
-            "order": next_order + offset,
+            "id": f"{spec['script']}:{order}",
+            "order": order,
             "args": [],
             "input_artifacts": spec["artifacts"] + [REGISTER],
         })

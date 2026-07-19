@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 306 |
 | Lean modules scanned | 102 |
-| Theorem declarations classified | 1307 |
+| Theorem declarations classified | 1315 |
 | Direct/projection-style theorem declarations | 230 |
-| Derived/decomposed theorem declarations | 901 |
-| Unknown or mixed theorem declarations | 176 |
+| Derived/decomposed theorem declarations | 905 |
+| Unknown or mixed theorem declarations | 180 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -153,7 +153,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | verification-bandwidth-and-context-adequacy | 4 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | unmapped | 0 | 11 | 0 | 11 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | virtual-context-abi | 3 | 17 | 0 | 3 | 14 | manual review |
-| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | white-box-evidence-interpretability-and-activation-governance | 2 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | white-box-evidence-interpretability-and-activation-governance | 2 | 8 | 0 | 4 | 4 | manual review |
 
 ## Theorem Classification
 
@@ -1466,6 +1466,14 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `tainted_materialization_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `undeclared_omission_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `version_substitution_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `admitted_causal_packet_records_crosscheck_intervention_and_evaluator` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `bounded_causal_fixture_preserves_authority` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `changed_fixture_expires` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `evidence_never_grants_authority` | derived_or_decomposed | no | uses cases, simp, split, unfold |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `invalid_packet_rejected` | derived_or_decomposed | no | uses have, rcases, simp, unfold |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `material_change_expires_admissible_packet` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `stale_fixture_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `widening_fixture_escalates_without_grant` | unknown_or_mixed | no | no recognized depth pattern |
 
 ## Validation Errors
 

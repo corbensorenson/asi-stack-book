@@ -2050,7 +2050,27 @@
     "docs/p4_c1_evidence_claim_and_proof_custody_semantic_audit.md",
     "scripts/validate_p4_c2_semantic_proof_cluster.py",
     "proofs/semantic_cluster_audits/safety_assurance_and_oversight.json",
-    "docs/p4_c2_safety_assurance_and_oversight_semantic_audit.md"
+    "docs/p4_c2_safety_assurance_and_oversight_semantic_audit.md",
+    "scripts/validate_white_box_evidence_contract.py",
+    "schemas/white_box_evidence_packet.schema.json",
+    "tests/fixtures/protocol_records/white_box_evidence_packet.valid.json",
+    "experiments/white_box_argument_exit/preregistration.json",
+    "lean/AsiStackProofs/WhiteBoxEvidence.lean",
+    "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
+    "scripts/register_p7_2_t1_and_p4_c3_tranche.py",
+    "scripts/validate_p7_2_t1_white_box_reader_integration.py",
+    "evidence_quality/p7_2_t1_white_box_reader_integration.json",
+    "docs/p7_2_t1_white_box_reader_integration.md",
+    "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+    "scripts/validate_p4_c3_semantic_proof_cluster.py",
+    "proofs/semantic_cluster_audits/authority_effect_rollback_and_corrigibility.json",
+    "docs/p4_c3_authority_effect_rollback_and_corrigibility_semantic_audit.md",
+    "lean/AsiStackProofs/Replacement.lean",
+    "lean/AsiStackProofs/Corrigibility.lean",
+    "chapters/system-boundaries-and-authority.qmd",
+    "chapters/capability-replacement-and-rollback.qmd",
+    "chapters/constitutional-alignment-substrate.qmd",
+    "chapters/intent-to-execution-contracts.qmd"
   ],
   "units": [
     {
@@ -10900,12 +10920,14 @@
         "proofs/proof_manifest.json",
         "proofs/proof_triage.json",
         "docs/proof_adequacy_review.md",
-        "roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json"
+        "roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json",
+        "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json"
       ],
       "output_contract": "Reject incomplete proof dispositions, target or adequacy-route gaps, missing semantic-model dossiers/consumers, false P2/M3 closure, and support-state laundering.",
       "output_assertions": [
         "1,151/1,151 activation-baseline theorem declarations and 298/298 baseline targets are reviewed and dispositioned",
-        "298/298 current proof targets are implemented and explicitly adequacy-routed",
+        "298/298 historical proof targets remain implemented and explicitly adequacy-routed",
+        "306 current targets comprise 300 implemented and 6 planned exactly across the three unfinished admitted chapters",
         "the sixteen richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
         "nine required safety-critical, integration, and review-named refinement models have dossiers and registered consumers",
         "P2/M3 is completed, P3 is active, and prerequisite M2 is active without support-state movement"
@@ -12099,7 +12121,7 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "publication_gate",
-      "input_contract": "Completed claim-proof predecessor; exact no-release terminal record; active unfinished-work successor; 3,745 canonical atoms; all 117 transition files and 115 accepted transitions; complete 25-direct/90-indirect claim identity graph; retrospective N0-N5 rehabilitation of all 90 accepted negative/no-change results; prospective P2 selection, natural development-corpus custody, fixed-denominator gold diagnosis, frozen replacement policy and resource ceiling, and deterministic metadata-only replacement queue; terminal P7.1a W1/W2 audits; two terminal bounded semantic proof clusters; current proof-depth receipt; N0-N5 experiment-competence contract; stale main attestation boundary; X derivative disposition; and four public truth surfaces.",
+      "input_contract": "Completed claim-proof predecessor; exact no-release terminal record; active unfinished-work successor; 3,745 canonical atoms; all 117 transition files and 115 accepted transitions; complete 25-direct/90-indirect claim identity graph; retrospective N0-N5 rehabilitation of all 90 accepted negative/no-change results; prospective P2 selection, natural development-corpus custody, fixed-denominator gold diagnosis, frozen replacement policy and resource ceiling, and deterministic metadata-only replacement queue; terminal P7.1a W1/W2 audits; terminal P7.2-T1 white-box reader integration with protected outcomes closed; three terminal bounded semantic proof clusters; current proof-depth receipt; N0-N5 experiment-competence contract; stale main attestation boundary; X derivative disposition; and four public truth surfaces.",
       "input_artifacts": [
         "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
         "docs/structural_completeness_chapter_research_2026_07_19.md",
@@ -12157,6 +12179,10 @@
         "scripts/validate_p7_1a_w2_narrative_audit.py",
         "proofs/semantic_cluster_audits/safety_assurance_and_oversight.json",
         "scripts/validate_p4_c2_semantic_proof_cluster.py",
+        "evidence_quality/p7_2_t1_white_box_reader_integration.json",
+        "scripts/validate_p7_2_t1_white_box_reader_integration.py",
+        "proofs/semantic_cluster_audits/authority_effect_rollback_and_corrigibility.json",
+        "scripts/validate_p4_c3_semantic_proof_cluster.py",
         "docs/x_article_synopsis_completion.md",
         "release_records/2026-07-16-post-v2-3-claim-proof-sota-roadmap-complete-no-public-release.json"
       ],
@@ -12174,18 +12200,18 @@
         "replacement policy and monitored resource ceiling frozen before draw",
         "metadata-only queue contains 30 unique repositories while candidate content remains unopened",
         "construct and resource gates pending with heldout closed",
-        "P7.1a terminal with P7.2-T1 next",
-        "two of six semantic proof clusters terminal at bounded adequate scope with P4-C3 next",
+        "P7.2-T1 terminal with P7.2-T2 next",
+        "three of six semantic proof clusters terminal at bounded adequate scope with P4-C4 next",
         "N0-N5 competence contract",
         "current proof snapshot",
         "main-only stale attestation truth",
         "v2.3.0 latest public release",
         "X source current and historical platform draft stale",
         "no support or release effect",
-        "fifty-seven mutations reject"
+        "sixty mutations reject"
       ],
       "claim_scope": "Roadmap continuity, experiment-competence governance, claim-identity truth, public-state maintenance, and owner-gated external actions only.",
-      "negative_controls": "validator_owned_fifty_seven_competence_identity_rehabilitation_surface_p2_editorial_semantic_proof_and_attestation_mutations",
+      "negative_controls": "validator_owned_sixty_competence_identity_rehabilitation_surface_p2_editorial_semantic_proof_and_attestation_mutations",
       "negative_control_cases": [
         "false publication",
         "support laundering",
@@ -12989,7 +13015,7 @@
         "59 chapters classified once",
         "11 thesis, 30 reference, 7 implementation, 11 speculative/deferred",
         "8 opening formulas to 0",
-        "710/728/664 token additions",
+        "711/728/664 token additions",
         "9 mutations reject",
         "support effect none"
       ],
@@ -13098,11 +13124,152 @@
         "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean",
         "scripts/register_p7_editorial_and_p4_semantic_tranche.py"
       ]
+    },
+    {
+      "script": "validate_white_box_evidence_contract.py",
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "One typed record-shape fixture, a prospectively frozen but unexecuted two-method white-box campaign, and a finite admission/non-authority model.",
+      "output_contract": "Require exact model/method identity, controls, stability, residuals, expiry, non-authority, protected outcome closure, seven competence gates, and an N3 exact ceiling; compile eight Lean declarations and reject twelve semantic mutations.",
+      "output_assertions": [
+        "1 record-shape fixture",
+        "2 independently owned method families",
+        "7 competence gates",
+        "8 Lean declarations",
+        "12 mutations reject",
+        "empirical and support effects none"
+      ],
+      "claim_scope": "White-box packet shape, campaign custody, and finite governance-route semantics only.",
+      "negative_controls": "validator_owned_twelve_identity_control_custody_authority_and_support_mutations",
+      "negative_control_cases": [
+        "release grant",
+        "authority widening",
+        "completeness claim",
+        "control deletion",
+        "outcome opening",
+        "negative-scope inflation",
+        "P2 displacement",
+        "support laundering"
+      ],
+      "prohibited_inference": "The fixture and protocol do not establish any feature, circuit, interpretation, causal result, governance efficacy, support transition, release, AGI, or ASI claim.",
+      "contract_precision": "exact_record_protocol_and_finite_route_contract",
+      "semantic_review_state": "checked_white_box_record_custody_and_non_authority_semantics",
+      "id": "validate_white_box_evidence_contract.py:403",
+      "order": 403,
+      "args": [],
+      "input_artifacts": [
+        "scripts/validate_white_box_evidence_contract.py",
+        "schemas/white_box_evidence_packet.schema.json",
+        "tests/fixtures/protocol_records/white_box_evidence_packet.valid.json",
+        "experiments/white_box_argument_exit/preregistration.json",
+        "lean/AsiStackProofs/WhiteBoxEvidence.lean",
+        "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
+        "scripts/register_p7_2_t1_and_p4_c3_tranche.py"
+      ]
+    },
+    {
+      "script": "validate_p7_2_t1_white_box_reader_integration.py",
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "The admitted white-box chapter, eight exact source mappings, two implemented public proof targets, a closed protected campaign, and all adjacent reader surfaces.",
+      "output_contract": "Bind artifact digests, preserve source/role/proof denominators, require both handoffs and synthesis surfaces, keep protected outcomes closed, and reject twelve integration mutations.",
+      "output_assertions": [
+        "1 terminal argument-level chapter",
+        "8 source mappings",
+        "2 implemented proof targets",
+        "8 Lean declarations",
+        "12 integration mutations reject",
+        "support effect none"
+      ],
+      "claim_scope": "P7.2-T1 chapter necessity, argument-level integration, traceability, and reader continuity only.",
+      "negative_controls": "validator_owned_twelve_manifest_source_digest_proof_custody_role_and_support_mutations",
+      "negative_control_cases": [
+        "chapter deletion",
+        "source-target deletion",
+        "digest drift",
+        "proof-count reduction",
+        "outcome opening",
+        "P2 displacement",
+        "role deletion",
+        "support laundering"
+      ],
+      "prohibited_inference": "Terminal reader integration does not establish an interpretability result, mechanism completeness, empirical support, release, publication, AGI, or ASI.",
+      "contract_precision": "digest_bound_reader_and_evidence_custody",
+      "semantic_review_state": "checked_terminal_white_box_argument_chapter_integration",
+      "id": "validate_p7_2_t1_white_box_reader_integration.py:404",
+      "order": 404,
+      "args": [],
+      "input_artifacts": [
+        "scripts/validate_p7_2_t1_white_box_reader_integration.py",
+        "evidence_quality/p7_2_t1_white_box_reader_integration.json",
+        "docs/p7_2_t1_white_box_reader_integration.md",
+        "book_structure.json",
+        "sources/source_inventory.json",
+        "proofs/proof_manifest.json",
+        "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
+        "index.qmd",
+        "docs/book_outline.md",
+        "appendices/B_glossary.qmd",
+        "appendices/C_claim_evidence_matrix.qmd",
+        "appendices/G_corben_source_corpus.qmd",
+        "appendices/H_external_sources.qmd",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+        "chapters/capability-thresholds-and-deployment-commitments.qmd",
+        "chapters/integrated-reference-architecture.qmd",
+        "scripts/register_p7_2_t1_and_p4_c3_tranche.py"
+      ]
+    },
+    {
+      "script": "validate_p4_c3_semantic_proof_cluster.py",
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "A frozen four-module authority/effect/replacement/corrigibility/intent-execution cluster with eleven public targets and sixty-five theorem declarations.",
+      "output_contract": "Require exact propositions, modeled state, assumptions, countermodels, consumers, mutation evidence, and ceilings; preserve three adequate dispositions and one countermodel-only reclassification; execute six consumers and reject ten mutations.",
+      "output_assertions": [
+        "4 modules",
+        "11 public targets",
+        "65 theorem declarations",
+        "3 adequate and 1 reclassified",
+        "6 consumers pass",
+        "10 mutations reject",
+        "support effect none"
+      ],
+      "claim_scope": "Bounded finite authority-to-effect, replacement, corrigibility-countermodel, and intent-execution semantics only.",
+      "negative_controls": "validator_owned_ten_cluster_denominator_disposition_semantic_status_and_support_mutations",
+      "negative_control_cases": [
+        "module deletion",
+        "corrigibility inflation",
+        "semantic-field erasure",
+        "target inflation",
+        "theorem inflation",
+        "status reopening",
+        "support laundering"
+      ],
+      "prohibited_inference": "The audit proves no identity or receipt authentic, effect inventory complete, rollback effective, monitor valid, deployment safe, support transition, release, or publication.",
+      "contract_precision": "exact_module_target_theorem_and_semantic_disposition",
+      "semantic_review_state": "checked_terminal_bounded_authority_effect_replacement_and_corrigibility_semantics",
+      "id": "validate_p4_c3_semantic_proof_cluster.py:405",
+      "order": 405,
+      "args": [],
+      "input_artifacts": [
+        "scripts/validate_p4_c3_semantic_proof_cluster.py",
+        "proofs/semantic_cluster_audits/authority_effect_rollback_and_corrigibility.json",
+        "docs/p4_c3_authority_effect_rollback_and_corrigibility_semantic_audit.md",
+        "lean/AsiStackProofs/AuthorityEffectRefinement.lean",
+        "lean/AsiStackProofs/Replacement.lean",
+        "lean/AsiStackProofs/Corrigibility.lean",
+        "lean/AsiStackProofs/IntentExecutionRefinement.lean",
+        "chapters/system-boundaries-and-authority.qmd",
+        "chapters/capability-replacement-and-rollback.qmd",
+        "chapters/constitutional-alignment-substrate.qmd",
+        "chapters/intent-to-execution-contracts.qmd",
+        "scripts/register_p7_2_t1_and_p4_c3_tranche.py"
+      ]
     }
   ],
   "summary": {
-    "required_artifact_count": 2006,
-    "unit_count": 402
+    "required_artifact_count": 2026,
+    "unit_count": 405
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

@@ -96,3 +96,4 @@ import AsiStackProofs.VerificationBandwidth
 import AsiStackProofs.VerificationBandwidthRefinement
 import AsiStackProofs.VirtualContextABI
 import AsiStackProofs.VirtualContextRefinement
+import AsiStackProofs.WhiteBoxEvidence

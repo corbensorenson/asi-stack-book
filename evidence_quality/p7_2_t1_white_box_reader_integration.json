@@ -1,0 +1,77 @@
+{
+  "schema_version": "asi_stack.p7_2_structural_reader_integration.v1",
+  "packet_id": "P7.2-T1-white-box-evidence-interpretability-and-activation-governance",
+  "state": "terminal_integrated_argument_chapter",
+  "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
+  "chapter_path": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
+  "chapter_sha256": "7eebd6bc6772be8a99ba8b2fac767b3029fcfbb4be84615d90aa0923881f247f",
+  "reader_role": "load-bearing-reference",
+  "terminal_decision": "integrate_at_argument_support",
+  "exclusive_owner": "maximum admissible inference and non-authorizing governance of model-internal observations and interventions",
+  "source_crosswalk": {
+    "assigned_source_count": 8,
+    "primary_external_source_ids": [
+      "ext_transformer_circuits_2021",
+      "ext_monosemanticity_2023",
+      "ext_scaling_sparse_autoencoders_2024",
+      "ext_circuit_tracing_2025"
+    ],
+    "supporting_corben_source_ids": [
+      "deterministic_capability_compilation",
+      "kernel_english_residual_compiler",
+      "qcsa_whitepaper",
+      "platonic_world_model"
+    ],
+    "all_inventory_targets_reconciled": true,
+    "external_results_inherited_as_local_support": false
+  },
+  "formalization": {
+    "module": "AsiStackProofs.WhiteBoxEvidence",
+    "module_path": "lean/AsiStackProofs/WhiteBoxEvidence.lean",
+    "module_sha256": "78b2b1da9b8000de365e2d5506e6c29867b3e4ca83e03ae491ce18d21d521a4f",
+    "public_target_count": 2,
+    "implemented_target_count": 2,
+    "theorem_declaration_count": 8,
+    "maximum_inference": "Finite packet admission, bounded-causal field requirements, material-change expiry, and non-authority routing only; no scientific interpretation, causal faithfulness, completeness, intervention safety, evaluator truth, or empirical result."
+  },
+  "record_contract": {
+    "schema_path": "schemas/white_box_evidence_packet.schema.json",
+    "schema_sha256": "3c9afe3af4b47027311806d9737957980f2c66f166046ea2834706880ccefbff",
+    "fixture_path": "tests/fixtures/protocol_records/white_box_evidence_packet.valid.json",
+    "fixture_sha256": "f7d9b0af6e78d8d86da1b5725cfc72edc7992db82cc473b5339f9af69618f4a8",
+    "fixture_disposition": "expired",
+    "semantic_mutations_rejected": 12,
+    "record_shape_only": true
+  },
+  "claim_bearing_empirical_lane": {
+    "protocol_path": "experiments/white_box_argument_exit/preregistration.json",
+    "protocol_sha256": "6e0ec56db3193588b291cbe84769d7d07476945001d915366885d0354bdf664d",
+    "state": "protocol_ready_resource_isolated_not_executed",
+    "method_family_count": 2,
+    "competence_gate_count": 7,
+    "rescue_step_count": 6,
+    "joint_outcome_count": 9,
+    "maximum_negative_level": "N3_exact",
+    "protected_outcomes_opened": false,
+    "p2_displacement_allowed": false,
+    "empirical_result": "none"
+  },
+  "reader_integration": {
+    "opening_map_updated": true,
+    "role_classification_preserved": true,
+    "exclusive_owner_section_present": true,
+    "previous_handoff_updated": true,
+    "next_handoff_updated": true,
+    "overview_figure_updated": true,
+    "glossary_terms_added": 2,
+    "claim_matrix_reconciled": true,
+    "corben_source_appendix_reconciled": true,
+    "external_source_appendix_reconciled": true,
+    "final_synthesis_updated": true,
+    "reader_removal_reason": "none"
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "publication_effect": "none",
+  "residual_owner": "P7.2-T1 empirical argument-exit campaign remains owned by the White-Box chapter and may open only after its resource, identity, evaluator, power, and sealed-denominator gates pass."
+}

@@ -189,7 +189,7 @@ def main() -> None:
         "P7.1a W2 narrative audit passed: 59 chapters classified "
         "(11 thesis, 30 reference, 7 implementation, 11 speculative/deferred); "
         "8 opening formulas -> 0; three central chapters deepened by "
-        "710/728/664 tokens; 9 mutations rejected; support effect none."
+        "711/728/664 tokens; 9 mutations rejected; support effect none."
     )
 
 

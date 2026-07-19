@@ -3,7 +3,7 @@ title: "White-Box Evidence, Interpretability, and Activation Governance"
 chapter_id: "white-box-evidence-interpretability-and-activation-governance"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
-draft_maturity: "v0.3 manuscript draft"
+draft_maturity: "v0.4 integrated reader chapter"
 last_updated: "2026-07-19"
 primary_sources:
   - "deterministic_capability_compilation"
@@ -17,7 +17,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "The chapter has a complete conceptual packet and source-noted comparators, but no white-box method has been run in this repository."
+  - "The chapter has an implemented packet contract, finite non-authority model, and protocol-ready resource-isolated empirical lane, but no white-box method has been run in this repository."
   - "No feature, circuit, causal intervention, activation policy, cross-checkpoint stability, or safety-relevant prediction has been locally reproduced."
   - "Argument exit requires a competent multi-method campaign with behavioral baselines, positive controls, causal interventions, held-out prediction, coverage and side-effect accounting, independent evaluation, and a claim-specific transition."
 ---
@@ -29,13 +29,13 @@ open_evidence_gaps:
 | Chapter ID | `white-box-evidence-interpretability-and-activation-governance` |
 | Part | Part IV — Evidence, Implementation, and the Living Book |
 | Status | conceptual |
-| Manuscript maturity | v0.3 manuscript draft |
+| Manuscript maturity | v0.4 integrated reader chapter |
 | Last updated | 2026-07-19 |
 | Primary source records | `deterministic_capability_compilation`, `kernel_english_residual_compiler`, `qcsa_whitepaper`, `platonic_world_model`, `ext_transformer_circuits_2021`, `ext_monosemanticity_2023`, `ext_scaling_sparse_autoencoders_2024`, `ext_circuit_tracing_2025` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | All assigned records have inventory entries and source notes; external results remain source-reported. |
-| Test state | No chapter-specific interpretability experiment, intervention benchmark, or support transition has been executed. |
+| Test state | The packet schema, record-shape fixture, independent semantic validator, twelve negative mutations, and two public Lean targets are implemented. The claim-bearing campaign is protocol-ready and resource-isolated, not executed; no model-internal outcome or support transition exists. |
 
 ## Drafting guardrail
 
@@ -188,6 +188,26 @@ qualification, release, monitoring, and rollback decisions.
 | Security Kernel | Information-flow policy, isolation, secrets, and hostile access | Whether an authorized internal observation is epistemically admissible |
 | Runtime Adapters | Permission and receipts for tool or external effects | Permission and receipts for activation observation or intervention |
 | Readiness and Safety Cases | Deployment decision and structured assurance | White-box evidence packet supplied to those decisions |
+
+## Why this boundary earns a chapter
+
+Interpretability is not merely another evaluation technique. It introduces a
+new protected object—the activation or internal-state derivative—and a new
+inference ladder from capture through extraction, labeling, prediction,
+intervention, coverage, and policy. Evidence States owns whether a claim moves;
+Benchmark Ratchets owns whether a behavioral instrument is valid; Security and
+Weight Custody own access. None of them owns the question this chapter must
+answer: *what is the maximum decision-relevant inference that may survive from
+one exact internal observation or intervention?*
+
+That ownership remains useful even when white-box methods lose to behavioral
+baselines. The packet can end `unstable`, `incomplete`, `contradicted`, or
+`rejected`, leaving a reusable explanation of why the attractive internal story
+did not earn governance weight. Removing the chapter would scatter those
+obligations among evidence, security, benchmarks, and release policy, making it
+easier for a feature label or steering result to cross boundaries unnoticed.
+The terminal reader decision is therefore **integrate at argument support**,
+with empirical promotion kept in a separate, prospectively frozen lane.
 
 ## Mechanism
 
@@ -405,7 +425,7 @@ The minimum implementation is intentionally narrower than “interpret the
 model.” Its output is a reviewable evidence packet and a decision about whether
 white-box work added value in one exact envelope.
 
-## Formalization disposition
+## Formalization hooks
 
 A finite formal target is useful for packet routing. A model can enforce that a
 policy candidate cannot become release-eligible when checkpoint identity is
@@ -421,19 +441,34 @@ coverage is complete, or that a steered model is safe. Formalization is omitted
 for those empirical and semantic claims because pretending otherwise would be
 proof theater.
 
-The planned target
+The implemented target
 `lean:white_box.evidence_never_grants_authority` owns the finite
 non-escalation route: a packet may preserve, restrict, escalate, or reject, but
-cannot widen execution or release authority. The companion target
+cannot grant execution or release authority. The companion target
 `lean:white_box.invalid_packet_rejected` owns rejection of stale lineage,
 missing method assumptions, absent negative controls, and unsupported causal
-states. Both targets remain planned, and even checked implementations would
-establish consequences only inside their encoded packet model.
+states. `AsiStackProofs.WhiteBoxEvidence` also checks that an admitted bounded
+causal packet records a behavioral cross-check, an intervention, and a separate
+evaluator, and that material change expires an otherwise admissible packet.
+These are record and workflow properties: eight checked theorem declarations
+cannot establish scientific interpretation, completeness, intervention safety,
+or evaluator truth.
 
 ## Competent argument-exit campaign
 
 The campaign must give white-box methods a fair chance without allowing them to
 grade themselves.
+
+The exact preregistration is
+`experiments/white_box_argument_exit/preregistration.json`. It freezes two
+independently owned method families, a tuned behavior-only baseline, split
+custody, seven competence gates, a six-step rescue ladder, nine joint outcomes,
+an N3 exact-negative ceiling, and a 62 GiB resource-isolation floor. It is
+**protocol-ready and resource-isolated, not executed**. It cannot consume P2
+storage, tasks, labels, outcomes, or retry decisions. No model-internal outcome
+was opened,
+and a failed competence gate ends as instrument- or
+implementation-inadequate rather than as evidence against interpretability.
 
 ### Frozen question
 
@@ -523,10 +558,10 @@ scope claimed and an accepted evidence transition records that movement.
 
 | Test | Purpose | Status |
 |---|---|---|
-| Internal-evidence packet schema and mutation suite | Accept complete model/method/intervention packets and reject missing identity, causal-status laundering, hidden residuals, stale packets, and authority widening. | planned; not run |
-| Interpretation stability and positive-control suite | Challenge feature and circuit identities across seeds, prompts, checkpoints, extraction methods, counterexamples, and independently known mechanisms. | planned; not run |
-| Causal intervention and collateral benchmark | Compare observation, probes, ablation, patching, replacement, and steering against sham/off-target controls and protected-capability outcomes. | planned; not run |
-| Behavioral-baseline and governance-value comparison | Test whether internal evidence improves held-out prediction or selective control beyond tuned behavioral monitors after latency, compute, analyst effort, privacy, and maintenance costs. | planned; not run |
+| Internal-evidence packet schema and mutation suite | Accept complete model/method/intervention packets and reject missing identity, causal-status laundering, hidden residuals, stale packets, and authority widening. | implemented; record-shape only; `python3 scripts/validate_white_box_evidence_contract.py` rejects 12 semantic mutations |
+| Interpretation stability and positive-control suite | Challenge feature and circuit identities across seeds, prompts, checkpoints, extraction methods, counterexamples, and independently known mechanisms. | protocol-ready; not executed; protected outcomes closed |
+| Causal intervention and collateral benchmark | Compare observation, probes, ablation, patching, replacement, and steering against sham/off-target controls and protected-capability outcomes. | protocol-ready; not executed; outcomes remain closed until competence and resource gates pass |
+| Behavioral-baseline and governance-value comparison | Test whether internal evidence improves held-out prediction or selective control beyond tuned behavioral monitors after latency, compute, analyst effort, privacy, and maintenance costs. | protocol-ready; not executed; no result or support effect |
 
 ## Source crosswalk
 
@@ -543,8 +578,11 @@ scope claimed and an accepted evidence transition records that movement.
 
 ## Current evidence and non-claims
 
-The repository currently contains a manifest packet, this chapter, source
-inventory records and notes, and planned test/proof targets. It contains no
+The repository currently contains a manifest packet, this integrated reader
+chapter, eight source mappings, `schemas/white_box_evidence_packet.schema.json`,
+one explicitly expired record-shape fixture, an independently implemented
+semantic validator, a checked finite Lean routing model, and a prospectively
+frozen argument-exit protocol. It contains no
 locally executed sparse-autoencoder training, circuit tracing, activation
 capture, label study, causal intervention, steering trial, model monitor,
 cross-checkpoint analysis, independent reproduction, or chapter-specific
@@ -593,4 +631,6 @@ inference, uncertainty, expiry, side effects, and residuals and decides whether
 a scoped capability assessment crosses a prospectively declared commitment.
 Adversarial Evaluation, Safety Cases, and Readiness can challenge or consume
 the packet later, but no downstream owner inherits causal completeness or
-release authority from internal visibility alone.
+release authority from internal visibility alone. The implemented packet route
+can preserve, restrict, escalate, reject, or expire evidence, but it cannot
+grant execution or release authority.

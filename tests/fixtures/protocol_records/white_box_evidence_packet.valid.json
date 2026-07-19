@@ -1,0 +1,87 @@
+{
+  "schema_version": "asi_stack.white_box_evidence_packet.v1",
+  "packet_id": "white-box-record-shape-fixture-001",
+  "claim_id": "white-box-evidence-interpretability-and-activation-governance.core",
+  "origin_class": "repository_fixture",
+  "disposition": "expired",
+  "identity": {
+    "model_id": "fixture-model-not-executed",
+    "checkpoint_digest": "sha256:fixture-checkpoint",
+    "tokenizer_digest": "sha256:fixture-tokenizer",
+    "substrate": "fixture-only",
+    "runtime_digest": "sha256:fixture-runtime",
+    "capture_site": "fixture.layer.0.residual",
+    "population_id": "fixture-population-no-model-data",
+    "captured_at": "2026-07-19T00:00:00Z"
+  },
+  "method": {
+    "family": "record-shape-fixture",
+    "implementation_digest": "sha256:fixture-method",
+    "configuration_digest": "sha256:fixture-configuration",
+    "assumptions": ["The fixture exercises record routing only."],
+    "random_seeds": [0],
+    "training_split_ref": "fixture://not-executed/train",
+    "evaluation_split_ref": "fixture://not-executed/eval"
+  },
+  "interpretation": {
+    "object_ids": ["fixture-object-001"],
+    "label_status": "candidate",
+    "label_authors": ["fixture-generator"],
+    "positive_examples": ["fixture://positive-example"],
+    "hard_counterexamples": ["fixture://hard-counterexample"],
+    "alternative_hypotheses": ["The record-shape fixture has no model-semantic hypothesis."],
+    "blinded_before_outcome": true
+  },
+  "causal_evidence": {
+    "status": "observational",
+    "behavioral_cross_check": false,
+    "negative_controls": ["fixture://shuffled-label-control"],
+    "positive_controls": ["fixture://known-record-route"],
+    "interventions": [],
+    "uncertainty_ref": "fixture://uncertainty-not-measured",
+    "side_effect_denominator_ref": "fixture://no-model-effects"
+  },
+  "stability": {
+    "held_out_prompts": false,
+    "seed_variation": false,
+    "transformation_tests": false,
+    "checkpoint_tests": false,
+    "method_agreement_recorded": true,
+    "result_ref": "fixture://record-shape-only"
+  },
+  "coverage_and_residual": {
+    "reconstruction_ref": "fixture://not-measured",
+    "dead_or_missing_objects_ref": "fixture://not-measured",
+    "split_merge_ref": "fixture://not-measured",
+    "unexplained_residual_ref": "fixture://all-model-semantics-unexplained",
+    "method_disagreement_ref": "fixture://not-measured",
+    "complete_mechanism_claimed": false
+  },
+  "independence": {
+    "producer_id": "fixture-producer",
+    "evaluator_id": "fixture-schema-consumer",
+    "separate_implementation": true,
+    "shared_dependencies": ["schema definition"],
+    "independence_ceiling": "separate_local_implementation"
+  },
+  "governance": {
+    "consumer_id": "fixture-governance-gate",
+    "policy_effect": "reject",
+    "authority_delta": "none",
+    "release_authority": false,
+    "side_effects_resolved": false,
+    "rollback_ref": "fixture://no-effect-to-rollback",
+    "residual_owner": "white-box-chapter-research-backlog"
+  },
+  "expiry": {
+    "expires_at": "2026-07-19T00:00:00Z",
+    "material_change_classes": ["any real model, method, data, or intervention substitution"],
+    "material_change_observed": true,
+    "successor_packet_ref": ""
+  },
+  "support_state_effect": "none",
+  "non_claims": [
+    "No model or activation was inspected.",
+    "No feature, circuit, causal, steering, safety, release, support, transfer, AGI, or ASI result exists."
+  ]
+}
