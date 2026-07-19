@@ -9,6 +9,8 @@ Issues and pull requests may be closed without incorporation during this phase. 
 - Treat `book_structure.json` as the source of truth for parts, chapters, source assignments, and appendices.
 - Do not hand-edit `_quarto.yml`; run `python3 scripts/sync_scaffold.py`.
 - Treat `docs/book_outline.md` as the source of truth for full-book drafting and Lean proof scope.
+- Treat `docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md` as the sole active execution roadmap and `docs/repository_map.md` as the repository authority/storage map; historical roadmaps remain lineage, not competing work queues.
+- Keep book work on `main`. Put new artifacts under their governed directory rather than the repository root, and do not track `build/`, `_site/`, `.quarto/`, private intake, or local caches.
 - Do not publish private raw source exports.
 - Do not fabricate source content, citations, proof results, benchmark results, or test results.
 - Keep speculative claims explicitly labeled.
@@ -22,6 +24,7 @@ Run:
 python3 scripts/sync_scaffold.py
 python3 scripts/sync_proof_manifest.py
 python3 scripts/validate_publication.py
+python3 scripts/validate_post_v2_3_maintenance_transfer_and_publication_roadmap.py
 python3 scripts/validate_book.py
 python3 scripts/validate_schemas.py
 quarto render --to html

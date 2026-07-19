@@ -1,5 +1,33 @@
 # Changelog
 
+## 2026-07-19 — Repository authority and execution-readiness hardening
+
+- Reconciled the repository map around the current authority order: manifest,
+  outline, sole active post-v2.3 roadmap and machine record, source inventory,
+  evidence-transition/claim-decision records, then changelog. Historical
+  roadmaps remain immutable lineage rather than competing active queues.
+- Defined canonical source, governed evidence, generated output,
+  private/local intake, public history, and local history storage classes.
+  Clarified the distinct `archive/` and `_archive/` roles, root-file policy,
+  ignored build/cache handling, and evidence-preserving cleanup boundary.
+- Strengthened publication validation with a tracked-root allowlist, forbidden
+  generated/private path checks, a 40 MiB explicit large-evidence allowlist,
+  and a 60 MiB hard ceiling for new tracked files. The two current files above
+  40 MiB are named evidence artifacts; no tracked file exceeds the ceiling.
+- Added a machine-validated execution-ready roadmap board. P2 remains the
+  scientific headline but is explicitly resource-blocked; blocked work does
+  not consume the two-item WIP limit. The immediate unblocked packets are the
+  first case-independent editorial-compression unit and the first semantic
+  proof-cluster audit. First-tranche chapter completion and all thirteen
+  second-tranche adjudications now have dependency order and a one-candidate
+  concurrency limit.
+- Bound every work packet to scope/owner/non-claim freeze, reviewable artifacts
+  and receipts, targeted negative controls, manifest/outline/source/claim/
+  reader reconciliation, registered validation plus render/browser checks,
+  and clean pushed `main`. This planning and repository-hygiene update changes
+  no claim support, empirical result, proof result, release, license,
+  deployment, publication authority, or public post.
+
 ## 2026-07-19 — Two-tranche structural-completeness audit and source renewal
 
 - Adjudicated the chapter-merge review against the 55-chapter manifest and

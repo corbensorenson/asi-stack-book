@@ -31,6 +31,13 @@ The three projections share one source of truth but have different density and r
 
 The completed post-v2.1 roadmap remains historical authority at [docs/post_v2_1_residual_and_transfer_roadmap.md](docs/post_v2_1_residual_and_transfer_roadmap.md); it is not an active successor.
 
+The active roadmap now opens with an execution-ready work board: two bounded
+WIP slots, exact unblocked book/formal packets, the named P2 resource blocker,
+ordered first-tranche completion, one-at-a-time second-tranche adjudication,
+and a shared acceptance sequence ending in validated, clean, pushed `main`.
+Repository authority, archive distinctions, generated/private boundaries, and
+tracked-size policy are summarized in [docs/repository_map.md](docs/repository_map.md).
+
 ## 60-Second Trust Surface
 
 <!-- canonical-status:generated-begin -->

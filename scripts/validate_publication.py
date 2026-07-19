@@ -16,6 +16,9 @@ REQUIRED_FILES = [
     "LICENSE.md",
     "CITATION.cff",
     "docs/repository_map.md",
+    "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
+    "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
+    "schemas/post_v2_3_maintenance_transfer_and_publication_status.schema.json",
     "docs/publication_readiness.md",
     "docs/release_reproducibility.md",
     "docs/public_site_accessibility_review.md",
@@ -137,6 +140,8 @@ REQUIRED_README_STRINGS = [
     "scripts/validate_outline_consistency.py",
     "scripts/validate_implementation_horizons.py",
     "scripts/validate_publication.py",
+    "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
+    "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
     "scripts/validate_release_reproducibility.py",
     "scripts/validate_public_site_accessibility.py",
     "scripts/validate_v1_release_gate_audit.py",
@@ -161,6 +166,7 @@ FORBIDDEN_TRACKED_PREFIXES = [
     "_site/",
     ".quarto/",
     "site_libs/",
+    "build/",
     "sources/raw/google_docs/",
     "lean/.lake/",
 ]
@@ -169,6 +175,44 @@ FORBIDDEN_TRACKED_EXACT = {
     ".DS_Store",
     "index.html",
 }
+
+ROOT_TRACKED_ALLOWLIST = {
+    ".gitattributes",
+    ".gitignore",
+    "CITATION.cff",
+    "CONTRIBUTING.md",
+    "LICENSE.md",
+    "NOTICE.md",
+    "README.md",
+    "_quarto.yml",
+    "book_structure.json",
+    "index.qmd",
+    "preface.qmd",
+}
+
+PRIVATE_BOUNDARY_ALLOWLISTS = {
+    "sources/raw/": {"sources/raw/README.md"},
+    "sources/inbox/": {"sources/inbox/README.md"},
+    "_archive/": {"_archive/README.md"},
+}
+
+LARGE_TRACKED_FILE_THRESHOLD_BYTES = 40 * 1024 * 1024
+MAX_TRACKED_FILE_BYTES = 60 * 1024 * 1024
+LARGE_TRACKED_FILE_ALLOWLIST = {
+    "evidence_quality/claim_atom_registry.json",
+    "experiments/p4_situated_world_model/raw/campaign_run.json",
+}
+
+REPOSITORY_MAP_REQUIRED_STRINGS = [
+    "## Authority order",
+    "## Storage and lifecycle classes",
+    "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
+    "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
+    "Earlier roadmaps are immutable execution history",
+    "Tracked files above 40 MiB",
+    "60 MiB is the project hard ceiling",
+    "Exactly one current record may correspond to the active-roadmap marker",
+]
 
 PUBLIC_SURFACE_FILES = [
     "README.md",
@@ -285,6 +329,9 @@ def main() -> None:
     publication = (ROOT / "docs/publication_readiness.md").read_text(
         encoding="utf-8", errors="ignore"
     )
+    repository_map = (ROOT / "docs/repository_map.md").read_text(
+        encoding="utf-8", errors="ignore"
+    )
     chapter_count = manifest_chapter_count()
     source_count = source_record_count()
     for needle in REQUIRED_README_STRINGS:
@@ -300,6 +347,10 @@ def main() -> None:
         for stale in FORBIDDEN_PUBLIC_STALE_STRINGS:
             if stale in text:
                 errors.append(f"{path} contains stale public trust-surface text: {stale}")
+
+    for needle in REPOSITORY_MAP_REQUIRED_STRINGS:
+        if needle not in repository_map:
+            errors.append(f"docs/repository_map.md is missing repository authority text: {needle}")
 
     public_requirements = {
         "index.qmd": [
@@ -331,11 +382,30 @@ def main() -> None:
             if needle not in text:
                 errors.append(f"{path} is missing current public trust-surface text: {needle}")
 
-    for path in git_ls_files():
+    tracked_paths = git_ls_files()
+    for path in tracked_paths:
         if path in FORBIDDEN_TRACKED_EXACT or path.endswith("/.DS_Store"):
             errors.append(f"Forbidden tracked local artifact: {path}")
         if any(path.startswith(prefix) for prefix in FORBIDDEN_TRACKED_PREFIXES):
             errors.append(f"Forbidden tracked generated/private path: {path}")
+        if "/" not in path and path not in ROOT_TRACKED_ALLOWLIST:
+            errors.append(f"Unexpected tracked repository-root artifact: {path}")
+        for prefix, allowlist in PRIVATE_BOUNDARY_ALLOWLISTS.items():
+            if path.startswith(prefix) and path not in allowlist:
+                errors.append(f"Forbidden tracked private/local-history path: {path}")
+        size = (ROOT / path).stat().st_size
+        if size > MAX_TRACKED_FILE_BYTES:
+            errors.append(
+                f"Tracked file exceeds the 60 MiB repository ceiling: {path} ({size} bytes)"
+            )
+        elif size > LARGE_TRACKED_FILE_THRESHOLD_BYTES and path not in LARGE_TRACKED_FILE_ALLOWLIST:
+            errors.append(
+                f"Tracked file above 40 MiB lacks an explicit evidence allowlist entry: {path} ({size} bytes)"
+            )
+
+    missing_large_allowlist = sorted(LARGE_TRACKED_FILE_ALLOWLIST - set(tracked_paths))
+    if missing_large_allowlist:
+        errors.append(f"Large-file allowlist contains missing paths: {missing_large_allowlist}")
 
     if errors:
         fail(errors)

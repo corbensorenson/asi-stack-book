@@ -2,6 +2,49 @@
 
 This repository is organized around the living book and its validation loop.
 
+## Authority order
+
+When two files appear to describe the same state, use this order rather than
+guessing from filenames or dates:
+
+1. `book_structure.json` owns parts, chapter order, IDs, source assignments,
+   chapter-core claims, implementation horizons, and appendix order.
+2. `docs/book_outline.md` owns chapter jobs, source-loading queues, and formal
+   target planning.
+3. `docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md` is the sole
+   active roadmap; its machine authority is
+   `roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`
+   and its schema/validator. Earlier roadmaps are immutable execution history,
+   not competing current plans.
+4. `sources/source_inventory.json` owns public-safe source metadata; source
+   notes record reviewed synthesis but do not independently promote claims.
+5. Accepted evidence transitions and claim decisions own support movement;
+   chapter prose, source counts, roadmap admission, and proof counts do not.
+6. `appendices/F_changelog.qmd` records meaningful public project changes but
+   does not supersede the authorities above.
+
+## Storage and lifecycle classes
+
+| Class | Paths | Rule |
+|---|---|---|
+| Canonical source | Root entrypoints, `chapters/`, `appendices/`, `docs/`, `sources/source_notes/`, `schemas/`, `scripts/`, `lean/` source | Tracked, reviewed, and changed through the owning workflow. |
+| Governed evidence | `evidence_quality/`, `evidence_transitions/`, `claim_decisions/`, tracked `experiments/` results/raw evidence, `proofs/`, `release_records/` | Tracked and lineage-preserving; do not rewrite or compress merely for tidiness when exact bytes are evidence. |
+| Generated local output | `build/`, `_site/`, `.quarto/`, `lean/.lake/`, `site_libs/` | Ignored and non-authoritative. It may be regenerated; preserve it locally only while an unfinished inspection needs its exact bytes. |
+| Private/local intake | `sources/inbox/`, `sources/raw/`, `sources/cache/`, `_archive/local_context/` | Ignored except public policy/readiness manifests. Raw private material never becomes repository evidence by proximity. |
+| Public history | `archive/` | Tracked retired chapters and reader sources retained for URL, provenance, or consolidation history. |
+| Local history | `_archive/` | Tracked policy README plus ignored private context. Do not move public history here or publish local context from it. |
+
+The tracked repository root is intentionally limited to publication
+entrypoints, project policy, citation/licensing files, and generated Quarto
+configuration. New research artifacts belong under their governed directory,
+not in the root. Tracked files above 40 MiB require an explicit validator
+allowlist and evidence rationale; 60 MiB is the project hard ceiling for new
+tracked files. This is a repository-health bound, not permission to rewrite
+historical Git objects or discard evidence. Local generated trees may be
+cleaned only after confirming that no unfinished review depends on their exact
+bytes; their deletion never counts as satisfying P2's Docker-scoped resource
+protocol.
+
 | Path | Role | Public status |
 |---|---|---|
 | `book_structure.json` | Source of truth for parts, chapters, stable IDs, source assignments, implementation horizons, support states, proof targets, and appendices. | tracked; schema-validated |
@@ -13,9 +56,11 @@ This repository is organized around the living book and its validation loop.
 | `docs/book_outline.md` | Full-book drafting outline, source loading queues, and Lean proof target source of truth. | tracked |
 | `docs/v1_0_candidate_status.md` | Current v1.0 candidate snapshot, remaining evidence gaps, and release gate. | tracked |
 | `docs/v1_0_focus_audit.md` | Detailed current-state audit and prioritized focus plan for evidence-release, reader-release, proof adequacy, testing, source, and site work. | tracked |
-| `docs/v1_0_roadmap.md` | Roadmap and recommended next long-running goal for v1.0 completion work, reconciling current audit findings with external review input. | tracked |
-| `docs/asi_stack_completion_roadmap.md` | Canonical goal, workstream order, stop rules, author decisions, and definition of done for finishing the book; later roadmaps are subordinate technical backlogs. | tracked |
-| `docs/v1_x_beyond_sota_roadmap.md` | Detailed post-v1.0.0 technical backlog for evidence depth, safety-critical Lean upgrades, public-safe Project Theseus/Circle replay lanes, per-chapter evidence targets, curated reader prose, and artifact quality; subordinate to the completion roadmap. | tracked |
+| `docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md` | Sole active evidence-competence, transfer, structural-completeness, reader, and publication roadmap, including the execution-ready work board. | tracked; active authority |
+| `roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json` | Machine-readable active-roadmap state, execution order, WIP limits, blockers, milestones, and non-claims. | tracked; schema- and mutation-validated |
+| `docs/v1_0_roadmap.md` | Historical v1.0 completion roadmap retained for lineage. | tracked; inactive history |
+| `docs/asi_stack_completion_roadmap.md` | Historical completion-program authority retained for lineage; superseded for current execution by the sole active post-v2.3 roadmap. | tracked; inactive history |
+| `docs/v1_x_beyond_sota_roadmap.md` | Historical/subordinate technical backlog retained for evidence and planning lineage. | tracked; inactive history |
 | `docs/external_ai_review_remediation_program.md` | Evidence-checked disposition and closure program for the user-supplied AI-assisted review; review input only, not external evidence or support-state movement. | tracked |
 | `docs/CHAPTER_REVIEWS.md` | External reviewer chapter-by-chapter guidance for all 44 chapters; planning input only, not source evidence or support-state promotion. | tracked |
 | `docs/a_plus_quality_scorecard.md` | Planning scorecard translating current project grade gaps into A+ conditions for cold-read legibility, evidence depth, proof rigor, external grounding, reader quality, and defended contribution tracks. | tracked |
@@ -227,6 +272,9 @@ This repository is organized around the living book and its validation loop.
 | `experiments/` | Synthetic experiment and benchmark harness workspace, including claim-ledger revision, proof-carrying claim, tribunal review, value conflict, constitutional alignment, governance rights, agency rights, support-state, authority, security-kernel, stable-capability-field, capability-replacement, self-improvement-boundary, plan-execution, runtime-adapter, artifact-graph replay, procedural-memory loop, routing decision lease, cyclic-memory contract, simulation-transfer boundary, context-admission, readiness/residual, benchmark anti-Goodhart, generation-mode baseline, resource-budget ledger, capacity-smoothing, costed-route/resource-budget slice fixtures and result records, Circle external receipt public-safe result records, Circle public consumer-gate fixtures and result record, Circle cyclic-memory receipt slice result records, RankFold artifact-import result records, Project Theseus static architecture-gate and generation-mode import fixtures and result records, Project Theseus support replay probe result records, Project Theseus report-bundle audit fixtures and result records, and the Phase 5 harness registry. | tracked |
 | `scripts/` | Manifest sync, source cache, proof manifest, and validation tools. | tracked |
 | `build/` | Generated reader/release edition source, reader/audio manifests, and output trees. | ignored |
+| `archive/` | Public historical material retained for chapter consolidation, URL continuity, and reader lineage. | tracked |
+| `_archive/` | Local-history policy boundary; private context below `_archive/local_context/` remains ignored. | mixed; policy tracked, private context ignored |
+| `roadmap_records/` | Machine-readable active and historical roadmap states. Exactly one current record may correspond to the active-roadmap marker. | tracked |
 | `skills/asi-stack-book/` | Project-specific Codex skill for maintaining and drafting the book. | tracked |
 | `.github/` | GitHub Pages workflow, issue templates, and PR template. | tracked |
 | `_site/`, `.quarto/`, `site_libs/` | Render/build outputs and Quarto cache. | ignored |

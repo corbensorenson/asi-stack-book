@@ -70,6 +70,52 @@ The roadmap optimizes for five outcomes, in order:
 4. a shorter, clearer reader spine organized around that case; and
 5. independent challenge and transfer before any broad architecture claim.
 
+## Execution-ready work board
+
+The scientific headline remains P2, but P2 is presently blocked by its frozen
+host-free-space floor. A blocked headline cannot make the rest of the roadmap
+idle. This board is the canonical short-horizon execution order until a
+checkpoint changes one of its entry conditions.
+
+**Work-in-progress limit:** at most two work packets may be active: one
+book/chapter/reader packet and one empirical/formal packet. A blocked packet
+does not consume a slot. Only one second-tranche chapter candidate may be under
+active adjudication at a time. Protected P2, Q1, or Q2 task content, labels,
+outcomes, or evaluator judgments remain closed while other work proceeds.
+
+| Slot | Next packet | Entry condition | Terminal output |
+|---|---|---|---|
+| Continuous custody | P0 repository and public-truth reconciliation | Always open | Clean `main`, exact generated/source boundaries, current roadmap pointers, and no stale claim or release identity. |
+| Book slot — now | `P7.1a-W1-template-centralization-and-boundary-coverage` | Ready; independent of T4 | Freeze the repeated-block denominator; centralize the two widest methodology templates; repair retired-chapter opening residue; add the mandatory epistemic-security and gradual-disempowerment sections; preserve every unique claim, caveat, equation, source, protocol, proof boundary, and non-claim. |
+| Formal slot — now | `P4-C1-evidence-claim-and-proof-custody-semantic-audit` | Ready; uses only the frozen first proof cluster | Give each module an adequate/merge/reclassify/remove disposition with its model, countermodel, consumer, mutation, and maximum inference. Theorem count is not an exit condition. |
+| Empirical headline — blocked | P2 pool-wide sequential materialization | Exact host free space meets the frozen 50 GiB floor and every setup action remains inside the approved Docker-scoped protocol | Thirty sealed candidate recipes and receipts, then rank 5 setup retry eligibility without protected-content leakage. No deletion of non-Docker user data is authorized. |
+| First structural tranche — next book packet | Complete `white-box-evidence-interpretability-and-activation-governance`, then World Models, Human Factors, and Operations in that order | The current book packet closes and the chapter's source-role, formalization, and evidence protocol inputs are frozen | One terminally integrated reader chapter at a time, or removal with material returned to named owners. |
+| Second structural tranche — after one first-tranche chapter closes | Adjudicate one candidate at a time in the dependency batches below | No active second-tranche candidate; four source roles and owner boundary are ready | Admit, narrow, return to existing owners, or reject with a durable decision packet. Research admission alone is never success. |
+
+Second-tranche adjudication uses four dependency batches, preserving the order
+within each batch unless a dated amendment explains why an input dependency
+changed:
+
+1. **Foundational missing owners:** Governed Model Training; Privacy and
+   Information Flow; Governed Objective Formation.
+2. **Observe then act:** Perception and Observation Trust; Embodied Real-Time
+   Control.
+3. **Organizations and society:** Human–AI Organizations; Human–AI
+   Communication; Institutions; AI Deployment Transition; Multi-Agent
+   Dynamics.
+4. **Proliferation, physical capacity, and integrated case:** Autonomous
+   Replication; Physical Compute Infrastructure; Scientific Discovery, with
+   Scientific Discovery still rejected as a chapter unless it proves a
+   reusable control plane.
+
+Every packet follows the same acceptance sequence: freeze scope, owner,
+inputs, and non-claims; produce a reviewable artifact and exact receipts; run
+targeted negative controls; reconcile manifest, outline, sources, claims, and
+reader surfaces; run registered validation plus render/browser gates; then
+commit and push clean `main`. A packet that cannot meet those steps receives an
+exact blocked or terminal disposition rather than remaining vaguely “in
+progress.”
+
 ## Shared ASI Stack–Theseus flagship
 
 The shared program ID is **`ASI-THESEUS-FLAGSHIP-01`**. Its research question is:

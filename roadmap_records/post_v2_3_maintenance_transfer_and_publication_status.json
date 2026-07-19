@@ -1,11 +1,62 @@
 {
-  "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v9",
+  "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v10",
   "roadmap_id": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17",
   "roadmap_path": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
   "snapshot_date": "2026-07-19",
   "authority": "Corben Sorenson",
   "status": "active",
   "current_priority": "P2",
+  "execution_readiness": {
+    "state": "ready_with_parallel_unblocked_work_and_one_resource_blocked_lane",
+    "headline_priority": "P2",
+    "headline_priority_state": "blocked_below_frozen_host_free_space_floor",
+    "work_in_progress_limit": 2,
+    "blocked_lane_consumes_work_in_progress": false,
+    "protected_outcome_inspection_allowed": false,
+    "immediate_book_packet": "P7.1a-W1-template-centralization-and-boundary-coverage",
+    "immediate_formal_packet": "P4-C1-evidence-claim-and-proof-custody-semantic-audit",
+    "first_tranche_completion_order": [
+      "white-box-evidence-interpretability-and-activation-governance",
+      "governed-world-models-and-reality-grounding",
+      "human-factors-and-meaningful-control-in-oversight",
+      "governed-operations-incident-command-and-graceful-degradation"
+    ],
+    "second_tranche_adjudication_batches": [
+      [
+        "governed-model-training-distributed-optimization-and-scaling",
+        "privacy-data-rights-and-information-flow-governance",
+        "governed-objective-formation-value-learning-and-goal-integrity"
+      ],
+      [
+        "perception-sensor-fusion-and-observation-trust",
+        "embodied-agency-real-time-control-and-physical-safety"
+      ],
+      [
+        "human-ai-organizations-delegation-and-accountability",
+        "human-ai-communication-persuasion-and-epistemic-security",
+        "institutions-international-coordination-and-public-legitimacy",
+        "ai-deployment-transition-distribution-and-human-agency",
+        "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
+      ],
+      [
+        "autonomous-replication-proliferation-and-containment",
+        "physical-compute-infrastructure-energy-and-environmental-constraints",
+        "scientific-discovery-and-experimental-governance"
+      ]
+    ],
+    "maximum_concurrent_second_tranche_candidates": 1,
+    "repository_authority_map": "docs/repository_map.md",
+    "acceptance_sequence": [
+      "freeze_scope_owner_inputs_and_nonclaims",
+      "produce_reviewable_artifact_and_exact_receipts",
+      "run_targeted_negative_controls",
+      "reconcile_manifest_outline_sources_claims_and_reader_surfaces",
+      "run_registered_validation_render_and_browser_gates",
+      "commit_and_push_clean_main"
+    ],
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
   "quality_uplift_program": {
     "state": "active",
     "shared_flagship_id": "ASI-THESEUS-FLAGSHIP-01",

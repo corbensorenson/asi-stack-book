@@ -178,6 +178,7 @@ def errors(data: dict) -> list[str]:
     required_sections = [
         "## Purpose",
         "## Strategic quality diagnosis",
+        "## Execution-ready work board",
         "## Shared ASI Stack–Theseus flagship",
         "## Review adjudication and corrected baseline",
         "## Operating rules",
@@ -248,6 +249,10 @@ def errors(data: dict) -> list[str]:
         "Candidates J, K, and L each have two new source-noted comparators",
         "whether Candidate M passes",
         "Organizations, Institutions, and Societal Transition",
+        "Work-in-progress limit",
+        "P7.1a-W1-template-centralization-and-boundary-coverage",
+        "P4-C1-evidence-claim-and-proof-custody-semantic-audit",
+        "A blocked packet does not consume a slot",
     ]:
         if phrase.casefold() not in roadmap_normalized:
             out.append(f"roadmap governing boundary missing: {phrase}")
@@ -658,6 +663,51 @@ def errors(data: dict) -> list[str]:
         out.append("P2 replacement queue promoted support")
 
     quality_program = status.get("quality_uplift_program", {})
+    execution_readiness = status.get("execution_readiness", {})
+    if execution_readiness.get("state") != "ready_with_parallel_unblocked_work_and_one_resource_blocked_lane":
+        out.append("execution board is not in its ready-with-one-blocked-lane state")
+    if execution_readiness.get("headline_priority") != "P2" or execution_readiness.get("headline_priority_state") != "blocked_below_frozen_host_free_space_floor":
+        out.append("execution board obscures the P2 headline or its exact resource blocker")
+    if execution_readiness.get("work_in_progress_limit") != 2 or execution_readiness.get("blocked_lane_consumes_work_in_progress") is not False:
+        out.append("execution board lost its bounded WIP or blocked-lane rule")
+    if execution_readiness.get("protected_outcome_inspection_allowed") is not False:
+        out.append("execution board permits protected-outcome inspection")
+    if execution_readiness.get("maximum_concurrent_second_tranche_candidates") != 1:
+        out.append("execution board permits structural-candidate sprawl")
+    expected_first_tranche_order = [
+        "white-box-evidence-interpretability-and-activation-governance",
+        "governed-world-models-and-reality-grounding",
+        "human-factors-and-meaningful-control-in-oversight",
+        "governed-operations-incident-command-and-graceful-degradation",
+    ]
+    if execution_readiness.get("first_tranche_completion_order") != expected_first_tranche_order:
+        out.append("execution board first-tranche completion order drifted")
+    batched_second_ids = [
+        item
+        for batch in execution_readiness.get("second_tranche_adjudication_batches", [])
+        for item in batch
+    ]
+    if batched_second_ids != status["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"]["candidate_ids"][:1] + [
+        "privacy-data-rights-and-information-flow-governance",
+        "governed-objective-formation-value-learning-and-goal-integrity",
+        "perception-sensor-fusion-and-observation-trust",
+        "embodied-agency-real-time-control-and-physical-safety",
+        "human-ai-organizations-delegation-and-accountability",
+        "human-ai-communication-persuasion-and-epistemic-security",
+        "institutions-international-coordination-and-public-legitimacy",
+        "ai-deployment-transition-distribution-and-human-agency",
+        "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+        "autonomous-replication-proliferation-and-containment",
+        "physical-compute-infrastructure-energy-and-environmental-constraints",
+        "scientific-discovery-and-experimental-governance",
+    ]:
+        out.append("execution board second-tranche dependency batches drifted")
+    if len(batched_second_ids) != 13 or len(set(batched_second_ids)) != 13:
+        out.append("execution board does not disposition every second-tranche candidate exactly once")
+    if execution_readiness.get("repository_authority_map") != "docs/repository_map.md":
+        out.append("execution board lost the repository authority map")
+    if execution_readiness.get("support_state_effect") != "none" or execution_readiness.get("release_effect") != "none":
+        out.append("execution board laundered support or release state")
     critical_path = quality_program.get("critical_path", [])
     if quality_program.get("shared_flagship_id") != "ASI-THESEUS-FLAGSHIP-01":
         out.append("shared quality flagship identity drifted")
@@ -957,6 +1007,10 @@ def main() -> None:
     mutate("Q1 Q2 denominator overlap", lambda c: c["status"]["quality_uplift_program"]["empirical_lanes"].__setitem__("denominator_overlap_allowed", True))
     mutate("Q1 outcome tuning leakage", lambda c: c["status"]["quality_uplift_program"]["empirical_lanes"].__setitem__("q1_outcomes_may_tune_q2_or_student", True))
     mutate("P7.1a artificial T4 blocker", lambda c: c["status"]["quality_uplift_program"]["narrative_quality_gate"].__setitem__("case_independent_compression_state", "blocked_by_T4"))
+    mutate("execution WIP expansion", lambda c: c["status"]["execution_readiness"].__setitem__("work_in_progress_limit", 9))
+    mutate("blocked work consumes WIP", lambda c: c["status"]["execution_readiness"].__setitem__("blocked_lane_consumes_work_in_progress", True))
+    mutate("protected outcome inspection", lambda c: c["status"]["execution_readiness"].__setitem__("protected_outcome_inspection_allowed", True))
+    mutate("structural candidate concurrency", lambda c: c["status"]["execution_readiness"].__setitem__("maximum_concurrent_second_tranche_candidates", 13))
     mutate("P2 pre-content rank skipping", lambda c: c["status"]["p2_sequential_materialization_contract"].__setitem__("pre_content_failure_may_skip_or_burn_rank", True))
     mutate("P2 post-content replay", lambda c: c["status"]["p2_sequential_materialization_contract"].__setitem__("post_content_replay_allowed", True))
     mutate("semantic proof cluster deletion", lambda c: c["status"]["semantic_proof_cluster_inventory"]["clusters"].pop())
