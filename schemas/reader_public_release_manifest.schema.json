@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASI Stack public reader release manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "release_id", "release_state", "source_content_commit",
+    "release_commit", "tag", "release_url", "canonical_living_release",
+    "rights", "artifacts", "quality_assurance", "residuals", "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.reader_public_release.v1"},
+    "release_id": {"const": "reader-2026-07-18"},
+    "release_state": {"enum": ["candidate", "published"]},
+    "source_content_commit": {"pattern": "^[0-9a-f]{40}$"},
+    "release_commit": {"type": "string", "pattern": "^$|^[0-9a-f]{40}$"},
+    "tag": {"const": "reader-2026-07-18"},
+    "release_url": {"type": "string"},
+    "canonical_living_release": {"const": "v2.3.0"},
+    "rights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "grant", "notice"],
+      "properties": {
+        "state": {"const": "all_rights_reserved"},
+        "grant": {"const": "none"},
+        "notice": {"type": "string", "minLength": 30}
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["format", "filename", "bytes", "sha256", "status", "download_url"],
+        "properties": {
+          "format": {"enum": ["pdf", "epub", "docx"]},
+          "filename": {"type": "string", "minLength": 10},
+          "bytes": {"type": "integer", "minimum": 1},
+          "sha256": {"pattern": "^[0-9a-f]{64}$"},
+          "status": {"enum": ["candidate", "published"]},
+          "download_url": {"type": "string"}
+        }
+      }
+    },
+    "quality_assurance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reader_spine", "pdf", "docx", "epub"],
+      "properties": {
+        "reader_spine": {
+          "type": "object",
+          "required": ["chapters", "minimum_words", "status"],
+          "properties": {
+            "chapters": {"const": 55},
+            "minimum_words": {"type": "integer", "minimum": 2000},
+            "status": {"const": "pass"}
+          },
+          "additionalProperties": false
+        },
+        "pdf": {
+          "type": "object",
+          "required": ["pages", "raster_pages", "contact_sheets", "blank_pages", "low_ink_pages", "all_contact_sheets_reviewed", "tagged", "pagination_only_page_removed"],
+          "properties": {
+            "pages": {"const": 923},
+            "raster_pages": {"const": 923},
+            "contact_sheets": {"const": 20},
+            "blank_pages": {"const": []},
+            "low_ink_pages": {"const": [1]},
+            "all_contact_sheets_reviewed": {"const": true},
+            "tagged": {"const": false},
+            "pagination_only_page_removed": {"const": 708}
+          },
+          "additionalProperties": false
+        },
+        "docx": {
+          "type": "object",
+          "required": ["libreoffice_pages", "contact_sheets", "blank_pages", "low_ink_pages", "outer_edge_ink_pages", "all_contact_sheets_reviewed", "microsoft_word_reviewed"],
+          "properties": {
+            "libreoffice_pages": {"const": 737},
+            "contact_sheets": {"const": 16},
+            "blank_pages": {"const": []},
+            "low_ink_pages": {"const": []},
+            "outer_edge_ink_pages": {"const": []},
+            "all_contact_sheets_reviewed": {"const": true},
+            "microsoft_word_reviewed": {"const": false}
+          },
+          "additionalProperties": false
+        },
+        "epub": {
+          "type": "object",
+          "required": ["zip_entries", "xhtml_entries", "spine_items", "images", "zip_integrity", "navigation_coverage", "native_reader_reviewed", "assistive_technology_reviewed"],
+          "properties": {
+            "zip_entries": {"const": 152},
+            "xhtml_entries": {"const": 64},
+            "spine_items": {"const": 64},
+            "images": {"const": 82},
+            "zip_integrity": {"const": "pass"},
+            "navigation_coverage": {"const": "all_chapters_and_appendices"},
+            "native_reader_reviewed": {"const": false},
+            "assistive_technology_reviewed": {"const": false}
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+    "residuals": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 20}},
+    "non_claims": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 20}}
+  }
+}

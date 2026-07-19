@@ -2019,7 +2019,12 @@
     "evidence_quality/p2_slot1_rank4_task_opening.json",
     "evidence_quality/p2_slot1_rank5_image_preflight_diagnosis.json",
     "scripts/validate_evidence_git_custody.py",
-    "scripts/register_evidence_git_custody.py"
+    "scripts/register_evidence_git_custody.py",
+    "editions/reader_manuscript/reader_2026_07_18/manifest.json",
+    "schemas/reader_public_release_manifest.schema.json",
+    "docs/reader_release_2026_07_18.md",
+    "scripts/validate_reader_public_release_manifest.py",
+    "scripts/register_reader_public_release_manifest.py"
   ],
   "units": [
     {
@@ -12836,11 +12841,47 @@
       "prohibited_inference": "Committed custody does not establish result validity, independence, reproduction, transfer, safety, publication merit, or chapter-core support.",
       "contract_precision": "exact",
       "semantic_review_state": "checked_post_commit_evidence_durability_gate"
+    },
+    {
+      "id": "validate_reader_public_release_manifest.py:398",
+      "order": 398,
+      "script": "validate_reader_public_release_manifest.py",
+      "args": [],
+      "execution_tier": "release",
+      "validation_class": "reader_artifact_gate",
+      "input_contract": "Frozen reader-release manifest, exact PDF/EPUB/DOCX identities, source ancestry, rights state, and format-specific internal QA boundaries.",
+      "input_artifacts": [
+        "editions/reader_manuscript/reader_2026_07_18/manifest.json",
+        "schemas/reader_public_release_manifest.schema.json",
+        "docs/reader_release_2026_07_18.md",
+        "scripts/validate_reader_public_release_manifest.py",
+        "scripts/register_reader_public_release_manifest.py"
+      ],
+      "output_contract": "Reject identity, rights, accessibility, lineage, or publication-state drift; optionally verify exact local asset bytes.",
+      "output_assertions": [
+        "three exact format identities",
+        "source commit remains ancestral",
+        "candidate cannot invent public URLs",
+        "published state requires URLs and release commit",
+        "rights grant remains none",
+        "accessibility residuals remain explicit",
+        "three negative mutations reject"
+      ],
+      "claim_scope": "Public reader artifact identity and internal QA only; no chapter-core, accessibility-conformance, external-review, or canonical-release claim follows.",
+      "negative_controls": "validator_owned_hash_rights_and_accessibility_mutations",
+      "negative_control_cases": [
+        "artifact hash drift",
+        "invented rights grant",
+        "invented PDF tagging"
+      ],
+      "prohibited_inference": "Does not establish PDF/UA, screen-reader, Apple Books, Microsoft Word, external-human, legal, peer-review, empirical, safety, AGI, ASI, or chapter-core support.",
+      "contract_precision": "exact",
+      "semantic_review_state": "checked_reader_identity_rights_qa_and_residual_boundary"
     }
   ],
   "summary": {
-    "required_artifact_count": 1975,
-    "unit_count": 397
+    "required_artifact_count": 1980,
+    "unit_count": 398
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

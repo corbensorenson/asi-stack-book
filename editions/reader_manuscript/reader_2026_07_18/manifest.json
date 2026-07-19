@@ -1,0 +1,84 @@
+{
+  "schema_version": "asi_stack.reader_public_release.v1",
+  "release_id": "reader-2026-07-18",
+  "release_state": "candidate",
+  "source_content_commit": "3c76d54848d6054b4b99fa20f4dc1f12e996a427",
+  "release_commit": "",
+  "tag": "reader-2026-07-18",
+  "release_url": "",
+  "canonical_living_release": "v2.3.0",
+  "rights": {
+    "state": "all_rights_reserved",
+    "grant": "none",
+    "notice": "Copyright 2026 Corben Sorenson. All rights reserved. This reader release does not create an open-license grant."
+  },
+  "artifacts": [
+    {
+      "format": "pdf",
+      "filename": "the-asi-stack-reader-2026-07-18.pdf",
+      "bytes": 13022967,
+      "sha256": "249a7e745fdb302398b532bd03d898b8bc6f07f96fbc6ad3794df69d3d1e1192",
+      "status": "candidate",
+      "download_url": ""
+    },
+    {
+      "format": "epub",
+      "filename": "the-asi-stack-reader-2026-07-18.epub",
+      "bytes": 10129904,
+      "sha256": "c5ea58db02310c966ac0760348cc476ed6fba75446c7527105c0a9c4778a108f",
+      "status": "candidate",
+      "download_url": ""
+    },
+    {
+      "format": "docx",
+      "filename": "the-asi-stack-reader-2026-07-18.docx",
+      "bytes": 8622060,
+      "sha256": "3b446abce2722aed960ce0b8d3cbdc7470486df7b9ba3b56f892acdefd8b4ee8",
+      "status": "candidate",
+      "download_url": ""
+    }
+  ],
+  "quality_assurance": {
+    "reader_spine": {"chapters": 55, "minimum_words": 2366, "status": "pass"},
+    "pdf": {
+      "pages": 923,
+      "raster_pages": 923,
+      "contact_sheets": 20,
+      "blank_pages": [],
+      "low_ink_pages": [1],
+      "all_contact_sheets_reviewed": true,
+      "tagged": false,
+      "pagination_only_page_removed": 708
+    },
+    "docx": {
+      "libreoffice_pages": 737,
+      "contact_sheets": 16,
+      "blank_pages": [],
+      "low_ink_pages": [],
+      "outer_edge_ink_pages": [],
+      "all_contact_sheets_reviewed": true,
+      "microsoft_word_reviewed": false
+    },
+    "epub": {
+      "zip_entries": 152,
+      "xhtml_entries": 64,
+      "spine_items": 64,
+      "images": 82,
+      "zip_integrity": "pass",
+      "navigation_coverage": "all_chapters_and_appendices",
+      "native_reader_reviewed": false,
+      "assistive_technology_reviewed": false
+    }
+  },
+  "residuals": [
+    "The PDF is not tagged and therefore does not claim PDF/UA or screen-reader conformance.",
+    "The DOCX passed LibreOffice conversion and complete raster review but was not reviewed in Microsoft Word; no Microsoft Word quality claim is made.",
+    "The EPUB passed package, spine, navigation, and text checks but was not reviewed in a native reading application or with assistive technology.",
+    "The PDF repair removed one renderer-created page containing only the printed pagination token 708 and no XObjects or annotations; subsequent printed page numbers retain their original values."
+  ],
+  "non_claims": [
+    "This reader release does not replace the canonical v2.3.0 living-book evidence release.",
+    "This release does not claim accessibility conformance, external review, peer review, or legal review.",
+    "Reader formatting does not promote any chapter-core claim or strengthen any empirical conclusion."
+  ]
+}
