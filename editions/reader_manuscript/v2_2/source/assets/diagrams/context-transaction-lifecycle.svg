@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Context transaction lifecycle draft figure</title>
+  <desc id="desc">A draft systems diagram showing context ABI records and certificates entering a context transaction, snapshot, mount policy, branch or commit decision, taint and deletion closure, materialized view or fault, artifact reference, adequacy record, and claim-ledger handoff.</desc>
+  <defs>
+    <marker id="arrow-teal" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#256b7c"/>
+    </marker>
+    <marker id="arrow-rose" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#8a5264"/>
+    </marker>
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#18202a" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      .bg { fill: #f7f9fb; }
+      .panel { fill: #ffffff; stroke: #d8dee6; stroke-width: 2; }
+      .abi { fill: #f5f1fa; stroke: #765a8a; stroke-width: 2.5; }
+      .tx { fill: #f4f8fa; stroke: #256b7c; stroke-width: 2.5; }
+      .gate { fill: #fff8f2; stroke: #a86f45; stroke-width: 2.5; }
+      .ok { fill: #f2f8f5; stroke: #497b5b; stroke-width: 2.5; }
+      .bad { fill: #fbf3f5; stroke: #8a5264; stroke-width: 2.5; }
+      .ink { fill: #18202a; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .muted { fill: #5a6675; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .label { font-size: 25px; font-weight: 750; }
+      .small { font-size: 18px; font-weight: 650; }
+      .tiny { font-size: 15px; font-weight: 550; }
+      .caption { font-size: 16px; font-weight: 600; }
+      .line { fill: none; stroke: #256b7c; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow-teal); }
+      .rose { fill: none; stroke: #8a5264; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow-rose); }
+      .dash { fill: none; stroke: #5a6675; stroke-width: 2.5; stroke-dasharray: 8 8; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="760" rx="24"/>
+  <text class="ink label" x="58" y="62">Context Transaction Lifecycle</text>
+  <text class="muted caption" x="58" y="92">Draft key figure. Context becomes governed memory only when view, branch, taint, closure, and handoff are recorded.</text>
+
+  <rect class="abi" x="54" y="126" width="214" height="138" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="82" y="164">Context ABI</text>
+  <text class="muted tiny" x="82" y="196">address, version,</text>
+  <text class="muted tiny" x="82" y="220">certificate, lease,</text>
+  <text class="muted tiny" x="82" y="244">authority ceiling</text>
+
+  <rect class="tx" x="326" y="104" width="224" height="160" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="354" y="142">Transaction record</text>
+  <text class="muted tiny" x="354" y="174">read set, write set,</text>
+  <text class="muted tiny" x="354" y="198">audit refs, replay</text>
+  <text class="muted tiny" x="354" y="222">consumer policy</text>
+
+  <rect class="tx" x="616" y="74" width="210" height="126" rx="12"/>
+  <text class="ink small" x="644" y="112">Snapshot</text>
+  <text class="muted tiny" x="644" y="144">coherent view,</text>
+  <text class="muted tiny" x="644" y="168">validity window</text>
+
+  <rect class="gate" x="616" y="236" width="210" height="126" rx="12"/>
+  <text class="ink small" x="644" y="274">Mount policy</text>
+  <text class="muted tiny" x="644" y="306">read/write scope,</text>
+  <text class="muted tiny" x="644" y="330">clearance, handles</text>
+
+  <rect class="gate" x="616" y="398" width="210" height="126" rx="12"/>
+  <text class="ink small" x="644" y="436">Branch or commit</text>
+  <text class="muted tiny" x="644" y="468">copy-on-write, merge,</text>
+  <text class="muted tiny" x="644" y="492">rollback boundary</text>
+
+  <rect class="bad" x="888" y="116" width="226" height="152" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="916" y="154">Taint and deletion</text>
+  <text class="muted tiny" x="916" y="186">derived refs, revoked</text>
+  <text class="muted tiny" x="916" y="210">sources, declassification,</text>
+  <text class="muted tiny" x="916" y="234">closure obligations</text>
+
+  <rect class="ok" x="888" y="326" width="226" height="126" rx="12"/>
+  <text class="ink small" x="916" y="364">Materialized view</text>
+  <text class="muted tiny" x="916" y="396">only after closure,</text>
+  <text class="muted tiny" x="916" y="420">policy, replay boundary</text>
+
+  <rect class="bad" x="888" y="500" width="226" height="126" rx="12"/>
+  <text class="ink small" x="916" y="538">Fault or quarantine</text>
+  <text class="muted tiny" x="916" y="570">stale, unauthorized,</text>
+  <text class="muted tiny" x="916" y="594">tainted, unclosed</text>
+
+  <rect class="panel" x="54" y="510" width="496" height="102" rx="12"/>
+  <text class="ink small" x="82" y="548">Downstream handoff</text>
+  <text class="muted tiny" x="82" y="580">Artifacts, adequacy records, claim ledgers, and jobs cite the transaction,</text>
+  <text class="muted tiny" x="82" y="604">not a loose source list or remembered prompt.</text>
+
+  <rect class="panel" x="54" y="652" width="904" height="62" rx="12"/>
+  <text class="ink small" x="82" y="690">Boundary rule</text>
+  <text class="muted tiny" x="230" y="690">A retrieved fact is not governed memory until the active view, taint, deletion closure, and handoff boundary are inspectable.</text>
+
+  <path class="line" d="M268 194 C292 194,306 188,320 184"/>
+  <path class="line" d="M550 170 C578 148,594 136,610 132"/>
+  <path class="line" d="M550 196 C584 238,598 284,610 298"/>
+  <path class="line" d="M550 222 C584 318,598 444,610 462"/>
+  <path class="line" d="M826 136 C850 148,866 174,882 190"/>
+  <path class="line" d="M826 300 C852 286,868 246,882 224"/>
+  <path class="line" d="M826 462 C852 438,868 406,882 390"/>
+  <path class="line" d="M1001 268 L1001 320"/>
+  <path class="rose" d="M1001 268 C1048 350,1048 454,1001 494"/>
+  <path class="line" d="M888 388 C764 440,652 494,550 552"/>
+  <path class="rose" d="M888 562 C748 602,650 604,556 580"/>
+  <path class="dash" d="M550 612 C650 656,770 672,958 682"/>
+
+  <text class="muted tiny" x="58" y="738">Status: draft visual asset; not release-reviewed. Support effect: none. It does not prove deployed memory-store, branch-isolation, taint, deletion, or resolver behavior.</text>
+</svg>

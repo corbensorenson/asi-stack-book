@@ -105,8 +105,13 @@ def errors(value: dict[str, Any]) -> list[str]:
 
     priorities = {row.get("id"): row.get("state") for row in status.get("priorities", [])}
     milestones = {row.get("id"): row.get("state") for row in status.get("milestones", [])}
-    if status.get("current_priority") != "P4" or priorities.get("P4") != "in_progress" or milestones.get("M5") != "in_progress":
-        out.append("roadmap does not keep P4/M5 active")
+    campaign = status.get("governed_usefulness_campaign_contract", {})
+    roadmap_position = (
+        (status.get("current_priority") == "P4" and priorities.get("P4") == "in_progress")
+        or (status.get("status") == "completed" and status.get("current_priority") is None and priorities.get("P4") == "completed")
+    )
+    if not roadmap_position or milestones.get("M5") != "completed" or campaign.get("confirmatory_protocol_outcome") != "bounded_local_governance_effect_supported":
+        out.append("roadmap does not preserve completed M5 lineage inside active P4")
     if len(value.get("non_claims", [])) < 4:
         out.append("preregistration lacks explicit non-claims")
     return out

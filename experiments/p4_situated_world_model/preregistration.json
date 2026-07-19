@@ -1,0 +1,23 @@
+{
+  "schema_version": "asi_stack.p4_m8_world_model_preregistration.v1",
+  "state": "prospectively_frozen_before_any_episode_or_outcome",
+  "recorded_date": "2026-07-16",
+  "run_id": "p4-m8-finite-pomdp-world-model-001",
+  "design_sha256": "8054219e2aaa7b97a2146c8e216eacb4cf5dd8a018fe11c2d4991448a3e9e71a",
+  "environments_sha256": "d762c6e530091e0103ea7ae250268cfe60da66a30d1a40beda683dfd89f1ea33",
+  "environment_content_sha256": "979225f0a4992d29fa4afafa670ffe47f8450253aee1eadbef8b5cc560e4d63b",
+  "result_schema_sha256": "15e448b62dcc34720fbf6f0e75391f5c09e4b0c5819cef85f13d8fca4e443568",
+  "code_sha256": {
+    "p4_m8_world_model_common.py": "9cb3c738dcc4cfb3ef0c1fe7322074f5450298dd1e9607c3f083f3a9357ba206",
+    "build_p4_m8_world_model_campaign.py": "e04b699caaff9c4b5c93a9168927aa182d5231ed2fbd9a6cb0b8204f87781c81",
+    "run_p4_m8_world_model_campaign.py": "11550faa6af817aa604dbd3f0c6179a2fa9077f7e2824ec6a5ec7f11e35fe010",
+    "evaluate_p4_m8_world_model_campaign.py": "e5ad3f6887d5f833c92067f53680f0aef6a465d637176c3ee549a97e1fc7b7f0",
+    "validate_p4_m8_world_model_design.py": "18ac4cfa83b6355a5a2d5a4d3f1e043599e5bb81d7f6ef4bb7ceed065a4940fb"
+  },
+  "outcome_aware_retry_allowed": false,
+  "environment_reference_leakage_forbidden": true,
+  "simulator_repair_after_outcome_allowed": false,
+  "support_state_effect": "none_before_adjudication",
+  "publication_authority": "none",
+  "release_authority": "none"
+}

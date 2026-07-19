@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASI Stack accepted-transition claim identity graph",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "snapshot_date", "authority", "source_transition_root",
+    "canonical_atom_sources", "identity_policy", "summary", "records", "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.claim_identity_graph.v1"},
+    "snapshot_date": {"const": "2026-07-17"},
+    "authority": {"const": "Corben Sorenson"},
+    "source_transition_root": {"const": "evidence_transitions"},
+    "canonical_atom_sources": {
+      "const": [
+        "evidence_quality/claim_atom_registry.json",
+        "evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json"
+      ]
+    },
+    "identity_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "allowed_primary_relations", "exactly_one_primary_relation_required",
+        "implicit_prefix_or_surface_mapping_allowed",
+        "indirect_parent_support_movement_allowed",
+        "proxy_to_target_inference_allowed", "mapping_is_evidence"
+      ],
+      "properties": {
+        "allowed_primary_relations": {"const": ["atom", "subclaim_of", "alias_of", "proxy_for"]},
+        "exactly_one_primary_relation_required": {"const": true},
+        "implicit_prefix_or_surface_mapping_allowed": {"const": false},
+        "indirect_parent_support_movement_allowed": {"const": false},
+        "proxy_to_target_inference_allowed": {"const": false},
+        "mapping_is_evidence": {"const": false}
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "transition_file_count", "review_accepted_transition_count",
+        "canonical_atom_count", "direct_atom_relation_count",
+        "indirect_relation_count", "resolved_transition_count",
+        "unresolved_transition_count", "relation_counts",
+        "owner_chapter_counts", "support_state_effect", "release_effect"
+      ],
+      "properties": {
+        "transition_file_count": {"const": 117},
+        "review_accepted_transition_count": {"const": 115},
+        "canonical_atom_count": {"const": 3745},
+        "direct_atom_relation_count": {"const": 25},
+        "indirect_relation_count": {"const": 90},
+        "resolved_transition_count": {"const": 115},
+        "unresolved_transition_count": {"const": 0},
+        "relation_counts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["atom", "proxy_for", "subclaim_of"],
+          "properties": {
+            "atom": {"const": 25},
+            "proxy_for": {"const": 29},
+            "subclaim_of": {"const": 61}
+          }
+        },
+        "owner_chapter_counts": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {"type": "integer", "minimum": 1}
+        },
+        "support_state_effect": {"const": "none"},
+        "release_effect": {"const": "none"}
+      }
+    },
+    "records": {
+      "type": "array",
+      "minItems": 115,
+      "maxItems": 115,
+      "items": {"$ref": "#/$defs/identityRecord"}
+    },
+    "non_claims": {
+      "type": "array",
+      "minItems": 4,
+      "items": {"type": "string", "minLength": 30}
+    }
+  },
+  "$defs": {
+    "identityRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "transition_id", "transition_path", "transition_sha256", "claim_id",
+        "primary_relation", "canonical_parent_id", "canonical_parent_kind",
+        "owner_chapter_id", "canonical_parent_proposition",
+        "canonical_parent_source", "identity_scope",
+        "parent_support_state_effect", "identity_decision_method",
+        "resolution_state"
+      ],
+      "properties": {
+        "transition_id": {"type": "string", "minLength": 5},
+        "transition_path": {"type": "string", "pattern": "^evidence_transitions/.+\\.json$"},
+        "transition_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "claim_id": {"type": "string", "minLength": 5},
+        "primary_relation": {"enum": ["atom", "subclaim_of", "alias_of", "proxy_for"]},
+        "canonical_parent_id": {"type": "string", "minLength": 5},
+        "canonical_parent_kind": {"const": "atom"},
+        "owner_chapter_id": {"type": "string", "minLength": 3},
+        "canonical_parent_proposition": {"type": "string", "minLength": 20},
+        "canonical_parent_source": {
+          "enum": [
+            "evidence_quality/claim_atom_registry.json",
+            "evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json"
+          ]
+        },
+        "identity_scope": {"$ref": "#/$defs/scope"},
+        "parent_support_state_effect": {
+          "enum": ["none", "exact_transition_record_subject_to_registry_reconciliation"]
+        },
+        "identity_decision_method": {"const": "manual_semantic_transition_surface_and_scope_review_2026_07_17"},
+        "resolution_state": {"const": "resolved"}
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "population", "environment", "model", "intervention", "outcome",
+        "authority", "time", "artifact", "maximum_inference",
+        "parent_nonpromotion_rationale"
+      ],
+      "properties": {
+        "population": {"type": "string", "minLength": 20},
+        "environment": {"type": "string", "minLength": 30},
+        "model": {"type": "string", "minLength": 30},
+        "intervention": {"type": "string", "minLength": 20},
+        "outcome": {"type": "string", "minLength": 20},
+        "authority": {"type": "string", "minLength": 30},
+        "time": {"type": "string", "minLength": 10},
+        "artifact": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 3}},
+        "maximum_inference": {"type": "string", "minLength": 40},
+        "parent_nonpromotion_rationale": {"type": "string", "minLength": 40}
+      }
+    }
+  }
+}

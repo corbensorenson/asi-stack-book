@@ -1,0 +1,55 @@
+{
+  "task_count": 6,
+  "labels": [
+    {
+      "task_id": "rv2-p01",
+      "required_residual_ids": [],
+      "release_eligible": true,
+      "diagnostic_route": "release",
+      "verification_burden": 0
+    },
+    {
+      "task_id": "rv2-p02",
+      "required_residual_ids": [
+        "B2"
+      ],
+      "release_eligible": false,
+      "diagnostic_route": "reopen",
+      "verification_burden": 1
+    },
+    {
+      "task_id": "rv2-p03",
+      "required_residual_ids": [],
+      "release_eligible": true,
+      "diagnostic_route": "release",
+      "verification_burden": 0
+    },
+    {
+      "task_id": "rv2-p04",
+      "required_residual_ids": [
+        "D2",
+        "D3"
+      ],
+      "release_eligible": false,
+      "diagnostic_route": "escalate",
+      "verification_burden": 2
+    },
+    {
+      "task_id": "rv2-p05",
+      "required_residual_ids": [],
+      "release_eligible": true,
+      "diagnostic_route": "release",
+      "verification_burden": 0
+    },
+    {
+      "task_id": "rv2-p06",
+      "required_residual_ids": [
+        "F2",
+        "F3"
+      ],
+      "release_eligible": false,
+      "diagnostic_route": "block",
+      "verification_burden": 2
+    }
+  ]
+}

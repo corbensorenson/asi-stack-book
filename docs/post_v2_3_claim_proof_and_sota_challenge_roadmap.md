@@ -4,7 +4,7 @@ Roadmap ID: `asi-stack-post-v2-3-claim-proof-sota-challenge-2026-07-14`
 
 Authority: Corben Sorenson
 
-Status: active canonical successor roadmap; unfinished work only
+Status: completed 2026-07-16; superseded by the active maintenance, transfer, and publication roadmap
 
 Machine status:
 `roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json`
@@ -347,12 +347,12 @@ blocker.
 | P1 — Complete claim decomposition | completed | Atomize all 54 core claims and all material subordinate claims into typed, falsifiable obligations with exact acceptance and refutation rules. | Claim-atom registry, chapter dossiers, coverage report, zero unowned material claims. |
 | P2 — Existing-proof rationalization, formal semantics, and refinement | completed | Audit every existing theorem and target; retire fluff and duplication; replace high-value finite-record proxies with state machines, trace properties, countermodels, composition theorems, and runtime refinement checks. | Complete proof inventory and dependency graph, 54 claim dossiers, retirement ledger, proof-model dossiers, Lean artifacts, mutation/countermodel suite, proof-to-runtime traceability. |
 | P3 — Executable integrated reference architecture | completed | Build real end-to-end governed work, learning, and audit/replay slices with observed effects and effect-complete rollback accounting. | Versioned reference implementation, natural task corpus, effect ledger, replay bundles, failure-injection report. |
-| P4 — Signature causal campaigns | in progress | Give governance/usefulness, routing/deliberation, update/unlearning, and residual/rollback claims adequately powered, preregistered attempts in informative regimes. | Frozen protocols, raw results, independent evaluator/replayer outputs, exact dispositions. |
-| P5 — Full claim-family evidence program | pending | Test the remaining authority, planning, memory, security, compression, economics, benchmark, oversight, improvement, integration, and replaceable-cognitive-substrate claim families. | Family campaign bundles and per-atom adjudications covering every activation chapter plus the accepted new cognitive-substrate chapter. |
-| P6 — External reproduction and SOTA challenge | pending | Reproduce the strongest relevant public baselines, including current Transformer and non-Transformer cognitive substrates, and test exact Pareto or dominance claims on current models and workloads. | Dated comparator ledger, architecture-taxonomy and ABI comparison ledger, reproduction receipts, robustness/transfer matrix, bounded SOTA dispositions. |
-| P7 — Book-wide evidence integration | pending | Rewrite existing chapters around results, counterevidence, runnable examples, and honest limits; insert and fully reconcile the accepted replaceable-cognitive-substrates chapter; synchronize claims, sources, proofs, tests, and appendices. | 55 reconciled chapter dossiers after the accepted structural insertion, updated Appendix C/E/H/K, reader-facing result explanations, no proxy language. |
-| P8 — Reader release and terminal evidence freeze | pending | Resolve or preserve EPUB/PDF blockers and make exact living-book and reader release decisions over an evidence-reconciled freeze. | Format dispositions, release/no-release records, validation/attestation receipts, exact evidence freeze for P9. |
-| P9 — Maintained X Article synopsis and 5:2 header | pending | Produce a concise, proof-led public synthesis of the evidence-reconciled book, validate it against the current X Article composer, create an accessible exact-ratio header, and install release-triggered maintenance. | Under-10,000-word canonical article source, live-book link at top, claim/evidence crosswalk, 2000×800 header plus provenance and alt text, composer preflight, staleness validator, publication/no-publication record, active successor authority. |
+| P4 — Signature causal campaigns | completed | Give governance/usefulness, routing/deliberation, update/unlearning, and residual/rollback claims adequately powered, preregistered attempts in informative regimes. | Frozen protocols, raw results, independent evaluator/replayer outputs, exact dispositions. |
+| P5 — Full claim-family evidence program | completed | Test the remaining authority, planning, memory, security, compression, economics, benchmark, oversight, improvement, integration, and replaceable-cognitive-substrate claim families. | Family campaign bundles and per-atom adjudications covering every activation chapter plus the accepted new cognitive-substrate chapter. |
+| P6 — External reproduction and SOTA challenge | completed | Reproduce the strongest relevant public baselines, including current Transformer and non-Transformer cognitive substrates, and test exact Pareto or dominance claims on current models and workloads. | Dated comparator ledger, architecture-taxonomy and ABI comparison ledger, reproduction receipts, robustness/transfer matrix, bounded SOTA dispositions. |
+| P7 — Book-wide evidence integration | completed | Rewrite existing chapters around results, counterevidence, runnable examples, and honest limits; insert and fully reconcile the accepted replaceable-cognitive-substrates chapter; synchronize claims, sources, proofs, tests, and appendices. | 55 reconciled chapter dossiers after the accepted structural insertion, updated Appendix C/E/F/H/K, reader-facing result explanations, no proxy language. |
+| P8 — Reader release and terminal evidence freeze | completed | Resolve or preserve EPUB/PDF blockers and make exact living-book and reader release decisions over an evidence-reconciled freeze. | Format dispositions, release/no-release records, validation/attestation receipts, exact evidence freeze for P9. |
+| P9 — Maintained X Article synopsis and 5:2 header | completed | Produce a concise, proof-led public synthesis of the evidence-reconciled book, validate it against the current X Article composer, create an accessible exact-ratio header, and install release-triggered maintenance. | Under-10,000-word canonical article source, live-book link at top, claim/evidence crosswalk, 2000×800 header plus provenance and alt text, composer preflight, staleness validator, publication/no-publication record, active successor authority. |
 
 ## P0 — Proof authority and continuity
 
@@ -3781,6 +3781,60 @@ inflation, fixed-harm erasure, denominator reopening, and transfer laundering.
 - Record partial, late, remote, backup, and descendant effects that cannot be
   restored.
 
+#### M7 terminal receipt — bounded axis separation, broad claim narrowed
+
+M7 completed on 2026-07-16 with two preserved instrument failures and one
+adequate terminal attempt. The first 860-record Qwen-representation/linear-head
+run passed its original integrity checks but failed target validity: both
+deletion cohorts collapsed to the rare `allow` class, terminal cohort markers
+dominated the last-token representation, and every arm—including deletion-aware
+retraining—scored zero true-label deletion accuracy. Its raw bytes,
+checkpoints, nominal result, and separate diagnosis remain immutable; it is
+`instrument_inadequate_unlearning_target_not_learnable`, not a claim result.
+
+The balanced v2 repair used mean pooling and added a deletion-like preflight
+floor. It never opened held-out outcomes: the frozen-representation linear head
+reached `0.43333333` general and `0.33333333` deletion-like accuracy against
+`0.60` floors. That failure is also retained.
+
+The terminal v3 instrument reused the frozen balanced 870-record corpus and
+the exact local `Qwen/Qwen2.5-Coder-0.5B-Instruct` snapshot
+`ea3f2471cf1b1f0db85067f1ef93848e38e88c25`. Qwen weights remained frozen. A
+deterministic one-hot vector exposed the authority, provenance, contamination,
+deletion, and risk fields already present in each record; an auditable
+912×32×3 nonlinear fusion head was the only trainable component. The
+sacrificial ablation scored Transformer-only at `0.76666665` general and
+`0.69999999` deletion-like accuracy, versus `1.0`/`1.0` for structured-only
+and fused paths. The fused instrument passed its frozen `0.80` floors without
+changing the held-out denominator.
+
+The one terminal held-out run compared no update, standard update, governed
+update, regularized forgetting mitigation, sequential approximate unlearning,
+deletion-aware retraining, and exact rollback across five seeds. It retained
+best and final checkpoint authority, independent evaluation over closed bytes,
+eight nonfungible claim axes, 24 declared state surfaces, local derived-store
+deletion, late descendants, a local backup, and a simulated unreachable remote
+replica. Deletion-aware retraining achieved mean true-label deletion accuracy
+`0.97666667`, passing the target-adequacy gate. Approximate unlearning moved
+only `0.01222040` closer in parameter distance to the retraining comparator
+than standard update and changed direction-invariant membership-attack
+advantage by `-0.02511111`. These are bounded probes; retraining does not prove
+zero influence, and one attack does not prove privacy.
+
+All 35 arm/seed transactions restored the 24 declared local surface digests to
+prospective base authority. Five local descendants were invalidated and
+quarantined. The declared operational shard and local backup were absent after
+the request, while the immutable corpus, feature packet, checkpoints, and raw
+research evidence remained retained. The simulated remote replica and external
+descendant supplied no acknowledgement. Legal compliance was not evaluated.
+
+The accepted terminal outcome is `claim_narrowed_after_full_attempt`, with
+chapter-core support retained at `argument`. The receipt does not establish
+language-model weight unlearning, zero causal influence, privacy, complete
+storage or backup erasure, external descendant closure, legal compliance,
+production rollback, transfer, SOTA, AGI, or ASI. M8 is now the active
+milestone; Campaigns 4 through 6 and remaining claim-family work remain open.
+
 ### Campaign 4 — Residual honesty and verifier capacity
 
 - Create tasks with known hidden defects, incomplete evidence, time pressure,
@@ -3790,6 +3844,39 @@ inflation, fixed-harm erasure, denominator reopening, and transfer laundering.
 - Measure defect discovery, false reassurance, residual completeness,
   verification burden, unresolved-risk age, useful throughput, and pressure
   degradation.
+
+#### Campaign 4 terminal receipt — full repair sequence, heldout sealed
+
+Campaign 4 reached an honest terminal instrument disposition on 2026-07-16.
+The earlier 24-call predecessor produced no usable final decisions. Three new
+prospectively versioned repairs then used eighteen sacrificial tasks and 36
+local `mlx-community/Qwen3-8B-4bit` calls with thinking disabled, zero retries,
+zero network inference, and no external spend.
+
+V1 repaired parseability but collapsed all five decisions to `block`; exact
+remediation routing was 1/5 and the clean control was rejected. V2 made terminal
+eligibility primary, and its unconstrained lane reached 6/6 eligibility with
+3/3 clean releases, but a label-bearing governed-output exemplar caused the
+structured lane to block all clean controls. Both failures remained
+sacrificial and opened no heldout outcomes.
+
+The terminal v3 instrument removed concrete output exemplars and separated the
+decision call from residual extraction. It reached 6/6 terminal-eligibility
+accuracy, 3/3 clean releases, perfect required-residual recall, exact empty
+clean ledgers, and zero capacity-aware false reassurance. It nevertheless
+failed the frozen extraction-interface gate: only 3/6 objects were admissible
+against a 5/6 floor because every defect case emitted undeclared route `retain`
+and omitted requested-check IDs. The terminal design prospectively prohibited
+another repair. The fifteen held-out tasks and hidden labels therefore remained
+sealed and no claim attempt was counted.
+
+The terminal outcome is
+`terminal_instrument_inadequate_extraction_contract`, with support effect
+`blocks_promotion`. Favorable sacrificial values remain diagnostic only. No
+residual-honesty, verifier-capacity, useful-throughput, pressure-robustness,
+safety, transfer, deployment, SOTA, AGI, ASI, publication, release, or
+chapter-core support claim follows. Campaign 4 is complete at this no-claim
+boundary; Campaigns 5 and 6 plus remaining M8 claim-family work remain active.
 
 ### Campaign 5 — Situated world-model acquisition and memory consolidation
 
@@ -3827,6 +3914,52 @@ inflation, fixed-harm erasure, denominator reopening, and transfer laundering.
   durable-memory chapter only if the distinct-interface test passes on observed
   artifacts and failures, not because the topic is important or historically
   evocative.
+
+#### Campaign 5 terminal receipt — bounded finite effect promoted, no new chapter
+
+Campaign 5 closed on 2026-07-16 with one bounded non-core promotion. The design
+was frozen before any outcome: two meaningfully different authored partially
+observable environments, five seeds, ten matched arms, 11,250 total episodes,
+6,000 held-out episodes, six named ablations, exact artifact separation,
+matched authority ceilings, an independent scorer, and no outcome-aware repair.
+The validator recomputes the central result and rejects ten laundering
+mutations.
+
+The governed path reached hidden-state accuracy 0.7933 in the adaptive workshop
+and 0.7967 in the service mesh, compared with 0.4500 and 0.4067 for the reactive
+path. Unsafe-action rates were 0.1000 and 0.1133, compared with 0.2333 and
+0.2733 for the ungoverned predictive arm. Task success was lower than that
+ungoverned arm by 0.0233 and 0.0300 because uncertain cases escalated. All
+integrity and both-environment baseline gates passed. Six of six preregistered
+aggregate ablation signatures were directional, while active information was
+honestly heterogeneous: -0.0067 accuracy in the workshop and +0.0367 in the
+service mesh.
+
+Identity binding, replay, and authority conformance were exact on the governed
+held-out traces. Quiescent consolidation preserved support, contradiction, and
+supersession lineage; governed serialized replacement and rollback were exact
+in 10/10 environment/seed runs. Removing quiescence produced 34 and 44 silent
+rewrites. Removing consolidation reduced accuracy by 0.0367 and 0.0700.
+However, shift detection remained 0.1667 and 0.2200, intervention-effect
+prediction remained 0.5999 and 0.6470, and neither authored simulator is an
+open-world or neural-world-model test.
+
+The accepted claim
+`situated-world-model.finite-pomdp-governed-acquisition-and-consolidation`
+moves from `argument` to `synthetic-test-backed`. The chapter-core promotion
+count is zero. Existing chapters own every observed interface: Planning owns
+belief, prediction, intervention, escalation, and shift residuals; Replaceable
+Cognitive Substrates owns the typed architecture-neutral shell; Procedural
+Memory owns quiescent consolidation, lineage, replacement, and rollback; and
+Benchmark Ratchets owns the frozen causal decision. The distinct-interface gate
+therefore rejects a new world-model or durable-memory chapter.
+
+No neural world model, learned latent representation, natural-task planning,
+open-world object permanence, general causal understanding, reliable anomaly
+detection, simulator adequacy, sim-to-real transfer, deployment safety,
+security, SOTA, AGI, ASI, publication, release, or chapter-core claim follows.
+Campaign 5 is complete. Campaign 6 and the remaining M8 claim-family work are
+now active.
 
 ### Accepted source integration — Kernel English Residual Compiler (KERC)
 
@@ -3976,6 +4109,46 @@ with or modify the already frozen M6 run.
     attempt; no structured packet, theoretical proposition, or green validator
     can substitute for that disposition.
 
+### Campaign 6 terminal receipt — broad efficiency refuted, narrow mechanisms retained
+
+Campaign 6 is complete. It prospectively froze 192 authored bilingual records
+with 128 training, 32 ordinary held-out, and 32 adversarial held-out rows; five
+seeds; eight baseline families; thirteen ablations; twenty state and authority
+attacks; and the three promised exact-handle, round-trip, and Kernel-native-core
+slices. The design and corpus were hash-bound before the single outcome run,
+and no outcome-aware repair or retry occurred.
+
+The broad claim failed its frozen falsifier. Kernel-native, surface, and simple-
+handle linear cores all reached `0.500000` mean intent-plus-polarity accuracy;
+the adversarial polarity class had no training examples. The compact Kernel
+string averaged `32.625` bytes, but the complete packet averaged `714.0` bytes
+against `73.25` bytes for the best simple total-description representation.
+Energy was not calibrated. The accepted exact claim
+`kerc.broad_matched_total_system_efficiency` therefore moves from `argument` to
+`refuted` for this implementation and corpus, not for all possible KERC
+systems.
+
+Two narrow finite findings survive. All five protected objects were preserved
+on each of 64 held-out records and lossless recovery was exact, while removing
+protected-span capture reduced object recall to zero. One frozen repeated-term
+curve crossed the simple shared-glossary byte break-even at two turns. Those
+claims become bounded non-core `synthetic-test-backed` transitions. The
+glossary curve excludes semantic failure, privacy, migration, model, monitoring,
+and governance costs and cannot be described as end-to-end efficiency.
+
+The negative boundaries remain part of the evidence. The finite rule policy
+handled 19/20 attacks but allowed the quote/object escape; compiler and verifier
+were jointly authored; the no-sense ablation was confounded by intent-bearing
+URLs; residual storage duplicated top-level objects; the bilingual data were
+templates; and no recurrent, SSM, search, or neural non-Transformer core ran.
+The new-chapter gate failed. The twelve existing owners were strengthened, all
+chapter cores remain `argument`, and no general semantic, independent-verifier,
+security, multilingual-transfer, production-efficiency, energy, SOTA, AGI,
+ASI, deployment, publication, or release claim follows. Remaining M8 work is
+the CF-01 through CF-08 full-attempt coverage and per-atom disposition program,
+which is discharged by the terminal audit below without discharging P5's
+separate natural-work bundle gate.
+
 ### P4 completion gate
 
 Each campaign has an informative preflight, immutable preregistration, justified
@@ -4013,6 +4186,72 @@ complete only when all three end as one of `promoted_at_bounded_scope`,
 `blocked_after_full_attempt`. Three honest non-promotions satisfy this batch;
 three adjacent green validators do not. No other P5 family may use the batch as
 a substitute for its own campaign.
+
+### Mandatory first batch terminal receipt — two bounded promotions, one narrowing
+
+The exact three-atom batch is complete. A prospective single-shot audit froze
+each atom's scope, falsifier, ceiling, retained inputs, and no-retry rule before
+independently replaying its artifacts. The Circle named-target/receipt atom
+moves to bounded `prototype-backed`; the finite no-silent-authority-expansion
+atom moves to bounded `synthetic-test-backed`; and rollback-outcome separation
+is `narrowed_after_full_attempt` at `argument` because service restart and
+external compensation were not executed. The result rejects four laundering
+mutations, creates zero chapter-core movement, and grants no deployment,
+transfer, SOTA, AGI, ASI, publication, or release authority. The canonical
+receipt is `docs/p5_mandatory_terminal_batch.md` and the result is
+`experiments/p5_terminal_batch/results/result.json`.
+
+This receipt opens the broader family sequence but does not discharge it.
+CF-01 through CF-08 remain separately responsible for their unmatched
+load-bearing atoms, strongest comparators, causal signatures, negative results,
+costs, reproduction, transfer, and exact terminal dispositions.
+
+### Repository-wide terminal-disposition audit — complete, proof gaps retained
+
+The prospectively frozen CF-01 through CF-08 audit is complete over all 3,745
+scoped atoms: 3,730 activation atoms plus the accepted 15-atom cognitive-
+substrate addendum. The evaluator ran once after an input-digest preflight and
+executed the PR registry, deep registry, and full Lean build. Its first result
+inherited two obsolete `nonmaterial_context` labels; the validator rejected
+them, the evaluator was not rerun, and a recorded conservative schema-only
+repair changed those two labels to `blocked_after_full_attempt` while preserving
+their missing normative lane and original-result digest.
+
+The terminal distribution is 3,698 `blocked_after_full_attempt`, 36
+`retained_after_full_attempt`, nine `narrowed_after_full_attempt`, and two
+`promoted_at_bounded_scope`. The two bounded promotions only preserve the
+already accepted finite authority and Circle receipt transitions. They create
+zero chapter-core movement. Every block names at least one missing formal,
+executable, empirical, causal, transfer, source-synthesis, or normative lane;
+2,068 atoms lack normative plus transfer treatment and 1,299 lack all six
+formal/executable/empirical/causal/normative/transfer lanes. The result is
+therefore a precise residual proof ledger, not proof by coverage.
+
+The readable receipt is `docs/claim_family_terminal_coverage.md`; the machine
+result is `experiments/claim_family_terminal_coverage/results/result.json`.
+Four laundering mutations reject and publication/release authority remains
+`none`. This closes M8's per-atom disposition subtask but does **not** close M8
+or P5:
+each family still needs at least one competent end-to-end or natural-work
+bundle with relevant negative controls under the completion gate below.
+
+### Family natural-work and end-to-end bundle gate — complete
+
+The missing family-level breadth gate is now bound to eight existing bundles,
+one per CF-01 through CF-08. Each selected result has an exact digest, an
+independently registered rejecting validator that is replayed by the coverage
+audit, relevant negative controls, and an explicit scope ceiling. The bundles
+are governed usefulness, safety-critical lifecycle, intent-to-execution,
+situated-world-model acquisition and consolidation, ambiguous routing and
+deliberation, KERC compilation and residuals, update/unlearning causality, and
+integrated governed lifecycle replay.
+
+The receipt is `docs/claim_family_bundle_coverage.md` and the binding result is
+`experiments/claim_family_bundle_coverage/result.json`. Five audit mutations
+reject family deletion, validator erasure, digest rewriting, invented chapter-
+core promotion, and blocked-gap erasure. The audit preserves all 3,698 blocked
+atom gaps and creates no new support transition. It satisfies the P5 minimum
+breadth gate without claiming that one bundle proves every atom in its family.
 
 The machine status binds every chapter to exactly one primary family so breadth
 cannot disappear behind the five flagship campaigns.
@@ -4180,6 +4419,33 @@ art, the strongest comparator, an ablation, a falsifier, or an acceptance gate.
 Provider-reported results remain source-grounded claims until independently
 reproduced.
 
+### P6 terminal receipt — strongest comparators honestly blocked
+
+The 2026-07-16 primary/official refresh froze five comparator records and seven
+exact cognitive-substrate atoms before any outcome-bearing ASI Stack run. It
+also froze a digest-bound OneCell defeat prediction. The scan displaced Mamba-3
+as the latest claimed recurrent frontier for the scoped envelope: Gated
+DeltaNet-2 reports stronger aggregate results than the compared Mamba-family
+variants on its 1.3B/100B-token language, commonsense, retrieval, and RULER
+setup. This is a source-reported claim that P7 must add to the chapter and
+Appendix H, not a local reproduction.
+
+The full attempt cannot form the frozen tournament. Inkling requires at least
+600 GB aggregate VRAM in NVFP4 or 2 TB in BF16; the official Mamba-3 path is
+Linux/NVIDIA/CUDA-oriented and lacks a frozen end-to-end Mamba-3 language-model
+checkpoint for the paper result; the archived TRM repository documents a 48 GB
+L40S as the smallest training route and no release checkpoint; and OneCell has
+no runnable candidate. The available host has 16 GB unified Apple M1 memory and
+no CUDA. DreamCoder alone would be a weaker isolated proxy, not the common-ABI,
+matched-assistance, equal-total-lifecycle-cost comparison.
+
+All seven atoms therefore end `blocked_after_full_attempt`. There were zero
+outcome-bearing comparisons, zero external reproductions, zero SOTA-supported
+dispositions, and zero chapter-core promotions. No null, competitive, refuted,
+Pareto, or dominance result is inferred. The canonical receipt is
+`docs/p6_external_reproduction_and_sota_challenge.md`; six laundering mutations
+reject. Publication and release authority remain `none`.
+
 ## P7 — Book-wide evidence integration
 
 For every chapter:
@@ -4258,6 +4524,26 @@ has an exact blocker; all refutations/narrowings change the owning prose; and
 the narrative remains coherent and useful even where the original hypothesis
 failed.
 
+### P7 terminal receipt — complete reconciliation without claim laundering
+
+The canonical reconciliation is `docs/p7_book_evidence_reconciliation.md`,
+bound to `experiments/p7_book_evidence_reconciliation/result.json` and enforced
+by `scripts/validate_p7_book_evidence_reconciliation.py`. All 55 chapters now
+contain exactly one concise reader-facing conclusion, one separate exact
+evidence packet, one worked success/failure/boundary set, and one argument-exit
+table derived from the terminal 3,745-atom program. Appendix C, Appendix E,
+Appendix F, Appendix H, and Appendix K are digest-bound to the record. The
+reader projection replays, the complete 68-document HTML render passes, and five
+invalid reconciliation mutations reject.
+
+This is reconciliation, not proof by formatting. It preserves 3,698
+`blocked_after_full_attempt` atoms, 36 retained atoms, nine narrowed atoms, two
+bounded subordinate promotions, and all 55 chapter cores at `argument`. Gated
+DeltaNet-2 is integrated only as a dated source-reported comparator; the P6
+seven-atom external reproduction result remains wholly blocked. There are zero
+chapter-core promotions and no new SOTA, deployment, publication, release, AGI,
+or ASI claim. Publication and release authority remain `none`.
+
 ## P8 — Reader release and terminal evidence freeze
 
 1. Freeze an evidence-reconciled 55-chapter reader source after the accepted
@@ -4284,6 +4570,29 @@ failed.
    `ready_not_published`; no push, tag, deployment, DOI/archive deposit, or
    external publication is authorized by this roadmap or by a reviewer's
    recommendation.
+
+### P8 terminal receipt — exact local freeze, no public release
+
+P8 is complete at `docs/p8_reader_evidence_freeze_and_release_disposition.md`.
+The immutable local v2.2 freeze contains all 55 evidence-reconciled reader
+chapters and four digest-bound format attempts. The 60-page HTML artifact passes
+120 desktop/mobile browser, accessibility-tree, keyboard, and WCAG-preparation
+page-view pairs with zero reported failures and is the only approved exact local
+format. EPUB passes structural inspection and a bounded Apple Books import,
+open, text-exposure, and navigation check, but is not device, screen-reader, or
+release approved. DOCX is structurally valid and all 726 rendered pages were
+covered by visual contact-sheet review; its page-6 figure break remains an exact
+layout residual and Microsoft Word was not claimed. PDF parses as 912 untagged
+pages but fails release: the raster audit flags 72 outer-edge pages, and direct
+review confirms page-48 clipping and page-50 right-edge overflow. Preview
+automation timed out, but those visual defects independently reject the PDF.
+
+The validator binds all source, artifact, and evidence-report digests and rejects
+seven mutations. The terminal decision is
+`evidence_freeze_ready_not_published_multiformat_release_not_approved`: there was
+no commit, push, tag, deployment, DOI/archive deposit, public release, license
+grant, external publication, or claim-support movement. This exact freeze is
+the input to P9.
 
 ## P9 — Maintained X Article synopsis and 5:2 header
 
@@ -4387,6 +4696,32 @@ alt text, provenance, rights state, previews, and digests pass. Publication is
 either explicitly authorized and receipted or exactly `ready_not_published`.
 All terminal records agree and one exact successor is active.
 
+### P9 and M13 terminal receipt — maintained synopsis ready, not published
+
+P9 is complete at `docs/x_article_synopsis_completion.md`. The canonical
+synopsis contains 5,222 visible words, begins with the exact live-book URL, and
+maps 24 substantive claim markers through
+`editions/x_article/claim_crosswalk.json`. It states the strongest negative and
+blocked results and does not promote any chapter-core claim. Its exact
+2000×800 RGB PNG header, provenance, and canonical alt text are retained.
+
+The current signed-in X Article composer accepted the full body and exact top
+link, reported 5,196 words, accepted the header, and passed desktop and 390×844
+mobile previews. Draft `2077875347220041728` remains unpublished. The platform
+did not expose an Article-header image-description control, and plain-text
+import did not preserve Markdown heading/emphasis semantics; both limitations
+remain explicit rather than being laundered into an accessibility or rich-text
+pass. Audience controls were not opened because publication was not authorized.
+
+The terminal disposition is
+`ready_not_published_unpublished_x_draft_exists`. No publish control was
+activated, no public Article URL exists, and no commit, push, tag, deployment,
+archive deposit, license change, public living-book release, or support-state
+movement occurred. The package validator rejects eight mutations. M13 is
+complete because the no-publication record is exact and
+`docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md` is active at
+P0/M0 with its own machine status, schema, validator, and public pointers.
+
 ## Milestones
 
 | Milestone | State | Completion condition |
@@ -4398,13 +4733,13 @@ All terminal records agree and one exact successor is active.
 | M4 — Integrated executable slices | completed | One versioned interface replays retained real model and checkpoint outputs across 12 cases and all 10 lifecycle states, performs six independently observed local effects with exact/residual/quarantine accounting, contains 20/20 named boundary injections, preserves one observation–interpretation–belief trace through an 11-surface sealed quiescent epoch, corrects two historical instrument-failure lineages, and rejects 11 mutations without support movement. |
 | M5 — Governance/usefulness campaign | completed | Informative-regime matched campaign is adjudicated without zero-release or floor laundering; bounded local support is reconciled without transfer or chapter-core promotion. |
 | M6 — Routing/deliberation campaign | completed | A prospectively repaired 32-task held-out real-model campaign covers eight tracks, four ingress modes, eight routing arms, four stopping arms, seventeen active controls, and fifteen preserved harms; it records a mixed bounded routing effect with two unsafe full-policy outputs and accepts no support promotion. |
-| M7 — Update/unlearning campaign | in progress | Full-state causal campaign separates behavior, influence, privacy, lineage, and storage outcomes. |
-| M8 — Remaining claim-family campaigns | pending | Residual/verifier-capacity, situated-world-model/consolidation, and KERC canonical-language/hierarchical-residual campaigns are adjudicated, and CF-01 through CF-08 have full-attempt coverage and exact per-atom dispositions. |
-| M9 — External reproduction/SOTA challenge | pending | Strongest baselines are reproduced or honestly blocked; exact superiority/Pareto dispositions are recorded. |
-| M10 — Book and evidence reconciliation | pending | All 55 chapters after the accepted cognitive-substrate insertion and all evidence/proof/source appendices match results and counterevidence. |
-| M11 — Reader and release disposition | pending | HTML, DOCX, EPUB, PDF, accessibility, rights, and public-release decisions are exact and artifact-bound. |
-| M12 — X Article synopsis and header | pending | The proof-led synopsis, top live-book link, claim crosswalk, exact 2000×800 header, provenance, alt text, and current-composer preview all pass. |
-| M13 — Terminal closure plus successor | pending | Article publication or ready-not-published status is exact, all work is terminally adjudicated, full gates pass, release truth is reconciled, and the next roadmap is active in the same transaction. |
+| M7 — Update/unlearning campaign | completed | Two instrument failures and one adequate five-seed/seven-arm terminal run are preserved; behavior, comparator influence, membership attack, lineage, legal, storage, backup, and external-descendant axes are separately adjudicated, the broad claim is narrowed, and no core support is promoted. |
+| M8 — Remaining claim-family campaigns | completed | Residual/verifier-capacity, situated-world-model/consolidation, and KERC canonical-language/hierarchical-residual campaigns are adjudicated; CF-01 through CF-08 have full-attempt coverage and exact per-atom dispositions; and every family has at least one competent end-to-end or natural-work bundle with relevant negative controls. All 3,698 residual atom gaps remain visible. |
+| M9 — External reproduction/SOTA challenge | completed | Strongest baselines are reproduced or honestly blocked; exact superiority/Pareto dispositions are recorded. The exact result is seven `blocked_after_full_attempt` atoms, zero reproductions, and no SOTA support. |
+| M10 — Book and evidence reconciliation | completed | All 55 chapters after the accepted cognitive-substrate insertion and all evidence/proof/source appendices match results and counterevidence. |
+| M11 — Reader and release disposition | completed | HTML, DOCX, EPUB, PDF, accessibility, rights, and public-release decisions are exact and artifact-bound. |
+| M12 — X Article synopsis and header | completed | The proof-led synopsis, top live-book link, claim crosswalk, exact 2000×800 header, provenance, alt text, and current-composer preview all pass with exact platform residuals retained. |
+| M13 — Terminal closure plus successor | completed | The Article is exactly ready-not-published, all work is terminally adjudicated, release truth is reconciled, and the maintenance/transfer/publication successor is active in the same transaction. |
 
 ## Definition of done
 

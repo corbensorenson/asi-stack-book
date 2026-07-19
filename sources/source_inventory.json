@@ -2479,6 +2479,27 @@
     "doi": "10.48550/arXiv.2310.06770"
   },
   {
+    "id": "ext_swe_rebench_v2_2026",
+    "title": "SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale",
+    "priority": "external_literature",
+    "layer": "natural_software_task_construction_and_evaluation",
+    "chapter_targets": [
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "artifact-graphs-audit-logs-and-replay",
+      "integrated-reference-architecture",
+      "prototype-roadmap",
+      "readiness-gates-residual-escrow-and-quarantine"
+    ],
+    "url": "https://arxiv.org/abs/2602.23866",
+    "notes": "Primary 2026 natural-task substrate for multilingual repository changes, interactive setup, containerized full-suite execution, separated solution/test patches, task diagnostics, and explicit environment pathologies. It does not establish local task validity, gold execution, model competence, governance benefit, safety, transfer, or SOTA.",
+    "source_type": "preprint",
+    "arxiv_id": "2602.23866",
+    "published": "2026-02-27",
+    "updated": "2026-06-01",
+    "citation_label": "Badertdinov et al. (2026), SWE-rebench V2",
+    "doi": "10.48550/arXiv.2602.23866"
+  },
+  {
     "id": "ext_livebench_2024",
     "title": "LiveBench: A Challenging, Contamination-Limited LLM Benchmark",
     "priority": "external_literature",
@@ -4276,7 +4297,7 @@
     "source_type": "conference_paper",
     "published": "2024",
     "updated": "2024",
-    "citation_label": "Guti\u00e9rrez et al. (2024), HippoRAG",
+    "citation_label": "Gutiérrez et al. (2024), HippoRAG",
     "doi": "10.52202/079017-1902"
   },
   {
@@ -4680,7 +4701,7 @@
       "integrated-reference-architecture"
     ],
     "url": "local-source:sources/raw/question_compiled_semantic_addressing_whitepaper.md@sha256:d9e594d40dfd62c899ab25e9d395d34c702dac12e8afd75eed133392f78c0c8c",
-    "notes": "Corben-authored successor synthesis for stable semantic identity, plural versioned semantic virtual addresses, active question compilation, evidence-bearing hypergraphs, semantic address certificates, semantic-to-physical routing, lifecycle-safe migration, and explicit residuals. The later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. The matched-advantage and resource gates failed, active-question value was refuted on this corpus, and no natural-task, learned-model, production, independent, chapter-core promotion, AGI, or ASI result is established.",
+    "notes": "Corben-authored successor synthesis for stable semantic identity, plural versioned semantic virtual addresses, active question compilation, evidence-bearing hypergraphs, semantic address certificates, semantic-to-physical routing, lifecycle-safe migration, and explicit residuals. The later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. The matched-advantage and resource gates failed, the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation, and no natural-task, learned-model, production, independent, chapter-core promotion, AGI, or ASI result is established.",
     "source_type": "author_whitepaper",
     "published": "2026-07-12",
     "updated": "2026-07-12",
@@ -4809,7 +4830,7 @@
   },
   {
     "id": "ext_nist_key_management_2020",
-    "title": "Recommendation for Key Management: Part 1 \u2013 General",
+    "title": "Recommendation for Key Management: Part 1 – General",
     "priority": "external_literature",
     "layer": "cryptographic_key_management",
     "chapter_targets": [
@@ -4930,6 +4951,22 @@
     "published": "2026-03-16",
     "citation_label": "Lahoti et al. (2026), Mamba-3",
     "doi": "10.48550/arXiv.2603.15569"
+  },
+  {
+    "id": "ext_gated_deltanet2_2026",
+    "title": "Gated DeltaNet-2: Decoupling Erase and Write in Linear Attention",
+    "priority": "external_literature",
+    "layer": "current_recurrent_linear_attention_and_editable_memory_frontier",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2605.22791",
+    "notes": "Dated 2026 comparator that separates erase and write gates and reports the strongest aggregate result among its Mamba-2, Gated DeltaNet, KDA, Mamba-3, and Gated DeltaNet-2 envelope at 1.3B parameters and 100B FineWeb-Edu tokens. The result is author reported, not locally reproduced; it displaces Mamba-3 only for that exact source envelope and requires official-code, checkpoint, hardware, seed, cost, retrieval, state, and transfer reproduction before any local superiority claim.",
+    "source_type": "preprint",
+    "arxiv_id": "2605.22791",
+    "published": "2026-05-21",
+    "citation_label": "Hatamizadeh, Choi, and Kautz (2026), Gated DeltaNet-2",
+    "doi": "10.48550/arXiv.2605.22791"
   },
   {
     "id": "ext_hyperscale_lottery_2026",
@@ -5272,5 +5309,74 @@
     "published": "2026-07-16",
     "updated": "2026-07-16",
     "citation_label": "Sorenson (2026), Kernel English with Hierarchical, Interaction-Amortized Residuals"
+  },
+  {
+    "id": "deterministic_capability_compilation",
+    "title": "Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents",
+    "priority": "must_use",
+    "layer": "capability_compilation_neural_linking_and_governed_adaptation",
+    "chapter_targets": [
+      "stable-capability-fields",
+      "intent-to-execution-contracts",
+      "cognitive-compilation-and-semantic-ir",
+      "virtual-context-abi",
+      "capability-replacement-and-rollback",
+      "routing-heads-and-specialist-cores",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "spinoza-verification-and-proof-carrying-claims",
+      "labor-os-and-typed-jobs",
+      "artifact-graphs-audit-logs-and-replay",
+      "procedural-memory-and-cognitive-loop-closure",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "compact-generative-systems-and-residual-honesty",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "recursive-self-improvement-boundaries",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "data-engines-continual-learning-and-unlearning",
+      "integrated-reference-architecture",
+      "project-theseus-as-report-first-implementation-reference",
+      "prototype-roadmap",
+      "open-research-agenda-and-bibliography-plan"
+    ],
+    "url": "local-source:sources/raw/corben_papers/deterministic_capability_compilation/deterministic_capability_compilation.md@sha256:8306d2bd40662245f8d3f044b4ca11a61c0fb18ab7cb799ccfe64f5e8c8a80c1",
+    "notes": "Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred.",
+    "source_type": "author_whitepaper",
+    "published": "2026-07",
+    "updated": "2026-07",
+    "citation_label": "Sorenson (2026), Deterministic Capability Compilation"
+  },
+  {
+    "id": "platonic_world_model",
+    "title": "The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence",
+    "priority": "must_use",
+    "layer": "semantic_continuity_grounded_world_model_and_governed_self_editing",
+    "chapter_targets": [
+      "moral-uncertainty-and-value-conflict",
+      "security-kernel-and-digital-scifs",
+      "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "claim-ledgers-and-belief-revision",
+      "spinoza-verification-and-proof-carrying-claims",
+      "artifact-graphs-audit-logs-and-replay",
+      "virtual-context-abi",
+      "context-transactions-snapshots-mounts-and-taint",
+      "planning-as-a-control-layer",
+      "cognitive-compilation-and-semantic-ir",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "inter-stack-protocols-identity-and-economic-exchange",
+      "procedural-memory-and-cognitive-loop-closure",
+      "data-engines-continual-learning-and-unlearning",
+      "recursive-self-improvement-boundaries",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "integrated-reference-architecture",
+      "prototype-roadmap",
+      "open-research-agenda-and-bibliography-plan"
+    ],
+    "url": "local-source:sources/raw/corben_papers/platonic_world_model/platonic_world_model.md@sha256:8ae760b6b2fd814b4c75260f146bf53789481b9c65fa5aded67a8934bb32427b",
+    "notes": "Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred.",
+    "source_type": "author_whitepaper",
+    "published": "2026-07",
+    "updated": "2026-07",
+    "citation_label": "Sorenson (2026), The Platonic World Model"
   }
 ]

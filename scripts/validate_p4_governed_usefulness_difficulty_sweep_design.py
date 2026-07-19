@@ -182,7 +182,11 @@ def errors(value: dict[str, Any]) -> list[str]:
         out.append("design erases consumed v2 history, retains an external submission dependency, or invents publication/release authority")
     priorities = {row.get("id"): row.get("state") for row in status.get("priorities", [])}
     milestones = {row.get("id"): row.get("state") for row in status.get("milestones", [])}
-    if status.get("current_priority") != "P4" or priorities.get("P4") != "in_progress" or milestones.get("M5") != "completed":
+    roadmap_position = (
+        (status.get("current_priority") == "P4" and priorities.get("P4") == "in_progress")
+        or (status.get("status") == "completed" and status.get("current_priority") is None and priorities.get("P4") == "completed")
+    )
+    if not roadmap_position or milestones.get("M5") != "completed":
         out.append("roadmap does not preserve P4 active with terminal M5")
     if value.get("support_state_effect") != "none" or len(value.get("non_claims", [])) < 3:
         out.append("design invents support or lacks non-claims")

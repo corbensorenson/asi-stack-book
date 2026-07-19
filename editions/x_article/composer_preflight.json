@@ -1,0 +1,93 @@
+{
+  "schema_version": "asi_stack.x_article_composer_preflight.v1",
+  "checked": "2026-07-16",
+  "status": "passed_unpublished_draft_with_exact_platform_residuals",
+  "official_help": {
+    "articles": {
+      "url": "https://help.x.com/en/using-x/articles",
+      "checked": "2026-07-16",
+      "observed_contract": "Articles are globally available to eligible Premium-family accounts and support links, images, video, GIFs, posts, headings, subheadings, emphasis, indentation, and lists; publishing exposes the Article under the selected audience; editing a published Article first unpublishes it."
+    },
+    "image_descriptions": {
+      "url": "https://help.x.com/en/using-x/write-image-descriptions",
+      "checked": "2026-07-16",
+      "observed_contract": "X documents image descriptions up to 1,000 characters and recommends clear, objective, natural-sentence descriptions, including context for complex visuals."
+    },
+    "unstated_constraints": [
+      "The official Article help page did not state a stable body-word limit.",
+      "The official Article help page recommended a relevant header but did not state a pixel size.",
+      "The live composer itself recommended a 5:2 header ratio."
+    ]
+  },
+  "account_and_route": {
+    "account_handle": "@SorensonCorben",
+    "eligibility": "passed_articles_composer_and_draft_creation_available",
+    "canonical_compose_route": "https://x.com/compose/articles",
+    "obsolete_route_result": "https://x.com/i/articles/compose returned page-not-found for the signed-in session",
+    "draft_id": "2077875347220041728",
+    "draft_url": "https://x.com/compose/articles/edit/2077875347220041728",
+    "preview_url": "https://x.com/compose/articles/edit/2077875347220041728/preview",
+    "publication_state": "unpublished_draft_only",
+    "audience": "not_selected_because_publish_flow_was_not_opened"
+  },
+  "article": {
+    "canonical_source": "editions/x_article/asi_stack_synopsis.md",
+    "title": "The ASI Stack: Building Intelligence We Can Inspect, Challenge, and Change",
+    "title_characters": 74,
+    "title_live_limit": 100,
+    "canonical_visible_word_count": 5222,
+    "composer_reported_word_count": 5196,
+    "body_accepted": true,
+    "body_truncation_observed": false,
+    "first_visible_body_line": "https://corbensorenson.github.io/asi-stack-book/",
+    "first_visible_body_link_href": "https://corbensorenson.github.io/asi-stack-book/",
+    "top_link_passed": true,
+    "negative_results_present": true,
+    "platform_formatting_delta": {
+      "paragraph_breaks": "preserved",
+      "section_heading_text": "preserved",
+      "markdown_heading_semantics": "not_imported_by_plain_text_composer_load",
+      "emphasis": "canonical Markdown emphasis was flattened in the draft import",
+      "lists": "no list-dependent content required for comprehension",
+      "disposition": "Canonical Markdown remains authoritative; the unpublished draft is a compatibility and preview receipt, not the editable source of truth."
+    }
+  },
+  "header": {
+    "canonical_master": "editions/x_article/asi_stack_synopsis_header.png",
+    "master_dimensions": [2000, 800],
+    "master_aspect_ratio": "5:2",
+    "upload": "passed",
+    "live_composer_recommendation": "We recommend an image with a 5:2 aspect ratio for best results.",
+    "crop_editor": "passed_default_zero_zoom_crop",
+    "platform_derivative": "editions/x_article/platform_derivatives/x_header_1200x480.jpg",
+    "platform_derivative_dimensions": [1200, 480],
+    "desktop_preview": "passed_all_essential_content_visible",
+    "desktop_receipt": "editions/x_article/previews/desktop.png",
+    "mobile_preview": "passed_at_390x844_no_horizontal_overflow_all_essential_content_visible",
+    "mobile_receipt": "editions/x_article/previews/mobile.png",
+    "alt_text_source": "editions/x_article/header_provenance.json",
+    "alt_text_characters": 386,
+    "header_alt_text_control": "not_exposed_by_live_article_header_editor",
+    "header_alt_text_readback": "blocked_by_absent_platform_control"
+  },
+  "publication": {
+    "publish_button_observed": true,
+    "publish_button_clicked": false,
+    "publish_confirmation_opened": false,
+    "article_url": null,
+    "external_publication_authorized": false,
+    "decision": "ready_not_published"
+  },
+  "residuals": [
+    "The canonical source is Markdown; the compatibility draft retained heading text but not Markdown heading or emphasis semantics after plain-text import.",
+    "The live Article header editor exposed crop and remove controls but no image-description field, so platform header alt-text entry and readback could not be performed.",
+    "Audience controls were not inspected because doing so requires opening the publication flow; publication was not authorized.",
+    "The observed composer behavior is dated and may change."
+  ],
+  "non_claims": [
+    "An unpublished draft is not an external publication or endorsement by X.",
+    "Composer acceptance does not prove article accuracy, accessibility, audience reach, or future platform compatibility.",
+    "The platform derivative and previews are not canonical source or header authority.",
+    "No publish, edit of a published Article, unpublish, or deletion action occurred."
+  ]
+}

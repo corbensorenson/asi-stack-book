@@ -1,0 +1,78 @@
+{
+  "schema_version": "asi_stack.p2_sequential_candidate_image_preflight.v1",
+  "recorded_at_utc": "2026-07-17T12:22:15.640057+00:00",
+  "attempt_id": "2026-07-17-slot1-rank2-r1",
+  "claim_id": "p2.governed_natural_repository_change_admission_joint_frontier",
+  "provenance_path": "evidence_quality/p2_slot1_rank2_provenance_preflight.json",
+  "resource_ceiling_path": "evidence_quality/p2_resource_ceiling.json",
+  "slot": 1,
+  "rank": 2,
+  "instance_id": "typst__hayagriva-334",
+  "image_ref": "docker.io/swerebenchv2/typst-hayagriva@sha256:14b65767ebde4ccf35a92af2c9eade2d282f60247bb3c57a3f3725169f453959",
+  "manifest_digest": "sha256:14b65767ebde4ccf35a92af2c9eade2d282f60247bb3c57a3f3725169f453959",
+  "host_free_before_bytes": 77348438016,
+  "task_content_opened": false,
+  "candidate_outcome_opened": false,
+  "final_pool_selected": false,
+  "final_pool_opened": false,
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "pull": {
+    "exit_code": 0,
+    "wall_seconds": 153.360315,
+    "output_sha256": "c0d57ea39722e7665457a27a14babbb9e96bf8f7467ef9f90c6b0339c9fc7ce2"
+  },
+  "measurement": {
+    "image_id": "sha256:14b65767ebde4ccf35a92af2c9eade2d282f60247bb3c57a3f3725169f453959",
+    "repo_digests": [
+      "swerebenchv2/typst-hayagriva@sha256:14b65767ebde4ccf35a92af2c9eade2d282f60247bb3c57a3f3725169f453959"
+    ],
+    "os": "linux",
+    "architecture": "amd64",
+    "engine_content_size_bytes": 1559936879,
+    "virtual_size_display": "6.66GB",
+    "virtual_size_conservative_upper_bound_bytes": 6665000000,
+    "gates": {
+      "inspect_exit_zero": true,
+      "manifest_digest_present": true,
+      "linux_amd64": true,
+      "engine_content_within_ceiling": false,
+      "virtual_size_within_ceiling": true
+    }
+  },
+  "state": "n0_resource_failure",
+  "terminal_code": "one_or_more_measurement_gates_failed",
+  "terminal_detail": "exact image failed at least one prospective image gate",
+  "cleanup": {
+    "image_removal_exit_code": 0,
+    "image_removal_output_sha256": "61a9cc22f56535db63cb95258daf05ef3c0a355510451c8aedebe247e6248c64",
+    "stabilization": {
+      "stable": true,
+      "samples": [
+        {
+          "free_bytes": 71454875648,
+          "docker_zero": true
+        },
+        {
+          "free_bytes": 76460249088,
+          "docker_zero": true
+        },
+        {
+          "free_bytes": 77268713472,
+          "docker_zero": true
+        },
+        {
+          "free_bytes": 77276860416,
+          "docker_zero": true
+        },
+        {
+          "free_bytes": 77275033600,
+          "docker_zero": true
+        }
+      ],
+      "host_free_after_bytes": 77275033600,
+      "host_free_byte_loss": 73404416
+    }
+  },
+  "image_resource_gate_passed": false
+}

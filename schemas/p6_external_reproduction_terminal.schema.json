@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "P6 external reproduction and SOTA terminal result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version","recorded_date","state","ledger_path","ledger_sha256","preflight_path","preflight_sha256","defeat_prediction_path","defeat_prediction_sha256","tested_claim_atom_count","dispositions","outcome_bearing_run_count","external_reproduction_count","sota_supported_count","chapter_core_promotion_count","support_state_effect","publication_authority","release_authority","non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.p6_external_reproduction_terminal.v1"},
+    "recorded_date": {"const": "2026-07-16"},
+    "state": {"const": "blocked_after_full_attempt_strongest_comparators_inaccessible_and_candidate_absent"},
+    "ledger_path": {"const": "experiments/p6_external_reproduction/comparator_ledger.json"},
+    "ledger_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "preflight_path": {"const": "experiments/p6_external_reproduction/hardware_access_preflight.json"},
+    "preflight_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "defeat_prediction_path": {"const": "experiments/p6_external_reproduction/onecell_defeat_prediction.json"},
+    "defeat_prediction_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "tested_claim_atom_count": {"const": 7},
+    "dispositions": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "object", "additionalProperties": false, "required": ["claim_atom","disposition","reason"], "properties": {"claim_atom":{"type":"string"},"disposition":{"const":"blocked_after_full_attempt"},"reason":{"type":"string","minLength":30}}}},
+    "outcome_bearing_run_count": {"const": 0},
+    "external_reproduction_count": {"const": 0},
+    "sota_supported_count": {"const": 0},
+    "chapter_core_promotion_count": {"const": 0},
+    "support_state_effect": {"const": "blocks_promotion"},
+    "publication_authority": {"const": "none"},
+    "release_authority": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 7, "items": {"type": "string", "minLength": 1}}
+  }
+}

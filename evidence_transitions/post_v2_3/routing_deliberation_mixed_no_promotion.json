@@ -1,28 +1,93 @@
 {
-  "schema_version": "asi_stack.evidence_transition.v1",
   "transition_id": "post-v2-3-m6-routing-deliberation-mixed-no-promotion",
   "claim_id": "routing-deliberation.heldout-local-policy-effect",
-  "old_support_state": "argument",
-  "new_support_state": "argument",
-  "transition_type": "no_promotion_after_full_attempt",
-  "transition_validity_state": "review_accepted",
-  "evidence_refs": [
+  "claim_surface_refs": [
+    "docs/p4_routing_deliberation_campaign.md",
+    "chapters/reflexive-routing-and-tool-gated-deliberation.qmd",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "claim_record_refs": [
     "experiments/p4_routing_deliberation/results/confirmatory_result.json",
     "experiments/p4_routing_deliberation/results/preflight_result.json",
     "experiments/p4_routing_deliberation/results/preflight_v2_result.json"
   ],
-  "decision": "retain_and_narrow",
-  "rationale": "On one authored balanced 32-task held-out corpus and one local quantized Qwen3-8B snapshot, the full reflexive policy improved route correctness from 6 to 31 and useful outcomes from 9 to 21 relative to LLM-first, while reducing wrong fast paths from 18 to 1. It was not a Pareto improvement: the full policy had two unsafe outputs versus zero for LLM-first, and its contract verifier repaired no initially incorrect deliberation cases. The bounded routing effect is retained as a result, but no support promotion is accepted.",
-  "deliberation_disposition": "Fixed deliberation corrupted three initially correct answers and repaired two; adaptive stopping corrupted one and repaired one; verifier-gated stopping preserved all twelve initially correct answers but repaired none. The fifteen historical correct-to-incorrect cases remain active regression cases without reconstructed prompts or new model calls.",
-  "support_state_effect": "none",
-  "chapter_core_promotion_count": 0,
-  "publication_authority": "none",
-  "release_authority": "none",
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "One authored balanced 32-task held-out corpus and one local quantized Qwen3-8B snapshot; the full policy improved routing and useful outcomes but was not a safety Pareto improvement and the verifier repaired no initially incorrect deliberation cases.",
+  "evidence_roles": [
+    "prospectively held-out local routing comparison",
+    "matched reflexive-policy ablation",
+    "deliberation harm accounting",
+    "bounded no-promotion adjudication"
+  ],
+  "transition_reason": "Route correctness rose from 6 to 31 and useful outcomes from 9 to 21 relative to LLM-first, while the full policy produced two unsafe outputs versus zero for LLM-first and the contract verifier produced no useful repair. The mixed local effect narrows the claim and blocks promotion.",
+  "required_artifacts": [
+    "fresh natural ambiguous workloads",
+    "multiple current model families",
+    "independently implemented evaluator",
+    "useful verifier-gated repair",
+    "cross-domain transfer and deployment-cost evidence"
+  ],
+  "artifact_refs": [
+    "experiments/p4_routing_deliberation/preregistration.json",
+    "experiments/p4_routing_deliberation/results/confirmatory_result.json",
+    "scripts/validate_p4_m6_routing_deliberation.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/p4_routing_deliberation_campaign.md",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#reflexive-routing-and-tool-gated-deliberationcore",
+    "sources/source_notes/reflexive_router_whitepaper.md"
+  ],
+  "verification_command": "python3 scripts/validate_p4_m6_routing_deliberation.py && python3 scripts/validate_non_core_evidence_ledger.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "the full policy produced two unsafe outputs versus zero for LLM-first",
+    "fixed deliberation corrupted three initially correct answers and repaired two",
+    "adaptive stopping corrupted one initially correct answer and repaired one",
+    "verifier-gated stopping preserved twelve initially correct answers but repaired none",
+    "fifteen historical correct-to-incorrect cases remain regression records without reconstructed prompts or new calls"
+  ],
+  "negative_evidence_refs": [
+    "experiments/p4_routing_deliberation/results/confirmatory_result.json",
+    "docs/p4_routing_deliberation_campaign.md"
+  ],
+  "downgrade_triggers": [
+    "unsafe-output denominator is omitted",
+    "mixed deliberation effects are described as useful scaling",
+    "internal implementation separation is described as external independence",
+    "local authored results are generalized to deployment or transfer"
+  ],
+  "promotion_burden": "Run prospectively frozen ambiguous natural workloads with multiple stronger models, genuinely independent evaluation, exact fallback and abstention accounting, useful verifier repairs, all fifteen known harm regressions, costs, reproduction, and transfer.",
+  "limitations": [
+    "authored 32-task local corpus",
+    "one quantized model snapshot",
+    "no external evaluator independence",
+    "no cross-domain transfer",
+    "no useful verifier repair"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Author-directed Codex P4/M6 claim-proof cycle"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; no external human review requested or claimed",
+  "acceptance_blockers": [
+    "unsafe-output rate was worse than LLM-first",
+    "verifier repaired no initially incorrect deliberation case",
+    "transfer and independent evaluation were not established"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-16---m6-routing-and-deliberation-terminal-adjudication",
+  "support_state_effect": "blocks_promotion",
   "non_claims": [
     "does not establish a safe or generally useful reflexive router",
     "does not establish useful test-time scaling",
     "does not establish evaluator independence outside internal implementation separation",
     "does not establish transfer, deployment, SOTA, AGI, or ASI",
+    "does not promote any chapter core claim above argument",
     "does not add a pre-deliberative chapter"
   ]
 }

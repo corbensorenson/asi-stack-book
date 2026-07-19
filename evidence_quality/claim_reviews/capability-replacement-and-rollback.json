@@ -420,12 +420,15 @@
     },
     "capability-replacement-and-rollback.invariant.011": {
       "proposition_type": "formal",
-      "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
+      "current_disposition": "narrowed_after_full_attempt",
+      "terminal_disposition": "narrowed_after_full_attempt",
       "strongest_counterclaim": "This obligation is infeasible for legitimate updates, satisfiable only on paper, or violated by an admitted trace despite its declared assumptions: Rollback success is asserted only against the declared recovery objective and effect inventory; artifact restoration, digest equality, service restart, behavioral recovery, privacy repair, and external compensation remain separate outcomes.",
       "falsifier": "A reachable transaction satisfies the declared assumptions and violates this exact obligation, or compliance cannot be observed without circular candidate self-attestation.",
       "acceptance_criteria": [
         "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
-      ]
+      ],
+      "reproduction": {"command": "python3 scripts/validate_p5_terminal_batch.py", "environment_lock": "Bounded local replacement and M7 update/unlearning records, 2026-07-16", "artifact_digest": "experiments/p5_terminal_batch/results/result.json", "evaluator_identity": "separate local P5 terminal-batch evaluator"},
+      "residual": {"owner": "capability-replacement-and-rollback", "next_unblocking_condition": "Execute service restart and external compensation with independent effect observation and open-world inventory pressure."}
     },
     "capability-replacement-and-rollback.invariant.012": {
       "proposition_type": "formal",

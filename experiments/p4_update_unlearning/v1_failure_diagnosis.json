@@ -1,0 +1,51 @@
+{
+  "schema_version": "asi_stack.p4_m7_failure_diagnosis.v1",
+  "campaign": "P4 Campaign 3 / M7",
+  "run_id": "p4-m7-qwen25-05b-frozen-representation-head-001",
+  "diagnosed_date": "2026-07-16",
+  "superseded_protocol_outcome": "instrument_inadequate_unlearning_target_not_learnable",
+  "claim_outcome": "not_applicable_instrument_failure",
+  "result_path": "experiments/p4_update_unlearning/results/confirmatory_result.json",
+  "result_sha256": "024264e448cdfb05dd5ad0670e6508d2956893b04fcf3a37570cf309e355b189",
+  "preregistration_sha256": "66981a2a9050beb5d15b20c5f6437ed57253ed87b44babbe5c068de398ac1d96",
+  "raw_run_sha256": "d7215b88dc66fc46b81394c332978c36689f0807fe62de2cab2c725ae9653f81",
+  "failure_evidence": {
+    "deletion_cohort_class_counts": {"allow": 60, "quarantine": 0, "deny": 0},
+    "mean_deletion_true_accuracy_by_arm": {
+      "no_update": 0.0,
+      "standard_update": 0.0,
+      "governed_update": 0.0,
+      "regularized_forgetting_mitigation": 0.0,
+      "approximate_unlearning": 0.0,
+      "deletion_aware_retrain": 0.0,
+      "exact_rollback": 0.0
+    },
+    "deletion_aware_retrain_failed_target_gate": true,
+    "observed_approximate_distance_reduction_fraction": -0.13722843,
+    "observed_approximate_poisoned_label_accuracy": 0.87333333
+  },
+  "root_causes": [
+    "Both deletion cohorts collapsed to one rare true class rather than spanning the task decision surface.",
+    "Unique cohort markers appeared at the final token position consumed by the frozen representation, making marker shift dominate semantic attributes.",
+    "The sacrificial preflight tested overall classification but did not require a deletion-aware retraining comparator to solve deletion-like held-out cases.",
+    "Consequently, behavioral changes, membership scores, and distance-to-retraining metrics were measurable but not an informative test of unlearning success."
+  ],
+  "authorized_repair": {
+    "version": "v2",
+    "changes": [
+      "balance all three true classes within both deletion cohorts and matched nonmembers",
+      "move identifiers away from the terminal representation position and use attention-masked mean pooling",
+      "add a sacrificial deletion-like comparator adequacy floor before opening held-out outcomes",
+      "score membership attack advantage separately from raw AUC direction",
+      "preserve the v1 corpus, code identities, raw artifacts, result, and failed interpretation unchanged"
+    ],
+    "unchanged_rerun_forbidden": true,
+    "maximum_repair_attempts_remaining": 1
+  },
+  "support_state_effect": "none",
+  "non_claims": [
+    "The v1 integrity validator passing does not make the unlearning target informative.",
+    "The v1 run is not a claim result and cannot satisfy the M7 full-attempt gate.",
+    "No language-model unlearning, influence reduction, privacy improvement, erasure, transfer, or support promotion follows."
+  ]
+}

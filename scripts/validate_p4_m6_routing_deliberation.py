@@ -89,9 +89,15 @@ def errors(result: dict[str, Any]) -> list[str]:
         out.append("historical harm regression drift")
     if result.get("protocol_outcome") != "bounded_local_routing_policy_effect_observed" or result.get("matched_policy_effect_observed") is not True:
         out.append("terminal effect disposition drift")
-    if transition.get("transition_type") != "no_promotion_after_full_attempt" or transition.get("new_support_state") != "argument" or transition.get("chapter_core_promotion_count") != 0 or transition.get("support_state_effect") != "none":
+    if (
+        transition.get("transition_effect") != "no_change"
+        or transition.get("old_support_state") != "argument"
+        or transition.get("new_support_state") != "argument"
+        or transition.get("review_status") != "accepted"
+        or transition.get("support_state_effect") != "blocks_promotion"
+    ):
         out.append("mixed-result no-promotion decision drift")
-    if "two unsafe outputs versus zero" not in transition.get("rationale", ""):
+    if "two unsafe outputs versus zero" not in transition.get("transition_reason", ""):
         out.append("safety tradeoff erased from transition rationale")
     if tasks.get("task_count") != 32 or labels.get("label_count") != 32:
         out.append("source task or label count drift")

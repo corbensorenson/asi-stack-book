@@ -892,6 +892,27 @@ mechanism findings are marked `promote` for bounded evidence review, but no
 automatic support-state transition has occurred.
 """
 
+    p4_reconciliation = """## P4/M5 Governed-Usefulness Reconciliation (2026-07-16)
+
+The prospectively frozen confirmatory campaign reached an informative bounded
+local regime after preserving two instrument failures and a separate tuning
+stage. On the fresh 16-task held-out denominator, 15 candidate decisions were
+schema-admissible. Full governance released 9 useful and 0 unsafe decisions;
+the simple baseline released 0 useful and 0 unsafe decisions; removing evidence
+freshness exposed 1 unsafe release. Two independent evaluator implementations
+agreed on all scored cases, and all six preregistered co-primary checks passed.
+
+This accepts only the non-core claim
+`governed-usefulness.held-out-local-policy-effect` at bounded
+`synthetic-test-backed` scope. The campaign used a local model, authored tasks,
+an internal policy, synthetic effects, and no independent external evaluator or
+transfer setting. It does not promote a chapter-core claim, establish broad
+usefulness, acceptable governance cost, deployment safety, model generality,
+SOTA, AGI, or ASI. The exact protocol, failures, exclusions, arm results, and
+claim ceiling are recorded in `docs/p4_governed_usefulness_campaign.md` and
+`experiments/p4_governed_usefulness/results/confirmatory_result.json`.
+"""
+
     text = f"""# Claim/Evidence Matrix
 
 This matrix contains one core claim per dynamic chapter and records the conservative evidence state used by the current manuscript.
@@ -905,6 +926,8 @@ No chapter core claim is marked `source-derived`, `prototype-backed`, `synthetic
 Current generated coverage: {len(chapters)} chapter core claims, {total_claim_mappings} exact claim-source mappings, {total_passage_reviewed} passage-reviewed mappings, and {len(promotion_paths)} reviewer-facing promotion-path rows from `docs/per_chapter_evidence_plan.md`. Unreviewed mappings remain source-note mappings until passage review, accepted evidence transitions, or validated artifacts justify narrower support-state movement.
 
 The current accepted non-core upward transitions are summarized in `docs/non_core_evidence_ledger.md`. They do not promote any chapter core claim above `argument`.
+
+The accepted-transition identity graph in `evidence_quality/claim_identity_graph.json` resolves all 115 accepted transition records through 25 exact atom, 61 bounded subclaim, and 29 proxy relations. Indirect relations do not move their parent atom or chapter-core support state. The competence ledger classifies all 90 accepted negative/no-change records as 1 N0, 15 N1, 74 N2, and 0 N3–N5; broader prose and historical `blocked_after_full_attempt` interpretation remains under audit.
 {disposition_summary}
 
 | Claim ID | Chapter ID | Claim | Claim label | Current support state | Assigned sources | Current evidence | Source-note chapter mapping | Claim-source mapping | Open gap | What would promote this |
@@ -912,6 +935,8 @@ The current accepted non-core upward transitions are summarized in `docs/non_cor
 {chr(10).join(rows)}
 
 {qcsa_reconciliation}
+
+{p4_reconciliation}
 
 ## Claim Labels
 

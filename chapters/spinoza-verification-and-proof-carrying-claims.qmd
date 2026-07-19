@@ -4,7 +4,7 @@ chapter_id: "spinoza-verification-and-proof-carrying-claims"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-15"
+last_updated: "2026-07-16"
 primary_sources:
   - "spinoza"
   - "genesiscode"
@@ -304,6 +304,25 @@ kernels, source reviewers, empirical evaluators, accountable humans, Evidence
 States, and downstream control layers retain authority over their respective
 questions. A complete record therefore exposes where confidence came from
 without turning record completeness into confidence.
+
+### Proof-carrying training and semantic-basis validity
+
+Deterministic Capability Compilation proposes a proof-carrying training receipt
+that binds exact source charter and scaffold, base model, corpus and
+counterexamples, code, optimizer, seeds, budgets, parameter changes, denominators,
+failures, authority, rollback, evaluator dependencies, support effect, and
+non-claims. The receipt does not prove equivalence; it makes candidate-specific
+translation validation and later challenge reproducible. `pass`, `fail`, and
+`unknown` remain distinct verdicts.
+
+The Platonic World Model adds the semantic validity conditions for a proof. A
+proof or justification names immutable Form and relation versions, context,
+world branch, assumptions, inference rules, attestations, tools, calibration,
+defeaters, and replay environment. A proof can remain historically replayable
+while becoming invalid under the current preferred basis or unauthorized for a
+present action. Formal deduction, statistical synthesis, measurement procedure,
+and review dossier are different proof-object types and cannot borrow one
+another's certainty.
 
 ## Interfaces
 
@@ -669,6 +688,16 @@ readers around proof-carrying code, theorem-proving practice,
 autoformalization, adversarial debate, model-graded review, and contestable
 review surfaces while preserving the claim-support boundary.
 
+### Manifest source assignment reconciliation
+
+These rows keep Proof-Carrying Claims and Adversarial Review's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Proof-Carrying Claims and Adversarial Review owns the route from a frozen target
@@ -688,6 +717,81 @@ fixtures, route consequences, and negative controls. Its value is exact
 anti-laundering discipline, not demonstrated verifier quality. Natural matched
 campaigns, causal ablations, reproduction, and transfer remain the gates between
 that discipline and any stronger claim.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **76** structured claim atoms in `CF-04`. The
+frozen repository-wide terminal audit records 75 `blocked_after_full_attempt`; 1 `narrowed_after_full_attempt`. Its core
+atom `spinoza-verification-and-proof-carrying-claims.core` remains at `argument` with terminal
+disposition `narrowed_after_full_attempt`. The authoritative per-atom rows
+are the `spinoza-verification-and-proof-carrying-claims` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+::: {.asi-human-only}
+### What the evidence now says
+
+The chapter's core remains **narrowed after full attempt**
+at `argument` support. Across its 76 structured claims,
+75 still lack required proof lanes,
+1 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Situated world-model acquisition and consolidation campaign**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Bounded finite POMDP result only; no open-world truth, general memory transfer, deployment, or chapter-core promotion.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+:::
+
+::: {.asi-ai-only}
+
+### Evidence packet
+
+| Field | Exact chapter boundary |
+|---|---|
+| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-04` minimum family bundle. |
+| Attempted local lanes | `source-synthesis` |
+| Missing or unproved lanes | `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer` |
+| Family-level natural-work or end-to-end bundle | **Situated world-model acquisition and consolidation campaign** (`natural_work_and_end_to_end`): Two partially observed environments, 11,250 episodes, 6,000 held-out episodes, six directional ablation signatures, and governed replacement/rollback. |
+| Negative controls | ten arms; six matched ablations; ten laundering mutations; replacement and rollback checks. |
+| Exact accepted transitions in this chapter | `v1_0_pilot.spinoza.no_change` |
+| Core outcome | `narrowed_after_full_attempt` at `argument`; no chapter-core promotion. |
+| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
+| Reproduction path | Replay `scripts/validate_p4_m8_world_model_campaign.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
+
+### Worked success, failure, and boundary cases
+
+- **Success case:** the family-level bundle passed its own rejecting validator
+  within this exact scope: Two partially observed environments, 11,250 episodes, 6,000 held-out episodes, six directional ablation signatures, and governed replacement/rollback. This is evidence that the family
+  received a competent attempt, not that every claim in this chapter succeeded.
+- **Failure or non-promotion case:** 75 atoms
+  remain blocked and 1 are narrowed. A
+  green family validator cannot fill their missing lanes or raise the core.
+- **Boundary case:** Bounded finite POMDP result only; no open-world truth, general memory transfer, deployment, or chapter-core promotion.
+
+### Argument-exit table
+
+| Atom set | Count | Work performed | Terminal reason and next burden |
+|---|---:|---|---|
+| Core: `spinoza-verification-and-proof-carrying-claims.core` | 1 | `source-synthesis` | `narrowed_after_full_attempt`; missing or unproved: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. |
+| narrowed after full attempt | 1 | `source-synthesis` | The exact accepted transition lineage is preserved: `v1_0_pilot.spinoza.no_change`. The claim is not widened. |
+| blocked after full attempt | 75 | `source-synthesis` | Missing or unproved lanes across this set: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. These are residual proof obligations, not false claims. |
+
+This table is a disposition map, not a promotion quota. The next valid movement
+is atom-specific evidence that fills the named missing lanes, survives relevant
+negative controls, and enters through an accepted evidence transition. Until
+then, source counts, theorem counts, fixtures, validators, or nearby family
+results cannot be used as substitutes.
+:::
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
 
 ## Handoff
 

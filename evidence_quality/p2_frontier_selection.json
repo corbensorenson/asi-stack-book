@@ -1,0 +1,167 @@
+{
+  "schema_version": "asi_stack.p2_frontier_selection.v1",
+  "recorded_date": "2026-07-17",
+  "state": "selection_complete_competence_preflight_pending",
+  "selection_rule": {
+    "method": "prospective weighted scientific-value and competence-feasibility comparison before any final held-out corpus is selected",
+    "score_scale": "1_to_5_higher_is_better",
+    "weights": {
+      "scientific_value": 0.25,
+      "canonical_relevance": 0.2,
+      "natural_non_authored_data_access": 0.15,
+      "implementation_competence_feasibility": 0.15,
+      "evaluator_independence_feasibility": 0.1,
+      "sensitivity_feasibility": 0.1,
+      "resource_feasibility": 0.05
+    },
+    "fatal_gates": [
+      "natural non-authored primary units available with provenance and rights records",
+      "mechanism can be shown to activate before outcome evaluation",
+      "same candidates can pass through all matched policy arms",
+      "strong ordinary and oracle comparators are executable",
+      "two separately implemented outcome observers can be calibrated with hidden known-effect injection",
+      "development rescue can close before a fresh final denominator is selected",
+      "full attempt fits the declared local resource ceiling without opening final data"
+    ],
+    "outcome_aware_selection_forbidden": true
+  },
+  "candidates": [
+    {
+      "candidate_id": "governed_repository_admission_joint_frontier",
+      "target_parent_atom": "integrated-reference-architecture.invariant.015",
+      "scientific_value": 5,
+      "canonical_relevance": 5,
+      "natural_non_authored_data_access": 5,
+      "implementation_competence_feasibility": 4,
+      "evaluator_independence_feasibility": 4,
+      "sensitivity_feasibility": 4,
+      "resource_feasibility": 4,
+      "weighted_score": 4.6,
+      "fatal_blocker": false,
+      "disposition": "selected_for_competence_preflight",
+      "rationale": "Real issue, pull-request, patch, and project-test effects can test useful safe admission, false blocking, rollback, latency, and governance cost on one matched frontier. The existing synthetic campaign supplies an instrument scaffold but not evidence for this new claim."
+    },
+    {
+      "candidate_id": "full_state_update_unlearning_causality",
+      "target_parent_atom": "data-engines-continual-learning-and-unlearning.core",
+      "scientific_value": 5,
+      "canonical_relevance": 5,
+      "natural_non_authored_data_access": 4,
+      "implementation_competence_feasibility": 3,
+      "evaluator_independence_feasibility": 2,
+      "sensitivity_feasibility": 3,
+      "resource_feasibility": 3,
+      "weighted_score": 3.95,
+      "fatal_blocker": true,
+      "disposition": "defer_until_independent_influence_and_privacy_evaluators_exist",
+      "rationale": "Behavior, influence, privacy, storage, backup, and descendant axes are scientifically important, but the local small-model implementation and evaluator stack cannot yet support a competence-qualified causal or privacy claim."
+    },
+    {
+      "candidate_id": "ambiguous_routing_and_real_model_deliberation",
+      "target_parent_atom": "routing-heads-and-specialist-cores.core",
+      "scientific_value": 5,
+      "canonical_relevance": 4,
+      "natural_non_authored_data_access": 4,
+      "implementation_competence_feasibility": 3,
+      "evaluator_independence_feasibility": 3,
+      "sensitivity_feasibility": 2,
+      "resource_feasibility": 3,
+      "weighted_score": 3.75,
+      "fatal_blocker": true,
+      "disposition": "defer_until_non_chance_candidate_and_router_operating_range_exist",
+      "rationale": "The earlier real-model candidates were uniformly wrong and the router lacked an estimable corruption opportunity. A stronger candidate model or independently sourced candidate pool is required before a fair claim attempt."
+    },
+    {
+      "candidate_id": "qcsa_natural_semantic_compilation",
+      "target_parent_atom": "cognitive-compilation-and-semantic-ir.core",
+      "scientific_value": 5,
+      "canonical_relevance": 5,
+      "natural_non_authored_data_access": 5,
+      "implementation_competence_feasibility": 2,
+      "evaluator_independence_feasibility": 2,
+      "sensitivity_feasibility": 2,
+      "resource_feasibility": 2,
+      "weighted_score": 3.8,
+      "fatal_blocker": true,
+      "disposition": "defer_until_learned_compiler_and_independent_semantic_evaluator_exist",
+      "rationale": "Natural issue-to-artifact work is available, but the current deterministic reference package does not competently realize learned question compilation or open-domain semantic preservation."
+    },
+    {
+      "candidate_id": "kerc_natural_cognitive_compilation",
+      "target_parent_atom": "replaceable-cognitive-substrates-beyond-transformer-monoculture.total-system-kiss",
+      "scientific_value": 5,
+      "canonical_relevance": 5,
+      "natural_non_authored_data_access": 4,
+      "implementation_competence_feasibility": 1,
+      "evaluator_independence_feasibility": 2,
+      "sensitivity_feasibility": 2,
+      "resource_feasibility": 2,
+      "weighted_score": 3.5,
+      "fatal_blocker": true,
+      "disposition": "defer_until_learned_compiler_native_cores_and_semantic_evaluators_exist",
+      "rationale": "KERC remains a high-value architecture test, but rerunning small linear cores or authored templates would repeat the N1 failure instead of giving the idea a fair chance."
+    }
+  ],
+  "selected_claim": {
+    "claim_id": "p2.governed_natural_repository_change_admission_joint_frontier",
+    "identity_relation": "subclaim_of",
+    "canonical_parent_atom": "integrated-reference-architecture.invariant.015",
+    "owner_chapter_id": "integrated-reference-architecture",
+    "proposition": "On a prospectively selected natural non-authored corpus of real repository-change candidates, the full governed admission route yields a better useful-safe-release and false-blocking frontier than matched test-only and record-only baselines without hiding latency, compute, evaluator work, rollback failures, or residual cost.",
+    "population": "Prospectively sampled public real-world issue, pull-request, patch, and project-test units created after the pinned local candidate model snapshot, spanning at least four repositories and multiple task families; development and final units are disjoint.",
+    "environment": "Disposable local worktrees or containers with pinned repository commits, dependencies, project tests, network-off execution after acquisition, and no protected or external mutation authority.",
+    "candidate_system": "Pinned local mlx-community/Qwen3-8B-4bit snapshot 545dc4251c05440727734bcd94334791f6ab0192 plus accepted human patches as oracle candidates and prospectively generated failure controls; model quality is not the target claim.",
+    "intervention": "Pass the same candidate artifact and observed test/effect packet through test-only, record-only, full-governance, and predeclared authority, evidence-freshness, and residual/rollback ablation routes.",
+    "primary_outcome": "Task-clustered useful-safe release with unsafe admission and false blocking reported separately; a joint frontier, not a single collapsed score.",
+    "secondary_outcomes": [
+      "test pass and regression status",
+      "unauthorized or out-of-scope change admission",
+      "exact rollback or explicit residualization",
+      "abstention, quarantine, and missed-help rate",
+      "generation, test, evaluation, and policy latency",
+      "compute, storage, evaluator work, and total governance cost"
+    ],
+    "minimum_effect_of_practical_interest": "At least a 0.15 paired improvement in useful-safe release or at least two prevented unsafe admissions, with no more than a 0.10 increase in false blocking; exact thresholds must be power-checked and frozen after development preflight.",
+    "maximum_inference": "One bounded local natural repository-change admission result for exact pinned systems, policies, repositories, tasks, observers, costs, and time. No model-generation superiority, general software-engineering quality, production safety, universal governance benefit, transfer, external reproduction, SOTA, AGI, or ASI inference.",
+    "support_state_effect_before_final_adjudication": "none"
+  },
+  "corpus_and_custody_plan": {
+    "primary_source_family": "real public GitHub issue and pull-request units with executable project tests; SWE-bench structure is a comparator, not automatic validity",
+    "local_source_ids": ["ext_swe_bench_2023"],
+    "candidate_model_snapshot_last_modified_utc": "2025-04-28T21:51:20.000Z",
+    "post_snapshot_creation_filter_required": true,
+    "contamination_claim": "reduced_by_post_snapshot_filter_not_eliminated_or_proven_absent",
+    "development_pool": "May be inspected and used for implementation, calibration, power simulation, and the prospectively bounded rescue ladder.",
+    "final_pool": "Must be selected and digest-sealed only after every implementation, task, evaluator, sensitivity, positive-control, baseline, and resource gate passes; no final task text, patch, tests, or outcome may be used for debugging.",
+    "rights_boundary": "Record repository license, source URLs, commit and PR identity, acquisition time, and redistribution limits; publish metadata, digests, derived scores, and public-safe logs rather than republishing source trees by default."
+  },
+  "preflight_gates": [
+    {"id": "identity", "state": "passed", "burden": "Exact subclaim and parent nonpromotion boundary frozen."},
+    {"id": "implementation", "state": "pending", "burden": "All policy arms, effect observers, worktree isolation, rollback, and mechanism traces pass component and integration controls."},
+    {"id": "construct", "state": "pending", "burden": "Development tasks show nonzero useful-safe, unsafe, false-blocking, and abstention opportunity without floor or ceiling."},
+    {"id": "comparators", "state": "pending", "burden": "Test-only, record-only, oracle accepted patch, no-op, and mechanism ablations receive matched candidates and observations."},
+    {"id": "evaluator", "state": "pending", "burden": "Two separately implemented observers agree on blinded known-effect injections and expose false-accept and false-reject rates."},
+    {"id": "sensitivity", "state": "pending", "burden": "Task-clustered power or exact sensitivity supports the frozen practical effect; multiplicity and missingness rules are fixed."},
+    {"id": "rescue", "state": "pending", "burden": "A finite development-only rescue ladder closes before final-pool selection."},
+    {"id": "resource", "state": "pending", "burden": "Disk, memory, runtime, repository licenses, dependency acquisition, and cleanup fit the frozen ceiling."},
+    {"id": "heldout", "state": "closed", "burden": "Final denominator cannot be selected or opened until all prior gates pass."}
+  ],
+  "local_feasibility_snapshot": {
+    "available_disk_gib": 91,
+    "unified_memory_gib": 16,
+    "hardware": "Apple M1 8-core",
+    "docker_available": true,
+    "pinned_local_model_available": true,
+    "pinned_model_snapshot": "545dc4251c05440727734bcd94334791f6ab0192",
+    "final_denominator_opened": false
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "Selection does not establish implementation competence or authorize final held-out opening.",
+    "A public benchmark structure does not establish contamination freedom, task validity, or evaluator correctness.",
+    "The pinned 8B local model is a reproducible candidate generator, not a current SOTA coding model.",
+    "Human accepted patches are oracle controls, not model-generated evidence or independent reproduction.",
+    "No claim support, release, deployment, publication, safety, SOTA, AGI, or ASI result follows from this selection."
+  ]
+}

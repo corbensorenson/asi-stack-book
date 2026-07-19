@@ -1,0 +1,680 @@
+# Corben's Own Sources, Papers, and Local Projects
+
+This appendix is generated from `sources/source_inventory.json` and current chapter assignments in `book_structure.json`.
+
+This is an independent top-level appendix for Corben's own papers, Corben-supplied source material, recovered project history, and local project references. It is not a combined "sources used" appendix, and it is not split into internal Corben/external parts. It contains only material on the Corben/local-project side of the corpus: Corben-authored papers, Corben-supplied source material, local-project source routes, recovered architecture notes, implementation references, variants, and public-safe source records that are not marked as third-party external literature.
+
+It is not a claim that every source has been ingested, summarized, citation-normalized, or independently verified. Source-derived claims should not be promoted until the relevant source has a source note and Appendix C has been updated.
+
+External and third-party sources are not the second half of Appendix G. They live in their own top-level appendix: [Appendix H, External Sources by Other Authors](H_external_sources.qmd).
+
+## Source Ownership Boundary
+
+This page is the Corben-side source appendix. It should be read as Appendix G only; the external-source appendix is Appendix H.
+
+## Appendix Identity
+
+| Field | Boundary |
+|---|---|
+| This appendix contains | Corben-authored papers, Corben-supplied materials, recovered project records, and local project source records. |
+| This appendix excludes | Third-party papers, documentation, outside projects, and other non-Corben references; those live in the separate Appendix H. |
+
+## Appendix Scope
+
+| Field | Boundary |
+|---|---|
+| Appendix identity | Appendix G: Corben's own sources, papers, and local projects |
+| Ownership rule | If Corben wrote it, supplied it, recovered it from his project history, or built it in a local project, it belongs here; if another author, organization, or outside project produced it, it belongs in Appendix H. |
+| Contains | Source material supplied by Corben, including authored ASI Stack papers, local-project source routes, implementation references, recovered notes, variants, and public-safe corpus records. |
+| Excludes | Third-party literature records marked `external_literature`; those belong in Appendix H. |
+| Evidence effect | Organizes Corben-side architecture material; it does not promote any claim unless the source note, Appendix C mapping, and evidence transition support that move. |
+
+## Reader Source List
+
+The live book keeps this corpus as a wide audit table. The reader edition uses source cards so long source IDs, chapter assignments, and citation status notes wrap cleanly in PDF and e-reader formats.
+
+### Verified Intent-to-Execution Architecture
+
+- Source ID: `viea`
+- Priority: `must_use`
+- Layer: `whole_stack_execution_spine`
+- Link: [source](https://docs.google.com/document/d/1SDu8MWw4dOpFqwLqA8vpE1rV98O2_GeJgVlgb6R9GsM)
+- Current use: asi-is-a-stack-not-a-model (ASI Is a Stack, Not a Model); the-efficient-asi-hypothesis (The Efficient ASI Hypothesis); system-boundaries-and-authority (System Boundaries and Authority); failure-modes-of-ungoverned-intelligence (Failure Modes of Ungoverned Intelligence); evidence-states-and-claim-discipline (Evidence States and Claim Discipline); human-intent-as-a-formal-input (Human Intent as a Formal Input); stable-capability-fields (Stable Capability Fields); recursive-self-improvement-boundaries (Recursive Self-Improvement Boundaries); intent-to-execution-contracts (Command Contracts: From Intent to Executable Work); planning-as-a-control-layer (Planning as a Control Layer: DAGs and Intelligence Arbitrage); cognitive-compilation-and-semantic-ir (Cognitive Compilation and Semantic IR); virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); claim-ledgers-and-belief-revision (Claim Ledgers and Belief Revision); labor-os-and-typed-jobs (Labor OS and Typed Jobs); artifact-graphs-audit-logs-and-replay (Artifact Graphs, Audit Logs, and Replay); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); resource-economics-and-token-budgets (Resource Economics and Token Budgets); executable-specifications-and-lean-proof-envelope (Executable Specifications and Lean Proof Envelope); artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance); integrated-reference-architecture (Integrated Reference Architecture); prototype-roadmap (Prototype Roadmap); living-book-methodology (Living Book Methodology)
+- Bibliographic status: source note available; citation not normalized
+
+### Stable Capability Fields
+
+- Source ID: `scf`
+- Priority: `must_use`
+- Layer: `governance_recursive_self_improvement`
+- Link: [source](https://docs.google.com/document/d/1hQ9LqEgpeHo2SAntUVk15Eegms_xRVfOhtndVM5TDS4)
+- Current use: asi-is-a-stack-not-a-model (ASI Is a Stack, Not a Model); system-boundaries-and-authority (System Boundaries and Authority); failure-modes-of-ungoverned-intelligence (Failure Modes of Ungoverned Intelligence); stable-capability-fields (Stable Capability Fields); capability-replacement-and-rollback (Capability Replacement and Rollback); recursive-self-improvement-boundaries (Recursive Self-Improvement Boundaries); routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine); personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence); executable-specifications-and-lean-proof-envelope (Executable Specifications and Lean Proof Envelope); policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback); artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance); integrated-reference-architecture (Integrated Reference Architecture); prototype-roadmap (Prototype Roadmap); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Bibliographic status: source note available; citation not normalized
+
+### PlanForge
+
+- Source ID: `planforge`
+- Priority: `must_use`
+- Layer: `planning_control`
+- Link: [source](https://docs.google.com/document/d/12mSs7u6JxrtVQ_GbNpBY7lXCA5uyE62Lx91gi_VRjgo)
+- Current use: human-intent-as-a-formal-input (Human Intent as a Formal Input); planning-as-a-control-layer (Planning as a Control Layer: DAGs and Intelligence Arbitrage); personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence); fast-generation-architectures (Fast Generation Architectures); resource-economics-and-token-budgets (Resource Economics and Token Budgets); policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback); artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance); integrated-reference-architecture (Integrated Reference Architecture); prototype-roadmap (Prototype Roadmap); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Bibliographic status: source note available; citation not normalized
+
+### PlanForge: A Compiler Architecture for AI Task Orchestration
+
+- Source ID: `planforge_compiler_arch`
+- Priority: `must_use_variant`
+- Layer: `planning_control`
+- Link: [source](https://docs.google.com/document/d/1ute1JJLsMfQyRFgKKveSr8U-w_MM-hk5fGxm7Vp5z1o)
+- Current use: planning-as-a-control-layer (Planning as a Control Layer: DAGs and Intelligence Arbitrage); cognitive-compilation-and-semantic-ir (Cognitive Compilation and Semantic IR)
+- Bibliographic status: source note available; citation not normalized
+
+### Cognitive Compilation
+
+- Source ID: `cognitive_compilation`
+- Priority: `must_use`
+- Layer: `planning_semantic_ir`
+- Link: [source](https://docs.google.com/document/d/1spEWiRnk1NUFuK3BLh3X80r_Up_SyebO1c3JSEzTUis)
+- Current use: human-intent-as-a-formal-input (Human Intent as a Formal Input); intent-to-execution-contracts (Command Contracts: From Intent to Executable Work); planning-as-a-control-layer (Planning as a Control Layer: DAGs and Intelligence Arbitrage); cognitive-compilation-and-semantic-ir (Cognitive Compilation and Semantic IR); artifact-graphs-audit-logs-and-replay (Artifact Graphs, Audit Logs, and Replay); compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty); mathematical-and-search-substrates (Mathematical and Search Substrates)
+- Bibliographic status: source note available; citation not normalized
+
+### Talos Protocol
+
+- Source ID: `talos`
+- Priority: `must_use`
+- Layer: `labor_execution_os`
+- Link: [source](https://docs.google.com/document/d/1IRHwojXgcGx4INJsVx8uMYu4vJGl6H5O9w_l_01VcyU)
+- Current use: asi-is-a-stack-not-a-model (ASI Is a Stack, Not a Model); system-boundaries-and-authority (System Boundaries and Authority); failure-modes-of-ungoverned-intelligence (Failure Modes of Ungoverned Intelligence); human-intent-as-a-formal-input (Human Intent as a Formal Input); stable-capability-fields (Stable Capability Fields); capability-replacement-and-rollback (Capability Replacement and Rollback); security-kernel-and-digital-scifs (Security Kernel and Digital SCIFs); recursive-self-improvement-boundaries (Recursive Self-Improvement Boundaries); intent-to-execution-contracts (Command Contracts: From Intent to Executable Work); spinoza-verification-and-proof-carrying-claims (Proof-Carrying Claims and Adversarial Review); labor-os-and-typed-jobs (Labor OS and Typed Jobs); artifact-graphs-audit-logs-and-replay (Artifact Graphs, Audit Logs, and Replay); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); inter-stack-protocols-identity-and-economic-exchange (Inter-Stack Protocols, Identity, and Economic Exchange); procedural-memory-and-cognitive-loop-closure (Procedural Memory and Cognitive Loop Closure); routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence); fast-generation-architectures (Fast Generation Architectures); executable-specifications-and-lean-proof-envelope (Executable Specifications and Lean Proof Envelope); policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback); artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance); integrated-reference-architecture (Integrated Reference Architecture); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Bibliographic status: source note available; citation not normalized
+
+### Talos_Protocol_v1.0.md
+
+- Source ID: `talos_md`
+- Priority: `must_use_variant`
+- Layer: `labor_execution_os`
+- Link: [source](https://drive.google.com/file/d/1vCXRSKiE2C5ngmo7KHhPBBTtzVvr2ki-)
+- Current use: labor-os-and-typed-jobs (Labor OS and Typed Jobs)
+- Bibliographic status: source note available; citation not normalized
+
+### Virtual_Context_Memory_v1
+
+- Source ID: `vcm_public`
+- Priority: `must_use`
+- Layer: `memory_context`
+- Link: [source](https://docs.google.com/document/d/1fid_RDNJcY3gM5WfqTpz5RABpzzoehWU4QKGhurRyJM)
+- Current use: failure-modes-of-ungoverned-intelligence (Failure Modes of Ungoverned Intelligence); virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); context-transactions-snapshots-mounts-and-taint (Context Transactions, Snapshots, Mounts, and Taint); verification-bandwidth-and-context-adequacy (Verification Bandwidth and Context Adequacy); inter-stack-protocols-identity-and-economic-exchange (Inter-Stack Protocols, Identity, and Economic Exchange); personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence); fast-generation-architectures (Fast Generation Architectures); coil-attention-cyclic-memory-and-recurrence-contracts (Coil Attention, Cyclic Memory, and Recurrence Contracts); policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback); artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance); integrated-reference-architecture (Integrated Reference Architecture); prototype-roadmap (Prototype Roadmap); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Bibliographic status: source note available; citation not normalized
+
+### Virtual_Context_Memory_v1.0_Editable
+
+- Source ID: `vcm_editable`
+- Priority: `must_use_variant`
+- Layer: `memory_context`
+- Link: [source](https://docs.google.com/document/d/1D5RifUx-1Eq_WluCrS9FUcf3qt4X7I6_n21YD2ffB0w)
+- Current use: failure-modes-of-ungoverned-intelligence (Failure Modes of Ungoverned Intelligence); virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); context-transactions-snapshots-mounts-and-taint (Context Transactions, Snapshots, Mounts, and Taint); verification-bandwidth-and-context-adequacy (Verification Bandwidth and Context Adequacy); integrated-reference-architecture (Integrated Reference Architecture); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Bibliographic status: source note available; citation not normalized
+
+### Proof of Belief / The Spinoza Architecture
+
+- Source ID: `spinoza`
+- Priority: `must_use`
+- Layer: `reasoning_epistemology`
+- Link: [source](https://docs.google.com/document/d/1Y90DBgxsOJImMXi4aOrwxtbyjlkVZpCzu1YJy_SFatk)
+- Current use: failure-modes-of-ungoverned-intelligence (Failure Modes of Ungoverned Intelligence); evidence-states-and-claim-discipline (Evidence States and Claim Discipline); constitutional-alignment-substrate (Constitutional Alignment: Agency, Dignity, and Corrigibility); moral-uncertainty-and-value-conflict (Moral Uncertainty, Value Conflict, and Contestable Governance); virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); verification-bandwidth-and-context-adequacy (Verification Bandwidth and Context Adequacy); claim-ledgers-and-belief-revision (Claim Ledgers and Belief Revision); spinoza-verification-and-proof-carrying-claims (Proof-Carrying Claims and Adversarial Review); compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty); fast-generation-architectures (Fast Generation Architectures); executable-specifications-and-lean-proof-envelope (Executable Specifications and Lean Proof Envelope); policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback); artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance); integrated-reference-architecture (Integrated Reference Architecture); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Bibliographic status: source note available; citation not normalized
+
+### Spinoza Composer / Spinoza Trinity
+
+- Source ID: `spinoza_composer`
+- Priority: `supporting`
+- Layer: `reasoning_media_compliance`
+- Link: [source](https://docs.google.com/document/d/1pWHPNCFL5dnphZxKUhj5c_yk3juskWQZPTzPjxE7nEE)
+- Current use: artifact-graphs-audit-logs-and-replay (Artifact Graphs, Audit Logs, and Replay)
+- Bibliographic status: source note available; citation not normalized
+
+### MoECOT-Agent Architecture Whitepaper
+
+- Source ID: `moecot`
+- Priority: `must_use`
+- Layer: `implementation_reference`
+- Link: [source](https://docs.google.com/document/d/1Lw5qjIFLK1gxGxqYw3_zLneFF5JT_Ihn5VI1CntjtvM)
+- Current use: asi-is-a-stack-not-a-model (ASI Is a Stack, Not a Model); the-efficient-asi-hypothesis (The Efficient ASI Hypothesis); system-boundaries-and-authority (System Boundaries and Authority); failure-modes-of-ungoverned-intelligence (Failure Modes of Ungoverned Intelligence); stable-capability-fields (Stable Capability Fields); capability-replacement-and-rollback (Capability Replacement and Rollback); recursive-self-improvement-boundaries (Recursive Self-Improvement Boundaries); intent-to-execution-contracts (Command Contracts: From Intent to Executable Work); planning-as-a-control-layer (Planning as a Control Layer: DAGs and Intelligence Arbitrage); virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); labor-os-and-typed-jobs (Labor OS and Typed Jobs); artifact-graphs-audit-logs-and-replay (Artifact Graphs, Audit Logs, and Replay); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); procedural-memory-and-cognitive-loop-closure (Procedural Memory and Cognitive Loop Closure); routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback); integrated-reference-architecture (Integrated Reference Architecture); prototype-roadmap (Prototype Roadmap); living-book-methodology (Living Book Methodology); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Bibliographic status: source note available; citation not normalized
+
+### moecot_agent_whitepaper.md
+
+- Source ID: `moecot_md`
+- Priority: `must_use_variant`
+- Layer: `implementation_reference`
+- Link: [source](https://drive.google.com/file/d/1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0)
+- Current use: routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); prototype-roadmap (Prototype Roadmap); living-book-methodology (Living Book Methodology)
+- Bibliographic status: source note available; citation not normalized
+
+### Octopus Router Architecture
+
+- Source ID: `octopus_router`
+- Priority: `must_use`
+- Layer: `routing_modular_intelligence`
+- Link: [source](https://docs.google.com/document/d/1Ew0fdnJf9crnGrQDckzNEc5fFniZviayqQfGIR3TBMY)
+- Current use: routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine); personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence); policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback); integrated-reference-architecture (Integrated Reference Architecture)
+- Bibliographic status: source note available; citation not normalized
+
+### Ratcheting Modular Intelligence
+
+- Source ID: `rmi`
+- Priority: `must_use`
+- Layer: `capability_ratchet`
+- Link: [source](https://docs.google.com/document/d/16ULc3Y82TuqkFGBpjKyhrEVZYt9_Vlvatq2kiO-q1VI)
+- Current use: the-efficient-asi-hypothesis (The Efficient ASI Hypothesis); capability-replacement-and-rollback (Capability Replacement and Rollback); recursive-self-improvement-boundaries (Recursive Self-Improvement Boundaries); open-ended-improvement-engines (Open-Ended Improvement Engines); procedural-memory-and-cognitive-loop-closure (Procedural Memory and Cognitive Loop Closure); routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine); personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence); compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty); fast-generation-architectures (Fast Generation Architectures); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); adversarial-evaluation-sandbagging-and-training-time-deception (Adversarial Evaluation, Sandbagging, and Training-Time Deception); policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback); artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance); integrated-reference-architecture (Integrated Reference Architecture); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Bibliographic status: source note available; citation not normalized
+
+### Cognitive Loop Closure
+
+- Source ID: `cognitive_loop_closure`
+- Priority: `must_use`
+- Layer: `procedural_memory`
+- Link: [source](https://docs.google.com/document/d/12yac3ZpHv3dRk2-0u627rn-gFkqGQWY4jsIJwAW9YeQ)
+- Current use: capability-replacement-and-rollback (Capability Replacement and Rollback); open-ended-improvement-engines (Open-Ended Improvement Engines); artifact-graphs-audit-logs-and-replay (Artifact Graphs, Audit Logs, and Replay); procedural-memory-and-cognitive-loop-closure (Procedural Memory and Cognitive Loop Closure); routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine); fast-generation-architectures (Fast Generation Architectures); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback); artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance); integrated-reference-architecture (Integrated Reference Architecture); living-book-methodology (Living Book Methodology)
+- Bibliographic status: source note available; citation not normalized
+
+### Benchmaxxing: The Performance Ratchet
+
+- Source ID: `benchmaxxing`
+- Priority: `must_use`
+- Layer: `benchmarks_evidence`
+- Link: [source](https://docs.google.com/document/d/1m1EycQk56VDh1Rg3IY8GYwkebIVn3bGAWIHs93a3628)
+- Current use: evidence-states-and-claim-discipline (Evidence States and Claim Discipline); capability-replacement-and-rollback (Capability Replacement and Rollback); recursive-self-improvement-boundaries (Recursive Self-Improvement Boundaries); open-ended-improvement-engines (Open-Ended Improvement Engines); procedural-memory-and-cognitive-loop-closure (Procedural Memory and Cognitive Loop Closure); routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine); fast-generation-architectures (Fast Generation Architectures); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); capability-thresholds-and-deployment-commitments (Capability Thresholds and Deployment Commitments); adversarial-evaluation-sandbagging-and-training-time-deception (Adversarial Evaluation, Sandbagging, and Training-Time Deception); safety-cases-and-structured-assurance (Safety Cases and Structured Assurance); policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback); artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance); integrated-reference-architecture (Integrated Reference Architecture); prototype-roadmap (Prototype Roadmap); living-book-methodology (Living Book Methodology); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Bibliographic status: source note available; citation not normalized
+
+### Compact Generative Systems
+
+- Source ID: `cgs`
+- Priority: `must_use`
+- Layer: `compression_representation`
+- Link: [source](https://docs.google.com/document/d/1y8IW-rnDSM8-q1KUnLfqKTGobwCoHoBwuMJ4-gCcw3M)
+- Current use: the-efficient-asi-hypothesis (The Efficient ASI Hypothesis); compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty); fast-generation-architectures (Fast Generation Architectures); rankfold-neuralfold-and-artifact-compression (RankFold, NeuralFold, and Artifact Compression); resource-economics-and-token-budgets (Resource Economics and Token Budgets); integrated-reference-architecture (Integrated Reference Architecture); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Bibliographic status: source note available; citation not normalized
+
+### Ratcheting Generative Systems
+
+- Source ID: `rgs`
+- Priority: `supporting`
+- Layer: `compression_capability_growth`
+- Link: [source](https://docs.google.com/document/d/1jxbgwiBzgUgdTjpPiOkEQNZz2ehcDioTG-lUBV-f4FA)
+- Current use: procedural-memory-and-cognitive-loop-closure (Procedural Memory and Cognitive Loop Closure); routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty)
+- Bibliographic status: source note available; citation not normalized
+
+### RankFold + NeuralFold
+
+- Source ID: `rankfold_neuralfold`
+- Priority: `must_use`
+- Layer: `compression_representation`
+- Link: [source](https://docs.google.com/document/d/1-9wujZDobutPQbAml3H3QqYvdt9GIk55bxJiaPeSUhg)
+- Current use: the-efficient-asi-hypothesis (The Efficient ASI Hypothesis); compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty); rankfold-neuralfold-and-artifact-compression (RankFold, NeuralFold, and Artifact Compression); resource-economics-and-token-budgets (Resource Economics and Token Budgets)
+- Bibliographic status: source note available; citation not normalized
+
+### rankFold compressor
+
+- Source ID: `rankfold_compressor`
+- Priority: `must_use_variant`
+- Layer: `compression_representation`
+- Link: [source](https://docs.google.com/document/d/11jw0DAAuUvw75Q_1AiwTiUGcd-y_IywB9qdEka9_MfI)
+- Current use: rankfold-neuralfold-and-artifact-compression (RankFold, NeuralFold, and Artifact Compression)
+- Bibliographic status: source note available; citation not normalized
+
+### BBVCA_v9_final_public_release
+
+- Source ID: `bbvca_v9`
+- Priority: `must_use`
+- Layer: `compression_representation`
+- Link: [source](https://docs.google.com/document/d/1dCcqTteePCyUb66H3qJ-50uYMNDdqHFG7-qQpHSvVaA)
+- Current use: the-efficient-asi-hypothesis (The Efficient ASI Hypothesis); compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty); rankfold-neuralfold-and-artifact-compression (RankFold, NeuralFold, and Artifact Compression)
+- Bibliographic status: source note available; citation not normalized
+
+### Big Bang Volumetric Compression Architecture
+
+- Source ID: `bbvca_main`
+- Priority: `must_use_variant`
+- Layer: `compression_representation`
+- Link: [source](https://docs.google.com/document/d/1tlgJismt6JaYv_jaf2XbwCX7WEqj9FJ0WvEtbHYS_-E)
+- Current use: compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty)
+- Bibliographic status: source note available; citation not normalized
+
+### GenesisCode
+
+- Source ID: `genesiscode`
+- Priority: `must_use`
+- Layer: `executable_specification`
+- Link: [source](https://docs.google.com/document/d/1w4gKcF9a7oV6hsUECsWeEafblvc78ZusxaxdUTfLR2M)
+- Current use: system-boundaries-and-authority (System Boundaries and Authority); intent-to-execution-contracts (Command Contracts: From Intent to Executable Work); cognitive-compilation-and-semantic-ir (Cognitive Compilation and Semantic IR); spinoza-verification-and-proof-carrying-claims (Proof-Carrying Claims and Adversarial Review); labor-os-and-typed-jobs (Labor OS and Typed Jobs); artifact-graphs-audit-logs-and-replay (Artifact Graphs, Audit Logs, and Replay); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); mathematical-and-search-substrates (Mathematical and Search Substrates); executable-specifications-and-lean-proof-envelope (Executable Specifications and Lean Proof Envelope); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Bibliographic status: source note available; citation not normalized
+
+### Field of God / Alignment Field family
+
+- Source ID: `alignment_field`
+- Priority: `must_use`
+- Layer: `alignment_constitution`
+- Link: [source](https://docs.google.com/document/d/1CCiBBlOEGB2huRDSwGm4P1JkVBkfmaUxJt9AwG23Kzw)
+- Current use: constitutional-alignment-substrate (Constitutional Alignment: Agency, Dignity, and Corrigibility); moral-uncertainty-and-value-conflict (Moral Uncertainty, Value Conflict, and Contestable Governance); security-kernel-and-digital-scifs (Security Kernel and Digital SCIFs); recursive-self-improvement-boundaries (Recursive Self-Improvement Boundaries); resource-economics-and-token-budgets (Resource Economics and Token Budgets); integrated-reference-architecture (Integrated Reference Architecture); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Bibliographic status: source note available; citation not normalized
+
+### The Field of God
+
+- Source ID: `field_of_god`
+- Priority: `must_use_variant`
+- Layer: `alignment_constitution`
+- Link: [source](https://docs.google.com/document/d/1BDVLQqIeDm-PFijrg6oKaCbRtUyY--_waw88tnU9tj0)
+- Current use: failure-modes-of-ungoverned-intelligence (Failure Modes of Ungoverned Intelligence); constitutional-alignment-substrate (Constitutional Alignment: Agency, Dignity, and Corrigibility)
+- Bibliographic status: source note available; citation not normalized
+
+### Field of God AI Constitution
+
+- Source ID: `field_of_god_ai_constitution`
+- Priority: `core_alignment_source`
+- Layer: `constitutional_alignment_runtime_governance`
+- Link: [source](https://github.com/corbensorenson/symliquid-rmi/blob/main/personality-documents/field_of_god_ai_constitution_v1.md)
+- Current use: constitutional-alignment-substrate (Constitutional Alignment: Agency, Dignity, and Corrigibility); moral-uncertainty-and-value-conflict (Moral Uncertainty, Value Conflict, and Contestable Governance); recursive-self-improvement-boundaries (Recursive Self-Improvement Boundaries); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence); artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Bibliographic status: source note available; citation not normalized
+
+### Ethica Mechanica
+
+- Source ID: `ethica_mechanica`
+- Priority: `must_use_variant`
+- Layer: `alignment_constitution`
+- Link: [source](https://docs.google.com/document/d/15cN9D6s2bvAPoitp6Imh7deE3gCebqG4RbaSRGRd5GA)
+- Current use: constitutional-alignment-substrate (Constitutional Alignment: Agency, Dignity, and Corrigibility); moral-uncertainty-and-value-conflict (Moral Uncertainty, Value Conflict, and Contestable Governance)
+- Bibliographic status: source note available; citation not normalized
+
+### The Eternal Code / unified God, reality, conscious, alignment
+
+- Source ID: `eternal_code`
+- Priority: `must_use_variant`
+- Layer: `alignment_constitution`
+- Link: [source](https://docs.google.com/document/d/1ZMqR7CMSnzignSbHdm38q9jSAXGMRsIoz3jOz3qmVrc)
+- Current use: constitutional-alignment-substrate (Constitutional Alignment: Agency, Dignity, and Corrigibility)
+- Bibliographic status: source note available; citation not normalized
+
+### The Coherence Exchange
+
+- Source ID: `coherence_exchange`
+- Priority: `strong_support`
+- Layer: `epistemic_market_synthesis`
+- Link: [source](https://docs.google.com/document/d/1RUeBKp_UnRVIMc2oPBT2j3xm-HBa81Y4VqTckPhCeJc)
+- Current use: evidence-states-and-claim-discipline (Evidence States and Claim Discipline); constitutional-alignment-substrate (Constitutional Alignment: Agency, Dignity, and Corrigibility); moral-uncertainty-and-value-conflict (Moral Uncertainty, Value Conflict, and Contestable Governance); security-kernel-and-digital-scifs (Security Kernel and Digital SCIFs); planning-as-a-control-layer (Planning as a Control Layer: DAGs and Intelligence Arbitrage); claim-ledgers-and-belief-revision (Claim Ledgers and Belief Revision); spinoza-verification-and-proof-carrying-claims (Proof-Carrying Claims and Adversarial Review); resource-economics-and-token-budgets (Resource Economics and Token Budgets); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance); prototype-roadmap (Prototype Roadmap)
+- Bibliographic status: source note available; citation not normalized
+
+### Verification Bandwidth in Bounded Contexts
+
+- Source ID: `verification_bandwidth`
+- Priority: `strong_support`
+- Layer: `context_verification_theory`
+- Link: [source](https://docs.google.com/document/d/1T34n1Ya6_joaAD8ZxygOpiEuNzEVj3G8_nf0xZuFL2U)
+- Current use: evidence-states-and-claim-discipline (Evidence States and Claim Discipline); scalable-oversight-and-adversarial-ai-control (Scalable Oversight and Adversarial AI Control); virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); verification-bandwidth-and-context-adequacy (Verification Bandwidth and Context Adequacy); spinoza-verification-and-proof-carrying-claims (Proof-Carrying Claims and Adversarial Review); compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty); fast-generation-architectures (Fast Generation Architectures); governed-deliberation-and-test-time-scaling (Governed Deliberation and Test-Time Scaling); policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Bibliographic status: source note available; citation not normalized
+
+### BeastBrain Cognitive Architecture
+
+- Source ID: `beastbrain`
+- Priority: `supporting_lineage`
+- Layer: `whole_stack_lineage`
+- Link: [source](https://docs.google.com/document/d/1PVLtICJVZm36c6M2y9JkuMZF9nfu_6pyR1SXqFzknME)
+- Current use: asi-is-a-stack-not-a-model (ASI Is a Stack, Not a Model); the-efficient-asi-hypothesis (The Efficient ASI Hypothesis); routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); prototype-roadmap (Prototype Roadmap)
+- Bibliographic status: source note available; citation not normalized
+
+### BeastBrain Architecture: Timeless Edition
+
+- Source ID: `beastbrain_timeless`
+- Priority: `supporting_lineage`
+- Layer: `whole_stack_lineage`
+- Link: [source](https://docs.google.com/document/d/12g8s3R_v0mJ7GXaOoWeWkqHWBQWe_iGmcTmUwChZLwg)
+- Current use: the-efficient-asi-hypothesis (The Efficient ASI Hypothesis); prototype-roadmap (Prototype Roadmap)
+- Bibliographic status: source note available; citation not normalized
+
+### Aletheia Foundry
+
+- Source ID: `aletheia`
+- Priority: `supporting_lineage`
+- Layer: `safe_general_intelligence_lineage`
+- Link: [source](https://docs.google.com/document/d/1H6M_IPbuu86FOQurv2rLQ97EYQVdThZ2U7njl0DBpIE)
+- Current use: asi-is-a-stack-not-a-model (ASI Is a Stack, Not a Model); the-efficient-asi-hypothesis (The Efficient ASI Hypothesis); claim-ledgers-and-belief-revision (Claim Ledgers and Belief Revision)
+- Bibliographic status: source note available; citation not normalized
+
+### Context Engineer / Manhattan Protocol
+
+- Source ID: `context_engineer`
+- Priority: `supporting_lineage`
+- Layer: `memory_context_lineage`
+- Link: [source](https://docs.google.com/document/d/1xXP364s9IZ4DFmRHTmBELviRQkJcQ55McIUokioRFdo)
+- Current use: security-kernel-and-digital-scifs (Security Kernel and Digital SCIFs); virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); context-transactions-snapshots-mounts-and-taint (Context Transactions, Snapshots, Mounts, and Taint)
+- Bibliographic status: source note available; citation not normalized
+
+### Black Hole Context Manager
+
+- Source ID: `black_hole_context_manager`
+- Priority: `supporting_lineage`
+- Layer: `memory_context_lineage`
+- Link: [source](https://docs.google.com/document/d/14KPQT5d86HaFZzQdUr_Sn5p7-8cscSqIZm5zxkijl-I)
+- Current use: context-transactions-snapshots-mounts-and-taint (Context Transactions, Snapshots, Mounts, and Taint)
+- Bibliographic status: source note available; citation not normalized
+
+### Ladon & The Manhattan Protocol
+
+- Source ID: `ladon_manhattan`
+- Priority: `supporting_lineage`
+- Layer: `security_governance`
+- Link: [source](https://docs.google.com/document/d/1uT9iQ7Jb2TsU9DletvtVeLEej63aIQl3WS3jTsMgtSM)
+- Current use: system-boundaries-and-authority (System Boundaries and Authority); moral-uncertainty-and-value-conflict (Moral Uncertainty, Value Conflict, and Contestable Governance); stable-capability-fields (Stable Capability Fields); security-kernel-and-digital-scifs (Security Kernel and Digital SCIFs); context-transactions-snapshots-mounts-and-taint (Context Transactions, Snapshots, Mounts, and Taint); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence)
+- Bibliographic status: source note available; citation not normalized
+
+### Unified Adaptive Tribunal
+
+- Source ID: `uat`
+- Priority: `supporting_lineage`
+- Layer: `evaluation_refinement`
+- Link: [source](https://docs.google.com/document/d/1R7wKo2qg5waosEa-SwC-JKF77qoDiiEp1Df4Gbap0VE)
+- Current use: evidence-states-and-claim-discipline (Evidence States and Claim Discipline); moral-uncertainty-and-value-conflict (Moral Uncertainty, Value Conflict, and Contestable Governance); claim-ledgers-and-belief-revision (Claim Ledgers and Belief Revision); spinoza-verification-and-proof-carrying-claims (Proof-Carrying Claims and Adversarial Review); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence)
+- Bibliographic status: source note available; citation not normalized
+
+### TreeLLM
+
+- Source ID: `treellm`
+- Priority: `supporting_lineage`
+- Layer: `semantic_representation`
+- Link: [source](https://docs.google.com/document/d/17C98P4WhU4srqrT83xXpopRvwHO19zRFJ_ov0MWhgHE)
+- Current use: cognitive-compilation-and-semantic-ir (Cognitive Compilation and Semantic IR); verification-bandwidth-and-context-adequacy (Verification Bandwidth and Context Adequacy); spinoza-verification-and-proof-carrying-claims (Proof-Carrying Claims and Adversarial Review); compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty); mathematical-and-search-substrates (Mathematical and Search Substrates)
+- Bibliographic status: source note available; citation not normalized
+
+### Software Magic Grimoire
+
+- Source ID: `software_magic_grimoire`
+- Priority: `supporting_lineage`
+- Layer: `command_contracts_promptcraft`
+- Link: [source](https://docs.google.com/document/d/1UjGadqJ3ZiqfLgbac0APtV_OLnlSZAkIW0o0r37YdBo)
+- Current use: human-intent-as-a-formal-input (Human Intent as a Formal Input); intent-to-execution-contracts (Command Contracts: From Intent to Executable Work); planning-as-a-control-layer (Planning as a Control Layer: DAGs and Intelligence Arbitrage); labor-os-and-typed-jobs (Labor OS and Typed Jobs); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval)
+- Bibliographic status: source note available; citation not normalized
+
+### Road To AGI
+
+- Source ID: `road_to_agi`
+- Priority: `supporting_lineage`
+- Layer: `strategic_roadmap`
+- Link: [source](https://drive.google.com/file/d/1FfYjqa36tMQ4s4KLbPPnIOZNfQefuT7p)
+- Current use: benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); prototype-roadmap (Prototype Roadmap); living-book-methodology (Living Book Methodology); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Bibliographic status: source note available; citation not normalized
+
+### Simulation Scaling Law
+
+- Source ID: `simulation_scaling`
+- Priority: `optional_support`
+- Layer: `compute_fidelity_constraints`
+- Link: [source](https://docs.google.com/document/d/1rt0lnpwZ9X6M_ejLC7PYHQSXsvajYICGo4ETS-ndUFA)
+- Current use: the-efficient-asi-hypothesis (The Efficient ASI Hypothesis); failure-modes-of-ungoverned-intelligence (Failure Modes of Ungoverned Intelligence); compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty); resource-economics-and-token-budgets (Resource Economics and Token Budgets); mathematical-and-search-substrates (Mathematical and Search Substrates); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Bibliographic status: source note available; citation not normalized
+
+### TokenMana
+
+- Source ID: `tokenmana`
+- Priority: `optional_support`
+- Layer: `resource_economics`
+- Link: [source](https://docs.google.com/document/d/1dGOlGPZi6byTwRUbHQt40OSErBnQ4j6G_BZvA-oJRM8)
+- Current use: planning-as-a-control-layer (Planning as a Control Layer: DAGs and Intelligence Arbitrage); inter-stack-protocols-identity-and-economic-exchange (Inter-Stack Protocols, Identity, and Economic Exchange); personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence); fast-generation-architectures (Fast Generation Architectures); resource-economics-and-token-budgets (Resource Economics and Token Budgets); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback); artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance)
+- Bibliographic status: source note available; citation not normalized
+
+### CoilMoECOT Whitepaper v2.0
+
+- Source ID: `coilmoecot`
+- Priority: `optional_technical_appendix`
+- Layer: `mathematical_search_substrate`
+- Link: [source](https://drive.google.com/file/d/1iwhhRGr7vj_Sr4UwwM_yX_ESSyisoWur)
+- Current use: mathematical-and-search-substrates (Mathematical and Search Substrates); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Bibliographic status: source note available; citation not normalized
+
+### Temporal Coil Research
+
+- Source ID: `temporal_coil_research`
+- Priority: `optional_technical_appendix`
+- Layer: `mathematical_search_substrate`
+- Link: [source](https://drive.google.com/file/d/1PSQsAwMurlVRdsM6r_zRd2MPLZYv0qXH)
+- Current use: mathematical-and-search-substrates (Mathematical and Search Substrates)
+- Bibliographic status: source note available; citation not normalized
+
+### BugBrain
+
+- Source ID: `bugbrain`
+- Priority: `optional_support`
+- Layer: `edge_efficiency_lineage`
+- Link: [source](https://docs.google.com/document/d/1XR716XCo-WmvOpvGTGDmh9zbv44oiyjfcVDVQ1YibIc)
+- Current use: compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty); rankfold-neuralfold-and-artifact-compression (RankFold, NeuralFold, and Artifact Compression); prototype-roadmap (Prototype Roadmap); living-book-methodology (Living Book Methodology)
+- Bibliographic status: source note available; citation not normalized
+
+### Compiled Cognitive Architecture project
+
+- Source ID: `cca_project`
+- Priority: `implementation_reference`
+- Layer: `compiled_cognitive_architecture`
+- Link: local project reference (not publicly linked)
+- Current use: system-boundaries-and-authority (System Boundaries and Authority); evidence-states-and-claim-discipline (Evidence States and Claim Discipline); model-weight-custody-and-hardware-roots-of-trust (Model-Weight Custody and Hardware Roots of Trust); ai-supply-chain-integrity-and-lifecycle-provenance (AI Supply-Chain Integrity and Lifecycle Provenance); intent-to-execution-contracts (Command Contracts: From Intent to Executable Work); cognitive-compilation-and-semantic-ir (Cognitive Compilation and Semantic IR); virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); context-transactions-snapshots-mounts-and-taint (Context Transactions, Snapshots, Mounts, and Taint); claim-ledgers-and-belief-revision (Claim Ledgers and Belief Revision); spinoza-verification-and-proof-carrying-claims (Proof-Carrying Claims and Adversarial Review); artifact-graphs-audit-logs-and-replay (Artifact Graphs, Audit Logs, and Replay); procedural-memory-and-cognitive-loop-closure (Procedural Memory and Cognitive Loop Closure); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine); executable-specifications-and-lean-proof-envelope (Executable Specifications and Lean Proof Envelope); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); integrated-reference-architecture (Integrated Reference Architecture)
+- Bibliographic status: source note available; citation not normalized
+
+### MoECOT Manifest compiler-era project
+
+- Source ID: `moecot_manifest_project`
+- Priority: `implementation_reference`
+- Layer: `compiler_first_ai_systems`
+- Link: local project reference (not publicly linked)
+- Current use: system-boundaries-and-authority (System Boundaries and Authority); evidence-states-and-claim-discipline (Evidence States and Claim Discipline); security-kernel-and-digital-scifs (Security Kernel and Digital SCIFs); ai-supply-chain-integrity-and-lifecycle-provenance (AI Supply-Chain Integrity and Lifecycle Provenance); intent-to-execution-contracts (Command Contracts: From Intent to Executable Work); cognitive-compilation-and-semantic-ir (Cognitive Compilation and Semantic IR); virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); context-transactions-snapshots-mounts-and-taint (Context Transactions, Snapshots, Mounts, and Taint); claim-ledgers-and-belief-revision (Claim Ledgers and Belief Revision); spinoza-verification-and-proof-carrying-claims (Proof-Carrying Claims and Adversarial Review); artifact-graphs-audit-logs-and-replay (Artifact Graphs, Audit Logs, and Replay); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); procedural-memory-and-cognitive-loop-closure (Procedural Memory and Cognitive Loop Closure); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine); executable-specifications-and-lean-proof-envelope (Executable Specifications and Lean Proof Envelope); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); integrated-reference-architecture (Integrated Reference Architecture)
+- Bibliographic status: source note available; citation not normalized
+
+### BeastBrain historical AI system project
+
+- Source ID: `beastbrain_project`
+- Priority: `implementation_reference`
+- Layer: `durable_semantic_memory_and_system_architecture`
+- Link: local project reference (not publicly linked)
+- Current use: system-boundaries-and-authority (System Boundaries and Authority); evidence-states-and-claim-discipline (Evidence States and Claim Discipline); security-kernel-and-digital-scifs (Security Kernel and Digital SCIFs); intent-to-execution-contracts (Command Contracts: From Intent to Executable Work); virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); context-transactions-snapshots-mounts-and-taint (Context Transactions, Snapshots, Mounts, and Taint); claim-ledgers-and-belief-revision (Claim Ledgers and Belief Revision); spinoza-verification-and-proof-carrying-claims (Proof-Carrying Claims and Adversarial Review); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); procedural-memory-and-cognitive-loop-closure (Procedural Memory and Cognitive Loop Closure); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence)
+- Bibliographic status: source note available; citation not normalized
+
+### BugBrain bare-metal neuro-symbolic intelligence project
+
+- Source ID: `bugbrain_project`
+- Priority: `implementation_reference`
+- Layer: `hardware_explicit_governed_cognition`
+- Link: local project reference (not publicly linked)
+- Current use: system-boundaries-and-authority (System Boundaries and Authority); evidence-states-and-claim-discipline (Evidence States and Claim Discipline); security-kernel-and-digital-scifs (Security Kernel and Digital SCIFs); intent-to-execution-contracts (Command Contracts: From Intent to Executable Work); virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); context-transactions-snapshots-mounts-and-taint (Context Transactions, Snapshots, Mounts, and Taint); claim-ledgers-and-belief-revision (Claim Ledgers and Belief Revision); spinoza-verification-and-proof-carrying-claims (Proof-Carrying Claims and Adversarial Review); artifact-graphs-audit-logs-and-replay (Artifact Graphs, Audit Logs, and Replay); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); integrated-reference-architecture (Integrated Reference Architecture)
+- Bibliographic status: source note available; citation not normalized
+
+### Corben's Trainer epistemic training and evaluation control plane
+
+- Source ID: `corbens_trainer_project`
+- Priority: `implementation_reference`
+- Layer: `epistemic_training_and_evaluation_control_plane`
+- Link: local project reference (not publicly linked)
+- Current use: system-boundaries-and-authority (System Boundaries and Authority); evidence-states-and-claim-discipline (Evidence States and Claim Discipline); security-kernel-and-digital-scifs (Security Kernel and Digital SCIFs); ai-supply-chain-integrity-and-lifecycle-provenance (AI Supply-Chain Integrity and Lifecycle Provenance); artifact-graphs-audit-logs-and-replay (Artifact Graphs, Audit Logs, and Replay); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); procedural-memory-and-cognitive-loop-closure (Procedural Memory and Cognitive Loop Closure); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); integrated-reference-architecture (Integrated Reference Architecture)
+- Bibliographic status: source note available; citation not normalized
+
+### Corben's Best Model Possible recurrent-model and mechanism laboratory
+
+- Source ID: `corbens_best_model_possible_project`
+- Priority: `implementation_reference`
+- Layer: `recurrent_model_mechanisms_and_capability_evidence`
+- Link: local project reference (not publicly linked)
+- Current use: system-boundaries-and-authority (System Boundaries and Authority); evidence-states-and-claim-discipline (Evidence States and Claim Discipline); security-kernel-and-digital-scifs (Security Kernel and Digital SCIFs); intent-to-execution-contracts (Command Contracts: From Intent to Executable Work); cognitive-compilation-and-semantic-ir (Cognitive Compilation and Semantic IR); context-transactions-snapshots-mounts-and-taint (Context Transactions, Snapshots, Mounts, and Taint); claim-ledgers-and-belief-revision (Claim Ledgers and Belief Revision); spinoza-verification-and-proof-carrying-claims (Proof-Carrying Claims and Adversarial Review); artifact-graphs-audit-logs-and-replay (Artifact Graphs, Audit Logs, and Replay); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine); executable-specifications-and-lean-proof-envelope (Executable Specifications and Lean Proof Envelope); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); integrated-reference-architecture (Integrated Reference Architecture)
+- Bibliographic status: source note available; citation not normalized
+
+### Project Theseus Whitepaper
+
+- Source ID: `project_theseus_whitepaper`
+- Priority: `implementation_reference`
+- Layer: `report_first_rmi_prototype`
+- Link: [source](https://github.com/corbensorenson/symliquid-rmi/blob/main/docs/PROJECT_THESEUS_WHITEPAPER.md)
+- Current use: procedural-memory-and-cognitive-loop-closure (Procedural Memory and Cognitive Loop Closure); routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine); personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence); compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty); resource-economics-and-token-budgets (Resource Economics and Token Budgets); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance); integrated-reference-architecture (Integrated Reference Architecture); project-theseus-as-report-first-implementation-reference (Project Theseus as Report-First Implementation Reference); prototype-roadmap (Prototype Roadmap); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Bibliographic status: source note available; citation not normalized
+
+### Theseus Plan Compiler
+
+- Source ID: `theseus_plan_compiler`
+- Priority: `implementation_reference`
+- Layer: `planning_control`
+- Link: [source](https://github.com/corbensorenson/symliquid-rmi/blob/main/docs/THESEUS_PLAN_COMPILER.md)
+- Current use: integrated-reference-architecture (Integrated Reference Architecture); project-theseus-as-report-first-implementation-reference (Project Theseus as Report-First Implementation Reference); prototype-roadmap (Prototype Roadmap)
+- Bibliographic status: source note available; citation not normalized
+
+### Theseus Self-Evolution System
+
+- Source ID: `theseus_self_evolution_system`
+- Priority: `implementation_reference`
+- Layer: `recursive_self_improvement_governance`
+- Link: [source](https://github.com/corbensorenson/symliquid-rmi/blob/main/docs/SELF_EVOLUTION_SYSTEM.md)
+- Current use: recursive-self-improvement-boundaries (Recursive Self-Improvement Boundaries); procedural-memory-and-cognitive-loop-closure (Procedural Memory and Cognitive Loop Closure); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); integrated-reference-architecture (Integrated Reference Architecture); project-theseus-as-report-first-implementation-reference (Project Theseus as Report-First Implementation Reference); prototype-roadmap (Prototype Roadmap)
+- Bibliographic status: source note available; citation not normalized
+
+### Theseus Architecture Gate
+
+- Source ID: `theseus_architecture_gate`
+- Priority: `implementation_reference`
+- Layer: `readiness_gate_governance`
+- Link: [source](https://github.com/corbensorenson/symliquid-rmi/blob/main/docs/ARCHITECTURE_GATE.md)
+- Current use: recursive-self-improvement-boundaries (Recursive Self-Improvement Boundaries); routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); capability-thresholds-and-deployment-commitments (Capability Thresholds and Deployment Commitments); integrated-reference-architecture (Integrated Reference Architecture); project-theseus-as-report-first-implementation-reference (Project Theseus as Report-First Implementation Reference); prototype-roadmap (Prototype Roadmap)
+- Bibliographic status: source note available; citation not normalized
+
+### Hive Operator OS and Work Board
+
+- Source ID: `theseus_operator_os`
+- Priority: `implementation_reference`
+- Layer: `labor_os_operator_surface`
+- Link: [source](https://github.com/corbensorenson/symliquid-rmi/blob/main/docs/HIVE_OPERATOR_OS.md)
+- Current use: runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); procedural-memory-and-cognitive-loop-closure (Procedural Memory and Cognitive Loop Closure); routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence); artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance); integrated-reference-architecture (Integrated Reference Architecture); project-theseus-as-report-first-implementation-reference (Project Theseus as Report-First Implementation Reference); prototype-roadmap (Prototype Roadmap)
+- Bibliographic status: source note available; citation not normalized
+
+### Theseus Circle Calculus Transfer Lane
+
+- Source ID: `theseus_circle_transfer`
+- Priority: `implementation_reference`
+- Layer: `proof_contract_transfer`
+- Link: [source](https://github.com/corbensorenson/symliquid-rmi/blob/main/docs/CIRCLE_CALCULUS_TRANSFER.md)
+- Current use: mathematical-and-search-substrates (Mathematical and Search Substrates); coil-attention-cyclic-memory-and-recurrence-contracts (Coil Attention, Cyclic Memory, and Recurrence Contracts); coilra-multicoil-rope-and-cyclic-mixers (CoilRA, MultiCoil RoPE, and Cyclic Mixers); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); integrated-reference-architecture (Integrated Reference Architecture); project-theseus-as-report-first-implementation-reference (Project Theseus as Report-First Implementation Reference); prototype-roadmap (Prototype Roadmap); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Bibliographic status: source note available; citation not normalized
+
+### Circle Calculus
+
+- Source ID: `circle_calculus_core`
+- Priority: `core_technical_source`
+- Layer: `proof_carrying_mathematical_substrate`
+- Link: [source](https://github.com/corbensorenson/circle-calculus)
+- Current use: mathematical-and-search-substrates (Mathematical and Search Substrates); circle-calculus-and-proof-carrying-ai-contracts (Circle Calculus and Proof-Carrying AI Contracts); executable-specifications-and-lean-proof-envelope (Executable Specifications and Lean Proof Envelope); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Bibliographic status: source note available; citation not normalized
+
+### Circle Calculus AI Contract Suite
+
+- Source ID: `circle_ai_contract_suite`
+- Priority: `core_technical_source`
+- Layer: `proof_carrying_ai_contracts`
+- Link: [source](https://github.com/corbensorenson/circle-calculus/blob/main/docs/AI_CONTRACT_SUITE.md)
+- Current use: circle-calculus-and-proof-carrying-ai-contracts (Circle Calculus and Proof-Carrying AI Contracts); coil-attention-cyclic-memory-and-recurrence-contracts (Coil Attention, Cyclic Memory, and Recurrence Contracts); coilra-multicoil-rope-and-cyclic-mixers (CoilRA, MultiCoil RoPE, and Cyclic Mixers); executable-specifications-and-lean-proof-envelope (Executable Specifications and Lean Proof Envelope); prototype-roadmap (Prototype Roadmap); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Bibliographic status: source note available; citation not normalized
+
+### Circle AI Architectures
+
+- Source ID: `circle_ai_architectures`
+- Priority: `core_technical_source`
+- Layer: `cyclic_ai_architecture`
+- Link: [source](https://github.com/corbensorenson/circle-calculus/blob/main/papers/applications/PAPER_AI_01_CIRCLE_AI_ARCHITECTURES.md)
+- Current use: compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty); mathematical-and-search-substrates (Mathematical and Search Substrates); circle-calculus-and-proof-carrying-ai-contracts (Circle Calculus and Proof-Carrying AI Contracts); coilra-multicoil-rope-and-cyclic-mixers (CoilRA, MultiCoil RoPE, and Cyclic Mixers)
+- Bibliographic status: source note available; citation not normalized
+
+### Coil Attention and Memory
+
+- Source ID: `coil_attention_memory`
+- Priority: `core_technical_source`
+- Layer: `cyclic_attention_memory`
+- Link: [source](https://github.com/corbensorenson/circle-calculus/blob/main/papers/applications/PAPER_AI_02_COIL_ATTENTION_AND_MEMORY.md)
+- Current use: coil-attention-cyclic-memory-and-recurrence-contracts (Coil Attention, Cyclic Memory, and Recurrence Contracts)
+- Bibliographic status: source note available; citation not normalized
+
+### CoilRA and MultiCoil RoPE
+
+- Source ID: `coilra_multicoil_rope`
+- Priority: `core_technical_source`
+- Layer: `cyclic_mixers_position_encoding`
+- Link: [source](https://github.com/corbensorenson/circle-calculus/blob/main/papers/applications/PAPER_AI_03_COILRA_AND_MULTICOIL_ROPE.md)
+- Current use: compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty); resource-economics-and-token-budgets (Resource Economics and Token Budgets); coilra-multicoil-rope-and-cyclic-mixers (CoilRA, MultiCoil RoPE, and Cyclic Mixers)
+- Bibliographic status: source note available; citation not normalized
+
+### Proof-Carrying RoPE Position Distinguishability
+
+- Source ID: `rope_position_certifier`
+- Priority: `core_technical_source`
+- Layer: `proof_carrying_position_contract`
+- Link: [source](https://github.com/corbensorenson/circle-calculus/blob/main/papers/applications/PAPER_AI_04_ROPE_POSITION_CERTIFIER.md)
+- Current use: circle-calculus-and-proof-carrying-ai-contracts (Circle Calculus and Proof-Carrying AI Contracts); coilra-multicoil-rope-and-cyclic-mixers (CoilRA, MultiCoil RoPE, and Cyclic Mixers); executable-specifications-and-lean-proof-envelope (Executable Specifications and Lean Proof Envelope)
+- Bibliographic status: source note available; citation not normalized
+
+### Proof-Carrying Circular Computation
+
+- Source ID: `proof_carrying_circular_computation`
+- Priority: `supporting_technical_source`
+- Layer: `proof_carrying_compute_substrate`
+- Link: [source](https://github.com/corbensorenson/circle-calculus/blob/main/papers/applications/PAPER_COMP_01_PROOF_CARRYING_CIRCULAR_COMPUTATION.md)
+- Current use: mathematical-and-search-substrates (Mathematical and Search Substrates); circle-calculus-and-proof-carrying-ai-contracts (Circle Calculus and Proof-Carrying AI Contracts); executable-specifications-and-lean-proof-envelope (Executable Specifications and Lean Proof Envelope)
+- Bibliographic status: source note available; citation not normalized
+
+### Theseus Synthetic Data Curation
+
+- Source ID: `theseus_synthetic_data_curation`
+- Priority: `implementation_reference`
+- Layer: `governed_synthetic_data_admission`
+- Link: local project reference (not publicly linked)
+- Current use: data-engines-continual-learning-and-unlearning (Data Engines, Continual Learning, and Unlearning)
+- Bibliographic status: source note available; citation not normalized
+
+### Question-Compiled Semantic Addressing
+
+- Source ID: `qcsa_whitepaper`
+- Priority: `must_use`
+- Layer: `semantic_addressing_control_plane`
+- Link: local source reference (not publicly linked)
+- Current use: cognitive-compilation-and-semantic-ir (Cognitive Compilation and Semantic IR); virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); claim-ledgers-and-belief-revision (Claim Ledgers and Belief Revision); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); inter-stack-protocols-identity-and-economic-exchange (Inter-Stack Protocols, Identity, and Economic Exchange); routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty); data-engines-continual-learning-and-unlearning (Data Engines, Continual Learning, and Unlearning); integrated-reference-architecture (Integrated Reference Architecture)
+- Bibliographic status: source note available; citation not normalized
+
+### The Reflexive Router: A Pre-Deliberative Architecture for Fast, Governed, Tool-Native Intelligence
+
+- Source ID: `reflexive_router_whitepaper`
+- Priority: `must_use`
+- Layer: `pre_deliberative_reflexive_routing_control_plane`
+- Link: local source reference (not publicly linked)
+- Current use: stable-capability-fields (Stable Capability Fields); intent-to-execution-contracts (Command Contracts: From Intent to Executable Work); planning-as-a-control-layer (Planning as a Control Layer: DAGs and Intelligence Arbitrage); virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); context-transactions-snapshots-mounts-and-taint (Context Transactions, Snapshots, Mounts, and Taint); claim-ledgers-and-belief-revision (Claim Ledgers and Belief Revision); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); procedural-memory-and-cognitive-loop-closure (Procedural Memory and Cognitive Loop Closure); routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); resource-economics-and-token-budgets (Resource Economics and Token Budgets); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); integrated-reference-architecture (Integrated Reference Architecture)
+- Bibliographic status: source note available; citation not normalized
+
+### KISS versus Irreducible Intelligence (author-supplied design conversation)
+
+- Source ID: `corben_chatgpt_kiss_irreducible_intelligence_2026`
+- Priority: `supporting`
+- Layer: `author_intent_replaceable_cognitive_substrates`
+- Link: [source](https://chatgpt.com/share/6a57604d-59b4-83ea-8da7-b9d3d52658f8)
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Bibliographic status: source note available; citation not normalized
+
+### OneCell and Theseus Architecture Handoff (author-supplied design conversation)
+
+- Source ID: `corben_chatgpt_onecell_theseus_2026`
+- Priority: `supporting`
+- Layer: `author_intent_onecell_and_architectural_rsi`
+- Link: [source](https://chatgpt.com/share/6a57781e-17a4-83ea-aaae-fa263a9ac2fd)
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Bibliographic status: source note available; citation not normalized
+
+### Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning
+
+- Source ID: `kernel_english_residual_compiler`
+- Priority: `must_use`
+- Layer: `canonical_cognitive_compilation_and_hierarchical_residual_runtime`
+- Link: local source reference (not publicly linked)
+- Current use: security-kernel-and-digital-scifs (Security Kernel and Digital SCIFs); cognitive-compilation-and-semantic-ir (Cognitive Compilation and Semantic IR); virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); context-transactions-snapshots-mounts-and-taint (Context Transactions, Snapshots, Mounts, and Taint); verification-bandwidth-and-context-adequacy (Verification Bandwidth and Context Adequacy); procedural-memory-and-cognitive-loop-closure (Procedural Memory and Cognitive Loop Closure); replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture); compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty); fast-generation-architectures (Fast Generation Architectures); resource-economics-and-token-budgets (Resource Economics and Token Budgets); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); integrated-reference-architecture (Integrated Reference Architecture)
+- Bibliographic status: source note available; citation not normalized
+
+## Citation Policy
+
+- Use stable source IDs for supplied corpus references until full citation metadata exists.
+- Do not infer authors, dates, venues, versions, or publication status from titles alone.
+- Do not cite a source as supporting a claim until its text has been ingested and a source note exists.
+- Keep speculative or design-synthesis claims labeled as `argument` until source, prototype, or test evidence justifies promotion.

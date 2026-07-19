@@ -4,7 +4,7 @@ chapter_id: "coil-attention-cyclic-memory-and-recurrence-contracts"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-14"
+last_updated: "2026-07-16"
 primary_sources:
   - "coil_attention_memory"
   - "circle_ai_contract_suite"
@@ -413,6 +413,80 @@ Cyclic memory contracts make structural facts visible: residue, winding, freshne
 Coil attention stays useful only when it stays honest. Structural guardrails can protect the stack only when their non-claims are preserved. The same boundary applies to adapters, RoPE-style phase banks, and cyclic mixers, where parameter counts and exact phase facts are easy to overread.
 
 A memory contract should make the cheap fact and the hard claim impossible to confuse. Slot freshness, coverage, and loop exit are cheap facts; retrieval quality, reasoning quality, and useful long context are hard claims. The architecture should welcome cyclic memory ideas when they improve inspectability, but it should refuse to turn structure into performance mythology. A cyclic trace can tell a verifier which positions were covered, whether recurrence terminated, which fallback triggered, and where phase assumptions entered. That information is useful precisely because it narrows the claim. Once the boundary is preserved, cyclic memory can be tested as a specialist candidate rather than sold as a general route to intelligence.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **73** structured claim atoms in `CF-06`. The
+frozen repository-wide terminal audit records 73 `blocked_after_full_attempt`. Its core
+atom `coil-attention-cyclic-memory-and-recurrence-contracts.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `coil-attention-cyclic-memory-and-recurrence-contracts` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+::: {.asi-human-only}
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 73 structured claims,
+73 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **KERC canonical-language and hierarchical-residual campaign**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: The historical broad-efficiency transition is N1: the frozen implementation was inadequate, so broader KERC remains untested; two narrow finite observations survive, with no semantic, multilingual, production, energy, or core claim.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+:::
+
+::: {.asi-ai-only}
+
+### Evidence packet
+
+| Field | Exact chapter boundary |
+|---|---|
+| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-06` minimum family bundle. |
+| Attempted local lanes | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` |
+| Missing or unproved lanes | `normative`, `transfer` |
+| Family-level natural-work or end-to-end bundle | **KERC canonical-language and hierarchical-residual campaign** (`natural_work_and_end_to_end`): A 192-record bilingual templated compiler/runtime study with 64 held-out records, five seeds, eight baseline families, 13 ablations, and 20 attacks. |
+| Negative controls | surface and kernel-native baselines; 13 ablations; 20 attacks; ten laundering mutations. |
+| Exact accepted transitions in this chapter | none |
+| Core outcome | `blocked_after_full_attempt` at `argument`; no chapter-core promotion. |
+| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
+| Reproduction path | Replay `scripts/validate_p4_m8_kerc_campaign.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
+
+### Worked success, failure, and boundary cases
+
+- **Success case:** the family-level bundle passed its own rejecting validator
+  within this exact scope: A 192-record bilingual templated compiler/runtime study with 64 held-out records, five seeds, eight baseline families, 13 ablations, and 20 attacks. This is evidence that the family
+  received a competent attempt, not that every claim in this chapter succeeded.
+- **Failure or non-promotion case:** 73 atoms
+  remain blocked and 0 are narrowed. A
+  green family validator cannot fill their missing lanes or raise the core.
+- **Boundary case:** The historical broad-efficiency transition is N1: the frozen implementation was inadequate, so broader KERC remains untested; two narrow finite observations survive, with no semantic, multilingual, production, energy, or core claim.
+
+### Argument-exit table
+
+| Atom set | Count | Work performed | Terminal reason and next burden |
+|---|---:|---|---|
+| Core: `coil-attention-cyclic-memory-and-recurrence-contracts.core` | 1 | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` | `blocked_after_full_attempt`; missing or unproved: `normative`, `transfer`. |
+| blocked after full attempt | 73 | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` | Missing or unproved lanes across this set: `normative`, `transfer`. These are residual proof obligations, not false claims. |
+
+This table is a disposition map, not a promotion quota. The next valid movement
+is atom-specific evidence that fills the named missing lanes, survives relevant
+negative controls, and enters through an accepted evidence transition. Until
+then, source counts, theorem counts, fixtures, validators, or nearby family
+results cannot be used as substitutes.
+:::
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
 
 ## Handoff
 

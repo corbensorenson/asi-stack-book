@@ -1,0 +1,84 @@
+{
+  "transition_id": "post_v2_3.p5.rollback_outcomes.narrow",
+  "claim_id": "capability-replacement-and-rollback.invariant.011",
+  "claim_surface_refs": [
+    "docs/p5_mandatory_terminal_batch.md",
+    "chapters/capability-replacement-and-rollback.qmd"
+  ],
+  "claim_record_refs": [
+    "experiments/p5_terminal_batch/design.json",
+    "experiments/p5_terminal_batch/results/result.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "The retained local records separated artifact/digest, behavioral, membership-attack privacy proxy, storage, backup, and descendant outcomes, but did not execute service restart or external compensation.",
+  "evidence_roles": [
+    "prospectively frozen terminal audit",
+    "full-attempt narrowing",
+    "multi-axis rollback accounting",
+    "negative boundary retention"
+  ],
+  "transition_reason": "The complete six-outcome proposition cannot move because two named outcomes were unexecuted; the exact narrower multi-axis separation result is retained without support promotion.",
+  "required_artifacts": [
+    "real service restart",
+    "external effect compensation",
+    "open-world inventory pressure",
+    "independent recovery observer",
+    "heterogeneous transfer"
+  ],
+  "artifact_refs": [
+    "experiments/capability_replacement_trace/results/2026-07-02-local.json",
+    "experiments/p4_update_unlearning_v3/results/confirmatory_result.json",
+    "experiments/p5_terminal_batch/results/result.json"
+  ],
+  "evidence_packet_refs": [
+    "docs/p5_mandatory_terminal_batch.md",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#capability-replacement-and-rollbackcore",
+    "evidence_quality/claim_atom_registry.json",
+    "evidence_quality/claim_atom_reviews.json"
+  ],
+  "verification_command": "python3 scripts/validate_p5_terminal_batch.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "service restart unexecuted",
+    "external compensation unexecuted",
+    "external descendants unresolved",
+    "total storage erasure false",
+    "local inventories not open-world complete"
+  ],
+  "negative_evidence_refs": [
+    "docs/p5_mandatory_terminal_batch.md",
+    "experiments/p5_terminal_batch/results/result.json"
+  ],
+  "downgrade_triggers": [
+    "outcome axes collapsed into one success bit",
+    "unexecuted outcomes described as tested",
+    "local inventory described as effect-complete",
+    "support promotion"
+  ],
+  "promotion_burden": "Execute service restart and external compensation with independent observation, delayed effects, open-world inventory pressure, failure injection, recovery objectives, costs, replication, and transfer.",
+  "limitations": [
+    "bounded local artifacts",
+    "no service restart",
+    "no external compensation",
+    "unresolved external descendants"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Author-directed Codex P5 terminal-batch review"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; no external human review requested or claimed",
+  "acceptance_blockers": [],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-16---p5-mandatory-three-atom-terminal-batch",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote any chapter core or subordinate support state",
+    "does not establish service recovery, privacy repair, complete storage erasure, external compensation, or effect-complete rollback",
+    "does not establish production safety, SOTA, AGI, ASI, publication, release, or deployment readiness"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "asi_stack.p2_slot1_rank5_image_preflight_diagnosis.v1",
+  "recorded_date": "2026-07-17",
+  "claim_id": "p2.governed_natural_repository_change_admission_joint_frontier",
+  "instance_id": "stellar__rs-soroban-env-1555",
+  "slot": 1,
+  "rank": 5,
+  "attempt_path": "experiments/p2_governed_repository_admission/sequential_image_preflight/attempts/2026-07-17-slot1-rank5-r1/result.json",
+  "attempt_sha256": "c550377e502b48d17a2557df2fa703b43b11c0fc90e17cdc184625c80a7a6130",
+  "attempt_recorded_state": "n0_instrument_failure",
+  "reconciled_classification": "N0_resource_failure",
+  "terminal_code": "exact_image_pull_exceeded_300_second_ceiling",
+  "terminal_disposition": "candidate_not_qualified_advance_to_frozen_rank_six",
+  "facts": {
+    "pull_timeout_seconds": 300,
+    "pull_completed": false,
+    "engine_content_size_measured": false,
+    "virtual_size_measured": false,
+    "task_content_opened": false,
+    "candidate_outcome_opened": false,
+    "attempt_host_free_byte_loss": 499187712,
+    "partial_registry_layers_observed_after_attempt_bytes": 3215000000,
+    "final_docker_images": 0,
+    "final_docker_containers": 0,
+    "final_docker_volumes": 0,
+    "final_docker_build_cache_entries": 0
+  },
+  "repair": {
+    "future_pull_timeout_classification": "n0_resource_failure",
+    "future_partial_layer_cleanup": "docker image prune under experiment-owned zero-Docker precondition",
+    "threshold_changed": false,
+    "same_candidate_rerun": false
+  },
+  "policy_effect": {
+    "next_action": "open frozen rank six through provenance and resource gates",
+    "claim_support_effect": "none",
+    "claim_refutation_effect": "none",
+    "final_pool_effect": "none"
+  },
+  "non_claims": [
+    "A pull timeout does not refute the task or mechanism.",
+    "No size pass or failure is inferred without a completed exact-image measurement.",
+    "The 300-second ceiling is not extended after observing this candidate.",
+    "The held-out final pool remains unselected and unopened."
+  ]
+}

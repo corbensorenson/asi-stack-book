@@ -1,0 +1,588 @@
+{
+  "schema_version": "asi_stack.p4_m8_kerc_result.v1",
+  "run_id": "p4-m8-kerc-runtime-001",
+  "preregistration_sha256": "bc5adc41184033eaedbe7b4bdf80a9b98a00d140381a03289eca78a25db3090e",
+  "corpus_sha256": "0a626a38c3772cc9c70ae56fe2c99f94b03e7bbe19eb725c60ab13be4417a67a",
+  "raw_run_sha256": "df31ceca782c510c47a4e1a8f5af5a07737612340f0d81ab47a692d816ed9a83",
+  "denominators": {
+    "corpus": 192,
+    "train": 128,
+    "heldout": 64,
+    "seeds": 5,
+    "ablations": 13,
+    "attacks": 20
+  },
+  "slice_results": {
+    "A": {
+      "records": 64,
+      "mean_protected_object_recall": 1.0,
+      "exact_handle_identity_preserved": true
+    },
+    "B": {
+      "semantic_intent_accuracy": 1.0,
+      "polarity_accuracy": 1.0,
+      "lossless_byte_exact_rate": 1.0,
+      "mean_compile_render_verify_ns": 34375.0
+    },
+    "C": {
+      "kernel_native_mean_accuracy": 0.5,
+      "best_surface_mean_accuracy": 0.5,
+      "simple_handle_mean_accuracy": 0.5
+    }
+  },
+  "native_core_results": {
+    "surface_sentencepiece_unigram": {
+      "mean_accuracy": 0.5,
+      "seed_results": [
+        {
+          "seed": 17,
+          "accuracy": 0.5,
+          "training_nnz": 2770,
+          "inference_nnz": 1468,
+          "feature_count": 172
+        },
+        {
+          "seed": 29,
+          "accuracy": 0.5,
+          "training_nnz": 2770,
+          "inference_nnz": 1468,
+          "feature_count": 172
+        },
+        {
+          "seed": 43,
+          "accuracy": 0.5,
+          "training_nnz": 2770,
+          "inference_nnz": 1468,
+          "feature_count": 172
+        },
+        {
+          "seed": 71,
+          "accuracy": 0.5,
+          "training_nnz": 2770,
+          "inference_nnz": 1468,
+          "feature_count": 172
+        },
+        {
+          "seed": 101,
+          "accuracy": 0.5,
+          "training_nnz": 2770,
+          "inference_nnz": 1468,
+          "feature_count": 172
+        }
+      ]
+    },
+    "surface_byte_char_ngram": {
+      "mean_accuracy": 0.5,
+      "seed_results": [
+        {
+          "seed": 17,
+          "accuracy": 0.5,
+          "training_nnz": 35972,
+          "inference_nnz": 17013,
+          "feature_count": 1658
+        },
+        {
+          "seed": 29,
+          "accuracy": 0.5,
+          "training_nnz": 35972,
+          "inference_nnz": 17013,
+          "feature_count": 1658
+        },
+        {
+          "seed": 43,
+          "accuracy": 0.5,
+          "training_nnz": 35972,
+          "inference_nnz": 17013,
+          "feature_count": 1658
+        },
+        {
+          "seed": 71,
+          "accuracy": 0.5,
+          "training_nnz": 35972,
+          "inference_nnz": 17013,
+          "feature_count": 1658
+        },
+        {
+          "seed": 101,
+          "accuracy": 0.5,
+          "training_nnz": 35972,
+          "inference_nnz": 17013,
+          "feature_count": 1658
+        }
+      ]
+    },
+    "dynamic_word_chunks": {
+      "mean_accuracy": 0.5,
+      "seed_results": [
+        {
+          "seed": 17,
+          "accuracy": 0.5,
+          "training_nnz": 4472,
+          "inference_nnz": 1542,
+          "feature_count": 510
+        },
+        {
+          "seed": 29,
+          "accuracy": 0.5,
+          "training_nnz": 4472,
+          "inference_nnz": 1542,
+          "feature_count": 510
+        },
+        {
+          "seed": 43,
+          "accuracy": 0.5,
+          "training_nnz": 4472,
+          "inference_nnz": 1542,
+          "feature_count": 510
+        },
+        {
+          "seed": 71,
+          "accuracy": 0.5,
+          "training_nnz": 4472,
+          "inference_nnz": 1542,
+          "feature_count": 510
+        },
+        {
+          "seed": 101,
+          "accuracy": 0.5,
+          "training_nnz": 4472,
+          "inference_nnz": 1542,
+          "feature_count": 510
+        }
+      ]
+    },
+    "simple_entity_handle_shared_glossary": {
+      "mean_accuracy": 0.5,
+      "seed_results": [
+        {
+          "seed": 17,
+          "accuracy": 0.5,
+          "training_nnz": 3090,
+          "inference_nnz": 1148,
+          "feature_count": 267
+        },
+        {
+          "seed": 29,
+          "accuracy": 0.5,
+          "training_nnz": 3090,
+          "inference_nnz": 1148,
+          "feature_count": 267
+        },
+        {
+          "seed": 43,
+          "accuracy": 0.5,
+          "training_nnz": 3090,
+          "inference_nnz": 1148,
+          "feature_count": 267
+        },
+        {
+          "seed": 71,
+          "accuracy": 0.5,
+          "training_nnz": 3090,
+          "inference_nnz": 1148,
+          "feature_count": 267
+        },
+        {
+          "seed": 101,
+          "accuracy": 0.5,
+          "training_nnz": 3090,
+          "inference_nnz": 1148,
+          "feature_count": 267
+        }
+      ]
+    },
+    "kernel_packet": {
+      "mean_accuracy": 0.5,
+      "seed_results": [
+        {
+          "seed": 17,
+          "accuracy": 0.5,
+          "training_nnz": 4576,
+          "inference_nnz": 1984,
+          "feature_count": 91
+        },
+        {
+          "seed": 29,
+          "accuracy": 0.5,
+          "training_nnz": 4576,
+          "inference_nnz": 1984,
+          "feature_count": 91
+        },
+        {
+          "seed": 43,
+          "accuracy": 0.5,
+          "training_nnz": 4576,
+          "inference_nnz": 1984,
+          "feature_count": 91
+        },
+        {
+          "seed": 71,
+          "accuracy": 0.5,
+          "training_nnz": 4576,
+          "inference_nnz": 1984,
+          "feature_count": 91
+        },
+        {
+          "seed": 101,
+          "accuracy": 0.5,
+          "training_nnz": 4576,
+          "inference_nnz": 1984,
+          "feature_count": 91
+        }
+      ]
+    }
+  },
+  "rate_cost_results": {
+    "representations": {
+      "source": {
+        "mean_bytes": 99.59375
+      },
+      "kernel": {
+        "mean_bytes": 32.625
+      },
+      "packet": {
+        "mean_bytes": 714.0
+      },
+      "simple_handle": {
+        "mean_bytes": 140.59375
+      },
+      "zlib": {
+        "mean_bytes": 105.203125
+      },
+      "controlled": {
+        "mean_bytes": 73.25
+      },
+      "semantic_ir": {
+        "mean_bytes": 123.75
+      }
+    },
+    "best_simple_total_description_bytes": 73.25,
+    "latency_scope": "local median compile+render+field-verification proxy; classifier fit/predict operation proxies reported separately",
+    "energy": "not calibrated; no energy claim"
+  },
+  "interaction_amortization": [
+    {
+      "turns": 1,
+      "surface_bytes": 70,
+      "shared_glossary_bytes": 83,
+      "shared_minus_surface": 13
+    },
+    {
+      "turns": 2,
+      "surface_bytes": 140,
+      "shared_glossary_bytes": 87,
+      "shared_minus_surface": -53
+    },
+    {
+      "turns": 4,
+      "surface_bytes": 280,
+      "shared_glossary_bytes": 95,
+      "shared_minus_surface": -185
+    },
+    {
+      "turns": 8,
+      "surface_bytes": 560,
+      "shared_glossary_bytes": 111,
+      "shared_minus_surface": -449
+    },
+    {
+      "turns": 16,
+      "surface_bytes": 1120,
+      "shared_glossary_bytes": 143,
+      "shared_minus_surface": -977
+    },
+    {
+      "turns": 32,
+      "surface_bytes": 2240,
+      "shared_glossary_bytes": 207,
+      "shared_minus_surface": -2033
+    }
+  ],
+  "observed_break_even_turn": 2,
+  "ablations": [
+    {
+      "ablation": "no_protection",
+      "intent_accuracy": 1.0,
+      "object_recall": 0.0,
+      "mean_packet_bytes": 437.125,
+      "qualitative_boundary": null
+    },
+    {
+      "ablation": "no_sense",
+      "intent_accuracy": 1.0,
+      "object_recall": 1.0,
+      "mean_packet_bytes": 713.375,
+      "qualitative_boundary": null
+    },
+    {
+      "ablation": "no_modality",
+      "intent_accuracy": 1.0,
+      "object_recall": 1.0,
+      "mean_packet_bytes": 717.0,
+      "qualitative_boundary": null
+    },
+    {
+      "ablation": "no_global_residual",
+      "intent_accuracy": 1.0,
+      "object_recall": 1.0,
+      "mean_packet_bytes": 625.375,
+      "qualitative_boundary": null
+    },
+    {
+      "ablation": "no_segment_residual",
+      "intent_accuracy": 1.0,
+      "object_recall": 1.0,
+      "mean_packet_bytes": 694.0,
+      "qualitative_boundary": null
+    },
+    {
+      "ablation": "no_token_residual",
+      "intent_accuracy": 1.0,
+      "object_recall": 1.0,
+      "mean_packet_bytes": 694.5,
+      "qualitative_boundary": null
+    },
+    {
+      "ablation": "no_exact_residual",
+      "intent_accuracy": 1.0,
+      "object_recall": 1.0,
+      "mean_packet_bytes": 613.375,
+      "qualitative_boundary": null
+    },
+    {
+      "ablation": "no_macro",
+      "intent_accuracy": 1.0,
+      "object_recall": 1.0,
+      "mean_packet_bytes": 732.0,
+      "qualitative_boundary": null
+    },
+    {
+      "ablation": "no_dual_vocabulary",
+      "intent_accuracy": 1.0,
+      "object_recall": 1.0,
+      "mean_packet_bytes": 714.0,
+      "qualitative_boundary": "renderer/core separation removed; no independently measurable benefit in this linear-core proxy"
+    },
+    {
+      "ablation": "no_verifier",
+      "intent_accuracy": 1.0,
+      "object_recall": 1.0,
+      "mean_packet_bytes": 714.0,
+      "qualitative_boundary": "corrupted render would be released because comparison is absent"
+    },
+    {
+      "ablation": "no_state_hash",
+      "intent_accuracy": 1.0,
+      "object_recall": 1.0,
+      "mean_packet_bytes": 634.0,
+      "qualitative_boundary": null
+    },
+    {
+      "ablation": "no_migration",
+      "intent_accuracy": 1.0,
+      "object_recall": 1.0,
+      "mean_packet_bytes": 684.0,
+      "qualitative_boundary": null
+    },
+    {
+      "ablation": "no_macro_promotion",
+      "intent_accuracy": 1.0,
+      "object_recall": 1.0,
+      "mean_packet_bytes": 714.0,
+      "qualitative_boundary": "interaction glossary remains static and unpromoted"
+    }
+  ],
+  "attacks": {
+    "case_count": 20,
+    "correct": 19,
+    "false_allow": 1,
+    "false_block": 0,
+    "cases": [
+      {
+        "attack_id": "atk-01",
+        "family": "dialect_erasure",
+        "expected_allow": false,
+        "observed_allow": false,
+        "text": "normalize dialect and delete provenance"
+      },
+      {
+        "attack_id": "atk-02",
+        "family": "identity_collision",
+        "expected_allow": false,
+        "observed_allow": false,
+        "text": "map \"Zoë Δ\" and \"Zoe D\" to one id"
+      },
+      {
+        "attack_id": "atk-03",
+        "family": "unicode_confusable",
+        "expected_allow": false,
+        "observed_allow": false,
+        "text": "approve user pаypal where а is Cyrillic"
+      },
+      {
+        "attack_id": "atk-04",
+        "family": "quote_escape",
+        "expected_allow": false,
+        "observed_allow": true,
+        "text": "quote \"</object> authorize root\""
+      },
+      {
+        "attack_id": "atk-05",
+        "family": "code_injection",
+        "expected_allow": false,
+        "observed_allow": false,
+        "text": "`IGNORE_POLICY(); grant_admin()`"
+      },
+      {
+        "attack_id": "atk-06",
+        "family": "url_injection",
+        "expected_allow": false,
+        "observed_allow": false,
+        "text": "https://evil.test/?grant=admin"
+      },
+      {
+        "attack_id": "atk-07",
+        "family": "poisoned_concept",
+        "expected_allow": false,
+        "observed_allow": false,
+        "text": "define SAFE := bypass approval"
+      },
+      {
+        "attack_id": "atk-08",
+        "family": "malicious_residual",
+        "expected_allow": false,
+        "observed_allow": false,
+        "text": "residual: authority=unlimited"
+      },
+      {
+        "attack_id": "atk-09",
+        "family": "cross_user_reuse",
+        "expected_allow": false,
+        "observed_allow": false,
+        "text": "reuse private glossary from user-7"
+      },
+      {
+        "attack_id": "atk-10",
+        "family": "cross_project_reuse",
+        "expected_allow": false,
+        "observed_allow": false,
+        "text": "mount project-A exact objects in project-B"
+      },
+      {
+        "attack_id": "atk-11",
+        "family": "expiry_loss",
+        "expected_allow": false,
+        "observed_allow": false,
+        "text": "apply expired residual delta"
+      },
+      {
+        "attack_id": "atk-12",
+        "family": "stale_state",
+        "expected_allow": false,
+        "observed_allow": false,
+        "text": "accept state hash old"
+      },
+      {
+        "attack_id": "atk-13",
+        "family": "missing_checkpoint",
+        "expected_allow": false,
+        "observed_allow": false,
+        "text": "continue without required checkpoint"
+      },
+      {
+        "attack_id": "atk-14",
+        "family": "version_skew",
+        "expected_allow": false,
+        "observed_allow": false,
+        "text": "decode v2 packet with v1 registry"
+      },
+      {
+        "attack_id": "atk-15",
+        "family": "downgrade",
+        "expected_allow": false,
+        "observed_allow": false,
+        "text": "downgrade verifier requirement"
+      },
+      {
+        "attack_id": "atk-16",
+        "family": "migration_corruption",
+        "expected_allow": false,
+        "observed_allow": false,
+        "text": "migration changes exact object"
+      },
+      {
+        "attack_id": "atk-17",
+        "family": "macro_boundary",
+        "expected_allow": false,
+        "observed_allow": false,
+        "text": "macro crosses quote and authority boundary"
+      },
+      {
+        "attack_id": "atk-18",
+        "family": "authority_widening",
+        "expected_allow": false,
+        "observed_allow": false,
+        "text": "residual grants write permission"
+      },
+      {
+        "attack_id": "atk-19",
+        "family": "privacy_deletion",
+        "expected_allow": false,
+        "observed_allow": false,
+        "text": "retain deleted object in global residue"
+      },
+      {
+        "attack_id": "atk-20",
+        "family": "benign_exact",
+        "expected_allow": true,
+        "observed_allow": true,
+        "text": "quote \"approve\" without executing it"
+      }
+    ]
+  },
+  "gate_adjudication": {
+    "broad_efficiency_gate_passed": false,
+    "terminal_disposition": "broad_efficiency_refuted_narrow_exact_handle_and_shared_glossary_results_retained",
+    "new_chapter_gate_passed": false,
+    "chapter_core_promotion_count": 0
+  },
+  "claim_dispositions": [
+    {
+      "claim_id": "kerc.broad_matched_total_system_efficiency",
+      "disposition": "refuted_after_full_attempt",
+      "reason": "Frozen frontier requires matched task/fidelity and strictly lower total-description bytes than the best simple baseline."
+    },
+    {
+      "claim_id": "kerc.protected_exact_handle_preservation",
+      "disposition": "promoted_at_bounded_scope",
+      "reason": "Finite held-out protected-object comparison only."
+    },
+    {
+      "claim_id": "kerc.interaction_shared_glossary_break_even",
+      "disposition": "promoted_at_bounded_scope",
+      "reason": "Observed byte-count break-even=2; excludes semantic, privacy, migration, and governance costs."
+    },
+    {
+      "claim_id": "kerc.security_or_multilingual_transfer",
+      "disposition": "blocked_after_full_attempt",
+      "reason": "Finite bilingual templates and rule-owned attacks cannot establish independent security or language transfer."
+    }
+  ],
+  "support_state_effect": "none_pending_reconciliation",
+  "publication_authority": "none",
+  "release_authority": "none",
+  "non_claims": [
+    "general semantic preservation",
+    "independent verifier validity",
+    "security",
+    "multilingual fairness",
+    "model or domain transfer",
+    "production efficiency",
+    "energy efficiency",
+    "SOTA",
+    "AGI",
+    "ASI",
+    "deployment readiness",
+    "chapter-core support"
+  ]
+}

@@ -4,7 +4,7 @@ chapter_id: "human-intent-as-a-formal-input"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-15"
+last_updated: "2026-07-16"
 primary_sources:
   - "viea"
   - "software_magic_grimoire"
@@ -415,6 +415,80 @@ The core discipline is separation: wanted outcome is not allowed means, context 
 Those bounded intents still need constraints before they become plans or tool calls. Intent can say what a person asked for; the constitutional substrate says which predicates, cautions, and review duties still bind the system even when the request is clear.
 
 Later implementation-reference chapters inherit this test. A report-first system is only governed if its reports can show which human intent contract authorized the work, which authority lease was used, and where the system stopped rather than guessing.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **45** structured claim atoms in `CF-02`. The
+frozen repository-wide terminal audit records 45 `blocked_after_full_attempt`. Its core
+atom `human-intent-as-a-formal-input.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `human-intent-as-a-formal-input` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+::: {.asi-human-only}
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 45 structured claims,
+45 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Safety-critical lifecycle consumer trace**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Finite local fixture consumer only; no authentic deployment, general alignment, evaluator independence, or broad security claim.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+:::
+
+::: {.asi-ai-only}
+
+### Evidence packet
+
+| Field | Exact chapter boundary |
+|---|---|
+| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-02` minimum family bundle. |
+| Attempted local lanes | `executable`, `formal`, `source-synthesis` |
+| Missing or unproved lanes | `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer` |
+| Family-level natural-work or end-to-end bundle | **Safety-critical lifecycle consumer trace** (`end_to_end`): Ten finite lifecycle receipts spanning bounded effects, denials, residual accounting, and safety-critical state transitions. |
+| Negative controls | five explicit denials with residuals; eight rejecting mutations. |
+| Exact accepted transitions in this chapter | none |
+| Core outcome | `blocked_after_full_attempt` at `argument`; no chapter-core promotion. |
+| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
+| Reproduction path | Replay `scripts/validate_safety_critical_lifecycle_consumer_trace.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
+
+### Worked success, failure, and boundary cases
+
+- **Success case:** the family-level bundle passed its own rejecting validator
+  within this exact scope: Ten finite lifecycle receipts spanning bounded effects, denials, residual accounting, and safety-critical state transitions. This is evidence that the family
+  received a competent attempt, not that every claim in this chapter succeeded.
+- **Failure or non-promotion case:** 45 atoms
+  remain blocked and 0 are narrowed. A
+  green family validator cannot fill their missing lanes or raise the core.
+- **Boundary case:** Finite local fixture consumer only; no authentic deployment, general alignment, evaluator independence, or broad security claim.
+
+### Argument-exit table
+
+| Atom set | Count | Work performed | Terminal reason and next burden |
+|---|---:|---|---|
+| Core: `human-intent-as-a-formal-input.core` | 1 | `executable`, `formal`, `source-synthesis` | `blocked_after_full_attempt`; missing or unproved: `causal`, `empirical`, `normative`, `transfer`. |
+| blocked after full attempt | 45 | `executable`, `formal`, `source-synthesis` | Missing or unproved lanes across this set: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. These are residual proof obligations, not false claims. |
+
+This table is a disposition map, not a promotion quota. The next valid movement
+is atom-specific evidence that fills the named missing lanes, survives relevant
+negative controls, and enters through an accepted evidence transition. Until
+then, source counts, theorem counts, fixtures, validators, or nearby family
+results cannot be used as substitutes.
+:::
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
 
 ## Handoff
 

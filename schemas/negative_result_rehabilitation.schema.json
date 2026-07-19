@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASI Stack retrospective negative-result rehabilitation ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "snapshot_date", "authority", "governing_contract",
+    "identity_graph", "policy", "summary", "records", "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.negative_result_rehabilitation.v1"},
+    "snapshot_date": {"const": "2026-07-17"},
+    "authority": {"const": "Corben Sorenson"},
+    "governing_contract": {"const": "docs/claim_bearing_experiment_competence_standard.md"},
+    "identity_graph": {"const": "evidence_quality/claim_identity_graph.json"},
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "historical_raw_outcomes_immutable",
+        "post_hoc_missing_competence_evidence_may_be_invented",
+        "heldout_denominators_may_be_reopened",
+        "n_level_required_for_negative_inference",
+        "broad_negative_inference_quarantined", "N3_or_higher_count",
+        "N4_or_higher_count", "N5_count"
+      ],
+      "properties": {
+        "historical_raw_outcomes_immutable": {"const": true},
+        "post_hoc_missing_competence_evidence_may_be_invented": {"const": false},
+        "heldout_denominators_may_be_reopened": {"const": false},
+        "n_level_required_for_negative_inference": {"const": true},
+        "broad_negative_inference_quarantined": {"const": true},
+        "N3_or_higher_count": {"const": 0},
+        "N4_or_higher_count": {"const": 0},
+        "N5_count": {"const": 0}
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "accepted_negative_or_no_change_transition_count",
+        "historical_no_change_count", "historical_refuted_label_count",
+        "rehabilitated_record_count", "unclassified_record_count",
+        "n_level_counts", "broad_negative_inference_count",
+        "chapter_core_negative_inference_count", "support_state_effect",
+        "release_effect"
+      ],
+      "properties": {
+        "accepted_negative_or_no_change_transition_count": {"const": 90},
+        "historical_no_change_count": {"const": 87},
+        "historical_refuted_label_count": {"const": 3},
+        "rehabilitated_record_count": {"const": 90},
+        "unclassified_record_count": {"const": 0},
+        "n_level_counts": {
+          "const": {"N0": 1, "N1": 15, "N2": 74, "N3": 0, "N4": 0, "N5": 0}
+        },
+        "broad_negative_inference_count": {"const": 0},
+        "chapter_core_negative_inference_count": {"const": 0},
+        "support_state_effect": {"const": "none"},
+        "release_effect": {"const": "none"}
+      }
+    },
+    "records": {
+      "type": "array",
+      "minItems": 90,
+      "maxItems": 90,
+      "items": {"$ref": "#/$defs/rehabilitationRecord"}
+    },
+    "non_claims": {
+      "type": "array",
+      "minItems": 4,
+      "items": {"type": "string", "minLength": 30}
+    }
+  },
+  "$defs": {
+    "rehabilitationRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "transition_id", "transition_path", "transition_sha256", "claim_id",
+        "historical_transition_effect", "historical_support_state",
+        "historical_transition_label_preserved", "canonical_parent_id",
+        "identity_relation", "owner_chapter_id", "assigned_n_level",
+        "competence_audit", "raw_scope_boundary", "raw_negative_results",
+        "raw_limitations", "raw_non_claims", "broad_negative_inference_state",
+        "chapter_reconciliation_state", "support_state_effect",
+        "release_effect", "audit_method"
+      ],
+      "properties": {
+        "transition_id": {"type": "string", "minLength": 5},
+        "transition_path": {"type": "string", "pattern": "^evidence_transitions/.+\\.json$"},
+        "transition_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "claim_id": {"type": "string", "minLength": 5},
+        "historical_transition_effect": {"enum": ["no_change", "refuted"]},
+        "historical_support_state": {"enum": ["argument", "refuted"]},
+        "historical_transition_label_preserved": {"const": true},
+        "canonical_parent_id": {"type": "string", "minLength": 5},
+        "identity_relation": {"enum": ["atom", "subclaim_of", "proxy_for"]},
+        "owner_chapter_id": {"type": "string", "minLength": 3},
+        "assigned_n_level": {"enum": ["N0", "N1", "N2"]},
+        "competence_audit": {"$ref": "#/$defs/competenceAudit"},
+        "raw_scope_boundary": {"type": "string", "minLength": 20},
+        "raw_negative_results": {"type": "array", "items": {"type": "string"}},
+        "raw_limitations": {"type": "array", "items": {"type": "string"}},
+        "raw_non_claims": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "broad_negative_inference_state": {"const": "quarantined"},
+        "chapter_reconciliation_state": {"const": "bounded_language_required"},
+        "support_state_effect": {"const": "none"},
+        "release_effect": {"const": "none"},
+        "audit_method": {"const": "manual_retrospective_claim_identity_scope_artifact_and_competence_review_2026_07_17"}
+      }
+    },
+    "competenceAudit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "implementation_competence", "mechanism_activation",
+        "construct_validity", "matched_engineering_and_tuning",
+        "oracle_or_favorable_upper_bound", "positive_control_status",
+        "negative_control_status", "evaluator_competence",
+        "prospective_sensitivity_or_power", "fair_rescue_ladder",
+        "natural_non_authored_corpus", "heldout_custody",
+        "independent_alternate_implementation", "independent_reproduction",
+        "materially_different_transfer_settings",
+        "maximum_usable_negative_inference", "required_next_action"
+      ],
+      "properties": {
+        "implementation_competence": {"type": "string", "minLength": 10},
+        "mechanism_activation": {"type": "string", "minLength": 10},
+        "construct_validity": {"type": "string", "minLength": 10},
+        "matched_engineering_and_tuning": {"const": "not_demonstrated_under_current_contract"},
+        "oracle_or_favorable_upper_bound": {"const": "not_demonstrated_under_current_contract"},
+        "positive_control_status": {"const": "not_requalified_under_current_contract"},
+        "negative_control_status": {"const": "historical_controls_retained_but_not_a_current_competence_dossier"},
+        "evaluator_competence": {"const": "not_independently_requalified_under_current_contract"},
+        "prospective_sensitivity_or_power": {"const": "not_demonstrated_under_current_contract"},
+        "fair_rescue_ladder": {"const": "not_prospectively_complete_under_current_contract"},
+        "natural_non_authored_corpus": {"const": "not_established_as_claim_commensurate_under_current_contract"},
+        "heldout_custody": {"const": "historical_denominator_retained_and_must_not_be_reopened"},
+        "independent_alternate_implementation": {"const": "absent_or_not_demonstrated"},
+        "independent_reproduction": {"const": "absent"},
+        "materially_different_transfer_settings": {"const": 0},
+        "maximum_usable_negative_inference": {"type": "string", "minLength": 30},
+        "required_next_action": {"type": "string", "minLength": 30}
+      }
+    }
+  }
+}

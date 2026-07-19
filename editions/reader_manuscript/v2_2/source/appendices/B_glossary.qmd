@@ -1,0 +1,29 @@
+# Glossary
+
+These are owned working definitions. A term is either assigned to one active
+chapter that controls its interface and failure boundary, or marked as a
+source-lineage label that carries no normative architectural authority.
+
+| Term | Working definition | Owner | Status |
+|---|---|---|---|
+| ASI stack | A proposed substrate-neutral governed architecture of logical responsibility and authority boundaries across alignment, governance, planning, memory, reasoning, execution, routing, compression, evidence, and improvement. A monolithic model, modular service graph, hybrid system, or human/AI process may instantiate the boundaries; the term does not require one model or physical module per layer. | `asi-is-a-stack-not-a-model` | normative architecture definition |
+| Alignment and constitution | The layer that constrains admissible goals, values, self-modification, and human-agency requirements. | `constitutional-alignment-substrate` | owned interface definition |
+| Stable Capability Field | A stable capability boundary with replaceable implementations, bounded authority, qualification evidence, and rollback rules. | `stable-capability-fields` | owned interface definition |
+| PlanForge | A source-lineage label for compiling goals into governed task graphs, dependencies, budgets, and replanning triggers; the active interface owner is Planning as a Control Layer. | `planning-as-a-control-layer` | lineage label; not a separate normative layer |
+| Virtual Context Memory | A source-lineage label for governed context materialization from durable sources; the active interface owner is the Virtual Context ABI. | `virtual-context-abi` | lineage label; not a separate normative layer |
+| Talos | A source-lineage label for typed jobs, execution, artifacts, permissions, audit, and replay; active ownership is split across the named execution chapters. | `labor-os-and-typed-jobs` | lineage label; not a separate normative layer |
+| Spinoza | A source-lineage label for claim verification and belief revision; active ownership is split between Claim Ledgers and Proof-Carrying Claims. | `spinoza-verification-and-proof-carrying-claims` | lineage label; not a separate normative layer |
+| MoECOT | A source-lineage label for modular orchestration with specialist cores, readiness gates, ledgers, and replay. | `routing-heads-and-specialist-cores` | lineage label; not independent implementation evidence |
+| Octopus Router | A source-lineage label for dynamically selecting bounded specialist arms or cores. | `routing-heads-and-specialist-cores` | lineage label; routing interface owned by chapter |
+| Ratcheting Modular Intelligence | A source-lineage doctrine based on benchmark frontiers, residual escrow, regression preservation, and verified module promotion. | `benchmark-ratchets-and-anti-goodhart-evidence` | lineage label; not an independent evidence class |
+| Compact Generative Systems | The compression owner for selecting the smallest adequate generative or governing structure without hiding residual complexity. | `compact-generative-systems-and-residual-honesty` | owned interface definition |
+| RankFold / NeuralFold | A compression source-lineage label for low-rank residual coding, functional preprocessing, and fallback routing. | `rankfold-neuralfold-and-artifact-compression` | lineage label; mechanism claims require separate evidence |
+| BBVCA | A generate-verify-repair source-lineage label using seeded local laws, bounded search, and residual tracking. | `compact-generative-systems-and-residual-honesty` | lineage label; mechanism claims require separate evidence |
+| Artifact graph | A traceable graph of produced objects, source handles, jobs, claims, evidence records, projections, revocations, and replay grades. | `artifact-graphs-audit-logs-and-replay` | owned interface definition |
+| Claim ledger | A structured lifecycle record of claims, support states, sources, uncertainty, contradiction links, revisions, and review status. | `claim-ledgers-and-belief-revision` | owned interface definition |
+| Context packet | An active bounded context materialization supplied to an agent or job, including source handles, summaries, authority labels, and adequacy status; it is not durable memory. | `virtual-context-abi` | owned interface definition |
+| Proof-carrying summary | A bounded summary carrying provenance and checks sufficient to audit the stated fidelity obligation without proving the broader source claim. | `spinoza-verification-and-proof-carrying-claims` | owned verification artifact definition |
+| Authority ceiling | The maximum action authority a principal, layer, field, tool, or implementation may exercise under a named grant and policy state. | `system-boundaries-and-authority` | owned invariant definition |
+| Readiness gate | An evidence, authority, regression, and residual checkpoint that must pass before a capability or artifact may enter a stronger lifecycle state. | `readiness-gates-residual-escrow-and-quarantine` | owned lifecycle definition |
+| Residual escrow | A visible owned ledger of unresolved failures, uncertainty, debt, or residual complexity left by a route, compression, benchmark, or release decision. | `readiness-gates-residual-escrow-and-quarantine` | owned lifecycle definition |
+| Benchmark ratchet | A governed benchmark lifecycle that preserves floors, negative cases, provenance, contamination controls, and residuals while moving an evaluation frontier. | `benchmark-ratchets-and-anti-goodhart-evidence` | owned evidence-interface definition |

@@ -1,0 +1,85 @@
+{
+  "transition_id": "post_v2_3.kerc.shared_glossary_break_even.promote",
+  "claim_id": "kerc.interaction_shared_glossary_break_even",
+  "claim_surface_refs": [
+    "docs/p4_kerc_runtime_campaign.md",
+    "chapters/compact-generative-systems-and-residual-honesty.qmd",
+    "chapters/resource-economics-and-token-budgets.qmd"
+  ],
+  "claim_record_refs": [
+    "experiments/p4_kerc_runtime/design.json",
+    "experiments/p4_kerc_runtime/results/confirmatory_result.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "synthetic-test-backed",
+  "transition_effect": "upward",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "For one frozen repeated 66-byte terminology string and a simple glossary-handle encoding, cumulative encoded bytes became lower than repeated surface bytes at two turns across the 1,2,4,8,16,32-turn curve.",
+  "evidence_roles": [
+    "prospective finite byte curve",
+    "simple baseline",
+    "interaction amortization",
+    "bounded non-core review"
+  ],
+  "transition_reason": "The byte accounting directly observes the paper's narrow glossary break-even mechanism while excluding the failed complete-packet efficiency claim.",
+  "required_artifacts": [
+    "diverse natural interactions",
+    "semantic and privacy costs",
+    "migration and governance costs",
+    "model compute",
+    "independent replication"
+  ],
+  "artifact_refs": [
+    "experiments/p4_kerc_runtime/results/confirmatory_result.json",
+    "scripts/validate_p4_m8_kerc_campaign.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/p4_kerc_runtime_campaign.md",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "source_mapping_refs": [
+    "sources/source_notes/kernel_english_residual_compiler.md",
+    "appendices/C_claim_evidence_matrix.qmd#compact-generative-systems-and-residual-honestycore",
+    "appendices/C_claim_evidence_matrix.qmd#context-transactions-snapshots-mounts-and-taintcore"
+  ],
+  "verification_command": "python3 scripts/validate_p4_m8_kerc_campaign.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "complete packets averaged 714 bytes",
+    "best simple representation averaged 73.25 bytes",
+    "broad efficiency failed",
+    "break-even omits semantic and lifecycle burden"
+  ],
+  "negative_evidence_refs": [
+    "docs/p4_kerc_runtime_campaign.md",
+    "experiments/p4_kerc_runtime/results/confirmatory_result.json"
+  ],
+  "downgrade_triggers": [
+    "curve or byte recomputation failure",
+    "cost omission hidden",
+    "isolated glossary curve described as end-to-end efficiency",
+    "chapter-core promotion"
+  ],
+  "promotion_burden": "Repeat over varied interaction lengths, topics, languages, privacy scopes, failures, migrations, realistic cores, and total lifecycle cost.",
+  "limitations": [
+    "one repeated string",
+    "byte count only",
+    "no semantic workload",
+    "no privacy or migration cost",
+    "no model compute"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Author-directed Codex P4/M8 claim-proof cycle"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; no external human review requested or claimed",
+  "acceptance_blockers": [],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-16---campaign-6-kerc-runtime-result",
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "non_claims": [
+    "does not promote any chapter core claim",
+    "does not establish end-to-end compression or efficiency",
+    "does not establish semantic, privacy, migration, security, energy, or governance benefit",
+    "does not establish SOTA, AGI, ASI, publication, release, or deployment readiness"
+  ]
+}

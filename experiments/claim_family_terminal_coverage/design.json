@@ -1,0 +1,29 @@
+{
+  "schema_version": "asi_stack.claim_family_terminal_design.v1",
+  "state": "frozen_before_repository_wide_attempt",
+  "recorded_date": "2026-07-16",
+  "activation_atom_count": 3730,
+  "post_activation_addendum_atom_count": 15,
+  "total_atom_count": 3745,
+  "families": [
+    "CF-01",
+    "CF-02",
+    "CF-03",
+    "CF-04",
+    "CF-05",
+    "CF-06",
+    "CF-07",
+    "CF-08"
+  ],
+  "attempt": {
+    "pr_registry": true,
+    "deep_registry": true,
+    "full_lean_build": true,
+    "accepted_transition_replay": true,
+    "semantic_review_consumption": true,
+    "per_atom_lane_audit": true
+  },
+  "disposition_rule": "Preserve an exact accepted transition or prior terminal disposition. Otherwise retain_after_full_attempt only when every atom-required lane has an auditable local route; use blocked_after_full_attempt with exact missing lanes when it does not. Never infer support from validation, theorem, source, or coverage counts.",
+  "outcome_aware_retry_allowed": false,
+  "chapter_core_promotion_allowed": false
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "asi_stack.p2_cargo_dependency_snapshot_rescue_startup_failure.v1",
+  "recorded_date": "2026-07-17",
+  "state": "instrument_failure_before_attempt_directory_network_or_outcome",
+  "failure_code": "host_python_3_9_missing_tomllib",
+  "repair": "use installed tomli_2_0_1_as_the_python_3_9_compatible_parser_without_changing_the_rescue_contract",
+  "image_pull_started": false,
+  "network_materialization_started": false,
+  "candidate_test_outcome_opened": false,
+  "negative_inference_level": "N0",
+  "claim_effect": "none",
+  "replacement_qualification_effect": "none",
+  "final_pool_selected": false,
+  "final_pool_opened": false
+}

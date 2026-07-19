@@ -4,8 +4,9 @@ The Accepted Transition Review Audit checks the real accepted transition
 records under `evidence_transitions/` and the accepted no-promotion ledger in
 `claim_decisions/v1_0_core_claim_no_promotion.json`.
 
-It verifies 105 accepted transition records, including twenty bounded
-non-core upward transitions, two accepted exact refutations, and no accepted
+It verifies 115 accepted transition records, including twenty-five bounded
+non-core upward transitions, three accepted historical `refuted` labels now
+bounded by N1/N2 competence ceilings, and no accepted
 upward transition for a chapter core claim.
 It also checks the accepted no-promotion decision ledger for current manifest
 core claims. The audit requires accepted review status, review-accepted
@@ -17,6 +18,13 @@ for core upward promotion, missing changelog, missing non-claims, upward
 transition without evidence packets, upward transition with unresolved
 acceptance blockers, no-change support movement, and no-promotion support
 effect drift.
+
+The separate canonical identity graph at
+`evidence_quality/claim_identity_graph.json` now resolves all 115 records as 25
+exact atom identities, 61 bounded subclaims, and 29 proxies. Its full public
+crosswalk is `docs/claim_identity_graph_reconciliation.md`. Identity resolution
+has no support-state effect and does not rehabilitate historical negative
+results.
 
 Run:
 

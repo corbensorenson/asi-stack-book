@@ -1,0 +1,531 @@
+# Verification Bandwidth and Context Adequacy
+
+A coherent memory view can still be insufficient for verification work. The stack has to separate having context from being able to verify with it. It needs to know when the available context, attention, time, tools, comparison method, and reviewer capacity are adequate for the claim being made.
+
+This is a warning against long-context theater. More text in the window does not automatically mean better reasoning. A governed system should record when verification bandwidth is too narrow and downgrade, defer, split, or escalate instead of sounding certain. The honest output may be an adequacy label, not a more confident answer. Adequacy is a budgeted property, not a mood.
+
+Knowing that verification is underpowered is itself valuable evidence for the next decision.
+
+Adequacy labels keep uncertainty actionable instead of merely uncomfortable. They tell the system when more text would not actually create more checkable understanding.
+
+Verification improves when the system knows what it cannot afford to check, and adequacy becomes the honest substitute for impossible total review. Honesty beats impossible certainty because context limits are part of truth.
+
+## Problem
+
+A system can possess relevant context, tools, formal checks, citations,
+reviewers, and compute yet still lack enough independent, claim-specific work
+to justify the requested conclusion or support transition. Context length,
+retrieval coverage, citation count, benchmark success, proof-checker output,
+model agreement, and review activity are all compatible with missed
+obligations, weak checks, correlated evaluators, undiscovered contradictions,
+or unaffordable verification.
+
+The inquiry is therefore prospective: for this exact proposition,
+scope, population, environment, risk, consequence, and requested support
+effect, which positive, negative, boundary, contradiction, counterexample,
+causal, outcome, cost, reproduction, and transfer obligations must be checked;
+which sources, modes, tools, and evaluators are eligible; and which work can be
+completed within the declared authority, rights, budget, and horizon?
+
+The answer is not a confidence score. It is an obligation-to-capacity record
+that distinguishes work attempted from work passed, work passed from work
+valid, and local verification from claim-level adequacy. A packet can support
+orientation while remaining inadequate for a safety claim. A formal proof can
+settle one modeled property while leaving implementation refinement and
+deployment outcomes open. Adequacy is purpose-relative and expiring.
+
+## Why existing approaches are insufficient
+
+Long context, direct and graph RAG, hierarchical retrieval, and prompt
+compression can improve availability or bounded task performance. They do not
+establish that the target claim's obligations were identified, jointly checked,
+or checked by valid and independent-enough methods. More context can also add
+distractors and unverified summary burden.
+
+Citation systems such as ALCE sharpen the distinction between answer quality
+and citation quality, but citation presence is not entailment or source truth.
+CheckList-style behavioral matrices and GPQA-style hard expert questions expose
+important failures, but benchmark success does not certify a particular live
+claim, evaluator, population, or deployment. LongBench and RULER stress nominal
+context claims; LongLLMLingua exposes compression trade-offs; GraphRAG,
+HippoRAG, and RAPTOR expose graph and abstraction choices. None is reproduced
+here, and none alone is a general adequacy certificate.
+
+Formal tools such as Reluplex can verify a declared property inside a modeled
+scope and produce counterexamples. That authority does not automatically extend
+to semantic-model fidelity, implementation refinement, distribution shift,
+tool use, or whole-system safety. Abstention and model panels can reduce some
+errors, but shared data, prompts, code, model families, incentives, and blind
+spots limit independence. Verification adequacy requires an explicit
+obligation denominator and mode-specific ceilings across all of these routes.
+
+## Core Claim
+
+Verification Bandwidth should own the prospective, claim-specific adequacy contract for a verification attempt. Before outcomes, it binds target proposition and scope, population and environment, risk and consequence, requested support effect, required positive, negative, boundary, contradiction, counterexample, and transfer obligations, available source units, verification modes, tools, evaluator-dependency graph, authority and rights, budget, horizon, stop rule, and escalation path. After execution, it records every attempted, passed, failed, disputed, unknown, infeasible, and unattempted obligation plus actual artifacts, costs, disagreement, residuals, expiry, and causal-use observations. Adequacy means only that the declared verification program was sufficient for its exact purpose under stated premises; it does not establish claim truth, model cognition, source correctness, formal-model fidelity, useful outcomes, safety, support promotion, or release (evidence boundary: architectural argument).
+The claim remains at `argument`. Current evidence establishes authored record
+checks, finite route behavior, a conservative obligation-count example, and
+explicit non-claim boundaries. It does not establish a general capacity law,
+natural adequacy classification, evaluator competence, useful error reduction,
+or transfer.
+
+## Mechanism
+
+Verification Bandwidth begins after packet conformance and transaction validity.
+It turns a proposed claim and a finite verification budget into an explicit
+obligation program rather than treating loaded context or reviewer activity as
+proof.
+
+The contract has eighteen mechanisms:
+
+The opening mechanisms turn a proposition into a bounded work program. They
+freeze its consequence, enumerate distinct obligations, expose decomposition
+assumptions, bind available source units, and assign verification modes and
+resources before results arrive. This creates a trace from the claim that was
+asked to the work that was attempted, including missing units and deliberately
+unattempted obligations.
+
+1. Freeze the proposition, definitions, scope, population, environment, time,
+consumer, risk, affected parties, consequence, requested support effect,
+authority, rights, budget, horizon, and change triggers before outcomes.
+2. Decompose the target into premise, definition, source, entailment,
+contradiction, boundary, counterexample, threat, causal, outcome, cost,
+reproduction, and transfer obligations with owners and falsifiers.
+3. Build an obligation dependency and interaction graph. Use all-pairwise or
+higher-order checks only when warranted; every reduction names clusters,
+boundary obligations, omitted interactions, assumptions, and residuals.
+4. Map the actual source units and consumer-visible packet to each obligation,
+including missing, omitted, compressed, transformed, inaccessible,
+conflicting, stale, or rights-blocked material.
+5. Assign an authorized mode to every obligation: direct source inspection,
+citation entailment, behavioral probe, executable test, formal property
+check, adversarial review, independent replication, or outcome observation.
+6. Allocate model calls, context, tools, solvers, compute, latency, human work,
+privacy exposure, and opportunity cost prospectively; infeasible and
+deliberately unattempted work remains visible.
+7. Record evaluator identity, implementation, model family, training-data and
+prompt overlap, shared code and infrastructure, incentives, conflicts,
+calibration history, and disagreement as an independence graph.
+8. Execute the declared attempts against actual artifacts and retain every
+parse, query, retrieval, comparison, test, proof attempt, counterexample,
+timeout, retry, intervention, failure, and discard.
+9. Maintain an obligation matrix separating attempted, passed, failed,
+contradicted, disputed, unknown, infeasible, blocked, and unattempted states.
+10. Search prospectively for negative evidence, omitted alternatives,
+contradictory sources, adversarial examples, distribution shift, evaluator
+failure, and disconfirming outcomes.
+11. Separate source availability, packet admission, fidelity, local-check
+validity, obligation coverage, evaluator competence, claim adequacy,
+usefulness, safety, and support.
+12. Calibrate adequacy and abstention against held-out false acceptance, false
+refusal, missed contradiction, missed help, disagreement, usefulness, and
+delayed residuals rather than confidence or agreement alone.
+13. Use risk- and consequence-relative stop rules that may allow drafting,
+request another source or mode, split or narrow the claim, abstain,
+quarantine, or block while preserving false-denial costs.
+14. Issue escalation requests naming missing obligations, eligible modes,
+evaluator constraints, resources, authority, deadline, and return contract.
+15. Expire and rerun affected adequacy decisions after material changes to the
+claim, source, packet, model, tool, verifier, property, environment,
+authority, rights, budget, threat, outcome, or support target.
+16. Test causal use by removing, replacing, corrupting, or hiding required
+units, modes, evaluator separation, negative-evidence search, and residual
+handling while holding resources and candidate answers fixed.
+17. Preserve every candidate, attempt, failure, escalation, abstention, retry,
+intervention, cost, privacy exposure, delay, discard, missed-help case, and
+residual in the denominator.
+18. Compare answer-only, long-context, direct and graph RAG, hierarchical
+retrieval, compression, citation-first, self-critique, model-consensus,
+behavioral-test, formal-property, human-review, abstention, and governed
+routes on natural claims under matched conditions.
+
+```{mermaid}
+flowchart LR
+A["Frozen claim + requested effect"] --> B["Obligation graph"]
+B --> C["Actual units + modes"]
+C --> D["Prospective capacity allocation"]
+D --> E["Independent-enough attempts"]
+E --> F["Attempt and result matrix"]
+F --> G{"Adequate for exact purpose?"}
+G -- "yes" --> H["Adequacy receipt"]
+G -- "narrow" --> I["Split / narrow / draft"]
+G -- "no" --> J["Abstain / block / escalate"]
+H --> K["Claim-ledger review"]
+I --> K
+J --> K
+K --> L["Residuals + expiry"]
+```
+
+**Reading the verification adequacy flow:** Adequacy begins with a frozen claim
+and requested consequence, not with an answer. Obligations, actual units,
+modes, resources, and evaluator dependencies are declared before attempts.
+Adequacy routes the completed matrix to a separate claim-ledger decision; it
+does not promote support itself.
+
+The later mechanisms govern interpretation of that trace. They retain negative
+search, evaluator dependence, abstention, expiry, ablation, costs, and failed
+attempts beside positive results. Adequacy then appears as a scoped routing
+decision over a complete attempt matrix, while evidence acceptance, support
+movement, authority, and release remain decisions of their respective owners.
+
+### Adequacy states
+
+Adequacy states give the system a public way to refuse overconfident prose. If required source units are absent, the system has no basis for a source-derived claim. If the packet is drafting-only, it may help write, orient, or assemble a source queue, but it cannot verify the target claim. A local check is narrower still: a citation, schema, fact, or consistency relation may have been checked without proving the broader claim.
+
+Joint check is the first state that can plausibly support a stronger move, because the required semantic units were compared in the declared mode. Even then, support promotion still depends on the other evidence gates. Summary-derived context carries an explicit ceiling: a compressed packet or summary may be useful, but the claim cannot outrun the known loss and residuals. Escalated context is an honest stop sign, routing the claim to retrieval, split review, tribunal, proof, or human review until stronger evidence returns.
+
+Contradicted is not a minor confidence adjustment. It means the adequacy pass found a conflict that matters to the target claim, so the claim needs revision, downgrade, refutation, or residual preservation. These states do not measure a model's hidden attention. They give the stack a visible vocabulary for saying which use the loaded context can honestly support.
+
+## Interfaces
+
+Context adequacy travels with the packet and claim, but ownership remains
+separated:
+
+- The Virtual Context ABI supplies the request, candidate inventory, actual
+packet, omissions, and conformance state. It may carry a requested adequacy
+target but cannot declare verification adequacy.
+- Context Transactions supplies exact committed source and snapshot state;
+consistency, durability, and authorization do not establish adequacy.
+- Intent, Cognitive Compilation, and Planning own accepted purpose, claim
+demand, non-goals, risk request, and scheduling. Verification Bandwidth may
+narrow, fault, abstain, or escalate but cannot reinterpret intent.
+- Scalable Oversight owns reviewer competence, adversarial control, oversight
+policy, and evaluator-system governance; this layer records capacity and
+dependencies for the exact attempt.
+- Spinoza and Claim Ledgers own proposition identity, contradiction, belief,
+evidence, and support transitions. Adequacy cannot promote a claim.
+- Executable Specifications and formal tools own property semantics and proof
+checking; a valid result remains bounded to its modeled property.
+- Security, Privacy, Authority, Rights, and Licensing owners decide source
+access, processing, disclosure, retention, reviewer eligibility, and modes.
+- Artifact Graphs preserve source, packet, obligation, attempt, evaluator,
+artifact, disagreement, cost, outcome, and residual lineage without
+certifying adequacy or truth.
+- Runtime Adapters own tools, approvals, and effects. Verification work grants
+no execution authority, and a checked prediction is not an observed outcome.
+- Resource Economics owns compute, tokens, storage, solver, retrieval, model,
+human, privacy, latency, recovery, and opportunity cost.
+- Evidence States and Readiness Gates own support, quarantine, promotion, and
+release. Adequacy, coverage, citation, consensus, proof, or abstention has no
+direct support-state effect.
+
+Minimum fields:
+
+- `adequacy_id`
+- `target_claim_id`
+- `target_definition_refs`
+- `population_scope`
+- `environment_scope`
+- `consumer_ref`
+- `decision_consequence`
+- `requested_support_effect`
+- `claim_scope`
+- `context_packet_ref`
+- `context_scope`
+- `risk_tier`
+- `semantic_units`
+- `obligation_graph`
+- `obligation_matrix`
+- `boundary_obligations`
+- `unattempted_obligations`
+- `compression_path`
+- `verification_mode`
+- `evaluator_dependency_graph`
+- `capacity_allocation`
+- `attempt_refs`
+- `disagreement_state`
+- `calibration_ref`
+- `adequacy_state`
+- `residual_risks`
+- `negative_evidence`
+- `required_escalation`
+- `stop_rule`
+- `expiry_and_revalidation`
+- `verification_artifact_refs`
+- `audit_refs`
+- `support_state_effect`
+- `non_claims`
+
+Planning consumes missing-obligation and escalation requests. The ABI may
+materialize a revised packet. Oversight may qualify a different evaluator.
+Claim Ledgers decide whether any returned artifacts justify a support
+transition. No component can substitute its own success state for another
+owner's decision.
+
+An adequacy record also names the comparison mode:
+
+- direct source lookup
+- pairwise semantic-unit comparison
+- schema or fixture validation
+- proof-checker result
+- tribunal/adversarial review
+- human review
+- summary-only review
+
+Naming the mode prevents an adequacy state from becoming vague confidence. A claim may be locally checked by schema validation and still be unverified as an empirical claim. A proof-checker result may verify a finite predicate and still leave open whether the predicate models the real system. Mode-tagged adequacy preserves that difference.
+
+### Capacity model
+
+The Verification bandwidth capacity model turns the "long-context theater" warning into a bounded record-level obligation count. `python3 scripts/validate_verification_bandwidth_capacity_model.py` writes `experiments/verification_bandwidth_capacity/results/2026-07-03-local.json` and checks three valid synthetic capacity traces plus five expected-invalid controls. In the worst-case all-pairwise trace, 12 semantic units create 66 all-pairwise obligations. A verifier that checks only 18 obligations records 48 residual obligations and must split, escalate, or keep the claim below verified support.
+
+The model also records a valid named-decomposition trace: three clusters of four semantic units plus six boundary checks reduce the modeled obligation set to 24 checks. That reduction is allowed only because the decomposition names the boundary obligations; a control that hides those boundary checks is rejected. Other controls reject treating linear context slots as pairwise verification capacity, hiding residual obligations, declaring adequacy without identified semantic units, and promoting a core support state from the fixture.
+
+This is still a synthetic record model. It does not prove a model verification bandwidth law, does not measure contradiction-rate performance, does not validate an adequacy classifier, does not prove long-context failure in deployed systems, and does not promote any core support state.
+
+### Reachable evidence-gate refinement
+
+The earlier formal route contained an authority leak: its most favorable
+constructor was named `allowVerifiedSupport`. Verification Bandwidth does not
+own support. `AsiStackProofs.VerificationBandwidthRefinement` now replaces that
+meaning with `handoffToEvidenceGate` and models proposed, frozen, executed,
+adjudicated, and handed-off stages over an exact plan/claim/version/packet
+binding.
+
+The plan freezes risk, requested effect, obligation count, authority, rights,
+budget, horizon, and stop rule. Execution exhaustively dispositions the frozen
+obligation count across passed, failed, contradicted, disputed, unknown,
+infeasible, blocked, and unattempted states, while retaining negative-search,
+evaluator-dependence, artifact, residual, and expiry fields. Direct chapter-core
+promotion is rejected; contradictions block; open dispositions remain
+residuals; high-risk correlated evaluation escalates; and missing negative
+search or artifacts cannot reach the evidence gate.
+
+`python3 scripts/validate_verification_bandwidth_refinement.py` independently
+recomputes all twelve routes, consumes the exact 3/5 admission, 2/7
+contradiction, and 3/5 capacity suites, accepts one complete five-stage witness,
+and rejects 31 of 31 mutations before evidence-gate handoff. Its result is
+`experiments/verification_bandwidth_refinement/results/2026-07-15-local.json`.
+The support-state effect remains `none`.
+
+## Invariants
+
+These invariants protect the distinction between available information and
+completed verification. They preserve scope, obligation state, evaluator
+dependence, negative evidence, calibration, and denominator completeness as
+separate coordinates. A favorable result on one coordinate leaves the others
+unchanged, giving downstream reviewers an explicit account of what was checked,
+what remained open, and which consequence the adequacy decision addressed.
+
+1. Every decision binds one exact proposition, definitions, scope, population,
+environment, time, consumer, risk, consequence, requested support effect,
+authority, rights, budget, horizon, and stop rule.
+2. Every positive, negative, boundary, contradiction, counterexample, threat,
+causal, outcome, cost, reproduction, and transfer obligation is satisfied,
+failed, disputed, unknown, infeasible, blocked, or residualized.
+3. Availability, retrieval, context length, packet admission, fidelity,
+attention, citation, local validity, coverage, claim adequacy, usefulness,
+safety, and support remain distinct.
+4. Actual units, transformations, omissions, conflicts, packet placement,
+attempts, artifacts, evaluator observations, and outcomes remain inspectable.
+5. All-pairwise counts are declared worst-case models, not universal laws;
+decomposition exposes clusters, boundary checks, higher-order interactions,
+omitted edges, assumptions, and completeness residuals.
+6. More passed checks or covered obligations do not establish correctness when
+checks are invalid, dependent, weak, mis-scoped, contaminated, or selected
+after outcomes.
+7. Evaluator independence remains graded across model, data, prompt, code,
+infrastructure, organization, incentives, and time.
+8. Each mode retains its property, model, source, population, environment,
+authority, rights, and outcome ceiling.
+9. Citations, retrieval recall, benchmark scores, agreement, self-critique,
+confidence, and green validators cannot promote claims without accepted
+claim-specific evidence.
+10. Negative evidence, contradictions, disagreement, timeouts, infeasibility,
+unattempted obligations, and evaluator failures remain first-class.
+11. High-risk claims require stronger independent modes, lower false-acceptance
+tolerance, explicit false-refusal and missed-help accounting, and no silent
+best effort.
+12. Adequacy is calibrated against held-out acceptance, rejection,
+contradiction, abstention, usefulness, and delayed outcomes.
+13. Escalation, abstention, narrowing, quarantine, and blocking name exact
+missing obligations, owners, resources, return conditions, and residuals.
+14. Material changes to claim, source, packet, model, tool, verifier, property,
+environment, authority, rights, budget, threat, outcome, or support target
+expire affected receipts.
+15. Every candidate, attempt, failure, escalation, abstention, retry,
+intervention, cost, privacy exposure, delay, discard, missed-help case, and
+residual remains in the denominator.
+16. Lower tokens, faster review, more citations, higher coverage, more
+agreement, fewer releases, or fewer observed errors do not establish a
+superior frontier without joint usefulness, safety, calibration, and cost.
+17. Schemas, synthetic traces, authored counts, finite theorems, and local
+reversible checks establish only their exact scopes.
+
+## Failure modes
+
+The failure taxonomy centers on substitution, omission, and selection after the
+outcome. Substitution turns context length, citations, agreement, or formal
+syntax into broader verification than the artifact contains. Omission drops
+hard obligations, correlated evaluators, failures, or costs. Outcome-dependent
+selection then makes the retained record look stronger than the prospective
+program that actually ran.
+
+1. Verification theater records plans, role labels, artifacts, or green status
+without competent claim-specific work and consequences.
+2. Context-length laundering treats more tokens, units, or nominal window size
+as joint verification capacity.
+3. Obligation deletion omits negative, boundary, contradiction, threat, causal,
+outcome, cost, reproduction, or transfer checks after seeing results.
+4. Decomposition laundering removes pairwise or higher-order work without
+boundary obligations, completeness assumptions, or residuals.
+5. Capacity-law laundering presents one conservative authored count as a
+universal theorem about cognition or every verification strategy.
+6. Citation laundering treats links, counts, or plausible entailment judgments
+as source truth or complete support.
+7. Benchmark laundering transports aggregate scores into a live claim,
+population, environment, threat, or support state not evaluated.
+8. Formal-scope laundering treats a modeled property as semantic-model
+fidelity, implementation refinement, deployment safety, or whole-system
+correctness.
+9. Evaluator-independence laundering relabels correlated models, prompts,
+datasets, code, infrastructure, organizations, or incentives.
+10. Self-judge and consensus laundering treats reflection, confidence,
+majority agreement, or repeated sampling as independent verification.
+11. Negative-evidence starvation spends the budget on confirmation while
+contradictions, counterexamples, alternatives, and outcomes remain
+unsearched.
+12. Contradiction averaging hides material conflict inside aggregate adequacy,
+confidence, coverage, or usefulness scores.
+13. Escalation theater records tribunal, proof, model-panel, or human referral
+without attempted work, returned artifacts, deadlines, or closure.
+14. Over-refusal laundering lowers errors by omitting missed help, delay,
+opportunity cost, and false-denial burden.
+15. Under-refusal laundering maximizes throughput by accepting unknown,
+infeasible, weakly checked, or contradicted claims.
+16. Failure and cost survivorship removes failed checks, timeouts, retries,
+human work, privacy exposure, abstentions, slow cases, and residuals.
+17. Stale-adequacy laundering reuses a receipt after claim, source, packet,
+model, verifier, property, environment, threat, authority, rights, or
+outcome changed.
+18. Portability theater treats one fixture, model, domain, language, evaluator,
+mode, or horizon as general adequacy evidence.
+
+## Minimum Viable Implementation
+
+The current minimum is an authored record-and-route scaffold:
+
+- one context-adequacy schema and fixture;
+- three valid and five rejecting admission/adequacy records;
+- two valid contradiction/adequacy traces and seven rejecting controls;
+- three valid capacity traces and five rejecting controls;
+- one conservative twelve-unit record with sixty-six all-pairwise obligations,
+eighteen checked, and forty-eight residual;
+- one named decomposition with twenty-four modeled obligations including six
+boundary checks; and
+- fourteen Lean declarations grouped under four public targets.
+
+Three theorem declarations restate modeled predicates or summary validity and
+eleven construct a finite witness or prove finite route consequences. The
+scaffold does not run a model, natural claim, contradiction-rate study,
+distractor test, citation audit, behavioral suite, neural-network property
+check, independent evaluator, deployed ledger or escalation service, adequacy
+classifier, usefulness comparison, or transfer.
+
+The next honest minimum must prospectively sample natural claims with nonzero
+verification opportunity across domains and stakes. It must compare
+answer-only, long-context, retrieval, graph and hierarchical retrieval,
+compression, citation, self-critique, model-panel, behavioral-test,
+formal-property, human, abstention, and governed routes under matched sources,
+models, tools, authority, budgets, and horizons. Independent evaluators must
+label obligations, actual attempts, contradictions, outcomes, usefulness,
+safety, false acceptance, false refusal, missed help, calibration, and total
+cost. Reproduction from locks and transfer to a second model, domain, and
+evaluator implementation are required before promotion.
+
+## Beyond the State of the Art
+
+A mature Verification Bandwidth layer is an independently testable
+claim-specific capacity and adequacy control plane. Natural claims are frozen
+and decomposed into falsifiable positive, negative, boundary, contradiction,
+counterexample, causal, outcome, cost, reproduction, and transfer obligations.
+Actual units and resources are allocated before outcomes, and complete ledgers
+distinguish availability, work performed, check validity, coverage, evaluator
+dependence, adequacy, usefulness, safety, support, and release.
+
+Strong matched baselines span answer-only, long-context, direct and graph RAG,
+hierarchical retrieval, compression, citation-first generation, self-critique,
+model panels, behavioral tests, formal property checks, human review, and
+calibrated abstention. Promotion requires useful opportunity, lower
+claim-specific false acceptance without unacceptable false refusal or missed
+help, calibrated residuals, negative-evidence discovery, causal signatures
+under ablation, complete total cost, clean reproduction, and cross-model,
+cross-domain, and cross-evaluator transfer. Otherwise exact claims narrow,
+remain null or negative, become refuted, or are blocked after a full attempt.
+
+The decisive comparison is a frontier rather than a single score. Every point
+on that frontier carries the same frozen claims, information access, resource
+budget, evaluator accounting, and delayed-outcome window. The resulting record
+places accepted help, unsafe acceptance, unnecessary refusal, missed
+contradiction, latency, privacy exposure, human effort, and residual uncertainty
+in one inspectable comparison instead of allowing any favorable metric to stand
+in for the whole decision.
+
+No current result meets this adequacy-allocation endpoint; support remains
+`argument` until natural claims, matched information and resource budgets,
+independent outcomes, causal ablations, reproduction, and transfer pass.
+
+## Post-v2.1 evaluator adequacy result
+
+The routing/deliberation evaluator receives only the request, public candidate,
+and answer criterion; it sees neither gold route nor router score. That
+implementation boundary is useful, but its outcome is stark: zero of 360
+substantive candidates satisfy the criterion, while route-level policy actions
+can still score as correct. The result separates evaluator bandwidth from
+candidate adequacy and from route adequacy. It does not independently validate
+the criterion, establish that a richer context would repair the answers, or
+show that five low-quality candidates provide more verifiable information than
+one. `RD-03` therefore narrows rather than closes.
+
+## Summary
+
+Verification Bandwidth owns the prospective obligation-to-capacity contract for
+an exact claim. It records what had to be checked, what sources and modes were
+available, what work actually happened, how evaluators were related, what
+failed or remained unattempted, what it cost, and why the result is adequate,
+narrowed, escalated, abstained, blocked, disputed, or expired.
+
+The current repository proves only authored record, lifecycle, and route consequences. It
+does not measure model cognition or natural verification quality. The next
+proof step is a matched natural campaign with independent-enough evaluators,
+real artifacts, useful and unsafe outcomes, calibrated acceptance and refusal,
+causal ablations, complete costs, reproduction, and transfer.
+
+Even a claim-specific adequate program cannot move support by itself. The
+completed record becomes an input to Claim Ledgers and Belief Revision, which
+owns the separate evidence and support decision.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **73** structured claim atoms in `CF-04`. The
+frozen repository-wide terminal audit records 73 `blocked_after_full_attempt`. Its core
+atom `verification-bandwidth-and-context-adequacy.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `verification-bandwidth-and-context-adequacy` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 73 structured claims,
+73 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Situated world-model acquisition and consolidation campaign**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Bounded finite POMDP result only; no open-world truth, general memory transfer, deployment, or chapter-core promotion.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
+
+## Handoff
+
+Adequacy records need somewhere durable to land, otherwise verification limits remain comments around the work rather than part of the work. Claim Ledgers and Belief Revision turns those limits into claim identity, evidence state, contradiction links, revision history, uncertainty, and required promotion conditions. The stack can then change belief without erasing why the earlier belief was weaker.

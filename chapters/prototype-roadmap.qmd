@@ -4,7 +4,7 @@ chapter_id: "prototype-roadmap"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 semantically audited manuscript"
-last_updated: "2026-07-15"
+last_updated: "2026-07-16"
 primary_sources:
   - "viea"
   - "benchmaxxing"
@@ -186,6 +186,15 @@ The recommended dependency order is:
 - Routing heads, specialist registry, readiness gates, and benchmark ratchets.
 - Stable capability fields, replacement transactions, rollback, and bounded self-improvement.
 
+Two source-derived programs now refine the late phases without bypassing that
+order. The Deterministic Capability Compilation lane proceeds charter ->
+scaffold -> semantic capability graph -> coverage -> experts -> NCO linking ->
+translation validation -> shielded adaptation -> tribunal -> reification. The
+Platonic World Model lane proceeds stable identity/version -> claim ledger ->
+proof and semantic governance -> grounded branches -> packet compilation and
+federation. Each stage must earn its own evidence and can stop honestly; neither
+paper authorizes a full-stack implementation jump.
+
 Self-improvement comes late because it depends on evaluator integrity, containment, rollback, governance rights, evidence ledgers, resource controls, and residual conservation. Research can proceed earlier in isolation, but it cannot silently inherit integration, promotion, release, training, or deployment authority. Every shortcut becomes phase debt with an owner, severity, downstream exposure, due condition, and retirement rule.
 
 ## Interfaces
@@ -293,6 +302,17 @@ The module contains eleven declarations. The first three are finite implications
 | `ext_codebleu_2020` | CodeBLEU | code_quality_metrics | External comparator for syntax- and dataflow-aware code metrics subordinate to executable outcomes. | source note available; comparator only |
 | `ext_qlora_2023` | QLoRA | efficient_adaptation | External comparator for later parameter-efficient adaptation under data, evaluation, rollback, and resource gates. | source note available; comparator only |
 
+### Manifest source assignment reconciliation
+
+These rows keep Prototype Roadmap's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_swe_rebench_v2_2026` | Passage-reviewed comparator: SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale. Replaces authored repository fixtures in the empirical lane with post-snapshot public merged changes while requiring setup repair, gold execution, test-path collision guards, independent task review, and final-heldout custody. | The 12 selected development tasks are debugging inputs, not the final denominator or evidence for a chapter claim. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 The prototype should grow as evidence infrastructure grows: source matrix, claim ledger, artifact graph, schemas, plans, context, typed jobs, runtime adapters, routing, readiness, benchmarks, SCFs, and only then bounded self-improvement.
@@ -300,6 +320,80 @@ The prototype should grow as evidence infrastructure grows: source matrix, claim
 That order is intentionally conservative. It asks the project to earn agency by first proving that it can remember sources, preserve artifacts, admit failures, replay checks, and refuse unsupported promotions. The same rule applies to the manuscript itself.
 
 Every later capability should be able to point to the earlier records that made it safe to exist. If the pointer is missing, the roadmap should block, narrow, or mark the capability as research-only. The route to v1.0 follows the same logic: strengthen the public book, keep the human and AI views aligned, validate the reader edition pipeline, preserve source ownership boundaries, and avoid support-state inflation. The route to a prototype follows after that with small, reproducible artifacts. A living architecture becomes credible when each new layer inherits the evidence and refusal machinery of the layers before it, not when the project jumps straight to impressive autonomy.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **74** structured claim atoms in `CF-08`. The
+frozen repository-wide terminal audit records 74 `blocked_after_full_attempt`. Its core
+atom `prototype-roadmap.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `prototype-roadmap` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+::: {.asi-human-only}
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 74 structured claims,
+74 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Integrated governed lifecycle slices**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Bounded local replay only; no deployment, whole-book proof, external effect authority, transfer, publication, or release claim.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+:::
+
+::: {.asi-ai-only}
+
+### Evidence packet
+
+| Field | Exact chapter boundary |
+|---|---|
+| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-08` minimum family bundle. |
+| Attempted local lanes | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` |
+| Missing or unproved lanes | `normative`, `transfer` |
+| Family-level natural-work or end-to-end bundle | **Integrated governed lifecycle slices** (`end_to_end`): Three versioned integrated slices, 12 cases, all ten lifecycle states, six observed effects, rollback/residual/quarantine outcomes, and an eleven-surface sealed epoch. |
+| Negative controls | 20 named boundary injections; three exact rollbacks; partial-effect residual and quarantine; 11 rejecting mutations. |
+| Exact accepted transitions in this chapter | none |
+| Core outcome | `blocked_after_full_attempt` at `argument`; no chapter-core promotion. |
+| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
+| Reproduction path | Replay `scripts/validate_p3_integrated_slices.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
+
+### Worked success, failure, and boundary cases
+
+- **Success case:** the family-level bundle passed its own rejecting validator
+  within this exact scope: Three versioned integrated slices, 12 cases, all ten lifecycle states, six observed effects, rollback/residual/quarantine outcomes, and an eleven-surface sealed epoch. This is evidence that the family
+  received a competent attempt, not that every claim in this chapter succeeded.
+- **Failure or non-promotion case:** 74 atoms
+  remain blocked and 0 are narrowed. A
+  green family validator cannot fill their missing lanes or raise the core.
+- **Boundary case:** Bounded local replay only; no deployment, whole-book proof, external effect authority, transfer, publication, or release claim.
+
+### Argument-exit table
+
+| Atom set | Count | Work performed | Terminal reason and next burden |
+|---|---:|---|---|
+| Core: `prototype-roadmap.core` | 1 | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` | `blocked_after_full_attempt`; missing or unproved: `normative`, `transfer`. |
+| blocked after full attempt | 74 | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` | Missing or unproved lanes across this set: `normative`, `transfer`. These are residual proof obligations, not false claims. |
+
+This table is a disposition map, not a promotion quota. The next valid movement
+is atom-specific evidence that fills the named missing lanes, survives relevant
+negative controls, and enters through an accepted evidence transition. Until
+then, source counts, theorem counts, fixtures, validators, or nearby family
+results cannot be used as substitutes.
+:::
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
 
 ## Handoff
 

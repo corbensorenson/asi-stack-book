@@ -1,0 +1,163 @@
+# Open Research Agenda and Bibliography Plan
+
+The research agenda prevents the architecture from hiding its unfinished work after the argument reaches its end. It names what remains missing: sources to load, literature to normalize, experiments to run, proofs to refine, schemas to harden, and claims that must not rise above their current support state. A serious architecture needs that backlog to be public enough that future work cannot quietly skip it.
+
+This is not an apology for incompleteness. It is the living-book contract in its most explicit form. The architecture can keep improving only if open work stays visible instead of being smoothed away by confident prose. The final state should make uncertainty actionable: fetch, read, test, formalize, reproduce, revise, or close.
+
+That turns the bibliography from a decorative ending into a control surface for the next revision. Sources are not trophies, and gaps are not embarrassments. They are routes for future work, each with a boundary, owner, evidence condition, and reason why the claim is not stronger yet. That routing discipline is how a living book stays corrigible over time.
+
+## Problem
+
+A living book can decay into a pile of sources unless it has a research backlog. Future writing agents need to know which source to load, which chapter owns the boundary, which evidence is missing, which proof target is operational, and when a new paper should update an existing chapter instead of creating a duplicate one.
+
+They also need to know what not to do. Do not cite a title because it sounds relevant. Do not add a chapter because a source uses new language for an old boundary. Do not promote a claim because a private artifact exists somewhere else. Do not turn an external reference named inside a draft into a citation until the reference itself has been checked.
+The research agenda is therefore a control surface, not a bibliography afterthought. It turns future curiosity into accountable intake decisions, source notes, merge rules, proof or test backlogs, public-safety choices, and explicit non-claims before new prose changes the architecture.
+
+## Why existing approaches are insufficient
+
+A pile of sources or ad hoc citations does not tell future writing agents what to load, compare, prove, test, or defer. It also creates citation drift: a chapter may cite a source it has not actually mined, or a new source may be treated as evidence before it has an inventory record and source note.
+
+The bibliography for this book is not just a list of references at the end. It is an operating surface for a living research program. Each source has to answer practical questions: which chapter owns it, which claim can it inform, what text has actually been read, what remains private or connector-only, what external literature needs direct verification, and what would have to happen before the source could raise support above `argument`. A static bibliography cannot carry that burden by itself.
+
+The external backlog itself has baselines. MMLU (`ext_mmlu_2020`), GPQA (`ext_gpqa_2023`), and LiveBench (`ext_livebench_2024`) mark evaluation frontiers that need careful use; Lean (`ext_lean4_theorem_proving`) marks the proof-assistant lane; and the MoE survey (`ext_moe_llm_survey_2024`) marks routing literature that cannot be replaced by local terminology. The agenda records these as load queues and comparison surfaces, not as already-synthesized evidence.
+
+The research agenda is the matching map of ignorance. It names the work the book is not yet allowed to pretend is done: citation normalization, benchmark reproduction, semantic proof adequacy, chapter-level tests, external literature review, artifact import, reader-edition review, and new-paper triage. Keeping that ignorance explicit is what lets the book keep growing without becoming more confident merely because it became longer.
+
+The book therefore needs more than bibliography management. It needs state management for knowledge work: unread, inventoried, cached, source-reviewed, mapped to claims, passage-reviewed, integrated into chapter prose, tested, mechanized, reproduced, deprecated, or refuted. Those states are not decoration. They are the difference between a living book and a confident scrapbook.
+
+## Core Claim
+
+Open Research Agenda and Bibliography Plan owns a research-program-, source-or-gap-, backlog-item-, access-, provenance-, public-safety-, chapter-boundary-, claim-, proof-or-experiment-, deduplication-, evidence-transition-, owner-, next-action-, closure-, consumer-, environment-, and time-specific **Research Backlog Admission and Closure Contract**. Every new paper, local project, missing artifact, conflicting result, proof idea, experiment, reproduction need, correction, or chapter proposal enters through exact intake, triage, assignment, preconditions, blockers, non-claims, and terminal closure before it changes prose or support. No title, citation, source count, inventory row, source note, queue, priority label, backlog size, fixture, theorem, validator, or completed reading task alone establishes citation accuracy, literature completeness, research quality, claim support, reproduction, transfer, AGI, ASI, or SOTA (evidence boundary: architectural argument).
+The repository now has source inventory, source notes, chapter listings, exact core-claim source review mappings, and passage-reviewed mapping refs for the assigned sources, but external literature normalization, direct citation checks, artifact reproduction, and new-paper triage rehearsals remain incomplete.
+
+## Mechanism
+
+The owned object is a **Research Backlog Admission and Closure Contract**, not a source list. Its lifecycle is:
+
+| Phase | Required operations |
+|---|---|
+| 1. Freeze and identify | Freeze program purpose, intake window, source and gap classes, chapter graph, authority, access, rights, public safety, consumers, environment, time, and non-claims; identify every source, version, passage, citation, project, gap, claim, decision, proof, experiment, reproduction, owner, action, and closure. |
+| 2. Inventory and classify | Record provenance, metadata source, acquisition, access, storage, checksum or version, permission, public safety, and canonical note; keep unread, cached, noted, mapped, reviewed, integrated, tested, mechanized, reproduced, inaccessible, private, rejected, duplicate, superseded, deprecated, refuted, and retired states distinct. |
+| 3. Separate and extract | Separate Corben/local, conversation-intent, external, benchmark, proof, private, and missing-source classes; extract thesis, mechanisms, evidence, failures, chapters, claims, contrary evidence, citation data, and limits before drafting or support use. |
+| 4. Triage and bind | Route to update, propose a distinct owner, appendix, proof or experiment work, defer, reject, or retire; apply the distinct-interface and merge/split tests; bind assignments to passages, atoms, rationale, alternatives, non-claims, dependencies, and reviewer authority. |
+| 5. Execute and verify | Create lane-specific proof, executable, empirical, causal, reproduction, transfer, and normative work; record pre-drafting and transition conditions; deduplicate with lineage; verify citation metadata, passage support, corrections, retractions, rights, and availability; rehearse natural conflict and failure cases. |
+| 6. Close and maintain | Close only on consumed action, artifact, review, citation or chapter decision, transition or no-change record, residual, cost, and non-claims; propagate corrections and failed reproduction; monitor coverage, errors, duplicates, age, closures, burden, opportunity cost, and total cost; expire changed contracts. |
+
+Admission is deliberately stricter than collection. A source or idea enters
+with an identity, access state, rights boundary, intended consumer, and declared
+reading depth. Classification says whether it is merely inventoried, actually
+read, passage-reviewed, mapped, integrated, tested, reproduced, contradicted, or
+retired. Extraction records both the strongest useful contribution and the
+conditions it cannot establish. Only then may triage update an existing owner,
+propose a distinct boundary, create proof or experiment work, defer the item, or
+reject it with preserved lineage.
+
+Closure is likewise a consumer event rather than a checked box. A mapping is
+not closed until its claim owner acknowledges it; an experiment is not closed
+until artifacts, failures, denominators, and interpretation are adjudicated; a
+citation is not closed while identity or correction state is unknown. Every
+terminal state retains cost, residuals, affected consumers, and reopening
+conditions. This keeps an inaccessible source, failed reproduction, duplicate
+record, or negative result useful without allowing backlog volume or closure
+rate to masquerade as research quality.
+
+Any item can stop honestly at inaccessible, private, deferred, duplicate, rejected, failed, refuted, or retired. Keeping that state is more valuable than converting the item into a confident paragraph. New vocabulary normally updates an existing owner; only a genuinely distinct interface, invariant, artifact, authority, or failure boundary can justify a chapter proposal.
+
+```{mermaid}
+flowchart LR
+A["New source or gap"] --> B["Inventory record"]
+B --> C["Access and storage policy"]
+C --> D["Source note or backlog state"]
+D --> E{"Existing boundary?"}
+E -- "yes" --> F["Update chapter source queue"]
+E -- "no" --> G["Propose precise chapter"]
+E -- "defer" --> H["External literature queue"]
+F --> I["Claim/evidence mapping"]
+G --> I
+H --> J["Backlog item with non-claims"]
+I --> K["Proof/test/backlog item"]
+J --> K
+```
+
+**What the research agenda route shows:** The research agenda routes new material through inventory, access policy, source review or backlog state, chapter-boundary decisions, claim mapping, and proof/test backlog. A deferred source remains external literature or a backlog item with non-claims instead of becoming unsupported chapter evidence.
+
+A source backlog record tracks source id, access state, source storage policy, public-safety state, assigned chapters, chapter-decision refs, deduplication state, merge/split policy, source review state, claim-mapping state, passage-review state, external-literature need, proof/test backlog, pre-drafting requirements, insertion decision, promotion blockers, and residuals.
+
+## Interfaces
+
+The contract joins twelve interfaces: human research and closure authority; inventory, caches, notes, connectors, projects, permissions, and acquisition; separate Corben/local, external, and author-intent appendices; manifest, outline, chapters, queues, citations, bibliography, and changelog; claim reviews, Appendix C, transitions, contrary evidence, residuals, and non-claims; proof, Lean, schemas, tests, benchmarks, studies, and reproduction artifacts; artifact, supply-chain, data, security, rights, retention, deletion, and replay controls; roadmap, living-book, stewardship, work-contract, status, terminal, and successor continuity; internal and local project lineage; external challenge queues; release, citation, reader, archive, site, and correction surfaces; and researchers, readers, AI agents, reviewers, citers, implementers, evaluators, downstream repositories, institutions, and future editions.
+
+Each join preserves its own identifier, authority, version, acknowledgement, error, and expiry rather than treating a nearby repository path as successful delivery. A consumer that cannot resolve or accept the record remains an open backlog edge with an owner and next action.
+
+## Invariants
+
+The eighteen invariants require exact scope; no unread or inaccessible source support; authoritative or unknown metadata; distinct provenance classes; distinct lifecycle states; passage-bound material claims; existing or distinct owner assignments; lineage-preserving deduplication; accepted evidence transitions only; separate work lanes; public-safety and privacy; retained negative and rejected items; consumed closure artifacts and decisions; correction propagation; versioned citation state; joint usefulness, failure, burden, and cost; exact synthesis and transfer scope; and a strict boundary around what inventory, note, mapping, fixture, theorem, validator, citation, and backlog counts can prove.
+
+An expired, corrected, retracted, superseded, or consumer-rejected item cannot remain silently active. Closure conserves unresolved obligations, affected consumers, and residual ownership, while later reopening preserves the original decision and lineage instead of rewriting research history.
+
+## Failure modes
+
+The named falsifiers are citation drift; bibliographic hallucination; unread-source laundering; inventory theater; anthology drift; duplicate-evidence inflation; source-result inheritance; private-evidence leakage; indirect-reference laundering; triage theater; backlog rot; activity laundering; negative and conflict suppression; closure laundering; correction failure; priority capture; research overhead and false deferral; and unsupported transfer. Each failure leaves a blocked citation, rejected assignment, duplicate link, correction, retraction, residual, no-change decision, failed reproduction, retired item, or reopened consumer. Bibliographic presence is never evidentiary force.
+
+The contract also fails when its own burden hides more useful research, when privileged access or outcome-aware selection makes comparisons unfair, or when a clean record masks false metadata, weak reading, invalid proof, defective experiments, or unacknowledged downstream use. A high closure rate can therefore be evidence of premature rejection or closure laundering rather than program quality.
+
+## Minimum Viable Implementation
+
+The implemented minimum contains twenty-eight exact source mappings; a source inventory and source review corpus split across Corben/local, external, and author-intent appendices; one research-backlog record schema and public-safe fixture; and one new-paper triage scenario covering update-existing, propose-new-owner, defer-unread-external, and reject-duplicate decisions. Source inventory, note, protocol, appendix, citation, and mapping validators enforce the bounded record surface.
+
+Two proof targets are implemented by four Lean declarations over hand-authored finite source-ingestion and chapter-assignment records. They establish only that a source-derived claim record needs an ingested artifact and an accepted assignment needs an existing chapter. The active backlog also retains citation normalization, artifact reproduction, proof and experiment work, GraphRAG/HippoRAG overlap, inaccessible sources, and rejected or blocked items.
+
+No external-literature completeness, citation-accuracy study, natural intake campaign, real backlog-closure study, research-quality result, independent reproduction, transfer, or chapter-core support effect exists.
+
+## Beyond the State of the Art
+
+The mature argument-exit campaign must prospectively freeze a long-running natural research stream of new papers, local projects, inaccessible and private sources, conflicting findings, corrections and retractions, benchmark and proof artifacts, reproduction attempts, negative results, duplicate claims, and chapter proposals handled by multiple independent human and AI researchers. It must compare the contract with matched reference-manager, systematic-review, evidence-map, issue-tracker, wiki, ordinary bibliography, ad hoc agent-research, and strongest conventional research-program workflows under equal sources, access, tools, time, and review opportunity.
+
+The campaign must inject metadata errors, title-only sources, duplicate variants, hidden conflicts, private leakage pressure, stale citations, retractions, boundary ambiguity, chapter novelty pressure, failed reproduction, correction propagation, and backlog rot. It must jointly measure citation precision and recall, source coverage and calibration, decision and claim accuracy, duplicate detection, error and conflict discovery, time-to-usable-evidence, closure quality, false admission and deferral, correction latency, reproduction yield, chapter churn, reviewer burden, compute, storage, opportunity cost, residuals, and total cost. Causal ablations must identify useful and harmful fields or gates.
+
+Independent researchers, reviewers, repositories, institutions, disciplines, legal regimes, languages, and time periods must reproduce and transfer positive, negative, null, narrowed, blocked, and refuted results. Until then the contract remains a target architecture, not proof of literature completeness, citation accuracy, research quality, superior prioritization, claim truth, reproduction, transfer, or SOTA research management.
+
+## Summary
+
+The research agenda is the book's backlog discipline. It keeps source ingestion, bibliography, proof targets, experiments, missing evidence, and chapter insertion rules visible so the living book can grow without losing evidence control.
+
+After the exact core-claim mappings, the next bottleneck is no longer knowing which sources belong to which claims. It is doing the slower work: passage review, external citation normalization, artifact import or reproduction, and source-specific chapter revision without collapsing design rationale into unsupported evidence.
+
+This final chapter is the handoff back to future work. The book can keep changing, but every change should leave a trace: what source moved, what chapter boundary changed, what claim state stayed the same or moved, what test or proof was affected, what edition was regenerated, and what remains blocked.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **73** structured claim atoms in `CF-08`. The
+frozen repository-wide terminal audit records 73 `blocked_after_full_attempt`. Its core
+atom `open-research-agenda-and-bibliography-plan.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `open-research-agenda-and-bibliography-plan` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 73 structured claims,
+73 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Integrated governed lifecycle slices**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Bounded local replay only; no deployment, whole-book proof, external effect authority, transfer, publication, or release claim.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
+
+## Handoff
+
+The book closes by returning its reader to the living workflow rather than to a sealed conclusion. The stack is now a governed research program: sources enter through inventory and notes, claims move only through evidence transitions, proofs stay narrow, tests and benchmarks require artifacts, reader editions derive from validated source, and every future change should leave a public-safe trace of what improved, what stayed speculative, and what remains blocked.

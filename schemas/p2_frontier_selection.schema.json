@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASI Stack P2 competence-qualified frontier selection",
+  "type": "object",
+  "required": ["schema_version", "recorded_date", "state", "selection_rule", "candidates", "selected_claim", "corpus_and_custody_plan", "preflight_gates", "local_feasibility_snapshot", "support_state_effect", "release_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.p2_frontier_selection.v1"},
+    "recorded_date": {"const": "2026-07-17"},
+    "state": {"const": "selection_complete_competence_preflight_pending"},
+    "selection_rule": {"type": "object"},
+    "candidates": {"type": "array", "minItems": 5, "maxItems": 5},
+    "selected_claim": {
+      "type": "object",
+      "properties": {
+        "claim_id": {"const": "p2.governed_natural_repository_change_admission_joint_frontier"},
+        "identity_relation": {"const": "subclaim_of"},
+        "canonical_parent_atom": {"const": "integrated-reference-architecture.invariant.015"},
+        "support_state_effect_before_final_adjudication": {"const": "none"}
+      },
+      "required": ["claim_id", "identity_relation", "canonical_parent_atom", "owner_chapter_id", "proposition", "population", "environment", "candidate_system", "intervention", "primary_outcome", "secondary_outcomes", "minimum_effect_of_practical_interest", "maximum_inference", "support_state_effect_before_final_adjudication"]
+    },
+    "corpus_and_custody_plan": {"type": "object"},
+    "preflight_gates": {"type": "array", "minItems": 9, "maxItems": 9},
+    "local_feasibility_snapshot": {"type": "object"},
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 5}
+  }
+}

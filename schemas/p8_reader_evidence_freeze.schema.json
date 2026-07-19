@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/p8_reader_evidence_freeze.schema.json",
+  "title": "ASI Stack P8 reader evidence freeze",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "freeze_id",
+    "created",
+    "status",
+    "source",
+    "html_site",
+    "artifacts",
+    "evidence_reports",
+    "format_review_matrix",
+    "release_disposition",
+    "canonical_claim_authority",
+    "support_state_effect"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.p8_reader_evidence_freeze.v1"},
+    "freeze_id": {"const": "asi-stack-reader-v2.2-p8-2026-07-16"},
+    "created": {"const": "2026-07-16"},
+    "status": {"const": "complete_local_evidence_freeze_ready_not_published"},
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "chapter_count", "file_count", "tree_sha256", "files"],
+      "properties": {
+        "path": {"const": "editions/reader_manuscript/v2_2/source"},
+        "chapter_count": {"const": 55},
+        "file_count": {"type": "integer", "minimum": 60},
+        "tree_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "files": {
+          "type": "array",
+          "minItems": 60,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "bytes", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "bytes": {"type": "integer", "minimum": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    "html_site": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["file_count", "html_page_count", "tree_sha256"],
+      "properties": {
+        "file_count": {"type": "integer", "minimum": 60},
+        "html_page_count": {"const": 60},
+        "tree_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["html", "epub", "docx", "pdf"],
+      "properties": {
+        "html": {"$ref": "#/$defs/artifact"},
+        "epub": {"$ref": "#/$defs/artifact"},
+        "docx": {"$ref": "#/$defs/artifact"},
+        "pdf": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "evidence_reports": {
+      "type": "object",
+      "additionalProperties": {"$ref": "#/$defs/report"},
+      "required": ["html_browser", "html_accessibility_tree", "html_keyboard", "html_wcag_preparation", "docx_raster", "pdf_raster"]
+    },
+    "format_review_matrix": {"const": "editions/reader_manuscript/v2_2/format_review_matrix.json"},
+    "release_disposition": {"const": "editions/reader_manuscript/v2_2/release_disposition.json"},
+    "canonical_claim_authority": {"type": "string", "minLength": 30},
+    "support_state_effect": {"const": "none"}
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "bytes", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "bytes": {"type": "integer", "minimum": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "report": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

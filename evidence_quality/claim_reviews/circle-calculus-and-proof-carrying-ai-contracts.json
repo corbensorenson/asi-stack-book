@@ -112,6 +112,13 @@
     ]
   },
   "atom_reviews": {
+    "circle-calculus-and-proof-carrying-ai-contracts.mechanism.003": {
+      "support_state": "prototype-backed",
+      "current_disposition": "promoted_at_bounded_scope",
+      "terminal_disposition": "promoted_at_bounded_scope",
+      "reproduction": {"command": "python3 scripts/validate_p5_terminal_batch.py", "environment_lock": "One pinned Circle rope target and finite local consumer, 2026-07-16", "artifact_digest": "experiments/p5_terminal_batch/results/result.json", "evaluator_identity": "separate local P5 terminal-batch evaluator"},
+      "residual": {"owner": "circle-calculus-and-proof-carrying-ai-contracts", "next_unblocking_condition": "Independent multi-producer, multi-consumer semantic transport, revocation, recovery, cost, and transfer campaign."}
+    },
     "circle-calculus-and-proof-carrying-ai-contracts.core": {
       "current_disposition": "retain_distinct_proof_contract_transport_envelope_owner_at_argument",
       "strongest_counterclaim": "Ordinary signed manifests, schemas, tests, provenance, and APIs dominate without theorem-linked transport.",

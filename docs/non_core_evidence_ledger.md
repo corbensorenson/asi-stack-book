@@ -1,6 +1,6 @@
 # Non-Core Evidence Ledger
 
-Last updated: 2026-07-16
+Last updated: 2026-07-17
 
 This ledger makes the currently accepted non-core evidence transitions visible
 without promoting any chapter core claim. It is a public trust surface for
@@ -11,18 +11,27 @@ readers, reviewers, and future writing agents.
 | Field | Status |
 |---|---|
 | Chapter core claims | All 55 remain at `argument`. |
-| Accepted non-core upward transitions | 20 narrow transitions. |
-| Accepted refuted non-core claims | 2 exact QCSA fixture claims; no chapter-core refutation. |
-| Accepted no-promotion side-lane decisions | 57 accepted `blocks_promotion` decisions; no support-state movement. |
+| Accepted non-core upward transitions | 25 narrow transitions. |
+| Accepted historical `refuted` labels | 3 immutable transition labels: two QCSA fixtures and the frozen KERC proxy result. Retrospective competence classification is 2 N2 and 1 N1, respectively; none earns exact, mechanism, architecture, parent, or chapter-core refutation. |
+| Accepted terminal full-attempt dispositions | 2 post-v2.3 no-promotion decisions: routing/deliberation mixed and update/unlearning claim narrowed. |
+| Accepted no-promotion side-lane decisions | 61 accepted `blocks_promotion` decisions; no support-state movement. |
+| Accepted terminal instrument-failure dispositions | 1 three-version Campaign 4 repair; heldout sealed and no claim attempt. |
 | Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement. |
 | Chapter-core promotion effect | None. |
+| Canonical identity resolution | All 115 accepted transitions resolve through 25 exact atom, 61 bounded subclaim, and 29 proxy relations in `evidence_quality/claim_identity_graph.json`; indirect relations have no parent support-state effect. |
+| Negative-result competence | All 90 accepted negative/no-change transitions retain their raw outcomes and are classified as 1 N0, 15 N1, 74 N2, and 0 N3–N5 in `evidence_quality/negative_result_rehabilitation.json`; identity mapping is not competence evidence. |
 | External review status | No independent external-human review was requested, required, or claimed for this internal adjudication. |
-| No-promotion side-lane record coverage | The 57 accepted records cover the prior 40 v1.x side lanes, three post-v2 programs, six post-v2.1 result claims, five QCSA implementation/evaluation boundaries, and three post-v2.3 campaign dispositions, including the repaired flagship. They are blocking decisions, not upward support-state transitions. None promotes a chapter core, deployment, benchmark, model-quality, safety, security, AGI, or ASI claim. |
+| No-promotion side-lane record coverage | The 61 accepted records cover the prior 40 v1.x side lanes, three post-v2 programs, six post-v2.1 result claims, five QCSA implementation/evaluation boundaries, and seven post-v2.3 campaign or terminal-batch dispositions, including the repaired flagship, sealed Campaign 4 instrument failure, routing/deliberation mixed result, update/unlearning axis narrowing, and rollback-outcome narrowing. They are blocking decisions, not upward support-state transitions. None promotes a chapter core, deployment, benchmark, model-quality, safety, security, AGI, or ASI claim. |
 
 ## Accepted Non-Core Transitions
 
 | Claim ID | New support state | Evidence packet | What moved | What did not move |
 |---|---|---|---|---|
+| `circle-calculus-and-proof-carrying-ai-contracts.mechanism.003` | `prototype-backed` | `docs/p5_mandatory_terminal_batch.md`; `evidence_transitions/post_v2_3/p5_circle_named_target_receipt_prototype_backed.json` | One pinned Circle target compiled with retained command/result receipts, an explicit proof boundary, and four rejecting consumer controls. | No chapter core, general proof transport, semantic refinement, multi-consumer benefit, transfer, SOTA, AGI, or ASI claim moved. |
+| `system-boundaries-and-authority.invariant.001` | `synthetic-test-backed` | `docs/p5_mandatory_terminal_batch.md`; `evidence_transitions/post_v2_3/p5_authority_no_silent_expansion_synthetic_test_backed.json` | One finite sequential grant-to-effect model retained two pre-effect denials, zero governed unsafe releases, and 38/38 rejected authority mutations. | No chapter core, authenticated identity, deployed enforcement, complete mediation, distributed revocation, open-world safety, SOTA, AGI, or ASI claim moved. |
+| `kerc.protected_exact_handle_preservation` | `synthetic-test-backed` | `docs/p4_kerc_runtime_campaign.md`; `evidence_transitions/post_v2_3/kerc_protected_exact_handle_synthetic_test_backed.json` | On 64 authored bilingual held-out records, protected-object recall and lossless recovery were 1.000000; removing protected-span capture reduced object recall to zero. | No chapter core, general semantics, multilingual transfer, privacy, security, production efficiency, SOTA, AGI, or ASI claim moved. |
+| `kerc.interaction_shared_glossary_break_even` | `synthetic-test-backed` | `docs/p4_kerc_runtime_campaign.md`; `evidence_transitions/post_v2_3/kerc_shared_glossary_break_even_synthetic_test_backed.json` | One frozen repeated-terminology byte curve crossed the simple glossary-handle break-even at two turns. | No end-to-end compression, semantic, privacy, migration, model-compute, energy, governance, production, SOTA, AGI, or ASI claim moved. |
+| `situated-world-model.finite-pomdp-governed-acquisition-and-consolidation` | `synthetic-test-backed` | `docs/p4_situated_world_model_campaign.md`; `evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json` | One prospectively frozen 11,250-episode, two-environment, five-seed, ten-arm campaign passed all integrity and baseline gates plus six aggregate causal-ablation signatures; the governed path reached 0.7933/0.7967 hidden-state accuracy, 0.1000/0.1133 unsafe-action rates, and 10/10 exact governed replacement and rollback receipts. | No chapter core, neural-world-model, learned-representation, natural-task, open-world, general-causality, reliable-shift-detection, simulator-validity, sim-to-real, deployment, SOTA, AGI, or ASI claim moved; active information was heterogeneous and task success traded against escalation. |
 | `governed-usefulness.held-out-local-policy-effect` | `synthetic-test-backed` | `docs/p4_governed_usefulness_campaign.md`; `evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json` | On one prospectively frozen 16-task held-out local corpus and one quantized Qwen3-8B run, full governance released 9 useful and 0 unsafe candidates versus 0 useful and 0 unsafe releases under candidate self-release; removing evidence freshness exposed one additional useful-unsafe release. | No chapter-core claim, model/workload transfer, deployed policy, open-world safety, effect-complete rollback, independent external validity, acceptable governance-cost, SOTA, AGI, or ASI claim moved. |
 | `living-book-methodology.phase5_harness_registry_runner` | `synthetic-test-backed` | `docs/phase5_harness_runner.md`; `evidence_transitions/v1_0_measured/phase5_harness_runner_synthetic_test_backed.json` | The repository-infrastructure claim that the Phase 5 harness registry can be replayed by one local runner command, executes all registered synthetic harnesses, and matches each registry result summary. | No chapter core claim, deployed runtime behavior, model quality, benchmark quality, source interpretation, safety, alignment, or governance-effectiveness claim moved. |
 | `resource-economics.costed_route_budget_slice` | `synthetic-test-backed` | `docs/costed_route_resource_slice.md`; `evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json` | The bounded synthetic costed-route/resource-budget selector slice that rejects a cheap failed negative control, keeps an adequate overkill baseline, and selects the lowest-cost eligible route in the public-safe fixture. | No chapter core claim, deployed routing, scheduler, runtime, load, KV-cache, economic, benchmark, model-quality, safety, or source-interpretation claim moved. |
@@ -39,10 +48,22 @@ readers, reviewers, and future writing agents.
 | `resource-economics.simulation_fidelity_receipt_suite_import` | `prototype-backed` | `docs/theseus_simulation_fidelity_receipt_suite_import.md`; `evidence_transitions/v1_x_measured/theseus_simulation_fidelity_receipt_suite_import_prototype_backed.json` | The bounded sanitized Project Theseus simulation-fidelity receipt suite import records 5/5 passed fixture scenarios, six simulation contract records, six fidelity records, six world-adapter receipts, six evidence-transition records, six failure-boundary records, one blocked transfer, one downgraded claim, one scenario-only record, zero public training rows, zero external inference calls, and seven expected-invalid controls. | No Resource Economics chapter core claim, simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment readiness, live simulator behavior, clean live Project Theseus replay, model quality, economic outcome, learned generation, safety, alignment, transfer, deployment readiness, or ASI claim moved. |
 | `resource-economics.theseus_rlds_minari_trace_export_import` | `prototype-backed` | `docs/theseus_rlds_minari_trace_export_import.md`; `evidence_transitions/v1_x_measured/theseus_rlds_minari_trace_export_import_prototype_backed.json` | The bounded sanitized Project Theseus RLDS/Minari trace-export import records one READY export manifest, three declared formats, seven declared fields, required license metadata, required replay smoke, zero public training rows, zero external inference calls, no copied episode payload, and seven expected-invalid controls. | No Resource Economics chapter core claim, RLDS dataset correctness, Minari dataset quality, simulator adequacy, replay success, physical feasibility, benchmark transfer, clean live Project Theseus replay, model quality, economic outcome, deployment readiness, safety, alignment, transfer, or ASI claim moved. |
 
+## Accepted Terminal Full-Attempt Dispositions
+
+These records reached an honest terminal campaign outcome but did not earn an
+upward support transition. They are shown separately from narrow upward
+transitions and from infrastructure side-lane gates.
+
+| Claim ID | Terminal disposition | Evidence packet | What the attempt established | What remains blocked |
+|---|---|---|---|---|
+| `routing-deliberation.heldout-local-policy-effect` | `mixed_bounded_effect_no_promotion` | `docs/p4_routing_deliberation_campaign.md`; `evidence_transitions/post_v2_3/routing_deliberation_mixed_no_promotion.json` | On one authored 32-task local held-out workload, the full reflexive policy improved route correctness and useful outcomes relative to LLM-first, but produced two unsafe outputs versus zero and did not establish useful verifier-gated deliberation repair. | Safe or generally useful routing, useful test-time scaling, external evaluator independence, transfer, deployment, SOTA, AGI, ASI, and every chapter-core support transition remain blocked. |
+| `update-unlearning.full-state-local-axis-separation` | `claim_narrowed_after_full_attempt` | `docs/p4_update_unlearning_campaign.md`; `evidence_transitions/post_v2_3/update_unlearning_claim_narrowed_after_full_attempt.json` | After preserving two failed instruments, one terminal five-seed/seven-arm local campaign separated eight nonfungible claim axes, observed 35/35 exact 24-surface local rollbacks, a small `0.01222040` movement toward deletion retraining, reduced one internal membership-attack advantage by `0.02511111`, and invalidated five local descendants. | Language-model weight unlearning, zero causal influence, privacy, legal compliance, total storage or backup erasure, external-descendant closure, transfer, production rollback, SOTA, AGI, ASI, and every chapter-core support transition remain blocked. |
+
 ## Accepted No-Promotion Side-Lane Decisions
 
 | Claim ID | Support-state effect | Evidence packet | What the decision records | What stays blocked |
 |---|---|---|---|---|
+| `residual-verifier-capacity.heldout-pressure-effect` | `blocks_promotion` | `docs/p4_residual_verifier_capacity_campaign.md`; `evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json` | Three prospectively versioned repairs used 18 sacrificial tasks and 36 exact local Qwen3-8B calls. The terminal path reached 6/6 eligibility accuracy, 3/3 clean releases, perfect required-residual recall, and zero false reassurance, but only 3/6 extraction objects met the frozen action/check schema; all fifteen held-out tasks remained sealed and no claim attempt occurred. | Residual honesty under pressure, verifier competence, useful-throughput improvement, natural-task effect, safety, transfer, deployment, SOTA, AGI, ASI, publication, release, and every chapter-core support transition remain blocked. |
 | `artifact-graphs.epistemic_tcb_fixture` | `blocks_promotion` | `docs/epistemic_trusted_computing_base_fixture.md`; `evidence_transitions/v1_x_measured/artifact_epistemic_tcb_fixture_no_change.json` | A bounded epistemic trusted-computing-base fixture accepts three finite trust-base records and rejects controls for missing roots of trust, same-component verifier laundering, unbounded trust propagation, missing recursion stops, erased outside-TCB residuals, and support promotion from trust-base shape. | Verifier correctness, deployed trust-base behavior, audit-log durability, policy correctness, open-world receipt faithfulness, source interpretation, benchmark performance, model quality, safety, ASI, and Artifact Graphs chapter-core promotion stay blocked. |
 | `artifact-graphs.record_reality_sequence_bridge` | `blocks_promotion` | `docs/artifact_graph_record_reality_sequence.md`; `evidence_transitions/v1_x_measured/artifact_record_reality_sequence_no_change.json` | A bounded record-reality sequence accepts one stale/partial/fresh replay path and rejects controls for stale-certificate support movement, restoration without fresh replay/provenance, missing non-claims, and support review without replay-validated transaction state. | Deployed artifact-graph behavior, deployed replay, audit durability, open-world receipt faithfulness, verifier correctness, provenance completeness, source interpretation, benchmark performance, model quality, safety, ASI, and Artifact Graphs chapter-core promotion stay blocked. |
 | `artifact-graphs.receipt_faithfulness_adversarial_fixture` | `blocks_promotion` | `docs/receipt_faithfulness_adversarial_fixture.md`; `evidence_transitions/v1_x_measured/artifact_receipt_faithfulness_no_change.json` | The bounded receipt-faithfulness fixture accepts three record-only or blocked receipt cases and rejects six controls for shape-valid reality-false receipts, ignored trap failures, missing independent cross-checks, same-component self-check laundering, unbounded attestation, and support promotion from receipt shape. | Open-world receipt faithfulness, verifier independence, attestation-service correctness, deployed audit behavior, provenance completeness, source interpretation, benchmark performance, model quality, safety, ASI, and Artifact Graphs chapter-core promotion stay blocked. |
@@ -85,6 +106,14 @@ readers, reviewers, and future writing agents.
 | `project-theseus-as-report-first-implementation-reference.work_board_currentness_import` | `blocks_promotion` | `docs/theseus_work_board_import.md`; `evidence_transitions/v1_x_measured/theseus_work_board_import_no_change.json` | The sanitized work-board metadata import records 130 durable task rows, 412 event rows, 133 evidence rows, five SQLite tables, one execution-ledger row, four unattended-improvement rows, 72 feedback rows, a stale-snapshot boundary, zero public training rows, zero external inference calls, and ten expected-invalid controls. | Clean live Project Theseus replay, current board state, current dashboard state, deployment, model quality, benchmark performance, unattended safety, self-evolution safety, support-state movement, and Project Theseus chapter-core promotion stay blocked. |
 
 ## Live Claim-Surface Narrowing Records
+
+The P5 mandatory terminal batch also accepts the no-promotion record
+`capability-replacement-and-rollback.invariant.011` at
+`evidence_transitions/post_v2_3/p5_rollback_outcomes_narrowed_after_full_attempt.json`.
+It preserves separate artifact, digest, behavior, privacy-proxy, storage,
+backup, and descendant outcomes while leaving service restart and external
+compensation unexecuted. Its support state remains `argument` and its effect is
+`blocks_promotion`.
 
 | Claim surface | Record | What narrowed | Support-state effect |
 |---|---|---|---|
@@ -130,11 +159,24 @@ revision record is also checked by `scripts/validate_claim_revision_records.py`.
 
 ## Adjudicated QCSA v2.3 Non-Core Claims
 
+The later KERC campaign retains one historical `refuted` transition label for
+`kerc.broad_matched_total_system_efficiency`: all compared cores tied at
+`0.500000` while complete Kernel packets averaged `714.0` bytes against a
+`73.25`-byte best simple representation. The competence audit classifies the
+run as N1 because chance-level task performance and implementation defects mean
+the tested implementation was inadequate. The observation survives; broader
+KERC, Kernel English, learned compilation, hierarchical residuals, and the
+parent architecture remain untested. The immutable record is
+`evidence_transitions/post_v2_3/kerc_broad_efficiency_refuted.json`, and the
+current interpretation is bound in
+`evidence_quality/negative_result_rehabilitation.json`.
+
 These rows are the terminal P4 review of the ten evaluation recommendations
 plus the implementation-only and vertical-reference candidates. The five
 upward transitions apply only to their exact synthetic non-core claims. Two
-exact claims are refuted. Every other row remains at `argument`; every chapter
-core remains at `argument`.
+rows retain historical `refuted` labels but are N2 proxy/regime evidence, not
+exact competent refutations. Every other row remains at `argument`; every
+chapter core remains at `argument`.
 
 | Claim ID | Accepted state/effect | Transition | What the decision records | What stays blocked |
 |---|---|---|---|---|
@@ -143,8 +185,8 @@ core remains at `argument`.
 | `qcsa.certificate_authority_fields_exact_value` | `synthetic-test-backed` | `evidence_transitions/post_v2_3/qcsa_certificate_authority_fields_exact_value_promote.json` | Full QCSA had zero unsafe authority releases; the no-certificate/residual/authority ablation had nine across 180 records. | Runtime security, privacy, human-approval quality, general safety, and Runtime Adapters core promotion. |
 | `qcsa.migration_compatibility_exact_value` | `synthetic-test-backed` | `evidence_transitions/post_v2_3/qcsa_migration_compatibility_exact_value_promote.json` | Removing migration compatibility reduced task-decision accuracy from 1.000 to 0.833333 and compatibility from 1.000 to 0.000. | Live descendants, distributed caches, production rollback, learning/unlearning, storage erasure, and Data Engines core promotion. |
 | `qcsa.task_calibration_exact_result` | `synthetic-test-backed` | `evidence_transitions/post_v2_3/qcsa_task_calibration_exact_result_promote.json` | QCSA's exact task-decision Brier score was 0.082026 versus 0.298500 for the selected baseline, with selective risk 0 for both. | Object calibration, natural prevalence, non-ceiling tasks, learned models, external replication, and any chapter-core promotion. |
-| `qcsa.exact_synthetic_matched_advantage` | `refuted` | `evidence_transitions/post_v2_3/qcsa_exact_synthetic_matched_advantage_refute.json` | QCSA and the selected baseline both reached 1.000 task-decision accuracy while QCSA used 1.913386 times the operations, so both preregistered advantage gates failed. | Reuse of the exact matched-advantage claim; the result does not refute other corpora or implementations. |
-| `qcsa.active_questions_exact_fixture_value` | `refuted` | `evidence_transitions/post_v2_3/qcsa_active_questions_exact_fixture_value_refute.json` | Removing active questions preserved 1.000 object and task-decision accuracy; the full system asked questions on 0.033333 of records without accuracy gain. | General claims against clarification policies; ablation verifier-cost bookkeeping remains a confound. |
+| `qcsa.exact_synthetic_matched_advantage` | historical `refuted`; N2 maximum inference | `evidence_transitions/post_v2_3/qcsa_exact_synthetic_matched_advantage_refute.json` | QCSA and the selected baseline both reached 1.000 task-decision accuracy while QCSA used 1.913386 times the operations, so both preregistered proxy gates failed. | Exact or broad refutation; natural corpora, learned models, independent evaluation, transfer, and other implementations remain untested. |
+| `qcsa.active_questions_exact_fixture_value` | historical `refuted`; N2 maximum inference | `evidence_transitions/post_v2_3/qcsa_active_questions_exact_fixture_value_refute.json` | Removing active questions preserved 1.000 object and task-decision accuracy; the full system asked questions on 0.033333 of records without accuracy gain. | Exact or broad refutation; the saturated template workload, internal evaluator, and verifier-cost confound bound this to proxy/regime evidence. |
 | `qcsa.semantic_round_trip_exact_preservation` | `blocks_promotion` | `evidence_transitions/post_v2_3/qcsa_semantic_round_trip_exact_preservation_narrow.json` | The internal independently implemented observer measured zero structural loss and zero disagreement for exact QCSA outputs. | Arbitrary semantic equivalence, independent replication, natural artifacts, and Cognitive Compilation core promotion. |
 | `qcsa.governance_prevention_resource_tradeoff` | `blocks_promotion` | `evidence_transitions/post_v2_3/qcsa_governance_prevention_resource_tradeoff_narrow.json` | Exact prevention was 1.000000 versus 0.487179, but the 1.913386 operation ratio exceeded the preregistered 1.50 ceiling. | Acceptable production economics, incident-rate interpretation, governance efficacy, and Resource Economics core promotion. |
 | `qcsa.open_world_or_production_transfer` | `blocks_promotion` | `evidence_transitions/post_v2_3/qcsa_open_world_or_production_transfer_no_change.json` | No natural workload, learned model, deployment, external replication, live effect, or prevalence study was run. | All open-world, production, safety, privacy, security, learned-model, AGI, and ASI claims. |

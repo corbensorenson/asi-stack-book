@@ -1,0 +1,23 @@
+{
+  "schema_version": "asi_stack.p2_image_resource_preflight_reconciliation.v1",
+  "recorded_date": "2026-07-17",
+  "state": "prior_image_resource_pass_invalidated_measurement_semantics_repaired",
+  "prior_result_path": "experiments/p2_governed_repository_admission/replacement_resource_preflight/attempts/2026-07-17-rank-one-r2/result.json",
+  "size_semantics_calibration_path": "experiments/p2_governed_repository_admission/image_size_semantics_calibration/2026-07-17-rank-one-r1/result.json",
+  "superseding_resource_contract_path": "evidence_quality/p2_resource_ceiling.json",
+  "preserved_prior_measurements": ["registry manifest digest", "registry compressed layer bytes", "Docker Engine image-inspect Size", "pull wall time", "cleanup exit code", "host free-space samples"],
+  "invalidated_inferences": ["Docker Engine image-inspect Size is expanded image size", "the old 1.5 GB expanded-size gate passed", "a one-second post-cleanup sample is always a stable residual"],
+  "corrected_measurements": {
+    "engine_content_size_range_bytes": [1056326910, 1417428320],
+    "virtual_size_conservative_upper_bound_range_bytes": [3895000000, 4875000000],
+    "new_engine_content_ceiling_bytes": 1500000000,
+    "new_virtual_size_conservative_upper_bound_ceiling_bytes": 7000000000,
+    "cleanup_stabilization_timeout_seconds": 60
+  },
+  "prior_pass_support_effect": "revoked_none_had_been_allowed",
+  "candidate_test_outcome_opened": false,
+  "negative_inference_level": "N0",
+  "claim_effect": "none",
+  "final_pool_selected": false,
+  "final_pool_opened": false
+}

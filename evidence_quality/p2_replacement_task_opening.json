@@ -1,0 +1,154 @@
+{
+  "schema_version": "asi_stack.p2_replacement_task_opening.v1",
+  "recorded_date": "2026-07-17",
+  "state": "rank_one_task_specs_opened_evaluator_calibration_pending_outcomes_unopened",
+  "claim_id": "p2.governed_natural_repository_change_admission_joint_frontier",
+  "source_parquet_sha256": "0e0bf9355f892ad74ae98d4e1c404f39fd6654a8e351ee3e6ab162e4a64cd3ad",
+  "queue_path": "experiments/p2_governed_repository_admission/corpus/replacement_queue.json",
+  "provenance_preflight_path": "evidence_quality/p2_replacement_provenance_preflight.json",
+  "resource_result_path": "experiments/p2_governed_repository_admission/replacement_resource_preflight/attempts/2026-07-17-rank-one-r2/result.json",
+  "opened_candidate_count": 4,
+  "candidates": [
+    {
+      "slot": 1,
+      "rank": 1,
+      "instance_id": "mitsuhiko__minijinja-794",
+      "repo": "mitsuhiko/minijinja",
+      "base_commit": "aa2ecbab17a416d8395c69bba440f2b067d50530",
+      "language": "rust",
+      "license": "Apache-2.0",
+      "image_name": "docker.io/swerebenchv2/mitsuhiko-minijinja:794-aa2ecba",
+      "log_parser": "parse_log_cargo",
+      "test_command": "make test",
+      "test_command_sha256": "22cc66aa7d2624b4eb4d5b61658614cd6c32477b123afbf7dbc7fc3d7d0f3713",
+      "problem_statement_sha256": "e2a514d6ea33013ce840c51e69002bea753175a47af6efc084fcfd5012df940b",
+      "solution_patch_sha256": "7f6e1eac650a7b7c2f0cf88cfd1e666c14575a5b691c509a0c660ea745108b16",
+      "test_patch_sha256": "e770844b63f74507db2eff90fc085d7138964e6cc297bba7e11398b3914dcd66",
+      "solution_paths": [
+        "CHANGELOG.md",
+        "minijinja/src/filters.rs"
+      ],
+      "test_paths": [
+        "minijinja/tests/inputs/filters.txt",
+        "minijinja/tests/snapshots/test_templates__vm@filters.txt.snap"
+      ],
+      "solution_test_path_overlap": [],
+      "fail_to_pass_count": 71,
+      "pass_to_pass_count": 156,
+      "expected_test_count": 227,
+      "fail_to_pass_set_sha256": "6a3cfa66c7c7c04c5b2db67ae5c24ec73703845d3b717a125f92c2f0c69124ea",
+      "pass_to_pass_set_sha256": "805cc89e41ba6af44d345499a9c236dd85ae12a63e7f272f68e82e6dcbe63959",
+      "task_spec_opened": true,
+      "execution_outcome_opened": false
+    },
+    {
+      "slot": 2,
+      "rank": 1,
+      "instance_id": "google__go-github-3619",
+      "repo": "google/go-github",
+      "base_commit": "eff2bbd83e04dfdb38a9a878f7756e305656a9e2",
+      "language": "go",
+      "license": "BSD-3-Clause",
+      "image_name": "docker.io/swerebenchv2/google-go-github:3619-eff2bbd",
+      "log_parser": "parse_log_gotest",
+      "test_command": "export PATH=/usr/local/go/bin:$PATH && cd github && /usr/local/go/bin/go test -v .",
+      "test_command_sha256": "95a1c32f437c77f1a87a8bca104060a59bbff463f09844980fe645ca6f60a01f",
+      "problem_statement_sha256": "d5cd599980abbe220b84fc8532296dfaa83ea40362851c0372f44249240e507d",
+      "solution_patch_sha256": "1b700d2269f0f55e8feb2ea8eb64e746e5ef0e717c617581a3d4243f91d20c05",
+      "test_patch_sha256": "f60fc1eaeede21c280a27086c55b92830317d8962afb85f2ac62ac6e7b17359b",
+      "solution_paths": [
+        "github/copilot.go"
+      ],
+      "test_paths": [
+        "github/copilot_test.go"
+      ],
+      "solution_test_path_overlap": [],
+      "fail_to_pass_count": 2,
+      "pass_to_pass_count": 6207,
+      "expected_test_count": 6209,
+      "fail_to_pass_set_sha256": "157a77bdcd95fbe1c34fb2d1ce3b7f7987bf5bba867d2bc551121595fa3d39c5",
+      "pass_to_pass_set_sha256": "a498d02d2337e6f8017fb644bcbcfb294f6fb010d7dc950cd90ac8743c9a2dbe",
+      "task_spec_opened": true,
+      "execution_outcome_opened": false
+    },
+    {
+      "slot": 3,
+      "rank": 1,
+      "instance_id": "go-git__go-git-1556",
+      "repo": "go-git/go-git",
+      "base_commit": "d2c3797207a44164a398ae0bf053db4a3912c8ee",
+      "language": "go",
+      "license": "Apache-2.0",
+      "image_name": "docker.io/swerebenchv2/go-git-go-git:1556-d2c3797",
+      "log_parser": "parse_log_gotest",
+      "test_command": "go test -run TestRemote -v .",
+      "test_command_sha256": "1b914e0584dc6e8ee56761c29afe367a241d49a01d37008b89b1211594637dde",
+      "problem_statement_sha256": "56fae6c3096664c25916987ae2f807c5e5353acbcc06960e7ac1b16e9adbc3b1",
+      "solution_patch_sha256": "740525d70b2888fa9e9fa49153a19d68e636dfe8cde28aa23c82227826c1dd1f",
+      "test_patch_sha256": "7e9b3d83299ad346dc303156a8d622c6e5062c2c677b972e4ebc25424f625005",
+      "solution_paths": [
+        "remote.go"
+      ],
+      "test_paths": [
+        "remote_test.go"
+      ],
+      "solution_test_path_overlap": [],
+      "fail_to_pass_count": 60,
+      "pass_to_pass_count": 0,
+      "expected_test_count": 60,
+      "fail_to_pass_set_sha256": "191b5eca04f4210c5b030b452793f72911e52fb82c48de6e07eca4328de31ef3",
+      "pass_to_pass_set_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "task_spec_opened": true,
+      "execution_outcome_opened": false
+    },
+    {
+      "slot": 4,
+      "rank": 1,
+      "instance_id": "jhipster__jhipster-lite-12851",
+      "repo": "jhipster/jhipster-lite",
+      "base_commit": "c91f8e56d72612d777538846f2d1b80929ba6eb6",
+      "language": "java",
+      "license": "Apache-2.0",
+      "image_name": "docker.io/swerebenchv2/jhipster-jhipster-lite:12851-c91f8e5",
+      "log_parser": "parse_java_mvn",
+      "test_command": "./mvnw clean test --no-transfer-progress",
+      "test_command_sha256": "9b0eb13c95882df30b43fc8eeba1271177433bcb60c3b57fdd787b39dc082a71",
+      "problem_statement_sha256": "6022f0e9805f2cd73312a66cd18cf18593572c9db8e39b77176b922def99f3e5",
+      "solution_patch_sha256": "c5ac8e307e7000bb2291428fe93974e9f0938903657bd439c51097d4f6e508ce",
+      "test_patch_sha256": "1a59cdfcd5b08744b0adc04a051aa27a161c73ad5fc7713e74e66474faf20bd6",
+      "solution_paths": [
+        "src/main/java/tech/jhipster/lite/generator/server/springboot/technicaltools/actuator/domain/SpringBootActuatorModuleFactory.java"
+      ],
+      "test_paths": [
+        "src/test/java/tech/jhipster/lite/generator/server/springboot/technicaltools/actuator/domain/SpringBootActuatorModuleFactoryTest.java"
+      ],
+      "solution_test_path_overlap": [],
+      "fail_to_pass_count": 1,
+      "pass_to_pass_count": 350,
+      "expected_test_count": 351,
+      "fail_to_pass_set_sha256": "1e4fffef09d219e2159edb88ec480ea22730b6285bc8c9a051fcb5e65990eaa3",
+      "pass_to_pass_set_sha256": "932e9422d4965e99bdc9e9afdd86ec3d2c7c80082d42aad8665e82b17ada3053",
+      "task_spec_opened": true,
+      "execution_outcome_opened": false
+    }
+  ],
+  "custody": {
+    "rank_one_task_specs_opened": true,
+    "problem_statement_solution_patch_test_patch_and_command_read": true,
+    "candidate_execution_started": false,
+    "candidate_baseline_outcome_opened": false,
+    "candidate_gold_outcome_opened": false,
+    "rank_greater_than_one_task_content_opened": false,
+    "final_pool_selected": false,
+    "final_pool_opened": false
+  },
+  "next_gate": "calibrate_independently_implemented_log_evaluator_before_any_candidate_execution",
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "Opening a development task specification is not qualifying it.",
+    "Expected test identities are bound by count and digest but do not establish that the image can observe them.",
+    "No candidate execution outcome or final held-out task was opened.",
+    "No coding, governance, safety, transfer, SOTA, release, AGI, or ASI result follows."
+  ]
+}

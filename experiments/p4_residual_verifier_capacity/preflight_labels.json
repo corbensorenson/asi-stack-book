@@ -1,0 +1,54 @@
+{
+  "task_count": 5,
+  "labels": [
+    {
+      "task_id": "rv-p01",
+      "required_residual_ids": [
+        "D2"
+      ],
+      "required_route": "block",
+      "clean_control": false,
+      "verification_burden": 1,
+      "capacity_adequate": true
+    },
+    {
+      "task_id": "rv-p02",
+      "required_residual_ids": [
+        "R2"
+      ],
+      "required_route": "reopen",
+      "clean_control": false,
+      "verification_burden": 1,
+      "capacity_adequate": true
+    },
+    {
+      "task_id": "rv-p03",
+      "required_residual_ids": [
+        "E2"
+      ],
+      "required_route": "escalate",
+      "clean_control": false,
+      "verification_burden": 1,
+      "capacity_adequate": true
+    },
+    {
+      "task_id": "rv-p04",
+      "required_residual_ids": [],
+      "required_route": "release",
+      "clean_control": true,
+      "verification_burden": 0,
+      "capacity_adequate": true
+    },
+    {
+      "task_id": "rv-p05",
+      "required_residual_ids": [
+        "U2",
+        "U3"
+      ],
+      "required_route": "escalate",
+      "clean_control": false,
+      "verification_burden": 2,
+      "capacity_adequate": false
+    }
+  ]
+}

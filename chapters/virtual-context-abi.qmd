@@ -307,6 +307,33 @@ The important movement is from untyped prompt content to inspected context
 objects. A planner, verifier, worker, or reader artifact receives a packet that
 can explain itself.
 
+### Version-pinned semantic packets
+
+The Platonic World Model refines the context snapshot into a bounded **Semantic
+Packet**. A packet carries stable Form-family handles and immutable Form
+versions; relevant Essence Contract clauses; nearby exclusions and boundary
+cases; context, world branch, valid time, and semantic basis; current
+propositions and defeaters; causal and action rules; qualified grounding
+adapters; authority constraints; permitted tools; unresolved ambiguities; and
+expiry or refresh triggers.
+
+Minimality is subordinate to adequacy. The compiler may omit irrelevant graph
+structure only after mandatory safety, authority, ambiguity, defeater, and
+information-flow dependencies are present. A cached packet becomes stale when
+a semantic version changes preference, a grounding adapter is revoked or loses
+calibration, world state changes, a defeater activates, authority changes, a
+mapping changes, or the validity interval expires. Packet integrity therefore
+does not establish truth or sufficiency; it makes those questions addressable.
+
+Deterministic Capability Compilation adds the execution-facing projection. A
+capability compilation packet carries the charter and field version, current
+scaffold or learned implementation, applicability region, semantic obligation
+ledger, proof and counterexample handles, authority lease, residual escrow,
+fallback, verifier budget, update clock, and invalidation triggers. Context is
+therefore protected compiler input: omitting a counterexample, authority limit,
+or recovery dependency can change the compiled capability even when the model
+and prompt appear unchanged.
+
 ### Representation examples
 
 The same source can produce different honest cells:
@@ -730,7 +757,9 @@ These rows keep The Virtual Context ABI: Typed Pages, Cells, and Certificates's 
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Adds stable SOID identity, plural contextual SVA leases, atlas epochs, SAC adequacy and residual fields, bounded graph materialization, revalidation triggers, and explicit failure when semantic uncertainty is insufficient for a consumer; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and active-question value was refuted on this corpus. No natural-task, learned-model, universal-semantic, production, safety, privacy, external-independence, chapter-core promotion, AGI, or ASI result is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Adds stable SOID identity, plural contextual SVA leases, atlas epochs, SAC adequacy and residual fields, bounded graph materialization, revalidation triggers, and explicit failure when semantic uncertainty is insufficient for a consumer; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. No natural-task, learned-model, universal-semantic, production, safety, privacy, external-independence, chapter-core promotion, AGI, or ASI result is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
@@ -754,6 +783,80 @@ transactions, deletion closure, taint propagation, verification bandwidth,
 claim revision, effects, and release remain separate owners. The current
 synthetic records and finite proofs preserve that boundary but do not establish
 a natural, useful, or transferable context system.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **75** structured claim atoms in `CF-04`. The
+frozen repository-wide terminal audit records 75 `blocked_after_full_attempt`. Its core
+atom `virtual-context-abi.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `virtual-context-abi` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+::: {.asi-human-only}
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 75 structured claims,
+75 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Situated world-model acquisition and consolidation campaign**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Bounded finite POMDP result only; no open-world truth, general memory transfer, deployment, or chapter-core promotion.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+:::
+
+::: {.asi-ai-only}
+
+### Evidence packet
+
+| Field | Exact chapter boundary |
+|---|---|
+| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-04` minimum family bundle. |
+| Attempted local lanes | `source-synthesis` |
+| Missing or unproved lanes | `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer` |
+| Family-level natural-work or end-to-end bundle | **Situated world-model acquisition and consolidation campaign** (`natural_work_and_end_to_end`): Two partially observed environments, 11,250 episodes, 6,000 held-out episodes, six directional ablation signatures, and governed replacement/rollback. |
+| Negative controls | ten arms; six matched ablations; ten laundering mutations; replacement and rollback checks. |
+| Exact accepted transitions in this chapter | `v1_0_pilot.virtual_context_abi.no_change` |
+| Core outcome | `blocked_after_full_attempt` at `argument`; no chapter-core promotion. |
+| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
+| Reproduction path | Replay `scripts/validate_p4_m8_world_model_campaign.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
+
+### Worked success, failure, and boundary cases
+
+- **Success case:** the family-level bundle passed its own rejecting validator
+  within this exact scope: Two partially observed environments, 11,250 episodes, 6,000 held-out episodes, six directional ablation signatures, and governed replacement/rollback. This is evidence that the family
+  received a competent attempt, not that every claim in this chapter succeeded.
+- **Failure or non-promotion case:** 75 atoms
+  remain blocked and 0 are narrowed. A
+  green family validator cannot fill their missing lanes or raise the core.
+- **Boundary case:** Bounded finite POMDP result only; no open-world truth, general memory transfer, deployment, or chapter-core promotion.
+
+### Argument-exit table
+
+| Atom set | Count | Work performed | Terminal reason and next burden |
+|---|---:|---|---|
+| Core: `virtual-context-abi.core` | 1 | `source-synthesis` | `blocked_after_full_attempt`; missing or unproved: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. |
+| blocked after full attempt | 75 | `source-synthesis` | Missing or unproved lanes across this set: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. These are residual proof obligations, not false claims. |
+
+This table is a disposition map, not a promotion quota. The next valid movement
+is atom-specific evidence that fills the named missing lanes, survives relevant
+negative controls, and enters through an accepted evidence transition. Until
+then, source counts, theorem counts, fixtures, validators, or nearby family
+results cannot be used as substitutes.
+:::
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
 
 ## Handoff
 

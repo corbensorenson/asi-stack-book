@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Cyclic substrate adoption gate draft figure</title>
+  <desc id="desc">A draft systems diagram showing cyclic substrate candidates passing through structural receipts, baseline symmetry, metrics, canary readiness, and retirement gates before adoption.</desc>
+  <defs>
+    <marker id="arrow-green" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#3f7358"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#657386"/>
+    </marker>
+    <filter id="shadow" x="-8%" y="-8%" width="116%" height="126%">
+      <feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#152133" flood-opacity="0.13"/>
+    </filter>
+    <style>
+      .bg { fill: #f7f9fb; }
+      .panel { fill: #ffffff; stroke: #d8dee7; stroke-width: 2; }
+      .stage { fill: #f3f8f5; stroke: #3f7358; stroke-width: 2.5; }
+      .baseline { fill: #f7f4fb; stroke: #6d5d8c; stroke-width: 2.5; }
+      .hold { fill: #fff8ef; stroke: #a06b3d; stroke-width: 2.5; }
+      .ink { fill: #18202a; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .muted { fill: #5d6876; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .label { font-size: 25px; font-weight: 760; }
+      .small { font-size: 18px; font-weight: 680; }
+      .tiny { font-size: 15px; font-weight: 560; }
+      .caption { font-size: 16px; font-weight: 600; }
+      .line { fill: none; stroke: #3f7358; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow-green); }
+      .gray { fill: none; stroke: #657386; stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow-gray); }
+      .dash { fill: none; stroke: #657386; stroke-width: 2.4; stroke-dasharray: 8 8; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="760" rx="24"/>
+  <text class="ink label" x="58" y="62">Cyclic Substrate Adoption Gate</text>
+  <text class="muted caption" x="58" y="92">Draft key figure: structural elegance enters adoption only through receipts, baselines, metrics, canaries, and retirement paths.</text>
+
+  <rect class="panel" x="54" y="138" width="204" height="122" rx="12" filter="url(#shadow)"/>
+  <text class="ink small" x="82" y="176">Candidate</text>
+  <text class="muted tiny" x="82" y="206">RoPE, CoilRA,</text>
+  <text class="muted tiny" x="82" y="230">circulant mixer,</text>
+  <text class="muted tiny" x="82" y="252">cyclic memory</text>
+
+  <rect class="stage" x="314" y="88" width="206" height="118" rx="12"/>
+  <text class="ink small" x="342" y="126">Structural receipt</text>
+  <text class="muted tiny" x="342" y="156">invariant, theorem id,</text>
+  <text class="muted tiny" x="342" y="180">digest, or diagnostic</text>
+
+  <rect class="baseline" x="314" y="246" width="206" height="118" rx="12"/>
+  <text class="ink small" x="342" y="284">Baseline symmetry</text>
+  <text class="muted tiny" x="342" y="314">dense, LoRA, RoPE,</text>
+  <text class="muted tiny" x="342" y="338">state-space, learned</text>
+
+  <rect class="stage" x="584" y="88" width="212" height="118" rx="12" filter="url(#shadow)"/>
+  <text class="ink small" x="612" y="126">Measured tradeoff</text>
+  <text class="muted tiny" x="612" y="156">quality, speed, memory,</text>
+  <text class="muted tiny" x="612" y="180">training stability</text>
+
+  <rect class="hold" x="584" y="246" width="212" height="118" rx="12"/>
+  <text class="ink small" x="612" y="284">Structural-only</text>
+  <text class="muted tiny" x="612" y="314">useful receipt,</text>
+  <text class="muted tiny" x="612" y="338">not adoption evidence</text>
+
+  <rect class="stage" x="860" y="88" width="210" height="118" rx="12" filter="url(#shadow)"/>
+  <text class="ink small" x="888" y="126">Canary route</text>
+  <text class="muted tiny" x="888" y="156">limited consumer,</text>
+  <text class="muted tiny" x="888" y="180">rollback and monitor</text>
+
+  <rect class="hold" x="860" y="246" width="210" height="118" rx="12"/>
+  <text class="ink small" x="888" y="284">Retirement path</text>
+  <text class="muted tiny" x="888" y="314">failed baseline,</text>
+  <text class="muted tiny" x="888" y="338">wrong period, alias risk</text>
+
+  <rect class="panel" x="146" y="458" width="908" height="136" rx="12"/>
+  <text class="ink small" x="174" y="496">Adoption rule</text>
+  <text class="muted tiny" x="174" y="528">A cyclic method can be structurally meaningful and still fail adoption. Receipts, baselines, metrics, and canary limits remain separate ledgers.</text>
+  <text class="muted tiny" x="174" y="552">A win in parameter count cannot spend credit as model quality, long-context performance, runtime, or deployment safety.</text>
+  <text class="muted tiny" x="174" y="576">Status: draft visual asset; not release-reviewed; no cyclic-substrate quality or support-state promotion claim.</text>
+
+  <path class="line" d="M258 198 C282 170,296 148,308 146"/>
+  <path class="line" d="M520 146 C546 146,558 146,578 146"/>
+  <path class="line" d="M796 146 C824 146,838 146,854 146"/>
+  <path class="gray" d="M520 304 C548 304,560 304,578 304"/>
+  <path class="gray" d="M796 304 C824 304,838 304,854 304"/>
+  <path class="dash" d="M690 206 L690 246"/>
+  <path class="dash" d="M965 206 L965 246"/>
+  <path class="gray" d="M258 198 C282 248,296 292,308 304"/>
+</svg>

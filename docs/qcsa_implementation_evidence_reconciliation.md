@@ -21,7 +21,8 @@ These roles improve nine existing chapter owners. They do not warrant a new
 chapter: QCSA remains an interface contract spanning identity, context,
 evidence, routing, authority, migration, residuals, and integration rather than
 a distinct chapter thesis. The strongest preregistered claim—matched-resource
-advantage—failed, and active-question value was refuted on the exact corpus.
+advantage—failed on the frozen proxy, while the active-question ablation is N2
+proxy/regime evidence rather than an exact or broad refutation.
 
 ## Completed Evidence
 

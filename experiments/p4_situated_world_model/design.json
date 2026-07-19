@@ -1,0 +1,124 @@
+{
+  "schema_version": "asi_stack.p4_m8_world_model_design.v1",
+  "campaign": "P4 Campaign 5 / M8 situated world-model acquisition and memory consolidation",
+  "run_id": "p4-m8-finite-pomdp-world-model-001",
+  "environments": [
+    "adaptive_workshop",
+    "service_mesh_transfer"
+  ],
+  "environment_distinction": "persistent physical-machine diagnostic cells versus persistent service-dependency artifacts, with different probes, interventions, action vocabularies, transition matrices, and shifted sensors; shared nominal/recoverable/blocked abstraction is the declared transfer interface",
+  "seeds": [
+    1709,
+    2917,
+    4327,
+    6131,
+    7933
+  ],
+  "arms": [
+    "reactive_no_world_model",
+    "transcript_memory",
+    "ungoverned_predictive",
+    "governed_world_model",
+    "ablate_active_information",
+    "ablate_intervention",
+    "ablate_observation_belief_separation",
+    "ablate_uncertainty",
+    "ablate_consolidation",
+    "ablate_quiescent_stabilization"
+  ],
+  "episodes": {
+    "adaptive_workshop": {
+      "curriculum": 70,
+      "heldout": 60,
+      "shift_after_heldout_episode": 30
+    },
+    "service_mesh_transfer": {
+      "curriculum": 35,
+      "heldout": 60,
+      "shift_after_heldout_episode": 30
+    }
+  },
+  "curriculum_stages": [
+    "sensory_regularities",
+    "persistent_entities",
+    "temporal_consequences",
+    "causal_interventions",
+    "symbolic_bindings",
+    "abstraction",
+    "version_history"
+  ],
+  "matched_budget": {
+    "max_information_actions_per_episode": 3,
+    "max_controlled_interventions_per_episode": 1,
+    "compute_proxy_ceiling_per_episode": 1000,
+    "reference_state_visible_before_terminal_effect": false
+  },
+  "required_artifacts": [
+    "environment_reference_state",
+    "agent_input",
+    "delivered_observation",
+    "interpretation",
+    "latent_hypothesis",
+    "prediction",
+    "prediction_error",
+    "intervention",
+    "causal_model_revision",
+    "belief_transition",
+    "curriculum_stage",
+    "observed_effect",
+    "consolidation"
+  ],
+  "consolidation_contract": {
+    "candidate_invariants": true,
+    "semantic_beliefs": true,
+    "causal_rules": true,
+    "procedures": true,
+    "supporting_episode_refs": true,
+    "contradicting_episode_refs": true,
+    "version_lineage": true,
+    "replacement_probe": true,
+    "rollback_probe": true,
+    "quiescent_boundary": 20
+  },
+  "metrics": [
+    "hidden_state_accuracy",
+    "identity_binding_fidelity",
+    "identity_prior_use_rate",
+    "brier_calibration",
+    "information_actions",
+    "intervention_effect_accuracy",
+    "counterfactual_error",
+    "planning_utility",
+    "shift_detection",
+    "unsafe_action",
+    "false_certainty",
+    "latency_proxy",
+    "memory_consolidation",
+    "compute_proxy",
+    "replay_fidelity",
+    "governance_cost",
+    "transfer"
+  ],
+  "primary_gates": {
+    "all_replay_faithful": true,
+    "all_authority_budgets_conform": true,
+    "reference_leak_count": 0,
+    "governed_replacement_exact_count": 10,
+    "governed_rollback_exact_count": 10,
+    "governed_hidden_accuracy_not_below_reactive_in_both_environments": true,
+    "governed_unsafe_action_not_above_ungoverned_predictive_in_both_environments": true,
+    "governed_task_success_within_0_10_of_best_baseline_in_both_environments": true,
+    "minimum_directional_ablation_signatures": 4
+  },
+  "directional_ablation_definitions": {
+    "active_information": "mean governed-minus-ablation held-out hidden-state accuracy across both environments is greater than zero",
+    "intervention": "mean governed-minus-ablation held-out hidden-state accuracy across both environments is greater than zero",
+    "observation_belief_separation": "mean ablation-minus-governed held-out Brier score across both environments is greater than zero",
+    "uncertainty": "mean ablation-minus-governed unsafe-action rate across both environments is greater than zero",
+    "consolidation": "mean governed-minus-ablation held-out hidden-state accuracy across both environments is greater than zero",
+    "quiescence": "mean ablation-minus-governed silent-rewrite count across both environments is greater than zero"
+  },
+  "disposition_rule": "bounded non-core promotion review opens only if every integrity gate, both-environment baseline gate, and at least four prospectively directional ablations pass; otherwise retain a mixed, narrowed, no-change, or refuted disposition with per-axis results",
+  "chapter_ownership_gate": "strengthen existing owners first; a new world-model or durable-memory chapter remains forbidden unless observed artifacts and failures expose a distinct unowned interface",
+  "support_ceiling": "Two finite authored simulators, Bayesian count-table policies, five seeds, and internal independent scoring only; no neural-world-model, general developmental, open-world causal-understanding, safety, deployment, SOTA, AGI, ASI, or chapter-core support claim."
+}

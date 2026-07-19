@@ -1,0 +1,66 @@
+{
+  "schema_version": "asi_stack.p2_sequential_replacement_provenance_preflight.v1",
+  "recorded_date": "2026-07-17",
+  "state": "passed_before_task_content_opened",
+  "claim_id": "p2.governed_natural_repository_change_admission_joint_frontier",
+  "queue_path": "experiments/p2_governed_repository_admission/corpus/replacement_queue.json",
+  "prior_terminal_provenance_path": "evidence_quality/p2_slot1_rank3_provenance_preflight.json",
+  "candidate": {
+    "slot": 1,
+    "rank": 4,
+    "instance_id": "reubeno__brush-486",
+    "repo": "reubeno/brush",
+    "language": "rust",
+    "base_commit": "df9c55c1b17e81946e674295e11c02bcd5cf231e",
+    "public_change": {
+      "receipt_mode": "github_pull_api_plus_verified_merge_commit",
+      "pull_url": "https://github.com/reubeno/brush/pull/486",
+      "pull_api_sha256": "e3a4f5a94c02d635732eba5179643ec55d2af7304a2177baafe7cbee0d81208e",
+      "merge_api_sha256": "cb0d1fab286a0b7a09834a7ce144a2134d12f38de13538444fe1e0a4432c02fc",
+      "merged": true,
+      "merged_at_utc": "2025-05-12T13:36:25Z",
+      "merge_commit_sha": "06fc9c6aa1b1e1fd1088326196ad59e5545830af",
+      "merge_commit_parent_shas": ["df9c55c1b17e81946e674295e11c02bcd5cf231e"],
+      "base_is_merge_parent": true,
+      "github_signature_verified": true
+    },
+    "license_receipt": {
+      "spdx_id": "MIT",
+      "path": "LICENSE",
+      "blob_sha": "3d3cb786675db5c26359eaa8360899ec152e5608",
+      "size_bytes": 1071,
+      "api_receipt_sha256": "532c39b013570b161b22fb2420c28e383bb13d501980d6a747e0368fa6c496a9",
+      "bound_to_base_commit": true
+    },
+    "image_manifest": {
+      "image": "docker.io/swerebenchv2/reubeno-brush:486-df9c55c",
+      "digest": "sha256:8381e31a8bbeae39b75e4d5f06ef69cd57e8651c56551e96316d56a5a7baff90",
+      "raw_manifest_sha256": "8381e31a8bbeae39b75e4d5f06ef69cd57e8651c56551e96316d56a5a7baff90",
+      "media_type": "application/vnd.docker.distribution.manifest.v2+json",
+      "os": "linux",
+      "architecture": "amd64",
+      "compressed_layer_bytes": 1120414874,
+      "layer_count": 10,
+      "engine_content_size_unmeasured": true,
+      "virtual_size_unmeasured": true
+    },
+    "preflight_pass": true
+  },
+  "custody": {
+    "candidate_task_content_opened": false,
+    "candidate_test_command_opened": false,
+    "candidate_outcome_opened": false,
+    "rank_greater_than_four_task_content_opened": false,
+    "final_pool_selected": false,
+    "final_pool_opened": false
+  },
+  "next_gate": "pull exact manifest digest and measure all prospective v2 image and cleanup gates before task content",
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "A verified merge, base-bound license, and digest-bound image do not qualify a benchmark task.",
+    "Registry layer size is not substituted for exact local Engine-content or conservative virtual-size measurement.",
+    "No task content, command, oracle, or outcome was opened.",
+    "The held-out final pool remains unselected and unopened."
+  ]
+}

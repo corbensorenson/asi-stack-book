@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">ASI Stack control plane draft figure</title>
+  <desc id="desc">A draft systems diagram showing human purpose, policy constraints, governed stack layers, authority ceilings, evidence states, residuals, rollback, and release records as one accountable control plane.</desc>
+  <defs>
+    <marker id="arrow-teal" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#245f73"/>
+    </marker>
+    <marker id="arrow-copper" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#a86f45"/>
+    </marker>
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#18202a" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      .bg { fill: #f7f9fb; }
+      .panel { fill: #ffffff; stroke: #d8dee6; stroke-width: 2; }
+      .core { fill: #f9fbfc; stroke: #245f73; stroke-width: 3; }
+      .gate { fill: #fff9f4; stroke: #a86f45; stroke-width: 2; }
+      .evidence { fill: #f3f8f5; stroke: #497b5b; stroke-width: 2; }
+      .risk { fill: #faf5f7; stroke: #8a5264; stroke-width: 2; }
+      .ink { fill: #18202a; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .muted { fill: #5a6675; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .label { font-size: 25px; font-weight: 750; }
+      .small { font-size: 18px; font-weight: 600; }
+      .tiny { font-size: 15px; font-weight: 550; }
+      .caption { font-size: 16px; font-weight: 600; }
+      .line { fill: none; stroke: #245f73; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow-teal); }
+      .loop { fill: none; stroke: #a86f45; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow-copper); }
+      .dash { fill: none; stroke: #5a6675; stroke-width: 2.5; stroke-dasharray: 8 8; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="760" rx="24"/>
+
+  <text class="ink label" x="60" y="62">ASI Stack Control Plane</text>
+  <text class="muted caption" x="60" y="92">Draft key figure. Logical responsibility boundaries; one or many models may implement them. Not proof, benchmark evidence, or release approval.</text>
+
+  <rect class="panel" x="50" y="122" width="250" height="196" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="76" y="158">Inputs</text>
+  <text class="muted tiny" x="76" y="194">human intent</text>
+  <text class="muted tiny" x="76" y="222">policy constraints</text>
+  <text class="muted tiny" x="76" y="250">sources and context</text>
+  <text class="muted tiny" x="76" y="278">available compute</text>
+
+  <rect class="gate" x="360" y="112" width="480" height="64" rx="12"/>
+  <text class="ink small" x="392" y="152">Governance boundary</text>
+  <text class="muted tiny" x="612" y="152">authority ceiling, refusal path, review route</text>
+
+  <rect class="core" x="360" y="202" width="480" height="76" rx="12"/>
+  <text class="ink small" x="392" y="235">Intent to plan</text>
+  <text class="muted tiny" x="392" y="260">command contract, plan DAG, semantic obligations</text>
+
+  <rect class="core" x="360" y="302" width="480" height="76" rx="12"/>
+  <text class="ink small" x="392" y="335">Memory and claims</text>
+  <text class="muted tiny" x="392" y="360">context packets, certificates, claim ledgers</text>
+
+  <rect class="core" x="360" y="402" width="480" height="76" rx="12"/>
+  <text class="ink small" x="392" y="435">Execution and routing</text>
+  <text class="muted tiny" x="392" y="460">typed jobs, adapters, specialists, readiness gates</text>
+
+  <rect class="evidence" x="360" y="502" width="480" height="76" rx="12"/>
+  <text class="ink small" x="392" y="535">Evidence and release</text>
+  <text class="muted tiny" x="392" y="560">tests, proofs, baselines, ledgers, release records</text>
+
+  <rect class="gate" x="900" y="122" width="250" height="184" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="930" y="158">Authority rail</text>
+  <text class="muted tiny" x="930" y="194">permission class</text>
+  <text class="muted tiny" x="930" y="222">approval receipt</text>
+  <text class="muted tiny" x="930" y="250">least exposure</text>
+  <text class="muted tiny" x="930" y="278">revocation path</text>
+
+  <rect class="evidence" x="900" y="336" width="250" height="184" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="930" y="372">Evidence rail</text>
+  <text class="muted tiny" x="930" y="408">support state</text>
+  <text class="muted tiny" x="930" y="436">negative control</text>
+  <text class="muted tiny" x="930" y="464">residual owner</text>
+  <text class="muted tiny" x="930" y="492">non-claim boundary</text>
+
+  <rect class="risk" x="900" y="550" width="250" height="126" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="930" y="586">Improvement loop</text>
+  <text class="muted tiny" x="930" y="622">replace only with evidence</text>
+  <text class="muted tiny" x="930" y="650">rollback before default use</text>
+
+  <path class="line" d="M300 220 C322 220,332 220,350 220"/>
+  <path class="line" d="M600 176 L600 196"/>
+  <path class="line" d="M600 278 L600 296"/>
+  <path class="line" d="M600 378 L600 396"/>
+  <path class="line" d="M600 478 L600 496"/>
+  <path class="line" d="M840 240 C862 240,874 218,895 212"/>
+  <path class="line" d="M840 438 C862 438,874 426,895 426"/>
+  <path class="line" d="M840 540 C866 548,878 588,895 612"/>
+
+  <path class="loop" d="M1025 676 C1025 720,686 730,606 604"/>
+  <path class="dash" d="M322 318 C344 318,344 538,360 538"/>
+  <path class="dash" d="M1150 214 C1172 226,1172 628,1150 640"/>
+
+  <rect class="panel" x="50" y="370" width="250" height="186" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="76" y="406">Stack contract</text>
+  <text class="muted tiny" x="76" y="442">responsibility</text>
+  <text class="muted tiny" x="76" y="470">interface artifact</text>
+  <text class="muted tiny" x="76" y="498">invariant</text>
+  <text class="muted tiny" x="76" y="526">failure mode</text>
+
+  <rect class="panel" x="50" y="600" width="560" height="86" rx="12"/>
+  <text class="ink small" x="76" y="635">Reader promise</text>
+  <text class="muted tiny" x="76" y="663">A powerful part is acceptable only when its authority, artifact, evidence, residual, and rollback path stay visible.</text>
+
+  <text class="muted tiny" x="671" y="637">Status: draft visual asset; not release-reviewed.</text>
+  <text class="muted tiny" x="671" y="665">Support effect: none. The chapter core claim remains argument-level.</text>
+</svg>

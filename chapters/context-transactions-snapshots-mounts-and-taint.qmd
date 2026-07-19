@@ -319,6 +319,24 @@ These rules are architectural requirements from the paper. They have not been
 tested under concurrent actors, real cache collisions, cross-tenant traffic,
 crashes, or production invalidation, so the core remains at `argument`.
 
+### Semantic basis, branch containment, and actuality promotion
+
+The Platonic World Model makes world branch and interpretation part of every
+context transaction. Actual, believed, predicted, planned, simulated,
+counterfactual, fictional, and normative claims may share terms without sharing
+write authority. A bridge rule names the assumptions, versions, direction,
+information loss, and authority under which a claim may cross contexts.
+Simulation output cannot enter the actual-world ledger because it looks
+plausible; promotion requires an authorized execution, observation, or adoption
+event with its own attestation.
+
+Transactions also bind valid time, observation time, transaction time, and a
+semantic-basis manifest. Concurrent semantic edits name an immutable parent;
+noncommuting patches are rebased and revalidated or retained as separate
+branches. This supplies a semantic taint rule: unresolved version, grounding,
+mapping, defeater, or authority dependencies invalidate or explicitly degrade
+the affected snapshot instead of silently refreshing its vocabulary.
+
 ## Interfaces
 
 Context changes travel through a Context Transaction Record, but ownership does
@@ -648,12 +666,16 @@ filesystem transactions, model-unlearning boundaries, security compartments,
 memory budgets, and historical project failures. They do not establish this
 chapter's runtime behavior or support promotion.
 
+
+The result sharpens the required state surfaces while leaving transactional isolation and lifecycle safety unproved.
+
 ### Manifest source assignment reconciliation
 
 These rows keep Context Transactions, Snapshots, Mounts, and Taint's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
 
 | Source | Intake role | Boundary |
 |---|---|---|
+| `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
@@ -677,6 +699,80 @@ durability, visibility, or closure state should fault or remain indeterminate.
 Even a valid transaction still does not establish that the resulting context
 is adequate evidence. That separate question belongs to Verification Bandwidth
 and Context Adequacy.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **73** structured claim atoms in `CF-04`. The
+frozen repository-wide terminal audit records 73 `blocked_after_full_attempt`. Its core
+atom `context-transactions-snapshots-mounts-and-taint.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `context-transactions-snapshots-mounts-and-taint` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+::: {.asi-human-only}
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 73 structured claims,
+73 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Situated world-model acquisition and consolidation campaign**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Bounded finite POMDP result only; no open-world truth, general memory transfer, deployment, or chapter-core promotion.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+:::
+
+::: {.asi-ai-only}
+
+### Evidence packet
+
+| Field | Exact chapter boundary |
+|---|---|
+| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-04` minimum family bundle. |
+| Attempted local lanes | `source-synthesis` |
+| Missing or unproved lanes | `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer` |
+| Family-level natural-work or end-to-end bundle | **Situated world-model acquisition and consolidation campaign** (`natural_work_and_end_to_end`): Two partially observed environments, 11,250 episodes, 6,000 held-out episodes, six directional ablation signatures, and governed replacement/rollback. |
+| Negative controls | ten arms; six matched ablations; ten laundering mutations; replacement and rollback checks. |
+| Exact accepted transitions in this chapter | none |
+| Core outcome | `blocked_after_full_attempt` at `argument`; no chapter-core promotion. |
+| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
+| Reproduction path | Replay `scripts/validate_p4_m8_world_model_campaign.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
+
+### Worked success, failure, and boundary cases
+
+- **Success case:** the family-level bundle passed its own rejecting validator
+  within this exact scope: Two partially observed environments, 11,250 episodes, 6,000 held-out episodes, six directional ablation signatures, and governed replacement/rollback. This is evidence that the family
+  received a competent attempt, not that every claim in this chapter succeeded.
+- **Failure or non-promotion case:** 73 atoms
+  remain blocked and 0 are narrowed. A
+  green family validator cannot fill their missing lanes or raise the core.
+- **Boundary case:** Bounded finite POMDP result only; no open-world truth, general memory transfer, deployment, or chapter-core promotion.
+
+### Argument-exit table
+
+| Atom set | Count | Work performed | Terminal reason and next burden |
+|---|---:|---|---|
+| Core: `context-transactions-snapshots-mounts-and-taint.core` | 1 | `source-synthesis` | `blocked_after_full_attempt`; missing or unproved: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. |
+| blocked after full attempt | 73 | `source-synthesis` | Missing or unproved lanes across this set: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. These are residual proof obligations, not false claims. |
+
+This table is a disposition map, not a promotion quota. The next valid movement
+is atom-specific evidence that fills the named missing lanes, survives relevant
+negative controls, and enters through an accepted evidence transition. Until
+then, source counts, theorem counts, fixtures, validators, or nearby family
+results cannot be used as substitutes.
+:::
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
 
 ## Handoff
 

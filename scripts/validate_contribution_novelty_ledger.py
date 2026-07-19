@@ -49,8 +49,8 @@ REQUIRED_SUMMARY_FRAGMENTS = [
     "Record-reality gap",
     "Human oversight degradation",
     "receipt_faithfulness_gap",
-    "all 54 chapter core claims remain",
-    "two exact live non-core QCSA refutations",
+    "all 55 chapter core claims remain",
+    "historical negative labels rehabilitated without core movement",
     "does not approve reader, release, ebook, PDF, DOCX, audio",
 ]
 REQUIRED_PUBLIC_LINK = "docs/contribution_novelty_ledger.md"
@@ -209,8 +209,9 @@ def validate_surfaces(errors: list[str]) -> None:
     summary = SUMMARY.read_text(encoding="utf-8") if SUMMARY.exists() else ""
     if not summary:
         errors.append(f"Missing {rel(SUMMARY)}.")
+    normalized_summary = " ".join(summary.split())
     for fragment in REQUIRED_SUMMARY_FRAGMENTS:
-        if fragment not in summary:
+        if fragment not in normalized_summary:
             errors.append(f"{rel(SUMMARY)} missing required fragment: {fragment}")
 
     for path in (README, INDEX, ROADMAP):
@@ -229,8 +230,8 @@ def validate_surfaces(errors: list[str]) -> None:
         row_blob = text_blob(*support_rows[0].values())
         for claim_id in ("qcsa.exact_synthetic_matched_advantage", "qcsa.active_questions_exact_fixture_value"):
             if claim_id not in row_blob:
-                errors.append(f"{rel(LEDGER)} support_state_ladder row missing exact refuted claim: {claim_id}")
-        if support_rows[0].get("confidence_state") != "exact_non_core_refutations_recorded_chapter_core_unmoved":
+                errors.append(f"{rel(LEDGER)} support_state_ladder row missing historical refuted-label identity: {claim_id}")
+        if support_rows[0].get("confidence_state") != "historical_negative_labels_rehabilitated_without_core_movement":
             errors.append(f"{rel(LEDGER)} support_state_ladder confidence state is stale.")
     for transition in (
         "evidence_transitions/post_v2_3/qcsa_exact_synthetic_matched_advantage_refute.json",
@@ -238,7 +239,7 @@ def validate_surfaces(errors: list[str]) -> None:
     ):
         value = load_json(ROOT / transition)
         if value.get("transition_effect") != "refuted" or value.get("new_support_state") != "refuted" or value.get("review_status") != "accepted":
-            errors.append(f"{transition} must remain an exact accepted refutation.")
+            errors.append(f"{transition} must preserve its immutable accepted historical refuted label.")
 
 
 def main() -> None:

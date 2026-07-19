@@ -1,0 +1,479 @@
+<script>
+(function () {
+  const storageKey = "asi-stack-reading-mode";
+  const queryParam = "view";
+  const humanMode = "human";
+  const aiMode = "ai";
+  const modeCopy = {
+    [aiMode]: {
+      button: "AI view",
+      status: "AI/research view active. Chapter status, guardrails, source crosswalks, proof hooks, and test plans are visible."
+    },
+    [humanMode]: {
+      button: "Human view",
+      status: "Human view active. Repeated live-research sections are hidden and human-facing bridge prose is visible."
+    }
+  };
+  const liveHeadings = new Set([
+    "2:chapter status",
+    "2:drafting guardrail",
+    "2:codex test plan",
+    "2:external literature queue",
+    "2:source crosswalk",
+    "2:claim labels",
+    "2:why codex tests matter",
+    "2:formalization hooks",
+    "3:claim-source mapping status",
+    "3:formalization hooks"
+  ]);
+  const coreClaimMarkerPattern = /^\[([A-Za-z0-9_-]+\.core,\s*label:\s*[^,\]]+,\s*support:\s*[^\]]+)\]\s+(.+)$/;
+  const coreClaimSupportPattern = /support:\s*([^\]]+)$/i;
+  const supportBoundaryPattern = /(The claim remains at argument support\.|The current support state is argument\.|The current support state is argument, so the claim should be read as a design rationale unless a later evidence bundle promotes it\.)/g;
+  const humanSupportBoundary = "Evidence boundary: architectural argument.";
+  const overlayPayloadId = "asi-reader-overlays";
+  const overlayOnlyClass = "asi-reader-overlay-only";
+  const overlayOriginalClass = "asi-reader-overlay-original";
+  const overlayMetricPrefix = "data-asi-reader-overlay";
+  const overlayProcessedAttribute = `${overlayMetricPrefix}-processed`;
+  const overlayTotalAttribute = `${overlayMetricPrefix}-total`;
+  const overlayMatchingAttribute = `${overlayMetricPrefix}-matching`;
+  const overlayAppliedAttribute = `${overlayMetricPrefix}-applied`;
+  const overlaySkippedAttribute = `${overlayMetricPrefix}-skipped`;
+  const overlaySkippedIdsAttribute = `${overlayMetricPrefix}-skipped-ids`;
+
+  document.documentElement.setAttribute("data-asi-reading-mode", normalizeMode(initialMode()));
+
+  function cleanHeadingText(heading) {
+    const clone = heading.cloneNode(true);
+    clone.querySelectorAll(".header-section-number, .anchorjs-link, .quarto-appendix-heading").forEach((node) => node.remove());
+    return clone.textContent
+      .replace(/\s+/g, " ")
+      .replace(/^\d+(\.\d+)*\s+/, "")
+      .trim()
+      .toLowerCase();
+  }
+
+  function targetIdFromHash(value) {
+    if (!value || !value.startsWith("#")) return "";
+    try {
+      return decodeURIComponent(value.slice(1));
+    } catch (_) {
+      return value.slice(1);
+    }
+  }
+
+  function markLiveSections() {
+    const liveIds = new Set();
+    document.querySelectorAll("section").forEach((section) => {
+      const heading = Array.from(section.children).find((child) => /^H[1-6]$/.test(child.tagName));
+      if (!heading) return;
+      const level = Number(heading.tagName.slice(1));
+      const key = `${level}:${cleanHeadingText(heading)}`;
+      if (liveHeadings.has(key)) {
+        section.setAttribute("data-asi-live-section", "true");
+        if (section.id) liveIds.add(section.id);
+        const anchorId = heading.getAttribute("data-anchor-id") || heading.id;
+        if (anchorId) liveIds.add(anchorId);
+      }
+    });
+    return liveIds;
+  }
+
+  function markLiveTocLinks(liveIds) {
+    document.querySelectorAll('#TOC a[href^="#"], #TOC a[data-scroll-target^="#"]').forEach((link) => {
+      const targetId = targetIdFromHash(link.getAttribute("data-scroll-target") || link.getAttribute("href") || "");
+      if (!liveIds.has(targetId)) return;
+      const item = link.closest("li") || link;
+      item.setAttribute("data-asi-live-toc-link", "true");
+    });
+  }
+
+  function adjacentViewHeadingIds() {
+    const ids = { human: new Set(), ai: new Set() };
+    document.querySelectorAll(".asi-human-only, .asi-ai-only, .asi-live-only").forEach((block) => {
+      const heading = block.previousElementSibling;
+      if (!heading || !/^H[1-6]$/.test(heading.tagName)) return;
+      const isHuman = block.classList.contains("asi-human-only");
+      const modeClass = isHuman ? "asi-human-only" : "asi-ai-only";
+      heading.classList.add(modeClass);
+      const anchorId = heading.getAttribute("data-anchor-id") || heading.id;
+      if (anchorId) ids[isHuman ? "human" : "ai"].add(anchorId);
+    });
+    return ids;
+  }
+
+  function idsForSections(selector) {
+    const ids = new Set();
+    document.querySelectorAll(selector).forEach((section) => {
+      if (section.id) ids.add(section.id);
+      const heading = Array.from(section.children).find((child) => /^H[1-6]$/.test(child.tagName));
+      if (!heading) return;
+      const anchorId = heading.getAttribute("data-anchor-id") || heading.id;
+      if (anchorId) ids.add(anchorId);
+    });
+    return ids;
+  }
+
+  function markViewModeTocLinks(adjacentIds) {
+    const markerMap = [
+      [new Set([...idsForSections(".asi-human-only"), ...(adjacentIds ? adjacentIds.human : [])]), "data-asi-human-toc-link"],
+      [new Set([...idsForSections(".asi-ai-only, .asi-live-only"), ...(adjacentIds ? adjacentIds.ai : [])]), "data-asi-ai-toc-link"]
+    ];
+    document.querySelectorAll('#TOC a[href^="#"], #TOC a[data-scroll-target^="#"]').forEach((link) => {
+      const targetId = targetIdFromHash(link.getAttribute("data-scroll-target") || link.getAttribute("href") || "");
+      markerMap.forEach(([ids, marker]) => {
+        if (!ids.has(targetId)) return;
+        const item = link.closest("li") || link;
+        item.setAttribute(marker, "true");
+      });
+    });
+  }
+
+  function markCoreClaimMarkers() {
+    document.querySelectorAll("main.content p, #quarto-document-content p").forEach((paragraph) => {
+      if (paragraph.querySelector(".asi-core-claim-marker")) return;
+      const text = (paragraph.textContent || "").replace(/\s+/g, " ").trim();
+      const match = text.match(coreClaimMarkerPattern);
+      if (!match) return;
+      const supportMatch = match[1].match(coreClaimSupportPattern);
+      const support = supportMatch ? supportMatch[1].trim().toLowerCase() : "";
+      paragraph.setAttribute("data-asi-core-claim", "true");
+      paragraph.textContent = "";
+      const marker = document.createElement("span");
+      marker.className = "asi-core-claim-marker";
+      marker.textContent = `[${match[1]}] `;
+      const claim = document.createElement("span");
+      claim.className = "asi-core-claim-text";
+      claim.textContent = match[2];
+      const boundary = document.createElement("span");
+      boundary.className = "asi-support-boundary-human asi-support-boundary-human--claim";
+      boundary.textContent =
+        support === "argument"
+          ? " (evidence boundary: architectural argument)."
+          : ` (support remains ${support}).`;
+      paragraph.append(marker, claim, boundary);
+    });
+  }
+
+  function appendHumanSupportBoundaryToClaim(paragraph) {
+    const previous = paragraph.previousElementSibling;
+    if (!previous || previous.getAttribute("data-asi-core-claim") !== "true") return false;
+    if (previous.querySelector(".asi-support-boundary-human--claim")) return true;
+    const boundary = document.createElement("span");
+    boundary.className = "asi-support-boundary-human asi-support-boundary-human--claim";
+    boundary.textContent = " (evidence boundary: architectural argument).";
+    previous.append(boundary);
+    return true;
+  }
+
+  function markSupportBoundaryPhrases() {
+    document.querySelectorAll("main.content p, #quarto-document-content p").forEach((paragraph) => {
+      if (paragraph.querySelector(".asi-support-boilerplate-ai")) return;
+      const text = (paragraph.textContent || "").replace(/\s+/g, " ").trim();
+      if (!supportBoundaryPattern.test(text)) {
+        supportBoundaryPattern.lastIndex = 0;
+        return;
+      }
+      supportBoundaryPattern.lastIndex = 0;
+      paragraph.setAttribute("data-asi-support-boundary", "true");
+      paragraph.textContent = "";
+      let cursor = 0;
+      for (const match of text.matchAll(supportBoundaryPattern)) {
+        const movedBoundaryToClaim = match.index === 0 && appendHumanSupportBoundaryToClaim(paragraph);
+        if (match.index > cursor) {
+          paragraph.append(document.createTextNode(text.slice(cursor, match.index)));
+        }
+        const aiPhrase = document.createElement("span");
+        aiPhrase.className = "asi-support-boilerplate-ai";
+        aiPhrase.textContent = match[0];
+        paragraph.append(aiPhrase);
+        if (!movedBoundaryToClaim) {
+          const humanPhrase = document.createElement("span");
+          humanPhrase.className = "asi-support-boundary-human";
+          humanPhrase.textContent = humanSupportBoundary;
+          paragraph.append(humanPhrase);
+        }
+        cursor = match.index + match[0].length;
+      }
+      if (cursor < text.length) {
+        paragraph.append(document.createTextNode(text.slice(cursor)));
+      }
+    });
+  }
+
+  function currentSourceFile() {
+    let pathname = window.location && window.location.pathname ? window.location.pathname : "";
+    try {
+      pathname = decodeURIComponent(pathname);
+    } catch (_) {
+      /* Keep the browser-provided path if it cannot be decoded. */
+    }
+    const structuredMatch = pathname.match(/(?:^|\/)((?:chapters|appendices)\/[^/]+)\.html$/);
+    if (structuredMatch) return `${structuredMatch[1]}.qmd`;
+    if (pathname.endsWith("/preface.html")) return "preface.qmd";
+    if (pathname.endsWith("/index.html") || pathname.endsWith("/")) return "index.qmd";
+    return "";
+  }
+
+  function readerOverlayPayload() {
+    const element = document.getElementById(overlayPayloadId);
+    if (!element) return { operations: [] };
+    try {
+      const payload = JSON.parse(element.textContent || "{}");
+      return payload && Array.isArray(payload.operations) ? payload : { operations: [] };
+    } catch (_) {
+      return { operations: [] };
+    }
+  }
+
+  function setReaderOverlayMetrics(metrics) {
+    const root = document.documentElement;
+    root.setAttribute(overlayProcessedAttribute, "true");
+    root.setAttribute(overlayTotalAttribute, String(metrics.total || 0));
+    root.setAttribute(overlayMatchingAttribute, String(metrics.matching || 0));
+    root.setAttribute(overlayAppliedAttribute, String(metrics.applied || 0));
+    root.setAttribute(overlaySkippedAttribute, String(metrics.skipped || 0));
+    root.setAttribute(overlaySkippedIdsAttribute, (metrics.skippedIds || []).join(","));
+  }
+
+  function normalizeOverlayHeading(value) {
+    return String(value || "")
+      .replace(/\s+/g, " ")
+      .trim()
+      .toLowerCase();
+  }
+
+  function findOverlaySection(operation) {
+    const section = operation && operation.section ? operation.section : {};
+    const expectedLevel = Number(section.level);
+    const expectedTitles = new Set([normalizeOverlayHeading(section.title)]);
+    if (Array.isArray(section.aliases)) {
+      section.aliases.forEach((alias) => {
+        const normalized = normalizeOverlayHeading(alias);
+        if (normalized) expectedTitles.add(normalized);
+      });
+    }
+    expectedTitles.delete("");
+    if (!expectedLevel || expectedTitles.size === 0) return null;
+    const matches = Array.from(document.querySelectorAll("section")).filter((candidate) => {
+      const heading = Array.from(candidate.children).find((child) => /^H[1-6]$/.test(child.tagName));
+      if (!heading) return false;
+      const level = Number(heading.tagName.slice(1));
+      return level === expectedLevel && expectedTitles.has(cleanHeadingText(heading));
+    });
+    return matches.length === 1 ? matches[0] : null;
+  }
+
+  function overlayBlock(operation) {
+    const wrapper = document.createElement("div");
+    wrapper.className = overlayOnlyClass;
+    wrapper.setAttribute("data-asi-reader-overlay-id", operation.id || "");
+    wrapper.setAttribute("data-asi-reader-overlay-action", operation.action || "");
+    const blocks = String(operation.content || "")
+      .trim()
+      .split(/\n\s*\n/)
+      .map((block) => block.trim())
+      .filter(Boolean);
+    blocks.forEach((block) => {
+      const lines = block.split(/\n/).map((line) => line.trim());
+      if (
+        lines.length >= 3 &&
+        /^```\s*\{?mermaid\}?\s*$/i.test(lines[0]) &&
+        /^```\s*$/.test(lines[lines.length - 1])
+      ) {
+        const display = document.createElement("div");
+        display.className = "cell-output-display";
+        const diagram = document.createElement("pre");
+        diagram.className = "mermaid mermaid-js";
+        diagram.textContent = lines.slice(1, -1).join("\n");
+        display.append(diagram);
+        wrapper.append(display);
+        return;
+      }
+      if (lines.length && lines.every((line) => line.startsWith("- "))) {
+        const list = document.createElement("ul");
+        lines.forEach((line) => {
+          const item = document.createElement("li");
+          item.textContent = line.replace(/^-\s+/, "");
+          list.append(item);
+        });
+        wrapper.append(list);
+        return;
+      }
+      const paragraph = document.createElement("p");
+      paragraph.textContent = lines.join(" ");
+      wrapper.append(paragraph);
+    });
+    return wrapper;
+  }
+
+  function wrapSectionOriginal(section) {
+    if (section.querySelector(`:scope > .${overlayOriginalClass}`)) return;
+    const heading = Array.from(section.children).find((child) => /^H[1-6]$/.test(child.tagName));
+    const original = document.createElement("div");
+    original.className = overlayOriginalClass;
+    Array.from(section.children).forEach((child) => {
+      if (child === heading || child.classList.contains(overlayOnlyClass)) return;
+      original.append(child);
+    });
+    section.append(original);
+  }
+
+  function applyReaderOverlayOperation(operation) {
+    const section = findOverlaySection(operation);
+    if (!section) return false;
+    const block = overlayBlock(operation);
+    const action = operation.action || "";
+    const heading = Array.from(section.children).find((child) => /^H[1-6]$/.test(child.tagName));
+    if (action === "replace_section") {
+      wrapSectionOriginal(section);
+      section.insertBefore(block, section.querySelector(`:scope > .${overlayOriginalClass}`));
+      return true;
+    }
+    if (action === "prepend_to_section") {
+      section.insertBefore(block, heading ? heading.nextSibling : section.firstChild);
+      return true;
+    }
+    if (action === "append_to_section") {
+      section.append(block);
+      return true;
+    }
+    if (action === "insert_before_section") {
+      section.insertAdjacentElement("beforebegin", block);
+      return true;
+    }
+    if (action === "insert_after_section") {
+      section.insertAdjacentElement("afterend", block);
+      return true;
+    }
+    return false;
+  }
+
+  function applyReaderOverlays() {
+    const payload = readerOverlayPayload();
+    const operations = Array.isArray(payload.operations) ? payload.operations : [];
+    const sourceFile = currentSourceFile();
+    const metrics = {
+      total: operations.length,
+      matching: 0,
+      applied: 0,
+      skipped: 0,
+      skippedIds: []
+    };
+    if (document.documentElement.getAttribute(overlayProcessedAttribute) === "true") {
+      return;
+    }
+    if (!sourceFile) {
+      setReaderOverlayMetrics(metrics);
+      return;
+    }
+    operations
+      .filter((operation) => operation && operation.target_file === sourceFile)
+      .forEach((operation) => {
+        metrics.matching += 1;
+        if (applyReaderOverlayOperation(operation)) {
+          metrics.applied += 1;
+          return;
+        }
+        metrics.skipped += 1;
+        metrics.skippedIds.push(operation.id || "(missing id)");
+      });
+    setReaderOverlayMetrics(metrics);
+  }
+
+  function normalizeMode(mode) {
+    return mode === humanMode ? humanMode : aiMode;
+  }
+
+  function setMode(mode, options = {}) {
+    const nextMode = normalizeMode(mode);
+    document.documentElement.setAttribute("data-asi-reading-mode", nextMode);
+    try {
+      window.localStorage.setItem(storageKey, nextMode);
+    } catch (_) {
+      /* localStorage may be disabled; the page-level state still applies. */
+    }
+    if (options.updateUrl) {
+      updateUrlMode(nextMode);
+    }
+    document.querySelectorAll("[data-asi-reading-choice]").forEach((button) => {
+      const active = button.getAttribute("data-asi-reading-choice") === nextMode;
+      button.setAttribute("aria-pressed", active ? "true" : "false");
+      const copy = modeCopy[button.getAttribute("data-asi-reading-choice")] || modeCopy[aiMode];
+      button.setAttribute("aria-label", active ? `${copy.button} active` : `Switch to ${copy.button}`);
+    });
+    const status = document.querySelector("[data-asi-reading-mode-status]");
+    if (status) {
+      status.textContent = modeCopy[nextMode].status;
+    }
+  }
+
+  function modeFromUrl() {
+    try {
+      const requested = new URLSearchParams(window.location.search).get(queryParam);
+      return requested === humanMode || requested === aiMode ? requested : "";
+    } catch (_) {
+      return "";
+    }
+  }
+
+  function initialMode() {
+    return modeFromUrl() || savedMode();
+  }
+
+  function updateUrlMode(mode) {
+    if (!window.history || !window.history.replaceState) return;
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set(queryParam, normalizeMode(mode));
+      window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
+    } catch (_) {
+      /* The mode still changes even if the current URL cannot be rewritten. */
+    }
+  }
+
+  function savedMode() {
+    try {
+      return window.localStorage.getItem(storageKey) || aiMode;
+    } catch (_) {
+      return aiMode;
+    }
+  }
+
+  function insertToggle() {
+    const target = document.querySelector("header#title-block-header") || document.querySelector("main.content") || document.querySelector("#quarto-document-content") || document.body;
+    const control = document.createElement("div");
+    control.className = "asi-reading-mode";
+    control.setAttribute("role", "group");
+    control.setAttribute("aria-label", "Reading mode");
+    control.setAttribute("aria-describedby", "asi-reading-mode-description");
+    control.innerHTML = [
+      '<span class="asi-reading-mode__label">Reading mode</span>',
+      '<span id="asi-reading-mode-description" class="asi-sr-only">AI view shows the full live research scaffold. Human view hides repeated workflow sections and shows human-facing bridge prose.</span>',
+      '<button type="button" data-asi-reading-choice="ai" aria-pressed="true" title="Show the full AI and researcher scaffold">AI view</button>',
+      '<button type="button" data-asi-reading-choice="human" aria-pressed="false" title="Read the human-facing chapter prose">Human view</button>',
+      '<span class="asi-sr-only" role="status" aria-live="polite" data-asi-reading-mode-status></span>'
+    ].join("");
+    control.querySelectorAll("button").forEach((button) => {
+      button.addEventListener("click", () => setMode(button.getAttribute("data-asi-reading-choice"), { updateUrl: true }));
+    });
+    if (target.matches && target.matches("header#title-block-header")) {
+      target.insertAdjacentElement("afterend", control);
+    } else {
+      target.prepend(control);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const liveIds = markLiveSections();
+    const adjacentIds = adjacentViewHeadingIds();
+    markLiveTocLinks(liveIds);
+    markViewModeTocLinks(adjacentIds);
+    markCoreClaimMarkers();
+    markSupportBoundaryPhrases();
+    applyReaderOverlays();
+    insertToggle();
+    setMode(initialMode());
+  });
+})();
+</script>

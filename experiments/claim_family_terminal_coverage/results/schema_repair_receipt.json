@@ -1,0 +1,46 @@
+{
+  "schema_version": "asi_stack.claim_family_terminal_schema_repair.v1",
+  "recorded_date": "2026-07-16",
+  "repair_state": "applied_without_outcome_rerun",
+  "original_result_sha256": "a52421af219a07fadce3a76c4700e37a3c62df263ba1e91aca826a131da02450",
+  "validator_command": "python3 scripts/validate_claim_family_terminal_program.py",
+  "validator_exit_code_before_repair": 1,
+  "validator_failure_before_repair": "nonterminal",
+  "cause": "The frozen evaluator preserved two legacy claim-atom terminal_disposition values named nonmaterial_context even though the frozen output schema and terminal validator allow only promoted, retained, narrowed, refuted, deprecated, or blocked terminal dispositions.",
+  "repairs": [
+    {
+      "atom_id": "asi-is-a-stack-not-a-model.problem.001",
+      "old_terminal_disposition": "nonmaterial_context",
+      "new_terminal_disposition": "blocked_after_full_attempt",
+      "unchanged_missing_or_unproved_lanes": [
+        "normative"
+      ]
+    },
+    {
+      "atom_id": "asi-is-a-stack-not-a-model.mechanism.003",
+      "old_terminal_disposition": "nonmaterial_context",
+      "new_terminal_disposition": "blocked_after_full_attempt",
+      "unchanged_missing_or_unproved_lanes": [
+        "normative"
+      ]
+    }
+  ],
+  "family_summary_repair": {
+    "family_id": "CF-01",
+    "blocked_after_full_attempt_before": 232,
+    "blocked_after_full_attempt_after": 234,
+    "nonmaterial_context_before": 2,
+    "nonmaterial_context_after": 0,
+    "atom_count_unchanged": 274
+  },
+  "outcome_aware_retry_performed": false,
+  "scientific_direction_changed": false,
+  "support_state_effect": "none",
+  "publication_authority": "none",
+  "release_authority": "none",
+  "non_claims": [
+    "The repair does not add evidence, close the normative lane, or promote either atom.",
+    "The repair does not rerun the frozen evaluator or alter any prerequisite receipt.",
+    "The repair does not authorize publication, release, deployment, or chapter-core movement."
+  ]
+}

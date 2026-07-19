@@ -1,0 +1,451 @@
+# Planning as a Control Layer: DAGs and Intelligence Arbitrage
+
+Once a command is structured, the stack has to decide what work should exist and what kind of intelligence each piece deserves. Planning turns intent into obligations: dependencies, budgets, context needs, capability tiers, route choices, adequacy contracts, review points, and stop conditions.
+
+Planning is control, not brainstorming. A plan is valuable only if downstream layers can inspect it, reject unsafe steps, dispatch bounded jobs, preserve residual work, and explain why a cheaper route was adequate or why stronger cognition was required.
+
+The plan must be an artifact. It should show dependencies, assumptions, blocked paths, missing context, route choices, adequacy tests, and stop conditions before any runtime adapter touches the world.
+
+Good planning reduces surprise by making work visible while changes are still cheap. The plan earns trust when it exposes what must be refused, deferred, reviewed, routed differently, or split into a safer path. It should make the negative space legible: tools not granted, context not loaded, cheap routes rejected, claims not made, and approvals still waiting.
+
+That visibility turns planning into governance rather than a prettier brainstorm.
+
+## Problem
+
+After a command contract is accepted, the stack must choose which obligations
+become work, which alternatives remain candidates, what dependencies and
+observations make nodes feasible, how scarce capacity is scheduled, when
+dispatch may be requested, and how feedback changes only the affected future.
+
+A graph can be acyclic and still pursue the wrong decomposition, conceal
+uncertainty, request impossible context, select an inadequate route, violate
+authority or rights, erase counterfactuals, or create more coordination and
+recovery cost than useful work. Planning's distinct owner is therefore the
+prospective plan policy: the versioned choice and revision of a partial order,
+schedule, observation strategy, and dispatch boundary under uncertainty.
+
+Intent-to-Execution owns semantic conformance. Cognitive Compilation owns
+representation lowering. Routing owns worker selection. Labor OS owns jobs.
+Runtime owns effects. Planning decides which obligation should become eligible
+for those handoffs, in what order, under which assumptions, and with what
+fallback or abstention.
+
+## Why existing approaches are insufficient
+
+Prompt plans, chain or tree search, HTN/PDDL task models, DAG schedulers,
+workflow engines, behavior trees, multi-agent orchestrators, compiler passes,
+learned world models, and capability routers each solve part of planning. None
+alone establishes consumer-relative decomposition adequacy, dependency truth,
+observation and predictive-state calibration, route feasibility, authority and
+rights compatibility, complete alternative and failure denominators, useful
+critical-path improvement, merge consistency, effect-bearing stop and replan
+behavior, or total cost against strong matched baselines.
+
+A tidy DAG is not a good plan. A solver optimum is only relative to its model.
+A selected cheap route is not adequate. A recorded replan delta is not evidence
+that live feedback improved outcomes. ReAct, Tree of Thoughts, PDDL, SHOP2,
+TAMP, behavior trees, GOAP, AutoGen, TLA+, and V-JEPA 2 are therefore strong
+comparison pressures, not local planner evidence.
+
+### Strongest objection
+
+The strongest objection is that a planning control plane can add ceremony,
+latency, and brittle bookkeeping while leaving decomposition quality
+unchanged. The bounded answer is empirical: the plan policy earns its place
+only through matched useful-work, safety, recovery, and total-cost outcomes;
+its records merely make failed assumptions, alternatives, authority requests,
+and residual work inspectable enough to test that tradeoff.
+
+## Core Claim
+
+Planning as a Control Layer should own a versioned, consumer-relative plan (evidence boundary: architectural argument).
+policy that selects and revises a partial order of obligations under uncertainty
+before execution. The policy binds the accepted command version; candidate
+decompositions and explicit abstention; typed nodes and dependency semantics;
+assumptions, observations, predictive-state and error models; context, tool,
+capability, authority, rights, resource, and verifier requirements; adequacy and
+utility predicates; lifecycle, dispatch, merge, stop, fallback, recovery, and
+replan rules; complete alternative and attempt denominators; and expected
+versus observed cost, latency, risk, and residuals.
+
+Only nodes whose dependencies and feasibility predicates are satisfied may
+request lowering and dispatch, and every feedback-driven change must preserve
+the contract or produce a scoped re-contract or residual. The plan policy does
+not grant authority, perform semantic compilation, choose a worker, execute an
+effect, validate its own predictions, or prove that a decomposition is useful,
+optimal, safe, or transferable by itself.
+
+PlanForge supplies decomposition, dependency, tier, scheduler, and intelligence-arbitrage vocabulary; VIEA supplies the accepted-command-to-artifact spine; Cognitive Compilation supplies compiler-pass and IR pressure; Software Magic Grimoire supplies bounded workflow language; TokenMana broadens the budget surface beyond token count; Coherence Exchange remains speculative connector context for intelligence-arbitrage language; MoECOT remains an implementation-reference route rather than local evidence for planning behavior.
+
+## Mechanism
+
+The plan policy first freezes its contract, consumer, environment, epoch,
+horizon, authority and rights ceilings, resource accounts, and material-change
+triggers. It then preserves multiple candidate decompositions—including
+clarification, deferral, human planning, and no-plan outcomes—instead of
+retaining only the winner.
+
+Each node is an obligation rather than a prose step. It names inputs, outputs,
+preconditions, postconditions, forbidden means, observations, context,
+authority, rights, resources, verifier, failure, fallback, and residual owner.
+Dependencies are typed as data, control, semantic, temporal, authority, rights,
+evidence, resource, state, or recovery relations, with provenance, confidence,
+and falsifiers. Acyclicity is therefore necessary but never sufficient.
+
+Scheduling happens only after decomposition coverage, dependency validity,
+feasibility, route eligibility, verifier availability, recovery readiness, and
+expected utility are visible. Feedback enters as a versioned observation. A
+replan computes the affected future subgraph, invalidates stale assumptions and
+routes, and preserves unaffected work only when dependency closure still holds.
+
+The policy evaluates alternatives against a declared utility model without
+pretending that the model is complete. Expected critical path, resource use,
+risk, rights burden, verification demand, recovery burden, and opportunity cost
+remain separate estimates with provenance and calibration state. An apparently
+cheap plan cannot win by moving hard verification, human review, repair, or
+residual custody outside its ledger. When alternatives are incomparable, the
+policy records the disagreement and may abstain or request a human decision.
+
+Scheduling and replanning preserve counterfactuals. The selected graph retains
+the candidates it defeated, the assumptions that made it eligible, the nodes
+that were blocked, and the observations that changed the decision. That history
+allows later outcome evidence to distinguish a genuinely useful planning rule
+from luck, hindsight, extra search, or selective reporting.
+
+```{mermaid}
+flowchart LR
+A["Accepted command and epoch"]
+B["Candidate decompositions"]
+C["Typed obligations and dependencies"]
+D["Observations, uncertainty, feasibility"]
+E["Routes, resources, adequacy, recovery"]
+F{"Current dispatch predicates"}
+G["Lowering and dispatch request"]
+H["Block, abstain, or residualize"]
+I["Versioned feedback"]
+J["Affected-future replan"]
+K["Alternative and cost ledger"]
+A --> B
+B --> C
+C --> D
+D --> E
+E --> F
+F -- "satisfied" --> G
+F -- "unsatisfied" --> H
+G --> K
+H --> K
+I --> J
+J --> C
+J --> K
+```
+
+**How to read the planning loop:** Dispatch is one possible plan outcome, not
+the definition of success. Missing information, infeasibility, authority or
+rights conflict, inadequate routes, insufficient recovery, or failed utility
+may produce a block or abstention. Feedback never edits history in place; it
+creates a scoped replan whose invalidations, alternatives, and costs remain in
+the ledger.
+
+### Plan node lifecycle states
+
+Plan nodes move through lifecycle states so a useful idea does not become execution authority by accident. Proposed nodes are decomposition candidates only. Nodes blocked on context need missing material or a narrower scope. Nodes blocked on authority need a new contract, approval route, or refusal. Nodes blocked on dependency wait for upstream work, and nodes blocked on verification need a success predicate before they can be dispatched.
+
+A dispatchable node is different from a plausible node: its constraints, context, authority, dependencies, and verification plan are all satisfied. Only then may it lower into a typed job. Once dispatched, it must preserve job parentage so later audit can trace the action back to the accepted command and plan node.
+
+Replanned nodes record what changed after feedback while keeping the original authority and stop-condition boundaries visible. Stopped nodes preserve the reason work ended, whether denial, budget exhaustion, risk, or a triggered stop condition. These states let the plan remain useful before execution and accountable after execution.
+
+The reader-level point is simple: the graph can contain many kinds of work, but only a narrow subset is authorized work.
+
+### DAG scheduling and intelligence arbitrage
+
+PlanForge sharpens the plan graph into a schedulable DAG. Each node should name dependencies, expected inputs, expected outputs, context demand, authority state, capability tier, adequacy contract, quality predicate, verification requirement, budget limit, route assignment, merge condition, escalation path, and residual behavior.
+
+That extra structure changes the meaning of "use a smaller model." A cheap route is acceptable only when the node has a bounded work contract, an adequacy contract, a verifier, and a fallback. A stronger model, specialist core, tool, human reviewer, or tribunal route is justified when risk, source uncertainty, context demand, quality predicate, or failure cost makes the cheaper route inadequate.
+
+Every node therefore carries two contracts. The work contract names what the node may do. The adequacy contract names what would make the output usable by downstream dependents. Scheduling without the second contract creates text or artifacts without reliable progress.
+
+The DAG also makes local repair possible. If one source-reading node used stale evidence, the scheduler should identify the affected subgraph, repair the stale node, rerun dependents whose assumptions changed, and preserve unaffected work. That is the compiler intuition behind PlanForge: the graph lets the stack rebuild only the parts whose dependencies changed while keeping residuals and rejected routes visible.
+
+### Semantic-operation DAGs and partial qualification
+
+The Reflexive Router narrows “composite request” into a planning obligation.
+The pre-deliberative layer may detect that one request contains several
+semantic operations, but it may emit only a bounded candidate DAG whose nodes
+name operation type, inputs, outputs, dependencies, capability contract,
+authority demand, verifier, effect class, budget, fallback, and provenance.
+Planning remains the owner of the graph; the router owns candidate routes for
+its nodes.
+
+Qualification is node-local and dependency-aware. Exact transforms, retrieval,
+proof, specialist inference, deliberation, and effects need not share a route,
+yet no node becomes dispatchable merely because another node passed. A plan may
+partially qualify safe branches while preserving blocked, ambiguous, stale, or
+unauthorized branches as explicit residuals. Any merge must state how partial
+results, contradictions, missing nodes, and verifier failures affect the
+downstream acceptance predicate.
+
+The graph contract must also fix cancellation, idempotent retry, fallback,
+deadline, partial-result, and compensation behavior before execution. A retry
+of a retrieval node is not equivalent to a retry of a monetary or publication
+effect. A failed forced route cannot silently relabel the node and proceed. A
+replan retains the original operation identities, qualification receipts,
+route proposals, rejected candidates, and changed assumptions so later outcome
+evaluation can distinguish planning quality from route luck.
+
+This integration strengthens the planned natural multi-planner campaign: it
+must score DAG validity, argument binding, dependency truth, partial
+qualification, cancellation and retry correctness, plan provenance, and final
+outcome separately. The paper contains no executed DAG planner or measured
+benefit, so the planning core remains at `argument`.
+
+## Interfaces
+
+Planning consumes a versioned command but cannot reinterpret it. Context and
+Memory answer typed observation requests. Cognitive Compilation owns semantic
+lowering. Routing and Stable Capability Fields return eligible routes. Labor OS
+creates jobs. Runtime and Security decide effects. Verification evaluates
+outcomes. Resource Economics owns complete cost. Artifact Graphs preserve
+lineage. Rights and publication owners retain their own approvals. Evidence
+States alone can move support.
+
+The plan record therefore needs more than nodes and edges. At minimum it binds
+the contract and epoch; consumer and horizon; alternatives and abstention;
+typed obligations and dependency semantics; assumptions, observations,
+predictive-state identities, uncertainty, and staleness; context, route,
+authority, rights, resource, verifier, fallback, stop, recovery, merge, and
+utility predicates; lifecycle state; complete attempts and costs; dispatch and
+replan requests; invalidation closure; outcome receipts; and residuals.
+
+A dispatch request cites the exact node, contract, satisfied dependency and
+feasibility predicates, context and observations, eligible route, authority
+and rights requirements, verifier, stop, recovery, and resource state. It is a
+request to downstream owners, not a job, capability, effect, or completion
+receipt.
+
+## Invariants
+
+These invariants constrain the planning policy rather than certifying the
+world. A record may satisfy every field rule while its decomposition or
+dependency model is wrong. Each predicate therefore needs a producer, an
+independent-enough falsifier, an observed consumer, and a consequence that can
+block, narrow, replan, or residualize the affected obligation.
+
+- Every plan binds one contract version, consumer, environment, epoch, horizon,
+authority and rights ceiling, resource account, and support ceiling.
+- Every obligation is covered by a node, explicit non-planning decision, or
+owned residual; no node silently adds an objective or means.
+- Every dependency has typed meaning, provenance, confidence, consumer, and
+falsifier; acyclicity does not prove truth or completeness.
+- Assumptions, observations, unknowns, predictive-state versions, uncertainty,
+staleness, and disagreement remain visible downstream.
+- Candidate plans, blocked nodes, route requests, review notes, and planner
+scores are not jobs, authority, effects, or evidence transitions.
+- Only nodes with current dependency closure, feasible context, eligible route,
+authority and rights compatibility, resources, verifier, stop, and recovery
+predicates may request lowering and dispatch.
+- Planning requests routes but cannot qualify workers or grant authority.
+- Cheap, parallel, compressed, learned-model, and automated routes retain the
+same adequacy, verification, utility, recovery, and rights obligations.
+- All generation, coordination, waiting, evaluator, repair, retry, merge,
+human, privacy, recovery, opportunity, and governance costs stay attributed.
+- Replanning preserves contract, authority, rights, stops, residuals, negative
+knowledge, alternatives, and history or requests re-contract.
+- Local repair preserves work only after dependency and assumption closure.
+- Merge gates compare semantics, state, sources, authority, rights, effects,
+evidence, criteria, costs, and residuals.
+- Stop, fallback, recovery, rollback-request, compensation, escalation, and
+residual routes require owners and observed consequences.
+- Every alternative, failure, block, timeout, retry, replan, discard, merge
+failure, denial, cost, and residual remains in the denominator.
+- Scores, simulations, fixtures, theorems, and scheduler optima cannot replace
+independent outcome evaluation.
+- Non-dispatch or a shorter critical path is not useful planning, safety, or
+cost dominance without matched opportunity and outcome denominators.
+- No planning component may approve its own broader authority, support,
+deployment, or publication.
+
+## Failure modes
+
+The failure surface includes scope and obligation drift, decomposition theater,
+dependency hallucination and omission, acyclicity laundering, context and
+observation fantasy, model-predictive overconfidence, dispatch laundering,
+capability-tier laundering, scheduler-objective capture, arbitrage laundering,
+parallelism theater, merge laundering, replanning erasure, repair-radius
+laundering, plan survivorship, fail-closed planning, and ceremonial stop or
+recovery.
+
+These failures can coexist in a graph that passes every shape check. A planner
+may produce an acyclic schedule whose hidden dependency is wrong, select a
+cheap route whose downstream verifier cannot detect inadequacy, then report a
+shorter critical path after moving repair and human work outside the ledger.
+That is a syntactically successful plan and an empirical planning failure.
+
+## Minimum Viable Implementation
+
+The current minimum is a record-and-route scaffold:
+
+- plan-graph, PlanForge-DAG, command, job, and semantic-atom schemas;
+- three valid and ten invalid plan-execution fixtures;
+- two valid scheduler-state traces and seven rejecting mutations;
+- two valid runtime-replan traces and nine rejecting mutations;
+- two accepted `no_change` transitions; and
+- 33 theorem declarations grouped under seven proof targets.
+
+These artifacts exercise exact shapes, declared order and cycle cases,
+lifecycle and dispatch branches, authority and stop-preservation bits,
+local-repair scope, cost-ledger fields, digests, and no-promotion boundaries.
+They contain no planner-generated natural plan, independent decomposition
+oracle, measured dependency truth, context-demand prediction, selected-tier
+adequacy, live scheduler, observed replan benefit, or support movement.
+
+The next honest minimum is a prospectively frozen natural planning campaign
+with multiple planner and model families; human-authored, direct, and strong
+algorithmic or workflow baselines; hidden obligations and perturbations;
+complete alternative denominators; independent semantic, dependency,
+feasibility, and outcome evaluators; observed cost and feedback; effect-tested
+stop and recovery; causal ablations; clean reproduction; and transfer.
+
+## Beyond the State of the Art
+
+A mature planning control plane is a measured policy for obligation scheduling
+under uncertainty, not a diagram generator. On prospectively sampled natural
+tasks it compares no-plan/direct, single-pass, search/tree,
+HTN/PDDL/workflow, human-authored, learned-model/MPC where applicable, and the
+full governed policy under matched models, tools, information, authority,
+rights, resources, and horizons.
+
+Independent implementations score obligation coverage, semantic preservation,
+dependency precision and recall, feasibility, context and observation
+calibration, plan stability, route adequacy, merge validity, useful critical
+path and completion outcomes, unsafe actions, abstention and missed help,
+delayed effects, rights and privacy, recovery completeness, latency, compute,
+coordination, human work, and total governance cost.
+
+Adversaries inject hidden dependencies, stale state, conflicting sources,
+authority and rights traps, evaluator gaming, shared bottlenecks, replan shocks,
+merge conflicts, and recovery failures. Causal ablations test each mechanism;
+replications span planners, models, tasks, languages, modalities, environments,
+organizations, jurisdictions, threats, horizons, and time. Promotion requires
+predicted causal signatures, nonzero useful opportunity, strong matched
+baselines, independent evaluation, reproducible raw traces, effect-bearing
+controls, transfer, and an accepted claim-specific transition.
+
+The governed policy advances only when its useful outcomes remain positive
+after all abstentions, missed help, discarded alternatives, repairs, and
+governance costs are restored to the denominator.
+
+No current result meets this governed-planning endpoint; support remains
+`argument` until useful natural plans, effect-bearing controls, independent
+evaluation, causal ablations, reproduction, and transfer pass.
+
+## Predictive state and model-predictive control
+
+Task-graph planning and learned world-model planning are complementary. A task
+DAG says which obligations depend on which artifacts. A predictive model says
+how an observed state may change under candidate actions. `ext_v_jepa_2_2025`
+provides a concrete comparator: action-free video pretraining supplies a latent
+representation, a smaller action-conditioned predictor estimates future
+representations, and model-predictive control repeatedly scores candidate
+action sequences and replans from new observations.
+
+The plan node must therefore name the observation and world-model versions,
+predictor and representation identities, action space, horizon, candidate
+search budget, prediction-error ledger, uncertainty or disagreement, replanning
+trigger, controller fallback, and sim-to-real boundary. A low predicted cost is
+not execution authority. Camera sensitivity, accumulated prediction error,
+exponential action search, image-goal assumptions, and representation limits
+remain explicit residuals. Adoption requires a matched baseline, intervention
+tests, calibration, cost accounting, and safe fallback; the cited robot results
+do not establish local control quality or safety.
+
+### A finite world-model control result
+
+Campaign 5 turns a narrow part of this interface into executable evidence. A
+prospectively frozen count-table agent ran 11,250 matched episodes across an
+adaptive-workshop simulator and a meaningfully different service-mesh
+simulator. The 6,000 held-out episodes separated reference state, delivered
+observation, interpretation, belief, prediction, intervention, prediction
+error, observed effect, and consolidation. Reference state scored the run but
+never entered the agent input.
+
+The governed arm reached hidden-state accuracy 0.7933 in the workshop and
+0.7967 in the service mesh, versus 0.4500 and 0.4067 for the reactive arm. Its
+unsafe-action rates were 0.1000 and 0.1133, versus 0.2333 and 0.2733 for the
+ungoverned predictive arm. That safety improvement was not free: task success
+was lower than the ungoverned predictive arm by 0.0233 and 0.0300 because the
+governed path escalated uncertain cases.
+
+The causal packet matters more than the headline. Removing the uncertainty
+gate raised unsafe action in both environments; removing intervention or
+consolidation reduced accuracy in both; merging observation into belief
+worsened Brier score in both. Active information gathering was heterogeneous:
+slightly harmful in the workshop and helpful in the service mesh. Shift
+detection remained only 0.1667 and 0.2200. Planning should therefore consume a
+world-model interface as fallible state estimation with explicit uncertainty,
+intervention cost, escalation, and shift residuals—not as a learned oracle.
+
+The accepted transition is the non-core claim
+`situated-world-model.finite-pomdp-governed-acquisition-and-consolidation` at
+`synthetic-test-backed`. The full receipt is
+`docs/p4_situated_world_model_campaign.md`. The planning-control core remains at
+`argument`: two authored finite simulators do not establish a neural world
+model, natural-task planning, general causal understanding, safe model-
+predictive control, or transfer beyond the declared interface.
+
+## Summary
+
+Planning owns the prospective choice and revision of obligation order under
+uncertainty. Its output is not merely a DAG, but a versioned policy over
+alternatives, dependencies, observations, feasibility, route requirements,
+resources, lifecycle, dispatch, merge, stop, recovery, replan, costs, and
+residuals.
+
+The present fixtures and Lean modules show how selected synthetic records route
+and fail. They do not show that a planner finds good decompositions, true
+dependencies, adequate routes, useful schedules, or beneficial replans. Those
+claims remain open until natural workloads, strong matched baselines,
+independent evaluators, effect-bearing controls, complete denominators, causal
+ablations, reproduction, and transfer produce claim-specific evidence.
+
+Until then, planning remains a falsifiable control proposal whose present value
+is clearer boundaries and better tests, not demonstrated planning superiority.
+
+Its immediate contribution is an auditable handoff whose failures, repairs,
+abstentions, and downstream effects remain attributable.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **76** structured claim atoms in `CF-03`. The
+frozen repository-wide terminal audit records 76 `blocked_after_full_attempt`. Its core
+atom `planning-as-a-control-layer.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `planning-as-a-control-layer` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 76 structured claims,
+76 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Intent-to-execution vertical refinement**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Structured local scenarios only; no natural-language semantic sufficiency, production backend, transfer, or deployment claim.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
+
+## Handoff
+
+DAG scheduling gives work an order, a route, and a budget, but scheduled nodes still need an artifact form that can be optimized, checked, repaired, and lowered to concrete outputs. Cognitive Compilation and Semantic IR supplies that compiler boundary. It turns plan obligations into semantic atoms, validators, target constraints, lowering receipts, and repair ledgers so the stack can audit what survived the translation from plan to artifact.

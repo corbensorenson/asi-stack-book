@@ -1,0 +1,17 @@
+{
+  "schema_version": "asi_stack.p2_independent_test_log_evaluator_calibration_attempt.v1",
+  "recorded_date": "2026-07-17",
+  "attempt_id": "p2-independent-evaluator-calibration-001",
+  "state": "instrument_failure_before_candidate_execution",
+  "failure_code": "maven_summary_counter_tuple_arity_mismatch",
+  "failure_detail": "The independent Maven helper parsed four counters but returned only tests, failures, and errors; the caller required tests, failures, errors, and skipped.",
+  "candidate_execution_started": false,
+  "candidate_outcome_opened": false,
+  "measurement_or_agreement_recovery_allowed": false,
+  "negative_inference_level": "N0",
+  "claim_effect": "none",
+  "replacement_qualification_effect": "none",
+  "final_pool_selected": false,
+  "final_pool_opened": false,
+  "next_action": "repair_tuple_contract_and_rerun_complete_calibration"
+}

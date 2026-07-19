@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://asi-stack.local/schemas/p2_task_qualification_and_replacement_policy.schema.json",
+  "title": "P2 task qualification and replacement policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "recorded_date",
+    "state",
+    "claim_id",
+    "scope",
+    "source",
+    "task_acceptance",
+    "hard_exclusion_codes",
+    "exclusion_semantics",
+    "replacement_rule",
+    "resource_boundary",
+    "custody",
+    "support_state_effect",
+    "release_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.p2_task_qualification_and_replacement_policy.v1"},
+    "recorded_date": {"const": "2026-07-17"},
+    "state": {"const": "frozen_queue_drawn_candidate_content_unopened"},
+    "claim_id": {"const": "p2.governed_natural_repository_change_admission_joint_frontier"},
+    "scope": {"const": "development_task_construct_and_instrument_qualification_only"},
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dataset_revision", "parquet_sha256", "eligible_metadata_sha256", "original_development_pool_sha256", "original_development_task_count"],
+      "properties": {
+        "dataset_revision": {"const": "475dd5e8703bb5fb22dd3c60b5d038b019eba1e0"},
+        "parquet_sha256": {"const": "0e0bf9355f892ad74ae98d4e1c404f39fd6654a8e351ee3e6ab162e4a64cd3ad"},
+        "eligible_metadata_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "original_development_pool_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "original_development_task_count": {"const": 12}
+      }
+    },
+    "task_acceptance": {
+      "type": "object",
+      "required": ["repetitions_per_arm", "arms", "same_sealed_environment_for_both_arms", "clean_base_revision_before_each_arm", "candidate_solution_test_path_overlap_allowed", "runtime_network", "dependency_phase", "baseline_oracle", "human_gold_oracle", "dual_evaluator", "repeatability"],
+      "properties": {
+        "repetitions_per_arm": {"const": 2},
+        "arms": {"const": ["baseline_test_patch_only", "human_gold_plus_test_patch"]},
+        "same_sealed_environment_for_both_arms": {"const": true},
+        "clean_base_revision_before_each_arm": {"const": true},
+        "candidate_solution_test_path_overlap_allowed": {"const": false},
+        "runtime_network": {"const": "none"},
+        "dependency_phase": {"type": "object"},
+        "baseline_oracle": {"type": "object"},
+        "human_gold_oracle": {"type": "object"},
+        "dual_evaluator": {"type": "object"},
+        "repeatability": {"type": "object"}
+      }
+    },
+    "hard_exclusion_codes": {
+      "type": "array",
+      "minItems": 10,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 8}
+    },
+    "exclusion_semantics": {"type": "object"},
+    "replacement_rule": {
+      "type": "object",
+      "required": ["replacement_draw_state", "final_pool_selection_state", "invalid_slots_order", "same_language_required", "distinct_repository_required", "original_pool_and_previously_screened_candidates_excluded", "metadata_eligibility_screen", "candidate_order_key", "seed", "sequential_opening", "stop_at_first_fully_qualified_candidate_per_slot", "maximum_candidates_per_slot", "failed_candidates_retained", "skipping_candidate_after_outcome_allowed", "failure_to_fill_slot_effect"],
+      "properties": {
+        "replacement_draw_state": {"const": "metadata_queue_frozen_candidate_content_unopened"},
+        "final_pool_selection_state": {"const": "unselected_and_unopened"},
+        "invalid_slots_order": {"const": "lexicographic_original_instance_id"},
+        "same_language_required": {"const": true},
+        "distinct_repository_required": {"const": true},
+        "original_pool_and_previously_screened_candidates_excluded": {"const": true},
+        "metadata_eligibility_screen": {"type": "string", "minLength": 40},
+        "candidate_order_key": {"const": "sha256(seed_utf8 + NUL + instance_id_utf8) ascending"},
+        "seed": {"type": "string", "minLength": 100},
+        "sequential_opening": {"const": true},
+        "stop_at_first_fully_qualified_candidate_per_slot": {"const": true},
+        "maximum_candidates_per_slot": {"const": 10},
+        "failed_candidates_retained": {"const": true},
+        "skipping_candidate_after_outcome_allowed": {"const": false},
+        "failure_to_fill_slot_effect": {"const": "corpus_construct_gate_remains_blocked"}
+      }
+    },
+    "resource_boundary": {"type": "object"},
+    "custody": {
+      "type": "object",
+      "required": ["final_pool_selected", "final_pool_opened", "development_failures_visible_to_repair", "final_labels_or_outcomes_visible_before_all_gates_pass", "one_final_heldout_opening"],
+      "properties": {
+        "final_pool_selected": {"const": false},
+        "final_pool_opened": {"const": false},
+        "development_failures_visible_to_repair": {"const": true},
+        "final_labels_or_outcomes_visible_before_all_gates_pass": {"const": false},
+        "one_final_heldout_opening": {"const": true}
+      }
+    },
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 20}}
+  }
+}

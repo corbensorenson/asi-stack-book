@@ -1,0 +1,22 @@
+{
+  "schema_version": "asi_stack.evidence_transition.v1",
+  "transition_id": "post-v2-3-update-unlearning-v1-instrument-failure-2026-07-16",
+  "recorded_date": "2026-07-16",
+  "claim_id": "data-engines-continual-learning-and-unlearning.core",
+  "chapter_id": "data-engines-continual-learning-and-unlearning",
+  "transition_type": "instrument_failure_supersession",
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "protocol_outcome": "instrument_inadequate_unlearning_target_not_learnable",
+  "claim_outcome": "not_applicable_instrument_failure",
+  "result_path": "experiments/p4_update_unlearning/results/confirmatory_result.json",
+  "diagnosis_path": "experiments/p4_update_unlearning/v1_failure_diagnosis.json",
+  "rationale": "Every arm, including deletion-aware retraining, scored zero true-label accuracy on the single-class deletion cohort. The run remains valid evidence of an instrument-design failure but cannot adjudicate unlearning.",
+  "chapter_core_promotion_count": 0,
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "No claim is retained, narrowed, refuted, deprecated, or promoted from an instrument-inadequate run.",
+    "The versioned v2 repair does not erase v1 artifacts or failures."
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "late_request": true,
+  "sequential_requests": [
+    "delete_a",
+    "delete_b"
+  ],
+  "descendants": [
+    {
+      "descendant_id": "calibrator-1701-governed",
+      "invalidation": "recorded",
+      "quarantine": "recorded",
+      "physical_erasure": false
+    },
+    {
+      "descendant_id": "calibrator-2903-governed",
+      "invalidation": "recorded",
+      "quarantine": "recorded",
+      "physical_erasure": false
+    },
+    {
+      "descendant_id": "calibrator-4307-governed",
+      "invalidation": "recorded",
+      "quarantine": "recorded",
+      "physical_erasure": false
+    },
+    {
+      "descendant_id": "calibrator-6101-governed",
+      "invalidation": "recorded",
+      "quarantine": "recorded",
+      "physical_erasure": false
+    },
+    {
+      "descendant_id": "calibrator-7907-governed",
+      "invalidation": "recorded",
+      "quarantine": "recorded",
+      "physical_erasure": false
+    }
+  ],
+  "local_descendant_invalidation_count": 5,
+  "external_descendant": {
+    "identity": "export-simulated-unreachable",
+    "reachable": false,
+    "invalidation_acknowledged": false,
+    "erasure_verified": false
+  }
+}

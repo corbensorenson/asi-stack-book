@@ -1,0 +1,441 @@
+# Proof-Carrying Claims and Adversarial Review
+
+Some claims are cheap enough to remain drafts while evidence matures. Other claims shape plans,
+permissions, releases, or safety boundaries. Those claims need more than a
+well-written paragraph.
+
+The first upgrade is a proof-carrying or justification-carrying envelope. The
+system chooses a tier: formal proof, citation dossier, executable procedure,
+replay log, benchmark artifact, tribunal review, or downgrade route. It records
+the mapping from the human-language claim to the artifact that was checked, and
+it records the limits of that check.
+
+When the claim is contested, high-risk, or mismatched, adversarial review is
+the next escalation. A tribunal-style record defines a dossier, assigns roles,
+runs probes, preserves dissent, and issues scoped actions. The result goes
+back to the claim ledger as a bounded effect: no change, downgrade, block,
+revise, accept within scope, or escalate.
+
+The reader-level point is simple: stronger claims should leave stronger
+evidence trails, and failed review should be remembered. A proof, citation,
+benchmark, replay, or tribunal verdict earns its place when later readers can
+see what it covered, what it missed, who challenged it, and what changed.
+
+## Problem
+
+High-value claims and high-risk artifacts need a governed verification path
+that can choose proof, citation, procedure, replay, benchmark, or
+adversarial-review treatment without laundering failed, mismatched, or
+contested evidence into support.
+
+The claim ledger gives claims durable identity and history. That is necessary
+but not enough. Some claims need evidence stronger than ordinary prose. Some
+need a formal proof. Some need citations. Some need an executable procedure or
+replay. Some need a tribunal because the mapping is contested, the stakes are
+high, or the evidence points in different directions.
+
+This verification-event layer defines how a claim or artifact receives a
+justification envelope, how failure is preserved, how adversarial review
+operates, and how bounded results write back to the ledger without
+overclaiming. The same path also protects readers and downstream systems from
+treating fluent certainty as verified standing.
+
+## Why existing approaches are insufficient
+
+Neural generation, one-pass self-critique, and informal review can produce
+plausible justification language without preserving proof scope, verifier
+result, evidence dossier, dissent, failed attempts, verdict constraints, or
+downgrade routes.
+
+A model can explain why a claim sounds right without checking it. A proof can
+verify the wrong formalization. A citation can support a nearby statement but
+not the target inference. A reviewer can agree without independent evidence. A
+tribunal can be rerun until it accepts unchanged evidence. If the record does
+not preserve those failures, review becomes a confidence-laundering machine.
+
+External comparators help position the boundary but do not prove it.
+Proof-carrying-code literature, Lean theorem-proving materials,
+autoformalization work, debate, LLM-as-judge evaluation, and contestable-AI
+design all illuminate adjacent parts of the problem. Proof-carrying code
+shows why evidence should travel with an artifact and remain scoped to a
+consumer policy. Lean grounds the proof-assistant vocabulary. Autoformalization
+sharpens the interpretation risk between prose and formal target. Debate and
+LLM-as-judge work show why scalable review needs judge limits, adversarial
+pressure, bias controls, and human-calibration records. Contestable-AI design
+grounds the challenge, appeal, audit, and dissent surface. The ASI Stack uses
+them as comparators while asking a systems question: what record should exist
+before a claim receives stronger standing?
+
+## Core Claim
+
+Selected claims and artifacts should move through proof-carrying, justification-carrying, or adversarial-review envelopes that record tier, interpretation mapping, evidence dossier, verifier or tribunal result, dissent, limitations, failed attempts, required actions, residuals, and ledger effects (evidence boundary: architectural argument).
+Spinoza supplies the central
+discipline: neural systems may propose, but structured verifiers decide; formal
+scope is explicit; outward claims carry tiers; unknown, failed, timed-out, or
+mismatched verification cannot be narrated as success. GenesisCode supplies
+the obligation-envelope pattern for software artifacts: obligations, evidence
+hashes, replay logs, semantic patches, provenance, and small trusted-core
+boundaries. UAT supplies retrieval-bounded proposition review, adversarial
+siege, cycle caps, and human checkpoints. Talos supplies execution/audit
+pressure for review artifacts: claim graphs, evidence sets, proof bundles,
+logs, replay, residual risk, and human adjudication. Verification Bandwidth
+explains why some claims need stronger verification rather than more context.
+TreeLLM supplies a possible semantic representation substrate for
+interpretation mappings and traces. Coherence Exchange remains a speculative
+synthesis context rather than verifier evidence.
+
+### Strongest objection
+
+Method diversity can be theater. Differently named checks may share evidence,
+models, prompts, implementations, organizations, incentives, or blind spots.
+Even genuinely different methods can all target the wrong proposition or
+reward the same persuasive proxy. Formal proof, debate, model judging, human
+review, and contestability also impose latency, privacy, expertise, and appeal
+costs; a simpler source check or accountable editor may perform as well. The
+design case therefore needs semantic, competence, outcome, safety, and total
+cost comparisons rather than method labels, agreement, or internal consistency.
+
+## Mechanism
+
+The verification event begins only after an exact target and adequacy request
+exist. Its first half fixes the target, declares eligible modes, chooses the
+route prospectively, preserves interpretation uncertainty, binds artifacts and
+trusted verifiers, and records every attempt. That structure separates the
+thing a consumer cares about from the formal, textual, procedural, replay, or
+review object that a particular method actually inspects.
+
+The second half governs contested review and bounded consequences. It defines
+the dossier world, maps dependence among reviewers, runs named attacks, retains
+ignorance and dissent, constrains reuse, and issues a typed verdict. Writeback
+then becomes an explicit request to the proper owner rather than an automatic
+promotion. The full contract has eighteen mechanisms:
+
+1. Freeze target claim or artifact identity, exact natural and formal scope,
+definitions, assumptions, consumer, consequence, risk, requested standing
+or action effect, authority, rights, budget, horizon, and change triggers
+before route outcomes.
+2. Classify the target and declare eligible, ineligible, required, and
+unavailable verification modes: source inspection, citation dossier, formal
+proof, executable procedure, replay, benchmark, adversarial review,
+accountable-human adjudication, downgrade, block, or abstention.
+3. Select a prospectively justified route or route portfolio under an explicit
+adequacy request, trusted-core boundary, resource envelope, and refusal rule
+rather than choosing the route after seeing a favorable result.
+4. Bind source prose, normalized claim, formal target, interpretation mapping,
+ambiguity, scope delta, semantic-adequacy state, mapper identity, independent
+review, and unresolved mismatch without treating formal syntax as semantic
+equivalence.
+5. Bind every justification artifact to content identity, environment and
+policy version, producer, consumer checker, verifier implementation, trust
+root, dependencies, expiry, replay boundary, and exact property checked.
+6. Execute the declared route and retain every proof search, source check,
+procedure, replay, benchmark, counterexample, timeout, parse failure, retry,
+intervention, failed attempt, and discarded candidate.
+7. Enforce route-specific evidence contracts: formal routes carry checkable
+proof or countermodel artifacts; citation routes carry versioned spans and
+entailment review; procedures, replay, and benchmarks carry pinned inputs,
+code, environment, logs, metrics, and residuals.
+8. Keep artifact shape, checker acceptance, interpretation adequacy, premise
+truth, source validity, empirical correspondence, outcome relevance, support
+movement, authority, and release as distinct states with distinct owners.
+9. Declare an epistemic trusted computing base with named roots, bounded
+delegation, verifier and policy versions, recursion stop, outside-TCB
+residuals, compromise response, and no ambient self-verifier trust.
+10. Construct bounded review dossiers with exact target, evidence world,
+omitted frontier, evidence and attack refs, prior attempts, known conflicts,
+affected parties, decision options, and disclosure limits.
+11. Assign reviewer, proposer, critic, judge, subject-matter, red-team, appeal,
+and accountable-human roles while recording model, data, prompt, code,
+infrastructure, organization, incentive, and temporal dependence.
+12. Run prospectively declared adversarial probes for contradiction,
+counterexample, omission, source challenge, interpretation mismatch, policy
+mismatch, judge bias, persuasion, collusion, and strategic abstention.
+13. Bound turns, retrieval expansion, compute, latency, human work, privacy
+exposure, appeal, and stop rules while preserving unresolved questions
+instead of narrating convergence or budget exhaustion as truth.
+14. Preserve dissent, veto, justified ignorance, abstention, minority findings,
+reviewer disagreement, appeal grounds, confidence limits, and reasons;
+forbid empty-case, consensus-only, or default approval.
+15. Reuse prior review only when target, evidence, mapping, model, verifier,
+policy, threat, environment, authority, rights, and outcome boundary are
+unchanged and the reuse guard is independently checkable.
+16. Issue a typed verdict with exact scope, evidence basis, method and
+independence limits, required actions, constraint effects, expiry,
+residuals, appeal route, human decision, and explicit non-claims.
+17. Write only bounded proposals or effects to Claim Ledgers, Evidence States,
+Planning, Execution, Readiness, and Release owners: no change, narrow,
+split, downgrade, block, revise, scoped acceptance, escalation, dispatch
+constraint, authority narrowing, or residual work.
+18. Compare governed routing against direct answer, self-critique,
+citation-only, proof-only, replay-only, benchmark-only, model-judge, debate,
+human-review, and abstention baselines under matched targets, information,
+resources, authority, complete failures, delayed outcomes, and total cost.
+
+```{mermaid}
+flowchart LR
+A["Frozen target + adequacy request"] --> B["Eligible modes + prospective route"]
+B --> C["Interpretation mapping + artifact contract"]
+C --> D["Trusted verifier + complete attempts"]
+D --> E{"Contested / high risk / mismatch?"}
+E -- "no" --> F["Mode-scoped result"]
+E -- "yes" --> G["Dossier + roles + attacks"]
+G --> H["Dissent + bounded verdict"]
+F --> I["Typed consequence proposal"]
+H --> I
+I --> J["Owning ledger / evidence / action gate"]
+J --> K["Accepted bounded effect"]
+J --> L["Reject / narrow / residual / appeal"]
+```
+
+**How to read the verification-event flow:** The path begins with a frozen
+consumer question, not a favored method. Interpretation and artifact contracts
+precede execution. High-risk, contested, or mismatched cases add dossier,
+attack, dependence, and dissent records. The resulting verdict remains a scoped
+consequence proposal until the separate ledger, evidence, action, readiness,
+or release owner accepts it.
+
+The central distinction is between custody and authority. This layer keeps the
+route, artifacts, failures, review history, and verdict reconstructable. Formal
+kernels, source reviewers, empirical evaluators, accountable humans, Evidence
+States, and downstream control layers retain authority over their respective
+questions. A complete record therefore exposes where confidence came from
+without turning record completeness into confidence.
+
+## Interfaces
+
+This layer sits between durable claims and downstream action. Claim ledgers supply the stable claim identity, support state, provenance, contradictions, revision history, and promotion blockers. Spinoza-style verification does not replace that ledger; it writes bounded verification outcomes back to it.
+
+VCM and semantic context cells supply the source and evidence objects that proof, citation, and tribunal records point to. That pointer is useful only when it preserves the boundary: a source reference or context cell is not the same thing as verification success. Verification Bandwidth handles a different question: whether the available context and reviewer capacity are adequate for the risk carried by the claim.
+
+Formal and executable artifacts can enter when the claim type permits them. Lean proofs, GenesisCode-style obligations, Circle-style contracts, procedure logs, replay logs, and benchmark artifacts can support narrow checks, but each artifact needs its own scope, limitations, failed attempts, and non-claims. UAT-style tribunal review handles contested, high-risk, or mismatched cases by recording dossiers, reviewer roles, adversarial probes, dissent, verdicts, required actions, and residuals.
+
+The field lists in the live research chapter name those records precisely. At reader level, the important idea is simpler: a proof-carrying claim record must say which claim was checked, what tier was requested, what artifact or dossier was used, how the human-language claim was mapped to that artifact, what the verifier or tribunal returned, what failed, what remains out of scope, and what ledger effect is allowed. A tribunal record must say what was reviewed, what evidence boundary was used, who or what played which review role, what challenges were run, what dissent survived, which verdict was issued, and what action or constraint follows.
+
+Planning and execution consume those outcomes as blockers, constraints, required actions, authority narrowing, human sign-off, or residual work. They do not receive an invisible support-state promotion. That boundary is the point of the interface: stronger claims can ask for stronger records, but every pass, failure, timeout, mismatch, dissent, and verdict returns with an explicit limit.
+
+## Invariants
+
+The invariants preserve target, method, artifact, evaluator, verdict, and
+consequence boundaries through the whole event. They turn a favorable result
+into a scoped fact about one attempted route rather than a general license to
+claim truth, support, authority, or release.
+
+1. Every route binds one exact target version, natural and formal scope,
+definitions, assumptions, consumer, consequence, risk, requested effect,
+authority, rights, budget, horizon, and expiry boundary.
+2. Route selection, obligation adequacy, artifact validity, interpretation
+adequacy, premise or source validity, empirical correspondence, verdict
+correctness, support, action authority, and release remain distinct.
+3. Every formal, citation, procedure, replay, benchmark, adversarial, and
+human-review route carries its exact required artifact and mode-specific
+validity state.
+4. A narrow theorem, citation, procedure, replay, benchmark, or verdict never
+widens to a broader proposition, population, environment, policy, threat,
+outcome, or time without separate accepted mapping and evidence.
+5. Passed, failed, refuted, timed-out, mismatched, unknown, infeasible,
+disputed, abstained, blocked, and not-run outcomes remain distinct and
+inspectable.
+6. Failed, timed-out, mismatched, unknown, or missing required routes cannot
+create an upward support, authority, readiness, or release effect.
+7. Every artifact binds exact bytes or content identity, producer, checker,
+environment, policy, dependencies, trust root, replay boundary, property,
+expiry, and residuals.
+8. The trusted verifier boundary names roots, delegation, recursion stop,
+versions, outside-TCB residuals, compromise response, and independent
+observation; a component cannot establish its own trust by declaration.
+9. Dossiers expose their evidence world, omitted frontier, source
+transformations, prior attempts, conflicts, affected parties, decision
+options, and disclosure limits.
+10. Reviewer independence remains graded across model, data, prompt, code,
+infrastructure, organization, incentives, time, evidence access, and
+communication paths; labels and group counts are not competence evidence.
+11. High-risk, contested, authority-changing, or interpretation-mismatched
+targets cannot bypass their prospectively required adversarial or
+accountable-human route.
+12. Falsification, counterexample search, omission search, judge-bias probes,
+justified ignorance, abstention, veto, dissent, minority findings, and
+appeal grounds remain first-class results.
+13. Cycle caps and convergence describe resource termination only; they do not
+establish truth, completeness, consensus quality, or absence of
+undiscovered attacks.
+14. Prior review reuse requires exact unchanged-boundary evidence across
+target, mapping, sources, artifacts, models, verifiers, policies, threats,
+environment, authority, rights, and outcomes.
+15. Every verdict binds exact evidence and attack refs, method and independence
+limits, scope, required actions, constraints, expiry, residuals, appeal,
+accountable human state, and non-claims.
+16. No verifier, tribunal, judge, proof bridge, fixture, route function,
+artifact receipt, or reviewer may authorize its own support promotion,
+action, disclosure, training, or release.
+17. Every attempt, failure, timeout, retry, intervention, rejected route,
+dissent, appeal, privacy exposure, human burden, latency, cost, missed help,
+unsafe acceptance, and delayed residual remains in the denominator.
+18. Schemas, authored fixtures, finite route theorems, source-reported results,
+and local green checks establish only their exact formal, record, source,
+and environment boundaries.
+
+## Failure modes
+
+The most dangerous failures combine a valid local artifact with an invalid
+global inference. Others hide method selection, dependence, omitted evidence,
+uncertainty, or cost until the resulting verdict appears cleaner than the work
+that produced it. The taxonomy covers both classes:
+
+1. Certified delusion pairs a false, unsupported, or irrelevant natural claim
+with a valid-looking artifact or verdict.
+2. Invalid formalization proves or refutes a target that differs materially
+from the prose, assumptions, scope, population, environment, policy, or
+consumer question.
+3. Theorem, citation, replay, benchmark, or procedure laundering widens a
+mode-specific result beyond the property and boundary actually checked.
+4. Artifact theater supplies a missing, stale, unverifiable, policy-mismatched,
+environment-mismatched, self-reported, or reality-false justification
+object.
+5. Verifier-trust recursion treats named checkers, signatures, green builds,
+consensus, or an internally declared trusted core as self-authenticating
+competence.
+6. Route shopping reruns, switches, combines, or selectively reports methods
+after outcomes until one produces the desired standing.
+7. Dossier capture hides decisive sources, attacks, transformations, affected
+parties, prior failures, or omitted frontiers behind a bounded evidence
+world.
+8. Reviewer collusion or correlated error presents shared models, data,
+prompts, code, infrastructure, organizations, incentives, or communication
+as independent challenge.
+9. Judge and persuasion laundering rewards position, verbosity, style,
+confidence, familiarity, rhetoric, or strategic evidence selection rather
+than target correctness.
+10. Consensus theater averages disagreement, treats majority vote as evidence,
+or removes dissent, veto, minority findings, and appeal grounds from the
+verdict.
+11. Vacuous-pass and default-approval laundering accept empty dossiers,
+missing review, absent attacks, unexercised falsification, or reviewer
+silence.
+12. Abstention and ignorance erasure converts unknown, infeasible, disputed,
+budget-exhausted, or justified-ignorance results into agreement or
+rejection.
+13. Convergence and cycle-cap laundering narrates edit stability, repeated
+agreement, or budget termination as truth, adequacy, or exhausted attack
+space.
+14. Repeated-review laundering reuses changed evidence or reruns unchanged
+evidence without a prospective guard until rejection becomes acceptance.
+15. Critique-without-consequence records findings or dissent without required
+actions, constraints, downgrade, blocker, repair, expiry, appeal, or
+residual ownership.
+16. Self-promotion laundering lets a verifier, tribunal, model judge, proof
+bridge, schema, fixture, or green check move support, authority, readiness,
+or release.
+17. Failure and cost survivorship removes failed routes, timeouts, retries,
+human work, privacy exposure, appeals, false refusal, missed help, unsafe
+acceptance, delay, and residuals.
+18. Portability theater treats one formal system, claim family, dossier, model,
+judge, domain, language, organization, threat, or horizon as general
+verifier or tribunal evidence.
+
+## Minimum Viable Implementation
+
+The minimum viable implementation is a record discipline, not an open-domain verifier or a working tribunal. It needs enough structure to represent a verification event, reject obvious laundering, preserve failed attempts, and write only bounded effects back to the claim ledger.
+
+The current slice uses proof-carrying-claim, tribunal-review, claim-record, and belief-revision schemas. Its proof-carrying fixtures include a valid narrow formal pass, a citation dossier that makes no support change, and a mismatch that escalates. The invalid controls reject passed verifier records without artifact references, mismatches that try to promote, formal tiers backed by the wrong justification type, timeouts that overpromote support, and negative evidence without a failed-attempt record.
+
+The tribunal fixtures cover scoped acceptance with constraints, unchanged evidence that remains blocked, and high-risk revision with dissent preserved. Their invalid controls reject acceptance without evidence, high-risk review without adversarial probes, prior-review laundering, dissent that does not preserve an unresolved issue, and weak non-claim boundaries.
+
+The adversarial review dossier probe adds a bounded synthetic slice: two valid review dossiers and seven expected-invalid controls. It is useful because it exercises the record shape and laundering defenses. It does not prove semantic equivalence, reviewer independence, adversarial-probe quality, verdict correctness, LLM-judge quality, debate-system quality, deployed review behavior, or support-state movement.
+
+## Beyond the State of the Art
+
+A mature verification operating system prospectively routes natural
+high-value claims and high-risk artifacts to the cheapest adequate combination
+of formal proof, citation review, procedure, replay, benchmark, model judging,
+adversarial debate, accountable-human adjudication, appeal, or abstention. It
+preserves interpretation mappings, trusted verifier boundaries, every attempt,
+dossier limits, dependence, attacks, ignorance, dissent, verdict scope,
+required actions, and bounded writeback without claiming that one method fits
+every proposition.
+
+The decisive comparison is joint. Useful accepted work, claim-specific false
+acceptance, unnecessary refusal, missed help, interpretation error, source and
+theorem validity, attack discovery, calibrated abstention, dissent and appeal
+preservation, delayed outcomes, latency, privacy exposure, human burden, and
+total cost all remain visible. Direct answers, self-critique, citations, proof,
+replay, benchmarks, model judges, debate, human review, and abstention form
+strong matched baselines rather than decorative references.
+
+Each claimed mechanism needs a prospectively predicted signature under matched
+ablation. A routing benefit disappears when route selection is removed; a
+mapping benefit disappears when semantic mapping is hidden or corrupted; an
+adversarial-review benefit disappears when attacks, independence, or dissent
+are removed. Clean replay from locks and independent transfer across models,
+domains, languages, formal systems, evaluators, organizations, threats, and
+time are separate gates.
+
+Any missed gate narrows the claim or produces a null, negative, refuted,
+deprecated, cost-dominated, or blocked-after-full-attempt result. That outcome
+is still useful evidence. It is more informative than a schema-valid claim that
+the stack has built a truth machine.
+
+No current result meets this proof-carrying adjudication endpoint; support
+remains `argument` until natural claims, independent evaluators, adversarial
+verifier tests, causal ablations, reproduction, and transfer pass.
+
+## Summary
+
+Proof-Carrying Claims and Adversarial Review owns the route from a frozen target
+to a reconstructable bounded verification event. It records prospective mode
+selection, interpretation mapping, artifacts, verifier trust, attempts,
+dossiers, dependence, attacks, ignorance, dissent, verdicts, constraints,
+appeals, residuals, and writeback requests.
+
+The boundary remains narrow. Verification Bandwidth owns adequacy; formal and
+empirical evaluators own their exact mode results; Claim Ledgers own identity
+and history; Evidence States owns support; accountable humans own adjudication
+and redress; execution layers own action; readiness owners own release. A proof
+or verdict crosses those boundaries only through an accepted scoped record.
+
+The present evidence is an authored zero-model scaffold: finite schemas,
+fixtures, route consequences, and negative controls. Its value is exact
+anti-laundering discipline, not demonstrated verifier quality. Natural matched
+campaigns, causal ablations, reproduction, and transfer remain the gates between
+that discipline and any stronger claim.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **76** structured claim atoms in `CF-04`. The
+frozen repository-wide terminal audit records 75 `blocked_after_full_attempt`; 1 `narrowed_after_full_attempt`. Its core
+atom `spinoza-verification-and-proof-carrying-claims.core` remains at `argument` with terminal
+disposition `narrowed_after_full_attempt`. The authoritative per-atom rows
+are the `spinoza-verification-and-proof-carrying-claims` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+### What the evidence now says
+
+The chapter's core remains **narrowed after full attempt**
+at `argument` support. Across its 76 structured claims,
+75 still lack required proof lanes,
+1 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Situated world-model acquisition and consolidation campaign**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Bounded finite POMDP result only; no open-world truth, general memory transfer, deployment, or chapter-core promotion.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
+
+## Handoff
+
+The next layer turns accepted constraints, blocked states, and required actions
+into work. Once a verification event narrows a claim, blocks a route, requires
+source fetch, demands human sign-off, or creates residual work, the execution
+system needs typed jobs that preserve those constraints.
+
+That is the job of **Labor OS and Typed Jobs**.

@@ -1,0 +1,917 @@
+<script type="application/json" id="asi-reader-overlays">
+{
+  "schema_version": "0.1",
+  "profile": "reader_release",
+  "manifest_path": "editions/reader_overlays/v1_0/manifest.json",
+  "manifest_id": "v1_0_reader_overlay",
+  "operation_count": 75,
+  "operations": [
+    {
+      "id": "v1_0.artifact_graphs.mechanism_reader_replace",
+      "target_file": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Mechanism",
+        "aliases": []
+      },
+      "content": "The mechanism is a work trail with authority limits. Each important output should carry enough history for a later reviewer to ask: what job produced this, what inputs shaped it, what checks ran, what can be replayed, what uncertainty remains, and what claims may use it?\n\n```{mermaid}\nflowchart LR\n  Job[\"Typed job\"] --> Output[\"Produced output\"]\n  Output --> History[\"Lineage and context\"]\n  Output --> Checks[\"Checks and replay\"]\n  Output --> Limits[\"Residuals and non-claims\"]\n  History --> Gate[\"Evidence gate\"]\n  Checks --> Gate\n  Limits --> Gate\n  Gate -- \"allowed\" --> Reuse[\"Use as context, release input, regression, or evidence\"]\n  Gate -- \"blocked\" --> Repair[\"Residual, repair, quarantine, or no-promotion\"]\n```\n\nThe gate is conservative. It does not ask whether an output looks impressive. It asks whether the supporting trail is strong enough for the use being requested. A draft can be reading material before it is a release. A failed run can be a regression case before it is proof. A checked file can be useful history before it is evidence.\n\nReplay is graded for the same reason. Some work can be reproduced byte for byte. Some can be checked again for the same obligations even if the wording changes. Some depends on missing services, source snapshots, human judgment, or security limits. Some has not been replayed at all. Those differences stay visible instead of being flattened into confidence.\n\nReceipt faithfulness is the hardest version of the gate. A receipt can have the right fields while pointing at the wrong world. The current fixture catches that bounded failure by rejecting a false but well-formed receipt, an ignored trap, a missing independent check, a same-path self-check, an unbounded attestation, and a support promotion based only on paperwork shape. The accepted no-promotion decision keeps this as a guardrail: it blocks overclaims but does not prove open-world truth, verifier independence, deployed audit behavior, or the core claim for this layer.\n\nThe follow-on repository checks make the idea less abstract. They ask selected files, digests, commands, external fingerprints, and one live local output to answer concrete questions. That is useful because it forces the book's own evidence trail to stay attached to real files. It is still bounded local discipline, not a deployed attestation service.",
+      "rationale": "Make the generated reader and live Human view explanation of record-reality less ledger-dense while preserving the canonical AI/research chapter, receipt-faithfulness boundary, and no-promotion decisions."
+    },
+    {
+      "id": "v1_0.artifact_graphs.minimum_viable_implementation_reader_replace",
+      "target_file": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The smallest useful artifact graph is not a full provenance platform. It is one structured record for one produced artifact. That record names the parent job, source references, context references, context transaction, semantic certificate, tool path, claim and test links, audit events, replay declaration, replay grade, environment assumptions, residuals, evidence gate, and non-claims.\n\nThe current `artifact_graph_record` schema and fixture validate that this record has the fields a reviewer needs. They do not prove the artifact is true. They make the artifact inspectable enough for later evidence review, routing, replay, and memory reuse.\n\n`AsiStackProofs.ArtifactGraph` models the same boundary with finite predicates. It checks that modeled artifact admission rejects missing parent, source, context transaction, semantic certificate, tool, claim, test, audit, replay, evidence, stale-certificate, promotion, and non-claim fields. It also models replay-packet cases where parent jobs mismatch, byte-exact replay lacks an observed artifact, a stale certificate blocks admission, support review lacks a replay-validated transaction, or partial replay tries to promote too far.\n\n`python3 scripts/validate_artifact_graph_replay.py` adds a synthetic cross-record replay packet check across artifact records, typed jobs, context transactions, semantic certificates, source refs, replay grade, audit reconstruction, stale-certificate status, and promotion boundaries. This is record discipline over fixtures. It is not a deployed replay engine, audit reconstruction service, provenance completeness checker, benchmark result, or support-state promotion.\n\nThe next useful artifact is a tiny replay packet that demonstrates the difference between an artifact being stored and an artifact being evidence-ready: one produced artifact, one parent job, one source/context set, one context transaction, one semantic certificate, one tool path, one replay declaration, one residual declaration, one evidence gate, and one claim/test link.",
+      "rationale": "Replace the dense proof-and-harness inventory with reader prose while preserving the canonical AI/research evidence boundaries."
+    },
+    {
+      "id": "v1_0.artifact_graphs.strongest_objection_reader_replace",
+      "target_file": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Strongest Objection",
+        "aliases": []
+      },
+      "content": "The hardest case is a system that produces convincing paperwork while the important event remains outside the story. The file may exist. The digest may match. A command may pass. A verifier may give a fluent answer. None of that is enough if the same path created the work, observed it, judged it, and approved it.\n\nThe answer is deliberately bounded. The graph should ask whether the work product is still present, whether the bytes match an independent view, whether a replay or challenge can be answered, whether a trap case was rejected, where verifier trust bottoms out, and what uncertainty remains. A package that cannot answer those questions may still be useful history, but it should not move a claim, approve a release, bless a measurement, or teach a future agent as if it were evidence-ready.\n\nThe current project shows this at small scale. One lane rejects paperwork that looks valid but fails reality checks. Another checks selected project claims against actual files, digests, commands, and external fingerprints. A deterministic challenge samples those checks. A live local probe then makes one produced file answer through filesystem bytes, git object bytes, and command replay. Those are useful refusals, not deployed attestation.\n\nThe weakening condition stays visible. If producer, observer, verifier, and approver collapse into one untrusted path, or if the crucial dependency cannot be replayed, challenged, independently observed, or named as remaining uncertainty, the graph can keep the material but should remove its evidence power. Stronger claims need public or external attestation, randomized audit, verifier-quality review, and trust-base evidence.",
+      "rationale": "Make the record-reality owner section readable in Human view and generated reader editions while preserving the canonical AI/research precision and no-deployed-faithfulness boundary."
+    },
+    {
+      "id": "v1_0.artifact_stewards.autonomy_treasury_reader_replace",
+      "target_file": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Autonomy and treasury modes",
+        "aliases": []
+      },
+      "content": "A steward should not start life as an autonomous project manager. The lowest mode is manual: it drafts plans, labels, summaries, and proposed contracts while humans approve every action. Assisted mode lets it perform low-risk hygiene and local validation, but protected branches, funds, releases, and governance remain human-gated. Bounded autonomy is narrower than the name sounds: ordinary work may proceed only inside recorded budgets, allowlists, logs, rollback paths, and appeal channels.\n\nCommunity-governed mode changes the approval surface rather than granting sovereignty. Major changes route through maintainers, contributors, holders, guardians, delays, quorum rules, fork paths, and exit rights. Sunset mode is stricter still: the steward preserves, archives, transfers, or freezes the artifact while ordinary feature work stops until a sunset review changes the state.\n\nTreasury behavior needs the same staging. Manual treasury means every spend is proposed and externally approved. Budgeted autonomy allows small repeated work below strict caps, with spend policy doing the authorizing rather than the steward. Bounty escrow reserves funds for verified work contracts. Recurring operations cover hosting, domains, CI, storage, and monitoring. Compute rental can pay for GPUs, runners, or cloud jobs only when data class and sandbox rules permit the exposure.\n\nA governed treasury may use proposals and votes for larger changes, but legitimacy, legal authority, and economic control remain separate problems. Emergency freeze exists so continuity can yield to protection. In every mode, the steward can be a clerk for the treasury, not the treasury's sovereign.",
+      "rationale": "Replace the autonomy and treasury mode tables with reader prose while preserving the canonical AI/research mode matrices."
+    },
+    {
+      "id": "v1_0.artifact_stewards.project_objects_reader_replace",
+      "target_file": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Project objects",
+        "aliases": []
+      },
+      "content": "The steward's records are deliberately plain because they need to survive across tools. The `ArtifactStewardCharter` binds the steward to one artifact and records mission, non-goals, maintainers, governance model, authority ceiling, budget policy, evidence policy, release policy, federation policy, and sunset criteria. The `ProjectWorkContract` turns roadmap intent into bounded work by naming the objective, context references, allowed files or systems, allowed tools, forbidden tools, outputs, acceptance tests, review gates, evidence references, budget, deadline, rollback, and non-claims.\n\nThe `ContributionLedgerEntry` records contribution without collapsing credit, money, votes, and evidence. Authorship, review role, evidence role, compensation reference, reputation signal, governance effect, and conflict notes remain separate. The `TreasuryPolicyRecord` bounds funds, compute credits, bounties, recurring operations, and freezes through policy id, artifact id, mode, autonomous limits, single-action limits, compute or rental limits, approval thresholds, protected spend classes, freeze authorities, and audit requirements.\n\nThe `EventTaintRecord` keeps repository and worker events from becoming privileged control text. It records event source, actor, surface, taint state, trusted fields, untrusted fields, forbidden control uses, review requirements, sanitized artifacts, and residuals. The `StewardActionDecision` explains what the steward proposed, ran, blocked, or escalated, including authority basis, inputs, rejected options, approvals, evidence references, residuals, affected artifacts, and non-claims.\n\nThe `SunsetReviewRecord` is the death-protocol object. It records value signal, active users, active maintainers, open risks, funds, dependencies, archival plan, fork or transfer path, and appeal path. Together these records make stewardship inspectable before it becomes machinery.",
+      "rationale": "Turn the project-object catalog table into prose for the relaxed reader path without removing the canonical record vocabulary."
+    },
+    {
+      "id": "v1_0.artifact_stewards.beyond_state_reader_replace",
+      "target_file": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Beyond the State of the Art",
+        "aliases": []
+      },
+      "content": "A mature stewardship layer would be a project-lifecycle operating system, but not a project owner. It would keep mission, memory, roadmap, work, funds, compute, contributors, evidence, releases, governance, and sunset criteria inspectable across many human and AI work cycles.\n\nThe steward's power would come only from explicit records: a charter, work contracts, contribution ledgers, treasury policy, event-taint rules, release evidence, federation contracts, action decisions, and sunset reviews. Humans, maintainers, communities, project hives, personal hives, CI runners, and rented compute would receive scoped contracts rather than inheriting project authority.\n\nThe mature system would make spending, compute, contribution credit, governance influence, releases, appeals, forks, and exit paths visible without forcing people to ask the steward for permission to understand the project. It would also know when to stop: if value, maintainership, funds, mission coherence, or safety posture falls below the charter threshold, ordinary work generation should yield to transfer, archive, freeze, or sunset.\n\nThat endpoint remains unimplemented here. It should stay at `argument` support until workflow runners, treasury boundaries, event-taint pipelines, governance gates, release checks, sunset protocols, and behavioral tests show that stewardship can coordinate a project without seizing it.",
+      "rationale": "Replace the dense steward-OS target architecture with reader prose while preserving the canonical AI/research lifecycle-control checklist."
+    },
+    {
+      "id": "v1_0.artifact_stewards.mvi_reader_replace",
+      "target_file": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The smallest honest steward is repository-local and proposal-first. It begins with a charter that names mission, non-goals, maintainers, authority ceiling, evidence policy, budget policy, allowed work, forbidden work, and sunset criteria. Work then enters through proposed contracts, not free-form agent initiative: each task should name allowed files or systems, allowed tools, required outputs, review gates, rollback path, and non-claims.\n\nIn that minimal form, the steward may label issues, draft plans, summarize pull requests, request CI, prepare decision logs, and propose work. It should not merge protected branches, spend funds, change governance, publish releases, promote evidence states, or assign outside workers without human approval. The early win is legibility, not autonomy.\n\nThe repository currently carries the record-shape slice for this idea. Schemas and valid fixtures exist for steward charters, work contracts, contribution entries, treasury policy, event taint, action decisions, and sunset reviews. Those records show that the public contract can be represented consistently, but they do not execute a steward, connect to a wallet, scan workflow events, run a governance process, or prove project safety.\n\nA bounded lifecycle probe adds one more useful check. It accepts clean release-review and sunset-review routes, and it rejects tainted intake without review, over-policy spending, contribution-to-governance laundering, unscoped federation, release without gate evidence, and ordinary work after sunset criteria are met. That is still a fixture-level result. It is useful because it keeps the failure boundaries explicit before anyone treats stewardship as an autonomous project manager.",
+      "rationale": "Replace the dense schema-and-probe inventory with reader prose while preserving the canonical steward record fixtures, lifecycle probe, and no-promotion boundary."
+    },
+    {
+      "id": "v1_0.asi_stack_not_model.problem_reader_replace",
+      "target_file": "chapters/asi-is-a-stack-not-a-model.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Problem",
+        "aliases": []
+      },
+      "content": "The book begins by changing the unit of analysis. A future ASI system will not be made governable by pointing at the largest model in the room and asking it to be safe. The model matters, but it is only one part of a larger machine: the contracts that receive intent, the memory that carries context, the routes that choose capability, the tools that touch the world, and the records that decide what counts as evidence.\n\nThat distinction is practical. When an intelligent system acts, someone has to know what authorized the action, what source grounded the claim, what artifact crossed a boundary, and how the result could be challenged or rolled back. Those answers cannot live inside vague confidence about model quality. They need interfaces, ledgers, gates, and failure paths that remain visible even when the underlying model changes.\n\nSo the opening problem is not whether one model can become powerful enough. It is whether the whole arrangement can stay legible as power spreads across planning, memory, reasoning, execution, routing, compression, and self-improvement. The ASI Stack starts here because every later section depends on this move: treat intelligence as a governed architecture, then ask each layer what it owns and what it is not allowed to claim.",
+      "rationale": "Start the v1.0 human-reader overlay pilot by making the opening problem section read like book prose while leaving the canonical AI/research source unchanged."
+    },
+    {
+      "id": "v1_0.asi_stack_not_model.summary_reader_replace",
+      "target_file": "chapters/asi-is-a-stack-not-a-model.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Summary",
+        "aliases": []
+      },
+      "content": "The first claim of the book is modest but load-bearing: ASI should be read as a stack. A model can generate, compress, criticize, and propose, but a stack decides when those outputs become plans, claims, permissions, artifacts, or evidence. That separation is what makes later governance possible.\n\nOnce the system is a stack, capability has to answer to structure. A planning trace needs an authority boundary. A context packet needs an adequacy test. A routing decision needs residual accounting. A replacement needs rollback. Self-improvement has to return to governance instead of becoming an excuse to bypass it.\n\nThis does not prove that the architecture is implemented or safe. It gives the rest of the book a stable question to ask of every powerful mechanism: what does this part own, what evidence does it create, what can stop it, and how would the system know if it failed?",
+      "rationale": "Give the generated reader edition and live Human view a calmer closing summary for the opening chapter without adding new claims or evidence."
+    },
+    {
+      "id": "v1_0.benchmark_ratchets.interfaces_reader_replace",
+      "target_file": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces",
+        "aliases": []
+      },
+      "content": "The interface is not a leaderboard row. It is a decision packet around an evaluation event. A later system should be able to see what was tested, what counted as the old floor, what changed, what failed nearby, and which claim was allowed to move.\n\nA useful packet names the capability being pressured, the task or suite, the run command or source boundary, the baseline, the environment, the threshold, the saturation state, the residuals, the regressions that must be preserved, the hidden or transfer checks, the contamination review, the negative results, and the promotion decision. If those details are missing, the result may still be interesting, but it is not permission to move a support state.\n\nRouting and stable capability fields consume the packet as readiness context. Procedural memory consumes it as retirement pressure: a tool that fails an old floor should be revised, quarantined, or retired. Appendix C consumes it only when the packet supports an exact claim and preserves the non-claims around every stronger-sounding interpretation.\n\nThat is why the ratchet interface is conservative. It lets a win become memory without letting a score become mythology.",
+      "rationale": "Replace the generated-reader field list with prose that preserves the benchmark-ratchet packet boundary and support-state restraint."
+    },
+    {
+      "id": "v1_0.benchmark_ratchets.minimum_viable_reader_replace",
+      "target_file": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The smallest honest ratchet is not a benchmark suite. It is a tiny evidence rehearsal that keeps four outcomes separate: a passing path, a nearby failure, a saturated task that becomes a regression floor, and a blocked promotion. The rehearsal is valuable only if it refuses to turn any one of those outcomes into a broad capability story.\n\nThe current repository already exercises a narrower version of that shape. It checks a small synthetic anti-Goodhart packet with two valid cases and five expected-invalid controls. The passing side covers one promotion-ready synthetic path and one saturated task preserved as a floor. The rejected side blocks missing anti-Goodhart checks, promotion from blocked evidence, reward-as-truth confusion, saturation-as-readiness, and a steward release without approval.\n\nThat bridge is useful because the success and failure paths are checked together. It demonstrates record discipline at the boundary where claims might otherwise inflate. It is still not an empirical run, not a hidden-holdout test, not a contamination detector, not a policy-training result, not a steward-agent release review, not a Theseus replay, not model-quality evidence, and not a support-state transition.\n\nThe next useful slice should be a public toy ratchet with one intentionally contaminated case and one source-reported-only case. Those cases would force the book to preserve two important refusals: contamination creates a quarantine or blocked decision, and source-reported status stays source-reported until the command, environment, data boundary, and artifacts are imported or rerun.",
+      "rationale": "Replace the implementation inventory and fixture-bridge subsection with reader prose while preserving the current synthetic-only boundary and no-promotion result."
+    },
+    {
+      "id": "v1_0.benchmark_ratchets.beyond_state_reader_replace",
+      "target_file": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Beyond the State of the Art",
+        "aliases": []
+      },
+      "content": "The mature endpoint is an evaluation operating system, not a bigger scoreboard. Every task would have a lifecycle: candidate pressure, frontier probe, regression floor, contamination review, retirement, or blocked state. The system would remember why a task mattered and why it stopped being enough.\n\nIn that endpoint, a result could not travel alone. It would carry its old floor, neighboring failures, residuals, negative cases, hidden or transfer checks, public-calibration limits, and the exact claim under review. Success would open a promotion review; it would not become promotion by itself.\n\nThis would also change how self-improving systems learn. Once a planner, policy, or tool can adapt to feedback, the evaluation surface becomes part of the environment. The ratchet has to preserve the difference between learning a capability, learning a test, exploiting a proxy, and improving the presentation of progress.\n\nThe endpoint remains a target architecture. The book has not shown that such an evaluation OS works in deployment. It has a synthetic boundary check and a design discipline. Stronger claims require real ratchet packets, contamination reviews, transfer checks, regression-preservation runs, and accepted evidence transitions that show exactly which claim boundary changed.",
+      "rationale": "Replace the dense target-architecture checklist with reader prose that preserves lifecycle, anti-Goodhart, and artifact-approval boundaries."
+    },
+    {
+      "id": "v1_0.circle_contracts.receipt_lifecycle_reader_replace",
+      "target_file": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Proof receipt lifecycle",
+        "aliases": []
+      },
+      "content": "A proof receipt moves through transport states, not capability states. A theorem-linked receipt names a theorem reference and proof-status scope, but it supports only structural discussion until resolver status is known. A dictionary-bound receipt ties the finite model to a recognized contract family, which makes it useful for receipt design and local surrogate tests.\n\nA fingerprinted receipt has recorded content or normalized parameters, so it may become a replay candidate, but it is still not quality evidence. A resolver-checked receipt has passed or failed a stated theorem-resolution command. A consumer-gated receipt records allowed and blocked downstream uses, and those uses remain scoped to the named consumer.\n\nWorkload-blocked is the most important reader-facing state: it means the structural receipt may exist, but workload, baseline, metric, or evidence artifacts are missing, so no quality, runtime, memory, or transfer promotion is allowed. Retired or superseded receipts become historical evidence only unless a later review requalifies them.\n\nThese states keep proof authority and consumer authority separate. A receipt can carry a narrow structural fact without carrying a model-quality claim.",
+      "rationale": "Replace the proof-receipt lifecycle table with reader prose while preserving the canonical AI/research receipt-state matrix."
+    },
+    {
+      "id": "v1_0.circle_contracts.concrete_receipt_boundary_reader_replace",
+      "target_file": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Concrete Circle Receipt Boundary",
+        "aliases": []
+      },
+      "content": "The public-safe Circle lane is concrete enough to show as a receipt boundary, but not as a capability result. The imported record points to an external Circle checkout at commit `63b0f511`, contract `CC-AI-CONTRACT-ROPE-001`, family `rope_position_distinguishability`, and requested margin `1/328459`. The certifier record says `status proved`, `request_passed true`, `decision passed`, `assurance mixed_theorem_and_computation`, and `theorem_count 55`; the ready digest reports `ready=True fields=31 missing=0 theorems=75`.\n\nThe deterministic fields remain narrow: `evidence.d19_proved_request_status=\"proved\"`, `evidence.d19_proved_first_channel_bank_transfer=true`, `evidence.real_phase_dirichlet_witness_guardrail=true`, `evidence.exact_discrete_pass=true`, and `evidence.total_bank_collision_pair_count=0`. The ASI consumer gate checks seven theorem IDs for this receipt boundary: `AIRA-T0058`, `AIRA-T0059`, `AIRA-T0171`, `AIRA-T0172`, `AIRA-T0239`, `AIRA-T0240`, and `AIRA-T0241`.\n\nThe receipt also carries replay-facing fingerprints: receipt `91b72a6dcf821a9733f21800cd1093a3d0665588022031ba72c94893800330c3`, normalized request `20e68c5f787e267c6611bc57b8d8e98e1cb0f5a74f272379716a5d83e761407d`, contract pack `df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae`, and contract `a0f35d3e89e9b6eac555f0392450f4f75cf7e70f30cff44ec7434f61bd85b468`. The recorded external test batch says `145 passed in 718.24s (0:11:58)`, and the ASI consumer gate rejects digest mismatch, missing required theorem ID, stale contract fingerprint status, and unsupported transfer-claim use.\n\nThose specifics matter because they keep the receipt inspectable. They also keep it bounded. This lane does not prove model quality, reasoning ability, context length, speed, memory scaling, deployment safety, transfer, or ASI. It does not prove deployed proof-contract transport inside The ASI Stack, and it does not promote any chapter core claim above `argument`.",
+      "rationale": "Replace the dense Circle receipt-boundary table with reader prose while preserving exact public-safe receipt facts, fingerprints, theorem IDs, validator boundaries, and non-claims."
+    },
+    {
+      "id": "v1_0.circle_contracts.mechanism_reader_replace",
+      "target_file": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Mechanism",
+        "aliases": []
+      },
+      "content": "The mechanism has one job: let a small structural fact travel without changing what kind of fact it is. A circular-address statement, phase-bank statement, freshness statement, or schedule statement may be useful only if the surrounding system can see its source, its check boundary, its fingerprint, and its refusal language.\n\nThe path begins with an engineering object that can be modeled finitely without cheating. If that model is faithful enough, the package attaches theorem references, deterministic values, source version, replay expectation, allowed consumers, blocked consumers, and explicit non-claims. That package may authorize a structural use. It does not authorize adoption, performance language, memory-scaling language, context-length language, deployment language, or ASI language.\n\n```{mermaid}\nflowchart LR\nA[\"Engineering object\"] --> B[\"Faithful finite model\"]\nB --> C[\"Checked structural package\"]\nC --> D[\"Consumer gate\"]\nD -- \"allowed structural use\" --> E[\"Bounded downstream use\"]\nD -- \"missing or stale fields\" --> F[\"Blocked use\"]\nE --> G[\"Workload request\"]\nG -- \"baseline and controls run\" --> H[\"Promotion review\"]\nG -- \"no workload evidence\" --> I[\"No promotion\"]\n```\n\nThe consumer gate is the important hinge. It asks whether this exact downstream layer is allowed to rely on this exact package for this exact narrow purpose. A memory layer might use a freshness package to guard a stale-read case. A cyclic mixer might use a phase-bank package to avoid one bookkeeping error. Neither use becomes evidence that a model got better.\n\nPromotion requires a different lane. Once a structural package requests quality language, the system must ask for ordinary workload evidence: a task, a baseline, negative controls, metrics, result artifacts, and residuals. If those pieces are missing, the package can remain useful as structure while still being workload-blocked.\n\nThat split is what keeps Circle-style machinery from becoming persuasive decoration. The formal lane protects exact small facts. The empirical lane decides whether those facts helped. The reader should be able to inspect where the package came from, what it allows, what it blocks, and why support remains at argument unless a separate evidence transition exists.\n\nA useful package therefore makes both acceptance and refusal easier. It should give future systems enough structure to act carefully and enough limits to stop when the requested claim has moved beyond what was actually checked.",
+      "rationale": "Replace the dense generated-reader mechanism with a clearer reader path while preserving finite-structure, consumer-gate, workload-evidence, and no-promotion boundaries."
+    },
+    {
+      "id": "v1_0.circle_contracts.interfaces_reader_replace",
+      "target_file": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces",
+        "aliases": []
+      },
+      "content": "The interface is deliberately plain. A formal project names the mathematical statement. A tool run emits the portable package. A downstream layer decides whether that package is enough for its own use. The evidence matrix then keeps the claim boundary visible.\n\nThat separation prevents authority from leaking across layers. Coil memory can use a freshness package as a structural guardrail. A cyclic mixer can use a phase-bank or collision package as a diagnostic. Neither use becomes a quality, speed, memory, or deployment result until an ordinary workload has been run against a baseline.\n\nFor the reader, the important fields are the ones that make refusal possible: source version, theorem references, deterministic values, content fingerprint, check command, replay state, consumer permissions, failure behavior, and non-claims. If those fields are missing, the idea may still be useful design context, but it should not travel as an accepted downstream fact.",
+      "rationale": "Replace the field-heavy proof-contract interface inventory with reader prose while preserving the canonical AI/research receipt fields."
+    },
+    {
+      "id": "v1_0.circle_contracts.minimum_viable_implementation_reader_replace",
+      "target_file": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The smallest honest version is not a full Circle transport layer. It is one narrow package that says what was checked, how to identify it, who may consume it, and what it does not establish.\n\nThe current repo has that narrow shape. It has generic proof-target and proof-contract examples, a local finite-record model for the receipt boundary, a Lean bridge for the public consumer-gate fixture, and a public consumer-gate check for one pinned Circle RoPE package. The bridge models one accepted receipt, four rejected mutation controls, seven theorem IDs, pinned digest fields, blocked support movement, no chapter-core promotion, and no deployed-transport claim. The validator expects the required theorem IDs and fingerprints, and it rejects missing theorem references, digest mismatches, stale contract status, and unsupported transfer claims.\n\nThe next build slice should make the path harder to fake. It should include one accepted package, one stale theorem reference, one fingerprint mismatch, one structural-only consumer gate, and one attempted promotion blocked because no workload evidence exists. That would test the transfer rule directly without pretending that this repo has replayed the whole external Circle project or shown downstream model improvement.",
+      "rationale": "Replace the implementation inventory with reader prose that names the current narrow artifact boundary without repeating every fixture field."
+    },
+    {
+      "id": "v1_0.circle_contracts.beyond_state_reader_replace",
+      "target_file": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Beyond the State of the Art",
+        "aliases": []
+      },
+      "content": "In its finished form, Circle proof-carrying contracts would act as a transport service for small structural facts. A finite fact could move through the ASI Stack with its theorem reference, deterministic fields, fingerprint, resolver state, replay expectation, consumer gate, and non-claims still attached.\n\nThe point is not to make proof language grander. It is to make it harder for proof language to drift. A receipt should let another layer use a structural fact while also seeing exactly what the fact does not establish: model quality, real-valued deployment behavior, runtime efficiency, memory improvement, downstream usefulness, or broad safety.\n\nThe mature transport lane would keep receipt states separate from capability states. A receipt may be theorem-linked, fingerprinted, resolver-checked, consumer-gated, workload-blocked, retired, or superseded; none of those states is a measured model result. Stale theorem IDs become residuals, fingerprint mismatches block replay, and workload-blocked receipts preserve structure without promotion.\n\nThe book has not demonstrated that transport service. The support state remains `argument` until receipt records, theorem-resolution checks, replay status, consumer-gate tests, stale-proof failure behavior, and downstream promotion reviews show that proof-carrying claims can travel without overstating what the proof stack established.",
+      "rationale": "Replace the dense proof-contract transport target architecture with reader prose while preserving the canonical AI/research receipt-field requirements."
+    },
+    {
+      "id": "v1_0.cognitive_compilation.contract_preservation_reader_replace",
+      "target_file": "chapters/cognitive-compilation-and-semantic-ir.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Authority-bearing IR and contract preservation",
+        "aliases": []
+      },
+      "content": "A structured intermediate representation is not automatically a semantic one. It earns that name only when a reader can follow the source contract's meaning through every transformation. The source fields therefore travel with their authority and ambiguity. A resolved ambiguity points to its resolution; an unresolved one blocks or escalates strict compilation. Authority may be carried or narrowed, but a successful pass cannot invent permission to execute, mutate, or cross into another owner's domain.\n\nField lineage shows where each objective, constraint, acceptance condition, authority limit, and non-goal lands in the semantic and target forms. This makes omission visible. A fluent paraphrase is not enough: each requirement points to a stable semantic node, a target field, and a validator that checks the relevant meaning. Pass receipts also retain earlier failures, so repair cannot rewrite history into a story in which nothing went wrong.\n\nRepair locality is judged from what actually changed. The compiler declares the affected subgraph, records the observed mutation set, and compares that set with the promised blast radius. Stable semantic identities matter because a positional insertion can move every later node without changing the intended requirement. Content digests answer a different question: equal digests can support an identity claim, and unequal digests can still preserve meaning, but neither result proves semantic equivalence by itself.\n\nThe strongest objection remains decisive: a complete, self-consistent packet can encode the wrong interpretation or rely on a shallow validator. The local contract-preservation fixture is therefore a blocking control, not proof of compiler correctness. It rejects nine hand-authored attacks involving paraphrase, omission, insertion, authority loss, repair-scope escape, erased failures, unresolved ambiguity, target-requirement loss, and digest equality presented as semantics. A real compiler claim still needs source parsing, generated target artifacts, artifact-aware validators, and measured repair behavior.",
+      "rationale": "Replace the dense preservation-record table with reader prose while preserving the canonical research protocol, diagram, objection, and negative-case detail."
+    },
+    {
+      "id": "v1_0.compact_generative_systems.receipt_states_reader_replace",
+      "target_file": "chapters/compact-generative-systems-and-residual-honesty.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Compression receipt states",
+        "aliases": []
+      },
+      "content": "Compression packages move through states because exactness is not a feeling produced by an elegant generator. A candidate package means a generator, seed, or law family has been proposed but not verified, so it belongs only in search and analysis. Verified exact is stronger: decode plus recorded repair equals the target under the declared reconstruction contract. Verified lossy is different again; loss has been declared and accepted only inside a bounded use envelope such as preview, drafting, routing, or another loss-tolerant task.\n\nRepaired exact is the honest middle case. The generator did useful work, but exactness depends on a named remainder, and that repair stream has to be counted with the metadata and interface costs. Literal fallback is not failure to hide. It means compression was not cheaper, verification failed, or the literal artifact was the right route, so the package becomes negative evidence for this method on this target.\n\nQuarantine is the hard stop. If search, verification, decode, consumer policy, or rate accounting violates the contract, the representation is blocked from downstream use except debugging. These states are evidence states for a representation, not claims about universal compression. They let the system preserve failed experiments without turning them into codec success stories.",
+      "rationale": "Replace the folded compression-receipt state table with reader prose while preserving the canonical AI/research receipt-state matrix inside the merged compact-generative chapter."
+    },
+    {
+      "id": "v1_0.compact_generative_systems.interfaces_reader_replace",
+      "target_file": "chapters/compact-generative-systems-and-residual-honesty.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces",
+        "aliases": []
+      },
+      "content": "The reader-facing interface is three linked promises. The compact generative entry says what the small thing stands in for, which seed or rule system does the work, what memory or state it depends on, how outputs are corrected, who may use them, and when the route must fall back. It also names visible burdens: generation, verification, repair, governance, hidden-complexity risk, promotion blockers, retirement conditions, evidence references, and non-claims.\n\nCompression packages narrow the question to reconstruction. Each package names the target artifact, generator or public law family, seed, search bound, generated regions, verifier result, repair stream, fallback threshold, final rate accounting, and consumer policy. The point is not cleverness; it is that exactness, declared loss, repair, fallback, and rejection remain distinguishable after the experiment.\n\nSemantic node entries apply the same discipline to meaning. A node can help retrieval, planning, compilation, compression, claim review, or explanation only while provenance, relations, grounding state, version, supersession path, remaining uncertainty, permitted uses, evaluation references, support-state effect, and non-claims travel with it. A clean semantic path is an index or working representation, not a new source of authority.\n\nConsumer policy ties the three records together. A generated reconstruction may be acceptable for preview but forbidden for proof input, audit, citation, exact replay, benchmark construction, or training. A semantic node may be adequate for routing but too lossy for a claim ledger. The interface therefore lets the stack use compact representations without letting them quietly change what counts as evidence.",
+      "rationale": "Replace the compact-system, compression-receipt, and semantic-node field catalogs with reader prose while preserving the canonical AI/research schemas in the live chapter."
+    },
+    {
+      "id": "v1_0.compact_generative_systems.mvi_reader_replace",
+      "target_file": "chapters/compact-generative-systems-and-residual-honesty.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The smallest useful implementation is not a smarter compressor. It is a public accounting object that refuses to hide cost. For a compact core, that object names the target, seed, rules, memory, generation status, correction path, verification status, independent reviewer requirement, allowed uses, fallback path, promotion blockers, retirement condition, support-state effect, evidence references, and non-claims. Passing it around does not prove the compact core works; it makes the remaining burden visible enough for later tests.\n\nThe repository has that narrow slice. `AsiStackProofs.CompactGenerativeSystems` checks bounded obligations around unresolved burden, lossy exactness overclaims, missing source artifacts, fallback paths, verifier-cost visibility, semantic provenance, hierarchy migration, evidence transitions, and non-claim boundaries. The compact GVR slice in `docs/compact_gvr_slice.md` keeps a tiny generate/verify/repair case public and replayable. Its scope is modest: bookkeeping distinctions can be represented and checked; no production codec, generator, verifier, or utility harness is claimed.\n\nThe next honest implementation step is a comparison set small enough to audit by hand. It should include one compact seed with bounded reconstruction cost, one lossy seed that cannot be called exact, one generator failure sent to fallback, one displaced burden routed to human review, and one promotion blocked because the verifier is not independent.\n\nFor semantic representation, the first slice is structural too: connect source passages, artifacts, semantic nodes, and claim entries, then revise or remove a source and check whether downstream consumers notice. That limited test would move the idea from prose toward replayable behavior.",
+      "rationale": "Replace the dense implementation artifact inventory with reader prose while preserving the public Lean and compact GVR boundaries without promoting evidence."
+    },
+    {
+      "id": "v1_0.context_transactions.minimum_viable_implementation_reader_replace",
+      "target_file": "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The smallest useful context-transaction implementation is not a production memory store. It is one transaction record for one materialized context view. That record says what operation occurred, which snapshot and mount policy were used, what was read or written, which branch policy applied, what taint and deletion obligations followed the view, whether declassification or closure exists, and what replay boundary future reviewers can inspect.\n\nThe current `context_transaction_record` schema and fixture validate that this record has the fields needed for review: transaction state, snapshot boundary, mount policy, read/write sets, isolation state, taint propagation, deletion closure, materialization state, faults, context ABI refs, source refs, audit refs, consumer policy, verification refs, promotion blockers, support-state effect, and non-claims. Passing the fixture means the record is inspectable. It does not mean a deployed memory service exists.\n\n`AsiStackProofs.ContextTransactions` models the same boundary with finite records. It checks committed-event snapshot reads, taint propagation, materialization blocking when open deletion obligations lack closure or declassification, and transaction-route outcomes for missing or stale snapshots, branch mismatches, mount faults, taint without declassification, deleted-cell materialization, invisible committed reads, missing replay boundaries, unsupported support promotion, missing non-claims, and complete committed-read admission.\n\nThe bounded memory-store fixture set is a behavioral rehearsal over synthetic events: one coherent snapshot read, one tainted branch that cannot merge, one deleted source whose derivative blocks materialization, one unauthorized mount fault, one declassification record that preserves residual risk, and one artifact replay reference. That is useful transaction discipline, but it is not read-your-writes consistency across a real store, runtime branch isolation, deployed mount repair, deployed deletion closure, poisoning resistance, VCM conformance, benchmark evidence, or support-state promotion.\n\nThe next useful implementation slice is a tiny public-safe transaction packet that can be replayed from record to dependent artifact: one source context object, one transaction, one materialized view or typed fault, one taint/deletion decision, one downstream artifact reference, one replay boundary, and explicit non-claims.",
+      "rationale": "Replace the dense transaction-field and proof-route inventory with reader prose while preserving the canonical AI/research fixture, Lean, harness, and non-claim boundaries."
+    },
+    {
+      "id": "v1_0.evidence_states.source_contribution_boundaries_reader_replace",
+      "target_file": "chapters/evidence-states-and-claim-discipline.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Source contribution boundaries",
+        "aliases": []
+      },
+      "content": "The source map is useful because each source contributes a different kind of discipline and a different limit. Benchmaxxing gives the book benchmark lifecycle language, anti-Goodhart pressure, regression duties, and residual accounting, but it does not supply a local benchmark result or a permanent intelligence metric. Spinoza contributes claim tiers, belief revision, contradiction handling, and downgrade behavior, but it does not prove open-domain autoformalization or arbitrary theorem validity.\n\nVIEA contributes durable ledgers for claims, artifacts, residuals, feedback, and regression coverage; that is not the same as a completed VIEA deployment or runtime benchmark. UAT contributes retrieval-bounded dossiers, proposition states, adversarial review, SME checkpoints, and sign-off patterns, while remaining unproven as a general truth-discovery system. Coherence Exchange contributes contestability, verification supply-chain, fork, exit, and audit vocabulary, but its epistemic-liquidity framing stays speculative and connector-bound.\n\nVerification Bandwidth contributes the most important reader-facing warning: loading source material into context is not equivalent to verifying the claim. Contradiction-rate tests and the proposed theory are still unrun here. Taken together, these sources justify a disciplined claim/evidence vocabulary, not a stronger support state. The claim stays at architectural argument until a specific evidence transition closes the remaining boundary.",
+      "rationale": "Replace the claim-source contribution matrix with reader prose while preserving the canonical AI/research source-boundary table."
+    },
+    {
+      "id": "v1_0.evidence_states.interfaces_reader_replace",
+      "target_file": "chapters/evidence-states-and-claim-discipline.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces",
+        "aliases": []
+      },
+      "content": "Evidence movement uses three public surfaces. The claim entry says what assertion is being made and how strong it is allowed to sound. The transition entry says what happened that could change that strength. The changelog tells later readers that the movement was deliberate rather than a side effect of cleaner prose.\n\nThose surfaces keep roles separate. Drafting can clarify a claim. Source work can add a map from source to claim. Formal work or experiments can add a checked artifact. Negative results can block or lower confidence. None of those events gets to borrow authority from the others unless the transition names the exact scope.\n\nFor a normal reader, the key question is simple: what object moved this claim, and what did it leave untouched? The research view keeps the complete field lists for that question. Human view keeps the rule: no claim should rise because the surrounding sentence got smoother.",
+      "rationale": "Replace the claim/evidence field inventory with reader prose while preserving the canonical AI/research record fields."
+    },
+    {
+      "id": "v1_0.evidence_states.minimum_viable_implementation_reader_replace",
+      "target_file": "chapters/evidence-states-and-claim-discipline.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The smallest honest version is a working claim ledger, a working transition ledger, and a rule that neither can silently change the other. Appendix C supplies the public claim surface. The schema examples and Lean module supply a narrow local model of the rule. The support-state harness checks synthetic no-change, upward, downward, and terminal cases.\n\nThree current audits make the rule harder to blur. The evidence-bundle probe checks two valid synthetic bundles and seven invalid controls. The claim-ledger audit checks all 44 manifest core claims against Appendix C and rejects seven mutation controls. The accepted-transition audit checks 74 accepted transition records, ten bounded non-core upward transitions, the no-promotion ledger, and seven invalid controls.\n\nThose artifacts are useful because they make bookkeeping failures visible. They do not prove any chapter core claim, and they do not prove that the mapped sources are interpreted correctly. A stronger exercise would include one lineage-only source, one direct-support source, one failed verification, one shape-only check, one finite formal predicate, and one benchmark result whose scope is deliberately narrower than the tempting prose claim.",
+      "rationale": "Replace the dense harness inventory with reader prose that preserves the current narrow evidence-control boundary."
+    },
+    {
+      "id": "v1_0.proof_envelope.beyond_state_reader_replace",
+      "target_file": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Beyond the State of the Art",
+        "aliases": []
+      },
+      "content": "The endpoint for this layer is not a single theorem that claims to prove safety, alignment, or intelligence. It is a claims control plane: every formal-looking promise has to travel with the artifact that actually supports it, the command that checked it, the boundary it covers, and the claims it refuses to support.\n\nIn a mature stack, chapters, protocols, releases, and runtime modules would consume proofs only through typed records. A Lean predicate, schema validation, process check, behavior test, benchmark, external theorem reference, and research backlog item would remain different kinds of authority. They could inform one another, but none of them could quietly stand in for the others.\n\nThe important future work is semantic adequacy. A finite predicate can build cleanly and still be the wrong predicate for the boundary the prose wants to defend. The mature proof envelope would therefore ask whether each proof is not only valid in its lane, but adequate for the consumer trying to rely on it. Stale proofs, orphaned targets, borrowed theorem ids, and claim-from-prose errors would become downgrade or residual events rather than confidence theater.\n\nWith that envelope in place, the stack could use mechanized record-level claims without pretending they prove deployed enforcement, empirical model quality, benchmark success, source truth, or broad ASI safety. The endpoint remains a target architecture until semantic adequacy reviews, artifact audits, runtime consumers, and accepted evidence transitions show exactly where each formal predicate can carry prose.",
+      "rationale": "Replace the dense proof-envelope target-architecture checklist with reader prose while preserving the canonical AI/research proof-consumption requirements."
+    },
+    {
+      "id": "v1_0.proof_envelope.insufficiency_reader_replace",
+      "target_file": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Why existing approaches are insufficient",
+        "aliases": []
+      },
+      "content": "Formal methods fail the book in two opposite ways. They can be aimed at claims that are too broad to formalize, such as saying that a whole system is safe. They can also be dismissed as too narrow to matter, even when a small proof would prevent a real authority or evidence mistake.\n\nThe useful middle path is lane separation. Planning languages, proof-carrying code, TLA+, Lean, Dafny, model checkers, runtime monitors, and neural-network verification tools all show different ways to make a claim checkable. None of them gives the ASI Stack permission to treat every passed artifact as the same kind of proof.\n\nFor this book, the lesson is practical. A Lean theorem, JSON Schema, Python validator, benchmark run, and external theorem reference each carry different authority. A schema can validate the shape of a record without proving the event happened. A benchmark can measure a route without proving safety. A theorem can prove a finite predicate while still missing the boundary the prose wanted to defend.\n\nThe proof envelope exists to prevent that drift. It asks which lane the artifact belongs to, what it checked, who may rely on it, and which claims remain outside its reach. If that answer is unclear, the claim should stay at argument support until a narrower predicate, better test, or explicit semantic adequacy review exists.",
+      "rationale": "Replace the dense comparator inventory with reader prose that preserves lane separation, external-formal-methods context, and semantic-drift boundaries."
+    },
+    {
+      "id": "v1_0.proof_envelope.problem_reader_replace",
+      "target_file": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Problem",
+        "aliases": []
+      },
+      "content": "Many sentences in the ASI Stack sound as if they should be checkable: a request must not cross an authority boundary, a support state must not rise without evidence, a capability replacement must keep its rollback path, and a context mount must not silently carry taint into a clean zone.\n\nThose are not all the same kind of sentence. Some can become small machine-checked predicates. Some are better handled as data-shape contracts or process checks. Some are still research questions. The problem is deciding which is which before persuasive language outruns the artifact.\n\nThe goal is not to prove the whole architecture in one sweep. The goal is to make formal confidence narrow, inspectable, and honest. A small check is valuable when the book knows exactly what it checked and refuses to borrow certainty for everything around it.",
+      "rationale": "Replace the reader Problem section with lower-density prose that preserves proof-lane discipline and the no-grand-proof boundary."
+    },
+    {
+      "id": "v1_0.proof_envelope.mechanism_reader_replace",
+      "target_file": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Mechanism",
+        "aliases": []
+      },
+      "content": "The mechanism is a narrowing pass. A broad architectural sentence is rewritten as a small question: what exactly would have to be true for this sentence to earn more authority than ordinary argument?\n\nIf the answer is operational, the claim is routed to the lane that fits it. A finite invariant may go to Lean. A shape requirement may become a data contract. A workflow requirement may become a process check. A measured claim may need an experiment with a baseline and residuals. If no narrow question can be stated yet, the claim stays prose.\n\n```{mermaid}\nflowchart LR\nA[\"Broad architectural sentence\"] --> B[\"Narrow question\"]\nB --> C{\"Can it be checked honestly?\"}\nC -- \"finite invariant\" --> D[\"Formal lane\"]\nC -- \"shape or process\" --> E[\"Executable lane\"]\nC -- \"measurement\" --> F[\"Experiment lane\"]\nC -- \"not yet\" --> G[\"Research residual\"]\nD --> H[\"Bounded authority\"]\nE --> H\nF --> H\nG --> I[\"No promotion\"]\n```\n\n**What this mechanism protects:** a successful check may strengthen only the sentence it actually covers. It does not automatically validate source interpretation, deployed behavior, model quality, or the surrounding theory.\n\nThis narrowing pass also gives future agents a practical routine. Before adding stronger language, identify the claim, state the small question, name the artifact lane, run the relevant command, and write down the claims that still remain outside the result.\n\nThe same routine applies when the result is negative. If the small question cannot be stated, that failure is useful information. It says the idea is still too broad, too ambiguous, or too dependent on future implementation detail. The honest action is to keep the surrounding prose at argument strength, name the missing bridge, and avoid pretending that formal style has created formal authority.\n\nThe narrowing pass also protects good work from being ignored. A small check can matter even when it does not settle the whole theory. It can block a false promotion, keep an authority ceiling intact, catch a stale mapping, or force a future implementation to carry the right limitation. Small boundaries are not decorative; they are the way a large system stays governable while its evidence base grows. That discipline compounds.",
+      "rationale": "Replace the generated-reader mechanism section with prose that explains the lowering path and consumer boundary without dense proof-target inventory language."
+    },
+    {
+      "id": "v1_0.proof_envelope.interfaces_reader_replace",
+      "target_file": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces",
+        "aliases": []
+      },
+      "content": "The main interface is the Proof Target Record. It is the docket that connects a prose claim to the outline, the Lean workspace, schemas, validators, Appendix E, and future release profiles. Its job is to make a claim's formal status inspectable without letting the artifact speak beyond its lane.\n\nA useful record names the claim location, stable tag, target kind, artifact lane, formal target, artifact references, verifier command, verifier result, support-state effect, consumer requirements, semantic adequacy state, limitations, and non-claims. The live research source keeps the field list explicit because future agents and validators need that exact contract. The reader version keeps the meaning: proof evidence is usable only when its lane, command, version, adequacy state, and limits match the consumer trying to rely on it.\n\nThat distinction matters. A passed `lake build` can justify saying that a local finite predicate builds. It cannot justify saying that source interpretation is correct, a deployment enforces the rule, a model behaves well, or a benchmark improved. A passed schema check can justify saying that a fixture has the required shape. It cannot prove that the represented event happened.\n\nThe semantic adequacy review is the bridge between formal success and prose use. It asks whether the finite predicate is the right predicate for the boundary being defended. Until that review exists, the proof remains true but narrow, and the prose should stay narrow with it.",
+      "rationale": "Replace the generated-reader field list with prose that preserves the Proof Target Record contract and downstream consumer boundary."
+    },
+    {
+      "id": "v1_0.proof_envelope.invariants_reader_replace",
+      "target_file": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Invariants",
+        "aliases": []
+      },
+      "content": "The governing invariant is simple: stronger language needs a matching artifact, and the artifact's authority must not exceed the thing it actually checked.\n\nA theorem build, a data-shape pass, a workflow check, an experiment, a site render, and a review note are different kinds of evidence. They can sit beside one another, but they cannot trade identities in secret. The book may say a narrow predicate passed only when the named command passed. It may not turn that result into model quality, deployment safety, or source-truth language.\n\nThe second invariant is continuity. Tags, limitation prose, generated surfaces, and consuming chapters need to keep pointing at the same bounded claim. If the prose moves and the check no longer governs it, the formal artifact becomes stale until the boundary is repaired.",
+      "rationale": "Replace the list-heavy reader invariants section with smoother prose while preserving artifact-lane separation and no-theater boundaries."
+    },
+    {
+      "id": "v1_0.proof_envelope.failure_modes_reader_replace",
+      "target_file": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Failure modes",
+        "aliases": []
+      },
+      "content": "The most tempting failure is proof laundering: using a valid narrow result to sell a broader claim whose meaning was never checked. A finite predicate can be correct and still miss the architecture boundary the prose is leaning on.\n\nThe opposite failure is orphaned formality. A target can keep building after its surrounding prose has changed, leaving a polished artifact that no longer governs the sentence readers are asked to trust.\n\nThe envelope treats both cases as downgrade events. If the claim is too broad, narrow it. If the artifact no longer matches the prose, repair the mapping. If the source is external, keep ownership and transfer limits explicit. The point is not to avoid formal work; it is to stop formal work from becoming decorative certainty.",
+      "rationale": "Replace the terse reader failure-mode inventory with book-facing prose that preserves proof laundering, orphaned formality, and semantic mismatch warnings."
+    },
+    {
+      "id": "v1_0.proof_envelope.minimum_viable_reader_replace",
+      "target_file": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The minimum viable proof envelope is a governance surface, not a grand proof. It already has a generated proof manifest, a target-record fixture, a local Lean build gate, a finite `ProofEnvelope` model, Appendix E coverage, a proof-artifact traceability audit, and a proof-depth classifier.\n\nThose pieces answer a practical maintenance question: when the book says a target is implemented, is there a visible route from the outline and claim surface to the proof manifest, the Lean module or validating artifact, the command that checks it, the limitation prose, and the generated appendix surface? That traceability is useful. It still does not decide whether the finite predicate is the best formalization of the intended boundary.\n\nThe current build also keeps projection-style proofs visible. Some theorems decompose a record or case split; others mostly expose a field that was already assumed. Both can be legitimate maintenance hooks, but they should not be described with the same persuasive force. The proof-depth classifier makes that distinction visible without claiming semantic adequacy.\n\nThe next useful slice is a receipt set for the proof/spec lanes: one Lean predicate receipt, one schema-validation receipt, one process-validator receipt, one behavior-test receipt, one benchmark receipt, one rejected external-theorem-as-local-proof case, and one semantic-adequacy residual that prevents prose promotion. Until those receipts and reviews exist, the implementation remains a narrow anti-laundering surface.",
+      "rationale": "Replace the generated-reader implementation inventory with prose while preserving the current local proof-manifest, fixture, Lean-build, audit, proof-depth, and semantic-adequacy boundaries."
+    },
+    {
+      "id": "v1_0.proof_envelope.summary_reader_replace",
+      "target_file": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Summary",
+        "aliases": []
+      },
+      "content": "The proof envelope gives the book a disciplined way to use formality without theatrical certainty. It asks every formal-sounding claim to shrink until it becomes a question that can be checked honestly.\n\nWhen the check exists, the book may say so. When the check is narrow, the language must stay narrow. When the intended meaning is still larger than the artifact, the claim remains an argument or a research residual.\n\nThat restraint is the value. It lets the ASI Stack accumulate small verified boundaries while refusing to pretend that a green build, a clean data file, or a successful measurement proves the whole architecture. The result is slower language, but stronger trust.",
+      "rationale": "Replace the generated-reader summary with a lower-density close that preserves lane separation and no-overclaim boundaries."
+    },
+    {
+      "id": "v1_0.fast_generation.insufficiency_reader_replace",
+      "target_file": "chapters/fast-generation-architectures.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Why existing approaches are insufficient",
+        "aliases": []
+      },
+      "content": "Standard autoregressive decoding, raw throughput benchmarks, and isolated serving optimizations do not specify when a faster generation mode is acceptable, how it is verified, or how its failures block promotion.\n\nThe failure is conceptual before it is technical. A model can emit many tokens quickly and still produce less useful cognition per second if more tokens are rejected, repaired, rerun, or audited. A serving system can improve aggregate throughput while leaving single-request latency unchanged. A speculative or diffusion system can look fast when proposed tokens are counted, then lose the advantage when accepted tokens, verifier cost, memory pressure, retries, and task success are counted.\n\nThe accounting unit has to be stricter than tokens per second. The stack should care about accepted or verified correct tokens per wall-clock time, and about task success per wall-clock time, under a declared task and risk model. Those metrics are still incomplete, but they point the architecture toward useful governed output rather than surface text velocity.\n\nThis is why a generation mode cannot be promoted just because it is fast in isolation. It must still say what was proposed, what was accepted, what failed, what was repaired, what fell back to a slower path, and whether the whole governed route delivered correct work sooner.",
+      "rationale": "Replace the reader-visible code-style metric block with prose while preserving the canonical AI/research formulas."
+    },
+    {
+      "id": "v1_0.fast_generation.taxonomy_reader_replace",
+      "target_file": "chapters/fast-generation-architectures.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Generation-mode taxonomy",
+        "aliases": []
+      },
+      "content": "The taxonomy is deliberately plural because generation speed is not one problem. The autoregressive baseline remains the fallback and measurement anchor: it is slow, but it gives the stack a known left-to-right route. Multi-token prediction, speculative decoding, multi-head internal drafting, and feature-level or latent drafting all try to propose more future work from a cheaper path, but their proposed output only matters when acceptance, rejection, verifier cost, and fallback are recorded separately.\n\nLookahead and trie retrieval reuse likely continuations from prior patterns, which can help only when stale procedural-memory shortcuts are controlled. Diffusion language modeling sketches or denoises many positions in parallel, but the stack still has to verify span commitments, uncertainty repair, and final task success. Multi-seed diffusion and hybrid autoregressive, MTP, and diffusion routes remain research directions here until useful solution per second improves after verifier and parallel-compute costs are counted.\n\nEarly-exit and self-speculative inference use intermediate layers as cheap drafts and deeper layers as verifiers. State-space or recurrent alternatives attack sequence-processing cost through a different substrate. KV-cache and serving-layer accelerators improve memory layout, batching, and throughput around generation. These methods can compose, but their evidence records cannot collapse into one speed claim.\n\nGeneration governance must keep decoding tricks, training objectives, serving memory systems, and sequence-model substrates separate. Each solves a different bottleneck. A faster route becomes useful only when the record shows which bottleneck improved and which quality, memory, verification, or fallback cost moved elsewhere.",
+      "rationale": "Turn the generation-mode taxonomy table into reader prose while preserving the canonical AI/research comparison matrix."
+    },
+    {
+      "id": "v1_0.fast_generation.minimum_viable_implementation_reader_replace",
+      "target_file": "chapters/fast-generation-architectures.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "A minimal implementation is a generation-mode registry plus a benchmark record. The record names the task risk, latency budget, context packet, mode, draft source, verifier, acceptance predicate, accepted output, wall-clock time, quality or pass result, compute and memory notes, fallback behavior, and promotion decision.\n\nThe first executable slice should be deliberately small: one plain autoregressive baseline, one verifier-preserving acceleration path, and one negative control that looks cheap but fails the governance record. A negative result is still useful if it shows that a faster mode produced less useful output after verification, repair, fallback, and residual handling are counted.\n\nThe current `generation_mode_record` fixture validates that shape without claiming a model result. It records `not_run`, `not measured`, and `not_evaluated` for the demo route. The Lean envelope adds bounded rejection cases for missing accepted-output evidence, missing verifier-cost evidence, failed accelerated drafts without fallback or residual handling, and high-risk fast-mode selections that omit verifier, risk-override, or slower-fallback records.\n\nThe Project Theseus generation-mode import is a public-safe implementation-reference slice, not a speed result. Its sanitized summary records 18 modes, 13 comparisons, zero hard gaps, zero missing report refs, five hard boundary gates passing, and zero promotable comparisons. Five comparisons show accepted-span speed lift, but every candidate task-pass count and useful-solution-per-second value remains zero, so the import warns against raw-throughput promotion.\n\nThe Theseus support replay probe reruns only the ASI-side static validators and records command-output and artifact digests. It does not copy private task rows, candidate outputs, prompts, training rows, checkpoints, traces, or benchmark payloads, and it does not rerun Theseus.\n\nThe Fast generation task bundle adds a local public-safe accounting replay. Result `fast_generation_task_bundle_2026_07_02_local` compares an autoregressive reference, a verified fast-template route, and a cheaper latency-only proxy across four deterministic receipt tasks. The verified fast-template route passes 4/4 tasks at 264 deterministic cost units versus 632 for the baseline. The latency-only proxy is rejected at 176 cost units because it fails verifier, fallback, residual, and support-state boundaries.\n\nThat result is accounting evidence for this repository's fixture, not a claim that an AI model is faster. It does not reproduce speculative decoding, multi-token prediction, diffusion generation, KV-cache serving, serving throughput, deployment behavior, or support-state promotion. Experimental entries such as `multi_seed_diffusion` or `hybrid_ar_diffusion_repair` should remain unroutable until source notes, tests, and accepted evidence records exist.",
+      "rationale": "Split the dense Theseus import and task-bundle accounting paragraph into reader prose while preserving no-speedup and no-promotion boundaries."
+    },
+    {
+      "id": "v1_0.human_intent.intake_states_reader_replace",
+      "target_file": "chapters/human-intent-as-a-formal-input.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Intent intake states",
+        "aliases": []
+      },
+      "content": "Intent intake needs states because a request is not permission just because it is understandable. A raw request can be interpreted and reviewed, but it should not dispatch work. An interpreted request has a structured reading, yet open assumptions may still limit it to drafting, option generation, or clarification. A bounded default is a low-risk assumption with scope and rollback; it may guide planning only inside that stated boundary.\n\nWhen missing information would change outcome, authority, evidence, or affected parties, the right state is clarification required. When the outcome is clear but the required means are not authorized, the state is authority pending: the system can ask for approval, offer a narrower route, or produce draft-only work, but it cannot quietly take the stronger power.\n\nAn accepted contract is the first state that can lower into command contracts and plan sources, because objective, means, evidence, and stop conditions are sufficiently bounded. If downstream work changes the means, authority, publication surface, affected parties, evidence burden, or stop conditions, the work returns to re-contracting. Denied, stale, superseded, or outside-policy requests become lineage and residual records only.\n\nThese states keep the human request corrigible. They let the system help where the lease is clear and stop where a useful interpretation would become unauthorized action.",
+      "rationale": "Replace the intent-intake state table with reader prose while preserving the canonical AI/research state matrix."
+    },
+    {
+      "id": "v1_0.integrated_reference.showpiece_trace_reader_replace",
+      "target_file": "chapters/integrated-reference-architecture.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Worked showpiece trace: one request through the stack",
+        "aliases": []
+      },
+      "content": "The showpiece trace is deliberately small. It follows one bounded living-book maintenance request, `intent://human-book-maintenance-request`, instead of pretending to run an ASI system. That keeps the beginning honest: the trace starts from a human purpose with limited authority, not from a system-owned drive to optimize itself.\n\nGovernance turns that request into `command://chapter-update-contract`. The command permits manuscript and fixture maintenance only. It does not grant runtime execution, deployment, benchmark, model-quality, or support-state-promotion authority. Planning then emits `plan://reference-trace-dry-run`, a citable parent artifact with context obligations, route expectations, validation commands, evidence boundaries, and residuals that must survive later handoffs.\n\nMemory enters through `context://source-bound-packet`. That packet is the guard against attractive but ungrounded synthesis: the trace may use recorded source and manifest context, but it may not launder unpublished private text, connector-only claims, or recollection into evidence. Routing then selects `route://bounded-reference-route`, which keeps the path inside fixture-backed book maintenance rather than dispatching a deployed runtime.\n\nVerification receives `claim://argument-only-reference-claim`. The claim can say that the reference-trace record shape was exercised and that the architecture is easier to inspect. It cannot say an integrated runtime exists, that a deployed authority stop worked, or that Project Theseus, MoECOT, or VCM executed the run. Execution stays just as modest: `work://fixture-only-work-order` and `audit://fixture-validation-log` point to repository fixture validation, not autonomous operation.\n\nThe evidence ledger records `evidence://record-shape-only-update`, with residuals still attached: no runtime trace harness and no live artifact-continuity audit. The SCF boundary receives `scf://no-promotion-review`, preserving the promotion blockers instead of converting a cleaner specification into a capability upgrade. That is the whole point of the reference architecture: even a successful maintenance trace should leave the support state at `argument` when the evidence only supports record shape.\n\nThe blocked path uses the same spine under stress. `intent://restricted-execution-request` becomes `command://restricted-command-contract` and `plan://blocked-reference-trace`, but governance denies runtime execution authority. The route becomes `route://denied-runtime-route`; execution emits `work://blocked-work-order`; the audit records `audit://authority-denial-log`; the evidence ledger keeps `evidence://blocked-path-record`; and the SCF gate carries `scf://promotion-blocker`. The named stop conditions are missing execution authority, unaccepted residual, and required governance review.\n\nThis is the architecture's reader-facing falsification target. A future live implementation should be able to replace the fixture-only artifacts with real artifacts of the same kind while preserving parentage, authority deltas, evidence deltas, residual deltas, validation commands, stop conditions, and non-claims. Until that happens, the showpiece is a specification trace and local replay boundary, not runtime integration evidence.",
+      "rationale": "Replace the dense worked-trace table with reader prose while preserving the same artifact spine, blocked path, validation boundary, and non-claims."
+    },
+    {
+      "id": "v1_0.integrated_reference.mechanism_reader_replace",
+      "target_file": "chapters/integrated-reference-architecture.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Mechanism",
+        "aliases": []
+      },
+      "content": "The mechanism is a trace kernel for the stack. A request enters with a human purpose and a limited authority grant. Each layer then emits something durable enough for the next layer to inspect: a command contract, plan, context packet, route decision, claim envelope, work order, audit log, evidence update, or improvement decision.\n\nThe point is not to make every layer run inside one agent loop. The point is to prevent the layers from dissolving into hidden prompt state. Planning should not silently become verification. Memory should not silently become authority. Execution should not silently forgive a failed residual. Evidence should not silently promote a result whose support boundary is still only architectural argument.\n\n```{mermaid}\nflowchart LR\nA[\"Human intent\"] --> B[\"Governed command\"]\nB --> C[\"Plan and context\"]\nC --> D[\"Route and verification\"]\nD --> E[\"Work order and audit\"]\nE --> F[\"Evidence update\"]\nF --> G[\"SCF decision\"]\nG -- \"insufficient authority or evidence\" --> H[\"Blocked, narrowed, or reviewed\"]\nG -- \"accepted narrow result\" --> I[\"Bounded continuation\"]\n```\n\nThe current repository has a modest version of that shape. It has deterministic reference-trace fixtures: one approved maintenance flow and one blocked authority flow. The approved flow carries stable parent artifacts from intent through plan, context, route, work order, audit log, evidence update, and SCF no-promotion review. The blocked flow follows the same spine but stops because runtime execution authority is missing and governance review is required.\n\nA first local command replay now sits beside those fixtures through the Resource flagship lane. That replay records a command, output digest, artifact bundle, validation path, and blocked-path reference. It is useful because it shows that the record family can carry a real local command result, not only a hand-written example.\n\nThe boundary remains strict. These records do not prove a deployed runtime, live artifact-continuity service, authority-stop enforcement outside the fixture, model quality, benchmark quality, scheduler behavior, economic outcome, or support-state promotion. They show the shape of accountable integration: parentage, authority deltas, evidence deltas, residual deltas, validation commands, stop conditions, source references, and non-claims survive the handoff.\n\nThat is the integration test the rest of the stack has to meet. A future implementation can be impressive only after it produces comparable traces under both success and refusal. If parentage disappears, authority becomes ambient, evidence changes without a named claim, or residuals are erased, the architecture has not composed yet.",
+      "rationale": "Replace the dense generated-reader mechanism and fixture-trace inventory with a clearer reader trace-kernel explanation while preserving fixture-only, local-replay, blocked-path, and no-promotion boundaries."
+    },
+    {
+      "id": "v1_0.intent_execution.validation_states_reader_replace",
+      "target_file": "chapters/intent-to-execution-contracts.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Command contract validation states",
+        "aliases": []
+      },
+      "content": "Command contracts move through pre-execution validation states. A draft contract is still being extracted or normalized, so it cannot dispatch planning work. A field-complete contract has the required slots, but those slots may still contain inferred or defaulted values, so it is ready for validation and review rather than execution.\n\nIf context, examples, hidden instructions, or fields conflict with explicit constraints, the contract enters conflict-detected state and should produce a residual or clarification. If a means, tool, disclosure, publication, or other effect was inferred rather than granted, the contract is authority-inferred and must stay draft-only or be re-contracted.\n\nDispatch is blocked when required output, verification, failure, approval, or authority fields are missing or vague. A contract becomes validated for planning only after required fields are concrete and precedence review passes. If a newer contract replaces it, the old contract becomes a historical trace rather than active permission.\n\nThese states do not say the work is correct. They only say whether the command is clear enough to become planning input.",
+      "rationale": "Replace the command-contract validation-state table with reader prose while preserving the canonical AI/research state matrix."
+    },
+    {
+      "id": "v1_0.intent_execution.interfaces_reader_replace",
+      "target_file": "chapters/intent-to-execution-contracts.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces",
+        "aliases": []
+      },
+      "content": "Command semantics are carried by the Command Contract. The record keeps the operational pieces together: contract identity, intent link, validation state, role, objective, context references, field provenance, field confidence, constraints, procedure, allowed and forbidden means, bounded defaults, output contract, verification, failure behavior, authority ceiling, authority basis, approvals, expected artifacts, feedback route, re-contract points, dispatch blockers, and non-claims.\n\nThe interface is narrower than natural language on purpose. The raw request can stay attached for review, but the structured fields control dispatch. Planning consumes the command. Execution enforces allowed means and output contracts. Verification checks declared criteria and failure behavior. Evidence records which fields were satisfied, repaired, escalated, or left residual.\n\nEach field also carries status. Confirmed fields may support planning because they were explicitly stated or accepted by the relevant boundary. Policy-imposed fields can constrain planning but cannot broaden authority. Source-derived fields may support context or requirements only within the source's limits. Defaulted fields need a scope and a re-contract trigger. Inferred fields can help a draft, but they cannot authorize side effects. Missing required fields block dispatch or narrow the response to clarification.\n\nThat metadata keeps confidence from becoming hidden evidence. A field can be useful and still too weak to authorize work.",
+      "rationale": "Turn the command-contract field and field-status tables into reader prose without changing the canonical interface vocabulary."
+    },
+    {
+      "id": "v1_0.labor_os.lifecycle_states_reader_replace",
+      "target_file": "chapters/labor-os-and-typed-jobs.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Typed job lifecycle states",
+        "aliases": []
+      },
+      "content": "Typed jobs use lifecycle states so work cannot slide from idea to side effect without review. A drafted job is only a packet proposal; it cannot dispatch. A locked job has fixed contract, parentage, expected artifact, and failure behavior, so it can enter permission review. If approval is missing or stale, the job waits. If approval is present and scoped, it may become dispatchable once permissions, inputs, and adapter requirements also pass.\n\nRunning is not completion. A running job must emit audit events. When output exists, the job enters adjudication until verification, review, or acceptance is complete. A delivered job has returned or exposed a useful artifact, but that still does not make it evidence-ready.\n\nEvidence readiness requires the required artifact capture, verification, audit, residual, and replay or non-replay fields to exist. Failed or blocked jobs need residuals and recovery paths. Quarantined jobs had unauthorized effects, missing provenance, or unsafe behavior and cannot support promotion. Replayed or retired jobs become historical trace unless they are requalified.\n\nThe distinction between delivered and evidence-ready is central. Delivery satisfies a user-facing workflow; evidence readiness satisfies the living stack.",
+      "rationale": "Replace the typed-job lifecycle-state table with reader prose while preserving the canonical AI/research state matrix."
+    },
+    {
+      "id": "v1_0.living_book_methodology.interfaces_reader_replace",
+      "target_file": "chapters/living-book-methodology.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces",
+        "aliases": []
+      },
+      "content": "The methodology speaks through release records. A release record tells a future reader which source commit was rendered, which audience profile it served, which validations ran, which changelog entry describes the change, which public URL or local output exists, which derivatives were produced, and which residuals remain.\n\nReader editions use the same discipline. A profile may say that EPUB, DOCX, PDF, or audio is a target, but a target is not an artifact. A generated file is not approved merely because it exists. A released reader artifact needs its own source commit, strip policy, review state, accessibility notes, residuals, and non-claims.\n\nThat separation keeps publication from masquerading as evidence. A successful Pages build can prove that the site rendered. It cannot prove that a chapter claim is true. A reader manuscript can improve pacing and continuity. It cannot change support states, source boundaries, proof status, or implementation horizons. The interface exists so every audience can see what kind of authority it is holding.",
+      "rationale": "Replace the generated-reader publication-interface inventory with prose that preserves release-record, reader-derivative, and no-publication-as-proof boundaries."
+    },
+    {
+      "id": "v1_0.living_book_methodology.minimum_viable_reader_replace",
+      "target_file": "chapters/living-book-methodology.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The minimum viable version is the public repository itself operating under rules. The manifest gives chapters stable addresses. The outline records drafting intent and proof targets. Source notes show what has been read. Appendix C records claim state. The changelog records meaningful movement. Local validation and Quarto render checks keep the public site from drifting away from the source.\n\nThe current implementation also has a first executable change-packet boundary. Synthetic packets can show whether a public-surface change carried validation, changelog, audience, derivative, support-state, residual, and non-claim receipts. Expected-invalid packets reject missing receipts, equal-authority reader derivatives, and support promotion without evidence-transition references.\n\nThat is useful release hygiene, not a quality certificate. It does not prove source interpretation, editorial completeness, future-agent judgment, reader release approval, audio production, or the truth of any architecture claim. It only shows that the book can make some maintenance and publication mistakes harder to hide.",
+      "rationale": "Replace the generated-reader implementation inventory with prose that names the current living-book repo and change-packet boundary without overclaiming manuscript quality or artifact approval."
+    },
+    {
+      "id": "v1_0.living_book_methodology.beyond_state_reader_replace",
+      "target_file": "chapters/living-book-methodology.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Beyond the State of the Art",
+        "aliases": []
+      },
+      "content": "The endpoint is a research operating system that happens to render as a book. The live site remains the AI-readable and researcher-auditable source. Human view, reader manuscripts, ebook formats, and future audio scripts are derived projections with their own review state instead of rival sources of truth.\n\nAt that maturity, adding a new AI paper would be a governed build event. The system would ingest the public-safe source, decide whether it updates an existing chapter or creates a precise new one, revise the manifest and outline, update source notes and claim mappings, generate proof or test backlog, render the live site, and prepare reader editions without hand-renumbering or hidden support-state movement.\n\nThe mature workflow would also know how to refuse. A missing source note would block source-derived support. A failed validator would block release. A reader edition could improve prose while leaving claim authority unchanged. A polished artifact could be enjoyable without becoming evidence for the architecture.\n\nThe book has not demonstrated that full operating system yet. It has a strong scaffold, tracked deltas, release records, and synthetic change-packet checks. Stronger claims require repeated real source ingestions, reader-edition releases, artifact reviews, evidence transitions, and failed-change records showing that continuous improvement preserved the audit trail under pressure.",
+      "rationale": "Replace the dense target research-OS checklist with reader prose while preserving tri-audience, ingestion, release, and non-claim boundaries."
+    },
+    {
+      "id": "v1_0.mathematical_substrates.adoption_lanes_reader_replace",
+      "target_file": "chapters/mathematical-and-search-substrates.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Adoption packet lanes",
+        "aliases": []
+      },
+      "content": "The adoption packet has four lanes because a substrate can be real in one sense and still unready in another. The structural lane asks what fact, proof receipt, or deterministic fixture exists. If the theorem is missing, the receipt is unresolved, or the model does not match the intended use, that lane blocks promotion even if the idea is mathematically attractive.\n\nThe empirical lane asks for the workload, metric, baseline, negative control, and report. Without workload evidence or with failed controls, the substrate stays exploratory or becomes a recorded negative result. The consumer lane asks which downstream use may rely on the record; a consumer cannot borrow an axis the record does not support.\n\nThe retirement lane is what keeps optionality honest. It names the result that would narrow, supersede, or retire the substrate, so a hidden negative result cannot quietly become architectural commitment. Together these lanes let the stack keep unusual mathematics available while refusing to turn elegance into permission.",
+      "rationale": "Replace the substrate-adoption lane table with reader prose while preserving the canonical AI/research promotion-blocker matrix."
+    },
+    {
+      "id": "v1_0.personal_compute_hives.mechanism_reader_replace",
+      "target_file": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Mechanism",
+        "aliases": []
+      },
+      "content": "A personal compute hive begins with a plain question: which owned or rented machine is allowed to do this particular work? The answer should come from records, not vibes. A device card says what a phone, laptop, GPU desktop, NAS, workshop computer, old machine, project runner, or rented node can do and what it may touch. A job contract says what work is being requested, which data and tools are in scope, what risk tier applies, what budget and deadline matter, and what evidence must return.\n\nThe scheduler first rejects unlawful placements. It should remove nodes that cannot see the data, cannot hold the tool authority, lack the required sandbox, exceed the budget, need unavailable human approval, or would move private context into an unacceptable place. Only after that policy filter does optimization begin. Speed, locality, cost, energy, and capacity matter, but they do not outrank consent, data class, tool risk, or revocation.\n\n```{mermaid}\nflowchart LR\n  contract[\"Job contract\"] --> policy[\"Policy filter\"]\n  policy -- \"denied\" --> rejected[\"Rejected nodes with reasons\"]\n  policy -- \"eligible\" --> bids[\"Node bids\"]\n  bids --> decision[\"Scheduling decision\"]\n  decision --> approval[\"Scoped approval when needed\"]\n  approval --> evidence[\"Artifact, audit, residual, revocation\"]\n```\n\nApproval remains scoped. A phone can approve a job for a desktop GPU, but that approval names one job boundary and one time window. A federation lease can let a project or rented node borrow capacity, but it should not inherit the private network, secrets, or memory of the person who owns the hive. The result of a job is not just an output; it is an artifact, audit trail, residual record, and revocation update.\n\nThe partitioned authority case makes the rule sharper. If a revocation, lease update, or narrowed grant has not reached a worker, the system should not treat the worker's stale local state as current permission. Protected effects should wait for a fresh authority receipt, quarantine, or preserve no-mutation evidence. The current repository validates that boundary only as finite record discipline, not as a live network or scheduler result. That boundary keeps local autonomy from becoming silent distributed permission.",
+      "rationale": "Condense the AI/research mechanism inventory for the human reader while preserving the scheduler, approval, evidence, and partitioned-authority boundaries."
+    },
+    {
+      "id": "v1_0.personal_compute_hives.owned_substrate_reader_replace",
+      "target_file": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Owned substrate and device roles",
+        "aliases": []
+      },
+      "content": "The hive starts by refusing to flatten devices into one pool of interchangeable compute. The phone is usually the identity surface, approval point, camera, microphone, and notification loop. The laptop is the mobile workbench where interactive writing, coding, review, and local file operations make sense. A desktop or GPU machine is a stronger worker, but that strength does not make it automatically safe for every family record, credential, or private dataset.\n\nStorage has its own role. A NAS or local server can hold durable memory, backups, artifacts, indexes, and source corpora, but it should not become a place where arbitrary internet-facing code runs just because it is always on. Older machines can still be useful for indexing, crawling, low-priority transforms, and test runs, yet patch state, sandboxing, and trust tier should limit what they receive. Tablets, TVs, browsers, and headsets are more like shared portals than private workers, so room context and audience matter as much as hardware capability.\n\nThe same separation applies outside the household. A workshop computer may connect to physical tools, sensors, CAD/CAM surfaces, robotics, or fabrication flows; its operator-presence rule should be stricter than a document summarizer. Rented or public nodes can absorb public tests, synthetic workloads, burst inference, or scrubbed jobs, but private memory and secrets need a stronger exposure contract before they cross that boundary.\n\nA phone can approve a job that runs on a desktop. A NAS can hold the source corpus without executing untrusted code. A rented GPU can process public work while being forbidden from private memory. A family tablet can be a learning portal without becoming a surveillance device. The important distinction is not hardware type by itself; it is role, owner, audience, data class, tool class, and revocation path.",
+      "rationale": "Replace the table-heavy device-role section with human-reader prose while keeping the canonical AI/research table in the live source."
+    },
+    {
+      "id": "v1_0.personal_compute_hives.hive_objects_reader_replace",
+      "target_file": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Hive objects",
+        "aliases": []
+      },
+      "content": "The first useful hive records are small enough to understand without treating the system like a distributed-operating-system manual. A `DeviceResourceCard` says what a node is, who owns or guards it, where it sits, what it can compute or store, what network shape it exposes, what data and tools it may touch, whether it can hold secret handles, when an operator must be present, and how it can be revoked.\n\nA `PortalCard` describes a human-facing surface. It records the person or guardian in scope, the input and output modes, the authority level, the privacy context, the attention state, the safe output profile, and the revocation path. That card keeps a phone, browser, headset, shared screen, or family tablet from being mistaken for the whole AI or for the owner's full authority.\n\nA `HiveJobContract` describes the work boundary before any node bids. It names the objective, source context references, data classes, tool classes, authority ceiling, risk tier, federation scope, budget, deadline, verification predicate, and residual policy. Once the contract exists, eligible nodes can answer with `HiveJobBid` records: latency, cost, energy, transfer estimate, thermal risk, interruption risk, privacy fit, capability fit, and policy reason.\n\nThe actual placement decision is a separate record. A `HiveSchedulingDecision` lists eligible nodes, rejected nodes, rejection reasons, selected node, approvals, data placement, cost and energy estimates, isolation mode, evidence references, and expiration. A `HiveApprovalReceipt` binds one human or guardian decision to one job boundary and time window. A `HiveFederationLease` lets another person, project, rented node, or public market borrow bounded capacity without inheriting private network access.\n\nThese objects do not prove that the hive works. They make the first implementation inspectable: what asked for work, which devices were rejected, who approved the boundary, where data moved, what evidence came back, and how the permission ends.",
+      "rationale": "Turn the object catalog table into prose for the relaxed reader path without removing the record vocabulary from the AI/research source."
+    },
+    {
+      "id": "v1_0.personal_compute_hives.job_classes_reader_replace",
+      "target_file": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Job classes and federation modes",
+        "aliases": []
+      },
+      "content": "Hive scheduling should classify work before it asks any device to bid. Some work is local and harmless: a small transform, a note cleanup, or a local review that touches no private memory, physical tool, credential, or spend. Some work is personal and private, which pushes it toward trusted local nodes and away from rented compute. Family-sensitive work adds dignity, role, and guardian boundaries; the route has to preserve the person in front of the portal, not merely satisfy a logging rule.\n\nHigh-compute work is not automatically cloud work. A desktop GPU, site node, or rented machine may be appropriate only after the data class, privacy exposure, cost, and verification need are clear. External project work should land in a disposable sandbox with no private network and no standing credentials, returning an artifact bundle instead of a durable foothold. Physical-world work needs operator presence and an approval receipt because the failure can leave the screen. Dangerous or irreversible work should default to denial or multi-party review, not ordinary autonomous execution.\n\nFederation mode changes the lease. A personal hive uses one person's devices. A family hive separates shared and private zones. A site hive binds a home, office, workshop, or lab. A joined private hive lets collaborators contribute under contract. A public project hive accepts bounded issue, benchmark, documentation, or test jobs. A market hive exposes spare capacity for payment or credit. An emergency hive prioritizes continuity when ordinary internet paths fail.\n\nThe common rule is that reachability never decides the route alone. Every class and federation mode changes what data may move, which tools may run, who must approve, what evidence must return, and how quickly the lease expires.",
+      "rationale": "Replace the job-class table with narrative policy prose for the human reader while preserving the live/research taxonomy."
+    },
+    {
+      "id": "v1_0.personal_compute_hives.hive_memory_reader_replace",
+      "target_file": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Hive memory",
+        "aliases": []
+      },
+      "content": "A hive is also a memory topology. Artifact memory holds documents, code, diagrams, builds, logs, and release bundles; it needs provenance, backup policy, and a durable store. Episodic memory holds meetings, sessions, approvals, and task events; it needs scoped retention and owner-visible review. Semantic memory holds concepts, source notes, embeddings, and claim references; it should stay source-bound and revocable through VCM rather than becoming an unowned vector swamp.\n\nProcedural memory is different again. Repeated workflows compiled into tools need tests, preconditions, postconditions, retirement rules, and failure evidence. Device memory records benchmarks, thermal history, reliability, and dropout events so the scheduler can make better placement decisions, but that history must not expand a node's authority. Trust memory tracks safe or unsafe behavior by nodes, projects, workers, or providers; it should be evidence-linked, contestable, and decay-aware rather than permanent reputation folklore.\n\nFamily and project memory require the sharpest boundary. Family memory may include learning context, guardian decisions, shared household records, or sensitive events, so dignity, role scope, and minimal logging matter more than convenience. Project memory belongs to issues, pull requests, contracts, CI logs, releases, steward decisions, and artifact bundles; it should remain artifact-bound and auditable.\n\nTreating all of these memories as one store erases the point of a hive. VCM decides what context is needed and which source or taint labels travel with it. The hive decides where that context may exist, which device can materialize it, who can inspect it, and how it can be revoked.",
+      "rationale": "Turn the memory topology table into reader prose so the human edition keeps the conceptual distinction without carrying dense matrix formatting."
+    },
+    {
+      "id": "v1_0.personal_compute_hives.beyond_state_reader_replace",
+      "target_file": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Beyond the State of the Art",
+        "aliases": []
+      },
+      "content": "A mature personal compute hive would be an owned compute fabric for a person, family, project, or temporary federation. It would let work run near the right data and device without treating reachability as authority, convenience as consent, or cheap rented compute as a reason to move private context.\n\nThe fabric would classify jobs before scheduling them. Data sensitivity, tool authority, physical-world risk, federation scope, cost, energy, and verification requirements would shape which phones, laptops, dashboards, local GPUs, NAS boxes, old machines, workshop computers, project runners, or rented nodes may even bid. Policy filtering would happen before optimization, and approval receipts would bind sensitive work to a specific person, boundary, and time window.\n\nThe Hive-to-Hive protocol would keep identities, device roles, portal roles, worker capabilities, sandbox rules, artifact manifests, evidence bundles, payments or credits, reputation records, revocations, and memory classes separate. Artifact stewards could request work, but the hive would govern whether that work is lawful for its devices, data, family roles, budget, and physical environment.\n\nThe endpoint remains architectural. Hive support stays at `argument` until node inventories, policy-first scheduler traces, privacy and offline-mode tests, energy and budget records, contribution ledgers, and portal-continuity checks show that owned edge compute can join the stack without becoming an unmanaged compute swarm.",
+      "rationale": "Replace the dense hive target-architecture checklist with reader prose while preserving the canonical AI/research protocol surface."
+    },
+    {
+      "id": "v1_0.personal_compute_hives.minimum_viable_reader_replace",
+      "target_file": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The first hive should be deliberately small: a local dashboard, signed device cards, portal cards, a typed job queue, policy-first rejection before scoring, approval receipts for sensitive boundaries, and an artifact log that records decisions, outputs, residuals, and revocations.\n\nFederation can exist in the record model before it is enabled. The minimum should not include public federation, autonomous spending, private-data rented-node execution, or background operation across family devices without explicit enrollment.\n\nThis repository has the record-shape starting point for that experiment: schemas and valid fixtures for device resource cards, portal cards, hive job contracts, bids, scheduling decisions, approval receipts, and federation leases. Those fixtures prove only that the public records validate locally. They do not prove that a hive scheduler exists or that edge execution is safe.",
+      "rationale": "Replace the checklist-shaped minimum hive implementation with concise reader prose while preserving the canonical AI/research implementation ladder."
+    },
+    {
+      "id": "v1_0.planning_control.node_lifecycle_reader_replace",
+      "target_file": "chapters/planning-as-a-control-layer.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Plan node lifecycle states",
+        "aliases": []
+      },
+      "content": "Plan nodes move through lifecycle states so a useful idea does not become execution authority by accident. Proposed nodes are decomposition candidates only. Nodes blocked on context need missing material or a narrower scope. Nodes blocked on authority need a new contract, approval route, or refusal. Nodes blocked on dependency wait for upstream work, and nodes blocked on verification need a success predicate before they can be dispatched.\n\nA dispatchable node is different from a plausible node: its constraints, context, authority, dependencies, and verification plan are all satisfied. Only then may it lower into a typed job. Once dispatched, it must preserve job parentage so later audit can trace the action back to the accepted command and plan node.\n\nReplanned nodes record what changed after feedback while keeping the original authority and stop-condition boundaries visible. Stopped nodes preserve the reason work ended, whether denial, budget exhaustion, risk, or a triggered stop condition. These states let the plan remain useful before execution and accountable after execution.\n\nThe reader-level point is simple: the graph can contain many kinds of work, but only a narrow subset is authorized work.",
+      "rationale": "Replace the plan-node lifecycle-state table with reader prose while preserving the canonical AI/research state matrix."
+    },
+    {
+      "id": "v1_0.policy_optimization.method_families_reader_replace",
+      "target_file": "chapters/policy-optimization-and-learning-from-feedback.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Method families",
+        "aliases": []
+      },
+      "content": "The external method families matter, but the reader version should not turn this section into an acronym ledger. Foundational policy-gradient methods provide the minimal reward-learning substrate: REINFORCE-style estimators, baselines, RLOO, and ReMax-like critic-light simplifications. Trust-region and clipped online RL methods such as TRPO, PPO, PPO-RLHF, GRPO, DAPO, and GSPO add bounded online exploration and update-size discipline. Offline preference methods such as DPO, IPO, ORPO, KTO, and SimPO use static preference or binary-feedback data when online rollout is not the right first move.\n\nVerifier-based RL and RLVR sit closer to the ASI Stack's evidence machinery because they can learn from exact checks, process checks, tool results, context-grounding checks, governance checks, or efficiency verifiers. Reasoning-budget and latency-aware RL ask when to think longer, stop, retrieve, verify, use tools, or switch generation modes. Control-policy RL is broader: it can target planner decomposition, router choice, VCM retrieval, execution policy, verifier escalation, or generation-mode selection rather than only answer style.\n\nThe architectural rule is that the target policy should be named before the optimizer is named. A planner reward cannot erase constraints, approvals, or residuals. A VCM reward for compact context is not valid unless evidence adequacy is preserved. A router reward for lower cost cannot bypass readiness, authority, or residual escrow. A generator reward for fluency or concision is not evidence without verifier support. A verifier reward has to be audited for gaming and coverage gaps. Tool success cannot expand the authority envelope, governance rewards must preserve rights and rollback, and speed is useful only when accepted-output quality and fallback are recorded.\n\nTraining mode follows feedback and risk. SFT is appropriate when high-quality demonstrations exist, but imitation does not explore better policies. Preference optimization is useful when static feedback is available, but preference quality becomes a dependency. PPO-style online RL is for rollout and reward optimization, with critic cost, tuning sensitivity, and reward-model risk made explicit. Group-relative or critic-light methods need reliable contrast. Long-sequence variants may fit reasoning or MoE-specific training, but their literature moves quickly and reproduction risk is higher. RLVR works only when the verifier is good enough for the job. Control-policy RL needs system-level reward design and authority-aware evaluation.",
+      "rationale": "Replace three dense method-family tables with reader prose while keeping the canonical AI/research comparison tables in the live source."
+    },
+    {
+      "id": "v1_0.policy_optimization.external_literature_reader_replace",
+      "target_file": "chapters/policy-optimization-and-learning-from-feedback.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "source-reviewed external literature",
+        "aliases": [
+          "Source-noted external literature"
+        ]
+      },
+      "content": "These external records are method-family context, not reproduced ASI Stack results. TRPO and PPO supply the trust-region and proximal-update background for bounded online policy movement. ReMax and REINFORCE-style RLHF show why simpler or critic-light baselines still matter when a system is tempted to treat a PPO-heavy pipeline as the only serious reinforcement-learning route.\n\nDPO, IPO, ORPO, KTO, and SimPO supply the offline preference-optimization family: useful when static preference, binary feedback, reference-model, or sequence-reward assumptions match the available data. DeepSeek-R1, DAPO, GSPO, and S-GRPO provide reasoning-RL and sequence-level context, including reproducibility pressure and overthinking control. LongRLVR connects verifier rewards to long-context grounding, which is why it belongs next to VCM and context adequacy rather than only next to model training.\n\nThe RLHF-limitations source is the warning layer. It feeds reward-hacking probes, evaluator-limit cautions, disclosure needs, and audit requirements. None of these source-reviewed records means that this repository has trained a policy, validated a reward model, reproduced a reasoning-RL result, solved reward hacking, or moved the governing claim above `argument` support.",
+      "rationale": "Replace the external-literature table with prose while preserving the source-note/source-review boundary and local non-reproduction caveat."
+    },
+    {
+      "id": "v1_0.project_theseus.minimum_viable_reader_replace",
+      "target_file": "chapters/project-theseus-as-report-first-implementation-reference.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The smallest useful Theseus lane is a public-safe crosswalk from one ASI Stack layer to one Theseus report surface. It has to say which run or summary is being discussed, which material is safe to publish, which pieces are absent, and which claims remain out of bounds.\n\nThe repository now has that narrow shape. It includes a crosswalk example, two static report imports, a support replay over the ASI-side checks, a report-bundle audit, and a bounded public task-bundle summary. Together they show how a prototype can be treated as an implementation reference without turning private or historical status into public proof.\n\nThe new task-bundle summary keeps the most important reader facts in the spine: 64 public BigCodeBench metadata-only tasks, 0 public training rows, 0 task-level regressions, visible gaps, and clean live Theseus replay remains unclaimed. The detailed gate counts, candidate counts, digests, and invalid-control names belong in the AI/research view and companion note.\n\nThis is the whole point of the minimum viable lane. A useful report-first system should preserve the negative rows as carefully as the successful ones. Missing artifacts, dirty checkout state, private payload boundaries, and unsupported promotions are not narrative inconveniences; they are the evidence boundary that keeps a prototype from becoming an overclaim.\n\nThe next stronger step is not better wording. It is a fresh replay or archived public release package with environment notes, publication permission, artifact digests, and review boundaries. Until then, Theseus remains implementation-reference evidence, not model-quality, benchmark-superiority, generation-speed, useful-solution-per-second, support-state, or chapter-core-promotion evidence.",
+      "rationale": "Replace validator-dense Project Theseus import prose in the reader projection while preserving clean-replay, model-quality, speed, and support-state boundaries."
+    },
+    {
+      "id": "v1_0.project_theseus.concrete_evidence_surface_reader_replace",
+      "target_file": "chapters/project-theseus-as-report-first-implementation-reference.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Concrete Theseus Evidence Surface",
+        "aliases": []
+      },
+      "content": "Theseus currently contributes a narrow public-safe evidence surface. The book has imported static architecture and generation summaries, replayed its own checks around those summaries, and added two sanitized import lanes for artifact retention and module definition of done. These pieces make the shape of a report-first implementation visible.\n\nTheir value is negative as much as positive: they keep private payloads out, expose missing live replay, and block unsupported promotion. They do not establish model quality, generation speed, module capability, deployed behavior, safety, transfer, ASI, or any chapter-core promotion.",
+      "rationale": "Replace the reader-facing Theseus evidence inventory with a compact summary while preserving the public-safe import boundary and non-claims."
+    },
+    {
+      "id": "v1_0.rankfold.source_support_reader_replace",
+      "target_file": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Source support boundaries",
+        "aliases": []
+      },
+      "content": "The source lineage remains useful but bounded. `rankfold_neuralfold` supplies the tensor-centric archive framing, per-artifact optimization, low-rank residual transforms, manifests, codec parameters, deterministic decode obligations, and reconstruction-check vocabulary. `rankfold_compressor` preserves vector-pair, factorized, adaptive-rank, entropy-aware, recursive-cascade, metrics, and CLI lineage. `bbvca_v9` contributes reconstruction contracts, exact repairs, bounded verification, fallback, and proxy-versus-final-rate discipline. `cgs` contributes compact seeds, generated structure, residual channels, verification contracts, and hidden-complexity accounting. `bugbrain` keeps edge-efficiency and local-resource pressure visible. None of these sources should be read as a local compression ratio, codec-correctness result, downstream-utility result, or support-state promotion.",
+      "rationale": "Replace the generated-reader source-support table with prose while preserving source-lineage boundaries and non-claims without disturbing the live Core Claim marker pipeline."
+    },
+    {
+      "id": "v1_0.rankfold.artifact_compression_states_reader_replace",
+      "target_file": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Artifact-compression states",
+        "aliases": []
+      },
+      "content": "A compressed artifact should enter the system through an admission state, not through enthusiasm about a smaller representation. The first state is non-admission: if the compressed form lacks a manifest, probe, residual account, fallback path, or decode metadata, no downstream consumer should route to it. A cold-archive candidate is narrower; it may be useful for rarely read, write-once material after decode checks, but that does not make it fit for active reasoning.\n\nPreview-only compression is useful when the system needs browsing, routing, or rough inspection, but it must carry loss labels and non-claim boundaries. A task-probe-passed artifact has cleared a bounded task under a declared use envelope, so routing can use it for that task family while preserving fallback. Exact-replay-ready is stronger: decode determinism and reconstruction contracts have passed for the target, although cost can still make the full artifact the better route.\n\nNegative states matter just as much. Fallback-dominant means probe failures or decode costs make the preserved full artifact the normal path, and the failed compression attempt becomes evidence rather than shame. Decoder-quarantined means platform drift, dependency drift, floating-point differences, or manifest mismatch has broken exact decode. In both cases the architecture blocks quiet promotion and routes back to the full artifact.\n\nThese states keep WORM archive assumptions from leaking into planning, citation, audit, or benchmark contexts. A representation can be excellent for deep storage and still wrong for the next task.",
+      "rationale": "Replace the artifact-compression admission-state table with reader prose while preserving the canonical AI/research state taxonomy."
+    },
+    {
+      "id": "v1_0.readiness.minimum_viable_implementation_reader_replace",
+      "target_file": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The smallest useful readiness layer is a record plus a replayable fixture suite. The record names the target, the workload family, the authority envelope, the current lifecycle state, the evidence used, the residuals that survived, the routes that are allowed or blocked, the fallback path, and the expiry condition.\n\nThe existing `readiness_gate_record` schema checks that those fields are present. Passing schema validation does not mean a module is ready. It means the readiness decision has enough shape for reviewers, routers, benchmark ratchets, and replacement transactions to inspect what was claimed and what remained unresolved.\n\nThe older readiness/residual gate harness checks cross-record consistency across costed routes, readiness gates, and replacement transactions. It exercises canary and default scenarios, residual custody, quarantine, expired evidence, fallback paths, and rollback-readiness links. The newer readiness lifecycle probe focuses on the state machine itself: six valid synthetic lifecycle moves and twelve invalid controls for non-forward jumps, missing evidence, missing residual escrow, unsafe default readiness, quarantine leakage, missing terminal records, retired-state reuse, missing non-claims, and support-promotion overclaim.\n\n`AsiStackProofs.ReadinessGates` models the same boundary with finite predicates and a fixture-summary bridge. It checks promoted decisions, quarantine routing, stale-gate reuse, default readiness, supersession, retirement, retired-state closure, and the lifecycle-probe summary. That is useful record discipline, not deployed readiness behavior. It does not prove benchmark quality, residual-ledger storage, lifecycle execution, live routing enforcement, terminal-state governance, MoECOT replay, or support-state promotion.",
+      "rationale": "Replace the dense readiness harness inventory with reader prose while preserving the canonical AI/research proof, probe, and no-promotion boundaries."
+    },
+    {
+      "id": "v1_0.resource_economics.minimum_viable_implementation_reader_replace",
+      "target_file": "chapters/resource-economics-and-token-budgets.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The smallest honest implementation is not a market, scheduler, or TokenMana simulation. It is a Resource Budget Record paired with the evidence records that say what a route was allowed to mean.\n\nThat record has to price the whole route before calling anything efficient: task value, risk class, capacity pool, cost estimate, verification tax, protected overhead, displaced costs, quality predicate, safety gates, escalation rule, residuals, and evidence references. When synthetic or simulated evidence is involved, a Simulation Contract Record has to travel with it so scope, fidelity, omissions, instrumentation effects, resource bills, and transfer limits stay attached.\n\nThe current repository has a deliberately narrow version of that idea. The budget fixtures and ledger checks accept low-risk dispatch, high-risk escalation, protected-overhead dispatch, displaced-cost residualization, review-capacity hoarding detection, and security-overhead erasure rejection. The simulation-transfer checks accept only scoped claim movement and reject missing fidelity, unbounded world transfer, missing resource bills, ignored instrumentation, and support-state promotion.\n\nThe flagship Resource lane then makes the accounting concrete. Its costed-route slice compares four routes: an adequate but expensive manual-review baseline, a bounded transform route with verification, a cheaper route that fails verification, and a cheaper route that hides residual cost. The accepted slice chooses the bounded transform route only after the cheaper failed and hidden-residual routes are rejected. The Lean bridge checks the same finite selector state rather than asking the reader to trust the prose.\n\nThe workflow and load-stability fixtures add route history. The workflow trace keeps high-risk release work ahead of lower-risk work and preserves protected overhead, residual ownership, and non-claim boundaries. The finite load-stability probe selects protected capacity smoothing over admitting every arrival in a 10-task synthetic burst, while residualizing seven deferrals and rejecting review erasure.\n\nThe aggregate replay ties the local evidence package together: `python3 scripts/validate_resource_flagship_lane.py` checks ten command replays, twenty-six tracked artifact digests, three accepted narrow transitions, five explicit no-promotion decisions, preserved negative controls, residuals, non-claims, and the no-core-promotion boundary. The CI cost profile adds publication-pipeline metadata, including classified deploy-service failures and a recorded recovery boundary, but it remains operations metadata rather than workload evidence.\n\nThe governance-tax model supplies the reader-facing trade-off. Two modeled cases choose governance once hidden verification, fallback, reviewer burden, and residual discharge are priced. One low-risk shortcut remains allowed because no protected gate is required and the full cost stays lower. This is the point of resource economics: governed efficiency is neither always-pay-every-tax nor always-take-the-cheapest-route. It is the discipline of pricing the whole route before accepting the saving.\n\nNone of this proves deployed scheduler behavior, real verification-tax measurement, stable speedup, TokenMana or PlanForge behavior, model quality, economic optimality, physical feasibility, external review, artifact approval, support-state movement, or the Resource Economics core claim. It is a public-safe minimum slice for one narrower claim: a route is not cheaper when the savings come from erased verification, erased protected overhead, or displaced residual burden.",
+      "rationale": "Replace the reader-visible harness inventory with prose that explains the Resource Economics minimum artifact while preserving no-deployed-scheduler and no-promotion boundaries."
+    },
+    {
+      "id": "v1_0.routing_heads.interfaces_reader_replace",
+      "target_file": "chapters/routing-heads-and-specialist-cores.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces",
+        "aliases": []
+      },
+      "content": "The reader-facing routing interface has three linked records. The first is the specialist registry entry: it says what a specialist can do, who owns it, which memory and tools it may lease, what authority ceiling it has, what it costs, how ready it is, where it should fall back, and which limitations and non-claims travel with it. A specialist is therefore not just a name in a tool list. It is a bounded capability card.\n\nThe second record is the route decision. It names the task, the candidate specialists, the selected specialist, the rejected candidates, the reason for non-selection, the route shape, the granted authority subset, denied authority, context lease, tool lease, verifier requirement, budget, expiry, fallback route, residual owner, ledgers, and non-claims. The important point is that the route explains both the yes and the no. A route that cannot reconstruct why stronger, cheaper, broader, or stale specialists were rejected is not yet governable.\n\nThe third record is the MoECOT-style orchestration packet. Its role is not to make a runtime brand authoritative. It keeps command intake, route-head choice, specialist lanes, control-plane gates, authority ledgers, readiness gates, replay references, denied routes, failed gates, missing replay references, handoffs, promotion blockers, residuals, and source-claim state visible in one packet.\n\nPlanning should request capabilities, governance should grant only the task-local authority subset, execution should receive the selected route and its limits, and artifact graphs should preserve the route receipt for later claims. These records do not prove route quality or runtime behavior. They preserve the evidence future route-quality, replay, and runtime tests would need.",
+      "rationale": "Replace the specialist-registry, routing-decision, and MoECOT field catalogs with reader prose while preserving the canonical AI/research schemas in the live chapter."
+    },
+    {
+      "id": "v1_0.runtime_adapters.effect_receipt_reader_replace",
+      "target_file": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Effect receipt fields",
+        "aliases": []
+      },
+      "content": "An effect receipt exists to keep a successful tool response from turning into a broad success claim. It names the state before the effect when that state is available, then names the state after the effect so review can see what changed. External side effects are recorded separately because messages, deployments, payments, API calls, hardware actions, and institutional changes may need different rollback and incident paths.\n\nRollback handles name the actual mechanism for undoing or repairing an effect when such a mechanism exists. Irreversible residuals name what cannot be undone. Verification references point to checks that the effect matched the contract, while incident references point to denials, exceptions, partial failures, or later reviews.\n\nThe receipt therefore separates evidence of invocation from evidence of correctness. A tool may respond successfully while verification, rollback, approval scope, or residual accounting remains incomplete.",
+      "rationale": "Replace the effect-receipt field table with reader prose while preserving the canonical AI/research receipt-field matrix."
+    },
+    {
+      "id": "v1_0.runtime_adapters.minimum_viable_implementation_reader_replace",
+      "target_file": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The smallest honest version is a permission envelope around one narrow action. The adapter record says which job requested the action, which capability was needed, which approval or lease applied, what changed, what could be rolled back, and which residuals remain.\n\nThe current repo has three public pieces. The synthetic permission harness checks two valid adapter scenarios and seven invalid ones, including missing permission, approval bypass, expired approval, missing receipts, irreversible effects without rollback or residuals, ambient-authority substitution, and revoked authority receipts. The Lean module models the same finite boundary: permission, scoped leases, sandbox status, authority ceilings, confused-deputy rejection, sandbox-escape rejection, rollback obligations, effect receipts, replay, adversarial review, and revocation routing.\n\nThere is also one tiny executable trace. The effect replay probe writes a generated public-safe temporary file outside the repo, records pre-state and post-state digests, restores the exact pre-state digest, and rejects missing-permission and expired-approval controls before mutation. The adversarial boundary probe adds two valid synthetic reviews and twelve invalid controls for parentage, authority, approval, sandbox, secret, rollback, receipt, audit, support-state, and non-claim failures.\n\nThat is useful boundary evidence, not deployed adapter safety. It does not prove a production sandbox, approval service, secret-handle broker, revocation service, policy-enforcement layer, rollback service, benchmark, or support-state transition.",
+      "rationale": "Replace the dense runtime-adapter harness inventory with reader prose while preserving the canonical AI/research proof and probe details."
+    },
+    {
+      "id": "v1_0.spinoza.interfaces_reader_replace",
+      "target_file": "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces",
+        "aliases": []
+      },
+      "content": "This layer sits between durable claims and downstream action. Claim ledgers supply the stable claim identity, support state, provenance, contradictions, revision history, and promotion blockers. Spinoza-style verification does not replace that ledger; it writes bounded verification outcomes back to it.\n\nVCM and semantic context cells supply the source and evidence objects that proof, citation, and tribunal records point to. That pointer is useful only when it preserves the boundary: a source reference or context cell is not the same thing as verification success. Verification Bandwidth handles a different question: whether the available context and reviewer capacity are adequate for the risk carried by the claim.\n\nFormal and executable artifacts can enter when the claim type permits them. Lean proofs, GenesisCode-style obligations, Circle-style contracts, procedure logs, replay logs, and benchmark artifacts can support narrow checks, but each artifact needs its own scope, limitations, failed attempts, and non-claims. UAT-style tribunal review handles contested, high-risk, or mismatched cases by recording dossiers, reviewer roles, adversarial probes, dissent, verdicts, required actions, and residuals.\n\nThe field lists in the live research chapter name those records precisely. At reader level, the important idea is simpler: a proof-carrying claim record must say which claim was checked, what tier was requested, what artifact or dossier was used, how the human-language claim was mapped to that artifact, what the verifier or tribunal returned, what failed, what remains out of scope, and what ledger effect is allowed. A tribunal record must say what was reviewed, what evidence boundary was used, who or what played which review role, what challenges were run, what dissent survived, which verdict was issued, and what action or constraint follows.\n\nPlanning and execution consume those outcomes as blockers, constraints, required actions, authority narrowing, human sign-off, or residual work. They do not receive an invisible support-state promotion. That boundary is the point of the interface: stronger claims can ask for stronger records, but every pass, failure, timeout, mismatch, dissent, and verdict returns with an explicit limit.",
+      "rationale": "Replace the generated-reader proof-carrying and tribunal field table with prose while preserving claim-ledger, VCM, verification-bandwidth, proof-artifact, tribunal, planning, and execution handoffs."
+    },
+    {
+      "id": "v1_0.spinoza.minimum_viable_reader_replace",
+      "target_file": "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The minimum viable implementation is a record discipline, not an open-domain verifier or a working tribunal. It needs enough structure to represent a verification event, reject obvious laundering, preserve failed attempts, and write only bounded effects back to the claim ledger.\n\nThe current slice uses proof-carrying-claim, tribunal-review, claim-record, and belief-revision schemas. Its proof-carrying fixtures include a valid narrow formal pass, a citation dossier that makes no support change, and a mismatch that escalates. The invalid controls reject passed verifier records without artifact references, mismatches that try to promote, formal tiers backed by the wrong justification type, timeouts that overpromote support, and negative evidence without a failed-attempt record.\n\nThe tribunal fixtures cover scoped acceptance with constraints, unchanged evidence that remains blocked, and high-risk revision with dissent preserved. Their invalid controls reject acceptance without evidence, high-risk review without adversarial probes, prior-review laundering, dissent that does not preserve an unresolved issue, and weak non-claim boundaries.\n\nThe adversarial review dossier probe adds a bounded synthetic slice: two valid review dossiers and seven expected-invalid controls. It is useful because it exercises the record shape and laundering defenses. It does not prove semantic equivalence, reviewer independence, adversarial-probe quality, verdict correctness, LLM-judge quality, debate-system quality, deployed review behavior, or support-state movement.",
+      "rationale": "Replace the generated-reader fixture-path inventory with prose that preserves the schema, validator, adversarial-review dossier, negative-control, and no-promotion boundaries."
+    },
+    {
+      "id": "v1_0.system_boundaries.permission_classes_reader_replace",
+      "target_file": "chapters/system-boundaries-and-authority.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Permission classes",
+        "aliases": []
+      },
+      "content": "The authority record has to name the kind of permission being requested, because the same information can be safe in one permission class and unsafe in another. Reading a source, transforming it into a summary, disclosing it to an audience, writing it into a durable artifact, executing a tool, and approving a high-impact action are different powers. A system that collapses them into a generic access flag has already lost the boundary it needs to enforce.\n\nRead permission lets a layer inspect material without publishing it, mutating it, or acting on it. Transform permission lets a layer derive a new artifact, but it carries provenance and taint obligations. Disclosure permission asks whether the output may be shown, exported, or transmitted to the intended audience. Write permission changes a file, ledger, memory cell, branch, or other durable target and therefore needs target-scoped authority plus audit. Execute permission crosses into a tool, runtime, service, or adapter and should leave an effect receipt. Approval permission is still more constrained: it authorizes a promotion or high-impact action and cannot be self-issued by the actor that benefits from it.\n\nThese classes are deliberately ordinary. Most failures at this layer are ordinary too: a model reads something and treats the text as approval, a planner turns a draft into an action, a tool wrapper lets a low-authority request borrow a broader credential, or a replacement implementation inherits a handle that was qualified for an earlier context. The point of the taxonomy is to make those mistakes visible before they become side effects.",
+      "rationale": "Replace the permission-class table with reader prose while preserving the canonical AI/research taxonomy."
+    },
+    {
+      "id": "v1_0.system_boundaries.mvi_reader_replace",
+      "target_file": "chapters/system-boundaries-and-authority.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The smallest useful artifact is an authority-transition record with a few deliberately sharp cases. One valid handoff should show a principal asking for an operation, matching the permission class, staying within the caller ceiling, presenting an active grant, producing the required receipt, and leaving audit references and non-claims behind. The denied cases matter just as much: missing authority, over-ceiling delegation, permission collapse, missing receipts, stale grants, and confused-deputy attempts should stop before any downstream layer treats the request as executable.\n\nThe first local harness keeps that boundary narrow. It rejects records that allow authority above the caller ceiling, omit the receipt for an effect, or treat disclosure as mere read access. It also preserves denial reasons so later planning cannot reinterpret missing authority as missing context.\n\nThat slice is intentionally not enforcement evidence. It shows that the record shape can represent allowed handoff, denial, escalation, missing receipt, permission collapse, and confused-deputy cases. Stronger support would require live adapter traces, deployed denial paths, revocation propagation, tool-call enforcement, and adversarial probes.",
+      "rationale": "Replace the compact fixture inventory with reader prose while preserving the canonical authority-transition schema, negative fixtures, and no-enforcement boundary."
+    },
+    {
+      "id": "v1_0.efficient_asi.route_outcome_states_reader_replace",
+      "target_file": "chapters/the-efficient-asi-hypothesis.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Route outcome states",
+        "aliases": []
+      },
+      "content": "The route ledger gives efficiency a set of outcome states so useful work, efficient work, brittle work, hidden-cost work, and unsafe work do not collapse into the same success label. An adequate minimum route is the strong case: the selected route satisfied the predicate, lower-cost authorized candidates were absent or failed, and the residuals were recorded. That result can become a candidate for a tool, memory, regression, or capability field, but only as a candidate.\n\nAdequate overkill is still useful, but it is not an efficiency result because the lower-cost route was not examined or recorded. Cheap brittle routes are the inverse: they save visible cost while failing quality, verification, or residual checks, so they create escrow and fallback work. Hidden-cost routes pass only because repair, verification, context, or human review was left outside the bill. Unsafe savings are blocked outright because they bypass authority, approval, verification, or rollback.\n\nThese are accounting states, not benchmark results. They let a future implementation say that a route produced value without pretending it was efficient, or say that it saved cost only after the work that made it safe enough to use is visible in the same record.",
+      "rationale": "Replace the route-outcome state table with reader prose while preserving the canonical AI/research efficiency-accounting matrix."
+    },
+    {
+      "id": "v1_0.verification_bandwidth.adequacy_states_reader_replace",
+      "target_file": "chapters/verification-bandwidth-and-context-adequacy.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Adequacy states",
+        "aliases": []
+      },
+      "content": "Adequacy states give the system a public way to refuse overconfident prose. If required source units are absent, the system has no basis for a source-derived claim. If the packet is drafting-only, it may help write, orient, or assemble a source queue, but it cannot verify the target claim. A local check is narrower still: a citation, schema, fact, or consistency relation may have been checked without proving the broader claim.\n\nJoint check is the first state that can plausibly support a stronger move, because the required semantic units were compared in the declared mode. Even then, support promotion still depends on the other evidence gates. Summary-derived context carries an explicit ceiling: a compressed packet or summary may be useful, but the claim cannot outrun the known loss and residuals. Escalated context is an honest stop sign, routing the claim to retrieval, split review, tribunal, proof, or human review until stronger evidence returns.\n\nContradicted is not a minor confidence adjustment. It means the adequacy pass found a conflict that matters to the target claim, so the claim needs revision, downgrade, refutation, or residual preservation. These states do not measure a model's hidden attention. They give the stack a visible vocabulary for saying which use the loaded context can honestly support.",
+      "rationale": "Replace the context-adequacy state table with reader prose while preserving the canonical AI/research adequacy-state matrix."
+    },
+    {
+      "id": "v1_0.virtual_context_abi.representation_examples_reader_replace",
+      "target_file": "chapters/virtual-context-abi.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Representation examples",
+        "aliases": []
+      },
+      "content": "The same source can honestly appear in several forms, and each form carries a different permission boundary. An exact excerpt can support citation review, quote checking, or contradiction work, but it cannot be shown where clearance or authority forbids the underlying source. A lossy planning summary can orient a planner and expose dependencies, but it cannot become proof, citation, or support-state promotion.\n\nA redacted execution packet can tell a worker what to do under a narrower disclosure rule, but it is not the full source and does not broaden the worker's authority. A claim or contradiction cell can enter the claim ledger for review and belief revision, but the support state still belongs to the claim ledger rather than to the certificate by itself. A reader-facing paraphrase can help a human understand the argument, but it cannot become source evidence or proof support.\n\nThose examples are design semantics only. They show why the ABI needs typed representations and certificates; they do not show that a summary-fidelity checker, deployed VCM service, or model-facing memory system exists.",
+      "rationale": "Replace the generated-reader representation table with prose while preserving the same exact-excerpt, summary, redaction, claim-cell, and reader-paraphrase boundaries."
+    },
+    {
+      "id": "v1_0.virtual_context_abi.interfaces_reader_replace",
+      "target_file": "chapters/virtual-context-abi.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces",
+        "aliases": []
+      },
+      "content": "Planning asks for context by task, address, authority, representation need, and adequacy target. It should receive enough structure to know whether the returned object is a constraint, claim, decision, source excerpt, summary, or residual. VCM owns the materialization boundary: address, version, certificate, source reference, authority, loss, permitted use, lease, residual, and fault state.\n\nClaim ledgers and Spinoza-style review can consume claim and evidence cells, but a certificate does not settle the claim. Support state, contradiction, revision, and promotion remain claim-ledger decisions. Execution consumes only permitted representations; a redacted execution packet may guide work without exposing the broader source or expanding authority.\n\nArtifact graphs store certificate references when context-derived representations become durable work products, so a later audit can recover which context object influenced an artifact. Context transactions handle the dynamic memory semantics that this static ABI does not own: snapshot consistency, branch isolation, mount permissions, taint propagation, deletion closure, and declassification. Verification bandwidth handles the adequacy question: a packet can be validly admitted and still be too weak for a high-risk claim.\n\nThe minimum ABI record therefore needs identifiers and boundaries such as `request_id`, `task_id`, `semantic_address`, `version`, `mount`, `snapshot_id`, `representation_contract`, `authority_ceiling`, `admission_state`, `adequacy_state`, `fault_state`, `materialization_ref`, `lease_expiry`, `source_refs`, `residuals`, `audit_refs`, and `non_claims`. The matching semantic page certificate needs the cell identity and derivation fields: `page_id`, `cell_type`, `source_bindings`, `derived_from`, `transaction_refs`, `artifact_refs`, `representation_kind`, `loss_contract`, `omissions`, `authority_ceiling`, `permitted_uses`, `validity_window`, `verification_state`, `revocation_state`, `residual_risks`, and `non_claims`.\n\nThose fields make the handoffs inspectable, but they still do not prove resolver correctness, certificate truthfulness, transaction isolation, deletion enforcement, model-facing context quality, leak prevention, or VCM-Bench behavior.",
+      "rationale": "Replace the generated-reader interface field table with prose while preserving the planning, VCM, claim-ledger, execution, artifact, transaction, and adequacy handoffs."
+    }
+  ],
+  "non_claims": [
+    "This embedded payload supports the live Human view only.",
+    "It does not claim a reviewed reader edition, ebook, audio artifact, or support-state promotion."
+  ]
+}
+</script>

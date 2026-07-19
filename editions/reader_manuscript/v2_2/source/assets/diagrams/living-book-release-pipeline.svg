@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Living book release pipeline draft figure</title>
+  <desc id="desc">A draft systems diagram showing live AI/research book sources producing reader, artifact, proof, evidence, and release records through validation and review gates.</desc>
+  <defs>
+    <marker id="arrow-indigo" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#4c628f"/>
+    </marker>
+    <marker id="arrow-amber" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#a06b3d"/>
+    </marker>
+    <filter id="shadow" x="-8%" y="-8%" width="116%" height="126%">
+      <feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#142033" flood-opacity="0.13"/>
+    </filter>
+    <style>
+      .bg { fill: #f2f5f8; }
+      .panel { fill: #eef3f8; stroke: #9daabd; stroke-width: 3.4; }
+      .source { fill: #eaf0f8; stroke: #344e82; stroke-width: 3.8; }
+      .gate { fill: #f0ecf7; stroke: #5a4778; stroke-width: 3.8; }
+      .reader { fill: #e8f3ec; stroke: #356b4c; stroke-width: 3.8; }
+      .artifact { fill: #fff0dd; stroke: #884f27; stroke-width: 3.8; }
+      .ink { fill: #0b111a; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .muted { fill: #4f5b68; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .label { font-size: 25px; font-weight: 760; }
+      .small { font-size: 18px; font-weight: 760; }
+      .tiny { font-size: 15px; font-weight: 620; }
+      .caption { font-size: 16px; font-weight: 660; }
+      .line { fill: none; stroke: #344e82; stroke-width: 5.8; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow-indigo); }
+      .amber { fill: none; stroke: #884f27; stroke-width: 5.2; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow-amber); }
+      .dash { fill: none; stroke: #3e4c60; stroke-width: 3.4; stroke-dasharray: 8 8; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="760" rx="24"/>
+  <text class="ink label" x="58" y="62">Living Book Release Pipeline</text>
+  <text class="muted caption" x="58" y="92">Draft key figure: AI/research source, reader prose, proof/evidence, and release artifacts stay related but not equal authority.</text>
+  <rect x="58" y="108" width="1084" height="4" rx="2" fill="#263248" opacity="0.72"/>
+
+  <rect class="source" x="58" y="132" width="226" height="144" rx="12" filter="url(#shadow)"/>
+  <text class="ink small" x="86" y="170">Live book source</text>
+  <text class="muted tiny" x="86" y="202">manifest, chapters,</text>
+  <text class="muted tiny" x="86" y="226">claims, sources, proofs,</text>
+  <text class="muted tiny" x="86" y="250">tests, changelog</text>
+
+  <rect class="gate" x="342" y="92" width="230" height="118" rx="12"/>
+  <text class="ink small" x="370" y="130">Validation gate</text>
+  <text class="muted tiny" x="370" y="160">scaffold, proofs,</text>
+  <text class="muted tiny" x="370" y="184">schemas, render, site</text>
+
+  <rect class="reader" x="342" y="250" width="230" height="118" rx="12"/>
+  <text class="ink small" x="370" y="288">Reader derivative</text>
+  <text class="muted tiny" x="370" y="318">overlays, manuscript,</text>
+  <text class="muted tiny" x="370" y="342">voice slots, blockers</text>
+
+  <rect class="gate" x="632" y="92" width="230" height="118" rx="12" filter="url(#shadow)"/>
+  <text class="ink small" x="660" y="130">Evidence record</text>
+  <text class="muted tiny" x="660" y="160">transition, no-change,</text>
+  <text class="muted tiny" x="660" y="184">negative controls</text>
+
+  <rect class="artifact" x="632" y="250" width="230" height="118" rx="12"/>
+  <text class="ink small" x="660" y="288">Format artifacts</text>
+  <text class="muted tiny" x="660" y="318">HTML, EPUB, DOCX,</text>
+  <text class="muted tiny" x="660" y="342">PDF, audio targets</text>
+
+  <rect class="panel" x="924" y="132" width="218" height="144" rx="12" filter="url(#shadow)"/>
+  <text class="ink small" x="952" y="170">Release record</text>
+  <text class="muted tiny" x="952" y="202">exact commit, artifact,</text>
+  <text class="muted tiny" x="952" y="226">review state, DOI,</text>
+  <text class="muted tiny" x="952" y="250">non-claims</text>
+
+  <rect class="panel" x="150" y="500" width="900" height="122" rx="12"/>
+  <text class="ink small" x="178" y="538">Release rule</text>
+  <text class="muted tiny" x="178" y="570">A target format is not an artifact. A rendered artifact is not approved until exact output, review state, release record, and residuals are named.</text>
+  <text class="muted tiny" x="178" y="594">Status: draft visual asset; not release-reviewed; no EPUB/PDF/DOCX/audio artifact approval or support-state promotion claim.</text>
+
+  <path class="line" d="M284 204 C312 174,326 154,336 152"/>
+  <path class="line" d="M284 204 C312 256,326 296,336 308"/>
+  <path class="line" d="M572 152 C596 152,610 152,626 152"/>
+  <path class="line" d="M572 308 C596 308,610 308,626 308"/>
+  <path class="line" d="M862 152 C890 162,906 184,918 204"/>
+  <path class="amber" d="M862 308 C894 292,908 252,918 228"/>
+  <path class="dash" d="M748 210 L748 250"/>
+  <path class="dash" d="M1033 276 C1033 350,980 418,900 462"/>
+  <path class="dash" d="M456 368 C456 424,488 462,536 490"/>
+</svg>

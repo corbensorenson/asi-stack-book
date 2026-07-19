@@ -1,0 +1,588 @@
+{
+  "schema_version": "asi_stack.p7_book_evidence_reconciliation.v1",
+  "recorded_date": "2026-07-16",
+  "state": "all_55_chapters_and_evidence_surfaces_reconciled",
+  "chapter_count": 55,
+  "atom_count": 3745,
+  "blocked_atom_count": 3698,
+  "retained_atom_count": 36,
+  "narrowed_atom_count": 9,
+  "bounded_promotion_count": 2,
+  "chapter_records": [
+    {
+      "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
+      "path": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
+      "sha256": "ea16c69aefc8124e022d920d78759ff3a8c44c4b630dd8243b15189f2444343f",
+      "atom_count": 79,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "path": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
+      "sha256": "c56f483d77071e077205361ff705b678718fe07c0c963e1db69df9e06ee8ae6e",
+      "atom_count": 69,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "artifact-graphs-audit-logs-and-replay",
+      "path": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+      "sha256": "edd0d2f0f78cf9f0d9332004f4c2157bdce45478d1f2adbb5f9e95f10d86c22c",
+      "atom_count": 81,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "artifact-steward-agents-and-living-project-governance",
+      "path": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+      "sha256": "7d9ff7018f0b0fa252a9e65445ac5682704334b9bbdb44087ddbe47436408453",
+      "atom_count": 78,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "asi-is-a-stack-not-a-model",
+      "path": "chapters/asi-is-a-stack-not-a-model.qmd",
+      "sha256": "4f2f8a0b079ad4695359bbb295875799e8a9c6a905acbfa7d8f65ae9a79a6825",
+      "atom_count": 24,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
+      "path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+      "sha256": "36960a9bb7b9fa784643002bd5b555b7547d80d378b909f1d2fb1625af2d4e60",
+      "atom_count": 74,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "capability-replacement-and-rollback",
+      "path": "chapters/capability-replacement-and-rollback.qmd",
+      "sha256": "d170e38e18e065920785ed197f5f99d7cba387ffc486828cedbc1f6f3511c935",
+      "atom_count": 59,
+      "core_disposition": "narrowed_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "capability-thresholds-and-deployment-commitments",
+      "path": "chapters/capability-thresholds-and-deployment-commitments.qmd",
+      "sha256": "97b71fde6ba0690173a413861881335c6cffda54de70cea00383fe32cdfa6e57",
+      "atom_count": 79,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
+      "path": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+      "sha256": "5416307b1c9d959c6af861b2e816938313a61d88856309dc654f87de555a242f",
+      "atom_count": 74,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "claim-ledgers-and-belief-revision",
+      "path": "chapters/claim-ledgers-and-belief-revision.qmd",
+      "sha256": "6660c01b04bf405df6fe846839e07eb0255027b5f81a923aeef60bafc4f18c9c",
+      "atom_count": 73,
+      "core_disposition": "narrowed_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "cognitive-compilation-and-semantic-ir",
+      "path": "chapters/cognitive-compilation-and-semantic-ir.qmd",
+      "sha256": "68bd2466510ac92c8bf21190ac15a292e197af3f3fb14cf3b8af1ce6c26ef391",
+      "atom_count": 72,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
+      "path": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+      "sha256": "706834c72d843dafa8383edcd8d9b10636a367b073372d3d3ba1df5962edd1d5",
+      "atom_count": 73,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
+      "path": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
+      "sha256": "2d2e04cee6c8f65a4b0d285a2ab23c51b0a86838087c04dafd7ec053d1aee318",
+      "atom_count": 73,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "compact-generative-systems-and-residual-honesty",
+      "path": "chapters/compact-generative-systems-and-residual-honesty.qmd",
+      "sha256": "9bd38758f488157c3ece6027349b8a9db4275c2b85470580555a49e8cf5d2255",
+      "atom_count": 80,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "constitutional-alignment-substrate",
+      "path": "chapters/constitutional-alignment-substrate.qmd",
+      "sha256": "75ba68204428e3a5483149a630a6b7b811d5f2e1bbcb91bf6ab824ce3da12219",
+      "atom_count": 51,
+      "core_disposition": "narrowed_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "context-transactions-snapshots-mounts-and-taint",
+      "path": "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
+      "sha256": "a1d5eaf962e4b8fead09e61d962c93882592f3b4c79e70ac479582f81c23af8c",
+      "atom_count": 73,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "data-engines-continual-learning-and-unlearning",
+      "path": "chapters/data-engines-continual-learning-and-unlearning.qmd",
+      "sha256": "78708bb630818014ddfbab387bd96c04a5cd73a37e188ed7b7a3ee577d60a86d",
+      "atom_count": 86,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "evidence-states-and-claim-discipline",
+      "path": "chapters/evidence-states-and-claim-discipline.qmd",
+      "sha256": "3a0e8dacdc320cdc7fbf2b904cba37e865e7f246000ab476bc7c8b9eb24cbdb3",
+      "atom_count": 46,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "executable-specifications-and-lean-proof-envelope",
+      "path": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+      "sha256": "7d864752c963f2623ebc3d81cc726af8a2c223e94c8bbcbd59120775f1675148",
+      "atom_count": 73,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "path": "chapters/failure-modes-of-ungoverned-intelligence.qmd",
+      "sha256": "6a459c5a2e1a897cb6451edbffc9374fb50b2e28d581627df7155fa347f2d67d",
+      "atom_count": 32,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "fast-generation-architectures",
+      "path": "chapters/fast-generation-architectures.qmd",
+      "sha256": "26d32895f97e32d857162923724957c89961946a6e9f8501fabf7e06a2dcbadf",
+      "atom_count": 76,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "governed-deliberation-and-test-time-scaling",
+      "path": "chapters/governed-deliberation-and-test-time-scaling.qmd",
+      "sha256": "6482d1e9cde40b3cf83f52ec53374173656fa2b883739513dac643681bf7ddf2",
+      "atom_count": 81,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "human-intent-as-a-formal-input",
+      "path": "chapters/human-intent-as-a-formal-input.qmd",
+      "sha256": "9b6a50bfbe18b68970e2a9af2fc9b72adad521520086b0171b704c450d073d60",
+      "atom_count": 45,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "integrated-reference-architecture",
+      "path": "chapters/integrated-reference-architecture.qmd",
+      "sha256": "840a7539b671e5d8e6018c4d44a9a0a4d145497795b4c1907324c3c73e26c95a",
+      "atom_count": 74,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "intent-to-execution-contracts",
+      "path": "chapters/intent-to-execution-contracts.qmd",
+      "sha256": "f61cbc835d5ab86003f427e5dfb189523757d557530eacf524cc97ff7ce5c242",
+      "atom_count": 76,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
+      "path": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd",
+      "sha256": "3e46e353809e9e1dc8fdb566c2bbe0325be067e132e986644446d60fc2546d59",
+      "atom_count": 80,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "labor-os-and-typed-jobs",
+      "path": "chapters/labor-os-and-typed-jobs.qmd",
+      "sha256": "e03b31f3ec1b3d3104427de21fdcd2958d0954c003852ea421f344afc209157b",
+      "atom_count": 76,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "living-book-methodology",
+      "path": "chapters/living-book-methodology.qmd",
+      "sha256": "9e514235380c07fdb5e596eb14426932e56ce90ff3b61b82477556310b163af9",
+      "atom_count": 75,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "mathematical-and-search-substrates",
+      "path": "chapters/mathematical-and-search-substrates.qmd",
+      "sha256": "129d653f25d811a30924e95b49ab6ed744825c58c96f2304e17580329d9816ac",
+      "atom_count": 74,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+      "path": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
+      "sha256": "5c468984a270d205c88793ccd07632ed34e7171f438125d43d1d074efb09acef",
+      "atom_count": 71,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "moral-uncertainty-and-value-conflict",
+      "path": "chapters/moral-uncertainty-and-value-conflict.qmd",
+      "sha256": "3ff12b6aaa04d4979935937b28c3dd21484c32ae799c23e353a07f556a4472b7",
+      "atom_count": 58,
+      "core_disposition": "narrowed_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "open-ended-improvement-engines",
+      "path": "chapters/open-ended-improvement-engines.qmd",
+      "sha256": "32384f8300a770ddd03614e44e9eb3399c1bec2ac3cd0c90f81f2c3708339aad",
+      "atom_count": 81,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "open-research-agenda-and-bibliography-plan",
+      "path": "chapters/open-research-agenda-and-bibliography-plan.qmd",
+      "sha256": "d0b18130f2727eec2d5491b752c50b5eb29e6633c32e8bae950489d0a1b487b0",
+      "atom_count": 73,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
+      "path": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
+      "sha256": "3dde16214a1d058891ec1fb117506d13534095f957f26bd5e9a99e6562893dd5",
+      "atom_count": 77,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "planning-as-a-control-layer",
+      "path": "chapters/planning-as-a-control-layer.qmd",
+      "sha256": "ec342a42fb99324f14b9a7ca37db9c775ba7ee1a61a6a22dbd890cb349686b3f",
+      "atom_count": 76,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "policy-optimization-and-learning-from-feedback",
+      "path": "chapters/policy-optimization-and-learning-from-feedback.qmd",
+      "sha256": "082498fbaede4674fdd3451840f96a4a3edf6c1f9484e5e959c97b06ac512328",
+      "atom_count": 75,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "procedural-memory-and-cognitive-loop-closure",
+      "path": "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
+      "sha256": "7e080bfb0c82238993e7a8201a340bc98aa0ba289e4c249e9834f45c87380708",
+      "atom_count": 73,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "project-theseus-as-report-first-implementation-reference",
+      "path": "chapters/project-theseus-as-report-first-implementation-reference.qmd",
+      "sha256": "364551cf598a6e6602ef831ad1ba52a03ab973935fe0e03902ed8cfdd2190566",
+      "atom_count": 83,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "prototype-roadmap",
+      "path": "chapters/prototype-roadmap.qmd",
+      "sha256": "78ae6278b9210bbe3b13bb5a69506ed66091b90aac9c0124d60e3b6e313b5150",
+      "atom_count": 74,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "rankfold-neuralfold-and-artifact-compression",
+      "path": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
+      "sha256": "e5f68161cd55a5b5279fb3c1067f44a8306dc5f9adaaa682704a2fada3f94adc",
+      "atom_count": 74,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
+      "path": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
+      "sha256": "537b3830a870e80169ebcbbd67211dd003ce6d462357836a0ac73b273005c814",
+      "atom_count": 74,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "recursive-self-improvement-boundaries",
+      "path": "chapters/recursive-self-improvement-boundaries.qmd",
+      "sha256": "0abfd65c5e8e1a05102016c97e3ef7c4ee49d46a19e90af072207846328d9558",
+      "atom_count": 73,
+      "core_disposition": "narrowed_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "path": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
+      "sha256": "b03d0d98fd727a62bc18f65b654e4d80ec6b3c78e9ee7335adbf51a6d394e0dc",
+      "atom_count": 15,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "resource-economics-and-token-budgets",
+      "path": "chapters/resource-economics-and-token-budgets.qmd",
+      "sha256": "eefff90e1a2e14346fcbcfa5236c7a7f2f5de6370a01fde8b7be2c2c4c48b37e",
+      "atom_count": 82,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "routing-heads-and-specialist-cores",
+      "path": "chapters/routing-heads-and-specialist-cores.qmd",
+      "sha256": "71ddd8528ee339088ad2e5f46f42b4327cc005300fafd2a03a052176bdd0d8c5",
+      "atom_count": 76,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+      "path": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+      "sha256": "d37b2fd8727a5747cde2223bd9efbd47f134aaf8465ea786a62172f2a454d5e7",
+      "atom_count": 77,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "safety-cases-and-structured-assurance",
+      "path": "chapters/safety-cases-and-structured-assurance.qmd",
+      "sha256": "b56e1bd0ab78b3ccf5a9a0c7099f5a341d31be35a7483ca60658b37b616efd48",
+      "atom_count": 79,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "scalable-oversight-and-adversarial-ai-control",
+      "path": "chapters/scalable-oversight-and-adversarial-ai-control.qmd",
+      "sha256": "3fa04e74c82581a4e6fe26d5ca37dd775e01815afac93128d7a7b2526db1e79e",
+      "atom_count": 45,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "security-kernel-and-digital-scifs",
+      "path": "chapters/security-kernel-and-digital-scifs.qmd",
+      "sha256": "aa95824076d160716b1a52feca0683e04869d6beb61dd9762cdb8994c099c0e4",
+      "atom_count": 66,
+      "core_disposition": "narrowed_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "spinoza-verification-and-proof-carrying-claims",
+      "path": "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
+      "sha256": "74153a854e5b496b509826640fa97509e1041c72e5bb5f0c1ec6f1b7c27f599d",
+      "atom_count": 76,
+      "core_disposition": "narrowed_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "stable-capability-fields",
+      "path": "chapters/stable-capability-fields.qmd",
+      "sha256": "dc749fb9302e29e71fb278f9df4040f6c263b063dbe42f7d46d9a1f1466a6b9a",
+      "atom_count": 54,
+      "core_disposition": "narrowed_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "system-boundaries-and-authority",
+      "path": "chapters/system-boundaries-and-authority.qmd",
+      "sha256": "4ae92b8028367c9c5abc49cb89ed3db23f2e39bffa8e0f930d792c0f9e64b2f9",
+      "atom_count": 35,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "the-efficient-asi-hypothesis",
+      "path": "chapters/the-efficient-asi-hypothesis.qmd",
+      "sha256": "3e0bad122e7547ca60e4301dbaea773c6e176f09f2be72bdd9f04fa2adfe0de4",
+      "atom_count": 24,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "verification-bandwidth-and-context-adequacy",
+      "path": "chapters/verification-bandwidth-and-context-adequacy.qmd",
+      "sha256": "31a55b72138171a4e8ef649ebf90d6fac8e7fe301ff5d022f69ffe4826a9a998",
+      "atom_count": 73,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    },
+    {
+      "chapter_id": "virtual-context-abi",
+      "path": "chapters/virtual-context-abi.qmd",
+      "sha256": "68f11ec50dcf82c3dcc88b104bd99e74c189837ec34db4c0c849209cbc9709fb",
+      "atom_count": 75,
+      "core_disposition": "blocked_after_full_attempt",
+      "human_summary_count": 1,
+      "ai_packet_count": 1,
+      "argument_exit_table_count": 1
+    }
+  ],
+  "source_count": 316,
+  "new_current_comparator_source_id": "ext_gated_deltanet2_2026",
+  "appendix_digests": {
+    "appendices/C_claim_evidence_matrix.qmd": "d2c4bd33256eb27fc8afbd75d2ec0a8b16aa4eef4bdcae75568927cb9011801e",
+    "appendices/E_codex_test_specs.qmd": "641578a68ac3c4394c0e3a82387c92a549d225d557781f9a8ceac5eea0d3b548",
+    "appendices/F_changelog.qmd": "12e96c267769657ff82e1e4b922962db473bc0263ac43e0095045d8d60ce30bd",
+    "appendices/H_external_sources.qmd": "ffe92dd8cd4ba405960c7fc0481972923a559e1980bb20694a78a9739dd6e218",
+    "appendices/K_implementation_horizons.qmd": "2d7c20d4b372160444007841ed0cede8b74eb90be20d4ddb5c92846923487054"
+  },
+  "reader_projection_check_passed": true,
+  "html_render_passed": true,
+  "core_argument_count": 55,
+  "chapter_core_promotion_count": 0,
+  "support_state_effect": "none_beyond_previously_accepted_exact_non_core_transitions",
+  "publication_authority": "none",
+  "release_authority": "none",
+  "non_claims": [
+    "Chapter packet coverage does not prove chapter truth.",
+    "The 3,698 blocked atoms remain unresolved proof obligations.",
+    "A family bundle does not prove every atom assigned to that family.",
+    "Gated DeltaNet-2 is a source-reported comparator, not a local reproduction.",
+    "Reader projection success is not reader approval or release approval.",
+    "HTML render success is not publication authority.",
+    "No chapter core, SOTA, deployment, publication, release, AGI, or ASI claim follows."
+  ]
+}

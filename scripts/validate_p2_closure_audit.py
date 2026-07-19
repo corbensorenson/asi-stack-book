@@ -151,7 +151,9 @@ def errors(audit: dict[str, Any]) -> list[str]:
         out.append("roadmap state does not preserve P2 closure and P3 activation")
     if milestone_states.get("M3") != "completed":
         out.append("milestone state does not close M3")
-    if status.get("current_priority") not in {"P3", "P4", "P5", "P6", "P7", "P8", "P9"}:
+    current_priority = status.get("current_priority")
+    terminal_roadmap = status.get("status") == "completed" and current_priority is None
+    if not terminal_roadmap and current_priority not in {"P3", "P4", "P5", "P6", "P7", "P8", "P9"}:
         out.append("current priority regressed before P3 after P2 closure")
     if len(audit.get("non_claims", [])) < 5:
         out.append("P2 closure audit lacks explicit non-claims")

@@ -1,0 +1,2260 @@
+# External Sources by Other Authors
+
+This appendix is generated from source records marked `external_literature` in `sources/source_inventory.json`.
+
+This is an independent top-level appendix for external sources by other authors and organizations. It is not a subsection, second half, or continuation of Appendix G. It contains only third-party papers, documentation records, outside benchmarks, and non-Corben references used for comparison, grounding, or future literature review. Corben's own papers, Corben-supplied materials, recovered project records, and local project records live in their own top-level appendix: [Appendix G, Corben's Own Sources, Papers, and Local Projects](G_corben_source_corpus.qmd).
+
+A listed external source does not claim reproduced experiments, local benchmark results, support-state promotion, or complete literature coverage.
+
+## Source Ownership Boundary
+
+This page is the external-source appendix. It should be read as Appendix H only; Corben-side records stay in Appendix G.
+
+## Appendix Identity
+
+| Field | Boundary |
+|---|---|
+| This appendix contains | Third-party papers, documentation, outside projects, and other external sources by authors other than Corben. |
+| This appendix excludes | Corben's own papers, Corben-supplied materials, recovered project records, and local project source records; those live in the separate Appendix G. |
+
+## Appendix Scope
+
+| Field | Boundary |
+|---|---|
+| Appendix identity | Appendix H: external sources by other authors |
+| Ownership rule | If another author, organization, or outside project produced it, it belongs here; Corben-authored papers, Corben-supplied materials, recovered project history, and local-project records stay in Appendix G. |
+| Contains | Third-party papers, official documentation, outside benchmarks, and other non-Corben references by other authors or organizations used for comparison or grounding. |
+| Excludes | Corben's own papers, Corben-supplied materials, recovered project records, and local project records; those belong in Appendix G. |
+| Evidence effect | Organizes outside context; it does not claim reproduced results or support-state promotion without a reproduction or accepted evidence transition. |
+
+## Chapter-Level External Grounding Policy
+
+Future citation backfill should start from the sources already attached to each
+chapter. Mine the linked Corben papers for bibliographies, footnotes, named
+algorithms, standards, benchmarks, outside systems, and adjacent research terms
+before broad search. Accepted third-party sources must be recorded in
+`sources/source_inventory.json` with `priority: external_literature`, receive a
+source note before prose use, and then appear here through scaffold generation.
+
+External citation can establish relation, prior art, vocabulary, and comparison.
+It does not by itself claim reproduced experiments, local verification, Lean
+proof, Project Theseus replay, Circle receipt, support-state promotion, or
+complete literature coverage.
+
+## Source-reviewed External Literature Records
+
+## Reader Source List
+
+The live book keeps these external records as a wide audit table. The reader edition uses source cards so long source IDs, citations, chapter assignments, and notes wrap cleanly in PDF and e-reader formats.
+
+### Measuring AI Ability to Complete Long Software Tasks
+
+- Source ID: `ext_metr_time_horizons_2025`
+- Citation or primary record: Kwa et al. (2025), Measuring AI Ability to Complete Long Software Tasks; [arXiv:2503.14499](https://arxiv.org/abs/2503.14499); DOI `10.48550/arXiv.2503.14499`
+- Layer: `capability_measurement`
+- Current use: capability-thresholds-and-deployment-commitments (Capability Thresholds and Deployment Commitments)
+- Source review state: source note available
+- Notes: Primary time-horizon comparator for an evaluation-specific, human-baselined capability metric and its external-validity limits; it does not establish local autonomy, general capability, a deployment threshold, safety, or an ASI Stack result.
+
+### Anthropic's Responsible Scaling Policy
+
+- Source ID: `ext_anthropic_rsp_2026`
+- Citation or primary record: Anthropic (2026), Responsible Scaling Policy v3.4; [source](https://www.anthropic.com/responsible-scaling-policy)
+- Layer: `capability_commitments`
+- Current use: capability-thresholds-and-deployment-commitments (Capability Thresholds and Deployment Commitments)
+- Source review state: source note available
+- Notes: Official policy comparator for capability thresholds, required safeguards, versioned commitments, safeguard upgrades, risk reports, and change control; it does not establish ASI Stack threshold accuracy, safeguard effectiveness, policy compliance, safety, or deployment readiness.
+
+### Our updated Preparedness Framework
+
+- Source ID: `ext_openai_preparedness_framework_2025`
+- Citation or primary record: OpenAI (2025), Updated Preparedness Framework; [source](https://openai.com/index/updating-our-preparedness-framework/)
+- Layer: `capability_commitments`
+- Current use: capability-thresholds-and-deployment-commitments (Capability Thresholds and Deployment Commitments)
+- Source review state: source note available
+- Notes: Official framework comparator for threshold-linked operational commitments, capability and safeguards reports, residual-risk review, and reassessment; it does not establish ASI Stack threshold accuracy, safeguard effectiveness, policy compliance, safety, or deployment readiness.
+
+### Weak-to-Strong Generalization: Eliciting Strong Capabilities With Weak Supervision
+
+- Source ID: `ext_weak_to_strong_generalization_2023`
+- Citation or primary record: Burns et al. (2023), Weak-to-Strong Generalization; [arXiv:2312.09390](https://arxiv.org/abs/2312.09390); DOI `10.48550/arXiv.2312.09390`
+- Layer: `weak_supervision`
+- Current use: scalable-oversight-and-adversarial-ai-control (Scalable Oversight and Adversarial AI Control)
+- Source review state: source note available
+- Notes: Primary weak-to-strong-supervision comparator for a capability-gap envelope, held-out outcome audit, ceiling comparison, and explicit disanalogies between current weak-model studies and superhuman oversight; it does not establish local supervision quality, reliable elicitation, alignment, safety, or an ASI Stack result.
+
+### On scalable oversight with weak LLMs judging strong LLMs
+
+- Source ID: `ext_scalable_oversight_weak_llms_2024`
+- Citation or primary record: Kenton et al. (2024), On scalable oversight with weak LLMs judging strong LLMs; [arXiv:2407.04622](https://arxiv.org/abs/2407.04622); DOI `10.48550/arXiv.2407.04622`
+- Layer: `scalable_oversight`
+- Current use: scalable-oversight-and-adversarial-ai-control (Scalable Oversight and Adversarial AI Control)
+- Source review state: source note available
+- Notes: Primary scalable-oversight comparator for protocol-specific weak-judge evaluations, debate and consultancy baselines, information-asymmetry limits, and open-role persuasion risks; it does not establish local judge calibration, debate efficacy, training safety, execution authority, or an ASI Stack result.
+
+### Concrete Problems in AI Safety
+
+- Source ID: `ext_concrete_ai_safety_2016`
+- Citation or primary record: Amodei et al. (2016), Concrete Problems in AI Safety; [arXiv:1606.06565](https://arxiv.org/abs/1606.06565); DOI `10.48550/arXiv.1606.06565`
+- Layer: `alignment_control`
+- Current use: failure-modes-of-ungoverned-intelligence (Failure Modes of Ungoverned Intelligence)
+- Source review state: source note available
+- Notes: External alignment/control source for accident-risk taxonomy: side effects, reward hacking, scalable supervision, safe exploration, and distributional shift.
+
+### Goal Misgeneralization in Deep Reinforcement Learning
+
+- Source ID: `ext_goal_misgeneralization_2022`
+- Citation or primary record: Langosco et al. (2022), Goal Misgeneralization in Deep Reinforcement Learning; [arXiv:2105.14111](https://arxiv.org/abs/2105.14111); DOI `10.48550/arXiv.2105.14111`
+- Layer: `alignment_control`
+- Current use: failure-modes-of-ungoverned-intelligence (Failure Modes of Ungoverned Intelligence)
+- Source review state: source note available
+- Notes: External alignment-control source for distinguishing capability generalization from goal generalization failures, used to ground goal-misbinding and out-of-distribution objective failure language.
+
+### Risks from Learned Optimization in Advanced Machine Learning Systems
+
+- Source ID: `ext_learned_optimization_risks_2019`
+- Citation or primary record: Hubinger et al. (2019), Risks from Learned Optimization; [arXiv:1906.01820](https://arxiv.org/abs/1906.01820); DOI `10.48550/arXiv.1906.01820`
+- Layer: `alignment_control`
+- Current use: failure-modes-of-ungoverned-intelligence (Failure Modes of Ungoverned Intelligence)
+- Source review state: source note available
+- Notes: External alignment-control source for mesa-optimization and learned-objective mismatch, used to ground hidden optimizer, proxy-objective, and deceptive-alignment-adjacent failure language.
+
+### Constitutional AI: Harmlessness from AI Feedback
+
+- Source ID: `ext_constitutional_ai_2022`
+- Citation or primary record: Bai et al. (2022), Constitutional AI; [arXiv:2212.08073](https://arxiv.org/abs/2212.08073); DOI `10.48550/arXiv.2212.08073`
+- Layer: `alignment_control`
+- Current use: constitutional-alignment-substrate (Constitutional Alignment: Agency, Dignity, and Corrigibility)
+- Source review state: source note available
+- Notes: External constitutional-AI source for training harmless assistants from a rule/principle list through supervised revision and AI-feedback reinforcement learning, used as a comparator for operational constitutional predicates.
+
+### Collective Constitutional AI: Aligning a Language Model with Public Input
+
+- Source ID: `ext_collective_constitutional_ai_2024`
+- Citation or primary record: Huang et al. (2024), Collective Constitutional AI; [arXiv:2406.07814](https://arxiv.org/abs/2406.07814); DOI `10.1145/3630106.3658979`
+- Layer: `alignment_governance`
+- Current use: constitutional-alignment-substrate (Constitutional Alignment: Agency, Dignity, and Corrigibility); moral-uncertainty-and-value-conflict (Moral Uncertainty, Value Conflict, and Contestable Governance)
+- Source review state: source note available
+- Notes: External constitutional-AI governance source for sourcing and integrating public input into language-model principles, used as a comparator for constitution authorship, public input, contestability, and governance boundaries.
+
+### Corrigibility
+
+- Source ID: `ext_corrigibility_2015`
+- Citation or primary record: Soares et al. (2015), Corrigibility; [source](https://intelligence.org/files/Corrigibility.pdf)
+- Layer: `alignment_control`
+- Current use: constitutional-alignment-substrate (Constitutional Alignment: Agency, Dignity, and Corrigibility); moral-uncertainty-and-value-conflict (Moral Uncertainty, Value Conflict, and Contestable Governance); capability-replacement-and-rollback (Capability Replacement and Rollback)
+- Source review state: source note available
+- Notes: External corrigibility source for intervention tolerance, shutdown behavior, anti-manipulation incentives, and propagation across subsystems or self-modification.
+
+### The Off-Switch Game
+
+- Source ID: `ext_off_switch_game_2016`
+- Citation or primary record: Hadfield-Menell et al. (2016), The Off-Switch Game; [arXiv:1611.08219](https://arxiv.org/abs/1611.08219); DOI `10.48550/arXiv.1611.08219`
+- Layer: `alignment_control`
+- Current use: constitutional-alignment-substrate (Constitutional Alignment: Agency, Dignity, and Corrigibility); moral-uncertainty-and-value-conflict (Moral Uncertainty, Value Conflict, and Contestable Governance)
+- Source review state: source note available
+- Notes: External alignment source for shutdown incentives, uncertainty about objectives, and preserving human correction authority.
+
+### Reinforcement Learning Under Moral Uncertainty
+
+- Source ID: `ext_reinforcement_learning_moral_uncertainty_2020`
+- Citation or primary record: Ecoffet and Lehman (2020), Reinforcement Learning Under Moral Uncertainty; [arXiv:2006.04734](https://arxiv.org/abs/2006.04734); DOI `10.48550/arXiv.2006.04734`
+- Layer: `alignment_control`
+- Current use: moral-uncertainty-and-value-conflict (Moral Uncertainty, Value Conflict, and Contestable Governance)
+- Source review state: source note available
+- Notes: External AI moral-uncertainty source for agents acting under disagreement across moral theories, used as a comparator for value-conflict records and reward-function caveats.
+
+### Contestable AI by Design: Towards a Framework
+
+- Source ID: `ext_contestable_ai_design_2022`
+- Citation or primary record: Alfrink et al. (2022), Contestable AI by Design; [source](https://doi.org/10.1007/s11023-022-09611-z); DOI `10.1007/s11023-022-09611-z`
+- Layer: `governance_evals`
+- Current use: moral-uncertainty-and-value-conflict (Moral Uncertainty, Value Conflict, and Contestable Governance); spinoza-verification-and-proof-carrying-claims (Proof-Carrying Claims and Adversarial Review)
+- Source review state: source note available
+- Notes: External contestable-AI source for designing systems whose outcomes can be challenged, used as a comparator for dissent, appeal, audit, contestability, and governance-interface design.
+
+### Optimal Policies Tend to Seek Power
+
+- Source ID: `ext_optimal_policies_power_2019`
+- Citation or primary record: Turner et al. (2019), Optimal Policies Tend to Seek Power; [arXiv:1912.01683](https://arxiv.org/abs/1912.01683); DOI `10.48550/arXiv.1912.01683`
+- Layer: `alignment_control`
+- Current use: failure-modes-of-ungoverned-intelligence (Failure Modes of Ungoverned Intelligence)
+- Source review state: source note available
+- Notes: External power-seeking source for formal analysis of option preservation and power-seeking tendencies under classes of reward functions and environments.
+
+### Model evaluation for extreme risks
+
+- Source ID: `ext_model_evaluation_extreme_risks_2023`
+- Citation or primary record: Shevlane et al. (2023), Model evaluation for extreme risks; [arXiv:2305.15324](https://arxiv.org/abs/2305.15324); DOI `10.48550/arXiv.2305.15324`
+- Layer: `governance_evals`
+- Current use: prototype-roadmap (Prototype Roadmap)
+- Source review state: source note available
+- Notes: External governance/evals source for dangerous capability evaluations, alignment evaluations, and deployment/security decisions under extreme-risk framing.
+
+### Frontier AI Regulation: Managing Emerging Risks to Public Safety
+
+- Source ID: `ext_frontier_ai_regulation_2023`
+- Citation or primary record: Anderljung et al. (2023), Frontier AI Regulation; [arXiv:2307.03718](https://arxiv.org/abs/2307.03718); DOI `10.48550/arXiv.2307.03718`
+- Layer: `governance_evals`
+- Current use: living-book-methodology (Living Book Methodology)
+- Source review state: source note available
+- Notes: External governance source for frontier AI standard setting, registration/reporting, compliance mechanisms, pre-deployment risk assessment, external scrutiny, and post-deployment monitoring.
+
+### Artificial Intelligence Risk Management Framework (AI RMF 1.0)
+
+- Source ID: `ext_nist_ai_rmf_1_0_2023`
+- Citation or primary record: NIST (2023), AI Risk Management Framework (AI RMF 1.0); [source](https://doi.org/10.6028/NIST.AI.100-1); DOI `10.6028/NIST.AI.100-1`
+- Layer: `governance_evals`
+- Current use: prototype-roadmap (Prototype Roadmap); living-book-methodology (Living Book Methodology)
+- Source review state: source note available
+- Notes: Official NIST AI RMF 1.0 source for risk framing, trustworthiness characteristics, lifecycle roles, and Govern/Map/Measure/Manage functions.
+
+### OWASP Top 10 for LLMs and Gen AI Apps
+
+- Source ID: `ext_owasp_llm_top_10_2025`
+- Citation or primary record: OWASP GenAI Security Project (2025), OWASP Top 10 for LLMs and Gen AI Apps; [source](https://genai.owasp.org/llm-top-10/)
+- Layer: `ai_security`
+- Current use: security-kernel-and-digital-scifs (Security Kernel and Digital SCIFs)
+- Source review state: source note available
+- Notes: Official OWASP GenAI security reference for LLM prompt injection, sensitive information disclosure, excessive agency, and related application-security risks.
+
+### Zero Trust Architecture
+
+- Source ID: `ext_nist_zero_trust_architecture_2020`
+- Citation or primary record: Rose et al. (2020), Zero Trust Architecture; [source](https://doi.org/10.6028/NIST.SP.800-207); DOI `10.6028/NIST.SP.800-207`
+- Layer: `security_governance`
+- Current use: security-kernel-and-digital-scifs (Security Kernel and Digital SCIFs)
+- Source review state: source note available
+- Notes: Official NIST zero-trust architecture source for resource-centric access mediation, least-privilege access, policy enforcement points, and continuous authorization framing.
+
+### The Protection of Information in Computer Systems
+
+- Source ID: `ext_saltzer_schroeder_protection_1975`
+- Citation or primary record: Saltzer and Schroeder (1975), The Protection of Information in Computer Systems; [source](https://web.mit.edu/Saltzer/www/publications/protection/); DOI `10.1109/PROC.1975.9939`
+- Layer: `security_principles`
+- Current use: security-kernel-and-digital-scifs (Security Kernel and Digital SCIFs)
+- Source review state: source note available
+- Notes: Classic security-principles source for least privilege, complete mediation, economy of mechanism, fail-safe defaults, separation of privilege, and open design as comparators for kernel-like AI security boundaries.
+
+### Capability-Based Computer Systems
+
+- Source ID: `ext_capability_based_computer_systems_1984`
+- Citation or primary record: Levy (1984), Capability-Based Computer Systems; [source](https://homes.cs.washington.edu/~levy/capabook/)
+- Layer: `capability_security`
+- Current use: stable-capability-fields (Stable Capability Fields)
+- Source review state: source note available
+- Notes: External capability-system comparator for authority-bearing capabilities, protection domains, and permission boundaries that help position System Boundaries authority records and SCF authority ceilings without claiming ASI Stack capability enforcement.
+
+### The Confused Deputy: (or why capabilities might have been invented)
+
+- Source ID: `ext_confused_deputy_hardy_1988`
+- Citation or primary record: Hardy (1988), The Confused Deputy; [source](https://dl.acm.org/doi/10.1145/54289.871709); DOI `10.1145/54289.871709`
+- Layer: `capability_security`
+- Current use: system-boundaries-and-authority (System Boundaries and Authority); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External confused-deputy source for authority laundering, ambient authority, and the capability-security motivation for binding designation to permission at tool and handoff boundaries.
+
+### Semantic Versioning 2.0.0
+
+- Source ID: `ext_semver_2_0_0`
+- Citation or primary record: Semantic Versioning (2013), SemVer 2.0.0; [source](https://semver.org/spec/v2.0.0.html)
+- Layer: `interface_versioning`
+- Current use: stable-capability-fields (Stable Capability Fields)
+- Source review state: source note available
+- Notes: External versioned-interface comparator for public API contracts, compatibility, and breaking-change signaling as a narrow baseline for SCF field versions and stable interfaces.
+
+### SLSA v1.0
+
+- Source ID: `ext_slsa_v1_0`
+- Citation or primary record: OpenSSF SLSA (2023), SLSA v1.0; [source](https://slsa.dev/spec/v1.0/)
+- Layer: `supply_chain_provenance`
+- Current use: stable-capability-fields (Stable Capability Fields)
+- Source review state: source note available
+- Notes: External supply-chain provenance comparator for artifact integrity, provenance, build levels, and dependency on verifiable artifacts before promotion or default route use.
+
+### ReAct: Synergizing Reasoning and Acting in Language Models
+
+- Source ID: `ext_react_2022`
+- Citation or primary record: Yao et al. (2022), ReAct; [arXiv:2210.03629](https://arxiv.org/abs/2210.03629); DOI `10.48550/arXiv.2210.03629`
+- Layer: `planning_agent_control`
+- Current use: planning-as-a-control-layer (Planning as a Control Layer: DAGs and Intelligence Arbitrage); intent-to-execution-contracts (Command Contracts: From Intent to Executable Work); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); artifact-graphs-audit-logs-and-replay (Artifact Graphs, Audit Logs, and Replay) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External planning/agent-control source for interleaving reasoning traces with task-specific actions and environment or knowledge-base interaction.
+
+### Tree of Thoughts: Deliberate Problem Solving with Large Language Models
+
+- Source ID: `ext_tree_of_thoughts_2023`
+- Citation or primary record: Yao et al. (2023), Tree of Thoughts; [arXiv:2305.10601](https://arxiv.org/abs/2305.10601); DOI `10.48550/arXiv.2305.10601`
+- Layer: `planning_search`
+- Current use: cognitive-compilation-and-semantic-ir (Cognitive Compilation and Semantic IR); governed-deliberation-and-test-time-scaling (Governed Deliberation and Test-Time Scaling)
+- Source review state: source note available
+- Notes: External planning/search source for exploring, evaluating, and backtracking over multiple reasoning paths rather than left-to-right token continuation alone.
+
+### PDDL: The Planning Domain Definition Language
+
+- Source ID: `ext_pddl_1998`
+- Citation or primary record: McDermott et al. (1998), PDDL; [source](https://www.cs.cmu.edu/~mmv/planning/readings/98aips-PDDL.pdf)
+- Layer: `planning_modeling`
+- Current use: cognitive-compilation-and-semantic-ir (Cognitive Compilation and Semantic IR)
+- Source review state: source note available
+- Notes: External planning-modeling source for domain/problem separation, action syntax, comparable benchmark notations, and planner-interface discipline.
+
+### SHOP2: An HTN Planning System
+
+- Source ID: `ext_shop2_2003`
+- Citation or primary record: Nau et al. (2003), SHOP2; [source](https://www.jair.org/index.php/jair/article/view/10362); DOI `10.1613/jair.1141`
+- Layer: `planning_htn`
+- Current use: cognitive-compilation-and-semantic-ir (Cognitive Compilation and Semantic IR); prototype-roadmap (Prototype Roadmap)
+- Source review state: source note available
+- Notes: External HTN planning source for ordered task decomposition, method selection, temporal/metric planning, and competition-result boundaries.
+
+### Integrated Task and Motion Planning
+
+- Source ID: `ext_integrated_tamp_2020`
+- Citation or primary record: Garrett et al. (2020), Integrated Task and Motion Planning; [arXiv:2010.01083](https://arxiv.org/abs/2010.01083); DOI `10.48550/arXiv.2010.01083`
+- Layer: `planning_task_motion`
+- Current use: planning-as-a-control-layer (Planning as a Control Layer: DAGs and Intelligence Arbitrage); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); integrated-reference-architecture (Integrated Reference Architecture) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External task-and-motion-planning survey source for discrete task planning, continuous motion planning, black-box subproblem interfaces, and integration-strategy vocabulary.
+
+### Behavior Trees in Robotics and AI: An Introduction
+
+- Source ID: `ext_behavior_trees_robotics_ai_2017`
+- Citation or primary record: Colledanchise and Ogren (2018), Behavior Trees in Robotics and AI; [arXiv:1709.00084](https://arxiv.org/abs/1709.00084); DOI `10.1201/9780429489105`
+- Layer: `planning_behavior_trees`
+- Current use: planning-as-a-control-layer (Planning as a Control Layer: DAGs and Intelligence Arbitrage); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); integrated-reference-architecture (Integrated Reference Architecture) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External behavior-tree source for modular, reactive task switching, robustness/safety analysis vocabulary, planning integration, and stochastic behavior-tree outcome accounting.
+
+### Three States and a Plan: The A.I. of F.E.A.R.
+
+- Source ID: `ext_three_states_plan_fear_2006`
+- Citation or primary record: Orkin (2006), Three States and a Plan; [source](https://gdcvault.com/play/1013282/Three-States-and-a-Plan)
+- Layer: `planning_goap`
+- Current use: planning-as-a-control-layer (Planning as a Control Layer: DAGs and Intelligence Arbitrage); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); routing-heads-and-specialist-cores (Routing Heads and Specialist Cores) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External game-AI planning source for Goal Oriented Action Planning in real-time action games, practical planner constraints, autonomous planning characters, and squad-behavior composition.
+
+### AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation
+
+- Source ID: `ext_autogen_2023`
+- Citation or primary record: Wu et al. (2023), AutoGen; [arXiv:2308.08155](https://arxiv.org/abs/2308.08155); DOI `10.48550/arXiv.2308.08155`
+- Layer: `planning_agent_orchestration`
+- Current use: planning-as-a-control-layer (Planning as a Control Layer: DAGs and Intelligence Arbitrage); labor-os-and-typed-jobs (Labor OS and Typed Jobs); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); artifact-graphs-audit-logs-and-replay (Artifact Graphs, Audit Logs, and Replay) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External multi-agent orchestration source for conversable agents, tool/human/LLM operating modes, programmable conversation patterns, and application-level multi-agent workflow boundaries.
+
+### Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks
+
+- Source ID: `ext_rag_2020`
+- Citation or primary record: Lewis et al. (2020), Retrieval-Augmented Generation; [arXiv:2005.11401](https://arxiv.org/abs/2005.11401); DOI `10.48550/arXiv.2005.11401`
+- Layer: `memory_context`
+- Current use: virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates)
+- Source review state: source note available
+- Notes: External retrieval/context source for combining parametric model memory with explicit non-parametric retrieval and provenance-oriented knowledge access.
+
+### Lost in the Middle: How Language Models Use Long Contexts
+
+- Source ID: `ext_lost_in_middle_2023`
+- Citation or primary record: Liu et al. (2023), Lost in the Middle; [arXiv:2307.03172](https://arxiv.org/abs/2307.03172); DOI `10.48550/arXiv.2307.03172`
+- Layer: `memory_context`
+- Current use: virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates)
+- Source review state: source note available
+- Notes: External context-evaluation source for position sensitivity and degraded use of relevant information in the middle of long contexts.
+
+### MemGPT: Towards LLMs as Operating Systems
+
+- Source ID: `ext_memgpt_2023`
+- Citation or primary record: Packer et al. (2023), MemGPT; [arXiv:2310.08560](https://arxiv.org/abs/2310.08560); DOI `10.48550/arXiv.2310.08560`
+- Layer: `memory_context_management`
+- Current use: virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); procedural-memory-and-cognitive-loop-closure (Procedural Memory and Cognitive Loop Closure)
+- Source review state: source note available
+- Notes: External memory/context-management source for virtual context management, memory tiers, OS-inspired control flow, and long-running conversation or document-analysis limits.
+
+### LongBench: A Bilingual, Multitask Benchmark for Long Context Understanding
+
+- Source ID: `ext_longbench_2023`
+- Citation or primary record: Bai et al. (2023), LongBench; [arXiv:2308.14508](https://arxiv.org/abs/2308.14508); DOI `10.48550/arXiv.2308.14508`
+- Layer: `long_context_evaluation`
+- Current use: virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); verification-bandwidth-and-context-adequacy (Verification Bandwidth and Context Adequacy)
+- Source review state: source note available
+- Notes: External long-context benchmark source for multitask long-context understanding, bilingual coverage, retrieval/compression boundaries, and automatic evaluation limits.
+
+### RULER: What's the Real Context Size of Your Long-Context Language Models?
+
+- Source ID: `ext_ruler_2024`
+- Citation or primary record: Hsieh et al. (2024), RULER; [arXiv:2404.06654](https://arxiv.org/abs/2404.06654); DOI `10.48550/arXiv.2404.06654`
+- Layer: `long_context_evaluation`
+- Current use: virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); verification-bandwidth-and-context-adequacy (Verification Bandwidth and Context Adequacy)
+- Source review state: source note available
+- Notes: External long-context evaluation source for stress-testing context-size claims beyond vanilla needle-in-a-haystack retrieval, including multi-needle, tracing, and aggregation tasks.
+
+### Enabling Large Language Models to Generate Text with Citations
+
+- Source ID: `ext_alce_2023`
+- Citation or primary record: Gao et al. (2023), ALCE; [arXiv:2305.14627](https://arxiv.org/abs/2305.14627); DOI `10.48550/arXiv.2305.14627`
+- Layer: `retrieval_citation_evaluation`
+- Current use: virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); verification-bandwidth-and-context-adequacy (Verification Bandwidth and Context Adequacy); claim-ledgers-and-belief-revision (Claim Ledgers and Belief Revision)
+- Source review state: source note available
+- Notes: External citation-evaluation source for retrieval-backed answer generation, citation quality metrics, factual correctness, and evidence-support gaps in generated text.
+
+### Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection
+
+- Source ID: `ext_self_rag_2023`
+- Citation or primary record: Asai et al. (2023), Self-RAG; [arXiv:2310.11511](https://arxiv.org/abs/2310.11511); DOI `10.48550/arXiv.2310.11511`
+- Layer: `retrieval_reflection`
+- Current use: virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); claim-ledgers-and-belief-revision (Claim Ledgers and Belief Revision)
+- Source review state: source note available
+- Notes: External retrieval/reflection source for adaptive retrieval, generated critique/reflection tokens, passage relevance, factuality, and citation accuracy boundaries.
+
+### On the Logic of Theory Change: Partial Meet Contraction and Revision Functions
+
+- Source ID: `ext_agm_belief_revision_1985`
+- Citation or primary record: Alchourron, Gardenfors, and Makinson (1985), AGM belief revision; [source](https://philpapers.org/rec/ALCOTL-2); DOI `10.2307/2274239`
+- Layer: `belief_revision`
+- Current use: claim-ledgers-and-belief-revision (Claim Ledgers and Belief Revision)
+- Source review state: source note available
+- Notes: External formal-epistemology comparator for contraction, revision, and AGM-style rational belief change; useful for positioning claim-ledger revision without treating the ASI ledger as an implemented belief-revision engine.
+
+### A Truth Maintenance System
+
+- Source ID: `ext_truth_maintenance_system_1979`
+- Citation or primary record: Doyle (1979), A Truth Maintenance System; [source](https://philpapers.org/rec/DOYATM); DOI `10.1016/0004-3702(79)90008-0`
+- Layer: `truth_maintenance`
+- Current use: claim-ledgers-and-belief-revision (Claim Ledgers and Belief Revision)
+- Source review state: source note available
+- Notes: External truth-maintenance comparator for maintaining reasons and justifications for program beliefs; useful for positioning claim ledgers as support-state and revision-history infrastructure, not as implemented truth maintenance.
+
+### An Assumption-Based TMS
+
+- Source ID: `ext_assumption_based_tms_1986`
+- Citation or primary record: de Kleer (1986), An Assumption-Based TMS; [source](https://doi.org/10.1016/0004-3702(86)90080-9); DOI `10.1016/0004-3702(86)90080-9`
+- Layer: `truth_maintenance`
+- Current use: claim-ledgers-and-belief-revision (Claim Ledgers and Belief Revision)
+- Source review state: source note available
+- Notes: External assumption-based truth-maintenance comparator for assumption sets, inconsistent information, and context-switching boundaries; useful for distinguishing claim-ledger surface synchronization from implemented ATMS reasoning.
+
+### LongLLMLingua: Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression
+
+- Source ID: `ext_longllmlingua_2023`
+- Citation or primary record: Jiang et al. (2023), LongLLMLingua; [arXiv:2310.06839](https://arxiv.org/abs/2310.06839); DOI `10.48550/arXiv.2310.06839`
+- Layer: `context_compression`
+- Current use: virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); verification-bandwidth-and-context-adequacy (Verification Bandwidth and Context Adequacy)
+- Source review state: source note available
+- Notes: External prompt-compression source for long-context cost, latency, position bias, key-information density, and compression/evaluation boundaries.
+
+### Proof-Carrying Code
+
+- Source ID: `ext_proof_carrying_code_1997`
+- Citation or primary record: Necula (1997), Proof-Carrying Code; [source](https://dl.acm.org/doi/10.1145/263699.263712); DOI `10.1145/263699.263712`
+- Layer: `formal_methods`
+- Current use: spinoza-verification-and-proof-carrying-claims (Proof-Carrying Claims and Adversarial Review)
+- Source review state: source note available
+- Notes: External formal-methods source for pairing executable code with machine-checkable evidence that a host can verify against a safety policy.
+
+### My TLA+ Home Page
+
+- Source ID: `ext_tla_plus_home_docs`
+- Citation or primary record: Lamport, My TLA+ Home Page; [source](https://lamport.azurewebsites.net/tla/tla.html)
+- Layer: `formal_methods`
+- Current use: executable-specifications-and-lean-proof-envelope (Executable Specifications and Lean Proof Envelope); planning-as-a-control-layer (Planning as a Control Layer: DAGs and Intelligence Arbitrage); intent-to-execution-contracts (Command Contracts: From Intent to Executable Work); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine); integrated-reference-architecture (Integrated Reference Architecture) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External formal-methods documentation source for TLA+ as a high-level language for modeling programs and systems, especially concurrent and distributed systems.
+
+### Theorem Proving in Lean 4
+
+- Source ID: `ext_lean4_theorem_proving`
+- Citation or primary record: Avigad et al., Theorem Proving in Lean 4; [source](https://lean-lang.org/theorem_proving_in_lean4/)
+- Layer: `formal_methods_proof_assistant`
+- Current use: spinoza-verification-and-proof-carrying-claims (Proof-Carrying Claims and Adversarial Review); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Source review state: source note available
+- Notes: Official Lean theorem-proving text for dependent type theory, propositions, proofs, tactics, inductive types, structures, records, and axioms/computation boundaries.
+
+### Autoformalization with Large Language Models
+
+- Source ID: `ext_autoformalization_llms_2022`
+- Citation or primary record: Wu et al. (2022), Autoformalization with Large Language Models; [arXiv:2205.12615](https://arxiv.org/abs/2205.12615); DOI `10.48550/arXiv.2205.12615`
+- Layer: `autoformalization`
+- Current use: spinoza-verification-and-proof-carrying-claims (Proof-Carrying Claims and Adversarial Review)
+- Source review state: source note available
+- Notes: External autoformalization comparator for translating natural-language mathematics into formal specifications and proofs, useful for positioning interpretation-mapping and semantic-adequacy risks in proof-carrying claims.
+
+### AI safety via debate
+
+- Source ID: `ext_ai_safety_debate_2018`
+- Citation or primary record: Irving, Christiano, and Amodei (2018), AI safety via debate; [arXiv:1805.00899](https://arxiv.org/abs/1805.00899); DOI `10.48550/arXiv.1805.00899`
+- Layer: `adversarial_review`
+- Current use: scalable-oversight-and-adversarial-ai-control (Scalable Oversight and Adversarial AI Control); spinoza-verification-and-proof-carrying-claims (Proof-Carrying Claims and Adversarial Review)
+- Source review state: source note available
+- Notes: External debate comparator for using adversarial agents and a human judge to surface true/useful information when direct human judgment is difficult; useful for positioning tribunal review without treating debate as locally implemented or validated.
+
+### Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena
+
+- Source ID: `ext_llm_as_judge_mt_bench_2023`
+- Citation or primary record: Zheng et al. (2023), Judging LLM-as-a-Judge; [arXiv:2306.05685](https://arxiv.org/abs/2306.05685); DOI `10.48550/arXiv.2306.05685`
+- Layer: `model_evaluation`
+- Current use: spinoza-verification-and-proof-carrying-claims (Proof-Carrying Claims and Adversarial Review)
+- Source review state: source note available
+- Notes: External LLM-as-judge comparator for model-graded evaluation, human-preference agreement, and judge bias limits such as position, verbosity, self-enhancement, and reasoning constraints.
+
+### Dafny: An Automatic Program Verifier For Functional Correctness
+
+- Source ID: `ext_dafny_2010`
+- Citation or primary record: Leino (2010), Dafny; [source](https://www.microsoft.com/en-us/research/publication/dafny-automatic-program-verifier-functional-correctness/)
+- Layer: `formal_methods_program_verification`
+- Current use: prototype-roadmap (Prototype Roadmap)
+- Source review state: source note available
+- Notes: External program-verification source for specification-oriented programming, functional-correctness verification, SMT-backed automation, and contract/verifier boundaries.
+
+### Reluplex: An Efficient SMT Solver for Verifying Deep Neural Networks
+
+- Source ID: `ext_reluplex_2017`
+- Citation or primary record: Katz et al. (2017), Reluplex; [arXiv:1702.01135](https://arxiv.org/abs/1702.01135); DOI `10.48550/arXiv.1702.01135`
+- Layer: `ai_formal_verification`
+- Current use: verification-bandwidth-and-context-adequacy (Verification Bandwidth and Context Adequacy); resource-economics-and-token-budgets (Resource Economics and Token Budgets)
+- Source review state: source note available
+- Notes: External AI formal-verification source for SMT-style verification of ReLU neural networks, counterexamples, safety-critical properties, and ACAS Xu evaluation boundaries.
+
+### The Black-Box Simplex Architecture for Runtime Assurance of Autonomous CPS
+
+- Source ID: `ext_black_box_simplex_2021`
+- Citation or primary record: Mehmood et al. (2021), Black-Box Simplex; [arXiv:2102.12981](https://arxiv.org/abs/2102.12981); DOI `10.1007/978-3-031-06773-0_12`
+- Layer: `formal_runtime_assurance`
+- Current use: runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine); executable-specifications-and-lean-proof-envelope (Executable Specifications and Lean Proof Envelope); integrated-reference-architecture (Integrated Reference Architecture) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External runtime-assurance source for switching control authority from advanced controllers to backup safety-preserving behavior under runtime checks.
+
+### Copilot: A Hard Real-Time Runtime Monitor
+
+- Source ID: `ext_copilot_runtime_monitor_2010`
+- Citation or primary record: Pike et al. (2010), Copilot; [source](https://leepike.github.io/pub_pages/rv2010.html)
+- Layer: `runtime_monitoring`
+- Current use: prototype-roadmap (Prototype Roadmap)
+- Source review state: source note available
+- Notes: External runtime-monitoring source for a stream-based dataflow language/compiler generating constant-time, constant-space C monitors for hard real-time programs.
+
+### Brewer's Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web Services
+
+- Source ID: `ext_cap_theorem_gilbert_lynch_2002`
+- Citation or primary record: Gilbert and Lynch (2002), Brewer's Conjecture / CAP theorem; [source](https://dl.acm.org/doi/10.1145/564585.564601); DOI `10.1145/564585.564601`
+- Layer: `distributed_systems_consistency`
+- Current use: context-transactions-snapshots-mounts-and-taint (Context Transactions, Snapshots, Mounts, and Taint); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence)
+- Source review state: source note available
+- Notes: External distributed-systems source for CAP-style consistency, availability, partition-tolerance, and safety/liveness trade-off vocabulary used to bound partitioned authority, stale grants, and revocation-delay claims without claiming deployed governance consistency.
+
+### PRISM: Probabilistic Symbolic Model Checker
+
+- Source ID: `ext_prism_model_checker_2002`
+- Citation or primary record: Kwiatkowska et al. (2002), PRISM; [source](https://www.prismmodelchecker.org/papers/tools02.pdf); DOI `10.1007/3-540-46002-0_42`
+- Layer: `probabilistic_model_checking`
+- Current use: executable-specifications-and-lean-proof-envelope (Executable Specifications and Lean Proof Envelope); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); integrated-reference-architecture (Integrated Reference Architecture) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External probabilistic model-checking source for symbolic model checking of probabilistic systems, model-checker tooling, and deployment-facing property-analysis vocabulary.
+
+### Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer
+
+- Source ID: `ext_sparse_moe_2017`
+- Citation or primary record: Shazeer et al. (2017), Sparsely-Gated Mixture-of-Experts; [arXiv:1701.06538](https://arxiv.org/abs/1701.06538); DOI `10.48550/arXiv.1701.06538`
+- Layer: `routing_modular_intelligence`
+- Current use: routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); resource-economics-and-token-budgets (Resource Economics and Token Budgets); the-efficient-asi-hypothesis (The Efficient ASI Hypothesis) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External MoE/routing source for sparsely-gated expert layers, conditional computation, capacity expansion, load balancing, and routing overhead boundaries.
+
+### GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding
+
+- Source ID: `ext_gshard_2020`
+- Citation or primary record: Lepikhin et al. (2020), GShard; [arXiv:2006.16668](https://arxiv.org/abs/2006.16668); DOI `10.48550/arXiv.2006.16668`
+- Layer: `routing_modular_intelligence`
+- Current use: routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); resource-economics-and-token-budgets (Resource Economics and Token Budgets); the-efficient-asi-hypothesis (The Efficient ASI Hypothesis); integrated-reference-architecture (Integrated Reference Architecture) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External MoE/systems source for conditional computation plus automatic sharding, routing, large sparse models, and distributed training constraints.
+
+### Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity
+
+- Source ID: `ext_switch_transformer_2021`
+- Citation or primary record: Fedus et al. (2021), Switch Transformers; [arXiv:2101.03961](https://arxiv.org/abs/2101.03961); DOI `10.48550/arXiv.2101.03961`
+- Layer: `routing_modular_intelligence`
+- Current use: routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); resource-economics-and-token-budgets (Resource Economics and Token Budgets); the-efficient-asi-hypothesis (The Efficient ASI Hypothesis); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External MoE/routing source for simplified expert routing, sparse activation, communication/training-stability constraints, and speed/scale claims that require reproduction before local evidence use.
+
+### Mixture-of-Experts with Expert Choice Routing
+
+- Source ID: `ext_expert_choice_routing_2022`
+- Citation or primary record: Zhou et al. (2022), Expert Choice Routing; [arXiv:2202.09368](https://arxiv.org/abs/2202.09368); DOI `10.48550/arXiv.2202.09368`
+- Layer: `routing_modular_intelligence`
+- Current use: routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); resource-economics-and-token-budgets (Resource Economics and Token Budgets); the-efficient-asi-hypothesis (The Efficient ASI Hypothesis); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External MoE routing source for expert-choice routing, token/expert assignment direction, load-balancing pressure, expert capacity, and convergence/performance claims requiring reproduction before local evidence use.
+
+### Mixtral of Experts
+
+- Source ID: `ext_mixtral_2024`
+- Citation or primary record: Jiang et al. (2024), Mixtral of Experts; [arXiv:2401.04088](https://arxiv.org/abs/2401.04088); DOI `10.48550/arXiv.2401.04088`
+- Layer: `routing_modular_intelligence`
+- Current use: routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); fast-generation-architectures (Fast Generation Architectures); resource-economics-and-token-budgets (Resource Economics and Token Budgets) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External sparse LLM source for token-level expert routing, active-parameter accounting, open MoE model release boundaries, and benchmark claims requiring reproduction before local evidence use.
+
+### A Survey on Mixture of Experts in Large Language Models
+
+- Source ID: `ext_moe_llm_survey_2024`
+- Citation or primary record: Cai et al. (2024), MoE LLM Survey; [arXiv:2407.06204](https://arxiv.org/abs/2407.06204); DOI `10.48550/arXiv.2407.06204`
+- Layer: `routing_modular_intelligence`
+- Current use: open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Source review state: source note available
+- Notes: External MoE survey source for LLM MoE taxonomy, algorithmic and systemic design issues, implementations, evaluation patterns, and open research directions.
+
+### FrugalGPT: How to Use Large Language Models While Reducing Cost and Improving Performance
+
+- Source ID: `ext_frugalgpt_2023`
+- Citation or primary record: Chen et al. (2023), FrugalGPT; [arXiv:2305.05176](https://arxiv.org/abs/2305.05176); DOI `10.48550/arXiv.2305.05176`
+- Layer: `task_routing`
+- Current use: routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); resource-economics-and-token-budgets (Resource Economics and Token Budgets); the-efficient-asi-hypothesis (The Efficient ASI Hypothesis) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External task-routing source for prompt adaptation, model approximation, LLM cascades, cost/performance tradeoffs, and query-specific model selection.
+
+### Hybrid LLM: Cost-Efficient and Quality-Aware Query Routing
+
+- Source ID: `ext_hybrid_llm_2024`
+- Citation or primary record: Ding et al. (2024), Hybrid LLM; [arXiv:2404.14618](https://arxiv.org/abs/2404.14618); DOI `10.48550/arXiv.2404.14618`
+- Layer: `cost_quality_routing`
+- Current use: routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); resource-economics-and-token-budgets (Resource Economics and Token Budgets); the-efficient-asi-hypothesis (The Efficient ASI Hypothesis); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External query-routing source for predicted query difficulty, small/large model routing, dynamic quality-cost tradeoffs, and quality-preserving large-model-call reduction.
+
+### RouteLLM: Learning to Route LLMs with Preference Data
+
+- Source ID: `ext_routellm_2024`
+- Citation or primary record: Ong et al. (2024), RouteLLM; [arXiv:2406.18665](https://arxiv.org/abs/2406.18665); DOI `10.48550/arXiv.2406.18665`
+- Layer: `router_learning`
+- Current use: routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); resource-economics-and-token-budgets (Resource Economics and Token Budgets); the-efficient-asi-hypothesis (The Efficient ASI Hypothesis); policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External learned-router source for routing between stronger and weaker LLMs using preference data, cost-quality tradeoffs, and transfer to changed model pairs.
+
+### Deep Compression: Compressing Deep Neural Networks with Pruning, Trained Quantization and Huffman Coding
+
+- Source ID: `ext_deep_compression_2015`
+- Citation or primary record: Han et al. (2015), Deep Compression; [arXiv:1510.00149](https://arxiv.org/abs/1510.00149); DOI `10.48550/arXiv.1510.00149`
+- Layer: `compression_representation`
+- Current use: compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty); rankfold-neuralfold-and-artifact-compression (RankFold, NeuralFold, and Artifact Compression); resource-economics-and-token-budgets (Resource Economics and Token Budgets) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External compression source for pruning, trained quantization, coding, memory-footprint reduction, and speed/energy claims that require reproduction before local evidence use.
+
+### LoRA: Low-Rank Adaptation of Large Language Models
+
+- Source ID: `ext_lora_2021`
+- Citation or primary record: Hu et al. (2021), LoRA; [arXiv:2106.09685](https://arxiv.org/abs/2106.09685); DOI `10.48550/arXiv.2106.09685`
+- Layer: `compression_representation`
+- Current use: rankfold-neuralfold-and-artifact-compression (RankFold, NeuralFold, and Artifact Compression); compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty); resource-economics-and-token-budgets (Resource Economics and Token Budgets); policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback); coilra-multicoil-rope-and-cyclic-mixers (CoilRA, MultiCoil RoPE, and Cyclic Mixers) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External low-rank adaptation source for parameter-efficient updates, rank-decomposition adapters, memory reduction, and adaptation-boundary vocabulary.
+
+### Distilling the Knowledge in a Neural Network
+
+- Source ID: `ext_knowledge_distillation_2015`
+- Citation or primary record: Hinton et al. (2015), Knowledge Distillation; [arXiv:1503.02531](https://arxiv.org/abs/1503.02531); DOI `10.48550/arXiv.1503.02531`
+- Layer: `compression_representation`
+- Current use: compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty); rankfold-neuralfold-and-artifact-compression (RankFold, NeuralFold, and Artifact Compression); resource-economics-and-token-budgets (Resource Economics and Token Budgets) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External compression source for teacher/student distillation, soft-target transfer, ensemble compression, and knowledge-transfer claims requiring local reproduction before evidence use.
+
+### GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers
+
+- Source ID: `ext_gptq_2022`
+- Citation or primary record: Frantar et al. (2022), GPTQ; [arXiv:2210.17323](https://arxiv.org/abs/2210.17323); DOI `10.48550/arXiv.2210.17323`
+- Layer: `compression_quantization`
+- Current use: rankfold-neuralfold-and-artifact-compression (RankFold, NeuralFold, and Artifact Compression); compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty); resource-economics-and-token-budgets (Resource Economics and Token Budgets); fast-generation-architectures (Fast Generation Architectures) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External quantization source for post-training compression of large generative transformers, one-shot weight quantization, memory reduction, and accuracy/speed tradeoff boundaries.
+
+### QLoRA: Efficient Finetuning of Quantized LLMs
+
+- Source ID: `ext_qlora_2023`
+- Citation or primary record: Dettmers et al. (2023), QLoRA; [arXiv:2305.14314](https://arxiv.org/abs/2305.14314); DOI `10.48550/arXiv.2305.14314`
+- Layer: `compression_quantized_adaptation`
+- Current use: prototype-roadmap (Prototype Roadmap)
+- Source review state: source note available
+- Notes: External quantized-adaptation source for finetuning quantized LLMs with low-rank adapters, memory-efficient training, and benchmark claims requiring reproduction before local evidence use.
+
+### DreamCoder: Growing generalizable, interpretable knowledge with wake-sleep Bayesian program learning
+
+- Source ID: `ext_dreamcoder_2020`
+- Citation or primary record: Ellis et al. (2020), DreamCoder; [arXiv:2006.08381](https://arxiv.org/abs/2006.08381); DOI `10.48550/arXiv.2006.08381`
+- Layer: `program_synthesis_representation`
+- Current use: cognitive-compilation-and-semantic-ir (Cognitive Compilation and Semantic IR); procedural-memory-and-cognitive-loop-closure (Procedural Memory and Cognitive Loop Closure); replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: External program-synthesis source for wake-sleep library learning, reusable abstractions, interpretable learned programs, and compression-through-abstraction vocabulary.
+
+### LLVM Language Reference Manual
+
+- Source ID: `ext_llvm_langref_docs`
+- Citation or primary record: LLVM Documentation (2026), Language Reference Manual; [source](https://llvm.org/docs/LangRef.html)
+- Layer: `compiler_ir`
+- Current use: cognitive-compilation-and-semantic-ir (Cognitive Compilation and Semantic IR)
+- Source review state: source note available
+- Notes: Official LLVM Language Reference comparator for SSA-based intermediate representation, equivalent in-memory/bitcode/human-readable forms, well-formedness, verifier passes, and optimization/analysis vocabulary.
+
+### MLIR: A Compiler Infrastructure for the End of Moore's Law
+
+- Source ID: `ext_mlir_2020`
+- Citation or primary record: Lattner et al. (2020), MLIR; [arXiv:2002.11054](https://arxiv.org/abs/2002.11054); DOI `10.48550/arXiv.2002.11054`
+- Layer: `multi_level_compiler_ir`
+- Current use: cognitive-compilation-and-semantic-ir (Cognitive Compilation and Semantic IR)
+- Source review state: source note available
+- Notes: External multi-level compiler-IR comparator for reusable and extensible compiler infrastructure, dialects, progressive lowering, verifiers, modular passes, and heterogeneous target support.
+
+### Translation Validation
+
+- Source ID: `ext_translation_validation_1998`
+- Citation or primary record: Pnueli, Siegel, and Singerman (1998), Translation Validation; [source](https://weizmann.esploro.exlibrisgroup.com/esploro/outputs/conferenceProceeding/Translation-validation/993262143603596)
+- Layer: `translation_validation`
+- Current use: cognitive-compilation-and-semantic-ir (Cognitive Compilation and Semantic IR)
+- Source review state: source note available
+- Notes: External translation-validation comparator for checking each compiler/code-generator run after translation, using a common semantic framework, refinement relation, and simulation-based proof method.
+
+### Toolformer: Language Models Can Teach Themselves to Use Tools
+
+- Source ID: `ext_toolformer_2023`
+- Citation or primary record: Schick et al. (2023), Toolformer; [arXiv:2302.04761](https://arxiv.org/abs/2302.04761); DOI `10.48550/arXiv.2302.04761`
+- Layer: `learned_tool_use`
+- Current use: procedural-memory-and-cognitive-loop-closure (Procedural Memory and Cognitive Loop Closure)
+- Source review state: source note available
+- Notes: External learned-tool-use source for self-supervised API-call insertion, tool selection, argument construction, and result incorporation without claiming ASI Stack tool-use reproduction.
+
+### Voyager: An Open-Ended Embodied Agent with Large Language Models
+
+- Source ID: `ext_voyager_2023`
+- Citation or primary record: Wang et al. (2023), Voyager; [arXiv:2305.16291](https://arxiv.org/abs/2305.16291); DOI `10.48550/arXiv.2305.16291`
+- Layer: `lifelong_skill_learning`
+- Current use: open-ended-improvement-engines (Open-Ended Improvement Engines); procedural-memory-and-cognitive-loop-closure (Procedural Memory and Cognitive Loop Closure)
+- Source review state: source note available
+- Notes: External lifelong-agent source for automatic curriculum, executable-code skill libraries, iterative environment-feedback prompting, self-verification, and skill-library transfer in Minecraft.
+
+### The information bottleneck method
+
+- Source ID: `ext_information_bottleneck_2000`
+- Citation or primary record: Tishby et al. (2000), Information Bottleneck; [arXiv:physics/0004057](https://arxiv.org/abs/physics/0004057); DOI `10.48550/arXiv.physics/0004057`
+- Layer: `representation_compression`
+- Current use: compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty); resource-economics-and-token-budgets (Resource Economics and Token Budgets) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External representation-compression source for relevance-preserving compression, bottleneck variables, mutual-information tradeoffs, and compression/utility separation.
+
+### A tutorial introduction to the minimum description length principle
+
+- Source ID: `ext_mdl_tutorial_2004`
+- Citation or primary record: Grunwald (2004), MDL Tutorial; [arXiv:math/0406077](https://arxiv.org/abs/math/0406077); DOI `10.48550/arXiv.math/0406077`
+- Layer: `description_length_residuals`
+- Current use: compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty); rankfold-neuralfold-and-artifact-compression (RankFold, NeuralFold, and Artifact Compression); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External description-length source for model/data tradeoffs, compression as inductive discipline, and residual/error-accounting vocabulary.
+
+### CodeBLEU: a Method for Automatic Evaluation of Code Synthesis
+
+- Source ID: `ext_codebleu_2020`
+- Citation or primary record: Ren et al. (2020), CodeBLEU; [arXiv:2009.10297](https://arxiv.org/abs/2009.10297); DOI `10.48550/arXiv.2009.10297`
+- Layer: `artifact_utility_metrics`
+- Current use: prototype-roadmap (Prototype Roadmap)
+- Source review state: source note available
+- Notes: External code-synthesis evaluation source for combining lexical, syntax, data-flow, and semantic matching into artifact-quality metrics that still require task-specific validation.
+
+### Measuring Massive Multitask Language Understanding
+
+- Source ID: `ext_mmlu_2020`
+- Citation or primary record: Hendrycks et al. (2020), MMLU; [arXiv:2009.03300](https://arxiv.org/abs/2009.03300); DOI `10.48550/arXiv.2009.03300`
+- Layer: `benchmark_science`
+- Current use: prototype-roadmap (Prototype Roadmap); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Source review state: source note available
+- Notes: External benchmark source for broad multitask evaluation, task-coverage limits, lopsided performance, uncertainty about wrong answers, and benchmark-saturation pressure.
+
+### Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models
+
+- Source ID: `ext_bigbench_2022`
+- Citation or primary record: Srivastava et al. (2022), BIG-bench; [arXiv:2206.04615](https://arxiv.org/abs/2206.04615); DOI `10.48550/arXiv.2206.04615`
+- Layer: `benchmark_science`
+- Current use: benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); the-efficient-asi-hypothesis (The Efficient ASI Hypothesis); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine); policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External benchmark source for BIG-bench, broad task coverage, scale effects, calibration, breakthrough behavior, human-rater baselines, and social-bias tradeoffs.
+
+### Holistic Evaluation of Language Models
+
+- Source ID: `ext_helm_2022`
+- Citation or primary record: Liang et al. (2022), HELM; [arXiv:2211.09110](https://arxiv.org/abs/2211.09110); DOI `10.48550/arXiv.2211.09110`
+- Layer: `benchmark_science`
+- Current use: living-book-methodology (Living Book Methodology)
+- Source review state: source note available
+- Notes: External benchmark-science source for multi-scenario, multi-metric evaluation, missing-coverage disclosure, raw-prompt transparency, and living benchmark practice.
+
+### GPQA: A Graduate-Level Google-Proof Q&A Benchmark
+
+- Source ID: `ext_gpqa_2023`
+- Citation or primary record: Rein et al. (2023), GPQA; [arXiv:2311.12022](https://arxiv.org/abs/2311.12022); DOI `10.48550/arXiv.2311.12022`
+- Layer: `benchmark_science`
+- Current use: verification-bandwidth-and-context-adequacy (Verification Bandwidth and Context Adequacy); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Source review state: source note available
+- Notes: External benchmark source for expert-written hard questions, Google-proof validation, scalable oversight pressure, and the gap between skilled non-expert validation and expert competence.
+
+### SWE-bench: Can Language Models Resolve Real-World GitHub Issues?
+
+- Source ID: `ext_swe_bench_2023`
+- Citation or primary record: Jimenez et al. (2023), SWE-bench; [arXiv:2310.06770](https://arxiv.org/abs/2310.06770); DOI `10.48550/arXiv.2310.06770`
+- Layer: `benchmark_science`
+- Current use: prototype-roadmap (Prototype Roadmap)
+- Source review state: source note available
+- Notes: External benchmark source for real-world software-engineering issue resolution, repository-scale context, executable environments, patch evaluation, and capability boundaries.
+
+### LiveBench: A Challenging, Contamination-Limited LLM Benchmark
+
+- Source ID: `ext_livebench_2024`
+- Citation or primary record: White et al. (2024), LiveBench; [arXiv:2406.19314](https://arxiv.org/abs/2406.19314); DOI `10.48550/arXiv.2406.19314`
+- Layer: `benchmark_science`
+- Current use: living-book-methodology (Living Book Methodology); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Source review state: source note available
+- Notes: External benchmark source for contamination-limited evaluation, frequently updated questions, objective ground-truth scoring, and monthly benchmark evolution.
+
+### Dynabench: Rethinking Benchmarking in NLP
+
+- Source ID: `ext_dynabench_2021`
+- Citation or primary record: Kiela et al. (2021), Dynabench; [arXiv:2104.14337](https://arxiv.org/abs/2104.14337); DOI `10.48550/arXiv.2104.14337`
+- Layer: `dynamic_benchmarking`
+- Current use: benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine); policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback); artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External dynamic-benchmarking source for human-and-model-in-the-loop data collection, adversarial benchmark evolution, and stale static benchmark pressure.
+
+### Beyond Accuracy: Behavioral Testing of NLP models with CheckList
+
+- Source ID: `ext_checklist_2020`
+- Citation or primary record: Ribeiro et al. (2020), CheckList; [arXiv:2005.04118](https://arxiv.org/abs/2005.04118); DOI `10.48550/arXiv.2005.04118`
+- Layer: `behavioral_evaluation`
+- Current use: verification-bandwidth-and-context-adequacy (Verification Bandwidth and Context Adequacy); claim-ledgers-and-belief-revision (Claim Ledgers and Belief Revision); prototype-roadmap (Prototype Roadmap)
+- Source review state: source note available
+- Notes: External behavioral-testing source for capability matrices, minimum functionality tests, invariance tests, directional expectation tests, and failure-discovery beyond aggregate accuracy.
+
+### Investigating Data Contamination in Modern Benchmarks for Large Language Models
+
+- Source ID: `ext_benchmark_contamination_2023`
+- Citation or primary record: Deng et al. (2023), Benchmark Contamination; [arXiv:2311.09783](https://arxiv.org/abs/2311.09783); DOI `10.48550/arXiv.2311.09783`
+- Layer: `benchmark_contamination`
+- Current use: living-book-methodology (Living Book Methodology)
+- Source review state: source note available
+- Notes: External benchmark-contamination source for detecting training/test overlap pressure, benchmark-leakage risk, and score interpretation limits in modern LLM evaluations.
+
+### Categorizing Variants of Goodhart's Law
+
+- Source ID: `ext_goodhart_variants_2018`
+- Citation or primary record: Manheim and Garrabrant (2018), Goodhart Variants; [arXiv:1803.04585](https://arxiv.org/abs/1803.04585); DOI `10.48550/arXiv.1803.04585`
+- Layer: `goodhart_failure_taxonomy`
+- Current use: failure-modes-of-ungoverned-intelligence (Failure Modes of Ungoverned Intelligence)
+- Source review state: source note available
+- Notes: External Goodhart-taxonomy source for regressive, extremal, causal, and adversarial metric failures that benchmark ratchets and policy updates must treat as distinct risks.
+
+### Fast Inference from Transformers via Speculative Decoding
+
+- Source ID: `ext_speculative_decoding_2022`
+- Citation or primary record: Leviathan et al. (2022), Fast Inference from Transformers via Speculative Decoding; [arXiv:2211.17192](https://arxiv.org/abs/2211.17192); DOI `10.48550/arXiv.2211.17192`
+- Layer: `fast_generation`
+- Current use: fast-generation-architectures (Fast Generation Architectures)
+- Source review state: source note available
+- Notes: Primary external paper for speculative decoding: a draft model proposes multiple tokens and a target model verifies them, giving an exact-distribution acceleration path under its assumptions.
+
+### Better & Faster Large Language Models via Multi-token Prediction
+
+- Source ID: `ext_multi_token_prediction_2024`
+- Citation or primary record: Gloeckle et al. (2024), Better & Faster Large Language Models via Multi-token Prediction; [arXiv:2404.19737](https://arxiv.org/abs/2404.19737); DOI `10.48550/arXiv.2404.19737`
+- Layer: `fast_generation`
+- Current use: fast-generation-architectures (Fast Generation Architectures)
+- Source review state: source note available
+- Notes: Primary external paper for multi-token prediction as an auxiliary training objective and inference-time multi-token proposal mechanism.
+
+### Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads
+
+- Source ID: `ext_medusa_2024`
+- Citation or primary record: Cai et al. (2024), Medusa; [arXiv:2401.10774](https://arxiv.org/abs/2401.10774); DOI `10.48550/arXiv.2401.10774`
+- Layer: `fast_generation`
+- Current use: fast-generation-architectures (Fast Generation Architectures)
+- Source review state: source note available
+- Notes: Primary external paper for adding multiple decoding heads to an LLM and verifying tree-structured candidate continuations in parallel.
+
+### EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty
+
+- Source ID: `ext_eagle_2024`
+- Citation or primary record: Li et al. (2024), EAGLE; [arXiv:2401.15077](https://arxiv.org/abs/2401.15077); DOI `10.48550/arXiv.2401.15077`
+- Layer: `fast_generation`
+- Current use: fast-generation-architectures (Fast Generation Architectures)
+- Source review state: source note available
+- Notes: Primary external paper for feature-level speculative drafting and target-model verification as an acceleration mechanism.
+
+### Break the Sequential Dependency of LLM Inference Using Lookahead Decoding
+
+- Source ID: `ext_lookahead_decoding_2024`
+- Citation or primary record: Fu et al. (2024), Lookahead Decoding; [arXiv:2402.02057](https://arxiv.org/abs/2402.02057); DOI `10.48550/arXiv.2402.02057`
+- Layer: `fast_generation`
+- Current use: fast-generation-architectures (Fast Generation Architectures)
+- Source review state: source note available
+- Notes: Primary external paper for lookahead decoding: a parallel exact decoding algorithm that reduces serial decoding steps without an auxiliary draft model.
+
+### LayerSkip: Enabling Early Exit Inference and Self-Speculative Decoding
+
+- Source ID: `ext_layerskip_2024`
+- Citation or primary record: Elhoushi et al. (2024), LayerSkip; [arXiv:2404.16710](https://arxiv.org/abs/2404.16710); DOI `10.18653/v1/2024.acl-long.681`
+- Layer: `fast_generation`
+- Current use: fast-generation-architectures (Fast Generation Architectures)
+- Source review state: source note available
+- Notes: Primary external paper for early-exit inference and self-speculative decoding where early layers draft and later layers verify.
+
+### Efficient Memory Management for Large Language Model Serving with PagedAttention
+
+- Source ID: `ext_pagedattention_vllm_2023`
+- Citation or primary record: Kwon et al. (2023), Efficient Memory Management for LLM Serving with PagedAttention; [arXiv:2309.06180](https://arxiv.org/abs/2309.06180); DOI `10.48550/arXiv.2309.06180`
+- Layer: `fast_generation`
+- Current use: fast-generation-architectures (Fast Generation Architectures); resource-economics-and-token-budgets (Resource Economics and Token Budgets)
+- Source review state: source note available
+- Notes: Primary external paper for vLLM/PagedAttention, which treats KV-cache memory management and serving throughput as a distinct acceleration axis.
+
+### Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context
+
+- Source ID: `ext_transformer_xl_2019`
+- Citation or primary record: Dai et al. (2019), Transformer-XL; [arXiv:1901.02860](https://arxiv.org/abs/1901.02860); DOI `10.48550/arXiv.1901.02860`
+- Layer: `sequence_memory_recurrence`
+- Current use: coil-attention-cyclic-memory-and-recurrence-contracts (Coil Attention, Cyclic Memory, and Recurrence Contracts) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External recurrent Transformer comparator for segment-level recurrence, relative positional encoding, and long-dependency language modeling; useful as a baseline family for cyclic-memory contracts without implying local reproduction.
+
+### Compressive Transformers for Long-Range Sequence Modelling
+
+- Source ID: `ext_compressive_transformer_2019`
+- Citation or primary record: Rae et al. (2019), Compressive Transformers; [arXiv:1911.05507](https://arxiv.org/abs/1911.05507); DOI `10.48550/arXiv.1911.05507`
+- Layer: `sequence_memory_recurrence`
+- Current use: coil-attention-cyclic-memory-and-recurrence-contracts (Coil Attention, Cyclic Memory, and Recurrence Contracts) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External long-range memory comparator for compressed past memories, memory mechanisms, and long-range sequence benchmarks; useful for positioning cyclic memory against compression-memory baselines.
+
+### RoFormer: Enhanced Transformer with Rotary Position Embedding
+
+- Source ID: `ext_roformer_rope_2021`
+- Citation or primary record: Su et al. (2021), RoFormer; [arXiv:2104.09864](https://arxiv.org/abs/2104.09864); DOI `10.48550/arXiv.2104.09864`
+- Layer: `position_encoding`
+- Current use: coilra-multicoil-rope-and-cyclic-mixers (CoilRA, MultiCoil RoPE, and Cyclic Mixers) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External RoPE comparator for rotary position embedding, relative-position behavior inside self-attention, and position-encoding baselines for cyclic phase or RoPE-style substrates.
+
+### Retentive Network: A Successor to Transformer for Large Language Models
+
+- Source ID: `ext_retnet_2023`
+- Citation or primary record: Sun et al. (2023), Retentive Network; [arXiv:2307.08621](https://arxiv.org/abs/2307.08621); DOI `10.48550/arXiv.2307.08621`
+- Layer: `sequence_memory_recurrence`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: External retention/recurrent-sequence comparator for the relationship between recurrence and attention, recurrent/chunkwise computation, and inference-efficiency tradeoffs.
+
+### Mamba: Linear-Time Sequence Modeling with Selective State Spaces
+
+- Source ID: `ext_mamba_2023`
+- Citation or primary record: Gu and Dao (2023), Mamba; [arXiv:2312.00752](https://arxiv.org/abs/2312.00752); DOI `10.48550/arXiv.2312.00752`
+- Layer: `sequence_substrates`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture); fast-generation-architectures (Fast Generation Architectures); mathematical-and-search-substrates (Mathematical and Search Substrates)
+- Source review state: source note available
+- Notes: Primary external paper for selective state-space sequence models as a different long-sequence substrate and inference-efficiency axis from decoding tricks.
+
+### Large Language Diffusion Models
+
+- Source ID: `ext_llada_2025`
+- Citation or primary record: Nie et al. (2025), Large Language Diffusion Models; [arXiv:2502.09992](https://arxiv.org/abs/2502.09992); DOI `10.48550/arXiv.2502.09992`
+- Layer: `diffusion_language_models`
+- Current use: fast-generation-architectures (Fast Generation Architectures)
+- Source review state: source note available
+- Notes: Primary external paper for LLaDA, a large masked-diffusion language model trained with pretraining and supervised fine-tuning rather than left-to-right autoregression.
+
+### Scaling Beyond Masked Diffusion Language Models
+
+- Source ID: `ext_scaling_dllms_2026`
+- Citation or primary record: Sahoo et al. (2026), Scaling Beyond Masked Diffusion Language Models; [arXiv:2602.15014](https://arxiv.org/abs/2602.15014); DOI `10.48550/arXiv.2602.15014`
+- Layer: `diffusion_language_models`
+- Current use: fast-generation-architectures (Fast Generation Architectures)
+- Source review state: source note available
+- Notes: Primary external paper for comparing diffusion language-model families by speed-quality tradeoffs rather than perplexity alone.
+
+### Trust Region Policy Optimization
+
+- Source ID: `ext_trpo_2015`
+- Citation or primary record: Schulman et al. (2015), Trust Region Policy Optimization; [arXiv:1502.05477](https://arxiv.org/abs/1502.05477); DOI `10.48550/arXiv.1502.05477`
+- Layer: `policy_optimization`
+- Current use: policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback)
+- Source review state: source note available
+- Notes: Primary external source for trust-region policy-gradient updates and bounded update-size discipline.
+
+### Proximal Policy Optimization Algorithms
+
+- Source ID: `ext_ppo_2017`
+- Citation or primary record: Schulman et al. (2017), Proximal Policy Optimization Algorithms; [arXiv:1707.06347](https://arxiv.org/abs/1707.06347); DOI `10.48550/arXiv.1707.06347`
+- Layer: `policy_optimization`
+- Current use: policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback)
+- Source review state: source note available
+- Notes: Primary external source for PPO-style online policy-gradient updates and proximal surrogate objectives.
+
+### ReMax: A Simple, Effective, and Efficient Reinforcement Learning Method for Aligning Large Language Models
+
+- Source ID: `ext_remax_2023`
+- Citation or primary record: Li et al. (2023), ReMax; [arXiv:2310.10505](https://arxiv.org/abs/2310.10505); DOI `10.48550/arXiv.2310.10505`
+- Layer: `policy_optimization`
+- Current use: policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback)
+- Source review state: source note available
+- Notes: Primary external source for simpler RLHF-oriented policy-gradient updates relative to PPO-style machinery.
+
+### Goal-Oriented Requirements Engineering: A Guided Tour
+
+- Source ID: `ext_goal_oriented_requirements_engineering_2001`
+- Citation or primary record: van Lamsweerde (2001), Goal-Oriented Requirements Engineering; [source](https://doi.org/10.1109/ISRE.2001.948567); DOI `10.1109/ISRE.2001.948567`
+- Layer: `requirements_engineering`
+- Current use: human-intent-as-a-formal-input (Human Intent as a Formal Input)
+- Source review state: source note available
+- Notes: External requirements-engineering comparator for turning stakeholder goals, constraints, refinements, and responsibilities into explicit requirements before system design or execution.
+
+### Cooperative Inverse Reinforcement Learning
+
+- Source ID: `ext_cooperative_inverse_rl_2016`
+- Citation or primary record: Hadfield-Menell et al. (2016), Cooperative Inverse Reinforcement Learning; [arXiv:1606.03137](https://arxiv.org/abs/1606.03137); DOI `10.48550/arXiv.1606.03137`
+- Layer: `human_intent_alignment`
+- Current use: human-intent-as-a-formal-input (Human Intent as a Formal Input)
+- Source review state: source note available
+- Notes: External cooperative AI comparator for formalizing value alignment as uncertainty about the human reward function in a cooperative partial-information setting.
+
+### Deep Reinforcement Learning from Human Preferences
+
+- Source ID: `ext_deep_rl_human_preferences_2017`
+- Citation or primary record: Christiano et al. (2017), Deep RL from Human Preferences; [arXiv:1706.03741](https://arxiv.org/abs/1706.03741); DOI `10.48550/arXiv.1706.03741`
+- Layer: `human_feedback_learning`
+- Current use: human-intent-as-a-formal-input (Human Intent as a Formal Input)
+- Source review state: source note available
+- Notes: External human-feedback comparator for communicating complex goals through preference comparisons over behavior segments; useful for separating preference signals from explicit intent contracts.
+
+### Direct Preference Optimization: Your Language Model is Secretly a Reward Model
+
+- Source ID: `ext_dpo_2023`
+- Citation or primary record: Rafailov et al. (2023), Direct Preference Optimization; [arXiv:2305.18290](https://arxiv.org/abs/2305.18290); DOI `10.48550/arXiv.2305.18290`
+- Layer: `policy_optimization`
+- Current use: policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback)
+- Source review state: source note available
+- Notes: Primary external source for DPO-style offline preference optimization without a separate online RL loop.
+
+### A General Theoretical Paradigm to Understand Learning from Human Preferences
+
+- Source ID: `ext_ipo_preference_2023`
+- Citation or primary record: Azar et al. (2023), Learning from Human Preferences paradigm; [arXiv:2310.12036](https://arxiv.org/abs/2310.12036); DOI `10.48550/arXiv.2310.12036`
+- Layer: `policy_optimization`
+- Current use: policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback)
+- Source review state: source note available
+- Notes: External source for theoretical comparison of preference-learning objectives, including IPO/DPO-style framing.
+
+### ORPO: Monolithic Preference Optimization without Reference Model
+
+- Source ID: `ext_orpo_2024`
+- Citation or primary record: Hong et al. (2024), ORPO; [arXiv:2403.07691](https://arxiv.org/abs/2403.07691); DOI `10.48550/arXiv.2403.07691`
+- Layer: `policy_optimization`
+- Current use: policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback)
+- Source review state: source note available
+- Notes: External source for reference-model-free monolithic preference optimization.
+
+### KTO: Model Alignment as Prospect Theoretic Optimization
+
+- Source ID: `ext_kto_2024`
+- Citation or primary record: Ethayarajh et al. (2024), KTO; [arXiv:2402.01306](https://arxiv.org/abs/2402.01306); DOI `10.48550/arXiv.2402.01306`
+- Layer: `policy_optimization`
+- Current use: policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback)
+- Source review state: source note available
+- Notes: External source for prospect-theoretic model alignment and human-aware loss framing.
+
+### SimPO: Simple Preference Optimization with a Reference-Free Reward
+
+- Source ID: `ext_simpo_2024`
+- Citation or primary record: Meng et al. (2024), SimPO; [arXiv:2405.14734](https://arxiv.org/abs/2405.14734); DOI `10.48550/arXiv.2405.14734`
+- Layer: `policy_optimization`
+- Current use: policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback)
+- Source review state: source note available
+- Notes: External source for simple reference-free preference optimization using sequence-level reward framing.
+
+### Back to Basics: Revisiting REINFORCE Style Optimization for Learning from Human Feedback in LLMs
+
+- Source ID: `ext_reinforce_style_rlhf_2024`
+- Citation or primary record: Ahmadian et al. (2024), REINFORCE-style RLHF revisiting; [arXiv:2402.14740](https://arxiv.org/abs/2402.14740); DOI `10.48550/arXiv.2402.14740`
+- Layer: `policy_optimization`
+- Current use: policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback)
+- Source review state: source note available
+- Notes: External source for revisiting simpler REINFORCE-style optimization as an RLHF baseline.
+
+### DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning
+
+- Source ID: `ext_deepseek_r1_2025`
+- Citation or primary record: DeepSeek-AI et al. (2025), DeepSeek-R1; [arXiv:2501.12948](https://arxiv.org/abs/2501.12948); DOI `10.1038/s41586-025-09422-z`
+- Layer: `policy_optimization`
+- Current use: governed-deliberation-and-test-time-scaling (Governed Deliberation and Test-Time Scaling); policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback)
+- Source review state: source note available
+- Notes: External source for reinforcement-learning pressure on reasoning behavior in large language models.
+
+### DAPO: An Open-Source LLM Reinforcement Learning System at Scale
+
+- Source ID: `ext_dapo_2025`
+- Citation or primary record: Yu et al. (2025), DAPO; [arXiv:2503.14476](https://arxiv.org/abs/2503.14476); DOI `10.48550/arXiv.2503.14476`
+- Layer: `policy_optimization`
+- Current use: policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback)
+- Source review state: source note available
+- Notes: External source for open-source large-scale LLM RL system details and DAPO-style update design.
+
+### Group Sequence Policy Optimization
+
+- Source ID: `ext_gspo_2025`
+- Citation or primary record: Zheng et al. (2025), Group Sequence Policy Optimization; [arXiv:2507.18071](https://arxiv.org/abs/2507.18071); DOI `10.48550/arXiv.2507.18071`
+- Layer: `policy_optimization`
+- Current use: policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback)
+- Source review state: source note available
+- Notes: External source for sequence-level group policy optimization in LLM reinforcement learning.
+
+### S-GRPO: Early Exit via Reinforcement Learning in Reasoning Models
+
+- Source ID: `ext_s_grpo_2025`
+- Citation or primary record: Dai et al. (2025), S-GRPO; [arXiv:2505.07686](https://arxiv.org/abs/2505.07686); DOI `10.48550/arXiv.2505.07686`
+- Layer: `policy_optimization`
+- Current use: governed-deliberation-and-test-time-scaling (Governed Deliberation and Test-Time Scaling); policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback)
+- Source review state: source note available
+- Notes: External source for early-exit reinforcement learning and overthinking control in reasoning models.
+
+### LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards
+
+- Source ID: `ext_longrlvr_2026`
+- Citation or primary record: Chen et al. (2026), LongRLVR; [arXiv:2603.02146](https://arxiv.org/abs/2603.02146); DOI `10.48550/arXiv.2603.02146`
+- Layer: `policy_optimization`
+- Current use: policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback)
+- Source review state: source note available
+- Notes: External source for long-context RLVR and verifiable context-grounding rewards.
+
+### Open Problems and Fundamental Limitations of Reinforcement Learning from Human Feedback
+
+- Source ID: `ext_rlhf_limitations_2023`
+- Citation or primary record: Casper et al. (2023), Open Problems and Fundamental Limitations of RLHF; [arXiv:2307.15217](https://arxiv.org/abs/2307.15217); DOI `10.48550/arXiv.2307.15217`
+- Layer: `policy_optimization`
+- Current use: policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback)
+- Source review state: source note available
+- Notes: External survey source for RLHF limitations, reward hacking, evaluator limits, and complementary safeguards.
+
+### What is Tailscale?
+
+- Source ID: `ext_tailscale_docs_2025`
+- Citation or primary record: Tailscale Docs (2025), What is Tailscale?; [source](https://tailscale.com/docs/concepts/what-is-tailscale)
+- Layer: `personal_compute_hives`
+- Current use: personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence)
+- Source review state: source note available
+- Notes: Official Tailscale documentation for zero-trust identity networking, tailnets, encrypted point-to-point connections, and cross-network device connectivity.
+
+### Kubernetes Documentation: Overview
+
+- Source ID: `ext_kubernetes_overview_docs`
+- Citation or primary record: Kubernetes Documentation, Overview; [source](https://kubernetes.io/docs/concepts/overview/)
+- Layer: `personal_compute_hives`
+- Current use: personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence)
+- Source review state: source note available
+- Notes: Official Kubernetes overview for containerized workload management, declarative configuration, automation, service discovery, storage orchestration, rollouts, bin packing, and self-healing.
+
+### K3s: Lightweight Kubernetes
+
+- Source ID: `ext_k3s_docs_2026`
+- Citation or primary record: K3s Documentation (2026), Lightweight Kubernetes; [source](https://docs.k3s.io/)
+- Layer: `personal_compute_hives`
+- Current use: personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence)
+- Source review state: source note available
+- Notes: Official K3s documentation for lightweight Kubernetes deployment in edge, homelab, IoT, CI, single-board-computer, air-gapped, and embedded settings.
+
+### Nomad Documentation
+
+- Source ID: `ext_nomad_docs`
+- Citation or primary record: HashiCorp Developer, Nomad Documentation; [source](https://developer.hashicorp.com/nomad)
+- Layer: `personal_compute_hives`
+- Current use: personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence)
+- Source review state: source note available
+- Notes: Official Nomad documentation for scheduling and orchestrating containers, non-containerized applications, and batch jobs across on-prem and cloud environments.
+
+### Temporal Documentation: What is Temporal?
+
+- Source ID: `ext_temporal_docs`
+- Citation or primary record: Temporal Documentation (2026), What is Temporal?; [source](https://docs.temporal.io/temporal)
+- Layer: `durable_execution`
+- Current use: labor-os-and-typed-jobs (Labor OS and Typed Jobs)
+- Source review state: source note available
+- Notes: Official Temporal documentation comparator for durable workflow execution, workflow event histories, worker processes, failure recovery, and long-running application-code orchestration.
+
+### Apache Airflow Documentation: Dags
+
+- Source ID: `ext_airflow_dag_docs`
+- Citation or primary record: Apache Airflow Documentation (2026), Dags; [source](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html)
+- Layer: `workflow_orchestration`
+- Current use: labor-os-and-typed-jobs (Labor OS and Typed Jobs)
+- Source review state: source note available
+- Notes: Official Apache Airflow documentation comparator for DAG-based workflow scheduling, tasks, dependencies, callbacks, retries, and operational workflow metadata.
+
+### Business Process Model and Notation Specification Version 2.0.2
+
+- Source ID: `ext_bpmn_2_0_2_spec`
+- Citation or primary record: OMG (2014), BPMN 2.0.2; [source](https://www.omg.org/spec/BPMN/2.0.2/)
+- Layer: `business_process_modeling`
+- Current use: labor-os-and-typed-jobs (Labor OS and Typed Jobs)
+- Source review state: source note available
+- Notes: OMG BPMN 2.0.2 formal specification comparator for stakeholder-readable business-process diagrams, implementation-independent flow notation, and translation into software process components.
+
+### Kubernetes Documentation: Jobs
+
+- Source ID: `ext_kubernetes_jobs_docs`
+- Citation or primary record: Kubernetes Documentation (2026), Jobs; [source](https://kubernetes.io/docs/concepts/workloads/controllers/job/)
+- Layer: `batch_job_lifecycle`
+- Current use: labor-os-and-typed-jobs (Labor OS and Typed Jobs)
+- Source review state: source note available
+- Notes: Official Kubernetes Jobs documentation comparator for batch job lifecycle, completions, backoff limits, active deadlines, terminal Complete/Failed conditions, and cleanup of finished jobs.
+
+### What's Ray Core?
+
+- Source ID: `ext_ray_core_docs_2026`
+- Citation or primary record: Ray Documentation (2026), What's Ray Core?; [source](https://docs.ray.io/en/latest/ray-core/walkthrough.html)
+- Layer: `personal_compute_hives`
+- Current use: personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence)
+- Source review state: source note available
+- Notes: Official Ray Core documentation for distributed task, actor, and object primitives used to build and scale Python applications.
+
+### BOINC
+
+- Source ID: `ext_boinc_home_2026`
+- Citation or primary record: BOINC Project Site (2026); [source](https://boinc.berkeley.edu/)
+- Layer: `personal_compute_hives`
+- Current use: personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence)
+- Source review state: source note available
+- Notes: Official BOINC site for volunteer computing where user computers download scientific computing jobs and run them in the background.
+
+### Syncthing
+
+- Source ID: `ext_syncthing_home`
+- Citation or primary record: Syncthing Project Site; [source](https://syncthing.net/)
+- Layer: `personal_compute_hives`
+- Current use: personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence)
+- Source review state: source note available
+- Notes: Official Syncthing site for continuous file synchronization across computers, authenticated devices, encrypted transport, and user-controlled storage location.
+
+### IPFS Documentation and Project Site
+
+- Source ID: `ext_ipfs_docs`
+- Citation or primary record: IPFS Project Site; [source](https://ipfs.tech/)
+- Layer: `personal_compute_hives`
+- Current use: personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence)
+- Source review state: source note available
+- Notes: Official IPFS project documentation and site for peer-to-peer content addressing, content identifiers, provider discovery, and decentralized retrieval vocabulary.
+
+### Akash Network Documentation
+
+- Source ID: `ext_akash_docs_2026`
+- Citation or primary record: Akash Network Documentation (2026); [source](https://akash.network/docs/)
+- Layer: `personal_compute_hives`
+- Current use: personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence); artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance)
+- Source review state: source note available
+- Notes: Official Akash documentation for decentralized cloud deployment, provider resources, leases, GPUs, SDKs, node operations, and provider operations.
+
+### Golem Developer Resources
+
+- Source ID: `ext_golem_docs_2025`
+- Citation or primary record: Golem Docs (2025), Developer Resources; [source](https://docs.golem.network/)
+- Layer: `personal_compute_hives`
+- Current use: personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence); artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance)
+- Source review state: source note available
+- Notes: Official Golem developer resources for decentralized computations, task execution, provider selection, result handling, and resource sharing.
+
+### Webhook events and payloads
+
+- Source ID: `ext_github_webhooks_docs`
+- Citation or primary record: GitHub Docs (2026), Webhook events and payloads; [source](https://docs.github.com/en/webhooks/webhook-events-and-payloads)
+- Layer: `artifact_steward_agents`
+- Current use: artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance)
+- Source review state: source note available
+- Notes: Official GitHub documentation for repository and organization webhook events, event payloads, delivery headers, event-specific permissions, and payload limits.
+
+### Self-hosted runners
+
+- Source ID: `ext_github_self_hosted_runners_docs`
+- Citation or primary record: GitHub Docs (2026), Self-hosted runners; [source](https://docs.github.com/en/actions/concepts/runners/self-hosted-runners)
+- Layer: `artifact_steward_agents`
+- Current use: personal-compute-hives-and-federated-edge-intelligence (Personal Compute Hives and Federated Edge Intelligence); artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance)
+- Source review state: source note available
+- Notes: Official GitHub Actions documentation for self-hosted runners as user-managed systems that execute workflow jobs on physical, virtual, containerized, on-prem, or cloud machines.
+
+### OpenZeppelin Contracts: Governance
+
+- Source ID: `ext_openzeppelin_governor_docs`
+- Citation or primary record: OpenZeppelin Contracts Docs, Governance; [source](https://docs.openzeppelin.com/contracts/5.x/api/governance)
+- Layer: `artifact_steward_agents`
+- Current use: artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance)
+- Source review state: source note available
+- Notes: Official OpenZeppelin governance documentation for modular Governor contracts, voting power, quorum, timelocks, proposal settings, and guardian-style extensions.
+
+### Open Collective Documentation
+
+- Source ID: `ext_open_collective_docs`
+- Citation or primary record: Open Collective Documentation (2026); [source](https://documentation.opencollective.com/)
+- Layer: `artifact_steward_agents`
+- Current use: artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance)
+- Source review state: source note available
+- Notes: Official Open Collective documentation for transparent community money management, fiscal hosts, contribution intake, expenses, accounting, and legal-entity delegation through fiscal hosting.
+
+### About GitHub Sponsors for open source contributors
+
+- Source ID: `ext_github_sponsors_docs`
+- Citation or primary record: GitHub Docs (2026), About GitHub Sponsors; [source](https://docs.github.com/en/sponsors/receiving-sponsorships-through-github-sponsors/about-github-sponsors-for-open-source-contributors)
+- Layer: `artifact_steward_agents`
+- Current use: artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance)
+- Source review state: source note available
+- Notes: Official GitHub Sponsors documentation for contributor and organization sponsorship eligibility, open-source contribution categories, sponsor profiles, and GitHub-native funding surfaces.
+
+### Demystifying and Detecting Agentic Workflow Injection Vulnerabilities in GitHub Actions
+
+- Source ID: `ext_agentic_workflow_injection_2026`
+- Citation or primary record: Wang et al. (2026), Agentic Workflow Injection in GitHub Actions; [arXiv:2605.07135](https://arxiv.org/abs/2605.07135); DOI `10.48550/arXiv.2605.07135`
+- Layer: `artifact_steward_agents`
+- Current use: artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance)
+- Source review state: source note available
+- Notes: External security paper for agentic workflow injection in GitHub Actions when untrusted repository event context reaches LLM agents and downstream workflow logic.
+
+### Fairness in Token Delegation: Mitigating Voting Power Concentration in DAOs
+
+- Source ID: `ext_dao_delegation_fairness_2025`
+- Citation or primary record: Messias and Ide (2025), Fairness in Token Delegation; [arXiv:2510.05830](https://arxiv.org/abs/2510.05830); DOI `10.48550/arXiv.2510.05830`
+- Layer: `artifact_steward_agents`
+- Current use: artifact-steward-agents-and-living-project-governance (Artifact Steward Agents and Living Project Governance)
+- Source review state: source note available
+- Notes: External DAO governance paper for voter apathy, voting-power concentration, delegation misalignment, and delegate-ranking bias.
+
+### Model Cards for Model Reporting
+
+- Source ID: `ext_model_cards_2019`
+- Citation or primary record: Mitchell et al. (2019), Model Cards; [arXiv:1810.03993](https://arxiv.org/abs/1810.03993); DOI `10.48550/arXiv.1810.03993`
+- Layer: `model_reporting`
+- Current use: project-theseus-as-report-first-implementation-reference (Project Theseus as Report-First Implementation Reference)
+- Source review state: source note available
+- Notes: External reporting comparator for structured model documentation, intended-use boundaries, evaluation disclosures, ethical considerations, and model-report artifacts.
+
+### Datasheets for Datasets
+
+- Source ID: `ext_datasheets_datasets_2021`
+- Citation or primary record: Gebru et al. (2021), Datasheets for Datasets; [arXiv:1803.09010](https://arxiv.org/abs/1803.09010); DOI `10.48550/arXiv.1803.09010`
+- Layer: `dataset_documentation`
+- Current use: project-theseus-as-report-first-implementation-reference (Project Theseus as Report-First Implementation Reference)
+- Source review state: source note available
+- Notes: External documentation comparator for dataset motivation, composition, collection, preprocessing, uses, distribution, maintenance, and accountability questions.
+
+### FactSheets: Increasing Trust in AI Services through Supplier's Declarations of Conformity
+
+- Source ID: `ext_factsheets_ai_services_2019`
+- Citation or primary record: Arnold et al. (2019), FactSheets for AI Services; [arXiv:1808.07261](https://arxiv.org/abs/1808.07261); DOI `10.48550/arXiv.1808.07261`
+- Layer: `ai_service_fact_sheets`
+- Current use: project-theseus-as-report-first-implementation-reference (Project Theseus as Report-First Implementation Reference)
+- Source review state: source note available
+- Notes: External AI-service documentation comparator for supplier declarations, service properties, trust-relevant facts, and standardized reporting boundaries.
+
+### Improving Reproducibility in Machine Learning Research
+
+- Source ID: `ext_ml_reproducibility_program_2021`
+- Citation or primary record: Pineau et al. (2021), Improving Reproducibility in Machine Learning Research; [source](https://jmlr.org/papers/v22/20-303.html)
+- Layer: `ml_reproducibility_reporting`
+- Current use: project-theseus-as-report-first-implementation-reference (Project Theseus as Report-First Implementation Reference)
+- Source review state: source note available
+- Notes: External reproducibility-program comparator for checklists, code submission, reproducibility reports, and community review mechanisms in machine-learning research.
+
+### A Mathematical Framework for Transformer Circuits
+
+- Source ID: `ext_transformer_circuits_2021`
+- Citation or primary record: Elhage et al. (2021), Transformer Circuits; [source](https://transformer-circuits.pub/2021/framework/index.html)
+- Layer: `mechanistic_interpretability`
+- Current use: evidence-states-and-claim-discipline (Evidence States and Claim Discipline) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External mechanistic-interpretability comparator for treating internal circuit analyses as scoped white-box evidence that still needs model, layer, behavior, causal, and limitation boundaries.
+
+### Towards Monosemanticity: Decomposing Language Models With Dictionary Learning
+
+- Source ID: `ext_monosemanticity_2023`
+- Citation or primary record: Bricken et al. (2023), Towards Monosemanticity; [source](https://transformer-circuits.pub/2023/monosemantic-features)
+- Layer: `mechanistic_interpretability`
+- Current use: evidence-states-and-claim-discipline (Evidence States and Claim Discipline) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External mechanistic-interpretability comparator for sparse-autoencoder feature decomposition and the boundary between discovered features, feature-level evidence, and broader model-behavior claims.
+
+### Literate Programming
+
+- Source ID: `ext_literate_programming_1984`
+- Citation or primary record: Knuth (1984), Literate Programming; [source](https://academic.oup.com/comjnl/article/27/2/97/343244); DOI `10.1093/comjnl/27.2.97`
+- Layer: `literate_programming`
+- Current use: living-book-methodology (Living Book Methodology)
+- Source review state: source note available
+- Notes: External literate-programming source for arranging programs and explanation around human comprehension, woven documentation, and tangled executable artifacts.
+
+### Jupyter Book Documentation
+
+- Source ID: `ext_jupyter_book_docs`
+- Citation or primary record: Jupyter Book Documentation; [source](https://jupyterbook.org/)
+- Layer: `executable_books`
+- Current use: living-book-methodology (Living Book Methodology)
+- Source review state: source note available
+- Notes: Official Jupyter Book documentation comparator for authoring books from notebooks or Markdown, executing code, cross-referencing content, and publishing computational books to the web.
+
+### Quarto Books Documentation
+
+- Source ID: `ext_quarto_books_docs`
+- Citation or primary record: Quarto Documentation, Creating a Book; [source](https://quarto.org/docs/books/)
+- Layer: `technical_publishing`
+- Current use: living-book-methodology (Living Book Methodology)
+- Source review state: source note available
+- Notes: Official Quarto Books documentation comparator for multi-chapter manuscripts, HTML/PDF/Word/EPUB outputs, search, cross references, and book-style website publishing.
+
+### Argo Rollouts Documentation: Kubernetes Progressive Delivery Controller
+
+- Source ID: `ext_argo_rollouts_docs`
+- Citation or primary record: Argo Rollouts Documentation, Kubernetes Progressive Delivery Controller; [source](https://argo-rollouts.readthedocs.io/en/stable/)
+- Layer: `progressive_delivery_rollback`
+- Current use: capability-replacement-and-rollback (Capability Replacement and Rollback)
+- Source review state: source note available
+- Notes: External progressive-delivery comparator for blue-green rollout, canary rollout, metric analysis, automated promotion, and automated rollback vocabulary.
+
+### Feature Toggles (aka Feature Flags)
+
+- Source ID: `ext_feature_toggles_fowler`
+- Citation or primary record: Hodgson (2017), Feature Toggles (aka Feature Flags); [source](https://martinfowler.com/articles/feature-toggles.html)
+- Layer: `feature_flag_release_control`
+- Current use: capability-replacement-and-rollback (Capability Replacement and Rollback)
+- Source review state: source note available
+- Notes: External feature-flag comparator for controlled exposure, canary releasing, release toggles, experiment toggles, ops toggles, permissioning toggles, and validation complexity.
+
+### MLOps: Continuous Delivery and Automation Pipelines in Machine Learning
+
+- Source ID: `ext_google_cloud_mlops_cd`
+- Citation or primary record: Google Cloud Architecture Center (2024), MLOps Continuous Delivery and Automation Pipelines in Machine Learning; [source](https://docs.cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning)
+- Layer: `mlops_continuous_delivery`
+- Current use: capability-replacement-and-rollback (Capability Replacement and Rollback)
+- Source review state: source note available
+- Notes: External MLOps comparator for CI/CD/CT, data/model validation, model deployment, monitoring, rollback triggers, and model-regression concerns.
+
+### Kubernetes Documentation: Deployments
+
+- Source ID: `ext_kubernetes_deployments_docs`
+- Citation or primary record: Kubernetes Documentation, Deployments; [source](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
+- Layer: `deployment_rollout_rollback`
+- Current use: capability-replacement-and-rollback (Capability Replacement and Rollback)
+- Source review state: source note available
+- Notes: External deployment-controller comparator for rollout status, rollout history, revision records, and rollback to a prior stable Deployment revision.
+
+### Reframing Superintelligence: Comprehensive AI Services as General Intelligence
+
+- Source ID: `ext_drexler_cais_2019`
+- Citation or primary record: Drexler (2019), Reframing Superintelligence: Comprehensive AI Services as General Intelligence; [source](https://ora.ox.ac.uk/objects/uuid%3A9c05427a-6390-4b42-9c55-ee45f73a26ad/files/sf4752j50k)
+- Layer: `ai_services_r_and_d_automation`
+- Current use: asi-is-a-stack-not-a-model (ASI Is a Stack, Not a Model); constitutional-alignment-substrate (Constitutional Alignment: Agency, Dignity, and Corrigibility); recursive-self-improvement-boundaries (Recursive Self-Improvement Boundaries); integrated-reference-architecture (Integrated Reference Architecture)
+- Source review state: source note available
+- Notes: Primary CAIS technical-report comparator for service-centered general intelligence, R&D automation, structured AI development, and the distinction between component affordances and a complete governance architecture.
+
+### MRKL Systems: A Modular, Neuro-Symbolic Architecture That Combines Large Language Models, External Knowledge Sources and Discrete Reasoning
+
+- Source ID: `ext_mrkl_systems_2022`
+- Citation or primary record: Karpas et al. (2022), MRKL Systems; [arXiv:2205.00445](https://arxiv.org/abs/2205.00445); DOI `10.48550/arXiv.2205.00445`
+- Layer: `neuro_symbolic_modular_architecture`
+- Current use: asi-is-a-stack-not-a-model (ASI Is a Stack, Not a Model) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External modular-neuro-symbolic architecture comparator for combining language models with expert modules, external knowledge sources, and routing rather than treating the model as the whole system.
+
+### A Survey on Large Language Model based Autonomous Agents
+
+- Source ID: `ext_llm_agents_survey_2023`
+- Citation or primary record: Wang et al. (2023), Survey on LLM-based Autonomous Agents; [arXiv:2308.11432](https://arxiv.org/abs/2308.11432); DOI `10.48550/arXiv.2308.11432`
+- Layer: `llm_agent_architecture`
+- Current use: asi-is-a-stack-not-a-model (ASI Is a Stack, Not a Model) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External LLM-agent architecture comparator for agent profiles, memory, planning, and action modules around a language model, useful for positioning the stack frame against agent-system decompositions.
+
+### A Standard Model of the Mind: Toward a Common Computational Framework Across Artificial Intelligence, Cognitive Science, Neuroscience, and Robotics
+
+- Source ID: `ext_standard_model_mind_2017`
+- Citation or primary record: Laird, Lebiere, and Rosenbloom (2017), Standard Model of the Mind; [source](https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/2744); DOI `10.1609/aimag.v38i4.2744`
+- Layer: `cognitive_architecture`
+- Current use: asi-is-a-stack-not-a-model (ASI Is a Stack, Not a Model) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External cognitive-architecture comparator for treating intelligent behavior as an integrated architecture spanning memory, learning, perception/action, procedural control, and deliberation.
+
+### A Robust Layered Control System for a Mobile Robot
+
+- Source ID: `ext_subsumption_architecture_1986`
+- Citation or primary record: Brooks (1986), Robust Layered Control System; [source](https://people.csail.mit.edu/brooks/papers/AIM-864.pdf); DOI `10.1109/JRA.1986.1087032`
+- Layer: `layered_robot_control_architecture`
+- Current use: asi-is-a-stack-not-a-model (ASI Is a Stack, Not a Model) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: External layered-control architecture comparator for decomposing robot behavior into interacting layers rather than centralizing behavior in one monolithic controller.
+
+### Humans and Automation: Use, Misuse, Disuse, Abuse
+
+- Source ID: `ext_humans_automation_1997`
+- Citation or primary record: Parasuraman and Riley (1997), Humans and Automation; [source](https://sage.cnpereading.com/doi/10.1518/001872097778543886); DOI `10.1518/001872097778543886`
+- Layer: `human_factors_automation`
+- Current use: runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval)
+- Source review state: source note available
+- Notes: External human-factors comparator for automation use, misuse, disuse, abuse, overreliance, monitoring failure, workload, trust, risk, false alarms, and operator-role design.
+
+### Ironies of Automation
+
+- Source ID: `ext_ironies_automation_1983`
+- Citation or primary record: Bainbridge (1983), Ironies of Automation; [source](https://www.sciencedirect.com/science/article/pii/0005109883900468); DOI `10.1016/0005-1098(83)90046-8`
+- Layer: `human_factors_automation`
+- Current use: runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval)
+- Source review state: source note available
+- Notes: External automation comparator for the argument that automation can expand rather than eliminate human-operator problems and can leave humans with difficult abnormal-condition duties.
+
+### A Model for Types and Levels of Human Interaction with Automation
+
+- Source ID: `ext_levels_automation_2000`
+- Citation or primary record: Parasuraman, Sheridan, and Wickens (2000), Types and Levels of Automation; [source](https://dl.acm.org/doi/10.1109/3468.844354); DOI `10.1109/3468.844354`
+- Layer: `human_factors_automation`
+- Current use: runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval)
+- Source review state: source note available
+- Notes: External human-automation comparator for separating automation by information acquisition, analysis, decision/action selection, and action implementation rather than treating human approval as a single undifferentiated gate.
+
+### Complacency and Bias in Human Use of Automation: An Attentional Integration
+
+- Source ID: `ext_complacency_bias_automation_2010`
+- Citation or primary record: Parasuraman and Manzey (2010), Complacency and Bias in Human Use of Automation; [source](https://pubmed.ncbi.nlm.nih.gov/21077562/); DOI `10.1177/0018720810376055`
+- Layer: `human_factors_automation`
+- Current use: runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval)
+- Source review state: source note available
+- Notes: External human-factors comparator for automation complacency, omission and commission errors, automation bias, workload, attention, and imperfect decision aids.
+
+### Machine Unlearning
+
+- Source ID: `ext_bourtoule_machine_unlearning_2021`
+- Citation or primary record: Bourtoule et al. (2021), Machine Unlearning; [source](https://doi.org/10.1109/SP40001.2021.00019); DOI `10.1109/SP40001.2021.00019`
+- Layer: `machine_unlearning_data_governance`
+- Current use: context-transactions-snapshots-mounts-and-taint (Context Transactions, Snapshots, Mounts, and Taint); data-engines-continual-learning-and-unlearning (Data Engines, Continual Learning, and Unlearning)
+- Source review state: source note available
+- Notes: Primary machine-unlearning comparator for deletion-path architecture, checkpointed training, bounded retraining, accuracy-cost trade-offs, and the boundary between deletion requests and verified removal.
+
+### The Curse of Recursion: Training on Generated Data Makes Models Forget
+
+- Source ID: `ext_shumailov_model_collapse_2023`
+- Citation or primary record: Shumailov et al. (2023), The Curse of Recursion; [source](https://arxiv.org/abs/2305.17493); DOI `10.48550/arXiv.2305.17493`
+- Layer: `synthetic_data_feedback_model_collapse`
+- Current use: data-engines-continual-learning-and-unlearning (Data Engines, Continual Learning, and Unlearning)
+- Source review state: source note available
+- Notes: Primary preprint comparator for generated-data feedback, provenance, distribution-tail loss, and model-collapse risk under specified recursive-training assumptions; not a universal synthetic-data safety result.
+
+### Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data
+
+- Source ID: `ext_gerstgrasser_data_accumulation_2024`
+- Citation or primary record: Gerstgrasser et al. (2024), Is Model Collapse Inevitable?; [source](https://arxiv.org/abs/2404.01413); DOI `10.48550/arXiv.2404.01413`
+- Layer: `synthetic_data_retention_policy`
+- Current use: data-engines-continual-learning-and-unlearning (Data Engines, Continual Learning, and Unlearning)
+- Source review state: source note available
+- Notes: Primary empirical and analytical comparator that distinguishes replacement from accumulation of real and synthetic data; gives a counterweight to blanket model-collapse claims without resolving deletion, privacy, provenance, or poisoning risk.
+
+### Alignment Faking in Large Language Models
+
+- Source ID: `ext_alignment_faking_2024`
+- Citation or primary record: Greenblatt et al. (2024), Alignment Faking in Large Language Models; [source](https://arxiv.org/abs/2412.14093); DOI `10.48550/arXiv.2412.14093`
+- Layer: `training_time_deception`
+- Current use: adversarial-evaluation-sandbagging-and-training-time-deception (Adversarial Evaluation, Sandbagging, and Training-Time Deception)
+- Source review state: source note available
+- Notes: Primary experimental comparator for context-dependent alignment faking under disclosed training conditions; does not establish that an ASI Stack model, evaluator, or training process is deceptive.
+
+### AI Sandbagging: Language Models Can Strategically Underperform on Evaluations
+
+- Source ID: `ext_ai_sandbagging_2024`
+- Citation or primary record: van der Weij et al. (2024), AI Sandbagging; [source](https://arxiv.org/abs/2406.07358); DOI `10.48550/arXiv.2406.07358`
+- Layer: `evaluation_integrity`
+- Current use: adversarial-evaluation-sandbagging-and-training-time-deception (Adversarial Evaluation, Sandbagging, and Training-Time Deception)
+- Source review state: source note available
+- Notes: Primary experimental comparator for strategic evaluation underperformance, prompted and password-locked capability hiding, and limits of capability-evaluation trustworthiness; does not show sandbagging in this repository.
+
+### Natural Emergent Misalignment from Reward Hacking in Production RL
+
+- Source ID: `ext_emergent_misalignment_reward_hacking_2025`
+- Citation or primary record: MacDiarmid et al. (2025), Natural Emergent Misalignment from Reward Hacking in Production RL; [source](https://arxiv.org/abs/2511.18397); DOI `10.48550/arXiv.2511.18397`
+- Layer: `training_time_deception`
+- Current use: adversarial-evaluation-sandbagging-and-training-time-deception (Adversarial Evaluation, Sandbagging, and Training-Time Deception)
+- Source review state: source note available
+- Notes: Primary experimental comparator for reward-hacking-induced misaligned generalization in a specified production-RL research setting, including reported mitigation conditions; it is not evidence of local model behavior or a general causal law.
+
+### Paired Open-Ended Trailblazer (POET): Endlessly Generating Increasingly Complex and Diverse Learning Environments and Their Solutions
+
+- Source ID: `ext_poet_2019`
+- Citation or primary record: Wang et al. (2019), Paired Open-Ended Trailblazer; [source](https://arxiv.org/abs/1901.01753); DOI `10.48550/arXiv.1901.01753`
+- Layer: `open_ended_environment_solution_generation`
+- Current use: open-ended-improvement-engines (Open-Ended Improvement Engines)
+- Source review state: source note available
+- Notes: Primary open-ended-learning comparator for paired environment generation, agent optimization, and cross-environment solution transfer in a specified BipedalWalker setting; it does not establish a general improvement engine, evaluator soundness, or ASI Stack result.
+
+### Mathematical Discoveries from Program Search with Large Language Models
+
+- Source ID: `ext_funsearch_2024`
+- Citation or primary record: Romera-Paredes et al. (2024), Mathematical Discoveries from Program Search with Large Language Models; [source](https://doi.org/10.1038/s41586-023-06924-6); DOI `10.1038/s41586-023-06924-6`
+- Layer: `evaluator_bounded_program_search`
+- Current use: open-ended-improvement-engines (Open-Ended Improvement Engines)
+- Source review state: source note available
+- Notes: Primary program-search comparator for a fixed pretrained LLM, user-provided evaluation function, candidate program archive, and iterative search over a bounded specification; it does not establish open-ended general intelligence, self-modification, evaluator correctness, or an ASI Stack result.
+
+### GSN Community Standard Version 1
+
+- Source ID: `ext_gsn_community_standard_2011`
+- Citation or primary record: Assurance Case Working Group (2011), GSN Community Standard v1; [source](https://www.faa.gov/about/office_org/headquarters_offices/ang/redac/redac-sas-201503-gsn-community-standard-v1.pdf)
+- Layer: `structured_assurance_argumentation`
+- Current use: safety-cases-and-structured-assurance (Safety Cases and Structured Assurance)
+- Source review state: source note available
+- Notes: Primary notation standard comparator for explicit goals, strategies, solutions, context, assumptions, justifications, and relationships in structured assurance arguments; the notation documents asserted support but does not establish claim truth.
+
+### Towards Evaluations-Based Safety Cases for AI Scheming
+
+- Source ID: `ext_evaluations_safety_cases_scheming_2024`
+- Citation or primary record: Balesni et al. (2024), Evaluations-Based Safety Cases for AI Scheming; [arXiv:2411.03336](https://arxiv.org/abs/2411.03336); DOI `10.48550/arXiv.2411.03336`
+- Layer: `ai_safety_case_methodology`
+- Current use: safety-cases-and-structured-assurance (Safety Cases and Structured Assurance)
+- Source review state: source note available
+- Notes: Primary safety-case comparator for scoped scheming inability, harm inability, harm control, alignment arguments, empirical evaluation dependencies, and acknowledged unresolved assumptions; it does not establish any ASI Stack safety case or safety result.
+
+### Safety Cases at AISI
+
+- Source ID: `ext_aisi_safety_cases_2024`
+- Citation or primary record: AI Safety Institute (2024), Safety Cases at AISI; [source](https://www.aisi.gov.uk/blog/safety-cases-at-aisi)
+- Layer: `ai_safety_case_methodology`
+- Current use: safety-cases-and-structured-assurance (Safety Cases and Structured Assurance)
+- Source review state: source note available
+- Notes: Official AI Safety Institute methodology comparator for structured safety-case sketches, positive and negative evidence, countercases, open scientific uncertainty, and limits on confidence; it is not evidence that this book has a complete safety case.
+
+### Securing AI Model Weights: Preventing Theft and Misuse of Frontier Models
+
+- Source ID: `ext_rand_model_weight_security_2024`
+- Citation or primary record: Nevo et al. (2024), Securing AI Model Weights; [source](https://www.rand.org/content/dam/rand/pubs/research_reports/RRA2800/RRA2849-1/RAND_RRA2849-1.pdf)
+- Layer: `model_weight_custody`
+- Current use: model-weight-custody-and-hardware-roots-of-trust (Model-Weight Custody and Hardware Roots of Trust)
+- Source review state: source note available
+- Notes: Primary RAND analysis of frontier-model-weight theft/misuse threat surfaces, security levels, defense-in-depth, access control, physical and organizational controls; it does not establish local protection or safety.
+
+### Hardware-Enabled Security: Confidential Computing of Data in Cloud Workloads
+
+- Source ID: `ext_nist_confidential_computing_2026`
+- Citation or primary record: NIST (2026), IR 8320E Initial Public Draft; [source](https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8320E.ipd.pdf)
+- Layer: `hardware_root_attestation`
+- Current use: model-weight-custody-and-hardware-roots-of-trust (Model-Weight Custody and Hardware Roots of Trust)
+- Source review state: source note available
+- Notes: NIST initial-public-draft comparator for hardware-enabled confidential computing, memory protection, trust domains, attestation-gated key release, and AI model/data protection; it is draft guidance, not a local TEE result.
+
+### Workload and Model Lifecycle: Deploying Proprietary Models Securely with NVIDIA Confidential Computing
+
+- Source ID: `ext_nvidia_confidential_model_lifecycle_2026`
+- Citation or primary record: NVIDIA (2026), Confidential Model Lifecycle; [source](https://docs.nvidia.com/enterprise-reference-architectures/deploying-proprietary-models-confidential-compute-self-hosted-kubernetes/latest/workload-and-model-lifecycle.html)
+- Layer: `attestation_gated_model_loading`
+- Current use: model-weight-custody-and-hardware-roots-of-trust (Model-Weight Custody and Hardware Roots of Trust)
+- Source review state: source note available
+- Notes: Official vendor implementation-reference comparator for encrypted weights outside a confidential pod, policy-sensitive attestation evidence, and key-release decisions; it does not establish a local confidential deployment or attestation result.
+
+### Towards Provable (In)Secure Model Weight Release Schemes
+
+- Source ID: `ext_provable_model_weight_release_2025`
+- Citation or primary record: Yang et al. (2025), Provable (In)Secure Model Weight Release Schemes; [arXiv:2506.19874](https://arxiv.org/abs/2506.19874); DOI `10.48550/arXiv.2506.19874`
+- Layer: `open_weight_release_security`
+- Current use: model-weight-custody-and-hardware-roots-of-trust (Model-Weight Custody and Hardware Roots of Trust)
+- Source review state: source note available
+- Notes: Primary formal-security comparator for evaluating claimed secure model-weight release schemes and parameter-extraction failure modes; it does not establish an ASI Stack release scheme or release decision.
+
+### Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations
+
+- Source ID: `ext_nist_cscrm_2022`
+- Citation or primary record: NIST (2022), SP 800-161r1; [source](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-161r1-upd1.pdf)
+- Layer: `ai_supply_chain_governance`
+- Current use: ai-supply-chain-integrity-and-lifecycle-provenance (AI Supply-Chain Integrity and Lifecycle Provenance)
+- Source review state: source note available
+- Notes: Primary NIST C-SCRM standard comparator for lifecycle-wide risk framing, supplier/component inventory, assessment, response, monitoring, and incident communication; it does not establish a local supply-chain program or AI artifact integrity.
+
+### SLSA Build Track Basics, version 1.2
+
+- Source ID: `ext_slsa_build_track_1_2`
+- Citation or primary record: SLSA (2025), Build Track Basics v1.2; [source](https://slsa.dev/spec/v1.2/build-track-basics)
+- Layer: `build_provenance`
+- Current use: ai-supply-chain-integrity-and-lifecycle-provenance (AI Supply-Chain Integrity and Lifecycle Provenance)
+- Source review state: source note available
+- Notes: Official SLSA specification comparator for build provenance, signed hosted builds, verification, and graduated assurance; provenance quality and SLSA level do not establish local artifact correctness, data quality, model safety, or deployment authority.
+
+### OpenSSF Model Signing Specification
+
+- Source ID: `ext_openssf_model_signing_spec_2025`
+- Citation or primary record: OpenSSF (2025), Model Signing Specification; [source](https://github.com/ossf/model-signing-spec)
+- Layer: `ai_artifact_signing`
+- Current use: ai-supply-chain-integrity-and-lifecycle-provenance (AI Supply-Chain Integrity and Lifecycle Provenance)
+- Source review state: source note available
+- Notes: Official OpenSSF AI/ML working-group specification comparator for signed model/dataset bundles, verification, provenance metadata, and explicit limits of model signing; it does not establish local signing, verification, integrity, confidentiality, safety, or release authority.
+
+### SPDX Specification 3.0.1 AI Profile
+
+- Source ID: `ext_spdx_ai_profile_3_0_1`
+- Citation or primary record: SPDX (2024), Specification 3.0.1 AI Profile; [source](https://spdx.github.io/spdx-spec/v3.0.1/model/AI/AI/)
+- Layer: `ai_bill_of_materials`
+- Current use: ai-supply-chain-integrity-and-lifecycle-provenance (AI Supply-Chain Integrity and Lifecycle Provenance)
+- Source review state: source note available
+- Notes: Official SPDX specification comparator for interoperable AI system/model, dataset, build, supplier, provenance, integrity, relationship, and lifecycle metadata; a conformant BOM is not proof of complete inventory, artifact security, data fitness, model safety, or compliance.
+
+### Model Context Protocol Specification, revision 2025-06-18
+
+- Source ID: `ext_mcp_protocol_2025_06_18`
+- Citation or primary record: Model Context Protocol (2025), Specification revision 2025-06-18; [source](https://modelcontextprotocol.io/specification/2025-06-18/basic/index)
+- Layer: `agent_tool_protocol`
+- Current use: inter-stack-protocols-identity-and-economic-exchange (Inter-Stack Protocols, Identity, and Economic Exchange) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: Official Model Context Protocol comparator for JSON-RPC message shape, lifecycle management, capability negotiation, session control, schema-defined interactions, and modular tool/client/server features; it does not establish a local protocol implementation, peer identity, authorization, message truth, task completion, payment, or deployment safety.
+
+### Agent2Agent Protocol Specification, version 0.3.0
+
+- Source ID: `ext_a2a_protocol_0_3_0`
+- Citation or primary record: A2A Protocol (v0.3.0), Specification; [source](https://a2a-protocol.org/v0.3.0/specification/)
+- Layer: `agent_to_agent_protocol`
+- Current use: inter-stack-protocols-identity-and-economic-exchange (Inter-Stack Protocols, Identity, and Economic Exchange) (inventory chapter target; not Appendix C support mapping)
+- Source review state: source note available
+- Notes: Official A2A comparator for agent discovery, agent cards, delegated tasks, artifact/message exchange, transport choices, and interoperability between opaque agent systems; it does not establish a local A2A deployment, verified identity, delegated authority, task truth, secure execution, payment, or safety.
+
+### Model Context Protocol Specification, revision 2025-11-25
+
+- Source ID: `ext_mcp_protocol_2025_11_25`
+- Citation or primary record: Model Context Protocol (2025), Specification revision 2025-11-25; [source](https://modelcontextprotocol.io/specification/2025-11-25)
+- Layer: `agent_tool_protocol`
+- Current use: inter-stack-protocols-identity-and-economic-exchange (Inter-Stack Protocols, Identity, and Economic Exchange)
+- Source review state: source note available
+- Notes: Latest released MCP comparator inspected on 2026-07-10 for versioned lifecycle, capability negotiation, authorization and OpenID Connect discovery changes, elicitation, tasks, and modular client/server boundaries; the announced 2026-07-28 revision remains a release candidate and is not represented as released.
+
+### Agent2Agent Protocol Specification, version 1.0.0
+
+- Source ID: `ext_a2a_protocol_1_0_0`
+- Citation or primary record: A2A Protocol (v1.0.0), Specification; [source](https://a2a-protocol.org/latest/specification/)
+- Layer: `agent_to_agent_protocol`
+- Current use: inter-stack-protocols-identity-and-economic-exchange (Inter-Stack Protocols, Identity, and Economic Exchange)
+- Source review state: source note available
+- Notes: Latest released A2A comparator inspected on 2026-07-10 for canonical data objects, version negotiation, Agent Cards, tasks/messages/artifacts, JSON-RPC, gRPC and HTTP bindings, authorization scoping, interoperability testing, and security considerations; it does not establish local conformance, peer truth, delegated authority, or safe effects.
+
+### Decentralized Identifiers (DIDs) v1.0
+
+- Source ID: `ext_w3c_did_core_1_0_2022`
+- Citation or primary record: W3C (2022), Decentralized Identifiers v1.0; [source](https://www.w3.org/TR/did-core/)
+- Layer: `decentralized_identity`
+- Current use: inter-stack-protocols-identity-and-economic-exchange (Inter-Stack Protocols, Identity, and Economic Exchange)
+- Source review state: source note available
+- Notes: W3C DID Core comparator for decentralized identifier syntax, data model, controller-related metadata, resolution, and privacy considerations; it does not establish an ASI Stack identity system, controller trust, authorization, non-repudiation, revocation effectiveness, or safety.
+
+### Verifiable Credentials Data Model v2.0
+
+- Source ID: `ext_w3c_vc_data_model_2_0_2025`
+- Citation or primary record: W3C (2025), Verifiable Credentials Data Model v2.0; [source](https://www.w3.org/TR/vc-data-model/)
+- Layer: `verifiable_credentials`
+- Current use: inter-stack-protocols-identity-and-economic-exchange (Inter-Stack Protocols, Identity, and Economic Exchange)
+- Source review state: source note available
+- Notes: W3C Verifiable Credentials comparator for issuer/holder/verifier roles, credential and presentation fields, validity/status, evidence, securing mechanisms, and explicit authorization limitations; it does not establish an ASI Stack credential, trust decision, authorization framework, delegation validity, payment, or safety.
+
+### Interledger Protocol V4
+
+- Source ID: `ext_interledger_protocol_v4`
+- Citation or primary record: Interledger (2026), Interledger Protocol V4; [source](https://interledger.org/developers/rfcs/interledger-protocol/)
+- Layer: `interledger_value_transfer`
+- Current use: inter-stack-protocols-identity-and-economic-exchange (Inter-Stack Protocols, Identity, and Economic Exchange)
+- Source review state: source note available
+- Notes: Official Interledger comparator for neutral packetized value transfer across independent ledgers, connector obligations, balances, and end-to-end boundary design; it does not establish an ASI Stack payment route, settlement, accounting correctness, legal transfer, economic fairness, delegated authority, or safety.
+
+### Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters
+
+- Source ID: `ext_test_time_compute_scaling_2024`
+- Citation or primary record: Snell et al. (2024), Scaling LLM Test-Time Compute Optimally; [arXiv:2408.03314](https://arxiv.org/abs/2408.03314); DOI `10.48550/arXiv.2408.03314`
+- Layer: `test_time_compute_allocation`
+- Current use: governed-deliberation-and-test-time-scaling (Governed Deliberation and Test-Time Scaling)
+- Source review state: source note available
+- Notes: Primary test-time-compute comparator for verifier-guided search, proposal refinement, difficulty-dependent compute allocation, and the limits of extra inference; it does not establish local reasoning improvement, verifier correctness, safety, or an ASI Stack result.
+
+### From Local to Global: A Graph RAG Approach to Query-Focused Summarization
+
+- Source ID: `ext_graphrag_2024`
+- Citation or primary record: Edge et al. (2024), From Local to Global: A Graph RAG Approach; [arXiv:2404.16130](https://arxiv.org/abs/2404.16130); DOI `10.48550/arXiv.2404.16130`
+- Layer: `graph_based_retrieval_and_global_sensemaking`
+- Current use: virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); context-transactions-snapshots-mounts-and-taint (Context Transactions, Snapshots, Mounts, and Taint); verification-bandwidth-and-context-adequacy (Verification Bandwidth and Context Adequacy); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Source review state: source note available
+- Notes: Primary GraphRAG comparator for LLM-derived entity graphs, community summaries, and global corpus questions; generated graph and summary layers remain fallible derived representations and do not establish truth, complete coverage, local adequacy, or an ASI Stack memory result.
+
+### HippoRAG: Neurobiologically Inspired Long-Term Memory for Large Language Models
+
+- Source ID: `ext_hipporag_2024`
+- Citation or primary record: Gutiérrez et al. (2024), HippoRAG; [source](https://papers.nips.cc/paper_files/paper/2024/hash/6ddc001d07ca4f319af96a3024f6dbd1-Abstract-Conference.html); DOI `10.52202/079017-1902`
+- Layer: `associative_long_term_memory`
+- Current use: virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); verification-bandwidth-and-context-adequacy (Verification Bandwidth and Context Adequacy); routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); open-research-agenda-and-bibliography-plan (Open Research Agenda and Bibliography Plan)
+- Source review state: source note available
+- Notes: Primary NeurIPS comparator for knowledge-graph retrieval with Personalized PageRank and single-step associative navigation; reported multi-hop QA gains do not establish durable truth, update correctness, resistance to poisoning, local reproduction, or a general memory system.
+
+### RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval
+
+- Source ID: `ext_raptor_2024`
+- Citation or primary record: Sarthi et al. (2024), RAPTOR; [source](https://proceedings.iclr.cc/paper_files/paper/2024/hash/8a2acd174940dbca361a6398a4f9df91-Abstract-Conference.html)
+- Layer: `hierarchical_retrieval_and_abstraction`
+- Current use: virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); verification-bandwidth-and-context-adequacy (Verification Bandwidth and Context Adequacy); compact-generative-systems-and-residual-honesty (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty); rankfold-neuralfold-and-artifact-compression (RankFold, NeuralFold, and Artifact Compression)
+- Source review state: source note available
+- Notes: Primary ICLR comparator for recursive clustering, summarization, and retrieval across multiple abstraction levels; source-reported QA gains do not prove summary fidelity, provenance preservation, local reproduction, or safe compression for ASI Stack claims.
+
+### Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory
+
+- Source ID: `ext_mem0_2025`
+- Citation or primary record: Chhikara et al. (2025), Mem0; [arXiv:2504.19413](https://arxiv.org/abs/2504.19413); DOI `10.48550/arXiv.2504.19413`
+- Layer: `agent_long_term_memory`
+- Current use: virtual-context-abi (The Virtual Context ABI: Typed Pages, Cells, and Certificates); context-transactions-snapshots-mounts-and-taint (Context Transactions, Snapshots, Mounts, and Taint); procedural-memory-and-cognitive-loop-closure (Procedural Memory and Cognitive Loop Closure); resource-economics-and-token-budgets (Resource Economics and Token Budgets); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence)
+- Source review state: source note available
+- Notes: Primary preprint comparator for extracting, consolidating, retrieving, and graph-linking conversational memory under latency and token-cost constraints; LOCOMO and LLM-judge results do not establish fact correctness, poisoning resistance, general memory, local reproduction, or production readiness here.
+
+### PROV-O: The PROV Ontology
+
+- Source ID: `ext_w3c_prov_o_2013`
+- Citation or primary record: W3C (2013), PROV-O: The PROV Ontology; [source](https://www.w3.org/TR/prov-o/)
+- Layer: `interoperable_provenance_model`
+- Current use: evidence-states-and-claim-discipline (Evidence States and Claim Discipline); ai-supply-chain-integrity-and-lifecycle-provenance (AI Supply-Chain Integrity and Lifecycle Provenance); claim-ledgers-and-belief-revision (Claim Ledgers and Belief Revision); artifact-graphs-audit-logs-and-replay (Artifact Graphs, Audit Logs, and Replay); data-engines-continual-learning-and-unlearning (Data Engines, Continual Learning, and Unlearning)
+- Source review state: source note available
+- Notes: W3C Recommendation comparator for interoperable provenance over entities, activities, agents, derivation, attribution, delegation, revision, and invalidation; a PROV-O graph records asserted provenance and does not by itself prove assertion truth, completeness, integrity, authority, or safety.
+
+### Croissant Format Specification, version 1.1
+
+- Source ID: `ext_mlcommons_croissant_1_1_2026`
+- Citation or primary record: MLCommons (2026), Croissant Format Specification v1.1; [source](https://docs.mlcommons.org/croissant/docs/croissant-spec-1.1.html)
+- Layer: `machine_readable_dataset_metadata`
+- Current use: ai-supply-chain-integrity-and-lifecycle-provenance (AI Supply-Chain Integrity and Lifecycle Provenance); artifact-graphs-audit-logs-and-replay (Artifact Graphs, Audit Logs, and Replay); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); data-engines-continual-learning-and-unlearning (Data Engines, Continual Learning, and Unlearning)
+- Source review state: source note available
+- Notes: Current MLCommons specification comparator for JSON-LD dataset structure, resources, checksums, record fields, machine-readable provenance, usage conditions, and portability across ML tooling; metadata conformance does not prove dataset integrity, fitness, legality, representativeness, or safe use.
+
+### Inspect AI: Framework for Large Language Model Evaluations
+
+- Source ID: `ext_inspect_ai_2024`
+- Citation or primary record: UK AI Security Institute (2024), Inspect AI; [source](https://inspect.aisi.org.uk/)
+- Layer: `model_and_agent_evaluation_framework`
+- Current use: runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); capability-thresholds-and-deployment-commitments (Capability Thresholds and Deployment Commitments); adversarial-evaluation-sandbagging-and-training-time-deception (Adversarial Evaluation, Sandbagging, and Training-Time Deception)
+- Source review state: source note available
+- Notes: Official UK AI Security Institute framework comparator for composable evaluation tasks, datasets, solvers, scorers, agents, tools, logs, and sandboxes; framework availability or a passing task does not establish benchmark validity, coverage, local execution, safety, or deployment readiness.
+
+### in-toto: Providing farm-to-table guarantees for bits and bytes
+
+- Source ID: `ext_in_toto_2019`
+- Citation or primary record: Torres-Arias et al. (2019), in-toto; [source](https://www.usenix.org/conference/usenixsecurity19/presentation/torres-arias)
+- Layer: `software_supply_chain_attestation`
+- Current use: model-weight-custody-and-hardware-roots-of-trust (Model-Weight Custody and Hardware Roots of Trust); ai-supply-chain-integrity-and-lifecycle-provenance (AI Supply-Chain Integrity and Lifecycle Provenance); artifact-graphs-audit-logs-and-replay (Artifact Graphs, Audit Logs, and Replay)
+- Source review state: source note available
+- Notes: Primary USENIX comparator for cryptographically verifying authorized software-supply-chain steps from source through deployment; valid attestations do not prove artifact correctness, uncompromised authorized actors, model safety, data fitness, or deployment merit.
+
+### AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents
+
+- Source ID: `ext_agentdojo_2024`
+- Citation or primary record: Debenedetti et al. (2024), AgentDojo; [source](https://proceedings.neurips.cc/paper_files/paper/2024/hash/97091a5177d8dc64b1da8bf3e1f6fb54-Abstract-Datasets_and_Benchmarks_Track.html); DOI `10.52202/079017-2636`
+- Layer: `agent_prompt_injection_evaluation`
+- Current use: security-kernel-and-digital-scifs (Security Kernel and Digital SCIFs); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); adversarial-evaluation-sandbagging-and-training-time-deception (Adversarial Evaluation, Sandbagging, and Training-Time Deception)
+- Source review state: source note available
+- Notes: Primary NeurIPS benchmark comparator for agents executing tools over untrusted data, with realistic tasks, security test cases, attacks, and defenses; benchmark results do not establish complete attack coverage, deployed robustness, safe authority handling, or local reproduction.
+
+### Defeating Prompt Injections by Design
+
+- Source ID: `ext_camel_prompt_injection_2025`
+- Citation or primary record: Debenedetti et al. (2025), Defeating Prompt Injections by Design; [arXiv:2503.18813](https://arxiv.org/abs/2503.18813); DOI `10.48550/arXiv.2503.18813`
+- Layer: `capability_secure_agent_control_flow`
+- Current use: system-boundaries-and-authority (System Boundaries and Authority); security-kernel-and-digital-scifs (Security Kernel and Digital SCIFs); intent-to-execution-contracts (Command Contracts: From Intent to Executable Work); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval)
+- Source review state: source note available
+- Notes: Primary CaMeL comparator for separating trusted control flow from untrusted data and enforcing capability policies at tool calls; source-reported AgentDojo results do not establish universal prompt-injection resistance, correct policy extraction, local implementation, or safe deployment.
+
+### OWASP Top 10 for Agentic Applications for 2026
+
+- Source ID: `ext_owasp_agentic_top_10_2026`
+- Citation or primary record: OWASP (2025), Top 10 for Agentic Applications for 2026; [source](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
+- Layer: `agentic_application_security_taxonomy`
+- Current use: system-boundaries-and-authority (System Boundaries and Authority); security-kernel-and-digital-scifs (Security Kernel and Digital SCIFs); ai-supply-chain-integrity-and-lifecycle-provenance (AI Supply-Chain Integrity and Lifecycle Provenance); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); inter-stack-protocols-identity-and-economic-exchange (Inter-Stack Protocols, Identity, and Economic Exchange); adversarial-evaluation-sandbagging-and-training-time-deception (Adversarial Evaluation, Sandbagging, and Training-Time Deception)
+- Source review state: source note available
+- Notes: Current OWASP community taxonomy comparator for goal hijacking, tool misuse, identity abuse, agentic supply chains, code execution, memory poisoning, inter-agent communication, cascading failures, human trust exploitation, and rogue agents; a risk list is not a proof of completeness, control effectiveness, local testing, or system safety.
+
+### Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents
+
+- Source ID: `ext_darwin_godel_machine_2025`
+- Citation or primary record: Zhang et al. (2025), Darwin Godel Machine; [arXiv:2505.22954](https://arxiv.org/abs/2505.22954); DOI `10.48550/arXiv.2505.22954`
+- Layer: `empirical_recursive_agent_improvement`
+- Current use: recursive-self-improvement-boundaries (Recursive Self-Improvement Boundaries); open-ended-improvement-engines (Open-Ended Improvement Engines); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence)
+- Source review state: source note available
+- Notes: Primary preprint comparator for archive-based open-ended code self-modification selected by empirical coding benchmarks under sandboxing and human oversight; reported benchmark gains do not establish monotonic general improvement, safe recursive self-improvement, local reproduction, or permission to self-modify.
+
+### Automated Design of Agentic Systems
+
+- Source ID: `ext_adas_2024`
+- Citation or primary record: Hu et al. (2024), Automated Design of Agentic Systems; [arXiv:2408.08435](https://arxiv.org/abs/2408.08435); DOI `10.48550/arXiv.2408.08435`
+- Layer: `automated_agent_architecture_search`
+- Current use: recursive-self-improvement-boundaries (Recursive Self-Improvement Boundaries); open-ended-improvement-engines (Open-Ended Improvement Engines); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); integrated-reference-architecture (Integrated Reference Architecture)
+- Source review state: source note available
+- Notes: Primary ADAS comparator for a meta-agent that searches a growing archive of code-defined agent designs across prompts, tools, and workflows; reported transfer results do not establish unrestricted generality, safe architecture search, local reproduction, or automatic promotion authority.
+
+### Universal Transformers
+
+- Source ID: `ext_universal_transformer_2019`
+- Citation or primary record: Dehghani et al. (2019), Universal Transformers; [arXiv:1807.03819](https://arxiv.org/abs/1807.03819); DOI `10.48550/arXiv.1807.03819`
+- Layer: `shared_weight_recurrence_and_adaptive_depth`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture); governed-deliberation-and-test-time-scaling (Governed Deliberation and Test-Time Scaling); mathematical-and-search-substrates (Mathematical and Search Substrates); coil-attention-cyclic-memory-and-recurrence-contracts (Coil Attention, Cyclic Memory, and Recurrence Contracts)
+- Source review state: source note available
+- Notes: Primary ICLR comparator for shared-weight depth recurrence, parallel self-attention, and per-position dynamic halting; benchmark results and theoretical expressivity do not establish stable deep recurrence, efficient scaling, local reproduction, or the book's cyclic-memory claims.
+
+### The Recurrent Transformer: Greater Effective Depth and Efficient Decoding
+
+- Source ID: `ext_recurrent_transformer_2026`
+- Citation or primary record: Oncescu et al. (2026), The Recurrent Transformer; [arXiv:2604.21215](https://arxiv.org/abs/2604.21215); DOI `10.48550/arXiv.2604.21215`
+- Layer: `layerwise_recurrent_transformer_memory`
+- Current use: fast-generation-architectures (Fast Generation Architectures); resource-economics-and-token-budgets (Resource Economics and Token Budgets); mathematical-and-search-substrates (Mathematical and Search Substrates); coil-attention-cyclic-memory-and-recurrence-contracts (Coil Attention, Cyclic Memory, and Recurrence Contracts)
+- Source review state: source note available
+- Notes: Current preprint comparator for layerwise recurrent key-value memory, exact tiling, effective-depth/width tradeoffs, and standard autoregressive decoding cost; small-model C4 results do not establish broad capability gains, production efficiency, local reproduction, or cyclic-memory correctness.
+
+### Understanding Dynamic Compute Allocation in Recurrent Transformers
+
+- Source ID: `ext_dynamic_compute_recurrent_transformers_2026`
+- Citation or primary record: Moosa et al. (2026), Understanding Dynamic Compute Allocation in Recurrent Transformers; [arXiv:2602.08864](https://arxiv.org/abs/2602.08864); DOI `10.48550/arXiv.2602.08864`
+- Layer: `adaptive_recurrent_compute_evaluation`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture); governed-deliberation-and-test-time-scaling (Governed Deliberation and Test-Time Scaling); resource-economics-and-token-budgets (Resource Economics and Token Budgets); coil-attention-cyclic-memory-and-recurrence-contracts (Coil Attention, Cyclic Memory, and Recurrence Contracts); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence)
+- Source review state: source note available
+- Notes: Current preprint comparator for complexity-controlled tests of token-level variable-depth compute and online halting; its negative result that difficulty-aligned compute need not generalize is a boundary against equating adaptive depth with algorithmic extrapolation or local capability.
+
+### Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks
+
+- Source ID: `ext_claw_swe_bench_2026`
+- Citation or primary record: Zheng et al. (2026), Claw-SWE-Bench; [arXiv:2606.12344](https://arxiv.org/abs/2606.12344); DOI `10.48550/arXiv.2606.12344`
+- Layer: `coding_agent_harness_and_cost_evaluation`
+- Current use: artifact-graphs-audit-logs-and-replay (Artifact Graphs, Audit Logs, and Replay); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval); resource-economics-and-token-budgets (Resource Economics and Token Budgets); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence)
+- Source review state: source note available
+- Notes: Current preprint comparator for fixed workspace, patch, evaluator, and budget contracts across coding-agent harnesses; reported accuracy and cost differences are not reproduced here and do not validate the post-v2.1 synthetic repository corpus.
+
+### TxFS: Leveraging File-System Crash Consistency to Provide ACID Transactions
+
+- Source ID: `ext_txfs_2018`
+- Citation or primary record: Hu et al. (2018), TxFS; [source](https://www.usenix.org/conference/atc18/presentation/hu)
+- Layer: `transactional_filesystem_rollback_boundary`
+- Current use: capability-replacement-and-rollback (Capability Replacement and Rollback); context-transactions-snapshots-mounts-and-taint (Context Transactions, Snapshots, Mounts, and Taint); artifact-graphs-audit-logs-and-replay (Artifact Graphs, Audit Logs, and Replay); runtime-adapters-tool-permissions-and-human-approval (Runtime Adapters, Tool Permissions, and Human Approval)
+- Source review state: source note available
+- Notes: Primary systems comparator for user-space ACID file transactions built on journaling, including atomicity, isolation, durability, bounded transaction size, and Git/SQLite evaluation; it prevents treating a directory copy as a general transactional-filesystem result.
+
+### Don't Hallucinate, Abstain: Identifying LLM Knowledge Gaps via Multi-LLM Collaboration
+
+- Source ID: `ext_dont_hallucinate_abstain_2024`
+- Citation or primary record: Feng et al. (2024), Don't Hallucinate, Abstain; [source](https://aclanthology.org/2024.acl-long.786/); DOI `10.18653/v1/2024.acl-long.786`
+- Layer: `llm_abstention_and_knowledge_gaps`
+- Current use: verification-bandwidth-and-context-adequacy (Verification Bandwidth and Context Adequacy); routing-heads-and-specialist-cores (Routing Heads and Specialist Cores); readiness-gates-residual-escrow-and-quarantine (Readiness Gates, Residual Escrow, and Quarantine)
+- Source review state: source note available
+- Notes: Primary ACL comparator for knowledge-gap detection, abstention, calibration/self-reflection limitations, and multi-model probing; reported abstention improvements are task- and model-bounded and do not validate the local router or evaluator.
+
+### MUSE: Machine Unlearning Six-Way Evaluation for Language Models
+
+- Source ID: `ext_muse_unlearning_2025`
+- Citation or primary record: Shi et al. (2025), MUSE; [arXiv:2407.06460](https://proceedings.iclr.cc/paper_files/paper/2025/hash/4556f5398bd2c61bd7500e306b4e560a-Abstract-Conference.html); DOI `10.48550/arXiv.2407.06460`
+- Layer: `llm_unlearning_multidimensional_evaluation`
+- Current use: benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback); data-engines-continual-learning-and-unlearning (Data Engines, Continual Learning, and Unlearning)
+- Source review state: source note available
+- Notes: Primary ICLR benchmark comparator separating verbatim and knowledge memorization, privacy leakage, retained utility, removal-scale behavior, and sequential sustainability; none of its 7B-language-model results are reproduced by the local policy network.
+
+### Position: LLM Unlearning Benchmarks are Weak Measures of Progress
+
+- Source ID: `ext_unlearning_benchmarks_weak_2024`
+- Citation or primary record: Thaker et al. (2024), LLM Unlearning Benchmarks are Weak Measures; [arXiv:2410.02879](https://arxiv.org/abs/2410.02879); DOI `10.48550/arXiv.2410.02879`
+- Layer: `unlearning_benchmark_validity`
+- Current use: evidence-states-and-claim-discipline (Evidence States and Claim Discipline); benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); data-engines-continual-learning-and-unlearning (Data Engines, Continual Learning, and Unlearning)
+- Source review state: source note available
+- Notes: Primary critical comparator showing that benign benchmark modifications, forget/retain dependencies, and ambiguous targets can make unlearning scores optimistic; it strengthens the book's prohibition on turning toy behavioral change into influence, privacy, or storage claims.
+
+### OpenUnlearning: Accelerating LLM Unlearning via Unified Benchmarking of Methods and Metrics
+
+- Source ID: `ext_openunlearning_2025`
+- Citation or primary record: Dorna et al. (2025), OpenUnlearning; [arXiv:2506.12618](https://proceedings.neurips.cc/paper_files/paper/2025/hash/3e4a38f228427ab819ba7899003a44b1-Abstract-Datasets_and_Benchmarks_Track.html); DOI `10.48550/arXiv.2506.12618`
+- Layer: `unlearning_method_and_metric_meta_evaluation`
+- Current use: benchmark-ratchets-and-anti-goodhart-evidence (Benchmark Ratchets and Anti-Goodhart Evidence); data-engines-continual-learning-and-unlearning (Data Engines, Continual Learning, and Unlearning); living-book-methodology (Living Book Methodology)
+- Source review state: source note available
+- Notes: Primary NeurIPS 2025 benchmark-framework comparator for unified algorithms, diverse evaluations, public checkpoints, and meta-evaluation of metric faithfulness; it reinforces evaluator-quality residuals rather than establishing local unlearning.
+
+### Faithfulness as Information Flow: Evaluating and Training Faithful Chain-of-Thought Reasoning
+
+- Source ID: `ext_faithfulness_information_flow_2026`
+- Citation or primary record: Jia, Benton, and Easley (2026), Faithfulness as Information Flow; [arXiv:2605.24286](https://arxiv.org/abs/2605.24286); DOI `10.48550/arXiv.2605.24286`
+- Layer: `reasoning_trace_faithfulness`
+- Current use: artifact-graphs-audit-logs-and-replay (Artifact Graphs, Audit Logs, and Replay); governed-deliberation-and-test-time-scaling (Governed Deliberation and Test-Time Scaling); adversarial-evaluation-sandbagging-and-training-time-deception (Adversarial Evaluation, Sandbagging, and Training-Time Deception); policy-optimization-and-learning-from-feedback (Policy Optimization and Learning from Feedback)
+- Source review state: source note available
+- Notes: Primary 2026 comparator that separates chain-of-thought sufficiency, completeness, and interventional necessity, demonstrates prompt-to-answer shortcuts and transparent reward-hacking diagnostics, and documents low-entropy and reference-model limits. It does not make a reasoning transcript an authoritative receipt or establish local monitorability.
+
+### MonitorBench: A Comprehensive Benchmark for Chain-of-Thought Monitorability in Large Language Models
+
+- Source ID: `ext_monitorbench_2026`
+- Citation or primary record: Wang et al. (2026), MonitorBench; [arXiv:2603.28590](https://arxiv.org/abs/2603.28590); DOI `10.48550/arXiv.2603.28590`
+- Layer: `reasoning_trace_monitorability_evaluation`
+- Current use: scalable-oversight-and-adversarial-ai-control (Scalable Oversight and Adversarial AI Control); adversarial-evaluation-sandbagging-and-training-time-deception (Adversarial Evaluation, Sandbagging, and Training-Time Deception)
+- Source review state: source note available
+- Notes: Primary open benchmark comparator with 1,514 instances across 19 tasks and seven categories plus two stress-test settings; its reported capability/monitorability relation and up-to-30-percent degradation motivate held-out trace-action stress tests. The benchmark does not establish local monitoring quality, causal trace faithfulness, or safety.
+
+### V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning
+
+- Source ID: `ext_v_jepa_2_2025`
+- Citation or primary record: Assran et al. (2025), V-JEPA 2; [arXiv:2506.09985](https://arxiv.org/abs/2506.09985); DOI `10.48550/arXiv.2506.09985`
+- Layer: `latent_world_models_and_model_predictive_control`
+- Current use: planning-as-a-control-layer (Planning as a Control Layer: DAGs and Intelligence Arbitrage); mathematical-and-search-substrates (Mathematical and Search Substrates); data-engines-continual-learning-and-unlearning (Data Engines, Continual Learning, and Unlearning); integrated-reference-architecture (Integrated Reference Architecture)
+- Source review state: source note available
+- Notes: Primary empirical comparator for action-free latent video pretraining, a small action-conditioned predictor, and model-predictive control. Camera sensitivity, autoregressive error accumulation, action-search cost, image-goal assumptions, and representation-bounded capability remain explicit limits; no local world model or robot-control result is established.
+
+### Embedded Agency
+
+- Source ID: `ext_embedded_agency_2019`
+- Citation or primary record: Demski and Garrabrant (2019), Embedded Agency; [arXiv:1902.09469](https://arxiv.org/abs/1902.09469); DOI `10.48550/arXiv.1902.09469`
+- Layer: `embedded_agency_foundations`
+- Current use: asi-is-a-stack-not-a-model (ASI Is a Stack, Not a Model); evidence-states-and-claim-discipline (Evidence States and Claim Discipline); constitutional-alignment-substrate (Constitutional Alignment: Agency, Dignity, and Corrigibility); recursive-self-improvement-boundaries (Recursive Self-Improvement Boundaries); integrated-reference-architecture (Integrated Reference Architecture)
+- Source review state: source note available
+- Notes: Primary informal survey of the obstacles that arise when agents are physical parts of the worlds they model, must use smaller internal models, and reason about modifiable internal parts. It supplies a foundations boundary; the book's finite records, authority ceilings, and proofs do not solve embedded agency.
+
+### Remote ATtestation procedureS (RATS) Architecture
+
+- Source ID: `ext_ietf_rats_architecture_2023`
+- Citation or primary record: Birkholz et al. (2023), RATS Architecture; [source](https://www.rfc-editor.org/rfc/rfc9334.html); DOI `10.17487/RFC9334`
+- Layer: `remote_attestation_architecture`
+- Current use: model-weight-custody-and-hardware-roots-of-trust (Model-Weight Custody and Hardware Roots of Trust)
+- Source review state: source note available
+- Notes: Primary IETF architecture and terminology comparator for Attester, Verifier, Relying Party, Evidence, Attestation Results, appraisal policies, reference values, freshness, layered environments, privacy, trust roots, and confidential-model key release. It is informational architecture, not a protocol, hardware assurance level, verifier-independence result, or local attestation deployment.
+
+### Recommendation for Key Management: Part 1 – General
+
+- Source ID: `ext_nist_key_management_2020`
+- Citation or primary record: Barker (2020), NIST SP 800-57 Part 1 Rev. 5; [source](https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final); DOI `10.6028/NIST.SP.800-57pt1r5`
+- Layer: `cryptographic_key_management`
+- Current use: model-weight-custody-and-hardware-roots-of-trust (Model-Weight Custody and Hardware Roots of Trust)
+- Source review state: source note available
+- Notes: Current final NIST key-management baseline for key and metadata protection, inventory, authorization, access control, usage periods, compromise, backup, recovery, trust anchors, and lifecycle policy. A Revision 6 draft exists, so this source is the final baseline rather than a claim that guidance has stopped evolving; no local key-management conformance or security result is established.
+
+### Guidelines for Media Sanitization
+
+- Source ID: `ext_nist_media_sanitization_2025`
+- Citation or primary record: Chandramouli and Hibbard (2025), NIST SP 800-88 Rev. 2; [source](https://csrc.nist.gov/pubs/sp/800/88/r2/final); DOI `10.6028/NIST.SP.800-88r2`
+- Layer: `media_sanitization_and_disposal`
+- Current use: model-weight-custody-and-hardware-roots-of-trust (Model-Weight Custody and Hardware Roots of Trust)
+- Source review state: source note available
+- Notes: Current final NIST media-sanitization comparator for rendering target data access infeasible at a stated effort level using sensitivity- and media-appropriate controls, including cryptographic erase. It does not prove that all model copies, plaintext memory, cloud replicas, derivatives, or recipients were discovered or sanitized, and no local erasure test was run.
+
+### Attention Is All You Need
+
+- Source ID: `ext_attention_is_all_you_need_2017`
+- Citation or primary record: Vaswani et al. (2017), Attention Is All You Need; [arXiv:1706.03762](https://arxiv.org/abs/1706.03762); DOI `10.48550/arXiv.1706.03762`
+- Layer: `dense_attention_sequence_substrate`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Primary Transformer paper and dense-attention baseline. It supports the historical architecture and parallel sequence-processing comparison, not a claim that Transformers are universally optimal or locally reproduced.
+
+### Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality
+
+- Source ID: `ext_mamba2_ssd_2024`
+- Citation or primary record: Dao and Gu (2024), Transformers are SSMs; [arXiv:2405.21060](https://arxiv.org/abs/2405.21060); DOI `10.48550/arXiv.2405.21060`
+- Layer: `state_space_duality_and_sequence_substrates`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Primary Mamba-2/structured-state-space-duality comparator connecting SSM and attention-like formulations. No local model, kernel, quality, scaling, or hardware result is reproduced.
+
+### Efficiently Modeling Long Sequences with Structured State Spaces
+
+- Source ID: `ext_s4_2022`
+- Citation or primary record: Gu, Goel, and Re (2022), Structured State Spaces; [arXiv:2111.00396](https://arxiv.org/abs/2111.00396); DOI `10.48550/arXiv.2111.00396`
+- Layer: `structured_state_space_sequence_substrates`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Foundational S4 comparator for structured state-space sequence models, efficient long-range computation, and the lineage that precedes selective SSMs. Source-reported benchmark and generation results are not reproduced and do not establish exact recall or governed substitutability.
+
+### Mamba-3: Improved Sequence Modeling using State Space Principles
+
+- Source ID: `ext_mamba3_2026`
+- Citation or primary record: Lahoti et al. (2026), Mamba-3; [arXiv:2603.15569](https://arxiv.org/abs/2603.15569); DOI `10.48550/arXiv.2603.15569`
+- Layer: `modern_selective_state_space_sequence_substrates`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Current 2026 selective-SSM comparator for complex-valued state updates, discretization, and multi-input/multi-output formulation. Recent source-reported results are not locally reproduced and must not set the chapter conclusion by recency.
+
+### Gated DeltaNet-2: Decoupling Erase and Write in Linear Attention
+
+- Source ID: `ext_gated_deltanet2_2026`
+- Citation or primary record: Hatamizadeh, Choi, and Kautz (2026), Gated DeltaNet-2; [arXiv:2605.22791](https://arxiv.org/abs/2605.22791); DOI `10.48550/arXiv.2605.22791`
+- Layer: `current_recurrent_linear_attention_and_editable_memory_frontier`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Dated 2026 comparator that separates erase and write gates and reports the strongest aggregate result among its Mamba-2, Gated DeltaNet, KDA, Mamba-3, and Gated DeltaNet-2 envelope at 1.3B parameters and 100B FineWeb-Edu tokens. The result is author reported, not locally reproduced; it displaces Mamba-3 only for that exact source envelope and requires official-code, checkpoint, hardware, seed, cost, retrieval, state, and transfer reproduction before any local superiority claim.
+
+### The Hyperscale Lottery: How State-Space Models Have Sacrificed Edge Efficiency
+
+- Source ID: `ext_hyperscale_lottery_2026`
+- Citation or primary record: Geens et al. (2026), The Hyperscale Lottery; [arXiv:2604.07935](https://arxiv.org/abs/2604.07935); DOI `10.48550/arXiv.2604.07935`
+- Layer: `hardware_specific_state_space_efficiency_counterevidence`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Current edge-hardware counterstudy measuring Mamba-family latency outside hyperscale-GPU conditions. Its source-reported results require platform-stratified latency, memory, and energy accounting; they are not locally reproduced and do not settle the quality-efficiency frontier.
+
+### Gated Delta Networks: Improving Mamba2 with Delta Rule
+
+- Source ID: `ext_gated_deltanet_2024`
+- Citation or primary record: Yang et al. (2024), Gated Delta Networks; [arXiv:2412.06464](https://arxiv.org/abs/2412.06464); DOI `10.48550/arXiv.2412.06464`
+- Layer: `linear_attention_and_adaptive_memory`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Primary gated-delta-rule comparator for targeted recurrent-memory updates, rapid erasure, parallel training, and hybrid attention/SSM compositions. Source-reported retrieval, extrapolation, efficiency, and quality results are not locally reproduced.
+
+### Jamba: A Hybrid Transformer-Mamba Language Model
+
+- Source ID: `ext_jamba_2024`
+- Citation or primary record: Lieber et al. (2024), Jamba; [arXiv:2403.19887](https://arxiv.org/abs/2403.19887); DOI `10.48550/arXiv.2403.19887`
+- Layer: `hybrid_attention_state_space_mixture_of_experts`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Primary large-scale hybrid Transformer-Mamba-MoE comparator. It motivates route- and composition-aware accounting; its reported quality, context, throughput, and memory results are not locally reproduced and do not establish that the specific mixture is generally optimal.
+
+### Neural Message Passing for Quantum Chemistry
+
+- Source ID: `ext_neural_message_passing_2017`
+- Citation or primary record: Gilmer et al. (2017), Neural Message Passing for Quantum Chemistry; [arXiv:1704.01212](https://arxiv.org/abs/1704.01212); DOI `10.48550/arXiv.1704.01212`
+- Layer: `graph_relational_message_passing`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Primary message-passing neural-network framework for learned computation over graph structure. Its molecular results motivate a non-token-native relational lane but do not establish general reasoning, dynamic graph memory, exact state, or local reproduction.
+
+### Hyena Hierarchy: Towards Larger Convolutional Language Models
+
+- Source ID: `ext_hyena_hierarchy_2023`
+- Citation or primary record: Poli et al. (2023), Hyena Hierarchy; [arXiv:2302.10866](https://arxiv.org/abs/2302.10866); DOI `10.48550/arXiv.2302.10866`
+- Layer: `long_convolution_sequence_substrates`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Primary long-convolution comparator for subquadratic sequence mixing and hardware-aware architecture comparisons. No local training, throughput, quality, recall, or scaling result is reproduced.
+
+### RWKV: Reinventing RNNs for the Transformer Era
+
+- Source ID: `ext_rwkv_2023`
+- Citation or primary record: Peng et al. (2023), RWKV; [source](https://aclanthology.org/2023.findings-emnlp.936/); DOI `10.18653/v1/2023.findings-emnlp.936`
+- Layer: `linear_recurrent_language_models`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Primary recurrent language-model comparator combining parallelizable training with recurrent inference. Reported benchmark, memory, and inference properties are not reproduced locally.
+
+### xLSTM: Extended Long Short-Term Memory
+
+- Source ID: `ext_xlstm_2024`
+- Citation or primary record: Beck et al. (2024), xLSTM; [arXiv:2405.04517](https://arxiv.org/abs/2405.04517); DOI `10.48550/arXiv.2405.04517`
+- Layer: `modern_gated_recurrent_sequence_substrates`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Primary modern-LSTM comparator for revised gating, memory, and scalable recurrent language modeling. No xLSTM training, scaling, quality, or inference result is reproduced locally.
+
+### Learning to (Learn at Test Time): RNNs with Expressive Hidden States
+
+- Source ID: `ext_ttt_layers_2024`
+- Citation or primary record: Sun et al. (2024), Learning to Learn at Test Time; [arXiv:2407.04620](https://arxiv.org/abs/2407.04620); DOI `10.48550/arXiv.2407.04620`
+- Layer: `test_time_learned_state_sequence_substrates`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Primary test-time-training-layer comparator that treats hidden state as a learned model updated on the sequence. It motivates explicit online-state custody and rollback; no local quality or efficiency result is reproduced.
+
+### Titans: Learning to Memorize at Test Time
+
+- Source ID: `ext_titans_2025`
+- Citation or primary record: Behrouz et al. (2025), Titans; [arXiv:2501.00663](https://arxiv.org/abs/2501.00663); DOI `10.48550/arXiv.2501.00663`
+- Layer: `test_time_neural_long_term_memory`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Primary neural-memory comparator for test-time memorization and long-context sequence modeling. The paper motivates mutable-state provenance and rollback tests; no local model or benchmark result is reproduced.
+
+### KAN: Kolmogorov-Arnold Networks
+
+- Source ID: `ext_kan_2024`
+- Citation or primary record: Liu et al. (2024), KAN; [arXiv:2404.19756](https://arxiv.org/abs/2404.19756); DOI `10.48550/arXiv.2404.19756`
+- Layer: `learned_univariate_function_networks`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Primary KAN proposal replacing fixed node activations/linear edge weights with learned univariate edge functions. Interpretability and scientific-task demonstrations are source-reported and do not establish a general MLP or Transformer replacement.
+
+### KAN or MLP: A Fairer Comparison
+
+- Source ID: `ext_kan_or_mlp_fairer_comparison_2024`
+- Citation or primary record: Yu et al. (2024), KAN or MLP; [arXiv:2407.16674](https://arxiv.org/abs/2407.16674); DOI `10.48550/arXiv.2407.16674`
+- Layer: `architecture_comparison_methodology`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Critical matched-comparison source for KAN versus MLP under parameter, FLOP, and task controls. It is included to prevent architecture enthusiasm from substituting for fair accounting; no local comparison is reproduced.
+
+### Neural Turing Machines
+
+- Source ID: `ext_neural_turing_machines_2014`
+- Citation or primary record: Graves, Wayne, and Danihelka (2014), Neural Turing Machines; [arXiv:1410.5401](https://arxiv.org/abs/1410.5401); DOI `10.48550/arXiv.1410.5401`
+- Layer: `differentiable_external_memory`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Primary differentiable-controller/external-memory source. It motivates variable-size memory interfaces and out-of-distribution algorithmic tests; toy-task results do not establish reliable exact memory or general computation.
+
+### Hybrid computing using a neural network with dynamic external memory
+
+- Source ID: `ext_differentiable_neural_computer_2016`
+- Citation or primary record: Graves et al. (2016), Differentiable Neural Computer; [source](https://doi.org/10.1038/nature20101); DOI `10.1038/nature20101`
+- Layer: `differentiable_external_memory`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Primary Differentiable Neural Computer source for learned controllers over dynamic external memory. Source-reported graph and reasoning tasks do not establish reliable exact state, scalable memory, or local reproduction.
+
+### Liquid Time-constant Networks
+
+- Source ID: `ext_liquid_time_constant_networks_2021`
+- Citation or primary record: Hasani et al. (2021), Liquid Time-constant Networks; [source](https://doi.org/10.1609/aaai.v35i9.16936); DOI `10.1609/aaai.v35i9.16936`
+- Layer: `continuous_time_neural_dynamics`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Primary continuous-time recurrent architecture source for input-dependent time constants and dynamical-system behavior. Reported time-series results and stability analysis do not establish broad cognitive superiority or a local implementation.
+
+### Less is More: Recursive Reasoning with Tiny Networks
+
+- Source ID: `ext_tiny_recursive_model_2025`
+- Citation or primary record: Jolicoeur-Martineau (2025), Less is More; [arXiv:2510.04871](https://arxiv.org/abs/2510.04871); DOI `10.48550/arXiv.2510.04871`
+- Layer: `tiny_weight_tied_recursive_reasoning`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Primary Tiny Recursive Model proposal and narrow puzzle-domain result. It motivates a compact weight-tied OneCell comparator but does not establish general reasoning, language capability, deep effective recursion, or total-system simplicity.
+
+### Tiny Recursive Models on ARC-AGI-1: Inductive Biases, Identity Conditioning, and Test-Time Compute
+
+- Source ID: `ext_trm_arc_agi_analysis_2025`
+- Citation or primary record: Roye-Azar et al. (2025), Tiny Recursive Models on ARC-AGI-1; [arXiv:2512.11847](https://arxiv.org/abs/2512.11847); DOI `10.48550/arXiv.2512.11847`
+- Layer: `recursive_model_critical_evaluation`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Critical TRM analysis reporting material dependence on 1000-sample voting, puzzle identity, and shallow effective recursion. It is a source-reported audit rather than a local reproduction and sets preregistered identity, sampling, and recursion-depth controls.
+
+### Tiny Autoregressive Recursive Models
+
+- Source ID: `ext_tiny_autoregressive_recursive_models_2026`
+- Citation or primary record: Rauba, Fanconi, and van der Schaar (2026), Tiny Autoregressive Recursive Models; [arXiv:2603.08082](https://arxiv.org/abs/2603.08082); DOI `10.48550/arXiv.2603.08082`
+- Layer: `recursive_model_controlled_ablation`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Controlled compute-matched study that progressively transforms a standard autoregressive model into a TRM-like system and reports no reliable advantage from the full autoregressive TRM mechanism. It motivates mechanism-level rather than label-level ablation.
+
+### Associative-State Universal Transformers: Sparse Retrieval Meets Structured Recurrence
+
+- Source ID: `ext_unimatrix_2026`
+- Citation or primary record: Xiao (2026), Associative-State Universal Transformers; [arXiv:2604.25930](https://arxiv.org/abs/2604.25930); DOI `10.48550/arXiv.2604.25930`
+- Layer: `structured_recurrence_and_sparse_retrieval`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Current UniMatrix preprint whose negative associative-recall result shows compressed recurrent state alone is insufficient in its setup, while explicit sparse slots and pointer-level routing materially change the result. No local reproduction or general conclusion follows.
+
+### Memory Caching: RNNs with Growing Memory
+
+- Source ID: `ext_memory_caching_2026`
+- Citation or primary record: Behrouz et al. (2026), Memory Caching; [arXiv:2602.24281](https://arxiv.org/abs/2602.24281); DOI `10.48550/arXiv.2602.24281`
+- Layer: `growing_recurrent_memory`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Current recurrent-memory comparator that caches hidden-state checkpoints and exposes a trade between fixed recurrent memory and growing addressable memory. Its source-reported recall results still leave the Transformer strongest on the reported in-context recall tasks.
+
+### Inkling: Our open-weights model
+
+- Source ID: `ext_inkling_2026`
+- Citation or primary record: Thinking Machines Lab (2026), Inkling; [source](https://thinkingmachines.ai/news/introducing-inkling/)
+- Layer: `hybrid_local_global_attention_moe_multimodal_substrate`
+- Current use: replaceable-cognitive-substrates-beyond-transformer-monoculture (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
+- Source review state: source note available
+- Notes: Release-day primary-source case study of a 66-layer multimodal sparse-MoE Transformer with a 5:1 local/global attention schedule, relative positions, short convolutions, controllable effort, and open weights. It motivates topology-complete capability cards and component ablations; provider-reported results are not locally reproduced and do not isolate the contribution of any component.
+
+## External Citation Policy
+
+- Keep outside literature separate from Corben's own papers, Corben-supplied materials, recovered project records, and local project records.
+- Do not cite an external source as supporting a claim until the source text has been read and a source note or equivalent review artifact exists.
+- Do not report reproduced external results unless the reproduction artifact, command, environment, and result record exist.
+- Keep third-party documentation, papers, and benchmarks at their recorded support boundary.

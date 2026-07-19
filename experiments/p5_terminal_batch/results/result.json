@@ -1,0 +1,107 @@
+{
+  "schema_version": "asi_stack.p5_terminal_batch_result.v1",
+  "preregistration_sha256": "831533423057a1c05c43d66e278bdccfff96e57e5cabfb7faafa64e834baa1e4",
+  "atom_results": [
+    {
+      "atom_id": "circle-calculus-and-proof-carrying-ai-contracts.mechanism.003",
+      "disposition": "promoted_at_bounded_scope",
+      "new_support_state": "prototype-backed",
+      "checks": {
+        "all_commands_pass": true,
+        "compiled_target": true,
+        "consumer_negative_controls": 4,
+        "receipt_retained": true
+      },
+      "receipts": [
+        {
+          "command": "python3 scripts/validate_circle_external_receipt_slice.py",
+          "exit_code": 0,
+          "stdout_sha256": "76db6130f03f475277b1475191af5f94c54c125f7893188248eaadbd61995eda",
+          "passed": true
+        },
+        {
+          "command": "python3 scripts/validate_circle_public_replay.py",
+          "exit_code": 0,
+          "stdout_sha256": "263134b9bd21d9fe9750b872a0f779857b1b24d8d9dd516ee4faad3f7b517aec",
+          "passed": true
+        },
+        {
+          "command": "lake build AsiStackProofs.ProofCarryingContracts",
+          "exit_code": 0,
+          "stdout_sha256": "46a0a74e4f003a4ef3b259469eda69b6d911cd780bed0d24d9655eed0b819246",
+          "passed": true
+        }
+      ],
+      "limitations": [
+        "one pinned external target",
+        "finite authored consumer",
+        "no general transport or transfer"
+      ]
+    },
+    {
+      "atom_id": "system-boundaries-and-authority.invariant.001",
+      "disposition": "promoted_at_bounded_scope",
+      "new_support_state": "synthetic-test-backed",
+      "checks": {
+        "validator_pass": true,
+        "mutation_rejections": 38,
+        "reachable_events": 6,
+        "pre_effect_denials": 2,
+        "unsafe_releases": 0
+      },
+      "receipts": [
+        {
+          "command": "python3 scripts/validate_authority_effect_refinement.py",
+          "exit_code": 0,
+          "stdout_sha256": "869be7854601d71feaddfd1f8795cdfdb51736904b649cfd18512fde3d44e6f7",
+          "passed": true
+        }
+      ],
+      "limitations": [
+        "trusted finite identities and receipts",
+        "sequential local model",
+        "no deployed enforcement or distributed revocation"
+      ]
+    },
+    {
+      "atom_id": "capability-replacement-and-rollback.invariant.011",
+      "disposition": "narrowed_after_full_attempt",
+      "new_support_state": "argument",
+      "checks": {
+        "validators_pass": true,
+        "artifact_digest_exact": true,
+        "behavior_separate": "observed_bounded_local",
+        "privacy_separate": "bounded_attack_advantage_reduced",
+        "storage_separate": "partial_declared_store_only",
+        "external_descendant_separate": "unresolved",
+        "service_restart_executed": false,
+        "external_compensation_executed": false,
+        "replacement_trace_transactions": 2
+      },
+      "receipts": [
+        {
+          "command": "python3 scripts/validate_capability_replacement_trace_probe.py",
+          "exit_code": 0,
+          "stdout_sha256": "b3076247aa7310aed4202f75b20c7bfc25f6c1d9786a267871a9fc0322cb63ea",
+          "passed": true
+        },
+        {
+          "command": "python3 scripts/validate_p4_m7_update_unlearning_v3.py",
+          "exit_code": 0,
+          "stdout_sha256": "951b0e84ac201e1ecbf674482487db86f11a906f82baf5a3a33b07fe7e5124a3",
+          "passed": true
+        }
+      ],
+      "limitations": [
+        "service restart unexecuted",
+        "external compensation unexecuted",
+        "local inventories not open-world complete"
+      ]
+    }
+  ],
+  "terminal_batch_complete": true,
+  "chapter_core_promotion_count": 0,
+  "support_state_effect": "bounded_subordinate_atom_dispositions_only",
+  "publication_authority": "none",
+  "release_authority": "none"
+}

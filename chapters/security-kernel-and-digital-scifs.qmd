@@ -4,7 +4,7 @@ chapter_id: "security-kernel-and-digital-scifs"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 semantically reviewed proof-contract draft"
-last_updated: "2026-07-14"
+last_updated: "2026-07-16"
 primary_sources:
   - "ladon_manhattan"
   - "context_engineer"
@@ -174,6 +174,24 @@ Keeping secret bytes out of model-visible context can remove a direct literal-di
 Sanitization and declassification are separate. Sanitization transforms an output; declassification authorizes a change in information-flow label for a particular destination and purpose. A fluent summary can carry semantic secrets even when no literal token survives. Evaluation must therefore measure disclosure and task utility, preserve uncertain cases, and record who or what was trusted to make the decision.
 
 Complete mediation is always relative to an inventory. The monitor must name the paths it actually intercepts and the paths it cannot observe. “Non-bypassable” is a promotion target requiring implementation evidence, adversarial testing, and transfer—not a property conferred by architecture prose. Compromised monitors, vendors, operators, supply chains, or hardware roots remain distinct threat cases rather than hidden assumptions.
+
+### The semantic kernel as a protected attack surface
+
+The Platonic World Model identifies semantic infrastructure as a high-value
+security boundary. Ontology poisoning, lexical alias injection, malicious
+equivalence, evidence laundering, context confusion, semantic downgrade,
+grounding spoofing, branch escape, dependency-index evasion, sensitive packet
+exfiltration, and authority escalation can change downstream behavior while
+leaving familiar names intact.
+
+The protected kernel therefore owns content-addressed identity, immutable
+version resolution, append-only governance events, signatures, context and
+branch separation, canonical write authority, and constitutional amendment.
+Generative models may propose patches but do not directly commit them. Kernel
+changes require dual execution of old and candidate validators, invariant
+replay, independent authorization, and preserved recovery tooling. These
+controls complement operating-system, key, model, network, and sensor security;
+they do not replace them or establish a secure implementation.
 
 ## Interfaces
 
@@ -345,12 +363,16 @@ The module contains exactly 22 theorem declarations grouped under these four man
 
 Every assigned source has a manifest-owned reviewed mapping. The grouping prevents related author projects, risk taxonomies, and interface-rich local systems from being miscounted as independent security confirmations.
 
+
+A rule-owned attack suite cannot establish security, and this escaped case blocks any claim that representation layers safely separate quotation from executable authority.
+
 ### Manifest source assignment reconciliation
 
 These rows keep Security Kernel and Digital SCIFs's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
 
 | Source | Intake role | Boundary |
 |---|---|---|
+| `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
@@ -375,6 +397,81 @@ production security claim follows.
 The security kernel is a threat-model-bound authority and information-flow boundary. Its central claim is stronger and more falsifiable than “keep secrets behind handles”: freeze the actors and channels, bind exact authority, minimize and label context, mediate every declared effect and egress, declare the SCIF's actual isolation grade, separate sanitization from declassification, propagate revocation and recovery through descendants, and preserve privacy, availability, usefulness, cost, and residuals on the same ledger.
 
 The current repository proves only finite record and route consequences plus one bounded fail-closed negative result. It does not prove isolation, complete mediation, prompt-injection containment, semantic non-disclosure, effect-complete revocation, side-channel safety, privacy, or production security. The next legitimate step is the frozen multi-comparator real-model campaign described above; until it succeeds, the security claim remains an argument and every handle, SCIF, theorem, or blocked attack retains its exact narrow scope.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **66** structured claim atoms in `CF-02`. The
+frozen repository-wide terminal audit records 65 `blocked_after_full_attempt`; 1 `narrowed_after_full_attempt`. Its core
+atom `security-kernel-and-digital-scifs.core` remains at `argument` with terminal
+disposition `narrowed_after_full_attempt`. The authoritative per-atom rows
+are the `security-kernel-and-digital-scifs` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+::: {.asi-human-only}
+### What the evidence now says
+
+The chapter's core remains **narrowed after full attempt**
+at `argument` support. Across its 66 structured claims,
+65 still lack required proof lanes,
+1 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Safety-critical lifecycle consumer trace**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Finite local fixture consumer only; no authentic deployment, general alignment, evaluator independence, or broad security claim.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+:::
+
+::: {.asi-ai-only}
+
+### Evidence packet
+
+| Field | Exact chapter boundary |
+|---|---|
+| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-02` minimum family bundle. |
+| Attempted local lanes | `source-synthesis` |
+| Missing or unproved lanes | `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer` |
+| Family-level natural-work or end-to-end bundle | **Safety-critical lifecycle consumer trace** (`end_to_end`): Ten finite lifecycle receipts spanning bounded effects, denials, residual accounting, and safety-critical state transitions. |
+| Negative controls | five explicit denials with residuals; eight rejecting mutations. |
+| Exact accepted transitions in this chapter | `v1_0_pilot.security_kernel.no_change` |
+| Core outcome | `narrowed_after_full_attempt` at `argument`; no chapter-core promotion. |
+| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
+| Reproduction path | Replay `scripts/validate_safety_critical_lifecycle_consumer_trace.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
+
+### Worked success, failure, and boundary cases
+
+- **Success case:** the family-level bundle passed its own rejecting validator
+  within this exact scope: Ten finite lifecycle receipts spanning bounded effects, denials, residual accounting, and safety-critical state transitions. This is evidence that the family
+  received a competent attempt, not that every claim in this chapter succeeded.
+- **Failure or non-promotion case:** 65 atoms
+  remain blocked and 1 are narrowed. A
+  green family validator cannot fill their missing lanes or raise the core.
+- **Boundary case:** Finite local fixture consumer only; no authentic deployment, general alignment, evaluator independence, or broad security claim.
+
+### Argument-exit table
+
+| Atom set | Count | Work performed | Terminal reason and next burden |
+|---|---:|---|---|
+| Core: `security-kernel-and-digital-scifs.core` | 1 | `source-synthesis` | `narrowed_after_full_attempt`; missing or unproved: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. |
+| narrowed after full attempt | 1 | `source-synthesis` | The exact accepted transition lineage is preserved: `v1_0_pilot.security_kernel.no_change`. The claim is not widened. |
+| blocked after full attempt | 65 | `source-synthesis` | Missing or unproved lanes across this set: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. These are residual proof obligations, not false claims. |
+
+This table is a disposition map, not a promotion quota. The next valid movement
+is atom-specific evidence that fills the named missing lanes, survives relevant
+negative controls, and enters through an accepted evidence transition. Until
+then, source counts, theorem counts, fixtures, validators, or nearby family
+results cannot be used as substitutes.
+:::
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
 
 ## Handoff
 

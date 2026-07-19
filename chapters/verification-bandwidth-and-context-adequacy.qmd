@@ -4,7 +4,7 @@ chapter_id: "verification-bandwidth-and-context-adequacy"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-15"
+last_updated: "2026-07-16"
 primary_sources:
   - "verification_bandwidth"
   - "vcm_public"
@@ -45,7 +45,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `verification_bandwidth`, `vcm_public`; supporting: `spinoza`, `treellm`, ALCE, CheckList, GPQA, abstention, Reluplex; variants: GraphRAG, HippoRAG, RAPTOR, LongBench, RULER, LongLLMLingua; connector/recovery: `vcm_editable` |
 | Source loading state | all 16 source notes inspected and mapped; passage-reviewed local raw cache: `verification_bandwidth`, `vcm_public`, `spinoza`, `treellm`; connector/source-note boundary: `vcm_editable`; bounded primary-record or primary-paper notes: 11 external comparators |
-| Test state | Exact authored scaffold: 3 valid/5 rejecting admission records; 2 valid/7 rejecting contradiction traces; 3 valid/5 rejecting capacity traces; one 12-unit/66-obligation/18-checked/48-residual record; one 24-obligation decomposition including 6 boundary checks; a five-stage/twelve-route refinement; and 31/31 rejected evidence-handoff mutations. Four baseline declarations are retired and eight stronger lifecycle declarations added. No model, natural claim, independent evaluator, deployed ledger or escalation service, useful advantage, or chapter-core support effect. |
+| Test state | Exact authored scaffold: 3 valid/5 rejecting admission records; 2 valid/7 rejecting contradiction traces; 3 valid/5 rejecting capacity traces; one 12-unit/66-obligation/18-checked/48-residual record; one 24-obligation decomposition including 6 boundary checks; a five-stage/twelve-route refinement; and 31/31 rejected evidence-handoff mutations. Four baseline declarations are retired and eight stronger lifecycle declarations added. M8 Campaign 4 added 18 sacrificial tasks and 36 local Qwen3-8B calls across three versioned instruments; its terminal path reached 6/6 eligibility accuracy and perfect required-residual recall but admitted only 3/6 extraction interfaces, so heldout stayed sealed and support did not move. No natural heldout claim, externally independent evaluator, deployed ledger or escalation service, useful advantage, or chapter-core support effect. |
 
 ## Drafting guardrail
 
@@ -58,6 +58,16 @@ test authored record, lifecycle, authority-separation, and route consequences. T
 do not run a model, natural claim, independent evaluator, citation or behavior
 audit, property verifier, deployed ledger, calibrated adequacy classifier,
 usefulness comparison, or transfer study.
+
+Campaign 4 now supplies a concrete negative interface result. A model may
+identify the right residual set and still fail to request the checks or emit the
+route vocabulary that a verifier-capacity allocator accepts. In the terminal
+sacrificial instrument, all three defect cases used undeclared route `retain`
+and omitted requested-check IDs. Verification bandwidth must therefore be
+measured at the consumer boundary—admissible check requests per available
+capacity—not inferred from defect mention or conservative refusal. Because the
+heldout workload never opened, this sharpens the contract but does not establish
+verifier adequacy or a natural-task effect.
 
 It follows transactions because a coherent, authorized context view can still be inadequate for the claim at hand. Memory correctness and verification adequacy are different gates.
 
@@ -659,6 +669,80 @@ causal ablations, complete costs, reproduction, and transfer.
 Even a claim-specific adequate program cannot move support by itself. The
 completed record becomes an input to Claim Ledgers and Belief Revision, which
 owns the separate evidence and support decision.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **73** structured claim atoms in `CF-04`. The
+frozen repository-wide terminal audit records 73 `blocked_after_full_attempt`. Its core
+atom `verification-bandwidth-and-context-adequacy.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `verification-bandwidth-and-context-adequacy` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+::: {.asi-human-only}
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 73 structured claims,
+73 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Situated world-model acquisition and consolidation campaign**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Bounded finite POMDP result only; no open-world truth, general memory transfer, deployment, or chapter-core promotion.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+:::
+
+::: {.asi-ai-only}
+
+### Evidence packet
+
+| Field | Exact chapter boundary |
+|---|---|
+| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-04` minimum family bundle. |
+| Attempted local lanes | `source-synthesis` |
+| Missing or unproved lanes | `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer` |
+| Family-level natural-work or end-to-end bundle | **Situated world-model acquisition and consolidation campaign** (`natural_work_and_end_to_end`): Two partially observed environments, 11,250 episodes, 6,000 held-out episodes, six directional ablation signatures, and governed replacement/rollback. |
+| Negative controls | ten arms; six matched ablations; ten laundering mutations; replacement and rollback checks. |
+| Exact accepted transitions in this chapter | none |
+| Core outcome | `blocked_after_full_attempt` at `argument`; no chapter-core promotion. |
+| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
+| Reproduction path | Replay `scripts/validate_p4_m8_world_model_campaign.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
+
+### Worked success, failure, and boundary cases
+
+- **Success case:** the family-level bundle passed its own rejecting validator
+  within this exact scope: Two partially observed environments, 11,250 episodes, 6,000 held-out episodes, six directional ablation signatures, and governed replacement/rollback. This is evidence that the family
+  received a competent attempt, not that every claim in this chapter succeeded.
+- **Failure or non-promotion case:** 73 atoms
+  remain blocked and 0 are narrowed. A
+  green family validator cannot fill their missing lanes or raise the core.
+- **Boundary case:** Bounded finite POMDP result only; no open-world truth, general memory transfer, deployment, or chapter-core promotion.
+
+### Argument-exit table
+
+| Atom set | Count | Work performed | Terminal reason and next burden |
+|---|---:|---|---|
+| Core: `verification-bandwidth-and-context-adequacy.core` | 1 | `source-synthesis` | `blocked_after_full_attempt`; missing or unproved: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. |
+| blocked after full attempt | 73 | `source-synthesis` | Missing or unproved lanes across this set: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. These are residual proof obligations, not false claims. |
+
+This table is a disposition map, not a promotion quota. The next valid movement
+is atom-specific evidence that fills the named missing lanes, survives relevant
+negative controls, and enters through an accepted evidence transition. Until
+then, source counts, theorem counts, fixtures, validators, or nearby family
+results cannot be used as substitutes.
+:::
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
 
 ## Handoff
 

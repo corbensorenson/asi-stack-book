@@ -1,0 +1,123 @@
+{
+  "schema_version": "asi_stack.p2_development_corpus_preflight.v1",
+  "recorded_date": "2026-07-17",
+  "state": "natural_corpus_candidate_qualified_for_development_only",
+  "claim_id": "p2.governed_natural_repository_change_admission_joint_frontier",
+  "source": {
+    "source_id": "ext_swe_rebench_v2_2026",
+    "dataset_url": "https://huggingface.co/datasets/nebius/SWE-rebench-V2",
+    "dataset_revision": "475dd5e8703bb5fb22dd3c60b5d038b019eba1e0",
+    "parquet_sha256": "0e0bf9355f892ad74ae98d4e1c404f39fd6654a8e351ee3e6ab162e4a64cd3ad",
+    "dataset_license": "CC-BY-4.0 with per-repository license obligations",
+    "raw_parquet_retention": "transient_local_preflight_only_not_vendored"
+  },
+  "contamination_boundary": {
+    "candidate_model_snapshot": "545dc4251c05440727734bcd94334791f6ab0192",
+    "candidate_model_snapshot_last_modified_utc": "2025-04-28T21:51:20Z",
+    "filter": "created_at > 2025-04-28 21:51:20 UTC",
+    "claim": "reduced_by_post_snapshot_filter_not_eliminated_or_proven_absent"
+  },
+  "eligible_universe": {
+    "row_count": 1117,
+    "repository_count": 532,
+    "language_count": 20,
+    "language_counts": {
+      "c": 5,
+      "clojure": 1,
+      "cpp": 8,
+      "csharp": 18,
+      "dart": 32,
+      "elixir": 7,
+      "go": 215,
+      "java": 43,
+      "js": 34,
+      "julia": 41,
+      "kotlin": 97,
+      "lua": 2,
+      "ocaml": 2,
+      "php": 43,
+      "python": 330,
+      "r": 3,
+      "rust": 109,
+      "scala": 18,
+      "swift": 14,
+      "ts": 95
+    },
+    "license_counts": {
+      "Apache-2.0": 411,
+      "BSD-2-Clause": 13,
+      "BSD-3-Clause": 102,
+      "CC0-1.0": 3,
+      "ISC": 1,
+      "MIT": 389,
+      "MIT-0": 10,
+      "Unlicense": 5,
+      "custom-check-github": 177,
+      "null": 6
+    },
+    "difficulty_counts": {
+      "easy": 330,
+      "hard": 58,
+      "medium": 725,
+      "null": 4
+    },
+    "permissive_license_row_count": 934,
+    "missing_problem_statement_count": 1,
+    "solution_test_path_overlap_count": 0,
+    "duplicate_repo_base_commit_count": 29,
+    "metadata_sha256": "46fa335f1e91b4a07c6bf950e98621d9c8f2410c668109b9cc2eef3dd5308396",
+    "metadata_path": "experiments/p2_governed_repository_admission/corpus/post_snapshot_eligible_metadata.jsonl"
+  },
+  "development_pool": {
+    "row_count": 12,
+    "repository_count": 12,
+    "language_count": 7,
+    "languages": [
+      "go",
+      "java",
+      "js",
+      "php",
+      "python",
+      "rust",
+      "ts"
+    ],
+    "all_permissive_license": true,
+    "all_quality_code_a": true,
+    "all_diagnostic_flags_false": true,
+    "all_solution_test_paths_disjoint": true,
+    "all_github_created_post_snapshot": true,
+    "all_github_merged": true,
+    "pool_sha256": "a6a35568c9d88dfde8780d1cd659eebc3aab6648eb47d97e16f9518c6f46cd3a",
+    "pool_path": "experiments/p2_governed_repository_admission/corpus/development_pool.json"
+  },
+  "known_dataset_limitations": [
+    "automated construction and LLM-based quality annotations do not replace local construct validation",
+    "the paper's diagnostic study covers 300 tasks in five languages rather than every released task",
+    "tests can impose implicit naming requirements, couple unrelated regressions, or depend on external resources",
+    "repository image names can be missing or mismatched; manifest availability and gold execution are separate gates",
+    "amd64-only images require measured emulation on the local arm64 host",
+    "test-based correctness does not observe authority, residual, rollback, or governance cost"
+  ],
+  "required_before_construct_pass": [
+    "all 12 development image manifests resolve by digest",
+    "all 12 qualified or same-language deterministically replaced tasks reproduce fail-to-pass and pass-to-pass behavior under network-off outcome execution",
+    "candidate patch application rejects any edit to test-patch paths before test-patch application",
+    "independent task/specification review finds no hidden naming or external-context requirement",
+    "development tasks and injected candidates expose useful-safe, unsafe-admission, false-blocking, abstention, rollback, and residual opportunities",
+    "final tasks remain unselected and unopened until all competence gates pass"
+  ],
+  "preflight_effect": {
+    "construct_gate": "pending_four_replacements_dual_evaluator_and_independent_task_review",
+    "resource_gate": "pending_peak_memory_cpu_and_frozen_ceiling_before_replacement_draw",
+    "final_heldout_gate": "closed",
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "non_claims": [
+    "Development-corpus qualification is not a benchmark result or competence-qualified empirical transition.",
+    "Dataset annotations are screening signals, not independent evaluator truth.",
+    "A resolvable image manifest is not a successful gold execution.",
+    "The 12 development tasks are not the final held-out denominator.",
+    "No coding ability, governance benefit, safety, transfer, reproduction, SOTA, AGI, or ASI claim follows."
+  ]
+}

@@ -4,7 +4,7 @@ chapter_id: "artifact-graphs-audit-logs-and-replay"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-15"
+last_updated: "2026-07-16"
 primary_sources:
   - "talos"
   - "viea"
@@ -265,6 +265,23 @@ flowchart LR
 **How to read the closure graph:** quarantine starts from canonical state and travels through reverse dependencies. A projection survives only through a valid alternate derivation, not because it is cached or public. Replay grade, terminal completion, and relocation identity then constrain reuse. This is a fixture-level design boundary, not evidence that the historical runtimes implemented it.
 
 The strongest objection is operational cost: reverse-closure invalidation can cascade across many surfaces and make a system appear less ready after discovering one flaw. That apparent regression is the point. A graph that hides downstream invalidation preserves availability by spending truth. The bounded implementation may batch invalidations, prioritize high-authority descendants, and escrow unresolved nodes, but it may not silently keep a claim or release active because closure is expensive.
+
+### Foundry lineage and semantic history
+
+Deterministic Capability Compilation requires one artifact graph spanning
+charters, scaffolds, capability graphs, corpora, traces, counterexamples,
+experts, NCOs, ABI versions, link plans, linked composites, validators,
+environment runs, residual leases, tribunal decisions, reified artifacts, and
+recovery exercises. Counterexamples and failed links remain durable nodes; a
+successful later candidate does not rewrite them out of the denominator.
+
+The Platonic World Model adds immutable semantic history: Form families and
+versions, propositions, attestations, commitments, proofs, contexts, branches,
+grounding adapters, diffs, migrations, mappings, packets, and governance events.
+Replay binds both artifact lineage and the exact semantic basis that interpreted
+it. An unchanged byte artifact can become stale when a semantic dependency,
+grounder, authority, or mapping changes; an updated artifact can preserve old
+meaning through an explicit verified bridge.
 
 ## Interfaces
 
@@ -778,9 +795,12 @@ These rows keep Artifact Graphs, Audit Logs, and Replay's manifest assignments v
 
 | Source | Intake role | Boundary |
 |---|---|---|
+| `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_claw_swe_bench_2026` | Passage-reviewed comparator: Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks. Supports binding coding-agent outcomes to a fixed model, harness, workspace, patch extraction, evaluator, runtime budget, and cost rather than attributing a harness result to the model alone. | Primary preprint comparator only; no reported task, score, harness, cost, contamination control, or safety result was reproduced here. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_txfs_2018` | Passage-reviewed comparator: TxFS: Leveraging File-System Crash Consistency to Provide ACID Transactions. Supports distinguishing declared effect-inventory restoration from ACID filesystem transactions, conflict isolation, crash consistency, durability, and bounded transaction capacity. | TxFS was not installed or reproduced; the local directory and state-tree snapshots do not establish filesystem transactions, crash safety, process recovery, service recovery, or external-effect atomicity. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_faithfulness_information_flow_2026` | Passage-reviewed comparator: Faithfulness as Information Flow: Evaluating and Training Faithful Chain-of-Thought Reasoning. Separates a plausible reasoning transcript from causal reliance by distinguishing sufficiency, completeness, and interventional necessity; this sharpens the artifact graph's private-reasoning, reported-rationale, action-trace, receipt, and authoritative-effect boundaries. | The paper's metrics and training interventions are model- and task-bounded; they do not make a chain of thought a receipt or prove local record-reality faithfulness. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_swe_rebench_v2_2026` | Passage-reviewed comparator: SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale. Supplies concrete source, repository, base-commit, solution-patch, test-patch, image, parser, and test-transition identities that a replayable repository task must bind. | Dataset records and image manifests do not prove local replay, independent evaluation, authority-to-effect linkage, or rollback completeness. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 record/reality result
@@ -835,6 +855,80 @@ strong matched comparators.
 This is how execution becomes memory without becoming myth: the artifact graph records what happened, what can be replayed, and what remains uncertain. From there the execution layer reaches its most dangerous boundary: the adapter that turns a job into an external effect.
 
 The later compression and semantic-representation chapters depend on this contract. A compressed artifact can only be trusted relative to the full artifact and replay record it points back to. A semantic node can only be grounded relative to the artifact or source record it cites. The graph is therefore not a storage accessory; it is the continuity layer that lets the stack improve without losing the chain of responsibility.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **81** structured claim atoms in `CF-04`. The
+frozen repository-wide terminal audit records 81 `blocked_after_full_attempt`. Its core
+atom `artifact-graphs-audit-logs-and-replay.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `artifact-graphs-audit-logs-and-replay` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+::: {.asi-human-only}
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 81 structured claims,
+81 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Situated world-model acquisition and consolidation campaign**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Bounded finite POMDP result only; no open-world truth, general memory transfer, deployment, or chapter-core promotion.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+:::
+
+::: {.asi-ai-only}
+
+### Evidence packet
+
+| Field | Exact chapter boundary |
+|---|---|
+| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-04` minimum family bundle. |
+| Attempted local lanes | `source-synthesis` |
+| Missing or unproved lanes | `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer` |
+| Family-level natural-work or end-to-end bundle | **Situated world-model acquisition and consolidation campaign** (`natural_work_and_end_to_end`): Two partially observed environments, 11,250 episodes, 6,000 held-out episodes, six directional ablation signatures, and governed replacement/rollback. |
+| Negative controls | ten arms; six matched ablations; ten laundering mutations; replacement and rollback checks. |
+| Exact accepted transitions in this chapter | none |
+| Core outcome | `blocked_after_full_attempt` at `argument`; no chapter-core promotion. |
+| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
+| Reproduction path | Replay `scripts/validate_p4_m8_world_model_campaign.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
+
+### Worked success, failure, and boundary cases
+
+- **Success case:** the family-level bundle passed its own rejecting validator
+  within this exact scope: Two partially observed environments, 11,250 episodes, 6,000 held-out episodes, six directional ablation signatures, and governed replacement/rollback. This is evidence that the family
+  received a competent attempt, not that every claim in this chapter succeeded.
+- **Failure or non-promotion case:** 81 atoms
+  remain blocked and 0 are narrowed. A
+  green family validator cannot fill their missing lanes or raise the core.
+- **Boundary case:** Bounded finite POMDP result only; no open-world truth, general memory transfer, deployment, or chapter-core promotion.
+
+### Argument-exit table
+
+| Atom set | Count | Work performed | Terminal reason and next burden |
+|---|---:|---|---|
+| Core: `artifact-graphs-audit-logs-and-replay.core` | 1 | `source-synthesis` | `blocked_after_full_attempt`; missing or unproved: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. |
+| blocked after full attempt | 81 | `source-synthesis` | Missing or unproved lanes across this set: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. These are residual proof obligations, not false claims. |
+
+This table is a disposition map, not a promotion quota. The next valid movement
+is atom-specific evidence that fills the named missing lanes, survives relevant
+negative controls, and enters through an accepted evidence transition. Until
+then, source counts, theorem counts, fixtures, validators, or nearby family
+results cannot be used as substitutes.
+:::
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
 
 ## Handoff
 

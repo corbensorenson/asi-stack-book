@@ -1,0 +1,27 @@
+{
+  "schema_version": "asi_stack.p2_replacement_image_resource_preflight_abort.v1",
+  "recorded_date": "2026-07-17",
+  "attempt_id": "2026-07-17-rank-one-r1",
+  "state": "aborted_instrument_failure_after_all_pull_cleanup_cycles",
+  "failure_code": "campaign_ceiling_field_binding_key_error",
+  "failure_detail": "The recorder referenced maximum_campaign_host_free_byte_loss, but the frozen record names maximum_cumulative_host_free_byte_loss.",
+  "raw_log_count": 8,
+  "raw_logs": [
+    {"path": "experiments/p2_governed_repository_admission/replacement_resource_preflight/attempts/2026-07-17-rank-one-r1/slot_1_pull.log", "sha256": "01c500262b31d27ad43f1bfe1ba44171024c22b0916e1c7e1c968585c3e3e30b"},
+    {"path": "experiments/p2_governed_repository_admission/replacement_resource_preflight/attempts/2026-07-17-rank-one-r1/slot_1_cleanup.log", "sha256": "d76a0b70b5d31795d4f2c1abbe747b034b7ed7d73d9ec541fd2916840d273a57"},
+    {"path": "experiments/p2_governed_repository_admission/replacement_resource_preflight/attempts/2026-07-17-rank-one-r1/slot_2_pull.log", "sha256": "a20369be6ea593096ab846bd334b9a887c8032ea252f5b9ac80aa1876df1ea19"},
+    {"path": "experiments/p2_governed_repository_admission/replacement_resource_preflight/attempts/2026-07-17-rank-one-r1/slot_2_cleanup.log", "sha256": "dc08b36338f4ed6e2d20c54fb41d711459897cf36857240496169b67e2bb687c"},
+    {"path": "experiments/p2_governed_repository_admission/replacement_resource_preflight/attempts/2026-07-17-rank-one-r1/slot_3_pull.log", "sha256": "1405a708b4ead01ca36cd019bf61c787708dd40dedf079a5937df52d0519885c"},
+    {"path": "experiments/p2_governed_repository_admission/replacement_resource_preflight/attempts/2026-07-17-rank-one-r1/slot_3_cleanup.log", "sha256": "c29f0d5cdcf7c71139c550ab4a31a2023383ffdd080654807ecb4eb3b146077d"},
+    {"path": "experiments/p2_governed_repository_admission/replacement_resource_preflight/attempts/2026-07-17-rank-one-r1/slot_4_pull.log", "sha256": "a3d8305f7c2f52aec4e560c0a901bd88336d58dd185cdabb0ea654d114a201d8"},
+    {"path": "experiments/p2_governed_repository_admission/replacement_resource_preflight/attempts/2026-07-17-rank-one-r1/slot_4_cleanup.log", "sha256": "30180979d939863ee0c2c78a336ad60994d83c177ac0dad4917017d5d88ef65a"}
+  ],
+  "measurement_recovery_allowed": false,
+  "candidate_resource_disposition_effect": "none",
+  "negative_inference_level": "N0",
+  "claim_effect": "none",
+  "replacement_qualification_effect": "none",
+  "final_pool_selected": false,
+  "final_pool_opened": false,
+  "next_action": "rerun_all_four_rank_one_image cycles_under_new_immutable_attempt_id"
+}

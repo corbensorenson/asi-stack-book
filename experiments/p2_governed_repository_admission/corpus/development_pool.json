@@ -1,0 +1,554 @@
+{
+  "schema_version": "asi_stack.p2_development_pool.v1",
+  "recorded_date": "2026-07-17",
+  "selection_state": "development_pool_selected_final_pool_unselected",
+  "selection_rule": "metadata-only convenience sample before task-text inspection: distinct repositories; seven languages; permissive SPDX licenses; post-model-snapshot merged PRs; dataset quality code A; easy annotation; one or two modified files; separate solution/test paths; accessible public PR and container manifest",
+  "task_text_inspected_for_selection": false,
+  "gold_patch_or_test_outcome_used_for_selection": false,
+  "final_pool_selected": false,
+  "final_pool_opened": false,
+  "rows": [
+    {
+      "instance_id": "aleph-alpha__ts-rs-422",
+      "created_at_utc": "2025-07-07T11:47:53Z",
+      "repo": "Aleph-Alpha/ts-rs",
+      "base_commit": "3bd4124bd1ed621fe8174c92bb63063cc362eaa4",
+      "language": "rust",
+      "license": "MIT",
+      "image_name": "docker.io/swerebenchv2/aleph-alpha-ts-rs:422-3bd4124",
+      "difficulty_annotation": "easy",
+      "quality_code_annotation": "A",
+      "detected_issue_annotations": {
+        "B1": false,
+        "B2": false,
+        "B3": false,
+        "B4": false,
+        "B5": false,
+        "B6": false
+      },
+      "pr_categories": [
+        "minor_bug"
+      ],
+      "num_modified_files": 1,
+      "num_modified_lines": 0,
+      "solution_paths": [
+        "macros/src/attr/struct.rs"
+      ],
+      "test_paths": [
+        "ts-rs/tests/integration/tuple.rs"
+      ],
+      "solution_test_path_overlap": [],
+      "problem_statement_present": true,
+      "solution_patch_present": true,
+      "test_patch_present": true,
+      "problem_statement_sha256": "b52432a677f22872ab4d34e1ab22441e2bb19d706c3764a7d3c80582817be8b0",
+      "solution_patch_sha256": "60f0aa150c8a4c57d497a686f9c32514e1aaad1a070edf50c4883a23922aa4de",
+      "test_patch_sha256": "55e1988d6d8f42a9dfbf2ea47c5da2b788ddae7ea366c42928e2b1a9fe76e385",
+      "test_command_sha256": "402c51fc5724d11a0edfaebcebd7283f61f08b50ec892e5db44a71531a812c43",
+      "dataset_pr_url_present": false,
+      "github_pr_url": "https://github.com/Aleph-Alpha/ts-rs/pull/422",
+      "github_created_at_utc": "2025-07-07T11:47:53Z",
+      "github_merged_at_utc": "2025-07-08T11:28:29Z",
+      "github_merge_commit": "f63dd5fbc402a5d29ded86266f47d8e8fa585472",
+      "source_receipt_observed_date": "2026-07-17",
+      "role": "development_only_not_final"
+    },
+    {
+      "instance_id": "apiflask__apiflask-659",
+      "created_at_utc": "2025-05-04T00:55:59Z",
+      "repo": "apiflask/apiflask",
+      "base_commit": "185d37700f5c5cff46af0ea4d695d5e9290ab9d2",
+      "language": "python",
+      "license": "MIT",
+      "image_name": "docker.io/swerebenchv2/apiflask-apiflask:659-185d377",
+      "difficulty_annotation": "easy",
+      "quality_code_annotation": "A",
+      "detected_issue_annotations": {
+        "B1": false,
+        "B2": false,
+        "B3": false,
+        "B4": false,
+        "B5": false,
+        "B6": false
+      },
+      "pr_categories": [
+        "regression_bug"
+      ],
+      "num_modified_files": 1,
+      "num_modified_lines": 1,
+      "solution_paths": [
+        "src/apiflask/route.py"
+      ],
+      "test_paths": [
+        "tests/test_route.py"
+      ],
+      "solution_test_path_overlap": [],
+      "problem_statement_present": true,
+      "solution_patch_present": true,
+      "test_patch_present": true,
+      "problem_statement_sha256": "8606b63d0d67233211e4b2917ed9957b658f584affe15a70afe249e60b6fdb30",
+      "solution_patch_sha256": "315567eb7f6762e7f520b7ad6ae0efa2302bf89af2e2fab0bbf9dcc7bdab40d2",
+      "test_patch_sha256": "37cb0c7a45b5d2061c810077202c922ebc35d5b7c025348978c7080cb79b7423",
+      "test_command_sha256": "6a869264a2d2553fdd75529eaeb7fb5d5b73b24b73cbae466dd7d15f469f1aa9",
+      "dataset_pr_url_present": false,
+      "github_pr_url": "https://github.com/apiflask/apiflask/pull/659",
+      "github_created_at_utc": "2025-05-04T00:55:59Z",
+      "github_merged_at_utc": "2025-05-04T03:52:38Z",
+      "github_merge_commit": "adf18204180c630363c961aed07c5283785351e7",
+      "source_receipt_observed_date": "2026-07-17",
+      "role": "development_only_not_final"
+    },
+    {
+      "instance_id": "behat__gherkin-343",
+      "created_at_utc": "2025-05-22T16:46:59Z",
+      "repo": "Behat/Gherkin",
+      "base_commit": "e5228946a898d799f2b230ff96f943be99fa7842",
+      "language": "php",
+      "license": "MIT",
+      "image_name": "docker.io/swerebenchv2/behat-gherkin:343-e522894",
+      "difficulty_annotation": "easy",
+      "quality_code_annotation": "A",
+      "detected_issue_annotations": {
+        "B1": false,
+        "B2": false,
+        "B3": false,
+        "B4": false,
+        "B5": false,
+        "B6": false
+      },
+      "pr_categories": [
+        "minor_bug"
+      ],
+      "num_modified_files": 1,
+      "num_modified_lines": 4,
+      "solution_paths": [
+        "src/Parser.php"
+      ],
+      "test_paths": [
+        "tests/Cucumber/extra_testdata/bad/background_after_scenario.feature",
+        "tests/Cucumber/extra_testdata/bad/background_after_scenario.feature.errors.ndjson"
+      ],
+      "solution_test_path_overlap": [],
+      "problem_statement_present": true,
+      "solution_patch_present": true,
+      "test_patch_present": true,
+      "problem_statement_sha256": "9c92836000d0a072169c4e96df09be41e7855eb63b53c6dbe0c23278d060c008",
+      "solution_patch_sha256": "ecdcf5070f170849784079625141bbb9f6359030a63066969615b90b4584c291",
+      "test_patch_sha256": "2b86dc63d3a529a0112c1f926307f0603bab51b82b1e559a57624d5cdd446644",
+      "test_command_sha256": "be91189b0b58fb2b8638574ea27bb6f242e61fd0a47be2f420c5dda90002039d",
+      "dataset_pr_url_present": false,
+      "github_pr_url": "https://github.com/Behat/Gherkin/pull/343",
+      "github_created_at_utc": "2025-05-22T16:46:59Z",
+      "github_merged_at_utc": "2025-05-22T21:41:34Z",
+      "github_merge_commit": "70108518c71c3a760157a591dea2aacf50e893d4",
+      "source_receipt_observed_date": "2026-07-17",
+      "role": "development_only_not_final"
+    },
+    {
+      "instance_id": "compose-spec__compose-go-792",
+      "created_at_utc": "2025-05-20T11:32:07Z",
+      "repo": "compose-spec/compose-go",
+      "base_commit": "e07723c227fee4a7063a55a0d072167679250116",
+      "language": "go",
+      "license": "Apache-2.0",
+      "image_name": "docker.io/swerebenchv2/compose-spec-compose-go:792-e07723c",
+      "difficulty_annotation": "easy",
+      "quality_code_annotation": "A",
+      "detected_issue_annotations": {
+        "B1": false,
+        "B2": false,
+        "B3": false,
+        "B4": false,
+        "B5": false,
+        "B6": false
+      },
+      "pr_categories": [
+        "minor_bug"
+      ],
+      "num_modified_files": 1,
+      "num_modified_lines": 1,
+      "solution_paths": [
+        "schema/compose-spec.json"
+      ],
+      "test_paths": [
+        "loader/loader_test.go"
+      ],
+      "solution_test_path_overlap": [],
+      "problem_statement_present": true,
+      "solution_patch_present": true,
+      "test_patch_present": true,
+      "problem_statement_sha256": "e2e2b0f731eec8657c1603ddbbd25fcb46843c68602d11b31db1550ffacc7c00",
+      "solution_patch_sha256": "683d73b487f371a7d99bf28c8ffedbfa63de16aa8d0954b82c905752f588a0e1",
+      "test_patch_sha256": "cc53ab3fc2157847fb3226c0644a13787535e1108b696af783779321c812eaa3",
+      "test_command_sha256": "e7d5b711bf088f525930ab368a6c66baab27652072c86545606929da85f8018c",
+      "dataset_pr_url_present": false,
+      "github_pr_url": "https://github.com/compose-spec/compose-go/pull/792",
+      "github_created_at_utc": "2025-05-20T11:32:07Z",
+      "github_merged_at_utc": "2025-05-20T12:05:51Z",
+      "github_merge_commit": "a6c896cdf0d93008cf78ba1a61b9d72bf3a6e236",
+      "source_receipt_observed_date": "2026-07-17",
+      "role": "development_only_not_final"
+    },
+    {
+      "instance_id": "dynaconf__dynaconf-1293",
+      "created_at_utc": "2025-05-06T11:32:03Z",
+      "repo": "dynaconf/dynaconf",
+      "base_commit": "934a8f833bd2a9648d7bbb0174a00c83f8577675",
+      "language": "python",
+      "license": "MIT",
+      "image_name": "docker.io/swerebenchv2/dynaconf-dynaconf:1293-934a8f8",
+      "difficulty_annotation": "easy",
+      "quality_code_annotation": "A",
+      "detected_issue_annotations": {
+        "B1": false,
+        "B2": false,
+        "B3": false,
+        "B4": false,
+        "B5": false,
+        "B6": false
+      },
+      "pr_categories": [
+        "minor_bug"
+      ],
+      "num_modified_files": 1,
+      "num_modified_lines": 2,
+      "solution_paths": [
+        "dynaconf/cli.py"
+      ],
+      "test_paths": [
+        "tests/test_cli.py"
+      ],
+      "solution_test_path_overlap": [],
+      "problem_statement_present": true,
+      "solution_patch_present": true,
+      "test_patch_present": true,
+      "problem_statement_sha256": "a5777d853943b32fd47ecac25276eac46424c3050e2ccbe13c17c333fe9a0931",
+      "solution_patch_sha256": "8213088ef344deef9411a8d7fc3bd273aba4c8de51c93311706188edf79979dc",
+      "test_patch_sha256": "717fa0a12babf1bcccc20408a33880e52dce3e9e1cb64e829decb00fd80c9531",
+      "test_command_sha256": "a6e62094ac295ad2ea701f624c68b814823be8e9464139243ce931a271aad166",
+      "dataset_pr_url_present": false,
+      "github_pr_url": "https://github.com/dynaconf/dynaconf/pull/1293",
+      "github_created_at_utc": "2025-05-06T11:32:03Z",
+      "github_merged_at_utc": "2025-05-06T15:26:39Z",
+      "github_merge_commit": "82a3f61d1798a0048a2af76d5ea747d116765b62",
+      "source_receipt_observed_date": "2026-07-17",
+      "role": "development_only_not_final"
+    },
+    {
+      "instance_id": "gitleaks__gitleaks-1845",
+      "created_at_utc": "2025-04-30T12:57:35Z",
+      "repo": "gitleaks/gitleaks",
+      "base_commit": "4451b455f3d6757985070ac244097acec4af74bb",
+      "language": "go",
+      "license": "MIT",
+      "image_name": "docker.io/swerebenchv2/gitleaks-gitleaks:1845-4451b45",
+      "difficulty_annotation": "easy",
+      "quality_code_annotation": "A",
+      "detected_issue_annotations": {
+        "B1": false,
+        "B2": false,
+        "B3": false,
+        "B4": false,
+        "B5": false,
+        "B6": false
+      },
+      "pr_categories": [
+        "minor_bug"
+      ],
+      "num_modified_files": 1,
+      "num_modified_lines": 2,
+      "solution_paths": [
+        "detect/detect.go"
+      ],
+      "test_paths": [
+        "detect/detect_test.go",
+        "testdata/config/valid/allowlist_rule_extend_default.toml"
+      ],
+      "solution_test_path_overlap": [],
+      "problem_statement_present": true,
+      "solution_patch_present": true,
+      "test_patch_present": true,
+      "problem_statement_sha256": "f667e54c2a2c5e5b33fbf0dbae0f8c4e5b2287389bd788ee48e61c64697303b4",
+      "solution_patch_sha256": "3fd96df2871022c8c141db1f274597112d920f792d02c860f02b647aa5389438",
+      "test_patch_sha256": "a22070c15765633db49e66973fbbb1608d62d5564b6dd9f101e8a72f1350f140",
+      "test_command_sha256": "11591327cff9407f65b3c4b2fc0543a539398f95314ebc83944fb3c711466fb0",
+      "dataset_pr_url_present": false,
+      "github_pr_url": "https://github.com/gitleaks/gitleaks/pull/1845",
+      "github_created_at_utc": "2025-04-30T12:57:35Z",
+      "github_merged_at_utc": "2025-04-30T13:29:57Z",
+      "github_merge_commit": "d1c77598da5353c83c46d8a62be0d376a1b63bbb",
+      "source_receipt_observed_date": "2026-07-17",
+      "role": "development_only_not_final"
+    },
+    {
+      "instance_id": "google__yamlfmt-259",
+      "created_at_utc": "2025-06-18T18:25:31Z",
+      "repo": "google/yamlfmt",
+      "base_commit": "bad394177fcc7cb103434101a56026933bd8c68a",
+      "language": "go",
+      "license": "Apache-2.0",
+      "image_name": "docker.io/swerebenchv2/google-yamlfmt:259-bad3941",
+      "difficulty_annotation": "easy",
+      "quality_code_annotation": "A",
+      "detected_issue_annotations": {
+        "B1": false,
+        "B2": false,
+        "B3": false,
+        "B4": false,
+        "B5": false,
+        "B6": false
+      },
+      "pr_categories": [
+        "minor_bug"
+      ],
+      "num_modified_files": 1,
+      "num_modified_lines": 4,
+      "solution_paths": [
+        "formatters/basic/formatter.go"
+      ],
+      "test_paths": [
+        "formatters/basic/formatter_test.go"
+      ],
+      "solution_test_path_overlap": [],
+      "problem_statement_present": true,
+      "solution_patch_present": true,
+      "test_patch_present": true,
+      "problem_statement_sha256": "716b93d85dcdd08e50c3eca0cbc9116806266504fb5e3f93d813652e6c680066",
+      "solution_patch_sha256": "486e5180ec2f371e2dc58c09302b79eabd4ff88ec99d632310955f0ae1a50d0e",
+      "test_patch_sha256": "bfa6167dcf058750f9b3d9787875c3789c5a5f965905d86515a904d4e3077abb",
+      "test_command_sha256": "ce7facfbc18b21c5795f64379a822b3bdd6f31907adf431a01333d5410bc2b5f",
+      "dataset_pr_url_present": false,
+      "github_pr_url": "https://github.com/google/yamlfmt/pull/259",
+      "github_created_at_utc": "2025-06-18T18:25:31Z",
+      "github_merged_at_utc": "2025-06-19T12:57:15Z",
+      "github_merge_commit": "1e2fd2c379fddce1682340a3b87178b73a4447fc",
+      "source_receipt_observed_date": "2026-07-17",
+      "role": "development_only_not_final"
+    },
+    {
+      "instance_id": "keithamus__sort-package-json-361",
+      "created_at_utc": "2025-05-08T13:30:24Z",
+      "repo": "keithamus/sort-package-json",
+      "base_commit": "27e4b7bf4d1357c43c147861b76fcf0f79c661d5",
+      "language": "js",
+      "license": "MIT",
+      "image_name": "docker.io/swerebenchv2/keithamus-sort-package-json:361-27e4b7b",
+      "difficulty_annotation": "easy",
+      "quality_code_annotation": "A",
+      "detected_issue_annotations": {
+        "B1": false,
+        "B2": false,
+        "B3": false,
+        "B4": false,
+        "B5": false,
+        "B6": false
+      },
+      "pr_categories": [
+        "regression_bug"
+      ],
+      "num_modified_files": 1,
+      "num_modified_lines": 5,
+      "solution_paths": [
+        "index.js"
+      ],
+      "test_paths": [
+        "tests/scripts.js"
+      ],
+      "solution_test_path_overlap": [],
+      "problem_statement_present": true,
+      "solution_patch_present": true,
+      "test_patch_present": true,
+      "problem_statement_sha256": "50af4b4287152eba3430d025c1f542b237d49c36eb5809789165421c7a64bb15",
+      "solution_patch_sha256": "dc550997ce72754971302bd22751a8adee29cdb3c50ced5f4de7b1af0dee770a",
+      "test_patch_sha256": "ef2b24a4882a2bea93357b3847b4771d556ff08c554ff2ac8c5436e113efed0e",
+      "test_command_sha256": "8a876b71ff78f91eb3dee53b5b5c0a3f00a17608b389111145cd1d59114e492b",
+      "dataset_pr_url_present": false,
+      "github_pr_url": "https://github.com/keithamus/sort-package-json/pull/361",
+      "github_created_at_utc": "2025-05-08T13:30:24Z",
+      "github_merged_at_utc": "2025-05-08T13:47:39Z",
+      "github_merge_commit": "aa6774ad937feb83178c8bc981f08305e1d22b5c",
+      "source_receipt_observed_date": "2026-07-17",
+      "role": "development_only_not_final"
+    },
+    {
+      "instance_id": "more-itertools__more-itertools-1028",
+      "created_at_utc": "2025-07-14T00:35:41Z",
+      "repo": "more-itertools/more-itertools",
+      "base_commit": "c834d6e4a0c4280b7b7750cb0de8dd8acb3d4c2c",
+      "language": "python",
+      "license": "MIT",
+      "image_name": "docker.io/swerebenchv2/more-itertools-more-itertools:1028-c834d6e",
+      "difficulty_annotation": "easy",
+      "quality_code_annotation": "A",
+      "detected_issue_annotations": {
+        "B1": false,
+        "B2": false,
+        "B3": false,
+        "B4": false,
+        "B5": false,
+        "B6": false
+      },
+      "pr_categories": [
+        "minor_bug"
+      ],
+      "num_modified_files": 1,
+      "num_modified_lines": 1,
+      "solution_paths": [
+        "more_itertools/more.py"
+      ],
+      "test_paths": [
+        "tests/test_more.py"
+      ],
+      "solution_test_path_overlap": [],
+      "problem_statement_present": true,
+      "solution_patch_present": true,
+      "test_patch_present": true,
+      "problem_statement_sha256": "d399d0f25413e3364651e46ccf068e7b64e2b79f711fabc361edf34fc074ba5a",
+      "solution_patch_sha256": "597bd9890818b1c5abc44ce26cf54ad92be988568b2d7ae0b82ccea177873575",
+      "test_patch_sha256": "096f053d9f8eb1da7cf49ea33959b0f1885e87ed11ac664471e704798ffd9bad",
+      "test_command_sha256": "90347e1f315f432db21a20896b82f44a9184bf6976b6070671cac238619f8e74",
+      "dataset_pr_url_present": false,
+      "github_pr_url": "https://github.com/more-itertools/more-itertools/pull/1028",
+      "github_created_at_utc": "2025-07-14T00:35:41Z",
+      "github_merged_at_utc": "2025-07-14T13:50:03Z",
+      "github_merge_commit": "7de169f7ad39eb1f95f8358225476e6f1a59d3d7",
+      "source_receipt_observed_date": "2026-07-17",
+      "role": "development_only_not_final"
+    },
+    {
+      "instance_id": "quantecon__quantecon.py-769",
+      "created_at_utc": "2025-06-22T13:14:57Z",
+      "repo": "QuantEcon/QuantEcon.py",
+      "base_commit": "34f4a47a466ca3bd50c040a6f4e089c4f1ecfcd1",
+      "language": "python",
+      "license": "MIT",
+      "image_name": "docker.io/swerebenchv2/quantecon-quantecon.py:769-34f4a47",
+      "difficulty_annotation": "easy",
+      "quality_code_annotation": "A",
+      "detected_issue_annotations": {
+        "B1": false,
+        "B2": false,
+        "B3": false,
+        "B4": false,
+        "B5": false,
+        "B6": false
+      },
+      "pr_categories": [
+        "major_bug"
+      ],
+      "num_modified_files": 1,
+      "num_modified_lines": 1,
+      "solution_paths": [
+        "quantecon/optimize/lcp_lemke.py"
+      ],
+      "test_paths": [
+        "quantecon/optimize/tests/test_lcp_lemke.py"
+      ],
+      "solution_test_path_overlap": [],
+      "problem_statement_present": true,
+      "solution_patch_present": true,
+      "test_patch_present": true,
+      "problem_statement_sha256": "9e2fb75f526c895c11961b745065ee7399d5feefead6ecbf3de1c12df6d8930a",
+      "solution_patch_sha256": "1ee8e0c95c5c1109526f79f4b12c24b505f0ca57724700c2d312009ae0f1738c",
+      "test_patch_sha256": "5003af4bd6b77ac40da95413ac240cc47114218dab8aba66c39e0dc33ed7bdf2",
+      "test_command_sha256": "f225c1d0f9e73f576fca71e0299dc118eea81f2343ac07be469c7a39e7178884",
+      "dataset_pr_url_present": false,
+      "github_pr_url": "https://github.com/QuantEcon/QuantEcon.py/pull/769",
+      "github_created_at_utc": "2025-06-22T13:14:57Z",
+      "github_merged_at_utc": "2025-07-06T06:56:15Z",
+      "github_merge_commit": "f3db957647ec0c28d8329ac6c8b34384e3eb07f1",
+      "source_receipt_observed_date": "2026-07-17",
+      "role": "development_only_not_final"
+    },
+    {
+      "instance_id": "thealgorithms__java-6333",
+      "created_at_utc": "2025-07-01T13:00:00Z",
+      "repo": "TheAlgorithms/Java",
+      "base_commit": "ebf5c3d326502cbc6b22d84b489cea9996817bc7",
+      "language": "java",
+      "license": "MIT",
+      "image_name": "docker.io/swerebenchv2/thealgorithms-java:6333-ebf5c3d",
+      "difficulty_annotation": "easy",
+      "quality_code_annotation": "A",
+      "detected_issue_annotations": {
+        "B1": false,
+        "B2": false,
+        "B3": false,
+        "B4": false,
+        "B5": false,
+        "B6": false
+      },
+      "pr_categories": [
+        "major_bug"
+      ],
+      "num_modified_files": 1,
+      "num_modified_lines": 1,
+      "solution_paths": [
+        "src/main/java/com/thealgorithms/searches/RowColumnWiseSorted2dArrayBinarySearch.java"
+      ],
+      "test_paths": [
+        "src/test/java/com/thealgorithms/searches/RowColumnWiseSorted2dArrayBinarySearchTest.java"
+      ],
+      "solution_test_path_overlap": [],
+      "problem_statement_present": true,
+      "solution_patch_present": true,
+      "test_patch_present": true,
+      "problem_statement_sha256": "7eee76714b0117eded7fcc7b76b3bc69605545b834a535bd17afc47291960b7d",
+      "solution_patch_sha256": "380ad0f48a86422d60e1a3cac3b4c5af8df08d342dc65f91f6c5af5d86aa1a5a",
+      "test_patch_sha256": "140640206700fef4ec1323b87f59c9a04cc0102def501568ab34b79239ec0da0",
+      "test_command_sha256": "3fc0c92633bb858ffac1deeeaba03d8464797e1d208cc4ddc487e284f8589ebe",
+      "dataset_pr_url_present": false,
+      "github_pr_url": "https://github.com/TheAlgorithms/Java/pull/6333",
+      "github_created_at_utc": "2025-07-01T13:00:00Z",
+      "github_merged_at_utc": "2025-07-02T12:51:56Z",
+      "github_merge_commit": "712ada5102be82b4807b0737ad70cfc0bca37935",
+      "source_receipt_observed_date": "2026-07-17",
+      "role": "development_only_not_final"
+    },
+    {
+      "instance_id": "true-myth__true-myth-1051",
+      "created_at_utc": "2025-05-17T05:33:55Z",
+      "repo": "true-myth/true-myth",
+      "base_commit": "93bf517e9915ec177c11dcc658483eddee7ab0a3",
+      "language": "ts",
+      "license": "MIT",
+      "image_name": "docker.io/swerebenchv2/true-myth-true-myth:1051-93bf517",
+      "difficulty_annotation": "easy",
+      "quality_code_annotation": "A",
+      "detected_issue_annotations": {
+        "B1": false,
+        "B2": false,
+        "B3": false,
+        "B4": false,
+        "B5": false,
+        "B6": false
+      },
+      "pr_categories": [
+        "minor_bug"
+      ],
+      "num_modified_files": 1,
+      "num_modified_lines": 2,
+      "solution_paths": [
+        "src/task.ts"
+      ],
+      "test_paths": [
+        "test/task.test.ts"
+      ],
+      "solution_test_path_overlap": [],
+      "problem_statement_present": true,
+      "solution_patch_present": true,
+      "test_patch_present": true,
+      "problem_statement_sha256": "e4c766c7cf7639480abce4d54f6a49d5b9b86096b8f223c423403a7f72b004d0",
+      "solution_patch_sha256": "69ba528a0b5dc6fb69bfeea545bc2eb60db6fbe3658016f8995c97bdc61a13d7",
+      "test_patch_sha256": "c223965ede81e2082ce8d04184b4a53a150169e9a0b924c34beea76f45a0c24f",
+      "test_command_sha256": "4f249274eb87e783b48afaf8a4274464c4fc0ae14c3a2c1d1b66ec7d2dd46f4a",
+      "dataset_pr_url_present": false,
+      "github_pr_url": "https://github.com/true-myth/true-myth/pull/1051",
+      "github_created_at_utc": "2025-05-17T05:33:55Z",
+      "github_merged_at_utc": "2025-05-21T01:34:57Z",
+      "github_merge_commit": "918382841ed5d4ec3bd7ce6c666daa0c26fd36df",
+      "source_receipt_observed_date": "2026-07-17",
+      "role": "development_only_not_final"
+    }
+  ]
+}

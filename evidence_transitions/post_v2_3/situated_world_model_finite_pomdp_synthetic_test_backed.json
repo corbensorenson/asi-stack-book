@@ -1,0 +1,121 @@
+{
+  "transition_id": "post_v2_3.situated_world_model.finite_pomdp.promote",
+  "claim_id": "situated-world-model.finite-pomdp-governed-acquisition-and-consolidation",
+  "claim_surface_refs": [
+    "docs/p4_situated_world_model_campaign.md",
+    "chapters/planning-as-a-control-layer.qmd",
+    "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
+    "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
+    "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd"
+  ],
+  "claim_record_refs": [
+    "experiments/p4_situated_world_model/design.json",
+    "experiments/p4_situated_world_model/preregistration.json",
+    "experiments/p4_situated_world_model/results/confirmatory_result.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "synthetic-test-backed",
+  "transition_effect": "upward",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "On two finite authored partially observable environments, five seeds, ten matched arms, 11,250 total episodes, and 6,000 held-out episodes, the frozen governed count-table path passed every integrity and baseline gate plus six aggregate directional ablation signatures, with exact governed replacement and rollback in 10/10 environment-seed runs.",
+  "evidence_roles": [
+    "prospectively_frozen_bounded_synthetic_evaluation",
+    "two_authored_environment_comparison",
+    "matched_baseline_and_authority_matrix",
+    "six_mechanism_causal_ablation",
+    "independent_closed_trace_scoring",
+    "versioned_consolidation_lineage",
+    "exact_replacement_and_rollback_receipt",
+    "chapter_core_support_boundary"
+  ],
+  "transition_reason": "All preregistered integrity and both-environment baseline gates passed, all six aggregate ablation directions passed, reference leakage was zero, and exact identity, replay, authority, replacement, rollback, and consolidation-lineage checks survived independent validation and ten laundering mutations.",
+  "required_artifacts": [
+    "neural-world-model implementation and matched neural baselines",
+    "natural and open-world workloads",
+    "independently implemented simulator and external evaluator",
+    "reliable shift and causal intervention evidence",
+    "deployment-like authority, effect, recovery, and total-cost evidence"
+  ],
+  "artifact_refs": [
+    "experiments/p4_situated_world_model/environments.json",
+    "experiments/p4_situated_world_model/design.json",
+    "experiments/p4_situated_world_model/preregistration.json",
+    "experiments/p4_situated_world_model/raw/campaign_run.json",
+    "experiments/p4_situated_world_model/results/confirmatory_result.json",
+    "schemas/p4_m8_world_model_result.schema.json",
+    "scripts/validate_p4_m8_world_model_campaign.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/p4_situated_world_model_campaign.md",
+    "docs/non_core_evidence_ledger.md",
+    "docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md",
+    "chapters/planning-as-a-control-layer.qmd",
+    "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
+    "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
+    "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd"
+  ],
+  "evidence_quality_before_refs": [
+    "docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md"
+  ],
+  "evidence_quality_after_refs": [
+    "experiments/p4_situated_world_model/results/confirmatory_result.json",
+    "docs/p4_situated_world_model_campaign.md"
+  ],
+  "evidence_quality_dimension_deltas": {
+    "reproducibility": "exact hashes, deterministic finite simulators, five seeds, complete traces, and validator recomputation",
+    "adversarial_strength": "ten arms, six causal ablations, shifted heldout halves, and ten laundering mutations",
+    "validity": "independent closed-trace scorer and exact replay checks; simulators and evaluator remain internally authored",
+    "transfer_distance": "one meaningfully different authored domain with a declared shared state interface; no natural or open-world transfer"
+  },
+  "source_mapping_refs": [
+    "chapters/planning-as-a-control-layer.qmd",
+    "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
+    "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
+    "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd"
+  ],
+  "verification_command": "python3 scripts/validate_p4_m8_world_model_design.py && python3 scripts/validate_p4_m8_world_model_campaign.py && python3 scripts/validate_non_core_evidence_ledger.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "governed task success was 0.02333334 and 0.03000000 below the ungoverned predictive arm",
+    "active information reduced workshop accuracy by 0.00666667 while improving service-mesh accuracy by 0.03666667",
+    "shift detection was only 0.16666667 and 0.22000000",
+    "intervention-effect prediction was only 0.59993325 and 0.64701760",
+    "the environments were finite authored tables and no neural world model was trained"
+  ],
+  "negative_evidence_refs": [
+    "experiments/p4_situated_world_model/results/confirmatory_result.json",
+    "docs/p4_situated_world_model_campaign.md"
+  ],
+  "downgrade_triggers": [
+    "design, code, environment, raw, result, or schema digest mismatch",
+    "reference-state leakage or unmatched hidden trajectories",
+    "outcome-aware repair or undisclosed retry discovery",
+    "failure of exact metric recomputation, replacement, rollback, or lineage",
+    "finite synthetic scope described as neural, open-world, deployment, safety, transfer, or SOTA evidence",
+    "chapter-core promotion inferred from this non-core transition"
+  ],
+  "promotion_burden": "Replicate with independently implemented environments and evaluators, neural and non-neural current baselines, natural and open-world tasks, stronger shift and intervention tests, complete total-cost accounting, deployment-like bounded effects, and heterogeneous transfer before any broader world-model, planning, memory, architecture, safety, or RSI claim.",
+  "limitations": [
+    "two finite authored simulators",
+    "Bayesian count-table policies rather than learned neural world models",
+    "internally implemented evaluator",
+    "shared three-state abstraction declared in advance",
+    "weak shift detection and modest intervention-effect prediction",
+    "no natural task, physical effect, production service, or external assessment"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Author-directed Codex P4/M8 claim-proof cycle"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; no external human review requested or claimed",
+  "acceptance_blockers": [],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-16---campaign-5-situated-world-model-and-consolidation-result",
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "non_claims": [
+    "does not promote any chapter core claim above argument",
+    "does not establish a neural world model, learned latent representation, language-model improvement, or human developmental process",
+    "does not establish open-world object permanence, general causal understanding, reliable anomaly detection, or transfer beyond the two authored environments",
+    "does not establish simulator adequacy, sim-to-real transfer, deployment safety, security, privacy, autonomous authority, SOTA, AGI, or ASI",
+    "does not authorize publication, release, or a new chapter"
+  ]
+}

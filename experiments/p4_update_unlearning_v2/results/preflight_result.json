@@ -1,0 +1,38 @@
+{
+  "schema_version": "asi_stack.p4_m7_preflight.v2",
+  "run_id": "p4-m7-qwen25-05b-balanced-mean-pool-002-preflight",
+  "protocol_outcome": "instrument_inadequate",
+  "training_count": 180,
+  "general_validation_count": 60,
+  "deletion_like_validation_count": 60,
+  "general_validation_accuracy": 0.43333334,
+  "deletion_like_validation_accuracy": 0.33333334,
+  "model": {
+    "repository": "Qwen/Qwen2.5-Coder-0.5B-Instruct",
+    "snapshot_commit": "ea3f2471cf1b1f0db85067f1ef93848e38e88c25",
+    "file_sha256": {
+      "config.json": "b1e58593cd31852f7da5c2fc31ddf6135b9c066c0fd9177a4bbe95717083adff",
+      "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "tokenizer_config.json": "959e7f1d9a1b7641a6d6ce05ca97b75c7894fcb66cbe5a040406458fb1128ee4",
+      "model.safetensors": "f9523886352217ded3aeeef552b381af79d568c6d49a4b9e423288cea56b0a44"
+    },
+    "hidden_size": 896,
+    "row_count": 300,
+    "finite": true,
+    "mean_feature_variance": 1.0871982574,
+    "wall_seconds": 25.434425,
+    "device": "cpu",
+    "dtype": "float32",
+    "pooling": "attention-masked mean of final hidden states"
+  },
+  "negative_controls": {
+    "balanced_deletion_classes_present": true,
+    "mean_pool_differs_from_v1_terminal_pool": true,
+    "nonfinite_feature_detected": true,
+    "privacy_advantage_direction_invariant": false,
+    "retained_evidence_blocks_total_erasure": true
+  },
+  "heldout_opened": false,
+  "claim_outcome": "not_applicable_instrument_only",
+  "support_state_effect": "none"
+}

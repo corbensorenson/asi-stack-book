@@ -60,12 +60,24 @@ terminal machine state in
 `roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json`,
 and exact no-public-release authority in
 `release_records/2026-07-14-post-v2-3-handoff-reader-formats-evidence-renewal-no-public-release.json`.
-`docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md` is the active canonical successor roadmap, with machine authority in
-`roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json`. It
-changes no evidence state or release; all 54 chapter-core claims remain at
-`argument` in the frozen activation receipt. The live manifest now has 55/55
-chapter-core claims at `argument` after the authorized cognitive-substrate
-insertion. Later
+`docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md` is complete, with
+terminal machine state in
+`roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json` and an
+exact no-public-release record. Its sole active successor is
+`docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md`, with machine
+authority in
+`roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`.
+It is now the evidence-competence authority: all 115 accepted transitions have
+canonical identity mappings in `docs/claim_identity_graph_reconciliation.md`,
+and all 90 accepted historical negative/no-change records are classified under
+`docs/claim_bearing_experiment_competence_standard.md` as 1 N0, 15 N1, 74 N2,
+and 0 N3–N5. Their raw outcomes remain immutable, but none currently supports
+an exact, mechanism-level, architectural, parent, or chapter-core refutation.
+The broader prose and `blocked_after_full_attempt` audit remains active. This
+rehabilitation creates no support-state or release effect.
+The live manifest has 55/55 chapter-core claims at `argument`, zero external
+reproductions, and no SOTA support. The local X synopsis source is current; its older unpublished platform draft is stale after the competence-language refresh and must be refreshed before publication.
+Later
 root or `/latest/` commits remain mutable and are not part of the immutable
 v2.3.0 tag unless they exactly match that tagged release.
 

@@ -14,8 +14,8 @@
         "internal_only": 55
       },
       "reproducibility": {
-        "adjacent_local_replay": 33,
-        "not_demonstrated_for_claim": 22
+        "adjacent_local_replay": 36,
+        "not_demonstrated_for_claim": 19
       },
       "recency": {
         "repository_snapshot_current": 55
@@ -24,8 +24,8 @@
         "claim_scope_unmeasured": 55
       },
       "adversarial_strength": {
-        "adjacent_bounded_controls": 33,
-        "not_demonstrated_for_claim": 22
+        "adjacent_bounded_controls": 36,
+        "not_demonstrated_for_claim": 19
       },
       "validity": {
         "not_independently_assessed": 55
@@ -300,6 +300,7 @@
           "state": "adjacent_local_replay",
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/p5_authority_no_silent_expansion_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/authority_revocation_trace_no_change.json",
             "chapters/system-boundaries-and-authority.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -325,6 +326,7 @@
           "state": "claim_scope_unmeasured",
           "rationale": "The recorded lane is Lean authority transitions; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/p5_authority_no_silent_expansion_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/authority_revocation_trace_no_change.json",
             "chapters/system-boundaries-and-authority.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -338,6 +340,7 @@
           "state": "adjacent_bounded_controls",
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/p5_authority_no_silent_expansion_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/authority_revocation_trace_no_change.json",
             "chapters/system-boundaries-and-authority.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -351,6 +354,7 @@
           "state": "not_independently_assessed",
           "rationale": "Internal mappings and validators do not establish that available artifacts measure or prove the construct expressed by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/p5_authority_no_silent_expansion_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/authority_revocation_trace_no_change.json",
             "chapters/system-boundaries-and-authority.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -376,6 +380,7 @@
           "state": "not_established",
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/p5_authority_no_silent_expansion_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/authority_revocation_trace_no_change.json",
             "chapters/system-boundaries-and-authority.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -1255,6 +1260,7 @@
             "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
+            "evidence_transitions/post_v2_3/p5_rollback_outcomes_narrowed_after_full_attempt.json",
             "chapters/capability-replacement-and-rollback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json",
@@ -1284,6 +1290,7 @@
             "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
+            "evidence_transitions/post_v2_3/p5_rollback_outcomes_narrowed_after_full_attempt.json",
             "chapters/capability-replacement-and-rollback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json",
@@ -1300,6 +1307,7 @@
             "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
+            "evidence_transitions/post_v2_3/p5_rollback_outcomes_narrowed_after_full_attempt.json",
             "chapters/capability-replacement-and-rollback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json",
@@ -1316,6 +1324,7 @@
             "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
+            "evidence_transitions/post_v2_3/p5_rollback_outcomes_narrowed_after_full_attempt.json",
             "chapters/capability-replacement-and-rollback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json",
@@ -1345,6 +1354,7 @@
             "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
+            "evidence_transitions/post_v2_3/p5_rollback_outcomes_narrowed_after_full_attempt.json",
             "chapters/capability-replacement-and-rollback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json",
@@ -2170,6 +2180,7 @@
           "state": "adjacent_local_replay",
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/planning_runtime_replan_delta_no_change.json",
             "evidence_transitions/v1_x_measured/planning_scheduler_state_probe_no_change.json",
             "chapters/planning-as-a-control-layer.qmd",
@@ -2196,6 +2207,7 @@
           "state": "claim_scope_unmeasured",
           "rationale": "The recorded lane is Theseus plan compiler, PlanForge DAG slice, and Lean planning/PlanForge envelope; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/planning_runtime_replan_delta_no_change.json",
             "evidence_transitions/v1_x_measured/planning_scheduler_state_probe_no_change.json",
             "chapters/planning-as-a-control-layer.qmd",
@@ -2210,6 +2222,7 @@
           "state": "adjacent_bounded_controls",
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/planning_runtime_replan_delta_no_change.json",
             "evidence_transitions/v1_x_measured/planning_scheduler_state_probe_no_change.json",
             "chapters/planning-as-a-control-layer.qmd",
@@ -2224,6 +2237,7 @@
           "state": "not_independently_assessed",
           "rationale": "Internal mappings and validators do not establish that available artifacts measure or prove the construct expressed by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/planning_runtime_replan_delta_no_change.json",
             "evidence_transitions/v1_x_measured/planning_scheduler_state_probe_no_change.json",
             "chapters/planning-as-a-control-layer.qmd",
@@ -2250,6 +2264,7 @@
           "state": "not_established",
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/planning_runtime_replan_delta_no_change.json",
             "evidence_transitions/v1_x_measured/planning_scheduler_state_probe_no_change.json",
             "chapters/planning-as-a-control-layer.qmd",
@@ -2298,6 +2313,7 @@
           "state": "adjacent_local_replay",
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/kerc_protected_exact_handle_synthetic_test_backed.json",
             "evidence_transitions/post_v2_3/qcsa_active_questions_exact_fixture_value_refute.json",
             "evidence_transitions/post_v2_3/qcsa_plural_facets_exact_fixture_value_promote.json",
             "evidence_transitions/post_v2_3/qcsa_semantic_round_trip_exact_preservation_narrow.json",
@@ -2332,6 +2348,7 @@
           "state": "claim_scope_unmeasured",
           "rationale": "The bounded QCSA package, synthetic evaluation, and vertical trace exercise a related mechanism, but their hand-authored template scope does not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/kerc_protected_exact_handle_synthetic_test_backed.json",
             "evidence_transitions/post_v2_3/qcsa_active_questions_exact_fixture_value_refute.json",
             "evidence_transitions/post_v2_3/qcsa_plural_facets_exact_fixture_value_promote.json",
             "evidence_transitions/post_v2_3/qcsa_semantic_round_trip_exact_preservation_narrow.json",
@@ -2353,6 +2370,7 @@
           "state": "adjacent_bounded_controls",
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/kerc_protected_exact_handle_synthetic_test_backed.json",
             "evidence_transitions/post_v2_3/qcsa_active_questions_exact_fixture_value_refute.json",
             "evidence_transitions/post_v2_3/qcsa_plural_facets_exact_fixture_value_promote.json",
             "evidence_transitions/post_v2_3/qcsa_semantic_round_trip_exact_preservation_narrow.json",
@@ -2374,6 +2392,7 @@
           "state": "not_independently_assessed",
           "rationale": "The QCSA observer is separately implemented but internally authored; synthetic labels and validators do not establish that the artifacts measure or prove the broad construct expressed by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/kerc_protected_exact_handle_synthetic_test_backed.json",
             "evidence_transitions/post_v2_3/qcsa_active_questions_exact_fixture_value_refute.json",
             "evidence_transitions/post_v2_3/qcsa_plural_facets_exact_fixture_value_promote.json",
             "evidence_transitions/post_v2_3/qcsa_semantic_round_trip_exact_preservation_narrow.json",
@@ -2408,6 +2427,7 @@
           "state": "not_established",
           "rationale": "The bounded QCSA result and one temporary-effect vertical replay do not establish transfer from synthetic fixtures to natural, learned-model, distributed, or deployed settings named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/kerc_protected_exact_handle_synthetic_test_backed.json",
             "evidence_transitions/post_v2_3/qcsa_active_questions_exact_fixture_value_refute.json",
             "evidence_transitions/post_v2_3/qcsa_plural_facets_exact_fixture_value_promote.json",
             "evidence_transitions/post_v2_3/qcsa_semantic_round_trip_exact_preservation_narrow.json",
@@ -2737,6 +2757,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
             "evidence_transitions/post_v2_1/real_model_deliberation_no_change.json",
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
             "chapters/verification-bandwidth-and-context-adequacy.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json",
@@ -2765,6 +2786,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
             "evidence_transitions/post_v2_1/real_model_deliberation_no_change.json",
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
             "chapters/verification-bandwidth-and-context-adequacy.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json",
@@ -2780,6 +2802,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
             "evidence_transitions/post_v2_1/real_model_deliberation_no_change.json",
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
             "chapters/verification-bandwidth-and-context-adequacy.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json",
@@ -2795,6 +2818,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
             "evidence_transitions/post_v2_1/real_model_deliberation_no_change.json",
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
             "chapters/verification-bandwidth-and-context-adequacy.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json",
@@ -2823,6 +2847,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
             "evidence_transitions/post_v2_1/real_model_deliberation_no_change.json",
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
             "chapters/verification-bandwidth-and-context-adequacy.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json",
@@ -3447,6 +3472,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/post_v2_3/governance_tax_natural_work_renewal_no_change.json",
+            "evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json",
             "evidence_transitions/post_v2_3/qcsa_certificate_authority_fields_exact_value_promote.json",
             "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
             "evidence_transitions/v1_x_measured/partitioned_authority_fixture_no_change.json",
@@ -3487,6 +3513,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/post_v2_3/governance_tax_natural_work_renewal_no_change.json",
+            "evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json",
             "evidence_transitions/post_v2_3/qcsa_certificate_authority_fields_exact_value_promote.json",
             "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
             "evidence_transitions/v1_x_measured/partitioned_authority_fixture_no_change.json",
@@ -3513,6 +3540,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/post_v2_3/governance_tax_natural_work_renewal_no_change.json",
+            "evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json",
             "evidence_transitions/post_v2_3/qcsa_certificate_authority_fields_exact_value_promote.json",
             "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
             "evidence_transitions/v1_x_measured/partitioned_authority_fixture_no_change.json",
@@ -3539,6 +3567,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/post_v2_3/governance_tax_natural_work_renewal_no_change.json",
+            "evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json",
             "evidence_transitions/post_v2_3/qcsa_certificate_authority_fields_exact_value_promote.json",
             "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
             "evidence_transitions/v1_x_measured/partitioned_authority_fixture_no_change.json",
@@ -3579,6 +3608,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/post_v2_3/governance_tax_natural_work_renewal_no_change.json",
+            "evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json",
             "evidence_transitions/post_v2_3/qcsa_certificate_authority_fields_exact_value_promote.json",
             "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
             "evidence_transitions/v1_x_measured/partitioned_authority_fixture_no_change.json",
@@ -3783,9 +3813,10 @@
           ]
         },
         "reproducibility": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted replay directly reproduces this chapter-core architectural claim.",
+          "state": "adjacent_local_replay",
+          "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
             "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -3810,6 +3841,7 @@
           "state": "claim_scope_unmeasured",
           "rationale": "The recorded lane is Theseus self-evolution/operator traces plus loop harness; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
             "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -3819,9 +3851,10 @@
           ]
         },
         "adversarial_strength": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted adversarial program directly tests the chapter-core claim.",
+          "state": "adjacent_bounded_controls",
+          "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
             "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -3834,6 +3867,7 @@
           "state": "not_independently_assessed",
           "rationale": "Internal mappings and validators do not establish that available artifacts measure or prove the construct expressed by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
             "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -3858,6 +3892,7 @@
           "state": "not_established",
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
             "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -4073,9 +4108,10 @@
           ]
         },
         "reproducibility": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted replay directly reproduces this chapter-core architectural claim.",
+          "state": "adjacent_local_replay",
+          "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
             "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -4100,6 +4136,7 @@
           "state": "claim_scope_unmeasured",
           "rationale": "The recorded lane is Source-reviewed Cognitive Kernel ABI contract, architecture taxonomy, 15-atom claim addendum, and one planned formal target; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
             "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -4109,9 +4146,10 @@
           ]
         },
         "adversarial_strength": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted adversarial program directly tests the chapter-core claim.",
+          "state": "adjacent_bounded_controls",
+          "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
             "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -4124,6 +4162,7 @@
           "state": "not_independently_assessed",
           "rationale": "Internal mappings and validators do not establish that available artifacts measure or prove the construct expressed by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
             "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -4148,6 +4187,7 @@
           "state": "not_established",
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
             "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -4196,7 +4236,9 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json",
             "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
             "evidence_transitions/v1_x_measured/readiness_lifecycle_probe_no_change.json",
             "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -4226,7 +4268,9 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json",
             "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
             "evidence_transitions/v1_x_measured/readiness_lifecycle_probe_no_change.json",
             "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -4243,7 +4287,9 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json",
             "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
             "evidence_transitions/v1_x_measured/readiness_lifecycle_probe_no_change.json",
             "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -4260,7 +4306,9 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json",
             "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
             "evidence_transitions/v1_x_measured/readiness_lifecycle_probe_no_change.json",
             "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -4290,7 +4338,9 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json",
             "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
             "evidence_transitions/v1_x_measured/readiness_lifecycle_probe_no_change.json",
             "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -4461,7 +4511,11 @@
           "state": "adjacent_local_replay",
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/kerc_broad_efficiency_refuted.json",
+            "evidence_transitions/post_v2_3/kerc_protected_exact_handle_synthetic_test_backed.json",
+            "evidence_transitions/post_v2_3/kerc_shared_glossary_break_even_synthetic_test_backed.json",
             "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
             "evidence_transitions/v1_x_measured/circle_seed_rule_receipt_no_change.json",
             "evidence_transitions/v1_x_measured/compact_gvr_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/residual_ledger_storage_replay_no_change.json",
@@ -4496,7 +4550,11 @@
           "state": "claim_scope_unmeasured",
           "rationale": "The bounded QCSA package, synthetic evaluation, and vertical trace exercise a related mechanism, but their hand-authored template scope does not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/kerc_broad_efficiency_refuted.json",
+            "evidence_transitions/post_v2_3/kerc_protected_exact_handle_synthetic_test_backed.json",
+            "evidence_transitions/post_v2_3/kerc_shared_glossary_break_even_synthetic_test_backed.json",
             "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
             "evidence_transitions/v1_x_measured/circle_seed_rule_receipt_no_change.json",
             "evidence_transitions/v1_x_measured/compact_gvr_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/residual_ledger_storage_replay_no_change.json",
@@ -4518,7 +4576,11 @@
           "state": "adjacent_bounded_controls",
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/kerc_broad_efficiency_refuted.json",
+            "evidence_transitions/post_v2_3/kerc_protected_exact_handle_synthetic_test_backed.json",
+            "evidence_transitions/post_v2_3/kerc_shared_glossary_break_even_synthetic_test_backed.json",
             "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
             "evidence_transitions/v1_x_measured/circle_seed_rule_receipt_no_change.json",
             "evidence_transitions/v1_x_measured/compact_gvr_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/residual_ledger_storage_replay_no_change.json",
@@ -4540,7 +4602,11 @@
           "state": "not_independently_assessed",
           "rationale": "The QCSA observer is separately implemented but internally authored; synthetic labels and validators do not establish that the artifacts measure or prove the broad construct expressed by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/kerc_broad_efficiency_refuted.json",
+            "evidence_transitions/post_v2_3/kerc_protected_exact_handle_synthetic_test_backed.json",
+            "evidence_transitions/post_v2_3/kerc_shared_glossary_break_even_synthetic_test_backed.json",
             "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
             "evidence_transitions/v1_x_measured/circle_seed_rule_receipt_no_change.json",
             "evidence_transitions/v1_x_measured/compact_gvr_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/residual_ledger_storage_replay_no_change.json",
@@ -4575,7 +4641,11 @@
           "state": "not_established",
           "rationale": "The bounded QCSA result and one temporary-effect vertical replay do not establish transfer from synthetic fixtures to natural, learned-model, distributed, or deployed settings named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/kerc_broad_efficiency_refuted.json",
+            "evidence_transitions/post_v2_3/kerc_protected_exact_handle_synthetic_test_backed.json",
+            "evidence_transitions/post_v2_3/kerc_shared_glossary_break_even_synthetic_test_backed.json",
             "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
             "evidence_transitions/v1_x_measured/circle_seed_rule_receipt_no_change.json",
             "evidence_transitions/v1_x_measured/compact_gvr_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/residual_ledger_storage_replay_no_change.json",
@@ -5019,7 +5089,11 @@
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
             "evidence_transitions/post_v2_3/governance_tax_natural_work_renewal_no_change.json",
+            "evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json",
+            "evidence_transitions/post_v2_3/kerc_broad_efficiency_refuted.json",
+            "evidence_transitions/post_v2_3/kerc_shared_glossary_break_even_synthetic_test_backed.json",
             "evidence_transitions/post_v2_3/qcsa_governance_prevention_resource_tradeoff_narrow.json",
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
             "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
             "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -5060,7 +5134,11 @@
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
             "evidence_transitions/post_v2_3/governance_tax_natural_work_renewal_no_change.json",
+            "evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json",
+            "evidence_transitions/post_v2_3/kerc_broad_efficiency_refuted.json",
+            "evidence_transitions/post_v2_3/kerc_shared_glossary_break_even_synthetic_test_backed.json",
             "evidence_transitions/post_v2_3/qcsa_governance_prevention_resource_tradeoff_narrow.json",
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
             "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
             "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -5088,7 +5166,11 @@
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
             "evidence_transitions/post_v2_3/governance_tax_natural_work_renewal_no_change.json",
+            "evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json",
+            "evidence_transitions/post_v2_3/kerc_broad_efficiency_refuted.json",
+            "evidence_transitions/post_v2_3/kerc_shared_glossary_break_even_synthetic_test_backed.json",
             "evidence_transitions/post_v2_3/qcsa_governance_prevention_resource_tradeoff_narrow.json",
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
             "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
             "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -5116,7 +5198,11 @@
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
             "evidence_transitions/post_v2_3/governance_tax_natural_work_renewal_no_change.json",
+            "evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json",
+            "evidence_transitions/post_v2_3/kerc_broad_efficiency_refuted.json",
+            "evidence_transitions/post_v2_3/kerc_shared_glossary_break_even_synthetic_test_backed.json",
             "evidence_transitions/post_v2_3/qcsa_governance_prevention_resource_tradeoff_narrow.json",
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
             "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
             "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -5157,7 +5243,11 @@
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
             "evidence_transitions/post_v2_3/governance_tax_natural_work_renewal_no_change.json",
+            "evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json",
+            "evidence_transitions/post_v2_3/kerc_broad_efficiency_refuted.json",
+            "evidence_transitions/post_v2_3/kerc_shared_glossary_break_even_synthetic_test_backed.json",
             "evidence_transitions/post_v2_3/qcsa_governance_prevention_resource_tradeoff_narrow.json",
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
             "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
             "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -5331,6 +5421,7 @@
           "state": "adjacent_local_replay",
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/p5_circle_named_target_receipt_prototype_backed.json",
             "evidence_transitions/v1_0_measured/circle_external_rope_receipt_prototype_backed.json",
             "evidence_transitions/v1_x_measured/circle_contract_pack_archive_no_change.json",
             "evidence_transitions/v1_x_measured/circle_cyclic_mixer_receipt_no_change.json",
@@ -5364,6 +5455,7 @@
           "state": "claim_scope_unmeasured",
           "rationale": "The recorded lane is Circle public replay plus Lean consumer gate; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/p5_circle_named_target_receipt_prototype_backed.json",
             "evidence_transitions/v1_0_measured/circle_external_rope_receipt_prototype_backed.json",
             "evidence_transitions/v1_x_measured/circle_contract_pack_archive_no_change.json",
             "evidence_transitions/v1_x_measured/circle_cyclic_mixer_receipt_no_change.json",
@@ -5385,6 +5477,7 @@
           "state": "adjacent_bounded_controls",
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/p5_circle_named_target_receipt_prototype_backed.json",
             "evidence_transitions/v1_0_measured/circle_external_rope_receipt_prototype_backed.json",
             "evidence_transitions/v1_x_measured/circle_contract_pack_archive_no_change.json",
             "evidence_transitions/v1_x_measured/circle_cyclic_mixer_receipt_no_change.json",
@@ -5406,6 +5499,7 @@
           "state": "not_independently_assessed",
           "rationale": "Internal mappings and validators do not establish that available artifacts measure or prove the construct expressed by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/p5_circle_named_target_receipt_prototype_backed.json",
             "evidence_transitions/v1_0_measured/circle_external_rope_receipt_prototype_backed.json",
             "evidence_transitions/v1_x_measured/circle_contract_pack_archive_no_change.json",
             "evidence_transitions/v1_x_measured/circle_cyclic_mixer_receipt_no_change.json",
@@ -5439,6 +5533,7 @@
           "state": "not_established",
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/p5_circle_named_target_receipt_prototype_backed.json",
             "evidence_transitions/v1_0_measured/circle_external_rope_receipt_prototype_backed.json",
             "evidence_transitions/v1_x_measured/circle_contract_pack_archive_no_change.json",
             "evidence_transitions/v1_x_measured/circle_cyclic_mixer_receipt_no_change.json",
@@ -5871,9 +5966,11 @@
           ]
         },
         "reproducibility": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted replay directly reproduces this chapter-core architectural claim.",
+          "state": "adjacent_local_replay",
+          "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
+            "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
             "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -5898,6 +5995,8 @@
           "state": "claim_scope_unmeasured",
           "rationale": "The recorded lane is Benchmark anti-Goodhart harness plus external benchmarks; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
+            "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
             "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -5907,9 +6006,11 @@
           ]
         },
         "adversarial_strength": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted adversarial program directly tests the chapter-core claim.",
+          "state": "adjacent_bounded_controls",
+          "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
+            "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
             "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -5922,6 +6023,8 @@
           "state": "not_independently_assessed",
           "rationale": "Internal mappings and validators do not establish that available artifacts measure or prove the construct expressed by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
+            "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
             "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -5946,6 +6049,8 @@
           "state": "not_established",
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
+            "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
             "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -6483,6 +6588,7 @@
             "evidence_transitions/post_v2_1/full_state_update_no_change.json",
             "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
             "evidence_transitions/post_v2_3/qcsa_migration_compatibility_exact_value_promote.json",
+            "evidence_transitions/post_v2_3/update_unlearning_claim_narrowed_after_full_attempt.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -6520,6 +6626,7 @@
             "evidence_transitions/post_v2_1/full_state_update_no_change.json",
             "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
             "evidence_transitions/post_v2_3/qcsa_migration_compatibility_exact_value_promote.json",
+            "evidence_transitions/post_v2_3/update_unlearning_claim_narrowed_after_full_attempt.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -6543,6 +6650,7 @@
             "evidence_transitions/post_v2_1/full_state_update_no_change.json",
             "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
             "evidence_transitions/post_v2_3/qcsa_migration_compatibility_exact_value_promote.json",
+            "evidence_transitions/post_v2_3/update_unlearning_claim_narrowed_after_full_attempt.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -6566,6 +6674,7 @@
             "evidence_transitions/post_v2_1/full_state_update_no_change.json",
             "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
             "evidence_transitions/post_v2_3/qcsa_migration_compatibility_exact_value_promote.json",
+            "evidence_transitions/post_v2_3/update_unlearning_claim_narrowed_after_full_attempt.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -6603,6 +6712,7 @@
             "evidence_transitions/post_v2_1/full_state_update_no_change.json",
             "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
             "evidence_transitions/post_v2_3/qcsa_migration_compatibility_exact_value_promote.json",
+            "evidence_transitions/post_v2_3/update_unlearning_claim_narrowed_after_full_attempt.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",

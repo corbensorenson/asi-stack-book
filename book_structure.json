@@ -2468,6 +2468,7 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "ethica_mechanica",
+            "platonic_world_model",
             "alignment_field",
             "coherence_exchange",
             "uat",
@@ -2509,7 +2510,7 @@
           "core_claim": "A contestable governance layer should represent each action under unresolved value conflict as a versioned decision lease plus a linked rights receipt. The lease binds value propositions and their epistemic status, affected parties and standing, stakes and reversibility, authority and consent boundaries, the declared aggregation or precedence rule, preserved dissent, evidence and uncertainty, permitted and prohibited actions, expiry and revisit triggers, and rollback or redress. The rights receipt binds audit and explanation artifacts, independent-enough custody and review, denial and redaction reasons, appeal and correction routes, exit and export scope, safety-limited fork obligations, portability residuals, and downstream preservation. The pair may narrow or delay separately authorized action but cannot settle moral truth, manufacture consensus, grant authority, establish legal rights or legitimacy, prove material contestability, or guarantee safe exit, export, fork, replacement, self-modification, or deployed governance by itself.",
           "mechanism": [
             "Preserve each conflict before action as proposition-level normative claims with separate descriptive evidence, predictive uncertainty, value or theory provenance, affected parties and standing, stakes, reversibility, jurisdiction, authority or consent boundary, dependencies, and known omissions.",
-            "Record the exact decision procedure\u2014precedence rule, aggregation method, veto, lottery, tribunal, negotiated compromise, least-harm or reversible default, abstention, or escalation\u2014along with who selected it, its scope, and its non-claims; no aggregation silently becomes moral truth or consent.",
+            "Record the exact decision procedure—precedence rule, aggregation method, veto, lottery, tribunal, negotiated compromise, least-harm or reversible default, abstention, or escalation—along with who selected it, its scope, and its non-claims; no aggregation silently becomes moral truth or consent.",
             "Issue a bounded decision lease naming permitted and prohibited actions, authority ceiling, affected parties, evidence bar, preserved dissent, residual uncertainty, expiry, revisit and material-change triggers, rollback, appeal, correction, and redress without treating the lease as moral settlement.",
             "Represent audit, explanation, dissent, review, appeal, correction, redress, exit, export, fork, and contestability as rights records with holder and standing, request state, scope, access path, timing, accessibility, cost, retaliation and dependency risks, required artifacts, accountable owner, denial reason, appeal route, preservation rule, and receipt.",
             "Bind every denial, withholding, and redaction to a classified reason, necessity and proportionality rule, withheld-material inventory or digest, expiry, independent-enough review, appeal, and later-disclosure trigger; secrecy cannot erase the fact or scope of withholding.",
@@ -2853,6 +2854,7 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "scf",
+            "deterministic_capability_compilation",
             "viea",
             "talos",
             "ladon_manhattan",
@@ -2884,7 +2886,7 @@
           },
           "problem": "A governed stack needs to replace models, prompts, tools, adapters, policies, data, evaluators, and runtime dependencies without letting a persistent capability name conceal changes in observable behavior, failure semantics, authority, evidence, affected consumers, or recovery obligations. Without a consumer-relative and time-bounded substitution contract, an apparent upgrade can silently redefine success, strand state, erase regressions, widen permissions, or inherit trust earned by a different artifact in a different environment.",
           "insufficient": "Plugin APIs, model registries, Semantic Versioning, capability-security references, supply-chain provenance, benchmark leaderboards, canaries, and rollback runbooks each cover part of replacement, but none alone establishes semantic field identity across inputs, outputs, preconditions, postconditions, failure and abstention behavior, nondeterminism, resource and privacy limits, authority effects, state compatibility, evaluator independence, qualification scope and expiry, historical regressions, downstream reliance, incident response, and effect-complete rollback. Interface compatibility or artifact provenance is not behavioral refinement, qualification for one workload is not universal substitutability, and a stored rollback pointer is not evidence that prior effects can be reversed.",
-          "core_claim": "A Stable Capability Field should be a versioned, consumer-relative substitution contract rather than a capability name or implementation slot. It binds the field's semantic identity and observable interface\u2014including admissible inputs, outputs, preconditions, postconditions, failures, abstentions, nondeterminism and resource bounds\u2014to an authority ceiling, affected consumers, exact implementation and dependency identities, qualification context and lease, evaluator and evidence lineage, lifecycle and incident state, migration duties, preserved regressions, and effect-complete rollback obligations. A candidate may inherit a field route only for the declared consumer, use, environment, threat model, and epoch when independently checkable evidence shows the required refinement and no unauthorized authority expansion; otherwise it remains shadowed, canaried, quarantined, deprecated, residual, or rejected. The record does not by itself prove semantic equivalence, safe composition, evaluator independence, production safety, or successful rollback.",
+          "core_claim": "A Stable Capability Field should be a versioned, consumer-relative substitution contract rather than a capability name or implementation slot. It binds the field's semantic identity and observable interface—including admissible inputs, outputs, preconditions, postconditions, failures, abstentions, nondeterminism and resource bounds—to an authority ceiling, affected consumers, exact implementation and dependency identities, qualification context and lease, evaluator and evidence lineage, lifecycle and incident state, migration duties, preserved regressions, and effect-complete rollback obligations. A candidate may inherit a field route only for the declared consumer, use, environment, threat model, and epoch when independently checkable evidence shows the required refinement and no unauthorized authority expansion; otherwise it remains shadowed, canaried, quarantined, deprecated, residual, or rejected. The record does not by itself prove semantic equivalence, safe composition, evaluator independence, production safety, or successful rollback.",
           "mechanism": [
             "Define field identity independently of any implementation, model family, vendor, prompt, tool, benchmark, deployment, or route name; a material semantic change creates a governed field version or a new field rather than silently reusing the old identity.",
             "Specify the observable contract over accepted and rejected inputs, output and side-effect postconditions, errors, abstentions, timeouts, nondeterminism envelope, latency and resource budgets, privacy and security effects, authority use, and required evidence and audit emissions.",
@@ -3127,6 +3129,7 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "scf",
+            "deterministic_capability_compilation",
             "rmi",
             "benchmaxxing",
             "cognitive_loop_closure",
@@ -3471,6 +3474,7 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "ladon_manhattan",
+            "platonic_world_model",
             "context_engineer",
             "talos",
             "alignment_field",
@@ -4017,7 +4021,7 @@
             "Declared derivative closure is monotone through copying, transformation, packaging, extraction, backup, recovery, and distribution; an unknown or excluded branch remains an owned residual.",
             "Encryption keys and metadata remain purpose-, artifact-, holder-, operation-, scope-, usage-period-, and policy-bound; missing, stale, compromised, widened, or unreconciled key state fails closed.",
             "Attester Evidence, Verifier appraisal, Attestation Result, and Relying-Party authorization remain distinct claims with separate policy identities, owners, freshness, dependencies, and consumers.",
-            "Freshness is relational to artifact, target/attesting environments, firmware/workload, reference values, endorsements, trust anchors, verifier and relying-party policies, recipient, use, and epoch\u2014not token age alone.",
+            "Freshness is relational to artifact, target/attesting environments, firmware/workload, reference values, endorsements, trust anchors, verifier and relying-party policies, recipient, use, and epoch—not token age alone.",
             "An attestation result is scoped evidence about measured claims; it grants no hardware/vendor/operator/software trust, weight confidentiality, model safety, serving, tool, release, readiness, or deployment conclusion.",
             "Possession, key release, decryption, load, serve, action authority, transfer, recipient distribution, and open release are distinct non-transitive decisions.",
             "Plaintext, derived capability, output extraction, cache, crash dump, accelerator memory, log, backup, and recipient exposure remain inventoried at the declared observation grade.",
@@ -4125,6 +4129,8 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "ext_nist_cscrm_2022",
+            "deterministic_capability_compilation",
+            "platonic_world_model",
             "ext_slsa_build_track_1_2",
             "ext_openssf_model_signing_spec_2025",
             "ext_spdx_ai_profile_3_0_1",
@@ -4319,7 +4325,7 @@
             "Retirement, access revocation, notice, retention, archive, sanitization, disposal, recipient recall, and world erasure remain distinct observed claims.",
             "Cross-organization evidence obeys privacy, rights, security, contractual, retention, and disclosure-minimization limits while remaining contestable and lineage-preserving.",
             "Security findings remain paired with affected-path precision/recall, false quarantine, useful-service loss, restoration, availability, operator labor, privacy/rights, benefit, and total cost.",
-            "Finite records, one declared graph, seven theorem declarations, ten mutations, or zero observed compromise establish only their exact scope\u2014not inventory completeness, assertion truth, artifact integrity, supplier trust, effective control, safety, compliance, or transfer."
+            "Finite records, one declared graph, seven theorem declarations, ten mutations, or zero observed compromise establish only their exact scope—not inventory completeness, assertion truth, artifact integrity, supplier trust, effective control, safety, compliance, or transfer."
           ],
           "failure_modes": [
             "Name, digest, version, tokenizer, dataset, dependency, model, configuration, policy, environment, build, package, signer, supplier, or recipient substitution occurs after approval or behind a familiar label.",
@@ -4411,6 +4417,8 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "scf",
+            "deterministic_capability_compilation",
+            "platonic_world_model",
             "benchmaxxing",
             "rmi",
             "alignment_field",
@@ -5120,6 +5128,7 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "viea",
+            "deterministic_capability_compilation",
             "talos",
             "software_magic_grimoire",
             "genesiscode",
@@ -5559,6 +5568,7 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "planforge",
+            "platonic_world_model",
             "viea",
             "cognitive_compilation",
             "software_magic_grimoire",
@@ -5897,6 +5907,8 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "cognitive_compilation",
+            "deterministic_capability_compilation",
+            "platonic_world_model",
             "planforge_compiler_arch",
             "genesiscode",
             "treellm",
@@ -6016,7 +6028,7 @@
             "Round-trip theater uses a correlated parser or evaluator to reconstruct the same mistaken structure and call it semantic preservation.",
             "Portability and transfer theater infers cross-model, cross-language, cross-target, organizational, safety, or production validity from one synthetic toolchain."
           ],
-          "minimal_implementation": "The current minimum is a record-and-bounded-reference scaffold: a semantic-atom schema; two valid and four rejecting hand-authored compilation traces; one blocked three-project semantic-preservation record and nine rejecting mutations; fourteen Lean theorem declarations grouped under three targets; and the QCSA reference package, whose 60 synthetic cases across 13 systems and three seeds produced 2,340 predictions plus one 13-stage zero-model temporary-file trace with ten rejecting adversarial paths and one byte-exact rollback. QCSA matched the selected baseline at 1.000 task accuracy while using 1.913386 times the operations, so matched advantage and resource gates failed; active-question value was refuted on the exact corpus; several identity, certificate, migration, calibration, and plural-facet mechanisms earned bounded non-core dispositions; and the chapter core stayed at argument. No artifact is generated from a natural accepted source plan through a real cognitive backend and independently checked for semantic preservation. The next honest minimum must compile natural held-out source obligations into one concrete artifact class, compare direct, schema-only, workflow, human, and governed compiler routes under matched resources, use independently implemented source-target and artifact evaluators, exercise adversarial obligation loss and real incremental repair, reconcile all attempts and costs, rerun from locked artifacts, and transfer to a second target class.",
+          "minimal_implementation": "The current minimum is a record-and-bounded-reference scaffold: a semantic-atom schema; two valid and four rejecting hand-authored compilation traces; one blocked three-project semantic-preservation record and nine rejecting mutations; fourteen Lean theorem declarations grouped under three targets; and the QCSA reference package, whose 60 synthetic cases across 13 systems and three seeds produced 2,340 predictions plus one 13-stage zero-model temporary-file trace with ten rejecting adversarial paths and one byte-exact rollback. QCSA matched the selected baseline at 1.000 task accuracy while using 1.913386 times the operations, so matched advantage and resource gates failed; the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation; several identity, certificate, migration, calibration, and plural-facet mechanisms earned bounded non-core dispositions; and the chapter core stayed at argument. No artifact is generated from a natural accepted source plan through a real cognitive backend and independently checked for semantic preservation. The next honest minimum must compile natural held-out source obligations into one concrete artifact class, compare direct, schema-only, workflow, human, and governed compiler routes under matched resources, use independently implemented source-target and artifact evaluators, exercise adversarial obligation loss and real incremental repair, reconcile all attempts and costs, rerun from locked artifacts, and transfer to a second target class.",
           "beyond_state_of_art": "A mature cognitive compiler is an obligation-preserving multi-level build system for cognitive work, not a larger prompt template. It accepts versioned plan obligations and source context; emits inspectable source, semantic, and target IR dialects; runs typed and reproducible passes; produces concrete code, prose, schema, proof, experiment, diagram, or job artifacts; validates each translation against actual target content and behavior; and rebuilds dependency-closed descendants after change. On prospectively sampled natural tasks it must beat or complement direct generation, schema-only prompting, strong workflows, planning and search systems, human-authored artifacts, conventional compiler/build tools, program synthesis, and current agent pipelines under matched models, sources, authority, tools, budgets, repair opportunities, and horizons. Independent implementations jointly measure obligation precision and recall, semantic preservation, ambiguity calibration, authority and rights retention, artifact validity and usefulness, repair locality, rebuild correctness, unsafe or unauthorized outputs, abstention and missed help, latency, compute, storage, verifier and human work, recovery, and total governance cost. Adversarial passes delete or paraphrase obligations, exploit target assumptions, poison caches, capture validators, widen authority, forge receipts, and escape repair scope; causal ablations isolate each mechanism; replication and transfer span models, languages, modalities, artifact classes, compilers, evaluators, organizations, jurisdictions, threats, horizons, and time. Promotion requires nonzero useful opportunity, strong matched baselines, independent evaluation, effect-bearing controls where relevant, predicted causal signatures, complete denominators, reproducible traces, transfer, and accepted claim-specific transitions; otherwise the exact claim is narrowed, null, negative, refuted, or blocked after full attempt.",
           "codex_tests": [
             {
@@ -6179,7 +6191,7 @@
             {
               "source_id": "qcsa_whitepaper",
               "mapped_support": "Frames SOIDs and SACs as typed semantic-IR references, question traces as evidence-acquisition programs, and semantic-to-physical route plans as policy-constrained target lowering; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace.",
-              "limits": "The exact matched-advantage and resource gates failed, and active-question value was refuted on this corpus. No natural-task, learned-model, universal-semantic, production, safety, privacy, external-independence, chapter-core promotion, AGI, or ASI result is established.",
+              "limits": "The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. No natural-task, learned-model, universal-semantic, production, safety, privacy, external-independence, chapter-core promotion, AGI, or ASI result is established.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/raw/question_compiled_semantic_addressing_whitepaper.md:278-487",
@@ -6269,6 +6281,8 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "vcm_public",
+            "deterministic_capability_compilation",
+            "platonic_world_model",
             "context_engineer",
             "verification_bandwidth",
             "viea",
@@ -6697,7 +6711,7 @@
             {
               "source_id": "qcsa_whitepaper",
               "mapped_support": "Adds stable SOID identity, plural contextual SVA leases, atlas epochs, SAC adequacy and residual fields, bounded graph materialization, revalidation triggers, and explicit failure when semantic uncertainty is insufficient for a consumer; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace.",
-              "limits": "The exact matched-advantage and resource gates failed, and active-question value was refuted on this corpus. No natural-task, learned-model, universal-semantic, production, safety, privacy, external-independence, chapter-core promotion, AGI, or ASI result is established.",
+              "limits": "The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. No natural-task, learned-model, universal-semantic, production, safety, privacy, external-independence, chapter-core promotion, AGI, or ASI result is established.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/raw/question_compiled_semantic_addressing_whitepaper.md:220-375",
@@ -6837,6 +6851,7 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "vcm_public",
+            "platonic_world_model",
             "ladon_manhattan",
             "context_engineer",
             "black_hole_context_manager",
@@ -7615,6 +7630,7 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "spinoza",
+            "platonic_world_model",
             "viea",
             "coherence_exchange",
             "aletheia",
@@ -7862,7 +7878,7 @@
             {
               "source_id": "qcsa_whitepaper",
               "mapped_support": "Requires ontology, propositions, evidence for and against propositions, provenance, belief/support state, contradiction, and permitted-use authority to remain distinct semantic records in the evidence-bearing hypergraph; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace.",
-              "limits": "The exact matched-advantage and resource gates failed, and active-question value was refuted on this corpus. A semantic location or valid certificate still does not establish truth, belief correctness, production validity, chapter-core promotion, AGI, or ASI.",
+              "limits": "The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. A semantic location or valid certificate still does not establish truth, belief correctness, production validity, chapter-core promotion, AGI, or ASI.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/raw/question_compiled_semantic_addressing_whitepaper.md:307-317",
@@ -8019,6 +8035,8 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "spinoza",
+            "deterministic_capability_compilation",
+            "platonic_world_model",
             "genesiscode",
             "coherence_exchange",
             "verification_bandwidth",
@@ -8483,6 +8501,7 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "talos",
+            "deterministic_capability_compilation",
             "viea",
             "genesiscode",
             "software_magic_grimoire",
@@ -8783,6 +8802,8 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "talos",
+            "deterministic_capability_compilation",
+            "platonic_world_model",
             "viea",
             "cognitive_compilation",
             "spinoza_composer",
@@ -8799,7 +8820,8 @@
             "corbens_best_model_possible_project",
             "ext_claw_swe_bench_2026",
             "ext_txfs_2018",
-            "ext_faithfulness_information_flow_2026"
+            "ext_faithfulness_information_flow_2026",
+            "ext_swe_rebench_v2_2026"
           ],
           "source_queue": {
             "primary": [
@@ -9040,6 +9062,18 @@
               ],
               "passage_review_state": "reviewed",
               "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
+            },
+            {
+              "source_id": "ext_swe_rebench_v2_2026",
+              "mapped_support": "Supplies concrete source, repository, base-commit, solution-patch, test-patch, image, parser, and test-transition identities that a replayable repository task must bind.",
+              "limits": "Dataset records and image manifests do not prove local replay, independent evaluation, authority-to-effect linkage, or rollback completeness.",
+              "passage_refs": [
+                "arXiv:2602.23866v2, Sections 3.1-3.3 (collection, setup synthesis, paired full-suite execution)",
+                "arXiv:2602.23866v2, Sections 4.1-4.3 (setup ablation, clarity filtering, task pathologies)",
+                "Official GitHub evaluator README and pinned Hugging Face dataset revision 475dd5e8703bb5fb22dd3c60b5d038b019eba1e0"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Primary paper, official code/data descriptions, pinned metadata, and local preflight receipt reviewed; no paper result is promoted into local evidence."
             }
           ],
           "mechanism": [
@@ -9268,6 +9302,8 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "talos",
+            "deterministic_capability_compilation",
+            "platonic_world_model",
             "viea",
             "ladon_manhattan",
             "software_magic_grimoire",
@@ -9601,7 +9637,7 @@
             {
               "source_id": "qcsa_whitepaper",
               "mapped_support": "Adds the hard capability-separation rule: semantic resolution, aliases, address confidence, and certificates never grant authority; the physical route must independently bind actor, target, operation, scope, policy, data, reversibility, approvals, and receipts. The later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace.",
-              "limits": "The exact matched-advantage and resource gates failed, and active-question value was refuted on this corpus. One reversible local effect does not establish permission correctness, production safety, human-approval quality, chapter-core promotion, AGI, or ASI.",
+              "limits": "The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. One reversible local effect does not establish permission correctness, production safety, human-approval quality, chapter-core promotion, AGI, or ASI.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/raw/question_compiled_semantic_addressing_whitepaper.md:751-790",
@@ -9802,6 +9838,7 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "ext_mcp_protocol_2025_11_25",
+            "platonic_world_model",
             "ext_a2a_protocol_1_0_0",
             "ext_w3c_did_core_1_0_2022",
             "ext_w3c_vc_data_model_2_0_2025",
@@ -9927,7 +9964,7 @@
             {
               "source_id": "qcsa_whitepaper",
               "mapped_support": "Supplies namespace-qualified stable identities, signed SACs, atlas epochs, mapping manifests, migration lineage, and uncertainty-preserving translation as candidate cross-stack semantic exchange records; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace.",
-              "limits": "The exact matched-advantage and resource gates failed, and active-question value was refuted on this corpus. No peer federation, trust, settlement, privacy, chapter-core promotion, AGI, or ASI result is established.",
+              "limits": "The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. No peer federation, trust, settlement, privacy, chapter-core promotion, AGI, or ASI result is established.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/raw/question_compiled_semantic_addressing_whitepaper.md:523-540",
@@ -10097,6 +10134,8 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "cognitive_loop_closure",
+            "deterministic_capability_compilation",
+            "platonic_world_model",
             "rmi",
             "rgs",
             "benchmaxxing",
@@ -10556,6 +10595,7 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "octopus_router",
+            "deterministic_capability_compilation",
             "rmi",
             "beastbrain",
             "cognitive_loop_closure",
@@ -10765,14 +10805,14 @@
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:Abstract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a73 System Overview",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a76 Governance Plane",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a77 Readiness Gate and Promotion Contract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a78 Task Runtime and Bounded Recursive Labor",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a79 Evidence and Replay Integrity",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a713 Benchmark Architecture",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a719 Truthful Limits",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a723 Final Position"
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§3 System Overview",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§6 Governance Plane",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§7 Readiness Gate and Promotion Contract",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§8 Task Runtime and Bounded Recursive Labor",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§9 Evidence and Replay Integrity",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§13 Benchmark Architecture",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§19 Truthful Limits",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§23 Final Position"
               ],
               "passage_review_note": "Reviewed authenticated Google Drive text extraction for the Markdown variant/source export. It matches the primary MoECOT runtime vocabulary around compact orchestration, specialist lanes, control-plane gates, readiness, task runtime, replay, benchmark architecture, truthful limits, and final route-execute-verify-audit-improve framing; it remains a variant, not independent corroboration or reproduced evidence."
             },
@@ -10855,7 +10895,7 @@
             {
               "source_id": "qcsa_whitepaper",
               "mapped_support": "Separates semantic identity and address selection from the physical expert/model route, while making fallback, abstention, load, cost, hardware, permissions, and verifier requirements explicit in the compiled route plan; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace.",
-              "limits": "The exact matched-advantage and resource gates failed, and active-question value was refuted on this corpus. No learned-router, trained-specialist, production, chapter-core promotion, AGI, or ASI result is established.",
+              "limits": "The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. No learned-router, trained-specialist, production, chapter-core promotion, AGI, or ASI result is established.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/raw/question_compiled_semantic_addressing_whitepaper.md:354-366",
@@ -11037,10 +11077,12 @@
           "source_ids": [
             "corben_chatgpt_kiss_irreducible_intelligence_2026",
             "corben_chatgpt_onecell_theseus_2026",
+            "deterministic_capability_compilation",
             "ext_attention_is_all_you_need_2017",
             "ext_mamba2_ssd_2024",
             "ext_s4_2022",
             "ext_mamba3_2026",
+            "ext_gated_deltanet2_2026",
             "ext_hyperscale_lottery_2026",
             "ext_gated_deltanet_2024",
             "ext_jamba_2024",
@@ -11084,6 +11126,7 @@
               "ext_mamba2_ssd_2024",
               "ext_s4_2022",
               "ext_mamba3_2026",
+              "ext_gated_deltanet2_2026",
               "ext_hyperscale_lottery_2026",
               "ext_gated_deltanet_2024",
               "ext_jamba_2024",
@@ -11224,6 +11267,16 @@
                 "arXiv:2603.15569, Abstract and architecture sections"
               ],
               "passage_review_note": "Primary source or author-supplied design input was reviewed for this bounded contribution and its limits. No local implementation, reproduction, superiority, safety, deployment, or support-state movement is inferred.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_gated_deltanet2_2026",
+              "mapped_support": "Supplies the dated reported recurrent/linear-attention frontier after separating erase and write gates and compares against Mamba-3 variants on a 1.3B/100B-token envelope.",
+              "limits": "The author-reported result displaces Mamba-3 only inside the paper's exact comparison; no checkpoint, training run, hardware result, retrieval result, transfer result, or local superiority is reproduced here.",
+              "passage_refs": [
+                "arXiv:2605.22791v1, Abstract and reported comparison envelope; official NVLabs repository revision 95709fc250357c2dd109361c353192f2aa5913f9; reviewed 2026-07-16"
+              ],
+              "passage_review_note": "Primary preprint and official implementation identity were reviewed for comparator displacement and reproduction blockers. No local implementation, performance, safety, deployment, support-state, or SOTA result is imported.",
               "passage_review_state": "reviewed"
             },
             {
@@ -11476,7 +11529,7 @@
             "Qualify kernels with equal-active-parameter and equal-total-lifecycle-cost tournaments, matched strong baselines, independent evaluators, adverse controls, rollback, reproduction, and transfer.",
             "Separate recurrent computation from addressable memory by preregistering recurrent-state size, sparse-slot capacity, cache growth, pointer fusion, exact-memory controls, storage, lookup, invalidation, migration, and deletion cost.",
             "For tiny-recursive candidates, preregister canonical single-pass, matched sampling/voting, blank/random/unseen identity, marginal utility by recursion step, learned stopping, and progressive mechanism ablations.",
-            "Govern architectural RSI as candidate generation, training, shadowing, canarying, promotion, composition, narrowing, rollback, retirement, and descendant invalidation\u2014not merely weight updates.",
+            "Govern architectural RSI as candidate generation, training, shadowing, canarying, promotion, composition, narrowing, rollback, retirement, and descendant invalidation—not merely weight updates.",
             "Treat OneCell as one falsifiable compact recurrent candidate: shared transition weights, typed state lanes, exact external state, outer branch-preserving search, verified abstraction accumulation, and a frozen-core ratchet."
           ],
           "interfaces": [
@@ -11511,36 +11564,36 @@
             "Memory relabeling calls compressed recurrent state an attention replacement without measuring exact recall, then adds growing caches or pointer slots without charging their addressable-memory burden.",
             "Recursion-depth laundering credits nominal recursive steps or a tiny parameter count when task identity, augmentation, sampling, voting, or the first few useful steps supply the result."
           ],
-          "minimal_implementation": "A finite Cognitive Kernel ABI transition model and independent Python consumer now exercise one nine-event mixed Transformer-to-selective-state-space-to-KAN-to-fallback trace, proposal/effect separation, exact checkpoint identity, non-increasing authority, revocation, migration compatibility, custody fields, two receipt-bound commits, fifteen rejected cases, and twelve rejecting event mutations. This is schema/transition evidence only: no real Transformer, Mamba, KAN, recurrent, graph, or program-synthesis kernel runs behind the ABI. The first empirical minimum still requires three genuinely different kernels, matched Transformer and simple baselines, equal-active-parameter and equal-total-cost views, natural tasks, state migration and restore over real full-state checkpoints, and independently observed effects; until then the core claim remains argument.",
+          "minimal_implementation": "A finite Cognitive Kernel ABI transition model and independent Python consumer now exercise one nine-event mixed Transformer-to-selective-state-space-to-KAN-to-fallback trace, proposal/effect separation, exact checkpoint identity, non-increasing authority, revocation, migration compatibility, custody fields, two receipt-bound commits, fifteen rejected cases, and twelve rejecting event mutations. This is schema/transition evidence only: no real Transformer, Mamba, KAN, recurrent, graph, or program-synthesis kernel runs behind the ABI. The first empirical minimum still requires three genuinely different kernels, matched Transformer and simple baselines, equal-active-parameter and equal-total-cost views, natural tasks, state migration and restore over real full-state checkpoints, and independently observed effects. P6 made a full access attempt and ended blocked: Gated DeltaNet-2, Mamba-3, Inkling, and TRM could not be reproduced on the available non-CUDA 16 GB host, OneCell remained unimplemented, and no weaker proxy was relabeled as SOTA; the core claim remains argument.",
           "beyond_state_of_art": "A mature result would compare strong Transformer, recurrent/state-space, long-convolution or test-time-state, tiny-recursive, and exact-search/controller lanes on natural, algorithmic, long-context, continual, multimodal, control, and exact-execution workloads under the same governed ABI. It would separate recurrent compute from fixed, cached, sparse-slot, pointer-routed, exact, and attention memory; freeze task identity, sampling, voting, stopping, and useful-recursion-depth controls; report accepted usefulness, unsafe release, abstention, calibration, extrapolation, latency, memory, energy where measurable, training, search, verification, repair, routing, migration, maintenance, governance, fallback, and failure cost; use independent evaluators and hidden controls; reproduce and transfer results; and causally test whether route diversity, verified abstraction, or frozen-core accumulation reduces future search without hiding external intelligence. No current repository result meets that bar.",
           "codex_tests": [
             {
               "name": "Cognitive Kernel ABI conformance and malicious-kernel rejection",
               "purpose": "Check typed proposals, receipt consumption, exact state identity, authority ceilings, checkpoint/restore, cost disclosure, fallback, and rejected forgery or omitted-state controls.",
-              "status": "implemented bounded synthetic ABI under P2; empirical kernel conformance remains planned under P5",
+              "status": "implemented bounded synthetic ABI under P2; real-kernel conformance blocked after the P6 full attempt",
               "implementation_status": "implemented",
               "result_status": "passes 16-case independent trace checker with 12 rejecting mutations; no real kernel or benchmark"
             },
             {
               "name": "Matched heterogeneous-kernel tournament",
               "purpose": "Compare at least three genuinely different kernels under equal-active-parameter and equal-total-lifecycle-cost views; separate recurrent compute from addressable memory; and apply identity, sampling, voting, stopping, and recursion-step controls on preregistered workloads and strong baselines.",
-              "status": "planned under P5",
-              "implementation_status": "planned",
-              "result_status": "not run"
+              "status": "blocked_after_full_attempt under P6",
+              "implementation_status": "candidate and strongest-comparator envelope unavailable",
+              "result_status": "zero outcome runs; strongest current comparator hardware unavailable; no SOTA or core movement"
             },
             {
               "name": "Frozen-core verified-abstraction ratchet",
               "purpose": "Test whether held-out future search cost falls while central parameters remain fixed, without answer-bearing retrieval, hidden assistance, or growing unreported compute.",
-              "status": "planned under P5",
-              "implementation_status": "planned",
-              "result_status": "not run"
+              "status": "blocked_after_full_attempt under P6",
+              "implementation_status": "OneCell and verified-abstraction learner absent",
+              "result_status": "defeat prediction frozen; no outcome run, reproduction, transfer, or support movement"
             },
             {
               "name": "Governed architectural-RSI lifecycle",
               "purpose": "Exercise candidate generation, independent evaluation, shadow, canary, promotion denial, rollback, retirement, and descendant invalidation without self-approval.",
-              "status": "planned under P5",
-              "implementation_status": "planned",
-              "result_status": "not run"
+              "status": "blocked_after_full_attempt under P6",
+              "implementation_status": "bounded lifecycle fixtures exist but no runnable architecture candidate",
+              "result_status": "no externally reproduced candidate entered shadow, canary, rollback, retirement, or descendant invalidation"
             }
           ],
           "lean_module": "AsiStackProofs.ReplaceableCognitiveSubstrates",
@@ -11570,6 +11623,7 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "rmi",
+            "deterministic_capability_compilation",
             "benchmaxxing",
             "scf",
             "octopus_router",
@@ -11585,7 +11639,8 @@
             "corbens_trainer_project",
             "corbens_best_model_possible_project",
             "ext_darwin_godel_machine_2025",
-            "ext_dont_hallucinate_abstain_2024"
+            "ext_dont_hallucinate_abstain_2024",
+            "ext_swe_rebench_v2_2026"
           ],
           "source_queue": {
             "primary": [
@@ -11850,6 +11905,18 @@
               ],
               "passage_review_note": "Reviewed the source note's primary ACL summary for knowledge-gap detection, abstention calibration, cooperative and competitive probing, shared blind spots, over-refusal, and extra-call cost.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_swe_rebench_v2_2026",
+              "mapped_support": "Adds concrete instrument-failure gates for missing images, broken setup, parser drift, implicit naming, external context, test coupling, emulation cost, and failed positive controls.",
+              "limits": "A failed instrument closes the denominator and cannot be laundered into negative evidence about a model, mechanism, or governance architecture.",
+              "passage_refs": [
+                "arXiv:2602.23866v2, Sections 3.1-3.3 (collection, setup synthesis, paired full-suite execution)",
+                "arXiv:2602.23866v2, Sections 4.1-4.3 (setup ablation, clarity filtering, task pathologies)",
+                "Official GitHub evaluator README and pinned Hugging Face dataset revision 475dd5e8703bb5fb22dd3c60b5d038b019eba1e0"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Primary paper, official code/data descriptions, pinned metadata, and local preflight receipt reviewed; no paper result is promoted into local evidence."
             }
           ],
           "mechanism": [
@@ -12657,6 +12724,7 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "cgs",
+            "deterministic_capability_compilation",
             "rgs",
             "bugbrain",
             "simulation_scaling",
@@ -13204,7 +13272,7 @@
             {
               "source_id": "qcsa_whitepaper",
               "mapped_support": "Extends Semantic Representation Leasing with plural address leases, path deltas, open-world expressions, semantic-first generation, round-trip structural checks, consumer adequacy, and explicit collision, verification, migration, repair, and fallback residuals; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace.",
-              "limits": "The exact matched-advantage and resource gates failed, and active-question value was refuted on this corpus. No useful compression, model-quality, production, chapter-core promotion, AGI, or ASI result is established.",
+              "limits": "The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. No useful compression, model-quality, production, chapter-core promotion, AGI, or ASI result is established.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/raw/question_compiled_semantic_addressing_whitepaper.md:268-270",
@@ -14425,7 +14493,7 @@
             "A local finite selector or replay is described as economic optimality, welfare improvement, production stability, or SOTA.",
             "Governance cost exceeds benefit, but institutional lock-in preserves the allocation policy and hides the refutation."
           ],
-          "minimal_implementation": "Twenty-three retained countermodels and bounded computations plus an eight-declaration, nine-stage, 66-route allocation, execution, simulation-transport, reconciliation, and closure lifecycle; an independently implemented consumer rejects 57/57 non-accepting mutations and digest-binds twelve bounded source families. Thirty-five assumption projections and copied fixture summaries are retired. The model separates useful outcomes from raw resource proxies, blocks fidelity overclaims, requires failure and unsafe-release accounting, and grants no support or external-effect authority. This is bounded policy/conformance evidence over synthetic fixtures, repository replays, local timing, historical CI, and sanitized imports\u2014not economic optimality, deployed scheduling, useful-throughput improvement, simulation adequacy, physical feasibility, transfer, or SOTA evidence.",
+          "minimal_implementation": "Twenty-three retained countermodels and bounded computations plus an eight-declaration, nine-stage, 66-route allocation, execution, simulation-transport, reconciliation, and closure lifecycle; an independently implemented consumer rejects 57/57 non-accepting mutations and digest-binds twelve bounded source families. Thirty-five assumption projections and copied fixture summaries are retired. The model separates useful outcomes from raw resource proxies, blocks fidelity overclaims, requires failure and unsafe-release accounting, and grants no support or external-effect authority. This is bounded policy/conformance evidence over synthetic fixtures, repository replays, local timing, historical CI, and sanitized imports—not economic optimality, deployed scheduling, useful-throughput improvement, simulation adequacy, physical feasibility, transfer, or SOTA evidence.",
           "beyond_state_of_art": "Resource economics matures into a risk-aware budget operating system and claim-transport layer for cognition. It decides when the stack may spend, defer, shrink, escalate, reject, residualize work, or downgrade synthetic evidence without letting local cost pressure delete verification, security, approval, replay, rollback, human review, fidelity limits, or transfer boundaries. In the mature budget OS, cognition has a budget and simulations have contracts: budgets cannot delete verification tax, protected overhead, review capacity, rollback cost, security cost, residual burden, or the requirement that simulated results travel only as far as declared scope, fidelity, resources, omissions, and transfer decisions allow.",
           "codex_tests": [
             {
@@ -16587,7 +16655,7 @@
           "open_evidence_gaps": [
             "All twelve assigned sources have exact passage-reviewed mappings, but they support formalization and claim-boundary design only; no source-reported system, proof corpus, deployment, runtime, security, capability, or performance result is imported as ASI Stack evidence.",
             "The current surface contains 298 targets and 1,151 declarations, but the activation-baseline rationalization is not complete: projections, assumption restatements, vacuity, reachability, duplicate/orphan status, consumer use, richer-model needs, executable and empirical handoffs, implementation binding, independent reproduction, and transfer must still receive terminal dispositions under the roadmap.",
-            "The local ProofEnvelope module has seven finite declarations\u2014two direct projections and five derived negative cases\u2014and the semantic-depth harness has one blocked record plus ten rejecting mutations. Neither proves full semantic adequacy, deployed enforcement, system safety, implementation refinement, empirical truth, support promotion, transfer, or SOTA."
+            "The local ProofEnvelope module has seven finite declarations—two direct projections and five derived negative cases—and the semantic-depth harness has one blocked record plus ten rejecting mutations. Neither proves full semantic adequacy, deployed enforcement, system safety, implementation refinement, empirical truth, support promotion, transfer, or SOTA."
           ],
           "codex_tests": [
             {
@@ -16700,6 +16768,8 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "benchmaxxing",
+            "deterministic_capability_compilation",
+            "platonic_world_model",
             "rmi",
             "cognitive_loop_closure",
             "uat",
@@ -16729,7 +16799,8 @@
             "ext_unlearning_benchmarks_weak_2024",
             "ext_openunlearning_2025",
             "reflexive_router_whitepaper",
-            "kernel_english_residual_compiler"
+            "kernel_english_residual_compiler",
+            "ext_swe_rebench_v2_2026"
           ],
           "source_queue": {
             "primary": [
@@ -17135,6 +17206,18 @@
               ],
               "passage_review_note": "Reviewed the source note's primary NeurIPS summary for unified method and metric execution, public checkpoints, comparative evaluation, metric faithfulness, and standardization failure modes.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_swe_rebench_v2_2026",
+              "mapped_support": "Adds a current multilingual natural repository-task construction funnel, full-suite executable oracle, per-instance pathology metadata, and setup/clarity ablations that expose why benchmark membership is not construct validity.",
+              "limits": "The released tasks and automated labels are not locally validated en masse; post-snapshot filtering reduces but does not eliminate contamination, and no local benchmark score is established.",
+              "passage_refs": [
+                "arXiv:2602.23866v2, Sections 3.1-3.3 (collection, setup synthesis, paired full-suite execution)",
+                "arXiv:2602.23866v2, Sections 4.1-4.3 (setup ablation, clarity filtering, task pathologies)",
+                "Official GitHub evaluator README and pinned Hugging Face dataset revision 475dd5e8703bb5fb22dd3c60b5d038b019eba1e0"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Primary paper, official code/data descriptions, pinned metadata, and local preflight receipt reviewed; no paper result is promoted into local evidence."
             }
           ],
           "mechanism": [
@@ -17958,7 +18041,7 @@
             "Unknown-hazard neglect concentrates work on articulated risks while incidents, weak signals, politically inconvenient harms, and outside-envelope threats remain ownerless.",
             "Case-factory Goodhart optimizes graph counts, connected edges, closure rate, or review speed while adequacy, dissent, tails, cost, and residual age deteriorate."
           ],
-          "minimal_implementation": "Two public schemas plus eight digest-bound synthetic case records\u2014one readiness-review route and seven negative routes\u2014and five validator mutations bridge eight owned Lean declarations. All eight declarations are derived finite reductions of one hand-authored SafetyCaseRouteFor decision tree. No real case, hazard analysis, threat model, evidence-adequacy review, countercase search, safeguard verification, independent institution, acceptance, readiness, release, deployment, incident, reproduction, or transfer ran; chapter-core support effect is zero.",
+          "minimal_implementation": "Two public schemas plus eight digest-bound synthetic case records—one readiness-review route and seven negative routes—and five validator mutations bridge eight owned Lean declarations. All eight declarations are derived finite reductions of one hand-authored SafetyCaseRouteFor decision tree. No real case, hazard analysis, threat model, evidence-adequacy review, countercase search, safeguard verification, independent institution, acceptance, readiness, release, deployment, incident, reproduction, or transfer ran; chapter-core support effect is zero.",
           "beyond_state_of_art": "The mature Assurance Argument Compilation program continuously compiles exact governed references into versioned multi-hazard cases, actively searches for countercases and unknown-envelope failures, tests seeded omissions and stale dependencies, separates structural, semantic, empirical, control, acceptance, readiness, and release states, preserves competing arguments and dissent, exercises invalidation, override, redaction, fallback, rollback, and retirement, and measures detection quality, reviewer disagreement, false block/clear, resolution latency, burden, cost, and residual age together. It then requires independent institutional reproduction and heterogeneous transfer across systems, domains, hazards, access modes, safeguards, evidence regimes, organizations, jurisdictions, and time. Positive, negative, null, inconclusive, narrowed, refuted, withdrawn, overridden, retired, and blocked-after-full-attempt outcomes remain visible. This is a target campaign, not a current safety case, valid threat model, adequate evidence, effective control, safe system, or deployment authority.",
           "codex_tests": [
             "Complete bounded record to readiness-review route",
@@ -18678,6 +18761,8 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "ext_bourtoule_machine_unlearning_2021",
+            "deterministic_capability_compilation",
+            "platonic_world_model",
             "ext_shumailov_model_collapse_2023",
             "ext_gerstgrasser_data_accumulation_2024",
             "theseus_synthetic_data_curation",
@@ -18786,7 +18871,7 @@
             {
               "source_id": "qcsa_whitepaper",
               "mapped_support": "Contributes fast/medium/slow update timescales, candidate versus authoritative atlas epochs, identity-preserving readdressing, merge/split lineage, migration compatibility, shadow evaluation, rollback, and semantic-drift tests; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace.",
-              "limits": "The exact matched-advantage and resource gates failed, and active-question value was refuted on this corpus. No learning, forgetting, influence, privacy/storage erasure, chapter-core promotion, AGI, or ASI result is established.",
+              "limits": "The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. No learning, forgetting, influence, privacy/storage erasure, chapter-core promotion, AGI, or ASI result is established.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/raw/question_compiled_semantic_addressing_whitepaper.md:264-270",
@@ -19637,6 +19722,8 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "viea",
+            "deterministic_capability_compilation",
+            "platonic_world_model",
             "scf",
             "vcm_public",
             "planforge",
@@ -19667,7 +19754,8 @@
             "ext_v_jepa_2_2025",
             "ext_embedded_agency_2019",
             "reflexive_router_whitepaper",
-            "kernel_english_residual_compiler"
+            "kernel_english_residual_compiler",
+            "ext_swe_rebench_v2_2026"
           ],
           "source_queue": {
             "primary": [
@@ -20084,7 +20172,7 @@
             {
               "source_id": "qcsa_whitepaper",
               "mapped_support": "Defines QCSA as the semantic control plane connecting grounding, context, planning, memory, claims, routing, tools, generation, evidence acquisition, lifecycle migration, governance, and execution receipts through identity-address-route indirection; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace.",
-              "limits": "The exact matched-advantage and resource gates failed, and active-question value was refuted on this corpus. The local vertical path does not establish broad deployment, production safety, chapter-core promotion, AGI, or ASI.",
+              "limits": "The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. The local vertical path does not establish broad deployment, production safety, chapter-core promotion, AGI, or ASI.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/raw/question_compiled_semantic_addressing_whitepaper.md:272-487",
@@ -20114,6 +20202,18 @@
               ],
               "passage_review_state": "reviewed",
               "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
+            },
+            {
+              "source_id": "ext_swe_rebench_v2_2026",
+              "mapped_support": "Provides a natural repository-change substrate for testing the same candidate through matched test-only, record-only, and full-governance admission routes with visible utility, unsafe admission, false blocking, latency, rollback, residual, and cost outcomes.",
+              "limits": "No local gold run, candidate campaign, final heldout result, governance advantage, deployment, safety, or transfer result exists yet.",
+              "passage_refs": [
+                "arXiv:2602.23866v2, Sections 3.1-3.3 (collection, setup synthesis, paired full-suite execution)",
+                "arXiv:2602.23866v2, Sections 4.1-4.3 (setup ablation, clarity filtering, task pathologies)",
+                "Official GitHub evaluator README and pinned Hugging Face dataset revision 475dd5e8703bb5fb22dd3c60b5d038b019eba1e0"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Primary paper, official code/data descriptions, pinned metadata, and local preflight receipt reviewed; no paper result is promoted into local evidence."
             }
           ],
           "mechanism": [
@@ -20279,6 +20379,7 @@
           "evidence_level": "argument",
           "source_ids": [
             "project_theseus_whitepaper",
+            "deterministic_capability_compilation",
             "theseus_plan_compiler",
             "theseus_self_evolution_system",
             "theseus_architecture_gate",
@@ -20804,6 +20905,8 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "viea",
+            "deterministic_capability_compilation",
+            "platonic_world_model",
             "benchmaxxing",
             "scf",
             "vcm_public",
@@ -20831,7 +20934,8 @@
             "ext_mmlu_2020",
             "ext_checklist_2020",
             "ext_codebleu_2020",
-            "ext_qlora_2023"
+            "ext_qlora_2023",
+            "ext_swe_rebench_v2_2026"
           ],
           "source_queue": {
             "primary": [
@@ -21271,6 +21375,18 @@
               ],
               "passage_review_note": "Reviewed the source note for quantized parameter-efficient finetuning, memory savings, evaluation, and reproduction limits; used only to order efficient-adaptation experiments.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_swe_rebench_v2_2026",
+              "mapped_support": "Replaces authored repository fixtures in the empirical lane with post-snapshot public merged changes while requiring setup repair, gold execution, test-path collision guards, independent task review, and final-heldout custody.",
+              "limits": "The 12 selected development tasks are debugging inputs, not the final denominator or evidence for a chapter claim.",
+              "passage_refs": [
+                "arXiv:2602.23866v2, Sections 3.1-3.3 (collection, setup synthesis, paired full-suite execution)",
+                "arXiv:2602.23866v2, Sections 4.1-4.3 (setup ablation, clarity filtering, task pathologies)",
+                "Official GitHub evaluator README and pinned Hugging Face dataset revision 475dd5e8703bb5fb22dd3c60b5d038b019eba1e0"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Primary paper, official code/data descriptions, pinned metadata, and local preflight receipt reviewed; no paper result is promoted into local evidence."
             }
           ],
           "mechanism": [
@@ -21724,7 +21840,7 @@
             "Unsupported transfer treats one repository's local hygiene, render pipeline, release process, or maintenance history as proof that the method improves other books, teams, domains, or times."
           ],
           "minimal_implementation": "Sixteen exact source-to-claim mappings; one living-book release-record fixture; a change-packet harness with three valid and six expected-invalid synthetic cases; a reader release-candidate bridge over the current blocked candidate, three additional valid routes, and five expected-invalid controls; manifest/outline/proof synchronization, claim and source appendices, Quarto HTML rendering, Human-view toggle, browser checks, changelog and release records, and an authoritative validation registry; and four proof targets implemented by twenty-one Lean declarations over hand-authored finite manifest, structural-update, release, derivative, change-packet, and reader-route records. These artifacts establish repository, record, build, render, derivative, and release discipline only; they do not prove source interpretation, editorial quality, accessibility approval, chapter truth, reader or audio approval, external reproduction, transfer, or a chapter-core support effect.",
-          "beyond_state_of_art": "The mature argument-exit campaign must follow a prospectively frozen stream of natural substantive updates\u2014new sources, conflicting evidence, claim promotion and refutation, proof retirement, schema changes, figures, accessibility fixes, corrections, rollbacks, releases, reader derivatives, and successor handoffs\u2014performed by multiple independent human and AI maintainers. It must compare the Evidence-Preserving Publication Transaction with matched static manuscript, wiki, ordinary Git repository, literate-programming, executable-book, docs-as-code, and strongest conventional scholarly publishing workflows under equal content, tooling, time, and review opportunity; inject source revocation, citation error, claim drift, proof bloat, validator weakness, rights conflict, derivative drift, release mismatch, deployment failure, errata, and handoff loss; and jointly measure claim accuracy and calibration, source and proof traceability, error detection, correction latency, reproducibility, rollback, accessibility, reader comprehension, editorial quality, maintenance burden, reviewer time, compute, storage, hosting, opportunity cost, and total cost. Independent maintainers, editors, accessibility reviewers, readers, repositories, institutions, formats, hosting systems, and domains must reproduce and transfer positive, negative, null, narrowed, blocked, and refuted outcomes. Until then the transaction is not proof of superior scholarship, editorial quality, accessibility, reader value, governance effectiveness, external reproducibility, transfer, or SOTA publishing.",
+          "beyond_state_of_art": "The mature argument-exit campaign must follow a prospectively frozen stream of natural substantive updates—new sources, conflicting evidence, claim promotion and refutation, proof retirement, schema changes, figures, accessibility fixes, corrections, rollbacks, releases, reader derivatives, and successor handoffs—performed by multiple independent human and AI maintainers. It must compare the Evidence-Preserving Publication Transaction with matched static manuscript, wiki, ordinary Git repository, literate-programming, executable-book, docs-as-code, and strongest conventional scholarly publishing workflows under equal content, tooling, time, and review opportunity; inject source revocation, citation error, claim drift, proof bloat, validator weakness, rights conflict, derivative drift, release mismatch, deployment failure, errata, and handoff loss; and jointly measure claim accuracy and calibration, source and proof traceability, error detection, correction latency, reproducibility, rollback, accessibility, reader comprehension, editorial quality, maintenance burden, reviewer time, compute, storage, hosting, opportunity cost, and total cost. Independent maintainers, editors, accessibility reviewers, readers, repositories, institutions, formats, hosting systems, and domains must reproduce and transfer positive, negative, null, narrowed, blocked, and refuted outcomes. Until then the transaction is not proof of superior scholarship, editorial quality, accessibility, reader value, governance effectiveness, external reproducibility, transfer, or SOTA publishing.",
           "codex_tests": [
             {
               "name": "Living book release record validation",
@@ -21834,6 +21950,8 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "verification_bandwidth",
+            "deterministic_capability_compilation",
+            "platonic_world_model",
             "benchmaxxing",
             "alignment_field",
             "scf",

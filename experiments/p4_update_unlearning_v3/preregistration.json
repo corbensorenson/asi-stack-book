@@ -1,0 +1,171 @@
+{
+  "schema_version": "asi_stack.p4_m7_preregistration.v3",
+  "state": "terminal_instrument_frozen_before_preflight_or_heldout_outcome",
+  "campaign": "P4 Campaign 3 / M7",
+  "run_id": "p4-m7-qwen25-05b-structured-fusion-003",
+  "recorded_date": "2026-07-16",
+  "failure_lineage": [
+    {
+      "path": "experiments/p4_update_unlearning/v1_failure_diagnosis.json",
+      "sha256": "ff2f2ab0386308a4074391ece213370c2bee08a4512216034c26e64cf5f7dfec"
+    },
+    {
+      "path": "experiments/p4_update_unlearning_v2/preflight_failure_diagnosis.json",
+      "sha256": "f2965e3d6bc8ae9a846b9122f55fac57fcfbf3df8d9587ef2cf573bc11a16678"
+    }
+  ],
+  "corpus_path": "experiments/p4_update_unlearning_v2/corpus.json",
+  "corpus_sha256": "311ad4780732f510a0412afafe0bf444abc79971050637b574e8e2a5d5ce87b4",
+  "corpus_rows": 870,
+  "seeds": [
+    1701,
+    2903,
+    4307,
+    6101,
+    7907
+  ],
+  "arms": [
+    "no_update",
+    "standard_update",
+    "governed_update",
+    "regularized_forgetting_mitigation",
+    "approximate_unlearning",
+    "deletion_aware_retrain",
+    "exact_rollback"
+  ],
+  "claim_axes": [
+    "behavioral_cohort_change",
+    "causal_influence_reduction",
+    "membership_privacy_change",
+    "lineage_invalidation",
+    "legal_compliance",
+    "storage_erasure",
+    "backup_erasure",
+    "external_descendant_closure"
+  ],
+  "state_surfaces": [
+    "model_parameters",
+    "model_buffers",
+    "optimizer_state",
+    "scheduler_state",
+    "accumulated_gradients",
+    "python_rng",
+    "numpy_rng",
+    "torch_rng",
+    "sampler_order",
+    "dataset_and_splits",
+    "tokenizer_preprocessor",
+    "training_config",
+    "code_revision",
+    "environment",
+    "best_checkpoint",
+    "final_checkpoint",
+    "released_checkpoint",
+    "shadow_checkpoint",
+    "rollback_checkpoint",
+    "evaluator_and_policy",
+    "inference_cache",
+    "feature_cache",
+    "lineage_index",
+    "local_backup_store"
+  ],
+  "model": {
+    "repository": "Qwen/Qwen2.5-Coder-0.5B-Instruct",
+    "snapshot_commit": "ea3f2471cf1b1f0db85067f1ef93848e38e88c25",
+    "local_files_only": true,
+    "weights_frozen": true,
+    "transformer_representation": "per-row L2-normalized attention-masked final-hidden-state mean",
+    "structured_fields": {
+      "authority": [
+        "valid",
+        "delegated",
+        "expired",
+        "missing"
+      ],
+      "provenance": [
+        "verified",
+        "partial",
+        "unknown"
+      ],
+      "contamination": [
+        "clear",
+        "suspected",
+        "confirmed"
+      ],
+      "deletion": [
+        "none",
+        "requested",
+        "residual"
+      ],
+      "risk": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "structured_size": 16,
+    "structured_scale": 2.0,
+    "fused_size": 912,
+    "trainable_component": "912x32x3 nonlinear fusion head",
+    "file_sha256": {
+      "config.json": "b1e58593cd31852f7da5c2fc31ddf6135b9c066c0fd9177a4bbe95717083adff",
+      "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "tokenizer_config.json": "959e7f1d9a1b7641a6d6ce05ca97b75c7894fcb66cbe5a040406458fb1128ee4",
+      "model.safetensors": "f9523886352217ded3aeeef552b381af79d568c6d49a4b9e423288cea56b0a44"
+    }
+  },
+  "code_sha256": {
+    "run_p4_m7_update_unlearning_v3.py": "777912cf0dfa617b572a3f7ec1d77141805641608f33d372eab5baad55fb4bf6",
+    "evaluate_p4_m7_update_unlearning_v3.py": "c89b5dacce6ae174c726330d3e7ad480db94f981b802345a20d2b514ef289618",
+    "validate_p4_m7_update_unlearning_v3_design.py": "36f24a8ec24dd96b83f4073703d92f3afc394894885dba3f0857153964f72502",
+    "validate_p4_m7_update_unlearning_v3.py": "4f68e7b1c01d57fbf80411ca3c738f0630b127e8d28b1b5aa5a42f591ec2f676"
+  },
+  "preflight_ablation": [
+    "transformer_only_linear",
+    "structured_only_nonlinear",
+    "fused_nonlinear"
+  ],
+  "checkpoint_authority": {
+    "selection_data": "validation only",
+    "test_selection_forbidden": true,
+    "best_and_final_retained": true,
+    "governed_retained_floor_delta": -0.03,
+    "tie_break": "earliest epoch"
+  },
+  "matched_budget": {
+    "base_epochs": 60,
+    "update_epochs": 24,
+    "sequential_approximate_unlearning_epochs_per_request": 12,
+    "retrain_epochs": 60,
+    "head_optimizer": "AdamW",
+    "shared_frozen_transformer_features": true
+  },
+  "primary_gates": {
+    "preflight_protocol_outcome": "instrument_adequate",
+    "minimum_preflight_fused_general_accuracy": 0.8,
+    "minimum_preflight_fused_deletion_like_accuracy": 0.8,
+    "minimum_confirmatory_deletion_retrain_true_accuracy": 0.8,
+    "all_feature_values_finite": true,
+    "seed_count": 5,
+    "arm_count": 7,
+    "state_surface_count": 24,
+    "all_claim_axes_reported": true,
+    "all_rollback_surface_digests_exact": true,
+    "total_storage_erasure_must_remain_false": true,
+    "evaluator_recomputation_disagreement_count": 0,
+    "all_negative_controls_rejected": true
+  },
+  "support_ceiling": "No chapter-core promotion. The terminal attempt may narrow or refute bounded fusion-head update/unlearning mechanisms only.",
+  "outcome_aware_retry_allowed": false,
+  "further_instrument_repair_allowed": false,
+  "publication_authority": "none",
+  "release_authority": "none",
+  "non_claims": [
+    "The deterministic structured vector exposes fields already present in each custody record; it is not hidden-label access.",
+    "Frozen Qwen features plus a fusion head are not language-model weight unlearning.",
+    "Deletion-aware retraining does not prove zero influence.",
+    "Membership attack advantage is not a privacy guarantee.",
+    "Retained research evidence blocks total storage erasure.",
+    "No transfer, production, legal compliance, external independence, SOTA, AGI, ASI, or support promotion follows."
+  ]
+}

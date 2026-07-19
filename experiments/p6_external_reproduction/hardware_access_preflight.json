@@ -1,0 +1,29 @@
+{
+  "schema_version": "asi_stack.p6_hardware_access_preflight.v1",
+  "recorded_date": "2026-07-16",
+  "host": {
+    "model_identifier": "MacBookPro17,1",
+    "chip": "Apple M1",
+    "cpu_core_count": 8,
+    "gpu_kind": "integrated Apple M1",
+    "gpu_core_count": 8,
+    "unified_memory_gib": 16,
+    "nvidia_gpu_present": false,
+    "cuda_present": false,
+    "free_disk_gib_observed": 116
+  },
+  "access_checks": [
+    {"comparator_id": "inkling-open-hybrid-2026-07-15", "official_remote_reachable": true, "official_revision_observed": "86b4d430ab871652a707666b89203a866888c5e5", "minimum_accelerator_memory_gib": 600, "compatible": false},
+    {"comparator_id": "gated-deltanet-2-2026-05", "official_remote_reachable": true, "official_revision_observed": "95709fc250357c2dd109361c353192f2aa5913f9", "minimum_accelerator_memory_gib": null, "compatible": false},
+    {"comparator_id": "mamba3-2026-03", "official_remote_reachable": true, "official_revision_observed": "f577286d052741c35d39cd43bdc3fad27120f22c", "minimum_accelerator_memory_gib": null, "compatible": false},
+    {"comparator_id": "tiny-recursive-model-2025-10", "official_remote_reachable": true, "official_revision_observed": "c01103738605ba39d1430519b1ee0c62f4c707f8", "minimum_accelerator_memory_gib": 48, "compatible": false},
+    {"comparator_id": "dreamcoder-official", "official_remote_reachable": true, "official_revision_observed": "cb0e63f5c33cd2de360b791038b0f5272750270e", "minimum_accelerator_memory_gib": null, "compatible": true}
+  ],
+  "cloud_compute_authority": "none",
+  "paid_api_authority": "none",
+  "proxy_policy": "A smaller or unofficial mechanism proxy may be labeled only as a proxy and cannot satisfy strongest-baseline reproduction or SOTA entry.",
+  "full_attempt_conclusion": "strongest_comparator_reproduction_blocked_candidate_comparison_not_started",
+  "support_state_effect": "none",
+  "publication_authority": "none",
+  "release_authority": "none"
+}

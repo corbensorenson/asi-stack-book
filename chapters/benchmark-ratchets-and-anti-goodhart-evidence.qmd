@@ -25,6 +25,7 @@ open_evidence_gaps:
   - "All twenty-nine assigned sources have exact passage-reviewed mappings, but source-reported memory, dataset, evaluation-framework, agent-security, self-improvement, architecture-search, dynamic-compute, coding, and unlearning results remain comparator context only."
   - "The current implementation is two schemas, one blocked provenance record plus ten rejecting mutations, two valid and five invalid synthetic anti-Goodhart fixtures, one persisted fixture bridge, three proof targets, and eight finite declarations. It includes no natural benchmark run, hidden holdout, contamination audit, empirical baseline matrix, trained model or policy result, independent evaluator, or support transition."
   - "Argument exit requires preregistered natural and adversarial workloads, construct and target-capacity validation, strong matched controls, complete selection and failure lineage, raw output binding, contamination/public-calibration controls, causal and meta-evaluation, independent reproduction, heterogeneous transfer, complete cost and rights accounting, fallback, and a claim-specific transition."
+  - "Campaign 5 adds a prospectively frozen two-environment, five-seed, ten-arm causal packet and one bounded non-core synthetic transition; it does not validate the authored simulators, establish general transfer, or promote this chapter core."
 ---
 
 ## Chapter status
@@ -75,7 +76,7 @@ Self-improving stacks make benchmark pressure especially sharp. The system may l
 
 Benchmarks can saturate, be gamed, erase regressions, or fail to represent real requirements. A result is especially dangerous when it lacks command, environment, baseline, residuals, negative results, holdouts, transfer checks, and contamination notes. The stack must make benchmark state explicit enough to decide whether a result can update readiness.
 
-External benchmark science gives this layer its comparison set. MMLU (`ext_mmlu_2020`), BIG-bench (`ext_bigbench_2022`), HELM (`ext_helm_2022`), GPQA (`ext_gpqa_2023`), SWE-bench (`ext_swe_bench_2023`), LiveBench (`ext_livebench_2024`), Dynabench (`ext_dynabench_2021`), CheckList (`ext_checklist_2020`), contamination analysis (`ext_benchmark_contamination_2023`), and Goodhart variants (`ext_goodhart_variants_2018`) show broad, living, adversarial, behavioral, contamination-aware, and proxy-failure pressures. The ratchet design uses them as evaluation vocabulary, not as a reproduced benchmark suite.
+External benchmark science gives this layer its comparison set. MMLU (`ext_mmlu_2020`), BIG-bench (`ext_bigbench_2022`), HELM (`ext_helm_2022`), GPQA (`ext_gpqa_2023`), SWE-bench (`ext_swe_bench_2023`), SWE-rebench V2 (`ext_swe_rebench_v2_2026`), LiveBench (`ext_livebench_2024`), Dynabench (`ext_dynabench_2021`), CheckList (`ext_checklist_2020`), contamination analysis (`ext_benchmark_contamination_2023`), and Goodhart variants (`ext_goodhart_variants_2018`) show broad, living, adversarial, behavioral, contamination-aware, and proxy-failure pressures. SWE-rebench V2 is especially useful because its setup and clarity-filter ablations expose how one-shot environment generation, brittle tests, implicit naming, and external context can manufacture false negatives. Its released tasks and automated annotations remain a substrate, not a validity certificate or reproduced local benchmark.
 
 The important distinction is between a benchmark as an event and a benchmark as a managed instrument. An event produces a score. An instrument produces a history: what was tried, what changed, what regressed, what saturated, what transferred, and what still failed. The score can be useful, but only the history can support governance. Without that history, the system has no way to tell whether it learned the capability, learned the test, learned a presentation pattern, or merely found a path around the measurement.
 
@@ -276,6 +277,77 @@ effect observations, and deliberation corruption/repair together. Reporting
 unsafe outputs; reporting zero unsafe LLM-first outputs alone would erase its
 18 wrong fast paths and nine useful outcomes. The validator rejects both forms
 of laundering and preserves all seventeen active control classes.
+
+M7 adds a second benchmark lesson: integrity is not target validity. Its v1
+validator correctly reproduced frozen bytes, arm counts, and state digests,
+yet every arm—including deletion-aware retraining—scored zero on the deletion
+target because the cohort was single-class and marker-shifted. That result is
+preserved as an instrument failure. A balanced v2 repair failed its deletion-
+like preflight before held-out execution. Only v3 opened the denominator after
+a three-way ablation showed Transformer-only at 0.7667/0.7000 general/deletion-
+like accuracy and fused structured state at 1.0000/1.0000. The benchmark record
+therefore binds target adequacy, representation choice, failure lineage, and
+claim disposition together; a green integrity check cannot promote an
+uninformative outcome.
+
+Campaign 4 adds a third lesson: favorable sacrificial semantics cannot waive a
+failed consumer contract. Its terminal v3 preflight reached 6/6 release-
+eligibility accuracy, 3/3 clean releases, perfect required-residual recall, and
+zero false reassurance. It still admitted only 3/6 extraction objects because
+all defect cases used undeclared route `retain` and omitted requested-check
+IDs. The frozen gate required 5/6, so the heldout workload remained sealed.
+Reporting only the favorable semantic values would manufacture a residual-
+honesty result from an instrument that downstream verification and capacity
+components could not consume.
+
+### Campaign 5: a promotion gate that preserves heterogeneous effects
+
+Campaign 5 is a concrete benchmark-ratchet example because the decision was
+frozen before 11,250 episodes were generated. Two authored environments, five
+seeds, ten arms, 6,000 held-out episodes, matched authority ceilings, six named
+ablations, a result schema, code and environment hashes, an independent scorer,
+and a no-repair-after-outcome rule existed before the result. A validator then
+recomputed the central metrics and rejected ten laundering mutations.
+
+Every integrity and baseline gate passed, and six of six preregistered aggregate
+ablation signatures moved in the declared direction. The resulting review
+accepted one `synthetic-test-backed` non-core transition. The ratchet still
+preserves inconvenient details: governed task success fell slightly relative
+to the ungoverned predictive baseline; active information was mildly harmful
+in one environment; shift detection and intervention-effect prediction remained
+weak; the environments were finite authored tables; and no neural model or
+external evaluator was used.
+
+This is the intended asymmetry. Success opened a scoped transition only after
+the denominator, baselines, artifacts, causal comparisons, uncertainty, costs,
+lineage, rollback, and non-claims survived review. It did not promote a chapter
+core, validate the simulators as reality, turn a shared three-state abstraction
+into general transfer, or authorize release. The complete receipt is
+`docs/p4_situated_world_model_campaign.md`.
+
+### Capability-preservation and semantic-continuity campaigns
+
+The two new Corben papers add complementary argument-exit programs. The
+capability-compilation campaign must test transactional software, controlled
+dynamics, contact-rich control, and verifiable reasoning/tool use against
+scratch learning, imitation, distillation, merge, MoE, sparse-link, dense, and
+full-policy baselines. It must ablate traces, learner-induced-state collection,
+counterexample memory, shields, reification, and evaluator independence while
+charging router, verifier, fallback, residual, and maintenance cost.
+
+The semantic-continuity campaign must be longitudinal. It introduces controlled
+changes to labels, definitions, prototypes, roles, relations, units, grounding
+models, policies, contexts, and world branches, then measures historical replay,
+silent equivocation, migration accuracy, defeater recall, context leakage,
+branch contamination, patch rejection, blast-radius recall, packet sufficiency,
+planning value, information-flow leakage, and total governance burden. Strong
+retrieval, graph, ontology/provenance, context-aware, latent-world-model, and
+concept-model baselines are mandatory.
+
+Both campaigns have explicit disconfirmation: retain only mechanisms that beat
+well-tuned simpler systems on a measured frontier after total cost and failure
+denominators. A neat schema, self-consistent receipt, or internally generated
+test suite cannot promote a claim by itself.
 
 ## Interfaces
 
@@ -512,18 +584,24 @@ implementation refinement; empirical obligations stay empirical.
 | `corbens_best_model_possible_project` | Corben's Best Model Possible recurrent-model and mechanism laboratory | local_project_lineage | Metric-origin algebra, representation-capacity gate, retry discipline, and checkpoint-to-output binding. | public-safe source note; no reproduced general model capability |
 | `ext_mem0_2025`, `ext_mlcommons_croissant_1_1_2026`, `ext_inspect_ai_2024`, `ext_agentdojo_2024`, `ext_darwin_godel_machine_2025`, `ext_adas_2024`, `ext_dynamic_compute_recurrent_transformers_2026` | Current memory, dataset, evaluation, security, self-improvement, architecture-search, and adaptive-compute comparators | external_benchmark_infrastructure | Use to expand benchmark/version/evaluator/adaptive-attack and complexity-controlled ratchets while preserving judge, contamination, evaluator-capture, transfer, and generalization limits. | source notes available; no local reproduction or benchmark promotion |
 
+
+Those failures prevent a semantic or model conclusion even though exact-object and byte-count submetrics were informative.
+
 ### Manifest source assignment reconciliation
 
 These rows keep Benchmark Ratchets and Anti-Goodhart Evidence's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
 
 | Source | Intake role | Boundary |
 |---|---|---|
+| `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `coherence_exchange` | Passage-reviewed comparator: The Coherence Exchange. Supports contestable evidence movement through structured claim/evidence units, verification supply chains, audit, fork/exit/contestability language, and governance/accounting frames for knowledge claims. | Reviewed source note only because authenticated connector text is not published here; epistemic-liquidity and exchange metaphors are not implemented economics, external corroboration, security evidence, governance evidence, or benchmark evidence. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_claw_swe_bench_2026` | Passage-reviewed comparator: Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks. Supports binding coding-agent outcomes to a fixed model, harness, workspace, patch extraction, evaluator, runtime budget, and cost rather than attributing a harness result to the model alone. | Primary preprint comparator only; no reported task, score, harness, cost, contamination control, or safety result was reproduced here. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_muse_unlearning_2025` | Passage-reviewed comparator: MUSE: Machine Unlearning Six-Way Evaluation for Language Models. Supports separating memorization, privacy leakage, retained utility, removal-scale behavior, and sequential sustainability instead of using one forgetting score. | No MUSE corpus, method, 7B model, privacy probe, scale test, or sequential deletion request was reproduced by the local small policy network. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_unlearning_benchmarks_weak_2024` | Passage-reviewed comparator: Position: LLM Unlearning Benchmarks are Weak Measures of Progress. Supports treating unlearning benchmark validity, target ambiguity, forget/retain dependence, and benign perturbation robustness as separate evidence burdens. | The position paper raises the interpretation standard but does not validate the local workload or establish influence, privacy, legal erasure, or storage erasure. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_openunlearning_2025` | Passage-reviewed comparator: OpenUnlearning: Accelerating LLM Unlearning via Unified Benchmarking of Methods and Metrics. Supports versioned unlearning methods, standardized execution interfaces, public checkpoints, diverse evaluations, and meta-evaluation of metric faithfulness. | The framework, methods, checkpoints, evaluations, and meta-evaluations were not run; standardized record shape does not establish semantic validity or erasure. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_swe_rebench_v2_2026` | Passage-reviewed comparator: SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale. Adds a current multilingual natural repository-task construction funnel, full-suite executable oracle, per-instance pathology metadata, and setup/clarity ablations that expose why benchmark membership is not construct validity. | The released tasks and automated labels are not locally validated en masse; post-snapshot filtering reduces but does not eliminate contamination, and no local benchmark score is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary
@@ -533,6 +611,80 @@ Benchmarks are pressure surfaces, not truth machines. They become useful when ev
 That pressure changes future behavior only if policy optimization preserves provenance, rollback, and governance gates while learning from rewards, preferences, verifier outputs, and benchmark signals.
 
 The durable rule is that benchmarks should improve memory, not erase it. A good ratchet makes the next system harder to fool and easier to compare; a bad one gives the next system a number to optimize and a story to overclaim. Benchmark ratchets therefore treat each run as a governed evidence event: environment, seed, task, baseline, metric, failure cases, residuals, and downgrade triggers all matter. Anti-Goodhart discipline is not pessimism. It is how the system keeps learning signals useful after models, planners, and policies begin adapting to them. Once benchmarks become ratchets, policy optimization can update behavior without turning every reward into truth or every score into permission.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **74** structured claim atoms in `CF-07`. The
+frozen repository-wide terminal audit records 74 `blocked_after_full_attempt`. Its core
+atom `benchmark-ratchets-and-anti-goodhart-evidence.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `benchmark-ratchets-and-anti-goodhart-evidence` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+::: {.asi-human-only}
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 74 structured claims,
+74 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Full-state update and unlearning causal campaign**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Broad unlearning claim is narrowed with no support promotion; behavioral removal is not influence, privacy, legal, storage, backup, or descendant erasure.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+:::
+
+::: {.asi-ai-only}
+
+### Evidence packet
+
+| Field | Exact chapter boundary |
+|---|---|
+| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-07` minimum family bundle. |
+| Attempted local lanes | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` |
+| Missing or unproved lanes | `normative`, `transfer` |
+| Family-level natural-work or end-to-end bundle | **Full-state update and unlearning causal campaign** (`end_to_end`): One adequate five-seed, seven-arm terminal campaign preserving two prior instrument failures and separate behavioral, influence, privacy, lineage, storage, backup, and descendant axes. |
+| Negative controls | deletion retrain comparator; approximate mitigation arms; 15 rejecting mutations; failure-lineage preservation. |
+| Exact accepted transitions in this chapter | `v1_0_pilot.benchmark_ratchets.no_change` |
+| Core outcome | `blocked_after_full_attempt` at `argument`; no chapter-core promotion. |
+| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
+| Reproduction path | Replay `scripts/validate_p4_m7_update_unlearning_v3.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
+
+### Worked success, failure, and boundary cases
+
+- **Success case:** the family-level bundle passed its own rejecting validator
+  within this exact scope: One adequate five-seed, seven-arm terminal campaign preserving two prior instrument failures and separate behavioral, influence, privacy, lineage, storage, backup, and descendant axes. This is evidence that the family
+  received a competent attempt, not that every claim in this chapter succeeded.
+- **Failure or non-promotion case:** 74 atoms
+  remain blocked and 0 are narrowed. A
+  green family validator cannot fill their missing lanes or raise the core.
+- **Boundary case:** Broad unlearning claim is narrowed with no support promotion; behavioral removal is not influence, privacy, legal, storage, backup, or descendant erasure.
+
+### Argument-exit table
+
+| Atom set | Count | Work performed | Terminal reason and next burden |
+|---|---:|---|---|
+| Core: `benchmark-ratchets-and-anti-goodhart-evidence.core` | 1 | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` | `blocked_after_full_attempt`; missing or unproved: `normative`, `transfer`. |
+| blocked after full attempt | 74 | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` | Missing or unproved lanes across this set: `normative`, `transfer`. These are residual proof obligations, not false claims. |
+
+This table is a disposition map, not a promotion quota. The next valid movement
+is atom-specific evidence that fills the named missing lanes, survives relevant
+negative controls, and enters through an accepted evidence transition. Until
+then, source counts, theorem counts, fixtures, validators, or nearby family
+results cannot be used as substitutes.
+:::
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
 
 ## Handoff
 

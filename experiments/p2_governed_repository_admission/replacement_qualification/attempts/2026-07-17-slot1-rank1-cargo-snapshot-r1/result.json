@@ -1,0 +1,46 @@
+{
+  "schema_version": "asi_stack.p2_cargo_dependency_snapshot_rescue_abort.v1",
+  "recorded_date": "2026-07-17",
+  "attempt_id": "2026-07-17-slot1-rank1-cargo-snapshot-r1",
+  "instance_id": "mitsuhiko__minijinja-794",
+  "state": "aborted_instrument_failure_before_candidate_outcome",
+  "failure_codes": [
+    "whole_extracted_tree_inventory_timeout_after_300_seconds",
+    "uncaught_timeout_left_container_for_explicit_cleanup",
+    "docker_engine_content_size_mislabeled_as_expanded_image_size"
+  ],
+  "completed_before_abort": {
+    "base_image_pulled_by_digest": true,
+    "cargo_lock_and_source_configuration_audited": true,
+    "materialization_a_fetch_completed": true,
+    "materialization_a_sealed": true,
+    "materialization_a_offline_replay_completed": true,
+    "materialization_b_started": false,
+    "candidate_test_arm_started": false
+  },
+  "raw_logs": [
+    {"path": "experiments/p2_governed_repository_admission/replacement_qualification/attempts/2026-07-17-slot1-rank1-cargo-snapshot-r1/pull.log.gz", "sha256": "2158bfae20975f89d0731a7e44392d98bec7f80adf192ae3a0e08df8943ebde8"},
+    {"path": "experiments/p2_governed_repository_admission/replacement_qualification/attempts/2026-07-17-slot1-rank1-cargo-snapshot-r1/pre_network_lock_and_config.log.gz", "sha256": "78a594d59db0049bd76f8632fc048fb8bed8040e8acc562434ea9c8058dd7e90"},
+    {"path": "experiments/p2_governed_repository_admission/replacement_qualification/attempts/2026-07-17-slot1-rank1-cargo-snapshot-r1/materialization_a.log.gz", "sha256": "e5bbfc2097b44f98d8e45bd34823fe9f6f8bad89563427302f028020d78f5a7f"},
+    {"path": "experiments/p2_governed_repository_admission/replacement_qualification/attempts/2026-07-17-slot1-rank1-cargo-snapshot-r1/offline_verify_a.log.gz", "sha256": "770a1e4057bf75f4236712e46b9ec5323634290453518ebc769e1a82773c85e2"}
+  ],
+  "measurement_recovery_allowed": false,
+  "candidate_outcome_opened": false,
+  "candidate_disposition_effect": "none_pending_repaired_rescue",
+  "negative_inference_level": "N0",
+  "claim_effect": "none",
+  "final_pool_selected": false,
+  "final_pool_opened": false,
+  "cleanup": {
+    "orphan_container_removed": true,
+    "derived_image_removed": true,
+    "base_image_removed": true,
+    "docker_images_after_cleanup": 0,
+    "docker_containers_after_cleanup": 0
+  },
+  "next_actions": [
+    "inventory immutable crate archives and verify each against Cargo.lock rather than hashing the extracted source tree",
+    "make timeout cleanup and terminal result writing exception safe",
+    "recalibrate and freeze image-size semantics before any qualification can pass"
+  ]
+}

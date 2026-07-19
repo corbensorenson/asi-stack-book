@@ -1,0 +1,87 @@
+{
+  "schema_version": "asi_stack.p2_sequential_candidate_image_preflight.v1",
+  "recorded_at_utc": "2026-07-17T12:58:23.866806+00:00",
+  "attempt_id": "2026-07-17-slot1-rank5-r1",
+  "claim_id": "p2.governed_natural_repository_change_admission_joint_frontier",
+  "provenance_path": "evidence_quality/p2_slot1_rank5_provenance_preflight.json",
+  "resource_ceiling_path": "evidence_quality/p2_resource_ceiling.json",
+  "slot": 1,
+  "rank": 5,
+  "instance_id": "stellar__rs-soroban-env-1555",
+  "image_ref": "docker.io/swerebenchv2/stellar-rs-soroban-env@sha256:788c4d082d23aba134e6d0f61c89a657cf2ef104c95485f42f87a7cb5377c7f0",
+  "manifest_digest": "sha256:788c4d082d23aba134e6d0f61c89a657cf2ef104c95485f42f87a7cb5377c7f0",
+  "host_free_before_bytes": 65712803840,
+  "task_content_opened": false,
+  "candidate_outcome_opened": false,
+  "final_pool_selected": false,
+  "final_pool_opened": false,
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "state": "n0_instrument_failure",
+  "terminal_code": "unhandled_runner_exception",
+  "terminal_detail": "TimeoutExpired: Command '('docker', 'pull', '--platform', 'linux/amd64', 'docker.io/swerebenchv2/stellar-rs-soroban-env@sha256:788c4d082d23aba134e6d0f61c89a657cf2ef104c95485f42f87a7cb5377c7f0')' timed out after 300 seconds",
+  "cleanup": {
+    "image_removal_exit_code": 0,
+    "image_removal_output_sha256": "3b71854f176dbd3a2b6dbbfce2755417908e85df0ef85ff3c0fa3378bf363772",
+    "stabilization": {
+      "stable": false,
+      "samples": [
+        {
+          "free_bytes": 60021489664,
+          "docker_zero": false
+        },
+        {
+          "free_bytes": 58843574272,
+          "docker_zero": false
+        },
+        {
+          "free_bytes": 59846852608,
+          "docker_zero": false
+        },
+        {
+          "free_bytes": 59845464064,
+          "docker_zero": false
+        },
+        {
+          "free_bytes": 59844796416,
+          "docker_zero": false
+        },
+        {
+          "free_bytes": 60997103616,
+          "docker_zero": false
+        },
+        {
+          "free_bytes": 60993421312,
+          "docker_zero": false
+        },
+        {
+          "free_bytes": 63066370048,
+          "docker_zero": false
+        },
+        {
+          "free_bytes": 65222144000,
+          "docker_zero": false
+        },
+        {
+          "free_bytes": 65215619072,
+          "docker_zero": false
+        },
+        {
+          "free_bytes": 65215070208,
+          "docker_zero": false
+        },
+        {
+          "free_bytes": 65210765312,
+          "docker_zero": false
+        },
+        {
+          "free_bytes": 65213616128,
+          "docker_zero": false
+        }
+      ],
+      "host_free_after_bytes": 65213616128,
+      "host_free_byte_loss": 499187712
+    }
+  },
+  "image_resource_gate_passed": false
+}

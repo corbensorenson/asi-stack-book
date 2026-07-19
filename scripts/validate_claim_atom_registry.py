@@ -29,6 +29,17 @@ CHAPTER_REVIEW_SCHEMA = ROOT / "schemas/claim_chapter_review.schema.json"
 POST_ACTIVATION_EXPANSION_ID = "replaceable-cognitive-substrates-beyond-transformer-monoculture"
 POST_ACTIVATION_FORMAL_TARGETS = {"lean:corrigibility.agency.generic_countermodel_routes"}
 
+def accepted_upward_states() -> dict[str, str]:
+    states: dict[str, str] = {}
+    for path in (ROOT / "evidence_transitions").rglob("*.json"):
+        try:
+            row = load(path)
+        except Exception:
+            continue
+        if row.get("review_status") == "accepted" and row.get("transition_effect") == "upward":
+            states[str(row.get("claim_id"))] = str(row.get("new_support_state"))
+    return states
+
 
 def load(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -118,6 +129,7 @@ def errors(data: dict[str, Any], *, check_generation: bool = True) -> list[str]:
     completed_sweeps = 0
     atoms_by_chapter: dict[str, list[dict[str, Any]]] = {chapter_id: [] for chapter_id in chapter_ids}
     candidates_by_chapter: dict[str, list[dict[str, Any]]] = {chapter_id: [] for chapter_id in chapter_ids}
+    accepted_states = accepted_upward_states()
     for atom in atoms:
         atoms_by_chapter.setdefault(str(atom.get("chapter_id")), []).append(atom)
     for candidate in candidates:
@@ -201,7 +213,7 @@ def errors(data: dict[str, Any], *, check_generation: bool = True) -> list[str]:
         lanes = [row.get("lane") for row in atom.get("required_lanes", [])]
         if len(lanes) != len(set(lanes)):
             out.append(f"{atom_id}: duplicate evidence lanes")
-        if atom.get("support_state") not in {"unsupported", "argument", "deprecated", "refuted"}:
+        if atom.get("support_state") not in {"unsupported", "argument", "deprecated", "refuted"} and accepted_states.get(atom_id) != atom.get("support_state"):
             out.append(f"{atom_id}: support promotion lacks an accepted transition in P1")
         if atom.get("review_state") != "machine_candidate":
             blob = json.dumps(atom, ensure_ascii=False).casefold()

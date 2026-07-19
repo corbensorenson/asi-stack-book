@@ -1,0 +1,65 @@
+{
+  "schema_version": "asi_stack.p2_slot1_rank4_cargo_rescue_diagnosis.v1",
+  "recorded_date": "2026-07-17",
+  "claim_id": "p2.governed_natural_repository_change_admission_joint_frontier",
+  "instance_id": "reubeno__brush-486",
+  "slot": 1,
+  "rank": 4,
+  "attempt_path": "experiments/p2_governed_repository_admission/sequential_qualification/attempts/2026-07-17-slot1-rank4-cargo-snapshot-r1/result.json",
+  "attempt_sha256": "b111f21944897a868fe8376189507173c653aedb9d33d6fd98a29c717c6afea6",
+  "classification": "N0_instrument_failure",
+  "terminal_disposition": "candidate_not_qualified_advance_to_frozen_rank_five",
+  "dependency_snapshot_findings": {
+    "independent_materialization_count": 2,
+    "registry_archive_count_per_materialization": 331,
+    "exact_commit_git_source_file_count_per_materialization": 57,
+    "offline_replay_passed_count": 2,
+    "normalized_inventory_exact_agreement": true,
+    "normalized_inventory_sha256": "ecfc4a4a0d97bc0f0b2482f83a2f4b9b146ea03b991788078ed0ee7bdd8fa70c",
+    "derived_engine_content_size_bytes": [1258133714, 1258133619],
+    "derived_virtual_size_display": ["5.33GB", "5.33GB"]
+  },
+  "instrument_incident": {
+    "phase": "first_baseline_arm",
+    "arm_runtime_before_termination_seconds_approximately": 307,
+    "docker_stats_timeout_seconds": 10,
+    "monitor_thread_exception": "subprocess.TimeoutExpired",
+    "frozen_contract": "monitor_failure_effect=resource_gate_failure",
+    "operator_action": "terminated attempt before further arms and forcibly removed the still-running arm container",
+    "partial_candidate_execution_occurred": true,
+    "usable_arm_result_returned": false,
+    "raw_arm_log_retained": false,
+    "mechanism_outcome_usable": false,
+    "attempt_record_custody_correction": "The immutable runner result says candidate_test_outcome_opened=false because execute_arm never returned. Operationally, the first baseline process ran and emitted unretained output before interruption; custody is therefore conservatively treated as partially opened."
+  },
+  "cleanup_reconciliation": {
+    "attempt_cleanup_stable": false,
+    "attempt_host_free_byte_loss": 10936967168,
+    "cause": "the interrupted arm temporarily retained an untagged derived image after nominal tag removal",
+    "manual_action": "docker image prune -af after confirming no unrelated visible images or containers",
+    "manual_reclaimed_bytes_reported": 1258000000,
+    "final_docker_images": 0,
+    "final_docker_containers": 0,
+    "final_docker_volumes": 0,
+    "final_docker_build_cache_entries": 0
+  },
+  "repair": {
+    "run_p2_gold_preflight_monitor_now_catches_stats_timeouts": true,
+    "monitor_error_count_and_receipts_now_recorded": true,
+    "future_dependency_and_arm_gates_require_zero_monitor_errors": true,
+    "same_candidate_rerun_after_partial_outcome": false,
+    "acceptance_threshold_relaxed": false
+  },
+  "policy_effect": {
+    "next_action": "open frozen rank five through provenance and resource gates",
+    "claim_support_effect": "none",
+    "claim_refutation_effect": "none",
+    "final_pool_effect": "none"
+  },
+  "non_claims": [
+    "The successful dependency snapshot does not qualify the task after a failed outcome monitor.",
+    "The partially executed baseline is not usable as mechanism evidence and is not compared with a missing gold arm.",
+    "The candidate is not rerun after partial outcome exposure.",
+    "The held-out final pool remains unselected and unopened."
+  ]
+}

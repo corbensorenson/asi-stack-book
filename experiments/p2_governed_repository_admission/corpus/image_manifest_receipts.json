@@ -1,0 +1,197 @@
+{
+  "schema_version": "asi_stack.p2_image_manifest_receipts.v1",
+  "recorded_date": "2026-07-17",
+  "state": "all_development_manifests_resolve_gold_execution_pending",
+  "image_count": 12,
+  "all_available": true,
+  "platforms": [
+    "linux/amd64"
+  ],
+  "total_unshared_compressed_layer_bytes": 11849430488,
+  "resource_boundary": "unshared layer sum is a conservative upper bound; actual pulls may share layers; manifest resolution does not measure expanded disk, emulation, runtime, cleanup, or gold-test success",
+  "final_pool_selected": false,
+  "final_pool_opened": false,
+  "support_state_effect": "none",
+  "receipts": [
+    {
+      "instance_id": "aleph-alpha__ts-rs-422",
+      "image_name": "docker.io/swerebenchv2/aleph-alpha-ts-rs:422-3bd4124",
+      "manifest_digest": "sha256:5b1619584271c59a2842323b2f6190daa686255f9e31ce31490f608716f69502",
+      "manifest_size_bytes": 1908,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "compressed_layer_bytes": 1119005074,
+      "layer_count": 10,
+      "raw_manifest_sha256": "5b1619584271c59a2842323b2f6190daa686255f9e31ce31490f608716f69502",
+      "observed_date": "2026-07-17",
+      "manifest_available": true
+    },
+    {
+      "instance_id": "apiflask__apiflask-659",
+      "image_name": "docker.io/swerebenchv2/apiflask-apiflask:659-185d377",
+      "manifest_digest": "sha256:41009f94584cfe05d2ff50f9028de3ce09c262f91d0e778c6dc7779edb0acb07",
+      "manifest_size_bytes": 2061,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "compressed_layer_bytes": 790530951,
+      "layer_count": 11,
+      "raw_manifest_sha256": "41009f94584cfe05d2ff50f9028de3ce09c262f91d0e778c6dc7779edb0acb07",
+      "observed_date": "2026-07-17",
+      "manifest_available": true
+    },
+    {
+      "instance_id": "behat__gherkin-343",
+      "image_name": "docker.io/swerebenchv2/behat-gherkin:343-e522894",
+      "manifest_digest": "sha256:aabc4489ca4c238597a2aa4f4110d92dc2eb35cf15cb62eab568976729ab45b6",
+      "manifest_size_bytes": 2870,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "compressed_layer_bytes": 790292519,
+      "layer_count": 16,
+      "raw_manifest_sha256": "aabc4489ca4c238597a2aa4f4110d92dc2eb35cf15cb62eab568976729ab45b6",
+      "observed_date": "2026-07-17",
+      "manifest_available": true
+    },
+    {
+      "instance_id": "compose-spec__compose-go-792",
+      "image_name": "docker.io/swerebenchv2/compose-spec-compose-go:792-e07723c",
+      "manifest_digest": "sha256:b19e97ccc21b99f6fb06cc7047853cfb05bb037231a3b577355093ad3cfc6e2c",
+      "manifest_size_bytes": 1573,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "compressed_layer_bytes": 949079017,
+      "layer_count": 8,
+      "raw_manifest_sha256": "b19e97ccc21b99f6fb06cc7047853cfb05bb037231a3b577355093ad3cfc6e2c",
+      "observed_date": "2026-07-17",
+      "manifest_available": true
+    },
+    {
+      "instance_id": "dynaconf__dynaconf-1293",
+      "image_name": "docker.io/swerebenchv2/dynaconf-dynaconf:1293-934a8f8",
+      "manifest_digest": "sha256:634db5b6cdab3e2814031df7d371cf890b5c4b1412a045354b06a15e51ef58dd",
+      "manifest_size_bytes": 2061,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "compressed_layer_bytes": 847526875,
+      "layer_count": 11,
+      "raw_manifest_sha256": "634db5b6cdab3e2814031df7d371cf890b5c4b1412a045354b06a15e51ef58dd",
+      "observed_date": "2026-07-17",
+      "manifest_available": true
+    },
+    {
+      "instance_id": "gitleaks__gitleaks-1845",
+      "image_name": "docker.io/swerebenchv2/gitleaks-gitleaks:1845-4451b45",
+      "manifest_digest": "sha256:d638ae109739132f6aff1b02baacf16a8f7cac47bf7c1b9518451e1195a40df3",
+      "manifest_size_bytes": 1573,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "compressed_layer_bytes": 951542081,
+      "layer_count": 8,
+      "raw_manifest_sha256": "d638ae109739132f6aff1b02baacf16a8f7cac47bf7c1b9518451e1195a40df3",
+      "observed_date": "2026-07-17",
+      "manifest_available": true
+    },
+    {
+      "instance_id": "google__yamlfmt-259",
+      "image_name": "docker.io/swerebenchv2/google-yamlfmt:259-bad3941",
+      "manifest_digest": "sha256:b2e12e371a9801cca0ca13fa4383e3bde099db7350e14a4a065670a03a730fde",
+      "manifest_size_bytes": 1573,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "compressed_layer_bytes": 1085519807,
+      "layer_count": 8,
+      "raw_manifest_sha256": "b2e12e371a9801cca0ca13fa4383e3bde099db7350e14a4a065670a03a730fde",
+      "observed_date": "2026-07-17",
+      "manifest_available": true
+    },
+    {
+      "instance_id": "keithamus__sort-package-json-361",
+      "image_name": "docker.io/swerebenchv2/keithamus-sort-package-json:361-27e4b7b",
+      "manifest_digest": "sha256:ca4d894abe97aecadf4222c8a5ea4cdd66c0cbac3f5ea96c05df2adf01b606aa",
+      "manifest_size_bytes": 2222,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "compressed_layer_bytes": 1178591410,
+      "layer_count": 12,
+      "raw_manifest_sha256": "ca4d894abe97aecadf4222c8a5ea4cdd66c0cbac3f5ea96c05df2adf01b606aa",
+      "observed_date": "2026-07-17",
+      "manifest_available": true
+    },
+    {
+      "instance_id": "more-itertools__more-itertools-1028",
+      "image_name": "docker.io/swerebenchv2/more-itertools-more-itertools:1028-c834d6e",
+      "manifest_digest": "sha256:c8e722c90178ba0b71406b8dbf881996b738dc50f42d2c82f12edbb108e3f57e",
+      "manifest_size_bytes": 2062,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "compressed_layer_bytes": 861247234,
+      "layer_count": 11,
+      "raw_manifest_sha256": "c8e722c90178ba0b71406b8dbf881996b738dc50f42d2c82f12edbb108e3f57e",
+      "observed_date": "2026-07-17",
+      "manifest_available": true
+    },
+    {
+      "instance_id": "quantecon__quantecon.py-769",
+      "image_name": "docker.io/swerebenchv2/quantecon-quantecon.py:769-34f4a47",
+      "manifest_digest": "sha256:981a457c012d4c11f5a3735c6d68ebed5017327146333697b455a89ce2f00fe4",
+      "manifest_size_bytes": 2062,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "compressed_layer_bytes": 1081996149,
+      "layer_count": 11,
+      "raw_manifest_sha256": "981a457c012d4c11f5a3735c6d68ebed5017327146333697b455a89ce2f00fe4",
+      "observed_date": "2026-07-17",
+      "manifest_available": true
+    },
+    {
+      "instance_id": "thealgorithms__java-6333",
+      "image_name": "docker.io/swerebenchv2/thealgorithms-java:6333-ebf5c3d",
+      "manifest_digest": "sha256:805cf7b87d0e1aad635fa9d1942f9b895b69cc921c1ba263750855c47d5c5661",
+      "manifest_size_bytes": 2872,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "compressed_layer_bytes": 994161467,
+      "layer_count": 16,
+      "raw_manifest_sha256": "805cf7b87d0e1aad635fa9d1942f9b895b69cc921c1ba263750855c47d5c5661",
+      "observed_date": "2026-07-17",
+      "manifest_available": true
+    },
+    {
+      "instance_id": "true-myth__true-myth-1051",
+      "image_name": "docker.io/swerebenchv2/true-myth-true-myth:1051-93bf517",
+      "manifest_digest": "sha256:104003a7c331abdfc686932a0d3e24a3584472ce24b0385604f69451acc87583",
+      "manifest_size_bytes": 2222,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "compressed_layer_bytes": 1199937904,
+      "layer_count": 12,
+      "raw_manifest_sha256": "104003a7c331abdfc686932a0d3e24a3584472ce24b0385604f69451acc87583",
+      "observed_date": "2026-07-17",
+      "manifest_available": true
+    }
+  ]
+}

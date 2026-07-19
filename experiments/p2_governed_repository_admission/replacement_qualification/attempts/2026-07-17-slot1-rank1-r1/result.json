@@ -1,0 +1,77 @@
+{
+  "schema_version": "asi_stack.p2_replacement_task_qualification.v1",
+  "recorded_at_utc": "2026-07-17T11:32:00.048634+00:00",
+  "attempt_id": "2026-07-17-slot1-rank1-r1",
+  "instance_id": "mitsuhiko__minijinja-794",
+  "slot": 1,
+  "rank": 1,
+  "state": "n0_dependency_failure",
+  "source_parquet_sha256": "0e0bf9355f892ad74ae98d4e1c404f39fd6654a8e351ee3e6ab162e4a64cd3ad",
+  "upstream_harness_commit": "c71902a8cf8d2b725f63d51f199f4d3e56f68d2d",
+  "independent_evaluator_sha256": "fe0220e071c4b89882a063552314370fd24da659bbf42ab473c083b538c269ff",
+  "image_ref": "docker.io/swerebenchv2/mitsuhiko-minijinja@sha256:46609754e311da708ed5e7498bf6ba854f63718583234e81690a4c78dca5c76e",
+  "manifest_digest": "sha256:46609754e311da708ed5e7498bf6ba854f63718583234e81690a4c78dca5c76e",
+  "host_free_before_bytes": 78581420032,
+  "runtime_network": "none",
+  "dependency_network": "none",
+  "repetitions_per_arm": 2,
+  "runs": [],
+  "task_content_opened": true,
+  "candidate_outcome_opened": false,
+  "final_pool_selected": false,
+  "final_pool_opened": false,
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "pull": {
+    "exit_code": 0,
+    "wall_seconds": 160.603959,
+    "log_path": "experiments/p2_governed_repository_admission/replacement_qualification/attempts/2026-07-17-slot1-rank1-r1/pull.log.gz",
+    "log_sha256": "fac2ed466e31f43c6fe489bafcf20b6c9ce7ca92f7c65f310ad1991e0f50574c"
+  },
+  "image_inspect": {
+    "exit_code": 0,
+    "size_bytes": 1123009785,
+    "architecture": "amd64",
+    "os": "linux",
+    "repo_digests": [
+      "swerebenchv2/mitsuhiko-minijinja@sha256:46609754e311da708ed5e7498bf6ba854f63718583234e81690a4c78dca5c76e"
+    ]
+  },
+  "dependency_setup": {
+    "command": "cargo fetch --locked --offline",
+    "network": "none",
+    "task_patch_applied": false,
+    "exit_code": 101,
+    "wall_seconds": 6.493681,
+    "resource_monitor": {
+      "sample_interval_seconds": 1.0,
+      "sample_count": 2,
+      "peak_memory_bytes": 11597250,
+      "max_cpu_percent": 79.92,
+      "integrated_cpu_seconds_estimate": 0.7992,
+      "peak_pids": 2,
+      "timed_out": false,
+      "monitor_errors_fail_claim_gate": true
+    },
+    "container_cleanup_exit_code": 0,
+    "log_path": "experiments/p2_governed_repository_admission/replacement_qualification/attempts/2026-07-17-slot1-rank1-r1/dependency_setup.log.gz",
+    "log_sha256": "d8c1ee5fa12359222b14c27e6d1837c95674b91e8457f947337615f202403759",
+    "gates": {
+      "exit_zero": false,
+      "within_seconds": true,
+      "not_timed_out": true,
+      "peak_memory_within_bytes": true,
+      "peak_pids_within_count": true
+    }
+  },
+  "cleanup": {
+    "exit_code": 0,
+    "output_sha256": "d76a0b70b5d31795d4f2c1abbe747b034b7ed7d73d9ec541fd2916840d273a57"
+  },
+  "terminal_code": "offline_dependency_gate_failure",
+  "terminal_detail": "offline unpatched dependency setup failed",
+  "host_free_after_bytes": 71831560192,
+  "host_free_byte_loss": 6749859840,
+  "all_runs_pass": false,
+  "qualified_replacement": false
+}

@@ -1,0 +1,83 @@
+{
+  "transition_id": "post_v2_3.p5.authority_no_silent_expansion.promote",
+  "claim_id": "system-boundaries-and-authority.invariant.001",
+  "claim_surface_refs": [
+    "docs/p5_mandatory_terminal_batch.md",
+    "chapters/system-boundaries-and-authority.qmd"
+  ],
+  "claim_record_refs": [
+    "experiments/p5_terminal_batch/design.json",
+    "experiments/p5_terminal_batch/results/result.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "synthetic-test-backed",
+  "transition_effect": "upward",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Within one finite sequential grant-to-effect model using trusted identities and receipts, all 38 authority mutations were rejected, two pre-effect denials remained observable, and zero governed unsafe releases occurred.",
+  "evidence_roles": [
+    "prospectively frozen terminal audit",
+    "finite reachable authority model",
+    "mutation pressure",
+    "independent local consumer"
+  ],
+  "transition_reason": "The exact subordinate invariant survived every declared widening mutation over the modeled grant, principal, operation, target, ceiling, epoch, expiry, remaining-use, approval, and dispatch surfaces.",
+  "required_artifacts": [
+    "authenticated identities",
+    "trusted clocks",
+    "deployed complete mediation",
+    "concurrent distributed revocation",
+    "open-world effect inventory",
+    "independent security assessment"
+  ],
+  "artifact_refs": [
+    "experiments/authority_effect_refinement/results/2026-07-15-local.json",
+    "experiments/p5_terminal_batch/results/result.json",
+    "scripts/validate_authority_effect_refinement.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/p5_mandatory_terminal_batch.md",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#system-boundaries-and-authoritycore",
+    "evidence_quality/claim_atom_registry.json",
+    "evidence_quality/claim_atom_reviews.json"
+  ],
+  "verification_command": "python3 scripts/validate_p5_terminal_batch.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "identities and receipts are trusted inputs",
+    "sequential local model only",
+    "no deployed enforcement or distributed revocation"
+  ],
+  "negative_evidence_refs": [
+    "docs/p5_mandatory_terminal_batch.md",
+    "experiments/p5_terminal_batch/results/result.json"
+  ],
+  "downgrade_triggers": [
+    "mutation replay failure",
+    "unmodeled widening described as covered",
+    "trusted inputs described as authenticated enforcement",
+    "chapter-core promotion"
+  ],
+  "promotion_burden": "Repeat with authenticated principals, trusted time, complete effect mediation, concurrent and partitioned revocation, live adapters, independent attacks, useful-throughput accounting, and transfer.",
+  "limitations": [
+    "finite sequential model",
+    "trusted identities and receipts",
+    "local effect only",
+    "no hardware or deployed enforcement"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Author-directed Codex P5 terminal-batch review"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; no external human review requested or claimed",
+  "acceptance_blockers": [],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-16---p5-mandatory-three-atom-terminal-batch",
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "non_claims": [
+    "does not promote any chapter core claim",
+    "does not establish deployed authorization, complete mediation, security, distributed revocation, or open-world safety",
+    "does not establish SOTA, AGI, ASI, publication, release, or deployment readiness"
+  ]
+}

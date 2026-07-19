@@ -1,0 +1,52 @@
+{
+  "schema_version": "asi_stack.p4_m7_preflight.v3",
+  "run_id": "p4-m7-qwen25-05b-structured-fusion-003-preflight",
+  "protocol_outcome": "instrument_adequate",
+  "training_count": 180,
+  "general_validation_count": 60,
+  "deletion_like_validation_count": 60,
+  "ablation": {
+    "transformer_only_linear": {
+      "general": 0.76666665,
+      "deletion_like": 0.69999999
+    },
+    "structured_only_nonlinear": {
+      "general": 1.0,
+      "deletion_like": 1.0
+    },
+    "fused_nonlinear": {
+      "general": 1.0,
+      "deletion_like": 1.0
+    }
+  },
+  "model": {
+    "repository": "Qwen/Qwen2.5-Coder-0.5B-Instruct",
+    "snapshot_commit": "ea3f2471cf1b1f0db85067f1ef93848e38e88c25",
+    "file_sha256": {
+      "config.json": "b1e58593cd31852f7da5c2fc31ddf6135b9c066c0fd9177a4bbe95717083adff",
+      "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "tokenizer_config.json": "959e7f1d9a1b7641a6d6ce05ca97b75c7894fcb66cbe5a040406458fb1128ee4",
+      "model.safetensors": "f9523886352217ded3aeeef552b381af79d568c6d49a4b9e423288cea56b0a44"
+    },
+    "row_count": 300,
+    "qwen_size": 896,
+    "fused_size": 912,
+    "finite": true,
+    "mean_feature_variance": 7.67629e-05,
+    "wall_seconds": 29.381732,
+    "device": "cpu",
+    "dtype": "float32",
+    "pooling": "L2-normalized attention-masked mean"
+  },
+  "negative_controls": {
+    "v1_failure_retained": true,
+    "v2_failure_retained": true,
+    "structured_vector_has_no_label_field": true,
+    "nonfinite_feature_detected": true,
+    "privacy_advantage_direction_invariant": true,
+    "retained_evidence_blocks_total_erasure": true
+  },
+  "heldout_opened": true,
+  "claim_outcome": "not_applicable_instrument_only",
+  "support_state_effect": "none"
+}

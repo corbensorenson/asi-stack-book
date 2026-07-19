@@ -1,0 +1,47 @@
+{
+  "schema_version": "asi_stack.x_article_release_disposition.v1",
+  "record_type": "x_article_synopsis_ready_not_published",
+  "record_date": "2026-07-16",
+  "roadmap": "docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md",
+  "priority": "P9",
+  "milestones": [
+    "M12",
+    "M13"
+  ],
+  "decision": "ready_not_published_unpublished_x_draft_exists",
+  "manifest": {
+    "path": "editions/x_article/manifest.json",
+    "bytes": 5866,
+    "sha256": "b99e0d33e568b7b4059c0f6f10bfacfbf782a07386e604585708f783dcdf5b88"
+  },
+  "article": {
+    "path": "editions/x_article/asi_stack_synopsis.md",
+    "bytes": 36975,
+    "sha256": "441ffef7f66423cc83c0efb4dae3b57707e1eececcac4f557e8a05d462a82ab2"
+  },
+  "header": {
+    "path": "editions/x_article/asi_stack_synopsis_header.png",
+    "bytes": 1860215,
+    "sha256": "514aac0476e20aa87796a0855c5b031622ce4291ae514e47dd0de74f83b2300e"
+  },
+  "draft_id": "2077875347220041728",
+  "draft_url": "https://x.com/compose/articles/edit/2077875347220041728",
+  "public_article_url": null,
+  "publish_action_taken": false,
+  "publication_authority": "none",
+  "publication_effect": "none",
+  "support_state_effect": "none",
+  "platform_residuals": [
+    "The canonical source is Markdown; the compatibility draft retained heading text but not Markdown heading or emphasis semantics after plain-text import.",
+    "The live Article header editor exposed crop and remove controls but no image-description field, so platform header alt-text entry and readback could not be performed.",
+    "Audience controls were not inspected because doing so requires opening the publication flow; publication was not authorized.",
+    "The observed composer behavior is dated and may change."
+  ],
+  "successor": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
+  "non_claims": [
+    "This derivative is not canonical claim, source, proof, experiment, or release authority.",
+    "An unpublished X draft is not a public Article, deployment, endorsement, or license grant.",
+    "Composer acceptance and image preview do not prove article accuracy or book claims.",
+    "No chapter-core support state changed."
+  ]
+}

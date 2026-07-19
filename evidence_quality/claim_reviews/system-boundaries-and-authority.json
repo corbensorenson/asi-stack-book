@@ -294,6 +294,9 @@
     },
     "system-boundaries-and-authority.invariant.001": {
       "proposition_type": "formal",
+      "support_state": "synthetic-test-backed",
+      "current_disposition": "promoted_at_bounded_scope",
+      "terminal_disposition": "promoted_at_bounded_scope",
       "assumptions": ["Authority states have a declared partial order and every widening edge requires an authenticated governance grant."],
       "dependencies": [],
       "strongest_counterclaim": "Authority dimensions are not totally comparable, and legitimate dynamic widening cannot always wait for explicit governance.",
@@ -303,7 +306,9 @@
         {"lane": "formal", "necessity": "Check monotonicity and explicit widening edges."},
         {"lane": "executable", "necessity": "Mutation-test every widening dimension and consumer."}
       ],
-      "acceptance_criteria": ["All ungranted widening mutations fail, authorized widening is explicit and versioned, and incomparable dimensions route to review rather than silent admission."]
+      "acceptance_criteria": ["All ungranted widening mutations fail, authorized widening is explicit and versioned, and incomparable dimensions route to review rather than silent admission."],
+      "reproduction": {"command": "python3 scripts/validate_p5_terminal_batch.py", "environment_lock": "Finite sequential grant-to-effect model, 2026-07-16", "artifact_digest": "experiments/p5_terminal_batch/results/result.json", "evaluator_identity": "separate local P5 terminal-batch evaluator"},
+      "residual": {"owner": "system-boundaries-and-authority", "next_unblocking_condition": "Authenticated identity, trusted time, deployed complete mediation, concurrent distributed revocation, independent attacks, and transfer."}
     },
     "system-boundaries-and-authority.invariant.002": {
       "proposition_type": "formal",

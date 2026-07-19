@@ -1,0 +1,200 @@
+{
+  "schema_version": "asi_stack.p8_reader_format_review.v1",
+  "edition_id": "asi-stack-reader-v2.2-evidence-freeze",
+  "formats": {
+    "html": {
+      "state": "approved_exact_local_artifact_not_published",
+      "artifact": {
+        "path": "editions/reader_manuscript/v2_2/artifacts/asi-stack-reader-v2.2-html.zip",
+        "bytes": 4803154,
+        "sha256": "7ceedcbec7363e1c1ebc2d62b081e192cb066fbad7cd8dc30c723969e2886821"
+      },
+      "inspection": {
+        "html_pages": 60,
+        "chapter_entry_pages": 55,
+        "browser_page_view_pairs": 120,
+        "browser_failures": 0,
+        "accessibility_tree_page_view_pairs": 120,
+        "accessibility_tree_failures": 0,
+        "keyboard_page_view_pairs": 120,
+        "keyboard_trap_candidates": 0,
+        "wcag_preparation_page_view_pairs": 120,
+        "contrast_failure_samples": 0,
+        "minimum_contrast_ratio": 4.69
+      },
+      "boundary": "Automated local browser, accessibility-tree, keyboard, and WCAG-preparation evidence; not screen-reader, device, independent-human, or legal WCAG certification."
+    },
+    "epub": {
+      "state": "bounded_local_application_inspection_not_release_approved",
+      "artifact": {
+        "path": "editions/reader_manuscript/v2_2/artifacts/asi-stack-reader-v2.2.epub",
+        "bytes": 10567527,
+        "sha256": "7264862f21ce4c1ea029d44966cc988840ab36e8275465ea363ef9707f6e7fb0"
+      },
+      "structural_inspection": {
+        "zip_integrity": true,
+        "mimetype_first_and_uncompressed": true,
+        "entry_count": 151,
+        "xhtml_entry_count": 63,
+        "image_entry_count": 82
+      },
+      "application_inspection": {
+        "application": "Apple Books",
+        "observed": [
+          "exact artifact imported",
+          "cover opened",
+          "Preface text rendered",
+          "forward navigation worked",
+          "accessibility tree exposed heading and body text"
+        ],
+        "scope": "bounded author-run local inspection"
+      },
+      "boundary": "Not a complete device, assistive-technology, screen-reader, or distribution review."
+    },
+    "docx": {
+      "state": "built_and_fully_raster_inspected_with_layout_residual_not_release_approved",
+      "artifact": {
+        "path": "editions/reader_manuscript/v2_2/artifacts/asi-stack-reader-v2.2.docx",
+        "bytes": 8596867,
+        "sha256": "512b054a7afcc53423a3d7efc55826c48f722a9b159dd3620eaece1863b56371"
+      },
+      "structural_inspection": {
+        "zip_integrity": true,
+        "entry_count": 97,
+        "media_entry_count": 81,
+        "paragraph_marker_count": 30633
+      },
+      "raster_inspection": {
+        "pages": 726,
+        "contact_sheets": 16,
+        "blank_pages": [],
+        "low_ink_pages": [
+          6
+        ],
+        "outer_edge_ink_pages": [],
+        "all_contact_sheets_visually_inspected": true
+      },
+      "residual": "Page 6 contains an awkward near-empty figure break before the following diagram.",
+      "boundary": "Not inspected in Microsoft Word and not approved for public release."
+    },
+    "pdf": {
+      "state": "built_but_layout_failed_not_release_approved",
+      "artifact": {
+        "path": "editions/reader_manuscript/v2_2/artifacts/asi-stack-reader-v2.2.pdf",
+        "bytes": 11530452,
+        "sha256": "0fb3b95209f50ceee7d20ef70599d7bbf5c987430ba79ea541f9928f1aae9c97"
+      },
+      "structural_inspection": {
+        "pages": 912,
+        "tagged_pdf": false,
+        "parseable": true
+      },
+      "raster_inspection": {
+        "pages": 912,
+        "contact_sheets": 19,
+        "blank_pages": [
+          47,
+          697
+        ],
+        "low_ink_pages": [
+          1,
+          47,
+          697,
+          912
+        ],
+        "outer_edge_ink_pages": [
+          48,
+          50,
+          59,
+          69,
+          72,
+          82,
+          94,
+          97,
+          108,
+          122,
+          135,
+          147,
+          159,
+          171,
+          184,
+          202,
+          219,
+          234,
+          235,
+          246,
+          262,
+          275,
+          286,
+          301,
+          316,
+          328,
+          331,
+          341,
+          354,
+          365,
+          376,
+          392,
+          394,
+          410,
+          423,
+          437,
+          440,
+          461,
+          472,
+          473,
+          485,
+          500,
+          501,
+          503,
+          508,
+          517,
+          518,
+          531,
+          550,
+          564,
+          566,
+          572,
+          581,
+          594,
+          604,
+          616,
+          617,
+          618,
+          629,
+          638,
+          641,
+          652,
+          666,
+          684,
+          695,
+          712,
+          728,
+          741,
+          756,
+          767,
+          777,
+          786
+        ],
+        "all_contact_sheets_visually_inspected": true,
+        "confirmed_layout_failures": [
+          "Page 48 architecture diagram is cut across the page/bottom boundary.",
+          "Page 50 diagram extends beyond the right page edge."
+        ]
+      },
+      "application_inspection": {
+        "application": "Preview",
+        "state": "blocked",
+        "reason": "computer-use application bridge timed out twice"
+      },
+      "boundary": "The artifact is evidence of a failed PDF attempt, not a releasable PDF."
+    },
+    "audio": {
+      "state": "not_selected_not_generated"
+    },
+    "embedded_audio": {
+      "state": "not_selected_not_generated"
+    }
+  },
+  "support_state_effect": "none"
+}

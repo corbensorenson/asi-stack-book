@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/security-kernel-and-digital-scifs.qmd",
     "structured_atoms_reviewed": 66,
-    "prose_candidates_adjudicated": 50,
+    "prose_candidates_adjudicated": 51,
     "unowned_material_claims": 0,
     "review_note": "Reviewed the complete chapter, all sixteen assigned source notes and mapping limits, the eleven-field Authority Use Receipt schema and 3-valid/8-invalid corpus, the 2-valid/6-invalid SCIF commit probe, the 6-valid/7-invalid Resource Budget corpus and its security-cost control, all 22 SecurityKernel theorem declarations under four manifest targets, the post-v2.1 36-transaction governed-work outcome, every manifest atom, every prose scanner candidate, the sequence diagram, test plan, source crosswalk, summary, and handoff. The sweep replaced a generic handle-and-compartment argument with a versioned threat-model and authority-use transaction; separated literal-secret exposure from semantic inference and authority abuse, handles from enforced leases, sanitization from declassification, SCIF naming from declared isolation grade, record validity from complete mediation, zeroization receipts from physical erasure, revocation from recovery and compensation, auditability from privacy, nominal role separation from dependency independence, fail-closed behavior from useful security, and finite proof from runtime refinement; installed strong comparators, multi-asset adversarial workloads, joint metrics, causal ablations, independent replication, transfer, and explicit promotion/refutation gates; and preserved zero chapter-core support effect."
   },
@@ -220,6 +220,10 @@
     "security-kernel-and-digital-scifs.prose.8ccfea94eb82": {
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrapped mature-endpoint or current-result boundary already governed by structured chapter atoms; it adds no independent material claim."
+    },
+    "security-kernel-and-digital-scifs.prose.270ea9ecb81b": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports the frozen Campaign 6 attack failure and its exact non-claim boundary; it adds no independent security proposition."
     }
   },
   "non_claims": [

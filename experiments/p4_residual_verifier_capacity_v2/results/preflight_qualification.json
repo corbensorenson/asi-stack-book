@@ -1,0 +1,13 @@
+{
+  "schema_version": "asi_stack.p4_m8_residual_verifier_qualification.v2",
+  "protocol_outcome": "instrument_inadequate",
+  "heldout_opened": false,
+  "preflight_result_path": "experiments/p4_residual_verifier_capacity_v2/results/preflight_result.json",
+  "preflight_result_sha256": "662e9ac8dfe2e7080c762a9e91c0b0b829fd61d1bc6f8cb145e7d92720fe50c0",
+  "gate_values": {
+    "structured_clean_release_rate": 0.0,
+    "structured_terminal_eligibility_accuracy": 0.5,
+    "structured_residual_recall": 1.0,
+    "structured_false_reassurance": 0
+  }
+}

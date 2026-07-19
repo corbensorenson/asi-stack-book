@@ -12,6 +12,7 @@ primary_sources:
   - "ext_s4_2022"
   - "ext_mamba2_ssd_2024"
   - "ext_mamba3_2026"
+  - "ext_gated_deltanet2_2026"
   - "ext_hyperscale_lottery_2026"
   - "ext_gated_deltanet_2024"
   - "ext_jamba_2024"
@@ -47,6 +48,7 @@ open_evidence_gaps:
   - "No matched architecture tournament, natural workload, reproduction, transfer, or hardware-aware lifecycle-cost packet has run."
   - "No OneCell implementation, frozen-core ratchet, verified abstraction learner, or hidden-complexity ablation exists."
   - "No governed architectural-RSI lifecycle trace or real checkpoint-translation refinement has been completed."
+  - "Campaign 5 executes the typed observation/world/belief/prediction/intervention/effect interface with a non-neural Bayesian count-table substrate in two finite authored environments; it does not establish substrate superiority, neural world modeling, open-world transfer, or this chapter core."
 ---
 
 ## Chapter status
@@ -58,7 +60,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
 | Last updated | 2026-07-15 |
-| Primary source records | 34 bounded assignments spanning two author-intent conversations; dense attention; S4 and Mamba/SSD through Mamba-3; an edge-hardware SSM counterstudy; Gated DeltaNet; Jamba; the release-day Inkling hybrid; graph message passing; long convolution; recurrent, tiny-recursive, test-time-memory, external-memory, continuous-time, KAN, and program-learning comparators; two independent TRM pressure tests; two current recurrence-versus-addressable-memory studies; and the existing SCF/RMI/benchmark sources. |
+| Primary source records | 35 bounded assignments spanning two author-intent conversations; dense attention; S4 and Mamba/SSD through Mamba-3; Gated DeltaNet-2 as the dated reported recurrent frontier for its exact envelope; an edge-hardware SSM counterstudy; Gated DeltaNet; Jamba; the release-day Inkling hybrid; graph message passing; long convolution; recurrent, tiny-recursive, test-time-memory, external-memory, continuous-time, KAN, and program-learning comparators; two independent TRM pressure tests; two current recurrence-versus-addressable-memory studies; and the existing SCF/RMI/benchmark sources. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | All 34 assigned records have source notes and reviewed, bounded claim mappings. The two public shares are author-intent inputs; the architecture sources are external comparators. No architecture result was imported as local evidence. |
@@ -236,8 +238,14 @@ They show why the stack must describe memory and compute obligations instead of
 promoting labels.
 
 S4 supplies a foundational structured-state-space lineage before Mamba. Mamba-3
-then reports that state tracking and realized hardware efficiency remain active
-problems even for theoretically linear models. A separate 2026 edge-hardware
+adds revised discretization, complex-valued state updates, and MIMO selective
+state-space mechanisms. The dated P6 refresh found a newer claimed frontier
+inside a narrower exact envelope: Gated DeltaNet-2 separates erase and write
+gates and reports the strongest aggregate result among its Mamba-2, Gated
+DeltaNet, KDA, Mamba-3, and Gated DeltaNet-2 variants at 1.3B parameters trained
+on 100B FineWeb-Edu tokens. That author-reported result changes the strongest
+comparator for that envelope, not the book's evidence state; the official CUDA-
+scale result was not locally reproduced. A separate 2026 edge-hardware
 study reports latency regressions for its tested Mamba-3 configurations relative
 to earlier Mamba variants, showing why cloud throughput, device latency, memory,
 and energy must be reported separately. That result is one unreproduced preprint
@@ -430,6 +438,35 @@ Designing the candidate to lose cleanly is a feature. A negative result would
 still tell the stack which functions cannot be compressed into a small shared
 transition cell and which interfaces a future substrate must expose.
 
+### The interface survives one non-Transformer implementation
+
+Campaign 5 exercises the typed-lane idea with intentionally ordinary internals:
+a Bayesian count-table substrate rather than a Transformer or a neural latent
+world model. Across two finite partially observable environments, it consumed
+persistent entity identity and delivered observations; maintained a separate
+belief over three hidden states; predicted state and action effects; requested
+bounded probes and interventions; escalated uncertainty; learned only after
+the reference effect was revealed; and consolidated versioned rules with
+replacement and rollback receipts.
+
+That is a small but useful architectural result. The operational shell did not
+depend on attention, tokens, or a particular learned backbone. The same record
+types could in principle carry a Transformer, state-space model, JEPA-style
+predictor, recurrent cell, program, graph, or hybrid. What passed was the
+interface and one finite implementation—not the claim that all substrates are
+interchangeable or that the count-table agent is competitive.
+
+The governed path passed its frozen baseline gates in both environments and all
+six aggregate ablation directions, but the active-information effect differed
+by environment and shift detection remained weak. Exact identity binding in
+the trace is plumbing, not learned object permanence. Exact replacement and
+rollback are state-management results, not proof of architectural RSI.
+
+The accepted evidence is a bounded non-core `synthetic-test-backed` transition.
+It does not promote the substrate-adoption claim, defeat a current
+Transformer baseline, train a neural world model, establish natural-task
+utility, or support open-world, deployment, SOTA, AGI, or ASI conclusions.
+
 ## Mechanism
 
 The mechanism begins with a typed request that fixes task, consumer, context,
@@ -494,6 +531,24 @@ computational affordance, but every kernel converges on the same proposal,
 authority, evidence, fallback, evaluation, and lifecycle gates. Architectural
 RSI therefore changes implementations through reviewable state transitions; it
 does not let a candidate kernel approve its own effects or promotion.
+
+### Neural capability objects as substrate-neutral link units
+
+Deterministic Capability Compilation gives heterogeneous cognition a proposed
+link unit above architecture families. An NCO advertises a capability field,
+tensor and activation ABI, applicability, uncertainty, state/reset behavior,
+authority, evidence, and recovery rather than assuming every specialist shares
+one Transformer topology. A state-space model, recurrent system, graph network,
+symbolic solver, controller, or Transformer can sit behind the same field only
+if an adapter and candidate-specific validator establish the required contract.
+
+The shared substrate is therefore optional and scoped. Shared checkpoints and
+reserved parameter regions can simplify exact sparse grafts, but the source
+does not assume every useful architecture can merge weights. When activation
+semantics, state, timing, or failure behavior differ, the linker must preserve
+the difference through adapters, routes, or process boundaries. Architectural
+RSI improves these interfaces and foundry rules instead of forcing every new
+idea into one monolith.
 
 ## Interfaces
 
@@ -566,6 +621,15 @@ proposal/effect separation, exercise state migration and restore, compare
 matched simple baselines under equal-active-parameter and equal-total-cost
 views, and complete one mixed-kernel trace with fallback. Until that packet
 exists and survives its negative controls, the core claim remains `argument`.
+
+The P6 full attempt did not reach an outcome-bearing tournament. The dated
+ledger found that Gated DeltaNet-2, Mamba-3, Inkling, and TRM could not be
+reproduced on the available non-CUDA 16 GB host under their official strongest-
+comparator envelopes, while OneCell still had no runnable implementation. A
+DreamCoder-only CPU proxy would not supply the missing common ABI, matched
+candidate set, or total-lifecycle comparison, so it was not relabeled as SOTA.
+The exact result is seven `blocked_after_full_attempt` atoms, zero external
+reproductions, and no support movement.
 
 ## Beyond the State of the Art
 
@@ -660,10 +724,10 @@ architecture wins.
 
 | Test | Purpose | Status |
 |---|---|---|
-| Cognitive Kernel ABI conformance and malicious-kernel rejection | Check typed proposals, receipt consumption, exact state identity, authority ceilings, checkpoint/restore, cost disclosure, fallback, and rejected forgery or omitted-state controls. | implemented as a bounded synthetic P2 transition/consumer trace; real-kernel conformance remains planned under P5 |
-| Matched heterogeneous-kernel tournament | Compare at least three genuinely different kernels under equal-active-parameter and equal-total-lifecycle-cost views on preregistered workloads and strong baselines. | planned under P5 |
-| Frozen-core verified-abstraction ratchet | Test whether held-out future search cost falls while central parameters remain fixed, without answer-bearing retrieval, hidden assistance, or growing unreported compute. | planned under P5 |
-| Governed architectural-RSI lifecycle | Exercise candidate generation, independent evaluation, shadow, canary, promotion denial, rollback, retirement, and descendant invalidation without self-approval. | planned under P5 |
+| Cognitive Kernel ABI conformance and malicious-kernel rejection | Check typed proposals, receipt consumption, exact state identity, authority ceilings, checkpoint/restore, cost disclosure, fallback, and rejected forgery or omitted-state controls. | bounded synthetic P2 trace passes; real-kernel conformance is `blocked_after_full_attempt` under P6 |
+| Matched heterogeneous-kernel tournament | Compare at least three genuinely different kernels under equal-active-parameter and equal-total-lifecycle-cost views on preregistered workloads and strong baselines. | `blocked_after_full_attempt`: strongest comparators cannot run on the available hardware and no complete candidate set exists |
+| Frozen-core verified-abstraction ratchet | Test whether held-out future search cost falls while central parameters remain fixed, without answer-bearing retrieval, hidden assistance, or growing unreported compute. | `blocked_after_full_attempt`: OneCell and the verified-abstraction learner are unimplemented; defeat prediction frozen, zero outcome runs |
+| Governed architectural-RSI lifecycle | Exercise candidate generation, independent evaluation, shadow, canary, promotion denial, rollback, retirement, and descendant invalidation without self-approval. | `blocked_after_full_attempt`: bounded lifecycle fixtures exist, but no externally reproduced architecture candidate entered the lifecycle |
 
 ## Formalization hooks
 
@@ -696,6 +760,7 @@ interchangeable, safe, or suitable for deployment.
 | `ext_s4_2022` | Efficiently Modeling Long Sequences with Structured State Spaces | Planned use from inventory/manifest: Foundational S4 comparator for structured state-space sequence models and the lineage preceding selective SSMs. Its reported long-range, generation, and benchmark results are not reproduced and do not establish exact recall or governed substitutability. |
 | `ext_mamba2_ssd_2024` | Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality | Planned use from inventory/manifest: Primary Mamba-2/structured-state-space-duality comparator connecting SSM and attention-like formulations. No local model, kernel, quality, scaling, or hardware result is reproduced. |
 | `ext_mamba3_2026` | Mamba-3: Improved Sequence Modeling using State Space Principles | Planned use from inventory/manifest: Current 2026 selective-SSM comparator for complex-valued state updates, discretization, and multi-input/multi-output formulation. Recent source-reported results are not locally reproduced and must not set the chapter conclusion by recency. |
+| `ext_gated_deltanet2_2026` | Gated DeltaNet-2: Decoupling Erase and Write in Linear Attention | Dated current comparator for separately gated erase/write recurrent memory and the reported 1.3B/100B-token frontier over its exact Mamba-2, Gated DeltaNet, KDA, Mamba-3, and Gated DeltaNet-2 envelope. Primary preprint and official code identity were reviewed; no checkpoint, run, hardware result, transfer result, or SOTA claim is locally reproduced. |
 | `ext_gated_deltanet_2024` | Gated Delta Networks: Improving Mamba2 with Delta Rule | Planned use from inventory/manifest: Primary gated-delta-rule comparator for targeted memory updates, rapid erasure, parallel training, and recurrent/hybrid sequence models. No local retrieval, extrapolation, efficiency, or hardware result is reproduced. |
 | `ext_jamba_2024` | Jamba: A Hybrid Transformer-Mamba Language Model | Planned use from inventory/manifest: Primary large-scale Transformer-Mamba-MoE hybrid comparator. It makes composition a first-class design variable without establishing a universally optimal mixture or hiding active/total, routing, state, and serving costs. |
 | `ext_inkling_2026` | Inkling: Our open-weights model | Release-day primary-source case for a multimodal sparse-MoE Transformer combining five local-attention layers per global layer, relative positions, short convolutions, controllable effort, and explicit active/total and hardware disclosures. It motivates topology-complete capability cards and component ablations; provider-reported scores are not locally reproduced and do not isolate any component. |
@@ -730,6 +795,7 @@ These rows keep Replaceable Cognitive Substrates: Beyond Transformer Monoculture
 
 | Source | Intake role | Boundary |
 |---|---|---|
+| `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_hyperscale_lottery_2026` | Passage-reviewed comparator: The Hyperscale Lottery: How State-Space Models Have Sacrificed Edge Efficiency. Supplies adversarial edge-hardware measurements showing that an architecture optimized for hyperscale GPU utilization can move cost onto smaller deployment targets. | One preprint and its selected devices do not establish a universal edge penalty or outweigh model quality; the result sets a platform-stratified measurement requirement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
@@ -753,6 +819,82 @@ heterogeneous-kernel tournament, not stronger prose.
 Until those artifacts exist, every named substrate remains a workload-bounded
 candidate and every architectural-RSI benefit remains a falsifiable research
 target.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **15** structured claim atoms in `CF-06`. The
+frozen repository-wide terminal audit records 15 `blocked_after_full_attempt`. Its core
+atom `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `replaceable-cognitive-substrates-beyond-transformer-monoculture` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+The dated P6 external-reproduction attempt adds seven exact `blocked_after_full_attempt` dispositions for the architecture tournament, including this core, Transformer baseline, state-space/recurrent, portfolio, OneCell, total-system-KISS, and architectural-RSI atoms. Gated DeltaNet-2 displaces Mamba-3 as the newest reported recurrent frontier for its exact source envelope; no local reproduction, candidate comparison, Pareto result, or SOTA result follows.
+
+
+::: {.asi-human-only}
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 15 structured claims,
+15 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **KERC canonical-language and hierarchical-residual campaign**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: The historical broad-efficiency transition is N1: the frozen implementation was inadequate, so broader KERC remains untested; two narrow finite observations survive, with no semantic, multilingual, production, energy, or core claim.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+:::
+
+::: {.asi-ai-only}
+
+### Evidence packet
+
+| Field | Exact chapter boundary |
+|---|---|
+| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-06` minimum family bundle. |
+| Attempted local lanes | `executable`, `source-synthesis` |
+| Missing or unproved lanes | `causal`, `empirical`, `transfer` |
+| Family-level natural-work or end-to-end bundle | **KERC canonical-language and hierarchical-residual campaign** (`natural_work_and_end_to_end`): A 192-record bilingual templated compiler/runtime study with 64 held-out records, five seeds, eight baseline families, 13 ablations, and 20 attacks. |
+| Negative controls | surface and kernel-native baselines; 13 ablations; 20 attacks; ten laundering mutations. |
+| Exact accepted transitions in this chapter | none |
+| Core outcome | `blocked_after_full_attempt` at `argument`; no chapter-core promotion. |
+| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
+| Reproduction path | Replay `scripts/validate_p4_m8_kerc_campaign.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
+
+### Worked success, failure, and boundary cases
+
+- **Success case:** the family-level bundle passed its own rejecting validator
+  within this exact scope: A 192-record bilingual templated compiler/runtime study with 64 held-out records, five seeds, eight baseline families, 13 ablations, and 20 attacks. This is evidence that the family
+  received a competent attempt, not that every claim in this chapter succeeded.
+- **Failure or non-promotion case:** 15 atoms
+  remain blocked and 0 are narrowed. A
+  green family validator cannot fill their missing lanes or raise the core.
+- **Boundary case:** The historical broad-efficiency transition is N1: the frozen implementation was inadequate, so broader KERC remains untested; two narrow finite observations survive, with no semantic, multilingual, production, energy, or core claim.
+
+### Argument-exit table
+
+| Atom set | Count | Work performed | Terminal reason and next burden |
+|---|---:|---|---|
+| Core: `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | 1 | `source-synthesis`, `executable` | `blocked_after_full_attempt`; missing or unproved: `empirical`, `causal`, `transfer`. |
+| blocked after full attempt | 15 | `executable`, `source-synthesis` | Missing or unproved lanes across this set: `causal`, `empirical`, `transfer`. These are residual proof obligations, not false claims. |
+
+This table is a disposition map, not a promotion quota. The next valid movement
+is atom-specific evidence that fills the named missing lanes, survives relevant
+negative controls, and enters through an accepted evidence transition. Until
+then, source counts, theorem counts, fixtures, validators, or nearby family
+results cannot be used as substitutes.
+:::
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
 
 ## Handoff
 

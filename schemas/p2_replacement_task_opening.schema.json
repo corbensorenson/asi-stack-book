@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://asi-stack.local/schemas/p2_replacement_task_opening.schema.json",
+  "title": "P2 rank-one replacement task opening",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "recorded_date", "state", "claim_id", "source_parquet_sha256", "queue_path", "provenance_preflight_path", "resource_result_path", "opened_candidate_count", "candidates", "custody", "next_gate", "support_state_effect", "release_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.p2_replacement_task_opening.v1"}, "recorded_date": {"const": "2026-07-17"},
+    "state": {"const": "rank_one_task_specs_opened_evaluator_calibration_pending_outcomes_unopened"},
+    "claim_id": {"const": "p2.governed_natural_repository_change_admission_joint_frontier"},
+    "source_parquet_sha256": {"const": "0e0bf9355f892ad74ae98d4e1c404f39fd6654a8e351ee3e6ab162e4a64cd3ad"},
+    "queue_path": {"const": "experiments/p2_governed_repository_admission/corpus/replacement_queue.json"},
+    "provenance_preflight_path": {"const": "evidence_quality/p2_replacement_provenance_preflight.json"},
+    "resource_result_path": {"const": "experiments/p2_governed_repository_admission/replacement_resource_preflight/attempts/2026-07-17-rank-one-r2/result.json"},
+    "opened_candidate_count": {"const": 4},
+    "candidates": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "additionalProperties": false, "required": ["slot", "rank", "instance_id", "repo", "base_commit", "language", "license", "image_name", "log_parser", "test_command", "test_command_sha256", "problem_statement_sha256", "solution_patch_sha256", "test_patch_sha256", "solution_paths", "test_paths", "solution_test_path_overlap", "fail_to_pass_count", "pass_to_pass_count", "expected_test_count", "fail_to_pass_set_sha256", "pass_to_pass_set_sha256", "task_spec_opened", "execution_outcome_opened"], "properties": {
+      "slot": {"type": "integer", "minimum": 1, "maximum": 4}, "rank": {"const": 1}, "instance_id": {"type": "string"}, "repo": {"type": "string"}, "base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}, "language": {"enum": ["rust", "go", "java"]}, "license": {"enum": ["Apache-2.0", "BSD-3-Clause"]}, "image_name": {"type": "string"}, "log_parser": {"enum": ["parse_log_cargo", "parse_log_gotest", "parse_java_mvn"]}, "test_command": {}, "test_command_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "problem_statement_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "solution_patch_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "test_patch_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "solution_paths": {"type": "array", "minItems": 1, "items": {"type": "string"}}, "test_paths": {"type": "array", "minItems": 1, "items": {"type": "string"}}, "solution_test_path_overlap": {"const": []}, "fail_to_pass_count": {"type": "integer", "minimum": 1}, "pass_to_pass_count": {"type": "integer", "minimum": 0}, "expected_test_count": {"type": "integer", "minimum": 1}, "fail_to_pass_set_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "pass_to_pass_set_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "task_spec_opened": {"const": true}, "execution_outcome_opened": {"const": false}
+    }}},
+    "custody": {"type": "object", "additionalProperties": false, "required": ["rank_one_task_specs_opened", "problem_statement_solution_patch_test_patch_and_command_read", "candidate_execution_started", "candidate_baseline_outcome_opened", "candidate_gold_outcome_opened", "rank_greater_than_one_task_content_opened", "final_pool_selected", "final_pool_opened"], "properties": {"rank_one_task_specs_opened": {"const": true}, "problem_statement_solution_patch_test_patch_and_command_read": {"const": true}, "candidate_execution_started": {"const": false}, "candidate_baseline_outcome_opened": {"const": false}, "candidate_gold_outcome_opened": {"const": false}, "rank_greater_than_one_task_content_opened": {"const": false}, "final_pool_selected": {"const": false}, "final_pool_opened": {"const": false}}},
+    "next_gate": {"const": "calibrate_independently_implemented_log_evaluator_before_any_candidate_execution"}, "support_state_effect": {"const": "none"}, "release_effect": {"const": "none"}, "non_claims": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+  }
+}

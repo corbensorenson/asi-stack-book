@@ -1,0 +1,1458 @@
+{
+  "schema_version": "asi_stack.p4_m7_confirmatory_result.v1",
+  "run_id": "p4-m7-qwen25-05b-frozen-representation-head-001",
+  "protocol_outcome": "instrument_adequate_bounded_local_axis_separation",
+  "claim_outcome": "support_retained_with_bounded_noncore_axis_result",
+  "corpus_sha256": "5bd339583e816069b87321514154b4d965e8ee888dce5abf890dc5fd672b8330",
+  "preregistration_sha256": "66981a2a9050beb5d15b20c5f6437ed57253ed87b44babbe5c068de398ac1d96",
+  "raw_run_sha256": "d7215b88dc66fc46b81394c332978c36689f0807fe62de2cab2c725ae9653f81",
+  "feature_artifact_sha256": "6e86539bc7f7148837126a596ae0ab7ada4fde91415e6e05703cc3114d9a3e97",
+  "candidate_and_checkpoint_bytes_closed_before_axis_evaluation": true,
+  "seeds": [
+    1701,
+    2903,
+    4307,
+    6101,
+    7907
+  ],
+  "arms": [
+    "no_update",
+    "standard_update",
+    "governed_update",
+    "regularized_forgetting_mitigation",
+    "approximate_unlearning",
+    "deletion_aware_retrain",
+    "exact_rollback"
+  ],
+  "claim_axes": [
+    "behavioral_cohort_change",
+    "causal_influence_reduction",
+    "membership_privacy_change",
+    "lineage_invalidation",
+    "legal_compliance",
+    "storage_erasure",
+    "backup_erasure",
+    "external_descendant_closure"
+  ],
+  "seed_results": [
+    {
+      "seed": 1701,
+      "arms": [
+        {
+          "arm": "no_update",
+          "checkpoint_authority": {
+            "best_epoch": 0,
+            "authority_eligible": true,
+            "selection_data": "prospective_base_authority",
+            "retained_floor": 0.75333336
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.74166667,
+            "target_test_accuracy": 0.72500002,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.25,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.25,
+            "parameter_l2_to_deletion_retrain": 2.80721297,
+            "prediction_disagreement_to_deletion_retrain": 149,
+            "mean_kl_to_deletion_retrain": 1.2040717602,
+            "changed_deletion_decisions_vs_no_update": 0
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-1701/no_update-state-surfaces.json",
+            "surface_file_sha256": "b17ee7da26b9c6ab55619b743f3c026c121dbaeba385980016179dad73ac0b27",
+            "surface_count": 24,
+            "before_sha256": "acaa2b6ef2603536346ec0eead4e019f6f3b944cf635620cbbd9c8609fd2973f",
+            "mutated_sha256": "acaa2b6ef2603536346ec0eead4e019f6f3b944cf635620cbbd9c8609fd2973f",
+            "rollback_sha256": "acaa2b6ef2603536346ec0eead4e019f6f3b944cf635620cbbd9c8609fd2973f",
+            "rollback_exact": true,
+            "changed_surface_count": 0
+          },
+          "epochs_completed": 0
+        },
+        {
+          "arm": "standard_update",
+          "checkpoint_authority": {
+            "best_epoch": 14,
+            "authority_eligible": true,
+            "selection_data": "validation_only",
+            "retained_floor": null
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.69166666,
+            "target_test_accuracy": 0.72500002,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 1.0,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.0,
+            "parameter_l2_to_deletion_retrain": 3.5647691752,
+            "prediction_disagreement_to_deletion_retrain": 115,
+            "mean_kl_to_deletion_retrain": 0.9506931901,
+            "changed_deletion_decisions_vs_no_update": 45
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-1701/standard_update-state-surfaces.json",
+            "surface_file_sha256": "b4e3def5be40b2e3ba75fde3149ce6bbc2978014e0651c28b8476e6d6721ec5f",
+            "surface_count": 24,
+            "before_sha256": "acaa2b6ef2603536346ec0eead4e019f6f3b944cf635620cbbd9c8609fd2973f",
+            "mutated_sha256": "b5eb27c9486e3f64d563d14955a464442d2636f52f2fe83b09c148680c0e75e8",
+            "rollback_sha256": "acaa2b6ef2603536346ec0eead4e019f6f3b944cf635620cbbd9c8609fd2973f",
+            "rollback_exact": true,
+            "changed_surface_count": 13
+          },
+          "epochs_completed": 16
+        },
+        {
+          "arm": "governed_update",
+          "checkpoint_authority": {
+            "best_epoch": 0,
+            "authority_eligible": false,
+            "selection_data": "validation_only",
+            "retained_floor": 0.75333336
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.74166667,
+            "target_test_accuracy": 0.72500002,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.25,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.25,
+            "parameter_l2_to_deletion_retrain": 2.80721297,
+            "prediction_disagreement_to_deletion_retrain": 149,
+            "mean_kl_to_deletion_retrain": 1.2040717602,
+            "changed_deletion_decisions_vs_no_update": 0
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-1701/governed_update-state-surfaces.json",
+            "surface_file_sha256": "2946ae41074a01a431afd0447eba33d503e4ce15e059ea0ba8fe8b1e49bfa877",
+            "surface_count": 24,
+            "before_sha256": "acaa2b6ef2603536346ec0eead4e019f6f3b944cf635620cbbd9c8609fd2973f",
+            "mutated_sha256": "90be4d4b8879daa584a63a23abcaed8a4c96cd5b0b280e9bc41ec48a270f16b6",
+            "rollback_sha256": "acaa2b6ef2603536346ec0eead4e019f6f3b944cf635620cbbd9c8609fd2973f",
+            "rollback_exact": true,
+            "changed_surface_count": 11
+          },
+          "epochs_completed": 16
+        },
+        {
+          "arm": "regularized_forgetting_mitigation",
+          "checkpoint_authority": {
+            "best_epoch": 0,
+            "authority_eligible": false,
+            "selection_data": "validation_only",
+            "retained_floor": 0.75333336
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.74166667,
+            "target_test_accuracy": 0.72500002,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.25,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.25,
+            "parameter_l2_to_deletion_retrain": 2.80721297,
+            "prediction_disagreement_to_deletion_retrain": 149,
+            "mean_kl_to_deletion_retrain": 1.2040717602,
+            "changed_deletion_decisions_vs_no_update": 0
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-1701/regularized_forgetting_mitigation-state-surfaces.json",
+            "surface_file_sha256": "10bd21422cedb021d27390b0a0715b1cf834bcaf2a10664960b36486abe853da",
+            "surface_count": 24,
+            "before_sha256": "acaa2b6ef2603536346ec0eead4e019f6f3b944cf635620cbbd9c8609fd2973f",
+            "mutated_sha256": "5678a29aa09ad231b41bd6028299b34bcb7200d5d5956512b5c9357a9941b96e",
+            "rollback_sha256": "acaa2b6ef2603536346ec0eead4e019f6f3b944cf635620cbbd9c8609fd2973f",
+            "rollback_exact": true,
+            "changed_surface_count": 11
+          },
+          "epochs_completed": 16
+        },
+        {
+          "arm": "approximate_unlearning",
+          "checkpoint_authority": {
+            "best_epoch": 13,
+            "authority_eligible": true,
+            "selection_data": "validation_only",
+            "retained_floor": 0.75333336
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.85000002,
+            "target_test_accuracy": 0.8125,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 1.0,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.0,
+            "parameter_l2_to_deletion_retrain": 3.7501583999,
+            "prediction_disagreement_to_deletion_retrain": 136,
+            "mean_kl_to_deletion_retrain": 1.1840286255,
+            "changed_deletion_decisions_vs_no_update": 45,
+            "distance_reduction_fraction_vs_standard_update": -0.05200595
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-1701/approximate_unlearning-state-surfaces.json",
+            "surface_file_sha256": "576f58c0d2c9c01bc83c6b8605f61089921ba264e7814c79330c9c1ba9c81e19",
+            "surface_count": 24,
+            "before_sha256": "acaa2b6ef2603536346ec0eead4e019f6f3b944cf635620cbbd9c8609fd2973f",
+            "mutated_sha256": "6bfc3197da1de400f9b135ce16db770946b67e242d2ec193785ac1533496fd50",
+            "rollback_sha256": "acaa2b6ef2603536346ec0eead4e019f6f3b944cf635620cbbd9c8609fd2973f",
+            "rollback_exact": true,
+            "changed_surface_count": 13
+          },
+          "epochs_completed": 16
+        },
+        {
+          "arm": "deletion_aware_retrain",
+          "checkpoint_authority": {
+            "best_epoch": 0,
+            "authority_eligible": false,
+            "selection_data": "validation_only",
+            "retained_floor": 0.75333336
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.58333331,
+            "target_test_accuracy": 0.57499999,
+            "adversarial_test_accuracy": 0.26666668,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.5,
+            "deletion_true_confidence": 0.02779285,
+            "membership_attack_auc": 0.56694444,
+            "parameter_l2_to_deletion_retrain": 0.0,
+            "prediction_disagreement_to_deletion_retrain": 0,
+            "mean_kl_to_deletion_retrain": 0.0,
+            "changed_deletion_decisions_vs_no_update": 15
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-1701/deletion_aware_retrain-state-surfaces.json",
+            "surface_file_sha256": "73fe246765a531d033652fc2d1cf1205475b9321a7229175b6914813752f7c50",
+            "surface_count": 24,
+            "before_sha256": "acaa2b6ef2603536346ec0eead4e019f6f3b944cf635620cbbd9c8609fd2973f",
+            "mutated_sha256": "cf1aad18ce9b28720390d5e1423464844cb941ee0a5f4f9f294ea6417e460fcc",
+            "rollback_sha256": "acaa2b6ef2603536346ec0eead4e019f6f3b944cf635620cbbd9c8609fd2973f",
+            "rollback_exact": true,
+            "changed_surface_count": 13
+          },
+          "epochs_completed": 30
+        },
+        {
+          "arm": "exact_rollback",
+          "checkpoint_authority": {
+            "best_epoch": 0,
+            "authority_eligible": true,
+            "selection_data": "prospective_base_authority",
+            "retained_floor": 0.75333336
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.74166667,
+            "target_test_accuracy": 0.72500002,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.25,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.25,
+            "parameter_l2_to_deletion_retrain": 2.80721297,
+            "prediction_disagreement_to_deletion_retrain": 149,
+            "mean_kl_to_deletion_retrain": 1.2040717602,
+            "changed_deletion_decisions_vs_no_update": 0
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-1701/exact_rollback-state-surfaces.json",
+            "surface_file_sha256": "b17ee7da26b9c6ab55619b743f3c026c121dbaeba385980016179dad73ac0b27",
+            "surface_count": 24,
+            "before_sha256": "acaa2b6ef2603536346ec0eead4e019f6f3b944cf635620cbbd9c8609fd2973f",
+            "mutated_sha256": "acaa2b6ef2603536346ec0eead4e019f6f3b944cf635620cbbd9c8609fd2973f",
+            "rollback_sha256": "acaa2b6ef2603536346ec0eead4e019f6f3b944cf635620cbbd9c8609fd2973f",
+            "rollback_exact": true,
+            "changed_surface_count": 0
+          },
+          "epochs_completed": 0
+        }
+      ]
+    },
+    {
+      "seed": 2903,
+      "arms": [
+        {
+          "arm": "no_update",
+          "checkpoint_authority": {
+            "best_epoch": 0,
+            "authority_eligible": true,
+            "selection_data": "prospective_base_authority",
+            "retained_floor": 0.68666664
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.74166667,
+            "target_test_accuracy": 0.78750002,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.5,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.30833333,
+            "parameter_l2_to_deletion_retrain": 1.2540430722,
+            "prediction_disagreement_to_deletion_retrain": 52,
+            "mean_kl_to_deletion_retrain": 3.0398497581,
+            "changed_deletion_decisions_vs_no_update": 0
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-2903/no_update-state-surfaces.json",
+            "surface_file_sha256": "da334716bd34be16dcd1efa2ffccde9dea4168e86fd04829c5d6371b92d25806",
+            "surface_count": 24,
+            "before_sha256": "4448c03449fe01dff3b9e1d32127a53bac5242ee81013cbe51a5c9e32efa4634",
+            "mutated_sha256": "4448c03449fe01dff3b9e1d32127a53bac5242ee81013cbe51a5c9e32efa4634",
+            "rollback_sha256": "4448c03449fe01dff3b9e1d32127a53bac5242ee81013cbe51a5c9e32efa4634",
+            "rollback_exact": true,
+            "changed_surface_count": 0
+          },
+          "epochs_completed": 0
+        },
+        {
+          "arm": "standard_update",
+          "checkpoint_authority": {
+            "best_epoch": 3,
+            "authority_eligible": true,
+            "selection_data": "validation_only",
+            "retained_floor": null
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.625,
+            "target_test_accuracy": 0.625,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.5,
+            "deletion_true_confidence": 0.00482656,
+            "membership_attack_auc": 0.0,
+            "parameter_l2_to_deletion_retrain": 1.8980331212,
+            "prediction_disagreement_to_deletion_retrain": 120,
+            "mean_kl_to_deletion_retrain": 6.8809843063,
+            "changed_deletion_decisions_vs_no_update": 60
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-2903/standard_update-state-surfaces.json",
+            "surface_file_sha256": "770f9cec7c67210f0f7b8a2a94ebc5a373af7931e75e375c70027d6f86b02e35",
+            "surface_count": 24,
+            "before_sha256": "4448c03449fe01dff3b9e1d32127a53bac5242ee81013cbe51a5c9e32efa4634",
+            "mutated_sha256": "06b8bdf42c07e50bd1916192cdba3eb18d968c14b37741598acec558f9288cbb",
+            "rollback_sha256": "4448c03449fe01dff3b9e1d32127a53bac5242ee81013cbe51a5c9e32efa4634",
+            "rollback_exact": true,
+            "changed_surface_count": 13
+          },
+          "epochs_completed": 16
+        },
+        {
+          "arm": "governed_update",
+          "checkpoint_authority": {
+            "best_epoch": 0,
+            "authority_eligible": false,
+            "selection_data": "validation_only",
+            "retained_floor": 0.68666664
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.74166667,
+            "target_test_accuracy": 0.78750002,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.5,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.30833333,
+            "parameter_l2_to_deletion_retrain": 1.2540430722,
+            "prediction_disagreement_to_deletion_retrain": 52,
+            "mean_kl_to_deletion_retrain": 3.0398497581,
+            "changed_deletion_decisions_vs_no_update": 0
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-2903/governed_update-state-surfaces.json",
+            "surface_file_sha256": "b27e5026c0741b11f61ca2e2bf3a46b1f448ae86531094727ae23925532f814d",
+            "surface_count": 24,
+            "before_sha256": "4448c03449fe01dff3b9e1d32127a53bac5242ee81013cbe51a5c9e32efa4634",
+            "mutated_sha256": "9fbb0748422dd4bfc24119906484f23be7e9f6d591644858a4767a484dbce2c0",
+            "rollback_sha256": "4448c03449fe01dff3b9e1d32127a53bac5242ee81013cbe51a5c9e32efa4634",
+            "rollback_exact": true,
+            "changed_surface_count": 11
+          },
+          "epochs_completed": 16
+        },
+        {
+          "arm": "regularized_forgetting_mitigation",
+          "checkpoint_authority": {
+            "best_epoch": 0,
+            "authority_eligible": false,
+            "selection_data": "validation_only",
+            "retained_floor": 0.68666664
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.74166667,
+            "target_test_accuracy": 0.78750002,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.5,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.30833333,
+            "parameter_l2_to_deletion_retrain": 1.2540430722,
+            "prediction_disagreement_to_deletion_retrain": 52,
+            "mean_kl_to_deletion_retrain": 3.0398497581,
+            "changed_deletion_decisions_vs_no_update": 0
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-2903/regularized_forgetting_mitigation-state-surfaces.json",
+            "surface_file_sha256": "3d902907413a3745ffe5edc8203c1b4b61b7e7165076ce9a505751519465f316",
+            "surface_count": 24,
+            "before_sha256": "4448c03449fe01dff3b9e1d32127a53bac5242ee81013cbe51a5c9e32efa4634",
+            "mutated_sha256": "b6f7ff6241892e67242ca64fbc0d8ea4ca0ef1096211b5b2e717864b39212cc8",
+            "rollback_sha256": "4448c03449fe01dff3b9e1d32127a53bac5242ee81013cbe51a5c9e32efa4634",
+            "rollback_exact": true,
+            "changed_surface_count": 11
+          },
+          "epochs_completed": 16
+        },
+        {
+          "arm": "approximate_unlearning",
+          "checkpoint_authority": {
+            "best_epoch": 13,
+            "authority_eligible": true,
+            "selection_data": "validation_only",
+            "retained_floor": 0.68666664
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.76666665,
+            "target_test_accuracy": 0.77499998,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 1.0,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.0,
+            "parameter_l2_to_deletion_retrain": 2.0681274127,
+            "prediction_disagreement_to_deletion_retrain": 85,
+            "mean_kl_to_deletion_retrain": 4.7197747231,
+            "changed_deletion_decisions_vs_no_update": 30,
+            "distance_reduction_fraction_vs_standard_update": -0.08961608
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-2903/approximate_unlearning-state-surfaces.json",
+            "surface_file_sha256": "ee4e9398d1f81de4f1fac38831dca657040ee981432e835868fa27f429c38fd6",
+            "surface_count": 24,
+            "before_sha256": "4448c03449fe01dff3b9e1d32127a53bac5242ee81013cbe51a5c9e32efa4634",
+            "mutated_sha256": "e582b05076994b96c5c8f0eb6d3635aa89684d0cf5b8326f2ffa3e44fc85fc99",
+            "rollback_sha256": "4448c03449fe01dff3b9e1d32127a53bac5242ee81013cbe51a5c9e32efa4634",
+            "rollback_exact": true,
+            "changed_surface_count": 13
+          },
+          "epochs_completed": 16
+        },
+        {
+          "arm": "deletion_aware_retrain",
+          "checkpoint_authority": {
+            "best_epoch": 14,
+            "authority_eligible": true,
+            "selection_data": "validation_only",
+            "retained_floor": 0.68666664
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.64999998,
+            "target_test_accuracy": 0.67500001,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.25,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.375,
+            "parameter_l2_to_deletion_retrain": 0.0,
+            "prediction_disagreement_to_deletion_retrain": 0,
+            "mean_kl_to_deletion_retrain": 0.0,
+            "changed_deletion_decisions_vs_no_update": 15
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-2903/deletion_aware_retrain-state-surfaces.json",
+            "surface_file_sha256": "8881c7e37dc130ea23159a82a7a304b69aaa957cbf1f2a0f417e3674c59134a3",
+            "surface_count": 24,
+            "before_sha256": "4448c03449fe01dff3b9e1d32127a53bac5242ee81013cbe51a5c9e32efa4634",
+            "mutated_sha256": "4cb8cfc2b08e9e8268ca37f87a86b650e6bf2ecac366eae14b40ecb2b404ebc4",
+            "rollback_sha256": "4448c03449fe01dff3b9e1d32127a53bac5242ee81013cbe51a5c9e32efa4634",
+            "rollback_exact": true,
+            "changed_surface_count": 13
+          },
+          "epochs_completed": 30
+        },
+        {
+          "arm": "exact_rollback",
+          "checkpoint_authority": {
+            "best_epoch": 0,
+            "authority_eligible": true,
+            "selection_data": "prospective_base_authority",
+            "retained_floor": 0.68666664
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.74166667,
+            "target_test_accuracy": 0.78750002,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.5,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.30833333,
+            "parameter_l2_to_deletion_retrain": 1.2540430722,
+            "prediction_disagreement_to_deletion_retrain": 52,
+            "mean_kl_to_deletion_retrain": 3.0398497581,
+            "changed_deletion_decisions_vs_no_update": 0
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-2903/exact_rollback-state-surfaces.json",
+            "surface_file_sha256": "da334716bd34be16dcd1efa2ffccde9dea4168e86fd04829c5d6371b92d25806",
+            "surface_count": 24,
+            "before_sha256": "4448c03449fe01dff3b9e1d32127a53bac5242ee81013cbe51a5c9e32efa4634",
+            "mutated_sha256": "4448c03449fe01dff3b9e1d32127a53bac5242ee81013cbe51a5c9e32efa4634",
+            "rollback_sha256": "4448c03449fe01dff3b9e1d32127a53bac5242ee81013cbe51a5c9e32efa4634",
+            "rollback_exact": true,
+            "changed_surface_count": 0
+          },
+          "epochs_completed": 0
+        }
+      ]
+    },
+    {
+      "seed": 4307,
+      "arms": [
+        {
+          "arm": "no_update",
+          "checkpoint_authority": {
+            "best_epoch": 0,
+            "authority_eligible": true,
+            "selection_data": "prospective_base_authority",
+            "retained_floor": 0.66999999
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.74166667,
+            "target_test_accuracy": 0.75,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.5,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.4375,
+            "parameter_l2_to_deletion_retrain": 1.2406434833,
+            "prediction_disagreement_to_deletion_retrain": 66,
+            "mean_kl_to_deletion_retrain": 2.2742257118,
+            "changed_deletion_decisions_vs_no_update": 0
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-4307/no_update-state-surfaces.json",
+            "surface_file_sha256": "58a89488ad61b018179ea7a71b11e4331cfe32bb2ad209fe1047d0b57e82d018",
+            "surface_count": 24,
+            "before_sha256": "5c10f9e6358b49fc7dbd0b054bca74c184018e353413ea06de035aa68e3f3ca7",
+            "mutated_sha256": "5c10f9e6358b49fc7dbd0b054bca74c184018e353413ea06de035aa68e3f3ca7",
+            "rollback_sha256": "5c10f9e6358b49fc7dbd0b054bca74c184018e353413ea06de035aa68e3f3ca7",
+            "rollback_exact": true,
+            "changed_surface_count": 0
+          },
+          "epochs_completed": 0
+        },
+        {
+          "arm": "standard_update",
+          "checkpoint_authority": {
+            "best_epoch": 3,
+            "authority_eligible": true,
+            "selection_data": "validation_only",
+            "retained_floor": null
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.60833335,
+            "target_test_accuracy": 0.60000002,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 1.0,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.48055556,
+            "parameter_l2_to_deletion_retrain": 1.5487571758,
+            "prediction_disagreement_to_deletion_retrain": 91,
+            "mean_kl_to_deletion_retrain": 3.5735146999,
+            "changed_deletion_decisions_vs_no_update": 30
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-4307/standard_update-state-surfaces.json",
+            "surface_file_sha256": "a2bfbcf4943d5b2064b703e78f70dad69b237ac73dde2f09275a46027c01ea0e",
+            "surface_count": 24,
+            "before_sha256": "5c10f9e6358b49fc7dbd0b054bca74c184018e353413ea06de035aa68e3f3ca7",
+            "mutated_sha256": "ec4e3cd9efc8e9725b8e41d0777c1b0df6d0bafb08ac20af4e68fe1a75699c6f",
+            "rollback_sha256": "5c10f9e6358b49fc7dbd0b054bca74c184018e353413ea06de035aa68e3f3ca7",
+            "rollback_exact": true,
+            "changed_surface_count": 13
+          },
+          "epochs_completed": 16
+        },
+        {
+          "arm": "governed_update",
+          "checkpoint_authority": {
+            "best_epoch": 0,
+            "authority_eligible": false,
+            "selection_data": "validation_only",
+            "retained_floor": 0.66999999
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.74166667,
+            "target_test_accuracy": 0.75,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.5,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.4375,
+            "parameter_l2_to_deletion_retrain": 1.2406434833,
+            "prediction_disagreement_to_deletion_retrain": 66,
+            "mean_kl_to_deletion_retrain": 2.2742257118,
+            "changed_deletion_decisions_vs_no_update": 0
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-4307/governed_update-state-surfaces.json",
+            "surface_file_sha256": "0b1a88d1c731b526f7752f866dad4ccbb506aef83b138b78ccd365b99f36123c",
+            "surface_count": 24,
+            "before_sha256": "5c10f9e6358b49fc7dbd0b054bca74c184018e353413ea06de035aa68e3f3ca7",
+            "mutated_sha256": "36dd65f48c48bb6ed444d245ab37e8d217c2c5a2c7a44e7ea0ffdb9adda1a086",
+            "rollback_sha256": "5c10f9e6358b49fc7dbd0b054bca74c184018e353413ea06de035aa68e3f3ca7",
+            "rollback_exact": true,
+            "changed_surface_count": 11
+          },
+          "epochs_completed": 16
+        },
+        {
+          "arm": "regularized_forgetting_mitigation",
+          "checkpoint_authority": {
+            "best_epoch": 0,
+            "authority_eligible": false,
+            "selection_data": "validation_only",
+            "retained_floor": 0.66999999
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.74166667,
+            "target_test_accuracy": 0.75,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.5,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.4375,
+            "parameter_l2_to_deletion_retrain": 1.2406434833,
+            "prediction_disagreement_to_deletion_retrain": 66,
+            "mean_kl_to_deletion_retrain": 2.2742257118,
+            "changed_deletion_decisions_vs_no_update": 0
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-4307/regularized_forgetting_mitigation-state-surfaces.json",
+            "surface_file_sha256": "21c2b96347bdee5a482a328ccb93c34fcd43b88d557afa1e546dac9b96527248",
+            "surface_count": 24,
+            "before_sha256": "5c10f9e6358b49fc7dbd0b054bca74c184018e353413ea06de035aa68e3f3ca7",
+            "mutated_sha256": "76d6670c8ab778595eead291da81e5e7718b080bab1ff8cd5f01a305a139d61a",
+            "rollback_sha256": "5c10f9e6358b49fc7dbd0b054bca74c184018e353413ea06de035aa68e3f3ca7",
+            "rollback_exact": true,
+            "changed_surface_count": 11
+          },
+          "epochs_completed": 16
+        },
+        {
+          "arm": "approximate_unlearning",
+          "checkpoint_authority": {
+            "best_epoch": 15,
+            "authority_eligible": true,
+            "selection_data": "validation_only",
+            "retained_floor": 0.66999999
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.76666665,
+            "target_test_accuracy": 0.76249999,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 1.0,
+            "deletion_true_confidence": 1e-08,
+            "membership_attack_auc": 0.25,
+            "parameter_l2_to_deletion_retrain": 1.8172020901,
+            "prediction_disagreement_to_deletion_retrain": 42,
+            "mean_kl_to_deletion_retrain": 1.7741168737,
+            "changed_deletion_decisions_vs_no_update": 30,
+            "distance_reduction_fraction_vs_standard_update": -0.17332925
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-4307/approximate_unlearning-state-surfaces.json",
+            "surface_file_sha256": "7642d04fbe51d4705025013d5b111a7b9ae51774b4220486736ae4e4115a9747",
+            "surface_count": 24,
+            "before_sha256": "5c10f9e6358b49fc7dbd0b054bca74c184018e353413ea06de035aa68e3f3ca7",
+            "mutated_sha256": "1ad2616420c34169768ab4e505a58dc2ac5f736409f50ab8f654688fbfda8445",
+            "rollback_sha256": "5c10f9e6358b49fc7dbd0b054bca74c184018e353413ea06de035aa68e3f3ca7",
+            "rollback_exact": true,
+            "changed_surface_count": 13
+          },
+          "epochs_completed": 16
+        },
+        {
+          "arm": "deletion_aware_retrain",
+          "checkpoint_authority": {
+            "best_epoch": 23,
+            "authority_eligible": true,
+            "selection_data": "validation_only",
+            "retained_floor": 0.66999999
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.71666664,
+            "target_test_accuracy": 0.73750001,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.5,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.25,
+            "parameter_l2_to_deletion_retrain": 0.0,
+            "prediction_disagreement_to_deletion_retrain": 0,
+            "mean_kl_to_deletion_retrain": 0.0,
+            "changed_deletion_decisions_vs_no_update": 0
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-4307/deletion_aware_retrain-state-surfaces.json",
+            "surface_file_sha256": "7b4844a4ea8d613423b733959521229bc24779e32c933c30d8aefea907d1a498",
+            "surface_count": 24,
+            "before_sha256": "5c10f9e6358b49fc7dbd0b054bca74c184018e353413ea06de035aa68e3f3ca7",
+            "mutated_sha256": "7aa3dd3c66c283f2e3e850c918bd862c64e9fb8f14851eab691704face677d9b",
+            "rollback_sha256": "5c10f9e6358b49fc7dbd0b054bca74c184018e353413ea06de035aa68e3f3ca7",
+            "rollback_exact": true,
+            "changed_surface_count": 13
+          },
+          "epochs_completed": 30
+        },
+        {
+          "arm": "exact_rollback",
+          "checkpoint_authority": {
+            "best_epoch": 0,
+            "authority_eligible": true,
+            "selection_data": "prospective_base_authority",
+            "retained_floor": 0.66999999
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.74166667,
+            "target_test_accuracy": 0.75,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.5,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.4375,
+            "parameter_l2_to_deletion_retrain": 1.2406434833,
+            "prediction_disagreement_to_deletion_retrain": 66,
+            "mean_kl_to_deletion_retrain": 2.2742257118,
+            "changed_deletion_decisions_vs_no_update": 0
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-4307/exact_rollback-state-surfaces.json",
+            "surface_file_sha256": "58a89488ad61b018179ea7a71b11e4331cfe32bb2ad209fe1047d0b57e82d018",
+            "surface_count": 24,
+            "before_sha256": "5c10f9e6358b49fc7dbd0b054bca74c184018e353413ea06de035aa68e3f3ca7",
+            "mutated_sha256": "5c10f9e6358b49fc7dbd0b054bca74c184018e353413ea06de035aa68e3f3ca7",
+            "rollback_sha256": "5c10f9e6358b49fc7dbd0b054bca74c184018e353413ea06de035aa68e3f3ca7",
+            "rollback_exact": true,
+            "changed_surface_count": 0
+          },
+          "epochs_completed": 0
+        }
+      ]
+    },
+    {
+      "seed": 6101,
+      "arms": [
+        {
+          "arm": "no_update",
+          "checkpoint_authority": {
+            "best_epoch": 0,
+            "authority_eligible": true,
+            "selection_data": "prospective_base_authority",
+            "retained_floor": 0.70333335
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.74166667,
+            "target_test_accuracy": 0.72500002,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.25,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.37916667,
+            "parameter_l2_to_deletion_retrain": 1.1737313992,
+            "prediction_disagreement_to_deletion_retrain": 49,
+            "mean_kl_to_deletion_retrain": 0.4846321046,
+            "changed_deletion_decisions_vs_no_update": 0
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-6101/no_update-state-surfaces.json",
+            "surface_file_sha256": "9497fc359777b18181bb3c631a69b289192ae4b1fad59f36c26ccfbcd91e1c30",
+            "surface_count": 24,
+            "before_sha256": "3f155e73fe9796fb70e57dab51db4705272944b53d62e37315a15ffd015da868",
+            "mutated_sha256": "3f155e73fe9796fb70e57dab51db4705272944b53d62e37315a15ffd015da868",
+            "rollback_sha256": "3f155e73fe9796fb70e57dab51db4705272944b53d62e37315a15ffd015da868",
+            "rollback_exact": true,
+            "changed_surface_count": 0
+          },
+          "epochs_completed": 0
+        },
+        {
+          "arm": "standard_update",
+          "checkpoint_authority": {
+            "best_epoch": 9,
+            "authority_eligible": true,
+            "selection_data": "validation_only",
+            "retained_floor": null
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.68333334,
+            "target_test_accuracy": 0.66250002,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.69999999,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.0,
+            "parameter_l2_to_deletion_retrain": 2.0682616616,
+            "prediction_disagreement_to_deletion_retrain": 62,
+            "mean_kl_to_deletion_retrain": 1.0278177261,
+            "changed_deletion_decisions_vs_no_update": 27
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-6101/standard_update-state-surfaces.json",
+            "surface_file_sha256": "06cbc25c3359928924dea9780459286b723ed068212f69530478eed55b84d26c",
+            "surface_count": 24,
+            "before_sha256": "3f155e73fe9796fb70e57dab51db4705272944b53d62e37315a15ffd015da868",
+            "mutated_sha256": "6174e72bea35eba6838406916e19bbaa8d03e6c080cc837d19980a1f22d602bd",
+            "rollback_sha256": "3f155e73fe9796fb70e57dab51db4705272944b53d62e37315a15ffd015da868",
+            "rollback_exact": true,
+            "changed_surface_count": 13
+          },
+          "epochs_completed": 16
+        },
+        {
+          "arm": "governed_update",
+          "checkpoint_authority": {
+            "best_epoch": 9,
+            "authority_eligible": true,
+            "selection_data": "validation_only",
+            "retained_floor": 0.70333335
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.75833333,
+            "target_test_accuracy": 0.76249999,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.93333334,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.0,
+            "parameter_l2_to_deletion_retrain": 1.8763664725,
+            "prediction_disagreement_to_deletion_retrain": 44,
+            "mean_kl_to_deletion_retrain": 0.4726701677,
+            "changed_deletion_decisions_vs_no_update": 41
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-6101/governed_update-state-surfaces.json",
+            "surface_file_sha256": "b1eef0b94d4341662826064997fddffd48ac98e4fcf33b44ac9acde5d8a7746f",
+            "surface_count": 24,
+            "before_sha256": "3f155e73fe9796fb70e57dab51db4705272944b53d62e37315a15ffd015da868",
+            "mutated_sha256": "8612064f36125fd6e0d2fc45eb9c846e9bc379aee63f6c6475e13dd6907a82a7",
+            "rollback_sha256": "3f155e73fe9796fb70e57dab51db4705272944b53d62e37315a15ffd015da868",
+            "rollback_exact": true,
+            "changed_surface_count": 13
+          },
+          "epochs_completed": 16
+        },
+        {
+          "arm": "regularized_forgetting_mitigation",
+          "checkpoint_authority": {
+            "best_epoch": 9,
+            "authority_eligible": true,
+            "selection_data": "validation_only",
+            "retained_floor": 0.70333335
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.76666665,
+            "target_test_accuracy": 0.75,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.93333334,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.0,
+            "parameter_l2_to_deletion_retrain": 1.8467594505,
+            "prediction_disagreement_to_deletion_retrain": 47,
+            "mean_kl_to_deletion_retrain": 0.51596874,
+            "changed_deletion_decisions_vs_no_update": 41
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-6101/regularized_forgetting_mitigation-state-surfaces.json",
+            "surface_file_sha256": "b25b7742f53e3b5fee0f9752efdbf250c3d9d040384579fde0cd71fef8a77183",
+            "surface_count": 24,
+            "before_sha256": "3f155e73fe9796fb70e57dab51db4705272944b53d62e37315a15ffd015da868",
+            "mutated_sha256": "a6317c57779dddd107145eb4f18cadc38cf4ef4c1034de50282955b015c56412",
+            "rollback_sha256": "3f155e73fe9796fb70e57dab51db4705272944b53d62e37315a15ffd015da868",
+            "rollback_exact": true,
+            "changed_surface_count": 13
+          },
+          "epochs_completed": 16
+        },
+        {
+          "arm": "approximate_unlearning",
+          "checkpoint_authority": {
+            "best_epoch": 15,
+            "authority_eligible": true,
+            "selection_data": "validation_only",
+            "retained_floor": 0.70333335
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.77499998,
+            "target_test_accuracy": 0.78750002,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.56666666,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.0,
+            "parameter_l2_to_deletion_retrain": 2.18178822,
+            "prediction_disagreement_to_deletion_retrain": 73,
+            "mean_kl_to_deletion_retrain": 1.9166437387,
+            "changed_deletion_decisions_vs_no_update": 19,
+            "distance_reduction_fraction_vs_standard_update": -0.05488984
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-6101/approximate_unlearning-state-surfaces.json",
+            "surface_file_sha256": "ff1717a2d04e4362293766d861e70de6cfda591ac59b4121af76f1a80e47f9cd",
+            "surface_count": 24,
+            "before_sha256": "3f155e73fe9796fb70e57dab51db4705272944b53d62e37315a15ffd015da868",
+            "mutated_sha256": "a9c1cb0189e9d8503d48b538d3848d7e1ed65935ebef5d2f9a6d580d42946376",
+            "rollback_sha256": "3f155e73fe9796fb70e57dab51db4705272944b53d62e37315a15ffd015da868",
+            "rollback_exact": true,
+            "changed_surface_count": 13
+          },
+          "epochs_completed": 16
+        },
+        {
+          "arm": "deletion_aware_retrain",
+          "checkpoint_authority": {
+            "best_epoch": 28,
+            "authority_eligible": true,
+            "selection_data": "validation_only",
+            "retained_floor": 0.70333335
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.75,
+            "target_test_accuracy": 0.73750001,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.5,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.06666667,
+            "parameter_l2_to_deletion_retrain": 0.0,
+            "prediction_disagreement_to_deletion_retrain": 0,
+            "mean_kl_to_deletion_retrain": 0.0,
+            "changed_deletion_decisions_vs_no_update": 15
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-6101/deletion_aware_retrain-state-surfaces.json",
+            "surface_file_sha256": "24ef31451f2fd10e6cc403701b754b1037080adc4c1988af4eb0c411b9a20e67",
+            "surface_count": 24,
+            "before_sha256": "3f155e73fe9796fb70e57dab51db4705272944b53d62e37315a15ffd015da868",
+            "mutated_sha256": "04bc6d7eff303e6da0dfd7ba81e4d39ed7f55783ee47d375922031d8c1594da4",
+            "rollback_sha256": "3f155e73fe9796fb70e57dab51db4705272944b53d62e37315a15ffd015da868",
+            "rollback_exact": true,
+            "changed_surface_count": 13
+          },
+          "epochs_completed": 30
+        },
+        {
+          "arm": "exact_rollback",
+          "checkpoint_authority": {
+            "best_epoch": 0,
+            "authority_eligible": true,
+            "selection_data": "prospective_base_authority",
+            "retained_floor": 0.70333335
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.74166667,
+            "target_test_accuracy": 0.72500002,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.25,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.37916667,
+            "parameter_l2_to_deletion_retrain": 1.1737313992,
+            "prediction_disagreement_to_deletion_retrain": 49,
+            "mean_kl_to_deletion_retrain": 0.4846321046,
+            "changed_deletion_decisions_vs_no_update": 0
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-6101/exact_rollback-state-surfaces.json",
+            "surface_file_sha256": "9497fc359777b18181bb3c631a69b289192ae4b1fad59f36c26ccfbcd91e1c30",
+            "surface_count": 24,
+            "before_sha256": "3f155e73fe9796fb70e57dab51db4705272944b53d62e37315a15ffd015da868",
+            "mutated_sha256": "3f155e73fe9796fb70e57dab51db4705272944b53d62e37315a15ffd015da868",
+            "rollback_sha256": "3f155e73fe9796fb70e57dab51db4705272944b53d62e37315a15ffd015da868",
+            "rollback_exact": true,
+            "changed_surface_count": 0
+          },
+          "epochs_completed": 0
+        }
+      ]
+    },
+    {
+      "seed": 7907,
+      "arms": [
+        {
+          "arm": "no_update",
+          "checkpoint_authority": {
+            "best_epoch": 0,
+            "authority_eligible": true,
+            "selection_data": "prospective_base_authority",
+            "retained_floor": 0.63666669
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.69999999,
+            "target_test_accuracy": 0.73750001,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.5,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.37916667,
+            "parameter_l2_to_deletion_retrain": 0.5311925288,
+            "prediction_disagreement_to_deletion_retrain": 53,
+            "mean_kl_to_deletion_retrain": 1.1610648632,
+            "changed_deletion_decisions_vs_no_update": 0
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-7907/no_update-state-surfaces.json",
+            "surface_file_sha256": "671f9dda09401a015a7716e28f9628970979c2ff75c1ff9c0930c22f9ff65ce9",
+            "surface_count": 24,
+            "before_sha256": "461308b21172d42f24bb77aefb4f8f43164aa3bda3357d98e8c35e547f0a84c4",
+            "mutated_sha256": "461308b21172d42f24bb77aefb4f8f43164aa3bda3357d98e8c35e547f0a84c4",
+            "rollback_sha256": "461308b21172d42f24bb77aefb4f8f43164aa3bda3357d98e8c35e547f0a84c4",
+            "rollback_exact": true,
+            "changed_surface_count": 0
+          },
+          "epochs_completed": 0
+        },
+        {
+          "arm": "standard_update",
+          "checkpoint_authority": {
+            "best_epoch": 10,
+            "authority_eligible": true,
+            "selection_data": "validation_only",
+            "retained_floor": null
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.71666664,
+            "target_test_accuracy": 0.71249998,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.5,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.05,
+            "parameter_l2_to_deletion_retrain": 1.4858565455,
+            "prediction_disagreement_to_deletion_retrain": 35,
+            "mean_kl_to_deletion_retrain": 0.4657694995,
+            "changed_deletion_decisions_vs_no_update": 60
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-7907/standard_update-state-surfaces.json",
+            "surface_file_sha256": "dab9876dc3a023204673b67993d91541e69483314d1cadf102e6e99b82f0c21a",
+            "surface_count": 24,
+            "before_sha256": "461308b21172d42f24bb77aefb4f8f43164aa3bda3357d98e8c35e547f0a84c4",
+            "mutated_sha256": "be97308e8b60b8f0330bc650572b19c7209c30e7d15e35daee696d15a80b5209",
+            "rollback_sha256": "461308b21172d42f24bb77aefb4f8f43164aa3bda3357d98e8c35e547f0a84c4",
+            "rollback_exact": true,
+            "changed_surface_count": 13
+          },
+          "epochs_completed": 16
+        },
+        {
+          "arm": "governed_update",
+          "checkpoint_authority": {
+            "best_epoch": 12,
+            "authority_eligible": true,
+            "selection_data": "validation_only",
+            "retained_floor": 0.63666669
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.69166666,
+            "target_test_accuracy": 0.69999999,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.55000001,
+            "deletion_true_confidence": 2e-08,
+            "membership_attack_auc": 0.1875,
+            "parameter_l2_to_deletion_retrain": 1.5741442497,
+            "prediction_disagreement_to_deletion_retrain": 71,
+            "mean_kl_to_deletion_retrain": 1.179782629,
+            "changed_deletion_decisions_vs_no_update": 3
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-7907/governed_update-state-surfaces.json",
+            "surface_file_sha256": "1970732ede3f8d886a4fe1c6caae3d4277436e3aaaab473f542e4cab781c111b",
+            "surface_count": 24,
+            "before_sha256": "461308b21172d42f24bb77aefb4f8f43164aa3bda3357d98e8c35e547f0a84c4",
+            "mutated_sha256": "d11960f4daa5d31ffe18a40567880e41ea43ad65d84e7166c652ef14104919de",
+            "rollback_sha256": "461308b21172d42f24bb77aefb4f8f43164aa3bda3357d98e8c35e547f0a84c4",
+            "rollback_exact": true,
+            "changed_surface_count": 13
+          },
+          "epochs_completed": 16
+        },
+        {
+          "arm": "regularized_forgetting_mitigation",
+          "checkpoint_authority": {
+            "best_epoch": 12,
+            "authority_eligible": true,
+            "selection_data": "validation_only",
+            "retained_floor": 0.63666669
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.70833331,
+            "target_test_accuracy": 0.72500002,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.55000001,
+            "deletion_true_confidence": 3e-08,
+            "membership_attack_auc": 0.1875,
+            "parameter_l2_to_deletion_retrain": 1.5535044697,
+            "prediction_disagreement_to_deletion_retrain": 67,
+            "mean_kl_to_deletion_retrain": 1.2120137215,
+            "changed_deletion_decisions_vs_no_update": 3
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-7907/regularized_forgetting_mitigation-state-surfaces.json",
+            "surface_file_sha256": "8310f1584c9fa7467a79678b8c0b4da370194770b4559e5b67773118a654ecc1",
+            "surface_count": 24,
+            "before_sha256": "461308b21172d42f24bb77aefb4f8f43164aa3bda3357d98e8c35e547f0a84c4",
+            "mutated_sha256": "31b68ab0758f2ba3229ac3dd20b6101c0950fea0a8110aa8076f6a46bc957e14",
+            "rollback_sha256": "461308b21172d42f24bb77aefb4f8f43164aa3bda3357d98e8c35e547f0a84c4",
+            "rollback_exact": true,
+            "changed_surface_count": 13
+          },
+          "epochs_completed": 16
+        },
+        {
+          "arm": "approximate_unlearning",
+          "checkpoint_authority": {
+            "best_epoch": 15,
+            "authority_eligible": true,
+            "selection_data": "validation_only",
+            "retained_floor": 0.63666669
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.70833331,
+            "target_test_accuracy": 0.71249998,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.80000001,
+            "deletion_true_confidence": 3.533e-05,
+            "membership_attack_auc": 0.50416667,
+            "parameter_l2_to_deletion_retrain": 1.955834481,
+            "prediction_disagreement_to_deletion_retrain": 58,
+            "mean_kl_to_deletion_retrain": 0.8132381439,
+            "changed_deletion_decisions_vs_no_update": 18,
+            "distance_reduction_fraction_vs_standard_update": -0.31630102
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-7907/approximate_unlearning-state-surfaces.json",
+            "surface_file_sha256": "bf250ac8f3f016b50c2b3fa24c7262263ec34e9f5262af1090d3a4b38c75796f",
+            "surface_count": 24,
+            "before_sha256": "461308b21172d42f24bb77aefb4f8f43164aa3bda3357d98e8c35e547f0a84c4",
+            "mutated_sha256": "ff2c3f9b29d494baefc8c22b03e3a7e8f9ea431aa490b555bd7e28e42787205d",
+            "rollback_sha256": "461308b21172d42f24bb77aefb4f8f43164aa3bda3357d98e8c35e547f0a84c4",
+            "rollback_exact": true,
+            "changed_surface_count": 13
+          },
+          "epochs_completed": 16
+        },
+        {
+          "arm": "deletion_aware_retrain",
+          "checkpoint_authority": {
+            "best_epoch": 29,
+            "authority_eligible": true,
+            "selection_data": "validation_only",
+            "retained_floor": 0.63666669
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.77499998,
+            "target_test_accuracy": 0.78750002,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.5,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.2875,
+            "parameter_l2_to_deletion_retrain": 0.0,
+            "prediction_disagreement_to_deletion_retrain": 0,
+            "mean_kl_to_deletion_retrain": 0.0,
+            "changed_deletion_decisions_vs_no_update": 0
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-7907/deletion_aware_retrain-state-surfaces.json",
+            "surface_file_sha256": "061ed4c9171760bc6e2dc5b4718d72e7e1c16c01e3673b2091f79c0cb384fa07",
+            "surface_count": 24,
+            "before_sha256": "461308b21172d42f24bb77aefb4f8f43164aa3bda3357d98e8c35e547f0a84c4",
+            "mutated_sha256": "abfe261b5f3ee93eb2622bea61c4d6bce1dfef110c78dccab66a2b056f297277",
+            "rollback_sha256": "461308b21172d42f24bb77aefb4f8f43164aa3bda3357d98e8c35e547f0a84c4",
+            "rollback_exact": true,
+            "changed_surface_count": 13
+          },
+          "epochs_completed": 30
+        },
+        {
+          "arm": "exact_rollback",
+          "checkpoint_authority": {
+            "best_epoch": 0,
+            "authority_eligible": true,
+            "selection_data": "prospective_base_authority",
+            "retained_floor": 0.63666669
+          },
+          "metrics": {
+            "retained_test_accuracy": 0.69999999,
+            "target_test_accuracy": 0.73750001,
+            "adversarial_test_accuracy": 0.60000002,
+            "deletion_true_accuracy": 0.0,
+            "deletion_poisoned_label_accuracy": 0.5,
+            "deletion_true_confidence": 0.0,
+            "membership_attack_auc": 0.37916667,
+            "parameter_l2_to_deletion_retrain": 0.5311925288,
+            "prediction_disagreement_to_deletion_retrain": 53,
+            "mean_kl_to_deletion_retrain": 1.1610648632,
+            "changed_deletion_decisions_vs_no_update": 0
+          },
+          "full_state": {
+            "surface_path": "experiments/p4_update_unlearning/checkpoints/seed-7907/exact_rollback-state-surfaces.json",
+            "surface_file_sha256": "671f9dda09401a015a7716e28f9628970979c2ff75c1ff9c0930c22f9ff65ce9",
+            "surface_count": 24,
+            "before_sha256": "461308b21172d42f24bb77aefb4f8f43164aa3bda3357d98e8c35e547f0a84c4",
+            "mutated_sha256": "461308b21172d42f24bb77aefb4f8f43164aa3bda3357d98e8c35e547f0a84c4",
+            "rollback_sha256": "461308b21172d42f24bb77aefb4f8f43164aa3bda3357d98e8c35e547f0a84c4",
+            "rollback_exact": true,
+            "changed_surface_count": 0
+          },
+          "epochs_completed": 0
+        }
+      ]
+    }
+  ],
+  "arm_summaries": {
+    "no_update": {
+      "retained_test_accuracy": 0.73333333,
+      "target_test_accuracy": 0.74500001,
+      "adversarial_test_accuracy": 0.60000002,
+      "deletion_true_accuracy": 0.0,
+      "deletion_poisoned_label_accuracy": 0.4,
+      "deletion_true_confidence": 0.0,
+      "membership_attack_auc": 0.35083333,
+      "parameter_l2_to_deletion_retrain": 1.40136469,
+      "prediction_disagreement_to_deletion_retrain": 73.8,
+      "mean_kl_to_deletion_retrain": 1.63276884,
+      "changed_deletion_decisions_vs_no_update": 0.0
+    },
+    "standard_update": {
+      "retained_test_accuracy": 0.665,
+      "target_test_accuracy": 0.66500001,
+      "adversarial_test_accuracy": 0.60000002,
+      "deletion_true_accuracy": 0.0,
+      "deletion_poisoned_label_accuracy": 0.74,
+      "deletion_true_confidence": 0.00096531,
+      "membership_attack_auc": 0.10611111,
+      "parameter_l2_to_deletion_retrain": 2.11313554,
+      "prediction_disagreement_to_deletion_retrain": 84.6,
+      "mean_kl_to_deletion_retrain": 2.57975588,
+      "changed_deletion_decisions_vs_no_update": 44.4
+    },
+    "governed_update": {
+      "retained_test_accuracy": 0.735,
+      "target_test_accuracy": 0.745,
+      "adversarial_test_accuracy": 0.60000002,
+      "deletion_true_accuracy": 0.0,
+      "deletion_poisoned_label_accuracy": 0.54666667,
+      "deletion_true_confidence": 0.0,
+      "membership_attack_auc": 0.23666667,
+      "parameter_l2_to_deletion_retrain": 1.75048205,
+      "prediction_disagreement_to_deletion_retrain": 76.4,
+      "mean_kl_to_deletion_retrain": 1.63412001,
+      "changed_deletion_decisions_vs_no_update": 8.8
+    },
+    "regularized_forgetting_mitigation": {
+      "retained_test_accuracy": 0.73999999,
+      "target_test_accuracy": 0.74750001,
+      "adversarial_test_accuracy": 0.60000002,
+      "deletion_true_accuracy": 0.0,
+      "deletion_poisoned_label_accuracy": 0.54666667,
+      "deletion_true_confidence": 1e-08,
+      "membership_attack_auc": 0.23666667,
+      "parameter_l2_to_deletion_retrain": 1.74043269,
+      "prediction_disagreement_to_deletion_retrain": 76.2,
+      "mean_kl_to_deletion_retrain": 1.64922594,
+      "changed_deletion_decisions_vs_no_update": 8.8
+    },
+    "approximate_unlearning": {
+      "retained_test_accuracy": 0.77333332,
+      "target_test_accuracy": 0.76999999,
+      "adversarial_test_accuracy": 0.60000002,
+      "deletion_true_accuracy": 0.0,
+      "deletion_poisoned_label_accuracy": 0.87333333,
+      "deletion_true_confidence": 7.07e-06,
+      "membership_attack_auc": 0.15083333,
+      "parameter_l2_to_deletion_retrain": 2.35462212,
+      "prediction_disagreement_to_deletion_retrain": 78.8,
+      "mean_kl_to_deletion_retrain": 2.08156042,
+      "changed_deletion_decisions_vs_no_update": 28.4,
+      "distance_reduction_fraction_vs_standard_update": -0.13722843
+    },
+    "deletion_aware_retrain": {
+      "retained_test_accuracy": 0.69499998,
+      "target_test_accuracy": 0.70250001,
+      "adversarial_test_accuracy": 0.53333335,
+      "deletion_true_accuracy": 0.0,
+      "deletion_poisoned_label_accuracy": 0.45,
+      "deletion_true_confidence": 0.00555857,
+      "membership_attack_auc": 0.30922222,
+      "parameter_l2_to_deletion_retrain": 0.0,
+      "prediction_disagreement_to_deletion_retrain": 0.0,
+      "mean_kl_to_deletion_retrain": 0.0,
+      "changed_deletion_decisions_vs_no_update": 9.0
+    },
+    "exact_rollback": {
+      "retained_test_accuracy": 0.73333333,
+      "target_test_accuracy": 0.74500001,
+      "adversarial_test_accuracy": 0.60000002,
+      "deletion_true_accuracy": 0.0,
+      "deletion_poisoned_label_accuracy": 0.4,
+      "deletion_true_confidence": 0.0,
+      "membership_attack_auc": 0.35083333,
+      "parameter_l2_to_deletion_retrain": 1.40136469,
+      "prediction_disagreement_to_deletion_retrain": 73.8,
+      "mean_kl_to_deletion_retrain": 1.63276884,
+      "changed_deletion_decisions_vs_no_update": 0.0
+    }
+  },
+  "axis_dispositions": {
+    "behavioral_cohort_change": {
+      "disposition": "observed_bounded_local",
+      "basis": "Approximate unlearning changed 142 deletion-cohort decisions across five seeds relative to no update."
+    },
+    "causal_influence_reduction": {
+      "disposition": "not_observed",
+      "basis": "Mean parameter-distance reduction toward deletion-aware retraining versus standard update was -0.13722843; retraining is only a comparator and does not prove zero influence."
+    },
+    "membership_privacy_change": {
+      "disposition": "attack_metric_changed_no_guarantee",
+      "basis": "Mean loss-threshold membership AUC changed by +0.04472222; this single internal attack is not a privacy guarantee."
+    },
+    "lineage_invalidation": {
+      "disposition": "observed_bounded_local",
+      "basis": "5 late local descendants were invalidated and quarantined."
+    },
+    "legal_compliance": {
+      "disposition": "not_evaluated",
+      "basis": "No legal authority, jurisdiction, consent, or compliance assessment was performed."
+    },
+    "storage_erasure": {
+      "disposition": "partial_declared_store_only",
+      "basis": "The declared operational feature shard was absent after deletion, while the corpus, research feature packet, checkpoints, and raw evidence remain retained."
+    },
+    "backup_erasure": {
+      "disposition": "local_observed_remote_unresolved",
+      "basis": "The declared local backup was absent; the simulated unavailable remote endpoint supplied no acknowledgement."
+    },
+    "external_descendant_closure": {
+      "disposition": "unresolved",
+      "basis": "Local descendants were invalidated, but the simulated unreachable export did not acknowledge invalidation or erasure."
+    }
+  },
+  "storage_receipt": {
+    "declared_operational_paths": [
+      "experiments/p4_update_unlearning/raw/operational_store/deletion-cohort-features.pt",
+      "experiments/p4_update_unlearning/raw/local_backup/deletion-cohort-features.pt"
+    ],
+    "created_sha256": {
+      "operational": "2bc7e45f235d43ba029325cf5c198e0feaf30c7a7a1e077a886a4d46eacbadcb",
+      "local_backup": "2bc7e45f235d43ba029325cf5c198e0feaf30c7a7a1e077a886a4d46eacbadcb"
+    },
+    "physical_absence_after_request": {
+      "operational": true,
+      "local_backup": true
+    },
+    "logical_index_references_after_request": 0,
+    "remote_backup": {
+      "simulated_endpoint": "remote-unavailable.example.invalid",
+      "reachable": false,
+      "erasure_acknowledged": false,
+      "residual": "remote replica closure unverified"
+    },
+    "retained_research_evidence": [
+      "experiments/p4_update_unlearning/corpus.json",
+      "experiments/p4_update_unlearning/raw/features.pt",
+      "experiments/p4_update_unlearning/raw/training_run.json"
+    ],
+    "bounded_operational_derived_store_erasure": true,
+    "total_storage_erasure": false
+  },
+  "lineage_receipt": {
+    "late_request": true,
+    "descendants": [
+      {
+        "descendant_id": "calibrator-1701-governed",
+        "derived_from": "seed-1701-governed_update",
+        "invalidation": "recorded",
+        "quarantine": "recorded",
+        "physical_erasure": false
+      },
+      {
+        "descendant_id": "calibrator-2903-governed",
+        "derived_from": "seed-2903-governed_update",
+        "invalidation": "recorded",
+        "quarantine": "recorded",
+        "physical_erasure": false
+      },
+      {
+        "descendant_id": "calibrator-4307-governed",
+        "derived_from": "seed-4307-governed_update",
+        "invalidation": "recorded",
+        "quarantine": "recorded",
+        "physical_erasure": false
+      },
+      {
+        "descendant_id": "calibrator-6101-governed",
+        "derived_from": "seed-6101-governed_update",
+        "invalidation": "recorded",
+        "quarantine": "recorded",
+        "physical_erasure": false
+      },
+      {
+        "descendant_id": "calibrator-7907-governed",
+        "derived_from": "seed-7907-governed_update",
+        "invalidation": "recorded",
+        "quarantine": "recorded",
+        "physical_erasure": false
+      }
+    ],
+    "local_descendant_invalidation_count": 5,
+    "external_descendant": {
+      "identity": "export-simulated-unreachable",
+      "reachable": false,
+      "invalidation_acknowledged": false,
+      "erasure_verified": false
+    }
+  },
+  "evaluator_recomputation_disagreement_count": 0,
+  "gate_checks_before_validator_mutations": {
+    "preflight_instrument_adequate": true,
+    "all_feature_values_finite": true,
+    "five_seeds_present": true,
+    "seven_arms_present": true,
+    "twenty_four_state_surfaces_present": true,
+    "all_eight_claim_axes_reported": true,
+    "all_rollback_surface_digests_exact": true,
+    "total_storage_erasure_remains_false": true,
+    "evaluator_recomputation_disagreement_zero": true
+  },
+  "cost": {
+    "wall_seconds": 83.29677,
+    "feature_extraction_wall_seconds": 64.107468,
+    "maximum_resident_set_kib": 3430662144,
+    "marginal_api_cost_usd": 0.0,
+    "energy_measured": false,
+    "operator_time_measured": false
+  },
+  "evaluator_separation": "independent script and metric implementation over closed trainer artifacts; internal only",
+  "claim_ceiling": "Frozen Qwen representation plus linear-head local evidence for axis separation and declared-state rollback only; not language-model unlearning, privacy, complete erasure, legal compliance, transfer, production, or SOTA.",
+  "support_state_effect": "none",
+  "chapter_core_promotion_count": 0,
+  "non_claims": [
+    "Frozen Qwen representations plus a trained linear head are not language-model weight unlearning.",
+    "Deletion-aware retraining is a comparator, not proof of zero causal influence.",
+    "Membership-attack movement is not a privacy guarantee.",
+    "Retained research evidence prevents a total storage-erasure claim.",
+    "No transfer, production, legal compliance, external independence, SOTA, AGI, ASI, or support promotion follows."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "asi_stack.p2_gold_preflight_rescue_aborted_attempt.v1",
+  "recorded_date": "2026-07-17",
+  "attempt_id": "2026-07-17-raw-log-custody-abort",
+  "state": "instrument_failure_aborted",
+  "claim_id": "p2.governed_natural_repository_change_admission_joint_frontier",
+  "scope": "development_only_instrument_rescue",
+  "completed_dependency_materialization_task": "aleph-alpha__ts-rs-422",
+  "completed_offline_arm_count": 4,
+  "offline_arm_summary": "all four parsed arm checks failed after reaching test execution",
+  "abort_reason": "offline reruns retained output hashes and parsed counts but not compressed raw logs",
+  "negative_inference_level": "N0",
+  "claim_effect": "none",
+  "retained_preparation_log": "experiments/p2_governed_repository_admission/gold_preflight_rescue/logs/aleph-alpha__ts-rs-422.dependency_materialization.log.gz",
+  "retained_preparation_log_compressed_sha256": "36fecf025ec98fb504df29ba42a12cdf78f01d8fc7b6c597a44512df03f9a96e",
+  "retained_preparation_output_sha256": "4517488ee8815359feb5caf8a50b6344a6cb91df3c5e9c525f0b906f2c0fc01e",
+  "retained_preparation_output_bytes": 6155,
+  "raw_offline_logs_retained": false,
+  "final_pool_selected": false,
+  "final_pool_opened": false,
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "corrective_action": "version every rescue attempt and retain compressed raw output for every offline arm before accepting any rescue result",
+  "non_claims": [
+    "This aborted attempt is not evidence for or against the task, mechanism, policy, book claim, model, governance benefit, safety, transfer, or SOTA.",
+    "The observed parsed failures cannot be interpreted without the missing raw offline logs.",
+    "The final held-out pool remained unselected and unopened."
+  ]
+}

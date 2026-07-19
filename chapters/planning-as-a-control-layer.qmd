@@ -23,6 +23,7 @@ open_evidence_gaps:
   - "The current evidence is a record-and-route scaffold: three valid and ten invalid plan-execution fixtures, two valid scheduler-state traces with seven rejecting mutations, two valid runtime-replan traces with nine rejecting mutations, two no-change transitions, and 33 theorem declarations under seven targets. It contains no planner-generated natural plan, independent decomposition oracle, measured dependency truth, context-demand prediction, selected-tier adequacy, live scheduler, observed replan benefit, or support movement."
   - "The next honest minimum is a preregistered natural multi-planner campaign with strong human and algorithmic/workflow baselines, hidden obligations and perturbations, complete alternative denominators, independent semantic/dependency/feasibility/outcome evaluation, observed costs and feedback, effect-tested stop/recovery, causal ablations, reproduction, and transfer."
   - "No support-state promotion is implied by this drafting pass."
+  - "Campaign 5 adds one synthetic-test-backed non-core result over two finite authored partially observable environments; it does not promote this chapter core or establish a neural world model, natural-task planning, reliable shift detection, open-world transfer, or safe control."
 ---
 
 ## Chapter status
@@ -497,6 +498,58 @@ remain explicit residuals. Adoption requires a matched baseline, intervention
 tests, calibration, cost accounting, and safe fallback; the cited robot results
 do not establish local control quality or safety.
 
+### A finite world-model control result
+
+Campaign 5 turns a narrow part of this interface into executable evidence. A
+prospectively frozen count-table agent ran 11,250 matched episodes across an
+adaptive-workshop simulator and a meaningfully different service-mesh
+simulator. The 6,000 held-out episodes separated reference state, delivered
+observation, interpretation, belief, prediction, intervention, prediction
+error, observed effect, and consolidation. Reference state scored the run but
+never entered the agent input.
+
+The governed arm reached hidden-state accuracy 0.7933 in the workshop and
+0.7967 in the service mesh, versus 0.4500 and 0.4067 for the reactive arm. Its
+unsafe-action rates were 0.1000 and 0.1133, versus 0.2333 and 0.2733 for the
+ungoverned predictive arm. That safety improvement was not free: task success
+was lower than the ungoverned predictive arm by 0.0233 and 0.0300 because the
+governed path escalated uncertain cases.
+
+The causal packet matters more than the headline. Removing the uncertainty
+gate raised unsafe action in both environments; removing intervention or
+consolidation reduced accuracy in both; merging observation into belief
+worsened Brier score in both. Active information gathering was heterogeneous:
+slightly harmful in the workshop and helpful in the service mesh. Shift
+detection remained only 0.1667 and 0.2200. Planning should therefore consume a
+world-model interface as fallible state estimation with explicit uncertainty,
+intervention cost, escalation, and shift residuals—not as a learned oracle.
+
+The accepted transition is the non-core claim
+`situated-world-model.finite-pomdp-governed-acquisition-and-consolidation` at
+`synthetic-test-backed`. The full receipt is
+`docs/p4_situated_world_model_campaign.md`. The planning-control core remains at
+`argument`: two authored finite simulators do not establish a neural world
+model, natural-task planning, general causal understanding, safe model-
+predictive control, or transfer beyond the declared interface.
+
+
+### Branch-protected action semantics
+
+The Platonic World Model supplies the semantic contract around predictive
+planning. An Action Form declares actor and target roles, preconditions,
+effects, explicit non-effects, authority, observability, reversibility, cost,
+failure modes, and grounding implementation. Transition models may be symbolic,
+causal, probabilistic, neural, simulated, or hybrid, but each declares its state
+vocabulary, applicable contexts, intervention semantics, uncertainty,
+validation evidence, cost, and conflict policy.
+
+Plans execute only in a branch until an observation or authorized action event
+promotes a state change into actuality. A counterfactual receipt preserves the
+baseline, intervention, held-fixed assumptions, selected causal model,
+semantic basis, branch, outcome comparison, and limitations. Model disagreement
+remains visible rather than being averaged into a single confident state. The
+paper's laboratory-access trace demonstrates the intended object flow only; it
+is not executed planning evidence.
 
 ## Source crosswalk
 
@@ -519,6 +572,15 @@ independent decomposition or dependency evaluator, selected-tier adequacy test,
 context-demand test, live scheduler, observed replan benefit, cost-quality
 result, or reproduced predictive-control result is recorded.
 
+### Manifest source assignment reconciliation
+
+These rows keep Planning as a Control Layer: DAGs and Intelligence Arbitrage's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Planning owns the prospective choice and revision of obligation order under
@@ -539,6 +601,80 @@ is clearer boundaries and better tests, not demonstrated planning superiority.
 
 Its immediate contribution is an auditable handoff whose failures, repairs,
 abstentions, and downstream effects remain attributable.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **76** structured claim atoms in `CF-03`. The
+frozen repository-wide terminal audit records 76 `blocked_after_full_attempt`. Its core
+atom `planning-as-a-control-layer.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `planning-as-a-control-layer` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+::: {.asi-human-only}
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 76 structured claims,
+76 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Intent-to-execution vertical refinement**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Structured local scenarios only; no natural-language semantic sufficiency, production backend, transfer, or deployment claim.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+:::
+
+::: {.asi-ai-only}
+
+### Evidence packet
+
+| Field | Exact chapter boundary |
+|---|---|
+| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-03` minimum family bundle. |
+| Attempted local lanes | `source-synthesis` |
+| Missing or unproved lanes | `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer` |
+| Family-level natural-work or end-to-end bundle | **Intent-to-execution vertical refinement** (`end_to_end`): Nine versioned scenarios and 89 events from governed intake through six observed local effects and terminal outcomes. |
+| Negative controls | pre-effect refusal; failed rollback quarantine; 30 rejecting mutations. |
+| Exact accepted transitions in this chapter | `v1_0_pilot.planning_control.no_change` |
+| Core outcome | `blocked_after_full_attempt` at `argument`; no chapter-core promotion. |
+| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
+| Reproduction path | Replay `scripts/validate_intent_execution_vertical_refinement.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
+
+### Worked success, failure, and boundary cases
+
+- **Success case:** the family-level bundle passed its own rejecting validator
+  within this exact scope: Nine versioned scenarios and 89 events from governed intake through six observed local effects and terminal outcomes. This is evidence that the family
+  received a competent attempt, not that every claim in this chapter succeeded.
+- **Failure or non-promotion case:** 76 atoms
+  remain blocked and 0 are narrowed. A
+  green family validator cannot fill their missing lanes or raise the core.
+- **Boundary case:** Structured local scenarios only; no natural-language semantic sufficiency, production backend, transfer, or deployment claim.
+
+### Argument-exit table
+
+| Atom set | Count | Work performed | Terminal reason and next burden |
+|---|---:|---|---|
+| Core: `planning-as-a-control-layer.core` | 1 | `source-synthesis` | `blocked_after_full_attempt`; missing or unproved: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. |
+| blocked after full attempt | 76 | `source-synthesis` | Missing or unproved lanes across this set: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. These are residual proof obligations, not false claims. |
+
+This table is a disposition map, not a promotion quota. The next valid movement
+is atom-specific evidence that fills the named missing lanes, survives relevant
+negative controls, and enters through an accepted evidence transition. Until
+then, source counts, theorem counts, fixtures, validators, or nearby family
+results cannot be used as substitutes.
+:::
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
 
 ## Handoff
 

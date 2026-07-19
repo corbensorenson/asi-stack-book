@@ -172,7 +172,9 @@ def errors(foundation: dict[str, Any]) -> list[str]:
     milestone_states = {row.get("id"): row.get("state") for row in status.get("milestones", [])}
     if milestone_states.get("M2") != "completed" or milestone_states.get("M4") not in {"in_progress", "completed"}:
         out.append("roadmap does not preserve M2 closure and M4 activation")
-    if status.get("current_priority") not in {"P3", "P4", "P5", "P6", "P7", "P8", "P9"}:
+    current_priority = status.get("current_priority")
+    terminal_roadmap = status.get("status") == "completed" and current_priority is None
+    if not terminal_roadmap and current_priority not in {"P3", "P4", "P5", "P6", "P7", "P8", "P9"}:
         out.append("research foundation regressed before active P3")
     if len(foundation.get("non_claims", [])) < 5:
         out.append("research foundation lacks explicit non-claims")

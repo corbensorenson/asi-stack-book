@@ -113,7 +113,7 @@ def semantic_errors(data: dict[str, Any]) -> list[str]:
         errors.append("vertical exact rollback or no-promotion boundary drifted")
 
     source_note = data["source_note"]
-    for phrase in ["Local Implementation And Evaluation Update (2026-07-13)", "1.913386", "active-question value was refuted", "do not warrant a standalone QCSA chapter"]:
+    for phrase in ["Local Implementation And Evaluation Update (2026-07-13)", "1.913386", "N2", "do not warrant a standalone QCSA chapter"]:
         if phrase not in source_note:
             errors.append(f"QCSA source note lacks repository/source boundary: {phrase}")
     appendix = data["appendix"]

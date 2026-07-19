@@ -1,0 +1,209 @@
+# Project Theseus as Report-First Implementation Reference
+
+Integrated architecture remains a design target until Project Theseus can serve as a report-first implementation reference: a way to think about what dashboards, ledgers, configs, gates, and work-board records should look like when a system tries to make itself inspectable.
+
+The boundary matters. Theseus can guide the prototype path without becoming public empirical proof. A report-first implementation earns evidence status when relevant reports and artifacts are available, reviewed, and mapped to specific claims.
+
+That keeps inspiration separate from support. Theseus can pressure the architecture toward practical surfaces while the manuscript still refuses to treat private dashboards, local status notes, or unreproduced runs as public evidence. The central lesson is not that a prototype exists somewhere; it is that an implementation should explain itself through durable records before asking for trust.
+
+Implementation pressure helps most when it sharpens boundaries instead of relaxing them. A report-first prototype is useful because it makes missing evidence harder to ignore, turning every dashboard impression into a provenance record. Public records, not local momentum, decide what support can safely claim.
+
+## Problem
+
+The implementation-reference lane shows how the ASI stack can be operated as report-first local machinery instead of only conceptual layer diagrams. Project Theseus is useful because its source notes describe pressure loops, plan compiler contracts, architecture gates, work boards, residual escrow, and self-evolution controls as reportable machinery.
+
+The boundary is just as important as the reference. A report-first architecture can guide this book, but the public repo cannot claim current Theseus benchmark performance, training readiness, or self-evolution safety unless the relevant reports, commands, environment notes, and publication permissions are present here.
+
+The implementation-reference role is therefore narrower and more useful than a prototype success story. Theseus gives the book a vocabulary for operating local machinery: pressure, attempt, residual, diagnosis, report, gate, work board, checkpoint, and smallest safe intervention. The living book can adopt that vocabulary while still refusing to launder private or source-reported status into public evidence.
+
+## Why existing approaches are insufficient
+
+A prototype roadmap is not enough unless readers can see how goals, plans, arms, reports, gates, residuals, checkpoints, compute, and operator surfaces interact in a working research system. Dashboards and summaries are especially risky because they can hide the run record that should carry the claim.
+
+Report-first implementation therefore treats reports, ledgers, configs, and work-board entries as the authority surface. Dashboard prose is a view over those artifacts, not a substitute for them.
+
+A report-first implementation is especially important for self-improving systems because the tempting story is always "the loop improved itself." The governed story has to be more specific: which pressure was admitted, which authority lease allowed the attempt, which artifact changed, which gate passed or failed, which residual remained, and which human review path stayed available.
+
+External positioning: Project Theseus remains a local implementation-reference case, but its report-first boundary now has source-reviewed reporting and reproducibility comparators. Model cards (`ext_model_cards_2019`), dataset datasheets (`ext_datasheets_datasets_2021`), AI service FactSheets (`ext_factsheets_ai_services_2019`), and the NeurIPS/JMLR reproducibility-program account (`ext_ml_reproducibility_program_2021`) show adjacent disciplines for structured disclosure, provenance, intended use, artifact review, and reproducibility checklists. Theseus report packets are broader than any one of those formats because they also need gates, residuals, work-board items, replay state, publication boundaries, and non-claims. The comparison does not assert that Theseus has produced model cards, datasheets, FactSheets, checklist-reviewed artifacts, or reproduced external results.
+
+## Core Claim
+
+Project Theseus as Report-First Implementation Reference owns a source-project-, pinned-revision-, report-family-, command-, environment-, artifact-, lineage-, evidence-state-, replay-, public-safety-, publication-permission-, reviewer-, consumer-, and time-specific **Implementation-Reference Evidence Packet**. It binds every imported or replayed report, configuration, ledger, work-board summary, registry, gate, crosswalk, trace, retained artifact, command, environment note, digest, missing artifact, decision, residual, and non-claim to `source_note_only`, `imported`, `replay_ready`, `replay_failed`, `locally_reproduced`, `stale`, `runtime_blocked`, or `archived_lineage`. Dashboards and latest files are projections only. No GREEN gate, complete registry, module card, pointer row, metadata snapshot, parity manifest, command replay, fixture, theorem, or sanitized import alone establishes current runtime truth, clean live replay, model quality, capability, benchmark validity, safety, deployment, support, transfer, AGI, ASI, or SOTA (evidence boundary: architectural argument).
+### Concrete Theseus Evidence Surface
+
+Theseus currently contributes a narrow public-safe evidence surface. The book has imported static architecture and generation summaries, replayed its own checks around those summaries, and added two sanitized import lanes for artifact retention and module definition of done. These pieces make the shape of a report-first implementation visible.
+
+Their value is negative as much as positive: they keep private payloads out, expose missing live replay, and block unsupported promotion. They do not establish model quality, generation speed, module capability, deployed behavior, safety, transfer, ASI, or any chapter-core promotion.
+
+## Mechanism
+
+The owned object is the **Implementation-Reference Evidence Packet**, not Project Theseus as a whole and not a dashboard about it. Its lifecycle has six auditable phases, each with three operations:
+
+| Phase | Required operations |
+|---|---|
+| 1. Scope and inventory | Freeze source project, pinned revision, report families, permissions, public/private boundary, consumers, environment, and time; inventory reports, configs, tools, boards, registries, ledgers, checkpoints, artifacts, dashboards, generators, and owners; bind every source path or note to version, digest, timestamp, generator, command, environment, dependencies, input boundary, expected output class, and failure behavior. |
+| 2. Classify and protect | Assign `source_note_only`, `imported`, `artifact_missing`, `replay_ready`, `replay_failed`, `locally_reproduced`, `stale`, `runtime_blocked`, or `archived_lineage`; sanitize under explicit permission with no undisclosed private payload; keep dashboards, latest aliases, pointers, and status summaries as projections over retained artifacts. |
+| 3. Crosswalk and replay | Map each stack layer and claim to exact artifact, gate, residual, state, and non-claim; bind intent, approval, agency, resource, rollback, work-board, review, and residual records; replay eligible commands in locked environments while retaining output, exit status, digests, failures, duration, resources, dependencies, and mutations. |
+| 4. Validate and compare | Test bundle completeness, lineage, gates, public safety, work contracts, missing artifacts, and intervention ordering with valid and rejecting controls; import static summaries only at exact revisions and states; compare packet fields with model cards, datasheets, FactSheets, and reproducibility programs without treating those formats as evidence. |
+| 5. Adjudicate and propagate | Expose benchmark and calibration partitions, external inference, teacher use, selection, retries, task access, and training-row status; require separate evidence transitions for capability, training, self-evolution, deployment, or chapter-core support; retain negative, null, failed, stale, missing, blocked, and no-promotion outcomes and propagate corrections or downgrades to every consumer. |
+| 6. Monitor and retire | Monitor replay age, dependency drift, missing artifacts, stale snapshots, public-safety and private-data pressure, failures, promotion pressure, latency, resources, review burden, and cost; expire or replace affected packets when assumptions change; archive or retire them without erasing lineage. |
+
+The pressure loop remains useful inside that packet: demand produces a contract, an attempt produces reports and effects, failures produce residuals, and the smallest governed intervention creates the next candidate. The packet prevents this implementation story from becoming evidence laundering. A Circle fixture can shape an experiment, a gate can block an attempt, and a retained artifact can establish one storage fact; none inherits model-quality or capability scope.
+
+Each phase must leave a consumer-visible receipt rather than merely advancing a
+dashboard. Scope and inventory produce the frozen packet identity; protection
+produces the public/private boundary; crosswalk and replay produce exact command
+and artifact observations; comparison produces bounded accept or reject facts;
+adjudication produces support and non-claim decisions; and monitoring produces
+expiry, correction, or retirement. If any receipt is absent, later work may
+continue only as explicitly isolated research, never as evidence of whole-system
+operation.
+
+```{mermaid}
+flowchart LR
+Goal["Goal, benchmark, or operator task"] -- "compiled request" --> Plan["Plan compiler contract and semantic IR"]
+Plan -- "route under bounds" --> Route["Octopus router and bounded arms"]
+Route -- "dispatch work" --> Work["SymLiquid, tools, Hive task kinds"]
+Work -- "emit reports" --> Reports["Reports, ledgers, traces, work board"]
+Reports -- "public-safe packet" --> Evidence["Evidence state and missing-artifact row"]
+Evidence -- "gate review" --> Gate["Architecture, resource, promotion, and safety gates"]
+Gate -- "blocked or partial" --> Residual["Residual escrow and intervention ladder"]
+Residual -- "smallest intervention" --> Structure["Tool, adapter, checkpoint, or smallest source change"]
+Structure -- "new pressure" --> Goal
+
+Circle["Circle finite contract pack"] -- "structural receipts" --> Transfer["Theseus Circle transfer lane"]
+Transfer -- "private design only" --> Fixtures["Private workload design and structural smokes"]
+Fixtures -- "separate claim scope" --> Boundary["Claim-boundary ledger"]
+Boundary -- "constrains review" --> Gate
+Boundary -. "blocks overclaim" .-> Overclaim["Quality, speed, context, or ASI claims without workload evidence"]
+```
+
+**What the Theseus report loop shows:** The Theseus loop is report-first: pressure becomes contracts, routes, work, reports, gate review, residuals, and the smallest next intervention. The Circle transfer lane can contribute structural receipts, but the claim-boundary ledger blocks quality, speed, context, or ASI claims without workload evidence.
+
+Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader should be able to distinguish source review lineage, imported reports, reproduced runs, missing artifacts, and public non-claims.
+
+That distinction is the public safety valve. Source review lineage can explain why a mechanism appears in the book. Imported reports can show what a local system recorded. Reproduced runs can support a narrower evidence transition. Missing artifacts keep claims from moving. Public non-claims prevent readers and future agents from treating a local implementation reference as a general capability result.
+
+## Interfaces
+
+The packet joins twelve interfaces while leaving their authority separate:
+
+1. The pinned Project Theseus checkout, report generators, configurations, tools, registries, ledgers, work board, checkpoints, and retained artifacts supply exact source-project facts.
+2. The source inventory, source notes, source-to-chapter matrix, queue, and Appendix G supply bibliographic and local-project provenance.
+3. Human Intent, the plan compiler, agency contracts, work contracts, and authority records supply goal, permission, resource, rollback, and acceptance boundaries.
+4. Labor OS, the work board, operator commands, node registry, Artifact Steward agents, and feedback routes supply owned work and continuity records.
+5. Artifact Graphs, supply-chain controls, data engines, weight custody, residual escrow, and replay supply identity, custody, retention, deletion, and lineage.
+6. Benchmarks, generation modes, simulation, routing, specialist arms, external-inference controls, and teacher governance supply workload and computation records.
+7. Claim Ledgers, Evidence States, formal methods, proof-carrying contracts, Appendices C and E, and accepted transitions supply claim identity, proof scope, support, defeaters, and non-claims.
+8. Readiness, Stable Capability Fields, Capability Replacement, Recursive Improvement, and self-evolution gates consume packet facts without inheriting capability authority.
+9. Security Kernel, runtime adapters, Digital SCIFs, public-safety filters, rights records, and publication permissions constrain commands, payloads, environments, and disclosure.
+10. Resource Economics and compute governance supply budgets, accelerator surfaces, external-service accounting, duration, and cost boundaries.
+11. Model cards, datasheets, FactSheets, and reproducibility programs supply reporting comparators without certifying Theseus.
+12. The Living Book, outline, appendices, roadmap, status records, release surfaces, and readers consume only adjudicated packet facts and currentness boundaries.
+
+These interfaces exchange immutable references and acknowledgements, not
+authority by proximity. A report generator can supply a digest but cannot
+declare support; a readiness gate can block a route but cannot prove model
+quality; a publication surface can disclose an accepted packet but cannot make
+it current. The packet remains incomplete until every intended consumer either
+acknowledges the exact version or leaves a visible unresolved edge.
+
+## Invariants
+
+The packet is valid only while all of these invariants hold:
+
+1. Scope names the exact project, revision, report family, command, environment, artifacts, permission, reviewer, consumer, dependencies, and time.
+2. A retained artifact at an exact digest—not dashboard prose, a latest alias, pointer, badge, or summary—owns each imported fact.
+3. Current-state claims require current artifacts or clean bounded replay; historical imports never become current runtime truth.
+4. Regeneration never erases versions, failures, stale snapshots, corrections, rejecting controls, or no-promotion decisions.
+5. Every fact remains bound to source, revision, digest, generator, command, environment, dependencies, timestamp, and review.
+6. All nine evidence states remain distinct and machine-visible.
+7. Sanitization proves only compliance with the declared public boundary.
+8. Public packets disclose no training rows or raw private material without exact permission and purpose.
+9. Data partitions, external inference, teacher use, selection, retries, and task access remain visible.
+10. Missing, stale, failed, dirty, drifted, and runtime-blocked artifacts remain visible and block broader claims.
+11. GREEN, complete, ready, parity, wired, pointer, registered, retained, or replayed labels never cross-promote.
+12. Gates are necessary only within their declared scope and never sufficient for chapter-core support.
+13. Bundle shape requires goal and work contracts, plan artifact, gate, residual, lineage, replay state, review, publication boundary, and non-claims.
+14. Private sources and public projections remain separated, with redaction loss recorded.
+15. Human approval, delegated agency, work ownership, kill and rollback authority, reviewer identity, conflicts, and decisions remain visible.
+16. Corrections, revocations, expiry, staleness, permission changes, and downgrades propagate to every consumer.
+17. Replay age, duration, resource and service use, failures, review burden, storage, and total cost stay beside positive results.
+18. Record implications, fixture normalizations, validator passes, and theorem counts establish only their exact finite boundaries.
+
+Together these invariants make currentness a property of a named packet and
+consumer path, not of the Project Theseus label. A clean replay at one revision
+does not update later revisions, and a corrected artifact does not silently
+repair every downstream claim. Versioned invalidation must reach each consumer
+before the predecessor can be retired.
+
+## Failure modes
+
+The principal falsifiers are: (1) latest-file overwrite or dashboard theater; (2) report-shape or checklist laundering; (3) stale-snapshot currentness; (4) path, digest, revision, generator, command, environment, or dependency drift; (5) sanitized-import truth laundering; (6) private-payload leakage; (7) benchmark-headline laundering; (8) GREEN-gate-to-capability promotion; (9) module, registry, board, pointer, or lifecycle completeness promoted to runtime truth; (10) manifest surfaces promoted to full accelerator or scheduler parity; (11) pointer crosswalks promoted to referenced-artifact truth; (12) narrow validator replay promoted to whole-project reproduction; (13) hidden teacher use or external inference; (14) retention or compression promoted to behavior or quality; (15) self-evolution promotion without causal outcome evidence; (16) suppression of negative, stale, missing, blocked, or no-promotion rows; (17) publication-permission drift; and (18) unsupported transfer across projects, models, tasks, institutions, infrastructures, legal regimes, environments, reviewers, or time.
+
+Each failure creates a visible residual, downgrade, blocked promotion, or missing-artifact row. “Not imported,” “stale,” “not rerun,” and “runtime blocked” are correct terminal observations when the corresponding evidence is absent; they are not defects to smooth away.
+
+## Minimum Viable Implementation
+
+The smallest useful Theseus lane is a public-safe crosswalk from one ASI Stack layer to one Theseus report surface. It has to say which run or summary is being discussed, which material is safe to publish, which pieces are absent, and which claims remain out of bounds.
+
+The repository now has that narrow shape. It includes a crosswalk example, two static report imports, a support replay over the ASI-side checks, a report-bundle audit, and a bounded public task-bundle summary. Together they show how a prototype can be treated as an implementation reference without turning private or historical status into public proof.
+
+The new task-bundle summary keeps the most important reader facts in the spine: 64 public BigCodeBench metadata-only tasks, 0 public training rows, 0 task-level regressions, visible gaps, and clean live Theseus replay remains unclaimed. The detailed gate counts, candidate counts, digests, and invalid-control names belong in the AI/research view and companion note.
+
+This is the whole point of the minimum viable lane. A useful report-first system should preserve the negative rows as carefully as the successful ones. Missing artifacts, dirty checkout state, private payload boundaries, and unsupported promotions are not narrative inconveniences; they are the evidence boundary that keeps a prototype from becoming an overclaim.
+
+The next stronger step is not better wording. It is a fresh replay or archived public release package with environment notes, publication permission, artifact digests, and review boundaries. Until then, Theseus remains implementation-reference evidence, not model-quality, benchmark-superiority, generation-speed, useful-solution-per-second, support-state, or chapter-core-promotion evidence.
+
+## Beyond the State of the Art
+
+The mature end state must begin from a pinned, public-safe Project Theseus release or report bundle. Its argument-exit campaign requires an independent implementer to perform a clean-room replay from documented commands, environment definitions, dependency locks, input boundaries, artifact digests, current board and registry snapshots, permissions, and retained failures. A successful replay must show the same exact revision before and after, distinguish generated outputs from source mutations, and preserve every negative, stale, missing, blocked, and no-promotion row.
+
+The campaign must then leave report-shape validation behind. It must run natural workloads and matched ordinary baselines through actual model, routing, training, tool, benchmark, resource, operator, rollback, and self-evolution paths. It must disclose teacher and external-inference use and jointly measure useful throughput, quality, unsafe or false promotion, false blocking, currentness, safety, failures, latency, compute, storage, review burden, recovery, residuals, and total cost. Named attacks must test staleness, digest and environment drift, private-payload pressure, gate and dashboard laundering, missing artifacts, benchmark headline pressure, negative-result retention, revocation, and correction propagation.
+
+Independent implementers, operators, artifact reviewers, evaluators, institutions, infrastructures, legal regimes, and transfer settings must reproduce positive, negative, null, narrowed, blocked, and refuted outcomes over time. The core claim can move only through an accepted evidence transition tied to those exact results. Until then, the Implementation-Reference Evidence Packet is not proof of current Theseus behavior, capability, model quality, benchmark superiority, safety, deployment, transfer, AGI, ASI, or SOTA.
+
+## Summary
+
+Project Theseus gives the book a concrete report-first implementation reference: pressure, residuals, plan contracts, gates, ledgers, operator work boards, checkpoints, and self-evolution governance.
+
+The public boundary is strict. The first static architecture-gate report import shows how one readiness report can be mirrored safely, the static generation-mode import shows how a negative promotion decision can be mirrored without copying private workloads, and the public task-bundle import shows how a richer run summary can preserve 64 public BigCodeBench metadata-only tasks, 0 public training rows, 0 task-level regressions, residuals, and artifact gaps without turning calibration into capability evidence. Until clean current reports, commands, environments, and permissioned artifacts are imported or reproduced, Theseus remains a design/reference source for the ASI Stack rather than public empirical proof of capability. That caution becomes a build order: evidence infrastructure first, capability growth second, self-improvement last.
+
+That caution is what makes the reference valuable. Theseus shows what kind of implementation evidence the stack should want, while keeping the public book honest about what it actually has. A report-first implementation can teach the architecture where pressure accumulates: incomplete gates, missing residual owners, weak replay records, unclear operator duties, and self-evolution proposals that need independent review. Those reports become design inputs, not public proof. The right next move is therefore not to boast about Theseus, but to import or reproduce only the artifacts that can be made public, mapped, validated, and bounded. That keeps the prototype roadmap disciplined.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **83** structured claim atoms in `CF-08`. The
+frozen repository-wide terminal audit records 83 `blocked_after_full_attempt`. Its core
+atom `project-theseus-as-report-first-implementation-reference.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `project-theseus-as-report-first-implementation-reference` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 83 structured claims,
+83 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Integrated governed lifecycle slices**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Bounded local replay only; no deployment, whole-book proof, external effect authority, transfer, publication, or release claim.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
+
+## Handoff
+
+Theseus shows what report-first implementation evidence should look like, but a build program still needs dependency order and refusal points before autonomy grows. Prototype Roadmap turns the architecture into staged work. It starts with source inventory, claim ledgers, artifacts, schemas, validation, and release discipline, then adds contracts, context, jobs, adapters, routing, readiness, benchmarks, and self-improvement only after the earlier evidence machinery exists.

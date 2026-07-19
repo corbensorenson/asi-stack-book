@@ -1,0 +1,104 @@
+{
+  "transition_id": "post-v2-3-m8-residual-verifier-terminal-instrument-failure",
+  "claim_id": "residual-verifier-capacity.heldout-pressure-effect",
+  "claim_surface_refs": [
+    "docs/p4_residual_verifier_capacity_campaign.md",
+    "chapters/compact-generative-systems-and-residual-honesty.qmd",
+    "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
+    "chapters/verification-bandwidth-and-context-adequacy.qmd",
+    "chapters/resource-economics-and-token-budgets.qmd",
+    "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd"
+  ],
+  "claim_record_refs": [
+    "experiments/p4_residual_verifier_capacity/v1_preflight_failure_diagnosis.json",
+    "experiments/p4_residual_verifier_capacity_v2/v2_preflight_failure_diagnosis.json",
+    "experiments/p4_residual_verifier_capacity_v3/v3_terminal_preflight_failure_diagnosis.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Three prospectively versioned sacrificial instruments over eighteen tasks and 36 exact local Qwen3-8B calls repaired terminal eligibility and clean controls but failed the terminal residual-extraction consumer contract; all fifteen held-out tasks remained sealed and no claim attempt occurred.",
+  "evidence_roles": [
+    "prospective_instrument_repair_lineage",
+    "sacrificial_preflight_only",
+    "consumer_contract_failure",
+    "sealed_heldout_denominator",
+    "terminal_no_repair_boundary",
+    "chapter_core_support_boundary"
+  ],
+  "transition_reason": "The terminal v3 instrument reached 6/6 eligibility accuracy, 3/3 clean releases, perfect required-residual recall, and zero false reassurance, but only 3/6 extraction objects met the frozen action/check schema against a 5/6 floor. The no-repair rule made this terminal; heldout outcomes never opened.",
+  "required_artifacts": [
+    "a prospectively new instrument family rather than repair of the closed campaign",
+    "schema-admissible residual extraction above the frozen floor",
+    "fresh held-out natural tasks and pressure conditions",
+    "independently implemented verification and capacity evaluation",
+    "complete useful-throughput, latency, cost, safety, and transfer evidence"
+  ],
+  "artifact_refs": [
+    "experiments/p4_residual_verifier_capacity/preregistration.json",
+    "experiments/p4_residual_verifier_capacity/results/preflight_result.json",
+    "experiments/p4_residual_verifier_capacity_v2/preregistration.json",
+    "experiments/p4_residual_verifier_capacity_v2/results/preflight_result.json",
+    "experiments/p4_residual_verifier_capacity_v3/preregistration.json",
+    "experiments/p4_residual_verifier_capacity_v3/results/preflight_result.json",
+    "scripts/validate_p4_m8_residual_verifier_terminal.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/p4_residual_verifier_capacity_campaign.md",
+    "docs/non_core_evidence_ledger.md",
+    "docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#compact-generative-systems-and-residual-honestycore",
+    "appendices/C_claim_evidence_matrix.qmd#verification-bandwidth-and-context-adequacycore",
+    "appendices/C_claim_evidence_matrix.qmd#readiness-gates-residual-escrow-and-quarantinecore"
+  ],
+  "verification_command": "python3 scripts/validate_p4_m8_residual_verifier_terminal.py && python3 scripts/validate_non_core_evidence_ledger.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "v1 collapsed all five decisions to block and routed exact remediation only 1/5",
+    "v2 copied a label-bearing pessimistic exemplar and blocked all clean controls",
+    "v3 admitted only 3/6 extraction objects against the frozen 5/6 floor",
+    "every v3 defect case emitted undeclared route retain and omitted requested-check IDs",
+    "all held-out tasks remained sealed and claim-attempt count stayed zero"
+  ],
+  "negative_evidence_refs": [
+    "experiments/p4_residual_verifier_capacity/v1_preflight_failure_diagnosis.json",
+    "experiments/p4_residual_verifier_capacity_v2/v2_preflight_failure_diagnosis.json",
+    "experiments/p4_residual_verifier_capacity_v3/v3_terminal_preflight_failure_diagnosis.json"
+  ],
+  "downgrade_triggers": [
+    "any failed instrument version or heldout-sealed fact is removed",
+    "sacrificial semantic metrics are described as held-out claim evidence",
+    "the terminal no-repair rule is reopened retrospectively",
+    "blocks_promotion is relabeled as upward support",
+    "chapter-core, publication, or release authority is inferred"
+  ],
+  "promotion_burden": "Design a prospectively distinct future campaign with a qualified consumer-complete instrument, fresh hidden natural tasks, stronger and independently implemented evaluators, complete pressure and capacity denominators, joint useful-throughput and risk metrics, and transfer before any residual-honesty or verifier-capacity support review.",
+  "limitations": [
+    "sacrificial tasks only",
+    "one local quantized model family",
+    "terminal extraction schema failure",
+    "no held-out generation or scoring",
+    "no independent external assessment",
+    "no claim-bearing effect estimate"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Author-directed Codex P4/M8 claim-proof cycle"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; no external human review requested or claimed",
+  "acceptance_blockers": [
+    "terminal residual-extraction consumer contract failed",
+    "heldout denominator never opened"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-16---campaign-4-residualverifier-terminal-instrument-disposition",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not establish residual honesty under pressure",
+    "does not establish verifier competence, useful throughput, safety, or transfer",
+    "does not promote any chapter core claim above argument",
+    "does not establish SOTA, AGI, or ASI"
+  ]
+}

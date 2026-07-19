@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Claim-family natural-work and end-to-end bundle coverage",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "recorded_date", "audit_kind", "family_count",
+    "bundles", "all_selected_validators_passed", "all_families_covered",
+    "terminal_atom_coverage_result", "terminal_atom_count",
+    "blocked_atom_count_preserved", "chapter_core_promotion_count",
+    "support_state_effect", "publication_authority", "release_authority",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.claim_family_bundle_coverage.v1"},
+    "recorded_date": {"const": "2026-07-16"},
+    "audit_kind": {"const": "retrospective_binding_of_existing_prospectively_or_independently_validated_bundles"},
+    "family_count": {"const": 8},
+    "bundles": {
+      "type": "array", "minItems": 8, "maxItems": 8,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": [
+          "family_id", "bundle_name", "bundle_kind", "result_path",
+          "result_sha256", "validator_path", "receipt_path", "scope",
+          "negative_controls", "validator_passed", "terminal_boundary"
+        ],
+        "properties": {
+          "family_id": {"type": "string", "pattern": "^CF-0[1-8]$"},
+          "bundle_name": {"type": "string", "minLength": 1},
+          "bundle_kind": {"enum": ["natural_work", "end_to_end", "natural_work_and_end_to_end"]},
+          "result_path": {"type": "string", "minLength": 1},
+          "result_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "validator_path": {"type": "string", "minLength": 1},
+          "receipt_path": {"type": "string", "minLength": 1},
+          "scope": {"type": "string", "minLength": 20},
+          "negative_controls": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+          "validator_passed": {"const": true},
+          "terminal_boundary": {"type": "string", "minLength": 20}
+        }
+      }
+    },
+    "all_selected_validators_passed": {"const": true},
+    "all_families_covered": {"const": true},
+    "terminal_atom_coverage_result": {"const": "experiments/claim_family_terminal_coverage/results/result.json"},
+    "terminal_atom_count": {"const": 3745},
+    "blocked_atom_count_preserved": {"const": 3698},
+    "chapter_core_promotion_count": {"const": 0},
+    "support_state_effect": {"const": "none_beyond_previously_accepted_exact_transitions"},
+    "publication_authority": {"const": "none"},
+    "release_authority": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}}
+  }
+}

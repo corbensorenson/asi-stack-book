@@ -21,6 +21,20 @@ README = ROOT / "README.md"
 INDEX = ROOT / "index.qmd"
 
 EXPECTED = {
+    "circle-calculus-and-proof-carrying-ai-contracts.mechanism.003": {"state": "prototype-backed", "transition": "evidence_transitions/post_v2_3/p5_circle_named_target_receipt_prototype_backed.json"},
+    "system-boundaries-and-authority.invariant.001": {"state": "synthetic-test-backed", "transition": "evidence_transitions/post_v2_3/p5_authority_no_silent_expansion_synthetic_test_backed.json"},
+    "kerc.protected_exact_handle_preservation": {
+        "state": "synthetic-test-backed",
+        "transition": "evidence_transitions/post_v2_3/kerc_protected_exact_handle_synthetic_test_backed.json",
+    },
+    "kerc.interaction_shared_glossary_break_even": {
+        "state": "synthetic-test-backed",
+        "transition": "evidence_transitions/post_v2_3/kerc_shared_glossary_break_even_synthetic_test_backed.json",
+    },
+    "situated-world-model.finite-pomdp-governed-acquisition-and-consolidation": {
+        "state": "synthetic-test-backed",
+        "transition": "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
+    },
     "governed-usefulness.held-out-local-policy-effect": {
         "state": "synthetic-test-backed",
         "transition": "evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json",
@@ -111,7 +125,7 @@ NO_PROMOTION_DIRS = [
 ]
 
 REQUIRED_LEDGER_STRINGS = [
-    "Accepted non-core upward transitions | 20 narrow transitions.",
+    "Accepted non-core upward transitions | 25 narrow transitions.",
     "Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement.",
     "claim_revisions/v1_x/manifest_core_claim_count_narrowing.json",
     "Accepted No-Promotion Side-Lane Decisions",
@@ -302,13 +316,12 @@ def main() -> None:
             errors.append(f"{name} does not reference {ref}")
 
     surface_counts = [
-        ("README.md", readme, "Twenty narrow non-core transitions are recorded in"),
-        ("index.qmd", index, "Twenty narrow non-core evidence transitions accepted"),
-        ("index.qmd", index, "Twenty narrow non-core transitions are recorded in"),
+        ("README.md", readme, "25 accepted non-core upward evidence transitions"),
+        ("index.qmd", index, "Twenty-five narrow non-core transitions are recorded in"),
     ]
     for name, text, required in surface_counts:
         if required.lower() not in text.lower():
-            errors.append(f"{name} does not expose the current ten-transition count: {required}")
+            errors.append(f"{name} does not expose the current transition count: {required}")
 
     if errors:
         fail(errors)

@@ -1,0 +1,37 @@
+{
+  "schema_version": "asi_stack.p4_m7_preflight.v1",
+  "run_id": "p4-m7-qwen25-05b-frozen-representation-head-001-preflight",
+  "protocol_outcome": "instrument_adequate",
+  "candidate_count": 180,
+  "training_count": 120,
+  "validation_count": 60,
+  "validation_accuracy": 0.71666664,
+  "model": {
+    "repository": "Qwen/Qwen2.5-Coder-0.5B-Instruct",
+    "snapshot_commit": "ea3f2471cf1b1f0db85067f1ef93848e38e88c25",
+    "file_sha256": {
+      "config.json": "b1e58593cd31852f7da5c2fc31ddf6135b9c066c0fd9177a4bbe95717083adff",
+      "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "tokenizer_config.json": "959e7f1d9a1b7641a6d6ce05ca97b75c7894fcb66cbe5a040406458fb1128ee4",
+      "model.safetensors": "f9523886352217ded3aeeef552b381af79d568c6d49a4b9e423288cea56b0a44"
+    },
+    "hidden_size": 896,
+    "row_count": 180,
+    "finite": true,
+    "mean_feature_variance": 5.5752387047,
+    "wall_seconds": 15.472679,
+    "device": "cpu",
+    "dtype": "float32",
+    "pooling": "final hidden state at last nonpadding token"
+  },
+  "negative_controls": {
+    "parameter_mutation_detected": true,
+    "nonfinite_feature_detected": true,
+    "rollback_mismatch_detected": true,
+    "privacy_axis_cannot_equal_storage_axis": true,
+    "retained_evidence_blocks_total_erasure": true
+  },
+  "heldout_opened": true,
+  "claim_outcome": "not_applicable_instrument_only",
+  "support_state_effect": "none"
+}

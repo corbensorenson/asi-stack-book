@@ -81,7 +81,11 @@ immutable source
     propose reusable macros only through typed expansion, cross-domain tests,
     ambiguity/security review, versioned deployment, monitoring, and rollback.
 
-## Theoretical contribution and limits
+## Evidence
+
+The source contributes formal design arguments and a falsifiable empirical
+program, not observed KERC performance. Its strongest present evidence is the
+following set of conditional propositions and accounting constraints:
 
 - Proposition 1 is an entropy-conservation statement for a deterministic
   one-to-one encoder/decoder: exact Kernel-plus-residual representation relocates
@@ -94,7 +98,7 @@ immutable source
 - The simplified Transformer cost equations are useful planning models, not
   measured end-to-end speed, energy, memory, or latency.
 
-## Failure modes
+## Failure Modes
 
 - Semantic compilation can confidently canonicalize the wrong meaning.
 - Spell correction can erase dialect, names, new terminology, or deliberate
@@ -118,7 +122,7 @@ immutable source
 - A large renderer or compiler can turn an apparently small core into a larger,
   slower total system.
 
-## Existing-chapter decision
+## Book Chapters Supported
 
 **Decision: strengthen existing chapters; do not add a paper-shaped KERC
 chapter in this intake.** `cognitive-compilation-and-semantic-ir` already owns
@@ -134,7 +138,7 @@ and hierarchical residual lifecycle form a durable learned-language runtime
 that cannot be owned cleanly by Cognitive Compilation plus Compact Generative
 Systems without conflicting invariants or destructive duplication.
 
-## Chapter upgrade map
+## Claims To Add Or Update
 
 | Owner | Required upgrade |
 |---|---|
@@ -186,6 +190,25 @@ Systems without conflicting invariants or destructive duplication.
     entity handles, terminology locks, or shared interaction residue survive.
 12. Require independent reproduction and cross-domain/language/model transfer
     before any general efficiency or state-of-the-art claim.
+
+## Open Questions
+
+- Can a learned semantic compiler preserve scope, modality, attribution,
+  dialect, and initially correct exact forms better than strong copy-aware and
+  byte-level baselines at matched total cost?
+- Does the four-level residual hierarchy create a real interaction-amortized
+  break-even region once registries, synchronization, verification, migration,
+  fallback, and governance are charged?
+- Is a native Kernel core more useful or efficient than a surface-language core
+  at equal training FLOPs, raw bytes, end-to-end inference budget, and fidelity?
+- Which residual scopes remain safe under cross-user, cross-agent, multilingual,
+  and version-skew conditions, and which must remain private or exact-object
+  only?
+- Can an evaluator implemented independently from the compiler detect shared
+  semantic mistakes that round-trip agreement misses?
+- Do the packet ABI and residual lifecycle become a genuinely distinct runtime
+  authority after implementation, or do they remain cleanly owned by the
+  existing compilation and residual-honesty chapters?
 
 ## Passage review map
 

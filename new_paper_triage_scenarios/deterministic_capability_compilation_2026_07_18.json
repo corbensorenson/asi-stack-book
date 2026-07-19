@@ -1,0 +1,78 @@
+{
+  "scenario_id": "deterministic-capability-compilation-triage-2026-07-18",
+  "scenario_scope": "Real intake decision for Corben's executable-scaffold, neural-capability-object, translation-validation, and governed-adaptation research program.",
+  "case_validity_state": "reviewed",
+  "cases": [
+    {
+      "case_id": "dcc-existing-owner-integration",
+      "intake_kind": "new_source",
+      "access_state": "source_note_available",
+      "source_storage_policy": "local_private_cache",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "cognitive-compilation-and-semantic-ir",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "The paper contributes a cross-layer compilation lifecycle. Stable Capability Fields already owns field identity, Cognitive Compilation owns lowering and reification, and replacement, routing, authority, memory, evidence, learning, RSI, and integration own the remaining interfaces. Existing-owner integration preserves those boundaries.",
+      "required_before_drafting": [
+        "complete passage-bounded source note",
+        "map each mechanism to one primary chapter owner",
+        "preserve the conceptual and unimplemented evidence boundary"
+      ],
+      "evidence_transition_preconditions": [
+        "implement a bounded scaffold-to-expert-to-linker slice",
+        "run matched baselines and causal ablations",
+        "obtain independent evaluation and transfer before broad claims"
+      ],
+      "promotion_blockers": [
+        "conceptual architecture only",
+        "no Neural Capability Object linker implementation",
+        "no capability-preservation benchmark",
+        "no independent reproduction"
+      ],
+      "non_claims": [
+        "does not validate the foundry",
+        "does not establish capability preservation",
+        "does not promote any chapter"
+      ]
+    },
+    {
+      "case_id": "dcc-standalone-chapter-reconsideration",
+      "intake_kind": "source_variant",
+      "access_state": "source_note_available",
+      "source_storage_policy": "local_private_cache",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "defer",
+      "chapter_manifest_action": "defer_to_backlog",
+      "existing_chapter_id": "cognitive-compilation-and-semantic-ir",
+      "proposed_chapter_id": "executable-capability-foundry",
+      "decision_rationale": "A standalone chapter is warranted only if an implemented foundry exposes a durable NCO/linker authority, artifact family, and reader job that cannot be expressed by the current primary owners without conflict. Paper length and vocabulary are not chapter criteria.",
+      "required_before_drafting": [
+        "implement and exercise the NCO ABI and linker",
+        "demonstrate a distinct unowned interface",
+        "pass owner-conflict and reader-path review"
+      ],
+      "evidence_transition_preconditions": [
+        "retain complete denominators and failure lineage",
+        "show value beyond a well-tuned sparse-expert baseline"
+      ],
+      "promotion_blockers": [
+        "no implemented foundry",
+        "no distinct chapter-owning evidence surface"
+      ],
+      "non_claims": [
+        "does not reserve or add the chapter",
+        "does not imply novelty or SOTA"
+      ]
+    }
+  ],
+  "validation_boundary": "Records an existing-chapter-first decision and an evidence-gated reconsideration. It does not validate the paper, its implementation, preservation, safety, efficiency, or transfer claims.",
+  "support_state_effect": "backlog_only",
+  "non_claims": [
+    "does not change chapter order",
+    "does not publish the raw papers",
+    "does not promote any claim"
+  ]
+}

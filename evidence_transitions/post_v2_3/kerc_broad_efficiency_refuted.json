@@ -1,0 +1,88 @@
+{
+  "transition_id": "post_v2_3.kerc.broad_efficiency.refute",
+  "claim_id": "kerc.broad_matched_total_system_efficiency",
+  "claim_surface_refs": [
+    "docs/p4_kerc_runtime_campaign.md",
+    "chapters/compact-generative-systems-and-residual-honesty.qmd",
+    "chapters/resource-economics-and-token-budgets.qmd"
+  ],
+  "claim_record_refs": [
+    "experiments/p4_kerc_runtime/design.json",
+    "experiments/p4_kerc_runtime/results/confirmatory_result.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "refuted",
+  "transition_effect": "refuted",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Refuted for the frozen deterministic KERC proxy on its 192-record authored corpus: held-out Kernel, surface, and simple-handle cores tied at 0.5 while complete packets averaged 714 bytes against a 73.25-byte best simple representation.",
+  "evidence_roles": [
+    "prospective falsifier",
+    "matched small-core comparison",
+    "whole-description rate accounting",
+    "negative result retention"
+  ],
+  "transition_reason": "The preregistered broad gate required matched fidelity and task quality plus strictly lower complete-system description rate; the packet was almost ten times the best simple representation with no task advantage.",
+  "required_artifacts": [
+    "different learned compilers and native cores",
+    "natural corpora",
+    "stronger training partitions",
+    "total compute and calibrated energy",
+    "independent reproduction"
+  ],
+  "artifact_refs": [
+    "experiments/p4_kerc_runtime/preregistration.json",
+    "experiments/p4_kerc_runtime/results/confirmatory_result.json",
+    "scripts/validate_p4_m8_kerc_campaign.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/p4_kerc_runtime_campaign.md",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "source_mapping_refs": [
+    "sources/source_notes/kernel_english_residual_compiler.md",
+    "appendices/C_claim_evidence_matrix.qmd#compact-generative-systems-and-residual-honestycore",
+    "appendices/C_claim_evidence_matrix.qmd#resource-economics-and-token-budgetscore"
+  ],
+  "verification_command": "python3 scripts/validate_p4_m8_kerc_campaign.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "0.5 held-out accuracy for every compared core",
+    "714-byte complete packets",
+    "73.25-byte best simple representation",
+    "one of twenty attacks escaped",
+    "energy uncalibrated"
+  ],
+  "negative_evidence_refs": [
+    "docs/p4_kerc_runtime_campaign.md",
+    "experiments/p4_kerc_runtime/results/confirmatory_result.json"
+  ],
+  "downgrade_triggers": [
+    "outcome-aware retry",
+    "denominator drift",
+    "packet cost omission",
+    "refutation generalized beyond this implementation and corpus",
+    "negative result erased"
+  ],
+  "promotion_burden": "A materially different prospectively frozen implementation may open a new claim identity; this exact implementation/corpus efficiency claim must remain refuted.",
+  "limitations": [
+    "small linear cores",
+    "authored bilingual templates",
+    "adversarial polarity absent from training",
+    "local latency proxy",
+    "no calibrated energy"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Author-directed Codex P4/M8 claim-proof cycle"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; no external human review requested or claimed",
+  "acceptance_blockers": [],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-16---campaign-6-kerc-runtime-result",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not refute other KERC implementations, corpora, models, or languages",
+    "does not refute exact handles or the isolated glossary break-even",
+    "does not promote any chapter core claim",
+    "does not establish SOTA, AGI, ASI, publication, release, or deployment readiness"
+  ]
+}

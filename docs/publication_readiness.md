@@ -1,7 +1,7 @@
 # Publication Readiness
 
 <!-- canonical-status:generated-begin -->
-_Current canonical metrics (generated from machine records): **55 manifest chapters; 315 public-safe records; 55 chapter-core claims; 55/55 chapters externally positioned; 0 promoted core claims.**_
+_Current canonical metrics (generated from machine records): **55 manifest chapters; 319 public-safe records; 55 chapter-core claims; 55/55 chapters externally positioned; 0 promoted core claims.**_
 <!-- canonical-status:generated-end -->
 
 Last audited: 2026-07-14
@@ -22,10 +22,14 @@ terminal machine state in
 `roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json`.
 Its exact no-public-release decision is
 `release_records/2026-07-14-post-v2-3-handoff-reader-formats-evidence-renewal-no-public-release.json`.
-`docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md` is now the active canonical successor roadmap, with machine authority in
-`roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json`. It
-changes no support state or release and does not alter the immutable v2.3
-release.
+`docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md` is complete, with
+terminal machine state in
+`roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json` and no
+public release. `docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md`
+is the sole active successor, with machine authority in
+`roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`.
+It creates no support state or release effect and does not alter the immutable
+`v2.3.0` release.
 
 ## Current release and roadmap authority
 
@@ -51,14 +55,26 @@ release.
   canonical HTML and DOCX are approved exact local artifacts, EPUB and PDF are
   honestly blocked, audio remains deferred, and the exact transaction creates
   no public release.
-- Active canonical successor roadmap:
-  `docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md`, with active
+- Completed claim-proof/SOTA roadmap:
+  `docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md`, with terminal
   machine state in
-  `roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json`; it
-  preserves the typed full-attempt program for all 54 activation chapter-core
-  claims and adds one source-reviewed, atomized cognitive-substrate chapter, so
-  the live program covers 55/55 claims while preserving every support and
-  release boundary.
+  `roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json` and
+  exact no-public-release authority in
+  `release_records/2026-07-16-post-v2-3-claim-proof-sota-roadmap-complete-no-public-release.json`.
+- Active canonical successor roadmap:
+  `docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md`, with active
+  machine state in
+  `roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`;
+  it owns public-truth and claim-identity reconciliation, N0–N5 rehabilitation
+  of historical negative results, competence-qualified natural evidence,
+  external reproduction/transfer, semantic formal depth, effect-complete
+  implementation, evidence and instrument renewal, reader remediation, and
+  owner-authorized publication without inflating current support or release
+  state. Its governing experiment contract is
+  `docs/claim_bearing_experiment_competence_standard.md`; the first P0 tranche
+  resolves all 115 accepted transitions in
+  `docs/claim_identity_graph_reconciliation.md` with no indirect parent support
+  movement.
 - Completed predecessor: `docs/post_v2_1_residual_and_transfer_roadmap.md`, with
   terminal state in `roadmap_records/post_v2_1_residual_and_transfer_status.json`.
 - Completed predecessor: `docs/post_v2_evidence_roadmap.md`; its execution
@@ -120,8 +136,8 @@ release.
 - The current reproducibility and citation note exists at `docs/release_reproducibility.md`; root `CITATION.cff` records completed version `2.3.0`, its exact tag/commit/archive identity, and DOI-pending state. `citations/v1.0.0.cff` remains the historical v1.0.0 snapshot. `scripts/validate_release_reproducibility.py` checks the pinned CI toolchain, citation scopes, historical tag facts, and non-release artifact boundary.
 - The Phase 7 public-site accessibility readiness record exists at `docs/public_site_accessibility_review.md`, and the compact phase progress ledger exists at `docs/v1_progress_ledger.md`; `scripts/validate_public_site_accessibility.py` checks the assistive reading-mode hooks, focus/containment CSS, landing-image alt text, diagram walkthrough coverage, residuals, and non-claims without claiming WCAG conformance or reader-artifact approval.
 - The v1.0 release-gate audit exists at `docs/v1_0_release_gate_audit.md`; `scripts/validate_v1_release_gate_audit.py` checks all eleven Definition-of-Done gates, their evidence references, tag `v1.0.0`, source commit, GitHub Release, living-book release record, DOI-pending state, and non-claims without creating a DOI, archive, additional artifact approval, or support-state promotion.
-- The non-core evidence ledger exists at `docs/non_core_evidence_ledger.md`; `scripts/validate_non_core_evidence_ledger.py` checks that the twenty accepted non-core upward transitions, the accepted blocking decisions, two exact QCSA refutations, and the live count-surface narrowing record are visible, while the separate core-disposition and trust-surface checks keep all 55 live chapter core claims at `argument`.
-- The first-minute trust surface is explicit on the README and landing page; `scripts/validate_trust_surface.py` checks current chapter/source counts, the fourteen bounded non-core transition IDs, no chapter-core promotion, source-ownership boundaries across Appendix G and Appendix H, external-review status, reader-continuity audit counts, and the no-reviewed-reader-release boundary.
+- The non-core evidence ledger exists at `docs/non_core_evidence_ledger.md`; `scripts/validate_non_core_evidence_ledger.py` checks that the twenty-five accepted non-core upward transitions, accepted blocking decisions, three historical `refuted` labels with N1/N2 interpretation ceilings, and the live count-surface narrowing record are visible, while the separate core-disposition and trust-surface checks keep all 55 live chapter core claims at `argument`.
+- The first-minute trust surface is explicit on the README and landing page; `scripts/validate_trust_surface.py` checks current chapter/source counts, the 25 bounded non-core upward transition IDs, no chapter-core promotion, source-ownership boundaries across Appendix G and Appendix H, external-review status, reader-continuity audit counts, and the no-reviewed-reader-release boundary.
 - The RankFold public-safe replay and artifact-import side lanes now have explicit no-promotion records at `evidence_transitions/v1_x_measured/rankfold_public_safe_replay_probe_no_change.json` and `evidence_transitions/v1_x_measured/rankfold_artifact_import_no_change.json`; both remain `argument`, both use `blocks_promotion`, and neither creates an upward support-state transition.
 - The external review packet and status ledger exist at `docs/external_review_packet.md` and `docs/external_review_status.md`; `scripts/validate_external_review_status.py` checks that public review is requested through GitHub issue #1 while preserving that no independent external review has been accepted as evidence, support-state promotion, or artifact approval. `external_reviews/request_updates/consolidation_review_request_2026-06-29.json`, `external_reviews/request_updates/full_consolidation_review_request_2026-06-29.json`, and `scripts/validate_external_review_intake.py` preserve the supplemental consolidation-review issue comments as request updates only, not accepted reviews, merge/fold authorization, or support-state movement.
 - The chapter external-grounding status ledger exists at `docs/chapter_external_grounding_status.md`; `scripts/validate_chapter_external_grounding_status.py` checks all 55 manifest chapters against source-noted external records, explicit external-baseline exceptions, and first-pass Corben/local source-mining queues without claiming exhaustive literature coverage, reproduced external results, or support-state promotion.

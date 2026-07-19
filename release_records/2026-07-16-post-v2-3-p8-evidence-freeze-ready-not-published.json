@@ -1,0 +1,46 @@
+{
+  "schema_version": "asi_stack.p8_terminal_release_record.v1",
+  "record_type": "reader_evidence_freeze_no_public_release",
+  "record_date": "2026-07-16",
+  "roadmap": "docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md",
+  "priority": "P8",
+  "milestone": "M11",
+  "decision": "evidence_freeze_ready_not_published_multiformat_release_not_approved",
+  "manifest": {
+    "path": "editions/reader_manuscript/v2_2/manifest.json",
+    "sha256": "45651e73ed7386016c75f258ca0af3096f079f426a04ea4a4231055e6f8ab85c"
+  },
+  "evidence_freeze": {
+    "path": "editions/reader_manuscript/v2_2/evidence_freeze.json",
+    "sha256": "1d0a3649bbfa6e1121567ad71edac4916d8055b8706bc2761e03778cfd3cbc55"
+  },
+  "format_review_matrix": {
+    "path": "editions/reader_manuscript/v2_2/format_review_matrix.json",
+    "sha256": "f880ea403af7335e11d882df4b69975e3fdfaa6818453026e28905956dbd647f"
+  },
+  "release_disposition": {
+    "path": "editions/reader_manuscript/v2_2/release_disposition.json",
+    "sha256": "5216a76019c474f097589bd684226c235802f6292cc34022960b04e9979b0b23"
+  },
+  "chapter_count": 55,
+  "html_page_count": 60,
+  "format_states": {
+    "html": "approved_exact_local_artifact_not_published",
+    "epub": "bounded_local_application_inspection_not_release_approved",
+    "docx": "built_and_fully_raster_inspected_with_layout_residual_not_release_approved",
+    "pdf": "built_but_layout_failed_not_release_approved",
+    "audio": "not_selected_not_generated",
+    "embedded_audio": "not_selected_not_generated"
+  },
+  "publication_authority": "none",
+  "publication_effect": "none",
+  "release_effect": "none",
+  "support_state_effect": "none",
+  "non_claims": [
+    "This freeze is not a public release, deployment, DOI deposit, archive deposit, tag, push, or publication.",
+    "Format construction is not format approval; each format keeps its own exact disposition.",
+    "Automated accessibility preparation is not screen-reader review or legal WCAG certification.",
+    "This derivative is not canonical claim, proof, source, or experiment authority for the live book.",
+    "No chapter-core support state is promoted by this reader work."
+  ]
+}

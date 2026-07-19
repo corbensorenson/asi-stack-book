@@ -1,0 +1,38 @@
+{
+  "schema_version": "asi_stack.p8_release_disposition.v1",
+  "edition_id": "asi-stack-reader-v2.2-evidence-freeze",
+  "decision": "evidence_freeze_ready_not_published_multiformat_release_not_approved",
+  "decision_date": "2026-07-16",
+  "living_book_public_release": "not_authorized_not_attempted",
+  "public_reader_release": "not_approved_not_published",
+  "approved_exact_local_formats": [
+    "html"
+  ],
+  "bounded_not_release_approved_formats": [
+    "epub",
+    "docx"
+  ],
+  "failed_formats": [
+    "pdf"
+  ],
+  "not_generated_formats": [
+    "audio",
+    "embedded_audio"
+  ],
+  "doi_archive": "not_authorized_not_attempted",
+  "deployment": "not_authorized_not_attempted",
+  "push_tag_commit": "not_authorized_not_attempted",
+  "rights": {
+    "authority": "LICENSE.md",
+    "public_license_grant": false,
+    "state": "all_rights_reserved_no_new_grant"
+  },
+  "support_state_effect": "none",
+  "non_claims": [
+    "This freeze is not a public release, deployment, DOI deposit, archive deposit, tag, push, or publication.",
+    "Format construction is not format approval; each format keeps its own exact disposition.",
+    "Automated accessibility preparation is not screen-reader review or legal WCAG certification.",
+    "This derivative is not canonical claim, proof, source, or experiment authority for the live book.",
+    "No chapter-core support state is promoted by this reader work."
+  ]
+}

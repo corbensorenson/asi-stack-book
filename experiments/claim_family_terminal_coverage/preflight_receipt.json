@@ -1,0 +1,53 @@
+{
+  "schema_version": "asi_stack.claim_family_terminal_preflight_receipt.v1",
+  "recorded_date": "2026-07-16",
+  "state": "passed_before_outcome_generation",
+  "preregistration_ref": "experiments/claim_family_terminal_coverage/preregistration.json",
+  "all_frozen_inputs_match": true,
+  "input_sha256": {
+    "evidence_quality/claim_atom_registry.json": {
+      "expected": "f6a5e5b48b174a1f8ca3d5b73f88008dbd5b4be766621eec9409f6f338309219",
+      "observed": "f6a5e5b48b174a1f8ca3d5b73f88008dbd5b4be766621eec9409f6f338309219",
+      "match": true
+    },
+    "evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json": {
+      "expected": "cb55dc73c78826518f65e87ec05ca4d1d05acaae26d1484894bfda28465d473b",
+      "observed": "cb55dc73c78826518f65e87ec05ca4d1d05acaae26d1484894bfda28465d473b",
+      "match": true
+    },
+    "roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json": {
+      "expected": "27ba039ccce427db0bf1acb9d37b58424e1f5cfce2e0748a92184b55a727636c",
+      "observed": "27ba039ccce427db0bf1acb9d37b58424e1f5cfce2e0748a92184b55a727636c",
+      "match": true
+    },
+    "validation/registry.json": {
+      "expected": "8b829a218c98aea922f81eb09886d91c6822360177847531d1bb2588387899d0",
+      "observed": "8b829a218c98aea922f81eb09886d91c6822360177847531d1bb2588387899d0",
+      "match": true
+    },
+    "proofs/proof_manifest.json": {
+      "expected": "6a075c69373dd7ea24a2492866f380bf1e877b548f4d4f2c076bae9d6551ee34",
+      "observed": "6a075c69373dd7ea24a2492866f380bf1e877b548f4d4f2c076bae9d6551ee34",
+      "match": true
+    },
+    "scripts/evaluate_claim_family_terminal_program.py": {
+      "expected": "f2417ac399e6344db2e7a7ab41813b43e926dd36550b7504e6c4a7c124cf3fd1",
+      "observed": "f2417ac399e6344db2e7a7ab41813b43e926dd36550b7504e6c4a7c124cf3fd1",
+      "match": true
+    },
+    "schemas/claim_family_terminal_coverage.schema.json": {
+      "expected": "ddd49e26d5aa1a4acb0a7ccebd90bc8bc761f44c5dc9b3b29466c2a999a07714",
+      "observed": "ddd49e26d5aa1a4acb0a7ccebd90bc8bc761f44c5dc9b3b29466c2a999a07714",
+      "match": true
+    }
+  },
+  "outcome_file_present_at_check": false,
+  "support_state_effect": "none",
+  "publication_authority": "none",
+  "release_authority": "none",
+  "non_claims": [
+    "This receipt proves only byte-for-byte equality between the preregistered and observed local inputs before outcome generation.",
+    "It does not establish the truth, adequacy, independence, or completeness of any claim or evidence lane.",
+    "It does not authorize publication, release, deployment, or support-state movement."
+  ]
+}

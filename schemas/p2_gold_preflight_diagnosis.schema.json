@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://asi-stack.local/schemas/p2_gold_preflight_diagnosis.schema.json",
+  "title": "P2 gold preflight diagnosis",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "recorded_date",
+    "state",
+    "claim_id",
+    "scope",
+    "original_fixed_denominator",
+    "terminal_disposition",
+    "false_negative_findings",
+    "attempt_lineage",
+    "custody_and_raw_evidence",
+    "resource_observations",
+    "next_required_action",
+    "support_state_effect",
+    "release_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.p2_gold_preflight_diagnosis.v1"},
+    "recorded_date": {"const": "2026-07-17"},
+    "state": {"const": "fixed_denominator_dispositioned_replacement_queue_frozen_qualification_pending"},
+    "claim_id": {"const": "p2.governed_natural_repository_change_admission_joint_frontier"},
+    "scope": {"const": "development_only_gold_oracle_instrument_and_construct_diagnosis"},
+    "original_fixed_denominator": {
+      "type": "object",
+      "required": ["task_count", "exact_pass_count", "instrument_failure_count", "repetitions_per_arm", "runtime_network", "result_path"],
+      "properties": {
+        "task_count": {"const": 12},
+        "exact_pass_count": {"const": 7},
+        "instrument_failure_count": {"const": 5},
+        "repetitions_per_arm": {"const": 2},
+        "runtime_network": {"const": "none"},
+        "result_path": {"const": "experiments/p2_governed_repository_admission/gold_preflight/result.json"}
+      }
+    },
+    "terminal_disposition": {
+      "type": "object",
+      "required": ["qualified_task_count", "excluded_n0_task_count", "replacement_slot_count", "qualified_language_count", "replacement_languages", "all_original_tasks_dispositioned", "task_dispositions"],
+      "properties": {
+        "qualified_task_count": {"const": 8},
+        "excluded_n0_task_count": {"const": 4},
+        "replacement_slot_count": {"const": 4},
+        "qualified_language_count": {"const": 5},
+        "replacement_languages": {"const": ["go", "go", "java", "rust"]},
+        "all_original_tasks_dispositioned": {"const": true},
+        "task_dispositions": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"type": "object"}}
+      }
+    },
+    "false_negative_findings": {
+      "type": "object",
+      "required": ["upstream_parser_false_reject_count", "post_test_start_dependency_fetch_failure_count", "compile_or_panic_expected_set_unobservable_count", "runtime_external_resource_task_count", "local_filesystem_semantics_incompatibility_count", "bounded_dynamic_dependency_chain_exhaustion_count", "idea_or_mechanism_negative_inference_count"],
+      "properties": {
+        "upstream_parser_false_reject_count": {"const": 1},
+        "post_test_start_dependency_fetch_failure_count": {"const": 4},
+        "compile_or_panic_expected_set_unobservable_count": {"const": 2},
+        "runtime_external_resource_task_count": {"const": 1},
+        "local_filesystem_semantics_incompatibility_count": {"const": 1},
+        "bounded_dynamic_dependency_chain_exhaustion_count": {"const": 1},
+        "idea_or_mechanism_negative_inference_count": {"const": 0}
+      }
+    },
+    "attempt_lineage": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"type": "object"}},
+    "custody_and_raw_evidence": {
+      "type": "object",
+      "required": ["attempt_record_count", "verified_compressed_arm_log_count", "verified_dependency_preparation_log_count", "aborted_missing_raw_log_attempt_count", "raw_log_custody_required_after_abort", "final_pool_selected", "final_pool_opened"],
+      "properties": {
+        "attempt_record_count": {"const": 8},
+        "verified_compressed_arm_log_count": {"const": 62},
+        "verified_dependency_preparation_log_count": {"const": 5},
+        "aborted_missing_raw_log_attempt_count": {"const": 1},
+        "raw_log_custody_required_after_abort": {"const": true},
+        "final_pool_selected": {"const": false},
+        "final_pool_opened": {"const": false}
+      }
+    },
+    "resource_observations": {"type": "object"},
+    "next_required_action": {"type": "object"},
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 20}}
+  }
+}

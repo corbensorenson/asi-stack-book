@@ -1,0 +1,70 @@
+{
+  "schema_version": "asi_stack.x_article_header_provenance.v1",
+  "asset": "editions/x_article/asi_stack_synopsis_header.png",
+  "status": "generated_local_master_ready_not_published",
+  "created": "2026-07-16",
+  "use_case": "X Article header for the evidence-reconciled ASI Stack synopsis",
+  "design_brief": "A wide editorial illustration of AI as five governed architectural layers, with separate amber authority and cyan evidence rails, an input signal, a verified output artifact, rollback, and one visible unresolved residual. The composition avoids humanoids, brains, corporate logos, text, and unsupported superintelligence imagery.",
+  "generation": {
+    "tool": "OpenAI built-in image generation tool",
+    "mode": "new raster generation",
+    "prompt": "Create a polished, extremely wide 5:2 editorial technology illustration of an AI system as a layered governed stack rather than a humanoid or single glowing brain. On a deep charcoal-to-midnight-blue field, center five clean interlocking architectural rails. A warm white signal enters from the left and exits on the right as a small verified artifact. Include a distinct amber authority rail and cyan evidence rail, with abstract symbols for routing, memory, verification, permissions, rollback, and one muted-red unresolved residual. Keep essential content inside the centered 70 percent safe region and leave calm negative space at both sides. Use geometric architectural forms, subtle isometric depth, midnight navy, graphite, off-white, cyan, and amber. No people, faces, robots, brains, corporate logos, book mockup, text, letters, watermark, magical aura, cyberpunk clutter, or implication that superintelligence has been achieved.",
+    "generated_source_path": "/Users/corbensorenson/.codex/generated_images/019f4b15-1247-7c21-8ca6-5f54972c7f1b/exec-1dd01c0e-c1f0-4539-8614-e09a6dbfbce1.png",
+    "generated_source_width": 1983,
+    "generated_source_height": 793,
+    "generated_source_mode": "RGB",
+    "generated_source_bytes": 1935916,
+    "generated_source_sha256": "8ec3c66ce891ebf80ee9849fb0df1f21b124a90d0e8ed014e63c9c8e6daa73de"
+  },
+  "postprocessing": {
+    "operation": "RGB conversion and Lanczos resampling from 1983x793 to the exact 2000x800 5:2 master; no crop, compositing, retouching, or text insertion",
+    "tool": "Pillow",
+    "stretch_assessment": "The generated source ratio differs from 5:2 by less than 0.04 percent; the exact-size resample introduces no material geometric distortion.",
+    "manual_visual_inspection": "passed_at_full_resolution",
+    "safe_region_assessment": "passed; the five-layer stack and both governance rails remain centered with generous side margins"
+  },
+  "master": {
+    "width": 2000,
+    "height": 800,
+    "aspect_ratio": "5:2",
+    "mode": "RGB",
+    "format": "PNG",
+    "bytes": 1860215,
+    "sha256": "514aac0476e20aa87796a0855c5b031622ce4291ae514e47dd0de74f83b2300e"
+  },
+  "alt_text": "A dark blue architectural illustration shows five horizontal AI system layers between a glowing input on the left and a verified artifact on the right. An amber authority rail runs above the stack and a cyan evidence rail below it. Symbols inside the layers suggest routing, memory, permissions, verification, and rollback; one small red branch ends in an unresolved residual.",
+  "alt_text_characters": 386,
+  "rights": {
+    "project_use_authorized": true,
+    "public_license_grant": false,
+    "state": "project_owned_generated_asset_all_rights_reserved_pending_publication_decision"
+  },
+  "platform_preview": {
+    "draft_id": "2077875347220041728",
+    "desktop": "passed_unpublished_composer_preview",
+    "desktop_receipt": "editions/x_article/previews/desktop.png",
+    "desktop_receipt_sha256": "f2561f082c217be79aab11c8f431bb5060e2b202fd2c83a8a3e0547661890c97",
+    "mobile": "passed_unpublished_composer_preview_at_390x844",
+    "mobile_receipt": "editions/x_article/previews/mobile.png",
+    "mobile_receipt_sha256": "b449cbd0273e6d3ac3589ac61d5448e9363563f63fe3f81a48b7774fd9305b89",
+    "crop": "passed_default_zero_zoom_crop_on_desktop_and_mobile; essential stack, input, output, authority rail, evidence rail, rollback, and residual remained visible",
+    "compression": {
+      "state": "observed_platform_derivative",
+      "path": "editions/x_article/platform_derivatives/x_header_1200x480.jpg",
+      "width": 1200,
+      "height": 480,
+      "mode": "RGB",
+      "bytes": 70166,
+      "sha256": "e4c90ae74a953ef99480f645614bec3296fe06816b6f587cf47c8f1d71104e62"
+    },
+    "alt_text_readback": "blocked_platform_header_editor_exposes_crop_and_remove_but_no_alt_text_control",
+    "alt_text_fallback": "Canonical natural-language description remains in this provenance record for author use if X adds a header-description control or the image is reused in a surface that supports alt text."
+  },
+  "publication_state": "ready_not_published",
+  "non_claims": [
+    "The illustration is conceptual and does not depict a deployed ASI Stack implementation.",
+    "The verification symbol does not claim that the book, stack, or an AI system has been proven safe or correct.",
+    "The observed X crop and compression apply only to the unpublished draft preview checked on 2026-07-16.",
+    "The canonical alt text exists locally, but X's Article header editor exposed no alt-text entry or readback control during this preflight."
+  ]
+}

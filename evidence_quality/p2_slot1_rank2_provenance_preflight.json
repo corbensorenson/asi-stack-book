@@ -1,0 +1,66 @@
+{
+  "schema_version": "asi_stack.p2_sequential_replacement_provenance_preflight.v1",
+  "recorded_date": "2026-07-17",
+  "state": "passed_before_task_content_opened",
+  "claim_id": "p2.governed_natural_repository_change_admission_joint_frontier",
+  "queue_path": "experiments/p2_governed_repository_admission/corpus/replacement_queue.json",
+  "prior_terminal_diagnosis_path": "evidence_quality/p2_slot1_rank1_cargo_rescue_diagnosis.json",
+  "candidate": {
+    "slot": 1,
+    "rank": 2,
+    "instance_id": "typst__hayagriva-334",
+    "repo": "typst/hayagriva",
+    "language": "rust",
+    "base_commit": "0c3c7003b989f706296b7a30b743cc4431faf859",
+    "public_change": {
+      "receipt_mode": "github_pull_api_plus_verified_merge_commit",
+      "pull_url": "https://github.com/typst/hayagriva/pull/334",
+      "pull_api_sha256": "9c72d5f1c2a2bd35410e9cd2db66f28905bab44eff3d54ef8adfb7cca6387387",
+      "merge_api_sha256": "7996161debe3fadda0fee34f0f7fc35b9e4f0376adc5a9de04603ca5230ed682",
+      "merged": true,
+      "merged_at_utc": "2025-06-19T01:24:42Z",
+      "merge_commit_sha": "e46b0011e7eaf59908ea45bb0ee7de4a38b635f7",
+      "merge_commit_parent_shas": ["0c3c7003b989f706296b7a30b743cc4431faf859"],
+      "base_is_merge_parent": true,
+      "github_signature_verified": true
+    },
+    "license_receipt": {
+      "spdx_id": "Apache-2.0",
+      "path": "LICENSE-APACHE",
+      "blob_sha": "b8ffab3084a0cafc600c67fadb604dc400b62aae",
+      "size_bytes": 10879,
+      "api_receipt_sha256": "7224acad59ea1241db790660b24b178e8bb982532a69d8933bd11af8a0ee5ffe",
+      "bound_to_base_commit": true
+    },
+    "image_manifest": {
+      "image": "docker.io/swerebenchv2/typst-hayagriva:334-0c3c700",
+      "digest": "sha256:14b65767ebde4ccf35a92af2c9eade2d282f60247bb3c57a3f3725169f453959",
+      "raw_manifest_sha256": "14b65767ebde4ccf35a92af2c9eade2d282f60247bb3c57a3f3725169f453959",
+      "media_type": "application/vnd.docker.distribution.manifest.v2+json",
+      "os": "linux",
+      "architecture": "amd64",
+      "compressed_layer_bytes": 1559924385,
+      "layer_count": 10,
+      "engine_content_size_unmeasured": true,
+      "virtual_size_unmeasured": true
+    },
+    "preflight_pass": true
+  },
+  "custody": {
+    "candidate_task_content_opened": false,
+    "candidate_test_command_opened": false,
+    "candidate_outcome_opened": false,
+    "rank_greater_than_two_task_content_opened": false,
+    "final_pool_selected": false,
+    "final_pool_opened": false
+  },
+  "next_gate": "pull exact manifest digest and measure v2 Engine-content, conservative virtual-size, pull-time, cleanup-stabilization, and residual-space gates before task content",
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "A verified merge, base-bound license, and digest-bound image do not qualify a benchmark task.",
+    "Compressed registry layer bytes do not substitute for the prospectively frozen Engine-content and virtual-size measurements.",
+    "No task content or outcome was opened during this preflight.",
+    "The held-out final pool remains unselected and unopened."
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "task_count": 15,
+  "labels": [
+    {
+      "task_id": "rv-h01",
+      "required_residual_ids": [
+        "DG2"
+      ],
+      "required_route": "block",
+      "clean_control": false,
+      "verification_burden": 1,
+      "capacity_adequate": true
+    },
+    {
+      "task_id": "rv-h02",
+      "required_residual_ids": [
+        "RB2",
+        "RB3"
+      ],
+      "required_route": "reopen",
+      "clean_control": false,
+      "verification_burden": 2,
+      "capacity_adequate": true
+    },
+    {
+      "task_id": "rv-h03",
+      "required_residual_ids": [
+        "EI2"
+      ],
+      "required_route": "escalate",
+      "clean_control": false,
+      "verification_burden": 1,
+      "capacity_adequate": true
+    },
+    {
+      "task_id": "rv-h04",
+      "required_residual_ids": [],
+      "required_route": "release",
+      "clean_control": true,
+      "verification_burden": 0,
+      "capacity_adequate": true
+    },
+    {
+      "task_id": "rv-h05",
+      "required_residual_ids": [
+        "DL2",
+        "DL3"
+      ],
+      "required_route": "block",
+      "clean_control": false,
+      "verification_burden": 2,
+      "capacity_adequate": true
+    },
+    {
+      "task_id": "rv-h06",
+      "required_residual_ids": [
+        "BM2",
+        "BM3"
+      ],
+      "required_route": "escalate",
+      "clean_control": false,
+      "verification_burden": 2,
+      "capacity_adequate": false
+    },
+    {
+      "task_id": "rv-h07",
+      "required_residual_ids": [
+        "AU2"
+      ],
+      "required_route": "block",
+      "clean_control": false,
+      "verification_burden": 1,
+      "capacity_adequate": true
+    },
+    {
+      "task_id": "rv-h08",
+      "required_residual_ids": [],
+      "required_route": "release",
+      "clean_control": true,
+      "verification_burden": 0,
+      "capacity_adequate": true
+    },
+    {
+      "task_id": "rv-h09",
+      "required_residual_ids": [
+        "SC2",
+        "SC3"
+      ],
+      "required_route": "block",
+      "clean_control": false,
+      "verification_burden": 2,
+      "capacity_adequate": true
+    },
+    {
+      "task_id": "rv-h10",
+      "required_residual_ids": [
+        "GC2",
+        "GC3"
+      ],
+      "required_route": "reopen",
+      "clean_control": false,
+      "verification_burden": 2,
+      "capacity_adequate": false
+    },
+    {
+      "task_id": "rv-h11",
+      "required_residual_ids": [
+        "SF2"
+      ],
+      "required_route": "block",
+      "clean_control": false,
+      "verification_burden": 1,
+      "capacity_adequate": true
+    },
+    {
+      "task_id": "rv-h12",
+      "required_residual_ids": [],
+      "required_route": "release",
+      "clean_control": true,
+      "verification_burden": 0,
+      "capacity_adequate": true
+    },
+    {
+      "task_id": "rv-h13",
+      "required_residual_ids": [
+        "SP2"
+      ],
+      "required_route": "reopen",
+      "clean_control": false,
+      "verification_burden": 1,
+      "capacity_adequate": true
+    },
+    {
+      "task_id": "rv-h14",
+      "required_residual_ids": [
+        "WS2"
+      ],
+      "required_route": "reopen",
+      "clean_control": false,
+      "verification_burden": 1,
+      "capacity_adequate": true
+    },
+    {
+      "task_id": "rv-h15",
+      "required_residual_ids": [
+        "MD2",
+        "MD3"
+      ],
+      "required_route": "escalate",
+      "clean_control": false,
+      "verification_burden": 2,
+      "capacity_adequate": true
+    }
+  ]
+}

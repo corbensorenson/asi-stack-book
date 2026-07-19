@@ -1,0 +1,197 @@
+# Prototype Roadmap
+
+Project Theseus gives implementation pressure that needs an accountable build order. The roadmap turns that pressure into build order. It starts with evidence hygiene, source ingestion, artifact continuity, and claim discipline before it asks for stronger agency.
+
+The roadmap is a humility device. A phase is not a result, and a milestone is not evidence. The build should earn later autonomy by first proving that the project can preserve sources, traces, tests, proofs, residuals, and release records.
+
+The order matters because early shortcuts become later architecture. A prototype that cannot keep evidence boringly reliable should not be trusted with stronger routing, execution, or self-improvement authority. Sequence is part of safety.
+
+The roadmap is therefore a build discipline for earning trust one controlled surface at a time. Each phase should make the next claim harder to exaggerate and easier to test.
+
+Progress means reducing the number of things that have to be taken on faith.
+
+A good roadmap converts ambition into smaller verifiable obligations. Milestones matter when each one visibly reduces a specific uncertainty before expansion.
+
+## Problem
+
+A credible build order cannot create agency before auditability, evidence, and authority controls exist. A prototype that begins with autonomous self-improvement skips the machinery that would make improvement inspectable.
+
+The build order must also prevent partial demos from becoming institutional facts. A useful local trace, agent loop, retrieval store, or benchmark dashboard can guide engineering, but it should not become a capability claim until phase acceptance records say what was run, what passed, what failed, what remains blocked, and what the milestone does not imply.
+
+The roadmap problem is therefore sequencing, not ambition. The project should still build toward governed autonomy, tool use, routing, memory, and self-improvement, but each step must inherit the evidence and rollback machinery of the step before it. Otherwise the prototype will demonstrate the exact failure the book warns about: impressive agency without durable proof of governability.
+
+## Why existing approaches are insufficient
+
+A roadmap that jumps to autonomous improvement skips source matrices, artifact graphs, claim ledgers, tests, and authority controls. It also makes useful prototypes dangerous: once something feels helpful, teams are tempted to skip evidence discipline.
+
+VIEA says durable artifacts first. SCF says replacement and improvement need stable fields. VCM says context admission and adequacy must be visible. PlanForge says plans need typed contracts. Project Theseus says report-first local machinery should gate training and self-evolution.
+
+Prototype roadmaps often hide dependency direction. They list features in an attractive order, but do not say which earlier gates make later agency legitimate. This architecture needs the opposite: every attractive capability should point backward to the evidence, authority, replay, and rollback infrastructure it depends on.
+
+External baselines help order the prototype ladder. NIST AI RMF (`ext_nist_ai_rmf_1_0_2023`) and extreme-risk evaluation work (`ext_model_evaluation_extreme_risks_2023`) set risk/evaluation gates, Dafny (`ext_dafny_2010`) and Copilot (`ext_copilot_runtime_monitor_2010`) point toward specification and monitor artifacts, SHOP2 (`ext_shop2_2003`) and SWE-bench (`ext_swe_bench_2023`) pressure planning and software-task evaluation, MMLU (`ext_mmlu_2020`) and CheckList (`ext_checklist_2020`) pressure benchmark and behavioral coverage, CodeBLEU (`ext_codebleu_2020`) pressures artifact-quality metrics, and QLoRA (`ext_qlora_2023`) names efficient adaptation as a later evidence lane. The roadmap uses them to sequence prototypes, not to claim those systems have been reproduced.
+
+Without that dependency discipline, a roadmap becomes a story about ambition rather than an engineering sequence that can stop, downgrade, or refuse work when its prerequisites are missing.
+
+## Core Claim
+
+Prototype Roadmap owns a program-, roadmap-, phase-, dependency-, artifact-, acceptance-gate-, authority-, evaluator-, evidence-transition-, phase-debt-, residual-, rollback-, reviewer-, consumer-, environment-, and time-specific **Evidence-Gated Phase Unlock Contract**. It binds every proposed phase to prerequisites, allowed work state, required artifacts, commands, environment, resource bounds, gates, independent evaluation, residuals, debt, rollback, retirement, evidence effect, and non-claims before later work may research, demo, integrate, promote, or release. No roadmap row, milestone, source report, dashboard, task count, passing fixture, theorem, validator, build, or locally useful prototype alone establishes phase completion, safe dependency order, capability, governance effectiveness, deployment, transfer, AGI, ASI, or SOTA (evidence boundary: architectural argument).
+The source notes support a staged build sequence, but the prototype phases are not claimed complete.
+
+No roadmap phase has been accepted, executed, or used to promote a capability claim in this repository.
+
+The roadmap should therefore be read less like a product plan and more like a dependency graph for trust. The early phases create the conditions under which later phases can mean anything: sources can be inspected, artifacts can be found again, claims can be downgraded, and authority checks can stop an unsafe action. Later phases are only legitimate when they inherit those conditions. A planner that cannot preserve source provenance is not ready to dispatch work. A runtime that cannot replay actions is not ready to close loops. A replacement system that cannot roll back is not ready to improve itself.
+
+This ordering also protects useful prototypes from their own momentum. A half-working local agent, benchmark harness, context memory, or route scheduler can feel convincing long before it is governable. The phase record slows that down. It says which artifacts exist, which checks passed, which blockers remain, and which claims are still forbidden. That makes the roadmap a pressure surface for better engineering rather than a story that later work was inevitable.
+
+Each phase should have entry criteria and exit criteria. Entry criteria prevent starting a phase when its prerequisites are absent. Exit criteria prevent treating a phase as accepted because it produced an impressive artifact. A phase can produce useful work while still failing exit.
+
+## Mechanism
+
+The owned object is an **Evidence-Gated Phase Unlock Contract**, not a feature list or predicted calendar. Its lifecycle is:
+
+| Phase | Contract operations |
+|---|---|
+| 1. Freeze and identify | Freeze program objective, roadmap version, candidate phases, dependency graph, authority ceiling, consumers, environments, resources, time, and non-claims; assign identities to every prerequisite, artifact, command, gate, evaluator, transition, residual, debt item, rollback, retirement condition, reviewer, and descendant unlock. |
+| 2. Classify and order | Keep proposed, blocked, research-only, demo, integrate, promote, release, failed, rolled-back, retired, and superseded states distinct; build evidence infrastructure first; add intent, planning, context, work, runtime, observation, and rollback second; add model-computation and update layers only under stronger gates. |
+| 3. Bind dependencies | Express every edge as typed input, allowed work state, blocking condition, acceptance predicate, output, authority delta, evidence effect, rollback, and expiry; issue a work contract with owners, commands, environment, resources, observations, stops, review, completion, and forbidden claims. |
+| 4. Validate and bound | Apply semantic, executable, negative, mutation, replay, proof, rights, publication, and release checks; disclose evaluator implementation and dependence; conserve phase debt; allow failed-gate research or demos only under isolation and non-promotion boundaries. |
+| 5. Decide and propagate | Accept completion only from observed artifacts and gates plus an authorized terminal decision; propagate failure, revocation, correction, expiry, rollback, downgrade, and retired debt through every dependent phase and consumer. |
+| 6. Challenge and retire | Compare against matched calendar, backlog, milestone, stage-gate, no-gate, and ordinary program-management baselines; monitor useful throughput, false unlocks and blocks, rework, incidents, debt, rollback, burden, resources, opportunity cost, and total cost; expire or retire changed contracts with lineage. |
+
+The contract turns a phase boundary into a reviewable transaction. A proposal
+first names the capability it hopes to unlock and the authority it must not
+inherit. Dependency binding then names the exact predecessor artifacts and the
+conditions under which they cease to be current. Validation records both
+positive and rejecting observations, including evaluator dependence and work
+that remains isolated. The terminal decision can accept, block, narrow, roll
+back, retire, or supersede the phase; none of those outcomes rewrites the work
+or uncertainty that produced it.
+
+Unlock propagation is consumer-specific. A passed infrastructure gate may let
+one experiment consume a schema while leaving training, deployment, and public
+claims blocked. A failed downstream gate can invalidate an affected route
+without erasing unrelated predecessor work. Every propagation carries roadmap,
+phase, and consumer identities, the authority delta, evidence effect, residual
+owner, expiry trigger, and acknowledgement. A green milestone therefore never
+becomes permission for every later phase.
+
+```{mermaid}
+flowchart LR
+A["Backlog item or chapter need"] --> B["Phase proposal"]
+B --> C["Entry criteria"]
+C --> D["Required artifacts"]
+D --> E["Acceptance gates"]
+E --> F{"Gates pass?"}
+F -- "yes" --> G["Unlock dependent phase"]
+F -- "no" --> H["Block, residualize, or revise"]
+G --> I["Release notes and evidence refs"]
+H --> J["Residual ledger and next action"]
+I --> K["Capability allowed to compose"]
+J --> B
+```
+
+**What the prototype roadmap shows:** The roadmap is a dependency gate, not a promise of future success. A phase unlocks dependent work only when entry criteria, required artifacts, acceptance gates, evidence refs, and residual handling justify composition.
+
+The recommended dependency order is:
+
+- Source matrix, source notes, claim ledger, and publication validation.
+- Artifact graph, protocol schemas, fixtures, and proof manifest.
+- Intent contracts, PlanForge DAGs, VCM context records, and typed jobs.
+- Runtime adapters, permissions, audit logs, replay, and procedural memory.
+- Routing heads, specialist registry, readiness gates, and benchmark ratchets.
+- Stable capability fields, replacement transactions, rollback, and bounded self-improvement.
+
+Self-improvement comes late because it depends on evaluator integrity, containment, rollback, governance rights, evidence ledgers, resource controls, and residual conservation. Research can proceed earlier in isolation, but it cannot silently inherit integration, promotion, release, training, or deployment authority. Every shortcut becomes phase debt with an owner, severity, downstream exposure, due condition, and retirement rule.
+
+## Interfaces
+
+The contract joins twelve interfaces without absorbing their authority:
+
+1. Human Intent, value conflict, agency rights, and System Authority provide legitimate objectives, ceilings, appeal, stop, and terminal decisions.
+2. Sources, Claim Ledgers, Evidence States, Artifact Graphs, supply chain, rights, and Living Book surfaces provide provenance and public truth.
+3. Intent contracts, planning, semantic IR, context, Labor OS, and stewardship provide typed work, dependencies, ownership, continuity, and acceptance packets.
+4. Runtime adapters, Security Kernel, SCIFs, observation, audit, replay, and incidents provide bounded effects, containment, receipts, and recovery.
+5. Routing, specialists, deliberation, procedural memory, search, and compact models provide candidate computation without unlock authority.
+6. Benchmarks, behavioral tests, simulation, adversarial evaluation, oversight, safety cases, and formal methods provide evaluation lanes.
+7. Policy, data, unlearning, replacement, recursive improvement, and open-ended improvement consume accepted lower-phase artifacts and create new causal obligations.
+8. Readiness, Stable Capability Fields, residual escrow, quarantine, release, deployment, and publication provide qualification and terminal transition authority.
+9. Resource Economics, compute governance, weight custody, hardware roots, Hives, and services provide budgets, substrates, custody, availability, and costs.
+10. VIEA, Theseus, Circle, VCM, PlanForge, Benchmaxxing, SCF, BeastBrain, BugBrain, and MoECOT supply lineage without local result inheritance.
+11. NIST AI RMF, extreme-risk evaluation, Dafny, Copilot, SHOP2, SWE-bench, MMLU, CheckList, CodeBLEU, and QLoRA supply external comparators without certification.
+12. Status pages, changelogs, dashboards, releases, readers, builders, reviewers, and successors consume projections and cannot overwrite canonical phase records.
+
+Interface exchanges are typed handoffs rather than informal adjacency. Each
+provider may refuse, expire, or narrow its record; each consumer must
+acknowledge the exact version it used. Missing acknowledgement remains an open
+dependency, and a later correction invalidates only descendants that consumed
+the affected record. This keeps phase sequencing auditable without turning the
+roadmap into a universal source of truth.
+
+## Invariants
+
+The contract requires eighteen invariants: exact scope; bounded or acyclic dependency direction; evidence and authority before agency; distinct phase states; artifact- and decision-backed unlocks; no milestone-as-result; no research-to-release inheritance; monotone non-widening authority; visible evaluator dependence; conserved phase debt; complete failure denominators; accepted evidence transitions only; effect-complete rollback; correction propagation; joint usefulness, failure, burden, and cost; exact transfer scope; expiry on material change; and a strict finite-proof boundary. Provisional evidence can authorize isolated research under explicit controls, but it cannot unlock default execution, promotion, training, self-improvement, release, deployment, or public capability claims. Canonical phase state also retains prerequisite lineage after completion, failure, rollback, retirement, or supersession.
+
+## Failure modes
+
+The named falsifiers are agency-first sequencing; dependency inversion; roadmap-as-evidence laundering; prototype theater; milestone compression; weak or circular gate theater; evaluator laundering; phase-state collapse; evidence-transition laundering; phase-debt erasure; happy-path-only denominators; source-result inheritance; rollback theater; operator-convenience drift; stale roadmap assumptions; over-gating and false blocking; self-improvement ratchet failure; and unsupported transfer. Each failure must leave a rejected transition, incident, residual, debt item, downgrade, rollback, or retired phase. A polished schedule or demo that cannot expose those records has failed the prototype-roadmap core contract even if it ships useful work. False blocks and gate overhead count as failures when their cost exceeds any measured evidential, safety, recovery, or governance benefit.
+
+## Minimum Viable Implementation
+
+The implemented minimum contains twenty-nine exact source mappings and one prototype phase-record schema with a public-safe fixture. `python3 scripts/validate_prototype_phase_gates.py` checks two valid fixtures—one accepted non-promoting infrastructure phase and one research-only phase with owned debt and a retirement condition—plus six expected-invalid controls for missing artifacts, dependency inversion, self-improvement without an independent evaluator, support promotion without an evidence transition, debt without retirement, and missing non-claims.
+
+Three proof targets are implemented by eleven Lean declarations. Three are finite implications over hand-authored phase records, five reduce one hand-authored phase-route function, and three normalize a finite fixture-bridge summary or preserve its non-claims. A separate synthetic readiness/residual check covers expired-evidence rerun/reject behavior. These artifacts establish record and routing boundaries only.
+
+No real program phase is accepted or complete, no deployed build controller exists, no natural program workload or matched baseline has run, and no chapter-core support effect, capability, governance-effectiveness, safety, deployment, independent reproduction, or transfer is established. A blocked phase is useful only insofar as it names the exact artifact, owner, or decision that could unblock or retire it.
+
+## Beyond the State of the Art
+
+The mature argument-exit campaign must prospectively freeze a real multi-phase program: graph, teams, tasks, tools, models, resources, gates, evaluators, debt policy, rollback, stopping, and outcomes. It must compare the Evidence-Gated Phase Unlock Contract with matched calendar, feature-backlog, milestone, stage-gate, no-gate, and strongest ordinary program-management baselines under equal work opportunities.
+
+Natural builds must be mixed with dependency inversion, stale gates, evaluator dependence, research-to-release leakage, debt erasure, revocation, incident, correction, and effect-complete rollback attacks. The campaign must jointly measure useful throughput, time-to-evidence, quality, false unlocks and blocks, rework, incidents, recovery, residuals, debt, reviewer burden, compute, storage, opportunity cost, and total cost. Causal ablations must identify which gate families help, harm, or merely add theater.
+
+Independent teams, reviewers, institutions, infrastructures, legal regimes, environments, and successor programs must reproduce and transfer positive, negative, null, narrowed, blocked, and refuted results. The terminal record must preserve abandoned work, opportunity costs, weak or harmful gates, unresolved debt, outside-model effects, and every condition under which the dependency policy should be narrowed or rejected. Until then the contract is a target architecture, not a functioning build controller, proof of correct sequencing, capability, governance effectiveness, safety, readiness, deployment, transfer, AGI, ASI, or SOTA.
+
+## Summary
+
+The prototype should grow as evidence infrastructure grows: source matrix, claim ledger, artifact graph, schemas, plans, context, typed jobs, runtime adapters, routing, readiness, benchmarks, SCFs, and only then bounded self-improvement.
+
+That order is intentionally conservative. It asks the project to earn agency by first proving that it can remember sources, preserve artifacts, admit failures, replay checks, and refuse unsupported promotions. The same rule applies to the manuscript itself.
+
+Every later capability should be able to point to the earlier records that made it safe to exist. If the pointer is missing, the roadmap should block, narrow, or mark the capability as research-only. The route to v1.0 follows the same logic: strengthen the public book, keep the human and AI views aligned, validate the reader edition pipeline, preserve source ownership boundaries, and avoid support-state inflation. The route to a prototype follows after that with small, reproducible artifacts. A living architecture becomes credible when each new layer inherits the evidence and refusal machinery of the layers before it, not when the project jumps straight to impressive autonomy.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **74** structured claim atoms in `CF-08`. The
+frozen repository-wide terminal audit records 74 `blocked_after_full_attempt`. Its core
+atom `prototype-roadmap.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `prototype-roadmap` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 74 structured claims,
+74 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Integrated governed lifecycle slices**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Bounded local replay only; no deployment, whole-book proof, external effect authority, transfer, publication, or release claim.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
+
+## Handoff
+
+The roadmap gives the stack a build order, and the manuscript itself has to follow the same discipline while it keeps changing. Living Book Methodology defines that operating system for the book. It keeps manifest order, source queues, claim states, proof targets, validation commands, reader projections, audio-script paths, changelog entries, and release boundaries aligned so the project can improve without losing its own evidence trail.

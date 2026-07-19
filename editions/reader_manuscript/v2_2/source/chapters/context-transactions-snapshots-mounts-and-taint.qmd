@@ -1,0 +1,532 @@
+# Context Transactions, Snapshots, Mounts, and Taint
+
+Typed context cells still need runtime semantics before use in memory. Context becomes a transactional view: it can be mounted, branched, tainted, committed, rolled back, expired, declassified, or denied. Without those semantics, even well-labeled memory can become stale, mixed across incompatible tasks, or derived from material that should no longer be used.
+
+The human analogy is version control for what the model gets to see. If a future reviewer cannot tell which memory view was read, which branch it came from, what was private, what was tainted, and what derivatives now carry obligations, the system cannot honestly explain its own reasoning surface. Each transition should leave a receipt.
+
+Context should behave like accountable state, not like a pile of helpful snippets. The same discipline that protects code history has to protect cognitive history, because every later claim depends on knowing which context state was actually active. The transaction log gives memory a boundary that can be challenged, while taint lets downstream work inherit caution instead of laundering risky context across operational boundaries.
+
+## Problem
+
+Long-lived agents and parallel workers mutate durable context through multiple
+stores, branches, indexes, caches, summaries, and recovery paths. The stack
+must know which exact pre-state was read, which writes and derivatives actually
+occurred, which conflicts or partial failures happened, which state became
+durable and visible, and whether taint, revocation, deletion, authority, and
+rights obligations survived concurrency, retry, compaction, crash, and
+restart.
+
+A typed context packet is not a transaction. The Virtual Context ABI can bind
+one static request to one actual consumer-visible packet, but something else
+must own durable writes, branches, merges, aborts, invalidation, deletion,
+recovery, and restart visibility. Without that owner, a clean packet can be
+materialized from a mixed snapshot, an uncommitted write, a foreign branch, a
+stale index, an unauthorized mount, or a derivative whose source was deleted
+after the cache was built.
+
+The hard question is not merely whether retrieved text is relevant. It is
+whether an exact state transition is valid within a declared principal,
+purpose, participant set, isolation level, authority and rights ceiling,
+durability model, failure model, budget, and horizon—and whether the durable
+and consumer-visible post-state was independently observed.
+
+## Why existing approaches are insufficient
+
+Vector retrieval, GraphRAG, and persistent conversational memory can improve
+access, consolidation, or task performance. They do not alone supply declared
+transaction isolation, atomic cross-representation commit, crash durability,
+or derivative closure. A graph or extracted memory can be useful while its
+update history, conflict state, source deletion, cache invalidation, or
+authority boundary remains unresolved.
+
+Database and filesystem transactions provide stronger comparators. ACID,
+snapshot isolation, journaling, conflict detection, and crash recovery can
+protect bytes or records within declared APIs, journal capacity, platforms,
+participants, and fault models. They do not automatically define stable
+semantic-object identity, purpose-bound mounts, field provenance, taint,
+authority, rights, support boundaries, cross-backend materialization, or the
+difference between storage deletion and model forgetting. TxFS is therefore a
+crash-consistency comparator, not evidence that this repository has a
+transactional context store.
+
+CAP-style results make multi-participant limits explicit: during a partition,
+fresh consistency and ordinary availability cannot both be assumed without
+qualification. Machine-unlearning work makes deletion limits explicit: a
+structured retraining path is not proof of physical erasure, privacy, influence
+removal, behavioral forgetting, or downstream-artifact deletion. A governed
+context transaction layer must expose those limits rather than relabeling them
+as successful commits.
+
+## Core Claim
+
+Context Transactions should own the dynamic, versioned state-transition contract for durable context memory. Each accepted transaction binds principal, consumer, purpose, operation, base snapshot, branch, mounts, actual read/write/derive/delete/revoke sets, isolation and conflict policy, authority and rights, taint and declassification, durability and recovery model, budget, horizon, and support ceiling to an observed pre-state and a causally ordered attempted, applied, durable, visible, replayed, or recovered post-state. Commit, branch, merge, abort, retry, compaction, deletion, revocation, and recovery must preserve exact identities, obligations, faults, costs, and residuals. The transaction layer may change durable context state, but it does not own static packet materialization, semantic truth, belief revision, model/optimizer state, external effects, artifact correctness, verification adequacy, support, or release (evidence boundary: architectural argument).
+The claim remains at `argument`. Current artifacts establish record shape,
+finite routing, authored failure rejection, and explicit non-claim boundaries.
+They do not establish a deployed store, concurrency semantics, crash durability,
+storage-wide deletion closure, model forgetting, useful context outcomes, or
+transfer.
+
+### Strongest objection
+
+A transaction layer can add cost and false precision while a mature database,
+event log, cache policy, or human-managed workflow already supplies adequate
+state control. Worse, a perfect transaction log can describe a store that
+never persisted correctly, and an exact storage deletion can coexist with
+model influence, backups, disclosures, or external descendants. The design
+case therefore needs matched simpler baselines, independent state observation,
+actual concurrency and crash injection, complete cost accounting, and exact
+erasure categories before it can claim useful advantage.
+
+## Draft Key Figure: Context Transaction Lifecycle
+
+::: {.asi-key-figure}
+![Draft context transaction lifecycle.](../assets/diagrams/context-transaction-lifecycle.svg){#fig-context-transaction-lifecycle fig-alt="Draft context transaction lifecycle figure showing context ABI records, certificates, transaction records, snapshots, mount policies, branch or commit decisions, taint and deletion closure, materialized views, faults, quarantine, downstream artifact, adequacy, claim-ledger, and job handoff boundaries."}
+:::
+
+**How to read the context-transaction figure:** Read the figure as a state lifecycle, not a retrieval pipeline. A context ABI record and certificate enter a transaction record, which fixes the read set, write set, snapshot, mount policy, audit refs, and replay boundary. Branch or commit decisions do not erase taint or deletion obligations. Tainted, revoked, unauthorized, stale, or unclosed derivatives route to fault or quarantine instead of materialization. Downstream artifacts, adequacy records, claim ledgers, and jobs should cite the transaction that materialized their view. The figure is a draft reader aid, not proof of deployed memory-store behavior, branch isolation, resolver correctness, deletion closure, taint enforcement, side-channel safety, benchmark performance, support-state movement, or release approval.
+
+## Mechanism
+
+A Context Transaction Record is the dynamic ledger for durable context-state
+change. It connects an observed pre-state to every attempted and observed
+post-state without treating a request, log row, checksum, acknowledgement, or
+success return as the effect itself.
+
+The contract has eighteen mechanisms:
+
+The first group fixes the transaction boundary and observes what was actually
+read or changed. It gives identity to snapshots, objects, branches, attempts,
+and obligations before mutation begins. The middle group separates preparation,
+application, durability, visibility, and recovery, so a success-shaped return
+does not collapse several distinct state transitions into one convenient label.
+
+1. Freeze principal, consumer, purpose, operation, participant stores, branch,
+base snapshot, requested read/write/derive/delete/revoke sets, mounts,
+authority and rights ceiling, isolation, conflict and merge policy,
+durability and recovery model, budget, horizon, support ceiling, and
+material-change triggers before admission.
+2. Assign stable transaction, event, object, version, field, branch, snapshot,
+mount, derivative, deletion-obligation, and receipt identities with causal
+parents and explicit logical-clock or ordering uncertainty.
+3. Capture the actual pre-state: source versions, content and index epochs,
+provenance, taint, policy, locks or leases, caches, descendants, backups,
+and open obligations.
+4. Enforce purpose-bound mount namespaces with separate read, write, derive,
+delete, share, export, train, and execute permissions.
+5. Observe actual reads, writes, derivatives, deletions, revocations, cache
+touches, and side records rather than trusting declared sets.
+6. Declare the isolation contract and test dirty reads, non-repeatable reads,
+phantoms, lost updates, write skew, stale-index reads, cross-branch leakage,
+and unauthorized mount visibility.
+7. Give copy-on-write branches explicit create, rebase, compare, merge, reject,
+quarantine, abort, and garbage-collection states; unresolved conflict never
+collapses into silent last-writer-wins.
+8. Separate requested, admitted, prepared, applied, durably committed,
+consumer-visible, replayed, recovered, compensated, aborted, and
+indeterminate states.
+9. Commit content, indexes, provenance, taint, authority and rights,
+derivative edges, deletion and revocation obligations, caches, and audit
+refs atomically within the declared boundary or expose each uncertain
+participant as a blocking residual.
+10. Bind retry to an idempotency key, original transaction and attempt lineage,
+effect observation, and duplicate suppression.
+11. Propagate provenance, taint, privacy, authority, rights, purpose,
+retention, and prohibited use through derivatives unless a separately
+authorized and evidenced declassification narrows them.
+12. Track deletion and revocation across live objects, derivatives, summaries,
+embeddings, indexes, caches, replicas, exports, backups, and future
+materializations while keeping logical deletion, inaccessibility, physical
+erasure, behavioral removal, influence removal, privacy protection, and
+unknown completion distinct.
+13. Record contradiction, correction, supersession, and invalidation as
+append-only events without deciding claim truth or support.
+14. Bind freeze, thaw, rebalance, tier promotion, no-loss compaction,
+migration, and restoration to observed preconditions, postconditions,
+identities, losses, costs, acknowledgements, and residuals.
+15. Inject partial writes, process termination, journal loss, index/content
+divergence, cache staleness, lease expiry, and restart, then compare exact
+visible state and open obligations at the declared recovery boundary.
+16. Observe durable state and consumer visibility independently of the
+transaction producer and its logs.
+17. Retain every admitted, rejected, conflicted, retried, timed-out, partially
+applied, recovered, compensated, aborted, discarded, human-repaired, and
+residual attempt with total cost.
+18. Compare against stateless retrieval, GraphRAG, persistent memory, ordinary
+file and key-value updates, database or filesystem transactions,
+event-sourced designs, and human-managed state under matched conditions.
+
+```{mermaid}
+flowchart LR
+A["Frozen request + observed pre-state"] --> B["Admit or typed fault"]
+B --> C["Read / write / derive / delete"]
+C --> D["Isolation + conflict check"]
+D --> E{"Branch outcome"}
+E -- "merge" --> F["Prepare commit"]
+E -- "abort" --> G["Abort + residual"]
+E -- "quarantine" --> H["Conflict custody"]
+F --> I["Atomic participant commit"]
+I --> J["Durability observation"]
+J --> K["Consumer visibility"]
+K --> L["Crash / restart replay"]
+L --> M{"Exact recovery?"}
+M -- "yes" --> N["Recovered receipt"]
+M -- "no" --> O["Fault + open residual"]
+```
+
+**Reading the context transaction:** The path is a state machine, not a
+retrieval pipeline. Admission precedes mutation; branch, conflict, and abort are
+ordinary outcomes; commit remains incomplete until the declared participants
+are durable and consumer visibility is observed; restart then checks the exact
+recovery boundary. Any uncertainty remains a fault or residual rather than a
+success-shaped receipt.
+
+The remaining mechanisms extend that state machine across retry, derivation,
+deletion, compaction, crash, and comparison. Their common purpose is historical
+continuity: each attempt retains its causal parents, observed effects, unresolved
+participants, and total cost. That record leaves storage truth available to
+independent observers without assigning the transaction producer authority over
+claim truth, usefulness, or publication.
+
+### Material transitions and restart recovery
+
+The historical-project packet makes seven state changes explicit: freeze,
+thaw, rebalance, tier promotion, no-loss compaction, partial-write recovery,
+and restart. Every transition binds a pre-state to an observed and acknowledged
+post-state. Authoritative item identities survive every no-loss operation.
+Index and content epochs advance atomically; a detected partial write blocks
+ordinary commit and rolls back to the last shared epoch. Restart then proves
+only that the hand-authored committed set is visible again—not that a deployed
+store, filesystem, or compactor behaves this way.
+
+### Routing projections, caches, and temporal invalidation
+
+The Reflexive Router makes a context transaction visible to dispatch. A route
+may depend on a compact projection of entity identity, current state, claim
+status, policy, authority, freshness, privacy, capability availability, and
+resource state, but the transaction layer remains the owner of the durable
+versions behind that view. The routing projection records its snapshot,
+generation, dependency closure, valid-time horizon, transaction-time epoch,
+and derivation so it can be invalidated without pretending to be the store.
+
+A semantic cache is therefore a materialized context descendant. Its key must
+bind tenant, principal and authority, purpose, policy and schema versions,
+source and object versions, valid time, privacy/rights class, route and field
+versions, verifier requirements, and transformation identity. A textual or
+embedding match alone is insufficient. Cache hits return the original typed
+result and dependency receipt; they do not silently refresh an expired lease or
+erase a contradiction, revocation, correction, or route override.
+
+Chronicle updates, claim corrections, source changes, authority revocation,
+field replacement, policy change, and atlas migration must invalidate every
+affected hot projection, cached result, alias, workflow, and compiled reflex or
+leave an owned residual. Invalidating the visible cache without its descendants
+does not restore the pre-change state. Conversely, retaining the durable record
+while a consumer view expires preserves history without authorizing reuse.
+
+These rules are architectural requirements from the paper. They have not been
+tested under concurrent actors, real cache collisions, cross-tenant traffic,
+crashes, or production invalidation, so the core remains at `argument`.
+
+## Interfaces
+
+Context changes travel through a Context Transaction Record, but ownership does
+not collapse into that record:
+
+- The Virtual Context ABI consumes one exact committed or faulted snapshot and
+emits a static packet; it cannot mutate, merge, delete, revoke, or recover
+durable context.
+- Intent, Cognitive Compilation, and Planning may request operations and
+consistency needs but cannot declare a write applied, durable, visible,
+recovered, truthful, useful, or supported.
+- Durable context stores expose actual object, version, index, journal, cache,
+replica, backup, and restart state. The transaction contract coordinates
+only its declared participants and fault model.
+- Security, Privacy, Authority, Rights, and Licensing owners decide mounts,
+write/delete/export/train grants, declassification, retention, disclosure,
+and prohibited uses.
+- Claim Ledgers and Spinoza own contradiction, evidence, belief, and support
+transitions. A correction, supersession, deletion, or commit cannot promote
+or refute a claim by itself.
+- Artifact Graphs preserve transaction, derivative, cache, backup, fault,
+recovery, and downstream lineage without certifying correctness.
+- Runtime Adapters own jobs, tools, approvals, and external effects. Context
+abort, restore, or compensation cannot claim rollback of an external effect
+without separate effect-complete evidence.
+- Data Engines own datasets, model weights, optimizer and scheduler state,
+training caches, checkpoints, descendants, and causal unlearning. Storage
+deletion is not model forgetting, influence removal, privacy erasure, or
+behavioral cohort removal.
+- Verification Bandwidth owns independent adequacy and outcome evaluation;
+transaction validity establishes only declared state-transition properties.
+- Resource Economics owns storage, compute, indexing, locking, validation,
+retry, human, recovery, privacy, latency, and opportunity cost.
+- Evidence States and Readiness Gates own support, quarantine, promotion, and
+release. A green commit, replay, deletion receipt, or restart check has no
+direct support-state effect.
+
+Minimum fields:
+
+- `transaction_id`
+- `transaction_state`
+- `transaction_validity_state`
+- `operation`
+- `principal_ref`
+- `consumer_ref`
+- `purpose_ref`
+- `participant_refs`
+- `attempt_id`
+- `idempotency_key`
+- `pre_state_ref`
+- `post_state_ref`
+- `transition_state`
+- `durability_model`
+- `recovery_model`
+- `conflict_policy`
+- `merge_policy`
+- `causal_parents`
+- `ordering_evidence`
+- `snapshot_id`
+- `snapshot_boundary`
+- `mounts`
+- `mount_policy`
+- `read_set`
+- `write_set`
+- `branch_policy`
+- `isolation_state`
+- `taint_labels`
+- `taint_propagation`
+- `deletion_obligations`
+- `rollback_or_deletion_closure`
+- `declassification_refs`
+- `derivative_refs`
+- `contradiction_refs`
+- `materialization_state`
+- `closure_state`
+- `faults`
+- `context_abi_refs`
+- `source_refs`
+- `audit_refs`
+- `consumer_policy`
+- `verification_refs`
+- `promotion_blockers`
+- `replay_boundary`
+- `support_state_effect`
+- `non_claims`
+
+Typed conflict, denial, timeout, partial commit, crash, recovery, abort, and
+indeterminate states are ordinary interface results. Downstream packets and
+artifacts cite the exact transaction and snapshot they inherited, but a later
+fault triggers review through the appropriate owner rather than silently
+rewriting the dependent artifact or claim.
+
+## Invariants
+
+The invariants define what remains distinguishable while context moves. They
+bind identity and policy to exact versions, keep intermediate and uncertain
+states visible, and preserve obligations through derivation and recovery. Read
+together, they describe the accounting boundary for a transaction receipt; a
+receipt outside that boundary is narrower evidence, even when its local fields
+are internally consistent.
+
+1. Every transaction binds one exact principal, consumer, purpose, operation,
+participant set, branch, base snapshot, mount policy, authority and rights
+ceiling, isolation, durability, recovery model, budget, horizon, and support
+ceiling.
+2. Requested, admitted, prepared, applied, durable, visible, replayed,
+recovered, compensated, aborted, and indeterminate states remain distinct.
+3. A snapshot binds the declared causal, object-version, branch, mount,
+content/index epoch, policy, provenance, taint, lease, cache, and
+open-obligation boundary; a name or timestamp alone is not a snapshot.
+4. Actual read, write, derive, delete, revoke, cache, replica, backup, and
+export sets remain inspectable.
+5. No uncommitted, stale, foreign-branch, policy-mismatched, or unauthorized
+state becomes visible where the declared isolation and mount contract
+forbids it.
+6. Concurrent conflicts, lost updates, write skew, phantoms, stale indexes,
+and merge disagreements remain explicit; silent last-writer-wins is not a
+conflict-free commit.
+7. Mounts, branches, summaries, embeddings, translations, caches, replicas,
+and exports cannot widen authority, rights, purpose, retention, permitted
+use, support, or release.
+8. Provenance, taint, privacy, authority, rights, prohibited use, and unresolved
+conflict propagate to every derivative unless declassification is
+separately authorized, evidenced, scoped, expiring, and residualized.
+9. Deletion and revocation name exact reachable storage and derivative scope;
+logical deletion, inaccessibility, physical erasure, behavioral removal,
+influence removal, privacy protection, and unknown completion are never
+conflated.
+10. Atomicity, consistency, isolation, and durability claims remain limited to
+declared participants, operations, journal, platform, fault model, and
+observation boundary. Uncertain or partitioned participants remain
+residual.
+11. Durable means the state survives the declared crash and restart model and
+is independently observed after recovery; a log, checksum, success return,
+or acknowledgement is insufficient.
+12. Freeze, thaw, rebalance, promotion, compaction, migration, restore, and
+every no-loss transition preserve authoritative identities and obligations
+or expose exact loss, conflict, corruption, and repair state.
+13. Retries and replay preserve transaction identity, attempt lineage,
+idempotency policy, duplicate detection, and observed effects.
+14. Context abort, restore, or compensation cannot erase an external effect,
+published artifact, human disclosure, model update, or downstream copy
+without separate owner evidence.
+15. Actual pre-state, post-state, durability, consumer visibility, restart
+visibility, and downstream consequence remain independently observable.
+16. Every conflict, denial, retry, timeout, partial write, crash, recovery,
+human repair, abort, discard, cost, and residual stays in the denominator.
+17. Schemas, authored fixtures, finite records, local reversible traces, and
+finite theorems establish only their exact scopes and cannot universalize
+isolation, durability, deletion, security, usefulness, or transfer.
+
+## Failure modes
+
+Most failures arise when one observable state is substituted for another: an
+acknowledgement for durability, a timestamp for a snapshot, a restored object
+for closed deletion, or a sequential trace for concurrent isolation. Others
+arise when a participant disappears from the accounting boundary. The taxonomy
+keeps both substitution and omission visible across normal operation, faults,
+recovery, and later derivatives.
+
+1. Transaction theater records a request or acknowledgement without observing
+pre-state, durable post-state, visibility, consequence, or recovery.
+2. Snapshot fiction mixes versions, branches, mounts, policies, caches, or
+causal frontiers under one coherent-view identity.
+3. Isolation laundering calls a sequential fixture evidence for concurrent
+serializability, read-your-writes, or cross-store consistency.
+4. Lost-update and write-skew laundering accepts overlapping decisions because
+record conflicts or semantic invariants were not modeled.
+5. Branch and merge laundering leaks speculative state, silently uses
+last-writer-wins, or garbage-collects an unmerged obligation.
+6. Mount-authority laundering reads or mutates through a path, cache, replica,
+summary, tool, or restore route outside the purpose-bound grant.
+7. Taint and declassification laundering drops restrictions through
+derivation, aggregation, translation, compaction, migration, or a
+success-shaped approval.
+8. Deletion resurrection returns revoked or deleted material through
+derivatives, embeddings, indexes, caches, backups, exports, restored
+snapshots, or future materializations.
+9. Erasure-category laundering treats logical deletion, access denial, storage
+erasure, model forgetting, influence removal, privacy protection, or changed
+behavior as interchangeable.
+10. Partial-write laundering admits new content with an old index, a new index
+with old content, or divergent provenance, taint, rights, and deletion
+ledgers.
+11. Crash and restart amnesia loses identities, obligations, locks, leases,
+journal position, invalidations, or residuals while reporting healthy
+state.
+12. Retry and acknowledgement laundering repeats a non-idempotent write after
+timeout or reuses a receipt for an unobserved attempt.
+13. Causal-order laundering uses wall-clock order, stale logical clocks, or
+missing parents to present reordered history as valid.
+14. Cache, replica, and backup laundering leaves a hidden participant outside
+invalidation, taint, rights, revocation, deletion, or recovery closure.
+15. Compaction and tiering loss removes low-salience but authoritative,
+contradictory, minority, legal, evidential, or deletion-critical state
+under a no-loss label.
+16. Rollback and compensation laundering calls a context restore effect-complete
+while effects, artifacts, disclosures, model updates, or descendants
+persist.
+17. Failure and cost survivorship removes conflicted, retried, crashed,
+repaired, aborted, slow, privacy-expensive, or residual transactions.
+18. Portability theater treats one fixture, backend, filesystem, model,
+workload, or fault schedule as general transaction evidence.
+
+## Minimum Viable Implementation
+
+The smallest useful context-transaction implementation is not a production memory store. It is one transaction record for one materialized context view. That record says what operation occurred, which snapshot and mount policy were used, what was read or written, which branch policy applied, what taint and deletion obligations followed the view, whether declassification or closure exists, and what replay boundary future reviewers can inspect.
+
+The current `context_transaction_record` schema and fixture validate that this record has the fields needed for review: transaction state, snapshot boundary, mount policy, read/write sets, isolation state, taint propagation, deletion closure, materialization state, faults, context ABI refs, source refs, audit refs, consumer policy, verification refs, promotion blockers, support-state effect, and non-claims. Passing the fixture means the record is inspectable. It does not mean a deployed memory service exists.
+
+`AsiStackProofs.ContextTransactions` models the same boundary with finite records. It checks committed-event snapshot reads, taint propagation, materialization blocking when open deletion obligations lack closure or declassification, and transaction-route outcomes for missing or stale snapshots, branch mismatches, mount faults, taint without declassification, deleted-cell materialization, invisible committed reads, missing replay boundaries, unsupported support promotion, missing non-claims, and complete committed-read admission.
+
+The bounded memory-store fixture set is a behavioral rehearsal over synthetic events: one coherent snapshot read, one tainted branch that cannot merge, one deleted source whose derivative blocks materialization, one unauthorized mount fault, one declassification record that preserves residual risk, and one artifact replay reference. That is useful transaction discipline, but it is not read-your-writes consistency across a real store, runtime branch isolation, deployed mount repair, deployed deletion closure, poisoning resistance, VCM conformance, benchmark evidence, or support-state promotion.
+
+The next useful implementation slice is a tiny public-safe transaction packet that can be replayed from record to dependent artifact: one source context object, one transaction, one materialized view or typed fault, one taint/deletion decision, one downstream artifact reference, one replay boundary, and explicit non-claims.
+
+## Beyond the State of the Art
+
+A mature Context Transaction layer is an independently testable dynamic state
+machine for durable AI context, not a transactional metaphor. Natural
+stateful workloads run parallel readers and writers over exact source objects,
+branches, mounts, indexes, caches, derivatives, and recovery boundaries.
+
+The full campaign compares stateless and direct retrieval, GraphRAG,
+persistent memory, ordinary file and key-value updates, database or filesystem
+transactions, event-sourced designs, human-managed state, and the governed
+semantic transaction layer under matched models, sources, authority,
+resources, faults, and horizons. Independent observers measure isolation
+anomalies, source and field survival, conflict calibration, authority and
+rights leakage, taint and deletion closure, crash durability, restart fidelity,
+idempotent recovery, useful task throughput, unsafe use, abstention, missed
+help, privacy exposure, latency, and total cost.
+
+Promotion requires nonzero useful opportunity, predicted mechanism-specific
+failures under ablation, clean crash/restart reproduction, complete
+denominators, storage-versus-model-erasure honesty, and cross-model and
+cross-backend transfer. A simpler transactional baseline that matches or
+dominates the joint frontier narrows or refutes the added ABI-specific benefit.
+Any failure of isolation, durability, authority, deletion, reproduction, or
+transfer narrows, blocks, or refutes the exact corresponding claim rather than
+being averaged into a success narrative.
+
+No current result meets this transactional-context endpoint; support remains
+`argument` until natural crash, concurrency, taint, deletion, recovery,
+reproduction, and cross-backend transfer gates pass.
+
+## Summary
+
+Context Transactions owns dynamic durable context-state change. It binds an
+exact pre-state and request to observed read, write, derive, branch, merge,
+abort, deletion, revocation, durability, visibility, crash, restart, fault,
+cost, and residual states. Static packet materialization, claim truth, model
+state, external effects, support, and release remain separately owned.
+
+The repository currently proves only finite record and route consequences and
+rejects authored mutations. It has not run a concurrent durable store or
+natural model-backed transaction campaign. The next proof step is therefore
+empirical and causal: real backends, strong transactional comparators,
+concurrency and crash injection, independent state observation, exact deletion
+categories, complete costs, reproduction, and transfer.
+
+A context operation that cannot establish its declared isolation, authority,
+durability, visibility, or closure state should fault or remain indeterminate.
+Even a valid transaction still does not establish that the resulting context
+is adequate evidence. That separate question belongs to Verification Bandwidth
+and Context Adequacy.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **73** structured claim atoms in `CF-04`. The
+frozen repository-wide terminal audit records 73 `blocked_after_full_attempt`. Its core
+atom `context-transactions-snapshots-mounts-and-taint.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `context-transactions-snapshots-mounts-and-taint` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 73 structured claims,
+73 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Situated world-model acquisition and consolidation campaign**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Bounded finite POMDP result only; no open-world truth, general memory transfer, deployment, or chapter-core promotion.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
+
+## Handoff
+
+Valid context operations are necessary, but they do not automatically give enough evidence for a claim. Verification Bandwidth and Context Adequacy separates coherent access from adequate understanding. It asks whether the system has enough time, comparison method, tools, reviewer bandwidth, and contradiction search for the claim at hand, so memory validity does not inflate into epistemic confidence.

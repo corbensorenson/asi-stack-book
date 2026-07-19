@@ -1,0 +1,189 @@
+# Circle Calculus and Proof-Carrying AI Contracts
+
+Optional substrates need baselines before their structure can travel safely into contracts. Circle Calculus narrows that idea to proof-carrying structural facts: finite claims that can move through the stack with receipt references, deterministic fields, and replay expectations. The target is not grand certainty, but portable restraint. It is small certified structure that other layers can consume without guessing what was checked.
+
+This is not a claim that every AI behavior can be proved. It is a way to keep small structural guarantees from dissolving into prose. A proof-carrying contract should say exactly what was checked, where the receipt lives, who may consume it, and what the result does not imply. That makes formal work useful without letting theorem language overrun the evidence boundary. The discipline is strongest when the formal artifact is boring, replayable, and narrow. Narrow proof is valuable because it tells the rest of the system exactly where not to overclaim.
+
+The receipt should make a limited guarantee easier to trust and easier to refuse. Trust begins where the contract names its own edge clearly enough.
+
+## Problem
+
+Selected mathematical and AI-infrastructure claims need theorem-linked, machine-readable contracts without treating proofs as model-quality evidence. Circle-style artifacts are useful because they can identify theorem IDs, proof status, deterministic certificate fields, fingerprints, consumer checks, and explicit non-claims.
+
+The hard problem is authority transfer. A finite cyclic-address proof can be valid and still say nothing about language-model quality, runtime, memory, context length, deployment safety, or ASI capability. The ASI Stack therefore needs a contract boundary that lets downstream systems consume structural facts while preserving the limits of those facts.
+
+Proof authority and consumer authority are separate. A theorem can authorize a structural statement; it does not authorize a routing decision, architecture adoption, benchmark promotion, or reader-facing capability claim. Those later moves need their own workloads, baselines, metrics, and evidence artifacts.
+
+## Why existing approaches are insufficient
+
+Ordinary prose, tests, and diagrams can show intent, but they do not give downstream systems stable theorem IDs, proof status, receipt fingerprints, replay checks, and explicit non-claims. Without those fields, a reader cannot tell whether a claim is a Lean theorem, a Python fixture, a generated report, a model benchmark, or a design hypothesis.
+
+Lean is the external proof-assistant baseline named here through `ext_lean4_theorem_proving`. Circle contracts borrow the need for stable theorem names, records, propositions, proof terms, and computation boundaries, then add receipt and replay fields around circular-computation claims. That comparison does not mean Circle statements have been imported into Lean or that proof-carrying AI contracts validate runtime behavior.
+
+The key insufficiency is theorem laundering: a finite structural result gets repeated as if it were evidence for quality or deployment behavior. The proof-carrying contract blocks that move by carrying its own consumer gate and non-claim boundary.
+
+Another insufficiency is stale proof reference drift. The text may preserve a theorem name while the external project changes the declaration, proof policy, sidecar schema, or generated artifact. A contract needs version, hash, resolver status, validation command, and failure behavior so staleness becomes visible.
+
+## Core Claim
+
+Circle Calculus and Proof-Carrying AI Contracts owns a theorem-, model-, artifact-, implementation-, consumer-, claim-, version-, and time-specific Proof Contract Transport Envelope: a finite formal fact may travel only with resolvable proof identity, exact assumptions and semantics, source and toolchain provenance, content fingerprints, deterministic recomputation or replay, least-authority consumer gates, expiry and revocation, and preserved non-claims; theorem validity, receipt readiness, archive integrity, or transport success alone confers no model-quality, runtime, memory, safety, deployment, transfer, support, or SOTA authority (evidence boundary: architectural argument).
+The distinct owner is transport of an already scoped formal fact from a named
+producer artifact to a named consumer. Formal Methods retains theorem truth;
+Executable Specifications retains the engineering-to-model refinement;
+Runtime retains behavior; Evidence retains empirical support; Readiness,
+Incident, and Release retain operational and public authority. The envelope
+cannot manufacture any of those facts—it can only keep a real one from changing
+identity, scope, assumptions, or non-claims in transit.
+
+Circle source mappings ground the discussion of theorem-linked contract families, proof-status discipline, receipt fields, exact/discretized RoPE boundaries, cyclic address proofs, CLI reports, and explicit non-claims. The separate external receipt slice and ASI-side consumer gate show a bounded structural receipt path, not a local Circle proof stack or downstream model-behavior improvement.
+
+## Mechanism
+
+The mechanism has one job: let a small structural fact travel without changing what kind of fact it is. A circular-address statement, phase-bank statement, freshness statement, or schedule statement may be useful only if the surrounding system can see its source, its check boundary, its fingerprint, and its refusal language.
+
+The path begins with an engineering object that can be modeled finitely without cheating. If that model is faithful enough, the package attaches theorem references, deterministic values, source version, replay expectation, allowed consumers, blocked consumers, and explicit non-claims. That package may authorize a structural use. It does not authorize adoption, performance language, memory-scaling language, context-length language, deployment language, or ASI language.
+
+```{mermaid}
+flowchart LR
+A["Engineering object"] --> B["Faithful finite model"]
+B --> C["Checked structural package"]
+C --> D["Consumer gate"]
+D -- "allowed structural use" --> E["Bounded downstream use"]
+D -- "missing or stale fields" --> F["Blocked use"]
+E --> G["Workload request"]
+G -- "baseline and controls run" --> H["Promotion review"]
+G -- "no workload evidence" --> I["No promotion"]
+```
+
+The consumer gate is the important hinge. It asks whether this exact downstream layer is allowed to rely on this exact package for this exact narrow purpose. A memory layer might use a freshness package to guard a stale-read case. A cyclic mixer might use a phase-bank package to avoid one bookkeeping error. Neither use becomes evidence that a model got better.
+
+Promotion requires a different lane. Once a structural package requests quality language, the system must ask for ordinary workload evidence: a task, a baseline, negative controls, metrics, result artifacts, and residuals. If those pieces are missing, the package can remain useful as structure while still being workload-blocked.
+
+That split is what keeps Circle-style machinery from becoming persuasive decoration. The formal lane protects exact small facts. The empirical lane decides whether those facts helped. The reader should be able to inspect where the package came from, what it allows, what it blocks, and why support remains at argument unless a separate evidence transition exists.
+
+A useful package therefore makes both acceptance and refusal easier. It should give future systems enough structure to act carefully and enough limits to stop when the requested claim has moved beyond what was actually checked.
+
+## Interfaces
+
+The interface is deliberately plain. A formal project names the mathematical statement. A tool run emits the portable package. A downstream layer decides whether that package is enough for its own use. The evidence matrix then keeps the claim boundary visible.
+
+That separation prevents authority from leaking across layers. Coil memory can use a freshness package as a structural guardrail. A cyclic mixer can use a phase-bank or collision package as a diagnostic. Neither use becomes a quality, speed, memory, or deployment result until an ordinary workload has been run against a baseline.
+
+For the reader, the important fields are the ones that make refusal possible: source version, theorem references, deterministic values, content fingerprint, check command, replay state, consumer permissions, failure behavior, and non-claims. If those fields are missing, the idea may still be useful design context, but it should not travel as an accepted downstream fact.
+
+## Invariants
+
+The proof-contract invariants keep structural receipts from inflating into quality claims: theorem references, executable checks, and non-claim boundaries must survive every downstream transfer.
+
+- Every fact is specific to theorem, statement, assumptions, model, artifact, implementation relation, consumer, use, version, and time.
+- Theorem identity resolves uniquely to a compiled declaration under pinned source and toolchain, or the envelope fails closed.
+- Proof, schema, deterministic computation, numerical diagnostics, replay, archive integrity, consumer readiness, and empirical support remain distinct.
+- A theorem authorizes only its statement under its assumptions; semantic correspondence and implementation refinement are separate obligations.
+- Fingerprints cover canonical content and dependencies; algorithm, canonicalization, collision policy, and trust root remain explicit.
+- Deterministic fields reproduce from pinned public-safe inputs, with tolerances, nondeterminism, failures, and discarded attempts visible.
+- Every theorem, dictionary, artifact, source, dependency, schema, policy, and consumer reference resolves or remains an explicit residual.
+- Non-claims survive quotation, summary, serialization, transport, caching, supersession, and downstream consumption.
+- Consumer permission is least-authority across fact, object, use, claim axis, environment, version, and expiry.
+- Downstream quality, runtime, memory, safety, deployment, or transfer promotion requires separate natural workload evidence with strong controls.
+- Missing, ambiguous, stale, altered, revoked, unsupported, rights-incompatible, or unreplayable envelopes block use.
+- Every descendant, cache, citation, claim, artifact, and consumer receipt inherits upstream invalidation.
+- The ordinary or last verified fallback remains executable, tested, rights-compatible, and reachable within the recovery window.
+- Independent reproduction does not share the decisive producer, resolver, consumer, trust root, or implementation defect.
+- Private inputs and outcomes never enter public evidence through inference from a public-safe receipt.
+- Support, deployment, release, safety, transfer, or SOTA movement requires an accepted transition for that exact claim and scope.
+- Qualifications expire on material theorem, source, toolchain, model, implementation, schema, consumer, policy, rights, threat, or time change.
+- Every theorem-model gap, unverifiable dependency, replay failure, consumer misuse, revocation, and residual has an owner and reopening condition.
+
+Non-claim preservation is the proof-contract invariant that matters most. A proof-carrying receipt must not lose its boundaries when it is copied into a later chapter, benchmark card, route decision, or prototype roadmap.
+
+Consumer specificity keeps the receipt from becoming universal by accident. A receipt accepted for one consumer does not automatically transfer to another consumer with different workloads, numeric tolerances, threat model, or evidence standard.
+
+## Failure modes
+
+- A theorem name, badge, diagram, proof count, or green build creates authority beyond the statement.
+- A theorem ID resolves to the wrong declaration, changed statement, different assumptions, stale source, or incompatible toolchain.
+- The formal model is correct but does not faithfully represent the engineering object or deployed implementation.
+- Exact finite facts are applied to approximate, floating-point, probabilistic, continuous, or adversarial behavior without a bridge.
+- Canonicalization, hash coverage, collision policy, signatures, or trust roots omit a decision-relevant field.
+- Replay checks a copied receipt instead of rebuilding, resolving, and recomputing from pinned sources.
+- Generated fields, tolerances, nondeterminism, failed commands, or discarded attempts disappear behind a passing summary.
+- Non-claims disappear in an appendix, summary, API conversion, cache, prompt, or downstream chapter.
+- Consumer readiness, archive integrity, or transport success is mistaken for workload success, model quality, or deployment safety.
+- A consumer broadens fact, use, claim axis, environment, version, or expiry beyond the gate.
+- Baselines, controls, evaluator independence, or complete costs are waived because the structural proof is strong.
+- Revocation or theorem drift fails to reach descendants, cached receipts, citations, releases, or private consumers.
+- Fallback depends on the invalid envelope, is stale or rights-incompatible, or exceeds the recovery window.
+- Producer, resolver, verifier, consumer, and trust root share one defect while appearing independent.
+- Private results or inaccessible artifacts are implied by a public-safe receipt or acceptance record.
+- A clean checkout, archived pack, fixture, or finite Lean bridge is described as deployed proof-contract transport.
+- A narrow external rope result is generalized to all Circle contracts, substrates, real RoPE, model quality, safety, or transfer.
+- Transport and governance cost exceed ambiguity reduction, but institutional commitment prevents retirement.
+
+Theorem laundering should block support-state promotion. Stale theorem IDs should remain residuals until a resolver or external build confirms them. Missing baselines should prevent downstream adoption. Exact finite models should stay distinct from numerical diagnostics and real-valued deployment behavior.
+
+Proof cargo-culting is the dangerous reader-facing failure: diagrams, theorem names, and receipt tables appear rigorous enough that the reader stops asking what the theorem actually says. The antidote is a consumer gate that states the exact downstream claim being blocked or allowed.
+
+Receipts can also drift when the proof receipt remains attached after the contract fields it certified have changed.
+
+## Minimum Viable Implementation
+
+The smallest honest version is not a full Circle transport layer. It is one narrow package that says what was checked, how to identify it, who may consume it, and what it does not establish.
+
+The current repo has that narrow shape. It has generic proof-target and proof-contract examples, a local finite-record model for the receipt boundary, a Lean bridge for the public consumer-gate fixture, and a public consumer-gate check for one pinned Circle RoPE package. The bridge models one accepted receipt, four rejected mutation controls, seven theorem IDs, pinned digest fields, blocked support movement, no chapter-core promotion, and no deployed-transport claim. The validator expects the required theorem IDs and fingerprints, and it rejects missing theorem references, digest mismatches, stale contract status, and unsupported transfer claims.
+
+The next build slice should make the path harder to fake. It should include one accepted package, one stale theorem reference, one fingerprint mismatch, one structural-only consumer gate, and one attempted promotion blocked because no workload evidence exists. That would test the transfer rule directly without pretending that this repo has replayed the whole external Circle project or shown downstream model improvement.
+
+## Beyond the State of the Art
+
+In its finished form, Circle proof-carrying contracts would act as a transport service for small structural facts. A finite fact could move through the ASI Stack with its theorem reference, deterministic fields, fingerprint, resolver state, replay expectation, consumer gate, and non-claims still attached.
+
+The point is not to make proof language grander. It is to make it harder for proof language to drift. A receipt should let another layer use a structural fact while also seeing exactly what the fact does not establish: model quality, real-valued deployment behavior, runtime efficiency, memory improvement, downstream usefulness, or broad safety.
+
+The mature transport lane would keep receipt states separate from capability states. A receipt may be theorem-linked, fingerprinted, resolver-checked, consumer-gated, workload-blocked, retired, or superseded; none of those states is a measured model result. Stale theorem IDs become residuals, fingerprint mismatches block replay, and workload-blocked receipts preserve structure without promotion.
+
+The book has not demonstrated that transport service. The support state remains `argument` until receipt records, theorem-resolution checks, replay status, consumer-gate tests, stale-proof failure behavior, and downstream promotion reviews show that proof-carrying claims can travel without overstating what the proof stack established.
+
+## Summary
+
+Circle Calculus and proof-carrying AI contracts let finite structural facts travel with theorem IDs, receipts, fingerprints, validation commands, and non-claims. Their job is boundary preservation.
+
+The ASI Stack should consume those contracts as structural guardrails, not as model-quality evidence. Downstream promotion still requires workloads, ordinary baselines, negative controls, metrics, and replayable result artifacts. The same receipt boundary applies to memory and recurrence, where the central risk is mistaking slot coverage for semantic adequacy.
+
+A proof receipt should make overclaiming harder. If a receipt makes it easier to sell a substrate result that was not tested, the contract boundary failed. The constructive path is still powerful: finite structural predicates can become machine-checkable attachments for plans, memory layouts, routing decisions, or substrate candidates. Those attachments can reduce ambiguity, prevent category errors, and give reviewers something precise to inspect. They simply do not replace ordinary evaluation. The proof-carrying contract is therefore a disciplined interface between formal structure and empirical adoption, not a shortcut around evidence.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **74** structured claim atoms in `CF-06`. The
+frozen repository-wide terminal audit records 73 `blocked_after_full_attempt`; 1 `promoted_at_bounded_scope`. Its core
+atom `circle-calculus-and-proof-carrying-ai-contracts.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `circle-calculus-and-proof-carrying-ai-contracts` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 74 structured claims,
+73 still lack required proof lanes,
+0 were narrowed, and
+1 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **KERC canonical-language and hierarchical-residual campaign**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Broad efficiency is refuted; only two narrow finite transitions survive, with no semantic, multilingual, production, energy, or core claim.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
+
+## Handoff
+
+Proof-carrying contracts are most useful when they protect a concrete boundary rather than decorate an abstract idea. Coil Attention, Cyclic Memory, and Recurrence Contracts applies that rule to memory and recurrence. It asks which slot, winding, freshness, coverage, active-work, loop-exit, stale-read, and fallback facts can be checked structurally while preserving the non-claim that retrieval and reasoning quality remain unproven.

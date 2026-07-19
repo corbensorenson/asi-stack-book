@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASI Stack current negative-inference surface audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "recorded_date", "scope", "summary", "term_counts", "forbidden_hits", "required_boundary_failures", "blocked_chapter_boundary_failures", "surfaces", "excluded_historical_scope", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.negative_inference_surface_audit.v1"},
+    "recorded_date": {"const": "2026-07-17"},
+    "scope": {
+      "type": "object",
+      "required": ["surface_count", "chapter_count", "public_and_derivative_surface_count", "historical_transition_files_mutated", "historical_roadmaps_treated_as_current_prose"],
+      "properties": {
+        "surface_count": {"const": 75},
+        "chapter_count": {"const": 55},
+        "public_and_derivative_surface_count": {"const": 20},
+        "historical_transition_files_mutated": {"const": 0},
+        "historical_roadmaps_treated_as_current_prose": {"const": false}
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["forbidden_overbroad_phrase_count", "missing_required_rehabilitation_boundary_count", "blocked_chapter_boundary_failure_count", "accepted_transition_rehabilitation_counts", "broad_negative_inference_count", "chapter_core_refutation_count", "support_state_effect", "release_effect"],
+      "properties": {
+        "forbidden_overbroad_phrase_count": {"const": 0},
+        "missing_required_rehabilitation_boundary_count": {"const": 0},
+        "blocked_chapter_boundary_failure_count": {"const": 0},
+        "accepted_transition_rehabilitation_counts": {"const": {"N0": 1, "N1": 15, "N2": 74, "N3": 0, "N4": 0, "N5": 0}},
+        "broad_negative_inference_count": {"const": 0},
+        "chapter_core_refutation_count": {"const": 0},
+        "support_state_effect": {"const": "none"},
+        "release_effect": {"const": "none"}
+      }
+    },
+    "term_counts": {"type": "object"},
+    "forbidden_hits": {"const": []},
+    "required_boundary_failures": {"const": []},
+    "blocked_chapter_boundary_failures": {"const": []},
+    "surfaces": {"type": "array", "minItems": 75, "maxItems": 75},
+    "excluded_historical_scope": {"type": "array", "minItems": 4},
+    "non_claims": {"type": "array", "minItems": 5}
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "transition_id": "post-v2-3-m7-update-unlearning-claim-narrowed",
+  "claim_id": "update-unlearning.full-state-local-axis-separation",
+  "claim_surface_refs": [
+    "docs/p4_update_unlearning_campaign.md",
+    "chapters/data-engines-continual-learning-and-unlearning.qmd",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "claim_record_refs": [
+    "experiments/p4_update_unlearning/v1_failure_diagnosis.json",
+    "experiments/p4_update_unlearning_v2/preflight_failure_diagnosis.json",
+    "experiments/p4_update_unlearning_v3/preregistration.json",
+    "experiments/p4_update_unlearning_v3/results/confirmatory_result.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "One terminal structured-fusion local campaign separated eight update/unlearning axes around frozen Qwen weights, a declared 24-surface local rollback inventory, bounded local derived stores, and five local descendants; remote replicas, external descendants, legal compliance, zero influence, and privacy guarantees remained outside the result.",
+  "evidence_roles": [
+    "prospective terminal campaign",
+    "full-state local rollback inventory",
+    "eight-axis unlearning separation",
+    "instrument-failure lineage",
+    "bounded no-promotion adjudication"
+  ],
+  "transition_reason": "The terminal instrument observed a 0.01222040 movement toward deletion-aware retraining, a 0.02511111 reduction in one direction-invariant membership-attack advantage, exact 24-surface local rollback, five local descendant invalidations, and partial declared-store deletion. These heterogeneous outcomes narrow the broad unlearning claim but do not justify a support-state promotion.",
+  "required_artifacts": [
+    "language-model weight update or unlearning",
+    "causal influence intervention beyond comparator distance",
+    "multiple privacy attacks and formal privacy accounting",
+    "complete backup and external-descendant closure",
+    "legal-policy adjudication, reproduction, and transfer"
+  ],
+  "artifact_refs": [
+    "experiments/p4_update_unlearning_v3/preregistration.json",
+    "experiments/p4_update_unlearning_v3/results/confirmatory_result.json",
+    "experiments/p4_update_unlearning/v1_failure_diagnosis.json",
+    "experiments/p4_update_unlearning_v2/preflight_failure_diagnosis.json",
+    "scripts/validate_p4_m7_update_unlearning.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/p4_update_unlearning_campaign.md",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#data-engines-continual-learning-and-unlearningcore",
+    "sources/source_notes/ext_muse_unlearning_2025.md",
+    "sources/source_notes/ext_openunlearning_2025.md"
+  ],
+  "verification_command": "python3 scripts/validate_p4_m7_update_unlearning.py && python3 scripts/validate_non_core_evidence_ledger.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "Qwen weights remained frozen",
+    "causal influence moved only toward a bounded comparator and was not eliminated",
+    "one membership-attack advantage decreased without a privacy guarantee",
+    "legal compliance was not evaluated",
+    "storage erasure covered only declared local derived stores",
+    "an unacknowledged remote replica and external descendants remained unresolved"
+  ],
+  "negative_evidence_refs": [
+    "experiments/p4_update_unlearning_v3/results/confirmatory_result.json",
+    "docs/p4_update_unlearning_campaign.md"
+  ],
+  "downgrade_triggers": [
+    "eight outcome axes are collapsed into one unlearning success bit",
+    "comparator movement is described as zero causal influence",
+    "membership-attack movement is described as a privacy guarantee",
+    "declared local deletion is described as complete storage or backup erasure",
+    "remote or external descendants are described as closed"
+  ],
+  "promotion_burden": "Run prospectively frozen model-weight unlearning with causal, behavioral, privacy, lineage, storage, backup, external-descendant, and legal axes evaluated separately under strong retraining and mitigation baselines, independent attacks, complete inventories, reproduction, and transfer.",
+  "limitations": [
+    "frozen base-model weights",
+    "local structured-fusion instrument",
+    "one bounded membership attack",
+    "partial declared-store deletion",
+    "unresolved remote replica and external descendants",
+    "no legal adjudication"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Author-directed Codex P4/M7 claim-proof cycle"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; no external human review requested or claimed",
+  "acceptance_blockers": [
+    "no language-model weight unlearning",
+    "no zero-influence or privacy guarantee",
+    "storage, backup, and external-descendant closure remained incomplete",
+    "no reproduction or transfer"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-16---m7-full-state-update-and-unlearning-terminal-adjudication",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not establish language-model weight unlearning",
+    "does not establish zero causal influence, differential privacy, membership privacy, or legal compliance",
+    "does not establish complete storage, backup, or external-descendant erasure",
+    "does not establish transfer, production rollback, SOTA, AGI, or ASI",
+    "does not promote any chapter core claim above argument",
+    "does not promote data-engines-continual-learning-and-unlearning.core"
+  ]
+}

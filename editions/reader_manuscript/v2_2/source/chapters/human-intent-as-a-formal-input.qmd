@@ -1,0 +1,340 @@
+# Human Intent as a Formal Input
+
+The authority frame now has to meet a real request without turning eagerness into permission. The operational path from human purpose into the stack begins here. It asks how a request becomes a contract without letting ambiguity become permission.
+
+Intent is not merely text. It includes requirements, constraints, assumptions, stop conditions, approvals, and unresolved questions. A governed system should preserve those pieces before planning or execution tries to be helpful, because the first loss of alignment often happens when a useful interpretation quietly becomes the authorized one. The request should become clearer as it moves inward, not broader and harder to contest. Formal input should narrow agency before power is handed off.
+
+The safest translation of intent is one that exposes ambiguity early enough for correction. Good intent capture slows the first handoff just enough to prevent downstream authority mistakes.
+
+The first contract should protect the requester from the system's eagerness to help.
+
+Intent capture should make the next handoff narrower, not more presumptive. Good intake preserves ambiguity where ambiguity is real and consequential for action.
+
+## Problem
+
+A natural-language request can mix desired outcome, preferences, emotion,
+assumptions, source and privacy constraints, affected parties, risk tolerance,
+authority, acceptance evidence, and stop conditions, then be lowered into
+planning or action as though one plausible interpretation were explicit
+permission.
+
+Human intent enters the stack as language, but the system cannot treat language as direct execution. A request can contain a goal, preference, hidden ambiguity, implied authority, risk tolerance, source constraints, emotional context, and unstated stop conditions in the same sentence. If the stack passes that sentence directly to planning or tools, ambiguity becomes action.
+
+VIEA frames the corrective move: intent becomes a command contract before it becomes work. Software Magic Grimoire adds the language discipline: operative words should carry role, objective, context, constraints, procedure, output, verification, and failure behavior. PlanForge and Cognitive Compilation then consume that contract as source material for plans and semantic IR. Talos consumes only the authorized job form, not the user's raw wish.
+
+This makes intent a scoped authority lease. The lease can authorize drafting, planning, tool use, publication, spending, deployment, or self-modification only when those powers are named or separately approved. If the request is emotionally clear but operationally ambiguous, the stack may still help by producing a draft, option set, or clarification artifact, but it should not silently expand the lease.
+
+An intent contract should also preserve the human texture of the request without letting that texture carry authority by itself. A user can express urgency, uncertainty, trust, frustration, taste, or aspiration. Those signals matter for service quality and interpretation. They do not automatically authorize broader means, weaker evidence, skipped approvals, or irreversible side effects.
+
+The same boundary applies to approval fatigue and human oversight degradation. A user may confirm intent, and a reviewer may approve a later action, but those are different control states. Intent capture should preserve what the human asked for, what remains unresolved, and what still needs review; it should not treat a tired approval click, a trust-laden request, or an automation-shaped suggestion as durable authority for downstream execution.
+
+## Why existing approaches are insufficient
+
+Prompts, goal-oriented requirements models, preference feedback, inferred
+rewards, conversational confirmations, and approval clicks can each communicate
+useful information while leaving authorization, allowed means, affected
+parties, evidence duties, expiry, and re-contract triggers unresolved. None of
+them alone establishes the person's complete preference, valid consent, or
+authority for downstream effects.
+
+Prompt-only workflows encourage helpfulness to fill gaps. That is useful for conversation and dangerous for execution. "Build this," "fix it," "publish it," and "make it amazing" are not contracts by themselves. They need scope, allowed means, source boundaries, authority ceilings, acceptance criteria, evidence requirements, and stop conditions. Otherwise the next layer cannot tell whether it should clarify, draft, implement, ask for approval, abstain, or stop.
+
+The failure is goal misbinding. The system satisfies an interpretation that was never actually authorized. A subtler failure is scope accretion: each helpful step adds a plausible means until the action surface is larger than the grant. The stack treats both as contract failures.
+
+Misplaced politeness can be just as damaging as over-questioning. A system can avoid asking a useful question because it wants to keep momentum, then compensate by making assumptions that shape the work. The governed alternative is not constant interruption; it is visible assumption handling. Low-risk assumptions can be recorded as bounded defaults, while authority-changing assumptions require re-contracting.
+
+The key insufficiency is assumption laundering. An assumption starts as a helpful guess, then becomes a plan constraint, then becomes a job, then becomes an external effect. The intent layer should stop that chain by marking every assumption as confirmed, bounded default, clarification required, or unauthorized.
+
+Intent must therefore become a formal input rather than a conversational preface. Later layers should not have to infer whether a goal was real, whether a method was allowed, or whether a missing constraint was intentionally omitted. They should receive a record that can be challenged, narrowed, cited, and revised before work becomes difficult to unwind.
+
+External positioning: Human Intent as a Formal Input now has source-reviewed comparators through `ext_goal_oriented_requirements_engineering_2001`, `ext_cooperative_inverse_rl_2016`, and `ext_deep_rl_human_preferences_2017`. Goal-oriented requirements engineering grounds the broader practice of refining stakeholder goals and constraints into explicit requirements. CIRL grounds uncertainty about the human objective in a cooperative formal setting. Deep RL from human preferences grounds preference-feedback communication for complex goals. These sources make the outside baseline visible, but they do not reproduce a requirements-engineering tool, CIRL policy, preference-learning run, natural-language parser, authority extractor, stop-condition checker, or execution handoff here.
+
+## Core Claim
+
+A governed stack admits human intent only as a versioned interpretation contract that preserves the raw request while separately recording the desired outcome; allowed and forbidden means; authority basis, ceiling, and affected parties; source, privacy, and publication boundaries; acceptance and evidence requirements; field provenance; confirmed assumptions, bounded defaults, contested or open ambiguities; stop, expiry, revocation, appeal, and re-contract conditions; and permitted downstream consumers. The accepted contract may bound planning only after its owning policy and authority gates admit it; it cannot by itself prove the person's complete preference, value alignment, informed consent, satisfaction, affected-party authorization, or permission for training, publication, deployment, spending, tool use, or other external effects (evidence boundary: architectural argument).
+All five local raw-cache mappings now carry reviewed passage references: VIEA for the structured intent-to-command contract spine; Software Magic Grimoire for bounded instruction fields, verification, and failure behavior; PlanForge for natural-language goal decomposition into typed primitive plans; Cognitive Compilation for source plans, semantic IR, ambiguity flags, and verifier-backed lowering; and Talos for contract locks, risk/ambiguity gates, clearance, and authorized execution boundaries. None of that source context authorizes hidden execution or proves natural-language intent parsing is solved.
+
+## Mechanism
+
+The stack admits human purpose through an Intent Contract: a loss-control boundary between a request and any machine work that follows. The contract does not pretend to recover the user's complete inner preference. It records the smallest authorized interpretation durable enough for alignment review, planning, execution, and evidence. That humility is important: the contract is not the person, and it should remain corrigible when the person clarifies, rejects, or narrows it.
+
+```{mermaid}
+flowchart LR
+A["Natural-language request"] --> B["Intent intake"]
+B --> C["Goal / means / authority split"]
+C --> D{"Ambiguity, missing authority, or high risk?"}
+D -- "yes" --> E["Clarify, bounded draft, abstain, or residual"]
+D -- "no" --> F["Intent Contract"]
+F --> G["Alignment admissibility check"]
+G --> H["Command contract or plan source"]
+H --> I["Authorized typed work"]
+I --> J["Artifact, evidence, and feedback"]
+E --> K["Residual review or clarification loop"]
+J --> K
+```
+
+**How to read the intent narrowing flow:** The request is narrowed before it becomes work. Ambiguity, missing authority, or high risk branches toward clarification or residual review, while only a bounded Intent Contract moves into alignment checks, command contracts, and authorized typed work.
+
+The contract compiles the request into an explicit objective, constraints, authority ceiling, source boundary, acceptance criteria, evidence requirement, and stop condition. Its central move is separation: desired outcome is not allowed means, and a useful interpretation is not permission. The raw request remains useful as context, but execution consumes the bounded contract.
+
+When ambiguity remains, the stack should not pretend to have resolved it. It can ask for clarification, choose a bounded default with visible assumptions, produce a draft-only artifact, or refuse the transition to execution.
+
+Every inferred or omitted material field receives an explicit disposition:
+confirmed, bounded default, clarification required, authority pending, contested,
+unknown, or unauthorized. Bounded defaults are permitted only for low-risk,
+reversible planning. They carry field provenance, scope, rollback, and expiry;
+they cannot create publication, deployment, spending, tool, privacy, training,
+or affected-party authority.
+
+Preference comparisons, learned rewards, predicted objectives, emotion,
+urgency, trust, silence, and approval behavior can inform interpretation or
+expose ambiguity. They are not authority grants. When several interpretations
+remain admissible, the intake layer chooses the least-authority reversible
+interpretation that still meets the declared outcome and evidence requirements,
+or returns for clarification when the difference is material.
+
+Contract change rules belong in the intent record. A plan that changes allowed means, adds a new tool class, expands publication surface, drops a stop condition, weakens evidence requirements, or changes the affected parties is not merely a better plan. It is a new authority question. This gives later governance, execution, and implementation-reference chapters a clean test: did the work stay inside the lease that the human actually granted?
+
+The state labels matter because they decide what kind of help is allowed. A draft, clarification, plan source, approval request, and rejected residual can all be useful, but they are not the same authority state. Conflating them is how helpful intake turns into hidden power.
+
+### Intent intake states
+
+Intent intake needs states because a request is not permission just because it is understandable. A raw request can be interpreted and reviewed, but it should not dispatch work. An interpreted request has a structured reading, yet open assumptions may still limit it to drafting, option generation, or clarification. A bounded default is a low-risk assumption with scope and rollback; it may guide planning only inside that stated boundary.
+
+When missing information would change outcome, authority, evidence, or affected parties, the right state is clarification required. When the outcome is clear but the required means are not authorized, the state is authority pending: the system can ask for approval, offer a narrower route, or produce draft-only work, but it cannot quietly take the stronger power.
+
+An accepted contract is the first state that can lower into command contracts and plan sources, because objective, means, evidence, and stop conditions are sufficiently bounded. If downstream work changes the means, authority, publication surface, affected parties, evidence burden, or stop conditions, the work returns to re-contracting. Denied, stale, superseded, or outside-policy requests become lineage and residual records only.
+
+These states keep the human request corrigible. They let the system help where the lease is clear and stop where a useful interpretation would become unauthorized action.
+
+## Interfaces
+
+The Intent Contract is also the first cross-layer interface:
+
+- **Scalable Oversight** may supply clarification, disagreement, or review
+evidence, but it cannot convert a reviewer or model inference into the
+principal's authorization.
+- **Constitutional Alignment** consumes the accepted contract and may narrow,
+refuse, or require appeal or re-contract under rights and policy predicates.
+It may not widen the principal's grant.
+- **Command Contracts and Planning** consume the exact accepted version as a
+bounded source and return a delta/re-contract request rather than silently
+changing means, authority, affected parties, evidence, publication, or stop
+conditions.
+- **Runtime Adapters and Readiness** consume only separately authorized command
+or job grants derived from the contract. Raw text, inferred preference, and
+an Intent Receipt are never direct tool, release, spending, or deployment
+authority.
+- **Evidence States** compares delivered artifacts and effects with exact
+acceptance and evidence requirements while preserving unresolved ambiguity;
+contract validity cannot establish satisfaction or support movement.
+- **Policy Optimization** may consume separately admitted preference or
+feedback records under an update lease, but learned rewards and preference
+predictions cannot widen the contract or execution authority.
+
+Minimum fields:
+
+- `intent_id`
+- `request_summary`
+- `desired_outcome`
+- `allowed_means`
+- `forbidden_means`
+- `authority_ceiling`
+- `source_boundaries`
+- `acceptance_criteria`
+- `evidence_requirements`
+- `escalation_conditions`
+- `stop_conditions`
+- `open_ambiguities`
+
+Alignment filters the contract before planning. Planning lowers accepted contracts into source plans, DAGs, semantic atoms, or typed jobs. Execution consumes only authorized job contracts. Evidence compares the delivered artifact against the acceptance criteria and unresolved ambiguities.
+
+Raw request preservation and contract authority stay split at the intent boundary. The raw request is useful for empathy, intent recovery, and later review; the contract is what grants operational authority. That split lets the book support natural human expression while still giving planners, routers, tools, and report-first implementations an auditable boundary.
+
+Lowering the contract emits an Intent Receipt when it produces:
+
+- `request_digest`
+- `contract_version_and_digest`
+- `intake_state`
+- `field_provenance`
+- `confirmed_assumptions`
+- `bounded_defaults`
+- `unauthorized_means`
+- `unresolved_ambiguities`
+- `required_approvals`
+- `recontract_triggers`
+- `human_review_refs`
+- `permitted_consumers`
+- `downstream_contract_refs`
+- `expiry_revocation_and_appeal_state`
+
+The receipt is what later chapters need when they ask whether a plan, job, adapter invocation, or report-first implementation still traces back to what was actually authorized.
+
+## Invariants
+
+- Raw request text and surrounding conversational context are preserved for
+recovery but never override the accepted contract or create authority by
+themselves.
+- A desired outcome, helpful interpretation, inferred preference, emotional
+signal, urgency, trust, silence, or approval click is not permission for
+undeclared means or effects.
+- Authority-changing, irreversible, high-risk, privacy-sensitive, publication,
+deployment, spending, or affected-party assumptions cannot be admitted as
+bounded defaults.
+- Every material field retains provenance and disposition. Ambiguity that can
+change outcome, means, authority, affected parties, evidence, publication, or
+stop conditions blocks executable admission or narrows it to draft-only work.
+- Constraints, forbidden means, authority ceiling, source/privacy boundaries,
+acceptance/evidence requirements, and stop conditions remain attached through
+every lowering. Loss or precedence reversal routes to repair or re-contract.
+- A material downstream change requires a new version and re-contract decision.
+Stale, expired, revoked, superseded, or wrong-consumer contracts cannot
+authorize work.
+- The requester's contract cannot waive rights, consent, or authority belonging
+to affected parties or override constitutional and policy predicates.
+- Preference inference and feedback learning remain epistemic inputs under
+uncertainty and never become execution, training, publication, or deployment
+authority without their separate owning gates.
+- A valid contract record proves neither complete inner intent, value
+alignment, informed consent, user satisfaction, downstream preservation, nor
+safe effects.
+
+The important invariant is preservation: downstream plans may refine the contract, but they may not drop constraints, stop conditions, or authority ceilings. If a planner cannot satisfy the contract without changing it, that is a re-contracting event, not a silent optimization.
+
+A related invariant is least authority. When multiple interpretations satisfy the visible request, the system should prefer the interpretation with narrower means, clearer evidence, and easier rollback unless the user explicitly grants broader scope. This keeps helpfulness from becoming a source of accidental power.
+
+## Failure modes
+
+- **Goal misbinding:** optimize a plausible interpretation the principal did
+not accept.
+- **Scope accretion:** add individually plausible means until the work or effect
+surface exceeds the original grant.
+- **Implicit-permission laundering:** treat a desired outcome as approval for
+any convenient tool, source, expenditure, publication, deployment, or side
+effect.
+- **Assumption laundering:** convert an unconfirmed guess into a plan
+constraint, job, and effect without disposition or re-contract.
+- **Raw-context override or instruction injection:** let conversational text,
+retrieved content, or a later hidden directive supersede the contract.
+- **Approval laundering:** treat urgency, trust, silence, automation bias,
+habituation, or a fatigued click as durable informed authorization.
+- **Preference laundering:** turn a learned reward, predicted preference, style
+signal, or local comparison into an authority or consent claim.
+- **Requirements precision theater:** produce a complete-looking contract while
+stakeholder conflicts, affected parties, authority basis, or evidence duties
+remain false or absent.
+- **Affected-party erasure:** let the requester bind people, data, rights, or
+resources they do not control.
+- **Stale-contract reuse:** continue work after expiry, revocation, supersession,
+material context change, or consumer mismatch.
+- **Evidence or stop erosion:** preserve the desired outcome while weakening
+acceptance criteria, source boundaries, verification, rollback, or termination
+duties during lowering.
+- **Clarification overload:** miscalibrate least authority so aggressively that
+benign reversible help is blocked, users route around governance, or useful
+throughput collapses.
+
+Goal misbinding happens when the system optimizes the wrong interpretation. Scope creep happens when the system turns an open-ended wish into unbounded work. Implicit permission happens when the system treats a desired outcome as approval for any convenient means. All three should produce a visible residual or clarification path before execution.
+
+The deeper failure is contract substitution. The system receives a human purpose, then substitutes its own inferred plan, tone preference, or completion heuristic as the governing object. That substitution can feel helpful in a conversation, but it is dangerous in an execution stack because downstream layers inherit a contract the person never granted. Intent handling should therefore make ambiguity, missing authority, and contested assumptions visible before planning or tool use begins.
+
+## Minimum Viable Implementation
+
+The current minimum is a public `intent_contract` schema and valid fixture; a
+25-declaration finite Lean module grouped under four manifest proof targets; a
+synthetic intake probe with four valid scenarios and six expected-invalid
+request-pressure controls; a re-contract probe with two valid routes and seven
+expected-invalid material-delta controls; and a plan-execution harness with
+three valid and ten expected-invalid fixtures. These artifacts exercise record
+shape, finite route consequences, origin and preservation checks,
+bounded-default non-authority, and no-support boundaries only. They do not
+measure natural-language understanding, authority extraction, informed consent,
+preference inference, user satisfaction, prompt-injection containment, deployed
+runtime enforcement, or effect safety.
+
+A small corpus of deliberately underspecified requests is the first serious test bed. Each example should produce a contract, open ambiguities, bounded defaults, and a list of actions that remain unauthorized. The corpus would make the difference between "understood the user" and "received permission to act" visible in test data.
+
+The corpus should include one request that sounds urgent, one that implies trust, one that omits allowed means, and one that conflicts with a policy predicate. Passing the test means the contract preserves ambiguity and refusal paths, not that the system fully understands intent.
+
+The current formal slice models only structured records after intake fields exist, but it is no longer limited to the first resolution branch. It checks the older resolution cases for missing text, prohibited actions, ambiguity, conflict, high-impact authority, and irreversibility; it also checks an admission lifecycle where hidden overrides reject, unresolved ambiguity and missing constraints request clarification, constraint-precedence and preservation gaps block admission, missing or widened authority routes to review, downstream changes trigger re-contracting, missing non-claim boundaries block admission, and complete records admit. The synthetic intent intake probe adds the first finite raw-request corpus: urgency cannot skip validation, trust cannot authorize publication, vague broad-means language blocks dispatch, private-source publication pressure stays forbidden, declared stop conditions must survive, and bounded defaults cannot become authority grants.
+
+The Intent re-contract trigger probe adds the next executable slice: `valid_no_material_delta_continue` continues under the accepted contract, `valid_publication_surface_delta_recontracts` routes back through re-contracting when publication surface changes and a re-contract record is present, and seven expected-invalid controls block material deltas before dispatch. Those controls are `invalid_authority_delta_without_recontract`, `invalid_private_source_delta_without_recontract`, `invalid_stop_condition_erasure_without_recontract`, `invalid_evidence_bar_weakening_without_recontract`, `invalid_affected_party_widening_without_recontract`, `invalid_means_expansion_without_recontract`, and `invalid_support_state_promotion_without_recontract`. This is useful for the gate shape, but it is a no natural-language-intent-understanding, deployed-parser-quality, deployed-authority-extraction, prompt-injection-containment, runtime-dispatch, approval-service, user-satisfaction, or support-state-promotion claim.
+
+The executed resolution-to-contract refinement now composes those surfaces into reachable finite state. It preserves a root intent, versioned constraint and stop hashes, an authority ceiling and approved authority, ambiguity state, accepted-contract state, and explicit re-contract custody. Its independent consumer binds the intake, re-contract, and complete 13-fixture plan inventory by digest and rejects 30 semantic mutations. The resulting evidence is stronger at the structured-record boundary, not at natural-language semantics: hashes, labels, authority, and receipts remain trusted inputs, and the model stops before dispatch or effect.
+
+## Beyond the State of the Art
+
+A mature intent control plane combines humane conversational intake with an
+independently challengeable, versioned authorization boundary. It evaluates
+natural and adversarial requests across ambiguity, language, culture,
+accessibility, emotion, multi-party conflict, preference drift, and high-impact
+authority. It compares strong requirements-engineering, direct-confirmation,
+and preference-learning baselines and measures interpretation accuracy,
+unauthorized-action rate, missed help, clarification burden, re-contract
+precision and recall, user correction and appeal success, affected-party
+protection, latency, privacy, and useful throughput.
+
+The mature campaign uses causal ablations and independently implemented intake
+and outcome evaluators across downstream planners and runtimes. Raw expression
+stays available for empathy, correction, and recovery without becoming ambient
+power. Refusal, clarification, bounded drafting, acceptance, re-contract,
+revocation, and appeal remain durable states throughout execution rather than
+conversational moods.
+
+This is a target architecture, not evidence that the repository understands
+human intent, solves value alignment or consent, or safely authorizes real-world
+effects. Intent formalization remains at `argument` until natural workloads,
+authority and ambiguity labels, preservation traces, affected-party controls,
+strong baselines, independent evaluation, and accepted evidence transitions
+support narrower conclusions.
+
+Crucially, a successful result must improve useful assistance as well as
+authority precision; clarification that merely prevents all action is not
+adequate intent handling.
+
+## Summary
+
+Human Intent as a Formal Input is the stack's entry adapter. It turns natural-language purpose into a bounded artifact that planning, alignment, execution, and evidence can inspect.
+
+The core discipline is separation: wanted outcome is not allowed means, context is not authority, helpfulness is not permission, and ambiguity is not consent. Everything downstream depends on that boundary.
+
+Those bounded intents still need constraints before they become plans or tool calls. Intent can say what a person asked for; the constitutional substrate says which predicates, cautions, and review duties still bind the system even when the request is clear.
+
+Later implementation-reference chapters inherit this test. A report-first system is only governed if its reports can show which human intent contract authorized the work, which authority lease was used, and where the system stopped rather than guessing.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **45** structured claim atoms in `CF-02`. The
+frozen repository-wide terminal audit records 45 `blocked_after_full_attempt`. Its core
+atom `human-intent-as-a-formal-input.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `human-intent-as-a-formal-input` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 45 structured claims,
+45 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Safety-critical lifecycle consumer trace**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Finite local fixture consumer only; no authentic deployment, general alignment, evaluator independence, or broad security claim.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
+
+## Handoff
+
+Intent contracts can preserve what a person asked for, but they do not by themselves decide which requests remain bounded by dignity, consent, least sufficient power, or self-modification limits. Constitutional Alignment: Agency, Dignity, and Corrigibility follows because clear intent still needs active predicates, material rights, refusal, correction, appeal, rollback, and review paths that can narrow, deny, or reroute work before planning and execution treat the request as ordinary work.

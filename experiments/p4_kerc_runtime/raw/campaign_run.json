@@ -1,0 +1,6268 @@
+{
+  "schema_version": "asi_stack.p4_m8_kerc_raw.v1",
+  "run_id": "p4-m8-kerc-runtime-001",
+  "preregistration_sha256": "bc5adc41184033eaedbe7b4bdf80a9b98a00d140381a03289eca78a25db3090e",
+  "corpus_sha256": "0a626a38c3772cc9c70ae56fe2c99f94b03e7bbe19eb725c60ab13be4417a67a",
+  "records": [
+    {
+      "record_id": "approve-en-operations-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "approve",
+        "negated": false,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/approve",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:approve N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/approve",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/approve"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 82
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/approve",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "6b6e5424f1ee45583f5d12675bb2b1175dc077574a92ca46865e8285cb35228e",
+        "state_hash": "965b93ce28954b646a1dd62f64fbb6e3be5feb012750942587265c27514bc93e",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "approve \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/approve `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 83,
+        "kernel": 33,
+        "packet": 715,
+        "simple_handle": 124,
+        "zlib": 91,
+        "controlled": 74,
+        "semantic_ir": 125
+      }
+    },
+    {
+      "record_id": "approve-en-operations-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "approve",
+        "negated": true,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/approve",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:approve N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/approve",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/approve"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 116
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/approve",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "7d294011c82ac949ff6f722a688ec3ed183f043080921b2d21a6b8a99634c684",
+        "state_hash": "2f963b69e4f6125af7900231e175ee5755cfcd771cd023a0fbeeb656cbae461c",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not approve \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/approve `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 117,
+        "kernel": 33,
+        "packet": 716,
+        "simple_handle": 158,
+        "zlib": 118,
+        "controlled": 74,
+        "semantic_ir": 124
+      }
+    },
+    {
+      "record_id": "approve-en-research-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "approve",
+        "negated": false,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/approve",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:approve N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/approve",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/approve"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 81
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/approve",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "4e467e1a37d442b2b6150bad6019e92611db100ca82ee9f8fa5104a113e154d8",
+        "state_hash": "6f79e6edbc6d37850ec51097a91cc8c3bfa8c2eafe78ea4a161a1c4658d5acf0",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "approve \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/approve `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 83,
+        "kernel": 33,
+        "packet": 715,
+        "simple_handle": 124,
+        "zlib": 91,
+        "controlled": 74,
+        "semantic_ir": 125
+      }
+    },
+    {
+      "record_id": "approve-en-research-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "approve",
+        "negated": true,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/approve",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:approve N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/approve",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/approve"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 115
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/approve",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "d37210ad36d412102ddc82a15d07d16a63440c4da99e0b897dffa4f3e22d642b",
+        "state_hash": "67500c04919132251659b14d0c5bd73a626ae830d29b57b7fca8f525dc2006ce",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not approve \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/approve `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 117,
+        "kernel": 33,
+        "packet": 716,
+        "simple_handle": 158,
+        "zlib": 118,
+        "controlled": 74,
+        "semantic_ir": 124
+      }
+    },
+    {
+      "record_id": "approve-es-operations-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "approve",
+        "negated": false,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/approve",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:approve N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/approve",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/approve"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 82
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/approve",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "7cb6608f806fd61943ca910a499b25f2fd17f67e415d9c3932335123d41ec722",
+        "state_hash": "965b93ce28954b646a1dd62f64fbb6e3be5feb012750942587265c27514bc93e",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "approve \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/approve `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 84,
+        "kernel": 33,
+        "packet": 715,
+        "simple_handle": 125,
+        "zlib": 92,
+        "controlled": 74,
+        "semantic_ir": 125
+      }
+    },
+    {
+      "record_id": "approve-es-operations-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "approve",
+        "negated": true,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/approve",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:approve N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/approve",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/approve"
+            ]
+          },
+          "segment": {
+            "language_hint": "es"
+          },
+          "token_local": {
+            "surface_length": 116
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/approve",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "553c8b04aee5db4016be928548296ba51207c0f81b0e0fcbad6242253139580c",
+        "state_hash": "b23d08ed5cdda61408a15f7b2f3911232665e98243d4cae007e7d940c842e15a",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not approve \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/approve `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 118,
+        "kernel": 33,
+        "packet": 716,
+        "simple_handle": 159,
+        "zlib": 123,
+        "controlled": 74,
+        "semantic_ir": 124
+      }
+    },
+    {
+      "record_id": "approve-es-research-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "approve",
+        "negated": false,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/approve",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:approve N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/approve",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/approve"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 81
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/approve",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "4d972de5d67fe402ad4989b70766378934d8221811d8a5173e376548b308d7de",
+        "state_hash": "6f79e6edbc6d37850ec51097a91cc8c3bfa8c2eafe78ea4a161a1c4658d5acf0",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "approve \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/approve `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 84,
+        "kernel": 33,
+        "packet": 715,
+        "simple_handle": 125,
+        "zlib": 92,
+        "controlled": 74,
+        "semantic_ir": 125
+      }
+    },
+    {
+      "record_id": "approve-es-research-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "approve",
+        "negated": true,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/approve",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:approve N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/approve",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/approve"
+            ]
+          },
+          "segment": {
+            "language_hint": "es"
+          },
+          "token_local": {
+            "surface_length": 115
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/approve",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "929255552cc79823a47f3b5eee2ad51cbc8ced64da5fc993861cf61f9047ba1a",
+        "state_hash": "6a3a192c330420a033d6eba327d8600da3d96ea2674aeb6669ddcab2fae06d6e",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not approve \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/approve `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 118,
+        "kernel": 33,
+        "packet": 716,
+        "simple_handle": 159,
+        "zlib": 124,
+        "controlled": 74,
+        "semantic_ir": 124
+      }
+    },
+    {
+      "record_id": "deny-en-operations-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "deny",
+        "negated": false,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/deny",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:deny N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/deny",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/deny"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 74
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/deny",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "78bacffe9044f1b911ce6e0203da7787bfd4152127ea055ef767fc0d7fe1a171",
+        "state_hash": "85e3c871e20260425f915189a29e0657d694fad6b7a49c9f8aa981ecdfa12047",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "deny \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/deny `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 75,
+        "kernel": 30,
+        "packet": 703,
+        "simple_handle": 116,
+        "zlib": 80,
+        "controlled": 68,
+        "semantic_ir": 119
+      }
+    },
+    {
+      "record_id": "deny-en-operations-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "deny",
+        "negated": true,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/deny",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:deny N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/deny",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/deny"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 112
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/deny",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "088070c0cf2b997da878599aeece5aa89bd410b2d33d78e82e08a8007d655b39",
+        "state_hash": "7ea07cd2577ddea8901ce73584420b4fb9f17a8a3a716d8b7de2eeb442c48872",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not deny \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/deny `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 113,
+        "kernel": 30,
+        "packet": 704,
+        "simple_handle": 154,
+        "zlib": 119,
+        "controlled": 68,
+        "semantic_ir": 118
+      }
+    },
+    {
+      "record_id": "deny-en-research-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "deny",
+        "negated": false,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/deny",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:deny N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/deny",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/deny"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 73
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/deny",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "76dbb1f7168afba292b782e669e118b34657a010bdacec8338c5e3085e6ea2a1",
+        "state_hash": "9744d11af3b170550a2eb9f00d9c713bc9a1592a0487d4b9618ab39fab6db195",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "deny \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/deny `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 75,
+        "kernel": 30,
+        "packet": 703,
+        "simple_handle": 116,
+        "zlib": 80,
+        "controlled": 68,
+        "semantic_ir": 119
+      }
+    },
+    {
+      "record_id": "deny-en-research-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "deny",
+        "negated": true,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/deny",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:deny N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/deny",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/deny"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 111
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/deny",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "8f71237f3a6684cb20aa01112f968295c707d18b095e9e5d0e4685720d9ee9f1",
+        "state_hash": "e958b251cbc4d0401102f988629b364f5a4c5cfb70e92b201e8e304ec6417e50",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not deny \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/deny `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 113,
+        "kernel": 30,
+        "packet": 704,
+        "simple_handle": 154,
+        "zlib": 119,
+        "controlled": 68,
+        "semantic_ir": 118
+      }
+    },
+    {
+      "record_id": "deny-es-operations-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "deny",
+        "negated": false,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/deny",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:deny N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/deny",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/deny"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 78
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/deny",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "9dc2a942c99255d86eeecc360f87a382d0945f3b8eeddf0d3ff72fd8645846e2",
+        "state_hash": "5e9aa53dfc84bc469029e4a5dc878b0c60ac9cd5036d216341dfafad27558c78",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "deny \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/deny `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 80,
+        "kernel": 30,
+        "packet": 703,
+        "simple_handle": 121,
+        "zlib": 88,
+        "controlled": 68,
+        "semantic_ir": 119
+      }
+    },
+    {
+      "record_id": "deny-es-operations-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "deny",
+        "negated": true,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/deny",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:deny N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/deny",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/deny"
+            ]
+          },
+          "segment": {
+            "language_hint": "es"
+          },
+          "token_local": {
+            "surface_length": 113
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/deny",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "12ce871840b61275a5022a24d46c5c05df623f9f8510cba42bba18af5bf00c8a",
+        "state_hash": "eb4af4fa6d002fd2b0fd3bcbc8c2d1cc975424e670b4032ed5341e5f3270eab5",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not deny \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/deny `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 115,
+        "kernel": 30,
+        "packet": 704,
+        "simple_handle": 156,
+        "zlib": 122,
+        "controlled": 68,
+        "semantic_ir": 118
+      }
+    },
+    {
+      "record_id": "deny-es-research-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "deny",
+        "negated": false,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/deny",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:deny N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/deny",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/deny"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 77
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/deny",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "fee053863cc1a64f49d395b371ea56b364d54c28f91d0e321102f1f3048ff6aa",
+        "state_hash": "520d3fca643ed8c0d891905759692a5f2335715069f8776bca5412efa19b08ba",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "deny \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/deny `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 80,
+        "kernel": 30,
+        "packet": 703,
+        "simple_handle": 121,
+        "zlib": 88,
+        "controlled": 68,
+        "semantic_ir": 119
+      }
+    },
+    {
+      "record_id": "deny-es-research-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "deny",
+        "negated": true,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/deny",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:deny N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/deny",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/deny"
+            ]
+          },
+          "segment": {
+            "language_hint": "es"
+          },
+          "token_local": {
+            "surface_length": 112
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/deny",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "87e81e9f73235e117672d1f6c9418c45c0339c669d003ff615c1c4cf0814e386",
+        "state_hash": "595483bafcefa58756a88587350ae892ceff120be4b113229fe6300b637a73cc",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not deny \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/deny `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 115,
+        "kernel": 30,
+        "packet": 704,
+        "simple_handle": 156,
+        "zlib": 122,
+        "controlled": 68,
+        "semantic_ir": 118
+      }
+    },
+    {
+      "record_id": "schedule-en-operations-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "schedule",
+        "negated": false,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/schedule",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:schedule N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/schedule",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/schedule"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 78
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/schedule",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "dea13298276d2a1c751eb5b9470a6002025af1da32fd8ebf1154426b909cd562",
+        "state_hash": "d8cdbdbac6fc3330a644f4d6b3124f0188adf8dab6fc6eca2ca4d4c506353d45",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "schedule \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/schedule `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 79,
+        "kernel": 34,
+        "packet": 719,
+        "simple_handle": 120,
+        "zlib": 86,
+        "controlled": 76,
+        "semantic_ir": 127
+      }
+    },
+    {
+      "record_id": "schedule-en-operations-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "schedule",
+        "negated": true,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/schedule",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:schedule N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/schedule",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/schedule"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 114
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/schedule",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "3e5e9da7fba8e458053edd28148282ad16d1fae5fe4c99279690ebcb7a24b2ac",
+        "state_hash": "7e6c3af5f247079b56f2e13dc9bc69b8ad493031dcdfb9cba80e41208fd11862",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not schedule \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/schedule `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 115,
+        "kernel": 34,
+        "packet": 720,
+        "simple_handle": 156,
+        "zlib": 121,
+        "controlled": 76,
+        "semantic_ir": 126
+      }
+    },
+    {
+      "record_id": "schedule-en-research-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "schedule",
+        "negated": false,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/schedule",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:schedule N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/schedule",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/schedule"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 77
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/schedule",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "ef8b655999fd7f1837b46a3296ceb939ae51192bdcc0a844042b7a2393be42f4",
+        "state_hash": "a8b61b9256c26a36e2993763467d1244dafece0393f604956fa9725f08696a53",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "schedule \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/schedule `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 79,
+        "kernel": 34,
+        "packet": 719,
+        "simple_handle": 120,
+        "zlib": 86,
+        "controlled": 76,
+        "semantic_ir": 127
+      }
+    },
+    {
+      "record_id": "schedule-en-research-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "schedule",
+        "negated": true,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/schedule",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:schedule N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/schedule",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/schedule"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 113
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/schedule",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "e8f98c32155eef0767ab0b9f631a8685c18a0eb09dbccf0c798e0998db6b4d97",
+        "state_hash": "60433ec1ab1a289be15bba6f31a868dba7c4c31dd246fdcbee824f6550e707c3",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not schedule \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/schedule `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 115,
+        "kernel": 34,
+        "packet": 720,
+        "simple_handle": 156,
+        "zlib": 122,
+        "controlled": 76,
+        "semantic_ir": 126
+      }
+    },
+    {
+      "record_id": "schedule-es-operations-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "schedule",
+        "negated": false,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/schedule",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:schedule N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/schedule",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/schedule"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 84
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/schedule",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "d5972f81acd6fcab36d569a56236d4e4bf0e10eb32c40caa26675daa13042c34",
+        "state_hash": "87dc55e7444071a57895a6d21463f0e04d726a92751fa0b5fe97f3972324d963",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "schedule \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/schedule `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 86,
+        "kernel": 34,
+        "packet": 719,
+        "simple_handle": 127,
+        "zlib": 94,
+        "controlled": 76,
+        "semantic_ir": 127
+      }
+    },
+    {
+      "record_id": "schedule-es-operations-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "schedule",
+        "negated": true,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/schedule",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:schedule N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/schedule",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/schedule"
+            ]
+          },
+          "segment": {
+            "language_hint": "es"
+          },
+          "token_local": {
+            "surface_length": 116
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/schedule",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "722c25c2702099c1daf00132fc233d5f6171cdda7af5e38015364814649b6aec",
+        "state_hash": "d1e25608e74f8513aa72708ede4e865a778404f9c5ffb6ac7815eae6b0b0695f",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not schedule \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/schedule `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 118,
+        "kernel": 34,
+        "packet": 720,
+        "simple_handle": 159,
+        "zlib": 124,
+        "controlled": 76,
+        "semantic_ir": 126
+      }
+    },
+    {
+      "record_id": "schedule-es-research-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "schedule",
+        "negated": false,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/schedule",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:schedule N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/schedule",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/schedule"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 83
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/schedule",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "780cd84da0c7bd07e92ad25d3c44bc0b2621e9b96941fffff5fd1eedc92fa306",
+        "state_hash": "f1e8b5aafed459376682d0460d70b8fbaedc1b3a4aab403a848be16240b15cd7",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "schedule \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/schedule `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 86,
+        "kernel": 34,
+        "packet": 719,
+        "simple_handle": 127,
+        "zlib": 94,
+        "controlled": 76,
+        "semantic_ir": 127
+      }
+    },
+    {
+      "record_id": "schedule-es-research-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "schedule",
+        "negated": true,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/schedule",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:schedule N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/schedule",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/schedule"
+            ]
+          },
+          "segment": {
+            "language_hint": "es"
+          },
+          "token_local": {
+            "surface_length": 115
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/schedule",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "6b201af43b1562c4b2f9d7b67ce4683e04b2edffdbbc5ccf3f9b4c6b314ce4fd",
+        "state_hash": "89eb6e4b697744b8f1d32312633a8f17ffd07ea70b9f615face43177b034bc59",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not schedule \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/schedule `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 118,
+        "kernel": 34,
+        "packet": 720,
+        "simple_handle": 159,
+        "zlib": 125,
+        "controlled": 76,
+        "semantic_ir": 126
+      }
+    },
+    {
+      "record_id": "cancel-en-operations-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "cancel",
+        "negated": false,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/cancel",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:cancel N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/cancel",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/cancel"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 78
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/cancel",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "4d7401117ae2dc25f919a06e462e6caa05dbad0e72d0905e170bf3d995ae5ede",
+        "state_hash": "51c9037292ce424914685ba4c8b452087c3cf10f701321855e20536ad8aec674",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "cancel \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/cancel `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 79,
+        "kernel": 32,
+        "packet": 711,
+        "simple_handle": 120,
+        "zlib": 82,
+        "controlled": 72,
+        "semantic_ir": 123
+      }
+    },
+    {
+      "record_id": "cancel-en-operations-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "cancel",
+        "negated": true,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/cancel",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:cancel N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/cancel",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/cancel"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 113
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/cancel",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "d341a533eae1c1d88f244dcdabcd79f392c035ed03477e295922703b91b4f05f",
+        "state_hash": "05c17631507f80cb215e1677e90d3907a8a2eb7894c88a000f8aa0c0deffff37",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not cancel \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/cancel `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 114,
+        "kernel": 32,
+        "packet": 712,
+        "simple_handle": 155,
+        "zlib": 120,
+        "controlled": 72,
+        "semantic_ir": 122
+      }
+    },
+    {
+      "record_id": "cancel-en-research-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "cancel",
+        "negated": false,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/cancel",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:cancel N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/cancel",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/cancel"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 77
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/cancel",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "9f155671b8b76bfba205bb60ce38aa09979113ca70a88121cbb2dc3123391aef",
+        "state_hash": "a0caead4ab7e29f23a66df887d235cd694e327666a7786d8af9e496d271525ae",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "cancel \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/cancel `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 79,
+        "kernel": 32,
+        "packet": 711,
+        "simple_handle": 120,
+        "zlib": 82,
+        "controlled": 72,
+        "semantic_ir": 123
+      }
+    },
+    {
+      "record_id": "cancel-en-research-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "cancel",
+        "negated": true,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/cancel",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:cancel N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/cancel",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/cancel"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 112
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/cancel",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "531a4becabf5368082d2d91b720e0903519770c2a9053f12bb6f9875f57461d6",
+        "state_hash": "e41a1c0a1bb1f994b18dec9afe33494b9db863900737ad1250d1762b2961edc1",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not cancel \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/cancel `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 114,
+        "kernel": 32,
+        "packet": 712,
+        "simple_handle": 155,
+        "zlib": 121,
+        "controlled": 72,
+        "semantic_ir": 122
+      }
+    },
+    {
+      "record_id": "cancel-es-operations-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "cancel",
+        "negated": false,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/cancel",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:cancel N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/cancel",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/cancel"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 79
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/cancel",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "2ab40b931aa7485bed708bf01b09055df8ea503c2839ce10b99939408e4a1ee2",
+        "state_hash": "2f706b231fe5454263bac37c56e79088794c4631d415a12e8882923bb0bc522d",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "cancel \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/cancel `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 81,
+        "kernel": 32,
+        "packet": 711,
+        "simple_handle": 122,
+        "zlib": 89,
+        "controlled": 72,
+        "semantic_ir": 123
+      }
+    },
+    {
+      "record_id": "cancel-es-operations-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "cancel",
+        "negated": true,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/cancel",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:cancel N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/cancel",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/cancel"
+            ]
+          },
+          "segment": {
+            "language_hint": "es"
+          },
+          "token_local": {
+            "surface_length": 113
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/cancel",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "97c39eb05fe288b3eeff2f4b2a871e58a1cf1038cbea36e70e0fa21316674065",
+        "state_hash": "d02f73cf628afebc8f03216bd3661d1cdcd10d66a873b4a8608cc5b330ffc67e",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not cancel \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/cancel `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 116,
+        "kernel": 32,
+        "packet": 712,
+        "simple_handle": 157,
+        "zlib": 123,
+        "controlled": 72,
+        "semantic_ir": 122
+      }
+    },
+    {
+      "record_id": "cancel-es-research-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "cancel",
+        "negated": false,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/cancel",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:cancel N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/cancel",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/cancel"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 78
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/cancel",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "df7ff57f97560200382f7dd72f53ed65516c28a7b7a9c2a695381a6aff4c7f21",
+        "state_hash": "9413a6131d4e4cade1f42db41399b568b464fd057fe0d8250c5485e1aee66c4b",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "cancel \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/cancel `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 81,
+        "kernel": 32,
+        "packet": 711,
+        "simple_handle": 122,
+        "zlib": 89,
+        "controlled": 72,
+        "semantic_ir": 123
+      }
+    },
+    {
+      "record_id": "cancel-es-research-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "cancel",
+        "negated": true,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/cancel",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:cancel N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/cancel",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/cancel"
+            ]
+          },
+          "segment": {
+            "language_hint": "es"
+          },
+          "token_local": {
+            "surface_length": 112
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/cancel",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "e730c07ce686256721bbd9016a6cb49f17eaed2d40a310d951dfab1a5868dbad",
+        "state_hash": "a52d0909d6f5f1a11c4480ed4381a2ca49b3bb437ffe63547d7d5528e62b8930",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not cancel \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/cancel `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 116,
+        "kernel": 32,
+        "packet": 712,
+        "simple_handle": 157,
+        "zlib": 123,
+        "controlled": 72,
+        "semantic_ir": 122
+      }
+    },
+    {
+      "record_id": "compare-en-operations-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "compare",
+        "negated": false,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/compare",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:compare N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/compare",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/compare"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 81
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/compare",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "f164f419dbd867fd6a30eeb14efbb4d55a82a778943c9416244d40174a245ff3",
+        "state_hash": "59fe352ecbd1a913c8138df35334ae0adccbc325ff4b4700e4d417e605db08c9",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "compare \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/compare `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 82,
+        "kernel": 33,
+        "packet": 715,
+        "simple_handle": 123,
+        "zlib": 90,
+        "controlled": 74,
+        "semantic_ir": 125
+      }
+    },
+    {
+      "record_id": "compare-en-operations-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "compare",
+        "negated": true,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/compare",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:compare N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/compare",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/compare"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 116
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/compare",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "076364803710269d552339ae544a2c2ac382701bc03fbb587e251c09d8dd62d3",
+        "state_hash": "6331d717ec1fa5528426c6ab06ece79ead6debb01e9b788d42a74c90f0f6b2e9",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not compare \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/compare `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 117,
+        "kernel": 33,
+        "packet": 716,
+        "simple_handle": 158,
+        "zlib": 118,
+        "controlled": 74,
+        "semantic_ir": 124
+      }
+    },
+    {
+      "record_id": "compare-en-research-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "compare",
+        "negated": false,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/compare",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:compare N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/compare",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/compare"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 80
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/compare",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "5003918ac86c52da2792ff87523bd6c7108a69f0ac7d3c41185e8b7e83e3ab46",
+        "state_hash": "7149a5351eedd0e8d75d68b84fecf205e2546d9adcb569b5505ba40a9dc13d19",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "compare \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/compare `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 82,
+        "kernel": 33,
+        "packet": 715,
+        "simple_handle": 123,
+        "zlib": 90,
+        "controlled": 74,
+        "semantic_ir": 125
+      }
+    },
+    {
+      "record_id": "compare-en-research-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "compare",
+        "negated": true,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/compare",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:compare N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/compare",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/compare"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 115
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/compare",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "74879ce4f9ae4400962c417814824d19331c55678d098f51344de3d6e39d33c8",
+        "state_hash": "3015a9ca385a488f8be15413eb8ec157e4ca00fe3f58a06ce0282e2b5d41d276",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not compare \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/compare `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 117,
+        "kernel": 33,
+        "packet": 716,
+        "simple_handle": 158,
+        "zlib": 118,
+        "controlled": 74,
+        "semantic_ir": 124
+      }
+    },
+    {
+      "record_id": "compare-es-operations-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "compare",
+        "negated": false,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/compare",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:compare N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/compare",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/compare"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 83
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/compare",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "787f5a003bd25dcae12dd5098a8a97fbd6dd5132663043a7ddf9f32335c5ee0b",
+        "state_hash": "7556726d6ff572304dc8dfae35d5e6f178a65b4558e0907681650cc0f0bc0887",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "compare \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/compare `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 85,
+        "kernel": 33,
+        "packet": 715,
+        "simple_handle": 126,
+        "zlib": 93,
+        "controlled": 74,
+        "semantic_ir": 125
+      }
+    },
+    {
+      "record_id": "compare-es-operations-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "compare",
+        "negated": true,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/compare",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:compare N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/compare",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/compare"
+            ]
+          },
+          "segment": {
+            "language_hint": "es"
+          },
+          "token_local": {
+            "surface_length": 116
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/compare",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "c4fc4190d9c3d1ff1798be995bd186c3bb5009f38f82242b3b34316f3795a81a",
+        "state_hash": "9755614a7afc08f1570f50fee3b20bc3f90796a4ea13a736ad5753811750f580",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not compare \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/compare `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 118,
+        "kernel": 33,
+        "packet": 716,
+        "simple_handle": 159,
+        "zlib": 121,
+        "controlled": 74,
+        "semantic_ir": 124
+      }
+    },
+    {
+      "record_id": "compare-es-research-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "compare",
+        "negated": false,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/compare",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:compare N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/compare",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/compare"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 82
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/compare",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "5de0b7729c1ac6eba1a85161fd2e1a556a562dbce40f438c917f9146f0e0a0b1",
+        "state_hash": "9963c3576ff11e4948acb7ed3272049c34b08a359d49d75e9f3c6028b78079f7",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "compare \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/compare `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 85,
+        "kernel": 33,
+        "packet": 715,
+        "simple_handle": 126,
+        "zlib": 93,
+        "controlled": 74,
+        "semantic_ir": 125
+      }
+    },
+    {
+      "record_id": "compare-es-research-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "compare",
+        "negated": true,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/compare",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:compare N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/compare",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/compare"
+            ]
+          },
+          "segment": {
+            "language_hint": "es"
+          },
+          "token_local": {
+            "surface_length": 115
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/compare",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "43fc90fcbb88cdfb74fb7fb4cf3924693b63645a1a25a020a4b71ca6e1871d7b",
+        "state_hash": "5af1a8c807dfc3aacc80fdf028e6af73d6240a274c6ed299bc53248a206d22fb",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not compare \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/compare `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 118,
+        "kernel": 33,
+        "packet": 716,
+        "simple_handle": 159,
+        "zlib": 121,
+        "controlled": 74,
+        "semantic_ir": 124
+      }
+    },
+    {
+      "record_id": "calculate-en-operations-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "calculate",
+        "negated": false,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/calculate",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:calculate N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/calculate",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/calculate"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 82
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/calculate",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "d852cebe64708bdd954c015e494b6506161b1cb9ab82876010f31c2d79ed755f",
+        "state_hash": "56dc165fcd4c6c22fa8425bf0289e665b127c8c5c326f30589942a49cc997a5b",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "calculate \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/calculate `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 83,
+        "kernel": 35,
+        "packet": 723,
+        "simple_handle": 124,
+        "zlib": 90,
+        "controlled": 78,
+        "semantic_ir": 129
+      }
+    },
+    {
+      "record_id": "calculate-en-operations-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "calculate",
+        "negated": true,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/calculate",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:calculate N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/calculate",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/calculate"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 120
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/calculate",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "57792540c57b5b396d5dc00b04f860b0f360fc25a96b4c3f6ee1d5dc1ed398d5",
+        "state_hash": "dc3448aceab56531a377641a394c7ae8e885b57138e4384931a036446d89fb1e",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not calculate \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/calculate `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 121,
+        "kernel": 35,
+        "packet": 724,
+        "simple_handle": 162,
+        "zlib": 120,
+        "controlled": 78,
+        "semantic_ir": 128
+      }
+    },
+    {
+      "record_id": "calculate-en-research-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "calculate",
+        "negated": false,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/calculate",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:calculate N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/calculate",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/calculate"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 81
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/calculate",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "16e88ceffbf77aeb625e59c89e6abaa668c04d22006634c2dfd1806d4a5b4f51",
+        "state_hash": "626938b688ed4820afe98f6a000a6225579eb934b0069bbcce6068a54c750cd4",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "calculate \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/calculate `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 83,
+        "kernel": 35,
+        "packet": 723,
+        "simple_handle": 124,
+        "zlib": 90,
+        "controlled": 78,
+        "semantic_ir": 129
+      }
+    },
+    {
+      "record_id": "calculate-en-research-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "calculate",
+        "negated": true,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/calculate",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:calculate N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/calculate",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/calculate"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 119
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/calculate",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "ae735a40f28d13029471971afab8f311e39a83002536f84af84499b569be0983",
+        "state_hash": "366b14cc31a9cb2e02ecb76373f4af7c118d5b8a7877d7227a681add40830311",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not calculate \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/calculate `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 121,
+        "kernel": 35,
+        "packet": 724,
+        "simple_handle": 162,
+        "zlib": 120,
+        "controlled": 78,
+        "semantic_ir": 128
+      }
+    },
+    {
+      "record_id": "calculate-es-operations-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "calculate",
+        "negated": false,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/calculate",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:calculate N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/calculate",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/calculate"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 83
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/calculate",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "14144527cae6f246c2701bfe0aa7b1130370063162003422f0d397d501d017e0",
+        "state_hash": "f84fe8eacbb43f3d1a8bf7c4ea276e97c3adf534cb506ea913ddfa92a89c75b8",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "calculate \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/calculate `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 85,
+        "kernel": 35,
+        "packet": 723,
+        "simple_handle": 126,
+        "zlib": 93,
+        "controlled": 78,
+        "semantic_ir": 129
+      }
+    },
+    {
+      "record_id": "calculate-es-operations-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "calculate",
+        "negated": true,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/calculate",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:calculate N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/calculate",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/calculate"
+            ]
+          },
+          "segment": {
+            "language_hint": "es"
+          },
+          "token_local": {
+            "surface_length": 118
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/calculate",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "d154cd03e41721db9162fc3c92cd2acf9cfbc77cd7652ea7f56b8f5176d360d5",
+        "state_hash": "fee63558f0943211cb0e380f55242b157d5529b3906a2eba21fc447b7bb91cef",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not calculate \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/calculate `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 120,
+        "kernel": 35,
+        "packet": 724,
+        "simple_handle": 161,
+        "zlib": 121,
+        "controlled": 78,
+        "semantic_ir": 128
+      }
+    },
+    {
+      "record_id": "calculate-es-research-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "calculate",
+        "negated": false,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/calculate",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:calculate N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/calculate",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/calculate"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 82
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/calculate",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "0185594df4889627768b23bedb41f4fbc5fef8f68616bf46fc3bc3e87def9dca",
+        "state_hash": "78baee7fc42b8cf3669133cf938c7e826394e3942a6d9fe9de827ea8179965dd",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "calculate \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/calculate `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 85,
+        "kernel": 35,
+        "packet": 723,
+        "simple_handle": 126,
+        "zlib": 93,
+        "controlled": 78,
+        "semantic_ir": 129
+      }
+    },
+    {
+      "record_id": "calculate-es-research-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "calculate",
+        "negated": true,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/calculate",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:calculate N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/calculate",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/calculate"
+            ]
+          },
+          "segment": {
+            "language_hint": "es"
+          },
+          "token_local": {
+            "surface_length": 117
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/calculate",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "6e4585626d3f6e2dfe9ce420a10a0963620532e1df0a3f35eb267824bf62bf76",
+        "state_hash": "5b13521056d5a55a6a302418172fe8c43dd46f84ffb8b91ca864e8f5e8596bfb",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not calculate \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/calculate `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 120,
+        "kernel": 35,
+        "packet": 724,
+        "simple_handle": 161,
+        "zlib": 121,
+        "controlled": 78,
+        "semantic_ir": 128
+      }
+    },
+    {
+      "record_id": "explain-en-operations-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "explain",
+        "negated": false,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/explain",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:explain N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/explain",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/explain"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 81
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/explain",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "02f4b09ddfc577a88f83dbe035e92b02dfe7f70f5bc4eb9fbe712bae7e47ff9f",
+        "state_hash": "6422118ce710377e38789d2de8964c685091d90aa357bd47998b3666748fc60c",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "explain \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/explain `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 82,
+        "kernel": 33,
+        "packet": 715,
+        "simple_handle": 123,
+        "zlib": 89,
+        "controlled": 74,
+        "semantic_ir": 125
+      }
+    },
+    {
+      "record_id": "explain-en-operations-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "explain",
+        "negated": true,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/explain",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:explain N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/explain",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/explain"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 116
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/explain",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "25ecf2618f8e06cc81cb81e44cab88d9c428df196d9deb78ddb092ddb1e11610",
+        "state_hash": "6887aebd6ad3668012a623f60bc6f56332c982f1c0d9f777b2da256872c57d18",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not explain \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/explain `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 117,
+        "kernel": 33,
+        "packet": 716,
+        "simple_handle": 158,
+        "zlib": 121,
+        "controlled": 74,
+        "semantic_ir": 124
+      }
+    },
+    {
+      "record_id": "explain-en-research-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "explain",
+        "negated": false,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/explain",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:explain N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/explain",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/explain"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 80
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/explain",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "6149d2da14d7c27b53aabdc90aeec822393a3004c8bd40a7d84fac8903fa79ed",
+        "state_hash": "3d8d22cad7cf8d93be2239015073ee917659f35533c51567b6f1c032fff7bad7",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "explain \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/explain `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 82,
+        "kernel": 33,
+        "packet": 715,
+        "simple_handle": 123,
+        "zlib": 89,
+        "controlled": 74,
+        "semantic_ir": 125
+      }
+    },
+    {
+      "record_id": "explain-en-research-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "explain",
+        "negated": true,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/explain",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:explain N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/explain",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/explain"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 115
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/explain",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "81a7246ff7d802d85404a0e63084af04d0797f0ef483d97351c4eabd808ddb6d",
+        "state_hash": "a2113329df585131c354d07e65825758b187d6af07958d19233a67f272ff0c45",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not explain \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/explain `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 117,
+        "kernel": 33,
+        "packet": 716,
+        "simple_handle": 158,
+        "zlib": 123,
+        "controlled": 74,
+        "semantic_ir": 124
+      }
+    },
+    {
+      "record_id": "explain-es-operations-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "explain",
+        "negated": false,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/explain",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:explain N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/explain",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/explain"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 82
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/explain",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "6b01fb212664e944dd5f22a054c5710b70f2b7ce11f5962060d053c8899a2114",
+        "state_hash": "8bb800b0c30ff1d0ca6e70220b116d0df5c29d8373e48458b16ef493eec6c4fb",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "explain \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/explain `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 84,
+        "kernel": 33,
+        "packet": 715,
+        "simple_handle": 125,
+        "zlib": 89,
+        "controlled": 74,
+        "semantic_ir": 125
+      }
+    },
+    {
+      "record_id": "explain-es-operations-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "explain",
+        "negated": true,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/explain",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:explain N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/explain",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/explain"
+            ]
+          },
+          "segment": {
+            "language_hint": "es"
+          },
+          "token_local": {
+            "surface_length": 115
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/explain",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "b6b5654780e09ac678c8c9cf0526078eadf6673c9e8f0bb1ec0c97772ad9ffb9",
+        "state_hash": "c873460d17b0e0fbd28253e0cce90d77b7a63e393da224055b7534c341b74c0c",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not explain \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/explain `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 117,
+        "kernel": 33,
+        "packet": 716,
+        "simple_handle": 158,
+        "zlib": 122,
+        "controlled": 74,
+        "semantic_ir": 124
+      }
+    },
+    {
+      "record_id": "explain-es-research-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "explain",
+        "negated": false,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/explain",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:explain N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/explain",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/explain"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 81
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/explain",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "1d007e65f8bc04d9a6af2a791369341e15f2c4f5e3f865fcbca0c24ad58afce4",
+        "state_hash": "df7e68727492a6c0210e0fa0d48b396eb71e9fa5f5f99b861bf567920056d564",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "explain \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/explain `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 84,
+        "kernel": 33,
+        "packet": 715,
+        "simple_handle": 125,
+        "zlib": 90,
+        "controlled": 74,
+        "semantic_ir": 125
+      }
+    },
+    {
+      "record_id": "explain-es-research-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "explain",
+        "negated": true,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/explain",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:explain N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/explain",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/explain"
+            ]
+          },
+          "segment": {
+            "language_hint": "es"
+          },
+          "token_local": {
+            "surface_length": 114
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/explain",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "64bb2027947a58234e847cec73a695afcf7d0e51b481d00b4b009485a132070c",
+        "state_hash": "65cce7009c5ff37967491c4580c83337150d507eb837b194fe21a3b185dc6b24",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not explain \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/explain `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 117,
+        "kernel": 33,
+        "packet": 716,
+        "simple_handle": 158,
+        "zlib": 122,
+        "controlled": 74,
+        "semantic_ir": 124
+      }
+    },
+    {
+      "record_id": "quote-en-operations-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "quote",
+        "negated": false,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/quote",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:quote N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/quote",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/quote"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 75
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/quote",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "38490b31b3140d641548842ca391068c292c3af936e26188a58fa6c8e1c8e695",
+        "state_hash": "658caaded58279c61cd7e67faa1ba7aa35e92a668ff99de70b68c2ca486c40fc",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "quote \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/quote `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 76,
+        "kernel": 31,
+        "packet": 707,
+        "simple_handle": 117,
+        "zlib": 83,
+        "controlled": 70,
+        "semantic_ir": 121
+      }
+    },
+    {
+      "record_id": "quote-en-operations-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "quote",
+        "negated": true,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/quote",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:quote N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/quote",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/quote"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 121
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/quote",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "3149e497651160b2508474329b55c53285ae323af3957396d2078f794e049f2e",
+        "state_hash": "c6da47bb8073822ce4fbba36bfd258983c3fd043eb9d4f4746eda0d7b4ea220b",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not quote \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/quote `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 122,
+        "kernel": 31,
+        "packet": 708,
+        "simple_handle": 163,
+        "zlib": 125,
+        "controlled": 70,
+        "semantic_ir": 120
+      }
+    },
+    {
+      "record_id": "quote-en-research-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "quote",
+        "negated": false,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/quote",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:quote N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/quote",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/quote"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 74
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/quote",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "21a3b348223d628e34e480837ccaede7b776654c26927d94b0a69f9bce56d23d",
+        "state_hash": "089b43423685c6146d8791aeca6fc4cddb547d6401448a4c3e7031fd4a739aac",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "quote \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/quote `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 76,
+        "kernel": 31,
+        "packet": 707,
+        "simple_handle": 117,
+        "zlib": 83,
+        "controlled": 70,
+        "semantic_ir": 121
+      }
+    },
+    {
+      "record_id": "quote-en-research-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "quote",
+        "negated": true,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/quote",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:quote N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/quote",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/quote"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 120
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/quote",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "afd441cc8b8030dea2692a463664f9726e9c746c88796824d93c4ab0a4353676",
+        "state_hash": "d2ea99951f87548653c2116a15ef97b89db1016ac724ac18934cdb06525e06f8",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not quote \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/quote `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 122,
+        "kernel": 31,
+        "packet": 708,
+        "simple_handle": 163,
+        "zlib": 125,
+        "controlled": 70,
+        "semantic_ir": 120
+      }
+    },
+    {
+      "record_id": "quote-es-operations-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "quote",
+        "negated": false,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/quote",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:quote N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/quote",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/quote"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 76
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/quote",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "07e6d45124669647102fac1e54e4071b58801a5074e71cc5b34bd5f10f66dddf",
+        "state_hash": "7bf66e0f1b9f281bee588caede1ed05897ba7178fefd16f0bb8898dc8430755e",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "quote \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/quote `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 78,
+        "kernel": 31,
+        "packet": 707,
+        "simple_handle": 119,
+        "zlib": 86,
+        "controlled": 70,
+        "semantic_ir": 121
+      }
+    },
+    {
+      "record_id": "quote-es-operations-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "quote",
+        "negated": true,
+        "objects": [
+          "\"ACME-β\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/quote",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:quote N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"ACME-β\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/quote",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"ACME-β\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/quote"
+            ]
+          },
+          "segment": {
+            "language_hint": "es"
+          },
+          "token_local": {
+            "surface_length": 125
+          },
+          "exact_object": {
+            "o0": "\"ACME-β\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/quote",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "fdc64cf2d004e5cc611f25c593898ebe4d718c305f2cf7df426bed9f6d243910",
+        "state_hash": "a8be7c3666f3567a43e4ac997e6cde1a651da0fd0af9676f9c80ed3f9eba63bd",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not quote \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/quote `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 127,
+        "kernel": 31,
+        "packet": 708,
+        "simple_handle": 168,
+        "zlib": 130,
+        "controlled": 70,
+        "semantic_ir": 120
+      }
+    },
+    {
+      "record_id": "quote-es-research-4",
+      "phase": "heldout",
+      "truth": {
+        "intent": "quote",
+        "negated": false,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-14",
+          "https://example.org/quote",
+          "`x_4=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:quote N:0 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-14",
+          "o3": "https://example.org/quote",
+          "o4": "`x_4=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-14",
+              "`x_4=7`",
+              "https://example.org/quote"
+            ]
+          },
+          "segment": {
+            "language_hint": "en"
+          },
+          "token_local": {
+            "surface_length": 75
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-14",
+            "o3": "https://example.org/quote",
+            "o4": "`x_4=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "6b825f6d21afde8a6dc76109e053707436de7533b1ec4fdd0b6ed2c9d208ede4",
+        "state_hash": "2f8190d540b0ed93e7cee69862dbfcdd7c095851cca0538b034a173838a4efaa",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "quote \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/quote `x_4=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 78,
+        "kernel": 31,
+        "packet": 707,
+        "simple_handle": 119,
+        "zlib": 86,
+        "controlled": 70,
+        "semantic_ir": 121
+      }
+    },
+    {
+      "record_id": "quote-es-research-5",
+      "phase": "adversarial_heldout",
+      "truth": {
+        "intent": "quote",
+        "negated": true,
+        "objects": [
+          "\"Zoë Δ\"",
+          "12.5 GB",
+          "2026-08-15",
+          "https://example.org/quote",
+          "`x_5=7`"
+        ]
+      },
+      "packet": {
+        "abi": "kerc.kernel_packet.v1",
+        "kernel": "I:quote N:1 M:possible O:5 R:AT",
+        "objects": {
+          "o0": "\"Zoë Δ\"",
+          "o1": "12.5 GB",
+          "o2": "2026-08-15",
+          "o3": "https://example.org/quote",
+          "o4": "`x_5=7`"
+        },
+        "residual": {
+          "interaction_global": {
+            "glossary": [
+              "\"Zoë Δ\"",
+              "12.5 GB",
+              "2026-08-15",
+              "`x_5=7`",
+              "https://example.org/quote"
+            ]
+          },
+          "segment": {
+            "language_hint": "es"
+          },
+          "token_local": {
+            "surface_length": 124
+          },
+          "exact_object": {
+            "o0": "\"Zoë Δ\"",
+            "o1": "12.5 GB",
+            "o2": "2026-08-15",
+            "o3": "https://example.org/quote",
+            "o4": "`x_5=7`"
+          }
+        },
+        "mode": "faithful",
+        "source_sha256": "2477a036b5c5b121d2b739e4a17c9120830d684a62be7f92cd88e0527f1fcefe",
+        "state_hash": "49a5e80ebe933b287a03ebb21ce41047c8cad5f2a8842f3e7513988bd3826339",
+        "migration": {
+          "from": 1,
+          "to": 1
+        }
+      },
+      "rendered": "Do not quote \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/quote `x_5=7`",
+      "compiler_intent_correct": true,
+      "render_intent_correct": true,
+      "render_polarity_correct": true,
+      "protected_object_recall": 1.0,
+      "lossless_exact": true,
+      "bytes": {
+        "source": 127,
+        "kernel": 31,
+        "packet": 708,
+        "simple_handle": 168,
+        "zlib": 130,
+        "controlled": 70,
+        "semantic_ir": 120
+      }
+    }
+  ],
+  "model_predictions": {
+    "surface_sentencepiece_unigram:17": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "surface_sentencepiece_unigram:29": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "surface_sentencepiece_unigram:43": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "surface_sentencepiece_unigram:71": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "surface_sentencepiece_unigram:101": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "surface_byte_char_ngram:17": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "surface_byte_char_ngram:29": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "surface_byte_char_ngram:43": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "surface_byte_char_ngram:71": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "surface_byte_char_ngram:101": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "dynamic_word_chunks:17": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "dynamic_word_chunks:29": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "dynamic_word_chunks:43": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "dynamic_word_chunks:71": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "dynamic_word_chunks:101": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "simple_entity_handle_shared_glossary:17": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "simple_entity_handle_shared_glossary:29": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "simple_entity_handle_shared_glossary:43": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "simple_entity_handle_shared_glossary:71": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "simple_entity_handle_shared_glossary:101": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "kernel_packet:17": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "kernel_packet:29": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "kernel_packet:43": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "kernel_packet:71": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ],
+    "kernel_packet:101": [
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "approve|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "deny|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "schedule|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "cancel|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "compare|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "calculate|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "explain|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0",
+      "quote|0"
+    ]
+  }
+}

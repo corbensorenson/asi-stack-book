@@ -120,8 +120,10 @@ The outcome is mixed and deliberately narrow:
 - Plural facets, identity/address indirection, certificate/residual/authority
   fields, migration compatibility, and task calibration earned bounded
   fixture-level promote dispositions for later evidence review.
-- Removing active questions did not reduce object or task accuracy, so active
-  question value is refuted on this exact corpus.
+- Removing active questions did not reduce object or task accuracy. Because the
+  workload is template-generated, the task saturates at 1.000, the evaluator is
+  internal, and verifier-cost bookkeeping is confounded, this is N2
+  proxy/regime evidence—not an exact or broad refutation of active questioning.
 - The vertical trace rejected all 10 adversarial paths and performed one exact
   rollback, but remains synthetic, local, internally observed, and limited to
   one reversible temporary-file effect.
@@ -195,8 +197,9 @@ existing chapter owners. A standalone chapter would still duplicate the
 context, routing, representation, tool, claim, learning, federation, and
 integration chapters. The later implementation and evaluation strengthen those
 existing owners but do not create a distinct chapter thesis: matched advantage
-failed, active-question value was refuted on the exact corpus, and production
-transfer remains open. Reconsider a dedicated chapter only if a future natural-
+failed on the frozen proxy, the active-question ablation is N2 proxy/regime
+evidence rather than a refutation, and production transfer remains open.
+Reconsider a dedicated chapter only if a future natural-
 task, learned-model, independently assessed program creates a chapter-owning
 body of evidence that cannot be folded coherently into the nine owners.
 

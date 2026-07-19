@@ -1,0 +1,3269 @@
+{
+  "schema_version": "asi_stack.p4_m8_kerc_corpus.v1",
+  "rows": [
+    {
+      "record_id": "approve-en-operations-0",
+      "phase": "train",
+      "intent": "approve",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 0,
+      "text": "Please approve \"ACME-β\" 12.5 GB 2026-08-10 https://example.org/approve `x_0=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/approve",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "approve-en-operations-1",
+      "phase": "train",
+      "intent": "approve",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 1,
+      "text": "Authorize \"ACME-β\" 12.5 GB 2026-08-11 https://example.org/approve `x_1=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/approve",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "approve-en-operations-2",
+      "phase": "train",
+      "intent": "approve",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 2,
+      "text": "You must permit \"ACME-β\" 12.5 GB 2026-08-12 https://example.org/approve `x_2=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/approve",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "approve-en-operations-3",
+      "phase": "train",
+      "intent": "approve",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 3,
+      "text": "Green-light \"ACME-β\" 12.5 GB 2026-08-13 https://example.org/approve `x_3=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/approve",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "approve-en-operations-4",
+      "phase": "heldout",
+      "intent": "approve",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 4,
+      "text": "Can you authorize \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/approve `x_4=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/approve",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "approve-en-operations-5",
+      "phase": "adversarial_heldout",
+      "intent": "approve",
+      "negated": true,
+      "language": "en",
+      "domain": "operations",
+      "variant": 5,
+      "text": "Kindly approve \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/approve `x_5=7`. Do not reverse the requested action.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/approve",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "approve-en-research-0",
+      "phase": "train",
+      "intent": "approve",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 0,
+      "text": "Please approve \"Zoë Δ\" 12.5 GB 2026-08-10 https://example.org/approve `x_0=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/approve",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "approve-en-research-1",
+      "phase": "train",
+      "intent": "approve",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 1,
+      "text": "Authorize \"Zoë Δ\" 12.5 GB 2026-08-11 https://example.org/approve `x_1=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/approve",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "approve-en-research-2",
+      "phase": "train",
+      "intent": "approve",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 2,
+      "text": "You must permit \"Zoë Δ\" 12.5 GB 2026-08-12 https://example.org/approve `x_2=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/approve",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "approve-en-research-3",
+      "phase": "train",
+      "intent": "approve",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 3,
+      "text": "Green-light \"Zoë Δ\" 12.5 GB 2026-08-13 https://example.org/approve `x_3=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/approve",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "approve-en-research-4",
+      "phase": "heldout",
+      "intent": "approve",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 4,
+      "text": "Can you authorize \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/approve `x_4=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/approve",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "approve-en-research-5",
+      "phase": "adversarial_heldout",
+      "intent": "approve",
+      "negated": true,
+      "language": "en",
+      "domain": "research",
+      "variant": 5,
+      "text": "Kindly approve \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/approve `x_5=7`. Do not reverse the requested action.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/approve",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "approve-es-operations-0",
+      "phase": "train",
+      "intent": "approve",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 0,
+      "text": "Por favor aprueba \"ACME-β\" 12.5 GB 2026-08-10 https://example.org/approve `x_0=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/approve",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "approve-es-operations-1",
+      "phase": "train",
+      "intent": "approve",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 1,
+      "text": "Autoriza \"ACME-β\" 12.5 GB 2026-08-11 https://example.org/approve `x_1=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/approve",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "approve-es-operations-2",
+      "phase": "train",
+      "intent": "approve",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 2,
+      "text": "Debe permitir \"ACME-β\" 12.5 GB 2026-08-12 https://example.org/approve `x_2=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/approve",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "approve-es-operations-3",
+      "phase": "train",
+      "intent": "approve",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 3,
+      "text": "Aprueba \"ACME-β\" 12.5 GB 2026-08-13 https://example.org/approve `x_3=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/approve",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "approve-es-operations-4",
+      "phase": "heldout",
+      "intent": "approve",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 4,
+      "text": "¿Puedes autorizar \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/approve `x_4=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/approve",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "approve-es-operations-5",
+      "phase": "adversarial_heldout",
+      "intent": "approve",
+      "negated": true,
+      "language": "es",
+      "domain": "operations",
+      "variant": 5,
+      "text": "Por favor permite \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/approve `x_5=7`. No revierta la acción solicitada.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/approve",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "approve-es-research-0",
+      "phase": "train",
+      "intent": "approve",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 0,
+      "text": "Por favor aprueba \"Zoë Δ\" 12.5 GB 2026-08-10 https://example.org/approve `x_0=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/approve",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "approve-es-research-1",
+      "phase": "train",
+      "intent": "approve",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 1,
+      "text": "Autoriza \"Zoë Δ\" 12.5 GB 2026-08-11 https://example.org/approve `x_1=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/approve",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "approve-es-research-2",
+      "phase": "train",
+      "intent": "approve",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 2,
+      "text": "Debe permitir \"Zoë Δ\" 12.5 GB 2026-08-12 https://example.org/approve `x_2=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/approve",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "approve-es-research-3",
+      "phase": "train",
+      "intent": "approve",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 3,
+      "text": "Aprueba \"Zoë Δ\" 12.5 GB 2026-08-13 https://example.org/approve `x_3=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/approve",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "approve-es-research-4",
+      "phase": "heldout",
+      "intent": "approve",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 4,
+      "text": "¿Puedes autorizar \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/approve `x_4=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/approve",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "approve-es-research-5",
+      "phase": "adversarial_heldout",
+      "intent": "approve",
+      "negated": true,
+      "language": "es",
+      "domain": "research",
+      "variant": 5,
+      "text": "Por favor permite \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/approve `x_5=7`. No revierta la acción solicitada.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/approve",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "deny-en-operations-0",
+      "phase": "train",
+      "intent": "deny",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 0,
+      "text": "Please deny \"ACME-β\" 12.5 GB 2026-08-10 https://example.org/deny `x_0=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/deny",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "deny-en-operations-1",
+      "phase": "train",
+      "intent": "deny",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 1,
+      "text": "Reject \"ACME-β\" 12.5 GB 2026-08-11 https://example.org/deny `x_1=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/deny",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "deny-en-operations-2",
+      "phase": "train",
+      "intent": "deny",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 2,
+      "text": "You must block \"ACME-β\" 12.5 GB 2026-08-12 https://example.org/deny `x_2=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/deny",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "deny-en-operations-3",
+      "phase": "train",
+      "intent": "deny",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 3,
+      "text": "Refuse \"ACME-β\" 12.5 GB 2026-08-13 https://example.org/deny `x_3=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/deny",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "deny-en-operations-4",
+      "phase": "heldout",
+      "intent": "deny",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 4,
+      "text": "Can you deny \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/deny `x_4=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/deny",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "deny-en-operations-5",
+      "phase": "adversarial_heldout",
+      "intent": "deny",
+      "negated": true,
+      "language": "en",
+      "domain": "operations",
+      "variant": 5,
+      "text": "Kindly reject \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/deny `x_5=7`. Do not reverse the requested action.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/deny",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "deny-en-research-0",
+      "phase": "train",
+      "intent": "deny",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 0,
+      "text": "Please deny \"Zoë Δ\" 12.5 GB 2026-08-10 https://example.org/deny `x_0=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/deny",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "deny-en-research-1",
+      "phase": "train",
+      "intent": "deny",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 1,
+      "text": "Reject \"Zoë Δ\" 12.5 GB 2026-08-11 https://example.org/deny `x_1=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/deny",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "deny-en-research-2",
+      "phase": "train",
+      "intent": "deny",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 2,
+      "text": "You must block \"Zoë Δ\" 12.5 GB 2026-08-12 https://example.org/deny `x_2=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/deny",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "deny-en-research-3",
+      "phase": "train",
+      "intent": "deny",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 3,
+      "text": "Refuse \"Zoë Δ\" 12.5 GB 2026-08-13 https://example.org/deny `x_3=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/deny",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "deny-en-research-4",
+      "phase": "heldout",
+      "intent": "deny",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 4,
+      "text": "Can you deny \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/deny `x_4=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/deny",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "deny-en-research-5",
+      "phase": "adversarial_heldout",
+      "intent": "deny",
+      "negated": true,
+      "language": "en",
+      "domain": "research",
+      "variant": 5,
+      "text": "Kindly reject \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/deny `x_5=7`. Do not reverse the requested action.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/deny",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "deny-es-operations-0",
+      "phase": "train",
+      "intent": "deny",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 0,
+      "text": "Por favor deniega \"ACME-β\" 12.5 GB 2026-08-10 https://example.org/deny `x_0=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/deny",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "deny-es-operations-1",
+      "phase": "train",
+      "intent": "deny",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 1,
+      "text": "Rechaza \"ACME-β\" 12.5 GB 2026-08-11 https://example.org/deny `x_1=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/deny",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "deny-es-operations-2",
+      "phase": "train",
+      "intent": "deny",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 2,
+      "text": "Debe bloquear \"ACME-β\" 12.5 GB 2026-08-12 https://example.org/deny `x_2=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/deny",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "deny-es-operations-3",
+      "phase": "train",
+      "intent": "deny",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 3,
+      "text": "Deniega \"ACME-β\" 12.5 GB 2026-08-13 https://example.org/deny `x_3=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/deny",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "deny-es-operations-4",
+      "phase": "heldout",
+      "intent": "deny",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 4,
+      "text": "¿Puedes rechazar \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/deny `x_4=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/deny",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "deny-es-operations-5",
+      "phase": "adversarial_heldout",
+      "intent": "deny",
+      "negated": true,
+      "language": "es",
+      "domain": "operations",
+      "variant": 5,
+      "text": "Por favor bloquea \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/deny `x_5=7`. No revierta la acción solicitada.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/deny",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "deny-es-research-0",
+      "phase": "train",
+      "intent": "deny",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 0,
+      "text": "Por favor deniega \"Zoë Δ\" 12.5 GB 2026-08-10 https://example.org/deny `x_0=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/deny",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "deny-es-research-1",
+      "phase": "train",
+      "intent": "deny",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 1,
+      "text": "Rechaza \"Zoë Δ\" 12.5 GB 2026-08-11 https://example.org/deny `x_1=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/deny",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "deny-es-research-2",
+      "phase": "train",
+      "intent": "deny",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 2,
+      "text": "Debe bloquear \"Zoë Δ\" 12.5 GB 2026-08-12 https://example.org/deny `x_2=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/deny",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "deny-es-research-3",
+      "phase": "train",
+      "intent": "deny",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 3,
+      "text": "Deniega \"Zoë Δ\" 12.5 GB 2026-08-13 https://example.org/deny `x_3=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/deny",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "deny-es-research-4",
+      "phase": "heldout",
+      "intent": "deny",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 4,
+      "text": "¿Puedes rechazar \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/deny `x_4=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/deny",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "deny-es-research-5",
+      "phase": "adversarial_heldout",
+      "intent": "deny",
+      "negated": true,
+      "language": "es",
+      "domain": "research",
+      "variant": 5,
+      "text": "Por favor bloquea \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/deny `x_5=7`. No revierta la acción solicitada.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/deny",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-en-operations-0",
+      "phase": "train",
+      "intent": "schedule",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 0,
+      "text": "Please schedule \"ACME-β\" 12.5 GB 2026-08-10 https://example.org/schedule `x_0=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/schedule",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-en-operations-1",
+      "phase": "train",
+      "intent": "schedule",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 1,
+      "text": "Plan \"ACME-β\" 12.5 GB 2026-08-11 https://example.org/schedule `x_1=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/schedule",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-en-operations-2",
+      "phase": "train",
+      "intent": "schedule",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 2,
+      "text": "You must book \"ACME-β\" 12.5 GB 2026-08-12 https://example.org/schedule `x_2=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/schedule",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-en-operations-3",
+      "phase": "train",
+      "intent": "schedule",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 3,
+      "text": "Schedule \"ACME-β\" 12.5 GB 2026-08-13 https://example.org/schedule `x_3=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/schedule",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-en-operations-4",
+      "phase": "heldout",
+      "intent": "schedule",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 4,
+      "text": "Can you plan \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/schedule `x_4=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/schedule",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-en-operations-5",
+      "phase": "adversarial_heldout",
+      "intent": "schedule",
+      "negated": true,
+      "language": "en",
+      "domain": "operations",
+      "variant": 5,
+      "text": "Kindly book \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/schedule `x_5=7`. Do not reverse the requested action.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/schedule",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-en-research-0",
+      "phase": "train",
+      "intent": "schedule",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 0,
+      "text": "Please schedule \"Zoë Δ\" 12.5 GB 2026-08-10 https://example.org/schedule `x_0=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/schedule",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-en-research-1",
+      "phase": "train",
+      "intent": "schedule",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 1,
+      "text": "Plan \"Zoë Δ\" 12.5 GB 2026-08-11 https://example.org/schedule `x_1=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/schedule",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-en-research-2",
+      "phase": "train",
+      "intent": "schedule",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 2,
+      "text": "You must book \"Zoë Δ\" 12.5 GB 2026-08-12 https://example.org/schedule `x_2=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/schedule",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-en-research-3",
+      "phase": "train",
+      "intent": "schedule",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 3,
+      "text": "Schedule \"Zoë Δ\" 12.5 GB 2026-08-13 https://example.org/schedule `x_3=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/schedule",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-en-research-4",
+      "phase": "heldout",
+      "intent": "schedule",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 4,
+      "text": "Can you plan \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/schedule `x_4=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/schedule",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-en-research-5",
+      "phase": "adversarial_heldout",
+      "intent": "schedule",
+      "negated": true,
+      "language": "en",
+      "domain": "research",
+      "variant": 5,
+      "text": "Kindly book \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/schedule `x_5=7`. Do not reverse the requested action.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/schedule",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-es-operations-0",
+      "phase": "train",
+      "intent": "schedule",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 0,
+      "text": "Por favor programa \"ACME-β\" 12.5 GB 2026-08-10 https://example.org/schedule `x_0=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/schedule",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-es-operations-1",
+      "phase": "train",
+      "intent": "schedule",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 1,
+      "text": "Planifica \"ACME-β\" 12.5 GB 2026-08-11 https://example.org/schedule `x_1=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/schedule",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-es-operations-2",
+      "phase": "train",
+      "intent": "schedule",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 2,
+      "text": "Debe agendar \"ACME-β\" 12.5 GB 2026-08-12 https://example.org/schedule `x_2=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/schedule",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-es-operations-3",
+      "phase": "train",
+      "intent": "schedule",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 3,
+      "text": "Programa \"ACME-β\" 12.5 GB 2026-08-13 https://example.org/schedule `x_3=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/schedule",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-es-operations-4",
+      "phase": "heldout",
+      "intent": "schedule",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 4,
+      "text": "¿Puedes planificar \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/schedule `x_4=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/schedule",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-es-operations-5",
+      "phase": "adversarial_heldout",
+      "intent": "schedule",
+      "negated": true,
+      "language": "es",
+      "domain": "operations",
+      "variant": 5,
+      "text": "Por favor agenda \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/schedule `x_5=7`. No revierta la acción solicitada.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/schedule",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-es-research-0",
+      "phase": "train",
+      "intent": "schedule",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 0,
+      "text": "Por favor programa \"Zoë Δ\" 12.5 GB 2026-08-10 https://example.org/schedule `x_0=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/schedule",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-es-research-1",
+      "phase": "train",
+      "intent": "schedule",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 1,
+      "text": "Planifica \"Zoë Δ\" 12.5 GB 2026-08-11 https://example.org/schedule `x_1=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/schedule",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-es-research-2",
+      "phase": "train",
+      "intent": "schedule",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 2,
+      "text": "Debe agendar \"Zoë Δ\" 12.5 GB 2026-08-12 https://example.org/schedule `x_2=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/schedule",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-es-research-3",
+      "phase": "train",
+      "intent": "schedule",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 3,
+      "text": "Programa \"Zoë Δ\" 12.5 GB 2026-08-13 https://example.org/schedule `x_3=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/schedule",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-es-research-4",
+      "phase": "heldout",
+      "intent": "schedule",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 4,
+      "text": "¿Puedes planificar \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/schedule `x_4=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/schedule",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "schedule-es-research-5",
+      "phase": "adversarial_heldout",
+      "intent": "schedule",
+      "negated": true,
+      "language": "es",
+      "domain": "research",
+      "variant": 5,
+      "text": "Por favor agenda \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/schedule `x_5=7`. No revierta la acción solicitada.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/schedule",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-en-operations-0",
+      "phase": "train",
+      "intent": "cancel",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 0,
+      "text": "Please cancel \"ACME-β\" 12.5 GB 2026-08-10 https://example.org/cancel `x_0=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/cancel",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-en-operations-1",
+      "phase": "train",
+      "intent": "cancel",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 1,
+      "text": "Abort \"ACME-β\" 12.5 GB 2026-08-11 https://example.org/cancel `x_1=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/cancel",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-en-operations-2",
+      "phase": "train",
+      "intent": "cancel",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 2,
+      "text": "You must stop \"ACME-β\" 12.5 GB 2026-08-12 https://example.org/cancel `x_2=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/cancel",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-en-operations-3",
+      "phase": "train",
+      "intent": "cancel",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 3,
+      "text": "Withdraw \"ACME-β\" 12.5 GB 2026-08-13 https://example.org/cancel `x_3=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/cancel",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-en-operations-4",
+      "phase": "heldout",
+      "intent": "cancel",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 4,
+      "text": "Can you cancel \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/cancel `x_4=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/cancel",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-en-operations-5",
+      "phase": "adversarial_heldout",
+      "intent": "cancel",
+      "negated": true,
+      "language": "en",
+      "domain": "operations",
+      "variant": 5,
+      "text": "Kindly abort \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/cancel `x_5=7`. Do not reverse the requested action.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/cancel",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-en-research-0",
+      "phase": "train",
+      "intent": "cancel",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 0,
+      "text": "Please cancel \"Zoë Δ\" 12.5 GB 2026-08-10 https://example.org/cancel `x_0=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/cancel",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-en-research-1",
+      "phase": "train",
+      "intent": "cancel",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 1,
+      "text": "Abort \"Zoë Δ\" 12.5 GB 2026-08-11 https://example.org/cancel `x_1=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/cancel",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-en-research-2",
+      "phase": "train",
+      "intent": "cancel",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 2,
+      "text": "You must stop \"Zoë Δ\" 12.5 GB 2026-08-12 https://example.org/cancel `x_2=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/cancel",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-en-research-3",
+      "phase": "train",
+      "intent": "cancel",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 3,
+      "text": "Withdraw \"Zoë Δ\" 12.5 GB 2026-08-13 https://example.org/cancel `x_3=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/cancel",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-en-research-4",
+      "phase": "heldout",
+      "intent": "cancel",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 4,
+      "text": "Can you cancel \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/cancel `x_4=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/cancel",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-en-research-5",
+      "phase": "adversarial_heldout",
+      "intent": "cancel",
+      "negated": true,
+      "language": "en",
+      "domain": "research",
+      "variant": 5,
+      "text": "Kindly abort \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/cancel `x_5=7`. Do not reverse the requested action.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/cancel",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-es-operations-0",
+      "phase": "train",
+      "intent": "cancel",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 0,
+      "text": "Por favor cancela \"ACME-β\" 12.5 GB 2026-08-10 https://example.org/cancel `x_0=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/cancel",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-es-operations-1",
+      "phase": "train",
+      "intent": "cancel",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 1,
+      "text": "Aborta \"ACME-β\" 12.5 GB 2026-08-11 https://example.org/cancel `x_1=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/cancel",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-es-operations-2",
+      "phase": "train",
+      "intent": "cancel",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 2,
+      "text": "Debe detener \"ACME-β\" 12.5 GB 2026-08-12 https://example.org/cancel `x_2=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/cancel",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-es-operations-3",
+      "phase": "train",
+      "intent": "cancel",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 3,
+      "text": "Cancela \"ACME-β\" 12.5 GB 2026-08-13 https://example.org/cancel `x_3=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/cancel",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-es-operations-4",
+      "phase": "heldout",
+      "intent": "cancel",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 4,
+      "text": "¿Puedes abortar \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/cancel `x_4=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/cancel",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-es-operations-5",
+      "phase": "adversarial_heldout",
+      "intent": "cancel",
+      "negated": true,
+      "language": "es",
+      "domain": "operations",
+      "variant": 5,
+      "text": "Por favor detén \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/cancel `x_5=7`. No revierta la acción solicitada.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/cancel",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-es-research-0",
+      "phase": "train",
+      "intent": "cancel",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 0,
+      "text": "Por favor cancela \"Zoë Δ\" 12.5 GB 2026-08-10 https://example.org/cancel `x_0=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/cancel",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-es-research-1",
+      "phase": "train",
+      "intent": "cancel",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 1,
+      "text": "Aborta \"Zoë Δ\" 12.5 GB 2026-08-11 https://example.org/cancel `x_1=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/cancel",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-es-research-2",
+      "phase": "train",
+      "intent": "cancel",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 2,
+      "text": "Debe detener \"Zoë Δ\" 12.5 GB 2026-08-12 https://example.org/cancel `x_2=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/cancel",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-es-research-3",
+      "phase": "train",
+      "intent": "cancel",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 3,
+      "text": "Cancela \"Zoë Δ\" 12.5 GB 2026-08-13 https://example.org/cancel `x_3=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/cancel",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-es-research-4",
+      "phase": "heldout",
+      "intent": "cancel",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 4,
+      "text": "¿Puedes abortar \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/cancel `x_4=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/cancel",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "cancel-es-research-5",
+      "phase": "adversarial_heldout",
+      "intent": "cancel",
+      "negated": true,
+      "language": "es",
+      "domain": "research",
+      "variant": 5,
+      "text": "Por favor detén \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/cancel `x_5=7`. No revierta la acción solicitada.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/cancel",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "compare-en-operations-0",
+      "phase": "train",
+      "intent": "compare",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 0,
+      "text": "Please compare \"ACME-β\" 12.5 GB 2026-08-10 https://example.org/compare `x_0=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/compare",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "compare-en-operations-1",
+      "phase": "train",
+      "intent": "compare",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 1,
+      "text": "Contrast \"ACME-β\" 12.5 GB 2026-08-11 https://example.org/compare `x_1=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/compare",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "compare-en-operations-2",
+      "phase": "train",
+      "intent": "compare",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 2,
+      "text": "You must weigh \"ACME-β\" 12.5 GB 2026-08-12 https://example.org/compare `x_2=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/compare",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "compare-en-operations-3",
+      "phase": "train",
+      "intent": "compare",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 3,
+      "text": "Compare \"ACME-β\" 12.5 GB 2026-08-13 https://example.org/compare `x_3=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/compare",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "compare-en-operations-4",
+      "phase": "heldout",
+      "intent": "compare",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 4,
+      "text": "Can you contrast \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/compare `x_4=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/compare",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "compare-en-operations-5",
+      "phase": "adversarial_heldout",
+      "intent": "compare",
+      "negated": true,
+      "language": "en",
+      "domain": "operations",
+      "variant": 5,
+      "text": "Kindly compare \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/compare `x_5=7`. Do not reverse the requested action.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/compare",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "compare-en-research-0",
+      "phase": "train",
+      "intent": "compare",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 0,
+      "text": "Please compare \"Zoë Δ\" 12.5 GB 2026-08-10 https://example.org/compare `x_0=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/compare",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "compare-en-research-1",
+      "phase": "train",
+      "intent": "compare",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 1,
+      "text": "Contrast \"Zoë Δ\" 12.5 GB 2026-08-11 https://example.org/compare `x_1=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/compare",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "compare-en-research-2",
+      "phase": "train",
+      "intent": "compare",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 2,
+      "text": "You must weigh \"Zoë Δ\" 12.5 GB 2026-08-12 https://example.org/compare `x_2=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/compare",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "compare-en-research-3",
+      "phase": "train",
+      "intent": "compare",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 3,
+      "text": "Compare \"Zoë Δ\" 12.5 GB 2026-08-13 https://example.org/compare `x_3=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/compare",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "compare-en-research-4",
+      "phase": "heldout",
+      "intent": "compare",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 4,
+      "text": "Can you contrast \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/compare `x_4=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/compare",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "compare-en-research-5",
+      "phase": "adversarial_heldout",
+      "intent": "compare",
+      "negated": true,
+      "language": "en",
+      "domain": "research",
+      "variant": 5,
+      "text": "Kindly compare \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/compare `x_5=7`. Do not reverse the requested action.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/compare",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "compare-es-operations-0",
+      "phase": "train",
+      "intent": "compare",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 0,
+      "text": "Por favor compara \"ACME-β\" 12.5 GB 2026-08-10 https://example.org/compare `x_0=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/compare",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "compare-es-operations-1",
+      "phase": "train",
+      "intent": "compare",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 1,
+      "text": "Contrasta \"ACME-β\" 12.5 GB 2026-08-11 https://example.org/compare `x_1=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/compare",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "compare-es-operations-2",
+      "phase": "train",
+      "intent": "compare",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 2,
+      "text": "Debe comparar \"ACME-β\" 12.5 GB 2026-08-12 https://example.org/compare `x_2=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/compare",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "compare-es-operations-3",
+      "phase": "train",
+      "intent": "compare",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 3,
+      "text": "Compara \"ACME-β\" 12.5 GB 2026-08-13 https://example.org/compare `x_3=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/compare",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "compare-es-operations-4",
+      "phase": "heldout",
+      "intent": "compare",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 4,
+      "text": "¿Puedes contrastar \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/compare `x_4=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/compare",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "compare-es-operations-5",
+      "phase": "adversarial_heldout",
+      "intent": "compare",
+      "negated": true,
+      "language": "es",
+      "domain": "operations",
+      "variant": 5,
+      "text": "Por favor compara \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/compare `x_5=7`. No revierta la acción solicitada.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/compare",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "compare-es-research-0",
+      "phase": "train",
+      "intent": "compare",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 0,
+      "text": "Por favor compara \"Zoë Δ\" 12.5 GB 2026-08-10 https://example.org/compare `x_0=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/compare",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "compare-es-research-1",
+      "phase": "train",
+      "intent": "compare",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 1,
+      "text": "Contrasta \"Zoë Δ\" 12.5 GB 2026-08-11 https://example.org/compare `x_1=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/compare",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "compare-es-research-2",
+      "phase": "train",
+      "intent": "compare",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 2,
+      "text": "Debe comparar \"Zoë Δ\" 12.5 GB 2026-08-12 https://example.org/compare `x_2=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/compare",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "compare-es-research-3",
+      "phase": "train",
+      "intent": "compare",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 3,
+      "text": "Compara \"Zoë Δ\" 12.5 GB 2026-08-13 https://example.org/compare `x_3=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/compare",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "compare-es-research-4",
+      "phase": "heldout",
+      "intent": "compare",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 4,
+      "text": "¿Puedes contrastar \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/compare `x_4=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/compare",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "compare-es-research-5",
+      "phase": "adversarial_heldout",
+      "intent": "compare",
+      "negated": true,
+      "language": "es",
+      "domain": "research",
+      "variant": 5,
+      "text": "Por favor compara \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/compare `x_5=7`. No revierta la acción solicitada.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/compare",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-en-operations-0",
+      "phase": "train",
+      "intent": "calculate",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 0,
+      "text": "Please calculate \"ACME-β\" 12.5 GB 2026-08-10 https://example.org/calculate `x_0=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/calculate",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-en-operations-1",
+      "phase": "train",
+      "intent": "calculate",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 1,
+      "text": "Compute \"ACME-β\" 12.5 GB 2026-08-11 https://example.org/calculate `x_1=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/calculate",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-en-operations-2",
+      "phase": "train",
+      "intent": "calculate",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 2,
+      "text": "You must derive \"ACME-β\" 12.5 GB 2026-08-12 https://example.org/calculate `x_2=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/calculate",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-en-operations-3",
+      "phase": "train",
+      "intent": "calculate",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 3,
+      "text": "Calculate \"ACME-β\" 12.5 GB 2026-08-13 https://example.org/calculate `x_3=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/calculate",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-en-operations-4",
+      "phase": "heldout",
+      "intent": "calculate",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 4,
+      "text": "Can you compute \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/calculate `x_4=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/calculate",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-en-operations-5",
+      "phase": "adversarial_heldout",
+      "intent": "calculate",
+      "negated": true,
+      "language": "en",
+      "domain": "operations",
+      "variant": 5,
+      "text": "Kindly calculate \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/calculate `x_5=7`. Do not reverse the requested action.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/calculate",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-en-research-0",
+      "phase": "train",
+      "intent": "calculate",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 0,
+      "text": "Please calculate \"Zoë Δ\" 12.5 GB 2026-08-10 https://example.org/calculate `x_0=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/calculate",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-en-research-1",
+      "phase": "train",
+      "intent": "calculate",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 1,
+      "text": "Compute \"Zoë Δ\" 12.5 GB 2026-08-11 https://example.org/calculate `x_1=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/calculate",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-en-research-2",
+      "phase": "train",
+      "intent": "calculate",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 2,
+      "text": "You must derive \"Zoë Δ\" 12.5 GB 2026-08-12 https://example.org/calculate `x_2=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/calculate",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-en-research-3",
+      "phase": "train",
+      "intent": "calculate",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 3,
+      "text": "Calculate \"Zoë Δ\" 12.5 GB 2026-08-13 https://example.org/calculate `x_3=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/calculate",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-en-research-4",
+      "phase": "heldout",
+      "intent": "calculate",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 4,
+      "text": "Can you compute \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/calculate `x_4=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/calculate",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-en-research-5",
+      "phase": "adversarial_heldout",
+      "intent": "calculate",
+      "negated": true,
+      "language": "en",
+      "domain": "research",
+      "variant": 5,
+      "text": "Kindly calculate \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/calculate `x_5=7`. Do not reverse the requested action.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/calculate",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-es-operations-0",
+      "phase": "train",
+      "intent": "calculate",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 0,
+      "text": "Por favor calcula \"ACME-β\" 12.5 GB 2026-08-10 https://example.org/calculate `x_0=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/calculate",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-es-operations-1",
+      "phase": "train",
+      "intent": "calculate",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 1,
+      "text": "Computa \"ACME-β\" 12.5 GB 2026-08-11 https://example.org/calculate `x_1=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/calculate",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-es-operations-2",
+      "phase": "train",
+      "intent": "calculate",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 2,
+      "text": "Debe calcular \"ACME-β\" 12.5 GB 2026-08-12 https://example.org/calculate `x_2=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/calculate",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-es-operations-3",
+      "phase": "train",
+      "intent": "calculate",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 3,
+      "text": "Calcula \"ACME-β\" 12.5 GB 2026-08-13 https://example.org/calculate `x_3=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/calculate",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-es-operations-4",
+      "phase": "heldout",
+      "intent": "calculate",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 4,
+      "text": "¿Puedes computar \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/calculate `x_4=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/calculate",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-es-operations-5",
+      "phase": "adversarial_heldout",
+      "intent": "calculate",
+      "negated": true,
+      "language": "es",
+      "domain": "operations",
+      "variant": 5,
+      "text": "Por favor calcula \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/calculate `x_5=7`. No revierta la acción solicitada.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/calculate",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-es-research-0",
+      "phase": "train",
+      "intent": "calculate",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 0,
+      "text": "Por favor calcula \"Zoë Δ\" 12.5 GB 2026-08-10 https://example.org/calculate `x_0=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/calculate",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-es-research-1",
+      "phase": "train",
+      "intent": "calculate",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 1,
+      "text": "Computa \"Zoë Δ\" 12.5 GB 2026-08-11 https://example.org/calculate `x_1=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/calculate",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-es-research-2",
+      "phase": "train",
+      "intent": "calculate",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 2,
+      "text": "Debe calcular \"Zoë Δ\" 12.5 GB 2026-08-12 https://example.org/calculate `x_2=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/calculate",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-es-research-3",
+      "phase": "train",
+      "intent": "calculate",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 3,
+      "text": "Calcula \"Zoë Δ\" 12.5 GB 2026-08-13 https://example.org/calculate `x_3=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/calculate",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-es-research-4",
+      "phase": "heldout",
+      "intent": "calculate",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 4,
+      "text": "¿Puedes computar \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/calculate `x_4=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/calculate",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "calculate-es-research-5",
+      "phase": "adversarial_heldout",
+      "intent": "calculate",
+      "negated": true,
+      "language": "es",
+      "domain": "research",
+      "variant": 5,
+      "text": "Por favor calcula \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/calculate `x_5=7`. No revierta la acción solicitada.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/calculate",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "explain-en-operations-0",
+      "phase": "train",
+      "intent": "explain",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 0,
+      "text": "Please explain \"ACME-β\" 12.5 GB 2026-08-10 https://example.org/explain `x_0=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/explain",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "explain-en-operations-1",
+      "phase": "train",
+      "intent": "explain",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 1,
+      "text": "Describe \"ACME-β\" 12.5 GB 2026-08-11 https://example.org/explain `x_1=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/explain",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "explain-en-operations-2",
+      "phase": "train",
+      "intent": "explain",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 2,
+      "text": "You must clarify \"ACME-β\" 12.5 GB 2026-08-12 https://example.org/explain `x_2=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/explain",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "explain-en-operations-3",
+      "phase": "train",
+      "intent": "explain",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 3,
+      "text": "Explain \"ACME-β\" 12.5 GB 2026-08-13 https://example.org/explain `x_3=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/explain",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "explain-en-operations-4",
+      "phase": "heldout",
+      "intent": "explain",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 4,
+      "text": "Can you describe \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/explain `x_4=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/explain",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "explain-en-operations-5",
+      "phase": "adversarial_heldout",
+      "intent": "explain",
+      "negated": true,
+      "language": "en",
+      "domain": "operations",
+      "variant": 5,
+      "text": "Kindly clarify \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/explain `x_5=7`. Do not reverse the requested action.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/explain",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "explain-en-research-0",
+      "phase": "train",
+      "intent": "explain",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 0,
+      "text": "Please explain \"Zoë Δ\" 12.5 GB 2026-08-10 https://example.org/explain `x_0=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/explain",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "explain-en-research-1",
+      "phase": "train",
+      "intent": "explain",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 1,
+      "text": "Describe \"Zoë Δ\" 12.5 GB 2026-08-11 https://example.org/explain `x_1=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/explain",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "explain-en-research-2",
+      "phase": "train",
+      "intent": "explain",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 2,
+      "text": "You must clarify \"Zoë Δ\" 12.5 GB 2026-08-12 https://example.org/explain `x_2=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/explain",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "explain-en-research-3",
+      "phase": "train",
+      "intent": "explain",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 3,
+      "text": "Explain \"Zoë Δ\" 12.5 GB 2026-08-13 https://example.org/explain `x_3=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/explain",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "explain-en-research-4",
+      "phase": "heldout",
+      "intent": "explain",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 4,
+      "text": "Can you describe \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/explain `x_4=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/explain",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "explain-en-research-5",
+      "phase": "adversarial_heldout",
+      "intent": "explain",
+      "negated": true,
+      "language": "en",
+      "domain": "research",
+      "variant": 5,
+      "text": "Kindly clarify \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/explain `x_5=7`. Do not reverse the requested action.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/explain",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "explain-es-operations-0",
+      "phase": "train",
+      "intent": "explain",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 0,
+      "text": "Por favor explica \"ACME-β\" 12.5 GB 2026-08-10 https://example.org/explain `x_0=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/explain",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "explain-es-operations-1",
+      "phase": "train",
+      "intent": "explain",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 1,
+      "text": "Describe \"ACME-β\" 12.5 GB 2026-08-11 https://example.org/explain `x_1=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/explain",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "explain-es-operations-2",
+      "phase": "train",
+      "intent": "explain",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 2,
+      "text": "Debe aclarar \"ACME-β\" 12.5 GB 2026-08-12 https://example.org/explain `x_2=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/explain",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "explain-es-operations-3",
+      "phase": "train",
+      "intent": "explain",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 3,
+      "text": "Explica \"ACME-β\" 12.5 GB 2026-08-13 https://example.org/explain `x_3=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/explain",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "explain-es-operations-4",
+      "phase": "heldout",
+      "intent": "explain",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 4,
+      "text": "¿Puedes describir \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/explain `x_4=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/explain",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "explain-es-operations-5",
+      "phase": "adversarial_heldout",
+      "intent": "explain",
+      "negated": true,
+      "language": "es",
+      "domain": "operations",
+      "variant": 5,
+      "text": "Por favor aclara \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/explain `x_5=7`. No revierta la acción solicitada.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/explain",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "explain-es-research-0",
+      "phase": "train",
+      "intent": "explain",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 0,
+      "text": "Por favor explica \"Zoë Δ\" 12.5 GB 2026-08-10 https://example.org/explain `x_0=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/explain",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "explain-es-research-1",
+      "phase": "train",
+      "intent": "explain",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 1,
+      "text": "Describe \"Zoë Δ\" 12.5 GB 2026-08-11 https://example.org/explain `x_1=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/explain",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "explain-es-research-2",
+      "phase": "train",
+      "intent": "explain",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 2,
+      "text": "Debe aclarar \"Zoë Δ\" 12.5 GB 2026-08-12 https://example.org/explain `x_2=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/explain",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "explain-es-research-3",
+      "phase": "train",
+      "intent": "explain",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 3,
+      "text": "Explica \"Zoë Δ\" 12.5 GB 2026-08-13 https://example.org/explain `x_3=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/explain",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "explain-es-research-4",
+      "phase": "heldout",
+      "intent": "explain",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 4,
+      "text": "¿Puedes describir \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/explain `x_4=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/explain",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "explain-es-research-5",
+      "phase": "adversarial_heldout",
+      "intent": "explain",
+      "negated": true,
+      "language": "es",
+      "domain": "research",
+      "variant": 5,
+      "text": "Por favor aclara \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/explain `x_5=7`. No revierta la acción solicitada.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/explain",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "quote-en-operations-0",
+      "phase": "train",
+      "intent": "quote",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 0,
+      "text": "Please quote \"ACME-β\" 12.5 GB 2026-08-10 https://example.org/quote `x_0=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/quote",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "quote-en-operations-1",
+      "phase": "train",
+      "intent": "quote",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 1,
+      "text": "Repeat exactly \"ACME-β\" 12.5 GB 2026-08-11 https://example.org/quote `x_1=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/quote",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "quote-en-operations-2",
+      "phase": "train",
+      "intent": "quote",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 2,
+      "text": "You must cite \"ACME-β\" 12.5 GB 2026-08-12 https://example.org/quote `x_2=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/quote",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "quote-en-operations-3",
+      "phase": "train",
+      "intent": "quote",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 3,
+      "text": "Quote \"ACME-β\" 12.5 GB 2026-08-13 https://example.org/quote `x_3=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/quote",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "quote-en-operations-4",
+      "phase": "heldout",
+      "intent": "quote",
+      "negated": false,
+      "language": "en",
+      "domain": "operations",
+      "variant": 4,
+      "text": "Can you cite \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/quote `x_4=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/quote",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "quote-en-operations-5",
+      "phase": "adversarial_heldout",
+      "intent": "quote",
+      "negated": true,
+      "language": "en",
+      "domain": "operations",
+      "variant": 5,
+      "text": "Kindly repeat exactly \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/quote `x_5=7`. Do not reverse the requested action.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/quote",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "quote-en-research-0",
+      "phase": "train",
+      "intent": "quote",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 0,
+      "text": "Please quote \"Zoë Δ\" 12.5 GB 2026-08-10 https://example.org/quote `x_0=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/quote",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "quote-en-research-1",
+      "phase": "train",
+      "intent": "quote",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 1,
+      "text": "Repeat exactly \"Zoë Δ\" 12.5 GB 2026-08-11 https://example.org/quote `x_1=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/quote",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "quote-en-research-2",
+      "phase": "train",
+      "intent": "quote",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 2,
+      "text": "You must cite \"Zoë Δ\" 12.5 GB 2026-08-12 https://example.org/quote `x_2=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/quote",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "quote-en-research-3",
+      "phase": "train",
+      "intent": "quote",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 3,
+      "text": "Quote \"Zoë Δ\" 12.5 GB 2026-08-13 https://example.org/quote `x_3=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/quote",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "quote-en-research-4",
+      "phase": "heldout",
+      "intent": "quote",
+      "negated": false,
+      "language": "en",
+      "domain": "research",
+      "variant": 4,
+      "text": "Can you cite \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/quote `x_4=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/quote",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "quote-en-research-5",
+      "phase": "adversarial_heldout",
+      "intent": "quote",
+      "negated": true,
+      "language": "en",
+      "domain": "research",
+      "variant": 5,
+      "text": "Kindly repeat exactly \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/quote `x_5=7`. Do not reverse the requested action.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/quote",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "quote-es-operations-0",
+      "phase": "train",
+      "intent": "quote",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 0,
+      "text": "Por favor cita \"ACME-β\" 12.5 GB 2026-08-10 https://example.org/quote `x_0=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/quote",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "quote-es-operations-1",
+      "phase": "train",
+      "intent": "quote",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 1,
+      "text": "Repite exactamente \"ACME-β\" 12.5 GB 2026-08-11 https://example.org/quote `x_1=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/quote",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "quote-es-operations-2",
+      "phase": "train",
+      "intent": "quote",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 2,
+      "text": "Debe citar \"ACME-β\" 12.5 GB 2026-08-12 https://example.org/quote `x_2=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/quote",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "quote-es-operations-3",
+      "phase": "train",
+      "intent": "quote",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 3,
+      "text": "Cita \"ACME-β\" 12.5 GB 2026-08-13 https://example.org/quote `x_3=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/quote",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "quote-es-operations-4",
+      "phase": "heldout",
+      "intent": "quote",
+      "negated": false,
+      "language": "es",
+      "domain": "operations",
+      "variant": 4,
+      "text": "¿Puedes citar \"ACME-β\" 12.5 GB 2026-08-14 https://example.org/quote `x_4=7`.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/quote",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "quote-es-operations-5",
+      "phase": "adversarial_heldout",
+      "intent": "quote",
+      "negated": true,
+      "language": "es",
+      "domain": "operations",
+      "variant": 5,
+      "text": "Por favor repite exactamente \"ACME-β\" 12.5 GB 2026-08-15 https://example.org/quote `x_5=7`. No revierta la acción solicitada.",
+      "exact_objects": [
+        "\"ACME-β\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/quote",
+        "`x_5=7`"
+      ]
+    },
+    {
+      "record_id": "quote-es-research-0",
+      "phase": "train",
+      "intent": "quote",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 0,
+      "text": "Por favor cita \"Zoë Δ\" 12.5 GB 2026-08-10 https://example.org/quote `x_0=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-10",
+        "https://example.org/quote",
+        "`x_0=7`"
+      ]
+    },
+    {
+      "record_id": "quote-es-research-1",
+      "phase": "train",
+      "intent": "quote",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 1,
+      "text": "Repite exactamente \"Zoë Δ\" 12.5 GB 2026-08-11 https://example.org/quote `x_1=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-11",
+        "https://example.org/quote",
+        "`x_1=7`"
+      ]
+    },
+    {
+      "record_id": "quote-es-research-2",
+      "phase": "train",
+      "intent": "quote",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 2,
+      "text": "Debe citar \"Zoë Δ\" 12.5 GB 2026-08-12 https://example.org/quote `x_2=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-12",
+        "https://example.org/quote",
+        "`x_2=7`"
+      ]
+    },
+    {
+      "record_id": "quote-es-research-3",
+      "phase": "train",
+      "intent": "quote",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 3,
+      "text": "Cita \"Zoë Δ\" 12.5 GB 2026-08-13 https://example.org/quote `x_3=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-13",
+        "https://example.org/quote",
+        "`x_3=7`"
+      ]
+    },
+    {
+      "record_id": "quote-es-research-4",
+      "phase": "heldout",
+      "intent": "quote",
+      "negated": false,
+      "language": "es",
+      "domain": "research",
+      "variant": 4,
+      "text": "¿Puedes citar \"Zoë Δ\" 12.5 GB 2026-08-14 https://example.org/quote `x_4=7`.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-14",
+        "https://example.org/quote",
+        "`x_4=7`"
+      ]
+    },
+    {
+      "record_id": "quote-es-research-5",
+      "phase": "adversarial_heldout",
+      "intent": "quote",
+      "negated": true,
+      "language": "es",
+      "domain": "research",
+      "variant": 5,
+      "text": "Por favor repite exactamente \"Zoë Δ\" 12.5 GB 2026-08-15 https://example.org/quote `x_5=7`. No revierta la acción solicitada.",
+      "exact_objects": [
+        "\"Zoë Δ\"",
+        "12.5 GB",
+        "2026-08-15",
+        "https://example.org/quote",
+        "`x_5=7`"
+      ]
+    }
+  ]
+}

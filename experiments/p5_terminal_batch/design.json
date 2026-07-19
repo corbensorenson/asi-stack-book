@@ -1,0 +1,32 @@
+{
+  "schema_version": "asi_stack.p5_terminal_batch_design.v1",
+  "state": "frozen_before_terminal_audit",
+  "recorded_date": "2026-07-16",
+  "atoms": [
+    {
+      "atom_id": "circle-calculus-and-proof-carrying-ai-contracts.mechanism.003",
+      "falsifier": "named target fails to compile or command, environment, result, proof boundary, and consumer-rejecting controls are absent",
+      "ceiling": "one pinned Circle rope target and finite consumer path only"
+    },
+    {
+      "atom_id": "system-boundaries-and-authority.invariant.001",
+      "falsifier": "any finite reachable mutation widens declared principal, operation, target, ceiling, epoch, expiry, remaining-use, approval, or dispatch authority without an explicit grant",
+      "ceiling": "finite trusted-input authority model only"
+    },
+    {
+      "atom_id": "capability-replacement-and-rollback.invariant.011",
+      "falsifier": "the evidence collapses artifact/digest, behavior, privacy, storage, descendant, service, or compensation outcomes into one rollback-success bit",
+      "ceiling": "bounded local replacement and unlearning records; service restart and external compensation unexecuted"
+    }
+  ],
+  "allowed_terminal_dispositions": [
+    "promoted_at_bounded_scope",
+    "retained_after_full_attempt",
+    "narrowed_after_full_attempt",
+    "refuted_after_full_attempt",
+    "deprecated_after_full_attempt",
+    "blocked_after_full_attempt"
+  ],
+  "outcome_aware_retry_allowed": false,
+  "chapter_core_promotion_allowed": false
+}

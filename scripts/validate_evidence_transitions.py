@@ -11,6 +11,12 @@ from validate_protocol_examples import validate_value
 ROOT = Path(__file__).resolve().parents[1]
 TRANSITION_DIR = ROOT / "evidence_transitions"
 SCHEMA = ROOT / "schemas" / "evidence_transition_record.schema.json"
+ADMINISTRATIVE_SCHEMA_VERSIONS = {
+    "asi_stack.instrument_failure_supersession.v1",
+}
+ADMINISTRATIVE_TRANSITION_TYPES = {
+    "instrument_failure_supersession",
+}
 
 
 def load_json(path: Path) -> Any:
@@ -34,6 +40,8 @@ def main() -> None:
 
     errors: list[str] = []
     seen_ids: set[str] = set()
+    transition_count = 0
+    administrative_count = 0
     for record_path in records:
         relative = str(record_path.relative_to(ROOT))
         try:
@@ -41,6 +49,26 @@ def main() -> None:
         except Exception as exc:
             errors.append(f"{relative}: invalid JSON: {exc}")
             continue
+        if not isinstance(value, dict):
+            errors.extend(validate_value(value, schema, relative))
+            continue
+
+        is_administrative = (
+            value.get("schema_version") in ADMINISTRATIVE_SCHEMA_VERSIONS
+            or value.get("transition_type") in ADMINISTRATIVE_TRANSITION_TYPES
+        )
+        if is_administrative:
+            administrative_count += 1
+            if value.get("support_state_effect") != "none":
+                errors.append(f"{relative}: administrative disposition must have support_state_effect none.")
+            non_claims = value.get("non_claims")
+            if not isinstance(non_claims, list) or not non_claims:
+                errors.append(f"{relative}: administrative disposition must preserve non_claims.")
+            if value.get("review_status") == "accepted":
+                errors.append(f"{relative}: administrative disposition cannot masquerade as an accepted claim transition.")
+            continue
+
+        transition_count += 1
         errors.extend(validate_value(value, schema, relative))
         transition_id = value.get("transition_id") if isinstance(value, dict) else None
         if isinstance(transition_id, str):
@@ -79,7 +107,11 @@ def main() -> None:
             print(f" - {error}")
         sys.exit(1)
 
-    print(f"Evidence transition validation passed: {len(records)} record(s).")
+    print(
+        "Evidence transition validation passed: "
+        f"{transition_count} claim transition record(s), "
+        f"{administrative_count} administrative disposition record(s)."
+    )
 
 
 if __name__ == "__main__":

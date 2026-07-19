@@ -7,6 +7,18 @@
     {
       "script": "scripts/validate_curated_reader_pdf_reading_flow.py",
       "reason": "Artifact-producing local PDF reading-flow review: requires the ignored curated-reader PDF artifact and Poppler text extraction, then writes the tracked curated format manifest. The orchestrated gate validates the resulting manifest and blocked release record instead of regenerating the local review artifact in every CI run."
+    },
+    {
+      "script": "scripts/validate_p4_m7_update_unlearning_v2.py",
+      "reason": "Superseded v2 confirmatory validator cannot run by design because the frozen v2 instrument failed preflight and no confirmatory result was created; validate_p4_m7_update_unlearning_failure_lineage.py and the terminal v3 validator preserve and enforce that absence."
+    },
+    {
+      "script": "scripts/validate_p4_m7_update_unlearning_v2_design.py",
+      "reason": "Historical positive-gate validator is intentionally inapplicable after the frozen v2 preflight failed; the accepted failure diagnosis is enforced by validate_p4_m7_update_unlearning_failure_lineage.py and the terminal v3 design validator."
+    },
+    {
+      "script": "scripts/validate_reflexive_router_source_intake.py",
+      "reason": "Local source-intake validator requires the ignored private/raw Markdown and DOCX source forms; the public-safe source note, exact intake decision, dispatch fixture, roadmap contract, and raw-publication boundary are covered by tracked validators."
     }
   ]
 }

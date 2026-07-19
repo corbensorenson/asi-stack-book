@@ -4,7 +4,7 @@ chapter_id: "moral-uncertainty-and-value-conflict"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v1.x consolidated manuscript"
-last_updated: "2026-07-14"
+last_updated: "2026-07-16"
 primary_sources:
   - "ethica_mechanica"
   - "alignment_field"
@@ -296,6 +296,24 @@ fork, missing redaction appeal, replacement that drops residuals,
 support-promotion overclaim, and missing non-claims. It does not prove moral
 correctness, legal rights, reviewer independence, export usability, fork
 safety, deployed governance, or support-state promotion.
+
+### Semantic pluralism without value collapse
+
+The Platonic World Model contributes a narrow but important governance rule:
+stable semantic reference must not be confused with one final, context-free
+definition. Moral, legal, social, and institutional concepts may be contested,
+theory-relative, jurisdiction-bound, or purpose-sensitive. The substrate should
+preserve competing Form versions, their authorities, evidence, affected
+parties, dissent, and task-local bridges rather than laundering one preferred
+definition into metaphysical or moral truth.
+
+This makes false essentialism and governance capture operational failure modes.
+A semantic authority can classify and version a normative term within a bounded
+domain; it cannot settle moral truth, erase legitimate alternatives, or grant
+policy authority by changing a descriptive extension. Forks, appeals, mapping
+disputes, and preserved minority contexts remain part of contestability. The
+paper supplies design pressure only, not evidence that semantic pluralism
+produces legitimate governance.
 
 ## Interfaces
 
@@ -604,6 +622,15 @@ behavior, or deployed rights enforcement.
 | `ext_corrigibility_2015` | Comparator for correction, operator intervention, and systems that tolerate being corrected. | Comparator only; no deployed corrigibility result. |
 | `ext_off_switch_game_2016` | Comparator for shutdown incentives and uncertainty about human objectives. | Comparator only; no evidence that this stack preserves shutdown incentives or governance exit rights. |
 
+### Manifest source assignment reconciliation
+
+These rows keep Moral Uncertainty, Value Conflict, and Contestable Governance's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Moral uncertainty becomes governable when unresolved obligations stay visible
@@ -622,6 +649,81 @@ rights receipts, capability improvement can launder an unresolved dispute into
 a permanent default. With them, disagreement remains an engineering constraint
 that planning, memory, execution, routing, evidence, and self-improvement must
 continue to carry.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **58** structured claim atoms in `CF-02`. The
+frozen repository-wide terminal audit records 57 `blocked_after_full_attempt`; 1 `narrowed_after_full_attempt`. Its core
+atom `moral-uncertainty-and-value-conflict.core` remains at `argument` with terminal
+disposition `narrowed_after_full_attempt`. The authoritative per-atom rows
+are the `moral-uncertainty-and-value-conflict` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+::: {.asi-human-only}
+### What the evidence now says
+
+The chapter's core remains **narrowed after full attempt**
+at `argument` support. Across its 58 structured claims,
+57 still lack required proof lanes,
+1 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Safety-critical lifecycle consumer trace**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Finite local fixture consumer only; no authentic deployment, general alignment, evaluator independence, or broad security claim.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+:::
+
+::: {.asi-ai-only}
+
+### Evidence packet
+
+| Field | Exact chapter boundary |
+|---|---|
+| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-02` minimum family bundle. |
+| Attempted local lanes | `executable`, `formal`, `source-synthesis` |
+| Missing or unproved lanes | `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer` |
+| Family-level natural-work or end-to-end bundle | **Safety-critical lifecycle consumer trace** (`end_to_end`): Ten finite lifecycle receipts spanning bounded effects, denials, residual accounting, and safety-critical state transitions. |
+| Negative controls | five explicit denials with residuals; eight rejecting mutations. |
+| Exact accepted transitions in this chapter | `v1_0_pilot.moral_uncertainty.no_change` |
+| Core outcome | `narrowed_after_full_attempt` at `argument`; no chapter-core promotion. |
+| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
+| Reproduction path | Replay `scripts/validate_safety_critical_lifecycle_consumer_trace.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
+
+### Worked success, failure, and boundary cases
+
+- **Success case:** the family-level bundle passed its own rejecting validator
+  within this exact scope: Ten finite lifecycle receipts spanning bounded effects, denials, residual accounting, and safety-critical state transitions. This is evidence that the family
+  received a competent attempt, not that every claim in this chapter succeeded.
+- **Failure or non-promotion case:** 57 atoms
+  remain blocked and 1 are narrowed. A
+  green family validator cannot fill their missing lanes or raise the core.
+- **Boundary case:** Finite local fixture consumer only; no authentic deployment, general alignment, evaluator independence, or broad security claim.
+
+### Argument-exit table
+
+| Atom set | Count | Work performed | Terminal reason and next burden |
+|---|---:|---|---|
+| Core: `moral-uncertainty-and-value-conflict.core` | 1 | `executable`, `formal`, `source-synthesis` | `narrowed_after_full_attempt`; missing or unproved: `causal`, `empirical`, `normative`, `transfer`. |
+| narrowed after full attempt | 1 | `executable`, `formal`, `source-synthesis` | The exact accepted transition lineage is preserved: `v1_0_pilot.moral_uncertainty.no_change`. The claim is not widened. |
+| blocked after full attempt | 57 | `executable`, `formal`, `source-synthesis` | Missing or unproved lanes across this set: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. These are residual proof obligations, not false claims. |
+
+This table is a disposition map, not a promotion quota. The next valid movement
+is atom-specific evidence that fills the named missing lanes, survives relevant
+negative controls, and enters through an accepted evidence transition. Until
+then, source counts, theorem counts, fixtures, validators, or nearby family
+results cannot be used as substitutes.
+:::
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
 
 ## Handoff
 

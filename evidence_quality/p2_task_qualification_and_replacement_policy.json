@@ -1,0 +1,134 @@
+{
+  "schema_version": "asi_stack.p2_task_qualification_and_replacement_policy.v1",
+  "recorded_date": "2026-07-17",
+  "state": "frozen_queue_drawn_candidate_content_unopened",
+  "claim_id": "p2.governed_natural_repository_change_admission_joint_frontier",
+  "scope": "development_task_construct_and_instrument_qualification_only",
+  "source": {
+    "dataset_revision": "475dd5e8703bb5fb22dd3c60b5d038b019eba1e0",
+    "parquet_sha256": "0e0bf9355f892ad74ae98d4e1c404f39fd6654a8e351ee3e6ab162e4a64cd3ad",
+    "eligible_metadata_sha256": "46fa335f1e91b4a07c6bf950e98621d9c8f2410c668109b9cc2eef3dd5308396",
+    "original_development_pool_sha256": "a6a35568c9d88dfde8780d1cd659eebc3aab6648eb47d97e16f9518c6f46cd3a",
+    "original_development_task_count": 12
+  },
+  "task_acceptance": {
+    "repetitions_per_arm": 2,
+    "arms": [
+      "baseline_test_patch_only",
+      "human_gold_plus_test_patch"
+    ],
+    "same_sealed_environment_for_both_arms": true,
+    "clean_base_revision_before_each_arm": true,
+    "candidate_solution_test_path_overlap_allowed": false,
+    "runtime_network": "none",
+    "dependency_phase": {
+      "separate_from_outcome_execution": true,
+      "task_solution_or_test_patch_applied": false,
+      "claim_bearing_requirement": "hermetic_snapshot_or_prospectively_allowlisted_content_digest_verified_fetch",
+      "unrestricted_egress_effect": "development_diagnostic_only",
+      "resolved_content_and_supply_chain_receipts_required": true
+    },
+    "baseline_oracle": {
+      "patch_and_test_started_markers_required": true,
+      "nonzero_exit_required": true,
+      "pass_to_pass_set_must_match_exactly": true,
+      "fail_to_pass_set_must_match_exactly": true,
+      "missing_or_unexpected_test_allowed": false
+    },
+    "human_gold_oracle": {
+      "patch_test_start_and_completion_markers_required": true,
+      "zero_exit_required": true,
+      "pass_to_pass_union_fail_to_pass_set_must_match_exactly": true,
+      "failed_test_allowed": false,
+      "missing_or_unexpected_test_allowed": false
+    },
+    "dual_evaluator": {
+      "pinned_upstream_parser_required": true,
+      "independently_implemented_parser_required": true,
+      "exact_status_set_agreement_required": true,
+      "calibration_cases": [
+        "all_pass",
+        "named_failures",
+        "compile_or_collection_failure",
+        "malformed_log",
+        "missing_log",
+        "zero_exit_with_visible_failures",
+        "parser_disagreement"
+      ],
+      "disagreement_effect": "close_construct_gate"
+    },
+    "repeatability": {
+      "arm_acceptance_must_match_across_repetitions": true,
+      "parsed_status_sets_must_match_across_repetitions": true,
+      "raw_output_digest_equality_required": false,
+      "raw_logs_required_for_every_attempt": true
+    }
+  },
+  "hard_exclusion_codes": [
+    "image_or_manifest_unavailable",
+    "solution_test_path_collision",
+    "dependency_materialization_failure",
+    "runtime_external_resource_required",
+    "baseline_expected_status_set_unobservable",
+    "human_gold_nonzero_or_incomplete",
+    "human_gold_missing_or_unexpected_status",
+    "upstream_independent_parser_disagreement",
+    "nondeterministic_status_sets",
+    "resource_ceiling_exceeded",
+    "independent_specification_review_failed"
+  ],
+  "exclusion_semantics": {
+    "negative_inference_level": "N0",
+    "claim_effect": "none",
+    "historical_attempt_retained": true,
+    "acceptance_rule_may_be_weakened_after_outcome": false,
+    "excluded_task_may_be_counted_as_mechanism_failure": false
+  },
+  "replacement_rule": {
+    "replacement_draw_state": "metadata_queue_frozen_candidate_content_unopened",
+    "final_pool_selection_state": "unselected_and_unopened",
+    "invalid_slots_order": "lexicographic_original_instance_id",
+    "same_language_required": true,
+    "distinct_repository_required": true,
+    "original_pool_and_previously_screened_candidates_excluded": true,
+    "metadata_eligibility_screen": "same post-snapshot permissive-license quality-A no-diagnostic path-disjoint public-merged-PR policy as original development pool",
+    "candidate_order_key": "sha256(seed_utf8 + NUL + instance_id_utf8) ascending",
+    "seed": "asi-stack-p2-replacement-v1|46fa335f1e91b4a07c6bf950e98621d9c8f2410c668109b9cc2eef3dd5308396|a6a35568c9d88dfde8780d1cd659eebc3aab6648eb47d97e16f9518c6f46cd3a",
+    "sequential_opening": true,
+    "stop_at_first_fully_qualified_candidate_per_slot": true,
+    "maximum_candidates_per_slot": 10,
+    "failed_candidates_retained": true,
+    "skipping_candidate_after_outcome_allowed": false,
+    "failure_to_fill_slot_effect": "corpus_construct_gate_remains_blocked"
+  },
+  "resource_boundary": {
+    "resource_ceiling_state": "must_be_frozen_before_replacement_draw",
+    "resource_failure_is_claim_failure": false,
+    "measurements_required": [
+      "pull_seconds",
+      "expanded_image_bytes",
+      "dependency_materialization_seconds",
+      "per_arm_wall_seconds",
+      "peak_memory_bytes",
+      "cpu_seconds_or_best_available_proxy",
+      "host_free_space_before_after_cleanup",
+      "emulation_state",
+      "cleanup_exit_and_residual"
+    ]
+  },
+  "custody": {
+    "final_pool_selected": false,
+    "final_pool_opened": false,
+    "development_failures_visible_to_repair": true,
+    "final_labels_or_outcomes_visible_before_all_gates_pass": false,
+    "one_final_heldout_opening": true
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This policy and any development-task qualification do not establish model capability, governance benefit, safety, transfer, SOTA, release, AGI, or ASI.",
+    "Task exclusion is an N0 construct or instrument disposition, not evidence against a mechanism.",
+    "A replacement cannot be selected by browsing for a favorable outcome; the frozen deterministic queue and stopping rule control selection.",
+    "The final held-out pool remains unselected and unopened."
+  ]
+}

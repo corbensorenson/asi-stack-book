@@ -4,7 +4,7 @@ chapter_id: "capability-replacement-and-rollback"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 proof-program manuscript"
-last_updated: "2026-07-14"
+last_updated: "2026-07-16"
 primary_sources:
   - "scf"
   - "rmi"
@@ -44,7 +44,7 @@ open_evidence_gaps:
 | Source queue | primary: `scf`, `rmi`, `benchmaxxing`; supporting: `cognitive_loop_closure`, `talos`; external variants: corrigibility, Argo Rollouts, feature toggles, Google Cloud MLOps, Kubernetes Deployments, TxFS; connector/recovery: `moecot` |
 | Source loading state | all twelve source notes reviewed and manifest-mapped; local raw passages reviewed for `scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, and `talos`; `moecot` mapped from its durable source note; six external comparators mapped through reviewed notes |
 | Source mapping review | 12/12 assigned sources have bounded mappings; no source reproduction or support promotion follows. |
-| Test state | synthetic: 5/9 transaction records, selected readiness/residual gates, six-step 2-valid/3-invalid transaction trace plus 4 sequence controls, 2-valid/6-invalid intent bridge; formal: 37 theorem declarations under 6 targets; bounded outcomes: 15/15 exact local 24-surface rollback with no eligible utility gain, 32/36 attack-control rollback with 2/36 useful release, and 12/12 nine-surface harness probes with all model calls failing before candidate creation. No general, semantic, external-effect, or production recovery claim. |
+| Test state | synthetic: 5/9 transaction records, selected readiness/residual gates, six-step 2-valid/3-invalid transaction trace plus 4 sequence controls, 2-valid/6-invalid intent bridge; formal: 37 theorem declarations under 6 targets; bounded outcomes: 15/15 P3 and 35/35 M7 exact local 24-surface rollback transactions, 32/36 attack-control rollback with 2/36 useful release, and 12/12 nine-surface harness probes with all model calls failing before candidate creation. M7 also preserves retained research evidence, an unacknowledged remote replica, and unerased descendants, so no general, semantic, privacy, external-effect, or production recovery claim follows. |
 
 ## Drafting guardrail
 
@@ -158,6 +158,29 @@ Canary population, duration, traffic and authority, metrics, thresholds, outcome
 Commit updates route and receipt state atomically where possible, preserves the prior route until closure, and records every subsystem outside that atomic boundary. Rollback then executes against the complete declared inventory and compares post-recovery state and effects with the prospective objective. If reversal is impossible, the transaction records compensation, fork, quarantine, revocation, disclosure response, downstream invalidation, or residual instead of claiming success.
 
 Terminal closure occurs only after the monitor window and recovery obligations settle. The receipt binds before/after digests, observations, incidents, affected consumers and descendants, rollback or compensation outcomes, unresolved effects, evidence transitions, changelog/public projections, and disposition. Rolled-back and failed attempts remain durable evidence.
+
+### Candidate-specific equivalence and linked replacement
+
+Deterministic Capability Compilation treats replacement as neural translation
+validation with three outcomes: `pass`, `fail`, and `unknown`. A candidate is
+checked at schema, field, interface, composition, property, adversarial,
+learner-induced-state, environmental, independent-evaluation, and natural-
+monitoring layers. A finite pass proves only the declared checks. `unknown` is
+not coerced into success merely because a deployment decision is inconvenient.
+
+The safest proposed baseline is a sparse linked composite in which unchanged
+paths, parameter ownership, activation lanes, fallbacks, and router decisions
+remain inspectable. Dense consolidation is link-time optimization and requires
+its own translation validation. Recovery follows the same principle: restoring
+a weight file is only one dimension. Optimizer, scheduler, RNG, caches, backups,
+router state, descendants, credentials, external effects, and compensating
+actions remain in the recovery ledger.
+
+This source adds a stronger experiment target, not a result. The book still
+requires a real linked-candidate campaign with shared-state interference,
+independent evaluation, durable counterexamples, effect-complete recovery, and
+matched sparse, dense, adapter, merge, and retraining baselines before any
+replacement claim can move above `argument`.
 
 ## Interfaces
 
@@ -320,6 +343,15 @@ The intent-governed replacement bridge closes one cross-layer boundary without c
 
 The crosswalk gives the source basis for transaction vocabulary. It does not treat source-reported ratchets, tool lifecycles, audit pipelines, or replacement designs as local results.
 
+### Manifest source assignment reconciliation
+
+These rows keep Capability Replacement and Rollback's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Post-v2.1 full-state rollback result
 
 The update campaign makes rollback authority prospective and inventories 24
@@ -344,6 +376,15 @@ semantic effects. Because every paired model call failed before a structured
 candidate existed, the accepted record remains
 `evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json`.
 
+The M7 update/unlearning campaign adds 35/35 exact restorations over the same
+24 named surface classes across five seeds and seven arms. This strengthens
+only the inventory-specific transaction result. Its deletion receipt
+deliberately retains the immutable research corpus, features, checkpoints, and
+raw evidence; an unavailable simulated remote replica and external descendant
+do not acknowledge erasure. Exact rollback and partial local deletion can
+therefore coexist with unresolved privacy, remote, descendant, legal, and
+semantic recovery claims.
+
 | Source | Title | Use and boundary |
 |---|---|---|
 | `ext_txfs_2018` | TxFS: Leveraging File-System Crash Consistency to Provide ACID Transactions | Transactional-filesystem comparator for write-set, recovery, and crash-consistency boundaries; not evidence that ASI Stack external effects are transactional. |
@@ -359,6 +400,81 @@ The security kernel keeps replacement from becoming a secret, permission, or con
 A replacement should be easier to reject than to overclaim. If the transaction cannot prospectively identify its prior state, full declared inventory, checkpoint authority, monitor, trigger, recovery objective, irreversible effects, and owners, the candidate is not ready for default use.
 
 The current evidence already teaches the right lesson: exact rollback is possible inside a carefully declared local inventory, yet useful improvement can still fail and a different rollback cohort can miss its gate. Reversible progress remains the research target, not the reported outcome.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **59** structured claim atoms in `CF-01`. The
+frozen repository-wide terminal audit records 57 `blocked_after_full_attempt`; 2 `narrowed_after_full_attempt`. Its core
+atom `capability-replacement-and-rollback.core` remains at `argument` with terminal
+disposition `narrowed_after_full_attempt`. The authoritative per-atom rows
+are the `capability-replacement-and-rollback` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+::: {.asi-human-only}
+### What the evidence now says
+
+The chapter's core remains **narrowed after full attempt**
+at `argument` support. Across its 59 structured claims,
+57 still lack required proof lanes,
+2 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Governed usefulness confirmatory campaign**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Bounded local non-core governance effect only; no family-wide truth, transfer, deployment, or chapter-core promotion.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+:::
+
+::: {.asi-ai-only}
+
+### Evidence packet
+
+| Field | Exact chapter boundary |
+|---|---|
+| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-01` minimum family bundle. |
+| Attempted local lanes | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` |
+| Missing or unproved lanes | `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer` |
+| Family-level natural-work or end-to-end bundle | **Governed usefulness confirmatory campaign** (`natural_work`): One fresh 16-task held-out local confirmatory denominator after a separately frozen 40-candidate tuning pool. |
+| Negative controls | simple baseline; evidence-freshness ablation; six co-primary checks; validator-owned laundering mutations. |
+| Exact accepted transitions in this chapter | `post_v2_3.p5.rollback_outcomes.narrow`, `v1_0_pilot.capability_replacement.no_change` |
+| Core outcome | `narrowed_after_full_attempt` at `argument`; no chapter-core promotion. |
+| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
+| Reproduction path | Replay `scripts/validate_p4_governed_usefulness_confirmatory.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
+
+### Worked success, failure, and boundary cases
+
+- **Success case:** the family-level bundle passed its own rejecting validator
+  within this exact scope: One fresh 16-task held-out local confirmatory denominator after a separately frozen 40-candidate tuning pool. This is evidence that the family
+  received a competent attempt, not that every claim in this chapter succeeded.
+- **Failure or non-promotion case:** 57 atoms
+  remain blocked and 2 are narrowed. A
+  green family validator cannot fill their missing lanes or raise the core.
+- **Boundary case:** Bounded local non-core governance effect only; no family-wide truth, transfer, deployment, or chapter-core promotion.
+
+### Argument-exit table
+
+| Atom set | Count | Work performed | Terminal reason and next burden |
+|---|---:|---|---|
+| Core: `capability-replacement-and-rollback.core` | 1 | `executable`, `formal`, `source-synthesis` | `narrowed_after_full_attempt`; missing or unproved: `causal`, `empirical`, `normative`, `transfer`. |
+| narrowed after full attempt | 2 | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` | The exact accepted transition lineage is preserved: `post_v2_3.p5.rollback_outcomes.narrow`, `v1_0_pilot.capability_replacement.no_change`. The claim is not widened. |
+| blocked after full attempt | 57 | `executable`, `formal`, `source-synthesis` | Missing or unproved lanes across this set: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. These are residual proof obligations, not false claims. |
+
+This table is a disposition map, not a promotion quota. The next valid movement
+is atom-specific evidence that fills the named missing lanes, survives relevant
+negative controls, and enters through an accepted evidence transition. Until
+then, source counts, theorem counts, fixtures, validators, or nearby family
+results cannot be used as substitutes.
+:::
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
 
 ## Handoff
 

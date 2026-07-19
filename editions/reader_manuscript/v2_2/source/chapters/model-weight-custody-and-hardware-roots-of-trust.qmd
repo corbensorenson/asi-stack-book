@@ -1,0 +1,748 @@
+# Model-Weight Custody and Hardware Roots of Trust
+
+A model's weights make a trained capability portable across backups,
+deployment images, and recipient environments. A runtime may correctly refuse
+a tool call even after the artifact that generated it has escaped the intended
+boundary. Custody therefore begins before inference and continues after a load
+or release decision.
+
+The asset needs a stable identity and history: who may hold it, where it may be
+stored, which key policy permits decryption, which measured environment may
+receive it, and what happens after a credential, host, configuration, or copy
+is suspected. Hardware attestation can report a bounded measurement about one
+environment, but it cannot make a difficult security or safety judgment true.
+If a required custody predicate is absent, the load must not proceed.
+
+Three distinctions keep the record honest. The artifact has a lifecycle even
+when no runtime exists. A signature or measurement may provide evidence without
+granting authority. Backups, derivatives, recipient copies, and disclosed
+weights may survive the policies that once governed them.
+
+The governing test is whether identity, evidence, authority, descendants, and
+irreversible residuals remain visible from acquisition through disposal.
+
+## Problem
+
+A system can govern runtime tool authority while model weights, optimizer and
+scheduler state, adapters, quantizations, distillations, checkpoints, caches,
+packages, recovery images, extracted equivalents, and recipient descendants
+move across storage, key, hardware, vendor, operator, and organizational trust
+boundaries without effect-complete custody. Protecting one canonical file can
+therefore produce a perfect report over the wrong asset set.
+
+The custody boundary begins with a threat-model and asset-closure rule. It names
+which artifacts or effective capabilities count as reconstructable derivatives,
+which holders and locations are in scope, which adversaries and security
+properties matter, which effort level defines a sanitization or extraction
+claim, which availability and recovery objectives must survive, and which
+unknown channels remain residuals. “All weights controlled” is inadmissible
+unless “all” has a versioned closure definition and an exercised discovery path.
+
+Every transition then needs exact content and lineage identity; holder, purpose,
+authority, and location; storage and transfer state; key and metadata lifecycle;
+Attester, Verifier, and Relying-Party roles and policies; reference values,
+endorsements, trust anchors, freshness, measured environments, and dependency
+graph; requested and observed decryption/load/use effects; plaintext and output-
+extraction exposure; copy, recipient, and descendant state; incident, revocation,
+recovery, sanitization, and irreversible-release consequences; and terminal
+residual ownership.
+
+This matters especially for a high-capability system because weight access can
+be both a security concern and an irreversible governance transition. A broad
+recipient distribution, an open-weight release, and a local confidential load
+are not variants of one ordinary deployment toggle. They have different
+recall, derivative-copy, monitoring, and residual properties.
+
+### Copy-lineage accounting
+
+Custody is better modeled as an event graph than as a label on one storage
+container. A copy event forks lineage: the child receives a digest, holder,
+purpose, location class, inherited restrictions, expiry, and a link to the
+authority that permitted creation. Encryption, transfer, decryption, load,
+backup, derivation, revocation, destruction, and disclosure are different edge
+types because they change different predicates. A successful decryption does
+not imply permission to load; a successful load does not imply permission to
+serve; deleting one node does not establish deletion of its descendants.
+
+This representation also prevents false recall claims. Revocation can stop a
+future key release or route while leaving plaintext memory, recipient copies,
+derivative checkpoints, offline backups, or already disclosed bytes outside
+the controller's reach. Each such branch needs an owner and terminal state:
+verified destruction, access revoked, quarantined, transferred, irreversibly
+released, or unresolved. The graph is not proof that every physical copy has
+been discovered. It is the accountable inventory against which missing edges,
+stale attestations, and unbounded propagation can be challenged before another
+custody transition is authorized.
+
+## Why existing approaches are insufficient
+
+RAND's model-weight-security work is a useful comparator because it treats
+weights as a high-value asset exposed through many technical, operational,
+physical, and organizational paths. Its defense-in-depth and graduated-security
+framing resists the claim that one storage control settles custody. It does not,
+however, assess this repository's weights, adversaries, controls, or incident
+response.
+
+Confidential-computing guidance adds another bounded comparator. NIST's draft
+describes hardware-enabled trust domains, encrypted model memory, attestation,
+and key-release conditions. NVIDIA documents a vendor-specific lifecycle in
+which encrypted weights remain outside a confidential workload until a
+policy-sensitive attestation decision permits access. Neither description makes
+an attestation a universal security proof; each depends on stated hardware,
+software, policy, and operator assumptions.
+
+RFC 9334 sharpens that boundary by separating Attester Evidence, Verifier
+appraisal, Attestation Results, and the Relying Party's application-specific
+decision. It also makes reference values, endorsements, appraisal policies,
+freshness, layered environments, trust anchors, verifier dependencies, and
+privacy visible. A key service that accepts a token without preserving those
+roles and policies collapses evidence and authorization into one self-ratifying
+bit.
+
+Key custody is a separate lifecycle. NIST SP 800-57 Part 1 Rev. 5 is the current
+final general key-management baseline as of this review; NIST lists Rev. 6 as a
+draft. It adds key and metadata inventory, purpose, protection, access, usage
+period, compromise, rotation, backup, recovery, archival, destruction, trust-
+anchor, and emergency-authority obligations. Encrypting a model without owning
+those states protects the ciphertext story, not the custody system.
+
+NIST SP 800-88 Rev. 2 prevents another collapse: deletion, key revocation,
+cryptographic erase, media sanitization, recipient recall, and public disclosure
+are distinct. Sanitization is relative to target data, media, method,
+sensitivity, validation, and an assumed effort level. A successful command on
+one device cannot prove that plaintext memory, caches, snapshots, backups,
+cloud replicas, derivatives, or recipient copies are inaccessible.
+
+Release mechanisms require a separate objection. Formal work on model-weight
+release schemes shows why informal assurances about restricted distribution can
+fail under a specified extraction attack. This does not mean every release
+scheme fails. It means a release claim needs an attacker model, stated property,
+scope, and residuals, particularly when redistributed or extracted artifacts
+cannot realistically be recalled.
+
+Existing ASI Stack layers deliberately retain different jobs. Artifact Graphs
+record provenance; Security Kernel controls runtime secrets and authority;
+Capability Thresholds bind observations to commitments; Runtime Adapters govern
+actions; Readiness Gates decide bounded admission. None should silently inherit
+responsibility for the identity, custody, measurement, key-release, and
+irreversibility history of the model artifact itself.
+
+### Strongest-neighbor comparison
+
+The closest neighboring approaches solve different slices of the problem. The
+chapter should be rejected as redundant if it merely renames one of them.
+
+| Neighbor | What it contributes | What remains outside it | Chapter delta |
+|---|---|---|---|
+| Graduated model-weight security and defense in depth | Threat classes, attacker-sensitive posture, layered technical and organizational controls, and incident response. | A security level does not itself bind a particular artifact, load request, attestation, consumer, or irreversible release to one reviewable route. | Make each custody decision a versioned transition over a named artifact and preserve the failed predicate and residual downstream. |
+| Confidential-computing trust domain | Encrypted memory in use, measured environment, attestation evidence, and policy-sensitive key access. | The measurement's scope, verifier, freshness, policy lineage, recipient, post-load authority, and recall limits remain distinct assumptions. | Treat attestation as one typed predicate in a key/load route rather than as a portable trust verdict. |
+| Vendor confidential-model lifecycle | A concrete encrypted-artifact-to-confidential-workload sequence and operational configuration surface. | Vendor documentation does not independently establish cross-platform security, verifier independence, side-channel resistance, or correct local deployment. | Require vendor-neutral identities, explicit trust dependencies, independent observation where available, and expiration or re-review when any dependency changes. |
+| Signed provenance and step attestations | Artifact hashes, functionary identities, lifecycle-step claims, and tamper-evident chain-of-custody evidence. | A valid signature can authenticate a harmful, compromised, incorrectly scoped, or unauthorized artifact; it does not supply confidentiality or release merit. | Keep provenance evidence linked to, but unable to replace, custody policy, environment verification, residual ownership, and release authority. |
+| Formal critique of protected weight release | Explicit attacker and security-property definitions plus extraction counterexamples. | A formal failure for one scheme does not decide all releases, and a passed scheme still does not settle safety or social authority. | Represent release as a distinct transition with adversary/property scope, derivative-copy assumptions, irreversibility, and a non-recall residual. |
+
+The strongest delta is therefore not “use hardware.” It is the refusal to let
+different kinds of evidence collapse into one security bit. Identity evidence,
+provenance, custody authorization, environment measurement, key release, load
+observation, runtime permission, and distribution authority remain separate
+claims with separate issuers, expiry conditions, and consumers.
+
+## Core Claim
+
+Every governed model-family custody transition should bind a prospectively declared asset-and-derivative closure to exact artifact and lineage identity, holder and purpose, storage/transfer state, key and metadata lifecycle, Attester/Verifier/Relying-Party roles and policies, reference values and endorsements, freshness, measured target and attesting environments, verifier dependencies, independent-enough effect observation, plaintext and output-extraction exposure, load/use/serve/release authority separation, backup and emergency recovery, copy/recipient/descendant state, incident and revocation semantics, sanitization method and validation, irreversible distribution, privacy/rights/cost residuals, and terminal ownership; missing or failed modeled predicates route to a named non-default state, while no record, encryption, signature, security level, attestation result, hardware root, key action, deletion receipt, or finite proof by itself establishes custody completeness, confidentiality, trustworthy hardware, model safety, release merit, readiness, or deployment authority (evidence boundary: architectural argument).
+This remains a composite research claim at `argument`. It is refuted for a
+frozen scope by any admitted transition that violates its declared identity,
+closure, key, appraisal, observation, authority, copy, recovery, sanitization,
+privacy, cost, or residual rule. Its proposed benefit fails when a simpler
+baseline matches every frozen outcome at lower cost, or when the added records
+cannot produce distinct effect-bearing consequences.
+
+## Mechanism
+
+The contract has sixteen owned mechanisms arranged as four phases.
+
+| Phase | Owned mechanisms |
+|---|---|
+| Declare | Freeze the custody threat model; define asset-and-derivative closure; bind every custody event to content, lineage, holder, location, purpose, authority, time, and consumers; freeze security, availability, rights, and residual objectives. |
+| Protect and appraise | Govern key and metadata lifecycle; separate Evidence, Verifier appraisal, Attestation Result, and Relying-Party decision; version hardware/vendor/firmware/policy/reference-value/endorsement dependencies; release keys only under an exact prospectively frozen relying-party policy. |
+| Observe and control effects | Independently observe decryption, plaintext residency, load/unload, serving, copying, extraction, cache/crash, and descendant effects; separate possession, key release, decryption, load, serve, tool authority, bounded transfer, recipient distribution, and open release. |
+| Recover and adjudicate | Govern backup, escrow, rollback, disaster recovery, and break glass; propagate incident and revocation; validate effort-relative sanitization; govern irreversible recipient/open release; protect sensitive evidence; measure the joint frontier; retain failures and residuals as regression memory. |
+
+Each mechanism needs an observable consequence. A closure rule without discovery
+can only declare scope. A key policy without an effect observer can only record
+intent. An attestation result without a relying-party policy cannot authorize a
+load. A revocation without propagation evidence cannot claim recall. A
+sanitization command without method-appropriate validation cannot claim that
+the target data became infeasible to access at the stated effort.
+
+The first object is a versioned custody record. It binds a model identity and
+artifact digest to lineage, custody authority, encrypted-storage reference,
+transfer record, named access scope, intended environment, key-release policy,
+and affected release path. A record must distinguish a proposed load from an
+actual load. It must also retain the revocation and incident route rather than
+implying that an access-control decision can erase copied artifacts.
+
+The second object is a scoped key-release and appraisal decision. Attester
+Evidence is evaluated by a named Verifier against a versioned appraisal policy,
+reference values, endorsements, trust anchors, and freshness mechanism. The
+result is then consumed by a Relying Party under a separate application policy
+for the exact artifact, holder, environment, purpose, operation, recipient, and
+epoch. If any required identity, dependency, policy, freshness, compromise, or
+reconciliation state is missing or failed, the path blocks or reaches a named
+repair/review state. This is a bounded precondition for a load, not
+permission to serve, use tools, distribute weights, or make a safety claim.
+
+The third object is an observed load/use record. It distinguishes requested key
+release from actual decryption, plaintext residency, load, serving, caches,
+crashes, unload, output extraction, derivative creation, and external use. Its
+observer dependencies and visibility grade remain explicit; a token cannot
+stand in for an effect it did not observe.
+
+The fourth object is a release classification. A local load, a managed transfer,
+a partner distribution, and an open-weight release have different recipient,
+copy, revocation, disclosure, and residual conditions. An open or
+recipient-distributed release receives a separate authority decision and an
+explicit irreversibility record. The record cannot make an irreversible action
+reversible; it makes the residual visible before a decision is laundered into a
+routine deployment event.
+
+The fifth object is closure. Incident and revocation records distinguish key,
+policy, attestation, artifact, service, recipient, public-claim, and release
+actions. Recovery records inventory every break-glass key use, loaded digest,
+new derivative, and surviving copy before emergency authority expires.
+Sanitization records name target closure, media, method, sensitivity, effort,
+key dependency, validation, exceptions, and residuals. None of those records
+makes a disclosed or recipient-controlled artifact recallable.
+
+The separation matters because the favorable state of one record cannot repair
+the missing state of another. Encrypted storage says nothing about whether a
+recipient is authorized; an approved recipient says nothing about the measured
+environment; a current measurement says nothing about the artifact's lineage;
+and a successful load says nothing about runtime action authority. Keeping each
+link explicit makes it possible to identify the failed condition, retain the
+resulting residual, and send the affected decision to the owner that can repair
+or reject it.
+
+```{mermaid}
+flowchart LR
+I["Threat model, asset closure, identity, lineage"] --> C["Custody, copy, key, and holder state"]
+T["Attester: target and attesting environments"] --> E["Evidence plus freshness"]
+E --> V["Verifier appraisal with reference values, endorsements, and policy"]
+V --> A["Attestation Result"]
+C --> RP{"Relying-Party policy for exact artifact and use"}
+A --> RP
+RP -->|"missing, stale, failed, compromised, or unreconciled"| B["Block, repair, refresh, or accountable review"]
+RP -->|"bounded key decision"| K["Key release or denial"]
+K --> L["Independent observation of decrypt, load, serve, unload, copies, and extraction"]
+L --> R["Readiness and runtime authority remain separate"]
+C --> O["Incident, revocation, recovery, sanitization, distribution, residual"]
+B --> O
+L --> O
+```
+
+**What the custody flow shows:** Attester Evidence, Verifier appraisal,
+Attestation Result, and Relying-Party authorization are different propositions.
+A bounded key decision is then separated from the effects of decrypting,
+loading, serving, copying, extracting, recovering, sanitizing, or distributing
+the artifact. No favorable node is a universal trust verdict.
+
+### Worked custody trace: a valid token for the wrong artifact
+
+Consider a managed deployment request for model artifact `W-17`. The artifact
+graph links `W-17` to training lineage `L-9`, a tokenizer, a serving
+configuration, and an encrypted bundle digest. Custody policy `P-4` permits a
+specific recipient service to request a short-lived decryption lease only for
+environment measurement `M-22` and only while verifier policy `V-3` is current.
+
+The requesting host returns a cryptographically valid attestation for `M-22`.
+That favorable fact is insufficient. The transfer receipt names bundle `W-17b`,
+a derivative repackaging produced after `P-4` was approved. Its signature is
+valid, but the policy record contains no lineage edge or review disposition for
+the new bundle. A simplistic system sees “valid attestation” and “valid
+signature” and releases the key. The custody route instead reports a lineage
+mismatch, keeps the key unreleased, records the affected request and recipient,
+and sends the artifact to custody repair. No claim is made that the environment
+is compromised; the block follows from a missing relation between the approved
+policy and requested artifact.
+
+Suppose repair establishes the derivative lineage and a second request reaches
+the load boundary. An independent observer records that the encrypted bundle
+was decrypted inside the declared environment. That receipt can support the
+narrow statement that one requested artifact crossed one modeled load boundary.
+It cannot establish that plaintext was never exposed elsewhere, that inference
+outputs cannot exfiltrate protected information, that the model is safe, or that
+runtime tools are authorized. Those questions route to their own controls.
+
+Finally, suppose an operator proposes distributing the same artifact to a
+partner. The local load receipt is not reusable as release authority. The
+distribution record must name the recipient, permitted derivatives, security
+property and attacker model, revocation feasibility, expected uncontrolled
+copies, incident path, and authority accepting the non-recall residual. If the
+artifact is effectively extractable after delivery, the route must say so
+before the decision rather than representing revocation as a capability the
+system does not have.
+
+## Interfaces
+
+The ownership split prevents a custody receipt from becoming an all-purpose
+approval. Each interface names its issuer, exact proposition, permitted
+consumer, expiry or invalidation condition, and residual owner. A readiness
+gate may consume “the declared appraisal predicate passed for this artifact,
+environment, policy, use, and epoch,” but not “the hardware is trustworthy.”
+An incident service may consume an affected lineage and recipient set, but not
+infer that discovery found every derivative. The contract exposes ten objects:
+
+1. A **Custody Threat and Asset-Closure Record** freezes assets,
+reconstructability rules, holders, trust zones, adversaries, security
+properties, effort levels, availability and recovery objectives, rights,
+accepted residuals, exclusions, discovery method, and version.
+2. A **Copy and Derivative Event Record** binds parent and child content and
+lineage identities, transformation, holder, location class, purpose,
+authority, recipient, inherited restrictions, expiry, and child closure.
+3. A **Key Lifecycle Record** binds key and metadata identity, algorithm and
+purpose, protected artifact, holder, protection class, permitted operation,
+usage period, access, backup and recovery, compromise, rotation, archival,
+destruction, and emergency reconciliation.
+4. An **Attestation Appraisal Packet** keeps Attester Evidence, reference
+values, endorsements, target and attesting environments, Verifier policy and
+result, Relying-Party policy and decision, freshness, dependencies, privacy,
+and the exact requested use separate and versioned.
+5. A **Weight Load and Use Receipt** distinguishes requested and observed key
+release, decryption, plaintext residency, load, serving, derivative or cache
+creation, extraction exposure, crash effects, unload, observer visibility,
+and runtime or tool authority.
+6. A **Distribution and Irreversibility Record** binds partner, recipient, or
+open scope; attacker and security property; derivative rights; expected
+copies; proposed benefit; monitoring; authority; recall limits; incident
+path; and accepted residuals.
+7. A **Sanitization and Retirement Record** binds target closure, media and
+location inventory, sensitivity, method, assumed effort, key dependencies,
+validation procedure and result, exceptions, surviving copies, disposition,
+and residual owner.
+8. An **Incident, Revocation, and Recovery Record** distinguishes key, policy,
+attestation, artifact, service, recipient, public-claim, and release actions;
+observed propagation; break-glass authority; recovery effects;
+compensation; irreversible consequences; and terminal residuals.
+9. A **typed cross-layer handoff** lets Security Kernel, Artifact Graphs,
+Supply Chain, Runtime Adapters, Capability Thresholds, Readiness,
+Privacy/Rights, and Evidence States consume only the exact custody predicate
+they own. No custody receipt grants broader authority or support.
+10. A **Custody Evidence Projection** exposes independently checkable
+identities, decisions, dependencies, denominators, costs, failures, and
+residuals without publishing controlled weights, keys, sensitive
+attestation evidence, personal data, or exploitable operational details.
+
+These objects can share storage, but not semantics. Artifact Graphs owns
+immutable provenance and replay; Supply Chain owns upstream build and supplier
+integrity; Security Kernel owns runtime secrets and action authority;
+Capability Thresholds owns capability-triggered commitments; Runtime Adapters
+owns post-load execution permission; Readiness owns bounded admission and
+quarantine; Privacy/Rights owns lawful and legitimate evidence use. Custody
+owns model-family possession and transition state. A successful interface
+handoff never transfers the neighboring layer's decision obligation.
+
+## Invariants
+
+1. No custody transition is admitted without exact artifact and lineage
+identity, asset-closure version, holder, purpose, authority, location or
+environment, time, affected consumer, and residual owner.
+2. Declared derivative closure is monotone through copying, transformation,
+packaging, extraction, backup, recovery, and distribution. An unknown or
+excluded branch remains an owned residual.
+3. Keys and metadata remain purpose-, artifact-, holder-, operation-, scope-,
+usage-period-, and policy-bound. Missing, stale, compromised, widened, or
+unreconciled key state fails closed.
+4. Attester Evidence, Verifier appraisal, Attestation Result, and Relying-Party
+authorization remain distinct claims with separate policy identities,
+owners, freshness conditions, dependencies, and consumers.
+5. Freshness is relational to artifact, target and attesting environments,
+firmware and workload, reference values, endorsements, trust anchors,
+Verifier and Relying-Party policies, recipient, use, and epoch—not token age
+alone.
+6. An attestation result is scoped evidence about measured claims. It grants no
+conclusion about universal hardware, vendor, operator, or software trust;
+weight confidentiality; model safety; serving; tools; release; readiness;
+or deployment.
+7. Possession, key release, decryption, load, serve, action authority, transfer,
+recipient distribution, and open release are distinct non-transitive
+decisions.
+8. Plaintext, derived capability, output extraction, caches, crash dumps,
+accelerator memory, logs, backups, and recipient exposure remain inventoried
+at the declared observation grade.
+9. Backup, escrow, rollback, recovery, and break-glass access obey the same
+custody and key rules. Emergency authority expires, and every resulting
+artifact, key use, load, and copy is reconciled.
+10. Revoking a key, policy, attestation, artifact, service, or release label
+records its observed effect and never implies recall of plaintext,
+recipient copies, derivatives, or public disclosure.
+11. Every sanitization claim names its target, media, method, sensitivity,
+assumed effort, inventory, key dependency, validation, exceptions, and
+residuals. Deletion or command success is not physical erasure.
+12. Recipient or open distribution is prospectively authorized as potentially
+irreversible and cannot inherit authority from a local load, attestation,
+signature, readiness review, or safety claim.
+13. Custody evidence obeys privacy, rights, retention, disclosure, and
+operational-security limits while remaining contestable and
+lineage-preserving.
+14. False denial, availability, recovery, operator burden, benefit,
+privacy/rights impact, and governance cost remain visible alongside
+security controls.
+15. Finite records, routes, theorem declarations, mock keys, synthetic tokens,
+or zero observed theft establish only their exact scope—not custody
+completeness, confidentiality, hardware trust, safe release, or transfer.
+
+Together, these invariants preserve the distinction between evidence about a
+bounded transition and a broader assurance claim. A complete record is still
+only complete relative to the declared closure, threat model, observers, and
+tests.
+
+## Non-obvious consequences
+
+### Custody is a graph closure problem, not a vault property
+
+The governed asset is not only the canonical weight file. Optimizer snapshots,
+quantized exports, adapters, caches, recovery images, packaging layers, and
+recipient derivatives may preserve or reconstruct relevant capability. A
+custody inventory that protects one digest while ignoring reachable derivatives
+can report perfect control over the wrong set. The practical boundary is a
+declared closure rule over lineage and recoverability, with explicit exclusions
+when full discovery is impossible.
+
+### Revocation has at least three meanings
+
+Credential revocation can stop future authorized key requests. Policy
+revocation can make a formerly acceptable environment ineligible. Artifact
+revocation can warn consumers that a model version should no longer be used.
+None guarantees recall of plaintext or recipient copies. A custody record must
+say which revocation occurred and what effects were actually observed; otherwise
+the word “revoked” launders a control-plane change into a physical recovery
+claim.
+
+### Freshness is relational
+
+An attestation is not simply fresh or stale by age. It is current relative to a
+model artifact, measurement policy, verifier trust root, firmware and workload
+configuration, recipient, requested scope, and decision time. A token inside
+its nominal time window can be stale for a changed policy or different artifact.
+The admission key must therefore bind those identities rather than checking a
+timestamp alone.
+
+### Independent verification changes the trust graph, not the truth value
+
+Adding a second verifier may reduce dependence on one implementation only when
+the verifiers do not share the same compromised root, evidence source, policy
+compiler, operator, or failure mode. Agreement should be represented as a
+dependency graph. Even genuinely independent agreement supports only the
+measured predicates; it does not prove absence of side channels, authorized
+misuse, output leakage, or unsafe model behavior.
+
+### Release policy is a one-way authority boundary
+
+A managed load can often be stopped prospectively by denying a future key or
+runtime lease. A recipient or open release may create durable capabilities
+outside that authority. The latter is not merely a higher risk tier of the same
+operation: it changes who can instantiate the model and whether future policy
+has practical force. That is why distribution requires a separate decision
+object and cannot inherit approval from a successful confidential load.
+
+## Failure modes
+
+1. **Weight and capability sprawl:** checkpoints, optimizer state, adapters,
+quantizations, distillations, caches, backups, packages, recovery images,
+extracted equivalents, developer copies, recipients, or descendants escape
+declared closure.
+2. **Identity substitution:** artifact, lineage, tokenizer, policy,
+environment, holder, recipient, or model-family identity changes after
+approval or is mislabeled as equivalent.
+3. **Key-lifecycle drift:** backup leakage, trust-anchor compromise, failed
+rotation, recovery abuse, or persistent break-glass authority permits use
+outside the purpose or usage period.
+4. **Attestation laundering or replay:** Evidence or a Verifier result becomes
+a universal trust or authorization bit, or a nominally valid token is reused
+outside its relational freshness scope.
+5. **Appraisal-input capture:** reference values, endorsements, appraisal
+policy, Verifier code, Relying-Party policy, or dependency metadata become
+stale, poisoned, captured, or silently changed.
+6. **Root or substrate compromise:** the hardware root, measured-boot chain,
+TEE, confidential accelerator, firmware, vendor service, policy compiler,
+key service, operator, or supply chain is weaker or more compromised than
+represented.
+7. **Self-ratifying roles:** Attester, Verifier, Relying Party, endorser,
+reference-value provider, key custodian, load observer, incident owner, and
+release authority collapse onto shared dependencies or one unchecked actor.
+8. **Authorized-insider or autonomous-system capture:** legitimate weights,
+keys, tools, outputs, recovery paths, or copies are used outside the declared
+purpose and custody boundary.
+9. **Plaintext leakage:** storage, shared memory, accelerators, swap, crash
+dumps, logs, telemetry, caches, backups, debugging, maintenance, or side
+channels expose protected material.
+10. **Effective-capability extraction:** queries, adapters, distillation,
+parameter extraction, reconstruction, fine-tuning, or repeated use recover
+an artifact or capability outside the claimed property.
+11. **Availability collapse:** false denial, key or Verifier outages,
+unrecoverable rollback, disaster-recovery failure, approval fatigue, or
+brittle controls prevent legitimate safety and recovery work.
+12. **Revocation laundering:** a control-plane denial is reported as recall of
+plaintext, services, recipient copies, derivatives, public copies, or
+downstream reliance.
+13. **Sanitization theater:** deletion, a zeroization command, key destruction,
+or one clean medium is reported as proof of copy closure or erasure.
+14. **Release laundering:** recipient or open distribution is represented as a
+reversible deployment, generic openness or safety result, or extension of
+a previously authorized local load.
+15. **Control-label overclaim:** a security level, encryption flag, signature,
+verified layout, TEE label, hardware root, or passing token is reported as
+end-to-end custody, confidentiality, or safe release.
+16. **Evidence harm:** custody and attestation records expose sensitive device,
+user, holder, location, vulnerability, or policy information, or become a
+surveillance or tampering surface.
+17. **Externalized cost:** security, availability, recovery, human labor,
+benefit, rights, recipient obligations, incident compensation, or
+irreversible residual cost disappears from the comparison or moves to an
+unaccountable layer.
+
+The repairs differ: discovery cannot fix a compromised trust root; a fresh
+token cannot fix an unauthorized recipient; key denial cannot recall plaintext;
+and stronger confinement cannot be credited if it destroys recovery or shifts
+unmeasured harms elsewhere. The route must preserve the actual failed
+predicate rather than reducing all failures to “access denied.”
+
+## Strongest objections and surviving residuals
+
+### “This is elaborate access control around a file”
+
+The objection has force when the record merely duplicates an IAM policy. The
+chapter earns its place only by owning cross-lifecycle semantics that ordinary
+file access does not: lineage closure, artifact/policy/measurement binding,
+key-release and load distinction, derivative scope, incident propagation, and
+irreversible distribution. A deployment that already exposes those semantics
+can remain the implementation substrate. The book requires the contract, not a
+new service for its own sake.
+
+The residual is operational complexity. More joins create more opportunities
+for configuration error and denial of service. A mature system must measure
+false denials, repair latency, orphaned artifacts, and operator load alongside
+security findings rather than counting every block as success.
+
+### “Hardware attestation merely moves trust into opaque vendors”
+
+Correct: an attestation chain introduces hardware, firmware, manufacturer,
+certificate, verifier, policy, and update dependencies. The answer is not to
+call those dependencies trusted by definition. The custody packet names them,
+binds their versions, expires affected decisions when they change, and retains
+the possibility that the permitted route is refusal. Cross-vendor or independent
+evidence can narrow a dependency but cannot eliminate the need for an assumed
+root.
+
+The surviving residual includes undisclosed vulnerabilities, side channels,
+supply-chain compromise, malicious insiders, and verifier bugs. A passing token
+does not close those classes.
+
+### “If authorized code can use the weights, it can leak their capability”
+
+Confidential memory protects a different boundary from output control or
+authorized misuse. This custody boundary therefore refuses to interpret protected loading
+as non-extractability. Runtime adapters, rate limits, monitoring, model behavior,
+and release policy must address downstream leakage paths. If a workload can
+reconstruct or transmit the effective artifact, the custody residual must say
+that the protection is containment of a narrower channel, not prevention of
+release.
+
+### “Open weights can produce public benefits; custody framing prejudges them”
+
+Custody does not decide that open release is undesirable. It rejects the weaker
+claim that distribution is reversible or equivalent to managed deployment. A
+release authority may still accept the benefits and residuals after specifying
+recipient scope, derivative rights, misuse assumptions, non-recall conditions,
+and incident response. The unresolved question is normative and empirical:
+which benefits and risks justify which release for which model. No record schema
+answers it automatically.
+
+### “A complete record can create false confidence”
+
+This is the central objection. Completeness is only completeness relative to a
+declared schema and threat model. The protocol must publish its exclusions,
+preserve negative findings, test stale and mismatched identities, and avoid
+support promotion from field presence. The executable route proposed below is
+valuable only as evidence that missing modeled conditions are not silently
+bypassed. It is not evidence that the model captures every real attack.
+
+## Minimum Viable Implementation
+
+**Recovery is part of custody.**
+
+A custody design that can deny access but cannot recover from a false denial is
+not operationally complete. Recovery must say which artifact identity is being
+restored, which policy version applies, who may replace a failed verifier or
+key service, how competing attestations are handled, and whether the recovery
+path creates a new derivative or release event. The old token and failed
+measurement remain in the lineage; otherwise recovery can become an unaudited
+way to reset freshness or bypass revocation.
+
+This adds a second availability boundary. Keeping weights confidential can
+conflict with making rollback checkpoints, disaster-recovery copies, and
+escrowed keys usable under incident conditions. Replication expands the set of
+places from which irreversible release could occur, while insufficient
+replication can make a safety rollback impossible. A real campaign must
+therefore measure recovery success, recovery latency, false denial, residual
+copies, and emergency-authority use together. The current finite custody
+records identify those obligations but do not establish an acceptable balance.
+Emergency access must also expire into a mandatory reconciliation that compares
+every key use, loaded digest, derived artifact, and surviving copy with the
+authority actually granted during the incident.
+
+The implemented minimum is intentionally smaller than the contract. Eight
+deterministic Boolean records exercise exactly one bounded-load admission, five
+repair, review, refresh, or observation routes, one release-laundering
+rejection, and one irreversible-release *record*. Nine Lean declarations under
+eight manifest targets establish the explicit finite routing consequences and
+no broader custody behavior.
+Nine mutations are expected to reject, including support-state promotion, and
+the recorded support effect is `none`.
+
+That boundary has value: the implementation independently recomputes each route,
+binds the fixture digest and theorem names, and demonstrates that invalid
+attestation, missing lineage, missing policy identity, stale evidence,
+undisclosed dependencies, absent independent observation, or authority
+laundering does not silently become bounded load or distribution execution. It
+does not exercise the newly specified derivative-closure, key-lifecycle,
+plaintext, extraction, incident-propagation, recovery, sanitization,
+privacy/rights, availability, or cost predicates.
+
+No real weight, derivative closure, key, KMS or HSM, TEE, root, Evidence,
+Attestation Result, Verifier, reference value, endorsement, Relying-Party
+decision, plaintext load, extraction attempt, revocation propagation, recovery,
+sanitization, recipient release, privacy impact, availability result, or
+security metric has been exercised. The finite result is not a confidential-
+computing implementation, key-management service, model registry, secure
+distribution mechanism, adversarial assessment, release program, or evidence
+of effective custody.
+
+The next slice must therefore stop adding fields to the same Boolean fixture
+and create effects. It should preregister a public-safe model-family artifact
+with harmless but discoverable derivatives; operate an actual test key service;
+generate, appraise, and consume current and invalid attestation evidence through
+separately implemented roles; observe decryption and load effects independently;
+exercise policy/key rotation, compromise, revocation, recovery, and
+sanitization; and compare outcomes and costs against simpler controls. Hardware-
+backed execution, real controlled weights, real credentials, or adversarial
+extraction beyond a public-safe artifact requires a separately authorized
+threat model. It is not implied by the current fixture.
+
+## Beyond the State of the Art
+
+The mature endpoint is a custody plane that binds weight identity, keys,
+appraisal, freshness, authorized environments, copies, descendants, recovery,
+revocation, sanitization, rights, and release scope under an explicit threat
+model.
+
+The beyond-state-of-the-art proposition is comparative and refutable: an
+effect-complete custody transaction may outperform narrower controls by
+reducing unauthorized acquisition or use, stale or false appraisal acceptance,
+unobserved plaintext and derivative exposure, failed revocation, and
+unaccounted irreversible release without unacceptable false denial,
+availability loss, recovery failure, privacy harm, operator burden, or total
+cost. The book does not claim that result before the campaign runs.
+
+The campaign must preregister a public-safe but effect-bearing model-family
+artifact set, mock and hardware-backed environments where authorized, current
+key and attestation components, frozen threat models, analysis code, stopping
+rules, support thresholds, and matched baselines:
+
+- encrypted object storage plus ordinary IAM;
+- registry and provenance controls without attested load;
+- a conventional cloud KMS policy;
+- a vendor confidential-compute lifecycle;
+- RATS-separated attestation without full custody and derivative closure; and
+- the complete proposed custody transaction.
+
+Independent implementations must own asset and derivative discovery, Attester
+evidence generation, Verifier appraisal, Relying-Party policy, key decision,
+load and effect observation, extraction adversary, incident and recovery
+orchestration, and sanitization validation. Independence is reported as a
+dependency graph, not asserted from organizational labels. The campaign jointly
+measures unauthorized acquisition and use; plaintext and side-channel exposure;
+extraction and reconstruction; stale and false appraisal acceptance; false
+denial; key compromise, rotation, and recovery; copy discovery; revocation
+propagation; media and cryptographic sanitization; recipient irreversibility;
+service availability; recovery latency; useful benefit; operator burden;
+privacy and rights impact; and total governance cost.
+
+Causal ablations remove one proposed mechanism at a time: derivative closure,
+role separation, relational freshness, independent effect observation,
+authority separation, recovery reconciliation, sanitization validation, and
+irreversibility accounting. Replication and transfer span model families and
+sizes, artifact and derivative classes, key and attestation stacks, hardware
+and vendors, local/cloud/edge environments, operators, adversaries, incidents,
+release modes, and time. Negative and null results remain versioned regression
+memory.
+
+Custody-complete, confidential, trustworthy-hardware, superior-security, or
+release-control wording survives only when its frozen joint gate beats strong
+baselines under independent reproduction. Otherwise the exact proposition is
+narrowed or refuted. Even a positive result would remain scoped to the tested
+threat model and would not establish model safety, social permission to
+release, readiness, deployment authority, or ASI.
+
+No current result meets this custody endpoint; support remains `argument` until
+natural adversarial campaigns, independent reproduction, and heterogeneous
+transfer pass the frozen joint gates.
+
+## Summary
+
+Model weights are one node in a model-family asset graph that can include
+optimizer state, adapters, quantizations, caches, backups, extracted
+equivalents, and recipient descendants. Honest custody therefore requires a
+prospective threat model and derivative closure, exact event identities,
+key-lifecycle discipline, RATS-separated appraisal and authorization,
+independent-enough effect observation, distinct load/use/serve/release
+authority, recovery reconciliation, effort-relative sanitization, and explicit
+irreversible residuals.
+
+The contract's value is traceable effect and traceable refusal. A missing or
+failed predicate reaches a named non-default state; a passing predicate supports
+only its typed consumer. No record or technology becomes a universal trust bit.
+The current evidence proves nine finite routing declarations and eight fixture
+outcomes only. It neither demonstrates effective custody nor resolves whether a
+particular model should be used or released.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **71** structured claim atoms in `CF-02`. The
+frozen repository-wide terminal audit records 71 `blocked_after_full_attempt`. Its core
+atom `model-weight-custody-and-hardware-roots-of-trust.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `model-weight-custody-and-hardware-roots-of-trust` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 71 structured claims,
+71 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Safety-critical lifecycle consumer trace**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Finite local fixture consumer only; no authentic deployment, general alignment, evaluator independence, or broad security claim.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
+
+## Handoff
+
+Model-Weight Custody and Hardware Roots of Trust governs a known artifact and
+the conditions for a bounded load. AI Supply-Chain Integrity and Lifecycle Provenance
+now governs the upstream data, code, build, training, supplier, signature,
+advisory, derivative, and retirement relationships that make that artifact's
+custody record meaningful before Recursive Self-Improvement Boundaries considers
+changes to either boundary.

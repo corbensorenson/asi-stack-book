@@ -30,6 +30,11 @@ NO_PROMOTION_DIRS = [
 NON_CORE_LEDGER = ROOT / "docs" / "non_core_evidence_ledger.md"
 
 EXPECTED_NON_CORE = {
+    "circle-calculus-and-proof-carrying-ai-contracts.mechanism.003": "prototype-backed",
+    "system-boundaries-and-authority.invariant.001": "synthetic-test-backed",
+    "kerc.protected_exact_handle_preservation": "synthetic-test-backed",
+    "kerc.interaction_shared_glossary_break_even": "synthetic-test-backed",
+    "situated-world-model.finite-pomdp-governed-acquisition-and-consolidation": "synthetic-test-backed",
     "governed-usefulness.held-out-local-policy-effect": "synthetic-test-backed",
     "living-book-methodology.phase5_harness_registry_runner": "synthetic-test-backed",
     "resource-economics.costed_route_budget_slice": "synthetic-test-backed",
@@ -188,7 +193,7 @@ def assert_surface(
         f"{chapters}/{chapters} chapters",
         "externally positioned",
         "0 explicit external-baseline exceptions",
-        "Twenty narrow non-core transitions are recorded in",
+        "Twenty-five narrow non-core transitions are recorded in",
         f"alongside {no_promotion_decisions} accepted `blocks_promotion` decisions",
         "Choose the product you need",
     ]

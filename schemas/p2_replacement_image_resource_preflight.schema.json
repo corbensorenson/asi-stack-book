@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://asi-stack.local/schemas/p2_replacement_image_resource_preflight.schema.json",
+  "title": "P2 rank-one replacement image resource preflight",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "recorded_at_utc", "attempt_id", "state", "scope", "resource_ceiling_path", "provenance_preflight_path", "candidate_count", "passed_candidate_count", "failed_candidate_count", "campaign_host_free_before_bytes", "campaign_host_free_after_bytes", "campaign_post_cleanup_host_free_byte_loss", "campaign_residual_gate_pass", "candidates", "task_content_opened", "candidate_outcome_opened", "replacement_qualification_started", "final_pool_selected", "final_pool_opened", "support_state_effect", "release_effect"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.p2_replacement_image_resource_preflight.v1"},
+    "recorded_at_utc": {"type": "string", "minLength": 20},
+    "attempt_id": {"const": "2026-07-17-rank-one-r2"},
+    "state": {"const": "complete"},
+    "scope": {"const": "rank_one_image_pull_expanded_size_cleanup_and_host_residual_only"},
+    "resource_ceiling_path": {"const": "evidence_quality/p2_resource_ceiling.json"},
+    "provenance_preflight_path": {"const": "evidence_quality/p2_replacement_provenance_preflight.json"},
+    "candidate_count": {"const": 4},
+    "passed_candidate_count": {"const": 4},
+    "failed_candidate_count": {"const": 0},
+    "campaign_host_free_before_bytes": {"type": "integer", "minimum": 53687091200},
+    "campaign_host_free_after_bytes": {"type": "integer", "minimum": 1},
+    "campaign_post_cleanup_host_free_byte_loss": {"type": "integer", "minimum": 0, "maximum": 32212254720},
+    "campaign_residual_gate_pass": {"const": true},
+    "candidates": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["slot", "rank", "instance_id", "image", "immutable_ref", "manifest_digest", "host_free_before_bytes", "minimum_host_free_gate_pass", "pull_attempted", "pull_exit_code", "pull_timeout", "pull_wall_seconds", "inspect_exit_code", "expanded_image_size_bytes", "image_architecture", "image_os", "repo_digests", "cleanup_exit_code", "cleanup_wall_seconds", "host_free_after_cleanup_bytes", "post_cleanup_host_free_byte_loss", "pull_log_path", "pull_log_sha256", "cleanup_log_path", "cleanup_log_sha256", "gates", "resource_gate_pass", "failure_code"],
+        "properties": {
+          "slot": {"type": "integer", "minimum": 1, "maximum": 4},
+          "rank": {"const": 1},
+          "instance_id": {"type": "string", "minLength": 8},
+          "image": {"type": "string", "pattern": "^docker\\.io/swerebenchv2/"},
+          "immutable_ref": {"type": "string", "pattern": "@sha256:[0-9a-f]{64}$"},
+          "manifest_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+          "host_free_before_bytes": {"type": "integer", "minimum": 53687091200},
+          "minimum_host_free_gate_pass": {"const": true},
+          "pull_attempted": {"const": true},
+          "pull_exit_code": {"const": 0},
+          "pull_timeout": {"const": false},
+          "pull_wall_seconds": {"type": "number", "exclusiveMinimum": 0, "maximum": 300},
+          "inspect_exit_code": {"const": 0},
+          "expanded_image_size_bytes": {"type": "integer", "minimum": 1, "maximum": 1500000000},
+          "image_architecture": {"const": "amd64"},
+          "image_os": {"const": "linux"},
+          "repo_digests": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "@sha256:[0-9a-f]{64}$"}},
+          "cleanup_exit_code": {"const": 0},
+          "cleanup_wall_seconds": {"type": "number", "minimum": 0, "maximum": 120},
+          "host_free_after_cleanup_bytes": {"type": "integer", "minimum": 1},
+          "post_cleanup_host_free_byte_loss": {"type": "integer", "minimum": 0, "maximum": 5368709120},
+          "pull_log_path": {"type": "string", "minLength": 20},
+          "pull_log_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "cleanup_log_path": {"type": "string", "minLength": 20},
+          "cleanup_log_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "gates": {
+            "type": "object", "minProperties": 9,
+            "additionalProperties": {"const": true}
+          },
+          "resource_gate_pass": {"const": true},
+          "failure_code": {"type": "null"}
+        }
+      }
+    },
+    "task_content_opened": {"const": false},
+    "candidate_outcome_opened": {"const": false},
+    "replacement_qualification_started": {"const": false},
+    "final_pool_selected": {"const": false},
+    "final_pool_opened": {"const": false},
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"}
+  }
+}

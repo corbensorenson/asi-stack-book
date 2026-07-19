@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://asi-stack.local/schemas/p2_development_corpus_preflight.schema.json",
+  "title": "P2 development corpus preflight",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "recorded_date", "state", "claim_id", "source", "contamination_boundary", "eligible_universe", "development_pool", "known_dataset_limitations", "required_before_construct_pass", "preflight_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.p2_development_corpus_preflight.v1"},
+    "recorded_date": {"const": "2026-07-17"},
+    "state": {"const": "natural_corpus_candidate_qualified_for_development_only"},
+    "claim_id": {"const": "p2.governed_natural_repository_change_admission_joint_frontier"},
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_id", "dataset_url", "dataset_revision", "parquet_sha256", "dataset_license", "raw_parquet_retention"],
+      "properties": {
+        "source_id": {"const": "ext_swe_rebench_v2_2026"},
+        "dataset_url": {"const": "https://huggingface.co/datasets/nebius/SWE-rebench-V2"},
+        "dataset_revision": {"const": "475dd5e8703bb5fb22dd3c60b5d038b019eba1e0"},
+        "parquet_sha256": {"const": "0e0bf9355f892ad74ae98d4e1c404f39fd6654a8e351ee3e6ab162e4a64cd3ad"},
+        "dataset_license": {"type": "string", "minLength": 1},
+        "raw_parquet_retention": {"const": "transient_local_preflight_only_not_vendored"}
+      }
+    },
+    "contamination_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["candidate_model_snapshot", "candidate_model_snapshot_last_modified_utc", "filter", "claim"],
+      "properties": {
+        "candidate_model_snapshot": {"const": "545dc4251c05440727734bcd94334791f6ab0192"},
+        "candidate_model_snapshot_last_modified_utc": {"const": "2025-04-28T21:51:20Z"},
+        "filter": {"const": "created_at > 2025-04-28 21:51:20 UTC"},
+        "claim": {"const": "reduced_by_post_snapshot_filter_not_eliminated_or_proven_absent"}
+      }
+    },
+    "eligible_universe": {"type": "object", "required": ["row_count", "repository_count", "language_count", "language_counts", "license_counts", "difficulty_counts", "permissive_license_row_count", "missing_problem_statement_count", "solution_test_path_overlap_count", "duplicate_repo_base_commit_count", "metadata_sha256", "metadata_path"], "properties": {"row_count": {"const": 1117}, "repository_count": {"const": 532}, "language_count": {"const": 20}, "language_counts": {"type": "object"}, "license_counts": {"type": "object"}, "difficulty_counts": {"type": "object"}, "permissive_license_row_count": {"const": 934}, "missing_problem_statement_count": {"const": 1}, "solution_test_path_overlap_count": {"const": 0}, "duplicate_repo_base_commit_count": {"const": 29}, "metadata_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "metadata_path": {"const": "experiments/p2_governed_repository_admission/corpus/post_snapshot_eligible_metadata.jsonl"}}, "additionalProperties": false},
+    "development_pool": {"type": "object", "required": ["row_count", "repository_count", "language_count", "languages", "all_permissive_license", "all_quality_code_a", "all_diagnostic_flags_false", "all_solution_test_paths_disjoint", "all_github_created_post_snapshot", "all_github_merged", "pool_sha256", "pool_path"], "properties": {"row_count": {"const": 12}, "repository_count": {"const": 12}, "language_count": {"const": 7}, "languages": {"type": "array", "minItems": 7, "maxItems": 7, "uniqueItems": true, "items": {"type": "string"}}, "all_permissive_license": {"const": true}, "all_quality_code_a": {"const": true}, "all_diagnostic_flags_false": {"const": true}, "all_solution_test_paths_disjoint": {"const": true}, "all_github_created_post_snapshot": {"const": true}, "all_github_merged": {"const": true}, "pool_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "pool_path": {"const": "experiments/p2_governed_repository_admission/corpus/development_pool.json"}}, "additionalProperties": false},
+    "known_dataset_limitations": {"type": "array", "minItems": 6, "uniqueItems": true, "items": {"type": "string", "minLength": 20}},
+    "required_before_construct_pass": {"type": "array", "minItems": 6, "uniqueItems": true, "items": {"type": "string", "minLength": 20}},
+    "preflight_effect": {"type": "object", "additionalProperties": false, "required": ["construct_gate", "resource_gate", "final_heldout_gate", "support_state_effect", "release_effect"], "properties": {"construct_gate": {"const": "pending_four_replacements_dual_evaluator_and_independent_task_review"}, "resource_gate": {"const": "pending_peak_memory_cpu_and_frozen_ceiling_before_replacement_draw"}, "final_heldout_gate": {"const": "closed"}, "support_state_effect": {"const": "none"}, "release_effect": {"const": "none"}}},
+    "non_claims": {"type": "array", "minItems": 5, "uniqueItems": true, "items": {"type": "string", "minLength": 20}}
+  }
+}

@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Authority to effect path draft figure</title>
+  <desc id="desc">A draft systems diagram showing how a request must pass permission class, authority ceiling, scoped approval, adapter lease, effect receipt, audit, rollback, and incident handling before an external action is treated as governed.</desc>
+  <defs>
+    <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#245f73"/>
+    </marker>
+    <marker id="arrow-copper" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#a86f45"/>
+    </marker>
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#18202a" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      .bg { fill: #f7f9fb; }
+      .panel { fill: #ffffff; stroke: #d8dee6; stroke-width: 2; }
+      .gate { fill: #fff8f2; stroke: #a86f45; stroke-width: 2.5; }
+      .ok { fill: #f2f8f5; stroke: #497b5b; stroke-width: 2.5; }
+      .deny { fill: #fbf3f5; stroke: #8a5264; stroke-width: 2.5; }
+      .effect { fill: #f4f8fa; stroke: #245f73; stroke-width: 3; }
+      .ink { fill: #18202a; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .muted { fill: #5a6675; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .label { font-size: 25px; font-weight: 750; }
+      .small { font-size: 18px; font-weight: 650; }
+      .tiny { font-size: 15px; font-weight: 550; }
+      .caption { font-size: 16px; font-weight: 600; }
+      .line { fill: none; stroke: #245f73; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow-blue); }
+      .copper { fill: none; stroke: #a86f45; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow-copper); }
+      .dash { fill: none; stroke: #5a6675; stroke-width: 2.5; stroke-dasharray: 8 8; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="760" rx="24"/>
+  <text class="ink label" x="60" y="62">Authority to Effect Path</text>
+  <text class="muted caption" x="60" y="92">Draft key figure. The path separates capability from permission before any external effect is allowed.</text>
+
+  <rect class="panel" x="52" y="132" width="210" height="150" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="78" y="168">Requester</text>
+  <text class="muted tiny" x="78" y="202">principal or layer</text>
+  <text class="muted tiny" x="78" y="230">requested operation</text>
+  <text class="muted tiny" x="78" y="258">target boundary</text>
+
+  <rect class="gate" x="320" y="112" width="220" height="110" rx="12"/>
+  <text class="ink small" x="346" y="150">Permission class</text>
+  <text class="muted tiny" x="346" y="180">read, transform,</text>
+  <text class="muted tiny" x="346" y="204">write, execute, approve</text>
+
+  <rect class="gate" x="320" y="252" width="220" height="110" rx="12"/>
+  <text class="ink small" x="346" y="290">Authority ceiling</text>
+  <text class="muted tiny" x="346" y="320">caller ceiling and</text>
+  <text class="muted tiny" x="346" y="344">delegation chain</text>
+
+  <rect class="gate" x="320" y="392" width="220" height="110" rx="12"/>
+  <text class="ink small" x="346" y="430">Scoped approval</text>
+  <text class="muted tiny" x="346" y="460">active grant, expiry,</text>
+  <text class="muted tiny" x="346" y="484">review condition</text>
+
+  <rect class="ok" x="604" y="204" width="226" height="116" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="632" y="244">Authorized handoff</text>
+  <text class="muted tiny" x="632" y="274">adapter lease plus</text>
+  <text class="muted tiny" x="632" y="298">least-exposure context</text>
+
+  <rect class="effect" x="898" y="132" width="240" height="126" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="928" y="170">External effect</text>
+  <text class="muted tiny" x="928" y="202">tool call, write,</text>
+  <text class="muted tiny" x="928" y="226">publication, or spend</text>
+
+  <rect class="effect" x="898" y="302" width="240" height="126" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="928" y="340">Effect receipt</text>
+  <text class="muted tiny" x="928" y="372">result, scope, artifact,</text>
+  <text class="muted tiny" x="928" y="396">audit refs, residuals</text>
+
+  <rect class="deny" x="604" y="408" width="226" height="116" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="632" y="448">Deny or escalate</text>
+  <text class="muted tiny" x="632" y="478">missing grant, over ceiling,</text>
+  <text class="muted tiny" x="632" y="502">expired, revoked, unsafe</text>
+
+  <rect class="panel" x="52" y="430" width="210" height="146" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="78" y="466">Boundary rule</text>
+  <text class="muted tiny" x="78" y="500">can is not may</text>
+  <text class="muted tiny" x="78" y="528">knowledge is not grant</text>
+  <text class="muted tiny" x="78" y="556">quality is not grant</text>
+
+  <rect class="panel" x="604" y="582" width="534" height="88" rx="12"/>
+  <text class="ink small" x="632" y="618">Rollback and incident path</text>
+  <text class="muted tiny" x="632" y="646">A bad or incomplete effect routes to rollback, residual custody, incident review, and support-state non-promotion.</text>
+
+  <path class="line" d="M262 205 C282 205,296 168,314 168"/>
+  <path class="line" d="M540 166 C566 166,574 236,598 252"/>
+  <path class="line" d="M540 306 C566 306,574 276,598 268"/>
+  <path class="line" d="M540 446 C566 446,574 302,598 284"/>
+  <path class="line" d="M830 252 C856 252,870 194,892 194"/>
+  <path class="line" d="M1018 258 L1018 296"/>
+  <path class="line" d="M1018 428 C1018 490,890 540,806 578"/>
+
+  <path class="copper" d="M540 498 C564 514,578 486,598 472"/>
+  <path class="copper" d="M604 466 C512 466,404 570,262 522"/>
+  <path class="dash" d="M830 466 C890 466,930 438,960 426"/>
+  <path class="dash" d="M830 626 C870 626,884 626,898 626"/>
+
+  <text class="muted tiny" x="72" y="654">Status: draft visual asset; not release-reviewed.</text>
+  <text class="muted tiny" x="72" y="682">Support effect: none. The authority chapter core claim remains argument-level.</text>
+</svg>

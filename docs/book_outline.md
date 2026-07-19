@@ -2,47 +2,52 @@
 
 Working title: **The ASI Stack: A Governed Systems Architecture for Advanced AI, with ASI as the Stress Case**
 
-Status: expanded source-of-truth drafting outline, updated 2026-07-10 after the
-six-project historical mining and incorporation-roadmap reconciliation.
+Status: expanded source-of-truth drafting outline, updated 2026-07-17 after the
+experiment-competence, claim-identity, and false-negative roadmap review.
 `book_structure.json` remains the ordering source of truth; Quarto generates
 displayed chapter numbers from the manifest.
 
 Active improvement authority:
-`docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md`. Its predecessor
-handoff/reader/evidence roadmap is complete. The active successor decomposes
-all 54 chapter-core claims and every material subordinate claim into typed,
-falsifiable proof obligations; strengthens semantic formal models and runtime
-refinement; builds integrated governed-work, learning, and assurance slices;
-runs informative causal campaigns on strong models and natural workloads; and
-reproduces current strong baselines before any exact SOTA claim. Improve the
-54 existing chapter owners before proposing architectural breadth. The
-roadmap's machine state is
-`roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json`. This
-program also audits all 1,151 activation-baseline theorem declarations for
-vacuity, duplication, assumption restatement, and real consumers; requires a
-promotion-or-refutation campaign for every load-bearing atom; and ends with a
-maintained, evidence-faithful, under-10,000-word X Article synopsis with the
-live-book link first and an exact 5:2 header under
-`docs/x_article_synopsis_contract.md`. This
-priority overlay does not change the outline's chapter order, support states,
-proof results, benchmark results, reader approvals, or immutable release
-history.
+`docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md`, with machine
+state in
+`roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`.
+The claim-proof/SOTA predecessor is complete: all 55 live chapters and 3,745
+claim atoms have terminal dispositions, 3,698 atoms remain
+`blocked_after_full_attempt`, all 55 chapter-core claims remain at `argument`,
+and zero external reproductions or SOTA-supported claims were established. Its
+terminal bookkeeping does not make every negative or no-change result a
+competent scientific test. The active roadmap now applies
+`docs/claim_bearing_experiment_competence_standard.md`: exploratory or broken
+implementations cannot refute an architecture. All 90 accepted historical
+negative/no-change transitions now have N0–N5 ceilings—1 N0, 15 N1, 74 N2, and
+0 N3–N5—while the broader prose and `blocked_after_full_attempt` scan remains
+active. Final held-out data may open only after
+claim-specific implementation, construct, evaluator, sensitivity, and fair-
+rescue gates pass. The
+completed authority remains at
+`docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md`, with terminal state
+in `roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json`; its
+promotion-or-refutation program and `docs/x_article_synopsis_contract.md` remain
+historical execution and derivative-maintenance contracts. The
+current authority owns only unfinished or recurring work. Its first identity
+tranche now resolves all 115 accepted transition IDs through 25 exact atom, 61
+bounded subclaim, and 29 proxy relations with zero indirect parent movement.
+The remaining work includes rehabilitating historical negative results; producing competence-qualified
+natural, non-authored evidence; independent reproduction and transfer;
+semantically meaningful formal evidence; effect-complete multi-process
+implementation; source and instrument renewal; reader remediation; exact
+`main`-commit attestation; and owner-authorized publication. It does not convert
+campaign-local claims into core promotions or let proof, validator, or source
+counts stand in for evidence.
 
-P1/M1 are now in progress. `evidence_quality/claim_atom_registry.json` contains
-the generated structured discovery surface, while
-`evidence_quality/prose_claim_candidate_queue.json` preserves prose-only
-candidates and `evidence_quality/claim_atom_reviews.json` owns semantic
-adjudication. Machine candidates and queue counts are not completed claim
-decomposition. The first five chapter sweeps, `asi-is-a-stack-not-a-model`,
-`the-efficient-asi-hypothesis`, `system-boundaries-and-authority`,
-`failure-modes-of-ungoverned-intelligence`, and
-`evidence-states-and-claim-discipline`, have reviewed 161 resulting atoms and
-217 prose candidates. They added three prose-owned atoms, narrowed the
-efficiency, authority, failure-model, and evidence-transition cores, and
-promoted twenty-seven previously prose-only obligations into manifest ownership
-while leaving support unchanged. The remaining 49 chapters still require sentence-level
-sweeps and exact claim-specific scope, falsifier, lane, gate, contrary-
-evidence, and residual review before P1 can close.
+The maintained X Article synopsis is complete at 5,222 canonical visible words
+with 24 crosswalked claims and an exact 2000×800 header. Its real X draft is
+ready but unpublished, and its platform formatting and missing header-alt
+control remain explicit residuals. Exact local HTML is approved only as a local
+artifact; EPUB and DOCX remain bounded but not release-approved, and PDF remains
+failed. This priority overlay does not change chapter order, support states,
+proof results, benchmark results, reader approvals, rights, or immutable
+release history. `v2.3.0` remains the latest public living-book release.
 
 ## Drafting Thesis
 
@@ -557,7 +562,7 @@ Draft deliverables:
 - Implemented Lean proof target: finite evidence-transition lifecycle routing sends no-change requests, missing claim records, scope-boundary gaps, support-effect gaps, support-effect mismatches, review gaps, missing required evidence, missing negative evidence, downgrade-trigger gaps, terminal-effect mismatches, missing changelog refs, and missing non-claim boundaries to explicit modeled outcomes.
 - Implemented Codex test: Evidence bundle completeness and changelog-consistency probe, via `python3 scripts/validate_evidence_bundle_completeness_probe.py`, checks two valid synthetic evidence bundles and seven expected-invalid controls for no-change records, blocked promotion, artifact/result refs, commands, changelog refs, limitations, non-claims, stale changelogs, fixture overclaims, and no support-state transition. Result: `experiments/evidence_bundle_completeness/results/2026-07-02-local.json`.
 - Implemented Codex test: Claim ledger completeness audit, via `python3 scripts/validate_claim_ledger_completeness_audit.py`, checks the real Appendix C ledger against 44 manifest chapter core claims, expected labels, support states, assigned sources, open gaps, promotion paths, duplicate/stale rows, and seven expected-invalid mutation controls. Result: `experiments/claim_ledger_completeness/results/2026-07-02-local.json`.
-- Implemented Codex test: Accepted live transition review audit, via `python3 scripts/validate_accepted_transition_review_audit.py`, checks 105 accepted transition records, twenty bounded non-core upward transitions, two accepted exact refutations, the accepted no-promotion ledger, no accepted upward chapter-core transition, review/changelog/evidence-packet/non-claim boundaries, and seven expected-invalid mutation controls. Result: `experiments/accepted_transition_review/results/2026-07-02-local.json`.
+- Implemented Codex test: Accepted live transition review audit, via `python3 scripts/validate_accepted_transition_review_audit.py`, checks 115 accepted transition records, twenty-five bounded non-core upward transitions, three historical `refuted` labels now bounded by N1/N2 competence ceilings, the accepted no-promotion ledger, no accepted upward chapter-core transition, review/changelog/evidence-packet/non-claim boundaries, and seven expected-invalid mutation controls. Result: `experiments/accepted_transition_review/results/2026-07-02-local.json`.
 - Implemented Codex test: Claim-state transition bridge, via `python3 scripts/validate_claim_state_transition_bridge.py`, checks synthetic claim narrowing, support downgrade, terminal refutation, negative-evidence requirements, rejected mutation controls, bounded support-state effects, no live claim movement, and non-claim boundaries. Result: `experiments/claim_state_transition_bridge/results/2026-07-04-local.json`.
 - Implemented historical-project packet: `schemas/evidence_cell.schema.json`, `tests/fixtures/protocol_records/evidence_cell.valid.json`, and `python3 scripts/validate_evidence_cells.py` encode one six-project lineage cell and reject missing causal stages, dishonest missingness, ownership/capability conflation, unsupported updated-state claims, and false verifier independence. The fixture records an incomplete checkpoint-to-response chain and has `argument_only` support effect; it does not reproduce the projects or promote the chapter core claim.
 - Source-noted external comparator rows now position evidence states against model cards, datasheets, ML reproducibility-review practice, proof-carrying-code lineage, Transformer Circuits, and monosemantic feature decomposition as adjacent reporting, proof-carrying, and mechanistic-interpretability disciplines; no model-card, datasheet, external reproducibility-review, proof-carrying-code implementation, circuit analysis, sparse-autoencoder run, model transparency result, or support-state promotion is claimed.
@@ -979,6 +984,8 @@ Source loading queue:
 | External comparators | `ext_reinforcement_learning_moral_uncertainty_2020`, `ext_contestable_ai_design_2022`, `ext_collective_constitutional_ai_2024`, `ext_corrigibility_2015`, `ext_off_switch_game_2016` | Use after source notes for moral-uncertainty, contestable-AI, public-input constitutional AI, corrigibility, and off-switch positioning; do not treat them as a solved moral theory, legal proof, institutional legitimacy proof, or support-state promotion. |
 | Folded history | `governance-rights-fork-exit-and-audit` | Folded into this destination on 2026-06-30; preserve fork, exit, audit, redaction, appeal, dissent, contestability, durable record paths, safety-limited fork obligations, source mappings, tests, and proof hooks as subclaims and history. |
 
+
+| Manifest assignment reconciliation | `platonic_world_model` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: A stack may need to act while moral theories, stakeholder interests,
@@ -1076,7 +1083,7 @@ Source loading queue:
 | External literature variants | `ext_capability_based_computer_systems_1984`, `ext_semver_2_0_0`, `ext_slsa_v1_0` | Use as capability-authority, versioned-interface, and artifact-provenance comparators; do not treat them as deployed SCF enforcement or support-state promotion. |
 
 
-| Manifest assignment reconciliation | `reflexive_router_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `reflexive_router_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: nominal upgrades can preserve names, APIs, and average scores while changing failures, abstentions, side effects, authority, privacy, resources, consumers, state, dependencies, or recovery.
@@ -1165,6 +1172,8 @@ Source loading queue:
 | External comparators | `ext_corrigibility_2015`, `ext_argo_rollouts_docs`, `ext_feature_toggles_fowler`, `ext_google_cloud_mlops_cd`, `ext_kubernetes_deployments_docs`, `ext_txfs_2018` | Use for correction-channel, progressive-delivery, controlled-exposure, MLOps, revision-history, transactional-storage, and recovery boundaries; do not infer local implementation, whole-agent corrigibility, semantic/external recovery, or production replacement. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
+
+| Manifest assignment reconciliation | `deterministic_capability_compilation` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: live AI updates can preserve a name or artifact while changing checkpoint authority, hidden state, evaluators, monitors, authority, descendants, and irreversible effects.
@@ -1254,7 +1263,7 @@ Source loading queue:
 
 | Pinned implementation counterexamples | `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project` | Use for contract-versus-effect, metadata-versus-enforcement, isolation, audit, revocation, root, and evaluator-independence failures; public-safe notes only, with no security support promotion. |
 
-| Manifest assignment reconciliation | `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `platonic_world_model`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: untrusted content can induce privileged information flow or effects across model, runtime, tool, operator, vendor, hardware, log, backup, and descendant trust zones.
@@ -1441,6 +1450,8 @@ Source loading queue:
 | Primary | `ext_nist_cscrm_2022`, `ext_slsa_build_track_1_2`, `ext_openssf_model_signing_spec_2025`, `ext_spdx_ai_profile_3_0_1`, `ext_w3c_prov_o_2013`, `ext_mlcommons_croissant_1_1_2026`, `ext_in_toto_2019` | Use as distinct primary comparators for lifecycle risk, build provenance, model signing, AI BOMs, asserted provenance, dataset metadata, and signed process layouts. None establishes local conformance, content truth, efficacy, completeness, or safety. |
 | Supporting | `cca_project`, `moecot_manifest_project`, `corbens_trainer_project`, `ext_owasp_agentic_top_10_2026` | Use the projects only as author-lineage implementation context and OWASP only as supporting threat taxonomy. Do not count the eleven records as eleven independent demonstrations of one control. |
 
+
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: A valid custody record can protect one digest while material data,
@@ -1551,7 +1562,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `ext_embedded_agency_2019` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_embedded_agency_2019` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: A system participating in its own proposal, implementation, or evaluation can shape the state, evidence, evaluator, authority, ontology, descendants, and recovery conditions by which admission is judged.
@@ -1789,7 +1800,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived runtime claims. |
 
 
-| Manifest assignment reconciliation | `reflexive_router_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `reflexive_router_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: every representation and material effect after accepted intent can change meaning or authority.
@@ -1884,7 +1895,7 @@ Source loading queue:
 | Connector or recovery required | `moecot`, `coherence_exchange` | Use as source-note/connector context only unless raw text, code, logs, release artifacts, benchmark records, simulations, or external corroboration are imported or inspected. |
 
 
-| Manifest assignment reconciliation | `ext_v_jepa_2_2025`, `reflexive_router_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `platonic_world_model`, `ext_v_jepa_2_2025`, `reflexive_router_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: after a contract is accepted, the stack must choose and revise obligation order, alternatives, observations, feasibility, capacity, and dispatch boundaries under uncertainty.
@@ -1971,7 +1982,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: after Planning admits an obligation, every source-to-IR-to-target transformation can silently lose meaning, non-goals, authority, rights, evidence, repair identity, or residual duties while retaining fluent output.
@@ -2043,7 +2054,7 @@ Source loading queue:
 | Connector or recovery required | `vcm_editable`, `moecot` | Use source notes or connector reads before source-derived claims; no resolver, VCM-Bench, runtime, or benchmark result is promoted from these sources. |
 
 
-| Manifest assignment reconciliation | `reflexive_router_whitepaper`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: a consumer must connect exact durable source state to the actual finite packet it receives without losing identity, lineage, authority, rights, omissions, costs, or faults.
@@ -2129,7 +2140,7 @@ Source loading queue:
 | Connector or recovery required | `vcm_editable`, `ext_bourtoule_machine_unlearning_2021` | Use editable VCM for vocabulary only and Machine Unlearning to separate storage deletion from parametric influence, privacy, behavioral forgetting, and downstream erasure. |
 
 
-| Manifest assignment reconciliation | `reflexive_router_whitepaper`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `platonic_world_model`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Parallel and long-lived context mutation cannot be governed from retrieval results or success-shaped logs.
@@ -2304,7 +2315,7 @@ Source loading queue:
 | External comparators | `ext_agm_belief_revision_1985`, `ext_truth_maintenance_system_1979`, `ext_assumption_based_tms_1986`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_checklist_2020`, `ext_w3c_prov_o_2013` | Position the owner against formal belief revision, truth maintenance, assumption contexts, citation support, retrieval critique, behavioral testing, and interoperable provenance. Treat them as bounded comparators, not local result evidence. |
 | Semantic-addressing lineage | `qcsa_whitepaper` | Use for the separation among ontology, proposition, evidence, provenance, support, contradiction, address, and permitted use; preserve QCSA's mixed results and zero core support effect. |
 
-| Manifest assignment reconciliation | `reflexive_router_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `platonic_world_model`, `reflexive_router_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Claims can drift across paraphrases, assumptions, evidence changes, contradictions, ontologies, concurrent updates, and publication surfaces without a reconstructable identity or history.
@@ -2405,6 +2416,8 @@ Source loading queue:
 | Supporting | `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm`, `uat`, `talos`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project` | Mine after primary sources for obligation envelopes, verification-workspace limits, semantic traces, tribunal review, typed review artifacts, execution consequences, and historical method/independence negative cases. |
 | External comparator | `ext_proof_carrying_code_1997`, `ext_lean4_theorem_proving`, `ext_autoformalization_llms_2022`, `ext_ai_safety_debate_2018`, `ext_llm_as_judge_mt_bench_2023`, `ext_contestable_ai_design_2022` | Use after source notes for proof-carrying-code, theorem-proving, autoformalization, debate, LLM-as-judge, and contestable-review positioning; do not treat comparators as local verifier, theorem-validity, semantic-equivalence, debate-quality, judge-calibration, tribunal-quality, or institutional-adequacy evidence. |
 
+
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: High-value claims and high-risk artifacts need a governed verification path that can choose proof, citation, procedure, replay, benchmark, or adversarial-review treatment without laundering failed, mismatched, or contested evidence into support.
@@ -2478,6 +2491,8 @@ Source loading queue:
 | Variants / alternate releases | `talos_md` | Use only to compare versions or recover missing detail. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
+
+| Manifest assignment reconciliation | `deterministic_capability_compilation` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Intelligence must become typed work with lifecycle, permissions, artifacts, logs, and approvals.
@@ -2548,7 +2563,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `ext_claw_swe_bench_2026`, `ext_txfs_2018`, `ext_faithfulness_information_flow_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_claw_swe_bench_2026`, `ext_txfs_2018`, `ext_faithfulness_information_flow_2026`, `ext_swe_rebench_v2_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The stack needs durable artifacts and replayable traces so work can be inspected, reused, tested, and improved.
@@ -2708,7 +2723,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `ext_claw_swe_bench_2026`, `ext_txfs_2018`, `qcsa_whitepaper`, `reflexive_router_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_claw_swe_bench_2026`, `ext_txfs_2018`, `qcsa_whitepaper`, `reflexive_router_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Ownership: exact leased effect dispatch, independent effect observation,
@@ -2842,6 +2857,8 @@ Source loading queue:
 | Supporting | `talos`, `vcm_public`, `tokenmana`, `ext_owasp_agentic_top_10_2026`, `qcsa_whitepaper` | Mine Talos for typed handoffs, VCM for authority/revocation, TokenMana for bounded economic pressure, OWASP for threat coverage, and QCSA for bounded semantic-address translation. Do not promote any of them to protocol, identity, credential, payment, settlement, privacy, deployment, or safety evidence. |
 
 
+
+| Manifest assignment reconciliation | `platonic_world_model` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: A local task contract loses its binding when it reaches another agent,
@@ -2953,7 +2970,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `reflexive_router_whitepaper`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Repeated reasoning trajectories should not be improvised forever when they can become verified procedures or tools.
@@ -3041,7 +3058,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `ext_dont_hallucinate_abstain_2024`, `qcsa_whitepaper`, `reflexive_router_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_dont_hallucinate_abstain_2024`, `qcsa_whitepaper`, `reflexive_router_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs to allocate cognition across specialists rather than force one system to do every task.
@@ -3147,7 +3164,7 @@ Source loading queue:
 | Mutable/external/dynamical/function/graph/program alternatives | `ext_ttt_layers_2024`, `ext_titans_2025`, `ext_kan_2024`, `ext_kan_or_mlp_fairer_comparison_2024`, `ext_neural_turing_machines_2014`, `ext_differentiable_neural_computer_2016`, `ext_liquid_time_constant_networks_2021`, `ext_neural_message_passing_2017`, `ext_dreamcoder_2020` | Use for online-state custody, fair KAN comparison, memory and topology extrapolation, continuous-time cost, relational processing, and verified abstraction tests. |
 | Hybrid composition | `ext_jamba_2024` | Use to make layer/expert/substrate composition and active-versus-total accounting explicit; do not infer a generally optimal mixture or local result. |
 
-| Manifest assignment reconciliation | `ext_hyperscale_lottery_2026`, `ext_inkling_2026`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_gated_deltanet2_2026`, `ext_hyperscale_lottery_2026`, `ext_inkling_2026`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Explain why a stable stack must abstract architecture without pretending that
@@ -3245,7 +3262,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `ext_dont_hallucinate_abstain_2024` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_dont_hallucinate_abstain_2024`, `ext_swe_rebench_v2_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Every routable or replaceable capability needs a current consumer- and use-specific decision about shadow, canary, ordinary, diagnostic, quarantined, superseded, or retired operation and downstream residual ownership.
@@ -3416,7 +3433,7 @@ Source loading queue:
 | Hierarchical-compression comparator | `ext_raptor_2024` | Use for recursively clustered and summarized retrieval trees. Require source bindings, loss contracts, reversibility limits, and residuals; do not infer local summary fidelity or benchmark gains. |
 
 
-| Manifest assignment reconciliation | `qcsa_whitepaper`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `qcsa_whitepaper`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: visible size can fall while total reconstruction, semantic, verification, repair, fallback, source, rights, human, governance, recovery, and residual burden rises.
@@ -4336,7 +4353,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs a way to move capability claims through evidence without overfitting to fixed benchmarks.
@@ -4831,7 +4848,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `qcsa_whitepaper`, `ext_v_jepa_2_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `qcsa_whitepaper`, `ext_v_jepa_2_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Learning inputs become transformed, mixed, replayed, indexed,
@@ -5145,7 +5162,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `qcsa_whitepaper`, `ext_v_jepa_2_2025`, `ext_embedded_agency_2019`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `qcsa_whitepaper`, `ext_v_jepa_2_2025`, `ext_embedded_agency_2019`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Readers need to see how the layers operate as one machine from intent to governed action and improvement.
@@ -5268,6 +5285,8 @@ Source loading queue:
 | Supporting | `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `rmi`, `cgs`, `benchmaxxing`, `cognitive_loop_closure`, `viea`, `vcm_public`, `scf` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | External comparators | `ext_model_cards_2019`, `ext_datasheets_datasets_2021`, `ext_factsheets_ai_services_2019`, `ext_ml_reproducibility_program_2021` | Load after Theseus sources to position report-first packets against structured model reporting, dataset documentation, AI-service declarations, and ML reproducibility programs. Treat them as comparator vocabulary, not evidence that Theseus has been reproduced. |
 
+
+| Manifest assignment reconciliation | `deterministic_capability_compilation` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The book needs a concrete implementation-reference chapter for how the ASI stack can be operated as report-first local machinery instead of only conceptual layer diagrams.
@@ -5373,7 +5392,7 @@ Source loading queue:
 | Connector or recovery required | `moecot`, `moecot_md`, `road_to_agi`, `coherence_exchange` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `ext_nist_ai_rmf_1_0_2023`, `ext_model_evaluation_extreme_risks_2023`, `ext_dafny_2010`, `ext_copilot_runtime_monitor_2010`, `ext_shop2_2003`, `ext_swe_bench_2023`, `ext_mmlu_2020`, `ext_checklist_2020`, `ext_codebleu_2020`, `ext_qlora_2023` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_nist_ai_rmf_1_0_2023`, `ext_model_evaluation_extreme_risks_2023`, `ext_dafny_2010`, `ext_copilot_runtime_monitor_2010`, `ext_shop2_2003`, `ext_swe_bench_2023`, `ext_mmlu_2020`, `ext_checklist_2020`, `ext_codebleu_2020`, `ext_qlora_2023`, `ext_swe_rebench_v2_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs a build sequence that does not introduce agency or self-improvement before auditability and governance are credible.
@@ -5491,7 +5510,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `verification_bandwidth`, `benchmaxxing` | Read first for chapter claims and mechanisms. |
-| Supporting | `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_mmlu_2020`, `ext_gpqa_2023`, `ext_livebench_2024`, `ext_lean4_theorem_proving`, `ext_moe_llm_survey_2024` | Mine after primary sources for cross-layer connections, variants, evaluation and proof comparators, and failure modes. |
+| Supporting | `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `deterministic_capability_compilation`, `platonic_world_model`, `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_mmlu_2020`, `ext_gpqa_2023`, `ext_livebench_2024`, `ext_lean4_theorem_proving`, `ext_moe_llm_survey_2024` | Mine after primary sources for cross-layer connections, variants, evaluation and proof comparators, capability-foundry and semantic-continuity experiment programs, and failure modes. The two July 2026 Corben papers remain argument-only source syntheses. |
 | Durable-semantic-memory comparators | `ext_graphrag_2024`, `ext_hipporag_2024` | Use to test whether global graph sensemaking and associative graph navigation close the provisional durable-semantic-memory gap after existing chapters are improved. Preserve truth, update, poisoning, provenance, and local-reproduction limits. |
 | Connector or recovery required | `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
@@ -5521,7 +5540,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- Twenty-eight exact source mappings; split source inventory, source notes, and generated Corben/local, external, and author-intent appendices; and an explicit citation, proof, experiment, GraphRAG/HippoRAG, inaccessible-source, rejection, and blocker backlog.
+- Thirty exact source mappings, including `deterministic_capability_compilation` and `platonic_world_model`; split source inventory, source notes, and generated Corben/local, external, and author-intent appendices; and explicit citation, proof, experiment, capability-foundry, semantic-continuity, GraphRAG/HippoRAG, inaccessible-source, rejection, and blocker backlogs.
 - Implemented public-safe `research_backlog_record.valid.json` and `new_paper_triage_scenario.valid.json` fixtures plus source inventory, note, protocol, appendix, citation, and mapping validators. These validate declared record surfaces only.
 - Two Lean targets and four finite declarations enforce only that source-derived claim records need ingested source artifacts and accepted assignments need existing chapter ids.
 - No natural intake or closure campaign, citation-accuracy or completeness result, research-quality effect, independent reproduction, transfer, or chapter-core support effect exists.

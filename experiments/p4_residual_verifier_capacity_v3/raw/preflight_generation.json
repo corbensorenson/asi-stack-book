@@ -1,0 +1,271 @@
+{
+  "schema_version": "asi_stack.p4_m8_residual_verifier_generation.v3",
+  "phase": "preflight",
+  "run_id": "p4-m8-residual-verifier-qwen3-8b-003",
+  "model": {
+    "repository": "mlx-community/Qwen3-8B-4bit",
+    "snapshot_commit": "545dc4251c05440727734bcd94334791f6ab0192",
+    "thinking": false,
+    "temperature": 0.1,
+    "decision_max_tokens": 320,
+    "residual_max_tokens": 760,
+    "retries": 0
+  },
+  "task_count": 6,
+  "model_call_count": 12,
+  "labels_loaded_by_generator": false,
+  "retry_count": 0,
+  "environment": {
+    "platform": "macOS-15.0-arm64-arm-64bit",
+    "mlx_lm": "0.29.1"
+  },
+  "elapsed_seconds": 150.42502,
+  "records": [
+    {
+      "task_id": "rv3-p01",
+      "outputs": {
+        "decision": {
+          "prompt_sha256": "7c27daaa2d16a62a6e7390e6ecb8632910c93d2f797c1cdcfbf0c9e2367e789a",
+          "raw_sha256": "bff602a49f818afe4da436d5e11b2d9001edaeb11d1fafdfdafc5c7199daf6e7",
+          "raw": "{\"task_id\": \"rv3-p01\", \"run_id\": \"p4-m8-residual-verifier-qwen3-8b-003\", \"decision\": \"release\", \"answer\": \"The clean manifest packet meets the release criteria as there are no material blockers identified in the evidence items.\", \"confidence\": 0.95}",
+          "parsed": {
+            "task_id": "rv3-p01",
+            "run_id": "p4-m8-residual-verifier-qwen3-8b-003",
+            "decision": "release",
+            "answer": "The clean manifest packet meets the release criteria as there are no material blockers identified in the evidence items.",
+            "confidence": 0.95
+          },
+          "elapsed_seconds": 10.802301,
+          "token_count": 74
+        },
+        "residual": {
+          "prompt_sha256": "f86342e838e8f8baa509ed294053d9871db92f7a04a962cd51604992dcf04a6a",
+          "raw_sha256": "b849a1e4b121fbe469d2156384b06f9f66ef3a27f1d1fbcdad6b782d47002b00",
+          "raw": "{\n  \"task_id\": \"rv3-p01\",\n  \"run_id\": \"p4-m8-residual-verifier-qwen3-8b-003\",\n  \"self_report_residual_ids\": [],\n  \"residual_ledger\": [],\n  \"requested_check_ids\": [],\n  \"remediation_route\": \"release\"\n}",
+          "parsed": {
+            "task_id": "rv3-p01",
+            "run_id": "p4-m8-residual-verifier-qwen3-8b-003",
+            "self_report_residual_ids": [],
+            "residual_ledger": [],
+            "requested_check_ids": [],
+            "remediation_route": "release"
+          },
+          "elapsed_seconds": 10.583919,
+          "token_count": 72
+        }
+      }
+    },
+    {
+      "task_id": "rv3-p02",
+      "outputs": {
+        "decision": {
+          "prompt_sha256": "3d1700e88fd831cfd1e98498bab13ef1e4c04759aafd28d6238e4d8ad3bffd68",
+          "raw_sha256": "d2646f17aa9629c15bfc57d1afa3c1daf8e4cf16f7967e2a92d35d68d49b741e",
+          "raw": "{\"task_id\": \"rv3-p02\", \"run_id\": \"p4-m8-residual-verifier-qwen3-8b-003\", \"decision\": \"block\", \"answer\": \"The evidence indicates that the remote replica has not acknowledged invalidation, which is a material blocker. Therefore, the item cannot be released.\", \"confidence\": 0.95}",
+          "parsed": {
+            "task_id": "rv3-p02",
+            "run_id": "p4-m8-residual-verifier-qwen3-8b-003",
+            "decision": "block",
+            "answer": "The evidence indicates that the remote replica has not acknowledged invalidation, which is a material blocker. Therefore, the item cannot be released.",
+            "confidence": 0.95
+          },
+          "elapsed_seconds": 11.186455,
+          "token_count": 81
+        },
+        "residual": {
+          "prompt_sha256": "12182d3f8227d3d175853273aac09d664d31ff12fcd4e3cb77c0e5b4e2352936",
+          "raw_sha256": "54722267cd725f0368cccff2937bdb82a08109d973c08248f5243983fcda9ae2",
+          "raw": "{\n  \"task_id\": \"rv3-p02\",\n  \"run_id\": \"p4-m8-residual-verifier-qwen3-8b-003\",\n  \"self_report_residual_ids\": [],\n  \"residual_ledger\": [\n    {\n      \"evidence_id\": \"H2\",\n      \"owner\": \"remote replica\",\n      \"reopen_trigger\": \"acknowledgment of invalidation\",\n      \"evidence_needed\": \"acknowledgment from remote replica\"\n    }\n  ],\n  \"requested_check_ids\": [],\n  \"remediation_route\": \"retain\"\n}",
+          "parsed": {
+            "task_id": "rv3-p02",
+            "run_id": "p4-m8-residual-verifier-qwen3-8b-003",
+            "self_report_residual_ids": [],
+            "residual_ledger": [
+              {
+                "evidence_id": "H2",
+                "owner": "remote replica",
+                "reopen_trigger": "acknowledgment of invalidation",
+                "evidence_needed": "acknowledgment from remote replica"
+              }
+            ],
+            "requested_check_ids": [],
+            "remediation_route": "retain"
+          },
+          "elapsed_seconds": 15.231958,
+          "token_count": 123
+        }
+      }
+    },
+    {
+      "task_id": "rv3-p03",
+      "outputs": {
+        "decision": {
+          "prompt_sha256": "1062d935bdac183ea513ed567872994c62771001402d8bf2a590113e2810645d",
+          "raw_sha256": "8667e1c55492cfaa16ffc57138acc485fb6e0a025e39740383dba33ca16bb678",
+          "raw": "{\"task_id\": \"rv3-p03\", \"run_id\": \"p4-m8-residual-verifier-qwen3-8b-003\", \"decision\": \"release\", \"answer\": \"release\", \"confidence\": 0.95}",
+          "parsed": {
+            "task_id": "rv3-p03",
+            "run_id": "p4-m8-residual-verifier-qwen3-8b-003",
+            "decision": "release",
+            "answer": "release",
+            "confidence": 0.95
+          },
+          "elapsed_seconds": 9.136778,
+          "token_count": 56
+        },
+        "residual": {
+          "prompt_sha256": "36a68b140bc697e2880e72cc2485f90037dab8bc89f97491c9295346757dc78c",
+          "raw_sha256": "b6b74293be0dfb1cd60014864e5e0f2ac0f5d60254ce9010ae2b8a67a7343ff7",
+          "raw": "{\n  \"task_id\": \"rv3-p03\",\n  \"run_id\": \"p4-m8-residual-verifier-qwen3-8b-003\",\n  \"self_report_residual_ids\": [],\n  \"residual_ledger\": [],\n  \"requested_check_ids\": [],\n  \"remediation_route\": \"release\"\n}",
+          "parsed": {
+            "task_id": "rv3-p03",
+            "run_id": "p4-m8-residual-verifier-qwen3-8b-003",
+            "self_report_residual_ids": [],
+            "residual_ledger": [],
+            "requested_check_ids": [],
+            "remediation_route": "release"
+          },
+          "elapsed_seconds": 11.140386,
+          "token_count": 72
+        }
+      }
+    },
+    {
+      "task_id": "rv3-p04",
+      "outputs": {
+        "decision": {
+          "prompt_sha256": "58e524f232e325b950b36ac00a5eb72d6e3a15c105fd065661452c3a8735e9d4",
+          "raw_sha256": "1efc84993d76f3df2b55f73917afaa7fe5875bf78c89c5f6d0dbf5c48bd53d8b",
+          "raw": "{\"task_id\": \"rv3-p04\", \"run_id\": \"p4-m8-residual-verifier-qwen3-8b-003\", \"decision\": \"block\", \"answer\": \"The evaluation conflict packet contains conflicting evidence items (J1 and J2) and a missing replay receipt (J3), which may indicate unresolved issues. The presence of these items suggests that the packet is not ready for release.\", \"confidence\": 0.85}",
+          "parsed": {
+            "task_id": "rv3-p04",
+            "run_id": "p4-m8-residual-verifier-qwen3-8b-003",
+            "decision": "block",
+            "answer": "The evaluation conflict packet contains conflicting evidence items (J1 and J2) and a missing replay receipt (J3), which may indicate unresolved issues. The presence of these items suggests that the packet is not ready for release.",
+            "confidence": 0.85
+          },
+          "elapsed_seconds": 12.301466,
+          "token_count": 99
+        },
+        "residual": {
+          "prompt_sha256": "bfc2658fd6267fffb6d37e0f15d98452f4b8acb09f1372372c855b33ef691c24",
+          "raw_sha256": "671d440e905ed64c1072658c8ca3a3dedc053385dd1eb9cf94c5b11be1390fff",
+          "raw": "{\n  \"task_id\": \"rv3-p04\",\n  \"run_id\": \"p4-m8-residual-verifier-qwen3-8b-003\",\n  \"self_report_residual_ids\": [],\n  \"residual_ledger\": [\n    {\n      \"evidence_id\": \"J1\",\n      \"owner\": \"primary evaluator\",\n      \"reopen_trigger\": \"new evidence of pass/fail\",\n      \"evidence_needed\": \"confirmation of pass status\"\n    },\n    {\n      \"evidence_id\": \"J2\",\n      \"owner\": \"independent evaluator\",\n      \"reopen_trigger\": \"discrepancy in evaluation criteria\",\n      \"evidence_needed\": \"evaluation methodology review\"\n    },\n    {\n      \"evidence_id\": \"J3\",\n      \"owner\": \"replay system\",\n      \"reopen_trigger\": \"receipt status change\",\n      \"evidence_needed\": \"receipt verification log\"\n    }\n  ],\n  \"requested_check_ids\": [],\n  \"remediation_route\": \"retain\"\n}",
+          "parsed": {
+            "task_id": "rv3-p04",
+            "run_id": "p4-m8-residual-verifier-qwen3-8b-003",
+            "self_report_residual_ids": [],
+            "residual_ledger": [
+              {
+                "evidence_id": "J1",
+                "owner": "primary evaluator",
+                "reopen_trigger": "new evidence of pass/fail",
+                "evidence_needed": "confirmation of pass status"
+              },
+              {
+                "evidence_id": "J2",
+                "owner": "independent evaluator",
+                "reopen_trigger": "discrepancy in evaluation criteria",
+                "evidence_needed": "evaluation methodology review"
+              },
+              {
+                "evidence_id": "J3",
+                "owner": "replay system",
+                "reopen_trigger": "receipt status change",
+                "evidence_needed": "receipt verification log"
+              }
+            ],
+            "requested_check_ids": [],
+            "remediation_route": "retain"
+          },
+          "elapsed_seconds": 21.553504,
+          "token_count": 213
+        }
+      }
+    },
+    {
+      "task_id": "rv3-p05",
+      "outputs": {
+        "decision": {
+          "prompt_sha256": "e79f143e15f54b4ca6119f316764db020ac617ba16c66b31a7f4bc59ce742eaa",
+          "raw_sha256": "00273607be950681a733bc50e495f252f8b077496f9da2a44a58d039d73222e7",
+          "raw": "{\"task_id\": \"rv3-p05\", \"run_id\": \"p4-m8-residual-verifier-qwen3-8b-003\", \"decision\": \"release\", \"answer\": \"The packet meets the release criteria as there are no material blockers identified in the evidence items.\", \"confidence\": 0.95}",
+          "parsed": {
+            "task_id": "rv3-p05",
+            "run_id": "p4-m8-residual-verifier-qwen3-8b-003",
+            "decision": "release",
+            "answer": "The packet meets the release criteria as there are no material blockers identified in the evidence items.",
+            "confidence": 0.95
+          },
+          "elapsed_seconds": 9.342746,
+          "token_count": 72
+        },
+        "residual": {
+          "prompt_sha256": "eb4fe30966bd1c5179e82802b3cba059aa3e4c812d78656e9fc80ff148348d2a",
+          "raw_sha256": "762c90c134c62375a4ecd986b8128545edac2e64979c2ee329e3df78c69be555",
+          "raw": "{\n  \"task_id\": \"rv3-p05\",\n  \"run_id\": \"p4-m8-residual-verifier-qwen3-8b-003\",\n  \"self_report_residual_ids\": [],\n  \"residual_ledger\": [],\n  \"requested_check_ids\": [],\n  \"remediation_route\": \"release\"\n}",
+          "parsed": {
+            "task_id": "rv3-p05",
+            "run_id": "p4-m8-residual-verifier-qwen3-8b-003",
+            "self_report_residual_ids": [],
+            "residual_ledger": [],
+            "requested_check_ids": [],
+            "remediation_route": "release"
+          },
+          "elapsed_seconds": 10.442444,
+          "token_count": 72
+        }
+      }
+    },
+    {
+      "task_id": "rv3-p06",
+      "outputs": {
+        "decision": {
+          "prompt_sha256": "b9fbd0e7af3541d75dc2df0f8b638271e2a26fa35852cf114007c7c2d232a4bb",
+          "raw_sha256": "25dda3c7da128a76206031566f64487beaac843e17d3cbfe5c174fe5bfed00ca",
+          "raw": "{\"task_id\": \"rv3-p06\", \"run_id\": \"p4-m8-residual-verifier-qwen3-8b-003\", \"decision\": \"block\", \"answer\": \"Material blockers exist due to unknown external descendant status and backup retaining source rows.\", \"confidence\": 0.8}",
+          "parsed": {
+            "task_id": "rv3-p06",
+            "run_id": "p4-m8-residual-verifier-qwen3-8b-003",
+            "decision": "block",
+            "answer": "Material blockers exist due to unknown external descendant status and backup retaining source rows.",
+            "confidence": 0.8
+          },
+          "elapsed_seconds": 9.563393,
+          "token_count": 68
+        },
+        "residual": {
+          "prompt_sha256": "7b713576bd34c92b3ab5d11a8c6b1904583b18f9f4ec5cdb20784e08e3ed80ea",
+          "raw_sha256": "3ff6511018587328deef2a3cb53e965df7978bb568afd8d87c6c86434c507bfd",
+          "raw": "{\n  \"task_id\": \"rv3-p06\",\n  \"run_id\": \"p4-m8-residual-verifier-qwen3-8b-003\",\n  \"self_report_residual_ids\": [],\n  \"residual_ledger\": [\n    {\n      \"evidence_id\": \"L2\",\n      \"owner\": \"backup system\",\n      \"reopen_trigger\": \"data inconsistency detected\",\n      \"evidence_needed\": \"confirmation of row deletion\"\n    },\n    {\n      \"evidence_id\": \"L3\",\n      \"owner\": \"external system\",\n      \"reopen_trigger\": \"status update from external source\",\n      \"evidence_needed\": \"descendant status verification\"\n    }\n  ],\n  \"requested_check_ids\": [],\n  \"remediation_route\": \"retain\"\n}",
+          "parsed": {
+            "task_id": "rv3-p06",
+            "run_id": "p4-m8-residual-verifier-qwen3-8b-003",
+            "self_report_residual_ids": [],
+            "residual_ledger": [
+              {
+                "evidence_id": "L2",
+                "owner": "backup system",
+                "reopen_trigger": "data inconsistency detected",
+                "evidence_needed": "confirmation of row deletion"
+              },
+              {
+                "evidence_id": "L3",
+                "owner": "external system",
+                "reopen_trigger": "status update from external source",
+                "evidence_needed": "descendant status verification"
+              }
+            ],
+            "requested_check_ids": [],
+            "remediation_route": "retain"
+          },
+          "elapsed_seconds": 19.04103,
+          "token_count": 164
+        }
+      }
+    }
+  ],
+  "support_state_effect": "none_pending_adjudication",
+  "publication_authority": "none",
+  "release_authority": "none"
+}

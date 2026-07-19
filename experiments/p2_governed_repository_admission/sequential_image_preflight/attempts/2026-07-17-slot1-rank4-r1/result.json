@@ -1,0 +1,74 @@
+{
+  "schema_version": "asi_stack.p2_sequential_candidate_image_preflight.v1",
+  "recorded_at_utc": "2026-07-17T12:27:22.439480+00:00",
+  "attempt_id": "2026-07-17-slot1-rank4-r1",
+  "claim_id": "p2.governed_natural_repository_change_admission_joint_frontier",
+  "provenance_path": "evidence_quality/p2_slot1_rank4_provenance_preflight.json",
+  "resource_ceiling_path": "evidence_quality/p2_resource_ceiling.json",
+  "slot": 1,
+  "rank": 4,
+  "instance_id": "reubeno__brush-486",
+  "image_ref": "docker.io/swerebenchv2/reubeno-brush@sha256:8381e31a8bbeae39b75e4d5f06ef69cd57e8651c56551e96316d56a5a7baff90",
+  "manifest_digest": "sha256:8381e31a8bbeae39b75e4d5f06ef69cd57e8651c56551e96316d56a5a7baff90",
+  "host_free_before_bytes": 77229543424,
+  "task_content_opened": false,
+  "candidate_outcome_opened": false,
+  "final_pool_selected": false,
+  "final_pool_opened": false,
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "pull": {
+    "exit_code": 0,
+    "wall_seconds": 108.643218,
+    "output_sha256": "c5cdf1b489f0f5869f693e070d767cba75f7d64164e8082347313e13737d3e87"
+  },
+  "measurement": {
+    "image_id": "sha256:8381e31a8bbeae39b75e4d5f06ef69cd57e8651c56551e96316d56a5a7baff90",
+    "repo_digests": [
+      "swerebenchv2/reubeno-brush@sha256:8381e31a8bbeae39b75e4d5f06ef69cd57e8651c56551e96316d56a5a7baff90"
+    ],
+    "os": "linux",
+    "architecture": "amd64",
+    "engine_content_size_bytes": 1120427248,
+    "virtual_size_display": "4.36GB",
+    "virtual_size_conservative_upper_bound_bytes": 4365000000,
+    "gates": {
+      "inspect_exit_zero": true,
+      "manifest_digest_present": true,
+      "linux_amd64": true,
+      "engine_content_within_ceiling": true,
+      "virtual_size_within_ceiling": true
+    }
+  },
+  "state": "passed",
+  "terminal_code": "all_image_and_cleanup_gates_passed",
+  "terminal_detail": "candidate may proceed to task opening",
+  "cleanup": {
+    "image_removal_exit_code": 0,
+    "image_removal_output_sha256": "a47325d74129e45788e7c74b57a97984e7fbf49891af9e4fd315e291638b25a3",
+    "stabilization": {
+      "stable": true,
+      "samples": [
+        {
+          "free_bytes": 73353232384,
+          "docker_zero": true
+        },
+        {
+          "free_bytes": 77235630080,
+          "docker_zero": true
+        },
+        {
+          "free_bytes": 77232762880,
+          "docker_zero": true
+        },
+        {
+          "free_bytes": 77233549312,
+          "docker_zero": true
+        }
+      ],
+      "host_free_after_bytes": 77233549312,
+      "host_free_byte_loss": 0
+    }
+  },
+  "image_resource_gate_passed": true
+}

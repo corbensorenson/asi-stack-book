@@ -1,0 +1,19 @@
+{
+  "schema_version": "asi_stack.p4_m8_kerc_preregistration.v1",
+  "run_id": "p4-m8-kerc-runtime-001",
+  "state": "prospectively_frozen_before_outcome_execution",
+  "design_sha256": "fa7d539cae86214d49d3cf1613031179b02c46535e7be03259c377aa7a73e170",
+  "corpus_sha256": "0a626a38c3772cc9c70ae56fe2c99f94b03e7bbe19eb725c60ab13be4417a67a",
+  "result_schema_sha256": "2f3f531ccfb836127ff06bc54f22d652d4c7b4e77c493bde14036a33fd0155a5",
+  "code_sha256": {
+    "p4_m8_kerc_common.py": "e14a212f668e277c6c676e8fcd4ceb396ca63570f8d18db8d9d20086d7c2078c",
+    "build_p4_m8_kerc_campaign.py": "c08a9d9dd229c06073a5f1d27581b5288bc5d1f27a632b9e3d39697484b78fa6",
+    "run_p4_m8_kerc_campaign.py": "5ebb58bb2076728536b684366f709c8d8590d650e0057d66221631c64a69be55",
+    "validate_p4_m8_kerc_design.py": "f09b98863e9a13e15a3a9880560a80d3449433acb561d3d94edf093776603eb2"
+  },
+  "outcome_aware_retry_allowed": false,
+  "heldout_label_access_during_training": false,
+  "support_state_effect": "none_before_adjudication",
+  "publication_authority": "none",
+  "release_authority": "none"
+}

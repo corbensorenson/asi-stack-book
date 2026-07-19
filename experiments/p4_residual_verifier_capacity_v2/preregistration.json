@@ -1,0 +1,22 @@
+{
+  "schema_version": "asi_stack.p4_m8_residual_verifier_preregistration.v2",
+  "state": "single_diagnosed_repair_frozen_before_v2_preflight_or_heldout",
+  "run_id": "p4-m8-residual-verifier-qwen3-8b-002",
+  "design_sha256": "11aa469eec50572b4d8d5a14b5b922bb981de1d9691c4edf224cc5235afdd202",
+  "preflight_tasks_sha256": "ba2984a5814d684d0c0ff1c02941d829b0b23590c853531b75858c3abb2be332",
+  "preflight_labels_sha256": "58f4255cbbe92451d9011356f895946480f4b2655ec49f2cdba42d02e517eaa2",
+  "heldout_tasks_sha256": "0ff1ae63cceb11c2b75ff59fc147e58bc0b190ccb20bd6b38eb0cd1e2ba49ba3",
+  "heldout_labels_sha256": "2e2fb4a790bf902272df10bee3adb9f99a76179f94ea78cfaedfaba8b73b08ae",
+  "code_sha256": {
+    "p4_m8_residual_verifier_v2_common.py": "781d7d5e154d15bccd31ed1bc0a0414655cef61ee8f3bf85b514f5ac3cb40313",
+    "build_p4_m8_residual_verifier_v2_campaign.py": "8ef65e253c2b29cc2db66a1b3561a2b362a421ae9f7d24f19d2b352008a568e1",
+    "run_p4_m8_residual_verifier_v2.py": "40613908c295592b7cc0d05bf8d29226f8aec80b8deb0b06715de9a4ba13a25b",
+    "evaluate_p4_m8_residual_verifier_v2.py": "dd947a7e8a5911a83cc5a2a122a009943f5b81383a2d18610dd728df49403eb3"
+  },
+  "heldout_open_condition": "fresh v2 preflight passes all prospective gates",
+  "outcome_aware_retry_allowed": false,
+  "further_route_taxonomy_repair_allowed": false,
+  "support_state_effect": "none_before_adjudication",
+  "publication_authority": "none",
+  "release_authority": "none"
+}

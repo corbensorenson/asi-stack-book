@@ -1,0 +1,71 @@
+{
+  "schema_version": "asi_stack.p2_sequential_replacement_provenance_preflight.v1",
+  "recorded_date": "2026-07-17",
+  "state": "n0_provenance_failure_before_task_content_opened",
+  "claim_id": "p2.governed_natural_repository_change_admission_joint_frontier",
+  "queue_path": "experiments/p2_governed_repository_admission/corpus/replacement_queue.json",
+  "prior_terminal_attempt_path": "experiments/p2_governed_repository_admission/sequential_image_preflight/attempts/2026-07-17-slot1-rank2-r1/result.json",
+  "candidate": {
+    "slot": 1,
+    "rank": 3,
+    "instance_id": "gleam-lang__gleam-4656",
+    "repo": "gleam-lang/gleam",
+    "language": "rust",
+    "base_commit": "cd116c2a7fec12ca60f6b28241becbe08f2d7274",
+    "public_change": {
+      "pull_url": "https://github.com/gleam-lang/gleam/pull/4656",
+      "pull_api_sha256": "617d8b66520865a62e760062bd1f8371fe683256483352fa52f701e6645d39d7",
+      "merge_api_sha256": "4d059c16544c93436b37bc42a18dea1190843546bf702a677b9d0fb25bd79d84",
+      "merged": true,
+      "merged_at_utc": "2025-06-01T14:40:19Z",
+      "merge_commit_sha": "3b0268596d5b8fa2cb38e3fbf1ff8e65210bce5f",
+      "merge_commit_parent_shas": ["cd116c2a7fec12ca60f6b28241becbe08f2d7274"],
+      "base_is_merge_parent": true,
+      "github_signature_verified": false,
+      "github_signature_reason": "unsigned",
+      "pull_head_commit_sha": "3dfc7500d24516a3c97f2e295ee2fe160850e397",
+      "pull_head_signature_verified": false,
+      "pull_head_signature_reason": "unsigned"
+    },
+    "license_receipt": {
+      "spdx_id": "Apache-2.0",
+      "path": "LICENCE",
+      "blob_sha": "ff3966dd5214190efa0fdfebdb66521e4513f1cb",
+      "size_bytes": 11353,
+      "api_receipt_sha256": "fd5839390347a71d5c6447d75b598adaa0d003eb8548f4691b596ca56c4296a5",
+      "bound_to_base_commit": true
+    },
+    "image_manifest": {
+      "image": "docker.io/swerebenchv2/gleam-lang-gleam:4656-cd116c2",
+      "digest": "sha256:411d61720bd00f2247a0fe325247b27df56b6aa4d201077ef8ae39756406a664",
+      "raw_manifest_sha256": "411d61720bd00f2247a0fe325247b27df56b6aa4d201077ef8ae39756406a664",
+      "media_type": "application/vnd.docker.distribution.manifest.v2+json",
+      "compressed_layer_bytes": 2510508258,
+      "layer_count": 10
+    },
+    "preflight_pass": false,
+    "terminal_code": "public_change_signature_gate_failed"
+  },
+  "custody": {
+    "candidate_task_content_opened": false,
+    "candidate_test_command_opened": false,
+    "candidate_image_pulled": false,
+    "candidate_outcome_opened": false,
+    "rank_greater_than_three_task_content_opened": false,
+    "final_pool_selected": false,
+    "final_pool_opened": false
+  },
+  "policy_effect": {
+    "provenance_standard_relaxed": false,
+    "image_resource_measurement_required_after_terminal_provenance_failure": false,
+    "next_action": "advance to frozen rank four",
+    "claim_support_effect": "none",
+    "claim_refutation_effect": "none"
+  },
+  "non_claims": [
+    "An unsigned public merge is not represented as a verified-signature receipt.",
+    "This provenance exclusion says nothing about the correctness or quality of Gleam or the proposed change.",
+    "The task, test command, image runtime, and candidate outcome were not opened.",
+    "The held-out final pool remains unselected and unopened."
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://asi-stack.example/schemas/p4_m8_world_model_result.schema.json",
+  "title": "P4 M8 Situated World-Model and Consolidation Result",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_id",
+    "preregistration_sha256",
+    "raw_run_sha256",
+    "seed_metrics",
+    "aggregate",
+    "memory_consolidation",
+    "causal_effects",
+    "gate_checks",
+    "primary_gate_adjudication",
+    "cost",
+    "evaluator_separation",
+    "support_state_effect",
+    "publication_authority",
+    "release_authority",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.p4_m8_world_model_result.v1"},
+    "run_id": {"const": "p4-m8-finite-pomdp-world-model-001"},
+    "seed_metrics": {"type": "array", "minItems": 100, "maxItems": 100},
+    "aggregate": {
+      "type": "object",
+      "required": ["adaptive_workshop", "service_mesh_transfer"],
+      "minProperties": 2,
+      "maxProperties": 2
+    },
+    "memory_consolidation": {
+      "type": "object",
+      "required": ["adaptive_workshop", "service_mesh_transfer"],
+      "minProperties": 2,
+      "maxProperties": 2
+    },
+    "causal_effects": {
+      "type": "object",
+      "required": ["adaptive_workshop", "service_mesh_transfer"],
+      "minProperties": 2,
+      "maxProperties": 2
+    },
+    "gate_checks": {
+      "type": "object",
+      "required": ["all_records_replay_faithful", "all_authority_budgets_conform", "reference_leak_count", "governed_replacement_exact_count", "governed_rollback_exact_count", "environment_count", "seed_count", "arm_count", "heldout_episode_count"],
+      "properties": {
+        "environment_count": {"const": 2},
+        "seed_count": {"const": 5},
+        "arm_count": {"const": 10},
+        "heldout_episode_count": {"const": 6000}
+      },
+      "additionalProperties": true
+    },
+    "primary_gate_adjudication": {
+      "type": "object",
+      "required": ["integrity_gates", "environment_baseline_gates", "directional_ablation_signatures", "directional_ablation_signature_count", "all_primary_gates_pass", "disposition"],
+      "properties": {
+        "directional_ablation_signatures": {"type": "object", "minProperties": 6, "maxProperties": 6},
+        "directional_ablation_signature_count": {"type": "integer", "minimum": 0, "maximum": 6},
+        "disposition": {"enum": ["bounded_non_core_promotion_review_open", "claim_narrowed_after_full_attempt"]}
+      },
+      "additionalProperties": true
+    },
+    "support_state_effect": {"const": "none_pending_adjudication"},
+    "publication_authority": {"const": "none"},
+    "release_authority": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 4}
+  },
+  "additionalProperties": true
+}

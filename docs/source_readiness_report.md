@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 38
 - `connector_readable`: 7
 - `source_note_available_public_project`: 18
-- `source_note_available_uncached`: 251
+- `source_note_available_uncached`: 256
 
 ## Records
 
@@ -164,6 +164,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_helm_2022` | Holistic Evaluation of Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_gpqa_2023` | GPQA: A Graduate-Level Google-Proof Q&A Benchmark | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_swe_bench_2023` | SWE-bench: Can Language Models Resolve Real-World GitHub Issues? | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_swe_rebench_v2_2026` | SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_livebench_2024` | LiveBench: A Challenging, Contamination-Limited LLM Benchmark | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_dynabench_2021` | Dynabench: Rethinking Benchmarking in NLP | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_checklist_2020` | Beyond Accuracy: Behavioral Testing of NLP models with CheckList | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
@@ -309,6 +310,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_mamba2_ssd_2024` | Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_s4_2022` | Efficiently Modeling Long Sequences with Structured State Spaces | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_mamba3_2026` | Mamba-3: Improved Sequence Modeling using State Space Principles | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_gated_deltanet2_2026` | Gated DeltaNet-2: Decoupling Erase and Write in Linear Attention | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_hyperscale_lottery_2026` | The Hyperscale Lottery: How State-Space Models Have Sacrificed Edge Efficiency | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_gated_deltanet_2024` | Gated Delta Networks: Improving Mamba2 with Delta Rule | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_jamba_2024` | Jamba: A Hybrid Transformer-Mamba Language Model | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
@@ -329,3 +331,6 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_unimatrix_2026` | Associative-State Universal Transformers: Sparse Retrieval Meets Structured Recurrence | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_memory_caching_2026` | Memory Caching: RNNs with Growing Memory | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_inkling_2026` | Inkling: Our open-weights model | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `kernel_english_residual_compiler` | Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `deterministic_capability_compilation` | Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `platonic_world_model` | The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |

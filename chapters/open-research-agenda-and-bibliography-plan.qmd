@@ -4,7 +4,7 @@ chapter_id: "open-research-agenda-and-bibliography-plan"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 semantically audited manuscript"
-last_updated: "2026-07-15"
+last_updated: "2026-07-16"
 primary_sources:
   - "verification_bandwidth"
   - "benchmaxxing"
@@ -167,6 +167,14 @@ flowchart LR
 
 A source backlog record tracks source id, access state, source storage policy, public-safety state, assigned chapters, chapter-decision refs, deduplication state, merge/split policy, source-note state, claim-mapping state, passage-review state, external-literature need, proof/test backlog, pre-drafting requirements, insertion decision, promotion blockers, and residuals.
 
+For large cross-layer papers, “read” is not a sufficient terminal state. The
+July 2026 mining audit adds a section-family coverage ledger: every substantive
+section must resolve to chapter prose, a source-note synthesis, an experiment or
+roadmap obligation, or an explicit non-goal/defer decision. Unmapped sections,
+unsupported evidence inheritance, and paper-shaped duplicate chapters block
+closure. `deterministic_capability_compilation` and `platonic_world_model` are
+the first real intakes held to that stronger standard.
+
 ## Interfaces
 
 The contract joins twelve interfaces: human research and closure authority; inventory, caches, notes, connectors, projects, permissions, and acquisition; separate Corben/local, external, and author-intent appendices; manifest, outline, chapters, queues, citations, bibliography, and changelog; claim reviews, Appendix C, transitions, contrary evidence, residuals, and non-claims; proof, Lean, schemas, tests, benchmarks, studies, and reproduction artifacts; artifact, supply-chain, data, security, rights, retention, deletion, and replay controls; roadmap, living-book, stewardship, work-contract, status, terminal, and successor continuity; internal and local project lineage; external challenge queues; release, citation, reader, archive, site, and correction surfaces; and researchers, readers, AI agents, reviewers, citers, implementers, evaluators, downstream repositories, institutions, and future editions.
@@ -251,6 +259,8 @@ These rows keep Open Research Agenda and Bibliography Plan's manifest assignment
 | Source | Intake role | Boundary |
 |---|---|---|
 | `verification_bandwidth` | Passage-reviewed comparator: Verification Bandwidth in Bounded Contexts. Supports a research backlog for context adequacy, semantic-unit verification, contradiction-rate tests, summary-loss accounting, and the distinction between long context and verified reasoning. | The proposed tests, theorem sketches, contradiction-rate claims, and adequacy claims remain source-proposed until mechanized or empirically tested. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `benchmaxxing` | Passage-reviewed comparator: Benchmaxxing: The Performance Ratchet. Supports bibliography and agenda tracking for benchmark lifecycles, wall diagnosis, anti-Goodhart safeguards, benchmark ledgers, mutation, holdouts, contamination audits, and source-reported benchmark claims. | Does not provide local benchmark results, benchmark-harness validation, mutation/holdout runs, contamination audits, or citation-normalized external literature by itself. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `alignment_field` | Passage-reviewed comparator: Field of God / Alignment Field family. Supports tracking normative and metaphysical assumptions, rights, value-conflict boundaries, dignity, corrigibility, and needed external literature before public consciousness or moral-status claims. | Not empirical evidence for consciousness, alignment, moral status, rights preservation, dignity preservation, or value-conflict resolution. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `scf` | Passage-reviewed comparator: Stable Capability Fields. Supports research agenda items for stable capability identity, evaluator boundaries, qualification, route validation, lifecycle ordering, rollback, recovery, and authority non-escalation. | Does not prove SCF production safety, route/evaluator correctness, replacement safety, rollback success, recovery behavior, or authority-non-escalation runtime enforcement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
@@ -285,6 +295,80 @@ The research agenda is the book's backlog discipline. It keeps source ingestion,
 After the exact core-claim mappings, the next bottleneck is no longer knowing which sources belong to which claims. It is doing the slower work: passage review, external citation normalization, artifact import or reproduction, and source-specific chapter revision without collapsing design rationale into unsupported evidence.
 
 This final chapter is the handoff back to future work. The book can keep changing, but every change should leave a trace: what source moved, what chapter boundary changed, what claim state stayed the same or moved, what test or proof was affected, what edition was regenerated, and what remains blocked.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **73** structured claim atoms in `CF-08`. The
+frozen repository-wide terminal audit records 73 `blocked_after_full_attempt`. Its core
+atom `open-research-agenda-and-bibliography-plan.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `open-research-agenda-and-bibliography-plan` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+::: {.asi-human-only}
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 73 structured claims,
+73 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Integrated governed lifecycle slices**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Bounded local replay only; no deployment, whole-book proof, external effect authority, transfer, publication, or release claim.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+:::
+
+::: {.asi-ai-only}
+
+### Evidence packet
+
+| Field | Exact chapter boundary |
+|---|---|
+| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-08` minimum family bundle. |
+| Attempted local lanes | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` |
+| Missing or unproved lanes | `normative`, `transfer` |
+| Family-level natural-work or end-to-end bundle | **Integrated governed lifecycle slices** (`end_to_end`): Three versioned integrated slices, 12 cases, all ten lifecycle states, six observed effects, rollback/residual/quarantine outcomes, and an eleven-surface sealed epoch. |
+| Negative controls | 20 named boundary injections; three exact rollbacks; partial-effect residual and quarantine; 11 rejecting mutations. |
+| Exact accepted transitions in this chapter | `v1_0_pilot.research_agenda.no_change` |
+| Core outcome | `blocked_after_full_attempt` at `argument`; no chapter-core promotion. |
+| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
+| Reproduction path | Replay `scripts/validate_p3_integrated_slices.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
+
+### Worked success, failure, and boundary cases
+
+- **Success case:** the family-level bundle passed its own rejecting validator
+  within this exact scope: Three versioned integrated slices, 12 cases, all ten lifecycle states, six observed effects, rollback/residual/quarantine outcomes, and an eleven-surface sealed epoch. This is evidence that the family
+  received a competent attempt, not that every claim in this chapter succeeded.
+- **Failure or non-promotion case:** 73 atoms
+  remain blocked and 0 are narrowed. A
+  green family validator cannot fill their missing lanes or raise the core.
+- **Boundary case:** Bounded local replay only; no deployment, whole-book proof, external effect authority, transfer, publication, or release claim.
+
+### Argument-exit table
+
+| Atom set | Count | Work performed | Terminal reason and next burden |
+|---|---:|---|---|
+| Core: `open-research-agenda-and-bibliography-plan.core` | 1 | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` | `blocked_after_full_attempt`; missing or unproved: `normative`, `transfer`. |
+| blocked after full attempt | 73 | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` | Missing or unproved lanes across this set: `normative`, `transfer`. These are residual proof obligations, not false claims. |
+
+This table is a disposition map, not a promotion quota. The next valid movement
+is atom-specific evidence that fills the named missing lanes, survives relevant
+negative controls, and enters through an accepted evidence transition. Until
+then, source counts, theorem counts, fixtures, validators, or nearby family
+results cannot be used as substitutes.
+:::
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
 
 ## Handoff
 

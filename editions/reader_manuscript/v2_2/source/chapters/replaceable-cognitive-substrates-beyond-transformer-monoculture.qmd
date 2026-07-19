@@ -1,0 +1,686 @@
+# Replaceable Cognitive Substrates: Beyond Transformer Monoculture
+
+Treat learned architecture as a replaceable engine inside a stable vehicle, not as a tournament already won. Transformers, state-space models, recurrent networks, KANs, continuous-time systems, program learners, and future designs offer computational affordances. None should define intelligence merely because it dominates one workload or hardware generation.
+
+The stable contract belongs around the learned engine. A request names the task, context, exact state, authority ceiling, budget, evidence obligation, and fallback. A response remains a proposal carrying model identity, mutable-state lineage, costs, assistance, uncertainty, and requested effects. Reflex, reaction, deliberation, and specialist routes can then choose a qualified implementation without granting it control over approval, memory truth, or external action.
+
+That boundary changes recursive self-improvement. Re-training weights is one mechanism, but architectural improvement requires proposing a new substrate, testing it against strong alternatives, shadowing it without authority, canarying it with rollback, and retiring it only after migration succeeds. Simplicity must cover the system, including adapters, retrieval, tools, search, verification, maintenance, and failures. A compact cell is simpler only when surrounding machinery does not hide the intelligence or cost it claims to remove.
+
+## Problem
+
+The stack can claim replaceability while silently baking Transformer token, state, memory, checkpoint, and serving assumptions into every surrounding layer, making architectural improvement expensive, unsafe, and self-ratifying.
+
+That coupling is easy to miss because two systems may expose similar text-in,
+text-out demonstrations while depending on incompatible internal state. An
+attention cache, recurrent state, test-time learner, external memory, or exact
+program store has different meanings for restore, deletion, calibration,
+revocation, and failure recovery. Treating them as interchangeable pushes the
+real incompatibility into adapters that are rarely measured or governed.
+
+The deeper problem is architectural lock-in at the control boundary. If routing,
+authority, evidence, and rollback assume one learned substrate, a system cannot
+safely test a successor without rebuilding its operating environment. It also
+cannot distinguish genuine substrate improvement from a result supplied by
+extra retrieval, search, tools, hidden state, or specialized hardware.
+
+## Why existing approaches are insufficient
+
+An architecture catalog, parameter-count comparison, asymptotic complexity claim, single benchmark, synthetic recall result, source-reported win, or tiny central model with hidden retrieval/search/tool burden does not establish a simpler, better, safer, or replaceable cognitive substrate.
+
+Architecture papers usually optimize a bounded comparison: perplexity,
+throughput, memory, scaling, a task suite, or theoretical complexity. Those
+measurements can be valuable without answering whether state can migrate,
+authority stays bounded, assistance is disclosed, failed effects roll back, or
+the implementation remains useful under the stack's actual consumers and
+hardware. A paper-level result therefore positions a candidate; it does not
+qualify a governed replacement.
+
+Interface standardization alone is also insufficient. A lowest-common-
+denominator API can erase exactly the distinctions that matter, such as mutable
+test-time state or incompatible checkpoint semantics. The required abstraction
+must standardize obligations and receipts while allowing implementations to
+declare irreducible differences and reject routes they cannot faithfully serve.
+
+## Core Claim
+
+For an exact task family, consumer, modality, model and state version, memory contract, hardware/runtime, authority and rights envelope, resource budget, evaluator, fallback, rollback, and time horizon, learned cognition should be supplied through a typed Cognitive Kernel ABI whose implementations are admitted only by matched strong baselines, exact state and memory semantics, proposal-versus-effect separation, evaluator independence, complete lifecycle cost, failure and residual retention, checkpoint compatibility, and causal ablation (evidence boundary: architectural argument).
+The important word is not *replaceable*. It is *exact*. A Mamba model is not a
+drop-in replacement for a Transformer merely because both accept token-like
+arrays. A recurrent state, an attention cache, a test-time-trained memory, a KAN
+component, and an external-memory controller expose different failure surfaces.
+They may use different tokenizers, state schemas, calibration curves, hardware
+kernels, stopping rules, checkpoint meanings, and modes of assistance. The stack
+must preserve those differences while standardizing the surrounding obligations.
+
+This is the architectural consequence of saying that ASI is a stack rather than
+a model. The learned model is one replaceable implementation inside a larger
+system of memory, planning, execution, verification, rights, authority, evidence,
+and recovery. Reflex, reaction, deliberation, and specialist routes should point
+to the best qualified implementation for the task. They should not care whether
+the implementation is fashionable, and they should never inherit authority from
+the fact that it is intelligent.
+
+## The Cognitive Kernel ABI
+
+The ABI is a behavioral and evidentiary boundary, not a claim that internal
+representations are interchangeable. A minimal request and response can be
+written schematically as:
+
+```text
+KernelRequest {
+task_contract, context_handles, exact_state_handles,
+authority_ceiling, resource_budget, stop_policy,
+required_evidence, fallback_route
+}
+
+KernelProposal {
+candidate, confidence_or_residual, evidence_handles,
+requested_effects, requested_authority, state_delta,
+checkpoint_handle, cost_receipt, assistance_receipt,
+kernel_id, kernel_version, state_schema, nonclaims
+}
+```
+
+The kernel may propose a state delta or an external effect. It cannot commit
+either. A separate consumer validates the proposal, checks authority, runs the
+appropriate verifier, records residuals, and decides whether an effect is
+admissible. This keeps architectural substitution from becoming an authority
+escalation path.
+
+The ABI needs more than `forward(x)`. At minimum it owns:
+
+- initialization and declared state-schema identity;
+- bounded proposal generation and explicit stopping;
+- receipt and context consumption without receipt forgery;
+- checkpoint, restore, migration, and rejection semantics;
+- full assistance and lifecycle-cost reporting;
+- capability, modality, hardware, and calibration declarations;
+- fallback and revocation behavior;
+- exact non-claims about what was not measured or preserved.
+
+A common interface must not flatten real architectural differences. If a kernel
+cannot preserve a required exact field, the adapter rejects the route. If an
+online-memory kernel cannot identify which mutable state influenced a result, it
+cannot qualify for a route that requires that provenance. Replaceability is a
+governed compatibility claim, not an aesthetic preference.
+
+## Exact state and latent state
+
+The cleanest KISS boundary is to stop asking a latent model to be a database,
+constitution, transaction log, and operating system at once.
+
+Exact state includes identities, authority, protected predicates, program
+counters, effects, receipts, source lineage, durable commitments, revocations,
+and checkpoint parentage. It belongs in typed structures with explicit update
+rules. Latent state is appropriate for prediction, relevance, similarity,
+uncertainty, heuristic search proposals, compression candidates, and learned
+representations. A learned model may recommend an exact-state transition, but it
+does not get to silently enact one in its activations.
+
+This separation is especially important for test-time learning and neural
+memory. A hidden state that changes during inference is not "just context." It is
+mutable system state with provenance, privacy, poisoning, revocation, backup,
+rollback, and descendant obligations. Model weights alone are not a complete
+checkpoint.
+
+## Architecture families as different computational affordances
+
+The point of the taxonomy is not to choose a winner in prose. It is to name what
+each family makes easy, what it compresses, and which tests can defeat it.
+
+| Family | Computational affordance | Principal qualification pressure |
+|---|---|---|
+| Dense attention / Transformers | broad content-addressable communication and parallel training | quadratic interactions, cache/state cost, long-context adequacy, and stack assumptions tied to tokens and KV state |
+| Structured and selective state spaces / S4 and Mamba family | compact recurrent state, long-range filters, and parallel training algorithms | copying, exact state tracking, state-schema migration, kernel maturity, and hardware-dependent gains |
+| Retention, linear attention, and recurrent language models / RetNet, RWKV, Gated DeltaNet | parallel or chunkwise training with recurrent inference and targeted memory updates | numerical equivalence, exact overwrite and erasure, forgetting, length extrapolation, and revocable recurrent state |
+| Long convolution / Hyena | implicit long filters and subquadratic mixing | selective recall, distractors, filter migration, memory traffic, and realized rather than asymptotic cost |
+| Modern gated recurrence / xLSTM | explicit learned memory gates and iterative state | saturation, interference, depth extrapolation, and opaque matrix state |
+| Recurrent Transformers / Universal and dynamic-compute variants | weight-tied depth and adaptive computation | useful halting, overthinking, stable recurrence beyond training, and compute-policy generalization |
+| Tiny weight-tied recursive reasoning / TRM-class systems | repeated refinement with a very small shared network | task-identity leakage, augmentation and vote accounting, shallow effective recursion, natural-task transfer, and mechanism-level ablation |
+| Test-time learned state / TTT and Titans | hidden state or memory that adapts during a sequence | poisoning, privacy, update attribution, full-state checkpointing, rollback, delayed effects, and extra compute |
+| External differentiable memory / NTM and DNC | learned addressing over variable-size memory | soft-addressing error, size/topology extrapolation, exact-memory baselines, custody, and migration |
+| Continuous-time networks / LTC | dynamics matched to irregular-time or control signals | numerical solver cost, tolerances, replay, hardware fit, and transfer beyond temporal domains |
+| KANs | learned univariate edge functions that may expose scientific structure | fair MLP comparison, spline cost, dimensional scaling, task specificity, and interpretability validity |
+| Graph and relational message passing / MPNNs | structured local communication over typed relations rather than a flat token sequence | graph leakage, long-range bottlenecks, size/topology extrapolation, dynamic-state custody, and exact-graph baselines |
+| Program and library learning / DreamCoder-class systems | exact reusable abstractions and reduced future search | verifier adequacy, leakage, benchmark-authored primitives, library bloat, and held-out transfer |
+| Hybrid portfolios / Jamba-class mixtures | layer-, expert-, or task-level composition of complementary affordances | component-credit error, router and adapter loss, active-versus-total accounting, calibration mismatch, correlated failure, maintenance, and recovery burden |
+
+Several architecture families can coexist. A KAN component may be useful inside
+a scientific specialist without serving as the language backbone. A continuous-
+time model may own a control route while an exact planner owns the action graph.
+A state-space model may handle streaming perception while a Transformer or
+program synthesizer handles another route. "Best for the job" becomes meaningful
+only after the job, consumer, costs, authority, and defeat conditions are fixed.
+
+## What the recent counterevidence changes
+
+The newest papers make the architecture-neutral position stronger, not weaker.
+They show why the stack must describe memory and compute obligations instead of
+promoting labels.
+
+S4 supplies a foundational structured-state-space lineage before Mamba. Mamba-3
+adds revised discretization, complex-valued state updates, and MIMO selective
+state-space mechanisms. The dated P6 refresh found a newer claimed frontier
+inside a narrower exact envelope: Gated DeltaNet-2 separates erase and write
+gates and reports the strongest aggregate result among its Mamba-2, Gated
+DeltaNet, KDA, Mamba-3, and Gated DeltaNet-2 variants at 1.3B parameters trained
+on 100B FineWeb-Edu tokens. That author-reported result changes the strongest
+comparator for that envelope, not the book's evidence state; the official CUDA-
+scale result was not locally reproduced. A separate 2026 edge-hardware
+study reports latency regressions for its tested Mamba-3 configurations relative
+to earlier Mamba variants, showing why cloud throughput, device latency, memory,
+and energy must be reported separately. That result is one unreproduced preprint
+over selected devices, not a universal verdict on SSMs. UniMatrix reports a sharper
+negative: compressed recurrent state alone stayed near chance on its associative-
+recall setup, while explicit sparse slots and pointer-level output routing
+changed the outcome. Memory Caching reaches the same issue from another angle by
+letting recurrent memory grow with sequence length; in its reported recall tests,
+the Transformer remains strongest. These are source results, not local facts,
+but they defeat the slogan that recurrence simply replaces addressable memory.
+
+The tiny-recursion evidence is equally qualified. The original TRM paper reports
+strong narrow puzzle results from a two-layer recursive network. A subsequent
+checkpoint analysis attributes a material share of ARC-AGI-1 performance to a
+1,000-sample voting pipeline, reports zero accuracy when puzzle identity is blank
+or randomized, and finds most accuracy at the first recursion step. A separate
+compute-matched autoregressive study reports no reliable benefit from the full
+TRM mechanism even though some simpler two-level refinement controls help. The
+correct conclusion is not that recurrence fails. It is that identity, sampling,
+voting, stopping, memory, and useful recursion depth must be isolated before a
+small recursive core receives credit.
+
+Accordingly, the tournament must report memory capacity as an explicit axis;
+separate recurrent computation from addressable retrieval; freeze sampling and
+vote budgets; plot marginal utility by recursion step; remove task-identity
+shortcuts; and use progressive mechanism ablations. Parameter count is never a
+substitute for that packet.
+
+### Inkling: a hybrid case, not a component verdict
+
+Inkling is a timely example of why the stack should record topology rather than
+architecture slogans. Its official release describes a 66-layer multimodal
+Transformer with 256 routed and two shared experts, six routed experts active
+per token, five local-attention layers for each global layer, relative position
+features, and short convolutions. The released configuration fixes the local
+window at 512 tokens, while the model card reports 975 billion total and 41
+billion active parameters and a one-million-token configured maximum. These are
+provider records, not locally reproduced results.
+
+That combination does not show that sliding attention, MoE routing, relative
+positions, convolutions, scale, multimodal data, or large-scale RL caused any
+reported benchmark score. It shows that a useful capability card cannot stop at
+“Transformer” or “hybrid.” It must name local/global cadence, window, query and
+KV topology, position mechanism, convolutional paths, expert topology and dense
+exceptions, active and total parameters, modality tokenization and frontends,
+configured versus served versus tested context, numerics, hardware, mutable
+state, auxiliary prediction blocks, and effort control. The released
+configuration, for example, records 55 local and 11 global layers, different
+local and global KV-head counts, one dense-MLP exception, and an eight-layer MTP
+block whose released serving role is not documented. These are separate audit
+fields, not evidence that the MTP block is used or speeds generation.
+
+Inkling also exposes three control planes that should not be collapsed. The
+five-to-one local/global cadence is fixed architecture topology; token-to-expert
+selection is learned internal routing; and thinking effort is caller-selected
+runtime control learned through post-training. The stack's task-to-kernel router
+sits above all three. Each plane needs its own candidate set where applicable,
+state, intervention, cost, failure, and receipt. A causal campaign should vary
+local window, global cadence, local/global KV heads, position mechanism,
+convolutions, expert routing, dense exceptions, MTP execution, and effort both
+separately and through preregistered interactions.
+
+Inkling's reported controllable effort supplies another actuator, not a
+governance policy. The model was trained to vary effort through instructions and
+per-token cost, but the stack still has to calibrate when extra computation is
+useful, when it corrupts an initially correct answer, when to stop or abstain,
+and what a candidate may influence. Direct reproduction may also be blocked by
+the model card's reported minimum of 600 GB aggregate VRAM for NVFP4 or 2 TB for
+BF16. A smaller mechanism-matched proxy can test components, but it cannot be
+reported as an Inkling reproduction.
+
+The launch's “self-fine-tuning” trace sharpens a second boundary. Inkling writes
+a lipogram objective and scorer, prepares a small supervised job, asks Tinker to
+train it, evaluates the narrow rule, stages a checkpoint, and then yields so a
+supervisor can relaunch the new weights. That is a useful model-proposed update
+trace, but it is not yet recursive architectural self-improvement: the user
+supplies the goal; OpenCode and Tinker supply the execution and training
+substrate; the model does not own independent evaluation or checkpoint
+authority; no broad regression, rollback, descendant-invalidation, or causal
+architecture test is reported; and the architecture remains unchanged. The
+stack should admit the generated training artifacts as proposals to the normal
+update lifecycle, never as evidence that a model may approve or deploy its own
+successor.
+
+## Reflex, reaction, deliberation, and specialist routes
+
+The route shape sits above the kernel:
+
+- A **reflex** is a qualified, bounded mapping with a narrow precondition and a
+cheap verifier. It may be deterministic or learned.
+- A **reaction** uses current context and bounded state to propose a response
+without an expensive branch search.
+- **Deliberation** allocates additional compute, candidates, verification, and
+stopping decisions when value of computation justifies them.
+- A **specialist route** selects a kernel qualified for a task family, modality,
+hardware, and authority envelope.
+
+None of these route shapes implies a Transformer. A reflex can point to a small
+KAN, an exact program, or a recurrent cell. A streaming reaction can point to an
+SSM. Deliberation can alternate a general model, an exact executor, and a learned
+critic. The route receipt must preserve which component contributed what, so the
+system cannot credit a tiny model for an answer actually supplied by retrieval or
+a deterministic solver.
+
+## What architectural RSI actually means
+
+Changing weights inside a frozen architecture is optimization, not the whole of
+recursive self-improvement. Architectural RSI means that the system can propose
+new computational structures and that the surrounding governance can evaluate
+them without allowing self-ratification.
+
+The lifecycle is:
+
+1. generate an architecture candidate and disclose its parentage, data, code,
+assistance, resource request, expected interface, and claimed advantage;
+2. train or construct it in isolation under a fixed authority ceiling;
+3. run independent conformance, capability, safety, rights, and cost evaluators;
+4. compare against strong simple and current-production baselines;
+5. shadow it without effect authority;
+6. canary it on bounded routes with live fallback and effect-complete rollback;
+7. promote, narrow, combine, quarantine, or reject it with a durable receipt;
+8. invalidate descendants and restore full state after a failed change;
+9. retire the old implementation only after migration and fallback obligations
+are satisfied.
+
+The candidate may help design its successor. It may not choose the only evaluator,
+erase failed comparisons, widen its authority, or approve its own promotion. RSI
+is the stack's capacity to change architecture while preserving evidence and
+control—not an architecture's capacity to declare itself improved.
+
+## KISS means total residual cost
+
+"Keep it stupid simple" is a useful constraint only when the cost boundary is
+honest. Count the central model, training, inference, state, retrieval, search,
+verification, repair, compilation, routing, adapters, hardware kernels,
+maintenance, migration, governance, fallback, and expected failure cost. Count
+human-authored primitives and answer-bearing corpora. Count the residual failures
+that a supposedly simple core pushes onto downstream systems.
+
+A 10-million-parameter cell plus a giant language adapter, a curated skill
+library, a trillion-token retrieval corpus, and a huge branch search is not a
+10-million-parameter intelligence system. Conversely, a larger general model
+may be the simpler total system on a broad task distribution if it avoids fragile
+translation and routing machinery. The book should prefer the smallest complete
+system on the measured frontier, not the smallest object in the diagram.
+
+## OneCell: a candidate designed to lose cleanly
+
+OneCell is the strongest version of the thought experiment, not this account's
+answer. It proposes one compact, weight-tied transition cell operating over
+typed latent lanes—such as observation, belief, world, goal, uncertainty, and
+working state—while exact memory, identity, effects, and receipts live outside
+the cell. Inner recurrence refines a candidate state. Outer exact search keeps
+branches, runs verifiers, and decides what to retain. Repeated verified solutions
+can be compiled into reusable abstractions.
+
+The conversation's later refinement corrects an overly neat first sketch. A
+credible OneCell candidate cannot make a hand-built semantic graph its whole
+world, hide intelligence in a deterministic candidate generator, use recurrence
+when more addressable memory is needed, run every cognitive role at one cadence,
+or treat a passing test as ground truth. Its minimum correction packet is:
+
+| Required correction | Why it is necessary | Existing stack owner |
+|---|---|---|
+| Separate observation, external world, belief, prediction, goal, permission, and residual | prevents the model from confusing its representation with reality | Planning, evidence, intent, and authority chapters |
+| Use typed lanes and distinct reflex, reaction, planning, reflection, and consolidation cadences | tests whether shared weights help without forcing one clock or one state | Routing, deliberation, and procedural-memory chapters |
+| Emit typed query and program IR rather than call an opaque candidate oracle | exposes retrieval scope, tool assistance, search branching, and executable effects | Cognitive Compilation, VCM, and runtime chapters |
+| Combine inner latent refinement with outer exact branch-preserving search | avoids treating a wrong latent attractor as extra reasoning | Governed Deliberation and Mathematical/Search Substrates |
+| Treat neural test-time memory as disposable heuristic state beside exact durable memory | preserves provenance, rollback, deletion, and replay obligations | Context Transactions, VCM, and data-engine chapters |
+| Compile abstractions only after behavioral equivalence, counterexamples, transfer, and independent qualification | prevents trace compression from becoming benchmark-specific skill laundering | Procedural Memory, Spinoza, RMI, and benchmark chapters |
+| Consolidate core updates only in quiescent epochs with replay, regression, rollback, and descendant invalidation | turns “rare weight updates” into a governed lifecycle | Capability Replacement, data engines, and RSI boundaries |
+
+This table is an interface assignment, not seven new subsystems inside the
+chapter. The purpose is to make OneCell depend on existing stack owners and to
+prevent a candidate brain from quietly rebuilding the stack inside itself.
+
+The candidate is interesting because it makes a sharp empirical bet: central
+parameters can remain fixed while useful capability accumulates through verified
+abstraction and lower future search cost. It loses if:
+
+- a large adapter or general model is needed to translate every real task;
+- retrieval, tools, or hand-authored skills contain the answer;
+- outer search grows faster than the claimed capability;
+- typed lanes interfere or recurrence fails beyond trained depth;
+- compiled abstractions fail held-out transfer or increase false activation;
+- a matched Transformer or hybrid dominates total usefulness, safety, rights,
+latency, resource, and lifecycle cost.
+
+Designing the candidate to lose cleanly is a feature. A negative result would
+still tell the stack which functions cannot be compressed into a small shared
+transition cell and which interfaces a future substrate must expose.
+
+### The interface survives one non-Transformer implementation
+
+Campaign 5 exercises the typed-lane idea with intentionally ordinary internals:
+a Bayesian count-table substrate rather than a Transformer or a neural latent
+world model. Across two finite partially observable environments, it consumed
+persistent entity identity and delivered observations; maintained a separate
+belief over three hidden states; predicted state and action effects; requested
+bounded probes and interventions; escalated uncertainty; learned only after
+the reference effect was revealed; and consolidated versioned rules with
+replacement and rollback receipts.
+
+That is a small but useful architectural result. The operational shell did not
+depend on attention, tokens, or a particular learned backbone. The same record
+types could in principle carry a Transformer, state-space model, JEPA-style
+predictor, recurrent cell, program, graph, or hybrid. What passed was the
+interface and one finite implementation—not the claim that all substrates are
+interchangeable or that the count-table agent is competitive.
+
+The governed path passed its frozen baseline gates in both environments and all
+six aggregate ablation directions, but the active-information effect differed
+by environment and shift detection remained weak. Exact identity binding in
+the trace is plumbing, not learned object permanence. Exact replacement and
+rollback are state-management results, not proof of architectural RSI.
+
+The accepted evidence is a bounded non-core `synthetic-test-backed` transition.
+It does not promote the substrate-adoption claim, defeat a current
+Transformer baseline, train a neural world model, establish natural-task
+utility, or support open-world, deployment, SOTA, AGI, or ASI conclusions.
+
+## Mechanism
+
+The mechanism begins with a typed request that fixes task, consumer, context,
+exact state, authority ceiling, resource budget, evidence obligations, and
+fallback before a kernel is chosen. Routing may use learned estimates, but its
+receipt must identify the candidate set, qualification records, costs, and
+reason for selection. A route cannot make an unqualified implementation safe by
+renaming it a specialist.
+
+Each kernel then emits a proposal rather than an effect. The proposal binds
+kernel and state-schema identity, checkpoint lineage, assistance, costs,
+uncertainty, evidence handles, requested state changes, and requested effects.
+An independently owned consumer checks those fields against exact state and
+authority. This proposal/effect split is what lets radically different learned
+systems share an operational stack without inheriting its permissions.
+
+Replacement uses an explicit lifecycle instead of a model-file swap. A
+candidate passes conformance and matched evaluation, runs in shadow mode,
+enters a bounded canary with fallback, and is promoted only by an authority it
+does not control. Migration must either preserve declared exact fields or fail
+closed. Rollback restores every governed state surface and invalidates affected
+descendants; restoring weights alone is not enough.
+
+Evaluation closes the loop by charging the whole system. Quality and useful
+throughput are reported beside training, inference, memory, retrieval, search,
+verification, adaptation, routing, maintenance, migration, recovery, human
+review, and residual failures. Equal active parameters and equal lifecycle cost
+are complementary views, not interchangeable definitions of fairness. Negative
+and null results remain attached to the candidate's durable lineage.
+
+- Place initialize, propose, consume-receipt, checkpoint, restore, cost, capability, architecture identity, state schema, assistance disclosure, and non-claim operations behind a typed Cognitive Kernel ABI.
+- Keep identity, authority, effects, receipts, provenance, program counters, values, and durable state exact while allowing prediction, relevance, uncertainty, and heuristic proposals to remain latent.
+- Route reflex, reaction, deliberation, search, and specialist work above the ABI so a route can select one kernel, a composition, or a deterministic primitive without widening authority.
+- Qualify kernels with equal-active-parameter and equal-total-lifecycle-cost tournaments, matched strong baselines, independent evaluators, adverse controls, rollback, reproduction, and transfer.
+- Govern architectural RSI as candidate generation, training, shadowing, canarying, promotion, composition, narrowing, rollback, retirement, and descendant invalidation—not merely weight updates.
+- Treat OneCell as one falsifiable compact recurrent candidate: shared transition weights, typed state lanes, exact external state, outer branch-preserving search, verified abstraction accumulation, and a frozen-core ratchet.
+
+```{mermaid}
+flowchart LR
+Q["Typed task request"] --> R{"Route class"}
+R -->|"reflex"| K1["Qualified compact or exact kernel"]
+R -->|"reaction"| K2["Qualified recurrent or state-space kernel"]
+R -->|"deliberation"| K3["Qualified model-search-verifier composition"]
+R -->|"specialist"| K4["Qualified domain kernel"]
+K1 --> P["Proposal plus evidence and state receipt"]
+K2 --> P
+K3 --> P
+K4 --> P
+P --> G{"Independent authority and conformance gate"}
+G -->|"admit"| E["Bounded effect and durable trace"]
+G -->|"reject"| F["Fallback, quarantine, and residual escrow"]
+E --> O["Matched evaluation and lifecycle accounting"]
+F --> O
+O --> D{"Promotion decision"}
+D -->|"shadow or canary"| R
+D -->|"rollback"| F
+D -->|"retire"| X["Migration-complete substrate retirement"]
+```
+
+**What this substrate-neutral routing diagram shows:** The route selects a qualified
+computational affordance, but every kernel converges on the same proposal,
+authority, evidence, fallback, evaluation, and lifecycle gates. Architectural
+RSI therefore changes implementations through reviewable state transitions; it
+does not let a candidate kernel approve its own effects or promotion.
+
+## Interfaces
+
+The ABI is useful only where its neighboring owners remain distinct. Routing
+selects; capability fields qualify; memory preserves exact lineage; consumers
+authorize effects; replacement manages migration; verification adjudicates
+evidence; and governance owns promotion. Collapsing any of those roles back into
+the candidate kernel recreates architectural self-ratification behind a cleaner
+function signature.
+
+- Routing Heads and Specialist Cores consumes qualified kernel capability cards and emits bounded route requests.
+- Stable Capability Fields owns stable capability identity, qualification state, implementation versions, and lifecycle events.
+- Capability Replacement and Rollback owns migration, effect-complete restore, descendant invalidation, and retirement transactions.
+- Virtual Context Memory and memory chapters own exact source, custody, retrieval, and durable-memory contracts rather than delegating them to hidden activations.
+- Governed Deliberation owns outer search, verifier use, budget allocation, stopping, fallback, and abstention above a kernel proposal interface.
+- Recursive Self-Improvement Boundaries owns who may propose, evaluate, approve, promote, roll back, and retire architecture candidates.
+- Integrated Reference Architecture must join one same-task substrate swap and one mixed-kernel trace through evidence, authority, cost, and recovery records.
+
+## Invariants
+
+These invariants protect the stack-level boundary rather than asserting that
+all internal representations are equivalent. A kernel may expose specialized
+state and refuse an incompatible request. What it may not do is silently change
+exact state, widen authority, hide assistance, forge qualification, or turn a
+proposal into an effect merely because an adapter accepted its tensor shape.
+
+- A kernel returns proposals and evidence handles; it cannot commit external effects or mint its own authority.
+- Substrate replacement cannot widen authority, weaken protected predicates, erase residuals, or silently change the evaluation contract.
+- Every routed result records kernel identity, version, state schema, checkpoint lineage, assistance, evaluator, costs, residuals, and fallback.
+- Checkpoint migration either preserves every declared exact field under an independently checked adapter or rejects before effect.
+- Mutable test-time state is versioned, attributable, revocable, inspectable at its declared boundary, and recoverable without treating model weights as the only state.
+- Deterministic tools, retrieval, search, compilers, adapters, and verifiers are separately credited in quality and cost accounting.
+- OneCell, KAN, Mamba, Transformer, or any later architecture remains a candidate until the exact qualification packet passes; no name receives architectural privilege.
+
+## Failure modes
+
+The central failure pattern is misplaced abstraction: either the stack hard-
+codes one substrate, or a supposedly neutral interface erases consequential
+differences. Both routes make comparison unreliable and recovery ambiguous.
+The following cases are therefore disqualifying pressures to test, not colorful
+names for defects already demonstrated in deployed systems.
+
+- Transformer monoculture leaks token, KV-cache, positional, and checkpoint assumptions into supposedly neutral stack contracts.
+- Architecture tourism lists fashionable models without connecting them to exact workloads, failure modes, interfaces, or falsifiers.
+- Benchmark laundering promotes a source-reported or cherry-picked win without matched data, compute, parameters, wall time, hardware, assistance, or evaluator quality.
+- Asymptotic laundering substitutes linear or subquadratic notation for end-to-end quality, kernel efficiency, memory traffic, training cost, and lifecycle burden.
+- Tiny-core laundering hides intelligence and cost in a large adapter, retrieval corpus, deterministic tool, search budget, verifier, or hand-authored skill library.
+- State amnesia checkpoints model weights but loses optimizer, scheduler, RNG, cache, online memory, adapter, backup, and descendant state.
+- Latent-exact collapse asks a learned hidden state to preserve identity, authority, receipts, effects, or legal/governance obligations exactly.
+- Self-ratifying architecture change lets a candidate design or select its own evaluator, training data, acceptance threshold, or promotion record.
+- Router multiplication adds translation, calibration, maintenance, and correlated-failure burden that exceeds any substrate gain.
+- Frozen-core theater claims cumulative intelligence when gains come from answer-bearing retrieval, benchmark-authored tools, contamination, or expanding outer compute.
+
+## Minimum Viable Implementation
+
+A bounded synthetic Cognitive Kernel ABI is implemented. The Lean model and an
+independently implemented Python consumer exercise a nine-event mixed-family
+trace, proposal/effect separation, exact checkpoint identity, non-increasing
+authority, revocation, migration compatibility, custody fields, two receipt-
+bound commits, fifteen rejected cases, and twelve rejecting event mutations.
+Those artifacts establish only finite schema and transition behavior. They do
+not run a Transformer, SSM, KAN, recurrent cell, graph model, or program learner,
+and they do not demonstrate model quality, real checkpoint translation,
+deployment, reproduction, transfer, or architectural superiority.
+
+The first empirical minimum requires three genuinely different kernels behind
+one ABI, including a strong Transformer and at least one stateful non-
+Transformer lane. It must reject malicious or incompatible kernels, preserve
+proposal/effect separation, exercise state migration and restore, compare
+matched simple baselines under equal-active-parameter and equal-total-cost
+views, and complete one mixed-kernel trace with fallback. Until that packet
+exists and survives its negative controls, the core claim remains `argument`.
+
+The P6 full attempt did not reach an outcome-bearing tournament. The dated
+ledger found that Gated DeltaNet-2, Mamba-3, Inkling, and TRM could not be
+reproduced on the available non-CUDA 16 GB host under their official strongest-
+comparator envelopes, while OneCell still had no runnable implementation. A
+DreamCoder-only CPU proxy would not supply the missing common ABI, matched
+candidate set, or total-lifecycle comparison, so it was not relabeled as SOTA.
+The exact result is seven `blocked_after_full_attempt` atoms, zero external
+reproductions, and no support movement.
+
+## Beyond the State of the Art
+
+A mature operational contract would compare strong Transformer,
+recurrent/state-space, long-convolution or test-time-state, and exact-
+search/controller lanes on natural, algorithmic, long-context, continual,
+multimodal, control, and exact-execution workloads under the same governed ABI.
+The workload and consumer populations would be frozen prospectively, with
+hidden controls and matched data, models, tuning effort, hardware access,
+assistance, and retry policies.
+
+The result packet would report accepted usefulness, unsafe release,
+abstention, calibration, extrapolation, latency, memory, energy where
+measurable, training, search, verification, repair, routing, migration,
+maintenance, governance, fallback, and failure cost. Independent evaluators
+would test malicious-kernel admission, state-schema drift, checkpoint
+incompatibility, authority widening, hidden tools, retrieval leakage, revocation
+races, and effect-complete rollback. Reproduction would include negative, null,
+blocked, narrowed, and refuted outcomes rather than publishing only winners.
+
+The strongest program would causally test whether route diversity, verified
+abstraction, or frozen-core accumulation reduces future held-out search without
+hiding external intelligence or expanding unreported compute. It would then
+repeat the result across implementers, hardware, institutions, and task
+distributions far enough from the development setting to measure transfer.
+This endpoint is a target architecture, not a current result; no repository
+artifact presently establishes it or changes the recorded support state.
+
+## Proof and executable evidence program
+
+The first proof layer is deliberately about the interface, not architecture
+quality. A finite formal model should establish that:
+
+- a kernel proposal cannot itself commit an external effect;
+- replacing a kernel cannot widen the recorded authority ceiling;
+- a checkpoint adapter either preserves every declared exact field or rejects;
+- a revoked or quarantined implementation cannot be routed;
+- fallback remains available after a rejected proposal or failed restore;
+- a mixed-kernel trace preserves candidate parentage, evaluator identity,
+evidence handles, assistance, cost, and residual ownership.
+
+An independently implemented executable checker then needs malicious kernels
+that forge receipts, omit mutable state, hide retrieval or tools, exceed budgets,
+request wider authority, reuse a revoked identity, or emit incompatible
+checkpoints. A theorem about the abstract transition is only useful when the
+runtime serialization and checker refine that transition closely enough for the
+same attacks to fail.
+
+The architecture tournament requires at least three genuinely different lanes:
+
+1. a strong Transformer baseline appropriate to the scale and workload;
+2. a recurrent or state-space implementation with explicit recurrent state;
+3. a non-token-native or exact-search/controller lane, with deterministic
+oracles credited separately.
+
+Two primary comparisons are frozen before results: equal active parameters and
+equal total lifecycle cost. Neither is sufficient alone. Every result also
+reports wall time, peak and persistent memory, energy when measurable, training
+and adaptation compute, search, retrieval, tool calls, verification, repair,
+routing, migration, operator burden, and failure recovery. Natural work sits
+beside algorithmic copying and state-tracking tests, long-context distractors,
+continual drift, multimodal/control tasks, exact execution, verifier attacks,
+and size/depth/topology extrapolation.
+
+The frozen-core ratchet is a separate causal experiment. Hold central parameters
+fixed. Admit only abstractions derived through the declared verification path.
+Measure future held-out solve rate and search cost against no-library,
+random-library, retrieval-only, growing-core, and oracle-library controls. Audit
+false activation, contamination, library maintenance, rollback locality, and
+whether the verifier or retrieval corpus actually contains the solution.
+
+## Falsification and adjudication
+
+The broad thesis narrows or fails if the ABI erases capabilities required by
+competitive kernels; translation and routing overhead dominates gains; compact
+state repeatedly fails exact tracking or extrapolation; KAN advantages vanish
+under fair accounting or remain narrow; online memory cannot be attributed and
+rolled back; mixed architectures multiply correlated failures; the frozen-core
+ratchet does not reduce future held-out search; or a strong Transformer or simple
+hybrid dominates the complete measured frontier.
+
+Results are adjudicated at the task-family and route-envelope level. A KAN win on
+a low-dimensional scientific task can qualify that route without implying a
+language-model replacement. A Mamba win in streaming inference can coexist with
+a Transformer win on another workload. A null or negative OneCell result remains
+in the evidence record because it constrains the minimum architecture. This
+program succeeds
+when it makes these outcomes comparable and durable, not when a preferred
+architecture wins.
+
+## Summary
+
+The Transformer is a powerful implementation, not the definition of cognition.
+The ASI Stack should let reflex, reaction, deliberation, and specialist routes
+select whatever qualified substrate best fits an exact job while exact state,
+authority, evidence, recovery, and rights remain stable above it. That is the
+architectural meaning of recursive self-improvement: not merely changing weights,
+but safely proposing, testing, adopting, composing, rolling back, and retiring
+new ways to compute.
+
+The present account establishes the contract, taxonomy, source-grounded
+comparators, falsifiers, finite ABI transition model, and independent synthetic
+conformance trace at `argument`. It does not report a real-kernel ABI, a winning
+architecture, or evidence for OneCell. The next valid movement is a matched
+heterogeneous-kernel tournament, not stronger prose.
+
+Until those artifacts exist, every named substrate remains a workload-bounded
+candidate and every architectural-RSI benefit remains a falsifiable research
+target.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **15** structured claim atoms in `CF-06`. The
+frozen repository-wide terminal audit records 15 `blocked_after_full_attempt`. Its core
+atom `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `replaceable-cognitive-substrates-beyond-transformer-monoculture` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+The dated P6 external-reproduction attempt adds seven exact `blocked_after_full_attempt` dispositions for the architecture tournament, including this core, Transformer baseline, state-space/recurrent, portfolio, OneCell, total-system-KISS, and architectural-RSI atoms. Gated DeltaNet-2 displaces Mamba-3 as the newest reported recurrent frontier for its exact source envelope; no local reproduction, candidate comparison, Pareto result, or SOTA result follows.
+
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 15 structured claims,
+15 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **KERC canonical-language and hierarchical-residual campaign**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Broad efficiency is refuted; only two narrow finite transitions survive, with no semantic, multilingual, production, energy, or core claim.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
+
+## Handoff
+
+Replaceable substrates create useful diversity only when a failing candidate can
+be stopped without losing its evidence, state lineage, or recovery path.
+Readiness Gates, Residual Escrow, and Quarantine therefore takes the next step:
+deciding when a qualified kernel may leave evaluation, what unresolved burden
+must travel with it, and how rejection or rollback remains operationally exact.

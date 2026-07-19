@@ -28,12 +28,12 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
-| Last updated | 2026-07-15 |
+| Last updated | 2026-07-16 |
 | Primary source records | 11 assigned, 11 passage-reviewed mappings, including SISA, model-collapse and accumulation work, Theseus, W3C PROV-O, Croissant, MUSE, OpenUnlearning, the benchmark critique, QCSA, and V-JEPA 2 |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Four reviewed source notes: three primary-paper records and one pinned Theseus implementation-reference record. No source code, dataset, training run, or reported result was imported. |
-| Test state | The receipt probe validates four intake routes. The preregistered P3 campaign trained small PyTorch policies over three seeds and five arms, restored 24 declared surfaces exactly in 15/15 transactions, preserved a no-change update disposition, and separated behavioral, lineage, influence, and storage claims. It does not establish production transfer or verified unlearning. |
+| Test state | The receipt probe validates four intake routes. P3 trained small PyTorch policies over three seeds and five arms and restored 24 declared surfaces in 15/15 transactions. M7 preserved two instrument failures, then ran one adequate 870-record, five-seed, seven-arm structured-fusion campaign: deletion-aware retraining reached 0.9767 deletion accuracy, approximate unlearning moved 0.0122 toward that comparator and reduced one membership-attack advantage by 0.0251, 35/35 transactions restored the declared 24-surface digest, and local deletion/lineage receipts retained remote, storage, legal, and external-descendant residuals. The core remains `argument`; this is not language-model unlearning, privacy, complete erasure, transfer, or production evidence. |
 
 ## Drafting guardrail
 
@@ -321,6 +321,23 @@ and the unlearning result remains partitioned. That is the desired governance
 behavior: a technically successful transaction control does not rescue a weak
 learning outcome, and a changed cohort prediction does not erase retained
 storage.
+
+### Upward concept learning and foundry-state custody
+
+The Platonic World Model permits experience to update particulars and produce
+concept hypotheses, but forbids direct upward mutation of canonical Forms.
+Candidates move through ephemeral, research, provisional, qualified,
+canonical, deprecated, or forked states and carry positive, negative, boundary,
+grounding, utility, stability, intervention, and governance evidence. A learned
+cluster is not promoted merely because it predicts a convenient label.
+
+Deterministic Capability Compilation adds the state needed to reproduce and
+reverse the learning path: scaffold and charter versions, corpus and
+counterexamples, base model, parameter ownership, optimizer, scheduler, RNG,
+router, verifier, caches, backups, descendants, residuals, and reified outputs.
+This improves update custody but does not collapse behavioral cohort removal,
+causal influence reduction, privacy leakage reduction, storage erasure, or
+legal compliance into one claim.
 
 ## Interfaces
 
@@ -669,10 +686,12 @@ These rows keep Data Engines, Continual Learning, and Unlearning's manifest assi
 
 | Source | Intake role | Boundary |
 |---|---|---|
+| `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_muse_unlearning_2025` | Passage-reviewed comparator: MUSE: Machine Unlearning Six-Way Evaluation for Language Models. Supports separating memorization, privacy leakage, retained utility, removal-scale behavior, and sequential sustainability instead of using one forgetting score. | No MUSE corpus, method, 7B model, privacy probe, scale test, or sequential deletion request was reproduced by the local small policy network. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_unlearning_benchmarks_weak_2024` | Passage-reviewed comparator: Position: LLM Unlearning Benchmarks are Weak Measures of Progress. Supports treating unlearning benchmark validity, target ambiguity, forget/retain dependence, and benign perturbation robustness as separate evidence burdens. | The position paper raises the interpretation standard but does not validate the local workload or establish influence, privacy, legal erasure, or storage erasure. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_openunlearning_2025` | Passage-reviewed comparator: OpenUnlearning: Accelerating LLM Unlearning via Unified Benchmarking of Methods and Metrics. Supports versioned unlearning methods, standardized execution interfaces, public checkpoints, diverse evaluations, and meta-evaluation of metric faithfulness. | The framework, methods, checkpoints, evaluations, and meta-evaluations were not run; standardized record shape does not establish semantic validity or erasure. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
-| `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Contributes fast/medium/slow update timescales, candidate versus authoritative atlas epochs, identity-preserving readdressing, merge/split lineage, migration compatibility, shadow evaluation, rollback, and semantic-drift tests; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and active-question value was refuted on this corpus. No learning, forgetting, influence, privacy/storage erasure, chapter-core promotion, AGI, or ASI result is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Contributes fast/medium/slow update timescales, candidate versus authoritative atlas epochs, identity-preserving readdressing, merge/split lineage, migration compatibility, shadow evaluation, rollback, and semantic-drift tests; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. No learning, forgetting, influence, privacy/storage erasure, chapter-core promotion, AGI, or ASI result is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_v_jepa_2_2025` | Passage-reviewed comparator: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning. Shows why world-model data lineage must separate action-free pretraining, action-conditioned adaptation, predictor versions, and error/residual records. | The reported video and robot results do not establish local model quality, causal understanding, safe control, transfer, deployment, or an ASI Stack result. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
@@ -711,6 +730,43 @@ evidence here; `UU-03` persists.
 | `ext_unlearning_benchmarks_weak_2024` | Comparator for weak benchmark validity; reinforces that behavioral scores alone do not establish forgetting. |
 | `ext_openunlearning_2025` | Reproducible unlearning framework comparator; no reproduced method, privacy guarantee, influence proof, or storage erasure here. |
 
+## Post-v2.3 terminal update/unlearning attempt
+
+M7 makes the instrument failures part of the evidence rather than hiding them.
+The first frozen-representation attempt produced measurable checkpoint and
+membership statistics, but both deletion cohorts collapsed to one rare class
+and even deletion-aware retraining scored zero true-label accuracy. It is
+therefore `instrument_inadequate`, not a negative unlearning result. A balanced
+mean-pooled repair then failed before held-out execution at 0.4333 general and
+0.3333 deletion-like preflight accuracy.
+
+The terminal instrument used the same exact local Qwen2.5-Coder-0.5B snapshot
+with frozen weights, concatenated its normalized mean representation with an
+audited vector of the authority, provenance, contamination, deletion, and risk
+fields already present in each record, and trained only a small nonlinear head.
+The preflight ablation is important: Transformer-only reached 0.7667 general
+and 0.7000 deletion-like accuracy, while structured-only and fused paths both
+reached 1.0000. The control task became learnable by making its declared fields
+explicit, not because the language model learned an unlearning procedure.
+
+Across five seeds and seven arms, deletion-aware retraining reached 0.9767 mean
+deletion true-label accuracy. Sequential approximate unlearning moved only
+0.01222040 closer in parameter distance to the retraining comparator than
+standard update. Its direction-invariant loss-threshold membership-attack
+advantage changed by -0.02511111. These small results narrow the mechanism:
+they justify retaining comparator-relative local effects, but not claiming
+zero influence or privacy.
+
+All 35 arm/seed transactions restored the 24 declared local surface digests.
+Five late local descendants were invalidated and quarantined; one operational
+feature shard and its declared local backup were absent with zero index
+references. The corpus, feature packet, checkpoints, and raw evidence remain
+retained, while a simulated remote replica and external descendant did not
+acknowledge closure. Legal compliance was not evaluated. Thus behavioral,
+influence, membership/privacy, lineage, legal, storage, backup, and external-
+descendant outcomes remain eight different claims. The terminal disposition is
+`claim_narrowed_after_full_attempt`, with no chapter-core support movement.
+
 ## Summary
 
 A system that learns without a data lifecycle gradually loses the ability to
@@ -728,6 +784,80 @@ optimism or generic prohibition. The governed path makes the decision visible,
 keeps its unresolved descendants visible, and sends capability claims back
 through independent evaluation and authority gates. Learning can therefore be
 continuous without becoming historically opaque.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **86** structured claim atoms in `CF-07`. The
+frozen repository-wide terminal audit records 86 `blocked_after_full_attempt`. Its core
+atom `data-engines-continual-learning-and-unlearning.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `data-engines-continual-learning-and-unlearning` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+::: {.asi-human-only}
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 86 structured claims,
+86 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Full-state update and unlearning causal campaign**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Broad unlearning claim is narrowed with no support promotion; behavioral removal is not influence, privacy, legal, storage, backup, or descendant erasure.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+:::
+
+::: {.asi-ai-only}
+
+### Evidence packet
+
+| Field | Exact chapter boundary |
+|---|---|
+| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-07` minimum family bundle. |
+| Attempted local lanes | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` |
+| Missing or unproved lanes | `normative`, `transfer` |
+| Family-level natural-work or end-to-end bundle | **Full-state update and unlearning causal campaign** (`end_to_end`): One adequate five-seed, seven-arm terminal campaign preserving two prior instrument failures and separate behavioral, influence, privacy, lineage, storage, backup, and descendant axes. |
+| Negative controls | deletion retrain comparator; approximate mitigation arms; 15 rejecting mutations; failure-lineage preservation. |
+| Exact accepted transitions in this chapter | none |
+| Core outcome | `blocked_after_full_attempt` at `argument`; no chapter-core promotion. |
+| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
+| Reproduction path | Replay `scripts/validate_p4_m7_update_unlearning_v3.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
+
+### Worked success, failure, and boundary cases
+
+- **Success case:** the family-level bundle passed its own rejecting validator
+  within this exact scope: One adequate five-seed, seven-arm terminal campaign preserving two prior instrument failures and separate behavioral, influence, privacy, lineage, storage, backup, and descendant axes. This is evidence that the family
+  received a competent attempt, not that every claim in this chapter succeeded.
+- **Failure or non-promotion case:** 86 atoms
+  remain blocked and 0 are narrowed. A
+  green family validator cannot fill their missing lanes or raise the core.
+- **Boundary case:** Broad unlearning claim is narrowed with no support promotion; behavioral removal is not influence, privacy, legal, storage, backup, or descendant erasure.
+
+### Argument-exit table
+
+| Atom set | Count | Work performed | Terminal reason and next burden |
+|---|---:|---|---|
+| Core: `data-engines-continual-learning-and-unlearning.core` | 1 | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` | `blocked_after_full_attempt`; missing or unproved: `normative`, `transfer`. |
+| blocked after full attempt | 86 | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` | Missing or unproved lanes across this set: `normative`, `transfer`. These are residual proof obligations, not false claims. |
+
+This table is a disposition map, not a promotion quota. The next valid movement
+is atom-specific evidence that fills the named missing lanes, survives relevant
+negative controls, and enters through an accepted evidence transition. Until
+then, source counts, theorem counts, fixtures, validators, or nearby family
+results cannot be used as substitutes.
+:::
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
 
 ## Handoff
 

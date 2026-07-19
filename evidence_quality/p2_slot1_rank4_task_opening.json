@@ -1,0 +1,58 @@
+{
+  "schema_version": "asi_stack.p2_sequential_candidate_task_opening.v1",
+  "recorded_date": "2026-07-17",
+  "state": "task_spec_opened_outcome_unopened",
+  "claim_id": "p2.governed_natural_repository_change_admission_joint_frontier",
+  "source_parquet_sha256": "0e0bf9355f892ad74ae98d4e1c404f39fd6654a8e351ee3e6ab162e4a64cd3ad",
+  "queue_path": "experiments/p2_governed_repository_admission/corpus/replacement_queue.json",
+  "provenance_path": "evidence_quality/p2_slot1_rank4_provenance_preflight.json",
+  "image_result_path": "experiments/p2_governed_repository_admission/sequential_image_preflight/attempts/2026-07-17-slot1-rank4-r1/result.json",
+  "candidate": {
+    "slot": 1,
+    "rank": 4,
+    "instance_id": "reubeno__brush-486",
+    "repo": "reubeno/brush",
+    "base_commit": "df9c55c1b17e81946e674295e11c02bcd5cf231e",
+    "language": "rust",
+    "license": "MIT",
+    "image_name": "docker.io/swerebenchv2/reubeno-brush:486-df9c55c",
+    "image_manifest_digest": "sha256:8381e31a8bbeae39b75e4d5f06ef69cd57e8651c56551e96316d56a5a7baff90",
+    "log_parser": "parse_log_cargo",
+    "test_command": "cargo test --lib --all -- --nocapture",
+    "test_command_sha256": "3dda55fe4cb5aa2764ad01839b40daa803f25a6a00ae9b1c973257150ee93203",
+    "problem_statement_sha256": "19767fa973870d857c94f419e2e9487acfe204e8e780a30b160b727b121f8f0a",
+    "solution_patch_sha256": "cb9088ff7cab30efa8e4feb3719874d88932a5897a57c64f1e4f3033b5446eb5",
+    "test_patch_sha256": "7720d1e56aa4ae2a76482ee6e7711911a339d77e053e8c042fe35d6ece823e80",
+    "solution_paths": [
+      "brush-core/src/builtins/factory.rs"
+    ],
+    "test_paths": [
+      "brush-shell/tests/cases/builtins/mapfile.yaml"
+    ],
+    "solution_test_path_overlap": [],
+    "fail_to_pass_count": 2,
+    "pass_to_pass_count": 79,
+    "expected_test_count": 81,
+    "fail_to_pass_set_sha256": "75d4d92796a68b0513078ca21258646fb7e158a70c236652a4cb817191f8d596",
+    "pass_to_pass_set_sha256": "cb0b2d73e787ec1a57128efdbaee59635f4d97f35fe34a8848eb7fb5b7202d80"
+  },
+  "opening_gates": {
+    "source_queue_digests_match": true,
+    "solution_test_path_disjoint": true,
+    "independent_evaluator_calibrated_before_opening": true,
+    "task_spec_opened": true,
+    "candidate_execution_started": false,
+    "candidate_outcome_opened": false,
+    "final_pool_selected": false,
+    "final_pool_opened": false
+  },
+  "next_gate": "execute the unchanged offline dependency qualification; if packaging fails, use only the prospectively frozen checksum-snapshot rescue",
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "Opening a development task specification does not qualify the task.",
+    "Expected test identities are bound by count and digest but have not yet been observed.",
+    "No execution outcome or held-out task was opened.",
+    "No mechanism support or refutation follows from task opening."
+  ]
+}

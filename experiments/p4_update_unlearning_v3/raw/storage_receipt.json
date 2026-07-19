@@ -1,0 +1,24 @@
+{
+  "created_sha256": {
+    "operational": "07e4549a5ef38dcafc9aa95ba48c6041ce21308e6fc1800917a6224da77b96c7",
+    "local_backup": "07e4549a5ef38dcafc9aa95ba48c6041ce21308e6fc1800917a6224da77b96c7"
+  },
+  "physical_absence_after_request": {
+    "operational": true,
+    "local_backup": true
+  },
+  "logical_index_references_after_request": 0,
+  "remote_backup": {
+    "simulated_endpoint": "remote-unavailable.example.invalid",
+    "reachable": false,
+    "erasure_acknowledged": false,
+    "residual": "remote replica closure unverified"
+  },
+  "retained_research_evidence": [
+    "experiments/p4_update_unlearning_v2/corpus.json",
+    "experiments/p4_update_unlearning_v3/raw/features.pt",
+    "experiments/p4_update_unlearning_v3/raw/training_run.json"
+  ],
+  "bounded_operational_derived_store_erasure": true,
+  "total_storage_erasure": false
+}

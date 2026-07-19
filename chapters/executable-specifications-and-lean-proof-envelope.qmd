@@ -4,7 +4,7 @@ chapter_id: "executable-specifications-and-lean-proof-envelope"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-15"
+last_updated: "2026-07-16"
 primary_sources:
   - "genesiscode"
   - "spinoza"
@@ -468,6 +468,80 @@ The proof envelope makes formality useful by staying small, operational, and bou
 The same separation applies to performance pressure. A benchmark result can raise confidence only when its run record, baseline, residuals, regression floor, and anti-Goodhart checks are explicit.
 
 The proof envelope should let a reader tell exactly what was proved, what was merely validated, what was tested, what was benchmarked, and what remains prose. If those lanes blur, the proof envelope has become decoration. The immediate value is local: small invariants about authority ceilings, field replacement, evidence transitions, budget records, context mounts, and proof receipts can be checked without pretending that the entire architecture has been formalized. The longer-term value is cultural. Agents improving the book or the stack should learn that mechanized claims need artifacts, commands, and failure records. Formality is useful when it reduces ambiguity and overclaiming; it is harmful when it becomes ornamental confidence.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **73** structured claim atoms in `CF-07`. The
+frozen repository-wide terminal audit records 73 `blocked_after_full_attempt`. Its core
+atom `executable-specifications-and-lean-proof-envelope.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `executable-specifications-and-lean-proof-envelope` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+::: {.asi-human-only}
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 73 structured claims,
+73 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Full-state update and unlearning causal campaign**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Broad unlearning claim is narrowed with no support promotion; behavioral removal is not influence, privacy, legal, storage, backup, or descendant erasure.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+:::
+
+::: {.asi-ai-only}
+
+### Evidence packet
+
+| Field | Exact chapter boundary |
+|---|---|
+| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-07` minimum family bundle. |
+| Attempted local lanes | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` |
+| Missing or unproved lanes | `normative`, `transfer` |
+| Family-level natural-work or end-to-end bundle | **Full-state update and unlearning causal campaign** (`end_to_end`): One adequate five-seed, seven-arm terminal campaign preserving two prior instrument failures and separate behavioral, influence, privacy, lineage, storage, backup, and descendant axes. |
+| Negative controls | deletion retrain comparator; approximate mitigation arms; 15 rejecting mutations; failure-lineage preservation. |
+| Exact accepted transitions in this chapter | `v1_0_pilot.proof_envelope.no_change` |
+| Core outcome | `blocked_after_full_attempt` at `argument`; no chapter-core promotion. |
+| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
+| Reproduction path | Replay `scripts/validate_p4_m7_update_unlearning_v3.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
+
+### Worked success, failure, and boundary cases
+
+- **Success case:** the family-level bundle passed its own rejecting validator
+  within this exact scope: One adequate five-seed, seven-arm terminal campaign preserving two prior instrument failures and separate behavioral, influence, privacy, lineage, storage, backup, and descendant axes. This is evidence that the family
+  received a competent attempt, not that every claim in this chapter succeeded.
+- **Failure or non-promotion case:** 73 atoms
+  remain blocked and 0 are narrowed. A
+  green family validator cannot fill their missing lanes or raise the core.
+- **Boundary case:** Broad unlearning claim is narrowed with no support promotion; behavioral removal is not influence, privacy, legal, storage, backup, or descendant erasure.
+
+### Argument-exit table
+
+| Atom set | Count | Work performed | Terminal reason and next burden |
+|---|---:|---|---|
+| Core: `executable-specifications-and-lean-proof-envelope.core` | 1 | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` | `blocked_after_full_attempt`; missing or unproved: `normative`, `transfer`. |
+| blocked after full attempt | 73 | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` | Missing or unproved lanes across this set: `normative`, `transfer`. These are residual proof obligations, not false claims. |
+
+This table is a disposition map, not a promotion quota. The next valid movement
+is atom-specific evidence that fills the named missing lanes, survives relevant
+negative controls, and enters through an accepted evidence transition. Until
+then, source counts, theorem counts, fixtures, validators, or nearby family
+results cannot be used as substitutes.
+:::
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
 
 ## Handoff
 

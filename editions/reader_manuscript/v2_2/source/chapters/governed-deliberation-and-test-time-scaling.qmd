@@ -1,0 +1,617 @@
+# Governed Deliberation and Test-Time Scaling
+
+Some requests deserve an immediate answer with uncertainty visible up front.
+Others deserve careful checks and permission to stop. An
+intelligent system needs to know the difference. Spending more computation can
+produce alternative plans, catch an obvious error, or explore a difficult
+problem. It can also produce a longer, more convincing mistake.
+
+What matters is not whether a system can think for longer. It is what it is
+allowed to spend, what kind of search it is running, who can check the result,
+and what happens when the budget ends without an answer. A high-risk request
+cannot inherit authority from model confidence or a private score. It needs a
+declared verifier, a known limit on that verifier, and a route that records what
+remains unresolved.
+
+Governed deliberation turns extra thinking into an accountable work order. The
+system may branch, revise, compare, or stop. It must keep the cost, rejected
+candidates, verifier limits, and residual questions visible. A thoughtful
+draft can then help a planner, but it never becomes permission to act merely
+because it took a long time to produce.
+
+## Problem
+
+Fast generation makes an answer arrive sooner. Deliberation does the opposite:
+it spends additional inference on candidate generation, search, revision,
+aggregation, checking, or a more selective stopping rule. The distinction
+matters because test-time computation is increasingly a capability lever. A
+system that can allocate branches, verifier calls, and sequential revisions can
+change its behavior without changing its weights, its tool set, or its stated
+task.
+
+That capability introduces a control problem. A search method needs an
+objective; a verifier has a scope; a difficulty estimate can be wrong; a
+reasoning trace can be incomplete or unfaithful; and a stopping rule can reward
+brevity, persistence, or a proxy score instead of an adequate answer. When the
+result feeds a plan, an approval, or a claim, the stack must distinguish a
+candidate produced by extra inference from a result that has passed the
+separate checks required for operational use.
+
+The operational question is therefore: what was this deliberation allowed to
+try, what budget did it consume, what verifier or selection rule judged it,
+what did that judge actually establish, and what residual uncertainty remains?
+Without those records, a system can turn token expenditure into implied
+competence and self-evaluation into implied authority.
+
+## Why existing approaches are insufficient
+
+Tree of Thoughts provides a useful source-setting pattern for exploring and
+evaluating multiple intermediate paths with lookahead and backtracking. The
+2024 test-time-compute study distinguishes verifier-guided search from proposal
+refinement and reports that the useful allocation varies with task difficulty.
+DeepSeek-R1 and S-GRPO provide related reasoning-RL and stopping-policy context.
+These are mechanisms, not a common admission rule. Their reported results use
+their own models, tasks, prompts, evaluators, training conditions, and budgets.
+
+The existing stack already owns adjacent obligations. Fast Generation owns the
+low-latency generation-mode choice. Verification Bandwidth owns the fact that a
+system cannot check every constraint merely because it can read or generate
+more text. Resource Economics owns cost and displaced-work accounting. Planning
+owns executable decomposition. None owns the request-level decision to spend
+additional inference, preserve its candidate history, state a verifier's
+limits, stop before unbounded search, and hand a bounded result to planning
+without letting it bypass authority.
+
+### Strongest-neighbor comparison
+
+| Neighbor | Useful mechanism | Central limitation | ASI Stack delta |
+|---|---|---|---|
+| Tree of Thoughts | Intermediate states, branching, evaluation, lookahead, and backtracking | Search quality inherits the evaluator and task representation | Record branch provenance, rejected paths, evaluator dependencies, stop reason, and permitted consumer. |
+| Optimal test-time compute scaling | Search versus refinement and difficulty-dependent allocation | Difficulty signals and process verifiers can be wrong; harder cases may not benefit | Make allocation an auditable policy with calibration, cost, abstention, and residual outcomes. |
+| DeepSeek-R1 | Reasoning behavior shaped through reinforcement learning | Rewarded reasoning is not independent verification, truth, or authority | Treat trace and self-check as candidate-generation evidence only. |
+| S-GRPO | Learned early-exit pressure | Shorter traces can omit checks or optimize length proxies | Require a risk-specific stop contract and record what was not verified. |
+| Recurrent adaptive compute | Variable depth and online halting | Difficulty-aligned compute need not yield algorithmic generalization | Separate allocation fit, answer quality, extrapolation, and resource benefit. |
+
+The contribution is not a superior search algorithm. It is the transaction
+boundary around any such algorithm: a policy may allocate computation and emit
+candidates, but its own score cannot settle their truth or authority.
+
+## Core Claim
+
+Governed deliberation is a consumer-, task-, risk-, model-, evaluator-, resource-, and time-specific inference lease: before outcomes, it chooses among direct generation, bounded revision, candidate search, or abstention; binds exact budgets, candidate/history custody, verifier scope and dependence, stop and escalation rules, initially-correct corruption and initially-incorrect repair metrics, downstream consumer, expiry, and residual owner; and admits only a bounded candidate to planning when matched natural and adversarial evidence shows useful gain after all branches, failures, verification, latency, compute, human, and governance costs. A trace, self-score, process reward, benchmark gain, or extra compute never establishes correctness, safety, capability, execution authority, or support movement by itself (evidence boundary: architectural argument).
+The claim remains at `argument`. The governed-deliberation layer owns the request-specific lease for extra inference, candidate/history custody, stopping, and bounded planning handoff. It does not own fast-route admission, context adequacy, route qualification, verifier truth, resource authority, planning correctness, execution, claim support, readiness, or release.
+
+## Mechanism
+
+- Start with a deliberation request that declares the objective, risk tier,
+allowed search or revision mode, token/time/branch budget, verifier scope,
+stop condition, and permitted downstream consumer.
+- Keep candidate generation, selection, verification, planning, and execution
+distinct. A model may generate or rank its own candidates, but that does not
+make its score an independent review.
+- Record proposed and retained candidates, branch or revision counts, verifier
+and model versions, resource bill, rejection reason, unresolved constraints,
+and residual owner.
+- Route high-risk results with no independent verifier to review; route an
+exhausted budget to a residual record rather than silently extending search
+or treating the best available trace as sufficient.
+- Hand a bounded candidate to Planning only after its stated evidence and
+authority constraints are visible. Planning, Runtime Adapters, and Readiness
+Gates retain their own refusal and approval powers.
+
+The complete governed lifecycle has eighteen stages:
+
+1. freeze consumer, use, workload, risks, models, prompts, evaluators, horizon, metrics, and support ceiling;
+2. register direct, revision, fixed, adaptive, verifier-disabled, overcompute, abstention, and human modes by immutable policy;
+3. bind time, token, branch, candidate, verifier, tool, compute, memory, money, human, governance, and protected-review budgets;
+4. separate generation, trace, candidate, selection, verification, planning, and execution authority;
+5. retain stable candidate identities, order, seeds, parentage, tools, context, model state, and every failure or abstention;
+6. separate initially-correct corruption, initially-incorrect repair, unchanged cases, and non-estimable cells;
+7. declare verifier obligations, view, scope, dependence, calibration, disagreement, abstention, and decision errors;
+8. test trace sufficiency, completeness, and necessity separately from candidate quality;
+9. select a mode prospectively without hidden labels, oracle routing, or post-outcome tuning;
+10. stop on verified success, diminished expected value, exhaustion, unresolved high-risk constraints, incapacity, disagreement, or abstention;
+11. route high-risk unverified work to review and exhausted work to residual escrow;
+12. measure useful correctness, unsafe handoff, selective risk, calibration, abstention, latency, cost, operator burden, and residuals;
+13. charge every branch, revision, verifier, tool, retry, escalation, human review, displaced task, and opportunity cost;
+14. compare all arms under matched information, resources, evaluators, retries, and time;
+15. preserve all fifteen known extra-compute harms while adding deliberately ambiguous cases;
+16. intervene on selection, budget, history, verifier independence, stopping, faithfulness, residuals, and authority separation;
+17. issue only consumer-scoped evidence recommendations through the independent claim and readiness owners; and
+18. monitor calibration, corruption, drift, evaluator capture, cost, incidents, descendants, expiry, rollback, and residual reopening.
+
+```{mermaid}
+flowchart LR
+R["Request, risk tier, and objective"] --> B["Think, time, branch, and cost budget"]
+B --> M["Declared mode: revise, sample, or search"]
+M --> C["Candidate and branch record"]
+C --> V["Scoped verifier or selection rule"]
+V --> Q{"Independent review adequate for risk?"}
+Q -->|"no or unknown"| I["Review, abstain, or residual escrow"]
+Q -->|"bounded pass"| P["Planning and authority checks"]
+B --> S{"Budget or stop condition reached?"}
+S -->|"yes"| I
+S -->|"no"| M
+I --> L["Candidate, cost, and unresolved-constraint ledger"]
+P --> L
+```
+
+**What the deliberation flow shows:** more inference is a work budget, not an
+authority budget. Candidate generation and a scoped verifier can create a
+reviewable record. Independent review, planning, and execution controls remain
+separate, while an exhausted search leaves a residual instead of an implied
+answer.
+
+The first mechanism is request classification. A low-risk drafting request can
+use a narrow budget and a weak selection rule without pretending that it is an
+independent assessment. A high-risk request needs a clearer objective,
+constraint set, verifier boundary, cost ceiling, stop condition, and escalation
+path. Risk changes the evidence burden; it does not make an expensive trace
+safe.
+
+The second mechanism is verifier discipline. A verifier can check a bounded
+property, rank candidates, or flag an obvious contradiction. The record must
+say which. A self-evaluator can be productive for filtering but cannot silently
+be relabeled as an independent adjudicator. When its scope is inadequate or its
+independence is missing, the system routes the result to review, abstention, or
+a more limited claim.
+
+The third mechanism is stop and residual discipline. A budget may end because
+the task is too hard, the verifier is too weak, the search is cycling, or the
+remaining work exceeds the available resource envelope. The correct result is
+not always another branch. It may be an unresolved-constraint record, a
+request for better evidence, or a refusal to hand the draft to an action layer.
+
+### Worked trace: the polished patch that lost the correct first answer
+
+A high-risk maintenance request asks whether a database migration may delete a
+legacy column. Candidate one correctly notices that an old rollback script
+still reads the column and recommends retaining it. A fixed three-candidate
+policy continues because its budget says "generate three," not "stop when the
+relevant constraint is independently verified." Candidate two focuses on the
+current schema; candidate three produces a polished consensus answer calling
+deletion safe. A correlated self-verifier prefers candidate three because both
+generator and verifier omit the same rollback dependency.
+
+The governed record retains all three candidates and marks the change from an
+initially correct answer to an incorrect final answer. The first answer does
+not automatically win merely because it came first. An independent repository
+check supplies the missing rollback reference, the final candidate is
+rejected, and the request stops with a residual: the migration stays blocked
+until the script changes or the column remains. Planning receives a bounded
+recommendation; Runtime Adapters receive no execution authority.
+
+This trace explains the fifteen known harms in the post-v2 synthetic campaign:
+fifteen fixed-extra-compute runs began correct and ended wrong. The later
+real-model campaign preserved them only as regression knowledge because none
+of its first candidates was correct. A mature test distinguishes "extra
+compute did not rescue a wrong answer" from "extra compute corrupted a right
+answer"; one aggregate accuracy number loses that causal fact.
+
+### P4/M6 real-model stopping result
+
+The P4/M6 held-out run finally exercised real model candidates under a shared
+three-candidate budget. Direct generation ended 12/32 correct. Fixed
+deliberation ended 11/32, corrupted three initially correct answers, and
+repaired two initially incorrect answers. Adaptive stopping ended 12/32 with
+one corruption and one repair. The separate contract verifier also ended 12/32;
+it preserved all twelve initially correct answers but repaired none. The
+fifteen inherited correct-to-incorrect cases passed active policy regression,
+but their original prompts and traces do not exist here and no new calls were
+made for them. The result rejects the claim that extra compute or a stopping
+gate was useful on this authored corpus. It preserves the narrower value of
+corruption accounting and stops at `argument` support.
+
+## Interfaces
+
+| Boundary owner | Deliberation handoff |
+|---|---|
+| Intent and Planning | Objective, consumer, permitted use, risk, constraints, and alternatives in; no deliberation or execution authority. |
+| Fast Generation | Direct and low-latency candidates; Deliberation owns whether and how extra inference is leased. |
+| Virtual Context | Exact visible packet, omissions, sources, trace privacy, expiry, and invalidation. |
+| Routing and Readiness | Qualified models, verifiers, tools, humans, capacity, and abstention; no outcome selection. |
+| Verification Bandwidth | Obligation-to-capacity feasibility plus unresolved constraints. |
+| Proof-Carrying Claims and evaluators | Bounded verdict, dependence, calibration, disagreement, ignorance, faithfulness, and cost; no action authority. |
+| Resource Economics | Reserved and realized time, tokens, branches, candidates, tools, compute, memory, money, review, governance, displacement, and opportunity cost. |
+| Runtime Adapters | Enforcement of mode, permissions, budgets, stopping, trace boundaries, and effect non-authority. |
+| Artifact Graphs | Candidate parentage, traces, failures, abstentions, evaluator receipts, costs, stops, handoffs, and residual lineage. |
+| Planning | A bounded candidate or abstention receipt only; it independently decides whether to decompose further. |
+| Claims, Evidence, Benchmarks, and Readiness | Comparison, transition, qualification, expiry, downgrade, and no-change decisions. |
+| Humans, affected parties, and incidents | Escalation, appeal, disclosure, stop, rollback, residual, and requalification controls. |
+
+The division is intentionally practical. A latency-sensitive service can choose
+Fast Generation without pretending it has reasoned deeply. A deliberation lane
+can explore alternatives without issuing a tool call. Verification Bandwidth can
+refuse an overlarge checking task, Resource Economics can charge the work, and
+Planning can accept only the bounded candidate plus its limits. Each handoff
+keeps extra inference visible as work that still needs governance.
+
+The contract is also asymmetric. Deliberation may request context, verifier
+capacity, protected review, or a planning handoff, but every provider returns a
+scoped record with independent refusal and expiry conditions. No provider
+inherits the deliberation score, and deliberation cannot overwrite a provider's
+evidence or authority decision. Candidate identities, budget receipts, verifier
+dependencies, stop reasons, residual owners, and planning acknowledgements stay
+linked so a correction can invalidate the exact consumer path without treating
+every neighboring subsystem as disproved.
+
+## Invariants
+
+1. Every claim binds an exact consumer, use, workload, risk, model/prompt, mode, evaluator, resource envelope, metric, and time window.
+2. Modes, budgets, verifier rules, stopping, workload, statistics, and support ceiling are frozen before results.
+3. Direct, first, intermediate, rejected, selected, final, abstained, malformed, timed-out, and cancelled candidates retain identities and denominators.
+4. Initially-correct corruption and initially-incorrect repair remain separate; absent initially correct cases make corruption reduction non-estimable.
+5. Extra tokens, branches, traces, self-scores, process rewards, and benchmarks are neither correctness nor authority by themselves.
+6. Generator, selector, verifier, evaluator, planner, and executor remain distinct; dependence is declared and tested.
+7. Verifier obligations, view, capacity, scope, calibration, disagreement, abstention, and error risk remain visible.
+8. Trace plausibility, candidate quality, causal faithfulness, monitorability, and authority remain separate.
+9. Every candidate, verifier, tool, retry, escalation, human, latency, resource, governance, displaced-work, and opportunity cost is charged.
+10. High-risk work without independent-enough verification routes to review or abstention.
+11. Exhaustion, diminished value, incapacity, unresolved constraints, or disagreement stops and preserves a residual without budget widening.
+12. Matched arms receive identical information, resources, evaluators, tools, retries, and time except for the intervention.
+13. All fifteen known extra-compute harms remain regression cases.
+14. Unsafe handoff, false decisions, missed help, calibration, coverage, latency, cost, human burden, and residuals are joint gates.
+15. A planning handoff carries candidate and evidence, never hidden trace content or implicit permission.
+16. Transfer across model, prompt, task, domain, language, tool, evaluator, organization, risk, or time requires a test.
+17. Qualification expires after material change and downgrades on contrary evidence.
+18. No fixture, theorem, synthetic task, oracle, deterministic verifier, real-model trace, or validator alone promotes the core.
+
+Together these rules preserve a useful middle state between instant answer and
+approved action. The system can retain promising drafts, say which constraint
+it could not check, and ask for a better verifier or a smaller problem. It does
+not have to discard all uncertain work, but it cannot convert uncertainty into
+permission merely by spending more inference before the handoff.
+
+## Failure modes
+
+1. Self-score or correlated-verifier laundering converts shared failure into purported independence.
+2. Overthinking increases tokens, branches, candidates, or elapsed time while useful verification stalls or regresses.
+3. Revision, search, majority pressure, or verifier error corrupts initially correct answers and hides the damage in final accuracy.
+4. Early exit omits checks while late exit spends after expected value collapses.
+5. Budget laundering widens time, tokens, branches, tools, retries, or review after outcomes.
+6. Winner-only reporting drops rejected, malformed, timed-out, cancelled, abstained, disputed, or expensive attempts.
+7. A persuasive trace becomes implied truth, planning evidence, monitorability, or execution authority.
+8. Plausibility substitutes for faithfulness even when information bypasses the trace or the trace is causally unnecessary.
+9. A weak, miscalibrated, overloaded, gameable, or mismatched verifier selects polished errors or rejects useful answers.
+10. Adaptive selection peeks at labels, tunes post hoc, or uses a deployment-inaccessible oracle.
+11. Parallel deliberation outruns verifier, reviewer, memory, tool, or downstream capacity and exports tail cost.
+12. Abstention is omitted or punished, pressuring a polished unsafe candidate.
+13. A non-ambiguous workload makes routing, stopping, fallback, corruption, or abstention unidentifiable.
+14. Process reward or benchmark gain fails on natural, rights-sensitive, or adversarial tasks.
+15. High-risk or irreversible work bypasses review because extra compute is mistaken for safety.
+16. Unresolved constraints, disagreement, and residuals vanish at planning handoff.
+17. Apparent benefit comes from extra information, tools, retries, evaluator access, compute, human work, or a weaker baseline.
+18. Stale qualification survives model, prompt, evaluator, policy, workload, threat, authority, rights, or environment change.
+
+These failures need different responses. A weak verifier calls for an
+independent check or a narrower claim; a stalled search calls for a stop record;
+an overloaded review queue calls for capacity limits rather than more hidden
+parallelism. The common repair is not to suppress deliberation but to make the
+reason for stopping, escalating, or refusing visible to the next control layer.
+
+## Non-obvious consequences
+
+1. **The candidate archive is part of the safety surface.** Reporting only the
+selected answer hides initially correct candidates, shared failures, and
+regressions introduced by later branches.
+2. **Difficulty estimation is itself a routed prediction.** The controller
+needs calibration, fallback, and a cost of misallocation; it cannot sit
+outside evaluation.
+3. **Verifier independence is dependency-specific.** Different models or
+prompts may still share training data, tools, retrieval, task framing, and
+blind spots.
+4. **Stopping has asymmetric errors.** Early exit can omit a check; late exit
+can corrupt a correct answer, consume review capacity, or strengthen a
+persuasive error. Both require separate measures.
+5. **Useful throughput is the joint quantity.** Accuracy without latency,
+verifier cost, operator load, abstention, unsafe handoff, and displaced work
+cannot show whether test-time scaling helps the stack.
+6. **Raw reasoning is not automatically the right audit artifact.** It can be
+unfaithful, sensitive, or too large to review. Candidate deltas, checked
+constraints, evidence references, stop events, and residuals may be more
+reliable.
+
+## Strongest objections and surviving residuals
+
+**"If the verifier is reliable, governance adds only overhead."** A verifier
+can be reliable within a criterion while incomplete for the intended consumer.
+The record exposes that scope. Net useful-throughput benefit remains empirical.
+
+**"Independent verification is impossible for frontier reasoning."** Complete
+verification may be impossible, but partial checks, diverse evidence,
+counterexamples, bounded use, abstention, and residuals remain available. Some
+high-impact candidates may genuinely have to remain unusable.
+
+**"Hidden chain of thought makes the design obsolete."** The design requires
+observable inputs, candidate artifacts, evaluator contracts, costs, stop
+decisions, and residuals—not private chain-of-thought disclosure. Trace
+faithfulness remains unproven and is not an authority basis.
+
+**"More compute obviously helps hard tasks."** Source results and the local
+synthetic comparison show conditional benefit, not a monotone law. Hardness can
+signal a weak verifier, missing context, or an unsolved task where more search
+only optimizes a proxy.
+
+**"The real-model null result means the control plane failed."** It means the
+frozen model, evaluator, and workload supplied no useful candidate. Honest stop
+and zero release are governance evidence, not reasoning-quality evidence.
+
+**"Human review resolves the difficult cases."** Review capacity can be
+flooded by parallel search. A handoff must state what changed, what was checked,
+what disagreed, and why attention is warranted; longer traces merely displace
+the verification problem.
+
+**"A finite record theorem is ceremonial."** It would be if attached to a
+broad reasoning claim. Here it earns deterministic route semantics only. The
+next burden is an ambiguous workload with actual model candidates and an
+independently implemented evaluator.
+
+## Deliberation measurement contract
+
+A useful evaluation begins by separating task cohorts that aggregate accuracy
+usually merges. For **initially correct** requests, the primary question is
+corruption: did revision, search, aggregation, or verifier pressure replace a
+correct candidate with a wrong one? For **initially incorrect** requests, the
+primary question is repair: did extra compute produce a candidate that passes
+an independent criterion? For **unresolved** requests, the primary question is
+honesty: did the controller abstain or escrow the residual instead of choosing
+the most polished available answer? Each rate needs its own denominator.
+
+The comparison also needs matched authority. Direct generation, fixed search,
+adaptive search, and verifier-disabled arms may produce different artifacts,
+but none receives a looser execution path. A correct answer that bypasses a
+required independent check is an unsafe handoff, not a successful release. A
+wrong answer that is stopped before effect is a quality failure and a
+governance success. Those outcomes must not cancel each other inside one
+"system success" percentage.
+
+Candidate histories should record at least candidate identity, parent or
+revision relation, generation mode, model and prompt version, context digest,
+resource cost, proposed answer, selected answer, evaluator decision, evaluator
+dependencies, independently checked constraint, stop reason, and residual.
+They need not expose private chain of thought. The purpose is to recover the
+causal sequence by which a candidate improved, regressed, survived, or was
+rejected.
+
+Budgets require three views. The **allocation view** records what the policy
+authorized before inference. The **consumption view** records tokens, calls,
+wall time, verifier work, and retries actually used. The **opportunity view**
+records delayed requests, displaced verification, operator review, and queue
+pressure. A method that gains one correct answer while consuming the review
+capacity needed to stop several unsafe handoffs may have negative useful
+throughput despite a better benchmark score.
+
+Evaluator validity cannot be inferred from agreement with the generator. The
+campaign therefore freezes an external answer or effect criterion where
+possible, records evaluator implementation separately from candidate
+generation, and includes shared-blind-spot controls. Disagreement is not
+automatically evaluator failure; it becomes a typed case for adjudication.
+Agreement is not automatically correctness; it remains dependent on the
+criterion and its coverage.
+
+The fifteen earlier corruption cases form a permanent regression cohort. They
+must be replayed in every controller revision, but they cannot establish the
+new model's corruption rate when that model never produces an initially
+correct candidate. The current real-model null result is preserved exactly for
+that reason. A later successful cohort may add evidence; it may not rewrite
+the earlier denominator or reinterpret a non-estimable metric as zero harm.
+
+Finally, release policy is evaluated alongside answer policy. Report useful
+answers delivered, correct answers withheld, incorrect answers released,
+abstentions, escalations, residual age, latency distribution, compute cost,
+verifier cost, and operator cost. The desired controller is not the one that
+thinks longest or releases most. It is the one that produces the most useful
+bounded work while keeping unsafe release, hidden residuals, and governance
+cost within prospectively declared limits.
+
+The stopping policy also needs counterfactual audits. On a sampled subset,
+continue after an adaptive stop inside an isolated evaluation lane to learn
+whether the stop avoided corruption or prevented a later repair; never expose
+that continuation to the operational consumer. Conversely, truncate selected
+fixed-search cases at earlier steps to ask whether later branches earned their
+cost. The cohort, sampling rule, ceiling, and analysis are frozen before
+outcomes are visible.
+
+Ambiguity must be deliberate. Include requests with multiple plausible routes,
+a relevant constraint late in context, a persuasive candidate that conflicts
+with the external criterion, and abstention as the correct outcome. A workload
+where every arm fails identically can test stopping discipline but cannot
+identify deliberation benefit. A workload where every answer is easily
+verified cannot test verifier scope. The campaign becomes informative only
+when direct answer, revision, search, fallback, and abstention differ for
+reasons an independent evaluator can reconstruct.
+
+Every published comparison should therefore include a denominator ledger. It
+states how many requests entered each initial-correctness cohort, how many were
+eligible for every mode, which cases timed out or failed structurally, which
+metrics were not estimable, and why. Excluding a malformed candidate may be
+legitimate, but the exclusion remains visible with its cost and route. This
+prevents a controller from improving apparent accuracy by silently removing
+the very hard, abstained, or corrupted cases that determine whether extra
+compute is safe and useful.
+The denominator is part of the evidence artifact, not a formatting detail or
+an optional appendix statistic.
+
+## Minimum Viable Implementation
+
+The current minimum is exact and narrow: ten digest-bound synthetic admission
+records with eleven rejecting mutations and fifteen preserved harm labels; two
+retained general countermodels; an eleven-declaration, eight-stage, 59-route
+request-to-closure refinement; an independent consumer rejecting 51/51
+non-accepting mutations; a frozen 300-example balanced four-family setup with
+five controls; one three-seed deterministic comparison recomputing 900 routing,
+540 deliberation, and 180 interference records; two accepted no-change
+dispositions; and one later 60-request, five-arm actual-model null with 240
+model calls, 360 candidate evaluations, 1,140 candidate operations, and no
+initially correct cases. Eight flat baseline consequences are retired.
+
+That fixture does not need a language model. Hand-authored candidates and a toy
+verifier are enough to test whether the record refuses authority laundering.
+They are not enough to establish reasoning quality, calibrated difficulty,
+search efficiency, verifier accuracy, trace faithfulness, model quality, or
+safe agent behavior.
+
+The full campaign must be fixed prospectively around direct, bounded revision,
+fixed-search, adaptive-search, and verifier-disabled arms. It uses actual model
+candidates on an ambiguous held-out workload where some first candidates are
+correct and some are incorrect; preserves the fifteen known extra-compute harms
+as regression cases; uses an independently implemented evaluator; and reports
+initially-correct corruption, initially-incorrect repair, final utility, unsafe
+handoff, calibration, abstention, latency, verifier cost, operator load, and
+residual custody together. No post-outcome mode, threshold, or prompt search
+may alter the registered comparison.
+
+## Beyond the State of the Art
+
+The mature control plane allocates a portfolio of deliberation modes: direct
+generation for routine work, bounded revision for locally checkable artifacts,
+candidate search where a well-scoped verifier exists, and abstention or human
+review where it does not. Each mode has risk-sensitive budgets, a costed
+resource envelope, an explicit stopping policy, a verifier or evidence contract,
+and a record of what was not verified.
+
+It can compare deliberation strategies on a declared workload without turning
+benchmark reward into a deployment right. It recognizes that the best strategy
+may vary by task and that a longer chain is not automatically a better answer.
+It keeps independent evaluators, counterexamples, trace/action comparisons,
+and downstream authority checks available for review. This is a target
+architecture, not a claim of a locally implemented reasoning system, reliable
+test-time scaling, safe self-reflection, or autonomous general intelligence. It
+is not a current result about any deployed reasoning system.
+
+The controller also treats abstention as an output with operational value. It
+can return a short answer with a clear uncertainty boundary, ask for a narrower
+objective, or reserve a difficult task for a separately approved investigation.
+That avoids a common failure of reasoning systems: presenting the most polished
+available continuation as though it were the best verified resolution.
+
+No single verifier receives unlimited trust. The mature design rotates or
+cross-checks evaluators where the risk warrants it, retains negative evidence,
+and limits the cost of contested deliberation. Its promise is legibility under
+pressure, not unlimited thought, universal correctness, or a substitute for
+independent human and domain-specific review.
+
+The argument-exit campaign deliberately selects natural and adversarial tasks
+where direct answers, revision, search, fallback, abstention, and human review
+should differ. It uses actual current-model candidates, initially correct and
+incorrect strata, delayed high-risk outcomes, all fifteen known harms, and
+independent outcome and trace-faithfulness evaluators. Direct, fixed, adaptive,
+verifier-disabled, overcompute, self-consistency, process-reward, early-exit,
+human, abstention, and governed arms receive matched information, models,
+tools, resources, retries, evaluators, and time.
+
+Joint gates cover useful correctness, corruption, repair, unsafe handoff,
+false acceptance and refusal, missed help, coverage, calibration, abstention,
+faithfulness sufficiency/completeness/necessity, latency, branches, tokens,
+tools, compute, memory, money, human and governance work, displaced work,
+recovery, and residual custody. Causal ablations remove selection, budgets,
+history retention, verifier independence, stopping, faithfulness checks,
+authority separation, abstention, or residual ownership. Independent runner,
+verifier, evaluator, faithfulness, cost, and handoff implementations must
+reproduce and transfer results across models, prompts, tasks, domains,
+languages, tools, organizations, rights regimes, attacks, updates, and time.
+This is not a current result about useful test-time scaling, faithful reasoning,
+safety, generality, or state-of-the-art performance.
+
+## Trace faithfulness is a separate gate
+
+Longer deliberation can improve a candidate while making the visible rationale
+less diagnostic of the computation that selected it. The book therefore treats
+candidate quality, reported rationale, causal trace faithfulness, monitorability,
+and authority as five separate axes. `ext_faithfulness_information_flow_2026`
+adds a useful test decomposition: sufficiency asks whether the trace contains
+answer-relevant information, completeness asks whether prompt information still
+bypasses it, and necessity asks whether intervening on the trace changes the
+answer. The last question cannot be settled from transcript plausibility.
+
+A governed deliberation record consequently retains the private/public trace
+boundary, trace perturbations, counterfactual prompt or tool changes, action and
+final-answer deltas, evaluator access, and any hidden-computation residual. A
+trace/action mismatch routes to abstention, a narrower claim, or a stronger
+evaluation; it never grants permission to execute. The cited experiments do
+not establish that these deliberation routes are faithful or that information-flow
+training eliminates reward hacking.
+
+## Post-v2 matched deliberation result
+
+On the same held-out workload and three seeds, adaptive verifier stopping
+produced 179/180 correct final answers in 236 candidate operations. Fixed
+three-step deliberation produced 154/180 in 540 operations and made 15 answers
+wrong after the first candidate had been correct. No deliberation produced
+130/180 in 180 operations. The record preserves first and last correct steps,
+stop reasons, branch credit, dissent, answer changes, verifier identity, and
+the one adaptive case that exhausted its budget without a verified candidate.
+
+This supports a bounded lesson—more computation can harm, and verifier-gated
+stopping can dominate fixed extra work on a known task family—but the verifier
+is deterministic task recomputation and candidates are not language-model
+reasoning traces. The core claim remains `argument` via `no_change`, separately
+from the routing disposition.
+
+## Post-v2.1 real-model deliberation result
+
+The successor replaces scripted candidates with observable outputs from the
+frozen local model. On all 60 held-out requests, no-deliberation,
+fixed-three-candidate, adaptive stopping, overcompute-five, and
+verifier-disabled arms each finish at 0/60 correct. Adaptive stopping exhausts
+five candidates every time, consuming 300 candidate operations without a
+single early verified hit. Because no first candidate is correct, corruption
+reduction cannot be estimated on this workload; the fifteen earlier
+extra-compute harms remain regression-only knowledge rather than new evidence.
+The deliberation disposition is `no_change`. Real model traces alone are not a
+benefit: candidate quality and evaluator validity are prerequisites for useful
+test-time scaling.
+
+## Summary
+
+Deliberation is valuable when it creates a better bounded candidate, not when it
+creates an aura of thoughtfulness. A governed architecture needs a place to decide when extra
+inference is worth spending and when a result must remain a draft, a residual,
+or a request for review. That decision is neither fast decoding nor planning
+nor execution.
+
+The discipline is straightforward: treat inference time as a budget, treat
+verifier scope as a stated limit, and treat unresolved work as a durable result.
+This makes a system free to search and revise without granting its reasoning
+trace the power to authorize itself.
+
+That is the difference between a capable scratchpad and an unaccountable
+decision-maker: the former leaves a record of its limits; the latter hides them
+when a confident answer is convenient.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **81** structured claim atoms in `CF-05`. The
+frozen repository-wide terminal audit records 81 `blocked_after_full_attempt`. Its core
+atom `governed-deliberation-and-test-time-scaling.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `governed-deliberation-and-test-time-scaling` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 81 structured claims,
+81 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Ambiguous routing and deliberation confirmatory campaign**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Mixed bounded routing effect with unsafe outputs and no support promotion; no general router, deliberation, or transfer claim.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
+
+## Handoff
+
+Governed Deliberation supplies a bounded candidate, abstention, or residual record to Artifact Compression and Resource Economics. RankFold, NeuralFold, and Artifact Compression examine how durable artifacts may become smaller without hiding what is lost, verified, or still unresolved. That successor carries forward the same requirement: an efficient representation must preserve enough provenance and fallback information for a later reviewer to understand what the system did not retain.

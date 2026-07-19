@@ -4,7 +4,7 @@ chapter_id: "cognitive-compilation-and-semantic-ir"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 semantically reviewed proof-contract draft"
-last_updated: "2026-07-14"
+last_updated: "2026-07-16"
 primary_sources:
   - "cognitive_compilation"
   - "planforge_compiler_arch"
@@ -27,7 +27,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "All sixteen assigned sources are reviewed at their available boundary: five local raw caches, three pinned-project notes, the QCSA paper and bounded local program, and seven external comparators. Source mapping does not establish local reproduction, semantic preservation, or novelty."
   - "The current scaffold contains two valid and four rejecting compilation traces, one blocked semantic-preservation record with nine rejecting mutations, and 24 live Lean declarations across the retained route module and reachable refinement under three targets. These are hand-authored record and finite-transition evidence, not a source parser, compiler backend, translation proof, or natural artifact result."
-  - "The QCSA program produced 2,340 deterministic predictions over 60 cases, 13 systems, and three seeds plus one 13-stage zero-model temporary-file trace with ten rejecting adversarial paths and one exact rollback. QCSA tied the selected baseline at 1.000 task accuracy while using 1.913386 times the operations; matched advantage and resource gates failed, active-question value was refuted on the exact corpus, and the chapter core received no support movement."
+  - "The QCSA program produced 2,340 deterministic predictions over 60 cases, 13 systems, and three seeds plus one 13-stage zero-model temporary-file trace with ten rejecting adversarial paths and one exact rollback. QCSA tied the selected baseline at 1.000 task accuracy while using 1.913386 times the operations; matched advantage and resource gates failed on this proxy, the active-question ablation is N2 proxy/regime evidence rather than an exact refutation, and the chapter core received no support movement."
   - "No natural accepted plan has been compiled into a concrete cognitive artifact and independently validated for semantic preservation, useful quality, causal repair benefit, reproducibility, or cross-target transfer."
 ---
 
@@ -275,6 +275,40 @@ The strongest objection is that these records can be self-consistent and still e
 
 The negative project record matters here. Corben's Best Model Possible called an equality-like comparison over unrelated FNV digest strings cross-stage semantic parity and localized repairs by positional adjacency. Those mechanisms are useful warnings: hashes answer identity questions, not meaning questions, and positional insertion can invalidate repair identity. The book's fixture instead uses requirement-addressed semantic validators and stable semantic node references, then compares declared repair scope with the actual mutation set.
 
+### Bidirectional capability and concept compilation
+
+Deterministic Capability Compilation extends the source language beyond prose
+requirements. An executable scaffold is a high-level capability program whose
+branches, state transitions, invariants, failures, traces, and recovery paths
+can be lowered into a semantic capability graph. The compiler's unit is the
+smallest semantically closed replaceable field, not a syntactic function or
+layer. Its obligation ledger enforces semantic mass balance across scaffold,
+corpus, learned expert, NCO package, linked composite, and runtime lease.
+
+Lowering is deliberately bidirectional. A learned candidate may expose a
+student defect, a defect in the source specification, a useful novelty, a valid
+optimization, a reward exploit, or an unresolved disagreement. The candidate
+does not silently redefine the source. A tribunal classifies the disagreement;
+accepted discoveries are **reified** into new explicit contracts, tests,
+counterexamples, fields, or compiler rules. Compilation therefore closes a
+loop—explicit to learned to environmental discovery and back to explicit—while
+preserving fallback and lineage.
+
+The Platonic World Model adds a complementary semantic front end. Stable Form
+families and immutable Form versions prevent labels, embeddings, recognizers,
+and implementations from becoming accidental identities. Search–Verify–Compile
+turns a candidate concept into an Essence Contract, relation and context
+schemas, recognizers, inference and transition interfaces, proof obligations,
+competency questions, and packet templates. The target packet pins the semantic
+basis, world branch, ambiguity, defeaters, authority, grounding versions, and
+expiry conditions before physical routing.
+
+Together the papers require two conservation ledgers: the capability compiler
+must account for source obligations, while the semantic compiler must account
+for identity, context, grounding, and meaning. Passing either ledger alone is
+insufficient. Both sources remain design rationale at `argument`; no compiler,
+NCO linker, semantic kernel, or preservation benchmark is established here.
+
 ### Question-compiled semantic lowering
 
 Question-Compiled Semantic Addressing (QCSA) sharpens what an addressable
@@ -311,19 +345,21 @@ workload is template-generated and the observer is internal. It does not show
 that a compiler preserves open-domain meaning or generates correct target
 artifacts.
 
-The question-policy result is negative. Removing active questions left object
+The question-policy observation is a bounded null. Removing active questions left object
 and task-decision accuracy at 1.000 on the frozen corpus, while full QCSA asked
 questions on 0.033 of records. The vertical trace demonstrates one explicit
 environment clarification, not learned question value. The compiler owner
-should therefore keep question selection as a governed interface while
-treating adaptive-question advantage as refuted for this exact workload. The
-core claim remains at `argument`.
+should therefore keep question selection as a governed interface while treating
+the ablation as N2 proxy/regime evidence. The saturated, template-generated
+workload and internal evaluator cannot establish an exact or broad refutation.
+The core claim remains at `argument`.
 
 The post-v2.3 transition review makes the asymmetry explicit. The exact
 plural-facet ablation is accepted as a `synthetic-test-backed` non-core
 mechanism claim, while semantic round-trip preservation remains a narrowed
-`argument` claim and active-question value is `refuted` for this corpus. Those
-three dispositions share one result bundle but license different prose. None
+`argument` claim and the historical active-question transition retains its raw
+`refuted` label while its usable interpretation is N2. Those three dispositions
+share one result bundle but license different prose. None
 licenses the core claim, arbitrary semantic equivalence, or question-policy
 value outside the frozen fixtures.
 
@@ -506,8 +542,9 @@ The current minimum is a record-and-bounded-reference scaffold:
 The QCSA result is mixed rather than promotional. Full QCSA and the selected
 best baseline both reached 1.000 task-decision accuracy in every seed, while
 QCSA used 1.913386 times the operations; matched-advantage and resource gates
-failed. Removing active questions left object and task accuracy at 1.000, so
-active-question value is refuted for the exact corpus. Plural facets, stable
+failed. Removing active questions left object and task accuracy at 1.000; under
+the current competence standard this is N2 proxy/regime evidence, not an exact
+or broad active-question refutation. Plural facets, stable
 identity/address indirection, certificate/authority fields, migration
 compatibility, and task calibration earned bounded non-core dispositions.
 Round-trip preservation and the governance/resource tradeoff were narrowed.
@@ -585,7 +622,7 @@ pass.
 | Target compilation audit | Check that a target artifact records which atoms, assumptions, validators, and residuals produced it. | implemented in `python3 scripts/validate_cognitive_compilation_traces.py`; synthetic trace records only |
 | Executed obligation-preserving compilation refinement | Preserve exact source obligations and target identity through lowering, validation, localized repair, versioned ledger update, and acceptance, while independently classifying every existing trace fixture. | implemented in `python3 scripts/validate_cognitive_compilation_refinement.py`: two accepted/four rejected fixtures, one seven-event repaired witness, and 47/47 rejected mutations; support-state effect `none` |
 | Historical-project contract-preservation fixture | Check authority-bearing IR, ambiguity ledger, complete field lineage, retained pass/failure bundle, source-requirement obligations, observed repair blast radius, and the insufficiency of digest parity against nine mutations. | implemented in `python3 scripts/validate_semantic_contract_preservation.py`; one hand-authored blocked fixture only, no parser, backend, execution authority, measured repair locality, or support promotion |
-| QCSA held-out reference evaluation | Compare full QCSA, seven baselines, and five ablations on 60 deterministic synthetic cases across three seeds, preserving all 2,340 predictions and exact resource and failure denominators. | implemented and dispositioned; full and best baseline both reached 1.000 task accuracy, operation ratio was 1.913386, matched-advantage/resource gates failed, active-question value was refuted on this corpus, bounded non-core mechanisms were promoted or narrowed, and the chapter core stayed `argument` |
+| QCSA held-out reference evaluation | Compare full QCSA, seven baselines, and five ablations on 60 deterministic synthetic cases across three seeds, preserving all 2,340 predictions and exact resource and failure denominators. | implemented and dispositioned; full and best baseline both reached 1.000 task accuracy, operation ratio was 1.913386, matched-advantage/resource gates failed on the proxy, the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation, bounded non-core mechanisms were promoted or narrowed, and the chapter core stayed `argument` |
 | QCSA governed vertical reference | Exercise intent, semantic IR, stable identity/address, evidence graph, question trace, context, physical route, separate authority, one temporary-file effect, independent byte observation, artifact receipts, migration, and rollback. | implemented as one 13-stage zero-model local trace with ten rejected adversarial paths and one byte-exact rollback; no natural compiler, learned model, irreversible effect, external evaluator, production transfer, or support movement |
 
 The fixture-shape check, finite Lean predicates, synthetic trace and
@@ -663,7 +700,9 @@ These rows keep Cognitive Compilation and Semantic IR's manifest assignments vis
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Frames SOIDs and SACs as typed semantic-IR references, question traces as evidence-acquisition programs, and semantic-to-physical route plans as policy-constrained target lowering; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and active-question value was refuted on this corpus. No natural-task, learned-model, universal-semantic, production, safety, privacy, external-independence, chapter-core promotion, AGI, or ASI result is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Frames SOIDs and SACs as typed semantic-IR references, question traces as evidence-acquisition programs, and semantic-to-physical route plans as policy-constrained target lowering; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. No natural-task, learned-model, universal-semantic, production, safety, privacy, external-independence, chapter-core promotion, AGI, or ASI result is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
@@ -689,6 +728,80 @@ assumptions, losses, failures, and residuals—and when independent evaluation
 shows that the extra machinery improves useful preservation over matched
 simpler routes. The Virtual Context ABI supplies the versioned source and
 representation boundary those translations need next.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **72** structured claim atoms in `CF-03`. The
+frozen repository-wide terminal audit records 72 `blocked_after_full_attempt`. Its core
+atom `cognitive-compilation-and-semantic-ir.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `cognitive-compilation-and-semantic-ir` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+::: {.asi-human-only}
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 72 structured claims,
+72 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Intent-to-execution vertical refinement**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Structured local scenarios only; no natural-language semantic sufficiency, production backend, transfer, or deployment claim.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+:::
+
+::: {.asi-ai-only}
+
+### Evidence packet
+
+| Field | Exact chapter boundary |
+|---|---|
+| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-03` minimum family bundle. |
+| Attempted local lanes | `source-synthesis` |
+| Missing or unproved lanes | `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer` |
+| Family-level natural-work or end-to-end bundle | **Intent-to-execution vertical refinement** (`end_to_end`): Nine versioned scenarios and 89 events from governed intake through six observed local effects and terminal outcomes. |
+| Negative controls | pre-effect refusal; failed rollback quarantine; 30 rejecting mutations. |
+| Exact accepted transitions in this chapter | none |
+| Core outcome | `blocked_after_full_attempt` at `argument`; no chapter-core promotion. |
+| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
+| Reproduction path | Replay `scripts/validate_intent_execution_vertical_refinement.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
+
+### Worked success, failure, and boundary cases
+
+- **Success case:** the family-level bundle passed its own rejecting validator
+  within this exact scope: Nine versioned scenarios and 89 events from governed intake through six observed local effects and terminal outcomes. This is evidence that the family
+  received a competent attempt, not that every claim in this chapter succeeded.
+- **Failure or non-promotion case:** 72 atoms
+  remain blocked and 0 are narrowed. A
+  green family validator cannot fill their missing lanes or raise the core.
+- **Boundary case:** Structured local scenarios only; no natural-language semantic sufficiency, production backend, transfer, or deployment claim.
+
+### Argument-exit table
+
+| Atom set | Count | Work performed | Terminal reason and next burden |
+|---|---:|---|---|
+| Core: `cognitive-compilation-and-semantic-ir.core` | 1 | `source-synthesis` | `blocked_after_full_attempt`; missing or unproved: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. |
+| blocked after full attempt | 72 | `source-synthesis` | Missing or unproved lanes across this set: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. These are residual proof obligations, not false claims. |
+
+This table is a disposition map, not a promotion quota. The next valid movement
+is atom-specific evidence that fills the named missing lanes, survives relevant
+negative controls, and enters through an accepted evidence transition. Until
+then, source counts, theorem counts, fixtures, validators, or nearby family
+results cannot be used as substitutes.
+:::
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
 
 ## Handoff
 

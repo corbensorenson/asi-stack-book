@@ -1,0 +1,35 @@
+{
+  "schema_version": "asi_stack.p4_m7_failure_diagnosis.v2",
+  "campaign": "P4 Campaign 3 / M7",
+  "run_id": "p4-m7-qwen25-05b-balanced-mean-pool-002",
+  "diagnosed_date": "2026-07-16",
+  "protocol_outcome": "instrument_inadequate_preflight",
+  "claim_outcome": "not_applicable_instrument_only",
+  "preregistration_sha256": "ad280fd9c0486427f34e8912b1edf304b3814cfc69e6ab845bfcaafd844007c7",
+  "preflight_result_sha256": "58fd9c390c4fac627b22746259a19c77a7e5aea17012198ce150f496ed30f8b1",
+  "heldout_opened": false,
+  "observed": {
+    "general_validation_accuracy": 0.43333333,
+    "deletion_like_validation_accuracy": 0.33333333,
+    "frozen_floor_each": 0.6
+  },
+  "diagnosis": [
+    "The balanced corpus and mean-pooling repair removed the v1 single-class and terminal-marker defects.",
+    "A linear head over the frozen Transformer representation still did not learn the custody decision rule above the preregistered floor.",
+    "Because the held-out denominator never opened, this is an instrument qualification failure rather than a claim attempt or an outcome-aware confirmatory retry.",
+    "The terminal instrument must expose the already recorded structured custody fields to the trainable state instead of asking one linear projection to recover them implicitly."
+  ],
+  "terminal_instrument_change": {
+    "version": "v3",
+    "model_interface": "L2-normalized frozen Qwen mean representation concatenated with an audited one-hot custody vector, consumed by a 32-unit nonlinear head",
+    "required_ablation": "report Transformer-only, structured-only, and fused preflight accuracy",
+    "minimum_general_and_deletion_like_accuracy": 0.8,
+    "further_preflight_repair_allowed": false
+  },
+  "support_state_effect": "none",
+  "non_claims": [
+    "No held-out v2 outcome was generated.",
+    "Structured custody features make the system decision surface explicit; they do not establish language-model unlearning.",
+    "No privacy, influence, erasure, transfer, support, or SOTA claim follows."
+  ]
+}

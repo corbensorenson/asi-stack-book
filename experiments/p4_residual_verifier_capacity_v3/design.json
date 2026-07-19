@@ -1,0 +1,50 @@
+{
+  "schema_version": "asi_stack.p4_m8_residual_verifier_design.v3",
+  "run_id": "p4-m8-residual-verifier-qwen3-8b-003",
+  "failure_lineage": [
+    {
+      "path": "experiments/p4_residual_verifier_capacity/v1_preflight_failure_diagnosis.json",
+      "sha256": "921bd915b4bd7b42da53bd396caacb41558e918c6da66993966387e4076cdb68"
+    },
+    {
+      "path": "experiments/p4_residual_verifier_capacity_v2/v2_preflight_failure_diagnosis.json",
+      "sha256": "6d10792ff4c4e6203ae099535be80308fad1ac9dc04b0feaed27f7f2ba301d7a"
+    }
+  ],
+  "terminal_change": "separate qualified terminal decision generation from label-free residual extraction without concrete output exemplars",
+  "model": {
+    "repository": "mlx-community/Qwen3-8B-4bit",
+    "snapshot_commit": "545dc4251c05440727734bcd94334791f6ab0192",
+    "thinking": false,
+    "temperature": 0.1,
+    "decision_max_tokens": 320,
+    "residual_max_tokens": 760,
+    "retries": 0
+  },
+  "policy_arms": [
+    "unconstrained",
+    "self_report",
+    "structured_ledger",
+    "structured_plus_independent_verifier",
+    "capacity_aware_governed"
+  ],
+  "preflight_gate": {
+    "task_count": 6,
+    "minimum_schema_each_call": 5,
+    "minimum_decision_eligibility_accuracy": 0.8,
+    "minimum_structured_residual_recall": 0.8,
+    "minimum_clean_exact_empty_rate": 0.66,
+    "minimum_capacity_aware_clean_release_rate": 0.66,
+    "maximum_capacity_aware_false_reassurance": 0
+  },
+  "heldout_gate": {
+    "task_count": 15,
+    "defect_count": 12,
+    "clean_count": 3,
+    "minimum_structured_residual_recall": 0.75,
+    "maximum_capacity_aware_false_reassurance_rate": 0.1,
+    "minimum_clean_release_retention": 0.66
+  },
+  "further_instrument_repair_allowed": false,
+  "support_ceiling": "One authored local workload, one quantized Qwen3-8B snapshot, and an internal deterministic evaluator only; no general honesty, safety, interpretability, verifier competence, transfer, deployment, SOTA, AGI, ASI, or chapter-core support claim."
+}

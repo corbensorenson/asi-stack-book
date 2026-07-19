@@ -159,7 +159,7 @@ surface-synchronization, usefulness, or transfer result.
 | `ext_alce_2023`, `ext_self_rag_2023`, `ext_checklist_2020` | Comparators for citation support, adaptive retrieval and critique, and failure-preserving behavioral tests as fallible ledger inputs and revision triggers. | No corpus, checkpoint, training, test suite, model run, evaluator reproduction, citation result, factuality result, or behavioral coverage result. |
 | `ext_w3c_prov_o_2013` | Interoperable asserted-provenance vocabulary for entities, activities, agents, derivation, attribution, delegation, revision, quotation, primary source, and invalidation. | No PROV-O graph or conformance result; asserted provenance is not truth, completeness, integrity, authority, or support. |
 | `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project` | Public-safe historical lineage for separated epistemic state, durable identity, dependency repair, contradiction response, supersession, ontology migration, residual retention, restart persistence, and negative cases. | One hand-authored lifecycle only; no historical runtime replay, independent replication, open-domain detector, belief engine, ontology correctness, or revision-quality result. |
-| `qcsa_whitepaper` | Passage-reviewed separation of ontology, propositions, evidence for and against, provenance, support state, contradiction, and permitted use inside an evidence-bearing hypergraph; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | QCSA's matched-advantage and resource gates failed and active-question value was refuted on its frozen corpus. The chapter core claim remains at `argument`; addressability and certificates do not establish identity equivalence, truth, belief correctness, support, production readiness, AGI, or ASI. |
+| `qcsa_whitepaper` | Passage-reviewed separation of ontology, propositions, evidence for and against, provenance, support state, contradiction, and permitted use inside an evidence-bearing hypergraph; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | QCSA's matched-advantage and resource gates failed on the proxy, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. The chapter core claim remains at `argument`; addressability and certificates do not establish identity equivalence, truth, belief correctness, support, production readiness, AGI, or ASI. |
 
 ### Strongest objection
 
@@ -342,6 +342,33 @@ classes for the routing campaign.
 The paper supplies this record separation and threat model as design rationale.
 It supplies no implemented Chronicle, temporal-accuracy result, or independent
 belief-revision evidence, so support remains `argument`.
+
+### Semantic continuity and the four epistemic objects
+
+The Platonic World Model makes four records irreducible. A **proposition** is
+versioned content under a context and semantic basis. An **attestation** records
+that a source, sensor, document, model, or process asserted or observed it. A
+**commitment** records an agent's governed stance—accepted, rejected,
+provisional, suspended, disputed, superseded, or unknown. A **proof object** is
+a replayable justification with premises, rules, tools, assumptions, defeaters,
+versions, and environmental dependencies. Collapsing any pair enables evidence
+laundering.
+
+Semantic well-formedness, epistemic support, and operational authority are
+therefore separate axes. A proposition may be well typed and unsupported; it
+may be strongly supported and still unauthorized for action. Historical
+replayability, validity under the original basis, validity under the current
+preferred basis, and present authorization are distinct statuses. Valid,
+observation, and transaction time prevent a correction from erasing what the
+system knew or believed when it acted.
+
+Meaning changes enter as semantic transactions, not ordinary fact updates. A
+typed diff separates contract, extension, entailment, grounding, dynamics,
+normative, mapping, and operational deltas; dependency analysis assigns every
+affected proof, policy, plan, model, packet, and tool a migration disposition.
+The ledger records forks and unresolved disagreement instead of forcing global
+consistency or one final ontology. This is an architecture proposal from
+`platonic_world_model`, not an implemented belief-revision result.
 
 ## Interfaces
 
@@ -649,6 +676,15 @@ retrieval critique, behavioral testing, historical project lineage, and
 semantic addressing without importing external performance or promoting any
 claim.
 
+### Manifest source assignment reconciliation
+
+These rows keep Claim Ledgers and Belief Revision's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Claim Ledgers owns durable claim identity, append-only belief-state transition,
@@ -667,6 +703,81 @@ reproduction, and transfer.
 Even a semantically coherent ledger cannot verify a high-value claim. Its
 current version becomes an input to Proof-Carrying Claims and Adversarial
 Review, which owns the separate property, verifier, and tribunal envelope.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **73** structured claim atoms in `CF-04`. The
+frozen repository-wide terminal audit records 72 `blocked_after_full_attempt`; 1 `narrowed_after_full_attempt`. Its core
+atom `claim-ledgers-and-belief-revision.core` remains at `argument` with terminal
+disposition `narrowed_after_full_attempt`. The authoritative per-atom rows
+are the `claim-ledgers-and-belief-revision` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+::: {.asi-human-only}
+### What the evidence now says
+
+The chapter's core remains **narrowed after full attempt**
+at `argument` support. Across its 73 structured claims,
+72 still lack required proof lanes,
+1 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Situated world-model acquisition and consolidation campaign**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Bounded finite POMDP result only; no open-world truth, general memory transfer, deployment, or chapter-core promotion.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+:::
+
+::: {.asi-ai-only}
+
+### Evidence packet
+
+| Field | Exact chapter boundary |
+|---|---|
+| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-04` minimum family bundle. |
+| Attempted local lanes | `source-synthesis` |
+| Missing or unproved lanes | `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer` |
+| Family-level natural-work or end-to-end bundle | **Situated world-model acquisition and consolidation campaign** (`natural_work_and_end_to_end`): Two partially observed environments, 11,250 episodes, 6,000 held-out episodes, six directional ablation signatures, and governed replacement/rollback. |
+| Negative controls | ten arms; six matched ablations; ten laundering mutations; replacement and rollback checks. |
+| Exact accepted transitions in this chapter | `v1_0_pilot.claim_ledgers.no_change` |
+| Core outcome | `narrowed_after_full_attempt` at `argument`; no chapter-core promotion. |
+| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
+| Reproduction path | Replay `scripts/validate_p4_m8_world_model_campaign.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
+
+### Worked success, failure, and boundary cases
+
+- **Success case:** the family-level bundle passed its own rejecting validator
+  within this exact scope: Two partially observed environments, 11,250 episodes, 6,000 held-out episodes, six directional ablation signatures, and governed replacement/rollback. This is evidence that the family
+  received a competent attempt, not that every claim in this chapter succeeded.
+- **Failure or non-promotion case:** 72 atoms
+  remain blocked and 1 are narrowed. A
+  green family validator cannot fill their missing lanes or raise the core.
+- **Boundary case:** Bounded finite POMDP result only; no open-world truth, general memory transfer, deployment, or chapter-core promotion.
+
+### Argument-exit table
+
+| Atom set | Count | Work performed | Terminal reason and next burden |
+|---|---:|---|---|
+| Core: `claim-ledgers-and-belief-revision.core` | 1 | `source-synthesis` | `narrowed_after_full_attempt`; missing or unproved: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. |
+| narrowed after full attempt | 1 | `source-synthesis` | The exact accepted transition lineage is preserved: `v1_0_pilot.claim_ledgers.no_change`. The claim is not widened. |
+| blocked after full attempt | 72 | `source-synthesis` | Missing or unproved lanes across this set: `causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`. These are residual proof obligations, not false claims. |
+
+This table is a disposition map, not a promotion quota. The next valid movement
+is atom-specific evidence that fills the named missing lanes, survives relevant
+negative controls, and enters through an accepted evidence transition. Until
+then, source counts, theorem counts, fixtures, validators, or nearby family
+results cannot be used as substitutes.
+:::
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
 
 ## Handoff
 

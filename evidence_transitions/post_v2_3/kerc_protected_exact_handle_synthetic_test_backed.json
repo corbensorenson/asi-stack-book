@@ -1,0 +1,88 @@
+{
+  "transition_id": "post_v2_3.kerc.protected_exact_handle.promote",
+  "claim_id": "kerc.protected_exact_handle_preservation",
+  "claim_surface_refs": [
+    "docs/p4_kerc_runtime_campaign.md",
+    "chapters/cognitive-compilation-and-semantic-ir.qmd",
+    "chapters/compact-generative-systems-and-residual-honesty.qmd"
+  ],
+  "claim_record_refs": [
+    "experiments/p4_kerc_runtime/design.json",
+    "experiments/p4_kerc_runtime/results/confirmatory_result.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "synthetic-test-backed",
+  "transition_effect": "upward",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "One deterministic compiler preserved all five typed exact objects in each of 64 authored bilingual held-out records; removing pre-normalization protection reduced exact-object recall from 1.0 to 0.0.",
+  "evidence_roles": [
+    "prospective finite corpus",
+    "exact-object ablation",
+    "lossless replay",
+    "bounded non-core review"
+  ],
+  "transition_reason": "The exact held-out denominator and predeclared no-protection ablation isolate finite object-handle preservation without promoting semantic or system efficiency claims.",
+  "required_artifacts": [
+    "natural corpora",
+    "independent compiler and evaluator",
+    "cross-language transfer",
+    "privacy and security evaluation",
+    "production cost"
+  ],
+  "artifact_refs": [
+    "experiments/p4_kerc_runtime/corpus.json",
+    "experiments/p4_kerc_runtime/raw/campaign_run.json",
+    "experiments/p4_kerc_runtime/results/confirmatory_result.json",
+    "scripts/validate_p4_m8_kerc_campaign.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/p4_kerc_runtime_campaign.md",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "source_mapping_refs": [
+    "sources/source_notes/kernel_english_residual_compiler.md",
+    "appendices/C_claim_evidence_matrix.qmd#cognitive-compilation-and-semantic-ircore",
+    "appendices/C_claim_evidence_matrix.qmd#compact-generative-systems-and-residual-honestycore"
+  ],
+  "verification_command": "python3 scripts/validate_p4_m8_kerc_design.py && python3 scripts/validate_p4_m8_kerc_campaign.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "broad efficiency failed",
+    "one quote escape was allowed",
+    "compiler and verifier were jointly authored",
+    "templates exposed intent words inside exact URLs"
+  ],
+  "negative_evidence_refs": [
+    "docs/p4_kerc_runtime_campaign.md",
+    "experiments/p4_kerc_runtime/results/confirmatory_result.json"
+  ],
+  "downgrade_triggers": [
+    "digest drift",
+    "held-out denominator drift",
+    "object-recall recomputation failure",
+    "natural or security scope laundering",
+    "chapter-core promotion"
+  ],
+  "promotion_burden": "Repeat with natural multilingual corpora, independently implemented evaluation, ambiguous objects, privacy deletion, attack transfer, and matched total-system costs.",
+  "limitations": [
+    "authored templates",
+    "two languages",
+    "deterministic regex protection",
+    "64 held-out records",
+    "internal evaluator"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Author-directed Codex P4/M8 claim-proof cycle"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; no external human review requested or claimed",
+  "acceptance_blockers": [],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-16---campaign-6-kerc-runtime-result",
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "non_claims": [
+    "does not promote any chapter core claim",
+    "does not establish general semantic preservation or truth",
+    "does not establish multilingual transfer, privacy, security, or production efficiency",
+    "does not establish SOTA, AGI, ASI, publication, release, or deployment readiness"
+  ]
+}

@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
     "structured_atoms_reviewed": 73,
-    "prose_candidates_adjudicated": 37,
+    "prose_candidates_adjudicated": 39,
     "unowned_material_claims": 0,
     "review_note": "Reviewed the complete chapter, all fifteen assigned source notes and limitations, three valid and six rejecting memory-store records, two valid and four rejecting ordered sequences, one bounded five-project restart lifecycle and ten rejecting mutations, seventeen retained finite contradiction/route declarations plus twenty reachable snapshot-transaction refinement declarations grouped under four manifest targets, the six-event witness, fifteen countermodels, the independent 78-mutation consumer, every manifest atom, every current prose candidate, source crosswalk, test plan, summary, and handoff. The sweep makes dynamic durable context-state transition the distinct owner; separates static materialization, intent and planning, security and rights, claim revision, artifact lineage, runtime effects, model-state update and unlearning, verification, cost, support, and release; adds actual pre/post-state observation, concurrency anomalies, branch and mount semantics, causal order, retry idempotency, participant-bounded atomicity, crash recovery, storage-versus-model-erasure categories, complete denominators, matched baselines, causal ablations, reproduction, and transfer gates; and preserves zero chapter-core support effect."
   },
@@ -159,6 +159,7 @@
     "context-transactions-snapshots-mounts-and-taint.formal.vcm-transactions-sequence-fixture-bridge": {"current_disposition": "retain_finite_authored_sequence_summary_bridge", "strongest_counterclaim": "Two positive and four negative sequences do not model concurrency or crash behavior.", "falsifier": "It is called proof of read-your-writes, branch isolation, recovery, or transfer.", "acceptance_criteria": ["Bind generated concurrent histories, actual backend traces, countermodels, and runtime refinement."]}
   },
   "prose_candidate_dispositions": {
+    "context-transactions-snapshots-mounts-and-taint.prose.327cc0425f3d": {"state": "nonmaterial_explanation", "rationale": "Line-wrapped invalidation requirement specializes the existing transaction and descendant-invalidation atoms."},
     "context-transactions-snapshots-mounts-and-taint.prose.2df67436710e": {"state": "duplicate_of_atom", "rationale": "Completes the current evidence non-claim boundary.", "target_atom_id": "context-transactions-snapshots-mounts-and-taint.minimum.001"},
     "context-transactions-snapshots-mounts-and-taint.prose.a7f4140bb27c": {"state": "duplicate_of_atom", "rationale": "Reader explanation of stale and invalid derivative risk.", "target_atom_id": "context-transactions-snapshots-mounts-and-taint.problem.001"},
     "context-transactions-snapshots-mounts-and-taint.prose.750e41e6beb7": {"state": "duplicate_of_atom", "rationale": "Restates inspectable transaction lineage.", "target_atom_id": "context-transactions-snapshots-mounts-and-taint.core"},
@@ -199,6 +200,10 @@
     "context-transactions-snapshots-mounts-and-taint.prose.64a99f04f1f7": {
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrapped mature-endpoint or current-result boundary already governed by structured chapter atoms; it adds no independent material claim."
+    },
+    "context-transactions-snapshots-mounts-and-taint.prose.d676bff244df": {
+      "state": "historical_or_source_report",
+      "rationale": "States the exact unresolved transaction boundary of Campaign 6; no new lifecycle-safety claim is introduced."
     }
   },
   "non_claims": [

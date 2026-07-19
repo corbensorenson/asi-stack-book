@@ -1,0 +1,605 @@
+# Inter-Stack Protocols, Identity, and Economic Exchange
+
+Intelligent systems will not remain one program on one machine for long. A planner may
+ask a remote specialist for analysis, an agent may ask a tool for an effect, a
+service may return an artifact, and an organization may reserve budget for work
+that takes place across several operators. Each handoff raises consequential
+questions: Who asked? Who is receiving the
+request? What exactly was requested? Whose authority is being used? When does
+that authority expire? What did the other side actually return? Who owns the
+remaining uncertainty when it fails?
+
+Protocol standards help systems speak the same language. Identity and credentials
+carry participant claims. Payment protocols show how value can move across
+separate networks. A governed stack keeps communication, identity, authorization,
+economic commitment, result evidence, and residual responsibility as separate
+records, joined only at a deliberate dispatch gate.
+
+That is the difference between an ecosystem of helpful integrations and an
+ecosystem of invisible delegated power. Its purpose is not distrust of every
+remote system. It is to refuse to let convenience turn a message into ambient
+authority.
+
+## Problem
+
+The ASI Stack has contracts for human intent, planning, context, artifacts, and
+runtime effects. In a multi-stack setting, those contracts leave the local
+boundary. A planner can delegate work to a remote agent, request a context or
+tool through a protocol endpoint, receive an artifact from another system, or
+reserve value for a service. The remote peer may be opaque, independently
+operated, versioned differently, or reachable through a chain of other peers.
+
+Without a dedicated cross-stack owner, the handoff degenerates into an API call
+plus informal trust. A caller identity may be replaced by the agent's identity;
+a credential may be presented without a local authorization decision; an Agent
+Card may be mistaken for a competence claim; an approved budget may be mistaken
+for a settled transfer; a response may be mistaken for a correct result; and a
+revocation may never reach a request that is already in flight. Each failure is
+plausible even when the message itself parses correctly.
+
+The exchange layer owns the contract that keeps those facts distinct until a
+local owner can make a bounded dispatch decision. It does not own the local
+tool effect, which remains with Runtime Adapters, nor generic artifact lineage,
+which remains with Artifact Graphs, nor model/data supply chain integrity,
+which remains with AI Supply-Chain Integrity.
+
+## Why existing approaches are insufficient
+
+MCP provides an agent-to-tool comparator. Its base protocol, lifecycle
+management, capability negotiation, session control, and schema-defined
+messages make a useful communication surface. They do not turn a declared tool
+capability into authorization, correctness, or a safe external effect.
+
+A2A provides an agent-to-agent comparator. Agent Cards, capability discovery,
+delegated tasks, artifacts, and transport choices make independent, opaque
+agent systems easier to connect. They do not establish that a peer is the
+identity it claims, that a delegated request retains the original principal's
+scope, or that task completion means the result is true or permitted to act.
+
+DID Core and Verifiable Credentials provide identity and claim-carrying
+comparators. A DID can resolve to controller-associated verification metadata;
+a credential can bind issuer, subject, validity, status, evidence, and securing
+mechanism context. The VC standard explicitly leaves complete authorization to
+an accompanying framework. Identity and credential verification are therefore
+inputs to a local policy decision, not substitutes for one.
+
+Interledger provides a useful economic comparator. It routes packets of value
+across independent ledgers and tracks peer obligations while leaving many
+application concerns to the edges. That separation is valuable: an exchange
+transport does not establish consent, settlement finality, fair pricing, legal
+validity, or whether an AI may bind its principal to a new obligation.
+
+The book's own sources supply the nearby mechanisms. Talos supplies typed jobs,
+contract locks, audit, replay, and controlled delivery. VCM supplies source and
+authority binding, adequacy/admission separation, revocation, and non-success
+states. TokenMana supplies bounded capacity and economic pressure rather than a
+claim that tokens alone capture value. The missing layer is the contract that
+keeps these records bound across an independently operated protocol boundary.
+
+### Strongest-neighbor comparison
+
+The closest standards solve different slices of the handoff. Their value is
+greatest when their boundaries remain explicit rather than being blended into
+one vague interoperability promise.
+
+| Neighbor | What it standardizes | What remains outside its result | ASI Stack delta |
+|---|---|---|---|
+| MCP | Versioned lifecycle, capability negotiation, and tool/resource/prompt/task messages | Principal authority, tool truth, effect safety, and result correctness | Bind the parsed request to a local principal, authority ceiling, effect owner, receipt, and residual path. |
+| A2A | Agent discovery, Agent Cards, tasks, messages, artifacts, and multiple bindings | Peer competence, identity truth, delegated authority, and artifact correctness | Preserve the originating principal and require a local decision before a remote declaration reaches dispatch or evidence. |
+| DID Core and VC 2.0 | Identifier resolution plus issuer/holder/verifier, validity, status, and securing-mechanism fields | Trust policy and complete authorization | Keep resolution and verification as expiring inputs to consumer-specific authorization, with disclosure and correlation residuals. |
+| Interledger v4 | Packetized value transfer across independent ledgers and connectors | Consent, fair price, legal obligation, final settlement, and task value | Keep reservation, routed packet, receipt, dispute, refund, and settlement as distinct states. |
+| QCSA semantic addressing | Stable local semantic identity, versioned addresses, migration lineage, and uncertainty-preserving translation | Authenticated peers, federation policy, payment, privacy, and authority | Carry plural semantic mappings without making semantic equivalence a delegation or trust decision. |
+
+The delta is not a universal replacement protocol. It is a local admission
+envelope that can consume several protocol-specific records while preserving
+what each one did and did not establish.
+
+## Core Claim
+
+A governed stack routes each cross-stack request through a versioned exchange contract that binds protocol and schema version, sender and receiver identities, endpoint and capability declaration, requested task or artifact, principal and delegated authority, credential verification, audience, scope, expiry, budget or consideration, expected receipt, dispute and revocation paths, and residual owner; an absent, mismatched, expired, revoked, unverified, or budget-unreserved required record blocks dispatch or routes accountable review, but does not itself establish peer trustworthiness, task or artifact truth, effect safety, payment settlement, legal validity, economic fairness, privacy, authorization correctness, or ASI (evidence boundary: architectural argument).
+## Mechanism
+
+The first object is a versioned **exchange contract**. It binds a protocol and
+schema revision to the specific endpoint and capability declaration that the
+caller intends to use. It names the sender, receiver, originating principal,
+and any delegation chain separately. It also names the requested task or
+artifact, the authority and credential references required by local policy, the
+audience, scope, expiry, economic commitment if any, expected receipt, dispute
+route, revocation route, and residual owner. A request cannot silently inherit
+fields from a nearby session, agent, or prior approval.
+
+The second object is the **local verification bundle**. A protocol parser can
+check syntax, a resolver can return identity metadata, and a credential verifier
+can check the documented properties of a presentation. The bundle records those
+results along with the local policy that interprets them. It keeps identity,
+credential validity, delegation scope, endpoint binding, audience, and
+revocation as independently expiring inputs. A valid credential can still be
+irrelevant to the requested task; a structurally valid message can still be
+denied by the runtime's authority ceiling.
+
+The third object is the **economic commitment record**. A request that would
+consume money, credits, scarce compute, or a contractual service allocation
+records who may reserve value, what maximum consideration is allowed, what
+receipt is expected, and what happens on timeout, partial delivery, dispute,
+refund, or revocation. This record is deliberately not a settlement claim. It
+lets the local resource and approval owners decide whether a proposed
+commitment may move beyond a reservation.
+
+The final object is the **cross-stack receipt**. A response must bind back to
+the request and contract version, identify the responding peer, distinguish
+declared completion from independently checked result state, preserve artifact
+references, record any economic outcome, and retain residuals. If a remote task
+is cancelled, a credential is revoked, an endpoint changes, or a budget is no
+longer reserved, the exchange record routes the affected request to denial,
+repair, review, dispute, or the existing Runtime Adapter and Artifact Graph
+owners as appropriate.
+
+The operational lifecycle has eighteen explicit stages:
+
+1. Freeze the protocol, schema, transport binding, session, endpoint, and
+allowed change triggers before interpreting the exchange.
+2. Represent owner, operator, peer, endpoint, agent, user, principal, subject,
+issuer, holder, verifier, and payee as separable roles rather than aliases.
+3. Bind task and artifact semantics to a namespace, version, digest, expected
+deliverable, acceptance predicate, and originating contract.
+4. Record endpoint and capability declarations as expiring, provenance-bearing,
+untrusted advertisements rather than evidence of trust or competence.
+5. Resolve an identifier together with its method, controller, verification
+method, service endpoint, update history, and policy scope.
+6. Verify each credential or presentation against its securing mechanism,
+issuer policy, status, freshness, audience, disclosure boundary, and
+correlation risk.
+7. Build a bounded delegation chain with principal, audience, capability,
+scope, expiry, revocation, non-delegation constraints, and every deputy.
+8. Make a separate local authorization decision after identity, credential,
+and delegation checks; none of those checks authorizes an effect by itself.
+9. Reserve budget or consideration with cap, denomination, fees, timeout,
+release, refund, settlement, and dispute terms while preserving each state.
+10. Attach consent, confidentiality, rights, retention, deletion, export, and
+minimum-disclosure obligations to exchanged fields and artifacts.
+11. Negotiate versions, bindings, capabilities, downgrade policy,
+compatibility evidence, and migration behavior without silent fallback.
+12. Route only a complete bounded request to the existing local owner; the
+exchange layer never performs or authorizes the local effect.
+13. Bind each response to the request, contract version, responding peer,
+referenced artifacts, declared status, economic outcome, and residuals.
+14. Require an independent result owner to test the response and artifacts
+against the intended consumer's acceptance predicate.
+15. Handle timeout, cancellation, partial delivery, dispute, refund, retry,
+and idempotency as explicit terminal or recoverable states.
+16. Propagate endpoint, key, credential, delegation, policy, budget, and
+revocation changes to every affected in-flight exchange.
+17. Issue an audit record naming residuals, appeal and dispute routes, retained
+state, released reservations, and the accountable owner.
+18. Compare MCP, A2A, direct APIs, queues or brokers, DID/VC identity,
+Interledger-like value exchange, and the full contract on matched natural
+workloads.
+
+```{mermaid}
+flowchart LR
+P["Principal and delegated authority"] --> X["Versioned exchange contract"]
+D["Protocol, endpoint, capability, task/artifact"] --> X
+I["Identity and credential verification"] --> V["Local verification bundle"]
+V --> X
+B["Budget or consideration reservation"] --> X
+X --> G{"Current local policy conditions hold?"}
+G -->|"identity, authority, scope, expiry, or budget gap"| R["Repair, accountable review, dispute, or denial"]
+G -->|"bounded contract complete"| A["Existing Runtime Adapter or Artifact Graph handoff"]
+A --> E["Cross-stack receipt and residual record"]
+E --> C["Revocation, expiry, dispute, or re-review path"]
+C -->|"unresolved obligation"| R
+```
+
+**Reading the exchange figure:** The exchange contract is the narrow waist
+between a remote protocol message and a local effect. The diagram shows that
+protocol parsing, identity verification, authority, and budget records converge
+before dispatch, while a remote response returns through a receipt and residual
+path. It does not depict a trusted peer, a verified task result, or a settled
+payment.
+
+### Worked trace: the translated analysis with a disputed receipt
+
+Suppose Stack North asks Stack South to translate a safety-analysis artifact
+into a new namespace and reserves 40 credits. The A2A task names South's
+published translation capability. North resolves the service identity, checks
+a scoped credential, and records the human principal whose approval covers
+translation but not deployment. The request includes the source artifact
+digest, a namespace-qualified SOID, the expected mapping manifest, an expiry,
+and a receipt contract. None of those records authorizes South to modify
+North's live policy or spend more than the reservation.
+
+South returns a syntactically valid artifact and declares the task completed.
+The returned mapping preserves the SOID but drops one prohibited-use facet.
+North's independent artifact check marks the expected receipt disputed. The
+40-credit reservation remains a reservation; it is neither a settled payment
+nor proof that South performed valuable work. The exchange routes the artifact
+to quarantine, the economic record to dispute, and the missing restriction to
+its residual owner. Runtime Adapters receive no effect lease.
+
+Now add a revocation race: South's credential status changes after dispatch but
+before North accepts the artifact. The request graph records the affected
+in-flight exchange and forces re-review. This does not prove that South acted
+maliciously or that the artifact is false. It shows only that North no longer
+has the current verification state required by its own contract. Message
+success, identity verification, semantic translation, economic reservation,
+artifact acceptance, and local authority remain separate transitions.
+
+### Federated semantic identity and address translation
+
+QCSA gives inter-stack exchange a semantic payload without assuming a universal
+ontology. A sender can name a namespace-qualified SOID, attach a signed
+Semantic Address Certificate for a particular task and consumer, declare the
+atlas epoch and facet versions, and provide a mapping manifest for the
+receiver. The receiver may translate the address into its own atlas while
+preserving candidate alternatives, confidence, provenance, prohibited uses,
+authority ceiling, and migration lineage.
+
+The stable identity and the mapping remain different claims. Two stacks may
+agree that records refer to the same object while organizing it differently;
+they may also exchange broader, narrower, contextual, disputed, or unresolved
+relations without pretending to exact equivalence. An absent epoch, invalid
+signature, stale migration, prohibited facet, or uncertainty above the
+consumer threshold blocks dispatch or routes accountable negotiation.
+
+The bounded QCSA package now implements the local SOID, address-certificate,
+lineage, and migration record shapes. Its held-out migration fixtures preserve
+full compatibility, while removing identity/address indirection reduces
+compatibility to 0.400000 and removing migration compatibility reduces it to
+zero. The vertical trace changes an address across atlas epochs while retaining
+the same SOID and exact descendant/receipt references.
+
+No federated peer, namespace negotiation, authenticated remote mapping,
+credential exchange, payment, settlement, dispute, revocation service, or
+cross-jurisdiction policy was exercised. The result supports a bounded local
+translation contract, not peer trustworthiness, global identity equivalence,
+authorization, effect safety, privacy, legal validity, settlement, or
+fairness. Existing protocol and economic gates continue to own those stronger
+properties, and the core claim remains at `argument`.
+
+## Interfaces
+
+The exchange boundary preserves a local division of labor. It can make a remote
+request inspectable, but it cannot issue an effect lease, certify context,
+decide resource policy, protect a secret, or turn a response into evidence.
+Twelve interfaces make those ownership boundaries explicit:
+
+1. **Intent-to-Execution Contracts** owns originating intent and task scope;
+the exchange preserves the principal and accepted boundary across a peer.
+2. **Labor OS and Organizational Design** owns roles, work assignment, and
+escalation; the exchange binds a cross-organization handoff without defining
+either organization.
+3. **Security Kernel and Digital SCIFs** owns protected handles, secrets, and
+local authorization policy; the exchange transports bounded evidence only.
+4. **Runtime Adapters, Tool Permissions, and Human Approval** owns local
+effects; a complete remote request is not an effect lease.
+5. **Virtual Context ABI** owns context provenance, admission, and taint; the
+exchange carries a reference without certifying adequacy or truth.
+6. **Artifact Graphs, Audit Logs, and Replay** and **Evidence Engineering** own
+provenance, receipts, replay, and support; the exchange owns cross-stack
+identity, delegation, consideration, and completeness.
+7. **Resource Economics and Token Budgets** owns local cost and capacity policy;
+the exchange binds consideration without claiming settlement or fairness.
+8. **Privacy, Rights, and Legal Constraints** owns consent, rights, retention,
+deletion, export, and legal policy; the exchange carries those obligations.
+9. **Human Collaboration and Dispute Resolution** owns consequential review,
+appeal, and adjudication; the exchange supplies the disputed record.
+10. **Readiness, Deployment, and Release Governance** owns promotion and
+release; interoperability success cannot promote a system by itself.
+11. **Personal Compute Hives and Federated Edge Intelligence** owns federation
+topology and placement; the exchange owns the contract across a chosen edge.
+12. **MCP, A2A, DID Core, VC Data Model, and Interledger** are external
+comparators and bindings; QCSA is adjacent semantic-addressing evidence,
+not exchange authority.
+
+## Invariants
+
+These eighteen invariants prevent a convenient remote path from changing the
+local meaning of identity, authority, value, privacy, or evidence:
+
+1. Every exchange records exact protocol, schema, binding, session, endpoint,
+and negotiation versions.
+2. Owner, operator, peer, endpoint, agent, user, principal, subject, issuer,
+holder, verifier, and payee remain distinct unless evidence maps them.
+3. Endpoint and capability declarations remain untrusted advertisements until
+separately qualified for the requested use.
+4. Identity resolution and credential verification cannot silently become
+local authorization or proof of peer trustworthiness.
+5. Delegated authority stays bound to principal, audience, capability, scope,
+expiry, policy, revocation, and non-delegation constraints.
+6. Only the existing local authorization owner may release a request toward a
+local effect boundary.
+7. Reservation, routing, delivery, acceptance, settlement, refund, and dispute
+remain distinct economic states.
+8. A remote response remains declared until an independent owner tests the
+evidence required for its intended use.
+9. Every disclosed field and artifact carries consent, confidentiality, rights,
+retention, deletion, export, and minimum-disclosure policy.
+10. Endpoint, key, credential, delegation, policy, budget, and revocation
+changes invalidate or re-review affected in-flight exchanges.
+11. Version downgrade or binding fallback is explicit, policy-checked, and
+visible in the terminal record.
+12. Retries are idempotent or carry a new exchange identity; replay cannot
+consume authority or value twice.
+13. Partial delivery, timeout, cancellation, dispute, and refund retain custody
+and an accountable next owner.
+14. Every terminal exchange names residuals, appeal paths, retained state,
+released reservations, and an accountable owner.
+15. Evaluation denominators include every attempted peer, protocol, binding,
+task, identity method, credential path, threat, and economic outcome.
+16. Protocol conformance does not imply semantic correctness, authorization,
+result quality, privacy, safety, settlement, legal validity, or fairness.
+17. A missing, mismatched, expired, revoked, unverified, or budget-unreserved
+required record routes to repair, review, dispute, or denial.
+18. Evidence language never exceeds the exercised peer, implementation,
+workload, threat, identity, economic, jurisdictional, and temporal envelope.
+
+## Failure modes
+
+The negative-control program must cover eighteen distinct ways a message-shaped
+integration can acquire meaning it has not earned:
+
+1. Capability-card theater treats a self-description as trust, competence,
+authorization, or safety.
+2. Actor conflation merges endpoint, owner, operator, agent, user, principal,
+credential subject, or payee.
+3. Credential laundering turns structural or cryptographic validity into trust,
+authorization, competence, or current status.
+4. Delegation or deputy laundering widens authority outside audience,
+capability, scope, expiry, or non-delegation rules.
+5. Confused-audience routing accepts a credential, message, response, or payment
+instruction intended for another verifier or contract.
+6. Replay or downgrade consumes authority, budget, value, or an effect twice or
+silently falls back to a weaker version or binding.
+7. Semantic-equivalence laundering treats an alias, mapping, translation, or
+migrated address as proof of task equivalence.
+8. Prompt, data, or instruction injection crosses inside a message or artifact
+and captures an unowned control surface.
+9. Economic-reservation laundering turns a budget hold into consent,
+affordability, delivery, acceptance, settlement, or fair price.
+10. Payment or settlement laundering turns a routed packet, acknowledgement, or
+balance update into legal finality or dispute-free transfer.
+11. Result or receipt laundering turns shape, completion, signature, or receipt
+into task truth or permission to act.
+12. A revocation race lets stale endpoint, key, credential, delegation, policy,
+or budget state release a request.
+13. Privacy and correlation leakage reveal unnecessary identity, credential,
+task, artifact, financial, or relationship data.
+14. Dispute and refund abandonment leaves partial delivery, cancellation,
+timeout, rejection, or remote failure without custody or remedy.
+15. Availability or refusal failure blocks safe fallback or pressures operators
+into bypassing controls.
+16. Cascading multi-peer failure propagates compromise, poisoned memory, rogue
+behavior, false declarations, or economic error across the federation.
+17. Denominator and cost laundering hide failed peers, bindings, tasks, threats,
+human labor, latency, or fees.
+18. State-of-the-art theater labels conformance, one synthetic fixture, or mere
+messaging as useful, safe, private, economically correct interoperability.
+
+## Non-obvious consequences
+
+1. **Interoperability increases the importance of refusal semantics.** Common
+message shapes remove parsing friction and can make missing authority or
+evidence easier to overlook. Denial and repair states need to interoperate
+as deliberately as success states.
+2. **Identity is a graph, not a string.** Endpoint, operator, software agent,
+credential subject, delegating principal, payer, and artifact signer may be
+different actors. Collapsing them creates confused-deputy paths even when
+every signature verifies.
+3. **Revocation is an affected-request computation.** Changing a credential,
+endpoint, schema, budget, or policy matters only if in-flight and retained
+exchanges can be found and routed before their next consequential use.
+4. **Economic state needs epistemic state.** A technically successful transfer
+can accompany a disputed or unusable result. Payment and artifact evidence
+need cross-references without sharing one success bit.
+5. **Privacy can conflict with accountability.** Rich identity records improve
+auditability but can enable correlation and excess disclosure. Selective
+fields, retention limits, and explicit privacy residuals are part of the
+contract rather than optional polish.
+
+## Strongest objections and surviving residuals
+
+**"This is merely application authorization around existing standards."** The
+chapter does not invent a new wire format. Its distinct job is to preserve
+principal, authority, evidence, economic, dispute, and residual semantics
+across several standards and local owners. Whether one envelope can remain
+usable without becoming an integration bottleneck is still untested.
+
+**"Cryptographic credentials solve the trust problem."** They support
+integrity and issuer-bound claims under stated verification methods. They do
+not decide whether the issuer is trusted for this purpose, whether the holder
+is authorized for this task, or whether the response is correct. Issuer
+governance, verifier quality, status freshness, and local policy remain open.
+
+**"Rechecking every request destroys federation's value."** Scoped cached
+qualifications can reduce work, but their consumer, audience, expiry,
+dependency, and revocation conditions must remain visible. The trade-off among
+latency, false denial, stale acceptance, and operator load is unmeasured.
+
+**"Cooperating agents need no economic exchange."** Scarce compute, quotas,
+service obligations, and opportunity costs exist without currency. The record
+can represent capacity reservation rather than price. Whether explicit
+accounting improves coordination or creates gaming pressure remains empirical.
+
+**"A remote result can never be independently verified."** Sometimes it
+cannot. The honest route is then bounded use, more evidence, quarantine, or
+refusal—not promoting declared completion. The exchange boundary supplies that
+vocabulary but no universal verifier.
+
+**"The contract creates a surveillance ledger."** It could if identities and
+interactions were retained centrally. Data minimization, selective disclosure,
+scoped identifiers, expiry, and deletion policy are requirements. The present
+design does not prove that accountability and privacy always reconcile.
+
+## Minimum Viable Implementation
+
+**Failure containment across counterparties.**
+
+Inter-stack exchange also needs a containment unit. Revoking one credential
+should not automatically invalidate every artifact previously produced by the
+sender, yet leaving all prior artifacts untouched can preserve an active
+compromise. The receiving stack needs a policy that maps the revocation reason,
+credential scope, artifact lineage, task risk, and receipt status to a bounded
+affected set. That set can be quarantined, re-verified, narrowed, or retained
+with an explicit residual. Global distrust and silent acceptance are both
+lossy defaults.
+
+Disputes create a similar split between protocol truth and task truth. A valid
+receipt can show that a named peer accepted a payload under a contract; it does
+not show that the payload is correct or that payment is legally owed. A task
+verifier may reject the result while the transport receipt remains valid. A
+settlement service may accept payment while the artifact remains barred from
+local execution. Preserving those separate outcomes lets later reviewers
+locate the actual disagreement instead of rewriting a successful exchange as a
+successful task.
+
+The practical metric is therefore not transaction count. A useful pilot would
+report bounded dispatches, verification failures, revocation fan-out, dispute
+resolution time, uncompensated work, privacy disclosure, operator intervention,
+and residual obligations together. A protocol that increases exchange volume
+while producing unowned disputes or broad quarantine has not demonstrated
+useful interoperability.
+
+Start with a public-safe exchange record containing protocol/schema revision,
+endpoint/capability declaration, sender/receiver/principal identities, requested
+task or artifact, delegated-authority scope, credential requirement/result,
+audience, expiry, budget reservation, expected receipt, dispute/revocation path,
+residual owner, and requested dispatch. A finite Lean route blocks a dispatch
+with a required invalid credential and blocks a value-bearing dispatch that
+lacks a reserved budget. The record contains no real identity, credential,
+payment, remote endpoint, account, or effect.
+
+The implemented finite demonstration is deliberately small. It compares one
+complete synthetic request with nearby failures: a missing sender identity, an
+audience mismatch, an expired or revoked credential, a value-bearing request
+without a reservation, a response with an unresolved dispute, and a request
+whose residual owner is absent. Nine digest-bound cases and rejecting mutations
+bridge the owned Lean routes to JSON records. The test earns only a record-routing result. It
+does not earn trust in a peer or prove the value of a remote answer.
+
+The next empirical campaign must be frozen before implementation selection or
+peer enrollment. It uses matched natural tasks with public-safe implementations
+of MCP and A2A, at least two transport bindings, multiple peers and model
+families, multiple DID methods and VC credential paths, bounded delegation, and
+a value reservation and settlement simulator or test network. It compares
+direct REST or RPC, MCP or A2A alone, API-key or IAM-style controls, DID/VC,
+broker or workflow mediation, Interledger-like exchange, and the full contract.
+
+One joint scorecard reports useful interoperability, task and artifact
+correctness, authorization false acceptance and false denial, delegation drift,
+stale or revoked acceptance, downgrade and replay, privacy and correlation
+leakage, reservation, delivery, acceptance, settlement, dispute and refund
+correctness, latency, human effort, fees, residuals, and recovery. Every attempted
+peer, binding, task, credential path, delegation, and threat remains in the
+denominator. Cached qualification and per-request checking are separate arms,
+not undocumented deployment choices.
+
+Prospectively fixed ablations isolate protocol parsing, semantic binding,
+identity resolution, credential verification, delegation, local authorization,
+privacy constraints, economic states, revocation propagation, and independent
+result verification. An independently implemented evaluator must reproduce the
+route and metric calculations. Transfer tests vary protocol version, transport,
+peer implementation, model, task domain, organization, jurisdiction, threat,
+and time. Until that campaign passes, the nine finite routes remain useful
+control-logic evidence and nothing stronger.
+
+## Beyond the State of the Art
+
+The mature endpoint is an inter-stack exchange plane whose identity,
+authorization, protocol, economic, privacy, dispute, recovery, and useful-work
+claims survive heterogeneous peers, bindings, organizations, jurisdictions,
+and time.
+
+The frontier is not one more universal protocol. It is a protocol-neutral
+control plane whose advantage survives matched natural work and adversarial
+conditions while preserving the exact contribution of each layer. Discovery
+stays separate from trust; identity from authorization; credential validity
+from delegation; reservation from settlement; declared completion from verified
+utility; and interoperable exchange from safe release.
+
+A successful program must establish causal signatures, not just an aggregate
+win. Removing bounded delegation should increase privilege drift without
+changing parser conformance. Removing revocation propagation should increase
+stale acceptance after key, credential, policy, or budget changes. Removing
+independent verification should increase accepted wrong artifacts without
+improving protocol success. Removing privacy constraints should reduce message
+friction while increasing unnecessary disclosure or correlation. Collapsing
+economic states should increase settlement, dispute, or refund errors. Results
+that do not follow their predicted ablations remain unexplained observations.
+
+The stronger claim also requires independent reproduction and transfer. A
+separate implementation and evaluator must preserve conclusions across MCP and
+A2A revisions, bindings, identity methods, credential issuers, peer vendors,
+model families, task domains, organizations, jurisdictions, threat classes, and
+time. Useful throughput, authorization errors, task quality, privacy, economic
+correctness, latency, human burden, cost, residuals, and recovery must be judged
+together. No local endpoint, resolver, credential workflow, value network,
+privacy program, or remote effect has run yet, so this remains a falsifiable
+research program rather than a current interoperability or safety result.
+
+No current result meets this inter-stack endpoint; support remains `argument`
+until natural peer exchanges, adversarial identity and economic faults,
+independent reproduction, and heterogeneous transfer pass.
+
+## Proof targets
+
+## Summary
+
+Cross-stack interaction is a governed handoff, not a message-shaped permission.
+The exchange contract keeps protocol structure, actor identity, credential
+verification, delegated authority, local authorization, privacy obligations,
+economic commitment, result evidence, revocation, dispute, and residual
+ownership distinct until existing local owners make bounded decisions. It gives
+a remote request durable local meaning without pretending that a common
+protocol eliminates independent judgment.
+
+That separation protects both people and systems. It stops a remote response
+from being mistaken for truth, a credential from becoming ambient authority, and
+a budget reservation from becoming a hidden promise. When the contract is
+incomplete, the honest answer is not a more persuasive message. It is repair,
+accountable review, dispute, or denial with a residual that someone can still
+find and own. The present proof establishes nine finite route consequences. A
+claim of useful, secure, private, economically correct interoperability requires
+the prospectively fixed natural-workload, adversarial, causal-ablation,
+independent-reproduction, and transfer campaign described above.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **80** structured claim atoms in `CF-03`. The
+frozen repository-wide terminal audit records 80 `blocked_after_full_attempt`. Its core
+atom `inter-stack-protocols-identity-and-economic-exchange.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `inter-stack-protocols-identity-and-economic-exchange` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 80 structured claims,
+80 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Intent-to-execution vertical refinement**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Structured local scenarios only; no natural-language semantic sufficiency, production backend, transfer, or deployment claim.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
+
+## Handoff
+
+Inter-stack contracts make remote work legible, but a verified exchange receipt
+does not itself make a result reusable. Procedural Memory and Cognitive Loop Closure
+now decides which completed, failed, disputed, or revoked work traces may become
+parameterized procedure, with their scope, evidence, regressions, and retirement
+conditions intact. A remote trace becomes reusable only after its cross-stack
+authority and unresolved obligations remain visible to that later review.

@@ -160,6 +160,7 @@
       "human_reader_focus": "Make authority boundaries feel like operating-system permissions.",
       "what_would_move_this": "Derived theorem or harness showing escalation blocked across handoff paths.",
       "relevant_non_core_transition_refs": [
+        "evidence_transitions/post_v2_3/p5_authority_no_silent_expansion_synthetic_test_backed.json",
         "evidence_transitions/v1_x_measured/authority_revocation_trace_no_change.json"
       ]
     },
@@ -492,7 +493,7 @@
         "does not prove replacement safety or rollback execution",
         "does not prove source interpretation"
       ],
-      "current_evidence_summary": "Source notes available for all 8 assigned sources; 8 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 9 assigned sources; 8 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Stable capability field harness plus Theseus gate",
       "formal_or_prototype_work": "Import or synthesize field qualification and route-permission traces.",
@@ -562,7 +563,8 @@
       "relevant_non_core_transition_refs": [
         "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
         "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
-        "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json"
+        "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
+        "evidence_transitions/post_v2_3/p5_rollback_outcomes_narrowed_after_full_attempt.json"
       ]
     },
     {
@@ -916,13 +918,14 @@
         "does not establish context-demand prediction",
         "does not establish deployed runtime replanning behavior"
       ],
-      "current_evidence_summary": "Source notes available for all 9 assigned sources; 9 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 10 assigned sources; 9 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Theseus plan compiler, PlanForge DAG slice, and Lean planning/PlanForge envelope",
       "formal_or_prototype_work": "Import public-safe typed DAG and rejected invalid DAG; add a route-adequacy fixture with cost, uncertainty, fallback, merge, and residual accounting.",
       "human_reader_focus": "Make planning read like controlled sequencing under uncertainty and explain intelligence arbitrage as routing work to the right kind of mind only when adequacy and verification remain attached.",
       "what_would_move_this": "Public-safe DAG replay validates, invalid DAG fails, and route selection passes only when adequacy and cost constraints both hold without displaced verification or cleanup.",
       "relevant_non_core_transition_refs": [
+        "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
         "evidence_transitions/v1_x_measured/planning_runtime_replan_delta_no_change.json",
         "evidence_transitions/v1_x_measured/planning_scheduler_state_probe_no_change.json"
       ]
@@ -959,13 +962,14 @@
         "does not prove artifact quality improvement or repair locality",
         "does not reproduce the mined historical projects"
       ],
-      "current_evidence_summary": "Source notes available for all 16 assigned sources; 16 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 17 assigned sources; 16 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Compiler IR fixtures plus external program-synthesis baselines",
       "formal_or_prototype_work": "Add semantic atom lowering and failed-preservation cases.",
       "human_reader_focus": "Use compilation as the bridge from thought to executable structure.",
       "what_would_move_this": "IR translation preserves required fields and rejects lossy lowering.",
       "relevant_non_core_transition_refs": [
+        "evidence_transitions/post_v2_3/kerc_protected_exact_handle_synthetic_test_backed.json",
         "evidence_transitions/post_v2_3/qcsa_active_questions_exact_fixture_value_refute.json",
         "evidence_transitions/post_v2_3/qcsa_plural_facets_exact_fixture_value_promote.json",
         "evidence_transitions/post_v2_3/qcsa_semantic_round_trip_exact_preservation_narrow.json"
@@ -1019,7 +1023,7 @@
         "does not prove summary fidelity",
         "does not prove long-context adequacy or model verification bandwidth"
       ],
-      "current_evidence_summary": "Source notes available for all 24 assigned sources; 24 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 26 assigned sources; 24 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Context admission harness, certificate fixtures, Lean hooks, and VCM source notes",
       "formal_or_prototype_work": "Add admission, mount, capability, typed page/cell, certificate-truthfulness, authority-ceiling, loss-contract, permitted-use, and context-window negative controls.",
@@ -1059,7 +1063,7 @@
         "does not prove context memory correctness",
         "does not prove taint isolation in a deployed system"
       ],
-      "current_evidence_summary": "Source notes available for all 15 assigned sources; 15 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 17 assigned sources; 15 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Context transaction harness",
       "formal_or_prototype_work": "Add deletion closure, mount taint, snapshot conflict, and rollback cases.",
@@ -1105,7 +1109,8 @@
       "what_would_move_this": "Adequacy record rejects context that exceeds verifier bandwidth.",
       "relevant_non_core_transition_refs": [
         "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
-        "evidence_transitions/post_v2_1/real_model_deliberation_no_change.json"
+        "evidence_transitions/post_v2_1/real_model_deliberation_no_change.json",
+        "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json"
       ]
     },
     {
@@ -1156,7 +1161,7 @@
         "does not prove verifier quality",
         "does not prove deployed belief revision or runtime behavior"
       ],
-      "current_evidence_summary": "Source notes available for all 18 assigned sources; 18 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 19 assigned sources; 18 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Claim-ledger harness plus Lean",
       "formal_or_prototype_work": "Add revision-history preservation, contradiction quarantine, and split claims.",
@@ -1367,6 +1372,7 @@
       "relevant_non_core_transition_refs": [
         "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
         "evidence_transitions/post_v2_3/governance_tax_natural_work_renewal_no_change.json",
+        "evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json",
         "evidence_transitions/post_v2_3/qcsa_certificate_authority_fields_exact_value_promote.json",
         "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
         "evidence_transitions/v1_x_measured/partitioned_authority_fixture_no_change.json",
@@ -1443,13 +1449,15 @@
         "does not prove reusable cognition quality",
         "does not prove safe tool promotion"
       ],
-      "current_evidence_summary": "Source notes available for all 18 assigned sources; 18 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 20 assigned sources; 18 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Theseus self-evolution/operator traces plus loop harness",
       "formal_or_prototype_work": "Add policy update, regression, and rollback memory traces.",
       "human_reader_focus": "Explain learning as disciplined update of procedures, not vague improvement.",
       "what_would_move_this": "Memory update fixture preserves failed attempts and rollback path.",
-      "relevant_non_core_transition_refs": []
+      "relevant_non_core_transition_refs": [
+        "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json"
+      ]
     },
     {
       "claim_id": "routing-heads-and-specialist-cores.core",
@@ -1528,13 +1536,15 @@
         "does not prove OneCell, KAN, Mamba, recurrent, memory-augmented, continuous-time, or hybrid architecture quality",
         "does not prove governed architectural self-improvement, safety, AGI, or ASI"
       ],
-      "current_evidence_summary": "Source notes available for all 34 assigned sources; 34 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 35 assigned sources; 34 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Source-reviewed Cognitive Kernel ABI contract, architecture taxonomy, 15-atom claim addendum, and one planned formal target",
       "formal_or_prototype_work": "Implement three heterogeneous kernels and an independent malicious-kernel checker; prove/refine proposal-effect, authority, checkpoint, revocation, fallback, and lineage invariants; run matched equal-active-parameter and equal-total-lifecycle-cost tournaments plus the frozen-core ratchet.",
       "human_reader_focus": "Explain that Transformers are one powerful implementation, route shapes sit above architecture, exact state remains outside latent cognition, and OneCell is a falsifiable candidate rather than a conclusion.",
       "what_would_move_this": "A bounded heterogeneous-kernel substitution and mixed-kernel route reproduce and transfer without authority widening, exact-state loss, hidden assistance, unsafe release, or dominated lifecycle cost; otherwise narrow or refute the relevant atoms.",
-      "relevant_non_core_transition_refs": []
+      "relevant_non_core_transition_refs": [
+        "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json"
+      ]
     },
     {
       "claim_id": "readiness-gates-residual-escrow-and-quarantine.core",
@@ -1592,7 +1602,9 @@
       "relevant_non_core_transition_refs": [
         "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
         "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+        "evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json",
         "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
+        "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
         "evidence_transitions/v1_x_measured/readiness_lifecycle_probe_no_change.json"
       ]
     },
@@ -1672,14 +1684,18 @@
         "does not prove compression quality",
         "does not prove repair loop convergence"
       ],
-      "current_evidence_summary": "Source notes available for all 17 assigned sources; 17 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 18 assigned sources; 17 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Compression metrics, residual ledger, generate/verify/repair harness, semantic-node fixture, and folded semantic-leasing source lane",
       "formal_or_prototype_work": "Add compression failure residuals, repair loop traces, failed-verification preservation, semantic preservation, hierarchy-supersession, consumer-policy, mismatch cases, and quality baseline separation.",
       "human_reader_focus": "Explain compactness, repair, and semantic leasing as accountable loss rather than magic or clean ontology.",
       "what_would_move_this": "Fixture records what is compressed, represented, lost, checked, repaired, residualized, superseded, quarantined, or rejected before any compactness or semantic-representation claim promotes.",
       "relevant_non_core_transition_refs": [
+        "evidence_transitions/post_v2_3/kerc_broad_efficiency_refuted.json",
+        "evidence_transitions/post_v2_3/kerc_protected_exact_handle_synthetic_test_backed.json",
+        "evidence_transitions/post_v2_3/kerc_shared_glossary_break_even_synthetic_test_backed.json",
         "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
+        "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
         "evidence_transitions/v1_x_measured/circle_seed_rule_receipt_no_change.json",
         "evidence_transitions/v1_x_measured/compact_gvr_slice_synthetic_test_backed.json",
         "evidence_transitions/v1_x_measured/residual_ledger_storage_replay_no_change.json"
@@ -1730,7 +1746,7 @@
         "does not prove useful-solution-per-second performance",
         "does not prove runtime routing or deployment behavior"
       ],
-      "current_evidence_summary": "Source notes available for all 21 assigned sources; 21 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 22 assigned sources; 21 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Generation-mode baseline harness, static Theseus generation-mode import, and external inference literature",
       "formal_or_prototype_work": "Use the new Theseus import as negative promotion evidence, then add a public-safe task bundle with quality-adjusted useful-solution-per-second, verifier cost, residuals, and negative controls.",
@@ -1905,7 +1921,11 @@
         "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
         "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
         "evidence_transitions/post_v2_3/governance_tax_natural_work_renewal_no_change.json",
+        "evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json",
+        "evidence_transitions/post_v2_3/kerc_broad_efficiency_refuted.json",
+        "evidence_transitions/post_v2_3/kerc_shared_glossary_break_even_synthetic_test_backed.json",
         "evidence_transitions/post_v2_3/qcsa_governance_prevention_resource_tradeoff_narrow.json",
+        "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
         "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
         "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
         "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -1993,6 +2013,7 @@
       "human_reader_focus": "Explain proof-carrying contracts as receipts systems can check.",
       "what_would_move_this": "ASI validator accepts valid Circle receipt and rejects malformed ones.",
       "relevant_non_core_transition_refs": [
+        "evidence_transitions/post_v2_3/p5_circle_named_target_receipt_prototype_backed.json",
         "evidence_transitions/v1_0_measured/circle_external_rope_receipt_prototype_backed.json",
         "evidence_transitions/v1_x_measured/circle_contract_pack_archive_no_change.json",
         "evidence_transitions/v1_x_measured/circle_cyclic_mixer_receipt_no_change.json",
@@ -2182,13 +2203,16 @@
         "does not treat six related local projects as independent confirmations",
         "does not authorize publication of raw private project material"
       ],
-      "current_evidence_summary": "Source notes available for all 29 assigned sources; 29 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 31 assigned sources; 29 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Benchmark anti-Goodhart harness plus external benchmarks",
       "formal_or_prototype_work": "Add contamination, saturation, and transfer negative controls.",
       "human_reader_focus": "Explain why benchmark gains can become a trap.",
       "what_would_move_this": "Ratchet fixture blocks promotion on contaminated or saturated benchmark.",
-      "relevant_non_core_transition_refs": []
+      "relevant_non_core_transition_refs": [
+        "evidence_transitions/post_v2_3/residual_verifier_terminal_instrument_failure.json",
+        "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json"
+      ]
     },
     {
       "claim_id": "capability-thresholds-and-deployment-commitments.core",
@@ -2391,7 +2415,8 @@
         "evidence_transitions/post_v2/update_causality_no_change.json",
         "evidence_transitions/post_v2_1/full_state_update_no_change.json",
         "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
-        "evidence_transitions/post_v2_3/qcsa_migration_compatibility_exact_value_promote.json"
+        "evidence_transitions/post_v2_3/qcsa_migration_compatibility_exact_value_promote.json",
+        "evidence_transitions/post_v2_3/update_unlearning_claim_narrowed_after_full_attempt.json"
       ]
     },
     {
@@ -2463,7 +2488,7 @@
         "does not prove cross-layer safety or open-world joinability",
         "does not reproduce any historical-project capability or runtime result"
       ],
-      "current_evidence_summary": "Source notes available for all 30 assigned sources; 30 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 32 assigned sources; 30 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "End-to-end Theseus report plus architecture trace",
       "formal_or_prototype_work": "Build a public-safe thin vertical slice through several layers.",

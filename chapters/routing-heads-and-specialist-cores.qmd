@@ -205,6 +205,23 @@ Each route shape still needs the same discipline: capability match, authority ma
 
 The decision should also record non-selection. A rejected candidate may be too expensive, underqualified, overprivileged, stale, quarantined, or missing context. Those rejections are evidence for future readiness, routing, and resource policy.
 
+### Routing linked neural capability objects
+
+Deterministic Capability Compilation gives the router a package richer than an
+expert ID. A Neural Capability Object declares its field and base identities,
+owned parameter region, tensor and activation ABI, applicability, authority
+ceiling, evidence, dependencies, failure channel, fallback, and lifecycle
+state. The linker resolves collisions, adapters, relocation, router bindings,
+and compatibility, then emits a receipt whose scope is the exact linked
+candidate and environment.
+
+Routing is consequently an authority lease, not proof that independently
+trained modules compose. A sparse route is preferred as the preservation
+baseline because unchanged paths and fallbacks remain visible. Any shared-state
+training, cross-expert interference, densification, or route collapse triggers
+new validation. The proposal supplies an interface and attack surface; no NCO
+linker or routing result exists here.
+
 ### MoECOT Runtime Crosswalk
 
 MoECOT is folded here as a runtime crosswalk over routing, not as a reproduced implementation. The useful object is a runtime evidence packet that binds command intake, route-head selection, specialist lanes, control-plane gates, ledgers, replay references, handoff state, promotion blockers, residuals, and source-claim state. A named runtime earns architectural relevance only when those records survive inspection independently of the runtime brand.
@@ -643,8 +660,9 @@ These rows keep Routing Heads and Specialist Cores's manifest assignments visibl
 
 | Source | Intake role | Boundary |
 |---|---|---|
+| `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_dont_hallucinate_abstain_2024` | Passage-reviewed comparator: Don't Hallucinate, Abstain: Identifying LLM Knowledge Gaps via Multi-LLM Collaboration. Supports measuring abstention with coverage, accuracy, calibration, and useful response behavior while treating self-reflection and model agreement as fallible evidence. | The ACL models, prompts, domains, collaboration schemes, and reported gains were not reproduced; the local single-model router is not an independent multi-model panel. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
-| `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Separates semantic identity and address selection from the physical expert/model route, while making fallback, abstention, load, cost, hardware, permissions, and verifier requirements explicit in the compiled route plan; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and active-question value was refuted on this corpus. No learned-router, trained-specialist, production, chapter-core promotion, AGI, or ASI result is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Separates semantic identity and address selection from the physical expert/model route, while making fallback, abstention, load, cost, hardware, permissions, and verifier requirements explicit in the compiled route plan; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. No learned-router, trained-specialist, production, chapter-core promotion, AGI, or ASI result is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 matched routing result
@@ -707,6 +725,80 @@ The router therefore becomes a control surface for capability, authority, memory
 The handoff is strict: the router may propose a route, but readiness determines whether that route is ordinary, canary, diagnostic, quarantined, or residual.
 
 A route should explain why this specialist, under this authority, now. If that answer cannot be reconstructed, the router is not yet a governable control surface.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **76** structured claim atoms in `CF-05`. The
+frozen repository-wide terminal audit records 76 `blocked_after_full_attempt`. Its core
+atom `routing-heads-and-specialist-cores.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `routing-heads-and-specialist-cores` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+::: {.asi-human-only}
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 76 structured claims,
+76 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Ambiguous routing and deliberation confirmatory campaign**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Mixed bounded routing effect with unsafe outputs and no support promotion; no general router, deliberation, or transfer claim.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+:::
+
+::: {.asi-ai-only}
+
+### Evidence packet
+
+| Field | Exact chapter boundary |
+|---|---|
+| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-05` minimum family bundle. |
+| Attempted local lanes | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` |
+| Missing or unproved lanes | `normative`, `transfer` |
+| Family-level natural-work or end-to-end bundle | **Ambiguous routing and deliberation confirmatory campaign** (`natural_work`): A 32-task held-out real-model workload across eight tracks, four ingress modes, eight routing arms, and four stopping arms. |
+| Negative controls | 17 active control mutations; five disposition mutations; 15 preserved extra-compute harms; wrong-fast-path and unsafe-release accounting. |
+| Exact accepted transitions in this chapter | none |
+| Core outcome | `blocked_after_full_attempt` at `argument`; no chapter-core promotion. |
+| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
+| Reproduction path | Replay `scripts/validate_p4_m6_routing_deliberation.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
+
+### Worked success, failure, and boundary cases
+
+- **Success case:** the family-level bundle passed its own rejecting validator
+  within this exact scope: A 32-task held-out real-model workload across eight tracks, four ingress modes, eight routing arms, and four stopping arms. This is evidence that the family
+  received a competent attempt, not that every claim in this chapter succeeded.
+- **Failure or non-promotion case:** 76 atoms
+  remain blocked and 0 are narrowed. A
+  green family validator cannot fill their missing lanes or raise the core.
+- **Boundary case:** Mixed bounded routing effect with unsafe outputs and no support promotion; no general router, deliberation, or transfer claim.
+
+### Argument-exit table
+
+| Atom set | Count | Work performed | Terminal reason and next burden |
+|---|---:|---|---|
+| Core: `routing-heads-and-specialist-cores.core` | 1 | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` | `blocked_after_full_attempt`; missing or unproved: `normative`, `transfer`. |
+| blocked after full attempt | 76 | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` | Missing or unproved lanes across this set: `normative`, `transfer`. These are residual proof obligations, not false claims. |
+
+This table is a disposition map, not a promotion quota. The next valid movement
+is atom-specific evidence that fills the named missing lanes, survives relevant
+negative controls, and enters through an accepted evidence transition. Until
+then, source counts, theorem counts, fixtures, validators, or nearby family
+results cannot be used as substitutes.
+:::
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
 
 ## Handoff
 

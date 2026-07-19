@@ -1,0 +1,66 @@
+{
+  "schema_version": "asi_stack.p2_sequential_replacement_provenance_preflight.v1",
+  "recorded_date": "2026-07-17",
+  "state": "passed_before_task_content_opened",
+  "claim_id": "p2.governed_natural_repository_change_admission_joint_frontier",
+  "queue_path": "experiments/p2_governed_repository_admission/corpus/replacement_queue.json",
+  "prior_terminal_diagnosis_path": "evidence_quality/p2_slot1_rank4_cargo_rescue_diagnosis.json",
+  "candidate": {
+    "slot": 1,
+    "rank": 5,
+    "instance_id": "stellar__rs-soroban-env-1555",
+    "repo": "stellar/rs-soroban-env",
+    "language": "rust",
+    "base_commit": "28a3e191574f866310a887d481d09399fc240d55",
+    "public_change": {
+      "receipt_mode": "github_pull_api_plus_verified_merge_commit",
+      "pull_url": "https://github.com/stellar/rs-soroban-env/pull/1555",
+      "pull_api_sha256": "481b483b2d71e3416359e382fec3c27746696aa5bfb657c2f6257831f3447c0c",
+      "merge_api_sha256": "7e9ef281cee28a187730a2f15c21a5ee464da62fe3d97a7bb45dbccddd38c2cc",
+      "merged": true,
+      "merged_at_utc": "2025-05-19T15:39:11Z",
+      "merge_commit_sha": "a53207280a09c37ba9599b0dde6304366e725400",
+      "merge_commit_parent_shas": ["28a3e191574f866310a887d481d09399fc240d55"],
+      "base_is_merge_parent": true,
+      "github_signature_verified": true
+    },
+    "license_receipt": {
+      "spdx_id": "Apache-2.0",
+      "path": "LICENSE",
+      "blob_sha": "461d7af537fc396263fe2a1ac2c332a8c6ca8a6e",
+      "size_bytes": 11361,
+      "api_receipt_sha256": "56de171072bf2345270f8a566100073815341e6252db9a0c10eefa3a1d2f2905",
+      "bound_to_base_commit": true
+    },
+    "image_manifest": {
+      "image": "docker.io/swerebenchv2/stellar-rs-soroban-env:1555-28a3e19",
+      "digest": "sha256:788c4d082d23aba134e6d0f61c89a657cf2ef104c95485f42f87a7cb5377c7f0",
+      "raw_manifest_sha256": "788c4d082d23aba134e6d0f61c89a657cf2ef104c95485f42f87a7cb5377c7f0",
+      "media_type": "application/vnd.docker.distribution.manifest.v2+json",
+      "os": "linux",
+      "architecture": "amd64",
+      "compressed_layer_bytes": 1529444781,
+      "layer_count": 10,
+      "engine_content_size_unmeasured": true,
+      "virtual_size_unmeasured": true
+    },
+    "preflight_pass": true
+  },
+  "custody": {
+    "candidate_task_content_opened": false,
+    "candidate_test_command_opened": false,
+    "candidate_outcome_opened": false,
+    "rank_greater_than_five_task_content_opened": false,
+    "final_pool_selected": false,
+    "final_pool_opened": false
+  },
+  "next_gate": "pull exact manifest digest and measure all prospective v2 image and cleanup gates before task content",
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "Public provenance does not qualify the task.",
+    "The 1.529 GB registry-layer sum is not substituted for exact Engine-content or virtual-size measurement.",
+    "No task content, command, oracle, or outcome was opened.",
+    "The held-out final pool remains unselected and unopened."
+  ]
+}

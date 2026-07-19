@@ -1,0 +1,287 @@
+# Security Kernel and Digital SCIFs
+
+Replacement and rollback protect the shape of a capability under change. Security protects the powers and secrets that capability can touch. As the stack grows more useful, context, credentials, tools, and private records become part of the safety problem. A replacement that changes what it can see or do has changed the security boundary, even if its public interface still looks familiar.
+
+The central move is to make sensitive context an explicit boundary instead of a prompt convention. A system should not handle secrets, approvals, or protected memory unless the access path, clearance, receipt, and denial behavior are visible. Human trust comes from knowing where the authority was used, not from hoping the model was careful with invisible power.
+
+Security is the stack's refusal to let convenience blur protected authority. The protected path must remain narrower than the system's curiosity and usefulness, and a secure handle is valuable precisely because it reveals less than the model might want. The boundary protects action by limiting disclosure, keeping power inspectable when authority still has to act responsibly.
+
+## Problem
+
+Tool-using and high-agency AI systems can transform untrusted content into requests over secrets, private facts, identities, memory, model artifacts, tools, networks, files, money, code, and physical or institutional effects. The boundary crosses more than a prompt: model, planner, tool, policy service, operator, vendor, dependency, runtime, device, log store, backup, and descendant may each occupy a different trust zone.
+
+The security problem is therefore two coupled flows. Information can enter, move through, or leave the system; authority can authorize an effect on a target. Keeping credential bytes out of a prompt narrows one disclosure path, but an opaque handle may still be replayed, redirected, or used by a confused deputy. A container may reduce process access while sharing browser state, network, accelerators, operators, logs, or cloud control planes. A sanitizer may remove literal tokens while preserving inferable or actionable protected facts.
+
+The proposed kernel boundary must begin with a versioned threat model: protected assets, principals, trust zones, adversary capabilities, security objectives, assumptions, accepted residuals, and channels explicitly left out of scope. The model may propose a privileged use; it cannot alone define, approve, execute, sanitize, evaluate, and audit that use. Every privilege must remain bound to an exact principal, purpose, operation, target, data scope, destination, budget, time window, nonce, policy, and revocation authority.
+
+“Digital SCIF” is a design name, not a security property. Each instance needs a declared isolation grade over process, VM, container, browser, filesystem, network, memory, accelerator, device, operator, and vendor surfaces. Untested or shared surfaces remain named residuals. The aim is not to make the model morally trustworthy; it is to minimize exposure, mediate effects, preserve evidence, and make unknown or irreversible consequences impossible to hide behind a reassuring label.
+
+## Why existing approaches are insufficient
+
+Prompt rules, model-visible secrets, one-time approvals, opaque handles, allowlists, sandboxes, output filters, and audit logs each cover a different slice. None alone supplies least authority, complete mediation, trustworthy declassification, non-bypassable isolation, effect-complete revocation, side-channel control, or recovery.
+
+The author-lineage sources propose useful ingredients: `ladon_manhattan` supplies blind handles and late substitution; `context_engineer` supplies context compilation and ephemeral compartment lifecycles; `talos` supplies typed execution, audit, and replay; `alignment_field` supplies normative pressure around agency, consent, dignity, and confinement; and `coherence_exchange` supplies contestability and audit framing. They are related design lineage, not five independent demonstrations.
+
+The strongest external comparison is broader. Saltzer and Schroeder supply least privilege, complete mediation, and fail-safe defaults. NIST Zero Trust supplies resource-centric decision and enforcement points with continuing evaluation. OWASP's LLM and agentic taxonomies supply prompt injection, sensitive disclosure, excessive agency, identity, memory, supply-chain, inter-agent, and cascading-risk vocabulary. AgentDojo supplies a realistic tool-over-untrusted-data benchmark family. CaMeL supplies a current control/data separation and capability-enforcement comparator. These sources sharpen the challenge; they do not show that the proposed transaction is new, complete, or effective.
+
+The mined projects provide especially useful counterevidence. BeastBrain's permission metadata did not demonstrate secret retrieval enforcement or hard SCIF isolation. BugBrain exposed incomplete authority binding, silently lossy audit paths, and weak root assumptions despite rich security types. Corben's Best Model Possible declared capability envelopes without comprehensive operating-system enforcement. MoECOT Manifest and Corben's Trainer show how abundant contracts, evidence rows, and fail-closed checks can coexist with weak external capability, stale promotion, or incomplete revocation. The security program must therefore prove effects and independence, not count interfaces.
+
+Security also belongs before self-improvement: an update must not count as improvement because it moved protected data more cheaply, erased monitoring, widened a handle, weakened isolation, made declassification easier, or hid recovery cost. Reduced friction is not automatically reduced risk; fail-closed safety that destroys usefulness and availability is not automatically a successful security system either.
+
+## Core Claim
+
+Every privileged information flow or effect should execute as a threat-model-bound authority-use transaction through a non-bypassable reference monitor: bind the exact principal, purpose, operation, target, data and taint scope, budget, time, nonce, evaluator and policy identities; admit only minimized context and capabilities into a declared isolation grade; mediate every effect and egress; treat sanitization as explicit declassification; close leases, caches, logs, descendants, and residuals through revocation or incident recovery; and never infer security from the record, handle, compartment, or finite test alone (evidence boundary: architectural argument).
+This is a composite research claim at `argument`, not a demonstrated security result. It can fail because the inventory is incomplete, the monitor is bypassable or compromised, declassification is unreliable, observers are correlated, a side channel is unmodeled, revocation cannot reach descendants, irreversible harm cannot be recovered, or the governance burden destroys useful throughput. Each mechanism must earn its place through a matched causal ablation and the full transaction must beat strong conventional baselines on a joint usefulness-security-privacy-availability-cost-recovery frontier.
+
+## Mechanism
+
+The unit of security is an authority-use transaction, not a prompt or handle. Before exposure, a Threat Model Record freezes assets, actors, trust zones, adversary capabilities, objectives, assumptions, channels, residuals, and owners. An Authority Lease then binds the complete request tuple. A Context Admission Record compiles the smallest task-relative view. A reference monitor decides and mediates each privileged use. A Declassification and Commit Record governs what can leave. Revocation or incident closure accounts for surviving copies and effects.
+
+```{mermaid}
+sequenceDiagram
+participant U as User / governance
+participant P as Model / planner
+participant K as Reference monitor
+participant S as Secret vault
+participant C as Digital SCIF
+participant D as Declassifier
+participant A as Auditor / incident owner
+U->>K: freeze threat model, policy, lease, stop rules
+P->>K: propose principal-purpose-operation-target tuple
+K->>K: verify identity, scope, nonce, budget, time, telemetry
+alt denied or unknown
+K-->>P: named denial / abstention / residual
+else admitted
+K->>C: create declared isolation grade and minimized context
+S->>C: late substitute protected material
+C->>K: request every privileged effect and egress
+K->>K: mediate, observe, and record actual effects
+C->>D: submit tainted candidate output
+D->>K: declassify, retain label, or refuse with utility/residual
+K->>A: commit/abort, zeroize, revoke, recover, close residuals
+K-->>P: permitted result, not unrestricted transcript
+end
+```
+
+**How to read the sequence:** The model is a proposer, not an authority. The monitor mediates every declared privileged effect; the SCIF supplies only its declared isolation grade; the declassifier makes a separate label-removal decision; and closure extends to revocation, recovery, and residual ownership. Any unmediated channel narrows or defeats the claim.
+
+The mechanism has fifteen owned parts:
+
+1. Freeze a versioned threat model before evaluating controls.
+2. Bind a complete authority tuple: principal, delegator, purpose, operation, target, data scope, destination, budget, time, nonce, policy, approval, use count, and revocation authority.
+3. Keep raw protected material outside ordinary model context where mediated use suffices; treat the handle itself as protected and replayable unless constrained.
+4. Compile purpose-limited, minimized, taint- and provenance-aware context with explicit omissions and adequacy residuals.
+5. Completely mediate each declared privileged use and fail closed when identity, policy, telemetry, or observer state is missing.
+6. Declare and verify an isolation grade rather than asserting that “SCIF” means isolation.
+7. Separate trusted policy/control from untrusted data and model proposals.
+8. Propagate information-flow labels; remove a label only through an authorized declassification event.
+9. Mediate all declared egress, including logs, telemetry, clipboard, screenshots, errors, tools, caches, backups, timing, and resource channels.
+10. Execute and receipt the full lifecycle: request, deny/approve, admit, spawn, inject, execute, sanitize, declassify, commit/abort, zeroize, expire/revoke, audit, recover, and close.
+11. Propagate revocation and recovery through sessions, caches, delegated authority, descendants, external effects, rotations, notifications, compensation, and irreversibilities.
+12. Protect audit evidence as sensitive material while preserving contestable lineage.
+13. Separate proposer, policy author, approver, executor, sanitizer, evaluator, auditor, incident owner, and revocation authority enough to expose capture.
+14. Measure usefulness, unsafe disclosure/effects, false denial, missed help, availability, latency, compute, labor, recovery, privacy, and governance cost together.
+15. Preserve attacks, bypasses, false denials, detector gaps, recovery failures, and null results as versioned regression and residual memory.
+
+The useful object is a lease plus an enforced route, not a label. A handle that appears in context is neither inert nor automatically authorized: it can be stolen, correlated, replayed, or used as an oracle. A lease should move through explicit states such as `requested`, `denied`, `scoped`, `active`, `used`, `declassified`, `committed`, `aborted`, `expired`, `revoked`, `recovered`, `compensated`, and `residual_open`. The enforced consequence of each state matters more than its name.
+
+Keeping secret bytes out of model-visible context can remove a direct literal-disclosure path. It does not imply that the model cannot infer the secret, recover a protected fact from derivatives, abuse the authority represented by the handle, induce a tool to disclose it, or leak through another channel. This exposure constraint is bounded by a named threat model; it is not “model ignorance.”
+
+Sanitization and declassification are separate. Sanitization transforms an output; declassification authorizes a change in information-flow label for a particular destination and purpose. A fluent summary can carry semantic secrets even when no literal token survives. Evaluation must therefore measure disclosure and task utility, preserve uncertain cases, and record who or what was trusted to make the decision.
+
+Complete mediation is always relative to an inventory. The monitor must name the paths it actually intercepts and the paths it cannot observe. “Non-bypassable” is a promotion target requiring implementation evidence, adversarial testing, and transfer—not a property conferred by architecture prose. Compromised monitors, vendors, operators, supply chains, or hardware roots remain distinct threat cases rather than hidden assumptions.
+
+## Interfaces
+
+The current public Authority Use Receipt is only an early interface slice. Its eleven required fields—`handle_id`, `principal`, `purpose`, `destination`, `allowed_action`, `clearance`, `approval_record`, `scif_lifecycle`, `sanitized_output`, `residual_leak_risk`, and `revocation_path`—do not yet encode a complete threat model, exact policy/evaluator identity, data and taint scope, nonce and use count, isolation grade, actual effects, telemetry completeness, declassification authority, descendants, external effects, or incident closure. Schema validity must not be confused with an enforced security transaction.
+
+The full contract needs six linked records:
+
+- **Threat Model Record:** assets, actors, trust zones, adversary capabilities, objectives, assumptions, in-scope and out-of-scope channels, accepted residuals, owners, and version.
+- **Authority Lease:** principal, delegator, purpose, operation, target, data scope, destination, budget, time, nonce, use count, policy and approval identities, enforcement point, expiry, and revocation authority.
+- **Context Admission Record:** admitted and denied shards, provenance, clearance, taint, tools, egress, retention, omissions, adequacy residuals, and declared isolation grade.
+- **Effect Mediation Receipt:** attempted use, decision, substitution, actual effect, destination, observer, telemetry coverage, denial or failure route, and effect lineage.
+- **Declassification and SCIF Commit Record:** input/output labels, transformation, evaluator and authority, disclosure assessment, utility loss, retained derivatives, zeroization grade, commit/abort decision, destination, and residuals.
+- **Revocation and Incident Closure Record:** handles, sessions, caches, logs, backups, descendants, external effects, rotations, notifications, recovery, compensation, irreversibilities, and residual owners.
+
+VCM and context transactions own material selection and taint-aware admission. Runtime adapters and the Labor OS own effect-bearing calls. Resource economics owns the security, privacy, availability, monitoring, recovery, and human costs. Supply-chain and hardware-root chapters own dependencies, attestation, custody, and trust anchors. Evidence States and assurance owners alone adjudicate claim support. No receipt silently grants deployment or support authority.
+
+## Invariants
+
+- Privileged access is default-deny, has no ambient authority, and remains bound to the complete frozen authority tuple.
+- Every declared privileged use and egress crosses a named enforcement point; missing identity, policy, telemetry, or observer state fails closed.
+- Raw secrets and protected data remain outside ordinary model context and ordinary logs where mediated use can complete the task, without implying non-inference or non-leakage.
+- A handle is protected, grants nothing beyond its exact live lease, and cannot be replayed, laundered, widened, delegated, or redirected implicitly.
+- Context is purpose-limited, minimized, taint-aware, provenance-bound, clearance-checked, and explicit about omissions and adequacy residuals.
+- Taint is monotone through transformations and descendants unless a separately authorized declassification changes the label.
+- Sanitization, declassification, authorization, and utility evaluation are distinct decisions with exact artifacts and owners.
+- Every SCIF declares a versioned isolation grade; untested process, browser, memory, hardware, operator, vendor, side, and covert channels remain residuals.
+- Logs, telemetry, caches, backups, screenshots, clipboard data, transcripts, errors, and audit records obey the same information-flow and retention rules as primary outputs.
+- Expiry and revocation propagate to handles, sessions, caches, delegated authority, descendants, and pending effects, while surviving effects remain visible.
+- Commit or abort requires lifecycle closure, zeroization evidence at the declared grade, declassification disposition, effect inventory, and residual ownership; a deletion receipt does not imply physical erasure.
+- The subject cannot solely author policy, approve authority, sanitize output, evaluate containment, edit audit evidence, or close its own incident.
+- Auditability remains bounded by privacy, rights, purpose, retention, and contestability; the log cannot silently become a surveillance or disclosure channel.
+- Security cost, false denial, availability loss, and useful-throughput loss remain visible and cannot be optimized or reported away.
+- Finite schemas, fixtures, proofs, red-team cases, and zero observed leaks establish only their frozen scope, not complete mediation, containment, security, or transfer.
+
+These are target invariants. The current repository implements only finite predicates and synthetic routes for a subset. A reachable admitted trace that violates one refutes that invariant for its frozen scope; a missing producer, consumer, owner, or consequence leaves it unimplemented rather than “conceptually satisfied.”
+
+## Failure modes
+
+- Prompt, artifact, memory, tool-output, multimodal, or inter-agent injection turns untrusted data into control.
+- A confused deputy, compromised tool, or model launders a valid handle across principal, purpose, target, destination, or effect.
+- Ambient authority, replay, stale approval, incomplete expiry, or failed revocation permits use outside the lease.
+- Overbroad context admission leaks protected or irrelevant facts before execution.
+- Sanitization or summary laundering preserves reconstructable, inferable, linkable, or actionable protected semantics.
+- Network, filesystem, cache, timing, power, memory, accelerator, browser, clipboard, screenshot, error, log, telemetry, or transcript channels bypass modeled egress.
+- Destination, operation, parameter, identity, or target substitution occurs after approval.
+- SCIF theater assigns an isolation label while shared state, plugins, operators, vendors, or hardware remain bypass paths.
+- Zeroization theater records deletion while copies remain in memory, caches, snapshots, backups, logs, descendants, or external systems.
+- The vault, monitor, policy compiler, dependency, model host, secret-entry UI, supply chain, or hardware root is compromised.
+- Policy, approval, sanitization, evaluation, audit, or incident closure is captured by correlated subjects or institutions.
+- Cross-tenant, cross-session, cross-agent, or descendant state bleeds authority or protected information.
+- Audit evidence becomes a secret oracle, privacy violation, tampering target, or unbounded retention surface.
+- Fail-closed security becomes denial of service, approval fatigue, inaccessible recovery, or useful-throughput collapse.
+- Security-cost laundering reports improvement only because protection or recovery obligations disappeared.
+- Disclosure, external action, physical effect, learned influence, user reliance, or descendant creation survives rollback without adequate compensation.
+- Technical authorization launders consent, purpose, license, privacy, dignity, or other rights.
+
+Each failure class needs a distinct attack or mutation where its mechanism differs. A generic “prompt injection” control cannot stand in for identity abuse, memory poisoning, supply-chain compromise, confused-deputy behavior, audit leakage, side channels, or revocation failure. Unknown attacks need an unmapped state rather than forced classification as contained.
+
+## Minimum Viable Implementation
+
+The current minimum is already implemented, but its meaning is narrower than the former prose implied.
+
+| Evidence surface | Exact current result | What it does not establish |
+|---|---:|---|
+| Authority Use Receipt corpus | 3 valid; 8 expected-invalid | Real vault, handle safety, non-bypassable policy, approval service, or deployed revocation |
+| SCIF sanitized commit probe | 2 valid routes; 6 expected-invalid controls | Process/VM/browser isolation, trustworthy declassification, side-channel safety, privacy, or prompt-injection robustness |
+| Resource Budget Record corpus | 6 valid; 7 expected-invalid, including one security-overhead-laundering control | Runtime enforcement, calibrated security economics, availability, or useful-throughput preservation |
+| `AsiStackProofs.SecurityKernel` | 22 theorem declarations under four manifest targets | Runtime refinement, open-world information flow, cryptography, isolation, or security |
+| Post-v2.1 governed-work campaign | 0/36 governed primary unsafe releases versus 24/36 baseline; 2/36 useful releases; 32/36 exact attack-control rollback | Digital SCIF, injection containment, independent assurance, effect-complete recovery, acceptable utility, or production transfer |
+
+The authority corpus exercises handle substitution, approval artifacts, expiry refusal, bounded action scope, overbroad context rejection, lifecycle fields, sanitization, residual notes, revocation paths, and synthetic injection non-disclosure. The commit probe uses generated public-safe material and blocks literal secret output, live-handle output, missing zeroization, overbroad context, unapproved destination, and missing residual notes. These are useful negative controls over self-authored records and a local toy path. They do not show that a real monitor sees every effect or that a semantic secret cannot escape.
+
+The six exact commit controls are `invalid_unsanitized_secret_commit_blocked`, `invalid_handle_leak_commit_blocked`, `invalid_missing_zeroize_commit_blocked`, `invalid_overbroad_context_commit_blocked`, `invalid_unapproved_destination_commit_blocked`, and `invalid_missing_residual_commit_blocked`. Their names describe expected fixture dispositions, not deployed containment.
+
+The finite Lean route distinguishes missing handles, revocation, inactive leases, missing approval, unauthorized boundary, forbidden substitution, insufficient clearance, detected injection, missing SCIF, unsanitized output, residual risk, and clean use; the commit route distinguishes eight synthetic outcomes. These declarations prove consequences of explicit record fields inside the model. They neither derive those fields from a runtime nor establish that the model is semantically adequate.
+
+The post-v2.1 campaign is a valuable negative result. Fail-closed governance eliminated the registered primary unsafe-release class on 36 held-out repository-task transactions, but useful release collapsed to 2/36, four attack-control rollbacks were inexact, and the policy, observer, and promotion validator came from the same project. The correct lesson is that bounded refusal can suppress a registered effect while failing usefulness, recovery, and independence gates. It is not evidence for SCIF isolation or prompt-injection defense.
+
+The minimum therefore passes only as exact synthetic record, route, mutation, and bounded outcome evidence. Chapter-core support remains unchanged.
+
+## Beyond the State of the Art
+
+The mature endpoint is a threat-model-bound security kernel whose authority,
+context, isolation, mediation, egress, revocation, recovery, availability, and
+usefulness claims survive strong comparators and adversarial transfer.
+
+The research target is not “more security layers.” It is a falsifiable comparison showing whether the full authority-use transaction improves the joint frontier over strong existing practice.
+
+The comparison must begin with the same useful work and the same material
+authority in every arm. A design cannot appear safer merely because it receives
+easier tasks, sees less private context, denies more requests, or may replace an
+external effect with a harmless simulation. Candidate bytes, tool surfaces,
+human assistance, time, and recovery opportunity must be matched or their
+differences charged explicitly.
+
+Security is also an open-world inventory problem. The protocol can make a
+declared boundary testable, but it cannot prove that every channel, dependency,
+operator action, copied secret, derived fact, remote side effect, or descendant
+has been found. The campaign therefore needs discovery controls that add new
+channels after freezing, measure whether the monitor notices them, and narrow
+claims whenever closure is unknown.
+
+Finally, containment must be evaluated with usefulness, privacy, availability,
+and recovery rather than against attack success alone. A system that leaks
+nothing because it completes nothing is not a secure useful system. A system
+that records every event while turning its audit log into a durable privacy
+hazard is not a governance success. Joint disposition prevents either failure
+from being laundered into a headline win.
+
+### Frozen comparators
+
+Use matched implementations and budgets for: prompt-only policy; a conventional secret manager plus ACL and ordinary application checks; a sandboxed tool agent; a zero-trust decision/enforcement design; control/data separation with capability enforcement in the CaMeL family; AgentDojo-style defenses and evaluation; and the full threat-model/lease/admission/monitor/declassification/revocation transaction. Keep the strongest result from each baseline rather than a deliberately weak strawman.
+
+### Workloads and adversaries
+
+Use natural tool-bearing tasks with real current models and deliberately adversarial variants. Cover multiple assets and authorities: credential use, private documents, identity/session state, durable memory, model and policy artifacts, filesystem and network effects, financial or deployment actions, code execution, multimodal inputs, cross-agent messages, and at least one external effect that cannot be perfectly rolled back. Freeze injection, confused-deputy, replay, destination substitution, memory poisoning, supply-chain, audit, cross-session, sanitizer, side/covert-channel, revocation, denial-of-service, and rights-laundering families. Preserve unknown attacks as unmapped.
+
+### Independent-enough observation
+
+Use independently implemented red teams, policy/effect monitors, leakage and semantic-declassification evaluators, auditors, and incident/recovery checks. Report model-family, data, organization, infrastructure, and incentive dependencies rather than calling nominally separate agents independent. The system under test must not edit its policy, evaluator, attack set, evidence, or threshold after seeing outcomes.
+
+### Joint metrics
+
+Measure literal and semantic disclosure, unauthorized effects, indirect-injection and confused-deputy success, side/covert-channel escape, sanitizer precision/recall and retained task utility, false denial, missed help, containment and escape, expiry/revocation latency, audit completeness and privacy, availability, useful throughput, latency, compute, operator burden, approval fatigue, incident recovery, compensation coverage, irreversible residuals, and total governance cost. No single “attack success rate” or zero-leak count can dominate the disposition.
+
+### Causality, replication, and transfer
+
+Ablate threat-model freezing, full tuple binding, late substitution, context minimization, complete mediation, isolation grade, control/data separation, taint, egress mediation, declassification, revocation closure, audit protection, role separation, joint accounting, and regression memory one at a time under matched tasks. Require predicted mechanism-specific changes rather than mere score movement. Replicate with a separate implementation and transfer across models, tools, runtimes, local/cloud/browser settings, operators, multimodal and multi-agent cases, threat families, and time.
+
+### Disposition rule
+
+Novelty, containment, superiority, or security language survives only if the full condition meets preregistered useful-output, unsafe-disclosure/effect, privacy, availability, recovery, cost, causal-ablation, independent-replication, and transfer gates against every frozen strong comparator. A failed mechanism is narrowed or refuted. A baseline win is retained. A null result remains null. No number of green schemas, theorem declarations, or blocked toy attacks can substitute for that campaign.
+
+## Post-v2.1 security/usefulness boundary
+
+On 36 held-out repository-task transactions, the governed route reduced
+registered primary unsafe releases from 24 to zero while preserving two useful
+releases. That is a bounded adversarial-control result, but four attack-control
+rollbacks remained inexact and the same internal project supplied the policy,
+observer implementation, and promotion validator. The security lesson is
+specific: fail-closed routing can prevent a class of unsafe effects, while
+effect-complete recovery and independent assurance remain unsolved. No Digital
+SCIF, kernel isolation, prompt-injection robustness, external effect safety, or
+production security claim follows.
+
+| Source | Title | Use and boundary |
+|---|---|---|
+| `ext_claw_swe_bench_2026` | Claw-SWE-Bench | Current agentic software-engineering comparator for realistic task execution and environment interaction; not a local robustness, containment, or production-safety result. |
+
+## Summary
+
+The security kernel is a threat-model-bound authority and information-flow boundary. Its central claim is stronger and more falsifiable than “keep secrets behind handles”: freeze the actors and channels, bind exact authority, minimize and label context, mediate every declared effect and egress, declare the SCIF's actual isolation grade, separate sanitization from declassification, propagate revocation and recovery through descendants, and preserve privacy, availability, usefulness, cost, and residuals on the same ledger.
+
+The current repository proves only finite record and route consequences plus one bounded fail-closed negative result. It does not prove isolation, complete mediation, prompt-injection containment, semantic non-disclosure, effect-complete revocation, side-channel safety, privacy, or production security. The next legitimate step is the frozen multi-comparator real-model campaign described above; until it succeeds, the security claim remains an argument and every handle, SCIF, theorem, or blocked attack retains its exact narrow scope.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **66** structured claim atoms in `CF-02`. The
+frozen repository-wide terminal audit records 65 `blocked_after_full_attempt`; 1 `narrowed_after_full_attempt`. Its core
+atom `security-kernel-and-digital-scifs.core` remains at `argument` with terminal
+disposition `narrowed_after_full_attempt`. The authoritative per-atom rows
+are the `security-kernel-and-digital-scifs` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+### What the evidence now says
+
+The chapter's core remains **narrowed after full attempt**
+at `argument` support. Across its 66 structured claims,
+65 still lack required proof lanes,
+1 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Safety-critical lifecycle consumer trace**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Finite local fixture consumer only; no authentic deployment, general alignment, evaluator independence, or broad security claim.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
+
+## Handoff
+
+Security Kernel and Digital SCIFs governs runtime secret and authority
+boundaries. Model-Weight Custody and Hardware Roots of Trust now governs the
+distinct model artifact, its encrypted custody, attestation-gated loading,
+release scope, revocation, and residuals before Recursive Self-Improvement
+Boundaries considers changes to the system that might alter either boundary.

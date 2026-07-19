@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/x_article_manifest.schema.json",
+  "title": "ASI Stack maintained X Article manifest",
+  "type": "object",
+  "required": ["schema_version", "derivative_id", "status", "canonical_live_book_url", "latest_public_book_release", "article", "header", "composer", "bound_inputs", "artifacts", "staleness", "publication", "rights", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.x_article_manifest.v2"},
+    "derivative_id": {"const": "asi-stack-x-article-synopsis-2026-07-16"},
+    "status": {"const": "source_ready_composer_refresh_required"},
+    "canonical_live_book_url": {"const": "https://corbensorenson.github.io/asi-stack-book/"},
+    "latest_public_book_release": {"const": "v2.3.0"},
+    "article": {
+      "type": "object",
+      "required": ["title", "visible_word_count", "maximum_visible_word_count", "first_visible_body_line", "claim_marker_count", "claim_markers", "crosswalk_claim_count", "negative_results_required_and_present"],
+      "properties": {
+        "visible_word_count": {"type": "integer", "minimum": 3000, "maximum": 9999},
+        "maximum_visible_word_count": {"const": 9999},
+        "first_visible_body_line": {"const": "https://corbensorenson.github.io/asi-stack-book/"},
+        "claim_marker_count": {"const": 24},
+        "crosswalk_claim_count": {"const": 24},
+        "negative_results_required_and_present": {"const": true}
+      }
+    },
+    "header": {
+      "type": "object",
+      "required": ["dimensions", "aspect_ratio", "mode", "alt_text_characters", "desktop_preview", "mobile_preview", "platform_alt_text_control"],
+      "properties": {
+        "dimensions": {"const": [2000, 800]},
+        "aspect_ratio": {"const": "5:2"},
+        "mode": {"const": "RGB"},
+        "alt_text_characters": {"type": "integer", "minimum": 80, "maximum": 1000},
+        "desktop_preview": {"const": "passed"},
+        "mobile_preview": {"const": "passed"},
+        "platform_alt_text_control": {"const": "not_exposed_exact_residual"}
+      }
+    },
+    "composer": {
+      "type": "object",
+      "required": ["draft_id", "state", "composer_reported_word_count", "top_link_passed", "header_upload_passed", "publication_decision"],
+      "properties": {
+        "state": {"const": "historical_draft_stale_after_source_refresh"},
+        "publication_decision": {"const": "refresh_required_before_publish"}
+      }
+    },
+    "bound_inputs": {"type": "object", "minProperties": 6},
+    "artifacts": {"type": "object", "minProperties": 8},
+    "staleness": {
+      "type": "object",
+      "required": ["state", "triggers", "successor_authority", "release_rule"],
+      "properties": {"state": {"const": "source_current_platform_draft_stale"}}
+    },
+    "publication": {
+      "type": "object",
+      "required": ["external_publication_authorized", "article_url", "state"],
+      "properties": {
+        "external_publication_authorized": {"const": false},
+        "article_url": {"type": "null"},
+        "state": {"const": "source_ready_composer_refresh_required"}
+      }
+    },
+    "rights": {
+      "type": "object",
+      "required": ["authority", "public_license_grant", "state"],
+      "properties": {"public_license_grant": {"const": false}}
+    },
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 4}
+  }
+}

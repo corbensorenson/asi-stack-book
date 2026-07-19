@@ -1,0 +1,678 @@
+# Data Engines, Continual Learning, and Unlearning
+
+Learning systems depend on decisions about what gets to count as experience.
+Those decisions can disappear inside an import script, replay buffer, or
+synthetic-example generator, even though they determine which history will
+influence later behavior and which claims later appear plausible.
+
+The question is not whether a source is real, synthetic, old, or new. It is
+whether anyone can explain why it entered the learning path, what it was
+allowed to influence, and what evidence would require it to leave or quarantine
+it.
+
+Deletion makes the gap visible. Removing a row from a table does not show that
+its effects are gone from checkpoints, caches, retrieval stores, distilled
+artifacts, or published results. An honest system names the paths it checked,
+the descendants it can identify, and the paths it still cannot verify.
+
+Synthetic data creates the converse tension: retaining real material can
+protect coverage, while retention can conflict with privacy, freshness,
+poisoning response, or revocation. A careful admissions record keeps those
+trade-offs visible and grants only bounded learning authority rather than
+making a safe default out of an unresolved conflict.
+
+## Problem
+
+A self-improving system has to learn from something: observations, human
+feedback, task traces, benchmark failures, tool results, retrieved documents,
+generated examples, replayed trajectories, or curated datasets. Each input can
+carry rights, provenance, contamination, quality, privacy, safety, freshness,
+and distributional consequences. When those consequences remain implicit, the
+learning loop can change because of data that nobody can later justify,
+reproduce, revoke, or distinguish from its descendants.
+
+The operational difficulty compounds over time. A generated example can be
+mixed with real material, transformed into a summary, used to train a model,
+captured in a checkpoint, copied into a retrieval store, distilled into another
+model, and cited as evidence of a later improvement. A deletion request can
+arrive after each of those steps. A benchmark item can leak through either a
+raw source or a semantically similar synthetic one. A data policy that looks
+helpful for distributional coverage can be harmful for minimization, poisoning
+response, cost, or revocation. The architecture requires a lifecycle that
+exposes those conflicts before they become invisible training history.
+
+## Why existing approaches are insufficient
+
+Many pipelines divide responsibility by tool: ingestion validates a file,
+training consumes a dataset, evaluation holds out examples, storage applies a
+retention rule, and a later privacy process receives deletion requests. That
+division makes local operations easier but fails to express a single answer to
+the most important questions: what did the input affect, why was it admitted,
+which exclusions were checked, and which descendants remain after a change in
+authority or policy?
+
+Machine-unlearning methods can improve the cost of retraining selected paths,
+but a request route is not a proof that every downstream representation has
+been erased. Synthetic-data research likewise does not support a universal
+rule. Recursive replacement can lose distributional support under its stated
+conditions, while accumulation can produce different behavior in other stated
+conditions. Neither observation resolves provenance spoofing, semantic
+leakage, privacy, poisoning, legal authority, or task-specific utility. A
+governed stack needs those concerns in one record and must preserve the
+residuals when available evidence cannot settle them.
+
+### Strongest-neighbor comparison
+
+The distinctive claim is not that the stack invents provenance, synthetic
+data, continual learning, or unlearning. Its proposed delta is to join their
+decision surfaces without collapsing their evidence. SISA supplies a
+training-time structure that can bound retraining work. Model-collapse and
+accumulation studies show that synthetic-data policy changes the distribution
+and retention tradeoff. MUSE and OpenUnlearning separate multiple behavioral
+and privacy-facing evaluations, while the benchmark critique warns that those
+scores can still be weak proxies. QCSA contributes identity-preserving
+migration and rollback records. The data engine turns these into separately
+owned lifecycle claims linked by a full-state transaction.
+
+| Comparator | Strong capability | Residual boundary | ASI Stack design delta |
+|---|---|---|---|
+| SISA machine unlearning | Training-time sharding, isolation, slicing, and aggregation can reduce bounded retraining cost. | Efficiency and approximate removal on a chosen structure do not prove closure across every descendant, privacy property, or external store. | Bind a deletion method to a prospective state inventory, checkpoint authority, descendant graph, and claim partition. |
+| Recursive replacement and data accumulation | Demonstrate that replacement and accumulation can have materially different distributional behavior under stated assumptions. | Neither policy is universally safe, private, fresh, revocable, or optimal. | Treat replacement, accumulation, replay, and retraining as registered arms with utility, retention, contamination, deletion, compute, and residual outcomes reported together. |
+| MUSE, benchmark critique, and OpenUnlearning | Separate memorization, privacy leakage, retained utility, scale, sequential requests, method execution, and metric faithfulness. | Behavioral scores remain target- and evaluator-dependent and can be optimistic under benign perturbation. | Refuse a generic “forgotten” state; record behavioral cohort change, influence evidence, privacy evidence, lineage propagation, and storage erasure independently. |
+| QCSA lifecycle-safe migration | Preserves identity through readdressing, merge/split lineage, compatibility checks, and rollback. | Identity-safe migration is not learning, causal removal, or erasure. | Include semantic addresses and migration descendants in the inventory while keeping them outside unlearning claims unless separately verified. |
+| ASI Stack P3 local campaign | Real small-network optimizer/scheduler mutation, prospective checkpoint selection, 24-surface inventory, exact rollback, and three-seed deletion-aware comparison. | Synthetic local scope, internal evaluation, no target-gain threshold hit, proxy-only influence signal, and retained source storage. | Preserve the negative update disposition and use the campaign as an executable bridge for full-state and claim-separation semantics, not as a promotion result. |
+
+This comparison makes two ownership boundaries explicit. Full-state rollback is
+an identity claim over declared surfaces; it is not evidence that the update
+was useful. Unlearning is a family of causal, behavioral, privacy, lineage, and
+storage claims; it is not a synonym for exclusion from a retraining corpus.
+The architecture adds value only if it can keep those statements distinct when
+one is favorable and another remains false or unmeasured.
+
+## Core Claim
+
+Data Engines, Continual Learning, and Unlearning owns a datum-, cohort-, provenance-, rights-, split-, contamination-, learning-lane-, retention-, checkpoint-authority-, full-state-inventory-, descendant-, deletion-request-, claim-axis-, consumer-, environment-, and time-specific **Data-and-Descendant Custody Lease**: before learning or deletion, it binds admissible use, evaluation exclusions, synthetic and transformation lineage, coverage and distribution residuals, model/optimizer/scheduler/RNG/cache/backup/descendant state, prospective checkpoint authority, retention and replay, deletion propagation, verification, rollback, expiry, and terminal custody; behavioral cohort change, causal influence reduction, privacy leakage reduction, lineage invalidation, legal compliance, and storage or backup erasure remain separate claims, and no receipt, checksum, exclusion, invalidation, benchmark score, rollback match, or synthetic campaign alone establishes model quality, forgetting, privacy, erasure, safety, readiness, deployment, support, transfer, or SOTA (evidence boundary: architectural argument).
+The in-prose external anchors
+`ext_bourtoule_machine_unlearning_2021`, `ext_shumailov_model_collapse_2023`,
+and `ext_gerstgrasser_data_accumulation_2024` provide source-reviewed method and
+risk context. `theseus_synthetic_data_curation` is a pinned implementation
+reference. No assigned source has been reproduced in this repository, and no
+receipt, proof, or source note turns an intake decision into evidence of model
+quality, privacy, safety, deletion completeness, or capability improvement.
+
+## Mechanism
+
+The data engine begins with a data-admission receipt before a candidate may
+enter a declared learning or evaluation lane. The receipt identifies the
+candidate and its origin, names an authority or license reference, classifies
+provenance, records real and synthetic lineage, identifies the relevant
+holdout and benchmark exclusions, records contamination checks, declares
+retention and deletion scope, links evaluation references, names residuals,
+and records an admission decision plus non-claims. The receipt is not a claim
+that its fields are true. It is the minimum shape needed to make a later review
+possible.
+
+The first routing rule is deliberately conservative. Missing provenance or
+authority blocks ordinary admission. Missing split exclusions or contamination
+controls routes the candidate to quarantine. Missing retention, deletion,
+evaluation, or residual records leaves it experimental rather than making it
+ordinary training input. The finite version of those rules is mechanized in
+`AsiStackProofs.DataEngines`; its scope is branch behavior over declared fields,
+not inspection of a corpus or validation of a data source.
+
+### Eighteen-stage custody lifecycle
+
+The lease makes the mechanism eighteen reviewable stages rather than one
+admission decision. It (1) freezes consumer, purpose, cohort, learning lane,
+claim axes, rights, state inventory, and deletion scope; (2) binds source,
+collector, authority, acquisition, digests, schema, location, transformations,
+generator, reviewer, and decision authority; (3) records use, jurisdiction,
+affected-party, privacy, retention, disclosure, transfer, revocation, deletion,
+and appeal constraints; (4) distinguishes source, human, synthetic, augmented,
+translated, summarized, distilled, retrieved, replayed, inferred, and mixed
+material; and (5) measures composition, duplication, coverage, tails,
+subgroups, freshness, poisoning, privacy, rights, and shift.
+
+It then (6) freezes train, validation, public-calibration, hidden-holdout,
+contamination, temporal, adversarial, deletion, and transfer partitions; (7)
+routes missing or uncertain controls to block, quarantine, review, or
+experimental-only use; (8) versions every custody transition; (9) compares
+replacement, accumulation, replay, reweighting, synthetic augmentation,
+quarantine, retraining, sharding, fine-tuning, and no-change; (10) inventories
+model through descendant state; (11) fixes checkpoint and rollback authority
+prospectively; and (12) runs frozen, seeded campaigns with natural tasks,
+strong baselines, hidden holdouts, regressions, tails, and full costs.
+
+For deletion, it (13) binds request authority, target, basis, deadline, method,
+inventory, descendants, claim axes, verification, exceptions, and residuals;
+(14) adjudicates behavioral, influence, privacy, lineage, legal, storage,
+backup, and external-descendant claims separately; (15) propagates through
+datasets, checkpoints, adapters, caches, retrieval, indexes, evaluations,
+distillates, publications, releases, and transfers; and (16) verifies
+postconditions and effect-complete rollback or retraining. Finally, it (17)
+monitors natural utility, calibration, tails, forgetting, interference,
+privacy, poisoning, drift, incidents, sequential deletion, regrowth, residual
+age, and descendants, then (18) expires, narrows, refutes, revokes, restores,
+archives, or retires the lease after any material change.
+
+```{mermaid}
+flowchart LR
+A["Candidate data or feedback"] --> B["Receipt: origin, authority, lineage"]
+B --> C{"Provenance and authority recorded?"}
+C -- "no" --> X["Block and retain reason"]
+C -- "yes" --> D{"Split exclusions and contamination checks recorded?"}
+D -- "no" --> Q["Quarantine for review"]
+D -- "yes" --> E["Retention, deletion scope, evaluation refs, residuals"]
+E --> F{"Lifecycle record complete?"}
+F -- "no" --> R["Experimental-only lane"]
+F -- "yes" --> G["Eligible for a declared bounded use"]
+G --> H["Independent training or evaluation evidence"]
+H --> I["Separate governance and claim-promotion decision"]
+```
+
+**What the data-admission route shows:** provenance and authority precede
+ordinary handling; exclusion and contamination gaps do not disappear into a
+generic queue; and even a complete record establishes only bounded eligibility
+for a declared use. It does not show that a model should train, that the data
+are high quality, or that any resulting capability deserves promotion.
+
+Synthetic-data candidates add two required choices. First, the receipt records
+the generation lineage and the policy under consideration: replacement,
+accumulation, targeted replay, quarantine, or retraining. Second, it records
+the metric that could expose a failure in the declared workload, such as heldout
+task retention, tail coverage, calibration, contamination, or a regression
+suite. The policy has competing costs. Accumulation may retain useful real-data
+support while preserving poisonous, private, stale, or revoked material.
+Replacement may limit retention while destroying coverage. A receipt makes the
+tradeoff inspectable instead of silently selecting one side.
+
+Deletion and revocation are lifecycle events, not a completed state inferred
+from a request. The engine records the affected source and version, the method
+chosen, the declared downstream scope, the evaluation planned, and every
+unverified descendant class. That makes it possible to say "request received,
+checkpoint path rerun, retrieval cache unverified" without pretending that a
+single verb, *unlearn*, settled the matter.
+
+### Atlas epochs and identity-safe migration
+
+QCSA separates three update timescales. Task-local resolution, questioning, and
+routing are fast and ephemeral; resolver and codebook learning is medium-term
+candidate state; atlas authority changes only through a slow governed epoch
+release. Stable SOIDs remain independent throughout. This prevents an
+embedding or cluster update from silently redefining every object that used the
+old address.
+
+Each atlas release needs a migration record from old paths to new paths,
+consumer compatibility tests, collision and boundary reports, shadow
+evaluation, staged authority, rollback, and explicit known breaks. Its central
+invariant is referential: an old address must resolve under migration to the
+same SOID or a typed failure. Silent resolution to a different identity is
+forbidden. Merge and split operations preserve aliases, tombstones, source
+evidence, disputed states, descendant mappings, and historical receipts.
+
+These records strengthen the full-state principle, but they do not collapse
+distinct deletion claims. In the bounded evaluation, full QCSA preserved all
+same/fail/merge/split/stale migration fixtures; removing migration compatibility
+reduced task-decision accuracy to 0.833333 and compatibility to zero. The
+vertical trace then migrated one old address to a new address with the same
+SOID, inventoried context/cache/backup/receipt descendants, and restored a real
+temporary file byte-for-byte. Silent retargeting and incomplete lifecycle
+records failed closed.
+
+That is exact local migration and rollback evidence, not learning or
+unlearning. The post-v2.3 review accepts `synthetic-test-backed` support only
+for the exact non-core migration-compatibility ablation; readdressing an object
+is still not behavioral forgetting, causal
+influence removal, privacy erasure, storage erasure, or proof that every
+distributed descendant was deleted. The fixture has no optimizer, scheduler,
+RNG, model state, storage service, or privacy adversary. The core claim remains
+at `argument`.
+
+### Full-state update contract and worked trace
+
+The P3 campaign makes “state” prospective rather than retrospective. Before
+training, its inventory freezes 24 surfaces spanning model parameters and
+buffers; optimizer, scheduler, accumulated-gradient, sampler, and RNG state;
+dataset, preprocessing, code, environment, and evaluation configuration; best,
+final, released, shadow, and rollback checkpoints; inference and feature
+caches; lineage; and a local backup store. Each surface names identity,
+mutation, rollback, deletion, observation, ownership, and external scope. A
+future campaign may have more surfaces, but it may not discover a changed
+surface after outcomes and quietly exclude it from rollback.
+
+Checkpoint authority is also prospective. Validation target utility selects a
+candidate only while retained-family regression stays within the declared
+bound; ties use retained regression, earlier epoch, then digest. Test data does
+not select a checkpoint or hyperparameter, and the final checkpoint remains
+visible even when the best eligible checkpoint differs. Six of fifteen arms
+showed that disagreement, demonstrating why “the trained model” is an
+underspecified identity.
+
+| Trace step | Observed campaign fact | Admissible statement | Prohibited upgrade |
+|---|---|---|---|
+| Freeze | Three seeds, five arms, 24 state surfaces, authority rule, stop conditions, and claim partition were preregistered. | The evaluated transaction boundary was fixed before outcome inspection. | The inventory is complete for production or external systems. |
+| Mutate | Real model, optimizer, scheduler, RNG, cache, checkpoint, backup, and lineage surfaces changed in the local disposable run. | The campaign exercised more than parameter-only rollback. | The small network represents foundation-model continual learning. |
+| Select | Validation-only authority chose the eligible checkpoint; six best/final disagreements remained visible. | The selected identity followed the prospective rule. | The selected checkpoint is useful, safe, or deployment-ready. |
+| Roll back | All 15 transactions restored the 24 declared surfaces exactly. | Local declared-surface rollback identity passed 15/15. | Remote effects, production services, firmware, or every possible descendant were restored. |
+| Delete-aware retrain | Behavioral cohort changes were 4, 0, and 1; lineage invalidation propagated in all three seeds. | Behavioral change and lineage propagation occurred on this frozen cohort. | Influence, privacy, legal, storage, or backup erasure occurred. |
+| Decide | Zero of nine eligible challenger seed-arms met the registered 0.05 target-utility gain. | The update disposition is `no_change`; rollback and unlearning evidence are narrow. | Activity volume, exact rollback, or deletion-aware training justifies capability promotion. |
+
+The worked trace is deliberately asymmetric. Exact rollback earns a strong
+statement inside its inventory, while the update earns no positive disposition
+and the unlearning result remains partitioned. That is the desired governance
+behavior: a technically successful transaction control does not rescue a weak
+learning outcome, and a changed cohort prediction does not erase retained
+storage.
+
+## Interfaces
+
+The custody lease has twelve explicit neighbors. Policy Optimization consumes
+lease-bound candidates and returns update, checkpoint, rollback, and evidence
+records without rewriting custody truth. Artifact Graphs owns replayable
+lineage; Benchmark Ratchets owns partitions, exposure, contamination,
+comparators, and regressions; Supply Chain and Weight Custody own artifact,
+replica, backup, transfer, hardware, and key custody. Virtual Context, context
+transactions, procedural memory, retrieval, and tools consume purpose-, taint-,
+retention-, and revocation-bound artifacts rather than free-floating examples.
+
+Evidence States, Claim Ledgers, Executable Specifications, and Lean retain
+claim-axis evidence and finite control consequences. Stable Capability Fields,
+Capability Replacement, Readiness, Residual Escrow, and Release Governance own
+capability belief, rollback acceptance, deployment, and publication. Security
+and runtime permissions execute access, disclosure, transfer, and deletion but
+cannot infer lawful authority or erasure from execution. Intent,
+constitutional, moral-uncertainty, and governance layers own affected-party,
+rights, appeal, and normative constraints. Resource Economics receives all
+compute, storage, review, privacy, deletion, retraining, rollback, and
+externality costs. Incident response may revoke or narrow a lease. The Living
+Book consumes only adjudicated public-safe records and cannot promote a claim
+by publishing it.
+
+## Invariants
+
+Eighteen invariants prevent evidence laundering. Eligibility is exact to the
+datum or cohort, consumer, purpose, learning lane, rights, partitions,
+retention, state inventory, claim axes, environment, and time. Metadata,
+checksums, provenance assertions, consent, licenses, or authority fields do not
+self-prove truth, completeness, integrity, lawful use, representativeness,
+fitness, privacy, or safety. Every transformation retains lineage and residuals.
+Every train, validation, public-calibration, hidden-holdout, contamination,
+temporal, adversarial, deletion, and transfer partition and exposure remains
+distinct and frozen. Every candidate policy remains explicit.
+
+Results preserve complete denominators, failures, exclusions, seeds, and
+history. Full state includes model, adapters, optimizer, scheduler, scaler,
+RNG, sampler, dataloader, curriculum, checkpoints, caches, retrieval, indexes,
+logs, backups, replicas, credentials, evaluations, publications, and
+descendants. Checkpoint, rollback, deletion, verification, appeal, exception,
+and terminal authorities are prospective. Behavioral, influence, privacy,
+lineage, legal, storage, backup, and external-descendant claims stay separate;
+requests, exclusions, changed outputs, lower memorization, tombstones,
+checksums, invalidations, and retraining receipts cannot cross-promote them.
+
+Deletion propagates through declared descendants while unreachable transfers,
+publications, replicas, backups, and regenerating processes remain residuals.
+Storage erasure requires identity-bound action, replica and backup scope,
+regeneration controls, independently checked postconditions, and residuals.
+Custody operations cannot promote capability, benchmark, privacy, safety,
+readiness, deployment, support, transfer, legal, or SOTA claims. Conclusions
+remain scoped to the exact data, algorithms, models, seeds, checkpoints,
+metrics, evaluators, consumers, institutions, environments, descendants, and
+time tested. Natural utility, calibration, tails, forgetting, interference,
+privacy, poisoning, drift, sequential deletion, regrowth, closure, latency,
+and full cost remain jointly visible. Rollback covers the frozen inventory and
+external effects or residualizes them. Material change expires the lease.
+Schemas, probes, finite reductions, digest matches, and validators prove only
+their exact artifact boundary.
+
+## Failure modes
+
+The failure inventory is correspondingly broad: provenance laundering;
+metadata theater; exact-overlap checks that miss semantic leakage; synthetic
+replacement tail collapse or indiscriminate accumulation; curation Goodhart;
+partition laundering; state-inventory truncation; and checkpoint-authority
+drift. The deletion family includes behavioral-forgetting-to-influence
+laundering, privacy laundering, lineage-to-storage laundering, deletion
+theater, retraining theater, and rollback theater. Aggregate utility can hide
+tails, forgetting, interference, privacy, poisoning, drift, or sequential
+failure. Promotion laundering, cost externalization, and unsupported transfer
+can then convert a well-formed local record into claims it never tested.
+
+These are not synonyms. A system can preserve provenance and still have bad
+rights, coverage, or privacy; delete source storage and still retain influence;
+change behavior while retaining storage; restore a checkpoint digest while
+external effects persist; or improve an average while harming a tail. Every
+failure therefore has its own observable, terminal disposition, and residual
+instead of sharing a generic pass flag.
+
+## Consequences, objections, and surviving residuals
+
+Full-state accounting changes what a learning result costs. Saving parameters
+is insufficient when optimizer momentum, scheduler position, RNG streams,
+sampler order, cached features, release pointers, or backups can change later
+behavior or defeat rollback. The inventory therefore grows with the system,
+and exactness is always indexed to an inventory version. This creates storage
+and observation overhead, but omitting the overhead does not make the hidden
+state disappear.
+
+Prospective checkpoint authority also changes the meaning of improvement. A
+best validation checkpoint, final checkpoint, released checkpoint, and rollback
+checkpoint are different governed identities. Keeping all four prevents a
+late, favorable test result from selecting the artifact after the fact. It
+also exposes a practical consequence: deployment tooling must carry authority
+pointers rather than assuming the newest file is canonical.
+
+Unlearning claim separation prevents a common category error. Behavioral
+change may be useful for one operational purpose while providing weak evidence
+about causal influence. An influence estimate may still say nothing about
+membership privacy. Lineage invalidation can close a governance obligation
+without deleting storage, and storage deletion can occur without proving that
+a trained model no longer exposes information. A single success percentage is
+therefore not merely incomplete; it can reverse which residual appears closed.
+
+**“Twenty-four surfaces are arbitrary, so exact rollback is ceremonial.”** The
+number is not universal. Its value comes from being frozen before training,
+covering the state actually used by the local runner, and naming exclusions.
+That evidence is strong for the disposable transaction and silent about remote
+stores, services, firmware, and unknown state. A production inventory would
+need runtime discovery, external-effect receipts, recovery objectives, and
+failure injection; the current result does not transfer automatically.
+
+**“Deletion-aware retraining is the only meaningful unlearning baseline.”** It
+is an important comparator, not a universal answer. Retraining may be
+prohibitively expensive, may reproduce information through retained data, and
+may fail to reach distributed descendants. Approximate methods can still be
+useful if their target and evidence are explicit. The architecture therefore
+compares methods while refusing to let any method name define the claim.
+
+**“If storage remains, calling anything unlearning is misleading.”** This is
+why the evidence state avoids an undifferentiated completion label. A consumer may
+need a behavioral mitigation, a causal influence claim, a privacy bound, a
+lineage response, or physical deletion. The result record states which of
+those occurred. Where a legal or contractual obligation requires storage
+erasure, behavioral change and invalidation are insufficient and the route
+remains open.
+
+**“The local campaign is too small to matter.”** It cannot establish
+foundation-model behavior or production transfer. It does matter as a causal
+and governance integration test: real optimizer and scheduler state changed,
+checkpoint choices diverged, rollback was exercised, and an unfavorable
+promotion result survived reconciliation. Its proper contribution is a tested
+transaction pattern and a falsified update threshold, not a general learning
+claim.
+
+**“Preserving every failed checkpoint and descendant conflicts with deletion.”**
+The conflict is real. Auditability, scientific reproducibility, minimization,
+and erasure can demand incompatible retention. The policy must decide which
+artifacts may be retained, encrypted, access-restricted, summarized, or
+destroyed and must record when reproducibility is deliberately reduced. A
+lineage graph cannot resolve that normative conflict; it can prevent the
+chosen tradeoff from becoming invisible.
+
+The surviving residual is causal closure. The campaign knows what it mutated
+inside one local boundary and can replay that boundary. It does not know every
+way a cohort influenced upstream curation, downstream users, copied artifacts,
+human decisions, or external stores. That residual is not a reason to abandon
+bounded evidence. It is the reason every conclusion carries a scope and every
+new descendant reopens the relevant obligation.
+
+## Minimum Viable Implementation
+
+The exact current minimum preserves the fifteen admission, full-state, and
+claim-separation route theorems; the four-scenario receipt probe; the
+24-surface/15-transaction full-state bridge; and the three-seed/twelve-arm
+small-model update result inside an eight-stage, 82-route custody lifecycle
+with 96/96 route and 3/3 cross-stage mutations rejected, one bounded custody
+handoff, and one version-2
+readmission witness. Influence remains unestablished, source storage remains
+retained, storage erasure remains zero, all affected claims remain `no_change`,
+and no source or rights truth, semantic-contamination control, foundation-model
+learning, privacy/legal/backup/external-descendant erasure, production recovery,
+natural-task transfer, or chapter-core promotion result exists.
+
+The receipt fixture records a synthetic template-mutation candidate, source review
+lineage, split and benchmark exclusions, an exact-overlap negative
+control, a retention boundary, limited deletion scope, residual semantic-
+leakage uncertainty, and the absence of any training or parametric-unlearning
+result. It is intentionally not a hidden dataset or training recipe.
+
+`DataAdmissionReview` encodes the minimum control fields, while
+`DataAdmissionRouteFor` makes missing provenance or authority block, missing
+exclusions or contamination checks quarantine, incomplete lifecycle evidence
+remain experimental, and a complete finite review eligible for a declared
+bounded use. The proof and fixture should be used as contract tests when a
+future ingestion path is built. The checked artifacts establish record shape
+and declared finite branch selection, not the truth of provenance, safety of a
+source, absence of contamination, useful learning, or deletion propagation
+through a real system.
+
+`data_admission_receipt_probe` makes the boundary executable across four
+finite public-safe scenarios: block for missing provenance, quarantine for a
+missing contamination record, experimental-only handling for a missing
+deletion scope, and receipt eligibility only when the recorded controls are
+complete. Its expected-invalid controls reject promotion laundering as well as
+incomplete records treated as eligible. It does not train or evaluate a model,
+load a dataset, detect semantic contamination, or verify deletion from
+descendants; those remain workload and replay obligations.
+The deterministic result is recorded at
+`experiments/data_admission_receipt_probe/results/2026-07-10-local.json`.
+
+The later P3 campaign supplies the next bounded increment: a frozen synthetic
+corpus, five update arms, prospective authority, 24 state surfaces, exact local
+rollback, deletion-aware retraining, lineage invalidation, and explicit
+no-change/narrow dispositions. It does not supply semantic-contamination
+detection, natural-task transfer, independent external replay, influence or
+privacy evidence, or storage erasure. Those are the next evidence obligations,
+so the architecture and core claim remain at `argument`.
+
+The custody-lifecycle refinement at
+`experiments/data_engine_lifecycle_refinement/results/2026-07-16-local.json`
+independently reruns the admission probe, full-state bridge, and update-causality
+validator, then reaches all 82 routes across scope, admission, full-state
+binding, update receipt, deletion assessment, claim-axis adjudication, bounded
+custody, and material-change readmission. Exact identity custody includes data,
+cohort, provenance, rights, authority, partitions, model and checkpoint state,
+optimizer, scheduler, RNG, caches, backups, lineage, descendants, deletion
+request, evaluator, consumer, and version. Two Lean composition theorems execute
+the full eight-transition cycle and an influence-laundering prefix. All 96 route mutations and three cross-stage mutations reject: behavior-as-influence and lineage-as-storage laundering prevent custody and readmission, while incomplete descendant invalidation prevents readmission after custody.
+The result proves authored custody and transition consequences only: every
+right, check, inventory, rollback receipt, deletion status, propagation claim,
+monitor, and invalidation remains trusted input, and exact rollback remains
+limited to prospectively declared local surfaces.
+
+## Beyond the State of the Art
+
+### Argument-exit campaign
+
+Exiting argument support requires natural heterogeneous learning and deletion
+workloads with frozen partitions, complete denominators, and matched strong
+replacement, accumulation, replay, reweighting, synthetic-augmentation,
+quarantine, retraining, sharding, fine-tuning, and no-change policies. The
+campaign must inventory and restore the full declared state and jointly measure
+coverage, contamination, poisoning, leakage, rights, natural utility,
+calibration, tails, forgetting, causal influence, privacy, sequential deletion,
+storage and backup erasure, regrowth, external-descendant closure,
+effect-complete rollback, latency, and total cost. Independent trainers,
+custodians, privacy evaluators, storage verifiers, institutions, and transfer
+sites must reproduce terminal positive, negative, null, narrowed, blocked, and
+refuted outcomes without outcome-aware protocol changes.
+
+The mature target is a data governance plane spanning the entire stack. Every
+learning input, synthetic descendant, replay item, deletion request, evaluation
+split, checkpoint, adapter, cache, retrieval index, distilled model, and
+published artifact has a versioned lineage and a declared permitted use.
+
+At that logical end state, the engine does more than record inputs. It runs
+independent contamination and semantic-overlap checks, retains negative
+results, detects distributional drift, tracks synthetic generations, declares
+where human data remain necessary, and exposes the conflict between preserving
+coverage and honoring revocation. Deletion creates a closure obligation over
+all declared descendants. The system can then produce a verifier-backed report
+that distinguishes "removed from source store," "retrained affected shard,"
+"invalidated retrieval index," "published artifact withdrawn," and "scope
+unverified." It still cannot compress those statements into a universal claim
+of forgetting.
+
+The final product would also connect evidence to learning without allowing
+learning to rewrite evidence. A data candidate becomes eligible for a bounded
+experiment; the experiment produces measurements and negative controls; an
+independent evaluator determines whether those measurements support a scoped
+claim; governance decides whether a result changes deployment. That separation
+is the architectural endpoint. It is not a current-result claim: support must
+stay at `argument` until controlled ingestion, training, descendant tracing,
+and deletion verification are independently replayed and accepted.
+
+## World-model data, versions, and prediction-error custody
+
+A learned predictive state introduces a second lifecycle beside the controller.
+`ext_v_jepa_2_2025` separates action-free video pretraining from a smaller
+action-conditioned predictor, so the data engine must preserve that separation:
+source video and consent/provenance, preprocessing, encoder version, predictor
+version, action-labelled adaptation data, observation distribution, forecast
+horizon, error cohort, and controller consumer all need distinct lineage.
+
+Prediction errors are learning inputs, not self-authenticating evidence. The
+engine retains error distributions, calibration shifts, camera or sensor
+changes, action-search failures, and sim-to-real residuals before admitting an
+update. Deletion or revocation must propagate through encoder checkpoints,
+predictors, caches, replay buffers, backups, controllers, and descendants.
+Behavioral change still does not establish causal influence removal, privacy
+erasure, or storage erasure. The cited paper provides an architecture and
+empirical comparator; it does not establish a local data engine, causal world
+model, or safe robot policy.
+
+| `ext_v_jepa_2_2025` | Metadata-first comparator: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning. Primary empirical comparator for action-free latent video pretraining, a small action-conditioned predictor, and model-predictive control. Camera sensitivity, autoregressive error accumulation, action-search cost, image-goal assumptions, and representation-bounded capability remain explicit limits; no local world model or robot-control result is established. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+## Post-v2 update and deletion result
+
+The update-causality campaign trains real small PyTorch policy networks across
+three seeds. It preserves zero-delta no-update checkpoints, three mutated
+challenger families, independent validation/test splits, 40 fixed probes, a
+60-member poisoned deletion cohort, best and final checkpoints, forgetting,
+nonmember utility, deletion responses, rollback, and descendant invalidation.
+Deletion-aware retraining excluded the cohort and reached mean true-label
+accuracy 0.8222 on its members versus 0.7944 for final bounded fine-tuning and
+0.7833 for the base.
+
+That difference is causal evidence about this frozen cohort, not verified
+forgetting. It does not show that member influence, stored rows, caches,
+backups, adapters, or derived artifacts were erased. The core claim remains
+`argument` via `no_change`; production unlearning and deletion propagation
+remain open.
+
+## Post-v2.1 full-state and unlearning result
+
+The successor campaign expands the state boundary to 24 declared surfaces and
+restores all of them exactly in 15/15 seed-arm transactions. No eligible
+challenger, however, reaches the registered 0.05 target-utility gain.
+Deletion-aware retraining changes 4, 0, and 1 cohort decisions across three
+seeds and propagates descendant invalidation, while influence reduction remains
+a confidence proxy and storage erasure remains false. A governed account must
+keep four claims separate: behavioral cohort change, influence removal, lineage
+propagation, and storage erasure. Only the first and third receive bounded local
+evidence here; `UU-03` persists.
+
+| Source | Use and boundary |
+|---|---|
+| `ext_muse_unlearning_2025` | Multi-dimensional unlearning evaluation comparator; no local 7B-scale, privacy, or sequential-sustainability result. |
+| `ext_unlearning_benchmarks_weak_2024` | Comparator for weak benchmark validity; reinforces that behavioral scores alone do not establish forgetting. |
+| `ext_openunlearning_2025` | Reproducible unlearning framework comparator; no reproduced method, privacy guarantee, influence proof, or storage erasure here. |
+
+## Post-v2.3 terminal update/unlearning attempt
+
+M7 makes the instrument failures part of the evidence rather than hiding them.
+The first frozen-representation attempt produced measurable checkpoint and
+membership statistics, but both deletion cohorts collapsed to one rare class
+and even deletion-aware retraining scored zero true-label accuracy. It is
+therefore `instrument_inadequate`, not a negative unlearning result. A balanced
+mean-pooled repair then failed before held-out execution at 0.4333 general and
+0.3333 deletion-like preflight accuracy.
+
+The terminal instrument used the same exact local Qwen2.5-Coder-0.5B snapshot
+with frozen weights, concatenated its normalized mean representation with an
+audited vector of the authority, provenance, contamination, deletion, and risk
+fields already present in each record, and trained only a small nonlinear head.
+The preflight ablation is important: Transformer-only reached 0.7667 general
+and 0.7000 deletion-like accuracy, while structured-only and fused paths both
+reached 1.0000. The control task became learnable by making its declared fields
+explicit, not because the language model learned an unlearning procedure.
+
+Across five seeds and seven arms, deletion-aware retraining reached 0.9767 mean
+deletion true-label accuracy. Sequential approximate unlearning moved only
+0.01222040 closer in parameter distance to the retraining comparator than
+standard update. Its direction-invariant loss-threshold membership-attack
+advantage changed by -0.02511111. These small results narrow the mechanism:
+they justify retaining comparator-relative local effects, but not claiming
+zero influence or privacy.
+
+All 35 arm/seed transactions restored the 24 declared local surface digests.
+Five late local descendants were invalidated and quarantined; one operational
+feature shard and its declared local backup were absent with zero index
+references. The corpus, feature packet, checkpoints, and raw evidence remain
+retained, while a simulated remote replica and external descendant did not
+acknowledge closure. Legal compliance was not evaluated. Thus behavioral,
+influence, membership/privacy, lineage, legal, storage, backup, and external-
+descendant outcomes remain eight different claims. The terminal disposition is
+`claim_narrowed_after_full_attempt`, with no chapter-core support movement.
+
+## Summary
+
+A system that learns without a data lifecycle gradually loses the ability to
+say why it changed. Provenance, authority, exclusions, contamination controls,
+retention, deletion scope, evaluation references, and residuals give each
+learning input a history that can be inspected before it becomes ordinary
+infrastructure. The point is not to make every candidate impossible to use; it
+is to give uncertain candidates honest lanes such as quarantine or bounded
+experimentation.
+
+That discipline also prevents two dangerous shortcuts. A deletion request is
+not verified forgetting, and a complete receipt is not model-quality evidence.
+Synthetic-data choices likewise need measurements and trade-offs, not generic
+optimism or generic prohibition. The governed path makes the decision visible,
+keeps its unresolved descendants visible, and sends capability claims back
+through independent evaluation and authority gates. Learning can therefore be
+continuous without becoming historically opaque.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **86** structured claim atoms in `CF-07`. The
+frozen repository-wide terminal audit records 86 `blocked_after_full_attempt`. Its core
+atom `data-engines-continual-learning-and-unlearning.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `data-engines-continual-learning-and-unlearning` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 86 structured claims,
+86 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Full-state update and unlearning causal campaign**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Broad unlearning claim is narrowed with no support promotion; behavioral removal is not influence, privacy, legal, storage, backup, or descendant erasure.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
+
+## Handoff
+
+Data decisions create durable obligations: datasets, evaluation slices,
+deletion requests, residuals, and derived artifacts must remain intelligible
+through many work cycles. **Artifact Steward Agents and Living Project Governance**
+takes that lifecycle perspective from learning inputs to the projects that
+create, review, fund, retain, publish, and retire such artifacts.
+It asks who carries the records forward, how governance remains replayable, and
+how a living system preserves its mission while its evidence and implementation
+continue to change.

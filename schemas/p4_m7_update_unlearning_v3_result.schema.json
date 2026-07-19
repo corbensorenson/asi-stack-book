@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://asi-stack.example/schemas/p4_m7_update_unlearning_v3_result.schema.json",
+  "title": "P4 M7 Update and Unlearning v3 Result",
+  "type": "object",
+  "required": ["schema_version", "run_id", "protocol_outcome", "claim_outcome", "corpus_sha256", "preregistration_sha256", "raw_run_sha256", "feature_artifact_sha256", "candidate_and_checkpoint_bytes_closed_before_axis_evaluation", "failure_lineage_preserved", "seeds", "arms", "claim_axes", "seed_results", "arm_summaries", "axis_dispositions", "storage_receipt", "lineage_receipt", "evaluator_recomputation_disagreement_count", "gate_checks_before_validator_mutations", "cost", "preflight_ablation", "claim_ceiling", "support_state_effect", "chapter_core_promotion_count", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.p4_m7_confirmatory_result.v3"},
+    "protocol_outcome": {"const": "instrument_adequate_bounded_local_axis_separation"},
+    "claim_outcome": {"const": "claim_narrowed_after_full_attempt"},
+    "candidate_and_checkpoint_bytes_closed_before_axis_evaluation": {"const": true},
+    "failure_lineage_preserved": {"const": true},
+    "seeds": {"type": "array", "minItems": 5, "maxItems": 5},
+    "arms": {"type": "array", "minItems": 7, "maxItems": 7},
+    "claim_axes": {"type": "array", "minItems": 8, "maxItems": 8},
+    "seed_results": {"type": "array", "minItems": 5, "maxItems": 5},
+    "axis_dispositions": {"type": "object", "minProperties": 8, "maxProperties": 8},
+    "evaluator_recomputation_disagreement_count": {"const": 0},
+    "gate_checks_before_validator_mutations": {"type": "object", "minProperties": 10, "maxProperties": 10},
+    "claim_ceiling": {"type": "string", "minLength": 120},
+    "support_state_effect": {"const": "none"},
+    "chapter_core_promotion_count": {"const": 0}
+  },
+  "additionalProperties": true
+}

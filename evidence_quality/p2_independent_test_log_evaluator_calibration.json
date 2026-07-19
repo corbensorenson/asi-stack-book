@@ -1,0 +1,446 @@
+{
+  "schema_version": "asi_stack.p2_independent_test_log_evaluator_calibration.v1",
+  "recorded_date": "2026-07-17",
+  "state": "passed",
+  "independent_evaluator_path": "scripts/p2_independent_test_log_evaluator.py",
+  "independent_evaluator_sha256": "fe0220e071c4b89882a063552314370fd24da659bbf42ab473c083b538c269ff",
+  "upstream_harness_commit": "c71902a8cf8d2b725f63d51f199f4d3e56f68d2d",
+  "authored_fixture_count": 12,
+  "historical_log_count": 20,
+  "exact_agreement_count": 32,
+  "total_case_count": 32,
+  "fixtures": [
+    {
+      "fixture_id": "cargo_pass_fail",
+      "parser_name": "parse_log_cargo",
+      "exit_code": 101,
+      "input_sha256": "191d26bd80a0b02291487c914367703e3bb7f329ff41697ffc889ddda08577f6",
+      "expected": {
+        "a::b": "PASSED",
+        "c::d": "FAILED"
+      },
+      "independent": {
+        "statuses": {
+          "a::b": "PASSED",
+          "c::d": "FAILED"
+        },
+        "status_count": 2,
+        "visible_failure": true,
+        "zero_exit_visible_failure": false,
+        "nonzero_exit_no_status": false,
+        "zero_exit_no_status": false
+      },
+      "upstream_statuses": {
+        "a::b": "PASSED",
+        "c::d": "FAILED"
+      },
+      "exact_agreement": true
+    },
+    {
+      "fixture_id": "cargo_ignored_and_noise",
+      "parser_name": "parse_log_cargo",
+      "exit_code": 0,
+      "input_sha256": "470d7e51022b994816ae6fc1069016bfdaa3b220814383d209b49500e68f04ff",
+      "expected": {
+        "c": "PASSED"
+      },
+      "independent": {
+        "statuses": {
+          "c": "PASSED"
+        },
+        "status_count": 1,
+        "visible_failure": false,
+        "zero_exit_visible_failure": false,
+        "nonzero_exit_no_status": false,
+        "zero_exit_no_status": false
+      },
+      "upstream_statuses": {
+        "c": "PASSED"
+      },
+      "exact_agreement": true
+    },
+    {
+      "fixture_id": "go_pass_fail_skip",
+      "parser_name": "parse_log_gotest",
+      "exit_code": 1,
+      "input_sha256": "d6b0dcefb223014ecdd82871381424fec250aed0cfb503857fa4fa9ef5a3db9a",
+      "expected": {
+        "TestA": "PASSED",
+        "TestB/sub": "FAILED",
+        "TestC": "SKIPPED"
+      },
+      "independent": {
+        "statuses": {
+          "TestA": "PASSED",
+          "TestB/sub": "FAILED",
+          "TestC": "SKIPPED"
+        },
+        "status_count": 3,
+        "visible_failure": true,
+        "zero_exit_visible_failure": false,
+        "nonzero_exit_no_status": false,
+        "zero_exit_no_status": false
+      },
+      "upstream_statuses": {
+        "TestA": "PASSED",
+        "TestB/sub": "FAILED",
+        "TestC": "SKIPPED"
+      },
+      "exact_agreement": true
+    },
+    {
+      "fixture_id": "go_duplicate_last_status",
+      "parser_name": "parse_log_gotest",
+      "exit_code": 0,
+      "input_sha256": "919be0b7ccfd81ebbaf10c19c76720d8a65a1ef58b6dc246c4db8c82a9b9db9a",
+      "expected": {
+        "TestA": "PASSED"
+      },
+      "independent": {
+        "statuses": {
+          "TestA": "PASSED"
+        },
+        "status_count": 1,
+        "visible_failure": false,
+        "zero_exit_visible_failure": false,
+        "nonzero_exit_no_status": false,
+        "zero_exit_no_status": false
+      },
+      "upstream_statuses": {
+        "TestA": "PASSED"
+      },
+      "exact_agreement": true
+    },
+    {
+      "fixture_id": "maven_pass_summary",
+      "parser_name": "parse_java_mvn",
+      "exit_code": 0,
+      "input_sha256": "17be46d5e044b713a5ff62cb49f8eb32a0ce367ce2258fbdd6d1672d4e654722",
+      "expected": {
+        "a.b.C": "PASSED"
+      },
+      "independent": {
+        "statuses": {
+          "a.b.C": "PASSED"
+        },
+        "status_count": 1,
+        "visible_failure": false,
+        "zero_exit_visible_failure": false,
+        "nonzero_exit_no_status": false,
+        "zero_exit_no_status": false
+      },
+      "upstream_statuses": {
+        "a.b.C": "PASSED"
+      },
+      "exact_agreement": true
+    },
+    {
+      "fixture_id": "maven_failed_method",
+      "parser_name": "parse_java_mvn",
+      "exit_code": 1,
+      "input_sha256": "60760b9cdf36da6555b49a3383ba256a6a520a2c1ea31add20f363ed2186dbd7",
+      "expected": {
+        "a.b.C.testThing": "FAILED",
+        "a.b.C": "FAILED"
+      },
+      "independent": {
+        "statuses": {
+          "a.b.C.testThing": "FAILED",
+          "a.b.C": "FAILED"
+        },
+        "status_count": 2,
+        "visible_failure": true,
+        "zero_exit_visible_failure": false,
+        "nonzero_exit_no_status": false,
+        "zero_exit_no_status": false
+      },
+      "upstream_statuses": {
+        "a.b.C.testThing": "FAILED",
+        "a.b.C": "FAILED"
+      },
+      "exact_agreement": true
+    },
+    {
+      "fixture_id": "maven_exception_method",
+      "parser_name": "parse_java_mvn",
+      "exit_code": 1,
+      "input_sha256": "96657be7d5bff18e8d6908220ec8614b9cf00c084dbd1f32605cb0b5cddc0b41",
+      "expected": {
+        "a.b.C.testThing": "ERROR",
+        "a.b.C": "FAILED"
+      },
+      "independent": {
+        "statuses": {
+          "a.b.C.testThing": "ERROR",
+          "a.b.C": "FAILED"
+        },
+        "status_count": 2,
+        "visible_failure": true,
+        "zero_exit_visible_failure": false,
+        "nonzero_exit_no_status": false,
+        "zero_exit_no_status": false
+      },
+      "upstream_statuses": {
+        "a.b.C.testThing": "ERROR",
+        "a.b.C": "FAILED"
+      },
+      "exact_agreement": true
+    },
+    {
+      "fixture_id": "maven_skipped_summary",
+      "parser_name": "parse_java_mvn",
+      "exit_code": 0,
+      "input_sha256": "7920d3fe179547469cdb1303b976ce5d9b2f68dce01678e54e98ecd0d6e0e3dc",
+      "expected": {
+        "a.b.C": "SKIPPED"
+      },
+      "independent": {
+        "statuses": {
+          "a.b.C": "SKIPPED"
+        },
+        "status_count": 1,
+        "visible_failure": false,
+        "zero_exit_visible_failure": false,
+        "nonzero_exit_no_status": false,
+        "zero_exit_no_status": false
+      },
+      "upstream_statuses": {
+        "a.b.C": "SKIPPED"
+      },
+      "exact_agreement": true
+    },
+    {
+      "fixture_id": "maven_dtest_success",
+      "parser_name": "parse_java_mvn",
+      "exit_code": 0,
+      "input_sha256": "1e939257a747cf11ad45cffe05e3e4b451dd5a223bd93c502ac4acf8e097d987",
+      "expected": {
+        "a.b.C": "PASSED"
+      },
+      "independent": {
+        "statuses": {
+          "a.b.C": "PASSED"
+        },
+        "status_count": 1,
+        "visible_failure": false,
+        "zero_exit_visible_failure": false,
+        "nonzero_exit_no_status": false,
+        "zero_exit_no_status": false
+      },
+      "upstream_statuses": {
+        "a.b.C": "PASSED"
+      },
+      "exact_agreement": true
+    },
+    {
+      "fixture_id": "zero_exit_visible_failure",
+      "parser_name": "parse_log_gotest",
+      "exit_code": 0,
+      "input_sha256": "ab6a05cde47ac0327118fa5bd4255f1da290bdf27e7cd1ebe8adc4b066e19fac",
+      "expected": {
+        "TestA": "FAILED"
+      },
+      "independent": {
+        "statuses": {
+          "TestA": "FAILED"
+        },
+        "status_count": 1,
+        "visible_failure": true,
+        "zero_exit_visible_failure": true,
+        "nonzero_exit_no_status": false,
+        "zero_exit_no_status": false
+      },
+      "upstream_statuses": {
+        "TestA": "FAILED"
+      },
+      "exact_agreement": true
+    },
+    {
+      "fixture_id": "nonzero_no_status",
+      "parser_name": "parse_log_cargo",
+      "exit_code": 101,
+      "input_sha256": "58858c47980d96a93c72afbd423a53e4d93a1a2762f82f82d5ba230051c15e12",
+      "expected": {},
+      "independent": {
+        "statuses": {},
+        "status_count": 0,
+        "visible_failure": false,
+        "zero_exit_visible_failure": false,
+        "nonzero_exit_no_status": true,
+        "zero_exit_no_status": false
+      },
+      "upstream_statuses": {},
+      "exact_agreement": true
+    },
+    {
+      "fixture_id": "malformed_zero_no_status",
+      "parser_name": "parse_log_gotest",
+      "exit_code": 0,
+      "input_sha256": "1f0d9201d94d58449b895e27cd6f83cf95ebbabd9b90779ca989ea69959070a7",
+      "expected": {},
+      "independent": {
+        "statuses": {},
+        "status_count": 0,
+        "visible_failure": false,
+        "zero_exit_visible_failure": false,
+        "nonzero_exit_no_status": false,
+        "zero_exit_no_status": true
+      },
+      "upstream_statuses": {},
+      "exact_agreement": true
+    }
+  ],
+  "historical_logs": [
+    {
+      "path": "experiments/p2_governed_repository_admission/gold_preflight/logs/aleph-alpha__ts-rs-422.baseline_test_patch_only.r1.log.gz",
+      "sha256": "50e7bc16f47999c6d765867cdec87857411ad7d58327103d9b7a3a812ee7ff43",
+      "parser_name": "parse_log_cargo",
+      "status_count": 0,
+      "exact_agreement": true
+    },
+    {
+      "path": "experiments/p2_governed_repository_admission/gold_preflight/logs/aleph-alpha__ts-rs-422.baseline_test_patch_only.r2.log.gz",
+      "sha256": "10f61ff09f5bb720c922d3d353dcb106925b21d1ecbca21b209d7e340e8da762",
+      "parser_name": "parse_log_cargo",
+      "status_count": 0,
+      "exact_agreement": true
+    },
+    {
+      "path": "experiments/p2_governed_repository_admission/gold_preflight/logs/aleph-alpha__ts-rs-422.human_gold_plus_test_patch.r1.log.gz",
+      "sha256": "ad6910e731bfaf2020a2a7484afd5de074c3f95c72f3d83633fe291aab859397",
+      "parser_name": "parse_log_cargo",
+      "status_count": 0,
+      "exact_agreement": true
+    },
+    {
+      "path": "experiments/p2_governed_repository_admission/gold_preflight/logs/aleph-alpha__ts-rs-422.human_gold_plus_test_patch.r2.log.gz",
+      "sha256": "adf899da52d901a28face4b886535ecad55ee4535d21e8f1cd11901e9628e685",
+      "parser_name": "parse_log_cargo",
+      "status_count": 0,
+      "exact_agreement": true
+    },
+    {
+      "path": "experiments/p2_governed_repository_admission/gold_preflight/logs/compose-spec__compose-go-792.baseline_test_patch_only.r1.log.gz",
+      "sha256": "0ed6cb1bdf1775c92d0093f1177abb0e2407b481badb24e6f4860396ef1a8e9a",
+      "parser_name": "parse_log_gotest",
+      "status_count": 0,
+      "exact_agreement": true
+    },
+    {
+      "path": "experiments/p2_governed_repository_admission/gold_preflight/logs/compose-spec__compose-go-792.baseline_test_patch_only.r2.log.gz",
+      "sha256": "88ba07e4de2d52ee2cb4fa35a95d5863af834113417ad861dfa8833396240d97",
+      "parser_name": "parse_log_gotest",
+      "status_count": 0,
+      "exact_agreement": true
+    },
+    {
+      "path": "experiments/p2_governed_repository_admission/gold_preflight/logs/compose-spec__compose-go-792.human_gold_plus_test_patch.r1.log.gz",
+      "sha256": "315cc5cd786609db8cdef06e69631417d41a193cd34a6d58748447c375815e36",
+      "parser_name": "parse_log_gotest",
+      "status_count": 0,
+      "exact_agreement": true
+    },
+    {
+      "path": "experiments/p2_governed_repository_admission/gold_preflight/logs/compose-spec__compose-go-792.human_gold_plus_test_patch.r2.log.gz",
+      "sha256": "cfb0077759da1a63c92e346af582741faf70720109def65d35fdbd7d30a2d3cd",
+      "parser_name": "parse_log_gotest",
+      "status_count": 0,
+      "exact_agreement": true
+    },
+    {
+      "path": "experiments/p2_governed_repository_admission/gold_preflight/logs/gitleaks__gitleaks-1845.baseline_test_patch_only.r1.log.gz",
+      "sha256": "fdc182b6a2d64d097854506613f15132af20422cdddc52214346fceddcd899b8",
+      "parser_name": "parse_log_gotest",
+      "status_count": 0,
+      "exact_agreement": true
+    },
+    {
+      "path": "experiments/p2_governed_repository_admission/gold_preflight/logs/gitleaks__gitleaks-1845.baseline_test_patch_only.r2.log.gz",
+      "sha256": "7514ad37e176e7d72faa8147fefca9e9bf9ab3a42335f61d62d8ffc5ad86237b",
+      "parser_name": "parse_log_gotest",
+      "status_count": 0,
+      "exact_agreement": true
+    },
+    {
+      "path": "experiments/p2_governed_repository_admission/gold_preflight/logs/gitleaks__gitleaks-1845.human_gold_plus_test_patch.r1.log.gz",
+      "sha256": "2933a55716f275fa4d861040234342caa52324327430414a3cb0be20fc390851",
+      "parser_name": "parse_log_gotest",
+      "status_count": 0,
+      "exact_agreement": true
+    },
+    {
+      "path": "experiments/p2_governed_repository_admission/gold_preflight/logs/gitleaks__gitleaks-1845.human_gold_plus_test_patch.r2.log.gz",
+      "sha256": "0480ecd046c64fa033d89fd0ba98822fabcc15226480b272a46aae3550cefb63",
+      "parser_name": "parse_log_gotest",
+      "status_count": 0,
+      "exact_agreement": true
+    },
+    {
+      "path": "experiments/p2_governed_repository_admission/gold_preflight/logs/google__yamlfmt-259.baseline_test_patch_only.r1.log.gz",
+      "sha256": "06c39db4bdec9f2f7e668c6580da9a33a487991ad407a4548681e25cc38ee5c1",
+      "parser_name": "parse_log_gotest",
+      "status_count": 103,
+      "exact_agreement": true
+    },
+    {
+      "path": "experiments/p2_governed_repository_admission/gold_preflight/logs/google__yamlfmt-259.baseline_test_patch_only.r2.log.gz",
+      "sha256": "0e67d626f82aa0e7a163252ed3186f9dcd2f49ab43ba9aaf50f27ac2d0b8d13b",
+      "parser_name": "parse_log_gotest",
+      "status_count": 103,
+      "exact_agreement": true
+    },
+    {
+      "path": "experiments/p2_governed_repository_admission/gold_preflight/logs/google__yamlfmt-259.human_gold_plus_test_patch.r1.log.gz",
+      "sha256": "47e0e941b2f5e9030a1adae4e96b498077fe4c19bbc9bdb509898bf99f86ee46",
+      "parser_name": "parse_log_gotest",
+      "status_count": 103,
+      "exact_agreement": true
+    },
+    {
+      "path": "experiments/p2_governed_repository_admission/gold_preflight/logs/google__yamlfmt-259.human_gold_plus_test_patch.r2.log.gz",
+      "sha256": "954a42a7332352eb147b8a210be05238ada4849dc5f6b8b3b0d3c5845dc8fd35",
+      "parser_name": "parse_log_gotest",
+      "status_count": 103,
+      "exact_agreement": true
+    },
+    {
+      "path": "experiments/p2_governed_repository_admission/gold_preflight/logs/thealgorithms__java-6333.baseline_test_patch_only.r1.log.gz",
+      "sha256": "b41ab3757471d8a0b2ed5096c5029bcd974584ef2c99efdf03eeb112c036a87f",
+      "parser_name": "parse_java_mvn",
+      "status_count": 0,
+      "exact_agreement": true
+    },
+    {
+      "path": "experiments/p2_governed_repository_admission/gold_preflight/logs/thealgorithms__java-6333.baseline_test_patch_only.r2.log.gz",
+      "sha256": "68dafb05dcfcec26e860bef4c7eff354f23b6f8c4e49e24058879547530c9bf3",
+      "parser_name": "parse_java_mvn",
+      "status_count": 0,
+      "exact_agreement": true
+    },
+    {
+      "path": "experiments/p2_governed_repository_admission/gold_preflight/logs/thealgorithms__java-6333.human_gold_plus_test_patch.r1.log.gz",
+      "sha256": "573d53b5f1b92ae6ec0593c8181a1ca82aa5984ef04931cb4028856497f2f0af",
+      "parser_name": "parse_java_mvn",
+      "status_count": 0,
+      "exact_agreement": true
+    },
+    {
+      "path": "experiments/p2_governed_repository_admission/gold_preflight/logs/thealgorithms__java-6333.human_gold_plus_test_patch.r2.log.gz",
+      "sha256": "8cb5c22a17cefd4cfbf21477bfe1689b303abd16343037bf25d6a12957b3ba0b",
+      "parser_name": "parse_java_mvn",
+      "status_count": 0,
+      "exact_agreement": true
+    }
+  ],
+  "candidate_execution_started": false,
+  "candidate_outcome_opened": false,
+  "final_pool_selected": false,
+  "final_pool_opened": false,
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "Authored and historical calibration does not prove parser completeness for unseen output grammars.",
+    "Exact agreement between two parsers can preserve a shared conceptual mistake; exact expected-set and execution controls remain required.",
+    "Calibration is not task qualification or claim evidence."
+  ]
+}

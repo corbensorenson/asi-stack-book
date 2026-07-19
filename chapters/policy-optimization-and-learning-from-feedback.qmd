@@ -524,6 +524,80 @@ The boundary is strict: a reward signal is not a truth signal, a training run is
 
 That learning discipline applies to durable projects. A steward agent may coordinate work and preserve memory, but it cannot turn feedback loops into ownership, treasury authority, or silent governance change. The practical value of PPO, DPO-style methods, verifier rewards, RLVR, GRPO-like families, and simpler policy-gradient variants is not that one objective solves alignment. Their value is that they give the stack a menu of update mechanisms whose evidence, reward source, failure mode, and deployment boundary can be recorded. Learning becomes acceptable only when the update has a field identity, rollback path, evaluator independence, and residual ledger. Otherwise optimization merely accelerates whatever the system already fails to see.
 
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **75** structured claim atoms in `CF-07`. The
+frozen repository-wide terminal audit records 75 `blocked_after_full_attempt`. Its core
+atom `policy-optimization-and-learning-from-feedback.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `policy-optimization-and-learning-from-feedback` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+::: {.asi-human-only}
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 75 structured claims,
+75 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Full-state update and unlearning causal campaign**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Broad unlearning claim is narrowed with no support promotion; behavioral removal is not influence, privacy, legal, storage, backup, or descendant erasure.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+:::
+
+::: {.asi-ai-only}
+
+### Evidence packet
+
+| Field | Exact chapter boundary |
+|---|---|
+| Protocol | Prospectively frozen 3,745-atom repository audit plus the validated `CF-07` minimum family bundle. |
+| Attempted local lanes | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` |
+| Missing or unproved lanes | `normative`, `transfer` |
+| Family-level natural-work or end-to-end bundle | **Full-state update and unlearning causal campaign** (`end_to_end`): One adequate five-seed, seven-arm terminal campaign preserving two prior instrument failures and separate behavioral, influence, privacy, lineage, storage, backup, and descendant axes. |
+| Negative controls | deletion retrain comparator; approximate mitigation arms; 15 rejecting mutations; failure-lineage preservation. |
+| Exact accepted transitions in this chapter | none |
+| Core outcome | `blocked_after_full_attempt` at `argument`; no chapter-core promotion. |
+| Uncertainty and transfer | The bundle's measured or executable scope does not transfer automatically to this chapter's other atoms. Missing lanes remain explicit above. |
+| Reproduction path | Replay `scripts/validate_p4_m7_update_unlearning_v3.py` and `scripts/validate_claim_family_terminal_program.py`; then supply the missing atom-specific lanes under a new prospective protocol. |
+
+### Worked success, failure, and boundary cases
+
+- **Success case:** the family-level bundle passed its own rejecting validator
+  within this exact scope: One adequate five-seed, seven-arm terminal campaign preserving two prior instrument failures and separate behavioral, influence, privacy, lineage, storage, backup, and descendant axes. This is evidence that the family
+  received a competent attempt, not that every claim in this chapter succeeded.
+- **Failure or non-promotion case:** 75 atoms
+  remain blocked and 0 are narrowed. A
+  green family validator cannot fill their missing lanes or raise the core.
+- **Boundary case:** Broad unlearning claim is narrowed with no support promotion; behavioral removal is not influence, privacy, legal, storage, backup, or descendant erasure.
+
+### Argument-exit table
+
+| Atom set | Count | Work performed | Terminal reason and next burden |
+|---|---:|---|---|
+| Core: `policy-optimization-and-learning-from-feedback.core` | 1 | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` | `blocked_after_full_attempt`; missing or unproved: `normative`, `transfer`. |
+| blocked after full attempt | 75 | `causal`, `empirical`, `executable`, `formal`, `source-synthesis` | Missing or unproved lanes across this set: `normative`, `transfer`. These are residual proof obligations, not false claims. |
+
+This table is a disposition map, not a promotion quota. The next valid movement
+is atom-specific evidence that fills the named missing lanes, survives relevant
+negative controls, and enters through an accepted evidence transition. Until
+then, source counts, theorem counts, fixtures, validators, or nearby family
+results cannot be used as substitutes.
+:::
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
+
 ## Handoff
 
 Policy updates decide how behavior responds to feedback, but they still require a

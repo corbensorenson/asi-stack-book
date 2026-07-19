@@ -1,0 +1,56 @@
+{
+  "schema_version": "asi_stack.p2_slot1_rank1_cargo_rescue_diagnosis.v1",
+  "recorded_date": "2026-07-17",
+  "claim_id": "p2.governed_natural_repository_change_admission_joint_frontier",
+  "instance_id": "mitsuhiko__minijinja-794",
+  "slot": 1,
+  "rank": 1,
+  "attempt_path": "experiments/p2_governed_repository_admission/replacement_qualification/attempts/2026-07-17-slot1-rank1-cargo-snapshot-r2/result.json",
+  "attempt_sha256": "55fb26014998bac7fc9bdde66a5c8d9138245423edd2e699e6333797a96a1def",
+  "classification": "N0_construct_instrument_failure",
+  "terminal_disposition": "candidate_not_qualified_advance_to_frozen_rank_two",
+  "dependency_snapshot_findings": {
+    "independent_materialization_count": 2,
+    "registry_archive_count_per_materialization": 382,
+    "offline_replay_passed_count": 2,
+    "normalized_inventory_exact_agreement": true,
+    "normalized_inventory_sha256": "e283eb4ab361fdebad10f1206e7ceac7b97099854a446a3ab43773b081f5aaab"
+  },
+  "paired_arm_findings": {
+    "arm_count": 4,
+    "baseline_repetitions": 2,
+    "gold_repetitions": 2,
+    "all_exit_codes": [2, 2, 2, 2],
+    "all_observed_test_identity_counts": [0, 0, 0, 0],
+    "dual_evaluator_exact_agreement_count": 4,
+    "resource_gate_pass_count": 4,
+    "test_completion_marker_count": 0,
+    "candidate_outcome_opened": true,
+    "mechanism_outcome_observed": false
+  },
+  "root_cause_receipt": {
+    "repository": "https://github.com/mitsuhiko/minijinja",
+    "base_commit": "aa2ecbab17a416d8395c69bba440f2b067d50530",
+    "source_file": "Makefile",
+    "source_file_sha256": "1f02fcd8362e9dfbe35933712028588218ffe3f2be5f934c40766f3b11ecca89",
+    "failing_target": "test-msrv -> run-tests",
+    "failing_prerequisite_command": "rustup component add rustfmt",
+    "stderr_suppressed_by_source_makefile": true,
+    "outcome_runtime_network": "none",
+    "diagnosis": "The source test target attempts a network-capable rustup component installation before any Cargo test. The frozen outcome environment correctly denies network access; the source Makefile redirects that prerequisite's stderr to /dev/null and make exits before emitting a test identity. Identical baseline and gold termination therefore diagnoses harness/environment incompatibility, not task correctness or mechanism performance."
+  },
+  "policy_effect": {
+    "acceptance_rule_relaxed": false,
+    "same_candidate_rerun_after_outcome": false,
+    "next_action": "open rank two for slot one through the already-frozen metadata queue and repeat provenance, resource, task-oracle, and qualification gates",
+    "claim_support_effect": "none",
+    "claim_refutation_effect": "none",
+    "final_pool_effect": "none"
+  },
+  "non_claims": [
+    "This N0 disposition is not a negative result for governed repository-change admission.",
+    "Exact dependency snapshots do not repair a test target whose own prerequisite requires unavailable network access.",
+    "The candidate is not rerun with a post-outcome exception or weakened command.",
+    "The held-out final pool remains unselected and unopened."
+  ]
+}

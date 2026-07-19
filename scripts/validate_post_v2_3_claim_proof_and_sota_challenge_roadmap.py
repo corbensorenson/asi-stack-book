@@ -134,7 +134,9 @@ GOVERNED_USEFULNESS_V2_RESULT = "experiments/p4_governed_usefulness/results/stro
 GOVERNED_USEFULNESS_V2_DIAGNOSIS = "experiments/p4_governed_usefulness/v2_failure_diagnosis.json"
 PREDECESSOR = "docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md"
 PREDECESSOR_STATUS = "roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json"
-ACTIVE_MARKER = "Status: active canonical successor roadmap; unfinished work only"
+SUCCESSOR = "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
+SUCCESSOR_STATUS = "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json"
+ACTIVE_MARKER = "Status: **active canonical successor**"
 PUBLIC_SURFACES = ["README.md", "index.qmd", "docs/publication_readiness.md", "docs/public_status_contract.md"]
 REQUIRED_SECTIONS = [
     "## Goal to point at",
@@ -211,6 +213,7 @@ def snapshot() -> dict:
         "x_article_contract": text(X_ARTICLE_CONTRACT),
         "predecessor": text(PREDECESSOR),
         "predecessor_status": load(PREDECESSOR_STATUS),
+        "successor_status": load(SUCCESSOR_STATUS),
         "structure": load("book_structure.json"),
         "sources": load("sources/source_inventory.json"),
         "structural_expansion_atoms": load("evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json"),
@@ -357,10 +360,12 @@ def errors(data: dict) -> list[str]:
     except jsonschema.ValidationError as exc:
         out.append(f"status schema: {exc.message}")
 
-    if status.get("status") != "active":
-        out.append("roadmap must remain active until terminal closure and successor activation")
-    if data["active_roadmaps"] != [ROADMAP]:
-        out.append("there must be exactly one active canonical roadmap and it must be this successor")
+    if status.get("status") != "completed" or status.get("current_priority") is not None:
+        out.append("roadmap must be terminally completed after successor activation")
+    if data["active_roadmaps"] != [SUCCESSOR]:
+        out.append("there must be exactly one active canonical roadmap and it must be the maintenance successor")
+    if data["successor_status"].get("status") != "active" or data["successor_status"].get("current_priority") != "P0":
+        out.append("maintenance successor must be active at P0")
     if status.get("predecessor", {}).get("path") != PREDECESSOR or data["predecessor_status"].get("status") != "completed":
         out.append("completed predecessor authority is absent or drifted")
     if "Status: completed 2026-07-14; no active successor" not in data["predecessor"]:
@@ -678,6 +683,293 @@ def errors(data: dict) -> list[str]:
     for key in ["local_instrument_result_path", "difficulty_sweep_result_path", "tuning_pool_result_path", "confirmatory_result_path"]:
         if not (ROOT / governed_contract.get(key, "missing")).exists():
             out.append(f"governed-usefulness current result artifact missing: {key}")
+
+    update_contract = status.get("update_unlearning_campaign_contract", {})
+    expected_update_contract = {
+        "state": "m7_terminal_claim_narrowed_after_full_attempt",
+        "readable_receipt_path": "docs/p4_update_unlearning_campaign.md",
+        "v1_diagnosis_path": "experiments/p4_update_unlearning/v1_failure_diagnosis.json",
+        "v1_protocol_outcome": "instrument_inadequate_unlearning_target_not_learnable",
+        "v2_diagnosis_path": "experiments/p4_update_unlearning_v2/preflight_failure_diagnosis.json",
+        "v2_protocol_outcome": "instrument_inadequate_preflight",
+        "v2_heldout_opened": False,
+        "v3_preregistration_path": "experiments/p4_update_unlearning_v3/preregistration.json",
+        "v3_preflight_path": "experiments/p4_update_unlearning_v3/results/preflight_result.json",
+        "v3_result_path": "experiments/p4_update_unlearning_v3/results/confirmatory_result.json",
+        "v3_validator_path": "scripts/validate_p4_m7_update_unlearning_v3.py",
+        "v3_protocol_outcome": "instrument_adequate_bounded_local_axis_separation",
+        "v3_claim_outcome": "claim_narrowed_after_full_attempt",
+        "corpus_row_count": 870,
+        "seed_count": 5,
+        "arm_count": 7,
+        "claim_axis_count": 8,
+        "state_surface_count": 24,
+        "rollback_transaction_count": 35,
+        "deletion_retrain_true_accuracy": 0.97666667,
+        "approximate_distance_reduction_fraction": 0.0122204,
+        "membership_attack_advantage_delta": -0.02511111,
+        "local_descendant_invalidation_count": 5,
+        "total_storage_erasure": False,
+        "external_descendant_closure": False,
+        "chapter_core_promotion_count": 0,
+        "support_state_effect": "none",
+        "publication_authority": "none",
+        "release_authority": "none",
+    }
+    if update_contract != expected_update_contract:
+        out.append("M7 update/unlearning terminal campaign contract drifted")
+    for key in [
+        "readable_receipt_path",
+        "v1_diagnosis_path",
+        "v2_diagnosis_path",
+        "v3_preregistration_path",
+        "v3_preflight_path",
+        "v3_result_path",
+        "v3_validator_path",
+    ]:
+        if not (ROOT / update_contract.get(key, "missing")).exists():
+            out.append(f"M7 update/unlearning artifact missing: {key}")
+    for phrase in [
+        "M7 terminal receipt — bounded axis separation, broad claim narrowed",
+        "M7 completed on 2026-07-16 with two preserved instrument failures",
+        "All 35 arm/seed transactions restored the 24 declared local surface digests",
+        "claim_narrowed_after_full_attempt",
+        "M8 is now the active",
+    ]:
+        if phrase not in data["roadmap"]:
+            out.append(f"roadmap missing M7 terminal boundary: {phrase}")
+    residual_contract = status.get("residual_verifier_campaign_contract", {})
+    expected_residual_contract = {
+        "state": "m8_campaign_4_terminal_instrument_failure",
+        "readable_receipt_path": "docs/p4_residual_verifier_capacity_campaign.md",
+        "validator_path": "scripts/validate_p4_m8_residual_verifier_terminal.py",
+        "v1_diagnosis_path": "experiments/p4_residual_verifier_capacity/v1_preflight_failure_diagnosis.json",
+        "v1_protocol_outcome": "instrument_inadequate_route_taxonomy_and_clean_control",
+        "v2_diagnosis_path": "experiments/p4_residual_verifier_capacity_v2/v2_preflight_failure_diagnosis.json",
+        "v2_protocol_outcome": "instrument_inadequate_label_bearing_output_exemplar",
+        "v3_diagnosis_path": "experiments/p4_residual_verifier_capacity_v3/v3_terminal_preflight_failure_diagnosis.json",
+        "v3_protocol_outcome": "terminal_instrument_inadequate_extraction_contract",
+        "sacrificial_task_count": 18,
+        "model_call_count": 36,
+        "v3_decision_eligibility_accuracy": 1.0,
+        "v3_structured_residual_recall": 1.0,
+        "v3_clean_release_retention": 1.0,
+        "v3_false_reassurance_count": 0,
+        "v3_residual_schema_admitted": 3,
+        "v3_required_residual_schema_admitted": 5,
+        "heldout_task_count": 15,
+        "heldout_opened": False,
+        "claim_attempt_count": 0,
+        "chapter_core_promotion_count": 0,
+        "support_state_effect": "blocks_promotion",
+        "publication_authority": "none",
+        "release_authority": "none",
+    }
+    if residual_contract != expected_residual_contract:
+        out.append("M8 Campaign 4 residual/verifier terminal contract drifted")
+    for key in ["readable_receipt_path", "validator_path", "v1_diagnosis_path", "v2_diagnosis_path", "v3_diagnosis_path"]:
+        if not (ROOT / residual_contract.get(key, "missing")).exists():
+            out.append(f"M8 Campaign 4 artifact missing: {key}")
+    for phrase in [
+        "Campaign 4 terminal receipt — full repair sequence, heldout sealed",
+        "eighteen sacrificial tasks and 36",
+        "only 3/6 objects were admissible",
+        "terminal_instrument_inadequate_extraction_contract",
+        "Campaign 4 is complete at this no-claim",
+    ]:
+        if phrase not in data["roadmap"]:
+            out.append(f"roadmap missing Campaign 4 terminal boundary: {phrase}")
+    world_model_contract = status.get("situated_world_model_campaign_contract", {})
+    expected_world_model_contract = {
+        "state": "m8_campaign_5_bounded_non_core_promotion_accepted",
+        "readable_receipt_path": "docs/p4_situated_world_model_campaign.md",
+        "design_path": "experiments/p4_situated_world_model/design.json",
+        "preregistration_path": "experiments/p4_situated_world_model/preregistration.json",
+        "raw_run_path": "experiments/p4_situated_world_model/raw/campaign_run.json",
+        "result_path": "experiments/p4_situated_world_model/results/confirmatory_result.json",
+        "validator_path": "scripts/validate_p4_m8_world_model_campaign.py",
+        "transition_path": "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
+        "environment_count": 2,
+        "seed_count": 5,
+        "arm_count": 10,
+        "total_episode_count": 11250,
+        "heldout_episode_count": 6000,
+        "directional_ablation_signature_count": 6,
+        "governed_replacement_exact_count": 10,
+        "governed_rollback_exact_count": 10,
+        "workshop_governed_hidden_accuracy": 0.79333333,
+        "service_mesh_governed_hidden_accuracy": 0.79666667,
+        "workshop_governed_unsafe_action_rate": 0.1,
+        "service_mesh_governed_unsafe_action_rate": 0.11333333,
+        "transition_claim_id": "situated-world-model.finite-pomdp-governed-acquisition-and-consolidation",
+        "new_support_state": "synthetic-test-backed",
+        "new_chapter_created": False,
+        "chapter_core_promotion_count": 0,
+        "support_state_effect": "eligible_for_bounded_evidence_review",
+        "publication_authority": "none",
+        "release_authority": "none",
+    }
+    if world_model_contract != expected_world_model_contract:
+        out.append("M8 Campaign 5 situated-world-model contract drifted")
+    for key in ["readable_receipt_path", "design_path", "preregistration_path", "raw_run_path", "result_path", "validator_path", "transition_path"]:
+        if not (ROOT / world_model_contract.get(key, "missing")).exists():
+            out.append(f"M8 Campaign 5 artifact missing: {key}")
+    for phrase in [
+        "Campaign 5 terminal receipt — bounded finite effect promoted, no new chapter",
+        "11,250 total episodes",
+        "Six of six preregistered",
+        "synthetic-test-backed",
+        "distinct-interface gate",
+        "Campaign 5 is complete",
+    ]:
+        if phrase not in data["roadmap"]:
+            out.append(f"roadmap missing Campaign 5 terminal boundary: {phrase}")
+    kerc_contract = status.get("kerc_runtime_campaign_contract", {})
+    expected_kerc_contract = {
+        "state": "m8_campaign_6_terminal_broad_refutation_two_bounded_promotions",
+        "readable_receipt_path": "docs/p4_kerc_runtime_campaign.md", "design_path": "experiments/p4_kerc_runtime/design.json",
+        "preregistration_path": "experiments/p4_kerc_runtime/preregistration.json", "raw_run_path": "experiments/p4_kerc_runtime/raw/campaign_run.json",
+        "result_path": "experiments/p4_kerc_runtime/results/confirmatory_result.json", "validator_path": "scripts/validate_p4_m8_kerc_campaign.py",
+        "corpus_record_count": 192, "heldout_record_count": 64, "seed_count": 5, "baseline_family_count": 8,
+        "ablation_count": 13, "attack_count": 20, "attack_correct_count": 19, "kernel_native_accuracy": 0.5,
+        "best_surface_accuracy": 0.5, "complete_packet_mean_bytes": 714.0, "best_simple_mean_bytes": 73.25,
+        "observed_glossary_break_even_turn": 2, "broad_efficiency_disposition": "refuted_after_full_attempt",
+        "bounded_upward_transition_count": 2, "new_chapter_created": False, "chapter_core_promotion_count": 0,
+        "support_state_effect": "two_bounded_non_core_upward_and_one_exact_refutation", "publication_authority": "none", "release_authority": "none",
+    }
+    if kerc_contract != expected_kerc_contract:
+        out.append("M8 Campaign 6 KERC runtime contract drifted")
+    for key in ["readable_receipt_path","design_path","preregistration_path","raw_run_path","result_path","validator_path"]:
+        if not (ROOT / kerc_contract.get(key, "missing")).exists(): out.append(f"M8 Campaign 6 artifact missing: {key}")
+    for phrase in ["Campaign 6 terminal receipt — broad efficiency refuted, narrow mechanisms retained","192 authored bilingual records","complete packet averaged `714.0` bytes","quote/object escape","Campaign 6 is complete"]:
+        if phrase not in data["roadmap"]: out.append(f"roadmap missing Campaign 6 terminal boundary: {phrase}")
+    p5_batch = status.get("p5_terminal_batch_contract", {})
+    expected_p5_batch = {"state":"mandatory_batch_terminal_two_bounded_promotions_one_narrowing","receipt_path":"docs/p5_mandatory_terminal_batch.md","design_path":"experiments/p5_terminal_batch/design.json","preregistration_path":"experiments/p5_terminal_batch/preregistration.json","result_path":"experiments/p5_terminal_batch/results/result.json","validator_path":"scripts/validate_p5_terminal_batch.py","atom_count":3,"bounded_promotion_count":2,"narrowed_after_full_attempt_count":1,"chapter_core_promotion_count":0,"publication_authority":"none","release_authority":"none"}
+    if p5_batch != expected_p5_batch: out.append("P5 mandatory terminal-batch contract drifted")
+    for key in ["receipt_path","design_path","preregistration_path","result_path","validator_path"]:
+        if not (ROOT / p5_batch.get(key,"missing")).exists(): out.append(f"P5 mandatory batch artifact missing: {key}")
+    for phrase in ["Mandatory first batch terminal receipt — two bounded promotions, one narrowing","Circle named-target/receipt atom","rollback-outcome separation","CF-01 through CF-08 remain separately responsible"]:
+        if phrase not in data["roadmap"]: out.append(f"roadmap missing P5 terminal batch boundary: {phrase}")
+    family_terminal = status.get("claim_family_terminal_coverage_contract", {})
+    expected_family_terminal = {
+        "state":"repository_wide_terminal_disposition_audit_complete_family_bundle_gate_open",
+        "receipt_path":"docs/claim_family_terminal_coverage.md",
+        "design_path":"experiments/claim_family_terminal_coverage/design.json",
+        "preregistration_path":"experiments/claim_family_terminal_coverage/preregistration.json",
+        "preflight_receipt_path":"experiments/claim_family_terminal_coverage/preflight_receipt.json",
+        "result_path":"experiments/claim_family_terminal_coverage/results/result.json",
+        "schema_repair_receipt_path":"experiments/claim_family_terminal_coverage/results/schema_repair_receipt.json",
+        "validator_path":"scripts/validate_claim_family_terminal_program.py",
+        "atom_count":3745,"blocked_after_full_attempt_count":3698,
+        "retained_after_full_attempt_count":36,"narrowed_after_full_attempt_count":9,
+        "bounded_promotion_count":2,"chapter_core_promotion_count":0,
+        "single_shot_evaluator_run_count":1,"conservative_schema_repair_count":2,
+        "p5_family_natural_work_bundle_gate_satisfied":False,
+        "support_state_effect":"preserve_only_preaccepted_transitions",
+        "publication_authority":"none","release_authority":"none",
+    }
+    if family_terminal != expected_family_terminal:
+        out.append("CF-01 through CF-08 terminal-disposition coverage contract drifted")
+    for key in ["receipt_path","design_path","preregistration_path","preflight_receipt_path","result_path","schema_repair_receipt_path","validator_path"]:
+        if not (ROOT / family_terminal.get(key,"missing")).exists():
+            out.append(f"claim-family terminal artifact missing: {key}")
+    for phrase in ["Repository-wide terminal-disposition audit — complete, proof gaps retained","3,698 `blocked_after_full_attempt`","precise residual proof ledger, not proof by coverage","does **not** close M8"]:
+        if phrase not in data["roadmap"]:
+            out.append(f"roadmap missing claim-family terminal boundary: {phrase}")
+    family_bundle = status.get("claim_family_bundle_coverage_contract", {})
+    expected_family_bundle = {
+        "state":"eight_family_minimum_bundle_gate_complete_residual_atom_gaps_preserved",
+        "receipt_path":"docs/claim_family_bundle_coverage.md",
+        "result_path":"experiments/claim_family_bundle_coverage/result.json",
+        "schema_path":"schemas/claim_family_bundle_coverage.schema.json",
+        "validator_path":"scripts/validate_claim_family_bundle_coverage.py",
+        "family_count":8,"selected_bundle_count":8,"selected_validator_pass_count":8,
+        "blocked_atom_count_preserved":3698,"chapter_core_promotion_count":0,
+        "support_state_effect":"none_beyond_previously_accepted_exact_transitions",
+        "publication_authority":"none","release_authority":"none",
+    }
+    if family_bundle != expected_family_bundle:
+        out.append("CF-01 through CF-08 minimum family-bundle contract drifted")
+    for key in ["receipt_path","result_path","schema_path","validator_path"]:
+        if not (ROOT / family_bundle.get(key,"missing")).exists():
+            out.append(f"claim-family bundle artifact missing: {key}")
+    for phrase in ["Family natural-work and end-to-end bundle gate — complete","one per CF-01 through CF-08","preserves all 3,698 blocked","without claiming that one bundle proves every atom"]:
+        if phrase not in data["roadmap"]:
+            out.append(f"roadmap missing claim-family bundle boundary: {phrase}")
+    p6_terminal = status.get("p6_external_reproduction_terminal_contract", {})
+    expected_p6_terminal = {
+        "state":"blocked_after_full_attempt_strongest_comparators_inaccessible_and_candidate_absent",
+        "receipt_path":"docs/p6_external_reproduction_and_sota_challenge.md",
+        "comparator_ledger_path":"experiments/p6_external_reproduction/comparator_ledger.json",
+        "hardware_preflight_path":"experiments/p6_external_reproduction/hardware_access_preflight.json",
+        "onecell_defeat_prediction_path":"experiments/p6_external_reproduction/onecell_defeat_prediction.json",
+        "result_path":"experiments/p6_external_reproduction/results/terminal_result.json",
+        "validator_path":"scripts/validate_p6_external_reproduction_terminal.py",
+        "comparator_count":5,"tested_claim_atom_count":7,"blocked_after_full_attempt_count":7,
+        "outcome_bearing_run_count":0,"external_reproduction_count":0,"sota_supported_count":0,
+        "chapter_core_promotion_count":0,"support_state_effect":"blocks_promotion",
+        "publication_authority":"none","release_authority":"none",
+    }
+    if p6_terminal != expected_p6_terminal:
+        out.append("P6 external reproduction terminal contract drifted")
+    for key in ["receipt_path","comparator_ledger_path","hardware_preflight_path","onecell_defeat_prediction_path","result_path","validator_path"]:
+        if not (ROOT / p6_terminal.get(key,"missing")).exists():
+            out.append(f"P6 external reproduction artifact missing: {key}")
+    for phrase in ["P6 terminal receipt — strongest comparators honestly blocked","DeltaNet-2 reports stronger aggregate results","All seven atoms therefore end `blocked_after_full_attempt`","zero external reproductions"]:
+        if phrase not in data["roadmap"]:
+            out.append(f"roadmap missing P6 terminal boundary: {phrase}")
+    p7_reconciliation = status.get("p7_book_evidence_reconciliation_contract", {})
+    expected_p7_reconciliation = {
+        "state":"all_55_chapters_and_evidence_surfaces_reconciled",
+        "receipt_path":"docs/p7_book_evidence_reconciliation.md",
+        "result_path":"experiments/p7_book_evidence_reconciliation/result.json",
+        "schema_path":"schemas/p7_book_evidence_reconciliation.schema.json",
+        "validator_path":"scripts/validate_p7_book_evidence_reconciliation.py",
+        "reconciliation_script_path":"scripts/reconcile_p7_chapter_evidence.py",
+        "chapter_count":55,"atom_count":3745,"blocked_atom_count":3698,
+        "retained_atom_count":36,"narrowed_atom_count":9,"bounded_promotion_count":2,
+        "source_count":316,"appendix_digest_count":5,
+        "reader_projection_check_passed":True,"html_render_passed":True,
+        "core_argument_count":55,"chapter_core_promotion_count":0,
+        "support_state_effect":"none_beyond_previously_accepted_exact_non_core_transitions",
+        "publication_authority":"none","release_authority":"none",
+    }
+    if p7_reconciliation != expected_p7_reconciliation:
+        out.append("P7 book evidence reconciliation contract drifted")
+    for key in ["receipt_path","result_path","schema_path","validator_path","reconciliation_script_path"]:
+        if not (ROOT / p7_reconciliation.get(key,"missing")).exists():
+            out.append(f"P7 reconciliation artifact missing: {key}")
+    for phrase in ["P7 terminal receipt — complete reconciliation without claim laundering","All 55 chapters now","complete 68-document HTML render passes","preserves 3,698","zero chapter-core promotions"]:
+        if phrase not in data["roadmap"]:
+            out.append(f"roadmap missing P7 terminal boundary: {phrase}")
+    p8_freeze = status.get("p8_reader_evidence_freeze_contract", {})
+    expected_p8_freeze = {
+        "state":"complete_local_evidence_freeze_ready_not_published_multiformat_release_not_approved",
+        "receipt_path":"docs/p8_reader_evidence_freeze_and_release_disposition.md",
+        "manifest_path":"editions/reader_manuscript/v2_2/manifest.json",
+        "freeze_path":"editions/reader_manuscript/v2_2/evidence_freeze.json",
+        "format_matrix_path":"editions/reader_manuscript/v2_2/format_review_matrix.json",
+        "release_disposition_path":"editions/reader_manuscript/v2_2/release_disposition.json",
+        "terminal_record_path":"release_records/2026-07-16-post-v2-3-p8-evidence-freeze-ready-not-published.json",
+        "schema_path":"schemas/p8_reader_evidence_freeze.schema.json",
+        "validator_path":"scripts/validate_p8_reader_evidence_freeze.py",
+        "chapter_count":55,"html_page_count":60,"html_page_view_pair_count":120,"html_failure_count":0,
+        "epub_xhtml_entry_count":63,"docx_page_count":726,"docx_layout_residual_count":1,
+        "pdf_page_count":912,"pdf_outer_edge_ink_page_count":72,"pdf_confirmed_layout_failure_count":2,
+        "approved_exact_local_formats":["html"],
+        "bounded_not_release_approved_formats":["epub","docx"],
+        "failed_formats":["pdf"],"mutation_rejection_count":7,
+        "public_release_state":"not_authorized_not_published","support_state_effect":"none",
+        "publication_authority":"none","release_authority":"none",
+    }
+    if p8_freeze != expected_p8_freeze:
+        out.append("P8 reader evidence-freeze contract drifted")
+    for key in ["receipt_path","manifest_path","freeze_path","format_matrix_path","release_disposition_path","terminal_record_path","schema_path","validator_path"]:
+        if not (ROOT / p8_freeze.get(key,"missing")).exists():
+            out.append(f"P8 reader evidence-freeze artifact missing: {key}")
+    for phrase in ["P8 terminal receipt — exact local freeze, no public release","60-page HTML artifact passes","page-48 clipping","evidence_freeze_ready_not_published_multiformat_release_not_approved","no commit, push, tag, deployment"]:
+        if phrase not in data["roadmap"]:
+            out.append(f"roadmap missing P8 terminal boundary: {phrase}")
     governed_prereg = data["governed_usefulness_prereg"]
     governed_access = data["governed_usefulness_access"]
     governed_v1_result = data["governed_usefulness_v1_result"]
@@ -820,16 +1112,10 @@ def errors(data: dict) -> list[str]:
         out.append("milestone order must be M0 through M13")
     priority_states = [row.get("state") for row in status.get("priorities", [])]
     milestone_states = [row.get("state") for row in status.get("milestones", [])]
-    in_progress_priorities = [index for index, state in enumerate(priority_states) if state == "in_progress"]
-    if len(in_progress_priorities) != 1:
-        out.append("exactly one priority must be in progress while the roadmap is active")
-    else:
-        current_index = in_progress_priorities[0]
-        expected_states = ["completed"] * current_index + ["in_progress"] + ["pending"] * (9 - current_index)
-        if priority_states != expected_states or status.get("current_priority") != f"P{current_index}":
-            out.append("priority states and current_priority must form one monotone P0-P9 frontier")
-    if milestone_states.count("in_progress") != 1:
-        out.append("exactly one milestone must be in progress while the roadmap is active")
+    if priority_states != ["completed"] * 10 or status.get("current_priority") is not None:
+        out.append("completed roadmap must have terminal P0-P9 and no current priority")
+    if milestone_states != ["completed"] * 14:
+        out.append("completed roadmap must have terminal M0-M13")
     if milestone_states and milestone_states[0] != "completed":
         out.append("M0 successor activation must remain completed")
     p1 = status.get("p1_claim_atom_program", {})
@@ -2127,14 +2413,26 @@ def errors(data: dict) -> list[str]:
 
     article = status.get("x_article_contract", {})
     expected_article = {
+        "state": "complete_ready_not_published_unpublished_x_draft_exists",
         "contract_path": X_ARTICLE_CONTRACT,
+        "completion_receipt_path": "docs/x_article_synopsis_completion.md",
         "canonical_live_book_url": "https://corbensorenson.github.io/asi-stack-book/",
         "maximum_visible_word_count": 9999,
+        "canonical_visible_word_count": 5222,
+        "composer_reported_word_count": 5196,
+        "claim_crosswalk_count": 24,
         "header_width_pixels": 2000,
         "header_height_pixels": 800,
         "header_aspect_ratio": "5:2",
+        "desktop_preview_passed": True,
+        "mobile_preview_passed": True,
+        "platform_header_alt_text_control": "not_exposed_exact_residual",
+        "unpublished_draft_id": "2077875347220041728",
         "external_publication_authorized": False,
         "ready_not_published_is_terminal": True,
+        "publication_state": "ready_not_published_unpublished_x_draft_exists",
+        "support_state_effect": "none",
+        "release_effect": "none",
     }
     for key, value in expected_article.items():
         if article.get(key) != value:
@@ -2164,11 +2462,20 @@ def errors(data: dict) -> list[str]:
         if roadmap.count(family_id) < 1:
             out.append(f"roadmap does not define {family_id}")
 
+    successor = status.get("successor_contract", {})
+    if successor != {
+        "state": "active", "roadmap_path": SUCCESSOR, "status_path": SUCCESSOR_STATUS,
+        "schema_path": "schemas/post_v2_3_maintenance_transfer_and_publication_status.schema.json",
+        "validator_path": "scripts/validate_post_v2_3_maintenance_transfer_and_publication_roadmap.py",
+        "current_priority": "P0", "current_milestone": "M0",
+        "support_state_effect": "none", "release_effect": "none",
+    }:
+        out.append("terminal successor contract drifted")
     for path, body in data["public"].items():
         body_normalized = " ".join(body.split())
-        for phrase in [ROADMAP, STATUS, PREDECESSOR, PREDECESSOR_STATUS, "v2.3.0", "all 54 chapter-core claims remain at `argument`", "active canonical successor roadmap"]:
+        for phrase in [ROADMAP, STATUS, SUCCESSOR, SUCCESSOR_STATUS, "v2.3.0", "55"]:
             if phrase.casefold() not in body_normalized.casefold():
-                out.append(f"{path} missing active roadmap truth: {phrase}")
+                out.append(f"{path} missing terminal/successor roadmap truth: {phrase}")
         if "No successor roadmap is active" in body:
             out.append(f"{path} retains obsolete no-successor language")
     for name, body in [("living workflow", data["workflow"]), ("master prompt", data["master"])]:
@@ -2435,6 +2742,18 @@ def main() -> None:
     article_publish["status"]["x_article_contract"]["external_publication_authorized"] = True
     mutations.append(("X Article publication invention", article_publish))
 
+    p8_pdf_laundering = copy.deepcopy(base)
+    p8_pdf_laundering["status"]["p8_reader_evidence_freeze_contract"]["failed_formats"] = []
+    mutations.append(("P8 PDF failure laundering", p8_pdf_laundering))
+
+    p8_release_laundering = copy.deepcopy(base)
+    p8_release_laundering["status"]["p8_reader_evidence_freeze_contract"]["public_release_state"] = "published"
+    mutations.append(("P8 public-release invention", p8_release_laundering))
+
+    p8_format_inflation = copy.deepcopy(base)
+    p8_format_inflation["status"]["p8_reader_evidence_freeze_contract"]["approved_exact_local_formats"].append("pdf")
+    mutations.append(("P8 format approval inflation", p8_format_inflation))
+
     missing_contract = copy.deepcopy(base)
     missing_contract["x_article_contract"] = missing_contract["x_article_contract"].replace("9,999 words", "ten thousand words")
     mutations.append(("X Article contract weakening", missing_contract))
@@ -2445,7 +2764,7 @@ def main() -> None:
     if failures:
         raise SystemExit("Claim-proof/SOTA roadmap validation failed:\n - " + "\n - ".join(failures))
     print(
-        f"Claim-proof/SOTA roadmap passed: sole active successor at {base['status']['current_priority']}, monotone priority frontier, "
+        "Claim-proof/SOTA roadmap passed: terminal P0-P9/M0-M13 predecessor with maintenance successor active at P0/M0, "
         "55 live chapter-core programs across CF-01..CF-08 with a frozen 54-chapter activation baseline, exact proof/evidence/reader baseline, "
         "proof rationalization and argument-exit contracts, maintained X Article and exact 5:2 header contract, "
         "no support or release effect, no external-human gate, same-transaction successor continuity, "

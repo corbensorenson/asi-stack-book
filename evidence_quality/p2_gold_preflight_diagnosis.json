@@ -1,0 +1,235 @@
+{
+  "schema_version": "asi_stack.p2_gold_preflight_diagnosis.v1",
+  "recorded_date": "2026-07-17",
+  "state": "fixed_denominator_dispositioned_replacement_queue_frozen_qualification_pending",
+  "claim_id": "p2.governed_natural_repository_change_admission_joint_frontier",
+  "scope": "development_only_gold_oracle_instrument_and_construct_diagnosis",
+  "original_fixed_denominator": {
+    "task_count": 12,
+    "exact_pass_count": 7,
+    "instrument_failure_count": 5,
+    "repetitions_per_arm": 2,
+    "runtime_network": "none",
+    "result_path": "experiments/p2_governed_repository_admission/gold_preflight/result.json"
+  },
+  "terminal_disposition": {
+    "qualified_task_count": 8,
+    "excluded_n0_task_count": 4,
+    "replacement_slot_count": 4,
+    "qualified_language_count": 5,
+    "replacement_languages": [
+      "go",
+      "go",
+      "java",
+      "rust"
+    ],
+    "all_original_tasks_dispositioned": true,
+    "task_dispositions": [
+      {
+        "instance_id": "apiflask__apiflask-659",
+        "language": "python",
+        "disposition": "development_gold_oracle_qualified",
+        "qualification_path": "original_exact_paired_oracle",
+        "negative_inference_level": "none",
+        "claim_effect": "none"
+      },
+      {
+        "instance_id": "behat__gherkin-343",
+        "language": "php",
+        "disposition": "development_gold_oracle_qualified",
+        "qualification_path": "original_exact_paired_oracle",
+        "negative_inference_level": "none",
+        "claim_effect": "none"
+      },
+      {
+        "instance_id": "dynaconf__dynaconf-1293",
+        "language": "python",
+        "disposition": "development_gold_oracle_qualified",
+        "qualification_path": "original_exact_paired_oracle",
+        "negative_inference_level": "none",
+        "claim_effect": "none"
+      },
+      {
+        "instance_id": "google__yamlfmt-259",
+        "language": "go",
+        "disposition": "development_gold_oracle_qualified",
+        "qualification_path": "original_exact_paired_oracle",
+        "negative_inference_level": "none",
+        "claim_effect": "none"
+      },
+      {
+        "instance_id": "keithamus__sort-package-json-361",
+        "language": "js",
+        "disposition": "development_gold_oracle_qualified",
+        "qualification_path": "independent_ava_log_rescore",
+        "negative_inference_level": "none",
+        "claim_effect": "none"
+      },
+      {
+        "instance_id": "more-itertools__more-itertools-1028",
+        "language": "python",
+        "disposition": "development_gold_oracle_qualified",
+        "qualification_path": "original_exact_paired_oracle",
+        "negative_inference_level": "none",
+        "claim_effect": "none"
+      },
+      {
+        "instance_id": "quantecon__quantecon.py-769",
+        "language": "python",
+        "disposition": "development_gold_oracle_qualified",
+        "qualification_path": "original_exact_paired_oracle",
+        "negative_inference_level": "none",
+        "claim_effect": "none"
+      },
+      {
+        "instance_id": "true-myth__true-myth-1051",
+        "language": "ts",
+        "disposition": "development_gold_oracle_qualified",
+        "qualification_path": "original_exact_paired_oracle",
+        "negative_inference_level": "none",
+        "claim_effect": "none"
+      },
+      {
+        "instance_id": "aleph-alpha__ts-rs-422",
+        "language": "rust",
+        "disposition": "excluded_replacement_required",
+        "exclusion_code": "baseline_expected_status_set_unobservable",
+        "diagnosis": "The test patch produces a compile-stage failure and no named test statuses although the dataset requires 480 named failures; the human-gold arm passes 481 tests, including imports::test_def, which is absent from the stored expected set.",
+        "decisive_attempt": "experiments/p2_governed_repository_admission/gold_preflight_rescue/attempts/2026-07-17-rust-diagnostic-r1/result.json",
+        "negative_inference_level": "N0",
+        "claim_effect": "none"
+      },
+      {
+        "instance_id": "compose-spec__compose-go-792",
+        "language": "go",
+        "disposition": "excluded_replacement_required",
+        "exclusion_code": "runtime_external_resource_required",
+        "diagnosis": "TestSchema fetches json-schema.org during outcome execution, while the target baseline panic makes 59 stored fail-to-pass identities unobservable; the human-gold arm removes the target panic but the unrelated external-schema test still fails.",
+        "decisive_attempt": "experiments/p2_governed_repository_admission/gold_preflight_rescue/attempts/2026-07-17-dependency-diagnostic-r1/result.json",
+        "negative_inference_level": "N0",
+        "claim_effect": "none"
+      },
+      {
+        "instance_id": "gitleaks__gitleaks-1845",
+        "language": "go",
+        "disposition": "excluded_replacement_required",
+        "exclusion_code": "independent_specification_review_failed",
+        "diagnosis": "The target human-gold change behaves, but TestFromGit and TestFromGitStaged fail in both arms because the local Docker filesystem returns EXDEV when the fixture renames dotGit to .git; four stored pass-to-pass identities are therefore not portable to this execution environment.",
+        "decisive_attempt": "experiments/p2_governed_repository_admission/gold_preflight_rescue/attempts/2026-07-17-dependency-diagnostic-r1/result.json",
+        "negative_inference_level": "N0",
+        "claim_effect": "none"
+      },
+      {
+        "instance_id": "thealgorithms__java-6333",
+        "language": "java",
+        "disposition": "excluded_replacement_required",
+        "exclusion_code": "dependency_materialization_failure",
+        "diagnosis": "Maven reveals runtime-only dynamic dependencies sequentially: generic go-offline omitted Surefire's JUnit provider, and an explicit provider fetch still omitted junit-platform-launcher 1.13.2. The frozen bounded rescue ended rather than chasing an open-ended dependency chain.",
+        "decisive_attempt": "experiments/p2_governed_repository_admission/gold_preflight_rescue/attempts/2026-07-17-java-surefire-diagnostic-r1/result.json",
+        "negative_inference_level": "N0",
+        "claim_effect": "none"
+      }
+    ]
+  },
+  "false_negative_findings": {
+    "upstream_parser_false_reject_count": 1,
+    "post_test_start_dependency_fetch_failure_count": 4,
+    "compile_or_panic_expected_set_unobservable_count": 2,
+    "runtime_external_resource_task_count": 1,
+    "local_filesystem_semantics_incompatibility_count": 1,
+    "bounded_dynamic_dependency_chain_exhaustion_count": 1,
+    "idea_or_mechanism_negative_inference_count": 0
+  },
+  "attempt_lineage": [
+    {
+      "id": "read_only",
+      "path": "experiments/p2_governed_repository_admission/gold_preflight_attempt_001_read_only_instrument_failure/result.json",
+      "state": "instrument_failure",
+      "negative_inference_level": "N0",
+      "claim_effect": "none"
+    },
+    {
+      "id": "pilot",
+      "path": "experiments/p2_governed_repository_admission/gold_preflight_attempt_002_pilot_success/result.json",
+      "state": "passed",
+      "negative_inference_level": "none",
+      "claim_effect": "none"
+    },
+    {
+      "id": "full",
+      "path": "experiments/p2_governed_repository_admission/gold_preflight/result.json",
+      "state": "instrument_failure",
+      "negative_inference_level": "N0",
+      "claim_effect": "none"
+    },
+    {
+      "id": "abort",
+      "path": "experiments/p2_governed_repository_admission/gold_preflight_rescue/attempts/2026-07-17-raw-log-custody-abort/record.json",
+      "state": "instrument_failure_aborted",
+      "negative_inference_level": "N0",
+      "claim_effect": "none"
+    },
+    {
+      "id": "rust",
+      "path": "experiments/p2_governed_repository_admission/gold_preflight_rescue/attempts/2026-07-17-rust-diagnostic-r1/result.json",
+      "state": "instrument_failure",
+      "negative_inference_level": "N0",
+      "claim_effect": "none"
+    },
+    {
+      "id": "dependency",
+      "path": "experiments/p2_governed_repository_admission/gold_preflight_rescue/attempts/2026-07-17-dependency-diagnostic-r1/result.json",
+      "state": "instrument_failure",
+      "negative_inference_level": "N0",
+      "claim_effect": "none"
+    },
+    {
+      "id": "java_ipv4",
+      "path": "experiments/p2_governed_repository_admission/gold_preflight_rescue/attempts/2026-07-17-java-ipv4-diagnostic-r1/result.json",
+      "state": "instrument_failure",
+      "negative_inference_level": "N0",
+      "claim_effect": "none"
+    },
+    {
+      "id": "java_surefire",
+      "path": "experiments/p2_governed_repository_admission/gold_preflight_rescue/attempts/2026-07-17-java-surefire-diagnostic-r1/result.json",
+      "state": "instrument_failure",
+      "negative_inference_level": "N0",
+      "claim_effect": "none"
+    }
+  ],
+  "custody_and_raw_evidence": {
+    "attempt_record_count": 8,
+    "verified_compressed_arm_log_count": 62,
+    "verified_dependency_preparation_log_count": 5,
+    "aborted_missing_raw_log_attempt_count": 1,
+    "raw_log_custody_required_after_abort": true,
+    "final_pool_selected": false,
+    "final_pool_opened": false
+  },
+  "resource_observations": {
+    "max_original_pull_seconds": 179.598325,
+    "sum_original_pull_seconds": 1634.55548,
+    "max_expanded_image_size_bytes": 1199949684,
+    "max_observed_arm_seconds": 431.525936,
+    "max_dependency_preparation_seconds": 133.401805,
+    "original_full_run_host_free_byte_delta": -21458173952,
+    "resource_gate_state": "pending_peak_memory_cpu_and_frozen_ceiling_before_replacement_draw"
+  },
+  "next_required_action": {
+    "policy_path": "evidence_quality/p2_task_qualification_and_replacement_policy.json",
+    "resource_ceiling_must_be_frozen_before_draw": true,
+    "replacement_draw_started": true,
+    "replacement_task_count_required": 4,
+    "rerun_two_repetitions_after_replacement": true,
+    "independent_specification_review_still_required": true
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "Development gold-oracle qualification is not a model-capability, governed-admission, safety, transfer, SOTA, release, AGI, or ASI result.",
+    "The four excluded tasks are N0 instrument or construct dispositions, not failures of the book's mechanism.",
+    "Eight qualified development tasks do not permit reduction of the frozen twelve-task target; four replacements are required.",
+    "The final held-out pool remains unselected and unopened."
+  ]
+}

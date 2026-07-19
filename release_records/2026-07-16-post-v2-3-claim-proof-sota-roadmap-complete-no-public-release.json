@@ -1,0 +1,50 @@
+{
+  "schema_version": "asi_stack.roadmap_terminal_disposition.v1",
+  "record_type": "post_v2_3_claim_proof_sota_roadmap_terminal",
+  "record_date": "2026-07-16",
+  "roadmap": "docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md",
+  "status_record": "roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json",
+  "decision": "roadmap_complete_no_public_release",
+  "completed_priorities": ["P0", "P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9"],
+  "completed_milestones": ["M0", "M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "M10", "M11", "M12", "M13"],
+  "terminal_truth": {
+    "live_working_chapter_count": 55,
+    "chapter_core_argument_count": 55,
+    "chapter_core_promotion_count": 0,
+    "claim_atom_count": 3745,
+    "blocked_after_full_attempt_atom_count": 3698,
+    "external_reproduction_count": 0,
+    "sota_supported_count": 0,
+    "approved_exact_local_reader_formats": ["html"],
+    "bounded_not_release_approved_reader_formats": ["epub", "docx"],
+    "failed_reader_formats": ["pdf"],
+    "x_article_state": "ready_not_published_unpublished_x_draft_exists",
+    "x_article_draft_id": "2077875347220041728",
+    "latest_public_living_book_release": "v2.3.0"
+  },
+  "reader_evidence_freeze_record": "release_records/2026-07-16-post-v2-3-p8-evidence-freeze-ready-not-published.json",
+  "x_article_record": "release_records/2026-07-16-x-article-synopsis-ready-not-published.json",
+  "successor": {
+    "path": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
+    "status_path": "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
+    "state": "active",
+    "current_priority": "P0",
+    "current_milestone": "M0"
+  },
+  "public_release_created": false,
+  "commit_action_taken": false,
+  "push_action_taken": false,
+  "tag_action_taken": false,
+  "deployment_action_taken": false,
+  "archive_or_doi_action_taken": false,
+  "license_change_taken": false,
+  "x_publish_action_taken": false,
+  "publication_authority": "none",
+  "release_effect": "none",
+  "support_state_effect": "none",
+  "non_claims": [
+    "Roadmap completion does not prove the ASI Stack, general AI safety, state-of-the-art performance, AGI, or ASI.",
+    "The exact local HTML approval does not approve EPUB, DOCX, PDF, deployment, or public release.",
+    "The unpublished X draft is not an Article publication, endorsement, license grant, or audience receipt."
+  ]
+}

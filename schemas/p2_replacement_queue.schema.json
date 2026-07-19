@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://asi-stack.local/schemas/p2_replacement_queue.schema.json",
+  "title": "P2 deterministic metadata-only replacement queue",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "recorded_date", "state", "claim_id", "policy_path",
+    "resource_ceiling_path", "diagnosis_path", "eligible_metadata_sha256",
+    "original_development_pool_sha256", "seed", "order_key", "selection_rule",
+    "slot_count", "candidate_count", "unique_candidate_repository_count", "slots",
+    "queue_sha256", "task_text_opened", "solution_or_test_patch_opened",
+    "candidate_gold_outcome_opened", "replacement_qualification_started",
+    "final_pool_selected", "final_pool_opened", "support_state_effect",
+    "release_effect", "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.p2_replacement_queue.v1"},
+    "recorded_date": {"const": "2026-07-17"},
+    "state": {"const": "metadata_only_queue_frozen_candidate_content_unopened"},
+    "claim_id": {"const": "p2.governed_natural_repository_change_admission_joint_frontier"},
+    "policy_path": {"const": "evidence_quality/p2_task_qualification_and_replacement_policy.json"},
+    "resource_ceiling_path": {"const": "evidence_quality/p2_resource_ceiling.json"},
+    "diagnosis_path": {"const": "evidence_quality/p2_gold_preflight_diagnosis.json"},
+    "eligible_metadata_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "original_development_pool_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "seed": {"type": "string", "minLength": 100},
+    "order_key": {"const": "sha256(seed_utf8 + NUL + instance_id_utf8) ascending"},
+    "selection_rule": {"type": "string", "minLength": 40},
+    "slot_count": {"const": 4},
+    "candidate_count": {"const": 30},
+    "unique_candidate_repository_count": {"const": 30},
+    "slots": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["slot", "replaces_instance_id", "language", "exclusion_code", "state",
+          "queue_capacity_limit", "candidate_count", "candidate_queue_sha256", "next_candidate_rank",
+          "opened_candidate_count", "qualified_replacement_instance_id", "candidates"],
+        "properties": {
+          "slot": {"type": "integer", "minimum": 1, "maximum": 4},
+          "replaces_instance_id": {"type": "string", "minLength": 8},
+          "language": {"enum": ["rust", "go", "java"]},
+          "exclusion_code": {"type": "string", "minLength": 8},
+          "state": {"const": "queue_frozen_candidate_content_unopened"},
+          "queue_capacity_limit": {"const": 10},
+          "candidate_count": {"type": "integer", "minimum": 1, "maximum": 10},
+          "candidate_queue_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "next_candidate_rank": {"const": 1},
+          "opened_candidate_count": {"const": 0},
+          "qualified_replacement_instance_id": {"type": "null"},
+          "candidates": {
+            "type": "array", "minItems": 1, "maxItems": 10,
+            "items": {
+              "type": "object", "additionalProperties": false,
+              "required": ["rank", "order_sha256", "instance_id", "created_at_utc", "repo",
+                "base_commit", "language", "license", "image_name", "difficulty_annotation",
+                "quality_code_annotation", "num_modified_files", "num_modified_lines",
+                "problem_statement_sha256", "solution_patch_sha256", "test_patch_sha256",
+                "test_command_sha256", "github_pr_url_candidate", "public_pr_receipt_state",
+                "image_manifest_state", "task_content_opened", "gold_outcome_opened"],
+              "properties": {
+                "rank": {"type": "integer", "minimum": 1, "maximum": 10},
+                "order_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                "instance_id": {"type": "string", "minLength": 8},
+                "created_at_utc": {"type": "string", "minLength": 10},
+                "repo": {"type": "string", "pattern": "^[^/]+/[^/]+$"},
+                "base_commit": {"type": "string", "minLength": 7},
+                "language": {"enum": ["rust", "go", "java"]},
+                "license": {"type": "string", "minLength": 3},
+                "image_name": {"type": "string", "minLength": 3},
+                "difficulty_annotation": {"const": "easy"},
+                "quality_code_annotation": {"const": "A"},
+                "num_modified_files": {"enum": [1, 2]},
+                "num_modified_lines": {"type": "integer", "minimum": 1},
+                "problem_statement_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                "solution_patch_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                "test_patch_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                "test_command_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                "github_pr_url_candidate": {"type": "string", "pattern": "^https://github\\.com/[^/]+/[^/]+/pull/[0-9]+$"},
+                "public_pr_receipt_state": {"const": "unverified"},
+                "image_manifest_state": {"const": "unprobed"},
+                "task_content_opened": {"const": false},
+                "gold_outcome_opened": {"const": false}
+              }
+            }
+          }
+        }
+      }
+    },
+    "queue_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "task_text_opened": {"const": false},
+    "solution_or_test_patch_opened": {"const": false},
+    "candidate_gold_outcome_opened": {"const": false},
+    "replacement_qualification_started": {"const": false},
+    "final_pool_selected": {"const": false},
+    "final_pool_opened": {"const": false},
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 20}}
+  }
+}

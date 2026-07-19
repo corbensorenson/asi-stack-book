@@ -1,0 +1,505 @@
+# Labor OS and Typed Jobs
+
+After planning, verification, and review, the stack has to turn accepted work into bounded execution. A Labor OS is the layer where tasks become typed jobs with lifecycle, parentage, inputs, outputs, approvals, isolation, logs, failure behavior, and completion criteria.
+
+This is where "agent" becomes less useful as a word. The architecture does not need a free-floating actor; it needs jobs that say what they are allowed to do, which gate can stop them, what evidence they must return, and how their work can be audited or replayed later. A job is small enough to govern and durable enough to inspect.
+
+Typed work turns execution from a personality problem into a recordkeeping and authority problem.
+
+That shift is what makes large-scale AI labor auditable rather than mysterious. The work item becomes something a team can inspect, replay, deny, or improve.
+
+Execution becomes safer when the smallest useful unit is a record rather than a persona, because typed work makes delegation reviewable before personality enters the story. Records precede delegation so execution remains bounded after handoff begins downstream.
+
+## Problem
+
+Intelligence must become typed work with lifecycle, permissions, artifacts, logs, and approvals.
+
+The previous chapters decide what should be believed and reviewed. Execution begins when accepted plans become work. Talos supplies the right frame: an AI labor operating system turns plans into typed jobs with contract locks, permissions, isolated workspaces, adjudication, delivery, feedback, audit, and replay.
+
+A job is the unit that keeps agency bounded. It carries a contract, lifecycle state, inputs, outputs, permissions, approval state, runtime adapter, failure behavior, audit events, and replay status.
+
+This makes jobs the execution-side partner of command contracts. Commands expose the semantic fields; plans decompose those fields; jobs bind each dispatchable node to an execution state that can be approved, denied, audited, retried, or retired.
+
+The job boundary is also where the stack distinguishes work from evidence. A job can run and produce something useful without proving that the work was authorized, verified, replayable, or safe to reuse. The labor OS should make that difference explicit instead of collapsing it into a single "done" status.
+
+## Why existing approaches are insufficient
+
+Chat outputs do not provide deterministic job lifecycle, tool isolation, auditability, or repeatable cognitive manufacturing.
+
+Chat is not a factory. It does not lock a contract, isolate tools, enforce permission boundaries, require approvals, preserve logs, or tell a later verifier how to replay what happened. Without jobs, the system has vibes and side effects instead of controlled work.
+
+AutoGen (`ext_autogen_2023`) gives an external multi-agent workflow baseline, and SWE-bench (`ext_swe_bench_2023`) gives an external software-task benchmark baseline with repository-scale context and patch evaluation. Labor OS uses those comparison points to ask for typed job lifecycles, artifact receipts, replay, and approval boundaries around agentic work. The baseline references do not claim that Talos jobs reproduce AutoGen workflows or solve SWE-bench tasks.
+
+Workflow and job systems already solve important adjacent problems. Temporal (`ext_temporal_docs`) supplies durable workflow execution, event history, worker, and failure-recovery vocabulary. Airflow (`ext_airflow_dag_docs`) supplies DAG, schedule, task, dependency, callback, retry, and timeout vocabulary. BPMN 2.0.2 (`ext_bpmn_2_0_2_spec`) supplies stakeholder-readable process-notation and process-component translation lineage. Kubernetes Jobs (`ext_kubernetes_jobs_docs`) supplies batch-job completion, failure, backoff, deadline, terminal-condition, and cleanup vocabulary. The Labor OS does not claim to replace those systems; it asks what must be added when the work is AI labor that carries authority, tool permissions, approvals, artifact/evidence receipts, residuals, and support-state effects.
+
+GenesisCode reinforces the distinction: proposals and effects are different things. Effects require capability boundaries and replay logs. Software Magic adds that workflows need entry rules, exit rules, guards, loops, and recovery paths.
+
+Agent swarms often fail at this boundary. They start many plausible subtasks but lose the lifecycle state, permission scope, parent contract, or artifact trail that would let a reviewer know which work was authorized and which work merely happened. A Labor OS should make unauthorized work hard to start and unlogged work hard to hide.
+
+The same failure can happen in a single-agent workflow. A model may create files, messages, patches, summaries, or decisions that look complete but lack approval state, effect receipts, or replay metadata. The unit of governance is therefore not the agent; it is the typed job record.
+
+## Core Claim
+
+The execution layer should convert plans into typed jobs managed by a governed labor operating system (evidence boundary: architectural argument).
+Talos supplies the labor-OS frame, contract-lock discipline, job pipeline, evidence-bound artifact, audit, replay, and explicit non-claim boundaries. VIEA supplies the intent-to-artifact-to-runtime trace, permission envelopes, approval roles, side-effect classes, runtime-adapter maturity levels, and feedback loop. GenesisCode supplies the proposal/effect separation, host-provided capability boundary, deterministic effect logs, replay semantics, obligations, provenance, and semantic patch discipline. Software Magic Grimoire supplies workflow guard vocabulary for bounded instruction artifacts, output contracts, verification, failure behavior, and gated spell stacks. The Markdown Talos release and MoECOT remain connector review context context, not passage-reviewed evidence.
+
+### Strongest objection
+
+Labor OS may be an expensive relabeling of mature workflow systems, queues,
+schedulers, process engines, and batch controllers. Authority metadata does not
+enforce authority; receipts can omit real side effects; retries can duplicate
+harm; and approvals can become latency-heavy ceremony. A simple script plus a
+capable operator may outperform the full layer. The design case therefore
+needs matched natural execution, fault, usefulness, authorization, side-effect,
+recovery, fairness, privacy, human-burden, and total-cost evidence.
+
+## Mechanism
+
+The Typed Job is the control-plane record that turns a dispatchable plan node
+into one bounded work lifecycle. Its first mechanisms freeze the work contract,
+identity, admission, locks, lifecycle, permissions, approvals, environment, and
+scheduling state before effects. Its later mechanisms govern leases, observed
+effects, retries, recovery, delivery, evidence-readiness eligibility, terminal
+receipts, retirement, feedback, and comparison. The contract has eighteen
+mechanisms:
+
+1. Freeze one job contract from an accepted contract and dispatchable plan node
+with exact type, objective, scope, inputs, expected artifacts, acceptance
+tests, failure behavior, consumer, consequence, risk, authority, rights,
+budget, deadline, and expiry.
+2. Assign stable job, attempt, lease, workspace, adapter invocation, approval,
+effect, artifact, receipt, residual, and parent identities with causal
+lineage and idempotency keys.
+3. Admit, refuse, defer, split, or quarantine work only after validating parent
+contract and plan versions, lifecycle state, required inputs, adapter
+eligibility, resource envelope, authority, rights, and open blockers.
+4. Lock material job fields before dispatch and invalidate approval,
+permission, verification, or replay decisions after relevant contract, plan,
+input, adapter, policy, threat, environment, or consumer change.
+5. Use typed lifecycle transitions for drafted, locked, awaiting approval,
+approved, dispatchable, queued, leased, running, paused, retrying,
+adjudicating, delivered, evidence ready, failed, blocked, quarantined,
+cancelled, compensated, replayed, expired, and retired states.
+6. Request exact capability, tool, data, network, secret-handle, disclosure,
+side-effect, environment, and retention grants from their owners without
+minting or widening permissions locally.
+7. Bind required accountable-human or policy approvals to exact job version,
+effect class, authority, scope, time, conditions, revocation, and reuse
+limits before high-impact dispatch.
+8. Provision purpose-bound workspace, secret isolation, environment lock,
+runtime adapter, model/tool versions, input digests, observation hooks, and
+cleanup policy as separately inspectable boundaries.
+9. Schedule admitted work under declared priority, fairness, dependency,
+capacity, deadline, preemption, starvation, and cost policies while keeping
+queue acceptance distinct from dispatch and completion.
+10. Lease each dispatch attempt with bounded authority, expiry, heartbeat,
+retry policy, checkpoint, idempotency key, duplicate-effect guard, and
+exact resume or restart semantics.
+11. Observe actual adapter calls, tool uses, reads, writes, messages, external
+effects, outputs, costs, failures, approvals, denials, interventions, and
+side records rather than trusting agent or scheduler status.
+12. Resume and retry only from declared checkpoints with unchanged or
+reauthorized authority, reconciled effects, fresh leases, preserved attempt
+lineage, and explicit at-most-once, at-least-once, or compensated semantics.
+13. Route failures, denials, timeouts, partial effects, lost workers, stale
+leases, policy changes, residuals, and unknown states to typed recovery,
+escalation, compensation, quarantine, or terminal custody.
+14. Separate produced output, delivered output, adjudicated output, verified
+artifact capture, replay declaration, evidence-ready completion, user
+acceptance, support, and release.
+15. Issue terminal receipts that bind observed pre/post state, attempts,
+approvals, permissions, adapters, effects, artifacts, tests, audit refs,
+delivery, evidence-readiness state, replay grade, costs, residuals, and
+non-claims.
+16. Cancel, compensate, expire, revoke, garbage-collect, or retire jobs through
+owner-authorized transitions that preserve irreversible effects, artifacts,
+obligations, and historical receipts.
+17. Return bounded feedback, failure signatures, reusable procedures, and
+learning candidates through Artifact Graphs and their owning gates without
+silently editing plans, memory, policies, models, or support.
+18. Compare chat, ambient agents, agent swarms, scripts, queues, DAG
+orchestrators, durable workflows, BPMN/process engines, Kubernetes batch
+jobs, and governed typed jobs under matched work, resources, authority,
+faults, delayed outcomes, and total cost.
+
+```{mermaid}
+flowchart LR
+A["Contract + dispatchable plan node"] --> B["Admit + lock typed job"]
+B --> C["Permissions + approvals + workspace"]
+C --> D["Queue + bounded lease"]
+D --> E["Adapter execution + effect observation"]
+E --> F{"Terminal state?"}
+F -- "retry / recover" --> G["Reconcile effects + fresh lease"]
+G --> D
+F -- "fail / block" --> H["Residual / compensation / quarantine"]
+F -- "deliver" --> I["Artifact + adjudication"]
+I --> J{"Evidence-ready fields complete?"}
+J -- "no" --> K["Delivered, not evidence ready"]
+J -- "yes" --> L["Terminal receipt + evidence eligibility"]
+```
+
+**Reading the typed job lifecycle:** Admission and authority precede work.
+Scheduling and leasing precede effects. Actual effects remain observable across
+retry, recovery, failure, compensation, and quarantine. Delivery then branches
+from evidence-ready eligibility: a useful output can reach its consumer while
+verification, artifact capture, replay, cost, or residual fields remain open.
+
+The lifecycle preserves custody rather than promising correctness. Runtime
+adapters own effects, Artifact Graphs own produced records, evidence owners
+decide support, and accountable humans own high-impact approval. Labor OS keeps
+those decisions attached to the same job and attempt history so neither a model
+response nor a scheduler status can silently substitute for an owning receipt.
+
+Identity continuity ties the lifecycle together. A queue item, worker process,
+adapter call, produced file, delivery notification, and terminal receipt are
+different objects with different clocks and failure surfaces. Their shared job
+and attempt lineage makes later reconstruction possible while preserving the
+points where custody changed hands, observation was partial, or a downstream
+owner declined the result.
+
+### Typed job lifecycle states
+
+Typed jobs use lifecycle states so work cannot slide from idea to side effect without review. A drafted job is only a packet proposal; it cannot dispatch. A locked job has fixed contract, parentage, expected artifact, and failure behavior, so it can enter permission review. If approval is missing or stale, the job waits. If approval is present and scoped, it may become dispatchable once permissions, inputs, and adapter requirements also pass.
+
+Running is not completion. A running job must emit audit events. When output exists, the job enters adjudication until verification, review, or acceptance is complete. A delivered job has returned or exposed a useful artifact, but that still does not make it evidence-ready.
+
+Evidence readiness requires the required artifact capture, verification, audit, residual, and replay or non-replay fields to exist. Failed or blocked jobs need residuals and recovery paths. Quarantined jobs had unauthorized effects, missing provenance, or unsafe behavior and cannot support promotion. Replayed or retired jobs become historical trace unless they are requalified.
+
+The distinction between delivered and evidence-ready is central. Delivery satisfies a user-facing workflow; evidence readiness satisfies the living stack.
+
+## Interfaces
+
+Ownership stays explicit across twelve interfaces:
+
+1. Intent and Command Contracts supply authorized objectives and constraints;
+jobs cannot reinterpret intent or widen contract scope.
+2. Planning supplies dispatchable plan-node identity, dependencies, acceptance
+conditions, and residuals; Labor OS owns execution lifecycle rather than
+plan correctness.
+3. Proof-Carrying Claims and review owners supply bounded blockers,
+constraints, required actions, and human decisions; jobs cannot promote
+verdicts or support.
+4. Security, Privacy, Rights, Licensing, and authority owners issue and revoke
+exact permissions, approvals, secret handles, disclosure limits, and
+retention obligations.
+5. Resource Economics and scheduler policy supply capacity, priority, fairness,
+deadline, preemption, and cost constraints; queue state is not work
+completion.
+6. Runtime Adapters and tool runners own actual effect execution and effect
+receipts; Labor OS dispatches and observes but does not declare external
+effects reversible.
+7. Context ABI and Transactions supply exact input views, mounts, taint,
+deletion, and expiry state; jobs cite rather than mutate context outside
+authorized transactions.
+8. Artifact Graphs own output identity, provenance, replay grade, audit
+reconstruction, and receipt faithfulness; Labor OS links attempts to
+produced and delivered artifacts.
+9. Verification Bandwidth, Evidence States, and claim owners decide adequacy
+and support; evidence-ready is an eligibility state, not evidence acceptance.
+10. Accountable humans own high-impact approval, exception, adjudication,
+intervention, appeal, and irreversible-effect decisions within exact
+authority.
+11. Readiness and publication owners decide deployment, delivery claims, and
+release; a terminal job receipt is not release approval.
+12. Temporal, Airflow, BPMN, Kubernetes, Talos, VIEA, GenesisCode, Software
+Magic, and MoECOT supply lineage and implementation comparators, not local
+scheduler or runtime evidence.
+
+Minimum fields:
+
+- `job_id`
+- `contract_id`
+- `job_type`
+- `lifecycle_state`
+- `runtime_adapter`
+- `inputs`
+- `outputs`
+- `permissions`
+- `approval_state`
+- `failure_behavior`
+- `audit_events`
+- `replay_status`
+
+The current public schema is narrower than the expanded contract. It records
+basic job, contract, lifecycle, adapter, input/output, permission, approval,
+failure, audit, and replay fields, but not every attempt, lease, workspace,
+effect observation, idempotency, checkpoint, compensation, cost, expiry,
+parent-plan, or evidence-readiness field. Those gaps remain implementation
+residuals.
+
+The job should emit a completion receipt:
+
+- `parent_contract_id`
+- `plan_node_id`
+- `approval_record`
+- `permission_basis`
+- `runtime_adapter_ref`
+- `artifact_refs`
+- `verification_refs`
+- `audit_event_refs`
+- `residuals`
+- `replay_or_non_replay_reason`
+- `delivery_state`
+- `evidence_state`
+
+This receipt records the boundary needed to detect completion laundering. It
+does not by itself establish that every effect was observed or that the
+underlying work was authorized, correct, useful, safe, or evidence worthy.
+
+## Invariants
+
+The invariants preserve work identity, authority, state, effects, and receipts
+across normal execution and faults. They define when a job remains in Labor OS
+custody without turning a complete record into proof that the work was correct.
+
+1. Every admitted job binds one exact contract and plan-node version, type,
+objective, scope, inputs, expected artifacts, acceptance tests, consumer,
+consequence, risk, authority, rights, budget, deadline, expiry, and owner.
+2. Job, attempt, lease, workspace, approval, permission, adapter invocation,
+effect, artifact, receipt, residual, and parent identities remain stable,
+distinct, and causally linked.
+3. Lifecycle transitions use the declared state machine; requested, admitted,
+queued, leased, running, paused, retrying, delivered, evidence ready, failed,
+blocked, quarantined, cancelled, compensated, replayed, expired, and retired
+states never collapse into a generic done state.
+4. Material contract, plan, input, adapter, policy, threat, environment,
+authority, rights, consumer, or deadline changes expire affected locks,
+approvals, permissions, leases, verification, and replay decisions.
+5. Permissions, approvals, budgets, data access, secret handles, network access,
+side effects, disclosure, retention, and release authority are explicit,
+least-privilege, purpose-bound, revocable, and non-escalating across
+dispatch, retry, resume, delegation, and replay.
+6. High-impact or irreversible work cannot dispatch without the exact required
+approval for the current job, effect class, authority, scope, conditions,
+and time.
+7. Queue acceptance, scheduler assignment, lease acquisition, agent response,
+tool return, file existence, delivery, and user acknowledgment are not
+equivalent to durable completion or evidence readiness.
+8. Actual reads, writes, tool calls, messages, external effects, artifacts,
+approvals, denials, failures, retries, interventions, costs, and cleanup
+remain independently observable.
+9. Retry and resume preserve attempt lineage, fresh lease state,
+authorization, idempotency or compensation policy, checkpoints, observed
+prior effects, and duplicate-effect handling.
+10. Lost workers, expired leases, partial effects, timeouts, policy changes,
+unknown outcomes, and residuals cannot become silent success; they route to
+exact recovery or terminal custody.
+11. Workspace, secret, context, adapter, and cleanup boundaries preserve taint,
+rights, authority, retention, and side-effect obligations through every
+produced derivative.
+12. Produced, delivered, adjudicated, verified, artifact-captured,
+replay-declared, evidence-ready, user-accepted, supported, and released
+states remain distinct.
+13. Evidence-ready completion requires exact approvals, permissions, observed
+effects, artifacts, verification refs, audit refs, residuals, replay or
+non-replay declaration, costs, terminal receipt, and non-claims for the
+declared boundary.
+14. Cancellation, compensation, rollback, expiry, revocation, cleanup, and
+retirement preserve irreversible effects, external copies, disclosures,
+downstream artifacts, open obligations, costs, and residuals.
+15. Feedback, procedures, memory candidates, policy changes, model updates, and
+support changes pass through their owning gates and are never inferred from
+job success.
+16. Fairness, priority, starvation, deadline, preemption, and resource decisions
+remain inspectable with rejected, delayed, cancelled, and abandoned work in
+the denominator.
+17. Every attempt, failure, denial, retry, timeout, lease loss, intervention,
+partial effect, compensation, quarantine, appeal, human work, privacy
+exposure, delay, cost, missed help, and residual remains in the denominator.
+18. Schemas, authored fixtures, finite route theorems, documentation
+comparators, and local green checks establish only their exact record,
+formal, source, and environment boundaries.
+
+## Failure modes
+
+These failures either let work escape its admitted boundary or substitute an
+operational status for an observed consequence. The taxonomy keeps authority,
+effects, recovery, delivery, evidence eligibility, and cost failures visible:
+
+1. Ambient-agent execution allows work or side effects without an admitted
+typed job, exact parent contract, authority, owner, or terminal receipt.
+2. Contract or plan drift executes stale, widened, substituted, or
+outcome-edited work after the material boundary changed.
+3. Lifecycle laundering treats queueing, leasing, running, output, delivery,
+acknowledgement, or idleness as completion or evidence readiness.
+4. Permission and approval laundering widens grants, reuses stale approvals,
+self-approves, delegates beyond authority, or dispatches irreversible work
+without the current gate.
+5. Tool, adapter, workspace, network, data, or secret overreach crosses the
+declared capability, purpose, context, isolation, disclosure, or retention
+boundary.
+6. Unlogged-effect laundering omits actual reads, writes, messages, tool calls,
+disclosures, external changes, costs, or side records from receipts.
+7. Scheduler theater reports a planned or available queue while work is
+starved, unfairly prioritized, repeatedly preempted, or never dispatched.
+8. Lease and worker amnesia loses ownership, heartbeat, expiry, checkpoints,
+locks, prior effects, or terminal custody after crash or partition.
+9. Retry duplication repeats non-idempotent effects, widens authority, reuses
+stale inputs, or resumes without reconciling prior partial outcomes.
+10. Compensation and rollback laundering reports restoration while external
+effects, disclosures, artifacts, messages, model updates, or descendants
+remain.
+11. Swarm explosion creates unbounded recursive jobs, duplicate work, circular
+dependencies, uncontrolled delegation, contention, or unauditable
+coordination.
+12. Parentage loss severs job, attempt, contract, plan, approval, permission,
+context, adapter, artifact, and residual lineage.
+13. Artifact and receipt theater accepts empty, stale, unverifiable,
+self-reported, wrong-environment, or reality-false outputs as completed
+work.
+14. Delivery and evidence laundering converts user-visible output into
+verified, replayable, supported, safe, or released standing.
+15. Failure and residual abandonment leaves blocked, quarantined, timed-out,
+partially effective, disputed, or expired jobs without owner, recovery,
+expiry, or terminal record.
+16. Feedback and learning laundering turns successful work into silent plan
+edits, procedural memory, policy changes, model updates, or support
+promotion.
+17. Failure and cost survivorship removes rejected, delayed, cancelled,
+retried, human-repaired, privacy-expensive, slow, missed-help, or residual
+work from comparisons.
+18. Portability theater treats one authored fixture, scheduler, orchestrator,
+backend, model, domain, authority regime, fault schedule, or horizon as
+general Labor OS evidence.
+
+## Minimum Viable Implementation
+
+The current minimum is an authored zero-model record-and-route scaffold:
+
+- one public typed-job schema;
+- three valid and ten rejecting plan-execution fixtures;
+- two valid and seven rejecting delivery/evidence-readiness traces at
+`experiments/typed_job_delivery/results/2026-07-02-local.json`;
+- two valid and nine rejecting durable-lifecycle traces at
+`experiments/typed_job_durable_lifecycle/results/2026-07-02-local.json`;
+- one accepted no-promotion decision at
+`evidence_transitions/v1_x_measured/typed_job_durable_lifecycle_probe_no_change.json`;
+and
+- a seven-stage `AsiStackProofs.TypedJobRefinement` contract-lock,
+authorization, dispatch, execution-observation, adjudication, and
+acknowledged-closure lifecycle with twenty-eight routes, fourteen
+declarations, and an independent consumer that rejects 42/42 mutations; and
+- twenty-four retained exact approval, execution-route, and durable-lifecycle
+declarations, with three validity/summary projections physically retired,
+for 38 live declarations across two modules and five public targets.
+
+The reachable refinement preserves represented job, contract, plan, authority,
+permission, lease, scheduler, retry, cancellation, adjudication, residual, and
+consumer custody without executing their services. The retained legacy
+declarations remain finite approval, route, and negative-case consequences.
+The Python fixtures reject contract/receipt gaps, approval
+bypass, permission overreach, delivery laundering, missing artifacts/audit,
+retry without idempotency, authority widening, expired-lease dispatch, missing
+replay/residual/non-claim fields, and fixture-driven support promotion.
+
+No current artifact runs a scheduler, worker, workspace, secret broker,
+permission or approval service, adapter, independent effect observer, durable
+workflow engine, Temporal/Airflow/BPMN/Kubernetes integration, natural
+multi-step workload, useful-advantage comparison, causal ablation, clean
+reproduction, or transfer. The public schema is narrower than the expanded
+contract, and the finite theorems do not connect to a runtime implementation.
+
+The next honest minimum must execute prospectively frozen natural multi-step
+work through actual scheduler, worker, workspace, permission, approval,
+adapter, artifact, crash, retry, recovery, compensation, adjudication,
+delivery, and evidence-readiness paths. Strong chat, ambient-agent, swarm,
+script, queue, Airflow-like DAG, Temporal-like durable workflow, BPMN/process,
+Kubernetes batch-job, and governed typed-job routes must receive matched work,
+models, tools, authority, resources, faults, and time.
+
+Independent observers must measure authorized useful completion, unauthorized
+or unobserved effects, lifecycle and receipt correctness, duplicate effects,
+recovery, compensation closure, evidence-readiness error, false refusal, missed
+help, latency, privacy, human work, fairness, starvation, and total cost.
+Mechanism ablations, clean reproduction, and transfer across a second model,
+domain, backend, scheduler, organization, authority regime, fault schedule, and
+time period precede promotion.
+
+## Beyond the State of the Art
+
+A mature Labor OS executes bounded cognitive work through actual schedulers,
+workers, workspaces, permissions, approvals, adapters, artifact capture, effect
+observation, retries, crash recovery, compensation, adjudication, delivery, and
+evidence-readiness gates. Ambient agents become implementation details behind
+typed jobs rather than independent sources of authority.
+
+Its frontier is joint: useful authorized throughput, lifecycle accuracy,
+external-effect fidelity, duplicate-effect rate, recovery and compensation,
+receipt truth, false refusal, missed help, latency, privacy exposure, human
+burden, fairness, starvation, and total cost. Chat, ambient agents, swarms,
+scripts, queues, DAGs, durable workflows, process engines, and batch jobs form
+strong matched baselines rather than straw comparisons.
+
+Every proposed mechanism needs a prospective causal signature under matched
+ablation. Removing permission snapshots changes unauthorized effects; removing
+leases and idempotency changes duplicate effects and recovery; removing
+delivery/evidence separation changes false evidence readiness; removing
+complete denominators changes apparent efficiency. Clean replay and transfer
+across models, domains, backends, schedulers, organizations, authority regimes,
+fault schedules, and time remain separate gates.
+
+Failed gates produce exact null, negative, narrowed, refuted, deprecated,
+cost-dominated, or blocked-after-full-attempt results. They do not become a
+deployed Labor OS claim because the job records look orderly.
+
+No current result meets this accountable-delivery endpoint; support remains
+`argument` until natural jobs, independent outcome and effect observation,
+fault campaigns, complete costs, reproduction, and transfer pass.
+
+## Summary
+
+Labor OS and Typed Jobs owns admitted work lifecycle and terminal receipt
+custody. It keeps contract and plan parentage, authority, approvals,
+permissions, attempts, leases, workspace, adapter, observed effects, artifacts,
+costs, failures, delivery, evidence eligibility, compensation, and retirement
+attached to one bounded work history.
+
+The present evidence is an authored zero-model scaffold: one schema, three
+fixture families, one no-promotion decision, and twenty-seven finite
+declarations. It establishes record and route discipline only. A scheduler,
+runtime effects, recovery, useful advantage, causal contribution,
+reproduction, and transfer remain unshown.
+
+Produced artifacts and receipts pass next to Artifact Graphs. Labor OS records
+which attempt produced them and under what job state; Artifact Graphs determines
+their durable identity, provenance, replay grade, and evidential continuity.
+
+The useful boundary is accountable delivery: work may finish, fail, or expire
+without silently becoming evidence.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **76** structured claim atoms in `CF-03`. The
+frozen repository-wide terminal audit records 76 `blocked_after_full_attempt`. Its core
+atom `labor-os-and-typed-jobs.core` remains at `argument` with terminal
+disposition `blocked_after_full_attempt`. The authoritative per-atom rows
+are the `labor-os-and-typed-jobs` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+### What the evidence now says
+
+The chapter's core remains **blocked after full attempt**
+at `argument` support. Across its 76 structured claims,
+76 still lack required proof lanes,
+0 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Intent-to-execution vertical refinement**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Structured local scenarios only; no natural-language semantic sufficiency, production backend, transfer, or deployment claim.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
+
+## Handoff
+
+Typed jobs give execution a bounded work unit, but the stack still needs a durable record of what each job produced, read, changed, and failed to prove. Artifact Graphs, Audit Logs, and Replay supplies that continuity layer. It makes outputs, sources, context transactions, tools, audit events, replay limits, and residuals part of the system's memory rather than leftovers around the work.

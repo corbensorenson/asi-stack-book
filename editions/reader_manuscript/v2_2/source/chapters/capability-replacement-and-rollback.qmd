@@ -1,0 +1,281 @@
+# Capability Replacement and Rollback
+
+Stable Capability Fields define the boundary that replacement must cross under review. Replacement is a controlled crossing with compatibility checks, canary scope, monitoring, rollback, and residual ownership. The field says what must remain true; the transaction says whether the candidate earned the right to become ordinary infrastructure.
+
+Reversibility is one trust boundary, not the whole safety case. A replacement claim does not deserve confidence merely because a version sounds better, compiles faster, or wins a local comparison. Its evidence is stronger when failure can be detected, contained, explained, reversed where possible, and retained as an owned residual where it cannot. Until those records exist, the candidate belongs in shadow, canary, quarantine, or research state rather than quietly becoming the default path.
+
+A rehearsed, effect-bounded rollback can turn part of an update from an irreversible bet into an inspectable experiment. It preserves the declared prior state while the candidate is tested for scoped compatibility, authority, regressions, monitorability, and residual ownership. Irreversible effects may still require compensation or containment. The ability to record “improvement failed” is one control against self-ratification.
+
+## Problem
+
+A governed stack must change live models, prompts, tools, policies, data, evaluators, dependencies, state schemas, and routes without treating candidate availability as accepted replacement or one restored artifact as recovered capability. The transaction begins from the Stable Capability Field’s fixed consumer-relative contract, but it must also own the temporal problem: what was true before exposure, what the candidate changed, what committed, what the monitor could observe and when, and what remained after rollback or compensation.
+
+The hard cases are not clean binary swaps. A new model may require a new tokenizer, prompt, data view, optimizer state, cache layout, adapter, policy, credential, evaluator, monitor, or downstream index. A canary may write shared state or train a descendant. A rollback may restore weights while leaving caches, remote copies, external actions, disclosure, user reliance, rights violations, or learned successors unchanged. A checkpoint chosen after outcomes are known can turn an honest comparison into hindsight selection.
+
+The research problem is therefore full-state and effect-bounded change control with useful outcomes. RMI and Benchmaxxing supply ratchet and regression pressure; Cognitive Loop Closure supplies lifecycle and retirement; Talos supplies auditable job and replay context; SCF supplies the frozen substitution contract. None of them removes the need to inventory effects or demonstrate recovery under real failure.
+
+## Why existing approaches are insufficient
+
+Ad hoc upgrades are not the only insufficient baseline. Registries know which artifact is available; feature flags and progressive delivery control exposure; MLOps pipelines add data, schema, model, serving, and monitoring gates; Kubernetes keeps revision history; filesystem transactions can provide bounded crash consistency; benchmark ratchets preserve selected floors; corrigibility motivates correction channels. These mechanisms are valuable prior art, but each leaves some combination of semantic identity, checkpoint authority, authority change, evaluator capture, hidden state, delayed harm, descendants, external effects, compensation, and usefulness outside its boundary.
+
+A rollback command is especially easy to overread. Restoring a container, file tree, checkpoint, or model digest may be exactly correct within that inventory while failing to reverse disclosure, remote writes, external actions, schema changes, downstream learning, user harm, or institutional commitments. The transaction model therefore separates artifact restoration, state restoration, service restoration, behavioral recovery, privacy or rights repair, compensation, and residual closure.
+
+Corrigibility provides the external baseline for why replacement needs a preserved correction path. `ext_corrigibility_2015` treats intervention tolerance and operator correction as properties that can be lost by design; a replacement transaction is the systems version of the same concern. A rollback record asks whether correction, regression floors, evaluator separation, and recovery handles survive the upgrade, without claiming that any real replacement has passed that bar.
+
+Deployment practice supplies narrower rollout vocabulary but not the whole replacement argument. Kubernetes Deployments (`ext_kubernetes_deployments_docs`) make rollout history, revision records, and rollback to a prior stable revision familiar. Argo Rollouts (`ext_argo_rollouts_docs`) adds blue-green rollout, canary rollout, traffic shaping, metric analysis, automated promotion, and automated rollback as progressive-delivery concepts. Feature toggles (`ext_feature_toggles_fowler`) ground controlled exposure and canary cohorts. Google Cloud's MLOps continuous-delivery guidance (`ext_google_cloud_mlops_cd`) adds the ML-specific warning that model rollout involves code, data, schemas, model quality, serving pipelines, monitoring, and rollback triggers rather than ordinary software deployment alone. The ASI Stack borrows this operational discipline, then asks for stricter transaction fields: field identity, authority ceiling, evaluator independence, regression floors, residual ownership, rollback receipts, and support-state boundaries.
+
+Replacement needs transaction semantics because partial success can be worse than failure. The system should know whether it is in precheck, gate, canary, commit, monitor, rollback, quarantine, or retirement.
+
+The key reader-facing distinction is candidate improvement, accepted replacement, and completed recovery. A promising candidate can remain shadow or canary. An accepted candidate has passed the preregistered gates only within a declared scope. A recovered transaction has additionally met a named recovery objective across its declared inventory or recorded compensation and residuals where reversal was impossible. None of these states implies global improvement or safety.
+
+Rollback also has to be more specific than nostalgia for the prior version. The prior artifact must still exist, the old state must be readable or compensated, external effects must be accounted for, and the monitor window must say when rollback is triggered. If any of those pieces is missing, the transaction can still record a partial recovery plan, but it should not claim reversible improvement.
+
+One-way improvement creates the rollback gap. A candidate is allowed to replace the old path because the forward story is attractive, while the reverse path, state compatibility, dependent artifacts, rights preservation, and external effects are left implicit.
+
+That one-way framing also hides who owns the risk. If a replacement fails, someone or something must know which artifact to restore, which state migration to reverse or compensate, which users or downstream routes were affected, and which residual remains unresolved. Without that owner, rollback is only a comforting word.
+
+## Core Claim
+
+Capability replacement should be a prospectively authorized, phase-gated transaction over a declared Stable Capability Field. It binds exact prior/candidate identity, change class, checkpoint authority, state/effect inventory, scoped evidence and authority, evaluator and monitor dependencies, staged exposure, commit, recovery or compensation, descendants, residuals, and terminal receipts. It cannot make irreversible effects reversible, prove its own observers, grant authority, establish useful improvement, or generalize inventory-exact local restoration to production (evidence boundary: architectural argument).
+The core claim remains `argument`. The source set supplies design lineage and comparators. The repository adds exact synthetic and finite proof results plus narrow empirical outcomes: 15/15 local rollback equality on a prospective 24-surface inventory, but no eligible utility gain; 32/36 exact attack-control rollback and 2/36 useful release in a different campaign, below both gates. These results strengthen the inventory-specific subclaim and refute any implication that governance or rollback already yields useful, complete replacement.
+
+## Mechanism
+
+A replacement transaction is the moment an SCF becomes an accountable state change. It is allowed to fail, roll back only partially, require compensation, or establish that no useful improvement occurred. What it cannot do is choose its rules after the outcome, hide an affected surface, or narrate a partial recovery as complete.
+
+```{mermaid}
+flowchart LR
+A["Freeze field, identities, owners, rules"] --> B["Prospective checkpoint + full state/effect inventory"]
+B --> C["Isolated candidate + qualification/regression/adversarial evidence"]
+C --> D{"All preregistered gates pass?"}
+D -- "no / unknown" --> X["Reject / quarantine / residual"]
+D -- "yes" --> E["Bounded canary under fixed monitor"]
+E --> F{"Stop, incident, delay, or threshold failure?"}
+F -- "yes" --> G["Rollback / compensate / fork / quarantine"]
+F -- "no" --> H["Bounded commit + continued monitor"]
+G --> I["Compare recovery objective across inventory/effects"]
+H --> I
+I --> J{"Terminal obligations closed?"}
+J -- "no" --> K["Owned residual + continued containment"]
+J -- "yes" --> L["Terminal receipt + public/evidence projection"]
+X --> L
+```
+
+**How to read the replacement transaction:** rules and checkpoint authority are frozen before outcomes. Canary exposure is not commit; commit is not monitor success; artifact restoration is not complete recovery. Every branch terminates in a receipt that distinguishes reversal, compensation, containment, residuals, and usefulness.
+
+The first mechanism is prospective freeze. Transaction identity, field version, prior and candidate candidates, dependencies, environment, consumers, use, owners, evaluation set, thresholds, monitor policy, canary scope, stop rule, commit rule, recovery objective, and support-state non-effect are fixed before candidate evidence is observed. If a rule changes, the transaction versions and reruns rather than borrowing the most favorable old result.
+
+The second mechanism is change classification. Contract, model/weights, prompt/policy, code/tool, data/retrieval, evaluator, dependency, hardware/runtime, authority, state schema, route, governance, and public-interface deltas are recorded separately. A material field change returns to SCF governance. Calling it an implementation replacement would let the candidate redefine the predicate it is meant to satisfy.
+
+The third mechanism is prospective checkpoint and inventory authority. The pre-state covers declared model, optimizer, scheduler, RNG, cache, checkpoint, backup, credential, policy, data, route, monitor, receipt, descendant, and external-commitment surfaces. Every excluded surface carries reason, owner, and residual. The authorized checkpoint is selected before results; best-final disagreement remains evidence rather than being erased by choosing whichever state looks strongest later.
+
+The effect inventory classifies reversible, replayable, compensatable, forked, disclosure-like, safety-sensitive, externally owned, and irreversible effects. This is where file or checkpoint restoration stops being confused with semantic recovery. Reverse migration, data and cache restoration, credential and policy state, downstream invalidation, disclosure response, external compensation, and descendant containment need separate results.
+
+The candidate runs in an isolated shadow or fork with explicit read, write, network, tool, data, credential, learning, cache, descendant, and external-effect permissions. The transaction evaluates historical regressions, critical-failure vetoes, rare/adversarial cases, authority and rights preservation, state compatibility, composition, contamination, usefulness, cost, and transfer. Benchmarks are evidence surfaces, not permission slips; negative and null outcomes stay attached.
+
+Proposal, evidence production, evaluation, promotion, monitoring, incident adjudication, and recovery disclose shared models, data, incentives, organizations, and control paths. Nominal separation is not presumed independent. Where dependencies cannot be removed, the candidate receives a narrower exposure and the capture risk remains a residual.
+
+Canary population, duration, traffic and authority, metrics, thresholds, outcome delay, censoring, missing-telemetry rule, stop conditions, fallback, approval, and escalation are preregistered. Silence is not a pass. A canary cannot create undeclared durable side effects or influence the default lineage merely because its nominal traffic share is small.
+
+Commit updates route and receipt state atomically where possible, preserves the prior route until closure, and records every subsystem outside that atomic boundary. Rollback then executes against the complete declared inventory and compares post-recovery state and effects with the prospective objective. If reversal is impossible, the transaction records compensation, fork, quarantine, revocation, disclosure response, downstream invalidation, or residual instead of claiming success.
+
+Terminal closure occurs only after the monitor window and recovery obligations settle. The receipt binds before/after digests, observations, incidents, affected consumers and descendants, rollback or compensation outcomes, unresolved effects, evidence transitions, changelog/public projections, and disposition. Rolled-back and failed attempts remain durable evidence.
+
+## Interfaces
+
+The transaction coordinates seven authority and evidence surfaces:
+
+- Stable Capability Fields supplies the immutable substitution contract, consumers, ceiling, lease, regressions, incidents, and material-change classifier.
+- Intent, command contracts, governance, and System Authority supply the principal, objective, forbidden means, approval, exception, stop, expiry, and recovery grants.
+- Artifact, provenance, custody, memory, state, and context layers supply exact identities, dependency graphs, pre-state, checkpoint authority, migration, caches, data lineage, descendants, and effect inventory.
+- Benchmarks, adversarial evaluation, oversight, rights, security, and Evidence States supply bounded outcome, regression, authority, privacy, contestability, monitor, and transfer observations.
+- Routing and runtime enforce isolation, exposure, effect ceilings, route transitions, monitor hooks, stop conditions, recovery triggers, and receipts.
+- Readiness, residual escrow, incident response, and recovery consume gates, blockers, rehearsals, effect inventories, residual owners, recovery objectives, and closure state.
+- Changelog, public projections, descendants, policy updates, and self-improvement preserve the exact terminal receipt, including failed, null, rolled-back, compensated, and residual outcomes.
+
+Minimum fields:
+
+- `transaction_id`
+- `transaction_state`
+- `field_id`
+- `prior_implementation`
+- `candidate_implementation`
+- `identity_preservation`
+- `precheck_results`
+- `qualification_evidence`
+- `regression_results`
+- `authority_check`
+- `evaluator_independence`
+- `residual_escrow`
+- `rollback_plan`
+- `rollback_receipt`
+- `approval_record`
+- `canary_scope`
+- `monitor_window`
+- `monitor_status`
+- `decision`
+- `promotion_blockers`
+- `source_refs`
+- `support_state_effect`
+- `non_claims`
+
+The current public schema covers a useful subset, but the target contract also requires content-bound dependency and environment identity, change classification, prospective checkpoint authority, full state/effect inventory, outcome delay and censoring, candidate isolation, downstream closure, recovery objectives, compensation, terminal closure, and separately typed restoration outcomes. Naming these fields does not implement the subsystems that must produce them.
+
+Transaction and decision states need to be explicit: proposed, precheck, shadow, canary, default-candidate, committed, rolled-back, quarantined, superseded, retired, and blocked. These states keep a candidate from becoming default simply because it survived one test. The transaction should also name canary scope, monitor status, promotion blockers, and what the candidate is not allowed to conclude from the fixture: no runtime replacement, no rollback execution, no monitor-window success, and no support-state promotion unless separate evidence exists.
+
+## Invariants
+
+The invariants define what must remain true across the whole transaction, not
+merely at commit time. A passing candidate can still fail replacement if its
+identity drifts, its monitor misses delayed harm, its canary leaks durable
+effects, or its recovery objective omits a surface that users or descendants
+continue to depend on.
+
+- Transaction, field, prior, candidate, dependencies, environment, consumers, use, and change class are content-bound before evaluation and remain distinct.
+- Checkpoint authority, evaluation set, gates, monitor, canary, commit, recovery, and promotion rules are prospective; changed rules require a versioned rerun.
+- Replacement does not inherit expanded authority, permissions, consumers, effects, learning, delegation, public claims, support, or correction resistance.
+- The prior route and recovery state remain available, readable, protected, and rehearsed until terminal closure or accepted irreversible residual.
+- Every state and effect surface is inventoried or excluded with reason, owner, and residual; unregistered surfaces are never called recovered.
+- Field-owned regressions, incidents, rights, privacy, security, audit, provenance, evaluator, residual, and recovery duties survive replacement.
+- The candidate is not the sole proposer, evaluator, promoter, monitor, incident judge, or recovery authority for itself.
+- Shadow/canary use cannot create undeclared durable effects, train descendants, mutate default state or caches, or drift into default.
+- Monitor success is scoped to fixed metrics, population, duration, delay, censoring, threshold, baseline, and evaluator; missing telemetry is not success.
+- Failed/missing critical regressions, identity mismatch, stale evidence, authority delta, unowned irreversible effects, failed rehearsal, open incident, blocker, or approval gap deny commit.
+- Rollback success is stated only against the declared recovery objective; artifact, state, service, behavior, privacy/rights, and compensation outcomes stay separate.
+- Partial rollback, compensation, fork, quarantine, revocation, disclosure response, and residual closure remain visible states.
+- Finite records, proofs, traces, and local digest equality cannot establish useful improvement, complete recovery, production transfer, safe self-improvement, or chapter-core support.
+
+## Failure modes
+
+- **Identity substitution:** the promoted or restored artifact misses the frozen field, version, dependencies, environment, consumer, or prior-route identity.
+- **Checkpoint hindsight:** the best state, threshold, baseline, or recovery target is selected after outcomes are visible.
+- **Regression deletion/frontier bias:** headline gains hide lost rights, authority, logging, privacy, cost, abstention, rare-case, approval, or transfer behavior.
+- **Evaluator capture:** candidate or promoter controls benchmark, gate, monitor, incident closure, or recovery verdict.
+- **Inventory omission:** rollback ignores optimizer, scheduler, RNG, caches, backups, credentials, policies, receipts, descendants, remote stores, or commitments.
+- **Migration insolvency:** the prior route becomes unreadable, lossy, privacy-violating, semantically incompatible, or dependent on a forward-only schema.
+- **Canary contamination:** limited exposure mutates shared state, trains descendants, poisons caches, leaks data, creates commitments, or influences evaluation.
+- **Monitor blindness:** weak proxies, delayed/censored outcomes, insufficient exposure, missing telemetry, distribution mismatch, or manipulable metrics certify success.
+- **Partial commit:** routes, state, policies, credentials, monitors, ledgers, consumers, or replicas split across versions without an owned consistency state.
+- **Authority smuggling:** the candidate gains broader tools, data, consumers, effects, learning, delegation, or correction resistance.
+- **Rollback theater:** a prior artifact or command exists without reverse migration, inventory, trigger authority, rehearsal, effect comparison, owner, or objective.
+- **Irreversibility laundering:** compensation, restart, byte equality, or local digest restoration is reported as reversal of disclosure, external action, descendant propagation, rights violation, or semantic harm.
+- **Rollback cascade:** one component returns while downstream artifacts, indexes, caches, models, users, external systems, or successor transactions remain contaminated.
+- **Oscillation/retry laundering:** repeated trials accumulate effects, multiple-testing error, burden, and residuals until one window happens to pass.
+- **Terminal-state escape:** rolled-back, quarantined, superseded, deprecated, or retired candidates restart or lose their receipts.
+- **Replacement-cost externalization:** success hides missed help, refusal, delay, compute, evaluator labor, monitoring, migration loss, incidents, compensation, downtime, governance, and residual custody.
+
+A record validator can catch missing fields and impossible finite transitions. It cannot discover a hidden surface, prove monitor validity, detect semantic recovery, or undo external effects without outcome-bearing tests and independent observation.
+
+## Minimum Viable Implementation
+
+The current minimum has four evidence layers that must not be conflated.
+
+First, the public `replacement_transaction` schema and harness validate five valid and nine expected-invalid synthetic records. They exercise transaction state, identities, qualification, regressions, authority, evaluator declarations, residual escrow, rollback plan and receipt, approvals, canary and monitor state, model/data/schema/serving gates, irreversible-effect ownership, blockers, source refs, support-state non-effect, and non-claims. Passing establishes record and validator behavior only.
+
+Second, the six-step deterministic trace contains two valid transaction records and three rejecting controls, plus four identity-sequence controls for drift, failed-monitor defaulting, wrong prior restoration, and missing residual ownership. The intent-governed bridge adds two valid and six expected-invalid traces. These connect transaction order and authority fields, not a deployed route, real monitor, migration, or recovery.
+
+Third, `AsiStackProofs.Replacement` contains 37 theorem declarations under six manifest targets. They derive consequences over finite commit, review, lifecycle, trace-summary, identity-sequence, and intent-bridge records. Truth, completeness, independent observation, and enforcement of the encoded fields remain outside those derivations.
+
+Fourth, the repository has bounded outcome evidence and negative results. The post-v2.1 update campaign prospectively tracked 24 model, optimizer, scheduler, RNG, cache, checkpoint, backup, and descendant surfaces. All 15 seed-arm transactions returned that inventory to its exact pre-update digest, and six arms exposed a disagreement between prospectively authorized and final checkpoints. But no eligible challenger reached the registered utility-gain threshold. A separate governed-work campaign achieved exact rollback in only 32/36 attack controls and useful release in only 2/36 cases, below both gates. The later governance-tax harness restored nine declared surfaces in 12/12 local probes and rejected twelve omitted-surface controls, but every paired model call failed before a task candidate existed.
+
+The supported conclusion is narrow: prospective inventories can make local rollback equality testable, and the current programs expose both inventory success and usefulness/recovery failure. They do not establish complete semantic or external-effect recovery, monitor/evaluator validity, production replacement, useful governed throughput, acceptable cost, heterogeneous transfer, or chapter-core support.
+
+The next executable slice should replace synthetic transaction content with one real stateful, side-effecting field: frozen prior and candidate runtimes; exact dependency/environment locks; a prospective checkpoint; independently implemented evaluator and monitor; delayed outcomes; state/cache/data migration; one downstream consumer and descendant; an irreversible-effect control; rehearsed reverse migration and compensation; and strong conventional rollout baselines. It must report usefulness, unsafe release, rollback coverage, recovery time, privacy/rights effects, cost, and residuals jointly.
+
+## Beyond the State of the Art
+
+The state-of-the-art question is empirical: does the full prospective transaction preserve more real capability, authority, correction, state, and effects than conventional release engineering without destroying useful throughput or imposing unacceptable recovery and governance cost?
+
+A credible campaign uses several real stateful and side-effecting fields, multiple update classes, ambiguous change boundaries, historical incidents, heterogeneous consumers, delayed outcomes, irreversible effects, remote dependencies, and adversarial candidate/evaluator behavior. It compares registry/model swaps, feature flags, Argo-style progressive delivery, MLOps pipelines, Kubernetes revision rollback, benchmark-only and provenance-only gates, filesystem/snapshot restoration, nominal rollback, and the full transaction.
+
+Observers are independently implemented for field identity, checkpoint authority, state/effect inventory, evaluator and monitor dependencies, authority, regressions, canary isolation, migration, composition, descendants, recovery objectives, external compensation, useful throughput, missed help, unsafe release, privacy and rights, latency, compute, downtime, human/evaluator labor, governance cost, and residual burden. Delayed and censored outcomes are part of the protocol, not cleaned away after the monitor window.
+
+Causal ablations remove prospective checkpoint authority, inventory closure, evaluator separation, canary isolation, monitor-delay accounting, regression memory, recovery rehearsal, effect comparison, or residual ownership. Transfer varies models, tools, policies, data, hardware, runtimes, state systems, organizations, consumers, threats, and update classes. Independent replication must reproduce both successful and failed recoveries.
+
+The replacement claim advances only if the full transaction is not dominated on the preregistered joint frontier, produces useful improvements rather than refusal or no-op safety, and recovers or honestly compensates its declared effects. Otherwise the failing mechanism is narrowed or refuted. This is a research target, not evidence that the ASI Stack is generally reversible, useful, safe, or beyond current practice.
+
+## Post-v2.1 full-state rollback result
+
+The update campaign makes rollback authority prospective and inventories 24
+surfaces spanning model, optimizer, scheduler, RNG, caches, checkpoints,
+backups, and descendant lineage. All fifteen seed-arm transactions return that
+declared tree to its exact pre-update digest. Six arms nevertheless show that
+the validation-selected checkpoint differs from the final checkpoint, and the
+three unsafe comparator arms remain ineligible after crossing their retained-
+task bound. This closes `UU-04` only for the declared local inventory. It does
+not establish recovery of remote stores, external effects, live services, or
+semantic behavior after production rollback. The separate governed-work
+result, where only 32/36 attack-control rollbacks were exact, is the reminder
+that completeness is inventory-specific rather than inherited from the word
+“rollback.”
+
+The post-v2.3 governance-tax campaign adds a narrower harness check. Twelve
+local probes restored nine declared surfaces exactly, and twelve deliberately
+omitted descendant-or-receipt controls were detected. This is useful evidence
+that the disposable campaign harness enforces its inventory, but not that the
+model completed a task or that a production system can reverse remote or
+semantic effects. Because every paired model call failed before a structured
+candidate existed, the accepted record remains
+`evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json`.
+
+The M7 update/unlearning campaign adds 35/35 exact restorations over the same
+24 named surface classes across five seeds and seven arms. This strengthens
+only the inventory-specific transaction result. Its deletion receipt
+deliberately retains the immutable research corpus, features, checkpoints, and
+raw evidence; an unavailable simulated remote replica and external descendant
+do not acknowledge erasure. Exact rollback and partial local deletion can
+therefore coexist with unresolved privacy, remote, descendant, legal, and
+semantic recovery claims.
+
+| Source | Title | Use and boundary |
+|---|---|---|
+| `ext_txfs_2018` | TxFS: Leveraging File-System Crash Consistency to Provide ACID Transactions | Transactional-filesystem comparator for write-set, recovery, and crash-consistency boundaries; not evidence that ASI Stack external effects are transactional. |
+
+## Summary
+
+Capability Replacement and Rollback turns a candidate update into a prospective state-and-effect transaction. It freezes identities, rules, checkpoint authority, inventory, evidence, exposure, monitors, authority, recovery objectives, compensation, residuals, and terminal receipts before narrating the result.
+
+The governing discipline is scoped floor and recovery honesty. A stronger frontier score cannot erase old obligations, and a restored artifact cannot stand in for unmeasured state, behavior, privacy, rights, descendants, or external effects.
+
+The security kernel keeps replacement from becoming a secret, permission, or context leak. Rollback is not meaningful if the candidate can carry privileged material across a boundary that the prior capability was never allowed to cross. Replacement must preserve not only behavior, but also the permission shape around that behavior.
+
+A replacement should be easier to reject than to overclaim. If the transaction cannot prospectively identify its prior state, full declared inventory, checkpoint authority, monitor, trigger, recovery objective, irreversible effects, and owners, the candidate is not ready for default use.
+
+The current evidence already teaches the right lesson: exact rollback is possible inside a carefully declared local inventory, yet useful improvement can still fail and a different rollback cohort can miss its gate. Reversible progress remains the research target, not the reported outcome.
+
+<!-- P7-EVIDENCE-RECONCILIATION:START -->
+## Evidence reconciliation (2026-07-16)
+
+This chapter owns **59** structured claim atoms in `CF-01`. The
+frozen repository-wide terminal audit records 57 `blocked_after_full_attempt`; 2 `narrowed_after_full_attempt`. Its core
+atom `capability-replacement-and-rollback.core` remains at `argument` with terminal
+disposition `narrowed_after_full_attempt`. The authoritative per-atom rows
+are the `capability-replacement-and-rollback` slice of
+`experiments/claim_family_terminal_coverage/results/result.json`; this summary
+does not replace that ledger.
+
+### What the evidence now says
+
+The chapter's core remains **narrowed after full attempt**
+at `argument` support. Across its 59 structured claims,
+57 still lack required proof lanes,
+2 were narrowed, and
+0 received only a bounded subordinate
+promotion. No chapter-core claim moved upward.
+
+The strongest relevant family attempt was **Governed usefulness confirmatory campaign**. It gives
+this family one real success/failure boundary under rejecting controls, but it
+does not prove the rest of this chapter. What worked was limited to its declared
+scope; what failed or remains open is preserved in the blocked and narrowed
+counts above. The decisive boundary is: Bounded local non-core governance effect only; no family-wide truth, transfer, deployment, or chapter-core promotion.
+
+The conclusion changes only when new atom-specific work fills the missing
+lanes—`causal`, `empirical`, `executable`, `formal`, `normative`, `transfer`—under a prospective protocol and an accepted
+evidence transition. Until then, nearby tests, formal models, source counts, and
+the family result cannot substitute for the missing evidence.
+
+<!-- P7-EVIDENCE-RECONCILIATION:END -->
+
+## Handoff
+
+Replacement becomes dangerous when it moves secrets, permissions, or privileged context across a boundary that the old capability was not allowed to cross. Security Kernel and Digital SCIFs follows because rollback and qualification are not enough if authority-bearing material can leak through logs, prompts, summaries, memory, or tool adapters. Protected power must become handle-bound, auditable, and absent by default.

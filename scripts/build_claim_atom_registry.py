@@ -251,8 +251,20 @@ def strip_nonprose(body: str) -> list[tuple[int, str]]:
     output: list[tuple[int, str]] = []
     in_front = bool(lines and lines[0].strip() == "---")
     in_fence = False
+    in_post_p1_reconciliation = False
     for number, line in enumerate(lines, 1):
         stripped = line.strip()
+        if stripped == "<!-- P7-EVIDENCE-RECONCILIATION:START -->":
+            in_post_p1_reconciliation = True
+            continue
+        if stripped == "<!-- P7-EVIDENCE-RECONCILIATION:END -->":
+            in_post_p1_reconciliation = False
+            continue
+        # P1 is the frozen activation-era claim discovery audit. The generated
+        # P7 evidence/disposition packet is a later authoritative projection of
+        # those owned atoms, not a source of new activation-era prose claims.
+        if in_post_p1_reconciliation:
+            continue
         if number == 1 and in_front:
             continue
         if in_front:

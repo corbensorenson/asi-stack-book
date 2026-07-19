@@ -1,0 +1,149 @@
+{
+  "schema_version": "asi_stack.p4_m7_preregistration.v1",
+  "state": "prospectively_frozen_before_preflight_feature_extraction_or_any_outcome",
+  "campaign": "P4 Campaign 3 / M7",
+  "run_id": "p4-m7-qwen25-05b-frozen-representation-head-001",
+  "recorded_date": "2026-07-16",
+  "corpus_path": "experiments/p4_update_unlearning/corpus.json",
+  "corpus_sha256": "5bd339583e816069b87321514154b4d965e8ee888dce5abf890dc5fd672b8330",
+  "corpus_rows": 860,
+  "role_counts": {
+    "base_train": 240,
+    "update_retain": 120,
+    "delete_a": 30,
+    "delete_b": 30,
+    "validation": 120,
+    "retained_test": 120,
+    "target_test": 80,
+    "adversarial_test": 60,
+    "privacy_nonmember": 60
+  },
+  "seeds": [
+    1701,
+    2903,
+    4307,
+    6101,
+    7907
+  ],
+  "arms": [
+    "no_update",
+    "standard_update",
+    "governed_update",
+    "regularized_forgetting_mitigation",
+    "approximate_unlearning",
+    "deletion_aware_retrain",
+    "exact_rollback"
+  ],
+  "claim_axes": [
+    "behavioral_cohort_change",
+    "causal_influence_reduction",
+    "membership_privacy_change",
+    "lineage_invalidation",
+    "legal_compliance",
+    "storage_erasure",
+    "backup_erasure",
+    "external_descendant_closure"
+  ],
+  "state_surfaces": [
+    "model_parameters",
+    "model_buffers",
+    "optimizer_state",
+    "scheduler_state",
+    "accumulated_gradients",
+    "python_rng",
+    "numpy_rng",
+    "torch_rng",
+    "sampler_order",
+    "dataset_and_splits",
+    "tokenizer_preprocessor",
+    "training_config",
+    "code_revision",
+    "environment",
+    "best_checkpoint",
+    "final_checkpoint",
+    "released_checkpoint",
+    "shadow_checkpoint",
+    "rollback_checkpoint",
+    "evaluator_and_policy",
+    "inference_cache",
+    "feature_cache",
+    "lineage_index",
+    "local_backup_store"
+  ],
+  "model": {
+    "repository": "Qwen/Qwen2.5-Coder-0.5B-Instruct",
+    "snapshot_commit": "ea3f2471cf1b1f0db85067f1ef93848e38e88c25",
+    "local_files_only": true,
+    "weights_frozen": true,
+    "representation_layer": "final_hidden_state_last_nonpadding_token",
+    "trainable_component": "independent 896x3 linear probe head",
+    "file_sha256": {
+      "config.json": "b1e58593cd31852f7da5c2fc31ddf6135b9c066c0fd9177a4bbe95717083adff",
+      "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "tokenizer_config.json": "959e7f1d9a1b7641a6d6ce05ca97b75c7894fcb66cbe5a040406458fb1128ee4",
+      "model.safetensors": "f9523886352217ded3aeeef552b381af79d568c6d49a4b9e423288cea56b0a44"
+    }
+  },
+  "code_sha256": {
+    "run_p4_m7_update_unlearning.py": "d0d202db441d6bb0263aae4dd863de8cf435cfc13dd3c7bad68b57b495081622",
+    "evaluate_p4_m7_update_unlearning.py": "a7a122ddf64d62cbd24c5b1b30502544a35b00d64be6e2fc1ff21b2b5dc0d65a",
+    "validate_p4_m7_update_unlearning.py": "6bd04f6cf0d913268802301b17db6e76fa9b17684650bf0949ea1bf7c0b25186",
+    "validate_p4_m7_update_unlearning_design.py": "b615210926dcc27f7d100349c7b357e6d61b3faf7c2c6577b4adb15e1bf6e7e4"
+  },
+  "checkpoint_authority": {
+    "selection_data": "validation only",
+    "test_selection_forbidden": true,
+    "best_and_final_retained": true,
+    "governed_retained_floor_delta": -0.03,
+    "tie_break": "earliest epoch"
+  },
+  "matched_budget": {
+    "base_epochs": 30,
+    "update_epochs": 16,
+    "approximate_unlearning_epochs": 16,
+    "retrain_epochs": 30,
+    "head_optimizer": "AdamW",
+    "feature_extractor_shared_exactly_once": true,
+    "generator_retry_count": 0
+  },
+  "axis_tests": {
+    "behavioral_cohort_change": "true-label accuracy, poisoned-label accuracy, confidence, and changed decisions",
+    "causal_influence_reduction": "distance and predictive divergence to deletion-aware retraining comparator",
+    "membership_privacy_change": "loss-threshold ROC AUC against matched nonmembers; no privacy guarantee",
+    "lineage_invalidation": "late descendant invalidation and quarantine receipt",
+    "legal_compliance": "not evaluated",
+    "storage_erasure": "declared operational derived-store deletion separately from retained research evidence",
+    "backup_erasure": "local backup deletion with unresolved simulated remote receipt",
+    "external_descendant_closure": "invalidation observed; external erasure not established"
+  },
+  "primary_gates": {
+    "preflight_protocol_outcome": "instrument_adequate",
+    "minimum_preflight_validation_accuracy": 0.4,
+    "all_feature_values_finite": true,
+    "seed_count": 5,
+    "arm_count": 7,
+    "state_surface_count": 24,
+    "all_claim_axes_reported": true,
+    "all_rollback_surface_digests_exact": true,
+    "total_storage_erasure_must_remain_false": true,
+    "evaluator_recomputation_disagreement_count": 0,
+    "all_negative_controls_rejected": true
+  },
+  "separation": {
+    "trainer": "run_p4_m7_update_unlearning.py",
+    "axis_evaluator": "evaluate_p4_m7_update_unlearning.py",
+    "integrity_validator": "validate_p4_m7_update_unlearning.py",
+    "independence_class": "internal implementation separation; not external or organizational independence"
+  },
+  "support_ceiling": "No chapter-core promotion. A bounded non-core disposition may record observed local axis separation only.",
+  "outcome_aware_retry_allowed": false,
+  "publication_authority": "none",
+  "release_authority": "none",
+  "non_claims": [
+    "Frozen Qwen representations plus a trained linear head are not language-model weight unlearning.",
+    "Deletion-aware retraining is a comparator, not proof of zero causal influence.",
+    "Membership-attack movement is not a privacy guarantee.",
+    "Retained research evidence prevents a total storage-erasure claim.",
+    "No transfer, production, legal compliance, external independence, SOTA, AGI, ASI, or support promotion follows."
+  ]
+}

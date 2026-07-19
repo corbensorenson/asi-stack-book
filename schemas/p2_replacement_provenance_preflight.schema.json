@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://asi-stack.local/schemas/p2_replacement_provenance_preflight.schema.json",
+  "title": "P2 rank-one replacement provenance preflight",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "recorded_date", "state", "claim_id", "queue_path", "scope", "candidate_count", "passed_candidate_count", "candidates", "custody", "next_gate", "support_state_effect", "release_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.p2_replacement_provenance_preflight.v1"},
+    "recorded_date": {"const": "2026-07-17"},
+    "state": {"const": "rank_one_provenance_and_manifest_preflight_passed_task_content_unopened"},
+    "claim_id": {"const": "p2.governed_natural_repository_change_admission_joint_frontier"},
+    "queue_path": {"const": "experiments/p2_governed_repository_admission/corpus/replacement_queue.json"},
+    "scope": {"const": "rank_one_public_change_license_and_image_manifest_receipts_only"},
+    "candidate_count": {"const": 4},
+    "passed_candidate_count": {"const": 4},
+    "candidates": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["slot", "rank", "instance_id", "repo", "language", "base_commit", "public_change", "license_receipt", "image_manifest", "preflight_pass"],
+        "properties": {
+          "slot": {"type": "integer", "minimum": 1, "maximum": 4},
+          "rank": {"const": 1},
+          "instance_id": {"type": "string", "minLength": 8},
+          "repo": {"type": "string", "pattern": "^[^/]+/[^/]+$"},
+          "language": {"enum": ["rust", "go", "java"]},
+          "base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+          "public_change": {
+            "type": "object", "additionalProperties": false,
+            "required": ["receipt_mode", "pull_url", "pull_api_available", "merged", "merged_at_utc", "merge_commit_sha", "merge_commit_parent_shas", "base_is_merge_parent", "github_signature_verified"],
+            "properties": {
+              "receipt_mode": {"enum": ["github_pull_api_plus_verified_merge_commit", "verified_github_merge_commit_fallback_pr_endpoint_unavailable"]},
+              "pull_url": {"type": "string", "pattern": "^https://github\\.com/[^/]+/[^/]+/pull/[0-9]+$"},
+              "pull_api_available": {"type": "boolean"},
+              "merged": {"const": true},
+              "merged_at_utc": {"type": "string", "minLength": 20},
+              "merge_commit_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+              "merge_commit_parent_shas": {"type": "array", "minItems": 1, "maxItems": 2, "items": {"type": "string", "pattern": "^[0-9a-f]{40}$"}},
+              "base_is_merge_parent": {"const": true},
+              "github_signature_verified": {"const": true}
+            }
+          },
+          "license_receipt": {
+            "type": "object", "additionalProperties": false,
+            "required": ["spdx_id", "path", "blob_sha", "size_bytes", "bound_to_base_commit"],
+            "properties": {
+              "spdx_id": {"enum": ["Apache-2.0", "BSD-3-Clause"]},
+              "path": {"enum": ["LICENSE", "LICENSE.txt"]},
+              "blob_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+              "size_bytes": {"type": "integer", "minimum": 1000},
+              "bound_to_base_commit": {"const": true}
+            }
+          },
+          "image_manifest": {
+            "type": "object", "additionalProperties": false,
+            "required": ["image", "digest", "media_type", "os", "architecture", "compressed_layer_bytes", "layer_count", "expanded_size_unmeasured"],
+            "properties": {
+              "image": {"type": "string", "pattern": "^docker\\.io/swerebenchv2/"},
+              "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+              "media_type": {"const": "application/vnd.docker.distribution.manifest.v2+json"},
+              "os": {"const": "linux"},
+              "architecture": {"const": "amd64"},
+              "compressed_layer_bytes": {"type": "integer", "minimum": 1},
+              "layer_count": {"type": "integer", "minimum": 1},
+              "expanded_size_unmeasured": {"const": true}
+            }
+          },
+          "preflight_pass": {"const": true}
+        }
+      }
+    },
+    "custody": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dataset_problem_statement_opened", "dataset_solution_patch_opened", "dataset_test_patch_opened", "test_command_opened", "image_pulled", "candidate_gold_outcome_opened", "public_title_level_metadata_incidentally_visible", "replacement_qualification_started", "final_pool_selected", "final_pool_opened"],
+      "properties": {
+        "dataset_problem_statement_opened": {"const": false},
+        "dataset_solution_patch_opened": {"const": false},
+        "dataset_test_patch_opened": {"const": false},
+        "test_command_opened": {"const": false},
+        "image_pulled": {"const": false},
+        "candidate_gold_outcome_opened": {"const": false},
+        "public_title_level_metadata_incidentally_visible": {"const": true},
+        "replacement_qualification_started": {"const": false},
+        "final_pool_selected": {"const": false},
+        "final_pool_opened": {"const": false}
+      }
+    },
+    "next_gate": {"const": "pull_by_digest_measure_expanded_size_and_begin_rank_one_sequential_qualification_only_if_resource_gate_passes"},
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 20}}
+  }
+}

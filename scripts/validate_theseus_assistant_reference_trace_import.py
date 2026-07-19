@@ -562,7 +562,7 @@ def validate_surfaces(errors: list[str]) -> None:
         ],
         LEDGER: [
             CLAIM_ID,
-            "19 narrow transitions",
+            "25 narrow transitions",
             "docs/theseus_assistant_reference_trace_import.md",
             "prototype-backed",
         ],

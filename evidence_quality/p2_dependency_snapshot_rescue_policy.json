@@ -1,0 +1,69 @@
+{
+  "schema_version": "asi_stack.p2_dependency_snapshot_rescue_policy.v1",
+  "recorded_date": "2026-07-17",
+  "state": "frozen_before_first_network_materialization_rescue",
+  "claim_id": "p2.governed_natural_repository_change_admission_joint_frontier",
+  "trigger": "rank_one_candidate_passed_provenance_and_image_resource_gates_but_failed_unpatched_offline_dependency_check_before_any_test_outcome",
+  "trigger_attempt": "experiments/p2_governed_repository_admission/replacement_qualification/attempts/2026-07-17-slot1-rank1-r1/result.json",
+  "eligible_ecosystems": ["cargo_lock_checksum_bound", "go_sum_checksum_bound"],
+  "maven_rescue_state": "blocked_until_a_separate_prospectively_frozen_artifact_checksum_and_plugin_provider_plan_exists",
+  "rescue_ladder": [
+    "R0 immutable official image passes unpatched dependency check with runtime network none",
+    "R1 two independent clean containers materialize only lockfile-bound dependencies with task patches absent",
+    "R2 every declared registry/module dependency is checksum-bound and every resulting dependency file inventory is SHA-256 bound",
+    "R3 the two materializations have identical normalized dependency inventories",
+    "R4 both sealed derived images pass the same unpatched dependency check with network none",
+    "R5 the selected sealed image passes frozen pull/size/setup/runtime/resource/cleanup ceilings before paired outcome execution"
+  ],
+  "cargo_contract": {
+    "network_command": "cargo fetch --locked",
+    "offline_replay_command": "cargo fetch --locked --offline",
+    "lockfile": "Cargo.lock",
+    "all_registry_packages_require_lockfile_checksum": true,
+    "git_dependencies_require_exact_commit_identity": true,
+    "custom_or_unpinned_source_allowed": false,
+    "task_solution_or_test_patch_applied": false,
+    "independent_materialization_count": 2,
+    "normalized_inventory_exact_agreement_required": true
+  },
+  "go_contract": {
+    "network_command": "go mod download && go mod verify",
+    "offline_replay_command": "GOPROXY=off go mod download && GOPROXY=off go mod verify",
+    "checksum_authority": "go.sum",
+    "missing_sum_or_unpinned_replace_allowed": false,
+    "task_solution_or_test_patch_applied": false,
+    "independent_materialization_count": 2,
+    "normalized_inventory_exact_agreement_required": true
+  },
+  "common_gates": {
+    "base_image_manifest_digest_bound": true,
+    "lock_and_source_configuration_captured_before_network": true,
+    "network_fetch_logs_retained": true,
+    "derived_image_identity_and_size_retained": true,
+    "dependency_inventory_includes_relative_path_size_and_sha256": true,
+    "offline_replay_network": "none",
+    "outcome_execution_network": "none",
+    "same_sealed_image_for_all_candidate_arms": true,
+    "two_repetitions_per_arm": true,
+    "dual_evaluator_exact_agreement_required": true,
+    "raw_logs_required": true,
+    "resource_ceiling_path": "evidence_quality/p2_resource_ceiling.json",
+    "failure_effect": "candidate_remains_N0_and_next_frozen_rank_opens",
+    "acceptance_rule_may_be_weakened_after_outcome": false
+  },
+  "custody": {
+    "network_materialization_started": false,
+    "candidate_test_outcome_opened": false,
+    "rank_greater_than_one_task_content_opened": false,
+    "final_pool_selected": false,
+    "final_pool_opened": false
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "Dependency rescue is an instrument repair and cannot create mechanism support.",
+    "A reproducible sealed dependency snapshot does not qualify the task without exact paired outcomes and all remaining gates.",
+    "Maven is deliberately not generalized from Cargo or Go checksum semantics.",
+    "The final held-out pool remains unselected and unopened."
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "schema_version": "asi_stack.p4_m8_kerc_design.v1",
+  "run_id": "p4-m8-kerc-runtime-001",
+  "recorded_date": "2026-07-16",
+  "state": "prospectively_frozen_before_outcome_execution",
+  "seeds": [
+    17,
+    29,
+    43,
+    71,
+    101
+  ],
+  "record_count": 192,
+  "split_counts": {
+    "train": 128,
+    "heldout": 32,
+    "adversarial_heldout": 32
+  },
+  "slices": {
+    "A": "protected objects, exact handles, shared terminology",
+    "B": "sense-aware semantic/faithful/lossless compilation and deterministic round trip",
+    "C": "small Kernel-native intent core versus matched surface and simple-handle cores"
+  },
+  "baselines": [
+    "surface_sentencepiece_unigram",
+    "surface_byte_char_ngram",
+    "dynamic_word_chunks",
+    "zlib_learned_dictionary_proxy",
+    "controlled_language",
+    "semantic_ir",
+    "copy_aware_generation",
+    "simple_entity_handle_shared_glossary"
+  ],
+  "native_core": {
+    "family": "L2 logistic regression",
+    "representations": [
+      "surface_unigram",
+      "surface_byte",
+      "simple_handle_glossary",
+      "kernel_packet"
+    ],
+    "seeds": [
+      17,
+      29,
+      43,
+      71,
+      101
+    ],
+    "heldout_labels_isolated": true
+  },
+  "metrics": [
+    "intent_accuracy",
+    "polarity_accuracy",
+    "protected_object_recall",
+    "byte_exact_recovery",
+    "semantic_field_accuracy",
+    "initially_correct_corruption",
+    "encoded_bytes",
+    "total_description_bytes",
+    "compile_render_verify_latency",
+    "training_operation_proxy",
+    "inference_operation_proxy",
+    "interaction_break_even"
+  ],
+  "ablations": [
+    "no_protection",
+    "no_sense",
+    "no_modality",
+    "no_global_residual",
+    "no_segment_residual",
+    "no_token_residual",
+    "no_exact_residual",
+    "no_macro",
+    "no_dual_vocabulary",
+    "no_verifier",
+    "no_state_hash",
+    "no_migration",
+    "no_macro_promotion"
+  ],
+  "attack_count": 20,
+  "attack_families": [
+    "dialect_erasure",
+    "identity_collision",
+    "unicode_confusable",
+    "quote_escape",
+    "code_url_injection",
+    "poisoned_concept",
+    "malicious_residual",
+    "cross_scope_reuse",
+    "expiry_loss",
+    "state_skew",
+    "downgrade",
+    "migration_corruption",
+    "macro_boundary",
+    "authority_widening",
+    "privacy_deletion",
+    "verifier_monoculture",
+    "silent_fallback"
+  ],
+  "primary_falsifier": "broad efficiency is refuted unless KERC is noninferior on heldout task and exact fidelity and strictly improves the best simple baseline on matched total-description bytes plus measured end-to-end latency; a narrower exact-handle or terminology result is retained separately",
+  "chapter_gate": "existing twelve owners first; no new chapter unless a durable multi-consumer ABI, separately governed residual lifecycle, unowned invariant, and distinct reader job are all observed",
+  "support_ceiling": "one authored bilingual templated corpus, deterministic compiler, small linear cores, finite attacks, and local measurements only; no general semantic truth, multilingual fairness, security, efficiency transfer, SOTA, AGI, ASI, deployment, or chapter-core support"
+}

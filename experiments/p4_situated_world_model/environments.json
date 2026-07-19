@@ -1,0 +1,253 @@
+{
+  "schema_version": "asi_stack.p4_m8_world_model_environments.v1",
+  "environments": {
+    "adaptive_workshop": {
+      "environment_id": "adaptive_workshop",
+      "environment_version": "1.0.0",
+      "domain": "persistent machine-cell diagnosis",
+      "entities": [
+        "cell-A",
+        "cell-B",
+        "cell-C",
+        "cell-D"
+      ],
+      "terminal_actions": {
+        "nominal": "continue_run",
+        "recoverable": "recalibrate",
+        "blocked": "isolate_and_service"
+      },
+      "transition": {
+        "nominal": {
+          "nominal": 0.78,
+          "recoverable": 0.18,
+          "blocked": 0.04
+        },
+        "recoverable": {
+          "nominal": 0.25,
+          "recoverable": 0.58,
+          "blocked": 0.17
+        },
+        "blocked": {
+          "nominal": 0.08,
+          "recoverable": 0.27,
+          "blocked": 0.65
+        }
+      },
+      "probes": {
+        "vibration": {
+          "nominal": {
+            "smooth": 0.8,
+            "rough": 0.15,
+            "silent": 0.05
+          },
+          "recoverable": {
+            "smooth": 0.2,
+            "rough": 0.65,
+            "silent": 0.15
+          },
+          "blocked": {
+            "smooth": 0.05,
+            "rough": 0.2,
+            "silent": 0.75
+          }
+        },
+        "thermal": {
+          "nominal": {
+            "cool": 0.78,
+            "warm": 0.18,
+            "hot": 0.04
+          },
+          "recoverable": {
+            "cool": 0.18,
+            "warm": 0.62,
+            "hot": 0.2
+          },
+          "blocked": {
+            "cool": 0.04,
+            "warm": 0.21,
+            "hot": 0.75
+          }
+        },
+        "alignment": {
+          "nominal": {
+            "centered": 0.82,
+            "offset": 0.14,
+            "jammed": 0.04
+          },
+          "recoverable": {
+            "centered": 0.21,
+            "offset": 0.63,
+            "jammed": 0.16
+          },
+          "blocked": {
+            "centered": 0.05,
+            "offset": 0.2,
+            "jammed": 0.75
+          }
+        }
+      },
+      "shifted_probes": {
+        "thermal": {
+          "nominal": {
+            "cool": 0.48,
+            "warm": 0.45,
+            "hot": 0.07
+          },
+          "recoverable": {
+            "cool": 0.42,
+            "warm": 0.45,
+            "hot": 0.13
+          },
+          "blocked": {
+            "cool": 0.1,
+            "warm": 0.32,
+            "hot": 0.58
+          }
+        }
+      },
+      "intervention": {
+        "action": "low_power_pulse",
+        "responses": {
+          "nominal": {
+            "stable": 0.88,
+            "changed": 0.12
+          },
+          "recoverable": {
+            "stable": 0.25,
+            "changed": 0.75
+          },
+          "blocked": {
+            "stable": 0.78,
+            "changed": 0.22
+          }
+        },
+        "cost": 0.12,
+        "authority": "one reversible diagnostic pulse per episode"
+      }
+    },
+    "service_mesh_transfer": {
+      "environment_id": "service_mesh_transfer",
+      "environment_version": "1.0.0",
+      "domain": "persistent service dependency diagnosis",
+      "entities": [
+        "svc-auth",
+        "svc-catalog",
+        "svc-orders",
+        "svc-search"
+      ],
+      "terminal_actions": {
+        "nominal": "keep_route",
+        "recoverable": "refresh_local_state",
+        "blocked": "isolate_dependency"
+      },
+      "transition": {
+        "nominal": {
+          "nominal": 0.74,
+          "recoverable": 0.21,
+          "blocked": 0.05
+        },
+        "recoverable": {
+          "nominal": 0.28,
+          "recoverable": 0.54,
+          "blocked": 0.18
+        },
+        "blocked": {
+          "nominal": 0.07,
+          "recoverable": 0.25,
+          "blocked": 0.68
+        }
+      },
+      "probes": {
+        "latency": {
+          "nominal": {
+            "low": 0.76,
+            "variable": 0.19,
+            "timeout": 0.05
+          },
+          "recoverable": {
+            "low": 0.2,
+            "variable": 0.62,
+            "timeout": 0.18
+          },
+          "blocked": {
+            "low": 0.04,
+            "variable": 0.2,
+            "timeout": 0.76
+          }
+        },
+        "trace": {
+          "nominal": {
+            "clean": 0.79,
+            "local_gap": 0.16,
+            "upstream_gap": 0.05
+          },
+          "recoverable": {
+            "clean": 0.18,
+            "local_gap": 0.65,
+            "upstream_gap": 0.17
+          },
+          "blocked": {
+            "clean": 0.05,
+            "local_gap": 0.18,
+            "upstream_gap": 0.77
+          }
+        },
+        "cache": {
+          "nominal": {
+            "fresh": 0.82,
+            "stale": 0.14,
+            "missing": 0.04
+          },
+          "recoverable": {
+            "fresh": 0.22,
+            "stale": 0.62,
+            "missing": 0.16
+          },
+          "blocked": {
+            "fresh": 0.07,
+            "stale": 0.22,
+            "missing": 0.71
+          }
+        }
+      },
+      "shifted_probes": {
+        "latency": {
+          "nominal": {
+            "low": 0.48,
+            "variable": 0.46,
+            "timeout": 0.06
+          },
+          "recoverable": {
+            "low": 0.38,
+            "variable": 0.47,
+            "timeout": 0.15
+          },
+          "blocked": {
+            "low": 0.08,
+            "variable": 0.3,
+            "timeout": 0.62
+          }
+        }
+      },
+      "intervention": {
+        "action": "bounded_canary_bypass",
+        "responses": {
+          "nominal": {
+            "improves": 0.12,
+            "unchanged": 0.88
+          },
+          "recoverable": {
+            "improves": 0.72,
+            "unchanged": 0.28
+          },
+          "blocked": {
+            "improves": 0.2,
+            "unchanged": 0.8
+          }
+        },
+        "cost": 0.15,
+        "authority": "one disposable canary reroute per episode; no production mutation"
+      }
+    }
+  }
+}
