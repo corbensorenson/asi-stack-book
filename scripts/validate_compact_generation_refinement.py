@@ -338,6 +338,13 @@ def run(command: list[str], cwd: Path) -> dict[str, Any]:
     return {"command": " ".join(command), "exit_code": 0, "output_sha256": hashlib.sha256(completed.stdout.encode()).hexdigest()}
 
 
+def portable_result(payload: dict[str, Any]) -> dict[str, Any]:
+    """Remove only non-semantic, platform-dependent console-output custody."""
+    normalized = json.loads(json.dumps(payload))
+    normalized["verification"]["lean"]["output_sha256"] = "platform-normalized"
+    return normalized
+
+
 def build(errors: list[str]) -> dict[str, Any]:
     cases = route_cases()
     for case in cases:
@@ -397,8 +404,16 @@ def main() -> None:
     if args.write_result:
         RESULT.parent.mkdir(parents=True, exist_ok=True)
         RESULT.write_text(serialized, encoding="utf-8")
-    elif not RESULT.exists() or RESULT.read_text(encoding="utf-8") != serialized:
-        errors.append(f"{rel(RESULT)} is missing or stale; run {COMMAND} --write-result.")
+    elif not RESULT.exists():
+        errors.append(f"{rel(RESULT)} is missing; run {COMMAND} --write-result.")
+    else:
+        recorded = load(RESULT)
+        jsonschema.validate(recorded, load(SCHEMA))
+        # Lean's exit status is replayed above. Its stdout may contain
+        # platform/toolchain diagnostics, so that console digest is retained as
+        # historical custody but excluded from semantic cross-platform drift.
+        if portable_result(recorded) != portable_result(result):
+            errors.append(f"{rel(RESULT)} is stale; run {COMMAND} --write-result.")
     if errors:
         fail(errors)
     print(f"Compact generation refinement passed: {len(STAGES)} stages, {result['model']['route_count']} routes, {result['model']['rejected_mutation_count']}/{result['model']['rejected_mutation_count']} mutations rejected, four source results digest-bound, support/effect none.")
