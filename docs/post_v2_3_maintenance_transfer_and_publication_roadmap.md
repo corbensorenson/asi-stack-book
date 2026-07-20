@@ -38,7 +38,10 @@ moved the working manifest to 59 argument-level chapters, and terminal P6.4-A1
 admission has now moved it to 60. The v2.2 reader evidence freeze and X Article synopsis are separate
 newer artifacts. The post-v2.3 evidence corpus first reached committed custody
 at `882b2a82c`. The latest clean, pushed, built, and deployed ancestral
-checkpoint is `bc33a883a` on 2026-07-19. Neither checkpoint is a new
+checkpoint is `1ed1413f1` on 2026-07-19: tested Pages build `29709193773`
+passed, and deploy/attest run `29709417250` passed on its second attempt after
+GitHub's artifact service returned a transient HTTP 503 on the first download.
+Neither checkpoint is a new
 living-book or reader release, DOI/archive deposit, license grant, or public
 post.
 
