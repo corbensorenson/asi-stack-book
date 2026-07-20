@@ -106,6 +106,8 @@ No result is recorded here unless a test has actually been implemented and run.
 | `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | Security-overhead budget preservation test | implemented | passing via Resource Budget Ledger synthetic security-overhead erasure negative fixture; no runtime budget enforcement, deployed security-kernel behavior, or security-economics claim |
 | `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | Synthetic prompt-injection record-route controls | implemented | passing only for self-authored receipt and commit-probe fields; no model attack, runtime containment, semantic non-disclosure, or transfer claim |
 | `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | Security kernel route proof | implemented | passes via Lean build with 22 theorem declarations under four manifest targets; finite record and route consequences only |
+| `privacy-data-rights-and-information-flow-governance` | Privacy, Data Rights, and Information-Flow Governance | Information lifecycle transaction contract | implemented | authored_record_only_no_privacy_or_compliance_effect |
+| `privacy-data-rights-and-information-flow-governance` | Privacy, Data Rights, and Information-Flow Governance | Natural privacy and rights campaign | planned | prospectively_frozen_unexecuted |
 | `model-weight-custody-and-hardware-roots-of-trust` | Model-Weight Custody and Hardware Roots of Trust | Required invalid-attestation load block | planned | not run |
 | `model-weight-custody-and-hardware-roots-of-trust` | Model-Weight Custody and Hardware Roots of Trust | Stale-attestation and key-policy negative control | planned | not run |
 | `model-weight-custody-and-hardware-roots-of-trust` | Model-Weight Custody and Hardware Roots of Trust | Verifier-dependency and independent-observation controls | planned | not run |
@@ -618,16 +620,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 308 |
+| Proof targets covered by triage | 310 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 308 |
+| implemented | 310 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 308 |
+| implemented | formal-invariant | lean-candidate | 310 |

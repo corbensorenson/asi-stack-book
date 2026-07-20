@@ -170,7 +170,7 @@
       "privacy-data-rights-and-information-flow-governance"
     ],
     "url": "https://csrc.nist.gov/pubs/sp/800/226/final",
-    "notes": "Preliminary official-guidance comparator based on the NIST final-publication abstract: SP 800-226 describes differential privacy as a framework for quantifying privacy loss and organizes implementation considerations and hazards through a differential-privacy pyramid. It does not establish legal compliance, correct local implementation, a utility result, or a privacy guarantee for the ASI Stack.",
+    "notes": "Paper-body-reviewed official guidance distinguishing mathematical, implementation, system, and operational layers of a DP claim. It establishes no correct local implementation, utility result, lifecycle privacy, or legal compliance.",
     "source_type": "government_standard",
     "published": "2025-03-06",
     "updated": "2025-03-06",
@@ -4322,10 +4322,11 @@
     "priority": "implementation_reference",
     "layer": "governed_synthetic_data_admission",
     "chapter_targets": [
+      "benchmark-ratchets-and-anti-goodhart-evidence",
       "data-engines-continual-learning-and-unlearning",
       "policy-optimization-and-learning-from-feedback",
+      "privacy-data-rights-and-information-flow-governance",
       "procedural-memory-and-cognitive-loop-closure",
-      "benchmark-ratchets-and-anti-goodhart-evidence",
       "project-theseus-as-report-first-implementation-reference"
     ],
     "url": "local-project:Theseus-Hive@09ecbd8cff4a:docs/SYNTHETIC_DATA_CURATION.md",
@@ -5932,5 +5933,133 @@
     "published": "2026-06-16",
     "updated": "2026-07-19",
     "citation_label": "MLCommons (2026), MLPerf Training v6.0"
+  },
+  {
+    "id": "ext_nist_privacy_framework_2020",
+    "title": "NIST Privacy Framework: A Tool for Improving Privacy through Enterprise Risk Management, Version 1.0",
+    "priority": "external_literature",
+    "layer": "privacy_data_rights_and_information_flow_governance",
+    "chapter_targets": [
+      "privacy-data-rights-and-information-flow-governance",
+      "security-kernel-and-digital-scifs"
+    ],
+    "url": "https://doi.org/10.6028/NIST.CSWP.01162020",
+    "notes": "Official paper-body-reviewed risk framework distinguishing privacy problems from cybersecurity incidents across the data lifecycle. It is voluntary, has no force of law, and supplies no local privacy outcome or certification.",
+    "source_type": "government_framework",
+    "published": "2020-01-16",
+    "updated": "2024-01-22",
+    "citation_label": "NIST (2020), Privacy Framework 1.0",
+    "doi": "10.6028/NIST.CSWP.01162020"
+  },
+  {
+    "id": "ext_eu_gdpr_2016",
+    "title": "Regulation (EU) 2016/679 (General Data Protection Regulation)",
+    "priority": "external_literature",
+    "layer": "privacy_data_rights_and_information_flow_governance",
+    "chapter_targets": [
+      "privacy-data-rights-and-information-flow-governance"
+    ],
+    "url": "https://eur-lex.europa.eu/eli/reg/2016/679",
+    "notes": "Authoritative jurisdiction-specific normative comparator for principles, bases, rights, accountability, design, and qualified exceptions. It is not universal law, legal advice, an applicability decision, or local compliance evidence.",
+    "source_type": "law_primary",
+    "published": "2016-04-27",
+    "updated": "2016-05-04",
+    "citation_label": "European Parliament and Council (2016), Regulation (EU) 2016/679"
+  },
+  {
+    "id": "ext_w3c_dpv_2024",
+    "title": "Data Privacy Vocabulary (DPV), Version 2",
+    "priority": "external_literature",
+    "layer": "privacy_data_rights_and_information_flow_governance",
+    "chapter_targets": [
+      "privacy-data-rights-and-information-flow-governance",
+      "context-transactions-snapshots-mounts-and-taint"
+    ],
+    "url": "https://www.w3.org/community/reports/dpvcg/CG-FINAL-dpv-20240801/",
+    "notes": "Machine-readable vocabulary for purpose, processing, data, actors, rights, risks, measures, legal basis, and consent. It is a Community Group Final Specification, not a W3C Recommendation, law, or enforcement proof.",
+    "source_type": "community_specification",
+    "published": "2024-08-01",
+    "updated": "2024-08-01",
+    "citation_label": "W3C Data Privacy Vocabularies and Controls CG (2024), DPV v2"
+  },
+  {
+    "id": "ext_abadi_dpsgd_2016",
+    "title": "Deep Learning with Differential Privacy",
+    "priority": "external_literature",
+    "layer": "privacy_data_rights_and_information_flow_governance",
+    "chapter_targets": [
+      "privacy-data-rights-and-information-flow-governance",
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://arxiv.org/abs/1607.00133",
+    "notes": "Primary DP-SGD mechanism and accounting source. Its algorithm, analysis, and reported experiments are not locally reproduced; its guarantee is parameter-, unit-, adjacency-, implementation-, and release-surface-bound.",
+    "source_type": "conference_paper",
+    "arxiv_id": "1607.00133",
+    "published": "2016-07-01",
+    "updated": "2016-10-24",
+    "citation_label": "Abadi et al. (2016), Deep Learning with Differential Privacy",
+    "doi": "10.1145/2976749.2978318"
+  },
+  {
+    "id": "ext_algospec_purpose_limitation_2024",
+    "title": "Being Transparent Is Merely the Beginning: Enforcing Purpose Limitation with Polynomial Approximation",
+    "priority": "external_literature",
+    "layer": "privacy_data_rights_and_information_flow_governance",
+    "chapter_targets": [
+      "privacy-data-rights-and-information-flow-governance"
+    ],
+    "url": "https://www.usenix.org/conference/usenixsecurity24/presentation/liu-shuofeng",
+    "notes": "Primary competing purpose-restriction design using algorithm-specific polynomial approximation. Reported accuracy and efficiency are bounded to studied algorithms/data and are not locally reproduced or a complete legal-purpose result.",
+    "source_type": "conference_paper",
+    "published": "2024-08",
+    "updated": "2024-08",
+    "citation_label": "Liu et al. (2024), Being Transparent Is Merely the Beginning"
+  },
+  {
+    "id": "ext_carlini_training_data_extraction_2021",
+    "title": "Extracting Training Data from Large Language Models",
+    "priority": "external_literature",
+    "layer": "privacy_data_rights_and_information_flow_governance",
+    "chapter_targets": [
+      "privacy-data-rights-and-information-flow-governance",
+      "data-engines-continual-learning-and-unlearning"
+    ],
+    "url": "https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting",
+    "notes": "Primary failure source reporting black-box extraction of memorized GPT-2 training sequences. The source result is configuration-bound and not a local or universal leakage result.",
+    "source_type": "conference_paper",
+    "published": "2021-08",
+    "updated": "2021-08",
+    "citation_label": "Carlini et al. (2021), Extracting Training Data from Large Language Models"
+  },
+  {
+    "id": "ext_choquette_choo_label_only_mia_2021",
+    "title": "Label-Only Membership Inference Attacks",
+    "priority": "external_literature",
+    "layer": "privacy_data_rights_and_information_flow_governance",
+    "chapter_targets": [
+      "privacy-data-rights-and-information-flow-governance"
+    ],
+    "url": "https://proceedings.mlr.press/v139/choquette-choo21a.html",
+    "notes": "Primary failure source showing hard-label robustness can expose membership and confidence masking can be insufficient in studied settings. No attack or defense result is locally reproduced or universal.",
+    "source_type": "conference_paper",
+    "published": "2021-07",
+    "updated": "2021-07",
+    "citation_label": "Choquette-Choo et al. (2021), Label-Only Membership Inference Attacks"
+  },
+  {
+    "id": "ext_mahloujifar_fdp_audit_2025",
+    "title": "Auditing f-Differential Privacy in One Run",
+    "priority": "external_literature",
+    "layer": "privacy_data_rights_and_information_flow_governance",
+    "chapter_targets": [
+      "privacy-data-rights-and-information-flow-governance",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
+    "url": "https://proceedings.mlr.press/v267/mahloujifar25a.html",
+    "notes": "Primary empirical-audit comparator using randomized inclusion and an f-DP hypothesis in one run. A passed audit is not proof that DP or lifecycle privacy holds, and no result is locally reproduced.",
+    "source_type": "conference_paper",
+    "published": "2025-07",
+    "updated": "2025-07",
+    "citation_label": "Mahloujifar, Melis, and Chaudhuri (2025), Auditing f-Differential Privacy in One Run"
   }
 ]

@@ -4138,6 +4138,239 @@
           ]
         },
         {
+          "id": "privacy-data-rights-and-information-flow-governance",
+          "title": "Privacy, Data Rights, and Information-Flow Governance",
+          "file": "chapters/privacy-data-rights-and-information-flow-governance.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "ext_nist_privacy_framework_2020",
+            "ext_eu_gdpr_2016",
+            "ext_w3c_dpv_2024",
+            "ext_abadi_dpsgd_2016",
+            "ext_algospec_purpose_limitation_2024",
+            "ext_carlini_training_data_extraction_2021",
+            "ext_choquette_choo_label_only_mia_2021",
+            "ext_nist_differential_privacy_2025",
+            "ext_mahloujifar_fdp_audit_2025",
+            "theseus_synthetic_data_curation"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_nist_privacy_framework_2020",
+              "ext_eu_gdpr_2016",
+              "ext_w3c_dpv_2024",
+              "ext_abadi_dpsgd_2016",
+              "ext_algospec_purpose_limitation_2024",
+              "ext_carlini_training_data_extraction_2021",
+              "ext_choquette_choo_label_only_mia_2021",
+              "ext_nist_differential_privacy_2025",
+              "ext_mahloujifar_fdp_audit_2025"
+            ],
+            "supporting": [
+              "theseus_synthetic_data_curation"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": [
+              "Receives authorized access, datum lineage, and context identity; returns purpose-bounded use and rights receipts plus explicit unknown-copy, influence, exception, privacy, and remedy residuals without legal-compliance, support, readiness, or release authority."
+            ]
+          },
+          "problem": "A system can preserve confidentiality and pass access checks while authorized collection, linkage, inference, memory, training, sharing, retention, or derivatives violate purpose, minimization, privacy expectations, or executable rights.",
+          "insufficient": "Access control, consent text, a DP label, a low observed attack rate, one deleted row, a changed answer, or a closed rights ticket cannot establish purpose compatibility, privacy, complete propagation, legal compliance, or total forgetting.",
+          "core_claim": "An information use is eligible for bounded execution only when a prospectively declared record binds affected parties, exact purpose and processing, claimed authority and jurisdiction, recipients, retention, minimization, complete-enough flow and derivatives, cross-user boundaries, privacy unit, adjacency, accountant and budget where applicable, threat model and attack plan, rights state and remedy, exceptions, residual copies and influence, costs, and non-authorities; no individual control or receipt alone establishes privacy, legal compliance, total erasure, behavioral forgetting, influence removal, support, readiness, release, transfer, or SOTA.",
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_nist_privacy_framework_2020",
+              "mapped_support": "Grounds lifecycle privacy-risk governance and the distinction between privacy and cybersecurity risk.",
+              "limits": "Voluntary framework; not law, certification, or local outcome.",
+              "passage_refs": [
+                "sources/source_notes/ext_nist_privacy_framework_2020.md"
+              ],
+              "passage_review_note": "Reviewed the primary paper, specification, official guidance, or authoritative legal text at the bounded passages recorded in the source note; no source-reported result or legal requirement is treated as local evidence or a compliance finding.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_eu_gdpr_2016",
+              "mapped_support": "Grounds one jurisdiction's purpose, minimization, accountability, design, rights, and qualified exceptions vocabulary.",
+              "limits": "No universalization, applicability decision, legal advice, or compliance finding.",
+              "passage_refs": [
+                "sources/source_notes/ext_eu_gdpr_2016.md"
+              ],
+              "passage_review_note": "Reviewed the primary paper, specification, official guidance, or authoritative legal text at the bounded passages recorded in the source note; no source-reported result or legal requirement is treated as local evidence or a compliance finding.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_w3c_dpv_2024",
+              "mapped_support": "Grounds machine-readable purpose, processing, actor, rights, risk, measure, and consent records.",
+              "limits": "Community Group specification; representation does not prove validity or enforcement.",
+              "passage_refs": [
+                "sources/source_notes/ext_w3c_dpv_2024.md"
+              ],
+              "passage_review_note": "Reviewed the primary paper, specification, official guidance, or authoritative legal text at the bounded passages recorded in the source note; no source-reported result or legal requirement is treated as local evidence or a compliance finding.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_abadi_dpsgd_2016",
+              "mapped_support": "Grounds DP-SGD clipping, noise, sampling, accounting, and utility tradeoffs.",
+              "limits": "Not reproduced; guarantee remains assumption-, implementation-, and release-bound.",
+              "passage_refs": [
+                "sources/source_notes/ext_abadi_dpsgd_2016.md"
+              ],
+              "passage_review_note": "Reviewed the primary paper, specification, official guidance, or authoritative legal text at the bounded passages recorded in the source note; no source-reported result or legal requirement is treated as local evidence or a compliance finding.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_algospec_purpose_limitation_2024",
+              "mapped_support": "Grounds algorithm-specific purpose restriction as a competing design.",
+              "limits": "Reported task envelope is narrow and not reproduced or complete purpose governance.",
+              "passage_refs": [
+                "sources/source_notes/ext_algospec_purpose_limitation_2024.md"
+              ],
+              "passage_review_note": "Reviewed the primary paper, specification, official guidance, or authoritative legal text at the bounded passages recorded in the source note; no source-reported result or legal requirement is treated as local evidence or a compliance finding.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_carlini_training_data_extraction_2021",
+              "mapped_support": "Grounds training-data extraction as a concrete model-mediated privacy failure.",
+              "limits": "GPT-2-specific source evidence is not a universal or local leakage result.",
+              "passage_refs": [
+                "sources/source_notes/ext_carlini_training_data_extraction_2021.md"
+              ],
+              "passage_review_note": "Reviewed the primary paper, specification, official guidance, or authoritative legal text at the bounded passages recorded in the source note; no source-reported result or legal requirement is treated as local evidence or a compliance finding.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_choquette_choo_label_only_mia_2021",
+              "mapped_support": "Grounds label-only membership inference and confidence-masking failure.",
+              "limits": "Studied interfaces and defenses are configuration-bound and not reproduced.",
+              "passage_refs": [
+                "sources/source_notes/ext_choquette_choo_label_only_mia_2021.md"
+              ],
+              "passage_review_note": "Reviewed the primary paper, specification, official guidance, or authoritative legal text at the bounded passages recorded in the source note; no source-reported result or legal requirement is treated as local evidence or a compliance finding.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_nist_differential_privacy_2025",
+              "mapped_support": "Grounds layered evaluation of DP mathematical, implementation, system, and operational claims.",
+              "limits": "Guidance does not prove any local DP implementation or legal compliance.",
+              "passage_refs": [
+                "sources/source_notes/ext_nist_differential_privacy_2025.md"
+              ],
+              "passage_review_note": "Reviewed the primary paper, specification, official guidance, or authoritative legal text at the bounded passages recorded in the source note; no source-reported result or legal requirement is treated as local evidence or a compliance finding.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_mahloujifar_fdp_audit_2025",
+              "mapped_support": "Grounds one-run empirical f-DP auditing as a flaw detector and measurement comparator.",
+              "limits": "A non-violation is not certification and the result is not reproduced.",
+              "passage_refs": [
+                "sources/source_notes/ext_mahloujifar_fdp_audit_2025.md"
+              ],
+              "passage_review_note": "Reviewed the primary paper, specification, official guidance, or authoritative legal text at the bounded passages recorded in the source note; no source-reported result or legal requirement is treated as local evidence or a compliance finding.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "theseus_synthetic_data_curation",
+              "mapped_support": "Supplies source-reported implementation pressure for provenance receipts, leakage gates, split exclusions, bounded synthetic-data admission, descendant propagation, and revocation or unlearning questions.",
+              "limits": "No Theseus command or dataset was rerun; the record establishes no privacy, rights completion, deletion, influence removal, data quality, model benefit, or compliance outcome.",
+              "passage_refs": [
+                "sources/source_notes/theseus_synthetic_data_curation.md"
+              ],
+              "passage_review_note": "Reviewed the pinned local-project documentation and its source-reported policy boundaries. No Theseus command, dataset, model, privacy mechanism, rights workflow, or outcome was rerun or imported into this chapter.",
+              "passage_review_state": "reviewed"
+            }
+          ],
+          "mechanism": [
+            "Name subjects, affected groups, and unknown-identity routes.",
+            "Bind exact purpose, operation, claimed authority, jurisdiction, recipients, retention, expiry, and objection state.",
+            "Test a less-data alternative and admit only necessary fields and granularity.",
+            "Map context, memory, training, inference, output, audit, sharing, cache, backup, checkpoint, and derivative flows while retaining unknowns.",
+            "Declare privacy unit, adjacency, threat model, mechanism, accountant, budget, and attacks.",
+            "Require positive-control and independent attack evaluation before interpreting null leakage.",
+            "Execute access, correction, export, restriction, deletion, or ordinary-use receipts across known descendants.",
+            "Close storage, access, behavior, influence, privacy, exceptions, and legal authority separately."
+          ],
+          "interfaces": [
+            "authorized access",
+            "data-subject and affected-group record",
+            "purpose and authority lease",
+            "minimization decision",
+            "flow and derivative graph",
+            "privacy-loss and attack audit",
+            "rights request",
+            "bounded receipt",
+            "residual and remedy escrow"
+          ],
+          "invariants": [
+            "access is not consent or purpose",
+            "purpose and authority precede use",
+            "less-data alternatives are tested",
+            "unknown copies remain visible",
+            "derivatives inherit obligations",
+            "cross-user memory is isolated",
+            "privacy unit and adjacency travel with a guarantee",
+            "formal accounting and empirical auditing remain distinct",
+            "attack positive controls precede null interpretation",
+            "storage behavior influence privacy and legal outcomes remain separate",
+            "a rights receipt confers no support or release authority"
+          ],
+          "failure_modes": [
+            "purpose drift",
+            "consent laundering",
+            "minimization theater",
+            "cross-user leakage",
+            "linkage and attribute inference",
+            "training-data extraction",
+            "membership inference",
+            "privacy-accounting drift",
+            "rights-ticket theater",
+            "deletion-forgetting substitution",
+            "audit surveillance",
+            "group blind spot",
+            "exception laundering",
+            "compliance theater"
+          ],
+          "minimal_implementation": "Build a synthetic lifecycle transaction and then a prospectively frozen natural small-model/memory campaign comparing ordinary, access-only, minimization, DP, purpose-bound, and competent remediation arms under strong positive-controlled attacks, complete descendant rights workflows, at least three seeds, independent evaluation, and joint utility/privacy/rights/cost outcomes.",
+          "beyond_state_of_art": "The mature operational contract carries machine-readable purpose, authority, privacy, rights, and remedy obligations across context, memory, heterogeneous model substrates, training, inference, audit, backups, releases, and descendants; composes formal accounting with competent empirical attacks and independently checked outcome measures; preserves contestable lineage and effect-complete remediation across replacements; and supports versioned cross-jurisdictional policy modules without pretending the architecture determines law, legal validity, institutional legitimacy, or universal privacy.",
+          "codex_tests": [
+            {
+              "name": "Information lifecycle transaction contract",
+              "purpose": "Check purpose/authority, minimization, twelve-surface flow closure, derivative propagation, privacy evaluation, rights receipts, sources, non-authorities, and 26 rejecting mutations.",
+              "implementation_status": "implemented",
+              "result_status": "authored_record_only_no_privacy_or_compliance_effect"
+            },
+            {
+              "name": "Natural privacy and rights campaign",
+              "purpose": "Compare six strong arms across thirteen failure families, hidden independent evaluation, positive controls, and joint utility/privacy/rights/cost outcomes.",
+              "implementation_status": "planned",
+              "result_status": "prospectively_frozen_unexecuted"
+            }
+          ],
+          "lean_module": "AsiStackProofs.PrivacyInformationFlow",
+          "proof_targets": [
+            {
+              "tag": "lean:privacy_information_flow.admission_invariants",
+              "module": "AsiStackProofs.PrivacyInformationFlow",
+              "target": "An accepted finite information use requires matching purpose and authority, minimization, complete-enough flow, and competent privacy evaluation.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:privacy_information_flow.outcome_separation",
+              "module": "AsiStackProofs.PrivacyInformationFlow",
+              "target": "An accepted bounded receipt preserves storage, behavior, influence, privacy, and legal-compliance separation and refuses authority laundering.",
+              "status": "implemented"
+            }
+          ],
+          "draft_maturity": "integrated_argument_chapter_formal_and_protocol_contract_complete",
+          "open_evidence_gaps": [
+            "No ASI Stack privacy/data-rights campaign has run.",
+            "No source mechanism, attack, legal determination, or rights workflow was reproduced locally.",
+            "The fixture and finite Lean model establish record consequences only."
+          ]
+        },
+        {
           "id": "model-weight-custody-and-hardware-roots-of-trust",
           "title": "Model-Weight Custody and Hardware Roots of Trust",
           "file": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",

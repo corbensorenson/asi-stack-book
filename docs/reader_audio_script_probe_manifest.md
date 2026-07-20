@@ -26,7 +26,7 @@ python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest
 | Source mode | `generated_reader_edition` |
 | Source generator | `scripts/build_reader_edition.py` |
 | Audio profile | `audio_release` |
-| Script files | 65 |
+| Script files | 66 |
 | Implementation-horizon script status | pass |
 | Review status | review_required |
 
@@ -38,26 +38,26 @@ Required review files are generated in the ignored workspace:
 ## Audio Script Reading-Flow Review
 
 The generated script workspace now has an automated reading-flow review. It
-checks that `index.md`, `preface.md`, the 60 active chapter scripts, and the included
+checks that `index.md`, `preface.md`, the 61 active chapter scripts, and the included
 appendix scripts follow `book_structure.json` order instead of alphabetical
 filesystem order. It also checks that `chapter_markers.md` follows the same
 script order.
 
 | Metric | Value |
 |---|---:|
-| Script files checked | 65 |
+| Script files checked | 66 |
 | Front-matter scripts checked | 2 |
-| Chapter scripts checked | 60 |
+| Chapter scripts checked | 61 |
 | Appendix scripts checked | 3 |
 | Script order | matches book-structure order |
-| Ordered chapter markers | 65 ordered markers |
-| Chapter-marker timecodes | 65 `TBD` rows |
-| Narration notes | 157 narration notes |
-| Table narration notes | 69 |
-| Diagram narration notes | 75 |
+| Ordered chapter markers | 66 ordered markers |
+| Chapter-marker timecodes | 66 `TBD` rows |
+| Narration notes | 160 narration notes |
+| Table narration notes | 70 |
+| Diagram narration notes | 76 |
 | Image narration notes | 11 |
-| Code/schema narration notes | 2 |
-| Implementation-horizon chapter scripts | 60 |
+| Code/schema narration notes | 3 |
+| Implementation-horizon chapter scripts | 61 |
 | Script statistics | Current digest and text statistics are recorded in the tracked audio-script probe manifest. |
 | Replacement characters | 0 |
 | Live/research marker hits | 0 |
@@ -80,9 +80,9 @@ timecoding, not an audiobook, not audio generation, and not release approval.
 
 | Material | Count |
 |---|---:|
-| Tables | 69 |
-| Mermaid diagrams | 75 |
-| Code/schema blocks | 2 |
+| Tables | 70 |
+| Mermaid diagrams | 76 |
+| Code/schema blocks | 3 |
 | Images | 11 |
 
 These counts are script-preparation cues. They tell a future narration review

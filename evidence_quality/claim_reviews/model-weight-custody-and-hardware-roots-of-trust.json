@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
     "structured_atoms_reviewed": 71,
-    "prose_candidates_adjudicated": 71,
+    "prose_candidates_adjudicated": 72,
     "unowned_material_claims": 0,
     "review_note": "Reviewed the complete chapter, all nine assigned source notes and passage-mapping limits, the eight-record deterministic custody lifecycle fixture, all nine Lean declarations under eight manifest targets, all nine rejecting mutations, every manifest atom, all prose scanner candidates, the worked custody trace, flow diagram, test plan, source crosswalk, summary, and handoff. The sweep replaced file-centric custody with a threat-model-bound model-family and derivative-closure contract; separated Attester Evidence, Verifier appraisal, Attestation Result, Relying-Party authorization, key release, observed load/use effects, runtime authority, and distribution authority; added exact key lifecycle, plaintext and output-extraction exposure, role-dependency, backup/recovery, incident/revocation, effort-relative sanitization, privacy/rights, availability, cost, and irreversible-release semantics; installed strong comparators, effect-bearing workload requirements, joint metrics, causal ablations, independent replication, transfer, and explicit promotion/refutation gates; and preserved zero chapter-core support effect."
   },
@@ -230,6 +230,11 @@
     "model-weight-custody-and-hardware-roots-of-trust.prose.f7751737c34f": {
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrapped mature-endpoint or current-result boundary already governed by structured chapter atoms; it adds no independent material claim."
+    },
+    "model-weight-custody-and-hardware-roots-of-trust.prose.be1d9a40569a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the reviewed custody rule that purpose, privacy, rights, descendant, and residual obligations survive an artifact transfer.",
+      "target_atom_id": "model-weight-custody-and-hardware-roots-of-trust.core"
     }
   },
   "prose_review_lineage": [

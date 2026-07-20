@@ -43,8 +43,9 @@ def main() -> None:
         errors.append("program must contain exactly the three defended contributions")
     assignments = tracked.get("chapter_assignments", [])
     ids = [row.get("chapter_id") for row in assignments]
-    if len(ids) != 60 or len(set(ids)) != 60:
-        errors.append("chapter focus map must contain 60 unique manifest chapters")
+    manifest_count = len(expected.get("chapter_assignments", []))
+    if len(ids) != manifest_count or len(set(ids)) != manifest_count:
+        errors.append(f"chapter focus map must contain {manifest_count} unique manifest chapters")
     if any(row.get("contribution_id") not in EXPECTED for row in assignments):
         errors.append("chapter assignment uses an unknown contribution")
     if any(row.get("independent_flagship_claim") is not False for row in assignments):
@@ -55,9 +56,9 @@ def main() -> None:
     summary = tracked.get("summary", {})
     expected_summary = {
         "contribution_count": 3,
-        "chapter_count": 60,
+        "chapter_count": manifest_count,
         "primary_owner_count": 11,
-        "supporting_or_integration_count": 49,
+        "supporting_or_integration_count": manifest_count - 11,
         "independent_flagship_chapter_count": 0,
     }
     if summary != expected_summary:
@@ -67,9 +68,9 @@ def main() -> None:
         "## Governed-cognition interface contracts",
         "## Public claim-state transition discipline",
         "## Record/reality reconciliation and residual honesty",
-        "all 60 manifest chapters",
+        f"all {manifest_count} manifest chapters",
         "Eleven are primary owners",
-        "other 49 are supporting or integration chapters",
+        f"other {manifest_count - 11} are supporting or integration chapters",
         "not novelty proof",
     ):
         if phrase not in doc:
@@ -82,7 +83,7 @@ def main() -> None:
     if "products/contribution_focus_contract.json" not in remediation:
         errors.append("remediation program does not name the contribution focus contract")
     fail(errors)
-    print("Contribution focus validation passed: 3 contributions, 60 unique chapter assignments, 11 primary owners, 49 supporting/integration roles, 0 independent chapter flagships.")
+    print(f"Contribution focus validation passed: 3 contributions, {manifest_count} unique chapter assignments, 11 primary owners, {manifest_count - 11} supporting/integration roles, 0 independent chapter flagships.")
 
 
 def fail(errors: list[str]) -> None:

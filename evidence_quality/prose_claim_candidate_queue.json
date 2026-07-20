@@ -3,9 +3,9 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 54,
-    "candidate_count": 2886,
+    "candidate_count": 2887,
     "review_state_counts": {
-      "duplicate_of_atom": 1278,
+      "duplicate_of_atom": 1279,
       "editorial_or_question": 52,
       "historical_or_source_report": 278,
       "material_atom": 3,
@@ -11495,9 +11495,28 @@
       "target_atom_id": "model-weight-custody-and-hardware-roots-of-trust.invariant.001"
     },
     {
+      "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.be1d9a40569a",
+      "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:75",
+      "sentence": "Custody cannot erase purpose leases, privacy budgets, subject rights, descendant obligations, deletion residuals, or unresolved influence merely by transferring a weight artifact.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Restates the reviewed custody rule that purpose, privacy, rights, descendant, and residual obligations survive an artifact transfer.",
+      "target_atom_id": "model-weight-custody-and-hardware-roots-of-trust.core"
+    },
+    {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.b3a1d4f9db23",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:88",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:90",
       "sentence": "claim, which availability and recovery objectives must survive, and which",
       "cues": [
         "must"
@@ -11516,7 +11535,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.3297fcfa895a",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:93",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:95",
       "sentence": "authority, and location; storage and transfer state; key and metadata lifecycle;",
       "cues": [
         "transfer"
@@ -11535,7 +11554,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.faeefe2eae17",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:118",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:120",
       "sentence": "This representation also prevents false recall claims.",
       "cues": [
         "prevents"
@@ -11554,7 +11573,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.dd6156b9803c",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:160",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:162",
       "sentence": "NIST SP 800-88 Rev. 2 prevents another collapse: deletion, key revocation,",
       "cues": [
         "prevents"
@@ -11573,7 +11592,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.f267f006962f",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:164",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:166",
       "sentence": "one device cannot prove that plaintext memory, caches, snapshots, backups,",
       "cues": [
         "cannot",
@@ -11593,7 +11612,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.f6d6dc6096ed",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:167",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:169",
       "sentence": "Release mechanisms require a separate objection.",
       "cues": [
         "require"
@@ -11612,7 +11631,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.b34597bae467",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:168",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:170",
       "sentence": "release schemes shows why informal assurances about restricted distribution can",
       "cues": [
         "shows"
@@ -11631,7 +11650,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.c4508a8b1156",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:184",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:186",
       "sentence": "chapter should be rejected as redundant if it merely renames one of them.",
       "cues": [
         "should"
@@ -11650,7 +11669,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.707dade1df4d",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:223",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:225",
       "sentence": "A key policy without an effect observer can only record",
       "cues": [
         "can only"
@@ -11669,7 +11688,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.5c85ea710c2e",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:224",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:226",
       "sentence": "An attestation result without a relying-party policy cannot authorize a",
       "cues": [
         "cannot"
@@ -11688,7 +11707,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.d27a0d548925",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:225",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:227",
       "sentence": "A revocation without propagation evidence cannot claim recall.",
       "cues": [
         "cannot"
@@ -11707,7 +11726,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.41fdbad1465e",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:226",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:228",
       "sentence": "sanitization command without method-appropriate validation cannot claim that",
       "cues": [
         "cannot"
@@ -11726,7 +11745,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.c6fe063369a9",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:231",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:233",
       "sentence": "transfer record, named access scope, intended environment, key-release policy,",
       "cues": [
         "transfer"
@@ -11745,7 +11764,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.5437abee203a",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:232",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:234",
       "sentence": "A record must distinguish a proposed load from an",
       "cues": [
         "must"
@@ -11764,7 +11783,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.99636705a4dc",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:233",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:235",
       "sentence": "It must also retain the revocation and incident route rather than",
       "cues": [
         "must"
@@ -11783,7 +11802,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.7e782d1cd59b",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:241",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:243",
       "sentence": "If any required identity, dependency, policy, freshness, compromise, or",
       "cues": [
         "required"
@@ -11802,7 +11821,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.5f9f026de65b",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:249",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:251",
       "sentence": "observer dependencies and visibility grade remain explicit; a token cannot",
       "cues": [
         "cannot"
@@ -11821,7 +11840,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.5fc86293f2fe",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:252",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:254",
       "sentence": "A local load, a managed transfer,",
       "cues": [
         "transfer"
@@ -11840,7 +11859,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.5526954db54e",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:256",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:258",
       "sentence": "The record cannot make an irreversible action",
       "cues": [
         "cannot"
@@ -11859,7 +11878,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.9dcb7be6e70f",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:268",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:270",
       "sentence": "The separation matters because the favorable state of one record cannot repair",
       "cues": [
         "cannot"
@@ -11878,7 +11897,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.5b83b4e0a2a1",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:294",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:296",
       "sentence": "**What the custody flow shows:** Attester Evidence, Verifier appraisal,",
       "cues": [
         "shows"
@@ -11897,7 +11916,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.8fbdb9eb9f26",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:309",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:311",
       "sentence": "The transfer receipt names bundle `W-17b`,",
       "cues": [
         "transfer"
@@ -11916,7 +11935,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.a13815d7e1be",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:319",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:321",
       "sentence": "Suppose repair establishes the derivative lineage and a second request reaches",
       "cues": [
         "establishes"
@@ -11935,7 +11954,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.b3261b4ba603",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:323",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:325",
       "sentence": "It cannot establish that plaintext was never exposed elsewhere, that inference",
       "cues": [
         "cannot"
@@ -11954,7 +11973,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.c5cecb9195ea",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:324",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:326",
       "sentence": "outputs cannot exfiltrate protected information, that the model is safe, or that",
       "cues": [
         "cannot"
@@ -11973,7 +11992,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.708df579a3ec",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:329",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:331",
       "sentence": "distribution record must name the recipient, permitted derivatives, security",
       "cues": [
         "must"
@@ -11992,7 +12011,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.d7f5b5cdb8af",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:332",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:334",
       "sentence": "artifact is effectively extractable after delivery, the route must say so",
       "cues": [
         "must"
@@ -12011,7 +12030,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.15a7c6045026",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:338",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:340",
       "sentence": "The ownership split prevents a custody receipt from becoming an all-purpose",
       "cues": [
         "prevents"
@@ -12030,7 +12049,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.bbe5ce2dd5bc",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:393",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:395",
       "sentence": "handoff never transfers the neighboring layer's decision obligation.",
       "cues": [
         "transfers"
@@ -12049,7 +12068,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.172c221959c6",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:417",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:419",
       "sentence": "Possession, key release, decryption, load, serve, action authority, transfer,",
       "cues": [
         "transfer"
@@ -12068,7 +12087,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.3a59b93698be",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:433",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:435",
       "sentence": "irreversible and cannot inherit authority from a local load, attestation,",
       "cues": [
         "cannot"
@@ -12087,7 +12106,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.570ebd27f2be",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:443",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:445",
       "sentence": "completeness, confidentiality, hardware trust, safe release, or transfer.",
       "cues": [
         "transfer"
@@ -12106,7 +12125,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.edfa0172b6ce",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:466",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:468",
       "sentence": "revocation can warn consumers that a model version should no longer be used.",
       "cues": [
         "should"
@@ -12125,7 +12144,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.27d8eb479b3d",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:467",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:469",
       "sentence": "None guarantees recall of plaintext or recipient copies.",
       "cues": [
         "guarantees"
@@ -12144,7 +12163,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.9877fae56e45",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:478",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:480",
       "sentence": "The admission key must therefore bind those identities rather than checking a",
       "cues": [
         "must"
@@ -12163,7 +12182,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.ad51b8275b83",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:483",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:485",
       "sentence": "Adding a second verifier may reduce dependence on one implementation only when",
       "cues": [
         "reduce"
@@ -12182,7 +12201,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.36df72ba9bbb",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:485",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:487",
       "sentence": "Agreement should be represented as a",
       "cues": [
         "should"
@@ -12201,7 +12220,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.e390cd4f218d",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:487",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:489",
       "sentence": "measured predicates; it does not prove absence of side channels, authorized",
       "cues": [
         "prove"
@@ -12220,7 +12239,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.28fd756071eb",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:496",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:498",
       "sentence": "That is why distribution requires a separate decision",
       "cues": [
         "requires"
@@ -12239,7 +12258,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.bd303848e2ad",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:497",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:499",
       "sentence": "object and cannot inherit approval from a successful confidential load.",
       "cues": [
         "cannot"
@@ -12258,7 +12277,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.7d1b44edc305",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:535",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:537",
       "sentence": "brittle controls prevent legitimate safety and recovery work.",
       "cues": [
         "prevent"
@@ -12277,7 +12296,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.d48bb5fcc795",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:555",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:557",
       "sentence": "The repairs differ: discovery cannot fix a compromised trust root; a fresh",
       "cues": [
         "cannot"
@@ -12296,7 +12315,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.778743b7b754",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:556",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:558",
       "sentence": "token cannot fix an unauthorized recipient; key denial cannot recall plaintext;",
       "cues": [
         "cannot"
@@ -12315,7 +12334,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.1350e55e800a",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:557",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:559",
       "sentence": "and stronger confinement cannot be credited if it destroys recovery or shifts",
       "cues": [
         "cannot"
@@ -12334,7 +12353,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.c3efc523367f",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:558",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:560",
       "sentence": "The route must preserve the actual failed",
       "cues": [
         "must"
@@ -12353,7 +12372,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.754f5c9ff412",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:570",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:572",
       "sentence": "The book requires the contract, not a",
       "cues": [
         "requires"
@@ -12372,7 +12391,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.bcc6746605f2",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:585",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:587",
       "sentence": "evidence can narrow a dependency but cannot eliminate the need for an assumed",
       "cues": [
         "cannot"
@@ -12391,7 +12410,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.12fbe4d3e2ec",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:597",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:599",
       "sentence": "and release policy must address downstream leakage paths.",
       "cues": [
         "must"
@@ -12410,7 +12429,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.64965c161a1d",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:598",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:600",
       "sentence": "reconstruct or transmit the effective artifact, the custody residual must say",
       "cues": [
         "must"
@@ -12429,7 +12448,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.89e4270da177",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:615",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:617",
       "sentence": "The protocol must publish its exclusions,",
       "cues": [
         "must"
@@ -12448,7 +12467,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.e90f5b03313c",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:625",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:627",
       "sentence": "A custody design that can deny access but cannot recover from a false denial is",
       "cues": [
         "cannot"
@@ -12467,7 +12486,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.73a8d46d523e",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:626",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:628",
       "sentence": "Recovery must say which artifact identity is being",
       "cues": [
         "must"
@@ -12486,7 +12505,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.0d27ff0d5e79",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:638",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:640",
       "sentence": "therefore measure recovery success, recovery latency, false denial, residual",
       "cues": [
         "measure"
@@ -12505,7 +12524,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.b769b4dc70a1",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:641",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:643",
       "sentence": "Emergency access must also expire into a mandatory reconciliation that compares",
       "cues": [
         "must"
@@ -12524,7 +12543,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.ea8ab6f565e0",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:655",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:657",
       "sentence": "binds the fixture digest and theorem names, and demonstrates that invalid",
       "cues": [
         "demonstrates"
@@ -12543,7 +12562,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.dc8c8a1a73d7",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:672",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:674",
       "sentence": "The next slice must therefore stop adding fields to the same Boolean fixture",
       "cues": [
         "must"
@@ -12562,7 +12581,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.d20b782d0537",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:673",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:675",
       "sentence": "It should preregister a public-safe model-family artifact",
       "cues": [
         "should"
@@ -12581,7 +12600,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.1779474ac611",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:680",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:682",
       "sentence": "extraction beyond a public-safe artifact requires a separately authorized",
       "cues": [
         "requires"
@@ -12600,7 +12619,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.de6306c88599",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:691",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:693",
       "sentence": "effect-complete custody transaction may outperform narrower controls by",
       "cues": [
         "outperform"
@@ -12619,7 +12638,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.1d490d9f953c",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:698",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:700",
       "sentence": "The campaign must preregister a public-safe but effect-bearing model-family",
       "cues": [
         "must"
@@ -12638,7 +12657,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.0b118a3593de",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:710",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:712",
       "sentence": "Independent implementations must own asset and derivative discovery, Attester",
       "cues": [
         "must"
@@ -12657,7 +12676,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.480b6e08c16e",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:715",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:717",
       "sentence": "measures unauthorized acquisition and use; plaintext and side-channel exposure;",
       "cues": [
         "measures"
@@ -12676,7 +12695,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.416f3cab3db0",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:725",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:727",
       "sentence": "Replication and transfer span model families and",
       "cues": [
         "transfer"
@@ -12695,7 +12714,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.f7751737c34f",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:740",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:742",
       "sentence": "transfer pass the frozen joint gates.",
       "cues": [
         "transfer"
@@ -12714,7 +12733,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.ba395f62fbbe",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:772",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:774",
       "sentence": "They do not prove that an",
       "cues": [
         "prove"
@@ -12733,7 +12752,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.3b888bce6047",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:798",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:800",
       "sentence": "must not treat those nine records as nine independent demonstrations of one",
       "cues": [
         "must"
@@ -12752,7 +12771,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.140a9447d530",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:815",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:817",
       "sentence": "The current evidence proves nine finite routing declarations and eight fixture",
       "cues": [
         "proves"
@@ -12771,7 +12790,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.effbba13fd96",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:816",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:818",
       "sentence": "It neither demonstrates effective custody nor resolves whether a",
       "cues": [
         "demonstrates"
@@ -12790,7 +12809,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.2ef51a5d16c7",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:817",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:819",
       "sentence": "particular model should be used or released.",
       "cues": [
         "should"

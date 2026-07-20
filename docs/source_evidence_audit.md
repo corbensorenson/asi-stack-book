@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 60 |
-| Assigned source/chapter pairs | 934 |
-| Exact claim-source mappings | 864 |
+| Chapters audited | 61 |
+| Assigned source/chapter pairs | 944 |
+| Exact claim-source mappings | 874 |
 | Unmapped assigned pairs | 70 |
-| Source notes present for assigned pairs | 934 |
-| Source notes listing assigned chapter | 934 |
-| Passage-reviewed mappings recorded | 864 |
-| Support-state counts | {"argument": 60} |
+| Source notes present for assigned pairs | 944 |
+| Source notes listing assigned chapter | 944 |
+| Passage-reviewed mappings recorded | 874 |
+| Support-state counts | {"argument": 61} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -46,6 +46,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `stable-capability-fields` | 10 | 8 | 10 | 10 | 8 | argument | passage review required before source-derived promotion |
 | `capability-replacement-and-rollback` | 13 | 12 | 13 | 13 | 12 | argument | passage review required before source-derived promotion |
 | `security-kernel-and-digital-scifs` | 18 | 16 | 18 | 18 | 16 | argument | passage review required before source-derived promotion |
+| `privacy-data-rights-and-information-flow-governance` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
 | `model-weight-custody-and-hardware-roots-of-trust` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
 | `ai-supply-chain-integrity-and-lifecycle-provenance` | 13 | 11 | 13 | 13 | 11 | argument | passage review required before source-derived promotion |
 | `recursive-self-improvement-boundaries` | 16 | 14 | 16 | 16 | 14 | argument | passage review required before source-derived promotion |
@@ -204,6 +205,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_collective_constitutional_ai_2024` | 2 | yes |
 | `ext_off_switch_game_2016` | 2 | yes |
 | `ext_contestable_ai_design_2022` | 2 | yes |
+| `theseus_synthetic_data_curation` | 2 | yes |
 | `ext_voyager_2023` | 2 | yes |
 | `planforge_compiler_arch` | 2 | yes |
 | `ext_shop2_2003` | 2 | yes |
@@ -255,6 +257,15 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_owasp_llm_top_10_2025` | 1 | yes |
 | `ext_nist_zero_trust_architecture_2020` | 1 | yes |
 | `ext_saltzer_schroeder_protection_1975` | 1 | yes |
+| `ext_nist_privacy_framework_2020` | 1 | yes |
+| `ext_eu_gdpr_2016` | 1 | yes |
+| `ext_w3c_dpv_2024` | 1 | yes |
+| `ext_abadi_dpsgd_2016` | 1 | yes |
+| `ext_algospec_purpose_limitation_2024` | 1 | yes |
+| `ext_carlini_training_data_extraction_2021` | 1 | yes |
+| `ext_choquette_choo_label_only_mia_2021` | 1 | yes |
+| `ext_nist_differential_privacy_2025` | 1 | yes |
+| `ext_mahloujifar_fdp_audit_2025` | 1 | yes |
 | `ext_rand_model_weight_security_2024` | 1 | yes |
 | `ext_nist_confidential_computing_2026` | 1 | yes |
 | `ext_nvidia_confidential_model_lifecycle_2026` | 1 | yes |
@@ -380,7 +391,6 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_rlhf_limitations_2023` | 1 | yes |
 | `ext_shumailov_model_collapse_2023` | 1 | yes |
 | `ext_gerstgrasser_data_accumulation_2024` | 1 | yes |
-| `theseus_synthetic_data_curation` | 1 | yes |
 | `ext_github_webhooks_docs` | 1 | yes |
 | `ext_openzeppelin_governor_docs` | 1 | yes |
 | `ext_open_collective_docs` | 1 | yes |
@@ -564,6 +574,16 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `corbens_trainer_project` | mapped | note present | chapter listed | passage-reviewed |
 | `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `corbens_best_model_possible_project` | mapped | note present | chapter listed | passage-reviewed |
 | `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `kernel_english_residual_compiler` | unmapped | note present | chapter listed | not passage-reviewed |
+| `privacy-data-rights-and-information-flow-governance.core` | `privacy-data-rights-and-information-flow-governance` | `ext_nist_privacy_framework_2020` | mapped | note present | chapter listed | passage-reviewed |
+| `privacy-data-rights-and-information-flow-governance.core` | `privacy-data-rights-and-information-flow-governance` | `ext_eu_gdpr_2016` | mapped | note present | chapter listed | passage-reviewed |
+| `privacy-data-rights-and-information-flow-governance.core` | `privacy-data-rights-and-information-flow-governance` | `ext_w3c_dpv_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `privacy-data-rights-and-information-flow-governance.core` | `privacy-data-rights-and-information-flow-governance` | `ext_abadi_dpsgd_2016` | mapped | note present | chapter listed | passage-reviewed |
+| `privacy-data-rights-and-information-flow-governance.core` | `privacy-data-rights-and-information-flow-governance` | `ext_algospec_purpose_limitation_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `privacy-data-rights-and-information-flow-governance.core` | `privacy-data-rights-and-information-flow-governance` | `ext_carlini_training_data_extraction_2021` | mapped | note present | chapter listed | passage-reviewed |
+| `privacy-data-rights-and-information-flow-governance.core` | `privacy-data-rights-and-information-flow-governance` | `ext_choquette_choo_label_only_mia_2021` | mapped | note present | chapter listed | passage-reviewed |
+| `privacy-data-rights-and-information-flow-governance.core` | `privacy-data-rights-and-information-flow-governance` | `ext_nist_differential_privacy_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `privacy-data-rights-and-information-flow-governance.core` | `privacy-data-rights-and-information-flow-governance` | `ext_mahloujifar_fdp_audit_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `privacy-data-rights-and-information-flow-governance.core` | `privacy-data-rights-and-information-flow-governance` | `theseus_synthetic_data_curation` | mapped | note present | chapter listed | passage-reviewed |
 | `model-weight-custody-and-hardware-roots-of-trust.core` | `model-weight-custody-and-hardware-roots-of-trust` | `ext_rand_model_weight_security_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `model-weight-custody-and-hardware-roots-of-trust.core` | `model-weight-custody-and-hardware-roots-of-trust` | `ext_nist_confidential_computing_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `model-weight-custody-and-hardware-roots-of-trust.core` | `model-weight-custody-and-hardware-roots-of-trust` | `ext_nvidia_confidential_model_lifecycle_2026` | mapped | note present | chapter listed | passage-reviewed |

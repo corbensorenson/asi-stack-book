@@ -1,7 +1,7 @@
 ## Living Book Baseline {.unnumbered}
 
 <!-- canonical-status:generated-begin -->
-_Current canonical metrics (generated from machine records): **60 manifest chapters; 351 public-safe records; 60 chapter-core claims; 60/60 chapters externally positioned; 0 promoted core claims; 115/115 accepted transitions identity-resolved (25 direct, 61 subclaim, 29 proxy; 0 parent movements).**_
+_Current canonical metrics (generated from machine records): **61 manifest chapters; 359 public-safe records; 61 chapter-core claims; 61/61 chapters externally positioned; 0 promoted core claims; 115/115 accepted transitions identity-resolved (25 direct, 61 subclaim, 29 proxy; 0 parent movements).**_
 <!-- canonical-status:generated-end -->
 
 **The ASI Stack: A Governed Systems Architecture for Advanced AI, with ASI as the Stress Case** is a living technical book by Corben Sorenson.
@@ -11,7 +11,7 @@ _Current canonical metrics (generated from machine records): **60 manifest chapt
 | Product | Best for | Start here |
 |---|---|---|
 | Narrative book | A bounded 15-chapter thesis-to-method route with live research scaffolding hidden. | [Open the narrative route](products/narrative-book/index.html) |
-| Architecture reference | Interfaces, invariants, failure routes, protocols, tests, proofs, and implementation horizons across all 60 working-manifest chapters. | [Open the architecture index](products/architecture-reference/index.html) |
+| Architecture reference | Interfaces, invariants, failure routes, protocols, tests, proofs, and implementation horizons across all 61 working-manifest chapters. | [Open the architecture index](products/architecture-reference/index.html) |
 | Evidence registry | Current commit/count state, claim support, sources, tests, proofs, releases, and residuals. | [Open the evidence registry](products/evidence-registry/index.html) or [inspect the claim matrix](appendices/C_claim_evidence_matrix.qmd) |
 
 ## Download the reader edition
@@ -25,7 +25,7 @@ record the compatibility and accessibility residuals. This all-rights-reserved
 reader release is not the canonical evidence release; `v2.3.0` remains the
 latest immutable living-book release.
 
-All three products derive from one canonical source tree; their density, navigation, artifact, and review boundaries are defined in [`docs/product_contracts.md`](docs/product_contracts.md), with executable projection details in [`docs/product_projection_artifacts.md`](docs/product_projection_artifacts.md). The [`Post-v2.3 Claim Proof, Causal Validation, and SOTA-Challenge Roadmap`](docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md) is complete with an exact [`terminal no-public-release record`](release_records/2026-07-16-post-v2-3-claim-proof-sota-roadmap-complete-no-public-release.json). The [`Post-v2.3 Evidence Competence, Transfer, and Publication Roadmap`](docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md) is the sole active successor, with machine authority in [`roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`](roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json), an [`N0–N5 claim-bearing experiment standard`](docs/claim_bearing_experiment_competence_standard.md), and a [`complete accepted-transition identity crosswalk`](docs/claim_identity_graph_reconciliation.md). All 115 accepted transitions now resolve through 25 exact atom, 61 bounded subclaim, and 29 proxy relations with zero indirect parent support movement. The competence contract prevents weak implementations, invalid instruments, bad proxies, and underpowered tests from becoming negative evidence about an architecture. The live working tree has 60/60 chapter-core claims at `argument`, zero chapter-core promotions, zero external reproductions, and no SOTA support; the local X synopsis source is current, but its older unpublished platform draft is stale and must be refreshed before publication. `v2.3.0` remains the latest immutable public living-book release. <!-- canonical-status:historical -->
+All three products derive from one canonical source tree; their density, navigation, artifact, and review boundaries are defined in [`docs/product_contracts.md`](docs/product_contracts.md), with executable projection details in [`docs/product_projection_artifacts.md`](docs/product_projection_artifacts.md). The [`Post-v2.3 Claim Proof, Causal Validation, and SOTA-Challenge Roadmap`](docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md) is complete with an exact [`terminal no-public-release record`](release_records/2026-07-16-post-v2-3-claim-proof-sota-roadmap-complete-no-public-release.json). The [`Post-v2.3 Evidence Competence, Transfer, and Publication Roadmap`](docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md) is the sole active successor, with machine authority in [`roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`](roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json), an [`N0–N5 claim-bearing experiment standard`](docs/claim_bearing_experiment_competence_standard.md), and a [`complete accepted-transition identity crosswalk`](docs/claim_identity_graph_reconciliation.md). All 115 accepted transitions now resolve through 25 exact atom, 61 bounded subclaim, and 29 proxy relations with zero indirect parent support movement. The competence contract prevents weak implementations, invalid instruments, bad proxies, and underpowered tests from becoming negative evidence about an architecture. The live working tree has 61/61 chapter-core claims at `argument`, zero chapter-core promotions, zero external reproductions, and no SOTA support; the local X synopsis source is current, but its older unpublished platform draft is stale and must be refreshed before publication. `v2.3.0` remains the latest immutable public living-book release. <!-- canonical-status:historical -->
 
 ![Layered conceptual architecture for the ASI Stack](assets/images/asi-stack-hero.png){#fig-asi-stack-hero fig-alt="A light technical illustration of a layered transparent systems stack with routing nodes, ledgers, and controlled feedback loops."}
 
@@ -38,11 +38,11 @@ All three products derive from one canonical source tree; their density, navigat
 </div>
 <div>
 <strong>Sources</strong>
-<span>351 public-safe records; 60/60 chapters externally positioned</span>
+<span>359 public-safe records; 61/61 chapters externally positioned</span>
 </div>
 <div>
 <strong>Claims</strong>
-<span>60 chapter core claims remain argument-level</span>
+<span>61 chapter core claims remain argument-level</span>
 </div>
 <div>
 <strong>Tests</strong>
@@ -56,7 +56,7 @@ All three products derive from one canonical source tree; their density, navigat
 
 **What this is not.** This is not a validated ASI implementation, not a deployed safety system, not a benchmark-proven architecture, and not a claim that the chapter theses are already externally proven.
 
-**Auditable current state.** The inventory has 351 public-safe records; 60/60 chapters are externally positioned with 0 explicit external-baseline exceptions. All 60 chapter core claims remain at `argument`; [`the core-claim disposition ledger`](docs/core_claim_disposition_ledger.md) records 60 per-chapter core-claim dispositions, 22 accepted no-change transition dispositions, 38 accepted no-promotion dispositions, and 0 promoted core claims. Twenty-five narrow non-core transitions are recorded in [`the non-core evidence ledger`](docs/non_core_evidence_ledger.md), alongside 61 accepted `blocks_promotion` decisions and three historical `refuted` labels. The competence audit classifies all 90 accepted negative/no-change records as 1 N0, 15 N1, 74 N2, and 0 N3–N5, so no exact, broad, parent, or chapter-core refutation currently follows.
+**Auditable current state.** The inventory has 359 public-safe records; 61/61 chapters are externally positioned with 0 explicit external-baseline exceptions. All 61 chapter core claims remain at `argument`; [`the core-claim disposition ledger`](docs/core_claim_disposition_ledger.md) records 61 per-chapter core-claim dispositions, 22 accepted no-change transition dispositions, 39 accepted no-promotion dispositions, and 0 promoted core claims. Twenty-five narrow non-core transitions are recorded in [`the non-core evidence ledger`](docs/non_core_evidence_ledger.md), alongside 61 accepted `blocks_promotion` decisions and three historical `refuted` labels. The competence audit classifies all 90 accepted negative/no-change records as 1 N0, 15 N1, 74 N2, and 0 N3–N5, so no exact, broad, parent, or chapter-core refutation currently follows.
 
 **Boundaries readers should keep in view.** Appendix C is the claim/support-state ledger. [Appendix G](appendices/G_corben_source_corpus.qmd) separates Corben-authored, Corben-supplied, and local-project sources from [Appendix H](appendices/H_external_sources.qmd), which holds external literature; external positioning is not exhaustive literature synthesis. [`Novelty positioning`](docs/contribution_novelty_ledger.md) is not proof of novelty. Human view is a convenience projection, not a reviewed reader-release manuscript; its current heuristic queue is in [`the reader continuity audit`](docs/reader_continuity_audit.md). By author decision, no external-human review or outreach is a prepublication gate; the preserved specialist packets may be used only after completion, and no independent review is claimed in [`the review ledger`](docs/external_review_status.md).
 
@@ -97,6 +97,8 @@ flowchart LR
   Training --> BehavioralEvidence
   Training -. "identity-bound candidate; no release authority" .-> Evidence
   Improve --> Authority
+  Authority --> Privacy["Purpose-bounded information use and data rights"]
+  Privacy -. "rights, privacy, and residual constraints" .-> Memory
 
   Authority -. "permission ceilings" .-> Execute
   Memory -. "source-bound packets" .-> Reason
@@ -142,14 +144,14 @@ flowchart TD
 
 ## Chapter roles
 
-Breadth does not mean that all 60 chapters make equally central or equally
+Breadth does not mean that all 61 chapters make equally central or equally
 supported claims. The current reader-role audit assigns every chapter one
 primary job:
 
 | Role | Chapters | Reader contract |
 |---|---:|---|
 | Thesis-bearing | 11 | Advances a central architectural claim and states the strongest alternative, failure case, and evidence that could change it. |
-| Load-bearing reference | 31 | Owns an interface, invariant, artifact, or failure family needed to implement or audit the thesis. |
+| Load-bearing reference | 32 | Owns an interface, invariant, artifact, or failure family needed to implement or audit the thesis. |
 | Implementation case | 7 | Shows how contracts compose in artifacts, runtime effects, reference traces, prototypes, operations, or the living-book workflow. |
 | Speculative/deferred research | 11 | Preserves promising mechanisms and research programs without presenting argument-level possibilities as established architecture. |
 

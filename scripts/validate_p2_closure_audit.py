@@ -20,8 +20,8 @@ STATUS = ROOT / "roadmap_records" / "post_v2_3_claim_proof_and_sota_challenge_st
 MAINTENANCE_STATUS = ROOT / "roadmap_records" / "post_v2_3_maintenance_transfer_and_publication_status.json"
 
 HISTORICAL_PROOF_TARGET_COUNT = 298
-CURRENT_PROOF_TARGET_COUNT = 308
-CURRENT_IMPLEMENTED_TARGET_COUNT = 308
+CURRENT_PROOF_TARGET_COUNT = 310
+CURRENT_IMPLEMENTED_TARGET_COUNT = 310
 CURRENT_PLANNED_TARGET_COUNT = 0
 HISTORICAL_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
@@ -33,7 +33,7 @@ HISTORICAL_EXPECTED_CLASSES = {
 }
 CURRENT_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
-    "useful but too narrow": 160,
+    "useful but too narrow": 162,
     "needs richer state-machine or review semantics": 20,
     "needs executable tests first": 37,
     "needs empirical or baseline tests first": 16,
@@ -47,6 +47,7 @@ FIRST_TRANCHE_ADMITTED_CHAPTERS = {
 }
 SECOND_TRANCHE_ADMITTED_CHAPTERS = {
     "governed-model-training-distributed-optimization-and-scaling",
+    "privacy-data-rights-and-information-flow-governance",
 }
 ADMITTED_CHAPTERS = FIRST_TRANCHE_ADMITTED_CHAPTERS | SECOND_TRANCHE_ADMITTED_CHAPTERS
 PLANNED_CHAPTERS: set[str] = set()
@@ -111,7 +112,7 @@ def current_proof_errors(
         or activation_truth.get("proof_target_count") != CURRENT_PROOF_TARGET_COUNT
         or activation_truth.get("chapter_core_promotion_count") != 0
     ):
-        out.append("current proof manifest/status is not exactly 308 unique implemented targets with no planned target or core promotion")
+        out.append("current proof manifest/status is not exactly 310 unique implemented targets with no planned target or core promotion")
     if (
         maintenance_status.get("status") != "active"
         or maintenance_status.get("roadmap_path") != "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
@@ -298,8 +299,8 @@ def main() -> None:
         raise SystemExit("P2 closure audit failed:\n - " + "\n - ".join(failures))
     print(
         "P2 closure audit passed: 1,151 baseline theorem declarations, 298 unique historical targets, "
-        "65/65 reviewed modules, 298/298 frozen historical adequacy routes, 308 current targets "
-        "(308 implemented and zero planned after terminal A1 integration), 308/308 current adequacy classifications, "
+        "65/65 reviewed modules, 298/298 frozen historical adequacy routes, 310 current targets "
+        "(310 implemented and zero planned after terminal A2 integration), 310/310 current adequacy classifications, "
         f"nine semantic-model dossiers/consumers, {len(mutations) + current_mutation_count} rejecting mutations, and no support-state effect."
     )
 

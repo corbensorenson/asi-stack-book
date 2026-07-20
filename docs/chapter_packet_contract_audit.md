@@ -19,6 +19,7 @@ This generated audit checks every active chapter against the architecture-refere
 | `stable-capability-fields` | pass | bounded in insufficiency section | complete packet surface |
 | `capability-replacement-and-rollback` | pass | bounded in insufficiency section | complete packet surface |
 | `security-kernel-and-digital-scifs` | pass | bounded in insufficiency section | complete packet surface |
+| `privacy-data-rights-and-information-flow-governance` | pass | explicit heading | complete packet surface |
 | `model-weight-custody-and-hardware-roots-of-trust` | pass | bounded in insufficiency section | complete packet surface |
 | `ai-supply-chain-integrity-and-lifecycle-provenance` | pass | bounded in insufficiency section | complete packet surface |
 | `recursive-self-improvement-boundaries` | pass | explicit heading | complete packet surface |
@@ -67,6 +68,6 @@ This generated audit checks every active chapter against the architecture-refere
 | `living-book-methodology` | pass | bounded in insufficiency section | complete packet surface |
 | `open-research-agenda-and-bibliography-plan` | pass | bounded in insufficiency section | complete packet surface |
 
-Summary: 60 of 60 active chapters pass; 0 remain open.
+Summary: 61 of 61 active chapters pass; 0 remain open.
 
 Non-claims: this is a structural and bounded semantic audit, not proof of prose quality, source interpretation, empirical validity, formal adequacy, deployment, safety, or independent review.

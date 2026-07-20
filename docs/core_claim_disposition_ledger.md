@@ -9,11 +9,11 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 60 |
+| Manifest chapter core claims | 61 |
 | Accepted core-transition dispositions | 22 |
-| Accepted no-promotion dispositions | 38 |
+| Accepted no-promotion dispositions | 39 |
 | Promoted core claims | 0 |
-| Core claims remaining at `argument` | 60 |
+| Core claims remaining at `argument` | 61 |
 
 ## Dispositions
 
@@ -32,6 +32,7 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 | `stable-capability-fields.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/stable_capability_fields_no_change.json` | Qualification fixture with rollback/residual path and no route widening. |
 | `capability-replacement-and-rollback.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/capability_replacement_no_change.json` | Valid replacement transaction and invalid promotion fixture both replay. |
 | `security-kernel-and-digital-scifs.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/security_kernel_no_change.json` | Receipt fixture proves handle-mediated use and rejects leak paths. |
+| `privacy-data-rights-and-information-flow-governance.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Across multiple seeds, a governed information lifecycle reduces purpose violations, cross-user leakage, extraction, membership advantage, and incomplete rights propagation relative to strong matched baselines without unacceptable utility or governance cost; any stronger privacy or rights claim reproduces independently within its exact threat, unit, mechanism, and jurisdictional nonclaim envelope. |
 | `model-weight-custody-and-hardware-roots-of-trust.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Next unrun campaign: public-safe mock key service and verifier with independently generated valid/invalid evidence, observed effects, stale/changed-policy/widened-scope/open-release/revocation/missing-lineage controls, baseline false acceptance/denial, latency, operator cost, and residuals; no real weights, keys, hardware, confidentiality, security, safety, readiness, authority, or deployment claim. |
 | `ai-supply-chain-integrity-and-lifecycle-provenance.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Next unrun campaign: natural lifecycle work with independently generated rebuild/supplier evidence, false quarantine, alert fan-out, propagation cost, repair latency, availability impact, and unresolved residuals; no world-complete inventory, artifact integrity, supplier truth, data fitness, safety, readiness, authority, or deployment claim. |
 | `recursive-self-improvement-boundaries.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/recursive_self_improvement_no_change.json` | A self-proposed real implementation change cannot widen authority or weaken protected invariants, and failed canaries roll back exact state while invalidating descendants under independent evaluation. |

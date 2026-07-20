@@ -10,7 +10,7 @@ readers, reviewers, and future writing agents.
 
 | Field | Status |
 |---|---|
-| Chapter core claims | All 60 remain at `argument`. |
+| Chapter core claims | All 61 remain at `argument`. |
 | Accepted non-core upward transitions | 25 narrow transitions. |
 | Accepted historical `refuted` labels | 3 immutable transition labels: two QCSA fixtures and the frozen KERC proxy result. Retrospective competence classification is 2 N2 and 1 N1, respectively; none earns exact, mechanism, architecture, parent, or chapter-core refutation. |
 | Accepted terminal full-attempt dispositions | 2 post-v2.3 no-promotion decisions: routing/deliberation mixed and update/unlearning claim narrowed. |
@@ -117,7 +117,7 @@ compensation unexecuted. Its support state remains `argument` and its effect is
 
 | Claim surface | Record | What narrowed | Support-state effect |
 |---|---|---|---|
-| `non-core-evidence-ledger.chapter-core-count-surface` | `claim_revisions/v1_x/manifest_core_claim_count_narrowing.json` | The obsolete public count phrase "All 54 remain at `argument`" was narrowed to the then-current 44-chapter manifest state; the active manifest now has 60 core claims, all at `argument`, and current counts are regenerated from `book_structure.json` and `docs/core_claim_transition_coverage.md`. | None; this is a count-surface correction, not a demotion, refutation, or promotion. |
+| `non-core-evidence-ledger.chapter-core-count-surface` | `claim_revisions/v1_x/manifest_core_claim_count_narrowing.json` | The obsolete public count phrase "All 54 remain at `argument`" was narrowed to the then-current 44-chapter manifest state; the active manifest now has 61 core claims, all at `argument`, and current counts are regenerated from `book_structure.json` and `docs/core_claim_transition_coverage.md`. | None; this is a count-surface correction, not a demotion, refutation, or promotion. |
 
 ## How To Promote Anything Later
 

@@ -60,8 +60,8 @@ def errors(data: dict[str, Any]) -> list[str]:
     ids = [row["id"] for row in rows]
     if audit.get("state") != "terminal_complete" or audit.get("packet_id") != "P7.1a-W2-opening-variation-and-thesis-depth-leveling":
         out.append("packet identity or terminal state drifted")
-    if len(ids) != audit.get("manifest_chapter_count") or len(set(ids)) != 60:
-        out.append("manifest chapter denominator drifted")
+    if audit.get("manifest_chapter_count") != 60 or len(ids) != len(set(ids)) or len(ids) < 60:
+        out.append("historical or live manifest chapter denominator drifted")
 
     roles = audit.get("chapter_roles", {})
     if set(roles) != set(EXPECTED_ROLE_COUNTS):
@@ -72,13 +72,17 @@ def errors(data: dict[str, Any]) -> list[str]:
         if len(values) != count or len(values) != len(set(values)):
             out.append(f"{role}: count or uniqueness drifted")
         flattened.extend(values)
-    if len(flattened) != len(set(flattened)) or set(flattened) != set(ids):
-        out.append("chapter roles are not an exact one-role partition of the manifest")
+    if (
+        len(flattened) != len(set(flattened))
+        or len(flattened) != audit.get("manifest_chapter_count")
+        or not set(flattened).issubset(set(ids))
+    ):
+        out.append("chapter roles are not an exact one-role partition of the historical W2 manifest")
 
     phrase_data = audit.get("opening_variation", {})
     phrases = phrase_data.get("audited_phrase_families", [])
     baseline_all = "\n".join(data["baseline_chapters"].values())
-    current_all = "\n".join(data["current_chapters"].values())
+    current_all = "\n".join(data["current_chapters"][chapter_id] for chapter_id in flattened)
     before = sum(baseline_all.count(phrase) for phrase in phrases)
     after = sum(current_all.count(phrase) for phrase in phrases)
     if before != phrase_data.get("baseline_occurrence_count") or after != phrase_data.get("final_occurrence_count") or after != 0:

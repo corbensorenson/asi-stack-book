@@ -3089,7 +3089,27 @@
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Implemented as a bounded separation theorem over authored resume, retention, selection, and qualification fields. It cannot establish trajectory equivalence, evaluator independence in practice, downstream qualification, checkpoint usefulness, training competence, safety, reproduction, transfer, or readiness."
+    },
+    {
+      "tag": "lean:privacy_information_flow.admission_invariants",
+      "chapter_id": "privacy-data-rights-and-information-flow-governance",
+      "module": "AsiStackProofs.PrivacyInformationFlow",
+      "formal_target": "An accepted finite information use requires matching purpose and authority, minimization, complete-enough flow, and competent privacy evaluation.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Finite authored route implication only; it trusts purpose, authority, flow, minimization, privacy-unit, attack-competence, and denominator predicates and proves no real privacy, right, or legal fact."
+    },
+    {
+      "tag": "lean:privacy_information_flow.outcome_separation",
+      "chapter_id": "privacy-data-rights-and-information-flow-governance",
+      "module": "AsiStackProofs.PrivacyInformationFlow",
+      "formal_target": "An accepted bounded receipt preserves storage, behavior, influence, privacy, and legal-compliance separation and refuses authority laundering.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Finite authored separation theorem only; it cannot establish deletion, forgetting, influence removal, privacy, compliance, support, readiness, or release."
     }
   ],
-  "record_count": 308
+  "record_count": 310
 }

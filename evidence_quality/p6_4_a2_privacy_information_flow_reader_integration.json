@@ -1,0 +1,101 @@
+{
+  "schema_version": "asi_stack.p6_4_a2_reader_integration.v1",
+  "recorded_date": "2026-07-19",
+  "candidate_id": "privacy-data-rights-and-information-flow-governance",
+  "decision": "admit_at_argument_support",
+  "placement": "Part I immediately after security-kernel-and-digital-scifs and before model-weight-custody-and-hardware-roots-of-trust",
+  "exclusive_owner": "purpose-bounded information use and executable data rights across the complete information lifecycle",
+  "source_roles": {
+    "mechanism_or_capability": [
+      "ext_abadi_dpsgd_2016",
+      "ext_w3c_dpv_2024",
+      "ext_algospec_purpose_limitation_2024"
+    ],
+    "limitation_or_failure": [
+      "ext_carlini_training_data_extraction_2021",
+      "ext_choquette_choo_label_only_mia_2021",
+      "ext_nist_privacy_framework_2020"
+    ],
+    "competing_design": [
+      "ext_nist_privacy_framework_2020",
+      "ext_eu_gdpr_2016",
+      "ext_w3c_dpv_2024",
+      "ext_algospec_purpose_limitation_2024"
+    ],
+    "measurement_or_evaluation": [
+      "ext_nist_differential_privacy_2025",
+      "ext_mahloujifar_fdp_audit_2025",
+      "ext_eu_gdpr_2016"
+    ]
+  },
+  "artifacts": {
+    "chapter": "chapters/privacy-data-rights-and-information-flow-governance.qmd",
+    "decision": "docs/p6_4_a2_privacy_data_rights_adjudication.md",
+    "schema": "schemas/information_lifecycle_transaction.schema.json",
+    "fixture": "tests/fixtures/protocol_records/information_lifecycle_transaction.valid.json",
+    "validator": "scripts/validate_information_lifecycle_transaction.py",
+    "formal_module": "lean/AsiStackProofs/PrivacyInformationFlow.lean",
+    "protocol": "experiments/privacy_information_flow_argument_exit/preregistration.json"
+  },
+  "formalization": {
+    "public_targets": [
+      "lean:privacy_information_flow.admission_invariants",
+      "lean:privacy_information_flow.outcome_separation"
+    ],
+    "theorem_declaration_count": 11,
+    "ceiling": "finite authored record-route semantics only"
+  },
+  "record_contract": {
+    "required_surface_count": 12,
+    "semantic_mutation_count": 26,
+    "case_kind": "authored_argument_control_no_personal_data_or_privacy_effect"
+  },
+  "claim_bearing_empirical_lane": {
+    "state": "prospectively_frozen_unexecuted",
+    "arm_count": 6,
+    "failure_family_count": 13,
+    "competence_gate_count": 15,
+    "protected_outcomes_opened": false
+  },
+  "neighbor_boundaries": [
+    "security-kernel-and-digital-scifs",
+    "data-engines-continual-learning-and-unlearning",
+    "context-transactions-snapshots-mounts-and-taint",
+    "model-weight-custody-and-hardware-roots-of-trust",
+    "moral-uncertainty-and-value-conflict",
+    "governance-rights-fork-exit-and-audit"
+  ],
+  "legal_compliance_effect": "none",
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "publication_effect": "none",
+  "nonclaims": [
+    "No personal data was processed for this packet.",
+    "No model, memory, attack, privacy mechanism, deletion, or rights workflow was executed.",
+    "No source result or legal requirement was reproduced or adjudicated locally.",
+    "No valid consent, lawful basis, privacy guarantee, complete lineage, attack absence, total erasure, forgetting, influence removal, compliance, support, readiness, release, transfer, SOTA, AGI, or ASI claim follows."
+  ],
+  "artifact_sha256": {
+    "chapters/privacy-data-rights-and-information-flow-governance.qmd": "0b68e085ec3632d6534fb170ef8f963a78e9bb453805cc1bb33ffb808a77cebb",
+    "docs/p6_4_a2_privacy_data_rights_adjudication.md": "ba40bfcae413b919c17884de4a85ea40184ba4c867fc547534a4363a8f541e40",
+    "schemas/information_lifecycle_transaction.schema.json": "29aa636c62b4e10c4e689409a84f9ee625d0771dbf38954affe2efe548cda336",
+    "tests/fixtures/protocol_records/information_lifecycle_transaction.valid.json": "f9969a970eb10551cc9f977ee8befa7f8018c5ba00283b1aa0f675d44a0f8a2f",
+    "scripts/validate_information_lifecycle_transaction.py": "7b47136ab9194d6fbbcee7dac2c8a495f85ca9e67873215f4737b9ce4432a298",
+    "lean/AsiStackProofs/PrivacyInformationFlow.lean": "038f9245374243967059bc2a747a859d98f182897abb5772dcaad1ceec1433e1",
+    "experiments/privacy_information_flow_argument_exit/preregistration.json": "cf9519e1f35764066c333a1b998da3a214baf1bd876b9c2310703277441a8903"
+  },
+  "source_note_sha256": {
+    "ext_nist_privacy_framework_2020": "c83bdb76255627c9ec800224826cdae1615d27a68555ec9fd303e5f00289acac",
+    "ext_eu_gdpr_2016": "26e0640e934eb07353883ff4b85734743f017e71c558ca446bc5a49eb1a128a6",
+    "ext_w3c_dpv_2024": "97c53f2111c8ed5537692324873b0c476c8d21fa4909f9e6307429c305dac51c",
+    "ext_abadi_dpsgd_2016": "06aee33ff6f60d8e83c6b70bec4e08845bf8a204901452863d2c14072b8009b0",
+    "ext_algospec_purpose_limitation_2024": "61aed179952b4914d57fc4848a29b9400d6ec7cb5694cd963e0411e59b9256d1",
+    "ext_carlini_training_data_extraction_2021": "437289d1722059faf417fbec36ac25e2bfd4d5775df33f9c042cd5d923acdc64",
+    "ext_choquette_choo_label_only_mia_2021": "4197d9b7bcbe7e5aec2abcd4b3dde1e4a297ce04060fffc5e4b4ed01db9e14e2",
+    "ext_nist_differential_privacy_2025": "5e3e2aa1b55efa89cd894abc750aa5b12489cd35fd23aab24e03a3e25fcfcac6",
+    "ext_mahloujifar_fdp_audit_2025": "26f78daf67774f820666b9e1216781dc407d8408b47ba07ba394e7f0697a6214"
+  },
+  "local_source_note_sha256": {
+    "theseus_synthetic_data_curation": "3afb5f4437514c875ba9563d5ee0ca10dec9a8450029b02ca1db34fbea9d9c55"
+  }
+}

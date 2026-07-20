@@ -10,11 +10,11 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 308 |
-| Manifest status counts | {"implemented": 308} |
-| Triage class counts | {"formal-invariant": 308} |
-| Lean modules referenced | 70 |
-| Chapters with proof targets | 60 |
+| Proof targets audited | 310 |
+| Manifest status counts | {"implemented": 310} |
+| Triage class counts | {"formal-invariant": 310} |
+| Lean modules referenced | 71 |
+| Chapters with proof targets | 61 |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -74,6 +74,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/PlanForge.lean` | 2 | 4 | 0 | 4 | 3 |
 | `lean/AsiStackProofs/Planning.lean` | 5 | 29 | 0 | 11 | 8 |
 | `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | 4 | 5 | 0 | 10 | 2 |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | 2 | 11 | 0 | 5 | 1 |
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | 2 | 14 | 0 | 21 | 3 |
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | 3 | 11 | 0 | 31 | 3 |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | 3 | 10 | 0 | 7 | 6 |
@@ -146,6 +147,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `personal-compute-hives-and-federated-edge-intelligence` | 6 | 6 | 0 | 0 |
 | `planning-as-a-control-layer` | 7 | 7 | 0 | 0 |
 | `policy-optimization-and-learning-from-feedback` | 4 | 4 | 0 | 0 |
+| `privacy-data-rights-and-information-flow-governance` | 2 | 2 | 0 | 0 |
 | `procedural-memory-and-cognitive-loop-closure` | 2 | 2 | 0 | 0 |
 | `project-theseus-as-report-first-implementation-reference` | 12 | 12 | 0 | 0 |
 | `prototype-roadmap` | 3 | 3 | 0 | 0 |
@@ -233,6 +235,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:security.scif.failure_blocks_promotion` | `security-kernel-and-digital-scifs` | `AsiStackProofs.SecurityKernel` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:security.scif.route_envelope` | `security-kernel-and-digital-scifs` | `AsiStackProofs.SecurityKernel` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:security.scif.commit_probe_bridge` | `security-kernel-and-digital-scifs` | `AsiStackProofs.SecurityKernel` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:privacy_information_flow.admission_invariants` | `privacy-data-rights-and-information-flow-governance` | `AsiStackProofs.PrivacyInformationFlow` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:privacy_information_flow.outcome_separation` | `privacy-data-rights-and-information-flow-governance` | `AsiStackProofs.PrivacyInformationFlow` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:model_weight_custody.required.invalid_attestation_blocks_load` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:model_weight_custody.lifecycle.complete_observed_load` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:model_weight_custody.lifecycle.missing_lineage` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |

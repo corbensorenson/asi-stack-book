@@ -179,8 +179,9 @@ def build_registry() -> dict[str, Any]:
 
 
 def main() -> None:
+    registry = build_registry()
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(json.dumps(build_registry(), indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    OUTPUT.write_text(json.dumps(registry, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(
         f"Wrote {OUTPUT.relative_to(ROOT)} with "
         f"{len(registry['vectors'])} non-aggregating claim vectors."

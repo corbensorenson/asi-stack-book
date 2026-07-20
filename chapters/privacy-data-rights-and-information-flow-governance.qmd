@@ -1,0 +1,589 @@
+---
+title: "Privacy, Data Rights, and Information-Flow Governance"
+chapter_id: "privacy-data-rights-and-information-flow-governance"
+part_id: "foundations-alignment-governance"
+status: "conceptual"
+draft_maturity: "v0.1 integrated argument chapter"
+last_updated: "2026-07-19"
+primary_sources:
+  - "ext_nist_privacy_framework_2020"
+  - "ext_eu_gdpr_2016"
+  - "ext_w3c_dpv_2024"
+  - "ext_abadi_dpsgd_2016"
+  - "ext_algospec_purpose_limitation_2024"
+  - "ext_carlini_training_data_extraction_2021"
+  - "ext_choquette_choo_label_only_mia_2021"
+  - "ext_nist_differential_privacy_2025"
+  - "ext_mahloujifar_fdp_audit_2025"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No ASI Stack privacy/data-rights campaign has run for this chapter."
+  - "The authored transaction fixture is record-shape evidence only."
+  - "No source mechanism, attack, legal determination, or rights workflow has been reproduced locally."
+  - "No group-privacy remedy or universal jurisdictional mapping is established."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `privacy-data-rights-and-information-flow-governance` |
+| Part | Part I - Foundations, Alignment, and Governance |
+| Status | conceptual |
+| Manuscript maturity | v0.1 integrated argument chapter |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | Nine primary or official records cover privacy-risk governance, one jurisdiction's principles and rights, a semantic vocabulary, DP-SGD, purpose restriction, extraction, label-only membership inference, DP evaluation, and empirical auditing. All reported results remain source-reported. |
+| Test state | One authored lifecycle transaction, JSON Schema, semantic validator, and rejecting mutations are implemented. The natural six-arm campaign is prospectively specified and unexecuted. |
+| Formal state | Two public targets are implemented in `AsiStackProofs.PrivacyInformationFlow`. Their ceiling is finite authored record-route semantics. |
+
+## Drafting guardrail
+
+This chapter governs **purpose-bounded information use and executable data
+rights**. It does not decide what law applies, provide legal advice, certify
+consent or compliance, promise that differential privacy solves the information
+lifecycle, or claim that deletion from one store removes learned influence.
+
+The chapter remains **Design rationale + argument**. Its positive fixture is
+deliberately incapable of becoming privacy evidence: no real person, model,
+memory, attack, deletion, or jurisdictional determination is involved. The
+prospective campaign must pass its competence gates before a null attack or
+failed defense can narrow an architectural claim.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+A system can keep every secret from intruders and still violate privacy. It can
+collect more than needed, reuse data for another purpose, combine it with other
+records, infer sensitive facts, leak one user's memory to another, retain it too
+long, or make correction and deletion impossible. Those are failures of
+permitted use, not necessarily failures of access control.
+
+Treat each consequential information use as a transaction. The transaction
+must name whose information or interests are implicated, why the use is
+allowed, which data and recipients are necessary, how derivatives inherit
+obligations, what privacy guarantee and threat model apply, and what happens
+when a person requests access, correction, export, restriction, or deletion.
+Unknown copies and influence stay visible rather than being erased from the
+record. A technical action produces a bounded receipt; it never silently turns
+into a claim of legal compliance or total forgetting.
+
+Formal privacy accounting and empirical attacks answer different questions.
+Accounting bounds a declared mechanism under stated assumptions; attacks can
+expose tested implementation failures. Neither substitutes for purpose
+limitation, complete lineage, usable rights, or remedies.
+:::
+
+## Problem
+
+An ASI stack moves information through more surfaces than a database inventory
+captures. A prompt enters transient context, is summarized into memory, appears
+in an audit log, contributes to training or retrieval, changes a model, enters a
+checkpoint or backup, shapes an output, and is copied into a derivative system.
+Later deletion from the original row may leave every downstream effect intact.
+
+Access control answers who may read or write an object. It does not answer why
+an authorized reader may use it, whether the use is compatible with the
+collection purpose, whether less data would suffice, whether consent remains
+valid, whether a privacy budget composes across releases, or which remedies
+remain available. NIST explicitly separates privacy risk from cybersecurity
+risk because ordinary data processing can create problems without a security
+incident. GDPR provides an authoritative but jurisdiction-specific example of
+purpose limitation, minimization, accuracy, storage limitation, accountability,
+access, rectification, erasure, restriction, and portability. The book uses
+that vocabulary without claiming universal scope or compliance.
+
+Machine learning adds two further distinctions. First, a model can reveal
+training information through extraction or membership inference even when raw
+records are access-controlled. Carlini et al. extracted memorized sequences
+from GPT-2, while Choquette-Choo et al. showed that hiding confidence scores
+does not eliminate label-only membership attacks. Second, deleting stored data,
+revoking access, changing behavior, reducing influence, and providing a formal
+privacy bound are different outcomes. None may stand in for another.
+
+### Exclusive job and adjacent boundaries
+
+Privacy and Information-Flow Governance owns the transaction from a proposed
+information use to a purpose- and rights-bounded receipt.
+
+| Adjacent owner | That owner keeps | Privacy layer owns |
+|---|---|---|
+| Security Kernel | Authentication, authorization, isolation, secrecy, integrity, and incident response. | Whether even authorized processing remains purpose-bounded, minimized, privacy-evaluated, and remediable. |
+| Data Engines | Datum admission, provenance, training/update mechanics, unlearning operations, and learning-state lineage. | Consent or other authority, purpose compatibility, privacy unit and budget, subject rights, derivative obligations, and remedy receipts. |
+| Context Transactions | Context identity, mounts, taint, provenance, cache boundaries, and replay. | Cross-context purpose, cross-user disclosure, retention, inference risk, and rights propagation. |
+| Model-Weight Custody | Authority to hold, transfer, load, derive, revoke, or release model artifacts. | Information rights and privacy consequences carried by those artifacts and their descendants. |
+| Moral Uncertainty | Contested values and moral residuals. | Operational privacy policy, accounting, attack evaluation, rights execution, and unresolved information residuals. |
+
+The terminal structural decision is **admit at argument support**. The chapter
+sits after Security Kernel and before Model-Weight Custody because authorized
+access precedes governed use, and governed information use constrains later
+model-family custody.
+
+```{mermaid}
+flowchart LR
+  A["Proposed information use"] --> B{"Named person/group, purpose, authority, and necessity?"}
+  B -- "no" --> Q["Deny or quarantine; assign residual owner"]
+  B -- "yes" --> C["Trace source, context, memory, training, inference, output, audit, sharing, backup, and derivatives"]
+  C --> D{"Purpose, recipient, retention, and minimization constraints hold?"}
+  D -- "no" --> Q
+  D -- "yes" --> E["Apply technical measure and privacy accounting appropriate to the threat model"]
+  E --> F{"Independent attack and implementation checks pass?"}
+  F -- "no" --> Q
+  F -- "yes" --> G["Execute access, correction, export, restriction, deletion, or ordinary-use receipt"]
+  G --> H["Propagate obligations; preserve unknown copies, influence, exceptions, costs, and remedies"]
+  H --> I["Bounded receipt only: no automatic compliance or total-forgetting claim"]
+```
+
+**What this lifecycle diagram shows:** admission depends on both authority and
+purpose, then on a complete-enough flow graph. Technical controls and privacy
+accounting are evaluated against a threat model. A rights action propagates to
+known derivatives while unknown copies, learned influence, exceptions, and
+cost remain explicit residuals.
+
+## Why existing approaches are insufficient
+
+**Access control is necessary but too narrow.** A fully authorized service can
+still perform unexpected linkage, over-collection, secondary use, or invasive
+inference. Separating consent and purpose from access prevents “the caller had a
+token” from laundering a harmful use.
+
+**Consent is not the whole authority model.** Some processing relies on other
+legal or institutional bases; consent itself can be bundled, coerced,
+withdrawn, or mismatched to a later use. The transaction records the claimed
+basis and jurisdiction rather than inventing one universal consent rule.
+
+**Differential privacy is powerful but scoped.** DP-SGD clips per-example
+gradients, adds noise, and accounts composition relative to a declared unit and
+adjacency relation. That can bound one kind of participation inference under
+assumptions. It does not by itself establish purpose compatibility, data
+accuracy, correction, export, deletion, fairness, group remedy, or proper
+implementation. NIST SP 800-226 and empirical auditing exist precisely because
+a mathematical label can be implemented or reported incorrectly.
+
+**Behavioral forgetting is not lifecycle erasure.** A model that stops
+answering a probe may still encode influence, leak under a stronger attack,
+persist in checkpoints, or have descendants trained before deletion. Conversely,
+a raw-data deletion may be real even when model influence remains. Receipts must
+name the outcome actually achieved.
+
+**A vocabulary is not enforcement.** W3C DPV can represent purpose, processing,
+actors, rights, risks, measures, and consent state. AlgoSpec demonstrates one
+algorithm-specific attempt to restrict secondary use. Neither source proves
+that a semantic record is obeyed across an ASI stack. Runtime checks, lineage,
+attack evaluation, and remedies remain necessary.
+
+### Strongest objection
+
+The strongest objection is that a lifecycle ledger becomes bureaucratic theater
+while data continues to leak. The objection wins unless the record changes
+admission, blocks mismatched uses, exposes unknown descendants, catches attacks,
+and completes rights requests at tolerable cost. The prospective campaign
+therefore compares six competent mechanisms under matched utility, strong
+attacks, positive controls, derivative propagation, and joint cost.
+
+## Core Claim
+
+[privacy-data-rights-and-information-flow-governance.core, label: Design rationale, support: argument] An information use is eligible for bounded execution only when a prospectively declared record binds the affected person or group, data categories and sources, exact purpose and processing operation, claimed authority and jurisdiction, recipients, retention, minimization decision, complete-enough flow and derivative graph, cross-user boundary, privacy unit, adjacency relation, accountant and budget where applicable, threat model and attack plan, rights state, requested remedy, exceptions, residual copies and influence, costs, and non-authorities; authorized access, consent text, a privacy label, a low observed attack rate, one deleted record, a changed model response, a completed rights ticket, a formal record proof, or a source-reported result alone establishes neither purpose compatibility, privacy, legal compliance, total erasure, behavioral forgetting, influence removal, support, readiness, release, transfer, nor SOTA.
+
+## Mechanism
+
+### The information-lifecycle transaction
+
+1. **Name the affected parties.** Record data subjects, represented people,
+   affected groups, and an explicit path for unknown or contested identity.
+2. **Declare purpose and authority.** Bind the exact purpose, processing
+   operation, claimed basis, jurisdiction, compatibility rule, expiry, and
+   withdrawal or objection state.
+3. **Minimize.** Justify each data category, granularity, retention period,
+   recipient, and derived feature against an alternative using less data.
+4. **Map flows and derivatives.** Trace context, memory, retrieval, training,
+   inference, outputs, audits, caches, backups, checkpoints, exports, recipients,
+   and descendants with unknown edges retained.
+5. **Choose guarantees against threats.** Define the attacker, access surface,
+   privacy unit and adjacency, formal mechanism and accountant, or explain why
+   no formal guarantee applies.
+6. **Evaluate implementation.** Run positive-control extraction, membership,
+   linkage, reconstruction, cross-user, and purpose-enforcement checks
+   appropriate to the claimed surface.
+7. **Execute rights and corrections.** Verify identity proportionately, then
+   access, correct, export, restrict, delete, notify recipients, or record the
+   exact exception and appeal/remedy path.
+8. **Propagate obligations.** Traverse known derivatives and backups; issue
+   receipts for each disposition rather than closing the root ticket early.
+9. **Close narrowly.** State storage, access, behavior, influence, privacy, and
+   legal outcomes separately, with residual owners and deadlines.
+
+### Required artifacts
+
+```text
+InformationLifecycleTransaction {
+  affected_party_and_group_record,
+  purpose_and_authority_lease,
+  minimization_decision,
+  flow_and_derivative_graph,
+  cross_user_memory_boundary,
+  privacy_unit_adjacency_accountant_and_budget,
+  threat_model_and_attack_audit,
+  consent_and_rights_state,
+  correction_export_restriction_deletion_receipts,
+  recipient_and_descendant_notifications,
+  unknown_copy_influence_exception_and_remedy_residuals,
+  joint_utility_cost_and_operator_ledger,
+  non_authorities
+}
+```
+
+The repository's authored fixture exercises the record vocabulary and rejects
+semantic mutations. It contains no personal data and proves no privacy outcome.
+
+The transaction is admitted in stages rather than by one privacy Boolean. The
+purpose and authority lease must match the proposed operation before data is
+materialized. Minimization then compares the requested fields, resolution,
+retention, and recipients with a less-data alternative. Flow closure checks
+known contexts, memories, logs, training paths, outputs, backups, recipients,
+and descendants while recording unknown edges as residuals. A failed stage
+routes to denial, repair, quarantine, or review; it cannot be bypassed by a
+later successful attack score or rights receipt.
+
+Privacy evaluation is deliberately plural. When a formal mechanism applies,
+the record binds the privacy unit, adjacency relation, sampling rule,
+accountant, parameters, composition, and implementation identity. Empirical
+audits use independently implemented extraction, membership, linkage,
+cross-user, and purpose-bypass probes with positive controls. Formal and
+empirical evidence may disagree; the disagreement becomes a named residual
+rather than allowing either lane to erase the other.
+
+Rights execution is also a graph operation. An access, correction, export,
+restriction, objection, or deletion request identifies the governed root,
+traverses known derivatives and recipients, records each completed or blocked
+action, and assigns every exception, unknown copy, backup delay, and learned
+influence to an owner and deadline. Closure means that the exact requested
+outcome has a bounded receipt—not that every privacy, storage, behavioral,
+influence, or legal question has been resolved.
+
+Finally, every consumer receives only the predicate it needs. Runtime may
+receive a purpose-valid admission; Data Engines may receive an authorized
+update or deletion request; Model-Weight Custody may receive descendant
+obligations; Readiness may receive unresolved privacy and rights residuals.
+None receives a universal compliance bit, and no consumer can widen the
+purpose, authority, recipient set, retention window, or support state.
+
+## Interfaces
+
+The primary interface is the `InformationLifecycleTransaction`: an immutable,
+versioned envelope joining affected-party and group records, the Purpose Lease,
+the minimization decision, a flow-and-derivative graph, cross-user boundaries,
+privacy-accounting and attack specifications, rights state, requested remedy,
+receipts, costs, residuals, and explicit non-authorities. Producers must bind
+identities and versions; consumers must acknowledge only the fields and
+authority they actually use. A changed purpose, dataset, model, accountant,
+attack, recipient, right, exception, or descendant opens a successor
+transaction rather than silently rewriting the accepted one.
+
+Adjacent interfaces stay typed. Security supplies authenticated principals,
+authorization decisions, incidents, and secrecy/integrity evidence. Context
+Transactions and Data Engines supply lineage, storage, update, and deletion
+events. Model-Weight Custody supplies artifact and descendant transitions.
+Claim Ledgers and Readiness consume bounded outcomes and unresolved residuals.
+The privacy layer owns purpose compatibility, minimization, privacy claims,
+rights propagation, and remedy custody, but never inherits legal judgment,
+runtime effect authority, or chapter-support authority from those interfaces.
+
+## Invariants
+
+No consequential information use is admitted without an exact purpose,
+claimed authority, affected-party scope, operation, necessary data boundary,
+recipient set, retention rule, flow-closure state, threat model, rights state,
+and residual owner. Unknown identity, lineage, copies, descendants, influence,
+or jurisdiction stays unknown; it cannot be normalized to absent. Purpose and
+authority do not transit automatically across aggregation, fine-tuning,
+distillation, export, recipient transfer, backup restore, or model replacement.
+
+Storage deletion, access revocation, behavioral change, influence reduction,
+formal privacy, empirical attack resistance, rights completion, and legal
+compliance remain separate outcome axes. A receipt may close one axis while
+leaving others open. Every privacy or rights claim is bound to its mechanism,
+implementation, attacker, observation window, population, jurisdictional
+assumption, and version. Missing evidence fails closed for the proposed use but
+does not become evidence that the architecture or defense broadly fails.
+
+## Evidence
+
+### External evidence and its limits
+
+The NIST Privacy Framework supplies a technology- and jurisdiction-agnostic
+risk vocabulary and explicitly distinguishes privacy risk from cybersecurity
+risk. It is voluntary and not law. GDPR supplies one binding jurisdiction's
+principles and rights, with exceptions and contextual requirements; the book
+does not interpret whether it applies to any system. DPV supplies a
+machine-readable vocabulary but is a Community Group specification rather than
+a W3C Recommendation.
+
+Abadi et al. provide the DP-SGD mechanism and privacy-accounting frame. NIST SP
+800-226 provides implementation-evaluation guidance, while Mahloujifar et al.
+provide a recent one-run empirical auditing approach. These are complementary:
+formal accounting and empirical auditing test different failure surfaces.
+
+Carlini et al. and Choquette-Choo et al. demonstrate that training information
+can escape through generation or labels. Their results motivate attacks and
+positive controls; they do not prove every system leaks or that one defense is
+universally sufficient. AlgoSpec is a competing purpose-restriction mechanism
+whose reported datasets, algorithms, accuracy, and efficiency remain bounded
+to the source study.
+
+### Local evidence
+
+The local packet contains only:
+
+- a nine-source, four-role argument packet;
+- one pinned Theseus design record used only as implementation pressure;
+- one authored transaction schema and synthetic fixture;
+- a semantic validator with rejecting controls;
+- two finite formal targets; and
+- one unopened six-arm preregistration.
+
+This supports chapter admission and record design only.
+
+## Failure modes
+
+These failures are adversarial in two senses: an attacker may deliberately
+exploit them, or an authorized organization may create them through incentives,
+convenience, or incomplete accounting. The transaction therefore tests both
+unauthorized disclosure and harmful authorized use. A clean cybersecurity
+incident count cannot hide purpose drift, over-collection, weak remedies, or
+learned influence, while a completed rights ticket cannot hide cross-user
+leakage or untracked descendants.
+
+- **Purpose drift:** a later use inherits access but not the original purpose.
+- **Consent laundering:** vague or bundled consent is treated as all-purpose authority.
+- **Minimization theater:** every collected field is declared necessary after the fact.
+- **Cross-user leakage:** memory or retrieval crosses an identity boundary.
+- **Linkage and attribute inference:** harmless-looking fields combine into sensitive facts.
+- **Memorization and extraction:** model output reproduces rare training content.
+- **Membership inference:** an attacker detects participation, including through hard labels.
+- **Privacy-accounting drift:** the privacy unit, adjacency, sampling, clipping, noise, or composition differs from the claim.
+- **Rights-ticket theater:** a root row is changed while caches, logs, backups, models, and descendants remain unexamined.
+- **Deletion/forgetting substitution:** storage, behavior, influence, and privacy outcomes are conflated.
+- **Audit surveillance:** privacy telemetry becomes a new invasive dataset.
+- **Group blind spot:** individually bounded records hide correlated or collective harms.
+- **Exception laundering:** a narrow retention exception silently becomes permanent reuse authority.
+- **Compliance theater:** a schema or formal theorem is presented as legal compliance.
+
+The dangerous meta-failure is evaluator incompetence. A weak extraction attack,
+incorrect privacy accountant, impossible utility floor, incomplete flow graph,
+or deletion test that checks only the root store can manufacture a false
+negative and then mislabel it as architectural refutation. Positive controls,
+independent implementations, matched baselines, rescue steps, frozen
+denominators, and explicit N0–N5 inference ceilings are required before any
+negative result can affect the design claim.
+
+## Minimum Viable Implementation
+
+The smallest honest implementation is a versioned transaction service over one
+bounded application with a real context store, memory path, audit log, training
+or retrieval derivative, backup, and recipient simulation. It must enforce
+purpose and authority before materialization; compare against a less-data
+alternative; preserve an explicit flow graph; execute at least access,
+correction, export, restriction, and deletion paths; and emit separate storage,
+behavior, influence, privacy, and compliance fields. Each field needs a
+producer, consumer, owner, valid case, rejecting mutation, and non-default
+failure consequence.
+
+The first claim-bearing evaluation must add competent baselines and attacks,
+not merely more schema fixtures. Ordinary processing, access-only control,
+minimization, differential privacy, purpose-bound enforcement, and
+unlearning/remediation receive matched utility targets and tuning opportunity.
+At least three seeds, positive-control canaries, independent attack and receipt
+evaluators, complete denominator custody, cost measurement, and unopened final
+qualification are required. The current authored fixture and Lean model are a
+precondition for this implementation, not evidence that it already exists.
+
+## Beyond the State of the Art
+
+The mature endpoint is an information-governance plane that survives changes
+in model substrate and organizational boundary. Purpose, authority,
+minimization, privacy, rights, and remedy obligations travel with data,
+representations, checkpoints, adapters, outputs, backups, recipients, and
+descendants through machine-readable leases and contestable lineage. New
+Transformer, state-space, recurrent, symbolic, or hybrid components can be
+substituted without silently shedding those obligations, because the contract
+binds the information use rather than one model implementation.
+
+Formal accounting, empirical attacks, and operational remedies become one
+auditable but non-collapsed evidence system. The mature stack can say which
+privacy unit and adjacency were protected, whether the implementation matched
+the accountant, which attacks were competent, which purpose checks blocked
+use, which rights actions propagated, what remains in backups or descendants,
+and who owns unresolved influence. It can revise any one result without
+rewriting the others and can reproduce the decision from public-safe evidence
+without exposing the protected data itself.
+
+Reaching that endpoint requires more than a universal policy vocabulary. It
+requires transfer across tasks, populations, model families, privacy units,
+attack classes, storage and training systems, operators, institutions,
+jurisdictions, and time; independent reproduction; effect-complete rollback
+and remedy where possible; and explicit residual custody where reversal is
+impossible. The architecture must beat strong simpler baselines on useful
+throughput, privacy loss, purpose violations, rights completion, latency,
+operator burden, and total governance cost together. Otherwise its mature
+claim narrows to the exact mechanisms and settings that survived.
+
+This is a falsifiable research target, not a current-result claim; no such
+campaign has passed, and the support state remains at argument until competent
+outcomes satisfy the frozen transition rules.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Information-lifecycle transaction contract | Validate purpose/authority, minimization, twelve flow surfaces, derivative propagation, privacy evaluation, rights receipts, sources, non-authorities, and 26 semantic mutations. | implemented; authored record only |
+| Lean information-flow semantics | Check bounded admission requirements and separation of storage, behavior, influence, privacy, and compliance outcomes. | implemented; finite model only |
+| Natural privacy and rights campaign | Compare six competent matched arms across thirteen failure families, at least three seeds, strong attacks, rights propagation, and joint outcomes. | prospectively specified; not run |
+| Independent attack reproduction | Reimplement extraction, confidence and label-only membership, linkage, cross-user, and purpose-bypass evaluations without sharing candidate code. | planned after instrument qualification |
+| Rights and descendant replay | Reconstruct access, correction, export, restriction, deletion, recipient notification, backup, exception, and residual paths from retained artifacts. | planned after a valid campaign |
+| Cross-substrate and jurisdictional-policy transfer | Repeat the bounded mechanism across model families, data systems, operators, and versioned policy modules without treating policy configuration as legal validity. | planned; dependent on prior evidence |
+
+## Source crosswalk
+
+| Source ID | Role | Use and limit |
+|---|---|---|
+| `ext_nist_privacy_framework_2020` | governance framework | Grounds privacy-risk management and the distinction between privacy and cybersecurity risk. It is voluntary guidance, not law or compliance evidence. |
+| `ext_eu_gdpr_2016` | rights and principles authority | Supplies one jurisdiction's purpose, minimization, accuracy, retention, accountability, access, correction, erasure, restriction, and portability vocabulary. Applicability and compliance are not determined here. |
+| `ext_w3c_dpv_2024` | semantic interface | Supplies a machine-readable vocabulary for processing, purpose, actors, rights, risks, measures, and consent state. Vocabulary conformance does not establish enforcement or legal validity. |
+| `ext_abadi_dpsgd_2016` | formal mechanism | Grounds clipped, noised stochastic-gradient training and privacy accounting. It does not establish correct implementation, purpose compatibility, rights completion, or universal privacy. |
+| `ext_algospec_purpose_limitation_2024` | competing design | Supplies an algorithm-specific purpose-restriction mechanism and bounded reported evaluation. Its datasets, algorithms, accuracy, and efficiency remain source-reported and unreproduced. |
+| `ext_carlini_training_data_extraction_2021` | limitation and attack | Grounds extractable memorized training sequences as a concrete failure surface. It does not imply that every model leaks or that the same attack is sufficient everywhere. |
+| `ext_choquette_choo_label_only_mia_2021` | limitation and attack | Grounds label-only membership inference and shows that hiding confidence scores is not a complete defense. Transfer to other settings must be tested. |
+| `ext_nist_differential_privacy_2025` | evaluation guidance | Grounds threat-model, implementation, parameter, and evaluation discipline for differential privacy. Following guidance is not evidence that a deployment is private. |
+| `ext_mahloujifar_fdp_audit_2025` | empirical measurement | Supplies a one-run empirical auditing method complementary to formal accounting. Its assumptions and source-reported results require independent implementation and transfer testing. |
+| `theseus_synthetic_data_curation` | local implementation pressure | Supplies a pinned, source-reported prototype pattern for provenance receipts, split exclusions, leakage gates, bounded synthetic-data admission, descendant propagation, and source-revocation questions. No Theseus command or dataset was rerun, so it establishes no privacy, rights completion, deletion, influence removal, data quality, model benefit, or compliance outcome. |
+
+Together the packet fills mechanism, limitation/failure, competing-design, and
+measurement/evaluation roles. The sources disagree productively: law and risk
+frameworks specify obligations, vocabularies represent them, formal mechanisms
+bound declared threats, and attacks probe implementation or leakage. None can
+stand in for the others or promote the chapter core by citation alone.
+
+## Prospective validation
+
+The first campaign is frozen but unexecuted. It will use an open natural text
+classification or generation workload plus a memory service, realistic
+consent/purpose labels, canaries, known derivatives, and rights requests. Six
+arms compare ordinary processing, access control, minimization, DP, purpose-bound
+enforcement, and competent unlearning/remediation. All arms receive matched
+utility targets and tuning opportunity.
+
+Strong extraction, confidence and label-only membership, linkage,
+cross-user-memory, purpose-bypass, correction, export, and deletion propagation
+probes must pass positive controls. Outcomes include utility, attack success and
+advantage at low false-positive rates, DP accounting and empirical audit,
+purpose violations, flow coverage, rights completeness and latency, residual
+copies/influence, compute/storage, operator work, and governance cost. Protected
+qualification stays unopened until design and competence gates freeze.
+
+Possible dispositions are bounded success, mechanism-specific narrowing,
+competent negative result, blocked after full attempt, or invalid campaign. A
+weak attack, broken baseline, uncertain lineage, or missing denominator forces
+invalidation rather than a negative architectural claim.
+
+## Formalization hooks
+
+The finite Lean model proves only record-route consequences:
+
+1. `lean:privacy_information_flow.admission_invariants` — an accepted use
+   requires matching purpose, authority, minimization, flow, rights, and
+   privacy-evaluation predicates; and
+2. `lean:privacy_information_flow.outcome_separation` — a completed deletion
+   route preserves the distinction between storage disposition, behavioral
+   evidence, influence evidence, and legal-compliance authority.
+
+These theorems trust their input predicates. They do not prove a real purpose is
+lawful, the flow graph complete, the DP implementation correct, an attack
+strong, a right fulfilled, or information forgotten.
+
+## Nonclaims
+
+This chapter does not establish:
+
+- what law applies or whether any system complies with it;
+- valid consent, lawful basis, or universal data rights;
+- a correct DP implementation or privacy guarantee;
+- absence of extraction, membership, linkage, or cross-user leakage;
+- complete lineage, deletion, behavioral forgetting, or influence removal;
+- adequate group remedy, fairness, safety, alignment, support, readiness,
+  release, transfer, SOTA, AGI, or ASI.
+
+## Operational takeaway
+
+Privacy is not a checkbox beside security. It is an end-to-end information-use
+transaction with purpose, minimization, threats, formal and empirical privacy
+evidence, executable rights, derivative propagation, and honest residuals. A
+system closes only the outcome it can prove and leaves every unknown copy,
+influence, exception, and remedy under named ownership.
+
+## Open questions
+
+- How should privacy units and adjacency compose across memory, training,
+  retrieval, audit, and multi-model descendants?
+- What evidence is sufficient to call a derivative graph complete enough for a
+  particular right without pretending unknown copies are absent?
+- How should group harms and rights be represented without falsely claiming
+  that individual records aggregate into a complete group remedy?
+- Which purpose-restriction mechanisms survive adaptive models and novel
+  architectures without destroying legitimate reuse?
+- How should conflicts among correction, audit integrity, safety retention,
+  freedom of expression, research, and deletion be represented across
+  jurisdictions?
+
+## Summary
+
+Authorized access is only the beginning of privacy governance. A competent ASI
+stack binds each consequential information use to a named purpose and authority,
+tests minimization, follows information into memory, models, logs, backups, and
+derivatives, evaluates formal guarantees and real attacks separately, and
+executes rights through bounded receipts. It never turns one access decision,
+privacy parameter, attack result, deletion action, or formal proof into a claim
+of legal compliance or total forgetting.
+
+The architectural payoff is separation with continuity. Security, context,
+training, model custody, evidence, and readiness keep their own authority, yet
+privacy and rights obligations remain attached across every handoff. Formal
+accounting and attacks remain complementary; storage, behavior, influence,
+privacy, and legal outcomes remain distinct; and unknown descendants remain
+owned residuals. The current implementation proves only that one finite record
+contract rejects specified mutations. The natural campaign, reproduction, and
+transfer burdens remain open.
+
+## Handoff
+
+Downstream layers receive constrained predicates and residuals, never a generic
+privacy or compliance approval. Each handoff carries the exact purpose lease,
+information and descendant identities, privacy-evidence scope, rights state,
+unresolved copies or influence, expiry, and owner. A consumer that cannot
+preserve those fields must deny, quarantine, or reopen review rather than
+silently accepting the artifact or action.
+
+- To **Model-Weight Custody and Hardware Roots of Trust**: carry purpose,
+  privacy, rights, descendant, and deletion obligations with every model-family
+  artifact.
+- To **AI Supply-Chain Integrity**: bind privacy-relevant code, data, model,
+  accountant, and policy identities to provenance.
+- To **Data Engines**: execute admitted data updates and unlearning operations,
+  then return bounded storage, behavior, and influence evidence.
+- To **Benchmark Ratchets**: preserve independent privacy attacks, unopened
+  qualification, and denominator custody.
+- To **Readiness Gates**: deliver residual copies, influence, exceptions,
+  attacks, rights debt, and remedy status without release authority.
+
+## Sources
+
+- [NIST Privacy Framework 1.0](https://doi.org/10.6028/NIST.CSWP.01162020)
+- [Regulation (EU) 2016/679](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679)
+- [W3C Data Privacy Vocabulary v2](https://www.w3.org/community/reports/dpvcg/CG-FINAL-dpv-20240801/)
+- [Deep Learning with Differential Privacy](https://arxiv.org/abs/1607.00133)
+- [Being Transparent Is Merely the Beginning](https://www.usenix.org/conference/usenixsecurity24/presentation/liu-shuofeng)
+- [Extracting Training Data from Large Language Models](https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting)
+- [Label-Only Membership Inference Attacks](https://proceedings.mlr.press/v139/choquette-choo21a.html)
+- [NIST SP 800-226](https://csrc.nist.gov/pubs/sp/800/226/final)
+- [Auditing f-Differential Privacy in One Run](https://proceedings.mlr.press/v267/mahloujifar25a.html)

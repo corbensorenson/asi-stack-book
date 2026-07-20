@@ -80,8 +80,8 @@ def errors(data: dict[str, Any]) -> list[str]:
     first = status["quality_uplift_program"]["structural_completeness_tranche"]["first_tranche"]
     if first.get("state") != "terminal_four_reader_chapters" or first.get("completed_reader_chapter_count") != 4 or CHAPTER_ID not in first.get("terminal_reader_chapter_ids", []) or first.get("remaining_reader_chapter_ids") != []:
         out.append("first-tranche terminal state drifted")
-    if status["execution_readiness"].get("immediate_book_packet") != "P6.4-A2-privacy-data-rights-and-information-flow-governance-adjudication":
-        out.append("execution board did not preserve terminal operations while advancing to second-tranche A2")
+    if status["execution_readiness"].get("immediate_book_packet") != "P6.4-A3-perception-sensor-fusion-and-observation-trust-adjudication":
+        out.append("execution board did not preserve terminal operations and A1/A2 while advancing to second-tranche A3")
     for key in ("support_state_effect", "release_effect", "publication_effect"):
         if audit.get(key) != "none": out.append(f"unauthorized {key}")
     surfaces = {"index": (ROOT / "index.qmd").read_text(), "safety": (ROOT / "chapters/safety-cases-and-structured-assurance.qmd").read_text(), "policy": (ROOT / "chapters/policy-optimization-and-learning-from-feedback.qmd").read_text(), "glossary": (ROOT / "appendices/B_glossary.qmd").read_text(), "integration": (ROOT / "chapters/integrated-reference-architecture.qmd").read_text()}

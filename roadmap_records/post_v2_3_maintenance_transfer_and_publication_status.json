@@ -1,5 +1,5 @@
 {
-  "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v15",
+  "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v16",
   "roadmap_id": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17",
   "roadmap_path": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
   "snapshot_date": "2026-07-19",
@@ -13,7 +13,7 @@
     "work_in_progress_limit": 2,
     "blocked_lane_consumes_work_in_progress": false,
     "protected_outcome_inspection_allowed": false,
-    "immediate_book_packet": "P6.4-A2-privacy-data-rights-and-information-flow-governance-adjudication",
+    "immediate_book_packet": "P6.4-A3-perception-sensor-fusion-and-observation-trust-adjudication",
     "immediate_formal_packet": "P4-terminal-no-open-formal-packet",
     "first_tranche_completion_order": [
       "white-box-evidence-interpretability-and-activation-governance",
@@ -145,7 +145,7 @@
     },
     "narrative_quality_gate": {
       "state": "split_lane_active",
-      "case_independent_compression_state": "first_tranche_terminal_second_tranche_a1_terminal_a2_ready",
+      "case_independent_compression_state": "first_tranche_terminal_second_tranche_a1_a2_terminal_a3_ready",
       "flagship_threading_state": "blocked_by_T4",
       "reader_spine_repetition_reduction_target": "15_to_25_percent_diagnostic_not_acceptance_test",
       "requires_chapter_role_classification": true,
@@ -154,8 +154,8 @@
       "requires_meaning_preservation_audit": true
     },
     "structural_completeness_tranche": {
-      "state": "first_tranche_terminal_second_tranche_a1_terminal",
-      "current_manifest_chapter_count": 60,
+      "state": "first_tranche_terminal_second_tranche_a1_a2_terminal",
+      "current_manifest_chapter_count": 61,
       "maximum_if_all_candidates_pass": 72,
       "planned_merge_count": 0,
       "first_tranche": {
@@ -181,7 +181,7 @@
         "primary_source_record_count_added": 8
       },
       "second_tranche": {
-        "state": "a1_terminal_twelve_manifest_gated",
+        "state": "a1_a2_terminal_eleven_manifest_gated",
         "audit_path": "docs/structural_completeness_gap_audit_2026_07_19.md",
         "candidate_count": 13,
         "candidate_ids": [
@@ -199,8 +199,8 @@
           "physical-compute-infrastructure-energy-and-environmental-constraints",
           "governed-objective-formation-value-learning-and-goal-integrity"
         ],
-        "manifest_admitted_count": 1,
-        "primary_source_record_count_added": 23,
+        "manifest_admitted_count": 2,
+        "primary_source_record_count_added": 31,
         "communication_required_source_ids": [
           "ext_conversational_persuasion_gpt4_2025",
           "ext_anthropic_model_persuasiveness_2024",
@@ -222,16 +222,17 @@
           "measurement_or_evaluation"
         ],
         "adjudicated_candidate_ids": [
-          "governed-model-training-distributed-optimization-and-scaling"
+          "governed-model-training-distributed-optimization-and-scaling",
+          "privacy-data-rights-and-information-flow-governance"
         ],
         "terminal_candidate_dispositions": {
-          "governed-model-training-distributed-optimization-and-scaling": "admitted_terminal_argument_reader_chapter"
+          "governed-model-training-distributed-optimization-and-scaling": "admitted_terminal_argument_reader_chapter",
+          "privacy-data-rights-and-information-flow-governance": "admitted_terminal_argument_reader_chapter"
         },
-        "active_candidate_id": "privacy-data-rights-and-information-flow-governance",
+        "active_candidate_id": "perception-sensor-fusion-and-observation-trust",
         "remaining_candidate_ids": [
           "perception-sensor-fusion-and-observation-trust",
           "embodied-agency-real-time-control-and-physical-safety",
-          "privacy-data-rights-and-information-flow-governance",
           "human-ai-organizations-delegation-and-accountability",
           "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
           "autonomous-replication-proliferation-and-containment",
@@ -242,7 +243,8 @@
           "physical-compute-infrastructure-energy-and-environmental-constraints",
           "governed-objective-formation-value-learning-and-goal-integrity"
         ],
-        "a1_decision_packet": "docs/p6_4_a1_governed_model_training_adjudication.md"
+        "a1_decision_packet": "docs/p6_4_a1_governed_model_training_adjudication.md",
+        "a2_decision_packet": "docs/p6_4_a2_privacy_data_rights_adjudication.md"
       },
       "p2_displacement_allowed": false,
       "support_state_effect": "none",
@@ -259,11 +261,11 @@
   },
   "activation_truth": {
     "latest_public_living_book_release": "v2.3.0",
-    "live_working_chapter_count": 60,
+    "live_working_chapter_count": 61,
     "activation_registry_atom_count": 3730,
     "post_activation_addendum_atom_count": 15,
     "total_structured_atom_count": 3745,
-    "chapter_core_argument_count": 60,
+    "chapter_core_argument_count": 61,
     "chapter_core_promotion_count": 0,
     "activation_registry_non_argument_atom_count": 2,
     "blocked_after_full_attempt_atom_count": 3698,
@@ -281,12 +283,12 @@
     "competence_qualified_natural_non_authored_empirical_transition_count": 0,
     "external_reproduction_count": 0,
     "sota_supported_count": 0,
-    "proof_target_count": 308,
-    "lean_module_count": 103,
-    "theorem_declaration_count": 1359,
-    "derived_or_decomposed_theorem_count": 921,
+    "proof_target_count": 310,
+    "lean_module_count": 104,
+    "theorem_declaration_count": 1370,
+    "derived_or_decomposed_theorem_count": 924,
     "direct_or_projection_theorem_count": 230,
-    "unknown_or_mixed_theorem_count": 208,
+    "unknown_or_mixed_theorem_count": 216,
     "historical_v2_2_approved_exact_local_reader_formats": [
       "html"
     ],
@@ -370,8 +372,8 @@
     "frozen_snapshot_sha256": "bb20c1f8932e915b392a76ae776c7487817ee734b0cd3684134e2b9d57e75ba1",
     "frozen_surface_count": 75,
     "frozen_chapter_surface_count": 55,
-    "current_surface_count": 80,
-    "live_chapter_surface_count": 60,
+    "current_surface_count": 81,
+    "live_chapter_surface_count": 61,
     "forbidden_overbroad_phrase_count": 0,
     "missing_rehabilitation_boundary_count": 0,
     "blocked_chapter_boundary_failure_count": 0,

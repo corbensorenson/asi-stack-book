@@ -63,6 +63,10 @@ promotion gates to make the data path inspectable and rejectable.
   Anti-Goodhart Evidence)
 - `project-theseus-as-report-first-implementation-reference` (Project Theseus
   as Report-First Implementation Reference)
+- `privacy-data-rights-and-information-flow-governance` (Privacy, Data Rights,
+  and Information-Flow Governance), as bounded local implementation pressure
+  for provenance, split exclusion, derivative propagation, and revocation
+  questions only—not as privacy, rights, deletion, or unlearning evidence.
 
 ## Claims To Add Or Update
 

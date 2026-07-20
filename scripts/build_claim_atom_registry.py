@@ -32,6 +32,7 @@ POST_ACTIVATION_EXPANSION_IDS = {
     "white-box-evidence-interpretability-and-activation-governance",
     "governed-operations-incident-command-and-graceful-degradation",
     "governed-model-training-distributed-optimization-and-scaling",
+    "privacy-data-rights-and-information-flow-governance",
 }
 POST_ACTIVATION_FORMAL_TARGETS = {"lean:corrigibility.agency.generic_countermodel_routes"}
 

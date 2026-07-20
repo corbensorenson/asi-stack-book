@@ -1,0 +1,25 @@
+{
+  "schema_version": "asi_stack.privacy_information_flow_argument_exit.v1",
+  "protocol_id": "P6.4-A2-PIF-01",
+  "recorded_date": "2026-07-19",
+  "state": "prospectively_frozen_unexecuted",
+  "protected_outcomes_opened": false,
+  "research_question": "On a natural small-model and memory workload, which combination of purpose enforcement, minimization, differential privacy, access control, and competent remediation best reduces measurable information misuse and leakage while preserving useful throughput and executable rights at acceptable cost?",
+  "unit_of_analysis": "one prospectively registered information-use transaction, attack attempt, or rights request with all descendants",
+  "workload": {"frozen_before_execution": false, "required_properties": ["open natural text task", "small trainable model", "multi-user memory path", "consent and purpose labels", "known derivative graph", "rare and ordinary canaries", "hidden privacy qualification split", "real utility target"]},
+  "arms": [
+    {"id": "A0", "name": "ordinary_processing", "purpose": "Competent utility baseline with ordinary logging and no special privacy mechanism."},
+    {"id": "A1", "name": "access_control_only", "purpose": "Strong identity and access controls without purpose or formal privacy mechanism."},
+    {"id": "A2", "name": "minimization", "purpose": "Matched task using prospectively minimized fields, granularity, retention, and recipients."},
+    {"id": "A3", "name": "differential_privacy", "purpose": "Competently tuned DP training with explicit unit, adjacency, clipping, sampling, noise, accountant, and composition."},
+    {"id": "A4", "name": "purpose_bound_enforcement", "purpose": "Runtime purpose lease and derivative-obligation enforcement with a strong competing design where feasible."},
+    {"id": "A5", "name": "unlearning_and_remediation", "purpose": "Competent correction, restriction, deletion, and unlearning workflow with separate storage, behavior, influence, and privacy outcomes."}
+  ],
+  "failure_families": ["training_data_extraction", "confidence_membership_inference", "label_only_membership_inference", "attribute_or_linkage_inference", "cross_user_memory_leakage", "purpose_bypass", "over_retention", "correction_nonpropagation", "export_incompleteness", "deletion_nonpropagation", "unknown_derivative", "privacy_accounting_drift", "audit_surveillance"],
+  "primary_outcomes": ["task_utility", "extraction_rate", "membership_advantage_at_low_fpr", "cross_user_leakage", "purpose_violation_rate", "flow_coverage", "rights_completion_rate", "rights_completion_latency", "known_residual_copy_rate", "behavioral_forgetting", "influence_estimate", "formal_and_empirical_privacy_disposition"],
+  "joint_cost_outcomes": ["wall_time", "compute", "memory", "storage", "network", "operator_interventions", "rights_case_work", "governance_recording_time", "utility_loss"],
+  "competence_gates": ["all arms reach the frozen utility floor or are declared incompetent", "purpose and rights labels freeze before outcomes", "privacy unit and adjacency are explicit", "DP clipping sampling noise and accountant are independently checked", "extraction canaries produce a positive control", "confidence and label-only membership positive controls pass", "cross-user and purpose-bypass injectors are demonstrated", "flow graph covers raw context memory model cache log backup checkpoint output and derivatives", "rights requests traverse every known descendant", "storage behavior influence privacy and legal outcomes remain separate", "all attacks canaries requests failures models and exclusions remain in denominators", "all arms receive matched tuning and attack opportunity", "independent evaluator remains unopened until design freezes", "at least three seeds and multiple canary frequencies are used", "claims remain within the exact workload threat model privacy unit mechanism and jurisdictional nonclaim envelope"],
+  "adjudication": ["admit_bounded_privacy_or_rights_effect", "narrow_to_specific_mechanism_attack_or_right", "retain_negative_after_competent_attempt", "blocked_after_full_attempt", "invalidate_campaign"],
+  "stop_conditions": ["protected outcome exposure", "baseline incompetence", "broken positive control", "undefined privacy unit", "unverified lineage", "denominator loss", "outcome-aware change", "independent-evaluator leakage", "resource ceiling breach"],
+  "nonclaims": ["legal compliance", "valid consent", "universal lawful basis", "privacy outside the declared unit adjacency threat and release surface", "complete lineage", "total erasure", "behavioral forgetting from storage deletion", "influence removal from behavior change", "group remedy", "support promotion", "release", "AGI", "ASI"]
+}

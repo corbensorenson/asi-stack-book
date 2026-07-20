@@ -12,12 +12,12 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 308 |
-| Lean modules scanned | 103 |
-| Theorem declarations classified | 1359 |
+| Proof targets in manifest | 310 |
+| Lean modules scanned | 104 |
+| Theorem declarations classified | 1370 |
 | Direct/projection-style theorem declarations | 230 |
-| Derived/decomposed theorem declarations | 921 |
-| Unknown or mixed theorem declarations | 208 |
+| Derived/decomposed theorem declarations | 924 |
+| Unknown or mixed theorem declarations | 216 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -113,6 +113,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Planning.lean` | planning-as-a-control-layer | 5 | 29 | 8 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | unmapped | 0 | 19 | 7 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | policy-optimization-and-learning-from-feedback | 4 | 5 | 0 | 2 | 3 | manual review |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | privacy-data-rights-and-information-flow-governance | 2 | 11 | 0 | 3 | 8 | manual review |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | unmapped | 0 | 14 | 0 | 14 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | procedural-memory-and-cognitive-loop-closure | 2 | 14 | 10 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | unmapped | 0 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -923,6 +924,17 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | `policy_update_full_cycle_composes` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | `policy_update_lifecycle_routes` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | `rejected_event_preserves_complete_state` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `accepted_requires_flow_and_privacy_evaluation` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `accepted_requires_purpose_and_authority` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `accepted_separates_outcomes_and_refuses_compliance` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `complete_authored_record_accepts_bounded_receipt` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `compliance_laundering_quarantines` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `conflated_behavior_and_storage_quarantines` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `hidden_unknown_copies_request_flow_map` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `label_attack_incompetence_rejects_privacy_evaluation` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `missing_recipient_notice_requests_rights_work` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `purpose_drift_rejects` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `release_laundering_quarantines` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | `failed_regression_with_routable_promotion_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | `generated_tool_missing_closure_artifact_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | `routable_failed_regression_routes_quarantine` | derived_or_decomposed | no | uses simp, unfold |

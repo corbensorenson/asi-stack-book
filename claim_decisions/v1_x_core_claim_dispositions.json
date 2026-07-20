@@ -1,7 +1,7 @@
 {
   "disposition_set_id": "v1_x.per_chapter_core_claim_dispositions",
   "date": "2026-07-03",
-  "scope_boundary": "Standing per-chapter disposition record for the 60 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
+  "scope_boundary": "Standing per-chapter disposition record for the 61 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
   "review_status": "active_validator_checked_record",
   "generated_from": [
     "book_structure.json",
@@ -12,11 +12,11 @@
   ],
   "support_state_effect": "none",
   "summary": {
-    "manifest_chapter_core_claims": 60,
+    "manifest_chapter_core_claims": 61,
     "accepted_core_transition_dispositions": 22,
-    "accepted_no_promotion_dispositions": 38,
+    "accepted_no_promotion_dispositions": 39,
     "promoted_core_claims": 0,
-    "chapter_core_claims_remaining_at_argument": 60
+    "chapter_core_claims_remaining_at_argument": 61
   },
   "dispositions": [
     {
@@ -666,6 +666,46 @@
         "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
         "evidence_transitions/v1_x_measured/security_scif_commit_probe_no_change.json"
       ]
+    },
+    {
+      "claim_id": "privacy-data-rights-and-information-flow-governance.core",
+      "chapter_id": "privacy-data-rights-and-information-flow-governance",
+      "chapter_title": "Privacy, Data Rights, and Information-Flow Governance",
+      "part_id": "foundations-alignment-governance",
+      "part_title": "Part I - Foundations, Alignment, and Governance",
+      "chapter_file": "chapters/privacy-data-rights-and-information-flow-governance.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "An information use is eligible for bounded execution only when a prospectively declared record binds affected parties, exact purpose and processing, claimed authority and jurisdiction, recipients, retention, minimization, complete-enough flow and derivatives, cross-user boundaries, privacy unit, adjacency, accountant and budget where applicable, threat model and attack plan, rights state and remedy, exceptions, residual copies and influence, costs, and non-authorities; no individual control or receipt alone establishes privacy, legal compliance, total erasure, behavioral forgetting, influence removal, support, readiness, release, transfer, or SOTA.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "competent natural six-arm campaign with positive-controlled extraction and membership attacks",
+        "complete derivative rights workflow with separate storage behavioral influence privacy and legal outcomes",
+        "independent reproduction and transfer within the exact threat model privacy unit mechanism and jurisdictional nonclaim envelope"
+      ],
+      "blockers": [
+        "natural campaign unexecuted",
+        "no local privacy mechanism or strong attack result",
+        "no legal applicability or compliance determination",
+        "no independent reproduction or transfer"
+      ],
+      "promotion_burden": "The chapter has a source-reviewed argument packet, authored lifecycle record, rejecting mutations, finite proofs, and an unopened campaign, but no personal-data processing, natural privacy mechanism, attack, rights workflow, legal determination, independent reproduction, or transfer has been accepted for its broad claim.",
+      "limitations": [],
+      "non_claims": [
+        "does not establish valid consent lawful basis or legal compliance",
+        "does not establish a privacy guarantee attack absence complete lineage total erasure forgetting or influence removal",
+        "does not establish support readiness release transfer AGI ASI or SOTA"
+      ],
+      "current_evidence_summary": "Source notes available for all 10 assigned sources; 10 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Nine-source four-role packet, twelve-surface synthetic lifecycle transaction, two formal targets, and unopened six-arm natural privacy/rights campaign",
+      "formal_or_prototype_work": "Execute the frozen natural small-model and memory campaign with competent ordinary, access-only, minimization, DP, purpose-bound, and unlearning/remediation arms; strong positive-controlled extraction and membership attacks; derivative rights propagation; complete denominators; and independent evaluation.",
+      "human_reader_focus": "Show why a secure system can still misuse authorized information, why privacy is broader than DP or consent, and why rights receipts must distinguish storage, behavior, influence, privacy, and legal outcomes.",
+      "what_would_move_this": "Across multiple seeds, a governed information lifecycle reduces purpose violations, cross-user leakage, extraction, membership advantage, and incomplete rights propagation relative to strong matched baselines without unacceptable utility or governance cost; any stronger privacy or rights claim reproduces independently within its exact threat, unit, mechanism, and jurisdictional nonclaim envelope.",
+      "relevant_non_core_transition_refs": []
     },
     {
       "claim_id": "model-weight-custody-and-hardware-roots-of-trust.core",

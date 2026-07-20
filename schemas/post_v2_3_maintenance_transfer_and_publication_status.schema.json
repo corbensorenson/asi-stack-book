@@ -38,7 +38,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v15"
+      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v16"
     },
     "roadmap_id": {
       "const": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17"
@@ -98,7 +98,7 @@
           "const": false
         },
         "immediate_book_packet": {
-          "const": "P6.4-A2-privacy-data-rights-and-information-flow-governance-adjudication"
+          "const": "P6.4-A3-perception-sensor-fusion-and-observation-trust-adjudication"
         },
         "immediate_formal_packet": {
           "const": "P4-terminal-no-open-formal-packet"
@@ -260,7 +260,7 @@
               "const": "split_lane_active"
             },
             "case_independent_compression_state": {
-              "const": "first_tranche_terminal_second_tranche_a1_terminal_a2_ready"
+              "const": "first_tranche_terminal_second_tranche_a1_a2_terminal_a3_ready"
             },
             "flagship_threading_state": {
               "const": "blocked_by_T4"
@@ -298,10 +298,10 @@
           ],
           "properties": {
             "state": {
-              "const": "first_tranche_terminal_second_tranche_a1_terminal"
+              "const": "first_tranche_terminal_second_tranche_a1_a2_terminal"
             },
             "current_manifest_chapter_count": {
-              "const": 60
+              "const": 61
             },
             "maximum_if_all_candidates_pass": {
               "const": 72
@@ -392,11 +392,12 @@
                 "terminal_candidate_dispositions",
                 "active_candidate_id",
                 "remaining_candidate_ids",
-                "a1_decision_packet"
+                "a1_decision_packet",
+                "a2_decision_packet"
               ],
               "properties": {
                 "state": {
-                  "const": "a1_terminal_twelve_manifest_gated"
+                  "const": "a1_a2_terminal_eleven_manifest_gated"
                 },
                 "audit_path": {
                   "const": "docs/structural_completeness_gap_audit_2026_07_19.md"
@@ -422,10 +423,10 @@
                   ]
                 },
                 "manifest_admitted_count": {
-                  "const": 1
+                  "const": 2
                 },
                 "primary_source_record_count_added": {
-                  "const": 23
+                  "const": 31
                 },
                 "communication_required_source_ids": {
                   "const": [
@@ -471,22 +472,23 @@
                 },
                 "adjudicated_candidate_ids": {
                   "const": [
-                    "governed-model-training-distributed-optimization-and-scaling"
+                    "governed-model-training-distributed-optimization-and-scaling",
+                    "privacy-data-rights-and-information-flow-governance"
                   ]
                 },
                 "terminal_candidate_dispositions": {
                   "const": {
-                    "governed-model-training-distributed-optimization-and-scaling": "admitted_terminal_argument_reader_chapter"
+                    "governed-model-training-distributed-optimization-and-scaling": "admitted_terminal_argument_reader_chapter",
+                    "privacy-data-rights-and-information-flow-governance": "admitted_terminal_argument_reader_chapter"
                   }
                 },
                 "active_candidate_id": {
-                  "const": "privacy-data-rights-and-information-flow-governance"
+                  "const": "perception-sensor-fusion-and-observation-trust"
                 },
                 "remaining_candidate_ids": {
                   "const": [
                     "perception-sensor-fusion-and-observation-trust",
                     "embodied-agency-real-time-control-and-physical-safety",
-                    "privacy-data-rights-and-information-flow-governance",
                     "human-ai-organizations-delegation-and-accountability",
                     "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
                     "autonomous-replication-proliferation-and-containment",
@@ -500,6 +502,9 @@
                 },
                 "a1_decision_packet": {
                   "const": "docs/p6_4_a1_governed_model_training_adjudication.md"
+                },
+                "a2_decision_packet": {
+                  "const": "docs/p6_4_a2_privacy_data_rights_adjudication.md"
                 }
               }
             },
@@ -594,7 +599,7 @@
           "const": "v2.3.0"
         },
         "live_working_chapter_count": {
-          "const": 60
+          "const": 61
         },
         "activation_registry_atom_count": {
           "const": 3730
@@ -606,7 +611,7 @@
           "const": 3745
         },
         "chapter_core_argument_count": {
-          "const": 60
+          "const": 61
         },
         "chapter_core_promotion_count": {
           "const": 0
@@ -660,22 +665,22 @@
           "const": 0
         },
         "proof_target_count": {
-          "const": 308
+          "const": 310
         },
         "lean_module_count": {
-          "const": 103
+          "const": 104
         },
         "theorem_declaration_count": {
-          "const": 1359
+          "const": 1370
         },
         "derived_or_decomposed_theorem_count": {
-          "const": 921
+          "const": 924
         },
         "direct_or_projection_theorem_count": {
           "const": 230
         },
         "unknown_or_mixed_theorem_count": {
-          "const": 208
+          "const": 216
         },
         "historical_v2_2_approved_exact_local_reader_formats": {
           "const": [
@@ -956,12 +961,12 @@
         "current_surface_count": {
           "type": "integer",
           "minimum": 75,
-          "const": 80
+          "const": 81
         },
         "live_chapter_surface_count": {
           "type": "integer",
           "minimum": 55,
-          "const": 60
+          "const": 61
         },
         "forbidden_overbroad_phrase_count": {
           "const": 0

@@ -87,9 +87,11 @@ Throughout the outline, `layer` means a logical responsibility and authority bou
 
 ### Current reader-role classification
 
-P7.1a-W2 assigns every manifest chapter one primary reader role. The machine
-record is `evidence_quality/p7_1a_w2_narrative_audit.json`; this outline keeps
-the compact drafting view. Roles guide emphasis and navigation only. They do
+P7.1a-W2 assigns every manifest chapter in its historical 60-chapter scope one primary reader role;
+the current compact view extends the same vocabulary to authorized later
+chapters. The frozen machine record is
+`evidence_quality/p7_1a_w2_narrative_audit.json`. Roles guide emphasis and
+navigation only. They do
 not change claim labels, support states, chapter order, evidence lanes, or
 publication status.
 
@@ -119,8 +121,9 @@ publication status.
   `coil-attention-cyclic-memory-and-recurrence-contracts`,
   `coilra-multicoil-rope-and-cyclic-mixers`, and
   `open-research-agenda-and-bibliography-plan`.
-- **Load-bearing reference (31):** every remaining manifest chapter, including
-  `governed-model-training-distributed-optimization-and-scaling`. Each owns
+- **Load-bearing reference (32):** every remaining manifest chapter, including
+  `governed-model-training-distributed-optimization-and-scaling` and
+  `privacy-data-rights-and-information-flow-governance`. Each owns
   a distinct interface, invariant, artifact, lifecycle, or failure family and
   remains discoverable through the architecture-reference product even when
   omitted from the fifteen-chapter narrative derivative.
@@ -1471,6 +1474,86 @@ Lean proof targets:
 | `lean:security.scif.failure_blocks_promotion` | `AsiStackProofs.SecurityKernel` | A context packet with insufficient clearance cannot enter a protected SCIF. | implemented |
 | `lean:security.scif.route_envelope` | `AsiStackProofs.SecurityKernel` | A structured authority-use review routes missing handles, inactive leases, missing approvals, unauthorized boundaries, missing substitution permission, insufficient clearance, prompt injection, missing SCIFs, unsanitized output, residual leak risk, revocation requests, and clean authorized use into explicit security-kernel outcomes. | implemented |
 | `lean:security.scif.commit_probe_bridge` | `AsiStackProofs.SecurityKernel` | A structured SCIF commit review routes secret output, handle output, missing lifecycle zeroization, overbroad context, inactive approval, missing residual boundaries, prompt-injection sanitized refusal, and clean sanitized commits into explicit outcomes matching the SCIF sanitized commit replay probe. | implemented |
+
+### Privacy, Data Rights, and Information-Flow Governance
+
+Stable ID: `privacy-data-rights-and-information-flow-governance`
+
+Chapter job: Govern purpose-bounded information use and executable data rights
+across input, context, memory, training, inference, output, audit, sharing,
+derivatives, correction, export, deletion, and retirement.
+
+Core claim: An information use is eligible for bounded execution only when a prospectively declared record binds affected parties, exact purpose and processing, claimed authority and jurisdiction, recipients, retention, minimization, complete-enough flow and derivatives, cross-user boundaries, privacy unit, adjacency, accountant and budget where applicable, threat model and attack plan, rights state and remedy, exceptions, residual copies and influence, costs, and non-authorities; no individual control or receipt alone establishes privacy, legal compliance, total erasure, behavioral forgetting, influence removal, support, readiness, release, transfer, or SOTA.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Mechanism or capability | `ext_abadi_dpsgd_2016`, `ext_w3c_dpv_2024`, `ext_algospec_purpose_limitation_2024` | Use for DP-SGD/accounting, semantic lifecycle records, and a purpose-restriction design. Preserve mechanism, specification-status, workload, and local-reproduction limits. |
+| Limitation or failure | `ext_carlini_training_data_extraction_2021`, `ext_choquette_choo_label_only_mia_2021`, `ext_nist_privacy_framework_2020` | Use for extraction, label-only membership inference, confidence-masking failure, and authorized-processing harms. Do not universalize attacks. |
+| Competing designs | `ext_nist_privacy_framework_2020`, `ext_eu_gdpr_2016`, `ext_w3c_dpv_2024`, `ext_algospec_purpose_limitation_2024` | Compare risk/outcome governance, jurisdiction-specific requirements, semantic records, and algorithm-specific restriction without selecting one universal regime or claiming compliance. |
+| Measurement and evaluation | `ext_nist_differential_privacy_2025`, `ext_mahloujifar_fdp_audit_2025`, `ext_eu_gdpr_2016` | Separate formal DP claims, implementation/system hazards, empirical lower-bound audits, and accountable rights receipts. A passed audit is not certification. |
+
+
+| Manifest assignment reconciliation | `theseus_synthetic_data_curation` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Separate authorized access, consent or other claimed authority, purpose, and
+  formal privacy guarantees.
+- Name subjects, represented people, affected groups, and unknown-identity routes.
+- Bind purpose, operation, authority, jurisdiction, recipients, retention,
+  compatibility, expiry, objection, and remedy before use.
+- Test less-data alternatives and map context, memory, training, model, cache,
+  log, backup, output, recipient, and derivative flows.
+- Carry privacy unit, adjacency, threat model, mechanism, accountant, budget,
+  composition, and utility cost with every formal claim.
+- Require positive-control extraction, confidence and label-only membership,
+  linkage, cross-user, and purpose-bypass probes before interpreting nulls.
+- Execute access, correction, export, restriction, deletion, and ordinary-use
+  receipts across known descendants while retaining unknown copies.
+- Report storage, access, behavior, influence, privacy, exceptions, legal
+  authority, costs, and remedies separately.
+
+Primary invariants:
+
+- Access authority is not consent, purpose compatibility, or a privacy guarantee.
+- Purpose, authority, minimization, and recipients freeze before outcomes.
+- Unknown copies and influence remain visible and derivatives inherit obligations.
+- Privacy unit, adjacency, accounting, implementation, and release surface stay bound.
+- Formal accounting and empirical auditing remain complementary and distinct.
+- Attack positive controls and complete denominators precede null interpretation.
+- Storage erasure, access revocation, behavioral forgetting, influence reduction,
+  privacy loss, and legal-right completion never substitute for one another.
+- A rights receipt or finite proof confers no compliance, support, or release authority.
+
+Failure modes to cover:
+
+- Purpose drift, consent laundering, minimization theater, cross-user leakage,
+  linkage, attribute inference, extraction, and membership inference.
+- Privacy-accounting drift, weak-attack false negatives, rights-ticket theater,
+  deletion/forgetting substitution, audit surveillance, group blind spots,
+  exception laundering, and compliance theater.
+
+Draft deliverables:
+
+- Terminal structural adjudication and integrated argument chapter.
+- Nine-source four-role packet with authoritative/legal status ceilings.
+- Authored twelve-surface Information Lifecycle Transaction and 26 rejecting mutations.
+- Finite Lean model with eleven theorem declarations and two public targets.
+- Prospectively frozen six-arm natural campaign across thirteen failure families,
+  at least three seeds, positive controls, independent evaluation, full
+  denominators, derivative rights propagation, and joint utility/privacy/rights/cost.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:privacy_information_flow.admission_invariants` | `AsiStackProofs.PrivacyInformationFlow` | An accepted finite information use requires matching purpose and authority, minimization, complete-enough flow, and competent privacy evaluation. | implemented |
+| `lean:privacy_information_flow.outcome_separation` | `AsiStackProofs.PrivacyInformationFlow` | An accepted bounded receipt preserves storage, behavior, influence, privacy, and legal-compliance separation and refuses authority laundering. | implemented |
+
+The formal model and authored transaction contain no personal data and do not
+establish a valid purpose, authority, complete flow, privacy guarantee, attack
+absence, fulfilled right, legal compliance, support, readiness, or release.
 
 ### Model-Weight Custody and Hardware Roots of Trust
 
@@ -4605,7 +4688,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 308 proof targets, 103 Lean modules, 1359 theorem declarations, 921 derived/decomposed, 230 direct/projection, 208 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 310 proof targets, 104 Lean modules, 1370 theorem declarations, 924 derived/decomposed, 230 direct/projection, 216 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

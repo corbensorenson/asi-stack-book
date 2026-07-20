@@ -431,10 +431,19 @@ Across 66 atoms, the terminal ledger records 65 `blocked_after_full_attempt`; 1 
 :::
 <!-- P7-EVIDENCE-RECONCILIATION:END -->
 
+Privacy, Data Rights, and Information-Flow Governance takes the next boundary:
+authenticated and authorized access does not by itself permit every collection,
+inference, linkage, retention, training, sharing, or derivative use. It receives
+security identity and policy receipts, then returns purpose, minimization,
+privacy-evaluation, rights, and remedy residuals without altering Security
+Kernel authority.
+
 ## Handoff
 
 Security Kernel and Digital SCIFs governs runtime secret and authority
-boundaries. Model-Weight Custody and Hardware Roots of Trust now governs the
-distinct model artifact, its encrypted custody, attestation-gated loading,
-release scope, revocation, and residuals before Recursive Self-Improvement
-Boundaries considers changes to the system that might alter either boundary.
+boundaries. Privacy, Data Rights, and Information-Flow Governance now governs
+whether authorized information processing remains within purpose,
+minimization, privacy-evaluation, derivative-rights, and remedy boundaries.
+Model-Weight Custody remains the following owner for the resulting model-family
+artifacts. This handoff does not claim that either privacy or security has been
+achieved in deployment.

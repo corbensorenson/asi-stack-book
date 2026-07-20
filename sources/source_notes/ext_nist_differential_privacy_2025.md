@@ -9,15 +9,15 @@
 | Citation label | Near et al. (2025), NIST SP 800-226 |
 | Published / updated | 2025-03-06 / 2025-03-06 |
 | DOI | 10.6028/NIST.SP.800-226 |
-| Review state | Preliminary second-tranche audit note; the proposed chapter remains unadmitted. |
-| Ingestion basis | Official NIST final-publication metadata and abstract inspected. The publication PDF, supplemental notebooks, implementations, datasets, and privacy evaluations were not ingested or run locally. |
+| Review state | Final publication body reviewed for the admitted argument chapter. |
+| Ingestion basis | Official final PDF reviewed at the Executive Summary; Sections 2--7 on privacy claims, the DP pyramid, mathematical, implementation, system, and operational hazards, and evaluation workflow; appendices and terminology. Supplemental notebooks and implementations were not run locally. |
 
 ## Thesis
 
 Differential privacy is a mathematical framework for quantifying privacy loss
 when an entity's data appears in a dataset, but evaluating a software claim
 requires attention to implementation considerations and privacy hazards. The
-reviewed NIST abstract supplies a preliminary evaluation frame, not a local
+reviewed NIST publication supplies an evaluation frame, not a local
 privacy guarantee or a complete data-rights regime.
 
 ## Mechanisms
@@ -30,8 +30,8 @@ privacy guarantee or a complete data-rights regime.
 
 ## Evidence
 
-SP 800-226 is official NIST guidance. The reviewed abstract establishes the
-publication's scope and framing; it does not demonstrate that any local system
+SP 800-226 is official NIST guidance. Its pyramid and hazard analysis distinguish
+mathematical, implementation, system, and operational claims; it does not demonstrate that any local system
 implements differential privacy correctly. No parameter selection, accountant,
 attack evaluation, utility measurement, notebook, or compliance mapping was
 performed here.
@@ -46,16 +46,16 @@ performed here.
 
 ## Book Chapters Supported
 
-- Proposed: `privacy-data-rights-and-information-flow-governance`
+- `privacy-data-rights-and-information-flow-governance`
 - Existing boundary owners: `security-kernel-and-digital-scifs`,
   `data-engines-continual-learning-and-unlearning`, and
   `context-transactions-snapshots-mounts-and-taint`
 
 ## Claims To Add Or Update
 
-- Retain SP 800-226 as a preliminary differential-privacy evaluation source.
-- Require full-publication passage review before naming specific pyramid
-  factors, hazards, parameter rules, or conformance checks.
+- Use SP 800-226 as a paper-body-reviewed differential-privacy evaluation source.
+- Require the definition, privacy unit, adjacency, implementation, system,
+  composition, parameters, and operational context to accompany a DP claim.
 - Keep privacy engineering, legal rights, and compliance claims separate.
 
 ## Open Questions
