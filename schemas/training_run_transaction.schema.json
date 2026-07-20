@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASI Stack Training Run Transaction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "transaction_id", "case_kind", "identity", "frozen_inputs", "topology", "numerical_policy", "execution_ledger", "checkpoint", "resume_probe", "checkpoint_family", "qualification_handoff", "expected_route", "source_ids", "non_authorities"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.training_run_transaction.v1"},
+    "transaction_id": {"type": "string", "minLength": 1},
+    "case_kind": {"const": "authored_argument_control_not_empirical_training_result"},
+    "identity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["run_contract_digest", "architecture_digest", "data_lease_digest", "objective_digest", "code_digest", "environment_digest", "topology_digest", "numerical_policy_digest"],
+      "properties": {
+        "run_contract_digest": {"type": "string", "minLength": 1}, "architecture_digest": {"type": "string", "minLength": 1}, "data_lease_digest": {"type": "string", "minLength": 1}, "objective_digest": {"type": "string", "minLength": 1}, "code_digest": {"type": "string", "minLength": 1}, "environment_digest": {"type": "string", "minLength": 1}, "topology_digest": {"type": "string", "minLength": 1}, "numerical_policy_digest": {"type": "string", "minLength": 1}
+      }
+    },
+    "frozen_inputs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["frozen_before_run", "architecture", "data_lease", "objective", "optimizer", "scheduler", "budget", "stopping_rule", "failure_policy", "selection_rule", "qualification_rule"],
+      "properties": {
+        "frozen_before_run": {"const": true}, "architecture": {"type": "string", "minLength": 1}, "data_lease": {"type": "string", "minLength": 1}, "objective": {"type": "string", "minLength": 1}, "optimizer": {"type": "string", "minLength": 1}, "scheduler": {"type": "string", "minLength": 1}, "budget": {"type": "string", "minLength": 1}, "stopping_rule": {"type": "string", "minLength": 1}, "failure_policy": {"type": "string", "minLength": 1}, "selection_rule": {"const": "validation_only_with_all_candidates_retained"}, "qualification_rule": {"const": "held_out_independent_after_selection"}
+      }
+    },
+    "topology": {
+      "type": "object", "additionalProperties": false,
+      "required": ["device_count", "device_mesh", "data_parallel", "tensor_parallel", "pipeline_parallel", "context_parallel", "expert_parallel", "collective_library", "compiler_or_planner", "global_batch", "microbatch", "gradient_accumulation", "optimizer_step_semantics", "topology_recorded"],
+      "properties": {
+        "device_count": {"type": "integer", "minimum": 1}, "device_mesh": {"type": "string", "minLength": 1}, "data_parallel": {"type": "integer", "minimum": 1}, "tensor_parallel": {"type": "integer", "minimum": 1}, "pipeline_parallel": {"type": "integer", "minimum": 1}, "context_parallel": {"type": "integer", "minimum": 1}, "expert_parallel": {"type": "integer", "minimum": 1}, "collective_library": {"type": "string", "minLength": 1}, "compiler_or_planner": {"type": "string", "minLength": 1}, "global_batch": {"type": "integer", "minimum": 1}, "microbatch": {"type": "integer", "minimum": 1}, "gradient_accumulation": {"type": "integer", "minimum": 1}, "optimizer_step_semantics": {"type": "string", "minLength": 1}, "topology_recorded": {"const": true}
+      }
+    },
+    "numerical_policy": {
+      "type": "object", "additionalProperties": false,
+      "required": ["parameter_dtype", "master_parameter_dtype", "gradient_accumulation_dtype", "collective_dtype", "loss_scaler", "overflow_policy", "determinism_class", "policy_recorded"],
+      "properties": {
+        "parameter_dtype": {"type": "string", "minLength": 1}, "master_parameter_dtype": {"type": "string", "minLength": 1}, "gradient_accumulation_dtype": {"type": "string", "minLength": 1}, "collective_dtype": {"type": "string", "minLength": 1}, "loss_scaler": {"type": "string", "minLength": 1}, "overflow_policy": {"type": "string", "minLength": 1}, "determinism_class": {"enum": ["bitwise", "operation_order_bounded", "statistical_only"]}, "policy_recorded": {"const": true}
+      }
+    },
+    "execution_ledger": {
+      "type": "object", "additionalProperties": false,
+      "required": ["attempted_runs", "completed_runs", "failed_runs", "interrupted_runs", "recovered_runs", "failed_runs_retained", "heartbeats_complete", "anomalies_append_only", "data_cursor_committed"],
+      "properties": {
+        "attempted_runs": {"type": "integer", "minimum": 1}, "completed_runs": {"type": "integer", "minimum": 0}, "failed_runs": {"type": "integer", "minimum": 0}, "interrupted_runs": {"type": "integer", "minimum": 0}, "recovered_runs": {"type": "integer", "minimum": 0}, "failed_runs_retained": {"const": true}, "heartbeats_complete": {"const": true}, "anomalies_append_only": {"const": true}, "data_cursor_committed": {"const": true}
+      }
+    },
+    "checkpoint": {
+      "type": "object", "additionalProperties": false,
+      "required": ["checkpoint_id", "logical_step", "required_state_classes", "captured_state_classes", "shard_manifest_digest", "logical_step_consistent", "durably_committed", "completion_receipt", "validated_before_resume"],
+      "properties": {
+        "checkpoint_id": {"type": "string", "minLength": 1}, "logical_step": {"type": "integer", "minimum": 0}, "required_state_classes": {"type": "array", "minItems": 10, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}, "captured_state_classes": {"type": "array", "minItems": 10, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}, "shard_manifest_digest": {"type": "string", "minLength": 1}, "logical_step_consistent": {"const": true}, "durably_committed": {"const": true}, "completion_receipt": {"type": "string", "minLength": 1}, "validated_before_resume": {"const": true}
+      }
+    },
+    "resume_probe": {
+      "type": "object", "additionalProperties": false,
+      "required": ["probe_kind", "reference_path", "resumed_path", "matched_steps", "data_cursor_exact", "rng_state_exact", "scheduler_state_exact", "scaler_state_exact", "topology_disposition_recorded", "comparison_metrics", "result"],
+      "properties": {
+        "probe_kind": {"const": "authored_interface_positive_control_not_executed_training"}, "reference_path": {"type": "string", "minLength": 1}, "resumed_path": {"type": "string", "minLength": 1}, "matched_steps": {"type": "integer", "minimum": 1}, "data_cursor_exact": {"const": true}, "rng_state_exact": {"const": true}, "scheduler_state_exact": {"const": true}, "scaler_state_exact": {"const": true}, "topology_disposition_recorded": {"const": true}, "comparison_metrics": {"type": "array", "minItems": 4, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}, "result": {"const": "interface_contract_satisfied_no_empirical_claim"}
+      }
+    },
+    "checkpoint_family": {
+      "type": "object", "additionalProperties": false,
+      "required": ["candidate_ids", "selected_id", "selection_split", "all_candidates_retained", "failed_runs_retained", "selection_rule_honored"],
+      "properties": {
+        "candidate_ids": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}, "selected_id": {"type": "string", "minLength": 1}, "selection_split": {"const": "validation"}, "all_candidates_retained": {"const": true}, "failed_runs_retained": {"const": true}, "selection_rule_honored": {"const": true}
+      }
+    },
+    "qualification_handoff": {
+      "type": "object", "additionalProperties": false,
+      "required": ["candidate_id", "qualification_dataset_unopened_at_selection", "evaluator_independent_of_training_and_selection", "training_integrity_claim_only", "quality_claim_requested", "support_transition_requested", "release_requested"],
+      "properties": {
+        "candidate_id": {"type": "string", "minLength": 1}, "qualification_dataset_unopened_at_selection": {"const": true}, "evaluator_independent_of_training_and_selection": {"const": true}, "training_integrity_claim_only": {"const": true}, "quality_claim_requested": {"const": false}, "support_transition_requested": {"const": false}, "release_requested": {"const": false}
+      }
+    },
+    "expected_route": {"const": "accept_bounded_qualification_handoff"},
+    "source_ids": {"type": "array", "minItems": 7, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "non_authorities": {"type": "array", "minItems": 8, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+  }
+}

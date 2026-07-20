@@ -34,11 +34,11 @@ they earn an N0–N5 classification.
 
 The latest immutable public living-book release remains `v2.3.0`. At roadmap
 activation, the working book contained 55 chapters; the first structural tranche
-has since moved the working manifest and manuscript to 59 argument-level
-chapters. The v2.2 reader evidence freeze and X Article synopsis are separate
+moved the working manifest to 59 argument-level chapters, and terminal P6.4-A1
+admission has now moved it to 60. The v2.2 reader evidence freeze and X Article synopsis are separate
 newer artifacts. The post-v2.3 evidence corpus first reached committed custody
 at `882b2a82c`. The latest clean, pushed, built, and deployed ancestral
-checkpoint is `9e994c345` on 2026-07-19. Neither checkpoint is a new
+checkpoint is `bc33a883a` on 2026-07-19. Neither checkpoint is a new
 living-book or reader release, DOI/archive deposit, license grant, or public
 post.
 
@@ -46,7 +46,7 @@ post.
 
 The book's strongest assets are architecture breadth, explicit interfaces,
 claim discipline, negative-evidence hygiene, and reproducible research
-machinery. Its limiting weakness is causal concentration: all 59 chapter cores
+machinery. Its limiting weakness is causal concentration: all 60 chapter cores
 remain `Design rationale` at `argument`, no competence-qualified natural,
 non-authored empirical transition exists, and the reader must traverse many
 mechanisms before seeing one decisive case that tests the stack against a
@@ -86,11 +86,11 @@ outcomes, or evaluator judgments remain closed while other work proceeds.
 | Slot | Next packet | Entry condition | Terminal output |
 |---|---|---|---|
 | Continuous custody | P0 repository and public-truth reconciliation | Always open | Clean `main`, exact generated/source boundaries, current roadmap pointers, and no stale claim or release identity. |
-| Book slot — now | `P6.4-A1-governed-model-training-distributed-optimization-and-scaling-adjudication` | All four first-tranche chapters terminal; first candidate in the frozen second-tranche dependency order | Adjudicate exactly one proposed owner through admission, narrowing, return-to-owner, or rejection. Freeze the training-run transaction, four source roles, owner boundary, competence burden, reader value, and non-claims before any manifest insertion. |
+| Book slot — now | `P6.4-A2-privacy-data-rights-and-information-flow-governance-adjudication` | P6.4-A1 is terminal; privacy/data-rights is next in the frozen dependency order | Adjudicate exactly one proposed owner through admission, narrowing, return-to-owner, or rejection. Freeze the information-lifecycle transaction, four source roles, owner boundary, competence burden, reader value, and non-claims before any manifest insertion. |
 | Formal slot — terminal | `P4-terminal-no-open-formal-packet` | All six frozen clusters terminal across 24 modules | Maintain the terminal audits and their consumers; open no new proof packet unless a dated, machine-validated amendment names the claim consumer, countermodel, and maximum inference. |
 | Empirical headline — blocked | P2 pool-wide sequential materialization | Exact host free space meets the frozen 50 GiB floor and every setup action remains inside the approved Docker-scoped protocol | Thirty sealed candidate recipes and receipts, then rank 5 setup retry eligibility without protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — terminal | White-Box, World Models, Human Factors, and Governed Operations are terminal at argument support | Four exact integration packets preserve owners, sources, formal ceilings, protocols, reader handoffs, and no-promotion boundaries | Maintenance only; no reopened chapter packet without a dated machine-validated defect. |
-| Second structural tranche — now | Adjudicate `governed-model-training-distributed-optimization-and-scaling` first, then one candidate at a time in the frozen dependency batches | One active candidate maximum; four source roles and owner boundary must be ready before admission | Admit, narrow, return to existing owners, or reject with a durable decision packet. Research admission alone is never success. |
+| Second structural tranche — now | `governed-model-training-distributed-optimization-and-scaling` is terminal at argument support; adjudicate `privacy-data-rights-and-information-flow-governance` next, then one candidate at a time | One active candidate maximum; four source roles and owner boundary must be ready before admission | Admit, narrow, return to existing owners, or reject with a durable decision packet. Research admission alone is never success. |
 
 The 2026-07-19 checkpoint closed both former immediate packets,
 `P7.1a-W1-template-centralization-and-boundary-coverage` and
@@ -488,7 +488,7 @@ P1 is complete. The original 75-surface rehabilitation snapshot, including
 the 55 chapters live when that audit ran, remains digest-bound to commit
 `295642f21a39e2d735553b3a51ef6ba2f5e76d2c` in the maintenance status record.
 The maintained `evidence_quality/negative_inference_surface_audit.json` now
-recomputes the live projection: 79 surfaces including all 59 current chapters,
+recomputes the live projection: 80 surfaces including all 60 current chapters,
 zero forbidden overbroad phrases, zero missing named rehabilitation boundaries,
 and zero chapters that use `blocked_after_full_attempt` without also stating
 that the gaps are residual proof obligations rather than false claims. The X
@@ -854,7 +854,7 @@ The 2026-07-19 merge/addition audit is bound to
 0.298; editorial repetition is handled by P7.1a and cannot be used to collapse
 distinct owners. All four first-tranche candidates have now passed the source,
 exclusive-owner, Corben-crosswalk, and chapter-packet gates and are present in
-the 59-entry working manifest as conceptual, argument-level chapters:
+the working manifest as conceptual, argument-level chapters:
 
 1. `white-box-evidence-interpretability-and-activation-governance` in Part IV
    after Benchmark Ratchets owns model-internal evidence packets, mechanistic
@@ -885,7 +885,7 @@ vocabulary; world models sharpens the Platonic World Model and Theseus grounding
 boundary; Human Factors has a frozen ethics/privacy-aware study protocol with
 no recruitment authority or opened outcomes; and Operations has a bounded
 authored authority-to-effect safe-hold case that remains explicitly separate
-from the blocked natural flagship T4 trace. The second tranche now begins with
+from the blocked natural flagship T4 trace. The second tranche now proceeds with
 one candidate at a time. This lane runs beside P2 with
 protected capacity and may not delay, shrink, retune, or read P2/Q1/Q2 held-out
 work.
@@ -894,16 +894,20 @@ work.
 
 The end-to-end ownership audit is bound to
 `docs/structural_completeness_gap_audit_2026_07_19.md`. It finds thirteen further
-chapter candidates whose proposed contracts are absent from the current
-59-entry manifest. These are **research-admitted and manifest-gated**; they are
-not thirteen promised chapters. If and only if every candidate survives source,
-boundary, competence, and reader-value adjudication, the manifest would move
-from 59 to at most 72 chapters:
+chapter candidates whose proposed contracts were absent from the 59-entry
+manifest at audit time. P6.4-A1 has since survived adjudication and is terminal
+as the 60th argument-level chapter; the remaining twelve are
+**research-admitted and manifest-gated**, not promised chapters. If and only if
+every remaining candidate survives source, boundary, competence, and
+reader-value adjudication, the manifest would move from 60 to at most 72
+chapters:
 
-1. `governed-model-training-distributed-optimization-and-scaling` owns the
+1. **Terminal — admitted at argument support.** `governed-model-training-distributed-optimization-and-scaling` owns the
    training-run transaction from frozen inputs and topology through distributed
    execution, full-state recovery, checkpoint-family selection, and qualified
-   handoff.
+   handoff. Its decision packet is
+   `docs/p6_4_a1_governed_model_training_adjudication.md`; no empirical,
+   support, release, or publication effect follows.
 2. `perception-sensor-fusion-and-observation-trust` owns how time-bound,
    calibrated, provenance-bearing environmental evidence becomes an admitted
    observation rather than assumed truth.

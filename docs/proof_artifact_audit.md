@@ -10,11 +10,11 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 306 |
-| Manifest status counts | {"implemented": 306} |
-| Triage class counts | {"formal-invariant": 306} |
-| Lean modules referenced | 69 |
-| Chapters with proof targets | 59 |
+| Proof targets audited | 308 |
+| Manifest status counts | {"implemented": 308} |
+| Triage class counts | {"formal-invariant": 308} |
+| Lean modules referenced | 70 |
+| Chapters with proof targets | 60 |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -57,6 +57,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/FailureModes.lean` | 4 | 23 | 0 | 6 | 4 |
 | `lean/AsiStackProofs/FastGenerationRefinement.lean` | 5 | 17 | 0 | 12 | 3 |
 | `lean/AsiStackProofs/GovernanceRights.lean` | 1 | 7 | 0 | 11 | 3 |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | 2 | 13 | 0 | 7 | 1 |
 | `lean/AsiStackProofs/GovernedOperations.lean` | 2 | 13 | 0 | 7 | 2 |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | 2 | 9 | 0 | 6 | 2 |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | 6 | 17 | 0 | 10 | 3 |
@@ -127,6 +128,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `failure-modes-of-ungoverned-intelligence` | 4 | 4 | 0 | 0 |
 | `fast-generation-architectures` | 5 | 5 | 0 | 0 |
 | `governed-deliberation-and-test-time-scaling` | 10 | 10 | 0 | 0 |
+| `governed-model-training-distributed-optimization-and-scaling` | 2 | 2 | 0 | 0 |
 | `governed-operations-incident-command-and-graceful-degradation` | 2 | 2 | 0 | 0 |
 | `governed-world-models-and-reality-grounding` | 2 | 2 | 0 | 0 |
 | `human-factors-and-meaningful-control-in-oversight` | 2 | 2 | 0 | 0 |
@@ -335,6 +337,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:moecot.runtime.operational_invariant` | `routing-heads-and-specialist-cores` | `AsiStackProofs.RoutingRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:moecot.runtime.failure_blocks_promotion` | `routing-heads-and-specialist-cores` | `AsiStackProofs.RoutingRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:cognitive_kernel.abi_trace_invariants` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `AsiStackProofs.ReplaceableCognitiveSubstrates` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:governed_training.run_admission_invariants` | `governed-model-training-distributed-optimization-and-scaling` | `AsiStackProofs.GovernedModelTraining` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:governed_training.resume_and_handoff_separation` | `governed-model-training-distributed-optimization-and-scaling` | `AsiStackProofs.GovernedModelTraining` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:readiness.gates.operational_invariant` | `readiness-gates-residual-escrow-and-quarantine` | `AsiStackProofs.ReadinessRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:readiness.gates.failure_blocks_promotion` | `readiness-gates-residual-escrow-and-quarantine` | `AsiStackProofs.ReadinessRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:readiness.gates.lifecycle_probe_bridge` | `readiness-gates-residual-escrow-and-quarantine` | `AsiStackProofs.ReadinessRefinement` | triage ok; module ok; chapter tag ok; limitation ok |

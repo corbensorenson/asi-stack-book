@@ -228,6 +228,9 @@ closed.
 16. Requested, resolved, and observed resource receipts.
 17. External backend sovereignty through thin adapters.
 18. Complexity governance for the control plane itself.
+19. Training-run identity must retain exact seed, code, data-order, checkpoint
+    completion, failed-run, quarantine, and candidate-family state before a
+    checkpoint can enter independent qualification.
 
 ## Book Chapters Supported
 
@@ -248,9 +251,13 @@ Primary existing routes:
 - `readiness-gates-residual-escrow-and-quarantine`
 - `procedural-memory-and-cognitive-loop-closure`
 - `artifact-steward-agents-and-living-project-governance`
+- `governed-model-training-distributed-optimization-and-scaling`
 
-No new chapter is proposed yet. The epistemic-control-plane concept should be
-deduplicated after Corben's Best Model Possible is mined.
+The governed-model-training route uses this source as a pinned local
+implementation and failure comparator, not as evidence that a natural
+distributed run, faithful resume, or qualified model exists. The broader
+epistemic-control-plane concept remains deduplicated against neighboring
+chapters.
 
 ## Failure Modes
 

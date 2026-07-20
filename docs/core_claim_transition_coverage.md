@@ -9,9 +9,9 @@ It checks the v1.0 claim-state gate: every manifest chapter core claim must have
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 59 |
+| Manifest chapter core claims | 60 |
 | Accepted core evidence-transition records | 22 |
-| Accepted explicit no-promotion decisions | 37 |
+| Accepted explicit no-promotion decisions | 38 |
 | Missing core-claim coverage | 0 |
 
 All chapter core support states remain `argument`. The separate measured/replayed transitions for `living-book-methodology.phase5_harness_registry_runner`, `resource-economics.costed_route_budget_slice`, and `circle-calculus.external_rope_receipt_replay` are not chapter core claims and are not counted in this coverage table.
@@ -62,6 +62,7 @@ All chapter core support states remain `argument`. The separate measured/replaye
 | `data-engines-continual-learning-and-unlearning.core` | Data Engines, Continual Learning, and Unlearning | `argument_only` | no local data engine or dataset admission runtime; no measured data quality, coverage, model quality, privacy, or synthetic-data result; no verified deletion across checkpoints, adapters, caches, retrieval stores, distilled models, or published artifacts |
 | `failure-modes-of-ungoverned-intelligence.core` | Failure Modes of Ungoverned Intelligence | `argument_only` | no system-level red-team result yet; no empirical failure corpus evaluation; no deployed monitor or detector trace |
 | `governed-deliberation-and-test-time-scaling.core` | Governed Deliberation and Test-Time Scaling | `argument_only` | no local deliberation engine, verifier, or workload; no measured quality, cost, or stopping-policy result; finite theorems do not establish verifier correctness, reasoning quality, safety, or generality |
+| `governed-model-training-distributed-optimization-and-scaling.core` | Governed Model Training, Distributed Optimization, and Scaling | `argument_only` | the five-arm natural training and fault campaign is frozen but unexecuted; the current fixture validates record semantics rather than a distributed runtime or recovered optimization trajectory; source-reported scale, throughput, and checkpoint results have not been locally reproduced or independently qualified |
 | `governed-operations-incident-command-and-graceful-degradation.core` | Governed Operations, Incident Command, and Graceful Degradation | `argument_only` | no local effect-complete rollback and compensation harness covering descendants and external effects; no adversarial game-day evidence calibrates detection, severity, containment, or recovery thresholds; general incident-response guidance has not been independently validated for autonomous AI |
 | `governed-world-models-and-reality-grounding.core` | Governed World Models and Reality Grounding | `argument_only` | no local learned world-model campaign or held-out causal intervention benchmark; no representative threshold connects prediction support and uncertainty to safe action admission; reported benchmark performance does not establish open-world grounding, causal fidelity, or transfer |
 | `human-factors-and-meaningful-control-in-oversight.core` | Human Factors and Meaningful Control in Oversight | `argument_only` | no local representative human-subject study or deployed oversight envelope; no independently calibrated workload, comprehension, or intervention-latency thresholds; legacy automation evidence does not by itself establish transfer to modern agentic systems |

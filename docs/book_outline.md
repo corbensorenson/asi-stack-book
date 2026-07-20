@@ -119,7 +119,8 @@ publication status.
   `coil-attention-cyclic-memory-and-recurrence-contracts`,
   `coilra-multicoil-rope-and-cyclic-mixers`, and
   `open-research-agenda-and-bibliography-plan`.
-- **Load-bearing reference (30):** every remaining manifest chapter. Each owns
+- **Load-bearing reference (31):** every remaining manifest chapter, including
+  `governed-model-training-distributed-optimization-and-scaling`. Each owns
   a distinct interface, invariant, artifact, lifecycle, or failure family and
   remains discoverable through the architecture-reference product even when
   omitted from the fifteen-chapter narrative derivative.
@@ -3484,6 +3485,104 @@ ABI record semantics. They do not execute or compare real cognitive kernels,
 translate full training/runtime state, establish evaluator independence, or
 support a chapter-core promotion.
 
+### Governed Model Training, Distributed Optimization, and Scaling
+
+Stable ID: `governed-model-training-distributed-optimization-and-scaling`
+
+Chapter job: Own the training-run transaction from prospectively frozen
+architecture, data lease, objective, numerical policy, topology, and resource
+budget through distributed execution, full-state checkpoint and recovery,
+checkpoint-family selection, and an identity-bound handoff to independent
+qualification.
+
+Core claim: A model-training candidate is eligible for qualification only when a prospectively frozen run contract binds architecture, data lease and order, objective, optimizer, scheduler, numerical policy, device and parallelism topology, code and environment, budget, stopping and fault policy, complete attempted-run denominator, full declared checkpoint state, commit consistency, resume equivalence class, candidate-checkpoint family, validation-only selection, independent unopened qualification, and residual ownership; a loss reduction, completed job, high utilization, checkpoint file, successful load, recovered run, selected candidate, formal record proof, or source-reported scale result alone establishes neither faithful training, model quality, optimizer superiority, fault tolerance, safety, support, readiness, release, transfer, nor SOTA.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Mechanism or capability | `ext_llama3_herd_2024`, `ext_megatron_distributed_training_2021` | Use the reviewed Llama 3 training-systems sections and composed-parallelism paper to identify topology, numerical, checkpoint, interruption, optimizer-synchronization, batch, memory, and communication fields. Keep every reported result source-scoped. |
+| Limitation or failure | `ext_llama3_herd_2024`, `ext_datastates_llm_2024`, `ext_pytorch_distributed_checkpoint_2026` | Use for normal interruption burden, distributed checkpoint consistency, asynchronous completion, canonical state, resharding, strict load, and interface preconditions. Do not infer complete application state or exact resume. |
+| Competing designs | `ext_zero_optimizer_2019`, `ext_gspmd_2021` | Preserve progressive state sharding and compiler-mediated general sharding as serious alternatives under matched quality, hardware, tuning, and cost rather than combining them into one presumed winner. |
+| Measurement and evaluation | `ext_mlperf_training_v6_2026` | Use fixed quality targets, repetitions, system metadata, variance, divisions, time-to-quality, and result correction as a measurement comparator. No MLPerf run, safety result, or complete run-integrity claim follows. |
+
+
+| Manifest assignment reconciliation | `corbens_trainer_project` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Explain why code, data, weights, and loss do not fully identify a stateful
+  distributed training process.
+- Freeze architecture, data order, objective, optimizer, scheduler, numerical
+  policy, seeds, topology, environment, budget, faults, stopping, selection,
+  qualification, and nonclaims before outcomes.
+- Record the executed device mesh, every parallelism dimension, collective and
+  compiler plan, batch arithmetic, synchronization, and optimizer semantics.
+- Make base and architecture-specific model, optimizer, scheduler, scaler, RNG,
+  sampler, data-cursor, topology, and compiler state explicit.
+- Preserve every attempt, failure, interruption, recovery, anomaly,
+  intervention, candidate checkpoint, best/final pair, and actual cost.
+- Advance checkpoints through request, staging, durable commit, shard and
+  completeness validation, and resume authority.
+- Test bitwise, operation-order-bounded, or statistical resume equivalence under
+  a prospectively frozen claim.
+- Select on validation only, keep qualification unopened, and hand one exact
+  candidate to an independent evaluator without support or release authority.
+
+Primary invariants:
+
+- Frozen run inputs precede outcome inspection and every material change creates
+  a new version or explicit run segment.
+- Topology and numerical policy are semantic inputs, and batch arithmetic and
+  optimizer-step semantics reconcile.
+- Data order and example multiplicity remain reconstructable across retry and
+  recovery.
+- Checkpoint shards represent one logical step, a durable commit, and the
+  prospectively required state closure.
+- Resume claims name their equivalence class and tolerance before results.
+- Attempted, failed, interrupted, recovered, completed, selected, qualified,
+  released, best, and final denominators remain distinct and retained.
+- Qualification cannot select checkpoints, and training creates no support,
+  readiness, release, or publication authority.
+
+Failure modes to cover:
+
+- Identity, topology, numerical, data-order, or optimizer-semantics drift.
+- Torn or undurable checkpoints, state amnesia, data replay/skip, stale or
+  duplicated updates, and undeclared precision surgery.
+- Failure censorship, loss-spike intervention laundering, checkpoint
+  cherry-picking, and trainer self-certification.
+- Peak-throughput, parameter-capacity, or eventual-convergence substitution for
+  time-to-quality, run integrity, complete cost, or model qualification.
+- Record-completeness theater where the schema omits real framework, substrate,
+  compiler, data-pipeline, or external state.
+
+Draft deliverables:
+
+- Terminal structural adjudication with an exclusive owner boundary, all four
+  source roles, competence burden, reader value, and nonclaims.
+- Integrated argument-level reader chapter placed after Replaceable Cognitive
+  Substrates with exact handoffs to data, policy optimization, supply chain,
+  resource, custody, benchmark, and readiness owners.
+- Ten-class authored Training Run Transaction schema and fixture, independent
+  topology/batch/denominator/selection validator, and 21 rejecting mutations.
+- Finite Lean model with thirteen theorem declarations and two public targets;
+  record-route semantics only.
+- Prospectively frozen five-arm natural campaign across thirteen fault families,
+  at least three seeds, multiple timings, hidden independent qualification,
+  complete run retention, and joint quality/integrity/resource/operator cost.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:governed_training.run_admission_invariants` | `AsiStackProofs.GovernedModelTraining` | An accepted finite handoff requires exact declared identity, topology/numerical identity, complete committed checkpoint state, complete failure denominator, and no support or release request. | implemented |
+| `lean:governed_training.resume_and_handoff_separation` | `AsiStackProofs.GovernedModelTraining` | An accepted finite handoff requires accounted resume state, retained checkpoint and failure families, validation-only selection, and unopened independent qualification. | implemented |
+
+The formal model and authored transaction do not train a model, execute a
+distributed run, establish complete state, prove resume equivalence, reproduce
+source results, or support any model-quality, efficiency, fault-tolerance,
+support, readiness, release, transfer, SOTA, AGI, or ASI claim.
+
 ### Readiness Gates, Residual Escrow, and Quarantine
 
 Stable ID: `readiness-gates-residual-escrow-and-quarantine`
@@ -4023,7 +4122,7 @@ Source loading queue:
 | Memory and adaptive-compute comparators | `ext_mem0_2025`, `ext_recurrent_transformer_2026`, `ext_dynamic_compute_recurrent_transformers_2026` | Compare token/latency savings, recurrent cache/traffic claims, and difficulty-dependent compute. Require pinned configurations and distinguish allocation from generalization, quality, and safety. |
 
 
-| Manifest assignment reconciliation | `ext_claw_swe_bench_2026`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `ext_claw_swe_bench_2026`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_mlperf_training_v6_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Compute, context, verification, simulation fidelity, and human attention are scarce resources that the architecture must allocate explicitly.
@@ -4506,7 +4605,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 306 proof targets, 102 Lean modules, 1346 theorem declarations, 917 derived/decomposed, 230 direct/projection, 199 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 308 proof targets, 103 Lean modules, 1359 theorem declarations, 921 derived/decomposed, 230 direct/projection, 208 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -4593,7 +4692,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `ext_mlperf_training_v6_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs a way to move capability claims through evidence without overfitting to fixed benchmarks.

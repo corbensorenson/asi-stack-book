@@ -38,7 +38,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v14"
+      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v15"
     },
     "roadmap_id": {
       "const": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17"
@@ -98,7 +98,7 @@
           "const": false
         },
         "immediate_book_packet": {
-          "const": "P6.4-A1-governed-model-training-distributed-optimization-and-scaling-adjudication"
+          "const": "P6.4-A2-privacy-data-rights-and-information-flow-governance-adjudication"
         },
         "immediate_formal_packet": {
           "const": "P4-terminal-no-open-formal-packet"
@@ -260,7 +260,7 @@
               "const": "split_lane_active"
             },
             "case_independent_compression_state": {
-              "const": "first_tranche_terminal_second_tranche_a1_ready"
+              "const": "first_tranche_terminal_second_tranche_a1_terminal_a2_ready"
             },
             "flagship_threading_state": {
               "const": "blocked_by_T4"
@@ -298,10 +298,10 @@
           ],
           "properties": {
             "state": {
-              "const": "first_tranche_manifest_admitted_second_tranche_research_gated"
+              "const": "first_tranche_terminal_second_tranche_a1_terminal"
             },
             "current_manifest_chapter_count": {
-              "const": 59
+              "const": 60
             },
             "maximum_if_all_candidates_pass": {
               "const": 72
@@ -387,11 +387,16 @@
                 "objective_formation_requires_target_proxy_integrity_and_ontology_gate",
                 "embedded_agency_remains_cross_book_foundations_program",
                 "societal_part_requires_three_admitted_owner_gate",
-                "source_roles_required_where_literature_permits"
+                "source_roles_required_where_literature_permits",
+                "adjudicated_candidate_ids",
+                "terminal_candidate_dispositions",
+                "active_candidate_id",
+                "remaining_candidate_ids",
+                "a1_decision_packet"
               ],
               "properties": {
                 "state": {
-                  "const": "research_admitted_manifest_gated"
+                  "const": "a1_terminal_twelve_manifest_gated"
                 },
                 "audit_path": {
                   "const": "docs/structural_completeness_gap_audit_2026_07_19.md"
@@ -417,10 +422,10 @@
                   ]
                 },
                 "manifest_admitted_count": {
-                  "const": 0
+                  "const": 1
                 },
                 "primary_source_record_count_added": {
-                  "const": 17
+                  "const": 23
                 },
                 "communication_required_source_ids": {
                   "const": [
@@ -463,6 +468,38 @@
                     "competing_design",
                     "measurement_or_evaluation"
                   ]
+                },
+                "adjudicated_candidate_ids": {
+                  "const": [
+                    "governed-model-training-distributed-optimization-and-scaling"
+                  ]
+                },
+                "terminal_candidate_dispositions": {
+                  "const": {
+                    "governed-model-training-distributed-optimization-and-scaling": "admitted_terminal_argument_reader_chapter"
+                  }
+                },
+                "active_candidate_id": {
+                  "const": "privacy-data-rights-and-information-flow-governance"
+                },
+                "remaining_candidate_ids": {
+                  "const": [
+                    "perception-sensor-fusion-and-observation-trust",
+                    "embodied-agency-real-time-control-and-physical-safety",
+                    "privacy-data-rights-and-information-flow-governance",
+                    "human-ai-organizations-delegation-and-accountability",
+                    "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+                    "autonomous-replication-proliferation-and-containment",
+                    "scientific-discovery-and-experimental-governance",
+                    "human-ai-communication-persuasion-and-epistemic-security",
+                    "institutions-international-coordination-and-public-legitimacy",
+                    "ai-deployment-transition-distribution-and-human-agency",
+                    "physical-compute-infrastructure-energy-and-environmental-constraints",
+                    "governed-objective-formation-value-learning-and-goal-integrity"
+                  ]
+                },
+                "a1_decision_packet": {
+                  "const": "docs/p6_4_a1_governed_model_training_adjudication.md"
                 }
               }
             },
@@ -557,7 +594,7 @@
           "const": "v2.3.0"
         },
         "live_working_chapter_count": {
-          "const": 59
+          "const": 60
         },
         "activation_registry_atom_count": {
           "const": 3730
@@ -569,7 +606,7 @@
           "const": 3745
         },
         "chapter_core_argument_count": {
-          "const": 59
+          "const": 60
         },
         "chapter_core_promotion_count": {
           "const": 0
@@ -623,22 +660,22 @@
           "const": 0
         },
         "proof_target_count": {
-          "const": 306
+          "const": 308
         },
         "lean_module_count": {
-          "const": 102
+          "const": 103
         },
         "theorem_declaration_count": {
-          "const": 1346
+          "const": 1359
         },
         "derived_or_decomposed_theorem_count": {
-          "const": 917
+          "const": 921
         },
         "direct_or_projection_theorem_count": {
           "const": 230
         },
         "unknown_or_mixed_theorem_count": {
-          "const": 199
+          "const": 208
         },
         "historical_v2_2_approved_exact_local_reader_formats": {
           "const": [
@@ -918,11 +955,13 @@
         },
         "current_surface_count": {
           "type": "integer",
-          "minimum": 75
+          "minimum": 75,
+          "const": 80
         },
         "live_chapter_surface_count": {
           "type": "integer",
-          "minimum": 55
+          "minimum": 55,
+          "const": 60
         },
         "forbidden_overbroad_phrase_count": {
           "const": 0
@@ -1575,7 +1614,7 @@
           "const": false
         },
         "attested_head": {
-          "const": "9e994c3454512c9b0af0f6cbda99ba0894c21ba6"
+          "const": "bc33a883a7829f0444b0ff74a65a6a326eaca1e4"
         },
         "state": {
           "const": "pushed_deployed_clean_ancestral_checkpoint"

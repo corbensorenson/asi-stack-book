@@ -131,6 +131,26 @@ The reference architecture is a trace contract. A request enters through human i
 
 The participants in that trace are logical roles. They do not imply one model, process, machine, vendor, or physically separate cognitive module per lane. A single model can serve several roles when independent policy, state, and verification surfaces enforce the handoffs; one role can also be implemented by several models, deterministic tools, or human reviewers. The reference architecture is therefore substrate-neutral while remaining strict about responsibilities and authority.
 
+### Training candidates are transactions, not artifacts
+
+The same role separation now applies before a learned candidate reaches this
+trace. Replaceable Cognitive Substrates supplies an architecture and its
+architecture-specific state schema. Governed Model Training binds that choice
+to an exact data lease and order, objective, optimizer, scheduler, numerical
+policy, device and parallelism topology, environment, failure denominator,
+complete checkpoint state, resume-equivalence claim, and checkpoint family.
+The output is one identity-bound candidate plus a run receipt—not evidence that
+the candidate is useful, safe, or ready.
+
+Benchmark Ratchets must remain independent of checkpoint selection, and
+Readiness retains admission authority. This prevents a trainer from consulting
+protected qualification outcomes to choose its “best” checkpoint and then
+presenting the same outcomes as held out. It also prevents an integrated stack
+diagram from laundering a completed job, high utilization, successful load, or
+formal record route into model-quality evidence. No distributed ASI Stack
+training run has been executed for this interface; the present integration is
+an argument-level ownership and handoff contract.
+
 Behavioral and white-box evidence now join the trace as distinct siblings.
 Benchmark records say what happened under a scoped instrument. An Internal
 Evidence Packet says what one method observed or changed inside one exact model,

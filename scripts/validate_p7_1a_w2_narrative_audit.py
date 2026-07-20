@@ -22,7 +22,7 @@ ARTIFACT_REF = re.compile(r"(?:schemas|protocols)/[A-Za-z0-9_./-]+")
 MATH = re.compile(r"(?s)\$\$.*?\$\$|(?<!\$)\$(?!\$).*?(?<!\$)\$(?!\$)|\\\[.*?\\\]")
 EXPECTED_ROLE_COUNTS = {
     "thesis-bearing": 11,
-    "load-bearing-reference": 30,
+    "load-bearing-reference": 31,
     "implementation-case": 7,
     "speculative-deferred-research": 11,
 }
@@ -60,7 +60,7 @@ def errors(data: dict[str, Any]) -> list[str]:
     ids = [row["id"] for row in rows]
     if audit.get("state") != "terminal_complete" or audit.get("packet_id") != "P7.1a-W2-opening-variation-and-thesis-depth-leveling":
         out.append("packet identity or terminal state drifted")
-    if len(ids) != audit.get("manifest_chapter_count") or len(set(ids)) != 59:
+    if len(ids) != audit.get("manifest_chapter_count") or len(set(ids)) != 60:
         out.append("manifest chapter denominator drifted")
 
     roles = audit.get("chapter_roles", {})
@@ -186,8 +186,8 @@ def main() -> None:
     if failures:
         raise SystemExit("P7.1a W2 narrative audit failed:\n - " + "\n - ".join(failures))
     print(
-        "P7.1a W2 narrative audit passed: 59 chapters classified "
-        "(11 thesis, 30 reference, 7 implementation, 11 speculative/deferred); "
+        "P7.1a W2 narrative audit passed: 60 chapters classified "
+        "(11 thesis, 31 reference, 7 implementation, 11 speculative/deferred); "
         "8 opening formulas -> 0; three central chapters deepened by "
         "711/728/664 tokens; 9 mutations rejected; support effect none."
     )

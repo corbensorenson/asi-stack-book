@@ -365,16 +365,32 @@ def admitted_chapter_ids(status: dict[str, Any]) -> tuple[set[str], list[str]]:
     errors: list[str] = []
     tranche = status.get("quality_uplift_program", {}).get("structural_completeness_tranche", {})
     admitted: set[str] = set()
-    for key in ("first_tranche", "second_tranche"):
-        row = tranche.get(key, {})
-        candidates = [str(value) for value in row.get("candidate_ids", [])]
-        count = row.get("manifest_admitted_count")
-        if count == 0:
-            continue
-        if count != len(candidates) or len(set(candidates)) != len(candidates):
-            errors.append(f"{key} lacks an exact manifest-admitted identity set")
-            continue
-        admitted.update(candidates)
+    first = tranche.get("first_tranche", {})
+    first_ids = [str(value) for value in first.get("candidate_ids", [])]
+    if (
+        first.get("manifest_admitted_count") != len(first_ids)
+        or len(set(first_ids)) != len(first_ids)
+    ):
+        errors.append("first_tranche lacks an exact manifest-admitted identity set")
+    else:
+        admitted.update(first_ids)
+
+    second = tranche.get("second_tranche", {})
+    second_candidates = {str(value) for value in second.get("candidate_ids", [])}
+    terminal = second.get("terminal_candidate_dispositions", {})
+    second_ids = {
+        str(chapter_id)
+        for chapter_id, disposition in terminal.items()
+        if str(disposition).startswith("admitted_")
+    }
+    if (
+        second.get("manifest_admitted_count") != len(second_ids)
+        or not second_ids.issubset(second_candidates)
+        or not second_ids.issubset(set(second.get("adjudicated_candidate_ids", [])))
+    ):
+        errors.append("second_tranche lacks an exact manifest-admitted identity set")
+    else:
+        admitted.update(second_ids)
     return admitted, errors
 
 
@@ -568,8 +584,20 @@ def current_errors(data: dict[str, Any]) -> list[str]:
         out.append("current Appendix K implementation horizons disagree with the manifest")
 
     normalized_changelog = re.sub(r"\s+", " ", appendix["F"])
+    first_admitted_ids = set(
+        status.get("quality_uplift_program", {})
+        .get("structural_completeness_tranche", {})
+        .get("first_tranche", {})
+        .get("candidate_ids", [])
+    )
+    second_admitted_ids = admitted_ids - first_admitted_ids
+    first_boundary = (
+        f"from {ACTIVATION_CHAPTER_COUNT} to "
+        f"{ACTIVATION_CHAPTER_COUNT + len(first_admitted_ids)} entries"
+    )
     if admitted_ids and (
-        f"from {ACTIVATION_CHAPTER_COUNT} to {live_chapter_count} entries" not in normalized_changelog
+        first_boundary not in normalized_changelog
+        or (second_admitted_ids and "second-tranche load-bearing reference chapter" not in normalized_changelog)
         or any(
             str(row.get("title")) not in normalized_changelog
             for row in chapters

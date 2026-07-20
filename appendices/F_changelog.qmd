@@ -1,5 +1,33 @@
 # Changelog
 
+## 2026-07-19 — Governed model-training chapter terminal at argument support
+
+- Admitted `Governed Model Training, Distributed Optimization, and Scaling` as
+  the first second-tranche load-bearing reference chapter. It owns the exact
+  run transaction from frozen inputs through distributed execution,
+  full-state recovery, checkpoint-family selection, and independent
+  qualification handoff; it does not treat scale, throughput, or a checkpoint
+  as evidence of capability, safety, or release readiness.
+- Completed a seven-source, four-role review spanning training mechanisms,
+  documented limitations and failure surfaces, competing sharding and
+  checkpoint designs, and external measurement. Added explicit handoffs from
+  replaceable substrates into training and from training into readiness and
+  the integrated reference architecture.
+- Added a strict training-run transaction schema and authored fixture covering
+  ten state classes, run denominators, topology and batch arithmetic,
+  checkpoint commit state, resume equivalence, validation-only selection, and
+  twenty-one rejecting mutations. Two public proof targets are implemented
+  through thirteen Lean theorem declarations.
+- Froze—but did not execute—a five-arm, thirteen-fault, twelve-competence-gate
+  campaign with three-seed minimums and hidden independent qualification. Its
+  protected outcomes remain unopened, so this tranche changes argument support
+  and structural completeness only; it supplies no training result, empirical
+  support, release, publication, AGI, or ASI claim.
+- Reconciled the reader and governance surfaces to 60 manifest chapters, 351
+  sources, 308 implemented proof targets, 103 Lean modules, and 1,359 theorem
+  declarations. Advanced the sole active structural packet to Privacy, Data
+  Rights, and Information-Flow Governance.
+
 ## 2026-07-19 — First structural tranche and semantic proof program terminal
 
 - Terminally integrated `Governed Operations, Incident Command, and Graceful
@@ -5946,7 +5974,7 @@
 - Boundary: these artifacts prove only finite record-routing and schema shape.
   They do not admit training data, run a training loop, measure data quality,
   establish leakage absence, verify unlearning, or promote a chapter core claim.
-- Proof-depth surface synchronization: Current proof-depth snapshot: 306 proof targets, 102 Lean modules, 1346 theorem declarations, 917 derived/decomposed, 230 direct/projection, 199 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Proof-depth surface synchronization: Current proof-depth snapshot: 308 proof targets, 103 Lean modules, 1359 theorem declarations, 921 derived/decomposed, 230 direct/projection, 208 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 
 ## 2026-07-10 - Freeze the v1.0 reader candidate before active-spine expansion
 

@@ -1,0 +1,35 @@
+{
+  "schema_version": "asi_stack.training_run_transaction.v1",
+  "transaction_id": "training-run-authored-control-001",
+  "case_kind": "authored_argument_control_not_empirical_training_result",
+  "identity": {
+    "run_contract_digest": "run-contract-001", "architecture_digest": "architecture-001", "data_lease_digest": "data-lease-001", "objective_digest": "objective-001", "code_digest": "code-001", "environment_digest": "environment-001", "topology_digest": "topology-001", "numerical_policy_digest": "numerics-001"
+  },
+  "frozen_inputs": {
+    "frozen_before_run": true, "architecture": "tiny-transformer-control", "data_lease": "synthetic-public-control-v1", "objective": "next-token-control-objective-v1", "optimizer": "adamw-control-v1", "scheduler": "cosine-control-v1", "budget": "development-interface-only", "stopping_rule": "fixed-100-steps", "failure_policy": "stop-record-recover-or-disposition", "selection_rule": "validation_only_with_all_candidates_retained", "qualification_rule": "held_out_independent_after_selection"
+  },
+  "topology": {
+    "device_count": 2, "device_mesh": "local-logical-mesh-2", "data_parallel": 2, "tensor_parallel": 1, "pipeline_parallel": 1, "context_parallel": 1, "expert_parallel": 1, "collective_library": "declared-control-collective", "compiler_or_planner": "manual-frozen-control-plan", "global_batch": 8, "microbatch": 2, "gradient_accumulation": 2, "optimizer_step_semantics": "one synchronized step after four local microbatches", "topology_recorded": true
+  },
+  "numerical_policy": {
+    "parameter_dtype": "fp32", "master_parameter_dtype": "fp32", "gradient_accumulation_dtype": "fp32", "collective_dtype": "fp32", "loss_scaler": "none", "overflow_policy": "stop_and_record", "determinism_class": "operation_order_bounded", "policy_recorded": true
+  },
+  "execution_ledger": {
+    "attempted_runs": 3, "completed_runs": 2, "failed_runs": 1, "interrupted_runs": 1, "recovered_runs": 1, "failed_runs_retained": true, "heartbeats_complete": true, "anomalies_append_only": true, "data_cursor_committed": true
+  },
+  "checkpoint": {
+    "checkpoint_id": "checkpoint-080", "logical_step": 80, "required_state_classes": ["model", "optimizer", "scheduler", "rng_cpu", "rng_device", "loss_scaler", "data_cursor", "sampler", "topology", "compiler_plan"], "captured_state_classes": ["model", "optimizer", "scheduler", "rng_cpu", "rng_device", "loss_scaler", "data_cursor", "sampler", "topology", "compiler_plan"], "shard_manifest_digest": "shards-080", "logical_step_consistent": true, "durably_committed": true, "completion_receipt": "checkpoint-complete-080", "validated_before_resume": true
+  },
+  "resume_probe": {
+    "probe_kind": "authored_interface_positive_control_not_executed_training", "reference_path": "uninterrupted-declared-control", "resumed_path": "checkpoint-080-declared-control", "matched_steps": 20, "data_cursor_exact": true, "rng_state_exact": true, "scheduler_state_exact": true, "scaler_state_exact": true, "topology_disposition_recorded": true, "comparison_metrics": ["step_identity", "batch_identity", "parameter_digest", "optimizer_state_digest", "loss_trace"], "result": "interface_contract_satisfied_no_empirical_claim"
+  },
+  "checkpoint_family": {
+    "candidate_ids": ["checkpoint-060", "checkpoint-080", "checkpoint-100"], "selected_id": "checkpoint-080", "selection_split": "validation", "all_candidates_retained": true, "failed_runs_retained": true, "selection_rule_honored": true
+  },
+  "qualification_handoff": {
+    "candidate_id": "checkpoint-080", "qualification_dataset_unopened_at_selection": true, "evaluator_independent_of_training_and_selection": true, "training_integrity_claim_only": true, "quality_claim_requested": false, "support_transition_requested": false, "release_requested": false
+  },
+  "expected_route": "accept_bounded_qualification_handoff",
+  "source_ids": ["ext_llama3_herd_2024", "ext_megatron_distributed_training_2021", "ext_zero_optimizer_2019", "ext_gspmd_2021", "ext_datastates_llm_2024", "ext_pytorch_distributed_checkpoint_2026", "ext_mlperf_training_v6_2026"],
+  "non_authorities": ["model_quality", "optimizer_superiority", "distributed_efficiency", "exact_real_resume", "fault_tolerance", "safety", "support_transition", "release_or_publication"]
+}

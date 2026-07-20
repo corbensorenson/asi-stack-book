@@ -120,7 +120,7 @@
       "governed-model-training-distributed-optimization-and-scaling"
     ],
     "url": "https://arxiv.org/abs/2407.21783",
-    "notes": "Preliminary training-scale comparator based on the official arXiv abstract: the source presents a model family including a 405B dense Transformer, a context window up to 128K tokens, released pre-trained and post-trained versions, and extensive evaluation. No detailed training-run passage review, distributed-run audit, checkpoint reproduction, training, or benchmark reproduction has been performed locally.",
+    "notes": "Paper-body-reviewed large-run case: Sections 3.3.1--3.3.4 expose 4D topology, numerical policy, checkpoint infrastructure, interruption denominators, and effective training time. Provider-reported scale, utilization, failures, and recovery are not locally reproduced and do not establish exact resume.",
     "source_type": "preprint",
     "arxiv_id": "2407.21783",
     "published": "2024-07-31",
@@ -1196,20 +1196,21 @@
     "priority": "implementation_reference",
     "layer": "epistemic_training_and_evaluation_control_plane",
     "chapter_targets": [
-      "evidence-states-and-claim-discipline",
-      "artifact-graphs-audit-logs-and-replay",
-      "integrated-reference-architecture",
-      "benchmark-ratchets-and-anti-goodhart-evidence",
       "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "recursive-self-improvement-boundaries",
+      "artifact-graphs-audit-logs-and-replay",
+      "artifact-steward-agents-and-living-project-governance",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "evidence-states-and-claim-discipline",
+      "governed-model-training-distributed-optimization-and-scaling",
+      "integrated-reference-architecture",
       "open-ended-improvement-engines",
-      "system-boundaries-and-authority",
-      "security-kernel-and-digital-scifs",
-      "resource-economics-and-token-budgets",
-      "readiness-gates-residual-escrow-and-quarantine",
-      "runtime-adapters-tool-permissions-and-human-approval",
       "procedural-memory-and-cognitive-loop-closure",
-      "artifact-steward-agents-and-living-project-governance"
+      "readiness-gates-residual-escrow-and-quarantine",
+      "recursive-self-improvement-boundaries",
+      "resource-economics-and-token-budgets",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "security-kernel-and-digital-scifs",
+      "system-boundaries-and-authority"
     ],
     "url": "local-project:corbens-trainer@59a57333b819a64f2ed70c077c4dbdb917337b1c",
     "notes": "Pinned local-project implementation reference for typed experiment manifests, trainer/backend separation, artifact lineage, learning-truth gates, benchmark authenticity, quarantine, claim derivation, and revocable promotion boundaries, plus negative implementation evidence on seed identity, content pinning, decontamination, transitive revocation, checkpoint acknowledgement, and report divergence; public-safe source note only, with no reproduced model capability or safety result.",
@@ -4739,7 +4740,7 @@
     "source_type": "conference_paper",
     "published": "2024",
     "updated": "2024",
-    "citation_label": "Guti\u00e9rrez et al. (2024), HippoRAG",
+    "citation_label": "Gutiérrez et al. (2024), HippoRAG",
     "doi": "10.52202/079017-1902"
   },
   {
@@ -5276,7 +5277,7 @@
   },
   {
     "id": "ext_nist_key_management_2020",
-    "title": "Recommendation for Key Management: Part 1 \u2013 General",
+    "title": "Recommendation for Key Management: Part 1 – General",
     "priority": "external_literature",
     "layer": "cryptographic_key_management",
     "chapter_targets": [
@@ -5831,5 +5832,105 @@
     "published": "2026-07",
     "updated": "2026-07",
     "citation_label": "Sorenson (2026), The Platonic World Model"
+  },
+  {
+    "id": "ext_megatron_distributed_training_2021",
+    "title": "Efficient Large-Scale Language Model Training on GPU Clusters Using Megatron-LM",
+    "priority": "external_literature",
+    "layer": "governed_distributed_model_training_and_scaling",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://arxiv.org/abs/2104.04473",
+    "notes": "Primary composed-parallelism mechanism source. It grounds tensor, pipeline, and data parallel interactions, strict optimizer semantics, microbatch and topology tradeoffs. Reported trillion-parameter and throughput results are configuration-bound and not locally reproduced.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2104.04473",
+    "published": "2021-04-09",
+    "updated": "2021-08-30",
+    "citation_label": "Narayanan et al. (2021), Efficient Large-Scale Language Model Training",
+    "doi": "10.1145/3458817.3476209"
+  },
+  {
+    "id": "ext_zero_optimizer_2019",
+    "title": "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models",
+    "priority": "external_literature",
+    "layer": "governed_distributed_model_training_and_scaling",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://arxiv.org/abs/1910.02054",
+    "notes": "Primary competing sharded-state design for optimizer, gradient, parameter, activation, and residual memory. It motivates explicit state closure and shard reconstruction; source-reported scale and speed are not locally reproduced or treated as universal superiority.",
+    "source_type": "conference_paper",
+    "arxiv_id": "1910.02054",
+    "published": "2019-10-04",
+    "updated": "2020-05-13",
+    "citation_label": "Rajbhandari et al. (2020), ZeRO",
+    "doi": "10.1109/SC41405.2020.00024"
+  },
+  {
+    "id": "ext_gspmd_2021",
+    "title": "GSPMD: General and Scalable Parallelization for ML Computation Graphs",
+    "priority": "external_literature",
+    "layer": "governed_distributed_model_training_and_scaling",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://arxiv.org/abs/2105.04663",
+    "notes": "Primary compiler-mediated competing design for general SPMD sharding and mixed parallelism. It motivates versioning inferred plans and inserted collectives; reported TPU utilization and scaling are not locally reproduced.",
+    "source_type": "preprint",
+    "arxiv_id": "2105.04663",
+    "published": "2021-05-10",
+    "updated": "2021-12-14",
+    "citation_label": "Xu et al. (2021), GSPMD",
+    "doi": "10.48550/arXiv.2105.04663"
+  },
+  {
+    "id": "ext_datastates_llm_2024",
+    "title": "DataStates-LLM: Lazy Asynchronous Checkpointing for Large Language Models",
+    "priority": "external_literature",
+    "layer": "governed_distributed_model_training_and_scaling",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://arxiv.org/abs/2406.10707",
+    "notes": "Primary limitation and checkpoint-mechanism source for asynchronous multi-level copies, distributed shard consistency, and checkpoint overhead. It does not establish complete application state or exact trajectory-equivalent resume, and no result is locally reproduced.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2406.10707",
+    "published": "2024-06-15",
+    "updated": "2024-06-15",
+    "citation_label": "Maurya et al. (2024), DataStates-LLM",
+    "doi": "10.1145/3625549.3658685"
+  },
+  {
+    "id": "ext_pytorch_distributed_checkpoint_2026",
+    "title": "Distributed Checkpoint — PyTorch documentation",
+    "priority": "external_literature",
+    "layer": "governed_distributed_model_training_and_scaling",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://docs.pytorch.org/docs/stable/distributed.checkpoint.html",
+    "notes": "Official current implementation documentation for SPMD save/load, asynchronous completion, canonical model and optimizer state, resharding, strict load, and call-order constraints. Documentation is not benchmark or full-state resume evidence.",
+    "source_type": "official_docs",
+    "published": "2026-07-19",
+    "updated": "2026-07-19",
+    "citation_label": "PyTorch (2026), Distributed Checkpoint"
+  },
+  {
+    "id": "ext_mlperf_training_v6_2026",
+    "title": "MLPerf Training v6.0",
+    "priority": "external_literature",
+    "layer": "governed_distributed_model_training_and_scaling",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "resource-economics-and-token-budgets"
+    ],
+    "url": "https://mlcommons.org/benchmarks/training/",
+    "notes": "Official current measurement comparator for fixed datasets and quality targets, repeated time-to-quality, system metadata, divisions, variance, and corrected results. No MLPerf run is performed and the benchmark does not establish safety or complete run integrity.",
+    "source_type": "official_benchmark",
+    "published": "2026-06-16",
+    "updated": "2026-07-19",
+    "citation_label": "MLCommons (2026), MLPerf Training v6.0"
   }
 ]

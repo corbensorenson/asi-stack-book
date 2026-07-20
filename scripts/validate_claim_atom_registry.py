@@ -32,6 +32,7 @@ POST_ACTIVATION_EXPANSION_IDS = {
     "governed-world-models-and-reality-grounding",
     "white-box-evidence-interpretability-and-activation-governance",
     "governed-operations-incident-command-and-graceful-degradation",
+    "governed-model-training-distributed-optimization-and-scaling",
 }
 POST_ACTIVATION_FORMAL_TARGETS = {"lean:corrigibility.agency.generic_countermodel_routes"}
 

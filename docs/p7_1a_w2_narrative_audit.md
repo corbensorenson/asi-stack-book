@@ -21,7 +21,7 @@ change each conclusion.
 
 ## Reader roles
 
-All 59 manifest chapters are classified exactly once: 11 thesis-bearing, 30
+All 60 manifest chapters are classified exactly once: 11 thesis-bearing, 31
 load-bearing reference, 7 implementation case, and 11 speculative/deferred
 research. The role controls emphasis and navigation, not evidence. It creates
 no chapter-core promotion, demotion, deprecation, order change, or publication

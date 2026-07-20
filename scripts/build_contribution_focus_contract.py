@@ -59,6 +59,7 @@ GROUPS = {
         "runtime-adapters-tool-permissions-and-human-approval",
         "inter-stack-protocols-identity-and-economic-exchange",
         "routing-heads-and-specialist-cores", "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+        "governed-model-training-distributed-optimization-and-scaling",
         "readiness-gates-residual-escrow-and-quarantine",
         "personal-compute-hives-and-federated-edge-intelligence",
         "artifact-steward-agents-and-living-project-governance",

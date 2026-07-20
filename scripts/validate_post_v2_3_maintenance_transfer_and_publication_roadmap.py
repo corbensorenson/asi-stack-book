@@ -60,6 +60,12 @@ STRUCTURAL_SOURCE_IDS = [
 ]
 STRUCTURAL_GAP_SOURCE_IDS = [
     "ext_llama3_herd_2024",
+    "ext_megatron_distributed_training_2021",
+    "ext_zero_optimizer_2019",
+    "ext_gspmd_2021",
+    "ext_datastates_llm_2024",
+    "ext_pytorch_distributed_checkpoint_2026",
+    "ext_mlperf_training_v6_2026",
     "ext_3d_detection_corruptions_2023",
     "ext_foundation_robotics_physical_risk_2025",
     "ext_nist_differential_privacy_2025",
@@ -239,7 +245,7 @@ def errors(data: dict) -> list[str]:
         "P7.2 — Structural-tranche reader integration",
         "no chapter merges",
         "Manifest admission is not chapter completion",
-        "59 to at most 72 chapters",
+        "60 to at most 72 chapters",
         "human-ai-communication-persuasion-and-epistemic-security",
         "institutions-international-coordination-and-public-legitimacy",
         "ai-deployment-transition-distribution-and-human-agency",
@@ -333,8 +339,8 @@ def errors(data: dict) -> list[str]:
     manifest_ids = {chapter.get("id") for chapter in manifest_chapters}
     first_ids = set(status["quality_uplift_program"]["structural_completeness_tranche"]["first_tranche"]["candidate_ids"])
     second_ids = set(status["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"]["candidate_ids"])
-    if len(manifest_chapters) != 59:
-        out.append(f"working manifest chapter count is {len(manifest_chapters)}, expected 59")
+    if len(manifest_chapters) != 60:
+        out.append(f"working manifest chapter count is {len(manifest_chapters)}, expected 60")
     if not first_ids.issubset(manifest_ids):
         out.append(f"first structural tranche missing manifest IDs: {sorted(first_ids - manifest_ids)}")
     if set(STRUCTURAL_CHAPTER_PATHS) != first_ids:
@@ -345,8 +351,10 @@ def errors(data: dict) -> list[str]:
     )
     if missing_drafts:
         out.append(f"first structural tranche initial drafts missing or empty: {missing_drafts}")
-    if second_ids.intersection(manifest_ids):
-        out.append(f"manifest-gated second structural tranche admitted prematurely: {sorted(second_ids & manifest_ids)}")
+    admitted_second = second_ids.intersection(manifest_ids)
+    expected_admitted_second = {"governed-model-training-distributed-optimization-and-scaling"}
+    if admitted_second != expected_admitted_second:
+        out.append(f"second structural tranche terminal/admission set drifted: {sorted(admitted_second)}")
 
     contract = data["competence"]
     for section in [
@@ -676,8 +684,8 @@ def errors(data: dict) -> list[str]:
         out.append("execution board lost its bounded WIP or blocked-lane rule")
     if execution_readiness.get("protected_outcome_inspection_allowed") is not False:
         out.append("execution board permits protected-outcome inspection")
-    if execution_readiness.get("immediate_book_packet") != "P6.4-A1-governed-model-training-distributed-optimization-and-scaling-adjudication":
-        out.append("execution board does not advance to second-tranche A1")
+    if execution_readiness.get("immediate_book_packet") != "P6.4-A2-privacy-data-rights-and-information-flow-governance-adjudication":
+        out.append("execution board does not advance from terminal A1 to second-tranche A2")
     if execution_readiness.get("immediate_formal_packet") != "P4-terminal-no-open-formal-packet":
         out.append("execution board reopens terminal P4 formal work")
     if execution_readiness.get("maximum_concurrent_second_tranche_candidates") != 1:
@@ -740,8 +748,8 @@ def errors(data: dict) -> list[str]:
     ):
         out.append("Q1/Q2 isolation or support boundary weakened")
     narrative_gate = quality_program.get("narrative_quality_gate", {})
-    if narrative_gate.get("case_independent_compression_state") != "first_tranche_terminal_second_tranche_a1_ready":
-        out.append("first-tranche terminal/second-tranche A1 execution state drifted")
+    if narrative_gate.get("case_independent_compression_state") != "first_tranche_terminal_second_tranche_a1_terminal_a2_ready":
+        out.append("first-tranche and A1 terminal/second-tranche A2 execution state drifted")
     if narrative_gate.get("flagship_threading_state") != "blocked_by_T4":
         out.append("flagship-dependent P7.1b work lost its T4 gate")
     if not all(
@@ -875,7 +883,7 @@ def errors(data: dict) -> list[str]:
         r"(\d+) unknown/mixed",
         data["proof_review"],
     )
-    expected_proof = (306, 102, 1346, 917, 230, 199)
+    expected_proof = (308, 103, 1359, 921, 230, 208)
     if not proof_match or tuple(map(int, proof_match.groups())) != expected_proof:
         out.append("proof-depth baseline drifted without roadmap reconciliation")
     if data["proof_manifest"].get("proof_target_count") != expected_proof[0]:
@@ -1053,7 +1061,7 @@ def main() -> None:
         "90 accepted historical negatives classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5; "
         "the frozen 75-surface rehabilitation snapshot including the then-live 55 chapters reconciled with zero overbroad negative language; "
         "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary reinstates rank five as setup-retry-pending, keeps rank six closed, and blocks the complete 30-image pool before any further protected content opens; Q1 D1 and Theseus Q2 D2 remain disjoint and sealed; remeasurement, qualification, construct, and heldout gates remain closed; "
-        "all six semantic proof clusters are terminally adequate at bounded scope; all four first-tranche structural chapters are terminally integrated with protected empirical outcomes closed; second-tranche A1 is the sole active chapter adjudication; current proof and main-attestation baselines exact; no support/release effect; "
+        "all six semantic proof clusters are terminally adequate at bounded scope; all four first-tranche structural chapters and second-tranche A1 are terminally integrated with protected empirical outcomes closed; second-tranche A2 is the sole active chapter adjudication; current proof and main-attestation baselines exact; no support/release effect; "
         f"{len(mutations)}/{len(mutations)} mutations rejected."
     )
 

@@ -1,0 +1,570 @@
+---
+title: "Governed Model Training, Distributed Optimization, and Scaling"
+chapter_id: "governed-model-training-distributed-optimization-and-scaling"
+part_id: "routing-compression-representation-substrates"
+status: "conceptual"
+draft_maturity: "v0.1 integrated argument chapter"
+last_updated: "2026-07-19"
+primary_sources:
+  - "ext_llama3_herd_2024"
+  - "ext_megatron_distributed_training_2021"
+  - "ext_zero_optimizer_2019"
+  - "ext_gspmd_2021"
+  - "ext_datastates_llm_2024"
+  - "ext_pytorch_distributed_checkpoint_2026"
+  - "ext_mlperf_training_v6_2026"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No ASI Stack distributed model-training campaign has run for this chapter."
+  - "The authored transaction fixture is record-shape evidence only; its resume probe is explicitly not an executed training result."
+  - "No checkpoint has been shown to resume a natural run under bitwise, operation-order-bounded, or statistical equivalence."
+  - "No source-reported throughput, interruption, checkpoint, or scale result has been reproduced locally."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `governed-model-training-distributed-optimization-and-scaling` |
+| Part | Part III - Routing, Compression, Representation, and Substrates |
+| Status | conceptual |
+| Manuscript maturity | v0.1 integrated argument chapter |
+| Last updated | 2026-07-19 |
+| Primary source records | `ext_llama3_herd_2024`, `ext_megatron_distributed_training_2021`, `ext_zero_optimizer_2019`, `ext_gspmd_2021`, `ext_datastates_llm_2024`, `ext_pytorch_distributed_checkpoint_2026`, `ext_mlperf_training_v6_2026` |
+| Local implementation reference | `corbens_trainer_project` supplies a pinned failure-bearing trainer/control-plane comparator; it is not a reproduced training result. |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | Seven primary or official records cover a large-run case, composed parallelism, sharded-state design, compiler-mediated topology, distributed checkpoint consistency, a current implementation interface, and time-to-quality measurement. All source results remain source-reported. |
+| Test state | One authored transaction fixture, a JSON Schema, an independent semantic validator, and 21 rejecting mutations are implemented. The natural five-arm campaign is prospectively specified and unexecuted. |
+| Formal state | Two public targets are implemented in `AsiStackProofs.GovernedModelTraining` through thirteen theorem declarations. Their ceiling is finite record-route semantics. |
+
+## Drafting guardrail
+
+This chapter governs **the identity and faithful execution of a training run**.
+It does not claim that larger training is better, that one optimizer or
+parallelism method wins, that the recorded state inventory is complete for every
+framework, or that a checkpoint which loads continues the same learning
+trajectory. The seven sources establish mechanisms, reported cases, concrete
+interfaces, and measurement comparators. None supplies local evidence.
+
+The chapter remains **Design rationale + argument**. Its authored positive
+control is deliberately incapable of becoming training evidence: no model is
+trained, its resume paths are declarations, and its expected route authorizes
+only handoff to a separate qualification process. The prospective campaign must
+pass competence gates before any negative result can narrow the architecture.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+A model checkpoint is the visible residue of a larger event. Data is ordered,
+gradients are distributed, numbers rounded, state sharded, workers fail,
+checkpoints written, and operators choose which artifact to keep. Two files can contain plausible
+weights while coming from meaningfully different processes.
+
+That matters because the process can silently change the product. A restarted
+run may repeat examples, skip examples, lose optimizer momentum, reset a
+scheduler, change random choices, or use a different numerical reduction order.
+A faster topology may reach a different result. A “best checkpoint” may be best
+only because the test set was consulted during selection. A successful final
+loss can hide discarded failed attempts and enormous recovery cost.
+
+The governing idea is simple: treat a training run as a transaction. Freeze
+what the run is supposed to do, record what actually happened, checkpoint all
+state required by the declared equivalence class, retain failures and candidate
+checkpoints, and hand the selected artifact to an independent qualification
+stage. Training may create a candidate, but it cannot grade that candidate into
+readiness or release.
+:::
+
+## Problem
+
+“Train model `M` on data `D`” is not an executable identity. It omits the data
+lease and ordering, objective, optimizer, scheduler, numerical policy, random
+state, global and microbatch semantics, accumulation, device mesh, parallelism
+dimensions, collective implementation, compiler plan, checkpoint protocol,
+fault policy, stopping rule, candidate selection rule, and evaluator boundary.
+At scale, each omission can change either the learned artifact or the cost and
+failure denominator used to justify it.
+
+Distributed optimization makes the omissions relational. Tensor, pipeline,
+context, expert, and data parallelism move different tensors and synchronize at
+different times. Sharding can distribute parameters, gradients, optimizer
+moments, master weights, and activations across ranks. Pipeline schedules change
+bubbles and operation order. Compiler systems can infer resharding and
+collectives not apparent in the model source. Mixed precision adds master
+parameters, gradient-accumulation types, loss scaling, overflow behavior, and
+reduction precision. “Same code” does not imply the same computation.
+
+Failure is normal enough to be part of the protocol. In its 54-day reported
+snapshot, the Llama 3 paper records hundreds of interruptions and explains why
+synchronous training can restart after a single device failure. The lesson is
+not that this particular system is reliable; it is that attempted runs,
+interruptions, manual interventions, checkpoint stalls, lost work, and recovery
+must be counted alongside useful training time.
+
+Checkpointing is also an asynchronous distributed operation. A save call can
+stage data while persistence remains incomplete. Shards can represent different
+logical steps. A checkpoint can preserve model and optimizer tensors while
+omitting scheduler, random, scaler, sampler, data cursor, topology, or compiler
+state. It can load successfully and still duplicate or skip training examples.
+Recovery therefore needs a declared equivalence class:
+
+- **bitwise equivalence** requires exact bytes and operation behavior;
+- **operation-order-bounded equivalence** permits declared nondeterministic
+  ordering but bounds state and trajectory differences; and
+- **statistical equivalence** supports only a distributional claim across
+  prospectively repeated runs.
+
+These claims cannot be substituted for one another after outcomes are visible.
+
+### Exclusive job and adjacent boundaries
+
+Governed Model Training owns the transaction from prospectively frozen training inputs to
+a selected, identity-bound candidate handed to qualification. Its primary
+question is: **is this checkpoint the product of the run we claim occurred?**
+
+| Adjacent owner | That owner keeps | Governed Model Training owns |
+|---|---|---|
+| Replaceable Cognitive Substrates | Which architecture or kernel may be proposed, compared, shadowed, promoted, migrated, or retired. | Faithful execution of the selected architecture's training contract. |
+| Data Engines, Continual Learning, and Unlearning | Datum admission, consent, rights, lineage, descendant obligations, deletion, and unlearning. | The exact leased data snapshot, order, cursor, multiplicity, and run-time use receipt. |
+| Policy Optimization and Learning from Feedback | Which behavior-update target, feedback, reward, causal evaluation, bounded lease, and rollback may govern a policy update. | Base or update run execution, full training state, distributed recovery, and checkpoint-family selection. |
+| AI Supply-Chain Integrity and Lifecycle Provenance | Supplier, code, build, dependency, artifact, signature, and lifecycle provenance. | The dynamic execution ledger joining those frozen inputs to one training outcome. |
+| Resource Economics and Token Budgets | Whether compute, memory, storage, network, energy, verification, and human capacity should be allocated. | Whether allocated resources and topology were actually used as declared, with complete failed-run and recovery cost. |
+| Model-Weight Custody and Hardware Roots of Trust | Who may hold, transfer, load, use, derive, revoke, or release model-family artifacts. | Creation-time state closure, checkpoint commit, resume, candidate selection, and qualification handoff. |
+| Benchmark Ratchets and Anti-Goodhart Evidence | Qualification workloads, evaluator independence, benchmark validity, and evidence transitions. | Preserving that qualification remains unopened and independent during checkpoint selection. |
+| Readiness Gates | Admission, quarantine, residual review, and deployment authority. | A bounded candidate handoff with no readiness or release authority. |
+
+The terminal structural decision is **admit at argument support**. Returning
+this material to the neighbors would leave no owner for distributed run
+identity, topology/numerical drift, full-state recovery, failure denominators,
+and checkpoint-family selection as one transaction. The chapter is placed after
+Replaceable Cognitive Substrates: architecture selection precedes training-run
+execution, while readiness and qualification remain downstream.
+
+```{mermaid}
+flowchart LR
+  A["Frozen architecture, data lease, objective, and run contract"] --> B["Declared topology, numerical policy, and full state inventory"]
+  B --> C["Distributed execution with every attempt and fault retained"]
+  C --> D{"Checkpoint family committed consistently?"}
+  D -- "no" --> Q["Quarantine, residual ownership, and bounded recovery"]
+  D -- "yes" --> E{"Resume satisfies the prospectively chosen equivalence class?"}
+  E -- "no" --> Q
+  E -- "yes" --> F["Validation-only candidate selection"]
+  F --> G["Identity-bound candidate handoff"]
+  G --> H{"Independent unopened qualification"}
+  H -- "not yet" --> I["Candidate only: no readiness or release authority"]
+  H -- "evaluated later" --> J["Separate evidence transition and readiness decision"]
+  Q --> K["Retain failed attempts, lost work, operator cost, and affected descendants"]
+```
+
+**What this governed training transaction diagram shows:** The path begins with
+frozen inputs and does not end at a checkpoint file. Distributed execution,
+faults, commit consistency, resume equivalence, candidate-family selection, and
+the independent qualification boundary remain separate decisions. Any failed
+or unopened gate keeps the artifact a candidate and conserves the failure and
+cost record; no training-stage node grants readiness or release authority.
+
+## Why existing approaches are insufficient
+
+A loss curve is necessary but not a run receipt. Different data orders,
+precision policies, collective schedules, or recovery points can produce
+similar aggregate loss while changing individual examples, downstream
+behavior, or stability. Final convergence cannot reveal which failures were
+censored or which candidate checkpoints were discarded.
+
+Framework checkpoint APIs are necessary but application-incomplete. PyTorch's
+distributed checkpoint interface makes canonical names, collective
+participation, asynchronous completion, resharding, and strict loading visible.
+Those guarantees do not automatically include every scheduler, sampler, random
+generator, scaler, data cursor, compiler artifact, cache, or external state the
+application needs. “Library save succeeded” and “the run resumed faithfully”
+are different propositions.
+
+Scaling efficiency is not training integrity. Megatron-style composed
+parallelism, ZeRO-style state sharding, and GSPMD-style compiler partitioning
+are serious alternatives with different communication, memory, control, and
+portability profiles. A fair comparison freezes model, data, objective, quality
+target, hardware envelope, tuning opportunity, failures, and accounting. Peak
+FLOPs, maximum parameter capacity, or one provider's best configuration cannot
+choose a universal topology.
+
+Time-to-quality is stronger than step throughput but still incomplete. MLPerf
+Training demonstrates useful discipline through fixed targets, rules,
+repetitions, system metadata, and result corrections. A governed run additionally
+needs data-rights identity, complete attempted-run and fault denominators,
+checkpoint selection separation, recovery equivalence, operator burden, and a
+qualification handoff that does not turn benchmark success into release.
+
+### Strongest objection
+
+The strongest objection is that this owner merely adds paperwork around
+standard trainer state. That objection wins if the records do not alter a
+decision. The architecture is useful only if it catches real silent errors that
+ordinary logs miss, preserves better recovery without unacceptable cost, and
+supports independent replay. That is why the natural campaign includes strong
+standard-checkpoint, weight-only, uninterrupted, and alternative-topology
+comparators, concrete fault injection, hidden qualification, and joint cost.
+
+## Core Claim
+
+[governed-model-training-distributed-optimization-and-scaling.core, label: Design rationale, support: argument] A model-training candidate is eligible for qualification only when a prospectively frozen run contract binds architecture, data lease and order, objective, optimizer, scheduler, numerical policy, device and parallelism topology, code and environment, budget, stopping and fault policy, complete attempted-run denominator, full declared checkpoint state, commit consistency, resume equivalence class, candidate-checkpoint family, validation-only selection, independent unopened qualification, and residual ownership; a loss reduction, completed job, high utilization, checkpoint file, successful load, recovered run, selected candidate, formal record proof, or source-reported scale result alone establishes neither faithful training, model quality, optimizer superiority, fault tolerance, safety, support, readiness, release, transfer, nor SOTA.
+
+## Mechanism
+
+### The training-run transaction
+
+The transaction has nine stages.
+
+1. **Freeze identity.** Name the architecture, exact data lease, objective,
+   code, environment, optimizer, scheduler, numerical policy, seeds, topology,
+   resources, stopping rule, fault policy, selection rule, and nonclaims.
+2. **Compile topology.** Record device mesh, every parallelism dimension,
+   shard placement, compiler or planner, collectives, batch arithmetic,
+   synchronization, and expected communication and memory envelope.
+3. **Admit state.** Enumerate parameters, gradients where required, optimizer,
+   scheduler, scaler, CPU and device RNGs, sampler, data cursor, topology,
+   compiler plan, and any architecture-specific mutable state.
+4. **Execute visibly.** Commit batch identity and multiplicity, step identity,
+   heartbeats, loss and gradient diagnostics, overflows, stalls, retries,
+   topology changes, operator interventions, and resources without erasing
+   failed attempts.
+5. **Checkpoint transactionally.** Distinguish request, staged copy, durable
+   commit, shard validation, completeness validation, and resume authority.
+6. **Inject and recover.** Exercise worker, collective, data-order, numerical,
+   and checkpoint failures against uninterrupted and deliberately incomplete
+   controls.
+7. **Test resume.** Compare state and subsequent trajectory under the frozen
+   bitwise, operation-order-bounded, or statistical equivalence class.
+8. **Select without qualification leakage.** Retain all candidates, failed
+   runs, best and final checkpoints, and configuration searches; select only on
+   the declared validation rule.
+9. **Hand off, do not promote.** Give one exact candidate plus the complete run
+   record to an independent qualification owner. Training integrity does not
+   confer model merit or deployment authority.
+
+### Training Run Contract
+
+The machine record should expose at least:
+
+```text
+TrainingRunTransaction {
+  identity, frozen_inputs, data_order_commitment,
+  device_mesh, parallelism_map, collective_and_compiler_plan,
+  numerical_policy, optimizer_step_semantics,
+  attempted_run_and_fault_ledger,
+  full_state_inventory, checkpoint_commit_receipt,
+  resume_equivalence_probe, checkpoint_family,
+  validation_selection_receipt, independent_qualification_handoff,
+  costs, residuals, non_authorities
+}
+```
+
+Identity fields must be content- or version-bound. A free-text name such as
+“Llama-like run” is insufficient. Architecture-specific mutable state extends
+the base inventory rather than disappearing because an existing schema does not
+know it.
+
+### Topology and numerical policy are semantic inputs
+
+The device mesh is not merely infrastructure. Parallelism dimensions determine
+where tensors live and how reductions occur. Pipeline microbatches determine
+when optimizer steps can occur. Compiler-inserted collectives and resharding
+change communication and may change operation order. The run records the plan
+that executed, not only the plan a configuration file requested.
+
+Numerics receive the same treatment. Parameter and master-parameter dtypes,
+forward and backward accumulation, reduction dtype, loss scaler, overflow
+policy, kernel modes, determinism class, and tolerance must be frozen. A
+precision change made to survive a loss spike creates a new run segment and a
+declared adjudication; it cannot be edited into the original identity.
+
+### Checkpoint authority is staged
+
+A checkpoint progresses through `requested`, `staged`, `durably_committed`,
+`validated`, and `resume_qualified`. Asynchronous completion is not durable
+commit. Shard presence is not logical-step consistency. A successful load is
+not full-state completeness. A resume probe is not model qualification.
+
+Topology-changing resume adds another decision. Canonical state can allow
+resharding, but the run must declare whether the new topology preserves the
+claimed equivalence class. Otherwise the correct route is a new run segment or
+a statistical comparison, not exact continuation.
+
+### Checkpoint families have denominators
+
+Training creates a family, not only a winner. The family includes initialization,
+periodic, pre-fault, post-recovery, best-validation, final, rejected, corrupted,
+and failed-run artifacts where they exist. Selection authority is fixed before
+results. The test or qualification split remains unopened. The best and final
+checkpoints both remain available because late regression is evidence rather
+than an inconvenience.
+
+## Interfaces
+
+- Intent and objective governance provide the authorized purpose and target
+  contract without choosing a convenient post hoc loss.
+- Data Engines provide a versioned rights-bearing data lease; this chapter
+  returns order, cursor, multiplicity, exclusion, and consumption receipts.
+- Replaceable Substrates provides an architecture and architecture-specific
+  state schema; the run cannot force every substrate into Transformer state.
+- Supply Chain provides code, environment, compiler, library, driver, and
+  hardware lineage.
+- Resource Economics provides budgets and protected verification capacity;
+  the run returns actual and failed-run costs.
+- Artifact Graphs and Weight Custody receive checkpoint family, shard, holder,
+  derivative, and retention identities.
+- Benchmark Ratchets receive the selected candidate only after validation
+  selection closes and qualification remains unopened.
+- Readiness receives qualification evidence later; it never accepts a training
+  receipt as release authority.
+
+These interfaces preserve directionality. Training can consume an authorized
+objective, but it cannot redefine that objective because the loss was hard to
+optimize. It can report that a data lease was used, but it cannot cure a rights
+defect by finishing the run. It can expose that a topology exceeded its budget,
+but it cannot retroactively authorize the spend. It can create checkpoint
+artifacts, but custody decides who may hold or use them. It can nominate one
+exact candidate, but qualification, readiness, and operations remain free to
+reject it. Every return path carries identity, observed state, costs, failures,
+uncertainty, and residual owners so neighboring layers can invalidate or narrow
+earlier decisions without editing history.
+
+## Invariants
+
+These invariants define admission conditions for the run record rather than a
+claim that the underlying optimizer behaved well. They preserve the identity,
+state, denominator, and evaluator separations that downstream qualification
+needs, while leaving model quality, recovery fidelity, and training efficiency
+to competent empirical tests.
+
+- Frozen inputs precede outcome inspection.
+- Every executed topology and numerical policy has an exact identity.
+- Global batch reconciles microbatch, accumulation, and parallel degrees.
+- Example order and multiplicity are reconstructable across retries and resume.
+- The declared complete state inventory includes architecture-specific state.
+- Checkpoint shards represent one logical step and a completed durable commit.
+- Resume claims name their equivalence class and tolerance prospectively.
+- Attempted, failed, interrupted, recovered, completed, selected, qualified, and
+  released denominators remain distinct.
+- Failed runs, rejected configurations, best, and final checkpoints remain in
+  custody for the declared retention period.
+- Qualification data and its independent evaluator do not select checkpoints.
+- Training creates no new action, support, release, or publication authority.
+
+## Failure modes
+
+The failures below are dangerous because many leave a plausible checkpoint or
+loss curve behind. A validator must therefore test the causal seams between
+declared state, observed execution, recovery, selection, and handoff instead of
+accepting artifact presence or job completion as a substitute for faithful
+training.
+
+1. **Identity drift:** code, data, objective, topology, or numerics change under
+   the same run name.
+2. **Silent data replay or skip:** restart rewinds or advances a cursor without
+   reconstructing example multiplicity.
+3. **Torn checkpoint:** shards come from different steps or asynchronous writes
+   never complete.
+4. **State amnesia:** weights return while optimizer, scheduler, scaler, RNG,
+   sampler, topology, compiler, or architecture state resets.
+5. **Semantic topology drift:** a different device mesh or collective plan is
+   called equivalent without an earned equivalence claim.
+6. **Numerical drift laundering:** precision changes are hidden inside a
+   “recovery” rather than treated as a new intervention.
+7. **Stale or duplicated update:** delayed gradients are applied under a policy
+   that did not authorize them.
+8. **Loss-spike surgery without denominator:** bad segments or batches are
+   skipped while the intervention and alternative outcomes disappear.
+9. **Checkpoint cherry-picking:** qualification or test outcomes select the
+   artifact later presented as held out.
+10. **Failed-run censorship:** efficiency includes only the run that finished.
+11. **Peak-throughput substitution:** arithmetic utilization replaces
+   time-to-quality and complete lifecycle cost.
+12. **Capacity-to-capability inference:** fitting a larger model is treated as
+   evidence that it trained well.
+13. **Trainer self-certification:** the training system implements its own
+   qualification and labels dependency as independence.
+14. **Record completeness theater:** a schema passes while the real framework
+   state or external data pipeline remains outside the inventory.
+
+## Minimum Viable Implementation
+
+A competent minimum implementation uses an open, tractable model and natural
+training workload that reaches a frozen quality target in both single-process
+and distributed baselines. It runs at least three seeds, retains every attempt,
+and injects worker loss, collective interruption, checkpoint corruption, data
+cursor rewind and skip, RNG loss, scheduler and scaler loss, precision change,
+and topology change at more than one timing.
+
+It compares an uninterrupted reference, framework-standard distributed
+checkpointing, a deliberately weight-only recovery, the full transaction, and
+a compiler-selected or otherwise strong alternative topology when supported.
+All arms receive matched tuning opportunity. An independently implemented
+evaluator keeps qualification unopened until validation selection freezes.
+
+The result reports time-to-quality, resume success, equivalence distance,
+silent-drift detection, downstream variance, attempted and failed runs, wall
+time, accelerator time, memory, storage, network, energy where measurable,
+operator intervention, and governance work. If the baseline cannot competently
+train or the fault injector does not work, the campaign is invalid rather than
+negative evidence about the architecture.
+
+## Beyond the State of the Art
+
+The mature target is a substrate-neutral training transaction whose state and
+equivalence schema is supplied by each Cognitive Kernel implementation, whose
+topology compiler emits a replayable plan and predicted envelope, and whose
+runtime produces independently checkable data-order, update, failure,
+checkpoint, and cost receipts. It would support exact rejection when a shard,
+state class, data segment, or qualification boundary is missing while allowing
+explicitly weaker statistical claims where bitwise replay is unrealistic.
+
+That architecture should be tested across dense, sparse expert, recurrent,
+state-space, test-time-memory, graph, and hybrid substrates rather than assuming
+Transformer state. It should compare manual and compiler-generated topologies,
+synchronous stop-and-restart and bounded training-through-failure policies, and
+multiple checkpoint designs. Advancement requires independent reproduction and
+transfer across frameworks, hardware, topology sizes, model families, fault
+distributions, and time. A simpler standard checkpoint workflow winning the
+joint useful-quality, integrity, and lifecycle-cost frontier would narrow or
+refute the added governance.
+
+The deeper endpoint is prospective rather than retrospective: before an
+unfamiliar substrate can train, its kernel contract declares what state exists,
+which transformations preserve identity, and which recovery claims are
+meaningful. Topology planners produce an execution plan and an auditable set of
+rejected alternatives. Checkpoint services expose atomic commit and corruption
+semantics across storage failures. Data services independently reconstruct
+example multiplicity. Qualification systems cannot read training-selection
+state, and training systems cannot read protected qualification outcomes. Those
+separations make architectural self-improvement possible without allowing a
+candidate architecture to rewrite the conditions of its own success.
+
+This remains a research target, not a current result. No such natural campaign
+has passed in this repository, and the formal and authored-record artifacts
+establish only bounded route consequences. Evidence must come from competent
+execution, independent replay, reproduction, and transfer; until then the
+support state remains argument.
+
+## Proof and executable evidence program
+
+The current Lean module proves only finite implications of an authored record:
+accepted handoff requires exact declared identity, complete declared checkpoint
+state, accounted resume fields, retained failure and candidate denominators,
+and selection/qualification separation. Counterexamples reject missing state,
+torn or undurable checkpoints, cursor or RNG drift, hidden failed runs, opened
+qualification, and support laundering.
+
+The JSON validator independently checks the ten-class authored state closure,
+topology and batch arithmetic, run denominator, checkpoint-family identity,
+qualification handoff, source packet, and non-authorities. Its 21 mutations are
+development evidence that these fields affect a route. Neither implementation
+observes a training process, validates inventory completeness, or proves that a
+resume is equivalent.
+
+The empirical bridge is the frozen protocol at
+`experiments/governed_model_training_argument_exit/preregistration.json`. Only
+an executed, competent, immutable result can move a bounded claim beyond
+argument support.
+
+## Falsification and adjudication
+
+The chapter's added machinery is weakened or rejected if, after a competent
+matched campaign:
+
+- standard checkpointing detects the same silent failures and preserves resume
+  quality at materially lower total cost;
+- the proposed state closure cannot be made framework- or substrate-complete;
+- equivalence probes do not predict downstream qualification differences;
+- fault injection is too artificial to transfer to natural failures;
+- recording overhead makes useful training infeasible without compensating
+  integrity benefit; or
+- independent replay cannot reconstruct the claimed run despite a passing
+  transaction.
+
+A negative result is admissible only after the baseline reaches the frozen
+target, the faults work, the state inventory passes expert and runtime checks,
+all arms receive fair tuning, qualification remains hidden, and runs repeat
+across seeds and timings. Otherwise the disposition is blocked or invalid, not
+“the idea failed.”
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Training-run transaction contract | Validate identity, topology/batch arithmetic, ten-class state closure, denominator, checkpoint family, qualification separation, sources, non-authorities, and 21 mutations. | implemented; authored record only |
+| Lean run-handoff semantics | Require exact declared identity, complete checkpoint, resume accounting, selection separation, and bounded handoff; reject eight concrete failures. | implemented; finite model only |
+| Natural distributed fault campaign | Compare five competent matched arms across 13 injected fault families, three or more seeds, multiple timings, hidden qualification, and joint costs. | prospectively specified; not run |
+| Independent replay | Reconstruct data order, topology plan, checkpoint state, selected candidate, and reported metrics from retained artifacts. | planned after a valid campaign |
+| Cross-substrate transfer | Repeat on at least one non-Transformer mutable-state architecture. | planned; dependent on prior evidence |
+
+## Formalization hooks
+
+| Proof tag | Module | Target | State |
+|---|---|---|---|
+| `lean:governed_training.run_admission_invariants` | `AsiStackProofs.GovernedModelTraining` | An accepted finite handoff requires exact declared identity, topology/numerical identity, complete committed checkpoint state, complete failure denominator, and no support or release request. | implemented |
+| `lean:governed_training.resume_and_handoff_separation` | `AsiStackProofs.GovernedModelTraining` | An accepted finite handoff requires accounted resume state, retained checkpoint and failure families, validation-only selection, and unopened independent qualification. | implemented |
+
+These finite-record theorems do not prove real training, distributed execution,
+resume equivalence, quality, efficiency, fault tolerance, inventory
+completeness, support, or release.
+
+## Source crosswalk
+
+| Source ID | Role | Use and limit |
+|---|---|---|
+| `ext_llama3_herd_2024` | mechanism + limitation case | Supplies a provider-reported 4D topology, numerical-stability interventions, checkpoint infrastructure, interruption denominator, and effective-time case. No result is locally reproduced; exact resume is not established. |
+| `ext_megatron_distributed_training_2021` | mechanism | Grounds interacting tensor, pipeline, and data parallelism, strict optimizer semantics, microbatch and communication tradeoffs. Its scale and throughput results remain configuration-bound and unreproduced. |
+| `ext_zero_optimizer_2019` | competing design | Grounds progressive sharding of optimizer, gradient, parameter, activation, and residual state. It does not prove universal superiority or complete application checkpoint state. |
+| `ext_gspmd_2021` | competing design | Grounds compiler-mediated SPMD sharding and mixed parallelism as an alternative to hand-composed plans. Its inferred topology still requires exact versioning and replay. |
+| `ext_datastates_llm_2024` | limitation + recovery mechanism | Grounds distributed checkpoint consistency, asynchronous completion, storage-tier cost, and shard coordination. It does not establish full trajectory equivalence. |
+| `ext_pytorch_distributed_checkpoint_2026` | implementation interface | Grounds current save/load, asynchronous future, canonical state, strict load, and resharding semantics. Documentation is not benchmark evidence or complete application state. |
+| `ext_mlperf_training_v6_2026` | measurement/evaluation | Grounds fixed quality targets, repeated time-to-quality measures, system metadata, divisions, variance, and result correction. No MLPerf run is claimed, and the suite does not establish safety or complete run integrity. |
+| `corbens_trainer_project` | local implementation + failure comparator | Supplies typed campaigns, training-truth gates, checkpoint lineage, retained run facts, quarantine history, and concrete seed, content-pin, promotion-revocation, and asynchronous-checkpoint acknowledgement failures. The pinned project was not trained or reproduced for this chapter and supports no model-quality or resume claim. |
+
+The seven-source external packet fills all four required roles:
+mechanism/capability, limitation or failure, competing design, and
+measurement/evaluation. The pinned local project adds implementation and
+failure pressure without being counted as external evidence. Their disagreement
+is intentional. Manual composition, sharded data parallelism, compiler-mediated
+partitioning, asynchronous checkpointing, and standardized benchmarking are
+alternatives and complements whose boundaries must be tested rather than
+collapsed into one recipe.
+
+## Summary
+
+Training is not a weight file plus a loss curve. It is a stateful distributed
+transaction whose data order, optimizer semantics, topology, numerical policy,
+failures, checkpoint commits, resume equivalence, candidate family, and
+qualification boundary determine what artifact was actually produced. The ASI
+Stack therefore asks a training system to earn one bounded statement: this
+candidate came from this declared run and is ready for independent
+qualification. Everything stronger remains downstream evidence work.
+
+That boundary makes scale accountable without making scale the objective. It
+keeps manual parallelism, sharded optimizers, compiler-generated plans, and
+checkpoint services available as competing implementations while forcing each
+to disclose semantic and lifecycle costs. Interruption, recovery, discarded
+configuration, best checkpoint, and final checkpoint all remain in the
+evidence denominator. Future architecture families are protected as well:
+recurrent, state-space, sparse-expert, graph, test-time-memory, and hybrid
+systems may declare different state, but none may hide that state during
+recovery.
+
+The practical payoff is epistemic. A completed job becomes a candidate-
+producing event, not a self-validating success. A successful load becomes one
+checkpoint fact, not proof of faithful continuation. A fast run becomes one
+systems result, not proof of quality. Only independent qualification allows the
+rest of the stack to decide what the artifact is good for, what residuals
+remain, and whether any scoped use is justified.
+
+## Handoff
+
+Replaceable Cognitive Substrates supplies the architecture and its state schema.
+This chapter produces an identity-bound candidate and complete training-run
+receipt. **Readiness Gates, Residual Escrow, and Quarantine** is the downstream
+owner that determines whether later qualification evidence makes that candidate admissible
+for a scoped route. Benchmark Ratchets supply part of that evidence, and Policy
+Optimization may later request another governed update, but neither can rewrite
+the run that produced the current candidate.

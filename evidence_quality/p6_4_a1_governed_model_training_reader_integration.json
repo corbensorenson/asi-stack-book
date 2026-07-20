@@ -1,0 +1,95 @@
+{
+  "schema_version": "asi_stack.p6_4_a1_reader_integration.v1",
+  "recorded_date": "2026-07-19",
+  "candidate_id": "governed-model-training-distributed-optimization-and-scaling",
+  "decision": "admit_at_argument_support",
+  "placement": "Part III immediately after replaceable-cognitive-substrates-beyond-transformer-monoculture",
+  "exclusive_owner": "training-run transaction from frozen inputs through distributed execution, full-state recovery, checkpoint-family selection, and independent qualification handoff",
+  "source_roles": {
+    "mechanism_or_capability": [
+      "ext_llama3_herd_2024",
+      "ext_megatron_distributed_training_2021"
+    ],
+    "limitation_or_failure": [
+      "ext_llama3_herd_2024",
+      "ext_datastates_llm_2024",
+      "ext_pytorch_distributed_checkpoint_2026"
+    ],
+    "competing_design": [
+      "ext_zero_optimizer_2019",
+      "ext_gspmd_2021"
+    ],
+    "measurement_or_evaluation": [
+      "ext_mlperf_training_v6_2026"
+    ]
+  },
+  "local_implementation_references": [
+    "corbens_trainer_project"
+  ],
+  "artifacts": {
+    "chapter": "chapters/governed-model-training-distributed-optimization-and-scaling.qmd",
+    "decision": "docs/p6_4_a1_governed_model_training_adjudication.md",
+    "schema": "schemas/training_run_transaction.schema.json",
+    "fixture": "tests/fixtures/protocol_records/training_run_transaction.valid.json",
+    "validator": "scripts/validate_training_run_transaction.py",
+    "formal_module": "lean/AsiStackProofs/GovernedModelTraining.lean",
+    "protocol": "experiments/governed_model_training_argument_exit/preregistration.json"
+  },
+  "formalization": {
+    "public_targets": [
+      "lean:governed_training.run_admission_invariants",
+      "lean:governed_training.resume_and_handoff_separation"
+    ],
+    "theorem_declaration_count": 13,
+    "ceiling": "finite authored record-route semantics only"
+  },
+  "record_contract": {
+    "required_state_class_count": 10,
+    "semantic_mutation_count": 21,
+    "case_kind": "authored_argument_control_not_empirical_training_result"
+  },
+  "claim_bearing_empirical_lane": {
+    "state": "prospectively_frozen_unexecuted",
+    "arm_count": 5,
+    "fault_family_count": 13,
+    "competence_gate_count": 12,
+    "protected_outcomes_opened": false
+  },
+  "neighbor_boundaries": [
+    "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "data-engines-continual-learning-and-unlearning",
+    "policy-optimization-and-learning-from-feedback",
+    "ai-supply-chain-integrity-and-lifecycle-provenance",
+    "resource-economics-and-token-budgets",
+    "model-weight-custody-and-hardware-roots-of-trust",
+    "benchmark-ratchets-and-anti-goodhart-evidence",
+    "readiness-gates-residual-escrow-and-quarantine"
+  ],
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "publication_effect": "none",
+  "nonclaims": [
+    "No model was trained for this packet.",
+    "No distributed run or checkpoint resume occurred.",
+    "No source-reported result was reproduced.",
+    "No model quality, optimizer superiority, distributed efficiency, exact resume, fault tolerance, safety, support, readiness, release, transfer, SOTA, AGI, or ASI claim follows."
+  ],
+  "artifact_sha256": {
+    "chapters/governed-model-training-distributed-optimization-and-scaling.qmd": "bc8529099141b22e07574061d2e5cc80ef0035fa0bfd8d8306d6ffdb72f06ce4",
+    "docs/p6_4_a1_governed_model_training_adjudication.md": "a57555a142be20ffb43a2c38bed0bd7570f01c2112c7cdd099bb0fcb20ab74ff",
+    "schemas/training_run_transaction.schema.json": "7a86ab741c6ccfefd74c98d07d1a8f985a088adf3becf0bce56ee006ba90b6ee",
+    "tests/fixtures/protocol_records/training_run_transaction.valid.json": "1b3d66f48ca40e75aa4236c0215400d12f68919cbad7047b893aae1f7a775c0e",
+    "scripts/validate_training_run_transaction.py": "1b72a33499562da144a863e7b96e4a35abe48e346e1c09082a4b327b073f1962",
+    "lean/AsiStackProofs/GovernedModelTraining.lean": "335789f2aa58f0f3d16be5f80ec642a83ab2a01518cb0b2e28ff985424e0646f",
+    "experiments/governed_model_training_argument_exit/preregistration.json": "bf2ee7ad6704eac826fe5e96955612ac14c5f8ac239c365c19873551dd8151d9"
+  },
+  "source_note_sha256": {
+    "ext_llama3_herd_2024": "c5f18e690061de8d082d02d62744f566a7e9c2c3aef4d7bb0df3988201c0d9dd",
+    "ext_megatron_distributed_training_2021": "264f18c8389cca61e4ae84971c203460e4a3f288c3573c64c4fc04f93976220d",
+    "ext_zero_optimizer_2019": "2ac310bb6a65f937d1bae351638c6971a6239a13728699a0cee8b8a991517b30",
+    "ext_gspmd_2021": "2fd7579580a8c128de851177fa4f8fe849cd86923f1b59b6103b2561b1de35c0",
+    "ext_datastates_llm_2024": "14aae3ff69ed2bfebd9ea050a1e91a326163d81f9c7131e453c6a5e287fe4b7e",
+    "ext_pytorch_distributed_checkpoint_2026": "96f7620e20e3b5f518e693b2516e78977077f572af102d772769f97d43e3eabc",
+    "ext_mlperf_training_v6_2026": "44ab800176d50dcbb746534a82e06e2d65e43de5ef1b1386f955daaf3cec469e"
+  }
+}

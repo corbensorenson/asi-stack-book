@@ -20,8 +20,8 @@ STATUS = ROOT / "roadmap_records" / "post_v2_3_claim_proof_and_sota_challenge_st
 MAINTENANCE_STATUS = ROOT / "roadmap_records" / "post_v2_3_maintenance_transfer_and_publication_status.json"
 
 HISTORICAL_PROOF_TARGET_COUNT = 298
-CURRENT_PROOF_TARGET_COUNT = 306
-CURRENT_IMPLEMENTED_TARGET_COUNT = 306
+CURRENT_PROOF_TARGET_COUNT = 308
+CURRENT_IMPLEMENTED_TARGET_COUNT = 308
 CURRENT_PLANNED_TARGET_COUNT = 0
 HISTORICAL_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
@@ -33,18 +33,22 @@ HISTORICAL_EXPECTED_CLASSES = {
 }
 CURRENT_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
-    "useful but too narrow": 158,
+    "useful but too narrow": 160,
     "needs richer state-machine or review semantics": 20,
     "needs executable tests first": 37,
     "needs empirical or baseline tests first": 16,
     "research-agenda until artifact import": 2,
 }
-ADMITTED_CHAPTERS = {
+FIRST_TRANCHE_ADMITTED_CHAPTERS = {
     "white-box-evidence-interpretability-and-activation-governance",
     "governed-world-models-and-reality-grounding",
     "human-factors-and-meaningful-control-in-oversight",
     "governed-operations-incident-command-and-graceful-degradation",
 }
+SECOND_TRANCHE_ADMITTED_CHAPTERS = {
+    "governed-model-training-distributed-optimization-and-scaling",
+}
+ADMITTED_CHAPTERS = FIRST_TRANCHE_ADMITTED_CHAPTERS | SECOND_TRANCHE_ADMITTED_CHAPTERS
 PLANNED_CHAPTERS: set[str] = set()
 EXPECTED_RICHER = {
     "constitutional-alignment-substrate": 6,
@@ -93,6 +97,11 @@ def current_proof_errors(
         .get("structural_completeness_tranche", {})
         .get("first_tranche", {})
     )
+    second_tranche = (
+        maintenance_status.get("quality_uplift_program", {})
+        .get("structural_completeness_tranche", {})
+        .get("second_tranche", {})
+    )
     if (
         manifest.get("proof_target_count") != CURRENT_PROOF_TARGET_COUNT
         or len(current_targets) != CURRENT_PROOF_TARGET_COUNT
@@ -102,17 +111,19 @@ def current_proof_errors(
         or activation_truth.get("proof_target_count") != CURRENT_PROOF_TARGET_COUNT
         or activation_truth.get("chapter_core_promotion_count") != 0
     ):
-        out.append("current proof manifest/status is not exactly 306 unique implemented targets with no planned target or core promotion")
+        out.append("current proof manifest/status is not exactly 308 unique implemented targets with no planned target or core promotion")
     if (
         maintenance_status.get("status") != "active"
         or maintenance_status.get("roadmap_path") != "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
-        or first_tranche.get("manifest_admitted_count") != len(ADMITTED_CHAPTERS)
-        or set(first_tranche.get("candidate_ids", [])) != ADMITTED_CHAPTERS
+        or first_tranche.get("manifest_admitted_count") != len(FIRST_TRANCHE_ADMITTED_CHAPTERS)
+        or set(first_tranche.get("candidate_ids", [])) != FIRST_TRANCHE_ADMITTED_CHAPTERS
+        or second_tranche.get("manifest_admitted_count") != len(SECOND_TRANCHE_ADMITTED_CHAPTERS)
+        or set(second_tranche.get("adjudicated_candidate_ids", [])) != SECOND_TRANCHE_ADMITTED_CHAPTERS
         or len(planned_targets) != CURRENT_PLANNED_TARGET_COUNT
         or {row.get("chapter_id") for row in planned_targets} != PLANNED_CHAPTERS
         or planned_chapter_counts != Counter({chapter_id: 2 for chapter_id in PLANNED_CHAPTERS})
     ):
-        out.append("terminal first-tranche proof inventory retains a planned target or loses admitted-chapter custody")
+        out.append("terminal admitted-chapter proof inventory retains a planned target or loses tranche custody")
     triage_by_tag = {row.get("tag"): row for row in triage_records}
     if (
         triage.get("record_count") != CURRENT_PROOF_TARGET_COUNT
@@ -287,8 +298,8 @@ def main() -> None:
         raise SystemExit("P2 closure audit failed:\n - " + "\n - ".join(failures))
     print(
         "P2 closure audit passed: 1,151 baseline theorem declarations, 298 unique historical targets, "
-        "65/65 reviewed modules, 298/298 frozen historical adequacy routes, 306 current targets "
-        "(306 implemented and zero planned after terminal first-tranche integration), 306/306 current adequacy classifications, "
+        "65/65 reviewed modules, 298/298 frozen historical adequacy routes, 308 current targets "
+        "(308 implemented and zero planned after terminal A1 integration), 308/308 current adequacy classifications, "
         f"nine semantic-model dossiers/consumers, {len(mutations) + current_mutation_count} rejecting mutations, and no support-state effect."
     )
 

@@ -189,7 +189,10 @@ def semantic_errors(data: dict[str, Any]) -> list[str]:
     activation_truth = maintenance_status.get("activation_truth", {})
     structural_tranche = maintenance_status.get("quality_uplift_program", {}).get("structural_completeness_tranche", {})
     first_tranche = structural_tranche.get("first_tranche", {})
-    admitted_chapter_ids = set(first_tranche.get("candidate_ids", []))
+    second_tranche = structural_tranche.get("second_tranche", {})
+    first_admitted_chapter_ids = set(first_tranche.get("candidate_ids", []))
+    second_admitted_chapter_ids = set(second_tranche.get("adjudicated_candidate_ids", []))
+    admitted_chapter_ids = first_admitted_chapter_ids | second_admitted_chapter_ids
     if (
         maintenance_status.get("status") != "active"
         or maintenance_status.get("roadmap_path") != ACTIVE_MAINTENANCE_ROADMAP
@@ -197,7 +200,8 @@ def semantic_errors(data: dict[str, Any]) -> list[str]:
         or activation_truth.get("chapter_core_argument_count") != chapter_count
         or activation_truth.get("chapter_core_promotion_count") != 0
         or structural_tranche.get("current_manifest_chapter_count") != chapter_count
-        or first_tranche.get("manifest_admitted_count") != len(admitted_chapter_ids)
+        or first_tranche.get("manifest_admitted_count") != len(first_admitted_chapter_ids)
+        or second_tranche.get("manifest_admitted_count") != len(second_admitted_chapter_ids)
         or chapter_count != historical_expansion.get("live_chapter_count") + len(admitted_chapter_ids)
         or not admitted_chapter_ids.issubset(chapter_ids)
     ):

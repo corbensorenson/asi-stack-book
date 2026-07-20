@@ -1,0 +1,46 @@
+{
+  "schema_version": "asi_stack.governed_model_training_argument_exit.v1",
+  "protocol_id": "P6.4-A1-GMT-01",
+  "recorded_date": "2026-07-19",
+  "state": "prospectively_frozen_unexecuted",
+  "research_question": "Under a tractable natural training workload, does a topology-complete training-run transaction detect and prevent silent run-identity, recovery, and checkpoint-selection failures that simpler logging and weight-only checkpoint baselines miss, without unacceptable time-to-quality, resource, and operator cost?",
+  "unit_of_analysis": "one prospectively registered run attempt, including failures and restarts",
+  "workload": {
+    "required_properties": ["open reproducible model and data", "single-device and multi-device execution", "enough steps to expose optimizer and scheduler state", "hidden qualification split", "natural downstream quality measure", "fault injection without protected flagship outcome access"],
+    "frozen_before_execution": false,
+    "selection_reason": "A competent attempt must be tractable locally yet preserve the state, topology, failure, and selection mechanisms under test. A toy record-only result cannot adjudicate run integrity."
+  },
+  "arms": [
+    {"id": "A0", "name": "single_process_reference", "purpose": "Strong uninterrupted reference with the same model, data, objective, optimizer, schedule, budget, and evaluation."},
+    {"id": "A1", "name": "distributed_standard_logging", "purpose": "Matched distributed baseline with framework-standard logging and checkpointing."},
+    {"id": "A2", "name": "distributed_weight_only_recovery", "purpose": "Deliberately incomplete recovery control that retains weights but omits at least optimizer, scheduler, RNG, scaler, or data-cursor state."},
+    {"id": "A3", "name": "distributed_full_state_transaction", "purpose": "Full governed transaction with frozen topology and numerics, complete state, run denominator, fault ledger, resume probes, checkpoint-family custody, and independent qualification."},
+    {"id": "A4", "name": "compiler_or_alternative_topology", "purpose": "Matched competing topology method where supported, with equal tuning opportunity and explicit plan identity."}
+  ],
+  "faults": ["worker_loss", "collective_timeout", "checkpoint_write_interruption", "single_shard_corruption", "data_cursor_rewind", "data_cursor_skip", "rng_state_loss", "scheduler_state_loss", "loss_scaler_loss", "precision_policy_change", "topology_change", "stale_gradient_or_delayed_update", "validation_checkpoint_selection_leakage"],
+  "primary_outcomes": ["time_to_frozen_quality_target", "successful_resume_rate", "exact_or_declared_equivalence_class", "silent_drift_detection_rate", "post_resume_loss_distance", "post_resume_parameter_distance", "downstream_qualification_delta", "failed_run_denominator_completeness"],
+  "joint_cost_outcomes": ["wall_time", "accelerator_time", "peak_memory", "checkpoint_pause", "checkpoint_completion_latency", "storage_bytes", "network_bytes", "energy_when_measurable", "operator_interventions", "governance_recording_time"],
+  "selection_and_qualification": {
+    "checkpoint_selection_split": "validation_only",
+    "qualification_split": "held_out_and_unopened_until_selection_is_final",
+    "evaluator": "independent_implementation_from_training_and_checkpoint_selection",
+    "retain": ["all candidate checkpoints", "all failed attempts", "best and final checkpoints", "all configuration searches", "all fault injections", "all exclusions"]
+  },
+  "competence_gates": [
+    "single-process reference reaches the frozen target",
+    "distributed baseline reaches a comparable target without injected faults",
+    "fault injector is demonstrated against positive controls",
+    "full-state inventory is framework- and workload-complete",
+    "checkpoint commit and corruption probes are independently checked",
+    "resume comparator distinguishes bitwise, operation-order-bounded, and statistical equivalence",
+    "data order and example multiplicity are externally reconstructed",
+    "all arms receive matched tuning and recovery opportunity",
+    "qualification remains unopened until selection freezes",
+    "failed runs and excluded runs remain in the denominator",
+    "results are repeated across at least three seeds and more than one fault timing",
+    "claims remain within model, scale, hardware, framework, and fault envelope"
+  ],
+  "adjudication": ["admit_bounded_run_integrity_effect", "narrow_to_specific_fault_or_framework", "retain_negative_after_competent_attempt", "blocked_after_full_attempt", "invalidate_campaign"],
+  "stop_conditions": ["protected outcome exposure", "baseline incompetence", "unfrozen outcome-aware change", "state inventory uncertainty", "fault injector failure", "denominator loss", "qualification leakage", "resource ceiling breach"],
+  "nonclaims": ["frontier-scale transfer", "optimizer superiority", "universal scaling law", "model quality outside the frozen target", "exact resume where only statistical equivalence is tested", "fault tolerance outside injected faults", "safety", "alignment", "support promotion", "release", "AGI", "ASI"]
+}

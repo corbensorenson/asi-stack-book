@@ -2799,7 +2799,7 @@
           "core_claim": "A contestable governance layer should represent each action under unresolved value conflict as a versioned decision lease plus a linked rights receipt. The lease binds value propositions and their epistemic status, affected parties and standing, stakes and reversibility, authority and consent boundaries, the declared aggregation or precedence rule, preserved dissent, evidence and uncertainty, permitted and prohibited actions, expiry and revisit triggers, and rollback or redress. The rights receipt binds audit and explanation artifacts, independent-enough custody and review, denial and redaction reasons, appeal and correction routes, exit and export scope, safety-limited fork obligations, portability residuals, and downstream preservation. The pair may narrow or delay separately authorized action but cannot settle moral truth, manufacture consensus, grant authority, establish legal rights or legitimacy, prove material contestability, or guarantee safe exit, export, fork, replacement, self-modification, or deployed governance by itself.",
           "mechanism": [
             "Preserve each conflict before action as proposition-level normative claims with separate descriptive evidence, predictive uncertainty, value or theory provenance, affected parties and standing, stakes, reversibility, jurisdiction, authority or consent boundary, dependencies, and known omissions.",
-            "Record the exact decision procedure\u2014precedence rule, aggregation method, veto, lottery, tribunal, negotiated compromise, least-harm or reversible default, abstention, or escalation\u2014along with who selected it, its scope, and its non-claims; no aggregation silently becomes moral truth or consent.",
+            "Record the exact decision procedure—precedence rule, aggregation method, veto, lottery, tribunal, negotiated compromise, least-harm or reversible default, abstention, or escalation—along with who selected it, its scope, and its non-claims; no aggregation silently becomes moral truth or consent.",
             "Issue a bounded decision lease naming permitted and prohibited actions, authority ceiling, affected parties, evidence bar, preserved dissent, residual uncertainty, expiry, revisit and material-change triggers, rollback, appeal, correction, and redress without treating the lease as moral settlement.",
             "Represent audit, explanation, dissent, review, appeal, correction, redress, exit, export, fork, and contestability as rights records with holder and standing, request state, scope, access path, timing, accessibility, cost, retaliation and dependency risks, required artifacts, accountable owner, denial reason, appeal route, preservation rule, and receipt.",
             "Bind every denial, withholding, and redaction to a classified reason, necessity and proportionality rule, withheld-material inventory or digest, expiry, independent-enough review, appeal, and later-disclosure trigger; secrecy cannot erase the fact or scope of withholding.",
@@ -3175,7 +3175,7 @@
           },
           "problem": "A governed stack needs to replace models, prompts, tools, adapters, policies, data, evaluators, and runtime dependencies without letting a persistent capability name conceal changes in observable behavior, failure semantics, authority, evidence, affected consumers, or recovery obligations. Without a consumer-relative and time-bounded substitution contract, an apparent upgrade can silently redefine success, strand state, erase regressions, widen permissions, or inherit trust earned by a different artifact in a different environment.",
           "insufficient": "Plugin APIs, model registries, Semantic Versioning, capability-security references, supply-chain provenance, benchmark leaderboards, canaries, and rollback runbooks each cover part of replacement, but none alone establishes semantic field identity across inputs, outputs, preconditions, postconditions, failure and abstention behavior, nondeterminism, resource and privacy limits, authority effects, state compatibility, evaluator independence, qualification scope and expiry, historical regressions, downstream reliance, incident response, and effect-complete rollback. Interface compatibility or artifact provenance is not behavioral refinement, qualification for one workload is not universal substitutability, and a stored rollback pointer is not evidence that prior effects can be reversed.",
-          "core_claim": "A Stable Capability Field should be a versioned, consumer-relative substitution contract rather than a capability name or implementation slot. It binds the field's semantic identity and observable interface\u2014including admissible inputs, outputs, preconditions, postconditions, failures, abstentions, nondeterminism and resource bounds\u2014to an authority ceiling, affected consumers, exact implementation and dependency identities, qualification context and lease, evaluator and evidence lineage, lifecycle and incident state, migration duties, preserved regressions, and effect-complete rollback obligations. A candidate may inherit a field route only for the declared consumer, use, environment, threat model, and epoch when independently checkable evidence shows the required refinement and no unauthorized authority expansion; otherwise it remains shadowed, canaried, quarantined, deprecated, residual, or rejected. The record does not by itself prove semantic equivalence, safe composition, evaluator independence, production safety, or successful rollback.",
+          "core_claim": "A Stable Capability Field should be a versioned, consumer-relative substitution contract rather than a capability name or implementation slot. It binds the field's semantic identity and observable interface—including admissible inputs, outputs, preconditions, postconditions, failures, abstentions, nondeterminism and resource bounds—to an authority ceiling, affected consumers, exact implementation and dependency identities, qualification context and lease, evaluator and evidence lineage, lifecycle and incident state, migration duties, preserved regressions, and effect-complete rollback obligations. A candidate may inherit a field route only for the declared consumer, use, environment, threat model, and epoch when independently checkable evidence shows the required refinement and no unauthorized authority expansion; otherwise it remains shadowed, canaried, quarantined, deprecated, residual, or rejected. The record does not by itself prove semantic equivalence, safe composition, evaluator independence, production safety, or successful rollback.",
           "mechanism": [
             "Define field identity independently of any implementation, model family, vendor, prompt, tool, benchmark, deployment, or route name; a material semantic change creates a governed field version or a new field rather than silently reusing the old identity.",
             "Specify the observable contract over accepted and rejected inputs, output and side-effect postconditions, errors, abstentions, timeouts, nondeterminism envelope, latency and resource budgets, privacy and security effects, authority use, and required evidence and audit emissions.",
@@ -4310,7 +4310,7 @@
             "Declared derivative closure is monotone through copying, transformation, packaging, extraction, backup, recovery, and distribution; an unknown or excluded branch remains an owned residual.",
             "Encryption keys and metadata remain purpose-, artifact-, holder-, operation-, scope-, usage-period-, and policy-bound; missing, stale, compromised, widened, or unreconciled key state fails closed.",
             "Attester Evidence, Verifier appraisal, Attestation Result, and Relying-Party authorization remain distinct claims with separate policy identities, owners, freshness, dependencies, and consumers.",
-            "Freshness is relational to artifact, target/attesting environments, firmware/workload, reference values, endorsements, trust anchors, verifier and relying-party policies, recipient, use, and epoch\u2014not token age alone.",
+            "Freshness is relational to artifact, target/attesting environments, firmware/workload, reference values, endorsements, trust anchors, verifier and relying-party policies, recipient, use, and epoch—not token age alone.",
             "An attestation result is scoped evidence about measured claims; it grants no hardware/vendor/operator/software trust, weight confidentiality, model safety, serving, tool, release, readiness, or deployment conclusion.",
             "Possession, key release, decryption, load, serve, action authority, transfer, recipient distribution, and open release are distinct non-transitive decisions.",
             "Plaintext, derived capability, output extraction, cache, crash dump, accelerator memory, log, backup, and recipient exposure remain inventoried at the declared observation grade.",
@@ -4614,7 +4614,7 @@
             "Retirement, access revocation, notice, retention, archive, sanitization, disposal, recipient recall, and world erasure remain distinct observed claims.",
             "Cross-organization evidence obeys privacy, rights, security, contractual, retention, and disclosure-minimization limits while remaining contestable and lineage-preserving.",
             "Security findings remain paired with affected-path precision/recall, false quarantine, useful-service loss, restoration, availability, operator labor, privacy/rights, benefit, and total cost.",
-            "Finite records, one declared graph, seven theorem declarations, ten mutations, or zero observed compromise establish only their exact scope\u2014not inventory completeness, assertion truth, artifact integrity, supplier trust, effective control, safety, compliance, or transfer."
+            "Finite records, one declared graph, seven theorem declarations, ten mutations, or zero observed compromise establish only their exact scope—not inventory completeness, assertion truth, artifact integrity, supplier trust, effective control, safety, compliance, or transfer."
           ],
           "failure_modes": [
             "Name, digest, version, tokenizer, dataset, dependency, model, configuration, policy, environment, build, package, signer, supplier, or recipient substitution occurs after approval or behind a familiar label.",
@@ -11318,14 +11318,14 @@
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:Abstract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a73 System Overview",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a76 Governance Plane",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a77 Readiness Gate and Promotion Contract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a78 Task Runtime and Bounded Recursive Labor",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a79 Evidence and Replay Integrity",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a713 Benchmark Architecture",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a719 Truthful Limits",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a723 Final Position"
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§3 System Overview",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§6 Governance Plane",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§7 Readiness Gate and Promotion Contract",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§8 Task Runtime and Bounded Recursive Labor",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§9 Evidence and Replay Integrity",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§13 Benchmark Architecture",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§19 Truthful Limits",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§23 Final Position"
               ],
               "passage_review_note": "Reviewed authenticated Google Drive text extraction for the Markdown variant/source export. It matches the primary MoECOT runtime vocabulary around compact orchestration, specialist lanes, control-plane gates, readiness, task runtime, replay, benchmark architecture, truthful limits, and final route-execute-verify-audit-improve framing; it remains a variant, not independent corroboration or reproduced evidence."
             },
@@ -12042,7 +12042,7 @@
             "Qualify kernels with equal-active-parameter and equal-total-lifecycle-cost tournaments, matched strong baselines, independent evaluators, adverse controls, rollback, reproduction, and transfer.",
             "Separate recurrent computation from addressable memory by preregistering recurrent-state size, sparse-slot capacity, cache growth, pointer fusion, exact-memory controls, storage, lookup, invalidation, migration, and deletion cost.",
             "For tiny-recursive candidates, preregister canonical single-pass, matched sampling/voting, blank/random/unseen identity, marginal utility by recursion step, learned stopping, and progressive mechanism ablations.",
-            "Govern architectural RSI as candidate generation, training, shadowing, canarying, promotion, composition, narrowing, rollback, retirement, and descendant invalidation\u2014not merely weight updates.",
+            "Govern architectural RSI as candidate generation, training, shadowing, canarying, promotion, composition, narrowing, rollback, retirement, and descendant invalidation—not merely weight updates.",
             "Treat OneCell as one falsifiable compact recurrent candidate: shared transition weights, typed state lanes, exact external state, outer branch-preserving search, verified abstraction accumulation, and a frozen-core ratchet."
           ],
           "interfaces": [
@@ -12125,6 +12125,220 @@
             "The finite model proves and checks proposal/effect separation, authority and checkpoint preservation, revocation, fallback, and mixed-family lineage only inside its declared transition schema; no real checkpoint translation, effect service, or deployed enforcement exists.",
             "No OneCell implementation, frozen-core ratchet, verified abstraction learner, or hidden-complexity ablation.",
             "No governed architecture candidate has passed shadow, canary, rollback, retirement, or descendant-invalidation tests."
+          ]
+        },
+        {
+          "id": "governed-model-training-distributed-optimization-and-scaling",
+          "title": "Governed Model Training, Distributed Optimization, and Scaling",
+          "file": "chapters/governed-model-training-distributed-optimization-and-scaling.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "ext_llama3_herd_2024",
+            "ext_megatron_distributed_training_2021",
+            "ext_zero_optimizer_2019",
+            "ext_gspmd_2021",
+            "ext_datastates_llm_2024",
+            "ext_pytorch_distributed_checkpoint_2026",
+            "ext_mlperf_training_v6_2026",
+            "corbens_trainer_project"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_llama3_herd_2024",
+              "ext_megatron_distributed_training_2021",
+              "ext_zero_optimizer_2019",
+              "ext_gspmd_2021",
+              "ext_datastates_llm_2024",
+              "ext_pytorch_distributed_checkpoint_2026",
+              "ext_mlperf_training_v6_2026"
+            ],
+            "supporting": [
+              "corbens_trainer_project"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": [
+              "Receives a selected substrate, data lease, authorized objective, supply-chain identities, and resource budget; returns one exact candidate and complete run receipt to independent qualification without model-quality, support, readiness, or release authority."
+            ]
+          },
+          "problem": "A checkpoint can load and a loss curve can converge even when data order, optimizer state, numerical policy, distributed topology, failure recovery, or checkpoint selection no longer matches the training process claimed.",
+          "insufficient": "Code, data, weights, final loss, peak throughput, a framework save call, successful restart, or one retained checkpoint does not identify the full stateful distributed run or separate candidate selection from independent qualification.",
+          "core_claim": "A model-training candidate is eligible for qualification only when a prospectively frozen run contract binds architecture, data lease and order, objective, optimizer, scheduler, numerical policy, device and parallelism topology, code and environment, budget, stopping and fault policy, complete attempted-run denominator, full declared checkpoint state, commit consistency, resume equivalence class, candidate-checkpoint family, validation-only selection, independent unopened qualification, and residual ownership; a loss reduction, completed job, high utilization, checkpoint file, successful load, recovered run, selected candidate, formal record proof, or source-reported scale result alone establishes neither faithful training, model quality, optimizer superiority, fault tolerance, safety, support, readiness, release, transfer, nor SOTA.",
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_llama3_herd_2024",
+              "mapped_support": "Supplies a paper-body-reviewed large-run case covering 4D parallelism, network-aware topology, numerical stability interventions, checkpoint infrastructure, interruption denominators, and effective training time.",
+              "limits": "Provider-reported scale, utilization, interruption, and recovery results are not locally reproduced and do not establish exact resume.",
+              "passage_refs": [
+                "sources/source_notes/ext_llama3_herd_2024.md"
+              ],
+              "passage_review_note": "Reviewed the primary paper or official documentation at the bounded passages recorded in the source note; no source-reported result is treated as local evidence.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_megatron_distributed_training_2021",
+              "mapped_support": "Grounds composed tensor, pipeline, and data parallelism, strict optimizer semantics, microbatch scheduling, communication, and topology tradeoffs.",
+              "limits": "Its measured cluster and model envelope is not universal, and no throughput result is reproduced.",
+              "passage_refs": [
+                "sources/source_notes/ext_megatron_distributed_training_2021.md"
+              ],
+              "passage_review_note": "Reviewed the primary paper or official documentation at the bounded passages recorded in the source note; no source-reported result is treated as local evidence.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_zero_optimizer_2019",
+              "mapped_support": "Grounds progressive sharding and separate accounting for optimizer, gradient, parameter, activation, and residual state.",
+              "limits": "Sharding does not prove complete application state, checkpoint integrity, or universal efficiency.",
+              "passage_refs": [
+                "sources/source_notes/ext_zero_optimizer_2019.md"
+              ],
+              "passage_review_note": "Reviewed the primary paper or official documentation at the bounded passages recorded in the source note; no source-reported result is treated as local evidence.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_gspmd_2021",
+              "mapped_support": "Grounds compiler-mediated SPMD sharding and mixed parallelism as a serious alternative to manually composed plans.",
+              "limits": "Automatic completion does not prove semantic equivalence, optimal topology, or transfer.",
+              "passage_refs": [
+                "sources/source_notes/ext_gspmd_2021.md"
+              ],
+              "passage_review_note": "Reviewed the primary paper or official documentation at the bounded passages recorded in the source note; no source-reported result is treated as local evidence.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_datastates_llm_2024",
+              "mapped_support": "Grounds asynchronous distributed checkpoint creation, logical consistency, storage-tier movement, and checkpoint overhead.",
+              "limits": "Checkpoint consistency over model and optimizer shards does not by itself establish full-state or trajectory-equivalent resume.",
+              "passage_refs": [
+                "sources/source_notes/ext_datastates_llm_2024.md"
+              ],
+              "passage_review_note": "Reviewed the primary paper or official documentation at the bounded passages recorded in the source note; no source-reported result is treated as local evidence.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_pytorch_distributed_checkpoint_2026",
+              "mapped_support": "Grounds current save/load, asynchronous future, canonical state, strict load, and resharding interface requirements.",
+              "limits": "Official API documentation is not scientific performance evidence or proof that every application state is captured.",
+              "passage_refs": [
+                "sources/source_notes/ext_pytorch_distributed_checkpoint_2026.md"
+              ],
+              "passage_review_note": "Reviewed the primary paper or official documentation at the bounded passages recorded in the source note; no source-reported result is treated as local evidence.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_mlperf_training_v6_2026",
+              "mapped_support": "Grounds fixed quality targets, repeated time-to-quality, system metadata, variance, divisions, and correction of published training results.",
+              "limits": "No local MLPerf submission exists, and benchmark conformance would not establish safety, full run integrity, or release merit.",
+              "passage_refs": [
+                "sources/source_notes/ext_mlperf_training_v6_2026.md"
+              ],
+              "passage_review_note": "Reviewed the primary paper or official documentation at the bounded passages recorded in the source note; no source-reported result is treated as local evidence.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "corbens_trainer_project",
+              "mapped_support": "Supplies a pinned local implementation and failure comparator for typed campaigns, training-truth gates, content-addressed checkpoint lineage, complete run facts, retained quarantines, and acknowledged-checkpoint requirements.",
+              "limits": "Its external dependencies and natural training were not reproduced; retained null seed/code identities, later-quarantined claims, and unacknowledged asynchronous checkpoints are negative implementation evidence, not model-quality or distributed-training results.",
+              "passage_refs": [
+                "sources/source_notes/corbens_trainer_project.md"
+              ],
+              "passage_review_note": "Reviewed the primary paper or official documentation at the bounded passages recorded in the source note; no source-reported result is treated as local evidence.",
+              "passage_review_state": "reviewed"
+            }
+          ],
+          "mechanism": [
+            "Freeze exact run identity, data order, topology, numerical policy, budget, faults, selection, qualification, and nonclaims before execution.",
+            "Compile and record the executed device mesh, parallelism dimensions, collective/compiler plan, batch arithmetic, and optimizer-step semantics.",
+            "Enumerate complete base and architecture-specific model, optimizer, scheduler, scaler, RNG, sampler, data-cursor, topology, and compiler state.",
+            "Record every attempt, failure, interruption, recovery, batch, anomaly, intervention, and actual resource cost without censoring failed runs.",
+            "Advance checkpoints through request, staging, durable commit, shard and completeness validation, and resume authority.",
+            "Test resume under a prospectively named bitwise, operation-order-bounded, or statistical equivalence class.",
+            "Retain the full checkpoint family and select only on validation under a frozen rule.",
+            "Hand the exact selected candidate to unopened independent qualification without support or release authority."
+          ],
+          "interfaces": [
+            "authorized objective",
+            "rights-bearing data lease",
+            "substrate state schema",
+            "supply-chain identity",
+            "resource budget",
+            "topology and numerical plan",
+            "execution and fault ledger",
+            "checkpoint-family custody",
+            "independent qualification handoff"
+          ],
+          "invariants": [
+            "inputs freeze before outcomes",
+            "topology and numerics are semantic run inputs",
+            "global batch arithmetic reconciles",
+            "data order and multiplicity remain reconstructable",
+            "declared checkpoint state closure is complete",
+            "checkpoint shards share one logical step and durable commit",
+            "resume equivalence class is prospective",
+            "failed runs and candidate checkpoints stay in denominators",
+            "qualification cannot select checkpoints",
+            "training confers no support or release authority"
+          ],
+          "failure_modes": [
+            "run identity drift",
+            "silent data replay or skip",
+            "torn checkpoint",
+            "state amnesia",
+            "topology drift",
+            "numerical drift laundering",
+            "stale or duplicated update",
+            "loss-spike intervention censorship",
+            "checkpoint cherry-picking",
+            "failed-run censorship",
+            "peak-throughput substitution",
+            "capacity-to-capability inference",
+            "trainer self-certification",
+            "record-completeness theater"
+          ],
+          "minimal_implementation": "Build a training-run transaction record, validator, and replay workflow around a competent open natural workload with uninterrupted, standard distributed, deliberately weight-only recovery, full-state governed, and strong alternative-topology arms; inject thirteen fault families across at least three seeds and multiple timings; keep qualification hidden; retain every attempt and checkpoint; and measure time-to-quality, resume distance, drift detection, downstream qualification, resources, operator work, and governance cost jointly.",
+          "beyond_state_of_art": "The mature operational contract is a substrate-neutral training transaction whose kernel-specific state schema, compiler-emitted topology, data order, update ledger, checkpoint commits, equivalence probes, complete denominators, and independent qualification boundary are replayable across dense, sparse, recurrent, state-space, graph, and hybrid architectures. It requires independent reproduction and cross-framework, hardware, topology, scale, fault, and time transfer while preserving rights, lineage, residual, rollback, candidate-family, and no-release-authority boundaries.",
+          "codex_tests": [
+            {
+              "name": "Training-run transaction contract",
+              "purpose": "Check topology and batch arithmetic, ten-class state closure, full denominator, checkpoint family, qualification separation, sources, non-authorities, and 21 rejecting mutations.",
+              "implementation_status": "implemented",
+              "result_status": "authored_record_only_no_training_effect"
+            },
+            {
+              "name": "Natural distributed fault campaign",
+              "purpose": "Compare five strong matched arms across thirteen faults, at least three seeds, hidden qualification, and joint integrity, quality, resource, and operator outcomes.",
+              "implementation_status": "planned",
+              "result_status": "prospectively_frozen_unexecuted"
+            },
+            {
+              "name": "Independent run replay",
+              "purpose": "Reconstruct data order, topology, complete checkpoint state, selection, and reported metrics from retained artifacts.",
+              "implementation_status": "planned",
+              "result_status": "blocked_by_valid_campaign"
+            }
+          ],
+          "lean_module": "AsiStackProofs.GovernedModelTraining",
+          "proof_targets": [
+            {
+              "tag": "lean:governed_training.run_admission_invariants",
+              "module": "AsiStackProofs.GovernedModelTraining",
+              "target": "An accepted finite handoff requires exact declared identity, topology/numerical identity, complete committed checkpoint state, complete failure denominator, and no support or release request.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:governed_training.resume_and_handoff_separation",
+              "module": "AsiStackProofs.GovernedModelTraining",
+              "target": "An accepted finite handoff requires accounted resume state, retained checkpoint and failure families, validation-only selection, and unopened independent qualification.",
+              "status": "implemented"
+            }
+          ],
+          "draft_maturity": "integrated_argument_chapter_formal_and_protocol_contract_complete",
+          "open_evidence_gaps": [
+            "No ASI Stack distributed model-training campaign has run for this chapter.",
+            "No natural checkpoint resume equivalence, fault-tolerance, model-quality, efficiency, reproduction, or transfer result is recorded.",
+            "The authored transaction fixture and finite Lean model establish record consequences only."
           ]
         },
         {
@@ -14901,7 +15115,8 @@
             "ext_dynamic_compute_recurrent_transformers_2026",
             "ext_claw_swe_bench_2026",
             "reflexive_router_whitepaper",
-            "kernel_english_residual_compiler"
+            "kernel_english_residual_compiler",
+            "ext_mlperf_training_v6_2026"
           ],
           "source_queue": {
             "primary": [
@@ -14922,7 +15137,8 @@
             ],
             "variants": [
               "ext_pagedattention_vllm_2023",
-              "ext_reluplex_2017"
+              "ext_reluplex_2017",
+              "ext_mlperf_training_v6_2026"
             ],
             "connector_or_recovery": [],
             "handoff_or_recovery_notes": [
@@ -15006,7 +15222,7 @@
             "A local finite selector or replay is described as economic optimality, welfare improvement, production stability, or SOTA.",
             "Governance cost exceeds benefit, but institutional lock-in preserves the allocation policy and hides the refutation."
           ],
-          "minimal_implementation": "Twenty-three retained countermodels and bounded computations plus an eight-declaration, nine-stage, 66-route allocation, execution, simulation-transport, reconciliation, and closure lifecycle; an independently implemented consumer rejects 57/57 non-accepting mutations and digest-binds twelve bounded source families. Thirty-five assumption projections and copied fixture summaries are retired. The model separates useful outcomes from raw resource proxies, blocks fidelity overclaims, requires failure and unsafe-release accounting, and grants no support or external-effect authority. This is bounded policy/conformance evidence over synthetic fixtures, repository replays, local timing, historical CI, and sanitized imports\u2014not economic optimality, deployed scheduling, useful-throughput improvement, simulation adequacy, physical feasibility, transfer, or SOTA evidence.",
+          "minimal_implementation": "Twenty-three retained countermodels and bounded computations plus an eight-declaration, nine-stage, 66-route allocation, execution, simulation-transport, reconciliation, and closure lifecycle; an independently implemented consumer rejects 57/57 non-accepting mutations and digest-binds twelve bounded source families. Thirty-five assumption projections and copied fixture summaries are retired. The model separates useful outcomes from raw resource proxies, blocks fidelity overclaims, requires failure and unsafe-release accounting, and grants no support or external-effect authority. This is bounded policy/conformance evidence over synthetic fixtures, repository replays, local timing, historical CI, and sanitized imports—not economic optimality, deployed scheduling, useful-throughput improvement, simulation adequacy, physical feasibility, transfer, or SOTA evidence.",
           "beyond_state_of_art": "Resource economics matures into a risk-aware budget operating system and claim-transport layer for cognition. It decides when the stack may spend, defer, shrink, escalate, reject, residualize work, or downgrade synthetic evidence without letting local cost pressure delete verification, security, approval, replay, rollback, human review, fidelity limits, or transfer boundaries. In the mature budget OS, cognition has a budget and simulations have contracts: budgets cannot delete verification tax, protected overhead, review capacity, rollback cost, security cost, residual burden, or the requirement that simulated results travel only as far as declared scope, fidelity, resources, omissions, and transfer decisions allow.",
           "codex_tests": [
             {
@@ -17168,7 +17384,7 @@
           "open_evidence_gaps": [
             "All twelve assigned sources have exact passage-reviewed mappings, but they support formalization and claim-boundary design only; no source-reported system, proof corpus, deployment, runtime, security, capability, or performance result is imported as ASI Stack evidence.",
             "The current surface contains 298 targets and 1,151 declarations, but the activation-baseline rationalization is not complete: projections, assumption restatements, vacuity, reachability, duplicate/orphan status, consumer use, richer-model needs, executable and empirical handoffs, implementation binding, independent reproduction, and transfer must still receive terminal dispositions under the roadmap.",
-            "The local ProofEnvelope module has seven finite declarations\u2014two direct projections and five derived negative cases\u2014and the semantic-depth harness has one blocked record plus ten rejecting mutations. Neither proves full semantic adequacy, deployed enforcement, system safety, implementation refinement, empirical truth, support promotion, transfer, or SOTA."
+            "The local ProofEnvelope module has seven finite declarations—two direct projections and five derived negative cases—and the semantic-depth harness has one blocked record plus ten rejecting mutations. Neither proves full semantic adequacy, deployed enforcement, system safety, implementation refinement, empirical truth, support promotion, transfer, or SOTA."
           ],
           "codex_tests": [
             {
@@ -17313,7 +17529,8 @@
             "ext_openunlearning_2025",
             "reflexive_router_whitepaper",
             "kernel_english_residual_compiler",
-            "ext_swe_rebench_v2_2026"
+            "ext_swe_rebench_v2_2026",
+            "ext_mlperf_training_v6_2026"
           ],
           "source_queue": {
             "primary": [
@@ -17338,7 +17555,9 @@
               "reflexive_router_whitepaper",
               "kernel_english_residual_compiler"
             ],
-            "variants": [],
+            "variants": [
+              "ext_mlperf_training_v6_2026"
+            ],
             "connector_or_recovery": [
               "moecot",
               "road_to_agi"
@@ -18766,7 +18985,7 @@
             "Unknown-hazard neglect concentrates work on articulated risks while incidents, weak signals, politically inconvenient harms, and outside-envelope threats remain ownerless.",
             "Case-factory Goodhart optimizes graph counts, connected edges, closure rate, or review speed while adequacy, dissent, tails, cost, and residual age deteriorate."
           ],
-          "minimal_implementation": "Two public schemas plus eight digest-bound synthetic case records\u2014one readiness-review route and seven negative routes\u2014and five validator mutations bridge eight owned Lean declarations. All eight declarations are derived finite reductions of one hand-authored SafetyCaseRouteFor decision tree. No real case, hazard analysis, threat model, evidence-adequacy review, countercase search, safeguard verification, independent institution, acceptance, readiness, release, deployment, incident, reproduction, or transfer ran; chapter-core support effect is zero.",
+          "minimal_implementation": "Two public schemas plus eight digest-bound synthetic case records—one readiness-review route and seven negative routes—and five validator mutations bridge eight owned Lean declarations. All eight declarations are derived finite reductions of one hand-authored SafetyCaseRouteFor decision tree. No real case, hazard analysis, threat model, evidence-adequacy review, countercase search, safeguard verification, independent institution, acceptance, readiness, release, deployment, incident, reproduction, or transfer ran; chapter-core support effect is zero.",
           "beyond_state_of_art": "The mature Assurance Argument Compilation program continuously compiles exact governed references into versioned multi-hazard cases, actively searches for countercases and unknown-envelope failures, tests seeded omissions and stale dependencies, separates structural, semantic, empirical, control, acceptance, readiness, and release states, preserves competing arguments and dissent, exercises invalidation, override, redaction, fallback, rollback, and retirement, and measures detection quality, reviewer disagreement, false block/clear, resolution latency, burden, cost, and residual age together. It then requires independent institutional reproduction and heterogeneous transfer across systems, domains, hazards, access modes, safeguards, evidence regimes, organizations, jurisdictions, and time. Positive, negative, null, inconclusive, narrowed, refuted, withdrawn, overridden, retired, and blocked-after-full-attempt outcomes remain visible. This is a target campaign, not a current safety case, valid threat model, adequate evidence, effective control, safe system, or deployment authority.",
           "codex_tests": [
             "Complete bounded record to readiness-review route",
@@ -22795,7 +23014,7 @@
             "Unsupported transfer treats one repository's local hygiene, render pipeline, release process, or maintenance history as proof that the method improves other books, teams, domains, or times."
           ],
           "minimal_implementation": "Sixteen exact source-to-claim mappings; one living-book release-record fixture; a change-packet harness with three valid and six expected-invalid synthetic cases; a reader release-candidate bridge over the current blocked candidate, three additional valid routes, and five expected-invalid controls; manifest/outline/proof synchronization, claim and source appendices, Quarto HTML rendering, Human-view toggle, browser checks, changelog and release records, and an authoritative validation registry; and four proof targets implemented by twenty-one Lean declarations over hand-authored finite manifest, structural-update, release, derivative, change-packet, and reader-route records. These artifacts establish repository, record, build, render, derivative, and release discipline only; they do not prove source interpretation, editorial quality, accessibility approval, chapter truth, reader or audio approval, external reproduction, transfer, or a chapter-core support effect.",
-          "beyond_state_of_art": "The mature argument-exit campaign must follow a prospectively frozen stream of natural substantive updates\u2014new sources, conflicting evidence, claim promotion and refutation, proof retirement, schema changes, figures, accessibility fixes, corrections, rollbacks, releases, reader derivatives, and successor handoffs\u2014performed by multiple independent human and AI maintainers. It must compare the Evidence-Preserving Publication Transaction with matched static manuscript, wiki, ordinary Git repository, literate-programming, executable-book, docs-as-code, and strongest conventional scholarly publishing workflows under equal content, tooling, time, and review opportunity; inject source revocation, citation error, claim drift, proof bloat, validator weakness, rights conflict, derivative drift, release mismatch, deployment failure, errata, and handoff loss; and jointly measure claim accuracy and calibration, source and proof traceability, error detection, correction latency, reproducibility, rollback, accessibility, reader comprehension, editorial quality, maintenance burden, reviewer time, compute, storage, hosting, opportunity cost, and total cost. Independent maintainers, editors, accessibility reviewers, readers, repositories, institutions, formats, hosting systems, and domains must reproduce and transfer positive, negative, null, narrowed, blocked, and refuted outcomes. Until then the transaction is not proof of superior scholarship, editorial quality, accessibility, reader value, governance effectiveness, external reproducibility, transfer, or SOTA publishing.",
+          "beyond_state_of_art": "The mature argument-exit campaign must follow a prospectively frozen stream of natural substantive updates—new sources, conflicting evidence, claim promotion and refutation, proof retirement, schema changes, figures, accessibility fixes, corrections, rollbacks, releases, reader derivatives, and successor handoffs—performed by multiple independent human and AI maintainers. It must compare the Evidence-Preserving Publication Transaction with matched static manuscript, wiki, ordinary Git repository, literate-programming, executable-book, docs-as-code, and strongest conventional scholarly publishing workflows under equal content, tooling, time, and review opportunity; inject source revocation, citation error, claim drift, proof bloat, validator weakness, rights conflict, derivative drift, release mismatch, deployment failure, errata, and handoff loss; and jointly measure claim accuracy and calibration, source and proof traceability, error detection, correction latency, reproducibility, rollback, accessibility, reader comprehension, editorial quality, maintenance burden, reviewer time, compute, storage, hosting, opportunity cost, and total cost. Independent maintainers, editors, accessibility reviewers, readers, repositories, institutions, formats, hosting systems, and domains must reproduce and transfer positive, negative, null, narrowed, blocked, and refuted outcomes. Until then the transaction is not proof of superior scholarship, editorial quality, accessibility, reader value, governance effectiveness, external reproducibility, transfer, or SOTA publishing.",
           "codex_tests": [
             {
               "name": "Living book release record validation",

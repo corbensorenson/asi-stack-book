@@ -12,12 +12,12 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 306 |
-| Lean modules scanned | 102 |
-| Theorem declarations classified | 1346 |
+| Proof targets in manifest | 308 |
+| Lean modules scanned | 103 |
+| Theorem declarations classified | 1359 |
 | Direct/projection-style theorem declarations | 230 |
-| Derived/decomposed theorem declarations | 917 |
-| Unknown or mixed theorem declarations | 199 |
+| Derived/decomposed theorem declarations | 921 |
+| Unknown or mixed theorem declarations | 208 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -92,6 +92,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/FastGenerationRefinement.lean` | fast-generation-architectures | 5 | 17 | 12 | 3 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 1 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | governed-model-training-distributed-optimization-and-scaling | 2 | 13 | 0 | 4 | 9 | manual review |
 | `lean/AsiStackProofs/GovernedOperations.lean` | governed-operations-incident-command-and-graceful-degradation | 2 | 13 | 0 | 3 | 10 | manual review |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | governed-world-models-and-reality-grounding | 2 | 9 | 0 | 5 | 4 | manual review |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | personal-compute-hives-and-federated-edge-intelligence | 6 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -653,6 +654,19 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/GovernanceRights.lean` | `theseus_governance_rights_receipt_suite_import_core_promotion_rejected` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `theseus_governance_rights_receipt_suite_import_fixture_valid` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `theseus_governance_rights_receipt_suite_import_legal_rights_overclaim_rejected` | derived_or_decomposed | yes | uses simp |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | `accepted_handoff_requires_complete_checkpoint` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | `accepted_handoff_requires_exact_identity` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | `accepted_handoff_requires_resume_accounting` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | `accepted_handoff_separates_selection_and_qualification` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | `complete_authored_run_accepts_bounded_handoff_without_authority` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | `data_cursor_drift_rejects_resume` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | `hidden_failed_run_rejects_selection` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | `missing_state_class_requests_inventory` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | `opened_qualification_requests_new_qualification` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | `rng_drift_rejects_resume` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | `support_laundering_requests_qualification` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | `torn_checkpoint_rejects_handoff` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | `undurable_async_checkpoint_rejects_handoff` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/GovernedOperations.lean` | `accepted_degradation_preserves_or_narrows_all_authority_dimensions` | derived_or_decomposed | no | uses cases |
 | `lean/AsiStackProofs/GovernedOperations.lean` | `accepted_recovery_requires_complete_declared_state_effect_and_expiry` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/GovernedOperations.lean` | `active_emergency_lease_blocks_recovery` | unknown_or_mixed | no | no recognized depth pattern |

@@ -39,6 +39,7 @@ This generated audit checks every active chapter against the architecture-refere
 | `procedural-memory-and-cognitive-loop-closure` | pass | explicit heading | complete packet surface |
 | `routing-heads-and-specialist-cores` | pass | bounded in insufficiency section | complete packet surface |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | pass | bounded in insufficiency section | complete packet surface |
+| `governed-model-training-distributed-optimization-and-scaling` | pass | explicit heading | complete packet surface |
 | `readiness-gates-residual-escrow-and-quarantine` | pass | bounded in insufficiency section | complete packet surface |
 | `personal-compute-hives-and-federated-edge-intelligence` | pass | bounded in insufficiency section | complete packet surface |
 | `compact-generative-systems-and-residual-honesty` | pass | bounded in insufficiency section | complete packet surface |
@@ -66,6 +67,6 @@ This generated audit checks every active chapter against the architecture-refere
 | `living-book-methodology` | pass | bounded in insufficiency section | complete packet surface |
 | `open-research-agenda-and-bibliography-plan` | pass | bounded in insufficiency section | complete packet surface |
 
-Summary: 59 of 59 active chapters pass; 0 remain open.
+Summary: 60 of 60 active chapters pass; 0 remain open.
 
 Non-claims: this is a structural and bounded semantic audit, not proof of prose quality, source interpretation, empirical validity, formal adequacy, deployment, safety, or independent review.

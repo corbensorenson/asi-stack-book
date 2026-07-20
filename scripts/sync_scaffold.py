@@ -40,6 +40,8 @@ GLOSSARY = [
     ("Readiness gate", "An evidence and regression checkpoint that must pass before a module or field can be promoted."),
     ("Residual escrow", "A visible backlog of unresolved failures, uncertainty, or residual complexity left by a route, compression, or benchmark result."),
     ("Benchmark ratchet", "A process that uses tests, regressions, hidden checks, and residuals to move capability claims without erasing failure cases."),
+    ("Training Run Transaction", "A prospectively frozen, identity-bound record joining architecture, data order, objective, optimizer, numerical and topology policy, execution failures, full checkpoint state, resume evidence, checkpoint-family selection, and independent qualification handoff."),
+    ("Resume equivalence class", "The prospectively declared strength of a checkpoint-continuation claim: bitwise, operation-order-bounded, or statistical, each with its own comparison and inference ceiling."),
 ]
 
 TEST_SPECS = {

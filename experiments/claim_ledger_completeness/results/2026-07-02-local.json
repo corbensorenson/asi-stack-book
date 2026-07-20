@@ -1,5 +1,5 @@
 {
-  "appendix_c_core_claim_row_count": 59,
+  "appendix_c_core_claim_row_count": 60,
   "chapter_core_support_effect": "none",
   "command": "python3 scripts/validate_claim_ledger_completeness_audit.py",
   "coverage": {
@@ -31,7 +31,7 @@
       "claim_ledger_completeness_audit_bridge"
     ]
   },
-  "manifest_chapter_core_claim_count": 59,
+  "manifest_chapter_core_claim_count": 60,
   "negative_controls": {
     "claim_label_mismatch_rejected": true,
     "duplicate_row_rejected": true,

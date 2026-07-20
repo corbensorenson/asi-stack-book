@@ -9,11 +9,11 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 59 |
+| Manifest chapter core claims | 60 |
 | Accepted core-transition dispositions | 22 |
-| Accepted no-promotion dispositions | 37 |
+| Accepted no-promotion dispositions | 38 |
 | Promoted core claims | 0 |
-| Core claims remaining at `argument` | 59 |
+| Core claims remaining at `argument` | 60 |
 
 ## Dispositions
 
@@ -52,6 +52,7 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 | `procedural-memory-and-cognitive-loop-closure.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Memory update fixture preserves failed attempts and rollback path. |
 | `routing-heads-and-specialist-cores.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Learned, rule, specialist, generalist, fallback, and abstention routes separate under ambiguous held-out work with matched cost, calibration, interference, residual, and authority records. |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | A bounded heterogeneous-kernel substitution and mixed-kernel route reproduce and transfer without authority widening, exact-state loss, hidden assistance, unsafe release, or dominated lifecycle cost; otherwise narrow or refute the relevant atoms. |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Across multiple seeds and representative model scales, a governed run preserves declared semantics and state under fault and resume, selects without qualification leakage, beats strong distributed-training and checkpoint baselines on joint time-to-quality, recovery correctness, useful throughput, and governance cost, and reproduces independently without granting release authority. |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/readiness_residual_no_change.json` | Promotion blocked on expired evidence or uncustodied residuals. |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Lease fixture proves bounded compute delegation and revocation. |
 | `compact-generative-systems-and-residual-honesty.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Fixture records what is compressed, represented, lost, checked, repaired, residualized, superseded, quarantined, or rejected before any compactness or semantic-representation claim promotes. |

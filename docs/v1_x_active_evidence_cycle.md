@@ -9,7 +9,7 @@ Active successor: `docs/post_v2_evidence_roadmap.md`
 This ledger names the current v1.x evidence-cycle chapter lanes selected from
 `docs/per_chapter_evidence_plan.md`. It exists to enforce the lane cap: this
 cycle selects one flagship measured lane plus two direct support lanes and
-leaves the other 56 chapter lanes planned-only. It is a planning and
+leaves the other 57 chapter lanes planned-only. It is a planning and
 release-control record, not a support-state transition.
 
 The selected lanes sit inside a wider defended-contribution pool where the
@@ -26,13 +26,13 @@ promotion.
 | Field | Value |
 |---|---|
 | Selected chapter lanes | 3 |
-| Planned-only chapter lanes | 56 |
+| Planned-only chapter lanes | 57 |
 | Lane cap | 1 flagship measured lane plus at most 2 direct support lanes per v1.x cycle |
 | Flagship measured lane | `resource-economics-and-token-budgets` |
 | Direct support lanes | `project-theseus-as-report-first-implementation-reference`; `fast-generation-architectures` |
-| Chapter core support effect | None; all 59 chapter core claims remain `argument`. |
+| Chapter core support effect | None; all 60 chapter core claims remain `argument`. |
 | Non-core support effect | Existing non-core transitions remain scoped to their accepted records. |
-| No-sweep rule | No 59-lane fixture sweep is claimed or implied. |
+| No-sweep rule | No 60-lane fixture sweep is claimed or implied. |
 
 ## Selected Lanes
 
@@ -107,6 +107,7 @@ promotion.
 - `procedural-memory-and-cognitive-loop-closure`
 - `routing-heads-and-specialist-cores`
 - `replaceable-cognitive-substrates-beyond-transformer-monoculture`
+- `governed-model-training-distributed-optimization-and-scaling`
 - `readiness-gates-residual-escrow-and-quarantine`
 - `personal-compute-hives-and-federated-edge-intelligence`
 - `compact-generative-systems-and-residual-honesty`

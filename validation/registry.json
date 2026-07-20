@@ -2117,7 +2117,18 @@
     "scripts/validate_p4_c6_semantic_proof_cluster.py",
     "proofs/semantic_cluster_audits/resource_artifact_and_lifecycle_economics.json",
     "docs/p4_c6_resource_artifact_and_lifecycle_economics_semantic_audit.md",
-    "lean/AsiStackProofs/ArtifactStewardAgents.lean"
+    "lean/AsiStackProofs/ArtifactStewardAgents.lean",
+    "scripts/validate_training_run_transaction.py",
+    "schemas/training_run_transaction.schema.json",
+    "tests/fixtures/protocol_records/training_run_transaction.valid.json",
+    "experiments/governed_model_training_argument_exit/preregistration.json",
+    "lean/AsiStackProofs/GovernedModelTraining.lean",
+    "chapters/governed-model-training-distributed-optimization-and-scaling.qmd",
+    "scripts/register_p6_4_a1_governed_model_training.py",
+    "scripts/validate_p6_4_a1_governed_model_training_reader_integration.py",
+    "evidence_quality/p6_4_a1_governed_model_training_reader_integration.json",
+    "docs/p6_4_a1_governed_model_training_adjudication.md",
+    "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd"
   ],
   "units": [
     {
@@ -9265,12 +9276,12 @@
       "output_contract": "Reject missing or duplicated core and subordinate coverage, noncanonical ownership, blank or tautological falsifiers, duplicate lanes, unsupported P1 promotion, stale generated artifacts, unresolved candidates laundered as P1 completion, reviewed placeholders, summary inflation, or invented support effects.",
       "output_assertions": [
         "3730 semantically reviewed structured atoms",
-        "2693 adjudicated prose-only candidates",
+        "2886 adjudicated prose-only candidates",
         "54 generated chapter dossiers",
         "54 completed semantic chapter sweeps",
         "P1 and M1 honestly completed",
         "no support-state effect",
-        "eleven rejecting mutations"
+        "thirteen rejecting mutations"
       ],
       "claim_scope": "P1 claim coverage, ownership, schema, semantic review, generation, and honest completion state only.",
       "negative_controls": "validator_owned_and_generated_artifact_bound",
@@ -13757,11 +13768,84 @@
         "lean/AsiStackProofs/ArtifactCompressionRefinement.lean",
         "scripts/register_p7_2_t4_and_p4_c6_tranche.py"
       ]
+    },
+    {
+      "script": "validate_training_run_transaction.py",
+      "input_contract": "One authored non-empirical training transaction, ten required state classes, seven source records, eight non-authorities, and a prospectively frozen five-arm natural campaign.",
+      "output_contract": "Require topology/batch reconciliation, full attempted-run denominator, complete consistent durable checkpoint state, resume-accounting fields, validation-only checkpoint-family selection, independent unopened qualification, and 21 rejecting mutations.",
+      "output_assertions": [
+        "10 state classes",
+        "7 sources",
+        "8 non-authorities",
+        "5 prospective arms",
+        "13 fault families",
+        "12 competence gates",
+        "21 mutations reject",
+        "no training/support/release effect"
+      ],
+      "claim_scope": "Authored training-run record shape and finite qualification-handoff semantics only.",
+      "negative_controls": "validator_owned_twenty_one_freeze_topology_batch_numeric_denominator_state_commit_resume_selection_qualification_source_and_authority_mutations",
+      "prohibited_inference": "No model training, resume equivalence, distributed efficiency, fault tolerance, model quality, inventory completeness, support, readiness, release, transfer, SOTA, AGI, or ASI follows.",
+      "id": "validate_training_run_transaction.py:415",
+      "order": 415,
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "contract_precision": "exact_record_denominator_and_semantic_disposition_contract",
+      "input_artifacts": [
+        "scripts/validate_training_run_transaction.py",
+        "schemas/training_run_transaction.schema.json",
+        "tests/fixtures/protocol_records/training_run_transaction.valid.json",
+        "experiments/governed_model_training_argument_exit/preregistration.json",
+        "lean/AsiStackProofs/GovernedModelTraining.lean",
+        "lean/AsiStackProofs.lean",
+        "chapters/governed-model-training-distributed-optimization-and-scaling.qmd",
+        "scripts/register_p6_4_a1_governed_model_training.py"
+      ]
+    },
+    {
+      "script": "validate_p6_4_a1_governed_model_training_reader_integration.py",
+      "input_contract": "Terminal A1 decision, seven-source four-role packet, one argument chapter, two implemented targets, thirteen theorem declarations, one authored contract, one unopened natural protocol, and reconciled reader/status surfaces.",
+      "output_contract": "Bind exact artifact and source-note digests, require exclusive placement and neighbor handoffs, preserve source/proof/protocol denominators, advance exactly to A2, and reject nine integration mutations.",
+      "output_assertions": [
+        "1 terminal A1 chapter",
+        "7 source notes",
+        "4 source roles",
+        "2 implemented targets",
+        "13 theorems",
+        "60 chapters",
+        "A2 active",
+        "9 integration mutations reject",
+        "support effect none"
+      ],
+      "claim_scope": "A1 chapter necessity, argument-level integration, artifact custody, and no-promotion boundary only.",
+      "negative_controls": "validator_owned_nine_decision_source_manifest_proof_campaign_competence_status_and_support_mutations",
+      "prohibited_inference": "Reader integration and finite artifacts do not establish training integrity, exact resume, model quality, efficiency, fault tolerance, support, readiness, release, transfer, or SOTA.",
+      "id": "validate_p6_4_a1_governed_model_training_reader_integration.py:416",
+      "order": 416,
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "contract_precision": "exact_record_denominator_and_semantic_disposition_contract",
+      "input_artifacts": [
+        "scripts/validate_p6_4_a1_governed_model_training_reader_integration.py",
+        "evidence_quality/p6_4_a1_governed_model_training_reader_integration.json",
+        "docs/p6_4_a1_governed_model_training_adjudication.md",
+        "book_structure.json",
+        "sources/source_inventory.json",
+        "proofs/proof_manifest.json",
+        "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
+        "index.qmd",
+        "appendices/B_glossary.qmd",
+        "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
+        "chapters/integrated-reference-architecture.qmd",
+        "scripts/register_p6_4_a1_governed_model_training.py"
+      ]
     }
   ],
   "summary": {
-    "required_artifact_count": 2073,
-    "unit_count": 414
+    "required_artifact_count": 2084,
+    "unit_count": 416
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

@@ -1,7 +1,7 @@
 {
   "disposition_set_id": "v1_x.per_chapter_core_claim_dispositions",
   "date": "2026-07-03",
-  "scope_boundary": "Standing per-chapter disposition record for the 59 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
+  "scope_boundary": "Standing per-chapter disposition record for the 60 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
   "review_status": "active_validator_checked_record",
   "generated_from": [
     "book_structure.json",
@@ -12,11 +12,11 @@
   ],
   "support_state_effect": "none",
   "summary": {
-    "manifest_chapter_core_claims": 59,
+    "manifest_chapter_core_claims": 60,
     "accepted_core_transition_dispositions": 22,
-    "accepted_no_promotion_dispositions": 37,
+    "accepted_no_promotion_dispositions": 38,
     "promoted_core_claims": 0,
-    "chapter_core_claims_remaining_at_argument": 59
+    "chapter_core_claims_remaining_at_argument": 60
   },
   "dispositions": [
     {
@@ -1625,6 +1625,45 @@
       ]
     },
     {
+      "claim_id": "governed-model-training-distributed-optimization-and-scaling.core",
+      "chapter_id": "governed-model-training-distributed-optimization-and-scaling",
+      "chapter_title": "Governed Model Training, Distributed Optimization, and Scaling",
+      "part_id": "routing-compression-representation-substrates",
+      "part_title": "Part III - Routing, Compression, Representation, and Substrates",
+      "chapter_file": "chapters/governed-model-training-distributed-optimization-and-scaling.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "A model-training candidate is eligible for qualification only when a prospectively frozen run contract binds architecture, data lease and order, objective, optimizer, scheduler, numerical policy, device and parallelism topology, code and environment, budget, stopping and fault policy, complete attempted-run denominator, full declared checkpoint state, commit consistency, resume equivalence class, candidate-checkpoint family, validation-only selection, independent unopened qualification, and residual ownership; a loss reduction, completed job, high utilization, checkpoint file, successful load, recovered run, selected candidate, formal record proof, or source-reported scale result alone establishes neither faithful training, model quality, optimizer superiority, fault tolerance, safety, support, readiness, release, transfer, nor SOTA.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "representative multi-seed training runs against strong manual-composition, compiler-planned, sharded, and checkpoint-strategy baselines under matched quality and resource budgets",
+        "thirteen preregistered fault families with complete attempted-run denominators, twelve competence gates, full-state capture, resume-equivalence checks, validation-only selection, unopened hidden qualification, and joint time-to-quality, correctness, throughput, latency, and governance-cost accounting",
+        "independent reproduction and transfer across a second model scale or hardware topology without checkpoint, qualification, or release-authority leakage"
+      ],
+      "blockers": [
+        "the five-arm natural training and fault campaign is frozen but unexecuted",
+        "the current fixture validates record semantics rather than a distributed runtime or recovered optimization trajectory",
+        "source-reported scale, throughput, and checkpoint results have not been locally reproduced or independently qualified"
+      ],
+      "promotion_burden": "The chapter has a seven-source distributed-training review, exact transaction schema, authored safe-hold fixture, independent mutation validator, and bounded formal invariants, but the prospectively frozen five-arm campaign remains unexecuted and no representative multi-seed training, fault recovery, hidden qualification, independent reproduction, or transfer result has been accepted.",
+      "limitations": [],
+      "non_claims": [
+        "does not prove faithful distributed execution, trajectory-equivalent resume, model quality, optimizer superiority, fault tolerance, or scaling efficiency",
+        "does not prove that a completed job, falling loss, high utilization, checkpoint file, successful load, or selected candidate is qualified",
+        "does not prove safety, support, readiness, release, transfer, SOTA, AGI, or ASI"
+      ],
+      "current_evidence_summary": "Source notes available for all 8 assigned sources; 8 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Source-reviewed distributed-training packet, exact training-run transaction fixture, formal admission invariants, and prospective five-arm fault campaign",
+      "formal_or_prototype_work": "Implement the frozen campaign with strong manual-composition, compiler-planned, sharded, and checkpoint-strategy comparators; exercise thirteen fault families, twelve competence gates, complete attempted-run denominators, full-state capture, exact and bounded-equivalence resume, validation-only checkpoint-family selection, hidden qualification, and independent reproduction.",
+      "human_reader_focus": "Explain training as a governed transaction whose result is a qualified candidate, not as loss curves, accelerator utilization, or checkpoint files that silently become evidence or authority.",
+      "what_would_move_this": "Across multiple seeds and representative model scales, a governed run preserves declared semantics and state under fault and resume, selects without qualification leakage, beats strong distributed-training and checkpoint baselines on joint time-to-quality, recovery correctness, useful throughput, and governance cost, and reproduces independently without granting release authority.",
+      "relevant_non_core_transition_refs": []
+    },
+    {
       "claim_id": "readiness-gates-residual-escrow-and-quarantine.core",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
       "chapter_title": "Readiness Gates, Residual Escrow, and Quarantine",
@@ -2281,7 +2320,7 @@
         "does not treat six related local projects as independent confirmations",
         "does not authorize publication of raw private project material"
       ],
-      "current_evidence_summary": "Source notes available for all 34 assigned sources; 30 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 35 assigned sources; 30 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Benchmark anti-Goodhart harness plus external benchmarks",
       "formal_or_prototype_work": "Add contamination, saturation, and transfer negative controls.",

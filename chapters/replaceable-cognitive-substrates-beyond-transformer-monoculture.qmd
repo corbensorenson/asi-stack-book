@@ -859,6 +859,10 @@ Across 15 atoms, the terminal ledger records 15 `blocked_after_full_attempt`.
 
 Replaceable substrates create useful diversity only when a failing candidate can
 be stopped without losing its evidence, state lineage, or recovery path.
-Readiness Gates, Residual Escrow, and Quarantine therefore takes the next step:
-deciding when a qualified kernel may leave evaluation, what unresolved burden
+Governed Model Training, Distributed Optimization, and Scaling takes the next
+step before readiness: it freezes the selected substrate's state schema,
+topology, numerical policy, data order, failure denominator, checkpoint family,
+and qualification boundary so a trained candidate can be identified without
+letting training certify its own quality. Readiness later decides whether an
+independently qualified candidate may leave evaluation, what unresolved burden
 must travel with it, and how rejection or rollback remains operationally exact.

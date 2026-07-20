@@ -3069,7 +3069,27 @@
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Model a declared recovery checklist and derive rejection for missing components. The formal target trusts state enumeration and dispositions and cannot prove semantic completeness, effect reversibility, recovery safety, bounded harm, reproduction, or transfer."
+    },
+    {
+      "tag": "lean:governed_training.run_admission_invariants",
+      "chapter_id": "governed-model-training-distributed-optimization-and-scaling",
+      "module": "AsiStackProofs.GovernedModelTraining",
+      "formal_target": "An accepted finite handoff requires exact declared identity, topology/numerical identity, complete committed checkpoint state, complete failure denominator, and no support or release request.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as finite training-run admission implications over declared identity, topology, numerical policy, checkpoint state, denominator, and requested authority. The proof trusts the record predicates and establishes no distributed execution, state completeness, resume fidelity, model quality, efficiency, safety, reproduction, transfer, or release result."
+    },
+    {
+      "tag": "lean:governed_training.resume_and_handoff_separation",
+      "chapter_id": "governed-model-training-distributed-optimization-and-scaling",
+      "module": "AsiStackProofs.GovernedModelTraining",
+      "formal_target": "An accepted finite handoff requires accounted resume state, retained checkpoint and failure families, validation-only selection, and unopened independent qualification.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as a bounded separation theorem over authored resume, retention, selection, and qualification fields. It cannot establish trajectory equivalence, evaluator independence in practice, downstream qualification, checkpoint usefulness, training competence, safety, reproduction, transfer, or readiness."
     }
   ],
-  "record_count": 306
+  "record_count": 308
 }

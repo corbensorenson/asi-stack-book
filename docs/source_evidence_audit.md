@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 59 |
-| Assigned source/chapter pairs | 924 |
-| Exact claim-source mappings | 856 |
-| Unmapped assigned pairs | 68 |
-| Source notes present for assigned pairs | 924 |
-| Source notes listing assigned chapter | 924 |
-| Passage-reviewed mappings recorded | 856 |
-| Support-state counts | {"argument": 59} |
+| Chapters audited | 60 |
+| Assigned source/chapter pairs | 934 |
+| Exact claim-source mappings | 864 |
+| Unmapped assigned pairs | 70 |
+| Source notes present for assigned pairs | 934 |
+| Source notes listing assigned chapter | 934 |
+| Passage-reviewed mappings recorded | 864 |
+| Support-state counts | {"argument": 60} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -66,19 +66,20 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `procedural-memory-and-cognitive-loop-closure` | 22 | 18 | 22 | 22 | 18 | argument | passage review required before source-derived promotion |
 | `routing-heads-and-specialist-cores` | 19 | 17 | 19 | 19 | 17 | argument | passage review required before source-derived promotion |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | 37 | 35 | 37 | 37 | 35 | argument | passage review required before source-derived promotion |
+| `governed-model-training-distributed-optimization-and-scaling` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
 | `readiness-gates-residual-escrow-and-quarantine` | 19 | 18 | 19 | 19 | 18 | argument | passage review required before source-derived promotion |
 | `personal-compute-hives-and-federated-edge-intelligence` | 23 | 23 | 23 | 23 | 23 | argument | eligible for support review |
 | `compact-generative-systems-and-residual-honesty` | 19 | 17 | 19 | 19 | 17 | argument | passage review required before source-derived promotion |
 | `fast-generation-architectures` | 22 | 21 | 22 | 22 | 21 | argument | passage review required before source-derived promotion |
 | `governed-deliberation-and-test-time-scaling` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
 | `rankfold-neuralfold-and-artifact-compression` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
-| `resource-economics-and-token-budgets` | 18 | 16 | 18 | 18 | 16 | argument | passage review required before source-derived promotion |
+| `resource-economics-and-token-budgets` | 19 | 16 | 19 | 19 | 16 | argument | passage review required before source-derived promotion |
 | `mathematical-and-search-substrates` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
 | `circle-calculus-and-proof-carrying-ai-contracts` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `coilra-multicoil-rope-and-cyclic-mixers` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `executable-specifications-and-lean-proof-envelope` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
-| `benchmark-ratchets-and-anti-goodhart-evidence` | 34 | 30 | 34 | 34 | 30 | argument | passage review required before source-derived promotion |
+| `benchmark-ratchets-and-anti-goodhart-evidence` | 35 | 30 | 35 | 35 | 30 | argument | passage review required before source-derived promotion |
 | `white-box-evidence-interpretability-and-activation-governance` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
 | `capability-thresholds-and-deployment-commitments` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
@@ -118,11 +119,11 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `reflexive_router_whitepaper` | 12 | yes |
 | `cognitive_loop_closure` | 12 | yes |
 | `project_theseus_whitepaper` | 12 | yes |
+| `corbens_trainer_project` | 11 | yes |
 | `coherence_exchange` | 11 | yes |
 | `planforge` | 11 | yes |
 | `qcsa_whitepaper` | 11 | yes |
 | `genesiscode` | 10 | yes |
-| `corbens_trainer_project` | 10 | yes |
 | `verification_bandwidth` | 10 | yes |
 | `theseus_operator_os` | 10 | yes |
 | `cognitive_compilation` | 8 | yes |
@@ -183,6 +184,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `rgs` | 3 | yes |
 | `moecot_md` | 3 | yes |
 | `ext_mamba_2023` | 3 | yes |
+| `ext_mlperf_training_v6_2026` | 3 | yes |
 | `coilra_multicoil_rope` | 3 | yes |
 | `proof_carrying_circular_computation` | 3 | yes |
 | `rope_position_certifier` | 3 | yes |
@@ -321,6 +323,12 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_unimatrix_2026` | 1 | yes |
 | `ext_memory_caching_2026` | 1 | yes |
 | `ext_retnet_2023` | 1 | yes |
+| `ext_llama3_herd_2024` | 1 | yes |
+| `ext_megatron_distributed_training_2021` | 1 | yes |
+| `ext_zero_optimizer_2019` | 1 | yes |
+| `ext_gspmd_2021` | 1 | yes |
+| `ext_datastates_llm_2024` | 1 | yes |
+| `ext_pytorch_distributed_checkpoint_2026` | 1 | yes |
 | `ext_tailscale_docs_2025` | 1 | yes |
 | `ext_kubernetes_overview_docs` | 1 | yes |
 | `ext_k3s_docs_2026` | 1 | yes |
@@ -907,6 +915,14 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_dynamic_compute_recurrent_transformers_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_dreamcoder_2020` | mapped | note present | chapter listed | passage-reviewed |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `kernel_english_residual_compiler` | unmapped | note present | chapter listed | not passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_llama3_herd_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_megatron_distributed_training_2021` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_zero_optimizer_2019` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_gspmd_2021` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_datastates_llm_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_pytorch_distributed_checkpoint_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_mlperf_training_v6_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `corbens_trainer_project` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `deterministic_capability_compilation` | unmapped | note present | chapter listed | not passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
@@ -1022,6 +1038,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_claw_swe_bench_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `reflexive_router_whitepaper` | unmapped | note present | chapter listed | not passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `kernel_english_residual_compiler` | unmapped | note present | chapter listed | not passage-reviewed |
+| `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_mlperf_training_v6_2026` | unmapped | note present | chapter listed | not passage-reviewed |
 | `mathematical-and-search-substrates.core` | `mathematical-and-search-substrates` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
 | `mathematical-and-search-substrates.core` | `mathematical-and-search-substrates` | `temporal_coil_research` | mapped | note present | chapter listed | passage-reviewed |
 | `mathematical-and-search-substrates.core` | `mathematical-and-search-substrates` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
@@ -1099,6 +1116,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `reflexive_router_whitepaper` | unmapped | note present | chapter listed | not passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `kernel_english_residual_compiler` | unmapped | note present | chapter listed | not passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `ext_swe_rebench_v2_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `ext_mlperf_training_v6_2026` | unmapped | note present | chapter listed | not passage-reviewed |
 | `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `deterministic_capability_compilation` | mapped | note present | chapter listed | passage-reviewed |
 | `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `kernel_english_residual_compiler` | mapped | note present | chapter listed | passage-reviewed |
 | `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `qcsa_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
