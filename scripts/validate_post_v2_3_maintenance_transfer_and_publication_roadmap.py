@@ -187,6 +187,7 @@ def errors(data: dict) -> list[str]:
         "## Execution-ready work board",
         "## Shared ASI Stack–Theseus flagship",
         "## Review adjudication and corrected baseline",
+        "## Round 16 evidence-first adjudication and amendment",
         "## Operating rules",
         "## P0 — Public truth, claim identity, and attestation continuity",
         "## P1 — Negative-result rehabilitation and false-negative defense",
@@ -195,6 +196,7 @@ def errors(data: dict) -> list[str]:
         "## P4 — Semantically meaningful formal evidence",
         "## P5 — Effect-complete governed reference system",
         "## P6 — Evidence, instrument, and source renewal",
+        "### P6.5 — Round 16 post-activation integration debt",
         "## P7 — Reader remediation and owner-authorized publication",
         "## P8 — Closure, residual ownership, and successor continuity",
         "## Execution order and decision rules",
@@ -263,6 +265,13 @@ def errors(data: dict) -> list[str]:
         "P7.2-T1-white-box-evidence-interpretability-and-activation-governance",
         "P4-C3-authority-effect-rollback-and-corrigibility-semantic-audit",
         "A blocked packet does not consume a slot",
+        "All new chapter adjudication and manifest admission are frozen",
+        "P2-R3-storage-materialization-and-replacement-qualification",
+        "P6.5-R16-post-activation-integration-debt",
+        "P7.1a-W3 — prospective inheritance guard",
+        "append-only post-activation atom pack",
+        "material empirical/evidence checkpoint",
+        "Are Sparse Autoencoder Benchmarks Reliable?",
     ]:
         if phrase.casefold() not in roadmap_normalized:
             out.append(f"roadmap governing boundary missing: {phrase}")
@@ -679,20 +688,34 @@ def errors(data: dict) -> list[str]:
 
     quality_program = status.get("quality_uplift_program", {})
     execution_readiness = status.get("execution_readiness", {})
-    if execution_readiness.get("state") != "ready_with_parallel_unblocked_work_and_one_resource_blocked_lane":
-        out.append("execution board is not in its ready-with-one-blocked-lane state")
+    if execution_readiness.get("state") != "evidence_first_recovery_with_structural_admission_freeze":
+        out.append("execution board is not in its Round 16 evidence-first freeze state")
     if execution_readiness.get("headline_priority") != "P2" or execution_readiness.get("headline_priority_state") != "blocked_below_frozen_host_free_space_floor":
         out.append("execution board obscures the P2 headline or its exact resource blocker")
     if execution_readiness.get("work_in_progress_limit") != 2 or execution_readiness.get("blocked_lane_consumes_work_in_progress") is not False:
         out.append("execution board lost its bounded WIP or blocked-lane rule")
     if execution_readiness.get("protected_outcome_inspection_allowed") is not False:
         out.append("execution board permits protected-outcome inspection")
-    if execution_readiness.get("immediate_book_packet") != "P6.4-A3-perception-sensor-fusion-and-observation-trust-adjudication":
-        out.append("execution board does not advance from terminal A1/A2 to second-tranche A3")
+    if execution_readiness.get("structural_admission_freeze") is not True:
+        out.append("execution board lost the structural-admission freeze")
+    if execution_readiness.get("immediate_empirical_packet") != "P2-R3-storage-materialization-and-replacement-qualification":
+        out.append("execution board does not make P2-R3 the operative empirical headline")
+    if execution_readiness.get("immediate_book_packet") != "P6.5-R16-post-activation-integration-debt":
+        out.append("execution board does not route the book slot to Round 16 integration debt")
     if execution_readiness.get("immediate_formal_packet") != "P4-terminal-no-open-formal-packet":
         out.append("execution board reopens terminal P4 formal work")
-    if execution_readiness.get("maximum_concurrent_second_tranche_candidates") != 1:
-        out.append("execution board permits structural-candidate sprawl")
+    if execution_readiness.get("maximum_concurrent_second_tranche_candidates") != 0:
+        out.append("execution board permits a structural candidate during the freeze")
+    expected_resume_gates = [
+        "P2-pool-materialization-terminal-receipt",
+        "P2-four-replacement-slots-qualified-and-twelve-task-denominator-restored",
+        "P6.5-R16-six-chapter-claim-atom-addendum-terminal",
+        "P6.5-R16-current-sixty-one-chapter-reader-freshness-terminal",
+        "P7.1a-W3-admission-template-inheritance-guard-terminal",
+        "P7.2-T1D-white-box-construct-validity-and-feature-analysis-depth-terminal",
+    ]
+    if execution_readiness.get("structural_resume_requires") != expected_resume_gates:
+        out.append("execution board structural-resume gate set drifted")
     expected_first_tranche_order = [
         "white-box-evidence-interpretability-and-activation-governance",
         "governed-world-models-and-reality-grounding",
@@ -751,8 +774,8 @@ def errors(data: dict) -> list[str]:
     ):
         out.append("Q1/Q2 isolation or support boundary weakened")
     narrative_gate = quality_program.get("narrative_quality_gate", {})
-    if narrative_gate.get("case_independent_compression_state") != "first_tranche_terminal_second_tranche_a1_a2_terminal_a3_ready":
-        out.append("first-tranche and A1/A2 terminal/second-tranche A3 execution state drifted")
+    if narrative_gate.get("case_independent_compression_state") != "first_tranche_and_a1_a2_historical_receipts_terminal_round16_integration_debt_active":
+        out.append("narrative gate does not preserve historical receipts while routing current integration debt")
     if narrative_gate.get("flagship_threading_state") != "blocked_by_T4":
         out.append("flagship-dependent P7.1b work lost its T4 gate")
     if not all(
@@ -774,6 +797,49 @@ def errors(data: dict) -> list[str]:
         out.append("T1/T2/T3/T4 terminal reader custody drifted")
     if first_tranche.get("remaining_reader_chapter_ids") != []:
         out.append("terminal first structural tranche retains a residual chapter")
+    second_tranche = quality_program.get("structural_completeness_tranche", {}).get("second_tranche", {})
+    if second_tranche.get("active_candidate_id") is not None:
+        out.append("a second-tranche candidate is active during the Round 16 freeze")
+    if second_tranche.get("next_queued_candidate_id") != "perception-sensor-fusion-and-observation-trust":
+        out.append("A3 queue identity drifted during the structural freeze")
+    if second_tranche.get("admission_state") != "paused_by_round16_evidence_first_gate":
+        out.append("second-tranche admission state is not paused by the evidence-first gate")
+
+    round16 = status.get("round_16_evidence_first_amendment", {})
+    expected_round16_chapters = expected_first_tranche_order + [
+        "governed-model-training-distributed-optimization-and-scaling",
+        "privacy-data-rights-and-information-flow-governance",
+    ]
+    if round16.get("structural_admission_freeze") is not True:
+        out.append("Round 16 amendment lost structural freeze authority")
+    if round16.get("post_activation_atom_pack", {}).get("chapter_ids") != expected_round16_chapters:
+        out.append("Round 16 six-chapter atom-pack scope drifted")
+    if not all(
+        round16.get("post_activation_atom_pack", {}).get(field) is True
+        for field in [
+            "historical_3730_activation_atom_denominator_is_immutable",
+            "historical_15_atom_addendum_is_immutable",
+        ]
+    ):
+        out.append("Round 16 amendment permits rewriting a historical atom denominator")
+    reader_freshness = round16.get("current_reader_freshness_packet", {})
+    if reader_freshness.get("current_working_manifest_chapter_count") != 61 or reader_freshness.get("must_cover_all_current_manifest_chapters") is not True:
+        out.append("Round 16 current-reader packet does not cover the live 61-chapter manifest")
+    admission_contract = round16.get("future_admission_contract", {})
+    if admission_contract.get("maximum_new_chapters_per_empirical_checkpoint") != 1 or admission_contract.get("manifest_admission_without_all_birth_artifacts_allowed") is not False:
+        out.append("Round 16 future-admission cadence or birth-artifact gate weakened")
+    if not all(
+        admission_contract.get(field) is True
+        for field in [
+            "material_empirical_or_evidence_milestone_since_previous_admission_required",
+            "claim_atom_pack_required_at_birth",
+            "reader_projection_required_at_birth",
+            "template_inheritance_guard_required_at_birth",
+        ]
+    ):
+        out.append("Round 16 future-admission contract lost a required evidence or integration gate")
+    if round16.get("support_state_effect") != "none" or round16.get("release_effect") != "none":
+        out.append("Round 16 roadmap amendment laundered support or release state")
 
     p2_execution = status.get("p2_replacement_execution", {})
     execution_expected = {
@@ -1041,6 +1107,14 @@ def main() -> None:
     mutate("blocked work consumes WIP", lambda c: c["status"]["execution_readiness"].__setitem__("blocked_lane_consumes_work_in_progress", True))
     mutate("protected outcome inspection", lambda c: c["status"]["execution_readiness"].__setitem__("protected_outcome_inspection_allowed", True))
     mutate("structural candidate concurrency", lambda c: c["status"]["execution_readiness"].__setitem__("maximum_concurrent_second_tranche_candidates", 13))
+    mutate("Round 16 freeze deletion", lambda c: c["status"]["execution_readiness"].__setitem__("structural_admission_freeze", False))
+    mutate("A3 premature reactivation", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"].__setitem__("active_candidate_id", "perception-sensor-fusion-and-observation-trust"))
+    mutate("historical atom denominator rewrite", lambda c: c["status"]["round_16_evidence_first_amendment"]["post_activation_atom_pack"].__setitem__("historical_3730_activation_atom_denominator_is_immutable", False))
+    mutate("historical reader laundering", lambda c: c["status"]["round_16_evidence_first_amendment"]["current_reader_freshness_packet"].__setitem__("published_reader_2026_07_18_is_immutable_historical_release", False))
+    mutate("future atom-at-birth deletion", lambda c: c["status"]["round_16_evidence_first_amendment"]["future_admission_contract"].__setitem__("claim_atom_pack_required_at_birth", False))
+    mutate("future reader-at-birth deletion", lambda c: c["status"]["round_16_evidence_first_amendment"]["future_admission_contract"].__setitem__("reader_projection_required_at_birth", False))
+    mutate("future admission cadence expansion", lambda c: c["status"]["round_16_evidence_first_amendment"]["future_admission_contract"].__setitem__("maximum_new_chapters_per_empirical_checkpoint", 9))
+    mutate("non-Docker deletion authorization", lambda c: c["status"]["round_16_evidence_first_amendment"]["p2_empirical_recovery"].__setitem__("non_docker_user_data_deletion_allowed", True))
     mutate("P2 pre-content rank skipping", lambda c: c["status"]["p2_sequential_materialization_contract"].__setitem__("pre_content_failure_may_skip_or_burn_rank", True))
     mutate("P2 post-content replay", lambda c: c["status"]["p2_sequential_materialization_contract"].__setitem__("post_content_replay_allowed", True))
     mutate("semantic proof cluster deletion", lambda c: c["status"]["semantic_proof_cluster_inventory"]["clusters"].pop())
@@ -1064,7 +1138,7 @@ def main() -> None:
         "90 accepted historical negatives classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5; "
         "the frozen 75-surface rehabilitation snapshot including the then-live 55 chapters reconciled with zero overbroad negative language; "
         "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary reinstates rank five as setup-retry-pending, keeps rank six closed, and blocks the complete 30-image pool before any further protected content opens; Q1 D1 and Theseus Q2 D2 remain disjoint and sealed; remeasurement, qualification, construct, and heldout gates remain closed; "
-        "all six semantic proof clusters are terminally adequate at bounded scope; all four first-tranche structural chapters and second-tranche A1/A2 are terminally integrated with protected empirical outcomes closed; second-tranche A3 is the sole active chapter adjudication; current proof and main-attestation baselines exact; no support/release effect; "
+        "all six semantic proof clusters are terminally adequate at bounded scope; all four first-tranche structural chapters and second-tranche A1/A2 retain terminal admission receipts with protected empirical outcomes closed; Round 16 freezes A3 and every new chapter behind P2 materialization/replacement qualification plus six-chapter atom, current-reader, W3, and white-box-depth integration gates; current proof and main-attestation baselines exact; no support/release effect; "
         f"{len(mutations)}/{len(mutations)} mutations rejected."
     )
 

@@ -75,25 +75,45 @@ The roadmap optimizes for five outcomes, in order:
 
 ## Execution-ready work board
 
-The scientific headline remains P2, but P2 is presently blocked by its frozen
-host-free-space floor. A blocked headline cannot make the rest of the roadmap
-idle. This board is the canonical short-horizon execution order until a
-checkpoint changes one of its entry conditions.
+The scientific headline remains P2, and the Round 16 review exposed that the
+previous board made that label non-operative: P2 stayed starved while chapter
+admission advanced. P2 is presently blocked by its frozen host-free-space
+floor, so the only parallel book work now permitted is integration debt in
+already admitted chapters. **All new chapter adjudication and manifest
+admission are frozen.** This board is the canonical short-horizon execution
+order until every structural-resume gate below is terminal.
 
 **Work-in-progress limit:** at most two work packets may be active: one
-book/chapter/reader packet and one empirical/formal packet. A blocked packet
-does not consume a slot. Only one second-tranche chapter candidate may be under
-active adjudication at a time. Protected P2, Q1, or Q2 task content, labels,
-outcomes, or evaluator judgments remain closed while other work proceeds.
+existing-book integration packet and one empirical/formal packet. A blocked
+packet does not consume a slot. The maximum number of active second-tranche
+chapter candidates is presently **zero**. Protected P2, Q1, or Q2 task content,
+labels, outcomes, or evaluator judgments remain closed while other work
+proceeds.
 
 | Slot | Next packet | Entry condition | Terminal output |
 |---|---|---|---|
 | Continuous custody | P0 repository and public-truth reconciliation | Always open | Clean `main`, exact generated/source boundaries, current roadmap pointers, and no stale claim or release identity. |
-| Book slot — now | `P6.4-A3-perception-sensor-fusion-and-observation-trust-adjudication` | P6.4-A1 and A2 are terminal; perception/observation trust is next in dependency order | Adjudicate exactly one proposed owner through admission, narrowing, return-to-owner, or rejection. Freeze the observation-admission transaction, four source roles, owner boundary, competence burden, reader value, and non-claims before any manifest insertion. |
+| Existing-book integration — now | `P6.5-R16-post-activation-integration-debt` | No new manifest owner may enter while the evidence-first gate is active | Add an append-only atom pack for the six post-baseline chapters; build a current 61-chapter reader-freshness packet; install the W3 template-inheritance guard; and complete the white-box construct-validity/feature-analysis depth amendment. No support or publication effect. |
 | Formal slot — terminal | `P4-terminal-no-open-formal-packet` | All six frozen clusters terminal across 24 modules | Maintain the terminal audits and their consumers; open no new proof packet unless a dated, machine-validated amendment names the claim consumer, countermodel, and maximum inference. |
-| Empirical headline — blocked | P2 pool-wide sequential materialization | Exact host free space meets the frozen 50 GiB floor and every setup action remains inside the approved Docker-scoped protocol | Thirty sealed candidate recipes and receipts, then rank 5 setup retry eligibility without protected-content leakage. No deletion of non-Docker user data is authorized. |
+| Empirical headline — blocked | `P2-R3-storage-materialization-and-replacement-qualification` | An authorized capacity change leaves at least the frozen 50 GiB host-free-space floor; every setup action remains inside the approved Docker-scoped protocol | Thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — terminal | White-Box, World Models, Human Factors, and Governed Operations are terminal at argument support | Four exact integration packets preserve owners, sources, formal ceilings, protocols, reader handoffs, and no-promotion boundaries | Maintenance only; no reopened chapter packet without a dated machine-validated defect. |
-| Second structural tranche — now | Governed Model Training and Privacy/Data Rights are terminal at argument support; adjudicate `perception-sensor-fusion-and-observation-trust` next, then one candidate at a time | One active candidate maximum; four source roles and owner boundary must be ready before admission | Admit, narrow, return to existing owners, or reject with a durable decision packet. Research admission alone is never success. |
+| Second structural tranche — paused | Governed Model Training and Privacy/Data Rights remain terminal historical admissions; `perception-sensor-fusion-and-observation-trust` remains next in queue, not active | Resume only after both P2 materialization and four-slot replacement qualification are terminal and all four Round 16 integration repairs pass | After resumption, admit at most one chapter per material empirical/evidence checkpoint. Every admitted chapter must ship its atom pack, reader projection, and template-inheritance check in the admission transaction. |
+
+The structural freeze has six conjunctive exit gates:
+
+1. P2 pool materialization has a terminal receipt for all thirty sealed
+   candidate environments;
+2. four replacement slots are competently qualified and the fixed twelve-task
+   denominator is restored without protected-outcome leakage;
+3. the six post-baseline chapters have an append-only claim-atom addendum with
+   falsifiers, acceptance criteria, promotion ceilings, evidence-plan routes,
+   and stable identity edges;
+4. a current derived-reader freshness packet covers all 61 manifest chapters
+   without rewriting the immutable `reader-2026-07-18` release;
+5. W3 rebaselines current 61-chapter repetition and rejects inherited shared
+   prose in future chapter transactions; and
+6. the White-Box chapter completes its construct-validity, feature-analysis,
+   causal-intervention, and interpretability-failure depth amendment.
 
 The 2026-07-19 checkpoint closed both former immediate packets,
 `P7.1a-W1-template-centralization-and-boundary-coverage` and
@@ -332,6 +352,26 @@ completed.
 | P2 burned ranks on infrastructure weather before an outcome existed | **Accepted.** | `docs/p2_infrastructure_materialization_and_content_freeze_amendment.md` makes bounded, receipt-complete setup retries legal only before protected task content opens; requires pool-wide infrastructure readiness; blocks rather than advances on setup exhaustion; keeps rank 4 irreversible; reinstates rank 5 as setup-pending; and keeps rank 6 closed. The current 60-GiB host constraint is a named blocker, not a fake slot-1 completion. |
 | Four refinement modules remained silent stubs | **Underlying demand accepted; snapshot stale.** | `docs/round_15_proof_depth_disposition.md` retains the four non-stub finite models, adds quantified state-preservation/receipt or authority non-acceptance theorems, binds consumers and mutations, and keeps their inference ceilings explicit. Wider semantic-depth work remains open. |
 | Repeated no-release records became an avoidance pattern | **Accepted.** | P7 must repair and fully re-render PDF/DOCX, validate EPUB/PDF/DOCX/HTML by exact format-specific gates, publish approved reader artifacts to the existing GitHub Release target, and record deployed/release identities. The X synopsis remains staged. A failed format may remain blocked only with a current exact defect receipt, not an inherited roadmap disposition. |
+
+## Round 16 evidence-first adjudication and amendment
+
+The 2026-07-19 Round 16 review correctly identified that structural throughput
+had outrun empirical and integration throughput. Its useful criticisms are
+adopted with corrections where the review's snapshot or denominator model was
+stale.
+
+| Criticism | Adjudication | Binding corrective and terminal criterion |
+|---|---|---|
+| P2 was called the headline while two further chapters were admitted and A3 was activated | **Accepted.** | Freeze A3 and every later structural candidate. P2-R3 is the sole empirical headline: earn a thirty-environment materialization receipt and competently qualify four replacements to restore the fixed twelve-task denominator. The blocker is honest: the host must reach the prospectively frozen 50 GiB floor through an authorized capacity change; Docker-only reclamation cannot be replaced by deleting unrelated user data. |
+| Six newly admitted chapters have no atoms in the frozen registry | **Accepted with denominator correction.** | The 3,730 activation atoms and existing 15-atom addendum are immutable historical baselines, not files to rewrite. Create a new append-only post-activation atom pack for White-Box, World Models, Human Factors, Governed Operations, Governed Model Training, and Privacy/Data Rights. Every atom needs stable identity, claim text, falsifier, acceptance criterion, promotion ceiling, evidence-plan route, and owner. Atom creation itself changes no support. |
+| The new chapters have no reader edition | **Partly accepted.** | They already contain validated Human Reading Paths and reader-spine integration, but the published `reader-2026-07-18` derivative predates the 61-chapter manifest. Preserve that release as immutable history and produce a current 61-chapter derived-reader freshness packet covering the opening map, roles, handoffs, overview, glossary, sources, claim/evidence projection, and synthesis. No external publication is required or implied. |
+| Repeated chapter templates survived the W1/W2 cleanup | **Accepted with measurement correction.** | W1 and W2 remain immutable terminal receipts for their historical 55- and 60-chapter scopes. Open W3 over the current 61 chapters, record the exact tokenizer/corpus/threshold baseline, centralize shared method prose, and add a prospective admission validator that rejects high-spread prose fingerprints and repeated disposition-table scaffolds. Do not report Claude's approximate block count as repository truth. |
+| White-Box is too thin and omits sparse autoencoders | **Depth criticism accepted; omission claim stale.** | The chapter already records sparse-autoencoder scaling, reconstruction/sparsity trade-offs, dead latents, feature splitting/merging, probes, causal interventions, and steering boundaries. It still needs a substantive method-comparison section on SAE/dictionary-learning construct validity, probe selectivity and leakage controls, interpretability illusions under cross-distribution challenge, feature absorption/splitting and metric reliability, diagnostic-versus-causal evidence, off-target/capability damage, strong behavioral baselines, and independent evaluation. Source ingestion must include Hewitt and Liang (2019), Bolukbasi et al. (2021), Gao et al. (2024), SAEBench (2025), and the 2026 audit of SAE benchmark reliability, each with explicit admissible use and non-authority. |
+| Future growth should be constrained | **Accepted.** | After the freeze clears, admit at most one new chapter per material empirical/evidence checkpoint. “Material” means a terminal measured or evidentiary milestone—not prose, source inventory, schema, proof-count, build, or validation movement. Every future admission transaction must include the chapter atom pack, reader projection, source roles, ownership decision, and W3 inheritance check at birth. |
+
+This amendment does not declare the remaining eleven candidates rejected or
+the architecture complete. It changes their state from active structural work
+to an ordered queue behind empirical recovery and current-book integration.
 
 Appendix C already consumes the claim-identity graph. The canonical public
 status object and generated `publication_readiness.md` block now consume its
@@ -877,10 +917,12 @@ Manifest admission is not chapter completion, evidence, or publication. All
 four first-tranche chapters have now passed their independent formalization,
 record-contract, protocol-custody, source-crosswalk, reader-integration, and
 no-promotion gates at `argument` support. Their claim-bearing empirical lanes
-remain unexecuted and therefore create no empirical movement. The tranche is
-terminal; future maintenance may repair a dated defect but cannot reopen a
-chapter merely to inflate the manifest. No source, packet, chapter draft, or
-structural decision changes support by itself.
+remain unexecuted and therefore create no empirical movement. Their admission
+receipts remain terminal, but Round 16 identified cross-cutting atom,
+derived-reader, template, and white-box-depth integration debt. P6.5 may repair
+those exact defects; it cannot relabel the chapters empirically complete or
+reopen them merely to inflate prose or the manifest. No source, packet, chapter
+draft, or structural decision changes support by itself.
 
 The initial drafts were created in the sequence interpretability, world models,
 human factors, then operations. Interpretability supplies the white-box evidence
@@ -888,10 +930,11 @@ vocabulary; world models sharpens the Platonic World Model and Theseus grounding
 boundary; Human Factors has a frozen ethics/privacy-aware study protocol with
 no recruitment authority or opened outcomes; and Operations has a bounded
 authored authority-to-effect safe-hold case that remains explicitly separate
-from the blocked natural flagship T4 trace. The second tranche now proceeds with
-one candidate at a time. This lane runs beside P2 with
-protected capacity and may not delay, shrink, retune, or read P2/Q1/Q2 held-out
-work.
+from the blocked natural flagship T4 trace. The second tranche is now paused
+behind the Round 16 evidence-first gate. After that gate clears it may proceed
+one candidate at a time and at most one new chapter per material
+empirical/evidence checkpoint; it may never delay, shrink, retune, or read
+P2/Q1/Q2 held-out work.
 
 ### P6.4 — Second structural-boundary completeness audit
 
@@ -1036,6 +1079,93 @@ capability, or inherit support from cited work. Failure at any gate returns the
 material to the exact existing sections listed in the audit. The upper bound of
 72 is a decision envelope, not a completion target or completeness claim.
 
+P6.4 is now **admission-paused**. A1 and A2 retain their terminal historical
+receipts; A3 remains the first queued candidate but is not active. Research and
+source notes may be maintained for freshness, but no candidate may receive a
+decision packet, chapter path, manifest entry, proof target, or admission
+transaction until every Round 16 structural-resume gate is terminal.
+
+### P6.5 — Round 16 post-activation integration debt
+
+This is the only active book packet while structural admission is frozen. It
+repairs already admitted material and cannot be used to create a seventh
+post-baseline chapter.
+
+**R16-A — append-only atomization.** Preserve the frozen 3,730-atom activation
+registry and the reviewed 15-atom addendum byte-for-byte. Create a separately
+versioned addendum for the six post-baseline chapters. Decompose each chapter's
+core and load-bearing subclaims at the granularity needed for falsification and
+promotion review; bind every atom to a stable identity edge, exact claim text,
+falsifier, acceptance criterion, present support, promotion ceiling, evidence
+plan and owner. Reconcile Appendix C, chapter evidence tables, source mappings,
+and validators without backdating the atoms into an historical denominator.
+
+**R16-B — current-reader freshness.** Preserve
+`reader-2026-07-18` as an immutable published release. Produce a new local
+derived-reader packet from the current 61-chapter manifest and record the exact
+source commit, chapter list, projection rules, artifact digests or an honest
+format-specific deferred disposition. It must include every current chapter in
+the opening map, chapter-role map, adjacent handoffs, overview, glossary,
+source appendix, claim/evidence projection, and final synthesis. This is a
+freshness and derivation receipt, not publication authority.
+
+**R16-C — admission-template inheritance guard.** W1's 55-chapter and W2's
+60-chapter receipts remain terminal for their declared snapshots. W3 must run a
+reproducible current 61-chapter n-gram/fingerprint audit, report exact corpus
+and normalization rules, identify widest repeated prose blocks, centralize
+invariant method prose in Living Book Methodology, and keep only
+chapter-specific applications locally. A negative-control validator must reject
+a synthetic chapter that copies the shared disposition scaffold and must pass
+a distinct chapter that links the methodology and supplies unique claims,
+sources, boundaries and evidence plans. Thresholds are frozen from the current
+baseline before edits, not chosen after the result.
+
+**R16-D — White-Box depth and construct validity.** Deepen the existing chapter
+rather than add an interpretability chapter. Passage-review and source-note the
+primary probe-control, interpretability-illusion, SAE scaling, SAEBench, and
+SAE-benchmark reliability papers. Add a comparative method matrix and an
+evidence ladder that separates decodability, stability, reconstruction,
+semantic construct validity, causal necessity/sufficiency, mediation,
+specificity, cross-distribution transfer, intervention utility, collateral
+damage, and policy authority. The exact intake set is:
+
+| Proposed source ID | Primary source | Required role |
+|---|---|---|
+| `ext_probe_control_tasks_2019` | Hewitt and Liang, [Designing and Interpreting Probes with Control Tasks](https://aclanthology.org/D19-1275/) | Probe selectivity, memorization control, and construct-validity method |
+| `ext_interpretability_illusion_bert_2021` | Bolukbasi et al., [An Interpretability Illusion for BERT](https://arxiv.org/abs/2104.07143) | Cross-dataset challenge and spurious simple-concept interpretation failure |
+| `ext_scaling_sparse_autoencoders_2024` | Gao et al., [Scaling and evaluating sparse autoencoders](https://arxiv.org/abs/2406.04093) | Existing SAE mechanism/scaling comparator; deepen rather than duplicate its inventory record |
+| `ext_saebench_2025` | Karvonen et al., [SAEBench](https://arxiv.org/abs/2503.09532) | Multi-metric SAE comparison and proxy-versus-practical-performance tension |
+| `ext_sae_benchmark_reliability_2026` | Chanin, [Are Sparse Autoencoder Benchmarks Reliable?](https://arxiv.org/abs/2605.18229) | Metric noise, ground-truth correlation, discriminability, and benchmark-construct audit |
+
+Each new record needs a passage-level source note, explicit admissible use,
+non-authority, chapter mapping, and freshness metadata before prose cites it.
+The 2026 audit is recent counterevidence, not permission to dismiss all SAE
+work; its claims remain scoped to the metrics and settings it actually tests.
+The protocol must include:
+
+- control tasks, selectivity, simple/regularized probe baselines, label and
+  evaluator leakage tests, and preregistered concept operationalization;
+- SAE/dictionary-size, sparsity, reconstruction, dead-latent, feature
+  splitting/absorption, seed/checkpoint stability, and metric-reliability
+  sweeps rather than one favorable extractor;
+- multiple corpora and distribution shifts designed to expose an
+  interpretability illusion rather than confirm a selected story;
+- ablation, patching, replacement and steering with matched sham and off-target
+  controls, dose response, mediation alternatives, protected-capability damage,
+  and unexplained residual accounting;
+- strong behavioral and method baselines, resource and analyst-cost accounting,
+  an independently implemented evaluator, positive controls and a fair rescue
+  ladder; and
+- an explicit outcome matrix: a failed probe or SAE may be N0–N2 evidence about
+  that exact method, never a broad refutation of interpretability, while a
+  positive internal result remains diagnostic until causal and transfer gates
+  earn more.
+
+R16-D is terminal when the chapter, source inventory and notes, claim atoms,
+protocol, reader projection, validators and non-claims agree. It does not
+require running the resource-gated model campaign and cannot promote support by
+prose, source citation, formal record, fixture or protocol readiness.
+
 ## P7 — Reader remediation and owner-authorized publication
 
 The first Round 15 publication transaction is complete. The
@@ -1122,13 +1252,13 @@ pair) instead each add one explicit opening boundary sentence stating which
 contracts the sibling chapter owns. The measured repetition lives elsewhere
 and defines the P7.1a work items:
 
-1. **Template-block centralization.** 1,364 distinct verbatim 12-grams appear
-   in eight or more chapters; the widest blocks (the per-chapter disposition
-   tables and the "prospectively frozen 3,745-atom repository audit" scaffold)
-   repeat verbatim in all 55 pre-tranche chapters. State the invariant methodology once in
-   a single front-matter/methodology surface, keep only chapter-specific rows
-   in per-chapter tables, and let validators — not repeated prose — carry the
-   invariant guarantees.
+1. **Template-block centralization.** The W1 historical receipt reproduced
+   1,142 qualifying 12-grams in its frozen 55-chapter baseline and 727 after
+   edits, a 36.34% reduction; the earlier planning estimate of 1,364 is not an
+   audited result. Its widest surviving compact labels and methodology link
+   still spanned all 55 chapters. State invariant methodology once in a single
+   front-matter/methodology surface, keep only chapter-specific applications
+   locally, and let validators—not repeated prose—carry invariant guarantees.
 2. **Opening-formula variation.** Chapter openings reuse a small number of
    sentence templates ("This chapter treats X as Y, not Z"; "The consolidated
    X layer remains conceptual"). Rewrite openings so each chapter leads with
@@ -1152,7 +1282,22 @@ and defines the P7.1a work items:
    chapters while carrying the book's central claims; level them upward toward
    the spine's evidentiary and argumentative density without padding.
 
+**P7.1a-W3 — prospective inheritance guard** reopens neither W1 nor W2. It
+creates a new current-61-chapter baseline and admission-time negative control.
+W3 is terminal only when its exact tokenizer, corpus, thresholds, widest-block
+report, centralized replacements, semantic-diff review, and copied-template
+rejection fixture are committed together. A percentage reduction is diagnostic;
+the acceptance test is that invariant method prose has one owner, unique
+chapter meaning remains local, and a future chapter cannot inherit the removed
+scaffold unnoticed.
+
 ### P7.2 — Structural-tranche reader integration
+
+First close R16-B: derive and validate a current 61-chapter reader-freshness
+packet while preserving `reader-2026-07-18` as immutable publication history.
+The packet may end in validated local artifacts or an exact format-specific
+deferred disposition, but it may not claim that the historical release already
+contains chapters added later.
 
 Complete each P6.3 manifest entry as a real reader chapter rather than an
 appendix-shaped registry. Each insertion must update the opening map,
@@ -1167,6 +1312,10 @@ candidates pass, this lane must also decide whether a dedicated Organizations,
 Institutions, and Societal Transition part improves the reader spine. No
 addition may restore boilerplate
 removed by P7.1a or present source-derived architecture as local evidence.
+After the Round 16 freeze clears, this integration is atomic with admission:
+no future chapter may enter the manifest first and acquire atoms, reader
+projection, role classification, handoffs, glossary/source/claim mappings, or
+template-inheritance checks later.
 
 “Ready, not published” is an honest terminal public-state disposition when
 external authority is absent; it is not a reason to block evidence work. At
@@ -1201,16 +1350,18 @@ authority activates in the same transaction.
 
 P0 remains continuous. P1 is complete and its N0–N5 ceilings remain binding.
 P2 preflight is active but storage-blocked; the storage-feasible
-materialization protocol is its unblocking path. `P2-Q1-D1` stays closed until
+materialization protocol and four-slot replacement qualification are its
+unblocking path. `P2-Q1-D1` stays closed until
 P2's own competence dossier passes, then may open for the Q1 strong-worker
 arms. The disjoint `ASI-THESEUS-Q2-D2` stays closed through `T2`–`T4`; D1
 outcomes cannot tune it. `T0` through `T5` are the primary causal sequence for
-the composed flagship. P4 and P6 continue beside that sequence because they prune
-invalid inference and renew instruments. P5 may design the joined reference
+the composed flagship. P4 remains terminal and P6 may continue beside that
+sequence only through the bounded P6.5 integration-debt packet; P6.4 admissions
+are frozen. P5 may design the joined reference
 boundary before `T4`, but may not substitute fixtures for the natural
 vertical. P3 opens only after `T5` and exact access predicates are true. P7
-preserves current published artifacts now, may run the case-independent P7.1a
-compression lane at any checkpoint, and executes the P7.1b narrative synthesis
+preserves current published artifacts now, runs only the bounded current-reader
+freshness and W3 repairs during the structural freeze, and executes the P7.1b narrative synthesis
 after `T4`; external actions still require explicit action-time authority. P8
 closes every checkpoint.
 
@@ -1241,9 +1392,11 @@ is not a debugging interface.
 2. **Blocked natural-campaign preflight (`P2`).** Preserve the fixed P2
    denominator and all N0 infrastructure outcomes. Execute the storage-feasible
    materialization protocol (sequential-verified readiness, Docker-scoped
-   reclamation with receipts, 50 GiB floor) to resolve the storage blocker,
-   then resume rank 5 setup retries and open rank 6 under the amendment; do
-   not weaken the twelve-task denominator. Once the seven competence gates
+   reclamation with receipts, 50 GiB floor) after an authorized capacity
+   change, then competently qualify all four replacement slots and restore the
+   twelve-task denominator before ordinary rank progression under the
+   amendment. Do not delete unrelated user data or treat storage weather as a
+   task outcome. Once the seven competence gates
    pass, open only `P2-Q1-D1` without waiting for Theseus gates `T2`–`T4`;
    keep `ASI-THESEUS-Q2-D2` disjoint and outcome-sealed.
 3. **Shared flagship prerequisites (`T0`–`T4`).** Reconcile the exact Theseus
@@ -1251,10 +1404,10 @@ is not a debugging interface.
    happy/blocked trace before `ASI-THESEUS-Q2-D2` opens. Cross-repository
    handoff moves artifacts and maximum inference, never outcomes, rows, or
    support by implication.
-4. **Semantic proof audit (`P4`).** Continue from the four strengthened Round 15
-   refinement modules through the six frozen, machine-enumerated clusters;
-   merge, reclassify, or remove proof surfaces that have no semantic leverage
-   or consumer, and never close M4 from aggregate theorem counts.
+4. **Semantic proof custody (`P4`).** Preserve the terminal six-cluster audit
+   and reopen formal work only through a dated amendment naming a new semantic
+   defect, consumer, countermodel, and maximum inference; proof volume alone
+   cannot create such a defect.
 5. **Effect-complete reference (`P5`).** Design against the `T4` joined trace:
    durable identity, scoped authority, concurrent ledgers, observed effects,
    exact rollback or compensation, crash recovery, full learning state,
@@ -1264,13 +1417,18 @@ is not a debugging interface.
    evaluator sensitivity, false-negative controls, alternative substrates,
    governed update/unlearning, Deterministic Capability Compilation, and the
    Platonic World Model current without allowing prose to inherit evidence.
-   Finish the four manifest-admitted first-tranche chapters, then adjudicate
-   the thirteen research-admitted second-tranche candidates under exclusive-owner,
-   competence, reader-value, safety, and non-displacement gates. Manifest or
-   roadmap admission alone changes no support.
+   Close P6.5 over append-only atoms for the six post-baseline chapters, the
+   current 61-chapter reader packet, W3 inheritance guard, and White-Box depth
+   amendment. Only after P2 materialization and replacement qualification plus
+   those four integration repairs are terminal may A3 resume. Thereafter
+   adjudicate at most one candidate per material empirical/evidence checkpoint
+   under exclusive-owner, competence, reader-value, safety, birth-artifact, and
+   non-displacement gates. Manifest or roadmap admission alone changes no
+   support.
 7. **Narrative and reader quality (`P7`).** Preserve the published
    `reader-2026-07-18` receipts, close only compatibility claims that are
-   actually tested, execute P7.1a now under a meaning-preservation audit, and
+   actually tested, close the current-reader freshness and W3 packets now under
+   derivation and meaning-preservation audits, and
    execute only P7.1b after the joined case stabilizes. The X synopsis remains
    staged until explicit action-time authorization.
 8. **Independent challenge (`P3`).** After `T5`, reproduce any broadened result
@@ -1304,8 +1462,8 @@ lies.
 | M3 — Reproduction and transfer | pending | Any broadened result has independent reproduction and two prospectively selected materially different transfer settings. |
 | M4 — Semantic formal depth | completed | All six frozen clusters are terminal across 24 modules with exact dispositions, modeled state, assumptions, countermodels, consumers, mutations, semantic separations, and maximum-inference ceilings. No aggregate theorem count or finite record grants empirical support. |
 | M5 — Effect-complete reference | pending | Multi-process authority-to-effect, rollback/residual, full-state, and deletion behavior passes adversarial and recovery tests. |
-| M6 — Renewal and structural completeness | in progress | All four first-tranche chapters are terminally integrated at argument support. Adjudicate the thirteen second-tranche candidates one at a time, beginning with Governed Model Training; each must be admitted, narrowed, returned to named owners, or rejected through an exact packet. |
-| M7 — Reader/publication disposition | in progress | PDF, EPUB, and DOCX are published with exact receipts and verified public redownloads. Close only after compatibility residuals are terminally accepted or cleared, all public surfaces remain synchronized, and the final main/Pages attestation succeeds. |
+| M6 — Renewal and structural completeness | in progress | A1/A2 and the four first-tranche admissions remain historical terminal receipts, but new admission is frozen. First close P2 materialization/replacement qualification and P6.5's atom, current-reader, W3, and White-Box depth gates. Then disposition the remaining eleven candidates at most one per material empirical/evidence checkpoint, with birth-complete atom, reader, source, ownership, and inheritance artifacts. |
+| M7 — Reader/publication disposition | in progress | PDF, EPUB, and DOCX in `reader-2026-07-18` remain immutable published artifacts with exact receipts. Close only after the current 61-chapter derived-reader packet and compatibility residuals are terminally dispositioned, all public surfaces remain synchronized, and the final main/Pages attestation succeeds; a local freshness packet does not imply external publication. |
 | M8 — Successor continuity | pending | Every open item has a terminal disposition and the next exact authority is active. |
 
 ## Definition of done
@@ -1319,6 +1477,8 @@ scope, semantic rather than count-based formal depth, independent transfer for
 broad claims, effect-complete implementation boundaries, current sources and
 instruments, non-overlapping Q1/Q2 denominators, a meaning-preserving
 reader-spine synthesis around the shared flagship case, terminal disposition
-of both bounded structural-completeness tranches without treating the 72-entry
-upper bound as a target, exact `main` attestation, terminal reader/publication
+of the Round 16 atom/current-reader/template/white-box integration debt, a
+birth-complete and evidence-paced disposition of both bounded
+structural-completeness tranches without treating the 72-entry upper bound as a
+target, exact `main` attestation, terminal reader/publication
 dispositions, and uninterrupted successor ownership.

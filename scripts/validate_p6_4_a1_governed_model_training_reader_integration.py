@@ -19,7 +19,7 @@ SOURCE_IDS = {
     "ext_pytorch_distributed_checkpoint_2026", "ext_mlperf_training_v6_2026",
 }
 LOCAL_SOURCE_IDS = {"corbens_trainer_project"}
-NEXT_PACKET = "P6.4-A3-perception-sensor-fusion-and-observation-trust-adjudication"
+NEXT_PACKET = "P6.5-R16-post-activation-integration-debt"
 
 
 def load(path: Path) -> object:
@@ -88,8 +88,8 @@ def errors(data: dict) -> list[str]:
         or second.get("terminal_candidate_dispositions", {}).get(CHAPTER_ID) != "admitted_terminal_argument_reader_chapter"
     ):
         out.append("A1 terminal status drifted")
-    if second.get("active_candidate_id") != "perception-sensor-fusion-and-observation-trust" or status["execution_readiness"].get("immediate_book_packet") != NEXT_PACKET:
-        out.append("A1/A2 terminal custody did not advance exactly to A3")
+    if second.get("active_candidate_id") is not None or second.get("next_queued_candidate_id") != "perception-sensor-fusion-and-observation-trust" or status["execution_readiness"].get("immediate_book_packet") != NEXT_PACKET:
+        out.append("A1/A2 terminal custody did not preserve A3 as queued behind Round 16 integration debt")
 
     surfaces = data["surfaces"]
     fragments = {
@@ -97,7 +97,7 @@ def errors(data: dict) -> list[str]:
         "replaceable": ["Governed Model Training, Distributed Optimization, and Scaling takes the next"],
         "integrated": ["Training candidates are transactions, not artifacts"],
         "glossary": ["Training Run Transaction", "Resume equivalence class"],
-        "roadmap": ["P6.4-A3-perception-sensor-fusion-and-observation-trust-adjudication", "Terminal — admitted at argument support"],
+        "roadmap": ["P6.5-R16-post-activation-integration-debt", "Terminal — admitted at argument support"],
     }
     for name, required in fragments.items():
         for fragment in required:
@@ -158,7 +158,7 @@ def main() -> None:
     transaction = subprocess.run(["python3", "scripts/validate_training_run_transaction.py"], cwd=ROOT, capture_output=True, text=True)
     if transaction.returncode:
         raise SystemExit(transaction.stdout + transaction.stderr)
-    print("P6.4-A1 reader integration passed: terminal argument chapter, seven-source four-role packet, 2 targets/13 theorems, 5 arms/13 faults/12 competence gates unopened, 21 transaction mutations plus 9 integration mutations, 61-chapter reader reconciliation, A1/A2 terminal and A3 active, no support/release effect.")
+    print("P6.4-A1 reader integration passed: terminal argument chapter, seven-source four-role packet, 2 targets/13 theorems, 5 arms/13 faults/12 competence gates unopened, 21 transaction mutations plus 9 integration mutations, 61-chapter reader reconciliation, A1/A2 terminal and A3 queued behind Round 16 integration debt, no support/release effect.")
 
 
 if __name__ == "__main__":

@@ -13,6 +13,7 @@
     "current_priority",
     "execution_readiness",
     "quality_uplift_program",
+    "round_16_evidence_first_amendment",
     "predecessor",
     "activation_truth",
     "competence_and_identity_contract",
@@ -38,7 +39,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v16"
+      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v17"
     },
     "roadmap_id": {
       "const": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17"
@@ -68,8 +69,11 @@
         "work_in_progress_limit",
         "blocked_lane_consumes_work_in_progress",
         "protected_outcome_inspection_allowed",
+        "structural_admission_freeze",
+        "immediate_empirical_packet",
         "immediate_book_packet",
         "immediate_formal_packet",
+        "structural_resume_requires",
         "first_tranche_completion_order",
         "second_tranche_adjudication_batches",
         "maximum_concurrent_second_tranche_candidates",
@@ -80,7 +84,7 @@
       ],
       "properties": {
         "state": {
-          "const": "ready_with_parallel_unblocked_work_and_one_resource_blocked_lane"
+          "const": "evidence_first_recovery_with_structural_admission_freeze"
         },
         "headline_priority": {
           "const": "P2"
@@ -97,11 +101,27 @@
         "protected_outcome_inspection_allowed": {
           "const": false
         },
+        "structural_admission_freeze": {
+          "const": true
+        },
+        "immediate_empirical_packet": {
+          "const": "P2-R3-storage-materialization-and-replacement-qualification"
+        },
         "immediate_book_packet": {
-          "const": "P6.4-A3-perception-sensor-fusion-and-observation-trust-adjudication"
+          "const": "P6.5-R16-post-activation-integration-debt"
         },
         "immediate_formal_packet": {
           "const": "P4-terminal-no-open-formal-packet"
+        },
+        "structural_resume_requires": {
+          "const": [
+            "P2-pool-materialization-terminal-receipt",
+            "P2-four-replacement-slots-qualified-and-twelve-task-denominator-restored",
+            "P6.5-R16-six-chapter-claim-atom-addendum-terminal",
+            "P6.5-R16-current-sixty-one-chapter-reader-freshness-terminal",
+            "P7.1a-W3-admission-template-inheritance-guard-terminal",
+            "P7.2-T1D-white-box-construct-validity-and-feature-analysis-depth-terminal"
+          ]
         },
         "first_tranche_completion_order": {
           "const": [
@@ -137,7 +157,7 @@
           ]
         },
         "maximum_concurrent_second_tranche_candidates": {
-          "const": 1
+          "const": 0
         },
         "repository_authority_map": {
           "const": "docs/repository_map.md"
@@ -257,10 +277,10 @@
           ],
           "properties": {
             "state": {
-              "const": "split_lane_active"
+              "const": "evidence_first_integration_repair"
             },
             "case_independent_compression_state": {
-              "const": "first_tranche_terminal_second_tranche_a1_a2_terminal_a3_ready"
+              "const": "first_tranche_and_a1_a2_historical_receipts_terminal_round16_integration_debt_active"
             },
             "flagship_threading_state": {
               "const": "blocked_by_T4"
@@ -298,7 +318,7 @@
           ],
           "properties": {
             "state": {
-              "const": "first_tranche_terminal_second_tranche_a1_a2_terminal"
+              "const": "first_tranche_terminal_second_tranche_a1_a2_terminal_admissions_paused"
             },
             "current_manifest_chapter_count": {
               "const": 61
@@ -391,13 +411,15 @@
                 "adjudicated_candidate_ids",
                 "terminal_candidate_dispositions",
                 "active_candidate_id",
+                "next_queued_candidate_id",
+                "admission_state",
                 "remaining_candidate_ids",
                 "a1_decision_packet",
                 "a2_decision_packet"
               ],
               "properties": {
                 "state": {
-                  "const": "a1_a2_terminal_eleven_manifest_gated"
+                  "const": "a1_a2_terminal_eleven_manifest_gated_admissions_paused"
                 },
                 "audit_path": {
                   "const": "docs/structural_completeness_gap_audit_2026_07_19.md"
@@ -483,7 +505,13 @@
                   }
                 },
                 "active_candidate_id": {
+                  "type": "null"
+                },
+                "next_queued_candidate_id": {
                   "const": "perception-sensor-fusion-and-observation-trust"
+                },
+                "admission_state": {
+                  "const": "paused_by_round16_evidence_first_gate"
                 },
                 "remaining_candidate_ids": {
                   "const": [
@@ -525,6 +553,101 @@
         "release_effect": {
           "const": "none"
         }
+      }
+    },
+    "round_16_evidence_first_amendment": {
+      "const": {
+        "state": "active",
+        "structural_admission_freeze": true,
+        "paused_candidate_id": "perception-sensor-fusion-and-observation-trust",
+        "p2_empirical_recovery": {
+          "state": "blocked_pending_authorized_capacity_change",
+          "minimum_host_free_bytes": 53687091200,
+          "non_docker_user_data_deletion_allowed": false,
+          "materialization_recipe_and_receipt_count_required": 30,
+          "replacement_slot_count_required": 4,
+          "restored_fixed_denominator_count_required": 12,
+          "protected_outcomes_may_open_during_recovery": false
+        },
+        "post_activation_atom_pack": {
+          "state": "required",
+          "historical_3730_activation_atom_denominator_is_immutable": true,
+          "historical_15_atom_addendum_is_immutable": true,
+          "chapter_ids": [
+            "white-box-evidence-interpretability-and-activation-governance",
+            "governed-world-models-and-reality-grounding",
+            "human-factors-and-meaningful-control-in-oversight",
+            "governed-operations-incident-command-and-graceful-degradation",
+            "governed-model-training-distributed-optimization-and-scaling",
+            "privacy-data-rights-and-information-flow-governance"
+          ],
+          "required_atom_fields": [
+            "stable_claim_identity",
+            "claim_text",
+            "falsifier",
+            "acceptance_criterion",
+            "promotion_ceiling",
+            "evidence_plan_route",
+            "chapter_owner"
+          ],
+          "support_state_effect": "none"
+        },
+        "current_reader_freshness_packet": {
+          "state": "required",
+          "published_reader_2026_07_18_is_immutable_historical_release": true,
+          "current_working_manifest_chapter_count": 61,
+          "must_cover_all_current_manifest_chapters": true,
+          "external_publication_required": false,
+          "required_surfaces": [
+            "opening_map",
+            "chapter_role_classification",
+            "adjacent_handoffs",
+            "overview_figure",
+            "glossary",
+            "source_appendix",
+            "claim_evidence_projection",
+            "final_synthesis"
+          ]
+        },
+        "template_inheritance_guard": {
+          "state": "required",
+          "historical_w1_and_w2_receipts_are_immutable": true,
+          "current_live_chapter_scope": 61,
+          "requires_reproducible_current_baseline": true,
+          "rejects_high_spread_shared_prose_in_new_or_revised_chapters": true,
+          "shared_method_prose_owner": "chapters/living-book-methodology.qmd"
+        },
+        "white_box_depth_amendment": {
+          "state": "required",
+          "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
+          "required_dimensions": [
+            "sparse_autoencoder_and_dictionary_learning_mechanisms",
+            "probe_construct_validity_and_selectivity_controls",
+            "interpretability_illusion_and_cross_distribution_challenge",
+            "feature_splitting_absorption_dead_latents_and_reconstruction_tradeoffs",
+            "diagnostic_versus_causal_evidence",
+            "steering_off_target_and_capability_damage_measurement",
+            "strong_behavioral_and_method_baselines",
+            "independent_evaluator_and_no_support_promotion_boundary"
+          ],
+          "required_primary_source_titles": [
+            "Designing and Interpreting Probes with Control Tasks",
+            "An Interpretability Illusion for BERT",
+            "Scaling and evaluating sparse autoencoders",
+            "SAEBench: A Comprehensive Benchmark for Sparse Autoencoders in Language Model Interpretability",
+            "Are Sparse Autoencoder Benchmarks Reliable?"
+          ]
+        },
+        "future_admission_contract": {
+          "maximum_new_chapters_per_empirical_checkpoint": 1,
+          "material_empirical_or_evidence_milestone_since_previous_admission_required": true,
+          "claim_atom_pack_required_at_birth": true,
+          "reader_projection_required_at_birth": true,
+          "template_inheritance_guard_required_at_birth": true,
+          "manifest_admission_without_all_birth_artifacts_allowed": false
+        },
+        "support_state_effect": "none",
+        "release_effect": "none"
       }
     },
     "predecessor": {
